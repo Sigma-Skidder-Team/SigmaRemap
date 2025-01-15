@@ -1,0 +1,27 @@
+package net.minecraft.client.renderer.entity;
+
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.entity.model.PolarBearModel;
+import net.minecraft.entity.passive.PolarBearEntity;
+import net.minecraft.util.ResourceLocation;
+
+public class PolarBearRenderer extends MobRenderer<PolarBearEntity, PolarBearModel<PolarBearEntity>>
+{
+    private static final ResourceLocation POLAR_BEAR_TEXTURE = new ResourceLocation("textures/entity/bear/polarbear.png");
+
+    public PolarBearRenderer(EntityRendererManager p_i646_1_)
+    {
+        super(p_i646_1_, new PolarBearModel<>(), 0.9F);
+    }
+
+    public ResourceLocation getEntityTexture(PolarBearEntity entity)
+    {
+        return POLAR_BEAR_TEXTURE;
+    }
+
+    protected void preRenderCallback(PolarBearEntity entitylivingbaseIn, MatrixStack matrixStackIn, float partialTickTime)
+    {
+        matrixStackIn.scale(1.2F, 1.2F, 1.2F);
+        super.preRenderCallback(entitylivingbaseIn, matrixStackIn, partialTickTime);
+    }
+}

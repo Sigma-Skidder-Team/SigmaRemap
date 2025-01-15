@@ -1,0 +1,58 @@
+package net.minecraft.network.play.server;
+
+import java.io.IOException;
+import javax.annotation.Nullable;
+import net.minecraft.client.network.play.IClientPlayNetHandler;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.IPacket;
+import net.minecraft.network.PacketBuffer;
+
+public class SQueryNBTResponsePacket implements IPacket<IClientPlayNetHandler>
+{
+    private int transactionId;
+    @Nullable
+    private CompoundNBT tag;
+
+    public SQueryNBTResponsePacket()
+    {
+    }
+
+    public SQueryNBTResponsePacket(int p_i1891_1_, @Nullable CompoundNBT p_i1891_2_)
+    {
+        this.transactionId = p_i1891_1_;
+        this.tag = p_i1891_2_;
+    }
+
+    public void readPacketData(PacketBuffer buf) throws IOException
+    {
+        this.transactionId = buf.readVarInt();
+        this.tag = buf.readCompoundTag();
+    }
+
+    public void writePacketData(PacketBuffer buf) throws IOException
+    {
+        buf.writeVarInt(this.transactionId);
+        buf.writeCompoundTag(this.tag);
+    }
+
+    public void processPacket(IClientPlayNetHandler handler)
+    {
+        handler.handleNBTQueryResponse(this);
+    }
+
+    public int getTransactionId()
+    {
+        return this.transactionId;
+    }
+
+    @Nullable
+    public CompoundNBT getTag()
+    {
+        return this.tag;
+    }
+
+    public boolean shouldSkipErrors()
+    {
+        return true;
+    }
+}

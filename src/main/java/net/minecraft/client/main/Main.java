@@ -4,6 +4,8 @@
 
 package net.minecraft.client.main;
 
+import com.mojang.authlib.properties.PropertyMap;
+import joptsimple.*;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import com.google.gson.Gson;
@@ -46,65 +48,65 @@ public class Main
         optionParser.accepts("demo");
         optionParser.accepts("fullscreen");
         optionParser.accepts("checkGlErrors");
-        final ArgumentAcceptingOptionSpec withRequiredArg = optionParser.accepts("server").withRequiredArg();
-        final ArgumentAcceptingOptionSpec defaultsTo = optionParser.accepts("port").withRequiredArg().ofType((Class)Integer.class).defaultsTo((Object)25565, (Object[])new Integer[0]);
-        final ArgumentAcceptingOptionSpec defaultsTo2 = optionParser.accepts("gameDir").withRequiredArg().ofType((Class)File.class).defaultsTo((Object)new File("."), (Object[])new File[0]);
-        final ArgumentAcceptingOptionSpec ofType = optionParser.accepts("assetsDir").withRequiredArg().ofType((Class)File.class);
-        final ArgumentAcceptingOptionSpec ofType2 = optionParser.accepts("resourcePackDir").withRequiredArg().ofType((Class)File.class);
-        final ArgumentAcceptingOptionSpec withRequiredArg2 = optionParser.accepts("proxyHost").withRequiredArg();
-        final ArgumentAcceptingOptionSpec ofType3 = optionParser.accepts("proxyPort").withRequiredArg().defaultsTo((Object)"8080", (Object[])new String[0]).ofType((Class)Integer.class);
-        final ArgumentAcceptingOptionSpec withRequiredArg3 = optionParser.accepts("proxyUser").withRequiredArg();
-        final ArgumentAcceptingOptionSpec withRequiredArg4 = optionParser.accepts("proxyPass").withRequiredArg();
-        final ArgumentAcceptingOptionSpec defaultsTo3 = optionParser.accepts("username").withRequiredArg().defaultsTo((Object)("Player" + Class8349.method27837() % 1000L), (Object[])new String[0]);
-        final ArgumentAcceptingOptionSpec withRequiredArg5 = optionParser.accepts("uuid").withRequiredArg();
-        final ArgumentAcceptingOptionSpec required = optionParser.accepts("accessToken").withRequiredArg().required();
-        final ArgumentAcceptingOptionSpec required2 = optionParser.accepts("version").withRequiredArg().required();
-        final ArgumentAcceptingOptionSpec defaultsTo4 = optionParser.accepts("width").withRequiredArg().ofType((Class)Integer.class).defaultsTo((Object)854, (Object[])new Integer[0]);
-        final ArgumentAcceptingOptionSpec defaultsTo5 = optionParser.accepts("height").withRequiredArg().ofType((Class)Integer.class).defaultsTo((Object)480, (Object[])new Integer[0]);
-        final ArgumentAcceptingOptionSpec ofType4 = optionParser.accepts("fullscreenWidth").withRequiredArg().ofType((Class)Integer.class);
-        final ArgumentAcceptingOptionSpec ofType5 = optionParser.accepts("fullscreenHeight").withRequiredArg().ofType((Class)Integer.class);
-        final ArgumentAcceptingOptionSpec defaultsTo6 = optionParser.accepts("userProperties").withRequiredArg().defaultsTo((Object)"{}", (Object[])new String[0]);
-        final ArgumentAcceptingOptionSpec defaultsTo7 = optionParser.accepts("profileProperties").withRequiredArg().defaultsTo((Object)"{}", (Object[])new String[0]);
-        final ArgumentAcceptingOptionSpec withRequiredArg6 = optionParser.accepts("assetIndex").withRequiredArg();
-        final ArgumentAcceptingOptionSpec defaultsTo8 = optionParser.accepts("userType").withRequiredArg().defaultsTo((Object)"legacy", (Object[])new String[0]);
-        final ArgumentAcceptingOptionSpec defaultsTo9 = optionParser.accepts("versionType").withRequiredArg().defaultsTo((Object)"release", (Object[])new String[0]);
-        final NonOptionArgumentSpec nonOptions = optionParser.nonOptions();
+        final ArgumentAcceptingOptionSpec<String> withRequiredArg = optionParser.accepts("server").withRequiredArg();
+        final ArgumentAcceptingOptionSpec<Integer> defaultsTo = optionParser.accepts("port").withRequiredArg().ofType(Integer.class).defaultsTo(25565);
+        final ArgumentAcceptingOptionSpec<File> defaultsTo2 = optionParser.accepts("gameDir").withRequiredArg().ofType(File.class).defaultsTo(new File("."));
+        final ArgumentAcceptingOptionSpec<File> ofType = optionParser.accepts("assetsDir").withRequiredArg().ofType(File.class);
+        final ArgumentAcceptingOptionSpec<File> ofType2 = optionParser.accepts("resourcePackDir").withRequiredArg().ofType(File.class);
+        final ArgumentAcceptingOptionSpec<String> withRequiredArg2 = optionParser.accepts("proxyHost").withRequiredArg();
+        final ArgumentAcceptingOptionSpec<Integer> ofType3 = optionParser.accepts("proxyPort").withRequiredArg().defaultsTo("8080").ofType(Integer.class);
+        final ArgumentAcceptingOptionSpec<String> withRequiredArg3 = optionParser.accepts("proxyUser").withRequiredArg();
+        final ArgumentAcceptingOptionSpec<String> withRequiredArg4 = optionParser.accepts("proxyPass").withRequiredArg();
+        final ArgumentAcceptingOptionSpec<String> defaultsTo3 = optionParser.accepts("username").withRequiredArg().defaultsTo(("Player" + Class8349.method27837() % 1000L));
+        final ArgumentAcceptingOptionSpec<String> withRequiredArg5 = optionParser.accepts("uuid").withRequiredArg();
+        final ArgumentAcceptingOptionSpec<String> required = optionParser.accepts("accessToken").withRequiredArg().required();
+        final ArgumentAcceptingOptionSpec<String> required2 = optionParser.accepts("version").withRequiredArg().required();
+        final ArgumentAcceptingOptionSpec<Integer> defaultsTo4 = optionParser.accepts("width").withRequiredArg().ofType(Integer.class).defaultsTo(854);
+        final ArgumentAcceptingOptionSpec<Integer> defaultsTo5 = optionParser.accepts("height").withRequiredArg().ofType(Integer.class).defaultsTo(480);
+        final ArgumentAcceptingOptionSpec<Integer> ofType4 = optionParser.accepts("fullscreenWidth").withRequiredArg().ofType(Integer.class);
+        final ArgumentAcceptingOptionSpec<Integer> ofType5 = optionParser.accepts("fullscreenHeight").withRequiredArg().ofType(Integer.class);
+        final ArgumentAcceptingOptionSpec<String> defaultsTo6 = optionParser.accepts("userProperties").withRequiredArg().defaultsTo("{}");
+        final ArgumentAcceptingOptionSpec<String> defaultsTo7 = optionParser.accepts("profileProperties").withRequiredArg().defaultsTo("{}");
+        final ArgumentAcceptingOptionSpec<String> withRequiredArg6 = optionParser.accepts("assetIndex").withRequiredArg();
+        final ArgumentAcceptingOptionSpec<String> defaultsTo8 = optionParser.accepts("userType").withRequiredArg().defaultsTo("legacy");
+        final ArgumentAcceptingOptionSpec<String> defaultsTo9 = optionParser.accepts("versionType").withRequiredArg().defaultsTo("release");
+        final NonOptionArgumentSpec<String> nonOptions = optionParser.nonOptions();
         final OptionSet parse = optionParser.parse(array);
         final List values = parse.valuesOf((OptionSpec)nonOptions);
         if (!values.isEmpty()) {
             System.out.println("Completely ignored arguments: " + values);
         }
-        final String hostname = method9785(parse, (joptsimple.OptionSpec<String>)withRequiredArg2);
+        final String hostname = method9785(parse, withRequiredArg2);
         Proxy no_PROXY = Proxy.NO_PROXY;
         if (hostname != null) {
             try {
-                no_PROXY = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(hostname, method9785(parse, (joptsimple.OptionSpec<Integer>)ofType3)));
+                no_PROXY = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(hostname, method9785(parse, ofType3)));
             }
             catch (final Exception ex) {}
         }
-        final String s = method9785(parse, (joptsimple.OptionSpec<String>)withRequiredArg3);
-        final String s2 = method9785(parse, (joptsimple.OptionSpec<String>)withRequiredArg4);
+        final String s = method9785(parse, withRequiredArg3);
+        final String s2 = method9785(parse, withRequiredArg4);
         if (!no_PROXY.equals(Proxy.NO_PROXY) && method9786(s) && method9786(s2)) {
             Authenticator.setDefault(new Class7488(s, s2));
         }
-        final int intValue = method9785(parse, (joptsimple.OptionSpec<Integer>)defaultsTo4);
-        final int intValue2 = method9785(parse, (joptsimple.OptionSpec<Integer>)defaultsTo5);
-        final OptionalInt method9784 = method9784(method9785(parse, (joptsimple.OptionSpec<Integer>)ofType4));
-        final OptionalInt method9785 = method9784(method9785(parse, (joptsimple.OptionSpec<Integer>)ofType5));
+        final int intValue = method9785(parse, defaultsTo4);
+        final int intValue2 = method9785(parse, defaultsTo5);
+        final OptionalInt method9784 = method9784(method9785(parse, ofType4));
+        final OptionalInt method9785 = method9784(method9785(parse, ofType5));
         final boolean has = parse.has("fullscreen");
         final boolean has2 = parse.has("demo");
-        final String s3 = method9785(parse, (joptsimple.OptionSpec<String>)required2);
-        final Gson create = new GsonBuilder().registerTypeAdapter((Type)PropertyMap.class, (Object)new PropertyMap$Serializer()).create();
-        final PropertyMap propertyMap = Class9583.method35929(create, method9785(parse, (joptsimple.OptionSpec<String>)defaultsTo6), PropertyMap.class);
-        final PropertyMap propertyMap2 = Class9583.method35929(create, method9785(parse, (joptsimple.OptionSpec<String>)defaultsTo7), PropertyMap.class);
-        final String s4 = method9785(parse, (joptsimple.OptionSpec<String>)defaultsTo9);
-        final File file = method9785(parse, (joptsimple.OptionSpec<File>)defaultsTo2);
-        final File file2 = parse.has((OptionSpec)ofType) ? method9785(parse, (joptsimple.OptionSpec<File>)ofType) : new File(file, "assets/");
-        final File file3 = parse.has((OptionSpec)ofType2) ? method9785(parse, (joptsimple.OptionSpec<File>)ofType2) : new File(file, "resourcepacks/");
-        final String s5 = (String)(parse.has((OptionSpec)withRequiredArg5) ? ((OptionSpec)withRequiredArg5).value(parse) : Class512.method2894((String)((OptionSpec)defaultsTo3).value(parse)).toString());
-        final String s6 = parse.has((OptionSpec)withRequiredArg6) ? ((String)((OptionSpec)withRequiredArg6).value(parse)) : null;
-        final String s7 = method9785(parse, (joptsimple.OptionSpec<String>)withRequiredArg);
-        final Integer n = method9785(parse, (joptsimple.OptionSpec<Integer>)defaultsTo);
+        final String s3 = method9785(parse, required2);
+        final Gson create = new GsonBuilder().registerTypeAdapter(PropertyMap.class, new PropertyMap.Serializer()).create();
+        final PropertyMap propertyMap = Class9583.method35929(create, method9785(parse, defaultsTo6), PropertyMap.class);
+        final PropertyMap propertyMap2 = Class9583.method35929(create, method9785(parse, defaultsTo7), PropertyMap.class);
+        final String s4 = method9785(parse, defaultsTo9);
+        final File file = method9785(parse, defaultsTo2);
+        final File file2 = parse.has(ofType) ? method9785(parse, ofType) : new File(file, "assets/");
+        final File file3 = parse.has(ofType2) ? method9785(parse, ofType2) : new File(file, "resourcepacks/");
+        final String s5 = (String)(parse.has(withRequiredArg5) ? ((OptionSpec)withRequiredArg5).value(parse) : Class512.method2894((String)((OptionSpec)defaultsTo3).value(parse)).toString());
+        final String s6 = parse.has(withRequiredArg6) ? ((String)((OptionSpec)withRequiredArg6).value(parse)) : null;
+        final String s7 = method9785(parse, withRequiredArg);
+        final Integer n = method9785(parse, defaultsTo);
         Class7689.method24422();
         final Class9408 class9408 = new Class9408(new Class8515(new Class9212((String)((OptionSpec)defaultsTo3).value(parse), s5, (String)((OptionSpec)required).value(parse), (String)((OptionSpec)defaultsTo8).value(parse)), propertyMap, propertyMap2, no_PROXY), new Class9154(intValue, intValue2, method9784, method9785, has), new Class8852(file, file3, file2, s6), new Class5836(has2, s3, s4), new Class7918(s7, n));
         final Class900 hook = new Class900("Client Shutdown Thread");
@@ -120,7 +122,7 @@ public class Main
             Class8726.method30114();
         }
         catch (final Class2367 class9410) {
-            Main.field14380.warn("Failed to create window: ", (Throwable)class9410);
+            Main.field14380.warn("Failed to create window: ", class9410);
             return;
         }
         catch (final Throwable t) {
@@ -177,7 +179,7 @@ public class Main
                 }
             }
         }
-        throw;
+        return null;
     }
     
     private static boolean method9786(final String s) {

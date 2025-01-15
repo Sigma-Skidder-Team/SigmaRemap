@@ -1,0 +1,58 @@
+***************
+*** 44,62 ****
+          hasEmissive = false;
+      }
+  
+-     public static Texture getEmissiveTexture(Texture texture, Map<ResourceLocation, Texture> mapTextures)
+      {
+          if (!render)
+          {
+-             return texture;
+          }
+-         else if (!(texture instanceof SimpleTexture))
+          {
+-             return texture;
+          }
+          else
+          {
+-             SimpleTexture simpletexture = (SimpleTexture)texture;
+              ResourceLocation resourcelocation = simpletexture.locationEmissive;
+  
+              if (!renderEmissive)
+--- 44,62 ----
+          hasEmissive = false;
+      }
+  
++     public static Texture getEmissiveTexture(Texture texturein, Map<ResourceLocation, Texture> mapTextures)
+      {
+          if (!render)
+          {
++             return texturein;
+          }
++         else if (!(texturein instanceof SimpleTexture))
+          {
++             return texturein;
+          }
+          else
+          {
++             SimpleTexture simpletexture = (SimpleTexture)texturein;
+              ResourceLocation resourcelocation = simpletexture.locationEmissive;
+  
+              if (!renderEmissive)
+***************
+*** 66,72 ****
+                      hasEmissive = true;
+                  }
+  
+-                 return texture;
+              }
+              else
+              {
+--- 66,72 ----
+                      hasEmissive = true;
+                  }
+  
++                 return texturein;
+              }
+              else
+              {

@@ -1,0 +1,38 @@
+package net.minecraft.item;
+
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Hand;
+
+public class NameTagItem extends Item
+{
+    public NameTagItem(Item.Properties p_i2154_1_)
+    {
+        super(p_i2154_1_);
+    }
+
+    public boolean itemInteractionForEntity(ItemStack stack, PlayerEntity playerIn, LivingEntity target, Hand hand)
+    {
+        if (stack.hasDisplayName() && !(target instanceof PlayerEntity))
+        {
+            if (target.isAlive())
+            {
+                target.setCustomName(stack.getDisplayName());
+
+                if (target instanceof MobEntity)
+                {
+                    ((MobEntity)target).enablePersistence();
+                }
+
+                stack.shrink(1);
+            }
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
