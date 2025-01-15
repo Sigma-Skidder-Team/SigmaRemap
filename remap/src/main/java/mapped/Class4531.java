@@ -23,13 +23,13 @@ public class Class4531 extends Class4469
     @Override
     public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         this.method13418(class1851, class1853, 1, 8, 0, 14, 8, 14, Class4531.field19829);
-        final Class7096 field19830 = Class4531.field19830;
+        final BlockState field19830 = Class4531.field19830;
         this.method13444(class1851, class1853, 0, 7, 0, 0, 7, 15, field19830, field19830, false);
         this.method13444(class1851, class1853, 15, 7, 0, 15, 7, 15, field19830, field19830, false);
         this.method13444(class1851, class1853, 1, 7, 0, 15, 7, 0, field19830, field19830, false);
         this.method13444(class1851, class1853, 1, 7, 15, 14, 7, 15, field19830, field19830, false);
         for (int i = 1; i <= 6; ++i) {
-            Class7096 class1855 = Class4531.field19830;
+            BlockState class1855 = Class4531.field19830;
             if (i == 2 || i == 6) {
                 class1855 = Class4531.field19829;
             }

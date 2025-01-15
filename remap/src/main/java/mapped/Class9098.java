@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Sets$SetView;
-import java.util.function.Function;
+
 import java.util.Set;
 import com.google.common.collect.Sets;
 import javax.annotation.Nullable;
@@ -104,7 +104,7 @@ public class Class9098
             if (field38533 == null) {
                 field38533 = new Random();
             }
-            final Class394 method6679 = this.field38530.method6679();
+            final MinecraftServer method6679 = this.field38530.getServer();
             return new Class7529(field38533, this.field38534, this.field38530, method6679.method1581()::method6402, method6679.method1582()::method6409, this.field38531, this.field38532, null);
         }
         throw new IllegalArgumentException("Missing required parameters: " + difference2);

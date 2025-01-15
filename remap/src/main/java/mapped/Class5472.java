@@ -10,7 +10,7 @@ public class Class5472 implements Class5470
     private Class3090[] field22746;
     private int field22747;
     
-    public Class5472(final Class8660 class8660) {
+    public Class5472(final WorldInfo class8660) {
         this.field22746 = new Class3090[] { Class7102.field27633 };
         this.field22747 = 1;
     }

@@ -16,15 +16,15 @@ import java.util.List;
 
 public enum Class234
 {
-    field877(Class7739.field31279, 0.0f, 3.0f, 0.0f), 
-    field878(Class7739.field31355, 0.0f, 1.875f, 0.0f), 
-    field879(Class7739.field31436, 0.0f, 1.875f, 0.0f), 
-    field880(Class7739.field31374, 0.0f, 1.875f, 0.0f), 
-    field881(Class7739.field31579, 0.0f, 0.5f, 0.0f), 
-    field882(Class7739.field31510, 0.0f, 0.6f, 0.0f), 
-    field883(Class7739.field31607, 0.0f, 2.5f, 0.0f);
+    field877(Items.field31279, 0.0f, 3.0f, 0.0f),
+    field878(Items.field31355, 0.0f, 1.875f, 0.0f),
+    field879(Items.field31436, 0.0f, 1.875f, 0.0f),
+    field880(Items.field31374, 0.0f, 1.875f, 0.0f),
+    field881(Items.field31579, 0.0f, 0.5f, 0.0f),
+    field882(Items.field31510, 0.0f, 0.6f, 0.0f),
+    field883(Items.field31607, 0.0f, 2.5f, 0.0f);
     
-    private Class3820 field884;
+    private Item field884;
     private float field885;
     private float field886;
     private float field887;
@@ -37,7 +37,7 @@ public enum Class234
     public Class7006 field894;
     public Entity field895;
     
-    private Class234(final Class3820 field884, final float field885, final float field886, final float field887) {
+    private Class234(final Item field884, final float field885, final float field886, final float field887) {
         this.field884 = field884;
         this.field885 = field885;
         this.field886 = field886;
@@ -45,7 +45,7 @@ public enum Class234
     }
     
     public float method868() {
-        if (!this.field884.equals(Class7739.field31279)) {
+        if (!this.field884.equals(Items.field31279)) {
             return this.field886;
         }
         return (this.field886 * Class4087.method12318(Class3213.method10110().field4684.method2767()) <= 0.0f) ? Class4087.method12318(20) : Class4087.method12318(Class3213.method10111().field4684.method2767());
@@ -59,11 +59,11 @@ public enum Class234
         return this.field887;
     }
     
-    public Class3820 method871() {
+    public Item method871() {
         return this.field884;
     }
     
-    public static Class234 method872(final Class3820 obj) {
+    public static Class234 method872(final Item obj) {
         for (final Class234 class234 : values()) {
             if (class234.method871().equals(obj)) {
                 return class234;

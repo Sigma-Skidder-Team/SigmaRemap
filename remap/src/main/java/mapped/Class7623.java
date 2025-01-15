@@ -22,7 +22,7 @@ public class Class7623 implements Class7622
         --this.field30197;
         if (this.field30197 <= 0) {
             if (this.field30195.method1712()) {
-                final float nextFloat = this.field30195.world.field10062.nextFloat();
+                final float nextFloat = this.field30195.world.rand.nextFloat();
                 if (nextFloat >= 1.0E-4f) {
                     if (nextFloat >= 0.001f) {
                         if (nextFloat < 0.01f) {

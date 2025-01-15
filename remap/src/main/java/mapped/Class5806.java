@@ -9,10 +9,10 @@ import net.minecraft.util.text.ITextComponent;
 public class Class5806 implements Class5804
 {
     private static String[] field23835;
-    private final Class394 field23836;
+    private final MinecraftServer field23836;
     private final NetworkManager field23837;
     
-    public Class5806(final Class394 field23836, final NetworkManager field23837) {
+    public Class5806(final MinecraftServer field23836, final NetworkManager field23837) {
         this.field23836 = field23836;
         this.field23837 = field23837;
     }

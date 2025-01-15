@@ -120,12 +120,12 @@ public class Class8752
         return new Class3687(Class8752.field36739, new Class1932("entity/chest/" + str));
     }
     
-    public static Class3687 method30270(final Class436 class436, final Class180 class437, final boolean b) {
+    public static Class3687 method30270(final TileEntity tileEntity, final Class180 class437, final boolean b) {
         if (b) {
             return method30271(class437, Class8752.field36757, Class8752.field36758, Class8752.field36759);
         }
-        if (!(class436 instanceof Class478)) {
-            return (class436 instanceof Class477) ? Class8752.field36763 : method30271(class437, Class8752.field36760, Class8752.field36761, Class8752.field36762);
+        if (!(tileEntity instanceof Class478)) {
+            return (tileEntity instanceof Class477) ? Class8752.field36763 : method30271(class437, Class8752.field36760, Class8752.field36761, Class8752.field36762);
         }
         return method30271(class437, Class8752.field36754, Class8752.field36755, Class8752.field36756);
     }

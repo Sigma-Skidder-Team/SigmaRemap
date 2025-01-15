@@ -178,9 +178,9 @@ public class Class8988
             final String[] method28937 = Class8571.method28937(trim, " ");
             for (int i = 0; i < method28937.length; ++i) {
                 final String s2 = method28937[i];
-                final Class3820 method28938 = this.method31997(s2);
+                final Item method28938 = this.method31997(s2);
                 if (method28938 != null) {
-                    final int method28939 = Class3820.method11696(method28938);
+                    final int method28939 = Item.method11696(method28938);
                     if (method28939 >= 0) {
                         set.add(new Integer(method28939));
                     }
@@ -202,7 +202,7 @@ public class Class8988
         return null;
     }
     
-    private Class3820 method31997(final String s) {
+    private Item method31997(final String s) {
         final Class1932 class1932 = new Class1932(s);
         if (Class90.field211.method510(class1932)) {
             return Class90.field211.method505(class1932);
@@ -489,7 +489,7 @@ public class Class8988
         }
         if (this.field37883 == 4) {
             if (this.field37884 == null) {
-                this.field37884 = new int[] { Class3820.method11696(Class7739.field31584) };
+                this.field37884 = new int[] { Item.method11696(Items.field31584) };
             }
         }
         Label_0091: {
@@ -526,9 +526,9 @@ public class Class8988
     }
     
     private int[] method32013() {
-        final Class3820 method31997 = this.method31997(this.field37881);
+        final Item method31997 = this.method31997(this.field37881);
         if (method31997 != null) {
-            final int method31998 = Class3820.method11696(method31997);
+            final int method31998 = Item.method11696(method31997);
             return (int[])((method31998 >= 0) ? new int[] { method31998 } : null);
         }
         return null;
@@ -653,12 +653,12 @@ public class Class8988
     private String[] method32023() {
         if (this.field37883 == 1) {
             if (this.field37884.length == 1) {
-                final Class3820 method11697 = Class3820.method11697(this.field37884[0]);
+                final Item method11697 = Item.method11697(this.field37884[0]);
                 boolean b = false;
                 Label_0083: {
-                    if (method11697 != Class7739.field31441) {
-                        if (method11697 != Class7739.field31579) {
-                            if (method11697 != Class7739.field31582) {
+                    if (method11697 != Items.field31441) {
+                        if (method11697 != Items.field31579) {
+                            if (method11697 != Items.field31582) {
                                 b = false;
                                 break Label_0083;
                             }

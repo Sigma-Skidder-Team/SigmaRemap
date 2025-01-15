@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -15,10 +17,10 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     private static String[] field17519;
     public static final Class7112 field17551;
     public static final Class7113 field17552;
-    public static final Class7702 field17553;
-    public static final Class7702 field17554;
-    public static final Class7702 field17555;
-    public static final Class7702 field17556;
+    public static final VoxelShape field17553;
+    public static final VoxelShape field17554;
+    public static final VoxelShape field17555;
+    public static final VoxelShape field17556;
     
     public Class3889(final Class9288 class9288) {
         super(class9288);
@@ -69,11 +71,11 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     
     @Override
     public boolean method11798(final Class7096 class7096, final Class7074 class7097) {
-        return (class7097.method21651().method27622() == this.method11704() && class7096.method21772((Class7111<Integer>)Class3889.field17551) < 4) || super.method11798(class7096, class7097);
+        return (class7097.method21651().getItem() == this.method11704() && class7096.method21772((Class7111<Integer>)Class3889.field17551) < 4) || super.method11798(class7096, class7097);
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (class7096.method21772((Class7111<Integer>)Class3889.field17551)) {
             default: {
                 return Class3889.field17553;

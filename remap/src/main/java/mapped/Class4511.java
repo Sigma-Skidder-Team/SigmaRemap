@@ -102,8 +102,8 @@ public class Class4511 extends Class4500
         this.method13444(class1851, class1853, 5, 2, 7, 7, 2, 7, Class7521.field29598.method11878(), Class7521.field29598.method11878(), false);
         this.method13444(class1851, class1853, 4, 5, 7, 4, 5, 9, Class7521.field29598.method11878(), Class7521.field29598.method11878(), false);
         this.method13444(class1851, class1853, 8, 5, 7, 8, 5, 9, Class7521.field29598.method11878(), Class7521.field29598.method11878(), false);
-        this.method13444(class1851, class1853, 5, 5, 7, 7, 5, 9, ((Class7097<O, Class7096>)Class7521.field29598.method11878()).method21773(Class3921.field17777, Class186.field600), ((Class7097<O, Class7096>)Class7521.field29598.method11878()).method21773(Class3921.field17777, Class186.field600), false);
-        this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.SOUTH), 6, 5, 6, class1853);
+        this.method13444(class1851, class1853, 5, 5, 7, 7, 5, 9, ((Class7097<O, BlockState>)Class7521.field29598.method11878()).method21773(Class3921.field17777, Class186.field600), ((Class7097<O, BlockState>)Class7521.field29598.method11878()).method21773(Class3921.field17777, Class186.field600), false);
+        this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.SOUTH), 6, 5, 6, class1853);
         return true;
     }
 }

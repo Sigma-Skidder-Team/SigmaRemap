@@ -9,11 +9,11 @@ import net.minecraft.util.Direction;
 public final class Class8266
 {
     private static String[] field33940;
-    private final Class7096 field33941;
-    private final Class7096 field33942;
+    private final BlockState field33941;
+    private final BlockState field33942;
     private final Direction field33943;
     
-    public Class8266(final Class7096 field33941, final Class7096 field33942, final Direction field33943) {
+    public Class8266(final BlockState field33941, final BlockState field33942, final Direction field33943) {
         this.field33941 = field33941;
         this.field33942 = field33942;
         this.field33943 = field33943;

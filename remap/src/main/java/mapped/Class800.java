@@ -318,11 +318,11 @@ public class Class800 extends Class794
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        final Class3820 method2716 = method2715.method27622();
-        if (method2715.method27622() instanceof Class3831) {
+        final Item method2716 = method2715.getItem();
+        if (method2715.getItem() instanceof Class3831) {
             return super.method4195(class512, class513);
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!this.method4480()) {
                 if (this.method4357(method2715)) {
                     this.method4358(class512, method2715);
@@ -401,7 +401,7 @@ public class Class800 extends Class794
     }
     
     static {
-        field4285 = Class120.method618(Class7739.field31379, Class7739.field31380);
+        field4285 = Class120.method618(Items.field31379, Items.field31380);
         field4286 = EntityDataManager.method33564(Class800.class, Class7709.field30654);
         field4287 = EntityDataManager.method33564(Class800.class, Class7709.field30661);
         field4288 = EntityDataManager.method33564(Class800.class, Class7709.field30661);

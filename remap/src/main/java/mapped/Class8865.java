@@ -230,13 +230,13 @@ public class Class8865
                     for (int l = class1853.minX; l <= class1853.maxX; ++l) {
                         final BlockPos class1856 = new BlockPos(l, k, j);
                         final BlockPos method1135 = class1856.add(class1855);
-                        final Class7096 method1136 = class1849.method6701(class1856);
+                        final BlockState method1136 = class1849.method6701(class1856);
                         if (!b || method1136.method21696() != Class7521.field29147) {
                             if (method1136 != class1849.method6701(method1135)) {
                                 return OptionalInt.empty();
                             }
-                            final Class436 method1137 = class1849.method6727(class1856);
-                            final Class436 method1138 = class1849.method6727(method1135);
+                            final TileEntity method1137 = class1849.method6727(class1856);
+                            final TileEntity method1138 = class1849.method6727(method1135);
                             if (method1137 != null) {
                                 if (method1138 == null) {
                                     return OptionalInt.empty();

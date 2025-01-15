@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class4069 extends Class3820
+public class Class4069 extends Item
 {
     public Class4069(final Class8959 class8959) {
         super(class8959);

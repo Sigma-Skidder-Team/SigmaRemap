@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Predicate;
 
@@ -23,7 +22,7 @@ public class Class119 implements Predicate<Class7990>
     
     @Override
     public boolean test(final Class7990 class7990) {
-        final Class7096 method26065 = class7990.method26065();
+        final BlockState method26065 = class7990.method26065();
         if (!method26065.method21755(this.field370)) {
             return false;
         }
@@ -42,7 +41,7 @@ public class Class119 implements Predicate<Class7990>
             return false;
         }
         if (this.field371 != null) {
-            final Class436 method26067 = class7990.method26066();
+            final TileEntity method26067 = class7990.method26066();
             return method26067 != null && Class9346.method34642(this.field371, method26067.method2180(new Class51()), true);
         }
         return true;

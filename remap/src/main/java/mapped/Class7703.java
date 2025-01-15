@@ -5,15 +5,16 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import net.minecraft.util.math.shapes.VoxelShape;
 
-public class Class7703 extends Class7702
+public class Class7703 extends VoxelShape
 {
     private static String[] field30617;
-    private final Class7702 field30618;
+    private final VoxelShape field30618;
     private final Axis field30619;
     private static final DoubleList field30620;
     
-    public Class7703(final Class7702 field30618, final Axis field30619, final int n) {
+    public Class7703(final VoxelShape field30618, final Axis field30619, final int n) {
         super(method24560(field30618.field30615, field30619, n));
         this.field30618 = field30618;
         this.field30619 = field30619;

@@ -71,7 +71,7 @@ public class Class7335
                 return false;
             }
             case 70: {
-                Class6469.field25717.method19475(this.field28331.field4648, MathHelper.method35654(this.field28331.field4648.field23382 + (Class527.method3047() ? -1 : 1), Class6469.field25717.method19472(), Class6469.field25717.method19473()));
+                Class6469.field25717.method19475(this.field28331.field4648, MathHelper.clamp(this.field28331.field4648.field23382 + (Class527.method3047() ? -1 : 1), Class6469.field25717.method19472(), Class6469.field25717.method19473()));
                 this.method22497("debug.cycle_renderdistance.message", this.field28331.field4648.field23382);
                 return true;
             }
@@ -160,7 +160,7 @@ public class Class7335
             switch (Class8540.field35858[field4691.method21449().ordinal()]) {
                 case 1: {
                     final BlockPos method21447 = ((Class7005)field4691).method21447();
-                    final Class7096 method21448 = this.field28331.field4684.world.method6701(method21447);
+                    final BlockState method21448 = this.field28331.field4684.world.method6701(method21447);
                     if (!b) {
                         this.method22501(method21448, method21447, null);
                         this.method22497("debug.inspect.client.block", new Object[0]);
@@ -174,7 +174,7 @@ public class Class7335
                         });
                         break;
                     }
-                    final Class436 method21449 = this.field28331.field4684.world.method6727(method21447);
+                    final TileEntity method21449 = this.field28331.field4684.world.method6727(method21447);
                     this.method22501(method21448, method21447, (method21449 != null) ? method21449.method2180(new Class51()) : null);
                     this.method22497("debug.inspect.client.block", new Object[0]);
                     break;
@@ -203,7 +203,7 @@ public class Class7335
         }
     }
     
-    private void method22501(final Class7096 class7096, final BlockPos class7097, final Class51 obj) {
+    private void method22501(final BlockState class7096, final BlockPos class7097, final Class51 obj) {
         if (obj != null) {
             obj.method330("x");
             obj.method330("y");

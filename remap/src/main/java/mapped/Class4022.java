@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -12,29 +14,29 @@ import java.util.Random;
 public class Class4022 extends Class3833
 {
     private static String[] field18107;
-    public static final Class7702 field18108;
+    public static final VoxelShape field18108;
     
     public Class4022(final Class9288 class9288) {
         super(class9288);
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4022.field18108;
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+    public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         return (class7097 == Direction.DOWN && !this.method11843(class7096, class7099, class7100)) ? Class7521.field29147.method11878() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
+    public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         return Class3833.method11813(class7097, class7098.method1139(), Direction.UP);
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
         final double n = class7098.getX() + 0.5;
         final double n2 = class7098.getY() + 0.7;
         final double n3 = class7098.getZ() + 0.5;

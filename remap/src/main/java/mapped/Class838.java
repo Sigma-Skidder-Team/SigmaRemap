@@ -63,7 +63,7 @@ public class Class838 extends Class833
     
     @Override
     public ItemStack method4956() {
-        return new ItemStack(Class7739.field31359);
+        return new ItemStack(Items.field31359);
     }
     
     @Override
@@ -74,7 +74,7 @@ public class Class838 extends Class833
     
     @Override
     public void method1659() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method1768()) {
                 if (this.method2749()) {
                     if (this.field4456 <= 0) {
@@ -118,7 +118,7 @@ public class Class838 extends Class833
         super.method2736();
         if (this.method1768()) {
             if (this.method4988() > 0) {
-                for (final Class759 class759 : this.world.method6739((Class<? extends Class759>)Class759.class, this.method1886().method18496(0.3), (Predicate<? super Class759>)Class838.field4458)) {
+                for (final Class759 class759 : this.world.method6739((Class<? extends Class759>)Class759.class, this.getBoundingBox().method18496(0.3), (Predicate<? super Class759>)Class838.field4458)) {
                     if (!class759.method1768()) {
                         continue;
                     }

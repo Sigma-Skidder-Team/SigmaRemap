@@ -15,7 +15,7 @@ public class Class3985 extends Class3833
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean method11779(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return false;
     }
 }

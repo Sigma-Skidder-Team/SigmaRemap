@@ -54,11 +54,11 @@ public class Class443 implements Class446, Class472
         return method28422;
     }
     
-    public ItemStack method2257(final Class3820 obj, final int n) {
+    public ItemStack method2257(final Item obj, final int n) {
         final ItemStack class8321 = new ItemStack(obj, 0);
         for (int i = this.field2679 - 1; i >= 0; --i) {
             final ItemStack method2157 = this.method2157(i);
-            if (method2157.method27622().equals(obj)) {
+            if (method2157.getItem().equals(obj)) {
                 class8321.method27692(method2157.method27621(n - class8321.method27690()).method27690());
                 if (class8321.method27690() == n) {
                     break;

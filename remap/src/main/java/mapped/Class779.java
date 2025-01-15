@@ -124,7 +124,7 @@ public class Class779 extends Class776
             if (this.collidedHorizontally) {
                 if (this.world.method6765().method31216(Class8878.field37316)) {
                     boolean b = false;
-                    final AxisAlignedBB method18496 = this.method1886().method18496(0.2);
+                    final AxisAlignedBB method18496 = this.getBoundingBox().method18496(0.2);
                     for (final BlockPos class354 : BlockPos.getAllInBoxMutable(MathHelper.floor(method18496.field25073), MathHelper.floor(method18496.field25074), MathHelper.floor(method18496.field25075), MathHelper.floor(method18496.field25076), MathHelper.floor(method18496.field25077), MathHelper.floor(method18496.field25078))) {
                         if (!(this.world.method6701(class354).method21696() instanceof Class3972)) {
                             continue;
@@ -201,13 +201,13 @@ public class Class779 extends Class776
     
     private void method4322() {
         if (this.method1768()) {
-            for (final Entity class399 : this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.method1886().method18496(4.0), (Predicate<? super Entity>)Class779.field4185)) {
+            for (final Entity class399 : this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().method18496(4.0), (Predicate<? super Entity>)Class779.field4185)) {
                 if (!(class399 instanceof Class772)) {
                     class399.attackEntityFrom(DamageSource.method25693(this), 6.0f);
                 }
                 this.method4323(class399);
             }
-            final Vec3d method18517 = this.method1886().method18517();
+            final Vec3d method18517 = this.getBoundingBox().method18517();
             for (int i = 0; i < 40; ++i) {
                 this.world.method6709(Class8432.field34636, method18517.x, method18517.y, method18517.z, this.rand.nextGaussian() * 0.2, this.rand.nextGaussian() * 0.2, this.rand.nextGaussian() * 0.2);
             }
@@ -278,7 +278,7 @@ public class Class779 extends Class776
     
     @Override
     public boolean method4180(final Class1852 class1852) {
-        return !class1852.method6968(this.method1886());
+        return !class1852.method6968(this.getBoundingBox());
     }
     
     @Override

@@ -26,13 +26,13 @@ public class Class1878 implements Class1851
     private final Class1849 field10219;
     private final long field10220;
     private final int field10221;
-    private final Class8660 field10222;
+    private final WorldInfo field10222;
     private final Random field10223;
-    private final Class6737 field10224;
+    private final Dimension field10224;
     private final Class7065 field10225;
     private final Class6952<Class3833> field10226;
     private final Class6952<Class7255> field10227;
-    private final Class5507 field10228;
+    private final BiomeManager field10228;
     
     public Class1878(final Class1849 field10219, final List<Class1860> field10220) {
         this.field10226 = new Class6955<Class3833>(class355 -> this.method6965(class355).method7036());
@@ -51,7 +51,7 @@ public class Class1878 implements Class1851
             this.field10222 = field10219.method6764();
             this.field10223 = field10219.method6790();
             this.field10224 = field10219.method6789();
-            this.field10228 = new Class5507(this, Class8660.method29535(this.field10220), this.field10224.getType().method1278());
+            this.field10228 = new BiomeManager(this, WorldInfo.byHashing(this.field10220), this.field10224.getType().getMagnifier());
             return;
         }
         throw Class8349.method27859(new IllegalStateException("Cache size is not a square."));
@@ -114,7 +114,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class7096 method6701(final BlockPos class354) {
+    public BlockState method6701(final BlockPos class354) {
         return this.method6798(class354.getX() >> 4, class354.getZ() >> 4).method6701(class354);
     }
     
@@ -135,7 +135,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class5507 method6797() {
+    public BiomeManager method6797() {
         return this.field10228;
     }
     
@@ -151,7 +151,7 @@ public class Class1878 implements Class1851
     
     @Override
     public boolean method6691(final BlockPos class354, final boolean b, final Entity class355) {
-        final Class7096 method6701 = this.method6701(class354);
+        final BlockState method6701 = this.method6701(class354);
         if (!method6701.method21706()) {
             if (b) {
                 Class3833.method11838(method6701, this.field10219, class354, method6701.method21696().method11802() ? this.method6727(class354) : null, class355, ItemStack.field34174);
@@ -163,15 +163,15 @@ public class Class1878 implements Class1851
     
     @Nullable
     @Override
-    public Class436 method6727(final BlockPos class354) {
+    public TileEntity method6727(final BlockPos class354) {
         final Class1860 method6965 = this.method6965(class354);
-        final Class436 method6966 = method6965.method6727(class354);
+        final TileEntity method6966 = method6965.method6727(class354);
         if (method6966 == null) {
             final Class51 method6967 = method6965.method7033(class354);
             if (method6967 != null) {
-                Class436 class355;
+                TileEntity class355;
                 if (!"DUMMY".equals(method6967.method323("id"))) {
-                    class355 = Class436.method2190(method6967);
+                    class355 = TileEntity.method2190(method6967);
                 }
                 else {
                     final Class3833 method6968 = this.method6701(class354).method21696();
@@ -194,9 +194,9 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public boolean method6688(final BlockPos class354, final Class7096 class355, final int n) {
+    public boolean method6688(final BlockPos class354, final BlockState class355, final int n) {
         final Class1860 method6965 = this.method6965(class354);
-        final Class7096 method6966 = method6965.method7008(class354, class355, false);
+        final BlockState method6966 = method6965.method7008(class354, class355, false);
         if (method6966 != null) {
             this.field10219.method6689(class354, method6966, class355);
         }
@@ -241,12 +241,12 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class9375 method6787() {
+    public WorldBorder method6787() {
         return this.field10219.method6787();
     }
     
     @Override
-    public boolean method6678() {
+    public boolean isRemote() {
         return false;
     }
     
@@ -256,7 +256,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class8660 method6764() {
+    public WorldInfo method6764() {
         return this.field10222;
     }
     
@@ -269,7 +269,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class1906 method6762() {
+    public AbstractChunkProvider method6762() {
         return this.field10219.method6904();
     }
     
@@ -325,12 +325,12 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class6737 method6789() {
+    public Dimension method6789() {
         return this.field10224;
     }
     
     @Override
-    public boolean method6791(final BlockPos class354, final Predicate<Class7096> predicate) {
+    public boolean method6791(final BlockPos class354, final Predicate<BlockState> predicate) {
         return predicate.test(this.method6701(class354));
     }
     

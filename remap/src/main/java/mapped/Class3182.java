@@ -50,10 +50,10 @@ public class Class3182 extends Class3167
                 continue;
             }
         }
-        this.field15570 = Class8639.method29340(Class7739.field31150, Class7739.field31146, Class7739.field31147, Class7739.field31144, Class7739.field31142, Class7739.field31148, Class7739.field31138, Class7739.field31143, Class7739.field31140, Class7739.field31137, Class7739.field31136, Class7739.field31141, Class7739.field31145, Class7739.field31149, Class7739.field31134, Class7739.field31135, Class7739.field31139);
-        this.field15569 = Class8639.method29340(Class7739.field31028);
+        this.field15570 = Class8639.method29340(Items.field31150, Items.field31146, Items.field31147, Items.field31144, Items.field31142, Items.field31148, Items.field31138, Items.field31143, Items.field31140, Items.field31137, Items.field31136, Items.field31141, Items.field31145, Items.field31149, Items.field31134, Items.field31135, Items.field31139);
+        this.field15569 = Class8639.method29340(Items.field31028);
         if (this.field15569 == -1) {
-            this.field15569 = Class8639.method29319(Class7739.field31028);
+            this.field15569 = Class8639.method29319(Items.field31028);
             if (this.field15569 != -1) {
                 if (this.field15569 >= 36 && this.field15569 <= 44) {
                     this.field15569 %= 9;
@@ -64,7 +64,7 @@ public class Class3182 extends Class3167
             }
         }
         if (this.field15570 == -1) {
-            this.field15570 = Class8639.method29320(Class7739.field31150, Class7739.field31146, Class7739.field31147, Class7739.field31144, Class7739.field31142, Class7739.field31148, Class7739.field31138, Class7739.field31143, Class7739.field31140, Class7739.field31137, Class7739.field31136, Class7739.field31141, Class7739.field31145, Class7739.field31149, Class7739.field31134, Class7739.field31135, Class7739.field31139);
+            this.field15570 = Class8639.method29320(Items.field31150, Items.field31146, Items.field31147, Items.field31144, Items.field31142, Items.field31148, Items.field31138, Items.field31143, Items.field31140, Items.field31137, Items.field31136, Items.field31141, Items.field31145, Items.field31149, Items.field31134, Items.field31135, Items.field31139);
             if (this.field15570 != -1) {
                 if (this.field15570 >= 36 && this.field15570 <= 44) {
                     this.field15570 %= 9;
@@ -78,9 +78,9 @@ public class Class3182 extends Class3167
     }
     
     public boolean method9981(final BlockPos class354) {
-        final Class7096 method6701 = Class3182.field15514.field4683.method6701(class354);
-        final Class7096 method6702 = Class3182.field15514.field4683.method6701(class354.method1137());
-        final Class7096 method6703 = Class3182.field15514.field4683.method6701(class354.method1138(2));
+        final BlockState method6701 = Class3182.field15514.field4683.method6701(class354);
+        final BlockState method6702 = Class3182.field15514.field4683.method6701(class354.method1137());
+        final BlockState method6703 = Class3182.field15514.field4683.method6701(class354.method1138(2));
         if (method6701.method21723()) {
             if (method6702.method21706()) {
                 if (method6703.method21706()) {
@@ -236,7 +236,7 @@ public class Class3182 extends Class3167
                 final int method12822 = class5724.method12819();
                 if (this.field15572 == method12822) {
                     if (method12820 == 0) {
-                        if (method12821.method27622() != Class7739.field30754) {
+                        if (method12821.getItem() != Items.AIR) {
                             if (!this.field15575) {
                                 class5723.method16961(true);
                                 final Class5799 method12823 = Class3182.field15514.method5269();

@@ -74,8 +74,8 @@ public class Class3485 extends Class3479
                 if (this.field16416 > 0) {
                     final Vec3d method11057 = this.field16415.getMotion();
                     this.field16415.setMotion(method11057.x, 0.3, method11057.z);
-                    if (!field2391.field10067) {
-                        ((Class1849)field2391).method6911(new Class6910(Class8432.field34629, new ItemStack(Class7739.field31374)), method11055.getX() + 0.5, method11055.getY() + 0.7, method11055.getZ() + 0.5, 3, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, 0.15000000596046448);
+                    if (!field2391.isRemote) {
+                        ((Class1849)field2391).method6911(new Class6910(Class8432.field34629, new ItemStack(Items.field31374)), method11055.getX() + 0.5, method11055.getY() + 0.7, method11055.getZ() + 0.5, 3, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, (method11056.nextFloat() - 0.5) * 0.08, 0.15000000596046448);
                     }
                 }
                 if (this.field16416 % 2 == 0) {
@@ -87,7 +87,7 @@ public class Class3485 extends Class3479
                 }
                 if (this.field16416 > 60) {
                     field2391.method6690(method11055, false);
-                    if (!field2391.field10067) {
+                    if (!field2391.isRemote) {
                         for (int i = 0; i < 20; ++i) {
                             ((Class1849)field2391).method6911(Class8432.field34636, method11055.getX() + 0.5, method11055.getY(), method11055.getZ() + 0.5, 1, method11056.nextGaussian() * 0.02, method11056.nextGaussian() * 0.02, method11056.nextGaussian() * 0.02, 0.15000000596046448);
                         }

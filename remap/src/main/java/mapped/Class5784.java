@@ -62,7 +62,7 @@ public abstract class Class5784 implements Class5783
     
     @Override
     public float method17252() {
-        final float a = MathHelper.sqrt(Entity.method1680(this.field23764.getMotion())) + 1.0f;
+        final float a = MathHelper.sqrt(Entity.horizontalMag(this.field23764.getMotion())) + 1.0f;
         return 0.7f / Math.min(a, 40.0f) / a;
     }
 }

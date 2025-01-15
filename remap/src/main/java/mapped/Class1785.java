@@ -28,7 +28,7 @@ public abstract class Class1785 extends Class1776<Class9430> implements AutoClos
         return new Class1932(class1932.method7798(), this.field9902 + "/" + class1932.method7797());
     }
     
-    public Class9430 method6442(final Class6582 class6582, final Class5028 class6583) {
+    public Class9430 method6442(final Class6582 class6582, final IProfiler class6583) {
         class6583.method15295();
         class6583.method15297("stitching");
         final Class9430 method6332 = this.field9901.method6332(class6582, this.method6439().map((Function<? super Class1932, ? extends Class1932>)this::method6441), class6583, 0);
@@ -37,7 +37,7 @@ public abstract class Class1785 extends Class1776<Class9430> implements AutoClos
         return method6332;
     }
     
-    public void method6443(final Class9430 class9430, final Class6582 class9431, final Class5028 class9432) {
+    public void method6443(final Class9430 class9430, final Class6582 class9431, final IProfiler class9432) {
         class9432.method15295();
         class9432.method15297("upload");
         this.field9901.method6331(class9430);

@@ -11,9 +11,9 @@ public class Class5469 implements Class5470
     private final Class9505 field22741;
     private Class7068 field22742;
     
-    public Class5469(final Class8660 class8660) {
+    public Class5469(final WorldInfo class8660) {
         this.field22742 = new Class7068();
-        this.field22740 = class8660.method29534();
+        this.field22740 = class8660.getSeed();
         this.field22741 = class8660.method29570();
     }
     

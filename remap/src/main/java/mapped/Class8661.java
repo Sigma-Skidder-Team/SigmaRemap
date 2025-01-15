@@ -6,11 +6,11 @@ package mapped;
 
 import net.minecraft.world.dimension.DimensionType;
 
-public class Class8661 extends Class8660
+public class Class8661 extends WorldInfo
 {
-    private final Class8660 field36390;
+    private final WorldInfo field36390;
     
-    public Class8661(final Class8660 field36390) {
+    public Class8661(final WorldInfo field36390) {
         this.field36390 = field36390;
     }
     
@@ -20,8 +20,8 @@ public class Class8661 extends Class8660
     }
     
     @Override
-    public long method29534() {
-        return this.field36390.method29534();
+    public long getSeed() {
+        return this.field36390.getSeed();
     }
     
     @Override
@@ -203,7 +203,7 @@ public class Class8661 extends Class8660
     }
     
     @Override
-    public Class7858<Class394> method29601() {
+    public Class7858<MinecraftServer> method29601() {
         return this.field36390.method29601();
     }
     

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.stream.Stream;
@@ -17,7 +18,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
     long method6753();
     
     default float method6951() {
-        return Class6737.field26491[this.method6789().method20496(this.method6764().method29540())];
+        return Dimension.field26491[this.method6789().method20496(this.method6764().method29540())];
     }
     
     default float method6952(final float n) {
@@ -34,7 +35,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
     
     World method6744();
     
-    Class8660 method6764();
+    WorldInfo method6764();
     
     Class9592 method6784(final BlockPos p0);
     
@@ -42,7 +43,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
         return this.method6764().method29597();
     }
     
-    Class1906 method6762();
+    AbstractChunkProvider method6762();
     
     default boolean method6814(final int n, final int n2) {
         return this.method6762().method7401(n, n2);
@@ -64,11 +65,11 @@ public interface Class1851 extends Class1874, Class1852, Class1875
         this.method6839(null, n, class354, n2);
     }
     
-    default Stream<Class7702> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
+    default Stream<VoxelShape> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
         return super.method6956(class399, class400, set);
     }
     
-    default boolean method6957(final Entity class399, final Class7702 class400) {
+    default boolean method6957(final Entity class399, final VoxelShape class400) {
         return super.method6957(class399, class400);
     }
     

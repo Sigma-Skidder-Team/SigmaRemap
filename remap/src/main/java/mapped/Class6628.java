@@ -27,7 +27,7 @@ public class Class6628 extends Class6601
     public ItemStack method20060(final int n) {
         final ItemStack class8321 = this.field26212.method22435((class8325, p2) -> {
             if (!Class3417.method10865(this.field26213)) {
-                if (this.field26213.field16148.method2157(1).method27622() == Class7739.field30967) {
+                if (this.field26213.field16148.method2157(1).getItem() == Items.field30967) {
                     Class4094.method12337(class8325, this.field26213.field16148.method2157(0));
                     final ItemStack class8326;
                     if (class8326 != null) {
@@ -51,7 +51,7 @@ public class Class6628 extends Class6601
     
     @Override
     public ItemStack method20047(final Class512 class512, final ItemStack class513) {
-        class513.method27622().method11723(class513, class512.world, class512);
+        class513.getItem().method11723(class513, class512.world, class512);
         this.field26212.method22437((class514, class515) -> {
             class514.method6754();
             final long n;

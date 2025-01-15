@@ -17,7 +17,7 @@ import net.minecraft.util.math.Vec3d;
 import java.util.UUID;
 import java.util.List;
 
-public class Class492 extends Class436 implements Class439
+public class Class492 extends TileEntity implements Class439
 {
     private static final Class3833[] field2826;
     public int field2827;
@@ -75,7 +75,7 @@ public class Class492 extends Class436 implements Class439
         final long method6754 = this.field2656.method6754();
         if (method6754 % 40L == 0L) {
             this.method2496(this.method2487());
-            if (!this.field2656.field10067) {
+            if (!this.field2656.isRemote) {
                 if (this.method2494()) {
                     this.method2488();
                     this.method2489();
@@ -93,7 +93,7 @@ public class Class492 extends Class436 implements Class439
                 this.method2499(Class8520.field35092);
             }
         }
-        if (this.field2656.field10067) {
+        if (this.field2656.isRemote) {
             this.method2490();
             this.method2493();
             if (this.method2494()) {
@@ -153,7 +153,7 @@ public class Class492 extends Class436 implements Class439
                         }
                     }
                     final BlockPos method1134 = this.field2657.add(l, a, a2);
-                    final Class7096 method1135 = this.field2656.method6701(method1134);
+                    final BlockState method1135 = this.field2656.method6701(method1134);
                     final Class3833[] field2826 = Class492.field2826;
                     for (int length = field2826.length, n = 0; n < length; ++n) {
                         if (method1135.method21696() == field2826[n]) {
@@ -201,7 +201,7 @@ public class Class492 extends Class436 implements Class439
             else {
                 final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>) LivingEntity.class, this.method2491(), class511 -> class511 instanceof Class762 && class511.method1709());
                 if (!method6739.isEmpty()) {
-                    this.field2832 = (LivingEntity)method6739.get(this.field2656.field10062.nextInt(method6739.size()));
+                    this.field2832 = (LivingEntity)method6739.get(this.field2656.rand.nextInt(method6739.size()));
                 }
             }
         }
@@ -213,7 +213,7 @@ public class Class492 extends Class436 implements Class439
             this.field2832.attackEntityFrom(DamageSource.field32576, 4.0f);
         }
         if (field2832 != this.field2832) {
-            final Class7096 method6740 = this.method2194();
+            final BlockState method6740 = this.method2194();
             this.field2656.method6693(this.field2657, method6740, method6740, 2);
         }
     }
@@ -246,7 +246,7 @@ public class Class492 extends Class436 implements Class439
     }
     
     private void method2493() {
-        final Random field10062 = this.field2656.field10062;
+        final Random field10062 = this.field2656.rand;
         final double n = MathHelper.sin((this.field2827 + 35) * 0.1f) / 2.0f + 0.5f;
         final Vec3d class5487 = new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 1.5 + (n * n + n) * 0.30000001192092896, this.field2657.getZ() + 0.5);
         for (final BlockPos class5488 : this.field2831) {

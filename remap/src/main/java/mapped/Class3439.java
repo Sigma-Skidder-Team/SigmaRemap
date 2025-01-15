@@ -92,7 +92,7 @@ public class Class3439 extends Class3418
                 }
             }
             if (!method20055.method27620()) {
-                if (method20055.method27622() instanceof Class4056) {
+                if (method20055.getItem() instanceof Class4056) {
                     final Class51 method20056 = method20053.method27659("BlockEntityTag");
                     boolean b = false;
                     Label_0228: {
@@ -107,7 +107,7 @@ public class Class3439 extends Class3418
                         b = false;
                     }
                     if (!b) {
-                        this.field16239.method19833(((Class4056)method20055.method27622()).method12260().ordinal());
+                        this.field16239.method19833(((Class4056)method20055.getItem()).method12260().ordinal());
                     }
                     else {
                         this.field16239.method19833(0);
@@ -136,9 +136,9 @@ public class Class3439 extends Class3418
                         if (n != this.field16242.field26174) {
                             if (n != this.field16241.field26174) {
                                 if (n != this.field16243.field26174) {
-                                    if (!(method20053.method27622() instanceof Class4044)) {
-                                        if (!(method20053.method27622() instanceof Class3829)) {
-                                            if (!(method20053.method27622() instanceof Class4056)) {
+                                    if (!(method20053.getItem() instanceof Class4044)) {
+                                        if (!(method20053.getItem() instanceof Class3829)) {
+                                            if (!(method20053.getItem() instanceof Class4056)) {
                                                 if (n >= 4 && n < 31) {
                                                     if (this.method10888(method20053, 31, 40, false)) {
                                                         break Label_0090;
@@ -223,7 +223,7 @@ public class Class3439 extends Class3418
                     class8321 = method20053.method27641();
                     class8321.method27691(1);
                     final Class230 class8322 = Class230.values()[this.field16239.method19832()];
-                    final Class181 method20055 = ((Class3829)method20054.method27622()).method11767();
+                    final Class181 method20055 = ((Class3829)method20054.getItem()).method11767();
                     final Class51 method20056 = class8321.method27659("BlockEntityTag");
                     Class52 method20057;
                     if (!method20056.method316("Patterns", 9)) {

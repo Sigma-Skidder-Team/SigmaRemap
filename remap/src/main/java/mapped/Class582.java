@@ -12,10 +12,10 @@ import java.util.Iterator;
 
 public abstract class Class582 extends Class581
 {
-    private Iterator<Class3820> field3479;
-    private Set<Class3820> field3480;
+    private Iterator<Item> field3479;
+    private Set<Item> field3480;
     private Class6601 field3481;
-    private Class3820 field3482;
+    private Item field3482;
     private float field3483;
     
     @Override
@@ -94,7 +94,7 @@ public abstract class Class582 extends Class581
         }
     }
     
-    public abstract Set<Class3820> method3453();
+    public abstract Set<Item> method3453();
     
     @Override
     public void method3431(final int n, final int n2, final boolean b, final float n3) {
@@ -113,7 +113,7 @@ public abstract class Class582 extends Class581
         }
     }
     
-    private Class3820 method3454() {
+    private Item method3454() {
         if (this.field3482 == null || this.field3483 > 30.0f) {
             this.field3483 = 0.0f;
             if (this.field3479 == null || !this.field3479.hasNext()) {

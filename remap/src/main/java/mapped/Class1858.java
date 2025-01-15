@@ -18,7 +18,7 @@ public class Class1858 implements Class1856
     public final int field10132;
     public final int field10133;
     public final Class1862[][] field10134;
-    public final Class7096[] field10135;
+    public final BlockState[] field10135;
     public final Class7099[] field10136;
     public final World field10137;
     
@@ -79,7 +79,7 @@ public class Class1858 implements Class1856
     }
     
     @Override
-    public Class7096 method6701(final BlockPos class354) {
+    public BlockState method6701(final BlockPos class354) {
         return this.field10134[(class354.getX() >> 4) - this.field10128][(class354.getZ() >> 4) - this.field10129].method6701(class354);
     }
     
@@ -95,12 +95,12 @@ public class Class1858 implements Class1856
     
     @Nullable
     @Override
-    public Class436 method6727(final BlockPos class354) {
+    public TileEntity method6727(final BlockPos class354) {
         return this.method7000(class354, Class2079.field12020);
     }
     
     @Nullable
-    public Class436 method7000(final BlockPos class354, final Class2079 class355) {
+    public TileEntity method7000(final BlockPos class354, final Class2079 class355) {
         return this.field10134[(class354.getX() >> 4) - this.field10128][(class354.getZ() >> 4) - this.field10129].method7000(class354, class355);
     }
     

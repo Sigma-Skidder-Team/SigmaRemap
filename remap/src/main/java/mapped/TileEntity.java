@@ -10,17 +10,17 @@ import org.apache.logging.log4j.util.Supplier;
 import javax.annotation.Nullable;
 import org.apache.logging.log4j.Logger;
 
-public abstract class Class436
+public abstract class TileEntity
 {
     private static final Logger field2654;
     private final Class5412<?> field2655;
     public World field2656;
     public BlockPos field2657;
     public boolean field2658;
-    private Class7096 field2659;
+    private BlockState field2659;
     private boolean field2660;
     
-    public Class436(final Class5412<?> field2655) {
+    public TileEntity(final Class5412<?> field2655) {
         this.field2657 = BlockPos.ZERO;
         this.field2655 = field2655;
     }
@@ -60,13 +60,13 @@ public abstract class Class436
     }
     
     @Nullable
-    public static Class436 method2190(final Class51 class51) {
+    public static TileEntity method2190(final Class51 class51) {
         return Class90.field224.method506(new Class1932(class51.method323("id"))).map(class52 -> {
             try {
                 return class52.method16522();
             }
             catch (final Throwable t) {
-                Class436.field2654.error("Failed to create block entity {}", (Object)s, (Object)t);
+                TileEntity.field2654.error("Failed to create block entity {}", (Object)s, (Object)t);
                 return null;
             }
         }).map(class54 -> {
@@ -75,11 +75,11 @@ public abstract class Class436
                 return class54;
             }
             catch (final Throwable t2) {
-                Class436.field2654.error("Failed to load data for block entity {}", (Object)s2, (Object)t2);
+                TileEntity.field2654.error("Failed to load data for block entity {}", (Object)s2, (Object)t2);
                 return null;
             }
         }).orElseGet(() -> {
-            Class436.field2654.warn("Skipping BlockEntity with id {}", (Object)s3);
+            TileEntity.field2654.warn("Skipping BlockEntity with id {}", (Object)s3);
             return null;
         });
     }
@@ -109,7 +109,7 @@ public abstract class Class436
         return this.field2657;
     }
     
-    public Class7096 method2194() {
+    public BlockState method2194() {
         if (this.field2659 == null) {
             this.field2659 = this.field2656.method6701(this.field2657);
         }
@@ -174,7 +174,7 @@ public abstract class Class436
     public void method2207() {
         if (!this.field2660) {
             this.field2660 = true;
-            Class436.field2654.warn("Block entity invalid: {} @ {}", new Supplier[] { () -> Class90.field224.method503(this.method2206()), this::method2193 });
+            TileEntity.field2654.warn("Block entity invalid: {} @ {}", new Supplier[] { () -> Class90.field224.method503(this.method2206()), this::method2193 });
         }
     }
     

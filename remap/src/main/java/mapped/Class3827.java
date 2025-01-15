@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.Iterator;
 
-public class Class3827 extends Class3820
+public class Class3827 extends Item
 {
     private static String[] field17378;
     
@@ -23,10 +23,10 @@ public class Class3827 extends Class3820
         final Class512 method21652 = class7075.method21652();
         final World method21653 = class7075.method21654();
         final BlockPos method21654 = class7075.method21639();
-        final Class7096 method21655 = method21653.method6701(method21654);
+        final BlockState method21655 = method21653.method6701(method21654);
         if (method11759(method21655)) {
             method21653.method6705(method21652, method21654, Class8520.field35201, Class286.field1582, 1.0f, Class3827.field17363.nextFloat() * 0.4f + 0.8f);
-            method21653.method6688(method21654, ((Class7097<Object, Class7096>)method21655).method21773((Class7111<Comparable>)Class8970.field37736, true), 11);
+            method21653.method6688(method21654, ((Class7097<Object, BlockState>)method21655).method21773((Class7111<Comparable>)Class8970.field37736, true), 11);
             if (method21652 != null) {
                 class7075.method21651().method27636(1, (Class513)method21652, class7077 -> class7077.method2795(class7076.method21653()));
             }
@@ -46,7 +46,7 @@ public class Class3827 extends Class3820
         return Class2201.field13400;
     }
     
-    public static boolean method11759(final Class7096 class7096) {
+    public static boolean method11759(final BlockState class7096) {
         if (class7096.method21696() == Class7521.field29818) {
             if (!class7096.method21772((Class7111<Boolean>)Class8970.field37747)) {
                 if (!class7096.method21772((Class7111<Boolean>)Class8970.field37736)) {
@@ -57,8 +57,8 @@ public class Class3827 extends Class3820
         return false;
     }
     
-    public static boolean method11760(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098) {
-        final Class7096 method12184 = ((Class4011)Class7521.field29289).method12184(class7097, class7098);
+    public static boolean method11760(final BlockState class7096, final Class1851 class7097, final BlockPos class7098) {
+        final BlockState method12184 = ((Class4011)Class7521.field29289).method12184(class7097, class7098);
         boolean b = false;
         final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
         while (iterator.hasNext()) {

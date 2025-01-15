@@ -20,7 +20,7 @@ public interface Class3662<C extends Class446>
     default Class2265<ItemStack> method11293(final C c) {
         final Class2265<ItemStack> method8507 = Class2265.method8507(c.method2239(), ItemStack.field34174);
         for (int i = 0; i < method8507.size(); ++i) {
-            final Class3820 method8508 = c.method2157(i).method27622();
+            final Item method8508 = c.method2157(i).getItem();
             if (method8508.method11721()) {
                 method8507.set(i, new ItemStack(method8508.method11720()));
             }

@@ -98,7 +98,7 @@ public class Class3279 extends Class3167
                 if (Class3279.field15514.field4700 instanceof Class522) {
                     final Class522 class5723 = (Class522)Class3279.field15514.field4700;
                     method10332.field25240 = class5723.method2993().method10878(0).method20053();
-                    method10332.field25241 = new ItemStack(class5723.method2993().method10878(1).method20053().method27622());
+                    method10332.field25241 = new ItemStack(class5723.method2993().method10878(1).method20053().getItem());
                     method10332.field25241.field34176 = class5723.method2993().method10878(1).method20053().field34176;
                     method10332.field25242 = class5723.method2993().method10878(2).method20053();
                 }
@@ -125,15 +125,15 @@ public class Class3279 extends Class3167
                 return;
             }
             if (class5725.method12820() == 0) {
-                method10332.field25240 = new ItemStack(class5725.method12821().method27622());
+                method10332.field25240 = new ItemStack(class5725.method12821().getItem());
                 method10332.field25240.field34176 = class5725.method12821().field34176;
             }
             else if (class5725.method12820() == 1) {
-                method10332.field25241 = new ItemStack(class5725.method12821().method27622());
+                method10332.field25241 = new ItemStack(class5725.method12821().getItem());
                 method10332.field25241.field34176 = class5725.method12821().field34176;
             }
             else if (class5725.method12820() == 2) {
-                method10332.field25242 = new ItemStack(class5725.method12821().method27622());
+                method10332.field25242 = new ItemStack(class5725.method12821().getItem());
                 method10332.field25242.field34176 = class5725.method12821().field34176;
             }
         }

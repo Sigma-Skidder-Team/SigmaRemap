@@ -14,7 +14,7 @@ import java.util.List;
 public class Class7652
 {
     private static final List<Class7388<Class8061>> field30383;
-    private static final List<Class7388<Class3820>> field30384;
+    private static final List<Class7388<Item>> field30384;
     private static final List<Class120> field30385;
     private static final Predicate<ItemStack> field30386;
     
@@ -54,7 +54,7 @@ public class Class7652
     }
     
     public static boolean method24245(final ItemStack class8321, final ItemStack class8322) {
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         for (int i = 0; i < Class7652.field30384.size(); ++i) {
             final Class7388 class8323 = Class7652.field30384.get(i);
             if (Class7388.method22691(class8323) == method27622 && Class7388.method22689(class8323).test(class8322)) {
@@ -78,7 +78,7 @@ public class Class7652
     public static ItemStack method24247(final ItemStack class8321, final ItemStack class8322) {
         if (!class8322.method27620()) {
             final Class8061 method16474 = Class5333.method16474(class8322);
-            final Class3820 method16475 = class8322.method27622();
+            final Item method16475 = class8322.getItem();
             for (int i = 0; i < Class7652.field30384.size(); ++i) {
                 final Class7388 class8323 = Class7652.field30384.get(i);
                 if (Class7388.method22691(class8323) == method16475 && Class7388.method22689(class8323).test(class8321)) {
@@ -96,80 +96,80 @@ public class Class7652
     }
     
     public static void method24248() {
-        method24250(Class7739.field31441);
-        method24250(Class7739.field31579);
-        method24250(Class7739.field31582);
-        method24249(Class7739.field31441, Class7739.field31308, Class7739.field31579);
-        method24249(Class7739.field31579, Class7739.field31578, Class7739.field31582);
-        method24251(Class8644.field36251, Class7739.field31450, Class8644.field36252);
-        method24251(Class8644.field36251, Class7739.field31438, Class8644.field36252);
-        method24251(Class8644.field36251, Class7739.field31544, Class8644.field36252);
-        method24251(Class8644.field36251, Class7739.field31445, Class8644.field36252);
-        method24251(Class8644.field36251, Class7739.field31443, Class8644.field36252);
-        method24251(Class8644.field36251, Class7739.field31406, Class8644.field36252);
-        method24251(Class8644.field36251, Class7739.field31446, Class8644.field36252);
-        method24251(Class8644.field36251, Class7739.field31378, Class8644.field36253);
-        method24251(Class8644.field36251, Class7739.field31354, Class8644.field36252);
-        method24251(Class8644.field36251, Class7739.field31440, Class8644.field36254);
-        method24251(Class8644.field36254, Class7739.field31522, Class8644.field36255);
-        method24251(Class8644.field36255, Class7739.field31354, Class8644.field36256);
-        method24251(Class8644.field36255, Class7739.field31444, Class8644.field36257);
-        method24251(Class8644.field36256, Class7739.field31444, Class8644.field36258);
-        method24251(Class8644.field36257, Class7739.field31354, Class8644.field36258);
-        method24251(Class8644.field36254, Class7739.field31446, Class8644.field36262);
-        method24251(Class8644.field36262, Class7739.field31354, Class8644.field36263);
-        method24251(Class8644.field36254, Class7739.field31544, Class8644.field36259);
-        method24251(Class8644.field36259, Class7739.field31354, Class8644.field36260);
-        method24251(Class8644.field36259, Class7739.field31378, Class8644.field36261);
-        method24251(Class8644.field36259, Class7739.field31444, Class8644.field36267);
-        method24251(Class8644.field36260, Class7739.field31444, Class8644.field36268);
-        method24251(Class8644.field36267, Class7739.field31354, Class8644.field36268);
-        method24251(Class8644.field36267, Class7739.field31378, Class8644.field36269);
-        method24251(Class8644.field36254, Class7739.field31272, Class8644.field36270);
-        method24251(Class8644.field36270, Class7739.field31354, Class8644.field36271);
-        method24251(Class8644.field36270, Class7739.field31378, Class8644.field36272);
-        method24251(Class8644.field36264, Class7739.field31444, Class8644.field36267);
-        method24251(Class8644.field36265, Class7739.field31444, Class8644.field36268);
-        method24251(Class8644.field36254, Class7739.field31406, Class8644.field36264);
-        method24251(Class8644.field36264, Class7739.field31354, Class8644.field36265);
-        method24251(Class8644.field36264, Class7739.field31378, Class8644.field36266);
-        method24251(Class8644.field36254, Class7739.field31382, Class8644.field36273);
-        method24251(Class8644.field36273, Class7739.field31354, Class8644.field36274);
-        method24251(Class8644.field36254, Class7739.field31450, Class8644.field36275);
-        method24251(Class8644.field36275, Class7739.field31378, Class8644.field36276);
-        method24251(Class8644.field36275, Class7739.field31444, Class8644.field36277);
-        method24251(Class8644.field36276, Class7739.field31444, Class8644.field36278);
-        method24251(Class8644.field36277, Class7739.field31378, Class8644.field36278);
-        method24251(Class8644.field36279, Class7739.field31444, Class8644.field36277);
-        method24251(Class8644.field36280, Class7739.field31444, Class8644.field36277);
-        method24251(Class8644.field36281, Class7739.field31444, Class8644.field36278);
-        method24251(Class8644.field36254, Class7739.field31443, Class8644.field36279);
-        method24251(Class8644.field36279, Class7739.field31354, Class8644.field36280);
-        method24251(Class8644.field36279, Class7739.field31378, Class8644.field36281);
-        method24251(Class8644.field36254, Class7739.field31438, Class8644.field36282);
-        method24251(Class8644.field36282, Class7739.field31354, Class8644.field36283);
-        method24251(Class8644.field36282, Class7739.field31378, Class8644.field36284);
-        method24251(Class8644.field36254, Class7739.field31445, Class8644.field36285);
-        method24251(Class8644.field36285, Class7739.field31354, Class8644.field36286);
-        method24251(Class8644.field36285, Class7739.field31378, Class8644.field36287);
-        method24251(Class8644.field36251, Class7739.field31444, Class8644.field36288);
-        method24251(Class8644.field36288, Class7739.field31354, Class8644.field36289);
-        method24251(Class8644.field36254, Class7739.field31608, Class8644.field36291);
-        method24251(Class8644.field36291, Class7739.field31354, Class8644.field36292);
+        method24250(Items.field31441);
+        method24250(Items.field31579);
+        method24250(Items.field31582);
+        method24249(Items.field31441, Items.field31308, Items.field31579);
+        method24249(Items.field31579, Items.field31578, Items.field31582);
+        method24251(Class8644.field36251, Items.field31450, Class8644.field36252);
+        method24251(Class8644.field36251, Items.field31438, Class8644.field36252);
+        method24251(Class8644.field36251, Items.field31544, Class8644.field36252);
+        method24251(Class8644.field36251, Items.field31445, Class8644.field36252);
+        method24251(Class8644.field36251, Items.field31443, Class8644.field36252);
+        method24251(Class8644.field36251, Items.field31406, Class8644.field36252);
+        method24251(Class8644.field36251, Items.field31446, Class8644.field36252);
+        method24251(Class8644.field36251, Items.field31378, Class8644.field36253);
+        method24251(Class8644.field36251, Items.field31354, Class8644.field36252);
+        method24251(Class8644.field36251, Items.field31440, Class8644.field36254);
+        method24251(Class8644.field36254, Items.field31522, Class8644.field36255);
+        method24251(Class8644.field36255, Items.field31354, Class8644.field36256);
+        method24251(Class8644.field36255, Items.field31444, Class8644.field36257);
+        method24251(Class8644.field36256, Items.field31444, Class8644.field36258);
+        method24251(Class8644.field36257, Items.field31354, Class8644.field36258);
+        method24251(Class8644.field36254, Items.field31446, Class8644.field36262);
+        method24251(Class8644.field36262, Items.field31354, Class8644.field36263);
+        method24251(Class8644.field36254, Items.field31544, Class8644.field36259);
+        method24251(Class8644.field36259, Items.field31354, Class8644.field36260);
+        method24251(Class8644.field36259, Items.field31378, Class8644.field36261);
+        method24251(Class8644.field36259, Items.field31444, Class8644.field36267);
+        method24251(Class8644.field36260, Items.field31444, Class8644.field36268);
+        method24251(Class8644.field36267, Items.field31354, Class8644.field36268);
+        method24251(Class8644.field36267, Items.field31378, Class8644.field36269);
+        method24251(Class8644.field36254, Items.field31272, Class8644.field36270);
+        method24251(Class8644.field36270, Items.field31354, Class8644.field36271);
+        method24251(Class8644.field36270, Items.field31378, Class8644.field36272);
+        method24251(Class8644.field36264, Items.field31444, Class8644.field36267);
+        method24251(Class8644.field36265, Items.field31444, Class8644.field36268);
+        method24251(Class8644.field36254, Items.field31406, Class8644.field36264);
+        method24251(Class8644.field36264, Items.field31354, Class8644.field36265);
+        method24251(Class8644.field36264, Items.field31378, Class8644.field36266);
+        method24251(Class8644.field36254, Items.field31382, Class8644.field36273);
+        method24251(Class8644.field36273, Items.field31354, Class8644.field36274);
+        method24251(Class8644.field36254, Items.field31450, Class8644.field36275);
+        method24251(Class8644.field36275, Items.field31378, Class8644.field36276);
+        method24251(Class8644.field36275, Items.field31444, Class8644.field36277);
+        method24251(Class8644.field36276, Items.field31444, Class8644.field36278);
+        method24251(Class8644.field36277, Items.field31378, Class8644.field36278);
+        method24251(Class8644.field36279, Items.field31444, Class8644.field36277);
+        method24251(Class8644.field36280, Items.field31444, Class8644.field36277);
+        method24251(Class8644.field36281, Items.field31444, Class8644.field36278);
+        method24251(Class8644.field36254, Items.field31443, Class8644.field36279);
+        method24251(Class8644.field36279, Items.field31354, Class8644.field36280);
+        method24251(Class8644.field36279, Items.field31378, Class8644.field36281);
+        method24251(Class8644.field36254, Items.field31438, Class8644.field36282);
+        method24251(Class8644.field36282, Items.field31354, Class8644.field36283);
+        method24251(Class8644.field36282, Items.field31378, Class8644.field36284);
+        method24251(Class8644.field36254, Items.field31445, Class8644.field36285);
+        method24251(Class8644.field36285, Items.field31354, Class8644.field36286);
+        method24251(Class8644.field36285, Items.field31378, Class8644.field36287);
+        method24251(Class8644.field36251, Items.field31444, Class8644.field36288);
+        method24251(Class8644.field36288, Items.field31354, Class8644.field36289);
+        method24251(Class8644.field36254, Items.field31608, Class8644.field36291);
+        method24251(Class8644.field36291, Items.field31354, Class8644.field36292);
     }
     
-    private static void method24249(final Class3820 class3820, final Class3820 class3821, final Class3820 class3822) {
+    private static void method24249(final Item class3820, final Item class3821, final Item class3822) {
         if (!(class3820 instanceof Class4089)) {
             throw new IllegalArgumentException("Expected a potion, got: " + Class90.field211.method503(class3820));
         }
         if (class3822 instanceof Class4089) {
-            Class7652.field30384.add(new Class7388<Class3820>(class3820, Class120.method618(class3821), class3822));
+            Class7652.field30384.add(new Class7388<Item>(class3820, Class120.method618(class3821), class3822));
             return;
         }
         throw new IllegalArgumentException("Expected a potion, got: " + Class90.field211.method503(class3822));
     }
     
-    private static void method24250(final Class3820 class3820) {
+    private static void method24250(final Item class3820) {
         if (class3820 instanceof Class4089) {
             Class7652.field30385.add(Class120.method618(class3820));
             return;
@@ -177,7 +177,7 @@ public class Class7652
         throw new IllegalArgumentException("Expected a potion, got: " + Class90.field211.method503(class3820));
     }
     
-    private static void method24251(final Class8061 class8061, final Class3820 class8062, final Class8061 class8063) {
+    private static void method24251(final Class8061 class8061, final Item class8062, final Class8061 class8063) {
         Class7652.field30383.add(new Class7388<Class8061>(class8061, Class120.method618(class8062), class8063));
     }
     

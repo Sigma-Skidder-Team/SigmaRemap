@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -13,7 +15,7 @@ public class Class4030 extends Class3833
 {
     private static String[] field18123;
     public static final Class7112 field18124;
-    public static final Class7702[] field18125;
+    public static final VoxelShape[] field18125;
     
     public Class4030(final Class9288 class9288) {
         super(class9288);
@@ -39,12 +41,12 @@ public class Class4030 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4030.field18125[class7096.method21772((Class7111<Integer>)Class4030.field18124)];
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4030.field18125[class7096.method21772((Class7111<Integer>)Class4030.field18124) - 1];
     }
     
@@ -83,7 +85,7 @@ public class Class4030 extends Class3833
     @Override
     public boolean method11798(final Class7096 class7096, final Class7074 class7097) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class4030.field18124);
-        if (class7097.method21651().method27622() == this.method11704() && intValue < 8) {
+        if (class7097.method21651().getItem() == this.method11704() && intValue < 8) {
             return !class7097.method21641() || class7097.method21648() == Direction.UP;
         }
         return intValue == 1;
@@ -106,6 +108,6 @@ public class Class4030 extends Class3833
     
     static {
         field18124 = Class8970.field37781;
-        field18125 = new Class7702[] { Class7698.method24486(), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 10.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 12.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 14.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 16.0, 16.0) };
+        field18125 = new VoxelShape[] { Class7698.method24486(), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 10.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 12.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 14.0, 16.0), Class3833.method11778(0.0, 0.0, 0.0, 16.0, 16.0, 16.0) };
     }
 }

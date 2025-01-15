@@ -95,7 +95,7 @@ public abstract class Class428 extends Entity
     @Nullable
     @Override
     public AxisAlignedBB method1771(final Entity class399) {
-        return class399.method1750() ? class399.method1886() : null;
+        return class399.method1750() ? class399.getBoundingBox() : null;
     }
     
     @Override
@@ -110,7 +110,7 @@ public abstract class Class428 extends Entity
     
     @Override
     public boolean attackEntityFrom(final DamageSource class7929, final float n) {
-        if (this.world.field10067 || this.removed) {
+        if (this.world.isRemote || this.removed) {
             return true;
         }
         if (!this.method1849(class7929)) {
@@ -136,7 +136,7 @@ public abstract class Class428 extends Entity
     public void method2123(final DamageSource class7929) {
         this.method1652();
         if (this.world.method6765().method31216(Class8878.field37321)) {
-            final ItemStack class7930 = new ItemStack(Class7739.field31352);
+            final ItemStack class7930 = new ItemStack(Items.field31352);
             if (this.hasCustomName()) {
                 class7930.method27665(this.getCustomName());
             }
@@ -177,7 +177,7 @@ public abstract class Class428 extends Entity
             this.method1668();
         }
         this.method1795();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!this.method1698()) {
                 this.method1936(this.getMotion().add(0.0, -0.04, 0.0));
             }
@@ -188,7 +188,7 @@ public abstract class Class428 extends Entity
                 --method35645;
             }
             final BlockPos class354 = new BlockPos(method35644, method35645, method35646);
-            final Class7096 method35647 = this.world.method6701(class354);
+            final BlockState method35647 = this.world.method6701(class354);
             if (!method35647.method21755(Class7188.field27906)) {
                 this.method2127();
             }
@@ -214,8 +214,8 @@ public abstract class Class428 extends Entity
                 this.field2626 = !this.field2626;
             }
             this.method1655(this.rotationYaw, this.rotationPitch);
-            if (this.method2139() == Class2080.field12024 && Entity.method1680(this.getMotion()) > 0.01) {
-                final List<Entity> method35648 = this.world.method6737(this, this.method1886().method18495(0.20000000298023224, 0.0, 0.20000000298023224), Class9170.method33474(this));
+            if (this.method2139() == Class2080.field12024 && Entity.horizontalMag(this.getMotion()) > 0.01) {
+                final List<Entity> method35648 = this.world.method6737(this, this.getBoundingBox().method18495(0.20000000298023224, 0.0, 0.20000000298023224), Class9170.method33474(this));
                 if (!method35648.isEmpty()) {
                     for (int i = 0; i < method35648.size(); ++i) {
                         final Entity class355 = method35648.get(i);
@@ -236,7 +236,7 @@ public abstract class Class428 extends Entity
                 }
             }
             else {
-                for (final Entity class356 : this.world.method7127(this, this.method1886().method18495(0.20000000298023224, 0.0, 0.20000000298023224))) {
+                for (final Entity class356 : this.world.method7127(this, this.getBoundingBox().method18495(0.20000000298023224, 0.0, 0.20000000298023224))) {
                     if (this.method1909(class356)) {
                         continue;
                     }
@@ -277,7 +277,7 @@ public abstract class Class428 extends Entity
     public void method2127() {
         final double method2125 = this.method2125();
         final Vec3d method2126 = this.getMotion();
-        this.setMotion(MathHelper.method35654(method2126.x, -method2125, method2125), method2126.y, MathHelper.method35654(method2126.z, -method2125, method2125));
+        this.setMotion(MathHelper.clamp(method2126.x, -method2125, method2125), method2126.y, MathHelper.clamp(method2126.z, -method2125, method2125));
         if (this.onGround) {
             this.method1936(this.getMotion().scale(0.5));
         }
@@ -287,7 +287,7 @@ public abstract class Class428 extends Entity
         }
     }
     
-    public void method2128(final BlockPos class354, final Class7096 class355) {
+    public void method2128(final BlockPos class354, final BlockState class355) {
         this.fallDistance = 0.0f;
         final double method1938 = this.getPosX();
         final double method1939 = this.getPosY();
@@ -336,20 +336,20 @@ public abstract class Class428 extends Entity
             n3 = -n3;
             n4 = -n4;
         }
-        final double min = Math.min(2.0, Math.sqrt(Entity.method1680(method1943)));
+        final double min = Math.min(2.0, Math.sqrt(Entity.horizontalMag(method1943)));
         this.method1936(new Vec3d(min * n3 / sqrt, method1943.y, min * n4 / sqrt));
         final Entity class360 = this.method1908().isEmpty() ? null : this.method1908().get(0);
         if (class360 instanceof Class512) {
             final Vec3d method1945 = class360.getMotion();
-            final double method1946 = Entity.method1680(method1945);
-            final double method1947 = Entity.method1680(this.getMotion());
+            final double method1946 = Entity.horizontalMag(method1945);
+            final double method1947 = Entity.horizontalMag(this.getMotion());
             if (method1946 > 1.0E-4 && method1947 < 0.01) {
                 this.method1936(this.getMotion().add(method1945.x * 0.1, 0.0, method1945.z * 0.1));
                 n2 = 0;
             }
         }
         if (n2 != 0) {
-            if (Math.sqrt(Entity.method1680(this.getMotion())) < 0.03) {
+            if (Math.sqrt(Entity.horizontalMag(this.getMotion())) < 0.03) {
                 this.method1936(Vec3d.ZERO);
             }
             else {
@@ -376,7 +376,7 @@ public abstract class Class428 extends Entity
         final double n12 = this.isBeingRidden() ? 0.75 : 1.0;
         final double method1948 = this.method2125();
         final Vec3d method1949 = this.getMotion();
-        this.method1671(Class2160.field12826, new Vec3d(MathHelper.method35654(n12 * method1949.x, -method1948, method1948), 0.0, MathHelper.method35654(n12 * method1949.z, -method1948, method1948)));
+        this.method1671(Class2160.field12826, new Vec3d(MathHelper.clamp(n12 * method1949.x, -method1948, method1948), 0.0, MathHelper.clamp(n12 * method1949.z, -method1948, method1948)));
         if (class358.getY() != 0 && MathHelper.floor(this.getPosX()) - class354.getX() == class358.getX() && MathHelper.floor(this.getPosZ()) - class354.getZ() == class358.getZ()) {
             this.setPosition(this.getPosX(), this.getPosY() + class358.getY(), this.getPosZ());
         }
@@ -388,7 +388,7 @@ public abstract class Class428 extends Entity
         if (method1950 != null && method1941 != null) {
             final double n13 = (method1941.y - method1950.y) * 0.05;
             final Vec3d method1951 = this.getMotion();
-            final double sqrt2 = Math.sqrt(Entity.method1680(method1951));
+            final double sqrt2 = Math.sqrt(Entity.horizontalMag(method1951));
             if (sqrt2 > 0.0) {
                 this.method1936(method1951.mul((sqrt2 + n13) / sqrt2, 1.0, (sqrt2 + n13) / sqrt2));
             }
@@ -398,12 +398,12 @@ public abstract class Class428 extends Entity
         final int method1953 = MathHelper.floor(this.getPosZ());
         if (method1952 != class354.getX() || method1953 != class354.getZ()) {
             final Vec3d method1954 = this.getMotion();
-            final double sqrt3 = Math.sqrt(Entity.method1680(method1954));
+            final double sqrt3 = Math.sqrt(Entity.horizontalMag(method1954));
             this.setMotion(sqrt3 * (method1952 - class354.getX()), method1954.y, sqrt3 * (method1953 - class354.getZ()));
         }
         if (booleanValue) {
             final Vec3d method1955 = this.getMotion();
-            final double sqrt4 = Math.sqrt(Entity.method1680(method1955));
+            final double sqrt4 = Math.sqrt(Entity.horizontalMag(method1955));
             if (sqrt4 > 0.01) {
                 this.method1936(method1955.add(method1955.x / sqrt4 * 0.06, 0.0, method1955.z / sqrt4 * 0.06));
             }
@@ -452,7 +452,7 @@ public abstract class Class428 extends Entity
         if (this.world.method6701(new BlockPos(method35644, method35645 - 1, method35646)).method21755(Class7188.field27906)) {
             --method35645;
         }
-        final Class7096 method35647 = this.world.method6701(new BlockPos(method35644, method35645, method35646));
+        final BlockState method35647 = this.world.method6701(new BlockPos(method35644, method35645, method35646));
         if (!method35647.method21755(Class7188.field27906)) {
             return null;
         }
@@ -497,7 +497,7 @@ public abstract class Class428 extends Entity
         if (this.world.method6701(new BlockPos(method35644, method35645 - 1, method35646)).method21755(Class7188.field27906)) {
             --method35645;
         }
-        final Class7096 method35647 = this.world.method6701(new BlockPos(method35644, method35645, method35646));
+        final BlockState method35647 = this.world.method6701(new BlockPos(method35644, method35645, method35646));
         if (!method35647.method21755(Class7188.field27906)) {
             return null;
         }
@@ -541,7 +541,7 @@ public abstract class Class428 extends Entity
     
     @Override
     public AxisAlignedBB method1887() {
-        final AxisAlignedBB method1886 = this.method1886();
+        final AxisAlignedBB method1886 = this.getBoundingBox();
         return this.method2146() ? method1886.method18496(Math.abs(this.method2142()) / 16.0) : method1886;
     }
     
@@ -564,7 +564,7 @@ public abstract class Class428 extends Entity
     
     @Override
     public void method1737(final Entity class399) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!class399.noClip) {
                 if (!this.noClip) {
                     if (!this.method1909(class399)) {
@@ -668,11 +668,11 @@ public abstract class Class428 extends Entity
     
     public abstract Class2080 method2139();
     
-    public Class7096 method2140() {
+    public BlockState method2140() {
         return this.method2146() ? Class3833.method11775(this.method1650().get(Class428.field2623)) : this.method2141();
     }
     
-    public Class7096 method2141() {
+    public BlockState method2141() {
         return Class7521.field29147.method11878();
     }
     
@@ -684,7 +684,7 @@ public abstract class Class428 extends Entity
         return 6;
     }
     
-    public void method2144(final Class7096 class7096) {
+    public void method2144(final BlockState class7096) {
         this.method1650().set(Class428.field2623, Class3833.method11774(class7096));
         this.method2147(true);
     }

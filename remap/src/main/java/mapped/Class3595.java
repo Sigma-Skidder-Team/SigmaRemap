@@ -32,7 +32,7 @@ public class Class3595<T extends Class763 & Class768 & Class774> extends Class34
     }
     
     private boolean method11124() {
-        return this.field16745.method4218(Class7739.field31611);
+        return this.field16745.method4218(Items.field31611);
     }
     
     @Override
@@ -102,7 +102,7 @@ public class Class3595<T extends Class763 & Class768 & Class774> extends Class34
                         if (this.field16746 == Class1977.field10962) {
                             if (method4153) {
                                 this.field16745.method4252(method4152, 1.0f);
-                                Class4086.method12297(this.field16745.method2715(Class7476.method23100(this.field16745, Class7739.field31611)), false);
+                                Class4086.method12297(this.field16745.method2715(Class7476.method23100(this.field16745, Items.field31611)), false);
                                 this.field16746 = Class1977.field10959;
                             }
                         }
@@ -127,7 +127,7 @@ public class Class3595<T extends Class763 & Class768 & Class774> extends Class34
                 }
             }
             else if (!b2) {
-                this.field16745.method2762(Class7476.method23100(this.field16745, Class7739.field31611));
+                this.field16745.method2762(Class7476.method23100(this.field16745, Items.field31611));
                 this.field16746 = Class1977.field10960;
                 this.field16745.method4280(true);
             }

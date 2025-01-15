@@ -16,6 +16,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -281,7 +282,7 @@ public class Class8551
     }
     
     private void method28708(final Class7351 class7351, final Class4150 class7352, final Entity class7353, final float n, final float n2, final float n3) {
-        Class1656.method5731(class7351, class7352, class7353.method1886().method18499(-class7353.getPosX(), -class7353.getPosY(), -class7353.getPosZ()), n, n2, n3, 1.0f);
+        Class1656.method5731(class7351, class7352, class7353.getBoundingBox().method18499(-class7353.getPosX(), -class7353.getPosY(), -class7353.getPosZ()), n, n2, n3, 1.0f);
     }
     
     private void method28709(final Class7351 class7351, final Class7807 class7352, final Entity class7353) {
@@ -364,11 +365,11 @@ public class Class8551
     
     private static void method28712(final Class8996 class8996, final Class4150 class8997, final Class1852 class8998, final BlockPos class8999, final double n, final double n2, final double n3, final float n4, final float n5) {
         final BlockPos method1139 = class8999.method1139();
-        final Class7096 method1140 = class8998.method6701(method1139);
+        final BlockState method1140 = class8998.method6701(method1139);
         if (method1140.method21710() != Class2115.field12305) {
             if (class8998.method6969(class8999) > 3) {
                 if (method1140.method21762(class8998, method1139)) {
-                    final Class7702 method1141 = method1140.method21725(class8998, class8999.method1139());
+                    final VoxelShape method1141 = method1140.method21725(class8998, class8999.method1139());
                     if (!method1141.method24540()) {
                         float n6 = (float)((n5 - (n2 - class8999.getY()) / 2.0) * 0.5 * class8998.method6963(class8999));
                         if (n6 >= 0.0f) {

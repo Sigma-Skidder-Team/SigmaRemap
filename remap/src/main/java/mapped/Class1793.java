@@ -138,7 +138,7 @@ public class Class1793 implements Class1662
     }
     
     @Override
-    public CompletableFuture<Void> method5785(final Class7885 class7885, final Class6582 class7886, final Class5028 class7887, final Class5028 class7888, final Executor executor, final Executor executor2) {
+    public CompletableFuture<Void> method5785(final Class7885 class7885, final Class6582 class7886, final IProfiler class7887, final IProfiler class7888, final Executor executor, final Executor executor2) {
         Maps.newConcurrentMap();
         return CompletableFuture.allOf((CompletableFuture<?>[])Class90.field222.method507().stream().map(p3 -> CompletableFuture.runAsync(() -> this.method6475(class7889, class7890, map), executor3)).toArray(CompletableFuture[]::new)).thenApplyAsync(p3 -> {
             class7891.method15295();
@@ -356,7 +356,7 @@ public class Class1793 implements Class1662
         this.field9925.clear();
     }
     
-    public void method6486(final BlockPos class354, final Class7096 class355) {
+    public void method6486(final BlockPos class354, final BlockState class355) {
         boolean b;
         if (Class9570.field41241.method22605() && Class9570.field41247.method22605()) {
             class355.method21696();
@@ -388,7 +388,7 @@ public class Class1793 implements Class1662
     }
     
     public void method6487(final BlockPos class354, final Direction class355) {
-        final Class7096 method6701 = this.field9923.method6701(class354);
+        final BlockState method6701 = this.field9923.method6701(class354);
         if (method6701.method21710() != Class2115.field12305) {
             final int method6702 = class354.getX();
             final int method6703 = class354.getY();
@@ -444,7 +444,7 @@ public class Class1793 implements Class1662
     }
     
     public void method6490(final BlockPos class354, final Class7005 class355) {
-        final Class7096 method6701 = this.field9923.method6701(class354);
+        final BlockState method6701 = this.field9923.method6701(class354);
         if (method6701 != null) {
             if (!Class9570.method35820(method6701, Class9570.field41242, this.field9923, class355, this)) {
                 this.method6487(class354, class355.method21448());

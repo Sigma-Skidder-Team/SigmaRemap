@@ -33,13 +33,13 @@ public class Class3839 extends Class3834 implements Class3840
     
     @Nullable
     @Override
-    public Class436 method11898(final Class1855 class1855) {
+    public TileEntity method11898(final Class1855 class1855) {
         return new Class498();
     }
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        final Class436 method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.method6727(class7098);
         if (method6727 instanceof Class498 && class7099.method2908()) {
             class7099.method2831((Class498)method6727);
             return Class2201.field13400;

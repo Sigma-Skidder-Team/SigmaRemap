@@ -151,14 +151,14 @@ public class Class841 extends Class785 implements Class762
         super.method1659();
         BlockPos class354 = this.dataManager.get(Class841.field4482).orElse(null);
         if (class354 == null) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 class354 = new BlockPos(this);
                 this.dataManager.set(Class841.field4482, Optional.of(class354));
             }
         }
         if (!this.isPassenger()) {
-            if (!this.world.field10067) {
-                final Class7096 method6701 = this.world.method6701(class354);
+            if (!this.world.isRemote) {
+                final BlockState method6701 = this.world.method6701(class354);
                 if (!method6701.method21706()) {
                     if (method6701.method21696() != Class7521.field29264) {
                         if (method6701.method21696() != Class7521.field29247) {
@@ -223,7 +223,7 @@ public class Class841 extends Class785 implements Class762
             this.field4486 = MathHelper.clamp(this.field4486 - 0.05f, n2, 1.0f);
         }
         if (class354 != null) {
-            if (this.world.field10067) {
+            if (this.world.isRemote) {
                 if (this.field4488 > 0 && this.field4487 != null) {
                     --this.field4488;
                 }
@@ -238,7 +238,7 @@ public class Class841 extends Class785 implements Class762
             this.method1889(new AxisAlignedBB(this.getPosX() - 0.5, this.getPosY(), this.getPosZ() - 0.5, this.getPosX() + 0.5, this.getPosY() + 1.0, this.getPosZ() + 0.5).method18494(method6702.getXOffset() * n3, method6702.getYOffset() * n3, method6702.getZOffset() * n3));
             final double n5 = n3 - n4;
             if (n5 > 0.0) {
-                final List<Entity> method6703 = this.world.method7127(this, this.method1886());
+                final List<Entity> method6703 = this.world.method7127(this, this.getBoundingBox());
                 if (!method6703.isEmpty()) {
                     for (final Entity class358 : method6703) {
                         if (class358 instanceof Class841) {
@@ -326,7 +326,7 @@ public class Class841 extends Class785 implements Class762
     @Override
     public void method1880(final DataParameter<?> class8810) {
         if (Class841.field4482.equals(class8810)) {
-            if (this.world.field10067) {
+            if (this.world.isRemote) {
                 if (!this.isPassenger()) {
                     final BlockPos method5019 = this.method5019();
                     if (method5019 != null) {
@@ -372,7 +372,7 @@ public class Class841 extends Class785 implements Class762
     @Nullable
     @Override
     public AxisAlignedBB method1702() {
-        return this.method1768() ? this.method1886() : null;
+        return this.method1768() ? this.getBoundingBox() : null;
     }
     
     public Direction method5018() {
@@ -393,7 +393,7 @@ public class Class841 extends Class785 implements Class762
     }
     
     public void method5022(final int n) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method2710(Class8107.field33413).method23947(Class841.field4480);
             if (n != 0) {
                 this.method1695(Class8520.field35557, 1.0f, 1.0f);

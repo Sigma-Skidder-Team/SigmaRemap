@@ -45,9 +45,9 @@ public class Class415 extends Class414 implements Class407
     @Override
     public ItemStack method2005() {
         final ItemStack class8321 = this.method1650().get(Class415.field2521);
-        if (class8321.method27622() != Class7739.field31579 && class8321.method27622() != Class7739.field31582) {
+        if (class8321.getItem() != Items.field31579 && class8321.getItem() != Items.field31582) {
             if (this.world == null) {}
-            return new ItemStack(Class7739.field31579);
+            return new ItemStack(Items.field31579);
         }
         return class8321;
     }
@@ -63,7 +63,7 @@ public class Class415 extends Class414 implements Class407
     
     @Override
     public void method2016(final Class7006 class7006) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             final ItemStack method2005 = this.method2005();
             final Class8061 method2006 = Class5333.method16474(method2005);
             final List<Class1948> method2007 = Class5333.method16465(method2005);
@@ -99,7 +99,7 @@ public class Class415 extends Class414 implements Class407
     }
     
     private void method2023() {
-        final List<Entity> method6739 = this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.method1886().method18495(4.0, 2.0, 4.0), (Predicate<? super Entity>)Class415.field2523);
+        final List<Entity> method6739 = this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().method18495(4.0, 2.0, 4.0), (Predicate<? super Entity>)Class415.field2523);
         if (!method6739.isEmpty()) {
             for (final LivingEntity class511 : method6739) {
                 if (this.method1734(class511) >= 16.0) {
@@ -114,7 +114,7 @@ public class Class415 extends Class414 implements Class407
     }
     
     private void method2024(final List<Class1948> list, final Entity class399) {
-        final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.method1886().method18495(4.0, 2.0, 4.0));
+        final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().method18495(4.0, 2.0, 4.0));
         if (!method7128.isEmpty()) {
             for (final LivingEntity class400 : method7128) {
                 if (!class400.method2776()) {
@@ -167,7 +167,7 @@ public class Class415 extends Class414 implements Class407
     }
     
     private boolean method2026() {
-        return this.method2005().method27622() == Class7739.field31582;
+        return this.method2005().getItem() == Items.field31582;
     }
     
     private void method2027(final BlockPos class354, final Direction class355) {

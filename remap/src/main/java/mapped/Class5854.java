@@ -36,7 +36,7 @@ public class Class5854<T extends Class759 & Class768> extends Class5853<T>
     public void method17587(final T t, final float n, final float n2, final float n3) {
         this.field24001 = Class2036.field11607;
         this.field24000 = Class2036.field11607;
-        if (t.method2715(Class316.field1877).method27622() == Class7739.field31279) {
+        if (t.method2715(Class316.field1877).getItem() == Items.field31279) {
             if (t.method4216()) {
                 if (t.method2755() != Class2226.field13698) {
                     this.field24000 = Class2036.field11610;
@@ -51,9 +51,9 @@ public class Class5854<T extends Class759 & Class768> extends Class5853<T>
     
     public void method17588(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {
         super.method17580(t, n, n2, n3, n4, n5);
-        final ItemStack method2713 = t.method2713();
+        final ItemStack method2713 = t.getHeldItemMainhand();
         if (t.method4216()) {
-            if (method2713.method27620() || method2713.method27622() != Class7739.field31279) {
+            if (method2713.method27620() || method2713.getItem() != Items.field31279) {
                 final float method2714 = MathHelper.sin(this.field23955 * 3.1415927f);
                 final float method2715 = MathHelper.sin((1.0f - (1.0f - this.field23955) * (1.0f - this.field23955)) * 3.1415927f);
                 this.field23996.field25185 = 0.0f;

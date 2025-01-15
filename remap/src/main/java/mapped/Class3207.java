@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.shapes.VoxelShape;
+
 import java.util.Iterator;
 
 public class Class3207 extends Class3167
@@ -126,7 +128,7 @@ public class Class3207 extends Class3167
             double field25077 = -1.0;
             BlockPos class354 = null;
             while (iterator.hasNext()) {
-                final Class7702 class355 = iterator.next();
+                final VoxelShape class355 = iterator.next();
                 if (class355.method24537().field25077 <= field25077) {
                     continue;
                 }

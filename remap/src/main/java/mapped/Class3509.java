@@ -63,7 +63,7 @@ public class Class3509 extends Class3446
     }
     
     private boolean method11069(final Class1852 class1852, final BlockPos class1853) {
-        final Class7096 method6701 = class1852.method6701(class1853);
+        final BlockState method6701 = class1852.method6701(class1853);
         if (class1852.method6702(class1853).method21781() || method6701.method21696() == Class7521.field29765) {
             if (method6701.method21749(class1852, class1853, Class2084.field12051)) {
                 return true;

@@ -41,7 +41,7 @@ public class Class3626<T extends Class763 & Class768> extends Class3446
     }
     
     public boolean method11164() {
-        return this.field16846.method4218(Class7739.field31279);
+        return this.field16846.method4218(Items.field31279);
     }
     
     @Override
@@ -119,7 +119,7 @@ public class Class3626<T extends Class763 & Class768> extends Class3446
             if (!this.field16846.method2756()) {
                 if (--this.field16850 <= 0) {
                     if (this.field16851 >= -60) {
-                        this.field16846.method2762(Class7476.method23100(this.field16846, Class7739.field31279));
+                        this.field16846.method2762(Class7476.method23100(this.field16846, Items.field31279));
                     }
                 }
             }

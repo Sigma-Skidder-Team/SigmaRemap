@@ -7,10 +7,6 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import org.apache.logging.log4j.LogManager;
 import java.util.stream.IntStream;
-import java.util.HashSet;
-import java.io.InputStream;
-import com.google.common.collect.ImmutableList;
-import java.util.function.Supplier;
 import java.util.Collections;
 import java.util.Optional;
 import com.mojang.datafixers.util.Either;
@@ -27,7 +23,6 @@ import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.LinkedHashSet;
 import java.util.Iterator;
-import java.util.stream.Stream;
 import java.util.function.Function;
 import java.util.Collection;
 import java.util.stream.Collector;
@@ -85,7 +80,7 @@ public class Class7637
     private final Object2IntMap<Class7096> field30272;
     public Map<Class1932, Class7684> field30273;
     
-    public Class7637(final Class6582 class6582, final Class7860 class6583, final Class5028 class6584, final int n) {
+    public Class7637(final Class6582 class6582, final Class7860 class6583, final IProfiler class6584, final int n) {
         this(class6582, class6583, true);
         this.method24010(class6584, n);
     }
@@ -103,7 +98,7 @@ public class Class7637
         this.field30263 = field30262;
     }
     
-    public void method24010(final Class5028 class5028, final int n) {
+    public void method24010(final IProfiler class5028, final int n) {
         class5028.method15297("missing_model");
         try {
             this.field30266.put(Class7637.field30250, this.method24022(Class7637.field30250));
@@ -149,7 +144,7 @@ public class Class7637
         class5028.method15299();
     }
     
-    public Class391 method24011(final Class1663 class1663, final Class5028 class1664) {
+    public Class391 method24011(final Class1663 class1663, final IProfiler class1664) {
         class1664.method15297("atlas");
         for (final Pair pair : this.field30270.values()) {
             final Class1774 class1665 = (Class1774)pair.getFirst();

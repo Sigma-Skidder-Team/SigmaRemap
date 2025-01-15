@@ -23,7 +23,7 @@ public class Class4174 extends Class4158<Class493>
     
     public void method12497(final Class493 class493, final float n, final Class7351 class494, final Class7807 class495, final int n2, final int n3) {
         final float method2504 = class493.method2504(n);
-        final Class7096 method2505 = class493.method2194();
+        final BlockState method2505 = class493.method2194();
         final boolean b = method2505.method21696() instanceof Class3933;
         final Direction class496 = b ? method2505.method21772((Class7111<Direction>)Class3933.field17814) : null;
         method12498(class496, 22.5f * (b ? ((2 + class496.getHorizontalIndex()) * 4) : method2505.method21772((Class7111<Integer>)Class3936.field17819)), ((Class3932)method2505.method21696()).method12050(), class493.method2505(), method2504, class494, class495, n2);

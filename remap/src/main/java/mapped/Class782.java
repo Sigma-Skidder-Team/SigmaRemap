@@ -45,7 +45,7 @@ public class Class782 extends Class780
             final Class765 class7930 = (Class765)method25714;
             if (class7930.method4241()) {
                 class7930.method4242();
-                this.method1764(Class7739.field31523);
+                this.method1764(Items.field31523);
             }
         }
     }

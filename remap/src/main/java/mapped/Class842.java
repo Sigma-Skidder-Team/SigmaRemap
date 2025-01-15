@@ -67,7 +67,7 @@ public class Class842 extends Class763
     }
     
     @Override
-    public void method1691(final BlockPos class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final BlockState class355) {
         this.method1695(Class8520.field35171, 0.15f, 1.0f);
     }
     
@@ -112,7 +112,7 @@ public class Class842 extends Class763
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!this.method4194()) {
                 ++this.field4489;
             }

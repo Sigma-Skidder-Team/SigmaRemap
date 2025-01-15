@@ -12,14 +12,14 @@ public class Class5768 implements Class5763
     private final Class1932 field23591;
     private final String field23592;
     private final Class120 field23593;
-    private final Class3820 field23594;
+    private final Item field23594;
     private final float field23595;
     private final int field23596;
     private final Class6056 field23597;
     private final Class1932 field23598;
     private final Class6096<? extends Class3680> field23599;
     
-    public Class5768(final Class1932 field23591, final String field23592, final Class120 field23593, final Class3820 field23594, final float field23595, final int field23596, final Class6056 field23597, final Class1932 field23598, final Class6096<? extends Class3680> field23599) {
+    public Class5768(final Class1932 field23591, final String field23592, final Class120 field23593, final Item field23594, final float field23595, final int field23596, final Class6056 field23597, final Class1932 field23598, final Class6096<? extends Class3680> field23599) {
         this.field23591 = field23591;
         this.field23592 = field23592;
         this.field23593 = field23593;

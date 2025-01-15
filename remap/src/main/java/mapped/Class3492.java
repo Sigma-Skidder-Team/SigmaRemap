@@ -12,7 +12,7 @@ import java.util.function.Predicate;
 public class Class3492 extends Class3446
 {
     private static String[] field16432;
-    private static final Predicate<Class7096> field16433;
+    private static final Predicate<BlockState> field16433;
     private final Class759 field16434;
     private final World field16435;
     private int field16436;

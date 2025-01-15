@@ -48,7 +48,7 @@ public class Class9495
     private static final Pattern field40841;
     private final Class8213 field40842;
     
-    public Class9495(final String s, final Class7952 class7952, final Class8660 class7953, final boolean field40829) {
+    public Class9495(final String s, final Class7952 class7952, final WorldInfo class7953, final boolean field40829) {
         this.field40833 = true;
         this.field40839 = (Object2FloatMap<DimensionType>)Object2FloatMaps.synchronize((Object2FloatMap)new Object2FloatOpenCustomHashMap((Hash$Strategy)Class8349.method27852()));
         this.field40840 = new Class2259("optimizeWorld.stage.counting", new Object[0]);

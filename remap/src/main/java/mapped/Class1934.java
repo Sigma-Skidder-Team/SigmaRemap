@@ -21,7 +21,7 @@ public class Class1934 implements Comparable<Class1934>
     private final boolean field10555;
     private final Class9505 field10556;
     
-    public Class1934(final Class8660 class8660, final String field10545, final String field10546, final long field10547, final boolean field10548) {
+    public Class1934(final WorldInfo class8660, final String field10545, final String field10546, final long field10547, final boolean field10548) {
         this.field10545 = field10545;
         this.field10546 = field10546;
         this.field10547 = class8660.method29553();

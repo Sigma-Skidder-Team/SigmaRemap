@@ -19,7 +19,7 @@ public class Class461 extends Class460 implements Class441, Class439
     private Class2265<ItemStack> field2721;
     private int field2722;
     private boolean[] field2723;
-    private Class3820 field2724;
+    private Item field2724;
     private int field2725;
     public final Class7604 field2726;
     
@@ -55,7 +55,7 @@ public class Class461 extends Class460 implements Class441, Class439
     public void method2229() {
         final ItemStack class8321 = this.field2721.get(4);
         if (this.field2725 <= 0) {
-            if (class8321.method27622() == Class7739.field31445) {
+            if (class8321.getItem() == Items.field31445) {
                 this.field2725 = 20;
                 class8321.method27693(1);
                 this.method2161();
@@ -69,7 +69,7 @@ public class Class461 extends Class460 implements Class441, Class439
                 if (this.field2725 > 0) {
                     --this.field2725;
                     this.field2722 = 400;
-                    this.field2724 = class8322.method27622();
+                    this.field2724 = class8322.getItem();
                     this.method2161();
                 }
             }
@@ -81,7 +81,7 @@ public class Class461 extends Class460 implements Class441, Class439
                 this.method2161();
             }
             else if (method2338) {
-                if (this.field2724 != class8322.method27622()) {
+                if (this.field2724 != class8322.getItem()) {
                     this.field2722 = 0;
                     this.method2161();
                 }
@@ -91,16 +91,16 @@ public class Class461 extends Class460 implements Class441, Class439
                 this.method2161();
             }
         }
-        if (!this.field2656.field10067) {
+        if (!this.field2656.isRemote) {
             final boolean[] method2339 = this.method2337();
             if (!Arrays.equals(method2339, this.field2723)) {
                 this.field2723 = method2339;
-                Class7096 method2340 = this.field2656.method6701(this.method2193());
+                BlockState method2340 = this.field2656.method6701(this.method2193());
                 if (!(method2340.method21696() instanceof Class3954)) {
                     return;
                 }
                 for (int i = 0; i < Class3954.field17856.length; ++i) {
-                    method2340 = ((Class7097<Object, Class7096>)method2340).method21773((Class7111<Comparable>)Class3954.field17856[i], method2339[i]);
+                    method2340 = ((Class7097<Object, BlockState>)method2340).method21773((Class7111<Comparable>)Class3954.field17856[i], method2339[i]);
                 }
                 this.field2656.method6688(this.field2657, method2340, 2);
             }
@@ -141,10 +141,10 @@ public class Class461 extends Class460 implements Class441, Class439
         }
         class8321.method27693(1);
         final BlockPos method2193 = this.method2193();
-        if (class8321.method27622().method11721()) {
-            final ItemStack class8322 = new ItemStack(class8321.method27622().method11720());
+        if (class8321.getItem().method11721()) {
+            final ItemStack class8322 = new ItemStack(class8321.getItem().method11720());
             if (!class8321.method27620()) {
-                if (!this.field2656.field10067) {
+                if (!this.field2656.isRemote) {
                     Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8322);
                 }
             }
@@ -207,12 +207,12 @@ public class Class461 extends Class460 implements Class441, Class439
         if (n == 3) {
             return Class7652.method24240(class8321);
         }
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         if (n != 4) {
-            if (method27622 != Class7739.field31441) {
-                if (method27622 != Class7739.field31579) {
-                    if (method27622 != Class7739.field31582) {
-                        if (method27622 != Class7739.field31442) {
+            if (method27622 != Items.field31441) {
+                if (method27622 != Items.field31579) {
+                    if (method27622 != Items.field31582) {
+                        if (method27622 != Items.field31442) {
                             return false;
                         }
                     }
@@ -223,7 +223,7 @@ public class Class461 extends Class460 implements Class441, Class439
             }
             return false;
         }
-        return method27622 == Class7739.field31445;
+        return method27622 == Items.field31445;
     }
     
     @Override
@@ -241,7 +241,7 @@ public class Class461 extends Class460 implements Class441, Class439
     
     @Override
     public boolean method2250(final int n, final ItemStack class8321, final Direction class8322) {
-        return n != 3 || class8321.method27622() == Class7739.field31442;
+        return n != 3 || class8321.getItem() == Items.field31442;
     }
     
     @Override

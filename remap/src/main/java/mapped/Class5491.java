@@ -14,7 +14,7 @@ public interface Class5491 extends Class5490
     
     BlockPos method16764();
     
-    Class7096 method16765();
+    BlockState method16765();
     
-     <T extends Class436> T method16766();
+     <T extends TileEntity> T method16766();
 }

@@ -59,7 +59,7 @@ public class Class464 implements Class446, INameable
     }
     
     private boolean method2348(final ItemStack class8321, final ItemStack class8322) {
-        return class8321.method27622() == class8322.method27622() && ItemStack.method27642(class8321, class8322);
+        return class8321.getItem() == class8322.getItem() && ItemStack.method27642(class8321, class8322);
     }
     
     public int method2349() {
@@ -214,7 +214,7 @@ public class Class464 implements Class446, INameable
     }
     
     private int method2359(final int n, final ItemStack class8321) {
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         final int method27623 = class8321.method27690();
         ItemStack method27624 = this.method2157(n);
         if (method27624.method27620()) {
@@ -311,7 +311,7 @@ public class Class464 implements Class446, INameable
         catch (final Throwable t) {
             final Class7689 method2351 = Class7689.method24421(t, "Adding item to inventory");
             final Class5204 method2352 = method2351.method24418("Item being added");
-            method2352.method16297("Item ID", Class3820.method11696(class8321.method27622()));
+            method2352.method16297("Item ID", Item.method11696(class8321.getItem()));
             method2352.method16297("Item data", class8321.method27632());
             method2352.method16296("Item name", () -> class8322.method27664().getString());
             throw new Class2365(method2351);
@@ -319,7 +319,7 @@ public class Class464 implements Class446, INameable
     }
     
     public void method2364(final World class1847, final ItemStack class1848) {
-        if (!class1847.field10067) {
+        if (!class1847.isRemote) {
             while (!class1848.method27620()) {
                 int n = this.method2360(class1848);
                 if (n == -1) {
@@ -394,7 +394,7 @@ public class Class464 implements Class446, INameable
         }
     }
     
-    public float method2366(final Class7096 class7096) {
+    public float method2366(final BlockState class7096) {
         return this.field2739.get(this.field2743).method27624(class7096);
     }
     
@@ -499,7 +499,7 @@ public class Class464 implements Class446, INameable
         return new Class2259("container.inventory", new Object[0]);
     }
     
-    public boolean method2369(final Class7096 class7096) {
+    public boolean method2369(final BlockState class7096) {
         return this.method2157(this.field2743).method27639(class7096);
     }
     
@@ -515,7 +515,7 @@ public class Class464 implements Class446, INameable
             }
             for (int i = 0; i < this.field2740.size(); ++i) {
                 final ItemStack class8321 = this.field2740.get(i);
-                if (class8321.method27622() instanceof Class4055) {
+                if (class8321.getItem() instanceof Class4055) {
                     class8321.method27636((int)n, this.field2744, class8322 -> class8322.method2794(Class2215.method8406(Class295.field1682, n2)));
                 }
             }
@@ -568,11 +568,11 @@ public class Class464 implements Class446, INameable
         return false;
     }
     
-    public boolean method2377(final Class7909<Class3820> class7909) {
+    public boolean method2377(final Class7909<Item> class7909) {
         final Iterator<Class2265<ItemStack>> iterator = this.field2742.iterator();
         while (iterator.hasNext()) {
             for (final ItemStack class7910 : iterator.next()) {
-                if (!class7910.method27620() && class7909.method25618(class7910.method27622())) {
+                if (!class7910.method27620() && class7909.method25618(class7910.getItem())) {
                     return true;
                 }
             }

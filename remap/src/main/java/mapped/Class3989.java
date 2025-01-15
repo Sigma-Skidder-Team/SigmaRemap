@@ -15,7 +15,7 @@ public class Class3989 extends Class3986
     }
     
     @Override
-    public int method12134(final Class7096 class7096) {
+    public int method12134(final BlockState class7096) {
         return this.field17999;
     }
 }

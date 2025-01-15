@@ -12,7 +12,7 @@ import java.util.Random;
 public class Class7955 implements Class7954
 {
     private static String[] field32680;
-    private final Class3820 field32681;
+    private final Item field32681;
     private final int field32682;
     private final int field32683;
     private final int field32684;
@@ -28,6 +28,6 @@ public class Class7955 implements Class7954
     
     @Override
     public Class9017 method25804(final Entity class399, final Random random) {
-        return new Class9017(new ItemStack(this.field32681, this.field32682), new ItemStack(Class7739.field31514), this.field32683, this.field32684, this.field32685);
+        return new Class9017(new ItemStack(this.field32681, this.field32682), new ItemStack(Items.field31514), this.field32683, this.field32684, this.field32685);
     }
 }

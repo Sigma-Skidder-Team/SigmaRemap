@@ -13,21 +13,21 @@ import java.util.function.Predicate;
 public class Class175 implements Predicate<ItemStack>
 {
     private static final Dynamic2CommandExceptionType field501;
-    private final Class3820 field502;
+    private final Item field502;
     private final Class51 field503;
     
-    public Class175(final Class3820 field502, final Class51 field503) {
+    public Class175(final Item field502, final Class51 field503) {
         this.field502 = field502;
         this.field503 = field503;
     }
     
-    public Class3820 method771() {
+    public Item method771() {
         return this.field502;
     }
     
     @Override
     public boolean test(final ItemStack class8321) {
-        return class8321.method27622() == this.field502 && Class9346.method34642(this.field503, class8321.method27657(), true);
+        return class8321.getItem() == this.field502 && Class9346.method34642(this.field503, class8321.method27657(), true);
     }
     
     public ItemStack method772(final int n, final boolean b) throws CommandSyntaxException {

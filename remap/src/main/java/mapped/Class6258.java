@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.World;
 
 public class Class6258 extends Class6257
@@ -38,7 +39,7 @@ public class Class6258 extends Class6257
     
     public static void method18605(final LivingEntity class511, final World class512, final BlockPos class513, final int n) {
         if (class511.onGround) {
-            final Class7096 method11878 = Class7521.field29641.method11878();
+            final BlockState method11878 = Class7521.field29641.method11878();
             final float n2 = (float)Math.min(16, 2 + n);
             final Mutable class514 = new Mutable();
             for (final BlockPos class515 : BlockPos.getAllInBoxMutable(class513.add(-n2, -1.0, -n2), class513.add(n2, -1.0, n2))) {
@@ -49,7 +50,7 @@ public class Class6258 extends Class6257
                 if (!class512.method6701(class514).method21706()) {
                     continue;
                 }
-                final Class7096 method11879 = class512.method6701(class515);
+                final BlockState method11879 = class512.method6701(class515);
                 if (method11879.method21697() != Class8059.field33161) {
                     continue;
                 }

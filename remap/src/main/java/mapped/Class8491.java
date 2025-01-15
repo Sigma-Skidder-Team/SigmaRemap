@@ -125,7 +125,7 @@ public class Class8491
                 final Iterator<ItemStack> iterator = class5744.method1800().iterator();
                 boolean b = false;
                 while (iterator.hasNext()) {
-                    if (iterator.next().method27622() instanceof Class4077) {
+                    if (iterator.next().getItem() instanceof Class4077) {
                         b = true;
                     }
                 }
@@ -181,7 +181,7 @@ public class Class8491
             if (class5724.method13249() == Class2215.field13601) {
                 if (class5724.method13247() != null) {
                     if (Class9463.method35173().method35189().method21551(Class3296.class).method9906() || Class9367.method34762() == Class7906.field32452.method25613()) {
-                        if (!(class5724.method13247().method27622() instanceof Class4100)) {
+                        if (!(class5724.method13247().getItem() instanceof Class4100)) {
                             final Entity method6741 = this.field34856.field4683.getEntityByID(class5724.method13248());
                             if (Class8491.field34858.contains(method6741)) {
                                 Class8491.field34858.remove(method6741);

@@ -37,7 +37,7 @@ public class Class6275 extends Class6257
     
     @Override
     public boolean method18600(final ItemStack class8321) {
-        return class8321.method27622() instanceof Class4055 || super.method18600(class8321);
+        return class8321.getItem() instanceof Class4055 || super.method18600(class8321);
     }
     
     @Override

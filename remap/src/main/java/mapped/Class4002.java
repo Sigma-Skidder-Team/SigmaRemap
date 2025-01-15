@@ -20,18 +20,18 @@ public class Class4002 extends Class4000
     
     public Class4002(final Class318 field18039, final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4002.field18038, false));
+        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class4002.field18038, false));
         this.field18039 = field18039;
     }
     
     @Override
-    public int method12166(final Class7096 class7096) {
+    public int method12166(final BlockState class7096) {
         return class7096.method21772((Class7111<Boolean>)Class4002.field18038) ? 15 : 0;
     }
     
     @Override
-    public Class7096 method12167(final Class7096 class7096, final int n) {
-        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class4002.field18038, n > 0);
+    public BlockState method12167(final BlockState class7096, final int n) {
+        return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class4002.field18038, n > 0);
     }
     
     @Override
@@ -83,7 +83,7 @@ public class Class4002 extends Class4000
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Class3833, BlockState> class9500) {
         class9500.method35378(Class4002.field18038);
     }
     

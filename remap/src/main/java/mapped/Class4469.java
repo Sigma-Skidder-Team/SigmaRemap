@@ -12,12 +12,12 @@ import java.util.Set;
 
 public abstract class Class4469 extends Class4473
 {
-    public static final Class7096 field19829;
-    public static final Class7096 field19830;
-    public static final Class7096 field19831;
-    public static final Class7096 field19832;
-    public static final Class7096 field19833;
-    public static final Class7096 field19834;
+    public static final BlockState field19829;
+    public static final BlockState field19830;
+    public static final BlockState field19831;
+    public static final BlockState field19832;
+    public static final BlockState field19833;
+    public static final BlockState field19834;
     public static final Set<Class3833> field19835;
     public static final int field19836;
     public static final int field19837;
@@ -85,7 +85,7 @@ public abstract class Class4469 extends Class4473
         for (int i = n2; i <= n5; ++i) {
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {
-                    final Class7096 method13441 = this.method13441(class1851, j, i, k, class1852);
+                    final BlockState method13441 = this.method13441(class1851, j, i, k, class1852);
                     if (!Class4469.field19835.contains(method13441.method21696())) {
                         if (this.method13438(i) >= class1851.method6743() && method13441 != Class4469.field19834) {
                             this.method13440(class1851, Class7521.field29147.method11878(), j, i, k, class1852);
@@ -115,7 +115,7 @@ public abstract class Class4469 extends Class4473
         }
     }
     
-    public void method13418(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Class7096 class1853) {
+    public void method13418(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final BlockState class1853) {
         for (int i = n2; i <= n5; ++i) {
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {

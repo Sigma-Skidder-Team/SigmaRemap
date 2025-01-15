@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mojang.authlib.yggdrasil.ProfileNotFoundException;
-import java.util.Date;
+
 import java.util.Locale;
 import com.mojang.authlib.GameProfile;
 import java.util.Map;
@@ -13,11 +13,11 @@ import com.mojang.authlib.ProfileLookupCallback;
 
 public final class Class6578 implements ProfileLookupCallback
 {
-    public final /* synthetic */ Class394 field26100;
+    public final /* synthetic */ MinecraftServer field26100;
     public final /* synthetic */ Map field26101;
     public final /* synthetic */ Class8007 field26102;
     
-    public Class6578(final Class394 field26100, final Map field26101, final Class8007 field26102) {
+    public Class6578(final MinecraftServer field26100, final Map field26101, final Class8007 field26102) {
         this.field26100 = field26100;
         this.field26101 = field26101;
         this.field26102 = field26102;

@@ -30,62 +30,56 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class World implements Class1851, AutoCloseable
 {
-    public static final Logger field10048;
-    private static final Direction[] field10049;
-    public final List<Class436> field10050;
-    public final List<Class436> field10051;
-    public final List<Class436> field10052;
-    public final List<Class436> field10053;
-    private final Thread field10054;
-    private int field10055;
-    public int field10056;
-    public final int field10057 = 1013904223;
-    public float field10058;
-    public float field10059;
-    public float field10060;
-    public float field10061;
-    public final Random field10062;
-    public final Class6737 dimension;
-    public final Class1906 field10064;
-    public final Class8660 field10065;
-    private final Class5028 field10066;
-    public final boolean field10067;
-    public boolean field10068;
-    private final Class9375 field10069;
-    private final Class5507 field10070;
+    protected static final Logger LOGGER = LogManager.getLogger();
+    private static final Direction[] FACING_VALUES = Direction.values();
+    public final List<TileEntity> loadedTileEntityList = Lists.newArrayList();
+    public final List<TileEntity> tickableTileEntities = Lists.newArrayList();
+    protected final List<TileEntity> addedTileEntityList = Lists.newArrayList();
+    protected final List<TileEntity> tileEntitiesToBeRemoved = Lists.newArrayList();
+    private final Thread mainThread;
+    private int skylightSubtracted;
+    public int updateLCG = new Random().nextInt();
+    public final int DIST_HASH_MAGIC = 1013904223;
+    public float prevRainingStrength;
+    public float rainingStrength;
+    public float prevThunderingStrength;
+    public float thunderingStrength;
+    public final Random rand = new Random();
+    public final Dimension dimension;
+    public final AbstractChunkProvider chunkProvider;
+    public final WorldInfo worldInfo;
+    private final IProfiler profiler;
+    public final boolean isRemote;
+    public boolean processingLoadedTiles;
+    private final WorldBorder worldBorder;
+    private final BiomeManager biomeManager;
     
-    public World(final Class8660 field10065, final DimensionType class383, final BiFunction<World, Class6737, Class1906> biFunction, final Class5028 field10066, final boolean field10067) {
-        this.field10050 = Lists.newArrayList();
-        this.field10051 = Lists.newArrayList();
-        this.field10052 = Lists.newArrayList();
-        this.field10053 = Lists.newArrayList();
-        this.field10056 = new Random().nextInt();
-        this.field10062 = new Random();
-        this.field10066 = field10066;
-        this.field10065 = field10065;
-        this.dimension = class383.method1273(this);
-        this.field10064 = biFunction.apply(this, this.dimension);
-        this.field10067 = field10067;
-        this.field10069 = this.dimension.method20506();
-        this.field10054 = Thread.currentThread();
-        this.field10070 = new Class5507(this, field10067 ? field10065.method29534() : Class8660.method29535(field10065.method29534()), class383.method1278());
+    public World(final WorldInfo p_i1676_1_, final DimensionType p_i1676_2_, final BiFunction<World, Dimension, AbstractChunkProvider> p_i1676_3_, final IProfiler p_i1676_4_, final boolean p_i1676_5_) {
+        this.profiler = p_i1676_4_;
+        this.worldInfo = p_i1676_1_;
+        this.dimension = p_i1676_2_.create(this);
+        this.chunkProvider = p_i1676_3_.apply(this, this.dimension);
+        this.isRemote = p_i1676_5_;
+        this.worldBorder = this.dimension.createWorldBorder();
+        this.mainThread = Thread.currentThread();
+        this.biomeManager = new BiomeManager(this, p_i1676_5_ ? p_i1676_1_.getSeed() : WorldInfo.byHashing(p_i1676_1_.getSeed()), p_i1676_2_.getMagnifier());
     }
     
     @Override
-    public boolean method6678() {
-        return this.field10067;
+    public boolean isRemote() {
+        return this.isRemote;
     }
     
     @Nullable
-    public Class394 method6679() {
+    public MinecraftServer getServer() {
         return null;
     }
     
-    public void method6680() {
-        this.method6759(new BlockPos(8, 64, 8));
+    public void setInitialSpawnLocation() {
+        this.setSpawnPoint(new BlockPos(8, 64, 8));
     }
     
-    public Class7096 method6681(final BlockPos class354) {
+    public Class7096 getGroundAboveSeaLevel(final BlockPos class354) {
         BlockPos method1137;
         for (method1137 = new BlockPos(class354.getX(), this.method6743(), class354.getZ()); !this.method6961(method1137.method1137()); method1137 = method1137.method1137()) {}
         return this.method6701(method1137);
@@ -124,7 +118,7 @@ public abstract class World implements Class1851, AutoCloseable
     
     @Override
     public Class1860 method6687(final int n, final int n2, final Class9312 class9312, final boolean b) {
-        final Class1860 method7402 = this.field10064.method7402(n, n2, class9312, b);
+        final Class1860 method7402 = this.chunkProvider.method7402(n, n2, class9312, b);
         if (method7402 == null && b) {
             throw new IllegalStateException("Should always be able to create a chunk!");
         }
@@ -136,7 +130,7 @@ public abstract class World implements Class1851, AutoCloseable
         if (method6683(class354)) {
             return false;
         }
-        if (!this.field10067 && this.field10065.method29570() == Class9505.field40898) {
+        if (!this.isRemote && this.worldInfo.method29570() == Class9505.field40898) {
             return false;
         }
         final Class1862 method6685 = this.method6685(class354);
@@ -155,9 +149,9 @@ public abstract class World implements Class1851, AutoCloseable
                             }
                         }
                     }
-                    this.field10066.method15297("queueCheckLight");
+                    this.profiler.method15297("queueCheckLight");
                     this.method6762().method7405().method7252(class354);
-                    this.field10066.method15299();
+                    this.profiler.method15299();
                 }
             }
             if (method6688 == class355) {
@@ -166,8 +160,8 @@ public abstract class World implements Class1851, AutoCloseable
                 }
                 Label_0213: {
                     if ((n & 0x2) != 0x0) {
-                        if (!this.field10067 || (n & 0x4) == 0x0) {
-                            if (!this.field10067) {
+                        if (!this.isRemote || (n & 0x4) == 0x0) {
+                            if (!this.isRemote) {
                                 if (method6685.method7073() == null) {
                                     break Label_0213;
                                 }
@@ -179,7 +173,7 @@ public abstract class World implements Class1851, AutoCloseable
                         }
                     }
                 }
-                if (!this.field10067) {
+                if (!this.isRemote) {
                     if ((n & 0x1) != 0x0) {
                         this.method6694(class354, method6687.method21696());
                         if (class355.method21716()) {
@@ -230,7 +224,7 @@ public abstract class World implements Class1851, AutoCloseable
     
     @Override
     public void method6694(final BlockPos class354, final Class3833 class355) {
-        if (this.field10065.method29570() != Class9505.field40898) {
+        if (this.worldInfo.method29570() != Class9505.field40898) {
             this.method6696(class354, class355);
         }
     }
@@ -269,7 +263,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public void method6698(final BlockPos class354, final Class3833 class355, final BlockPos class356) {
-        if (!this.field10067) {
+        if (!this.isRemote) {
             final Class7096 method6701 = this.method6701(class354);
             try {
                 method6701.method21734(this, class354, class355, class356, false);
@@ -330,7 +324,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public boolean method6703() {
-        return this.dimension.getType() == DimensionType.field2223 && this.field10055 < 4;
+        return this.dimension.getType() == DimensionType.field2223 && this.skylightSubtracted < 4;
     }
     
     public boolean method6704() {
@@ -366,84 +360,84 @@ public abstract class World implements Class1851, AutoCloseable
         return this.method6952(n) * 6.2831855f;
     }
     
-    public boolean method6714(final Class436 class436) {
-        if (this.field10068) {
-            World.field10048.error("Adding block entity while ticking: {} @ {}", new Supplier[] { () -> Class90.field224.method503(class436.method2206()), class436::method2193 });
+    public boolean method6714(final TileEntity tileEntity) {
+        if (this.processingLoadedTiles) {
+            World.LOGGER.error("Adding block entity while ticking: {} @ {}", new Supplier[] { () -> Class90.field224.method503(tileEntity.method2206()), tileEntity::method2193 });
         }
-        final boolean add = this.field10050.add(class436);
+        final boolean add = this.loadedTileEntityList.add(tileEntity);
         if (add) {
-            if (class436 instanceof Class439) {
-                this.field10051.add(class436);
+            if (tileEntity instanceof Class439) {
+                this.tickableTileEntities.add(tileEntity);
             }
         }
-        if (this.field10067) {
-            final BlockPos method2193 = class436.method2193();
+        if (this.isRemote) {
+            final BlockPos method2193 = tileEntity.method2193();
             final Class7096 method2194 = this.method6701(method2193);
             this.method6693(method2193, method2194, method2194, 2);
         }
         return add;
     }
     
-    public void method6715(final Collection<Class436> collection) {
-        if (!this.field10068) {
-            final Iterator<Class436> iterator = collection.iterator();
+    public void method6715(final Collection<TileEntity> collection) {
+        if (!this.processingLoadedTiles) {
+            final Iterator<TileEntity> iterator = collection.iterator();
             while (iterator.hasNext()) {
                 this.method6714(iterator.next());
             }
         }
         else {
-            this.field10052.addAll(collection);
+            this.addedTileEntityList.addAll(collection);
         }
     }
     
     public void method6716() {
-        final Class5028 method6796 = this.method6796();
+        final IProfiler method6796 = this.method6796();
         method6796.method15297("blockEntities");
-        if (!this.field10053.isEmpty()) {
-            this.field10051.removeAll(this.field10053);
-            this.field10050.removeAll(this.field10053);
-            this.field10053.clear();
+        if (!this.tileEntitiesToBeRemoved.isEmpty()) {
+            this.tickableTileEntities.removeAll(this.tileEntitiesToBeRemoved);
+            this.loadedTileEntityList.removeAll(this.tileEntitiesToBeRemoved);
+            this.tileEntitiesToBeRemoved.clear();
         }
-        this.field10068 = true;
-        final Iterator<Class436> iterator = this.field10051.iterator();
+        this.processingLoadedTiles = true;
+        final Iterator<TileEntity> iterator = this.tickableTileEntities.iterator();
         while (iterator.hasNext()) {
-            final Class436 class436 = iterator.next();
-            if (!class436.method2197() && class436.method2188()) {
-                final BlockPos method6797 = class436.method2193();
-                if (this.field10064.method7410(method6797) && this.method6787().method34779(method6797)) {
+            final TileEntity tileEntity = iterator.next();
+            if (!tileEntity.method2197() && tileEntity.method2188()) {
+                final BlockPos method6797 = tileEntity.method2193();
+                if (this.chunkProvider.method7410(method6797) && this.method6787().method34779(method6797)) {
                     try {
                         method6796.method15298(() -> String.valueOf(Class5412.method16520(class438.method2206())));
-                        if (class436.method2206().method16523(this.method6701(method6797).method21696())) {
-                            ((Class439)class436).method2229();
+                        if (tileEntity.method2206().method16523(this.method6701(method6797).method21696())) {
+                            ((Class439) tileEntity).method2229();
                         }
                         else {
-                            class436.method2207();
+                            tileEntity.method2207();
                         }
                         method6796.method15299();
                     }
                     catch (final Throwable t) {
                         final Class7689 method6798 = Class7689.method24421(t, "Ticking block entity");
-                        class436.method2202(method6798.method24418("Block entity being ticked"));
+                        tileEntity.method2202(method6798.method24418("Block entity being ticked"));
                         throw new Class2365(method6798);
                     }
                 }
             }
-            if (class436.method2197()) {
+            if (tileEntity.method2197()) {
                 iterator.remove();
-                this.field10050.remove(class436);
-                if (!this.method6971(class436.method2193())) {
+                this.loadedTileEntityList.remove(tileEntity);
+                if (!this.method6971(tileEntity.method2193())) {
                     continue;
                 }
-                this.method6685(class436.method2193()).method7028(class436.method2193());
+                this.method6685(tileEntity.method2193()).method7028(tileEntity.method2193());
             }
         }
-        this.field10068 = false;
+        this.processingLoadedTiles = false;
         method6796.method15300("pendingBlockEntities");
-        if (!this.field10052.isEmpty()) {
-            for (int i = 0; i < this.field10052.size(); ++i) {
-                final Class436 class437 = this.field10052.get(i);
+        if (!this.addedTileEntityList.isEmpty()) {
+            for (int i = 0; i < this.addedTileEntityList.size(); ++i) {
+                final TileEntity class437 = this.addedTileEntityList.get(i);
                 if (!class437.method2197()) {
-                    if (!this.field10050.contains(class437)) {
+                    if (!this.loadedTileEntityList.contains(class437)) {
                         this.method6714(class437);
                     }
                     if (this.method6971(class437.method2193())) {
@@ -454,7 +448,7 @@ public abstract class World implements Class1851, AutoCloseable
                     }
                 }
             }
-            this.field10052.clear();
+            this.addedTileEntityList.clear();
         }
         method6796.method15299();
     }
@@ -578,20 +572,20 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public String method6726() {
-        return this.field10064.method7404();
+        return this.chunkProvider.method7404();
     }
     
     @Nullable
     @Override
-    public Class436 method6727(final BlockPos class354) {
+    public TileEntity method6727(final BlockPos class354) {
         if (method6683(class354)) {
             return null;
         }
-        if (!this.field10067 && Thread.currentThread() != this.field10054) {
+        if (!this.isRemote && Thread.currentThread() != this.mainThread) {
             return null;
         }
-        Class436 class355 = null;
-        if (this.field10068) {
+        TileEntity class355 = null;
+        if (this.processingLoadedTiles) {
             class355 = this.method6728(class354);
         }
         if (class355 == null) {
@@ -604,9 +598,9 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Nullable
-    private Class436 method6728(final BlockPos class354) {
-        for (int i = 0; i < this.field10052.size(); ++i) {
-            final Class436 class355 = this.field10052.get(i);
+    private TileEntity method6728(final BlockPos class354) {
+        for (int i = 0; i < this.addedTileEntityList.size(); ++i) {
+            final TileEntity class355 = this.addedTileEntityList.get(i);
             if (!class355.method2197() && class355.method2193().equals(class354)) {
                 return class355;
             }
@@ -614,26 +608,26 @@ public abstract class World implements Class1851, AutoCloseable
         return null;
     }
     
-    public void method6729(final BlockPos class354, final Class436 class355) {
+    public void method6729(final BlockPos class354, final TileEntity class355) {
         if (!method6683(class354)) {
             if (class355 != null) {
                 if (!class355.method2197()) {
-                    if (!this.field10068) {
+                    if (!this.processingLoadedTiles) {
                         this.method6685(class354).method7009(class354, class355);
                         this.method6714(class355);
                     }
                     else {
                         class355.method2187(this, class354);
-                        final Iterator<Class436> iterator = this.field10052.iterator();
+                        final Iterator<TileEntity> iterator = this.addedTileEntityList.iterator();
                         while (iterator.hasNext()) {
-                            final Class436 class356 = iterator.next();
+                            final TileEntity class356 = iterator.next();
                             if (!class356.method2193().equals(class354)) {
                                 continue;
                             }
                             class356.method2198();
                             iterator.remove();
                         }
-                        this.field10052.add(class355);
+                        this.addedTileEntityList.add(class355);
                     }
                 }
             }
@@ -641,23 +635,23 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public void method6730(final BlockPos class354) {
-        final Class436 method6727 = this.method6727(class354);
-        if (method6727 != null && this.field10068) {
+        final TileEntity method6727 = this.method6727(class354);
+        if (method6727 != null && this.processingLoadedTiles) {
             method6727.method2198();
-            this.field10052.remove(method6727);
+            this.addedTileEntityList.remove(method6727);
         }
         else {
             if (method6727 != null) {
-                this.field10052.remove(method6727);
-                this.field10050.remove(method6727);
-                this.field10051.remove(method6727);
+                this.addedTileEntityList.remove(method6727);
+                this.loadedTileEntityList.remove(method6727);
+                this.tickableTileEntities.remove(method6727);
             }
             this.method6685(class354).method7028(class354);
         }
     }
     
     public boolean method6731(final BlockPos class354) {
-        return !method6683(class354) && this.field10064.method7401(class354.getX() >> 4, class354.getZ() >> 4);
+        return !method6683(class354) && this.chunkProvider.method7401(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
     public boolean method6732(final BlockPos class354, final Entity class355) {
@@ -669,7 +663,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public void method6733() {
-        this.field10055 = (int)((1.0 - (0.5 + 2.0 * MathHelper.method35654(MathHelper.cos(this.method6952(1.0f) * 6.2831855f), -0.25, 0.25)) * (1.0 - this.method6768(1.0f) * 5.0f / 16.0) * (1.0 - this.method6766(1.0f) * 5.0f / 16.0)) * 11.0);
+        this.skylightSubtracted = (int)((1.0 - (0.5 + 2.0 * MathHelper.clamp(MathHelper.cos(this.method6952(1.0f) * 6.2831855f), -0.25, 0.25)) * (1.0 - this.method6768(1.0f) * 5.0f / 16.0) * (1.0 - this.method6766(1.0f) * 5.0f / 16.0)) * 11.0);
     }
     
     public void method6734(final boolean b, final boolean b2) {
@@ -677,17 +671,17 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public void method6735() {
-        if (this.field10065.method29560()) {
-            this.field10059 = 1.0f;
-            if (this.field10065.method29556()) {
-                this.field10061 = 1.0f;
+        if (this.worldInfo.method29560()) {
+            this.rainingStrength = 1.0f;
+            if (this.worldInfo.method29556()) {
+                this.thunderingStrength = 1.0f;
             }
         }
     }
     
     @Override
     public void close() throws IOException {
-        this.field10064.close();
+        this.chunkProvider.close();
     }
     
     @Nullable
@@ -741,7 +735,7 @@ public abstract class World implements Class1851, AutoCloseable
         final int method35646 = MathHelper.floor((class6221.field25075 - 2.0) / 16.0);
         final int method35647 = MathHelper.method35650((class6221.field25078 + 2.0) / 16.0);
         final ArrayList arrayList = Lists.newArrayList();
-        final Class1906 method35648 = this.method6762();
+        final AbstractChunkProvider method35648 = this.method6762();
         for (int i = method35644; i < method35645; ++i) {
             for (int j = method35646; j < method35647; ++j) {
                 final Class1862 method35649 = method35648.method7398(i, j, false);
@@ -761,7 +755,7 @@ public abstract class World implements Class1851, AutoCloseable
         final int method35646 = MathHelper.floor((class6221.field25075 - 2.0) / 16.0);
         final int method35647 = MathHelper.method35650((class6221.field25078 + 2.0) / 16.0);
         final ArrayList arrayList = Lists.newArrayList();
-        final Class1906 method35648 = this.method6762();
+        final AbstractChunkProvider method35648 = this.method6762();
         for (int i = method35644; i < method35645; ++i) {
             for (int j = method35646; j < method35647; ++j) {
                 final Class1862 method35649 = method35648.method7399(i, j);
@@ -776,7 +770,7 @@ public abstract class World implements Class1851, AutoCloseable
     @Nullable
     public abstract Entity getEntityByID(final int p0);
     
-    public void method6742(final BlockPos class354, final Class436 class355) {
+    public void method6742(final BlockPos class354, final TileEntity class355) {
         if (this.method6971(class354)) {
             this.method6685(class354).method7058();
         }
@@ -793,7 +787,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public Class9505 method6745() {
-        return this.field10065.method29570();
+        return this.worldInfo.method29570();
     }
     
     public int method6746(final BlockPos class354) {
@@ -836,7 +830,7 @@ public abstract class World implements Class1851, AutoCloseable
     
     public int method6750(final BlockPos class354) {
         int n = 0;
-        for (final Direction class355 : World.field10049) {
+        for (final Direction class355 : World.FACING_VALUES) {
             final int method6748 = this.method6748(class354.method1149(class355), class355);
             if (method6748 >= 15) {
                 return 15;
@@ -852,44 +846,44 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public void method6752(final long n) {
-        this.field10065.method29546(n);
+        this.worldInfo.method29546(n);
     }
     
     @Override
     public long method6753() {
-        return this.field10065.method29534();
+        return this.worldInfo.getSeed();
     }
     
     public long method6754() {
-        return this.field10065.method29539();
+        return this.worldInfo.method29539();
     }
     
     public long method6755() {
-        return this.field10065.method29540();
+        return this.worldInfo.method29540();
     }
     
     public void method6756(final long n) {
-        this.field10065.method29547(n);
+        this.worldInfo.method29547(n);
     }
     
     public void method6757() {
-        this.method6752(this.field10065.method29539() + 1L);
-        if (this.field10065.method29578().method31216(Class8878.field37324)) {
-            this.method6756(this.field10065.method29540() + 1L);
+        this.method6752(this.worldInfo.method29539() + 1L);
+        if (this.worldInfo.method29578().method31216(Class8878.field37324)) {
+            this.method6756(this.worldInfo.method29540() + 1L);
         }
     }
     
     @Override
     public BlockPos method6758() {
-        BlockPos method6958 = new BlockPos(this.field10065.method29536(), this.field10065.method29537(), this.field10065.method29538());
+        BlockPos method6958 = new BlockPos(this.worldInfo.method29536(), this.worldInfo.method29537(), this.worldInfo.method29538());
         if (!this.method6787().method34779(method6958)) {
             method6958 = this.method6958(Class2020.field11525, new BlockPos(this.method6787().method34777(), 0.0, this.method6787().method34778()));
         }
         return method6958;
     }
     
-    public void method6759(final BlockPos class354) {
-        this.field10065.method29548(class354);
+    public void setSpawnPoint(final BlockPos class354) {
+        this.worldInfo.method29548(class354);
     }
     
     public boolean method6760(final Class512 class512, final BlockPos class513) {
@@ -900,8 +894,8 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public Class1906 method6762() {
-        return this.field10064;
+    public AbstractChunkProvider method6762() {
+        return this.chunkProvider;
     }
     
     public void method6763(final BlockPos class354, final Class3833 class355, final int n, final int n2) {
@@ -909,30 +903,30 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public Class8660 method6764() {
-        return this.field10065;
+    public WorldInfo method6764() {
+        return this.worldInfo;
     }
     
     public Class8878 method6765() {
-        return this.field10065.method29578();
+        return this.worldInfo.method29578();
     }
     
     public float method6766(final float n) {
-        return MathHelper.method35700(n, this.field10060, this.field10061) * this.method6768(n);
+        return MathHelper.method35700(n, this.prevThunderingStrength, this.thunderingStrength) * this.method6768(n);
     }
     
     public void method6767(final float n) {
-        this.field10060 = n;
-        this.field10061 = n;
+        this.prevThunderingStrength = n;
+        this.thunderingStrength = n;
     }
     
     public float method6768(final float n) {
-        return MathHelper.method35700(n, this.field10058, this.field10059);
+        return MathHelper.method35700(n, this.prevRainingStrength, this.rainingStrength);
     }
     
     public void method6769(final float n) {
-        this.field10058 = n;
-        this.field10059 = n;
+        this.prevRainingStrength = n;
+        this.rainingStrength = n;
     }
     
     public boolean method6770() {
@@ -968,10 +962,10 @@ public abstract class World implements Class1851, AutoCloseable
     public Class5204 method6779(final Class7689 class7689) {
         final Class5204 method24419 = class7689.method24419("Affected level", 1);
         method24419.method16296("All players", () -> this.method6840().size() + " total; " + this.method6840());
-        method24419.method16296("Chunk stats", this.field10064::method7404);
+        method24419.method16296("Chunk stats", this.chunkProvider::method7404);
         method24419.method16296("Level dimension", () -> this.dimension.getType().toString());
         try {
-            this.field10065.method29602(method24419);
+            this.worldInfo.method29602(method24419);
         }
         catch (final Throwable t) {
             method24419.method16298("Level Data Unobtainable", t);
@@ -1023,15 +1017,15 @@ public abstract class World implements Class1851, AutoCloseable
     
     @Override
     public int method6785() {
-        return this.field10055;
+        return this.skylightSubtracted;
     }
     
     public void method6786(final int n) {
     }
     
     @Override
-    public Class9375 method6787() {
-        return this.field10069;
+    public WorldBorder method6787() {
+        return this.worldBorder;
     }
     
     public void method6788(final IPacket<?> class4252) {
@@ -1039,13 +1033,13 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public Class6737 method6789() {
+    public Dimension method6789() {
         return this.dimension;
     }
     
     @Override
     public Random method6790() {
-        return this.field10062;
+        return this.rand;
     }
     
     @Override
@@ -1058,8 +1052,8 @@ public abstract class World implements Class1851, AutoCloseable
     public abstract Class1792 method6793();
     
     public BlockPos method6794(final int n, final int n2, final int n3, final int n4) {
-        this.field10056 = this.field10056 * 3 + 1013904223;
-        final int n5 = this.field10056 >> 2;
+        this.updateLCG = this.updateLCG * 3 + 1013904223;
+        final int n5 = this.updateLCG >> 2;
         return new BlockPos(n + (n5 & 0xF), n2 + (n5 >> 16 & n4), n3 + (n5 >> 8 & 0xF));
     }
     
@@ -1067,17 +1061,17 @@ public abstract class World implements Class1851, AutoCloseable
         return false;
     }
     
-    public Class5028 method6796() {
-        return this.field10066;
+    public IProfiler method6796() {
+        return this.profiler;
     }
     
     @Override
-    public Class5507 method6797() {
-        return this.field10070;
+    public BiomeManager method6797() {
+        return this.biomeManager;
     }
     
     static {
-        field10048 = LogManager.getLogger();
-        field10049 = Direction.values();
+        LOGGER = LogManager.getLogger();
+        FACING_VALUES = Direction.values();
     }
 }

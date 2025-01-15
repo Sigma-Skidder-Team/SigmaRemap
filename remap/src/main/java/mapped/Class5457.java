@@ -80,13 +80,13 @@ public class Class5457 extends Class5419<Class824>
     
     private List<ItemStack> method16669(final Class824 class824) {
         if (class824.method2625()) {
-            return (List<ItemStack>)ImmutableList.of((Object)new ItemStack(Class7739.field30853));
+            return (List<ItemStack>)ImmutableList.of((Object)new ItemStack(Items.field30853));
         }
         final Class9334 method28781 = class824.method4870().method28781();
         if (!Class5457.field22697.containsKey(method28781)) {
-            return (List<ItemStack>)ImmutableList.of((Object)new ItemStack(Class7739.field31314));
+            return (List<ItemStack>)ImmutableList.of((Object)new ItemStack(Items.field31314));
         }
-        return class824.world.method6679().method1581().method6402(Class5457.field22697.get(method28781)).method34485(new Class9098((Class1849)class824.world).method32877(Class6683.field26367, new BlockPos(class824)).method32877(Class6683.field26362, class824).method32873(class824.method2633()).method32883(Class7104.field27716));
+        return class824.world.getServer().method1581().method6402(Class5457.field22697.get(method28781)).method34485(new Class9098((Class1849)class824.world).method32877(Class6683.field26367, new BlockPos(class824)).method32877(Class6683.field26362, class824).method32873(class824.method2633()).method32883(Class7104.field27716));
     }
     
     private boolean method16670(final Class824 class824) {
@@ -106,7 +106,7 @@ public class Class5457 extends Class5419<Class824>
     }
     
     private static int method16674(final Class1849 class1849) {
-        return 600 + class1849.field10062.nextInt(6001);
+        return 600 + class1849.rand.nextInt(6001);
     }
     
     static {

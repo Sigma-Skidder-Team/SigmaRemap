@@ -29,7 +29,7 @@ public class Class4086 extends Class4085
         this.field18191 = false;
         this.field18192 = false;
         this.method11705(new Class1932("pull"), (class8321, class8322, class8323) -> {
-            if (class8323 != null && class8321.method27622() == this) {
+            if (class8323 != null && class8321.getItem() == this) {
                 return method12296(class8321) ? 0.0f : ((class8321.method27652() - class8323.method2767()) / (float)method12308(class8321));
             }
             return 0.0f;
@@ -50,7 +50,7 @@ public class Class4086 extends Class4085
         this.method11705(new Class1932("firework"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
                 if (method12296(class8321)) {
-                    if (method12301(class8321, Class7739.field31532)) {
+                    if (method12301(class8321, Items.field31532)) {
                         return 1.0f;
                     }
                 }
@@ -111,7 +111,7 @@ public class Class4086 extends Class4085
             }
             if (class513.method27620()) {
                 if (b) {
-                    class513 = new ItemStack(Class7739.field31280);
+                    class513 = new ItemStack(Items.field31280);
                     class514 = class513.method27641();
                 }
             }
@@ -126,7 +126,7 @@ public class Class4086 extends Class4085
         if (!class513.method27620()) {
             ItemStack class514 = null;
             Label_0083: {
-                if (!b2 || !(class513.method27622() instanceof Class3824)) {
+                if (!b2 || !(class513.getItem() instanceof Class3824)) {
                     if (!b2) {
                         if (!b) {
                             class514 = class513.method27621(1);
@@ -198,13 +198,13 @@ public class Class4086 extends Class4085
         }
     }
     
-    private static boolean method12301(final ItemStack class8321, final Class3820 class8322) {
-        return method12299(class8321).stream().anyMatch(class8324 -> class8324.method27622() == class8323);
+    private static boolean method12301(final ItemStack class8321, final Item class8322) {
+        return method12299(class8321).stream().anyMatch(class8324 -> class8324.getItem() == class8323);
     }
     
     private static void method12302(final World class1847, final LivingEntity class1848, final Class316 class1849, final ItemStack class1850, final ItemStack class1851, final float n, final boolean b, final float n2, final float n3, final float n4) {
-        if (!class1847.field10067) {
-            final boolean b2 = class1851.method27622() == Class7739.field31532;
+        if (!class1847.isRemote) {
+            final boolean b2 = class1851.getItem() == Items.field31532;
             Class401 method12303;
             if (!b2) {
                 method12303 = method12303(class1847, class1848, class1850, class1851);
@@ -232,7 +232,7 @@ public class Class4086 extends Class4085
     }
     
     private static Class402 method12303(final World class1847, final LivingEntity class1848, final ItemStack class1849, final ItemStack class1850) {
-        final Class402 method11758 = ((Class3824)((class1850.method27622() instanceof Class3824) ? class1850.method27622() : Class7739.field31280)).method11758(class1847, class1850, class1848);
+        final Class402 method11758 = ((Class3824)((class1850.getItem() instanceof Class3824) ? class1850.getItem() : Items.field31280)).method11758(class1847, class1850, class1848);
         if (class1848 instanceof Class512) {
             method11758.method1978(true);
         }
@@ -282,17 +282,17 @@ public class Class4086 extends Class4085
     private static void method12307(final World class1847, final LivingEntity class1848, final ItemStack class1849) {
         if (class1848 instanceof Class513) {
             final Class513 class1850 = (Class513)class1848;
-            if (!class1847.field10067) {
+            if (!class1847.isRemote) {
                 Class7770.field31806.method13842(class1850, class1849);
             }
-            class1850.method2859(Class8276.field33981.method8449(class1849.method27622()));
+            class1850.method2859(Class8276.field33981.method8449(class1849.getItem()));
         }
         method12300(class1849);
     }
     
     @Override
     public void method11699(final World class1847, final LivingEntity class1848, final ItemStack class1849, final int n) {
-        if (!class1847.field10067) {
+        if (!class1847.isRemote) {
             final int method30195 = Class8742.method30195(Class7882.field32380, class1849);
             final Class7795 method30196 = this.method12309(method30195);
             final Class7795 class1850 = (method30195 != 0) ? null : Class8520.field35107;
@@ -366,9 +366,9 @@ public class Class4086 extends Class4085
                 final ItemStack class8324 = method12299.get(0);
                 list.add(new Class2259("item.minecraft.crossbow.projectile", new Object[0]).appendText(" ").appendSibling(class8324.method27684()));
                 if (class8323.method7991()) {
-                    if (class8324.method27622() == Class7739.field31532) {
+                    if (class8324.getItem() == Items.field31532) {
                         final ArrayList arrayList = Lists.newArrayList();
-                        Class7739.field31532.method11728(class8324, class8322, arrayList, class8323);
+                        Items.field31532.method11728(class8324, class8322, arrayList, class8323);
                         if (!arrayList.isEmpty()) {
                             for (int i = 0; i < arrayList.size(); ++i) {
                                 arrayList.set(i, new StringTextComponent("  ").appendSibling((ITextComponent)arrayList.get(i)).applyTextStyle(TextFormatting.GRAY));
@@ -382,6 +382,6 @@ public class Class4086 extends Class4085
     }
     
     private static float method12311(final ItemStack class8321) {
-        return (class8321.method27622() == Class7739.field31611 && method12301(class8321, Class7739.field31532)) ? 1.6f : 3.15f;
+        return (class8321.getItem() == Items.field31611 && method12301(class8321, Items.field31532)) ? 1.6f : 3.15f;
     }
 }

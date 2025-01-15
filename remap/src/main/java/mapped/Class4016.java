@@ -5,11 +5,13 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Class4016 extends Class3833
 {
     private static String[] field18090;
-    public static final Class7702 field18091;
+    public static final VoxelShape field18091;
     private final Class181 field18092;
     
     public Class4016(final Class181 field18092, final Class9288 class9288) {
@@ -22,7 +24,7 @@ public class Class4016 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4016.field18091;
     }
     

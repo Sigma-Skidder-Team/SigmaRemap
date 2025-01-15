@@ -37,6 +37,6 @@ public class Class6272 extends Class6257
     }
     
     public static boolean method18609(final ItemStack class8321, final int n, final Random random) {
-        return (!(class8321.method27622() instanceof Class4055) || random.nextFloat() >= 0.6f) && random.nextInt(n + 1) > 0;
+        return (!(class8321.getItem() instanceof Class4055) || random.nextFloat() >= 0.6f) && random.nextInt(n + 1) > 0;
     }
 }

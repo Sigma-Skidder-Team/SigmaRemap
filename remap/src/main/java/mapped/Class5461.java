@@ -35,7 +35,7 @@ public class Class5461 extends Class5419<LivingEntity>
         if (method2619.isPresent() && class1849.method6754() - method2619.get().method1238() < 100L) {
             return false;
         }
-        final Class7096 method2620 = class1849.method6701(class1851.method1170());
+        final BlockState method2620 = class1849.method6701(class1851.method1170());
         if (class1851.method1170().withinDistance(class1850.method1934(), 2.0)) {
             if (method2620.method21696().method11785(Class7188.field27910)) {
                 if (!method2620.method21772((Class7111<Boolean>)Class3900.field17600)) {

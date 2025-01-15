@@ -72,7 +72,7 @@ public class Class9583
         return jsonObject.has(s) ? method35894(jsonObject.get(s), s) : s2;
     }
     
-    public static Class3820 method35897(final JsonElement jsonElement, final String str) {
+    public static Item method35897(final JsonElement jsonElement, final String str) {
         if (!jsonElement.isJsonPrimitive()) {
             throw new JsonSyntaxException("Expected " + str + " to be an item, was " + toString(jsonElement));
         }
@@ -82,7 +82,7 @@ public class Class9583
         });
     }
     
-    public static Class3820 method35898(final JsonObject jsonObject, final String str) {
+    public static Item method35898(final JsonObject jsonObject, final String str) {
         if (!jsonObject.has(str)) {
             throw new JsonSyntaxException("Missing " + str + ", expected to find an item");
         }

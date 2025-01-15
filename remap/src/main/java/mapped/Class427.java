@@ -79,9 +79,9 @@ public class Class427 extends Entity
             else {
                 this.method2099();
             }
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.noClip = !this.world.method6977(this)) {
-                    this.method1838(this.getPosX(), (this.method1886().field25074 + this.method1886().field25077) / 2.0, this.getPosZ());
+                    this.method1838(this.getPosX(), (this.getBoundingBox().field25074 + this.getBoundingBox().field25077) / 2.0, this.getPosZ());
                 }
             }
             else {
@@ -89,7 +89,7 @@ public class Class427 extends Entity
             }
             Label_0234: {
                 if (this.onGround) {
-                    if (Entity.method1680(this.getMotion()) <= 9.999999747378752E-6) {
+                    if (Entity.horizontalMag(this.getMotion()) <= 9.999999747378752E-6) {
                         if ((this.ticksExisted + this.getEntityId()) % 4 != 0) {
                             break Label_0234;
                         }
@@ -122,7 +122,7 @@ public class Class427 extends Entity
                     this.setMotion((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f, 0.20000000298023224, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f);
                     this.method1695(Class8520.field35214, 0.4f, 2.0f + this.rand.nextFloat() * 0.4f);
                 }
-                if (!this.world.field10067) {
+                if (!this.world.isRemote) {
                     if (this.method2101()) {
                         this.method2100();
                     }
@@ -132,12 +132,12 @@ public class Class427 extends Entity
                 ++this.field2614;
             }
             this.isAirBorne |= this.method1715();
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.getMotion().subtract(method1935).lengthSquared() > 0.01) {
                     this.isAirBorne = true;
                 }
             }
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.field2614 >= 6000) {
                     this.method1652();
                 }
@@ -155,7 +155,7 @@ public class Class427 extends Entity
     
     private void method2100() {
         if (this.method2101()) {
-            for (final Class427 class427 : this.world.method6739((Class<? extends Class427>)Class427.class, this.method1886().method18495(0.5, 0.0, 0.5), class428 -> class428 != this && class428.method2101())) {
+            for (final Class427 class427 : this.world.method6739((Class<? extends Class427>)Class427.class, this.getBoundingBox().method18495(0.5, 0.0, 0.5), class428 -> class428 != this && class428.method2101())) {
                 if (!class427.method2101()) {
                     continue;
                 }
@@ -200,7 +200,7 @@ public class Class427 extends Entity
     }
     
     public static boolean method2103(final ItemStack class8321, final ItemStack class8322) {
-        return class8322.method27622() == class8321.method27622() && class8322.method27690() + class8321.method27690() <= class8322.method27628() && !(class8322.method27656() ^ class8321.method27656()) && (!class8322.method27656() || class8322.method27657().equals(class8321.method27657()));
+        return class8322.getItem() == class8321.getItem() && class8322.method27690() + class8321.method27690() <= class8322.method27628() && !(class8322.method27656() ^ class8321.method27656()) && (!class8322.method27656() || class8322.method27657().equals(class8321.method27657()));
     }
     
     public static ItemStack method2104(final ItemStack class8321, final ItemStack class8322, final int b) {
@@ -233,7 +233,7 @@ public class Class427 extends Entity
     public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
             if (!this.method2107().method27620()) {
-                if (this.method2107().method27622() == Class7739.field31530) {
+                if (this.method2107().getItem() == Items.field31530) {
                     if (class7929.method25707()) {
                         return false;
                     }
@@ -286,9 +286,9 @@ public class Class427 extends Entity
     
     @Override
     public void method1736(final Class512 class512) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             final ItemStack method2107 = this.method2107();
-            final Class3820 method2108 = method2107.method27622();
+            final Item method2108 = method2107.getItem();
             final int method2109 = method2107.method27690();
             if (this.field2615 == 0) {
                 if (this.field2618 == null || this.field2618.equals(class512.method1865())) {
@@ -320,7 +320,7 @@ public class Class427 extends Entity
     @Override
     public Entity method1854(final DimensionType class383) {
         final Entity method1854 = super.method1854(class383);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (method1854 instanceof Class427) {
                 ((Class427)method1854).method2100();
             }

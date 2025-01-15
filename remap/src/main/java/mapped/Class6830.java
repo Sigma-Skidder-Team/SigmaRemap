@@ -33,7 +33,7 @@ public class Class6830 extends Class6831
         if (!this.field26826.removed) {
             if (this.field26825.isPassenger()) {
                 if (this.field26825.method1920() == this.field26826) {
-                    final float method35641 = MathHelper.sqrt(Entity.method1680(this.field26826.getMotion()));
+                    final float method35641 = MathHelper.sqrt(Entity.horizontalMag(this.field26826.getMotion()));
                     if (method35641 < 0.01) {
                         this.field26835 = 0.0f;
                         return;

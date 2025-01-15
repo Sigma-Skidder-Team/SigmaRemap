@@ -38,7 +38,7 @@ public class Class3232 extends Class3167
     @Class6753
     private void method10191(final Class5744 class5744) {
         if (this.method9906() && class5744.method17046()) {
-            if (!(Class3232.field15514.field4684.method2766().method27622() instanceof Class4087)) {
+            if (!(Class3232.field15514.field4684.method2766().getItem() instanceof Class4087)) {
                 this.field15703.clear();
             }
             else {

@@ -52,7 +52,7 @@ public class Class802 extends Class789
         this.field4114.method22062(0, new Class3490(this));
         this.field4114.method22062(1, new Class3607(this, 1.25));
         this.field4114.method22062(2, new Class3587(this, 1.0));
-        this.field4114.method22062(3, new Class3472(this, 1.1, Class120.method618(Class7739.field31315), false));
+        this.field4114.method22062(3, new Class3472(this, 1.1, Class120.method618(Items.field31315), false));
         this.field4114.method22062(4, new Class3456(this, 1.1));
         this.field4114.method22062(5, this.field4309);
         this.field4114.method22062(6, new Class3517(this, 1.0));
@@ -68,7 +68,7 @@ public class Class802 extends Class789
     
     @Override
     public void method2736() {
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             this.field4308 = Math.max(0, this.field4308 - 1);
         }
         super.method2736();
@@ -174,11 +174,11 @@ public class Class802 extends Class789
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() == Class7739.field31426) {
+        if (method2715.getItem() == Items.field31426) {
             if (!this.method4636()) {
                 if (!this.method2625()) {
                     this.method4633();
-                    if (!this.world.field10067) {
+                    if (!this.world.isRemote) {
                         method2715.method27636(1, class512, class515 -> class515.method2795(class514));
                     }
                     return true;
@@ -189,7 +189,7 @@ public class Class802 extends Class789
     }
     
     public void method4633() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method4637(true);
             for (int n = 1 + this.rand.nextInt(3), i = 0; i < n; ++i) {
                 final Class427 method1765 = this.method1765(Class802.field4306.get(this.method4634()), 1);
@@ -231,7 +231,7 @@ public class Class802 extends Class789
     }
     
     @Override
-    public void method1691(final BlockPos class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final BlockState class355) {
         this.method1695(Class8520.field35544, 0.15f, 1.0f);
     }
     
@@ -297,7 +297,7 @@ public class Class802 extends Class789
     }
     
     private Class181 method4640(final Class789 class789, final Class789 class790) {
-        return this.world.method6792().method6378(Class8976.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.world).map(class792 -> class792.method11290(class791)).map((Function<? super Object, ?>) ItemStack::method27622).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.world.field10062.nextBoolean() ? class793 : class794);
+        return this.world.method6792().method6378(Class8976.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.world).map(class792 -> class792.method11290(class791)).map((Function<? super Object, ?>) ItemStack::getItem).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.world.rand.nextBoolean() ? class793 : class794);
     }
     
     private static Class473 method4641(final Class181 class181, final Class181 class182) {

@@ -22,8 +22,8 @@ public abstract class Class7304<C extends Class5118>
     public static final Class7304<Class5117> field28278;
     public static final Class7304<Class5117> field28279;
     public static final Class7304<Class5117> field28280;
-    public static final Class7096 field28281;
-    public static final Class7096 field28282;
+    public static final BlockState field28281;
+    public static final BlockState field28282;
     public static final Class7099 field28283;
     public static final Class7099 field28284;
     public Set<Class3833> field28285;
@@ -98,8 +98,8 @@ public abstract class Class7304<C extends Class5118>
         }
         set.set(n9);
         class1861.setPos(n4, n7, n5);
-        final Class7096 method6701 = class1860.method6701(class1861);
-        final Class7096 method6702 = class1860.method6701(class1862.method1287(class1861).method1290(Direction.UP));
+        final BlockState method6701 = class1860.method6701(class1861);
+        final BlockState method6702 = class1860.method6701(class1862.method1287(class1861).method1290(Direction.UP));
         if (method6701.method21696() == Class7521.field29155 || method6701.method21696() == Class7521.field29392) {
             atomicBoolean.set(true);
         }
@@ -125,11 +125,11 @@ public abstract class Class7304<C extends Class5118>
     
     public abstract boolean method22402(final Random p0, final int p1, final int p2, final C p3);
     
-    public boolean method22407(final Class7096 class7096) {
+    public boolean method22407(final BlockState class7096) {
         return this.field28285.contains(class7096.method21696());
     }
     
-    public boolean method22408(final Class7096 class7096, final Class7096 class7097) {
+    public boolean method22408(final BlockState class7096, final BlockState class7097) {
         final Class3833 method21696 = class7096.method21696();
         if (!this.method22407(class7096)) {
             if (method21696 == Class7521.field29175 || method21696 == Class7521.field29177) {

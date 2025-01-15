@@ -54,7 +54,7 @@ public class Class8866
     
     public boolean method31132() {
         if (!this.field37268.method9887("Autoblock Mode").equals("None")) {
-            if (this.field37269.field4684.method2713().method27622() instanceof Class4077) {
+            if (this.field37269.field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
                 if (!this.method31128()) {
                     return true;
                 }

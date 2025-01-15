@@ -18,8 +18,8 @@ public class Class4544 extends Class4535<Class5122>
         int n = 0;
         BlockPos method1137 = new BlockPos(class1853.getX(), class1851.method6699(Class2020.field11524, class1853.getX(), class1853.getZ()), class1853.getZ());
         if (class1851.method6701(method1137).method21696() == Class7521.field29173) {
-            final Class7096 method1138 = Class7521.field29713.method11878();
-            final Class7096 method1139 = Class7521.field29714.method11878();
+            final BlockState method1138 = Class7521.field29713.method11878();
+            final BlockState method1139 = Class7521.field29714.method11878();
             for (int n2 = 1 + random.nextInt(10), i = 0; i <= n2; ++i) {
                 Label_0134: {
                     if (class1851.method6701(method1137).method21696() == Class7521.field29173) {
@@ -29,7 +29,7 @@ public class Class4544 extends Class4535<Class5122>
                                     class1851.method6688(method1137, method1139, 2);
                                     break Label_0134;
                                 }
-                                class1851.method6688(method1137, ((Class7097<Object, Class7096>)method1138).method21773((Class7111<Comparable>)Class3915.field17729, random.nextInt(4) + 20), 2);
+                                class1851.method6688(method1137, ((Class7097<Object, BlockState>)method1138).method21773((Class7111<Comparable>)Class3915.field17729, random.nextInt(4) + 20), 2);
                                 ++n;
                                 break Label_0134;
                             }
@@ -43,7 +43,7 @@ public class Class4544 extends Class4535<Class5122>
                         if (class1851.method6701(method1140.method1139()).method21696() == Class7521.field29713) {
                             break;
                         }
-                        class1851.method6688(method1140, ((Class7097<Object, Class7096>)method1138).method21773((Class7111<Comparable>)Class3915.field17729, random.nextInt(4) + 20), 2);
+                        class1851.method6688(method1140, ((Class7097<Object, BlockState>)method1138).method21773((Class7111<Comparable>)Class3915.field17729, random.nextInt(4) + 20), 2);
                         ++n;
                         break;
                     }

@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.function.Supplier;
 
-public interface Class5028
+public interface IProfiler
 {
     void method15295();
     

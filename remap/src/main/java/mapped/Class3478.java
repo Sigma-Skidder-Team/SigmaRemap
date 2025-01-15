@@ -25,7 +25,7 @@ public class Class3478 extends Class3446
     public boolean method11013() {
         if (this.field16388 <= 0) {
             this.field16388 = 60;
-            final List<Class512> method7141 = this.field16389.world.method7141(this.field16387, this.field16389, this.field16389.method1886().method18495(16.0, 64.0, 16.0));
+            final List<Class512> method7141 = this.field16389.world.method7141(this.field16387, this.field16389, this.field16389.getBoundingBox().method18495(16.0, 64.0, 16.0));
             if (!method7141.isEmpty()) {
                 method7141.sort((class513, class514) -> (class513.getPosY() <= class514.getPosY()) ? 1 : -1);
                 for (final Class512 class512 : method7141) {

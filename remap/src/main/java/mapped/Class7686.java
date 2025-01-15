@@ -21,10 +21,10 @@ import java.util.List;
 public class Class7686 implements Class7684
 {
     private static String[] field30527;
-    private final Class9104<Class3833, Class7096> field30528;
+    private final Class9104<Class3833, BlockState> field30528;
     private final List<Class8997> field30529;
     
-    public Class7686(final Class9104<Class3833, Class7096> field30528, final List<Class8997> field30529) {
+    public Class7686(final Class9104<Class3833, BlockState> field30528, final List<Class8997> field30529) {
         this.field30528 = field30528;
         this.field30529 = field30529;
     }

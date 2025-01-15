@@ -26,7 +26,7 @@ public class Class7453 implements Class7452
     @Override
     public JsonObject method22939() {
         final JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("item", Class90.field211.method503(this.field28755.method27622()).toString());
+        jsonObject.addProperty("item", Class90.field211.method503(this.field28755.getItem()).toString());
         return jsonObject;
     }
 }

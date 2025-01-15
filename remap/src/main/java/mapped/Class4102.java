@@ -11,7 +11,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class Class4102 extends Class3820
+public class Class4102 extends Item
 {
     public Class4102(final Class8959 class8959) {
         super(class8959);
@@ -28,7 +28,7 @@ public class Class4102 extends Class3820
     }
     
     @Override
-    public boolean method11703(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
         return !class7099.method2889();
     }
     
@@ -49,7 +49,7 @@ public class Class4102 extends Class3820
             if (this.method11726(class8321) - n >= 10) {
                 final int method30220 = Class8742.method30220(class8321);
                 if (method30220 <= 0 || class8324.method1709()) {
-                    if (!class8322.field10067) {
+                    if (!class8322.isRemote) {
                         class8321.method27636(1, class8324, class8328 -> class8328.method2795(class8327.method2757()));
                         if (method30220 == 0) {
                             final Class403 class8325 = new Class403(class8322, class8324, class8321);
@@ -117,7 +117,7 @@ public class Class4102 extends Class3820
     }
     
     @Override
-    public boolean method11712(final ItemStack class8321, final World class8322, final Class7096 class8323, final BlockPos class8324, final LivingEntity class8325) {
+    public boolean method11712(final ItemStack class8321, final World class8322, final BlockState class8323, final BlockPos class8324, final LivingEntity class8325) {
         if (class8323.method21718(class8322, class8324) != 0.0) {
             class8321.method27636(2, class8325, class8326 -> class8326.method2794(Class2215.field13600));
         }

@@ -366,7 +366,7 @@ public class Class689 extends Class565
         }
         if (!this.field3792.method5317()) {
             if (this.field3794.method21449() == Class2165.field12881) {
-                final Class7096 method6701 = this.field3792.field4683.method6701(((Class7005)this.field3794).method21447());
+                final BlockState method6701 = this.field3792.field4683.method6701(((Class7005)this.field3794).method21447());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Block");
                 arrayList.add(String.valueOf(Class90.field208.method503(method6701.method21696())));

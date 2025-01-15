@@ -19,7 +19,7 @@ public class Class4073 extends Class4072
     }
     
     @Override
-    public boolean method11713(final Class7096 class7096) {
+    public boolean method11713(final BlockState class7096) {
         final Class3833 method21696 = class7096.method21696();
         final int method21697 = this.method12274().method8112();
         if (method21696 != Class7521.field29286) {
@@ -61,7 +61,7 @@ public class Class4073 extends Class4072
     }
     
     @Override
-    public float method11706(final ItemStack class8321, final Class7096 class8322) {
+    public float method11706(final ItemStack class8321, final BlockState class8322) {
         final Class8059 method21697 = class8322.method21697();
         if (method21697 != Class8059.field33186) {
             if (method21697 != Class8059.field33188) {

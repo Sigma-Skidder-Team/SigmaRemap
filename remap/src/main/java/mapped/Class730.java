@@ -93,7 +93,7 @@ public class Class730 extends Class527
         class7351.method22564(this.field3152 / 2, 0.0, 50.0);
         class7351.method22565(93.75f, -93.75f, 93.75f);
         class7351.method22564(0.0, -1.3125, 0.0);
-        final Class7096 method2194 = this.field3981.method2194();
+        final BlockState method2194 = this.field3981.method2194();
         final boolean b = method2194.method21696() instanceof Class3861;
         if (!b) {
             class7351.method22564(0.0, -0.3125, 0.0);

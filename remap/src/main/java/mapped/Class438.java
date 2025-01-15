@@ -14,7 +14,7 @@ import net.minecraft.util.Direction;
 
 import java.util.List;
 
-public class Class438 extends Class436 implements Class439
+public class Class438 extends TileEntity implements Class439
 {
     private final List<Class7829> field2663;
     private BlockPos field2664;
@@ -113,7 +113,7 @@ public class Class438 extends Class436 implements Class439
                 if (class399 instanceof Class798) {
                     final Class798 class401 = (Class798)class399;
                     if (class401.method4510()) {
-                        if (!this.method2227() || this.field2656.field10062.nextBoolean()) {
+                        if (!this.method2227() || this.field2656.rand.nextBoolean()) {
                             this.field2664 = class401.method4509();
                         }
                     }
@@ -153,7 +153,7 @@ public class Class438 extends Class436 implements Class439
                 final Class798 class7100 = (Class798)method2195;
                 if (this.method2227()) {
                     if (!class7100.method4510()) {
-                        if (this.field2656.field10062.nextFloat() < 0.9f) {
+                        if (this.field2656.rand.nextFloat() < 0.9f) {
                             class7100.method4511(this.field2664);
                         }
                     }
@@ -163,7 +163,7 @@ public class Class438 extends Class436 implements Class439
                     if (class7096.method21696().method11785(Class7188.field27931)) {
                         final int method2197 = method2222(class7096);
                         if (method2197 < 5) {
-                            int n2 = (this.field2656.field10062.nextInt(100) != 0) ? 1 : 2;
+                            int n2 = (this.field2656.rand.nextInt(100) != 0) ? 1 : 2;
                             if (method2197 + n2 > 5) {
                                 --n2;
                             }
@@ -207,7 +207,7 @@ public class Class438 extends Class436 implements Class439
     
     @Override
     public void method2229() {
-        if (!this.field2656.field10067) {
+        if (!this.field2656.isRemote) {
             this.method2228();
             final BlockPos method2193 = this.method2193();
             if (this.field2663.size() > 0) {

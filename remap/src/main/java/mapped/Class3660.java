@@ -27,7 +27,7 @@ public class Class3660
     private static Class27 field16944;
     private static boolean field16945;
     
-    public static int method11269(final Class7096 class7096) {
+    public static int method11269(final BlockState class7096) {
         final Class9386 method11272 = method11272(class7096.method21691(), class7096.method21692());
         return (method11272 == null) ? -1 : method11272.method34891();
     }
@@ -36,7 +36,7 @@ public class Class3660
         return Class3660.field16943;
     }
     
-    public static int method11271(final Class7096 class7096) {
+    public static int method11271(final BlockState class7096) {
         if (Class3660.field16943) {
             final Class9386 method11272 = method11272(class7096.method21691(), class7096.method21692());
             return (method11272 == null) ? 0 : method11272.method34892();
@@ -263,7 +263,7 @@ public class Class3660
                         Class8571.method28848("Invalid block name (" + n + "): " + asString);
                         return;
                     }
-                    final Class7096 method28941 = method28940.method11878();
+                    final BlockState method28941 = method28940.method11878();
                     final Collection<Class7111<?>> collection = method28941.method21770();
                     final LinkedHashMap linkedHashMap = new LinkedHashMap();
                     final JsonObject jsonObject = (JsonObject)asJsonObject.get("Properties");
@@ -330,7 +330,7 @@ public class Class3660
     private static Class8802 method11283(final Class3833 class3833, final int n, final Map<Class7111, Comparable> map) {
         final ArrayList list = new ArrayList();
         final Set<Class7111> keySet = map.keySet();
-        for (final Class7096 class3834 : Class6770.method20654(class3833)) {
+        for (final BlockState class3834 : Class6770.method20654(class3833)) {
             int n2 = 1;
             for (final Class7111 class3835 : keySet) {
                 if (!((Class7097<Object, Object>)class3834).method21771((Class7111<Comparable>)class3835)) {
@@ -351,7 +351,7 @@ public class Class3660
         final LinkedHashSet set = new LinkedHashSet();
         final Iterator iterator3 = list.iterator();
         while (iterator3.hasNext()) {
-            set.add(((Class7096)iterator3.next()).method21692());
+            set.add(((BlockState)iterator3.next()).method21692());
         }
         return new Class8802(n, Class8571.method29008((Integer[])set.toArray(new Integer[set.size()])));
     }
@@ -362,7 +362,7 @@ public class Class3660
             final Class3833 obj = Class90.field208.method505(iterator.next());
             final int method21691 = obj.method11878().method21691();
             if (method11273(method21691) != null) {
-                for (final Class7096 obj2 : Class6770.method20654(obj)) {
+                for (final BlockState obj2 : Class6770.method20654(obj)) {
                     if (method11272(method21691, obj2.method21692()) != null) {
                         continue;
                     }
@@ -385,7 +385,7 @@ public class Class3660
         Class3660.field16944 = null;
     }
     
-    public static int method11287(final Class7096 class7096) {
+    public static int method11287(final BlockState class7096) {
         if (!Class3660.field16943) {
             return class7096.method21710().ordinal();
         }

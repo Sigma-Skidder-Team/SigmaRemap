@@ -11,7 +11,7 @@ public final class Class115 extends Class114
     }
     
     @Override
-    public boolean test(final Class7096 class7096) {
+    public boolean test(final BlockState class7096) {
         return class7096 != null && class7096.method21706();
     }
 }

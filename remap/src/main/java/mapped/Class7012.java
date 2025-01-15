@@ -45,7 +45,7 @@ public class Class7012
     private static final Logger field27332;
     private static final Gson field27333;
     private static final TypeToken<Map<Class1932, Class348>> field27334;
-    private final Class394 field27335;
+    private final MinecraftServer field27335;
     private final File field27336;
     private final Map<Class8863, Class348> field27337;
     private final Set<Class8863> field27338;
@@ -55,7 +55,7 @@ public class Class7012
     private Class8863 field27342;
     private boolean field27343;
     
-    public Class7012(final Class394 field27335, final File field27336, final Class513 field27337) {
+    public Class7012(final MinecraftServer field27335, final File field27336, final Class513 field27337) {
         this.field27337 = Maps.newLinkedHashMap();
         this.field27338 = Sets.newLinkedHashSet();
         this.field27339 = Sets.newLinkedHashSet();

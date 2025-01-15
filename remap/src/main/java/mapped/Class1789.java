@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Collections;
 import com.google.gson.JsonArray;
 import java.io.InputStream;
 import java.util.Iterator;
@@ -12,7 +11,7 @@ import java.util.HashMap;
 import com.google.gson.Gson;
 import java.io.IOException;
 import com.google.gson.JsonObject;
-import java.io.Reader;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -30,7 +29,7 @@ public class Class1789 extends Class1776<Map<Class1932, List<Class1737>>>
         this.field9905 = field9905;
     }
     
-    public Map<Class1932, List<Class1737>> method6375(final Class6582 class6582, final Class5028 class6583) {
+    public Map<Class1932, List<Class1737>> method6375(final Class6582 class6582, final IProfiler class6583) {
         class6583.method15295();
         final Gson create = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
         final HashMap hashMap = Maps.newHashMap();
@@ -91,7 +90,7 @@ public class Class1789 extends Class1776<Map<Class1932, List<Class1737>>>
         return hashMap;
     }
     
-    public void method6377(final Map<Class1932, List<Class1737>> p0, final Class6582 p1, final Class5028 p2) {
+    public void method6377(final Map<Class1932, List<Class1737>> p0, final Class6582 p1, final IProfiler p2) {
         // 
         // This method could not be decompiled.
         // 

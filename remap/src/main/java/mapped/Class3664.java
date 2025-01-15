@@ -223,7 +223,7 @@ public class Class3664 implements Class3663
     }
     
     public static ItemStack method11312(final JsonObject jsonObject) {
-        final Class3820 class3820 = Class90.field211.method506(new Class1932(Class9583.method35895(jsonObject, "item"))).orElseThrow(() -> {
+        final Item class3820 = Class90.field211.method506(new Class1932(Class9583.method35895(jsonObject, "item"))).orElseThrow(() -> {
             new JsonSyntaxException("Unknown item '" + str + "'");
             return;
         });

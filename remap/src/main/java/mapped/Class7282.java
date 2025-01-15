@@ -93,7 +93,7 @@ public class Class7282
         final Vec3d method1747 = class399.method1747(1.0f);
         final Vec3d method1748 = class399.method1741(1.0f).scale(n);
         final Vec3d method1749 = method1747.add(method1748);
-        final AxisAlignedBB method1750 = class399.method1886().method18493(method1748).method18496(1.0);
+        final AxisAlignedBB method1750 = class399.getBoundingBox().method18493(method1748).method18496(1.0);
         final int n2 = n * n;
         final Class7007 method1751 = Class7476.method23096(class399, method1747, method1749, method1750, class400 -> !class400.isSpectator() && class400.method1749(), n2);
         if (method1751 != null) {

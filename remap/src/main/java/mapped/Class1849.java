@@ -67,7 +67,7 @@ public class Class1849 extends World
     private final Queue<Entity> field10087;
     private final List<Class513> field10088;
     public boolean field10089;
-    private final Class394 field10090;
+    private final MinecraftServer field10090;
     private final Class8642 field10091;
     public boolean field10092;
     private boolean field10093;
@@ -81,7 +81,7 @@ public class Class1849 extends World
     private boolean field10101;
     private final Class8335 field10102;
     
-    public Class1849(final Class394 field10090, final Executor executor, final Class8642 field10091, final Class8660 class8660, final DimensionType class8661, final Class5028 class8662, final Class6459 class8663) {
+    public Class1849(final MinecraftServer field10090, final Executor executor, final Class8642 field10091, final WorldInfo class8660, final DimensionType class8661, final IProfiler class8662, final Class6459 class8663) {
         super(class8660, class8661, (class8669, class8670) -> new Class1909((Class1849)class8669, class8664.method29392(), class8664.method29400(), class8664.method29399(), executor2, class8670.method20488(), class8667.method1537().method20613(), class8668, () -> class8671.method1481(DimensionType.field2223).method6918()), class8662, false);
         this.field10084 = Lists.newArrayList();
         this.field10085 = (Int2ObjectMap<Entity>)new Int2ObjectLinkedOpenHashMap();
@@ -111,7 +111,7 @@ public class Class1849 extends World
     }
     
     public void method6862(final BooleanSupplier booleanSupplier) {
-        final Class5028 method6796 = this.method6796();
+        final IProfiler method6796 = this.method6796();
         this.field10101 = true;
         method6796.method15297("world border");
         this.method6787().method34809();
@@ -119,18 +119,18 @@ public class Class1849 extends World
         final boolean method6797 = this.method6771();
         if (this.dimension.method20503()) {
             if (this.method6765().method31216(Class8878.field37334)) {
-                int method6798 = this.field10065.method29554();
-                int method6799 = this.field10065.method29558();
-                int method6800 = this.field10065.method29562();
-                boolean method6801 = this.field10065.method29556();
-                boolean method6802 = this.field10065.method29560();
+                int method6798 = this.worldInfo.method29554();
+                int method6799 = this.worldInfo.method29558();
+                int method6800 = this.worldInfo.method29562();
+                boolean method6801 = this.worldInfo.method29556();
+                boolean method6802 = this.worldInfo.method29560();
                 if (method6798 <= 0) {
                     if (method6799 <= 0) {
                         if (!method6801) {
-                            method6799 = this.field10062.nextInt(168000) + 12000;
+                            method6799 = this.rand.nextInt(168000) + 12000;
                         }
                         else {
-                            method6799 = this.field10062.nextInt(12000) + 3600;
+                            method6799 = this.rand.nextInt(12000) + 3600;
                         }
                     }
                     else if (--method6799 == 0) {
@@ -138,10 +138,10 @@ public class Class1849 extends World
                     }
                     if (method6800 <= 0) {
                         if (!method6802) {
-                            method6800 = this.field10062.nextInt(168000) + 12000;
+                            method6800 = this.rand.nextInt(168000) + 12000;
                         }
                         else {
-                            method6800 = this.field10062.nextInt(12000) + 12000;
+                            method6800 = this.rand.nextInt(12000) + 12000;
                         }
                     }
                     else if (--method6800 == 0) {
@@ -155,34 +155,34 @@ public class Class1849 extends World
                     method6801 = false;
                     method6802 = false;
                 }
-                this.field10065.method29559(method6799);
-                this.field10065.method29563(method6800);
-                this.field10065.method29555(method6798);
-                this.field10065.method29557(method6801);
-                this.field10065.method29561(method6802);
+                this.worldInfo.method29559(method6799);
+                this.worldInfo.method29563(method6800);
+                this.worldInfo.method29555(method6798);
+                this.worldInfo.method29557(method6801);
+                this.worldInfo.method29561(method6802);
             }
-            this.field10060 = this.field10061;
-            if (!this.field10065.method29556()) {
-                this.field10061 -= (float)0.01;
-            }
-            else {
-                this.field10061 += (float)0.01;
-            }
-            this.field10061 = MathHelper.clamp(this.field10061, 0.0f, 1.0f);
-            this.field10058 = this.field10059;
-            if (!this.field10065.method29560()) {
-                this.field10059 -= (float)0.01;
+            this.prevThunderingStrength = this.thunderingStrength;
+            if (!this.worldInfo.method29556()) {
+                this.thunderingStrength -= (float)0.01;
             }
             else {
-                this.field10059 += (float)0.01;
+                this.thunderingStrength += (float)0.01;
             }
-            this.field10059 = MathHelper.clamp(this.field10059, 0.0f, 1.0f);
+            this.thunderingStrength = MathHelper.clamp(this.thunderingStrength, 0.0f, 1.0f);
+            this.prevRainingStrength = this.rainingStrength;
+            if (!this.worldInfo.method29560()) {
+                this.rainingStrength -= (float)0.01;
+            }
+            else {
+                this.rainingStrength += (float)0.01;
+            }
+            this.rainingStrength = MathHelper.clamp(this.rainingStrength, 0.0f, 1.0f);
         }
-        if (this.field10058 != this.field10059) {
-            this.field10090.method1537().method20587(new Class4306(7, this.field10059), this.dimension.getType());
+        if (this.prevRainingStrength != this.rainingStrength) {
+            this.field10090.method1537().method20587(new Class4306(7, this.rainingStrength), this.dimension.getType());
         }
-        if (this.field10060 != this.field10061) {
-            this.field10090.method1537().method20587(new Class4306(8, this.field10061), this.dimension.getType());
+        if (this.prevThunderingStrength != this.thunderingStrength) {
+            this.field10090.method1537().method20587(new Class4306(8, this.thunderingStrength), this.dimension.getType());
         }
         if (method6797 != this.method6771()) {
             if (!method6797) {
@@ -191,8 +191,8 @@ public class Class1849 extends World
             else {
                 this.field10090.method1537().method20586(new Class4306(2, 0.0f));
             }
-            this.field10090.method1537().method20586(new Class4306(7, this.field10059));
-            this.field10090.method1537().method20586(new Class4306(8, this.field10061));
+            this.field10090.method1537().method20586(new Class4306(7, this.rainingStrength));
+            this.field10090.method1537().method20586(new Class4306(8, this.thunderingStrength));
         }
         if (this.method6764().method29568()) {
             if (this.method6954() != Class2113.field12293) {
@@ -203,7 +203,7 @@ public class Class1849 extends World
             if (this.field10088.stream().noneMatch(class402 -> !class402.isSpectator() && !class402.method2851())) {
                 this.field10093 = false;
                 if (this.method6765().method31216(Class8878.field37324)) {
-                    final long n = this.field10065.method29540() + 24000L;
+                    final long n = this.worldInfo.method29540() + 24000L;
                     this.method6756(n - n % 24000L);
                 }
                 this.method6863();
@@ -217,7 +217,7 @@ public class Class1849 extends World
         method6796.method15300("chunkSource");
         this.method6904().method7403(booleanSupplier);
         method6796.method15300("tickPending");
-        if (this.field10065.method29570() != Class9505.field40898) {
+        if (this.worldInfo.method29570() != Class9505.field40898) {
             this.field10096.method21346();
             this.field10097.method21346();
         }
@@ -310,15 +310,15 @@ public class Class1849 extends World
         final boolean method7020 = this.method6771();
         final int method7021 = method7019.method25426();
         final int method7022 = method7019.method25427();
-        final Class5028 method7023 = this.method6796();
+        final IProfiler method7023 = this.method6796();
         method7023.method15297("thunder");
         if (method7020) {
             if (this.method6770()) {
-                if (this.field10062.nextInt(100000) == 0) {
+                if (this.rand.nextInt(100000) == 0) {
                     final BlockPos method7024 = this.method6865(this.method6794(method7021, 0, method7022, 15));
                     if (this.method6772(method7024)) {
                         final Class9592 method7025 = this.method6784(method7024);
-                        final boolean b = this.method6765().method31216(Class8878.field37318) && this.field10062.nextDouble() < method7025.method35973() * 0.01;
+                        final boolean b = this.method6765().method31216(Class8878.field37318) && this.rand.nextDouble() < method7025.method35973() * 0.01;
                         if (b) {
                             final Class809 class1863 = EntityType.field29024.method23371(this);
                             class1863.method4779(true);
@@ -332,7 +332,7 @@ public class Class1849 extends World
             }
         }
         method7023.method15300("iceandsnow");
-        if (this.field10062.nextInt(16) == 0) {
+        if (this.rand.nextInt(16) == 0) {
             final BlockPos method7026 = this.method6958(Class2020.field11525, this.method6794(method7021, 0, method7022, 15));
             final BlockPos method7027 = method7026.method1139();
             final Class3090 method7028 = this.method6959(method7026);
@@ -359,13 +359,13 @@ public class Class1849 extends World
                         for (int j = 0; j < n; ++j) {
                             final BlockPos method7031 = this.method6794(method7021, method7030, method7022, 15);
                             method7023.method15297("randomTick");
-                            final Class7096 method7032 = class1864.method27148(method7031.getX() - method7021, method7031.getY() - method7030, method7031.getZ() - method7022);
+                            final BlockState method7032 = class1864.method27148(method7031.getX() - method7021, method7031.getY() - method7030, method7031.getZ() - method7022);
                             if (method7032.method21757()) {
-                                method7032.method21740(this, method7031, this.field10062);
+                                method7032.method21740(this, method7031, this.rand);
                             }
                             final Class7099 method7033 = method7032.method21756();
                             if (method7033.method21788()) {
-                                method7033.method21789(this, method7031, this.field10062);
+                                method7033.method21789(this, method7031, this.rand);
                             }
                             method7023.method15299();
                         }
@@ -395,7 +395,7 @@ public class Class1849 extends World
             }
             return class355;
         }
-        return ((LivingEntity)method6739.get(this.field10062.nextInt(method6739.size()))).method1894();
+        return ((LivingEntity)method6739.get(this.rand.nextInt(method6739.size()))).method1894();
     }
     
     public boolean method6866() {
@@ -427,30 +427,30 @@ public class Class1849 extends World
     }
     
     private void method6869() {
-        this.field10065.method29563(0);
-        this.field10065.method29561(false);
-        this.field10065.method29559(0);
-        this.field10065.method29557(false);
+        this.worldInfo.method29563(0);
+        this.worldInfo.method29561(false);
+        this.worldInfo.method29559(0);
+        this.worldInfo.method29557(false);
     }
     
     @Override
-    public void method6680() {
-        if (this.field10065.method29537() <= 0) {
-            this.field10065.method29544(this.method6743() + 1);
+    public void setInitialSpawnLocation() {
+        if (this.worldInfo.method29537() <= 0) {
+            this.worldInfo.method29544(this.method6743() + 1);
         }
-        int method29536 = this.field10065.method29536();
-        int method29537 = this.field10065.method29538();
+        int method29536 = this.worldInfo.method29536();
+        int method29537 = this.worldInfo.method29538();
         int n = 0;
-        while (this.method6681(new BlockPos(method29536, 0, method29537)).method21706()) {
-            method29536 += this.field10062.nextInt(8) - this.field10062.nextInt(8);
-            method29537 += this.field10062.nextInt(8) - this.field10062.nextInt(8);
+        while (this.getGroundAboveSeaLevel(new BlockPos(method29536, 0, method29537)).method21706()) {
+            method29536 += this.rand.nextInt(8) - this.rand.nextInt(8);
+            method29537 += this.rand.nextInt(8) - this.rand.nextInt(8);
             if (++n != 10000) {
                 continue;
             }
             break;
         }
-        this.field10065.method29543(method29536);
-        this.field10065.method29545(method29537);
+        this.worldInfo.method29543(method29536);
+        this.worldInfo.method29545(method29537);
     }
     
     public void method6870() {
@@ -465,9 +465,9 @@ public class Class1849 extends World
     }
     
     private void method6872(final Class7460<Class3833> class7460) {
-        final Class7096 method6701 = this.method6701(class7460.field28774);
+        final BlockState method6701 = this.method6701(class7460.field28774);
         if (method6701.method21696() == class7460.method22980()) {
-            method6701.method21739(this, class7460.field28774, this.field10062);
+            method6701.method21739(this, class7460.field28774, this.rand);
         }
     }
     
@@ -478,7 +478,7 @@ public class Class1849 extends World
             class399.prevRotationPitch = class399.rotationPitch;
             if (class399.addedToChunk) {
                 ++class399.ticksExisted;
-                final Class5028 method6796 = this.method6796();
+                final IProfiler method6796 = this.method6796();
                 method6796.method15298(() -> Class90.field210.method503(class400.method1642()).toString());
                 method6796.method15302("tickNonPassenger");
                 class399.method1659();
@@ -502,7 +502,7 @@ public class Class1849 extends World
                 class400.prevRotationPitch = class400.rotationPitch;
                 if (class400.addedToChunk) {
                     ++class400.ticksExisted;
-                    final Class5028 method6796 = this.method6796();
+                    final IProfiler method6796 = this.method6796();
                     method6796.method15298(() -> Class90.field210.method503(class401.method1642()).toString());
                     method6796.method15302("tickPassenger");
                     class400.method1772();
@@ -559,7 +559,7 @@ public class Class1849 extends World
     
     public void method6876(final Class8511 class8511) {
         if (this.dimension.method20494()) {
-            if (this.field10065.method29570() != Class9505.field40898) {
+            if (this.worldInfo.method29570() != Class9505.field40898) {
                 final Class1868 method18879 = this.method6904().method7438().method18879();
                 final BlockPos method18880 = method18879.method7119(0, this.method6743(), 0, 256, method18879.method7117(), new Random(this.method6753()));
                 final Class7859 class8512 = (method18880 != null) ? new Class7859(method18880) : new Class7859(0, 0);
@@ -575,7 +575,7 @@ public class Class1849 extends World
                     b = true;
                     break;
                 }
-                this.field10065.method29548(class8512.method25435().add(8, this.method6904().method7438().method18852(), 8));
+                this.worldInfo.method29548(class8512.method25435().add(8, this.method6904().method7438().method18852(), 8));
                 int n = 0;
                 int n2 = 0;
                 int n3 = 0;
@@ -587,7 +587,7 @@ public class Class1849 extends World
                                 if (n2 <= 16) {
                                     final BlockPos method18881 = this.dimension.method20489(new Class7859(class8512.field32290 + n, class8512.field32291 + n2), b);
                                     if (method18881 != null) {
-                                        this.field10065.method29548(method18881);
+                                        this.worldInfo.method29548(method18881);
                                         break;
                                     }
                                 }
@@ -617,16 +617,16 @@ public class Class1849 extends World
                 }
             }
             else {
-                this.field10065.method29548(BlockPos.ZERO.method1137());
+                this.worldInfo.method29548(BlockPos.ZERO.method1137());
             }
         }
         else {
-            this.field10065.method29548(BlockPos.ZERO.method1138(this.method6904().method7438().method18852()));
+            this.worldInfo.method29548(BlockPos.ZERO.method1138(this.method6904().method7438().method18852()));
         }
     }
     
     public void method6877() {
-        Class4535.field20016.method13527(Class5113.field22059).method28613(this, (Class6346<? extends Class7065>)this.method6904().method7438(), this.field10062, new BlockPos(this.field10065.method29536(), this.field10065.method29537(), this.field10065.method29538()));
+        Class4535.field20016.method13527(Class5113.field22059).method28613(this, (Class6346<? extends Class7065>)this.method6904().method7438(), this.rand, new BlockPos(this.worldInfo.method29536(), this.worldInfo.method29537(), this.worldInfo.method29538()));
     }
     
     @Nullable
@@ -700,7 +700,7 @@ public class Class1849 extends World
     @Nullable
     public Class513 method6884() {
         final List<Class513> method6883 = this.method6883(LivingEntity::method1768);
-        return method6883.isEmpty() ? null : ((Class513)method6883.get(this.field10062.nextInt(method6883.size())));
+        return method6883.isEmpty() ? null : ((Class513)method6883.get(this.rand.nextInt(method6883.size())));
     }
     
     public Object2IntMap<Class1976> method6885() {
@@ -810,7 +810,7 @@ public class Class1849 extends World
     }
     
     public void method6897(final Class1862 class1862) {
-        this.field10053.addAll(class1862.method7066().values());
+        this.tileEntitiesToBeRemoved.addAll(class1862.method7066().values());
         final Class80<Entity>[] method7067 = class1862.method7067();
         for (int length = method7067.length, i = 0; i < length; ++i) {
             for (final Entity class1863 : method7067[i]) {
@@ -934,7 +934,7 @@ public class Class1849 extends World
     }
     
     @Override
-    public void method6693(final BlockPos class354, final Class7096 class355, final Class7096 class356, final int n) {
+    public void method6693(final BlockPos class354, final BlockState class355, final BlockState class356, final int n) {
         this.method6904().method7440(class354);
         if (Class7698.method24496(class355.method21727(this, class354), class356.method21727(this, class354), Class9306.field39922)) {
             for (final Class7746 class357 : this.field10098) {
@@ -991,7 +991,7 @@ public class Class1849 extends World
     }
     
     private boolean method6906(final Class9569 class9569) {
-        final Class7096 method6701 = this.method6701(class9569.method35807());
+        final BlockState method6701 = this.method6701(class9569.method35807());
         return method6701.method21696() == class9569.method35808() && method6701.method21733(this, class9569.method35807(), class9569.method35809(), class9569.method35810());
     }
     
@@ -1005,7 +1005,7 @@ public class Class1849 extends World
     
     @Nonnull
     @Override
-    public Class394 method6679() {
+    public MinecraftServer getServer() {
         return this.field10090;
     }
     
@@ -1072,7 +1072,7 @@ public class Class1849 extends World
     @Override
     public void method6752(final long n) {
         super.method6752(n);
-        this.field10065.method29601().run(this.field10090, n);
+        this.worldInfo.method29601().run(this.field10090, n);
     }
     
     @Override
@@ -1095,23 +1095,23 @@ public class Class1849 extends World
     @Nullable
     @Override
     public Class6356 method6774(final String s) {
-        return this.method6679().method1481(DimensionType.field2223).method6918().method27209(() -> new Class6356(s2), s);
+        return this.getServer().method1481(DimensionType.field2223).method6918().method27209(() -> new Class6356(s2), s);
     }
     
     @Override
     public void method6775(final Class6356 class6356) {
-        this.method6679().method1481(DimensionType.field2223).method6918().method27211(class6356);
+        this.getServer().method1481(DimensionType.field2223).method6918().method27211(class6356);
     }
     
     @Override
     public int method6776() {
-        return this.method6679().method1481(DimensionType.field2223).method6918().method27208(Class6361::new, "idcounts").method18948();
+        return this.getServer().method1481(DimensionType.field2223).method6918().method27208(Class6361::new, "idcounts").method18948();
     }
     
     @Override
-    public void method6759(final BlockPos class354) {
-        final Class7859 class355 = new Class7859(new BlockPos(this.field10065.method29536(), 0, this.field10065.method29538()));
-        super.method6759(class354);
+    public void setSpawnPoint(final BlockPos class354) {
+        final Class7859 class355 = new Class7859(new BlockPos(this.worldInfo.method29536(), 0, this.worldInfo.method29538()));
+        super.setSpawnPoint(class354);
         this.method6904().method7442(Class9105.field38565, class355, 11, Class315.field1875);
         this.method6904().method7441(Class9105.field38565, new Class7859(class354), 11, Class315.field1875);
     }
@@ -1148,16 +1148,16 @@ public class Class1849 extends World
     }
     
     @Override
-    public void method6689(final BlockPos class354, final Class7096 class355, final Class7096 class356) {
+    public void method6689(final BlockPos class354, final BlockState class355, final BlockState class356) {
         final Optional<Class8912> method31401 = Class8912.method31401(class355);
         final Optional<Class8912> method31402 = Class8912.method31401(class356);
         if (!Objects.equals(method31401, method31402)) {
             class354.toImmutable();
-            method31401.ifPresent(p1 -> this.method6679().execute(() -> {
+            method31401.ifPresent(p1 -> this.getServer().execute(() -> {
                 this.method6921().method7197(class357);
                 Class9324.method34533(this, class357);
             }));
-            method31402.ifPresent(p1 -> this.method6679().execute(() -> {
+            method31402.ifPresent(p1 -> this.getServer().execute(() -> {
                 this.method6921().method7196(class358, class359);
                 Class9324.method34532(this, class358);
             }));
@@ -1209,7 +1209,7 @@ public class Class1849 extends World
                 bufferedWriter.write(String.format("spawn_count.%s: %d\n", ((Class1976)object2IntMap$Entry.getKey()).method7986(), object2IntMap$Entry.getIntValue()));
             }
             bufferedWriter.write(String.format("entities: %d\n", this.field10085.size()));
-            bufferedWriter.write(String.format("block_entities: %d\n", this.field10050.size()));
+            bufferedWriter.write(String.format("block_entities: %d\n", this.loadedTileEntityList.size()));
             bufferedWriter.write(String.format("block_ticks: %d\n", this.method6907().method21354()));
             bufferedWriter.write(String.format("fluid_ticks: %d\n", this.method6908().method21354()));
             bufferedWriter.write("distance_manager: " + field10354.method1341().method30142() + "\n");
@@ -1244,9 +1244,9 @@ public class Class1849 extends World
     
     private void method6932(final Writer writer) throws IOException {
         final Class8308 method22418 = Class8308.method27594().method22417("x").method22417("y").method22417("z").method22417("type").method22418(writer);
-        for (final Class436 class436 : this.field10050) {
-            final BlockPos method22419 = class436.method2193();
-            method22418.method27595(method22419.getX(), method22419.getY(), method22419.getZ(), Class90.field224.method503(class436.method2206()));
+        for (final TileEntity tileEntity : this.loadedTileEntityList) {
+            final BlockPos method22419 = tileEntity.method2193();
+            method22418.method27595(method22419.getX(), method22419.getY(), method22419.getZ(), Class90.field224.method503(tileEntity.method2206()));
         }
     }
     

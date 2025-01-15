@@ -14,12 +14,12 @@ import java.util.List;
 
 public class Class5138 implements Class5113
 {
-    public final Class7096 field22119;
+    public final BlockState field22119;
     public final int field22120;
     public final int field22121;
-    public final List<Class7096> field22122;
+    public final List<BlockState> field22122;
     
-    public Class5138(final Class7096 field22119, final int field22120, final int field22121, final List<Class7096> field22122) {
+    public Class5138(final BlockState field22119, final int field22120, final int field22121, final List<BlockState> field22122) {
         this.field22119 = field22119;
         this.field22120 = field22120;
         this.field22121 = field22121;
@@ -28,10 +28,10 @@ public class Class5138 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("state"), Class7096.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22119).getValue(), dynamicOps.createString("radius"), dynamicOps.createInt(this.field22120), dynamicOps.createString("y_size"), dynamicOps.createInt(this.field22121), dynamicOps.createString("targets"), dynamicOps.createList((Stream)this.field22122.stream().map(class7096 -> Class7096.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class7096).getValue())))));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("state"), BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22119).getValue(), dynamicOps.createString("radius"), dynamicOps.createInt(this.field22120), dynamicOps.createString("y_size"), dynamicOps.createInt(this.field22121), dynamicOps.createString("targets"), dynamicOps.createList((Stream)this.field22122.stream().map(class7096 -> BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class7096).getValue())))));
     }
     
     public static <T> Class5138 method16051(final Dynamic<T> dynamic) {
-        return new Class5138(dynamic.get("state").map((Function)Class7096::method21764).orElse(Class7521.field29147.method11878()), dynamic.get("radius").asInt(0), dynamic.get("y_size").asInt(0), dynamic.get("targets").asList((Function)Class7096::method21764));
+        return new Class5138(dynamic.get("state").map((Function) BlockState::method21764).orElse(Class7521.field29147.method11878()), dynamic.get("radius").asInt(0), dynamic.get("y_size").asInt(0), dynamic.get("targets").asList((Function) BlockState::method21764));
     }
 }

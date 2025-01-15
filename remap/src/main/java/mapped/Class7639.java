@@ -34,12 +34,12 @@ public class Class7639
     private static final Logger field30276;
     public static final Class8656<NioEventLoopGroup> field30277;
     public static final Class8656<EpollEventLoopGroup> field30278;
-    private final Class394 field30279;
+    private final MinecraftServer field30279;
     public volatile boolean field30280;
     private final List<ChannelFuture> field30281;
     private final List<NetworkManager> field30282;
     
-    public Class7639(final Class394 field30279) {
+    public Class7639(final MinecraftServer field30279) {
         this.field30281 = Collections.synchronizedList((List<ChannelFuture>)Lists.newArrayList());
         this.field30282 = Collections.synchronizedList((List<NetworkManager>)Lists.newArrayList());
         this.field30279 = field30279;
@@ -118,7 +118,7 @@ public class Class7639
         }
     }
     
-    public Class394 method24064() {
+    public MinecraftServer method24064() {
         return this.field30279;
     }
     

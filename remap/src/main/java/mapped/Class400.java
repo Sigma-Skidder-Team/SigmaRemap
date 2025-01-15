@@ -45,14 +45,14 @@ public class Class400 extends Entity implements Class401
             this.method1960();
         }
         final Vec3d method1935 = this.getMotion();
-        final Class7006 method1936 = Class7476.method23093(this, this.method1886().method18493(method1935).method18496(1.0), class399 -> !class399.isSpectator() && class399 != this.field2466, Class2040.field11633, true);
+        final Class7006 method1936 = Class7476.method23093(this, this.getBoundingBox().method18493(method1935).method18496(1.0), class399 -> !class399.isSpectator() && class399 != this.field2466, Class2040.field11633, true);
         if (method1936 != null) {
             this.method1959(method1936);
         }
         final double n = this.getPosX() + method1935.x;
         final double n2 = this.getPosY() + method1935.y;
         final double n3 = this.getPosZ() + method1935.z;
-        final float method1937 = MathHelper.sqrt(Entity.method1680(method1935));
+        final float method1937 = MathHelper.sqrt(Entity.horizontalMag(method1935));
         this.rotationYaw = (float)(MathHelper.method35693(method1935.x, method1935.z) * 57.2957763671875);
         this.rotationPitch = (float)(MathHelper.method35693(method1935.y, method1937) * 57.2957763671875);
         while (this.rotationPitch - this.prevRotationPitch < -180.0f) {
@@ -69,7 +69,7 @@ public class Class400 extends Entity implements Class401
         }
         this.rotationPitch = MathHelper.method35700(0.2f, this.prevRotationPitch, this.rotationPitch);
         this.rotationYaw = MathHelper.method35700(0.2f, this.prevRotationYaw, this.rotationYaw);
-        if (this.world.method6721(this.method1886(), Class8059.field33153)) {
+        if (this.world.method6721(this.getBoundingBox(), Class8059.field33153)) {
             if (!this.method1711()) {
                 this.method1936(method1935.scale(0.9900000095367432));
                 if (!this.method1698()) {
@@ -104,7 +104,7 @@ public class Class400 extends Entity implements Class401
     public void method1958(final double n, final double n2, final double n3, final float n4, final float n5) {
         final Vec3d method16748 = new Vec3d(n, n2, n3).normalize().add(this.rand.nextGaussian() * 0.007499999832361937 * n5, this.rand.nextGaussian() * 0.007499999832361937 * n5, this.rand.nextGaussian() * 0.007499999832361937 * n5).scale(n4);
         this.method1936(method16748);
-        final float method16749 = MathHelper.sqrt(Entity.method1680(method16748));
+        final float method16749 = MathHelper.sqrt(Entity.horizontalMag(method16748));
         this.rotationYaw = (float)(MathHelper.method35693(method16748.x, n3) * 57.2957763671875);
         this.rotationPitch = (float)(MathHelper.method35693(method16748.y, method16749) * 57.2957763671875);
         this.prevRotationYaw = this.rotationYaw;
@@ -117,7 +117,7 @@ public class Class400 extends Entity implements Class401
             ((Class7007)class7006).method21452().attackEntityFrom(DamageSource.method25694(this, this.field2466).method25706(), 1.0f);
         }
         else if (method21449 == Class2165.field12881) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.method1652();
             }
         }
@@ -147,7 +147,7 @@ public class Class400 extends Entity implements Class401
         if (this.field2467 != null) {
             if (this.field2467.method302("OwnerUUID")) {
                 final UUID method301 = this.field2467.method301("OwnerUUID");
-                for (final Class815 field2466 : this.world.method7128((Class<? extends Class815>)Class815.class, this.method1886().method18496(15.0))) {
+                for (final Class815 field2466 : this.world.method7128((Class<? extends Class815>)Class815.class, this.getBoundingBox().method18496(15.0))) {
                     if (!field2466.method1865().equals(method301)) {
                         continue;
                     }

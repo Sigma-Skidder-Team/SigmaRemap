@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.Collection;
 
-public class Class4060 extends Class3820
+public class Class4060 extends Item
 {
     public Class4060(final Class8959 class8959) {
         super(class8959);
@@ -22,8 +22,8 @@ public class Class4060 extends Class3820
     }
     
     @Override
-    public boolean method11703(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
-        if (!class7097.field10067) {
+    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+        if (!class7097.isRemote) {
             this.method12265(class7099, class7096, class7097, class7098, false, class7099.method2715(Class316.field1877));
         }
         return false;
@@ -33,7 +33,7 @@ public class Class4060 extends Class3820
     public Class2201 method11694(final Class7075 class7075) {
         final Class512 method21652 = class7075.method21652();
         final World method21653 = class7075.method21654();
-        if (!method21653.field10067) {
+        if (!method21653.isRemote) {
             if (method21652 != null) {
                 final BlockPos method21654 = class7075.method21639();
                 this.method12265(method21652, method21653.method6701(method21654), method21653, method21654, true, class7075.method21651());
@@ -42,10 +42,10 @@ public class Class4060 extends Class3820
         return Class2201.field13400;
     }
     
-    private void method12265(final Class512 class512, final Class7096 class513, final Class1851 class514, final BlockPos class515, final boolean b, final ItemStack class516) {
+    private void method12265(final Class512 class512, final BlockState class513, final Class1851 class514, final BlockPos class515, final boolean b, final ItemStack class516) {
         if (class512.method2908()) {
             final Class3833 method21696 = class513.method21696();
-            final Class9104<Class3833, Class7096> method21697 = method21696.method11876();
+            final Class9104<Class3833, BlockState> method21697 = method21696.method11876();
             final Collection method21698 = method21697.method32905();
             final String string = Class90.field208.method503(method21696).toString();
             if (!method21698.isEmpty()) {
@@ -61,7 +61,7 @@ public class Class4060 extends Class3820
                     if (method21700 == null) {
                         method21700 = (Class7111)method21698.iterator().next();
                     }
-                    final Class7096 method21702 = method12266(class513, method21700, class512.method2804());
+                    final BlockState method21702 = method12266(class513, method21700, class512.method2804());
                     class514.method6688(class515, method21702, 18);
                     method12268(class512, new Class2259(this.method11717() + ".update", new Object[] { method21700.method21826(), method12269(method21702, method21700) }));
                 }
@@ -72,8 +72,8 @@ public class Class4060 extends Class3820
         }
     }
     
-    private static <T extends Comparable<T>> Class7096 method12266(final Class7096 class7096, final Class7111<T> class7097, final boolean b) {
-        return ((Class7097<O, Class7096>)class7096).method21773(class7097, (Comparable)method12267((Iterable<V>)class7097.method21829(), (V)class7096.method21772((Class7111<T>)class7097), b));
+    private static <T extends Comparable<T>> BlockState method12266(final BlockState class7096, final Class7111<T> class7097, final boolean b) {
+        return ((Class7097<O, BlockState>)class7096).method21773(class7097, (Comparable)method12267((Iterable<V>)class7097.method21829(), (V)class7096.method21772((Class7111<T>)class7097), b));
     }
     
     private static <T> T method12267(final Iterable<T> iterable, final T t, final boolean b) {
@@ -84,7 +84,7 @@ public class Class4060 extends Class3820
         ((Class513)class512).method2941(class513, Class285.field1574);
     }
     
-    private static <T extends Comparable<T>> String method12269(final Class7096 class7096, final Class7111<T> class7097) {
+    private static <T extends Comparable<T>> String method12269(final BlockState class7096, final Class7111<T> class7097) {
         return class7097.method21831(class7096.method21772(class7097));
     }
 }

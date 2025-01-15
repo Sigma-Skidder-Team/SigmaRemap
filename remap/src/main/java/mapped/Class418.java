@@ -29,7 +29,7 @@ public class Class418 extends Class416
     @Override
     public void method2032(final Class7006 class7006) {
         super.method2032(class7006);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             Label_0067: {
                 if (class7006.method21449() != Class2165.field12882) {
                     if (this.field2527 != null) {

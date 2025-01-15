@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.function.Supplier;
 import org.apache.logging.log4j.Logger;
 
-public class Class5412<T extends Class436>
+public class Class5412<T extends TileEntity>
 {
     private static final Logger field22540;
     public static final Class5412<Class467> field22541;
@@ -57,7 +57,7 @@ public class Class5412<T extends Class436>
         return Class90.field224.method503(class5412);
     }
     
-    private static <T extends Class436> Class5412<T> method16521(final String s, final Class8835<T> class8835) {
+    private static <T extends TileEntity> Class5412<T> method16521(final String s, final Class8835<T> class8835) {
         Type choiceType = null;
         try {
             choiceType = Class5494.method16768().getSchema(DataFixUtils.makeKey(Class9528.method35579().getWorldVersion())).getChoiceType(Class9451.field40621, s);
@@ -68,7 +68,7 @@ public class Class5412<T extends Class436>
                 throw ex;
             }
         }
-        if (Class8835.method30856((Class8835<Class436>)class8835).isEmpty()) {
+        if (Class8835.method30856((Class8835<TileEntity>)class8835).isEmpty()) {
             Class5412.field22540.warn("Block entity type {} requires at least one valid block to be defined!", (Object)s);
         }
         return Class90.method511(Class90.field224, s, class8835.method30855((Type<?>)choiceType));
@@ -91,7 +91,7 @@ public class Class5412<T extends Class436>
     
     @Nullable
     public T method16524(final Class1855 class1855, final BlockPos class1856) {
-        final Class436 method6727 = class1855.method6727(class1856);
+        final TileEntity method6727 = class1855.method6727(class1856);
         return (T)((method6727 != null && method6727.method2206() == this) ? method6727 : null);
     }
     

@@ -8,10 +8,10 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class5805 implements Class5804
 {
-    private final Class394 field23833;
+    private final MinecraftServer field23833;
     private final NetworkManager field23834;
     
-    public Class5805(final Class394 field23833, final NetworkManager field23834) {
+    public Class5805(final MinecraftServer field23833, final NetworkManager field23834) {
         this.field23833 = field23833;
         this.field23834 = field23834;
     }

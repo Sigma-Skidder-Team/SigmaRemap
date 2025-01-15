@@ -9,6 +9,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -18,16 +20,16 @@ public class Class3998 extends Class3833
 {
     private static String[] field18017;
     public static final Class7114<Axis> field18018;
-    public static final Class7702 field18019;
-    public static final Class7702 field18020;
+    public static final VoxelShape field18019;
+    public static final VoxelShape field18020;
     
     public Class3998(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773(Class3998.field18018, Axis.X));
+        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773(Class3998.field18018, Axis.X));
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class9275.field39763[class7096.method21772(Class3998.field18018).ordinal()]) {
             case 1: {
                 return Class3998.field18020;
@@ -39,7 +41,7 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, BlockPos method1139, final Random random) {
+    public void method11822(final BlockState class7096, final Class1849 class7097, BlockPos method1139, final Random random) {
         if (class7097.dimension.method20492()) {
             if (class7097.method6765().method31216(Class8878.field37318)) {
                 if (random.nextInt(2000) < class7097.method6954().method8235()) {
@@ -77,7 +79,7 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+    public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         final Axis method790 = class7097.getAxis();
         final Axis class7102 = class7096.method21772(Class3998.field18018);
         if (class7102 == method790 || !method790.isHorizontal()) {
@@ -91,7 +93,7 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7099.isPassenger()) {
             if (!class7099.isBeingRidden()) {
                 if (class7099.method1855()) {
@@ -102,7 +104,7 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (random.nextInt(100) == 0) {
             class7097.method6708(class7098.getX() + 0.5, class7098.getY() + 0.5, class7098.getZ() + 0.5, Class8520.field35496, Class286.field1582, 0.5f, random.nextFloat() * 0.4f + 0.8f, false);
         }
@@ -127,21 +129,21 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
         return ItemStack.field34174;
     }
     
     @Override
-    public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
+    public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
         switch (Class9275.field39764[class7097.ordinal()]) {
             case 1:
             case 2: {
                 switch (Class9275.field39763[class7096.method21772(Class3998.field18018).ordinal()]) {
                     case 1: {
-                        return ((Class7097<O, Class7096>)class7096).method21773(Class3998.field18018, Axis.X);
+                        return ((Class7097<O, BlockState>)class7096).method21773(Class3998.field18018, Axis.X);
                     }
                     case 2: {
-                        return ((Class7097<O, Class7096>)class7096).method21773(Class3998.field18018, Axis.Z);
+                        return ((Class7097<O, BlockState>)class7096).method21773(Class3998.field18018, Axis.Z);
                     }
                     default: {
                         return class7096;
@@ -156,7 +158,7 @@ public class Class3998 extends Class3833
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Class3833, BlockState> class9500) {
         class9500.method35378(Class3998.field18018);
     }
     

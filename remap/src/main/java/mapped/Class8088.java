@@ -126,7 +126,7 @@ public class Class8088
         final double n8 = Math.sin(Math.toRadians(field33315 + 90.0f)) * sqrt;
         final boolean method16747 = Class8353.method27876();
         final boolean method16748 = Class8353.method27875(class5743);
-        final boolean b2 = this.field33313.field4683.method6981(this.field33313.field4684, this.field33313.field4684.method1886().method18499(n7, -1.0, n8)).count() == 0L;
+        final boolean b2 = this.field33313.field4683.method6981(this.field33313.field4684, this.field33313.field4684.getBoundingBox().method18499(n7, -1.0, n8)).count() == 0L;
         boolean b3 = false;
         boolean b4 = false;
         final float field33316 = this.field33313.field4684.rotationYaw;

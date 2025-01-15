@@ -33,7 +33,7 @@ public class Class1782 extends Class1779
         return this.field9890.getOrDefault(key, Class9317.field40009);
     }
     
-    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final Class5028 class6583) {
+    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         if (map.remove(Class9020.field38063) != null) {
             Class1782.field9888.warn("Datapack tried to redefine {} loot table, ignoring", (Object)Class9020.field38063);

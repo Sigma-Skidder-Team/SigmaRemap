@@ -8,7 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class4078 extends Class3820
+public class Class4078 extends Item
 {
     private static String[] field18183;
     
@@ -28,10 +28,10 @@ public class Class4078 extends Class3820
                 class8321.method27693(1);
             }
         }
-        if (!class8322.field10067) {
+        if (!class8322.isRemote) {
             class8323.method2650();
         }
-        return class8321.method27620() ? new ItemStack(Class7739.field31349) : class8321;
+        return class8321.method27620() ? new ItemStack(Items.field31349) : class8321;
     }
     
     @Override

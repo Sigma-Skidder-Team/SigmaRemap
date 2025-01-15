@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -13,21 +15,21 @@ public class Class3980 extends Class3833
 {
     private static final Class2259 field17974;
     public static final Class7115 field17975;
-    public static final Class7702 field17976;
+    public static final VoxelShape field17976;
     
     public Class3980(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3980.field17975, Direction.NORTH));
+        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3980.field17975, Direction.NORTH));
     }
     
     @Override
-    public Class7096 method11846(final Class7074 class7074) {
-        return ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class3980.field17975, class7074.method21644().getOpposite());
+    public BlockState method11846(final Class7074 class7074) {
+        return ((Class7097<O, BlockState>)this.method11878()).method21773((Class7111<Comparable>)Class3980.field17975, class7074.method21644().getOpposite());
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        if (!class7097.field10067) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+        if (!class7097.isRemote) {
             class7099.method2833(class7096.method21754(class7097, class7098));
             class7099.method2857(Class8276.field34053);
             return Class2201.field13400;
@@ -42,7 +44,7 @@ public class Class3980 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3980.field17976;
     }
     

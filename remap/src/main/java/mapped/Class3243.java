@@ -28,7 +28,7 @@ public class Class3243 extends Class3167
         if (this.method9906()) {
             if (class5723.method16998() instanceof Class4402) {
                 final Class4402 class5724 = (Class4402)class5723.method16998();
-                if (class5724.method13247().method27622() instanceof Class4077) {
+                if (class5724.method13247().getItem() instanceof Class4077) {
                     if (Class3243.field15514.field4683.getEntityByID(class5724.method13248()) instanceof Class512) {
                         final Entity method6741 = Class3243.field15514.field4683.getEntityByID(class5724.method13248());
                         if (!this.field15732.toString().equalsIgnoreCase(method6741.getName().getUnformattedComponentText())) {

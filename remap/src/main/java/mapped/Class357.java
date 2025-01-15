@@ -14,5 +14,5 @@ public abstract class Class357 implements IDynamicSerializable
         this.field2184 = field2184;
     }
     
-    public abstract Class7096 method1164(final Random p0, final BlockPos p1);
+    public abstract BlockState method1164(final Random p0, final BlockPos p1);
 }

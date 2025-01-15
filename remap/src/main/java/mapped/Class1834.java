@@ -32,8 +32,8 @@ public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, 
     
     private void method6595(final Class7351 class7351, final Class7807 class7352, final T t, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final Class2215 class7353, final int n7) {
         final ItemStack method2718 = t.method2718(class7353);
-        if (method2718.method27622() instanceof Class4055) {
-            final Class4055 class7354 = (Class4055)method2718.method27622();
+        if (method2718.getItem() instanceof Class4055) {
+            final Class4055 class7354 = (Class4055)method2718.getItem();
             if (class7354.method12257() == class7353) {
                 Class5853<T> class7355 = this.method6598(class7353);
                 if (Class9570.field41282.method22623()) {
@@ -86,7 +86,7 @@ public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, 
     }
     
     public Class1932 method6604(final Entity class399, final ItemStack class400, final Class2215 class401, final String s) {
-        String s2 = ((Class4055)class400.method27622()).method12258().method8101();
+        String s2 = ((Class4055)class400.getItem()).method12258().method8101();
         String substring = "minecraft";
         final int index = s2.indexOf(58);
         if (index != -1) {

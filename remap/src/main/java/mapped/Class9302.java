@@ -32,7 +32,7 @@ public class Class9302
     }
     
     private static int method34396(final Class7492 class7492, final BlockPos class7493, final int i, final ItemStack class7494) throws CommandSyntaxException {
-        final Class436 method6727 = class7492.method23250().method6727(class7493);
+        final TileEntity method6727 = class7492.method23250().method6727(class7493);
         if (!(method6727 instanceof Class446)) {
             throw Class9302.field39908.create();
         }

@@ -34,7 +34,7 @@ public class Class584 extends Class582
     }
     
     @Override
-    public Set<Class3820> method3453() {
+    public Set<Item> method3453() {
         return Class466.method2392().keySet();
     }
 }

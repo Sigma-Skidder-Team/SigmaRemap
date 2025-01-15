@@ -23,8 +23,8 @@ public class Class3670 extends Class3666
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
-                if (!(method2157.method27622() instanceof Class4053)) {
-                    if (!(method2157.method27622() instanceof Class3829)) {
+                if (!(method2157.getItem() instanceof Class4053)) {
+                    if (!(method2157.getItem() instanceof Class3829)) {
                         return false;
                     }
                     arrayList.add(method2157);
@@ -46,7 +46,7 @@ public class Class3670 extends Class3666
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
-                final Class3820 method2158 = method2157.method27622();
+                final Item method2158 = method2157.getItem();
                 if (!(method2158 instanceof Class4053)) {
                     if (!(method2158 instanceof Class3829)) {
                         return ItemStack.field34174;

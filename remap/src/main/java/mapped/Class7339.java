@@ -98,7 +98,7 @@ public class Class7339
         if (!jsonObject.has("item")) {
             throw new JsonSyntaxException("Unsupported icon type, currently only items are supported (add 'item' key)");
         }
-        final Class3820 method35898 = Class9583.method35898(jsonObject, "item");
+        final Item method35898 = Class9583.method35898(jsonObject, "item");
         if (jsonObject.has("data")) {
             throw new JsonParseException("Disallowed data tag found");
         }
@@ -165,7 +165,7 @@ public class Class7339
     
     private JsonObject method22542() {
         final JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("item", Class90.field211.method503(this.field28344.method27622()).toString());
+        jsonObject.addProperty("item", Class90.field211.method503(this.field28344.getItem()).toString());
         if (this.field28344.method27656()) {
             jsonObject.addProperty("nbt", this.field28344.method27657().toString());
         }

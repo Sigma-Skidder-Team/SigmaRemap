@@ -34,12 +34,12 @@ public class Class9356
     
     private static boolean method34680(final Class1855 class1855, final BlockPos class1856, final Direction class1857, final float n) {
         final BlockPos method1149 = class1856.method1149(class1857);
-        final Class7096 method1150 = class1855.method6701(method1149);
+        final BlockState method1150 = class1855.method6701(method1149);
         return method1150.method21723() && Class7698.method24502(Class7698.method24488(0.0, 0.0, 0.0, 1.0, n, 1.0), method1150.method21729(class1855, method1149), class1857);
     }
     
     public boolean method34681(final Class1856 class1856, final BlockPos class1857, final Class4150 class1858, final Class7099 class1859) {
-        final Class7096 method21791 = class1859.method21791();
+        final BlockState method21791 = class1859.method21791();
         boolean b7;
         try {
             if (Class8571.method28955()) {
@@ -231,7 +231,7 @@ public class Class9356
                             b9 = (array[2] != null);
                         }
                         if (b9) {
-                            final Class7096 method21820 = class1856.method6701(method21819);
+                            final BlockState method21820 = class1856.method6701(method21819);
                             final Class3833 method21821 = method21820.method21696();
                             boolean method21822 = false;
                             if (Class9570.field41248.method22605()) {

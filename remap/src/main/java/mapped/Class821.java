@@ -24,8 +24,8 @@ public class Class821 extends Class819
     @Override
     public void method4142() {
         this.field4114.method22062(0, new Class3490(this));
-        this.field4114.method22062(0, new Class3538<Object>(this, Class5333.method16476(new ItemStack(Class7739.field31441), Class8644.field36257), Class8520.field35702, class821 -> !this.world.method6703() && !class821.method1823()));
-        this.field4114.method22062(0, new Class3538<Object>(this, new ItemStack(Class7739.field31358), Class8520.field35707, class822 -> this.world.method6703() && class822.method1823()));
+        this.field4114.method22062(0, new Class3538<Object>(this, Class5333.method16476(new ItemStack(Items.field31441), Class8644.field36257), Class8520.field35702, class821 -> !this.world.method6703() && !class821.method1823()));
+        this.field4114.method22062(0, new Class3538<Object>(this, new ItemStack(Items.field31358), Class8520.field35707, class822 -> this.world.method6703() && class822.method1823()));
         this.field4114.method22062(1, new Class3604(this));
         this.field4114.method22062(1, new Class3448<Object>(this, Class827.class, 8.0f, 0.5, 0.5));
         this.field4114.method22062(1, new Class3448<Object>(this, Class771.class, 12.0f, 0.5, 0.5));
@@ -56,8 +56,8 @@ public class Class821 extends Class819
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() != Class7739.field31552) {
-            if (method2715.method27622() != Class7739.field31500) {
+        if (method2715.getItem() != Items.field31552) {
+            if (method2715.getItem() != Items.field31500) {
                 if (this.method1768()) {
                     if (!this.method4824()) {
                         if (!this.method2625()) {
@@ -65,7 +65,7 @@ public class Class821 extends Class819
                                 class512.method2857(Class8276.field34021);
                             }
                             if (!this.method4825().isEmpty()) {
-                                if (!this.world.field10067) {
+                                if (!this.world.isRemote) {
                                     this.method4822(class512);
                                     this.method4854(class512, this.getDisplayName(), 1);
                                 }
@@ -148,7 +148,7 @@ public class Class821 extends Class819
     
     @Override
     public Class7795 method2686(final ItemStack class8321) {
-        return (class8321.method27622() != Class7739.field31358) ? Class8520.field35704 : Class8520.field35703;
+        return (class8321.getItem() != Items.field31358) ? Class8520.field35704 : Class8520.field35703;
     }
     
     @Override
@@ -172,7 +172,7 @@ public class Class821 extends Class819
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method4843();
         }
     }

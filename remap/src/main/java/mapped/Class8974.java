@@ -20,7 +20,7 @@ public class Class8974
     public final AtomicReference<Class9006> field37809;
     private Class1945 field37810;
     private Class1946 field37811;
-    private final Set<Class436> field37812;
+    private final Set<TileEntity> field37812;
     private final Map<Class6332, Class1918> field37813;
     public AxisAlignedBB field37814;
     private int field37815;
@@ -238,7 +238,7 @@ public class Class8974
         class7520.method23460(this.method31881());
     }
     
-    private void method31883(final Set<Class436> set) {
+    private void method31883(final Set<TileEntity> set) {
         final HashSet hashSet = Sets.newHashSet((Iterable)set);
         final HashSet hashSet2 = Sets.newHashSet((Iterable)this.field37812);
         hashSet.removeAll(this.field37812);

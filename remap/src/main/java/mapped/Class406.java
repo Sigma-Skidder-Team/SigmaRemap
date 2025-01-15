@@ -118,7 +118,7 @@ public class Class406 extends Entity implements Class407, Class401
             }
         }
         final Vec3d method1793 = this.getMotion();
-        final Class7006 method1794 = Class7476.method23093(this, this.method1886().method18493(method1793).method18496(1.0), class512 -> {
+        final Class7006 method1794 = Class7476.method23093(this, this.getBoundingBox().method18493(method1793).method18496(1.0), class512 -> {
             final boolean b;
             if (!class512.isSpectator()) {
                 if (!(!class512.method1768())) {
@@ -133,7 +133,7 @@ public class Class406 extends Entity implements Class407, Class401
             this.method2000(method1794);
             this.isAirBorne = true;
         }
-        final float method1795 = MathHelper.sqrt(Entity.method1680(method1793));
+        final float method1795 = MathHelper.sqrt(Entity.horizontalMag(method1793));
         this.rotationYaw = (float)(MathHelper.method35693(method1793.x, method1793.z) * 57.2957763671875);
         this.rotationPitch = (float)(MathHelper.method35693(method1793.y, method1795) * 57.2957763671875);
         while (this.rotationPitch - this.prevRotationPitch < -180.0f) {
@@ -156,12 +156,12 @@ public class Class406 extends Entity implements Class407, Class401
             }
         }
         ++this.field2497;
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             if (this.field2497 % 2 < 2) {
                 this.world.method6709(Class8432.field34621, this.getPosX(), this.getPosY() - 0.3, this.getPosZ(), this.rand.nextGaussian() * 0.05, -this.getMotion().y * 0.5, this.rand.nextGaussian() * 0.05);
             }
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field2497 > this.field2498) {
                 this.method1999();
             }
@@ -175,7 +175,7 @@ public class Class406 extends Entity implements Class407, Class401
     }
     
     public void method2000(final Class7006 class7006) {
-        if (class7006.method21449() == Class2165.field12882 && !this.world.field10067) {
+        if (class7006.method21449() == Class2165.field12882 && !this.world.isRemote) {
             this.method1999();
         }
         else if (this.collided) {
@@ -215,7 +215,7 @@ public class Class406 extends Entity implements Class407, Class401
                 this.field2499.attackEntityFrom(DamageSource.field32581, 5.0f + class8323.size() * 2);
             }
             final Vec3d method1934 = this.method1934();
-            for (final LivingEntity class8324 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, this.method1886().method18496(5.0))) {
+            for (final LivingEntity class8324 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, this.getBoundingBox().method18496(5.0))) {
                 if (class8324 == this.field2499) {
                     continue;
                 }
@@ -248,7 +248,7 @@ public class Class406 extends Entity implements Class407, Class401
     @Override
     public void method1798(final byte b) {
         if (b == 17) {
-            if (this.world.field10067) {
+            if (this.world.isRemote) {
                 if (this.method2001()) {
                     final ItemStack class8321 = this.dataManager.get(Class406.field2494);
                     final Class51 class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
@@ -292,7 +292,7 @@ public class Class406 extends Entity implements Class407, Class401
     @Override
     public ItemStack method2005() {
         final ItemStack class8321 = this.dataManager.get(Class406.field2494);
-        return class8321.method27620() ? new ItemStack(Class7739.field31532) : class8321;
+        return class8321.method27620() ? new ItemStack(Items.field31532) : class8321;
     }
     
     @Override

@@ -35,14 +35,14 @@ public class Class4791 extends Class4703<Class862>
         class863.method22566(Vector3f.YP.rotationDegrees(180.0f - class862.rotationYaw));
         final Class1658 method1884 = this.field20429.method5305();
         final Class1790 method1885 = method1884.method5787().method35429();
-        final Class1933 class865 = (class862.method5198().method27622() instanceof Class4094) ? Class4791.field20428 : Class4791.field20427;
+        final Class1933 class865 = (class862.method5198().getItem() instanceof Class4094) ? Class4791.field20428 : Class4791.field20427;
         class863.method22567();
         class863.method22564(-0.5, -0.5, -0.5);
         method1884.method5793().method33363(class863.method22569(), class864.method25214(Class8752.method30263()), null, method1885.method6451(class865), 1.0f, 1.0f, 1.0f, i, Class1904.field10335);
         class863.method22568();
         final ItemStack method1886 = class862.method5198();
         if (!method1886.method27620()) {
-            final boolean b = method1886.method27622() instanceof Class4094;
+            final boolean b = method1886.getItem() instanceof Class4094;
             class863.method22564(0.0, 0.0, 0.4375);
             class863.method22566(Vector3f.ZP.rotationDegrees((b ? (class862.method5201() % 4 * 2) : class862.method5201()) * 360.0f / 8.0f));
             if (!Class9570.method35840(Class9570.field41411, class862, this, class863, class864, i)) {

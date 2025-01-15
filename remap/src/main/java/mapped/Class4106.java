@@ -26,7 +26,7 @@ public class Class4106 extends Class4107
     }
     
     public Class4106(final Dynamic<?> dynamic) {
-        this(dynamic.get("blocks").asList(dynamic2 -> Class7096.method21764((com.mojang.datafixers.Dynamic<Object>)dynamic2).method21696()));
+        this(dynamic.get("blocks").asList(dynamic2 -> BlockState.method21764((com.mojang.datafixers.Dynamic<Object>)dynamic2).method21696()));
     }
     
     @Nullable
@@ -42,7 +42,7 @@ public class Class4106 extends Class4107
     
     @Override
     public <T> Dynamic<T> method12352(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blocks"), dynamicOps.createList((Stream)this.field18210.stream().map(class3833 -> Class7096.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class3833.method11878()).getValue())))));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blocks"), dynamicOps.createList((Stream)this.field18210.stream().map(class3833 -> BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class3833.method11878()).getValue())))));
     }
     
     static {

@@ -114,10 +114,10 @@ public class Class808 extends Class806
     
     private void method4777(final ItemStack class8321) {
         this.method4770(class8321);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method2710(Class8107.field33413).method23948(Class808.field4354);
             if (this.method4767(class8321)) {
-                final int method12250 = ((Class4051)class8321.method27622()).method12250();
+                final int method12250 = ((Class4051)class8321.getItem()).method12250();
                 if (method12250 != 0) {
                     this.method2710(Class8107.field33413).method23946(new Class7919(Class808.field4354, "Horse armor bonus", method12250, Class2157.field12809).method25640(false));
                 }
@@ -158,7 +158,7 @@ public class Class808 extends Class806
     @Override
     public void method1659() {
         super.method1659();
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             if (this.dataManager.method33570()) {
                 this.dataManager.method33580();
                 this.method4773();
@@ -194,7 +194,7 @@ public class Class808 extends Class806
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
         final boolean b = !method2715.method27620();
-        if (b && method2715.method27622() instanceof Class3831) {
+        if (b && method2715.getItem() instanceof Class3831) {
             return super.method4195(class512, class513);
         }
         if (!this.method2625()) {
@@ -224,7 +224,7 @@ public class Class808 extends Class806
             Label_0223: {
                 if (!this.method2625()) {
                     if (!this.method4736()) {
-                        if (method2715.method27622() == Class7739.field31353) {
+                        if (method2715.getItem() == Items.field31353) {
                             b2 = true;
                             break Label_0223;
                         }
@@ -298,7 +298,7 @@ public class Class808 extends Class806
     
     @Override
     public boolean method4767(final ItemStack class8321) {
-        return class8321.method27622() instanceof Class4051;
+        return class8321.getItem() instanceof Class4051;
     }
     
     @Nullable

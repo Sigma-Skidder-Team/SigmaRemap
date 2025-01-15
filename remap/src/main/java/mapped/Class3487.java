@@ -57,7 +57,7 @@ public class Class3487 extends Class3479
         if (!class1852.method6961(class1853.method1137())) {
             return false;
         }
-        final Class7096 method6701 = class1852.method6701(class1853);
+        final BlockState method6701 = class1852.method6701(class1853);
         final Class3833 method6702 = method6701.method21696();
         if (method6702 != Class7521.field29292) {
             return (method6702 == Class7521.field29299 && method6701.method21772((Class7111<Boolean>)Class3951.field17847)) || (method6702.method11785(Class7188.field27910) && method6701.method21772(Class3900.field17599) != Class105.field323);

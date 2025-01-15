@@ -6,7 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 
-public class Class6388<S extends Class436> implements Class6389<S, Int2IntFunction>
+public class Class6388<S extends TileEntity> implements Class6389<S, Int2IntFunction>
 {
     private static String[] field25503;
     

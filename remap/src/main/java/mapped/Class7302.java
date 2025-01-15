@@ -51,7 +51,7 @@ public class Class7302 extends Class7303
         if (!this.method22407(class1860.method6701(class1861))) {
             return false;
         }
-        Class7096 class1864;
+        BlockState class1864;
         if (n7 > 31) {
             class1864 = Class7302.field28282;
         }

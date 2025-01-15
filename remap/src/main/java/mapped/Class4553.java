@@ -20,7 +20,7 @@ public class Class4553 extends Class4535<Class5123>
             final int n2 = random.nextInt(8) - random.nextInt(8);
             final int n3 = random.nextInt(8) - random.nextInt(8);
             final BlockPos class1855 = new BlockPos(class1853.getX() + n2, class1851.method6699(Class2020.field11524, class1853.getX() + n2, class1853.getZ() + n3), class1853.getZ() + n3);
-            final Class7096 class1856 = ((Class7097<O, Class7096>)Class7521.field29757.method11878()).method21773((Class7111<Comparable>)Class3889.field17551, random.nextInt(4) + 1);
+            final BlockState class1856 = ((Class7097<O, BlockState>)Class7521.field29757.method11878()).method21773((Class7111<Comparable>)Class3889.field17551, random.nextInt(4) + 1);
             if (class1851.method6701(class1855).method21696() == Class7521.field29173) {
                 if (class1856.method21752(class1851, class1855)) {
                     class1851.method6688(class1855, class1856, 2);

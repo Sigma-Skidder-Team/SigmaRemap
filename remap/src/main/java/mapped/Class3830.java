@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class3830 extends Class3820
+public class Class3830 extends Item
 {
     private static String[] field17385;
     
@@ -24,7 +24,7 @@ public class Class3830 extends Class3820
     public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35185, Class286.field1584, 0.5f, 0.4f / (Class3830.field17363.nextFloat() * 0.4f + 0.8f));
-        if (!class1847.field10067) {
+        if (!class1847.isRemote) {
             final Class413 class1850 = new Class413(class1847, class1848);
             class1850.method2012(method2715);
             class1850.method1963(class1848, class1848.rotationPitch, class1848.rotationYaw, -20.0f, 0.7f, 1.0f);

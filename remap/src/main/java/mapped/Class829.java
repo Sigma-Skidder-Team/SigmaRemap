@@ -54,7 +54,7 @@ public class Class829 extends Class827
     public boolean method2734(final Entity class399) {
         final boolean method2734 = super.method2734(class399);
         if (method2734) {
-            if (this.method2713().method27620()) {
+            if (this.getHeldItemMainhand().method27620()) {
                 if (class399 instanceof LivingEntity) {
                     ((LivingEntity)class399).method2655(new Class1948(Class9439.field40490, 140 * (int)this.world.method6784(new BlockPos(this)).method35973()));
                 }

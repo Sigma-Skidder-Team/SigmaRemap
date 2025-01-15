@@ -15,12 +15,12 @@ public abstract class Class3892 extends Class3833
     }
     
     @Override
-    public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3892.field17564, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3892.field17564)));
+    public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
+        return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3892.field17564, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3892.field17564)));
     }
     
     @Override
-    public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
+    public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
         return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3892.field17564)));
     }
     

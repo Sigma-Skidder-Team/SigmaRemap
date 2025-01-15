@@ -211,7 +211,7 @@ public class Class840 extends Class832
             else {
                 this.method5007(2400);
             }
-            if (this.world.field10067) {
+            if (this.world.isRemote) {
                 if (this.method1706()) {
                     if (this.getMotion().lengthSquared() > 0.03) {
                         final Vec3d method1741 = this.method1741(0.0f);
@@ -247,8 +247,8 @@ public class Class840 extends Class832
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (!method2715.method27620() && method2715.method27622().method11742(Class7855.field32272)) {
-            if (!this.world.field10067) {
+        if (!method2715.method27620() && method2715.getItem().method11742(Class7855.field32272)) {
+            if (!this.world.isRemote) {
                 this.method1695(Class8520.field35120, 1.0f, 1.0f);
             }
             this.method5005(true);

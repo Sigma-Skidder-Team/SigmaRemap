@@ -20,7 +20,7 @@ public class Class755 extends Class754
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.method1886().method18507() * 10.0;
+        double v = this.getBoundingBox().method18507() * 10.0;
         if (Double.isNaN(v)) {
             v = 1.0;
         }
@@ -67,7 +67,7 @@ public class Class755 extends Class754
         this.method2709();
         float min;
         if (this.onGround && this.method2664() > 0.0f) {
-            min = Math.min(0.1f, MathHelper.sqrt(Entity.method1680(this.getMotion())));
+            min = Math.min(0.1f, MathHelper.sqrt(Entity.horizontalMag(this.getMotion())));
         }
         else {
             min = 0.0f;

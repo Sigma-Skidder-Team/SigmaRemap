@@ -7,7 +7,7 @@ package mapped;
 public class Class8445 implements Class8444
 {
     private static String[] field34701;
-    private Class436 field34702;
+    private TileEntity field34702;
     
     @Override
     public int method28177() {
@@ -39,11 +39,11 @@ public class Class8445 implements Class8444
         return -1;
     }
     
-    public Class436 method28185() {
+    public TileEntity method28185() {
         return this.field34702;
     }
     
-    public void method28186(final Class436 field34702) {
+    public void method28186(final TileEntity field34702) {
         this.field34702 = field34702;
     }
 }

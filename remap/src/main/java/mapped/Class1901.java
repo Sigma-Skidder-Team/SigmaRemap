@@ -42,7 +42,7 @@ public final class Class1901 extends Class1890<Class7502, Class1899>
             return 15;
         }
         final MutableInt mutableInt = new MutableInt();
-        final Class7096 method795 = this.method7297(n2, mutableInt);
+        final BlockState method795 = this.method7297(n2, mutableInt);
         if (mutableInt.getValue() < 15) {
             return Class7698.method24505(this.method7298(this.method7297(n, null), n, method794), this.method7298(method795, n2, method794.getOpposite())) ? 15 : (n3 + Math.max(1, mutableInt.getValue()));
         }

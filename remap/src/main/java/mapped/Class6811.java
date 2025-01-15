@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class6811 extends Class6810<Class394, Class8184>
+public class Class6811 extends Class6810<MinecraftServer, Class8184>
 {
     public Class6811() {
         super(new Class1932("function"), Class8184.class);

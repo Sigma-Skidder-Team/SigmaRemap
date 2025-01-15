@@ -174,7 +174,7 @@ public class Class843 extends Class763
     
     @Override
     public void method4184(final Class9592 class9592) {
-        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31286));
+        this.method1803(Class2215.field13600, new ItemStack(Items.field31286));
         this.method4191(Class2215.field13600, 0.0f);
     }
     

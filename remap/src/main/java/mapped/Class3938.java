@@ -22,16 +22,16 @@ public class Class3938 extends Class3936
     }
     
     @Override
-    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final BlockState class1849, final LivingEntity class1850, final ItemStack class1851) {
         super.method11853(class1847, class1848, class1849, class1850, class1851);
-        final Class436 method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class493) {
             method12051(class1847, class1848, (Class493)method6727);
         }
     }
     
     public static void method12051(final World class1847, final BlockPos class1848, final Class493 class1849) {
-        if (!class1847.field10067) {
+        if (!class1847.isRemote) {
             final Class3833 method21696 = class1849.method2194().method21696();
             if (method21696 == Class7521.field29455 || method21696 == Class7521.field29456) {
                 if (class1848.getY() >= 2) {
@@ -51,7 +51,7 @@ public class Class3938 extends Class3936
                             class1850.method1730(method21700.getX() + 0.5, method21700.getY() + 0.55, method21700.getZ() + 0.5, (method21698.method25266().getAxis() != Axis.X) ? 90.0f : 0.0f, 0.0f);
                             class1850.field2951 = ((method21698.method25266().getAxis() != Axis.X) ? 90.0f : 0.0f);
                             class1850.method4245();
-                            final Iterator<Entity> iterator = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1850.method1886().method18496(50.0)).iterator();
+                            final Iterator<Entity> iterator = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1850.getBoundingBox().method18496(50.0)).iterator();
                             while (iterator.hasNext()) {
                                 Class7770.field31788.method13788(iterator.next(), class1850);
                             }
@@ -69,10 +69,10 @@ public class Class3938 extends Class3936
     }
     
     public static boolean method12052(final World class1847, final BlockPos class1848, final ItemStack class1849) {
-        if (class1849.method27622() == Class7739.field31524) {
+        if (class1849.getItem() == Items.field31524) {
             if (class1848.getY() >= 2) {
                 if (class1847.method6954() != Class2113.field12290) {
-                    if (!class1847.field10067) {
+                    if (!class1847.isRemote) {
                         return method12054().method29796(class1847, class1848) != null;
                     }
                 }

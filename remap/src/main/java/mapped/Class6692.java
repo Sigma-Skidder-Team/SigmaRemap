@@ -25,7 +25,7 @@ public class Class6692 extends Class6693
             throw new Class2332("Creative mode only!");
         }
         Class6257 class6429 = null;
-        final ItemStack method27641 = Class6692.field26420.field4684.method2713().method27641();
+        final ItemStack method27641 = Class6692.field26420.field4684.getHeldItemMainhand().method27641();
         for (final Class1932 class6430 : Class90.field209.method507()) {
             if (!array[0].method26314().equals(class6430.method7797())) {
                 continue;

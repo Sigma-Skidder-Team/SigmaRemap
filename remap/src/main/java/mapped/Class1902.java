@@ -31,7 +31,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
             return n3;
         }
         final MutableInt mutableInt = new MutableInt();
-        final Class7096 method7297 = this.method7297(n2, mutableInt);
+        final BlockState method7297 = this.method7297(n2, mutableInt);
         if (mutableInt.getValue() < 15) {
             final int method7298 = BlockPos.unpackX(n);
             final int method7299 = BlockPos.unpackY(n);
@@ -50,7 +50,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
             else {
                 class179 = Direction.DOWN;
             }
-            final Class7096 method7304 = this.method7297(n, null);
+            final BlockState method7304 = this.method7297(n, null);
             if (class179 == null) {
                 if (Class7698.method24505(this.method7298(method7304, n, Direction.DOWN), Class7698.method24486())) {
                     return 15;

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Class7923 implements Class7924
 {
@@ -14,9 +15,9 @@ public class Class7923 implements Class7924
     private final long field32544;
     private final long field32545;
     private final double field32546;
-    public final /* synthetic */ Class9375 field32547;
+    public final /* synthetic */ WorldBorder field32547;
     
-    private Class7923(final Class9375 field32547, final double field32548, final double field32549, final long n) {
+    private Class7923(final WorldBorder field32547, final double field32548, final double field32549, final long n) {
         this.field32547 = field32547;
         this.field32542 = field32548;
         this.field32543 = field32549;
@@ -27,22 +28,22 @@ public class Class7923 implements Class7924
     
     @Override
     public double method25675() {
-        return Math.max(this.field32547.method34777() - this.method25679() / 2.0, -Class9375.method34812(this.field32547));
+        return Math.max(this.field32547.method34777() - this.method25679() / 2.0, -WorldBorder.method34812(this.field32547));
     }
     
     @Override
     public double method25676() {
-        return Math.max(this.field32547.method34778() - this.method25679() / 2.0, -Class9375.method34812(this.field32547));
+        return Math.max(this.field32547.method34778() - this.method25679() / 2.0, -WorldBorder.method34812(this.field32547));
     }
     
     @Override
     public double method25677() {
-        return Math.min(this.field32547.method34777() + this.method25679() / 2.0, Class9375.method34812(this.field32547));
+        return Math.min(this.field32547.method34777() + this.method25679() / 2.0, WorldBorder.method34812(this.field32547));
     }
     
     @Override
     public double method25678() {
-        return Math.min(this.field32547.method34778() + this.method25679() / 2.0, Class9375.method34812(this.field32547));
+        return Math.min(this.field32547.method34778() + this.method25679() / 2.0, WorldBorder.method34812(this.field32547));
     }
     
     @Override
@@ -86,7 +87,7 @@ public class Class7923 implements Class7924
             class7924 = this;
         }
         else {
-            final Class9375 field32547;
+            final WorldBorder field32547;
             class7924 = new Class7925(field32547, this.field32543);
             field32547 = this.field32547;
             field32547.getClass();
@@ -95,7 +96,7 @@ public class Class7923 implements Class7924
     }
     
     @Override
-    public Class7702 method25687() {
+    public VoxelShape method25687() {
         return Class7698.method24494(Class7698.field30599, Class7698.method24488(Math.floor(this.method25675()), Double.NEGATIVE_INFINITY, Math.floor(this.method25676()), Math.ceil(this.method25677()), Double.POSITIVE_INFINITY, Math.ceil(this.method25678())), Class9306.field39920);
     }
 }

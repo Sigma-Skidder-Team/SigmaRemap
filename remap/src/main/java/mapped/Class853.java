@@ -161,7 +161,7 @@ public class Class853 extends Class759 implements Class762
     @Override
     public void method1652() {
         final int method5130 = this.method5130();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (method5130 > 1) {
                 if (this.method2664() <= 0.0f) {
                     for (int n = 2 + this.rand.nextInt(3), i = 0; i < n; ++i) {

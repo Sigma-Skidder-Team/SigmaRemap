@@ -16,7 +16,7 @@ public class Class4087 extends Class4085
         super(class8959);
         this.method11705(new Class1932("pull"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
-                return (class8323.method2766().method27622() == Class7739.field31279) ? ((class8321.method27652() - class8323.method2767()) / 20.0f) : 0.0f;
+                return (class8323.method2766().getItem() == Items.field31279) ? ((class8321.method27652() - class8323.method2767()) / 20.0f) : 0.0f;
             }
             return 0.0f;
         });
@@ -40,13 +40,13 @@ public class Class4087 extends Class4085
             ItemStack method2790 = class8324.method2790(class8321);
             if (!method2790.method27620() || b) {
                 if (method2790.method27620()) {
-                    method2790 = new ItemStack(Class7739.field31280);
+                    method2790 = new ItemStack(Items.field31280);
                 }
                 final float method2791 = method12318(this.method11726(class8321) - n);
                 if (method2791 >= 0.1) {
-                    final boolean b2 = b && method2790.method27622() == Class7739.field31280;
-                    if (!class8322.field10067) {
-                        final Class402 method2792 = ((Class3824)((method2790.method27622() instanceof Class3824) ? method2790.method27622() : Class7739.field31280)).method11758(class8322, method2790, class8324);
+                    final boolean b2 = b && method2790.getItem() == Items.field31280;
+                    if (!class8322.isRemote) {
+                        final Class402 method2792 = ((Class3824)((method2790.getItem() instanceof Class3824) ? method2790.getItem() : Items.field31280)).method11758(class8322, method2790, class8324);
                         method2792.method1963(class8324, class8324.rotationPitch, class8324.rotationYaw, 0.0f, method2791 * 3.0f, 1.0f);
                         if (method2791 == 1.0f) {
                             method2792.method1978(true);
@@ -68,8 +68,8 @@ public class Class4087 extends Class4085
                                 if (!class8324.field3025.field27304) {
                                     break Label_0454;
                                 }
-                                if (method2790.method27622() != Class7739.field31580) {
-                                    if (method2790.method27622() != Class7739.field31581) {
+                                if (method2790.getItem() != Items.field31580) {
+                                    if (method2790.getItem() != Items.field31581) {
                                         break Label_0454;
                                     }
                                 }

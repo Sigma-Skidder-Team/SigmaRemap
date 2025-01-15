@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.Map;
 
-public class Class3829 extends Class3820
+public class Class3829 extends Item
 {
     private static String[] field17382;
     private static final Map<Class181, Class3829> field17383;

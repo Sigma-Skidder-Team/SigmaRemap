@@ -14,7 +14,7 @@ import java.util.Set;
 
 public abstract class Class4473
 {
-    public static final Class7096 field19848;
+    public static final BlockState field19848;
     public MutableBoundingBox field19849;
     private Direction field19850;
     private Class2181 field19851;
@@ -167,7 +167,7 @@ public abstract class Class4473
         }
     }
     
-    public void method13440(final Class1851 class1851, Class7096 class1852, final int n, final int n2, final int n3, final MutableBoundingBox class1853) {
+    public void method13440(final Class1851 class1851, BlockState class1852, final int n, final int n2, final int n3, final MutableBoundingBox class1853) {
         final BlockPos class1854 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
         if (class1853.isVecInside(class1854)) {
             if (this.field19851 != Class2181.field12917) {
@@ -187,7 +187,7 @@ public abstract class Class4473
         }
     }
     
-    public Class7096 method13441(final Class1855 class1855, final int n, final int n2, final int n3, final MutableBoundingBox class1856) {
+    public BlockState method13441(final Class1855 class1855, final int n, final int n2, final int n3, final MutableBoundingBox class1856) {
         final BlockPos class1857 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
         return class1856.isVecInside(class1857) ? class1855.method6701(class1857) : Class7521.field29147.method11878();
     }
@@ -209,7 +209,7 @@ public abstract class Class4473
         }
     }
     
-    public void method13444(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Class7096 class1853, final Class7096 class1854, final boolean b) {
+    public void method13444(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final BlockState class1853, final BlockState class1854, final boolean b) {
         for (int i = n2; i <= n5; ++i) {
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {
@@ -269,7 +269,7 @@ public abstract class Class4473
         }
     }
     
-    public void method13446(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final float n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final Class7096 class1853, final Class7096 class1854, final boolean b, final boolean b2) {
+    public void method13446(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final float n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final BlockState class1853, final BlockState class1854, final boolean b, final boolean b2) {
         for (int i = n3; i <= n6; ++i) {
             for (int j = n2; j <= n5; ++j) {
                 for (int k = n4; k <= n7; ++k) {
@@ -299,13 +299,13 @@ public abstract class Class4473
         }
     }
     
-    public void method13447(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final float n, final int n2, final int n3, final int n4, final Class7096 class1853) {
+    public void method13447(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final float n, final int n2, final int n3, final int n4, final BlockState class1853) {
         if (random.nextFloat() < n) {
             this.method13440(class1851, class1853, n2, n3, n4, class1852);
         }
     }
     
-    public void method13448(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final Class7096 class1853, final boolean b) {
+    public void method13448(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final BlockState class1853, final boolean b) {
         final float n7 = (float)(n4 - n + 1);
         final float n8 = (float)(n5 - n2 + 1);
         final float n9 = (float)(n6 - n3 + 1);
@@ -327,7 +327,7 @@ public abstract class Class4473
         }
     }
     
-    public void method13449(final Class1851 class1851, final Class7096 class1852, final int n, final int n2, final int n3, final MutableBoundingBox class1853) {
+    public void method13449(final Class1851 class1851, final BlockState class1852, final int n, final int n2, final int n3, final MutableBoundingBox class1853) {
         final int method13437 = this.method13437(n, n3);
         int method13438 = this.method13438(n2);
         final int method13439 = this.method13439(n, n3);
@@ -346,11 +346,11 @@ public abstract class Class4473
         return this.method13452(class1851, class1852, random, new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3)), class1853, null);
     }
     
-    public static Class7096 method13451(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public static BlockState method13451(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
         Direction class1858 = null;
         for (final Direction class1859 : Plane.HORIZONTAL) {
             final BlockPos method1149 = class1856.method1149(class1859);
-            final Class7096 method1150 = class1855.method6701(method1149);
+            final BlockState method1150 = class1855.method6701(method1149);
             if (method1150.method21696() == Class7521.field29292) {
                 return class1857;
             }
@@ -378,18 +378,18 @@ public abstract class Class4473
                 class1860 = class1860.getOpposite();
                 class1856.method1149(class1860);
             }
-            return (Class7096)((Class7097<Object, Object>)class1857).method21773((Class7111<Comparable>)Class3892.field17564, class1860);
+            return (BlockState)((Class7097<Object, Object>)class1857).method21773((Class7111<Comparable>)Class3892.field17564, class1860);
         }
-        return (Class7096)((Class7097<Object, Object>)class1857).method21773((Class7111<Comparable>)Class3892.field17564, class1858.getOpposite());
+        return (BlockState)((Class7097<Object, Object>)class1857).method21773((Class7111<Comparable>)Class3892.field17564, class1858.getOpposite());
     }
     
-    public boolean method13452(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final BlockPos class1853, final Class1932 class1854, Class7096 method13451) {
+    public boolean method13452(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final BlockPos class1853, final Class1932 class1854, BlockState method13451) {
         if (class1852.isVecInside(class1853) && class1851.method6701(class1853).method21696() != Class7521.field29292) {
             if (method13451 == null) {
                 method13451 = method13451(class1851, class1853, Class7521.field29292.method11878());
             }
             class1851.method6688(class1853, method13451, 2);
-            final Class436 method13452 = class1851.method6727(class1853);
+            final TileEntity method13452 = class1851.method6727(class1853);
             if (method13452 instanceof Class475) {
                 ((Class475)method13452).method2327(class1854, random.nextLong());
             }
@@ -401,8 +401,8 @@ public abstract class Class4473
     public boolean method13453(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final int n, final int n2, final int n3, final Direction class1853, final Class1932 class1854) {
         final BlockPos class1855 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
         if (class1852.isVecInside(class1855) && class1851.method6701(class1855).method21696() != Class7521.field29216) {
-            this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29216.method11878()).method21773((Class7111<Comparable>)Class3955.field17859, class1853), n, n2, n3, class1852);
-            final Class436 method6727 = class1851.method6727(class1855);
+            this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29216.method11878()).method21773((Class7111<Comparable>)Class3955.field17859, class1853), n, n2, n3, class1852);
+            final TileEntity method6727 = class1851.method6727(class1855);
             if (method6727 instanceof Class458) {
                 ((Class458)method6727).method2327(class1854, random.nextLong());
             }

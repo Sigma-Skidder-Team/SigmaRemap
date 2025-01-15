@@ -14,9 +14,9 @@ import java.util.function.Function;
 public class Class4571 extends Class4535<Class5122>
 {
     private static final Class169 field20060;
-    private final Class7096 field20061;
-    private final Class7096 field20062;
-    private final Class7096 field20063;
+    private final BlockState field20061;
+    private final BlockState field20062;
+    private final BlockState field20063;
     
     public Class4571(final Function<Dynamic<?>, ? extends Class5122> function) {
         super(function);

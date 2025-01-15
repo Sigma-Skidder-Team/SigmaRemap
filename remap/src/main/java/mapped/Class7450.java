@@ -52,7 +52,7 @@ public class Class7450
         return lines;
     }
     
-    private static void method22919(final Class394 class394, final Collection<String> collection, final ProfileLookupCallback profileLookupCallback) {
+    private static void method22919(final MinecraftServer class394, final Collection<String> collection, final ProfileLookupCallback profileLookupCallback) {
         final String[] array = collection.stream().filter(s2 -> !Class8272.method27500(s2)).toArray(String[]::new);
         if (!class394.method1518()) {
             for (final String s : array) {
@@ -64,7 +64,7 @@ public class Class7450
         }
     }
     
-    public static boolean method22920(final Class394 class394) {
+    public static boolean method22920(final MinecraftServer class394) {
         final Class8007 class395 = new Class8007(Class6765.field26556);
         if (Class7450.field28751.exists() && Class7450.field28751.isFile()) {
             if (class395.method26205().exists()) {
@@ -95,7 +95,7 @@ public class Class7450
         return true;
     }
     
-    public static boolean method22921(final Class394 class394) {
+    public static boolean method22921(final MinecraftServer class394) {
         final Class8009 class395 = new Class8009(Class6765.field26557);
         if (Class7450.field28750.exists() && Class7450.field28750.isFile()) {
             if (class395.method26205().exists()) {
@@ -125,7 +125,7 @@ public class Class7450
         return true;
     }
     
-    public static boolean method22922(final Class394 class394) {
+    public static boolean method22922(final MinecraftServer class394) {
         final Class8008 class395 = new Class8008(Class6765.field26558);
         if (Class7450.field28752.exists() && Class7450.field28752.isFile()) {
             if (class395.method26205().exists()) {
@@ -154,7 +154,7 @@ public class Class7450
         return true;
     }
     
-    public static boolean method22923(final Class394 class394) {
+    public static boolean method22923(final MinecraftServer class394) {
         final Class8010 class395 = new Class8010(Class6765.field26559);
         if (Class7450.field28753.exists() && Class7450.field28753.isFile()) {
             if (class395.method26205().exists()) {
@@ -183,7 +183,7 @@ public class Class7450
         return true;
     }
     
-    public static String method22924(final Class394 class394, final String s) {
+    public static String method22924(final MinecraftServer class394, final String s) {
         if (Class8272.method27500(s) || s.length() > 16) {
             return s;
         }
@@ -240,7 +240,7 @@ public class Class7450
         }
     }
     
-    public static boolean method22927(final Class394 class394) {
+    public static boolean method22927(final MinecraftServer class394) {
         return method22928() && method22929(class394);
     }
     
@@ -295,7 +295,7 @@ public class Class7450
         return false;
     }
     
-    private static boolean method22929(final Class394 class394) {
+    private static boolean method22929(final MinecraftServer class394) {
         final File method22930 = method22930(class394);
         if (method22930.exists()) {
             if (method22930.isDirectory()) {
@@ -310,7 +310,7 @@ public class Class7450
         return true;
     }
     
-    private static File method22930(final Class394 class394) {
+    private static File method22930(final MinecraftServer class394) {
         return new File(new File(class394.method1501()), "players");
     }
     

@@ -73,7 +73,7 @@ public class Class457 extends Class456
                 this.field2713 = 0;
             }
             ++this.field2713;
-            final Class7096 method2194 = this.method2194();
+            final BlockState method2194 = this.method2194();
             if (!method2194.method21772((Class7111<Boolean>)Class3939.field17825)) {
                 this.method2332(method2194, Class8520.field35004);
                 this.method2331(method2194, true);
@@ -89,7 +89,7 @@ public class Class457 extends Class456
     public void method2330() {
         this.field2713 = Class475.method2420(this.field2656, this, this.field2657.getX(), this.field2657.getY(), this.field2657.getZ());
         if (this.field2713 <= 0) {
-            final Class7096 method2194 = this.method2194();
+            final BlockState method2194 = this.method2194();
             if (method2194.method21696() != Class7521.field29807) {
                 this.method2198();
                 return;
@@ -111,12 +111,12 @@ public class Class457 extends Class456
         }
     }
     
-    private void method2331(final Class7096 class7096, final boolean b) {
-        this.field2656.method6688(this.method2193(), ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3939.field17825, b), 3);
+    private void method2331(final BlockState class7096, final boolean b) {
+        this.field2656.method6688(this.method2193(), ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3939.field17825, b), 3);
     }
     
-    private void method2332(final Class7096 class7096, final Class7795 class7097) {
+    private void method2332(final BlockState class7096, final Class7795 class7097) {
         final Vec3i method802 = class7096.method21772((Class7111<Direction>)Class3939.field17824).getDirectionVec();
-        this.field2656.method6706(null, this.field2657.getX() + 0.5 + method802.getX() / 2.0, this.field2657.getY() + 0.5 + method802.getY() / 2.0, this.field2657.getZ() + 0.5 + method802.getZ() / 2.0, class7097, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
+        this.field2656.method6706(null, this.field2657.getX() + 0.5 + method802.getX() / 2.0, this.field2657.getY() + 0.5 + method802.getY() / 2.0, this.field2657.getZ() + 0.5 + method802.getZ() / 2.0, class7097, Class286.field1582, 0.5f, this.field2656.rand.nextFloat() * 0.1f + 0.9f);
     }
 }

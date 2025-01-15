@@ -126,9 +126,9 @@ public class Class548 extends Class527
     }
     
     private void method3217(final int n, final int n2) {
-        this.method3029(new Class654(this.field3152 / 2 - 100, n, 200, 20, Class8822.method30773("menu.playdemo", new Object[0]), class654 -> this.field3150.method5262("Demo_World", "Demo_World", Class394.field2295)));
+        this.method3029(new Class654(this.field3152 / 2 - 100, n, 200, 20, Class8822.method30773("menu.playdemo", new Object[0]), class654 -> this.field3150.method5262("Demo_World", "Demo_World", MinecraftServer.field2295)));
         this.field3305 = this.method3029(new Class654(this.field3152 / 2 - 100, n + n2 * 1, 200, 20, Class8822.method30773("menu.resetdemo", new Object[0]), class654 -> {
-            final Class8660 method25791 = this.field3150.method5243().method25791("Demo_World");
+            final WorldInfo method25791 = this.field3150.method5243().method25791("Demo_World");
             if (method25791 != null) {
                 this.field3150.method5244(new Class546(this::method3219, new Class2259("selectWorld.deleteQuestion", new Object[0]), new Class2259("selectWorld.deleteWarning", new Object[] { method25791.method29549() }), Class8822.method30773("selectWorld.deleteButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
             }

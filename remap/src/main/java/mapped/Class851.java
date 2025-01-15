@@ -90,7 +90,7 @@ public class Class851 extends Class760 implements Class762
     @Override
     public void method1659() {
         super.method1659();
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             final float method35639 = MathHelper.cos((this.getEntityId() * 3 + this.ticksExisted) * 0.13f + 3.1415927f);
             final float method35640 = MathHelper.cos((this.getEntityId() * 3 + this.ticksExisted + 1) * 0.13f + 3.1415927f);
             if (method35639 > 0.0f) {

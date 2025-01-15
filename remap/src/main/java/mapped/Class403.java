@@ -27,12 +27,12 @@ public class Class403 extends Class402
     
     public Class403(final EntityType<? extends Class403> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field2486 = new ItemStack(Class7739.field31607);
+        this.field2486 = new ItemStack(Items.field31607);
     }
     
     public Class403(final World class1847, final LivingEntity class1848, final ItemStack class1849) {
         super(EntityType.field29040, class1848, class1847);
-        this.field2486 = new ItemStack(Class7739.field31607);
+        this.field2486 = new ItemStack(Items.field31607);
         this.field2486 = class1849.method27641();
         this.dataManager.set(Class403.field2484, (byte)Class8742.method30219(class1849));
         this.dataManager.set(Class403.field2485, class1849.method27671());
@@ -40,7 +40,7 @@ public class Class403 extends Class402
     
     public Class403(final World class1847, final double n, final double n2, final double n3) {
         super(EntityType.field29040, n, n2, n3, class1847);
-        this.field2486 = new ItemStack(Class7739.field31607);
+        this.field2486 = new ItemStack(Items.field31607);
     }
     
     @Override
@@ -60,7 +60,7 @@ public class Class403 extends Class402
             if (method1973 != null) {
                 final byte byteValue = this.dataManager.get(Class403.field2484);
                 if (byteValue > 0 && !this.method1990()) {
-                    if (!this.world.field10067) {
+                    if (!this.world.isRemote) {
                         if (this.field2474 == Class2151.field12783) {
                             this.method1767(this.method1974(), 0.1f);
                         }
@@ -71,7 +71,7 @@ public class Class403 extends Class402
                     this.method1986(true);
                     final Vec3d class5487 = new Vec3d(method1973.getPosX() - this.getPosX(), method1973.method1944() - this.getPosY(), method1973.getPosZ() - this.getPosZ());
                     this.method1948(this.getPosX(), this.getPosY() + class5487.y * 0.015 * byteValue, this.getPosZ());
-                    if (this.world.field10067) {
+                    if (this.world.isRemote) {
                         this.lastTickPosY = this.getPosY();
                     }
                     this.method1936(this.getMotion().scale(0.95).add(class5487.normalize().scale(0.05 * byteValue)));

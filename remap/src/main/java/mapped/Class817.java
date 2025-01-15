@@ -155,7 +155,7 @@ public class Class817 extends Class789
                 if (this.method4357(method2715)) {
                     if (class512.method1734(this) < 9.0) {
                         this.method4358(class512, method2715);
-                        if (!this.world.field10067) {
+                        if (!this.world.isRemote) {
                             if (this.rand.nextInt(3) != 0) {
                                 this.method4811(false);
                                 this.world.method6761(this, (byte)40);
@@ -225,12 +225,12 @@ public class Class817 extends Class789
     @Override
     public boolean method4180(final Class1852 class1852) {
         if (class1852.method6975(this)) {
-            if (!class1852.method6968(this.method1886())) {
+            if (!class1852.method6968(this.getBoundingBox())) {
                 final BlockPos class1853 = new BlockPos(this);
                 if (class1853.getY() < class1852.method6743()) {
                     return false;
                 }
-                final Class7096 method6701 = class1852.method6701(class1853.method1139());
+                final BlockState method6701 = class1852.method6701(class1853.method1139());
                 if (method6701.method21696() == Class7521.field29155 || method6701.method21755(Class7188.field27907)) {
                     return true;
                 }
@@ -250,7 +250,7 @@ public class Class817 extends Class789
     }
     
     static {
-        field4376 = Class120.method618(Class7739.field31379, Class7739.field31380);
+        field4376 = Class120.method618(Items.field31379, Items.field31380);
         field4377 = EntityDataManager.method33564(Class817.class, Class7709.field30661);
     }
 }

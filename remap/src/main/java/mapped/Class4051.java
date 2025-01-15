@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class4051 extends Class3820
+public class Class4051 extends Item
 {
     private final int field18142;
     private final String field18143;

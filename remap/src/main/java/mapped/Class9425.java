@@ -12,8 +12,8 @@ public class Class9425
     private static String[] field40425;
     private final List<Class9167> field40426;
     private final List<Class9167> field40427;
-    private Class3820 field40428;
-    private Class7909<Class3820> field40429;
+    private Item field40428;
+    private Class7909<Item> field40429;
     private Class8685 field40430;
     private Class8685 field40431;
     private Class8061 field40432;
@@ -36,7 +36,7 @@ public class Class9425
         return this;
     }
     
-    public Class9425 method35026(final Class7909<Class3820> field40429) {
+    public Class9425 method35026(final Class7909<Item> field40429) {
         this.field40429 = field40429;
         return this;
     }

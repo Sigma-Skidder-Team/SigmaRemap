@@ -99,7 +99,7 @@ public class Class3594 extends Class3592
             this.field16741.rotationPitch = MathHelper.method35707(this.field16741.rotationPitch, 0.0f, 0.2f);
         }
         else {
-            this.field16741.rotationPitch = (float)(Math.signum(-method1935.y) * Math.acos(Math.sqrt(Entity.method1680(method1935)) / method1935.length()) * 57.2957763671875);
+            this.field16741.rotationPitch = (float)(Math.signum(-method1935.y) * Math.acos(Math.sqrt(Entity.horizontalMag(method1935)) / method1935.length()) * 57.2957763671875);
         }
     }
     

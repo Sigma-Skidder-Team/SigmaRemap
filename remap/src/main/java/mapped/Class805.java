@@ -53,18 +53,18 @@ public class Class805 extends Class804
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() == Class7739.field31300) {
+        if (method2715.getItem() == Items.field31300) {
             if (!this.method2625()) {
                 if (!class512.field3025.field27304) {
                     method2715.method27693(1);
                     boolean b = false;
                     ItemStack class514;
                     if (this.field4328 == null) {
-                        class514 = new ItemStack(Class7739.field31301);
+                        class514 = new ItemStack(Items.field31301);
                     }
                     else {
                         b = true;
-                        class514 = new ItemStack(Class7739.field31612);
+                        class514 = new ItemStack(Items.field31612);
                         Class4035.method12228(class514, this.field4328, this.field4329);
                         this.field4328 = null;
                         this.field4329 = 0;
@@ -89,9 +89,9 @@ public class Class805 extends Class804
                 }
             }
         }
-        if (method2715.method27622() == Class7739.field31426 && !this.method2625()) {
+        if (method2715.getItem() == Items.field31426 && !this.method2625()) {
             this.world.method6709(Class8432.field34619, this.getPosX(), this.method1942(0.5), this.getPosZ(), 0.0, 0.0, 0.0);
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.method1652();
                 final Class804 class516 = EntityType.field28968.method23371(this.world);
                 class516.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
@@ -115,7 +115,7 @@ public class Class805 extends Class804
             return true;
         }
         if (this.method4708() == Class1983.field10982) {
-            if (method2715.method27622().method11742(Class7855.field32266)) {
+            if (method2715.getItem().method11742(Class7855.field32266)) {
                 if (this.field4328 == null) {
                     final Pair<Class5328, Integer> method2716 = this.method4706(method2715);
                     if (!class512.field3025.field27304) {
@@ -161,7 +161,7 @@ public class Class805 extends Class804
     }
     
     private Pair<Class5328, Integer> method4706(final ItemStack class8321) {
-        final Class3882 class8322 = (Class3882)((Class4036)class8321.method27622()).method12240();
+        final Class3882 class8322 = (Class3882)((Class4036)class8321.getItem()).method12240();
         return (Pair<Class5328, Integer>)Pair.of((Object)class8322.method11961(), (Object)class8322.method11962());
     }
     

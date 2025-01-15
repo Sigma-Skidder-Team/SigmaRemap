@@ -7,12 +7,12 @@ package mapped;
 import org.apache.logging.log4j.LogManager;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
 import java.util.Iterator;
 import org.apache.logging.log4j.Logger;
 
-public class Class3694 extends Class3693<Class3820>
+public class Class3694 extends Class3693<Item>
 {
     private static final Logger field17013;
     
@@ -56,42 +56,42 @@ public class Class3694 extends Class3693<Class3820>
         this.method11373(Class7188.field27911, Class7855.field32268);
         this.method11373(Class7188.field27912, Class7855.field32269);
         this.method11373(Class7188.field27913, Class7855.field32270);
-        this.method11368(Class7855.field32257).method26978(Class7739.field31556, Class7739.field31557, Class7739.field31558, Class7739.field31559, Class7739.field31560, Class7739.field31561, Class7739.field31562, Class7739.field31563, Class7739.field31564, Class7739.field31565, Class7739.field31566, Class7739.field31567, Class7739.field31568, Class7739.field31569, Class7739.field31570, Class7739.field31571);
-        this.method11368(Class7855.field32271).method26978(Class7739.field31356, Class7739.field31585, Class7739.field31586, Class7739.field31587, Class7739.field31588, Class7739.field31589);
-        this.method11368(Class7855.field32272).method26978(Class7739.field31379, Class7739.field31383, Class7739.field31380, Class7739.field31384, Class7739.field31382, Class7739.field31381);
+        this.method11368(Class7855.field32257).method26978(Items.field31556, Items.field31557, Items.field31558, Items.field31559, Items.field31560, Items.field31561, Items.field31562, Items.field31563, Items.field31564, Items.field31565, Items.field31566, Items.field31567, Items.field31568, Items.field31569, Items.field31570, Items.field31571);
+        this.method11368(Class7855.field32271).method26978(Items.field31356, Items.field31585, Items.field31586, Items.field31587, Items.field31588, Items.field31589);
+        this.method11368(Class7855.field32272).method26978(Items.field31379, Items.field31383, Items.field31380, Items.field31384, Items.field31382, Items.field31381);
         this.method11373(Class7188.field27926, Class7855.field32273);
-        this.method11368(Class7855.field32274).method26978(Class7739.field31595, Class7739.field31596, Class7739.field31597, Class7739.field31598, Class7739.field31599, Class7739.field31600, Class7739.field31601, Class7739.field31602, Class7739.field31603, Class7739.field31604, Class7739.field31605, Class7739.field31606);
-        this.method11368(Class7855.field32275).method26978(Class7739.field31281, Class7739.field31282);
-        this.method11368(Class7855.field32276).method26978(Class7739.field31280, Class7739.field31581, Class7739.field31580);
-        this.method11368(Class7855.field32277).method26978(Class7739.field31513, Class7739.field31512);
+        this.method11368(Class7855.field32274).method26978(Items.field31595, Items.field31596, Items.field31597, Items.field31598, Items.field31599, Items.field31600, Items.field31601, Items.field31602, Items.field31603, Items.field31604, Items.field31605, Items.field31606);
+        this.method11368(Class7855.field32275).method26978(Items.field31281, Items.field31282);
+        this.method11368(Class7855.field32276).method26978(Items.field31280, Items.field31581, Items.field31580);
+        this.method11368(Class7855.field32277).method26978(Items.field31513, Items.field31512);
     }
     
-    public void method11373(final Class7909<Class3833> class7909, final Class7909<Class3820> class7910) {
-        final Class8162<Class3820> method11368 = this.method11368(class7910);
+    public void method11373(final Class7909<Class3833> class7909, final Class7909<Item> class7910) {
+        final Class8162<Item> method11368 = this.method11368(class7910);
         final Iterator<Class6967<Class3833>> iterator = class7909.method25617().iterator();
         while (iterator.hasNext()) {
             method11368.method26976(this.method11374(iterator.next()));
         }
     }
     
-    private Class6967<Class3820> method11374(final Class6967<Class3833> obj) {
+    private Class6967<Item> method11374(final Class6967<Class3833> obj) {
         if (obj instanceof Class6966) {
-            return new Class6966<Class3820>(((Class6966)obj).method21380());
+            return new Class6966<Item>(((Class6966)obj).method21380());
         }
         if (!(obj instanceof Class6968)) {
             throw new UnsupportedOperationException("Unknown tag entry " + obj);
         }
         final ArrayList arrayList = Lists.newArrayList();
         for (final Class3833 class3833 : ((Class6968)obj).method21382()) {
-            final Class3820 method11704 = class3833.method11704();
-            if (method11704 != Class7739.field30754) {
+            final Item method11704 = class3833.method11704();
+            if (method11704 != Items.AIR) {
                 arrayList.add(method11704);
             }
             else {
                 Class3694.field17013.warn("Itemless block copied to item tag: {}", (Object)Class90.field208.method503(class3833));
             }
         }
-        return new Class6968<Class3820>(arrayList);
+        return new Class6968<Item>(arrayList);
     }
     
     @Override
@@ -105,7 +105,7 @@ public class Class3694 extends Class3693<Class3820>
     }
     
     @Override
-    public void method11366(final Class6208<Class3820> class6208) {
+    public void method11366(final Class6208<Item> class6208) {
         Class7855.method25401(class6208);
     }
     

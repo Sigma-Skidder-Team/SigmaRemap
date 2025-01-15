@@ -117,7 +117,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     
     @Override
     public void method4831(final ItemStack class8321) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field4107 > -this.method4155() + 20) {
                 this.field4107 = -this.method4155();
                 this.method1695(this.method4833(!class8321.method27620()), this.method2720(), this.method2721());

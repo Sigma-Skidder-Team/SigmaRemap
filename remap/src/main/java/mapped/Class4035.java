@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.AbstractList;
 
-public class Class4035 extends Class3820
+public class Class4035 extends Item
 {
     public Class4035(final Class8959 class8959) {
         super(class8959);
@@ -46,6 +46,6 @@ public class Class4035 extends Class3820
                 }
             }
         }
-        return (class8323 instanceof Class512 && ((Class512)class8323).field3025.field27304) ? method11707 : new ItemStack(Class7739.field31300);
+        return (class8323 instanceof Class512 && ((Class512)class8323).field3025.field27304) ? method11707 : new ItemStack(Items.field31300);
     }
 }

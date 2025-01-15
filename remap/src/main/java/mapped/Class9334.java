@@ -26,11 +26,11 @@ public class Class9334
     public static final Class9334 field40074;
     private final String field40075;
     private final Class8912 field40076;
-    private final ImmutableSet<Class3820> field40077;
+    private final ImmutableSet<Item> field40077;
     private final ImmutableSet<Class3833> field40078;
     private final Class7795 field40079;
     
-    private Class9334(final String field40075, final Class8912 field40076, final ImmutableSet<Class3820> field40077, final ImmutableSet<Class3833> field40078, final Class7795 field40079) {
+    private Class9334(final String field40075, final Class8912 field40076, final ImmutableSet<Item> field40077, final ImmutableSet<Class3833> field40078, final Class7795 field40079) {
         this.field40075 = field40075;
         this.field40076 = field40076;
         this.field40077 = field40077;
@@ -42,7 +42,7 @@ public class Class9334
         return this.field40076;
     }
     
-    public ImmutableSet<Class3820> method34576() {
+    public ImmutableSet<Item> method34576() {
         return this.field40077;
     }
     
@@ -61,10 +61,10 @@ public class Class9334
     }
     
     public static Class9334 method34579(final String s, final Class8912 class8912, final Class7795 class8913) {
-        return method34580(s, class8912, (ImmutableSet<Class3820>)ImmutableSet.of(), (ImmutableSet<Class3833>)ImmutableSet.of(), class8913);
+        return method34580(s, class8912, (ImmutableSet<Item>)ImmutableSet.of(), (ImmutableSet<Class3833>)ImmutableSet.of(), class8913);
     }
     
-    public static Class9334 method34580(final String s, final Class8912 class8912, final ImmutableSet<Class3820> set, final ImmutableSet<Class3833> set2, final Class7795 class8913) {
+    public static Class9334 method34580(final String s, final Class8912 class8912, final ImmutableSet<Item> set, final ImmutableSet<Class3833> set2, final Class7795 class8913) {
         return Class90.method512(Class90.field240, new Class1932(s), new Class9334(s, class8912, set, set2, class8913));
     }
     
@@ -74,7 +74,7 @@ public class Class9334
         field40062 = method34579("butcher", Class8912.field37463, Class8520.field35683);
         field40063 = method34579("cartographer", Class8912.field37464, Class8520.field35684);
         field40064 = method34579("cleric", Class8912.field37465, Class8520.field35685);
-        field40065 = method34580("farmer", Class8912.field37466, (ImmutableSet<Class3820>)ImmutableSet.of((Object)Class7739.field31315, (Object)Class7739.field31314, (Object)Class7739.field31576), (ImmutableSet<Class3833>)ImmutableSet.of((Object)Class7521.field29298), Class8520.field35686);
+        field40065 = method34580("farmer", Class8912.field37466, (ImmutableSet<Item>)ImmutableSet.of((Object) Items.field31315, (Object) Items.field31314, (Object) Items.field31576), (ImmutableSet<Class3833>)ImmutableSet.of((Object)Class7521.field29298), Class8520.field35686);
         field40066 = method34579("fisherman", Class8912.field37467, Class8520.field35687);
         field40067 = method34579("fletcher", Class8912.field37468, Class8520.field35688);
         field40068 = method34579("leatherworker", Class8912.field37469, Class8520.field35689);

@@ -470,7 +470,7 @@ public abstract class Class3418
     }
     
     public static boolean method10880(final ItemStack class8321, final ItemStack class8322) {
-        return class8321.method27622() == class8322.method27622() && ItemStack.method27642(class8321, class8322);
+        return class8321.getItem() == class8322.getItem() && ItemStack.method27642(class8321, class8322);
     }
     
     public boolean method10857(final ItemStack class8321, final Class6601 class8322) {
@@ -664,7 +664,7 @@ public abstract class Class3418
                 break;
             }
             case 2: {
-                class8321.method27691(class8321.method27622().method11708());
+                class8321.method27691(class8321.getItem().method11708());
                 break;
             }
         }
@@ -675,8 +675,8 @@ public abstract class Class3418
         return true;
     }
     
-    public static int method10897(final Class436 class436) {
-        return (class436 instanceof Class446) ? method10898((Class446)class436) : 0;
+    public static int method10897(final TileEntity tileEntity) {
+        return (tileEntity instanceof Class446) ? method10898((Class446) tileEntity) : 0;
     }
     
     public static int method10898(final Class446 class446) {

@@ -48,7 +48,7 @@ public class Class3984 extends Class3833
     
     @Override
     public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        if (!class7097.field10067) {
+        if (!class7097.isRemote) {
             class7096 = ((Class7097<O, Class7096>)class7096).method21768((Class7111<Comparable>)Class3984.field17993);
             class7097.method6688(class7098, class7096, 3);
             this.method12129(class7097, class7098);
@@ -60,7 +60,7 @@ public class Class3984 extends Class3833
     
     @Override
     public void method11847(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
-        if (!class7097.field10067) {
+        if (!class7097.isRemote) {
             this.method12129(class7097, class7098);
             class7099.method2857(Class8276.field34034);
         }

@@ -36,7 +36,7 @@ public class Class7489
         final ArrayList arrayList = Lists.newArrayList((Iterable)method1572.method7611());
         class7494.method31023(arrayList, class7493);
         method1572.method7608(arrayList);
-        final Class8660 method1573 = class7492.method23255().method1481(DimensionType.field2223).method6764();
+        final WorldInfo method1573 = class7492.method23255().method1481(DimensionType.field2223).method6764();
         method1573.method29609().clear();
         method1572.method7611().forEach(class7496 -> class7495.method29609().add(class7496.method7621()));
         method1573.method29608().remove(class7493.method7621());
@@ -50,7 +50,7 @@ public class Class7489
         final ArrayList arrayList = Lists.newArrayList((Iterable)method1572.method7611());
         arrayList.remove(class7493);
         method1572.method7608(arrayList);
-        final Class8660 method1573 = class7492.method23255().method1481(DimensionType.field2223).method6764();
+        final WorldInfo method1573 = class7492.method23255().method1481(DimensionType.field2223).method6764();
         method1573.method29609().clear();
         method1572.method7611().forEach(class7495 -> class7494.method29609().add(class7495.method7621()));
         method1573.method29608().add(class7493.method7621());

@@ -11,6 +11,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.CubeCoordinateIterator;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.stream.Stream;
 import java.util.Set;
@@ -19,22 +21,22 @@ import javax.annotation.Nullable;
 
 public interface Class1853 extends Class1855
 {
-    Class9375 method6787();
+    WorldBorder method6787();
     
     @Nullable
     Class1855 method6736(final int p0, final int p1);
     
-    default boolean method6957(final Entity class399, final Class7702 class400) {
+    default boolean method6957(final Entity class399, final VoxelShape class400) {
         return true;
     }
     
-    default boolean method6974(final Class7096 class7096, final BlockPos class7097, final ISelectionContext class7098) {
-        final Class7702 method21728 = class7096.method21728(this, class7097, class7098);
+    default boolean method6974(final BlockState class7096, final BlockPos class7097, final ISelectionContext class7098) {
+        final VoxelShape method21728 = class7096.method21728(this, class7097, class7098);
         return method21728.method24540() || this.method6957(null, method21728.method24541(class7097.getX(), class7097.getY(), class7097.getZ()));
     }
     
     default boolean method6975(final Entity class399) {
-        return this.method6957(class399, Class7698.method24489(class399.method1886()));
+        return this.method6957(class399, Class7698.method24489(class399.getBoundingBox()));
     }
     
     default boolean method6976(final AxisAlignedBB class6221) {
@@ -42,7 +44,7 @@ public interface Class1853 extends Class1855
     }
     
     default boolean method6977(final Entity class399) {
-        return this.method6979(class399, class399.method1886(), Collections.emptySet());
+        return this.method6979(class399, class399.getBoundingBox(), Collections.emptySet());
     }
     
     default boolean method6978(final Entity class399, final AxisAlignedBB class400) {
@@ -50,18 +52,18 @@ public interface Class1853 extends Class1855
     }
     
     default boolean method6979(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
-        return this.method6980(class399, class400, set).allMatch(Class7702::method24540);
+        return this.method6980(class399, class400, set).allMatch(VoxelShape::method24540);
     }
     
-    default Stream<Class7702> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
+    default Stream<VoxelShape> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
         return Stream.empty();
     }
     
-    default Stream<Class7702> method6980(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
+    default Stream<VoxelShape> method6980(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
         return Streams.concat(new Stream[] { this.method6981(class399, class400), this.method6956(class399, class400, set) });
     }
     
-    default Stream<Class7702> method6981(final Entity class399, final AxisAlignedBB class400) {
-        return StreamSupport.stream((Spliterator<Class7702>)new Class7583(this, Long.MAX_VALUE, 1280, class399, new CubeCoordinateIterator(MathHelper.floor(class400.field25073 - 1.0E-7) - 1, MathHelper.floor(class400.field25074 - 1.0E-7) - 1, MathHelper.floor(class400.field25075 - 1.0E-7) - 1, MathHelper.floor(class400.field25076 + 1.0E-7) + 1, MathHelper.floor(class400.field25077 + 1.0E-7) + 1, MathHelper.floor(class400.field25078 + 1.0E-7) + 1), new Mutable(), (class399 != null) ? ISelectionContext.forEntity(class399) : ISelectionContext.dummy(), Class7698.method24489(class400)), false);
+    default Stream<VoxelShape> method6981(final Entity class399, final AxisAlignedBB class400) {
+        return StreamSupport.stream((Spliterator<VoxelShape>)new Class7583(this, Long.MAX_VALUE, 1280, class399, new CubeCoordinateIterator(MathHelper.floor(class400.field25073 - 1.0E-7) - 1, MathHelper.floor(class400.field25074 - 1.0E-7) - 1, MathHelper.floor(class400.field25075 - 1.0E-7) - 1, MathHelper.floor(class400.field25076 + 1.0E-7) + 1, MathHelper.floor(class400.field25077 + 1.0E-7) + 1, MathHelper.floor(class400.field25078 + 1.0E-7) + 1), new Mutable(), (class399 != null) ? ISelectionContext.forEntity(class399) : ISelectionContext.dummy(), Class7698.method24489(class400)), false);
     }
 }

@@ -231,7 +231,7 @@ public class Class7718 implements Class7712
         return str;
     }
     
-    public boolean method24627(final Class7096 class7096) {
+    public boolean method24627(final BlockState class7096) {
         return Class7980.method26014(class7096, this.field30684);
     }
     
@@ -261,7 +261,7 @@ public class Class7718 implements Class7712
     }
     
     @Override
-    public int method24616(final Class7096 class7096, final Class1856 class7097, final BlockPos class7098) {
+    public int method24616(final BlockState class7096, final Class1856 class7097, final BlockPos class7098) {
         return this.method24632(class7097, class7098);
     }
     

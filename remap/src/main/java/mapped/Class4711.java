@@ -43,7 +43,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
     private void method13995(final Class754 class754) {
         final Class5860 class755 = ((Class4710<T, Class5860>)this).method13979();
         if (!class754.isSpectator()) {
-            final ItemStack method2713 = class754.method2713();
+            final ItemStack method2713 = class754.getHeldItemMainhand();
             final ItemStack method2714 = class754.method2714();
             class755.method17584(true);
             class755.field23994.field25187 = class754.method2895(Class189.field616);
@@ -77,9 +77,9 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         if (!class759.method27620()) {
             class758 = Class2036.field11608;
             if (class754.method2767() <= 0) {
-                final boolean b = class755.method27622() == Class7739.field31611;
+                final boolean b = class755.getItem() == Items.field31611;
                 final boolean method12296 = Class4086.method12296(class755);
-                final boolean b2 = class756.method27622() == Class7739.field31611;
+                final boolean b2 = class756.getItem() == Items.field31611;
                 final boolean method12297 = Class4086.method12296(class756);
                 if (b) {
                     if (method12296) {
@@ -88,7 +88,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
                 }
                 if (b2) {
                     if (method12297) {
-                        if (class755.method27622().method11725(class755) == Class1992.field11154) {
+                        if (class755.getItem().method11725(class755) == Class1992.field11154) {
                             class758 = Class2036.field11613;
                         }
                     }
@@ -187,8 +187,8 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
             }
             final Vec3d method2625 = class754.method1741(n3);
             final Vec3d method2626 = class754.getMotion();
-            final double method2627 = Entity.method1680(method2626);
-            final double method2628 = Entity.method1680(method2625);
+            final double method2627 = Entity.horizontalMag(method2626);
+            final double method2628 = Entity.horizontalMag(method2625);
             if (method2627 > 0.0) {
                 if (method2628 > 0.0) {
                     class755.method22566(Vector3f.YP.rotation((float)(Math.signum(method2626.x * method2625.z - method2626.z * method2625.x) * Math.acos((method2626.x * method2625.x + method2626.z * method2625.z) / (Math.sqrt(method2627) * Math.sqrt(method2628))))));

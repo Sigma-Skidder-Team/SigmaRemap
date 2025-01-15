@@ -16,11 +16,11 @@ public class Class613 extends Class608<Class639>
 {
     private static String[] field3574;
     public final List<Class2248<Class3833>> field3575;
-    public final List<Class2248<Class3820>> field3576;
+    public final List<Class2248<Item>> field3576;
     private final int[] field3577;
     public int field3578;
-    public final List<Class3820> field3579;
-    public final Comparator<Class3820> field3580;
+    public final List<Item> field3579;
+    public final Comparator<Item> field3580;
     public Class2248<?> field3581;
     public int field3582;
     public final /* synthetic */ Class691 field3583;
@@ -35,7 +35,7 @@ public class Class613 extends Class608<Class639>
         this.field3576 = Lists.newArrayList((Object[])new Class2248[] { Class8276.field33982, Class8276.field33980, Class8276.field33981, Class8276.field33983, Class8276.field33984 });
         this.method3528(true, 20);
         final Set identityHashSet = Sets.newIdentityHashSet();
-        for (final Class3820 class870 : Class90.field211) {
+        for (final Item class870 : Class90.field211) {
             int n = 0;
             for (final Class2248 class871 : this.field3576) {
                 if (!class871.method8446(class870)) {
@@ -67,7 +67,7 @@ public class Class613 extends Class608<Class639>
             }
             identityHashSet.add(class872.method11704());
         }
-        identityHashSet.remove(Class7739.field30754);
+        identityHashSet.remove(Items.AIR);
         this.field3579 = Lists.newArrayList((Iterable)identityHashSet);
         for (int i = 0; i < this.field3579.size(); ++i) {
             this.method3536(new Class639(this, null));
@@ -123,7 +123,7 @@ public class Class613 extends Class608<Class639>
     }
     
     private Class2248<?> method3585(final int n) {
-        return (Class2248<?>)((n >= this.field3575.size()) ? ((Class2248<Class3820>)this.field3576.get(n - this.field3575.size())) : ((Class2248<Class3833>)this.field3575.get(n)));
+        return (Class2248<?>)((n >= this.field3575.size()) ? ((Class2248<Item>)this.field3576.get(n - this.field3575.size())) : ((Class2248<Class3833>)this.field3575.get(n)));
     }
     
     private int method3586(final Class2248<?> class2248) {
@@ -176,7 +176,7 @@ public class Class613 extends Class608<Class639>
         }
     }
     
-    public ITextComponent method3588(final Class3820 class3820) {
+    public ITextComponent method3588(final Item class3820) {
         return class3820.method11715();
     }
     

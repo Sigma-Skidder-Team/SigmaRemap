@@ -9,13 +9,14 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Iterator;
 import java.util.List;
 
-public class Class491 extends Class436 implements Class439
+public class Class491 extends TileEntity implements Class439
 {
-    private Class7096 field2818;
+    private BlockState field2818;
     private Direction field2819;
     private boolean field2820;
     private boolean field2821;
@@ -28,7 +29,7 @@ public class Class491 extends Class436 implements Class439
         super(Class5412.field22550);
     }
     
-    public Class491(final Class7096 field2818, final Direction field2819, final boolean field2820, final boolean field2821) {
+    public Class491(final BlockState field2818, final Direction field2819, final boolean field2820, final boolean field2821) {
         this();
         this.field2818 = field2818;
         this.field2819 = field2819;
@@ -76,11 +77,11 @@ public class Class491 extends Class436 implements Class439
         return this.field2820 ? (n - 1.0f) : (1.0f - n);
     }
     
-    private Class7096 method2470() {
+    private BlockState method2470() {
         if (!this.method2462()) {
             if (this.method2464()) {
                 if (this.field2818.method21696() instanceof Class3836) {
-                    return ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29247.method11878()).method21773(Class3835.field17417, (this.field2818.method21696() != Class7521.field29239) ? Class178.field507 : Class178.field508)).method21773((Class7111<Comparable>)Class3835.field17415, (Comparable)this.field2818.method21772((Class7111<V>)Class3836.field17415));
+                    return ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29247.method11878()).method21773(Class3835.field17417, (this.field2818.method21696() != Class7521.field29239) ? Class178.field507 : Class178.field508)).method21773((Class7111<Comparable>)Class3835.field17415, (Comparable)this.field2818.method21772((Class7111<V>)Class3836.field17415));
                 }
             }
         }
@@ -90,7 +91,7 @@ public class Class491 extends Class436 implements Class439
     private void method2471(final float n) {
         final Direction method2476 = this.method2476();
         final double b = n - this.field2823;
-        final Class7702 method2477 = this.method2470().method21727(this.field2656, this.method2193());
+        final VoxelShape method2477 = this.method2470().method21727(this.field2656, this.method2193());
         if (!method2477.method24540()) {
             final List<AxisAlignedBB> method2478 = method2477.method24545();
             final AxisAlignedBB method2479 = this.method2479(this.method2477(method2478));
@@ -124,7 +125,7 @@ public class Class491 extends Class436 implements Class439
                         final Iterator<AxisAlignedBB> iterator2 = method2478.iterator();
                         while (iterator2.hasNext()) {
                             final AxisAlignedBB method2482 = Class8159.method26948(this.method2479(iterator2.next()), method2476, b);
-                            final AxisAlignedBB method2483 = class399.method1886();
+                            final AxisAlignedBB method2483 = class399.getBoundingBox();
                             if (method2482.method18502(method2483)) {
                                 max = Math.max(max, method2478(method2482, method2476, method2483));
                                 if (max >= b) {
@@ -239,7 +240,7 @@ public class Class491 extends Class436 implements Class439
     }
     
     private void method2480(final Entity class399, final Direction class400, final double b) {
-        final AxisAlignedBB method1886 = class399.method1886();
+        final AxisAlignedBB method1886 = class399.getBoundingBox();
         final AxisAlignedBB method1887 = Class7698.method24487().method24537().method18500(this.field2657);
         if (method1886.method18502(method1887)) {
             final Direction method1888 = class400.getOpposite();
@@ -250,7 +251,7 @@ public class Class491 extends Class436 implements Class439
         }
     }
     
-    public Class7096 method2481() {
+    public BlockState method2481() {
         return this.field2818;
     }
     
@@ -262,7 +263,7 @@ public class Class491 extends Class436 implements Class439
                 this.field2656.method6730(this.field2657);
                 this.method2198();
                 if (this.field2656.method6701(this.field2657).method21696() == Class7521.field29264) {
-                    Class7096 class7096;
+                    BlockState class7096;
                     if (!this.field2821) {
                         class7096 = Class3833.method11786(this.field2818, this.field2656, this.field2657);
                     }
@@ -294,11 +295,11 @@ public class Class491 extends Class436 implements Class439
             this.method2198();
             if (this.field2818 != null) {
                 if (this.field2656.method6701(this.field2657).method21696() == Class7521.field29264) {
-                    Class7096 method11786 = Class3833.method11786(this.field2818, this.field2656, this.field2657);
+                    BlockState method11786 = Class3833.method11786(this.field2818, this.field2656, this.field2657);
                     if (!method11786.method21706()) {
                         if (((Class7097<Object, Object>)method11786).method21771((Class7111<Comparable>)Class8970.field37747)) {
                             if (((Class7097<Object, Object>)method11786).method21772((Class7111<Boolean>)Class8970.field37747)) {
-                                method11786 = ((Class7097<Object, Class7096>)method11786).method21773((Class7111<Comparable>)Class8970.field37747, false);
+                                method11786 = ((Class7097<Object, BlockState>)method11786).method21773((Class7111<Comparable>)Class8970.field37747, false);
                             }
                         }
                         this.field2656.method6688(this.field2657, method11786, 67);
@@ -335,10 +336,10 @@ public class Class491 extends Class436 implements Class439
         return class51;
     }
     
-    public Class7702 method2483(final Class1855 class1855, final BlockPos class1856) {
-        Class7702 class1857;
+    public VoxelShape method2483(final Class1855 class1855, final BlockPos class1856) {
+        VoxelShape class1857;
         if (!this.field2820 && this.field2821) {
-            class1857 = ((Class7097<O, Class7096>)this.field2818).method21773((Class7111<Comparable>)Class3836.field17438, true).method21727(class1855, class1856);
+            class1857 = ((Class7097<O, BlockState>)this.field2818).method21773((Class7111<Comparable>)Class3836.field17438, true).method21727(class1855, class1856);
         }
         else {
             class1857 = Class7698.method24486();
@@ -347,12 +348,12 @@ public class Class491 extends Class436 implements Class439
         if (this.field2823 < 1.0 && class1858 == this.method2476()) {
             return class1857;
         }
-        Class7096 field2818;
+        BlockState field2818;
         if (!this.method2464()) {
             field2818 = this.field2818;
         }
         else {
-            field2818 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29247.method11878()).method21773((Class7111<Comparable>)Class3835.field17415, this.field2819)).method21773((Class7111<Comparable>)Class3835.field17418, this.field2820 != 1.0f - this.field2823 < 4.0f);
+            field2818 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29247.method11878()).method21773((Class7111<Comparable>)Class3835.field17415, this.field2819)).method21773((Class7111<Comparable>)Class3835.field17418, this.field2820 != 1.0f - this.field2823 < 4.0f);
         }
         final float method2469 = this.method2469(this.field2823);
         return Class7698.method24492(class1857, field2818.method21727(class1855, class1856).method24541(this.field2819.getXOffset() * method2469, this.field2819.getYOffset() * method2469, this.field2819.getZOffset() * method2469));

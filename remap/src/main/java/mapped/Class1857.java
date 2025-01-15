@@ -19,7 +19,7 @@ public class Class1857 implements Class1856
     private final int field10118;
     private int[] field10119;
     private int[] field10120;
-    private Class7096[] field10121;
+    private BlockState[] field10121;
     private final int field10122;
     private Class9145 field10123;
     private static final Class8888 field10124;
@@ -90,12 +90,12 @@ public class Class1857 implements Class1856
     }
     
     @Override
-    public Class7096 method6701(final BlockPos class354) {
+    public BlockState method6701(final BlockPos class354) {
         final int method6995 = this.method6995(class354);
         if (method6995 >= 0) {
             if (method6995 < this.field10122) {
                 if (this.field10121 != null) {
-                    Class7096 method6996 = this.field10121[method6995];
+                    BlockState method6996 = this.field10121[method6995];
                     if (method6996 == null) {
                         method6996 = this.field10111.method6701(class354);
                         this.field10121[method6995] = method6996;
@@ -117,7 +117,7 @@ public class Class1857 implements Class1856
         Arrays.fill(this.field10119, -1);
         Arrays.fill(this.field10120, -1);
         if (this.field10121 == null) {
-            this.field10121 = (Class7096[])Class1857.field10126.method31284(this.field10122);
+            this.field10121 = (BlockState[])Class1857.field10126.method31284(this.field10122);
         }
         Arrays.fill(this.field10121, null);
     }
@@ -136,11 +136,11 @@ public class Class1857 implements Class1856
     }
     
     @Override
-    public Class436 method6727(final BlockPos class354) {
+    public TileEntity method6727(final BlockPos class354) {
         return this.field10111.method7000(class354, Class2079.field12022);
     }
     
-    public Class436 method7000(final BlockPos class354, final Class2079 class355) {
+    public TileEntity method7000(final BlockPos class354, final Class2079 class355) {
         return this.field10111.method7000(class354, class355);
     }
     
@@ -175,6 +175,6 @@ public class Class1857 implements Class1856
     static {
         field10124 = new Class8888(Integer.TYPE, 16);
         field10125 = new Class8888(Integer.TYPE, 16);
-        field10126 = new Class8888(Class7096.class, 16);
+        field10126 = new Class8888(BlockState.class, 16);
     }
 }

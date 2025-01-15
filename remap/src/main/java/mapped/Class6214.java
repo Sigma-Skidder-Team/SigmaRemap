@@ -12,18 +12,18 @@ import com.mojang.datafixers.Dynamic;
 
 public class Class6214 extends Class6213
 {
-    private final Class7096 field25062;
+    private final BlockState field25062;
     
-    public Class6214(final Class7096 field25062) {
+    public Class6214(final BlockState field25062) {
         this.field25062 = field25062;
     }
     
     public <T> Class6214(final Dynamic<T> dynamic) {
-        this(Class7096.method21764((com.mojang.datafixers.Dynamic<Object>)dynamic.get("blockstate").orElseEmptyMap()));
+        this(BlockState.method21764((com.mojang.datafixers.Dynamic<Object>)dynamic.get("blockstate").orElseEmptyMap()));
     }
     
     @Override
-    public boolean method18485(final Class7096 class7096, final Random random) {
+    public boolean method18485(final BlockState class7096, final Random random) {
         return class7096 == this.field25062;
     }
     
@@ -34,6 +34,6 @@ public class Class6214 extends Class6213
     
     @Override
     public <T> Dynamic<T> method18487(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blockstate"), Class7096.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field25062).getValue())));
+        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blockstate"), BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field25062).getValue())));
     }
 }

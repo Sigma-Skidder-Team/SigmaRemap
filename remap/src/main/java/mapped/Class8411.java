@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 public class Class8411
 {
     private static final Logger field34534;
-    private final Class3820 field34535;
+    private final Item field34535;
     private final int field34536;
     private final List<Class120> field34537;
     private final Class6056 field34538;
@@ -34,7 +34,7 @@ public class Class8411
         return new Class8411(class3832, n);
     }
     
-    public Class8411 method28074(final Class7909<Class3820> class7909) {
+    public Class8411 method28074(final Class7909<Item> class7909) {
         return this.method28077(Class120.method620(class7909));
     }
     

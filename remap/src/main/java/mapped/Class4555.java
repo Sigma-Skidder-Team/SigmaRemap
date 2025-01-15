@@ -31,9 +31,9 @@ public class Class4555 extends Class4535<Class5122>
                 }
                 if (method6959.method9848(class1851, class1855)) {
                     class1851.method6688(class1855, Class7521.field29329.method11878(), 2);
-                    final Class7096 method6960 = class1851.method6701(class1856);
+                    final BlockState method6960 = class1851.method6701(class1856);
                     if (((Class7097<Object, Object>)method6960).method21771((Class7111<Comparable>)Class3911.field17717)) {
-                        class1851.method6688(class1856, ((Class7097<Object, Class7096>)method6960).method21773((Class7111<Comparable>)Class3911.field17717, true), 2);
+                        class1851.method6688(class1856, ((Class7097<Object, BlockState>)method6960).method21773((Class7111<Comparable>)Class3911.field17717, true), 2);
                     }
                 }
             }

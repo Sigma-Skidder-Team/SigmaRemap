@@ -12,9 +12,9 @@ import net.minecraft.world.dimension.DimensionType;
 public class Class398 implements ICommandSource
 {
     private final StringBuffer field2377;
-    private final Class394 field2378;
+    private final MinecraftServer field2378;
     
-    public Class398(final Class394 field2378) {
+    public Class398(final MinecraftServer field2378) {
         this.field2377 = new StringBuffer();
         this.field2378 = field2378;
     }

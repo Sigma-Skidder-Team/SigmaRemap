@@ -89,7 +89,7 @@ public class Class9242
                         }
                     }
                     try {
-                        final Map<BlockPos, Class436> method6689 = method6687.method7066();
+                        final Map<BlockPos, TileEntity> method6689 = method6687.method7066();
                         if (!method6689.isEmpty()) {
                             final Iterator iterator = method6689.keySet().iterator();
                             while (iterator.hasNext()) {

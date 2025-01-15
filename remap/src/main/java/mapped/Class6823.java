@@ -83,7 +83,7 @@ public class Class6823
     }
     
     public boolean method20887(final double n) {
-        return this.field26806 != null && this.field26806.method28357(MathHelper.method35654(n, -1.0, 1.0));
+        return this.field26806 != null && this.field26806.method28357(MathHelper.clamp(n, -1.0, 1.0));
     }
     
     public boolean method20888(final double n, final double n2, final int n3) {

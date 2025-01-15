@@ -39,10 +39,10 @@ public class Class9388
     }
     
     public void method34897(final ItemStack class8321, final Class7351 class8322, final Class7807 class8323, final int n, final int n2) {
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         if (!(method27622 instanceof Class4036)) {
-            if (method27622 != Class7739.field31583) {
-                if (method27622 == Class7739.field31607) {
+            if (method27622 != Items.field31583) {
+                if (method27622 == Items.field31607) {
                     class8322.method22567();
                     class8322.method22565(1.0f, -1.0f, -1.0f);
                     this.field40290.method17564(class8322, Class1796.method6532(class8323, this.field40290.method17647(Class5905.field24278), false, class8321.method27671()), n, n2, 1.0f, 1.0f, 1.0f, 1.0f);

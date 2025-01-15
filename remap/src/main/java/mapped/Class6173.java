@@ -8,6 +8,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.stream.Stream;
@@ -173,7 +175,7 @@ public abstract class Class6173
                         }
                     }
                     if (this.method18446(field22770, field22771, field22772)) {
-                        final Vec3d method1681 = Entity.method1681(null, new Vec3d(field22770, field22771, field22772), this.method18444(), this.field24932, ISelectionContext.dummy(), new Class8120<Class7702>(Stream.empty()));
+                        final Vec3d method1681 = Entity.collideBoundingBoxHeuristically(null, new Vec3d(field22770, field22771, field22772), this.method18444(), this.field24932, ISelectionContext.dummy(), new ReuseableStream<VoxelShape>(Stream.empty()));
                         field22770 = method1681.x;
                         field22771 = method1681.y;
                         field22772 = method1681.z;

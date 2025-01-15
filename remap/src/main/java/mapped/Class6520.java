@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.Table;
 import java.util.Collections;
-import java.util.Iterator;
+
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -91,7 +91,7 @@ public class Class6520 extends Class6521
         final Class8976<?> method11300 = class3662.method11300();
         if (method11300 != Class8976.field37844) {
             if (method11300 == Class8976.field37845) {
-                return (class3662.method11292().method27622() instanceof Class4036) ? Class1956.field10658 : Class1956.field10659;
+                return (class3662.method11292().getItem() instanceof Class4036) ? Class1956.field10658 : Class1956.field10659;
             }
             if (method11300 == Class8976.field37846) {
                 return Class1956.field10661;
@@ -102,7 +102,7 @@ public class Class6520 extends Class6521
             if (method11300 == Class8976.field37847) {
                 return Class1956.field10663;
             }
-            final Class7207 method11301 = class3662.method11292().method27622().method11737();
+            final Class7207 method11301 = class3662.method11292().getItem().method11737();
             if (method11301 == Class7207.field27993) {
                 return Class1956.field10649;
             }
@@ -112,8 +112,8 @@ public class Class6520 extends Class6521
             return Class1956.field10651;
         }
         else {
-            if (!class3662.method11292().method27622().method11743()) {
-                return (class3662.method11292().method27622() instanceof Class4036) ? Class1956.field10655 : Class1956.field10656;
+            if (!class3662.method11292().getItem().method11743()) {
+                return (class3662.method11292().getItem() instanceof Class4036) ? Class1956.field10655 : Class1956.field10656;
             }
             return Class1956.field10654;
         }

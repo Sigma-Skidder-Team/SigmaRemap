@@ -21,18 +21,18 @@ public class Class361 extends Class357
     }
     
     public <T> Class361(final Dynamic<T> dynamic) {
-        this(Class7096.method21764((com.mojang.datafixers.Dynamic<Object>)dynamic.get("state").orElseEmptyMap()).method21696());
+        this(BlockState.method21764((com.mojang.datafixers.Dynamic<Object>)dynamic.get("state").orElseEmptyMap()).method21696());
     }
     
     @Override
-    public Class7096 method1164(final Random random, final BlockPos class354) {
-        return ((Class7097<O, Class7096>)this.field2189.method11878()).method21773(Class4027.field18120, Axis.random(random));
+    public BlockState method1164(final Random random, final BlockPos class354) {
+        return ((Class7097<O, BlockState>)this.field2189.method11878()).method21773(Class4027.field18120, Axis.random(random));
     }
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("type"), dynamicOps.createString(Class90.field218.method503(this.field2184).toString())).put(dynamicOps.createString("state"), Class7096.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field2189.method11878()).getValue());
+        builder.put(dynamicOps.createString("type"), dynamicOps.createString(Class90.field218.method503(this.field2184).toString())).put(dynamicOps.createString("state"), BlockState.method21763((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field2189.method11878()).getValue());
         return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
     }
 }

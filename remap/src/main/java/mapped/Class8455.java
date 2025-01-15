@@ -15,9 +15,9 @@ public class Class8455<T extends Class8117<T>>
     private static String[] field34722;
     private final Supplier<ArgumentType<?>> field34723;
     private final Function<Class8455<T>, T> field34724;
-    private final BiConsumer<Class394, T> field34725;
+    private final BiConsumer<MinecraftServer, T> field34725;
     
-    private Class8455(final Supplier<ArgumentType<?>> field34723, final Function<Class8455<T>, T> field34724, final BiConsumer<Class394, T> field34725) {
+    private Class8455(final Supplier<ArgumentType<?>> field34723, final Function<Class8455<T>, T> field34724, final BiConsumer<MinecraftServer, T> field34725) {
         this.field34723 = field34723;
         this.field34724 = field34724;
         this.field34725 = field34725;

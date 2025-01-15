@@ -8,6 +8,8 @@ import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
 import java.util.Random;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 public class Class3965 extends Class3833 implements Class3966
@@ -15,79 +17,79 @@ public class Class3965 extends Class3833 implements Class3966
     private static String[] field17914;
     public static final Class7112 field17915;
     public static final Object2FloatMap<Class3832> field17916;
-    public static final Class7702 field17917;
-    private static final Class7702[] field17918;
+    public static final VoxelShape field17917;
+    private static final VoxelShape[] field17918;
     
     public static void method12094() {
         Class3965.field17916.defaultReturnValue(-1.0f);
-        method12095(0.3f, Class7739.field30813);
-        method12095(0.3f, Class7739.field30810);
-        method12095(0.3f, Class7739.field30811);
-        method12095(0.3f, Class7739.field30815);
-        method12095(0.3f, Class7739.field30814);
-        method12095(0.3f, Class7739.field30812);
-        method12095(0.3f, Class7739.field30773);
-        method12095(0.3f, Class7739.field30774);
-        method12095(0.3f, Class7739.field30775);
-        method12095(0.3f, Class7739.field30776);
-        method12095(0.3f, Class7739.field30777);
-        method12095(0.3f, Class7739.field30778);
-        method12095(0.3f, Class7739.field31576);
-        method12095(0.3f, Class7739.field31428);
-        method12095(0.3f, Class7739.field30830);
-        method12095(0.3f, Class7739.field31366);
-        method12095(0.3f, Class7739.field31430);
-        method12095(0.3f, Class7739.field31429);
-        method12095(0.3f, Class7739.field30833);
-        method12095(0.3f, Class7739.field31630);
-        method12095(0.3f, Class7739.field31314);
-        method12095(0.5f, Class7739.field31367);
-        method12095(0.5f, Class7739.field31081);
-        method12095(0.5f, Class7739.field30932);
-        method12095(0.5f, Class7739.field31365);
-        method12095(0.5f, Class7739.field30969);
-        method12095(0.5f, Class7739.field31427);
-        method12095(0.65f, Class7739.field30834);
-        method12095(0.65f, Class7739.field30979);
-        method12095(0.65f, Class7739.field30941);
-        method12095(0.65f, Class7739.field30942);
-        method12095(0.65f, Class7739.field30968);
-        method12095(0.65f, Class7739.field31278);
-        method12095(0.65f, Class7739.field31575);
-        method12095(0.65f, Class7739.field31517);
-        method12095(0.65f, Class7739.field31388);
-        method12095(0.65f, Class7739.field31518);
-        method12095(0.65f, Class7739.field31315);
-        method12095(0.65f, Class7739.field30865);
-        method12095(0.65f, Class7739.field30866);
-        method12095(0.65f, Class7739.field30965);
-        method12095(0.65f, Class7739.field30852);
-        method12095(0.65f, Class7739.field30853);
-        method12095(0.65f, Class7739.field30854);
-        method12095(0.65f, Class7739.field30855);
-        method12095(0.65f, Class7739.field30856);
-        method12095(0.65f, Class7739.field30857);
-        method12095(0.65f, Class7739.field30858);
-        method12095(0.65f, Class7739.field30859);
-        method12095(0.65f, Class7739.field30860);
-        method12095(0.65f, Class7739.field30861);
-        method12095(0.65f, Class7739.field30862);
-        method12095(0.65f, Class7739.field30863);
-        method12095(0.65f, Class7739.field30864);
-        method12095(0.65f, Class7739.field30831);
-        method12095(0.65f, Class7739.field31077);
-        method12095(0.65f, Class7739.field31078);
-        method12095(0.65f, Class7739.field31079);
-        method12095(0.65f, Class7739.field31080);
-        method12095(0.65f, Class7739.field31082);
-        method12095(0.85f, Class7739.field31053);
-        method12095(0.85f, Class7739.field30963);
-        method12095(0.85f, Class7739.field30964);
-        method12095(0.85f, Class7739.field31316);
-        method12095(0.85f, Class7739.field31519);
-        method12095(0.85f, Class7739.field31424);
-        method12095(1.0f, Class7739.field31407);
-        method12095(1.0f, Class7739.field31531);
+        method12095(0.3f, Items.field30813);
+        method12095(0.3f, Items.field30810);
+        method12095(0.3f, Items.field30811);
+        method12095(0.3f, Items.field30815);
+        method12095(0.3f, Items.field30814);
+        method12095(0.3f, Items.field30812);
+        method12095(0.3f, Items.field30773);
+        method12095(0.3f, Items.field30774);
+        method12095(0.3f, Items.field30775);
+        method12095(0.3f, Items.field30776);
+        method12095(0.3f, Items.field30777);
+        method12095(0.3f, Items.field30778);
+        method12095(0.3f, Items.field31576);
+        method12095(0.3f, Items.field31428);
+        method12095(0.3f, Items.field30830);
+        method12095(0.3f, Items.field31366);
+        method12095(0.3f, Items.field31430);
+        method12095(0.3f, Items.field31429);
+        method12095(0.3f, Items.field30833);
+        method12095(0.3f, Items.field31630);
+        method12095(0.3f, Items.field31314);
+        method12095(0.5f, Items.field31367);
+        method12095(0.5f, Items.field31081);
+        method12095(0.5f, Items.field30932);
+        method12095(0.5f, Items.field31365);
+        method12095(0.5f, Items.field30969);
+        method12095(0.5f, Items.field31427);
+        method12095(0.65f, Items.field30834);
+        method12095(0.65f, Items.field30979);
+        method12095(0.65f, Items.field30941);
+        method12095(0.65f, Items.field30942);
+        method12095(0.65f, Items.field30968);
+        method12095(0.65f, Items.field31278);
+        method12095(0.65f, Items.field31575);
+        method12095(0.65f, Items.field31517);
+        method12095(0.65f, Items.field31388);
+        method12095(0.65f, Items.field31518);
+        method12095(0.65f, Items.field31315);
+        method12095(0.65f, Items.field30865);
+        method12095(0.65f, Items.field30866);
+        method12095(0.65f, Items.field30965);
+        method12095(0.65f, Items.field30852);
+        method12095(0.65f, Items.field30853);
+        method12095(0.65f, Items.field30854);
+        method12095(0.65f, Items.field30855);
+        method12095(0.65f, Items.field30856);
+        method12095(0.65f, Items.field30857);
+        method12095(0.65f, Items.field30858);
+        method12095(0.65f, Items.field30859);
+        method12095(0.65f, Items.field30860);
+        method12095(0.65f, Items.field30861);
+        method12095(0.65f, Items.field30862);
+        method12095(0.65f, Items.field30863);
+        method12095(0.65f, Items.field30864);
+        method12095(0.65f, Items.field30831);
+        method12095(0.65f, Items.field31077);
+        method12095(0.65f, Items.field31078);
+        method12095(0.65f, Items.field31079);
+        method12095(0.65f, Items.field31080);
+        method12095(0.65f, Items.field31082);
+        method12095(0.85f, Items.field31053);
+        method12095(0.85f, Items.field30963);
+        method12095(0.85f, Items.field30964);
+        method12095(0.85f, Items.field31316);
+        method12095(0.85f, Items.field31519);
+        method12095(0.85f, Items.field31424);
+        method12095(1.0f, Items.field31407);
+        method12095(1.0f, Items.field31531);
     }
     
     private static void method12095(final float n, final Class3832 class3832) {
@@ -110,17 +112,17 @@ public class Class3965 extends Class3833 implements Class3966
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3965.field17918[class7096.method21772((Class7111<Integer>)Class3965.field17915)];
     }
     
     @Override
-    public Class7702 method11811(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11811(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         return Class3965.field17917;
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3965.field17918[0];
     }
     
@@ -135,9 +137,9 @@ public class Class3965 extends Class3833 implements Class3966
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class3965.field17915);
         final ItemStack method2715 = class7099.method2715(class7100);
-        if (intValue < 8 && Class3965.field17916.containsKey((Object)method2715.method27622())) {
+        if (intValue < 8 && Class3965.field17916.containsKey((Object)method2715.getItem())) {
             if (intValue < 7) {
-                if (!class7097.field10067) {
+                if (!class7097.isRemote) {
                     class7097.method6955(1500, class7098, method12098(class7096, class7097, class7098, method2715) ? 1 : 0);
                     if (!class7099.field3025.field27304) {
                         method2715.method27693(1);
@@ -149,8 +151,8 @@ public class Class3965 extends Class3833 implements Class3966
         if (intValue != 8) {
             return Class2201.field13402;
         }
-        if (!class7097.field10067) {
-            final Class427 class7102 = new Class427(class7097, class7098.getX() + (class7097.field10062.nextFloat() * 0.7f + 0.15000000596046448), class7098.getY() + (class7097.field10062.nextFloat() * 0.7f + 0.06000000238418579 + 0.6), class7098.getZ() + (class7097.field10062.nextFloat() * 0.7f + 0.15000000596046448), new ItemStack(Class7739.field31400));
+        if (!class7097.isRemote) {
+            final Class427 class7102 = new Class427(class7097, class7098.getX() + (class7097.rand.nextFloat() * 0.7f + 0.15000000596046448), class7098.getY() + (class7097.rand.nextFloat() * 0.7f + 0.06000000238418579 + 0.6), class7098.getZ() + (class7097.rand.nextFloat() * 0.7f + 0.15000000596046448), new ItemStack(Items.field31400));
             class7102.method2114();
             class7097.method6886(class7102);
         }
@@ -165,7 +167,7 @@ public class Class3965 extends Class3833 implements Class3966
     
     private static boolean method12098(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098, final ItemStack class7099) {
         final int intValue = class7096.method21772((Class7111<Integer>)Class3965.field17915);
-        final float float1 = Class3965.field17916.getFloat((Object)class7099.method27622());
+        final float float1 = Class3965.field17916.getFloat((Object)class7099.getItem());
         if (intValue != 0 || float1 <= 0.0f) {
             if (class7097.method6790().nextDouble() >= float1) {
                 return false;
@@ -214,14 +216,14 @@ public class Class3965 extends Class3833 implements Class3966
         if (intValue != 8) {
             return (intValue >= 7) ? new Class480() : new Class487(class7096, class7097, class7098);
         }
-        return new Class442(class7096, class7097, class7098, new ItemStack(Class7739.field31400));
+        return new Class442(class7096, class7097, class7098, new ItemStack(Items.field31400));
     }
     
     static {
         field17915 = Class8970.field37783;
         field17916 = (Object2FloatMap)new Object2FloatOpenHashMap();
         field17917 = Class7698.method24487();
-        field17918 = Class8349.method27851(new Class7702[9], array -> {
+        field17918 = Class8349.method27851(new VoxelShape[9], array -> {
             int i = 0;
             while (i < 8) {
                 array[i] = Class7698.method24494(Class3965.field17917, Class3833.method11778(2.0, Math.max(2, 1 + i * 2), 2.0, 14.0, 16.0, 14.0), Class9306.field39920);

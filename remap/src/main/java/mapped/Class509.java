@@ -201,7 +201,7 @@ public class Class509 extends Entity
     @Override
     public void method1659() {
         super.method1659();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field2905 == null) {
                 if (this.field2913 != null) {
                     for (final LivingEntity field2905 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, new AxisAlignedBB(this.field2914.add(-2, -2, -2), this.field2914.add(2, 2, 2)))) {
@@ -230,9 +230,9 @@ public class Class509 extends Entity
                 if (this.field2905 != null) {
                     if (this.field2905.method1768()) {
                         if (!(this.field2905 instanceof Class512) || !((Class512)this.field2905).isSpectator()) {
-                            this.field2908 = MathHelper.method35654(this.field2908 * 1.025, -1.0, 1.0);
-                            this.field2909 = MathHelper.method35654(this.field2909 * 1.025, -1.0, 1.0);
-                            this.field2910 = MathHelper.method35654(this.field2910 * 1.025, -1.0, 1.0);
+                            this.field2908 = MathHelper.clamp(this.field2908 * 1.025, -1.0, 1.0);
+                            this.field2909 = MathHelper.clamp(this.field2909 * 1.025, -1.0, 1.0);
+                            this.field2910 = MathHelper.clamp(this.field2910 * 1.025, -1.0, 1.0);
                             final Vec3d method1935 = this.getMotion();
                             this.method1936(method1935.add((this.field2908 - method1935.x) * 0.2, (this.field2909 - method1935.y) * 0.2, (this.field2910 - method1935.z) * 0.2));
                             break Label_0104;
@@ -251,7 +251,7 @@ public class Class509 extends Entity
         final Vec3d method1937 = this.getMotion();
         this.setPosition(this.getPosX() + method1937.x, this.getPosY() + method1937.y, this.getPosZ() + method1937.z);
         Class7476.method23099(this, 0.5f);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field2905 != null) {
                 if (!this.field2905.removed) {
                     if (this.field2907 > 0) {
@@ -328,7 +328,7 @@ public class Class509 extends Entity
     
     @Override
     public boolean attackEntityFrom(final DamageSource class7929, final float n) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method1695(Class8520.field35552, 1.0f, 1.0f);
             ((Class1849)this.world).method6911(Class8432.field34603, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
             this.method1652();

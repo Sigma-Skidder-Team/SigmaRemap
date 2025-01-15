@@ -20,11 +20,11 @@ public class Class7189
     private static final Class3499 field27936;
     private final Map<Class2139, Class3499> field27937;
     private final Set<Class3499> field27938;
-    private final Class5028 field27939;
+    private final IProfiler field27939;
     private final EnumSet<Class2139> field27940;
     private int field27941;
     
-    public Class7189(final Class5028 field27939) {
+    public Class7189(final IProfiler field27939) {
         this.field27937 = new EnumMap<Class2139, Class3499>(Class2139.class);
         this.field27938 = Sets.newLinkedHashSet();
         this.field27940 = EnumSet.noneOf(Class2139.class);

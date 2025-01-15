@@ -159,10 +159,10 @@ public class Class3433 extends Class3418
                     final List list;
                     if (!list.isEmpty()) {
                         class514.method2873(class513, n4);
-                        final boolean b = class513.method27622() == Class7739.field31370;
+                        final boolean b = class513.method27622() == Items.field31370;
                         ItemStack class518 = null;
                         if (!(!b)) {
-                            class518 = new ItemStack(Class7739.field31534);
+                            class518 = new ItemStack(Items.field31534);
                             this.field16217.method2160(0, class518);
                         }
                         int i = 0;
@@ -189,7 +189,7 @@ public class Class3433 extends Class3418
                         this.field16217.method2161();
                         this.field16220.method19833(class514.method2872());
                         this.method10855(this.field16217);
-                        class516.method6705(null, class517, Class8520.field35150, Class286.field1582, 1.0f, class516.field10062.nextFloat() * 0.1f + 0.9f);
+                        class516.method6705(null, class517, Class8520.field35150, Class286.field1582, 1.0f, class516.rand.nextFloat() * 0.1f + 0.9f);
                     }
                     return;
                 });
@@ -202,7 +202,7 @@ public class Class3433 extends Class3418
     private List<Class6827> method10951(final ItemStack class8321, final int n, final int n2) {
         this.field16219.setSeed(this.field16220.method19832() + n);
         final List<Class6827> method30225 = Class8742.method30225(this.field16219, class8321, n2, false);
-        if (class8321.method27622() == Class7739.field31370) {
+        if (class8321.getItem() == Items.field31370) {
             if (method30225.size() > 1) {
                 method30225.remove(this.field16219.nextInt(method30225.size()));
             }
@@ -240,7 +240,7 @@ public class Class3433 extends Class3418
                 class513 = method20053.method27641();
                 if (n != 0) {
                     if (n != 1) {
-                        if (method20053.method27622() != Class7739.field31389) {
+                        if (method20053.getItem() != Items.field31389) {
                             if (this.field16151.get(0).method20054() || !this.field16151.get(0).method20046(method20053)) {
                                 return ItemStack.field34174;
                             }
@@ -249,7 +249,7 @@ public class Class3433 extends Class3418
                                 method20053.method27691(0);
                             }
                             else if (!method20053.method27620()) {
-                                this.field16151.get(0).method20055(new ItemStack(method20053.method27622()));
+                                this.field16151.get(0).method20055(new ItemStack(method20053.getItem()));
                                 method20053.method27693(1);
                             }
                         }

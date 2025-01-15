@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
@@ -12,7 +13,7 @@ import java.util.Map;
 import java.util.List;
 import javax.annotation.Nullable;
 
-public class Class4036 extends Class3820
+public class Class4036 extends Item
 {
     @Deprecated
     private final Class3833 field18131;
@@ -126,12 +127,12 @@ public class Class4036 extends Class3820
     }
     
     public static boolean method12239(final World class1847, final Class512 class1848, final BlockPos class1849, final ItemStack class1850) {
-        if (class1847.method6679() != null) {
+        if (class1847.getServer() != null) {
             final Class51 method27660 = class1850.method27660("BlockEntityTag");
             if (method27660 != null) {
-                final Class436 method27661 = class1847.method6727(class1849);
+                final TileEntity method27661 = class1847.method6727(class1849);
                 if (method27661 != null) {
-                    if (!class1847.field10067) {
+                    if (!class1847.isRemote) {
                         if (method27661.method2178()) {
                             if (class1848 == null || !class1848.method2908()) {
                                 return false;
@@ -178,7 +179,7 @@ public class Class4036 extends Class3820
         return this.field18131;
     }
     
-    public void method12241(final Map<Class3833, Class3820> map, final Class3820 class3820) {
+    public void method12241(final Map<Class3833, Item> map, final Item class3820) {
         map.put(this.method12240(), class3820);
     }
 }

@@ -14,7 +14,7 @@ import java.util.BitSet;
 public class Class9145
 {
     private static String[] field38736;
-    private Class7096 field38737;
+    private BlockState field38737;
     private BlockPos field38738;
     private int field38739;
     private int field38740;
@@ -42,7 +42,7 @@ public class Class9145
     private static final int field38762 = 0;
     private static final int field38763 = 1;
     
-    public Class9145(final Class7096 field38737, final BlockPos field38738) {
+    public Class9145(final BlockState field38737, final BlockPos field38738) {
         this.field38739 = -1;
         this.field38740 = -1;
         this.field38741 = -1;
@@ -69,7 +69,7 @@ public class Class9145
         this.field38738 = field38738;
     }
     
-    public void method33373(final Class7096 field38737, final BlockPos field38738) {
+    public void method33373(final BlockState field38737, final BlockPos field38738) {
         if (this.field38737 != field38737 || this.field38738 != field38738) {
             this.field38737 = field38737;
             this.field38738 = field38738;
@@ -137,7 +137,7 @@ public class Class9145
         return this.field38741 == 1;
     }
     
-    public Class7096 method33382() {
+    public BlockState method33382() {
         return this.field38737;
     }
     

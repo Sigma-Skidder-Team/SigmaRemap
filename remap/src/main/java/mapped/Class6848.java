@@ -46,7 +46,7 @@ public class Class6848
             }
             else {
                 final LivingEntity class7495 = (LivingEntity)class7494;
-                final ItemStack method2713 = class7495.method2713();
+                final ItemStack method2713 = class7495.getHeldItemMainhand();
                 if (method2713.method27620()) {
                     if (collection.size() != 1) {
                         continue;
@@ -61,7 +61,7 @@ public class Class6848
                     if (collection.size() != 1) {
                         continue;
                     }
-                    throw Class6848.field26868.create((Object)method2713.method27622().method11729(method2713).getString());
+                    throw Class6848.field26868.create((Object)method2713.getItem().method11729(method2713).getString());
                 }
             }
         }

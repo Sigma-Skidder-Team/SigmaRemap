@@ -23,7 +23,7 @@ public class Class8335
         this.field34222 = new Random();
         this.field34223 = field34223;
         this.field34224 = 1200;
-        final Class8660 method6764 = field34223.method6764();
+        final WorldInfo method6764 = field34223.method6764();
         this.field34225 = method6764.method29612();
         this.field34226 = method6764.method29614();
         if (this.field34225 == 0) {
@@ -38,7 +38,7 @@ public class Class8335
         if (this.field34223.method6765().method31216(Class8878.field37345)) {
             if (--this.field34224 <= 0) {
                 this.field34224 = 1200;
-                final Class8660 method6764 = this.field34223.method6764();
+                final WorldInfo method6764 = this.field34223.method6764();
                 method6764.method29613(this.field34225 -= 1200);
                 if (this.field34225 <= 0) {
                     this.field34225 = 24000;

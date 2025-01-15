@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
@@ -35,7 +36,7 @@ public class Class4653 extends Class4651
     
     @Override
     public Class6772 method13902() {
-        return this.method13919(MathHelper.floor(this.field20141.method1886().field25073), MathHelper.floor(this.field20141.method1886().field25074 + 0.5), MathHelper.floor(this.field20141.method1886().field25075));
+        return this.method13919(MathHelper.floor(this.field20141.getBoundingBox().field25073), MathHelper.floor(this.field20141.getBoundingBox().field25074 + 0.5), MathHelper.floor(this.field20141.getBoundingBox().field25075));
     }
     
     @Override
@@ -183,7 +184,7 @@ public class Class4653 extends Class4651
             return class354.getY() + 0.5;
         }
         final BlockPos method1139 = class354.method1139();
-        final Class7702 method1140 = this.field20140.method6701(method1139).method21727(this.field20140, method1139);
+        final VoxelShape method1140 = this.field20140.method6701(method1139).method21727(this.field20140, method1139);
         return method1139.getY() + (method1140.method24540() ? 0.0 : method1140.method24536(Axis.Y));
     }
     

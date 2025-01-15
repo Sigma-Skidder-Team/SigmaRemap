@@ -19,6 +19,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.UUID;
@@ -69,7 +70,7 @@ public abstract class Class402 extends Entity implements Class401
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.method1886().method18507() * 10.0;
+        double v = this.getBoundingBox().method18507() * 10.0;
         if (Double.isNaN(v)) {
             v = 1.0;
         }
@@ -93,7 +94,7 @@ public abstract class Class402 extends Entity implements Class401
     public void method1958(final double n, final double n2, final double n3, final float n4, final float n5) {
         final Vec3d method16748 = new Vec3d(n, n2, n3).normalize().add(this.rand.nextGaussian() * 0.007499999832361937 * n5, this.rand.nextGaussian() * 0.007499999832361937 * n5, this.rand.nextGaussian() * 0.007499999832361937 * n5).scale(n4);
         this.method1936(method16748);
-        final float method16749 = MathHelper.sqrt(Entity.method1680(method16748));
+        final float method16749 = MathHelper.sqrt(Entity.horizontalMag(method16748));
         this.rotationYaw = (float)(MathHelper.method35693(method16748.x, method16748.z) * 57.2957763671875);
         this.rotationPitch = (float)(MathHelper.method35693(method16748.y, method16749) * 57.2957763671875);
         this.prevRotationYaw = this.rotationYaw;
@@ -129,7 +130,7 @@ public abstract class Class402 extends Entity implements Class401
         final Vec3d method1988 = this.getMotion();
         if (this.prevRotationPitch == 0.0f) {
             if (this.prevRotationYaw == 0.0f) {
-                final float method1989 = MathHelper.sqrt(Entity.method1680(method1988));
+                final float method1989 = MathHelper.sqrt(Entity.horizontalMag(method1988));
                 this.rotationYaw = (float)(MathHelper.method35693(method1988.x, method1988.z) * 57.2957763671875);
                 this.rotationPitch = (float)(MathHelper.method35693(method1988.y, method1989) * 57.2957763671875);
                 this.prevRotationYaw = this.rotationYaw;
@@ -140,7 +141,7 @@ public abstract class Class402 extends Entity implements Class401
         final Class7096 method1990 = this.world.method6701(class354);
         if (!method1990.method21706()) {
             if (!method1987) {
-                final Class7702 method1991 = method1990.method21727(this.world, class354);
+                final VoxelShape method1991 = method1990.method21727(this.world, class354);
                 if (!method1991.method24540()) {
                     final Vec3d method1992 = this.method1934();
                     final Iterator<AxisAlignedBB> iterator = method1991.method24545().iterator();
@@ -161,13 +162,13 @@ public abstract class Class402 extends Entity implements Class401
             this.method1667();
         }
         if (this.field2472 && !method1987) {
-            if (this.field2471 != method1990 && this.world.method6976(this.method1886().method18496(0.06))) {
+            if (this.field2471 != method1990 && this.world.method6976(this.getBoundingBox().method18496(0.06))) {
                 this.field2472 = false;
                 this.method1936(method1988.mul(this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f));
                 this.field2477 = 0;
                 this.field2478 = 0;
             }
-            else if (!this.world.field10067) {
+            else if (!this.world.isRemote) {
                 this.method1964();
             }
             ++this.field2473;
@@ -226,7 +227,7 @@ public abstract class Class402 extends Entity implements Class401
             final double n = this.getPosX() + field22770;
             final double n2 = this.getPosY() + field22771;
             final double n3 = this.getPosZ() + field22772;
-            final float method1999 = MathHelper.sqrt(Entity.method1680(method1998));
+            final float method1999 = MathHelper.sqrt(Entity.horizontalMag(method1998));
             if (!method1987) {
                 this.rotationYaw = (float)(MathHelper.method35693(field22770, field22772) * 57.2957763671875);
             }
@@ -353,7 +354,7 @@ public abstract class Class402 extends Entity implements Class401
             this.rotationYaw += 180.0f;
             this.prevRotationYaw += 180.0f;
             this.field2478 = 0;
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.getMotion().lengthSquared() < 1.0E-7) {
                     if (this.field2474 == Class2151.field12783) {
                         this.method1767(this.method1974(), 0.1f);
@@ -368,7 +369,7 @@ public abstract class Class402 extends Entity implements Class401
             }
             if (method21452 instanceof LivingEntity) {
                 final LivingEntity class7009 = (LivingEntity)method21452;
-                if (!this.world.field10067) {
+                if (!this.world.isRemote) {
                     if (this.method1983() <= 0) {
                         class7009.method2703(class7009.method2702() + 1);
                     }
@@ -379,7 +380,7 @@ public abstract class Class402 extends Entity implements Class401
                         class7009.method1738(method21456.x, 0.1, method21456.z);
                     }
                 }
-                if (!this.world.field10067) {
+                if (!this.world.isRemote) {
                     if (method21454 instanceof LivingEntity) {
                         Class8742.method30204(class7009, method21454);
                         Class8742.method30205((LivingEntity)method21454, class7009);
@@ -400,7 +401,7 @@ public abstract class Class402 extends Entity implements Class401
                         this.field2483.add(class7009);
                     }
                 }
-                if (!this.world.field10067) {
+                if (!this.world.isRemote) {
                     if (method21454 instanceof Class513) {
                         final Class513 class7010 = (Class513)method21454;
                         if (this.field2483 != null && this.method1982()) {
@@ -434,7 +435,7 @@ public abstract class Class402 extends Entity implements Class401
     
     @Nullable
     public Class7007 method1971(final Vec3d class5487, final Vec3d class5488) {
-        return Class7476.method23094(this.world, this, class5487, class5488, this.method1886().method18493(this.getMotion()).method18496(1.0), class5489 -> {
+        return Class7476.method23094(this.world, this, class5487, class5488, this.getBoundingBox().method18493(this.getMotion()).method18496(1.0), class5489 -> {
             final boolean b;
             if (!class5489.isSpectator()) {
                 if (!(!class5489.method1768())) {
@@ -514,7 +515,7 @@ public abstract class Class402 extends Entity implements Class401
     
     @Override
     public void method1736(final Class512 class512) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field2472 || this.method1987()) {
                 if (this.field2475 <= 0) {
                     int n = 0;
@@ -629,7 +630,7 @@ public abstract class Class402 extends Entity implements Class401
     }
     
     public boolean method1987() {
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             return (this.dataManager.get(Class402.field2468) & 0x2) != 0x0;
         }
         return this.noClip;

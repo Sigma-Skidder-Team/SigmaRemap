@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -13,27 +15,27 @@ import java.util.Random;
 public abstract class Class3905 extends Class3902
 {
     public static final Class7113 field17693;
-    public static final Class7702 field17694;
-    public static final Class7702 field17695;
-    public static final Class7702 field17696;
-    public static final Class7702 field17697;
-    public static final Class7702 field17698;
-    public static final Class7702 field17699;
-    public static final Class7702 field17700;
-    public static final Class7702 field17701;
-    public static final Class7702 field17702;
-    public static final Class7702 field17703;
-    public static final Class7702 field17704;
-    public static final Class7702 field17705;
-    public static final Class7702 field17706;
-    public static final Class7702 field17707;
-    public static final Class7702 field17708;
-    public static final Class7702 field17709;
+    public static final VoxelShape field17694;
+    public static final VoxelShape field17695;
+    public static final VoxelShape field17696;
+    public static final VoxelShape field17697;
+    public static final VoxelShape field17698;
+    public static final VoxelShape field17699;
+    public static final VoxelShape field17700;
+    public static final VoxelShape field17701;
+    public static final VoxelShape field17702;
+    public static final VoxelShape field17703;
+    public static final VoxelShape field17704;
+    public static final VoxelShape field17705;
+    public static final VoxelShape field17706;
+    public static final VoxelShape field17707;
+    public static final VoxelShape field17708;
+    public static final VoxelShape field17709;
     private final boolean field17710;
     
     public Class3905(final boolean field17710, final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3905.field17564, Direction.NORTH)).method21773((Class7111<Comparable>)Class3905.field17693, false)).method21773(Class3905.field17618, Class107.field333));
+        this.method11877(((Class7097<O, BlockState>)((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3905.field17564, Direction.NORTH)).method21773((Class7111<Comparable>)Class3905.field17693, false)).method21773(Class3905.field17618, Class107.field333));
         this.field17710 = field17710;
     }
     
@@ -43,7 +45,7 @@ public abstract class Class3905 extends Class3902
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Direction class7100 = class7096.method21772((Class7111<Direction>)Class3905.field17564);
         final boolean booleanValue = class7096.method21772((Class7111<Boolean>)Class3905.field17693);
         switch (Class8420.field34566[class7096.method21772(Class3905.field17618).ordinal()]) {
@@ -80,7 +82,7 @@ public abstract class Class3905 extends Class3902
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7096.method21772((Class7111<Boolean>)Class3905.field17693)) {
             this.method12009(class7096, class7097, class7098);
             this.method12010(class7099, class7097, class7098, true);
@@ -89,8 +91,8 @@ public abstract class Class3905 extends Class3902
         return Class2201.field13401;
     }
     
-    public void method12009(final Class7096 class7096, final World class7097, final BlockPos class7098) {
-        class7097.method6688(class7098, ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3905.field17693, true), 3);
+    public void method12009(final BlockState class7096, final World class7097, final BlockPos class7098) {
+        class7097.method6688(class7098, ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3905.field17693, true), 3);
         this.method12013(class7096, class7097, class7098);
         class7097.method6833().method21345(class7098, this, this.method11826(class7097));
     }
@@ -102,7 +104,7 @@ public abstract class Class3905 extends Class3902
     public abstract Class7795 method12011(final boolean p0);
     
     @Override
-    public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (!b) {
             if (class7096.method21696() != class7099.method21696()) {
                 if (class7096.method21772((Class7111<Boolean>)Class3905.field17693)) {
@@ -114,25 +116,25 @@ public abstract class Class3905 extends Class3902
     }
     
     @Override
-    public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11848(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
         return class7096.method21772((Class7111<Boolean>)Class3905.field17693) ? 15 : 0;
     }
     
     @Override
-    public int method11851(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
         return (class7096.method21772((Class7111<Boolean>)Class3905.field17693) && Class3902.method12003(class7096) == class7099) ? 15 : 0;
     }
     
     @Override
-    public boolean method11849(final Class7096 class7096) {
+    public boolean method11849(final BlockState class7096) {
         return true;
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
+    public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((Class7111<Boolean>)Class3905.field17693)) {
             if (!this.field17710) {
-                class7097.method6688(class7098, ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3905.field17693, false), 3);
+                class7097.method6688(class7098, ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3905.field17693, false), 3);
                 this.method12013(class7096, class7097, class7098);
                 this.method12010(null, class7097, class7098, false);
             }
@@ -143,8 +145,8 @@ public abstract class Class3905 extends Class3902
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
-        if (!class7097.field10067) {
+    public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
+        if (!class7097.isRemote) {
             if (this.field17710) {
                 if (!class7096.method21772((Class7111<Boolean>)Class3905.field17693)) {
                     this.method12012(class7096, class7097, class7098);
@@ -153,10 +155,10 @@ public abstract class Class3905 extends Class3902
         }
     }
     
-    private void method12012(final Class7096 class7096, final World class7097, final BlockPos class7098) {
+    private void method12012(final BlockState class7096, final World class7097, final BlockPos class7098) {
         final boolean b = !class7097.method7128((Class<? extends Entity>)Class402.class, class7096.method21725(class7097, class7098).method24537().method18500(class7098)).isEmpty();
         if (b != class7096.method21772((Class7111<Boolean>)Class3905.field17693)) {
-            class7097.method6688(class7098, (Class7096)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class3905.field17693, b), 3);
+            class7097.method6688(class7098, (BlockState)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class3905.field17693, b), 3);
             this.method12013(class7096, class7097, class7098);
             this.method12010(null, class7097, class7098, b);
         }
@@ -165,13 +167,13 @@ public abstract class Class3905 extends Class3902
         }
     }
     
-    private void method12013(final Class7096 class7096, final World class7097, final BlockPos class7098) {
+    private void method12013(final BlockState class7096, final World class7097, final BlockPos class7098) {
         class7097.method6696(class7098, this);
         class7097.method6696(class7098.method1149(Class3902.method12003(class7096).getOpposite()), this);
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Class3833, BlockState> class9500) {
         class9500.method35378(Class3905.field17564, Class3905.field17693, Class3905.field17618);
     }
     

@@ -35,11 +35,11 @@ public class Class6614 extends Class6601
     }
     
     public static boolean method20066(final ItemStack class8321) {
-        final Class3820 method27622 = class8321.method27622();
-        if (method27622 != Class7739.field31441) {
-            if (method27622 != Class7739.field31579) {
-                if (method27622 != Class7739.field31582) {
-                    if (method27622 != Class7739.field31442) {
+        final Item method27622 = class8321.getItem();
+        if (method27622 != Items.field31441) {
+            if (method27622 != Items.field31579) {
+                if (method27622 != Items.field31582) {
+                    if (method27622 != Items.field31442) {
                         return false;
                     }
                 }

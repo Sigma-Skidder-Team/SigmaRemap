@@ -43,8 +43,8 @@ public class Class405 extends Class402
     }
     
     public void method1992(final ItemStack class8321) {
-        if (class8321.method27622() != Class7739.field31581) {
-            if (class8321.method27622() == Class7739.field31280) {
+        if (class8321.getItem() != Items.field31581) {
+            if (class8321.getItem() == Items.field31280) {
                 this.field2491 = Class8644.field36250;
                 this.field2492.clear();
                 this.dataManager.set(Class405.field2490, -1);
@@ -98,7 +98,7 @@ public class Class405 extends Class402
     @Override
     public void method1659() {
         super.method1659();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field2472) {
                 if (this.field2473 != 0) {
                     if (!this.field2492.isEmpty()) {
@@ -199,9 +199,9 @@ public class Class405 extends Class402
     @Override
     public ItemStack method1974() {
         if (this.field2492.isEmpty() && this.field2491 == Class8644.field36250) {
-            return new ItemStack(Class7739.field31280);
+            return new ItemStack(Items.field31280);
         }
-        final ItemStack class8321 = new ItemStack(Class7739.field31581);
+        final ItemStack class8321 = new ItemStack(Items.field31581);
         Class5333.method16476(class8321, this.field2491);
         Class5333.method16477(class8321, this.field2492);
         if (this.field2493) {

@@ -9,6 +9,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
+import net.minecraft.util.math.shapes.VoxelShape;
 import org.apache.commons.lang3.RandomUtils;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -33,7 +34,7 @@ public class Class4609
     }
     
     public static boolean method13668(final Class3833 class3833, final BlockPos class3834) {
-        final Class7702 method21727 = class3833.method11878().method21727(Class4609.field20075.field4683, class3834);
+        final VoxelShape method21727 = class3833.method11878().method21727(Class4609.field20075.field4683, class3834);
         if (!method13708(class3834)) {
             if (Class4609.field20075.field4683.method6957(Class4609.field20075.field4684, method21727)) {
                 if (class3834.getY() <= Class4609.field20075.field4684.method1894().getY()) {
@@ -418,7 +419,7 @@ public class Class4609
         return new Vec3d(class180.getX() + (float)Math.max(0, class179.getXOffset()) + ((class179.getXOffset() != 0) ? 0.0f : ((float)Math.random())), class180.getY() + ((class179.getYOffset() != 0) ? 0.0f : ((class179.getYOffset() != 1) ? ((float)Math.random()) : 1.0f)), class180.getZ() + (float)Math.max(0, class179.getZOffset()) + ((class179.getZOffset() != 0) ? 0.0f : ((float)Math.random())));
     }
     
-    public static int method13703(final Class7096 class7096) {
+    public static int method13703(final BlockState class7096) {
         return ((List)class7096.method21696().method11876().method32902()).indexOf(class7096);
     }
     

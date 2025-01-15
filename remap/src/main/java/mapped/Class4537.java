@@ -20,7 +20,7 @@ public class Class4537 extends Class4536
     }
     
     @Override
-    public boolean method13536(final Class1851 class1851, final Random rnd, final BlockPos class1852, final Class7096 class1853) {
+    public boolean method13536(final Class1851 class1851, final Random rnd, final BlockPos class1852, final BlockState class1853) {
         if (this.method13537(class1851, rnd, class1852, class1853)) {
             final Direction method576 = Plane.HORIZONTAL.method576(rnd);
             final int n = rnd.nextInt(2) + 2;

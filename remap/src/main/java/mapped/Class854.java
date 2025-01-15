@@ -31,7 +31,7 @@ public class Class854 extends Class853
     
     @Override
     public boolean method4180(final Class1852 class1852) {
-        return class1852.method6975(this) && !class1852.method6968(this.method1886());
+        return class1852.method6975(this) && !class1852.method6968(this.getBoundingBox());
     }
     
     @Override

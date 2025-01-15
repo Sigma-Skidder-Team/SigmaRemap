@@ -73,7 +73,7 @@ public abstract class Class4648
         if (this.method13885()) {
             final World method13895 = this.method13895();
             final BlockPos method13896 = this.method13896();
-            if (!method13895.field10067) {
+            if (!method13895.isRemote) {
                 if (this.field20120 == -1) {
                     this.method13888();
                 }
@@ -91,9 +91,9 @@ public abstract class Class4648
                     }
                     final Class52 method13899 = method13897.method328("Pos", 6);
                     final int size = method13899.size();
-                    final double n2 = (size < 1) ? (method13896.getX() + (method13895.field10062.nextDouble() - method13895.field10062.nextDouble()) * this.field20131 + 0.5) : method13899.method351(0);
-                    final double n3 = (size < 2) ? (method13896.getY() + method13895.field10062.nextInt(3) - 1) : method13899.method351(1);
-                    final double n4 = (size < 3) ? (method13896.getZ() + (method13895.field10062.nextDouble() - method13895.field10062.nextDouble()) * this.field20131 + 0.5) : method13899.method351(2);
+                    final double n2 = (size < 1) ? (method13896.getX() + (method13895.rand.nextDouble() - method13895.rand.nextDouble()) * this.field20131 + 0.5) : method13899.method351(0);
+                    final double n3 = (size < 2) ? (method13896.getY() + method13895.rand.nextInt(3) - 1) : method13899.method351(1);
+                    final double n4 = (size < 3) ? (method13896.getZ() + (method13895.rand.nextDouble() - method13895.rand.nextDouble()) * this.field20131 + 0.5) : method13899.method351(2);
                     if (method13895.method6976(method13898.get().method23375(n2, n3, n4))) {
                         if (Class8897.method31330(method13898.get(), method13895.method6744(), Class2101.field12176, new BlockPos(n2, n3, n4), method13895.method6790())) {
                             final Entity method13900 = EntityType.method23378(method13897, method13895, class761 -> {
@@ -108,7 +108,7 @@ public abstract class Class4648
                                 this.method13888();
                                 return;
                             }
-                            method13900.method1730(method13900.getPosX(), method13900.getPosY(), method13900.getPosZ(), method13895.field10062.nextFloat() * 360.0f, 0.0f);
+                            method13900.method1730(method13900.getPosX(), method13900.getPosY(), method13900.getPosZ(), method13895.rand.nextFloat() * 360.0f, 0.0f);
                             if (method13900 instanceof Class759) {
                                 final Class759 class759 = (Class759)method13900;
                                 if (!class759.method4179(method13895, Class2101.field12176)) {
@@ -137,9 +137,9 @@ public abstract class Class4648
                 }
             }
             else {
-                final double n5 = method13896.getX() + (double)method13895.field10062.nextFloat();
-                final double n6 = method13896.getY() + (double)method13895.field10062.nextFloat();
-                final double n7 = method13896.getZ() + (double)method13895.field10062.nextFloat();
+                final double n5 = method13896.getX() + (double)method13895.rand.nextFloat();
+                final double n6 = method13896.getY() + (double)method13895.rand.nextFloat();
+                final double n7 = method13896.getZ() + (double)method13895.rand.nextFloat();
                 method13895.method6709(Class8432.field34639, n5, n6, n7, 0.0, 0.0, 0.0);
                 method13895.method6709(Class8432.field34623, n5, n6, n7, 0.0, 0.0, 0.0);
                 if (this.field20120 > 0) {
@@ -165,13 +165,13 @@ public abstract class Class4648
     
     private void method13888() {
         if (this.field20126 > this.field20125) {
-            this.field20120 = this.field20125 + this.method13895().field10062.nextInt(this.field20126 - this.field20125);
+            this.field20120 = this.field20125 + this.method13895().rand.nextInt(this.field20126 - this.field20125);
         }
         else {
             this.field20120 = this.field20125;
         }
         if (!this.field20121.isEmpty()) {
-            this.method13893(Class8223.method27251(this.method13895().field10062, this.field20121));
+            this.method13893(Class8223.method27251(this.method13895().rand, this.field20121));
         }
         this.method13894(1);
     }
@@ -187,7 +187,7 @@ public abstract class Class4648
         }
         if (!class51.method316("SpawnData", 10)) {
             if (!this.field20121.isEmpty()) {
-                this.method13893(Class8223.method27251(this.method13895().field10062, this.field20121));
+                this.method13893(Class8223.method27251(this.method13895().rand, this.field20121));
             }
         }
         else {
@@ -252,7 +252,7 @@ public abstract class Class4648
     }
     
     public boolean method13892(final int n) {
-        if (n == 1 && this.method13895().field10067) {
+        if (n == 1 && this.method13895().isRemote) {
             this.field20120 = this.field20125;
             return true;
         }

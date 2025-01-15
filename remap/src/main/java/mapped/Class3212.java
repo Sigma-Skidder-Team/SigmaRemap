@@ -141,7 +141,7 @@ public class Class3212 extends Class3167
             if (class7005.method21449() == Class2165.field12881) {
                 if (this.method9914().method9887("ItemSpoof").equals("None")) {
                     final Class3260 class7006 = (Class3260)this.method9914();
-                    if (!Class3260.method10279(Class3212.field15514.field4684.method2715(Class316.field1877).method27622())) {
+                    if (!Class3260.method10279(Class3212.field15514.field4684.method2715(Class316.field1877).getItem())) {
                         return false;
                     }
                 }

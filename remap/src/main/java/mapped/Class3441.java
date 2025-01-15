@@ -73,8 +73,8 @@ public class Class3441 extends Class3418
             final int n4 = n2 + method2157.method27680() + (method2158.method27620() ? 0 : method2158.method27680());
             this.field16257 = 0;
             if (!method2158.method27620()) {
-                final boolean b = method2158.method27622() == Class7739.field31534 && !Class4034.method12225(method2158).isEmpty();
-                if (class8321.method27630() && class8321.method27622().method11738(method2157, method2158)) {
+                final boolean b = method2158.getItem() == Items.field31534 && !Class4034.method12225(method2158).isEmpty();
+                if (class8321.method27630() && class8321.getItem().method11738(method2157, method2158)) {
                     int n5 = Math.min(class8321.method27632(), class8321.method27634() / 4);
                     if (n5 <= 0) {
                         this.field16253.method2160(0, ItemStack.field34174);
@@ -89,7 +89,7 @@ public class Class3441 extends Class3418
                     this.field16257 = field16257;
                 }
                 else {
-                    if (!b && (class8321.method27622() != method2158.method27622() || !class8321.method27630())) {
+                    if (!b && (class8321.getItem() != method2158.getItem() || !class8321.method27630())) {
                         this.field16253.method2160(0, ItemStack.field34174);
                         this.field16255.method19833(0);
                         return;
@@ -113,7 +113,7 @@ public class Class3441 extends Class3418
                             final int intValue = method2160.get(class8322);
                             int method2161 = (b4 == intValue) ? (intValue + 1) : Math.max(intValue, b4);
                             boolean method2162 = class8322.method18600(method2157);
-                            if (this.field16259.field3025.field27304 || method2157.method27622() == Class7739.field31534) {
+                            if (this.field16259.field3025.field27304 || method2157.getItem() == Items.field31534) {
                                 method2162 = true;
                             }
                             for (final Class6257 class8323 : method2159.keySet()) {

@@ -14,7 +14,7 @@ public class Class6401 extends Class6397
     @Override
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
         this.field25515 = false;
-        final Class3820 method27622 = class5492.method27622();
+        final Item method27622 = class5492.getItem();
         if (method27622 instanceof Class4036) {
             final Direction class5493 = class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859);
             final BlockPos method27623 = class5491.method16764().method1149(class5493);

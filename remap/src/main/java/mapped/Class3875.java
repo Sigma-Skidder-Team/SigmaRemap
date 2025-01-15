@@ -8,6 +8,8 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Map;
 
@@ -16,7 +18,7 @@ public class Class3875 extends Class3874
     private static String[] field17520;
     public static final Class7115 field17521;
     private final Class3993 field17522;
-    private static final Map<Direction, Class7702> field17523;
+    private static final Map<Direction, VoxelShape> field17523;
     
     public Class3875(final Class3993 field17522, final Class9288 class9288) {
         super(class9288);
@@ -25,7 +27,7 @@ public class Class3875 extends Class3874
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3875.field17523.get(class7096.method21772((Class7111<Object>)Class3875.field17521));
     }
     
@@ -39,11 +41,11 @@ public class Class3875 extends Class3874
         return class7096.method21696() == Class7521.field29298;
     }
     
-    public Class3820 method11950() {
+    public Item method11950() {
         if (this.field17522 != Class7521.field29337) {
-            return (this.field17522 != Class7521.field29383) ? Class7739.field30754 : Class7739.field31430;
+            return (this.field17522 != Class7521.field29383) ? Items.AIR : Items.field31430;
         }
-        return Class7739.field31429;
+        return Items.field31429;
     }
     
     @Override

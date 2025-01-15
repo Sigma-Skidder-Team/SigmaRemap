@@ -98,6 +98,6 @@ public class Class7727
     }
     
     private static double method24678(final Entity class399) {
-        return (class399 instanceof LivingEntity) ? class399.method1944() : ((class399.method1886().field25074 + class399.method1886().field25077) / 2.0);
+        return (class399 instanceof LivingEntity) ? class399.method1944() : ((class399.getBoundingBox().field25074 + class399.getBoundingBox().field25077) / 2.0);
     }
 }

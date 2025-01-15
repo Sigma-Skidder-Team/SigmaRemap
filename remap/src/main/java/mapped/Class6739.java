@@ -10,7 +10,7 @@ import net.minecraft.world.dimension.DimensionType;
 
 import javax.annotation.Nullable;
 
-public class Class6739 extends Class6737
+public class Class6739 extends Dimension
 {
     private static String[] field26500;
     private static final Vec3d field26501;
@@ -67,7 +67,7 @@ public class Class6739 extends Class6737
     }
     
     @Override
-    public Class9375 method20506() {
+    public WorldBorder createWorldBorder() {
         return new Class9374(this);
     }
     

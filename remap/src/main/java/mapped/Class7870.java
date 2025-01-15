@@ -8,10 +8,10 @@ public class Class7870
 {
     private static String[] field32312;
     private final short field32313;
-    private final Class7096 field32314;
+    private final BlockState field32314;
     public final /* synthetic */ Class4312 field32315;
     
-    public Class7870(final Class4312 field32315, final short field32316, final Class7096 field32317) {
+    public Class7870(final Class4312 field32315, final short field32316, final BlockState field32317) {
         this.field32315 = field32315;
         this.field32313 = field32316;
         this.field32314 = field32317;
@@ -31,7 +31,7 @@ public class Class7870
         return this.field32313;
     }
     
-    public Class7096 method25491() {
+    public BlockState method25491() {
         return this.field32314;
     }
 }

@@ -25,12 +25,12 @@ public class Class4077 extends Class4071
     }
     
     @Override
-    public boolean method11703(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
         return !class7099.method2889();
     }
     
     @Override
-    public float method11706(final ItemStack class8321, final Class7096 class8322) {
+    public float method11706(final ItemStack class8321, final BlockState class8322) {
         if (class8322.method21696() != Class7521.field29240) {
             final Class8059 method21697 = class8322.method21697();
             if (method21697 != Class8059.field33157) {
@@ -56,7 +56,7 @@ public class Class4077 extends Class4071
     }
     
     @Override
-    public boolean method11712(final ItemStack class8321, final World class8322, final Class7096 class8323, final BlockPos class8324, final LivingEntity class8325) {
+    public boolean method11712(final ItemStack class8321, final World class8322, final BlockState class8323, final BlockPos class8324, final LivingEntity class8325) {
         if (class8323.method21718(class8322, class8324) != 0.0f) {
             class8321.method27636(2, class8325, class8326 -> class8326.method2794(Class2215.field13600));
         }
@@ -64,7 +64,7 @@ public class Class4077 extends Class4071
     }
     
     @Override
-    public boolean method11713(final Class7096 class7096) {
+    public boolean method11713(final BlockState class7096) {
         return class7096.method21696() == Class7521.field29240;
     }
     

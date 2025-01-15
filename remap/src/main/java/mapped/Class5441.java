@@ -21,7 +21,7 @@ public class Class5441 extends Class5419<Class824>
     
     public void method16561(final Class1849 class1849, final Class824 class1850, final long n) {
         final Class363 class1851 = class1850.method2618().method1198(Class8233.field33801).get();
-        class1849.method6679().method1481(class1851.method1169()).method6921().method7210(class1851.method1170()).ifPresent(p2 -> Class90.field240.method509().filter(class1853 -> class1853.method34575() == class1852).findFirst().ifPresent(class1856 -> {
+        class1849.getServer().method1481(class1851.method1169()).method6921().method7210(class1851.method1170()).ifPresent(p2 -> Class90.field240.method509().filter(class1853 -> class1853.method34575() == class1852).findFirst().ifPresent(class1856 -> {
             class1854.method4869(class1854.method4870().method28784(class1856));
             class1854.method4856(class1855);
         }));

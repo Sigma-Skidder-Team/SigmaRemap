@@ -18,9 +18,9 @@ import javax.annotation.Nullable;
 public interface Class1860 extends Class1855, Class1861
 {
     @Nullable
-    Class7096 method7008(final BlockPos p0, final Class7096 p1, final boolean p2);
+    BlockState method7008(final BlockPos p0, final BlockState p1, final boolean p2);
     
-    void method7009(final BlockPos p0, final Class436 p1);
+    void method7009(final BlockPos p0, final TileEntity p1);
     
     void method7010(final Entity p0);
     

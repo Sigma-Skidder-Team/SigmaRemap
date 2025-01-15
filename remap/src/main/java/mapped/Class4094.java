@@ -26,7 +26,7 @@ public class Class4094 extends Class4093
     }
     
     public static ItemStack method12326(final World class1847, final int n, final int n2, final byte b, final boolean b2, final boolean b3) {
-        final ItemStack class1848 = new ItemStack(Class7739.field31425);
+        final ItemStack class1848 = new ItemStack(Items.field31425);
         method12330(class1848, class1847, n, n2, b, b2, b3, class1847.dimension.getType());
         return class1848;
     }
@@ -40,7 +40,7 @@ public class Class4094 extends Class4093
     public static Class6356 method12328(final ItemStack class8321, final World class8322) {
         Class6356 class8323 = method12327(class8321, class8322);
         if (class8323 == null) {
-            if (!class8322.field10067) {
+            if (!class8322.isRemote) {
                 class8323 = method12330(class8321, class8322, class8322.method6764().method29536(), class8322.method6764().method29538(), 3, false, false, class8322.dimension.getType());
             }
         }
@@ -310,7 +310,7 @@ public class Class4094 extends Class4093
     
     @Override
     public void method11722(final ItemStack class8321, final World class8322, final Entity class8323, final int n, final boolean b) {
-        if (!class8322.field10067) {
+        if (!class8322.isRemote) {
             final Class6356 method12328 = method12328(class8321, class8322);
             if (method12328 != null) {
                 if (class8323 instanceof Class512) {
@@ -399,7 +399,7 @@ public class Class4094 extends Class4093
         if (!class7075.method21654().method6701(class7075.method21639()).method21755(Class7188.field27900)) {
             return super.method11694(class7075);
         }
-        if (!class7075.field27554.field10067) {
+        if (!class7075.field27554.isRemote) {
             method12328(class7075.method21651(), class7075.method21654()).method18922(class7075.method21654(), class7075.method21639());
         }
         return Class2201.field13400;

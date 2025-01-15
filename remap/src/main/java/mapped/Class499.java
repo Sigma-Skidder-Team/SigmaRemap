@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class499 extends Class436
+public class Class499 extends TileEntity
 {
     private int field2858;
     

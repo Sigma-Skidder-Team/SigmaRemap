@@ -10,7 +10,7 @@ import java.util.function.Function;
 
 public class Class4562 extends Class4535<Class5141>
 {
-    private static final Class7096 field20040;
+    private static final BlockState field20040;
     
     public Class4562(final Function<Dynamic<?>, ? extends Class5141> function) {
         super(function);

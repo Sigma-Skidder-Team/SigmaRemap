@@ -110,7 +110,7 @@ public class Class767 extends Class763 implements Class766, Class768
     @Override
     public void method2736() {
         Vec3d class5487 = this.getMotion().mul(1.0, 0.6, 1.0);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method4257(0) > 0) {
                 final Entity method6741 = this.world.getEntityByID(this.method4257(0));
                 if (method6741 != null) {
@@ -129,7 +129,7 @@ public class Class767 extends Class763 implements Class766, Class768
                     }
                     class5487 = new Vec3d(class5487.x, field22771, class5487.z);
                     final Vec3d class5488 = new Vec3d(method6741.getPosX() - this.getPosX(), 0.0, method6741.getPosZ() - this.getPosZ());
-                    if (Entity.method1680(class5488) > 9.0) {
+                    if (Entity.horizontalMag(class5488) > 9.0) {
                         final Vec3d method6742 = class5488.normalize();
                         class5487 = class5487.add(method6742.x * 0.3 - class5487.x * 0.6, 0.0, method6742.z * 0.3 - class5487.z * 0.6);
                     }
@@ -137,7 +137,7 @@ public class Class767 extends Class763 implements Class766, Class768
             }
         }
         this.method1936(class5487);
-        if (Entity.method1680(class5487) > 0.05) {
+        if (Entity.horizontalMag(class5487) > 0.05) {
             this.rotationYaw = (float) MathHelper.method35693(class5487.z, class5487.x) * 57.295776f - 90.0f;
         }
         super.method2736();
@@ -174,7 +174,7 @@ public class Class767 extends Class763 implements Class766, Class768
             final double method6751 = this.method4248(k);
             this.world.method6709(Class8432.field34639, method6749 + this.rand.nextGaussian() * 0.30000001192092896, method6750 + this.rand.nextGaussian() * 0.30000001192092896, method6751 + this.rand.nextGaussian() * 0.30000001192092896, 0.0, 0.0, 0.0);
             if (method6748) {
-                if (this.world.field10062.nextInt(4) == 0) {
+                if (this.world.rand.nextInt(4) == 0) {
                     this.world.method6709(Class8432.field34617, method6749 + this.rand.nextGaussian() * 0.30000001192092896, method6750 + this.rand.nextGaussian() * 0.30000001192092896, method6751 + this.rand.nextGaussian() * 0.30000001192092896, 0.699999988079071, 0.699999988079071, 0.5);
                 }
             }
@@ -204,7 +204,7 @@ public class Class767 extends Class763 implements Class766, Class768
                     }
                     final int method4257 = this.method4257(i);
                     if (method4257 <= 0) {
-                        final List<LivingEntity> method4258 = this.world.method7142((Class<? extends LivingEntity>) LivingEntity.class, Class767.field4157, (LivingEntity)this, this.method1886().method18495(20.0, 8.0, 20.0));
+                        final List<LivingEntity> method4258 = this.world.method7142((Class<? extends LivingEntity>) LivingEntity.class, Class767.field4157, (LivingEntity)this, this.getBoundingBox().method18495(20.0, 8.0, 20.0));
                         for (int j = 0; j < 10; ++j) {
                             if (method4258.isEmpty()) {
                                 break;
@@ -300,7 +300,7 @@ public class Class767 extends Class763 implements Class766, Class768
         }
     }
     
-    public static boolean method4244(final Class7096 class7096) {
+    public static boolean method4244(final BlockState class7096) {
         return !class7096.method21706() && !Class7188.field27930.method25618(class7096.method21696());
     }
     
@@ -310,7 +310,7 @@ public class Class767 extends Class763 implements Class766, Class768
     }
     
     @Override
-    public void method1839(final Class7096 class7096, final Vec3d class7097) {
+    public void method1839(final BlockState class7096, final Vec3d class7097) {
     }
     
     @Override
@@ -414,7 +414,7 @@ public class Class767 extends Class763 implements Class766, Class768
     @Override
     public void method2678(final DamageSource class7929, final int n, final boolean b) {
         super.method2678(class7929, n, b);
-        final Class427 method1764 = this.method1764(Class7739.field31530);
+        final Class427 method1764 = this.method1764(Items.field31530);
         if (method1764 != null) {
             method1764.method2119();
         }

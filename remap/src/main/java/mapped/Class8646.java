@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 
 public class Class8646
 {
-    private final Class3820 field36296;
+    private final Item field36296;
     private final Class120 field36297;
     private final int field36298;
     private final Class6056 field36299;

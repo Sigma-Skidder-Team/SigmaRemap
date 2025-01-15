@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import org.apache.logging.log4j.Logger;
 
-public class Class395 extends Class394 implements Class396
+public class Class395 extends MinecraftServer implements Class396
 {
     private static final Logger field2367;
     private static final Pattern field2368;
@@ -161,7 +161,7 @@ public class Class395 extends Class394 implements Class396
             thread.setDaemon(true);
             thread.start();
         }
-        Class7739.field30754.method11735(Class7207.field27998, Class2265.method8506());
+        Items.AIR.method11735(Class7207.field27998, Class2265.method8506());
         return true;
     }
     

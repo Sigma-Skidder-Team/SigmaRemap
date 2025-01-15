@@ -139,7 +139,7 @@ public class Class3423 extends Class3418
     }
     
     private void method10926() {
-        if (!this.field16182.method4838().field10067) {
+        if (!this.field16182.method4838().isRemote) {
             final Entity class399 = (Entity)this.field16182;
             this.field16182.method4838().method6708(class399.getPosX(), class399.getPosY(), class399.getPosZ(), this.field16182.method4832(), Class286.field1584, 1.0f, 1.0f, false);
         }
@@ -149,7 +149,7 @@ public class Class3423 extends Class3418
     public void method10859(final Class512 class512) {
         super.method10859(class512);
         this.field16182.method4822(null);
-        if (!this.field16182.method4838().field10067) {
+        if (!this.field16182.method4838().isRemote) {
             if (class512.method1768() && (class512 instanceof Class513 && ((Class513)class512).method2936())) {
                 class512.field3006.method2364(class512.world, this.field16183.method2159(0));
                 class512.field3006.method2364(class512.world, this.field16183.method2159(1));
@@ -216,7 +216,7 @@ public class Class3423 extends Class3418
     }
     
     private boolean method10929(final ItemStack class8321, final ItemStack class8322) {
-        return class8321.method27622() == class8322.method27622() && ItemStack.method27642(class8321, class8322);
+        return class8321.getItem() == class8322.getItem() && ItemStack.method27642(class8321, class8322);
     }
     
     public void method10930(final Class57 class57) {

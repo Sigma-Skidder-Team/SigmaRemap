@@ -19,11 +19,13 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Class7096 extends Class7097<Class3833, Class7096> implements Class7098<Class7096>
+public class BlockState extends Class7097<Class3833, BlockState> implements Class7098<BlockState>
 {
     private Class8063 field27615;
     private final int field27616;
@@ -61,12 +63,12 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
     
     public int method21694() {
         if (this.field27621 < 0) {
-            this.field27621 = Class7096.field27622.incrementAndGet();
+            this.field27621 = BlockState.field27622.incrementAndGet();
         }
         return this.field27621;
     }
     
-    public Class7096(final Class3833 class3833, final ImmutableMap<Class7111<?>, Comparable<?>> immutableMap) {
+    public BlockState(final Class3833 class3833, final ImmutableMap<Class7111<?>, Comparable<?>> immutableMap) {
         super(class3833, immutableMap);
         this.field27618 = -1;
         this.field27619 = -1;
@@ -101,7 +103,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return (this.field27615 == null) ? this.method21696().method11819(this, class1855, class1856) : Class8063.method26453(this.field27615);
     }
     
-    public Class7702 method21701(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    public VoxelShape method21701(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
         return (this.field27615 != null && Class8063.method26454(this.field27615) != null) ? Class8063.method26454(this.field27615)[class1857.ordinal()] : Class7698.method24503(this.method21729(class1855, class1856), class1857);
     }
     
@@ -134,11 +136,11 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11783(this, class1855, class1856);
     }
     
-    public Class7096 method21708(final Class2052 class2052) {
+    public BlockState method21708(final Class2052 class2052) {
         return this.method21696().method11790(this, class2052);
     }
     
-    public Class7096 method21709(final Class2181 class2181) {
+    public BlockState method21709(final Class2181 class2181) {
         return this.method21696().method11791(this, class2181);
     }
     
@@ -198,31 +200,31 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return (this.field27615 == null) ? this.method21696().method11806(this) : Class8063.method26457(this.field27615);
     }
     
-    public boolean method21724(final Class7096 class7096, final Direction class7097) {
+    public boolean method21724(final BlockState class7096, final Direction class7097) {
         return this.method21696().method11807(this, class7096, class7097);
     }
     
-    public Class7702 method21725(final Class1855 class1855, final BlockPos class1856) {
+    public VoxelShape method21725(final Class1855 class1855, final BlockPos class1856) {
         return this.method21726(class1855, class1856, ISelectionContext.dummy());
     }
     
-    public Class7702 method21726(final Class1855 class1855, final BlockPos class1856, final ISelectionContext class1857) {
+    public VoxelShape method21726(final Class1855 class1855, final BlockPos class1856, final ISelectionContext class1857) {
         return this.method21696().method11808(this, class1855, class1856, class1857);
     }
     
-    public Class7702 method21727(final Class1855 class1855, final BlockPos class1856) {
+    public VoxelShape method21727(final Class1855 class1855, final BlockPos class1856) {
         return (this.field27615 == null) ? this.method21728(class1855, class1856, ISelectionContext.dummy()) : Class8063.method26458(this.field27615);
     }
     
-    public Class7702 method21728(final Class1855 class1855, final BlockPos class1856, final ISelectionContext class1857) {
+    public VoxelShape method21728(final Class1855 class1855, final BlockPos class1856, final ISelectionContext class1857) {
         return this.method21696().method11809(this, class1855, class1856, class1857);
     }
     
-    public Class7702 method21729(final Class1855 class1855, final BlockPos class1856) {
+    public VoxelShape method21729(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11810(this, class1855, class1856);
     }
     
-    public Class7702 method21730(final Class1855 class1855, final BlockPos class1856) {
+    public VoxelShape method21730(final Class1855 class1855, final BlockPos class1856) {
         return this.method21696().method11811(this, class1855, class1856);
     }
     
@@ -250,11 +252,11 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         this.method21696().method11788(this, class1851, class1852, n);
     }
     
-    public void method21737(final World class1847, final BlockPos class1848, final Class7096 class1849, final boolean b) {
+    public void method21737(final World class1847, final BlockPos class1848, final BlockState class1849, final boolean b) {
         this.method21696().method11828(this, class1847, class1848, class1849, b);
     }
     
-    public void method21738(final World class1847, final BlockPos class1848, final Class7096 class1849, final boolean b) {
+    public void method21738(final World class1847, final BlockPos class1848, final BlockState class1849, final boolean b) {
         this.method21696().method11829(this, class1847, class1848, class1849, b);
     }
     
@@ -294,7 +296,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11795(this, class1855, class1856);
     }
     
-    public Class7096 method21748(final Direction class179, final Class7096 class180, final Class1851 class181, final BlockPos class182, final BlockPos class183) {
+    public BlockState method21748(final Direction class179, final BlockState class180, final Class1851 class181, final BlockPos class182, final BlockPos class183) {
         return this.method21696().method11789(this, class179, class180, class181, class182, class183);
     }
     
@@ -343,7 +345,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return this.method21696().method11881(this);
     }
     
-    public void method21760(final World class1847, final Class7096 class1848, final Class7005 class1849, final Entity class1850) {
+    public void method21760(final World class1847, final BlockState class1848, final Class7005 class1849, final Entity class1850) {
         this.method21696().method11869(class1847, class1848, class1849, class1850);
     }
     
@@ -355,7 +357,7 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return (this.field27615 == null) ? Class3833.method11816(this.method21727(class1855, class1856)) : Class8063.method26460(this.field27615);
     }
     
-    public static <T> Dynamic<T> method21763(final DynamicOps<T> dynamicOps, final Class7096 class7096) {
+    public static <T> Dynamic<T> method21763(final DynamicOps<T> dynamicOps, final BlockState class7096) {
         final ImmutableMap<Class7111<?>, Comparable<?>> method21776 = class7096.method21776();
         Object o;
         if (!method21776.isEmpty()) {
@@ -367,11 +369,11 @@ public class Class7096 extends Class7097<Class3833, Class7096> implements Class7
         return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, o);
     }
     
-    public static <T> Class7096 method21764(final Dynamic<T> dynamic) {
+    public static <T> BlockState method21764(final Dynamic<T> dynamic) {
         final Class3833 class3833 = Class90.field208.method505(new Class1932(dynamic.getElement("Name").flatMap(dynamic.getOps()::getStringValue).orElse("minecraft:air")));
         final Map map = dynamic.get("Properties").asMap(dynamic2 -> dynamic2.asString(""), dynamic3 -> dynamic3.asString(""));
-        Class7096 method11878 = class3833.method11878();
-        final Class9104<Class3833, Class7096> method11879 = class3833.method11876();
+        BlockState method11878 = class3833.method11878();
+        final Class9104<Class3833, BlockState> method11879 = class3833.method11876();
         for (final Map.Entry<String, V> entry : map.entrySet()) {
             final String s = entry.getKey();
             final Class7111 method11880 = method11879.method32906(s);

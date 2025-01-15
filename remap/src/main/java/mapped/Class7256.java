@@ -6,14 +6,15 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Class7256 extends Class7255
 {
     private static String[] field28131;
     
     @Override
-    public Class3820 method22149() {
-        return Class7739.field30754;
+    public Item method22149() {
+        return Items.AIR;
     }
     
     @Override
@@ -52,7 +53,7 @@ public class Class7256 extends Class7255
     }
     
     @Override
-    public Class7096 method22162(final Class7099 class7099) {
+    public BlockState method22162(final Class7099 class7099) {
         return Class7521.field29147.method11878();
     }
     
@@ -67,7 +68,7 @@ public class Class7256 extends Class7255
     }
     
     @Override
-    public Class7702 method22167(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101) {
+    public VoxelShape method22167(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101) {
         return Class7698.method24486();
     }
 }

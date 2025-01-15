@@ -95,18 +95,18 @@ public abstract class Class789 extends Class788
     
     @Override
     public int method2631(final Class512 class512) {
-        return 1 + this.world.field10062.nextInt(3);
+        return 1 + this.world.rand.nextInt(3);
     }
     
     public boolean method4357(final ItemStack class8321) {
-        return class8321.method27622() == Class7739.field31315;
+        return class8321.getItem() == Items.field31315;
     }
     
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
         if (this.method4357(method2715)) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.method4351() == 0) {
                     if (this.method4359()) {
                         this.method4358(class512, method2715);

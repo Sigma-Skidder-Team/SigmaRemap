@@ -37,7 +37,7 @@ public class Class129 extends Class126
     
     @Override
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
-        if (class8321.method27622() == Class7739.field31521) {
+        if (class8321.getItem() == Items.field31521) {
             final BlockPos class8323 = class8322.method23579(Class6683.field26367);
             if (class8323 != null) {
                 final Class1849 method23588 = class8322.method23588();

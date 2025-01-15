@@ -25,14 +25,14 @@ public final class Class6421 extends Class6404
         final double n2 = Math.floor(class5491.getY()) + class5493.getYOffset();
         final double n3 = class5491.getZ() + class5493.getZOffset() * 1.125;
         final BlockPos method16764 = class5491.method16764().method1149(class5493);
-        final Class7096 method16765 = method16763.method6701(method16764);
+        final BlockState method16765 = method16763.method6701(method16764);
         final Class104 class5494 = (method16765.method21696() instanceof Class4017) ? method16765.method21772(((Class4017)method16765.method21696()).method12205()) : Class104.field311;
         double n4;
         if (!method16765.method21755(Class7188.field27906)) {
             if (!method16765.method21706() || !method16763.method6701(method16764.method1139()).method21755(Class7188.field27906)) {
                 return this.field25530.method19090(class5491, class5492);
             }
-            final Class7096 method16766 = method16763.method6701(method16764.method1139());
+            final BlockState method16766 = method16763.method6701(method16764.method1139());
             final Class104 class5495 = (method16766.method21696() instanceof Class4017) ? method16766.method21772(((Class4017)method16766.method21696()).method12205()) : Class104.field311;
             if (class5493 != Direction.DOWN && class5495.method597()) {
                 n4 = -0.4;
@@ -47,7 +47,7 @@ public final class Class6421 extends Class6404
         else {
             n4 = 0.6;
         }
-        final Class428 method16767 = Class428.method2122(method16763, n, n2 + n4, n3, Class4068.method12273((Class4068)class5492.method27622()));
+        final Class428 method16767 = Class428.method2122(method16763, n, n2 + n4, n3, Class4068.method12273((Class4068)class5492.getItem()));
         if (class5492.method27667()) {
             method16767.method1872(class5492.method27664());
         }

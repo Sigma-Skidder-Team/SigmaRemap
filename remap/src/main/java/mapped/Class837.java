@@ -24,7 +24,7 @@ public class Class837 extends Class834
     
     @Override
     public ItemStack method4956() {
-        return new ItemStack(Class7739.field31360);
+        return new ItemStack(Items.field31360);
     }
     
     @Override

@@ -5,7 +5,6 @@
 package mapped;
 
 import com.mojang.brigadier.context.CommandContext;
-import java.util.function.Supplier;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import java.util.function.BiConsumer;
 
@@ -13,7 +12,7 @@ public class Class8118 extends Class8117<Class8118>
 {
     private int field33454;
     
-    private static Class8455<Class8118> method26713(final int n, final BiConsumer<Class394, Class8118> biConsumer) {
+    private static Class8455<Class8118> method26713(final int n, final BiConsumer<MinecraftServer, Class8118> biConsumer) {
         return new Class8455<Class8118>(IntegerArgumentType::integer, class8455 -> new Class8118(class8455, n2), biConsumer, null);
     }
     

@@ -20,7 +20,7 @@ public final class Class6399 extends Class6397
         if (!Class4088.method12322(class5492, method16763, method16764) && !Class4088.method12323(class5492, method16763, method16764, null)) {
             this.field25515 = false;
         }
-        else if (!method16763.field10067) {
+        else if (!method16763.isRemote) {
             method16763.method6955(2005, method16764, 0);
         }
         return class5492;

@@ -177,7 +177,7 @@ public class Class1774 extends Class1666 implements Class1664
         }
     }
     
-    public Class9430 method6332(final Class6582 class6582, final Stream<Class1932> stream, final Class5028 class6583, final int i) {
+    public Class9430 method6332(final Class6582 class6582, final Stream<Class1932> stream, final IProfiler class6583, final int i) {
         this.field9873 = this.field9858.equals(Class1774.field9853);
         this.field9874 = Class8571.method28955();
         this.field9875 = Class8571.method28928();

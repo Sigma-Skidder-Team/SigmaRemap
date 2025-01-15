@@ -41,7 +41,7 @@ public class Class6512
         }
         final int i = arrayList.size() + arrayList2.size() + arrayList3.size();
         Class6512.field25888.info("Total conversion count is {}", (Object)i);
-        final Class8660 method1274 = Class7952.method25792(path, dataFixer, child);
+        final WorldInfo method1274 = Class7952.method25792(path, dataFixer, child);
         final Class7768<Class5471, Class1869> field31769 = Class7768.field31769;
         final Class7768<Class5469, Class1871> field31770 = Class7768.field31770;
         Class1868 class733;

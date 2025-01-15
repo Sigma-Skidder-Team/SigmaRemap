@@ -7,6 +7,8 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -16,7 +18,7 @@ public class Class3873 extends Class3874 implements Class3872
 {
     private static String[] field17515;
     public static final Class7112 field17516;
-    public static final Class7702[] field17517;
+    public static final VoxelShape[] field17517;
     private final Class3993 field17518;
     
     public Class3873(final Class3993 field17518, final Class9288 class9288) {
@@ -26,7 +28,7 @@ public class Class3873 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3873.field17517[class7096.method21772((Class7111<Integer>)Class3873.field17516)];
     }
     
@@ -70,16 +72,16 @@ public class Class3873 extends Class3874 implements Class3872
     }
     
     @Nullable
-    public Class3820 method11948() {
+    public Item method11948() {
         if (this.field17518 != Class7521.field29337) {
-            return (this.field17518 != Class7521.field29383) ? null : Class7739.field31430;
+            return (this.field17518 != Class7521.field29383) ? null : Items.field31430;
         }
-        return Class7739.field31429;
+        return Items.field31429;
     }
     
     @Override
     public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        final Class3820 method11948 = this.method11948();
+        final Item method11948 = this.method11948();
         return (method11948 != null) ? new ItemStack(method11948) : ItemStack.field34174;
     }
     
@@ -95,11 +97,11 @@ public class Class3873 extends Class3874 implements Class3872
     
     @Override
     public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final Class7096 class1851) {
-        final int min = Math.min(7, class1851.method21772((Class7111<Integer>)Class3873.field17516) + MathHelper.method35658(class1849.field10062, 2, 5));
+        final int min = Math.min(7, class1851.method21772((Class7111<Integer>)Class3873.field17516) + MathHelper.method35658(class1849.rand, 2, 5));
         final Class7096 class1852 = ((Class7097<O, Class7096>)class1851).method21773((Class7111<Comparable>)Class3873.field17516, min);
         class1849.method6688(class1850, class1852, 2);
         if (min == 7) {
-            class1852.method21739(class1849, class1850, class1849.field10062);
+            class1852.method21739(class1849, class1850, class1849.rand);
         }
     }
     
@@ -114,6 +116,6 @@ public class Class3873 extends Class3874 implements Class3872
     
     static {
         field17516 = Class8970.field37773;
-        field17517 = new Class7702[] { Class3833.method11778(7.0, 0.0, 7.0, 9.0, 2.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 4.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 6.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 8.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 10.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 12.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 14.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 16.0, 9.0) };
+        field17517 = new VoxelShape[] { Class3833.method11778(7.0, 0.0, 7.0, 9.0, 2.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 4.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 6.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 8.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 10.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 12.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 14.0, 9.0), Class3833.method11778(7.0, 0.0, 7.0, 9.0, 16.0, 9.0) };
     }
 }

@@ -141,7 +141,7 @@ public class Class5204
         return this.field22216;
     }
     
-    public static void method16304(final Class5204 class5204, final BlockPos class5205, final Class7096 class5206) {
+    public static void method16304(final Class5204 class5204, final BlockPos class5205, final BlockState class5206) {
         if (class5206 != null) {
             class5204.method16296("Block", class5206::toString);
         }

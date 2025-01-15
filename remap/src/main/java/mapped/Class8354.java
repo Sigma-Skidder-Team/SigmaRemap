@@ -18,11 +18,11 @@ public class Class8354
     private final World field34282;
     private final BlockPos field34283;
     private final Class4017 field34284;
-    private Class7096 field34285;
+    private BlockState field34285;
     private final boolean field34286;
     private final List<BlockPos> field34287;
     
-    public Class8354(final World field34282, final BlockPos field34283, final Class7096 field34284) {
+    public Class8354(final World field34282, final BlockPos field34283, final BlockState field34284) {
         this.field34287 = Lists.newArrayList();
         this.field34282 = field34282;
         this.field34283 = field34283;
@@ -118,15 +118,15 @@ public class Class8354
     
     @Nullable
     private Class8354 method27881(final BlockPos class354) {
-        final Class7096 method6701 = this.field34282.method6701(class354);
+        final BlockState method6701 = this.field34282.method6701(class354);
         if (Class4017.method12201(method6701)) {
             return new Class8354(this.field34282, class354, method6701);
         }
         final BlockPos method6702 = class354.method1137();
-        final Class7096 method6703 = this.field34282.method6701(method6702);
+        final BlockState method6703 = this.field34282.method6701(method6702);
         if (!Class4017.method12201(method6703)) {
             final BlockPos method6704 = class354.method1139();
-            final Class7096 method6705 = this.field34282.method6701(method6704);
+            final BlockState method6705 = this.field34282.method6701(method6704);
             return Class4017.method12201(method6705) ? new Class8354(this.field34282, method6704, method6705) : null;
         }
         return new Class8354(this.field34282, method6702, method6703);
@@ -236,7 +236,7 @@ public class Class8354
         if (class8355 == null) {
             class8355 = Class104.field311;
         }
-        this.field34285 = (Class7096)((Class7097<Object, Object>)this.field34285).method21773(this.field34284.method12205(), class8355);
+        this.field34285 = (BlockState)((Class7097<Object, Object>)this.field34285).method21773(this.field34284.method12205(), class8355);
         this.field34282.method6688(this.field34283, this.field34285, 3);
     }
     
@@ -368,7 +368,7 @@ public class Class8354
             class105 = class104;
         }
         this.method27878(class105);
-        this.field34285 = (Class7096)((Class7097<Object, Object>)this.field34285).method21773(this.field34284.method12205(), class105);
+        this.field34285 = (BlockState)((Class7097<Object, Object>)this.field34285).method21773(this.field34284.method12205(), class105);
         if (b2 || this.field34282.method6701(this.field34283) != this.field34285) {
             this.field34282.method6688(this.field34283, this.field34285, 3);
             for (int i = 0; i < this.field34287.size(); ++i) {
@@ -384,7 +384,7 @@ public class Class8354
         return this;
     }
     
-    public Class7096 method27889() {
+    public BlockState method27889() {
         return this.field34285;
     }
 }

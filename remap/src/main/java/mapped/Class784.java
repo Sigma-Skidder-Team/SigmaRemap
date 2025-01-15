@@ -64,7 +64,7 @@ public class Class784 extends Class785 implements Class768
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             final int method35644 = MathHelper.floor(this.getPosX());
             final int method35645 = MathHelper.floor(this.getPosY());
             final int method35646 = MathHelper.floor(this.getPosZ());
@@ -77,7 +77,7 @@ public class Class784 extends Class785 implements Class768
             if (!this.world.method6765().method31216(Class8878.field37316)) {
                 return;
             }
-            final Class7096 method35647 = Class7521.field29329.method11878();
+            final BlockState method35647 = Class7521.field29329.method11878();
             for (int i = 0; i < 4; ++i) {
                 final BlockPos class354 = new BlockPos(MathHelper.floor(this.getPosX() + (i % 2 * 2 - 1) * 0.25f), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ() + (i / 2 % 2 * 2 - 1) * 0.25f));
                 if (this.world.method6701(class354).method21706()) {
@@ -111,8 +111,8 @@ public class Class784 extends Class785 implements Class768
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() == Class7739.field31426 && this.method4332()) {
-            if (!this.world.field10067) {
+        if (method2715.getItem() == Items.field31426 && this.method4332()) {
+            if (!this.world.isRemote) {
                 this.method4333(false);
                 method2715.method27636(1, class512, class515 -> class515.method2795(class514));
             }

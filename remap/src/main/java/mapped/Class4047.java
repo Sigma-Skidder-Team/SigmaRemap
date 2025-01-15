@@ -7,15 +7,15 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class4047 extends Class3820
+public class Class4047 extends Item
 {
     public Class4047(final Class8959 class8959) {
         super(class8959);
         this.method11705(new Class1932("cast"), (class8321, class8322, class8323) -> {
             if (class8323 != null) {
-                final boolean b = class8323.method2713() == class8321;
+                final boolean b = class8323.getHeldItemMainhand() == class8321;
                 boolean b2 = class8323.method2714() == class8321;
-                if (class8323.method2713().method27622() instanceof Class4047) {
+                if (class8323.getHeldItemMainhand().getItem() instanceof Class4047) {
                     b2 = false;
                 }
                 if (b || b2) {
@@ -36,13 +36,13 @@ public class Class4047 extends Class3820
         final ItemStack method2715 = class1848.method2715(class1849);
         if (class1848.field3036 == null) {
             class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35038, Class286.field1584, 0.5f, 0.4f / (Class4047.field17363.nextFloat() * 0.4f + 0.8f));
-            if (!class1847.field10067) {
+            if (!class1847.isRemote) {
                 class1847.method6886(new Class425(class1848, class1847, Class8742.method30212(method2715), Class8742.method30213(method2715)));
             }
             class1848.method2859(Class8276.field33981.method8449(this));
         }
         else {
-            if (!class1847.field10067) {
+            if (!class1847.isRemote) {
                 method2715.method27636(class1848.field3036.method2077(method2715), class1848, class1851 -> class1851.method2795(class1850));
             }
             class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35036, Class286.field1584, 1.0f, 0.4f / (Class4047.field17363.nextFloat() * 0.4f + 0.8f));

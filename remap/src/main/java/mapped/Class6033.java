@@ -10,11 +10,11 @@ import java.util.function.Function;
 
 public class Class6033 extends Class6032<Class4408>
 {
-    public static final Class7096 field24565;
-    public static final Class7096 field24566;
-    private static final Class7096 field24567;
-    private static final Class7096 field24568;
-    private static final Class7096 field24569;
+    public static final BlockState field24565;
+    public static final BlockState field24566;
+    private static final BlockState field24567;
+    private static final BlockState field24568;
+    private static final BlockState field24569;
     private Class8575 field24570;
     private Class8575 field24571;
     private long field24572;
@@ -23,7 +23,7 @@ public class Class6033 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int a, final double a2, final Class7096 class1862, final Class7096 class1863, final int n3, final long n4, final Class4408 class1864) {
+    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int a, final double a2, final BlockState class1862, final BlockState class1863, final int n3, final long n4, final Class4408 class1864) {
         double n5 = 0.0;
         double n6 = 0.0;
         final Mutable class1865 = new Mutable();
@@ -49,8 +49,8 @@ public class Class6033 extends Class6032<Class4408>
         }
         final int n9 = n & 0xF;
         final int n10 = n2 & 0xF;
-        Class7096 class1866 = class1861.method9872().method13339();
-        Class7096 class1867 = class1861.method9872().method13338();
+        BlockState class1866 = class1861.method9872().method13339();
+        BlockState class1867 = class1861.method9872().method13338();
         final int n11 = (int)(a2 / 3.0 + 3.0 + random.nextDouble() * 0.25);
         int n12 = -1;
         int n13 = 0;
@@ -79,7 +79,7 @@ public class Class6033 extends Class6032<Class4408>
                     }
                 }
             }
-            final Class7096 method9846 = class1860.method6701(class1865);
+            final BlockState method9846 = class1860.method6701(class1865);
             if (!method9846.method21706()) {
                 if (method9846.method21696() == class1862.method21696()) {
                     if (n12 != -1) {

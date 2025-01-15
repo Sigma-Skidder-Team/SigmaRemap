@@ -221,7 +221,7 @@ public class Class8619
     private boolean method29239() {
         for (int i = -8; i <= 8; ++i) {
             for (int j = -8; j <= 8; ++j) {
-                final Iterator<Class436> iterator = this.field36166.method6686(i, j).method7066().values().iterator();
+                final Iterator<TileEntity> iterator = this.field36166.method6686(i, j).method7066().values().iterator();
                 while (iterator.hasNext()) {
                     if (!(iterator.next() instanceof Class489)) {
                         continue;
@@ -237,11 +237,11 @@ public class Class8619
     private Class7820 method29240() {
         for (int i = -8; i <= 8; ++i) {
             for (int j = -8; j <= 8; ++j) {
-                for (final Class436 class436 : this.field36166.method6686(i, j).method7066().values()) {
-                    if (!(class436 instanceof Class489)) {
+                for (final TileEntity tileEntity : this.field36166.method6686(i, j).method7066().values()) {
+                    if (!(tileEntity instanceof Class489)) {
                         continue;
                     }
-                    final Class7820 method29796 = this.field36168.method29796(this.field36166, class436.method2193());
+                    final Class7820 method29796 = this.field36168.method29796(this.field36166, tileEntity.method2193());
                     if (method29796 == null) {
                         continue;
                     }
@@ -352,7 +352,7 @@ public class Class8619
         this.field36166.method6685(new BlockPos(0, 128, 0));
         final Class852 class852 = EntityType.field28976.method23371(this.field36166);
         class852.method5127().method33696(Class7193.field27948);
-        class852.method1730(0.0, 128.0, 0.0, this.field36166.field10062.nextFloat() * 360.0f, 0.0f);
+        class852.method1730(0.0, 128.0, 0.0, this.field36166.rand.nextFloat() * 360.0f, 0.0f);
         this.field36166.method6886(class852);
         this.field36175 = class852.method1865();
         return class852;

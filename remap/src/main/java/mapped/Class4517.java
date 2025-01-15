@@ -51,7 +51,7 @@ public class Class4517 extends Class4515
             if (!s.startsWith("Sentry")) {
                 if (s.startsWith("Elytra")) {
                     final Class862 class357 = new Class862(class355.method6744(), class354, this.field19852.method8142(Direction.SOUTH));
-                    class357.method5200(new ItemStack(Class7739.field31584), false);
+                    class357.method5200(new ItemStack(Items.field31584), false);
                     class355.method6886(class357);
                 }
             }

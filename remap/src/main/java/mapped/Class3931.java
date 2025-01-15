@@ -29,7 +29,7 @@ public class Class3931 extends Class3841
     }
     
     public void method12048(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final ItemStack class1854) {
-        final Class436 method6727 = class1851.method6727(class1852);
+        final TileEntity method6727 = class1851.method6727(class1852);
         if (method6727 instanceof Class449) {
             ((Class449)method6727).method2278(class1854.method27641());
             class1851.method6688(class1852, ((Class7097<O, Class7096>)class1853).method21773((Class7111<Comparable>)Class3931.field17811, true), 2);
@@ -37,15 +37,15 @@ public class Class3931 extends Class3841
     }
     
     private void method12049(final World class1847, final BlockPos class1848) {
-        if (!class1847.field10067) {
-            final Class436 method6727 = class1847.method6727(class1848);
+        if (!class1847.isRemote) {
+            final TileEntity method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class449) {
                 final Class449 class1849 = (Class449)method6727;
                 final ItemStack method6728 = class1849.method2277();
                 if (!method6728.method27620()) {
                     class1847.method6955(1010, class1848, 0);
                     class1849.method2164();
-                    final Class427 class1850 = new Class427(class1847, class1848.getX() + (class1847.field10062.nextFloat() * 0.7f + 0.15000000596046448), class1848.getY() + (class1847.field10062.nextFloat() * 0.7f + 0.06000000238418579 + 0.6), class1848.getZ() + (class1847.field10062.nextFloat() * 0.7f + 0.15000000596046448), method6728.method27641());
+                    final Class427 class1850 = new Class427(class1847, class1848.getX() + (class1847.rand.nextFloat() * 0.7f + 0.15000000596046448), class1848.getY() + (class1847.rand.nextFloat() * 0.7f + 0.06000000238418579 + 0.6), class1848.getZ() + (class1847.rand.nextFloat() * 0.7f + 0.15000000596046448), method6728.method27641());
                     class1850.method2114();
                     class1847.method6886(class1850);
                 }
@@ -62,7 +62,7 @@ public class Class3931 extends Class3841
     }
     
     @Override
-    public Class436 method11898(final Class1855 class1855) {
+    public TileEntity method11898(final Class1855 class1855) {
         return new Class449();
     }
     
@@ -73,9 +73,9 @@ public class Class3931 extends Class3841
     
     @Override
     public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
-        final Class436 method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.method6727(class7098);
         if (method6727 instanceof Class449) {
-            final Class3820 method6728 = ((Class449)method6727).method2277().method27622();
+            final Item method6728 = ((Class449)method6727).method2277().getItem();
             if (method6728 instanceof Class3828) {
                 return ((Class3828)method6728).method11763();
             }

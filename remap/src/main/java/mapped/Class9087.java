@@ -14,14 +14,14 @@ public class Class9087
     private static String[] field38480;
     private static final List<Class8754> field38481;
     
-    public static Class6313 method32832(Class6313 method22995, final Class7096 class7096, final Class9145 class7097) {
+    public static Class6313 method32832(Class6313 method22995, final BlockState class7096, final Class9145 class7097) {
         if (class7097.method33389()) {
             method22995 = Class7464.method22995(method22995, class7096);
         }
         return method22995;
     }
     
-    public static List<Class8754> method32833(List<Class8754> method18260, final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Direction class1859, final Class6332 class1860, final long n, final Class9145 class1861) {
+    public static List<Class8754> method32833(List<Class8754> method18260, final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Direction class1859, final Class6332 class1860, final long n, final Class9145 class1861) {
         if (class1859 != null) {
             if (class1861.method33389() && Class7464.method22996(class1856.method6701(class1858.method1149(class1859)), class1857)) {
                 return Class9087.field38481;
@@ -64,7 +64,7 @@ public class Class9087
         return (class6332 != null && class6332 != Class9484.field40759) ? class6332 : Class9484.field40760;
     }
     
-    private static Class8754[] method32835(Class8754 method24259, final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Direction class1859, final long n, final Class9145 class1860) {
+    private static Class8754[] method32835(Class8754 method24259, final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Direction class1859, final long n, final Class9145 class1860) {
         if (!class1860.method33380(method24259)) {
             final Class8754 class1861 = method24259;
             if (Class8571.method28949()) {

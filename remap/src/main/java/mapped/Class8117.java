@@ -21,7 +21,7 @@ public abstract class Class8117<T extends Class8117<T>>
         this.method26708(((Class7492)commandContext.getSource()).method23255());
     }
     
-    public void method26708(final Class394 class394) {
+    public void method26708(final MinecraftServer class394) {
         if (class394 != null) {
             Class8455.method28221((Class8455<Class8117>)this.field33453).accept(class394, this.method26712());
         }

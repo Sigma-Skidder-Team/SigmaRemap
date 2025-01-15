@@ -5,7 +5,7 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
+
 import java.util.HashSet;
 import com.google.common.collect.Sets;
 import java.util.function.Consumer;
@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
 public class Class7989
 {
     private static final Logger field32886;
-    private final Class3820 field32887;
+    private final Item field32887;
     private final int field32888;
     private final List<String> field32889;
     private final Map<Character, Class120> field32890;
@@ -41,7 +41,7 @@ public class Class7989
         return new Class7989(class3832, n);
     }
     
-    public Class7989 method26055(final Character c, final Class7909<Class3820> class7909) {
+    public Class7989 method26055(final Character c, final Class7909<Item> class7909) {
         return this.method26057(c, Class120.method620(class7909));
     }
     

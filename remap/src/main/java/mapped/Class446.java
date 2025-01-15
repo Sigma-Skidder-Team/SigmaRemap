@@ -40,21 +40,21 @@ public interface Class446 extends Class447
         return true;
     }
     
-    default int method2265(final Class3820 obj) {
+    default int method2265(final Item obj) {
         int n = 0;
         for (int i = 0; i < this.method2239(); ++i) {
             final ItemStack method2157 = this.method2157(i);
-            if (method2157.method27622().equals(obj)) {
+            if (method2157.getItem().equals(obj)) {
                 n += method2157.method27690();
             }
         }
         return n;
     }
     
-    default boolean method2266(final Set<Class3820> set) {
+    default boolean method2266(final Set<Item> set) {
         for (int i = 0; i < this.method2239(); ++i) {
             final ItemStack method2157 = this.method2157(i);
-            if (set.contains(method2157.method27622()) && method2157.method27690() > 0) {
+            if (set.contains(method2157.getItem()) && method2157.method27690() > 0) {
                 return true;
             }
         }

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 
-public abstract class Class4158<T extends Class436>
+public abstract class Class4158<T extends TileEntity>
 {
     public final Class9550 field18539;
     private Class5412 field18540;

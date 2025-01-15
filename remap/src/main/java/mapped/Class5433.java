@@ -18,7 +18,7 @@ public class Class5433 extends Class5419<LivingEntity>
     
     @Override
     public boolean method16538(final Class1849 class1849, final LivingEntity class1850) {
-        return class1849.field10062.nextInt(20) == 0;
+        return class1849.rand.nextInt(20) == 0;
     }
     
     @Override

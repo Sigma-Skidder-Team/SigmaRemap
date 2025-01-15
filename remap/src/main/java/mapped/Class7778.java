@@ -252,11 +252,11 @@ public class Class7778
                 final Class6663 class1664 = class1663;
                 final Iterator<Class9071> iterator2 = field4637.method5771().iterator();
                 while (iterator2.hasNext()) {
-                    final List<Class436> method5285 = iterator2.next().field38417.method31870().method32214();
+                    final List<TileEntity> method5285 = iterator2.next().field38417.method31870().method32214();
                     if (method5285.isEmpty()) {
                         continue;
                     }
-                    for (final Class436 class1665 : method5285) {
+                    for (final TileEntity class1665 : method5285) {
                         if (method5284) {
                             final AxisAlignedBB class1666 = (AxisAlignedBB)Class9570.method35826(class1665, Class9570.field41359, new Object[0]);
                             if (class1666 != null) {

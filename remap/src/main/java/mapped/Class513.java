@@ -33,7 +33,7 @@ public class Class513 extends Class512 implements Class514
     private static final Logger field3037;
     private String field3038;
     public Class5814 field3039;
-    public final Class394 field3040;
+    public final MinecraftServer field3040;
     public final Class8071 field3041;
     private final List<Integer> field3042;
     private final Class7012 field3043;
@@ -66,7 +66,7 @@ public class Class513 extends Class512 implements Class514
     public int field3070;
     public boolean field3071;
     
-    public Class513(final Class394 field3040, final Class1849 class1849, final GameProfile gameProfile, final Class8071 field3041) {
+    public Class513(final MinecraftServer field3040, final Class1849 class1849, final GameProfile gameProfile, final Class8071 field3041) {
         super(class1849, gameProfile);
         this.field3038 = "en_US";
         this.field3042 = Lists.newLinkedList();
@@ -229,7 +229,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method1690(final Class7096 class7096) {
+    public void method1690(final BlockState class7096) {
         Class7770.field31778.method13813(this, class7096);
     }
     
@@ -246,7 +246,7 @@ public class Class513 extends Class512 implements Class514
             --this.hurtResistantTime;
         }
         this.field3009.method10876();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!this.field3009.method10854(this)) {
                 this.method2814();
                 this.field3009 = this.field3008;
@@ -290,8 +290,8 @@ public class Class513 extends Class512 implements Class514
             }
             for (int i = 0; i < this.field3006.method2239(); ++i) {
                 final ItemStack method2157 = this.field3006.method2157(i);
-                if (method2157.method27622().method11724()) {
-                    final IPacket<?> method2158 = ((Class4093)method2157.method27622()).method12325(method2157, this.world, this);
+                if (method2157.getItem().method11724()) {
+                    final IPacket<?> method2158 = ((Class4093)method2157.getItem()).method12325(method2157, this.world, this);
                     if (method2158 != null) {
                         this.field3039.method17469(method2158);
                     }
@@ -495,8 +495,8 @@ public class Class513 extends Class512 implements Class514
         final Class1849 method1481 = this.field3040.method1481(field2453);
         this.dimension = field2452;
         final Class1849 method1482 = this.field3040.method1481(field2452);
-        final Class8660 method1483 = method1482.method6764();
-        this.field3039.method17469(new Class4359(field2452, Class8660.method29535(method1483.method29534()), method1483.method29570(), this.field3041.method26482()));
+        final WorldInfo method1483 = method1482.method6764();
+        this.field3039.method17469(new Class4359(field2452, WorldInfo.byHashing(method1483.getSeed()), method1483.method29570(), this.field3041.method26482()));
         this.field3039.method17469(new Class4315(method1483.method29597(), method1483.method29599()));
         final Class6765 method1484 = this.field3040.method1537();
         method1484.method20584(this);
@@ -531,7 +531,7 @@ public class Class513 extends Class512 implements Class514
         this.method1730(method1485, method1486, method1487, n, field2454);
         method1481.method6796().method15299();
         method1481.method6796().method15297("placing");
-        this.method1730(MathHelper.method35654(method1485, Math.min(-2.9999872E7, method1482.method6787().method34786() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34788() - 16.0)), method1486, MathHelper.method35654(method1487, Math.min(-2.9999872E7, method1482.method6787().method34787() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34789() - 16.0)), n, field2454);
+        this.method1730(MathHelper.clamp(method1485, Math.min(-2.9999872E7, method1482.method6787().method34786() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34788() - 16.0)), method1486, MathHelper.clamp(method1487, Math.min(-2.9999872E7, method1482.method6787().method34787() + 16.0), Math.min(2.9999872E7, method1482.method6787().method34789() - 16.0)), n, field2454);
         if (field2452 != DimensionType.field2225) {
             if (!method1482.method6909().method31767(this, field2455)) {
                 method1482.method6909().method31769(this);
@@ -596,9 +596,9 @@ public class Class513 extends Class512 implements Class514
         return this.method2951() == this;
     }
     
-    private void method2925(final Class436 class436) {
-        if (class436 != null) {
-            final Class4357 method2195 = class436.method2195();
+    private void method2925(final TileEntity tileEntity) {
+        if (tileEntity != null) {
+            final Class4357 method2195 = tileEntity.method2195();
             if (method2195 != null) {
                 this.field3039.method17469(method2195);
             }
@@ -668,7 +668,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
+    public void method1701(final double n, final boolean b, final BlockState class7096, final BlockPos class7097) {
     }
     
     @Override
@@ -734,7 +734,7 @@ public class Class513 extends Class512 implements Class514
     
     @Override
     public void method2835(final ItemStack class8321, final Class316 class8322) {
-        if (class8321.method27622() == Class7739.field31513) {
+        if (class8321.getItem() == Items.field31513) {
             if (Class4096.method12342(class8321, this.method1924(), this)) {
                 this.field3009.method10876();
             }
@@ -1153,8 +1153,8 @@ public class Class513 extends Class512 implements Class514
         if (class1849 != this.world) {
             final Class1849 method2940 = this.method2940();
             this.dimension = class1849.dimension.getType();
-            final Class8660 method2941 = class1849.method6764();
-            this.field3039.method17469(new Class4359(this.dimension, Class8660.method29535(method2941.method29534()), method2941.method29570(), this.field3041.method26482()));
+            final WorldInfo method2941 = class1849.method6764();
+            this.field3039.method17469(new Class4359(this.dimension, WorldInfo.byHashing(method2941.getSeed()), method2941.method29570(), this.field3041.method26482()));
             this.field3039.method17469(new Class4315(method2941.method29597(), method2941.method29599()));
             this.field3040.method1537().method20584(this);
             method2940.method6902(this);
@@ -1210,7 +1210,7 @@ public class Class513 extends Class512 implements Class514
             final ItemStack method2824 = method2823.method2107();
             if (b2) {
                 if (!method2824.method27620()) {
-                    this.method2860(Class8276.field33984.method8449(method2824.method27622()), class8321.method27690());
+                    this.method2860(Class8276.field33984.method8449(method2824.getItem()), class8321.method27690());
                 }
                 this.method2857(Class8276.field34008);
             }

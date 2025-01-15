@@ -39,7 +39,7 @@ public class Class410 extends Class409
         if (class7006.method21449() == Class2165.field12882) {
             ((Class7007)class7006).method21452().attackEntityFrom(DamageSource.method25699(this, this.method2019()), 0.0f);
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.rand.nextInt(8) == 0) {
                 int n = 1;
                 if (this.rand.nextInt(32) == 0) {
@@ -58,7 +58,7 @@ public class Class410 extends Class409
     }
     
     @Override
-    public Class3820 method2013() {
-        return Class7739.field31374;
+    public Item method2013() {
+        return Items.field31374;
     }
 }

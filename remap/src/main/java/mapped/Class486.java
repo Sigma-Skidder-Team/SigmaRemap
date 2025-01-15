@@ -18,10 +18,10 @@ public class Class486 extends Class443
     
     @Override
     public boolean method2264(final int n, final ItemStack class8321) {
-        if (class8321.method27622() != Class7739.field31514) {
-            if (class8321.method27622() != Class7739.field31283) {
-                if (class8321.method27622() != Class7739.field31285) {
-                    if (class8321.method27622() != Class7739.field31284) {
+        if (class8321.getItem() != Items.field31514) {
+            if (class8321.getItem() != Items.field31283) {
+                if (class8321.getItem() != Items.field31285) {
+                    if (class8321.getItem() != Items.field31284) {
                         return false;
                     }
                 }

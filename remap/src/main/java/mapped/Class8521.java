@@ -21,7 +21,7 @@ public class Class8521
     }
     
     public Integer method28533(final ItemStack class8321, final World class8322, final LivingEntity class8323) {
-        final Class8967 method11700 = class8321.method27622().method11700(this.field35774);
+        final Class8967 method11700 = class8321.getItem().method11700(this.field35774);
         if (method11700 != null) {
             return Arrays.binarySearch(this.field35775, method11700.method31812(class8321, class8322, class8323));
         }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class9374 extends Class9375
+public class Class9374 extends WorldBorder
 {
     private static String[] field40199;
     public final /* synthetic */ Class6739 field40200;

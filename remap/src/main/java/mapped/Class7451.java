@@ -14,16 +14,16 @@ import java.util.Collection;
 
 public class Class7451 implements Class7452
 {
-    private final Class7909<Class3820> field28754;
+    private final Class7909<Item> field28754;
     
-    private Class7451(final Class7909<Class3820> field28754) {
+    private Class7451(final Class7909<Item> field28754) {
         this.field28754 = field28754;
     }
     
     @Override
     public Collection<ItemStack> method22938() {
         final ArrayList arrayList = Lists.newArrayList();
-        final Iterator<Class3820> iterator = this.field28754.method25616().iterator();
+        final Iterator<Item> iterator = this.field28754.method25616().iterator();
         while (iterator.hasNext()) {
             arrayList.add(new ItemStack(iterator.next()));
         }

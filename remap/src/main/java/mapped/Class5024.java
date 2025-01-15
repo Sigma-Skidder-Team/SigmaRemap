@@ -39,7 +39,7 @@ public class Class5024
     }
     
     public static int method15245(final ItemStack class8321) {
-        return Class90.field211.method504(class8321.method27622());
+        return Class90.field211.method504(class8321.getItem());
     }
     
     private boolean method15246(final int n) {
@@ -76,7 +76,7 @@ public class Class5024
     }
     
     public static ItemStack method15253(final int n) {
-        return (n != 0) ? new ItemStack(Class3820.method11697(n)) : ItemStack.field34174;
+        return (n != 0) ? new ItemStack(Item.method11697(n)) : ItemStack.field34174;
     }
     
     public void method15254() {

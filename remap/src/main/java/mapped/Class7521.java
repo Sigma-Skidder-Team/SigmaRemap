@@ -1376,7 +1376,7 @@ public class Class7521
         field29825 = method23485("honey_block", new Class3848(Class9288.method34281(Class8059.field33169, Class8819.field37047).method34286(0.4f).method34287(0.5f).method34284().method34288(Class7696.field30579)));
         field29826 = method23485("honeycomb_block", new Class3833(Class9288.method34281(Class8059.field33169, Class8819.field37047).method34292(0.6f).method34288(Class7696.field30581)));
         for (final Class3833 class3833 : Class90.field208) {
-            for (final Class7096 class3834 : class3833.method11876().method32902()) {
+            for (final BlockState class3834 : class3833.method11876().method32902()) {
                 class3834.method21695();
                 Class3833.field17391.method562(class3834);
             }

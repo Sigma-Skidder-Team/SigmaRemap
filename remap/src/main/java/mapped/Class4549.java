@@ -39,7 +39,7 @@ public class Class4549 extends Class4535<Class5122>
                 }
                 class1851.method6688(method6958, Class7521.field29292.method11878(), 2);
                 Class456.method2323(class1851, random, method6958, Class9020.field38064);
-                final Class7096 method6959 = Class7521.field29287.method11878();
+                final BlockState method6959 = Class7521.field29287.method11878();
                 final Iterator<Direction> iterator3 = Plane.HORIZONTAL.iterator();
                 while (iterator3.hasNext()) {
                     final BlockPos method6960 = method6958.method1149(iterator3.next());

@@ -43,12 +43,12 @@ public class Class5492 implements Class5491
     }
     
     @Override
-    public Class7096 method16765() {
+    public BlockState method16765() {
         return this.field22774.method6701(this.field22775);
     }
     
     @Override
-    public <T extends Class436> T method16766() {
+    public <T extends TileEntity> T method16766() {
         return (T)this.field22774.method6727(this.field22775);
     }
 }

@@ -22,17 +22,17 @@ import java.util.List;
 public class Class6318 implements Class6313
 {
     private static String[] field25261;
-    private final List<Pair<Predicate<Class7096>, Class6313>> field25262;
+    private final List<Pair<Predicate<BlockState>, Class6313>> field25262;
     public final boolean field25263;
     public final boolean field25264;
     public final boolean field25265;
     public final Class1912 field25266;
     public final Class7503 field25267;
     public final Class9168 field25268;
-    private final Map<Class7096, BitSet> field25269;
+    private final Map<BlockState, BitSet> field25269;
     
-    public Class6318(final List<Pair<Predicate<Class7096>, Class6313>> field25262) {
-        this.field25269 = (Map<Class7096, BitSet>)new Object2ObjectOpenCustomHashMap((Hash$Strategy)Class8349.method27852());
+    public Class6318(final List<Pair<Predicate<BlockState>, Class6313>> field25262) {
+        this.field25269 = (Map<BlockState, BitSet>)new Object2ObjectOpenCustomHashMap((Hash$Strategy)Class8349.method27852());
         this.field25262 = field25262;
         final Class6313 class6313 = (Class6313)field25262.iterator().next().getRight();
         this.field25263 = class6313.method18692();
@@ -44,7 +44,7 @@ public class Class6318 implements Class6313
     }
     
     @Override
-    public List<Class8754> method18691(final Class7096 class7096, final Direction class7097, final Random random) {
+    public List<Class8754> method18691(final BlockState class7096, final Direction class7097, final Random random) {
         if (class7096 != null) {
             BitSet set = this.field25269.get(class7096);
             if (set == null) {

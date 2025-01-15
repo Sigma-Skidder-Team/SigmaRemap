@@ -15,10 +15,10 @@ import java.util.Map;
 public class Class8467
 {
     private static String[] field34748;
-    private final Class394 field34749;
+    private final MinecraftServer field34749;
     private final Map<Class1932, Class6878> field34750;
     
-    public Class8467(final Class394 field34749) {
+    public Class8467(final MinecraftServer field34749) {
         this.field34750 = Maps.newHashMap();
         this.field34749 = field34749;
     }

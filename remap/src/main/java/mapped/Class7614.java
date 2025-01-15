@@ -14,15 +14,15 @@ public class Class7614
 {
     private static String[] field30173;
     private final Class8491 field30174;
-    private HashMap<BlockPos, Class7096> field30175;
-    private HashMap<BlockPos, Class7096> field30176;
+    private HashMap<BlockPos, BlockState> field30175;
+    private HashMap<BlockPos, BlockState> field30176;
     private Set<Class6977> field30177;
     private Set<Class9488> field30178;
     private Set<Class9488> field30179;
     
     public Class7614(final Class8491 field30174) {
-        this.field30175 = new HashMap<BlockPos, Class7096>();
-        this.field30176 = new HashMap<BlockPos, Class7096>();
+        this.field30175 = new HashMap<BlockPos, BlockState>();
+        this.field30176 = new HashMap<BlockPos, BlockState>();
         this.field30177 = new HashSet<Class6977>();
         this.field30178 = new HashSet<Class9488>();
         this.field30179 = new HashSet<Class9488>();
@@ -49,14 +49,14 @@ public class Class7614
     
     public void method23917() {
         for (final Map.Entry entry : this.field30175.entrySet()) {
-            this.method23921((BlockPos)entry.getKey(), (Class7096)entry.getValue());
+            this.method23921((BlockPos)entry.getKey(), (BlockState)entry.getValue());
         }
         this.field30175.clear();
     }
     
     public void method23918() {
         for (final Map.Entry entry : this.field30176.entrySet()) {
-            this.method23924((BlockPos)entry.getKey(), (Class7096)entry.getValue());
+            this.method23924((BlockPos)entry.getKey(), (BlockState)entry.getValue());
         }
         this.field30176.clear();
     }
@@ -73,14 +73,14 @@ public class Class7614
         this.field30179.clear();
     }
     
-    private void method23921(final BlockPos class354, final Class7096 class355) {
+    private void method23921(final BlockPos class354, final BlockState class355) {
         final Class6977 method23922 = this.method23922(class355);
         if (method23922 != null) {
             this.field30178.addAll(method23922.method21398(class354, class355, this));
         }
     }
     
-    private Class6977 method23922(final Class7096 class7096) {
+    private Class6977 method23922(final BlockState class7096) {
         for (final Class6977 class7097 : this.field30177) {
             if (class7097.field27276 != class7096.method21696().getClass()) {
                 continue;
@@ -129,23 +129,23 @@ public class Class7614
         return class4252;
     }
     
-    private void method23924(final BlockPos class354, final Class7096 class355) {
+    private void method23924(final BlockPos class354, final BlockState class355) {
         final Class6977 method23922 = this.method23922(class355);
         if (method23922 != null) {
             this.field30179.addAll(method23922.method21399(class354, class355, this));
         }
     }
     
-    public boolean method23925(final Class7096 class7096) {
+    public boolean method23925(final BlockState class7096) {
         return this.method23922(class7096) != null;
     }
     
-    public void method23926(final BlockPos class354, final Class7096 class355) {
+    public void method23926(final BlockPos class354, final BlockState class355) {
         this.field30175.put(class354, class355);
         this.field30176.put(class354, class355);
     }
     
-    public Class7096 method23927(final BlockPos class354) {
+    public BlockState method23927(final BlockPos class354) {
         if (this.field30175.containsKey(class354)) {
             return this.field30175.get(class354);
         }

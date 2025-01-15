@@ -14,7 +14,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class362 extends Class357
 {
-    private static final Class7096[] field2190;
+    private static final BlockState[] field2190;
     
     public Class362() {
         super(Class8804.field37007);
@@ -25,8 +25,8 @@ public class Class362 extends Class357
     }
     
     @Override
-    public Class7096 method1164(final Random random, final BlockPos class354) {
-        return Class362.field2190[(int)(MathHelper.method35654((1.0 + Class3090.field15442.method29027(class354.getX() / 48.0, class354.getZ() / 48.0, false)) / 2.0, 0.0, 0.9999) * Class362.field2190.length)];
+    public BlockState method1164(final Random random, final BlockPos class354) {
+        return Class362.field2190[(int)(MathHelper.clamp((1.0 + Class3090.field15442.method29027(class354.getX() / 48.0, class354.getZ() / 48.0, false)) / 2.0, 0.0, 0.9999) * Class362.field2190.length)];
     }
     
     @Override
@@ -37,6 +37,6 @@ public class Class362 extends Class357
     }
     
     static {
-        field2190 = new Class7096[] { Class7521.field29265.method11878(), Class7521.field29266.method11878(), Class7521.field29268.method11878(), Class7521.field29269.method11878(), Class7521.field29270.method11878(), Class7521.field29271.method11878(), Class7521.field29272.method11878(), Class7521.field29273.method11878(), Class7521.field29274.method11878(), Class7521.field29275.method11878(), Class7521.field29277.method11878() };
+        field2190 = new BlockState[] { Class7521.field29265.method11878(), Class7521.field29266.method11878(), Class7521.field29268.method11878(), Class7521.field29269.method11878(), Class7521.field29270.method11878(), Class7521.field29271.method11878(), Class7521.field29272.method11878(), Class7521.field29273.method11878(), Class7521.field29274.method11878(), Class7521.field29275.method11878(), Class7521.field29277.method11878() };
     }
 }

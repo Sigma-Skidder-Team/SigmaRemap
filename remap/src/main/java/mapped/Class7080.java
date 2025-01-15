@@ -78,7 +78,7 @@ public class Class7080 implements Class7079
     public void method21662(final ItemStack class8321) {
         final Iterator<Class3833> iterator = Class7080.field27574.iterator();
         while (iterator.hasNext()) {
-            if (class8321.method27622() != iterator.next().method11704()) {
+            if (class8321.getItem() != iterator.next().method11704()) {
                 continue;
             }
             this.field27577.method32926(Class2012.field11443);

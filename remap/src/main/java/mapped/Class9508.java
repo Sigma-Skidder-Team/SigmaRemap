@@ -33,7 +33,7 @@ public class Class9508 implements ArgumentType<Class6311>
             return commandContext -> {
                 final Class7909<Object> method18460 = (Class7909<Object>)((Class7492)commandContext.getSource()).method23255().method1578().method6464().method18460(class1932);
                 if (method18460 != null) {
-                    return new Class176((Class7909<Class3820>)method18460, method21632.method21627());
+                    return new Class176((Class7909<Item>)method18460, method21632.method21627());
                 }
                 throw Class9508.field40919.create((Object)class1932.toString());
             };

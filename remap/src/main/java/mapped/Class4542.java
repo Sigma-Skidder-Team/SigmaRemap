@@ -50,7 +50,7 @@ public class Class4542 extends Class4535<Class5122>
                                     continue;
                                 }
                             }
-                            final Class7096 method35650 = class1851.method6701(class1853.add(j, i, k));
+                            final BlockState method35650 = class1851.method6701(class1853.add(j, i, k));
                             final Class3833 method35651 = method35650.method21696();
                             Label_0447: {
                                 if (!method35650.method21706()) {
@@ -66,7 +66,7 @@ public class Class4542 extends Class4535<Class5122>
                             }
                             if (i != 0) {
                                 if (method35649 > 1) {
-                                    final Class7096 method35652 = class1851.method6701(class1853.add(j, -i, k));
+                                    final BlockState method35652 = class1851.method6701(class1853.add(j, -i, k));
                                     final Class3833 method35653 = method35652.method21696();
                                     if (!method35652.method21706()) {
                                         if (!Class4535.method13533(method35653)) {
@@ -103,7 +103,7 @@ public class Class4542 extends Class4535<Class5122>
                         }
                     }
                     while (class1855.getY() > 50) {
-                        final Class7096 method35654 = class1851.method6701(class1855);
+                        final BlockState method35654 = class1851.method6701(class1855);
                         final Class3833 method35655 = method35654.method21696();
                         if (!method35654.method21706()) {
                             if (!Class4535.method13533(method35655)) {

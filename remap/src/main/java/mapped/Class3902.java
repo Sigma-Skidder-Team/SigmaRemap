@@ -18,7 +18,7 @@ public class Class3902 extends Class3892
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
+    public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         return method12002(class7097, class7098, method12003(class7096).getOpposite());
     }
     
@@ -29,14 +29,14 @@ public class Class3902 extends Class3892
     
     @Nullable
     @Override
-    public Class7096 method11846(final Class7074 class7074) {
+    public BlockState method11846(final Class7074 class7074) {
         for (final Direction class7075 : class7074.method21643()) {
-            Class7096 class7076;
+            BlockState class7076;
             if (class7075.getAxis() != Axis.Y) {
-                class7076 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.method11878()).method21773(Class3902.field17618, Class107.field333)).method21773((Class7111<Comparable>)Class3902.field17564, class7075.getOpposite());
+                class7076 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.method11878()).method21773(Class3902.field17618, Class107.field333)).method21773((Class7111<Comparable>)Class3902.field17564, class7075.getOpposite());
             }
             else {
-                class7076 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.method11878()).method21773(Class3902.field17618, (class7075 != Direction.UP) ? Class107.field332 : Class107.field334)).method21773((Class7111<Comparable>)Class3902.field17564, class7074.method21644());
+                class7076 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.method11878()).method21773(Class3902.field17618, (class7075 != Direction.UP) ? Class107.field332 : Class107.field334)).method21773((Class7111<Comparable>)Class3902.field17564, class7074.method21644());
             }
             if (class7076.method21752(class7074.method21654(), class7074.method21639())) {
                 return class7076;
@@ -46,11 +46,11 @@ public class Class3902 extends Class3892
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+    public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         return (method12003(class7096).getOpposite() == class7097 && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.method11878() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
-    public static Direction method12003(final Class7096 class7096) {
+    public static Direction method12003(final BlockState class7096) {
         switch (Class9247.field39656[class7096.method21772(Class3902.field17618).ordinal()]) {
             case 1: {
                 return Direction.DOWN;

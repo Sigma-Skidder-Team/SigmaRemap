@@ -84,7 +84,7 @@ public class Class4625 extends Class4611<Class4234>
         });
     }
     
-    public void method13782(final Class513 class513, final Class7096 class514) {
+    public void method13782(final Class513 class513, final BlockState class514) {
         this.method13726(class513.method2957(), class516 -> class516.method12734(class515));
     }
     

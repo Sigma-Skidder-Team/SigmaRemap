@@ -32,7 +32,7 @@ public class Class7464
     private static Class6313 field28837;
     private static final Random field28838;
     
-    public static Class6313 method22995(final Class6313 class6313, final Class7096 class6314) {
+    public static Class6313 method22995(final Class6313 class6313, final BlockState class6314) {
         if (!Class8571.method28862()) {
             return class6313;
         }
@@ -55,7 +55,7 @@ public class Class7464
         return Class7464.field28836;
     }
     
-    public static boolean method22996(final Class7096 class7096, final Class7096 class7097) {
+    public static boolean method22996(final BlockState class7096, final BlockState class7097) {
         return class7096 == class7097 || class7096.method21696() == class7097.method21696();
     }
     

@@ -10,9 +10,9 @@ public enum Class2037 implements Class2038
 {
     field11615(0, 59, 2.0f, 0.0f, 15, () -> Class120.method620(Class7855.field32237)), 
     field11616(1, 131, 4.0f, 1.0f, 5, () -> Class120.method618(Class7521.field29159)), 
-    field11617(2, 250, 6.0f, 2.0f, 14, () -> Class120.method618(Class7739.field31284)), 
-    field11618(3, 1561, 8.0f, 3.0f, 10, () -> Class120.method618(Class7739.field31283)), 
-    field11619(0, 32, 12.0f, 0.0f, 22, () -> Class120.method618(Class7739.field31285));
+    field11617(2, 250, 6.0f, 2.0f, 14, () -> Class120.method618(Items.field31284)),
+    field11618(3, 1561, 8.0f, 3.0f, 10, () -> Class120.method618(Items.field31283)),
+    field11619(0, 32, 12.0f, 0.0f, 22, () -> Class120.method618(Items.field31285));
     
     private final int field11620;
     private final int field11621;

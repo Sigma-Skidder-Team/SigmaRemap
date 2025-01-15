@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
-public class Class4079 extends Class3820
+public class Class4079 extends Item
 {
     private static String[] field18184;
     
@@ -24,7 +24,7 @@ public class Class4079 extends Class3820
             return Class2201.field13402;
         }
         final Class512 method21656 = class7075.method21652();
-        if (!method21654.field10067) {
+        if (!method21654.isRemote) {
             if (method21656 != null) {
                 method12284(method21656, method21654, method21655);
             }

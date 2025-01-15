@@ -63,7 +63,7 @@ public class Class532 extends Class527
         this.field3177 = this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 144 + 5, 98, 20, Class8822.method30773("selectWorld.edit.save", new Object[0]), class654 -> this.method3065()));
         this.method3029(new Class654(this.field3152 / 2 + 2, this.field3153 / 4 + 144 + 5, 98, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3178.accept(false)));
         class654.field3431 = this.field3150.method5243().method25800(this.field3180, "icon.png").isFile();
-        final Class8660 method25791 = this.field3150.method5243().method25791(this.field3180);
+        final WorldInfo method25791 = this.field3150.method5243().method25791(this.field3180);
         (this.field3179 = new Class576(this.field3156, this.field3152 / 2 - 100, 53, 200, 20, Class8822.method30773("selectWorld.enterName", new Object[0]))).method3377((method25791 != null) ? method25791.method29549() : "");
         this.field3179.method3374(s -> this.field3177.field3431 = !s.trim().isEmpty());
         this.field3149.add(this.field3179);

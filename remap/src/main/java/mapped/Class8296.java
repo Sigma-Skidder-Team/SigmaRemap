@@ -76,7 +76,7 @@ public class Class8296
         BlockPos method1139 = new BlockPos(this.field34101, 256.0, this.field34102);
         while (method1139.getY() > 0) {
             method1139 = method1139.method1139();
-            final Class7096 method1140 = class1855.method6701(method1139);
+            final BlockState method1140 = class1855.method6701(method1139);
             if (method1140.method21706()) {
                 continue;
             }

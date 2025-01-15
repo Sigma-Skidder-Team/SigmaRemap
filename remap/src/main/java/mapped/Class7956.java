@@ -15,16 +15,16 @@ import java.util.Random;
 public class Class7956 implements Class7954
 {
     private static String[] field32686;
-    private final Class3820 field32687;
+    private final Item field32687;
     private final int field32688;
     private final int field32689;
     private final int field32690;
     
-    public Class7956(final Class3820 class3820, final int n) {
+    public Class7956(final Item class3820, final int n) {
         this(class3820, n, 12, 1);
     }
     
-    public Class7956(final Class3820 field32687, final int field32688, final int field32689, final int field32690) {
+    public Class7956(final Item field32687, final int field32688, final int field32689, final int field32690) {
         this.field32687 = field32687;
         this.field32688 = field32688;
         this.field32689 = field32689;
@@ -33,7 +33,7 @@ public class Class7956 implements Class7954
     
     @Override
     public Class9017 method25804(final Entity class399, final Random random) {
-        final ItemStack class400 = new ItemStack(Class7739.field31514, this.field32688);
+        final ItemStack class400 = new ItemStack(Items.field31514, this.field32688);
         ItemStack method12255 = new ItemStack(this.field32687);
         if (this.field32687 instanceof Class4054) {
             final ArrayList arrayList = Lists.newArrayList();

@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -145,7 +146,7 @@ public class Class7816 extends Class7814
         if (!Class7816.field32015.field4683.method6701(class399.method1894()).method21723()) {
             final AxisAlignedBB class400 = new AxisAlignedBB(class399.boundingBox.field25073, class399.boundingBox.field25074 - 0.5, class399.boundingBox.field25075, class399.boundingBox.field25076, class399.boundingBox.field25077, class399.boundingBox.field25078);
             for (final BlockPos class401 : method25256(class399)) {
-                final Class7702 method21725 = Class7816.field32015.field4683.method6701(class401).method21725(Class7816.field32015.field4683, class401);
+                final VoxelShape method21725 = Class7816.field32015.field4683.method6701(class401).method21725(Class7816.field32015.field4683, class401);
                 if (!method21725.method24540() && class400.method18502(method21725.method24537().method18500(class401))) {
                     return true;
                 }

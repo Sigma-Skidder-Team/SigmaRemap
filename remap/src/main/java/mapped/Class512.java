@@ -84,7 +84,7 @@ public abstract class Class512 extends LivingEntity
         this.field3035 = this.method2809();
         this.method1864(method2893(field3032));
         this.field3032 = field3032;
-        this.field3008 = new Class3427(this.field3006, !class1847.field10067, this);
+        this.field3008 = new Class3427(this.field3006, !class1847.isRemote, this);
         this.field3009 = this.field3008;
         final BlockPos method6758 = class1847.method6758();
         this.method1730(method6758.getX() + 0.5, method6758.getY() + 1, method6758.getZ() + 0.5, 0.0f, 0.0f);
@@ -99,7 +99,7 @@ public abstract class Class512 extends LivingEntity
             return true;
         }
         if (!this.method2880()) {
-            final ItemStack method2713 = this.method2713();
+            final ItemStack method2713 = this.getHeldItemMainhand();
             return method2713.method27620() || !method2713.method27686(class1847.method6793(), new Class7990(class1847, class1848, false));
         }
         return false;
@@ -147,7 +147,7 @@ public abstract class Class512 extends LivingEntity
             if (this.field3021 > 100) {
                 this.field3021 = 100;
             }
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.world.method6703()) {
                     this.method2849(false, true);
                 }
@@ -155,7 +155,7 @@ public abstract class Class512 extends LivingEntity
         }
         this.method2807();
         super.method1659();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field3009 != null) {
                 if (!this.field3009.method10854(this)) {
                     this.method2814();
@@ -169,7 +169,7 @@ public abstract class Class512 extends LivingEntity
             }
         }
         this.method2810();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.field3010.method33488(this);
             this.method2857(Class8276.field33989);
             if (this.method1768()) {
@@ -182,13 +182,13 @@ public abstract class Class512 extends LivingEntity
                 this.method2857(Class8276.field33991);
             }
         }
-        final double method35654 = MathHelper.method35654(this.getPosX(), -2.9999999E7, 2.9999999E7);
-        final double method35655 = MathHelper.method35654(this.getPosZ(), -2.9999999E7, 2.9999999E7);
+        final double method35654 = MathHelper.clamp(this.getPosX(), -2.9999999E7, 2.9999999E7);
+        final double method35655 = MathHelper.clamp(this.getPosZ(), -2.9999999E7, 2.9999999E7);
         if (method35654 != this.getPosX() || method35655 != this.getPosZ()) {
             this.setPosition(method35654, this.getPosY(), method35655);
         }
         ++this.field2944;
-        final ItemStack method35656 = this.method2713();
+        final ItemStack method35656 = this.getHeldItemMainhand();
         if (!ItemStack.method27643(this.field3034, method35656)) {
             if (!ItemStack.method27646(this.field3034, method35656)) {
                 this.method2905();
@@ -217,7 +217,7 @@ public abstract class Class512 extends LivingEntity
     }
     
     private void method2808() {
-        if (this.method2718(Class2215.field13605).method27622() == Class7739.field31272) {
+        if (this.method2718(Class2215.field13605).getItem() == Items.field31272) {
             if (!this.method1720(Class7324.field28319)) {
                 this.method2655(new Class1948(Class9439.field40486, 200, 0, false, false, true));
             }
@@ -393,7 +393,7 @@ public abstract class Class512 extends LivingEntity
     
     @Override
     public void method1772() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method2805()) {
                 if (this.isPassenger()) {
                     this.stopRiding();
@@ -456,7 +456,7 @@ public abstract class Class512 extends LivingEntity
         this.field3012 = this.field3013;
         super.method2736();
         final Class7619 method2710 = this.method2710(Class8107.field33408);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             method2710.method23941(this.field3025.method21427());
         }
         this.field2955 = 0.02f;
@@ -469,7 +469,7 @@ public abstract class Class512 extends LivingEntity
             if (this.onGround) {
                 if (this.method2664() > 0.0f) {
                     if (!this.method1817()) {
-                        min = Math.min(0.1f, MathHelper.sqrt(Entity.method1680(this.getMotion())));
+                        min = Math.min(0.1f, MathHelper.sqrt(Entity.horizontalMag(this.getMotion())));
                         break Label_0290;
                     }
                 }
@@ -481,10 +481,10 @@ public abstract class Class512 extends LivingEntity
             if (!this.isSpectator()) {
                 AxisAlignedBB class6221;
                 if (this.isPassenger() && !this.method1920().removed) {
-                    class6221 = this.method1886().method18498(this.method1920().method1886()).method18495(1.0, 0.0, 1.0);
+                    class6221 = this.getBoundingBox().method18498(this.method1920().getBoundingBox()).method18495(1.0, 0.0, 1.0);
                 }
                 else {
-                    class6221 = this.method1886().method18495(1.0, 0.5, 1.0);
+                    class6221 = this.getBoundingBox().method18495(1.0, 0.5, 1.0);
                 }
                 final List<Entity> method2711 = this.world.method7127(this, class6221);
                 for (int i = 0; i < method2711.size(); ++i) {
@@ -498,7 +498,7 @@ public abstract class Class512 extends LivingEntity
         this.method2815(this.method2899());
         this.method2815(this.method2901());
         Label_0355: {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.fallDistance > 0.5f) {
                     break Label_0355;
                 }
@@ -633,7 +633,7 @@ public abstract class Class512 extends LivingEntity
         float method2366 = this.field3006.method2366(class7096);
         if (method2366 > 1.0f) {
             final int method2367 = Class8742.method30211(this);
-            final ItemStack method2368 = this.method2713();
+            final ItemStack method2368 = this.getHeldItemMainhand();
             if (method2367 > 0 && !method2368.method27620()) {
                 method2366 += method2367 * method2367 + 1;
             }
@@ -785,7 +785,7 @@ public abstract class Class512 extends LivingEntity
     @Override
     public void method2666(final LivingEntity class511) {
         super.method2666(class511);
-        if (class511.method2713().method27622() instanceof Class4075) {
+        if (class511.getHeldItemMainhand().getItem() instanceof Class4075) {
             this.method2838(true);
         }
     }
@@ -804,7 +804,7 @@ public abstract class Class512 extends LivingEntity
     @Override
     public void method2695(final float n) {
         if (n >= 3.0f) {
-            if (this.field2987.method27622() == Class7739.field31583) {
+            if (this.field2987.getItem() == Items.field31583) {
                 final int n2 = 1 + MathHelper.method35642(n);
                 final Class316 method2757 = this.method2757();
                 this.field2987.method27636(n2, this, class317 -> class317.method2795(class316));
@@ -816,7 +816,7 @@ public abstract class Class512 extends LivingEntity
                         this.method1803(Class2215.field13600, ItemStack.field34174);
                     }
                     this.field2987 = ItemStack.field34174;
-                    this.method1695(Class8520.field35546, 0.8f, 0.8f + this.world.field10062.nextFloat() * 0.4f);
+                    this.method1695(Class8520.field35546, 0.8f, 0.8f + this.world.rand.nextFloat() * 0.4f);
                 }
             }
         }
@@ -944,7 +944,7 @@ public abstract class Class512 extends LivingEntity
             double field22770 = class5487.x;
             double field22771 = class5487.z;
             while (field22770 != 0.0) {
-                if (!this.world.method6978(this, this.method1886().method18499(field22770, -this.stepHeight, 0.0))) {
+                if (!this.world.method6978(this, this.getBoundingBox().method18499(field22770, -this.stepHeight, 0.0))) {
                     break;
                 }
                 if (field22770 < 0.05 && field22770 >= -0.05) {
@@ -958,7 +958,7 @@ public abstract class Class512 extends LivingEntity
                 }
             }
             while (field22771 != 0.0) {
-                if (!this.world.method6978(this, this.method1886().method18499(0.0, -this.stepHeight, field22771))) {
+                if (!this.world.method6978(this, this.getBoundingBox().method18499(0.0, -this.stepHeight, field22771))) {
                     break;
                 }
                 if (field22771 < 0.05 && field22771 >= -0.05) {
@@ -975,7 +975,7 @@ public abstract class Class512 extends LivingEntity
                 if (field22771 == 0.0) {
                     break;
                 }
-                if (!this.world.method6978(this, this.method1886().method18499(field22770, -this.stepHeight, field22771))) {
+                if (!this.world.method6978(this, this.getBoundingBox().method18499(field22770, -this.stepHeight, field22771))) {
                     break;
                 }
                 if (field22770 < 0.05 && field22770 >= -0.05) {
@@ -1009,10 +1009,10 @@ public abstract class Class512 extends LivingEntity
                 final float n = (float)this.method2710(Class8107.field33410).method23950();
                 float n2;
                 if (!(class399 instanceof LivingEntity)) {
-                    n2 = Class8742.method30202(this.method2713(), Class6363.field25460);
+                    n2 = Class8742.method30202(this.getHeldItemMainhand(), Class6363.field25460);
                 }
                 else {
-                    n2 = Class8742.method30202(this.method2713(), ((LivingEntity)class399).method2712());
+                    n2 = Class8742.method30202(this.getHeldItemMainhand(), ((LivingEntity)class399).method2712());
                 }
                 final float method2904 = this.method2904(0.5f);
                 float n3 = n * (0.2f + method2904 * method2904 * 0.8f);
@@ -1063,7 +1063,7 @@ public abstract class Class512 extends LivingEntity
                             if (!b2) {
                                 if (this.onGround) {
                                     if (n7 < this.method2732()) {
-                                        if (this.method2715(Class316.field1877).method27622() instanceof Class4077) {
+                                        if (this.method2715(Class316.field1877).getItem() instanceof Class4077) {
                                             b5 = true;
                                         }
                                     }
@@ -1103,7 +1103,7 @@ public abstract class Class512 extends LivingEntity
                         }
                         if (b5) {
                             final float n9 = 1.0f + Class8742.method30203(this) * n6;
-                            for (final LivingEntity class400 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, class399.method1886().method18495(1.0, 0.25, 1.0))) {
+                            for (final LivingEntity class400 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, class399.getBoundingBox().method18495(1.0, 0.25, 1.0))) {
                                 if (class400 == this) {
                                     continue;
                                 }
@@ -1154,12 +1154,12 @@ public abstract class Class512 extends LivingEntity
                             Class8742.method30204((LivingEntity)class399, this);
                         }
                         Class8742.method30205(this, class399);
-                        final ItemStack method2908 = this.method2713();
+                        final ItemStack method2908 = this.getHeldItemMainhand();
                         Entity field4594 = class399;
                         if (class399 instanceof Class859) {
                             field4594 = ((Class859)class399).field4594;
                         }
-                        if (!this.world.field10067) {
+                        if (!this.world.isRemote) {
                             if (!method2908.method27620()) {
                                 if (field4594 instanceof LivingEntity) {
                                     method2908.method27637((LivingEntity)field4594, this);
@@ -1199,7 +1199,7 @@ public abstract class Class512 extends LivingEntity
             n += 0.75f;
         }
         if (this.rand.nextFloat() < n) {
-            this.method2906().method25772(Class7739.field31583, 100);
+            this.method2906().method25772(Items.field31583, 100);
             this.method2770();
             this.world.method6761(this, (byte)30);
         }
@@ -1241,7 +1241,7 @@ public abstract class Class512 extends LivingEntity
     
     public Either<Class2048, Class315> method2845(final BlockPos class354) {
         final Direction class355 = this.world.method6701(class354).method21772((Class7111<Direction>)Class3892.field17564);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method2783() || !this.method1768()) {
                 return (Either<Class2048, Class315>)Either.left((Object)Class2048.field11672);
             }
@@ -1572,7 +1572,7 @@ public abstract class Class512 extends LivingEntity
             if (!this.method2773()) {
                 if (!this.method1706()) {
                     final ItemStack method2718 = this.method2718(Class2215.field13604);
-                    if (method2718.method27622() == Class7739.field31584) {
+                    if (method2718.getItem() == Items.field31584) {
                         if (Class4080.method12285(method2718)) {
                             this.method2869();
                             return true;
@@ -1679,7 +1679,7 @@ public abstract class Class512 extends LivingEntity
     
     public void method2876(final float n) {
         if (!this.field3025.field27301) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.field3010.method33493(n);
             }
         }
@@ -1789,7 +1789,7 @@ public abstract class Class512 extends LivingEntity
     
     @Override
     public Iterable<ItemStack> method1800() {
-        return Lists.newArrayList((Object[])new ItemStack[] { this.method2713(), this.method2714() });
+        return Lists.newArrayList((Object[])new ItemStack[] { this.getHeldItemMainhand(), this.method2714() });
     }
     
     @Override
@@ -1828,7 +1828,7 @@ public abstract class Class512 extends LivingEntity
     }
     
     private void method2888(final Class51 class51) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!class51.method331()) {
                 EntityType.method23373(class51, this.world).ifPresent(class52 -> {
                     if (!(!(class52 instanceof Class794))) {
@@ -1974,7 +1974,7 @@ public abstract class Class512 extends LivingEntity
         }
         if (class8322 != null) {
             if (!class8321.method27620()) {
-                if (!(class8321.method27622() instanceof Class4055) && !(class8321.method27622() instanceof Class4080)) {
+                if (!(class8321.getItem() instanceof Class4055) && !(class8321.getItem() instanceof Class4080)) {
                     if (class8322 != Class2215.field13605) {
                         return false;
                     }
@@ -2068,28 +2068,28 @@ public abstract class Class512 extends LivingEntity
     
     @Override
     public ItemStack method2790(final ItemStack class8321) {
-        if (!(class8321.method27622() instanceof Class4085)) {
+        if (!(class8321.getItem() instanceof Class4085)) {
             return ItemStack.field34174;
         }
-        final ItemStack method12291 = Class4085.method12291(this, ((Class4085)class8321.method27622()).method12289());
+        final ItemStack method12291 = Class4085.method12291(this, ((Class4085)class8321.getItem()).method12289());
         if (method12291.method27620()) {
-            final Predicate<ItemStack> method12292 = ((Class4085)class8321.method27622()).method12290();
+            final Predicate<ItemStack> method12292 = ((Class4085)class8321.getItem()).method12290();
             for (int i = 0; i < this.field3006.method2239(); ++i) {
                 final ItemStack method12293 = this.field3006.method2157(i);
                 if (method12292.test(method12293)) {
                     return method12293;
                 }
             }
-            return this.field3025.field27304 ? new ItemStack(Class7739.field31280) : ItemStack.field34174;
+            return this.field3025.field27304 ? new ItemStack(Items.field31280) : ItemStack.field34174;
         }
         return method12291;
     }
     
     @Override
     public ItemStack method2791(final World class1847, final ItemStack class1848) {
-        this.method2877().method33487(class1848.method27622(), class1848);
-        this.method2859(Class8276.field33981.method8449(class1848.method27622()));
-        class1847.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35479, Class286.field1585, 0.5f, class1847.field10062.nextFloat() * 0.1f + 0.9f);
+        this.method2877().method33487(class1848.getItem(), class1848);
+        this.method2859(Class8276.field33981.method8449(class1848.getItem()));
+        class1847.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35479, Class286.field1585, 0.5f, class1847.rand.nextFloat() * 0.1f + 0.9f);
         if (this instanceof Class513) {
             Class7770.field31800.method13819((Class513)this, class1848);
         }

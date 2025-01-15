@@ -61,7 +61,7 @@ public class Class8269
     }
     
     public static double method27471(final double n, final double n2, final double n3) {
-        return MathHelper.method35654(n, n2, n3);
+        return MathHelper.clamp(n, n2, n3);
     }
     
     public static int method27472(final String s, final int n) {

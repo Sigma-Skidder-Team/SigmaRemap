@@ -11,7 +11,7 @@ import java.util.Random;
 
 public interface Class6313 extends Class6314
 {
-    List<Class8754> method18691(final Class7096 p0, final Direction p1, final Random p2);
+    List<Class8754> method18691(final BlockState p0, final Direction p1, final Random p2);
     
     boolean method18692();
     

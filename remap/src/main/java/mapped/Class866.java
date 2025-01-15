@@ -37,6 +37,6 @@ public class Class866 extends Class865
     
     @Override
     public Class7492 method5223() {
-        return new Class7492(this, this.field4618.method1934(), this.field4618.method1792(), this.method5216(), 2, this.method5214().getString(), this.field4618.getDisplayName(), this.method5216().method6679(), this.field4618);
+        return new Class7492(this, this.field4618.method1934(), this.field4618.method1792(), this.method5216(), 2, this.method5214().getString(), this.field4618.getDisplayName(), this.method5216().getServer(), this.field4618);
     }
 }

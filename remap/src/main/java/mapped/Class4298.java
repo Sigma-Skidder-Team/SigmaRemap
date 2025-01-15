@@ -49,7 +49,7 @@ public class Class4298 implements IPacket<IClientPlayNetHandler>
         this.field19273 = Lists.newArrayList();
         for (final Map.Entry<BlockPos, V> entry2 : class1862.method7066().entrySet()) {
             final BlockPos class1863 = entry2.getKey();
-            final Class436 class1864 = (Class436)entry2.getValue();
+            final TileEntity class1864 = (TileEntity)entry2.getValue();
             final int n2 = class1863.getY() >> 4;
             if (!this.method12912() && (n & 1 << n2) == 0x0) {
                 continue;

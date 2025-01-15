@@ -103,7 +103,7 @@ public class Class803 extends Class789
     
     @Override
     public void method2736() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method1768()) {
                 if (this.method2749()) {
                     ++this.field4325;
@@ -152,7 +152,7 @@ public class Class803 extends Class789
     }
     
     private boolean method4647(final ItemStack class8321) {
-        if (class8321.method27622().method11743()) {
+        if (class8321.getItem().method11743()) {
             if (this.method4152() == null) {
                 if (this.onGround) {
                     if (!this.method2783()) {
@@ -174,26 +174,26 @@ public class Class803 extends Class789
                     if (nextFloat >= 0.4f) {
                         if (nextFloat >= 0.6f) {
                             if (nextFloat >= 0.8f) {
-                                class9593 = new ItemStack(Class7739.field31307);
+                                class9593 = new ItemStack(Items.field31307);
                             }
                             else {
-                                class9593 = new ItemStack(Class7739.field31357);
+                                class9593 = new ItemStack(Items.field31357);
                             }
                         }
                         else {
-                            class9593 = new ItemStack(Class7739.field31315);
+                            class9593 = new ItemStack(Items.field31315);
                         }
                     }
                     else {
-                        class9593 = (this.rand.nextBoolean() ? new ItemStack(Class7739.field31544) : new ItemStack(Class7739.field31545));
+                        class9593 = (this.rand.nextBoolean() ? new ItemStack(Items.field31544) : new ItemStack(Items.field31545));
                     }
                 }
                 else {
-                    class9593 = new ItemStack(Class7739.field31374);
+                    class9593 = new ItemStack(Items.field31374);
                 }
             }
             else {
-                class9593 = new ItemStack(Class7739.field31514);
+                class9593 = new ItemStack(Items.field31514);
             }
             this.method1803(Class2215.field13600, class9593);
         }
@@ -389,12 +389,12 @@ public class Class803 extends Class789
     
     @Override
     public boolean method4167(final ItemStack class8321) {
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         final ItemStack method27623 = this.method2718(Class2215.field13600);
         if (!method27623.method27620()) {
             if (this.field4325 > 0) {
                 if (method27622.method11743()) {
-                    if (!method27623.method27622().method11743()) {
+                    if (!method27623.getItem().method11743()) {
                         return true;
                     }
                 }
@@ -406,7 +406,7 @@ public class Class803 extends Class789
     
     private void method4663(final ItemStack class8321) {
         if (!class8321.method27620()) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 final Class427 class8322 = new Class427(this.world, this.getPosX() + this.method1791().x, this.getPosY() + 1.0, this.getPosZ() + this.method1791().z, class8321);
                 class8322.method2117(40);
                 class8322.method2112(this.method1865());
@@ -456,7 +456,7 @@ public class Class803 extends Class789
                 this.method4655(false);
             }
             if (this.method4656()) {
-                if (this.world.field10062.nextFloat() < 0.2f) {
+                if (this.world.rand.nextFloat() < 0.2f) {
                     final BlockPos class354 = new BlockPos(this);
                     this.world.method6955(2001, class354, Class3833.method11774(this.world.method6701(class354)));
                 }
@@ -483,7 +483,7 @@ public class Class803 extends Class789
     
     @Override
     public boolean method4357(final ItemStack class8321) {
-        return class8321.method27622() == Class7739.field31630;
+        return class8321.getItem() == Items.field31630;
     }
     
     @Override
@@ -584,7 +584,7 @@ public class Class803 extends Class789
         if (!this.method2783()) {
             if (!this.world.method6703()) {
                 if (this.rand.nextFloat() < 0.1f) {
-                    if (this.world.method6739((Class<? extends Entity>)Class512.class, this.method1886().method18495(16.0, 16.0, 16.0), (Predicate<? super Entity>)Class9170.field38850).isEmpty()) {
+                    if (this.world.method6739((Class<? extends Entity>)Class512.class, this.getBoundingBox().method18495(16.0, 16.0, 16.0), (Predicate<? super Entity>)Class9170.field38850).isEmpty()) {
                         return Class8520.field35208;
                     }
                 }

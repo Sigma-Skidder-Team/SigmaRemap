@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.stream.Collector;
 import javax.annotation.Nullable;
@@ -21,11 +23,11 @@ public class Class4006 extends Class3833
     public static final Class7113 field18058;
     public static final Class7113 field18059;
     public static final Map<Direction, Class7113> field18060;
-    public static final Class7702 field18061;
-    public static final Class7702 field18062;
-    public static final Class7702 field18063;
-    public static final Class7702 field18064;
-    public static final Class7702 field18065;
+    public static final VoxelShape field18061;
+    public static final VoxelShape field18062;
+    public static final VoxelShape field18063;
+    public static final VoxelShape field18064;
+    public static final VoxelShape field18065;
     
     public Class4006(final Class9288 class9288) {
         super(class9288);
@@ -33,8 +35,8 @@ public class Class4006 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        Class7702 class7100 = Class7698.method24486();
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        VoxelShape class7100 = Class7698.method24486();
         if (class7096.method21772((Class7111<Boolean>)Class4006.field18055)) {
             class7100 = Class7698.method24492(class7100, Class4006.field18061);
         }
@@ -129,7 +131,7 @@ public class Class4006 extends Class3833
     public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         final Class7096 method12177 = this.method12177(class7096, class7097, class7098);
         if (method12177 == class7096) {
-            if (class7097.field10062.nextInt(4) == 0) {
+            if (class7097.rand.nextInt(4) == 0) {
                 final Direction method12178 = Direction.random(random);
                 final BlockPos method12179 = class7098.method1137();
                 if (method12178.getAxis().isHorizontal() && !class7096.method21772((Class7111<Boolean>)method12181(method12178))) {
@@ -171,7 +173,7 @@ public class Class4006 extends Class3833
                                         }
                                     }
                                 }
-                                if (class7097.field10062.nextFloat() < 0.05) {
+                                if (class7097.rand.nextFloat() < 0.05) {
                                     if (method12176(class7097, method12180.method1137(), Direction.UP)) {
                                         class7097.method6688(method12180, ((Class7097<O, Class7096>)this.method11878()).method21773((Class7111<Comparable>)Class4006.field18055, true), 2);
                                     }

@@ -7,15 +7,17 @@ package mapped;
 import java.util.function.Predicate;
 import com.google.common.base.Predicates;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 public class Class3964 extends Class3833
 {
     public static final Class7115 field17908;
     public static final Class7113 field17909;
-    public static final Class7702 field17910;
-    public static final Class7702 field17911;
-    public static final Class7702 field17912;
+    public static final VoxelShape field17910;
+    public static final VoxelShape field17911;
+    public static final VoxelShape field17912;
     private static Class8691 field17913;
     
     public Class3964(final Class9288 class9288) {
@@ -29,7 +31,7 @@ public class Class3964 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return class7096.method21772((Class7111<Boolean>)Class3964.field17909) ? Class3964.field17912 : Class3964.field17910;
     }
     

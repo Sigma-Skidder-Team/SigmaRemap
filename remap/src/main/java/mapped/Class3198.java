@@ -76,8 +76,8 @@ public class Class3198 extends Class3167
             ++this.field15614;
             if (this.field15614 != 1) {
                 if (this.field15614 > 1) {
-                    if (Class3198.field15514.field4684.method2715(Class316.field1877).method27622() != Class7739.field31341) {
-                        if (Class3198.field15514.field4684.method2715(Class316.field1877).method27622() != Class7739.field31342) {
+                    if (Class3198.field15514.field4684.method2715(Class316.field1877).getItem() != Items.field31341) {
+                        if (Class3198.field15514.field4684.method2715(Class316.field1877).getItem() != Items.field31342) {
                             Class3198.field15514.field4684.field3006.field2743 = this.field15615;
                             this.field15615 = -1;
                             this.field15614 = -1;

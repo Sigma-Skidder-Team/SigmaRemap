@@ -94,7 +94,7 @@ public class Class9379
                 for (int j = method35646; j < method35647; ++j) {
                     for (int k = method35648; k < method35649; ++k) {
                         method35650.method1300(i, j, k);
-                        final Class7096 method35651 = Class9379.field40212.field4683.method6701(method35650);
+                        final BlockState method35651 = Class9379.field40212.field4683.method6701(method35650);
                         method35651.method21696();
                         if (method35651.method21697() == class6222) {
                             return true;
@@ -119,7 +119,7 @@ public class Class9379
     }
     
     public static boolean method34828() {
-        return method34824(Class9379.field40212.field4684.method1886().method18494(0.0, -0.4000000059604645, 0.0).method18492(0.001, 0.001, 0.001), Class8059.field33161);
+        return method34824(Class9379.field40212.field4684.getBoundingBox().method18494(0.0, -0.4000000059604645, 0.0).method18492(0.001, 0.001, 0.001), Class8059.field33161);
     }
     
     static {

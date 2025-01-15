@@ -11,6 +11,7 @@ import com.google.common.collect.Sets;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Class4651 extends Class4654
 {
@@ -36,7 +37,7 @@ public class Class4651 extends Class4654
             if (this.method13927() && this.field20141.method1706()) {
                 n = MathHelper.floor(this.field20141.getPosY());
                 final Mutable class385 = new Mutable(this.field20141.getPosX(), n, this.field20141.getPosZ());
-                for (Class7096 class386 = this.field20140.method6701(class385); class386.method21696() == Class7521.field29173 || class386.method21756() == Class7558.field29976.method22177(false); class386 = this.field20140.method6701(class385)) {
+                for (BlockState class386 = this.field20140.method6701(class385); class386.method21696() == Class7521.field29173 || class386.method21756() == Class7558.field29976.method22177(false); class386 = this.field20140.method6701(class385)) {
                     ++n;
                     class385.method1286(this.field20141.getPosX(), n, this.field20141.getPosZ());
                 }
@@ -60,10 +61,10 @@ public class Class4651 extends Class4654
         final BlockPos class387 = new BlockPos(this.field20141);
         if (this.field20141.method4144(this.method13912(this.field20141, class387.getX(), n, class387.getZ())) < 0.0f) {
             final HashSet hashSet = Sets.newHashSet();
-            hashSet.add(new BlockPos(this.field20141.method1886().field25073, n, this.field20141.method1886().field25075));
-            hashSet.add(new BlockPos(this.field20141.method1886().field25073, n, this.field20141.method1886().field25078));
-            hashSet.add(new BlockPos(this.field20141.method1886().field25076, n, this.field20141.method1886().field25075));
-            hashSet.add(new BlockPos(this.field20141.method1886().field25076, n, this.field20141.method1886().field25078));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25073, n, this.field20141.getBoundingBox().field25075));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25073, n, this.field20141.getBoundingBox().field25078));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25076, n, this.field20141.getBoundingBox().field25075));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25076, n, this.field20141.getBoundingBox().field25078));
             for (final BlockPos class388 : hashSet) {
                 if (this.field20141.method4144(this.method13911(this.field20141, class388)) < 0.0f) {
                     continue;
@@ -169,7 +170,7 @@ public class Class4651 extends Class4654
     
     public static double method13906(final Class1855 class1855, final BlockPos class1856) {
         final BlockPos method1139 = class1856.method1139();
-        final Class7702 method1140 = class1855.method6701(method1139).method21727(class1855, method1139);
+        final VoxelShape method1140 = class1855.method6701(method1139).method21727(class1855, method1139);
         return method1139.getY() + (method1140.method24540() ? 0.0 : method1140.method24536(Axis.Y));
     }
     
@@ -427,7 +428,7 @@ public class Class4651 extends Class4654
     
     public static Class257 method13916(final Class1855 class1855, final int n, final int n2, final int n3) {
         final BlockPos class1856 = new BlockPos(n, n2, n3);
-        final Class7096 method6701 = class1855.method6701(class1856);
+        final BlockState method6701 = class1855.method6701(class1856);
         final Class3833 method6702 = method6701.method21696();
         final Class8059 method6703 = method6701.method21697();
         if (method6701.method21706()) {

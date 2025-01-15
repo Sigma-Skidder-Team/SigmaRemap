@@ -20,7 +20,7 @@ public class Class6697 extends Class6693
             throw new Class2332();
         }
         final ItemStack method2345 = Class6697.field26420.field4684.field3006.method2345();
-        if (method2345.method27622() instanceof Class4036 && ((Class4036)method2345.method27622()).method12240() instanceof Class3841) {
+        if (method2345.getItem() instanceof Class4036 && ((Class4036)method2345.getItem()).method12240() instanceof Class3841) {
             method20353(method2345);
             class6428.method19104("Now peeking shulker");
             return;
@@ -33,7 +33,7 @@ public class Class6697 extends Class6693
         if (class8321.method27657() != null) {
             method333 = class8321.method27657().method333();
         }
-        final Class2265<ItemStack> class8324 = Class2265.method8507(27, new ItemStack(Class7739.field30754));
+        final Class2265<ItemStack> class8324 = Class2265.method8507(27, new ItemStack(Items.AIR));
         if (method333 != null) {
             if (method333.method315("BlockEntityTag")) {
                 final Class51 method335 = method333.method327("BlockEntityTag");

@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class4063 extends Class3820
+public class Class4063 extends Item
 {
     public Class4063(final Class8959 class8959) {
         super(class8959);
@@ -24,7 +24,7 @@ public class Class4063 extends Class3820
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final World method21654 = class7075.method21654();
-        if (!method21654.field10067) {
+        if (!method21654.isRemote) {
             final ItemStack method21655 = class7075.method21651();
             final Vec3d method21656 = class7075.method21649();
             final Direction method21657 = class7075.method21648();
@@ -40,7 +40,7 @@ public class Class4063 extends Class3820
             return Class9355.method34676(class1848.method2715(class1849));
         }
         final ItemStack method2715 = class1848.method2715(class1849);
-        if (!class1847.field10067) {
+        if (!class1847.isRemote) {
             class1847.method6886(new Class406(class1847, method2715, class1848));
             if (!class1848.field3025.field27304) {
                 method2715.method27693(1);

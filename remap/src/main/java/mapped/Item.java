@@ -21,9 +21,9 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.Map;
 
-public class Class3820 implements Class3832
+public class Item implements Class3832
 {
-    public static final Map<Class3833, Class3820> field17355;
+    public static final Map<Class3833, Item> field17355;
     private static final Class8967 field17356;
     private static final Class8967 field17357;
     private static final Class8967 field17358;
@@ -37,28 +37,28 @@ public class Class3820 implements Class3832
     private final Class1998 field17366;
     private final int field17367;
     private final int field17368;
-    private final Class3820 field17369;
+    private final Item field17369;
     private String field17370;
     private final Class9082 field17371;
     
-    public static int method11696(final Class3820 class3820) {
+    public static int method11696(final Item class3820) {
         return (class3820 != null) ? Class90.field211.method504(class3820) : 0;
     }
     
-    public static Class3820 method11697(final int n) {
+    public static Item method11697(final int n) {
         return Class90.field211.method499(n);
     }
     
     @Deprecated
-    public static Class3820 method11698(final Class3833 key) {
-        return Class3820.field17355.getOrDefault(key, Class7739.field30754);
+    public static Item method11698(final Class3833 key) {
+        return Item.field17355.getOrDefault(key, Items.AIR);
     }
     
-    public Class3820(final Class8959 class8959) {
+    public Item(final Class8959 class8959) {
         this.field17364 = Maps.newHashMap();
-        this.method11705(new Class1932("lefthanded"), Class3820.field17358);
-        this.method11705(new Class1932("cooldown"), Class3820.field17359);
-        this.method11705(new Class1932("custom_model_data"), Class3820.field17360);
+        this.method11705(new Class1932("lefthanded"), Item.field17358);
+        this.method11705(new Class1932("cooldown"), Item.field17359);
+        this.method11705(new Class1932("custom_model_data"), Item.field17360);
         this.field17365 = Class8959.method31788(class8959);
         this.field17366 = Class8959.method31789(class8959);
         this.field17369 = Class8959.method31790(class8959);
@@ -66,8 +66,8 @@ public class Class3820 implements Class3832
         this.field17367 = Class8959.method31792(class8959);
         this.field17371 = Class8959.method31793(class8959);
         if (this.field17368 > 0) {
-            this.method11705(new Class1932("damaged"), Class3820.field17356);
-            this.method11705(new Class1932("damage"), Class3820.field17357);
+            this.method11705(new Class1932("damaged"), Item.field17356);
+            this.method11705(new Class1932("damage"), Item.field17357);
         }
     }
     
@@ -87,12 +87,12 @@ public class Class3820 implements Class3832
         return false;
     }
     
-    public boolean method11703(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
         return true;
     }
     
     @Override
-    public Class3820 method11704() {
+    public Item method11704() {
         return this;
     }
     
@@ -104,7 +104,7 @@ public class Class3820 implements Class3832
         return Class2201.field13402;
     }
     
-    public float method11706(final ItemStack class8321, final Class7096 class8322) {
+    public float method11706(final ItemStack class8321, final BlockState class8322) {
         return 1.0f;
     }
     
@@ -140,11 +140,11 @@ public class Class3820 implements Class3832
         return false;
     }
     
-    public boolean method11712(final ItemStack class8321, final World class8322, final Class7096 class8323, final BlockPos class8324, final LivingEntity class8325) {
+    public boolean method11712(final ItemStack class8321, final World class8322, final BlockState class8323, final BlockPos class8324, final LivingEntity class8325) {
         return false;
     }
     
-    public boolean method11713(final Class7096 class7096) {
+    public boolean method11713(final BlockState class7096) {
         return false;
     }
     
@@ -181,7 +181,7 @@ public class Class3820 implements Class3832
     }
     
     @Nullable
-    public final Class3820 method11720() {
+    public final Item method11720() {
         return this.field17369;
     }
     
@@ -200,11 +200,11 @@ public class Class3820 implements Class3832
     }
     
     public Class1992 method11725(final ItemStack class8321) {
-        return class8321.method27622().method11743() ? Class1992.field11155 : Class1992.field11154;
+        return class8321.getItem().method11743() ? Class1992.field11155 : Class1992.field11154;
     }
     
     public int method11726(final ItemStack class8321) {
-        if (!class8321.method27622().method11743()) {
+        if (!class8321.getItem().method11743()) {
             return 0;
         }
         return this.method11744().method32748() ? 16 : 32;
@@ -285,14 +285,14 @@ public class Class3820 implements Class3832
     }
     
     public boolean method11740(final ItemStack class8321) {
-        return class8321.method27622() == Class7739.field31611;
+        return class8321.getItem() == Items.field31611;
     }
     
     public ItemStack method11741() {
         return new ItemStack(this);
     }
     
-    public boolean method11742(final Class7909<Class3820> class7909) {
+    public boolean method11742(final Class7909<Item> class7909) {
         return class7909.method25618(this);
     }
     
@@ -318,7 +318,7 @@ public class Class3820 implements Class3832
         field17356 = ((class8321, class8322, class8323) -> class8321.method27631() ? 1.0f : 0.0f);
         field17357 = ((class8321, class8322, class8323) -> MathHelper.clamp(class8321.method27632() / (float)class8321.method27634(), 0.0f, 1.0f));
         field17358 = ((class8321, class8322, class8323) -> (class8323 != null && class8323.method2755() != Class2226.field13698) ? 1.0f : 0.0f);
-        field17359 = ((class8321, class8322, class8323) -> (class8323 instanceof Class512) ? ((Class512)class8323).method2906().method25770(class8321.method27622(), 0.0f) : 0.0f);
+        field17359 = ((class8321, class8322, class8323) -> (class8323 instanceof Class512) ? ((Class512)class8323).method2906().method25770(class8321.getItem(), 0.0f) : 0.0f);
         field17360 = ((class8321, class8322, class8323) -> class8321.method27656() ? ((float)class8321.method27657().method319("CustomModelData")) : 0.0f);
         field17361 = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
         field17362 = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");

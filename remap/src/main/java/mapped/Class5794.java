@@ -38,7 +38,7 @@ public class Class5794 extends Class5791
             if (n < 0.0f || n > 10.0f) {
                 final double n2 = method7136.getPosX() - this.field23764.field4535.getPosX();
                 final double n3 = method7136.getPosZ() - this.field23764.field4535.getPosZ();
-                final double method7138 = MathHelper.method35654(MathHelper.method35669(180.0 - MathHelper.method35693(n2, n3) * 57.2957763671875 - this.field23764.rotationYaw), -100.0, 100.0);
+                final double method7138 = MathHelper.clamp(MathHelper.method35669(180.0 - MathHelper.method35693(n2, n3) * 57.2957763671875 - this.field23764.rotationYaw), -100.0, 100.0);
                 final Class852 field23764 = this.field23764;
                 field23764.field4547 *= 0.8f;
                 final float n5;

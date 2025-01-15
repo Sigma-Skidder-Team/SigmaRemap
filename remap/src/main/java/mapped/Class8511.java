@@ -28,8 +28,8 @@ public final class Class8511
         this.field34917 = field34917;
     }
     
-    public Class8511(final Class8660 class8660) {
-        this(class8660.method29534(), class8660.method29564(), class8660.method29565(), class8660.method29568(), class8660.method29570());
+    public Class8511(final WorldInfo class8660) {
+        this(class8660.getSeed(), class8660.method29564(), class8660.method29565(), class8660.method29568(), class8660.method29570());
     }
     
     public Class8511 method28431() {

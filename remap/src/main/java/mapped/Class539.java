@@ -331,9 +331,9 @@ public class Class539 extends Class527
         super.method2975(n, n2, n3);
     }
     
-    public void method3110(final Class8660 class8660) {
+    public void method3110(final WorldInfo class8660) {
         this.field3229 = class8660.method29549();
-        this.field3228 = Long.toString(class8660.method29534());
+        this.field3228 = Long.toString(class8660.getSeed());
         this.field3230 = ((class8660.method29570() != Class9505.field40896) ? class8660.method29570() : Class9505.field40892).method35411();
         this.field3231 = class8660.method29572();
         this.field3211 = class8660.method29565();

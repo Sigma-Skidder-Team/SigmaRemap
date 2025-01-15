@@ -21,7 +21,7 @@ public class Class8011
         if (!class1849.method6765().method31216(Class8878.field37339)) {
             return 0;
         }
-        final Random field10062 = class1849.field10062;
+        final Random field10062 = class1849.rand;
         --this.field32979;
         if (this.field32979 > 0) {
             return 0;

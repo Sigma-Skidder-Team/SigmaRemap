@@ -12,7 +12,7 @@ import net.minecraft.world.dimension.DimensionType;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-public class Class6738 extends Class6737
+public class Class6738 extends Dimension
 {
     public static final BlockPos field26498;
     private final Class8619 field26499;
@@ -74,7 +74,7 @@ public class Class6738 extends Class6737
     public BlockPos method20489(final Class7859 class7859, final boolean b) {
         final Random random = new Random(this.field26492.method6753());
         final BlockPos class7860 = new BlockPos(class7859.method25426() + random.nextInt(15), 0, class7859.method25429() + random.nextInt(15));
-        return this.field26492.method6681(class7860).method21697().method26440() ? class7860 : null;
+        return this.field26492.getGroundAboveSeaLevel(class7860).method21697().method26440() ? class7860 : null;
     }
     
     @Override

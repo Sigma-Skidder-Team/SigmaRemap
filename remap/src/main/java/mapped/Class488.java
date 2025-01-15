@@ -63,7 +63,7 @@ public class Class488 extends Class489 implements Class439
         final boolean method2433 = this.method2433();
         ++this.field2802;
         if (!method2433) {
-            if (!this.field2656.field10067) {
+            if (!this.field2656.isRemote) {
                 final List<Entity> method2434 = this.field2656.method7128((Class<? extends Entity>) Entity.class, new AxisAlignedBB(this.method2193()));
                 if (!method2434.isEmpty()) {
                     this.method2437(((Entity)method2434.get(0)).method1915());
@@ -109,7 +109,7 @@ public class Class488 extends Class489 implements Class439
     }
     
     public void method2436() {
-        if (!this.field2656.field10067) {
+        if (!this.field2656.isRemote) {
             this.field2803 = 40;
             this.field2656.method6763(this.method2193(), this.method2194().method21696(), 1, 0);
             this.method2161();

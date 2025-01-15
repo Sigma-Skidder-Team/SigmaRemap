@@ -17,8 +17,8 @@ import java.util.Map;
 public class Class9342
 {
     public static final Class9342 field40107;
-    private final Class7909<Class3820> field40108;
-    private final Class3820 field40109;
+    private final Class7909<Item> field40108;
+    private final Item field40109;
     private final Class8685 field40110;
     private final Class8685 field40111;
     private final Class9167[] field40112;
@@ -37,7 +37,7 @@ public class Class9342
         this.field40115 = Class7103.field27707;
     }
     
-    public Class9342(final Class7909<Class3820> field40108, final Class3820 field40109, final Class8685 field40110, final Class8685 field40111, final Class9167[] field40112, final Class9167[] field40113, final Class8061 field40114, final Class7103 field40115) {
+    public Class9342(final Class7909<Item> field40108, final Item field40109, final Class8685 field40110, final Class8685 field40111, final Class9167[] field40112, final Class9167[] field40113, final Class8061 field40114, final Class7103 field40115) {
         this.field40108 = field40108;
         this.field40109 = field40109;
         this.field40110 = field40110;
@@ -52,10 +52,10 @@ public class Class9342
         if (this == Class9342.field40107) {
             return true;
         }
-        if (this.field40108 != null && !this.field40108.method25618(class8321.method27622())) {
+        if (this.field40108 != null && !this.field40108.method25618(class8321.getItem())) {
             return false;
         }
-        if (this.field40109 != null && class8321.method27622() != this.field40109) {
+        if (this.field40109 != null && class8321.getItem() != this.field40109) {
             return false;
         }
         if (!this.field40110.method29755(class8321.method27690())) {
@@ -101,14 +101,14 @@ public class Class9342
         final Class8685 method35915 = Class8685.method29756(method35913.get("durability"));
         if (!method35913.has("data")) {
             final Class7103 method35916 = Class7103.method21807(method35913.get("nbt"));
-            Class3820 class3820 = null;
+            Item class3820 = null;
             if (method35913.has("item")) {
                 class3820 = Class90.field211.method506(new Class1932(Class9583.method35895(method35913, "item"))).orElseThrow(() -> {
                     new JsonSyntaxException("Unknown item id '" + obj2 + "'");
                     return;
                 });
             }
-            Class7909<Class3820> method35917 = null;
+            Class7909<Item> method35917 = null;
             if (method35913.has("tag")) {
                 final Class1932 obj = new Class1932(Class9583.method35895(method35913, "tag"));
                 method35917 = Class7855.method25402().method18460(obj);

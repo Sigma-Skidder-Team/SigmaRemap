@@ -141,7 +141,7 @@ public class Class9147
     }
     
     public static boolean method33407(final int n, final int n2, final int n3, final boolean b) {
-        final AxisAlignedBB class6221 = (Class9147.field38775.field4684.method1920() != null) ? Class9147.field38775.field4684.method1920().method1886() : Class9147.field38775.field4684.method1886();
+        final AxisAlignedBB class6221 = (Class9147.field38775.field4684.method1920() != null) ? Class9147.field38775.field4684.method1920().getBoundingBox() : Class9147.field38775.field4684.getBoundingBox();
         return Class9147.field38775.field4683.method6981(Class9147.field38775.field4684, new AxisAlignedBB(n + 0.5f - class6221.method18508() / 2.0, n2, n3 + 0.5f - class6221.method18510() / 2.0, n + 0.5f + class6221.method18508() / 2.0, n2 + class6221.method18509(), n3 + 0.5f + class6221.method18510() / 2.0)).count() == 0L;
     }
     

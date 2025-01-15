@@ -28,7 +28,7 @@ public class Class3296 extends Class3167
             return;
         }
         if (class5744.method17046()) {
-            final boolean b = Class3296.field15514.field4684.method2713() != null && Class3296.field15514.field4684.method2713().method27622() instanceof Class4077;
+            final boolean b = Class3296.field15514.field4684.getHeldItemMainhand() != null && Class3296.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077;
             final boolean method9898 = Class9463.method35173().method35189().method21551(Class3376.class).method9898();
             boolean b2 = true;
             Label_0104: {
@@ -107,7 +107,7 @@ public class Class3296 extends Class3167
                 final Class4402 class5724 = (Class4402)class5723.method16998();
                 if (class5724.method13247() != null) {
                     if (class5724.method13248() == Class3296.field15514.field4684.getEntityId()) {
-                        if (class5724.method13247().method27622() instanceof Class4100) {
+                        if (class5724.method13247().getItem() instanceof Class4100) {
                             class5723.method16961(true);
                         }
                     }
@@ -123,7 +123,7 @@ public class Class3296 extends Class3167
             return;
         }
         final float method16964 = class5716.method16964();
-        if (class5716.method16966() && class5716.method16967() == Class2226.field13697 && class5716.method16968().method27622() instanceof Class4100) {
+        if (class5716.method16966() && class5716.method16967() == Class2226.field13697 && class5716.method16968().getItem() instanceof Class4100) {
             class5716.method16971(false);
             return;
         }

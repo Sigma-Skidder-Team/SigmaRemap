@@ -23,7 +23,7 @@ public abstract class Class4479 extends Class4473
         class51.method298("MST", this.field19869.ordinal());
     }
     
-    public Class7096 method13462() {
+    public BlockState method13462() {
         switch (Class8427.field34588[this.field19869.ordinal()]) {
             default: {
                 return Class7521.field29160.method11878();
@@ -34,7 +34,7 @@ public abstract class Class4479 extends Class4473
         }
     }
     
-    public Class7096 method13463() {
+    public BlockState method13463() {
         switch (Class8427.field34588[this.field19869.ordinal()]) {
             default: {
                 return Class7521.field29336.method11878();

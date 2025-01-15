@@ -96,7 +96,7 @@ public class Class691 extends Class527 implements Class692
         return 115 + 40 * n;
     }
     
-    private void method3861(final int n, final int n2, final Class3820 class3820) {
+    private void method3861(final int n, final int n2, final Item class3820) {
         this.method3862(n + 1, n2 + 1, 0, 0);
         Class8726.method30046();
         this.field3151.method6538(class3820.method11741(), n + 2, n2 + 2);

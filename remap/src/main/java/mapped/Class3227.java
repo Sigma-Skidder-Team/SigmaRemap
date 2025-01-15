@@ -110,7 +110,7 @@ public class Class3227 extends Class3167
             return;
         }
         if (Class3227.field15514.field4684.collided) {
-            Class3227.field15514.field4684.posY = Class3227.field15514.field4684.method1886().field25074;
+            Class3227.field15514.field4684.posY = Class3227.field15514.field4684.getBoundingBox().field25074;
             this.field15691 = Class3227.field15514.field4684.posY;
             this.field15686 = -1;
             return;

@@ -170,7 +170,7 @@ public class Class856 extends Class855
     }
     
     @Override
-    public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
+    public void method1701(final double n, final boolean b, final BlockState class7096, final BlockPos class7097) {
     }
     
     @Override
@@ -181,7 +181,7 @@ public class Class856 extends Class855
     @Override
     public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.method5144()) {
                     this.method5145(false);
                 }

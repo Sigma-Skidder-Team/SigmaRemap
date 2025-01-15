@@ -19,7 +19,7 @@ public class Class5387 implements Class5350<Class6908>
         final Class6165 class6910 = new Class6165(class6909, n, n2, n3, n4, n5, n6, null);
         class6910.method18435(0.3f, 0.5f, 1.0f);
         class6910.method18428(this.field22492);
-        class6910.method18436(1.0f - class6909.field10062.nextFloat() * 0.7f);
+        class6910.method18436(1.0f - class6909.rand.nextFloat() * 0.7f);
         class6910.method18437(class6910.method18438() / 2);
         return class6910;
     }

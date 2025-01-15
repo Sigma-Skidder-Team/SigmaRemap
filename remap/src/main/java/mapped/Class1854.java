@@ -24,7 +24,7 @@ public class Class1854 implements Class1855, Class1853
         final int n = class355.getX() >> 4;
         final int n2 = class355.getZ() >> 4;
         this.field10107 = new Class1860[n - this.field10105 + 1][n2 - this.field10106 + 1];
-        final Class1906 method6762 = field10109.method6762();
+        final AbstractChunkProvider method6762 = field10109.method6762();
         this.field10108 = true;
         for (int i = this.field10105; i <= n; ++i) {
             for (int j = this.field10106; j <= n2; ++j) {
@@ -63,7 +63,7 @@ public class Class1854 implements Class1855, Class1853
     }
     
     @Override
-    public Class9375 method6787() {
+    public WorldBorder method6787() {
         return this.field10109.method6787();
     }
     
@@ -74,12 +74,12 @@ public class Class1854 implements Class1855, Class1853
     
     @Nullable
     @Override
-    public Class436 method6727(final BlockPos class354) {
+    public TileEntity method6727(final BlockPos class354) {
         return this.method6982(class354).method6727(class354);
     }
     
     @Override
-    public Class7096 method6701(final BlockPos class354) {
+    public BlockState method6701(final BlockPos class354) {
         if (!World.method6683(class354)) {
             return this.method6982(class354).method6701(class354);
         }

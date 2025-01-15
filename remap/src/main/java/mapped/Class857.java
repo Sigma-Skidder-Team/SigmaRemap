@@ -290,7 +290,7 @@ public class Class857 extends LivingEntity
     
     @Override
     public void method2739() {
-        final List<Entity> method6737 = this.world.method6737(this, this.method1886(), Class857.field4578);
+        final List<Entity> method6737 = this.world.method6737(this, this.getBoundingBox(), Class857.field4578);
         for (int i = 0; i < method6737.size(); ++i) {
             final Entity class399 = method6737.get(i);
             if (this.method1734(class399) <= 0.2) {
@@ -302,13 +302,13 @@ public class Class857 extends LivingEntity
     @Override
     public Class2201 method1898(final Class512 class512, final Vec3d class513, final Class316 class514) {
         final ItemStack method2715 = class512.method2715(class514);
-        if (this.method5166() || method2715.method27622() == Class7739.field31552) {
+        if (this.method5166() || method2715.getItem() == Items.field31552) {
             return Class2201.field13402;
         }
         if (class512.isSpectator()) {
             return Class2201.field13400;
         }
-        if (!class512.world.field10067) {
+        if (!class512.world.isRemote) {
             final Class2215 method2716 = Class759.method4185(method2715);
             if (!method2715.method27620()) {
                 if (this.method5152(method2716)) {
@@ -412,7 +412,7 @@ public class Class857 extends LivingEntity
     
     @Override
     public boolean attackEntityFrom(final DamageSource obj, final float n) {
-        if (this.world.field10067 || this.removed) {
+        if (this.world.isRemote || this.removed) {
             return false;
         }
         if (!DamageSource.field32574.equals(obj)) {
@@ -476,7 +476,7 @@ public class Class857 extends LivingEntity
         if (b != 32) {
             super.method1798(b);
         }
-        else if (this.world.field10067) {
+        else if (this.world.isRemote) {
             this.world.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field34989, this.method1922(), 0.3f, 1.0f, false);
             this.field4582 = this.world.method6754();
         }
@@ -484,7 +484,7 @@ public class Class857 extends LivingEntity
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.method1886().method18507() * 4.0;
+        double v = this.getBoundingBox().method18507() * 4.0;
         if (Double.isNaN(v) || v == 0.0) {
             v = 4.0;
         }
@@ -510,7 +510,7 @@ public class Class857 extends LivingEntity
     }
     
     private void method5156(final DamageSource class7929) {
-        Class3833.method11839(this.world, new BlockPos(this), new ItemStack(Class7739.field31546));
+        Class3833.method11839(this.world, new BlockPos(this), new ItemStack(Items.field31546));
         this.method5157(class7929);
     }
     

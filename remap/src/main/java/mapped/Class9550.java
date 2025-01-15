@@ -20,7 +20,7 @@ public class Class9550
     public World field41130;
     public Class6092 field41131;
     public Class7006 field41132;
-    public Class436 field41133;
+    public TileEntity field41133;
     
     private Class9550() {
         this.field41125 = Maps.newHashMap();
@@ -28,12 +28,12 @@ public class Class9550
         this.method35723(Class5412.field22548, new Class4159(this));
         this.method35723(Class5412.field22549, new Class4157(this));
         this.method35723(Class5412.field22550, new Class4162(this));
-        this.method35723((Class5412<Class436>)Class5412.field22542, new Class4167<Class436>(this));
-        this.method35723((Class5412<Class436>)Class5412.field22544, new Class4167<Class436>(this));
-        this.method35723((Class5412<Class436>)Class5412.field22543, new Class4167<Class436>(this));
+        this.method35723((Class5412<TileEntity>)Class5412.field22542, new Class4167<TileEntity>(this));
+        this.method35723((Class5412<TileEntity>)Class5412.field22544, new Class4167<TileEntity>(this));
+        this.method35723((Class5412<TileEntity>)Class5412.field22543, new Class4167<TileEntity>(this));
         this.method35723(Class5412.field22552, new Class4173(this));
         this.method35723(Class5412.field22569, new Class4161(this));
-        this.method35723((Class5412<Class436>)Class5412.field22553, new Class4171<Class436>(this));
+        this.method35723((Class5412<TileEntity>)Class5412.field22553, new Class4171<TileEntity>(this));
         this.method35723(Class5412.field22561, new Class4172(this));
         this.method35723(Class5412.field22554, new Class4168(this));
         this.method35723(Class5412.field22555, new Class4174(this));
@@ -46,12 +46,12 @@ public class Class9550
         this.method35723(Class5412.field22572, new Class4163(this));
     }
     
-    private <E extends Class436> void method35723(final Class5412<E> class5412, final Class4158<E> class5413) {
+    private <E extends TileEntity> void method35723(final Class5412<E> class5412, final Class4158<E> class5413) {
         this.field41125.put(class5412, class5413);
     }
     
     @Nullable
-    public <E extends Class436> Class4158<E> method35724(final E e) {
+    public <E extends TileEntity> Class4158<E> method35724(final E e) {
         return (Class4158)this.field41125.get(e.method2206());
     }
     
@@ -65,7 +65,7 @@ public class Class9550
         this.field41132 = field41132;
     }
     
-    public <E extends Class436> void method35726(final E e, final float n, final Class7351 class7351, final Class7807 class7352) {
+    public <E extends TileEntity> void method35726(final E e, final float n, final Class7351 class7351, final Class7807 class7352) {
         if (e.method2191(this.field41131.method18161().x, this.field41131.method18161().y, this.field41131.method18161().z) < e.method2192()) {
             if (this.method35724(e) != null) {
                 if (e.method2188()) {
@@ -90,7 +90,7 @@ public class Class9550
         }
     }
     
-    private static <T extends Class436> void method35727(final Class4158<T> class4158, final T t, final float n, final Class7351 class4159, final Class7807 class4160) {
+    private static <T extends TileEntity> void method35727(final Class4158<T> class4158, final T t, final float n, final Class7351 class4159, final Class7807 class4160) {
         final World method2186 = t.method2186();
         int method2187;
         if (method2186 == null) {
@@ -102,7 +102,7 @@ public class Class9550
         class4158.method12454(t, n, class4159, class4160, method2187, Class1904.field10335);
     }
     
-    public <E extends Class436> boolean method35728(final E e, final Class7351 class7351, final Class7807 class7352, final int n, final int n2) {
+    public <E extends TileEntity> boolean method35728(final E e, final Class7351 class7351, final Class7807 class7352, final int n, final int n2) {
         if (this.method35724(e) != null) {
             method35729(e, () -> {
                 class7353.method12454(this.field41133 = field41133, 0.0f, class7354, class7355, n3, n4);
@@ -114,13 +114,13 @@ public class Class9550
         return true;
     }
     
-    private static void method35729(final Class436 class436, final Runnable runnable) {
+    private static void method35729(final TileEntity tileEntity, final Runnable runnable) {
         try {
             runnable.run();
         }
         catch (final Throwable t) {
             final Class7689 method24421 = Class7689.method24421(t, "Rendering Block Entity");
-            class436.method2202(method24421.method24418("Block Entity Details"));
+            tileEntity.method2202(method24421.method24418("Block Entity Details"));
             throw new Class2365(method24421);
         }
     }
@@ -140,7 +140,7 @@ public class Class9550
         return this.field41125.get(class5412);
     }
     
-    public synchronized <T extends Class436> void method35733(final Class5412<T> class5412, final Class4158<? super T> class5413) {
+    public synchronized <T extends TileEntity> void method35733(final Class5412<T> class5412, final Class4158<? super T> class5413) {
         this.field41125.put(class5412, class5413);
     }
     

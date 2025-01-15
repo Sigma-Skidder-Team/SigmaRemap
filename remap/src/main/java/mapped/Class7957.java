@@ -31,6 +31,6 @@ public class Class7957 implements Class7954
         if (n > 64) {
             n = 64;
         }
-        return new Class9017(new ItemStack(Class7739.field31514, n), new ItemStack(Class7739.field31370), method35659, 12, this.field32692, 0.2f);
+        return new Class9017(new ItemStack(Items.field31514, n), new ItemStack(Items.field31370), method35659, 12, this.field32692, 0.2f);
     }
 }

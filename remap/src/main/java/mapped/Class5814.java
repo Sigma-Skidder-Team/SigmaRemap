@@ -28,7 +28,7 @@ public class Class5814 implements Class5813
 {
     private static final Logger field23854;
     public final NetworkManager field23855;
-    private final Class394 field23856;
+    private final MinecraftServer field23856;
     public Class513 field23857;
     private int field23858;
     private long field23859;
@@ -60,7 +60,7 @@ public class Class5814 implements Class5813
     private int field23885;
     private int field23886;
     
-    public Class5814(final Class394 field23856, final NetworkManager field23857, final Class513 field23858) {
+    public Class5814(final MinecraftServer field23856, final NetworkManager field23857, final Class513 field23858) {
         this.field23864 = (Int2ShortMap)new Int2ShortOpenHashMap();
         this.field23856 = field23856;
         (this.field23855 = field23857).method11173(this);
@@ -232,7 +232,7 @@ public class Class5814 implements Class5813
                             this.field23855.method11174(new Class4263(method1915));
                             return;
                         }
-                        final boolean method1925 = method1916.method6978(method1915, method1915.method1886().method18511(0.0625));
+                        final boolean method1925 = method1916.method6978(method1915, method1915.getBoundingBox().method18511(0.0625));
                         method1915.method1671(Class2160.field12827, new Vec3d(method1920 - this.field23875, method1921 - this.field23876 - 1.0E-6, method1922 - this.field23877));
                         final double n = method1920 - method1915.getPosX();
                         double n2 = method1921 - method1915.getPosY();
@@ -247,7 +247,7 @@ public class Class5814 implements Class5813
                             Class5814.field23854.warn("{} moved wrongly!", (Object)method1915.getName().getString());
                         }
                         method1915.method1728(method1920, method1921, method1922, method1923, method1924);
-                        final boolean method1926 = method1916.method6978(method1915, method1915.method1886().method18511(0.0625));
+                        final boolean method1926 = method1916.method6978(method1915, method1915.getBoundingBox().method18511(0.0625));
                         if (method1925 && (b || !method1926)) {
                             method1915.method1728(method1917, method1918, method1919, method1923, method1924);
                             this.field23855.method11174(new Class4263(method1915));
@@ -259,7 +259,7 @@ public class Class5814 implements Class5813
                         Label_0691: {
                             if (n2 >= -0.03125) {
                                 if (!this.field23856.method1529()) {
-                                    if (!method1916.method6718(method1915.method1886().method18496(0.0625).method18494(0.0, -0.55, 0.0))) {
+                                    if (!method1916.method6718(method1915.getBoundingBox().method18496(0.0625).method18494(0.0, -0.55, 0.0))) {
                                         field23883 = true;
                                         break Label_0691;
                                     }
@@ -351,7 +351,7 @@ public class Class5814 implements Class5813
             Class865 method2539 = null;
             Class500 class4267 = null;
             final BlockPos method2540 = class4266.method12803();
-            final Class436 method2541 = this.field23857.world.method6727(method2540);
+            final TileEntity method2541 = this.field23857.world.method6727(method2540);
             if (method2541 instanceof Class500) {
                 class4267 = (Class500)method2541;
                 method2539 = class4267.method2539();
@@ -363,15 +363,15 @@ public class Class5814 implements Class5813
                 final Direction class4268 = this.field23857.world.method6701(method2540).method21772((Class7111<Direction>)Class3953.field17853);
                 switch (Class8365.field34305[class4266.method12808().ordinal()]) {
                     case 1: {
-                        this.field23857.world.method6688(method2540, (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29640.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
+                        this.field23857.world.method6688(method2540, (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29640.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
                         break;
                     }
                     case 2: {
-                        this.field23857.world.method6688(method2540, (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29639.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
+                        this.field23857.world.method6688(method2540, (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29639.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
                         break;
                     }
                     default: {
-                        this.field23857.world.method6688(method2540, (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29416.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
+                        this.field23857.world.method6688(method2540, (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)Class7521.field29416.method11878()).method21773((Class7111<Comparable>)Class3953.field17853, class4268)).method21773((Class7111<Comparable>)Class3953.field17854, class4266.method12806()), 2);
                         break;
                     }
                 }
@@ -453,8 +453,8 @@ public class Class5814 implements Class5813
         Class8663.method29631((IPacket<Class5814>)class4360, this, this.field23857.method2940());
         if (this.field23857.method2908()) {
             final BlockPos method13101 = class4360.method13101();
-            final Class7096 method13102 = this.field23857.world.method6701(method13101);
-            final Class436 method13103 = this.field23857.world.method6727(method13101);
+            final BlockState method13102 = this.field23857.world.method6701(method13101);
+            final TileEntity method13103 = this.field23857.world.method6727(method13101);
             if (method13103 instanceof Class501) {
                 final Class501 class4361 = (Class501)method13103;
                 class4361.method2571(class4360.method13103());
@@ -515,8 +515,8 @@ public class Class5814 implements Class5813
         Class8663.method29631((IPacket<Class5814>)class4270, this, this.field23857.method2940());
         if (this.field23857.method2908()) {
             final BlockPos method12813 = class4270.method12813();
-            final Class7096 method12814 = this.field23857.world.method6701(method12813);
-            final Class436 method12815 = this.field23857.world.method6727(method12813);
+            final BlockState method12814 = this.field23857.world.method6701(method12813);
+            final TileEntity method12815 = this.field23857.world.method6727(method12813);
             if (method12815 instanceof Class498) {
                 final Class498 class4271 = (Class498)method12815;
                 class4271.method2534(class4270.method12815());
@@ -547,13 +547,13 @@ public class Class5814 implements Class5813
         if (!method12967.method27620()) {
             if (Class4049.method12247(method12967.method27657())) {
                 final ItemStack method12968 = this.field23857.method2715(class4314.method12969());
-                if (method12967.method27622() == Class7739.field31512) {
-                    if (method12968.method27622() == Class7739.field31512) {
+                if (method12967.getItem() == Items.field31512) {
+                    if (method12968.getItem() == Items.field31512) {
                         if (!class4314.method12968()) {
                             method12968.method27676("pages", method12967.method27657().method328("pages", 8));
                         }
                         else {
-                            final ItemStack class4315 = new ItemStack(Class7739.field31513);
+                            final ItemStack class4315 = new ItemStack(Items.field31513);
                             final Class51 method12969 = method12968.method27657();
                             if (method12969 != null) {
                                 class4315.method27663(method12969.method333());
@@ -588,7 +588,7 @@ public class Class5814 implements Class5813
     public void method17456(final Class4275 class4275) {
         Class8663.method29631((IPacket<Class5814>)class4275, this, this.field23857.method2940());
         if (this.field23857.method1926(2)) {
-            final Class436 method6727 = this.field23857.method2940().method6727(class4275.method12828());
+            final TileEntity method6727 = this.field23857.method2940().method6727(class4275.method12828());
             this.field23857.field3039.method17469(new Class4296(class4275.method12827(), (method6727 == null) ? null : method6727.method2180(new Class51())));
         }
     }
@@ -694,7 +694,7 @@ public class Class5814 implements Class5813
                                             if (!this.field23857.field3025.field27303) {
                                                 if (!this.field23857.method2653(Class9439.field40498)) {
                                                     if (!this.field23857.method2773()) {
-                                                        if (!method1481.method6718(this.field23857.method1886().method18496(0.0625).method18494(0.0, -0.55, 0.0))) {
+                                                        if (!method1481.method6718(this.field23857.getBoundingBox().method18496(0.0625).method18494(0.0, -0.55, 0.0))) {
                                                             field23881 = true;
                                                             break Label_1303;
                                                         }
@@ -735,7 +735,7 @@ public class Class5814 implements Class5813
     }
     
     private boolean method17466(final Class1852 class1852) {
-        return class1852.method6978(this.field23857, this.field23857.method1886().method18511(9.999999747378752E-6));
+        return class1852.method6978(this.field23857, this.field23857.getBoundingBox().method18511(9.999999747378752E-6));
     }
     
     public void method17467(final double n, final double n2, final double n3, final float n4, final float n5) {
@@ -1180,7 +1180,7 @@ public class Class5814 implements Class5813
                     if (method12876.method315("x")) {
                         if (method12876.method315("y")) {
                             if (method12876.method315("z")) {
-                                final Class436 method12877 = this.field23857.world.method6727(new BlockPos(method12876.method319("x"), method12876.method319("y"), method12876.method319("z")));
+                                final TileEntity method12877 = this.field23857.world.method6727(new BlockPos(method12876.method319("x"), method12876.method319("y"), method12876.method319("z")));
                                 if (method12877 != null) {
                                     final Class51 method12878 = method12877.method2180(new Class51());
                                     method12878.method330("x");
@@ -1255,8 +1255,8 @@ public class Class5814 implements Class5813
         final Class1849 method1481 = this.field23856.method1481(this.field23857.dimension);
         final BlockPos method1482 = class4344.method13046();
         if (method1481.method6971(method1482)) {
-            final Class7096 method1483 = method1481.method6701(method1482);
-            final Class436 method1484 = method1481.method6727(method1482);
+            final BlockState method1483 = method1481.method6701(method1482);
+            final TileEntity method1484 = method1481.method6727(method1482);
             if (!(method1484 instanceof Class497)) {
                 return;
             }

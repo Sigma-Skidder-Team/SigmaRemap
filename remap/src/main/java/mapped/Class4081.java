@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
-public class Class4081 extends Class3820
+public class Class4081 extends Item
 {
     private static String[] field18185;
     private final EntityType<? extends Class860> field18186;
@@ -47,7 +47,7 @@ public class Class4081 extends Class3820
         if (!class7076.method5189()) {
             return Class2201.field13401;
         }
-        if (!method21644.field10067) {
+        if (!method21644.isRemote) {
             class7076.method5193();
             method21644.method6886(class7076);
         }

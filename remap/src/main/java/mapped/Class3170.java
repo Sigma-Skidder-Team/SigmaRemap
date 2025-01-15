@@ -44,7 +44,7 @@ public class Class3170 extends Class3167
             for (final Entity class5740 : Class6430.method19138()) {
                 if (class5740 instanceof Class427) {
                     final Class427 class5741 = (Class427)class5740;
-                    if (!(class5741.method2107().method27622() instanceof Class4036) || !(((Class4036)class5741.method2107().method27622()).method12240() instanceof Class3942)) {
+                    if (!(class5741.method2107().getItem() instanceof Class4036) || !(((Class4036)class5741.method2107().getItem()).method12240() instanceof Class3942)) {
                         return;
                     }
                     this.method9927(Class8591.method29093(class5740).field38854, Class8591.method29093(class5740).field38855 + class5740.method1931(), Class8591.method29093(class5740).field38856, class5740, 0.8f);
@@ -132,8 +132,8 @@ public class Class3170 extends Class3167
             final Class6601 field3081 = ((Class516)Class3170.field15514.field4700).field3081;
             if (field3081 != null) {
                 if (field3081.method20054()) {
-                    if (field3081.method20053().method27622() instanceof Class4036) {
-                        if (((Class4036)field3081.method20053().method27622()).method12240() instanceof Class3942) {
+                    if (field3081.method20053().getItem() instanceof Class4036) {
+                        if (((Class4036)field3081.method20053().getItem()).method12240() instanceof Class3942) {
                             final ItemStack method20053 = field3081.method20053();
                             final List<ItemStack> method20054 = this.method9931(method20053);
                             final int max = Math.max(-1, Math.min(1, this.method9923()));

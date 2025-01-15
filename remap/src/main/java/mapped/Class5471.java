@@ -9,7 +9,7 @@ public class Class5471 implements Class5470
     private static String[] field22743;
     private Class3090 field22744;
     
-    public Class5471(final Class8660 class8660) {
+    public Class5471(final WorldInfo class8660) {
         this.field22744 = Class7102.field27633;
     }
     

@@ -28,7 +28,7 @@ public abstract class Class3467 extends Class3446
         if (!this.field16342) {
             return false;
         }
-        final Class7096 method6701 = this.field16340.world.method6701(this.field16341);
+        final BlockState method6701 = this.field16340.world.method6701(this.field16341);
         if (method6701.method21696() instanceof Class3969) {
             return method6701.method21772((Class7111<Boolean>)Class3969.field17932);
         }
@@ -37,7 +37,7 @@ public abstract class Class3467 extends Class3446
     
     public void method11034(final boolean b) {
         if (this.field16342) {
-            final Class7096 method6701 = this.field16340.world.method6701(this.field16341);
+            final BlockState method6701 = this.field16340.world.method6701(this.field16341);
             if (method6701.method21696() instanceof Class3969) {
                 ((Class3969)method6701.method21696()).method12110(this.field16340.world, this.field16341, b);
             }
@@ -89,7 +89,7 @@ public abstract class Class3467 extends Class3446
     }
     
     public static boolean method11035(final World class1847, final BlockPos class1848) {
-        final Class7096 method6701 = class1847.method6701(class1848);
+        final BlockState method6701 = class1847.method6701(class1848);
         return method6701.method21696() instanceof Class3969 && method6701.method21697() == Class8059.field33176;
     }
 }

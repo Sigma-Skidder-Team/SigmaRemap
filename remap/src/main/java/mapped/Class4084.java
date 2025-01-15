@@ -8,7 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class4084 extends Class3820
+public class Class4084 extends Item
 {
     private static String[] field18188;
     
@@ -24,13 +24,13 @@ public class Class4084 extends Class3820
             Class7770.field31800.method13819(class8324, class8321);
             class8324.method2859(Class8276.field33981.method8449(this));
         }
-        if (!class8322.field10067) {
+        if (!class8322.isRemote) {
             class8323.method2659(Class9439.field40492);
         }
         if (!class8321.method27620()) {
             if (class8323 instanceof Class512) {
                 if (!((Class512)class8323).field3025.field27304) {
-                    final ItemStack class8325 = new ItemStack(Class7739.field31442);
+                    final ItemStack class8325 = new ItemStack(Items.field31442);
                     final Class512 class8326 = (Class512)class8323;
                     if (!class8326.field3006.method2362(class8325)) {
                         class8326.method2822(class8325, false);
@@ -39,7 +39,7 @@ public class Class4084 extends Class3820
             }
             return class8321;
         }
-        return new ItemStack(Class7739.field31442);
+        return new ItemStack(Items.field31442);
     }
     
     @Override

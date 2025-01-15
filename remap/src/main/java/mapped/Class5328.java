@@ -44,7 +44,7 @@ public class Class5328
                         ((Class512)class511).method2876(0.005f * (n + 1));
                     }
                     else if (this == Class9439.field40496 && class511 instanceof Class512) {
-                        if (!class511.world.field10067) {
+                        if (!class511.world.isRemote) {
                             ((Class512)class511).method2877().method33486(n + 1, 1.0f);
                         }
                     }

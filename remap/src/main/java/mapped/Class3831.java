@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.Map;
 
-public class Class3831 extends Class3820
+public class Class3831 extends Item
 {
     private static final Map<EntityType<?>, Class3831> field17386;
     private final int field17387;
@@ -33,13 +33,13 @@ public class Class3831 extends Class3820
     @Override
     public Class2201 method11694(final Class7075 class7075) {
         final World method21654 = class7075.method21654();
-        if (!method21654.field10067) {
+        if (!method21654.isRemote) {
             final ItemStack method21655 = class7075.method21651();
             final BlockPos method21656 = class7075.method21639();
             final Direction method21657 = class7075.method21648();
             final Class7096 method21658 = method21654.method6701(method21656);
             if (method21658.method21696() == Class7521.field29290) {
-                final Class436 method21659 = method21654.method6727(method21656);
+                final TileEntity method21659 = method21654.method6727(method21656);
                 if (method21659 instanceof Class494) {
                     ((Class494)method21659).method2509().method13884(this.method11773(method21655.method27657()));
                     method21659.method2161();
@@ -66,11 +66,11 @@ public class Class3831 extends Class3820
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class7006 method2716 = Class3820.method11733(class1847, class1848, Class2191.field13326);
+        final Class7006 method2716 = Item.method11733(class1847, class1848, Class2191.field13326);
         if (method2716.method21449() != Class2165.field12881) {
             return Class9355.method34676(method2715);
         }
-        if (class1847.field10067) {
+        if (class1847.isRemote) {
             return Class9355.method34674(method2715);
         }
         final Class7005 class1850 = (Class7005)method2716;

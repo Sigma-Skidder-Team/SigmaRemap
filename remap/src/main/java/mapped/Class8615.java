@@ -29,7 +29,7 @@ public class Class8615
         if (method6884 == null) {
             return 0;
         }
-        final Random field10062 = class1849.field10062;
+        final Random field10062 = class1849.rand;
         final BlockPos method6885 = new BlockPos(method6884).add((8 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1), 0, (8 + field10062.nextInt(24)) * (field10062.nextBoolean() ? -1 : 1));
         if (class1849.method6973(method6885.getX() - 10, method6885.getY() - 10, method6885.getZ() - 10, method6885.getX() + 10, method6885.getY() + 10, method6885.getZ() + 10)) {
             if (Class8532.method28621(Class2194.field13354, class1849, method6885, EntityType.field28964)) {

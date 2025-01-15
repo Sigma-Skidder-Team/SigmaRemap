@@ -71,7 +71,7 @@ public class Class426 extends Entity
     }
     
     public void method2081(final float f) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method1650().set(Class426.field2597, f);
         }
     }
@@ -150,7 +150,7 @@ public class Class426 extends Entity
         super.method1659();
         final boolean method2091 = this.method2091();
         float method2092 = this.method2082();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.ticksExisted >= this.field2605 + this.field2604) {
                 this.method1652();
                 return;
@@ -184,7 +184,7 @@ public class Class426 extends Entity
                 }
                 arrayList.addAll(this.field2602);
                 if (!arrayList.isEmpty()) {
-                    final List<Entity> method2093 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.method1886());
+                    final List<Entity> method2093 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox());
                     if (!method2093.isEmpty()) {
                         for (final LivingEntity class1949 : method2093) {
                             if (this.field2603.containsKey(class1949)) {

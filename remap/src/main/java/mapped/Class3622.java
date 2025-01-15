@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 public class Class3622 extends Class3617
 {
     private static String[] field16824;
-    private final Predicate<Class7096> field16825;
+    private final Predicate<BlockState> field16825;
     private int field16826;
     private int field16827;
     private boolean field16828;
@@ -175,7 +175,7 @@ public class Class3622 extends Class3617
         return this.method11158(this.field16825, 5.0);
     }
     
-    private Optional<BlockPos> method11158(final Predicate<Class7096> predicate, final double n) {
+    private Optional<BlockPos> method11158(final Predicate<BlockState> predicate, final double n) {
         final BlockPos class354 = new BlockPos(this.field16831);
         final Mutable value = new Mutable();
         for (int n2 = 0; n2 <= n; n2 = ((n2 <= 0) ? (1 - n2) : (-n2))) {

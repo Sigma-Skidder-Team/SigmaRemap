@@ -6,5 +6,5 @@ package mapped;
 
 public interface Class3832
 {
-    Class3820 method11704();
+    Item method11704();
 }

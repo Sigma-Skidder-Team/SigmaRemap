@@ -43,7 +43,7 @@ public class Class8900
         --this.field37421;
     }
     
-    public static void method31337(final Class7096 class7096, final Class4150 class7097) {
+    public static void method31337(final BlockState class7096, final Class4150 class7097) {
         if (class7097 instanceof Class4148) {
             ((Class4148)class7097).field18495.method31335(((long)(Class3660.method11271(class7096) & 0xFFFF) << 32) + (((Class3660.method11287(class7096) & 0xFFFF) << 16) + (Class3660.method11269(class7096) & 0xFFFF)));
         }

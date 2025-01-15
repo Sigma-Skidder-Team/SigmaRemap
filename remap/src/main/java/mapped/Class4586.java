@@ -36,7 +36,7 @@ public class Class4586 extends Class4582<Class5122>
     }
     
     @Override
-    public boolean method13594(final Class5507 class5507, final Class6346<?> class5508, final Random random, final int n, final int n2, final Class3090 class5509) {
+    public boolean method13594(final BiomeManager class5507, final Class6346<?> class5508, final Random random, final int n, final int n2, final Class3090 class5509) {
         final Class7859 method13593 = this.method13593(class5508, random, n, n2, 0, 0);
         if (n == method13593.field32290) {
             if (n2 == method13593.field32291) {

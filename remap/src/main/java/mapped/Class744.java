@@ -126,7 +126,7 @@ public class Class744 extends Class516<Class3439>
     }
     
     private void method4059(final int n, final int n2, final int n3) {
-        final ItemStack class8321 = new ItemStack(Class7739.field31563);
+        final ItemStack class8321 = new ItemStack(Items.field31563);
         class8321.method27659("BlockEntityTag").method295("Patterns", new Class9142().method33336(Class230.field812, Class181.field544).method33336(Class230.values()[n], Class181.field537).method33337());
         final Class7351 class8322 = new Class7351();
         class8322.method22567();
@@ -226,7 +226,7 @@ public class Class744 extends Class516<Class3439>
     private void method4060() {
         final ItemStack method20053 = ((Class3439)this.field3077).method10980().method20053();
         if (!method20053.method27620()) {
-            this.field4021 = Class465.method2387(((Class4044)method20053.method27622()).method12244(), Class465.method2382(method20053));
+            this.field4021 = Class465.method2387(((Class4044)method20053.getItem()).method12244(), Class465.method2382(method20053));
         }
         else {
             this.field4021 = null;

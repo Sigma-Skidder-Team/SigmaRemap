@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import org.apache.logging.log4j.Logger;
 
-public class Class3823 extends Class3820
+public class Class3823 extends Item
 {
     private static final Logger field17375;
     
@@ -29,10 +29,10 @@ public class Class3823 extends Class3820
             class1848.method2716(class1849, ItemStack.field34174);
         }
         if (method2716 != null && method2716.method316("Recipes", 9)) {
-            if (!class1847.field10067) {
+            if (!class1847.isRemote) {
                 final Class52 method2717 = method2716.method328("Recipes", 8);
                 final ArrayList arrayList = Lists.newArrayList();
-                final Class1780 method2718 = class1847.method6679().method1577();
+                final Class1780 method2718 = class1847.getServer().method1577();
                 for (int i = 0; i < method2717.size(); ++i) {
                     final String method2719 = method2717.method353(i);
                     final Optional<? extends Class3662<?>> method2720 = method2718.method6382(new Class1932(method2719));

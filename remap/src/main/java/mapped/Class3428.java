@@ -44,10 +44,10 @@ public class Class3428 extends Class3426<Class473>
     }
     
     public static void method10942(final int n, final World class1847, final Class512 class1848, final Class473 class1849, final Class470 class1850) {
-        if (!class1847.field10067) {
+        if (!class1847.isRemote) {
             final Class513 class1851 = (Class513)class1848;
             ItemStack class1852 = ItemStack.field34174;
-            final Optional<Class3663> method6378 = class1847.method6679().method1577().method6378(Class8976.field37843, class1849, class1847);
+            final Optional<Class3663> method6378 = class1847.getServer().method1577().method6378(Class8976.field37843, class1849, class1847);
             if (method6378.isPresent()) {
                 final Class3663 class1853 = method6378.get();
                 if (class1850.method2416(class1847, class1851, class1853)) {

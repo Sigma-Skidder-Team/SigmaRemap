@@ -48,14 +48,14 @@ public class Class781 extends Class780
             final Class765 class7930 = (Class765)method25714;
             if (class7930.method4241()) {
                 class7930.method4242();
-                this.method1764(Class7739.field31524);
+                this.method1764(Items.field31524);
             }
         }
     }
     
     @Override
     public void method4184(final Class9592 class9592) {
-        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31291));
+        this.method1803(Class2215.field13600, new ItemStack(Items.field31291));
     }
     
     @Override

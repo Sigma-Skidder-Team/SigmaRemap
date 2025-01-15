@@ -21,7 +21,7 @@ public class Class4605 extends Class4535<Class5131>
         if (class1854.field22101 && !class1854.field22104.contains(class1851.method6701(class1853.method1139()).method21696())) {
             return false;
         }
-        final Class7096 method6701 = class1851.method6701(class1853);
+        final BlockState method6701 = class1851.method6701(class1853);
         if (!method6701.method21706() && !class1854.field22104.contains(method6701.method21696())) {
             return false;
         }

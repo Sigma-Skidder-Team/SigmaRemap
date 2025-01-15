@@ -1202,9 +1202,9 @@ public class Class8154
             GL11.glScalef(n3 / 16.0f, n4 / 16.0f, 0.0f);
             final Class1796 method5291 = Class8154.field33582.method5307();
             if (class8321.field34176 == 0) {
-                class8321 = new ItemStack(class8321.method27622());
+                class8321 = new ItemStack(class8321.getItem());
             }
-            Class3833.method11776(class8321.method27622());
+            Class3833.method11776(class8321.getItem());
             Class8726.method30108();
             Class8726.method30003();
             Class8726.method30002();

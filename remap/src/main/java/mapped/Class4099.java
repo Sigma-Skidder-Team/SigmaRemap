@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class4099 extends Class3820
+public class Class4099 extends Item
 {
     private static String[] field18201;
     private final Class3833 field18202;

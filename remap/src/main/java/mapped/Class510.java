@@ -26,7 +26,7 @@ public class Class510 extends Entity
     public Class510(final World class1847, final double field2392, final double field2393, final double field2394, final LivingEntity field2395) {
         this(EntityType.field29016, class1847);
         this.setPosition(field2392, field2393, field2394);
-        final double n = class1847.field10062.nextDouble() * 6.2831854820251465;
+        final double n = class1847.rand.nextDouble() * 6.2831854820251465;
         this.setMotion(-Math.sin(n) * 0.02, 0.20000000298023224, -Math.cos(n) * 0.02);
         this.method2615(80);
         this.prevPosX = field2392;
@@ -63,13 +63,13 @@ public class Class510 extends Entity
         --this.field2917;
         if (this.field2917 > 0) {
             this.method1715();
-            if (this.world.field10067) {
+            if (this.world.isRemote) {
                 this.world.method6709(Class8432.field34639, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
         else {
             this.method1652();
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.method2613();
             }
         }

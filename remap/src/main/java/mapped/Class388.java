@@ -303,7 +303,7 @@ public class Class388 extends Class387 implements Class389
     }
     
     public void method1324(final BooleanSupplier booleanSupplier) {
-        final Class5028 method6796 = this.field2254.method6796();
+        final IProfiler method6796 = this.field2254.method6796();
         method6796.method15297("poi");
         this.field2259.method7178(booleanSupplier);
         method6796.method15300("chunk_unload");

@@ -29,7 +29,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
         if (!t.method2625()) {
             if (!t.method1823()) {
                 final Class1658 method5305 = Class869.method5277().method5305();
-                final Class7096 method5306 = t.method4708().method7992();
+                final BlockState method5306 = t.method4708().method7992();
                 final Class1932 method5307 = this.method6576(method5306);
                 Class4150 method5308 = null;
                 if (method5307 != null) {
@@ -79,7 +79,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
         }
     }
     
-    private Class1932 method6576(final Class7096 class7096) {
+    private Class1932 method6576(final BlockState class7096) {
         final Class3833 method21696 = class7096.method21696();
         if (method21696 == Class7521.field29279 && Class1814.field9989) {
             return Class1814.field9987;

@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -12,14 +14,14 @@ import java.util.Random;
 public class Class4026 extends Class3833
 {
     private static String[] field18117;
-    public static final Class7702 field18118;
+    public static final VoxelShape field18118;
     
     public Class4026(final Class9288 class9288) {
         super(class9288);
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4026.field18118;
     }
     

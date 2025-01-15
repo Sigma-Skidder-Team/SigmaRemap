@@ -67,7 +67,7 @@ public class Class8652
         return null;
     }
     
-    public Class7096 method29443(final String s, final Class7096 class7096) {
+    public BlockState method29443(final String s, final BlockState class7096) {
         final Class8802[] method29444 = this.method29444(s);
         if (method29444 == null) {
             return class7096;
@@ -246,7 +246,7 @@ public class Class8652
         return Integer.valueOf(s);
     }
     
-    public boolean method29453(final Class7096 class7096, final Map<Class7111, List<Comparable>> map) {
+    public boolean method29453(final BlockState class7096, final Map<Class7111, List<Comparable>> map) {
         for (final Class7111 class7097 : map.keySet()) {
             final List list = map.get(class7097);
             final Comparable method21772 = class7096.method21772((Class7111<Comparable>)class7097);
@@ -658,7 +658,7 @@ public class Class8652
         final String[] method28937 = Class8571.method28937(trim, " ");
         for (int i = 0; i < method28937.length; ++i) {
             final String s = method28937[i];
-            final Class3820 method28938 = Class8333.method27771(new Class1932(s));
+            final Item method28938 = Class8333.method27771(new Class1932(s));
             if (method28938 != null) {
                 final int method28939 = Class8333.method27772(method28938);
                 if (method28939 >= 0) {

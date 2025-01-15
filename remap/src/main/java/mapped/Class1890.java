@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.VoxelShape;
 import org.apache.commons.lang3.mutable.MutableInt;
 import java.util.Arrays;
 import javax.annotation.Nullable;
@@ -61,7 +62,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
         Arrays.fill(this.field10281, null);
     }
     
-    public Class7096 method7297(final long n, final MutableInt mutableInt) {
+    public BlockState method7297(final long n, final MutableInt mutableInt) {
         if (n == Long.MAX_VALUE) {
             if (mutableInt != null) {
                 mutableInt.setValue(0);
@@ -71,7 +72,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
         final Class1855 method7295 = this.method7295(Class353.method1095(BlockPos.unpackX(n)), Class353.method1095(BlockPos.unpackZ(n)));
         if (method7295 != null) {
             this.field10279.method1288(n);
-            final Class7096 method7296 = method7295.method6701(this.field10279);
+            final BlockState method7296 = method7295.method6701(this.field10279);
             final boolean b = method7296.method21723() && method7296.method21703();
             if (mutableInt != null) {
                 mutableInt.setValue(method7296.method21700(this.field10275.method7414(), this.field10279));
@@ -84,11 +85,11 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
         return Class7521.field29172.method11878();
     }
     
-    public Class7702 method7298(final Class7096 class7096, final long n, final Direction class7097) {
+    public VoxelShape method7298(final BlockState class7096, final long n, final Direction class7097) {
         return class7096.method21723() ? class7096.method21701(this.field10275.method7414(), this.field10279.method1288(n), class7097) : Class7698.method24486();
     }
     
-    public static int method7299(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Class7096 class1858, final BlockPos class1859, final Direction class1860, final int n) {
+    public static int method7299(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final BlockState class1858, final BlockPos class1859, final Direction class1860, final int n) {
         final boolean b = class1856.method21723() && class1856.method21703();
         final boolean b2 = class1858.method21723() && class1858.method21703();
         if (!b && !b2) {

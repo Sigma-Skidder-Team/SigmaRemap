@@ -57,7 +57,7 @@ public class Class769 extends Class770 implements Class768
     
     @Override
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
-        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31279));
+        this.method1803(Class2215.field13600, new ItemStack(Items.field31279));
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     
@@ -68,13 +68,13 @@ public class Class769 extends Class770 implements Class768
     
     @Override
     public AxisAlignedBB method1887() {
-        return this.method1886().method18495(3.0, 0.0, 3.0);
+        return this.getBoundingBox().method18495(3.0, 0.0, 3.0);
     }
     
     @Override
     public void method2736() {
         super.method2736();
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             if (this.method1823()) {
                 --this.field4159;
                 if (this.field4159 < 0) {
@@ -152,7 +152,7 @@ public class Class769 extends Class770 implements Class768
     
     @Override
     public void method4252(final LivingEntity class511, final float n) {
-        final Class402 method23101 = Class7476.method23101(this, this.method2790(this.method2715(Class7476.method23100(this, Class7739.field31279))), n);
+        final Class402 method23101 = Class7476.method23101(this, this.method2790(this.method2715(Class7476.method23100(this, Items.field31279))), n);
         final double n2 = class511.getPosX() - this.getPosX();
         final double n3 = class511.method1942(0.3333333333333333) - method23101.getPosY();
         final double n4 = class511.getPosZ() - this.getPosZ();

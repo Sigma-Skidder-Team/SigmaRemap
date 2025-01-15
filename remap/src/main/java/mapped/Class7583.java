@@ -6,10 +6,12 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.CubeCoordinateIterator;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.function.Consumer;
 
-public class Class7583 extends AbstractSpliterator<Class7702>
+public class Class7583 extends AbstractSpliterator<VoxelShape>
 {
     private static String[] field30080;
     public boolean field30081;
@@ -17,10 +19,10 @@ public class Class7583 extends AbstractSpliterator<Class7702>
     public final /* synthetic */ CubeCoordinateIterator field30083;
     public final /* synthetic */ Mutable field30084;
     public final /* synthetic */ ISelectionContext field30085;
-    public final /* synthetic */ Class7702 field30086;
+    public final /* synthetic */ VoxelShape field30086;
     public final /* synthetic */ Class1853 field30087;
     
-    public Class7583(final Class1853 field30087, final long est, final int additionalCharacteristics, final Entity field30088, final CubeCoordinateIterator field30089, final Mutable field30090, final ISelectionContext field30091, final Class7702 field30092) {
+    public Class7583(final Class1853 field30087, final long est, final int additionalCharacteristics, final Entity field30088, final CubeCoordinateIterator field30089, final Mutable field30090, final ISelectionContext field30091, final VoxelShape field30092) {
         this.field30087 = field30087;
         this.field30082 = field30088;
         this.field30083 = field30089;
@@ -32,12 +34,12 @@ public class Class7583 extends AbstractSpliterator<Class7702>
     }
     
     @Override
-    public boolean tryAdvance(final Consumer<? super Class7702> consumer) {
+    public boolean tryAdvance(final Consumer<? super VoxelShape> consumer) {
         if (!this.field30081) {
             this.field30081 = true;
-            final Class7702 method34783 = this.field30087.method6787().method34783();
-            final boolean method34784 = Class7698.method24496(method34783, Class7698.method24489(this.field30082.method1886().method18511(1.0E-7)), Class9306.field39924);
-            final boolean method34785 = Class7698.method24496(method34783, Class7698.method24489(this.field30082.method1886().method18496(1.0E-7)), Class9306.field39924);
+            final VoxelShape method34783 = this.field30087.method6787().method34783();
+            final boolean method34784 = Class7698.method24496(method34783, Class7698.method24489(this.field30082.getBoundingBox().method18511(1.0E-7)), Class9306.field39924);
+            final boolean method34785 = Class7698.method24496(method34783, Class7698.method24489(this.field30082.getBoundingBox().method18496(1.0E-7)), Class9306.field39924);
             if (!method34784) {
                 if (method34785) {
                     consumer.accept(method34783);
@@ -58,14 +60,14 @@ public class Class7583 extends AbstractSpliterator<Class7702>
                 continue;
             }
             this.field30084.setPos(method34786, method34787, method34788);
-            final Class7096 method34791 = method34790.method6701(this.field30084);
+            final BlockState method34791 = method34790.method6701(this.field30084);
             if (method34789 == 1 && !method34791.method21702()) {
                 continue;
             }
             if (method34789 == 2 && method34791.method21696() != Class7521.field29264) {
                 continue;
             }
-            Class7702 class7702 = method34791.method21728(this.field30087, this.field30084, this.field30085);
+            VoxelShape class7702 = method34791.method21728(this.field30087, this.field30084, this.field30085);
             if (this.field30082 instanceof Class512) {
                 final Class5753 class7703 = new Class5753(this.field30084, class7702);
                 Class9463.method35173().method35188().method21097(class7703);
@@ -74,7 +76,7 @@ public class Class7583 extends AbstractSpliterator<Class7702>
                     return false;
                 }
             }
-            final Class7702 method34792 = class7702.method24541(method34786, method34787, method34788);
+            final VoxelShape method34792 = class7702.method24541(method34786, method34787, method34788);
             if (!Class7698.method24496(this.field30086, method34792, Class9306.field39924)) {
                 continue;
             }

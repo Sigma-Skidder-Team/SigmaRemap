@@ -23,11 +23,11 @@ public class Class7961 implements Class7954
         this(new ItemStack(class3833), n, n2, n3, n4);
     }
     
-    public Class7961(final Class3820 class3820, final int n, final int n2, final int n3) {
+    public Class7961(final Item class3820, final int n, final int n2, final int n3) {
         this(new ItemStack(class3820), n, n2, 12, n3);
     }
     
-    public Class7961(final Class3820 class3820, final int n, final int n2, final int n3, final int n4) {
+    public Class7961(final Item class3820, final int n, final int n2, final int n3, final int n4) {
         this(new ItemStack(class3820), n, n2, n3, n4);
     }
     
@@ -46,6 +46,6 @@ public class Class7961 implements Class7954
     
     @Override
     public Class9017 method25804(final Entity class399, final Random random) {
-        return new Class9017(new ItemStack(Class7739.field31514, this.field32713), new ItemStack(this.field32712.method27622(), this.field32714), this.field32715, this.field32716, this.field32717);
+        return new Class9017(new ItemStack(Items.field31514, this.field32713), new ItemStack(this.field32712.getItem(), this.field32714), this.field32715, this.field32716, this.field32717);
     }
 }

@@ -19,7 +19,7 @@ public class Class8850
 {
     private static Class8604 field37207;
     private static Map<String, Integer> field37208;
-    private static Map<Class3820, Integer> field37209;
+    private static Map<Item, Integer> field37209;
     private static long field37210;
     private static final double field37211 = 7.5;
     private static final double field37212 = 56.25;
@@ -211,29 +211,29 @@ public class Class8850
         if (class8321 == null) {
             return 0;
         }
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         if (method27622 instanceof Class4036) {
             final Class3833 method27623 = ((Class4036)method27622).method12240();
             if (method27623 != null) {
                 return method27623.method11781(method27623.method11878());
             }
         }
-        if (method27622 == Class7739.field31351) {
+        if (method27622 == Items.field31351) {
             return Class7521.field29174.method11781(Class7521.field29174.method11878());
         }
-        if (method27622 == Class7739.field31437 || method27622 == Class7739.field31445) {
+        if (method27622 == Items.field31437 || method27622 == Items.field31445) {
             return 10;
         }
-        if (method27622 == Class7739.field31378) {
+        if (method27622 == Items.field31378) {
             return 8;
         }
-        if (method27622 == Class7739.field31540) {
+        if (method27622 == Items.field31540) {
             return 8;
         }
-        if (method27622 == Class7739.field31446) {
+        if (method27622 == Items.field31446) {
             return 8;
         }
-        if (method27622 != Class7739.field31530) {
+        if (method27622 != Items.field31530) {
             if (!Class8850.field37209.isEmpty()) {
                 final Integer n = Class8850.field37209.get(method27622);
                 if (n != null) {
@@ -278,7 +278,7 @@ public class Class8850
         }
         if (class399 instanceof LivingEntity) {
             final LivingEntity class400 = (LivingEntity)class399;
-            return Math.max(Math.max(method30994(class400.method2713()), method30994(class400.method2714())), method30994(class400.method2718(Class2215.field13605)));
+            return Math.max(Math.max(method30994(class400.getHeldItemMainhand()), method30994(class400.method2714())), method30994(class400.method2718(Class2215.field13605)));
         }
         if (!(class399 instanceof Class427)) {
             return 0;
@@ -315,7 +315,7 @@ public class Class8850
     static {
         Class8850.field37207 = new Class8604();
         Class8850.field37208 = new HashMap<String, Integer>();
-        Class8850.field37209 = new HashMap<Class3820, Integer>();
+        Class8850.field37209 = new HashMap<Item, Integer>();
         Class8850.field37210 = 0L;
         field37220 = (DataParameter)Class9570.field41430.method22630();
     }

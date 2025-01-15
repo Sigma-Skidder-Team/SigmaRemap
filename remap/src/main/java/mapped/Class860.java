@@ -84,7 +84,7 @@ public abstract class Class860 extends Entity
     @Override
     public void method1659() {
         if (this.field4598++ == 100) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.field4598 = 0;
                 if (!this.removed) {
                     if (!this.method5189()) {
@@ -106,13 +106,13 @@ public abstract class Class860 extends Entity
             for (int i = 0; i < max; ++i) {
                 for (int j = 0; j < max2; ++j) {
                     class385.method1287(method1149).method1291(method1150, i + (max - 1) / -2).method1291(Direction.UP, j + (max2 - 1) / -2);
-                    final Class7096 method1151 = this.world.method6701(class385);
+                    final BlockState method1151 = this.world.method6701(class385);
                     if (!method1151.method21697().method26439() && !Class3895.method11975(method1151)) {
                         return false;
                     }
                 }
             }
-            return this.world.method6737(this, this.method1886(), Class860.field4597).isEmpty();
+            return this.world.method6737(this, this.getBoundingBox(), Class860.field4597).isEmpty();
         }
         return false;
     }
@@ -140,7 +140,7 @@ public abstract class Class860 extends Entity
     public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
             if (!this.removed) {
-                if (!this.world.field10067) {
+                if (!this.world.isRemote) {
                     this.method1652();
                     this.method1739();
                     this.method5192(class7929.method25714());
@@ -153,7 +153,7 @@ public abstract class Class860 extends Entity
     
     @Override
     public void method1671(final Class2160 class2160, final Vec3d class2161) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!this.removed) {
                 if (class2161.lengthSquared() > 0.0) {
                     this.method1652();
@@ -165,7 +165,7 @@ public abstract class Class860 extends Entity
     
     @Override
     public void method1738(final double n, final double n2, final double n3) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!this.removed) {
                 if (n * n + n2 * n2 + n3 * n3 > 0.0) {
                     this.method1652();

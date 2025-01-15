@@ -52,18 +52,18 @@ public class Class4520 extends Class4515
     public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if (s.startsWith("Chest")) {
             final Class2052 method32856 = this.field19919.method32856();
-            Class7096 method32857 = Class7521.field29292.method11878();
+            BlockState method32857 = Class7521.field29292.method11878();
             if ("ChestWest".equals(s)) {
-                method32857 = ((Class7097<Object, Class7096>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.WEST));
+                method32857 = ((Class7097<Object, BlockState>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.WEST));
             }
             else if ("ChestEast".equals(s)) {
-                method32857 = ((Class7097<Object, Class7096>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.EAST));
+                method32857 = ((Class7097<Object, BlockState>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.EAST));
             }
             else if ("ChestSouth".equals(s)) {
-                method32857 = ((Class7097<Object, Class7096>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.SOUTH));
+                method32857 = ((Class7097<Object, BlockState>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.SOUTH));
             }
             else if ("ChestNorth".equals(s)) {
-                method32857 = ((Class7097<Object, Class7096>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.NORTH));
+                method32857 = ((Class7097<Object, BlockState>)method32857).method21773((Class7111<Comparable>)Class3865.field17497, method32856.method8142(Direction.NORTH));
             }
             this.method13452(class355, class356, random, class354, Class9020.field38092, method32857);
         }

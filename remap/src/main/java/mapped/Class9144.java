@@ -22,7 +22,7 @@ public class Class9144
     private static final Class6332[] field38734;
     private boolean field38735;
     
-    private void method33350(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Class7351 class1859, final Class4150 class1860, final List<Class8754> list, final float[] array, final BitSet set, final Class9436 class1861, final int n) {
+    private void method33350(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Class7351 class1859, final Class4150 class1860, final List<Class8754> list, final float[] array, final BitSet set, final Class9436 class1861, final int n) {
         for (final Class8754 class1862 : list) {
             this.method33361(class1856, class1857, class1858, class1862.method30291(), class1862.method30294(), array, set);
             class1861.method35062(class1856, class1857, class1858, class1862.method30294(), array, set);
@@ -30,7 +30,7 @@ public class Class9144
         }
     }
     
-    private void method33351(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Class4150 class1859, final Class8996 class1860, final Class8754 class1861, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, final int n7, final int n8, final int n9) {
+    private void method33351(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Class4150 class1859, final Class8996 class1860, final Class8754 class1861, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, final int n7, final int n8, final int n9) {
         float n10;
         float n11;
         float n12;
@@ -48,7 +48,7 @@ public class Class9144
         class1859.method12443(class1860, class1861, new float[] { n, n2, n3, n4 }, n10, n11, n12, new int[] { n5, n6, n7, n8 }, n9, true);
     }
     
-    private void method33352(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, int method5777, final int n, final boolean b, final Class7351 class1859, final Class4150 class1860, final List<Class8754> list, final BitSet set) {
+    private void method33352(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, int method5777, final int n, final boolean b, final Class7351 class1859, final Class4150 class1860, final List<Class8754> list, final BitSet set) {
         for (final Class8754 class1861 : list) {
             if (b) {
                 this.method33361(class1856, class1857, class1858, class1861.method30291(), class1861.method30294(), null, set);
@@ -63,11 +63,11 @@ public class Class9144
         this.field38729 = field38729;
     }
     
-    public boolean method33353(final Class1856 class1856, final Class6313 class1857, final Class7096 class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2) {
+    public boolean method33353(final Class1856 class1856, final Class6313 class1857, final BlockState class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2) {
         return this.method33354(class1856, class1857, class1858, class1859, class1860, class1861, b, random, n, n2, Class6350.field25397);
     }
     
-    public boolean method33354(final Class1856 class1856, Class6313 method32832, final Class7096 class1857, final BlockPos class1858, final Class7351 class1859, final Class4150 class1860, final boolean b, final Random random, long n, final int n2, Class6349 method32833) {
+    public boolean method33354(final Class1856 class1856, Class6313 method32832, final BlockState class1857, final BlockPos class1858, final Class7351 class1859, final Class4150 class1860, final boolean b, final Random random, long n, final int n2, Class6349 method32833) {
         final boolean b2 = Class869.method5272() && Class7667.method24306(class1857, class1856, class1858) == 0 && method32832.method18692();
         if (this.field38735) {
             method32833 = method32832.method18703(class1856, class1858, class1857, method32833);
@@ -101,11 +101,11 @@ public class Class9144
         }
     }
     
-    public boolean method33355(final Class1856 class1856, final Class6313 class1857, final Class7096 class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2) {
+    public boolean method33355(final Class1856 class1856, final Class6313 class1857, final BlockState class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2) {
         return this.method33356(class1856, class1857, class1858, class1859, class1860, class1861, b, random, n, n2, Class6350.field25397);
     }
     
-    public boolean method33356(final Class1856 class1856, final Class6313 class1857, final Class7096 class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2, final Class6349 class1862) {
+    public boolean method33356(final Class1856 class1856, final Class6313 class1857, final BlockState class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2, final Class6349 class1862) {
         boolean b2 = false;
         final Class9145 method12414 = class1861.method12414(class1858, class1859);
         final Class6332 method12415 = class1861.method12415();
@@ -125,11 +125,11 @@ public class Class9144
         return b2;
     }
     
-    public boolean method33357(final Class1856 class1856, final Class6313 class1857, final Class7096 class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2) {
+    public boolean method33357(final Class1856 class1856, final Class6313 class1857, final BlockState class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2) {
         return this.method33358(class1856, class1857, class1858, class1859, class1860, class1861, b, random, n, n2, Class6350.field25397);
     }
     
-    public boolean method33358(final Class1856 class1856, final Class6313 class1857, final Class7096 class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2, final Class6349 class1862) {
+    public boolean method33358(final Class1856 class1856, final Class6313 class1857, final BlockState class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final boolean b, final Random random, final long n, final int n2, final Class6349 class1862) {
         boolean b2 = false;
         final Class9145 method12414 = class1861.method12414(class1858, class1859);
         final Class6332 method12415 = class1861.method12415();
@@ -149,7 +149,7 @@ public class Class9144
         return b2;
     }
     
-    private void method33359(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Class7351 class1859, final Class4150 class1860, final List<Class8754> list, final int n, final Class9145 class1861) {
+    private void method33359(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Class7351 class1859, final Class4150 class1860, final List<Class8754> list, final int n, final Class9145 class1861) {
         final float[] method33376 = class1861.method33376();
         final BitSet method33377 = class1861.method33377();
         final Class9436 method33378 = class1861.method33378();
@@ -164,7 +164,7 @@ public class Class9144
         }
     }
     
-    private void method33360(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Class4150 class1859, final Class8996 class1860, final Class8754 class1861, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, final int n7, final int n8, final int n9, final Class9145 class1862) {
+    private void method33360(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Class4150 class1859, final Class8996 class1860, final Class8754 class1861, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, final int n7, final int n8, final int n9, final Class9145 class1862) {
         final int method30336 = Class8763.method30336(class1861, class1857, class1856, class1858, class1862);
         float n10;
         float n11;
@@ -189,7 +189,7 @@ public class Class9144
         class1859.method12443(class1860, class1861, class1859.method12421(n, n2, n3, n4), n10, n11, n12, class1859.method12422(n5, n6, n7, n8), n9, true);
     }
     
-    private void method33361(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final int[] array, final Direction class1859, final float[] array2, final BitSet set) {
+    private void method33361(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final int[] array, final Direction class1859, final float[] array2, final BitSet set) {
         float min = 32.0f;
         float min2 = 32.0f;
         float min3 = 32.0f;
@@ -257,7 +257,7 @@ public class Class9144
         }
     }
     
-    private void method33362(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, int method5777, final int n, final boolean b, final Class7351 class1859, final Class4150 class1860, final List<Class8754> list, final Class9145 class1861) {
+    private void method33362(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, int method5777, final int n, final boolean b, final Class7351 class1859, final Class4150 class1860, final List<Class8754> list, final Class9145 class1861) {
         final BitSet method5778 = class1861.method33377();
         for (int size = list.size(), i = 0; i < size; ++i) {
             final Class8754 class1862 = list.get(i);
@@ -272,11 +272,11 @@ public class Class9144
         }
     }
     
-    public void method33363(final Class8996 class8996, final Class4150 class8997, final Class7096 class8998, final Class6313 class8999, final float n, final float n2, final float n3, final int n4, final int n5) {
+    public void method33363(final Class8996 class8996, final Class4150 class8997, final BlockState class8998, final Class6313 class8999, final float n, final float n2, final float n3, final int n4, final int n5) {
         this.method33364(class8996, class8997, class8998, class8999, n, n2, n3, n4, n5, Class6350.field25397);
     }
     
-    public void method33364(final Class8996 class8996, final Class4150 class8997, final Class7096 class8998, final Class6313 class8999, final float n, final float n2, final float n3, final int n4, final int n5, final Class6349 class9000) {
+    public void method33364(final Class8996 class8996, final Class4150 class8997, final BlockState class8998, final Class6313 class8999, final float n, final float n2, final float n3, final int n4, final int n5, final Class6349 class9000) {
         final Random random = new Random();
         for (final Direction class9001 : Direction.VALUES) {
             random.setSeed(42L);
@@ -332,7 +332,7 @@ public class Class9144
         Class9144.field38732 = (Class8571.method28955() && Class9216.method33759());
     }
     
-    private void method33370(final Class1856 class1856, final Class6313 class1857, final Class7096 class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final int n, final boolean b, final Random random, final long n2, final Class9145 class1862, final boolean b2, final Vec3d class1863) {
+    private void method33370(final Class1856 class1856, final Class6313 class1857, final BlockState class1858, final BlockPos class1859, final Class7351 class1860, final Class4150 class1861, final int n, final boolean b, final Random random, final long n2, final Class9145 class1862, final boolean b2, final Vec3d class1863) {
         if (class1862.method33399()) {
             for (int i = 0; i < Class9144.field38734.length; ++i) {
                 final Class6332 class1864 = Class9144.field38734[i];
@@ -347,7 +347,7 @@ public class Class9144
                         for (int j = 0; j < method33398.method26377(); ++j) {
                             final Class8754 method33401 = method33398.method26378(j);
                             final List<Class8754> method33402 = method33398.method26380(method33401);
-                            final Class7096 method33403 = method33398.method26379(j);
+                            final BlockState method33403 = method33398.method26379(j);
                             if (method33401.method30312() != null) {
                                 method33398.method26376(method33401.method30312(), method33403);
                             }
@@ -368,7 +368,7 @@ public class Class9144
             if (!class1862.method33381()) {
                 if (Class8979.method31925(class1856, class1858, class1859)) {
                     final Class6313 method33404 = Class8979.method31923();
-                    final Class7096 method33405 = Class8979.method31924();
+                    final BlockState method33405 = Class8979.method31924();
                     class1860.method22564(-class1863.x, -class1863.y, -class1863.z);
                     this.method33353(class1856, method33404, method33405, class1859, class1860, class1861, b, random, n2, n);
                 }

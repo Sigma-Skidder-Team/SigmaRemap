@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.common.hash.Hashing;
-import java.io.File;
+
 import javax.annotation.Nullable;
 import com.mojang.authlib.GameProfile;
 
@@ -139,7 +139,7 @@ public abstract class Class754 extends Class512
             f = 1.0f;
         }
         if (this.method2756()) {
-            if (this.method2766().method27622() instanceof Class4087) {
+            if (this.method2766().getItem() instanceof Class4087) {
                 final float n2 = this.method2768() / 20.0f;
                 float n3;
                 if (n2 <= 1.0f) {

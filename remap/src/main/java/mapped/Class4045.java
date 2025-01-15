@@ -18,7 +18,7 @@ public class Class4045 extends Class4043
     @Override
     public boolean method12232(final BlockPos class354, final World class355, final Class512 class356, final ItemStack class357, final Class7096 class358) {
         final boolean method12232 = super.method12232(class354, class355, class356, class357, class358);
-        if (!class355.field10067) {
+        if (!class355.isRemote) {
             if (!method12232) {
                 if (class356 != null) {
                     class356.method2827((Class497)class355.method6727(class354));

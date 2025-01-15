@@ -13,7 +13,7 @@ public abstract class Class5827
     @Nullable
     public abstract Class8530<Class5129, ?> method17518(final Random p0, final boolean p1);
     
-    public boolean method17514(final Class1851 class1851, final Class6346<?> class1852, final BlockPos class1853, final Class7096 class1854, final Random random) {
+    public boolean method17514(final Class1851 class1851, final Class6346<?> class1852, final BlockPos class1853, final BlockState class1854, final Random random) {
         final Class8530<Class5129, ?> method17518 = this.method17518(random, this.method17519(class1851, class1853));
         if (method17518 == null) {
             return false;

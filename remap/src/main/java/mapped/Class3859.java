@@ -10,6 +10,8 @@ import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -29,46 +31,46 @@ public class Class3859 extends Class3833 implements Class3857
             this.field17482.add(field17481.method22175(8 - i, false));
         }
         this.field17482.add(field17481.method22175(8, true));
-        this.method11877(((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3859.field17480, 0));
+        this.method11877(((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3859.field17480, 0));
     }
     
     @Override
-    public void method11821(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
+    public void method11821(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         class7097.method6702(class7098).method21789(class7097, class7098, random);
     }
     
     @Override
-    public boolean method11818(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11818(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         return false;
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
         return !this.field17481.method22166(Class7324.field28320);
     }
     
     @Override
-    public Class7099 method11864(final Class7096 class7096) {
+    public Class7099 method11864(final BlockState class7096) {
         return this.field17482.get(Math.min(class7096.method21772((Class7111<Integer>)Class3859.field17480), 8));
     }
     
     @Override
-    public boolean method11807(final Class7096 class7096, final Class7096 class7097, final Direction class7098) {
+    public boolean method11807(final BlockState class7096, final BlockState class7097, final Direction class7098) {
         return class7097.method21756().method21779().method22165(this.field17481);
     }
     
     @Override
-    public Class2115 method11797(final Class7096 class7096) {
+    public Class2115 method11797(final BlockState class7096) {
         return Class2115.field12305;
     }
     
     @Override
-    public List<ItemStack> method11833(final Class7096 class7096, final Class9098 class7097) {
+    public List<ItemStack> method11833(final BlockState class7096, final Class9098 class7097) {
         return Collections.emptyList();
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class7698.method24486();
     }
     
@@ -78,14 +80,14 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
             class7097.method6834().method21345(class7098, class7096.method21756().method21779(), this.method11826(class7097));
         }
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+    public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7096.method21756().method21780() || class7098.method21756().method21780()) {
             class7099.method6834().method21345(class7100, class7096.method21756().method21779(), this.method11826(class7099));
         }
@@ -93,13 +95,13 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
             class7097.method6834().method21345(class7098, class7096.method21756().method21779(), this.method11826(class7097));
         }
     }
     
-    public boolean method11926(final World class1847, final BlockPos class1848, final Class7096 class1849) {
+    public boolean method11926(final World class1847, final BlockPos class1848, final BlockState class1849) {
         if (this.field17481.method22166(Class7324.field28320)) {
             int n = 0;
             for (final Direction class1850 : Direction.values()) {
@@ -130,12 +132,12 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Class3833, BlockState> class9500) {
         class9500.method35378(Class3859.field17480);
     }
     
     @Override
-    public Class7255 method11922(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853) {
+    public Class7255 method11922(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
         if (class1853.method21772((Class7111<Integer>)Class3859.field17480) != 0) {
             return Class7558.field29974;
         }
@@ -144,7 +146,7 @@ public class Class3859 extends Class3833 implements Class3857
     }
     
     @Override
-    public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
+    public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (this.field17481.method22166(Class7324.field28320)) {
             class7099.method1722();
         }

@@ -38,8 +38,8 @@ public class Class6404 implements Class6423
             n2 = method16761 - 0.125;
         }
         final Class427 class1851 = new Class427(class1847, method16760, n2, method16762, class1848);
-        final double n3 = class1847.field10062.nextDouble() * 0.1 + 0.2;
-        class1851.setMotion(class1847.field10062.nextGaussian() * 0.007499999832361937 * n + class1849.getXOffset() * n3, class1847.field10062.nextGaussian() * 0.007499999832361937 * n + 0.20000000298023224, class1847.field10062.nextGaussian() * 0.007499999832361937 * n + class1849.getZOffset() * n3);
+        final double n3 = class1847.rand.nextDouble() * 0.1 + 0.2;
+        class1851.setMotion(class1847.rand.nextGaussian() * 0.007499999832361937 * n + class1849.getXOffset() * n3, class1847.rand.nextGaussian() * 0.007499999832361937 * n + 0.20000000298023224, class1847.rand.nextGaussian() * 0.007499999832361937 * n + class1849.getZOffset() * n3);
         class1847.method6886(class1851);
     }
     

@@ -8,7 +8,7 @@ import net.minecraft.util.Direction;
 
 import javax.annotation.Nullable;
 
-public class Class500 extends Class436
+public class Class500 extends TileEntity
 {
     private boolean field2859;
     private boolean field2860;
@@ -117,7 +117,7 @@ public class Class500 extends Class436
                 this.field2861 = false;
             }
             else {
-                final Class436 method1150 = this.field2656.method6727(method1149);
+                final TileEntity method1150 = this.field2656.method6727(method1149);
                 this.field2861 = (method1150 instanceof Class500 && ((Class500)method1150).method2539().method5206() > 0);
             }
         }
@@ -144,7 +144,7 @@ public class Class500 extends Class436
     }
     
     public boolean method2551() {
-        final Class7096 method6701 = this.field2656.method6701(this.method2193());
+        final BlockState method6701 = this.field2656.method6701(this.method2193());
         return method6701.method21696() instanceof Class3953 && method6701.method21772((Class7111<Boolean>)Class3953.field17854);
     }
     

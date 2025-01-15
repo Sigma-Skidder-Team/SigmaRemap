@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,8 +51,8 @@ public class Class4854 extends Class4841
             method14561(list, s2).iterator();
             final Iterator iterator2;
             while (iterator2.hasNext()) {
-                final Class3820 class4038 = iterator2.next();
-                if (class4038 != Class7739.field30754) {
+                final Item class4038 = iterator2.next();
+                if (class4038 != Items.AIR) {
                     if (this.field20800 && !(class4038 instanceof Class4036)) {
                         continue;
                     }
@@ -91,22 +90,22 @@ public class Class4854 extends Class4841
         });
     }
     
-    public static List<Class3820> method14561(final List<Class3820> list, String lowerCase) {
+    public static List<Item> method14561(final List<Item> list, String lowerCase) {
         lowerCase = lowerCase.toLowerCase();
         if (lowerCase.length() != 0) {
             final ArrayList list2 = new ArrayList();
-            final Iterator<Class3820> iterator = list.iterator();
+            final Iterator<Item> iterator = list.iterator();
             while (iterator.hasNext()) {
-                final Class3820 class3820 = iterator.next();
+                final Item class3820 = iterator.next();
                 if (!class3820.method11715().getString().toLowerCase().startsWith(lowerCase.toLowerCase())) {
                     continue;
                 }
                 list2.add(class3820);
                 iterator.remove();
             }
-            final Iterator<Class3820> iterator2 = list.iterator();
+            final Iterator<Item> iterator2 = list.iterator();
             while (iterator2.hasNext()) {
-                final Class3820 class3821 = iterator2.next();
+                final Item class3821 = iterator2.next();
                 if (!class3821.method11715().getString().toLowerCase().contains(lowerCase.toLowerCase())) {
                     continue;
                 }

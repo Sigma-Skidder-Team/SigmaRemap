@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.shapes.VoxelShape;
+
 public interface Class7924
 {
     double method25675();
@@ -30,5 +32,5 @@ public interface Class7924
     
     Class7924 method25686();
     
-    Class7702 method25687();
+    VoxelShape method25687();
 }

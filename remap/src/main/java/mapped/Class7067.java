@@ -51,14 +51,14 @@ public class Class7067 extends Class7065
     private final List<Class9127> field27517;
     private final Map<String, Map<String, String>> field27518;
     private Class3090 field27519;
-    private final Class7096[] field27520;
+    private final BlockState[] field27520;
     private boolean field27521;
     private int field27522;
     
     public Class7067() {
         this.field27517 = Lists.newArrayList();
         this.field27518 = Maps.newHashMap();
-        this.field27520 = new Class7096[256];
+        this.field27520 = new BlockState[256];
     }
     
     @Nullable
@@ -99,7 +99,7 @@ public class Class7067 extends Class7065
         int n2 = 0;
         for (final Class9127 class9128 : this.field27517) {
             for (int i = class9128.method33116(); i < class9128.method33116() + class9128.method33114(); ++i) {
-                final Class7096 method33115 = class9128.method33115();
+                final BlockState method33115 = class9128.method33115();
                 if (method33115.method21696() != Class7521.field29147) {
                     this.field27521 = false;
                     this.field27520[i] = method33115;
@@ -343,7 +343,7 @@ public class Class7067 extends Class7065
         return this.field27521;
     }
     
-    public Class7096[] method21601() {
+    public BlockState[] method21601() {
         return this.field27520;
     }
     

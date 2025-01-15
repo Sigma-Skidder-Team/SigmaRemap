@@ -15,7 +15,7 @@ public class Class4565 extends Class4535<Class5144>
     }
     
     public boolean method13574(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5144 class1854) {
-        final Class7096 method1164 = class1854.field22133.method1164(random, class1853);
+        final BlockState method1164 = class1854.field22133.method1164(random, class1853);
         BlockPos method1165;
         if (!class1854.field22142) {
             method1165 = class1853;
@@ -28,7 +28,7 @@ public class Class4565 extends Class4535<Class5144>
         for (int i = 0; i < class1854.field22137; ++i) {
             class1855.method1287(method1165).method1292(random.nextInt(class1854.field22138 + 1) - random.nextInt(class1854.field22138 + 1), random.nextInt(class1854.field22139 + 1) - random.nextInt(class1854.field22139 + 1), random.nextInt(class1854.field22140 + 1) - random.nextInt(class1854.field22140 + 1));
             final BlockPos method1166 = class1855.method1139();
-            final Class7096 method1167 = class1851.method6701(method1166);
+            final BlockState method1167 = class1851.method6701(method1166);
             if (!class1851.method6961(class1855)) {
                 if (!class1854.field22141) {
                     continue;

@@ -196,7 +196,7 @@ public class Class9298
     }
     
     private void method34352(final World class1847, final BlockPos class1848) {
-        final Class436 method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.method6727(class1848);
         if (method6727 != null) {
             final Class4357 method6728 = method6727.method2195();
             if (method6728 != null) {

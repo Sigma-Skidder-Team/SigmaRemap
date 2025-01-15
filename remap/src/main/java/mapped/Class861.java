@@ -86,7 +86,7 @@ public class Class861 extends Class860
             if (class399 instanceof Class512 && ((Class512)class399).field3025.field27304) {
                 return;
             }
-            this.method1764(Class7739.field31340);
+            this.method1764(Items.field31340);
         }
     }
     

@@ -41,9 +41,9 @@ public class Class4276 implements IPacket<IClientPlayNetHandler>
         this.field19184 = (byte)(class511.rotationPitch * 256.0f / 360.0f);
         this.field19185 = (byte)(class511.field2953 * 256.0f / 360.0f);
         final Vec3d method1935 = class511.getMotion();
-        final double method1936 = MathHelper.method35654(method1935.x, -3.9, 3.9);
-        final double method1937 = MathHelper.method35654(method1935.y, -3.9, 3.9);
-        final double method1938 = MathHelper.method35654(method1935.z, -3.9, 3.9);
+        final double method1936 = MathHelper.clamp(method1935.x, -3.9, 3.9);
+        final double method1937 = MathHelper.clamp(method1935.y, -3.9, 3.9);
+        final double method1938 = MathHelper.clamp(method1935.z, -3.9, 3.9);
         this.field19180 = (int)(method1936 * 8000.0);
         this.field19181 = (int)(method1937 * 8000.0);
         this.field19182 = (int)(method1938 * 8000.0);

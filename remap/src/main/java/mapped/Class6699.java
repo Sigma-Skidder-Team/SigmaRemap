@@ -20,7 +20,7 @@ public class Class6699 extends Class6693
             throw new Class2332("Too many arguments");
         }
         if (!Class6699.field26420.field4682.method27331()) {
-            final ItemStack class6429 = new ItemStack(Class7739.field31579);
+            final ItemStack class6429 = new ItemStack(Items.field31579);
             final Class51 e = new Class51();
             e.method298("Amplifier", 125);
             e.method298("Duration", 2000);

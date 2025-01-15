@@ -27,15 +27,15 @@ public abstract class Class5609 extends Class5610<Class663>
     }
     
     public double method16900(final double n) {
-        return MathHelper.method35654((this.method16902(n) - this.field22978) / (this.field22979 - this.field22978), 0.0, 1.0);
+        return MathHelper.clamp((this.method16902(n) - this.field22978) / (this.field22979 - this.field22978), 0.0, 1.0);
     }
     
     public double method16901(final double n) {
-        return this.method16902(MathHelper.method35701(MathHelper.method35654(n, 0.0, 1.0), this.field22978, this.field22979));
+        return this.method16902(MathHelper.method35701(MathHelper.clamp(n, 0.0, 1.0), this.field22978, this.field22979));
     }
     
     public double method16902(final double n) {
-        return MathHelper.method35654(n, this.field22978, this.field22979);
+        return MathHelper.clamp(n, this.field22978, this.field22979);
     }
     
     public int method16903(final boolean b) {

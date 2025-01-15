@@ -61,11 +61,11 @@ public class Class6585
                     this.field26126 = field26126;
                     for (final BlockPos class1852 : BlockPos.getAllInBoxMutable(class1850, class1851)) {
                         final BlockPos method1135 = class1852.method1136(class1850);
-                        final Class7096 method1136 = class1847.method6701(class1852);
+                        final BlockState method1136 = class1847.method6701(class1852);
                         if (class1849 != null && class1849 == method1136.method21696()) {
                             continue;
                         }
-                        final Class436 method1137 = class1847.method6727(class1852);
+                        final TileEntity method1137 = class1847.method6727(class1852);
                         if (method1137 == null) {
                             if (!method1136.method21722(class1847, class1852) && !method1136.method21762(class1847, class1852)) {
                                 arrayList3.add(new Class9038(method1135, method1136, null));
@@ -129,7 +129,7 @@ public class Class6585
             if (method32860 != null && !method32860.isVecInside(class358)) {
                 continue;
             }
-            final Class7096 field38249 = class357.field38249;
+            final BlockState field38249 = class357.field38249;
             if (field38249.method21696() != class356) {
                 continue;
             }
@@ -184,7 +184,7 @@ public class Class6585
                                 continue;
                             }
                             final Class7099 class1855 = class1853.method32864() ? class1851.method6702(field38248) : null;
-                            final Class7096 method32867 = class1854.field38249.method21709(class1853.method32855()).method21708(class1853.method32856());
+                            final BlockState method32867 = class1854.field38249.method21709(class1853.method32855()).method21708(class1853.method32856());
                             if (class1854.field38250 != null) {
                                 Class447.method2267(class1851.method6727(field38248));
                                 class1851.method6688(field38248, Class7521.field29517.method11878(), 20);
@@ -200,7 +200,7 @@ public class Class6585
                             max3 = Math.max(max3, field38248.getZ());
                             arrayListWithCapacity2.add(Pair.of((Object)field38248, (Object)class1854.field38250));
                             if (class1854.field38250 != null) {
-                                final Class436 method32868 = class1851.method6727(field38248);
+                                final TileEntity method32868 = class1851.method6727(field38248);
                                 if (method32868 != null) {
                                     class1854.field38250.method298("x", field38248.getX());
                                     class1854.field38250.method298("y", field38248.getY());
@@ -248,7 +248,7 @@ public class Class6585
                                 if (!method32869.method21780()) {
                                     continue;
                                 }
-                                final Class7096 method32872 = class1851.method6701(class1856);
+                                final BlockState method32872 = class1851.method6701(class1856);
                                 final Class3833 method32873 = method32872.method21696();
                                 if (!(method32873 instanceof Class3867)) {
                                     continue;
@@ -274,8 +274,8 @@ public class Class6585
                             for (final Pair pair : arrayListWithCapacity2) {
                                 final BlockPos class1860 = (BlockPos)pair.getFirst();
                                 if (!class1853.method32861()) {
-                                    final Class7096 method32874 = class1851.method6701(class1860);
-                                    final Class7096 method32875 = Class3833.method11786(method32874, class1851, class1860);
+                                    final BlockState method32874 = class1851.method6701(class1860);
+                                    final BlockState method32875 = Class3833.method11786(method32874, class1851, class1860);
                                     if (method32874 != method32875) {
                                         class1851.method6688(class1860, method32875, (n & 0xFFFFFFFE) | 0x10);
                                     }
@@ -284,7 +284,7 @@ public class Class6585
                                 if (pair.getSecond() == null) {
                                     continue;
                                 }
-                                final Class436 method32876 = class1851.method6727(class1860);
+                                final TileEntity method32876 = class1851.method6727(class1860);
                                 if (method32876 == null) {
                                     continue;
                                 }
@@ -307,13 +307,13 @@ public class Class6585
         class1852.method27438((class1852, n5, n6, n7) -> {
             final BlockPos class1853 = new BlockPos(n2 + n5, n3 + n6, n4 + n7);
             final BlockPos method1149 = class1853.method1149(class1852);
-            final Class7096 method1150 = class1851.method6701(class1853);
-            final Class7096 method1151 = class1851.method6701(method1149);
-            final Class7096 method1152 = method1150.method21748(class1852, method1151, class1851, class1853, method1149);
+            final BlockState method1150 = class1851.method6701(class1853);
+            final BlockState method1151 = class1851.method6701(method1149);
+            final BlockState method1152 = method1150.method21748(class1852, method1151, class1851, class1853, method1149);
             if (method1150 != method1152) {
                 class1851.method6688(class1853, method1152, (n & 0xFFFFFFFE) | 0x10);
             }
-            final Class7096 method1153 = method1151.method21748(class1852.getOpposite(), method1152, class1851, method1149, class1853);
+            final BlockState method1153 = method1151.method21748(class1852.getOpposite(), method1152, class1851, method1149, class1853);
             if (method1151 != method1153) {
                 class1851.method6688(method1149, method1153, (n & 0xFFFFFFFE) | 0x10);
             }
@@ -570,7 +570,7 @@ public class Class6585
                 final Class52 class55 = new Class52();
                 for (final Class2249 class56 : arrayList) {
                     final Class52 e2 = new Class52();
-                    final Iterator<Class7096> iterator2 = class56.iterator();
+                    final Iterator<BlockState> iterator2 = class56.iterator();
                     while (iterator2.hasNext()) {
                         ((AbstractList<Class51>)e2).add(Class9346.method34649(iterator2.next()));
                     }
@@ -580,7 +580,7 @@ public class Class6585
             }
             else {
                 final Class52 class57 = new Class52();
-                final Iterator<Class7096> iterator3 = class52.iterator();
+                final Iterator<BlockState> iterator3 = class52.iterator();
                 while (iterator3.hasNext()) {
                     ((AbstractList<Class51>)class57).add(Class9346.method34649(iterator3.next()));
                 }
@@ -645,7 +645,7 @@ public class Class6585
             final Class51 method346 = class53.method346(j);
             final Class52 method347 = method346.method328("pos", 3);
             final BlockPos class55 = new BlockPos(method347.method349(0), method347.method349(1), method347.method349(2));
-            final Class7096 method348 = class54.method8453(method346.method319("state"));
+            final BlockState method348 = class54.method8453(method346.method319("state"));
             Class51 method349;
             if (!method346.method315("nbt")) {
                 method349 = null;

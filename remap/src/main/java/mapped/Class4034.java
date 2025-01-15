@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import java.util.AbstractList;
 import java.util.List;
 
-public class Class4034 extends Class3820
+public class Class4034 extends Item
 {
     public Class4034(final Class8959 class8959) {
         super(class8959);
@@ -63,7 +63,7 @@ public class Class4034 extends Class3820
     }
     
     public static ItemStack method12227(final Class6827 class6827) {
-        final ItemStack class6828 = new ItemStack(Class7739.field31534);
+        final ItemStack class6828 = new ItemStack(Items.field31534);
         method12226(class6828, class6827);
         return class6828;
     }

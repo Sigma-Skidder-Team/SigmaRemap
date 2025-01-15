@@ -63,7 +63,7 @@ public abstract class Class812 extends Class806
     public void method2676() {
         super.method2676();
         if (this.method4780()) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.method1764(Class7521.field29292);
             }
             this.method4781(false);
@@ -118,7 +118,7 @@ public abstract class Class812 extends Class806
                 return true;
             }
             if (!this.method4780()) {
-                if (class8321.method27622() == Class7521.field29292.method11704()) {
+                if (class8321.getItem() == Class7521.field29292.method11704()) {
                     this.method4781(true);
                     this.method4731();
                     return true;
@@ -131,7 +131,7 @@ public abstract class Class812 extends Class806
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() instanceof Class3831) {
+        if (method2715.getItem() instanceof Class3831) {
             return super.method4195(class512, class513);
         }
         if (!this.method2625()) {
@@ -146,9 +146,9 @@ public abstract class Class812 extends Class806
         if (!method2715.method27620()) {
             int method2716 = this.method4741(class512, method2715) ? 1 : 0;
             if (method2716 == 0) {
-                if (this.method4715() && method2715.method27622() != Class7739.field31552) {
+                if (this.method4715() && method2715.getItem() != Items.field31552) {
                     if (!this.method4780()) {
-                        if (method2715.method27622() == Class7521.field29292.method11704()) {
+                        if (method2715.getItem() == Class7521.field29292.method11704()) {
                             this.method4781(true);
                             this.method4782();
                             method2716 = 1;
@@ -157,7 +157,7 @@ public abstract class Class812 extends Class806
                     }
                     if (!this.method2625()) {
                         if (!this.method4736()) {
-                            if (method2715.method27622() == Class7739.field31353) {
+                            if (method2715.getItem() == Items.field31353) {
                                 this.method4740(class512);
                                 return true;
                             }

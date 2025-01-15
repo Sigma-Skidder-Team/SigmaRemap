@@ -50,7 +50,7 @@ public class Class6618 extends Class6601
             return 0;
         }
         final int bound = (int)Math.ceil(n / 2.0);
-        return bound + class1847.field10062.nextInt(bound);
+        return bound + class1847.rand.nextInt(bound);
     }
     
     private int method20068(final ItemStack class8321) {

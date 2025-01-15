@@ -49,7 +49,7 @@ public class Class3616 extends Class3446
             this.field16813 = false;
             this.field16812.method4150().method24733();
             final BlockPos class1850 = new BlockPos(this.field16812);
-            final String s = (class1849.field10062.nextFloat() < 0.5) ? "Shipwreck" : "Ocean_Ruin";
+            final String s = (class1849.rand.nextFloat() < 0.5) ? "Shipwreck" : "Ocean_Ruin";
             final BlockPos method6915 = class1849.method6915(s, class1850, 50, false);
             if (method6915 != null) {
                 this.field16812.method5002(method6915);
@@ -95,7 +95,7 @@ public class Class3616 extends Class3446
             }
             this.field16812.method4147().method24669(class5488.x, class5488.y, class5488.z, (float)(this.field16812.method4174() + 20), (float)this.field16812.method4173());
             this.field16812.method4150().method24724(class5488.x, class5488.y, class5488.z, 1.3);
-            if (field2391.field10062.nextInt(80) == 0) {
+            if (field2391.rand.nextInt(80) == 0) {
                 field2391.method6761(this.field16812, (byte)38);
             }
         }

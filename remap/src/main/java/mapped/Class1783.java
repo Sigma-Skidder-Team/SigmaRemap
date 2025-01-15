@@ -34,7 +34,7 @@ public class Class1783 extends Class1779
         return this.field9894.get(class1932);
     }
     
-    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final Class5028 class6583) {
+    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         map.forEach((class6585, jsonObject) -> {
             try {

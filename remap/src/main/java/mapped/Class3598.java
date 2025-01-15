@@ -18,12 +18,12 @@ public class Class3598 extends Class3446
     private final double field16758;
     private Class512 field16759;
     private int field16760;
-    private final Set<Class3820> field16761;
+    private final Set<Item> field16761;
     
-    public Class3598(final Class793 field16757, final double field16758, final Class3820 class3820) {
+    public Class3598(final Class793 field16757, final double field16758, final Item class3820) {
         this.field16757 = field16757;
         this.field16758 = field16758;
-        this.field16761 = Sets.newHashSet((Object[])new Class3820[] { class3820 });
+        this.field16761 = Sets.newHashSet((Object[])new Item[] { class3820 });
         this.method11019(EnumSet.of(Class2139.field12580, Class2139.field12581));
     }
     
@@ -31,14 +31,14 @@ public class Class3598 extends Class3446
     public boolean method11013() {
         if (this.field16760 <= 0) {
             this.field16759 = this.field16757.world.method7135(Class3598.field16756, this.field16757);
-            return this.field16759 != null && (this.method11127(this.field16759.method2713()) || this.method11127(this.field16759.method2714()));
+            return this.field16759 != null && (this.method11127(this.field16759.getHeldItemMainhand()) || this.method11127(this.field16759.method2714()));
         }
         --this.field16760;
         return false;
     }
     
     private boolean method11127(final ItemStack class8321) {
-        return this.field16761.contains(class8321.method27622());
+        return this.field16761.contains(class8321.getItem());
     }
     
     @Override

@@ -31,11 +31,11 @@ public abstract class Class6346<C extends Class7065>
         ((Class1865)class1860).method7097(new Class1873(class1860.method7019(), this.field25385));
     }
     
-    public Class3090 method18872(final Class5507 class5507, final BlockPos class5508) {
+    public Class3090 method18872(final BiomeManager class5507, final BlockPos class5508) {
         return class5507.method16810(class5508);
     }
     
-    public void method18873(final Class5507 class5507, final Class1860 class5508, final Class2126 class5509) {
+    public void method18873(final BiomeManager class5507, final Class1860 class5508, final Class2126 class5509) {
         final Class2317 class5510 = new Class2317();
         final Class7859 method7019 = class5508.method7019();
         final int field32290 = method7019.field32290;
@@ -124,7 +124,7 @@ public abstract class Class6346<C extends Class7065>
         return this.field25383.method6959(class1977).method9840(class1976);
     }
     
-    public void method18881(final Class5507 class5507, final Class1860 class5508, final Class6346<?> class5509, final Class1795 class5510) {
+    public void method18881(final BiomeManager class5507, final Class1860 class5508, final Class6346<?> class5509, final Class1795 class5510) {
         for (final Class4574 class5511 : Class4535.field20023.values()) {
             if (!class5509.method18879().method7121(class5511)) {
                 continue;

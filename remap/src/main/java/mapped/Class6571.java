@@ -38,7 +38,7 @@ public class Class6571 extends Class6564
     }
     
     private boolean method19915(final Vec3d class5487, final int n) {
-        AxisAlignedBB class5488 = this.field26090.method1886();
+        AxisAlignedBB class5488 = this.field26090.getBoundingBox();
         for (int i = 1; i < n; ++i) {
             class5488 = class5488.method18501(class5487);
             if (!this.field26090.world.method6978(this.field26090, class5488)) {

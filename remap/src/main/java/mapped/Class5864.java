@@ -25,7 +25,7 @@ public class Class5864<T extends Class827> extends Class5863<T>
     public void method17600(final T t, final float n, final float n2, final float n3) {
         this.field24001 = Class2036.field11607;
         this.field24000 = Class2036.field11607;
-        if (t.method2715(Class316.field1877).method27622() == Class7739.field31607) {
+        if (t.method2715(Class316.field1877).getItem() == Items.field31607) {
             if (t.method4216()) {
                 if (t.method2755() != Class2226.field13698) {
                     this.field24000 = Class2036.field11611;

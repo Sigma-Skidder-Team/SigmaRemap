@@ -87,7 +87,7 @@ public class Class5460 extends Class5419<Class824>
     
     private void method16678(final LivingEntity class511, final Class824 class512) {
         boolean b = false;
-        final ItemStack method2713 = class511.method2713();
+        final ItemStack method2713 = class511.getHeldItemMainhand();
         if (this.field22713 == null || !ItemStack.method27645(this.field22713, method2713)) {
             this.field22713 = method2713;
             b = true;

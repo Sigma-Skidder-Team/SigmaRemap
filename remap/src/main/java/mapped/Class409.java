@@ -28,12 +28,12 @@ public abstract class Class409 extends Class414 implements Class407
     }
     
     public void method2012(final ItemStack class8321) {
-        if (class8321.method27622() != this.method2013() || class8321.method27656()) {
+        if (class8321.getItem() != this.method2013() || class8321.method27656()) {
             this.method1650().set(Class409.field2506, (ItemStack)Class8349.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
         }
     }
     
-    public abstract Class3820 method2013();
+    public abstract Item method2013();
     
     public ItemStack method2014() {
         return this.method1650().get(Class409.field2506);

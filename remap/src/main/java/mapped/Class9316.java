@@ -18,7 +18,7 @@ public class Class9316
         Class8726.method29998();
         final Class756 field4684 = class869.field4684;
         if (!field4684.noClip) {
-            final Class7096 method34478 = method34478(field4684);
+            final BlockState method34478 = method34478(field4684);
             if (method34478 != null) {
                 method34479(class869, class869.method5305().method5787().method35427(method34478), class870);
             }
@@ -35,11 +35,11 @@ public class Class9316
     }
     
     @Nullable
-    private static Class7096 method34478(final Class512 class512) {
+    private static BlockState method34478(final Class512 class512) {
         final Mutable class513 = new Mutable();
         for (int i = 0; i < 8; ++i) {
             class513.method1286(class512.getPosX() + ((i >> 0) % 2 - 0.5f) * class512.method1930() * 0.8f, class512.method1944() + ((i >> 1) % 2 - 0.5f) * 0.1f, class512.getPosZ() + ((i >> 2) % 2 - 0.5f) * class512.method1930() * 0.8f);
-            final Class7096 method6701 = class512.world.method6701(class513);
+            final BlockState method6701 = class512.world.method6701(class513);
             if (method6701.method21710() != Class2115.field12305 && method6701.method21747(class512.world, class513)) {
                 return method6701;
             }

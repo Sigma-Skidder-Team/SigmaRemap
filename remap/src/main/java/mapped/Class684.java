@@ -110,7 +110,7 @@ public class Class684 extends Class565
     }
     
     private static double method3759(final int n) {
-        final double method35654 = MathHelper.method35654((1.0 - n / 200.0) * 10.0, 0.0, 1.0);
+        final double method35654 = MathHelper.clamp((1.0 - n / 200.0) * 10.0, 0.0, 1.0);
         return method35654 * method35654;
     }
     

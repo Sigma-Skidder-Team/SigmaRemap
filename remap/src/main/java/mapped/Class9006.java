@@ -19,7 +19,7 @@ public class Class9006
     private final Set<Class6332> field38023;
     private final Set<Class6332> field38024;
     private boolean field38025;
-    private final List<Class436> field38026;
+    private final List<TileEntity> field38026;
     private Class8336 field38027;
     private Class7819 field38028;
     private BitSet[] field38029;
@@ -41,7 +41,7 @@ public class Class9006
         return !this.field38023.contains(class6332);
     }
     
-    public List<Class436> method32214() {
+    public List<TileEntity> method32214() {
         return this.field38026;
     }
     

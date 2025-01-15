@@ -4,14 +4,16 @@
 
 package mapped;
 
+import net.minecraft.util.math.shapes.VoxelShape;
+
 public class Class5753 extends Class5714
 {
     private static String[] field23349;
     private BlockPos field23350;
-    private Class7702 field23351;
+    private VoxelShape field23351;
     public static boolean field23352;
     
-    public Class5753(final BlockPos field23350, final Class7702 field23351) {
+    public Class5753(final BlockPos field23350, final VoxelShape field23351) {
         this.field23350 = field23350;
         this.field23351 = field23351;
     }
@@ -20,7 +22,7 @@ public class Class5753 extends Class5714
         return this.field23350;
     }
     
-    public Class7702 method17065() {
+    public VoxelShape method17065() {
         return this.field23351;
     }
     
@@ -28,7 +30,7 @@ public class Class5753 extends Class5714
         this.field23350 = field23350;
     }
     
-    public void method17067(Class7702 method24488) {
+    public void method17067(VoxelShape method24488) {
         if (method24488 == null) {
             method24488 = Class7698.method24488(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
         }

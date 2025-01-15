@@ -20,7 +20,7 @@ public final class Class6594 implements Class6595
     @Override
     public Class5414 method20041(final CommandContext<Class7492> commandContext) throws CommandSyntaxException {
         final BlockPos method27768 = Class8330.method27768(commandContext, this.field26156 + "Pos");
-        final Class436 method27769 = ((Class7492)commandContext.getSource()).method23250().method6727(method27768);
+        final TileEntity method27769 = ((Class7492)commandContext.getSource()).method23250().method6727(method27768);
         if (method27769 != null) {
             return new Class5413(method27769, method27768);
         }

@@ -57,14 +57,14 @@ public class Class3440 extends Class3418
                 Label_0184: {
                     Label_0144: {
                         if (!method2157.method27620()) {
-                            if (method2157.method27622() != Class7739.field31534) {
+                            if (method2157.getItem() != Items.field31534) {
                                 if (!method2157.method27675()) {
                                     break Label_0144;
                                 }
                             }
                         }
                         if (!method2158.method27620()) {
-                            if (method2158.method27622() != Class7739.field31534) {
+                            if (method2158.getItem() != Items.field31534) {
                                 if (!method2158.method27675()) {
                                     break Label_0144;
                                 }
@@ -88,12 +88,12 @@ public class Class3440 extends Class3418
                                 method2159 = (b5 ? method2157 : method2158);
                             }
                             else {
-                                if (method2157.method27622() != method2158.method27622()) {
+                                if (method2157.getItem() != method2158.getItem()) {
                                     this.field16248.method2160(0, ItemStack.field34174);
                                     this.method10876();
                                     return;
                                 }
-                                final Class3820 method2160 = method2157.method27622();
+                                final Item method2160 = method2157.getItem();
                                 max = Math.max(method2160.method11709() - (method2160.method11709() - method2157.method27632() + (method2160.method11709() - method2158.method27632()) + method2160.method11709() * 5 / 100), 0);
                                 method2159 = this.method10990(method2157, method2158);
                                 if (!method2159.method27630()) {
@@ -145,9 +145,9 @@ public class Class3440 extends Class3418
         final Map<Object, Object> map = Class8742.method30196(class8321).entrySet().stream().filter(entry -> entry.getKey().method18604()).collect(Collectors.toMap((Function<? super Object, ?>)Map.Entry::getKey, (Function<? super Object, ?>)Map.Entry::getValue));
         Class8742.method30198((Map<Class6257, Integer>)map, method27641);
         method27641.method27681(0);
-        if (method27641.method27622() == Class7739.field31534) {
+        if (method27641.getItem() == Items.field31534) {
             if (map.size() == 0) {
-                method27641 = new ItemStack(Class7739.field31370);
+                method27641 = new ItemStack(Items.field31370);
                 if (class8321.method27667()) {
                     method27641.method27665(class8321.method27664());
                 }

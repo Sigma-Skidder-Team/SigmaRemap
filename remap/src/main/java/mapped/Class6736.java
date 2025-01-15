@@ -16,7 +16,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 
-public class Class6736 extends Class6737
+public class Class6736 extends Dimension
 {
     public Class6736(final World class1847, final DimensionType class1848) {
         super(class1847, class1848, 0.0f);
@@ -77,8 +77,8 @@ public class Class6736 extends Class6737
             if (class1868 == null) {
                 class1868 = field36583.method24875(field36583.method24876(this.field26492.method6764()).method16709(Class7102.field27631));
             }
-            Class7096 class1870 = Class7521.field29148.method11878();
-            Class7096 class1871 = Class7521.field29173.method11878();
+            BlockState class1870 = Class7521.field29148.method11878();
+            BlockState class1871 = Class7521.field29173.method11878();
             final JsonObject asJsonObject4 = asJsonObject.getAsJsonObject("chunk_generator");
             if (asJsonObject4 != null) {
                 if (asJsonObject4.has("options")) {
@@ -136,7 +136,7 @@ public class Class6736 extends Class6737
     @Override
     public BlockPos method20490(final int n, final int n2, final boolean b) {
         final Mutable class385 = new Mutable(n, 0, n2);
-        final Class7096 method13338 = this.field26492.method6959(class385).method9872().method13338();
+        final BlockState method13338 = this.field26492.method6959(class385).method9872().method13338();
         if (b && !method13338.method21696().method11785(Class7188.field27918)) {
             return null;
         }
@@ -148,7 +148,7 @@ public class Class6736 extends Class6737
         if (method13339.method7018(Class2020.field11522, n & 0xF, n2 & 0xF) <= method13339.method7018(Class2020.field11524, n & 0xF, n2 & 0xF)) {
             for (int i = method13340 + 1; i >= 0; --i) {
                 class385.setPos(n, i, n2);
-                final Class7096 method13341 = this.field26492.method6701(class385);
+                final BlockState method13341 = this.field26492.method6701(class385);
                 if (!method13341.method21756().method21781()) {
                     break;
                 }

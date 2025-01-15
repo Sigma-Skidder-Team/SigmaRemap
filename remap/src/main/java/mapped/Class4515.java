@@ -56,10 +56,10 @@ public abstract class Class4515 extends Class4473
                 if (class1856.field38250 != null) {
                     final String method323 = class1856.field38250.method323("final_state");
                     final Class7572 class1857 = new Class7572(new StringReader(method323), false);
-                    Class7096 method324 = Class7521.field29147.method11878();
+                    BlockState method324 = Class7521.field29147.method11878();
                     try {
                         class1857.method23802(true);
-                        final Class7096 method325 = class1857.method23799();
+                        final BlockState method325 = class1857.method23799();
                         if (method325 != null) {
                             method324 = method325;
                         }

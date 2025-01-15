@@ -30,7 +30,7 @@ public class Class4577 extends Class4574<Class5122>
     }
     
     @Override
-    public boolean method13594(final Class5507 class5507, final Class6346<?> class5508, final Random random, final int n, final int n2, final Class3090 class5509) {
+    public boolean method13594(final BiomeManager class5507, final Class6346<?> class5508, final Random random, final int n, final int n2, final Class3090 class5509) {
         final Class7859 method13593 = this.method13593(class5508, random, n, n2, 0, 0);
         if (n == method13593.field32290 && n2 == method13593.field32291) {
             final Iterator<Class3090> iterator = class5508.method18879().method7118(n * 16 + 9, class5508.method18853(), n2 * 16 + 9, 32).iterator();

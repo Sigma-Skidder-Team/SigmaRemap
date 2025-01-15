@@ -39,7 +39,7 @@ public class Class7606 implements Class7604
                 break;
             }
             case 1: {
-                if (!this.field30154.field2656.field10067 && !Class490.method2458(this.field30154).isEmpty()) {
+                if (!this.field30154.field2656.isRemote && !Class490.method2458(this.field30154).isEmpty()) {
                     this.field30154.method2449(Class8520.field35013);
                 }
                 Class490.method2459(this.field30154, Class490.method2460(n2));

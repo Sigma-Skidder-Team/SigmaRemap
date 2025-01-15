@@ -27,7 +27,7 @@ public class Class8642 implements Class8643
     private final Class1795 field36248;
     public final DataFixer field36249;
     
-    public Class8642(final File parent, final String s, final Class394 class394, final DataFixer field36249) {
+    public Class8642(final File parent, final String s, final MinecraftServer class394, final DataFixer field36249) {
         this.field36246 = Class8349.method27837();
         this.field36249 = field36249;
         (this.field36244 = new File(parent, s)).mkdirs();
@@ -43,7 +43,7 @@ public class Class8642 implements Class8643
         this.method29391();
     }
     
-    public void method29390(final Class8660 class8660, final Class51 class8661) {
+    public void method29390(final WorldInfo class8660, final Class51 class8661) {
         class8660.method29552(19133);
         final Class51 method29532 = class8660.method29532(class8661);
         final Class51 class8662 = new Class51();
@@ -108,10 +108,10 @@ public class Class8642 implements Class8643
     }
     
     @Nullable
-    public Class8660 method29394() {
+    public WorldInfo method29394() {
         final File file = new File(this.field36244, "level.dat");
         if (file.exists()) {
-            final Class8660 method25793 = Class7952.method25793(file, this.field36249);
+            final WorldInfo method25793 = Class7952.method25793(file, this.field36249);
             if (method25793 != null) {
                 return method25793;
             }
@@ -120,7 +120,7 @@ public class Class8642 implements Class8643
         return file2.exists() ? Class7952.method25793(file2, this.field36249) : null;
     }
     
-    public void method29395(final Class8660 class8660) {
+    public void method29395(final WorldInfo class8660) {
         this.method29390(class8660, null);
     }
     

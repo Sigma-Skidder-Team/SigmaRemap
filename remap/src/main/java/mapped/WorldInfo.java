@@ -22,7 +22,7 @@ import com.mojang.datafixers.DataFixer;
 import net.minecraft.nbt.INBT;
 import net.minecraft.world.dimension.DimensionType;
 
-public class Class8660
+public class WorldInfo
 {
     private String field36337;
     private int field36338;
@@ -76,9 +76,9 @@ public class Class8660
     private Set<String> field36386;
     private boolean field36387;
     private final Class8878 field36388;
-    private final Class7858<Class394> field36389;
+    private final Class7858<MinecraftServer> field36389;
     
-    public Class8660() {
+    public WorldInfo() {
         this.field36342 = Class9505.field40892;
         this.field36343 = new Class51();
         this.field36372 = 6.0E7;
@@ -91,13 +91,13 @@ public class Class8660
         this.field36381 = Maps.newIdentityHashMap();
         this.field36386 = Sets.newLinkedHashSet();
         this.field36388 = new Class8878();
-        this.field36389 = new Class7858<Class394>(Class7271.field28166);
+        this.field36389 = new Class7858<MinecraftServer>(Class7271.field28166);
         this.field36352 = null;
         this.field36353 = Class9528.method35579().getWorldVersion();
         this.method29573(new Class51());
     }
     
-    public Class8660(final Class51 class51, final DataFixer field36352, final int field36353, final Class51 field36354) {
+    public WorldInfo(final Class51 class51, final DataFixer field36352, final int field36353, final Class51 field36354) {
         this.field36342 = Class9505.field40892;
         this.field36343 = new Class51();
         this.field36372 = 6.0E7;
@@ -110,7 +110,7 @@ public class Class8660
         this.field36381 = Maps.newIdentityHashMap();
         this.field36386 = Sets.newLinkedHashSet();
         this.field36388 = new Class8878();
-        this.field36389 = new Class7858<Class394>(Class7271.field28166);
+        this.field36389 = new Class7858<MinecraftServer>(Class7271.field28166);
         this.field36352 = field36352;
         final Class52 method328 = class51.method328("ServerBrands", 8);
         for (int i = 0; i < method328.size(); ++i) {
@@ -261,7 +261,7 @@ public class Class8660
         }
     }
     
-    public Class8660(final Class8511 class8511, final String field36356) {
+    public WorldInfo(final Class8511 class8511, final String field36356) {
         this.field36342 = Class9505.field40892;
         this.field36343 = new Class51();
         this.field36372 = 6.0E7;
@@ -274,12 +274,12 @@ public class Class8660
         this.field36381 = Maps.newIdentityHashMap();
         this.field36386 = Sets.newLinkedHashSet();
         this.field36388 = new Class8878();
-        this.field36389 = new Class7858<Class394>(Class7271.field28166);
+        this.field36389 = new Class7858<MinecraftServer>(Class7271.field28166);
         this.field36352 = null;
         this.field36353 = Class9528.method35579().getWorldVersion();
         this.method29531(class8511);
         this.field36356 = field36356;
-        this.field36368 = Class8660.field36340;
+        this.field36368 = WorldInfo.field36340;
         this.field36367 = false;
     }
     
@@ -389,11 +389,11 @@ public class Class8660
         }
     }
     
-    public long method29534() {
+    public long getSeed() {
         return this.field36341;
     }
     
-    public static long method29535(final long n) {
+    public static long byHashing(final long n) {
         return Hashing.sha256().hashLong(n).asLong();
     }
     
@@ -670,7 +670,7 @@ public class Class8660
         this.field36369 = field36369;
     }
     
-    public Class7858<Class394> method29601() {
+    public Class7858<MinecraftServer> method29601() {
         return this.field36389;
     }
     

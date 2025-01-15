@@ -152,7 +152,7 @@ public class Class8787
     
     private static void method30586(final int n, final BlockPos class354, final Class1849 class355) {
         final Object method18876 = class355.method6904().method7438().method18876();
-        Class7096 class356;
+        BlockState class356;
         if (!(method18876 instanceof Class7067)) {
             if (class354.getY() != n - 1) {
                 if (class354.getY() >= n - 1) {
@@ -167,7 +167,7 @@ public class Class8787
             }
         }
         else {
-            final Class7096[] method18877 = ((Class7067)method18876).method21601();
+            final BlockState[] method18877 = ((Class7067)method18876).method21601();
             if (class354.getY() >= n) {
                 class356 = Class7521.field29147.method11878();
             }

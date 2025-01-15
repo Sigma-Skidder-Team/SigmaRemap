@@ -147,7 +147,7 @@ public class Class765 extends Class763 implements Class766
                 final Class765 class7930 = (Class765)method25714;
                 if (class7930.method4241()) {
                     class7930.method4242();
-                    this.method1764(Class7739.field31527);
+                    this.method1764(Items.field31527);
                 }
             }
         }
@@ -184,11 +184,11 @@ public class Class765 extends Class763 implements Class766
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() != Class7739.field31277) {
+        if (method2715.getItem() != Items.field31277) {
             return super.method4195(class512, class513);
         }
         this.world.method6706(class512, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35201, this.method1922(), 1.0f, this.rand.nextFloat() * 0.4f + 0.8f);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method4240();
             method2715.method27636(1, class512, class515 -> class515.method2795(class514));
         }
@@ -196,7 +196,7 @@ public class Class765 extends Class763 implements Class766
     }
     
     private void method4237() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             final Class2196 class2196 = this.world.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365;
             final float n = this.method4233() ? 2.0f : 1.0f;
             this.field2958 = true;

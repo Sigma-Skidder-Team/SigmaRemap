@@ -23,7 +23,7 @@ public class Class5803 implements Class5802
     private static final Logger field23822;
     private static final Random field23823;
     private final byte[] field23824;
-    private final Class394 field23825;
+    private final MinecraftServer field23825;
     public final NetworkManager field23826;
     private Class2055 field23827;
     private int field23828;
@@ -32,7 +32,7 @@ public class Class5803 implements Class5802
     private SecretKey field23831;
     private Class513 field23832;
     
-    public Class5803(final Class394 field23825, final NetworkManager field23826) {
+    public Class5803(final MinecraftServer field23825, final NetworkManager field23826) {
         this.field23824 = new byte[4];
         this.field23827 = Class2055.field11726;
         this.field23825 = field23825;

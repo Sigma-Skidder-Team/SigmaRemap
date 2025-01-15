@@ -28,7 +28,7 @@ public class Class867 extends Class865
     
     @Override
     public void method5217() {
-        final Class7096 method6701 = this.field4620.field2656.method6701(this.field4620.field2657);
+        final BlockState method6701 = this.field4620.field2656.method6701(this.field4620.field2657);
         this.method5216().method6693(this.field4620.field2657, method6701, method6701, 3);
     }
     
@@ -39,6 +39,6 @@ public class Class867 extends Class865
     
     @Override
     public Class7492 method5223() {
-        return new Class7492(this, new Vec3d(this.field4620.field2657.getX() + 0.5, this.field4620.field2657.getY() + 0.5, this.field4620.field2657.getZ() + 0.5), Vec2f.ZERO, this.method5216(), 2, this.method5214().getString(), this.method5214(), this.method5216().method6679(), null);
+        return new Class7492(this, new Vec3d(this.field4620.field2657.getX() + 0.5, this.field4620.field2657.getY() + 0.5, this.field4620.field2657.getZ() + 0.5), Vec2f.ZERO, this.method5216(), 2, this.method5214().getString(), this.method5214(), this.method5216().getServer(), null);
     }
 }

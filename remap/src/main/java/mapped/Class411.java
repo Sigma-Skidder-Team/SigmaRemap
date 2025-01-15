@@ -28,8 +28,8 @@ public class Class411 extends Class409
     }
     
     @Override
-    public Class3820 method2013() {
-        return Class7739.field31355;
+    public Item method2013() {
+        return Items.field31355;
     }
     
     private Class6909 method2017() {
@@ -53,7 +53,7 @@ public class Class411 extends Class409
             final Entity method21452 = ((Class7007)class7006).method21452();
             method21452.attackEntityFrom(DamageSource.method25699(this, this.method2019()), (method21452 instanceof Class849) ? 3 : 0);
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.world.method6761(this, (byte)3);
             this.method1652();
         }

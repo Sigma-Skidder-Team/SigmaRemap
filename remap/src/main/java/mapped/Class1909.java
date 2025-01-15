@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 import java.io.File;
 import java.util.List;
 
-public class Class1909 extends Class1906
+public class Class1909 extends AbstractChunkProvider
 {
     private static final int field10346;
     private static final List<Class9312> field10347;
@@ -280,7 +280,7 @@ public class Class1909 extends Class1906
         if (b) {
             this.field10348.method30130(Class9105.field38572, class9313, n3, class9313);
             if (this.method7429(class9314, n3)) {
-                final Class5028 method25423 = this.field10350.method6796();
+                final IProfiler method25423 = this.field10350.method6796();
                 method25423.method15297("chunkLoad");
                 this.method7432();
                 class9314 = this.method7423(method25422);
@@ -393,7 +393,7 @@ public class Class1909 extends Class1906
         final long method6754 = this.field10350.method6754();
         final long n = method6754 - this.field10356;
         this.field10356 = method6754;
-        final Class8660 method6755 = this.field10350.method6764();
+        final WorldInfo method6755 = this.field10350.method6764();
         final boolean b = method6755.method29570() == Class9505.field40898;
         final boolean method6756 = this.field10350.method6765().method31216(Class8878.field37318);
         if (!b) {

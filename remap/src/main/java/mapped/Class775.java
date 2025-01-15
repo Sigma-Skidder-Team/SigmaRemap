@@ -107,7 +107,7 @@ public class Class775 extends Class772
     @Override
     public void method4184(final Class9592 class9592) {
         if (this.method4292() == null) {
-            this.method1803(Class2215.field13600, new ItemStack(Class7739.field31276));
+            this.method1803(Class2215.field13600, new ItemStack(Items.field31276));
         }
     }
     
@@ -145,7 +145,7 @@ public class Class775 extends Class772
     
     @Override
     public void method4263(final int n, final boolean b) {
-        final ItemStack class8321 = new ItemStack(Class7739.field31276);
+        final ItemStack class8321 = new ItemStack(Items.field31276);
         final Class8792 method4292 = this.method4292();
         int i = 1;
         if (n > method4292.method30665(Class2113.field12292)) {

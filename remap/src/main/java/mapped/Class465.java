@@ -15,7 +15,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
-public class Class465 extends Class436 implements INameable
+public class Class465 extends TileEntity implements INameable
 {
     private ITextComponent field2747;
     private Class181 field2748;
@@ -152,7 +152,7 @@ public class Class465 extends Class436 implements INameable
         }
     }
     
-    public ItemStack method2389(final Class7096 class7096) {
+    public ItemStack method2389(final BlockState class7096) {
         final ItemStack class7097 = new ItemStack(Class3946.method12065(this.method2390(() -> class7098)));
         if (this.field2749 != null) {
             if (!this.field2749.isEmpty()) {
@@ -165,7 +165,7 @@ public class Class465 extends Class436 implements INameable
         return class7097;
     }
     
-    public Class181 method2390(final Supplier<Class7096> supplier) {
+    public Class181 method2390(final Supplier<BlockState> supplier) {
         if (this.field2748 == null) {
             this.field2748 = ((Class3944)supplier.get().method21696()).method12064();
         }

@@ -15,10 +15,10 @@ public class Class5413 implements Class5414
 {
     private static final SimpleCommandExceptionType field22577;
     public static final Function<String, Class6595> field22578;
-    private final Class436 field22579;
+    private final TileEntity field22579;
     private final BlockPos field22580;
     
-    public Class5413(final Class436 field22579, final BlockPos field22580) {
+    public Class5413(final TileEntity field22579, final BlockPos field22580) {
         this.field22579 = field22579;
         this.field22580 = field22580;
     }
@@ -30,7 +30,7 @@ public class Class5413 implements Class5414
         class51.method298("z", this.field22580.getZ());
         this.field22579.method2179(class51);
         this.field22579.method2161();
-        final Class7096 method6701 = this.field22579.method2186().method6701(this.field22580);
+        final BlockState method6701 = this.field22579.method2186().method6701(this.field22580);
         this.field22579.method2186().method6693(this.field22580, method6701, method6701, 3);
     }
     

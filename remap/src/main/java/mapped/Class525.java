@@ -33,7 +33,7 @@ public class Class525 extends Class517<Class3434>
     private Class752 field3130;
     private boolean field3131;
     private boolean field3132;
-    private final Map<Class1932, Class7909<Class3820>> field3133;
+    private final Map<Class1932, Class7909<Item>> field3133;
     
     public Class525(final Class512 class512) {
         super(new Class3434(class512), class512.field3006, new StringTextComponent(""));
@@ -463,7 +463,7 @@ public class Class525 extends Class517<Class3434>
                             ((Class3434)this.field3077).field16225.add(ItemStack.field34174);
                         }
                         else {
-                            final ItemStack e = new ItemStack(Class7739.field31369);
+                            final ItemStack e = new ItemStack(Items.field31369);
                             e.method27659("CustomCreativeLock");
                             e.method27665(new Class2259("inventory.hotbarInfo", new Object[] { this.field3150.field4648.field23458.method1068(), this.field3150.field4648.field23457[i].method1068() }));
                             ((Class3434)this.field3077).field16225.add(e);
@@ -628,10 +628,10 @@ public class Class525 extends Class517<Class3434>
             while (iterator.hasNext()) {
                 arrayListWithCapacity.add(((ITextComponent)iterator.next()).getFormattedText());
             }
-            final Class3820 method27669 = class8321.method27622();
+            final Item method27669 = class8321.getItem();
             Class7207 method27670 = method27669.method11737();
             if (method27670 == null) {
-                if (method27669 == Class7739.field31534) {
+                if (method27669 == Items.field31534) {
                     final Map<Class6257, Integer> method27671 = Class8742.method30196(class8321);
                     if (method27671.size() == 1) {
                         final Class6257 class8322 = method27671.keySet().iterator().next();

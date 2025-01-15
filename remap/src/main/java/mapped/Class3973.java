@@ -15,22 +15,22 @@ public class Class3973 extends Class3833
     }
     
     @Override
-    public boolean method11818(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11818(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         return true;
     }
     
     @Override
-    public Class2115 method11797(final Class7096 class7096) {
+    public Class2115 method11797(final BlockState class7096) {
         return Class2115.field12305;
     }
     
     @Override
-    public float method11859(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public float method11859(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         return 1.0f;
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean method11779(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return false;
     }
 }

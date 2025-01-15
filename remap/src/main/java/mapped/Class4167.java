@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 import java.util.Calendar;
 
-public class Class4167<T extends Class436 & Class476> extends Class4158<T>
+public class Class4167<T extends TileEntity & Class476> extends Class4158<T>
 {
     private static String[] field18567;
     private final Class6300 field18568;

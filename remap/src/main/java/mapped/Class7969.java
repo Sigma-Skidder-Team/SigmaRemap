@@ -16,7 +16,7 @@ public class Class7969
     private static final Map<Class7255, Class6332> field32748;
     private static boolean field32749;
     
-    public static Class6332 method25824(final Class7096 class7096) {
+    public static Class6332 method25824(final BlockState class7096) {
         final Class3833 method21696 = class7096.method21696();
         if (!(method21696 instanceof Class3972)) {
             final Class6332 class7097 = Class7969.field32747.get(method21696);
@@ -25,12 +25,12 @@ public class Class7969
         return Class7969.field32749 ? Class6332.method18762() : Class6332.method18761();
     }
     
-    public static Class6332 method25825(final Class7096 class7096) {
+    public static Class6332 method25825(final BlockState class7096) {
         return (method25824(class7096) != Class6332.method18765()) ? Class8752.method30264() : Class8752.method30265();
     }
     
     public static Class6332 method25826(final ItemStack class8321) {
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         if (!(method27622 instanceof Class4036)) {
             return Class8752.method30265();
         }

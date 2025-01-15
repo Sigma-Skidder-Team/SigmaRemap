@@ -27,7 +27,7 @@ public class Class4558 extends Class4556
                 if (!b5 || !b6) {
                     class1853.method1287(class1852).method1292(i, n, j);
                     if (!class1851.method6701(class1853).method21722(class1851, class1853)) {
-                        this.method13529(class1851, class1853, (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)class1854.field22116.method1164(random, class1852)).method21773((Class7111<Comparable>)Class4003.field18044, b || (b6 && i == 1 - field22118))).method21773((Class7111<Comparable>)Class4003.field18042, b2 || (b6 && i == field22118 - 1))).method21773((Class7111<Comparable>)Class4003.field18041, b3 || (b5 && j == 1 - field22118))).method21773((Class7111<Comparable>)Class4003.field18043, b4 || (b5 && j == field22118 - 1)));
+                        this.method13529(class1851, class1853, (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<Object, Object>)class1854.field22116.method1164(random, class1852)).method21773((Class7111<Comparable>)Class4003.field18044, b || (b6 && i == 1 - field22118))).method21773((Class7111<Comparable>)Class4003.field18042, b2 || (b6 && i == field22118 - 1))).method21773((Class7111<Comparable>)Class4003.field18041, b3 || (b5 && j == 1 - field22118))).method21773((Class7111<Comparable>)Class4003.field18043, b4 || (b5 && j == field22118 - 1)));
                     }
                 }
             }

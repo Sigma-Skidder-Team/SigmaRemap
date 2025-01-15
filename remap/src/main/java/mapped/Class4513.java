@@ -57,8 +57,8 @@ public class Class4513 extends Class4500
         this.method13445(class1851, class1853, 0, 0, 0, 4, 4, 6, true, random, Class6924.method21296());
         this.method13492(class1851, random, class1853, this.field19896, 1, 1, 0);
         this.method13492(class1851, random, class1853, Class1982.field10976, 1, 1, 6);
-        final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.EAST);
-        final Class7096 class1856 = ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.WEST);
+        final BlockState class1855 = ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.EAST);
+        final BlockState class1856 = ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.WEST);
         this.method13447(class1851, class1853, random, 0.1f, 1, 2, 1, class1855);
         this.method13447(class1851, class1853, random, 0.1f, 3, 2, 1, class1856);
         this.method13447(class1851, class1853, random, 0.1f, 1, 2, 5, class1855);

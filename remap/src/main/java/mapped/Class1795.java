@@ -6,7 +6,6 @@ package mapped;
 
 import org.apache.logging.log4j.LogManager;
 import java.nio.file.InvalidPathException;
-import java.io.OutputStream;
 import java.io.FileOutputStream;
 import java.nio.file.attribute.FileAttribute;
 import java.nio.file.Files;
@@ -28,10 +27,10 @@ public class Class1795 implements Class1657
     private static final Logger field9945;
     private final Map<Class1932, Class6585> field9946;
     private final DataFixer field9947;
-    private final Class394 field9948;
+    private final MinecraftServer field9948;
     private final Path field9949;
     
-    public Class1795(final Class394 field9948, final File file, final DataFixer field9949) {
+    public Class1795(final MinecraftServer field9948, final File file, final DataFixer field9949) {
         this.field9946 = Maps.newHashMap();
         this.field9948 = field9948;
         this.field9947 = field9949;

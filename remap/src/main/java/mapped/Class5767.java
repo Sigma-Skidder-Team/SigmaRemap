@@ -15,7 +15,7 @@ import java.util.List;
 public class Class5767 implements Class5763
 {
     private final Class1932 field23582;
-    private final Class3820 field23583;
+    private final Item field23583;
     private final int field23584;
     private final String field23585;
     private final List<String> field23586;
@@ -24,7 +24,7 @@ public class Class5767 implements Class5763
     private final Class1932 field23589;
     public final /* synthetic */ Class7989 field23590;
     
-    public Class5767(final Class7989 field23590, final Class1932 field23591, final Class3820 field23592, final int field23593, final String field23594, final List<String> field23595, final Map<Character, Class120> field23596, final Class6056 field23597, final Class1932 field23598) {
+    public Class5767(final Class7989 field23590, final Class1932 field23591, final Item field23592, final int field23593, final String field23594, final List<String> field23595, final Map<Character, Class120> field23596, final Class6056 field23597, final Class1932 field23598) {
         this.field23590 = field23590;
         this.field23582 = field23591;
         this.field23583 = field23592;

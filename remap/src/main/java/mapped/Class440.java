@@ -113,7 +113,7 @@ public class Class440 extends Class456 implements Class441, Class439
                         double n = 0.0;
                         double n2 = 0.0;
                         double n3 = 0.0;
-                        final AxisAlignedBB method6704 = class180.method1886();
+                        final AxisAlignedBB method6704 = class180.getBoundingBox();
                         switch (Class9309.field39950[class179.getAxis().ordinal()]) {
                             case 1: {
                                 double n4;
@@ -190,7 +190,7 @@ public class Class440 extends Class456 implements Class441, Class439
             ++this.field2667;
             this.field2656.method6763(this.field2657, this.method2194().method21696(), 1, this.field2667);
             if (this.field2667 == 1) {
-                this.field2656.method6705(null, this.field2657, Class8520.field35550, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
+                this.field2656.method6705(null, this.field2657, Class8520.field35550, Class286.field1582, 0.5f, this.field2656.rand.nextFloat() * 0.1f + 0.9f);
             }
         }
     }
@@ -201,7 +201,7 @@ public class Class440 extends Class456 implements Class441, Class439
             --this.field2667;
             this.field2656.method6763(this.field2657, this.method2194().method21696(), 1, this.field2667);
             if (this.field2667 <= 0) {
-                this.field2656.method6705(null, this.field2657, Class8520.field35549, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
+                this.field2656.method6705(null, this.field2657, Class8520.field35549, Class286.field1582, 0.5f, this.field2656.rand.nextFloat() * 0.1f + 0.9f);
             }
         }
     }
@@ -256,7 +256,7 @@ public class Class440 extends Class456 implements Class441, Class439
     
     @Override
     public boolean method2249(final int n, final ItemStack class8321, final Direction class8322) {
-        return !(Class3833.method11776(class8321.method27622()) instanceof Class3942);
+        return !(Class3833.method11776(class8321.getItem()) instanceof Class3942);
     }
     
     @Override

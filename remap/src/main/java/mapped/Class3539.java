@@ -56,9 +56,9 @@ public class Class3539 extends Class3446
         class9594.hurtResistantTime = 60;
         class9594.method4190();
         if (class9594.method2718(Class2215.field13605).method27620()) {
-            class9594.method1803(Class2215.field13605, new ItemStack(Class7739.field31325));
+            class9594.method1803(Class2215.field13605, new ItemStack(Items.field31325));
         }
-        class9594.method1803(Class2215.field13600, Class8742.method30224(class9594.method2633(), class9594.method2713(), (int)(5.0f + class9592.method35975() * class9594.method2633().nextInt(18)), false));
+        class9594.method1803(Class2215.field13600, Class8742.method30224(class9594.method2633(), class9594.getHeldItemMainhand(), (int)(5.0f + class9592.method35975() * class9594.method2633().nextInt(18)), false));
         class9594.method1803(Class2215.field13605, Class8742.method30224(class9594.method2633(), class9594.method2718(Class2215.field13605), (int)(5.0f + class9592.method35975() * class9594.method2633().nextInt(18)), false));
         class9594.world.method6886(class9594);
         return class9594;

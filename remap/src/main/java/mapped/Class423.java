@@ -14,6 +14,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -87,13 +88,13 @@ public class Class423 extends Entity
     @Nullable
     @Override
     public AxisAlignedBB method1771(final Entity class399) {
-        return class399.method1750() ? class399.method1886() : null;
+        return class399.method1750() ? class399.getBoundingBox() : null;
     }
     
     @Nullable
     @Override
     public AxisAlignedBB method1702() {
-        return this.method1886();
+        return this.getBoundingBox();
     }
     
     @Override
@@ -111,7 +112,7 @@ public class Class423 extends Entity
         if (this.method1849(class7929)) {
             return false;
         }
-        if (!this.world.field10067 && !this.removed) {
+        if (!this.world.isRemote && !this.removed) {
             if (class7929 instanceof Class7931) {
                 if (class7929.method25714() != null) {
                     if (this.method1909(class7929.method25714())) {
@@ -139,7 +140,7 @@ public class Class423 extends Entity
     
     @Override
     public void onEnterBubbleColumnWithAirAbove(final boolean field2569) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.field2568 = true;
             this.field2569 = field2569;
             if (this.method2060() == 0) {
@@ -155,34 +156,34 @@ public class Class423 extends Entity
     @Override
     public void method1737(final Entity class399) {
         if (!(class399 instanceof Class423)) {
-            if (class399.method1886().field25074 <= this.method1886().field25074) {
+            if (class399.getBoundingBox().field25074 <= this.getBoundingBox().field25074) {
                 super.method1737(class399);
             }
         }
-        else if (class399.method1886().field25074 < this.method1886().field25077) {
+        else if (class399.getBoundingBox().field25074 < this.getBoundingBox().field25077) {
             super.method1737(class399);
         }
     }
     
-    public Class3820 method2040() {
+    public Item method2040() {
         switch (Class6847.field26864[this.method2065().ordinal()]) {
             default: {
-                return Class7739.field31356;
+                return Items.field31356;
             }
             case 2: {
-                return Class7739.field31585;
+                return Items.field31585;
             }
             case 3: {
-                return Class7739.field31586;
+                return Items.field31586;
             }
             case 4: {
-                return Class7739.field31587;
+                return Items.field31587;
             }
             case 5: {
-                return Class7739.field31588;
+                return Items.field31588;
             }
             case 6: {
-                return Class7739.field31589;
+                return Items.field31589;
             }
         }
     }
@@ -224,7 +225,7 @@ public class Class423 extends Entity
         else {
             ++this.field2551;
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field2551 >= 60.0f) {
                 this.removePassengers();
             }
@@ -245,7 +246,7 @@ public class Class423 extends Entity
                 this.method2044(false, false);
             }
             this.method2051();
-            if (this.world.field10067) {
+            if (this.world.isRemote) {
                 this.method2052();
                 this.world.method6788(new Class4302(this.method2054(0), this.method2054(1)));
             }
@@ -272,9 +273,9 @@ public class Class423 extends Entity
             }
         }
         this.method1689();
-        final List<Entity> method2044 = this.world.method6737(this, this.method1886().method18495(0.20000000298023224, -0.009999999776482582, 0.20000000298023224), Class9170.method33474(this));
+        final List<Entity> method2044 = this.world.method6737(this, this.getBoundingBox().method18495(0.20000000298023224, -0.009999999776482582, 0.20000000298023224), Class9170.method33474(this));
         if (!method2044.isEmpty()) {
-            final boolean b = !this.world.field10067 && !(this.method1907() instanceof Class512);
+            final boolean b = !this.world.isRemote && !(this.method1907() instanceof Class512);
             for (int j = 0; j < method2044.size(); ++j) {
                 final Entity class399 = method2044.get(j);
                 if (!class399.method1909(this)) {
@@ -301,7 +302,7 @@ public class Class423 extends Entity
     }
     
     private void method2041() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!this.field2568) {
                 this.method2059(0);
             }
@@ -384,7 +385,7 @@ public class Class423 extends Entity
     private Class2087 method2046() {
         final Class2087 method2050 = this.method2050();
         if (method2050 != null) {
-            this.field2563 = this.method1886().field25077;
+            this.field2563 = this.getBoundingBox().field25077;
             return method2050;
         }
         if (this.method2049()) {
@@ -399,7 +400,7 @@ public class Class423 extends Entity
     }
     
     public float method2047() {
-        final AxisAlignedBB method1886 = this.method1886();
+        final AxisAlignedBB method1886 = this.getBoundingBox();
         final int method1887 = MathHelper.floor(method1886.field25073);
         final int method1888 = MathHelper.method35650(method1886.field25076);
         final int method1889 = MathHelper.floor(method1886.field25077);
@@ -441,7 +442,7 @@ public class Class423 extends Entity
     }
     
     public float method2048() {
-        final AxisAlignedBB method1886 = this.method1886();
+        final AxisAlignedBB method1886 = this.getBoundingBox();
         final AxisAlignedBB class6221 = new AxisAlignedBB(method1886.field25073, method1886.field25074 - 0.001, method1886.field25075, method1886.field25076, method1886.field25074, method1886.field25078);
         final int n = MathHelper.floor(class6221.field25073) - 1;
         final int n2 = MathHelper.method35650(class6221.field25076) + 1;
@@ -449,7 +450,7 @@ public class Class423 extends Entity
         final int n4 = MathHelper.method35650(class6221.field25077) + 1;
         final int n5 = MathHelper.floor(class6221.field25075) - 1;
         final int n6 = MathHelper.method35650(class6221.field25078) + 1;
-        final Class7702 method1887 = Class7698.method24489(class6221);
+        final VoxelShape method1887 = Class7698.method24489(class6221);
         float n7 = 0.0f;
         int n8 = 0;
         try (final Class386 method1888 = Class386.method1296()) {
@@ -460,7 +461,7 @@ public class Class423 extends Entity
                         for (int k = n3; k < n4; ++k) {
                             if (n9 <= 0 || (k != n3 && k != n4 - 1)) {
                                 method1888.method1300(i, k, j);
-                                final Class7096 method1889 = this.world.method6701(method1888);
+                                final BlockState method1889 = this.world.method6701(method1888);
                                 if (!(method1889.method21696() instanceof Class3886) && Class7698.method24496(method1889.method21727(this.world, method1888).method24541(i, k, j), method1887, Class9306.field39924)) {
                                     n7 += method1889.method21696().method11865();
                                     ++n8;
@@ -475,7 +476,7 @@ public class Class423 extends Entity
     }
     
     private boolean method2049() {
-        final AxisAlignedBB method1886 = this.method1886();
+        final AxisAlignedBB method1886 = this.getBoundingBox();
         final int method1887 = MathHelper.floor(method1886.field25073);
         final int method1888 = MathHelper.method35650(method1886.field25076);
         final int method1889 = MathHelper.floor(method1886.field25074);
@@ -504,7 +505,7 @@ public class Class423 extends Entity
     
     @Nullable
     private Class2087 method2050() {
-        final AxisAlignedBB method1886 = this.method1886();
+        final AxisAlignedBB method1886 = this.getBoundingBox();
         final double n = method1886.field25077 + 0.001;
         final int method1887 = MathHelper.floor(method1886.field25073);
         final int method1888 = MathHelper.method35650(method1886.field25076);
@@ -672,11 +673,11 @@ public class Class423 extends Entity
     
     @Override
     public boolean method1770(final Class512 class512, final Class316 class513) {
-        return !class512.method2804() && !this.world.field10067 && this.field2551 < 60.0f && class512.method1778(this);
+        return !class512.method2804() && !this.world.isRemote && this.field2551 < 60.0f && class512.method1778(this);
     }
     
     @Override
-    public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
+    public void method1701(final double n, final boolean b, final BlockState class7096, final BlockPos class7097) {
         this.field2567 = this.getMotion().y;
         if (!this.isPassenger()) {
             if (!b) {
@@ -693,7 +694,7 @@ public class Class423 extends Entity
                         return;
                     }
                     this.method1705(this.fallDistance, 1.0f);
-                    if (!this.world.field10067) {
+                    if (!this.world.isRemote) {
                         if (!this.removed) {
                             this.method1652();
                             if (this.world.method6765().method31216(Class8878.field37321)) {
@@ -701,7 +702,7 @@ public class Class423 extends Entity
                                     this.method1764(this.method2065().method891());
                                 }
                                 for (int j = 0; j < 2; ++j) {
-                                    this.method1764(Class7739.field31299);
+                                    this.method1764(Items.field31299);
                                 }
                             }
                         }

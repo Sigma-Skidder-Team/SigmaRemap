@@ -29,24 +29,24 @@ public class Class7264
     
     public Class1912 method22205(final ItemStack class8321) {
         final Class6313 method22206 = this.method22206(class8321);
-        return (method22206 == this.field28143.method6452() && class8321.method27622() instanceof Class4036) ? this.field28143.method6453().method35427(((Class4036)class8321.method27622()).method12240().method11878()) : method22206.method18696();
+        return (method22206 == this.field28143.method6452() && class8321.getItem() instanceof Class4036) ? this.field28143.method6453().method35427(((Class4036)class8321.getItem()).method12240().method11878()) : method22206.method18696();
     }
     
     public Class6313 method22206(final ItemStack class8321) {
-        final Class6313 method22207 = this.method22207(class8321.method27622());
+        final Class6313 method22207 = this.method22207(class8321.getItem());
         return (method22207 != null) ? method22207 : this.field28143.method6452();
     }
     
     @Nullable
-    public Class6313 method22207(final Class3820 class3820) {
+    public Class6313 method22207(final Item class3820) {
         return (Class6313)this.field28142.get(method22208(class3820));
     }
     
-    private static int method22208(final Class3820 class3820) {
-        return Class3820.method11696(class3820);
+    private static int method22208(final Item class3820) {
+        return Item.method11696(class3820);
     }
     
-    public void method22209(final Class3820 class3820, final Class1933 class3821) {
+    public void method22209(final Item class3820, final Class1933 class3821) {
         this.field28141.put(method22208(class3820), (Object)class3821);
     }
     

@@ -38,8 +38,8 @@ import java.util.Map;
 public class Class824 extends Class819 implements Class831, Class825
 {
     private static final DataParameter<Class8562> field4399;
-    public static final Map<Class3820, Integer> field4400;
-    private static final Set<Class3820> field4401;
+    public static final Map<Item, Integer> field4400;
+    private static final Set<Item> field4401;
     private int field4402;
     private boolean field4403;
     private Class512 field4404;
@@ -184,8 +184,8 @@ public class Class824 extends Class819 implements Class831, Class825
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() != Class7739.field31552) {
-            if (method2715.method27622() != Class7739.field31500) {
+        if (method2715.getItem() != Items.field31552) {
+            if (method2715.getItem() != Items.field31500) {
                 if (this.method1768()) {
                     if (!this.method4824()) {
                         if (!this.method2783()) {
@@ -196,14 +196,14 @@ public class Class824 extends Class819 implements Class831, Class825
                             final boolean empty = this.method4825().isEmpty();
                             if (class513 == Class316.field1877) {
                                 if (empty) {
-                                    if (!this.world.field10067) {
+                                    if (!this.world.isRemote) {
                                         this.method4858();
                                     }
                                 }
                                 class512.method2857(Class8276.field34021);
                             }
                             if (!empty) {
-                                if (!this.world.field10067) {
+                                if (!this.world.isRemote) {
                                     if (!this.field4390.isEmpty()) {
                                         this.method4859(class512);
                                     }
@@ -223,7 +223,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     private void method4858() {
         this.method4820(40);
-        if (!this.world.method6678()) {
+        if (!this.world.isRemote()) {
             this.method1695(Class8520.field35679, this.method2720(), this.method2721());
         }
     }
@@ -484,7 +484,7 @@ public class Class824 extends Class819 implements Class831, Class825
     public void method4872(final Class8233<Class363> class8233) {
         if (this.world instanceof Class1849) {
             this.field2996.method1198((Class8233<Object>)class8233).ifPresent(class8236 -> {
-                ((Class1849)this.world).method6679();
+                ((Class1849)this.world).getServer();
                 class8234.method1481(class8236.method1169());
                 final Class1849 class8237;
                 class8237.method6921();
@@ -516,7 +516,7 @@ public class Class824 extends Class819 implements Class831, Class825
                 for (int i = 0; i < this.method4837().method2239(); ++i) {
                     final ItemStack method2157 = this.method4837().method2157(i);
                     if (!method2157.method27620()) {
-                        final Integer n = Class824.field4400.get(method2157.method27622());
+                        final Integer n = Class824.field4400.get(method2157.getItem());
                         if (n != null) {
                             for (int j = method2157.method27690(); j > 0; --j) {
                                 this.field4405 += (byte)(Object)n;
@@ -644,13 +644,13 @@ public class Class824 extends Class819 implements Class831, Class825
     @Override
     public void method4165(final Class427 class427) {
         final ItemStack method2107 = class427.method2107();
-        final Class3820 method2108 = method2107.method27622();
+        final Item method2108 = method2107.getItem();
         if (this.method4883(method2108)) {
             final Class443 method2109 = this.method4837();
             int n = 0;
             for (int i = 0; i < method2109.method2239(); ++i) {
                 final ItemStack method2110 = method2109.method2157(i);
-                if (method2110.method27620() || (method2110.method27622() == method2108 && method2110.method27690() < method2110.method27628())) {
+                if (method2110.method27620() || (method2110.getItem() == method2108 && method2110.method27690() < method2110.method27628())) {
                     n = 1;
                     break;
                 }
@@ -677,7 +677,7 @@ public class Class824 extends Class819 implements Class831, Class825
         }
     }
     
-    public boolean method4883(final Class3820 class3820) {
+    public boolean method4883(final Item class3820) {
         return Class824.field4401.contains(class3820) || this.method4870().method28781().method34576().contains((Object)class3820);
     }
     
@@ -698,10 +698,10 @@ public class Class824 extends Class819 implements Class831, Class825
     
     private void method4887() {
         final Class443 method4837 = this.method4837();
-        final int n = method4837.method2265(Class7739.field31315) / 3;
+        final int n = method4837.method2265(Items.field31315) / 3;
         if (n != 0) {
-            method4837.method2257(Class7739.field31315, n * 3);
-            final ItemStack method4838 = method4837.method2258(new ItemStack(Class7739.field31316, n));
+            method4837.method2257(Items.field31315, n * 3);
+            final ItemStack method4838 = method4837.method2258(new ItemStack(Items.field31316, n));
             if (!method4838.method27620()) {
                 this.method1767(method4838, 0.5f);
             }
@@ -709,7 +709,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     public boolean method4888() {
-        return this.method4837().method2266((Set<Class3820>)ImmutableSet.of((Object)Class7739.field31314, (Object)Class7739.field31518, (Object)Class7739.field31517, (Object)Class7739.field31576));
+        return this.method4837().method2266((Set<Item>)ImmutableSet.of((Object) Items.field31314, (Object) Items.field31518, (Object) Items.field31517, (Object) Items.field31576));
     }
     
     @Override
@@ -751,7 +751,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     public void method4891(final long n, final int n2) {
         if (this.method4894(n)) {
-            final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>)Class824.class, this.method1886().method18495(10.0, 10.0, 10.0));
+            final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>)Class824.class, this.getBoundingBox().method18495(10.0, 10.0, 10.0));
             if (method7128.stream().filter(class824 -> class824.method4894(n3)).limit(5L).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()).size() >= n2) {
                 if (this.method4895() != null) {
                     method7128.forEach(class825 -> class825.method4892(n4));
@@ -778,8 +778,8 @@ public class Class824 extends Class819 implements Class831, Class825
     private Class786 method4895() {
         final BlockPos class354 = new BlockPos(this);
         for (int i = 0; i < 10; ++i) {
-            final double n = this.world.field10062.nextInt(16) - 8;
-            final double n2 = this.world.field10062.nextInt(16) - 8;
+            final double n = this.world.rand.nextInt(16) - 8;
+            final double n2 = this.world.rand.nextInt(16) - 8;
             double n3 = 6.0;
             for (int j = 0; j >= -12; --j) {
                 final BlockPos method1133 = class354.add(n, n3 + j, n2);
@@ -873,8 +873,8 @@ public class Class824 extends Class819 implements Class831, Class825
     
     static {
         field4399 = EntityDataManager.method33564(Class824.class, Class7709.field30669);
-        field4400 = (Map)ImmutableMap.of((Object)Class7739.field31316, (Object)4, (Object)Class7739.field31518, (Object)1, (Object)Class7739.field31517, (Object)1, (Object)Class7739.field31575, (Object)1);
-        field4401 = (Set)ImmutableSet.of((Object)Class7739.field31316, (Object)Class7739.field31518, (Object)Class7739.field31517, (Object)Class7739.field31315, (Object)Class7739.field31314, (Object)Class7739.field31575, (Object[])new Class3820[] { Class7739.field31576 });
+        field4400 = (Map)ImmutableMap.of((Object) Items.field31316, (Object)4, (Object) Items.field31518, (Object)1, (Object) Items.field31517, (Object)1, (Object) Items.field31575, (Object)1);
+        field4401 = (Set)ImmutableSet.of((Object) Items.field31316, (Object) Items.field31518, (Object) Items.field31517, (Object) Items.field31315, (Object) Items.field31314, (Object) Items.field31575, (Object[])new Item[] { Items.field31576 });
         field4413 = ImmutableList.of((Object)Class8233.field33800, (Object)Class8233.field33801, (Object)Class8233.field33802, (Object)Class8233.field33804, (Object)Class8233.field33805, (Object)Class8233.field33806, (Object)Class8233.field33807, (Object)Class8233.field33808, (Object)Class8233.field33809, (Object)Class8233.field33810, (Object)Class8233.field33811, (Object)Class8233.field33812, (Object[])new Class8233[] { Class8233.field33813, Class8233.field33814, Class8233.field33815, Class8233.field33816, Class8233.field33817, Class8233.field33818, Class8233.field33819, Class8233.field33803, Class8233.field33820, Class8233.field33821, Class8233.field33822, Class8233.field33824, Class8233.field33825, Class8233.field33826, Class8233.field33823 });
         field4414 = ImmutableList.of((Object)Class8033.field33064, (Object)Class8033.field33065, (Object)Class8033.field33066, (Object)Class8033.field33067, (Object)Class8033.field33068, (Object)Class8033.field33069, (Object)Class8033.field33070, (Object)Class8033.field33071, (Object)Class8033.field33072);
         field4415 = (Map)ImmutableMap.of((Object)Class8233.field33800, (p0, class8912) -> class8912 == Class8912.field37476, (Object)Class8233.field33801, (class8913, class8914) -> class8913.method4870().method28781().method34575() == class8914, (Object)Class8233.field33802, (p0, class8915) -> class8915 == Class8912.field37477);

@@ -6,42 +6,45 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class EntitySelectionContext implements ISelectionContext
 {
-    private static String[] field29923;
-    public static final ISelectionContext DUMMY;
-    private final boolean field29925;
-    private final double field29926;
-    private final Class3820 field29927;
-    
-    public EntitySelectionContext(final boolean field29925, final double field29926, final Class3820 field29927) {
-        this.field29925 = field29925;
-        this.field29926 = field29926;
-        this.field29927 = field29927;
+    public static final ISelectionContext DUMMY = new EntitySelectionContext(false, -Double.MAX_VALUE, Items.AIR)
+    {
+        public boolean func_216378_a(VoxelShape shape, BlockPos pos, boolean p_216378_3_)
+        {
+            return p_216378_3_;
+        }
+    };
+    private final boolean field_227579_b_;
+    private final double field_216381_c;
+    private final Item item;
+
+    protected EntitySelectionContext(final boolean field_227579_b_, final double field_216381_c, final Item item) {
+        this.field_227579_b_ = field_227579_b_;
+        this.field_216381_c = field_216381_c;
+        this.item = item;
     }
     
     @Deprecated
-    public EntitySelectionContext(final Entity class399) {
-        this(class399.method1813(), class399.getPosY(), (class399 instanceof LivingEntity) ? ((LivingEntity)class399).method2713().method27622() : Class7739.field30754);
+    public EntitySelectionContext(final Entity slimeBodyTexOffY) {
+        this(slimeBodyTexOffY.isDescending(), slimeBodyTexOffY.getPosY(), (slimeBodyTexOffY instanceof LivingEntity) ? ((LivingEntity)slimeBodyTexOffY).getHeldItemMainhand().getItem() : Items.AIR);
     }
     
     @Override
-    public boolean hasItem(final Class3820 class3820) {
-        return this.field29927 == class3820;
+    public boolean hasItem(final Item class3820) {
+        return this.item == class3820;
     }
     
     @Override
     public boolean func_225581_b_() {
-        return this.field29925;
+        return this.field_227579_b_;
     }
     
     @Override
-    public boolean func_216378_a(final Class7702 class7702, final BlockPos class7703, final boolean b) {
-        return this.field29926 > class7703.getY() + class7702.method24536(Axis.Y) - 9.999999747378752E-6;
-    }
-    
-    static {
-        DUMMY = new Class7541(false, -1.7976931348623157E308, Class7739.field30754);
+    public boolean func_216378_a(final VoxelShape class7702, final BlockPos class7703, final boolean b) {
+        return this.field_216381_c > class7703.getY() + class7702.method24536(Axis.Y) - 9.999999747378752E-6;
     }
 }

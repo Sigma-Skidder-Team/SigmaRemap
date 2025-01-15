@@ -27,9 +27,9 @@ public class Class4273 implements IPacket<IClientPlayNetHandler>
     
     public Class4273(final int field19164, final Vec3d class5487) {
         this.field19164 = field19164;
-        final double method35654 = MathHelper.method35654(class5487.x, -3.9, 3.9);
-        final double method35655 = MathHelper.method35654(class5487.y, -3.9, 3.9);
-        final double method35656 = MathHelper.method35654(class5487.z, -3.9, 3.9);
+        final double method35654 = MathHelper.clamp(class5487.x, -3.9, 3.9);
+        final double method35655 = MathHelper.clamp(class5487.y, -3.9, 3.9);
+        final double method35656 = MathHelper.clamp(class5487.z, -3.9, 3.9);
         this.field19165 = (int)(method35654 * 8000.0);
         this.field19166 = (int)(method35655 * 8000.0);
         this.field19167 = (int)(method35656 * 8000.0);

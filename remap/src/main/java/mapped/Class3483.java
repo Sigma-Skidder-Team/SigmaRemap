@@ -43,13 +43,13 @@ public class Class3483 extends Class3479
         if (this.method11048()) {
             final World field2391 = this.field16407.world;
             final BlockPos method1137 = this.field16395.method1137();
-            final Class7096 method1138 = field2391.method6701(method1137);
+            final BlockState method1138 = field2391.method6701(method1137);
             final Class3833 method1139 = method1138.method21696();
             if (this.field16409) {
                 if (method1139 instanceof Class3881) {
-                    final Integer n = ((Class7097<Object, Class7096>)method1138).method21772((Class7111<Integer>)Class3881.field17529);
+                    final Integer n = ((Class7097<Object, BlockState>)method1138).method21772((Class7111<Integer>)Class3881.field17529);
                     if (n != 0) {
-                        field2391.method6688(method1137, ((Class7097<Object, Class7096>)method1138).method21773((Class7111<Comparable>)Class3881.field17529, n - 1), 2);
+                        field2391.method6688(method1137, ((Class7097<Object, BlockState>)method1138).method21773((Class7111<Comparable>)Class3881.field17529, n - 1), 2);
                         field2391.method6955(2001, method1137, Class3833.method11774(method1138));
                     }
                     else {
@@ -70,7 +70,7 @@ public class Class3483 extends Class3479
             if (this.field16408) {
                 if (!this.field16409) {
                     method1137 = method1137.method1137();
-                    final Class7096 method1138 = class1852.method6701(method1137);
+                    final BlockState method1138 = class1852.method6701(method1137);
                     final Class3833 method1139 = method1138.method21696();
                     if (method1139 instanceof Class3881) {
                         if (((Class3881)method1139).method11956(method1138)) {

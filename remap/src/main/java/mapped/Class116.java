@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Set;
 import java.util.function.Predicate;
 
@@ -34,7 +33,7 @@ public class Class116 implements Predicate<Class7990>
             return false;
         }
         if (this.field363 != null) {
-            final Class436 method26066 = class7990.method26066();
+            final TileEntity method26066 = class7990.method26066();
             return method26066 != null && Class9346.method34642(this.field363, method26066.method2180(new Class51()), true);
         }
         return true;

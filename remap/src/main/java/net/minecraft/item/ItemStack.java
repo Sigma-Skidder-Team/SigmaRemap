@@ -44,7 +44,7 @@ public final class ItemStack
     public int field34176;
     private int field34177;
     @Deprecated
-    private final Class3820 field34178;
+    private final Item field34178;
     private Class51 field34179;
     private boolean field34180;
     private Class862 field34181;
@@ -84,9 +84,9 @@ public final class ItemStack
         this.field34176 = class51.method317("Count");
         if (class51.method316("tag", 10)) {
             this.field34179 = class51.method327("tag");
-            this.method27622().method11702(class51);
+            this.getItem().method11702(class51);
         }
-        if (this.method27622().method11710()) {
+        if (this.getItem().method11710()) {
             this.method27633(this.method27632());
         }
         this.method27618();
@@ -103,7 +103,7 @@ public final class ItemStack
     }
     
     public boolean method27620() {
-        return this == ItemStack.field34174 || this.method27622() == null || this.method27622() == Class7739.field30754 || this.field34176 <= 0;
+        return this == ItemStack.field34174 || this.getItem() == null || this.getItem() == Items.AIR || this.field34176 <= 0;
     }
     
     public ItemStack method27621(final int a) {
@@ -114,8 +114,8 @@ public final class ItemStack
         return method27641;
     }
     
-    public Class3820 method27622() {
-        return this.field34180 ? Class7739.field30754 : this.field34178;
+    public Item getItem() {
+        return this.field34180 ? Items.AIR : this.field34178;
     }
     
     public Class2201 method27623(final Class7075 class7075) {
@@ -128,7 +128,7 @@ public final class ItemStack
                 }
             }
         }
-        final Class3820 method21653 = this.method27622();
+        final Item method21653 = this.getItem();
         final Class2201 method21654 = method21653.method11694(class7075);
         if (method21652 != null) {
             if (method21654 == Class2201.field13400) {
@@ -139,19 +139,19 @@ public final class ItemStack
     }
     
     public float method27624(final Class7096 class7096) {
-        return this.method27622().method11706(this, class7096);
+        return this.getItem().method11706(this, class7096);
     }
     
     public Class9355<ItemStack> method27625(final World class1847, final Class512 class1848, final Class316 class1849) {
-        return this.method27622().method11695(class1847, class1848, class1849);
+        return this.getItem().method11695(class1847, class1848, class1849);
     }
     
     public ItemStack method27626(final World class1847, final LivingEntity class1848) {
-        return this.method27622().method11707(this, class1847, class1848);
+        return this.getItem().method11707(this, class1847, class1848);
     }
     
     public Class51 method27627(final Class51 class51) {
-        final Class1932 method503 = Class90.field211.method503(this.method27622());
+        final Class1932 method503 = Class90.field211.method503(this.getItem());
         class51.method306("id", (method503 != null) ? method503.toString() : "minecraft:air");
         class51.method296("Count", (byte)this.field34176);
         if (this.field34179 != null) {
@@ -161,7 +161,7 @@ public final class ItemStack
     }
     
     public int method27628() {
-        return this.method27622().method11708();
+        return this.getItem().method11708();
     }
     
     public boolean method27629() {
@@ -169,7 +169,7 @@ public final class ItemStack
     }
     
     public boolean method27630() {
-        if (!this.field34180 && this.method27622().method11709() > 0) {
+        if (!this.field34180 && this.getItem().method11709() > 0) {
             final Class51 method27657 = this.method27657();
             return method27657 == null || !method27657.method329("Unbreakable");
         }
@@ -189,7 +189,7 @@ public final class ItemStack
     }
     
     public int method27634() {
-        return this.method27622().method11709();
+        return this.getItem().method11709();
     }
     
     public boolean method27635(int n, final Random random, final Class513 class513) {
@@ -220,12 +220,12 @@ public final class ItemStack
     }
     
     public <T extends LivingEntity> void method27636(final int n, final T t, final Consumer<T> consumer) {
-        if (!t.world.field10067) {
+        if (!t.world.isRemote) {
             if (!(t instanceof Class512) || !((Class512)t).field3025.field27304) {
                 if (this.method27630()) {
                     if (this.method27635(n, t.method2633(), (t instanceof Class513) ? t : null)) {
                         consumer.accept(t);
-                        final Class3820 method27622 = this.method27622();
+                        final Item method27622 = this.getItem();
                         this.method27693(1);
                         if (t instanceof Class512) {
                             ((Class512)t).method2859(Class8276.field33982.method8449(method27622));
@@ -238,30 +238,30 @@ public final class ItemStack
     }
     
     public void method27637(final LivingEntity class511, final Class512 class512) {
-        final Class3820 method27622 = this.method27622();
+        final Item method27622 = this.getItem();
         if (method27622.method11711(this, class511, class512)) {
             class512.method2859(Class8276.field33981.method8449(method27622));
         }
     }
     
     public void method27638(final World class1847, final Class7096 class1848, final BlockPos class1849, final Class512 class1850) {
-        final Class3820 method27622 = this.method27622();
+        final Item method27622 = this.getItem();
         if (method27622.method11712(this, class1847, class1848, class1849, class1850)) {
             class1850.method2859(Class8276.field33981.method8449(method27622));
         }
     }
     
     public boolean method27639(final Class7096 class7096) {
-        return this.method27622().method11713(class7096);
+        return this.getItem().method11713(class7096);
     }
     
     public boolean method27640(final Class512 class512, final LivingEntity class513, final Class316 class514) {
-        return this.method27622().method11714(this, class512, class513, class514);
+        return this.getItem().method11714(this, class512, class513, class514);
     }
     
     public ItemStack method27641() {
         if (!this.method27620()) {
-            final ItemStack class8321 = new ItemStack(this.method27622(), this.field34176);
+            final ItemStack class8321 = new ItemStack(this.getItem(), this.field34176);
             class8321.method27689(this.method27688());
             if (this.field34179 != null) {
                 class8321.field34179 = this.field34179.method333();
@@ -280,7 +280,7 @@ public final class ItemStack
     }
     
     private boolean method27644(final ItemStack class8321) {
-        return this.field34176 == class8321.field34176 && this.method27622() == class8321.method27622() && (this.field34179 != null || class8321.field34179 == null) && (this.field34179 == null || this.field34179.equals(class8321.field34179));
+        return this.field34176 == class8321.field34176 && this.getItem() == class8321.getItem() && (this.field34179 != null || class8321.field34179 == null) && (this.field34179 == null || this.field34179.equals(class8321.field34179));
     }
     
     public static boolean method27645(final ItemStack class8321, final ItemStack class8322) {
@@ -292,53 +292,53 @@ public final class ItemStack
     }
     
     public boolean method27647(final ItemStack class8321) {
-        return !class8321.method27620() && this.method27622() == class8321.method27622();
+        return !class8321.method27620() && this.getItem() == class8321.getItem();
     }
     
     public boolean method27648(final ItemStack class8321) {
         if (this.method27630()) {
-            return !class8321.method27620() && this.method27622() == class8321.method27622();
+            return !class8321.method27620() && this.getItem() == class8321.getItem();
         }
         return this.method27647(class8321);
     }
     
     public String method27649() {
-        return this.method27622().method11718(this);
+        return this.getItem().method11718(this);
     }
     
     @Override
     public String toString() {
-        return this.field34176 + " " + this.method27622();
+        return this.field34176 + " " + this.getItem();
     }
     
     public void method27650(final World class1847, final Entity class1848, final int n, final boolean b) {
         if (this.field34177 > 0) {
             --this.field34177;
         }
-        if (this.method27622() != null) {
-            this.method27622().method11722(this, class1847, class1848, n, b);
+        if (this.getItem() != null) {
+            this.getItem().method11722(this, class1847, class1848, n, b);
         }
     }
     
     public void method27651(final World class1847, final Class512 class1848, final int n) {
-        class1848.method2860(Class8276.field33980.method8449(this.method27622()), n);
-        this.method27622().method11723(this, class1847, class1848);
+        class1848.method2860(Class8276.field33980.method8449(this.getItem()), n);
+        this.getItem().method11723(this, class1847, class1848);
     }
     
     public int method27652() {
-        return this.method27622().method11726(this);
+        return this.getItem().method11726(this);
     }
     
     public Class1992 method27653() {
-        return this.method27622().method11725(this);
+        return this.getItem().method11725(this);
     }
     
     public void method27654(final World class1847, final LivingEntity class1848, final int n) {
-        this.method27622().method11727(this, class1847, class1848, n);
+        this.getItem().method11727(this, class1847, class1848, n);
     }
     
     public boolean method27655() {
-        return this.method27622().method11740(this);
+        return this.getItem().method11740(this);
     }
     
     public boolean method27656() {
@@ -395,7 +395,7 @@ public final class ItemStack
     
     public void method27663(final Class51 field34179) {
         this.field34179 = field34179;
-        if (this.method27622().method11710()) {
+        if (this.getItem().method11710()) {
             this.method27633(this.method27632());
         }
     }
@@ -414,7 +414,7 @@ public final class ItemStack
                 method27660.method330("Name");
             }
         }
-        return this.method27622().method11729(this);
+        return this.getItem().method11729(this);
     }
     
     public ItemStack method27665(final ITextComponent class2250) {
@@ -455,7 +455,7 @@ public final class ItemStack
             method8469.applyTextStyle(TextFormatting.ITALIC);
         }
         arrayList.add(method8469);
-        if (!class513.method7991() && !this.method27667() && this.method27622() == Class7739.field31425) {
+        if (!class513.method7991() && !this.method27667() && this.getItem() == Items.field31425) {
             arrayList.add(new StringTextComponent("#" + Class4094.method12329(this)).applyTextStyle(TextFormatting.GRAY));
         }
         int method8470 = 0;
@@ -463,7 +463,7 @@ public final class ItemStack
             method8470 = this.field34179.method319("HideFlags");
         }
         if ((method8470 & 0x20) == 0x0) {
-            this.method27622().method11728(this, (class512 == null) ? null : class512.world, arrayList, class513);
+            this.getItem().method11728(this, (class512 == null) ? null : class512.world, arrayList, class513);
         }
         if (this.method27656()) {
             if ((method8470 & 0x1) == 0x0) {
@@ -506,11 +506,11 @@ public final class ItemStack
                     double method8476 = class515.method25638();
                     boolean b = false;
                     if (class512 != null) {
-                        if (class515.method25635() == Class3820.field17361) {
+                        if (class515.method25635() == Item.field17361) {
                             method8476 = method8476 + class512.method2710(Class8107.field33410).method23940() + Class8742.method30202(this, Class6363.field25460);
                             b = true;
                         }
-                        else if (class515.method25635() == Class3820.field17362) {
+                        else if (class515.method25635() == Item.field17362) {
                             method8476 += class512.method2710(Class8107.field33412).method23940();
                             b = true;
                         }
@@ -564,7 +564,7 @@ public final class ItemStack
             if (this.method27631()) {
                 arrayList.add(new Class2259("item.durability", new Object[] { this.method27634() - this.method27632(), this.method27634() }));
             }
-            arrayList.add(new StringTextComponent(Class90.field211.method503(this.method27622()).toString()).applyTextStyle(TextFormatting.DARK_GRAY));
+            arrayList.add(new StringTextComponent(Class90.field211.method503(this.getItem()).toString()).applyTextStyle(TextFormatting.DARK_GRAY));
             if (this.method27656()) {
                 arrayList.add(new Class2259("item.nbt_tags", new Object[] { this.method27657().method293().size() }).applyTextStyle(TextFormatting.DARK_GRAY));
             }
@@ -603,15 +603,15 @@ public final class ItemStack
     }
     
     public boolean method27671() {
-        return this.method27622().method11730(this);
+        return this.getItem().method11730(this);
     }
     
     public Class1998 method27672() {
-        return this.method27622().method11731(this);
+        return this.getItem().method11731(this);
     }
     
     public boolean method27673() {
-        return this.method27622().method11732(this) && !this.method27675();
+        return this.getItem().method11732(this) && !this.method27675();
     }
     
     public void method27674(final Class6257 class6257, final int n) {
@@ -675,7 +675,7 @@ public final class ItemStack
             }
         }
         else {
-            o = this.method27622().method11739(class2215);
+            o = this.getItem().method11739(class2215);
         }
         ((Multimap)o).values().forEach(class2216 -> class2216.method25640((boolean)(0 != 0)));
         return (Multimap<String, Class7919>)o;
@@ -838,19 +838,19 @@ public final class ItemStack
     }
     
     public void method27694(final World class1847, final LivingEntity class1848, final int n) {
-        this.method27622().method11699(class1847, class1848, this, n);
+        this.getItem().method11699(class1847, class1848, this, n);
     }
     
     public boolean method27695() {
-        return this.method27622().method11743();
+        return this.getItem().method11743();
     }
     
     public Class7795 method27696() {
-        return this.method27622().method11745();
+        return this.getItem().method11745();
     }
     
     public Class7795 method27697() {
-        return this.method27622().method11746();
+        return this.getItem().method11746();
     }
     
     static {

@@ -26,7 +26,7 @@ public class Class6559
     }
     
     public boolean method19883(final ItemStack class8321, final World class8322, final LivingEntity class8323) {
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         for (final Map.Entry<Class1932, V> entry : this.field26052.entrySet()) {
             final Class8967 method27623 = method27622.method11700(entry.getKey());
             if (method27623 != null && method27623.method31812(class8321, class8322, class8323) >= (float)entry.getValue()) {

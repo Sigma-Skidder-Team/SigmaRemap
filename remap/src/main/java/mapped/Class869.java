@@ -403,7 +403,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             class8930.method31458(class8931);
             return;
         });
-        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.method11292().method27668(null, Class1980.field10972).stream()).map(class8934 -> TextFormatting.getTextWithoutFormattingCodes(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Class90.field211.method503(class8936.method11292().method27622())));
+        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.method11292().method27668(null, Class1980.field10972).stream()).map(class8934 -> TextFormatting.getTextWithoutFormattingCodes(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Class90.field211.method503(class8936.method11292().getItem())));
         this.field4641.method5798(Class1659.field9375, class8922);
         this.field4641.method5798(Class1659.field9376, class8923);
         this.field4641.method5798(Class1659.field9377, class8924);
@@ -492,7 +492,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         final Class6313 method5788 = method5787.method35429().method6452();
         final Iterator<Object> iterator = Class90.field208.iterator();
         while (iterator.hasNext()) {
-            for (final Class7096 class7096 : iterator.next().method11876().method32902()) {
+            for (final BlockState class7096 : iterator.next().method11876().method32902()) {
                 if (class7096.method21710() == Class2115.field12307 && method5787.method35428(class7096) == method5788) {
                     Class869.field4622.debug("Missing model for: {}", (Object)class7096);
                     b = true;
@@ -502,7 +502,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         final Class1912 method5789 = method5788.method18696();
         final Iterator<Object> iterator3 = Class90.field208.iterator();
         while (iterator3.hasNext()) {
-            for (final Class7096 class7097 : iterator3.next().method11876().method32902()) {
+            for (final BlockState class7097 : iterator3.next().method11876().method32902()) {
                 final Class1912 method5790 = method5787.method35427(class7097);
                 if (!class7097.method21706() && method5790 == method5789) {
                     Class869.field4622.debug("Missing particle icon for: {}", (Object)class7097);
@@ -511,13 +511,13 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             }
         }
         final Class2265<Object> method5791 = Class2265.method8506();
-        for (final Class3820 class7098 : Class90.field211) {
+        for (final Item class7098 : Class90.field211) {
             method5791.clear();
             class7098.method11735(Class7207.field27998, (Class2265<ItemStack>)method5791);
             for (final ItemStack class7099 : method5791) {
                 final String method5792 = class7099.method27649();
                 if (new Class2259(method5792, new Object[0]).getString().toLowerCase(Locale.ROOT).equals(class7098.method11717())) {
-                    Class869.field4622.debug("Missing translation for: {} {} {}", (Object)class7099, (Object)method5792, (Object)class7099.method27622());
+                    Class869.field4622.debug("Missing translation for: {} {} {}", (Object)class7099, (Object)method5792, (Object)class7099.getItem());
                 }
             }
         }
@@ -1237,9 +1237,9 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     public void method5262(final String s, final String s2, Class8511 class8511) {
         this.method5264();
         final Class8642 method25787 = this.field4656.method25787(s, null);
-        Class8660 method25788 = method25787.method29394();
+        WorldInfo method25788 = method25787.method29394();
         if (method25788 == null && class8511 != null) {
-            method25788 = new Class8660(class8511, s);
+            method25788 = new WorldInfo(class8511, s);
             method25787.method29395(method25788);
         }
         if (class8511 == null) {
@@ -1250,7 +1250,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             final YggdrasilAuthenticationService yggdrasilAuthenticationService = new YggdrasilAuthenticationService(this.field4655, UUID.randomUUID().toString());
             final MinecraftSessionService minecraftSessionService = yggdrasilAuthenticationService.createMinecraftSessionService();
             final GameProfileRepository profileRepository = yggdrasilAuthenticationService.createProfileRepository();
-            final Class8608 class8512 = new Class8608(profileRepository, new File(this.field4652, Class394.field2293.getName()));
+            final Class8608 class8512 = new Class8608(profileRepository, new File(this.field4652, MinecraftServer.field2293.getName()));
             Class493.method2502(class8512);
             Class493.method2503(minecraftSessionService);
             Class8608.method29191(false);
@@ -1303,7 +1303,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         if (!this.field4688) {
             final YggdrasilAuthenticationService yggdrasilAuthenticationService = new YggdrasilAuthenticationService(this.field4655, UUID.randomUUID().toString());
             final MinecraftSessionService minecraftSessionService = ((AuthenticationService)yggdrasilAuthenticationService).createMinecraftSessionService();
-            Class493.method2502(new Class8608(((AuthenticationService)yggdrasilAuthenticationService).createProfileRepository(), new File(this.field4652, Class394.field2293.getName())));
+            Class493.method2502(new Class8608(((AuthenticationService)yggdrasilAuthenticationService).createProfileRepository(), new File(this.field4652, MinecraftServer.field2293.getName())));
             Class493.method2503(minecraftSessionService);
             Class8608.method29191(false);
         }
@@ -1387,12 +1387,12 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
         if (this.field4691 != null && this.field4691.method21449() != Class2165.field12880) {
             final boolean field27304 = this.field4684.field3025.field27304;
-            Class436 method6727 = null;
+            TileEntity method6727 = null;
             final Class2165 method6728 = this.field4691.method21449();
             ItemStack class5749;
             if (method6728 == Class2165.field12881) {
                 final BlockPos method6729 = ((Class7005)this.field4691).method21447();
-                final Class7096 method6730 = this.field4683.method6701(method6729);
+                final BlockState method6730 = this.field4683.method6701(method6729);
                 final Class3833 method6731 = method6730.method21696();
                 if (method6730.method21706()) {
                     return;
@@ -1411,45 +1411,45 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                 }
                 final Entity method6732 = ((Class7007)this.field4691).method21452();
                 if (method6732 instanceof Class861) {
-                    class5749 = new ItemStack(Class7739.field31340);
+                    class5749 = new ItemStack(Items.field31340);
                 }
                 else if (method6732 instanceof Class863) {
-                    class5749 = new ItemStack(Class7739.field31551);
+                    class5749 = new ItemStack(Items.field31551);
                 }
                 else if (method6732 instanceof Class862) {
                     final ItemStack method6733 = ((Class862)method6732).method5198();
                     if (method6733.method27620()) {
-                        class5749 = new ItemStack(Class7739.field31515);
+                        class5749 = new ItemStack(Items.field31515);
                     }
                     else {
                         class5749 = method6733.method27641();
                     }
                 }
                 else if (method6732 instanceof Class428) {
-                    Class3820 class5750 = null;
+                    Item class5750 = null;
                     switch (Class8853.field37236[((Class428)method6732).method2139().ordinal()]) {
                         case 1: {
-                            class5750 = Class7739.field31373;
+                            class5750 = Items.field31373;
                             break;
                         }
                         case 2: {
-                            class5750 = Class7739.field31372;
+                            class5750 = Items.field31372;
                             break;
                         }
                         case 3: {
-                            class5750 = Class7739.field31537;
+                            class5750 = Items.field31537;
                             break;
                         }
                         case 4: {
-                            class5750 = Class7739.field31538;
+                            class5750 = Items.field31538;
                             break;
                         }
                         case 5: {
-                            class5750 = Class7739.field31553;
+                            class5750 = Items.field31553;
                             break;
                         }
                         default: {
-                            class5750 = Class7739.field31352;
+                            class5750 = Items.field31352;
                             break;
                         }
                     }
@@ -1459,10 +1459,10 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     class5749 = new ItemStack(((Class423)method6732).method2040());
                 }
                 else if (method6732 instanceof Class857) {
-                    class5749 = new ItemStack(Class7739.field31546);
+                    class5749 = new ItemStack(Items.field31546);
                 }
                 else if (method6732 instanceof Class858) {
-                    class5749 = new ItemStack(Class7739.field31572);
+                    class5749 = new ItemStack(Items.field31572);
                 }
                 else {
                     final Class3831 method6734 = Class3831.method11771(method6732.getType());
@@ -1504,9 +1504,9 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
     }
     
-    private ItemStack method5274(final ItemStack class8321, final Class436 class8322) {
+    private ItemStack method5274(final ItemStack class8321, final TileEntity class8322) {
         final Class51 method2180 = class8322.method2180(new Class51());
-        if (class8321.method27622() instanceof Class4046 && method2180.method315("Owner")) {
+        if (class8321.getItem() instanceof Class4046 && method2180.method315("Owner")) {
             class8321.method27658().method295("SkullOwner", method2180.method327("Owner"));
             return class8321;
         }
@@ -1864,7 +1864,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4711 = field4711;
     }
     
-    public Class5028 method5327() {
+    public IProfiler method5327() {
         return this.field4660;
     }
     

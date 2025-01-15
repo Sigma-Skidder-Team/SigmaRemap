@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.List;
 
-public class Class495 extends Class436 implements Class439
+public class Class495 extends TileEntity implements Class439
 {
     private static String[] field2841;
     private long field2842;
@@ -94,7 +94,7 @@ public class Class495 extends Class436 implements Class439
             this.field2842 = this.field2656.method6754();
             this.field2846 = (List<LivingEntity>)this.field2656.method7128((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(method2193).method18496(48.0));
         }
-        if (!this.field2656.field10067) {
+        if (!this.field2656.isRemote) {
             for (final LivingEntity class511 : this.field2846) {
                 if (!class511.method1768()) {
                     continue;
@@ -131,13 +131,13 @@ public class Class495 extends Class436 implements Class439
     }
     
     private void method2514(final World class1847) {
-        if (!class1847.field10067) {
+        if (!class1847.isRemote) {
             this.field2846.stream().filter((Predicate<? super Object>)this::method2516).forEach((Consumer<? super Object>)this::method2517);
         }
     }
     
     private void method2515(final World class1847) {
-        if (class1847.field10067) {
+        if (class1847.isRemote) {
             this.method2193();
             this.field2846.stream().filter((Predicate<? super Object>)this::method2516).forEach(class1850 -> {
                 final Object o = (int)this.field2846.stream().filter(p1 -> {}).count();

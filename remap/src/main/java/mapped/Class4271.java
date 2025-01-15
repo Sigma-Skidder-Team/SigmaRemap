@@ -10,7 +10,7 @@ public class Class4271 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19156;
     private BlockPos field19157;
-    private Class7096 field19158;
+    private BlockState field19158;
     
     public Class4271() {
     }
@@ -36,7 +36,7 @@ public class Class4271 implements IPacket<IClientPlayNetHandler>
         class5800.method17289(this);
     }
     
-    public Class7096 method12817() {
+    public BlockState method12817() {
         return this.field19158;
     }
     

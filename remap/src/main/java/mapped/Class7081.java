@@ -60,13 +60,13 @@ public class Class7081 implements Class7079
     
     @Override
     public void method21662(final ItemStack class8321) {
-        if (Class7855.field32237.method25618(class8321.method27622())) {
+        if (Class7855.field32237.method25618(class8321.getItem())) {
             this.field27582.method32926(Class2012.field11444);
         }
     }
     
-    public static boolean method21664(final Class756 class756, final Class7909<Class3820> class757) {
-        final Iterator<Class3820> iterator = class757.method25616().iterator();
+    public static boolean method21664(final Class756 class756, final Class7909<Item> class757) {
+        final Iterator<Item> iterator = class757.method25616().iterator();
         while (iterator.hasNext()) {
             if (class756.method4121().method23091(Class8276.field33980.method8449(iterator.next())) <= 0) {
                 continue;

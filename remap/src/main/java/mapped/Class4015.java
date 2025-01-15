@@ -18,14 +18,14 @@ public class Class4015 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7099.method21696() != class7096.method21696()) {
             this.method12197(class7097, class7098);
         }
     }
     
     @Override
-    public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
+    public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
         this.method12197(class7097, class7098);
         super.method11825(class7096, class7097, class7098, class7099, class7100, b);
     }
@@ -48,7 +48,7 @@ public class Class4015 extends Class3833
             final Direction[] values = Direction.values();
             for (int length = values.length, i = 0; i < length; ++i) {
                 final BlockPos method1149 = class1850.method1149(values[i]);
-                final Class7096 method1150 = class1847.method6701(method1149);
+                final BlockState method1150 = class1847.method6701(method1149);
                 final Class7099 method1151 = class1847.method6702(method1149);
                 final Class8059 method1152 = method1150.method21697();
                 if (method1151.method21793(Class7324.field28319)) {

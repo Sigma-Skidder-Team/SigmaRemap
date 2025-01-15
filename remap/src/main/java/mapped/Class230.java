@@ -46,10 +46,10 @@ public enum Class230
     field845("gradient_up", "gru", " # ", " # ", "# #"), 
     field846("bricks", "bri", new ItemStack(Class7521.field29282)),
     field847("globe", "glb"), 
-    field848("creeper", "cre", new ItemStack(Class7739.field31527)),
-    field849("skull", "sku", new ItemStack(Class7739.field31524)),
+    field848("creeper", "cre", new ItemStack(Items.field31527)),
+    field849("skull", "sku", new ItemStack(Items.field31524)),
     field850("flower", "flo", new ItemStack(Class7521.field29274)),
-    field851("mojang", "moj", new ItemStack(Class7739.field31342));
+    field851("mojang", "moj", new ItemStack(Items.field31342));
     
     public static final int field852;
     public static final int field853;

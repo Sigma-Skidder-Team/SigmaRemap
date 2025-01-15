@@ -16,27 +16,29 @@ import com.google.common.math.IntMath;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public final class Class7698
 {
     private static String[] field30597;
-    private static final Class7702 field30598;
-    public static final Class7702 field30599;
-    private static final Class7702 field30600;
+    private static final VoxelShape field30598;
+    public static final VoxelShape field30599;
+    private static final VoxelShape field30600;
     
-    public static Class7702 method24486() {
+    public static VoxelShape method24486() {
         return Class7698.field30600;
     }
     
-    public static Class7702 method24487() {
+    public static VoxelShape method24487() {
         return Class7698.field30598;
     }
     
-    public static Class7702 method24488(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public static VoxelShape method24488(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         return method24489(new AxisAlignedBB(n, n2, n3, n4, n5, n6));
     }
     
-    public static Class7702 method24489(final AxisAlignedBB class6221) {
+    public static VoxelShape method24489(final AxisAlignedBB class6221) {
         final int method24490 = method24490(class6221.field25073, class6221.field25076);
         final int method24491 = method24490(class6221.field25074, class6221.field25077);
         final int method24492 = method24490(class6221.field25075, class6221.field25078);
@@ -94,19 +96,19 @@ public final class Class7698
         return n * (long)(n2 / IntMath.gcd(n, n2));
     }
     
-    public static Class7702 method24492(final Class7702 class7702, final Class7702 class7703) {
+    public static VoxelShape method24492(final VoxelShape class7702, final VoxelShape class7703) {
         return method24494(class7702, class7703, Class9306.field39930);
     }
     
-    public static Class7702 method24493(final Class7702 class7702, final Class7702... array) {
+    public static VoxelShape method24493(final VoxelShape class7702, final VoxelShape... array) {
         return Arrays.stream(array).reduce(class7702, Class7698::method24492);
     }
     
-    public static Class7702 method24494(final Class7702 class7702, final Class7702 class7703, final Class9306 class7704) {
+    public static VoxelShape method24494(final VoxelShape class7702, final VoxelShape class7703, final Class9306 class7704) {
         return method24495(class7702, class7703, class7704).method24542();
     }
     
-    public static Class7702 method24495(final Class7702 class7702, final Class7702 class7703, final Class9306 class7704) {
+    public static VoxelShape method24495(final VoxelShape class7702, final VoxelShape class7703, final Class9306 class7704) {
         if (class7704.method34406(false, false)) {
             throw Class8349.method27859(new IllegalArgumentException());
         }
@@ -135,7 +137,7 @@ public final class Class7698
         return method34406 ? class7702 : method24486();
     }
     
-    public static boolean method24496(final Class7702 class7702, final Class7702 class7703, final Class9306 class7704) {
+    public static boolean method24496(final VoxelShape class7702, final VoxelShape class7703, final Class9306 class7704) {
         if (class7704.method34406(false, false)) {
             throw Class8349.method27859(new IllegalArgumentException());
         }
@@ -167,7 +169,7 @@ public final class Class7698
         return !class83.method445((n, n2, n3) -> class84.method445((n3, n4, n5) -> class85.method445((n5, n6, n7) -> !class88.method34406(class86.method27426(n, n3, n5), class87.method27426(n2, n4, n6)))));
     }
     
-    public static double method24498(final Axis class111, final AxisAlignedBB class112, final Stream<Class7702> stream, double method24553) {
+    public static double method24498(final Axis class111, final AxisAlignedBB class112, final Stream<VoxelShape> stream, double method24553) {
         final Iterator<Object> iterator = (Iterator<Object>)stream.iterator();
         while (iterator.hasNext()) {
             if (Math.abs(method24553) < 1.0E-7) {
@@ -178,11 +180,11 @@ public final class Class7698
         return method24553;
     }
     
-    public static double method24499(final Axis class111, final AxisAlignedBB class112, final Class1852 class113, final double n, final ISelectionContext class114, final Stream<Class7702> stream, final boolean b) {
+    public static double method24499(final Axis class111, final AxisAlignedBB class112, final Class1852 class113, final double n, final ISelectionContext class114, final Stream<VoxelShape> stream, final boolean b) {
         return method24500(class112, class113, n, class114, Class309.method985(class111, Axis.Z), stream, b);
     }
     
-    private static double method24500(final AxisAlignedBB class6221, final Class1852 class6222, double method24553, final ISelectionContext class6223, final Class309 class6224, final Stream<Class7702> stream, final boolean b) {
+    private static double method24500(final AxisAlignedBB class6221, final Class1852 class6222, double method24553, final ISelectionContext class6223, final Class309 class6224, final Stream<VoxelShape> stream, final boolean b) {
         if (class6221.method18508() >= 1.0E-6) {
             if (class6221.method18509() >= 1.0E-6) {
                 if (class6221.method18510() >= 1.0E-6) {
@@ -226,10 +228,10 @@ public final class Class7698
                                     }
                                     if (n11 < 3) {
                                         class6225.method1289(method24554, i, j, n10);
-                                        final Class7096 method24558 = class6222.method6701(class6225);
+                                        final BlockState method24558 = class6222.method6701(class6225);
                                         if (n11 != 1 || method24558.method21702()) {
                                             if (n11 != 2 || method24558.method21696() == Class7521.field29264) {
-                                                Class7702 class6226 = method24558.method21728(class6222, class6225, class6223);
+                                                VoxelShape class6226 = method24558.method21728(class6222, class6225, class6223);
                                                 if (b) {
                                                     final Class5753 class6227 = new Class5753(class6225, class6226);
                                                     Class9463.method35173().method35188().method21097(class6227);
@@ -262,15 +264,15 @@ public final class Class7698
         return (n <= 0.0) ? (MathHelper.floor(n2 + n) - 1) : (MathHelper.floor(n3 + n) + 1);
     }
     
-    public static boolean method24502(final Class7702 class7702, final Class7702 class7703, final Direction class7704) {
+    public static boolean method24502(final VoxelShape class7702, final VoxelShape class7703, final Direction class7704) {
         if (class7702 == method24487() && class7703 == method24487()) {
             return true;
         }
         if (!class7703.method24540()) {
             final Axis method790 = class7704.getAxis();
             final AxisDirection method791 = class7704.getAxisDirection();
-            final Class7702 class7705 = (method791 != AxisDirection.POSITIVE) ? class7703 : class7702;
-            final Class7702 class7706 = (method791 != AxisDirection.POSITIVE) ? class7702 : class7703;
+            final VoxelShape class7705 = (method791 != AxisDirection.POSITIVE) ? class7703 : class7702;
+            final VoxelShape class7706 = (method791 != AxisDirection.POSITIVE) ? class7702 : class7703;
             final Class9306 class7707 = (method791 != AxisDirection.POSITIVE) ? Class9306.field39918 : Class9306.field39920;
             if (DoubleMath.fuzzyEquals(class7705.method24536(method790), 1.0, 1.0E-7)) {
                 if (DoubleMath.fuzzyEquals(class7706.method24535(method790), 0.0, 1.0E-7)) {
@@ -284,7 +286,7 @@ public final class Class7698
         return false;
     }
     
-    public static Class7702 method24503(final Class7702 class7702, final Direction class7703) {
+    public static VoxelShape method24503(final VoxelShape class7702, final Direction class7703) {
         if (class7702 != method24487()) {
             final Axis method790 = class7703.getAxis();
             boolean b;
@@ -302,12 +304,12 @@ public final class Class7698
         return method24487();
     }
     
-    public static boolean method24504(final Class7702 class7702, final Class7702 class7703, final Direction class7704) {
+    public static boolean method24504(final VoxelShape class7702, final VoxelShape class7703, final Direction class7704) {
         if (class7702 != method24487() && class7703 != method24487()) {
             final Axis method790 = class7704.getAxis();
             final AxisDirection method791 = class7704.getAxisDirection();
-            Class7702 method792 = (method791 != AxisDirection.POSITIVE) ? class7703 : class7702;
-            Class7702 method793 = (method791 != AxisDirection.POSITIVE) ? class7702 : class7703;
+            VoxelShape method792 = (method791 != AxisDirection.POSITIVE) ? class7703 : class7702;
+            VoxelShape method793 = (method791 != AxisDirection.POSITIVE) ? class7702 : class7703;
             if (!DoubleMath.fuzzyEquals(method792.method24536(method790), 1.0, 1.0E-7)) {
                 method792 = method24486();
             }
@@ -319,7 +321,7 @@ public final class Class7698
         return true;
     }
     
-    public static boolean method24505(final Class7702 class7702, final Class7702 class7703) {
+    public static boolean method24505(final VoxelShape class7702, final VoxelShape class7703) {
         return class7702 == method24487() || class7703 == method24487() || ((!class7702.method24540() || !class7703.method24540()) && !method24496(method24487(), method24495(class7702, class7703, Class9306.field39930), Class9306.field39920));
     }
     

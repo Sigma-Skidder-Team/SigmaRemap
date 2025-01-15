@@ -18,6 +18,6 @@ public class Class6610 extends Class6601
     
     @Override
     public boolean method20046(final ItemStack class8321) {
-        return class8321.method27622() instanceof Class4044;
+        return class8321.getItem() instanceof Class4044;
     }
 }

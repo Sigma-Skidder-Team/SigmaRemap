@@ -20,7 +20,7 @@ public interface Class4150 extends Class4152
     });
     public static final boolean field18507 = Class9570.field41282.method22623();
     
-    default Class9145 method12414(final Class7096 class7096, final BlockPos class7097) {
+    default Class9145 method12414(final BlockState class7096, final BlockPos class7097) {
         final Class9145 class7098 = Class4150.field18506.get();
         class7098.method33373(class7096, class7097);
         return class7098;

@@ -191,7 +191,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
         try {
             this.field3641.method5244(new Class731());
             final Class539 class539 = new Class539(this.field3642);
-            final Class8660 method29394 = this.field3641.method5243().method25787(this.field3643.method7808(), null).method29394();
+            final WorldInfo method29394 = this.field3641.method5243().method25787(this.field3643.method7808(), null).method29394();
             if (method29394 != null) {
                 class539.method3110(method29394);
                 if (this.field3643.method7819()) {

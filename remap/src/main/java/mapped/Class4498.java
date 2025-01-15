@@ -42,8 +42,8 @@ public class Class4498 extends Class4484
         this.method13444(class1851, class1853, 0, 2, 1, 0, 8, 6, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
         this.method13444(class1851, class1853, 6, 2, 1, 6, 8, 6, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
         this.method13444(class1851, class1853, 1, 2, 6, 5, 8, 6, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
-        final Class7096 class1855 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17468, true)).method21773((Class7111<Comparable>)Class3929.field17466, true);
-        final Class7096 class1856 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17465, true)).method21773((Class7111<Comparable>)Class3929.field17467, true);
+        final BlockState class1855 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17468, true)).method21773((Class7111<Comparable>)Class3929.field17466, true);
+        final BlockState class1856 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17465, true)).method21773((Class7111<Comparable>)Class3929.field17467, true);
         this.method13444(class1851, class1853, 0, 3, 2, 0, 5, 4, class1856, class1856, false);
         this.method13444(class1851, class1853, 6, 3, 2, 6, 5, 2, class1856, class1856, false);
         this.method13444(class1851, class1853, 6, 3, 4, 6, 5, 4, class1856, class1856, false);

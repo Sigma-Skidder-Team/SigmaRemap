@@ -111,7 +111,7 @@ public class MathHelper
         return n2;
     }
     
-    public static double method35654(final double n, final double n2, final double n3) {
+    public static double clamp(final double n, final double n2, final double n3) {
         if (n >= n2) {
             return (n <= n3) ? n : n3;
         }

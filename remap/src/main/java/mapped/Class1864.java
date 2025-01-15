@@ -23,13 +23,13 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public Class7096 method6701(final BlockPos class354) {
+    public BlockState method6701(final BlockPos class354) {
         return Class7521.field29763.method11878();
     }
     
     @Nullable
     @Override
-    public Class7096 method7008(final BlockPos class354, final Class7096 class355, final boolean b) {
+    public BlockState method7008(final BlockPos class354, final BlockState class355, final boolean b) {
         return null;
     }
     
@@ -63,16 +63,16 @@ public class Class1864 extends Class1862
     
     @Nullable
     @Override
-    public Class436 method7000(final BlockPos class354, final Class2079 class355) {
+    public TileEntity method7000(final BlockPos class354, final Class2079 class355) {
         return null;
     }
     
     @Override
-    public void method7056(final Class436 class436) {
+    public void method7056(final TileEntity tileEntity) {
     }
     
     @Override
-    public void method7009(final BlockPos class354, final Class436 class355) {
+    public void method7009(final BlockPos class354, final TileEntity class355) {
     }
     
     @Override

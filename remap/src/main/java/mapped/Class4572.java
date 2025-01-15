@@ -16,7 +16,7 @@ public abstract class Class4572<U extends Class5113> extends Class4535<U>
     
     @Override
     public boolean method13525(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final U u) {
-        final Class7096 method13583 = this.method13583(random, class1853, u);
+        final BlockState method13583 = this.method13583(random, class1853, u);
         int n = 0;
         for (int i = 0; i < this.method13581(u); ++i) {
             final BlockPos method13584 = this.method13582(random, class1853, u);
@@ -40,5 +40,5 @@ public abstract class Class4572<U extends Class5113> extends Class4535<U>
     
     public abstract BlockPos method13582(final Random p0, final BlockPos p1, final U p2);
     
-    public abstract Class7096 method13583(final Random p0, final BlockPos p1, final U p2);
+    public abstract BlockState method13583(final Random p0, final BlockPos p1, final U p2);
 }

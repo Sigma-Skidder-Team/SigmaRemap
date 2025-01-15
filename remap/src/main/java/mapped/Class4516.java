@@ -42,7 +42,7 @@ public class Class4516 extends Class4515
     public void method13511(final String anObject, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if ("chest".equals(anObject)) {
             class355.method6688(class354, Class7521.field29147.method11878(), 3);
-            final Class436 method6727 = class355.method6727(class354.method1139());
+            final TileEntity method6727 = class355.method6727(class354.method1139());
             if (method6727 instanceof Class475) {
                 ((Class475)method6727).method2327(Class9020.field38091, random.nextLong());
             }
@@ -60,7 +60,7 @@ public class Class4516 extends Class4515
         final boolean method32856 = super.method13421(class1851, class1852, random, class1853, class1854);
         if (this.field19921.equals(Class5172.method16140())) {
             final BlockPos method32857 = this.field19920.add(Class6585.method19953(method32853, new BlockPos(3, 0, 5)));
-            final Class7096 method32858 = class1851.method6701(method32857.method1139());
+            final BlockState method32858 = class1851.method6701(method32857.method1139());
             if (!method32858.method21706()) {
                 if (method32858.method21696() != Class7521.field29307) {
                     class1851.method6688(method32857, Class7521.field29331.method11878(), 3);

@@ -205,7 +205,7 @@ public abstract class Class794 extends Class789
     
     @Override
     public void method2673(final DamageSource class7929) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.world.method6765().method31216(Class8878.field37326)) {
                 if (this.method4488() instanceof Class513) {
                     this.method4488().sendMessage(this.method2699().method35595());

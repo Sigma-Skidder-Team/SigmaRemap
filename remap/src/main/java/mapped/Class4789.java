@@ -37,7 +37,7 @@ public class Class4789 extends Class4703<Class425>
             method14160(method2083, method2081, method2082, n3, 0.0f, 1, 0, 0);
             class426.method22568();
             int n4 = (method2079.method2755() != Class2226.field13698) ? -1 : 1;
-            if (method2079.method2713().method27622() != Class7739.field31376) {
+            if (method2079.getHeldItemMainhand().getItem() != Items.field31376) {
                 n4 = -n4;
             }
             final float method2084 = MathHelper.sin(MathHelper.method35640(method2079.method2748(n2)) * 3.1415927f);

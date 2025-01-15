@@ -32,8 +32,8 @@ public class Class412 extends Class409
     }
     
     @Override
-    public Class3820 method2013() {
-        return Class7739.field31436;
+    public Item method2013() {
+        return Items.field31436;
     }
     
     @Override
@@ -48,7 +48,7 @@ public class Class412 extends Class409
         }
         if (class7006.method21449() == Class2165.field12881) {
             final BlockPos method2021 = ((Class7005)class7006).method21447();
-            final Class436 method2022 = this.world.method6727(method2021);
+            final TileEntity method2022 = this.world.method6727(method2021);
             if (method2022 instanceof Class488) {
                 final Class488 class7007 = (Class488)method2022;
                 if (method2019 == null) {
@@ -66,7 +66,7 @@ public class Class412 extends Class409
         for (int i = 0; i < 32; ++i) {
             this.world.method6709(Class8432.field34637, this.getPosX(), this.getPosY() + this.rand.nextDouble() * 2.0, this.getPosZ(), this.rand.nextGaussian(), 0.0, this.rand.nextGaussian());
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!(method2019 instanceof Class513)) {
                 if (method2019 != null) {
                     method2019.method1878(this.getPosX(), this.getPosY(), this.getPosZ());

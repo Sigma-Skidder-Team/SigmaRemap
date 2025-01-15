@@ -45,8 +45,8 @@ public class Class4489 extends Class4484
     public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
         this.method13444(class1851, class1853, 0, 0, 0, 4, 1, 4, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
         this.method13444(class1851, class1853, 0, 2, 0, 4, 5, 4, Class7521.field29147.method11878(), Class7521.field29147.method11878(), false);
-        final Class7096 class1855 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17468, true)).method21773((Class7111<Comparable>)Class3929.field17466, true);
-        final Class7096 class1856 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17465, true)).method21773((Class7111<Comparable>)Class3929.field17467, true);
+        final BlockState class1855 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17468, true)).method21773((Class7111<Comparable>)Class3929.field17466, true);
+        final BlockState class1856 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29395.method11878()).method21773((Class7111<Comparable>)Class3929.field17465, true)).method21773((Class7111<Comparable>)Class3929.field17467, true);
         this.method13444(class1851, class1853, 0, 2, 0, 0, 5, 4, Class7521.field29394.method11878(), Class7521.field29394.method11878(), false);
         this.method13444(class1851, class1853, 0, 3, 1, 0, 4, 1, class1856, class1856, false);
         this.method13444(class1851, class1853, 0, 3, 3, 0, 4, 3, class1856, class1856, false);

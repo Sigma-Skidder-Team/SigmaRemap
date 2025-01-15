@@ -32,7 +32,7 @@ public class Class8412
     }
     
     private static int method28086(final Class7492 class7492, final float f) throws CommandSyntaxException {
-        final Class9375 method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().method6787();
         if (method6787.method34800() != f) {
             method6787.method34801(f);
             class7492.method23257(new Class2259("commands.worldborder.damage.buffer.success", new Object[] { String.format(Locale.ROOT, "%.2f", f) }), true);
@@ -42,7 +42,7 @@ public class Class8412
     }
     
     private static int method28087(final Class7492 class7492, final float f) throws CommandSyntaxException {
-        final Class9375 method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().method6787();
         if (method6787.method34802() != f) {
             method6787.method34803(f);
             class7492.method23257(new Class2259("commands.worldborder.damage.amount.success", new Object[] { String.format(Locale.ROOT, "%.2f", f) }), true);
@@ -52,7 +52,7 @@ public class Class8412
     }
     
     private static int method28088(final Class7492 class7492, final int i) throws CommandSyntaxException {
-        final Class9375 method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().method6787();
         if (method6787.method34805() != i) {
             method6787.method34806(i);
             class7492.method23257(new Class2259("commands.worldborder.warning.time.success", new Object[] { i }), true);
@@ -62,7 +62,7 @@ public class Class8412
     }
     
     private static int method28089(final Class7492 class7492, final int i) throws CommandSyntaxException {
-        final Class9375 method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().method6787();
         if (method6787.method34807() != i) {
             method6787.method34808(i);
             class7492.method23257(new Class2259("commands.worldborder.warning.distance.success", new Object[] { i }), true);
@@ -78,7 +78,7 @@ public class Class8412
     }
     
     private static int method28091(final Class7492 class7492, final Vec2f class7493) throws CommandSyntaxException {
-        final Class9375 method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().method6787();
         if (method6787.method34777() == class7493.x && method6787.method34778() == class7493.y) {
             throw Class8412.field34540.create();
         }
@@ -88,7 +88,7 @@ public class Class8412
     }
     
     private static int method28092(final Class7492 class7492, final double d, final long n) throws CommandSyntaxException {
-        final Class9375 method6787 = class7492.method23250().method6787();
+        final WorldBorder method6787 = class7492.method23250().method6787();
         final double method6788 = method6787.method34791();
         if (method6788 == d) {
             throw Class8412.field34541.create();

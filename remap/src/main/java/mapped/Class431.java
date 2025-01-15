@@ -28,7 +28,7 @@ public class Class431 extends Class428
     }
     
     @Override
-    public Class7096 method2141() {
+    public BlockState method2141() {
         return Class7521.field29290.method11878();
     }
     

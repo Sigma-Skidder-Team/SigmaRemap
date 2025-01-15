@@ -64,8 +64,8 @@ public class Class3417 extends Class3418
             if (class8328 != null) {
                 final ItemStack class8330;
                 Label_0169_1: {
-                    final Class3820 class8329;
-                    if (class8329 == Class7739.field31369) {
+                    final Item class8329;
+                    if (class8329 == Items.field31369) {
                         if (!class8328.field25427) {
                             if (class8328.field25425 < 4) {
                                 class8325.method27641();
@@ -76,12 +76,12 @@ public class Class3417 extends Class3418
                             }
                         }
                     }
-                    if (class8329 == Class7739.field30967 && !class8328.field25427) {
+                    if (class8329 == Items.field30967 && !class8328.field25427) {
                         class8325.method27641();
                         class8330.method27691(1);
                         this.method10876();
                     }
-                    else if (class8329 == Class7739.field31521) {
+                    else if (class8329 == Items.field31521) {
                         class8325.method27641();
                         class8330.method27691(2);
                         this.method10876();
@@ -113,15 +113,15 @@ public class Class3417 extends Class3418
             if (class514.method20054()) {
                 ItemStack method20053;
                 final ItemStack other = method20053 = class514.method20053();
-                final Class3820 method20054 = other.method27622();
+                final Item method20054 = other.getItem();
                 class513 = other.method27641();
                 Label_0089: {
                     if (n != 2) {
                         if (n != 1 && n != 0) {
-                            if (method20054 != Class7739.field31425) {
-                                if (method20054 != Class7739.field31369) {
-                                    if (method20054 != Class7739.field31521) {
-                                        if (method20054 != Class7739.field30967) {
+                            if (method20054 != Items.field31425) {
+                                if (method20054 != Items.field31369) {
+                                    if (method20054 != Items.field31521) {
+                                        if (method20054 != Items.field30967) {
                                             if (n >= 3 && n < 30) {
                                                 if (this.method10888(other, 30, 39, false)) {
                                                     break Label_0089;
@@ -156,7 +156,7 @@ public class Class3417 extends Class3418
                         }
                     }
                     else {
-                        if (this.field16148.method2157(1).method27622() == Class7739.field30967) {
+                        if (this.field16148.method2157(1).getItem() == Items.field30967) {
                             method20053 = this.field16145.method22435((class518, p2) -> {
                                 Class4094.method12337(class518, this.field16148.method2157(0));
                                 final ItemStack class519;

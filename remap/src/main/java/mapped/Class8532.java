@@ -37,8 +37,8 @@ public final class Class8532
                 int method7445 = MathHelper.method35650(Math.random() * 4.0);
                 int n4 = 0;
                 for (int j = 0; j < method7445; ++j) {
-                    n2 += class1977.field10062.nextInt(6) - class1977.field10062.nextInt(6);
-                    n3 += class1977.field10062.nextInt(6) - class1977.field10062.nextInt(6);
+                    n2 += class1977.rand.nextInt(6) - class1977.rand.nextInt(6);
+                    n3 += class1977.rand.nextInt(6) - class1977.rand.nextInt(6);
                     class1980.setPos(n2, method7441, n3);
                     final float n5 = n2 + 0.5f;
                     final float n6 = n3 + 0.5f;
@@ -50,18 +50,18 @@ public final class Class8532
                                 final Class7859 a = new Class7859(class1980);
                                 if (Objects.equals(a, class1978.method7019()) || class1977.method6904().method7409(a)) {
                                     if (method7443 == null) {
-                                        method7443 = method28617(method7438, class1976, class1977.field10062, class1980);
+                                        method7443 = method28617(method7438, class1976, class1977.rand, class1980);
                                         if (method7443 == null) {
                                             break;
                                         }
-                                        method7445 = method7443.field26821 + class1977.field10062.nextInt(1 + method7443.field26822 - method7443.field26821);
+                                        method7445 = method7443.field26821 + class1977.rand.nextInt(1 + method7443.field26822 - method7443.field26821);
                                     }
                                     if (method7443.field26820.method23365() != Class1976.field10952) {
                                         if (method7443.field26820.method23364() || method7447 <= 16384.0) {
                                             final EntityType<?> field26820 = method7443.field26820;
                                             if (field26820.method23362()) {
                                                 if (method28618(method7438, class1976, method7443, class1980)) {
-                                                    if (method28621(Class8897.method31328(field26820), class1977, class1980, field26820) && Class8897.method31330(field26820, class1977, Class2101.field12174, class1980, class1977.field10062)) {
+                                                    if (method28621(Class8897.method31328(field26820), class1977, class1980, field26820) && Class8897.method31330(field26820, class1977, Class2101.field12174, class1980, class1977.rand)) {
                                                         if (class1977.method6976(field26820.method23375(n5, method7441, n6))) {
                                                             Class759 class1981;
                                                             try {
@@ -75,7 +75,7 @@ public final class Class8532
                                                                 Class8532.field35811.warn("Failed to create mob", (Throwable)ex);
                                                                 return;
                                                             }
-                                                            class1981.method1730(n5, method7441, n6, class1977.field10062.nextFloat() * 360.0f, 0.0f);
+                                                            class1981.method1730(n5, method7441, n6, class1977.rand.nextFloat() * 360.0f, 0.0f);
                                                             if ((method7447 <= 16384.0 || !class1981.method4168(method7447)) && class1981.method4179(class1977, Class2101.field12174)) {
                                                                 if (class1981.method4180(class1977)) {
                                                                     method7444 = class1981.method4188(class1977, class1977.method6784(new BlockPos(class1981)), Class2101.field12174, method7444, null);
@@ -118,12 +118,12 @@ public final class Class8532
     
     private static BlockPos method28619(final World class1847, final Class1862 class1848) {
         final Class7859 method7019 = class1848.method7019();
-        final int n = method7019.method25426() + class1847.field10062.nextInt(16);
-        final int n2 = method7019.method25427() + class1847.field10062.nextInt(16);
-        return new BlockPos(n, class1847.field10062.nextInt(class1848.method7018(Class2020.field11522, n, n2) + 1 + 1), n2);
+        final int n = method7019.method25426() + class1847.rand.nextInt(16);
+        final int n2 = method7019.method25427() + class1847.rand.nextInt(16);
+        return new BlockPos(n, class1847.rand.nextInt(class1848.method7018(Class2020.field11522, n, n2) + 1 + 1), n2);
     }
     
-    public static boolean method28620(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final Class7099 class1858) {
+    public static boolean method28620(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Class7099 class1858) {
         return !class1857.method21762(class1855, class1856) && !class1857.method21714() && class1858.method21781() && !class1857.method21755(Class7188.field27906);
     }
     
@@ -134,7 +134,7 @@ public final class Class8532
         if (class2197 == null || !class2195.method6787().method34779(class2196)) {
             return false;
         }
-        final Class7096 method6701 = class2195.method6701(class2196);
+        final BlockState method6701 = class2195.method6701(class2196);
         final Class7099 method6702 = class2195.method6702(class2196);
         final BlockPos method6703 = class2196.method1137();
         final BlockPos method6704 = class2196.method1139();
@@ -166,8 +166,8 @@ public final class Class8532
                         final BlockPos method9842 = method28623(class1851, class1853.field26820, n6, n7);
                         if (class1853.field26820.method23362() && method28621(Class2194.field13354, class1851, method9842, class1853.field26820)) {
                             final float method9843 = class1853.field26820.method23369();
-                            final double method9844 = MathHelper.method35654(n6, n3 + (double)method9843, n3 + 16.0 - method9843);
-                            final double method9845 = MathHelper.method35654(n7, n4 + (double)method9843, n4 + 16.0 - method9843);
+                            final double method9844 = MathHelper.clamp(n6, n3 + (double)method9843, n3 + 16.0 - method9843);
+                            final double method9845 = MathHelper.clamp(n7, n4 + (double)method9843, n4 + 16.0 - method9843);
                             if (!class1851.method6976(class1853.field26820.method23375(method9844, method9842.getY(), method9845))) {
                                 continue;
                             }

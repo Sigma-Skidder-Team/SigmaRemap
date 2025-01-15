@@ -10,7 +10,7 @@ public class Class9036
 {
     private static Class869 field38216;
     private static Class5760 field38217;
-    private static Class5028 field38218;
+    private static IProfiler field38218;
     public static boolean field38219;
     public static Class8032 field38220;
     public static Class8032 field38221;

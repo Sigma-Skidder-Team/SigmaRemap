@@ -17,6 +17,8 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.dimension.DimensionType;
 
@@ -148,7 +150,7 @@ public class Class756 extends Class754
     }
     
     public void method4113() {
-        final Class5744 class5744 = new Class5744(this.posX, this.method1886().field25074, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
+        final Class5744 class5744 = new Class5744(this.posX, this.getBoundingBox().field25074, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
         Class9463.method35173().method35188().method21097(class5744);
         if (!class5744.method16962()) {
             final boolean method1815 = this.method1815();
@@ -405,7 +407,7 @@ public class Class756 extends Class754
     }
     
     private boolean method4125(final BlockPos class354) {
-        final AxisAlignedBB method1886 = this.method1886();
+        final AxisAlignedBB method1886 = this.getBoundingBox();
         final Mutable class355 = new Mutable(class354);
         for (int i = MathHelper.floor(method1886.field25074); i < MathHelper.method35650(method1886.field25077); ++i) {
             class355.method1294(i);
@@ -560,7 +562,7 @@ public class Class756 extends Class754
     
     @Override
     public void method2835(final ItemStack class8321, final Class316 class8322) {
-        if (class8321.method27622() == Class7739.field31512) {
+        if (class8321.getItem() == Items.field31512) {
             this.field4086.method5244(new Class727(this, class8321, class8322));
         }
     }
@@ -761,7 +763,7 @@ public class Class756 extends Class754
                         if (!this.isPassenger()) {
                             if (!this.method2688()) {
                                 final ItemStack method4140 = this.method2718(Class2215.field13604);
-                                if (method4140.method27622() == Class7739.field31584) {
+                                if (method4140.getItem() == Items.field31584) {
                                     if (Class4080.method12285(method4140)) {
                                         if (this.method2868()) {
                                             this.field4069.method17292(new Class4336(this, Class287.field1599));
@@ -958,7 +960,7 @@ public class Class756 extends Class754
             final Vec3d method1942 = this.method1793();
             if ((float)(method1942.x * method1941.x + method1942.z * method1941.z) >= -0.15f) {
                 final ISelectionContext method1943 = ISelectionContext.forEntity(this);
-                final BlockPos class5488 = new BlockPos(this.getPosX(), this.method1886().field25077, this.getPosZ());
+                final BlockPos class5488 = new BlockPos(this.getPosX(), this.getBoundingBox().field25077, this.getPosZ());
                 if (this.world.method6701(class5488).method21728(this.world, class5488, method1943).method24540()) {
                     BlockPos class5489 = class5488.method1137();
                     if (this.world.method6701(class5489).method21728(this.world, class5489, method1943).method24540()) {
@@ -987,7 +989,7 @@ public class Class756 extends Class754
                             final BlockPos class5491 = new BlockPos(class5490.method18517());
                             for (int n8 = 1; n8 < n6; ++n8) {
                                 final BlockPos method1954 = class5491.method1138(n8);
-                                final Class7702 method1955;
+                                final VoxelShape method1955;
                                 if (!(method1955 = this.world.method6701(method1954).method21728(this.world, method1954, method1943)).method24540()) {
                                     n7 = (float)method1955.method24536(Axis.Y) + method1954.getY();
                                     if (n7 - this.getPosY() > n6) {

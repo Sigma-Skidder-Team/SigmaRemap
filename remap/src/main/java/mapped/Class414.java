@@ -47,7 +47,7 @@ public abstract class Class414 extends Entity implements Class401
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.method1886().method18507() * 4.0;
+        double v = this.getBoundingBox().method18507() * 4.0;
         if (Double.isNaN(v)) {
             v = 4.0;
         }
@@ -65,7 +65,7 @@ public abstract class Class414 extends Entity implements Class401
     public void method1958(final double n, final double n2, final double n3, final float n4, final float n5) {
         final Vec3d method16748 = new Vec3d(n, n2, n3).normalize().add(this.rand.nextGaussian() * 0.007499999832361937 * n5, this.rand.nextGaussian() * 0.007499999832361937 * n5, this.rand.nextGaussian() * 0.007499999832361937 * n5).scale(n4);
         this.method1936(method16748);
-        final float method16749 = MathHelper.sqrt(Entity.method1680(method16748));
+        final float method16749 = MathHelper.sqrt(Entity.horizontalMag(method16748));
         this.rotationYaw = (float)(MathHelper.method35693(method16748.x, method16748.z) * 57.2957763671875);
         this.rotationPitch = (float)(MathHelper.method35693(method16748.y, method16749) * 57.2957763671875);
         this.prevRotationYaw = this.rotationYaw;
@@ -96,7 +96,7 @@ public abstract class Class414 extends Entity implements Class401
             this.field2515 = false;
             this.method1936(this.getMotion().mul(this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f));
         }
-        final AxisAlignedBB method18496 = this.method1886().method18493(this.getMotion()).method18496(1.0);
+        final AxisAlignedBB method18496 = this.getBoundingBox().method18493(this.getMotion()).method18496(1.0);
         for (final Entity field2519 : this.world.method6737(this, method18496, class399 -> !class399.isSpectator() && class399.method1749())) {
             if (field2519 == this.field2519) {
                 ++this.field2520;
@@ -143,7 +143,7 @@ public abstract class Class414 extends Entity implements Class401
         final double n = this.getPosX() + method18498.x;
         final double n2 = this.getPosY() + method18498.y;
         final double n3 = this.getPosZ() + method18498.z;
-        final float method18499 = MathHelper.sqrt(Entity.method1680(method18498));
+        final float method18499 = MathHelper.sqrt(Entity.horizontalMag(method18498));
         this.rotationYaw = (float)(MathHelper.method35693(method18498.x, method18498.z) * 57.2957763671875);
         this.rotationPitch = (float)(MathHelper.method35693(method18498.y, method18499) * 57.2957763671875);
         while (this.rotationPitch - this.prevRotationPitch < -180.0f) {

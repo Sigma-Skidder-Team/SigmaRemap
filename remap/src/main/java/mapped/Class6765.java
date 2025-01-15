@@ -37,7 +37,7 @@ public abstract class Class6765
     public static final File field26559;
     private static final Logger field26560;
     private static final SimpleDateFormat field26561;
-    private final Class394 field26562;
+    private final MinecraftServer field26562;
     private final List<Class513> field26563;
     private final Map<UUID, Class513> field26564;
     private final Class8007 field26565;
@@ -54,7 +54,7 @@ public abstract class Class6765
     private boolean field26576;
     private int field26577;
     
-    public Class6765(final Class394 field26562, final int field26563) {
+    public Class6765(final MinecraftServer field26562, final int field26563) {
         this.field26563 = Lists.newArrayList();
         this.field26564 = Maps.newHashMap();
         this.field26565 = new Class8007(Class6765.field26556);
@@ -84,11 +84,11 @@ public abstract class Class6765
             string = class3641.method11180().toString();
         }
         Class6765.field26560.info("{}[{}] logged in with entity id {} at ({}, {}, {})", (Object)class3642.getName().getString(), (Object)string, (Object)class3642.getEntityId(), (Object)class3642.getPosX(), (Object)class3642.getPosY(), (Object)class3642.getPosZ());
-        final Class8660 method2849 = method2848.method6764();
+        final WorldInfo method2849 = method2848.method6764();
         this.method20615(class3642, null, method2848);
         final Class5814 class3643 = new Class5814(this.field26562, class3641, class3642);
         final Class8878 method2850 = method2848.method6765();
-        class3643.method17469(new Class4383(class3642.getEntityId(), class3642.field3041.method26482(), Class8660.method29535(method2849.method29534()), method2849.method29568(), method2848.dimension.getType(), this.method20609(), method2849.method29570(), this.field26574, method2850.method31216(Class8878.field37329), !method2850.method31216(Class8878.field37340)));
+        class3643.method17469(new Class4383(class3642.getEntityId(), class3642.field3041.method26482(), WorldInfo.byHashing(method2849.getSeed()), method2849.method29568(), method2848.dimension.getType(), this.method20609(), method2849.method29570(), this.field26574, method2850.method31216(Class8878.field37329), !method2850.method31216(Class8878.field37340)));
         class3643.method17469(new Class4376(Class4376.field19590, new PacketBuffer(Unpooled.buffer()).method29514(this.method20576().method1490())));
         class3643.method17469(new Class4315(method2849.method29597(), method2849.method29599()));
         class3643.method17469(new Class4300(class3642.field3025));
@@ -331,8 +331,8 @@ public abstract class Class6765
         while (!method2856.method6977(class515) && class515.getPosY() < 256.0) {
             class515.setPosition(class515.getPosX(), class515.getPosY() + 1.0, class515.getPosZ());
         }
-        final Class8660 method2858 = class515.world.method6764();
-        class515.field3039.method17469(new Class4359(class515.dimension, Class8660.method29535(method2858.method29534()), method2858.method29570(), class515.field3041.method26482()));
+        final WorldInfo method2858 = class515.world.method6764();
+        class515.field3039.method17469(new Class4359(class515.dimension, WorldInfo.byHashing(method2858.getSeed()), method2858.method29570(), class515.field3041.method26482()));
         final BlockPos method2859 = method2856.method6758();
         class515.field3039.method17467(class515.getPosX(), class515.getPosY(), class515.getPosZ(), class515.rotationYaw, class515.rotationPitch);
         class515.field3039.method17469(new Class4335(method2859));
@@ -579,7 +579,7 @@ public abstract class Class6765
         return this.field26574;
     }
     
-    public Class394 method20576() {
+    public MinecraftServer method20576() {
         return this.field26562;
     }
     

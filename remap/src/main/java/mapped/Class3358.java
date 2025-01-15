@@ -208,7 +208,7 @@ public class Class3358 extends Class3355
     }
     
     private int method10637() {
-        if (!Class3358.field15514.field4684.method2713().method27620()) {
+        if (!Class3358.field15514.field4684.getHeldItemMainhand().method27620()) {
             for (int i = 36; i < 45; ++i) {
                 final int field15994 = i - 36;
                 if (Class3358.field15514.field4684.field3008.method10878(i).method20053().method27620()) {

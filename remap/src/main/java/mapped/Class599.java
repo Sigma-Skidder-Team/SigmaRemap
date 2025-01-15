@@ -129,7 +129,7 @@ public abstract class Class599 extends Class598 implements Class563
     }
     
     public void method3496() {
-        this.field3522 = MathHelper.method35654(this.field3522, 0.0, this.method3497());
+        this.field3522 = MathHelper.clamp(this.field3522, 0.0, this.method3497());
     }
     
     public int method3497() {

@@ -10,10 +10,10 @@ import com.mojang.authlib.ProfileLookupCallback;
 
 public final class Class8994 implements ProfileLookupCallback
 {
-    public final /* synthetic */ Class394 field37949;
+    public final /* synthetic */ MinecraftServer field37949;
     public final /* synthetic */ List field37950;
     
-    public Class8994(final Class394 field37949, final List field37950) {
+    public Class8994(final MinecraftServer field37949, final List field37950) {
         this.field37949 = field37949;
         this.field37950 = field37950;
     }

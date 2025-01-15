@@ -28,7 +28,7 @@ public class Class3698 implements Class3689
         for (final Class3833 class8843 : Class90.field208) {
             final Class1932 method503 = Class90.field208.method503(class8843);
             final JsonObject jsonObject2 = new JsonObject();
-            final Class9104<Class3833, Class7096> method504 = class8843.method11876();
+            final Class9104<Class3833, BlockState> method504 = class8843.method11876();
             if (!method504.method32905().isEmpty()) {
                 final JsonObject jsonObject3 = new JsonObject();
                 for (final Class7111 class8844 : method504.method32905()) {
@@ -42,7 +42,7 @@ public class Class3698 implements Class3689
                 jsonObject2.add("properties", (JsonElement)jsonObject3);
             }
             final JsonArray jsonArray2 = new JsonArray();
-            for (final Class7096 class8845 : method504.method32902()) {
+            for (final BlockState class8845 : method504.method32902()) {
                 final JsonObject jsonObject4 = new JsonObject();
                 final JsonObject jsonObject5 = new JsonObject();
                 for (final Class7111 class8846 : method504.method32905()) {

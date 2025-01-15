@@ -9,7 +9,7 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public final class Class8835<T extends Class436>
+public final class Class8835<T extends TileEntity>
 {
     private static String[] field37133;
     private final Supplier<? extends T> field37134;
@@ -20,7 +20,7 @@ public final class Class8835<T extends Class436>
         this.field37135 = field37135;
     }
     
-    public static <T extends Class436> Class8835<T> method30854(final Supplier<? extends T> supplier, final Class3833... array) {
+    public static <T extends TileEntity> Class8835<T> method30854(final Supplier<? extends T> supplier, final Class3833... array) {
         return new Class8835<T>(supplier, (Set<Class3833>)ImmutableSet.copyOf((Object[])array));
     }
     

@@ -32,8 +32,8 @@ public class Class420 extends Class419
     public void method2032(final Class7006 class7006) {
         super.method2032(class7006);
         if (class7006.method21449() != Class2165.field12882 || !((Class7007)class7006).method21452().method1843(this.field2527)) {
-            if (!this.world.field10067) {
-                final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.method1886().method18495(4.0, 2.0, 4.0));
+            if (!this.world.isRemote) {
+                final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().method18495(4.0, 2.0, 4.0));
                 final Class426 class7007 = new Class426(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
                 class7007.method2097(this.field2527);
                 class7007.method2089(Class8432.field34605);

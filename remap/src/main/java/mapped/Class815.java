@@ -133,8 +133,8 @@ public class Class815 extends Class812 implements Class768
         int n2 = 0;
         float n3 = 0.0f;
         boolean b = false;
-        final Class3820 method27622 = class513.method27622();
-        if (method27622 != Class7739.field31315) {
+        final Item method27622 = class513.getItem();
+        if (method27622 != Items.field31315) {
             if (method27622 == Class7521.field29529.method11704()) {
                 n = 90;
                 n2 = 6;
@@ -163,7 +163,7 @@ public class Class815 extends Class812 implements Class768
         if (this.method2625()) {
             if (n > 0) {
                 this.world.method6709(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
-                if (!this.world.field10067) {
+                if (!this.world.isRemote) {
                     this.method4353(n);
                 }
                 b = true;
@@ -173,7 +173,7 @@ public class Class815 extends Class812 implements Class768
             if (b || !this.method4715()) {
                 if (this.method4726() < this.method4739()) {
                     b = true;
-                    if (!this.world.field10067) {
+                    if (!this.world.isRemote) {
                         this.method4728(n2);
                     }
                 }
@@ -229,7 +229,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public void method1691(final BlockPos class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final BlockState class355) {
         this.method1695(Class8520.field35354, 0.15f, 1.0f);
     }
     
@@ -258,7 +258,7 @@ public class Class815 extends Class812 implements Class768
     
     @Override
     public boolean method4767(final ItemStack class8321) {
-        return Class7855.field32241.method25618(class8321.method27622());
+        return Class7855.field32241.method25618(class8321.getItem());
     }
     
     @Override
@@ -282,7 +282,7 @@ public class Class815 extends Class812 implements Class768
     
     @Override
     public void method4732() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             super.method4732();
             this.method4790(method4791(this.field4342.method2157(1)));
         }
@@ -294,7 +294,7 @@ public class Class815 extends Class812 implements Class768
     
     @Nullable
     private static Class181 method4791(final ItemStack class8321) {
-        final Class3833 method11776 = Class3833.method11776(class8321.method27622());
+        final Class3833 method11776 = Class3833.method11776(class8321.getItem());
         return (method11776 instanceof Class4016) ? ((Class4016)method11776).method12199() : null;
     }
     

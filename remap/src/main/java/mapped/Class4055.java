@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.UUID;
 
-public class Class4055 extends Class3820
+public class Class4055 extends Item
 {
     private static final UUID[] field18146;
     public static final Class6423 field18147;

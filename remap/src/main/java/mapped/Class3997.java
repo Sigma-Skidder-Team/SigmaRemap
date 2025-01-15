@@ -40,7 +40,7 @@ public class Class3997 extends Class3833
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        if (!class7097.field10067) {
+        if (!class7097.isRemote) {
             method12145(class7096, class7097, class7098);
             return Class2201.field13402;
         }
@@ -66,7 +66,7 @@ public class Class3997 extends Class3833
     public void method11831(final Class7096 class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
         super.method11831(class7096, class7097, class7098, class7099);
         if (Class8742.method30195(Class7882.field32366, class7099) == 0) {
-            this.method11840(class7097, class7098, 1 + class7097.field10062.nextInt(5));
+            this.method11840(class7097, class7098, 1 + class7097.rand.nextInt(5));
         }
     }
     
@@ -78,7 +78,7 @@ public class Class3997 extends Class3833
     }
     
     private static void method12146(final World class1847, final BlockPos class1848) {
-        final Random field10062 = class1847.field10062;
+        final Random field10062 = class1847.rand;
         for (final Direction class1849 : Direction.values()) {
             final BlockPos method1149 = class1848.method1149(class1849);
             if (!class1847.method6701(method1149).method21722(class1847, method1149)) {

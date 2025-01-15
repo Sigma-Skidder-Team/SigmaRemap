@@ -9,18 +9,18 @@ import net.minecraft.util.Direction;
 public final class Class9554
 {
     private static String[] field41140;
-    private Class7096 field41141;
-    private Class7096 field41142;
+    private BlockState field41141;
+    private BlockState field41142;
     private Direction field41143;
     private int field41144;
     
-    private Class9554(final Class7096 field41141, final Class7096 field41142, final Direction field41143) {
+    private Class9554(final BlockState field41141, final BlockState field41142, final Direction field41143) {
         this.field41141 = field41141;
         this.field41142 = field41142;
         this.field41143 = field41143;
     }
     
-    private void method35743(final Class7096 field41141, final Class7096 field41142, final Direction field41143) {
+    private void method35743(final BlockState field41141, final BlockState field41142, final Direction field41143) {
         this.field41141 = field41141;
         this.field41142 = field41142;
         this.field41143 = field41143;

@@ -34,10 +34,10 @@ public class Class3310 extends Class3167
         if (this.method9906()) {
             if (Class3310.field15514.field4684 != null) {
                 if (!Class3310.field15514.field4684.field3025.field27304) {
-                    if (Class3310.field15514.field4684.method2718(Class2215.field13601).method27622() == Class7739.field31590) {
+                    if (Class3310.field15514.field4684.method2718(Class2215.field13601).getItem() == Items.field31590) {
                         return;
                     }
-                    final int method29319 = Class8639.method29319(Class7739.field31590);
+                    final int method29319 = Class8639.method29319(Items.field31590);
                     if (method29319 != -1) {
                         Class3310.field15514.field4682.method27324(0, (method29319 >= 9) ? method29319 : (method29319 + 36), 0, Class2133.field12437, Class3310.field15514.field4684);
                         Class3310.field15514.field4682.method27324(0, 45, 0, Class2133.field12437, Class3310.field15514.field4684);

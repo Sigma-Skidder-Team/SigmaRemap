@@ -24,7 +24,7 @@ public class Class3221 extends Class3167
     private void method10156(final Class5744 class5744) {
         if (this.method9906()) {
             final boolean method9898 = Class9463.method35173().method35189().method21551(Class3376.class).method9898();
-            final boolean b = Class3221.field15514.field4684.method2713() != null && Class3221.field15514.field4684.method2713().method27622() instanceof Class4077;
+            final boolean b = Class3221.field15514.field4684.getHeldItemMainhand() != null && Class3221.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077;
             if (!class5744.method17046()) {
                 if (b) {
                     if (Class3221.field15514.field4648.field23445.method1056()) {

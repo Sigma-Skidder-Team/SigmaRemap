@@ -53,7 +53,7 @@ public final class Class120 implements Predicate<ItemStack>
             this.method612();
             final ItemStack[] field376 = this.field376;
             for (int length = field376.length, i = 0; i < length; ++i) {
-                if (field376[i].method27622() == class8321.method27622()) {
+                if (field376[i].getItem() == class8321.getItem()) {
                     return true;
                 }
             }
@@ -122,7 +122,7 @@ public final class Class120 implements Predicate<ItemStack>
         return method617(Arrays.stream(array).map(class8321 -> new Class7453(class8321, null)));
     }
     
-    public static Class120 method620(final Class7909<Class3820> class7909) {
+    public static Class120 method620(final Class7909<Item> class7909) {
         return method617(Stream.of(new Class7451(class7909, null)));
     }
     
@@ -161,7 +161,7 @@ public final class Class120 implements Predicate<ItemStack>
             throw new JsonParseException("An ingredient entry needs either a tag or an item");
         }
         final Class1932 obj = new Class1932(Class9583.method35895(jsonObject, "tag"));
-        final Class7909<Class3820> method18460 = Class7855.method25402().method18460(obj);
+        final Class7909<Item> method18460 = Class7855.method25402().method18460(obj);
         if (method18460 != null) {
             return new Class7451(method18460, null);
         }

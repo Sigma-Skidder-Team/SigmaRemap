@@ -24,7 +24,7 @@ public class Class7412 implements Class7410
     }
     
     @Override
-    public Predicate<Class7096> method22768(final Class9104<Class3833, Class7096> class9104) {
+    public Predicate<BlockState> method22768(final Class9104<Class3833, BlockState> class9104) {
         final Class7111<?> method32906 = class9104.method32906(this.field28549);
         if (method32906 == null) {
             throw new RuntimeException(String.format("Unknown property '%s' on '%s'", this.field28549, class9104.method32904().toString()));
@@ -36,7 +36,7 @@ public class Class7412 implements Class7410
         }
         final List list2 = Class7412.field28548.splitToList((CharSequence)s);
         if (!list2.isEmpty()) {
-            Predicate<Class7096> method32907;
+            Predicate<BlockState> method32907;
             if (list2.size() != 1) {
                 method32907 = (p1 -> {
                     final List list2;
@@ -52,7 +52,7 @@ public class Class7412 implements Class7410
         throw new RuntimeException(String.format("Empty value '%s' for property '%s' on '%s'", this.field28550, this.field28549, class9104.method32904().toString()));
     }
     
-    private Predicate<Class7096> method22776(final Class9104<Class3833, Class7096> class9104, final Class7111<?> class9105, final String s) {
+    private Predicate<BlockState> method22776(final Class9104<Class3833, BlockState> class9104, final Class7111<?> class9105, final String s) {
         if (class9105.method21830(s).isPresent()) {
             return class9107 -> class9107.method21772((Class7111<Object>)class9106).equals(optional.get());
         }

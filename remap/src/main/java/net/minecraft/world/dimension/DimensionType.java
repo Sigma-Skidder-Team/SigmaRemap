@@ -21,7 +21,7 @@ public class DimensionType implements IDynamicSerializable
     private final int field2226;
     private final String field2227;
     private final String field2228;
-    private final BiFunction<World, DimensionType, ? extends Class6737> field2229;
+    private final BiFunction<World, DimensionType, ? extends Dimension> field2229;
     private final boolean field2230;
     private final Class2178 field2231;
     
@@ -29,7 +29,7 @@ public class DimensionType implements IDynamicSerializable
         return Class90.method513(Class90.field226, class383.field2226, s, class383);
     }
     
-    public DimensionType(final int field2226, final String field2227, final String field2228, final BiFunction<World, DimensionType, ? extends Class6737> field2229, final boolean field2230, final Class2178 field2231) {
+    public DimensionType(final int field2226, final String field2227, final String field2228, final BiFunction<World, DimensionType, ? extends Dimension> field2229, final boolean field2230, final Class2178 field2231) {
         this.field2226 = field2226;
         this.field2227 = field2227;
         this.field2228 = field2228;
@@ -58,8 +58,8 @@ public class DimensionType implements IDynamicSerializable
         return this.field2228.isEmpty() ? parent : new File(parent, this.field2228);
     }
     
-    public Class6737 method1273(final World class1847) {
-        return (Class6737)this.field2229.apply(class1847, this);
+    public Dimension create(final World class1847) {
+        return (Dimension)this.field2229.apply(class1847, this);
     }
     
     @Override
@@ -86,7 +86,7 @@ public class DimensionType implements IDynamicSerializable
         return this.field2230;
     }
     
-    public Class2178 method1278() {
+    public Class2178 getMagnifier() {
         return this.field2231;
     }
     

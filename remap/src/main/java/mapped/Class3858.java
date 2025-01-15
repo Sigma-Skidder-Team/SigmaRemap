@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -27,11 +29,11 @@ public class Class3858 extends Class3833 implements Class3857
         }
         else {
             class7099.onEnterBubbleColumnWithAirAbove(class7096.method21772((Class7111<Boolean>)Class3858.field17478));
-            if (!class7097.field10067) {
+            if (!class7097.isRemote) {
                 final Class1849 class7100 = (Class1849)class7097;
                 for (int i = 0; i < 2; ++i) {
-                    class7100.method6911(Class8432.field34646, class7098.getX() + class7097.field10062.nextFloat(), class7098.getY() + 1, class7098.getZ() + class7097.field10062.nextFloat(), 1, 0.0, 0.0, 0.0, 1.0);
-                    class7100.method6911(Class8432.field34601, class7098.getX() + class7097.field10062.nextFloat(), class7098.getY() + 1, class7098.getZ() + class7097.field10062.nextFloat(), 1, 0.0, 0.01, 0.0, 0.2);
+                    class7100.method6911(Class8432.field34646, class7098.getX() + class7097.rand.nextFloat(), class7098.getY() + 1, class7098.getZ() + class7097.rand.nextFloat(), 1, 0.0, 0.0, 0.0, 1.0);
+                    class7100.method6911(Class8432.field34601, class7098.getX() + class7097.rand.nextFloat(), class7098.getY() + 1, class7098.getZ() + class7097.rand.nextFloat(), 1, 0.0, 0.01, 0.0, 0.2);
                 }
             }
         }
@@ -139,7 +141,7 @@ public class Class3858 extends Class3833 implements Class3857
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class7698.method24486();
     }
     

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.world.World;
 
-public class Class4083 extends Class3820
+public class Class4083 extends Item
 {
     private static String[] field18187;
     
@@ -18,7 +18,7 @@ public class Class4083 extends Class3820
     public Class2201 method11694(final Class7075 class7075) {
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
-        final Class7096 method21656 = method21654.method6701(method21655);
+        final BlockState method21656 = method21654.method6701(method21655);
         int n = 0;
         if (method21656.method21696() != Class7521.field29818) {
             final BlockPos method21657 = method21655.method1149(class7075.method21648());
@@ -28,10 +28,10 @@ public class Class4083 extends Class3820
                 n = 1;
             }
         }
-        else if (!((Class7097<Object, Class7096>)method21656).method21772((Class7111<Boolean>)Class3918.field17760)) {
-            if (!((Class7097<Object, Class7096>)method21656).method21772((Class7111<Boolean>)Class3918.field17762)) {
+        else if (!((Class7097<Object, BlockState>)method21656).method21772((Class7111<Boolean>)Class3918.field17760)) {
+            if (!((Class7097<Object, BlockState>)method21656).method21772((Class7111<Boolean>)Class3918.field17762)) {
                 this.method12288(method21654, method21655);
-                method21654.method6692(method21655, ((Class7097<Object, Class7096>)method21656).method21773((Class7111<Comparable>)Class3918.field17760, true));
+                method21654.method6692(method21655, ((Class7097<Object, BlockState>)method21656).method21773((Class7111<Comparable>)Class3918.field17760, true));
                 n = 1;
             }
         }

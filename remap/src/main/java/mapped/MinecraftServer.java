@@ -72,7 +72,7 @@ import java.util.concurrent.CompletableFuture;
 import java.io.File;
 import org.apache.logging.log4j.Logger;
 
-public abstract class Class394 extends Class871<Class1634> implements Class868, ICommandSource, AutoCloseable, Runnable
+public abstract class MinecraftServer extends Class871<Class1634> implements Class868, ICommandSource, AutoCloseable, Runnable
 {
     private static final Logger field2292;
     public static final File field2293;
@@ -150,7 +150,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     private final Executor field2365;
     private String field2366;
     
-    public Class394(final File field2298, final Proxy field2299, final DataFixer field2300, final Class7788 field2301, final YggdrasilAuthenticationService field2302, final MinecraftSessionService field2303, final GameProfileRepository field2304, final Class8608 field2305, final Class6906 field2306, final String field2307) {
+    public MinecraftServer(final File field2298, final Proxy field2299, final DataFixer field2300, final Class7788 field2301, final YggdrasilAuthenticationService field2302, final MinecraftSessionService field2303, final GameProfileRepository field2304, final Class8608 field2305, final Class6906 field2306, final String field2307) {
         super("Server");
         this.field2297 = new Class9037("server", this, Class8349.method27837());
         this.field2299 = Lists.newArrayList();
@@ -163,7 +163,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         this.field2323 = new long[100];
         this.field2330 = "";
         this.field2331 = "";
-        this.field2342 = Class8349.method27851(new Thread(this, "Server thread"), thread -> thread.setUncaughtExceptionHandler((p0, t2) -> Class394.field2292.error((Object)t2)));
+        this.field2342 = Class8349.method27851(new Thread(this, "Server thread"), thread -> thread.setUncaughtExceptionHandler((p0, t2) -> MinecraftServer.field2292.error((Object)t2)));
         this.field2343 = Class8349.method27837();
         this.field2347 = new Class6581(Class346.field2138, this.field2342);
         this.field2348 = new Class1920<Class1921>(Class1921::new);
@@ -207,13 +207,13 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     
     public void method1436(final String s) {
         if (this.method1512().method25789(s)) {
-            Class394.field2292.info("Converting map!");
+            MinecraftServer.field2292.info("Converting map!");
             this.method1437(new Class2259("menu.convertingLevel", new Object[0]));
             this.method1512().method25790(s, new Class733(this));
         }
         if (this.field2362) {
-            Class394.field2292.info("Forcing world upgrade!");
-            final Class8660 method25791 = this.method1512().method25791(this.method1501());
+            MinecraftServer.field2292.info("Forcing world upgrade!");
+            final WorldInfo method25791 = this.method1512().method25791(this.method1501());
             if (method25791 != null) {
                 final Class9495 class9495 = new Class9495(this.method1501(), this.method1512(), method25791, this.field2363);
                 ITextComponent class9496 = null;
@@ -221,12 +221,12 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                     final ITextComponent method25792 = class9495.method35344();
                     if (class9496 != method25792) {
                         class9496 = method25792;
-                        Class394.field2292.info(class9495.method35344().getString());
+                        MinecraftServer.field2292.info(class9495.method35344().getString());
                     }
                     final int method25793 = class9495.method35341();
                     if (method25793 > 0) {
                         final int i = class9495.method35342() + class9495.method35343();
-                        Class394.field2292.info("{}% completed ({} / {} chunks)...", (Object) MathHelper.method35642(i / (float)method25793 * 100.0f), (Object)i, (Object)method25793);
+                        MinecraftServer.field2292.info("{}% completed ({} / {} chunks)...", (Object) MathHelper.method35642(i / (float)method25793 * 100.0f), (Object)i, (Object)method25793);
                     }
                     if (this.method1536()) {
                         class9495.method35335();
@@ -251,7 +251,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         this.method1437(new Class2259("menu.loadingLevel", new Object[0]));
         final Class8642 method25787 = this.method1512().method25787(s, this);
         this.method1443(this.method1501(), method25787);
-        Class8660 method25788 = method25787.method29394();
+        WorldInfo method25788 = method25787.method29394();
         Class8511 field2295;
         if (method25788 != null) {
             method25788.method29550(s2);
@@ -266,9 +266,9 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                 }
             }
             else {
-                field2295 = Class394.field2295;
+                field2295 = MinecraftServer.field2295;
             }
-            method25788 = new Class8660(field2295, s2);
+            method25788 = new WorldInfo(field2295, s2);
         }
         method25788.method29617(this.method1490(), this.method1492().isPresent());
         this.method1441(method25787.method29392(), method25788);
@@ -278,9 +278,9 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         this.method1442(method25789);
     }
     
-    public void method1439(final Class8642 class8642, final Class8660 class8643, final Class8511 class8644, final Class6459 class8645) {
+    public void method1439(final Class8642 class8642, final WorldInfo class8643, final Class8511 class8644, final Class6459 class8645) {
         if (this.method1509()) {
-            class8643.method29531(Class394.field2295);
+            class8643.method29531(MinecraftServer.field2295);
         }
         final Class1849 class8646 = new Class1849(this, this.field2365, class8642, class8643, DimensionType.field2223, this.field2300, class8645);
         this.field2308.put(DimensionType.field2223, class8646);
@@ -318,7 +318,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         }
     }
     
-    private void method1440(final Class8660 class8660) {
+    private void method1440(final WorldInfo class8660) {
         class8660.method29566(false);
         class8660.method29575(true);
         class8660.method29561(false);
@@ -332,7 +332,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         class8660.method29578().method31211(Class8878.field37324).method26724(false, this);
     }
     
-    public void method1441(final File parent, final Class8660 class8660) {
+    public void method1441(final File parent, final WorldInfo class8660) {
         this.field2348.method7613(new Class7939());
         this.field2349 = new Class7940(new File(parent, "datapacks"));
         this.field2348.method7613(this.field2349);
@@ -341,7 +341,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         for (final String s : class8660.method29609()) {
             final Class1921 method7612 = this.field2348.method7612(s);
             if (method7612 == null) {
-                Class394.field2292.warn("Missing data pack {}", (Object)s);
+                MinecraftServer.field2292.warn("Missing data pack {}", (Object)s);
             }
             else {
                 arrayList.add(method7612);
@@ -355,7 +355,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     public void method1442(final Class6459 class6459) {
         this.method1437(new Class2259("menu.generatingTerrain", new Object[0]));
         final Class1849 method1481 = this.method1481(DimensionType.field2223);
-        Class394.field2292.info("Preparing start region for dimension " + DimensionType.method1276(method1481.dimension.getType()));
+        MinecraftServer.field2292.info("Preparing start region for dimension " + DimensionType.method1276(method1481.dimension.getType()));
         final BlockPos method1482 = method1481.method6758();
         class6459.method19317(new Class7859(method1482));
         final Class1909 method1483 = method1481.method6904();
@@ -391,7 +391,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                 this.method1515("level://" + URLEncoder.encode(s, StandardCharsets.UTF_8.toString()) + "/resources.zip", "");
             }
             catch (final UnsupportedEncodingException ex) {
-                Class394.field2292.warn("Something went wrong url encoding {}", (Object)s);
+                MinecraftServer.field2292.warn("Something went wrong url encoding {}", (Object)s);
             }
         }
     }
@@ -414,18 +414,18 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         boolean b4 = false;
         for (final Class1849 class1849 : this.method1482()) {
             if (!b) {
-                Class394.field2292.info("Saving chunks for level '{}'/{}", (Object)class1849.method6764().method29549(), (Object) DimensionType.method1276(class1849.dimension.getType()));
+                MinecraftServer.field2292.info("Saving chunks for level '{}'/{}", (Object)class1849.method6764().method29549(), (Object) DimensionType.method1276(class1849.dimension.getType()));
             }
             try {
                 class1849.method6879(null, b2, class1849.field10092 && !b3);
             }
             catch (final Class2337 class1850) {
-                Class394.field2292.warn(class1850.getMessage());
+                MinecraftServer.field2292.warn(class1850.getMessage());
             }
             b4 = true;
         }
         final Class1849 method1481 = this.method1481(DimensionType.field2223);
-        final Class8660 method1482 = method1481.method6764();
+        final WorldInfo method1482 = method1481.method6764();
         method1481.method6787().method34810(method1482);
         method1482.method29611(this.method1584().method28265());
         method1481.method6917().method29390(method1482, this.method1537().method20575());
@@ -438,16 +438,16 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     public void method1452() {
-        Class394.field2292.info("Stopping server");
+        MinecraftServer.field2292.info("Stopping server");
         if (this.method1541() != null) {
             this.method1541().method24062();
         }
         if (this.field2309 != null) {
-            Class394.field2292.info("Saving players");
+            MinecraftServer.field2292.info("Saving players");
             this.field2309.method20600();
             this.field2309.method20617();
         }
-        Class394.field2292.info("Saving worlds");
+        MinecraftServer.field2292.info("Saving worlds");
         for (final Class1849 class1849 : this.method1482()) {
             if (class1849 != null) {
                 class1849.field10092 = false;
@@ -460,7 +460,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                     class1850.close();
                 }
                 catch (final IOException ex) {
-                    Class394.field2292.error("Exception closing the level", (Throwable)ex);
+                    MinecraftServer.field2292.error("Exception closing the level", (Throwable)ex);
                 }
             }
         }
@@ -488,7 +488,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                 this.field2342.join();
             }
             catch (final InterruptedException ex) {
-                Class394.field2292.error("Error while shutting down", (Throwable)ex);
+                MinecraftServer.field2292.error("Error while shutting down", (Throwable)ex);
             }
         }
     }
@@ -507,7 +507,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                             final long l = Class8349.method27837() - this.field2343;
                             if (l > 2000L && this.field2343 - this.field2333 >= 15000L) {
                                 final long i = l / 50L;
-                                Class394.field2292.warn("Can't keep up! Is the server overloaded? Running {}ms or {} ticks behind", (Object)l, (Object)i);
+                                MinecraftServer.field2292.warn("Can't keep up! Is the server overloaded? Running {}ms or {} ticks behind", (Object)l, (Object)i);
                                 this.field2343 += i * 50L;
                                 this.field2333 = this.field2343;
                             }
@@ -535,7 +535,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                         this.method1452();
                     }
                     catch (final Throwable t) {
-                        Class394.field2292.error("Exception stopping the server", t);
+                        MinecraftServer.field2292.error("Exception stopping the server", t);
                     }
                     finally {
                         this.method1468();
@@ -543,7 +543,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                 }
             }
             catch (final Throwable t2) {
-                Class394.field2292.error("Encountered an unexpected exception", t2);
+                MinecraftServer.field2292.error("Encountered an unexpected exception", t2);
                 Class7689 class7689;
                 if (t2 instanceof Class2365) {
                     class7689 = this.method1491(((Class2365)t2).method9500());
@@ -553,10 +553,10 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                 }
                 final File file = new File(new File(this.method1466(), "crash-reports"), "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-server.txt");
                 if (class7689.method24416(file)) {
-                    Class394.field2292.error("This crash report has been saved to: {}", (Object)file.getAbsolutePath());
+                    MinecraftServer.field2292.error("This crash report has been saved to: {}", (Object)file.getAbsolutePath());
                 }
                 else {
-                    Class394.field2292.error("We were unable to save this crash report to disk.");
+                    MinecraftServer.field2292.error("We were unable to save this crash report to disk.");
                 }
                 this.method1467(class7689);
                 try {
@@ -564,7 +564,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                     this.method1452();
                 }
                 catch (final Throwable t3) {
-                    Class394.field2292.error("Exception stopping the server", t3);
+                    MinecraftServer.field2292.error("Exception stopping the server", t3);
                 }
                 finally {
                     this.method1468();
@@ -578,7 +578,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                 this.method1452();
             }
             catch (final Throwable t4) {
-                Class394.field2292.error("Exception stopping the server", t4);
+                MinecraftServer.field2292.error("Exception stopping the server", t4);
             }
             finally {
                 this.method1468();
@@ -646,7 +646,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
                 class7787.method24996("data:image/png;base64," + (Object)StandardCharsets.UTF_8.decode(Base64.getEncoder().encode(buffer.nioBuffer())));
             }
             catch (final Exception ex) {
-                Class394.field2292.error("Couldn't load server icon", (Throwable)ex);
+                MinecraftServer.field2292.error("Couldn't load server icon", (Throwable)ex);
             }
             finally {
                 buffer.release();
@@ -688,12 +688,12 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
             this.field2303.method24992().method28400(a);
         }
         if (this.field2312 % 6000 == 0) {
-            Class394.field2292.debug("Autosave started");
+            MinecraftServer.field2292.debug("Autosave started");
             this.field2300.method15297("save");
             this.field2309.method20600();
             this.method1451(true, false, false);
             this.field2300.method15299();
-            Class394.field2292.debug("Autosave finished");
+            MinecraftServer.field2292.debug("Autosave finished");
         }
         this.field2300.method15297("snooper");
         if (!this.field2297.method32488()) {
@@ -789,11 +789,11 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
             final Path value2 = Paths.get("eula.txt", new String[0]);
             final Class8546 class7795 = new Class8546(value2);
             if (parse.has((OptionSpec)accepts2)) {
-                Class394.field2292.info("Initialized '" + value.toAbsolutePath().toString() + "' and '" + value2.toAbsolutePath().toString() + "'");
+                MinecraftServer.field2292.info("Initialized '" + value.toAbsolutePath().toString() + "' and '" + value2.toAbsolutePath().toString() + "'");
                 return;
             }
             if (!class7795.method28691()) {
-                Class394.field2292.info("You need to agree to the EULA in order to run the server. Go to eula.txt for more info.");
+                MinecraftServer.field2292.info("You need to agree to the EULA in order to run the server. Go to eula.txt for more info.");
                 return;
             }
             Class7689.method24422();
@@ -803,7 +803,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
             final YggdrasilAuthenticationService yggdrasilAuthenticationService = new YggdrasilAuthenticationService(Proxy.NO_PROXY, UUID.randomUUID().toString());
             final MinecraftSessionService minecraftSessionService = yggdrasilAuthenticationService.createMinecraftSessionService();
             final GameProfileRepository profileRepository = yggdrasilAuthenticationService.createProfileRepository();
-            final Class395 class7796 = new Class395(new File(s), class7794, Class5494.method16768(), yggdrasilAuthenticationService, minecraftSessionService, profileRepository, new Class8608(profileRepository, new File(s, Class394.field2293.getName())), Class6460::new, Optional.ofNullable(parse.valueOf((OptionSpec)withRequiredArg2)).orElse(class7794.method25121().field39779));
+            final Class395 class7796 = new Class395(new File(s), class7794, Class5494.method16768(), yggdrasilAuthenticationService, minecraftSessionService, profileRepository, new Class8608(profileRepository, new File(s, MinecraftServer.field2293.getName())), Class6460::new, Optional.ofNullable(parse.valueOf((OptionSpec)withRequiredArg2)).orElse(class7794.method25121().field39779));
             class7796.method1499((String)parse.valueOf((OptionSpec)withRequiredArg));
             class7796.method1497((int)parse.valueOf((OptionSpec)defaultsTo2));
             class7796.method1510(parse.has((OptionSpec)accepts3));
@@ -816,11 +816,11 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
             }
             class7796.method1476();
             final Class926 hook = new Class926("Server Shutdown Thread", class7796);
-            hook.setUncaughtExceptionHandler((Thread.UncaughtExceptionHandler)new Class8239(Class394.field2292));
+            hook.setUncaughtExceptionHandler((Thread.UncaughtExceptionHandler)new Class8239(MinecraftServer.field2292));
             Runtime.getRuntime().addShutdownHook(hook);
         }
         catch (final Exception ex) {
-            Class394.field2292.fatal("Failed to start the minecraft server", (Throwable)ex);
+            MinecraftServer.field2292.fatal("Failed to start the minecraft server", (Throwable)ex);
         }
     }
     
@@ -849,11 +849,11 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     public void method1479(final String s) {
-        Class394.field2292.info(s);
+        MinecraftServer.field2292.info(s);
     }
     
     public void method1480(final String s) {
-        Class394.field2292.warn(s);
+        MinecraftServer.field2292.warn(s);
     }
     
     public Class1849 method1481(final DimensionType class383) {
@@ -885,12 +885,12 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     public void method1488(final String s) {
-        Class394.field2292.error(s);
+        MinecraftServer.field2292.error(s);
     }
     
     public void method1489(final String s) {
         if (this.method1487()) {
-            Class394.field2292.info(s);
+            MinecraftServer.field2292.info(s);
         }
     }
     
@@ -935,7 +935,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     
     @Override
     public void sendMessage(final ITextComponent class2250) {
-        Class394.field2292.info(class2250.getString());
+        MinecraftServer.field2292.info(class2250.getString());
     }
     
     public KeyPair method1495() {
@@ -980,7 +980,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     
     public void method1505(final Class2113 class2113, final boolean b) {
         for (final Class1849 class2114 : this.method1482()) {
-            final Class8660 method6764 = class2114.method6764();
+            final WorldInfo method6764 = class2114.method6764();
             if (!b && method6764.method29599()) {
                 continue;
             }
@@ -1011,7 +1011,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     private void method1507(final Class513 class513) {
-        final Class8660 method6764 = class513.method2940().method6764();
+        final WorldInfo method6764 = class513.method2940().method6764();
         class513.field3039.method17469(new Class4315(method6764.method29597(), method6764.method29599()));
     }
     
@@ -1066,7 +1066,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
             if (class9038 == null) {
                 continue;
             }
-            final Class8660 method6764 = class9038.method6764();
+            final WorldInfo method6764 = class9038.method6764();
             class9037.method32486("world[" + i + "][dimension]", class9038.dimension.getType());
             class9037.method32486("world[" + i + "][mode]", method6764.method29564());
             class9037.method32486("world[" + i + "][difficulty]", class9038.method6954());
@@ -1293,24 +1293,24 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
         }
     }
     
-    private void method1569(final Class8660 class8660) {
+    private void method1569(final WorldInfo class8660) {
         final ArrayList arrayList = Lists.newArrayList((Iterable)this.field2348.method7611());
         for (final Class1921 class8661 : this.field2348.method7609()) {
             if (!class8660.method29608().contains(class8661.method7621()) && !arrayList.contains(class8661)) {
-                Class394.field2292.info("Found new data pack {}, loading it automatically", (Object)class8661.method7621());
+                MinecraftServer.field2292.info("Found new data pack {}, loading it automatically", (Object)class8661.method7621());
                 class8661.method7624().method8128((List<Class1921>)arrayList, class8661, class8662 -> class8662, false);
             }
         }
         this.field2348.method7608(arrayList);
         final ArrayList arrayList2 = Lists.newArrayList();
         this.field2348.method7611().forEach(class8663 -> list.add(class8663.method7620()));
-        final CompletableFuture<Class315> method19928 = this.field2347.method19928(this.field2365, this, arrayList2, Class394.field2294);
+        final CompletableFuture<Class315> method19928 = this.field2347.method19928(this.field2365, this, arrayList2, MinecraftServer.field2294);
         this.method5384(method19928::isDone);
         try {
             method19928.get();
         }
         catch (final Exception ex) {
-            Class394.field2292.error("Failed to reload data packs", (Throwable)ex);
+            MinecraftServer.field2292.error("Failed to reload data packs", (Throwable)ex);
         }
         class8660.method29609().clear();
         class8660.method29608().clear();
@@ -1507,7 +1507,7 @@ public abstract class Class394 extends Class871<Class1634> implements Class868, 
     }
     
     private void method1599() {
-        Class3833.field17391.forEach(Class7096::method21695);
+        Class3833.field17391.forEach(BlockState::method21695);
     }
     
     static {

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 
-public class Class489 extends Class436
+public class Class489 extends TileEntity
 {
     private static String[] field2806;
     

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 
-public class Class449 extends Class436 implements Class447
+public class Class449 extends TileEntity implements Class447
 {
     private ItemStack field2689;
     

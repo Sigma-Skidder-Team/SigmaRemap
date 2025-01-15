@@ -8,10 +8,11 @@ import java.util.Iterator;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.List;
 
-public class Class9375
+public class WorldBorder
 {
     private static String[] field40201;
     private final List<Class7486> field40202;
@@ -24,7 +25,7 @@ public class Class9375
     private int field40209;
     private Class7924 field40210;
     
-    public Class9375() {
+    public WorldBorder() {
         this.field40202 = Lists.newArrayList();
         this.field40203 = 0.2;
         this.field40204 = 5.0;
@@ -77,7 +78,7 @@ public class Class9375
         return this.method34784(class399.getPosX(), class399.getPosZ());
     }
     
-    public Class7702 method34783() {
+    public VoxelShape method34783() {
         return this.field40210.method25687();
     }
     
@@ -224,7 +225,7 @@ public class Class9375
         this.field40210 = this.field40210.method25686();
     }
     
-    public void method34810(final Class8660 class8660) {
+    public void method34810(final WorldInfo class8660) {
         class8660.method29582(this.method34791());
         class8660.method29588(this.method34777());
         class8660.method29587(this.method34778());
@@ -236,7 +237,7 @@ public class Class9375
         class8660.method29584(this.method34792());
     }
     
-    public void method34811(final Class8660 class8660) {
+    public void method34811(final WorldInfo class8660) {
         this.method34790(class8660.method29579(), class8660.method29580());
         this.method34803(class8660.method29591());
         this.method34801(class8660.method29589());

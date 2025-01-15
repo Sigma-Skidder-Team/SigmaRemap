@@ -31,7 +31,7 @@ public class Class9503 extends ChannelInboundHandlerAdapter
         try {
             if (byteBuf.readUnsignedByte() == 254) {
                 final InetSocketAddress inetSocketAddress = (InetSocketAddress)channelHandlerContext.channel().remoteAddress();
-                final Class394 method24064 = this.field40884.method24064();
+                final MinecraftServer method24064 = this.field40884.method24064();
                 switch (byteBuf.readableBytes()) {
                     case 0: {
                         Class9503.field40883.debug("Ping: (<1.3.x) from {}:{}", (Object)inetSocketAddress.getAddress(), (Object)inetSocketAddress.getPort());

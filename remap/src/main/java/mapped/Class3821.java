@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
-public class Class3821 extends Class3820
+public class Class3821 extends Item
 {
     private static String[] field17372;
     private final Class7255 field17373;
@@ -21,7 +21,7 @@ public class Class3821 extends Class3820
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class7006 method2716 = Class3820.method11733(class1847, class1848, (this.field17373 != Class7558.field29974) ? Class2191.field13325 : Class2191.field13326);
+        final Class7006 method2716 = Item.method11733(class1847, class1848, (this.field17373 != Class7558.field29974) ? Class2191.field13325 : Class2191.field13326);
         if (method2716.method21449() == Class2165.field12880) {
             return Class9355.method34676(method2715);
         }
@@ -36,14 +36,14 @@ public class Class3821 extends Class3820
             return Class9355.method34677(method2715);
         }
         if (this.field17373 == Class7558.field29974) {
-            final Class7096 method2720 = class1847.method6701(method2717);
+            final BlockState method2720 = class1847.method6701(method2717);
             if (method2720.method21696() instanceof Class3857) {
                 final Class7255 method2721 = ((Class3857)method2720.method21696()).method11922(class1847, method2717, method2720);
                 if (method2721 != Class7558.field29974) {
                     class1848.method2859(Class8276.field33981.method8449(this));
                     class1848.method1695(method2721.method22166(Class7324.field28320) ? Class8520.field35054 : Class8520.field35052, 1.0f, 1.0f);
                     final ItemStack method2722 = this.method11754(method2715, class1848, method2721.method22149());
-                    if (!class1847.field10067) {
+                    if (!class1847.isRemote) {
                         Class7770.field31784.method13862((Class513)class1848, new ItemStack(method2721.method22149()));
                     }
                     return Class9355.method34674(method2722);
@@ -64,13 +64,13 @@ public class Class3821 extends Class3820
     }
     
     public ItemStack method11752(final ItemStack class8321, final Class512 class8322) {
-        return class8322.field3025.field27304 ? class8321 : new ItemStack(Class7739.field31349);
+        return class8322.field3025.field27304 ? class8321 : new ItemStack(Items.field31349);
     }
     
     public void method11753(final World class1847, final ItemStack class1848, final BlockPos class1849) {
     }
     
-    private ItemStack method11754(final ItemStack class8321, final Class512 class8322, final Class3820 class8323) {
+    private ItemStack method11754(final ItemStack class8321, final Class512 class8322, final Item class8323) {
         if (class8322.field3025.field27304) {
             return class8321;
         }
@@ -86,7 +86,7 @@ public class Class3821 extends Class3820
     
     public boolean method11755(final Class512 class512, final World class513, final BlockPos class514, final Class7005 class515) {
         if (this.field17373 instanceof Class7257) {
-            final Class7096 method6701 = class513.method6701(class514);
+            final BlockState method6701 = class513.method6701(class514);
             final Class8059 method6702 = method6701.method21697();
             final boolean method6703 = method6701.method21751(this.field17373);
             if (!method6701.method21706()) {
@@ -100,7 +100,7 @@ public class Class3821 extends Class3820
                 final int method6704 = class514.getX();
                 final int method6705 = class514.getY();
                 final int method6706 = class514.getZ();
-                class513.method6705(class512, class514, Class8520.field35199, Class286.field1582, 0.5f, 2.6f + (class513.field10062.nextFloat() - class513.field10062.nextFloat()) * 0.8f);
+                class513.method6705(class512, class514, Class8520.field35199, Class286.field1582, 0.5f, 2.6f + (class513.rand.nextFloat() - class513.rand.nextFloat()) * 0.8f);
                 for (int i = 0; i < 8; ++i) {
                     class513.method6709(Class8432.field34632, method6704 + Math.random(), method6705 + Math.random(), method6706 + Math.random(), 0.0, 0.0, 0.0);
                 }
@@ -111,7 +111,7 @@ public class Class3821 extends Class3820
                 }
             }
             else {
-                if (!class513.field10067) {
+                if (!class513.isRemote) {
                     if (method6703) {
                         if (!method6702.method26438()) {
                             class513.method7149(class514, true);

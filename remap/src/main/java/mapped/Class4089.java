@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class4089 extends Class3820
+public class Class4089 extends Item
 {
     public Class4089(final Class8959 class8959) {
         super(class8959);
@@ -28,7 +28,7 @@ public class Class4089 extends Class3820
         if (class8324 instanceof Class513) {
             Class7770.field31800.method13819((Class513)class8324, class8321);
         }
-        if (!class8322.field10067) {
+        if (!class8322.isRemote) {
             for (final Class1948 class8325 : Class5333.method16465(class8321)) {
                 if (!class8325.method7906().method16453()) {
                     class8323.method2655(new Class1948(class8325));
@@ -46,10 +46,10 @@ public class Class4089 extends Class3820
         }
         if (class8324 == null || !class8324.field3025.field27304) {
             if (class8321.method27620()) {
-                return new ItemStack(Class7739.field31442);
+                return new ItemStack(Items.field31442);
             }
             if (class8324 != null) {
-                class8324.field3006.method2362(new ItemStack(Class7739.field31442));
+                class8324.field3006.method2362(new ItemStack(Items.field31442));
             }
         }
         return class8321;

@@ -238,7 +238,7 @@ public class Class3246 extends Class3167
     }
     
     private boolean method10255(final ItemStack class8321) {
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         if (!this.method9883("Ignore Junk")) {
             return false;
         }
@@ -263,10 +263,10 @@ public class Class3246 extends Class3167
         if (method27622 instanceof Class3824 || (method27622 instanceof Class4087 && Class9463.method35173().method35189().method21551(Class3363.class).method9883("Archery"))) {
             return true;
         }
-        if (method27622 == Class7739.field31350 && Class9463.method35173().method35189().method21551(Class3361.class).method9906()) {
+        if (method27622 == Items.field31350 && Class9463.method35173().method35189().method21551(Class3361.class).method9906()) {
             return false;
         }
-        final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(Class7739.field31375, Class7739.field31307, Class7739.field31337, Class7739.field31374, Class7739.field31306, Class7739.field31299, Class7739.field30896, Class7739.field31349, Class7739.field31351, Class7739.field31350, Class7739.field30929, Class7739.field31534, Class7739.field31510, Class7739.field31426, Class7739.field31019, Class7739.field30900, Class7739.field31576, Class7739.field31430, Class7739.field31429, Class7739.field31314, Class7739.field31357, Class7739.field31442, Class7739.field30835, Class7739.field31355, Class7739.field31376));
+        final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(Items.field31375, Items.field31307, Items.field31337, Items.field31374, Items.field31306, Items.field31299, Items.field30896, Items.field31349, Items.field31351, Items.field31350, Items.field30929, Items.field31534, Items.field31510, Items.field31426, Items.field31019, Items.field30900, Items.field31576, Items.field31430, Items.field31429, Items.field31314, Items.field31357, Items.field31442, Items.field30835, Items.field31355, Items.field31376));
         if (class8321 != null) {
             if (!list.contains(method27622)) {
                 if (!method27622.method11715().getFormattedText().toLowerCase().contains("seed")) {
@@ -278,13 +278,13 @@ public class Class3246 extends Class3167
     }
     
     private void method10256() {
-        final List<Class436> field10050 = Class3246.field15514.field4683.field10050;
+        final List<TileEntity> field10050 = Class3246.field15514.field4683.loadedTileEntityList;
         field10050.removeIf(class437 -> !(class437 instanceof Class475));
-        for (final Class436 class436 : field10050) {
-            if (this.field15738.containsKey(class436)) {
+        for (final TileEntity tileEntity : field10050) {
+            if (this.field15738.containsKey(tileEntity)) {
                 continue;
             }
-            this.field15738.put((Class475)class436, false);
+            this.field15738.put((Class475) tileEntity, false);
         }
         for (final Class475 key : this.field15738.keySet()) {
             if (field10050.contains(key)) {

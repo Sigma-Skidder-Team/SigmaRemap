@@ -40,8 +40,8 @@ public class Class505 extends Class433
     }
     
     @Override
-    public Class7096 method2141() {
-        return ((Class7097<O, Class7096>)Class7521.field29292.method11878()).method21773((Class7111<Comparable>)Class3865.field17497, Direction.NORTH);
+    public BlockState method2141() {
+        return ((Class7097<O, BlockState>)Class7521.field29292.method11878()).method21773((Class7111<Comparable>)Class3865.field17497, Direction.NORTH);
     }
     
     @Override

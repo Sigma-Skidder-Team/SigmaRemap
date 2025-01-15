@@ -34,18 +34,18 @@ public class Class7492 implements Class7491
     private final int field28931;
     private final String field28932;
     private final ITextComponent field28933;
-    private final Class394 field28934;
+    private final MinecraftServer field28934;
     private final boolean field28935;
     private final Entity field28936;
     private final ResultConsumer<Class7492> field28937;
     private final Class2042 field28938;
     private final Vec2f field28939;
     
-    public Class7492(final ICommandSource class397, final Vec3d class398, final Vec2f class399, final Class1849 class400, final int n, final String s, final ITextComponent class401, final Class394 class402, final Entity class403) {
+    public Class7492(final ICommandSource class397, final Vec3d class398, final Vec2f class399, final Class1849 class400, final int n, final String s, final ITextComponent class401, final MinecraftServer class402, final Entity class403) {
         this(class397, class398, class399, class400, n, s, class401, class402, class403, false, (ResultConsumer<Class7492>)((commandContext, b, n) -> {}), Class2042.field11636);
     }
     
-    public Class7492(final ICommandSource field28928, final Vec3d field28929, final Vec2f field28930, final Class1849 field28931, final int field28932, final String field28933, final ITextComponent field28934, final Class394 field28935, final Entity field28936, final boolean field28937, final ResultConsumer<Class7492> field28938, final Class2042 field28939) {
+    public Class7492(final ICommandSource field28928, final Vec3d field28929, final Vec2f field28930, final Class1849 field28931, final int field28932, final String field28933, final ITextComponent field28934, final MinecraftServer field28935, final Entity field28936, final boolean field28937, final ResultConsumer<Class7492> field28938, final Class2042 field28939) {
         this.field28928 = field28928;
         this.field28929 = field28929;
         this.field28930 = field28931;
@@ -156,7 +156,7 @@ public class Class7492 implements Class7491
         return this.field28939;
     }
     
-    public Class394 method23255() {
+    public MinecraftServer method23255() {
         return this.field28934;
     }
     

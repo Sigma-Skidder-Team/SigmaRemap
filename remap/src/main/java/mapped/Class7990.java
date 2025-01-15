@@ -13,8 +13,8 @@ public class Class7990
     private final Class1852 field32894;
     private final BlockPos field32895;
     private final boolean field32896;
-    private Class7096 field32897;
-    private Class436 field32898;
+    private BlockState field32897;
+    private TileEntity field32898;
     private boolean field32899;
     
     public Class7990(final Class1852 field32894, final BlockPos class354, final boolean field32895) {
@@ -23,7 +23,7 @@ public class Class7990
         this.field32896 = field32895;
     }
     
-    public Class7096 method26065() {
+    public BlockState method26065() {
         if (this.field32897 == null) {
             if (this.field32896 || this.field32894.method6971(this.field32895)) {
                 this.field32897 = this.field32894.method6701(this.field32895);
@@ -33,7 +33,7 @@ public class Class7990
     }
     
     @Nullable
-    public Class436 method26066() {
+    public TileEntity method26066() {
         if (this.field32898 == null) {
             if (!this.field32899) {
                 this.field32898 = this.field32894.method6727(this.field32895);
@@ -51,7 +51,7 @@ public class Class7990
         return this.field32895;
     }
     
-    public static Predicate<Class7990> method26069(final Predicate<Class7096> predicate) {
+    public static Predicate<Class7990> method26069(final Predicate<BlockState> predicate) {
         return class7990 -> class7990 != null && predicate2.test(class7990.method26065());
     }
 }

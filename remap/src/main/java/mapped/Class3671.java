@@ -24,7 +24,7 @@ public class Class3671 extends Class3666
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
-                if (!(method2157.method27622() instanceof Class3829)) {
+                if (!(method2157.getItem() instanceof Class3829)) {
                     if (!Class3671.field16956.test(method2157)) {
                         return false;
                     }
@@ -46,7 +46,7 @@ public class Class3671 extends Class3666
         ItemStack method27641 = null;
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method27642 = class473.method2157(i);
-            final Class3820 method27643 = method27642.method27622();
+            final Item method27643 = method27642.getItem();
             if (!(method27643 instanceof Class3829)) {
                 if (Class3671.field16956.test(method27642)) {
                     method27641 = method27642.method27641();
@@ -75,6 +75,6 @@ public class Class3671 extends Class3666
     }
     
     static {
-        field16956 = Class120.method618(Class7739.field31533);
+        field16956 = Class120.method618(Items.field31533);
     }
 }

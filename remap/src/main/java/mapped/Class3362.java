@@ -143,7 +143,7 @@ public class Class3362 extends Class3355
             }
             final AxisAlignedBB method10659 = new AxisAlignedBB(class400).method18495(0.5, 0.5, 0.5).method18499(0.0, 1.5, 0.0);
             for (final Entity class401 : method10657) {
-                final AxisAlignedBB method10660 = class401.method1886();
+                final AxisAlignedBB method10660 = class401.getBoundingBox();
                 final AxisAlignedBB class402 = new AxisAlignedBB(class400.method1137());
                 if (class401 instanceof Class858 && method10660.method18502(method10659)) {
                     continue Label_0068;
@@ -229,7 +229,7 @@ public class Class3362 extends Class3355
     
     private void method10662() {
         if (this.field16011 != null && this.field16012 != null) {
-            final int method29340 = Class8639.method29340(Class7739.field31572);
+            final int method29340 = Class8639.method29340(Items.field31572);
             if (method29340 >= 0) {
                 Class3362.field15514.field4684.field3006.field2743 = method29340;
                 Class3362.field15514.field4682.method27318();

@@ -14,13 +14,13 @@ public class Class7949 extends Class7948
     }
     
     @Override
-    public void method25774(final Class3820 class3820, final int n) {
+    public void method25774(final Item class3820, final int n) {
         super.method25774(class3820, n);
         this.field32629.field3039.method17469(new Class4391(class3820, n));
     }
     
     @Override
-    public void method25775(final Class3820 class3820) {
+    public void method25775(final Item class3820) {
         super.method25775(class3820);
         this.field32629.field3039.method17469(new Class4391(class3820, 0));
     }

@@ -249,7 +249,7 @@ public class Class1660 implements AutoCloseable, Class1657
                     method5305 = this.field9380.field4691.method21451().squareDistanceTo(method5304);
                 }
                 final Vec3d method5306 = method5303.method1741(1.0f);
-                final Class7007 method5307 = Class7476.method23096(method5303, method5304, method5304.add(method5306.x * n4, method5306.y * n4, method5306.z * n4), method5303.method1886().method18493(method5306.scale(n4)).method18495(1.0, 1.0, 1.0), class399 -> !class399.isSpectator() && class399.method1749(), method5305);
+                final Class7007 method5307 = Class7476.method23096(method5303, method5304, method5304.add(method5306.x * n4, method5306.y * n4, method5306.z * n4), method5303.getBoundingBox().method18493(method5306.scale(n4)).method18495(1.0, 1.0, 1.0), class399 -> !class399.isSpectator() && class399.method1749(), method5305);
                 if (method5307 != null) {
                     final Entity method5308 = method5307.method21452();
                     final Vec3d method5309 = method5307.method21451();
@@ -632,12 +632,12 @@ public class Class1660 implements AutoCloseable, Class1657
             boolean b = method5303 instanceof Class512 && !this.field9380.field4648.field23464;
             if (b) {
                 if (!((Class512)method5303).field3025.field27305) {
-                    final ItemStack method5304 = ((LivingEntity)method5303).method2713();
+                    final ItemStack method5304 = ((LivingEntity)method5303).getHeldItemMainhand();
                     final Class7006 field4691 = this.field9380.field4691;
                     if (field4691 != null) {
                         if (field4691.method21449() == Class2165.field12881) {
                             final BlockPos method5305 = ((Class7005)field4691).method21447();
-                            final Class7096 method5306 = this.field9380.field4683.method6701(method5305);
+                            final BlockState method5306 = this.field9380.field4683.method6701(method5305);
                             if (this.field9380.field4682.method27336() != Class101.field301) {
                                 final Class7990 class7990 = new Class7990(this.field9380.field4683, method5305, false);
                                 b = (!method5304.method27620() && (method5304.method27686(this.field9380.field4683.method6793(), class7990) || method5304.method27687(this.field9380.field4683.method6793(), class7990)));

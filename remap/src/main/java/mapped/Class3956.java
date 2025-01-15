@@ -23,7 +23,7 @@ public class Class3956 extends Class3955
     }
     
     @Override
-    public Class436 method11898(final Class1855 class1855) {
+    public TileEntity method11898(final Class1855 class1855) {
         return new Class459();
     }
     

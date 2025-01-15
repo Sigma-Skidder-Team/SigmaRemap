@@ -41,7 +41,7 @@ public class Class1780 extends Class1779
         this.field9884 = (Map<Class8976<?>, Map<Class1932, Class3662<?>>>)ImmutableMap.of();
     }
     
-    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final Class5028 class6583) {
+    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
         this.field9885 = false;
         final HashMap hashMap = Maps.newHashMap();
         for (final Map.Entry<Class1932, V> entry : map.entrySet()) {

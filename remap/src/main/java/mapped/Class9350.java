@@ -27,7 +27,7 @@ public class Class9350
     }
     
     public static int method34661(final Class7492 class7492, final Class2113 class7493) throws CommandSyntaxException {
-        final Class394 method23255 = class7492.method23255();
+        final MinecraftServer method23255 = class7492.method23255();
         if (method23255.method1481(DimensionType.field2223).method6954() != class7493) {
             method23255.method1505(class7493, true);
             class7492.method23257(new Class2259("commands.difficulty.success", new Object[] { class7493.method8236() }), true);

@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -13,14 +15,14 @@ public class Class3904 extends Class3902
 {
     private static String[] field17617;
     public static final Class7113 field17684;
-    public static final Class7702 field17685;
-    public static final Class7702 field17686;
-    public static final Class7702 field17687;
-    public static final Class7702 field17688;
-    public static final Class7702 field17689;
-    public static final Class7702 field17690;
-    public static final Class7702 field17691;
-    public static final Class7702 field17692;
+    public static final VoxelShape field17685;
+    public static final VoxelShape field17686;
+    public static final VoxelShape field17687;
+    public static final VoxelShape field17688;
+    public static final VoxelShape field17689;
+    public static final VoxelShape field17690;
+    public static final VoxelShape field17691;
+    public static final VoxelShape field17692;
     
     public Class3904(final Class9288 class9288) {
         super(class9288);
@@ -28,7 +30,7 @@ public class Class3904 extends Class3902
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class8073.field33262[class7096.method21772(Class3904.field17618).ordinal()]) {
             case 1: {
                 switch (Class8073.field33260[class7096.method21772((Class7111<Direction>)Class3904.field17564).getAxis().ordinal()]) {
@@ -74,7 +76,7 @@ public class Class3904 extends Class3902
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        if (!class7097.field10067) {
+        if (!class7097.isRemote) {
             class7097.method6705(null, class7098, Class8520.field35343, Class286.field1582, 0.3f, ((boolean)this.method12006(class7096, class7097, class7098).method21772((Class7111<Boolean>)Class3904.field17684)) ? 0.6f : 0.5f);
             return Class2201.field13400;
         }

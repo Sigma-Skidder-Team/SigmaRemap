@@ -19,7 +19,7 @@ public abstract class Class456 extends Class460
     }
     
     public static void method2323(final Class1855 class1855, final Random random, final BlockPos class1856, final Class1932 class1857) {
-        final Class436 method6727 = class1855.method6727(class1856);
+        final TileEntity method6727 = class1855.method6727(class1856);
         if (method6727 instanceof Class456) {
             ((Class456)method6727).method2327(class1857, random.nextLong());
         }
@@ -47,8 +47,8 @@ public abstract class Class456 extends Class460
     
     public void method2326(final Class512 class512) {
         if (this.field2710 != null) {
-            if (this.field2656.method6679() != null) {
-                final Class9317 method6402 = this.field2656.method6679().method1581().method6402(this.field2710);
+            if (this.field2656.getServer() != null) {
+                final Class9317 method6402 = this.field2656.getServer().method1581().method6402(this.field2710);
                 this.field2710 = null;
                 final Class9098 method6403 = new Class9098((Class1849)this.field2656).method32877(Class6683.field26367, new BlockPos(this.field2657)).method32874(this.field2711);
                 if (class512 != null) {

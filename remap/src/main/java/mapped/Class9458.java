@@ -177,14 +177,14 @@ public class Class9458
         boolean b = true;
         int n3 = 1;
         if (!class7353.method2756()) {
-            final ItemStack method2750 = class7353.method2713();
+            final ItemStack method2750 = class7353.getHeldItemMainhand();
             final ItemStack method2751 = class7353.method2714();
-            if (method2750.method27622() instanceof Class4086) {
+            if (method2750.getItem() instanceof Class4086) {
                 if (Class4086.method12296(method2750)) {
                     n3 = (b ? 0 : 1);
                 }
             }
-            if (method2751.method27622() instanceof Class4086) {
+            if (method2751.getItem() instanceof Class4086) {
                 if (Class4086.method12296(method2751)) {
                     b = !method2750.method27620();
                     n3 = (b ? 0 : 1);
@@ -192,13 +192,13 @@ public class Class9458
             }
         }
         else {
-            if (class7353.method2766().method27622() instanceof Class4085) {
+            if (class7353.method2766().getItem() instanceof Class4085) {
                 b = (class7353.method2757() == Class316.field1877);
                 n3 = (b ? 0 : 1);
             }
             if (class7353.method2757() == Class316.field1877) {
                 final ItemStack method2752 = class7353.method2714();
-                if (method2752.method27622() instanceof Class4086) {
+                if (method2752.getItem() instanceof Class4086) {
                     if (Class4086.method12296(method2752)) {
                         n3 = 0;
                     }
@@ -236,7 +236,7 @@ public class Class9458
                     this.method35149(class757, class758, n5, n4, n3, class759);
                 }
             }
-            else if (class756.method27622() instanceof Class4094) {
+            else if (class756.getItem() instanceof Class4094) {
                 if (b && this.field40660.method27620()) {
                     this.method35147(class757, class758, n5, n2, n4, n3);
                 }
@@ -244,7 +244,7 @@ public class Class9458
                     this.method35146(class757, class758, n5, n4, class759, n3, class756);
                 }
             }
-            else if (class756.method27622() instanceof Class4086) {
+            else if (class756.getItem() instanceof Class4086) {
                 final boolean method12296 = Class4086.method12296(class756);
                 final boolean b2 = class759 == Class2226.field13698;
                 final int n6 = b2 ? 1 : -1;
@@ -367,7 +367,7 @@ public class Class9458
         this.field40662 = this.field40661;
         this.field40664 = this.field40663;
         final Class756 field4684 = this.field40658.field4684;
-        final ItemStack method2713 = field4684.method2713();
+        final ItemStack method2713 = field4684.getHeldItemMainhand();
         final ItemStack method2714 = field4684.method2714();
         if (!field4684.method4134()) {
             final float method2715 = field4684.method2904(1.0f);

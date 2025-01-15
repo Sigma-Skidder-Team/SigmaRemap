@@ -56,7 +56,7 @@ public class Class846 extends Class763
     @Override
     public void method1659() {
         super.method1659();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method5069(this.collidedHorizontally);
         }
     }
@@ -84,7 +84,7 @@ public class Class846 extends Class763
     }
     
     @Override
-    public void method1691(final BlockPos class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final BlockState class355) {
         this.method1695(Class8520.field35608, 0.15f, 1.0f);
     }
     
@@ -94,7 +94,7 @@ public class Class846 extends Class763
     }
     
     @Override
-    public void method1839(final Class7096 class7096, final Vec3d class7097) {
+    public void method1839(final BlockState class7096, final Vec3d class7097) {
         if (class7096.method21696() != Class7521.field29240) {
             super.method1839(class7096, class7097);
         }

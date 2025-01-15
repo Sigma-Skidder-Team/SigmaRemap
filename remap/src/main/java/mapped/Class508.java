@@ -66,8 +66,8 @@ public class Class508 extends Entity
             this.setMotion((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f, 0.20000000298023224, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f);
             this.method1695(Class8520.field35214, 0.4f, 2.0f + this.rand.nextFloat() * 0.4f);
         }
-        if (!this.world.method6976(this.method1886())) {
-            this.method1838(this.getPosX(), (this.method1886().field25074 + this.method1886().field25077) / 2.0, this.getPosZ());
+        if (!this.world.method6976(this.getBoundingBox())) {
+            this.method1838(this.getPosX(), (this.getBoundingBox().field25074 + this.getBoundingBox().field25077) / 2.0, this.getPosZ());
         }
         if (this.field2903 < this.field2897 - 20 + this.getEntityId() % 100) {
             if (this.field2902 == null || this.field2902.method1734(this) > 64.0) {
@@ -147,7 +147,7 @@ public class Class508 extends Entity
     
     @Override
     public void method1736(final Class512 class512) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field2899 == 0) {
                 if (class512.field3014 == 0) {
                     class512.field3014 = 2;

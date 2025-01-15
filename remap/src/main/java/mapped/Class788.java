@@ -49,9 +49,9 @@ public abstract class Class788 extends Class787
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        final Class3820 method2716 = method2715.method27622();
+        final Item method2716 = method2715.getItem();
         if (method2716 instanceof Class3831 && ((Class3831)method2716).method11769(method2715.method27657(), this.getType())) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 final Class788 method2717 = this.method4349(this);
                 if (method2717 != null) {
                     method2717.method4354(-24000);
@@ -78,7 +78,7 @@ public abstract class Class788 extends Class787
     }
     
     public int method4351() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             return this.field4199;
         }
         return this.dataManager.get(Class788.field4198) ? -1 : 1;
@@ -149,7 +149,7 @@ public abstract class Class788 extends Class787
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method1768()) {
                 int method4351 = this.method4351();
                 if (method4351 >= 0) {

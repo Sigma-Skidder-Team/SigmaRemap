@@ -55,18 +55,18 @@ public class Class4476 extends Class4475
             this.method13440(class1851, Class7521.field29400.method11878(), 4, 2, 6, class1853);
             this.method13440(class1851, Class7521.field29336.method11878(), 1, 2, 1, class1853);
             this.method13440(class1851, Class7521.field29336.method11878(), 5, 2, 1, class1853);
-            final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.NORTH);
-            final Class7096 class1856 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.EAST);
-            final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.WEST);
-            final Class7096 class1858 = ((Class7097<O, Class7096>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.SOUTH);
+            final BlockState class1855 = ((Class7097<O, BlockState>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.NORTH);
+            final BlockState class1856 = ((Class7097<O, BlockState>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.EAST);
+            final BlockState class1857 = ((Class7097<O, BlockState>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.WEST);
+            final BlockState class1858 = ((Class7097<O, BlockState>)Class7521.field29413.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.SOUTH);
             this.method13444(class1851, class1853, 0, 4, 1, 6, 4, 1, class1855, class1855, false);
             this.method13444(class1851, class1853, 0, 4, 2, 0, 4, 7, class1856, class1856, false);
             this.method13444(class1851, class1853, 6, 4, 2, 6, 4, 7, class1857, class1857, false);
             this.method13444(class1851, class1853, 0, 4, 8, 6, 4, 8, class1858, class1858, false);
-            this.method13440(class1851, ((Class7097<O, Class7096>)class1855).method21773(Class3916.field17734, Class183.field571), 0, 4, 1, class1853);
-            this.method13440(class1851, ((Class7097<O, Class7096>)class1855).method21773(Class3916.field17734, Class183.field570), 6, 4, 1, class1853);
-            this.method13440(class1851, ((Class7097<O, Class7096>)class1858).method21773(Class3916.field17734, Class183.field570), 0, 4, 8, class1853);
-            this.method13440(class1851, ((Class7097<O, Class7096>)class1858).method21773(Class3916.field17734, Class183.field571), 6, 4, 8, class1853);
+            this.method13440(class1851, ((Class7097<O, BlockState>)class1855).method21773(Class3916.field17734, Class183.field571), 0, 4, 1, class1853);
+            this.method13440(class1851, ((Class7097<O, BlockState>)class1855).method21773(Class3916.field17734, Class183.field570), 6, 4, 1, class1853);
+            this.method13440(class1851, ((Class7097<O, BlockState>)class1858).method21773(Class3916.field17734, Class183.field570), 0, 4, 8, class1853);
+            this.method13440(class1851, ((Class7097<O, BlockState>)class1858).method21773(Class3916.field17734, Class183.field571), 6, 4, 8, class1853);
             for (int i = 2; i <= 7; i += 5) {
                 for (int j = 1; j <= 5; j += 4) {
                     this.method13449(class1851, Class7521.field29181.method11878(), j, -1, i, class1853);

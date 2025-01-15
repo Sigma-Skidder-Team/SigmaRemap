@@ -81,7 +81,7 @@ public class Class786 extends Class785
         if (this.field4197 > 0) {
             --this.field4197;
         }
-        if (Entity.method1680(this.getMotion()) > 2.500000277905201E-7) {
+        if (Entity.horizontalMag(this.getMotion()) > 2.500000277905201E-7) {
             if (this.rand.nextInt(5) == 0) {
                 final Class7096 method6701 = this.world.method6701(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
                 if (!method6701.method21706()) {
@@ -191,7 +191,7 @@ public class Class786 extends Class785
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() != Class7739.field31284) {
+        if (method2715.getItem() != Items.field31284) {
             return false;
         }
         final float method2716 = this.method2664();

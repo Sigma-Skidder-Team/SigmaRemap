@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.function.Function;
 import java.util.function.BiFunction;
@@ -15,9 +16,9 @@ import javax.annotation.Nullable;
 public interface Class1855
 {
     @Nullable
-    Class436 method6727(final BlockPos p0);
+    TileEntity method6727(final BlockPos p0);
     
-    Class7096 method6701(final BlockPos p0);
+    BlockState method6701(final BlockPos p0);
     
     Class7099 method6702(final BlockPos p0);
     
@@ -41,7 +42,7 @@ public interface Class1855
             class8480.method28307();
             final Vec3d class8483;
             final Vec3d class8484;
-            final Class7096 class8485;
+            final BlockState class8485;
             this.method6988(class8483, class8484, class8482, class8480.method28309(class8485, this, class8482), class8485);
             final Class7099 class8486;
             class8480.method28310(class8486, this, class8482).method24550(class8483, class8484, class8482);
@@ -56,7 +57,7 @@ public interface Class1855
     }
     
     @Nullable
-    default Class7005 method6988(final Vec3d class5487, final Vec3d class5488, final BlockPos class5489, final Class7702 class5490, final Class7096 class5491) {
+    default Class7005 method6988(final Vec3d class5487, final Vec3d class5488, final BlockPos class5489, final VoxelShape class5490, final BlockState class5491) {
         final Class7005 method24550 = class5490.method24550(class5487, class5488, class5489);
         if (method24550 != null) {
             final Class7005 method24551 = class5491.method21730(this, class5489).method24550(class5487, class5488, class5489);

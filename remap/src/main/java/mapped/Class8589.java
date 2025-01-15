@@ -21,7 +21,7 @@ public class Class8589
         if (!class1849.method6765().method31216(Class8878.field37344)) {
             return 0;
         }
-        final Random field10062 = class1849.field10062;
+        final Random field10062 = class1849.rand;
         --this.field36086;
         if (this.field36086 > 0) {
             return 0;
@@ -68,7 +68,7 @@ public class Class8589
     }
     
     private boolean method29088(final World class1847, final BlockPos class1848, final Random random, final boolean b) {
-        final Class7096 method6701 = class1847.method6701(class1848);
+        final BlockState method6701 = class1847.method6701(class1848);
         if (!Class8532.method28620(class1847, class1848, method6701, method6701.method21756())) {
             return false;
         }

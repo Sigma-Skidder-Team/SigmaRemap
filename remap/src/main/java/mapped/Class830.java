@@ -50,7 +50,7 @@ public class Class830 extends Class827 implements Class768
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (this.method2718(Class2215.field13601).method27620()) {
             if (this.rand.nextFloat() < 0.03f) {
-                this.method1803(Class2215.field13601, new ItemStack(Class7739.field31609));
+                this.method1803(Class2215.field13601, new ItemStack(Items.field31609));
                 this.field4119[Class2215.field13601.method8402()] = 2.0f;
             }
         }
@@ -128,23 +128,23 @@ public class Class830 extends Class827 implements Class768
     public void method4184(final Class9592 class9592) {
         if (this.rand.nextFloat() > 0.9) {
             if (this.rand.nextInt(16) >= 10) {
-                this.method1803(Class2215.field13600, new ItemStack(Class7739.field31376));
+                this.method1803(Class2215.field13600, new ItemStack(Items.field31376));
             }
             else {
-                this.method1803(Class2215.field13600, new ItemStack(Class7739.field31607));
+                this.method1803(Class2215.field13600, new ItemStack(Items.field31607));
             }
         }
     }
     
     @Override
     public boolean method4166(final ItemStack class8321, final ItemStack class8322, final Class2215 class8323) {
-        if (class8322.method27622() == Class7739.field31609) {
+        if (class8322.getItem() == Items.field31609) {
             return false;
         }
-        if (class8322.method27622() != Class7739.field31607) {
-            return class8321.method27622() == Class7739.field31607 || super.method4166(class8321, class8322, class8323);
+        if (class8322.getItem() != Items.field31607) {
+            return class8321.getItem() == Items.field31607 || super.method4166(class8321, class8322, class8323);
         }
-        return class8321.method27622() == Class7739.field31607 && class8321.method27632() < class8322.method27632();
+        return class8321.getItem() == Items.field31607 && class8321.method27632() < class8322.method27632();
     }
     
     @Override
@@ -191,7 +191,7 @@ public class Class830 extends Class827 implements Class768
     
     @Override
     public void method1714() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method2749()) {
                 if (this.method1706()) {
                     if (this.method4945()) {
@@ -221,7 +221,7 @@ public class Class830 extends Class827 implements Class768
     
     @Override
     public void method4252(final LivingEntity class511, final float n) {
-        final Class403 class512 = new Class403(this.world, this, new ItemStack(Class7739.field31607));
+        final Class403 class512 = new Class403(this.world, this, new ItemStack(Items.field31607));
         final double n2 = class511.getPosX() - this.getPosX();
         final double n3 = class511.method1942(0.3333333333333333) - class512.getPosY();
         final double n4 = class511.getPosZ() - this.getPosZ();

@@ -21,8 +21,8 @@ public class Class3673 extends Class3666
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
-                if (!(Class3833.method11776(method2157.method27622()) instanceof Class3942)) {
-                    if (!(method2157.method27622() instanceof Class3829)) {
+                if (!(Class3833.method11776(method2157.getItem()) instanceof Class3942)) {
+                    if (!(method2157.getItem() instanceof Class3829)) {
                         return false;
                     }
                     ++n2;
@@ -40,11 +40,11 @@ public class Class3673 extends Class3666
     
     public ItemStack method11303(final Class473 class473) {
         ItemStack field34174 = ItemStack.field34174;
-        Class3829 class474 = (Class3829)Class7739.field31404;
+        Class3829 class474 = (Class3829) Items.field31404;
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
-                final Class3820 method2158 = method2157.method27622();
+                final Item method2158 = method2157.getItem();
                 if (!(Class3833.method11776(method2158) instanceof Class3942)) {
                     if (method2158 instanceof Class3829) {
                         class474 = (Class3829)method2158;

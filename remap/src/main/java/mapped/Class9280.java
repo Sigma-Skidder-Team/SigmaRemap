@@ -52,7 +52,7 @@ public class Class9280
         final TreeSet set = new TreeSet();
         method34255(Class90.field210, EntityType::method23366, set);
         method34255(Class90.field207, Class5328::method16455, set);
-        method34255(Class90.field211, Class3820::method11717, set);
+        method34255(Class90.field211, Item::method11717, set);
         method34255(Class90.field209, Class6257::method18598, set);
         method34255(Class90.field217, Class3090::method9865, set);
         method34255(Class90.field208, Class3833::method11856, set);

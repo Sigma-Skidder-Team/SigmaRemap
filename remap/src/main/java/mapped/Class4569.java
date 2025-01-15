@@ -40,7 +40,7 @@ public class Class4569 extends Class4535<Class5112>
     
     private boolean method13578(final Class1851 class1851, final BlockPos class1852, final Random random) {
         final BlockPos method1139 = class1852.method1139();
-        final Class7096 method1140 = class1851.method6701(method1139);
+        final BlockState method1140 = class1851.method6701(method1139);
         return (method1140.method21696() != Class7521.field29637) ? method1140.method21761(class1851, method1139, Direction.UP) : random.nextBoolean();
     }
     

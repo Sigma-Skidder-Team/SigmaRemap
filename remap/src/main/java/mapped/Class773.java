@@ -90,7 +90,7 @@ public class Class773 extends Class772 implements Class774, Class768
         if (this.method4279()) {
             return Class259.field1239;
         }
-        if (!this.method4218(Class7739.field31611)) {
+        if (!this.method4218(Items.field31611)) {
             return this.method4216() ? Class259.field1235 : Class259.field1241;
         }
         return Class259.field1238;
@@ -130,7 +130,7 @@ public class Class773 extends Class772 implements Class774, Class768
     
     @Override
     public void method4184(final Class9592 class9592) {
-        final ItemStack class9593 = new ItemStack(Class7739.field31611);
+        final ItemStack class9593 = new ItemStack(Items.field31611);
         if (this.rand.nextInt(300) == 0) {
             final HashMap hashMap = Maps.newHashMap();
             hashMap.put(Class7882.field32381, 1);
@@ -161,9 +161,9 @@ public class Class773 extends Class772 implements Class774, Class768
     
     @Override
     public void method4252(final LivingEntity class511, final float n) {
-        final Class316 method23100 = Class7476.method23100(this, Class7739.field31611);
+        final Class316 method23100 = Class7476.method23100(this, Items.field31611);
         final ItemStack method23101 = this.method2715(method23100);
-        if (this.method4218(Class7739.field31611)) {
+        if (this.method4218(Items.field31611)) {
             Class4086.method12304(this.world, this, method23100, method23101, 1.6f, (float)(14 - this.world.method6954().method8235() * 4));
         }
         this.field2959 = 0;
@@ -197,8 +197,8 @@ public class Class773 extends Class772 implements Class774, Class768
     @Override
     public void method4165(final Class427 class427) {
         final ItemStack method2107 = class427.method2107();
-        if (!(method2107.method27622() instanceof Class4044)) {
-            if (this.method4283(method2107.method27622())) {
+        if (!(method2107.getItem() instanceof Class4044)) {
+            if (this.method4283(method2107.getItem())) {
                 final ItemStack method2108 = this.field4167.method2258(method2107);
                 if (!method2108.method27620()) {
                     method2107.method27691(method2108.method27690());
@@ -213,8 +213,8 @@ public class Class773 extends Class772 implements Class774, Class768
         }
     }
     
-    private boolean method4283(final Class3820 class3820) {
-        return this.method4293() && class3820 == Class7739.field31556;
+    private boolean method4283(final Item class3820) {
+        return this.method4293() && class3820 == Items.field31556;
     }
     
     @Override
@@ -234,7 +234,7 @@ public class Class773 extends Class772 implements Class774, Class768
     public void method4263(final int n, final boolean b) {
         final Class8792 method4292 = this.method4292();
         if (this.rand.nextFloat() <= method4292.method30666()) {
-            final ItemStack class8321 = new ItemStack(Class7739.field31611);
+            final ItemStack class8321 = new ItemStack(Items.field31611);
             final HashMap hashMap = Maps.newHashMap();
             if (n <= method4292.method30665(Class2113.field12292)) {
                 if (n > method4292.method30665(Class2113.field12291)) {

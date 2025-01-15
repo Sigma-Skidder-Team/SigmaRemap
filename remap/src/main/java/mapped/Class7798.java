@@ -40,7 +40,7 @@ public class Class7798
     }
     
     private static Class446 method25158(final Class7492 class7492, final BlockPos class7493) throws CommandSyntaxException {
-        final Class436 method6727 = class7492.method23250().method6727(class7493);
+        final TileEntity method6727 = class7492.method23250().method6727(class7493);
         if (method6727 instanceof Class446) {
             return (Class446)method6727;
         }
@@ -105,7 +105,7 @@ public class Class7798
     }
     
     private static boolean method25162(final ItemStack class8321, final ItemStack class8322) {
-        if (class8321.method27622() == class8322.method27622()) {
+        if (class8321.getItem() == class8322.getItem()) {
             if (class8321.method27632() == class8322.method27632()) {
                 if (class8321.method27690() <= class8321.method27628()) {
                     if (Objects.equals(class8321.method27657(), class8322.method27657())) {

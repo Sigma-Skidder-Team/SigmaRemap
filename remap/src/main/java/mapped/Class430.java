@@ -25,7 +25,7 @@ public class Class430 extends Class428
             return false;
         }
         if (!this.isBeingRidden()) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 class512.method1778(this);
             }
             return true;

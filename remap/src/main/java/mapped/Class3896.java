@@ -30,7 +30,7 @@ public class Class3896 extends Class3895 implements Class3840
     
     @Override
     public int method11974(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        final Class436 method6727 = class1855.method6727(class1856);
+        final TileEntity method6727 = class1855.method6727(class1856);
         return (method6727 instanceof Class499) ? ((Class499)method6727).method2537() : 0;
     }
     
@@ -101,7 +101,7 @@ public class Class3896 extends Class3895 implements Class3840
     public void method11966(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         if (!class1847.method6833().method21342(class1848, this)) {
             final int method11978 = this.method11978(class1847, class1848, class1849);
-            final Class436 method11979 = class1847.method6727(class1848);
+            final TileEntity method11979 = class1847.method6727(class1848);
             if (method11978 != ((method11979 instanceof Class499) ? ((Class499)method11979).method2537() : 0) || class1849.method21772((Class7111<Boolean>)Class3896.field17578) != this.method11968(class1847, class1848, class1849)) {
                 class1847.method6833().method21341(class1848, this, 2, this.method11976(class1847, class1848, class1849) ? Class1955.field10641 : Class1955.field10642);
             }
@@ -110,7 +110,7 @@ public class Class3896 extends Class3895 implements Class3840
     
     private void method11980(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         final int method11978 = this.method11978(class1847, class1848, class1849);
-        final Class436 method11979 = class1847.method6727(class1848);
+        final TileEntity method11979 = class1847.method6727(class1848);
         int method11980 = 0;
         if (method11979 instanceof Class499) {
             final Class499 class1850 = (Class499)method11979;
@@ -140,12 +140,12 @@ public class Class3896 extends Class3895 implements Class3840
     @Override
     public boolean method11857(final Class7096 class7096, final World class7097, final BlockPos class7098, final int n, final int n2) {
         super.method11857(class7096, class7097, class7098, n, n2);
-        final Class436 method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.method6727(class7098);
         return method6727 != null && method6727.method2200(n, n2);
     }
     
     @Override
-    public Class436 method11898(final Class1855 class1855) {
+    public TileEntity method11898(final Class1855 class1855) {
         return new Class499();
     }
     

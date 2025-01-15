@@ -56,10 +56,10 @@ public class Class4509 extends Class4500
                 this.method13440(class1851, Class7521.field29368.method11878(), 5, 1, 5, class1853);
                 this.method13440(class1851, Class7521.field29368.method11878(), 5, 2, 5, class1853);
                 this.method13440(class1851, Class7521.field29368.method11878(), 5, 3, 5, class1853);
-                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.WEST), 4, 3, 5, class1853);
-                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.EAST), 6, 3, 5, class1853);
-                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.SOUTH), 5, 3, 4, class1853);
-                this.method13440(class1851, ((Class7097<O, Class7096>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.NORTH), 5, 3, 6, class1853);
+                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.WEST), 4, 3, 5, class1853);
+                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.EAST), 6, 3, 5, class1853);
+                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.SOUTH), 5, 3, 4, class1853);
+                this.method13440(class1851, ((Class7097<O, BlockState>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, Direction.NORTH), 5, 3, 6, class1853);
                 this.method13440(class1851, Class7521.field29598.method11878(), 4, 1, 4, class1853);
                 this.method13440(class1851, Class7521.field29598.method11878(), 4, 1, 5, class1853);
                 this.method13440(class1851, Class7521.field29598.method11878(), 4, 1, 6, class1853);
@@ -118,7 +118,7 @@ public class Class4509 extends Class4500
                     this.method13440(class1851, Class7521.field29160.method11878(), 7, 3, n, class1853);
                     this.method13440(class1851, Class7521.field29160.method11878(), 8, 3, n, class1853);
                 }
-                final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29307.method11878()).method21773((Class7111<Comparable>)Class3917.field17752, Direction.WEST);
+                final BlockState class1855 = ((Class7097<O, BlockState>)Class7521.field29307.method11878()).method21773((Class7111<Comparable>)Class3917.field17752, Direction.WEST);
                 this.method13440(class1851, class1855, 9, 1, 3, class1853);
                 this.method13440(class1851, class1855, 9, 2, 3, class1853);
                 this.method13440(class1851, class1855, 9, 3, 3, class1853);

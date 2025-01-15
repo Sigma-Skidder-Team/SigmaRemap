@@ -6,7 +6,6 @@ package mapped;
 
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
-import java.awt.event.ActionEvent;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,10 +19,10 @@ public class Class2418 extends JComponent
     private final int[] field14307;
     private int field14308;
     private final String[] field14309;
-    private final Class394 field14310;
+    private final MinecraftServer field14310;
     private final Timer field14311;
     
-    public Class2418(final Class394 field14310) {
+    public Class2418(final MinecraftServer field14310) {
         this.field14307 = new int[256];
         this.field14309 = new String[11];
         this.field14310 = field14310;

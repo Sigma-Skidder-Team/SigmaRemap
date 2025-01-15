@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class4049 extends Class3820
+public class Class4049 extends Item
 {
     public Class4049(final Class8959 class8959) {
         super(class8959);

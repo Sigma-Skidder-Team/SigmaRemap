@@ -41,7 +41,7 @@ public class Class3275 extends Class3167
     public void method10321(final Class5735 class5735) {
         if (this.method9906()) {
             if (Class3275.field15514.field4684.field2970 > 0.0f) {
-                if (!Class3275.field15514.field4684.method2756() || Class3275.field15514.field4684.method2766().method27622() != Class7739.field31279) {
+                if (!Class3275.field15514.field4684.method2756() || Class3275.field15514.field4684.method2766().getItem() != Items.field31279) {
                     if (!((Class3260)Class9463.method35173().method35189().method21551(Class3260.class)).method10278()) {
                         class5735.field23300 = (float)((Class3275.field15514.field4684.method2710(Class8107.field33408).method23940() + 0.029999999329447746 + 0.015f * Class7482.method23139()) / Class3275.field15514.field4684.field3025.method21427() + 1.0) / 2.0f;
                     }

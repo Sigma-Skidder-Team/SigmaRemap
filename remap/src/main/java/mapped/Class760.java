@@ -21,7 +21,7 @@ public abstract class Class760 extends Class759
     }
     
     @Override
-    public void method1701(final double n, final boolean b, final Class7096 class7096, final BlockPos class7097) {
+    public void method1701(final double n, final boolean b, final BlockState class7096, final BlockPos class7097) {
     }
     
     @Override

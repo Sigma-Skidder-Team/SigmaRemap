@@ -96,7 +96,7 @@ public class Class778 extends Class776 implements Class768
     
     @Override
     public void method2736() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method1768()) {
                 this.field4183.method11111();
                 if (this.field4183.method11110() > 0) {
@@ -146,8 +146,8 @@ public class Class778 extends Class776 implements Class768
                         }
                     }
                     if (class8061 != null) {
-                        this.method1803(Class2215.field13600, Class5333.method16476(new ItemStack(Class7739.field31441), class8061));
-                        this.field4182 = this.method2713().method27652();
+                        this.method1803(Class2215.field13600, Class5333.method16476(new ItemStack(Items.field31441), class8061));
+                        this.field4182 = this.getHeldItemMainhand().method27652();
                         this.method4318(true);
                         this.world.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35716, this.method1922(), 1.0f, 0.8f + this.rand.nextFloat() * 0.4f);
                         final Class7619 method2710 = this.method2710(Class8107.field33408);
@@ -157,9 +157,9 @@ public class Class778 extends Class776 implements Class768
                 }
                 else if (this.field4182-- <= 0) {
                     this.method4318(false);
-                    final ItemStack method2711 = this.method2713();
+                    final ItemStack method2711 = this.getHeldItemMainhand();
                     this.method1803(Class2215.field13600, ItemStack.field34174);
-                    if (method2711.method27622() == Class7739.field31441) {
+                    if (method2711.getItem() == Items.field31441) {
                         final List<Class1948> method2712 = Class5333.method16465(method2711);
                         if (method2712 != null) {
                             final Iterator<Class1948> iterator = method2712.iterator();
@@ -190,7 +190,7 @@ public class Class778 extends Class776 implements Class768
         }
         else {
             for (int i = 0; i < this.rand.nextInt(35) + 10; ++i) {
-                this.world.method6709(Class8432.field34647, this.getPosX() + this.rand.nextGaussian() * 0.12999999523162842, this.method1886().field25077 + 0.5 + this.rand.nextGaussian() * 0.12999999523162842, this.getPosZ() + this.rand.nextGaussian() * 0.12999999523162842, 0.0, 0.0, 0.0);
+                this.world.method6709(Class8432.field34647, this.getPosX() + this.rand.nextGaussian() * 0.12999999523162842, this.getBoundingBox().field25077 + 0.5 + this.rand.nextGaussian() * 0.12999999523162842, this.getPosZ() + this.rand.nextGaussian() * 0.12999999523162842, 0.0, 0.0, 0.0);
             }
         }
     }
@@ -241,7 +241,7 @@ public class Class778 extends Class776 implements Class768
                 this.method4153(null);
             }
             final Class415 class513 = new Class415(this.world, this);
-            class513.method2022(Class5333.method16476(new ItemStack(Class7739.field31579), class512));
+            class513.method2022(Class5333.method16476(new ItemStack(Items.field31579), class512));
             final Class415 class514 = class513;
             class514.rotationPitch += 20.0f;
             class513.method1958(n2, n3 + method1936 * 0.2f, n4, 0.75f, 8.0f);

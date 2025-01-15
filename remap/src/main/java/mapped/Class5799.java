@@ -580,7 +580,7 @@ public class Class5799 implements IClientPlayNetHandler
             this.field23809.method6838(method12909, i, method12910);
         }
         for (final Class51 class4299 : class4298.method12914()) {
-            final Class436 method12912 = this.field23809.method6727(new BlockPos(class4299.method319("x"), class4299.method319("y"), class4299.method319("z")));
+            final TileEntity method12912 = this.field23809.method6727(new BlockPos(class4299.method319("x"), class4299.method319("y"), class4299.method319("z")));
             if (method12912 == null) {
                 continue;
             }
@@ -789,11 +789,11 @@ public class Class5799 implements IClientPlayNetHandler
         final Class316[] values = Class316.values();
         for (int length = values.length, i = 0; i < length; ++i) {
             final ItemStack method2715 = class512.method2715(values[i]);
-            if (method2715.method27622() == Class7739.field31590) {
+            if (method2715.getItem() == Items.field31590) {
                 return method2715;
             }
         }
-        return new ItemStack(Class7739.field31590);
+        return new ItemStack(Items.field31590);
     }
     
     @Override
@@ -845,7 +845,7 @@ public class Class5799 implements IClientPlayNetHandler
             this.field23808.method5263(this.field23809);
             this.field23808.method5244(new Class556());
         }
-        this.field23809.method6680();
+        this.field23809.setInitialSpawnLocation();
         this.field23809.method6830();
         final String method13099 = field4684.method4120();
         this.field23808.field4689 = null;
@@ -975,7 +975,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17312(final Class4350 class4350) {
         Class8663.method29632((IPacket<Class5799>)class4350, this, this.field23808);
-        Class436 method6727 = this.field23809.method6727(class4350.method13067());
+        TileEntity method6727 = this.field23809.method6727(class4350.method13067());
         if (!(method6727 instanceof Class497)) {
             method6727 = new Class497();
             method6727.method2187(this.field23809, class4350.method13067());
@@ -987,7 +987,7 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17313(final Class4357 class4357) {
         Class8663.method29632((IPacket<Class5799>)class4357, this, this.field23808);
         if (this.field23808.field4683.method6971(class4357.method13084())) {
-            final Class436 method6727 = this.field23808.field4683.method6727(class4357.method13084());
+            final TileEntity method6727 = this.field23808.field4683.method6727(class4357.method13084());
             final int method6728 = class4357.method13085();
             final boolean b = method6728 == 2 && method6727 instanceof Class500;
             Label_0190: {
@@ -1627,7 +1627,7 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17354(final Class4316 class4316) {
         Class8663.method29632((IPacket<Class5799>)class4316, this, this.field23808);
         final ItemStack method2715 = this.field23808.field4684.method2715(class4316.method12972());
-        if (method2715.method27622() == Class7739.field31513) {
+        if (method2715.getItem() == Items.field31513) {
             this.field23808.method5244(new Class723(new Class7738(method2715)));
         }
     }

@@ -43,10 +43,10 @@ public class Class4652 extends Class4651
         final BlockPos class387 = new BlockPos(this.field20141);
         if (this.field20141.method4144(this.method13912(this.field20141, class387.getX(), n, class387.getZ())) < 0.0f) {
             final HashSet hashSet = Sets.newHashSet();
-            hashSet.add(new BlockPos(this.field20141.method1886().field25073, n, this.field20141.method1886().field25075));
-            hashSet.add(new BlockPos(this.field20141.method1886().field25073, n, this.field20141.method1886().field25078));
-            hashSet.add(new BlockPos(this.field20141.method1886().field25076, n, this.field20141.method1886().field25075));
-            hashSet.add(new BlockPos(this.field20141.method1886().field25076, n, this.field20141.method1886().field25078));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25073, n, this.field20141.getBoundingBox().field25075));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25073, n, this.field20141.getBoundingBox().field25078));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25076, n, this.field20141.getBoundingBox().field25075));
+            hashSet.add(new BlockPos(this.field20141.getBoundingBox().field25076, n, this.field20141.getBoundingBox().field25078));
             for (final BlockPos class388 : hashSet) {
                 if (this.field20141.method4144(this.method13911(this.field20141, class388)) < 0.0f) {
                     continue;

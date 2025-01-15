@@ -10,7 +10,7 @@ import java.util.Random;
 
 public abstract class Class6213
 {
-    public abstract boolean method18485(final Class7096 p0, final Random p1);
+    public abstract boolean method18485(final BlockState p0, final Random p1);
     
     public <T> Dynamic<T> method18488(final DynamicOps<T> dynamicOps) {
         return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.mergeInto(this.method18487((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue(), dynamicOps.createString("predicate_type"), dynamicOps.createString(Class90.field232.method503(this.method18486()).toString())));

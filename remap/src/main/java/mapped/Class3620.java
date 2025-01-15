@@ -19,7 +19,7 @@ public class Class3620 extends Class3617
     public Class3620(final Class798 field16821) {
         this.field16821 = field16821;
         super(field16821, null);
-        this.field16818 = this.field16821.world.field10062.nextInt(10);
+        this.field16818 = this.field16821.world.rand.nextInt(10);
         this.field16819 = Lists.newArrayList();
         this.field16820 = null;
         this.method11019(EnumSet.of(Class2139.field12580));

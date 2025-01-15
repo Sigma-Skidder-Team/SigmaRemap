@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 public class Class3894 extends Class3892 implements Class3856
@@ -15,12 +17,12 @@ public class Class3894 extends Class3892 implements Class3856
     public static final Class7114<Class109> field17568;
     public static final Class7113 field17569;
     public static final Class7113 field17570;
-    public static final Class7702 field17571;
-    public static final Class7702 field17572;
-    public static final Class7702 field17573;
-    public static final Class7702 field17574;
-    public static final Class7702 field17575;
-    public static final Class7702 field17576;
+    public static final VoxelShape field17571;
+    public static final VoxelShape field17572;
+    public static final VoxelShape field17573;
+    public static final VoxelShape field17574;
+    public static final VoxelShape field17575;
+    public static final VoxelShape field17576;
     
     public Class3894(final Class9288 class9288) {
         super(class9288);
@@ -28,7 +30,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.method21772((Class7111<Boolean>)Class3894.field17567)) {
             return (class7096.method21772(Class3894.field17568) == Class109.field343) ? Class3894.field17576 : Class3894.field17575;
         }
@@ -91,7 +93,7 @@ public class Class3894 extends Class3892 implements Class3856
     
     @Override
     public void method11825(Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
-        if (!class7097.field10067) {
+        if (!class7097.isRemote) {
             final boolean method6749 = class7097.method6749(class7098);
             if (method6749 != class7096.method21772((Class7111<Boolean>)Class3894.field17569)) {
                 if (class7096.method21772((Class7111<Boolean>)Class3894.field17567) != method6749) {

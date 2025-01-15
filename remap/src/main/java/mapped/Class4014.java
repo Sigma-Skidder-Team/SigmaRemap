@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
@@ -12,8 +14,8 @@ public class Class4014 extends Class3833
 {
     private static String[] field18085;
     public static final Class7113 field18086;
-    public static final Class7702 field18087;
-    public static final Class7702 field18088;
+    public static final VoxelShape field18087;
+    public static final VoxelShape field18088;
     
     public Class4014(final Class9288 class9288) {
         super(class9288);
@@ -35,7 +37,7 @@ public class Class4014 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return class7096.method21772((Class7111<Boolean>)Class4014.field18086) ? Class4014.field18088 : Class4014.field18087;
     }
     

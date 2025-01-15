@@ -108,7 +108,7 @@ public class Class685 extends Class565
         }
         final ItemStack method3810 = this.field3753.field4684.field3006.method2370(3);
         if (this.field3753.field4648.field23465 == 0) {
-            if (method3810.method27622() == Class7521.field29342.method11704()) {
+            if (method3810.getItem() == Class7521.field29342.method11704()) {
                 this.method3796();
             }
         }
@@ -562,7 +562,7 @@ public class Class685 extends Class565
                     Class565.method3293(n - 2, n2 - 2, n + this.method3809().method6617(s) + 2, n2 + 9 + 2, this.field3753.field4648.method17116(0));
                     Class1844 class1844 = null;
                     if (Class9570.field41326.method22605()) {
-                        class1844 = (Class1844)Class9570.method35826(this.field3762.method27622(), Class9570.field41326, this.field3762);
+                        class1844 = (Class1844)Class9570.method35826(this.field3762.getItem(), Class9570.field41326, this.field3762);
                     }
                     if (class1844 == null) {
                         this.method3809().method6609(s, (float)n, (float)n2, 16777215 + (n3 << 24));
@@ -882,7 +882,7 @@ public class Class685 extends Class565
     
     private void method3798(final Entity class399) {
         if (Class8571.method28917()) {
-            final Class9375 method6787 = this.field3753.field4683.method6787();
+            final WorldBorder method6787 = this.field3753.field4683.method6787();
             final float n = (float)method6787.method34782(class399);
             final double max = Math.max(method6787.method34807(), Math.min(method6787.method34804() * method6787.method34805() * 1000.0, Math.abs(method6787.method34793() - method6787.method34791())));
             float n2;
@@ -998,7 +998,7 @@ public class Class685 extends Class565
             Label_0317: {
                 if (!method5304.method27620()) {
                     if (!this.field3762.method27620()) {
-                        if (method5304.method27622() == this.field3762.method27622()) {
+                        if (method5304.getItem() == this.field3762.getItem()) {
                             if (method5304.method27664().equals(this.field3762.method27664())) {
                                 if (equals) {
                                     if (this.field3761 <= 0) {

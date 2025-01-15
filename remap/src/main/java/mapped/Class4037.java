@@ -31,7 +31,7 @@ public class Class4037 extends Class4036
             int i = 0;
             final Mutable method21641 = new Mutable(method21639).method1290(class7075);
             while (i < 7) {
-                if (!method21640.field10067 && !World.method6682(method21641)) {
+                if (!method21640.isRemote && !World.method6682(method21641)) {
                     final Class512 method21642 = class7074.method21652();
                     final int method21643 = method21640.method6986();
                     if (!(method21642 instanceof Class513)) {

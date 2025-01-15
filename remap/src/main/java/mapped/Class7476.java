@@ -36,7 +36,7 @@ public final class Class7476
                 }
             }
             return b4;
-        }, class399.method1886().method18493(class399.getMotion()).method18496(1.0));
+        }, class399.getBoundingBox().method18493(class399.getMotion()).method18496(1.0));
     }
     
     public static Class7006 method23093(final Entity class399, final AxisAlignedBB class400, final Predicate<Entity> predicate, final Class2040 class401, final boolean b) {
@@ -52,7 +52,7 @@ public final class Class7476
         final Vec3d method1935 = class399.getMotion();
         final World field2391 = class399.world;
         final Vec3d method1936 = class399.method1934();
-        if (b3 && !field2391.method6979(class399, class399.method1886(), (Set<Entity>)((!b2 && class400 != null) ? method23098(class400) : ImmutableSet.of()))) {
+        if (b3 && !field2391.method6979(class399, class399.getBoundingBox(), (Set<Entity>)((!b2 && class400 != null) ? method23098(class400) : ImmutableSet.of()))) {
             return new Class7005(method1936, Direction.getFacingFromVector(method1935.x, method1935.y, method1935.z), new BlockPos(class399), false);
         }
         Vec3d class403 = method1936.add(method1935);
@@ -76,7 +76,7 @@ public final class Class7476
         Entity class402 = null;
         Vec3d class403 = null;
         for (final Entity class404 : field2391.method6737(class399, class401, predicate)) {
-            final AxisAlignedBB method18496 = class404.method1886().method18496(class404.method1790());
+            final AxisAlignedBB method18496 = class404.getBoundingBox().method18496(class404.method1790());
             final Optional<Vec3d> method18497 = method18496.method18512(other, class400);
             if (!method18496.method18505(other)) {
                 if (!method18497.isPresent()) {
@@ -117,7 +117,7 @@ public final class Class7476
         double n2 = n;
         Entity class1852 = null;
         for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
-            final Optional<Vec3d> method18512 = class1853.method1886().method18496(0.30000001192092896).method18512(class1849, class1850);
+            final Optional<Vec3d> method18512 = class1853.getBoundingBox().method18496(0.30000001192092896).method18512(class1849, class1850);
             if (!method18512.isPresent()) {
                 continue;
             }
@@ -138,7 +138,7 @@ public final class Class7476
     
     public static final void method23099(final Entity class399, final float n) {
         final Vec3d method1935 = class399.getMotion();
-        final float method1936 = MathHelper.sqrt(Entity.method1680(method1935));
+        final float method1936 = MathHelper.sqrt(Entity.horizontalMag(method1935));
         class399.rotationYaw = (float)(MathHelper.method35693(method1935.z, method1935.x) * 57.2957763671875) + 90.0f;
         class399.rotationPitch = (float)(MathHelper.method35693(method1936, method1935.y) * 57.2957763671875) - 90.0f;
         while (class399.rotationPitch - class399.prevRotationPitch < -180.0f) {
@@ -157,14 +157,14 @@ public final class Class7476
         class399.rotationYaw = MathHelper.method35700(n, class399.prevRotationYaw, class399.rotationYaw);
     }
     
-    public static Class316 method23100(final LivingEntity class511, final Class3820 class512) {
-        return (class511.method2713().method27622() != class512) ? Class316.field1878 : Class316.field1877;
+    public static Class316 method23100(final LivingEntity class511, final Item class512) {
+        return (class511.getHeldItemMainhand().getItem() != class512) ? Class316.field1878 : Class316.field1877;
     }
     
     public static Class402 method23101(final LivingEntity class511, final ItemStack class512, final float n) {
-        final Class402 method11758 = ((Class3824)((class512.method27622() instanceof Class3824) ? class512.method27622() : Class7739.field31280)).method11758(class511.world, class512, class511);
+        final Class402 method11758 = ((Class3824)((class512.getItem() instanceof Class3824) ? class512.getItem() : Items.field31280)).method11758(class511.world, class512, class511);
         method11758.method1984(class511, n);
-        if (class512.method27622() == Class7739.field31581) {
+        if (class512.getItem() == Items.field31581) {
             if (method11758 instanceof Class405) {
                 ((Class405)method11758).method1992(class512);
             }

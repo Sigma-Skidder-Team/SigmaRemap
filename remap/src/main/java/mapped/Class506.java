@@ -45,7 +45,7 @@ public class Class506 extends Class428
     @Override
     public void method1659() {
         super.method1659();
-        if (!this.world.method6678()) {
+        if (!this.world.isRemote()) {
             if (this.field2887 > 0) {
                 --this.field2887;
             }
@@ -78,10 +78,10 @@ public class Class506 extends Class428
     }
     
     @Override
-    public void method2128(final BlockPos class354, final Class7096 class355) {
+    public void method2128(final BlockPos class354, final BlockState class355) {
         super.method2128(class354, class355);
         final Vec3d method1935 = this.getMotion();
-        final double method1936 = Entity.method1680(method1935);
+        final double method1936 = Entity.horizontalMag(method1935);
         final double n = this.field2888 * this.field2888 + this.field2889 * this.field2889;
         if (n > 1.0E-4) {
             if (method1936 > 0.001) {
@@ -151,12 +151,12 @@ public class Class506 extends Class428
     }
     
     @Override
-    public Class7096 method2141() {
-        return ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29299.method11878()).method21773((Class7111<Comparable>)Class3951.field17846, Direction.NORTH)).method21773((Class7111<Comparable>)Class3951.field17847, this.method2598());
+    public BlockState method2141() {
+        return ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29299.method11878()).method21773((Class7111<Comparable>)Class3951.field17846, Direction.NORTH)).method21773((Class7111<Comparable>)Class3951.field17847, this.method2598());
     }
     
     static {
         field2886 = EntityDataManager.method33564(Class506.class, Class7709.field30661);
-        field2890 = Class120.method618(Class7739.field31281, Class7739.field31282);
+        field2890 = Class120.method618(Items.field31281, Items.field31282);
     }
 }

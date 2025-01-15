@@ -1001,7 +1001,7 @@ public class Class9570
         Class9570.field41236 = new Class7363("net.minecraftforge.client.model.pipeline.ForgeBlockModelRenderer");
         Class9570.field41237 = new Class7362(Class9570.field41236, new Class[] { Class7860.class });
         Class9570.field41238 = new Class7363(Class9509.class);
-        Class9570.field41239 = new Class7361(Class9570.field41238, "getTexture", new Class[] { Class7096.class, World.class, BlockPos.class });
+        Class9570.field41239 = new Class7361(Class9570.field41238, "getTexture", new Class[] { BlockState.class, World.class, BlockPos.class });
         Class9570.field41240 = new Class7363("net.minecraftforge.common.extensions.IForgeBlockState");
         Class9570.field41241 = new Class7361(Class9570.field41240, "addDestroyEffects");
         Class9570.field41242 = new Class7361(Class9570.field41240, "addHitEffects");
@@ -1117,7 +1117,7 @@ public class Class9570
         Class9570.field41352 = new Class7363("net.minecraftforge.registries.ForgeRegistryEntry");
         Class9570.field41353 = new Class7361(Class9570.field41352, "getRegistryName");
         Class9570.field41354 = new Class7363(Class7969.class);
-        Class9570.field41355 = new Class7361(Class9570.field41354, "canRenderInLayer", new Class[] { Class7096.class, Class6332.class });
+        Class9570.field41355 = new Class7361(Class9570.field41354, "canRenderInLayer", new Class[] { BlockState.class, Class6332.class });
         Class9570.field41356 = new Class7361(Class9570.field41354, "canRenderInLayer", new Class[] { Class7099.class, Class6332.class });
         Class9570.field41357 = new Class7363("net.minecraftforge.common.extensions.IForgeTileEntity");
         Class9570.field41358 = new Class7361(Class9570.field41357, "canRenderBreaking");

@@ -7,6 +7,8 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
@@ -26,7 +28,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public Class436 method11898(final Class1855 class1855) {
+    public TileEntity method11898(final Class1855 class1855) {
         return new Class440(this.field17834);
     }
     
@@ -42,13 +44,13 @@ public class Class3942 extends Class3841
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        if (class7097.field10067) {
+        if (class7097.isRemote) {
             return Class2201.field13400;
         }
         if (class7099.isSpectator()) {
             return Class2201.field13400;
         }
-        final Class436 method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.method6727(class7098);
         if (!(method6727 instanceof Class440)) {
             return Class2201.field13402;
         }
@@ -73,11 +75,11 @@ public class Class3942 extends Class3841
     
     @Override
     public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
-        final Class436 method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.method6727(class1848);
         Label_0015: {
             if (method6727 instanceof Class440) {
                 final Class440 class1851 = (Class440)method6727;
-                if (!class1847.field10067) {
+                if (!class1847.isRemote) {
                     if (class1850.method2889()) {
                         if (!class1851.method2156()) {
                             final ItemStack method6728 = method12061(this.method12060());
@@ -103,7 +105,7 @@ public class Class3942 extends Class3841
     
     @Override
     public List<ItemStack> method11833(final Class7096 class7096, Class9098 method32879) {
-        final Class436 class7097 = method32879.method32882(Class6683.field26369);
+        final TileEntity class7097 = method32879.method32882(Class6683.field26369);
         if (class7097 instanceof Class440) {
             method32879 = method32879.method32879(Class3942.field17833, (class441, consumer) -> {
                 for (int i = 0; i < class440.method2239(); ++i) {
@@ -117,7 +119,7 @@ public class Class3942 extends Class3841
     @Override
     public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
-            final Class436 method6727 = class1847.method6727(class1848);
+            final TileEntity method6727 = class1847.method6727(class1848);
             if (method6727 instanceof Class440) {
                 ((Class440)method6727).method2335(class1851.method27664());
             }
@@ -173,8 +175,8 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        final Class436 method6727 = class7097.method6727(class7098);
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        final TileEntity method6727 = class7097.method6727(class7098);
         return (method6727 instanceof Class440) ? Class7698.method24489(((Class440)method6727).method2235(class7096)) : Class7698.method24487();
     }
     
@@ -199,7 +201,7 @@ public class Class3942 extends Class3841
     }
     
     @Nullable
-    public static Class181 method12057(final Class3820 class3820) {
+    public static Class181 method12057(final Item class3820) {
         return method12058(Class3833.method11776(class3820));
     }
     

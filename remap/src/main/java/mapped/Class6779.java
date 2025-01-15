@@ -41,7 +41,7 @@ public class Class6779
     public String[] field26637;
     public Class1912[] field26638;
     public int field26639;
-    public Class7096 field26640;
+    public BlockState field26640;
     public Class6332 field26641;
     public static final int field26642 = 0;
     public static final int field26643 = 1;

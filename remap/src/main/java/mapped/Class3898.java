@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 public class Class3898 extends Class3892
@@ -13,24 +15,24 @@ public class Class3898 extends Class3892
     public static final Class7113 field17585;
     public static final Class7113 field17586;
     public static final Class7113 field17587;
-    public static final Class7702 field17588;
-    public static final Class7702 field17589;
-    public static final Class7702 field17590;
-    public static final Class7702 field17591;
-    public static final Class7702 field17592;
-    public static final Class7702 field17593;
-    public static final Class7702 field17594;
-    public static final Class7702 field17595;
-    public static final Class7702 field17596;
-    public static final Class7702 field17597;
+    public static final VoxelShape field17588;
+    public static final VoxelShape field17589;
+    public static final VoxelShape field17590;
+    public static final VoxelShape field17591;
+    public static final VoxelShape field17592;
+    public static final VoxelShape field17593;
+    public static final VoxelShape field17594;
+    public static final VoxelShape field17595;
+    public static final VoxelShape field17596;
+    public static final VoxelShape field17597;
     
     public Class3898(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3898.field17585, false)).method21773((Class7111<Comparable>)Class3898.field17586, false)).method21773((Class7111<Comparable>)Class3898.field17587, false));
+        this.method11877(((Class7097<O, BlockState>)((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3898.field17585, false)).method21773((Class7111<Comparable>)Class3898.field17586, false)).method21773((Class7111<Comparable>)Class3898.field17587, false));
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.method21772((Class7111<Boolean>)Class3898.field17587)) {
             return (class7096.method21772((Class7111<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17588 : Class3898.field17589;
         }
@@ -38,15 +40,15 @@ public class Class3898 extends Class3892
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+    public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7096.method21772((Class7111<Direction>)Class3898.field17564).rotateY().getAxis() == class7097.getAxis()) {
-            return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3898.field17587, this.method11982(class7098) || this.method11982(class7099.method6701(class7100.method1149(class7097.getOpposite()))));
+            return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3898.field17587, this.method11982(class7098) || this.method11982(class7099.method6701(class7100.method1149(class7097.getOpposite()))));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.method21772((Class7111<Boolean>)Class3898.field17585)) {
             return (class7096.method21772((Class7111<Direction>)Class3898.field17564).getAxis() != Axis.Z) ? Class3898.field17593 : Class3898.field17592;
         }
@@ -54,7 +56,7 @@ public class Class3898 extends Class3892
     }
     
     @Override
-    public Class7702 method11810(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11810(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
         if (!class7096.method21772((Class7111<Boolean>)Class3898.field17587)) {
             return (class7096.method21772((Class7111<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17594 : Class3898.field17595;
         }
@@ -134,7 +136,7 @@ public class Class3898 extends Class3892
     
     @Override
     public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
-        if (!class7097.field10067) {
+        if (!class7097.isRemote) {
             final boolean method6749 = class7097.method6749(class7098);
             if (class7096.method21772((Class7111<Boolean>)Class3898.field17586) != method6749) {
                 class7097.method6688(class7098, (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)class7096).method21773((Class7111<Comparable>)Class3898.field17586, method6749)).method21773((Class7111<Comparable>)Class3898.field17585, method6749), 2);

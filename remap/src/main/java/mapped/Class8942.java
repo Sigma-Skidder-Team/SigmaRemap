@@ -57,9 +57,9 @@ public class Class8942
                     final BlockPos class7500 = new BlockPos(l, k, j);
                     final BlockPos method1137 = class7500.add(class7499);
                     final Class7990 class7501 = new Class7990(method1136, class7500, false);
-                    final Class7096 method1138 = class7501.method26065();
+                    final BlockState method1138 = class7501.method26065();
                     if (predicate.test(class7501)) {
-                        final Class436 method1139 = method1136.method6727(class7500);
+                        final TileEntity method1139 = method1136.method6727(class7500);
                         if (method1139 == null) {
                             if (!method1138.method21722(method1136, class7500) && !method1138.method21762(method1136, class7500)) {
                                 arrayList3.add(new Class8696(method1137, method1138, null));
@@ -105,7 +105,7 @@ public class Class8942
             ++m;
         }
         for (final Class8696 class7505 : arrayList2) {
-            final Class436 method1140 = method1136.method6727(class7505.field36541);
+            final TileEntity method1140 = method1136.method6727(class7505.field36541);
             if (class7505.field36543 != null) {
                 if (method1140 != null) {
                     class7505.field36543.method298("x", class7505.field36541.getX());

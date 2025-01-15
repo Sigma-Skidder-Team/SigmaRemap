@@ -27,7 +27,7 @@ public class Class376 extends Class373
     }
     
     @Override
-    public void method1254(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final Random random) {
+    public void method1254(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Random random) {
         final Mutable class1854 = new Mutable(class1852);
         for (int n = this.field2214 + random.nextInt(random.nextInt(this.field2215 + 1) + 1), i = 0; i < n; ++i) {
             class1851.method6688(class1854, class1853, 2);

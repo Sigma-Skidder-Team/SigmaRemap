@@ -91,7 +91,7 @@ public class Class3376 extends Class3167
         this.field16064 = new Class7988(Class3376.field15514.field4684.rotationYaw, Class3376.field15514.field4684.rotationPitch);
         Class3376.field16063 = new Class7988(Class3376.field15514.field4684.rotationYaw, Class3376.field15514.field4684.rotationPitch);
         this.field16069 = -1.0f;
-        this.field16050.method31129(Class3376.field15514.field4684.method2715(Class316.field1877).method27622() instanceof Class4077 && Class3376.field15514.field4648.field23445.method1056());
+        this.field16050.method31129(Class3376.field15514.field4684.method2715(Class316.field1877).getItem() instanceof Class4077 && Class3376.field15514.field4648.field23445.method1056());
         this.field16071 = false;
         this.field16058 = -1;
         super.method9879();
@@ -136,14 +136,14 @@ public class Class3376 extends Class3167
     public void method10745(final Class5751 class5751) {
         if (this.method9906()) {
             if (!this.method9887("Autoblock Mode").equals("None")) {
-                if (Class3376.field15514.field4684.method2713().method27622() instanceof Class4077 || this.field16055 != Class3376.field15514.field4684.field3006.field2743) {
+                if (Class3376.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077 || this.field16055 != Class3376.field15514.field4684.field3006.field2743) {
                     if (Class3376.field16060 != null) {
                         class5751.method16961(true);
                         return;
                     }
                 }
             }
-            if (Class3376.field15514.field4684.method2713().method27622() instanceof Class4077) {
+            if (Class3376.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
                 this.field16057 = 2;
             }
         }
@@ -169,7 +169,7 @@ public class Class3376 extends Class3167
                 }
             }
             if (this.field16050.method31128()) {
-                if (!(Class3376.field15514.field4684.method2713().method27622() instanceof Class4077) || Class3376.field16060 == null) {
+                if (!(Class3376.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077) || Class3376.field16060 == null) {
                     this.field16050.method31129(false);
                 }
             }
@@ -384,8 +384,8 @@ public class Class3376 extends Class3167
     
     public boolean method10750() {
         if (Class3376.field16060 != null) {
-            if (Class3376.field15514.field4684.method2713() != null) {
-                if (Class3376.field15514.field4684.method2713().method27622() instanceof Class4077) {
+            if (Class3376.field15514.field4684.getHeldItemMainhand() != null) {
+                if (Class3376.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
                     if (!this.method9887("Autoblock Mode").equals("None")) {
                         return true;
                     }

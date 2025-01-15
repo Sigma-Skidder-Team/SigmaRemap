@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 
-public class Class4104 extends Class3820
+public class Class4104 extends Item
 {
     private static String[] field18204;
     

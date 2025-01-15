@@ -11,7 +11,7 @@ import net.minecraft.world.dimension.DimensionType;
 
 import javax.annotation.Nullable;
 
-public abstract class Class6737
+public abstract class Dimension
 {
     public static final float[] field26491;
     public final World field26492;
@@ -21,7 +21,7 @@ public abstract class Class6737
     public final float[] field26496;
     private final float[] field26497;
     
-    public Class6737(final World field26492, final DimensionType field26493, final float n) {
+    public Dimension(final World field26492, final DimensionType field26493, final float n) {
         this.field26496 = new float[16];
         this.field26497 = new float[4];
         this.field26492 = field26492;
@@ -85,8 +85,8 @@ public abstract class Class6737
         return this.field26496[n];
     }
     
-    public Class9375 method20506() {
-        return new Class9375();
+    public WorldBorder createWorldBorder() {
+        return new WorldBorder();
     }
     
     public void method20507() {

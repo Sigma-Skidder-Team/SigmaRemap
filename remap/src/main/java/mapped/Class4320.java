@@ -13,14 +13,14 @@ public class Class4320 implements IPacket<IClientPlayNetHandler>
     private static String[] field19355;
     private static final Logger field19356;
     private BlockPos field19357;
-    private Class7096 field19358;
+    private BlockState field19358;
     public Class2003 field19359;
     private boolean field19360;
     
     public Class4320() {
     }
     
-    public Class4320(final BlockPos class354, final Class7096 field19358, final Class2003 field19359, final boolean field19360, final String s) {
+    public Class4320(final BlockPos class354, final BlockState field19358, final Class2003 field19359, final boolean field19360, final String s) {
         this.field19357 = class354.toImmutable();
         this.field19358 = field19358;
         this.field19359 = field19359;
@@ -47,7 +47,7 @@ public class Class4320 implements IPacket<IClientPlayNetHandler>
         class5800.method17367(this);
     }
     
-    public Class7096 method12981() {
+    public BlockState method12981() {
         return this.field19358;
     }
     

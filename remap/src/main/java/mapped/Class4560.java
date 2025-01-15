@@ -12,10 +12,10 @@ import java.util.function.Function;
 
 public class Class4560 extends Class4535<Class5117>
 {
-    private static final Class7096 field20036;
-    private static final Class7096 field20037;
-    private static final Class7096 field20038;
-    private static final Class7096 field20039;
+    private static final BlockState field20036;
+    private static final BlockState field20037;
+    private static final BlockState field20038;
+    private static final BlockState field20039;
     
     public Class4560(final Function<Dynamic<?>, ? extends Class5117> function) {
         super(function);
@@ -58,9 +58,9 @@ public class Class4560 extends Class4535<Class5117>
     }
     
     static {
-        field20036 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29761.method11878()).method21773((Class7111<Comparable>)Class3913.field17723, 1)).method21773(Class3913.field17724, Class184.field574)).method21773((Class7111<Comparable>)Class3913.field17725, 0);
-        field20037 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class4560.field20036).method21773(Class3913.field17724, Class184.field576)).method21773((Class7111<Comparable>)Class3913.field17725, 1);
-        field20038 = ((Class7097<O, Class7096>)Class4560.field20036).method21773(Class3913.field17724, Class184.field576);
-        field20039 = ((Class7097<O, Class7096>)Class4560.field20036).method21773(Class3913.field17724, Class184.field575);
+        field20036 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29761.method11878()).method21773((Class7111<Comparable>)Class3913.field17723, 1)).method21773(Class3913.field17724, Class184.field574)).method21773((Class7111<Comparable>)Class3913.field17725, 0);
+        field20037 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class4560.field20036).method21773(Class3913.field17724, Class184.field576)).method21773((Class7111<Comparable>)Class3913.field17725, 1);
+        field20038 = ((Class7097<O, BlockState>)Class4560.field20036).method21773(Class3913.field17724, Class184.field576);
+        field20039 = ((Class7097<O, BlockState>)Class4560.field20036).method21773(Class3913.field17724, Class184.field575);
     }
 }

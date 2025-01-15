@@ -16,7 +16,7 @@ public class Class3508 extends Class3507
     
     @Override
     public boolean method11013() {
-        return super.method11013() && this.field16499.method2713().method27622() == Class7739.field31607;
+        return super.method11013() && this.field16499.getHeldItemMainhand().getItem() == Items.field31607;
     }
     
     @Override

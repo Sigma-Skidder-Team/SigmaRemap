@@ -79,8 +79,8 @@ public class Class8288
             final Direction[] values = Direction.values();
             final Mutable class1863 = new Mutable();
             for (final BlockPos class1864 : BlockPos.getAllInBoxMutable(n, 0, n3, n2, method7065.method6986() - 1, n4)) {
-                Class7096 class1866;
-                final Class7096 class1865 = class1866 = method7065.method6701(class1864);
+                BlockState class1866;
+                final BlockState class1865 = class1866 = method7065.method6701(class1864);
                 for (final Direction class1867 : values) {
                     class1863.method1287(class1864).method1290(class1867);
                     class1866 = method27548(class1866, class1867, method7065, class1864, class1863);
@@ -90,7 +90,7 @@ public class Class8288
         }
     }
     
-    private static Class7096 method27548(final Class7096 class7096, final Direction class7097, final Class1851 class7098, final BlockPos class7099, final BlockPos class7100) {
+    private static BlockState method27548(final BlockState class7096, final Direction class7097, final Class1851 class7098, final BlockPos class7099, final BlockPos class7100) {
         return Class8288.field34082.getOrDefault(class7096.method21696(), Class2167.field12889).method8335(class7096, class7097, class7098.method6701(class7100), class7098, class7099, class7100);
     }
     
@@ -105,11 +105,11 @@ public class Class8288
                 this.field34081[i] = null;
                 if (class1863 != null && array != null && array.length > 0) {
                     final Direction[] values = Direction.values();
-                    final Class7875<Class7096> method1300 = class1863.method27161();
+                    final Class7875<BlockState> method1300 = class1863.method27161();
                     for (final int n : array) {
                         method1296.method1300(method1298.method25426() + (n & 0xF), (i << 4) + (n >> 8 & 0xF), method1298.method25427() + (n >> 4 & 0xF));
-                        Class7096 method1301;
-                        final Class7096 class1864 = method1301 = method1300.method25508(n);
+                        BlockState method1301;
+                        final BlockState class1864 = method1301 = method1300.method25508(n);
                         for (final Direction class1865 : values) {
                             method1297.method1303(method1296).method1304(class1865);
                             if (method1296.getX() >> 4 == method1298.field32290 && method1296.getZ() >> 4 == method1298.field32291) {

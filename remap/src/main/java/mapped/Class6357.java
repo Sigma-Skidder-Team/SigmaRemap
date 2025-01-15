@@ -164,7 +164,7 @@ public class Class6357 extends Class6354
         return class51;
     }
     
-    public static String method18930(final Class6737 class6737) {
+    public static String method18930(final Dimension class6737) {
         return "raids" + class6737.getType().method1271();
     }
     

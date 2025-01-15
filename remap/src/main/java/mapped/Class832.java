@@ -37,7 +37,7 @@ public abstract class Class832 extends Class787
     
     @Override
     public int method2631(final Class512 class512) {
-        return 1 + this.world.field10062.nextInt(3);
+        return 1 + this.world.rand.nextInt(3);
     }
     
     public void method4951(final int n) {

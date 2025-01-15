@@ -16,7 +16,7 @@ import java.util.Random;
 public abstract class Class6343<T extends Class7065> extends Class6346<T>
 {
     private static final float[] field25359;
-    private static final Class7096 field25360;
+    private static final BlockState field25360;
     private final int field25361;
     private final int field25362;
     private final int field25363;
@@ -27,8 +27,8 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
     private final Class8577 field25368;
     private final Class8577 field25369;
     private final Class8576 field25370;
-    public final Class7096 field25371;
-    public final Class7096 field25372;
+    public final BlockState field25371;
+    public final BlockState field25372;
     
     public Class6343(final Class1851 class1851, final Class1868 class1852, final int field25362, final int field25363, final int n, final T t, final boolean b) {
         super(class1851, class1852, t);
@@ -136,7 +136,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                 final double method18854 = MathHelper.method35703(j / (double)this.field25361, n3, n4, n5, n9, n7, n11, n6, n10, n8, n12);
                 final int n13 = i * this.field25361 + j;
                 if (method18854 > 0.0 || n13 < method18853) {
-                    Class7096 class2021;
+                    BlockState class2021;
                     if (method18854 <= 0.0) {
                         class2021 = this.field25372;
                     }
@@ -310,7 +310,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                             for (int n21 = 0; n21 < this.field25362; ++n21) {
                                 final int n22 = n2 + l * this.field25362 + n21;
                                 final int n23 = n22 & 0xF;
-                                final double method18867 = MathHelper.method35654(MathHelper.method35701(n21 / (double)this.field25362, method18865, method18866) / 200.0, -1.0, 1.0);
+                                final double method18867 = MathHelper.clamp(MathHelper.method35701(n21 / (double)this.field25362, method18865, method18866) / 200.0, -1.0, 1.0);
                                 double n24 = method18867 / 2.0 - method18867 * method18867 * method18867 / 24.0;
                                 while (iterator5.hasNext()) {
                                     final Class4521 class1860 = (Class4521)iterator5.next();
@@ -323,7 +323,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                                     n24 += method18862(n18 - class1861.method34564(), n13 - class1861.method34565(), n22 - class1861.method34566()) * 0.4;
                                 }
                                 iterator6.back(((ObjectList)list2).size());
-                                Class7096 class1862;
+                                BlockState class1862;
                                 if (n24 <= 0.0) {
                                     if (n13 >= method18853) {
                                         class1862 = Class6343.field25360;

@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class437 extends Class436
+public class Class437 extends TileEntity
 {
     private static String[] field2661;
     private Class181 field2662;

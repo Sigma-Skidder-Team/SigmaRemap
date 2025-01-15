@@ -153,10 +153,10 @@ public class Class3204 extends Class3167
                 this.field15627 = Class316.field1877;
                 final Class3260 field2744 = this.field15628;
                 Label_0094: {
-                    if (Class3260.method10279(Class3204.field15514.field4684.method2715(Class316.field1878).method27622())) {
+                    if (Class3260.method10279(Class3204.field15514.field4684.method2715(Class316.field1878).getItem())) {
                         if (!Class3204.field15514.field4684.method2715(this.field15627).method27620()) {
                             final Class3260 field2745 = this.field15628;
-                            if (Class3260.method10279(Class3204.field15514.field4684.method2715(this.field15627).method27622())) {
+                            if (Class3260.method10279(Class3204.field15514.field4684.method2715(this.field15627).getItem())) {
                                 break Label_0094;
                             }
                         }

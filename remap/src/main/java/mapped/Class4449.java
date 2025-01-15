@@ -20,7 +20,7 @@ public class Class4449 implements Comparator<Class7859>
         this.field19790 = field19790;
         this.field19791 = field19791;
         this.field19792 = field19792;
-        this.field19793 = 1.0 - MathHelper.method35654(Math.abs(a) / 1.5707963267948966, 0.0, 1.0);
+        this.field19793 = 1.0 - MathHelper.clamp(Math.abs(a) / 1.5707963267948966, 0.0, 1.0);
     }
     
     @Override

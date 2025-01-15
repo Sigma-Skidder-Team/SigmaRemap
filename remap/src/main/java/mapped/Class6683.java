@@ -16,8 +16,8 @@ public class Class6683
     public static final Class7915<Entity> field26365;
     public static final Class7915<Entity> field26366;
     public static final Class7915<BlockPos> field26367;
-    public static final Class7915<Class7096> field26368;
-    public static final Class7915<Class436> field26369;
+    public static final Class7915<BlockState> field26368;
+    public static final Class7915<TileEntity> field26369;
     public static final Class7915<ItemStack> field26370;
     public static final Class7915<Float> field26371;
     

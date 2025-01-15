@@ -21,7 +21,7 @@ import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import java.util.UUID;
 import org.apache.logging.log4j.Logger;
 
-public class Class1655 extends Class394
+public class Class1655 extends MinecraftServer
 {
     private static final Logger field9268;
     private final Class869 field9269;
@@ -49,7 +49,7 @@ public class Class1655 extends Class394
         this.method1535(256);
         this.method1538(new Class6764(this));
         this.field9269 = field9269;
-        this.field9270 = (this.method1509() ? Class394.field2295 : class8511);
+        this.field9270 = (this.method1509() ? MinecraftServer.field2295 : class8511);
     }
     
     @Override
@@ -58,12 +58,12 @@ public class Class1655 extends Class394
         final Class8642 method25787 = this.method1512().method25787(s, this);
         this.method1443(this.method1501(), method25787);
         final Class6459 method25788 = this.field2302.method21269(11);
-        Class8660 method25789 = method25787.method29394();
+        WorldInfo method25789 = method25787.method29394();
         if (method25789 != null) {
             method25789.method29550(s2);
         }
         else {
-            method25789 = new Class8660(this.field9270, s2);
+            method25789 = new WorldInfo(this.field9270, s2);
         }
         method25789.method29617(this.method1490(), this.method1492().isPresent());
         this.method1441(method25787.method29392(), method25789);
@@ -319,7 +319,7 @@ public class Class1655 extends Class394
     }
     
     private void method5684(final Class1849 class1849) {
-        final Class8660 method6764 = class1849.method6764();
+        final WorldInfo method6764 = class1849.method6764();
         if (method6764.method29560() || method6764.method29556()) {
             method6764.method29563(0);
             method6764.method29561(false);

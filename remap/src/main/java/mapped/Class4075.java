@@ -48,7 +48,7 @@ public class Class4075 extends Class4072
         }
         final Class512 method21657 = class7075.method21652();
         method21654.method6705(method21657, method21655, Class8520.field34994, Class286.field1582, 1.0f, 1.0f);
-        if (!method21654.field10067) {
+        if (!method21654.isRemote) {
             method21654.method6688(method21655, (Class7096)((Class7097<Object, Object>)class7076.method11878()).method21773(Class4027.field18120, (Comparable)method21656.method21772((Class7111<V>)Class4027.field18120)), 11);
             if (method21657 != null) {
                 class7075.method21651().method27636(1, method21657, class7078 -> class7078.method2795(class7077.method21653()));

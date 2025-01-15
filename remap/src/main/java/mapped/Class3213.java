@@ -30,8 +30,8 @@ public class Class3213 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3213.field15514.field4684.method2713() != null) {
-            final Class234 method872 = Class234.method872(Class3213.field15514.field4684.method2713().method27622());
+        if (Class3213.field15514.field4684.getHeldItemMainhand() != null) {
+            final Class234 method872 = Class234.method872(Class3213.field15514.field4684.getHeldItemMainhand().getItem());
             if (method872 != null) {
                 final float n = (float)Math.toRadians(Class3213.field15514.field4684.rotationYaw - 25.0f);
                 final float n2 = (float)Math.toRadians(Class3213.field15514.field4684.rotationPitch);

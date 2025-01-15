@@ -9,11 +9,11 @@ import net.minecraft.util.text.ITextComponent;
 public class Class5810 implements Class5809
 {
     private static final ITextComponent field23844;
-    private final Class394 field23845;
+    private final MinecraftServer field23845;
     private final NetworkManager field23846;
     private boolean field23847;
     
-    public Class5810(final Class394 field23845, final NetworkManager field23846) {
+    public Class5810(final MinecraftServer field23845, final NetworkManager field23846) {
         this.field23845 = field23845;
         this.field23846 = field23846;
     }

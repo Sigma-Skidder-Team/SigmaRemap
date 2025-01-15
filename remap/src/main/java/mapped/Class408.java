@@ -33,7 +33,7 @@ public class Class408 extends Entity implements Class407
     }
     
     public void method2008(final ItemStack class8321) {
-        if (class8321.method27622() != Class7739.field31449 || class8321.method27656()) {
+        if (class8321.getItem() != Items.field31449 || class8321.method27656()) {
             this.method1650().set(Class408.field2500, (ItemStack)Class8349.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
         }
     }
@@ -45,7 +45,7 @@ public class Class408 extends Entity implements Class407
     @Override
     public ItemStack method2005() {
         final ItemStack method2009 = this.method2009();
-        return method2009.method27620() ? new ItemStack(Class7739.field31449) : method2009;
+        return method2009.method27620() ? new ItemStack(Items.field31449) : method2009;
     }
     
     @Override
@@ -55,7 +55,7 @@ public class Class408 extends Entity implements Class407
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.method1886().method18507() * 4.0;
+        double v = this.getBoundingBox().method18507() * 4.0;
         if (Double.isNaN(v)) {
             v = 4.0;
         }
@@ -105,7 +105,7 @@ public class Class408 extends Entity implements Class407
         final double n = this.getPosX() + method1935.x;
         final double n2 = this.getPosY() + method1935.y;
         final double n3 = this.getPosZ() + method1935.z;
-        final float method1936 = MathHelper.sqrt(Entity.method1680(method1935));
+        final float method1936 = MathHelper.sqrt(Entity.horizontalMag(method1935));
         this.rotationYaw = (float)(MathHelper.method35693(method1935.x, method1935.z) * 57.2957763671875);
         this.rotationPitch = (float)(MathHelper.method35693(method1935.y, method1936) * 57.2957763671875);
         while (this.rotationPitch - this.prevRotationPitch < -180.0f) {
@@ -122,7 +122,7 @@ public class Class408 extends Entity implements Class407
         }
         this.rotationPitch = MathHelper.method35700(0.2f, this.prevRotationPitch, this.rotationPitch);
         this.rotationYaw = MathHelper.method35700(0.2f, this.prevRotationYaw, this.rotationYaw);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             final double n4 = this.field2501 - n;
             final double n5 = this.field2503 - n3;
             final float n6 = (float)Math.sqrt(n4 * n4 + n5 * n5);
@@ -144,14 +144,14 @@ public class Class408 extends Entity implements Class407
                 this.world.method6709(Class8432.field34601, n - method1935.x * 0.25, n2 - method1935.y * 0.25, n3 - method1935.z * 0.25, method1935.x, method1935.y, method1935.z);
             }
         }
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             this.method1948(n, n2, n3);
         }
         else {
             this.setPosition(n, n2, n3);
             ++this.field2504;
             if (this.field2504 > 80) {
-                if (!this.world.field10067) {
+                if (!this.world.isRemote) {
                     this.method1695(Class8520.field35160, 1.0f, 1.0f);
                     this.method1652();
                     if (!this.field2505) {

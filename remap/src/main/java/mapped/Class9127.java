@@ -6,7 +6,7 @@ package mapped;
 
 public class Class9127
 {
-    private final Class7096 field38681;
+    private final BlockState field38681;
     private final int field38682;
     private int field38683;
     
@@ -19,7 +19,7 @@ public class Class9127
         return this.field38682;
     }
     
-    public Class7096 method33115() {
+    public BlockState method33115() {
         return this.field38681;
     }
     

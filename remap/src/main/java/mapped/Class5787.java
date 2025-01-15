@@ -56,7 +56,7 @@ public class Class5787 extends Class5784
     
     @Override
     public float method17252() {
-        final float a = MathHelper.sqrt(Entity.method1680(this.field23764.getMotion())) + 1.0f;
+        final float a = MathHelper.sqrt(Entity.horizontalMag(this.field23764.getMotion())) + 1.0f;
         return Math.min(a, 40.0f) / a;
     }
     

@@ -33,7 +33,7 @@ public class Class1781 extends Class1779
         this.field9887 = new Class6518();
     }
     
-    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final Class5028 class6583) {
+    public void method6377(final Map<Class1932, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
         final HashMap hashMap = Maps.newHashMap();
         map.forEach((class6585, jsonObject) -> {
             try {

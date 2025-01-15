@@ -15,7 +15,7 @@ public class Class8663
     public static DimensionType field36393;
     
     public static <T extends INetHandler> void method29631(final IPacket<T> class4252, final T t, final Class1849 class4253) throws ThreadQuickExitException {
-        method29632(class4252, t, class4253.method6679());
+        method29632(class4252, t, class4253.getServer());
     }
     
     public static <T extends INetHandler> void method29632(final IPacket<T> class4252, final T t, final Class872<?> class4253) throws ThreadQuickExitException {

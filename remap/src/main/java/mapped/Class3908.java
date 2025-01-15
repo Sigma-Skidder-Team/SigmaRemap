@@ -7,6 +7,8 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -14,7 +16,7 @@ import java.util.Random;
 public class Class3908 extends Class3833 implements Class3872
 {
     private static String[] field17713;
-    public static final Class7702 field17714;
+    public static final VoxelShape field17714;
     
     public Class3908(final Class9288 class9288) {
         super(class9288);
@@ -26,7 +28,7 @@ public class Class3908 extends Class3833 implements Class3872
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Vec3d method21732 = class7096.method21732(class7097, class7098);
         return Class3908.field17714.method24541(method21732.x, method21732.y, method21732.z);
     }
@@ -62,7 +64,7 @@ public class Class3908 extends Class3833 implements Class3872
     
     @Override
     public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
-        return new ItemStack(Class7739.field31368);
+        return new ItemStack(Items.field31368);
     }
     
     @Override
@@ -82,7 +84,7 @@ public class Class3908 extends Class3833 implements Class3872
     
     @Override
     public float method11830(final Class7096 class7096, final Class512 class7097, final Class1855 class7098, final BlockPos class7099) {
-        return (class7097.method2713().method27622() instanceof Class4077) ? 1.0f : super.method11830(class7096, class7097, class7098, class7099);
+        return (class7097.getHeldItemMainhand().getItem() instanceof Class4077) ? 1.0f : super.method11830(class7096, class7097, class7098, class7099);
     }
     
     public void method12014(final World class1847, final BlockPos class1848) {

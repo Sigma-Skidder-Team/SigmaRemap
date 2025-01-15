@@ -13,6 +13,7 @@ import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.types.DynamicOps;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -74,7 +75,7 @@ public interface Class7099 extends Class7098<Class7099>
         return this.method21779().method22155(class1855, class1856, this);
     }
     
-    default Class7096 method21791() {
+    default BlockState method21791() {
         return this.method21779().method22162(this);
     }
     
@@ -123,7 +124,7 @@ public interface Class7099 extends Class7098<Class7099>
         return method22148;
     }
     
-    default Class7702 method21798(final Class1855 class1855, final BlockPos class1856) {
+    default VoxelShape method21798(final Class1855 class1855, final BlockPos class1856) {
         return this.method21779().method22167(this, class1855, class1856);
     }
 }

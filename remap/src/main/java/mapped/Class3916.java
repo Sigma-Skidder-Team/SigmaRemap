@@ -6,6 +6,8 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -18,27 +20,27 @@ public class Class3916 extends Class3833 implements Class3856
     public static final Class7114<Class109> field17733;
     public static final Class7114<Class183> field17734;
     public static final Class7113 field17735;
-    public static final Class7702 field17736;
-    public static final Class7702 field17737;
-    public static final Class7702 field17738;
-    public static final Class7702 field17739;
-    public static final Class7702 field17740;
-    public static final Class7702 field17741;
-    public static final Class7702 field17742;
-    public static final Class7702 field17743;
-    public static final Class7702 field17744;
-    public static final Class7702 field17745;
-    public static final Class7702[] field17746;
-    public static final Class7702[] field17747;
+    public static final VoxelShape field17736;
+    public static final VoxelShape field17737;
+    public static final VoxelShape field17738;
+    public static final VoxelShape field17739;
+    public static final VoxelShape field17740;
+    public static final VoxelShape field17741;
+    public static final VoxelShape field17742;
+    public static final VoxelShape field17743;
+    public static final VoxelShape field17744;
+    public static final VoxelShape field17745;
+    public static final VoxelShape[] field17746;
+    public static final VoxelShape[] field17747;
     private static final int[] field17748;
     private final Class3833 field17749;
     private final Class7096 field17750;
     
-    private static Class7702[] method12021(final Class7702 class7702, final Class7702 class7703, final Class7702 class7704, final Class7702 class7705, final Class7702 class7706) {
-        return IntStream.range(0, 16).mapToObj(n2 -> method12022(n2, class7707, class7708, class7709, class7710, class7711)).toArray(Class7702[]::new);
+    private static VoxelShape[] method12021(final VoxelShape class7702, final VoxelShape class7703, final VoxelShape class7704, final VoxelShape class7705, final VoxelShape class7706) {
+        return IntStream.range(0, 16).mapToObj(n2 -> method12022(n2, class7707, class7708, class7709, class7710, class7711)).toArray(VoxelShape[]::new);
     }
     
-    private static Class7702 method12022(final int n, final Class7702 class7702, final Class7702 class7703, final Class7702 class7704, final Class7702 class7705, final Class7702 class7706) {
+    private static VoxelShape method12022(final int n, final VoxelShape class7702, final VoxelShape class7703, final VoxelShape class7704, final VoxelShape class7705, final VoxelShape class7706) {
     Label_0025_Outer:
         while (true) {
             final int n2;
@@ -79,7 +81,7 @@ public class Class3916 extends Class3833 implements Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return ((class7096.method21772(Class3916.field17733) != Class109.field343) ? Class3916.field17747 : Class3916.field17746)[Class3916.field17748[this.method12023(class7096)]];
     }
     

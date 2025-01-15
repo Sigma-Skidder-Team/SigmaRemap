@@ -8,13 +8,11 @@ import javax.annotation.Nullable;
 import java.util.Locale;
 import java.util.Date;
 import java.util.Calendar;
-import java.util.Collection;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.function.Function;
-import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -34,7 +32,7 @@ public class Class1791 extends Class1776<List<String>>
         this.field9917 = field9917;
     }
     
-    public List<String> method6459(final Class6582 class6582, final Class5028 class6583) {
+    public List<String> method6459(final Class6582 class6582, final IProfiler class6583) {
         try (final Class1671 method19933 = Class869.method5277().method5291().method19933(Class1791.field9914);
              final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(method19933.method5887(), StandardCharsets.UTF_8))) {
             return (List<String>)bufferedReader.lines().map((Function<? super String, ?>)String::trim).filter(s -> s.hashCode() != 125780783).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList());
@@ -44,7 +42,7 @@ public class Class1791 extends Class1776<List<String>>
         }
     }
     
-    public void method6460(final List<String> list, final Class6582 class6582, final Class5028 class6583) {
+    public void method6460(final List<String> list, final Class6582 class6582, final IProfiler class6583) {
         this.field9916.clear();
         this.field9916.addAll(list);
     }

@@ -243,7 +243,7 @@ public class Class793 extends Class789
     
     @Override
     public boolean method4357(final ItemStack class8321) {
-        return class8321.method27622() == Class7521.field29244.method11704();
+        return class8321.getItem() == Class7521.field29244.method11704();
     }
     
     @Override
@@ -276,7 +276,7 @@ public class Class793 extends Class789
         super.method4355();
         if (!this.method2625()) {
             if (this.world.method6765().method31216(Class8878.field37319)) {
-                this.method1765(Class7739.field31273, 1);
+                this.method1765(Items.field31273, 1);
             }
         }
     }

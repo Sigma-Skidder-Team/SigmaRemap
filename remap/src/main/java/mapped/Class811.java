@@ -59,7 +59,7 @@ public class Class811 extends Class806
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() instanceof Class3831) {
+        if (method2715.getItem() instanceof Class3831) {
             return super.method4195(class512, class513);
         }
         if (!this.method4715()) {
@@ -74,7 +74,7 @@ public class Class811 extends Class806
         }
         if (!this.isBeingRidden()) {
             if (!method2715.method27620()) {
-                if (!this.method4736() && method2715.method27622() == Class7739.field31353) {
+                if (!this.method4736() && method2715.getItem() == Items.field31353) {
                     this.method4740(class512);
                     return true;
                 }

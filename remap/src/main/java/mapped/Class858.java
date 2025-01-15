@@ -45,7 +45,7 @@ public class Class858 extends Entity
     @Override
     public void method1659() {
         ++this.field4592;
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             final BlockPos class354 = new BlockPos(this);
             if (this.world.dimension instanceof Class6738) {
                 if (this.world.method6701(class354).method21706()) {
@@ -85,7 +85,7 @@ public class Class858 extends Entity
         }
         if (!(class7929.method25714() instanceof Class852)) {
             if (!this.removed) {
-                if (!this.world.field10067) {
+                if (!this.world.isRemote) {
                     this.method1652();
                     if (!class7929.method25707()) {
                         this.world.method6722(null, this.getPosX(), this.getPosY(), this.getPosZ(), 6.0f, Class2196.field13367);

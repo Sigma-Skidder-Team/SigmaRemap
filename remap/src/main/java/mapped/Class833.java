@@ -126,12 +126,12 @@ public abstract class Class833 extends Class832
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() == Class7739.field31350 && this.method1768()) {
+        if (method2715.getItem() == Items.field31350 && this.method1768()) {
             this.method1695(Class8520.field35053, 1.0f, 1.0f);
             method2715.method27693(1);
             final ItemStack method2716 = this.method4956();
             this.method4955(method2716);
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 Class7770.field31784.method13862((Class513)class512, method2716);
             }
             if (!method2715.method27620()) {

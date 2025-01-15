@@ -105,7 +105,7 @@ public abstract class Class865 implements ICommandSource
     }
     
     public boolean method5213(final World class1847) {
-        if (class1847.field10067 || class1847.method6754() == this.field4610) {
+        if (class1847.isRemote || class1847.method6754() == this.field4610) {
             return false;
         }
         if ("Searge".equalsIgnoreCase(this.field4615)) {
@@ -114,7 +114,7 @@ public abstract class Class865 implements ICommandSource
             return true;
         }
         this.field4612 = 0;
-        final Class394 method6679 = this.method5216().method6679();
+        final MinecraftServer method6679 = this.method5216().getServer();
         if (method6679 != null && method6679.method1493() && method6679.method1531() && !Class8272.method27500(this.field4615)) {
             try {
                 this.field4614 = null;
@@ -180,7 +180,7 @@ public abstract class Class865 implements ICommandSource
     
     public boolean method5221(final Class512 class512) {
         if (class512.method2908()) {
-            if (class512.method1896().field10067) {
+            if (class512.method1896().isRemote) {
                 class512.method2828(this);
             }
             return true;

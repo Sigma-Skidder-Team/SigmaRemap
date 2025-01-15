@@ -6,7 +6,7 @@ package mapped;
 
 public interface Class4407
 {
-    Class7096 method13338();
+    BlockState method13338();
     
-    Class7096 method13339();
+    BlockState method13339();
 }

@@ -89,7 +89,7 @@ public class Class799 extends Class794
     }
     
     @Override
-    public void method1691(final BlockPos class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final BlockState class355) {
         this.method1695(Class8520.field35736, 0.15f, 1.0f);
     }
     
@@ -138,7 +138,7 @@ public class Class799 extends Class794
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field4281) {
                 if (!this.field4282) {
                     if (!this.method4346()) {
@@ -152,7 +152,7 @@ public class Class799 extends Class794
                 }
             }
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method4152() == null) {
                 if (this.method4597()) {
                     this.method4598(false);
@@ -294,13 +294,13 @@ public class Class799 extends Class794
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        final Class3820 method2716 = method2715.method27622();
-        if (method2715.method27622() instanceof Class3831) {
+        final Item method2716 = method2715.getItem();
+        if (method2715.getItem() instanceof Class3831) {
             return super.method4195(class512, class513);
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!this.method4480()) {
-                if (method2716 == Class7739.field31405) {
+                if (method2716 == Items.field31405) {
                     if (!this.method4597()) {
                         if (!class512.field3025.field27304) {
                             method2715.method27693(1);
@@ -357,7 +357,7 @@ public class Class799 extends Class794
             }
             return super.method4195(class512, class513);
         }
-        return this.method4489(class512) || (method2716 == Class7739.field31405 && !this.method4597());
+        return this.method4489(class512) || (method2716 == Items.field31405 && !this.method4597());
     }
     
     @Override
@@ -381,7 +381,7 @@ public class Class799 extends Class794
     
     @Override
     public boolean method4357(final ItemStack class8321) {
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         return method27622.method11743() && method27622.method11744().method32746();
     }
     

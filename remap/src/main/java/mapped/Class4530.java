@@ -37,7 +37,7 @@ public class Class4530 extends Class4469
             this.method13418(class1851, class1853, 8, 8, 1, 14, 8, 6, Class4530.field19829);
         }
         for (int i = 1; i <= 7; ++i) {
-            Class7096 class1858 = Class4530.field19830;
+            BlockState class1858 = Class4530.field19830;
             if (i == 2 || i == 6) {
                 class1858 = Class4530.field19829;
             }

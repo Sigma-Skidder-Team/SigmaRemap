@@ -17,7 +17,7 @@ public class Class4835 extends Class4825
     public Class4835(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final int n5) {
         super(class4803, s, n, n2, n3, n4, false);
         this.field20722 = Class869.method5277();
-        this.field20721 = new ItemStack(Class3820.method11697(n5));
+        this.field20721 = new ItemStack(Item.method11697(n5));
     }
     
     @Override
@@ -43,7 +43,7 @@ public class Class4835 extends Class4825
             Class8154.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(-3487030, n * 0.5f));
         }
         Class8154.method26878((float)(this.field20478 - 1), (float)(this.field20479 - 1), (float)(this.field20478 + this.field20480), (float)(this.field20479 + this.field20481), Class6430.method19118(-921103, n));
-        if (this.field20721.method27622() != null) {
+        if (this.field20721.getItem() != null) {
             this.method14504();
         }
     }

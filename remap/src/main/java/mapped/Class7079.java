@@ -23,7 +23,7 @@ public interface Class7079
     default void method21659(final Class1848 class1848, final Class7006 class1849) {
     }
     
-    default void method21660(final Class1848 class1848, final BlockPos class1849, final Class7096 class1850, final float n) {
+    default void method21660(final Class1848 class1848, final BlockPos class1849, final BlockState class1850, final float n) {
     }
     
     default void method21661() {

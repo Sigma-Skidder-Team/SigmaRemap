@@ -38,7 +38,7 @@ public class Class3970 extends Class3833
     
     @Override
     public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class3833 class7099, final BlockPos class7100, final boolean b) {
-        if (!class7097.field10067) {
+        if (!class7097.isRemote) {
             final boolean booleanValue = class7096.method21772((Class7111<Boolean>)Class3970.field17941);
             if (booleanValue != class7097.method6749(class7098)) {
                 if (!booleanValue) {

@@ -45,25 +45,25 @@ public class Class9436
         this.field40464[3] = 1.0f;
     }
     
-    public void method35062(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Direction class1859, final float[] array, final BitSet set) {
+    public void method35062(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Direction class1859, final float[] array, final BitSet set) {
         final BlockPos class1860 = set.get(0) ? class1858.method1149(class1859) : class1858;
         final Class1973 method7975 = Class1973.method7975(class1859);
         final Class384 field40466 = this.field40466;
         Class9144.method33372();
         field40466.method1281(class1860, Class1973.method7977(method7975)[0]);
-        final Class7096 method7976 = class1856.method6701(field40466);
+        final BlockState method7976 = class1856.method6701(field40466);
         final int method7977 = Class7781.method24980(method7976, class1856, field40466);
         final float method7978 = Class7781.method24979(method7976, class1856, field40466);
         field40466.method1281(class1860, Class1973.method7977(method7975)[1]);
-        final Class7096 method7979 = class1856.method6701(field40466);
+        final BlockState method7979 = class1856.method6701(field40466);
         final int method7980 = Class7781.method24980(method7979, class1856, field40466);
         final float method7981 = Class7781.method24979(method7979, class1856, field40466);
         field40466.method1281(class1860, Class1973.method7977(method7975)[2]);
-        final Class7096 method7982 = class1856.method6701(field40466);
+        final BlockState method7982 = class1856.method6701(field40466);
         final int method7983 = Class7781.method24980(method7982, class1856, field40466);
         final float method7984 = Class7781.method24979(method7982, class1856, field40466);
         field40466.method1281(class1860, Class1973.method7977(method7975)[3]);
-        final Class7096 method7985 = class1856.method6701(field40466);
+        final BlockState method7985 = class1856.method6701(field40466);
         final int method7986 = Class7781.method24980(method7985, class1856, field40466);
         final float method7987 = Class7781.method24979(method7985, class1856, field40466);
         field40466.method1282(class1860, Class1973.method7977(method7975)[0], class1859);
@@ -82,7 +82,7 @@ public class Class9436
         }
         else {
             field40466.method1282(class1860, Class1973.method7977(method7975)[0], Class1973.method7977(method7975)[2]);
-            final Class7096 method7990 = class1856.method6701(field40466);
+            final BlockState method7990 = class1856.method6701(field40466);
             method7988 = Class7781.method24979(method7990, class1856, field40466);
             method7989 = Class7781.method24980(method7990, class1856, field40466);
         }
@@ -94,7 +94,7 @@ public class Class9436
         }
         else {
             field40466.method1282(class1860, Class1973.method7977(method7975)[0], Class1973.method7977(method7975)[3]);
-            final Class7096 method7993 = class1856.method6701(field40466);
+            final BlockState method7993 = class1856.method6701(field40466);
             method7991 = Class7781.method24979(method7993, class1856, field40466);
             method7992 = Class7781.method24980(method7993, class1856, field40466);
         }
@@ -106,7 +106,7 @@ public class Class9436
         }
         else {
             field40466.method1282(class1860, Class1973.method7977(method7975)[1], Class1973.method7977(method7975)[2]);
-            final Class7096 method7996 = class1856.method6701(field40466);
+            final BlockState method7996 = class1856.method6701(field40466);
             method7994 = Class7781.method24979(method7996, class1856, field40466);
             method7995 = Class7781.method24980(method7996, class1856, field40466);
         }
@@ -118,13 +118,13 @@ public class Class9436
         }
         else {
             field40466.method1282(class1860, Class1973.method7977(method7975)[1], Class1973.method7977(method7975)[3]);
-            final Class7096 method7999 = class1856.method6701(field40466);
+            final BlockState method7999 = class1856.method6701(field40466);
             method7997 = Class7781.method24979(method7999, class1856, field40466);
             method7998 = Class7781.method24980(method7999, class1856, field40466);
         }
         int n = Class7781.method24980(class1857, class1856, class1858);
         field40466.method1281(class1858, class1859);
-        final Class7096 method8000 = class1856.method6701(field40466);
+        final BlockState method8000 = class1856.method6701(field40466);
         if (set.get(0) || !method8000.method21722(class1856, field40466)) {
             n = Class7781.method24980(method8000, class1856, field40466);
         }

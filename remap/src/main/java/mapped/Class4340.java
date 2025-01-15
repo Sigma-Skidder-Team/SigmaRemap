@@ -22,7 +22,7 @@ public class Class4340 implements IPacket<IClientPlayNetHandler>
     public Class4340() {
     }
     
-    public Class4340(final Class9375 class9375, final Class2217 field19437) {
+    public Class4340(final WorldBorder class9375, final Class2217 field19437) {
         this.field19437 = field19437;
         this.field19439 = class9375.method34777();
         this.field19440 = class9375.method34778();
@@ -120,7 +120,7 @@ public class Class4340 implements IPacket<IClientPlayNetHandler>
         class5800.method17337(this);
     }
     
-    public void method13035(final Class9375 class9375) {
+    public void method13035(final WorldBorder class9375) {
         switch (Class5102.field22035[this.field19437.ordinal()]) {
             case 1: {
                 class9375.method34794(this.field19441);

@@ -80,7 +80,7 @@ public class Class826 extends Class827 implements Class825
     
     @Override
     public void method1659() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method1768()) {
                 if (this.method4913()) {
                     this.field4418 -= this.method4916();
@@ -96,11 +96,11 @@ public class Class826 extends Class827 implements Class825
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() == Class7739.field31341 && this.method2653(Class9439.field40491)) {
+        if (method2715.getItem() == Items.field31341 && this.method2653(Class9439.field40491)) {
             if (!class512.field3025.field27304) {
                 method2715.method27693(1);
             }
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.method4914(class512.method1865(), this.rand.nextInt(2401) + 3600);
                 class512.method2708(class513, true);
             }

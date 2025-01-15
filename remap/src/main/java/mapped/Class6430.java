@@ -420,7 +420,7 @@ public class Class6430
                 n5 = n3;
             }
             final Vec3d method5304 = method19151(n2, n);
-            return method19143(Class6430.field25541.field4683, method5303, class5487, class5487.add(method5304.x * n5, method5304.y * n5, method5304.z * n5), method5303.method1886().method18493(method5304.scale(n5)).method18495(1.0, 1.0, 1.0), class5488 -> class5488 instanceof LivingEntity, n3 * n3, n4);
+            return method19143(Class6430.field25541.field4683, method5303, class5487, class5487.add(method5304.x * n5, method5304.y * n5, method5304.z * n5), method5303.getBoundingBox().method18493(method5304.scale(n5)).method18495(1.0, 1.0, 1.0), class5488 -> class5488 instanceof LivingEntity, n3 * n3, n4);
         }
         return null;
     }
@@ -429,7 +429,7 @@ public class Class6430
         double n3 = n;
         Entity class1852 = null;
         for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
-            final AxisAlignedBB method18496 = class1853.method1886().method18496(n2);
+            final AxisAlignedBB method18496 = class1853.getBoundingBox().method18496(n2);
             final Optional<Vec3d> method18497 = method18496.method18512(class1849, class1850);
             if (!method18497.isPresent()) {
                 if (!method19145(class1848.method1934(), method18496)) {
@@ -460,8 +460,8 @@ public class Class6430
         final Vec3d class401 = new Vec3d(Class6430.field25541.field4684.posX, Class6430.field25541.field4684.posY + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.posZ);
         final Vec3d method16743 = method19151(n2, n);
         final Vec3d method16744 = class401.add(method16743.x * n4, method16743.y * n4, method16743.z * n4);
-        for (final Entity class402 : Class6430.field25541.field4683.method6737(Class6430.field25541.field4684, Class6430.field25541.field4684.method1886().method18493(method16743.scale(n4)).method18495(1.0, 1.0, 1.0), predicate)) {
-            final Optional<Vec3d> method16745 = class402.method1886().method18512(class401, method16744);
+        for (final Entity class402 : Class6430.field25541.field4683.method6737(Class6430.field25541.field4684, Class6430.field25541.field4684.getBoundingBox().method18493(method16743.scale(n4)).method18495(1.0, 1.0, 1.0), predicate)) {
+            final Optional<Vec3d> method16745 = class402.getBoundingBox().method18512(class401, method16744);
             if (!method16745.isPresent()) {
                 continue;
             }

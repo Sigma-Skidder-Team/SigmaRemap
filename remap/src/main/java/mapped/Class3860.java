@@ -6,12 +6,14 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 public abstract class Class3860 extends Class3841 implements Class3856
 {
     public static final Class7113 field17483;
-    public static final Class7702 field17484;
+    public static final VoxelShape field17484;
     private final Class8289 field17485;
     
     public Class3860(final Class9288 class9288, final Class8289 field17485) {
@@ -28,7 +30,7 @@ public abstract class Class3860 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3860.field17484;
     }
     
@@ -38,24 +40,24 @@ public abstract class Class3860 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class436 method11898(final Class1855 class1855) {
+    public TileEntity method11898(final Class1855 class1855) {
         return new Class497();
     }
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
-        final boolean b = method2715.method27622() instanceof Class3829 && class7099.field3025.field27305;
-        if (class7097.field10067) {
+        final boolean b = method2715.getItem() instanceof Class3829 && class7099.field3025.field27305;
+        if (class7097.isRemote) {
             return b ? Class2201.field13400 : Class2201.field13401;
         }
-        final Class436 method2716 = class7097.method6727(class7098);
+        final TileEntity method2716 = class7097.method6727(class7098);
         if (!(method2716 instanceof Class497)) {
             return Class2201.field13402;
         }
         final Class497 class7102 = (Class497)method2716;
         if (b) {
-            if (class7102.method2530(((Class3829)method2715.method27622()).method11767())) {
+            if (class7102.method2530(((Class3829)method2715.getItem()).method11767())) {
                 if (!class7099.method2889()) {
                     method2715.method27693(1);
                 }

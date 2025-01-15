@@ -79,7 +79,7 @@ public class Class863 extends Class860
     
     @Override
     public boolean method1770(final Class512 class512, final Class316 class513) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             int n = 0;
             final List<Class759> method7128 = this.world.method7128((Class<? extends Class759>)Class759.class, new AxisAlignedBB(this.getPosX() - 7.0, this.getPosY() - 7.0, this.getPosZ() - 7.0, this.getPosX() + 7.0, this.getPosY() + 7.0, this.getPosZ() + 7.0));
             for (final Class759 class514 : method7128) {

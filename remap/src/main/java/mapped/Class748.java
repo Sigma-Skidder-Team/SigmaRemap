@@ -108,10 +108,10 @@ public class Class748 extends Class516<Class3436>
         final int n5 = (this.field3153 - this.field3076) / 2;
         this.method3186(n4, n5, 0, 0, this.field3075, this.field3076);
         this.field3151.field9952 = 100.0f;
-        this.field3151.method6540(new ItemStack(Class7739.field31514), n4 + 42, n5 + 109);
-        this.field3151.method6540(new ItemStack(Class7739.field31283), n4 + 42 + 22, n5 + 109);
-        this.field3151.method6540(new ItemStack(Class7739.field31285), n4 + 42 + 44, n5 + 109);
-        this.field3151.method6540(new ItemStack(Class7739.field31284), n4 + 42 + 66, n5 + 109);
+        this.field3151.method6540(new ItemStack(Items.field31514), n4 + 42, n5 + 109);
+        this.field3151.method6540(new ItemStack(Items.field31283), n4 + 42 + 22, n5 + 109);
+        this.field3151.method6540(new ItemStack(Items.field31285), n4 + 42 + 44, n5 + 109);
+        this.field3151.method6540(new ItemStack(Items.field31284), n4 + 42 + 66, n5 + 109);
         this.field3151.field9952 = 0.0f;
     }
     

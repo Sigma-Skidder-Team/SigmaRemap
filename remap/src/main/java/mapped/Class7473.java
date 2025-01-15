@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import java.util.Collection;
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import java.util.HashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap$Entry;
 import com.google.common.collect.Maps;
@@ -36,12 +35,12 @@ import org.apache.logging.log4j.Logger;
 public class Class7473 extends Class7474
 {
     private static final Logger field28865;
-    private final Class394 field28866;
+    private final MinecraftServer field28866;
     private final File field28867;
     private final Set<Class9455<?>> field28868;
     private int field28869;
     
-    public Class7473(final Class394 field28866, final File field28867) {
+    public Class7473(final MinecraftServer field28866, final File field28867) {
         this.field28868 = Sets.newHashSet();
         this.field28869 = -300;
         this.field28866 = field28866;

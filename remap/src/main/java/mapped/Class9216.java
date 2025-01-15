@@ -2540,8 +2540,8 @@ public class Class9216
                         break;
                     }
                 }
-                final ItemStack class8321 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.method2713() : null;
-                final Class3820 class8322 = (class8321 != null) ? class8321.method27622() : null;
+                final ItemStack class8321 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.getHeldItemMainhand() : null;
+                final Item class8322 = (class8321 != null) ? class8321.getItem() : null;
                 int method32333 = -1;
                 Class3833 method32334 = null;
                 if (class8322 != null) {
@@ -2553,7 +2553,7 @@ public class Class9216
                 }
                 int n2 = (method32334 != null) ? method32334.method11781(method32334.method11878()) : 0;
                 final ItemStack class8323 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.method2714() : null;
-                final Class3820 class8324 = (class8323 != null) ? class8323.method27622() : null;
+                final Item class8324 = (class8323 != null) ? class8323.getItem() : null;
                 int method32336 = -1;
                 Class3833 method32337 = null;
                 if (class8324 != null) {
@@ -3896,25 +3896,25 @@ public class Class9216
         }
     }
     
-    public static void method33846(final Class436 class436) {
+    public static void method33846(final TileEntity tileEntity) {
         if (Class9216.field39045) {
             method33739("nextBlockEntity");
             method33776(Class9216.field39267);
-            method33847(class436);
+            method33847(tileEntity);
         }
     }
     
-    public static void method33847(final Class436 class436) {
+    public static void method33847(final TileEntity tileEntity) {
         if (Class9216.field39127.method16084()) {
-            Class9216.field39127.method16099(method33848(class436));
+            Class9216.field39127.method16099(method33848(tileEntity));
         }
     }
     
-    private static int method33848(final Class436 class436) {
-        if (class436 == null) {
+    private static int method33848(final TileEntity tileEntity) {
+        if (tileEntity == null) {
             return -1;
         }
-        return Class3660.method11269(class436.method2194());
+        return Class3660.method11269(tileEntity.method2194());
     }
     
     public static void method33849() {
@@ -4333,7 +4333,7 @@ public class Class9216
         if (class8321 == null) {
             return false;
         }
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         if (method27622 == null) {
             return false;
         }

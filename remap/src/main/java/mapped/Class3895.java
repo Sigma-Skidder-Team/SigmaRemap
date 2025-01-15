@@ -7,13 +7,15 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Random;
 
 public abstract class Class3895 extends Class3892
 {
-    public static final Class7702 field17577;
+    public static final VoxelShape field17577;
     public static final Class7113 field17578;
     
     public Class3895(final Class9288 class9288) {
@@ -21,7 +23,7 @@ public abstract class Class3895 extends Class3892
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3895.field17577;
     }
     

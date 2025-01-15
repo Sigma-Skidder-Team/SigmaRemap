@@ -23,7 +23,7 @@ public class Class136 extends Class126
     
     @Override
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
-        if (class8321.method27622() == Class7739.field31612 && !this.field410.isEmpty()) {
+        if (class8321.getItem() == Items.field31612 && !this.field410.isEmpty()) {
             final Random method23586 = class8322.method23586();
             final Map.Entry entry = (Map.Entry)Iterables.get((Iterable)this.field410.entrySet(), method23586.nextInt(this.field410.size()));
             final Class5328 class8323 = (Class5328)entry.getKey();

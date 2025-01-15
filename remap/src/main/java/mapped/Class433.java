@@ -114,7 +114,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     
     @Override
     public void method1652() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field2646) {
                 Class9193.method33639(this.world, this, this);
             }
@@ -166,8 +166,8 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     
     public void method2163(final Class512 class512) {
         if (this.field2647 != null) {
-            if (this.world.method6679() != null) {
-                final Class9317 method6402 = this.world.method6679().method1581().method6402(this.field2647);
+            if (this.world.getServer() != null) {
+                final Class9317 method6402 = this.world.getServer().method1581().method6402(this.field2647);
                 this.field2647 = null;
                 final Class9098 method6403 = new Class9098((Class1849)this.world).method32877(Class6683.field26367, new BlockPos(this)).method32874(this.field2648);
                 if (class512 != null) {

@@ -282,7 +282,7 @@ public class Class4995
     }
     
     private boolean method15171(final BlockPos class354, final Class1856 class355) {
-        final Class436 method6727 = class355.method6727(class354);
+        final TileEntity method6727 = class355.method6727(class354);
         if (method6727 instanceof Class490) {
             final Class490 class356 = (Class490)method6727;
             return this.field21485 == null || this.field21485.method24697(class356.method2451());
@@ -291,7 +291,7 @@ public class Class4995
     }
     
     private boolean method15172(final BlockPos class354, final Class1856 class355) {
-        final Class436 method6727 = class355.method6727(class354);
+        final TileEntity method6727 = class355.method6727(class354);
         if (!(method6727 instanceof Class475)) {
             return method6727 instanceof Class477 && this.method15174((Class477)method6727, class354, class355);
         }
@@ -299,7 +299,7 @@ public class Class4995
     }
     
     private boolean method15173(final Class475 class475, final BlockPos class476, final Class1856 class477) {
-        final Class7096 method6701 = class477.method6701(class476);
+        final BlockState method6701 = class477.method6701(class476);
         return this.method15175((method6701.method21771(Class3865.field17498) ? method6701.method21772(Class3865.field17498) : Class180.field530) == Class180.field530, class475 instanceof Class478, Class7890.field32397, false);
     }
     
@@ -312,7 +312,7 @@ public class Class4995
     }
     
     private boolean method15176(final BlockPos class354, final Class1856 class355) {
-        final Class436 method6727 = class355.method6727(class354);
+        final TileEntity method6727 = class355.method6727(class354);
         if (method6727 instanceof Class458) {
             final Class458 class356 = (Class458)method6727;
             return this.field21487 == null || Class8571.method28977(this.method15177(class356), this.field21487);
@@ -325,7 +325,7 @@ public class Class4995
     }
     
     private boolean method15178(final BlockPos class354, final Class1856 class355) {
-        final Class436 method6727 = class355.method6727(class354);
+        final TileEntity method6727 = class355.method6727(class354);
         if (method6727 instanceof Class440) {
             final Class440 class356 = (Class440)method6727;
             return this.field21488 == null || Class8571.method28977(class356.method2252(), this.field21488);

@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class4080 extends Class3820
+public class Class4080 extends Item
 {
     public Class4080(final Class8959 class8959) {
         super(class8959);
@@ -21,7 +21,7 @@ public class Class4080 extends Class3820
     
     @Override
     public boolean method11738(final ItemStack class8321, final ItemStack class8322) {
-        return class8322.method27622() == Class7739.field31608;
+        return class8322.getItem() == Items.field31608;
     }
     
     @Override

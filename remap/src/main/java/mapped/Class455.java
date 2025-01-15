@@ -80,7 +80,7 @@ public class Class455 extends Class456 implements Class453, Class439
     @Override
     public void method2229() {
         if (this.field2656 != null) {
-            if (!this.field2656.field10067) {
+            if (!this.field2656.isRemote) {
                 --this.field2708;
                 this.field2709 = this.field2656.method6754();
                 if (!this.method2314()) {
@@ -92,7 +92,7 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     private boolean method2294(final Supplier<Boolean> supplier) {
-        if (this.field2656 != null && !this.field2656.field10067) {
+        if (this.field2656 != null && !this.field2656.isRemote) {
             if (!this.method2314()) {
                 if (this.method2194().method21772((Class7111<Boolean>)Class3959.field17882)) {
                     boolean method2296 = false;
@@ -292,11 +292,11 @@ public class Class455 extends Class456 implements Class453, Class439
     public static Class446 method2311(final World class1847, final double n, final double n2, final double n3) {
         Class446 class1848 = null;
         final BlockPos class1849 = new BlockPos(n, n2, n3);
-        final Class7096 method6701 = class1847.method6701(class1849);
+        final BlockState method6701 = class1847.method6701(class1849);
         final Class3833 method6702 = method6701.method21696();
         if (!(method6702 instanceof Class3966)) {
             if (method6702.method11802()) {
-                final Class436 method6703 = class1847.method6727(class1849);
+                final TileEntity method6703 = class1847.method6727(class1849);
                 if (method6703 instanceof Class446) {
                     class1848 = (Class446)method6703;
                     if (class1848 instanceof Class475) {
@@ -313,14 +313,14 @@ public class Class455 extends Class456 implements Class453, Class439
         if (class1848 == null) {
             final List<Entity> method6704 = class1847.method6737(null, new AxisAlignedBB(n - 0.5, n2 - 0.5, n3 - 0.5, n + 0.5, n2 + 0.5, n3 + 0.5), Class9170.field38848);
             if (!method6704.isEmpty()) {
-                class1848 = (Class446)method6704.get(class1847.field10062.nextInt(method6704.size()));
+                class1848 = (Class446)method6704.get(class1847.rand.nextInt(method6704.size()));
             }
         }
         return class1848;
     }
     
     private static boolean method2312(final ItemStack class8321, final ItemStack class8322) {
-        return class8321.method27622() == class8322.method27622() && class8321.method27632() == class8322.method27632() && class8321.method27690() <= class8321.method27628() && ItemStack.method27642(class8321, class8322);
+        return class8321.getItem() == class8322.getItem() && class8321.method27632() == class8322.method27632() && class8321.method27690() <= class8321.method27628() && ItemStack.method27642(class8321, class8322);
     }
     
     @Override
@@ -363,7 +363,7 @@ public class Class455 extends Class456 implements Class453, Class439
     public void method2316(final Entity class399) {
         if (class399 instanceof Class427) {
             final BlockPos method2193 = this.method2193();
-            if (Class7698.method24496(Class7698.method24489(class399.method1886().method18499(-method2193.getX(), -method2193.getY(), -method2193.getZ())), this.method2285(), Class9306.field39924)) {
+            if (Class7698.method24496(Class7698.method24489(class399.getBoundingBox().method18499(-method2193.getX(), -method2193.getY(), -method2193.getZ())), this.method2285(), Class9306.field39924)) {
                 this.method2294(() -> method2302(this, (Class427)class400));
             }
         }

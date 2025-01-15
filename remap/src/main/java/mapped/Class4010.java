@@ -34,17 +34,17 @@ public class Class4010 extends Class3833
     }
     
     @Override
-    public boolean method11804(final Class7096 class7096) {
+    public boolean method11804(final BlockState class7096) {
         return true;
     }
     
     @Override
-    public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
+    public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         Class3858.method11923(class7097, class7098.method1137(), true);
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+    public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7097 == Direction.UP) {
             if (class7098.method21696() == Class7521.field29173) {
                 class7099.method6833().method21345(class7100, this, this.method11826(class7099));
@@ -54,10 +54,10 @@ public class Class4010 extends Class3833
     }
     
     @Override
-    public void method11821(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
+    public void method11821(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         final BlockPos method1137 = class7098.method1137();
         if (class7097.method6702(class7098).method21793(Class7324.field28319)) {
-            class7097.method6705(null, class7098, Class8520.field35199, Class286.field1582, 0.5f, 2.6f + (class7097.field10062.nextFloat() - class7097.field10062.nextFloat()) * 0.8f);
+            class7097.method6705(null, class7098, Class8520.field35199, Class286.field1582, 0.5f, 2.6f + (class7097.rand.nextFloat() - class7097.rand.nextFloat()) * 0.8f);
             class7097.method6911(Class8432.field34632, method1137.getX() + 0.5, method1137.getY() + 0.25, method1137.getZ() + 0.5, 8, 0.5, 0.25, 0.5, 0.0);
         }
     }
@@ -68,17 +68,17 @@ public class Class4010 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         class7097.method6833().method21345(class7098, this, this.method11826(class7097));
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean method11779(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return class7099.method23363();
     }
     
     @Override
-    public boolean method11803(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11803(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         return true;
     }
 }

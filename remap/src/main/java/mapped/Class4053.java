@@ -40,7 +40,7 @@ public interface Class4053
         int n = 0;
         int n2 = 0;
         Class4053 class8323 = null;
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         if (method27622 instanceof Class4053) {
             class8323 = (Class4053)method27622;
             class8322 = class8321.method27641();

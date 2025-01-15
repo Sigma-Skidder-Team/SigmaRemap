@@ -42,7 +42,7 @@ public abstract class Class4556 extends Class4535<Class5137>
             for (int i = 0; i <= n; ++i) {
                 for (int method1076 = this.method13569(-1, -1, class1854.field22118, i), j = -method1076; j <= method1076; ++j) {
                     for (int k = -method1076; k <= method1076; ++k) {
-                        final Class7096 method1077 = class1851.method6701(class1853.method1287(class1852).method1292(j, i, k));
+                        final BlockState method1077 = class1851.method6701(class1853.method1287(class1852).method1292(j, i, k));
                         if (!method1077.method21706() && !method1077.method21755(Class7188.field27907)) {
                             return false;
                         }

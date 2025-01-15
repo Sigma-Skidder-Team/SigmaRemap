@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class4093 extends Class3820
+public class Class4093 extends Item
 {
     private static String[] field18196;
     

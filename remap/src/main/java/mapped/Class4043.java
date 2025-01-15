@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -42,7 +43,7 @@ public class Class4043 extends Class4036
     }
     
     @Override
-    public void method12241(final Map<Class3833, Class3820> map, final Class3820 class3820) {
+    public void method12241(final Map<Class3833, Item> map, final Item class3820) {
         super.method12241(map, class3820);
         map.put(this.field18138, class3820);
     }

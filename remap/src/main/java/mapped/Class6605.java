@@ -20,7 +20,7 @@ public class Class6605 extends Class6601
     }
     
     public static boolean method20064(final ItemStack class8321) {
-        return class8321.method27622() == Class7739.field31445;
+        return class8321.getItem() == Items.field31445;
     }
     
     @Override

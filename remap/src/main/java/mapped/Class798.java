@@ -177,7 +177,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     private void method4507(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final Class6909 class1848) {
-        class1847.method6709(class1848, MathHelper.method35701(class1847.field10062.nextDouble(), n, n2), n5, MathHelper.method35701(class1847.field10062.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
+        class1847.method6709(class1848, MathHelper.method35701(class1847.rand.nextDouble(), n, n2), n5, MathHelper.method35701(class1847.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
     }
     
     private void method4508(final BlockPos class354) {
@@ -313,7 +313,7 @@ public class Class798 extends Class789 implements Class797
     
     private boolean method4518() {
         if (this.field4271 != null) {
-            final Class436 method6727 = this.world.method6727(this.field4271);
+            final TileEntity method6727 = this.world.method6727(this.field4271);
             return method6727 instanceof Class438 && ((Class438)method6727).method2215();
         }
         return false;
@@ -332,7 +332,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     private boolean method4522(final BlockPos class354) {
-        final Class436 method6727 = this.world.method6727(class354);
+        final TileEntity method6727 = this.world.method6727(class354);
         return method6727 instanceof Class438 && !((Class438)method6727).method2217();
     }
     
@@ -366,7 +366,7 @@ public class Class798 extends Class789 implements Class797
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.field4266 > 0) {
                 --this.field4266;
             }
@@ -401,7 +401,7 @@ public class Class798 extends Class789 implements Class797
     
     private boolean method4528() {
         if (this.method4523()) {
-            final Class436 method6727 = this.world.method6727(this.field4271);
+            final TileEntity method6727 = this.world.method6727(this.field4271);
             return method6727 != null && method6727.method2206() == Class5412.field22573;
         }
         return false;
@@ -473,7 +473,7 @@ public class Class798 extends Class789 implements Class797
     
     @Override
     public boolean method4357(final ItemStack class8321) {
-        return class8321.method27622().method11742(Class7855.field32270);
+        return class8321.getItem().method11742(Class7855.field32270);
     }
     
     private boolean method4538(final BlockPos class354) {
@@ -544,7 +544,7 @@ public class Class798 extends Class789 implements Class797
     public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
             final Entity method25714 = class7929.method25714();
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (method25714 instanceof Class512) {
                     if (!((Class512)method25714).method2889()) {
                         if (this.method2747(method25714)) {

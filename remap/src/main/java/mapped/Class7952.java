@@ -4,20 +4,17 @@
 
 package mapped;
 
-import java.time.temporal.TemporalField;
 import java.time.format.SignStyle;
 import java.time.temporal.ChronoField;
 import java.time.format.DateTimeFormatterBuilder;
 import org.apache.logging.log4j.LogManager;
-import java.nio.file.FileVisitor;
+
 import java.nio.file.Paths;
 import java.util.zip.ZipOutputStream;
 import java.io.BufferedOutputStream;
 import java.nio.file.OpenOption;
 import java.time.LocalDateTime;
-import java.io.OutputStream;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.FileInputStream;
 import javax.annotation.Nullable;
 import net.minecraft.client.AnvilConverterException;
@@ -65,7 +62,7 @@ public class Class7952
             for (final File file : this.field32668.toFile().listFiles()) {
                 if (file.isDirectory()) {
                     final String name = file.getName();
-                    final Class8660 method25791 = this.method25791(name);
+                    final WorldInfo method25791 = this.method25791(name);
                     if (method25791 != null) {
                         if (method25791.method29551() == 19132 || method25791.method29551() == 19133) {
                             final boolean b = method25791.method29551() != this.method25786();
@@ -87,16 +84,16 @@ public class Class7952
         return 19133;
     }
     
-    public Class8642 method25787(final String s, final Class394 class394) {
+    public Class8642 method25787(final String s, final MinecraftServer class394) {
         return method25788(this.field32668, this.field32670, s, class394);
     }
     
-    public static Class8642 method25788(final Path path, final DataFixer dataFixer, final String s, final Class394 class394) {
+    public static Class8642 method25788(final Path path, final DataFixer dataFixer, final String s, final MinecraftServer class394) {
         return new Class8642(path.toFile(), s, class394, dataFixer);
     }
     
     public boolean method25789(final String s) {
-        final Class8660 method25791 = this.method25791(s);
+        final WorldInfo method25791 = this.method25791(s);
         return method25791 != null && method25791.method29551() != this.method25786();
     }
     
@@ -105,17 +102,17 @@ public class Class7952
     }
     
     @Nullable
-    public Class8660 method25791(final String s) {
+    public WorldInfo method25791(final String s) {
         return method25792(this.field32668, this.field32670, s);
     }
     
     @Nullable
-    public static Class8660 method25792(final Path path, final DataFixer dataFixer, final String child) {
+    public static WorldInfo method25792(final Path path, final DataFixer dataFixer, final String child) {
         final File file = new File(path.toFile(), child);
         if (file.exists()) {
             final File file2 = new File(file, "level.dat");
             if (file2.exists()) {
-                final Class8660 method25793 = method25793(file2, dataFixer);
+                final WorldInfo method25793 = method25793(file2, dataFixer);
                 if (method25793 != null) {
                     return method25793;
                 }
@@ -127,13 +124,13 @@ public class Class7952
     }
     
     @Nullable
-    public static Class8660 method25793(final File file, final DataFixer dataFixer) {
+    public static WorldInfo method25793(final File file, final DataFixer dataFixer) {
         try {
             final Class51 method327 = Class8097.method26590(new FileInputStream(file)).method327("Data");
             final Class51 class51 = method327.method316("Player", 10) ? method327.method327("Player") : null;
             method327.method330("Player");
             final int n = method327.method316("DataVersion", 99) ? method327.method319("DataVersion") : -1;
-            return new Class8660(Class9346.method34651(dataFixer, Class1959.field10675, method327, n), dataFixer, n, class51);
+            return new WorldInfo(Class9346.method34651(dataFixer, Class1959.field10675, method327, n), dataFixer, n, class51);
         }
         catch (final Exception ex) {
             Class7952.field32666.error("Exception reading {}", (Object)file, (Object)ex);

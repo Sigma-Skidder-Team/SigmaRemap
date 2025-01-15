@@ -23,7 +23,7 @@ public class Class3822 extends Class3821
     
     @Override
     public void method11753(final World class1847, final ItemStack class1848, final BlockPos class1849) {
-        if (!class1847.field10067) {
+        if (!class1847.isRemote) {
             this.method11757(class1847, class1848, class1849);
         }
     }

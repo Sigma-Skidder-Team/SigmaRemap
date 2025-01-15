@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Random;
 
@@ -12,7 +14,7 @@ public class Class3981 extends Class3833
 {
     private static String[] field17977;
     public static final Class7112 field17978;
-    public static final Class7702 field17979;
+    public static final VoxelShape field17979;
     
     public Class3981(final Class9288 class9288) {
         super(class9288);
@@ -20,7 +22,7 @@ public class Class3981 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3981.field17979;
     }
     

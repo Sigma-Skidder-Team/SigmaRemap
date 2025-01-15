@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class4057 extends Class3820
+public class Class4057 extends Item
 {
     public Class4057(final Class8959 class8959) {
         super(class8959);

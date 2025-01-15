@@ -47,8 +47,8 @@ public enum Class2167 implements Class2168
                                     final Class180 class7103 = (class7097 != class7102.rotateY()) ? Class180.field532 : Class180.field531;
                                     class7099.method6688(class7101, (Class7096)((Class7097<Object, Object>)class7098).method21773(Class3865.field17498, class7103.method812()), 18);
                                     if (class7102 == Direction.NORTH || class7102 == Direction.EAST) {
-                                        final Class436 method6727 = class7099.method6727(class7100);
-                                        final Class436 method6728 = class7099.method6727(class7101);
+                                        final TileEntity method6727 = class7099.method6727(class7100);
+                                        final TileEntity method6728 = class7099.method6727(class7101);
                                         if (method6727 instanceof Class475) {
                                             if (method6728 instanceof Class475) {
                                                 Class475.method2425((Class475)method6727, (Class475)method6728);

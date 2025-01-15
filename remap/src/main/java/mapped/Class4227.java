@@ -25,7 +25,7 @@ public class Class4227 extends Class4211
         return new Class4227(Class4621.method13767(Class7770.field31810), class9021.method32320(), Class9357.field40141, class9022.method35029());
     }
     
-    public boolean method12716(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final ItemStack class7099) {
+    public boolean method12716(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final ItemStack class7099) {
         return this.field19026.method25398(class7097, class7098) && this.field19027.method34689(class7096) && this.field19028.method34627(class7099);
     }
     

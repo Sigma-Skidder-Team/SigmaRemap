@@ -46,10 +46,10 @@ public class Class4478 extends Class4475
                 this.method13449(class1851, Class7521.field29217.method11878(), j, -5, k, class1853);
             }
         }
-        final Class7096 class1855 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.NORTH);
-        final Class7096 class1856 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.SOUTH);
-        final Class7096 class1857 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.EAST);
-        final Class7096 class1858 = ((Class7097<O, Class7096>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.WEST);
+        final BlockState class1855 = ((Class7097<O, BlockState>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.NORTH);
+        final BlockState class1856 = ((Class7097<O, BlockState>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.SOUTH);
+        final BlockState class1857 = ((Class7097<O, BlockState>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.EAST);
+        final BlockState class1858 = ((Class7097<O, BlockState>)Class7521.field29407.method11878()).method21773((Class7111<Comparable>)Class3916.field17732, Direction.WEST);
         this.method13444(class1851, class1853, 0, 0, 0, 4, 9, 4, Class7521.field29217.method11878(), Class7521.field29147.method11878(), false);
         this.method13444(class1851, class1853, 1, 10, 1, 3, 10, 3, Class7521.field29217.method11878(), Class7521.field29217.method11878(), false);
         this.method13440(class1851, class1855, 2, 10, 0, class1853);

@@ -14,9 +14,9 @@ public class Class3869 extends Class3870
     }
     
     @Override
-    public boolean method11798(final Class7096 class7096, final Class7074 class7097) {
+    public boolean method11798(final BlockState class7096, final Class7074 class7097) {
         final boolean method11798 = super.method11798(class7096, class7097);
-        return (!method11798 || class7097.method21651().method27622() != this.method11704()) && method11798;
+        return (!method11798 || class7097.method21651().getItem() != this.method11704()) && method11798;
     }
     
     static {

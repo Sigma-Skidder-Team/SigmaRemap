@@ -22,7 +22,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     
     int method6785();
     
-    Class5507 method6797();
+    BiomeManager method6797();
     
     default Class3090 method6959(final BlockPos class354) {
         return this.method6797().method16810(class354);
@@ -39,11 +39,11 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     
     Class3090 method6841(final int p0, final int p1, final int p2);
     
-    boolean method6678();
+    boolean isRemote();
     
     int method6743();
     
-    Class6737 method6789();
+    Dimension method6789();
     
     default BlockPos method6958(final Class2020 class2020, final BlockPos class2021) {
         return new BlockPos(class2021.getX(), this.method6699(class2020, class2021.getX(), class2021.getZ()), class2021.getZ());
@@ -60,7 +60,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
         final BlockPos class355 = new BlockPos(class354.getX(), this.method6743(), class354.getZ());
         if (this.method6994(class355)) {
             for (BlockPos class356 = class355.method1139(); class356.getY() > class354.getY(); class356 = class356.method1139()) {
-                final Class7096 method6701 = this.method6701(class356);
+                final BlockState method6701 = this.method6701(class356);
                 if (method6701.method21700(this, class356) > 0 && !method6701.method21697().method26438()) {
                     return false;
                 }

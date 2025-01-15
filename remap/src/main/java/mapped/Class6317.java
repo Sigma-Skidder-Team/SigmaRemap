@@ -26,7 +26,7 @@ public class Class6317 implements Class6313
     }
     
     @Override
-    public List<Class8754> method18691(final Class7096 class7096, final Direction class7097, final Random random) {
+    public List<Class8754> method18691(final BlockState class7096, final Direction class7097, final Random random) {
         return Collections.emptyList();
     }
     

@@ -32,7 +32,7 @@ public class Class8671
             return 0;
         }
         if (class1849.method6952(0.0f) == 0.5) {
-            this.field36454 = ((class1849.field10062.nextInt(10) != 0) ? Class2073.field11961 : Class2073.field11960);
+            this.field36454 = ((class1849.rand.nextInt(10) != 0) ? Class2073.field11961 : Class2073.field11960);
         }
         if (this.field36454 == Class2073.field11961) {
             return 0;
@@ -71,7 +71,7 @@ public class Class8671
                 continue;
             }
             for (int i = 0; i < 10; ++i) {
-                final float n = class1849.field10062.nextFloat() * 6.2831855f;
+                final float n = class1849.rand.nextFloat() * 6.2831855f;
                 this.field36457 = method1894.getX() + MathHelper.method35642(MathHelper.cos(n) * 32.0f);
                 this.field36458 = method1894.getY();
                 this.field36459 = method1894.getZ() + MathHelper.method35642(MathHelper.sin(n) * 32.0f);
@@ -98,7 +98,7 @@ public class Class8671
                 ex.printStackTrace();
                 return;
             }
-            class1850.method1730(method29683.x, method29683.y, method29683.z, class1849.field10062.nextFloat() * 360.0f, 0.0f);
+            class1850.method1730(method29683.x, method29683.y, method29683.z, class1849.rand.nextFloat() * 360.0f, 0.0f);
             class1849.method6886(class1850);
         }
     }
@@ -106,10 +106,10 @@ public class Class8671
     @Nullable
     private Vec3d method29683(final Class1849 class1849, final BlockPos class1850) {
         for (int i = 0; i < 10; ++i) {
-            final int n = class1850.getX() + class1849.field10062.nextInt(16) - 8;
-            final int n2 = class1850.getZ() + class1849.field10062.nextInt(16) - 8;
+            final int n = class1850.getX() + class1849.rand.nextInt(16) - 8;
+            final int n2 = class1850.getZ() + class1849.rand.nextInt(16) - 8;
             final BlockPos class1851 = new BlockPos(n, class1849.method6699(Class2020.field11522, n, n2), n2);
-            if (class1849.method6922(class1851) && Class763.method4230(EntityType.field29052, class1849, Class2101.field12181, class1851, class1849.field10062)) {
+            if (class1849.method6922(class1851) && Class763.method4230(EntityType.field29052, class1849, Class2101.field12181, class1851, class1849.rand)) {
                 return new Vec3d(class1851.getX() + 0.5, class1851.getY(), class1851.getZ() + 0.5);
             }
         }

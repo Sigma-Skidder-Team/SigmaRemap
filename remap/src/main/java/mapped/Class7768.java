@@ -13,13 +13,13 @@ public class Class7768<C extends Class5470, T extends Class1868>
     public static final Class7768<Class5469, Class1871> field31770;
     public static final Class7768<Class5473, Class1870> field31771;
     private final Function<C, T> field31772;
-    private final Function<Class8660, C> field31773;
+    private final Function<WorldInfo, C> field31773;
     
-    private static <C extends Class5470, T extends Class1868> Class7768<C, T> method24874(final String s, final Function<C, T> function, final Function<Class8660, C> function2) {
+    private static <C extends Class5470, T extends Class1868> Class7768<C, T> method24874(final String s, final Function<C, T> function, final Function<WorldInfo, C> function2) {
         return Class90.method511(Class90.field223, s, new Class7768<C, T>(function, function2));
     }
     
-    private Class7768(final Function<C, T> field31772, final Function<Class8660, C> field31773) {
+    private Class7768(final Function<C, T> field31772, final Function<WorldInfo, C> field31773) {
         this.field31772 = field31772;
         this.field31773 = field31773;
     }
@@ -28,7 +28,7 @@ public class Class7768<C extends Class5470, T extends Class1868>
         return this.field31772.apply(c);
     }
     
-    public C method24876(final Class8660 class8660) {
+    public C method24876(final WorldInfo class8660) {
         return this.field31773.apply(class8660);
     }
     

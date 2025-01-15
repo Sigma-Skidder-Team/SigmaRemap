@@ -46,15 +46,15 @@ public class Class7667
         return new Class7363((Class)value);
     }
     
-    public static boolean method24304(final Class7096 class7096) {
+    public static boolean method24304(final BlockState class7096) {
         return Class7667.field30455 ? Class9570.method35820(class7096, Class9570.field41246, new Object[0]) : class7096.method21696().method11802();
     }
     
     public static boolean method24305(final ItemStack class8321) {
-        return Class9570.field41332.method22605() ? Class9570.method35820(class8321.method27622(), Class9570.field41332, class8321) : class8321.method27631();
+        return Class9570.field41332.method22605() ? Class9570.method35820(class8321.getItem(), Class9570.field41332, class8321) : class8321.method27631();
     }
     
-    public static int method24306(final Class7096 class7096, final Class1856 class7097, final BlockPos class7098) {
+    public static int method24306(final BlockState class7096, final Class1856 class7097, final BlockPos class7098) {
         return Class9570.field41243.method22605() ? Class9570.method35821(class7096, Class9570.field41243, class7097, class7098) : class7096.method21704();
     }
     
@@ -62,7 +62,7 @@ public class Class7667
         if (!Class9570.field41282.method22623()) {
             return Class4094.method12328(class8321, class8322);
         }
-        final Class4094 class8323 = (Class4094)class8321.method27622();
+        final Class4094 class8323 = (Class4094)class8321.getItem();
         return Class4094.method12328(class8321, class8322);
     }
     
@@ -88,17 +88,17 @@ public class Class7667
         return new String[0];
     }
     
-    public static boolean method24309(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public static boolean method24309(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         return Class9570.field41247.method22605() ? Class9570.method35820(class7096, Class9570.field41247, class7097, class7098) : class7096.method21706();
     }
     
     public static boolean method24310(final ItemStack class8321, final ItemStack class8322, final Class512 class8323, final Class759 class8324) {
-        return Class9570.field41334.method22605() ? Class9570.method35820(class8321, Class9570.field41334, class8322, class8323, class8324) : (class8321.method27622() instanceof Class4075);
+        return Class9570.field41334.method22605() ? Class9570.method35820(class8321, Class9570.field41334, class8322, class8323, class8324) : (class8321.getItem() instanceof Class4075);
     }
     
     public static boolean method24311(final ItemStack class8321, final Class512 class8322) {
         if (!Class9570.field41337.method22605()) {
-            return class8321.method27622() == Class7739.field31583;
+            return class8321.getItem() == Items.field31583;
         }
         return Class9570.method35820(class8321, Class9570.field41337, new Object[0]);
     }

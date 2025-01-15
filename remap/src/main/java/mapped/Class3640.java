@@ -72,7 +72,7 @@ public class Class3640<T extends Class776> extends Class3446
     private void method11169(final Class8792 class8792) {
         if (class8792.method30663()) {
             final HashSet hashSet = Sets.newHashSet();
-            hashSet.addAll(this.field16889.world.method6739((Class<? extends Entity>)Class776.class, this.field16889.method1886().method18496(16.0), class8794 -> !class8794.method4293() && Class6357.method18927(class8794, class8793)));
+            hashSet.addAll(this.field16889.world.method6739((Class<? extends Entity>)Class776.class, this.field16889.getBoundingBox().method18496(16.0), class8794 -> !class8794.method4293() && Class6357.method18927(class8794, class8793)));
             final Iterator iterator = hashSet.iterator();
             while (iterator.hasNext()) {
                 class8792.method30644(class8792.method30626(), (Class776)iterator.next(), null, true);

@@ -20,7 +20,7 @@ import net.minecraft.util.text.ITextComponent;
 import java.util.List;
 import java.util.Set;
 
-public class Class490 extends Class436 implements Class434, Class439
+public class Class490 extends TileEntity implements Class434, Class439
 {
     public static final Class5328[][] field2807;
     private static final Set<Class5328> field2808;
@@ -63,7 +63,7 @@ public class Class490 extends Class436 implements Class434, Class439
             if (class354.getY() > method1077) {
                 break;
             }
-            final Class7096 method1078 = this.field2656.method6701(class354);
+            final BlockState method1078 = this.field2656.method6701(class354);
             final Class3833 method1079 = method1078.method21696();
             if (!(method1079 instanceof Class3843)) {
                 if (class355 == null || (method1078.method21700(this.field2656, class354) >= 15 && method1079 != Class7521.field29172)) {
@@ -110,7 +110,7 @@ public class Class490 extends Class436 implements Class434, Class439
             this.field2812 = -1;
             final boolean b = field2811 > 0;
             this.field2809 = this.field2810;
-            if (!this.field2656.field10067) {
+            if (!this.field2656.isRemote) {
                 final boolean b2 = this.field2811 > 0;
                 if (!b && b2) {
                     this.method2449(Class8520.field35010);
@@ -164,7 +164,7 @@ public class Class490 extends Class436 implements Class434, Class439
     }
     
     private void method2448() {
-        if (!this.field2656.field10067) {
+        if (!this.field2656.isRemote) {
             if (this.field2813 != null) {
                 final double n = this.field2811 * 10 + 10;
                 boolean b = false;

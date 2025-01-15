@@ -17,7 +17,7 @@ import java.util.Objects;
 import java.util.List;
 import javax.annotation.Nullable;
 
-public class Class501 extends Class436
+public class Class501 extends TileEntity
 {
     private Class1932 field2864;
     private String field2865;
@@ -135,7 +135,7 @@ public class Class501 extends Class436
     
     public boolean method2553(final Class512 class512) {
         if (class512.method2908()) {
-            if (class512.method1896().field10067) {
+            if (class512.method1896().isRemote) {
                 class512.method2830(this);
             }
             return true;
@@ -299,7 +299,7 @@ public class Class501 extends Class436
             if (this.field2656.method6701(class356).method21696() != Class7521.field29820) {
                 continue;
             }
-            final Class436 method6727 = this.field2656.method6727(class356);
+            final TileEntity method6727 = this.field2656.method6727(class356);
             if (method6727 == null) {
                 continue;
             }
@@ -357,7 +357,7 @@ public class Class501 extends Class436
     }
     
     public boolean method2584(final boolean b) {
-        if (this.field2871 == Class102.field305 && !this.field2656.field10067 && this.field2864 != null) {
+        if (this.field2871 == Class102.field305 && !this.field2656.isRemote && this.field2864 != null) {
             final BlockPos method1135 = this.method2193().add(this.field2867);
             final Class1795 method1136 = ((Class1849)this.field2656).method6910();
             Class6585 method1137;
@@ -391,7 +391,7 @@ public class Class501 extends Class436
     }
     
     public boolean method2587(final boolean b) {
-        if (this.field2871 == Class102.field306 && !this.field2656.field10067 && this.field2864 != null) {
+        if (this.field2871 == Class102.field306 && !this.field2656.isRemote && this.field2864 != null) {
             final Class1795 method6910 = ((Class1849)this.field2656).method6910();
             Class6585 method6911;
             try {
@@ -436,7 +436,7 @@ public class Class501 extends Class436
     }
     
     public boolean method2590() {
-        if (this.field2871 == Class102.field306 && !this.field2656.field10067 && this.field2864 != null) {
+        if (this.field2871 == Class102.field306 && !this.field2656.isRemote && this.field2864 != null) {
             final Class1795 method6910 = ((Class1849)this.field2656).method6910();
             try {
                 return method6910.method6519(this.field2864) != null;

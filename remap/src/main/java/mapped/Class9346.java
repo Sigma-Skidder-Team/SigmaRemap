@@ -169,13 +169,13 @@ public final class Class9346
         return class355;
     }
     
-    public static Class7096 method34647(final Class51 class51) {
+    public static BlockState method34647(final Class51 class51) {
         if (class51.method316("Name", 8)) {
             final Class3833 class52 = Class90.field208.method505(new Class1932(class51.method323("Name")));
-            Class7096 method11878 = class52.method11878();
+            BlockState method11878 = class52.method11878();
             if (class51.method316("Properties", 10)) {
                 final Class51 method11879 = class51.method327("Properties");
-                final Class9104<Class3833, Class7096> method11880 = class52.method11876();
+                final Class9104<Class3833, BlockState> method11880 = class52.method11876();
                 for (final String s : method11879.method293()) {
                     final Class7111 method11881 = method11880.method32906(s);
                     if (method11881 == null) {
@@ -198,7 +198,7 @@ public final class Class9346
         return (S)((Class7098<Object>)n).method21773(class7111, (Comparable)method21830.get());
     }
     
-    public static Class51 method34649(final Class7096 class7096) {
+    public static Class51 method34649(final BlockState class7096) {
         final Class51 class7097 = new Class51();
         class7097.method306("Name", Class90.field208.method503(class7096.method21696()).toString());
         final ImmutableMap<Class7111<?>, Comparable<?>> method21776 = class7096.method21776();

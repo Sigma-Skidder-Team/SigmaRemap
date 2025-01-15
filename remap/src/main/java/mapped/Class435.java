@@ -10,7 +10,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class435 extends Class436 implements Class447, Class434
+public class Class435 extends TileEntity implements Class447, Class434
 {
     private final Class446 field2649;
     private final Class7604 field2650;
@@ -30,8 +30,8 @@ public class Class435 extends Class436 implements Class447, Class434
     }
     
     public boolean method2169() {
-        final Class3820 method27622 = this.field2651.method27622();
-        return method27622 == Class7739.field31512 || method27622 == Class7739.field31513;
+        final Item method27622 = this.field2651.getItem();
+        return method27622 == Items.field31512 || method27622 == Items.field31513;
     }
     
     public void method2170(final ItemStack class8321) {
@@ -70,7 +70,7 @@ public class Class435 extends Class436 implements Class447, Class434
     
     private ItemStack method2176(final ItemStack class8321, final Class512 class8322) {
         if (this.field2656 instanceof Class1849) {
-            if (class8321.method27622() == Class7739.field31513) {
+            if (class8321.getItem() == Items.field31513) {
                 Class4096.method12342(class8321, this.method2177(class8322), class8322);
             }
         }
@@ -88,7 +88,7 @@ public class Class435 extends Class436 implements Class447, Class434
             string = "Lectern";
             method1871 = new StringTextComponent("Lectern");
         }
-        return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, string, method1871, this.field2656.method6679(), class512);
+        return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, string, method1871, this.field2656.getServer(), class512);
     }
     
     @Override

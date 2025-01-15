@@ -109,7 +109,7 @@ public class Class828 extends Class827
     
     @Override
     public boolean method4180(final Class1852 class1852) {
-        return class1852.method6975(this) && !class1852.method6968(this.method1886());
+        return class1852.method6975(this) && !class1852.method6968(this.getBoundingBox());
     }
     
     @Override
@@ -188,7 +188,7 @@ public class Class828 extends Class827
     
     @Override
     public void method4184(final Class9592 class9592) {
-        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31302));
+        this.method1803(Class2215.field13600, new ItemStack(Items.field31302));
     }
     
     @Override

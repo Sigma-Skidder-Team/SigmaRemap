@@ -4,22 +4,25 @@
 
 package mapped;
 
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+
 public class Class3887 extends Class3874
 {
     private static String[] field17519;
-    public static final Class7702 field17549;
+    public static final VoxelShape field17549;
     
     public Class3887(final Class9288 class9288) {
         super(class9288);
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3887.field17549;
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
         final Class3833 method21696 = class7096.method21696();
         if (method21696 != Class7521.field29175) {
             if (method21696 != Class7521.field29176) {

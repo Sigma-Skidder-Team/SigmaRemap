@@ -90,7 +90,7 @@ public class Class839 extends Class832
         this.field4467 = this.field4466;
         this.field4464 += this.field4469;
         if (this.field4464 > 6.283185307179586) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.field4464 -= (float)6.283185307179586;
                 if (this.rand.nextInt(10) == 0) {
                     this.field4469 = 1.0f / (this.rand.nextFloat() + 1.0f) * 0.2f;
@@ -103,7 +103,7 @@ public class Class839 extends Class832
         }
         if (!this.method1711()) {
             this.field4466 = MathHelper.method35647(MathHelper.sin(this.field4464)) * 3.1415927f * 0.25f;
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 double field22771 = this.getMotion().y;
                 if (!this.method2653(Class9439.field40498)) {
                     if (!this.method1698()) {
@@ -134,11 +134,11 @@ public class Class839 extends Class832
                     this.field4470 = 1.0f;
                 }
             }
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.setMotion(this.field4471 * this.field4468, this.field4472 * this.field4468, this.field4473 * this.field4468);
             }
             final Vec3d method1935 = this.getMotion();
-            final float method1936 = MathHelper.sqrt(Entity.method1680(method1935));
+            final float method1936 = MathHelper.sqrt(Entity.horizontalMag(method1935));
             this.field2951 += (-(float) MathHelper.method35693(method1935.x, method1935.z) * 57.295776f - this.field2951) * 0.1f;
             this.rotationYaw = this.field2951;
             this.field4462 += (float)(3.141592653589793 * this.field4470 * 1.5);

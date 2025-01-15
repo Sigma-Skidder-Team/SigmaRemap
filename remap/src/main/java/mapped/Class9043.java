@@ -187,7 +187,7 @@ public class Class9043
         if (this.field38276 != null) {
             predicate = predicate.and(class5490 -> {
                 this.field38276.method18501(class5489);
-                return class5488.method18502(class5490.method1886());
+                return class5488.method18502(class5490.getBoundingBox());
             });
         }
         if (!this.field38274.method29744()) {

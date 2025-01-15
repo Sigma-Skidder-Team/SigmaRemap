@@ -27,7 +27,7 @@ public class Class8843
     
     @Nullable
     public static Class8843 method30896(final Class1855 class1855, final BlockPos class1856) {
-        final Class436 method6727 = class1855.method6727(class1856);
+        final TileEntity method6727 = class1855.method6727(class1856);
         if (!(method6727 instanceof Class465)) {
             return null;
         }

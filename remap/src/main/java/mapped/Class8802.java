@@ -39,7 +39,7 @@ public class Class8802
         return this.field36999;
     }
     
-    public boolean method30711(final Class7096 class7096) {
+    public boolean method30711(final BlockState class7096) {
         return class7096.method21691() == this.field36998 && Class7980.method26017(class7096.method21692(), this.field36999);
     }
     

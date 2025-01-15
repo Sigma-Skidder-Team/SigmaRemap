@@ -233,7 +233,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     public void method4732() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method4725(!this.field4342.method2157(0).method27620() && this.method4735());
         }
     }
@@ -296,9 +296,9 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     @Override
-    public void method1691(final BlockPos class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final BlockState class355) {
         if (!class355.method21697().method26438()) {
-            final Class7096 method6701 = this.world.method6701(class354.method1137());
+            final BlockState method6701 = this.world.method6701(class354.method1137());
             Class7696 class356 = class355.method21759();
             if (method6701.method21696() == Class7521.field29329) {
                 class356 = method6701.method21759();
@@ -353,7 +353,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     public void method4740(final Class512 class512) {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (!this.isBeingRidden() || this.method1909(class512)) {
                 if (this.method4715()) {
                     class512.method2832(this, this.field4342);
@@ -367,13 +367,13 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         float n = 0.0f;
         int n2 = 0;
         int n3 = 0;
-        final Class3820 method27622 = class513.method27622();
-        if (method27622 != Class7739.field31315) {
-            if (method27622 != Class7739.field31406) {
+        final Item method27622 = class513.getItem();
+        if (method27622 != Items.field31315) {
+            if (method27622 != Items.field31406) {
                 if (method27622 != Class7521.field29529.method11704()) {
-                    if (method27622 != Class7739.field31278) {
-                        if (method27622 != Class7739.field31522) {
-                            if (method27622 == Class7739.field31341 || method27622 == Class7739.field31342) {
+                    if (method27622 != Items.field31278) {
+                        if (method27622 != Items.field31522) {
+                            if (method27622 == Items.field31341 || method27622 == Items.field31342) {
                                 n = 10.0f;
                                 n2 = 240;
                                 n3 = 10;
@@ -432,7 +432,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (this.method2625()) {
             if (n2 > 0) {
                 this.world.method6709(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
-                if (!this.world.field10067) {
+                if (!this.world.isRemote) {
                     this.method4353(n2);
                 }
                 b = true;
@@ -442,7 +442,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
             if (b || !this.method4715()) {
                 if (this.method4726() < this.method4739()) {
                     b = true;
-                    if (!this.world.field10067) {
+                    if (!this.world.isRemote) {
                         this.method4728(n3);
                     }
                 }
@@ -457,7 +457,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     public void method4742(final Class512 class512) {
         this.method4747(false);
         this.method4748(false);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             class512.rotationYaw = this.rotationYaw;
             class512.rotationPitch = this.rotationPitch;
             class512.method1778(this);
@@ -511,7 +511,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
             this.method4743();
         }
         super.method2736();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method1768()) {
                 if (this.rand.nextInt(900) == 0) {
                     if (this.field2941 == 0) {
@@ -544,7 +544,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (this.method4723()) {
             if (this.method2625()) {
                 if (!this.method4721()) {
-                    final LivingEntity method7138 = this.world.method7138((Class<? extends LivingEntity>)Class806.class, Class806.field4332, (LivingEntity)this, this.getPosX(), this.getPosY(), this.getPosZ(), this.method1886().method18496(16.0));
+                    final LivingEntity method7138 = this.world.method7138((Class<? extends LivingEntity>)Class806.class, Class806.field4332, (LivingEntity)this, this.getPosX(), this.getPosY(), this.getPosZ(), this.getBoundingBox().method18496(16.0));
                     if (method7138 != null) {
                         if (this.method1734(method7138) > 4.0) {
                             this.field4113.method24722(method7138, 0);
@@ -632,7 +632,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     private void method4746() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.field4337 = 1;
             this.method4714(64, true);
         }
@@ -800,7 +800,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         }
         if (class51.method316("SaddleItem", 10)) {
             final ItemStack method20879 = ItemStack.method27619(class51.method327("SaddleItem"));
-            if (method20879.method27622() == Class7739.field31353) {
+            if (method20879.getItem() == Items.field31353) {
                 this.field4342.method2160(0, method20879);
             }
         }
@@ -967,7 +967,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (n2 >= 0) {
             if (n2 < 2) {
                 if (n2 < this.field4342.method2239()) {
-                    if (n2 == 0 && class8321.method27622() != Class7739.field31353) {
+                    if (n2 == 0 && class8321.getItem() != Items.field31353) {
                         return false;
                     }
                     if (n2 == 1 && (this.method4766() && this.method4767(class8321))) {

@@ -35,7 +35,7 @@ public class Class1784 extends Class1776<Class8875>
         this.field9900 = new Class9382(this, class6583, class6582);
     }
     
-    public Class8875 method6415(final Class6582 class6582, final Class5028 class6583) {
+    public Class8875 method6415(final Class6582 class6582, final IProfiler class6583) {
         final Class8875 class6584 = new Class8875();
         class6583.method15295();
         for (final String s : class6582.method19932()) {
@@ -65,7 +65,7 @@ public class Class1784 extends Class1776<Class8875>
         return class6584;
     }
     
-    public void method6416(final Class8875 class8875, final Class6582 class8876, final Class5028 class8877) {
+    public void method6416(final Class8875 class8875, final Class6582 class8876, final IProfiler class8877) {
         class8875.method31203(this.field9899, this.field9900);
         for (final Class1932 class8878 : this.field9899.keySet()) {
             final Class7833 class8879 = this.field9899.get(class8878);

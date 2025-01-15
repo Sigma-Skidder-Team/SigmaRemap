@@ -142,7 +142,7 @@ public class Class3220 extends Class3167
     }
     
     private int method10154() {
-        if (!Class3220.field15514.field4684.method2713().method27620()) {
+        if (!Class3220.field15514.field4684.getHeldItemMainhand().method27620()) {
             for (int i = 36; i < 45; ++i) {
                 final int field15677 = i - 36;
                 if (Class3220.field15514.field4684.field3008.method10878(i).method20053().method27620()) {

@@ -22,7 +22,7 @@ public class Class6565 extends Class6564
         if (this.field26073 == Class2198.field13376) {
             final Vec3d class5487 = new Vec3d(this.field26067 - this.field26075.getPosX(), this.field26068 - this.field26075.getPosY(), this.field26069 - this.field26075.getPosZ());
             final double method16752 = class5487.length();
-            if (method16752 >= this.field26075.method1886().method18507()) {
+            if (method16752 >= this.field26075.getBoundingBox().method18507()) {
                 this.field26075.method1936(this.field26075.getMotion().add(class5487.scale(this.field26070 * 0.05 / method16752)));
                 if (this.field26075.method4152() != null) {
                     this.field26075.rotationYaw = -(float) MathHelper.method35693(this.field26075.method4152().getPosX() - this.field26075.getPosX(), this.field26075.method4152().getPosZ() - this.field26075.getPosZ()) * 57.295776f;

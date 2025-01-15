@@ -18,8 +18,8 @@ public class Class1823<T extends LivingEntity, M extends Class5845<T> & Class585
     
     public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final boolean b = t.method2755() == Class2226.field13698;
-        final ItemStack class7353 = b ? t.method2714() : t.method2713();
-        final ItemStack class7354 = b ? t.method2713() : t.method2714();
+        final ItemStack class7353 = b ? t.method2714() : t.getHeldItemMainhand();
+        final ItemStack class7354 = b ? t.getHeldItemMainhand() : t.method2714();
         if (!class7353.method27620() || !class7354.method27620()) {
             class7351.method22567();
             if (this.method6559().field23957) {

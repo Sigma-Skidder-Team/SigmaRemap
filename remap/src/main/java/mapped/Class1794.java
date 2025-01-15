@@ -32,7 +32,7 @@ public class Class1794 implements Class1657
     private static final Class1932 field9934;
     public static final int field9935;
     public static final int field9936;
-    private final Class394 field9937;
+    private final MinecraftServer field9937;
     private final Map<Class1932, Class8263> field9938;
     private boolean field9939;
     private final ArrayDeque<Class9234> field9940;
@@ -41,7 +41,7 @@ public class Class1794 implements Class1657
     private final List<Class8263> field9943;
     private boolean field9944;
     
-    public Class1794(final Class394 field9937) {
+    public Class1794(final MinecraftServer field9937) {
         this.field9938 = Maps.newHashMap();
         this.field9940 = new ArrayDeque<Class9234>();
         this.field9941 = Lists.newArrayList();
@@ -54,7 +54,7 @@ public class Class1794 implements Class1657
         return Optional.ofNullable(this.field9938.get(class1932));
     }
     
-    public Class394 method6503() {
+    public MinecraftServer method6503() {
         return this.field9937;
     }
     

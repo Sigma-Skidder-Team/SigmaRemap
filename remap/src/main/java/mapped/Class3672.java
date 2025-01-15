@@ -21,7 +21,7 @@ public class Class3672 extends Class3666
         ItemStack class476 = null;
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method12245 = class473.method2157(i);
-            final Class3820 method12246 = method12245.method27622();
+            final Item method12246 = method12245.getItem();
             if (method12246 instanceof Class4044) {
                 final Class4044 class477 = (Class4044)method12246;
                 if (method12244 != null) {
@@ -75,7 +75,7 @@ public class Class3672 extends Class3666
         for (int i = 0; i < method8507.size(); ++i) {
             final ItemStack method8508 = class473.method2157(i);
             if (!method8508.method27620()) {
-                if (!method8508.method27622().method11721()) {
+                if (!method8508.getItem().method11721()) {
                     if (method8508.method27656()) {
                         if (Class465.method2385(method8508) > 0) {
                             final ItemStack method8509 = method8508.method27641();
@@ -85,7 +85,7 @@ public class Class3672 extends Class3666
                     }
                 }
                 else {
-                    method8507.set(i, new ItemStack(method8508.method27622().method11720()));
+                    method8507.set(i, new ItemStack(method8508.getItem().method11720()));
                 }
             }
         }

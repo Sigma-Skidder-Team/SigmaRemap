@@ -17,7 +17,7 @@ public class Class4538 extends Class4536
     }
     
     @Override
-    public boolean method13536(final Class1851 class1851, final Random random, final BlockPos class1852, final Class7096 class1853) {
+    public boolean method13536(final Class1851 class1851, final Random random, final BlockPos class1852, final BlockState class1853) {
         final int n = random.nextInt(3) + 3;
         final int n2 = random.nextInt(3) + 3;
         final int n3 = random.nextInt(3) + 3;

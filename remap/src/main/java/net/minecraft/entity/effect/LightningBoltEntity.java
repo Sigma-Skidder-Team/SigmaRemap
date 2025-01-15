@@ -67,7 +67,7 @@ public class LightningBoltEntity extends Entity
             }
         }
         if (this.field2537 >= 0) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (!this.field2540) {
                     final List<Entity> method6737 = this.world.method6737(this, new AxisAlignedBB(this.getPosX() - 3.0, this.getPosY() - 3.0, this.getPosZ() - 3.0, this.getPosX() + 3.0, this.getPosY() + 6.0 + 3.0, this.getPosZ() + 3.0), Entity::method1768);
                     final Iterator<Entity> iterator = method6737.iterator();
@@ -87,7 +87,7 @@ public class LightningBoltEntity extends Entity
     
     private void method2039(final int n) {
         if (!this.field2540) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.world.method6765().method31216(Class8878.field37315)) {
                     final Class7096 method11878 = Class7521.field29289.method11878();
                     final BlockPos class354 = new BlockPos(this);

@@ -16,7 +16,7 @@ public final class Class6398 extends Class6397
     @Override
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
         final World method16763 = class5491.method16763();
-        if (!method16763.method6678()) {
+        if (!method16763.isRemote()) {
             this.field25515 = false;
             final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().method21772((Class7111<Direction>)Class3955.field17859));
             for (final Class802 class5493 : method16763.method7128((Class<? extends Class802>)Class802.class, new AxisAlignedBB(method16764))) {
@@ -30,17 +30,17 @@ public final class Class6398 extends Class6397
                     continue;
                 }
                 class5493.method4633();
-                if (class5492.method27635(1, method16763.field10062, null)) {
+                if (class5492.method27635(1, method16763.rand, null)) {
                     class5492.method27691(0);
                 }
                 this.field25515 = true;
                 break;
             }
             if (!this.field25515) {
-                final Class7096 method16765 = method16763.method6701(method16764);
+                final BlockState method16765 = method16763.method6701(method16764);
                 if (method16765.method21755(Class7188.field27931)) {
                     if (method16765.method21772((Class7111<Integer>)Class3961.field17902) >= 5) {
-                        if (class5492.method27635(1, method16763.field10062, null)) {
+                        if (class5492.method27635(1, method16763.rand, null)) {
                             class5492.method27691(0);
                         }
                         Class3961.method12083(method16763, method16764);

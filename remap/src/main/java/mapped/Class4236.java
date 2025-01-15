@@ -32,7 +32,7 @@ public class Class4236 extends Class4211
         return (JsonElement)jsonObject;
     }
     
-    public boolean method12738(final Class7096 class7096) {
+    public boolean method12738(final BlockState class7096) {
         return (this.field19049 == null || class7096.method21696() == this.field19049) && this.field19050.method34689(class7096);
     }
 }

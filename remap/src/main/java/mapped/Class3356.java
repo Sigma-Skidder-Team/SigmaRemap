@@ -42,7 +42,7 @@ public class Class3356 extends Class3355
             }
         }
         if (this.method9883("Smart Visibility")) {
-            if (Class3356.field15514.field4683.method6739((Class<? extends Entity>)Class512.class, Class3356.field15514.field4684.method1886().method18496(14.0), class5744 -> {
+            if (Class3356.field15514.field4683.method6739((Class<? extends Entity>)Class512.class, Class3356.field15514.field4684.getBoundingBox().method18496(14.0), class5744 -> {
                 final boolean b;
                 if (class5744.method1732(Class3356.field15514.field4684) < 12.0f) {
                     if (!this.method10623(class5744)) {

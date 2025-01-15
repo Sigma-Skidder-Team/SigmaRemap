@@ -102,7 +102,7 @@ public class Class475 extends Class456 implements Class476, Class439
     }
     
     public static int method2419(final World class1847, final Class460 class1848, final int n, final int n2, final int n3, final int n4, int method2420) {
-        if (!class1847.field10067) {
+        if (!class1847.isRemote) {
             if (method2420 != 0) {
                 if ((n + n2 + n3 + n4) % 200 == 0) {
                     method2420 = method2420(class1847, class1848, n2, n3, n4);
@@ -143,7 +143,7 @@ public class Class475 extends Class456 implements Class476, Class439
                 n += method11933.getXOffset() * 0.5;
                 n3 += method11933.getZOffset() * 0.5;
             }
-            this.field2656.method6706(null, n, n2, n3, class7795, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
+            this.field2656.method6706(null, n, n2, n3, class7795, Class286.field1582, 0.5f, this.field2656.rand.nextFloat() * 0.1f + 0.9f);
         }
     }
     
@@ -200,7 +200,7 @@ public class Class475 extends Class456 implements Class476, Class439
     
     public static int method2424(final Class1855 class1855, final BlockPos class1856) {
         if (class1855.method6701(class1856).method21696().method11802()) {
-            final Class436 method6727 = class1855.method6727(class1856);
+            final TileEntity method6727 = class1855.method6727(class1856);
             if (method6727 instanceof Class475) {
                 return ((Class475)method6727).field2776;
             }

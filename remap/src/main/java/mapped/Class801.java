@@ -35,7 +35,7 @@ public class Class801 extends Class789
         this.field4114.method22062(0, new Class3490(this));
         this.field4114.method22062(1, new Class3607(this, 1.25));
         this.field4114.method22062(3, new Class3587(this, 1.0));
-        this.field4114.method22062(4, new Class3472(this, 1.2, Class120.method618(Class7739.field31529), false));
+        this.field4114.method22062(4, new Class3472(this, 1.2, Class120.method618(Items.field31529), false));
         this.field4114.method22062(4, new Class3472(this, 1.2, false, Class801.field4301));
         this.field4114.method22062(5, new Class3456(this, 1.1));
         this.field4114.method22062(6, new Class3517(this, 1.0));
@@ -61,7 +61,7 @@ public class Class801 extends Class789
         final Entity method1907 = this.method1907();
         if (method1907 instanceof Class512) {
             final Class512 class512 = (Class512)method1907;
-            return class512.method2713().method27622() == Class7739.field31529 || class512.method2714().method27622() == Class7739.field31529;
+            return class512.getHeldItemMainhand().getItem() == Items.field31529 || class512.method2714().getItem() == Items.field31529;
         }
         return false;
     }
@@ -69,7 +69,7 @@ public class Class801 extends Class789
     @Override
     public void method1880(final DataParameter<?> class8810) {
         if (Class801.field4300.equals(class8810)) {
-            if (this.world.field10067) {
+            if (this.world.isRemote) {
                 this.field4302 = true;
                 this.field4303 = 0;
                 this.field4304 = this.dataManager.get(Class801.field4300);
@@ -113,7 +113,7 @@ public class Class801 extends Class789
     }
     
     @Override
-    public void method1691(final BlockPos class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final BlockState class355) {
         this.method1695(Class8520.field35464, 0.15f, 1.0f);
     }
     
@@ -123,24 +123,24 @@ public class Class801 extends Class789
             return true;
         }
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() == Class7739.field31552) {
+        if (method2715.getItem() == Items.field31552) {
             method2715.method27640(class512, this, class513);
             return true;
         }
         if (this.method4625() && !this.isBeingRidden()) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 class512.method1778(this);
             }
             return true;
         }
-        return method2715.method27622() == Class7739.field31353 && method2715.method27640(class512, this, class513);
+        return method2715.getItem() == Items.field31353 && method2715.method27640(class512, this, class513);
     }
     
     @Override
     public void method2676() {
         super.method2676();
         if (this.method4625()) {
-            this.method1764(Class7739.field31353);
+            this.method1764(Items.field31353);
         }
     }
     
@@ -160,7 +160,7 @@ public class Class801 extends Class789
     @Override
     public void onStruckByLightning(final LightningBoltEntity class422) {
         final Class828 class423 = EntityType.field29014.method23371(this.world);
-        class423.method1803(Class2215.field13600, new ItemStack(Class7739.field31302));
+        class423.method1803(Class2215.field13600, new ItemStack(Items.field31302));
         class423.method1730(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
         class423.method4211(this.method4214());
         if (this.hasCustomName()) {
@@ -242,6 +242,6 @@ public class Class801 extends Class789
     static {
         field4299 = EntityDataManager.method33564(Class801.class, Class7709.field30661);
         field4300 = EntityDataManager.method33564(Class801.class, Class7709.field30654);
-        field4301 = Class120.method618(Class7739.field31517, Class7739.field31518, Class7739.field31575);
+        field4301 = Class120.method618(Items.field31517, Items.field31518, Items.field31575);
     }
 }

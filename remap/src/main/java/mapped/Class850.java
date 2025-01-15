@@ -21,7 +21,7 @@ public class Class850 extends Class763
 {
     private static final UUID field4518;
     private static final Class7919 field4519;
-    private static final DataParameter<Optional<Class7096>> field4520;
+    private static final DataParameter<Optional<BlockState>> field4520;
     private static final DataParameter<Boolean> field4521;
     private static final DataParameter<Boolean> field4522;
     private static final Predicate<LivingEntity> field4523;
@@ -99,7 +99,7 @@ public class Class850 extends Class763
     public void method1880(final DataParameter<?> class8810) {
         if (Class850.field4521.equals(class8810)) {
             if (this.method5082()) {
-                if (this.world.field10067) {
+                if (this.world.isRemote) {
                     this.method5074();
                 }
             }
@@ -110,7 +110,7 @@ public class Class850 extends Class763
     @Override
     public void method1761(final Class51 class51) {
         super.method1761(class51);
-        final Class7096 method5080 = this.method5080();
+        final BlockState method5080 = this.method5080();
         if (method5080 != null) {
             class51.method295("carriedBlockState", Class9346.method34649(method5080));
         }
@@ -119,7 +119,7 @@ public class Class850 extends Class763
     @Override
     public void method1760(final Class51 class51) {
         super.method1760(class51);
-        Class7096 method34647 = null;
+        BlockState method34647 = null;
         if (class51.method316("carriedBlockState", 10)) {
             method34647 = Class9346.method34647(class51.method327("carriedBlockState"));
             if (method34647.method21706()) {
@@ -130,7 +130,7 @@ public class Class850 extends Class763
     }
     
     private boolean method5075(final Class512 class512) {
-        if (class512.field3006.field2740.get(3).method27622() != Class7521.field29342.method11704()) {
+        if (class512.field3006.field2740.get(3).getItem() != Class7521.field29342.method11704()) {
             final Vec3d method16738 = class512.method1741(1.0f).normalize();
             final Vec3d class513 = new Vec3d(this.getPosX() - class512.getPosX(), this.method1944() - class512.method1944(), this.getPosZ() - class512.getPosZ());
             return method16738.dotProduct(class513.normalize()) > 1.0 - 0.025 / class513.length() && class512.method2747(this);
@@ -145,7 +145,7 @@ public class Class850 extends Class763
     
     @Override
     public void method2736() {
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             for (int i = 0; i < 2; ++i) {
                 this.world.method6709(Class8432.field34637, this.method1940(0.5), this.method1943() - 0.25, this.method1947(0.5), (this.rand.nextDouble() - 0.5) * 2.0, -this.rand.nextDouble(), (this.rand.nextDouble() - 0.5) * 2.0);
             }
@@ -176,7 +176,7 @@ public class Class850 extends Class763
     }
     
     public boolean method5076() {
-        return !this.world.method6678() && this.method1768() && this.method5078(this.getPosX() + (this.rand.nextDouble() - 0.5) * 64.0, this.getPosY() + (this.rand.nextInt(64) - 32), this.getPosZ() + (this.rand.nextDouble() - 0.5) * 64.0);
+        return !this.world.isRemote() && this.method1768() && this.method5078(this.getPosX() + (this.rand.nextDouble() - 0.5) * 64.0, this.getPosY() + (this.rand.nextInt(64) - 32), this.getPosZ() + (this.rand.nextDouble() - 0.5) * 64.0);
     }
     
     private boolean method5077(final Entity class399) {
@@ -189,7 +189,7 @@ public class Class850 extends Class763
         while (class385.getY() > 0 && !this.world.method6701(class385).method21697().method26440()) {
             class385.method1290(Direction.DOWN);
         }
-        final Class7096 method6701 = this.world.method6701(class385);
+        final BlockState method6701 = this.world.method6701(class385);
         final boolean method6702 = method6701.method21697().method26440();
         final boolean method6703 = method6701.method21756().method21793(Class7324.field28319);
         if (method6702 && !method6703) {
@@ -221,18 +221,18 @@ public class Class850 extends Class763
     @Override
     public void method2678(final DamageSource class7929, final int n, final boolean b) {
         super.method2678(class7929, n, b);
-        final Class7096 method5080 = this.method5080();
+        final BlockState method5080 = this.method5080();
         if (method5080 != null) {
             this.method1764(method5080.method21696());
         }
     }
     
-    public void method5079(final Class7096 value) {
+    public void method5079(final BlockState value) {
         this.dataManager.set(Class850.field4520, Optional.ofNullable(value));
     }
     
     @Nullable
-    public Class7096 method5080() {
+    public BlockState method5080() {
         return this.dataManager.get(Class850.field4520).orElse(null);
     }
     
@@ -243,7 +243,7 @@ public class Class850 extends Class763
         }
         if (!(class7929 instanceof Class7931) && class7929 != DamageSource.field32581) {
             final boolean method1740 = super.attackEntityFrom(class7929, n);
-            if (!this.world.method6678()) {
+            if (!this.world.isRemote()) {
                 if (class7929.method25709()) {
                     if (this.rand.nextInt(10) != 0) {
                         this.method5076();

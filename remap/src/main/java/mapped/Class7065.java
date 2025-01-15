@@ -24,8 +24,8 @@ public class Class7065
     public final int field27491 = 8;
     public int field27492;
     public final int field27493 = 20;
-    public Class7096 field27494;
-    public Class7096 field27495;
+    public BlockState field27494;
+    public BlockState field27495;
     
     public Class7065() {
         this.field27477 = 32;
@@ -109,19 +109,19 @@ public class Class7065
         return 20;
     }
     
-    public Class7096 method21582() {
+    public BlockState method21582() {
         return this.field27494;
     }
     
-    public Class7096 method21583() {
+    public BlockState method21583() {
         return this.field27495;
     }
     
-    public void method21584(final Class7096 field27494) {
+    public void method21584(final BlockState field27494) {
         this.field27494 = field27494;
     }
     
-    public void method21585(final Class7096 field27495) {
+    public void method21585(final BlockState field27495) {
         this.field27495 = field27495;
     }
     

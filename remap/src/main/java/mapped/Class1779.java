@@ -6,11 +6,9 @@ package mapped;
 
 import org.apache.logging.log4j.LogManager;
 import java.io.InputStream;
-import java.util.Iterator;
 import java.util.HashMap;
 import com.google.gson.JsonParseException;
 import java.io.IOException;
-import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -32,7 +30,7 @@ public abstract class Class1779 extends Class1776<Map<Class1932, JsonObject>>
         this.field9882 = field9882;
     }
     
-    public Map<Class1932, JsonObject> method6375(final Class6582 class6582, final Class5028 class6583) {
+    public Map<Class1932, JsonObject> method6375(final Class6582 class6582, final IProfiler class6583) {
         final HashMap hashMap = Maps.newHashMap();
         final int beginIndex = this.field9882.length() + 1;
         for (final Class1932 class6584 : class6582.method19936(this.field9882, s -> s.endsWith(".json"))) {

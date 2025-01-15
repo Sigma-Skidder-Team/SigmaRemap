@@ -19,7 +19,7 @@ import java.util.Set;
 public class Class1796 implements Class1657
 {
     public static final Class1932 field9950;
-    private static final Set<Class3820> field9951;
+    private static final Set<Item> field9951;
     public float field9952;
     private final Class7264 field9953;
     private final Class1663 field9954;
@@ -41,7 +41,7 @@ public class Class1796 implements Class1657
         else {
             this.field9953 = (Class7264)Class9570.method35842(Class9570.field41370, this.field9956);
         }
-        for (final Class3820 class3820 : Class90.field211) {
+        for (final Item class3820 : Class90.field211) {
             if (Class1796.field9951.contains(class3820)) {
                 continue;
             }
@@ -90,7 +90,7 @@ public class Class1796 implements Class1657
                 b3 = true;
             }
             final boolean b4 = b3;
-            if (class8321.method27622() == Class7739.field31607) {
+            if (class8321.getItem() == Items.field31607) {
                 if (b4) {
                     class8325 = this.field9953.method22210().method6451(new Class1933("minecraft:trident#inventory"));
                 }
@@ -102,7 +102,7 @@ public class Class1796 implements Class1657
                 class8325 = (Class6313)Class9570.field41287.method22608(class8323, class8325, class8322, b);
             }
             class8323.method22564(-0.5, -0.5, -0.5);
-            if (!class8325.method18695() && (class8321.method27622() != Class7739.field31607 || b4)) {
+            if (!class8325.method18695() && (class8321.getItem() != Items.field31607 || b4)) {
                 final Class6332 method25826 = Class7969.method25826(class8321);
                 Class6332 method25827;
                 if (b2 && Objects.equals(method25826, Class8752.method30265())) {
@@ -132,7 +132,7 @@ public class Class1796 implements Class1657
                 Class9388.field40282.method34897(class8321, class8323, class8324, n, n2);
             }
             else {
-                ((Class9388)Class9570.method35826(class8321.method27622(), Class9570.field41327, new Object[0])).method34897(class8321, class8323, class8324, n, n2);
+                ((Class9388)Class9570.method35826(class8321.getItem(), Class9570.field41327, new Object[0])).method34897(class8321, class8323, class8324, n, n2);
             }
             class8323.method22568();
         }
@@ -166,9 +166,9 @@ public class Class1796 implements Class1657
     }
     
     public Class6313 method6534(final ItemStack class8321, final World class8322, final LivingEntity class8323) {
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         Class6313 class8324;
-        if (method27622 != Class7739.field31607) {
+        if (method27622 != Items.field31607) {
             class8324 = this.field9953.method22206(class8321);
         }
         else {
@@ -289,8 +289,8 @@ public class Class1796 implements Class1657
                 int n6 = MathHelper.method35697(max / 3.0f, 1.0f, 1.0f);
                 if (Class9570.field41324.method22605()) {
                     if (Class9570.field41328.method22605()) {
-                        final double method25214 = Class9570.method35824(class1845.method27622(), Class9570.field41324, class1845);
-                        final int method25215 = Class9570.method35821(class1845.method27622(), Class9570.field41328, class1845);
+                        final double method25214 = Class9570.method35824(class1845.getItem(), Class9570.field41324, class1845);
+                        final int method25215 = Class9570.method35821(class1845.getItem(), Class9570.field41328, class1845);
                         n5 = Math.round(13.0f - (float)method25214 * 13.0f);
                         n6 = method25215;
                     }
@@ -306,7 +306,7 @@ public class Class1796 implements Class1657
                 Class8726.method30008();
             }
             final Class756 field4684 = Class869.method5277().field4684;
-            final float n7 = (field4684 != null) ? field4684.method2906().method25770(class1845.method27622(), Class869.method5277().method5314()) : 0.0f;
+            final float n7 = (field4684 != null) ? field4684.method2906().method25770(class1845.getItem(), Class869.method5277().method5314()) : 0.0f;
             if (n7 > 0.0f) {
                 Class8726.method30007();
                 Class8726.method30041();
@@ -339,7 +339,7 @@ public class Class1796 implements Class1657
     
     static {
         field9950 = new Class1932("textures/misc/enchanted_item_glint.png");
-        field9951 = Sets.newHashSet((Object[])new Class3820[] { Class7739.field30754 });
+        field9951 = Sets.newHashSet((Object[])new Item[] { Items.AIR});
         Class1796.field9959 = false;
     }
 }

@@ -31,6 +31,6 @@ public class Class6283 extends Class6257
     
     @Override
     public boolean method18600(final ItemStack class8321) {
-        return class8321.method27622() == Class7739.field31426 || super.method18600(class8321);
+        return class8321.getItem() == Items.field31426 || super.method18600(class8321);
     }
 }

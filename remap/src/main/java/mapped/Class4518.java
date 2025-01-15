@@ -69,8 +69,8 @@ public class Class4518 extends Class4515
             }
         }
         else {
-            class355.method6688(class354, ((Class7097<O, Class7096>)Class7521.field29292.method11878()).method21773((Class7111<Comparable>)Class3865.field17499, class355.method6702(class354).method21793(Class7324.field28319)), 2);
-            final Class436 method6727 = class355.method6727(class354);
+            class355.method6688(class354, ((Class7097<O, BlockState>)Class7521.field29292.method11878()).method21773((Class7111<Comparable>)Class3865.field17499, class355.method6702(class354).method21793(Class7324.field28319)), 2);
+            final TileEntity method6727 = class355.method6727(class354);
             if (method6727 instanceof Class475) {
                 ((Class475)method6727).method2327(this.field19929 ? Class9020.field38094 : Class9020.field38093, random.nextLong());
             }
@@ -96,7 +96,7 @@ public class Class4518 extends Class4515
             final int method1077 = class357.getZ();
             int b = class354.getY() - 1;
             final Mutable class358 = new Mutable(method1076, b, method1077);
-            Class7096 class359 = class355.method6701(class358);
+            BlockState class359 = class355.method6701(class358);
             Class7099 class360 = class355.method6702(class358);
             while (true) {
                 if (!class359.method21706()) {

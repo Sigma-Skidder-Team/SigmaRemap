@@ -106,12 +106,12 @@ public class Class3361 extends Class3355
     
     public int method10648() {
         for (int i = 36; i < 45; ++i) {
-            if (Class3361.field15514.field4684.field3008.method10878(i).method20054() && Class3361.field15514.field4684.field3008.method10878(i).method20053().method27622() == Class7739.field31350) {
+            if (Class3361.field15514.field4684.field3008.method10878(i).method20054() && Class3361.field15514.field4684.field3008.method10878(i).method20053().getItem() == Items.field31350) {
                 return i - 36;
             }
         }
         for (int j = 9; j < 36; ++j) {
-            if (Class3361.field15514.field4684.field3008.method10878(j).method20054() && Class3361.field15514.field4684.field3008.method10878(j).method20053().method27622() == Class7739.field31350) {
+            if (Class3361.field15514.field4684.field3008.method10878(j).method20054() && Class3361.field15514.field4684.field3008.method10878(j).method20053().getItem() == Items.field31350) {
                 Class3361.field15514.method5269().method17292(new Class4323(Class2218.field13623));
                 Class8639.method29370(j, 6);
                 Class3361.field15514.method5269().method17292(new Class4389(-1));

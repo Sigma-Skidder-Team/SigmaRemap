@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Arrays;
 
@@ -16,21 +18,21 @@ public final class Class8063
     private final boolean field33210;
     private final boolean field33211;
     private final int field33212;
-    private final Class7702[] field33213;
-    private final Class7702 field33214;
+    private final VoxelShape[] field33213;
+    private final VoxelShape field33214;
     private final boolean field33215;
     private final boolean[] field33216;
     private final boolean field33217;
     
-    private Class8063(final Class7096 class7096) {
+    private Class8063(final BlockState class7096) {
         final Class3833 method21696 = class7096.method21696();
         this.field33209 = method21696.method11806(class7096);
         this.field33210 = method21696.method11817(class7096, Class1859.field10138, BlockPos.ZERO);
         this.field33211 = method21696.method11818(class7096, Class1859.field10138, BlockPos.ZERO);
         this.field33212 = method21696.method11819(class7096, Class1859.field10138, BlockPos.ZERO);
         if (class7096.method21723()) {
-            this.field33213 = new Class7702[Class8063.field33208.length];
-            final Class7702 method21697 = method21696.method11810(class7096, Class1859.field10138, BlockPos.ZERO);
+            this.field33213 = new VoxelShape[Class8063.field33208.length];
+            final VoxelShape method21697 = method21696.method11810(class7096, Class1859.field10138, BlockPos.ZERO);
             for (final Direction class7097 : Class8063.field33208) {
                 this.field33213[class7097.ordinal()] = Class7698.method24503(method21697, class7097);
             }

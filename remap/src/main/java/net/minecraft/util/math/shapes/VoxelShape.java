@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.util.math.shapes;
 
 import com.google.common.math.DoubleMath;
 import javax.annotation.Nullable;
@@ -10,17 +10,18 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.List;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import mapped.*;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
-public abstract class Class7702
+public abstract class VoxelShape
 {
     public final Class8260 field30615;
-    private Class7702[] field30616;
+    private VoxelShape[] field30616;
     
-    public Class7702(final Class8260 field30615) {
+    public VoxelShape(final Class8260 field30615) {
         this.field30615 = field30615;
     }
     
@@ -51,12 +52,12 @@ public abstract class Class7702
         return this.field30615.method27416();
     }
     
-    public Class7702 method24541(final double n, final double n2, final double n3) {
+    public VoxelShape method24541(final double n, final double n2, final double n3) {
         return this.method24540() ? Class7698.method24486() : new Class7704(this.field30615, (DoubleList)new Class87(this.method24539(Axis.X), n), (DoubleList)new Class87(this.method24539(Axis.Y), n2), (DoubleList)new Class87(this.method24539(Axis.Z), n3));
     }
     
-    public Class7702 method24542() {
-        final Class7702[] array = { Class7698.method24486() };
+    public VoxelShape method24542() {
+        final VoxelShape[] array = { Class7698.method24486() };
         this.method24544((n, n2, n3, n4, n5, n6) -> array[0] = Class7698.method24495(array[0], Class7698.method24488(n, n2, n3, n4, n5, n6), Class9306.field39930));
         return array[0];
     }
@@ -118,13 +119,13 @@ public abstract class Class7702
         return null;
     }
     
-    public Class7702 method24551(final Direction class179) {
+    public VoxelShape method24551(final Direction class179) {
         if (!this.method24540() && this != Class7698.method24487()) {
             if (this.field30616 == null) {
-                this.field30616 = new Class7702[6];
+                this.field30616 = new VoxelShape[6];
             }
             else {
-                final Class7702 class180 = this.field30616[class179.ordinal()];
+                final VoxelShape class180 = this.field30616[class179.ordinal()];
                 if (class180 != null) {
                     return class180;
                 }
@@ -134,7 +135,7 @@ public abstract class Class7702
         return this;
     }
     
-    private Class7702 method24552(final Direction class179) {
+    private VoxelShape method24552(final Direction class179) {
         final Axis method790 = class179.getAxis();
         final AxisDirection method791 = class179.getAxisDirection();
         final DoubleList method792 = this.method24539(method790);

@@ -14,7 +14,7 @@ public class Class639 extends Class623<Class639>
     
     @Override
     public void method3467(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final float n8) {
-        final Class3820 class3820 = Class691.method3870(this.field3638.field3583).field3579.get(n);
+        final Item class3820 = Class691.method3870(this.field3638.field3583).field3579.get(n);
         Class691.method3871(this.field3638.field3583, n3 + 40, n2, class3820);
         for (int i = 0; i < Class691.method3870(this.field3638.field3583).field3575.size(); ++i) {
             Class9455<?> method8449;

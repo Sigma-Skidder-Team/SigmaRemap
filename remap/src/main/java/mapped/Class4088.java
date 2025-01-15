@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
-public class Class4088 extends Class3820
+public class Class4088 extends Item
 {
     private static String[] field18193;
     
@@ -22,13 +22,13 @@ public class Class4088 extends Class3820
         final BlockPos method21655 = class7075.method21639();
         final BlockPos method21656 = method21655.method1149(class7075.method21648());
         if (method12322(class7075.method21651(), method21654, method21655)) {
-            if (!method21654.field10067) {
+            if (!method21654.isRemote) {
                 method21654.method6955(2005, method21655, 0);
             }
             return Class2201.field13400;
         }
         if (method21654.method6701(method21655).method21761(method21654, method21655, class7075.method21648()) && method12323(class7075.method21651(), method21654, method21656, class7075.method21648())) {
-            if (!method21654.field10067) {
+            if (!method21654.isRemote) {
                 method21654.method6955(2005, method21656, 0);
             }
             return Class2201.field13400;
@@ -40,10 +40,10 @@ public class Class4088 extends Class3820
         final Class7096 method6701 = class8322.method6701(class8323);
         if (method6701.method21696() instanceof Class3872) {
             final Class3872 class8324 = (Class3872)method6701.method21696();
-            if (class8324.method11945(class8322, class8323, method6701, class8322.field10067)) {
+            if (class8324.method11945(class8322, class8323, method6701, class8322.isRemote)) {
                 if (class8322 instanceof Class1849) {
-                    if (class8324.method11946(class8322, class8322.field10062, class8323, method6701)) {
-                        class8324.method11947((Class1849)class8322, class8322.field10062, class8323, method6701);
+                    if (class8324.method11946(class8322, class8322.rand, class8323, method6701)) {
+                        class8324.method11947((Class1849)class8322, class8322.rand, class8323, method6701);
                     }
                     class8321.method27693(1);
                 }
@@ -78,7 +78,7 @@ public class Class4088 extends Class3820
                             if (i == 0) {
                                 if (class8324 != null) {
                                     if (class8324.getAxis().isHorizontal()) {
-                                        class8326 = ((Class7097<O, Class7096>)Class7188.field27922.method25620(class8322.field10062).method11878()).method21773((Class7111<Comparable>)Class3926.field17791, class8324);
+                                        class8326 = ((Class7097<O, Class7096>)Class7188.field27922.method25620(class8322.rand).method11878()).method21773((Class7111<Comparable>)Class3926.field17791, class8324);
                                         break Label_0123;
                                     }
                                 }

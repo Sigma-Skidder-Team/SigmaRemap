@@ -29,7 +29,7 @@ public class Class3524 extends Class3446
                 if (!this.field16533.method1706()) {
                     if (this.field16533.method4414()) {
                         if (this.field16533.method4371() <= 0) {
-                            return !this.field16533.world.method6739((Class<? extends Entity>)Class427.class, this.field16533.method1886().method18495(6.0, 6.0, 6.0), (Predicate<? super Entity>)Class791.method4427()).isEmpty() || !this.field16533.method2718(Class2215.field13600).method27620();
+                            return !this.field16533.world.method6739((Class<? extends Entity>)Class427.class, this.field16533.getBoundingBox().method18495(6.0, 6.0, 6.0), (Predicate<? super Entity>)Class791.method4427()).isEmpty() || !this.field16533.method2718(Class2215.field13600).method27620();
                         }
                     }
                 }
@@ -54,7 +54,7 @@ public class Class3524 extends Class3446
     
     @Override
     public void method11015() {
-        final List<Entity> method6739 = this.field16533.world.method6739((Class<? extends Entity>)Class427.class, this.field16533.method1886().method18495(8.0, 8.0, 8.0), (Predicate<? super Entity>)Class791.method4427());
+        final List<Entity> method6739 = this.field16533.world.method6739((Class<? extends Entity>)Class427.class, this.field16533.getBoundingBox().method18495(8.0, 8.0, 8.0), (Predicate<? super Entity>)Class791.method4427());
         if (!method6739.isEmpty() && this.field16533.method2718(Class2215.field13600).method27620()) {
             this.field16533.method4150().method24725((Entity)method6739.get(0), 1.2000000476837158);
         }

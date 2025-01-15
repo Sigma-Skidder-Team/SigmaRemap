@@ -106,7 +106,7 @@ public abstract class Class6257
     }
     
     public boolean method18600(final ItemStack class8321) {
-        return this.field25118.method894(class8321.method27622());
+        return this.field25118.method894(class8321.getItem());
     }
     
     public void method18601(final LivingEntity class511, final Entity class512, final int n) {

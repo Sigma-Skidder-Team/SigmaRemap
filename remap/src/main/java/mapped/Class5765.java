@@ -14,14 +14,14 @@ import java.util.List;
 public class Class5765 implements Class5763
 {
     private final Class1932 field23573;
-    private final Class3820 field23574;
+    private final Item field23574;
     private final int field23575;
     private final String field23576;
     private final List<Class120> field23577;
     private final Class6056 field23578;
     private final Class1932 field23579;
     
-    public Class5765(final Class1932 field23573, final Class3820 field23574, final int field23575, final String field23576, final List<Class120> field23577, final Class6056 field23578, final Class1932 field23579) {
+    public Class5765(final Class1932 field23573, final Item field23574, final int field23575, final String field23576, final List<Class120> field23577, final Class6056 field23578, final Class1932 field23579) {
         this.field23573 = field23573;
         this.field23574 = field23574;
         this.field23575 = field23575;

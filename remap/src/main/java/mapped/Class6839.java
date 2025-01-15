@@ -36,7 +36,7 @@ public class Class6839 extends Class6831
             this.field26837 = (float)this.field26852.getPosX();
             this.field26838 = (float)this.field26852.getPosY();
             this.field26839 = (float)this.field26852.getPosZ();
-            final float method35641 = MathHelper.sqrt(Entity.method1680(this.field26852.getMotion()));
+            final float method35641 = MathHelper.sqrt(Entity.horizontalMag(this.field26852.getMotion()));
             if (method35641 < 0.01) {
                 this.field26853 = 0.0f;
                 this.field26835 = 0.0f;

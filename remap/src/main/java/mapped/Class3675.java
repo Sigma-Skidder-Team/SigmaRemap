@@ -25,10 +25,10 @@ public class Class3675 extends Class3666
                 arrayList.add(method2157);
                 if (arrayList.size() > 1) {
                     final ItemStack class475 = (ItemStack)arrayList.get(0);
-                    if (method2157.method27622() == class475.method27622()) {
+                    if (method2157.getItem() == class475.getItem()) {
                         if (class475.method27690() == 1) {
                             if (method2157.method27690() == 1) {
-                                if (class475.method27622().method11710()) {
+                                if (class475.getItem().method11710()) {
                                     continue;
                                 }
                             }
@@ -49,10 +49,10 @@ public class Class3675 extends Class3666
                 arrayList.add(method2157);
                 if (arrayList.size() > 1) {
                     final ItemStack class474 = (ItemStack)arrayList.get(0);
-                    if (method2157.method27622() == class474.method27622()) {
+                    if (method2157.getItem() == class474.getItem()) {
                         if (class474.method27690() == 1) {
                             if (method2157.method27690() == 1) {
-                                if (class474.method27622().method11710()) {
+                                if (class474.getItem().method11710()) {
                                     continue;
                                 }
                             }
@@ -65,16 +65,16 @@ public class Class3675 extends Class3666
         if (arrayList.size() == 2) {
             final ItemStack class475 = (ItemStack)arrayList.get(0);
             final ItemStack class476 = (ItemStack)arrayList.get(1);
-            if (class475.method27622() == class476.method27622()) {
+            if (class475.getItem() == class476.getItem()) {
                 if (class475.method27690() == 1) {
                     if (class476.method27690() == 1) {
-                        if (class475.method27622().method11710()) {
-                            final Class3820 method2158 = class475.method27622();
+                        if (class475.getItem().method11710()) {
+                            final Item method2158 = class475.getItem();
                             int n = method2158.method11709() - (method2158.method11709() - class475.method27632() + (method2158.method11709() - class476.method27632()) + method2158.method11709() * 5 / 100);
                             if (n < 0) {
                                 n = 0;
                             }
-                            final ItemStack class477 = new ItemStack(class475.method27622());
+                            final ItemStack class477 = new ItemStack(class475.getItem());
                             class477.method27633(n);
                             return class477;
                         }

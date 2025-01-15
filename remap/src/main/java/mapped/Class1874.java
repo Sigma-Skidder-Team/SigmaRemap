@@ -10,6 +10,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 import java.util.function.Function;
@@ -35,7 +36,7 @@ public interface Class1874
         return this.method6737(class399, class400, Class9170.field38850);
     }
     
-    default boolean method6957(final Entity class399, final Class7702 class400) {
+    default boolean method6957(final Entity class399, final VoxelShape class400) {
         return class400.method24540() || this.method7127(class399, class400.method24537()).stream().filter(class402 -> {
             final boolean b;
             if (!class402.removed) {
@@ -46,7 +47,7 @@ public interface Class1874
                 }
             }
             return b;
-        }).noneMatch(class404 -> Class7698.method24496(class403, Class7698.method24489(class404.method1886()), Class9306.field39924));
+        }).noneMatch(class404 -> Class7698.method24496(class403, Class7698.method24489(class404.getBoundingBox()), Class9306.field39924));
     }
     
     default <T extends Entity> List<T> method7128(final Class<? extends T> clazz, final AxisAlignedBB class6221) {
@@ -57,10 +58,10 @@ public interface Class1874
         return this.method6740(clazz, class6221, (Predicate<? super T>)Class9170.field38850);
     }
     
-    default Stream<Class7702> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
+    default Stream<VoxelShape> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
         if (class400.method18507() >= 1.0E-7) {
             final AxisAlignedBB method18496 = class400.method18496(1.0E-7);
-            return (Stream<Class7702>)this.method7127(class399, method18496).stream().filter(class401 -> !set2.contains(class401)).filter(class403 -> class402 == null || !class402.method1916(class403)).flatMap(class405 -> Stream.of(new AxisAlignedBB[] { class405.method1702(), (class404 != null) ? class404.method1771(class405) : null })).filter(Objects::nonNull).filter((Predicate<? super Object>)method18496::method18502).map((Function<? super Object, ?>)Class7698::method24489);
+            return (Stream<VoxelShape>)this.method7127(class399, method18496).stream().filter(class401 -> !set2.contains(class401)).filter(class403 -> class402 == null || !class402.method1916(class403)).flatMap(class405 -> Stream.of(new AxisAlignedBB[] { class405.method1702(), (class404 != null) ? class404.method1771(class405) : null })).filter(Objects::nonNull).filter((Predicate<? super Object>)method18496::method18502).map((Function<? super Object, ?>)Class7698::method24489);
         }
         return Stream.empty();
     }

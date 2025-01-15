@@ -936,7 +936,7 @@ public class Class8763
         if (class8321 == null) {
             return n2;
         }
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         if (method27622 != null) {
             return (method27622 instanceof Class3831) ? method30365((Class3831)method27622, class8321, n, n2) : n2;
         }

@@ -66,7 +66,7 @@ public class Class6154
     }
     
     public static float method18407(final Vec3d class5487, final Entity class5488) {
-        final AxisAlignedBB method1886 = class5488.method1886();
+        final AxisAlignedBB method1886 = class5488.getBoundingBox();
         final double n = 1.0 / ((method1886.field25076 - method1886.field25073) * 2.0 + 1.0);
         final double n2 = 1.0 / ((method1886.field25077 - method1886.field25074) * 2.0 + 1.0);
         final double n3 = 1.0 / ((method1886.field25078 - method1886.field25075) * 2.0 + 1.0);
@@ -119,13 +119,13 @@ public class Class6154
                     final double n4 = n / sqrt;
                     final double n5 = n2 / sqrt;
                     final double n6 = n3 / sqrt;
-                    float n7 = this.field24902 * (0.7f + this.field24897.field10062.nextFloat() * 0.6f);
+                    float n7 = this.field24902 * (0.7f + this.field24897.rand.nextFloat() * 0.6f);
                     double field24898 = this.field24898;
                     double field24899 = this.field24899;
                     double field24900 = this.field24900;
                     while (n7 > 0.0f) {
                         final BlockPos class354 = new BlockPos(field24898, field24899, field24900);
-                        final Class7096 method6701 = this.field24897.method6701(class354);
+                        final BlockState method6701 = this.field24897.method6701(class354);
                         final Class7099 method6702 = this.field24897.method6702(class354);
                         if (!method6701.method21706() || !method6702.method21781()) {
                             float n8 = Math.max(method6701.method21696().method11841(), method6702.method21794());
@@ -186,8 +186,8 @@ public class Class6154
     }
     
     public void method18409(final boolean b) {
-        if (this.field24897.field10067) {
-            this.field24897.method6708(this.field24898, this.field24899, this.field24900, Class8520.field35218, Class286.field1582, 4.0f, (1.0f + (this.field24897.field10062.nextFloat() - this.field24897.field10062.nextFloat()) * 0.2f) * 0.7f, false);
+        if (this.field24897.isRemote) {
+            this.field24897.method6708(this.field24898, this.field24899, this.field24900, Class8520.field35218, Class286.field1582, 4.0f, (1.0f + (this.field24897.rand.nextFloat() - this.field24897.rand.nextFloat()) * 0.2f) * 0.7f, false);
         }
         final boolean b2 = this.field24895 != Class2196.field13365;
         if (b) {
@@ -200,9 +200,9 @@ public class Class6154
         }
         if (b2) {
             final ObjectArrayList list = new ObjectArrayList();
-            Collections.shuffle(this.field24904, this.field24897.field10062);
+            Collections.shuffle(this.field24904, this.field24897.rand);
             for (final BlockPos class354 : this.field24904) {
-                final Class7096 method6701 = this.field24897.method6701(class354);
+                final BlockState method6701 = this.field24897.method6701(class354);
                 final Class3833 method6702 = method6701.method21696();
                 if (method6701.method21706()) {
                     continue;
@@ -211,7 +211,7 @@ public class Class6154
                 this.field24897.method6796().method15297("explosion_blocks");
                 if (method6702.method11872(this)) {
                     if (this.field24897 instanceof Class1849) {
-                        final Class9098 method6703 = new Class9098((Class1849)this.field24897).method32873(this.field24897.field10062).method32877(Class6683.field26367, class354).method32877(Class6683.field26370, ItemStack.field34174).method32878(Class6683.field26369, method6702.method11802() ? this.field24897.method6727(class354) : null).method32878(Class6683.field26362, this.field24901);
+                        final Class9098 method6703 = new Class9098((Class1849)this.field24897).method32873(this.field24897.rand).method32877(Class6683.field26367, class354).method32877(Class6683.field26370, ItemStack.field34174).method32878(Class6683.field26369, method6702.method11802() ? this.field24897.method6727(class354) : null).method32878(Class6683.field26362, this.field24901);
                         if (this.field24895 == Class2196.field13367) {
                             method6703.method32877(Class6683.field26371, this.field24902);
                         }

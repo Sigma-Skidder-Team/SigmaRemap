@@ -59,7 +59,7 @@ public class Class4708<T extends Class428> extends Class4703<T>
             class7351.method22566(Vector3f.XP.rotationDegrees(MathHelper.sin(n6) * n6 * n7 / 10.0f * t.method2138()));
         }
         final int method35710 = t.method2142();
-        final Class7096 method35711 = t.method2140();
+        final BlockState method35711 = t.method2140();
         if (method35711.method21710() != Class2115.field12305) {
             class7351.method22567();
             class7351.method22565(0.75f, 0.75f, 0.75f);
@@ -78,7 +78,7 @@ public class Class4708<T extends Class428> extends Class4703<T>
         return Class4708.field20297;
     }
     
-    public void method13975(final T t, final float n, final Class7096 class7096, final Class7351 class7097, final Class7807 class7098, final int n2) {
+    public void method13975(final T t, final float n, final BlockState class7096, final Class7351 class7097, final Class7807 class7098, final int n2) {
         Class869.method5277().method5305().method5795(class7096, class7097, class7098, n2, Class1904.field10335);
     }
     

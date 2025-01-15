@@ -26,7 +26,7 @@ public class Class3603 extends Class3446
     
     @Override
     public boolean method11013() {
-        final List<Class423> method7128 = this.field16781.world.method7128((Class<? extends Class423>)Class423.class, this.field16781.method1886().method18496(5.0));
+        final List<Class423> method7128 = this.field16781.world.method7128((Class<? extends Class423>)Class423.class, this.field16781.getBoundingBox().method18496(5.0));
         int n = 0;
         final Iterator<Class423> iterator = method7128.iterator();
         while (iterator.hasNext()) {
@@ -69,7 +69,7 @@ public class Class3603 extends Class3446
     
     @Override
     public void method11015() {
-        for (final Class423 class423 : this.field16781.world.method7128((Class<? extends Class423>)Class423.class, this.field16781.method1886().method18496(5.0))) {
+        for (final Class423 class423 : this.field16781.world.method7128((Class<? extends Class423>)Class423.class, this.field16781.getBoundingBox().method18496(5.0))) {
             if (class423.method1907() != null && class423.method1907() instanceof LivingEntity) {
                 this.field16782 = (LivingEntity)class423.method1907();
                 break;

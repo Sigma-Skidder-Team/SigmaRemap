@@ -111,7 +111,7 @@ public class Class844 extends Class763
         if (!this.method5058()) {
             return null;
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             return this.method4152();
         }
         if (this.field4504 != null) {
@@ -171,7 +171,7 @@ public class Class844 extends Class763
     @Override
     public void method2736() {
         if (this.method1768()) {
-            if (this.world.field10067) {
+            if (this.world.isRemote) {
                 this.field4500 = this.field4499;
                 if (this.method1706()) {
                     if (!this.method5054()) {

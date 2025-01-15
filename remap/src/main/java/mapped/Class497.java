@@ -12,7 +12,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 
-public class Class497 extends Class436
+public class Class497 extends TileEntity
 {
     public final ITextComponent[] field2850;
     private boolean field2851;
@@ -131,7 +131,7 @@ public class Class497 extends Class436
     }
     
     public Class7492 method2528(final Class513 class513) {
-        return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, (class513 != null) ? class513.getName().getString() : "Sign", (class513 != null) ? class513.getDisplayName() : new StringTextComponent("Sign"), this.field2656.method6679(), class513);
+        return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, (class513 != null) ? class513.getName().getString() : "Sign", (class513 != null) ? class513.getDisplayName() : new StringTextComponent("Sign"), this.field2656.getServer(), class513);
     }
     
     public Class181 method2529() {

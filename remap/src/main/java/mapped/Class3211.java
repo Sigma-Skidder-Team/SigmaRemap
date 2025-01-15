@@ -231,8 +231,8 @@ public class Class3211 extends Class3167
     
     public boolean method10095() {
         if (this.field15647) {
-            if (Class869.method5277().field4684.method2713() != null) {
-                if (Class869.method5277().field4684.method2713().method27622() instanceof Class4077) {
+            if (Class869.method5277().field4684.getHeldItemMainhand() != null) {
+                if (Class869.method5277().field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
                     return true;
                 }
             }

@@ -8,7 +8,7 @@ public class Class8959
 {
     private int field37658;
     private int field37659;
-    private Class3820 field37660;
+    private Item field37660;
     private Class7207 field37661;
     private Class1998 field37662;
     private Class9082 field37663;
@@ -41,7 +41,7 @@ public class Class8959
         return this;
     }
     
-    public Class8959 method31785(final Class3820 field37660) {
+    public Class8959 method31785(final Item field37660) {
         this.field37660 = field37660;
         return this;
     }

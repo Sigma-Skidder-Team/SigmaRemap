@@ -11,14 +11,14 @@ import java.util.function.Function;
 
 public class Class6040 extends Class6032<Class4408>
 {
-    private static final Class7096 field24579;
-    private static final Class7096 field24580;
-    private static final Class7096 field24581;
-    private static final Class7096 field24582;
-    private static final Class7096 field24583;
-    private static final Class7096 field24584;
-    private static final Class7096 field24585;
-    public Class7096[] field24586;
+    private static final BlockState field24579;
+    private static final BlockState field24580;
+    private static final BlockState field24581;
+    private static final BlockState field24582;
+    private static final BlockState field24583;
+    private static final BlockState field24584;
+    private static final BlockState field24585;
+    public BlockState[] field24586;
     public long field24587;
     public Class8575 field24588;
     public Class8575 field24589;
@@ -28,11 +28,11 @@ public class Class6040 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final int n5, final long n6, final Class4408 class1864) {
+    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6, final Class4408 class1864) {
         final int n7 = n & 0xF;
         final int n8 = n2 & 0xF;
-        Class7096 class1865 = Class6040.field24579;
-        Class7096 class1866 = class1861.method9872().method13339();
+        BlockState class1865 = Class6040.field24579;
+        BlockState class1866 = class1861.method9872().method13339();
         final int n9 = (int)(n4 / 3.0 + 3.0 + random.nextDouble() * 0.25);
         final boolean b = Math.cos(n4 / 3.0 * 3.141592653589793) > 0.0;
         int n10 = -1;
@@ -42,7 +42,7 @@ public class Class6040 extends Class6032<Class4408>
         for (int i = n3; i >= 0; --i) {
             if (n11 < 15) {
                 class1867.setPos(n7, i, n8);
-                final Class7096 method6701 = class1860.method6701(class1867);
+                final BlockState method6701 = class1860.method6701(class1867);
                 if (!method6701.method21706()) {
                     if (method6701.method21696() == class1862.method21696()) {
                         if (n10 != -1) {
@@ -121,7 +121,7 @@ public class Class6040 extends Class6032<Class4408>
                                 b2 = true;
                             }
                             else {
-                                Class7096 class1868;
+                                BlockState class1868;
                                 if (i >= 64 && i <= 127) {
                                     if (!b) {
                                         class1868 = this.method17964(n, i, n2);
@@ -167,7 +167,7 @@ public class Class6040 extends Class6032<Class4408>
     }
     
     public void method17963(final long n) {
-        Arrays.fill(this.field24586 = new Class7096[64], Class6040.field24581);
+        Arrays.fill(this.field24586 = new BlockState[64], Class6040.field24581);
         final Class2317 class2317 = new Class2317(n);
         this.field24590 = new Class8575(class2317, 0, 0);
         for (int i = 0; i < 64; ++i) {
@@ -211,7 +211,7 @@ public class Class6040 extends Class6032<Class4408>
         }
     }
     
-    public Class7096 method17964(final int n, final int n2, final int n3) {
+    public BlockState method17964(final int n, final int n2, final int n3) {
         return this.field24586[(n2 + (int)Math.round(this.field24590.method29027(n / 512.0, n3 / 512.0, false) * 2.0) + 64) % 64];
     }
     

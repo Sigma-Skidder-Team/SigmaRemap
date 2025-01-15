@@ -91,7 +91,7 @@ public class Class6347 extends Class6346<Class7067>
     }
     
     @Override
-    public Class3090 method18872(final Class5507 class5507, final BlockPos class5508) {
+    public Class3090 method18872(final BiomeManager class5507, final BlockPos class5508) {
         return this.field25387;
     }
     

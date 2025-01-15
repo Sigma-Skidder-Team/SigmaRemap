@@ -16,14 +16,14 @@ public class Class3947 extends Class3841
     }
     
     @Override
-    public Class436 method11898(final Class1855 class1855) {
+    public TileEntity method11898(final Class1855 class1855) {
         return new Class494();
     }
     
     @Override
     public void method11831(final Class7096 class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
         super.method11831(class7096, class7097, class7098, class7099);
-        this.method11840(class7097, class7098, 15 + class7097.field10062.nextInt(15) + class7097.field10062.nextInt(15));
+        this.method11840(class7097, class7098, 15 + class7097.rand.nextInt(15) + class7097.rand.nextInt(15));
     }
     
     @Override

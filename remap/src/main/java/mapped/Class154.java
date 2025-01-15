@@ -25,7 +25,7 @@ public class Class154 implements Class122
     
     @Override
     public boolean test(final Class7529 class7529) {
-        final Class7096 class7530 = class7529.method23579(Class6683.field26368);
+        final BlockState class7530 = class7529.method23579(Class6683.field26368);
         if (class7530 != null) {
             if (this.field452 == class7530.method21696()) {
                 if (this.field453.method34689(class7530)) {

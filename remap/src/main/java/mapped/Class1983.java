@@ -10,14 +10,14 @@ public enum Class1983
     field10982("brown", Class7521.field29278.method11878());
     
     private final String field10983;
-    private final Class7096 field10984;
+    private final BlockState field10984;
     
-    private Class1983(final String field10983, final Class7096 field10984) {
+    private Class1983(final String field10983, final BlockState field10984) {
         this.field10983 = field10983;
         this.field10984 = field10984;
     }
     
-    public Class7096 method7992() {
+    public BlockState method7992() {
         return this.field10984;
     }
     

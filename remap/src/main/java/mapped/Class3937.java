@@ -19,9 +19,9 @@ public class Class3937 extends Class3936
     }
     
     @Override
-    public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
+    public void method11853(final World class1847, final BlockPos class1848, final BlockState class1849, final LivingEntity class1850, final ItemStack class1851) {
         super.method11853(class1847, class1848, class1849, class1850, class1851);
-        final Class436 method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class493) {
             final Class493 class1852 = (Class493)method6727;
             GameProfile method6728 = null;

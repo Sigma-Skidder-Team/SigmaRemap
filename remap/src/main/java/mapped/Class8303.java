@@ -10,9 +10,9 @@ public class Class8303 implements Class8301
 {
     public final /* synthetic */ List field34123;
     public final /* synthetic */ Class8878 field34124;
-    public final /* synthetic */ Class394 field34125;
+    public final /* synthetic */ MinecraftServer field34125;
     
-    public Class8303(final Class394 field34125, final List field34126, final Class8878 field34127) {
+    public Class8303(final MinecraftServer field34125, final List field34126, final Class8878 field34127) {
         this.field34125 = field34125;
         this.field34123 = field34126;
         this.field34124 = field34127;

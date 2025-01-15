@@ -19,8 +19,8 @@ public class Class3667 extends Class3666
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
-                if (!(method2157.method27622() instanceof Class4044)) {
-                    if (method2157.method27622() != Class7739.field31583) {
+                if (!(method2157.getItem() instanceof Class4044)) {
+                    if (method2157.getItem() != Items.field31583) {
                         return false;
                     }
                     if (!field34174.method27620()) {
@@ -48,8 +48,8 @@ public class Class3667 extends Class3666
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
-                if (!(method2157.method27622() instanceof Class4044)) {
-                    if (method2157.method27622() == Class7739.field31583) {
+                if (!(method2157.getItem() instanceof Class4044)) {
+                    if (method2157.getItem() == Items.field31583) {
                         class474 = method2157.method27641();
                     }
                 }
@@ -61,7 +61,7 @@ public class Class3667 extends Class3666
         if (!class474.method27620()) {
             final Class51 method2158 = field34174.method27660("BlockEntityTag");
             final Class51 class475 = (method2158 != null) ? method2158.method333() : new Class51();
-            class475.method298("Base", ((Class4044)field34174.method27622()).method12244().method813());
+            class475.method298("Base", ((Class4044)field34174.getItem()).method12244().method813());
             class474.method27676("BlockEntityTag", class475);
             return class474;
         }

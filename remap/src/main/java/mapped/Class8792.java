@@ -565,7 +565,7 @@ public class Class8792
     }
     
     public static ItemStack method30651() {
-        final ItemStack class8321 = new ItemStack(Class7739.field31556);
+        final ItemStack class8321 = new ItemStack(Items.field31556);
         class8321.method27659("BlockEntityTag").method295("Patterns", new Class9142().method33336(Class230.field837, Class181.field546).method33336(Class230.field817, Class181.field545).method33336(Class230.field821, Class181.field544).method33336(Class230.field842, Class181.field545).method33336(Class230.field822, Class181.field552).method33336(Class230.field839, Class181.field545).method33336(Class230.field836, Class181.field545).method33336(Class230.field842, Class181.field552).method33337());
         class8321.method27665(new Class2259("block.minecraft.ominous_banner", new Object[0]).applyTextStyle(TextFormatting.GOLD));
         return class8321;
@@ -581,9 +581,9 @@ public class Class8792
         final int n3 = (n != 0) ? (2 - n) : 2;
         final Mutable class385 = new Mutable();
         for (int i = 0; i < n2; ++i) {
-            final float n4 = this.field36958.field10062.nextFloat() * 6.2831855f;
-            final int n5 = this.field36957.getX() + MathHelper.method35642(MathHelper.cos(n4) * 32.0f * n3) + this.field36958.field10062.nextInt(5);
-            final int n6 = this.field36957.getZ() + MathHelper.method35642(MathHelper.sin(n4) * 32.0f * n3) + this.field36958.field10062.nextInt(5);
+            final float n4 = this.field36958.rand.nextFloat() * 6.2831855f;
+            final int n5 = this.field36957.getX() + MathHelper.method35642(MathHelper.cos(n4) * 32.0f * n3) + this.field36958.rand.nextInt(5);
+            final int n6 = this.field36957.getZ() + MathHelper.method35642(MathHelper.sin(n4) * 32.0f * n3) + this.field36958.rand.nextInt(5);
             class385.setPos(n5, this.field36958.method6699(Class2020.field11522, n5, n6), n6);
             if (!this.field36958.method6922(class385) || n >= 2) {
                 if (this.field36958.method6973(class385.getX() - 10, class385.getY() - 10, class385.getZ() - 10, class385.getX() + 10, class385.getY() + 10, class385.getZ() + 10)) {

@@ -247,8 +247,8 @@ public class PacketBuffer extends ByteBuf
     public PacketBuffer method29510(final ItemStack class8321, final boolean b) {
         if (!class8321.method27620()) {
             this.writeBoolean(true);
-            final Class3820 method27622 = class8321.method27622();
-            this.writeVarInt(Class3820.method11696(method27622));
+            final Item method27622 = class8321.getItem();
+            this.writeVarInt(Item.method11696(method27622));
             this.writeByte(class8321.method27690());
             Class51 method27623 = null;
             if (method27622.method11710() || method27622.method11719()) {
@@ -269,7 +269,7 @@ public class PacketBuffer extends ByteBuf
     
     public ItemStack method29511() {
         if (this.readBoolean()) {
-            final ItemStack class8321 = new ItemStack(Class3820.method11697(this.readVarInt()), this.readByte());
+            final ItemStack class8321 = new ItemStack(Item.method11697(this.readVarInt()), this.readByte());
             if (!Class9570.field41338.method22605()) {
                 class8321.method27663(this.method29508());
             }

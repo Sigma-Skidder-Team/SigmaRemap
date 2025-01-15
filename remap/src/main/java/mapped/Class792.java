@@ -40,7 +40,7 @@ public class Class792 extends Class789
         this.field4114.method22062(1, new Class3490(this));
         this.field4114.method22062(1, new Class3612(this, 2.2));
         this.field4114.method22062(2, new Class3587(this, 0.8));
-        this.field4114.method22062(3, new Class3472(this, 1.0, Class120.method618(Class7739.field31517, Class7739.field31522, Class7521.field29265), false));
+        this.field4114.method22062(3, new Class3472(this, 1.0, Class120.method618(Items.field31517, Items.field31522, Class7521.field29265), false));
         this.field4114.method22062(4, new Class3449<Object>(this, Class512.class, 8.0f, 2.2, 2.2));
         this.field4114.method22062(4, new Class3449<Object>(this, Class799.class, 10.0f, 2.2, 2.2));
         this.field4114.method22062(4, new Class3449<Object>(this, Class763.class, 4.0f, 2.2, 2.2));
@@ -69,11 +69,11 @@ public class Class792 extends Class789
     public void method2725() {
         super.method2725();
         if (this.field4110.method19906() > 0.0) {
-            if (Entity.method1680(this.getMotion()) < 0.01) {
+            if (Entity.horizontalMag(this.getMotion()) < 0.01) {
                 this.method1724(0.1f, new Vec3d(0.0, 0.0, 1.0));
             }
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.world.method6761(this, (byte)1);
         }
     }
@@ -263,9 +263,9 @@ public class Class792 extends Class789
         return !this.method1849(class7929) && super.attackEntityFrom(class7929, n);
     }
     
-    private boolean method4442(final Class3820 class3820) {
-        if (class3820 != Class7739.field31517) {
-            if (class3820 != Class7739.field31522) {
+    private boolean method4442(final Item class3820) {
+        if (class3820 != Items.field31517) {
+            if (class3820 != Items.field31522) {
                 if (class3820 != Class7521.field29265.method11704()) {
                     return false;
                 }
@@ -291,7 +291,7 @@ public class Class792 extends Class789
     
     @Override
     public boolean method4357(final ItemStack class8321) {
-        return this.method4442(class8321.method27622());
+        return this.method4442(class8321.getItem());
     }
     
     public int method4444() {

@@ -82,7 +82,7 @@ public class Class6445
     }
     
     private static ItemStack method19229(final String s, final boolean b, final String str) {
-        final ItemStack class8321 = new ItemStack(Class7739.field31512);
+        final ItemStack class8321 = new ItemStack(Items.field31512);
         final Class52 class8322 = new Class52();
         final StringBuffer sb = new StringBuffer();
         Arrays.stream(s.split("\\.")).forEach(str2 -> sb2.append(str2).append('\n'));

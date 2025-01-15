@@ -58,7 +58,7 @@ public class Class7082 implements Class7079
     }
     
     @Override
-    public void method21660(final Class1848 class1848, final BlockPos class1849, final Class7096 class1850, final float n) {
+    public void method21660(final Class1848 class1848, final BlockPos class1849, final BlockState class1850, final float n) {
         final boolean method21755 = class1850.method21755(Class7188.field27893);
         if (method21755 && n > 0.0f) {
             if (this.field27588 != null) {
@@ -80,7 +80,7 @@ public class Class7082 implements Class7079
     
     @Override
     public void method21662(final ItemStack class8321) {
-        if (Class7855.field32250.method25618(class8321.method27622())) {
+        if (Class7855.field32250.method25618(class8321.getItem())) {
             this.field27587.method32926(Class2012.field11443);
         }
     }

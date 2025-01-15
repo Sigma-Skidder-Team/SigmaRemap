@@ -9,11 +9,11 @@ import net.minecraft.entity.EntityType;
 public class Class8276
 {
     public static final Class2248<Class3833> field33979;
-    public static final Class2248<Class3820> field33980;
-    public static final Class2248<Class3820> field33981;
-    public static final Class2248<Class3820> field33982;
-    public static final Class2248<Class3820> field33983;
-    public static final Class2248<Class3820> field33984;
+    public static final Class2248<Item> field33980;
+    public static final Class2248<Item> field33981;
+    public static final Class2248<Item> field33982;
+    public static final Class2248<Item> field33983;
+    public static final Class2248<Item> field33984;
     public static final Class2248<EntityType<?>> field33985;
     public static final Class2248<EntityType<?>> field33986;
     public static final Class2248<Class1932> field33987;

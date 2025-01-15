@@ -7,6 +7,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -15,7 +17,7 @@ public class Class3974 extends Class3833
 {
     private static String[] field17948;
     private static final Map<Class3833, Class3833> field17949;
-    public static final Class7702 field17950;
+    public static final VoxelShape field17950;
     private final Class3833 field17951;
     
     public Class3974(final Class3833 field17951, final Class9288 class9288) {
@@ -25,7 +27,7 @@ public class Class3974 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3974.field17950;
     }
     
@@ -37,7 +39,7 @@ public class Class3974 extends Class3833
     @Override
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
-        final Class3820 method2716 = method2715.method27622();
+        final Item method2716 = method2715.getItem();
         final Class3833 class7102 = (method2716 instanceof Class4036) ? Class3974.field17949.getOrDefault(((Class4036)method2716).method12240(), Class7521.field29147) : Class7521.field29147;
         final boolean b = class7102 == Class7521.field29147;
         final boolean b2 = this.field17951 == Class7521.field29147;

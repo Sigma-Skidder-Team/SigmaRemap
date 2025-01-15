@@ -26,10 +26,10 @@ public class Class9215
                 this.field39030.method17250();
             }
             this.field39030 = this.method33698(class7193);
-            if (!this.field39028.world.field10067) {
+            if (!this.field39028.world.isRemote) {
                 this.field39028.method1650().set(Class852.field4530, class7193.method22077());
             }
-            Class9215.field39027.debug("Dragon is now in phase {} on the {}", (Object)class7193, (Object)(this.field39028.world.field10067 ? "client" : "server"));
+            Class9215.field39027.debug("Dragon is now in phase {} on the {}", (Object)class7193, (Object)(this.field39028.world.isRemote ? "client" : "server"));
             this.field39030.method17249();
         }
     }

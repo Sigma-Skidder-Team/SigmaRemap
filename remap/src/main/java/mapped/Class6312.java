@@ -36,7 +36,7 @@ public class Class6312
         boolean b3 = false;
         Label_0123: {
             if (this.method18689() != null) {
-                if (this.method18689().equals(this.field25242.method27622())) {
+                if (this.method18689().equals(this.field25242.getItem())) {
                     if (this.field25242 != null) {
                         if (this.field25242.field34176 < 64) {
                             b3 = true;
@@ -93,7 +93,7 @@ public class Class6312
     
     public ItemStack method18688() {
         if (this.field25240 != null) {
-            if (!Class3279.method10340().method6378(Class8976.field37844, new Class443(new ItemStack[] { new ItemStack(Class7739.field30766) }), Class3279.method10339().field4683).isPresent()) {
+            if (!Class3279.method10340().method6378(Class8976.field37844, new Class443(new ItemStack[] { new ItemStack(Items.field30766) }), Class3279.method10339().field4683).isPresent()) {
                 final Class6581 class6581 = new Class6581(Class346.field2138, new Thread());
                 final Iterator<? super Object> iterator = Class3279.method10341().field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()).iterator();
                 while (iterator.hasNext()) {
@@ -113,27 +113,27 @@ public class Class6312
         return null;
     }
     
-    public Class3820 method18689() {
+    public Item method18689() {
         final ItemStack method18688 = this.method18688();
         if (method18688 == null) {
             return null;
         }
-        return method18688.method27622();
+        return method18688.getItem();
     }
     
     public ItemStack method18690() {
         if (this.field25242 != null) {
-            if (this.field25242.method27622() instanceof Class4099) {
+            if (this.field25242.getItem() instanceof Class4099) {
                 this.field25242 = null;
             }
         }
         if (this.field25240 != null) {
-            if (this.field25240.method27622() instanceof Class4099) {
+            if (this.field25240.getItem() instanceof Class4099) {
                 this.field25240 = null;
             }
         }
         if (this.field25241 != null) {
-            if (this.field25241.method27622() instanceof Class4099) {
+            if (this.field25241.getItem() instanceof Class4099) {
                 this.field25241 = null;
             }
         }

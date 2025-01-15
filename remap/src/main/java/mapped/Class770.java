@@ -48,7 +48,7 @@ public abstract class Class770 extends Class772
     }
     
     public boolean method4265() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             return this.field4162 > 0;
         }
         return this.dataManager.get(Class770.field4161) > 0;
@@ -60,7 +60,7 @@ public abstract class Class770 extends Class772
     }
     
     public Class2107 method4267() {
-        return this.world.field10067 ? Class2107.method8227(this.dataManager.get(Class770.field4161)) : this.field4163;
+        return this.world.isRemote ? Class2107.method8227(this.dataManager.get(Class770.field4161)) : this.field4163;
     }
     
     @Override
@@ -74,7 +74,7 @@ public abstract class Class770 extends Class772
     @Override
     public void method1659() {
         super.method1659();
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             if (this.method4265()) {
                 final Class2107 method4267 = this.method4267();
                 final double n = Class2107.method8229(method4267)[0];

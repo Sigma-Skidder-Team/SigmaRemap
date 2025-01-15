@@ -58,7 +58,7 @@ public class Class4551 extends Class4535<Class5122>
         }
         final BlockPos method1082 = class1853.method1138(2);
         for (final Direction class1856 : Plane.HORIZONTAL) {
-            this.method13529(class1851, method1082.method1149(class1856), (Class7096)((Class7097<Object, Object>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, class1856));
+            this.method13529(class1851, method1082.method1149(class1856), (BlockState)((Class7097<Object, Object>)Class7521.field29288.method11878()).method21773((Class7111<Comparable>)Class4023.field18110, class1856));
         }
         return true;
     }

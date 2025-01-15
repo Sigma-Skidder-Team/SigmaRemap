@@ -59,7 +59,7 @@ public class Class816 extends Class815
     @Override
     public void method2736() {
         super.method2736();
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method4804();
         }
     }

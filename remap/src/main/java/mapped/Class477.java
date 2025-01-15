@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.math.MathHelper;
 
-public class Class477 extends Class436 implements Class476, Class439
+public class Class477 extends TileEntity implements Class476, Class439
 {
     private static String[] field2778;
     public float field2779;
@@ -29,7 +29,7 @@ public class Class477 extends Class436 implements Class476, Class439
         final int method1076 = this.field2657.getZ();
         if (this.field2781 > 0) {
             if (this.field2779 == 0.0f) {
-                this.field2656.method6706(null, method1074 + 0.5, method1075 + 0.5, method1076 + 0.5, Class8520.field35152, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
+                this.field2656.method6706(null, method1074 + 0.5, method1075 + 0.5, method1076 + 0.5, Class8520.field35152, Class286.field1582, 0.5f, this.field2656.rand.nextFloat() * 0.1f + 0.9f);
             }
         }
         Label_0192: {
@@ -55,7 +55,7 @@ public class Class477 extends Class436 implements Class476, Class439
         }
         if (this.field2779 < 0.5f) {
             if (field2779 >= 0.5f) {
-                this.field2656.method6706(null, method1074 + 0.5, method1075 + 0.5, method1076 + 0.5, Class8520.field35151, Class286.field1582, 0.5f, this.field2656.field10062.nextFloat() * 0.1f + 0.9f);
+                this.field2656.method6706(null, method1074 + 0.5, method1075 + 0.5, method1076 + 0.5, Class8520.field35151, Class286.field1582, 0.5f, this.field2656.rand.nextFloat() * 0.1f + 0.9f);
             }
         }
         if (this.field2779 >= 0.0f) {

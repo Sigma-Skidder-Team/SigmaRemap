@@ -11,7 +11,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             for (final Class242 class3821 : Class242.values()) {
                 if (class3821 != Class242.field1190 && class3821.method894(class3820)) {
                     return true;
@@ -25,7 +25,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4055;
         }
     }, 
@@ -34,7 +34,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4055 && ((Class4055)class3820).method12257() == Class2215.field13602;
         }
     }, 
@@ -43,7 +43,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4055 && ((Class4055)class3820).method12257() == Class2215.field13603;
         }
     }, 
@@ -52,7 +52,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4055 && ((Class4055)class3820).method12257() == Class2215.field13604;
         }
     }, 
@@ -61,7 +61,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4055 && ((Class4055)class3820).method12257() == Class2215.field13605;
         }
     }, 
@@ -70,7 +70,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4077;
         }
     }, 
@@ -79,7 +79,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4072;
         }
     }, 
@@ -88,7 +88,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4047;
         }
     }, 
@@ -97,7 +97,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4102;
         }
     }, 
@@ -106,7 +106,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820.method11710();
         }
     }, 
@@ -115,7 +115,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4087;
         }
     }, 
@@ -124,7 +124,7 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             final Class3833 method11776 = Class3833.method11776(class3820);
             if (!(class3820 instanceof Class4055)) {
                 if (!(class3820 instanceof Class4080)) {
@@ -143,10 +143,10 @@ public enum Class242
         }
         
         @Override
-        public boolean method894(final Class3820 class3820) {
+        public boolean method894(final Item class3820) {
             return class3820 instanceof Class4086;
         }
     };
     
-    public abstract boolean method894(final Class3820 p0);
+    public abstract boolean method894(final Item p0);
 }

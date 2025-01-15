@@ -58,7 +58,7 @@ public class Class3615 extends Class3446
             this.field16809.method4150().method24733();
         }
         if (this.field16811.method1817()) {
-            if (this.field16811.world.field10062.nextInt(6) == 0) {
+            if (this.field16811.world.rand.nextInt(6) == 0) {
                 this.field16811.method2655(new Class1948(Class9439.field40503, 100));
             }
         }

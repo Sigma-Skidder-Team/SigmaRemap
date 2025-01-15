@@ -32,8 +32,8 @@ public class Class796 extends Class795 implements Class797
 {
     private static final DataParameter<Integer> field4247;
     private static final Predicate<Class759> field4248;
-    private static final Class3820 field4249;
-    private static final Set<Class3820> field4250;
+    private static final Item field4249;
+    private static final Set<Item> field4250;
     private static final Map<EntityType<?>, Class7795> field4251;
     public float field4252;
     public float field4253;
@@ -150,12 +150,12 @@ public class Class796 extends Class795 implements Class797
     private static boolean method4496(final World class1847, final Entity class1848) {
         if (class1848.method1768()) {
             if (!class1848.method1696()) {
-                if (class1847.field10062.nextInt(50) == 0) {
-                    final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class759.class, class1848.method1886().method18496(20.0), (Predicate<? super Entity>)Class796.field4248);
+                if (class1847.rand.nextInt(50) == 0) {
+                    final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class759.class, class1848.getBoundingBox().method18496(20.0), (Predicate<? super Entity>)Class796.field4248);
                     if (!method6739.isEmpty()) {
-                        final Class759 class1849 = method6739.get(class1847.field10062.nextInt(method6739.size()));
+                        final Class759 class1849 = method6739.get(class1847.rand.nextInt(method6739.size()));
                         if (!class1849.method1696()) {
-                            class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), method4500(class1849.getType()), class1848.method1922(), 0.7f, method4501(class1847.field10062));
+                            class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), method4500(class1849.getType()), class1848.method1922(), 0.7f, method4501(class1847.rand));
                             return true;
                         }
                     }
@@ -169,17 +169,17 @@ public class Class796 extends Class795 implements Class797
     @Override
     public boolean method4195(final Class512 class512, final Class316 class513) {
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() instanceof Class3831) {
+        if (method2715.getItem() instanceof Class3831) {
             return super.method4195(class512, class513);
         }
-        if (!this.method4480() && Class796.field4250.contains(method2715.method27622())) {
+        if (!this.method4480() && Class796.field4250.contains(method2715.getItem())) {
             if (!class512.field3025.field27304) {
                 method2715.method27693(1);
             }
             if (!this.method1696()) {
                 this.world.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35422, this.method1922(), 1.0f, 1.0f + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f);
             }
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.rand.nextInt(10) != 0) {
                     this.world.method6761(this, (byte)6);
                 }
@@ -190,11 +190,11 @@ public class Class796 extends Class795 implements Class797
             }
             return true;
         }
-        if (method2715.method27622() != Class796.field4249) {
+        if (method2715.getItem() != Class796.field4249) {
             if (!this.method4504()) {
                 if (this.method4480()) {
                     if (this.method4489(class512)) {
-                        if (!this.world.field10067) {
+                        if (!this.world.isRemote) {
                             this.field4245.method11058(!this.method4483());
                         }
                         return true;
@@ -258,8 +258,8 @@ public class Class796 extends Class795 implements Class797
     public static void method4498(final World class1847, final Entity class1848) {
         if (!class1848.method1696()) {
             if (!method4496(class1847, class1848)) {
-                if (class1847.field10062.nextInt(200) == 0) {
-                    class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), method4499(class1847.field10062), class1848.method1922(), 1.0f, method4501(class1847.field10062));
+                if (class1847.rand.nextInt(200) == 0) {
+                    class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), method4499(class1847.rand), class1848.method1922(), 1.0f, method4501(class1847.rand));
                 }
             }
         }
@@ -384,8 +384,8 @@ public class Class796 extends Class795 implements Class797
     static {
         field4247 = EntityDataManager.method33564(Class796.class, Class7709.field30654);
         field4248 = new Class173();
-        field4249 = Class7739.field31424;
-        field4250 = Sets.newHashSet((Object[])new Class3820[] { Class7739.field31314, Class7739.field31430, Class7739.field31429, Class7739.field31576 });
+        field4249 = Items.field31424;
+        field4250 = Sets.newHashSet((Object[])new Item[] { Items.field31314, Items.field31430, Items.field31429, Items.field31576 });
         field4251 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put(EntityType.field28962, Class8520.field35425);
             hashMap.put(EntityType.field28965, Class8520.field35444);

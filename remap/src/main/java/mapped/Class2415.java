@@ -10,10 +10,10 @@ import javax.swing.JList;
 public class Class2415 extends JList<String>
 {
     private static String[] field14289;
-    private final Class394 field14290;
+    private final MinecraftServer field14290;
     private int field14291;
     
-    public Class2415(final Class394 field14290) {
+    public Class2415(final MinecraftServer field14290) {
         (this.field14290 = field14290).method1472(this::method9672);
     }
     

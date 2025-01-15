@@ -31,7 +31,7 @@ public class Class404 extends Class402
     @Override
     public void method1659() {
         super.method1659();
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             if (!this.field2472) {
                 this.world.method6709(Class8432.field34628, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
             }
@@ -40,7 +40,7 @@ public class Class404 extends Class402
     
     @Override
     public ItemStack method1974() {
-        return new ItemStack(Class7739.field31580);
+        return new ItemStack(Items.field31580);
     }
     
     @Override

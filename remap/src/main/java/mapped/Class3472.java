@@ -43,7 +43,7 @@ public class Class3472 extends Class3446
     public boolean method11013() {
         if (this.field16366 <= 0) {
             this.field16365 = this.field16358.world.method7135(Class3472.field16357, this.field16358);
-            return this.field16365 != null && (this.method11038(this.field16365.method2713()) || this.method11038(this.field16365.method2714()));
+            return this.field16365 != null && (this.method11038(this.field16365.getHeldItemMainhand()) || this.method11038(this.field16365.method2714()));
         }
         --this.field16366;
         return false;

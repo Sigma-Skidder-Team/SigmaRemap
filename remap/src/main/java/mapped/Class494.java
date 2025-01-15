@@ -6,7 +6,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public class Class494 extends Class436 implements Class439
+public class Class494 extends TileEntity implements Class439
 {
     private final Class4648 field2840;
     

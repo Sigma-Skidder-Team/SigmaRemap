@@ -4,9 +4,6 @@
 
 package mapped;
 
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.brigadier.context.CommandContext;
-import java.util.Iterator;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 
@@ -24,7 +21,7 @@ public class Class9584
     
     private static int method35936(final Class7492 class7492, final Class101 class7493) {
         int n = 0;
-        final Class394 method23255 = class7492.method23255();
+        final MinecraftServer method23255 = class7492.method23255();
         method23255.method1540(class7493);
         if (method23255.method1551()) {
             for (final Class513 class7494 : method23255.method1537().method20623()) {

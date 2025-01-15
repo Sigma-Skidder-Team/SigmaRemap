@@ -11,7 +11,7 @@ import java.util.function.BooleanSupplier;
 import javax.annotation.Nullable;
 import org.apache.logging.log4j.Logger;
 
-public class Class1907 extends Class1906
+public class Class1907 extends AbstractChunkProvider
 {
     private static final Logger field10341;
     private final Class1862 field10342;

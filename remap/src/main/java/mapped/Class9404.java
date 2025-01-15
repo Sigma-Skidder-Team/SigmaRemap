@@ -200,9 +200,9 @@ public class Class9404
     
     private static Map<String, Class8988> method34953(final Class1727 class1727) {
         final HashMap hashMap = new HashMap();
-        hashMap.putAll(method34954(class1727, "normal", Class90.field211.method503(Class7739.field31441)));
-        hashMap.putAll(method34954(class1727, "splash", Class90.field211.method503(Class7739.field31579)));
-        hashMap.putAll(method34954(class1727, "linger", Class90.field211.method503(Class7739.field31582)));
+        hashMap.putAll(method34954(class1727, "normal", Class90.field211.method503(Items.field31441)));
+        hashMap.putAll(method34954(class1727, "splash", Class90.field211.method503(Items.field31579)));
+        hashMap.putAll(method34954(class1727, "linger", Class90.field211.method503(Items.field31582)));
         return hashMap;
     }
     
@@ -228,7 +228,7 @@ public class Class9404
             return null;
         }
         if (s.equals("empty") && s2.equals("normal")) {
-            method503 = Class90.field211.method503(Class7739.field31442);
+            method503 = Class90.field211.method503(Items.field31442);
             final Class27 class27 = new Class27();
             class27.put("type", "item");
             class27.put("items", method503.toString());
@@ -438,7 +438,7 @@ public class Class9404
         if (method34970.field37904 == null) {
             return method34970.field37903;
         }
-        final Class3820 method34971 = class8321.method27622();
+        final Item method34971 = class8321.getItem();
         if (method34971 instanceof Class4055) {
             final String method34972 = ((Class4055)method34971).method12258().method8101();
             final int i = (class8322 != Class2215.field13603) ? 1 : 2;
@@ -473,7 +473,7 @@ public class Class9404
             return null;
         }
         if (class8321 != null) {
-            final int method11696 = Class3820.method11696(class8321.method27622());
+            final int method11696 = Item.method11696(class8321.getItem());
             if (method11696 >= 0) {
                 if (method11696 < Class9404.field40346.length) {
                     final Class8988[] array = Class9404.field40346[method11696];
@@ -493,7 +493,7 @@ public class Class9404
     }
     
     private static boolean method34971(final Class8988 class8988, final ItemStack class8989, final int[][] array) {
-        final Class3820 method27622 = class8989.method27622();
+        final Item method27622 = class8989.getItem();
         if (class8988.field37889 != null) {
             int method27623 = method34972(class8989);
             if (method27623 < 0) {
@@ -565,7 +565,7 @@ public class Class9404
     }
     
     private static int method34972(final ItemStack class8321) {
-        return (class8321.method27622() instanceof Class4089) ? method34973(class8321) : class8321.method27632();
+        return (class8321.getItem() instanceof Class4089) ? method34973(class8321) : class8321.method27632();
     }
     
     private static int method34973(final ItemStack class8321) {
@@ -580,7 +580,7 @@ public class Class9404
         final Integer n = Class9404.field40362.get(method27658);
         if (n != null) {
             int intValue = n;
-            if (class8321.method27622() == Class7739.field31579) {
+            if (class8321.getItem() == Items.field31579) {
                 intValue |= 0x4000;
             }
             return intValue;
@@ -623,11 +623,11 @@ public class Class9404
     
     private static int[][] method34976(final ItemStack class8321) {
         Class52 class8322;
-        if (class8321.method27622() != Class7739.field31534) {
+        if (class8321.getItem() != Items.field31534) {
             class8322 = class8321.method27662();
         }
         else {
-            final Class4034 class8323 = (Class4034)Class7739.field31534;
+            final Class4034 class8323 = (Class4034) Items.field31534;
             class8322 = Class4034.method12225(class8321);
         }
         final Class52 class8324 = class8322;

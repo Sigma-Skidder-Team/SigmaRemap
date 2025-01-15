@@ -17,14 +17,14 @@ public class Class4074 extends Class4072
 {
     private static String[] field18173;
     private static final Set<Class3833> field18174;
-    public static final Map<Class3833, Class7096> field18175;
+    public static final Map<Class3833, BlockState> field18175;
     
     public Class4074(final Class2038 class2038, final float n, final float n2, final Class8959 class2039) {
         super(n, n2, class2038, Class4074.field18174, class2039);
     }
     
     @Override
-    public boolean method11713(final Class7096 class7096) {
+    public boolean method11713(final BlockState class7096) {
         final Class3833 method21696 = class7096.method21696();
         return method21696 == Class7521.field29329 || method21696 == Class7521.field29331;
     }
@@ -33,27 +33,27 @@ public class Class4074 extends Class4072
     public Class2201 method11694(final Class7075 class7075) {
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
-        final Class7096 method21656 = method21654.method6701(method21655);
+        final BlockState method21656 = method21654.method6701(method21655);
         if (class7075.method21648() == Direction.DOWN) {
             return Class2201.field13402;
         }
         final Class512 method21657 = class7075.method21652();
-        final Class7096 class7076 = Class4074.field18175.get(method21656.method21696());
-        Class7096 class7077 = null;
+        final BlockState class7076 = Class4074.field18175.get(method21656.method21696());
+        BlockState class7077 = null;
         if (class7076 != null && method21654.method6701(method21655.method1137()).method21706()) {
             method21654.method6705(method21657, method21655, Class8520.field35547, Class286.field1582, 1.0f, 1.0f);
             class7077 = class7076;
         }
         else if (method21656.method21696() instanceof Class3918) {
-            if (((Class7097<Object, Class7096>)method21656).method21772((Class7111<Boolean>)Class3918.field17760)) {
+            if (((Class7097<Object, BlockState>)method21656).method21772((Class7111<Boolean>)Class3918.field17760)) {
                 method21654.method6839(null, 1009, method21655, 0);
-                class7077 = ((Class7097<Object, Class7096>)method21656).method21773((Class7111<Comparable>)Class3918.field17760, false);
+                class7077 = ((Class7097<Object, BlockState>)method21656).method21773((Class7111<Comparable>)Class3918.field17760, false);
             }
         }
         if (class7077 == null) {
             return Class2201.field13402;
         }
-        if (!method21654.field10067) {
+        if (!method21654.isRemote) {
             method21654.method6688(method21655, class7077, 11);
             if (method21657 != null) {
                 class7075.method21651().method27636(1, method21657, class7079 -> class7079.method2795(class7078.method21653()));

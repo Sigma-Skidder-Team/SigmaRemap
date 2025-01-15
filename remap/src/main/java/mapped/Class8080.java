@@ -5,7 +5,6 @@
 package mapped;
 
 import com.mojang.brigadier.Message;
-import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
@@ -21,7 +20,7 @@ public class Class8080
     
     private static int method26499(final Class7492 class7492, final boolean b) throws CommandSyntaxException {
         class7492.method23257(new Class2259("commands.save.saving", new Object[0]), false);
-        final Class394 method23255 = class7492.method23255();
+        final MinecraftServer method23255 = class7492.method23255();
         method23255.method1537().method20600();
         if (method23255.method1451(true, b, true)) {
             class7492.method23257(new Class2259("commands.save.success", new Object[0]), true);

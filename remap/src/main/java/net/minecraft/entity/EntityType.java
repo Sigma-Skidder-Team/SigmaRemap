@@ -180,9 +180,9 @@ public class EntityType<T extends Entity>
             }
             else {
                 method23371.setPosition(class1851.getX() + 0.5, class1851.getY() + 1, class1851.getZ() + 0.5);
-                method23372 = method23359(class1847, class1851, b2, method23371.method1886());
+                method23372 = method23359(class1847, class1851, b2, method23371.getBoundingBox());
             }
-            method23371.method1730(class1851.getX() + 0.5, class1851.getY() + method23372, class1851.getZ() + 0.5, MathHelper.method35668(class1847.field10062.nextFloat() * 360.0f), 0.0f);
+            method23371.method1730(class1851.getX() + 0.5, class1851.getY() + method23372, class1851.getZ() + 0.5, MathHelper.method35668(class1847.rand.nextFloat() * 360.0f), 0.0f);
             if (method23371 instanceof Class759) {
                 final Class759 class1853 = method23371;
                 class1853.field2953 = class1853.rotationYaw;
@@ -212,10 +212,10 @@ public class EntityType<T extends Entity>
     public static void method23360(final World class1847, final Class512 class1848, final Entity class1849, final Class51 class1850) {
         if (class1850 != null) {
             if (class1850.method316("EntityTag", 10)) {
-                final Class394 method6679 = class1847.method6679();
+                final MinecraftServer method6679 = class1847.getServer();
                 if (method6679 != null) {
                     if (class1849 != null) {
-                        if (!class1847.field10067) {
+                        if (!class1847.isRemote) {
                             if (class1849.method1905()) {
                                 if (class1848 == null) {
                                     return;

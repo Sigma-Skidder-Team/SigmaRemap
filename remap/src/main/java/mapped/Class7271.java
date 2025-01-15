@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 public class Class7271<C>
 {
     private static final Logger field28165;
-    public static final Class7271<Class394> field28166;
+    public static final Class7271<MinecraftServer> field28166;
     private final Map<Class1932, Class6810<C, ?>> field28167;
     private final Map<Class<?>, Class6810<C, ?>> field28168;
     
@@ -58,6 +58,6 @@ public class Class7271<C>
     
     static {
         field28165 = LogManager.getLogger();
-        field28166 = new Class7271<Class394>().method22277(new Class6811()).method22277(new Class6809());
+        field28166 = new Class7271<MinecraftServer>().method22277(new Class6811()).method22277(new Class6809());
     }
 }

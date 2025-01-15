@@ -33,12 +33,12 @@ public class Class6501
         method19579(n, n2);
         method19582(n, n2);
         method19581(n, n2);
-        method19583(Class7096.class, n, n2);
+        method19583(BlockState.class, n, n2);
         final long method19580 = method19580(n, n2);
         final long method19581 = method19579(n, n2);
         final long method19582 = method19582(n, n2);
         final long method19583 = method19581(n, n2);
-        final long method19584 = method19583(Class7096.class, n, n2);
+        final long method19584 = method19583(BlockState.class, n, n2);
         Class8571.method28847("New: " + method19580);
         Class8571.method28847("Clone: " + method19581);
         Class8571.method28847("NewObj: " + method19582);
@@ -65,9 +65,9 @@ public class Class6501
     
     private static long method19581(final int n, final int n2) {
         final long currentTimeMillis = System.currentTimeMillis();
-        final Class7096[] array = new Class7096[n];
+        final BlockState[] array = new BlockState[n];
         for (int i = 0; i < n2; ++i) {
-            final Class7096[] array2 = array.clone();
+            final BlockState[] array2 = array.clone();
         }
         return System.currentTimeMillis() - currentTimeMillis;
     }
@@ -75,7 +75,7 @@ public class Class6501
     private static long method19582(final int n, final int n2) {
         final long currentTimeMillis = System.currentTimeMillis();
         for (int i = 0; i < n2; ++i) {
-            final Class7096[] array = new Class7096[n];
+            final BlockState[] array = new BlockState[n];
         }
         return System.currentTimeMillis() - currentTimeMillis;
     }

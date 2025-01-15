@@ -75,7 +75,7 @@ public class Class1945 extends Class1944
         return CompletableFuture.completedFuture(Class2033.field11590);
     }
     
-    private Set<Class436> method7897(final float n, final float n2, final float n3, final Class9006 class9006, final Class9226 class9007) {
+    private Set<TileEntity> method7897(final float n, final float n2, final float n3, final Class9006 class9006, final Class9226 class9007) {
         final BlockPos method1153 = Class8974.method31909(this.field10599).method1153();
         final BlockPos method1154 = method1153.add(15, 15, 15);
         final Class8388 class9008 = new Class8388();
@@ -90,13 +90,13 @@ public class Class1945 extends Class1944
             final Random random = new Random();
             final Class1658 method1156 = Class869.method5277().method5305();
             for (final BlockPos class9010 : Class384.method1154(method1153, method1154)) {
-                final Class7096 method1157 = method1155.method6701(class9010);
+                final BlockState method1157 = method1155.method6701(class9010);
                 method1157.method21696();
                 if (method1157.method21722(method1155, class9010)) {
                     class9008.method27958(class9010);
                 }
                 if (Class7667.method24304(method1157)) {
-                    final Class436 method1158 = method1155.method7000(class9010, Class2079.field12022);
+                    final TileEntity method1158 = method1155.method7000(class9010, Class2079.field12022);
                     if (method1158 != null) {
                         this.method7898(class9006, hashSet, method1158);
                     }
@@ -192,7 +192,7 @@ public class Class1945 extends Class1944
         return hashSet;
     }
     
-    private <E extends Class436> void method7898(final Class9006 class9006, final Set<Class436> set, final E e) {
+    private <E extends TileEntity> void method7898(final Class9006 class9006, final Set<TileEntity> set, final E e) {
         final Class4158<E> method35724 = Class9550.field41126.method35724(e);
         if (method35724 != null) {
             if (!method35724.method12455(e)) {

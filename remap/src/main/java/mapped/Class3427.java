@@ -72,7 +72,7 @@ public class Class3427 extends Class3426<Class473>
     public void method10859(final Class512 class512) {
         super.method10859(class512);
         this.field16201.method2164();
-        if (!class512.world.field10067) {
+        if (!class512.world.isRemote) {
             this.method10881(class512, class512.world, this.field16200);
         }
     }

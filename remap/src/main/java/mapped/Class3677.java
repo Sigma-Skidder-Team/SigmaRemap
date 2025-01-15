@@ -23,13 +23,13 @@ public class Class3677 extends Class3666
                     if (method2157.method27620()) {
                         return false;
                     }
-                    final Class3820 method2158 = method2157.method27622();
+                    final Item method2158 = method2157.getItem();
                     if (i == 1 && j == 1) {
-                        if (method2158 != Class7739.field31582) {
+                        if (method2158 != Items.field31582) {
                             return false;
                         }
                     }
-                    else if (method2158 != Class7739.field31280) {
+                    else if (method2158 != Items.field31280) {
                         return false;
                     }
                 }
@@ -41,8 +41,8 @@ public class Class3677 extends Class3666
     
     public ItemStack method11303(final Class473 class473) {
         final ItemStack method2157 = class473.method2157(1 + class473.method2418());
-        if (method2157.method27622() == Class7739.field31582) {
-            final ItemStack class474 = new ItemStack(Class7739.field31581, 8);
+        if (method2157.getItem() == Items.field31582) {
+            final ItemStack class474 = new ItemStack(Items.field31581, 8);
             Class5333.method16476(class474, Class5333.method16474(method2157));
             Class5333.method16477(class474, Class5333.method16468(method2157));
             return class474;

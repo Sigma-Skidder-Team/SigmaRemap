@@ -26,7 +26,7 @@ public class Class9173
         this.field38858 = Math.min(this.field38858 + n * n2 * 2.0f, (float)this.field38857);
     }
     
-    public void method33487(final Class3820 class3820, final ItemStack class3821) {
+    public void method33487(final Item class3820, final ItemStack class3821) {
         if (class3820.method11743()) {
             final Class9082 method11744 = class3820.method11744();
             this.method33486(method11744.method32744(), method11744.method32745());

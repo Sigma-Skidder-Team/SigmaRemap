@@ -14,7 +14,7 @@ public abstract class Class3932 extends Class3841
     }
     
     @Override
-    public Class436 method11898(final Class1855 class1855) {
+    public TileEntity method11898(final Class1855 class1855) {
         return new Class493();
     }
     

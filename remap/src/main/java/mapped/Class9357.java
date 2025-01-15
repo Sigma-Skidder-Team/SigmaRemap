@@ -52,7 +52,7 @@ public class Class9357
         return true;
     }
     
-    public boolean method34689(final Class7096 class7096) {
+    public boolean method34689(final BlockState class7096) {
         return this.method34688(class7096.method21696().method11876(), class7096);
     }
     

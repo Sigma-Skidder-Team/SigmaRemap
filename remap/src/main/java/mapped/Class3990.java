@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -12,15 +14,15 @@ import javax.annotation.Nullable;
 public class Class3990 extends Class3986
 {
     public static final Class7115 field18000;
-    private static final Class7702 field18001;
-    private static final Class7702 field18002;
-    private static final Class7702 field18003;
-    private static final Class7702 field18004;
-    private static final Class7702 field18005;
-    private static final Class7702 field18006;
-    private static final Class7702 field18007;
-    private static final Class7702 field18008;
-    private static final Class7702 field18009;
+    private static final VoxelShape field18001;
+    private static final VoxelShape field18002;
+    private static final VoxelShape field18003;
+    private static final VoxelShape field18004;
+    private static final VoxelShape field18005;
+    private static final VoxelShape field18006;
+    private static final VoxelShape field18007;
+    private static final VoxelShape field18008;
+    private static final VoxelShape field18009;
     private static final Class2259 field18010;
     
     public Class3990(final Class9288 class9288) {
@@ -35,7 +37,7 @@ public class Class3990 extends Class3986
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        if (!class7097.field10067) {
+        if (!class7097.isRemote) {
             class7099.method2833(class7096.method21754(class7097, class7098));
             class7099.method2857(Class8276.field34057);
             return Class2201.field13400;
@@ -50,7 +52,7 @@ public class Class3990 extends Class3986
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return (class7096.method21772((Class7111<Direction>)Class3990.field18000).getAxis() != Axis.X) ? Class3990.field18009 : Class3990.field18008;
     }
     

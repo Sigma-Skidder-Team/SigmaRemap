@@ -6,8 +6,9 @@ package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 
-public final class Class7705 extends Class7702
+public final class Class7705 extends VoxelShape
 {
     private static String[] field30624;
     

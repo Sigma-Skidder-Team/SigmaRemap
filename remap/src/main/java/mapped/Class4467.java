@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.Comparator;
 
-public class Class4467 implements Comparator<Class3820>
+public class Class4467 implements Comparator<Item>
 {
     private static String[] field19825;
     public final /* synthetic */ Class613 field19826;
@@ -16,7 +16,7 @@ public class Class4467 implements Comparator<Class3820>
     }
     
     @Override
-    public int compare(final Class3820 class3820, final Class3820 class3821) {
+    public int compare(final Item class3820, final Item class3821) {
         int method23090;
         int method23091;
         if (this.field19826.field3581 != null) {
@@ -35,6 +35,6 @@ public class Class4467 implements Comparator<Class3820>
             method23090 = 0;
             method23091 = 0;
         }
-        return (method23090 != method23091) ? (this.field19826.field3582 * Integer.compare(method23090, method23091)) : (this.field19826.field3582 * Integer.compare(Class3820.method11696(class3820), Class3820.method11696(class3821)));
+        return (method23090 != method23091) ? (this.field19826.field3582 * Integer.compare(method23090, method23091)) : (this.field19826.field3582 * Integer.compare(Item.method11696(class3820), Item.method11696(class3821)));
     }
 }

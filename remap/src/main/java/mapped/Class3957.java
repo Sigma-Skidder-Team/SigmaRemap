@@ -18,13 +18,13 @@ public class Class3957 extends Class3841
     }
     
     @Override
-    public Class436 method11898(final Class1855 class1855) {
+    public TileEntity method11898(final Class1855 class1855) {
         return new Class488();
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
-        final Class436 method6727 = class7097.method6727(class7098);
+    public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
+        final TileEntity method6727 = class7097.method6727(class7098);
         if (method6727 instanceof Class488) {
             for (int method6728 = ((Class488)method6727).method2445(), i = 0; i < method6728; ++i) {
                 double n = class7098.getX() + (double)random.nextFloat();
@@ -48,12 +48,12 @@ public class Class3957 extends Class3841
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
         return ItemStack.field34174;
     }
     
     @Override
-    public boolean method11799(final Class7096 class7096, final Class7255 class7097) {
+    public boolean method11799(final BlockState class7096, final Class7255 class7097) {
         return false;
     }
 }

@@ -264,7 +264,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     public void method3551(final double n) {
-        this.field3551 = MathHelper.method35654(n, 0.0, this.method3552());
+        this.field3551 = MathHelper.clamp(n, 0.0, this.method3552());
     }
     
     private int method3552() {

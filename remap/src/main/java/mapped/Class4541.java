@@ -17,7 +17,7 @@ public class Class4541 extends Class4535<Class5122>
 {
     private static final Logger field20026;
     private static final EntityType<?>[] field20027;
-    private static final Class7096 field20028;
+    private static final BlockState field20028;
     
     public Class4541(final Function<Dynamic<?>, ? extends Class5122> function) {
         super(function);
@@ -120,7 +120,7 @@ public class Class4541 extends Class4535<Class5122>
                 }
             }
             class1851.method6688(class1853, Class7521.field29290.method11878(), 2);
-            final Class436 method1137 = class1851.method6727(class1853);
+            final TileEntity method1137 = class1851.method6727(class1853);
             if (!(method1137 instanceof Class494)) {
                 Class4541.field20026.error("Failed to fetch mob spawner entity at ({}, {}, {})", (Object)class1853.getX(), (Object)class1853.getY(), (Object)class1853.getZ());
             }

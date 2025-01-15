@@ -8,7 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class3824 extends Class3820
+public class Class3824 extends Item
 {
     private static String[] field17376;
     

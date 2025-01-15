@@ -48,7 +48,7 @@ public class Class2254 extends TextComponent implements Class2253
     }
     
     private void method8478(final Class7492 class7492) {
-        final Class394 method23255 = class7492.method23255();
+        final MinecraftServer method23255 = class7492.method23255();
         if (method23255 != null) {
             if (method23255.method1493()) {
                 if (Class8272.method27500(this.field13799)) {

@@ -87,7 +87,7 @@ public class Class3422 extends Class3418
     @Override
     public void method10855(final Class446 class446) {
         final ItemStack method20053 = this.field16176.method20053();
-        if (method20053.method27622() != this.field16174.method27622()) {
+        if (method20053.getItem() != this.field16174.getItem()) {
             this.field16174 = method20053.method27641();
             this.method10908(class446, method20053);
         }
@@ -133,7 +133,7 @@ public class Class3422 extends Class3418
         if (class514 != null) {
             if (class514.method20054()) {
                 final ItemStack method20053 = class514.method20053();
-                final Class3820 method20054 = method20053.method27622();
+                final Item method20054 = method20053.getItem();
                 class513 = method20053.method27641();
                 if (n != 1) {
                     if (n != 0) {

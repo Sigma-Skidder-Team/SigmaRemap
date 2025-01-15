@@ -40,13 +40,13 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         this.field2762 = field2762;
     }
     
-    public static Map<Class3820, Integer> method2392() {
+    public static Map<Item, Integer> method2392() {
         final LinkedHashMap linkedHashMap = Maps.newLinkedHashMap();
-        method2394(linkedHashMap, Class7739.field31351, 20000);
+        method2394(linkedHashMap, Items.field31351, 20000);
         method2394(linkedHashMap, Class7521.field29547, 16000);
-        method2394(linkedHashMap, Class7739.field31437, 2400);
-        method2394(linkedHashMap, Class7739.field31281, 1600);
-        method2394(linkedHashMap, Class7739.field31282, 1600);
+        method2394(linkedHashMap, Items.field31437, 2400);
+        method2394(linkedHashMap, Items.field31281, 1600);
+        method2394(linkedHashMap, Items.field31282, 1600);
         method2393(linkedHashMap, Class7855.field32250, 300);
         method2393(linkedHashMap, Class7855.field32237, 300);
         method2393(linkedHashMap, Class7855.field32243, 300);
@@ -74,25 +74,25 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         method2394(linkedHashMap, Class7521.field29296, 300);
         method2394(linkedHashMap, Class7521.field29472, 300);
         method2393(linkedHashMap, Class7855.field32257, 300);
-        method2394(linkedHashMap, Class7739.field31279, 300);
-        method2394(linkedHashMap, Class7739.field31376, 300);
+        method2394(linkedHashMap, Items.field31279, 300);
+        method2394(linkedHashMap, Items.field31376, 300);
         method2394(linkedHashMap, Class7521.field29307, 300);
         method2393(linkedHashMap, Class7855.field32273, 200);
-        method2394(linkedHashMap, Class7739.field31288, 200);
-        method2394(linkedHashMap, Class7739.field31287, 200);
-        method2394(linkedHashMap, Class7739.field31309, 200);
-        method2394(linkedHashMap, Class7739.field31290, 200);
-        method2394(linkedHashMap, Class7739.field31289, 200);
+        method2394(linkedHashMap, Items.field31288, 200);
+        method2394(linkedHashMap, Items.field31287, 200);
+        method2394(linkedHashMap, Items.field31309, 200);
+        method2394(linkedHashMap, Items.field31290, 200);
+        method2394(linkedHashMap, Items.field31289, 200);
         method2393(linkedHashMap, Class7855.field32242, 200);
         method2393(linkedHashMap, Class7855.field32271, 1200);
         method2393(linkedHashMap, Class7855.field32236, 100);
         method2393(linkedHashMap, Class7855.field32239, 100);
-        method2394(linkedHashMap, Class7739.field31299, 100);
+        method2394(linkedHashMap, Items.field31299, 100);
         method2393(linkedHashMap, Class7855.field32249, 100);
-        method2394(linkedHashMap, Class7739.field31300, 100);
+        method2394(linkedHashMap, Items.field31300, 100);
         method2393(linkedHashMap, Class7855.field32241, 67);
         method2394(linkedHashMap, Class7521.field29715, 4001);
-        method2394(linkedHashMap, Class7739.field31611, 300);
+        method2394(linkedHashMap, Items.field31611, 300);
         method2394(linkedHashMap, Class7521.field29761, 50);
         method2394(linkedHashMap, Class7521.field29243, 100);
         method2394(linkedHashMap, Class7521.field29805, 400);
@@ -105,14 +105,14 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         return linkedHashMap;
     }
     
-    private static void method2393(final Map<Class3820, Integer> map, final Class7909<Class3820> class7909, final int i) {
-        final Iterator<Class3820> iterator = class7909.method25616().iterator();
+    private static void method2393(final Map<Item, Integer> map, final Class7909<Item> class7909, final int i) {
+        final Iterator<Item> iterator = class7909.method25616().iterator();
         while (iterator.hasNext()) {
             map.put(iterator.next(), i);
         }
     }
     
-    private static void method2394(final Map<Class3820, Integer> map, final Class3832 class3832, final int i) {
+    private static void method2394(final Map<Item, Integer> map, final Class3832 class3832, final int i) {
         map.put(class3832.method11704(), i);
     }
     
@@ -157,7 +157,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         if (this.method2395()) {
             --this.field2756;
         }
-        if (!this.field2656.field10067) {
+        if (!this.field2656.isRemote) {
             final ItemStack class8321 = this.field2755.get(1);
             if (!this.method2395() && (class8321.method27620() || this.field2755.get(0).method27620())) {
                 if (!this.method2395()) {
@@ -175,10 +175,10 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
                         if (this.method2395()) {
                             n = 1;
                             if (!class8321.method27620()) {
-                                final Class3820 method2396 = class8321.method27622();
+                                final Item method2396 = class8321.getItem();
                                 class8321.method27693(1);
                                 if (class8321.method27620()) {
-                                    final Class3820 method2397 = method2396.method11720();
+                                    final Item method2397 = method2396.method11720();
                                     this.field2755.set(1, (method2397 != null) ? new ItemStack(method2397) : ItemStack.field34174);
                                 }
                             }
@@ -200,7 +200,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
             }
             if (method2395 != this.method2395()) {
                 n = 1;
-                this.field2656.method6688(this.field2657, ((Class7097<O, Class7096>)this.field2656.method6701(this.field2657)).method21773((Class7111<Comparable>)Class3948.field17847, this.method2395()), 3);
+                this.field2656.method6688(this.field2657, ((Class7097<O, BlockState>)this.field2656.method6701(this.field2657)).method21773((Class7111<Comparable>)Class3948.field17847, this.method2395()), 3);
             }
         }
         if (n != 0) {
@@ -227,20 +227,20 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
                 final ItemStack method11292 = class3662.method11292();
                 final ItemStack class3664 = this.field2755.get(2);
                 if (!class3664.method27620()) {
-                    if (class3664.method27622() == method11292.method27622()) {
+                    if (class3664.getItem() == method11292.getItem()) {
                         class3664.method27692(1);
                     }
                 }
                 else {
                     this.field2755.set(2, method11292.method27641());
                 }
-                if (!this.field2656.field10067) {
+                if (!this.field2656.isRemote) {
                     this.method2401(class3662);
                 }
-                if (class3663.method27622() == Class7521.field29212.method11704()) {
+                if (class3663.getItem() == Class7521.field29212.method11704()) {
                     if (!this.field2755.get(1).method27620()) {
-                        if (this.field2755.get(1).method27622() == Class7739.field31349) {
-                            this.field2755.set(1, new ItemStack(Class7739.field31350));
+                        if (this.field2755.get(1).getItem() == Items.field31349) {
+                            this.field2755.set(1, new ItemStack(Items.field31350));
                         }
                     }
                 }
@@ -251,7 +251,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     
     public int method2398(final ItemStack class8321) {
         if (!class8321.method27620()) {
-            return method2392().getOrDefault(class8321.method27622(), 0);
+            return method2392().getOrDefault(class8321.getItem(), 0);
         }
         return 0;
     }
@@ -261,7 +261,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     public static boolean method2400(final ItemStack class8321) {
-        return method2392().containsKey(class8321.method27622());
+        return method2392().containsKey(class8321.getItem());
     }
     
     @Override
@@ -281,9 +281,9 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     public boolean method2250(final int n, final ItemStack class8321, final Direction class8322) {
         if (class8322 == Direction.DOWN) {
             if (n == 1) {
-                final Class3820 method27622 = class8321.method27622();
-                if (method27622 != Class7739.field31350) {
-                    if (method27622 != Class7739.field31349) {
+                final Item method27622 = class8321.getItem();
+                if (method27622 != Items.field31350) {
+                    if (method27622 != Items.field31349) {
                         return false;
                     }
                 }
@@ -365,7 +365,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         }
         if (n == 1) {
             final ItemStack class8322 = this.field2755.get(1);
-            return method2400(class8321) || (class8321.method27622() == Class7739.field31349 && class8322.method27622() != Class7739.field31349);
+            return method2400(class8321) || (class8321.getItem() == Items.field31349 && class8322.getItem() != Items.field31349);
         }
         return true;
     }

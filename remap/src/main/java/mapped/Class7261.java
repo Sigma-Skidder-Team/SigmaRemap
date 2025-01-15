@@ -23,8 +23,8 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public Class3820 method22149() {
-        return Class7739.field31351;
+    public Item method22149() {
+        return Items.field31351;
     }
     
     @Override
@@ -70,7 +70,7 @@ public abstract class Class7261 extends Class7257
                     if (!class1847.method6731(method1135)) {
                         return;
                     }
-                    final Class7096 method1136 = class1847.method6701(method1135);
+                    final BlockState method1136 = class1847.method6701(method1135);
                     if (!method1136.method21706()) {
                         if (method1136.method21697().method26440()) {
                             return;
@@ -113,7 +113,7 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public void method22180(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853) {
+    public void method22180(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
         this.method22203(class1851, class1852);
     }
     
@@ -123,8 +123,8 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public Class7096 method22162(final Class7099 class7099) {
-        return ((Class7097<O, Class7096>)Class7521.field29174.method11878()).method21773((Class7111<Comparable>)Class3859.field17480, Class7257.method22193(class7099));
+    public BlockState method22162(final Class7099 class7099) {
+        return ((Class7097<O, BlockState>)Class7521.field29174.method11878()).method21773((Class7111<Comparable>)Class3859.field17480, Class7257.method22193(class7099));
     }
     
     @Override
@@ -176,7 +176,7 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public void method22179(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final Direction class1854, final Class7099 class1855) {
+    public void method22179(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Direction class1854, final Class7099 class1855) {
         if (class1854 == Direction.DOWN) {
             final Class7099 method6702 = class1851.method6702(class1852);
             if (this.method22166(Class7324.field28320)) {

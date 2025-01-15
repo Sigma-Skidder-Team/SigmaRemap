@@ -32,7 +32,7 @@ public class Class417 extends Class416
     @Override
     public void method2032(final Class7006 class7006) {
         super.method2032(class7006);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (class7006.method21449() == Class2165.field12882) {
                 final Entity method21452 = ((Class7007)class7006).method21452();
                 method21452.attackEntityFrom(DamageSource.method25698(this, this.field2527), 6.0f);

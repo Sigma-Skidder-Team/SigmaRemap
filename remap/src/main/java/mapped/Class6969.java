@@ -65,6 +65,6 @@ public class Class6969
     
     static {
         field27249 = new Class6969(Class9342.field40107, Class9342.field40107, Class9342.field40107, Class9342.field40107, Class9342.field40107, Class9342.field40107);
-        field27250 = new Class6969(Class9425.method35024().method35025(Class7739.field31556).method35027(Class8792.method30651().method27657()).method35029(), Class9342.field40107, Class9342.field40107, Class9342.field40107, Class9342.field40107, Class9342.field40107);
+        field27250 = new Class6969(Class9425.method35024().method35025(Items.field31556).method35027(Class8792.method30651().method27657()).method35029(), Class9342.field40107, Class9342.field40107, Class9342.field40107, Class9342.field40107, Class9342.field40107);
     }
 }

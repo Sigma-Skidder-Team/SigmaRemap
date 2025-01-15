@@ -26,7 +26,7 @@ public class Class8876
         if (method28895 == null) {
             return null;
         }
-        final Class6737 field4684 = field4683.dimension;
+        final Dimension field4684 = field4683.dimension;
         if (field4684 == null) {
             return null;
         }
@@ -47,7 +47,7 @@ public class Class8876
         return null;
     }
     
-    public static Class436 method31208(final BlockPos class354) {
+    public static TileEntity method31208(final BlockPos class354) {
         final Class1849 method31206 = method31206();
         if (method31206 == null) {
             return null;

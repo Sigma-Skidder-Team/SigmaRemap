@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 import java.util.function.IntSupplier;
 import org.apache.logging.log4j.Logger;
 
-public class Class5029 implements Class5028
+public class Class5029 implements IProfiler
 {
     private static final Logger field21550;
     private static final long field21551;

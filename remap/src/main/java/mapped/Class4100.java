@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class4100 extends Class3820
+public class Class4100 extends Item
 {
     public Class4100(final Class8959 class8959) {
         super(class8959);
@@ -56,7 +56,7 @@ public class Class4100 extends Class3820
     
     @Override
     public boolean method11738(final ItemStack class8321, final ItemStack class8322) {
-        return Class7855.field32237.method25618(class8322.method27622()) || super.method11738(class8321, class8322);
+        return Class7855.field32237.method25618(class8322.getItem()) || super.method11738(class8321, class8322);
     }
     
     public static Class181 method12343(final ItemStack class8321) {

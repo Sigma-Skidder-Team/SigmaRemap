@@ -7,12 +7,12 @@ package mapped;
 public class Class8199
 {
     private static String[] field33718;
-    private static final Class6058<Class7096> field33719;
+    private static final Class6058<BlockState> field33719;
     private final int field33720;
     private short field33721;
     private short field33722;
     private short field33723;
-    private final Class7875<Class7096> field33724;
+    private final Class7875<BlockState> field33724;
     public static final ThreadLocal<Class9489> field33725;
     
     public Class8199(final int n) {
@@ -24,10 +24,10 @@ public class Class8199
         this.field33721 = field33721;
         this.field33722 = field33722;
         this.field33723 = field33723;
-        this.field33724 = new Class7875<Class7096>(Class8199.field33719, Class3833.field17391, Class9346::method34647, Class9346::method34649, Class7521.field29147.method11878());
+        this.field33724 = new Class7875<BlockState>(Class8199.field33719, Class3833.field17391, Class9346::method34647, Class9346::method34649, Class7521.field29147.method11878());
     }
     
-    public Class7096 method27148(final int n, final int n2, final int n3) {
+    public BlockState method27148(final int n, final int n2, final int n3) {
         return this.field33724.method25507(n, n2, n3);
     }
     
@@ -43,12 +43,12 @@ public class Class8199
         this.field33724.method25499();
     }
     
-    public Class7096 method27152(final int n, final int n2, final int n3, final Class7096 class7096) {
+    public BlockState method27152(final int n, final int n2, final int n3, final BlockState class7096) {
         return this.method27153(n, n2, n3, class7096, true);
     }
     
-    public Class7096 method27153(final int n, final int n2, final int n3, final Class7096 class7096, final boolean b) {
-        Class7096 class7097;
+    public BlockState method27153(final int n, final int n2, final int n3, final BlockState class7096, final boolean b) {
+        BlockState class7097;
         if (!b) {
             class7097 = this.field33724.method25504(n, n2, n3, class7096);
         }
@@ -142,7 +142,7 @@ public class Class8199
         });
     }
     
-    public Class7875<Class7096> method27161() {
+    public Class7875<BlockState> method27161() {
         return this.field33724;
     }
     
@@ -160,7 +160,7 @@ public class Class8199
         return 2 + this.field33724.method25513();
     }
     
-    public boolean method27165(final Class7096 class7096) {
+    public boolean method27165(final BlockState class7096) {
         return this.field33724.method25514(class7096);
     }
     
@@ -177,7 +177,7 @@ public class Class8199
     }
     
     static {
-        field33719 = new Class6061<Class7096>(Class3833.field17391, Class7521.field29147.method11878());
+        field33719 = new Class6061<BlockState>(Class3833.field17391, Class7521.field29147.method11878());
         field33725 = new ThreadLocal<Class9489>();
     }
 }

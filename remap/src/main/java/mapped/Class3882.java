@@ -5,11 +5,13 @@
 package mapped;
 
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Class3882 extends Class3874
 {
     private static String[] field17519;
-    public static final Class7702 field17537;
+    public static final VoxelShape field17537;
     private final Class5328 field17538;
     private final int field17539;
     
@@ -25,7 +27,7 @@ public class Class3882 extends Class3874
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Vec3d method21732 = class7096.method21732(class7097, class7098);
         return Class3882.field17537.method24541(method21732.x, method21732.y, method21732.z);
     }

@@ -23,7 +23,7 @@ public class Class6217 extends Class6213
     }
     
     @Override
-    public boolean method18485(final Class7096 class7096, final Random random) {
+    public boolean method18485(final BlockState class7096, final Random random) {
         return class7096.method21696() == this.field25067;
     }
     

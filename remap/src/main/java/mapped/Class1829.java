@@ -18,8 +18,8 @@ public class Class1829 extends Class1799<Class808, Class5928<Class808>>
     
     public void method6592(final Class7351 class7351, final Class7807 class7352, final int n, final Class808 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final ItemStack method4769 = class7353.method4769();
-        if (method4769.method27622() instanceof Class4051) {
-            final Class4051 class7354 = (Class4051)method4769.method27622();
+        if (method4769.getItem() instanceof Class4051) {
+            final Class4051 class7354 = (Class4051)method4769.getItem();
             ((Class1799<T, Class5928<Class808>>)this).method6559().method17569(this.field10010);
             this.field10010.method17802(class7353, n2, n3, n4);
             this.field10010.method17801(class7353, n2, n3, n5, n6, n7);

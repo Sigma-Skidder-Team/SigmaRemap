@@ -142,7 +142,7 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
         return new Class7859(n + n3, n2 + n4);
     }
     
-    public abstract boolean method13594(final Class5507 p0, final Class6346<?> p1, final Random p2, final int p3, final int p4, final Class3090 p5);
+    public abstract boolean method13594(final BiomeManager p0, final Class6346<?> p1, final Random p2, final int p3, final int p4, final Class3090 p5);
     
     public abstract Class6378 method13595();
     

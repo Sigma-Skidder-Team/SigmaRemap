@@ -93,7 +93,7 @@ public abstract class Class780 extends Class763 implements Class768
     @Override
     public void method4184(final Class9592 class9592) {
         super.method4184(class9592);
-        this.method1803(Class2215.field13600, new ItemStack(Class7739.field31279));
+        this.method1803(Class2215.field13600, new ItemStack(Items.field31279));
     }
     
     @Nullable
@@ -121,10 +121,10 @@ public abstract class Class780 extends Class763 implements Class768
     
     public void method4329() {
         if (this.world != null) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.field4114.method22063(this.field4190);
                 this.field4114.method22063(this.field4189);
-                if (this.method2715(Class7476.method23100(this, Class7739.field31279)).method27622() != Class7739.field31279) {
+                if (this.method2715(Class7476.method23100(this, Items.field31279)).getItem() != Items.field31279) {
                     this.field4114.method22062(4, this.field4190);
                 }
                 else {
@@ -141,7 +141,7 @@ public abstract class Class780 extends Class763 implements Class768
     
     @Override
     public void method4252(final LivingEntity class511, final float n) {
-        final Class402 method4330 = this.method4330(this.method2790(this.method2715(Class7476.method23100(this, Class7739.field31279))), n);
+        final Class402 method4330 = this.method4330(this.method2790(this.method2715(Class7476.method23100(this, Items.field31279))), n);
         final double n2 = class511.getPosX() - this.getPosX();
         final double n3 = class511.method1942(0.3333333333333333) - method4330.getPosY();
         final double n4 = class511.getPosZ() - this.getPosZ();
@@ -163,7 +163,7 @@ public abstract class Class780 extends Class763 implements Class768
     @Override
     public void method1803(final Class2215 class2215, final ItemStack class2216) {
         super.method1803(class2215, class2216);
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.method4329();
         }
     }

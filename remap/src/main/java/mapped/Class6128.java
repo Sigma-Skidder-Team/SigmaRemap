@@ -29,7 +29,7 @@ public class Class6128 implements Class6113
         Class8726.method30010(false);
         final BlockPos class7353 = new BlockPos(n, n2, n3);
         for (final BlockPos class7354 : BlockPos.getAllInBoxMutable(class7353.add(-6, -6, -6), class7353.add(6, 6, 6))) {
-            final Class7096 method6701 = field2391.method6701(class7354);
+            final BlockState method6701 = field2391.method6701(class7354);
             if (method6701.method21696() == Class7521.field29147) {
                 continue;
             }

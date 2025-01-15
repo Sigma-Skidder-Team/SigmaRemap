@@ -7,6 +7,8 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -16,7 +18,7 @@ public class Class3862 extends Class3860
 {
     private static String[] field17488;
     public static final Class7115 field17489;
-    private static final Map<Direction, Class7702> field17490;
+    private static final Map<Direction, VoxelShape> field17490;
     
     public Class3862(final Class9288 class9288, final Class8289 class9289) {
         super(class9288, class9289);
@@ -29,7 +31,7 @@ public class Class3862 extends Class3860
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3862.field17490.get(class7096.method21772((Class7111<Object>)Class3862.field17489));
     }
     

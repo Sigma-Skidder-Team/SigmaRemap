@@ -30,7 +30,7 @@ public class Class4557 extends Class4556
                     if (i >= n || b5 != b6) {
                         class1853.method1287(class1852).method1292(j, i, k);
                         if (!class1851.method6701(class1853).method21722(class1851, class1853)) {
-                            this.method13529(class1851, class1853, (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)class1854.field22116.method1164(random, class1852)).method21773((Class7111<Comparable>)Class4003.field18045, i >= n - 1)).method21773((Class7111<Comparable>)Class4003.field18044, j < -n3)).method21773((Class7111<Comparable>)Class4003.field18042, j > n3)).method21773((Class7111<Comparable>)Class4003.field18041, k < -n3)).method21773((Class7111<Comparable>)Class4003.field18043, k > n3));
+                            this.method13529(class1851, class1853, (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<O, BlockState>)((Class7097<O, BlockState>)((Class7097<O, BlockState>)class1854.field22116.method1164(random, class1852)).method21773((Class7111<Comparable>)Class4003.field18045, i >= n - 1)).method21773((Class7111<Comparable>)Class4003.field18044, j < -n3)).method21773((Class7111<Comparable>)Class4003.field18042, j > n3)).method21773((Class7111<Comparable>)Class4003.field18041, k < -n3)).method21773((Class7111<Comparable>)Class4003.field18043, k > n3));
                         }
                     }
                 }

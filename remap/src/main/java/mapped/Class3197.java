@@ -124,7 +124,7 @@ public class Class3197 extends Class3167
                 }
             }
             else {
-                final int method29340 = Class8639.method29340(Class7739.field31532);
+                final int method29340 = Class8639.method29340(Items.field31532);
                 if (method29340 >= 0) {
                     if (method29340 != Class3197.field15514.field4684.field3006.field2743) {
                         Class3197.field15514.method5269().method17292(new Class4321(method29340));

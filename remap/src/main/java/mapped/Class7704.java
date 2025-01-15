@@ -7,8 +7,9 @@ package mapped;
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import java.util.Arrays;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
+import net.minecraft.util.math.shapes.VoxelShape;
 
-public final class Class7704 extends Class7702
+public final class Class7704 extends VoxelShape
 {
     private final DoubleList field30621;
     private final DoubleList field30622;

@@ -79,7 +79,7 @@ public class Class3352 extends Class3167
     public static void method10610(final BlockPos class354) {
         Class3352.field15514.method5269().method17292(new Class4399(Class2003.field11240, class354, Direction.UP));
         Class3352.field15514.method5269().method17292(new Class4399(Class2003.field11242, class354, Direction.UP));
-        Class3352.field15514.field4683.method6692(class354, new Class7096(Class7521.field29147, (ImmutableMap<Class7111<?>, Comparable<?>>)ImmutableMap.builder().build()));
+        Class3352.field15514.field4683.method6692(class354, new BlockState(Class7521.field29147, (ImmutableMap<Class7111<?>, Comparable<?>>)ImmutableMap.builder().build()));
     }
     
     private boolean method10611(final BlockPos class354) {

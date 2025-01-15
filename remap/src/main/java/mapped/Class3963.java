@@ -6,13 +6,15 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 public class Class3963 extends Class3833
 {
     private static String[] field17905;
     public static final Class7112 field17906;
-    public static final Class7702[] field17907;
+    public static final VoxelShape[] field17907;
     
     public Class3963(final Class9288 class9288) {
         super(class9288);
@@ -20,13 +22,13 @@ public class Class3963 extends Class3833
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3963.field17907[class7096.method21772((Class7111<Integer>)Class3963.field17906)];
     }
     
     @Override
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        if (class7097.field10067) {
+        if (class7097.isRemote) {
             final ItemStack method2715 = class7099.method2715(class7100);
             if (this.method12092(class7097, class7098, class7096, class7099) == Class2201.field13400) {
                 return Class2201.field13400;
@@ -86,6 +88,6 @@ public class Class3963 extends Class3833
     
     static {
         field17906 = Class8970.field37776;
-        field17907 = new Class7702[] { Class3833.method11778(1.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(3.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(5.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(7.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(9.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(11.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(13.0, 0.0, 1.0, 15.0, 8.0, 15.0) };
+        field17907 = new VoxelShape[] { Class3833.method11778(1.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(3.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(5.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(7.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(9.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(11.0, 0.0, 1.0, 15.0, 8.0, 15.0), Class3833.method11778(13.0, 0.0, 1.0, 15.0, 8.0, 15.0) };
     }
 }

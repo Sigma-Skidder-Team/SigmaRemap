@@ -22,7 +22,7 @@ public class Class3263 extends Class3247
                 final ItemStack method20053 = Class3263.field15514.field4684.field3008.method10878(i).method20053();
                 if (method20053 != null) {
                     if (!b) {
-                        if (method20053.method27622() == Class7739.field31341 || method20053.method27622() == Class7739.field31342) {
+                        if (method20053.getItem() == Items.field31341 || method20053.getItem() == Items.field31342) {
                             return i - 36;
                         }
                     }
@@ -45,7 +45,7 @@ public class Class3263 extends Class3247
             if (Class3263.field15514.field4684.field3008.method10878(j).method20054()) {
                 final ItemStack method20055 = Class3263.field15514.field4684.field3008.method10878(j).method20053();
                 if (!b) {
-                    if (method20055.method27622() == Class7739.field31341 || method20055.method27622() == Class7739.field31342) {
+                    if (method20055.getItem() == Items.field31341 || method20055.getItem() == Items.field31342) {
                         Class8639.method29370(j, 4);
                         return -1;
                     }

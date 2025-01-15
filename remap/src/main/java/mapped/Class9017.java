@@ -78,7 +78,7 @@ public class Class9017
     public ItemStack method32281() {
         final int method27690 = this.field38047.method27690();
         final ItemStack method27691 = this.field38047.method27641();
-        method27691.method27691(MathHelper.method35651(method27690 + Math.max(0, MathHelper.method35642(method27690 * this.field38054 * this.field38055)) + this.field38053, 1, this.field38047.method27622().method11708()));
+        method27691.method27691(MathHelper.method35651(method27690 + Math.max(0, MathHelper.method35642(method27690 * this.field38054 * this.field38055)) + this.field38053, 1, this.field38047.getItem().method11708()));
         return method27691;
     }
     
@@ -191,7 +191,7 @@ public class Class9017
             return true;
         }
         final ItemStack method27641 = class8321.method27641();
-        if (method27641.method27622().method11710()) {
+        if (method27641.getItem().method11710()) {
             method27641.method27633(method27641.method27632());
         }
         if (ItemStack.method27645(method27641, class8322)) {

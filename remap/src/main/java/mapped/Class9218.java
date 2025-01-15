@@ -12,70 +12,70 @@ import com.google.common.collect.Lists;
 
 public class Class9218
 {
-    private static final Class7096 field39430;
-    private static final Class7096 field39431;
-    private static final Class7096 field39432;
-    private static final Class7096 field39433;
-    private static final Class7096 field39434;
-    private static final Class7096 field39435;
-    private static final Class7096 field39436;
-    private static final Class7096 field39437;
-    private static final Class7096 field39438;
-    private static final Class7096 field39439;
-    private static final Class7096 field39440;
-    private static final Class7096 field39441;
-    private static final Class7096 field39442;
-    private static final Class7096 field39443;
-    private static final Class7096 field39444;
-    private static final Class7096 field39445;
-    private static final Class7096 field39446;
-    private static final Class7096 field39447;
-    private static final Class7096 field39448;
-    private static final Class7096 field39449;
-    private static final Class7096 field39450;
-    private static final Class7096 field39451;
-    private static final Class7096 field39452;
-    private static final Class7096 field39453;
-    private static final Class7096 field39454;
-    private static final Class7096 field39455;
-    private static final Class7096 field39456;
-    private static final Class7096 field39457;
-    private static final Class7096 field39458;
-    private static final Class7096 field39459;
-    private static final Class7096 field39460;
-    private static final Class7096 field39461;
-    private static final Class7096 field39462;
-    private static final Class7096 field39463;
-    private static final Class7096 field39464;
-    private static final Class7096 field39465;
-    private static final Class7096 field39466;
-    private static final Class7096 field39467;
-    private static final Class7096 field39468;
-    private static final Class7096 field39469;
-    private static final Class7096 field39470;
-    private static final Class7096 field39471;
-    private static final Class7096 field39472;
-    private static final Class7096 field39473;
-    private static final Class7096 field39474;
-    private static final Class7096 field39475;
-    private static final Class7096 field39476;
-    private static final Class7096 field39477;
-    private static final Class7096 field39478;
-    private static final Class7096 field39479;
-    private static final Class7096 field39480;
-    private static final Class7096 field39481;
-    private static final Class7096 field39482;
-    private static final Class7096 field39483;
-    private static final Class7096 field39484;
-    private static final Class7096 field39485;
-    private static final Class7096 field39486;
-    private static final Class7096 field39487;
-    private static final Class7096 field39488;
-    private static final Class7096 field39489;
-    private static final Class7096 field39490;
-    private static final Class7096 field39491;
-    private static final Class7096 field39492;
-    private static final Class7096 field39493;
+    private static final BlockState field39430;
+    private static final BlockState field39431;
+    private static final BlockState field39432;
+    private static final BlockState field39433;
+    private static final BlockState field39434;
+    private static final BlockState field39435;
+    private static final BlockState field39436;
+    private static final BlockState field39437;
+    private static final BlockState field39438;
+    private static final BlockState field39439;
+    private static final BlockState field39440;
+    private static final BlockState field39441;
+    private static final BlockState field39442;
+    private static final BlockState field39443;
+    private static final BlockState field39444;
+    private static final BlockState field39445;
+    private static final BlockState field39446;
+    private static final BlockState field39447;
+    private static final BlockState field39448;
+    private static final BlockState field39449;
+    private static final BlockState field39450;
+    private static final BlockState field39451;
+    private static final BlockState field39452;
+    private static final BlockState field39453;
+    private static final BlockState field39454;
+    private static final BlockState field39455;
+    private static final BlockState field39456;
+    private static final BlockState field39457;
+    private static final BlockState field39458;
+    private static final BlockState field39459;
+    private static final BlockState field39460;
+    private static final BlockState field39461;
+    private static final BlockState field39462;
+    private static final BlockState field39463;
+    private static final BlockState field39464;
+    private static final BlockState field39465;
+    private static final BlockState field39466;
+    private static final BlockState field39467;
+    private static final BlockState field39468;
+    private static final BlockState field39469;
+    private static final BlockState field39470;
+    private static final BlockState field39471;
+    private static final BlockState field39472;
+    private static final BlockState field39473;
+    private static final BlockState field39474;
+    private static final BlockState field39475;
+    private static final BlockState field39476;
+    private static final BlockState field39477;
+    private static final BlockState field39478;
+    private static final BlockState field39479;
+    private static final BlockState field39480;
+    private static final BlockState field39481;
+    private static final BlockState field39482;
+    private static final BlockState field39483;
+    private static final BlockState field39484;
+    private static final BlockState field39485;
+    private static final BlockState field39486;
+    private static final BlockState field39487;
+    private static final BlockState field39488;
+    private static final BlockState field39489;
+    private static final BlockState field39490;
+    private static final BlockState field39491;
+    private static final BlockState field39492;
+    private static final BlockState field39493;
     public static final Class5129 field39494;
     public static final Class5129 field39495;
     public static final Class5129 field39496;
@@ -207,13 +207,13 @@ public class Class9218
     }
     
     public static void method33943(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39461, 7, 2, Lists.newArrayList((Object[])new Class7096[] { Class9218.field39447, Class9218.field39463 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(3))));
-        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39462, 4, 1, Lists.newArrayList((Object[])new Class7096[] { Class9218.field39447, Class9218.field39462 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(1))));
-        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39448, 6, 2, Lists.newArrayList((Object[])new Class7096[] { Class9218.field39447, Class9218.field39463 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(1))));
+        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39461, 7, 2, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39463 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(3))));
+        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39462, 4, 1, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39462 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(1))));
+        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39448, 6, 2, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39463 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(1))));
     }
     
     public static void method33944(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39462, 4, 1, Lists.newArrayList((Object[])new Class7096[] { Class9218.field39447, Class9218.field39462 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(1))));
+        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39462, 4, 1, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39462 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(1))));
     }
     
     public static void method33945(final Class3090 class3090) {
@@ -431,7 +431,7 @@ public class Class9218
     }
     
     public static void method33992(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20013.method13527(new Class5135(Class9218.field39472, new Class7096[] { Class9218.field39458 }, new Class7096[] { Class9218.field39445 }, new Class7096[] { Class9218.field39445 })).method28610(Class7133.field27806.method21889((Object)new Class6933(Class2126.field12401, 0.1f))));
+        class3090.method9849(Class2108.field12228, Class4535.field20013.method13527(new Class5135(Class9218.field39472, new BlockState[] { Class9218.field39458 }, new BlockState[] { Class9218.field39445 }, new BlockState[] { Class9218.field39445 })).method28610(Class7133.field27806.method21889((Object)new Class6933(Class2126.field12401, 0.1f))));
     }
     
     public static void method33993(final Class3090 class3090) {
@@ -521,7 +521,7 @@ public class Class9218
         field39479 = Class7521.field29243.method11878();
         field39480 = Class7521.field29383.method11878();
         field39481 = Class7521.field29337.method11878();
-        field39482 = ((Class7097<O, Class7096>)Class7521.field29819.method11878()).method21773((Class7111<Comparable>)Class3884.field17541, 3);
+        field39482 = ((Class7097<O, BlockState>)Class7521.field29819.method11878()).method21773((Class7111<Comparable>)Class3884.field17541, 3);
         field39483 = Class7521.field29289.method11878();
         field39484 = Class7521.field29338.method11878();
         field39485 = Class7521.field29393.method11878();
@@ -530,9 +530,9 @@ public class Class9218
         field39488 = Class7521.field29549.method11878();
         field39489 = Class7521.field29332.method11878();
         field39490 = Class7521.field29334.method11878();
-        field39491 = ((Class7097<O, Class7096>)Class7521.field29379.method11878()).method21773((Class7111<Comparable>)Class4003.field18046, false);
-        field39492 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29378.method11878()).method21773((Class7111<Comparable>)Class4003.field18045, true)).method21773((Class7111<Comparable>)Class4003.field18046, false);
-        field39493 = ((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29380.method11878()).method21773((Class7111<Comparable>)Class4003.field18045, false)).method21773((Class7111<Comparable>)Class4003.field18046, false);
+        field39491 = ((Class7097<O, BlockState>)Class7521.field29379.method11878()).method21773((Class7111<Comparable>)Class4003.field18046, false);
+        field39492 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29378.method11878()).method21773((Class7111<Comparable>)Class4003.field18045, true)).method21773((Class7111<Comparable>)Class4003.field18046, false);
+        field39493 = ((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29380.method11878()).method21773((Class7111<Comparable>)Class4003.field18045, false)).method21773((Class7111<Comparable>)Class4003.field18046, false);
         field39494 = new Class5099(new Class360(Class9218.field39433), new Class360(Class9218.field39434), new Class379(2, 0)).method15978(4).method15979(2).method15985(3).method15988().method15989();
         field39495 = new Class5099(new Class360(Class9218.field39435), new Class360(Class9218.field39436), new Class379(2, 0)).method15978(4).method15979(8).method15985(3).method15977((List<Class367>)ImmutableList.of((Object)new Class369(0.2f), (Object)new Class371(), (Object)new Class370())).method15988().method15989();
         field39496 = new Class5099(new Class360(Class9218.field39435), new Class360(Class9218.field39436), new Class379(2, 0)).method15978(4).method15979(8).method15985(3).method15988().method15989();
@@ -559,7 +559,7 @@ public class Class9218
         field39517 = new Class5101(new Class360(Class9218.field39435), new Class360(Class9218.field39436)).method15993(10).method15994(20).method15992((List<Class367>)ImmutableList.of((Object)new Class371(), (Object)new Class370())).method15996();
         field39518 = new Class9055(new Class360(Class9218.field39430), new Class375()).method32580(32).method32587();
         field39519 = new Class9055(new Class358().method1165(Class9218.field39430, 1).method1165(Class9218.field39431, 4), new Class375()).method32580(32).method32587();
-        field39520 = new Class9055(new Class358().method1165(Class9218.field39430, 3).method1165(Class9218.field39431, 1), new Class375()).method32579((Set<Class7096>)ImmutableSet.of((Object)Class9218.field39432)).method32580(32).method32587();
+        field39520 = new Class9055(new Class358().method1165(Class9218.field39430, 3).method1165(Class9218.field39431, 1), new Class375()).method32579((Set<BlockState>)ImmutableSet.of((Object)Class9218.field39432)).method32580(32).method32587();
         field39521 = new Class9055(new Class360(Class9218.field39475), new Class375()).method32580(64).method32587();
         field39522 = new Class9055(new Class360(Class9218.field39476), new Class375()).method32580(64).method32587();
         field39523 = new Class9055(new Class358().method1165(Class9218.field39477, 2).method1165(Class9218.field39478, 1), new Class375()).method32580(64).method32587();

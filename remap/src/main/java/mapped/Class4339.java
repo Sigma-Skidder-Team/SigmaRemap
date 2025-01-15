@@ -41,9 +41,9 @@ public class Class4339 implements IPacket<IClientPlayNetHandler>
         this.field19433 = MathHelper.method35642(n2 * 256.0f / 360.0f);
         this.field19434 = field19429;
         this.field19435 = field19430;
-        this.field19429 = (int)(MathHelper.method35654(class5487.x, -3.9, 3.9) * 8000.0);
-        this.field19430 = (int)(MathHelper.method35654(class5487.y, -3.9, 3.9) * 8000.0);
-        this.field19431 = (int)(MathHelper.method35654(class5487.z, -3.9, 3.9) * 8000.0);
+        this.field19429 = (int)(MathHelper.clamp(class5487.x, -3.9, 3.9) * 8000.0);
+        this.field19430 = (int)(MathHelper.clamp(class5487.y, -3.9, 3.9) * 8000.0);
+        this.field19431 = (int)(MathHelper.clamp(class5487.z, -3.9, 3.9) * 8000.0);
     }
     
     public Class4339(final Entity class399) {

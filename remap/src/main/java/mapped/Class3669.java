@@ -21,8 +21,8 @@ public class Class3669 extends Class3666
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
-                if (method2157.method27622() != Class7739.field31425) {
-                    if (method2157.method27622() != Class7739.field31521) {
+                if (method2157.getItem() != Items.field31425) {
+                    if (method2157.getItem() != Items.field31521) {
                         return false;
                     }
                     ++n;
@@ -44,8 +44,8 @@ public class Class3669 extends Class3666
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
-                if (method2157.method27622() != Class7739.field31425) {
-                    if (method2157.method27622() != Class7739.field31521) {
+                if (method2157.getItem() != Items.field31425) {
+                    if (method2157.getItem() != Items.field31521) {
                         return ItemStack.field34174;
                     }
                     ++n;

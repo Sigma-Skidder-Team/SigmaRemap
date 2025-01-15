@@ -11,7 +11,7 @@ import net.minecraft.util.text.ITextComponent;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class463 extends Class436 implements INameable, Class439
+public class Class463 extends TileEntity implements INameable, Class439
 {
     public int field2727;
     public float field2728;

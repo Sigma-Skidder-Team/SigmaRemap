@@ -97,7 +97,7 @@ public class Class3295 extends Class3167
             if (Class3295.field15514.field4683 != null) {
                 if (!Class3361.method10645()) {
                     if (this.method10432(Class3295.field15514.field4684.boundingBox) && !Class3295.field15514.field4684.method1809()) {
-                        final Class7096 method6701 = Class3295.field15514.field4683.method6701(Class3295.field15514.field4684.method1894());
+                        final BlockState method6701 = Class3295.field15514.field4683.method6701(Class3295.field15514.field4684.method1894());
                         if (method6701 != null) {
                             if (!method6701.method21756().method21781()) {
                                 if (method6701.method21756().method21783() > 0.4) {

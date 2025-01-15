@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.function.Predicate;
 
-public abstract class Class4085 extends Class3820
+public abstract class Class4085 extends Item
 {
     public static final Predicate<ItemStack> field18189;
     public static final Predicate<ItemStack> field18190;
@@ -37,7 +37,7 @@ public abstract class Class4085 extends Class3820
     }
     
     static {
-        field18189 = (class8321 -> class8321.method27622().method11742(Class7855.field32276));
-        field18190 = Class4085.field18189.or(class8322 -> class8322.method27622() == Class7739.field31532);
+        field18189 = (class8321 -> class8321.getItem().method11742(Class7855.field32276));
+        field18190 = Class4085.field18189.or(class8322 -> class8322.getItem() == Items.field31532);
     }
 }

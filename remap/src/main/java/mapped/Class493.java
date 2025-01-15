@@ -5,13 +5,13 @@
 package mapped;
 
 import com.google.common.collect.Iterables;
-import com.mojang.authlib.properties.Property;
+
 import javax.annotation.Nullable;
 import java.util.UUID;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.GameProfile;
 
-public class Class493 extends Class436 implements Class439
+public class Class493 extends TileEntity implements Class439
 {
     private GameProfile field2835;
     private int field2836;

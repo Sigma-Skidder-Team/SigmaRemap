@@ -68,7 +68,7 @@ public class Class567 extends Class566
             if (this.field3366.field4700 != null && n5 < 1.0f) {
                 this.field3366.field4700.method2975(n, n2, n3);
             }
-            Class565.method3293(0, 0, method7696, method7697, this.field3373 | MathHelper.method35650(MathHelper.method35654(n5, 0.15, 1.0) * 255.0) << 24);
+            Class565.method3293(0, 0, method7696, method7697, this.field3373 | MathHelper.method35650(MathHelper.clamp(n5, 0.15, 1.0) * 255.0) << 24);
             method7699 = MathHelper.clamp(n5, 0.0f, 1.0f);
         }
         else {

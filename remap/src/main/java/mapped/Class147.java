@@ -23,7 +23,7 @@ public class Class147 extends Class126
     private final Class2053 field432;
     private final List<Class9254> field433;
     private static final Function<Entity, INBT> field434;
-    private static final Function<Class436, INBT> field435;
+    private static final Function<TileEntity, INBT> field435;
     
     private Class147(final Class122[] array, final Class2053 field432, final List<Class9254> list) {
         super(array);

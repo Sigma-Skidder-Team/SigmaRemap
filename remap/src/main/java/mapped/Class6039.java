@@ -10,10 +10,10 @@ import java.util.function.Function;
 
 public class Class6039 extends Class6032<Class4408>
 {
-    private static final Class7096 field24573;
-    private static final Class7096 field24574;
-    private static final Class7096 field24575;
-    private static final Class7096 field24576;
+    private static final BlockState field24573;
+    private static final BlockState field24574;
+    private static final BlockState field24575;
+    private static final BlockState field24576;
     public long field24577;
     public Class8577 field24578;
     
@@ -21,7 +21,7 @@ public class Class6039 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final int n5, final long n6, final Class4408 class1864) {
+    public void method17959(final Random random, final Class1860 class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6, final Class4408 class1864) {
         final int n7 = n5 + 1;
         final int n8 = n & 0xF;
         final int n9 = n2 & 0xF;
@@ -30,11 +30,11 @@ public class Class6039 extends Class6032<Class4408>
         final int n10 = (int)(n4 / 3.0 + 3.0 + random.nextDouble() * 0.25);
         final Mutable class1865 = new Mutable();
         int n11 = -1;
-        Class7096 class1866 = Class6039.field24574;
-        Class7096 class1867 = Class6039.field24574;
+        BlockState class1866 = Class6039.field24574;
+        BlockState class1867 = Class6039.field24574;
         for (int i = 127; i >= 0; --i) {
             class1865.setPos(n8, i, n9);
-            final Class7096 method6701 = class1860.method6701(class1865);
+            final BlockState method6701 = class1860.method6701(class1865);
             if (method6701.method21696() != null && !method6701.method21706()) {
                 if (method6701.method21696() == class1862.method21696()) {
                     if (n11 != -1) {

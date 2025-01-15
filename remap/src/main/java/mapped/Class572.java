@@ -164,10 +164,10 @@ public class Class572 extends Class565
     
     public void method3345(final double n, final double n2) {
         if (this.field3417 - this.field3415 > 234) {
-            this.field3413 = MathHelper.method35654(this.field3413 + n, -(this.field3417 - 234), 0.0);
+            this.field3413 = MathHelper.clamp(this.field3413 + n, -(this.field3417 - 234), 0.0);
         }
         if (this.field3418 - this.field3416 > 113) {
-            this.field3414 = MathHelper.method35654(this.field3414 + n2, -(this.field3418 - 113), 0.0);
+            this.field3414 = MathHelper.clamp(this.field3414 + n2, -(this.field3418 - 113), 0.0);
         }
     }
     

@@ -43,7 +43,7 @@ public class Class8742
     }
     
     public static Map<Class6257, Integer> method30196(final ItemStack class8321) {
-        return method30197((class8321.method27622() != Class7739.field31534) ? class8321.method27662() : Class4034.method12225(class8321));
+        return method30197((class8321.getItem() != Items.field31534) ? class8321.method27662() : Class4034.method12225(class8321));
     }
     
     public static Map<Class6257, Integer> method30197(final Class52 class52) {
@@ -69,13 +69,13 @@ public class Class8742
             e.method306("id", String.valueOf(Class90.field209.method503(class8323)));
             e.method297("lvl", (short)intValue);
             ((AbstractList<Class51>)class8322).add(e);
-            if (class8321.method27622() != Class7739.field31534) {
+            if (class8321.getItem() != Items.field31534) {
                 continue;
             }
             Class4034.method12226(class8321, new Class6827(class8323, intValue));
         }
         if (!class8322.isEmpty()) {
-            if (class8321.method27622() != Class7739.field31534) {
+            if (class8321.getItem() != Items.field31534) {
                 class8321.method27676("Enchantments", class8322);
             }
         }
@@ -129,7 +129,7 @@ public class Class8742
             method30200(class513, class511.method1802());
         }
         if (class512 instanceof Class512) {
-            method30199(class513, class511.method2713());
+            method30199(class513, class511.getHeldItemMainhand());
         }
     }
     
@@ -139,7 +139,7 @@ public class Class8742
             method30200(class513, class511.method1802());
         }
         if (class511 instanceof Class512) {
-            method30199(class513, class511.method2713());
+            method30199(class513, class511.getHeldItemMainhand());
         }
     }
     
@@ -241,7 +241,7 @@ public class Class8742
     }
     
     public static int method30223(final Random random, final int n, int n2, final ItemStack class8321) {
-        if (class8321.method27622().method11734() <= 0) {
+        if (class8321.getItem().method11734() <= 0) {
             return 0;
         }
         if (n2 > 15) {
@@ -256,9 +256,9 @@ public class Class8742
     
     public static ItemStack method30224(final Random random, ItemStack class8321, final int n, final boolean b) {
         final List<Class6827> method30225 = method30225(random, class8321, n, b);
-        final boolean b2 = class8321.method27622() == Class7739.field31370;
+        final boolean b2 = class8321.getItem() == Items.field31370;
         if (b2) {
-            class8321 = new ItemStack(Class7739.field31534);
+            class8321 = new ItemStack(Items.field31534);
         }
         for (final Class6827 class8322 : method30225) {
             if (!b2) {
@@ -273,7 +273,7 @@ public class Class8742
     
     public static List<Class6827> method30225(final Random random, final ItemStack class8321, int method35651, final boolean b) {
         final ArrayList arrayList = Lists.newArrayList();
-        final int method35652 = class8321.method27622().method11734();
+        final int method35652 = class8321.getItem().method11734();
         if (method35652 > 0) {
             method35651 = method35651 + 1 + random.nextInt(method35652 / 4 + 1) + random.nextInt(method35652 / 4 + 1);
             method35651 = MathHelper.method35651(Math.round(method35651 + method35651 * ((random.nextFloat() + random.nextFloat() - 1.0f) * 0.15f)), 1, Integer.MAX_VALUE);
@@ -317,8 +317,8 @@ public class Class8742
     
     public static List<Class6827> method30228(final int n, final ItemStack class8321, final boolean b) {
         final ArrayList arrayList = Lists.newArrayList();
-        final Class3820 method27622 = class8321.method27622();
-        final boolean b2 = class8321.method27622() == Class7739.field31370;
+        final Item method27622 = class8321.getItem();
+        final boolean b2 = class8321.getItem() == Items.field31370;
         for (final Class6257 class8322 : Class90.field209) {
             if (class8322.method18603() && !b) {
                 continue;

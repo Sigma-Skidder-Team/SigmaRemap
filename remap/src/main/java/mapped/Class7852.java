@@ -24,7 +24,7 @@ public class Class7852
     }
     
     public static double method25390(final int n) {
-        final double method35654 = MathHelper.method35654(n / 4096.0 * 0.995 * 2.0 - 1.0, -1.0, 1.0);
+        final double method35654 = MathHelper.clamp(n / 4096.0 * 0.995 * 2.0 - 1.0, -1.0, 1.0);
         return MathHelper.sqrt(1.0 - method35654 * method35654);
     }
 }

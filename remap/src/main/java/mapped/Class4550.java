@@ -96,7 +96,7 @@ public class Class4550 extends Class4535<Class5143>
                             b6 = true;
                         }
                         final boolean b7 = b6;
-                        this.method13529(class1851, class1855.setPos(class1853.method34619() + i, class1853.method34622() + k, class1853.method34620() + j), (Class7096)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17465, b5 && j != -2)).method21773((Class7111<Comparable>)Class3853.field17467, b5 && j != 2)).method21773((Class7111<Comparable>)Class3853.field17468, b7 && i != -2)).method21773((Class7111<Comparable>)Class3853.field17466, b7 && i != 2));
+                        this.method13529(class1851, class1855.setPos(class1853.method34619() + i, class1853.method34622() + k, class1853.method34620() + j), (BlockState)((Class7097<Object, Object>)((Class7097<Object, Object>)((Class7097<O, BlockState>)((Class7097<O, BlockState>)Class7521.field29381.method11878()).method21773((Class7111<Comparable>)Class3853.field17465, b5 && j != -2)).method21773((Class7111<Comparable>)Class3853.field17467, b5 && j != 2)).method21773((Class7111<Comparable>)Class3853.field17468, b7 && i != -2)).method21773((Class7111<Comparable>)Class3853.field17466, b7 && i != 2));
                     }
                 }
             }

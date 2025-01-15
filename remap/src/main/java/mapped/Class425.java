@@ -67,7 +67,7 @@ public class Class425 extends Entity
         final Vec3d method35643 = class514.mul(0.6 / method35642 + 0.5 + this.rand.nextGaussian() * 0.0045, 0.6 / method35642 + 0.5 + this.rand.nextGaussian() * 0.0045, 0.6 / method35642 + 0.5 + this.rand.nextGaussian() * 0.0045);
         this.method1936(method35643);
         this.rotationYaw = (float)(MathHelper.method35693(method35643.x, method35643.z) * 57.2957763671875);
-        this.rotationPitch = (float)(MathHelper.method35693(method35643.y, MathHelper.sqrt(Entity.method1680(method35643))) * 57.2957763671875);
+        this.rotationPitch = (float)(MathHelper.method35693(method35643.y, MathHelper.sqrt(Entity.horizontalMag(method35643))) * 57.2957763671875);
         this.prevRotationYaw = this.rotationYaw;
         this.prevRotationPitch = this.rotationPitch;
     }
@@ -99,7 +99,7 @@ public class Class425 extends Entity
     public void method1659() {
         super.method1659();
         if (this.field2586 != null) {
-            if (this.world.field10067 || !this.method2072()) {
+            if (this.world.isRemote || !this.method2072()) {
                 if (this.field2584) {
                     ++this.field2585;
                     if (this.field2585 >= 1200) {
@@ -134,7 +134,7 @@ public class Class425 extends Entity
                                 n += Math.signum(n) * 0.1;
                             }
                             this.setMotion(method21784.x * 0.9, method21784.y - n * this.rand.nextFloat() * 0.2, method21784.z * 0.9);
-                            if (!this.world.field10067) {
+                            if (!this.world.isRemote) {
                                 if (method21782 > 0.0f) {
                                     this.method2076(class354);
                                 }
@@ -152,7 +152,7 @@ public class Class425 extends Entity
                             this.field2593 = Class2064.field11818;
                             return;
                         }
-                        if (!this.world.field10067) {
+                        if (!this.world.isRemote) {
                             this.method2074();
                         }
                         if (!this.field2584) {
@@ -182,10 +182,10 @@ public class Class425 extends Entity
     }
     
     private boolean method2072() {
-        final ItemStack method2713 = this.field2586.method2713();
+        final ItemStack method2713 = this.field2586.getHeldItemMainhand();
         final ItemStack method2714 = this.field2586.method2714();
-        final boolean b = method2713.method27622() == Class7739.field31376;
-        final boolean b2 = method2714.method27622() == Class7739.field31376;
+        final boolean b = method2713.getItem() == Items.field31376;
+        final boolean b2 = method2714.getItem() == Items.field31376;
         if (!this.field2586.removed) {
             if (this.field2586.method1768()) {
                 if (b || b2) {
@@ -201,7 +201,7 @@ public class Class425 extends Entity
     
     private void method2073() {
         final Vec3d method1935 = this.getMotion();
-        final float method1936 = MathHelper.sqrt(Entity.method1680(method1935));
+        final float method1936 = MathHelper.sqrt(Entity.horizontalMag(method1935));
         this.rotationYaw = (float)(MathHelper.method35693(method1935.x, method1935.z) * 57.2957763671875);
         this.rotationPitch = (float)(MathHelper.method35693(method1935.y, method1936) * 57.2957763671875);
         while (this.rotationPitch - this.prevRotationPitch < -180.0f) {
@@ -221,7 +221,7 @@ public class Class425 extends Entity
     }
     
     private void method2074() {
-        final Class7006 method23093 = Class7476.method23093(this, this.method1886().method18493(this.getMotion()).method18496(1.0), class399 -> {
+        final Class7006 method23093 = Class7476.method23093(this, this.getBoundingBox().method18493(this.getMotion()).method18496(1.0), class399 -> {
             final boolean b;
             if (!class399.isSpectator()) {
                 if (class399.method1749() || class399 instanceof Class427) {
@@ -351,11 +351,11 @@ public class Class425 extends Entity
     }
     
     public int method2077(final ItemStack class8321) {
-        if (!this.world.field10067 && this.field2586 != null) {
+        if (!this.world.isRemote && this.field2586 != null) {
             int n = 0;
             if (this.field2592 == null) {
                 if (this.field2588 > 0) {
-                    final List<ItemStack> method34485 = this.world.method6679().method1581().method6402(Class9020.field38116).method34485(new Class9098((Class1849)this.world).method32877(Class6683.field26367, new BlockPos(this)).method32877(Class6683.field26370, class8321).method32873(this.rand).method32876(this.field2594 + this.field2586.method2907()).method32883(Class7104.field27714));
+                    final List<ItemStack> method34485 = this.world.getServer().method1581().method6402(Class9020.field38116).method34485(new Class9098((Class1849)this.world).method32877(Class6683.field26367, new BlockPos(this)).method32877(Class6683.field26370, class8321).method32873(this.rand).method32876(this.field2594 + this.field2586.method2907()).method32883(Class7104.field27714));
                     Class7770.field31804.method13808((Class513)this.field2586, class8321, this, method34485);
                     for (final ItemStack class8322 : method34485) {
                         final Class427 class8323 = new Class427(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), class8322);
@@ -365,7 +365,7 @@ public class Class425 extends Entity
                         class8323.setMotion(n2 * 0.1, n3 * 0.1 + Math.sqrt(Math.sqrt(n2 * n2 + n3 * n3 + n4 * n4)) * 0.08, n4 * 0.1);
                         this.world.method6886(class8323);
                         this.field2586.world.method6886(new Class508(this.field2586.world, this.field2586.getPosX(), this.field2586.getPosY() + 0.5, this.field2586.getPosZ() + 0.5, this.rand.nextInt(6) + 1));
-                        if (!class8322.method27622().method11742(Class7855.field32272)) {
+                        if (!class8322.getItem().method11742(Class7855.field32272)) {
                             continue;
                         }
                         this.field2586.method2858(Class8276.field34020, 1);
@@ -391,7 +391,7 @@ public class Class425 extends Entity
     @Override
     public void method1798(final byte b) {
         if (b == 31) {
-            if (this.world.field10067) {
+            if (this.world.isRemote) {
                 if (this.field2592 instanceof Class512) {
                     if (((Class512)this.field2592).method2843()) {
                         this.method2078();

@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+
 public interface Class2041
 {
-    Class7702 method8120(final Class7096 p0, final Class1855 p1, final BlockPos p2, final ISelectionContext p3);
+    VoxelShape method8120(final BlockState p0, final Class1855 p1, final BlockPos p2, final ISelectionContext p3);
 }

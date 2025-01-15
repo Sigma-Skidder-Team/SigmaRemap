@@ -13,8 +13,8 @@ import com.mojang.datafixers.Dynamic;
 
 public class Class359 extends Class357
 {
-    private static final Class7096[] field2186;
-    private static final Class7096[] field2187;
+    private static final BlockState[] field2186;
+    private static final BlockState[] field2187;
     
     public Class359() {
         super(Class8804.field37006);
@@ -25,7 +25,7 @@ public class Class359 extends Class357
     }
     
     @Override
-    public Class7096 method1164(final Random random, final BlockPos class354) {
+    public BlockState method1164(final Random random, final BlockPos class354) {
         if (Class3090.field15442.method29027(class354.getX() / 200.0, class354.getZ() / 200.0, false) >= -0.8) {
             return (random.nextInt(3) <= 0) ? Class7521.field29265.method11878() : Class359.field2187[random.nextInt(Class359.field2187.length)];
         }
@@ -40,7 +40,7 @@ public class Class359 extends Class357
     }
     
     static {
-        field2186 = new Class7096[] { Class7521.field29271.method11878(), Class7521.field29270.method11878(), Class7521.field29273.method11878(), Class7521.field29272.method11878() };
-        field2187 = new Class7096[] { Class7521.field29266.method11878(), Class7521.field29269.method11878(), Class7521.field29274.method11878(), Class7521.field29275.method11878() };
+        field2186 = new BlockState[] { Class7521.field29271.method11878(), Class7521.field29270.method11878(), Class7521.field29273.method11878(), Class7521.field29272.method11878() };
+        field2187 = new BlockState[] { Class7521.field29266.method11878(), Class7521.field29269.method11878(), Class7521.field29274.method11878(), Class7521.field29275.method11878() };
     }
 }

@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 import java.util.function.Supplier;
 
-public abstract class Class3864<E extends Class436> extends Class3841
+public abstract class Class3864<E extends TileEntity> extends Class3841
 {
     public final Supplier<Class5412<? extends E>> field17495;
     
@@ -17,5 +17,5 @@ public abstract class Class3864<E extends Class436> extends Class3841
         this.field17495 = field17495;
     }
     
-    public abstract Class7191<? extends Class475> method11929(final Class7096 p0, final World p1, final BlockPos p2, final boolean p3);
+    public abstract Class7191<? extends Class475> method11929(final BlockState p0, final World p1, final BlockPos p2, final boolean p3);
 }

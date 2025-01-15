@@ -26,7 +26,7 @@ public class Class7071
     private final StringReader field27537;
     private final boolean field27538;
     private final Map<Class7111<?>, Comparable<?>> field27539;
-    private Class3820 field27540;
+    private Item field27540;
     private Class51 field27541;
     private Class1932 field27542;
     private int field27543;
@@ -40,7 +40,7 @@ public class Class7071
         this.field27538 = field27538;
     }
     
-    public Class3820 method21626() {
+    public Item method21626() {
         return this.field27540;
     }
     

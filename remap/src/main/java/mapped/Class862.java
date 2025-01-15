@@ -99,8 +99,8 @@ public class Class862 extends Class860
     @Override
     public boolean method5189() {
         if (this.world.method6977(this)) {
-            final Class7096 method6701 = this.world.method6701(this.field4599.method1149(this.field4600.getOpposite()));
-            return (method6701.method21697().method26439() || (this.field4600.getAxis().isHorizontal() && Class3895.method11975(method6701))) && this.world.method6737(this, this.method1886(), Class862.field4597).isEmpty();
+            final BlockState method6701 = this.world.method6701(this.field4599.method1149(this.field4600.getOpposite()));
+            return (method6701.method21697().method26439() || (this.field4600.getAxis().isHorizontal() && Class3895.method11975(method6701))) && this.world.method6737(this, this.getBoundingBox(), Class862.field4597).isEmpty();
         }
         return false;
     }
@@ -122,7 +122,7 @@ public class Class862 extends Class860
             return false;
         }
         if (!class7929.method25707() && !this.method5198().method27620()) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.method5196(class7929.method25714(), false);
                 this.method1695(Class8520.field35324, 1.0f, 1.0f);
             }
@@ -167,7 +167,7 @@ public class Class862 extends Class860
                 return;
             }
             if (b) {
-                this.method1764(Class7739.field31515);
+                this.method1764(Items.field31515);
             }
             if (!method5198.method27620()) {
                 final ItemStack method5199 = method5198.method27641();
@@ -183,7 +183,7 @@ public class Class862 extends Class860
     }
     
     private void method5197(final ItemStack class8321) {
-        if (class8321.method27622() == Class7739.field31425) {
+        if (class8321.getItem() == Items.field31425) {
             final Class6356 method12328 = Class4094.method12328(class8321, this.world);
             method12328.method18924(this.field4599, this.getEntityId());
             method12328.method18904(true);
@@ -296,7 +296,7 @@ public class Class862 extends Class860
         final ItemStack method2715 = class512.method2715(class513);
         final boolean b = !this.method5198().method27620();
         final boolean b2 = !method2715.method27620();
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             return b || b2;
         }
         if (b) {

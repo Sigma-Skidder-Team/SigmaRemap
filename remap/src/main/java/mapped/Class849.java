@@ -80,7 +80,7 @@ public class Class849 extends Class763
                 this.method1936(this.getMotion().mul(1.0, 0.6, 1.0));
             }
         }
-        if (this.world.field10067) {
+        if (this.world.isRemote) {
             if (this.rand.nextInt(24) == 0) {
                 if (!this.method1696()) {
                     this.world.method6708(this.getPosX() + 0.5, this.getPosY() + 0.5, this.getPosZ() + 0.5, Class8520.field35028, this.method1922(), 1.0f + this.rand.nextFloat(), this.rand.nextFloat() * 0.7f + 0.3f, false);

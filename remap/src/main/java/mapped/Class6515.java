@@ -15,11 +15,11 @@ import java.util.Set;
 public class Class6515 extends Class6516
 {
     private static String[] field25926;
-    private final Class394 field25927;
+    private final MinecraftServer field25927;
     private final Set<Class9290> field25928;
     private Runnable[] field25929;
     
-    public Class6515(final Class394 field25927) {
+    public Class6515(final MinecraftServer field25927) {
         this.field25928 = Sets.newHashSet();
         this.field25929 = new Runnable[0];
         this.field25927 = field25927;

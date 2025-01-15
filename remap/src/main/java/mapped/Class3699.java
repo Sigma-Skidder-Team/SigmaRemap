@@ -10,7 +10,6 @@ import java.nio.file.Path;
 import com.mojang.authlib.GameProfileRepository;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.google.gson.JsonElement;
-import com.mojang.brigadier.tree.CommandNode;
 import com.mojang.brigadier.CommandDispatcher;
 import java.nio.file.Paths;
 import java.io.File;
@@ -34,7 +33,7 @@ public class Class3699 implements Class3689
         final MinecraftSessionService minecraftSessionService = yggdrasilAuthenticationService.createMinecraftSessionService();
         final GameProfileRepository profileRepository = yggdrasilAuthenticationService.createProfileRepository();
         final File parent = new File(this.field17017.method22099().toFile(), "tmp");
-        final Class8608 class8843 = new Class8608(profileRepository, new File(parent, Class394.field2293.getName()));
+        final Class8608 class8843 = new Class8608(profileRepository, new File(parent, MinecraftServer.field2293.getName()));
         final Class7794 class8844 = new Class7794(Paths.get("server.properties", new String[0]));
         final Class395 class8845 = new Class395(parent, class8844, Class5494.method16768(), yggdrasilAuthenticationService, minecraftSessionService, profileRepository, class8843, Class6460::new, class8844.method25121().field39779);
         final Path resolve = this.field17017.method22099().resolve("reports/commands.json");

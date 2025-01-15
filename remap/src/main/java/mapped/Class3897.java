@@ -17,46 +17,46 @@ public class Class3897 extends Class3895
     
     public Class3897(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3897.field17564, Direction.NORTH)).method21773((Class7111<Comparable>)Class3897.field17583, 1)).method21773((Class7111<Comparable>)Class3897.field17582, false)).method21773((Class7111<Comparable>)Class3897.field17578, false));
+        this.method11877(((Class7097<O, BlockState>)((Class7097<O, BlockState>)((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3897.field17564, Direction.NORTH)).method21773((Class7111<Comparable>)Class3897.field17583, 1)).method21773((Class7111<Comparable>)Class3897.field17582, false)).method21773((Class7111<Comparable>)Class3897.field17578, false));
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
         if (class7099.field3025.field27305) {
-            class7097.method6688(class7098, ((Class7097<O, Class7096>)class7096).method21768((Class7111<Comparable>)Class3897.field17583), 3);
+            class7097.method6688(class7098, ((Class7097<O, BlockState>)class7096).method21768((Class7111<Comparable>)Class3897.field17583), 3);
             return Class2201.field13400;
         }
         return Class2201.field13402;
     }
     
     @Override
-    public int method11977(final Class7096 class7096) {
+    public int method11977(final BlockState class7096) {
         return class7096.method21772((Class7111<Integer>)Class3897.field17583) * 2;
     }
     
     @Override
-    public Class7096 method11846(final Class7074 class7074) {
-        final Class7096 method11846 = super.method11846(class7074);
-        return ((Class7097<Object, Class7096>)method11846).method21773((Class7111<Comparable>)Class3897.field17582, this.method11967(class7074.method21654(), class7074.method21639(), method11846));
+    public BlockState method11846(final Class7074 class7074) {
+        final BlockState method11846 = super.method11846(class7074);
+        return ((Class7097<Object, BlockState>)method11846).method21773((Class7111<Comparable>)Class3897.field17582, this.method11967(class7074.method21654(), class7074.method21639(), method11846));
     }
     
     @Override
-    public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return (!class7099.method6678() && class7097.getAxis() != class7096.method21772((Class7111<Direction>)Class3897.field17564).getAxis()) ? ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3897.field17582, this.method11967(class7099, class7100, class7096)) : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+    public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
+        return (!class7099.isRemote() && class7097.getAxis() != class7096.method21772((Class7111<Direction>)Class3897.field17564).getAxis()) ? ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3897.field17582, this.method11967(class7099, class7100, class7096)) : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
-    public boolean method11967(final Class1852 class1852, final BlockPos class1853, final Class7096 class1854) {
+    public boolean method11967(final Class1852 class1852, final BlockPos class1853, final BlockState class1854) {
         return this.method11970(class1852, class1853, class1854) > 0;
     }
     
     @Override
-    public boolean method11973(final Class7096 class7096) {
+    public boolean method11973(final BlockState class7096) {
         return Class3895.method11975(class7096);
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((Class7111<Boolean>)Class3897.field17578)) {
             final Direction class7099 = class7096.method21772((Class7111<Direction>)Class3897.field17564);
             final double n = class7098.getX() + 0.5f + (random.nextFloat() - 0.5f) * 0.2;
@@ -72,7 +72,7 @@ public class Class3897 extends Class3895
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Class3833, BlockState> class9500) {
         class9500.method35378(Class3897.field17564, Class3897.field17583, Class3897.field17582, Class3897.field17578);
     }
     

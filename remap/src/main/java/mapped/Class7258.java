@@ -23,8 +23,8 @@ public abstract class Class7258 extends Class7257
     }
     
     @Override
-    public Class3820 method22149() {
-        return Class7739.field31350;
+    public Item method22149() {
+        return Items.field31350;
     }
     
     @Override
@@ -51,7 +51,7 @@ public abstract class Class7258 extends Class7257
     }
     
     @Override
-    public void method22180(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853) {
+    public void method22180(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
         Class3833.method11837(class1853, class1851.method6744(), class1852, class1853.method21696().method11802() ? class1851.method6727(class1852) : null);
     }
     
@@ -61,8 +61,8 @@ public abstract class Class7258 extends Class7257
     }
     
     @Override
-    public Class7096 method22162(final Class7099 class7099) {
-        return ((Class7097<O, Class7096>)Class7521.field29173.method11878()).method21773((Class7111<Comparable>)Class3859.field17480, Class7257.method22193(class7099));
+    public BlockState method22162(final Class7099 class7099) {
+        return ((Class7097<O, BlockState>)Class7521.field29173.method11878()).method21773((Class7111<Comparable>)Class3859.field17480, Class7257.method22193(class7099));
     }
     
     @Override

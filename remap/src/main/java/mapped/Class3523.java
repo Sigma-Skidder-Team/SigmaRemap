@@ -41,7 +41,7 @@ public class Class3523 extends Class3446
                     return false;
                 }
                 final BlockPos class354 = new BlockPos(this.field16528);
-                final Class7096 method4489 = this.field16527.world.method6701(class354);
+                final BlockState method4489 = this.field16527.world.method6701(class354);
                 if (method4489.method21696().method11785(Class7188.field27910)) {
                     final Direction class355 = method4489.method21772((Class7111<Direction>)Class3900.field17564);
                     this.field16529 = new BlockPos(class354.getX() - class355.getXOffset(), class354.getY(), class354.getZ() - class355.getZOffset());
@@ -112,7 +112,7 @@ public class Class3523 extends Class3446
         class385.method1285(this.field16527);
         this.field16527.method2775(class385.getX() + method2633.nextInt(11) - 5, class385.getY() + method2633.nextInt(5) - 2, class385.getZ() + method2633.nextInt(11) - 5, false);
         class385.method1285(this.field16527);
-        final Iterator<ItemStack> iterator = this.field16527.world.method6679().method1581().method6402(Class9020.field38120).method34485(new Class9098((Class1849)this.field16527.world).method32877(Class6683.field26367, class385).method32877(Class6683.field26362, this.field16527).method32873(method2633).method32883(Class7104.field27716)).iterator();
+        final Iterator<ItemStack> iterator = this.field16527.world.getServer().method1581().method6402(Class9020.field38120).method34485(new Class9098((Class1849)this.field16527.world).method32877(Class6683.field26367, class385).method32877(Class6683.field26362, this.field16527).method32873(method2633).method32883(Class7104.field27716)).iterator();
         while (iterator.hasNext()) {
             this.field16527.world.method6886(new Class427(this.field16527.world, class385.getX() - MathHelper.sin(this.field16527.field2951 * 0.017453292f), class385.getY(), class385.getZ() + MathHelper.cos(this.field16527.field2951 * 0.017453292f), iterator.next()));
         }

@@ -47,7 +47,7 @@ public class Class3674 extends Class3666
     }
     
     public ItemStack method11303(final Class473 class473) {
-        final ItemStack class474 = new ItemStack(Class7739.field31532, 3);
+        final ItemStack class474 = new ItemStack(Items.field31532, 3);
         final Class51 method27659 = class474.method27659("Fireworks");
         final Class52 class475 = new Class52();
         int n = 0;
@@ -81,7 +81,7 @@ public class Class3674 extends Class3666
     
     @Override
     public ItemStack method11292() {
-        return new ItemStack(Class7739.field31532);
+        return new ItemStack(Items.field31532);
     }
     
     @Override
@@ -90,8 +90,8 @@ public class Class3674 extends Class3666
     }
     
     static {
-        field16959 = Class120.method618(Class7739.field31369);
-        field16960 = Class120.method618(Class7739.field31308);
-        field16961 = Class120.method618(Class7739.field31533);
+        field16959 = Class120.method618(Items.field31369);
+        field16960 = Class120.method618(Items.field31308);
+        field16961 = Class120.method618(Items.field31533);
     }
 }

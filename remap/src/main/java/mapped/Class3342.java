@@ -76,7 +76,7 @@ public class Class3342 extends Class3167
                             if (method10579 >= 0) {
                                 Class3342.field15514.method5269().method17292(new Class4321(method10579));
                             }
-                            if (method10579 >= 0 || Class3342.field15514.field4684.method2715(Class316.field1877).method27622() instanceof Class4036) {
+                            if (method10579 >= 0 || Class3342.field15514.field4684.method2715(Class316.field1877).getItem() instanceof Class4036) {
                                 Class3342.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(Class3342.field15514.field4684.method1934().add(0.0, -2.0, 0.0), Direction.UP, Class3342.field15514.field4684.method1894().add(0, -2, 0), false)));
                             }
                             if (method10579 >= 0) {
@@ -107,7 +107,7 @@ public class Class3342 extends Class3167
     
     public int method10579() {
         for (int i = 36; i < 45; ++i) {
-            if (Class3342.field15514.field4684.field3008.method10878(i).method20054() && Class3342.field15514.field4684.field3008.method10878(i).method20053().method27622() instanceof Class4036) {
+            if (Class3342.field15514.field4684.field3008.method10878(i).method20054() && Class3342.field15514.field4684.field3008.method10878(i).method20053().getItem() instanceof Class4036) {
                 if (i - 36 == Class3342.field15514.field4684.field3006.field2743) {
                     i = 34;
                 }

@@ -44,7 +44,7 @@ public class Class3555<T extends LivingEntity> extends Class3545
     }
     
     public AxisAlignedBB method11103(final double n) {
-        return this.field16602.method1886().method18495(n, 4.0, n);
+        return this.field16602.getBoundingBox().method18495(n, 4.0, n);
     }
     
     public void method11104() {

@@ -19,7 +19,7 @@ public class Class3678 extends Class3666
     private static final Class120 field16964;
     private static final Class120 field16965;
     private static final Class120 field16966;
-    private static final Map<Class3820, Class2141> field16967;
+    private static final Map<Item, Class2141> field16967;
     private static final Class120 field16968;
     
     public Class3678(final Class1932 class1932) {
@@ -39,7 +39,7 @@ public class Class3678 extends Class3666
                     if (!Class3678.field16966.test(method2157)) {
                         if (!Class3678.field16965.test(method2157)) {
                             if (!Class3678.field16968.test(method2157)) {
-                                if (!(method2157.method27622() instanceof Class3829)) {
+                                if (!(method2157.getItem() instanceof Class3829)) {
                                     return false;
                                 }
                                 b = true;
@@ -77,7 +77,7 @@ public class Class3678 extends Class3666
     }
     
     public ItemStack method11303(final Class473 class473) {
-        final ItemStack class474 = new ItemStack(Class7739.field31533);
+        final ItemStack class474 = new ItemStack(Items.field31533);
         final Class51 method27659 = class474.method27659("Explosion");
         Class2141 field12605 = Class2141.field12605;
         final ArrayList arrayList = Lists.newArrayList();
@@ -87,8 +87,8 @@ public class Class3678 extends Class3666
                 if (!Class3678.field16964.test(method27660)) {
                     if (!Class3678.field16966.test(method27660)) {
                         if (!Class3678.field16965.test(method27660)) {
-                            if (method27660.method27622() instanceof Class3829) {
-                                arrayList.add(((Class3829)method27660.method27622()).method11767().method817());
+                            if (method27660.getItem() instanceof Class3829) {
+                                arrayList.add(((Class3829)method27660.getItem()).method11767().method817());
                             }
                         }
                         else {
@@ -100,7 +100,7 @@ public class Class3678 extends Class3666
                     }
                 }
                 else {
-                    field12605 = Class3678.field16967.get(method27660.method27622());
+                    field12605 = Class3678.field16967.get(method27660.getItem());
                 }
             }
         }
@@ -116,7 +116,7 @@ public class Class3678 extends Class3666
     
     @Override
     public ItemStack method11292() {
-        return new ItemStack(Class7739.field31533);
+        return new ItemStack(Items.field31533);
     }
     
     @Override
@@ -125,21 +125,21 @@ public class Class3678 extends Class3666
     }
     
     static {
-        field16964 = Class120.method618(Class7739.field31511, Class7739.field31307, Class7739.field31439, Class7739.field31523, Class7739.field31524, Class7739.field31527, Class7739.field31525, Class7739.field31528, Class7739.field31526);
-        field16965 = Class120.method618(Class7739.field31283);
-        field16966 = Class120.method618(Class7739.field31378);
+        field16964 = Class120.method618(Items.field31511, Items.field31307, Items.field31439, Items.field31523, Items.field31524, Items.field31527, Items.field31525, Items.field31528, Items.field31526);
+        field16965 = Class120.method618(Items.field31283);
+        field16966 = Class120.method618(Items.field31378);
         field16967 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
-            hashMap.put(Class7739.field31511, Class2141.field12606);
-            hashMap.put(Class7739.field31307, Class2141.field12609);
-            hashMap.put(Class7739.field31439, Class2141.field12607);
-            hashMap.put(Class7739.field31523, Class2141.field12608);
-            hashMap.put(Class7739.field31524, Class2141.field12608);
-            hashMap.put(Class7739.field31527, Class2141.field12608);
-            hashMap.put(Class7739.field31525, Class2141.field12608);
-            hashMap.put(Class7739.field31528, Class2141.field12608);
-            hashMap.put(Class7739.field31526, Class2141.field12608);
+            hashMap.put(Items.field31511, Class2141.field12606);
+            hashMap.put(Items.field31307, Class2141.field12609);
+            hashMap.put(Items.field31439, Class2141.field12607);
+            hashMap.put(Items.field31523, Class2141.field12608);
+            hashMap.put(Items.field31524, Class2141.field12608);
+            hashMap.put(Items.field31527, Class2141.field12608);
+            hashMap.put(Items.field31525, Class2141.field12608);
+            hashMap.put(Items.field31528, Class2141.field12608);
+            hashMap.put(Items.field31526, Class2141.field12608);
             return;
         });
-        field16968 = Class120.method618(Class7739.field31308);
+        field16968 = Class120.method618(Items.field31308);
     }
 }

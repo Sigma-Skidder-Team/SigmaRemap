@@ -158,7 +158,7 @@ public class Class9066
     private static Class8444 method32645() {
         if (Class9066.field38383.field9343 == null) {
             if (Class9066.field38385.field41133 != null) {
-                final Class436 field41133 = Class9066.field38385.field41133;
+                final TileEntity field41133 = Class9066.field38385.field41133;
                 if (field41133.method2186() != null) {
                     Class9066.field38386.method28186(field41133);
                     return Class9066.field38386;

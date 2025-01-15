@@ -36,7 +36,7 @@ public class Class4018 extends Class4017
     
     @Override
     public void method11850(final Class7096 class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
-        if (!class7097.field10067) {
+        if (!class7097.isRemote) {
             if (!class7096.method21772((Class7111<Boolean>)Class4018.field18098)) {
                 this.method12206(class7097, class7098, class7096);
             }

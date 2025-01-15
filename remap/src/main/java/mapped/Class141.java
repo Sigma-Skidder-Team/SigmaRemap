@@ -36,7 +36,7 @@ public class Class141 extends Class126
         else {
             final ArrayList arrayList = Lists.newArrayList();
             for (final Class6257 class8324 : Class90.field209) {
-                if (class8321.method27622() != Class7739.field31370 && !class8324.method18600(class8321)) {
+                if (class8321.getItem() != Items.field31370 && !class8324.method18600(class8321)) {
                     continue;
                 }
                 arrayList.add(class8324);
@@ -48,11 +48,11 @@ public class Class141 extends Class126
             class8323 = (Class6257)arrayList.get(method23586.nextInt(arrayList.size()));
         }
         final int method23587 = MathHelper.method35658(method23586, class8323.method18593(), class8323.method18588());
-        if (class8321.method27622() != Class7739.field31370) {
+        if (class8321.getItem() != Items.field31370) {
             class8321.method27674(class8323, method23587);
         }
         else {
-            class8321 = new ItemStack(Class7739.field31534);
+            class8321 = new ItemStack(Items.field31534);
             Class4034.method12226(class8321, new Class6827(class8323, method23587));
         }
         return class8321;

@@ -39,18 +39,18 @@ public class Class9593
         return 31 * this.field41817.hashCode() + this.field41818.hashCode();
     }
     
-    public static Class9593 method35977(final Class7096 class7098, final Class7686 class7097, final Collection<Class7111<?>> collection) {
+    public static Class9593 method35977(final BlockState class7098, final Class7686 class7097, final Collection<Class7111<?>> collection) {
         return new Class9593(class7097.method24404().stream().filter(class7101 -> {
             class7098.method21696().method11876();
             return class7101.method32116(class7099).test(class7100);
         }).map((Function<? super Object, ?>)Class8997::method32115).collect((Collector<? super Object, Object, List<Class7684>>)ImmutableList.toImmutableList()), method35979(class7098, collection));
     }
     
-    public static Class9593 method35978(final Class7096 class7096, final Class7684 class7097, final Collection<Class7111<?>> collection) {
+    public static Class9593 method35978(final BlockState class7096, final Class7684 class7097, final Collection<Class7111<?>> collection) {
         return new Class9593((List<Class7684>)ImmutableList.of((Object)class7097), method35979(class7096, collection));
     }
     
-    private static List<Object> method35979(final Class7096 class7096, final Collection<Class7111<?>> collection) {
+    private static List<Object> method35979(final BlockState class7096, final Collection<Class7111<?>> collection) {
         return collection.stream().map((Function<? super Class7111<?>, ?>)class7096::method21772).collect((Collector<? super Object, Object, List<Object>>)ImmutableList.toImmutableList());
     }
 }

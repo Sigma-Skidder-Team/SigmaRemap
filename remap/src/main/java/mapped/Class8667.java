@@ -15,7 +15,7 @@ public class Class8667
     }
     
     private static int method29673(final Class7492 class7492, final BlockPos class7493) {
-        class7492.method23250().method6759(class7493);
+        class7492.method23250().setSpawnPoint(class7493);
         class7492.method23255().method1537().method20586(new Class4335(class7493));
         class7492.method23257(new Class2259("commands.setworldspawn.success", new Object[] { class7493.getX(), class7493.getY(), class7493.getZ() }), true);
         return 1;

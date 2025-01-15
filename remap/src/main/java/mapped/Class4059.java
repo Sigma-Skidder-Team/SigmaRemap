@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
-public class Class4059 extends Class3820
+public class Class4059 extends Item
 {
     private static String[] field18154;
     
@@ -20,7 +20,7 @@ public class Class4059 extends Class3820
     public Class2201 method11694(final Class7075 class7075) {
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
-        final Class7096 method21656 = method21654.method6701(method21655);
+        final BlockState method21656 = method21654.method6701(method21655);
         if (method21656.method21696() != Class7521.field29286 && method21656.method21696() != Class7521.field29172) {
             return Class2201.field13403;
         }
@@ -32,7 +32,7 @@ public class Class4059 extends Class3820
         final double n2 = method21657.getY();
         final double n3 = method21657.getZ();
         if (method21654.method7127(null, new AxisAlignedBB(n, n2, n3, n + 1.0, n2 + 2.0, n3 + 1.0)).isEmpty()) {
-            if (!method21654.field10067) {
+            if (!method21654.isRemote) {
                 final Class858 class7076 = new Class858(method21654, n + 0.5, n2, n3 + 0.5);
                 class7076.method5184(false);
                 method21654.method6886(class7076);

@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.function.BooleanSupplier;
 import javax.annotation.Nullable;
 
-public abstract class Class1906 implements Class1908, AutoCloseable
+public abstract class AbstractChunkProvider implements Class1908, AutoCloseable
 {
     @Nullable
     public Class1862 method7398(final int n, final int n2, final boolean b) {

@@ -14,10 +14,10 @@ import java.util.function.Predicate;
 public class Class9548
 {
     private static String[] field41113;
-    private static final Predicate<Class7096> field41114;
-    private static final Predicate<Class7096> field41115;
+    private static final Predicate<BlockState> field41114;
+    private static final Predicate<BlockState> field41115;
     private final Class9217 field41116;
-    private final Predicate<Class7096> field41117;
+    private final Predicate<BlockState> field41117;
     private final Class1860 field41118;
     
     public Class9548(final Class1860 field41118, final Class2020 class2020) {
@@ -40,7 +40,7 @@ public class Class9548
                     }
                     for (int k = n - 1; k >= 0; --k) {
                         method1296.method1300(i, k, j);
-                        final Class7096 method1297 = class1860.method6701(method1296);
+                        final BlockState method1297 = class1860.method6701(method1296);
                         if (method1297.method21696() != Class7521.field29147) {
                             while (iterator.hasNext()) {
                                 final Class9548 class1861 = (Class9548)iterator.next();
@@ -60,7 +60,7 @@ public class Class9548
         }
     }
     
-    public boolean method35712(final int n, final int n2, final int n3, final Class7096 class7096) {
+    public boolean method35712(final int n, final int n2, final int n3, final BlockState class7096) {
         final int method35713 = this.method35713(n, n3);
         if (n2 > method35713 - 2) {
             if (!this.field41117.test(class7096)) {

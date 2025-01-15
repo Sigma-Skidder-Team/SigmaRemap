@@ -319,7 +319,7 @@ public class Class7532
         for (int j = 0; j < method330.size(); ++j) {
             final Class51 method331 = method330.method346(j);
             if (!method331.method329("keepPacked")) {
-                final Class436 method332 = Class436.method2190(method331);
+                final TileEntity method332 = TileEntity.method2190(method331);
                 if (method332 != null) {
                     class52.method7056(method332);
                 }

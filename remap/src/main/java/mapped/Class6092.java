@@ -160,7 +160,7 @@ public class Class6092
         return Class7558.field29974.method22148();
     }
     
-    public Class7096 method18170() {
+    public BlockState method18170() {
         if (this.field24705) {
             return this.field24706.method6701(this.field24709);
         }
@@ -172,11 +172,11 @@ public class Class6092
         this.field24713 = field24715;
     }
     
-    public Class7096 method18172() {
+    public BlockState method18172() {
         if (this.field24705) {
-            Class7096 method6701 = this.field24706.method6701(this.field24709);
+            BlockState method6701 = this.field24706.method6701(this.field24709);
             if (Class9570.field41245.method22605()) {
-                method6701 = (Class7096)Class9570.method35826(method6701, Class9570.field41245, this.field24706, this.field24709, this.field24708);
+                method6701 = (BlockState)Class9570.method35826(method6701, Class9570.field41245, this.field24706, this.field24709, this.field24708);
             }
             return method6701;
         }

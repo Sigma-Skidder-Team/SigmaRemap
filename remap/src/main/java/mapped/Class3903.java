@@ -5,87 +5,89 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
 public class Class3903 extends Class3902
 {
-    public static final Class7702 field17619;
-    public static final Class7702 field17620;
-    public static final Class7702 field17621;
-    public static final Class7702 field17622;
-    public static final Class7702 field17623;
-    public static final Class7702 field17624;
-    public static final Class7702 field17625;
-    public static final Class7702 field17626;
-    public static final Class7702 field17627;
-    public static final Class7702 field17628;
-    public static final Class7702 field17629;
-    public static final Class7702 field17630;
-    public static final Class7702 field17631;
-    public static final Class7702 field17632;
-    public static final Class7702 field17633;
-    public static final Class7702 field17634;
-    public static final Class7702 field17635;
-    public static final Class7702 field17636;
-    public static final Class7702 field17637;
-    public static final Class7702 field17638;
-    public static final Class7702 field17639;
-    public static final Class7702 field17640;
-    public static final Class7702 field17641;
-    public static final Class7702 field17642;
-    public static final Class7702 field17643;
-    public static final Class7702 field17644;
-    public static final Class7702 field17645;
-    public static final Class7702 field17646;
-    public static final Class7702 field17647;
-    public static final Class7702 field17648;
-    public static final Class7702 field17649;
-    public static final Class7702 field17650;
-    public static final Class7702 field17651;
-    public static final Class7702 field17652;
-    public static final Class7702 field17653;
-    public static final Class7702 field17654;
-    public static final Class7702 field17655;
-    public static final Class7702 field17656;
-    public static final Class7702 field17657;
-    public static final Class7702 field17658;
-    public static final Class7702 field17659;
-    public static final Class7702 field17660;
-    public static final Class7702 field17661;
-    public static final Class7702 field17662;
-    public static final Class7702 field17663;
-    public static final Class7702 field17664;
-    public static final Class7702 field17665;
-    public static final Class7702 field17666;
-    public static final Class7702 field17667;
-    public static final Class7702 field17668;
-    public static final Class7702 field17669;
-    public static final Class7702 field17670;
-    public static final Class7702 field17671;
-    public static final Class7702 field17672;
-    public static final Class7702 field17673;
-    public static final Class7702 field17674;
-    public static final Class7702 field17675;
-    public static final Class7702 field17676;
-    public static final Class7702 field17677;
-    public static final Class7702 field17678;
-    public static final Class7702 field17679;
-    public static final Class7702 field17680;
-    public static final Class7702 field17681;
-    public static final Class7702 field17682;
+    public static final VoxelShape field17619;
+    public static final VoxelShape field17620;
+    public static final VoxelShape field17621;
+    public static final VoxelShape field17622;
+    public static final VoxelShape field17623;
+    public static final VoxelShape field17624;
+    public static final VoxelShape field17625;
+    public static final VoxelShape field17626;
+    public static final VoxelShape field17627;
+    public static final VoxelShape field17628;
+    public static final VoxelShape field17629;
+    public static final VoxelShape field17630;
+    public static final VoxelShape field17631;
+    public static final VoxelShape field17632;
+    public static final VoxelShape field17633;
+    public static final VoxelShape field17634;
+    public static final VoxelShape field17635;
+    public static final VoxelShape field17636;
+    public static final VoxelShape field17637;
+    public static final VoxelShape field17638;
+    public static final VoxelShape field17639;
+    public static final VoxelShape field17640;
+    public static final VoxelShape field17641;
+    public static final VoxelShape field17642;
+    public static final VoxelShape field17643;
+    public static final VoxelShape field17644;
+    public static final VoxelShape field17645;
+    public static final VoxelShape field17646;
+    public static final VoxelShape field17647;
+    public static final VoxelShape field17648;
+    public static final VoxelShape field17649;
+    public static final VoxelShape field17650;
+    public static final VoxelShape field17651;
+    public static final VoxelShape field17652;
+    public static final VoxelShape field17653;
+    public static final VoxelShape field17654;
+    public static final VoxelShape field17655;
+    public static final VoxelShape field17656;
+    public static final VoxelShape field17657;
+    public static final VoxelShape field17658;
+    public static final VoxelShape field17659;
+    public static final VoxelShape field17660;
+    public static final VoxelShape field17661;
+    public static final VoxelShape field17662;
+    public static final VoxelShape field17663;
+    public static final VoxelShape field17664;
+    public static final VoxelShape field17665;
+    public static final VoxelShape field17666;
+    public static final VoxelShape field17667;
+    public static final VoxelShape field17668;
+    public static final VoxelShape field17669;
+    public static final VoxelShape field17670;
+    public static final VoxelShape field17671;
+    public static final VoxelShape field17672;
+    public static final VoxelShape field17673;
+    public static final VoxelShape field17674;
+    public static final VoxelShape field17675;
+    public static final VoxelShape field17676;
+    public static final VoxelShape field17677;
+    public static final VoxelShape field17678;
+    public static final VoxelShape field17679;
+    public static final VoxelShape field17680;
+    public static final VoxelShape field17681;
+    public static final VoxelShape field17682;
     private static final Class2259 field17683;
     
     public Class3903(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((Class7097<O, Class7096>)((Class7097<O, Class7096>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3903.field17564, Direction.NORTH)).method21773(Class3903.field17618, Class107.field333));
+        this.method11877(((Class7097<O, BlockState>)((Class7097<O, BlockState>)this.field17406.method32903()).method21773((Class7111<Comparable>)Class3903.field17564, Direction.NORTH)).method21773(Class3903.field17618, Class107.field333));
     }
     
     @Override
-    public Class2115 method11797(final Class7096 class7096) {
+    public Class2115 method11797(final BlockState class7096) {
         return Class2115.field12307;
     }
     
-    private Class7702 method12004(final Class7096 class7096) {
+    private VoxelShape method12004(final BlockState class7096) {
         final Direction class7097 = class7096.method21772((Class7111<Direction>)Class3903.field17564);
         switch (Class9270.field39751[class7096.method21772(Class3903.field17618).ordinal()]) {
             case 1: {
@@ -119,23 +121,23 @@ public class Class3903 extends Class3902
     }
     
     @Override
-    public Class7702 method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return this.method12004(class7096);
     }
     
     @Override
-    public Class7702 method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return this.method12004(class7096);
     }
     
     @Override
-    public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
+    public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         return true;
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
-        if (!class7097.field10067) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+        if (!class7097.isRemote) {
             class7099.method2833(class7096.method21754(class7097, class7098));
             class7099.method2857(Class8276.field34058);
             return Class2201.field13400;
@@ -144,27 +146,27 @@ public class Class3903 extends Class3902
     }
     
     @Override
-    public Class434 method11827(final Class7096 class7096, final World class7097, final BlockPos class7098) {
+    public Class434 method11827(final BlockState class7096, final World class7097, final BlockPos class7098) {
         return new Class504((n, class1849, class1850) -> new Class3440(n, class1849, Class7318.method22434(class7097, class7098)), Class3903.field17683);
     }
     
     @Override
-    public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return ((Class7097<O, Class7096>)class7096).method21773((Class7111<Comparable>)Class3903.field17564, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3903.field17564)));
+    public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
+        return ((Class7097<O, BlockState>)class7096).method21773((Class7111<Comparable>)Class3903.field17564, class7097.method8142(class7096.method21772((Class7111<Direction>)Class3903.field17564)));
     }
     
     @Override
-    public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
+    public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
         return class7096.method21708(class7097.method8344(class7096.method21772((Class7111<Direction>)Class3903.field17564)));
     }
     
     @Override
-    public void method11875(final Class9500<Class3833, Class7096> class9500) {
+    public void method11875(final Class9500<Class3833, BlockState> class9500) {
         class9500.method35378(Class3903.field17564, Class3903.field17618);
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

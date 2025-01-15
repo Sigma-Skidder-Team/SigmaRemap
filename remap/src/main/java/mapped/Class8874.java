@@ -80,7 +80,7 @@ public class Class8874
         while (this.field37309 < 21) {
             for (int i = 0; i < this.field37310; ++i) {
                 final BlockPos method1138 = this.field37308.method1150(this.field37305, i).method1138(this.field37309);
-                final Class7096 method1139 = this.field37303.method6701(method1138);
+                final BlockState method1139 = this.field37303.method6701(method1138);
                 if (!this.method31194(method1139)) {
                     break Label_0014;
                 }
@@ -114,7 +114,7 @@ public class Class8874
         return this.field37309 = 0;
     }
     
-    public boolean method31194(final Class7096 class7096) {
+    public boolean method31194(final BlockState class7096) {
         final Class3833 method21696 = class7096.method21696();
         if (!class7096.method21706()) {
             if (method21696 != Class7521.field29289) {
@@ -145,7 +145,7 @@ public class Class8874
         for (int i = 0; i < this.field37310; ++i) {
             final BlockPos method1150 = this.field37308.method1150(this.field37305, i);
             for (int j = 0; j < this.field37309; ++j) {
-                this.field37303.method6688(method1150.method1138(j), ((Class7097<O, Class7096>)Class7521.field29341.method11878()).method21773(Class3998.field18018, this.field37304), 18);
+                this.field37303.method6688(method1150.method1138(j), ((Class7097<O, BlockState>)Class7521.field29341.method11878()).method21773(Class3998.field18018, this.field37304), 18);
             }
         }
     }

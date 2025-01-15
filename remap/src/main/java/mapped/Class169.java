@@ -9,13 +9,13 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public class Class169 implements Predicate<Class7096>
+public class Class169 implements Predicate<BlockState>
 {
-    public static final Predicate<Class7096> field490;
-    private final Class9104<Class3833, Class7096> field491;
+    public static final Predicate<BlockState> field490;
+    private final Class9104<Class3833, BlockState> field491;
     private final Map<Class7111<?>, Predicate<Object>> field492;
     
-    private Class169(final Class9104<Class3833, Class7096> field491) {
+    private Class169(final Class9104<Class3833, BlockState> field491) {
         this.field492 = Maps.newHashMap();
         this.field491 = field491;
     }
@@ -25,7 +25,7 @@ public class Class169 implements Predicate<Class7096>
     }
     
     @Override
-    public boolean test(final Class7096 class7096) {
+    public boolean test(final BlockState class7096) {
         if (class7096 == null || !class7096.method21696().equals(this.field491.method32904())) {
             return false;
         }
@@ -41,7 +41,7 @@ public class Class169 implements Predicate<Class7096>
         return true;
     }
     
-    public <T extends Comparable<T>> boolean method767(final Class7096 class7096, final Class7111<T> class7097, final Predicate<Object> predicate) {
+    public <T extends Comparable<T>> boolean method767(final BlockState class7096, final Class7111<T> class7097, final Predicate<Object> predicate) {
         return predicate.test(class7096.method21772(class7097));
     }
     

@@ -73,13 +73,13 @@ public class Class818 extends Class789
             }
         }
         this.field4381 += this.field4385 * 2.0f;
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method1768()) {
                 if (!this.method2625()) {
                     if (!this.method4817()) {
                         if (--this.field4386 <= 0) {
                             this.method1695(Class8520.field35070, 1.0f, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f);
-                            this.method1764(Class7739.field31374);
+                            this.method1764(Items.field31374);
                             this.field4386 = this.rand.nextInt(6000) + 6000;
                         }
                     }
@@ -109,7 +109,7 @@ public class Class818 extends Class789
     }
     
     @Override
-    public void method1691(final BlockPos class354, final Class7096 class355) {
+    public void method1691(final BlockPos class354, final BlockState class355) {
         this.method1695(Class8520.field35072, 0.15f, 1.0f);
     }
     
@@ -166,6 +166,6 @@ public class Class818 extends Class789
     }
     
     static {
-        field4380 = Class120.method618(Class7739.field31314, Class7739.field31430, Class7739.field31429, Class7739.field31576);
+        field4380 = Class120.method618(Items.field31314, Items.field31430, Items.field31429, Items.field31576);
     }
 }

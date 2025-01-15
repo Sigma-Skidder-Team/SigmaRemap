@@ -19,7 +19,7 @@ public abstract class Class1868 implements Class1867
 {
     private static final List<Class3090> field10191;
     public final Map<Class4574<?>, Boolean> field10192;
-    public final Set<Class7096> field10193;
+    public final Set<BlockState> field10193;
     public final Set<Class3090> field10194;
     
     public Class1868(final Set<Class3090> field10194) {
@@ -87,7 +87,7 @@ public abstract class Class1868 implements Class1867
         return this.field10192.computeIfAbsent(key, p0 -> this.field10194.stream().anyMatch(class4575 -> class4575.method9853((Class4574<Class5113>)class4574)));
     }
     
-    public Set<Class7096> method7122() {
+    public Set<BlockState> method7122() {
         if (this.field10193.isEmpty()) {
             final Iterator<Class3090> iterator = this.field10194.iterator();
             while (iterator.hasNext()) {

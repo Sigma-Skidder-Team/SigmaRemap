@@ -85,7 +85,7 @@ public class Class3465<T extends Class777> extends Class3446
     }
     
     private List<Class777> method11030() {
-        return this.field16328.world.method6739((Class<? extends Class777>)Class777.class, this.field16328.method1886().method18496(16.0), class777 -> class777.method4290() && !class777.method1843(this.field16328));
+        return this.field16328.world.method6739((Class<? extends Class777>)Class777.class, this.field16328.getBoundingBox().method18496(16.0), class777 -> class777.method4290() && !class777.method1843(this.field16328));
     }
     
     private boolean method11031() {

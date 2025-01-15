@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import org.lwjgl.opengl.GL11;
 
 public class Class3209 extends Class3167
@@ -29,11 +28,11 @@ public class Class3209 extends Class3167
         final int method19118 = Class6430.method19118(this.method9914().method9885("Regular Color"), 0.14f);
         final int method19119 = Class6430.method19118(this.method9914().method9885("Ender Color"), 0.14f);
         final int method19120 = Class6430.method19118(this.method9914().method9885("Trapped Color"), 0.14f);
-        for (final Class436 class436 : Class3209.field15514.field4683.field10050) {
+        for (final TileEntity tileEntity : Class3209.field15514.field4683.loadedTileEntityList) {
             boolean b = false;
             Label_0129: {
-                if (class436 instanceof Class475) {
-                    if (!(class436 instanceof Class478)) {
+                if (tileEntity instanceof Class475) {
+                    if (!(tileEntity instanceof Class478)) {
                         if (this.method9914().method9883("Show Regular Chests")) {
                             b = true;
                             break Label_0129;
@@ -43,8 +42,8 @@ public class Class3209 extends Class3167
                 b = false;
             }
             final boolean b2 = b;
-            final boolean b3 = class436 instanceof Class477 && this.method9914().method9883("Show Ender Chests");
-            final boolean b4 = class436 instanceof Class478 && this.method9914().method9883("Show Trapped Chests");
+            final boolean b3 = tileEntity instanceof Class477 && this.method9914().method9883("Show Ender Chests");
+            final boolean b4 = tileEntity instanceof Class478 && this.method9914().method9883("Show Trapped Chests");
             if (!b2) {
                 if (!b3) {
                     if (!b4) {
@@ -52,21 +51,21 @@ public class Class3209 extends Class3167
                     }
                 }
             }
-            final double field38854 = Class8591.method29095(class436.method2193()).field38854;
-            final double field38855 = Class8591.method29095(class436.method2193()).field38855;
-            final double field38856 = Class8591.method29095(class436.method2193()).field38856;
+            final double field38854 = Class8591.method29095(tileEntity.method2193()).field38854;
+            final double field38855 = Class8591.method29095(tileEntity.method2193()).field38855;
+            final double field38856 = Class8591.method29095(tileEntity.method2193()).field38856;
             GL11.glDisable(2929);
             GL11.glEnable(3042);
             int n = method19118;
-            if (!(class436 instanceof Class477)) {
-                if (class436 instanceof Class478) {
+            if (!(tileEntity instanceof Class477)) {
+                if (tileEntity instanceof Class478) {
                     n = method19120;
                 }
             }
             else {
                 n = method19119;
             }
-            final Class7644 class437 = new Class7644(class436.method2194().method21725(Class3209.field15514.field4683, class436.method2193()).method24537().method18499(field38854, field38855, field38856));
+            final Class7644 class437 = new Class7644(tileEntity.method2194().method21725(Class3209.field15514.field4683, tileEntity.method2193()).method24537().method18499(field38854, field38855, field38856));
             GL11.glAlphaFunc(519, 0.0f);
             Class8154.method26909(class437, n);
             Class8154.method26912(class437, 2.0f, n);

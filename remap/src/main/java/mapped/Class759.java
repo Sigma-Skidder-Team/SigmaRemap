@@ -71,7 +71,7 @@ public abstract class Class759 extends LivingEntity
         Arrays.fill(this.field4121, 0.085f);
         Arrays.fill(this.field4119, 0.085f);
         if (class7500 != null) {
-            if (!class7500.field10067) {
+            if (!class7500.isRemote) {
                 this.method4142();
             }
         }
@@ -212,7 +212,7 @@ public abstract class Class759 extends LivingEntity
     }
     
     public void method4158() {
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             this.world.method6761(this, (byte)20);
         }
         else {
@@ -242,7 +242,7 @@ public abstract class Class759 extends LivingEntity
         }
         else {
             super.method1659();
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 this.method4202();
                 if (this.ticksExisted % 5 == 0) {
                     this.method4159();
@@ -425,12 +425,12 @@ public abstract class Class759 extends LivingEntity
         if (Class9570.field41266.method22605()) {
             b = Class9570.method35812(Class9570.field41266, this.world, this);
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (this.method4192()) {
                 if (this.method1768()) {
                     if (!this.field2958) {
                         if (b) {
-                            for (final Class427 class427 : this.world.method7128((Class<? extends Class427>)Class427.class, this.method1886().method18495(1.0, 0.0, 1.0))) {
+                            for (final Class427 class427 : this.world.method7128((Class<? extends Class427>)Class427.class, this.getBoundingBox().method18495(1.0, 0.0, 1.0))) {
                                 if (class427.removed) {
                                     continue;
                                 }
@@ -480,15 +480,15 @@ public abstract class Class759 extends LivingEntity
         boolean b = true;
         if (!class8322.method27620()) {
             if (class8323.method8401() != Class295.field1681) {
-                if (class8321.method27622() instanceof Class4055 && !(class8322.method27622() instanceof Class4055)) {
+                if (class8321.getItem() instanceof Class4055 && !(class8322.getItem() instanceof Class4055)) {
                     b = true;
                 }
                 else {
-                    if (class8321.method27622() instanceof Class4055) {
-                        if (class8322.method27622() instanceof Class4055) {
+                    if (class8321.getItem() instanceof Class4055) {
+                        if (class8322.getItem() instanceof Class4055) {
                             if (!Class8742.method30217(class8322)) {
-                                final Class4055 class8324 = (Class4055)class8321.method27622();
-                                final Class4055 class8325 = (Class4055)class8322.method27622();
+                                final Class4055 class8324 = (Class4055)class8321.getItem();
+                                final Class4055 class8325 = (Class4055)class8322.getItem();
                                 if (class8324.method12259() != class8325.method12259()) {
                                     b = (class8324.method12259() > class8325.method12259());
                                 }
@@ -502,12 +502,12 @@ public abstract class Class759 extends LivingEntity
                     b = false;
                 }
             }
-            else if (class8321.method27622() instanceof Class4077 && !(class8322.method27622() instanceof Class4077)) {
+            else if (class8321.getItem() instanceof Class4077 && !(class8322.getItem() instanceof Class4077)) {
                 b = true;
             }
-            else if (class8321.method27622() instanceof Class4077 && class8322.method27622() instanceof Class4077) {
-                final Class4077 class8326 = (Class4077)class8321.method27622();
-                final Class4077 class8327 = (Class4077)class8322.method27622();
+            else if (class8321.getItem() instanceof Class4077 && class8322.getItem() instanceof Class4077) {
+                final Class4077 class8326 = (Class4077)class8321.getItem();
+                final Class4077 class8327 = (Class4077)class8322.getItem();
                 if (class8326.method12281() != class8327.method12281()) {
                     b = (class8326.method12281() > class8327.method12281());
                 }
@@ -516,7 +516,7 @@ public abstract class Class759 extends LivingEntity
                 }
             }
             else {
-                b = (class8321.method27622() instanceof Class4087 && class8322.method27622() instanceof Class4087 && class8321.method27656() && !class8322.method27656());
+                b = (class8321.getItem() instanceof Class4087 && class8322.getItem() instanceof Class4087 && class8321.method27656() && !class8322.method27656());
             }
         }
         return b;
@@ -639,7 +639,7 @@ public abstract class Class759 extends LivingEntity
         final double n4 = class399.getPosZ() - this.getPosZ();
         double n5;
         if (!(class399 instanceof LivingEntity)) {
-            n5 = (class399.method1886().field25074 + class399.method1886().field25077) / 2.0 - this.method1944();
+            n5 = (class399.getBoundingBox().field25074 + class399.getBoundingBox().field25077) / 2.0 - this.method1944();
         }
         else {
             n5 = class399.method1944() - this.method1944();
@@ -671,7 +671,7 @@ public abstract class Class759 extends LivingEntity
     }
     
     public boolean method4180(final Class1852 class1852) {
-        return !class1852.method6968(this.method1886()) && class1852.method6975(this);
+        return !class1852.method6968(this.getBoundingBox()) && class1852.method6975(this);
     }
     
     public int method4181() {
@@ -798,7 +798,7 @@ public abstract class Class759 extends LivingEntity
                     }
                     n2 = 0;
                     if (method2718.method27620()) {
-                        final Class3820 method2719 = method4186(class9593, nextInt);
+                        final Item method2719 = method4186(class9593, nextInt);
                         if (method2719 != null) {
                             this.method1803(class9593, new ItemStack(method2719));
                         }
@@ -810,22 +810,22 @@ public abstract class Class759 extends LivingEntity
     
     public static Class2215 method4185(final ItemStack class8321) {
         if (Class9570.field41325.method22605()) {
-            final Class2215 class8322 = (Class2215)Class9570.method35826(class8321.method27622(), Class9570.field41325, class8321);
+            final Class2215 class8322 = (Class2215)Class9570.method35826(class8321.getItem(), Class9570.field41325, class8321);
             if (class8322 != null) {
                 return class8322;
             }
         }
-        final Class3820 method27622 = class8321.method27622();
+        final Item method27622 = class8321.getItem();
         if (method27622 == Class7521.field29342.method11704() || (method27622 instanceof Class4036 && ((Class4036)method27622).method12240() instanceof Class3932)) {
             return Class2215.field13605;
         }
         if (method27622 instanceof Class4055) {
             return ((Class4055)method27622).method12257();
         }
-        if (method27622 != Class7739.field31584) {
-            boolean method27623 = class8321.method27622() == Class7739.field31583;
+        if (method27622 != Items.field31584) {
+            boolean method27623 = class8321.getItem() == Items.field31583;
             if (Class9570.field41329.method22605()) {
-                method27623 = Class9570.method35820(class8321.method27622(), Class9570.field41329, class8321, null);
+                method27623 = Class9570.method35820(class8321.getItem(), Class9570.field41329, class8321, null);
             }
             return method27623 ? Class2215.field13601 : Class2215.field13600;
         }
@@ -833,74 +833,74 @@ public abstract class Class759 extends LivingEntity
     }
     
     @Nullable
-    public static Class3820 method4186(final Class2215 class2215, final int n) {
+    public static Item method4186(final Class2215 class2215, final int n) {
         switch (Class7556.field29965[class2215.ordinal()]) {
             case 1: {
                 if (n == 0) {
-                    return Class7739.field31317;
+                    return Items.field31317;
                 }
                 if (n == 1) {
-                    return Class7739.field31333;
+                    return Items.field31333;
                 }
                 if (n == 2) {
-                    return Class7739.field31321;
+                    return Items.field31321;
                 }
                 if (n == 3) {
-                    return Class7739.field31325;
+                    return Items.field31325;
                 }
                 if (n == 4) {
-                    return Class7739.field31329;
+                    return Items.field31329;
                 }
             }
             case 2: {
                 if (n == 0) {
-                    return Class7739.field31318;
+                    return Items.field31318;
                 }
                 if (n == 1) {
-                    return Class7739.field31334;
+                    return Items.field31334;
                 }
                 if (n == 2) {
-                    return Class7739.field31322;
+                    return Items.field31322;
                 }
                 if (n == 3) {
-                    return Class7739.field31326;
+                    return Items.field31326;
                 }
                 if (n == 4) {
-                    return Class7739.field31330;
+                    return Items.field31330;
                 }
             }
             case 3: {
                 if (n == 0) {
-                    return Class7739.field31319;
+                    return Items.field31319;
                 }
                 if (n == 1) {
-                    return Class7739.field31335;
+                    return Items.field31335;
                 }
                 if (n == 2) {
-                    return Class7739.field31323;
+                    return Items.field31323;
                 }
                 if (n == 3) {
-                    return Class7739.field31327;
+                    return Items.field31327;
                 }
                 if (n == 4) {
-                    return Class7739.field31331;
+                    return Items.field31331;
                 }
             }
             case 4: {
                 if (n == 0) {
-                    return Class7739.field31320;
+                    return Items.field31320;
                 }
                 if (n == 1) {
-                    return Class7739.field31336;
+                    return Items.field31336;
                 }
                 if (n == 2) {
-                    return Class7739.field31324;
+                    return Items.field31324;
                 }
                 if (n == 3) {
-                    return Class7739.field31328;
+                    return Items.field31328;
                 }
                 if (n == 4) {
-                    return Class7739.field31332;
+                    return Items.field31332;
                 }
                 break;
             }
@@ -910,9 +910,9 @@ public abstract class Class759 extends LivingEntity
     
     public void method4187(final Class9592 class9592) {
         final float method35975 = class9592.method35975();
-        if (!this.method2713().method27620()) {
+        if (!this.getHeldItemMainhand().method27620()) {
             if (this.rand.nextFloat() < 0.25f * method35975) {
-                this.method1803(Class2215.field13600, Class8742.method30224(this.rand, this.method2713(), (int)(5.0f + method35975 * this.rand.nextInt(18)), false));
+                this.method1803(Class2215.field13600, Class8742.method30224(this.rand, this.getHeldItemMainhand(), (int)(5.0f + method35975 * this.rand.nextInt(18)), false));
             }
         }
         for (final Class2215 class9593 : Class2215.values()) {
@@ -987,7 +987,7 @@ public abstract class Class759 extends LivingEntity
             return true;
         }
         final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.method27622() == Class7739.field31551 && this.method4204(class512)) {
+        if (method2715.getItem() == Items.field31551 && this.method4204(class512)) {
             this.method4207(class512, true);
             method2715.method27693(1);
             return true;
@@ -1042,12 +1042,12 @@ public abstract class Class759 extends LivingEntity
                 this.field4127.forceSpawn = false;
             }
             this.field4127 = null;
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (b2) {
-                    this.method1764(Class7739.field31551);
+                    this.method1764(Items.field31551);
                 }
             }
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (b) {
                     if (this.world instanceof Class1849) {
                         ((Class1849)this.world).method6904().method7447(this, new Class4305(this, null));
@@ -1069,7 +1069,7 @@ public abstract class Class759 extends LivingEntity
     public Entity method4206() {
         if (this.field4127 == null) {
             if (this.field4128 != 0) {
-                if (this.world.field10067) {
+                if (this.world.isRemote) {
                     this.field4127 = this.world.getEntityByID(this.field4128);
                 }
             }
@@ -1083,7 +1083,7 @@ public abstract class Class759 extends LivingEntity
         if (!(this.field4127 instanceof Class512)) {
             this.field4127.forceSpawn = true;
         }
-        if (!this.world.field10067) {
+        if (!this.world.isRemote) {
             if (b) {
                 if (this.world instanceof Class1849) {
                     ((Class1849)this.world).method6904().method7447(this, new Class4305(this, this.field4127));
@@ -1245,7 +1245,7 @@ public abstract class Class759 extends LivingEntity
         float n = (float)this.method2710(Class8107.field33410).method23950();
         float n2 = (float)this.method2710(Class8107.field33411).method23950();
         if (class399 instanceof LivingEntity) {
-            n += Class8742.method30202(this.method2713(), ((LivingEntity)class399).method2712());
+            n += Class8742.method30202(this.getHeldItemMainhand(), ((LivingEntity)class399).method2712());
             n2 += Class8742.method30207(this);
         }
         final int method30208 = Class8742.method30208(this);
@@ -1262,7 +1262,7 @@ public abstract class Class759 extends LivingEntity
             }
             if (class399 instanceof Class512) {
                 final Class512 class400 = (Class512)class399;
-                final ItemStack method30210 = this.method2713();
+                final ItemStack method30210 = this.getHeldItemMainhand();
                 final ItemStack class401 = class400.method2756() ? class400.method2766() : ItemStack.field34174;
                 final boolean method30211 = Class7667.method24310(method30210, class401, class400, this);
                 final boolean method30212 = Class7667.method24311(class401, class400);
@@ -1271,7 +1271,7 @@ public abstract class Class759 extends LivingEntity
                         if (method30211) {
                             if (method30212) {
                                 if (this.rand.nextFloat() < 0.25f + Class8742.method30211(this) * 0.05f) {
-                                    class400.method2906().method25772(class401.method27622(), 100);
+                                    class400.method2906().method25772(class401.getItem(), 100);
                                     this.world.method6761(class400, (byte)30);
                                 }
                             }
@@ -1287,7 +1287,7 @@ public abstract class Class759 extends LivingEntity
     
     public boolean method4217() {
         if (this.world.method6703()) {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 final float method1726 = this.method1726();
                 final BlockPos class354 = (this.method1920() instanceof Class423) ? new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ()).method1137() : new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ());
                 if (method1726 > 0.5f) {
@@ -1312,8 +1312,8 @@ public abstract class Class759 extends LivingEntity
         }
     }
     
-    public boolean method4218(final Class3820 class3820) {
-        return this.method2713().method27622() == class3820 || this.method2714().method27622() == class3820;
+    public boolean method4218(final Item class3820) {
+        return this.getHeldItemMainhand().getItem() == class3820 || this.method2714().getItem() == class3820;
     }
     
     private boolean method4219() {

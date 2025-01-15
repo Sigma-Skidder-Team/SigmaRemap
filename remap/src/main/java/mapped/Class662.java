@@ -60,7 +60,7 @@ public abstract class Class662 extends Class573
     
     private void method3715(final double n) {
         final double field3694 = this.field3694;
-        this.field3694 = MathHelper.method35654(n, 0.0, 1.0);
+        this.field3694 = MathHelper.clamp(n, 0.0, 1.0);
         if (field3694 != this.field3694) {
             this.method3710();
         }

@@ -19,7 +19,7 @@ public class Class4545 extends Class4535<Class5141>
     public boolean method13542(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, BlockPos class1853, final Class5141 class1854) {
         class1853 = new BlockPos(class1853.getX(), class1851.method6743(), class1853.getZ());
         final boolean b = random.nextDouble() > 0.7;
-        final Class7096 field22127 = class1854.field22127;
+        final BlockState field22127 = class1854.field22127;
         final double n = random.nextDouble() * 2.0 * 3.141592653589793;
         final int n2 = 11 - random.nextInt(5);
         final int n3 = 3 + random.nextInt(3);
@@ -113,7 +113,7 @@ public class Class4545 extends Class4535<Class5141>
         }
     }
     
-    private void method13546(final Class1851 class1851, final Random random, final BlockPos class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final boolean b, final int n7, final double n8, final boolean b2, final Class7096 class1853) {
+    private void method13546(final Class1851 class1851, final Random random, final BlockPos class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final boolean b, final int n7, final double n8, final boolean b2, final BlockState class1853) {
         final double n9 = b ? this.method13550(n2, n4, BlockPos.ZERO, n6, this.method13548(n3, n, n7), n8) : this.method13549(n2, n4, BlockPos.ZERO, n5, random);
         if (n9 < 0.0) {
             final BlockPos method1134 = class1852.add(n2, n3, n4);
@@ -124,8 +124,8 @@ public class Class4545 extends Class4535<Class5141>
         }
     }
     
-    private void method13547(final BlockPos class354, final Class1851 class355, final Random random, final int n, final int n2, final boolean b, final boolean b2, final Class7096 class356) {
-        final Class7096 method6701 = class355.method6701(class354);
+    private void method13547(final BlockPos class354, final Class1851 class355, final Random random, final int n, final int n2, final boolean b, final boolean b2, final BlockState class356) {
+        final BlockState method6701 = class355.method6701(class354);
         final Class3833 method6702 = method6701.method21696();
         if (method6701.method21697() != Class8059.field33153) {
             if (method6702 != Class7521.field29331) {

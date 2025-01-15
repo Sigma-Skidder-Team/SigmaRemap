@@ -5,7 +5,7 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.Collection;
+
 import java.util.HashSet;
 import java.util.concurrent.CompletionStage;
 import java.util.function.Function;
@@ -163,7 +163,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
     }
     
     @Override
-    public CompletableFuture<Void> method5785(final Class7885 class7885, final Class6582 class7886, final Class5028 class7887, final Class5028 class7888, final Executor executor, final Executor executor2) {
+    public CompletableFuture<Void> method5785(final Class7885 class7885, final Class6582 class7886, final IProfiler class7887, final IProfiler class7888, final Executor executor, final Executor executor2) {
         Class8571.method28847("*** Reloading textures ***");
         Class8571.method28852("Resource packs: " + Class8571.method28904());
         final Iterator<Class1932> iterator = this.field9429.keySet().iterator();

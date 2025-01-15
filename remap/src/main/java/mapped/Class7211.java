@@ -14,6 +14,6 @@ public final class Class7211 extends Class7207
     
     @Override
     public ItemStack method22107() {
-        return new ItemStack(Class7739.field31354);
+        return new ItemStack(Items.field31354);
     }
 }

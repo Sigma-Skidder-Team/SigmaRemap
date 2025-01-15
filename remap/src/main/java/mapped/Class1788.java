@@ -10,7 +10,7 @@ public class Class1788 extends Class1776<int[]>
 {
     private static final Class1932 field9904;
     
-    public int[] method6373(final Class6582 class6582, final Class5028 class6583) {
+    public int[] method6373(final Class6582 class6582, final IProfiler class6583) {
         try {
             return Class9281.method34263(class6582, Class1788.field9904);
         }
@@ -19,7 +19,7 @@ public class Class1788 extends Class1776<int[]>
         }
     }
     
-    public void method6374(final int[] array, final Class6582 class6582, final Class5028 class6583) {
+    public void method6374(final int[] array, final Class6582 class6582, final IProfiler class6583) {
         Class9010.method32260(array);
     }
     

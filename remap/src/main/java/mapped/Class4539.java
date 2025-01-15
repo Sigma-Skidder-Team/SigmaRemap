@@ -20,7 +20,7 @@ public class Class4539 extends Class4536
     }
     
     @Override
-    public boolean method13536(final Class1851 class1851, final Random rnd, final BlockPos class1852, final Class7096 class1853) {
+    public boolean method13536(final Class1851 class1851, final Random rnd, final BlockPos class1852, final BlockState class1853) {
         final Mutable class1854 = new Mutable(class1852);
         for (int n = rnd.nextInt(3) + 1, i = 0; i < n; ++i) {
             if (!this.method13537(class1851, rnd, class1854, class1853)) {

@@ -19,7 +19,7 @@ public class Class4046 extends Class4043
     
     @Override
     public ITextComponent method11729(final ItemStack class8321) {
-        if (class8321.method27622() == Class7739.field31525) {
+        if (class8321.getItem() == Items.field31525) {
             if (class8321.method27656()) {
                 Object o = null;
                 final Class51 method27657 = class8321.method27657();

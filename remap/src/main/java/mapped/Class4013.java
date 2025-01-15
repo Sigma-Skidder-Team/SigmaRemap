@@ -18,7 +18,7 @@ public class Class4013 extends Class3833
     }
     
     @Override
-    public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
+    public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7097.method6789().method20502()) {
             class7097.method6688(class7098, Class7521.field29211.method11878(), 3);
             class7097.method6955(2009, class7098, 0);
@@ -27,11 +27,11 @@ public class Class4013 extends Class3833
     }
     
     @Override
-    public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
+    public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
         final Direction method798 = Direction.random(random);
         if (method798 != Direction.UP) {
             final BlockPos method799 = class7098.method1149(method798);
-            final Class7096 method800 = class7097.method6701(method799);
+            final BlockState method800 = class7097.method6701(method799);
             if (!class7096.method21723() || !method800.method21761(class7097, method799, method798.getOpposite())) {
                 final double n = class7098.getX();
                 final double n2 = class7098.getY();

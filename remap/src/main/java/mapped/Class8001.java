@@ -38,7 +38,7 @@ public class Class8001
     }
     
     private static int method26176(final Class7492 class7492) throws CommandSyntaxException {
-        final Class394 method23255 = class7492.method23255();
+        final MinecraftServer method23255 = class7492.method23255();
         if (!method23255.method1590().method15305().method19593()) {
             method23255.method1546();
             class7492.method23257(new Class2259("commands.debug.started", new Object[] { "Started the debug profiler. Type '/debug stop' to stop it." }), true);
@@ -48,7 +48,7 @@ public class Class8001
     }
     
     private static int method26177(final Class7492 class7492) throws CommandSyntaxException {
-        final Class394 method23255 = class7492.method23255();
+        final MinecraftServer method23255 = class7492.method23255();
         final Class5029 method23256 = method23255.method1590();
         if (method23256.method15305().method19593()) {
             final Class5756 method23257 = method23256.method15305().method19594();
@@ -62,7 +62,7 @@ public class Class8001
     }
     
     private static int method26178(final Class7492 class7492) {
-        final Class394 method23255 = class7492.method23255();
+        final MinecraftServer method23255 = class7492.method23255();
         final String string = "debug-report-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date());
         try {
             final Path path = method23255.method1478("debug").toPath();

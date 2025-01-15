@@ -20,7 +20,7 @@ public class Class1819 extends Class1799<Class754, Class5860<Class754>>
             if (!class7353.method1823()) {
                 if (class7353.method2895(Class189.field610)) {
                     if (class7353.method4098() != null) {
-                        if (class7353.method2718(Class2215.field13604).method27622() != Class7739.field31584) {
+                        if (class7353.method2718(Class2215.field13604).getItem() != Items.field31584) {
                             class7351.method22567();
                             class7351.method22564(0.0, 0.0, 0.125);
                             final double n8 = MathHelper.method35701(n4, class7353.field3015, class7353.field3018) - MathHelper.method35701(n4, class7353.prevPosX, class7353.getPosX());

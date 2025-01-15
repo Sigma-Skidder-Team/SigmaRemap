@@ -35,10 +35,10 @@ public class Class3992 extends Class3833
     }
     
     @Override
-    public void method11831(final Class7096 class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
+    public void method11831(final BlockState class7096, final World class7097, final BlockPos class7098, final ItemStack class7099) {
         super.method11831(class7096, class7097, class7098, class7099);
         if (Class8742.method30195(Class7882.field32366, class7099) == 0) {
-            final int method12141 = this.method12141(class7097.field10062);
+            final int method12141 = this.method12141(class7097.rand);
             if (method12141 > 0) {
                 this.method11840(class7097, class7098, method12141);
             }

@@ -13,7 +13,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class Class448 extends Class436 implements Class447, Class439
+public class Class448 extends TileEntity implements Class447, Class439
 {
     private final Class2265<ItemStack> field2686;
     private final int[] field2687;
@@ -29,7 +29,7 @@ public class Class448 extends Class436 implements Class447, Class439
     @Override
     public void method2229() {
         final boolean booleanValue = this.method2194().method21772((Class7111<Boolean>)Class3918.field17760);
-        if (!this.field2656.field10067) {
+        if (!this.field2656.isRemote) {
             if (!booleanValue) {
                 for (int i = 0; i < this.field2686.size(); ++i) {
                     if (this.field2687[i] > 0) {
@@ -68,7 +68,7 @@ public class Class448 extends Class436 implements Class447, Class439
         final World method2186 = this.method2186();
         if (method2186 != null) {
             final BlockPos method2187 = this.method2193();
-            final Random field10062 = method2186.field10062;
+            final Random field10062 = method2186.rand;
             if (field10062.nextFloat() < 0.11f) {
                 for (int i = 0; i < field10062.nextInt(2) + 2; ++i) {
                     Class3918.method12032(method2186, method2187, this.method2194().method21772((Class7111<Boolean>)Class3918.field17761), false);
@@ -163,7 +163,7 @@ public class Class448 extends Class436 implements Class447, Class439
     }
     
     public void method2275() {
-        if (!this.method2186().field10067) {
+        if (!this.method2186().isRemote) {
             Class9193.method33641(this.method2186(), this.method2193(), this.method2270());
         }
         this.method2274();

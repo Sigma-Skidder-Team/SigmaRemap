@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class Class3819 extends Class3820
+public class Class3819 extends Item
 {
     public Class3819(final Class8959 class8959) {
         super(class8959);
@@ -17,12 +17,12 @@ public class Class3819 extends Class3820
     public Class2201 method11694(final Class7075 class7075) {
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
-        final Class7096 method21656 = method21654.method6701(method21655);
-        if (method21656.method21696() != Class7521.field29402 || ((Class7097<Object, Class7096>)method21656).method21772((Class7111<Boolean>)Class3964.field17909)) {
+        final BlockState method21656 = method21654.method6701(method21655);
+        if (method21656.method21696() != Class7521.field29402 || ((Class7097<Object, BlockState>)method21656).method21772((Class7111<Boolean>)Class3964.field17909)) {
             return Class2201.field13402;
         }
-        if (!method21654.field10067) {
-            final Class7096 class7076 = ((Class7097<Object, Class7096>)method21656).method21773((Class7111<Comparable>)Class3964.field17909, true);
+        if (!method21654.isRemote) {
+            final BlockState class7076 = ((Class7097<Object, BlockState>)method21656).method21773((Class7111<Comparable>)Class3964.field17909, true);
             Class3833.method11777(method21656, class7076, method21654, method21655);
             method21654.method6688(method21655, class7076, 2);
             method21654.method6783(method21655, Class7521.field29402);
@@ -46,7 +46,7 @@ public class Class3819 extends Class3820
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class7006 method2716 = Class3820.method11733(class1847, class1848, Class2191.field13325);
+        final Class7006 method2716 = Item.method11733(class1847, class1848, Class2191.field13325);
         if (method2716.method21449() == Class2165.field12881 && class1847.method6701(((Class7005)method2716).method21447()).method21696() == Class7521.field29402) {
             return Class9355.method34676(method2715);
         }

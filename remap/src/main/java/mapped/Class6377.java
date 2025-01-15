@@ -11,9 +11,9 @@ import java.util.function.Consumer;
 public class Class6377 extends Class6367
 {
     private static String[] field25487;
-    private final Class3820 field25488;
+    private final Item field25488;
     
-    private Class6377(final Class3820 field25488, final int n, final int n2, final Class122[] array, final Class125[] array2) {
+    private Class6377(final Item field25488, final int n, final int n2, final Class122[] array, final Class125[] array2) {
         super(n, n2, array, array2);
         this.field25488 = field25488;
     }

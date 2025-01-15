@@ -11,7 +11,7 @@ import java.util.Map;
 public class Class9509
 {
     private static String[] field40920;
-    private final Map<Class7096, Class6313> field40921;
+    private final Map<BlockState, Class6313> field40921;
     private final Class1790 field40922;
     
     public Class9509(final Class1790 field40922) {
@@ -19,11 +19,11 @@ public class Class9509
         this.field40922 = field40922;
     }
     
-    public Class1912 method35427(final Class7096 class7096) {
+    public Class1912 method35427(final BlockState class7096) {
         return this.method35428(class7096).method18696();
     }
     
-    public Class6313 method35428(final Class7096 class7096) {
+    public Class6313 method35428(final BlockState class7096) {
         Class6313 method6452 = this.field40921.get(class7096);
         if (method6452 == null) {
             method6452 = this.field40922.method6452();
@@ -45,11 +45,11 @@ public class Class9509
         }
     }
     
-    public static Class1933 method35431(final Class7096 class7096) {
+    public static Class1933 method35431(final BlockState class7096) {
         return method35432(Class90.field208.method503(class7096.method21696()), class7096);
     }
     
-    public static Class1933 method35432(final Class1932 class1932, final Class7096 class1933) {
+    public static Class1933 method35432(final Class1932 class1932, final BlockState class1933) {
         return new Class1933(class1932, method35433((Map<Class7111<?>, Comparable<?>>)class1933.method21776()));
     }
     

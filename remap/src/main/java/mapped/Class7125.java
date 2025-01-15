@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import com.google.common.collect.Queues;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Deque;
 import java.util.Random;
@@ -52,7 +53,7 @@ public final class Class7125
         }
     }
     
-    private void method21866(final Class4521 class4521, final AtomicReference<Class7702> atomicReference, final int n, final int n2) {
+    private void method21866(final Class4521 class4521, final AtomicReference<VoxelShape> atomicReference, final int n, final int n2) {
         final Class8228 method13518 = class4521.method13518();
         final BlockPos method13519 = class4521.method13519();
         final Class2052 method13520 = class4521.method13457();
@@ -72,7 +73,7 @@ public final class Class7125
                 final Class8795 method13524 = Class7323.field28316.method25554(new Class1932(class4522.field38250.method323("target_pool")));
                 final Class8795 method13525 = Class7323.field28316.method25554(method13524.method30672());
                 if (method13524 != Class8795.field36978 && (method13524.method30676() != 0 || method13524 == Class8795.field36977)) {
-                    AtomicReference<Class7702> atomicReference3;
+                    AtomicReference<VoxelShape> atomicReference3;
                     int n5;
                     if (!method13522.isVecInside(method13523)) {
                         atomicReference3 = atomicReference;

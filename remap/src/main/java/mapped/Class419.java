@@ -56,7 +56,7 @@ public abstract class Class419 extends Entity
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.method1886().method18507() * 4.0;
+        double v = this.getBoundingBox().method18507() * 4.0;
         if (Double.isNaN(v)) {
             v = 4.0;
         }
@@ -67,7 +67,7 @@ public abstract class Class419 extends Entity
     @Override
     public void method1659() {
         Label_0010: {
-            if (!this.world.field10067) {
+            if (!this.world.isRemote) {
                 if (this.field2527 == null || !this.field2527.removed) {
                     if (this.world.method6971(new BlockPos(this))) {
                         break Label_0010;
