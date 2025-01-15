@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>optifine</module>
+        <module>remap</module>
     </modules>
 
     <properties>
