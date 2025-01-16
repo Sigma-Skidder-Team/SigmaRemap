@@ -79,7 +79,7 @@ public class Class3976 extends Block
             return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);
         }
         method12119(class7097, class7098, class7099);
-        class7097.setBlockState(class7098, Class7521.field29147.getDefaultState(), 11);
+        class7097.setBlockState(class7098, Blocks.AIR.getDefaultState(), 11);
         if (!class7099.method2889()) {
             if (method2716 != Items.field31277) {
                 method2715.method27693(1);

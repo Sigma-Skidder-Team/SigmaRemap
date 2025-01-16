@@ -34,7 +34,7 @@ public final class Class6403 extends Class6397
             }
         }
         else {
-            method16763.method6692(method16764, Class7521.field29289.getDefaultState());
+            method16763.method6692(method16764, Blocks.FIRE.getDefaultState());
         }
         if (this.field25515) {
             if (class5492.method27635(1, method16763.rand, null)) {

@@ -194,7 +194,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             if (method25430 > 0) {
                 for (int i = method25430; i >= method25430 - 4; --i) {
                     if (i >= method25430 - random.nextInt(5)) {
-                        class1860.method7008(class1861.setPos(class1862.getX(), i, class1862.getZ()), Class7521.field29172.getDefaultState(), false);
+                        class1860.method7008(class1861.setPos(class1862.getX(), i, class1862.getZ()), Blocks.field29172.getDefaultState(), false);
                     }
                 }
             }
@@ -203,7 +203,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             }
             for (int j = method25429 + 4; j >= method25429; --j) {
                 if (j <= method25429 + random.nextInt(5)) {
-                    class1860.method7008(class1861.setPos(class1862.getX(), j, class1862.getZ()), Class7521.field29172.getDefaultState(), false);
+                    class1860.method7008(class1861.setPos(class1862.getX(), j, class1862.getZ()), Blocks.field29172.getDefaultState(), false);
                 }
             }
         }
@@ -396,6 +396,6 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             }
             return;
         });
-        field25360 = Class7521.field29147.getDefaultState();
+        field25360 = Blocks.AIR.getDefaultState();
     }
 }

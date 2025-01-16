@@ -104,14 +104,14 @@ public class Class8797
     }
     
     public boolean method30693() {
-        return Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Class7521.field29174 && Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Class7521.field29173 && this.method30699(this.method30692()) && this.method30699(this.method30692().method1137());
+        return Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Blocks.field29174 && Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Blocks.field29173 && this.method30699(this.method30692()) && this.method30699(this.method30692().method1137());
     }
     
     public boolean method30694() {
-        if (Class8797.field36991.world.getBlockState(this.method30692()).method21696() == Class7521.field29174) {
+        if (Class8797.field36991.world.getBlockState(this.method30692()).method21696() == Blocks.field29174) {
             return false;
         }
-        if (Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Class7521.field29173) {
+        if (Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Blocks.field29173) {
             if (this.method30699(this.method30692())) {
                 if (this.method30699(this.method30692().method1137())) {
                     if (!this.method30699(this.method30692().method1139())) {
@@ -127,7 +127,7 @@ public class Class8797
     public static boolean method30695(final BlockPos class354) {
         for (final Class8422 class355 : Class8797.field36993) {
             final BlockState method6701 = Class8797.field36991.world.getBlockState(class354.add(class355.field34567, class355.field34568, class355.field34569));
-            if (method6701.getBlock() == Class7521.field29173 || method6701.getBlock() == Class7521.field29174) {
+            if (method6701.getBlock() == Blocks.field29173 || method6701.getBlock() == Blocks.field29174) {
                 return true;
             }
         }
@@ -146,13 +146,13 @@ public class Class8797
     public boolean method30697() {
         for (final Class8422 class8422 : Class8797.field36993) {
             final BlockState method6701 = Class8797.field36991.world.getBlockState(this.method30692().add(class8422.field34567, class8422.field34568, class8422.field34569));
-            if (method6701.getBlock() == Class7521.field29173 || method6701.getBlock() == Class7521.field29174) {
+            if (method6701.getBlock() == Blocks.field29173 || method6701.getBlock() == Blocks.field29174) {
                 return true;
             }
         }
         for (final Class8422 class8423 : Class8797.field36993) {
             final BlockState method6702 = Class8797.field36991.world.getBlockState(this.method30692().add(class8423.field34567, class8423.field34568 + 1.0, class8423.field34569));
-            if (method6702.getBlock() == Class7521.field29173 || method6702.getBlock() == Class7521.field29174) {
+            if (method6702.getBlock() == Blocks.field29173 || method6702.getBlock() == Blocks.field29174) {
                 return true;
             }
         }
@@ -161,8 +161,8 @@ public class Class8797
     
     public boolean method30698() {
         if (!this.method30697()) {
-            if (Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Class7521.field29172) {
-                if (Class8797.field36991.world.getBlockState(this.method30692().method1137()).method21696() != Class7521.field29172) {
+            if (Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Blocks.field29172) {
+                if (Class8797.field36991.world.getBlockState(this.method30692().method1137()).method21696() != Blocks.field29172) {
                     return false;
                 }
             }

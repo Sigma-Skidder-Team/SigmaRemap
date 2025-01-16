@@ -11,7 +11,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 
-public class Class588 extends Widget implements Class587<Class120>
+public class Class588 extends Widget implements Class587<Ingredient>
 {
     private final IRecipe<?> field3484;
     private final boolean field3485;
@@ -30,11 +30,11 @@ public class Class588 extends Widget implements Class587<Class120>
     }
     
     public void method3456(final IRecipe<?> class3662) {
-        this.method3455(3, 3, -1, class3662, class3662.method11294().iterator(), 0);
+        this.method3455(3, 3, -1, class3662, class3662.getIngredients().iterator(), 0);
     }
     
     @Override
-    public void method3440(final Iterator<Class120> iterator, final int n, final int n2, final int n3, final int n4) {
+    public void method3440(final Iterator<Ingredient> iterator, final int n, final int n2, final int n3, final int n4) {
         final ItemStack[] method611 = iterator.next().method611();
         if (method611.length != 0) {
             this.field3486.add(new Class8370(this, 3 + n4 * 7, 3 + n3 * 7, method611));

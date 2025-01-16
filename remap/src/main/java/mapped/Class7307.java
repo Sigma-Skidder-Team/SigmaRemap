@@ -20,7 +20,7 @@ public class Class7307 extends Class7303
 {
     public Class7307(final Function<Dynamic<?>, ? extends Class5117> function) {
         super(function, 256);
-        this.field28285 = (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153, (Object)Class7521.field29156, (Object)Class7521.field29157, (Object[])new Block[] { Class7521.field29158, Class7521.field29155, Class7521.field29546, Class7521.field29482, Class7521.field29483, Class7521.field29484, Class7521.field29485, Class7521.field29486, Class7521.field29487, Class7521.field29488, Class7521.field29489, Class7521.field29490, Class7521.field29491, Class7521.field29492, Class7521.field29493, Class7521.field29494, Class7521.field29495, Class7521.field29496, Class7521.field29497, Class7521.field29217, Class7521.field29587, Class7521.field29392, Class7521.field29329, Class7521.field29175, Class7521.field29177, Class7521.field29173, Class7521.field29174, Class7521.field29286, Class7521.field29147, Class7521.field29764, Class7521.field29548 });
+        this.field28285 = (Set<Block>)ImmutableSet.of((Object) Blocks.STONE, (Object) Blocks.GRANITE, (Object) Blocks.DIORITE, (Object) Blocks.ANDESITE, (Object) Blocks.DIRT, (Object) Blocks.COARSE_DIRT, (Object[])new Block[] { Blocks.PODZOL, Blocks.GRASS_BLOCK, Blocks.field29546, Blocks.field29482, Blocks.field29483, Blocks.field29484, Blocks.field29485, Blocks.field29486, Blocks.field29487, Blocks.field29488, Blocks.field29489, Blocks.field29490, Blocks.field29491, Blocks.field29492, Blocks.field29493, Blocks.field29494, Blocks.field29495, Blocks.field29496, Blocks.field29497, Blocks.field29217, Blocks.field29587, Blocks.field29392, Blocks.field29329, Blocks.field29175, Blocks.field29177, Blocks.field29173, Blocks.field29174, Blocks.OBSIDIAN, Blocks.AIR, Blocks.CAVE_AIR, Blocks.field29548 });
     }
     
     @Override
@@ -48,16 +48,16 @@ public class Class7307 extends Class7303
         }
         if (n7 == 10) {
             if (random.nextFloat() >= 0.25) {
-                class7305.method7008(class7306, Class7521.field29286.getDefaultState(), false);
+                class7305.method7008(class7306, Blocks.OBSIDIAN.getDefaultState(), false);
             }
             else {
-                class7305.method7008(class7306, Class7521.field29642.getDefaultState(), false);
-                class7305.method7036().method21345(class7306, Class7521.field29642, 0);
+                class7305.method7008(class7306, Blocks.MAGMA_BLOCK.getDefaultState(), false);
+                class7305.method7036().method21345(class7306, Blocks.MAGMA_BLOCK, 0);
             }
             return true;
         }
         if (n7 < 10) {
-            class7305.method7008(class7306, Class7521.field29174.getDefaultState(), false);
+            class7305.method7008(class7306, Blocks.field29174.getDefaultState(), false);
             return false;
         }
         int n10 = 0;

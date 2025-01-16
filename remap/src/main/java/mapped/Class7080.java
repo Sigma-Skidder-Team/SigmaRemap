@@ -97,7 +97,7 @@ public class Class7080 implements Class7079
     }
     
     static {
-        field27574 = Sets.newHashSet((Object[])new Block[] { Class7521.field29181, Class7521.field29182, Class7521.field29183, Class7521.field29184, Class7521.field29185, Class7521.field29186, Class7521.field29193, Class7521.field29194, Class7521.field29195, Class7521.field29196, Class7521.field29197, Class7521.field29198, Class7521.field29205, Class7521.field29206, Class7521.field29207, Class7521.field29208, Class7521.field29209, Class7521.field29210 });
+        field27574 = Sets.newHashSet((Object[])new Block[] { Blocks.field29181, Blocks.field29182, Blocks.field29183, Blocks.field29184, Blocks.field29185, Blocks.field29186, Blocks.field29193, Blocks.field29194, Blocks.field29195, Blocks.field29196, Blocks.field29197, Blocks.field29198, Blocks.field29205, Blocks.field29206, Blocks.field29207, Blocks.field29208, Blocks.field29209, Blocks.field29210 });
         field27575 = new Class2259("tutorial.find_tree.title", new Object[0]);
         field27576 = new Class2259("tutorial.find_tree.description", new Object[0]);
     }

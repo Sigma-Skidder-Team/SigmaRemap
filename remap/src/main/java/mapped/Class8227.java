@@ -48,7 +48,7 @@ public class Class8227 extends Class8228
     }
     
     public List<Class9038> method27252(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final boolean b) {
-        final List<Class9038> method19951 = class1795.method6518(this.field33789).method19951(class1796, new Class9092().method32845(class1797), Class7521.field29820, b);
+        final List<Class9038> method19951 = class1795.method6518(this.field33789).method19951(class1796, new Class9092().method32845(class1797), Blocks.STRUCTURE_BLOCK, b);
         final ArrayList arrayList = Lists.newArrayList();
         for (final Class9038 class1798 : method19951) {
             if (class1798.field38250 == null) {
@@ -64,7 +64,7 @@ public class Class8227 extends Class8228
     
     @Override
     public List<Class9038> method27253(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final Random rnd) {
-        final List<Class9038> method19951 = class1795.method6518(this.field33789).method19951(class1796, new Class9092().method32845(class1797), Class7521.field29821, true);
+        final List<Class9038> method19951 = class1795.method6518(this.field33789).method19951(class1796, new Class9092().method32845(class1797), Blocks.JIGSAW, true);
         Collections.shuffle(method19951, rnd);
         return method19951;
     }

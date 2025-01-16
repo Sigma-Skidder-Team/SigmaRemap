@@ -37,6 +37,6 @@ public class Class5135 implements Class5113
     }
     
     public static <T> Class5135 method16045(final Dynamic<T> dynamic) {
-        return new Class5135(dynamic.get("to_place").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()), dynamic.get("place_on").asList((Function) BlockState::deserialize), dynamic.get("place_in").asList((Function) BlockState::deserialize), dynamic.get("place_under").asList((Function) BlockState::deserialize));
+        return new Class5135(dynamic.get("to_place").map((Function) BlockState::deserialize).orElse(Blocks.AIR.getDefaultState()), dynamic.get("place_on").asList((Function) BlockState::deserialize), dynamic.get("place_in").asList((Function) BlockState::deserialize), dynamic.get("place_under").asList((Function) BlockState::deserialize));
     }
 }

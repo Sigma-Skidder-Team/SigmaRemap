@@ -68,11 +68,11 @@ public class Block implements Class3832
     
     public static BlockState method11775(final int n) {
         final BlockState class7096 = Block.field17391.method499(n);
-        return (class7096 != null) ? class7096 : Class7521.field29147.getDefaultState();
+        return (class7096 != null) ? class7096 : Blocks.AIR.getDefaultState();
     }
     
     public static Block method11776(final Item class3820) {
-        return (class3820 instanceof Class4036) ? ((Class4036)class3820).method12240() : Class7521.field29147;
+        return (class3820 instanceof Class4036) ? ((Class4036)class3820).method12240() : Blocks.AIR;
     }
     
     public static BlockState method11777(final BlockState class7096, final BlockState class7097, final World class7098, final BlockPos class7099) {
@@ -190,11 +190,11 @@ public class Block implements Class3832
     
     public static boolean method11792(final Block class3833) {
         if (!(class3833 instanceof Class3972)) {
-            if (class3833 != Class7521.field29517) {
-                if (class3833 != Class7521.field29342) {
-                    if (class3833 != Class7521.field29343) {
-                        if (class3833 != Class7521.field29383) {
-                            if (class3833 != Class7521.field29337) {
+            if (class3833 != Blocks.field29517) {
+                if (class3833 != Blocks.field29342) {
+                    if (class3833 != Blocks.field29343) {
+                        if (class3833 != Blocks.field29383) {
+                            if (class3833 != Blocks.field29337) {
                                 if (!class3833.method11785(Class7188.field27914)) {
                                     return false;
                                 }

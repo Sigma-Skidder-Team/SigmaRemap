@@ -47,7 +47,7 @@ public class Class3901 extends Class3892
                 for (int i = 0; i < this.method12000().method29794(); ++i) {
                     for (int j = 0; j < this.method12000().method29793(); ++j) {
                         final Class7990 method29798 = method29797.method25270(i, j, 0);
-                        class1847.setBlockState(method29798.method26068(), Class7521.field29147.getDefaultState(), 2);
+                        class1847.setBlockState(method29798.method26068(), Blocks.AIR.getDefaultState(), 2);
                         class1847.method6955(2001, method29798.method26068(), Block.method11774(method29798.method26065()));
                     }
                 }
@@ -62,7 +62,7 @@ public class Class3901 extends Class3892
                 }
                 for (int k = 0; k < this.method12000().method29794(); ++k) {
                     for (int l = 0; l < this.method12000().method29793(); ++l) {
-                        class1847.method6694(method29797.method25270(k, l, 0).method26068(), Class7521.field29147);
+                        class1847.method6694(method29797.method25270(k, l, 0).method26068(), Blocks.AIR);
                     }
                 }
             }
@@ -70,7 +70,7 @@ public class Class3901 extends Class3892
         else {
             for (int n = 0; n < this.method11998().method29793(); ++n) {
                 final Class7990 method29800 = method29796.method25270(0, n, 0);
-                class1847.setBlockState(method29800.method26068(), Class7521.field29147.getDefaultState(), 2);
+                class1847.setBlockState(method29800.method26068(), Blocks.AIR.getDefaultState(), 2);
                 class1847.method6955(2001, method29800.method26068(), Block.method11774(method29800.method26065()));
             }
             final Class784 class1850 = EntityType.field29027.method23371(class1847);
@@ -82,7 +82,7 @@ public class Class3901 extends Class3892
                 Class7770.field31788.method13788(iterator2.next(), class1850);
             }
             for (int n2 = 0; n2 < this.method11998().method29793(); ++n2) {
-                class1847.method6694(method29796.method25270(0, n2, 0).method26068(), Class7521.field29147);
+                class1847.method6694(method29796.method25270(0, n2, 0).method26068(), Blocks.AIR);
             }
         }
     }
@@ -99,28 +99,28 @@ public class Class3901 extends Class3892
     
     private Class8691 method11997() {
         if (this.field17612 == null) {
-            this.field17612 = Class9512.method35439().method35438(" ", "#", "#").method35440('#', Class7990.method26069(Class169.method766(Class7521.field29331))).method35441();
+            this.field17612 = Class9512.method35439().method35438(" ", "#", "#").method35440('#', Class7990.method26069(Class169.method766(Blocks.field29331))).method35441();
         }
         return this.field17612;
     }
     
     private Class8691 method11998() {
         if (this.field17613 == null) {
-            this.field17613 = Class9512.method35439().method35438("^", "#", "#").method35440('^', Class7990.method26069(Class3901.field17616)).method35440('#', Class7990.method26069(Class169.method766(Class7521.field29331))).method35441();
+            this.field17613 = Class9512.method35439().method35438("^", "#", "#").method35440('^', Class7990.method26069(Class3901.field17616)).method35440('#', Class7990.method26069(Class169.method766(Blocks.field29331))).method35441();
         }
         return this.field17613;
     }
     
     private Class8691 method11999() {
         if (this.field17614 == null) {
-            this.field17614 = Class9512.method35439().method35438("~ ~", "###", "~#~").method35440('#', Class7990.method26069(Class169.method766(Class7521.field29281))).method35440('~', Class7990.method26069(Class114.method607(Material.AIR))).method35441();
+            this.field17614 = Class9512.method35439().method35438("~ ~", "###", "~#~").method35440('#', Class7990.method26069(Class169.method766(Blocks.IRON_BLOCK))).method35440('~', Class7990.method26069(Class114.method607(Material.AIR))).method35441();
         }
         return this.field17614;
     }
     
     private Class8691 method12000() {
         if (this.field17615 == null) {
-            this.field17615 = Class9512.method35439().method35438("~^~", "###", "~#~").method35440('^', Class7990.method26069(Class3901.field17616)).method35440('#', Class7990.method26069(Class169.method766(Class7521.field29281))).method35440('~', Class7990.method26069(Class114.method607(Material.AIR))).method35441();
+            this.field17615 = Class9512.method35439().method35438("~^~", "###", "~#~").method35440('^', Class7990.method26069(Class3901.field17616)).method35440('#', Class7990.method26069(Class169.method766(Blocks.IRON_BLOCK))).method35440('~', Class7990.method26069(Class114.method607(Material.AIR))).method35441();
         }
         return this.field17615;
     }
@@ -132,6 +132,6 @@ public class Class3901 extends Class3892
     
     static {
         field17611 = Class3892.field17564;
-        field17616 = (class7096 -> class7096 != null && (class7096.getBlock() == Class7521.field29342 || class7096.getBlock() == Class7521.field29343));
+        field17616 = (class7096 -> class7096 != null && (class7096.getBlock() == Blocks.field29342 || class7096.getBlock() == Blocks.field29343));
     }
 }

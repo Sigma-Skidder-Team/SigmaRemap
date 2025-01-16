@@ -8,12 +8,12 @@ import java.util.function.Supplier;
 
 public enum Class2034 implements Class2035
 {
-    field11592("leather", 5, new int[] { 1, 2, 3, 1 }, 15, Class8520.field34985, 0.0f, () -> Class120.method618(Items.field31357)),
-    field11593("chainmail", 15, new int[] { 1, 4, 5, 2 }, 12, Class8520.field34979, 0.0f, () -> Class120.method618(Items.field31284)),
-    field11594("iron", 15, new int[] { 2, 5, 6, 2 }, 9, Class8520.field34984, 0.0f, () -> Class120.method618(Items.field31284)),
-    field11595("gold", 7, new int[] { 1, 3, 5, 2 }, 25, Class8520.field34983, 0.0f, () -> Class120.method618(Items.field31285)),
-    field11596("diamond", 33, new int[] { 3, 6, 8, 3 }, 10, Class8520.field34980, 2.0f, () -> Class120.method618(Items.field31283)),
-    field11597("turtle", 25, new int[] { 2, 5, 6, 2 }, 9, Class8520.field34986, 0.0f, () -> Class120.method618(Items.field31273));
+    field11592("leather", 5, new int[] { 1, 2, 3, 1 }, 15, Class8520.field34985, 0.0f, () -> Ingredient.method618(Items.field31357)),
+    field11593("chainmail", 15, new int[] { 1, 4, 5, 2 }, 12, Class8520.field34979, 0.0f, () -> Ingredient.method618(Items.field31284)),
+    field11594("iron", 15, new int[] { 2, 5, 6, 2 }, 9, Class8520.field34984, 0.0f, () -> Ingredient.method618(Items.field31284)),
+    field11595("gold", 7, new int[] { 1, 3, 5, 2 }, 25, Class8520.field34983, 0.0f, () -> Ingredient.method618(Items.field31285)),
+    field11596("diamond", 33, new int[] { 3, 6, 8, 3 }, 10, Class8520.field34980, 2.0f, () -> Ingredient.method618(Items.field31283)),
+    field11597("turtle", 25, new int[] { 2, 5, 6, 2 }, 9, Class8520.field34986, 0.0f, () -> Ingredient.method618(Items.field31273));
     
     private static final int[] field11598;
     private final String field11599;
@@ -22,16 +22,16 @@ public enum Class2034 implements Class2035
     private final int field11602;
     private final Class7795 field11603;
     private final float field11604;
-    private final Class8656<Class120> field11605;
+    private final Class8656<Ingredient> field11605;
     
-    private Class2034(final String field11599, final int field11600, final int[] field11601, final int field11602, final Class7795 field11603, final float field11604, final Supplier<Class120> supplier) {
+    private Class2034(final String field11599, final int field11600, final int[] field11601, final int field11602, final Class7795 field11603, final float field11604, final Supplier<Ingredient> supplier) {
         this.field11599 = field11599;
         this.field11600 = field11600;
         this.field11601 = field11601;
         this.field11602 = field11602;
         this.field11603 = field11603;
         this.field11604 = field11604;
-        this.field11605 = new Class8656<Class120>(supplier);
+        this.field11605 = new Class8656<Ingredient>(supplier);
     }
     
     @Override
@@ -55,7 +55,7 @@ public enum Class2034 implements Class2035
     }
     
     @Override
-    public Class120 method8100() {
+    public Ingredient method8100() {
         return this.field11605.method29528();
     }
     

@@ -155,12 +155,12 @@ public class Chunk implements IChunk
         if (this.field10146.method6745() == Class9505.field40898) {
             BlockState class355 = null;
             if (method1075 == 60) {
-                class355 = Class7521.field29517.getDefaultState();
+                class355 = Blocks.field29517.getDefaultState();
             }
             if (method1075 == 70) {
                 class355 = Class6348.method18887(method1074, method1076);
             }
-            return (class355 == null) ? Class7521.field29147.getDefaultState() : class355;
+            return (class355 == null) ? Blocks.AIR.getDefaultState() : class355;
         }
         try {
             if (method1075 >= 0 && method1075 >> 4 < this.field10142.length) {
@@ -169,7 +169,7 @@ public class Chunk implements IChunk
                     return class356.method27148(method1074 & 0xF, method1075 & 0xF, method1076 & 0xF);
                 }
             }
-            return Class7521.field29147.getDefaultState();
+            return Blocks.AIR.getDefaultState();
         }
         catch (final Throwable t) {
             final CrashReport method1077 = CrashReport.makeCrashReport(t, "Getting block state");

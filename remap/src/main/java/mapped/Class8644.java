@@ -51,7 +51,7 @@ public class Class8644
     public static final Class8061 field36292;
     
     private static Class8061 method29401(final String s, final Class8061 class8061) {
-        return Registry.method511(Registry.field212, s, class8061);
+        return Registry.register(Registry.field212, s, class8061);
     }
     
     static {

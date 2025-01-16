@@ -10,17 +10,18 @@ import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.world.World;
 
 import java.util.Map;
 
 public class Class3678 extends Class3666
 {
-    private static final Class120 field16964;
-    private static final Class120 field16965;
-    private static final Class120 field16966;
+    private static final Ingredient field16964;
+    private static final Ingredient field16965;
+    private static final Ingredient field16966;
     private static final Map<Item, Class2141> field16967;
-    private static final Class120 field16968;
+    private static final Ingredient field16968;
     
     public Class3678(final ResourceLocation class1932) {
         super(class1932);
@@ -120,14 +121,14 @@ public class Class3678 extends Class3666
     }
     
     @Override
-    public Class6096<?> method11299() {
-        return Class6096.field24740;
+    public IRecipeSerializer<?> getSerializer() {
+        return IRecipeSerializer.field24740;
     }
     
     static {
-        field16964 = Class120.method618(Items.field31511, Items.field31307, Items.field31439, Items.field31523, Items.field31524, Items.field31527, Items.field31525, Items.field31528, Items.field31526);
-        field16965 = Class120.method618(Items.field31283);
-        field16966 = Class120.method618(Items.field31378);
+        field16964 = Ingredient.method618(Items.field31511, Items.field31307, Items.field31439, Items.field31523, Items.field31524, Items.field31527, Items.field31525, Items.field31528, Items.field31526);
+        field16965 = Ingredient.method618(Items.field31283);
+        field16966 = Ingredient.method618(Items.field31378);
         field16967 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put(Items.field31511, Class2141.field12606);
             hashMap.put(Items.field31307, Class2141.field12609);
@@ -140,6 +141,6 @@ public class Class3678 extends Class3666
             hashMap.put(Items.field31526, Class2141.field12608);
             return;
         });
-        field16968 = Class120.method618(Items.field31308);
+        field16968 = Ingredient.method618(Items.field31308);
     }
 }

@@ -34,7 +34,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                     if (!Class4535.method13533(class1880)) {
                         if (!class1880.method11785(Class7188.field27893)) {
                             if (!class1880.method11785(Class7188.field27892)) {
-                                if (class1880 != Class7521.field29388) {
+                                if (class1880 != Blocks.field29388) {
                                     return b;
                                 }
                             }
@@ -56,8 +56,8 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
             final Block class1880;
             final boolean b;
             if (!(!Class4535.method13533(class1880))) {
-                if (class1880 != Class7521.field29155) {
-                    if (class1880 != Class7521.field29392) {
+                if (class1880 != Blocks.GRASS_BLOCK) {
+                    if (class1880 != Blocks.field29392) {
                         return b;
                     }
                 }
@@ -67,11 +67,11 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
     }
     
     public static boolean method13611(final Class1877 class1877, final BlockPos class1878) {
-        return class1877.method6791(class1878, class1879 -> class1879.getBlock() == Class7521.field29388);
+        return class1877.method6791(class1878, class1879 -> class1879.getBlock() == Blocks.field29388);
     }
     
     public static boolean method13612(final Class1877 class1877, final BlockPos class1878) {
-        return class1877.method6791(class1878, class1879 -> class1879.getBlock() == Class7521.field29173);
+        return class1877.method6791(class1878, class1879 -> class1879.getBlock() == Blocks.field29173);
     }
     
     public static boolean method13613(final Class1877 class1877, final BlockPos class1878) {
@@ -86,7 +86,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
         return class1877.method6791(class1878, class1879 -> {
             class1879.getBlock();
             final Block class1880;
-            return Class4535.method13533(class1880) || class1880 == Class7521.field29298;
+            return Class4535.method13533(class1880) || class1880 == Blocks.field29298;
         });
     }
     
@@ -96,7 +96,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
     
     public void method13617(final Class1875 class1875, final BlockPos class1876) {
         if (!method13610(class1875, class1876)) {
-            this.method13529(class1875, class1876, Class7521.field29156.getDefaultState());
+            this.method13529(class1875, class1876, Blocks.DIRT.getDefaultState());
         }
     }
     

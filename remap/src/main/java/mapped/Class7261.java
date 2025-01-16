@@ -60,7 +60,7 @@ public abstract class Class7261 extends Class7257
                     }
                     if (class1847.method6961(method1134.method1137())) {
                         if (this.method22202(class1847, method1134)) {
-                            class1847.method6692(method1134.method1137(), Class7521.field29289.getDefaultState());
+                            class1847.method6692(method1134.method1137(), Blocks.FIRE.getDefaultState());
                         }
                     }
                 }
@@ -79,7 +79,7 @@ public abstract class Class7261 extends Class7257
                         }
                     }
                     else if (this.method22201(class1847, method1135)) {
-                        class1847.method6692(method1135, Class7521.field29289.getDefaultState());
+                        class1847.method6692(method1135, Blocks.FIRE.getDefaultState());
                         return;
                     }
                 }
@@ -126,7 +126,7 @@ public abstract class Class7261 extends Class7257
     
     @Override
     public BlockState getBlockState(final IFluidState IFluidState) {
-        return ((StateHolder<O, BlockState>)Class7521.field29174.getDefaultState()).with((IProperty<Comparable>)Class3859.field17480, Class7257.method22193(IFluidState));
+        return ((StateHolder<O, BlockState>) Blocks.field29174.getDefaultState()).with((IProperty<Comparable>)Class3859.field17480, Class7257.method22193(IFluidState));
     }
     
     @Override
@@ -184,7 +184,7 @@ public abstract class Class7261 extends Class7257
             if (this.isIn(Class7324.field28320)) {
                 if (method6702.isTagged(Class7324.field28319)) {
                     if (class1853.getBlock() instanceof Class3859) {
-                        class1851.setBlockState(class1852, Class7521.field29148.getDefaultState(), 3);
+                        class1851.setBlockState(class1852, Blocks.STONE.getDefaultState(), 3);
                     }
                     this.method22203(class1851, class1852);
                     return;

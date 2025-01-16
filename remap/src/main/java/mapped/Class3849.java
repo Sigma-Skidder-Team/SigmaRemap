@@ -30,7 +30,7 @@ public class Class3849 extends Class3846
             }
             final Material method21697 = class1847.getBlockState(class1849.method1139()).method21697();
             if (method21697.method26440() || method21697.method26438()) {
-                class1847.method6692(class1849, Class7521.field29173.getDefaultState());
+                class1847.method6692(class1849, Blocks.field29173.getDefaultState());
             }
         }
     }
@@ -44,8 +44,8 @@ public class Class3849 extends Class3846
     
     public void method11910(final BlockState class7096, final World class7097, final BlockPos class7098) {
         if (!class7097.dimension.method20502()) {
-            class7097.method6692(class7098, Class7521.field29173.getDefaultState());
-            class7097.method6698(class7098, Class7521.field29173, class7098);
+            class7097.method6692(class7098, Blocks.field29173.getDefaultState());
+            class7097.method6698(class7098, Blocks.field29173, class7098);
         }
         else {
             class7097.method6690(class7098, false);

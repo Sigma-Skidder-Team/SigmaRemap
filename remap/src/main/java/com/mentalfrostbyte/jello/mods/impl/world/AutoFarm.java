@@ -94,7 +94,7 @@ public class AutoFarm extends Module
                                     class5744.method17041(method6709[1]);
                                     class5744.method17047(new Class1281(this, n, method6709));
                                     AutoFarm.mc.field4692 = 2;
-                                    AutoFarm.mc.world.method6692(class5745.method1137(), Class7521.field29297.getDefaultState());
+                                    AutoFarm.mc.world.method6692(class5745.method1137(), Blocks.field29297.getDefaultState());
                                     return;
                                 }
                                 continue;

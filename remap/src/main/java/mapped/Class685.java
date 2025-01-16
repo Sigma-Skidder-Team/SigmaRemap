@@ -110,7 +110,7 @@ public class Class685 extends AbstractGui
         }
         final ItemStack method3810 = this.field3753.player.field3006.method2370(3);
         if (this.field3753.gameSettings.field23465 == 0) {
-            if (method3810.getItem() == Class7521.field29342.method11704()) {
+            if (method3810.getItem() == Blocks.field29342.method11704()) {
                 this.method3796();
             }
         }
@@ -935,7 +935,7 @@ public class Class685 extends AbstractGui
         RenderSystem.defaultBlendFunc();
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, n);
         this.field3753.method5290().method5849(Class1774.field9853);
-        final TextureAtlasSprite method35427 = this.field3753.method5305().method5787().method35427(Class7521.field29341.getDefaultState());
+        final TextureAtlasSprite method35427 = this.field3753.method5305().method5787().method35427(Blocks.field29341.getDefaultState());
         final float method35428 = method35427.method7497();
         final float method35429 = method35427.method7500();
         final float method35430 = method35427.method7498();

@@ -28,7 +28,7 @@ public class Class1864 extends Chunk
     
     @Override
     public BlockState getBlockState(final BlockPos class354) {
-        return Class7521.field29763.getDefaultState();
+        return Blocks.VOID_AIR.getDefaultState();
     }
     
     @Nullable

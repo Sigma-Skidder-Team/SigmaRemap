@@ -17,10 +17,10 @@ public enum Class2066
             class7096.method21696();
             final Block class7097;
             final boolean b;
-            if (class7097 != Class7521.field29148) {
-                if (class7097 != Class7521.field29149) {
-                    if (class7097 != Class7521.field29151) {
-                        if (class7097 != Class7521.field29153) {
+            if (class7097 != Blocks.STONE) {
+                if (class7097 != Blocks.GRANITE) {
+                    if (class7097 != Blocks.DIORITE) {
+                        if (class7097 != Blocks.ANDESITE) {
                             return b;
                         }
                     }
@@ -32,7 +32,7 @@ public enum Class2066
             return false;
         }
     }), 
-    field11828("netherrack", (Predicate<Class7096>)new Class117(Class7521.field29338));
+    field11828("netherrack", (Predicate<Class7096>)new Class117(Blocks.field29338));
     
     private static final Map<String, Class2066> field11829;
     private final String field11830;

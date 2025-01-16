@@ -40,12 +40,12 @@ public class Class3875 extends Class3874
     
     @Override
     public boolean method11943(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
-        return class7096.method21696() == Class7521.field29298;
+        return class7096.method21696() == Blocks.field29298;
     }
     
     public Item method11950() {
-        if (this.field17522 != Class7521.field29337) {
-            return (this.field17522 != Class7521.field29383) ? Items.AIR : Items.field31430;
+        if (this.field17522 != Blocks.field29337) {
+            return (this.field17522 != Blocks.field29383) ? Items.AIR : Items.field31430;
         }
         return Items.field31429;
     }

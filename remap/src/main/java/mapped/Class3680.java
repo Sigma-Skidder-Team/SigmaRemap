@@ -5,20 +5,21 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 
 public abstract class Class3680 implements IRecipe<IInventory>
 {
-    public final Class8976<?> field16974;
+    public final IRecipeType<?> field16974;
     public final ResourceLocation field16975;
     public final String field16976;
-    public final Class120 field16977;
+    public final Ingredient field16977;
     public final ItemStack field16978;
     public final float field16979;
     public final int field16980;
     
-    public Class3680(final Class8976<?> field16974, final ResourceLocation field16975, final String field16976, final Class120 field16977, final ItemStack field16978, final float field16979, final int field16980) {
+    public Class3680(final IRecipeType<?> field16974, final ResourceLocation field16975, final String field16976, final Ingredient field16977, final ItemStack field16978, final float field16979, final int field16980) {
         this.field16974 = field16974;
         this.field16975 = field16975;
         this.field16976 = field16976;
@@ -44,10 +45,10 @@ public abstract class Class3680 implements IRecipe<IInventory>
     }
     
     @Override
-    public NonNullList<Class120> method11294() {
+    public NonNullList<Ingredient> getIngredients() {
         final NonNullList<Object> method8506 = NonNullList.create();
         method8506.add(this.field16977);
-        return (NonNullList<Class120>)method8506;
+        return (NonNullList<Ingredient>)method8506;
     }
     
     public float method11328() {
@@ -60,7 +61,7 @@ public abstract class Class3680 implements IRecipe<IInventory>
     }
     
     @Override
-    public String method11296() {
+    public String getGroup() {
         return this.field16976;
     }
     
@@ -69,12 +70,12 @@ public abstract class Class3680 implements IRecipe<IInventory>
     }
     
     @Override
-    public ResourceLocation method11298() {
+    public ResourceLocation getId() {
         return this.field16975;
     }
     
     @Override
-    public Class8976<?> method11300() {
+    public IRecipeType<?> getType() {
         return this.field16974;
     }
 }

@@ -21,14 +21,14 @@ public class Class3472 extends Class3446
     public PlayerEntity field16365;
     private int field16366;
     private boolean field16367;
-    private final Class120 field16368;
+    private final Ingredient field16368;
     private final boolean field16369;
     
-    public Class3472(final Class787 class787, final double n, final Class120 class788, final boolean b) {
+    public Class3472(final Class787 class787, final double n, final Ingredient class788, final boolean b) {
         this(class787, n, b, class788);
     }
     
-    public Class3472(final Class787 field16358, final double field16359, final boolean field16360, final Class120 field16361) {
+    public Class3472(final Class787 field16358, final double field16359, final boolean field16360, final Ingredient field16361) {
         this.field16358 = field16358;
         this.field16359 = field16359;
         this.field16368 = field16361;

@@ -14,7 +14,7 @@ public interface Class2035
     
     Class7795 method8099();
     
-    Class120 method8100();
+    Ingredient method8100();
     
     String method8101();
     

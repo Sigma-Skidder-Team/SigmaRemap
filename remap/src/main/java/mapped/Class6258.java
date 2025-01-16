@@ -40,7 +40,7 @@ public class Class6258 extends Class6257
     
     public static void method18605(final LivingEntity class511, final World class512, final BlockPos class513, final int n) {
         if (class511.onGround) {
-            final BlockState method11878 = Class7521.field29641.getDefaultState();
+            final BlockState method11878 = Blocks.FROSTED_ICE.getDefaultState();
             final float n2 = (float)Math.min(16, 2 + n);
             final Mutable class514 = new Mutable();
             for (final BlockPos class515 : BlockPos.getAllInBoxMutable(class513.add(-n2, -1.0, -n2), class513.add(n2, -1.0, n2))) {
@@ -65,7 +65,7 @@ public class Class6258 extends Class6257
                     continue;
                 }
                 class512.method6692(class515, method11878);
-                class512.method6833().method21345(class515, Class7521.field29641, MathHelper.method35658(class511.method2633(), 60, 120));
+                class512.method6833().method21345(class515, Blocks.FROSTED_ICE, MathHelper.method35658(class511.method2633(), 60, 120));
             }
         }
     }

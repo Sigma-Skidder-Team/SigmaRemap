@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 
@@ -14,9 +15,9 @@ public class Class3679 implements Class3663
     private final ResourceLocation field16970;
     private final String field16971;
     private final ItemStack field16972;
-    private final NonNullList<Class120> field16973;
+    private final NonNullList<Ingredient> field16973;
     
-    public Class3679(final ResourceLocation field16970, final String field16971, final ItemStack field16972, final NonNullList<Class120> field16973) {
+    public Class3679(final ResourceLocation field16970, final String field16971, final ItemStack field16972, final NonNullList<Ingredient> field16973) {
         this.field16970 = field16970;
         this.field16971 = field16971;
         this.field16972 = field16972;
@@ -24,17 +25,17 @@ public class Class3679 implements Class3663
     }
     
     @Override
-    public ResourceLocation method11298() {
+    public ResourceLocation getId() {
         return this.field16970;
     }
     
     @Override
-    public Class6096<?> method11299() {
-        return Class6096.field24734;
+    public IRecipeSerializer<?> getSerializer() {
+        return IRecipeSerializer.field24734;
     }
     
     @Override
-    public String method11296() {
+    public String getGroup() {
         return this.field16971;
     }
     
@@ -44,7 +45,7 @@ public class Class3679 implements Class3663
     }
     
     @Override
-    public NonNullList<Class120> method11294() {
+    public NonNullList<Ingredient> getIngredients() {
         return this.field16973;
     }
     

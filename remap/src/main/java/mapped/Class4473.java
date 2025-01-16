@@ -192,7 +192,7 @@ public abstract class Class4473
     
     public BlockState method13441(final IBlockReader class1855, final int n, final int n2, final int n3, final MutableBoundingBox class1856) {
         final BlockPos class1857 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
-        return class1856.isVecInside(class1857) ? class1855.getBlockState(class1857) : Class7521.field29147.getDefaultState();
+        return class1856.isVecInside(class1857) ? class1855.getBlockState(class1857) : Blocks.AIR.getDefaultState();
     }
     
     public boolean method13442(final Class1852 class1852, final int n, final int n2, final int n3, final MutableBoundingBox class1853) {
@@ -206,7 +206,7 @@ public abstract class Class4473
         for (int i = n2; i <= n5; ++i) {
             for (int j = n; j <= n4; ++j) {
                 for (int k = n3; k <= n6; ++k) {
-                    this.method13440(class1851, Class7521.field29147.getDefaultState(), j, i, k, class1852);
+                    this.method13440(class1851, Blocks.AIR.getDefaultState(), j, i, k, class1852);
                 }
             }
         }
@@ -354,7 +354,7 @@ public abstract class Class4473
         for (final Direction class1859 : Plane.HORIZONTAL) {
             final BlockPos method1149 = class1856.method1149(class1859);
             final BlockState method1150 = class1855.getBlockState(method1149);
-            if (method1150.getBlock() == Class7521.field29292) {
+            if (method1150.getBlock() == Blocks.CHEST) {
                 return class1857;
             }
             if (!method1150.isOpaqueCube(class1855, method1149)) {
@@ -387,9 +387,9 @@ public abstract class Class4473
     }
     
     public boolean method13452(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final BlockPos class1853, final ResourceLocation class1854, BlockState method13451) {
-        if (class1852.isVecInside(class1853) && class1851.getBlockState(class1853).getBlock() != Class7521.field29292) {
+        if (class1852.isVecInside(class1853) && class1851.getBlockState(class1853).getBlock() != Blocks.CHEST) {
             if (method13451 == null) {
-                method13451 = method13451(class1851, class1853, Class7521.field29292.getDefaultState());
+                method13451 = method13451(class1851, class1853, Blocks.CHEST.getDefaultState());
             }
             class1851.setBlockState(class1853, method13451, 2);
             final TileEntity method13452 = class1851.getTileEntity(class1853);
@@ -403,8 +403,8 @@ public abstract class Class4473
     
     public boolean method13453(final Class1851 class1851, final MutableBoundingBox class1852, final Random random, final int n, final int n2, final int n3, final Direction class1853, final ResourceLocation class1854) {
         final BlockPos class1855 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
-        if (class1852.isVecInside(class1855) && class1851.getBlockState(class1855).getBlock() != Class7521.field29216) {
-            this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29216.getDefaultState()).with((IProperty<Comparable>)Class3955.field17859, class1853), n, n2, n3, class1852);
+        if (class1852.isVecInside(class1855) && class1851.getBlockState(class1855).getBlock() != Blocks.field29216) {
+            this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.field29216.getDefaultState()).with((IProperty<Comparable>)Class3955.field17859, class1853), n, n2, n3, class1852);
             final TileEntity method6727 = class1851.getTileEntity(class1855);
             if (method6727 instanceof Class458) {
                 ((Class458)method6727).method2327(class1854, random.nextLong());
@@ -464,7 +464,7 @@ public abstract class Class4473
     }
     
     static {
-        field19848 = Class7521.field29764.getDefaultState();
-        field19855 = (Set)ImmutableSet.builder().add((Object)Class7521.field29395).add((Object)Class7521.field29287).add((Object)Class7521.field29288).add((Object)Class7521.field29336).add((Object)Class7521.field29619).add((Object)Class7521.field29623).add((Object)Class7521.field29622).add((Object)Class7521.field29620).add((Object)Class7521.field29621).add((Object)Class7521.field29307).add((Object)Class7521.field29381).build();
+        field19848 = Blocks.CAVE_AIR.getDefaultState();
+        field19855 = (Set)ImmutableSet.builder().add((Object) Blocks.field29395).add((Object) Blocks.TORCH).add((Object) Blocks.WALL_TORCH).add((Object) Blocks.field29336).add((Object) Blocks.SPRUCE_FENCE).add((Object) Blocks.DARK_OAK_FENCE).add((Object) Blocks.ACACIA_FENCE).add((Object) Blocks.BIRCH_FENCE).add((Object) Blocks.JUNGLE_FENCE).add((Object) Blocks.field29307).add((Object) Blocks.field29381).build();
     }
 }

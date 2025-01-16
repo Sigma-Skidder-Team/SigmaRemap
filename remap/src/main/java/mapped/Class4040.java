@@ -38,7 +38,7 @@ public class Class4040 extends Class4036
                 final Material method2720 = class1847.getBlockState(method2717).method21697();
                 if (class1847.getFluidState(method2717).getFluid() == Class7558.field29976 || method2720 == Material.ICE) {
                     if (class1847.method6961(method2719)) {
-                        class1847.setBlockState(method2719, Class7521.field29393.getDefaultState(), 11);
+                        class1847.setBlockState(method2719, Blocks.field29393.getDefaultState(), 11);
                         if (class1848 instanceof Class513) {
                             Class7770.field31799.method13836((Class513)class1848, method2719, method2715);
                         }

@@ -81,10 +81,10 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
     
     private ResourceLocation method6576(final BlockState class7096) {
         final Block method21696 = class7096.getBlock();
-        if (method21696 == Class7521.field29279 && Class1814.field9989) {
+        if (method21696 == Blocks.RED_MUSHROOM && Class1814.field9989) {
             return Class1814.field9987;
         }
-        return (method21696 == Class7521.field29278 && Class1814.field9990) ? Class1814.field9988 : null;
+        return (method21696 == Blocks.BROWN_MUSHROOM && Class1814.field9990) ? Class1814.field9988 : null;
     }
     
     public static void method6577() {

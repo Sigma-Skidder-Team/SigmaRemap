@@ -117,7 +117,7 @@ public class Class501 extends TileEntity
         if (this.field2656 != null) {
             final BlockPos method2193 = this.getPos();
             final Class7096 method2194 = this.field2656.getBlockState(method2193);
-            if (method2194.method21696() == Class7521.field29820) {
+            if (method2194.method21696() == Blocks.STRUCTURE_BLOCK) {
                 this.field2656.setBlockState(method2193, ((StateHolder<O, Class7096>)method2194).with(Class3941.field17831, this.field2871), 2);
             }
         }
@@ -215,7 +215,7 @@ public class Class501 extends TileEntity
     public void method2571(final Class102 field2871) {
         this.field2871 = field2871;
         final Class7096 method6701 = this.field2656.getBlockState(this.getPos());
-        if (method6701.method21696() == Class7521.field29820) {
+        if (method6701.method21696() == Blocks.STRUCTURE_BLOCK) {
             this.field2656.setBlockState(this.getPos(), ((StateHolder<O, Class7096>)method6701).with(Class3941.field17831, field2871), 2);
         }
     }
@@ -297,7 +297,7 @@ public class Class501 extends TileEntity
     private List<Class501> method2581(final BlockPos class354, final BlockPos class355) {
         final ArrayList arrayList = Lists.newArrayList();
         for (final BlockPos class356 : BlockPos.getAllInBoxMutable(class354, class355)) {
-            if (this.field2656.getBlockState(class356).method21696() != Class7521.field29820) {
+            if (this.field2656.getBlockState(class356).method21696() != Blocks.STRUCTURE_BLOCK) {
                 continue;
             }
             final TileEntity method6727 = this.field2656.getTileEntity(class356);
@@ -368,7 +368,7 @@ public class Class501 extends TileEntity
             catch (final Class2357 class2357) {
                 return false;
             }
-            method1137.method19948(this.field2656, method1135, this.field2868, !this.field2872, Class7521.field29646);
+            method1137.method19948(this.field2656, method1135, this.field2868, !this.field2872, Blocks.STRUCTURE_VOID);
             method1137.method19946(this.field2865);
             if (b) {
                 try {

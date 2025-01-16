@@ -25,7 +25,7 @@ public class Class505 extends Class433
     public void method2123(final DamageSource class7929) {
         super.method2123(class7929);
         if (this.world.method6765().method31216(Class8878.field37321)) {
-            this.method1764(Class7521.field29292);
+            this.method1764(Blocks.CHEST);
         }
     }
     
@@ -41,7 +41,7 @@ public class Class505 extends Class433
     
     @Override
     public BlockState method2141() {
-        return ((StateHolder<O, BlockState>)Class7521.field29292.getDefaultState()).with((IProperty<Comparable>)Class3865.field17497, Direction.NORTH);
+        return ((StateHolder<O, BlockState>) Blocks.CHEST.getDefaultState()).with((IProperty<Comparable>)Class3865.field17497, Direction.NORTH);
     }
     
     @Override

@@ -25,7 +25,7 @@ public class Class4540 extends Class4535<Class5116>
             if (b) {
                 if (b2) {
                     if (b3) {
-                        this.method13529(class1851, class1855.toImmutable(), Class7521.field29638.getDefaultState());
+                        this.method13529(class1851, class1855.toImmutable(), Blocks.END_GATEWAY.getDefaultState());
                         class1854.method16016().ifPresent(class1859 -> {
                             class1856.method6727(class1857);
                             final Class488 class1860;
@@ -43,21 +43,21 @@ public class Class4540 extends Class4535<Class5116>
                 if (b4) {
                     if (b) {
                         if (b3) {
-                            this.method13529(class1851, class1855, Class7521.field29172.getDefaultState());
+                            this.method13529(class1851, class1855, Blocks.field29172.getDefaultState());
                             continue;
                         }
                     }
                 }
                 if (b || b3) {
                     if (!b4) {
-                        this.method13529(class1851, class1855, Class7521.field29172.getDefaultState());
+                        this.method13529(class1851, class1855, Blocks.field29172.getDefaultState());
                         continue;
                     }
                 }
-                this.method13529(class1851, class1855, Class7521.field29147.getDefaultState());
+                this.method13529(class1851, class1855, Blocks.AIR.getDefaultState());
             }
             else {
-                this.method13529(class1851, class1855, Class7521.field29147.getDefaultState());
+                this.method13529(class1851, class1855, Blocks.AIR.getDefaultState());
             }
         }
         return true;

@@ -56,7 +56,7 @@ public abstract class Class789 extends Class788
     
     @Override
     public float method4228(final BlockPos class354, final Class1852 class355) {
-        return (class355.getBlockState(class354.method1139()).getBlock() != Class7521.field29155) ? (class355.method6963(class354) - 0.5f) : 10.0f;
+        return (class355.getBlockState(class354.method1139()).getBlock() != Blocks.GRASS_BLOCK) ? (class355.method6963(class354) - 0.5f) : 10.0f;
     }
     
     @Override
@@ -81,7 +81,7 @@ public abstract class Class789 extends Class788
     }
     
     public static boolean method4356(final EntityType<? extends Class789> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
-        return class7500.getBlockState(class7502.method1139()).getBlock() == Class7521.field29155 && class7500.method6993(class7502, 0) > 8;
+        return class7500.getBlockState(class7502.method1139()).getBlock() == Blocks.GRASS_BLOCK && class7500.method6993(class7502, 0) > 8;
     }
     
     @Override

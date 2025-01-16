@@ -26,28 +26,28 @@ public class Class3887 extends Class3874
     @Override
     public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         final Block method21696 = class7096.getBlock();
-        if (method21696 != Class7521.field29175) {
-            if (method21696 != Class7521.field29176) {
-                if (method21696 != Class7521.field29546) {
-                    if (method21696 != Class7521.field29482) {
-                        if (method21696 != Class7521.field29483) {
-                            if (method21696 != Class7521.field29484) {
-                                if (method21696 != Class7521.field29485) {
-                                    if (method21696 != Class7521.field29486) {
-                                        if (method21696 != Class7521.field29487) {
-                                            if (method21696 != Class7521.field29488) {
-                                                if (method21696 != Class7521.field29489) {
-                                                    if (method21696 != Class7521.field29490) {
-                                                        if (method21696 != Class7521.field29491) {
-                                                            if (method21696 != Class7521.field29492) {
-                                                                if (method21696 != Class7521.field29493) {
-                                                                    if (method21696 != Class7521.field29494) {
-                                                                        if (method21696 != Class7521.field29495) {
-                                                                            if (method21696 != Class7521.field29496) {
-                                                                                if (method21696 != Class7521.field29497) {
-                                                                                    if (method21696 != Class7521.field29156) {
-                                                                                        if (method21696 != Class7521.field29157) {
-                                                                                            if (method21696 != Class7521.field29158) {
+        if (method21696 != Blocks.field29175) {
+            if (method21696 != Blocks.field29176) {
+                if (method21696 != Blocks.field29546) {
+                    if (method21696 != Blocks.field29482) {
+                        if (method21696 != Blocks.field29483) {
+                            if (method21696 != Blocks.field29484) {
+                                if (method21696 != Blocks.field29485) {
+                                    if (method21696 != Blocks.field29486) {
+                                        if (method21696 != Blocks.field29487) {
+                                            if (method21696 != Blocks.field29488) {
+                                                if (method21696 != Blocks.field29489) {
+                                                    if (method21696 != Blocks.field29490) {
+                                                        if (method21696 != Blocks.field29491) {
+                                                            if (method21696 != Blocks.field29492) {
+                                                                if (method21696 != Blocks.field29493) {
+                                                                    if (method21696 != Blocks.field29494) {
+                                                                        if (method21696 != Blocks.field29495) {
+                                                                            if (method21696 != Blocks.field29496) {
+                                                                                if (method21696 != Blocks.field29497) {
+                                                                                    if (method21696 != Blocks.DIRT) {
+                                                                                        if (method21696 != Blocks.COARSE_DIRT) {
+                                                                                            if (method21696 != Blocks.PODZOL) {
                                                                                                 return false;
                                                                                             }
                                                                                         }

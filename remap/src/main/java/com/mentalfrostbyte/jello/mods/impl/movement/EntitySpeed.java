@@ -38,7 +38,7 @@ public class EntitySpeed extends Module
             if (!EntitySpeed.mc.player.method1920().onGround) {
                 if (Class6430.method19160(EntitySpeed.mc.player.method1920(), 5.0f)) {
                     if (!EntitySpeed.mc.player.method1920().method1706()) {
-                        if (EntitySpeed.mc.world.getBlockState(EntitySpeed.mc.player.method1920().method1894()).method21696() != Class7521.field29173) {
+                        if (EntitySpeed.mc.world.getBlockState(EntitySpeed.mc.player.method1920().method1894()).method21696() != Blocks.field29173) {
                             class5718.method16983(-2.0);
                         }
                     }

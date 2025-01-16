@@ -43,7 +43,7 @@ public class Class9548
                     for (int k = n - 1; k >= 0; --k) {
                         method1296.method1300(i, k, j);
                         final BlockState method1297 = class1860.getBlockState(method1296);
-                        if (method1297.getBlock() != Class7521.field29147) {
+                        if (method1297.getBlock() != Blocks.AIR) {
                             while (iterator.hasNext()) {
                                 final Class9548 class1861 = (Class9548)iterator.next();
                                 if (class1861.field41117.test(method1297)) {

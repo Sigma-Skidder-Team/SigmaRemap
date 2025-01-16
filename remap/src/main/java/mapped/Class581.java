@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
-public class Class581 extends AbstractGui implements IRenderable, IGuiEventListener, Class586, Class587<Class120>
+public class Class581 extends AbstractGui implements IRenderable, IGuiEventListener, Class586, Class587<Ingredient>
 {
     public static final ResourceLocation field3462;
     private int field3463;
@@ -458,13 +458,13 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
     public void method3439(final IRecipe<?> class3662, final List<Class6601> list) {
         final ItemStack method11292 = class3662.getRecipeOutput();
         this.field3466.method25525(class3662);
-        this.field3466.method25521(Class120.method619(method11292), list.get(0).field26175, list.get(0).field26176);
-        this.method3455(this.field3470.method10938(), this.field3470.method10939(), this.field3470.method10937(), class3662, class3662.method11294().iterator(), 0);
+        this.field3466.method25521(Ingredient.method619(method11292), list.get(0).field26175, list.get(0).field26176);
+        this.method3455(this.field3470.method10938(), this.field3470.method10939(), this.field3470.method10937(), class3662, class3662.getIngredients().iterator(), 0);
     }
     
     @Override
-    public void method3440(final Iterator<Class120> iterator, final int n, final int n2, final int n3, final int n4) {
-        final Class120 class120 = iterator.next();
+    public void method3440(final Iterator<Ingredient> iterator, final int n, final int n2, final int n3, final int n4) {
+        final Ingredient class120 = iterator.next();
         if (!class120.method616()) {
             final Class6601 class121 = this.field3470.field16151.get(n);
             this.field3466.method25521(class120, class121.field26175, class121.field26176);

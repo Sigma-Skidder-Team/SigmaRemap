@@ -27,7 +27,7 @@ public class Class4560 extends Class4535<Class5117>
         final Mutable class1855 = new Mutable(class1853);
         final Mutable class1856 = new Mutable(class1853);
         if (class1851.method6961(class1855)) {
-            if (Class7521.field29761.getDefaultState().method21752(class1851, class1855)) {
+            if (Blocks.BAMBOO.getDefaultState().method21752(class1851, class1855)) {
                 final int n2 = random.nextInt(12) + 5;
                 if (random.nextFloat() < class1854.field22066) {
                     for (int n3 = random.nextInt(4) + 1, i = class1853.getX() - n3; i <= class1853.getX() + n3; ++i) {
@@ -37,7 +37,7 @@ public class Class4560 extends Class4535<Class5117>
                             if (n4 * n4 + n5 * n5 <= n3 * n3) {
                                 class1856.setPos(i, class1851.method6699(HeightmapType.field11522, i, j) - 1, j);
                                 if (Class4535.method13533(class1851.getBlockState(class1856).getBlock())) {
-                                    class1851.setBlockState(class1856, Class7521.field29158.getDefaultState(), 2);
+                                    class1851.setBlockState(class1856, Blocks.PODZOL.getDefaultState(), 2);
                                 }
                             }
                         }
@@ -59,7 +59,7 @@ public class Class4560 extends Class4535<Class5117>
     }
     
     static {
-        field20036 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29761.getDefaultState()).with((IProperty<Comparable>)Class3913.field17723, 1)).with(Class3913.field17724, Class184.field574)).with((IProperty<Comparable>)Class3913.field17725, 0);
+        field20036 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.BAMBOO.getDefaultState()).with((IProperty<Comparable>)Class3913.field17723, 1)).with(Class3913.field17724, Class184.field574)).with((IProperty<Comparable>)Class3913.field17725, 0);
         field20037 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class4560.field20036).with(Class3913.field17724, Class184.field576)).with((IProperty<Comparable>)Class3913.field17725, 1);
         field20038 = ((StateHolder<O, BlockState>)Class4560.field20036).with(Class3913.field17724, Class184.field576);
         field20039 = ((StateHolder<O, BlockState>)Class4560.field20036).with(Class3913.field17724, Class184.field575);

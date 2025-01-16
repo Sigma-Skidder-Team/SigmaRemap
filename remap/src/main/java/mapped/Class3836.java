@@ -119,7 +119,7 @@ public class Class3836 extends Class3834
                 final BlockState method11895 = class1847.getBlockState(method11894);
                 int n = 1;
                 Label_0143: {
-                    if (method11895.getBlock() == Class7521.field29264) {
+                    if (method11895.getBlock() == Blocks.MOVING_PISTON) {
                         if (((StateHolder<Object, Object>)method11895).get((IProperty<Comparable>)Class3836.field17415) == class1850) {
                             final TileEntity method11896 = class1847.getTileEntity(method11894);
                             if (method11896 instanceof Class491) {
@@ -182,7 +182,7 @@ public class Class3836 extends Class3834
                 if (method11894 instanceof Class491) {
                     ((Class491)method11894).method2482();
                 }
-                class7097.setBlockState(class7098, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)Class7521.field29264.getDefaultState()).with((IProperty<Comparable>)Class3960.field17898, class7099)).with(Class3960.field17899, this.field17445 ? Class178.field508 : Class178.field507), 3);
+                class7097.setBlockState(class7098, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>) Blocks.MOVING_PISTON.getDefaultState()).with((IProperty<Comparable>)Class3960.field17898, class7099)).with(Class3960.field17899, this.field17445 ? Class178.field508 : Class178.field507), 3);
                 class7097.method6729(class7098, Class3960.method12080(((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3836.field17415, Direction.byIndex(n2 & 0x7)), class7099, false, true));
                 if (!this.field17445) {
                     class7097.method6690(class7098.method1149(class7099), false);
@@ -192,7 +192,7 @@ public class Class3836 extends Class3834
                     final BlockState method11896 = class7097.getBlockState(method11895);
                     final Block method11897 = method11896.getBlock();
                     int n3 = 0;
-                    if (method11897 == Class7521.field29264) {
+                    if (method11897 == Blocks.MOVING_PISTON) {
                         final TileEntity method11898 = class7097.getTileEntity(method11895);
                         if (method11898 instanceof Class491) {
                             final Class491 class7100 = (Class491)method11898;
@@ -211,8 +211,8 @@ public class Class3836 extends Class3834
                                     if (!method11896.method21706()) {
                                         if (method11894(method11896, class7097, method11895, class7099.getOpposite(), false, class7099)) {
                                             if (method11896.method21721() != PushReaction.NORMAL) {
-                                                if (method11897 != Class7521.field29246) {
-                                                    if (method11897 != Class7521.field29239) {
+                                                if (method11897 != Blocks.field29246) {
+                                                    if (method11897 != Blocks.field29239) {
                                                         break Label_0467;
                                                     }
                                                 }
@@ -242,7 +242,7 @@ public class Class3836 extends Class3834
     
     public static boolean method11894(final BlockState class7096, final World class7097, final BlockPos class7098, final Direction class7099, final boolean b, final Direction class7100) {
         final Block method21696 = class7096.getBlock();
-        if (method21696 == Class7521.field29286) {
+        if (method21696 == Blocks.OBSIDIAN) {
             return false;
         }
         if (!class7097.getWorldBorder().contains(class7098)) {
@@ -252,7 +252,7 @@ public class Class3836 extends Class3834
             return false;
         }
         if (class7098.getY() <= class7097.getHeight() - 1 && (class7099 != Direction.UP || class7098.getY() != class7097.getHeight() - 1)) {
-            if (method21696 != Class7521.field29246 && method21696 != Class7521.field29239) {
+            if (method21696 != Blocks.field29246 && method21696 != Blocks.field29239) {
                 if (class7096.method21718(class7097, class7098) == -1.0f) {
                     return false;
                 }
@@ -279,8 +279,8 @@ public class Class3836 extends Class3834
     private boolean method11895(final World class1847, final BlockPos class1848, final Direction class1849, final boolean b) {
         final BlockPos method1149 = class1848.method1149(class1849);
         if (!b) {
-            if (class1847.getBlockState(method1149).method21696() == Class7521.field29247) {
-                class1847.setBlockState(method1149, Class7521.field29147.getDefaultState(), 20);
+            if (class1847.getBlockState(method1149).method21696() == Blocks.field29247) {
+                class1847.setBlockState(method1149, Blocks.AIR.getDefaultState(), 20);
             }
         }
         final Class9236 class1850 = new Class9236(class1847, class1848, class1849, b);
@@ -302,7 +302,7 @@ public class Class3836 extends Class3834
                 final BlockPos class1853 = method1152.get(j);
                 final BlockState method1153 = class1847.getBlockState(class1853);
                 Block.method11837(method1153, class1847, class1853, method1153.getBlock().method11802() ? class1847.getTileEntity(class1853) : null);
-                class1847.setBlockState(class1853, Class7521.field29147.getDefaultState(), 18);
+                class1847.setBlockState(class1853, Blocks.AIR.getDefaultState(), 18);
                 --n;
                 array[n] = method1153;
             }
@@ -311,19 +311,19 @@ public class Class3836 extends Class3834
                 final BlockState method1154 = class1847.getBlockState(class1854);
                 final BlockPos method1155 = class1854.method1149(class1852);
                 hashMap.remove(method1155);
-                class1847.setBlockState(method1155, ((StateHolder<O, BlockState>)Class7521.field29264.getDefaultState()).with((IProperty<Comparable>)Class3836.field17415, class1849), 68);
+                class1847.setBlockState(method1155, ((StateHolder<O, BlockState>) Blocks.MOVING_PISTON.getDefaultState()).with((IProperty<Comparable>)Class3836.field17415, class1849), 68);
                 class1847.method6729(method1155, Class3960.method12080((BlockState)arrayList.get(k), class1849, b, false));
                 --n;
                 array[n] = method1154;
             }
             if (b) {
-                final BlockState class1855 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29247.getDefaultState()).with((IProperty<Comparable>)Class3835.field17415, class1849)).with(Class3835.field17417, this.field17445 ? Class178.field508 : Class178.field507);
-                final BlockState class1856 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29264.getDefaultState()).with((IProperty<Comparable>)Class3960.field17898, class1849)).with(Class3960.field17899, this.field17445 ? Class178.field508 : Class178.field507);
+                final BlockState class1855 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29247.getDefaultState()).with((IProperty<Comparable>)Class3835.field17415, class1849)).with(Class3835.field17417, this.field17445 ? Class178.field508 : Class178.field507);
+                final BlockState class1856 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.MOVING_PISTON.getDefaultState()).with((IProperty<Comparable>)Class3960.field17898, class1849)).with(Class3960.field17899, this.field17445 ? Class178.field508 : Class178.field507);
                 hashMap.remove(method1149);
                 class1847.setBlockState(method1149, class1856, 68);
                 class1847.method6729(method1149, Class3960.method12080(class1855, class1849, true, true));
             }
-            final BlockState method1156 = Class7521.field29147.getDefaultState();
+            final BlockState method1156 = Blocks.AIR.getDefaultState();
             final Iterator iterator = hashMap.keySet().iterator();
             while (iterator.hasNext()) {
                 class1847.setBlockState((BlockPos)iterator.next(), method1156, 82);
@@ -344,7 +344,7 @@ public class Class3836 extends Class3834
                 class1847.method6696((BlockPos)method1150.get(n2), array[n++].getBlock());
             }
             if (b) {
-                class1847.method6696(method1149, Class7521.field29247);
+                class1847.method6696(method1149, Blocks.field29247);
             }
             return true;
         }

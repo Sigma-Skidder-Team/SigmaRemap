@@ -30,7 +30,7 @@ public class Class3885 extends Class3874
     
     @Override
     public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
-        return class7096.getBlock() == Class7521.field29339;
+        return class7096.getBlock() == Blocks.field29339;
     }
     
     @Override

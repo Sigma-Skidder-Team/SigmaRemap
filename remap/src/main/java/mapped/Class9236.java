@@ -67,11 +67,11 @@ public class Class9236
     }
     
     private static boolean method34053(final Block class3833) {
-        return class3833 == Class7521.field29516 || class3833 == Class7521.field29825;
+        return class3833 == Blocks.field29516 || class3833 == Blocks.HONEY_BLOCK;
     }
     
     private static boolean method34054(final Block class3833, final Block class3834) {
-        return (class3833 != Class7521.field29825 || class3834 != Class7521.field29516) && (class3833 != Class7521.field29516 || class3834 != Class7521.field29825) && (method34053(class3833) || method34053(class3834));
+        return (class3833 != Blocks.HONEY_BLOCK || class3834 != Blocks.field29516) && (class3833 != Blocks.field29516 || class3834 != Blocks.HONEY_BLOCK) && (method34053(class3833) || method34053(class3834));
     }
     
     private boolean method34055(final BlockPos class354, final Direction class355) {

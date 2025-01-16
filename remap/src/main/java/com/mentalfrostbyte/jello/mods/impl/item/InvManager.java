@@ -560,20 +560,20 @@ public class InvManager extends PremiumModule
                     if (!(method27622 instanceof Class4075)) {
                         return 1.0f;
                     }
-                    n = class8322.method11706(class8321, Class7521.field29181.getDefaultState());
+                    n = class8322.method11706(class8321, Blocks.field29181.getDefaultState());
                     if (lowerCase.toLowerCase().contains("gold")) {
                         n -= 5.0f;
                     }
                 }
                 else {
-                    n = class8322.method11706(class8321, Class7521.field29156.getDefaultState());
+                    n = class8322.method11706(class8321, Blocks.DIRT.getDefaultState());
                     if (lowerCase.toLowerCase().contains("gold")) {
                         n -= 5.0f;
                     }
                 }
             }
             else {
-                n = class8322.method11706(class8321, Class7521.field29148.getDefaultState());
+                n = class8322.method11706(class8321, Blocks.STONE.getDefaultState());
                 if (lowerCase.toLowerCase().contains("gold")) {
                     n -= 5.0f;
                 }

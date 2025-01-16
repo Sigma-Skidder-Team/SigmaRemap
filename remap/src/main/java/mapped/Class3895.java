@@ -113,7 +113,7 @@ public abstract class Class3895 extends Class3892
         final int method1150 = class1847.method6748(method1149, class1850);
         if (method1150 < 15) {
             final Class7096 method1151 = class1847.getBlockState(method1149);
-            return Math.max(method1150, (method1151.method21696() != Class7521.field29293) ? 0 : ((int)method1151.method21772((IProperty<Integer>)Class3999.field18026)));
+            return Math.max(method1150, (method1151.method21696() != Blocks.REDSTONE_WIRE) ? 0 : ((int)method1151.method21772((IProperty<Integer>)Class3999.field18026)));
         }
         return method1150;
     }
@@ -131,8 +131,8 @@ public abstract class Class3895 extends Class3892
         if (!this.method11973(method6701)) {
             return 0;
         }
-        if (method6702 != Class7521.field29473) {
-            return (method6702 != Class7521.field29293) ? class1852.method6964(class1853, class1854) : method6701.method21772((IProperty<Integer>)Class3999.field18026);
+        if (method6702 != Blocks.field29473) {
+            return (method6702 != Blocks.REDSTONE_WIRE) ? class1852.method6964(class1853, class1854) : method6701.method21772((IProperty<Integer>)Class3999.field18026);
         }
         return 15;
     }

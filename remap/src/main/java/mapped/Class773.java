@@ -113,7 +113,7 @@ public class Class773 extends Class772 implements Class774, Class768
     @Override
     public float method4228(final BlockPos class354, final Class1852 class355) {
         final Block method21696 = class355.getBlockState(class354.method1139()).getBlock();
-        return (method21696 != Class7521.field29155 && method21696 != Class7521.field29175) ? (0.5f - class355.method6963(class354)) : 10.0f;
+        return (method21696 != Blocks.GRASS_BLOCK && method21696 != Blocks.field29175) ? (0.5f - class355.method6963(class354)) : 10.0f;
     }
     
     @Override

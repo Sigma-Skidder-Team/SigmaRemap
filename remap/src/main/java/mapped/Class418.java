@@ -43,7 +43,7 @@ public class Class418 extends Class416
                     final BlockRayTraceResult class7007 = (BlockRayTraceResult)class7006;
                     final BlockPos method1149 = class7007.getPos().method1149(class7007.getFace());
                     if (this.world.method6961(method1149)) {
-                        this.world.method6692(method1149, Class7521.field29289.getDefaultState());
+                        this.world.method6692(method1149, Blocks.FIRE.getDefaultState());
                     }
                 }
                 else {

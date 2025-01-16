@@ -52,7 +52,7 @@ public class Class8229 extends Class8228
     @Override
     public List<Class9038> method27253(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final Random random) {
         final ArrayList arrayList = Lists.newArrayList();
-        arrayList.add(new Class9038(class1796, ((StateHolder<O, BlockState>)Class7521.field29821.getDefaultState()).with((IProperty<Comparable>)Class3839.field17415, Direction.DOWN), this.field33793));
+        arrayList.add(new Class9038(class1796, ((StateHolder<O, BlockState>) Blocks.JIGSAW.getDefaultState()).with((IProperty<Comparable>)Class3839.field17415, Direction.DOWN), this.field33793));
         return arrayList;
     }
     

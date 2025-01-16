@@ -19,7 +19,7 @@ public final class Class6427 extends Class6397
         final Direction class5493 = class5491.method16765().get((IProperty<Direction>)Class3955.field17859);
         final BlockPos method16764 = class5491.method16764().method1149(class5493);
         if (method16763.method6961(method16764) && Class3938.method12052(method16763, method16764, class5492)) {
-            method16763.setBlockState(method16764, ((StateHolder<O, BlockState>)Class7521.field29455.getDefaultState()).with((IProperty<Comparable>)Class3936.field17819, (class5493.getAxis() != Direction.Axis.Y) ? (class5493.getOpposite().getHorizontalIndex() * 4) : 0), 3);
+            method16763.setBlockState(method16764, ((StateHolder<O, BlockState>) Blocks.field29455.getDefaultState()).with((IProperty<Comparable>)Class3936.field17819, (class5493.getAxis() != Direction.Axis.Y) ? (class5493.getOpposite().getHorizontalIndex() * 4) : 0), 3);
             final TileEntity method16765 = method16763.getTileEntity(method16764);
             if (method16765 instanceof Class493) {
                 Class3938.method12051(method16763, method16764, (Class493)method16765);

@@ -188,7 +188,7 @@ public class Class488 extends Class489 implements Class439
                 for (int k = 255; k > ((class1857 != null) ? class1857.getY() : 0); --k) {
                     final BlockPos class1858 = new BlockPos(class1856.getX() + i, k, class1856.getZ() + j);
                     final Class7096 method6701 = class1855.getBlockState(class1858);
-                    if (method6701.method21762(class1855, class1858) && (b || method6701.method21696() != Class7521.field29172)) {
+                    if (method6701.method21762(class1855, class1858) && (b || method6701.method21696() != Blocks.field29172)) {
                         class1857 = class1858;
                         break;
                     }
@@ -213,7 +213,7 @@ public class Class488 extends Class489 implements Class439
             final Class7096 method7020 = class1862.getBlockState(class1866);
             final BlockPos method7021 = class1866.method1137();
             final BlockPos method7022 = class1866.method1138(2);
-            if (method7020.method21696() != Class7521.field29403) {
+            if (method7020.method21696() != Blocks.field29403) {
                 continue;
             }
             if (class1862.getBlockState(method7021).isCollisionShapeOpaque(class1862, method7021)) {

@@ -139,7 +139,7 @@ public class EntityType<T extends Entity>
     private final EntitySize field29069;
     
     private static <T extends Entity> EntityType<T> method23353(final String s, final Class8868<T> class8868) {
-        return Registry.method511(Registry.field210, s, class8868.method31162(s));
+        return Registry.register(Registry.field210, s, class8868.method31162(s));
     }
     
     public static ResourceLocation method23354(final EntityType<?> class7499) {

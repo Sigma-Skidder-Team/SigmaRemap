@@ -80,8 +80,8 @@ public class Class6736 extends Dimension
             if (class1868 == null) {
                 class1868 = field36583.method24875(field36583.method24876(this.field26492.method6764()).method16709(Class7102.field27631));
             }
-            BlockState class1870 = Class7521.field29148.getDefaultState();
-            BlockState class1871 = Class7521.field29173.getDefaultState();
+            BlockState class1870 = Blocks.STONE.getDefaultState();
+            BlockState class1871 = Blocks.field29173.getDefaultState();
             final JsonObject asJsonObject4 = asJsonObject.getAsJsonObject("chunk_generator");
             if (asJsonObject4 != null) {
                 if (asJsonObject4.has("options")) {

@@ -38,7 +38,7 @@ public class Class3618 extends Class3617
                 if (method1142.method11785(Class7188.field27933)) {
                     if (!(method1142 instanceof Class3878)) {
                         if (!(method1142 instanceof Class3873)) {
-                            if (method1142 == Class7521.field29819) {
+                            if (method1142 == Blocks.SWEET_BERRY_BUSH) {
                                 if (((StateHolder<Object, BlockState>)method1141).get((IProperty<Integer>)Class3884.field17541) < 3) {
                                     n = 1;
                                     o = Class3884.field17541;

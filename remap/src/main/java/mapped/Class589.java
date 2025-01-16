@@ -16,6 +16,6 @@ public class Class589 extends Class588
     
     @Override
     public void method3456(final IRecipe<?> class3662) {
-        this.field3486.add(new Class8370(this, 10, 10, class3662.method11294().get(0).method611()));
+        this.field3486.add(new Class8370(this, 10, 10, class3662.getIngredients().get(0).method611()));
     }
 }

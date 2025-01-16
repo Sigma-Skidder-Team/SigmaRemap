@@ -232,7 +232,7 @@ public class Class8865
                         final BlockPos class1856 = new BlockPos(l, k, j);
                         final BlockPos method1135 = class1856.add(class1855);
                         final BlockState method1136 = class1849.getBlockState(class1856);
-                        if (!b || method1136.getBlock() != Class7521.field29147) {
+                        if (!b || method1136.getBlock() != Blocks.AIR) {
                             if (method1136 != class1849.getBlockState(method1135)) {
                                 return OptionalInt.empty();
                             }

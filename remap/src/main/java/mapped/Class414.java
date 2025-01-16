@@ -132,7 +132,7 @@ public abstract class Class414 extends Entity implements Class401
             }
         }
         if (method18497.getType() != RayTraceResult.Type.MISS) {
-            if (method18497.getType() == RayTraceResult.Type.BLOCK && this.world.getBlockState(((BlockRayTraceResult)method18497).getPos()).method21696() == Class7521.field29341) {
+            if (method18497.getType() == RayTraceResult.Type.BLOCK && this.world.getBlockState(((BlockRayTraceResult)method18497).getPos()).method21696() == Blocks.field29341) {
                 this.method1794(((BlockRayTraceResult)method18497).getPos());
             }
             else {

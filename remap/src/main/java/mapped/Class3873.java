@@ -36,7 +36,7 @@ public class Class3873 extends Class3874 implements Class3872
     
     @Override
     public boolean method11943(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
-        return class7096.method21696() == Class7521.field29298;
+        return class7096.method21696() == Blocks.field29298;
     }
     
     @Override
@@ -50,11 +50,11 @@ public class Class3873 extends Class3874 implements Class3872
                     final BlockPos method577 = class7098.method1149(method576);
                     final Block method578 = class7097.getBlockState(method577.method1139()).method21696();
                     if (class7097.getBlockState(method577).method21706()) {
-                        if (method578 != Class7521.field29298) {
-                            if (method578 != Class7521.field29156) {
-                                if (method578 != Class7521.field29157) {
-                                    if (method578 != Class7521.field29158) {
-                                        if (method578 != Class7521.field29155) {
+                        if (method578 != Blocks.field29298) {
+                            if (method578 != Blocks.DIRT) {
+                                if (method578 != Blocks.COARSE_DIRT) {
+                                    if (method578 != Blocks.PODZOL) {
+                                        if (method578 != Blocks.GRASS_BLOCK) {
                                             return;
                                         }
                                     }
@@ -75,8 +75,8 @@ public class Class3873 extends Class3874 implements Class3872
     
     @Nullable
     public Item method11948() {
-        if (this.field17518 != Class7521.field29337) {
-            return (this.field17518 != Class7521.field29383) ? null : Items.field31430;
+        if (this.field17518 != Blocks.field29337) {
+            return (this.field17518 != Blocks.field29383) ? null : Items.field31430;
         }
         return Items.field31429;
     }

@@ -36,7 +36,7 @@ public class Class8539
     private final int field35856;
     
     private static Class8539 method28646(final String s, final int n, final int n2) {
-        return Registry.method511(Registry.field227, s, new Class8539(n, n2));
+        return Registry.register(Registry.field227, s, new Class8539(n, n2));
     }
     
     public Class8539(final int field35855, final int field35856) {

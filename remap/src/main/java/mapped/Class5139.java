@@ -26,6 +26,6 @@ public class Class5139 implements Class5113
     }
     
     public static <T> Class5139 method16053(final Dynamic<T> dynamic) {
-        return new Class5139(dynamic.get("state").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()), dynamic.get("start_radius").asInt(0));
+        return new Class5139(dynamic.get("state").map((Function) BlockState::deserialize).orElse(Blocks.AIR.getDefaultState()), dynamic.get("start_radius").asInt(0));
     }
 }

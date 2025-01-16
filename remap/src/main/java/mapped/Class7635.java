@@ -27,7 +27,7 @@ public class Class7635
     }
     
     private static Class7635 method24008(final String s) {
-        return Registry.method511(Registry.field245, s, new Class7635(s));
+        return Registry.register(Registry.field245, s, new Class7635(s));
     }
     
     @Override

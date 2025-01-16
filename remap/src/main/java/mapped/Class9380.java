@@ -29,7 +29,7 @@ public class Class9380
     public static final Class4574<?> field40240;
     
     private static Class4574<?> method34829(final String s, final Class4574<?> class4574) {
-        return Registry.method511(Registry.field230, s.toLowerCase(Locale.ROOT), class4574);
+        return Registry.register(Registry.field230, s.toLowerCase(Locale.ROOT), class4574);
     }
     
     public static void method34830() {

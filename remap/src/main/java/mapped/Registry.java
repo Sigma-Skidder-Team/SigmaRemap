@@ -6,6 +6,8 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
@@ -56,8 +58,8 @@ public abstract class Registry<T> implements Class89<T>
     public static final Registry<Class7756> field233;
     public static final Registry<Class7755> field234;
     public static final Registry<Class8471<?>> field235;
-    public static final Registry<Class8976<?>> field236;
-    public static final Registry<Class6096<?>> field237;
+    public static final Registry<IRecipeType<?>> field236;
+    public static final Registry<IRecipeSerializer<?>> field237;
     public static final Registry<Class2248<?>> field238;
     public static final Class93<Class7611> field239;
     public static final Class93<Class9334> field240;
@@ -102,7 +104,7 @@ public abstract class Registry<T> implements Class89<T>
     
     public abstract boolean method510(final ResourceLocation p0);
     
-    public static <T> T method511(final Registry<? super T> class90, final String s, final T t) {
+    public static <T> T register(final Registry<? super T> class90, final String s, final T t) {
         return method512(class90, new ResourceLocation(s), t);
     }
     
@@ -121,7 +123,7 @@ public abstract class Registry<T> implements Class89<T>
         field205 = method500("sound_event", () -> Class8520.field35327);
         FLUID = method501("fluid", "empty", () -> Class7558.field29974);
         field207 = method500("mob_effect", () -> Class9439.field40499);
-        BLOCK = method501("block", "air", () -> Class7521.field29147);
+        BLOCK = method501("block", "air", () -> Blocks.AIR);
         field209 = method500("enchantment", () -> Class7882.field32368);
         field210 = method501("entity_type", "pig", () -> EntityType.field29012);
         field211 = method501("item", "air", () -> Items.AIR);
@@ -149,8 +151,8 @@ public abstract class Registry<T> implements Class89<T>
         field233 = method500("structure_processor", () -> Class7756.field31692);
         field234 = method500("structure_pool_element", () -> Class7755.field31691);
         field235 = method500("menu", () -> Class8471.field34762);
-        field236 = method500("recipe_type", () -> Class8976.field37843);
-        field237 = method500("recipe_serializer", () -> Class6096.field24734);
+        field236 = method500("recipe_type", () -> IRecipeType.field37843);
+        field237 = method500("recipe_serializer", () -> IRecipeSerializer.field24734);
         field238 = method500("stat_type", () -> Class8276.field33981);
         field239 = method501("villager_type", "plains", () -> Class7611.field30165);
         field240 = method501("villager_profession", "none", () -> Class9334.field40060);

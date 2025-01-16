@@ -29,11 +29,11 @@ public class Class6522 extends Class6521
         final ArrayList arrayList = Lists.newArrayList();
         int n = 0;
         for (final IRecipe class514 : collection) {
-            final ResourceLocation method11298 = class514.method11298();
+            final ResourceLocation method11298 = class514.getId();
             if (this.field25951.contains(method11298)) {
                 continue;
             }
-            if (class514.method11295()) {
+            if (class514.isDynamic()) {
                 continue;
             }
             this.method19694(method11298);
@@ -51,7 +51,7 @@ public class Class6522 extends Class6521
         int n = 0;
         final Iterator<IRecipe<?>> iterator = collection.iterator();
         while (iterator.hasNext()) {
-            final ResourceLocation method11298 = iterator.next().method11298();
+            final ResourceLocation method11298 = iterator.next().getId();
             if (!this.field25951.contains(method11298)) {
                 continue;
             }

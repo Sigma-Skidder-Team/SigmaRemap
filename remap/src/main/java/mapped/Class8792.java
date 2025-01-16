@@ -591,7 +591,7 @@ public class Class8792
                 if (this.field36958.method6973(class385.getX() - 10, class385.getY() - 10, class385.getZ() - 10, class385.getX() + 10, class385.getY() + 10, class385.getZ() + 10)) {
                     if (this.field36958.method6904().isChunkLoaded(new ChunkPos(class385))) {
                         if (!Class8532.method28621(Class2194.field13354, this.field36958, class385, EntityType.field29056)) {
-                            if (this.field36958.getBlockState(class385.method1139()).method21696() != Class7521.field29329) {
+                            if (this.field36958.getBlockState(class385.method1139()).method21696() != Blocks.field29329) {
                                 continue;
                             }
                             if (!this.field36958.getBlockState(class385).method21706()) {

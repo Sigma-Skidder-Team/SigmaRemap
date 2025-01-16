@@ -129,7 +129,7 @@ public class Class3920 extends Block implements Class3856
         final Mutable method1290 = new Mutable(class1856).method1290(Direction.DOWN);
         final BlockState method1291 = class1855.getBlockState(method1290);
         int a = 7;
-        if (method1291.getBlock() != Class7521.field29805) {
+        if (method1291.getBlock() != Blocks.SCAFFOLDING) {
             if (method1291.isSolidSide(class1855, method1290, Direction.UP)) {
                 return 0;
             }
@@ -140,7 +140,7 @@ public class Class3920 extends Block implements Class3856
         final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
         while (iterator.hasNext()) {
             final BlockState method1292 = class1855.getBlockState(method1290.method1287(class1856).method1290(iterator.next()));
-            if (method1292.getBlock() != Class7521.field29805) {
+            if (method1292.getBlock() != Blocks.SCAFFOLDING) {
                 continue;
             }
             a = Math.min(a, method1292.get((IProperty<Integer>)Class3920.field17773) + 1);

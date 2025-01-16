@@ -66,11 +66,11 @@ public class Class6445
     private static void method19227(final Class9083 class9083, final Block class9084) {
         final Class1849 method32758 = class9083.method32758();
         final BlockPos method32759 = class9083.method32755().add(-1, -1, -1);
-        method32758.method6692(method32759, Class7521.field29417.getDefaultState());
+        method32758.method6692(method32759, Blocks.field29417.getDefaultState());
         method32758.method6692(method32759.add(0, 1, 0), class9084.getDefaultState());
         for (int i = -1; i <= 1; ++i) {
             for (int j = -1; j <= 1; ++j) {
-                method32758.method6692(method32759.add(i, -1, j), Class7521.field29281.getDefaultState());
+                method32758.method6692(method32759.add(i, -1, j), Blocks.IRON_BLOCK.getDefaultState());
             }
         }
     }
@@ -78,7 +78,7 @@ public class Class6445
     private static void method19228(final Class9083 class9083, final String s) {
         final Class1849 method32758 = class9083.method32758();
         final BlockPos method32759 = class9083.method32755().add(-1, 1, -1);
-        method32758.method6692(method32759, Class7521.field29813.getDefaultState());
+        method32758.method6692(method32759, Blocks.LECTERN.getDefaultState());
         Class3930.method12040(method32758, method32759, method32758.getBlockState(method32759), method19229(class9083.method32754(), class9083.method32768(), s));
     }
     
@@ -110,7 +110,7 @@ public class Class6445
     
     public static void method19233(final Class1849 class1849, final BlockPos class1850, final Class8564 class1851, final int n) {
         class1851.method28796();
-        BlockPos.getAllInBox(class1850.add(-n, 0, -n), class1850.add(n, 0, n)).filter(class1853 -> class1852.method6701(class1853).method21696() == Class7521.field29820).forEach(class1855 -> {
+        BlockPos.getAllInBox(class1850.add(-n, 0, -n), class1850.add(n, 0, n)).filter(class1853 -> class1852.method6701(class1853).method21696() == Blocks.STRUCTURE_BLOCK).forEach(class1855 -> {
             final Class501 class1856 = (Class501)class1854.method6727(class1855);
             class1856.getPos();
             final BlockPos class1857;

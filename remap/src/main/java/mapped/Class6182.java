@@ -35,7 +35,7 @@ public class Class6182 extends Class6159
     
     public Class6182 method18452(final BlockPos field24989) {
         this.field24989 = field24989;
-        if (this.field24988.getBlock() != Class7521.field29155) {
+        if (this.field24988.getBlock() != Blocks.GRASS_BLOCK) {
             this.method18454(field24989);
             return this;
         }
@@ -44,7 +44,7 @@ public class Class6182 extends Class6159
     
     public Class6182 method18453() {
         this.field24989 = new BlockPos(this.field24936, this.field24937, this.field24938);
-        if (this.field24988.getBlock() != Class7521.field29155) {
+        if (this.field24988.getBlock() != Blocks.GRASS_BLOCK) {
             this.method18454(this.field24989);
             return this;
         }

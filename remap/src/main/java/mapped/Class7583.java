@@ -66,7 +66,7 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
             if (method34789 == 1 && !method34791.isCollisionShapeLargerThanFullBlock()) {
                 continue;
             }
-            if (method34789 == 2 && method34791.getBlock() != Class7521.field29264) {
+            if (method34789 == 2 && method34791.getBlock() != Blocks.MOVING_PISTON) {
                 continue;
             }
             VoxelShape class7702 = method34791.getCollisionShape(this.field30087, this.field30084, this.field30085);

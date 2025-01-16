@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.NonNullList;
 
 public class Class6623 extends Class6601
@@ -58,7 +59,7 @@ public class Class6623 extends Class6601
     @Override
     public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
         this.method20052(class513);
-        final NonNullList<ItemStack> method6381 = playerEntity.world.method6792().method6381(Class8976.field37843, this.field26204, playerEntity.world);
+        final NonNullList<ItemStack> method6381 = playerEntity.world.method6792().method6381(IRecipeType.field37843, this.field26204, playerEntity.world);
         for (int i = 0; i < method6381.size(); ++i) {
             ItemStack class514 = this.field26204.getStackInSlot(i);
             final ItemStack class515 = method6381.get(i);

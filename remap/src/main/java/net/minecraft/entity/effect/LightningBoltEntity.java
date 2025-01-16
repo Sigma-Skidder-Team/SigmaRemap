@@ -90,7 +90,7 @@ public class LightningBoltEntity extends Entity
         if (!this.field2540) {
             if (!this.world.isRemote) {
                 if (this.world.method6765().method31216(Class8878.field37315)) {
-                    final Class7096 method11878 = Class7521.field29289.getDefaultState();
+                    final Class7096 method11878 = Blocks.FIRE.getDefaultState();
                     final BlockPos class354 = new BlockPos(this);
                     if (this.world.getBlockState(class354).method21706()) {
                         if (method11878.method21752(this.world, class354)) {

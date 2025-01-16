@@ -217,19 +217,19 @@ public class Jesus extends Module
         if (iterator.hasNext()) {
             while (iterator.hasNext()) {
                 final Block method21696 = Jesus.mc.world.getBlockState(new BlockPos(iterator.next().method24537().method18517())).method21696();
-                if (method21696 == Class7521.field29173) {
+                if (method21696 == Blocks.field29173) {
                     continue;
                 }
-                if (method21696 == Class7521.field29174) {
+                if (method21696 == Blocks.field29174) {
                     continue;
                 }
-                if (method21696 == Class7521.field29147) {
+                if (method21696 == Blocks.AIR) {
                     continue;
                 }
-                if (method21696 == Class7521.field29244) {
+                if (method21696 == Blocks.field29244) {
                     continue;
                 }
-                if (method21696 == Class7521.field29245) {
+                if (method21696 == Blocks.field29245) {
                     continue;
                 }
                 b = false;

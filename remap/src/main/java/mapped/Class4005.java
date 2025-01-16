@@ -95,7 +95,7 @@ public class Class4005 extends Block
     }
     
     private boolean method12170(final IBlockReader class1855, final BlockPos class1856) {
-        return class1855.getBlockState(class1856.method1139()).getBlock() == Class7521.field29175;
+        return class1855.getBlockState(class1856.method1139()).getBlock() == Blocks.field29175;
     }
     
     @Override

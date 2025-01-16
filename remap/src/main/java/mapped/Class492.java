@@ -296,6 +296,6 @@ public class Class492 extends TileEntity implements Class439
     }
     
     static {
-        field2826 = new Block[] { Class7521.field29519, Class7521.field29520, Class7521.field29528, Class7521.field29521 };
+        field2826 = new Block[] { Blocks.field29519, Blocks.field29520, Blocks.field29528, Blocks.field29521 };
     }
 }

@@ -11,6 +11,7 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
@@ -53,7 +54,7 @@ public class Class802 extends Class789
         this.field4114.method22062(0, new Class3490(this));
         this.field4114.method22062(1, new Class3607(this, 1.25));
         this.field4114.method22062(2, new Class3587(this, 1.0));
-        this.field4114.method22062(3, new Class3472(this, 1.1, Class120.method618(Items.field31315), false));
+        this.field4114.method22062(3, new Class3472(this, 1.1, Ingredient.method618(Items.field31315), false));
         this.field4114.method22062(4, new Class3456(this, 1.1));
         this.field4114.method22062(5, this.field4309);
         this.field4114.method22062(6, new Class3517(this, 1.0));
@@ -298,7 +299,7 @@ public class Class802 extends Class789
     }
     
     private Class181 method4640(final Class789 class789, final Class789 class790) {
-        return this.world.method6792().method6378(Class8976.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.world).map(class792 -> class792.getCraftingResult(class791)).map((Function<? super Object, ?>) ItemStack::getItem).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.world.rand.nextBoolean() ? class793 : class794);
+        return this.world.method6792().method6378(IRecipeType.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.world).map(class792 -> class792.getCraftingResult(class791)).map((Function<? super Object, ?>) ItemStack::getItem).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.world.rand.nextBoolean() ? class793 : class794);
     }
     
     private static Class473 method4641(final Class181 class181, final Class181 class182) {
@@ -316,22 +317,22 @@ public class Class802 extends Class789
     static {
         field4305 = EntityDataManager.method33564(Class802.class, Class7709.field30653);
         field4306 = Util.method27851(Maps.newEnumMap((Class)Class181.class), enumMap -> {
-            enumMap.put(Class181.field537, Class7521.field29248);
-            enumMap.put(Class181.field538, Class7521.field29249);
-            enumMap.put(Class181.field539, Class7521.field29250);
-            enumMap.put(Class181.field540, Class7521.field29251);
-            enumMap.put(Class181.field541, Class7521.field29252);
-            enumMap.put(Class181.field542, Class7521.field29253);
-            enumMap.put(Class181.field543, Class7521.field29254);
-            enumMap.put(Class181.field544, Class7521.field29255);
-            enumMap.put(Class181.field545, Class7521.field29256);
-            enumMap.put(Class181.field546, Class7521.field29257);
-            enumMap.put(Class181.field547, Class7521.field29258);
-            enumMap.put(Class181.field548, Class7521.field29259);
-            enumMap.put(Class181.field549, Class7521.field29260);
-            enumMap.put(Class181.field550, Class7521.field29261);
-            enumMap.put(Class181.field551, Class7521.field29262);
-            enumMap.put(Class181.field552, Class7521.field29263);
+            enumMap.put(Class181.field537, Blocks.field29248);
+            enumMap.put(Class181.field538, Blocks.field29249);
+            enumMap.put(Class181.field539, Blocks.field29250);
+            enumMap.put(Class181.field540, Blocks.field29251);
+            enumMap.put(Class181.field541, Blocks.field29252);
+            enumMap.put(Class181.field542, Blocks.field29253);
+            enumMap.put(Class181.field543, Blocks.field29254);
+            enumMap.put(Class181.field544, Blocks.GRAY_WOOL);
+            enumMap.put(Class181.field545, Blocks.LIGHT_GRAY_WOOL);
+            enumMap.put(Class181.field546, Blocks.CYAN_WOOL);
+            enumMap.put(Class181.field547, Blocks.PURPLE_WOOL);
+            enumMap.put(Class181.field548, Blocks.BLUE_WOOL);
+            enumMap.put(Class181.field549, Blocks.BROWN_WOOL);
+            enumMap.put(Class181.field550, Blocks.GREEN_WOOL);
+            enumMap.put(Class181.field551, Blocks.RED_WOOL);
+            enumMap.put(Class181.field552, Blocks.BLACK_WOOL);
             return;
         });
         field4307 = Maps.newEnumMap((Map)Arrays.stream(Class181.values()).collect(Collectors.toMap(class181 -> class181, (Function<? super Class181, ?>)Class802::method4629)));

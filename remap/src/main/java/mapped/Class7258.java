@@ -64,7 +64,7 @@ public abstract class Class7258 extends Class7257
     
     @Override
     public BlockState getBlockState(final IFluidState IFluidState) {
-        return ((StateHolder<O, BlockState>)Class7521.field29173.getDefaultState()).with((IProperty<Comparable>)Class3859.field17480, Class7257.method22193(IFluidState));
+        return ((StateHolder<O, BlockState>) Blocks.field29173.getDefaultState()).with((IProperty<Comparable>)Class3859.field17480, Class7257.method22193(IFluidState));
     }
     
     @Override

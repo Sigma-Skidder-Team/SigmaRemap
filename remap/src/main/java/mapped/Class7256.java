@@ -56,7 +56,7 @@ public class Class7256 extends Fluid
     
     @Override
     public BlockState getBlockState(final IFluidState IFluidState) {
-        return Class7521.field29147.getDefaultState();
+        return Blocks.AIR.getDefaultState();
     }
     
     @Override

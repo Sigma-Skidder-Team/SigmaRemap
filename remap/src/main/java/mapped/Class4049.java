@@ -19,7 +19,7 @@ public class Class4049 extends Item
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         final Class7096 method21656 = method21654.getBlockState(method21655);
-        if (method21656.method21696() != Class7521.field29813) {
+        if (method21656.method21696() != Blocks.LECTERN) {
             return Class2201.field13402;
         }
         return Class3930.method12040(method21654, method21655, method21656, class7075.method21651()) ? Class2201.field13400 : Class2201.field13402;

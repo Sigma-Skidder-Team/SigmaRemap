@@ -16,6 +16,7 @@ import java.util.HashSet;
 import com.google.gson.JsonSyntaxException;
 import com.google.common.collect.Sets;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 
@@ -25,12 +26,12 @@ public class Class3664 implements Class3663
 {
     private final int field16946;
     private final int field16947;
-    private final NonNullList<Class120> field16948;
+    private final NonNullList<Ingredient> field16948;
     private final ItemStack field16949;
     private final ResourceLocation field16950;
     private final String field16951;
     
-    public Class3664(final ResourceLocation field16950, final String field16951, final int field16952, final int field16953, final NonNullList<Class120> field16954, final ItemStack field16955) {
+    public Class3664(final ResourceLocation field16950, final String field16951, final int field16952, final int field16953, final NonNullList<Ingredient> field16954, final ItemStack field16955) {
         this.field16950 = field16950;
         this.field16951 = field16951;
         this.field16946 = field16952;
@@ -40,17 +41,17 @@ public class Class3664 implements Class3663
     }
     
     @Override
-    public ResourceLocation method11298() {
+    public ResourceLocation getId() {
         return this.field16950;
     }
     
     @Override
-    public Class6096<?> method11299() {
-        return Class6096.field24733;
+    public IRecipeSerializer<?> getSerializer() {
+        return IRecipeSerializer.field24733;
     }
     
     @Override
-    public String method11296() {
+    public String getGroup() {
         return this.field16951;
     }
     
@@ -60,7 +61,7 @@ public class Class3664 implements Class3663
     }
     
     @Override
-    public NonNullList<Class120> method11294() {
+    public NonNullList<Ingredient> getIngredients() {
         return this.field16948;
     }
     
@@ -88,7 +89,7 @@ public class Class3664 implements Class3663
             for (int j = 0; j < class473.method2417(); ++j) {
                 final int n3 = i - n;
                 final int n4 = j - n2;
-                Class120 field374 = Class120.field374;
+                Ingredient field374 = Ingredient.field374;
                 if (n3 >= 0) {
                     if (n4 >= 0) {
                         if (n3 < this.field16946) {
@@ -123,14 +124,14 @@ public class Class3664 implements Class3663
         return this.field16947;
     }
     
-    private static NonNullList<Class120> method11306(final String[] array, final Map<String, Class120> map, final int n, final int n2) {
-        final NonNullList<Class120> method8507 = NonNullList.withSize(n * n2, Class120.field374);
+    private static NonNullList<Ingredient> method11306(final String[] array, final Map<String, Ingredient> map, final int n, final int n2) {
+        final NonNullList<Ingredient> method8507 = NonNullList.withSize(n * n2, Ingredient.field374);
         final HashSet hashSet = Sets.newHashSet((Iterable)map.keySet());
         hashSet.remove(" ");
         for (int i = 0; i < array.length; ++i) {
             for (int j = 0; j < array[i].length(); ++j) {
                 final String substring = array[i].substring(j, j + 1);
-                final Class120 class120 = map.get(substring);
+                final Ingredient class120 = map.get(substring);
                 if (class120 == null) {
                     throw new JsonSyntaxException("Pattern references symbol '" + substring + "' but it's not defined in the key");
                 }
@@ -208,7 +209,7 @@ public class Class3664 implements Class3663
         throw new JsonSyntaxException("Invalid pattern: empty pattern not allowed");
     }
     
-    private static Map<String, Class120> method11311(final JsonObject jsonObject) {
+    private static Map<String, Ingredient> method11311(final JsonObject jsonObject) {
         final HashMap hashMap = Maps.newHashMap();
         for (final Map.Entry<String, V> entry : jsonObject.entrySet()) {
             if (entry.getKey().length() != 1) {
@@ -217,9 +218,9 @@ public class Class3664 implements Class3663
             if (" ".equals(entry.getKey())) {
                 throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
             }
-            hashMap.put(entry.getKey(), Class120.method622((JsonElement)entry.getValue()));
+            hashMap.put(entry.getKey(), Ingredient.method622((JsonElement)entry.getValue()));
         }
-        hashMap.put(" ", Class120.field374);
+        hashMap.put(" ", Ingredient.field374);
         return hashMap;
     }
     

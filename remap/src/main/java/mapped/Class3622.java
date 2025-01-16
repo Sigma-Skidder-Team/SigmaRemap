@@ -29,7 +29,7 @@ public class Class3622 extends Class3617
             if (!class7096.method21755(Class7188.field27912)) {
                 return class7096.method21755(Class7188.field27909);
             }
-            else if (class7096.getBlock() != Class7521.field29549) {
+            else if (class7096.getBlock() != Blocks.field29549) {
                 return true;
             }
             else {

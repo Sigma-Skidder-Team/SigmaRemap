@@ -9,6 +9,8 @@ import java.util.Iterator;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipeSerializer;
+
 import java.util.Map;
 import java.util.List;
 
@@ -19,12 +21,12 @@ public class Class5767 implements Class5763
     private final int field23584;
     private final String field23585;
     private final List<String> field23586;
-    private final Map<Character, Class120> field23587;
+    private final Map<Character, Ingredient> field23587;
     private final Class6056 field23588;
     private final ResourceLocation field23589;
     public final /* synthetic */ Class7989 field23590;
     
-    public Class5767(final Class7989 field23590, final ResourceLocation field23591, final Item field23592, final int field23593, final String field23594, final List<String> field23595, final Map<Character, Class120> field23596, final Class6056 field23597, final ResourceLocation field23598) {
+    public Class5767(final Class7989 field23590, final ResourceLocation field23591, final Item field23592, final int field23593, final String field23594, final List<String> field23595, final Map<Character, Ingredient> field23596, final Class6056 field23597, final ResourceLocation field23598) {
         this.field23590 = field23590;
         this.field23582 = field23591;
         this.field23583 = field23592;
@@ -49,7 +51,7 @@ public class Class5767 implements Class5763
         jsonObject.add("pattern", (JsonElement)jsonArray);
         final JsonObject jsonObject2 = new JsonObject();
         for (final Map.Entry<Object, V> entry : this.field23587.entrySet()) {
-            jsonObject2.add(String.valueOf(entry.getKey()), ((Class120)entry.getValue()).method615());
+            jsonObject2.add(String.valueOf(entry.getKey()), ((Ingredient)entry.getValue()).method615());
         }
         jsonObject.add("key", (JsonElement)jsonObject2);
         final JsonObject jsonObject3 = new JsonObject();
@@ -61,8 +63,8 @@ public class Class5767 implements Class5763
     }
     
     @Override
-    public Class6096<?> method17156() {
-        return Class6096.field24733;
+    public IRecipeSerializer<?> method17156() {
+        return IRecipeSerializer.field24733;
     }
     
     @Override

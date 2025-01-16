@@ -110,7 +110,7 @@ public class Class6779
         this.field26637 = null;
         this.field26638 = null;
         this.field26639 = -1;
-        this.field26640 = Class7521.field29147.getDefaultState();
+        this.field26640 = Blocks.AIR.getDefaultState();
         this.field26641 = null;
         final Class8652 class8652 = new Class8652("ConnectedTextures");
         this.field26611 = class8652.method29440(s);
@@ -144,7 +144,7 @@ public class Class6779
         this.field26636 = class8652.method29442(properties.getProperty("connectBlocks"));
         this.field26637 = this.method20696(properties.getProperty("connectTiles"));
         this.field26639 = class8652.method29456(properties.getProperty("tintIndex"), -1);
-        this.field26640 = class8652.method29443(properties.getProperty("tintBlock"), Class7521.field29147.getDefaultState());
+        this.field26640 = class8652.method29443(properties.getProperty("tintBlock"), Blocks.AIR.getDefaultState());
         this.field26641 = class8652.method29468(properties.getProperty("layer"), Class9484.field40760);
     }
     

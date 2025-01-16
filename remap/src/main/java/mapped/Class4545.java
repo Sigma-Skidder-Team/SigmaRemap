@@ -95,13 +95,13 @@ public class Class4545 extends Class4535<Class5141>
                 if (this.method13550(i, j, class356, n6, n7, n3) < 0.0) {
                     final BlockPos method1134 = class354.add(i, n2, j);
                     final Block method1135 = class355.getBlockState(method1134).getBlock();
-                    if (this.method13554(method1135) || method1135 == Class7521.field29331) {
+                    if (this.method13554(method1135) || method1135 == Blocks.field29331) {
                         if (!b) {
-                            this.method13529(class355, method1134, Class7521.field29147.getDefaultState());
+                            this.method13529(class355, method1134, Blocks.AIR.getDefaultState());
                             this.method13545(class355, method1134);
                         }
                         else {
-                            this.method13529(class355, method1134, Class7521.field29173.getDefaultState());
+                            this.method13529(class355, method1134, Blocks.field29173.getDefaultState());
                         }
                     }
                 }
@@ -110,8 +110,8 @@ public class Class4545 extends Class4535<Class5141>
     }
     
     private void method13545(final Class1851 class1851, final BlockPos class1852) {
-        if (class1851.getBlockState(class1852.method1137()).getBlock() == Class7521.field29329) {
-            this.method13529(class1851, class1852.method1137(), Class7521.field29147.getDefaultState());
+        if (class1851.getBlockState(class1852.method1137()).getBlock() == Blocks.field29329) {
+            this.method13529(class1851, class1852.method1137(), Blocks.AIR.getDefaultState());
         }
     }
     
@@ -130,9 +130,9 @@ public class Class4545 extends Class4535<Class5141>
         final BlockState method6701 = class355.getBlockState(class354);
         final Block method6702 = method6701.getBlock();
         if (method6701.getMaterial() != Material.AIR) {
-            if (method6702 != Class7521.field29331) {
-                if (method6702 != Class7521.field29330) {
-                    if (method6702 != Class7521.field29173) {
+            if (method6702 != Blocks.field29331) {
+                if (method6702 != Blocks.field29330) {
+                    if (method6702 != Blocks.field29173) {
                         return;
                     }
                 }
@@ -141,10 +141,10 @@ public class Class4545 extends Class4535<Class5141>
         final boolean b3 = !b || random.nextDouble() > 0.05;
         final int n3 = b ? 3 : 2;
         if (b2) {
-            if (method6702 != Class7521.field29173) {
+            if (method6702 != Blocks.field29173) {
                 if (n <= random.nextInt(Math.max(1, n2 / n3)) + n2 * 0.6) {
                     if (b3) {
-                        this.method13529(class355, class354, Class7521.field29331.getDefaultState());
+                        this.method13529(class355, class354, Blocks.field29331.getDefaultState());
                         return;
                     }
                 }
@@ -189,9 +189,9 @@ public class Class4545 extends Class4535<Class5141>
     }
     
     private boolean method13554(final Block class3833) {
-        if (class3833 != Class7521.field29548) {
-            if (class3833 != Class7521.field29331) {
-                if (class3833 != Class7521.field29758) {
+        if (class3833 != Blocks.field29548) {
+            if (class3833 != Blocks.field29331) {
+                if (class3833 != Blocks.BLUE_ICE) {
                     return false;
                 }
             }
@@ -209,7 +209,7 @@ public class Class4545 extends Class4535<Class5141>
                 for (int k = 0; k <= n2; ++k) {
                     final BlockPos method1134 = class1852.add(i, k, j);
                     final Block method1135 = class1851.getBlockState(method1134).getBlock();
-                    if (this.method13554(method1135) || method1135 == Class7521.field29329) {
+                    if (this.method13554(method1135) || method1135 == Blocks.field29329) {
                         if (!this.method13555(class1851, method1134)) {
                             if (this.method13554(method1135)) {
                                 final Block[] array = { class1851.getBlockState(method1134.method1145()).getBlock(), class1851.getBlockState(method1134.method1147()).getBlock(), class1851.getBlockState(method1134.method1141()).getBlock(), class1851.getBlockState(method1134.method1143()).getBlock() };
@@ -221,13 +221,13 @@ public class Class4545 extends Class4535<Class5141>
                                     }
                                 }
                                 if (n5 >= 3) {
-                                    this.method13529(class1851, method1134, Class7521.field29147.getDefaultState());
+                                    this.method13529(class1851, method1134, Blocks.AIR.getDefaultState());
                                 }
                             }
                         }
                         else {
-                            this.method13529(class1851, method1134, Class7521.field29147.getDefaultState());
-                            this.method13529(class1851, method1134.method1137(), Class7521.field29147.getDefaultState());
+                            this.method13529(class1851, method1134, Blocks.AIR.getDefaultState());
+                            this.method13529(class1851, method1134.method1137(), Blocks.AIR.getDefaultState());
                         }
                     }
                 }

@@ -53,7 +53,7 @@ public class Class3439 extends Class3418
     
     @Override
     public boolean method10854(final PlayerEntity playerEntity) {
-        return Class3418.method10866(this.field16238, playerEntity, Class7521.field29806);
+        return Class3418.method10866(this.field16238, playerEntity, Blocks.LOOM);
     }
     
     @Override

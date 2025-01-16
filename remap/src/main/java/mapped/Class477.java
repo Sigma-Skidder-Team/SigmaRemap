@@ -21,7 +21,7 @@ public class Class477 extends TileEntity implements Class476, Class439
     @Override
     public void method2229() {
         if (++this.field2782 % 20 * 4 == 0) {
-            this.field2656.method6763(this.field2657, Class7521.field29409, 1, this.field2781);
+            this.field2656.method6763(this.field2657, Blocks.field29409, 1, this.field2781);
         }
         this.field2780 = this.field2779;
         final int method1074 = this.field2657.getX();
@@ -81,12 +81,12 @@ public class Class477 extends TileEntity implements Class476, Class439
     
     public void method2426() {
         ++this.field2781;
-        this.field2656.method6763(this.field2657, Class7521.field29409, 1, this.field2781);
+        this.field2656.method6763(this.field2657, Blocks.field29409, 1, this.field2781);
     }
     
     public void method2427() {
         --this.field2781;
-        this.field2656.method6763(this.field2657, Class7521.field29409, 1, this.field2781);
+        this.field2656.method6763(this.field2657, Blocks.field29409, 1, this.field2781);
     }
     
     public boolean method2428(final PlayerEntity playerEntity) {

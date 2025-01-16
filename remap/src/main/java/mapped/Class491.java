@@ -83,7 +83,7 @@ public class Class491 extends TileEntity implements Class439
         if (!this.method2462()) {
             if (this.method2464()) {
                 if (this.field2818.getBlock() instanceof Class3836) {
-                    return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29247.getDefaultState()).with(Class3835.field17417, (this.field2818.getBlock() != Class7521.field29239) ? Class178.field507 : Class178.field508)).with((IProperty<Comparable>)Class3835.field17415, (Comparable)this.field2818.get((IProperty<V>)Class3836.field17415));
+                    return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29247.getDefaultState()).with(Class3835.field17417, (this.field2818.getBlock() != Blocks.field29239) ? Class178.field507 : Class178.field508)).with((IProperty<Comparable>)Class3835.field17415, (Comparable)this.field2818.get((IProperty<V>)Class3836.field17415));
                 }
             }
         }
@@ -99,7 +99,7 @@ public class Class491 extends TileEntity implements Class439
             final AxisAlignedBB method2479 = this.method2479(this.method2477(method2478));
             final List<Entity> method2480 = this.field2656.method7127(null, Class8159.method26948(method2479, method2476, b).offset(method2479));
             if (!method2480.isEmpty()) {
-                final boolean b2 = this.field2818.getBlock() == Class7521.field29516;
+                final boolean b2 = this.field2818.getBlock() == Blocks.field29516;
                 for (final Entity class399 : method2480) {
                     if (class399.method1921() != PushReaction.IGNORE) {
                         if (b2) {
@@ -188,7 +188,7 @@ public class Class491 extends TileEntity implements Class439
     }
     
     private boolean method2475() {
-        return this.field2818.getBlock() == Class7521.field29825;
+        return this.field2818.getBlock() == Blocks.HONEY_BLOCK;
     }
     
     public Direction method2476() {
@@ -264,13 +264,13 @@ public class Class491 extends TileEntity implements Class439
                 this.field2824 = this.field2823;
                 this.field2656.method6730(this.field2657);
                 this.method2198();
-                if (this.field2656.getBlockState(this.field2657).method21696() == Class7521.field29264) {
+                if (this.field2656.getBlockState(this.field2657).method21696() == Blocks.MOVING_PISTON) {
                     BlockState class7096;
                     if (!this.field2821) {
                         class7096 = Block.method11786(this.field2818, this.field2656, this.field2657);
                     }
                     else {
-                        class7096 = Class7521.field29147.getDefaultState();
+                        class7096 = Blocks.AIR.getDefaultState();
                     }
                     this.field2656.setBlockState(this.field2657, class7096, 3);
                     this.field2656.method6698(this.field2657, class7096.getBlock(), this.field2657);
@@ -296,7 +296,7 @@ public class Class491 extends TileEntity implements Class439
             this.field2656.method6730(this.field2657);
             this.method2198();
             if (this.field2818 != null) {
-                if (this.field2656.getBlockState(this.field2657).method21696() == Class7521.field29264) {
+                if (this.field2656.getBlockState(this.field2657).method21696() == Blocks.MOVING_PISTON) {
                     BlockState method11786 = Block.method11786(this.field2818, this.field2656, this.field2657);
                     if (!method11786.method21706()) {
                         if (((StateHolder<Object, Object>)method11786).method21771((IProperty<Comparable>)Class8970.field37747)) {
@@ -355,7 +355,7 @@ public class Class491 extends TileEntity implements Class439
             field2818 = this.field2818;
         }
         else {
-            field2818 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29247.getDefaultState()).with((IProperty<Comparable>)Class3835.field17415, this.field2819)).with((IProperty<Comparable>)Class3835.field17418, this.field2820 != 1.0f - this.field2823 < 4.0f);
+            field2818 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29247.getDefaultState()).with((IProperty<Comparable>)Class3835.field17415, this.field2819)).with((IProperty<Comparable>)Class3835.field17418, this.field2820 != 1.0f - this.field2823 < 4.0f);
         }
         final float method2469 = this.method2469(this.field2823);
         return VoxelShapes.method24492(class1857, field2818.getCollisionShape(class1855, class1856).withOffset(this.field2819.getXOffset() * method2469, this.field2819.getYOffset() * method2469, this.field2819.getZOffset() * method2469));

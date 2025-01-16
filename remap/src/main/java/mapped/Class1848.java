@@ -349,7 +349,7 @@ public class Class1848 extends World
         if (this.field10075.field4682.method27336() == Class101.field299) {
             final Iterator<ItemStack> iterator = this.field10075.player.method1800().iterator();
             while (iterator.hasNext()) {
-                if (iterator.next().getItem() != Class7521.field29517.method11704()) {
+                if (iterator.next().getItem() != Blocks.field29517.method11704()) {
                     continue;
                 }
                 b = true;
@@ -383,7 +383,7 @@ public class Class1848 extends World
             }
         }
         if (b) {
-            if (method6701.method21696() == Class7521.field29517) {
+            if (method6701.method21696() == Blocks.field29517) {
                 this.method6709(Class8432.field34599, n5 + 0.5, n6 + 0.5, n7 + 0.5, 0.0, 0.0, 0.0);
             }
         }

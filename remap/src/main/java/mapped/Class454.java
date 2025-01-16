@@ -40,7 +40,7 @@ public class Class454 extends Class433 implements Class453
     
     @Override
     public BlockState method2141() {
-        return Class7521.field29475.getDefaultState();
+        return Blocks.field29475.getDefaultState();
     }
     
     @Override
@@ -128,7 +128,7 @@ public class Class454 extends Class433 implements Class453
     public void method2123(final DamageSource class7929) {
         super.method2123(class7929);
         if (this.world.method6765().method31216(Class8878.field37321)) {
-            this.method1764(Class7521.field29475);
+            this.method1764(Blocks.field29475);
         }
     }
     

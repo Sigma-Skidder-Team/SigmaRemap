@@ -53,7 +53,7 @@ public class Class4520 extends Class4515
     public void method13511(final String s, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if (s.startsWith("Chest")) {
             final Class2052 method32856 = this.field19919.method32856();
-            BlockState method32857 = Class7521.field29292.getDefaultState();
+            BlockState method32857 = Blocks.CHEST.getDefaultState();
             if ("ChestWest".equals(s)) {
                 method32857 = ((StateHolder<Object, BlockState>)method32857).with((IProperty<Comparable>)Class3865.field17497, method32856.method8142(Direction.WEST));
             }
@@ -87,7 +87,7 @@ public class Class4520 extends Class4515
             class357.method1729(class354, 0.0f, 0.0f);
             class357.method4188(class355, class355.method6784(new BlockPos(class357)), Class2101.field12177, null, null);
             class355.method6886(class357);
-            class355.setBlockState(class354, Class7521.field29147.getDefaultState(), 2);
+            class355.setBlockState(class354, Blocks.AIR.getDefaultState(), 2);
         }
     }
 }

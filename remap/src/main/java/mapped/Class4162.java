@@ -29,11 +29,11 @@ public class Class4162 extends Class4158<Class491>
                     Class9144.method33366();
                     class492.method22567();
                     class492.method22564(class491.method2466(n), class491.method2467(n), class491.method2468(n));
-                    if (method2188.method21696() == Class7521.field29247 && class491.method2465(n) <= 4.0f) {
+                    if (method2188.method21696() == Blocks.field29247 && class491.method2465(n) <= 4.0f) {
                         this.method12468(method2187, ((StateHolder<Object, Class7096>)method2188).with((IProperty<Comparable>)Class3835.field17418, true), class492, class493, method2186, false, n3);
                     }
                     else if (class491.method2464() && !class491.method2462()) {
-                        this.method12468(method2187, (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)Class7521.field29247.getDefaultState()).with(Class3835.field17417, (method2188.method21696() != Class7521.field29239) ? Class178.field507 : Class178.field508)).with((IProperty<Comparable>)Class3835.field17415, (Comparable)((StateHolder<Object, Class7096>)method2188).get((IProperty<V>)Class3836.field17415))).with((IProperty<Comparable>)Class3835.field17418, class491.method2465(n) >= 0.5f), class492, class493, method2186, false, n3);
+                        this.method12468(method2187, (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>) Blocks.field29247.getDefaultState()).with(Class3835.field17417, (method2188.method21696() != Blocks.field29239) ? Class178.field507 : Class178.field508)).with((IProperty<Comparable>)Class3835.field17415, (Comparable)((StateHolder<Object, Class7096>)method2188).get((IProperty<V>)Class3836.field17415))).with((IProperty<Comparable>)Class3835.field17418, class491.method2465(n) >= 0.5f), class492, class493, method2186, false, n3);
                         final BlockPos method2189 = method2187.method1149(class491.method2476());
                         class492.method22568();
                         class492.method22567();

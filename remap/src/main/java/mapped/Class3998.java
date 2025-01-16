@@ -87,7 +87,7 @@ public class Class3998 extends Block
         if (class7102 == method790 || !method790.isHorizontal()) {
             if (class7098.getBlock() != this) {
                 if (!new Class8874(class7099, class7100, class7102).method31198()) {
-                    return Class7521.field29147.getDefaultState();
+                    return Blocks.AIR.getDefaultState();
                 }
             }
         }

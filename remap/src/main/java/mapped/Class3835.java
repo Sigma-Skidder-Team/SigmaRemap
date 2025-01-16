@@ -104,7 +104,7 @@ public class Class3835 extends Class3834
             if (class1850.field3025.field27304) {
                 final BlockPos method1149 = class1848.method1149(class1849.get((IProperty<Direction>)Class3835.field17415).getOpposite());
                 final Block method1150 = class1847.getBlockState(method1149).method21696();
-                if (method1150 == Class7521.field29246 || method1150 == Class7521.field29239) {
+                if (method1150 == Blocks.field29246 || method1150 == Blocks.field29239) {
                     class1847.method6690(method1149, false);
                 }
             }
@@ -118,7 +118,7 @@ public class Class3835 extends Class3834
             super.method11829(class7096, class7097, method1149, class7098, b);
             method1149 = method1149.method1149(class7096.get((IProperty<Direction>)Class3835.field17415).getOpposite());
             final BlockState method1150 = class7097.getBlockState(method1149);
-            if (method1150.getBlock() == Class7521.field29246 || method1150.getBlock() == Class7521.field29239) {
+            if (method1150.getBlock() == Blocks.field29246 || method1150.getBlock() == Blocks.field29239) {
                 if (method1150.get((IProperty<Boolean>)Class3836.field17438)) {
                     Block.method11836(method1150, class7097, method1149);
                     class7097.method6690(method1149, false);
@@ -129,15 +129,15 @@ public class Class3835 extends Class3834
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return (class7097.getOpposite() == class7096.get((IProperty<Direction>)Class3835.field17415) && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return (class7097.getOpposite() == class7096.get((IProperty<Direction>)Class3835.field17415) && !class7096.method21752(class7099, class7100)) ? Blocks.AIR.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         final Block method21696 = class7097.getBlockState(class7098.method1149(class7096.get((IProperty<Direction>)Class3835.field17415).getOpposite())).getBlock();
-        if (method21696 != Class7521.field29246) {
-            if (method21696 != Class7521.field29239) {
-                if (method21696 != Class7521.field29264) {
+        if (method21696 != Blocks.field29246) {
+            if (method21696 != Blocks.field29239) {
+                if (method21696 != Blocks.MOVING_PISTON) {
                     return false;
                 }
             }
@@ -155,7 +155,7 @@ public class Class3835 extends Class3834
     
     @Override
     public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
-        return new ItemStack((class1857.get(Class3835.field17417) != Class178.field508) ? Class7521.field29246 : Class7521.field29239);
+        return new ItemStack((class1857.get(Class3835.field17417) != Class178.field508) ? Blocks.field29246 : Blocks.field29239);
     }
     
     @Override

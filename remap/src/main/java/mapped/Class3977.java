@@ -80,9 +80,9 @@ public class Class3977 extends Block
             return false;
         }
         final Block method21696 = class7097.getBlockState(class7098.method1139()).getBlock();
-        if (method21696 != Class7521.field29332) {
-            if (method21696 != Class7521.field29175) {
-                if (method21696 != Class7521.field29176) {
+        if (method21696 != Blocks.field29332) {
+            if (method21696 != Blocks.field29175) {
+                if (method21696 != Blocks.field29176) {
                     return false;
                 }
             }

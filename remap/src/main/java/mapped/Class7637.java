@@ -811,7 +811,7 @@ public class Class7637
         field30255 = Splitter.on('=').limit(2);
         field30256 = Util.method27851(Class7685.method24386("{\"gui_light\": \"front\"}"), class1935 -> class1935.field30523 = "generation marker");
         field30257 = Util.method27851(Class7685.method24386("{\"gui_light\": \"side\"}"), class1936 -> class1936.field30523 = "block entity marker");
-        field30258 = new Class9500<Block, Class7096>(Class7521.field29147).method35378(Class7113.method21834("map")).method35380((Class6846<Block, Class7096, StateHolder>)Class7096::new);
+        field30258 = new Class9500<Block, Class7096>(Blocks.AIR).method35378(Class7113.method21834("map")).method35380((Class6846<Block, Class7096, StateHolder>)Class7096::new);
         field30259 = new Class8163();
         field30260 = (Map)ImmutableMap.of((Object)new ResourceLocation("item_frame"), (Object)Class7637.field30258);
     }

@@ -496,7 +496,7 @@ public class Class857 extends LivingEntity
     
     private void method5154() {
         if (this.world instanceof Class1849) {
-            ((Class1849)this.world).method6911(new Class6911(Class8432.field34600, Class7521.field29160.getDefaultState()), this.getPosX(), this.method1942(0.6666666666666666), this.getPosZ(), 10, this.method1930() / 4.0f, this.method1931() / 4.0f, this.method1930() / 4.0f, 0.05);
+            ((Class1849)this.world).method6911(new Class6911(Class8432.field34600, Blocks.OAK_PLANKS.getDefaultState()), this.getPosX(), this.method1942(0.6666666666666666), this.getPosZ(), 10, this.method1930() / 4.0f, this.method1931() / 4.0f, this.method1930() / 4.0f, 0.05);
         }
     }
     

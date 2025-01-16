@@ -47,8 +47,8 @@ public class Class4106 extends Class4107
     }
     
     static {
-        field18207 = new Class4106((List<Block>)ImmutableList.of((Object)Class7521.field29820));
-        field18208 = new Class4106((List<Block>)ImmutableList.of((Object)Class7521.field29147));
-        field18209 = new Class4106((List<Block>)ImmutableList.of((Object)Class7521.field29147, (Object)Class7521.field29820));
+        field18207 = new Class4106((List<Block>)ImmutableList.of((Object) Blocks.STRUCTURE_BLOCK));
+        field18208 = new Class4106((List<Block>)ImmutableList.of((Object) Blocks.AIR));
+        field18209 = new Class4106((List<Block>)ImmutableList.of((Object) Blocks.AIR, (Object) Blocks.STRUCTURE_BLOCK));
     }
 }

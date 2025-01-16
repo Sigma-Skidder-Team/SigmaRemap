@@ -34,11 +34,11 @@ public abstract class Class7304<C extends Class5118>
     public final int field28288;
     
     private static <C extends Class5118, F extends Class7304<C>> F method22404(final String s, final F n) {
-        return Registry.method511(Registry.field213, s, n);
+        return Registry.register(Registry.field213, s, n);
     }
     
     public Class7304(final Function<Dynamic<?>, ? extends C> field28287, final int field28288) {
-        this.field28285 = (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153, (Object)Class7521.field29156, (Object)Class7521.field29157, (Object[])new Block[] { Class7521.field29158, Class7521.field29155, Class7521.field29546, Class7521.field29482, Class7521.field29483, Class7521.field29484, Class7521.field29485, Class7521.field29486, Class7521.field29487, Class7521.field29488, Class7521.field29489, Class7521.field29490, Class7521.field29491, Class7521.field29492, Class7521.field29493, Class7521.field29494, Class7521.field29495, Class7521.field29496, Class7521.field29497, Class7521.field29217, Class7521.field29587, Class7521.field29392, Class7521.field29329, Class7521.field29548 });
+        this.field28285 = (Set<Block>)ImmutableSet.of((Object) Blocks.STONE, (Object) Blocks.GRANITE, (Object) Blocks.DIORITE, (Object) Blocks.ANDESITE, (Object) Blocks.DIRT, (Object) Blocks.COARSE_DIRT, (Object[])new Block[] { Blocks.PODZOL, Blocks.GRASS_BLOCK, Blocks.field29546, Blocks.field29482, Blocks.field29483, Blocks.field29484, Blocks.field29485, Blocks.field29486, Blocks.field29487, Blocks.field29488, Blocks.field29489, Blocks.field29490, Blocks.field29491, Blocks.field29492, Blocks.field29493, Blocks.field29494, Blocks.field29495, Blocks.field29496, Blocks.field29497, Blocks.field29217, Blocks.field29587, Blocks.field29392, Blocks.field29329, Blocks.field29548 });
         this.field28286 = (Set<Fluid>)ImmutableSet.of((Object)Class7558.field29976);
         this.field28287 = field28287;
         this.field28288 = field28288;
@@ -102,7 +102,7 @@ public abstract class Class7304<C extends Class5118>
         class1861.setPos(n4, n7, n5);
         final BlockState method6701 = class1860.getBlockState(class1861);
         final BlockState method6702 = class1860.getBlockState(class1862.method1287(class1861).method1290(Direction.UP));
-        if (method6701.getBlock() == Class7521.field29155 || method6701.getBlock() == Class7521.field29392) {
+        if (method6701.getBlock() == Blocks.GRASS_BLOCK || method6701.getBlock() == Blocks.field29392) {
             atomicBoolean.set(true);
         }
         if (this.method22408(method6701, method6702)) {
@@ -110,7 +110,7 @@ public abstract class Class7304<C extends Class5118>
                 class1860.method7008(class1861, Class7304.field28282, false);
                 if (atomicBoolean.get()) {
                     class1863.method1287(class1861).method1290(Direction.DOWN);
-                    if (class1860.getBlockState(class1863).getBlock() == Class7521.field29156) {
+                    if (class1860.getBlockState(class1863).getBlock() == Blocks.DIRT) {
                         class1860.method7008(class1863, function.apply(class1861).method9872().method13338(), false);
                     }
                 }
@@ -134,7 +134,7 @@ public abstract class Class7304<C extends Class5118>
     public boolean method22408(final BlockState class7096, final BlockState class7097) {
         final Block method21696 = class7096.getBlock();
         if (!this.method22407(class7096)) {
-            if (method21696 == Class7521.field29175 || method21696 == Class7521.field29177) {
+            if (method21696 == Blocks.field29175 || method21696 == Blocks.field29177) {
                 if (!class7097.getFluidState().isTagged(Class7324.field28319)) {
                     return true;
                 }
@@ -194,8 +194,8 @@ public abstract class Class7304<C extends Class5118>
         field28278 = method22404("canyon", new Class7305(Class5117::method16023));
         field28279 = method22404("underwater_canyon", new Class7306(Class5117::method16023));
         field28280 = method22404("underwater_cave", new Class7307(Class5117::method16023));
-        field28281 = Class7521.field29147.getDefaultState();
-        field28282 = Class7521.field29764.getDefaultState();
+        field28281 = Blocks.AIR.getDefaultState();
+        field28282 = Blocks.CAVE_AIR.getDefaultState();
         field28283 = Class7558.field29976.getDefaultState();
         field28284 = Class7558.field29978.getDefaultState();
     }

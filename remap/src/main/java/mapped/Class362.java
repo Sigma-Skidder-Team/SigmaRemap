@@ -38,6 +38,6 @@ public class Class362 extends Class357
     }
     
     static {
-        field2190 = new BlockState[] { Class7521.field29265.getDefaultState(), Class7521.field29266.getDefaultState(), Class7521.field29268.getDefaultState(), Class7521.field29269.getDefaultState(), Class7521.field29270.getDefaultState(), Class7521.field29271.getDefaultState(), Class7521.field29272.getDefaultState(), Class7521.field29273.getDefaultState(), Class7521.field29274.getDefaultState(), Class7521.field29275.getDefaultState(), Class7521.field29277.getDefaultState() };
+        field2190 = new BlockState[] { Blocks.DANDELION.getDefaultState(), Blocks.POPPY.getDefaultState(), Blocks.ALLIUM.getDefaultState(), Blocks.AZURE_BLUET.getDefaultState(), Blocks.RED_TULIP.getDefaultState(), Blocks.ORANGE_TULIP.getDefaultState(), Blocks.WHITE_TULIP.getDefaultState(), Blocks.PINK_TULIP.getDefaultState(), Blocks.OXEYE_DAISY.getDefaultState(), Blocks.CORNFLOWER.getDefaultState(), Blocks.LILY_OF_THE_VALLEY.getDefaultState() };
     }
 }

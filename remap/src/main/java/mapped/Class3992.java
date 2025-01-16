@@ -20,17 +20,17 @@ public class Class3992 extends Block
     }
     
     public int method12141(final Random random) {
-        if (this == Class7521.field29180) {
+        if (this == Blocks.field29180) {
             return MathHelper.method35658(random, 0, 2);
         }
-        if (this == Class7521.field29294) {
+        if (this == Blocks.DIAMOND_ORE) {
             return MathHelper.method35658(random, 3, 7);
         }
-        if (this == Class7521.field29408) {
+        if (this == Blocks.field29408) {
             return MathHelper.method35658(random, 3, 7);
         }
-        if (this != Class7521.field29214) {
-            return (this != Class7521.field29474) ? 0 : MathHelper.method35658(random, 2, 5);
+        if (this != Blocks.field29214) {
+            return (this != Blocks.field29474) ? 0 : MathHelper.method35658(random, 2, 5);
         }
         return MathHelper.method35658(random, 2, 5);
     }

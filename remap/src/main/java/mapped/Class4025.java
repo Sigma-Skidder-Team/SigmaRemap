@@ -37,18 +37,18 @@ public class Class4025 extends Class4024
     
     @Override
     public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
-        return Class7521.field29288.method11843(class7096, class7097, class7098);
+        return Blocks.WALL_TORCH.method11843(class7096, class7097, class7098);
     }
     
     @Override
     public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return Class7521.field29288.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return Blocks.WALL_TORCH.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Nullable
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        final Class7096 method11846 = Class7521.field29288.method11846(class7074);
+        final Class7096 method11846 = Blocks.WALL_TORCH.method11846(class7074);
         return (method11846 != null) ? ((Class7096)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class4025.field18115, (Comparable)method11846.method21772((IProperty<V>)Class4025.field18115))) : null;
     }
     
@@ -73,12 +73,12 @@ public class Class4025 extends Class4024
     
     @Override
     public Class7096 method11790(final Class7096 class7096, final Class2052 class7097) {
-        return Class7521.field29288.method11790(class7096, class7097);
+        return Blocks.WALL_TORCH.method11790(class7096, class7097);
     }
     
     @Override
     public Class7096 method11791(final Class7096 class7096, final Class2181 class7097) {
-        return Class7521.field29288.method11791(class7096, class7097);
+        return Blocks.WALL_TORCH.method11791(class7096, class7097);
     }
     
     @Override

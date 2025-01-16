@@ -20,7 +20,7 @@ public class Class8705<C extends Class7065, T extends Class6346<C>> implements C
     private final Supplier<C> field36581;
     
     private static <C extends Class7065, T extends Class6346<C>> Class8705<C, T> method29873(final String s, final Class8704<C, T> class8704, final Supplier<C> supplier, final boolean b) {
-        return Registry.method511(Registry.field225, s, new Class8705<C, T>(class8704, b, supplier));
+        return Registry.register(Registry.field225, s, new Class8705<C, T>(class8704, b, supplier));
     }
     
     public Class8705(final Class8704<C, T> field36579, final boolean field36580, final Supplier<C> field36581) {

@@ -37,7 +37,7 @@ public class Class8040
     }
     
     public BlockState method26379(final int n) {
-        return (n >= 0 && n < this.field33105.size()) ? this.field33105.get(n) : Class7521.field29147.getDefaultState();
+        return (n >= 0 && n < this.field33105.size()) ? this.field33105.get(n) : Blocks.AIR.getDefaultState();
     }
     
     public List<Class8754> method26380(final Class8754 class8754) {

@@ -93,7 +93,7 @@ public class JelloEdit extends Module
             GL11.glAlphaFunc(516, 0.0f);
             for (final Class8951 class5740 : this.field15542.method25323()) {
                 final BlockPos class5741 = new BlockPos(this.field15543.getX() + class5740.method31757().method7835(), this.field15543.getY() + class5740.method31757().method7839(), this.field15543.getZ() + class5740.method31757().method7843());
-                if (Class4609.method13666(class5741) != Class7521.field29147) {
+                if (Class4609.method13666(class5741) != Blocks.AIR) {
                     continue;
                 }
                 final double n = class5741.getX() - JelloEdit.mc.field4644.method5833().method18161().getX();

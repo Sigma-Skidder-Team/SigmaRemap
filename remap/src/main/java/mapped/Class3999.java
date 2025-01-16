@@ -145,13 +145,13 @@ public class Class3999 extends Block
                 if (class7096.get(Class3999.field18027.get(class7099)) != Class106.field329 && class7097.getBlockState(method1296.method1303(class7098).method1304(class7099)).getBlock() != this) {
                     method1296.method1304(Direction.DOWN);
                     final BlockState method1297 = class7097.getBlockState(method1296);
-                    if (method1297.getBlock() != Class7521.field29647) {
+                    if (method1297.getBlock() != Blocks.OBSERVER) {
                         final BlockPos method1298 = method1296.method1149(class7099.getOpposite());
                         Block.method11787(method1297, method1297.method21748(class7099.getOpposite(), class7097.getBlockState(method1298), class7097, method1296, method1298), class7097, method1296, n);
                     }
                     method1296.method1303(class7098).method1304(class7099).method1304(Direction.UP);
                     final BlockState method1299 = class7097.getBlockState(method1296);
-                    if (method1299.getBlock() == Class7521.field29647) {
+                    if (method1299.getBlock() == Blocks.OBSERVER) {
                         continue;
                     }
                     final BlockPos method1300 = method1296.method1149(class7099.getOpposite());
@@ -166,7 +166,7 @@ public class Class3999 extends Block
         final BlockState method1150 = class1855.getBlockState(method1149);
         final BlockPos method1151 = class1856.method1137();
         if (!class1855.getBlockState(method1151).method21713(class1855, method1151)) {
-            if (method1150.isSolidSide(class1855, method1149, Direction.UP) || method1150.getBlock() == Class7521.field29475) {
+            if (method1150.isSolidSide(class1855, method1149, Direction.UP) || method1150.getBlock() == Blocks.field29475) {
                 if (method12158(class1855.getBlockState(method1149.method1137()))) {
                     if (!method1150.isCollisionShapeOpaque(class1855, method1149)) {
                         return Class106.field328;
@@ -182,7 +182,7 @@ public class Class3999 extends Block
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         final BlockPos method1139 = class7098.method1139();
         final BlockState method1140 = class7097.getBlockState(method1139);
-        return method1140.isSolidSide(class7097, method1139, Direction.UP) || method1140.getBlock() == Class7521.field29475;
+        return method1140.isSolidSide(class7097, method1139, Direction.UP) || method1140.getBlock() == Blocks.field29475;
     }
     
     private BlockState method12152(final World class1847, final BlockPos class1848, BlockState method12153) {
@@ -377,7 +377,7 @@ public class Class3999 extends Block
             }
         }
         if (!method12159(method1150, class1857)) {
-            if (method1150.getBlock() == Class7521.field29345) {
+            if (method1150.getBlock() == Blocks.field29345) {
                 if (((StateHolder<Object, Object>)method1150).get((IProperty<Boolean>)Class3895.field17578)) {
                     if (((StateHolder<Object, Object>)method1150).get((IProperty<Comparable>)Class3895.field17564) == class1857) {
                         return true;
@@ -398,14 +398,14 @@ public class Class3999 extends Block
     }
     
     public static boolean method12159(final BlockState class7096, final Direction class7097) {
-        if (class7096.getBlock() == Class7521.field29293) {
+        if (class7096.getBlock() == Blocks.REDSTONE_WIRE) {
             return true;
         }
-        if (class7096.getBlock() == Class7521.field29345) {
+        if (class7096.getBlock() == Blocks.field29345) {
             final Direction class7098 = class7096.get((IProperty<Direction>)Class3897.field17564);
             return class7098 == class7097 || class7098.getOpposite() == class7097;
         }
-        if (Class7521.field29647 != class7096.getBlock()) {
+        if (Blocks.OBSERVER != class7096.getBlock()) {
             return class7096.method21714() && class7097 != null;
         }
         return class7097 == class7096.get((IProperty<Direction>)Class3838.field17415);

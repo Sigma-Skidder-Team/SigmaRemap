@@ -21,7 +21,7 @@ public class Class4542 extends Class4535<Class5122>
         while (class1851.method6961(class1853) && class1853.getY() > 2) {
             class1853 = class1853.method1139();
         }
-        if (class1851.getBlockState(class1853).getBlock() == Class7521.field29331) {
+        if (class1851.getBlockState(class1853).getBlock() == Blocks.field29331) {
             class1853 = class1853.method1138(random.nextInt(4));
             final int n = random.nextInt(4) + 7;
             final int n2 = n / 4 + random.nextInt(2);
@@ -56,14 +56,14 @@ public class Class4542 extends Class4535<Class5122>
                             Label_0447: {
                                 if (!method35650.method21706()) {
                                     if (!Class4535.method13533(method35651)) {
-                                        if (method35651 != Class7521.field29331) {
-                                            if (method35651 != Class7521.field29330) {
+                                        if (method35651 != Blocks.field29331) {
+                                            if (method35651 != Blocks.field29330) {
                                                 break Label_0447;
                                             }
                                         }
                                     }
                                 }
-                                this.method13529(class1851, class1853.add(j, i, k), Class7521.field29548.getDefaultState());
+                                this.method13529(class1851, class1853.add(j, i, k), Blocks.field29548.getDefaultState());
                             }
                             if (i != 0) {
                                 if (method35649 > 1) {
@@ -71,14 +71,14 @@ public class Class4542 extends Class4535<Class5122>
                                     final Block method35653 = method35652.getBlock();
                                     if (!method35652.method21706()) {
                                         if (!Class4535.method13533(method35653)) {
-                                            if (method35653 != Class7521.field29331) {
-                                                if (method35653 != Class7521.field29330) {
+                                            if (method35653 != Blocks.field29331) {
+                                                if (method35653 != Blocks.field29330) {
                                                     continue;
                                                 }
                                             }
                                         }
                                     }
-                                    this.method13529(class1851, class1853.add(j, -i, k), Class7521.field29548.getDefaultState());
+                                    this.method13529(class1851, class1853.add(j, -i, k), Blocks.field29548.getDefaultState());
                                 }
                             }
                         }
@@ -108,16 +108,16 @@ public class Class4542 extends Class4535<Class5122>
                         final Block method35655 = method35654.getBlock();
                         if (!method35654.method21706()) {
                             if (!Class4535.method13533(method35655)) {
-                                if (method35655 != Class7521.field29331) {
-                                    if (method35655 != Class7521.field29330) {
-                                        if (method35655 != Class7521.field29548) {
+                                if (method35655 != Blocks.field29331) {
+                                    if (method35655 != Blocks.field29330) {
+                                        if (method35655 != Blocks.field29548) {
                                             break;
                                         }
                                     }
                                 }
                             }
                         }
-                        this.method13529(class1851, class1855, Class7521.field29548.getDefaultState());
+                        this.method13529(class1851, class1855, Blocks.field29548.getDefaultState());
                         class1855 = class1855.method1139();
                         if (--n7 > 0) {
                             continue;

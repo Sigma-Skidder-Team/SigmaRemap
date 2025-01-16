@@ -5,18 +5,20 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.NonNullList;
 
 public abstract class Class3685 implements IRecipe<IInventory>
 {
-    public final Class120 field16985;
+    public final Ingredient field16985;
     public final ItemStack field16986;
-    private final Class8976<?> field16987;
-    private final Class6096<?> field16988;
+    private final IRecipeType<?> field16987;
+    private final IRecipeSerializer<?> field16988;
     public final ResourceLocation field16989;
     public final String field16990;
     
-    public Class3685(final Class8976<?> field16987, final Class6096<?> field16988, final ResourceLocation field16989, final String field16990, final Class120 field16991, final ItemStack field16992) {
+    public Class3685(final IRecipeType<?> field16987, final IRecipeSerializer<?> field16988, final ResourceLocation field16989, final String field16990, final Ingredient field16991, final ItemStack field16992) {
         this.field16987 = field16987;
         this.field16988 = field16988;
         this.field16989 = field16989;
@@ -26,22 +28,22 @@ public abstract class Class3685 implements IRecipe<IInventory>
     }
     
     @Override
-    public Class8976<?> method11300() {
+    public IRecipeType<?> getType() {
         return this.field16987;
     }
     
     @Override
-    public Class6096<?> method11299() {
+    public IRecipeSerializer<?> getSerializer() {
         return this.field16988;
     }
     
     @Override
-    public ResourceLocation method11298() {
+    public ResourceLocation getId() {
         return this.field16989;
     }
     
     @Override
-    public String method11296() {
+    public String getGroup() {
         return this.field16990;
     }
     
@@ -51,10 +53,10 @@ public abstract class Class3685 implements IRecipe<IInventory>
     }
     
     @Override
-    public NonNullList<Class120> method11294() {
+    public NonNullList<Ingredient> getIngredients() {
         final NonNullList<Object> method8506 = NonNullList.create();
         method8506.add(this.field16985);
-        return (NonNullList<Class120>)method8506;
+        return (NonNullList<Ingredient>)method8506;
     }
     
     @Override

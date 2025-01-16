@@ -9,7 +9,7 @@ public class Class3474 extends Class3472
     private static String[] field16373;
     private final Class817 field16374;
     
-    public Class3474(final Class817 field16374, final double n, final Class120 class120, final boolean b) {
+    public Class3474(final Class817 field16374, final double n, final Ingredient class120, final boolean b) {
         super(field16374, n, class120, b);
         this.field16374 = field16374;
     }

@@ -31,7 +31,7 @@ public class Class6128 implements Class6113
         final BlockPos class7353 = new BlockPos(n, n2, n3);
         for (final BlockPos class7354 : BlockPos.getAllInBoxMutable(class7353.add(-6, -6, -6), class7353.add(6, 6, 6))) {
             final BlockState method6701 = field2391.getBlockState(class7354);
-            if (method6701.getBlock() == Class7521.field29147) {
+            if (method6701.getBlock() == Blocks.AIR) {
                 continue;
             }
             final Iterator<AxisAlignedBB> iterator2 = method6701.getShape(field2391, class7354).toBoundingBoxList().iterator();

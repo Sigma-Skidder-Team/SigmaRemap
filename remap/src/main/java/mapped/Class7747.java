@@ -73,7 +73,7 @@ public class Class7747 extends Class7746
             int method35644 = MathHelper.floor(this.field31657.getPosY());
             Block class3833 = this.field31658.getBlockState(new BlockPos(this.field31657.getPosX(), method35644, this.field31657.getPosZ())).method21696();
             int n = 0;
-            while (class3833 == Class7521.field29173) {
+            while (class3833 == Blocks.field29173) {
                 ++method35644;
                 class3833 = this.field31658.getBlockState(new BlockPos(this.field31657.getPosX(), method35644, this.field31657.getPosZ())).method21696();
                 if (++n <= 16) {

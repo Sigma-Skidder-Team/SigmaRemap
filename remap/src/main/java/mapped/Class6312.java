@@ -7,6 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.impl.render.NewNameTags;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 
 import java.util.Optional;
 import java.util.Iterator;
@@ -95,7 +96,7 @@ public class Class6312
     
     public ItemStack method18688() {
         if (this.field25240 != null) {
-            if (!NewNameTags.method10340().method6378(Class8976.field37844, new Class443(new ItemStack[] { new ItemStack(Items.field30766) }), NewNameTags.method10339().field4683).isPresent()) {
+            if (!NewNameTags.method10340().method6378(IRecipeType.field37844, new Class443(new ItemStack[] { new ItemStack(Items.field30766) }), NewNameTags.method10339().field4683).isPresent()) {
                 final Class6581 class6581 = new Class6581(Class346.field2138, new Thread());
                 final Iterator<? super Object> iterator = NewNameTags.method10341().field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()).iterator();
                 while (iterator.hasNext()) {
@@ -103,7 +104,7 @@ public class Class6312
                 }
                 NewNameTags.method10340().method5785(new Class7884(this), class6581, Class5026.field21549, Class5026.field21549, Util.method27841(), NewNameTags.method10342());
             }
-            final Optional<Class3684> method6378 = NewNameTags.method10340().method6378(Class8976.field37844, new Class443(new ItemStack[] { this.field25240 }), NewNameTags.method10343().field4683);
+            final Optional<Class3684> method6378 = NewNameTags.method10340().method6378(IRecipeType.field37844, new Class443(new ItemStack[] { this.field25240 }), NewNameTags.method10343().field4683);
             if (method6378.isPresent()) {
                 final ItemStack method6379 = method6378.get().getRecipeOutput();
                 if (!method6379.method27620()) {

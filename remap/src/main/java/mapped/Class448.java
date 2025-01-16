@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
@@ -56,7 +57,7 @@ public class Class448 extends TileEntity implements Class447, Class439
                 final int n = i;
                 ++field2687[n];
                 if (this.field2687[i] >= this.field2688[i]) {
-                    final ItemStack class8321 = this.field2656.method6792().method6378(Class8976.field37847, new Class443(new ItemStack[] { other }), this.field2656).map(class8323 -> class8323.getCraftingResult(class8322)).orElse(other);
+                    final ItemStack class8321 = this.field2656.method6792().method6378(IRecipeType.field37847, new Class443(new ItemStack[] { other }), this.field2656).map(class8323 -> class8323.getCraftingResult(class8322)).orElse(other);
                     final BlockPos method2193 = this.getPos();
                     Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8321);
                     this.field2686.set(i, ItemStack.EMPTY);
@@ -138,7 +139,7 @@ public class Class448 extends TileEntity implements Class447, Class439
     }
     
     public Optional<Class3682> method2272(final ItemStack class8321) {
-        return this.field2686.stream().noneMatch(ItemStack::method27620) ? Optional.empty() : this.field2656.method6792().method6378(Class8976.field37847, new Class443(new ItemStack[] { class8321 }), this.field2656);
+        return this.field2686.stream().noneMatch(ItemStack::method27620) ? Optional.empty() : this.field2656.method6792().method6378(IRecipeType.field37847, new Class443(new ItemStack[] { class8321 }), this.field2656);
     }
     
     public boolean method2273(final ItemStack class8321, final int n) {

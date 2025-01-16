@@ -60,7 +60,7 @@ public class Class6041 extends Class6040
                                 }
                             }
                             else {
-                                class1865 = Class7521.field29147.getDefaultState();
+                                class1865 = Blocks.AIR.getDefaultState();
                                 class1866 = class1862;
                             }
                             if (i < n5) {
@@ -97,10 +97,10 @@ public class Class6041 extends Class6040
                                 }
                             }
                             else if (!b) {
-                                class1860.method7008(class1867, Class7521.field29155.getDefaultState(), false);
+                                class1860.method7008(class1867, Blocks.GRASS_BLOCK.getDefaultState(), false);
                             }
                             else {
-                                class1860.method7008(class1867, Class7521.field29157.getDefaultState(), false);
+                                class1860.method7008(class1867, Blocks.COARSE_DIRT.getDefaultState(), false);
                             }
                         }
                         ++n11;
@@ -114,8 +114,8 @@ public class Class6041 extends Class6040
     }
     
     static {
-        field24579 = Class7521.field29482.getDefaultState();
-        field24580 = Class7521.field29483.getDefaultState();
-        field24581 = Class7521.field29546.getDefaultState();
+        field24579 = Blocks.field29482.getDefaultState();
+        field24580 = Blocks.field29483.getDefaultState();
+        field24581 = Blocks.field29546.getDefaultState();
     }
 }

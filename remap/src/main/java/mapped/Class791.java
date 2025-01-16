@@ -199,7 +199,7 @@ public class Class791 extends Class789
         this.field4114.method22062(2, new Class3611(this, 2.0));
         this.field4114.method22062(2, new Class3589(this, this, 1.0));
         this.field4114.method22062(3, new Class3578(this, 1.2000000476837158, true));
-        this.field4114.method22062(4, new Class3472(this, 1.0, Class120.method618(Class7521.field29761.method11704()), false));
+        this.field4114.method22062(4, new Class3472(this, 1.0, Ingredient.method618(Blocks.BAMBOO.method11704()), false));
         this.field4114.method22062(6, new Class3450<Object>(this, PlayerEntity.class, 8.0f, 2.0, 2.0));
         this.field4114.method22062(6, new Class3450<Object>(this, Class763.class, 4.0f, 2.0, 2.0));
         this.field4114.method22062(7, new Class3524(this));
@@ -618,11 +618,11 @@ public class Class791 extends Class789
     
     @Override
     public boolean method4357(final ItemStack class8321) {
-        return class8321.getItem() == Class7521.field29761.method11704();
+        return class8321.getItem() == Blocks.BAMBOO.method11704();
     }
     
     private boolean method4413(final ItemStack class8321) {
-        return this.method4357(class8321) || class8321.getItem() == Class7521.field29344.method11704();
+        return this.method4357(class8321) || class8321.getItem() == Blocks.field29344.method11704();
     }
     
     @Nullable
@@ -664,7 +664,7 @@ public class Class791 extends Class789
             class427.method2107().getItem();
             final Item class428;
             final boolean b;
-            if (class428 == Class7521.field29761.method11704() || class428 == Class7521.field29344.method11704()) {
+            if (class428 == Blocks.BAMBOO.method11704() || class428 == Blocks.field29344.method11704()) {
                 if (!(!class427.method1768())) {
                     if (!class427.method2118()) {
                         return b;

@@ -87,7 +87,7 @@ public abstract class Class4535<FC extends Class5113>
     private final Function<Dynamic<?>, ? extends FC> field20025;
     
     private static <C extends Class5113, F extends Class4535<C>> F method13526(final String s, final F n) {
-        return Registry.method511(Registry.field215, s, n);
+        return Registry.register(Registry.field215, s, n);
     }
     
     public Class4535(final Function<Dynamic<?>, ? extends FC> field20025) {
@@ -117,10 +117,10 @@ public abstract class Class4535<FC extends Class5113>
     }
     
     public static boolean method13532(final Block class3833) {
-        if (class3833 != Class7521.field29148) {
-            if (class3833 != Class7521.field29149) {
-                if (class3833 != Class7521.field29151) {
-                    if (class3833 != Class7521.field29153) {
+        if (class3833 != Blocks.STONE) {
+            if (class3833 != Blocks.GRANITE) {
+                if (class3833 != Blocks.DIORITE) {
+                    if (class3833 != Blocks.ANDESITE) {
                         return false;
                     }
                 }
@@ -130,11 +130,11 @@ public abstract class Class4535<FC extends Class5113>
     }
     
     public static boolean method13533(final Block class3833) {
-        if (class3833 != Class7521.field29156) {
-            if (class3833 != Class7521.field29155) {
-                if (class3833 != Class7521.field29158) {
-                    if (class3833 != Class7521.field29157) {
-                        if (class3833 != Class7521.field29392) {
+        if (class3833 != Blocks.DIRT) {
+            if (class3833 != Blocks.GRASS_BLOCK) {
+                if (class3833 != Blocks.PODZOL) {
+                    if (class3833 != Blocks.COARSE_DIRT) {
+                        if (class3833 != Blocks.field29392) {
                             return false;
                         }
                     }

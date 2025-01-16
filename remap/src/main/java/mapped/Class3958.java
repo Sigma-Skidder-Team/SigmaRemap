@@ -202,7 +202,7 @@ public class Class3958 extends Class3841
         if (method782 == class7097) {
             if (!class7096.method21752(class7099, class7100)) {
                 if (class7102 != Class108.field340) {
-                    return Class7521.field29147.getDefaultState();
+                    return Blocks.AIR.getDefaultState();
                 }
             }
         }

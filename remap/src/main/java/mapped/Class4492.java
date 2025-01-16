@@ -38,16 +38,16 @@ public class Class4492 extends Class4484
     
     @Override
     public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
-        this.method13444(class1851, class1853, 0, 0, 0, 4, 1, 4, Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
-        this.method13444(class1851, class1853, 0, 2, 0, 4, 5, 4, Class7521.field29147.getDefaultState(), Class7521.field29147.getDefaultState(), false);
-        this.method13444(class1851, class1853, 0, 2, 0, 0, 5, 0, Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
-        this.method13444(class1851, class1853, 4, 2, 0, 4, 5, 0, Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
-        this.method13444(class1851, class1853, 0, 2, 4, 0, 5, 4, Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
-        this.method13444(class1851, class1853, 4, 2, 4, 4, 5, 4, Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
-        this.method13444(class1851, class1853, 0, 6, 0, 4, 6, 4, Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
+        this.method13444(class1851, class1853, 0, 0, 0, 4, 1, 4, Blocks.field29394.getDefaultState(), Blocks.field29394.getDefaultState(), false);
+        this.method13444(class1851, class1853, 0, 2, 0, 4, 5, 4, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
+        this.method13444(class1851, class1853, 0, 2, 0, 0, 5, 0, Blocks.field29394.getDefaultState(), Blocks.field29394.getDefaultState(), false);
+        this.method13444(class1851, class1853, 4, 2, 0, 4, 5, 0, Blocks.field29394.getDefaultState(), Blocks.field29394.getDefaultState(), false);
+        this.method13444(class1851, class1853, 0, 2, 4, 0, 5, 4, Blocks.field29394.getDefaultState(), Blocks.field29394.getDefaultState(), false);
+        this.method13444(class1851, class1853, 4, 2, 4, 4, 5, 4, Blocks.field29394.getDefaultState(), Blocks.field29394.getDefaultState(), false);
+        this.method13444(class1851, class1853, 0, 6, 0, 4, 6, 4, Blocks.field29394.getDefaultState(), Blocks.field29394.getDefaultState(), false);
         for (int i = 0; i <= 4; ++i) {
             for (int j = 0; j <= 4; ++j) {
-                this.method13449(class1851, Class7521.field29394.getDefaultState(), i, -1, j, class1853);
+                this.method13449(class1851, Blocks.field29394.getDefaultState(), i, -1, j, class1853);
             }
         }
         return true;

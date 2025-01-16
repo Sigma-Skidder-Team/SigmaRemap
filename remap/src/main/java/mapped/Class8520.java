@@ -818,7 +818,7 @@ public class Class8520
     public static final Class7795 field35773;
     
     private static Class7795 method28532(final String s) {
-        return Registry.method511(Registry.field205, s, new Class7795(new ResourceLocation(s)));
+        return Registry.register(Registry.field205, s, new Class7795(new ResourceLocation(s)));
     }
     
     static {

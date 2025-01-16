@@ -39,9 +39,9 @@ public class Class4549 extends Class4535<Class5122>
                 if (!class1851.method6961(method6958) && !class1851.getBlockState(method6958).getCollisionShape(class1851, method6958).isEmpty()) {
                     continue;
                 }
-                class1851.setBlockState(method6958, Class7521.field29292.getDefaultState(), 2);
+                class1851.setBlockState(method6958, Blocks.CHEST.getDefaultState(), 2);
                 Class456.method2323(class1851, random, method6958, Class9020.field38064);
-                final BlockState method6959 = Class7521.field29287.getDefaultState();
+                final BlockState method6959 = Blocks.TORCH.getDefaultState();
                 final Iterator<Direction> iterator3 = Plane.HORIZONTAL.iterator();
                 while (iterator3.hasNext()) {
                     final BlockPos method6960 = method6958.method1149(iterator3.next());

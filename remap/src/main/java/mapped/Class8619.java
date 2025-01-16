@@ -89,7 +89,7 @@ public class Class8619
                 this.field36167.add(method328.method349(i));
             }
         }
-        this.field36168 = Class9512.method35439().method35438("       ", "       ", "       ", "   #   ", "       ", "       ", "       ").method35438("       ", "       ", "       ", "   #   ", "       ", "       ", "       ").method35438("       ", "       ", "       ", "   #   ", "       ", "       ", "       ").method35438("  ###  ", " #   # ", "#     #", "#  #  #", "#     #", " #   # ", "  ###  ").method35438("       ", "  ###  ", " ##### ", " ##### ", " ##### ", "  ###  ", "       ").method35440('#', Class7990.method26069(Class117.method608(Class7521.field29172))).method35441();
+        this.field36168 = Class9512.method35439().method35438("       ", "       ", "       ", "   #   ", "       ", "       ", "       ").method35438("       ", "       ", "       ", "   #   ", "       ", "       ", "       ").method35438("       ", "       ", "       ", "   #   ", "       ", "       ", "       ").method35438("  ###  ", " #   # ", "#     #", "#  #  #", "#     #", " #   # ", "  ###  ").method35438("       ", "  ###  ", " ##### ", " ##### ", " ##### ", "  ###  ", "       ").method35440('#', Class7990.method26069(Class117.method608(Blocks.field29172))).method35441();
     }
     
     public CompoundNBT method29234() {
@@ -320,7 +320,7 @@ public class Class8619
             this.method29247(true);
             this.method29245();
             if (!this.field36174) {
-                this.field36166.method6692(this.field36166.method6958(HeightmapType.field11525, Class4551.field20031), Class7521.field29404.getDefaultState());
+                this.field36166.method6692(this.field36166.method6958(HeightmapType.field11525, Class4551.field20031), Blocks.field29404.getDefaultState());
             }
             this.field36174 = true;
             this.field36173 = true;
@@ -343,7 +343,7 @@ public class Class8619
         final Class4551 class4551 = new Class4551(b);
         if (this.field36177 == null) {
             this.field36177 = this.field36166.method6958(HeightmapType.field11526, Class4551.field20031).method1139();
-            while (this.field36166.getBlockState(this.field36177).method21696() == Class7521.field29172) {
+            while (this.field36166.getBlockState(this.field36177).method21696() == Blocks.field29172) {
                 if (this.field36177.getY() <= this.field36166.method6743()) {
                     break;
                 }
@@ -437,8 +437,8 @@ public class Class8619
                         for (int j = 0; j < this.field36168.method29793(); ++j) {
                             for (int k = 0; k < this.field36168.method29792(); ++k) {
                                 final Class7990 method25270 = class7820.method25270(i, j, k);
-                                if (method25270.method26065().getBlock() == Class7521.field29172 || method25270.method26065().getBlock() == Class7521.field29401) {
-                                    this.field36166.method6692(method25270.method26068(), Class7521.field29403.getDefaultState());
+                                if (method25270.method26065().getBlock() == Blocks.field29172 || method25270.method26065().getBlock() == Blocks.field29401) {
+                                    this.field36166.method6692(method25270.method26068(), Blocks.field29403.getDefaultState());
                                 }
                             }
                         }

@@ -52,7 +52,7 @@ public class Class3986 extends Block
         final Block method21696 = class7096.getBlock();
         final Material method21697 = class7096.getMaterial();
         if (!class7096.method21706()) {
-            if (method21696 != Class7521.field29289) {
+            if (method21696 != Blocks.FIRE) {
                 if (!method21697.method26438()) {
                     if (!method21697.method26442()) {
                         return false;

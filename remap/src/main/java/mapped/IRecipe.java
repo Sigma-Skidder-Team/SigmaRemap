@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 
@@ -32,25 +34,25 @@ public interface IRecipe<C extends IInventory>
         return nonnulllist;
     }
     
-    default NonNullList<Class120> method11294() {
+    default NonNullList<Ingredient> getIngredients() {
         return NonNullList.create();
     }
     
-    default boolean method11295() {
+    default boolean isDynamic() {
         return false;
     }
     
-    default String method11296() {
+    default String getGroup() {
         return "";
     }
     
-    default ItemStack method11297() {
-        return new ItemStack(Class7521.field29296);
+    default ItemStack getIcon() {
+        return new ItemStack(Blocks.CRAFTING_TABLE);
     }
     
-    ResourceLocation method11298();
-    
-    Class6096<?> method11299();
-    
-    Class8976<?> method11300();
+    ResourceLocation getId();
+
+    IRecipeSerializer<?> getSerializer();
+
+    IRecipeType<?> getType();
 }

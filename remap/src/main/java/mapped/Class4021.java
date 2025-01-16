@@ -52,7 +52,7 @@ public class Class4021 extends Block
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return this.getDefaultState().method21752(class7074.method21654(), class7074.method21639()) ? super.method11846(class7074) : Class7521.field29156.getDefaultState();
+        return this.getDefaultState().method21752(class7074.method21654(), class7074.method21639()) ? super.method11846(class7074) : Blocks.DIRT.getDefaultState();
     }
     
     @Override
@@ -105,7 +105,7 @@ public class Class4021 extends Block
     }
     
     public static void method12212(final BlockState class7096, final World class7097, final BlockPos class7098) {
-        class7097.method6692(class7098, Block.method11777(class7096, Class7521.field29156.getDefaultState(), class7097, class7098));
+        class7097.method6692(class7098, Block.method11777(class7096, Blocks.DIRT.getDefaultState(), class7097, class7098));
     }
     
     private static boolean method12213(final IBlockReader class1855, final BlockPos class1856) {

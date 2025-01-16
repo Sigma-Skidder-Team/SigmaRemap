@@ -64,7 +64,7 @@ public abstract class Class812 extends Class806
         super.method2676();
         if (this.method4780()) {
             if (!this.world.isRemote) {
-                this.method1764(Class7521.field29292);
+                this.method1764(Blocks.CHEST);
             }
             this.method4781(false);
         }
@@ -118,7 +118,7 @@ public abstract class Class812 extends Class806
                 return true;
             }
             if (!this.method4780()) {
-                if (class8321.getItem() == Class7521.field29292.method11704()) {
+                if (class8321.getItem() == Blocks.CHEST.method11704()) {
                     this.method4781(true);
                     this.method4731();
                     return true;
@@ -148,7 +148,7 @@ public abstract class Class812 extends Class806
             if (method2716 == 0) {
                 if (this.method4715() && method2715.getItem() != Items.field31552) {
                     if (!this.method4780()) {
-                        if (method2715.getItem() == Class7521.field29292.method11704()) {
+                        if (method2715.getItem() == Blocks.CHEST.method11704()) {
                             this.method4781(true);
                             this.method4782();
                             method2716 = 1;

@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -70,7 +71,7 @@ public class Class3422 extends Class3418
     
     @Override
     public boolean method10854(final PlayerEntity playerEntity) {
-        return Class3418.method10866(this.field16170, playerEntity, Class7521.field29815);
+        return Class3418.method10866(this.field16170, playerEntity, Blocks.STONECUTTER);
     }
     
     @Override
@@ -98,7 +99,7 @@ public class Class3422 extends Class3418
         this.field16171.method19833(-1);
         this.field16177.method20055(ItemStack.EMPTY);
         if (!class447.method27620()) {
-            this.field16173 = this.field16172.method6792().method6379(Class8976.field37848, class446, this.field16172);
+            this.field16173 = this.field16172.method6792().method6379(IRecipeType.field37848, class446, this.field16172);
         }
     }
     
@@ -137,7 +138,7 @@ public class Class3422 extends Class3418
                 class513 = method20053.method27641();
                 if (n != 1) {
                     if (n != 0) {
-                        if (!this.field16172.method6792().method6378(Class8976.field37848, new Class443(new ItemStack[] { method20053 }), this.field16172).isPresent()) {
+                        if (!this.field16172.method6792().method6378(IRecipeType.field37848, new Class443(new ItemStack[] { method20053 }), this.field16172).isPresent()) {
                             if (n >= 2 && n < 29) {
                                 if (!this.method10888(method20053, 29, 38, false)) {
                                     return ItemStack.EMPTY;

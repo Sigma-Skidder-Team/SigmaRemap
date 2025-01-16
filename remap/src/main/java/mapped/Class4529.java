@@ -33,7 +33,7 @@ public class Class4529 extends Class4469
             for (int j = 1; j <= 6; ++j) {
                 if (random.nextInt(3) != 0) {
                     final int n = 2 + ((random.nextInt(4) != 0) ? 1 : 0);
-                    final BlockState method11878 = Class7521.field29212.getDefaultState();
+                    final BlockState method11878 = Blocks.field29212.getDefaultState();
                     this.method13444(class1851, class1853, i, n, j, i, 3, j, method11878, method11878, false);
                 }
             }

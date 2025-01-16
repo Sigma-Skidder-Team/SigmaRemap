@@ -134,7 +134,7 @@ public class Class4094 extends Class4093
                                                                 }
                                                             }
                                                             else {
-                                                                class1853 = Class7521.field29172.getDefaultState();
+                                                                class1853 = Blocks.field29172.getDefaultState();
                                                             }
                                                             class1849.method18923(class1847, method18923.method25426() + k + n11, method18923.method25427() + l + n12);
                                                             n14 += n15 / (double)(n * n);
@@ -145,10 +145,10 @@ public class Class4094 extends Class4093
                                                 else {
                                                     final int n17 = n9 + n10 * 231871;
                                                     if ((n17 * n17 * 31287121 + n17 * 11 >> 20 & 0x1) != 0x0) {
-                                                        ((Multiset)create).add((Object)Class7521.field29148.getDefaultState().method21707(class1847, BlockPos.ZERO), 100);
+                                                        ((Multiset)create).add((Object) Blocks.STONE.getDefaultState().method21707(class1847, BlockPos.ZERO), 100);
                                                     }
                                                     else {
-                                                        ((Multiset)create).add((Object)Class7521.field29156.getDefaultState().method21707(class1847, BlockPos.ZERO), 10);
+                                                        ((Multiset)create).add((Object) Blocks.DIRT.getDefaultState().method21707(class1847, BlockPos.ZERO), 10);
                                                     }
                                                     n14 = 100.0;
                                                 }

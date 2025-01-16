@@ -16,25 +16,25 @@ public class Class6862 extends Class6863
     @Override
     public void method20976(final Random random, final int n, final int n2, final int n3, final boolean b) {
         if (!b) {
-            this.field26893 = Class7521.field29764.getDefaultState();
+            this.field26893 = Blocks.CAVE_AIR.getDefaultState();
         }
         else {
             final float nextFloat = random.nextFloat();
             if (nextFloat >= 0.2f) {
                 if (nextFloat >= 0.5f) {
                     if (nextFloat >= 0.55f) {
-                        this.field26893 = Class7521.field29368.getDefaultState();
+                        this.field26893 = Blocks.field29368.getDefaultState();
                     }
                     else {
-                        this.field26893 = Class7521.field29374.getDefaultState();
+                        this.field26893 = Blocks.field29374.getDefaultState();
                     }
                 }
                 else {
-                    this.field26893 = Class7521.field29369.getDefaultState();
+                    this.field26893 = Blocks.field29369.getDefaultState();
                 }
             }
             else {
-                this.field26893 = Class7521.field29370.getDefaultState();
+                this.field26893 = Blocks.field29370.getDefaultState();
             }
         }
     }

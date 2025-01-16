@@ -21,11 +21,11 @@ public class Class4083 extends Item
         final BlockPos method21655 = class7075.method21639();
         final BlockState method21656 = method21654.getBlockState(method21655);
         int n = 0;
-        if (method21656.getBlock() != Class7521.field29818) {
+        if (method21656.getBlock() != Blocks.CAMPFIRE) {
             final BlockPos method21657 = method21655.method1149(class7075.method21648());
             if (method21654.getBlockState(method21657).method21706()) {
                 this.method12288(method21654, method21657);
-                method21654.method6692(method21657, ((Class4011)Class7521.field29289).method12184(method21654, method21657));
+                method21654.method6692(method21657, ((Class4011) Blocks.FIRE).method12184(method21654, method21657));
                 n = 1;
             }
         }

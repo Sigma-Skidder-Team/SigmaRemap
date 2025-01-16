@@ -74,8 +74,8 @@ public abstract class Class582 extends Class581
     public void method3439(final IRecipe<?> class3662, final List<Class6601> list) {
         final ItemStack method11292 = class3662.getRecipeOutput();
         this.field3466.method25525(class3662);
-        this.field3466.method25521(Class120.method619(method11292), list.get(2).field26175, list.get(2).field26176);
-        final NonNullList method11293 = class3662.method11294();
+        this.field3466.method25521(Ingredient.method619(method11292), list.get(2).field26175, list.get(2).field26176);
+        final NonNullList method11293 = class3662.getIngredients();
         this.field3481 = list.get(1);
         if (this.field3480 == null) {
             this.field3480 = this.method3453();
@@ -87,7 +87,7 @@ public abstract class Class582 extends Class581
             if (!iterator.hasNext()) {
                 return;
             }
-            final Class120 class3663 = (Class120)iterator.next();
+            final Ingredient class3663 = (Ingredient)iterator.next();
             if (!class3663.method616()) {
                 final Class6601 class3664 = list.get(i);
                 this.field3466.method25521(class3663, class3664.field26175, class3664.field26176);

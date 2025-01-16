@@ -32,7 +32,7 @@ public class Class4077 extends Class4071
     
     @Override
     public float method11706(final ItemStack class8321, final BlockState class8322) {
-        if (class8322.getBlock() != Class7521.field29240) {
+        if (class8322.getBlock() != Blocks.field29240) {
             final Material method21697 = class8322.getMaterial();
             if (method21697 != Material.PLANTS) {
                 if (method21697 != Material.TALL_PLANTS) {
@@ -66,7 +66,7 @@ public class Class4077 extends Class4071
     
     @Override
     public boolean method11713(final BlockState class7096) {
-        return class7096.getBlock() == Class7521.field29240;
+        return class7096.getBlock() == Blocks.field29240;
     }
     
     @Override

@@ -11,7 +11,7 @@ public abstract class Class6863
     public BlockState field26893;
     
     public Class6863() {
-        this.field26893 = Class7521.field29147.getDefaultState();
+        this.field26893 = Blocks.AIR.getDefaultState();
     }
     
     public abstract void method20976(final Random p0, final int p1, final int p2, final int p3, final boolean p4);

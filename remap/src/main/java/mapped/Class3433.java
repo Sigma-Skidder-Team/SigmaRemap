@@ -69,24 +69,24 @@ public class Class3433 extends Class3418
                             if (j != 0 || k != 0) {
                                 if (!(!class448.method6961(class449.add(k, 0, j)))) {
                                     if (!(!class448.method6961(class449.add(k, 1, j)))) {
-                                        if (class448.getBlockState(class449.add(k * 2, 0, j * 2)).method21696() == Class7521.field29284) {
+                                        if (class448.getBlockState(class449.add(k * 2, 0, j * 2)).method21696() == Blocks.BOOKSHELF) {
                                             ++n;
                                         }
-                                        if (class448.getBlockState(class449.add(k * 2, 1, j * 2)).method21696() == Class7521.field29284) {
+                                        if (class448.getBlockState(class449.add(k * 2, 1, j * 2)).method21696() == Blocks.BOOKSHELF) {
                                             ++n;
                                         }
                                         if (k != 0) {
                                             if (j != 0) {
-                                                if (class448.getBlockState(class449.add(k * 2, 0, j)).method21696() == Class7521.field29284) {
+                                                if (class448.getBlockState(class449.add(k * 2, 0, j)).method21696() == Blocks.BOOKSHELF) {
                                                     ++n;
                                                 }
-                                                if (class448.getBlockState(class449.add(k * 2, 1, j)).method21696() == Class7521.field29284) {
+                                                if (class448.getBlockState(class449.add(k * 2, 1, j)).method21696() == Blocks.BOOKSHELF) {
                                                     ++n;
                                                 }
-                                                if (class448.getBlockState(class449.add(k, 0, j * 2)).method21696() == Class7521.field29284) {
+                                                if (class448.getBlockState(class449.add(k, 0, j * 2)).method21696() == Blocks.BOOKSHELF) {
                                                     ++n;
                                                 }
-                                                if (class448.getBlockState(class449.add(k, 1, j * 2)).method21696() == Class7521.field29284) {
+                                                if (class448.getBlockState(class449.add(k, 1, j * 2)).method21696() == Blocks.BOOKSHELF) {
                                                     ++n;
                                                 }
                                             }
@@ -227,7 +227,7 @@ public class Class3433 extends Class3418
     
     @Override
     public boolean method10854(final PlayerEntity playerEntity) {
-        return Class3418.method10866(this.field16218, playerEntity, Class7521.field29398);
+        return Class3418.method10866(this.field16218, playerEntity, Blocks.field29398);
     }
     
     @Override

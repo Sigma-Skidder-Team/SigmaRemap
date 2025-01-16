@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class Class800 extends Class794
 {
-    private static final Class120 field4285;
+    private static final Ingredient field4285;
     private static final DataParameter<Integer> field4286;
     private static final DataParameter<Boolean> field4287;
     private static final DataParameter<Boolean> field4288;
@@ -402,7 +402,7 @@ public class Class800 extends Class794
     }
     
     static {
-        field4285 = Class120.method618(Items.field31379, Items.field31380);
+        field4285 = Ingredient.method618(Items.field31379, Items.field31380);
         field4286 = EntityDataManager.method33564(Class800.class, Class7709.field30654);
         field4287 = EntityDataManager.method33564(Class800.class, Class7709.field30661);
         field4288 = EntityDataManager.method33564(Class800.class, Class7709.field30661);

@@ -26,6 +26,6 @@ public class Class5140 implements Class5113
     }
     
     public static <T> Class5140 method16054(final Dynamic<T> dynamic) {
-        return new Class5140(dynamic.get("height").asInt(0), dynamic.get("state").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()));
+        return new Class5140(dynamic.get("height").asInt(0), dynamic.get("state").map((Function) BlockState::deserialize).orElse(Blocks.AIR.getDefaultState()));
     }
 }

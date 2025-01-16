@@ -29,7 +29,7 @@ public class Class431 extends Class428
     
     @Override
     public BlockState method2141() {
-        return Class7521.field29290.getDefaultState();
+        return Blocks.SPAWNER.getDefaultState();
     }
     
     @Override

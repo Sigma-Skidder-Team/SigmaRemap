@@ -55,13 +55,13 @@ public class Class3908 extends Block implements Class3872
     public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7096.method21752(class7099, class7100)) {
             if (class7097 == Direction.UP) {
-                if (class7098.method21696() == Class7521.field29761) {
-                    class7099.setBlockState(class7100, Class7521.field29761.getDefaultState(), 2);
+                if (class7098.method21696() == Blocks.BAMBOO) {
+                    class7099.setBlockState(class7100, Blocks.BAMBOO.getDefaultState(), 2);
                 }
             }
             return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
         }
-        return Class7521.field29147.getDefaultState();
+        return Blocks.AIR.getDefaultState();
     }
     
     @Override
@@ -90,7 +90,7 @@ public class Class3908 extends Block implements Class3872
     }
     
     public void method12014(final World class1847, final BlockPos class1848) {
-        class1847.setBlockState(class1848.method1137(), ((StateHolder<O, Class7096>)Class7521.field29761.getDefaultState()).with(Class3913.field17724, Class184.field575), 3);
+        class1847.setBlockState(class1848.method1137(), ((StateHolder<O, Class7096>) Blocks.BAMBOO.getDefaultState()).with(Class3913.field17724, Class184.field575), 3);
     }
     
     static {

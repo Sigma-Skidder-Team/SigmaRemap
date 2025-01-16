@@ -319,7 +319,7 @@ public abstract class World implements Class1851, AutoCloseable
         if (!isOutsideBuildHeight(class354)) {
             return this.method6686(class354.getX() >> 4, class354.getZ() >> 4).getBlockState(class354);
         }
-        return Class7521.field29763.getDefaultState();
+        return Blocks.VOID_AIR.getDefaultState();
     }
     
     @Override
@@ -505,7 +505,7 @@ public abstract class World implements Class1851, AutoCloseable
                     for (int j = method35646; j < method35647; ++j) {
                         for (int k = method35648; k < method35649; ++k) {
                             final Block method35651 = this.getBlockState(method35650.method1300(i, j, k)).getBlock();
-                            if (method35651 == Class7521.field29289 || method35651 == Class7521.field29174) {
+                            if (method35651 == Blocks.FIRE || method35651 == Blocks.field29174) {
                                 return true;
                             }
                         }
@@ -577,7 +577,7 @@ public abstract class World implements Class1851, AutoCloseable
     
     public boolean method6725(final PlayerEntity playerEntity, BlockPos method1149, final Direction class513) {
         method1149 = method1149.method1149(class513);
-        if (this.getBlockState(method1149).getBlock() != Class7521.field29289) {
+        if (this.getBlockState(method1149).getBlock() != Blocks.FIRE) {
             return false;
         }
         this.method6839(playerEntity, 1009, method1149, 0);
@@ -1001,13 +1001,13 @@ public abstract class World implements Class1851, AutoCloseable
                 continue;
             }
             final BlockState method1150 = this.getBlockState(method1149);
-            if (method1150.getBlock() != Class7521.field29471) {
+            if (method1150.getBlock() != Blocks.field29471) {
                 if (!method1150.method21713(this, method1149)) {
                     continue;
                 }
                 final BlockPos method1151 = method1149.method1149(class356);
                 final BlockState method1152 = this.getBlockState(method1151);
-                if (method1152.getBlock() != Class7521.field29471) {
+                if (method1152.getBlock() != Blocks.field29471) {
                     continue;
                 }
                 method1152.method21734(this, method1151, class355, class354, false);

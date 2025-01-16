@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.world.World;
 
 public abstract class Class3429 extends Class3426<IInventory>
@@ -12,13 +13,13 @@ public abstract class Class3429 extends Class3426<IInventory>
     private final IInventory field16209;
     private final Class7604 field16210;
     public final World field16211;
-    private final Class8976<? extends Class3680> field16212;
+    private final IRecipeType<? extends Class3680> field16212;
     
-    public Class3429(final Class8471<?> class8471, final Class8976<? extends Class3680> class8472, final int n, final Class464 class8473) {
+    public Class3429(final Class8471<?> class8471, final IRecipeType<? extends Class3680> class8472, final int n, final Class464 class8473) {
         this(class8471, class8472, n, class8473, new Class443(3), new Class7607(4));
     }
     
-    public Class3429(final Class8471<?> class8471, final Class8976<? extends Class3680> field16212, final int n, final Class464 class8472, final IInventory field16213, final Class7604 field16214) {
+    public Class3429(final Class8471<?> class8471, final IRecipeType<? extends Class3680> field16212, final int n, final Class464 class8472, final IInventory field16213, final Class7604 field16214) {
         super(class8471, n);
         this.field16212 = field16212;
         Class3418.method10868(field16213, 3);
@@ -146,7 +147,7 @@ public abstract class Class3429 extends Class3426<IInventory>
     }
     
     public boolean method10946(final ItemStack class8321) {
-        return this.field16211.method6792().method6378((Class8976<IRecipe>)this.field16212, new Class443(new ItemStack[] { class8321 }), this.field16211).isPresent();
+        return this.field16211.method6792().method6378((IRecipeType<IRecipe>)this.field16212, new Class443(new ItemStack[] { class8321 }), this.field16211).isPresent();
     }
     
     public boolean method10947(final ItemStack class8321) {

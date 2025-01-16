@@ -32,7 +32,7 @@ public class Class3909 extends Class3910 implements Class3872
     @Override
     public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final BlockState class1851) {
         final BlockPos method1137 = class1850.method1137();
-        final BlockState method1138 = Class7521.field29241.getDefaultState();
+        final BlockState method1138 = Blocks.field29241.getDefaultState();
         int i = 0;
     Label_0096_Outer:
         while (i < 128) {

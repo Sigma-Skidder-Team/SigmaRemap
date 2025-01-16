@@ -6,12 +6,12 @@ package mapped;
 
 public enum Class241
 {
-    field1181(Class7521.field29160, "oak"), 
-    field1182(Class7521.field29161, "spruce"), 
-    field1183(Class7521.field29162, "birch"), 
-    field1184(Class7521.field29163, "jungle"), 
-    field1185(Class7521.field29164, "acacia"), 
-    field1186(Class7521.field29165, "dark_oak");
+    field1181(Blocks.OAK_PLANKS, "oak"),
+    field1182(Blocks.SPRUCE_PLANKS, "spruce"),
+    field1183(Blocks.BIRCH_PLANKS, "birch"),
+    field1184(Blocks.JUNGLE_PLANKS, "jungle"),
+    field1185(Blocks.ACACIA_PLANKS, "acacia"),
+    field1186(Blocks.DARK_OAK_PLANKS, "dark_oak");
     
     private final String field1187;
     private final Block field1188;

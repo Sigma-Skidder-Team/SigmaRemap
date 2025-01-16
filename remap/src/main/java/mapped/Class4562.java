@@ -112,11 +112,11 @@ public class Class4562 extends Class4535<Class5141>
                             final BlockPos method21698 = class1853.add(n17, n19 - 1, n18);
                             if (Class4535.method13533(class1851.getBlockState(method21698).getBlock())) {
                                 if (class1851.method6992(Class237.field911, class1853.add(n17, n19, n18)) > 0) {
-                                    if (class1851.method6959(method21698).method9872().method13338().getBlock() != Class7521.field29392) {
-                                        class1851.setBlockState(method21698, Class7521.field29155.getDefaultState(), 2);
+                                    if (class1851.method6959(method21698).method9872().method13338().getBlock() != Blocks.field29392) {
+                                        class1851.setBlockState(method21698, Blocks.GRASS_BLOCK.getDefaultState(), 2);
                                     }
                                     else {
-                                        class1851.setBlockState(method21698, Class7521.field29392.getDefaultState(), 2);
+                                        class1851.setBlockState(method21698, Blocks.field29392.getDefaultState(), 2);
                                     }
                                 }
                             }
@@ -157,7 +157,7 @@ public class Class4562 extends Class4535<Class5141>
                             if (b2) {
                                 if (n22 < 4 || random.nextInt(2) != 0) {
                                     if (class1851.getBlockState(class1853.add(n20, n22, n21)).getMaterial().method26439()) {
-                                        class1851.setBlockState(class1853.add(n20, n22, n21), Class7521.field29148.getDefaultState(), 2);
+                                        class1851.setBlockState(class1853.add(n20, n22, n21), Blocks.STONE.getDefaultState(), 2);
                                     }
                                 }
                             }
@@ -170,7 +170,7 @@ public class Class4562 extends Class4535<Class5141>
                     for (int n24 = 0; n24 < 16; ++n24) {
                         final BlockPos method21699 = class1853.add(n23, 4, n24);
                         if (class1851.method6959(method21699).method9847(class1851, method21699, false)) {
-                            class1851.setBlockState(method21699, Class7521.field29330.getDefaultState(), 2);
+                            class1851.setBlockState(method21699, Blocks.field29330.getDefaultState(), 2);
                         }
                     }
                 }
@@ -181,6 +181,6 @@ public class Class4562 extends Class4535<Class5141>
     }
     
     static {
-        field20040 = Class7521.field29764.getDefaultState();
+        field20040 = Blocks.CAVE_AIR.getDefaultState();
     }
 }

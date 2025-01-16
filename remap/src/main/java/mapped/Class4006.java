@@ -124,7 +124,7 @@ public class Class4006 extends Block
     public Class7096 method11789(final Class7096 class7096, final Direction class7097, final Class7096 class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7097 != Direction.DOWN) {
             final Class7096 method12177 = this.method12177(class7096, class7099, class7100);
-            return this.method12173(method12177) ? method12177 : Class7521.field29147.getDefaultState();
+            return this.method12173(method12177) ? method12177 : Blocks.AIR.getDefaultState();
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }

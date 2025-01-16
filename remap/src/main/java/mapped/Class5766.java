@@ -6,6 +6,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipeSerializer;
 
 public class Class5766 implements Class5763
 {
@@ -22,7 +23,7 @@ public class Class5766 implements Class5763
     }
     
     @Override
-    public Class6096<?> method17156() {
+    public IRecipeSerializer<?> method17156() {
         return Class8176.method27074(this.field23581);
     }
     

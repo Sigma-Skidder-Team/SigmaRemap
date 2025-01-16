@@ -14,6 +14,6 @@ public interface Class7756 extends Class7754<Class4107>
     public static final Class7756 field31697 = method24756("nop", dynamic -> Class4111.field18215);
     
     default Class7756 method24756(final String s, final Class7756 class7756) {
-        return Registry.method511(Registry.field233, s, class7756);
+        return Registry.register(Registry.field233, s, class7756);
     }
 }

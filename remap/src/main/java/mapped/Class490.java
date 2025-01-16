@@ -67,7 +67,7 @@ public class Class490 extends TileEntity implements Class434, Class439
             final BlockState method1078 = this.field2656.getBlockState(class354);
             final Block method1079 = method1078.getBlock();
             if (!(method1079 instanceof Class3843)) {
-                if (class355 == null || (method1078.getOpacity(this.field2656, class354) >= 15 && method1079 != Class7521.field29172)) {
+                if (class355 == null || (method1078.getOpacity(this.field2656, class354) >= 15 && method1079 != Blocks.field29172)) {
                     this.field2810.clear();
                     this.field2812 = method1077;
                     break;
@@ -140,10 +140,10 @@ public class Class490 extends TileEntity implements Class434, Class439
             for (int n6 = n - i; n6 <= n + i && n5 != 0; ++n6) {
                 for (int j = n3 - i; j <= n3 + i; ++j) {
                     final Block method21696 = this.field2656.getBlockState(new BlockPos(n6, n4, j)).method21696();
-                    if (method21696 != Class7521.field29412) {
-                        if (method21696 != Class7521.field29280) {
-                            if (method21696 != Class7521.field29295) {
-                                if (method21696 != Class7521.field29281) {
+                    if (method21696 != Blocks.field29412) {
+                        if (method21696 != Blocks.GOLD_BLOCK) {
+                            if (method21696 != Blocks.DIAMOND_BLOCK) {
+                                if (method21696 != Blocks.IRON_BLOCK) {
                                     n5 = 0;
                                     break;
                                 }

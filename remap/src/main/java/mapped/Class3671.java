@@ -8,11 +8,12 @@ import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.world.World;
 
 public class Class3671 extends Class3666
 {
-    private static final Class120 field16956;
+    private static final Ingredient field16956;
     
     public Class3671(final ResourceLocation class1932) {
         super(class1932);
@@ -70,11 +71,11 @@ public class Class3671 extends Class3666
     }
     
     @Override
-    public Class6096<?> method11299() {
-        return Class6096.field24741;
+    public IRecipeSerializer<?> getSerializer() {
+        return IRecipeSerializer.field24741;
     }
     
     static {
-        field16956 = Class120.method618(Items.field31533);
+        field16956 = Ingredient.method618(Items.field31533);
     }
 }

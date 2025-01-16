@@ -311,8 +311,8 @@ public class Class4653 extends Class4651
                     }
                     Label_0246: {
                         if (method21697 != Class257.field1215) {
-                            if (method21696 != Class7521.field29642) {
-                                if (method21696 != Class7521.field29818) {
+                            if (method21696 != Blocks.MAGMA_BLOCK) {
+                                if (method21696 != Blocks.CAMPFIRE) {
                                     break Label_0246;
                                 }
                             }

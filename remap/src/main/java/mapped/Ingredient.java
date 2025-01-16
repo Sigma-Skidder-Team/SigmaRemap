@@ -21,16 +21,16 @@ import net.minecraft.item.ItemStack;
 
 import java.util.function.Predicate;
 
-public final class Class120 implements Predicate<ItemStack>
+public final class Ingredient implements Predicate<ItemStack>
 {
     private static final Predicate<? super Class7452> field373;
-    public static final Class120 field374;
+    public static final Ingredient field374;
     private final Class7452[] field375;
     private ItemStack[] field376;
     private IntList field377;
     
-    private Class120(final Stream<? extends Class7452> stream) {
-        this.field375 = stream.filter(Class120.field373).toArray(Class7452[]::new);
+    private Ingredient(final Stream<? extends Class7452> stream) {
+        this.field375 = stream.filter(Ingredient.field373).toArray(Class7452[]::new);
     }
     
     public ItemStack[] method611() {
@@ -106,31 +106,31 @@ public final class Class120 implements Predicate<ItemStack>
         return false;
     }
     
-    private static Class120 method617(final Stream<? extends Class7452> stream) {
-        final Class120 class120 = new Class120(stream);
-        return (class120.field375.length != 0) ? class120 : Class120.field374;
+    private static Ingredient method617(final Stream<? extends Class7452> stream) {
+        final Ingredient class120 = new Ingredient(stream);
+        return (class120.field375.length != 0) ? class120 : Ingredient.field374;
     }
     
-    public static Class120 method618(final Class3832... array) {
+    public static Ingredient method618(final Class3832... array) {
         return method617(Arrays.stream(array).map(class3832 -> {
             new Class7453(new ItemStack(class3832), null);
             return;
         }));
     }
     
-    public static Class120 method619(final ItemStack... array) {
+    public static Ingredient method619(final ItemStack... array) {
         return method617(Arrays.stream(array).map(class8321 -> new Class7453(class8321, null)));
     }
     
-    public static Class120 method620(final Class7909<Item> class7909) {
+    public static Ingredient method620(final Class7909<Item> class7909) {
         return method617(Stream.of(new Class7451(class7909, null)));
     }
     
-    public static Class120 method621(final PacketBuffer class8654) {
+    public static Ingredient method621(final PacketBuffer class8654) {
         return method617((Stream<? extends Class7452>)Stream.generate(() -> new Class7453(class8655.method29511(), null)).limit(class8654.readVarInt()));
     }
     
-    public static Class120 method622(final JsonElement jsonElement) {
+    public static Ingredient method622(final JsonElement jsonElement) {
         if (jsonElement == null || jsonElement.isJsonNull()) {
             throw new JsonSyntaxException("Item cannot be null");
         }
@@ -170,6 +170,6 @@ public final class Class120 implements Predicate<ItemStack>
     
     static {
         field373 = (class7452 -> !class7452.method22938().stream().allMatch(ItemStack::method27620));
-        field374 = new Class120(Stream.empty());
+        field374 = new Ingredient(Stream.empty());
     }
 }

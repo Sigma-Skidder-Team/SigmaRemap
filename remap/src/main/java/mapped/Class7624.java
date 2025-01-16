@@ -18,14 +18,14 @@ public class Class7624 implements Class7622
     
     @Override
     public void method23959() {
-        final BlockState method6720 = this.field30199.world.method6720(this.field30199.getBoundingBox().grow(0.0, -0.4000000059604645, 0.0).shrink(0.001), Class7521.field29765);
+        final BlockState method6720 = this.field30199.world.method6720(this.field30199.getBoundingBox().grow(0.0, -0.4000000059604645, 0.0).shrink(0.001), Blocks.BUBBLE_COLUMN);
         if (method6720 == null) {
             this.field30200 = false;
         }
         else {
             if (!this.field30200) {
                 if (!this.field30201) {
-                    if (method6720.getBlock() == Class7521.field29765) {
+                    if (method6720.getBlock() == Blocks.BUBBLE_COLUMN) {
                         if (!this.field30199.isSpectator()) {
                             if (!method6720.get((IProperty<Boolean>)Class3858.field17478)) {
                                 this.field30199.method1695(Class8520.field35046, 1.0f, 1.0f);

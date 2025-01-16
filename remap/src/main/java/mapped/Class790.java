@@ -70,7 +70,7 @@ public class Class790 extends Class789
         if (method6959 != Class7102.field27642 && method6959 != Class7102.field27682) {
             return Class789.method4356(class7499, class7500, class7501, class7502, random);
         }
-        return class7500.method6993(class7502, 0) > 8 && class7500.getBlockState(class7502.method1139()).getBlock() == Class7521.field29330;
+        return class7500.method6993(class7502, 0) > 8 && class7500.getBlockState(class7502.method1139()).getBlock() == Blocks.field29330;
     }
     
     @Override

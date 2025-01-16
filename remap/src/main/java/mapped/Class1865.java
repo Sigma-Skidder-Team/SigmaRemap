@@ -93,9 +93,9 @@ public class Class1865 implements IChunk
         final int method1075 = class354.getY();
         if (!World.method6684(method1075)) {
             final Class8199 class355 = this.method7014()[method1075 >> 4];
-            return Class8199.method27155(class355) ? Class7521.field29147.getDefaultState() : class355.method27148(class354.getX() & 0xF, method1075 & 0xF, class354.getZ() & 0xF);
+            return Class8199.method27155(class355) ? Blocks.AIR.getDefaultState() : class355.method27148(class354.getX() & 0xF, method1075 & 0xF, class354.getZ() & 0xF);
         }
-        return Class7521.field29763.getDefaultState();
+        return Blocks.VOID_AIR.getDefaultState();
     }
     
     @Override
@@ -136,9 +136,9 @@ public class Class1865 implements IChunk
         final int method1075 = class354.getY();
         final int method1076 = class354.getZ();
         if (method1075 < 0 || method1075 >= 256) {
-            return Class7521.field29763.getDefaultState();
+            return Blocks.VOID_AIR.getDefaultState();
         }
-        if (this.field10177[method1075 >> 4] == Chunk.field10141 && class355.getBlock() == Class7521.field29147) {
+        if (this.field10177[method1075 >> 4] == Chunk.field10141 && class355.getBlock() == Blocks.AIR) {
             return class355;
         }
         if (class355.getLightValue() > 0) {

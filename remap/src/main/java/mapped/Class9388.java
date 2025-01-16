@@ -71,10 +71,10 @@ public class Class9388
                 Object o;
                 if (!(method27624 instanceof Class3944)) {
                     if (!(method27624 instanceof Class3900)) {
-                        if (method27624 != Class7521.field29759) {
-                            if (method27624 != Class7521.field29292) {
-                                if (method27624 != Class7521.field29409) {
-                                    if (method27624 != Class7521.field29468) {
+                        if (method27624 != Blocks.CONDUIT) {
+                            if (method27624 != Blocks.CHEST) {
+                                if (method27624 != Blocks.field29409) {
+                                    if (method27624 != Blocks.field29468) {
                                         if (!(method27624 instanceof Class3942)) {
                                             return;
                                         }

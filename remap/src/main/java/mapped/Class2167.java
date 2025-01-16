@@ -14,7 +14,7 @@ import java.util.List;
 
 public enum Class2167 implements Class2168
 {
-    field12888("BLACKLIST", 0, new Block[] { Class7521.field29647, Class7521.field29341, Class7521.field29697, Class7521.field29698, Class7521.field29699, Class7521.field29700, Class7521.field29701, Class7521.field29702, Class7521.field29703, Class7521.field29704, Class7521.field29705, Class7521.field29706, Class7521.field29707, Class7521.field29708, Class7521.field29709, Class7521.field29710, Class7521.field29711, Class7521.field29712, Class7521.field29465, Class7521.field29466, Class7521.field29467, Class7521.field29404, Class7521.field29177, Class7521.field29175, Class7521.field29176, Class7521.field29300, Class7521.field29301, Class7521.field29302, Class7521.field29303, Class7521.field29304, Class7521.field29305, Class7521.field29310, Class7521.field29311, Class7521.field29312, Class7521.field29313, Class7521.field29314, Class7521.field29315 }) {
+    field12888("BLACKLIST", 0, new Block[] { Blocks.OBSERVER, Blocks.field29341, Blocks.WHITE_CONCRETE_POWDER, Blocks.ORANGE_CONCRETE_POWDER, Blocks.MAGENTA_CONCRETE_POWDER, Blocks.LIGHT_BLUE_CONCRETE_POWDER, Blocks.YELLOW_CONCRETE_POWDER, Blocks.LIME_CONCRETE_POWDER, Blocks.PINK_CONCRETE_POWDER, Blocks.GRAY_CONCRETE_POWDER, Blocks.LIGHT_GRAY_CONCRETE_POWDER, Blocks.CYAN_CONCRETE_POWDER, Blocks.PURPLE_CONCRETE_POWDER, Blocks.BLUE_CONCRETE_POWDER, Blocks.BROWN_CONCRETE_POWDER, Blocks.GREEN_CONCRETE_POWDER, Blocks.RED_CONCRETE_POWDER, Blocks.BLACK_CONCRETE_POWDER, Blocks.field29465, Blocks.field29466, Blocks.field29467, Blocks.field29404, Blocks.field29177, Blocks.field29175, Blocks.field29176, Blocks.field29300, Blocks.field29301, Blocks.field29302, Blocks.field29303, Blocks.field29304, Blocks.field29305, Blocks.field29310, Blocks.field29311, Blocks.field29312, Blocks.field29313, Blocks.field29314, Blocks.field29315 }) {
         public Class2173(final String s, final int n, final Block... array) {
         }
         
@@ -32,7 +32,7 @@ public enum Class2167 implements Class2168
             return class7096.method21748(class7097, class7099.getBlockState(class7101), class7099, class7100, class7101);
         }
     }, 
-    field12890("CHEST", 2, new Block[] { Class7521.field29292, Class7521.field29468 }) {
+    field12890("CHEST", 2, new Block[] { Blocks.CHEST, Blocks.field29468 }) {
         public Class2170(final String s, final int n, final Block... array) {
         }
         
@@ -66,7 +66,7 @@ public enum Class2167 implements Class2168
             return class7096;
         }
     }, 
-    field12891("LEAVES", 3, true, new Block[] { Class7521.field29209, Class7521.field29207, Class7521.field29210, Class7521.field29208, Class7521.field29205, Class7521.field29206 }) {
+    field12891("LEAVES", 3, true, new Block[] { Blocks.field29209, Blocks.field29207, Blocks.field29210, Blocks.field29208, Blocks.field29205, Blocks.field29206 }) {
         private final ThreadLocal<List<ObjectSet<BlockPos>>> field12895;
         
         {
@@ -120,7 +120,7 @@ public enum Class2167 implements Class2168
             list.clear();
         }
     }, 
-    field12892("STEM_BLOCK", 4, new Block[] { Class7521.field29387, Class7521.field29386 }) {
+    field12892("STEM_BLOCK", 4, new Block[] { Blocks.field29387, Blocks.field29386 }) {
         public Class2172(final String s, final int n, final Block... array) {
         }
         

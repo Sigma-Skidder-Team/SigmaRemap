@@ -141,10 +141,10 @@ public class AutoCrystal extends PremiumModule
     Label_0068:
         for (final BlockPos class400 : Class4609.method13676(Class4609.method13691(4.0f), new Vec3d(class399.getPosX(), class399.getPosY() - 1.0, class399.getPosZ()))) {
             final Block method10658 = AutoCrystal.mc.world.getBlockState(class400).method21696();
-            if (method10658 != Class7521.field29286 && method10658 != Class7521.field29172) {
+            if (method10658 != Blocks.OBSIDIAN && method10658 != Blocks.field29172) {
                 continue;
             }
-            if (AutoCrystal.mc.world.getBlockState(class400.method1137()).method21696() != Class7521.field29147) {
+            if (AutoCrystal.mc.world.getBlockState(class400.method1137()).method21696() != Blocks.AIR) {
                 continue;
             }
             final AxisAlignedBB method10659 = new AxisAlignedBB(class400).grow(0.5, 0.5, 0.5).offset(0.0, 1.5, 0.0);

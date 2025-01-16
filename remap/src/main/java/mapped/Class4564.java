@@ -17,7 +17,7 @@ public class Class4564 extends Class4535<Class5122>
     }
     
     public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5122 class1854) {
-        if (class1851.method6961(class1853.method1137()) && class1851.getBlockState(class1853).getBlock() == Class7521.field29403) {
+        if (class1851.method6961(class1853.method1137()) && class1851.getBlockState(class1853).getBlock() == Blocks.field29403) {
             Class4031.method12223(class1851, class1853.method1137(), random, 8);
             return true;
         }

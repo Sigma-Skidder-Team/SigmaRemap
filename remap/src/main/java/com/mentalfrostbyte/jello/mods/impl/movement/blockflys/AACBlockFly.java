@@ -250,7 +250,7 @@ public class AACBlockFly extends Module
                         field2396 = this.field15652;
                     }
                 }
-                final List<Class9052> method10104 = this.method10104(Class7521.field29148, new BlockPos(AACBlockFly.mc.player.posX, (double)Math.round(field2396 - 1.0), AACBlockFly.mc.player.posZ));
+                final List<Class9052> method10104 = this.method10104(Blocks.STONE, new BlockPos(AACBlockFly.mc.player.posX, (double)Math.round(field2396 - 1.0), AACBlockFly.mc.player.posZ));
                 if (!method10104.isEmpty()) {
                     final Class9052 class5745 = method10104.get(method10104.size() - 1);
                     final BlockRayTraceResult method10105 = Class4609.method13697(this.field15650, this.field15651, 5.0f);

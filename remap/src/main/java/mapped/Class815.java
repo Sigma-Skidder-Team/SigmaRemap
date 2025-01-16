@@ -136,7 +136,7 @@ public class Class815 extends Class812 implements Class768
         boolean b = false;
         final Item method27622 = class513.getItem();
         if (method27622 != Items.field31315) {
-            if (method27622 == Class7521.field29529.method11704()) {
+            if (method27622 == Blocks.field29529.method11704()) {
                 n = 90;
                 n2 = 6;
                 n3 = 10.0f;

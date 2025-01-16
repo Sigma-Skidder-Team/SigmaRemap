@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.world.World;
 
 import java.util.Optional;
@@ -47,7 +48,7 @@ public class Class3428 extends Class3426<Class473>
         if (!class1847.isRemote) {
             final Class513 class1851 = (Class513)class1848;
             ItemStack class1852 = ItemStack.EMPTY;
-            final Optional<Class3663> method6378 = class1847.getServer().method1577().method6378(Class8976.field37843, class1849, class1847);
+            final Optional<Class3663> method6378 = class1847.getServer().method1577().method6378(IRecipeType.field37843, class1849, class1847);
             if (method6378.isPresent()) {
                 final Class3663 class1853 = method6378.get();
                 if (class1850.method2416(class1847, class1851, class1853)) {
@@ -88,7 +89,7 @@ public class Class3428 extends Class3426<Class473>
     
     @Override
     public boolean method10854(final PlayerEntity playerEntity) {
-        return Class3418.method10866(this.field16207, playerEntity, Class7521.field29296);
+        return Class3418.method10866(this.field16207, playerEntity, Blocks.CRAFTING_TABLE);
     }
     
     @Override

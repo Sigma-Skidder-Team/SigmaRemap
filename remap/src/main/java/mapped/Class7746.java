@@ -280,7 +280,7 @@ public abstract class Class7746
             for (int i = 0; i < this.field31659.method35221(); ++i) {
                 final Class6772 method35217 = this.field31659.method35217(i);
                 final Class6772 class6772 = (i + 1 >= this.field31659.method35221()) ? null : this.field31659.method35217(i + 1);
-                if (this.field31658.getBlockState(new BlockPos(method35217.field26589, method35217.field26590, method35217.field26591)).method21696() == Class7521.field29400) {
+                if (this.field31658.getBlockState(new BlockPos(method35217.field26589, method35217.field26590, method35217.field26591)).method21696() == Blocks.field29400) {
                     this.field31659.method35220(i, method35217.method20665(method35217.field26589, method35217.field26590 + 1, method35217.field26591));
                     if (class6772 != null) {
                         if (method35217.field26590 >= class6772.field26590) {

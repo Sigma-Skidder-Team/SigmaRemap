@@ -67,7 +67,7 @@ public class Class798 extends Class789 implements Class797
         this.field4114.method22062(0, new Class3580(this, this, 1.399999976158142, true));
         this.field4114.method22062(1, new Class3619(this, null));
         this.field4114.method22062(2, new Class3587(this, 1.0));
-        this.field4114.method22062(3, new Class3472(this, 1.25, Class120.method620(Class7855.field32270), false));
+        this.field4114.method22062(3, new Class3472(this, 1.25, Ingredient.method620(Class7855.field32270), false));
         this.field4272 = new Class3622(this);
         this.field4114.method22062(4, this.field4272);
         this.field4114.method22062(5, new Class3456(this, 1.25));

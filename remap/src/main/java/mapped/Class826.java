@@ -205,7 +205,7 @@ public class Class826 extends Class827 implements Class825
                 for (int n3 = (int)this.getPosY() - 4; n3 < (int)this.getPosY() + 4 && n2 < 14; ++n3) {
                     for (int n4 = (int)this.getPosZ() - 4; n4 < (int)this.getPosZ() + 4 && n2 < 14; ++n4) {
                         final Block method21696 = this.world.getBlockState(class385.setPos(i, n3, n4)).method21696();
-                        if (method21696 == Class7521.field29381 || method21696 instanceof Class3900) {
+                        if (method21696 == Blocks.field29381 || method21696 instanceof Class3900) {
                             if (this.rand.nextFloat() < 0.3f) {
                                 ++n;
                             }

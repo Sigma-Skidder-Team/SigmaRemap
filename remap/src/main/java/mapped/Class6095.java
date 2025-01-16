@@ -5,9 +5,11 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipeSerializer;
+
 import java.util.function.Function;
 
-public class Class6095<T extends IRecipe<?>> implements Class6096<T>
+public class Class6095<T extends IRecipe<?>> implements IRecipeSerializer<T>
 {
     private static String[] field24731;
     private final Function<ResourceLocation, T> field24732;

@@ -14,7 +14,7 @@ public class Class3486 extends Class3485
     
     public Class3486(final Class827 field16418, final Class787 class787, final double n, final int n2) {
         this.field16418 = field16418;
-        super(Class7521.field29716, class787, n, n2);
+        super(Blocks.TURTLE_EGG, class787, n, n2);
     }
     
     @Override

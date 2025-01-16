@@ -55,7 +55,7 @@ public abstract class Class7133<DC extends Class6926>
     private final Function<Dynamic<?>, ? extends DC> field27820;
     
     private static <T extends Class6926, G extends Class7133<T>> G method21887(final String s, final G g) {
-        return Registry.method511(Registry.field216, s, g);
+        return Registry.register(Registry.field216, s, g);
     }
     
     public Class7133(final Function<Dynamic<?>, ? extends DC> field27820) {

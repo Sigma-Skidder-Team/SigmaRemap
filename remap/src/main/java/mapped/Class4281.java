@@ -54,8 +54,8 @@ public class Class4281 implements IPacket<IClientPlayNetHandler>
     }
     
     public static <T extends IRecipe<?>> void method12861(final T t, final PacketBuffer class8654) {
-        class8654.method29517(Registry.field237.getKey(t.method11299()));
-        class8654.method29517(t.method11298());
-        t.method11299().method18181(class8654, t);
+        class8654.method29517(Registry.field237.getKey(t.getSerializer()));
+        class8654.method29517(t.getId());
+        t.getSerializer().method18181(class8654, t);
     }
 }

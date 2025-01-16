@@ -187,7 +187,7 @@ public final class Class9346
             }
             return method11878;
         }
-        return Class7521.field29147.getDefaultState();
+        return Blocks.AIR.getDefaultState();
     }
     
     private static <S extends IStateHolder<S>, T extends Comparable<T>> S method34648(final S n, final IProperty<T> class7111, final String s, final CompoundNBT class7112, final CompoundNBT class7113) {

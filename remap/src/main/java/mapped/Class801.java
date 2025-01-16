@@ -22,7 +22,7 @@ public class Class801 extends Class789
 {
     private static final DataParameter<Boolean> field4299;
     private static final DataParameter<Integer> field4300;
-    private static final Class120 field4301;
+    private static final Ingredient field4301;
     private boolean field4302;
     private int field4303;
     private int field4304;
@@ -36,7 +36,7 @@ public class Class801 extends Class789
         this.field4114.method22062(0, new Class3490(this));
         this.field4114.method22062(1, new Class3607(this, 1.25));
         this.field4114.method22062(3, new Class3587(this, 1.0));
-        this.field4114.method22062(4, new Class3472(this, 1.2, Class120.method618(Items.field31529), false));
+        this.field4114.method22062(4, new Class3472(this, 1.2, Ingredient.method618(Items.field31529), false));
         this.field4114.method22062(4, new Class3472(this, 1.2, false, Class801.field4301));
         this.field4114.method22062(5, new Class3456(this, 1.1));
         this.field4114.method22062(6, new Class3517(this, 1.0));
@@ -243,6 +243,6 @@ public class Class801 extends Class789
     static {
         field4299 = EntityDataManager.method33564(Class801.class, Class7709.field30661);
         field4300 = EntityDataManager.method33564(Class801.class, Class7709.field30654);
-        field4301 = Class120.method618(Items.field31517, Items.field31518, Items.field31575);
+        field4301 = Ingredient.method618(Items.field31517, Items.field31518, Items.field31575);
     }
 }

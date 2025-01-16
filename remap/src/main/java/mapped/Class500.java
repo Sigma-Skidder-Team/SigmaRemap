@@ -135,11 +135,11 @@ public class Class500 extends TileEntity
     
     public Class2182 method2550() {
         final Block method21696 = this.method2194().getBlock();
-        if (method21696 == Class7521.field29416) {
+        if (method21696 == Blocks.field29416) {
             return Class2182.field12923;
         }
-        if (method21696 != Class7521.field29639) {
-            return (method21696 != Class7521.field29640) ? Class2182.field12923 : Class2182.field12921;
+        if (method21696 != Blocks.REPEATING_COMMAND_BLOCK) {
+            return (method21696 != Blocks.CHAIN_COMMAND_BLOCK) ? Class2182.field12923 : Class2182.field12921;
         }
         return Class2182.field12922;
     }

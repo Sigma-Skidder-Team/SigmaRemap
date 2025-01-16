@@ -35,14 +35,14 @@ public class Class8787
     }
     
     public static void method30574(final BlockPos class354, final Class1849 class355) {
-        class355.method6692(class354, Class7521.field29416.getDefaultState());
+        class355.method6692(class354, Blocks.field29416.getDefaultState());
         ((Class500)class355.getTileEntity(class354)).method2539().method5211("test runthis");
-        class355.method6692(class354.add(0, 0, -1), Class7521.field29328.getDefaultState());
+        class355.method6692(class354.add(0, 0, -1), Blocks.field29328.getDefaultState());
     }
     
     public static void method30575(final String s, final BlockPos class354, final BlockPos class355, final int n, final Class1849 class356) {
         method30578(method30579(class354, class355, n), class354.getY(), class356);
-        class356.method6692(class354, Class7521.field29820.getDefaultState());
+        class356.method6692(class354, Blocks.STRUCTURE_BLOCK.getDefaultState());
         final Class501 class357 = (Class501)class356.getTileEntity(class354);
         class357.method2574(false);
         class357.method2558(new ResourceLocation(s));
@@ -99,7 +99,7 @@ public class Class8787
             for (int j = (int)method18496.minY; j <= (int)method18496.maxY; ++j) {
                 for (int k = (int)method18496.minZ; k <= (int)method18496.maxZ; ++k) {
                     final BlockPos class356 = new BlockPos(i, j, k);
-                    if (class355.getBlockState(class356).method21696() == Class7521.field29820) {
+                    if (class355.getBlockState(class356).method21696() == Blocks.STRUCTURE_BLOCK) {
                         arrayList.add(class356);
                     }
                 }
@@ -123,7 +123,7 @@ public class Class8787
     }
     
     private static Class501 method30584(final String str, final BlockPos class354, final Class1849 class355, final boolean b) {
-        class355.method6692(class354, Class7521.field29820.getDefaultState());
+        class355.method6692(class354, Blocks.STRUCTURE_BLOCK.getDefaultState());
         final Class501 class356 = (Class501)class355.getTileEntity(class354);
         class356.method2571(Class102.field306);
         class356.method2574(false);
@@ -158,7 +158,7 @@ public class Class8787
         if (!(method18876 instanceof Class7067)) {
             if (class354.getY() != n - 1) {
                 if (class354.getY() >= n - 1) {
-                    class356 = Class7521.field29147.getDefaultState();
+                    class356 = Blocks.AIR.getDefaultState();
                 }
                 else {
                     class356 = class355.method6959(class354).method9872().method13339();
@@ -171,7 +171,7 @@ public class Class8787
         else {
             final BlockState[] method18877 = ((Class7067)method18876).method21601();
             if (class354.getY() >= n) {
-                class356 = Class7521.field29147.getDefaultState();
+                class356 = Blocks.AIR.getDefaultState();
             }
             else {
                 class356 = method18877[class354.getY() - 1];

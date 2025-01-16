@@ -15,12 +15,12 @@ public abstract class Class3666 implements Class3663
     }
     
     @Override
-    public ResourceLocation method11298() {
+    public ResourceLocation getId() {
         return this.field16952;
     }
     
     @Override
-    public boolean method11295() {
+    public boolean isDynamic() {
         return true;
     }
     

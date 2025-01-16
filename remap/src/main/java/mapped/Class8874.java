@@ -60,11 +60,11 @@ public class Class8874
             if (!this.method31194(this.field37303.getBlockState(method1150))) {
                 break;
             }
-            if (this.field37303.getBlockState(method1150.method1139()).getBlock() != Class7521.field29286) {
+            if (this.field37303.getBlockState(method1150.method1139()).getBlock() != Blocks.OBSIDIAN) {
                 break;
             }
         }
-        return (this.field37303.getBlockState(class354.method1150(class355, i)).getBlock() != Class7521.field29286) ? 0 : i;
+        return (this.field37303.getBlockState(class354.method1150(class355, i)).getBlock() != Blocks.OBSIDIAN) ? 0 : i;
     }
     
     public int method31191() {
@@ -85,24 +85,24 @@ public class Class8874
                 if (!this.method31194(method1139)) {
                     break Label_0014;
                 }
-                if (method1139.getBlock() == Class7521.field29341) {
+                if (method1139.getBlock() == Blocks.field29341) {
                     ++this.field37307;
                 }
                 if (i != 0) {
                     if (i == this.field37310 - 1) {
-                        if (this.field37303.getBlockState(method1138.method1149(this.field37305)).getBlock() != Class7521.field29286) {
+                        if (this.field37303.getBlockState(method1138.method1149(this.field37305)).getBlock() != Blocks.OBSIDIAN) {
                             break Label_0014;
                         }
                     }
                 }
-                else if (this.field37303.getBlockState(method1138.method1149(this.field37306)).getBlock() != Class7521.field29286) {
+                else if (this.field37303.getBlockState(method1138.method1149(this.field37306)).getBlock() != Blocks.OBSIDIAN) {
                     break Label_0014;
                 }
             }
             ++this.field37309;
         }
         for (int j = 0; j < this.field37310; ++j) {
-            if (this.field37303.getBlockState(this.field37308.method1150(this.field37305, j).method1138(this.field37309)).getBlock() != Class7521.field29286) {
+            if (this.field37303.getBlockState(this.field37308.method1150(this.field37305, j).method1138(this.field37309)).getBlock() != Blocks.OBSIDIAN) {
                 this.field37309 = 0;
                 break;
             }
@@ -118,8 +118,8 @@ public class Class8874
     public boolean method31194(final BlockState class7096) {
         final Block method21696 = class7096.getBlock();
         if (!class7096.method21706()) {
-            if (method21696 != Class7521.field29289) {
-                if (method21696 != Class7521.field29341) {
+            if (method21696 != Blocks.FIRE) {
+                if (method21696 != Blocks.field29341) {
                     return false;
                 }
             }
@@ -146,7 +146,7 @@ public class Class8874
         for (int i = 0; i < this.field37310; ++i) {
             final BlockPos method1150 = this.field37308.method1150(this.field37305, i);
             for (int j = 0; j < this.field37309; ++j) {
-                this.field37303.setBlockState(method1150.method1138(j), ((StateHolder<O, BlockState>)Class7521.field29341.getDefaultState()).with(Class3998.field18018, this.field37304), 18);
+                this.field37303.setBlockState(method1150.method1138(j), ((StateHolder<O, BlockState>) Blocks.field29341.getDefaultState()).with(Class3998.field18018, this.field37304), 18);
             }
         }
     }

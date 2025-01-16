@@ -68,7 +68,7 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
             }
             return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
         }
-        return Class7521.field29147.getDefaultState();
+        return Blocks.AIR.getDefaultState();
     }
     
     @Override
@@ -128,9 +128,9 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
                             final BlockPos class1852 = new BlockPos(n3 + i, k, class1850.getZ() - n4 + j);
                             if (class1852 != class1850) {
                                 if (random.nextInt(6) == 0) {
-                                    if (class1849.getBlockState(class1852).method21696() == Class7521.field29173) {
+                                    if (class1849.getBlockState(class1852).method21696() == Blocks.field29173) {
                                         if (class1849.getBlockState(class1852.method1139()).method21755(Class7188.field27921)) {
-                                            class1849.setBlockState(class1852, ((StateHolder<O, Class7096>)Class7521.field29757.getDefaultState()).with((IProperty<Comparable>)Class3889.field17551, random.nextInt(4) + 1), 3);
+                                            class1849.setBlockState(class1852, ((StateHolder<O, Class7096>) Blocks.SEA_PICKLE.getDefaultState()).with((IProperty<Comparable>)Class3889.field17551, random.nextInt(4) + 1), 3);
                                         }
                                     }
                                 }

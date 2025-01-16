@@ -74,11 +74,11 @@ public class Class3913 extends Block implements Class3872
             return null;
         }
         final Block method6702 = method6701.getBlock();
-        if (method6702 == Class7521.field29760) {
+        if (method6702 == Blocks.BAMBOO_SAPLING) {
             return ((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3913.field17723, 0);
         }
-        if (method6702 != Class7521.field29761) {
-            return Class7521.field29760.getDefaultState();
+        if (method6702 != Blocks.BAMBOO) {
+            return Blocks.BAMBOO_SAPLING.getDefaultState();
         }
         return (BlockState)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3913.field17723, (method6701.get((IProperty<Integer>)Class3913.field17723) > 0) ? 1 : 0);
     }
@@ -115,7 +115,7 @@ public class Class3913 extends Block implements Class3872
             class7099.method6833().method21345(class7100, this, 1);
         }
         if (class7097 == Direction.UP) {
-            if (class7098.getBlock() == Class7521.field29761) {
+            if (class7098.getBlock() == Blocks.BAMBOO) {
                 if (class7098.get((IProperty<Integer>)Class3913.field17723) > class7096.get((IProperty<Integer>)Class3913.field17723)) {
                     class7099.setBlockState(class7100, ((StateHolder<O, BlockState>)class7096).method21768((IProperty<Comparable>)Class3913.field17723), 2);
                 }
@@ -169,11 +169,11 @@ public class Class3913 extends Block implements Class3872
         final BlockState method6703 = class7097.getBlockState(method6702);
         Class184 class7099 = Class184.field574;
         if (n >= 1) {
-            if (method6701.getBlock() == Class7521.field29761 && ((StateHolder<O, BlockState>)method6701).get(Class3913.field17724) != Class184.field574) {
-                if (method6701.getBlock() == Class7521.field29761) {
+            if (method6701.getBlock() == Blocks.BAMBOO && ((StateHolder<O, BlockState>)method6701).get(Class3913.field17724) != Class184.field574) {
+                if (method6701.getBlock() == Blocks.BAMBOO) {
                     if (((StateHolder<O, BlockState>)method6701).get(Class3913.field17724) != Class184.field574) {
                         class7099 = Class184.field576;
-                        if (method6703.getBlock() == Class7521.field29761) {
+                        if (method6703.getBlock() == Blocks.BAMBOO) {
                             class7097.setBlockState(class7098.method1139(), ((StateHolder<O, BlockState>)method6701).with(Class3913.field17724, Class184.field575), 3);
                             class7097.setBlockState(method6702, ((StateHolder<O, BlockState>)method6703).with(Class3913.field17724, Class184.field574), 3);
                         }
@@ -184,7 +184,7 @@ public class Class3913 extends Block implements Class3872
                 class7099 = Class184.field575;
             }
         }
-        final int i = (class7096.get((IProperty<Integer>)Class3913.field17723) == 1 || method6703.getBlock() == Class7521.field29761) ? 1 : 0;
+        final int i = (class7096.get((IProperty<Integer>)Class3913.field17723) == 1 || method6703.getBlock() == Blocks.BAMBOO) ? 1 : 0;
         int j = 0;
         Label_0257: {
             if (n < 11 || random.nextFloat() >= 0.25f) {
@@ -200,13 +200,13 @@ public class Class3913 extends Block implements Class3872
     
     public int method12018(final IBlockReader class1855, final BlockPos class1856) {
         int n;
-        for (n = 0; n < 16 && class1855.getBlockState(class1856.method1138(n + 1)).getBlock() == Class7521.field29761; ++n) {}
+        for (n = 0; n < 16 && class1855.getBlockState(class1856.method1138(n + 1)).getBlock() == Blocks.BAMBOO; ++n) {}
         return n;
     }
     
     public int method12019(final IBlockReader class1855, final BlockPos class1856) {
         int n;
-        for (n = 0; n < 16 && class1855.getBlockState(class1856.method1140(n + 1)).getBlock() == Class7521.field29761; ++n) {}
+        for (n = 0; n < 16 && class1855.getBlockState(class1856.method1140(n + 1)).getBlock() == Blocks.BAMBOO; ++n) {}
         return n;
     }
     

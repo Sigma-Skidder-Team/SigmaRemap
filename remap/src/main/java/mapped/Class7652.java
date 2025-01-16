@@ -15,7 +15,7 @@ public class Class7652
 {
     private static final List<Class7388<Class8061>> field30383;
     private static final List<Class7388<Item>> field30384;
-    private static final List<Class120> field30385;
+    private static final List<Ingredient> field30385;
     private static final Predicate<ItemStack> field30386;
     
     public static boolean method24240(final ItemStack class8321) {
@@ -163,7 +163,7 @@ public class Class7652
             throw new IllegalArgumentException("Expected a potion, got: " + Registry.field211.getKey(class3820));
         }
         if (class3822 instanceof Class4089) {
-            Class7652.field30384.add(new Class7388<Item>(class3820, Class120.method618(class3821), class3822));
+            Class7652.field30384.add(new Class7388<Item>(class3820, Ingredient.method618(class3821), class3822));
             return;
         }
         throw new IllegalArgumentException("Expected a potion, got: " + Registry.field211.getKey(class3822));
@@ -171,14 +171,14 @@ public class Class7652
     
     private static void method24250(final Item class3820) {
         if (class3820 instanceof Class4089) {
-            Class7652.field30385.add(Class120.method618(class3820));
+            Class7652.field30385.add(Ingredient.method618(class3820));
             return;
         }
         throw new IllegalArgumentException("Expected a potion, got: " + Registry.field211.getKey(class3820));
     }
     
     private static void method24251(final Class8061 class8061, final Item class8062, final Class8061 class8063) {
-        Class7652.field30383.add(new Class7388<Class8061>(class8061, Class120.method618(class8062), class8063));
+        Class7652.field30383.add(new Class7388<Class8061>(class8061, Ingredient.method618(class8062), class8063));
     }
     
     static {

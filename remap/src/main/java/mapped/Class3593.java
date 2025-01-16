@@ -107,7 +107,7 @@ public class Class3593 extends Class3592
         else if (this.field16738.rotationPitch > 0.0f) {
             if (this.field16738.onGround) {
                 if ((float)this.field16738.getMotion().y != 0.0f) {
-                    if (this.field16738.world.getBlockState(new BlockPos(this.field16738)).method21696() == Class7521.field29329) {
+                    if (this.field16738.world.getBlockState(new BlockPos(this.field16738)).method21696() == Blocks.field29329) {
                         this.field16738.rotationPitch = 60.0f;
                         this.field16738.method4153(null);
                         Class803.method4694(this.field16738, true);

@@ -212,7 +212,7 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9356 = 0;
         this.field9357 = 0;
         this.field9360 = 0;
-        this.field9361 = new Class9145(Class7521.field29147.getDefaultState(), new BlockPos(0, 0, 0));
+        this.field9361 = new Class9145(Blocks.AIR.getDefaultState(), new BlockPos(0, 0, 0));
         this.field9362 = false;
         this.field9363 = false;
         this.field9364 = false;
@@ -396,7 +396,7 @@ public class Class1656 implements AutoCloseable, Class1657
                         method6776 = 0.0;
                     }
                     if (n5 > -1.7976931348623157E308) {
-                        if (!method6773.isTagged(Class7324.field28320) && method6772.method21696() != Class7521.field29642 && (method6772.method21696() != Class7521.field29818 || !method6772.method21772((IProperty<Boolean>)Class3918.field17760))) {
+                        if (!method6773.isTagged(Class7324.field28320) && method6772.method21696() != Blocks.MAGMA_BLOCK && (method6772.method21696() != Blocks.CAMPFIRE || !method6772.method21772((IProperty<Boolean>)Class3918.field17760))) {
                             ++bound;
                             if (random.nextInt(bound) == 0) {
                                 n = method6771.getX() + nextDouble;

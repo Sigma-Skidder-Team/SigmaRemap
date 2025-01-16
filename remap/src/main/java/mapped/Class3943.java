@@ -49,7 +49,7 @@ public class Class3943 extends Class3841
                 }
                 if (random.nextInt(16) == 0) {
                     for (int k = 0; k <= 1; ++k) {
-                        if (class7097.getBlockState(class7098.add(i, k, j)).method21696() == Class7521.field29284) {
+                        if (class7097.getBlockState(class7098.add(i, k, j)).method21696() == Blocks.BOOKSHELF) {
                             if (!class7097.method6961(class7098.add(i / 2, 0, j / 2))) {
                                 break;
                             }

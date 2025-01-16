@@ -39,7 +39,7 @@ public class Class3923 extends Class3922
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7097 == Direction.DOWN && !class7096.method21752(class7099, class7100)) {
-            return Class7521.field29147.getDefaultState();
+            return Blocks.AIR.getDefaultState();
         }
         this.method12037(class7096, class7099, class7100);
         if (class7096.get((IProperty<Boolean>)Class3923.field17782)) {

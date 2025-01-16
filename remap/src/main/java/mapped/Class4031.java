@@ -36,7 +36,7 @@ public class Class4031 extends Block
                         boolean b = false;
                         final Class7096 method1138 = class7097.getBlockState(class7098.method1139());
                         final Block method1139 = method1138.method21696();
-                        if (method1139 != Class7521.field29403) {
+                        if (method1139 != Blocks.field29403) {
                             if (method1139 != this.field18128) {
                                 if (method1138.method21706()) {
                                     n = 1;
@@ -52,7 +52,7 @@ public class Class4031 extends Block
                                         ++i;
                                     }
                                     else {
-                                        if (method1140 != Class7521.field29403) {
+                                        if (method1140 != Blocks.field29403) {
                                             break;
                                         }
                                         b = true;
@@ -146,7 +146,7 @@ public class Class4031 extends Block
     public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         final Class7096 method6701 = class7097.getBlockState(class7098.method1139());
         final Block method6702 = method6701.method21696();
-        if (method6702 == this.field18128 || method6702 == Class7521.field29403) {
+        if (method6702 == this.field18128 || method6702 == Blocks.field29403) {
             return true;
         }
         if (method6701.method21706()) {
@@ -178,12 +178,12 @@ public class Class4031 extends Block
     }
     
     public static void method12223(final Class1851 class1851, final BlockPos class1852, final Random random, final int n) {
-        class1851.setBlockState(class1852, ((Class3968)Class7521.field29630).method12106(class1851, class1852), 2);
+        class1851.setBlockState(class1852, ((Class3968) Blocks.CHORUS_PLANT).method12106(class1851, class1852), 2);
         method12224(class1851, class1852, random, class1852, n, 0);
     }
     
     private static void method12224(final Class1851 class1851, final BlockPos class1852, final Random random, final BlockPos class1853, final int n, final int n2) {
-        final Class3968 class1854 = (Class3968)Class7521.field29630;
+        final Class3968 class1854 = (Class3968) Blocks.CHORUS_PLANT;
         int n3 = random.nextInt(4) + 1;
         if (n2 == 0) {
             ++n3;
@@ -222,7 +222,7 @@ public class Class4031 extends Block
             }
         }
         if (n4 == 0) {
-            class1851.setBlockState(class1852.method1138(n3), ((StateHolder<O, Class7096>)Class7521.field29631.getDefaultState()).with((IProperty<Comparable>)Class4031.field18127, 5), 2);
+            class1851.setBlockState(class1852.method1138(n3), ((StateHolder<O, Class7096>) Blocks.CHORUS_FLOWER.getDefaultState()).with((IProperty<Comparable>)Class4031.field18127, 5), 2);
         }
     }
     

@@ -60,12 +60,12 @@ public class Class3969 extends Block
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         final Class182 class7102 = class7096.get(Class3969.field17935);
         if (class7097.getAxis() == Direction.Axis.Y && class7102 == Class182.field565 == (class7097 == Direction.UP)) {
-            return (class7098.getBlock() == this && class7098.get(Class3969.field17935) != class7102) ? ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3969.field17931, (Comparable)class7098.get((IProperty<V>)Class3969.field17931))).with((IProperty<Comparable>)Class3969.field17932, (Comparable)class7098.get((IProperty<V>)Class3969.field17932))).with(Class3969.field17933, (Comparable)class7098.get((IProperty<V>)Class3969.field17933))).with((IProperty<Comparable>)Class3969.field17934, (Comparable)class7098.get((IProperty<V>)Class3969.field17934)) : Class7521.field29147.getDefaultState();
+            return (class7098.getBlock() == this && class7098.get(Class3969.field17935) != class7102) ? ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3969.field17931, (Comparable)class7098.get((IProperty<V>)Class3969.field17931))).with((IProperty<Comparable>)Class3969.field17932, (Comparable)class7098.get((IProperty<V>)Class3969.field17932))).with(Class3969.field17933, (Comparable)class7098.get((IProperty<V>)Class3969.field17933))).with((IProperty<Comparable>)Class3969.field17934, (Comparable)class7098.get((IProperty<V>)Class3969.field17934)) : Blocks.AIR.getDefaultState();
         }
         if (class7102 == Class182.field565) {
             if (class7097 == Direction.DOWN) {
                 if (!class7096.method21752(class7099, class7100)) {
-                    return Class7521.field29147.getDefaultState();
+                    return Blocks.AIR.getDefaultState();
                 }
             }
         }
@@ -74,7 +74,7 @@ public class Class3969 extends Block
     
     @Override
     public void method11852(final World class1847, final PlayerEntity class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
-        super.method11852(class1847, class1848, class1849, Class7521.field29147.getDefaultState(), class1851, class1852);
+        super.method11852(class1847, class1848, class1849, Blocks.AIR.getDefaultState(), class1851, class1852);
     }
     
     @Override
@@ -84,7 +84,7 @@ public class Class3969 extends Block
         final BlockState method6701 = class1847.getBlockState(class1852);
         if (method6701.getBlock() == this) {
             if (method6701.get(Class3969.field17935) != class1851) {
-                class1847.setBlockState(class1852, Class7521.field29147.getDefaultState(), 35);
+                class1847.setBlockState(class1852, Blocks.AIR.getDefaultState(), 35);
                 class1847.method6839(class1850, 2001, class1852, Block.method11774(method6701));
                 final ItemStack method6702 = class1850.getHeldItemMainhand();
                 if (!class1847.isRemote) {

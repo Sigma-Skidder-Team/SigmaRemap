@@ -21,7 +21,7 @@ public enum Class1859 implements IBlockReader
     
     @Override
     public BlockState getBlockState(final BlockPos class354) {
-        return Class7521.field29147.getDefaultState();
+        return Blocks.AIR.getDefaultState();
     }
     
     @Override

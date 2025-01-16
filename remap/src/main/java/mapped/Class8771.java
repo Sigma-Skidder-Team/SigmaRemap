@@ -25,7 +25,7 @@ public class Class8771
     }
     
     public static Class9263 method30455(final String s) {
-        return new Class9263(Registry.method511(Registry.field244, s, new Class8771()));
+        return new Class9263(Registry.register(Registry.field244, s, new Class8771()));
     }
     
     public void method30456(final Class7635 class7635) {

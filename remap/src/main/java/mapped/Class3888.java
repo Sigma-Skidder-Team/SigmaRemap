@@ -64,14 +64,14 @@ public class Class3888 extends Class3874 implements Class3872
         final BlockPos method1139 = class7098.method1139();
         final BlockState method1140 = class7097.getBlockState(method1139);
         final Block method1141 = method1140.getBlock();
-        return method1141 == Class7521.field29392 || method1141 == Class7521.field29158 || (class7097.method6993(class7098, 0) < 13 && this.method11943(method1140, class7097, method1139));
+        return method1141 == Blocks.field29392 || method1141 == Blocks.PODZOL || (class7097.method6993(class7098, 0) < 13 && this.method11943(method1140, class7097, method1139));
     }
     
     public boolean method11963(final Class1849 class1849, final BlockPos class1850, final BlockState class1851, final Random random) {
         class1849.method6690(class1850, false);
         Class8530<Class5137, ?> class1852;
-        if (this != Class7521.field29278) {
-            if (this != Class7521.field29279) {
+        if (this != Blocks.BROWN_MUSHROOM) {
+            if (this != Blocks.RED_MUSHROOM) {
                 class1849.setBlockState(class1850, class1851, 3);
                 return false;
             }

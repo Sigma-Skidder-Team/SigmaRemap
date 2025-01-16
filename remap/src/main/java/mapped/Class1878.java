@@ -162,7 +162,7 @@ public class Class1878 implements Class1851
             if (b) {
                 Block.method11838(method6701, this.field10219, class354, method6701.getBlock().method11802() ? this.getTileEntity(class354) : null, class355, ItemStack.EMPTY);
             }
-            return this.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
+            return this.setBlockState(class354, Blocks.AIR.getDefaultState(), 3);
         }
         return false;
     }
@@ -243,7 +243,7 @@ public class Class1878 implements Class1851
     
     @Override
     public boolean method6690(final BlockPos class354, final boolean b) {
-        return this.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
+        return this.setBlockState(class354, Blocks.AIR.getDefaultState(), 3);
     }
     
     @Override

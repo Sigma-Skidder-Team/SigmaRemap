@@ -21,7 +21,7 @@ public class Class8830
 {
     private static String[] field37119;
     private final IRecipe<?> field37120;
-    private final List<Class120> field37121;
+    private final List<Ingredient> field37121;
     private final int field37122;
     private final int[] field37123;
     private final int field37124;
@@ -34,8 +34,8 @@ public class Class8830
         this.field37121 = Lists.newArrayList();
         this.field37126 = (IntList)new IntArrayList();
         this.field37120 = field37128;
-        this.field37121.addAll(field37128.method11294());
-        this.field37121.removeIf(Class120::method616);
+        this.field37121.addAll(field37128.getIngredients());
+        this.field37121.removeIf(Ingredient::method616);
         this.field37122 = this.field37121.size();
         this.field37123 = this.method30824();
         this.field37124 = this.field37123.length;
@@ -71,9 +71,9 @@ public class Class8830
             }
             this.field37125.clear(0, this.field37122 + this.field37124 + this.field37122);
             int n4 = 0;
-            final NonNullList<Class120> method11294 = this.field37120.method11294();
+            final NonNullList<Ingredient> method11294 = this.field37120.getIngredients();
             for (int j = 0; j < method11294.size(); ++j) {
-                if (b2 && ((Class120)method11294.get(j)).method616()) {
+                if (b2 && ((Ingredient)method11294.get(j)).method616()) {
                     list.add(0);
                 }
                 else {
@@ -96,7 +96,7 @@ public class Class8830
     
     private int[] method30824() {
         final IntAVLTreeSet set = new IntAVLTreeSet();
-        final Iterator<Class120> iterator = this.field37121.iterator();
+        final Iterator<Ingredient> iterator = this.field37121.iterator();
         while (iterator.hasNext()) {
             ((IntCollection)set).addAll((IntCollection)iterator.next().method613());
         }
@@ -210,7 +210,7 @@ public class Class8830
     
     private int method30837() {
         int min = Integer.MAX_VALUE;
-        for (final Class120 class120 : this.field37121) {
+        for (final Ingredient class120 : this.field37121) {
             int max = 0;
             final IntListIterator iterator2 = class120.method613().iterator();
             while (((Iterator)iterator2).hasNext()) {

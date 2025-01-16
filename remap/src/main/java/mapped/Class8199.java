@@ -26,7 +26,7 @@ public class Class8199
         this.field33721 = field33721;
         this.field33722 = field33722;
         this.field33723 = field33723;
-        this.field33724 = new Class7875<BlockState>(Class8199.field33719, Block.field17391, Class9346::method34647, Class9346::method34649, Class7521.field29147.getDefaultState());
+        this.field33724 = new Class7875<BlockState>(Class8199.field33719, Block.field17391, Class9346::method34647, Class9346::method34649, Blocks.AIR.getDefaultState());
     }
     
     public BlockState method27148(final int n, final int n2, final int n3) {
@@ -179,7 +179,7 @@ public class Class8199
     }
     
     static {
-        field33719 = new Class6061<BlockState>(Block.field17391, Class7521.field29147.getDefaultState());
+        field33719 = new Class6061<BlockState>(Block.field17391, Blocks.AIR.getDefaultState());
         field33725 = new ThreadLocal<Class9489>();
     }
 }

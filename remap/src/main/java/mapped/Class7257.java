@@ -351,9 +351,9 @@ public abstract class Class7257 extends Fluid
         if (!(method21696 instanceof Class3867)) {
             if (!(method21696 instanceof Class3969)) {
                 if (!method21696.method11785(Class7188.field27928)) {
-                    if (method21696 != Class7521.field29307) {
-                        if (method21696 != Class7521.field29334) {
-                            if (method21696 != Class7521.field29765) {
+                    if (method21696 != Blocks.field29307) {
+                        if (method21696 != Blocks.field29334) {
+                            if (method21696 != Blocks.BUBBLE_COLUMN) {
                                 final Material method21697 = class1857.getMaterial();
                                 if (method21697 != Material.PORTAL) {
                                     if (method21697 != Material.STRUCTURE_VOID) {
@@ -408,7 +408,7 @@ public abstract class Class7257 extends Fluid
             }
             else {
                 obj = method22172;
-                class1847.setBlockState(class1848, Class7521.field29147.getDefaultState(), 3);
+                class1847.setBlockState(class1848, Blocks.AIR.getDefaultState(), 3);
             }
         }
         this.method22170(class1847, class1848, obj);

@@ -168,7 +168,7 @@ public class Class6092
         if (this.field24705) {
             return this.field24706.getBlockState(this.field24709);
         }
-        return Class7521.field29147.getDefaultState();
+        return Blocks.AIR.getDefaultState();
     }
     
     public void method18171(final float field24714, final float field24715) {
@@ -184,7 +184,7 @@ public class Class6092
             }
             return method6701;
         }
-        return Class7521.field29147.getDefaultState();
+        return Blocks.AIR.getDefaultState();
     }
     
     public final Vector3f method18173() {

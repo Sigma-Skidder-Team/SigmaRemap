@@ -21,7 +21,7 @@ public class Class4109 extends Class4107
     @Nullable
     @Override
     public Class9038 method12350(final Class1852 class1852, final BlockPos class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
-        if (class1855.field38249.getBlock() != Class7521.field29821) {
+        if (class1855.field38249.getBlock() != Blocks.JIGSAW) {
             return class1855;
         }
         final Class7572 class1857 = new Class7572(new StringReader(class1855.field38250.getString("final_state")), false);
@@ -31,7 +31,7 @@ public class Class4109 extends Class4107
         catch (final CommandSyntaxException cause) {
             throw new RuntimeException((Throwable)cause);
         }
-        return (class1857.method23799().method21696() == Class7521.field29646) ? null : new Class9038(class1855.field38248, class1857.method23799(), null);
+        return (class1857.method23799().method21696() == Blocks.STRUCTURE_VOID) ? null : new Class9038(class1855.field38248, class1857.method23799(), null);
     }
     
     @Override

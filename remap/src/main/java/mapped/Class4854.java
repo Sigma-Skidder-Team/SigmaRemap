@@ -40,11 +40,11 @@ public class Class4854 extends Class4841
             while (iterator.hasNext()) {
                 list.add(iterator.next());
             }
-            new Class4036(Class7521.field29341, new Class8959().method31786(Class7207.field27997));
+            new Class4036(Blocks.field29341, new Class8959().method31786(Class7207.field27997));
             final Class4036 class4036;
             final Object o;
             ((List<Class4036>)o).add(class4036);
-            new Class4036(Class7521.field29401, new Class8959().method31786(Class7207.field27997));
+            new Class4036(Blocks.field29401, new Class8959().method31786(Class7207.field27997));
             final Class4036 class4037;
             final Object o2;
             ((List<Class4036>)o2).add(class4037);

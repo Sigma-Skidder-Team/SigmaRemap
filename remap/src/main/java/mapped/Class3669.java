@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.world.World;
 
 public class Class3669 extends Class3666
@@ -72,7 +73,7 @@ public class Class3669 extends Class3666
     }
     
     @Override
-    public Class6096<?> method11299() {
-        return Class6096.field24737;
+    public IRecipeSerializer<?> getSerializer() {
+        return IRecipeSerializer.field24737;
     }
 }

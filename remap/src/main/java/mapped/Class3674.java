@@ -5,15 +5,16 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.world.World;
 
 import java.util.AbstractList;
 
 public class Class3674 extends Class3666
 {
-    private static final Class120 field16959;
-    private static final Class120 field16960;
-    private static final Class120 field16961;
+    private static final Ingredient field16959;
+    private static final Ingredient field16960;
+    private static final Ingredient field16961;
     
     public Class3674(final ResourceLocation class1932) {
         super(class1932);
@@ -85,13 +86,13 @@ public class Class3674 extends Class3666
     }
     
     @Override
-    public Class6096<?> method11299() {
-        return Class6096.field24739;
+    public IRecipeSerializer<?> getSerializer() {
+        return IRecipeSerializer.field24739;
     }
     
     static {
-        field16959 = Class120.method618(Items.field31369);
-        field16960 = Class120.method618(Items.field31308);
-        field16961 = Class120.method618(Items.field31533);
+        field16959 = Ingredient.method618(Items.field31369);
+        field16960 = Ingredient.method618(Items.field31308);
+        field16961 = Ingredient.method618(Items.field31533);
     }
 }

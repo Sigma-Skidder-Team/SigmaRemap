@@ -365,15 +365,15 @@ public class Class5814 implements Class5813
                 final Direction class4268 = this.field23857.world.getBlockState(method2540).method21772((IProperty<Direction>)Class3953.field17853);
                 switch (Class8365.field34305[class4266.method12808().ordinal()]) {
                     case 1: {
-                        this.field23857.world.setBlockState(method2540, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)Class7521.field29640.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class4268)).with((IProperty<Comparable>)Class3953.field17854, class4266.method12806()), 2);
+                        this.field23857.world.setBlockState(method2540, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>) Blocks.CHAIN_COMMAND_BLOCK.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class4268)).with((IProperty<Comparable>)Class3953.field17854, class4266.method12806()), 2);
                         break;
                     }
                     case 2: {
-                        this.field23857.world.setBlockState(method2540, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)Class7521.field29639.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class4268)).with((IProperty<Comparable>)Class3953.field17854, class4266.method12806()), 2);
+                        this.field23857.world.setBlockState(method2540, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>) Blocks.REPEATING_COMMAND_BLOCK.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class4268)).with((IProperty<Comparable>)Class3953.field17854, class4266.method12806()), 2);
                         break;
                     }
                     default: {
-                        this.field23857.world.setBlockState(method2540, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)Class7521.field29416.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class4268)).with((IProperty<Comparable>)Class3953.field17854, class4266.method12806()), 2);
+                        this.field23857.world.setBlockState(method2540, (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>) Blocks.field29416.getDefaultState()).with((IProperty<Comparable>)Class3953.field17853, class4268)).with((IProperty<Comparable>)Class3953.field17854, class4266.method12806()), 2);
                         break;
                     }
                 }

@@ -42,14 +42,14 @@ public class OldHitting extends Module
                     if (OldHitting.mc.field4691.getType() == RayTraceResult.Type.BLOCK) {
                         if (!Client.method35173().method35189().method21551(KillAura.class).method9898()) {
                             final Block method9899 = OldHitting.mc.world.getBlockState(((BlockRayTraceResult) OldHitting.mc.field4691).getPos()).method21696();
-                            if (!new ArrayList(Arrays.asList(Class7521.field29292, Class7521.field29409, Class7521.field29468, Class7521.field29296, Class7521.field29417, Class7521.field29299, Class7521.field29809, Class7521.field29398, Class7521.field29465, Class7521.field29466, Class7521.field29467, Class7521.field29216, Class7521.field29220, Class7521.field29316, Class7521.field29475, Class7521.field29481, Class7521.field29345, Class7521.field29471)).contains(method9899)) {
+                            if (!new ArrayList(Arrays.asList(Blocks.CHEST, Blocks.field29409, Blocks.field29468, Blocks.CRAFTING_TABLE, Blocks.field29417, Blocks.field29299, Blocks.BLAST_FURNACE, Blocks.field29398, Blocks.field29465, Blocks.field29466, Blocks.field29467, Blocks.field29216, Blocks.field29220, Blocks.field29316, Blocks.field29475, Blocks.field29481, Blocks.field29345, Blocks.field29471)).contains(method9899)) {
                                 if (!(method9899 instanceof Class3907)) {
                                     if (!(method9899 instanceof Class3906)) {
                                         if (!(method9899 instanceof Class3898)) {
                                             if (!(method9899 instanceof Class3969)) {
                                                 break Label_0104;
                                             }
-                                            if (method9899 == Class7521.field29318) {
+                                            if (method9899 == Blocks.field29318) {
                                                 break Label_0104;
                                             }
                                         }

@@ -22,7 +22,7 @@ public class Class506 extends Class428
     private int field2887;
     public double field2888;
     public double field2889;
-    private static final Class120 field2890;
+    private static final Ingredient field2890;
     
     public Class506(final EntityType<? extends Class506> class7499, final World class7500) {
         super(class7499, class7500);
@@ -73,7 +73,7 @@ public class Class506 extends Class428
         super.method2123(class7929);
         if (!class7929.method25707()) {
             if (this.world.method6765().method31216(Class8878.field37321)) {
-                this.method1764(Class7521.field29299);
+                this.method1764(Blocks.field29299);
             }
         }
     }
@@ -153,11 +153,11 @@ public class Class506 extends Class428
     
     @Override
     public BlockState method2141() {
-        return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29299.getDefaultState()).with((IProperty<Comparable>)Class3951.field17846, Direction.NORTH)).with((IProperty<Comparable>)Class3951.field17847, this.method2598());
+        return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29299.getDefaultState()).with((IProperty<Comparable>)Class3951.field17846, Direction.NORTH)).with((IProperty<Comparable>)Class3951.field17847, this.method2598());
     }
     
     static {
         field2886 = EntityDataManager.method33564(Class506.class, Class7709.field30661);
-        field2890 = Class120.method618(Items.field31281, Items.field31282);
+        field2890 = Ingredient.method618(Items.field31281, Items.field31282);
     }
 }

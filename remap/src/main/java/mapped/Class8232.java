@@ -64,7 +64,7 @@ public class Class8232
     
     static {
         field33796 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("commands.fill.toobig", new Object[] { o, o2 }));
-        field33797 = new Class118(Class7521.field29147.getDefaultState(), Collections.emptySet(), null);
+        field33797 = new Class118(Blocks.AIR.getDefaultState(), Collections.emptySet(), null);
         field33798 = new SimpleCommandExceptionType((Message)new Class2259("commands.fill.failed", new Object[0]));
     }
 }

@@ -13,7 +13,7 @@ public class Class8979
     private static Class6313 field37856;
     
     public static void method31922() {
-        Class8979.field37856 = Config.method28894().method5305().method5787().method35428(Class7521.field29329.getDefaultState());
+        Class8979.field37856 = Config.method28894().method5305().method5787().method35428(Blocks.field29329.getDefaultState());
     }
     
     public static Class6313 method31923() {
@@ -21,7 +21,7 @@ public class Class8979
     }
     
     public static Class7096 method31924() {
-        return Class7521.field29329.getDefaultState();
+        return Blocks.field29329.getDefaultState();
     }
     
     public static boolean method31925(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858) {
@@ -29,7 +29,7 @@ public class Class8979
     }
     
     private static boolean method31926(final IBlockReader class1855, final BlockPos class1856) {
-        final Block field29329 = Class7521.field29329;
+        final Block field29329 = Blocks.field29329;
         if (class1855.getBlockState(class1856.method1141()).getBlock() != field29329) {
             if (class1855.getBlockState(class1856.method1143()).getBlock() != field29329) {
                 if (class1855.getBlockState(class1856.method1145()).getBlock() != field29329) {
@@ -61,7 +61,7 @@ public class Class8979
             return false;
         }
         final Block method21696 = class1856.method21696();
-        if (method21696 != Class7521.field29331) {
+        if (method21696 != Blocks.field29331) {
             Label_0040: {
                 if (method21696 instanceof Class3874) {
                     if (!(method21696 instanceof Class3870)) {

@@ -44,37 +44,37 @@ public enum Class185 implements IStringSerializable
     
     public static Class185 method826(final Class7096 class7096) {
         final Block method21696 = class7096.method21696();
-        if (method21696 == Class7521.field29333) {
+        if (method21696 == Blocks.field29333) {
             return Class185.field584;
         }
-        if (method21696 == Class7521.field29280) {
+        if (method21696 == Blocks.GOLD_BLOCK) {
             return Class185.field585;
         }
         if (method21696.method11785(Class7188.field27879)) {
             return Class185.field586;
         }
-        if (method21696 == Class7521.field29548) {
+        if (method21696 == Blocks.field29548) {
             return Class185.field587;
         }
-        if (method21696 == Class7521.field29645) {
+        if (method21696 == Blocks.BONE_BLOCK) {
             return Class185.field588;
         }
-        if (method21696 == Class7521.field29281) {
+        if (method21696 == Blocks.IRON_BLOCK) {
             return Class185.field589;
         }
-        if (method21696 == Class7521.field29339) {
+        if (method21696 == Blocks.field29339) {
             return Class185.field590;
         }
-        if (method21696 == Class7521.field29337) {
+        if (method21696 == Blocks.field29337) {
             return Class185.field591;
         }
-        if (method21696 == Class7521.field29412) {
+        if (method21696 == Blocks.field29412) {
             return Class185.field592;
         }
-        if (method21696 == Class7521.field29529) {
+        if (method21696 == Blocks.field29529) {
             return Class185.field593;
         }
-        if (method21696 == Class7521.field29340) {
+        if (method21696 == Blocks.field29340) {
             return Class185.field594;
         }
         final Material method21697 = class7096.method21697();

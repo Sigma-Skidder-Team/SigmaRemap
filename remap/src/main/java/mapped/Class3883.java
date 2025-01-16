@@ -27,8 +27,8 @@ public class Class3883 extends Class3882
     public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         final Block method21696 = class7096.getBlock();
         if (!super.method11943(class7096, class7097, class7098)) {
-            if (method21696 != Class7521.field29338) {
-                if (method21696 != Class7521.field29339) {
+            if (method21696 != Blocks.field29338) {
+                if (method21696 != Blocks.field29339) {
                     return false;
                 }
             }

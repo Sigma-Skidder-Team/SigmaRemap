@@ -236,7 +236,7 @@ public abstract class LivingEntity extends Entity
         }
         final boolean b2 = b && ((PlayerEntity)this).field3025.field27301;
         if (this.method1768()) {
-            if (this.method1720(Class7324.field28319) && this.world.getBlockState(new BlockPos(this.getPosX(), this.method1944(), this.getPosZ())).method21696() != Class7521.field29765) {
+            if (this.method1720(Class7324.field28319) && this.world.getBlockState(new BlockPos(this.getPosX(), this.method1944(), this.getPosZ())).method21696() != Blocks.BUBBLE_COLUMN) {
                 if (!this.method2622()) {
                     if (!Class9434.method35060(this)) {
                         if (!b2) {
@@ -1021,7 +1021,7 @@ public abstract class LivingEntity extends Entity
             if (class511 instanceof Class767) {
                 if (this.world.method6765().method31216(Class8878.field37316)) {
                     final BlockPos class512 = new BlockPos(this);
-                    final Class7096 method11878 = Class7521.field29276.getDefaultState();
+                    final Class7096 method11878 = Blocks.WITHER_ROSE.getDefaultState();
                     if (this.world.getBlockState(class512).method21706()) {
                         if (method11878.method21752(this.world, class512)) {
                             this.world.setBlockState(class512, method11878, 3);
@@ -1137,9 +1137,9 @@ public abstract class LivingEntity extends Entity
         if (!this.isSpectator()) {
             final Class7096 method2689 = this.method2689();
             final Block method2690 = method2689.method21696();
-            if (method2690 != Class7521.field29307) {
-                if (method2690 != Class7521.field29388) {
-                    if (method2690 != Class7521.field29805) {
+            if (method2690 != Blocks.field29307) {
+                if (method2690 != Blocks.field29388) {
+                    if (method2690 != Blocks.SCAFFOLDING) {
                         return method2690 instanceof Class3894 && this.method2690(new BlockPos(this), method2689);
                     }
                 }
@@ -1156,7 +1156,7 @@ public abstract class LivingEntity extends Entity
     private boolean method2690(final BlockPos class354, final Class7096 class355) {
         if (class355.method21772((IProperty<Boolean>)Class3894.field17567)) {
             final Class7096 method6701 = this.world.getBlockState(class354.method1139());
-            if (method6701.method21696() == Class7521.field29307) {
+            if (method6701.method21696() == Blocks.field29307) {
                 if (((StateHolder<Object, Object>)method6701).get((IProperty<Comparable>)Class3917.field17752) == class355.method21772((IProperty<Comparable>)Class3894.field17564)) {
                     return true;
                 }
@@ -1882,7 +1882,7 @@ public abstract class LivingEntity extends Entity
             final double method35655 = MathHelper.clamp(class5487.z, -0.15000000596046448, 0.15000000596046448);
             double max = Math.max(class5487.y, -0.15000000596046448);
             if (max < 0.0) {
-                if (this.method2689().method21696() != Class7521.field29805) {
+                if (this.method2689().method21696() != Blocks.SCAFFOLDING) {
                     if (this.method2772()) {
                         if (this instanceof PlayerEntity) {
                             max = 0.0;

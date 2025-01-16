@@ -127,7 +127,7 @@ public class Class793 extends Class789
     
     public static boolean method4464(final EntityType<Class793> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7502.getY() < class7500.method6743() + 4) {
-            if (class7500.getBlockState(class7502.method1139()).getBlock() == Class7521.field29175) {
+            if (class7500.getBlockState(class7502.method1139()).getBlock() == Blocks.field29175) {
                 if (class7500.method6993(class7502, 0) > 8) {
                     return true;
                 }
@@ -141,7 +141,7 @@ public class Class793 extends Class789
         this.field4114.method22062(0, new Class3610(this, 1.2));
         this.field4114.method22062(1, new Class3588(this, 1.0));
         this.field4114.method22062(1, new Class3480(this, 1.0));
-        this.field4114.method22062(2, new Class3598(this, 1.1, Class7521.field29244.method11704()));
+        this.field4114.method22062(2, new Class3598(this, 1.1, Blocks.field29244.method11704()));
         this.field4114.method22062(3, new Class3488(this, 1.0, null));
         this.field4114.method22062(4, new Class3540(this, 1.0));
         this.field4114.method22062(7, new Class3506(this, 1.0));
@@ -244,7 +244,7 @@ public class Class793 extends Class789
     
     @Override
     public boolean method4357(final ItemStack class8321) {
-        return class8321.getItem() == Class7521.field29244.method11704();
+        return class8321.getItem() == Blocks.field29244.method11704();
     }
     
     @Override
@@ -252,7 +252,7 @@ public class Class793 extends Class789
         if (!this.method4460() && class355.getFluidState(class354).isTagged(Class7324.field28319)) {
             return 10.0f;
         }
-        return (class355.getBlockState(class354.method1139()).getBlock() != Class7521.field29175) ? (class355.method6963(class354) - 0.5f) : 10.0f;
+        return (class355.getBlockState(class354.method1139()).getBlock() != Blocks.field29175) ? (class355.method6963(class354) - 0.5f) : 10.0f;
     }
     
     @Override
@@ -263,8 +263,8 @@ public class Class793 extends Class789
                 if (this.field4241 >= 1) {
                     if (this.field4241 % 5 == 0) {
                         final BlockPos class354 = new BlockPos(this);
-                        if (this.world.getBlockState(class354.method1139()).method21696() == Class7521.field29175) {
-                            this.world.method6955(2001, class354, Block.method11774(Class7521.field29175.getDefaultState()));
+                        if (this.world.getBlockState(class354.method1139()).method21696() == Blocks.field29175) {
+                            this.world.method6955(2001, class354, Block.method11774(Blocks.field29175.getDefaultState()));
                         }
                     }
                 }

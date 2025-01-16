@@ -34,7 +34,7 @@ public class Class4652 extends Class4651
         if (this.method13927() && this.field20141.method1706()) {
             n = MathHelper.floor(this.field20141.getPosY());
             final Mutable class385 = new Mutable(this.field20141.getPosX(), n, this.field20141.getPosZ());
-            for (Block class386 = this.field20140.getBlockState(class385).getBlock(); class386 == Class7521.field29173; class386 = this.field20140.getBlockState(class385).getBlock()) {
+            for (Block class386 = this.field20140.getBlockState(class385).getBlock(); class386 == Blocks.field29173; class386 = this.field20140.getBlockState(class385).getBlock()) {
                 ++n;
                 class385.method1286(this.field20141.getPosX(), n, this.field20141.getPosZ());
             }
@@ -325,9 +325,9 @@ public class Class4652 extends Class4651
                     final Block method21696 = class1855.getBlockState(new BlockPos(n, n2 - 1, n3)).getBlock();
                     final Class257 method21697 = Class4651.method13916(class1855, n, n2 - 1, n3);
                     if (method21697 != Class257.field1215) {
-                        if (method21696 != Class7521.field29642) {
+                        if (method21696 != Blocks.MAGMA_BLOCK) {
                             if (method21697 != Class257.field1210) {
-                                if (method21696 != Class7521.field29818) {
+                                if (method21696 != Blocks.CAMPFIRE) {
                                     if (method21697 == Class257.field1217) {
                                         class1856 = Class257.field1217;
                                         break Label_0018;

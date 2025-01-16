@@ -220,7 +220,7 @@ public class Class8850
             }
         }
         if (method27622 == Items.field31351) {
-            return Class7521.field29174.getLightValue(Class7521.field29174.getDefaultState());
+            return Blocks.field29174.getLightValue(Blocks.field29174.getDefaultState());
         }
         if (method27622 == Items.field31437 || method27622 == Items.field31445) {
             return 10;
@@ -243,7 +243,7 @@ public class Class8850
             }
             return 0;
         }
-        return Class7521.field29417.getLightValue(Class7521.field29417.getDefaultState()) / 2;
+        return Blocks.field29417.getLightValue(Blocks.field29417.getDefaultState()) / 2;
     }
     
     public static int method30995(final Entity class399) {

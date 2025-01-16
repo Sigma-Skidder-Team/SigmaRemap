@@ -17,7 +17,7 @@ public class Class4257 implements IPacket<IClientPlayNetHandler>
     
     public Class4257(final int field19101, final IRecipe<?> class3662) {
         this.field19101 = field19101;
-        this.field19102 = class3662.method11298();
+        this.field19102 = class3662.getId();
     }
     
     public ResourceLocation method12779() {

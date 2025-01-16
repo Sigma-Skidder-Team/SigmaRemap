@@ -88,7 +88,7 @@ public class Class1854 implements IBlockReader, Class1853
         if (!World.isOutsideBuildHeight(class354)) {
             return this.method6982(class354).getBlockState(class354);
         }
-        return Class7521.field29147.getDefaultState();
+        return Blocks.AIR.getDefaultState();
     }
     
     @Override

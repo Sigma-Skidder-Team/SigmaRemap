@@ -4,19 +4,21 @@
 
 package mapped;
 
+import net.minecraft.item.crafting.IRecipeSerializer;
+
 import java.util.function.Consumer;
 
 public class Class8851
 {
     private final Item field37222;
-    private final Class120 field37223;
+    private final Ingredient field37223;
     private final float field37224;
     private final int field37225;
     private final Class6056 field37226;
     private String field37227;
     private final Class6098<?> field37228;
     
-    private Class8851(final Class3832 class3832, final Class120 field37223, final float field37224, final int field37225, final Class6098<?> field37226) {
+    private Class8851(final Class3832 class3832, final Ingredient field37223, final float field37224, final int field37225, final Class6098<?> field37226) {
         this.field37226 = Class6056.method18001();
         this.field37222 = class3832.method11704();
         this.field37223 = field37223;
@@ -25,16 +27,16 @@ public class Class8851
         this.field37228 = field37226;
     }
     
-    public static Class8851 method31000(final Class120 class120, final Class3832 class121, final float n, final int n2, final Class6098<?> class122) {
+    public static Class8851 method31000(final Ingredient class120, final Class3832 class121, final float n, final int n2, final Class6098<?> class122) {
         return new Class8851(class121, class120, n, n2, class122);
     }
     
-    public static Class8851 method31001(final Class120 class120, final Class3832 class121, final float n, final int n2) {
-        return method31000(class120, class121, n, n2, Class6096.field24749);
+    public static Class8851 method31001(final Ingredient class120, final Class3832 class121, final float n, final int n2) {
+        return method31000(class120, class121, n, n2, IRecipeSerializer.field24749);
     }
     
-    public static Class8851 method31002(final Class120 class120, final Class3832 class121, final float n, final int n2) {
-        return method31000(class120, class121, n, n2, Class6096.field24748);
+    public static Class8851 method31002(final Ingredient class120, final Class3832 class121, final float n, final int n2) {
+        return method31000(class120, class121, n, n2, IRecipeSerializer.field24748);
     }
     
     public Class8851 method31003(final String s, final Class4220 class4220) {
@@ -59,7 +61,7 @@ public class Class8851
     public void method31006(final Consumer<Class5763> consumer, final ResourceLocation class1932) {
         this.method31007(class1932);
         this.field37226.method18003(new ResourceLocation("recipes/root")).method18009("has_the_recipe", new Class4219(class1932)).method18007(Class6467.method19355(class1932)).method18011(Class6526.field25976);
-        consumer.accept(new Class5768(class1932, (this.field37227 != null) ? this.field37227 : "", this.field37223, this.field37222, this.field37224, this.field37225, this.field37226, new ResourceLocation(class1932.method7798(), "recipes/" + this.field37222.method11737().method22110() + "/" + class1932.method7797()), (Class6096<? extends Class3680>)this.field37228));
+        consumer.accept(new Class5768(class1932, (this.field37227 != null) ? this.field37227 : "", this.field37223, this.field37222, this.field37224, this.field37225, this.field37226, new ResourceLocation(class1932.method7798(), "recipes/" + this.field37222.method11737().method22110() + "/" + class1932.method7797()), (IRecipeSerializer<? extends Class3680>)this.field37228));
     }
     
     private void method31007(final ResourceLocation obj) {

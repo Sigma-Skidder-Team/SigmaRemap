@@ -27,7 +27,7 @@ public class Class7877
         this.field32336 = 0.0f;
     }
     
-    public void method25521(final Class120 class120, final int n, final int n2) {
+    public void method25521(final Ingredient class120, final int n, final int n2) {
         this.field32335.add(new Class7997(this, class120, n, n2));
     }
     

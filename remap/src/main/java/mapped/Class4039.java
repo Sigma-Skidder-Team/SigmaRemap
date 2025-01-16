@@ -14,7 +14,7 @@ public class Class4039 extends Class4036
     
     @Override
     public boolean method12238(final Class7074 class7074, final Class7096 class7075) {
-        class7074.method21654().setBlockState(class7074.method21639().method1137(), Class7521.field29147.getDefaultState(), 27);
+        class7074.method21654().setBlockState(class7074.method21639().method1137(), Blocks.AIR.getDefaultState(), 27);
         return super.method12238(class7074, class7075);
     }
 }

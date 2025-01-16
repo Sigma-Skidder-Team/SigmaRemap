@@ -212,7 +212,7 @@ public class Class862 extends Class860
         }
         if (b) {
             if (this.field4599 != null) {
-                this.world.method6783(this.field4599, Class7521.field29147);
+                this.world.method6783(this.field4599, Blocks.AIR);
             }
         }
     }
@@ -250,7 +250,7 @@ public class Class862 extends Class860
         this.method1650().set(Class862.field4604, n % 8);
         if (b) {
             if (this.field4599 != null) {
-                this.world.method6783(this.field4599, Class7521.field29147);
+                this.world.method6783(this.field4599, Blocks.AIR);
             }
         }
     }

@@ -16,7 +16,7 @@ public class Class7768<C extends Class5470, T extends Class1868>
     private final Function<WorldInfo, C> field31773;
     
     private static <C extends Class5470, T extends Class1868> Class7768<C, T> method24874(final String s, final Function<C, T> function, final Function<WorldInfo, C> function2) {
-        return Registry.method511(Registry.field223, s, new Class7768<C, T>(function, function2));
+        return Registry.register(Registry.field223, s, new Class7768<C, T>(function, function2));
     }
     
     private Class7768(final Function<C, T> field31772, final Function<WorldInfo, C> field31773) {

@@ -54,7 +54,7 @@ public class Class3483 extends Class3479
                         field2391.method6955(2001, method1137, Block.method11774(method1138));
                     }
                     else {
-                        field2391.setBlockState(method1137, Class7521.field29147.getDefaultState(), 2);
+                        field2391.setBlockState(method1137, Blocks.AIR.getDefaultState(), 2);
                         field2391.method6691(method1137, true, this.field16407);
                     }
                     Class792.method4451(this.field16407, 40);
@@ -67,7 +67,7 @@ public class Class3483 extends Class3479
     
     @Override
     public boolean method11050(final Class1852 class1852, BlockPos method1137) {
-        if (class1852.getBlockState(method1137).getBlock() == Class7521.field29298) {
+        if (class1852.getBlockState(method1137).getBlock() == Blocks.field29298) {
             if (this.field16408) {
                 if (!this.field16409) {
                     method1137 = method1137.method1137();

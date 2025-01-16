@@ -38,7 +38,7 @@ public class Class3890 extends Class3874 implements Class3872
     
     @Override
     public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final BlockState class1851) {
-        final Class3870 class1852 = (Class3870)((this != Class7521.field29242) ? Class7521.field29553 : Class7521.field29554);
+        final Class3870 class1852 = (Class3870)((this != Blocks.field29242) ? Blocks.field29553 : Blocks.field29554);
         if (class1852.getDefaultState().method21752(class1849, class1850)) {
             if (class1849.method6961(class1850.method1137())) {
                 class1852.method11944(class1849, class1850, 2);

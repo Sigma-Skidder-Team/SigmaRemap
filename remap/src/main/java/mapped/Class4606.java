@@ -23,7 +23,7 @@ public class Class4606 extends Class4535<Class5122>
             for (int i = MathHelper.method35642(-n); i <= MathHelper.ceil(n); ++i) {
                 for (int j = MathHelper.method35642(-n); j <= MathHelper.ceil(n); ++j) {
                     if (i * i + j * j <= (n + 1.0f) * (n + 1.0f)) {
-                        this.method13529(class1851, class1853.add(i, n2, j), Class7521.field29403.getDefaultState());
+                        this.method13529(class1851, class1853.add(i, n2, j), Blocks.field29403.getDefaultState());
                     }
                 }
             }

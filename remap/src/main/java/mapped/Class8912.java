@@ -119,27 +119,27 @@ public class Class8912
     static {
         field37457 = (class8912 -> Registry.field240.method509().map((Function<? super Object, ?>)Class9334::method34575).collect((Collector<? super Object, ?, Set<? super Object>>)Collectors.toSet()).contains(class8912));
         field37458 = (p0 -> true);
-        field37459 = ImmutableList.of((Object)Class7521.field29235, (Object)Class7521.field29236, (Object)Class7521.field29232, (Object)Class7521.field29233, (Object)Class7521.field29230, (Object)Class7521.field29228, (Object)Class7521.field29234, (Object)Class7521.field29224, (Object)Class7521.field29229, (Object)Class7521.field29226, (Object)Class7521.field29223, (Object)Class7521.field29222, (Object[])new Block[] { Class7521.field29227, Class7521.field29231, Class7521.field29221, Class7521.field29225 }).stream().flatMap(class8913 -> class8913.method11876().method32902().stream()).filter(class8914 -> class8914.method21772(Class3900.field17599) == Class105.field323).collect((Collector<? super Object, Object, Set<BlockState>>)ImmutableSet.toImmutableSet());
+        field37459 = ImmutableList.of((Object) Blocks.field29235, (Object) Blocks.field29236, (Object) Blocks.field29232, (Object) Blocks.field29233, (Object) Blocks.field29230, (Object) Blocks.field29228, (Object) Blocks.field29234, (Object) Blocks.field29224, (Object) Blocks.field29229, (Object) Blocks.field29226, (Object) Blocks.field29223, (Object) Blocks.field29222, (Object[])new Block[] { Blocks.field29227, Blocks.field29231, Blocks.field29221, Blocks.field29225 }).stream().flatMap(class8913 -> class8913.method11876().method32902().stream()).filter(class8914 -> class8914.method21772(Class3900.field17599) == Class105.field323).collect((Collector<? super Object, Object, Set<BlockState>>)ImmutableSet.toImmutableSet());
         field37460 = Maps.newHashMap();
         field37461 = method31399("unemployed", (Set<BlockState>)ImmutableSet.of(), 1, Class8912.field37457, 1);
-        field37462 = method31398("armorer", method31394(Class7521.field29809), 1, 1);
-        field37463 = method31398("butcher", method31394(Class7521.field29808), 1, 1);
-        field37464 = method31398("cartographer", method31394(Class7521.field29810), 1, 1);
-        field37465 = method31398("cleric", method31394(Class7521.field29399), 1, 1);
-        field37466 = method31398("farmer", method31394(Class7521.field29822), 1, 1);
-        field37467 = method31398("fisherman", method31394(Class7521.field29807), 1, 1);
-        field37468 = method31398("fletcher", method31394(Class7521.field29811), 1, 1);
-        field37469 = method31398("leatherworker", method31394(Class7521.field29400), 1, 1);
-        field37470 = method31398("librarian", method31394(Class7521.field29813), 1, 1);
-        field37471 = method31398("mason", method31394(Class7521.field29815), 1, 1);
+        field37462 = method31398("armorer", method31394(Blocks.BLAST_FURNACE), 1, 1);
+        field37463 = method31398("butcher", method31394(Blocks.SMOKER), 1, 1);
+        field37464 = method31398("cartographer", method31394(Blocks.CARTOGRAPHY_TABLE), 1, 1);
+        field37465 = method31398("cleric", method31394(Blocks.field29399), 1, 1);
+        field37466 = method31398("farmer", method31394(Blocks.COMPOSTER), 1, 1);
+        field37467 = method31398("fisherman", method31394(Blocks.BARREL), 1, 1);
+        field37468 = method31398("fletcher", method31394(Blocks.FLETCHING_TABLE), 1, 1);
+        field37469 = method31398("leatherworker", method31394(Blocks.field29400), 1, 1);
+        field37470 = method31398("librarian", method31394(Blocks.LECTERN), 1, 1);
+        field37471 = method31398("mason", method31394(Blocks.STONECUTTER), 1, 1);
         field37472 = method31398("nitwit", (Set<BlockState>)ImmutableSet.of(), 1, 1);
-        field37473 = method31398("shepherd", method31394(Class7521.field29806), 1, 1);
-        field37474 = method31398("toolsmith", method31394(Class7521.field29814), 1, 1);
-        field37475 = method31398("weaponsmith", method31394(Class7521.field29812), 1, 1);
+        field37473 = method31398("shepherd", method31394(Blocks.LOOM), 1, 1);
+        field37474 = method31398("toolsmith", method31394(Blocks.SMITHING_TABLE), 1, 1);
+        field37475 = method31398("weaponsmith", method31394(Blocks.GRINDSTONE), 1, 1);
         field37476 = method31398("home", Class8912.field37459, 1, 1);
-        field37477 = method31398("meeting", method31394(Class7521.field29816), 32, 6);
-        field37478 = method31398("beehive", method31394(Class7521.field29824), 0, 1);
-        field37479 = method31398("bee_nest", method31394(Class7521.field29823), 0, 1);
-        field37480 = method31398("nether_portal", method31394(Class7521.field29341), 0, 1);
+        field37477 = method31398("meeting", method31394(Blocks.BELL), 32, 6);
+        field37478 = method31398("beehive", method31394(Blocks.BEEHIVE), 0, 1);
+        field37479 = method31398("bee_nest", method31394(Blocks.BEE_NEST), 0, 1);
+        field37480 = method31398("nether_portal", method31394(Blocks.field29341), 0, 1);
     }
 }

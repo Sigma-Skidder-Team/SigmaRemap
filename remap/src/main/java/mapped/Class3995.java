@@ -14,11 +14,11 @@ public class Class3995 extends Class3993
     
     @Override
     public Class3873 method12142() {
-        return (Class3873)Class7521.field29387;
+        return (Class3873) Blocks.field29387;
     }
     
     @Override
     public Class3875 method12143() {
-        return (Class3875)Class7521.field29385;
+        return (Class3875) Blocks.field29385;
     }
 }

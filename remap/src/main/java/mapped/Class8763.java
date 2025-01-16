@@ -518,10 +518,10 @@ public class Class8763
         Class7096 class8759 = class8755;
         if (Class8763.field36799 != null) {
             if (!class8754.method30292()) {
-                if (method21696 == Class7521.field29155) {
+                if (method21696 == Blocks.GRASS_BLOCK) {
                     class8759 = Class8763.field36835;
                 }
-                if (method21696 == Class7521.field29293) {
+                if (method21696 == Blocks.REDSTONE_WIRE) {
                     return -1;
                 }
             }
@@ -542,37 +542,37 @@ public class Class8763
         if (!class8754.method30292()) {
             return -1;
         }
-        if (method21696 == Class7521.field29393) {
+        if (method21696 == Blocks.field29393) {
             return method30351(class8756, class8757);
         }
-        if (method21696 == Class7521.field29293) {
+        if (method21696 == Blocks.REDSTONE_WIRE) {
             return method30344(class8758.method33382());
         }
         if (method21696 instanceof Class3873) {
             return method30360(class8755, class8756, class8757, class8758);
         }
         if (!Class8763.field36818) {
-            if (method21696 != Class7521.field29155) {
-                if (method21696 != Class7521.field29553) {
+            if (method21696 != Blocks.GRASS_BLOCK) {
+                if (method21696 != Blocks.field29553) {
                     if (!(method21696 instanceof Class3870)) {
                         if (!(method21696 instanceof Class3870)) {
                             if (!(method21696 instanceof Class3972)) {
-                                if (method21696 == Class7521.field29388) {
+                                if (method21696 == Blocks.field29388) {
                                     final Class7712 class8760 = Class8763.field36839;
                                     return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                                 }
                                 return -1;
                             }
                             else {
-                                if (method21696 == Class7521.field29205) {
+                                if (method21696 == Blocks.field29205) {
                                     final Class7712 class8760 = Class8763.field36839;
                                     return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                                 }
-                                if (method21696 == Class7521.field29206) {
+                                if (method21696 == Blocks.field29206) {
                                     final Class7712 class8760 = Class8763.field36840;
                                     return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                                 }
-                                if (method21696 != Class7521.field29207) {
+                                if (method21696 != Blocks.field29207) {
                                     final Class7712 class8760 = Class8763.field36839;
                                     return (Config.method28943() && !class8760.method24617()) ? method30339(class8755, class8756, class8757, class8760, class8758.method33383()) : class8760.method24616(class8759, class8756, class8757);
                                 }
@@ -760,7 +760,7 @@ public class Class8763
     }
     
     private static int method30351(final Class1856 class1856, final BlockPos class1857) {
-        return (Class8763.field36821 >= 0) ? Class8763.field36821 : method30341().method25441(Class7521.field29393.getDefaultState(), class1856, class1857, 0);
+        return (Class8763.field36821 >= 0) ? Class8763.field36821 : method30341().method25441(Blocks.field29393.getDefaultState(), class1856, class1857, 0);
     }
     
     private static Vec3d method30352(final Vec3d class5487) {
@@ -810,12 +810,12 @@ public class Class8763
     private static int method30360(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Class9145 class7099) {
         Class7718 class7100 = Class8763.field36814;
         final Block method21696 = class7096.method21696();
-        if (method21696 == Class7521.field29386) {
+        if (method21696 == Blocks.field29386) {
             if (Class8763.field36816 != null) {
                 class7100 = Class8763.field36816;
             }
         }
-        if (method21696 == Class7521.field29387) {
+        if (method21696 == Blocks.field29387) {
             if (Class8763.field36815 != null) {
                 class7100 = Class8763.field36815;
             }
@@ -1357,8 +1357,8 @@ public class Class8763
         Class8763.field36832 = null;
         Class8763.field36833 = null;
         Class8763.field36834 = null;
-        field36835 = Class7521.field29156.getDefaultState();
-        field36836 = Class7521.field29173.getDefaultState();
+        field36835 = Blocks.DIRT.getDefaultState();
+        field36836 = Blocks.field29173.getDefaultState();
         Class8763.field36837 = new Random();
         field36838 = new Class7716();
         field36839 = new Class7715();

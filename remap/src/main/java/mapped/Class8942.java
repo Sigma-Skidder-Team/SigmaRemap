@@ -82,11 +82,11 @@ public class Class8942
         if (class7496 == Class2220.field13633) {
             for (final BlockPos class7502 : linkedList) {
                 Class447.method2267(method1136.getTileEntity(class7502));
-                method1136.setBlockState(class7502, Class7521.field29517.getDefaultState(), 2);
+                method1136.setBlockState(class7502, Blocks.field29517.getDefaultState(), 2);
             }
             final Iterator iterator2 = linkedList.iterator();
             while (iterator2.hasNext()) {
-                method1136.setBlockState((BlockPos)iterator2.next(), Class7521.field29147.getDefaultState(), 3);
+                method1136.setBlockState((BlockPos)iterator2.next(), Blocks.AIR.getDefaultState(), 3);
             }
         }
         final ArrayList arrayList4 = Lists.newArrayList();
@@ -96,7 +96,7 @@ public class Class8942
         final List reverse = Lists.reverse((List)arrayList4);
         for (final Class8696 class7503 : reverse) {
             Class447.method2267(method1136.getTileEntity(class7503.field36541));
-            method1136.setBlockState(class7503.field36541, Class7521.field29517.getDefaultState(), 2);
+            method1136.setBlockState(class7503.field36541, Blocks.field29517.getDefaultState(), 2);
         }
         int m = 0;
         for (final Class8696 class7504 : arrayList4) {

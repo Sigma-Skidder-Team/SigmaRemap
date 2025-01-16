@@ -6,6 +6,7 @@ package mapped;
 
 import javax.annotation.Nullable;
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipeSerializer;
 
 public interface Class5763
 {
@@ -20,7 +21,7 @@ public interface Class5763
     
     ResourceLocation method17155();
     
-    Class6096<?> method17156();
+    IRecipeSerializer<?> method17156();
     
     @Nullable
     JsonObject method17157();

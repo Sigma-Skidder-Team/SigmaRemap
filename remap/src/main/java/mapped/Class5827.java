@@ -20,7 +20,7 @@ public abstract class Class5827
         if (method17518 == null) {
             return false;
         }
-        class1851.setBlockState(class1853, Class7521.field29147.getDefaultState(), 4);
+        class1851.setBlockState(class1853, Blocks.AIR.getDefaultState(), 4);
         method17518.field35805.method16032();
         if (!method17518.method28613(class1851, (Class6346)class1852, random, class1853)) {
             class1851.setBlockState(class1853, class1854, 4);

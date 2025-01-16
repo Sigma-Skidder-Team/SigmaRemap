@@ -4,18 +4,20 @@
 
 package mapped;
 
+import net.minecraft.item.crafting.IRecipeSerializer;
+
 import java.util.function.Consumer;
 
 public class Class8646
 {
     private final Item field36296;
-    private final Class120 field36297;
+    private final Ingredient field36297;
     private final int field36298;
     private final Class6056 field36299;
     private String field36300;
-    private final Class6096<?> field36301;
+    private final IRecipeSerializer<?> field36301;
     
-    public Class8646(final Class6096<?> field36301, final Class120 field36302, final Class3832 class3832, final int field36303) {
+    public Class8646(final IRecipeSerializer<?> field36301, final Ingredient field36302, final Class3832 class3832, final int field36303) {
         this.field36299 = Class6056.method18001();
         this.field36301 = field36301;
         this.field36296 = class3832.method11704();
@@ -23,12 +25,12 @@ public class Class8646
         this.field36298 = field36303;
     }
     
-    public static Class8646 method29409(final Class120 class120, final Class3832 class121) {
-        return new Class8646(Class6096.field24752, class120, class121, 1);
+    public static Class8646 method29409(final Ingredient class120, final Class3832 class121) {
+        return new Class8646(IRecipeSerializer.field24752, class120, class121, 1);
     }
     
-    public static Class8646 method29410(final Class120 class120, final Class3832 class121, final int n) {
-        return new Class8646(Class6096.field24752, class120, class121, n);
+    public static Class8646 method29410(final Ingredient class120, final Class3832 class121, final int n) {
+        return new Class8646(IRecipeSerializer.field24752, class120, class121, n);
     }
     
     public Class8646 method29411(final String s, final Class4220 class4220) {

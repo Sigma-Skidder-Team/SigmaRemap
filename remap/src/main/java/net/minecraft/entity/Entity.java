@@ -460,7 +460,7 @@ public abstract class Entity implements INameable, ICommandSource {
                 final double field22770 = method1679.x;
                 double field22771 = method1679.y;
                 final double field22772 = method1679.z;
-                if (method1683 != Class7521.field29307 && method1683 != Class7521.field29805) {
+                if (method1683 != Blocks.field29307 && method1683 != Blocks.SCAFFOLDING) {
                     field22771 = 0.0;
                 }
                 this.distanceWalkedModified += (float) (MathHelper.sqrt(horizontalMag(method1679)) * 0.6);
@@ -538,7 +538,7 @@ public abstract class Entity implements INameable, ICommandSource {
     public float method1674() {
         final Block getBlock = this.world.getBlockState(new BlockPos(this)).getBlock();
         final float method21697 = getBlock.method11866();
-        if (getBlock != Class7521.field29173 && getBlock != Class7521.field29765) {
+        if (getBlock != Blocks.field29173 && getBlock != Blocks.BUBBLE_COLUMN) {
             return (method21697 != 1.0) ? method21697 : this.world.getBlockState(this.getPositionUnderneath()).getBlock().method11866();
         }
         return method21697;
@@ -763,7 +763,7 @@ public abstract class Entity implements INameable, ICommandSource {
     public void method1691(final BlockPos class354, final BlockState class355) {
         if (!class355.method21697().method26438()) {
             final BlockState method6701 = this.world.getBlockState(class354.method1137());
-            final SoundType class356 = (method6701.getBlock() != Class7521.field29329) ? class355.method21759() : method6701.method21759();
+            final SoundType class356 = (method6701.getBlock() != Blocks.field29329) ? class355.method21759() : method6701.method21759();
             this.method1695(class356.method24480(), class356.method24477() * 0.15f, class356.method24478());
         }
     }
@@ -857,7 +857,7 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     private boolean method1708() {
-        return this.world.getBlockState(new BlockPos(this)).getBlock() == Class7521.field29765;
+        return this.world.getBlockState(new BlockPos(this)).getBlock() == Blocks.BUBBLE_COLUMN;
     }
 
     public boolean method1709() {
@@ -1579,7 +1579,7 @@ public abstract class Entity implements INameable, ICommandSource {
             if (!this.world.isRemote) {
                 if (!class354.equals(this.lastPortalPos)) {
                     this.lastPortalPos = new BlockPos(class354);
-                    final Class3998 class355 = (Class3998) Class7521.field29341;
+                    final Class3998 class355 = (Class3998) Blocks.field29341;
                     final Class7820 method12149 = Class3998.method12149(this.world, this.lastPortalPos);
                     final double n = (method12149.method25266().getAxis() != Direction.Axis.X) ? method12149.method25265().getX() : ((double) method12149.method25265().getZ());
                     this.lastPortalVec = new Vec3d(Math.abs(MathHelper.method35692(((method12149.method25266().getAxis() != Direction.Axis.X) ? this.getPosX() : this.getPosZ()) - (double) ((method12149.method25266().rotateY().getAxisDirection() == AxisDirection.NEGATIVE) ? 1 : 0), n, n - method12149.method25268())), MathHelper.method35692(this.getPosY() - 1.0, method12149.method25265().getY(), method12149.method25265().getY() - method12149.method25269()), 0.0);

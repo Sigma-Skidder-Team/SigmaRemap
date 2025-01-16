@@ -43,6 +43,6 @@ public class Class2249 implements Iterable<BlockState>
     }
     
     static {
-        field13788 = Class7521.field29147.getDefaultState();
+        field13788 = Blocks.AIR.getDefaultState();
     }
 }

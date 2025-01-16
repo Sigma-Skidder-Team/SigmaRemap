@@ -338,11 +338,11 @@ public class Class1849 extends World
             final BlockPos method7027 = method7026.method1139();
             final Class3090 method7028 = this.method6959(method7026);
             if (method7028.method9846(this, method7027)) {
-                this.method6692(method7027, Class7521.field29330.getDefaultState());
+                this.method6692(method7027, Blocks.field29330.getDefaultState());
             }
             if (method7020) {
                 if (method7028.method9848(this, method7026)) {
-                    this.method6692(method7026, Class7521.field29329.getDefaultState());
+                    this.method6692(method7026, Blocks.field29329.getDefaultState());
                 }
             }
             if (method7020) {

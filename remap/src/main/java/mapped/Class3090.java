@@ -211,7 +211,7 @@ public abstract class Class3090
                 if (class1853.getY() < 256) {
                     if (class1852.method6992(Class237.field912, class1853) < 10) {
                         if (class1852.getBlockState(class1853).method21706()) {
-                            if (Class7521.field29329.getDefaultState().method21752(class1852, class1853)) {
+                            if (Blocks.field29329.getDefaultState().method21752(class1852, class1853)) {
                                 return true;
                             }
                         }

@@ -28,7 +28,7 @@ public class Class3971 extends Block
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return this.getDefaultState().method21752(class7074.method21654(), class7074.method21639()) ? super.method11846(class7074) : Block.method11777(this.getDefaultState(), Class7521.field29156.getDefaultState(), class7074.method21654(), class7074.method21639());
+        return this.getDefaultState().method21752(class7074.method21654(), class7074.method21639()) ? super.method11846(class7074) : Block.method11777(this.getDefaultState(), Blocks.DIRT.getDefaultState(), class7074.method21654(), class7074.method21639());
     }
     
     @Override

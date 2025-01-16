@@ -46,7 +46,7 @@ public class Class4011 extends Block
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return this.method11843(class7096, class7099, class7100) ? ((StateHolder<O, BlockState>)this.method12184(class7099, class7100)).with((IProperty<Comparable>)Class4011.field18071, (Comparable)class7096.get((IProperty<V>)Class4011.field18071)) : Class7521.field29147.getDefaultState();
+        return this.method11843(class7096, class7099, class7100) ? ((StateHolder<O, BlockState>)this.method12184(class7099, class7100)).with((IProperty<Comparable>)Class4011.field18071, (Comparable)class7096.get((IProperty<V>)Class4011.field18071)) : Blocks.AIR.getDefaultState();
     }
     
     @Nullable
@@ -91,9 +91,9 @@ public class Class4011 extends Block
             final Block method21696 = class7097.getBlockState(class7098.method1139()).method21696();
             boolean b = false;
             Label_0104: {
-                if (!(class7097.dimension instanceof Class6738) || method21696 != Class7521.field29172) {
-                    if (method21696 != Class7521.field29338) {
-                        if (method21696 != Class7521.field29642) {
+                if (!(class7097.dimension instanceof Class6738) || method21696 != Blocks.field29172) {
+                    if (method21696 != Blocks.field29338) {
+                        if (method21696 != Blocks.MAGMA_BLOCK) {
                             b = false;
                             break Label_0104;
                         }
@@ -249,7 +249,7 @@ public class Class4011 extends Block
     @Override
     public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7099.getBlock() != class7096.getBlock()) {
-            if ((class7097.dimension.getType() != DimensionType.field2223 && class7097.dimension.getType() != DimensionType.field2224) || !((Class3998)Class7521.field29341).method12147(class7097, class7098)) {
+            if ((class7097.dimension.getType() != DimensionType.field2223 && class7097.dimension.getType() != DimensionType.field2224) || !((Class3998) Blocks.field29341).method12147(class7097, class7098)) {
                 if (class7096.method21752(class7097, class7098)) {
                     class7097.method6833().method21345(class7098, this, this.method11826(class7097) + class7097.rand.nextInt(10));
                 }
@@ -312,134 +312,134 @@ public class Class4011 extends Block
     }
     
     public static void method12193() {
-        final Class4011 class4011 = (Class4011)Class7521.field29289;
-        class4011.method12192(Class7521.field29160, 5, 20);
-        class4011.method12192(Class7521.field29161, 5, 20);
-        class4011.method12192(Class7521.field29162, 5, 20);
-        class4011.method12192(Class7521.field29163, 5, 20);
-        class4011.method12192(Class7521.field29164, 5, 20);
-        class4011.method12192(Class7521.field29165, 5, 20);
-        class4011.method12192(Class7521.field29591, 5, 20);
-        class4011.method12192(Class7521.field29592, 5, 20);
-        class4011.method12192(Class7521.field29593, 5, 20);
-        class4011.method12192(Class7521.field29594, 5, 20);
-        class4011.method12192(Class7521.field29595, 5, 20);
-        class4011.method12192(Class7521.field29596, 5, 20);
-        class4011.method12192(Class7521.field29389, 5, 20);
-        class4011.method12192(Class7521.field29614, 5, 20);
-        class4011.method12192(Class7521.field29615, 5, 20);
-        class4011.method12192(Class7521.field29616, 5, 20);
-        class4011.method12192(Class7521.field29618, 5, 20);
-        class4011.method12192(Class7521.field29617, 5, 20);
-        class4011.method12192(Class7521.field29336, 5, 20);
-        class4011.method12192(Class7521.field29619, 5, 20);
-        class4011.method12192(Class7521.field29620, 5, 20);
-        class4011.method12192(Class7521.field29621, 5, 20);
-        class4011.method12192(Class7521.field29623, 5, 20);
-        class4011.method12192(Class7521.field29622, 5, 20);
-        class4011.method12192(Class7521.field29291, 5, 20);
-        class4011.method12192(Class7521.field29414, 5, 20);
-        class4011.method12192(Class7521.field29413, 5, 20);
-        class4011.method12192(Class7521.field29415, 5, 20);
-        class4011.method12192(Class7521.field29514, 5, 20);
-        class4011.method12192(Class7521.field29515, 5, 20);
-        class4011.method12192(Class7521.field29181, 5, 5);
-        class4011.method12192(Class7521.field29182, 5, 5);
-        class4011.method12192(Class7521.field29183, 5, 5);
-        class4011.method12192(Class7521.field29184, 5, 5);
-        class4011.method12192(Class7521.field29185, 5, 5);
-        class4011.method12192(Class7521.field29186, 5, 5);
-        class4011.method12192(Class7521.field29192, 5, 5);
-        class4011.method12192(Class7521.field29187, 5, 5);
-        class4011.method12192(Class7521.field29188, 5, 5);
-        class4011.method12192(Class7521.field29189, 5, 5);
-        class4011.method12192(Class7521.field29190, 5, 5);
-        class4011.method12192(Class7521.field29191, 5, 5);
-        class4011.method12192(Class7521.field29199, 5, 5);
-        class4011.method12192(Class7521.field29200, 5, 5);
-        class4011.method12192(Class7521.field29201, 5, 5);
-        class4011.method12192(Class7521.field29202, 5, 5);
-        class4011.method12192(Class7521.field29203, 5, 5);
-        class4011.method12192(Class7521.field29204, 5, 5);
-        class4011.method12192(Class7521.field29193, 5, 5);
-        class4011.method12192(Class7521.field29194, 5, 5);
-        class4011.method12192(Class7521.field29195, 5, 5);
-        class4011.method12192(Class7521.field29196, 5, 5);
-        class4011.method12192(Class7521.field29197, 5, 5);
-        class4011.method12192(Class7521.field29198, 5, 5);
-        class4011.method12192(Class7521.field29205, 30, 60);
-        class4011.method12192(Class7521.field29206, 30, 60);
-        class4011.method12192(Class7521.field29207, 30, 60);
-        class4011.method12192(Class7521.field29208, 30, 60);
-        class4011.method12192(Class7521.field29209, 30, 60);
-        class4011.method12192(Class7521.field29210, 30, 60);
-        class4011.method12192(Class7521.field29284, 30, 20);
-        class4011.method12192(Class7521.field29283, 15, 100);
-        class4011.method12192(Class7521.field29241, 60, 100);
-        class4011.method12192(Class7521.field29242, 60, 100);
-        class4011.method12192(Class7521.field29243, 60, 100);
-        class4011.method12192(Class7521.field29549, 60, 100);
-        class4011.method12192(Class7521.field29550, 60, 100);
-        class4011.method12192(Class7521.field29551, 60, 100);
-        class4011.method12192(Class7521.field29552, 60, 100);
-        class4011.method12192(Class7521.field29553, 60, 100);
-        class4011.method12192(Class7521.field29554, 60, 100);
-        class4011.method12192(Class7521.field29265, 60, 100);
-        class4011.method12192(Class7521.field29266, 60, 100);
-        class4011.method12192(Class7521.field29267, 60, 100);
-        class4011.method12192(Class7521.field29268, 60, 100);
-        class4011.method12192(Class7521.field29269, 60, 100);
-        class4011.method12192(Class7521.field29270, 60, 100);
-        class4011.method12192(Class7521.field29271, 60, 100);
-        class4011.method12192(Class7521.field29272, 60, 100);
-        class4011.method12192(Class7521.field29273, 60, 100);
-        class4011.method12192(Class7521.field29274, 60, 100);
-        class4011.method12192(Class7521.field29275, 60, 100);
-        class4011.method12192(Class7521.field29277, 60, 100);
-        class4011.method12192(Class7521.field29276, 60, 100);
-        class4011.method12192(Class7521.field29248, 30, 60);
-        class4011.method12192(Class7521.field29249, 30, 60);
-        class4011.method12192(Class7521.field29250, 30, 60);
-        class4011.method12192(Class7521.field29251, 30, 60);
-        class4011.method12192(Class7521.field29252, 30, 60);
-        class4011.method12192(Class7521.field29253, 30, 60);
-        class4011.method12192(Class7521.field29254, 30, 60);
-        class4011.method12192(Class7521.field29255, 30, 60);
-        class4011.method12192(Class7521.field29256, 30, 60);
-        class4011.method12192(Class7521.field29257, 30, 60);
-        class4011.method12192(Class7521.field29258, 30, 60);
-        class4011.method12192(Class7521.field29259, 30, 60);
-        class4011.method12192(Class7521.field29260, 30, 60);
-        class4011.method12192(Class7521.field29261, 30, 60);
-        class4011.method12192(Class7521.field29262, 30, 60);
-        class4011.method12192(Class7521.field29263, 30, 60);
-        class4011.method12192(Class7521.field29388, 15, 100);
-        class4011.method12192(Class7521.field29547, 5, 5);
-        class4011.method12192(Class7521.field29529, 60, 20);
-        class4011.method12192(Class7521.field29530, 60, 20);
-        class4011.method12192(Class7521.field29531, 60, 20);
-        class4011.method12192(Class7521.field29532, 60, 20);
-        class4011.method12192(Class7521.field29533, 60, 20);
-        class4011.method12192(Class7521.field29534, 60, 20);
-        class4011.method12192(Class7521.field29535, 60, 20);
-        class4011.method12192(Class7521.field29536, 60, 20);
-        class4011.method12192(Class7521.field29537, 60, 20);
-        class4011.method12192(Class7521.field29538, 60, 20);
-        class4011.method12192(Class7521.field29539, 60, 20);
-        class4011.method12192(Class7521.field29540, 60, 20);
-        class4011.method12192(Class7521.field29541, 60, 20);
-        class4011.method12192(Class7521.field29542, 60, 20);
-        class4011.method12192(Class7521.field29543, 60, 20);
-        class4011.method12192(Class7521.field29544, 60, 20);
-        class4011.method12192(Class7521.field29545, 60, 20);
-        class4011.method12192(Class7521.field29715, 30, 60);
-        class4011.method12192(Class7521.field29761, 60, 60);
-        class4011.method12192(Class7521.field29805, 60, 60);
-        class4011.method12192(Class7521.field29813, 30, 20);
-        class4011.method12192(Class7521.field29822, 5, 20);
-        class4011.method12192(Class7521.field29819, 60, 100);
-        class4011.method12192(Class7521.field29824, 5, 20);
-        class4011.method12192(Class7521.field29823, 30, 20);
+        final Class4011 class4011 = (Class4011) Blocks.FIRE;
+        class4011.method12192(Blocks.OAK_PLANKS, 5, 20);
+        class4011.method12192(Blocks.SPRUCE_PLANKS, 5, 20);
+        class4011.method12192(Blocks.BIRCH_PLANKS, 5, 20);
+        class4011.method12192(Blocks.JUNGLE_PLANKS, 5, 20);
+        class4011.method12192(Blocks.ACACIA_PLANKS, 5, 20);
+        class4011.method12192(Blocks.DARK_OAK_PLANKS, 5, 20);
+        class4011.method12192(Blocks.field29591, 5, 20);
+        class4011.method12192(Blocks.field29592, 5, 20);
+        class4011.method12192(Blocks.field29593, 5, 20);
+        class4011.method12192(Blocks.field29594, 5, 20);
+        class4011.method12192(Blocks.field29595, 5, 20);
+        class4011.method12192(Blocks.field29596, 5, 20);
+        class4011.method12192(Blocks.field29389, 5, 20);
+        class4011.method12192(Blocks.SPRUCE_FENCE_GATE, 5, 20);
+        class4011.method12192(Blocks.BIRCH_FENCE_GATE, 5, 20);
+        class4011.method12192(Blocks.JUNGLE_FENCE_GATE, 5, 20);
+        class4011.method12192(Blocks.DARK_OAK_FENCE_GATE, 5, 20);
+        class4011.method12192(Blocks.ACACIA_FENCE_GATE, 5, 20);
+        class4011.method12192(Blocks.field29336, 5, 20);
+        class4011.method12192(Blocks.SPRUCE_FENCE, 5, 20);
+        class4011.method12192(Blocks.BIRCH_FENCE, 5, 20);
+        class4011.method12192(Blocks.JUNGLE_FENCE, 5, 20);
+        class4011.method12192(Blocks.DARK_OAK_FENCE, 5, 20);
+        class4011.method12192(Blocks.ACACIA_FENCE, 5, 20);
+        class4011.method12192(Blocks.OAK_STAIRS, 5, 20);
+        class4011.method12192(Blocks.field29414, 5, 20);
+        class4011.method12192(Blocks.field29413, 5, 20);
+        class4011.method12192(Blocks.field29415, 5, 20);
+        class4011.method12192(Blocks.field29514, 5, 20);
+        class4011.method12192(Blocks.field29515, 5, 20);
+        class4011.method12192(Blocks.field29181, 5, 5);
+        class4011.method12192(Blocks.field29182, 5, 5);
+        class4011.method12192(Blocks.field29183, 5, 5);
+        class4011.method12192(Blocks.field29184, 5, 5);
+        class4011.method12192(Blocks.field29185, 5, 5);
+        class4011.method12192(Blocks.field29186, 5, 5);
+        class4011.method12192(Blocks.field29192, 5, 5);
+        class4011.method12192(Blocks.field29187, 5, 5);
+        class4011.method12192(Blocks.field29188, 5, 5);
+        class4011.method12192(Blocks.field29189, 5, 5);
+        class4011.method12192(Blocks.field29190, 5, 5);
+        class4011.method12192(Blocks.field29191, 5, 5);
+        class4011.method12192(Blocks.field29199, 5, 5);
+        class4011.method12192(Blocks.field29200, 5, 5);
+        class4011.method12192(Blocks.field29201, 5, 5);
+        class4011.method12192(Blocks.field29202, 5, 5);
+        class4011.method12192(Blocks.field29203, 5, 5);
+        class4011.method12192(Blocks.field29204, 5, 5);
+        class4011.method12192(Blocks.field29193, 5, 5);
+        class4011.method12192(Blocks.field29194, 5, 5);
+        class4011.method12192(Blocks.field29195, 5, 5);
+        class4011.method12192(Blocks.field29196, 5, 5);
+        class4011.method12192(Blocks.field29197, 5, 5);
+        class4011.method12192(Blocks.field29198, 5, 5);
+        class4011.method12192(Blocks.field29205, 30, 60);
+        class4011.method12192(Blocks.field29206, 30, 60);
+        class4011.method12192(Blocks.field29207, 30, 60);
+        class4011.method12192(Blocks.field29208, 30, 60);
+        class4011.method12192(Blocks.field29209, 30, 60);
+        class4011.method12192(Blocks.field29210, 30, 60);
+        class4011.method12192(Blocks.BOOKSHELF, 30, 20);
+        class4011.method12192(Blocks.TNT, 15, 100);
+        class4011.method12192(Blocks.field29241, 60, 100);
+        class4011.method12192(Blocks.field29242, 60, 100);
+        class4011.method12192(Blocks.field29243, 60, 100);
+        class4011.method12192(Blocks.field29549, 60, 100);
+        class4011.method12192(Blocks.field29550, 60, 100);
+        class4011.method12192(Blocks.field29551, 60, 100);
+        class4011.method12192(Blocks.field29552, 60, 100);
+        class4011.method12192(Blocks.field29553, 60, 100);
+        class4011.method12192(Blocks.field29554, 60, 100);
+        class4011.method12192(Blocks.DANDELION, 60, 100);
+        class4011.method12192(Blocks.POPPY, 60, 100);
+        class4011.method12192(Blocks.BLUE_ORCHID, 60, 100);
+        class4011.method12192(Blocks.ALLIUM, 60, 100);
+        class4011.method12192(Blocks.AZURE_BLUET, 60, 100);
+        class4011.method12192(Blocks.RED_TULIP, 60, 100);
+        class4011.method12192(Blocks.ORANGE_TULIP, 60, 100);
+        class4011.method12192(Blocks.WHITE_TULIP, 60, 100);
+        class4011.method12192(Blocks.PINK_TULIP, 60, 100);
+        class4011.method12192(Blocks.OXEYE_DAISY, 60, 100);
+        class4011.method12192(Blocks.CORNFLOWER, 60, 100);
+        class4011.method12192(Blocks.LILY_OF_THE_VALLEY, 60, 100);
+        class4011.method12192(Blocks.WITHER_ROSE, 60, 100);
+        class4011.method12192(Blocks.field29248, 30, 60);
+        class4011.method12192(Blocks.field29249, 30, 60);
+        class4011.method12192(Blocks.field29250, 30, 60);
+        class4011.method12192(Blocks.field29251, 30, 60);
+        class4011.method12192(Blocks.field29252, 30, 60);
+        class4011.method12192(Blocks.field29253, 30, 60);
+        class4011.method12192(Blocks.field29254, 30, 60);
+        class4011.method12192(Blocks.GRAY_WOOL, 30, 60);
+        class4011.method12192(Blocks.LIGHT_GRAY_WOOL, 30, 60);
+        class4011.method12192(Blocks.CYAN_WOOL, 30, 60);
+        class4011.method12192(Blocks.PURPLE_WOOL, 30, 60);
+        class4011.method12192(Blocks.BLUE_WOOL, 30, 60);
+        class4011.method12192(Blocks.BROWN_WOOL, 30, 60);
+        class4011.method12192(Blocks.GREEN_WOOL, 30, 60);
+        class4011.method12192(Blocks.RED_WOOL, 30, 60);
+        class4011.method12192(Blocks.BLACK_WOOL, 30, 60);
+        class4011.method12192(Blocks.field29388, 15, 100);
+        class4011.method12192(Blocks.field29547, 5, 5);
+        class4011.method12192(Blocks.field29529, 60, 20);
+        class4011.method12192(Blocks.field29530, 60, 20);
+        class4011.method12192(Blocks.field29531, 60, 20);
+        class4011.method12192(Blocks.field29532, 60, 20);
+        class4011.method12192(Blocks.field29533, 60, 20);
+        class4011.method12192(Blocks.field29534, 60, 20);
+        class4011.method12192(Blocks.field29535, 60, 20);
+        class4011.method12192(Blocks.field29536, 60, 20);
+        class4011.method12192(Blocks.field29537, 60, 20);
+        class4011.method12192(Blocks.field29538, 60, 20);
+        class4011.method12192(Blocks.field29539, 60, 20);
+        class4011.method12192(Blocks.field29540, 60, 20);
+        class4011.method12192(Blocks.field29541, 60, 20);
+        class4011.method12192(Blocks.field29542, 60, 20);
+        class4011.method12192(Blocks.field29543, 60, 20);
+        class4011.method12192(Blocks.field29544, 60, 20);
+        class4011.method12192(Blocks.field29545, 60, 20);
+        class4011.method12192(Blocks.DRIED_KELP_BLOCK, 30, 60);
+        class4011.method12192(Blocks.BAMBOO, 60, 60);
+        class4011.method12192(Blocks.SCAFFOLDING, 60, 60);
+        class4011.method12192(Blocks.LECTERN, 30, 20);
+        class4011.method12192(Blocks.COMPOSTER, 5, 20);
+        class4011.method12192(Blocks.SWEET_BERRY_BUSH, 60, 100);
+        class4011.method12192(Blocks.BEEHIVE, 5, 20);
+        class4011.method12192(Blocks.BEE_NEST, 30, 20);
     }
     
     static {

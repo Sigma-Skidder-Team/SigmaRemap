@@ -32,7 +32,7 @@ public class Class8471<T extends Class3418>
     private final Class9368<T> field34778;
     
     private static <T extends Class3418> Class8471<T> method28277(final String s, final Class9368<T> class9368) {
-        return Registry.method511(Registry.field235, s, new Class8471<T>(class9368));
+        return Registry.register(Registry.field235, s, new Class8471<T>(class9368));
     }
     
     private Class8471(final Class9368<T> field34778) {

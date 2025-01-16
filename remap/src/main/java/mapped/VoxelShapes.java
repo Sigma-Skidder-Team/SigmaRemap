@@ -231,7 +231,7 @@ public final class VoxelShapes
                                         class6225.method1289(method24554, i, j, n10);
                                         final BlockState method24558 = class6222.getBlockState(class6225);
                                         if (n11 != 1 || method24558.isCollisionShapeLargerThanFullBlock()) {
-                                            if (n11 != 2 || method24558.getBlock() == Class7521.field29264) {
+                                            if (n11 != 2 || method24558.getBlock() == Blocks.MOVING_PISTON) {
                                                 VoxelShape class6226 = method24558.getCollisionShape(class6222, class6225, class6223);
                                                 if (b) {
                                                     final Class5753 class6227 = new Class5753(class6225, class6226);

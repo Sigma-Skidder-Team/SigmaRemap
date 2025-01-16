@@ -403,7 +403,7 @@ public class Class7658
     }
     
     public int method24279(BlockPos method1139, final boolean b) {
-        if (this.field30396.world.getBlockState(method1139).method21696() == Class7521.field29147) {
+        if (this.field30396.world.getBlockState(method1139).method21696() == Blocks.AIR) {
             method1139 = method1139.method1139();
         }
         int n = this.field30396.world.getBlockState(method1139).method21697().method26446().field37084;

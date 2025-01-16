@@ -64,7 +64,7 @@ public class ChunkStatus
     }
     
     private static ChunkStatus register(final String s, final ChunkStatus class9312, final int n, final EnumSet<HeightmapType> set, final Type class9313, final IGenerationWorker class9314, final ILoadingWorker class9315) {
-        return Registry.method511(Registry.field229, s, new ChunkStatus(s, class9312, n, set, class9313, class9314, class9315));
+        return Registry.register(Registry.field229, s, new ChunkStatus(s, class9312, n, set, class9313, class9314, class9315));
     }
     
     public static List<ChunkStatus> getAll() {

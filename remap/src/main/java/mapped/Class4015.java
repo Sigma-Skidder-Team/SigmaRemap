@@ -33,8 +33,8 @@ public class Class4015 extends Block
     
     public void method12197(final World class1847, final BlockPos class1848) {
         if (this.method12198(class1847, class1848)) {
-            class1847.setBlockState(class1848, Class7521.field29212.getDefaultState(), 2);
-            class1847.method6955(2001, class1848, Block.method11774(Class7521.field29173.getDefaultState()));
+            class1847.setBlockState(class1848, Blocks.field29212.getDefaultState(), 2);
+            class1847.method6955(2001, class1848, Block.method11774(Blocks.field29173.getDefaultState()));
         }
     }
     
@@ -62,7 +62,7 @@ public class Class4015 extends Block
                     else if (!(method1150.getBlock() instanceof Class3859)) {
                         if (method1152 == Material.OCEAN_PLANT || method1152 == Material.SEA_GRASS) {
                             Block.method11837(method1150, class1847, method1149, method1150.getBlock().method11802() ? class1847.getTileEntity(method1149) : null);
-                            class1847.setBlockState(method1149, Class7521.field29147.getDefaultState(), 3);
+                            class1847.setBlockState(method1149, Blocks.AIR.getDefaultState(), 3);
                             ++n;
                             if (intValue < 6) {
                                 linkedList.add(new Class8554(method1149, intValue + 1));
@@ -70,7 +70,7 @@ public class Class4015 extends Block
                         }
                     }
                     else {
-                        class1847.setBlockState(method1149, Class7521.field29147.getDefaultState(), 3);
+                        class1847.setBlockState(method1149, Blocks.AIR.getDefaultState(), 3);
                         ++n;
                         if (intValue < 6) {
                             linkedList.add(new Class8554(method1149, intValue + 1));

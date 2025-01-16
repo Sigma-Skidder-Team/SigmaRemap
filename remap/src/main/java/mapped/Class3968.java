@@ -35,15 +35,15 @@ public class Class3968 extends Class3967
         final Class7096 method21702 = this.getDefaultState();
         final Class7113 field17926 = Class3968.field17926;
         if (method21696 != this) {
-            if (method21696 != Class7521.field29631) {
-                if (method21696 != Class7521.field29403) {
+            if (method21696 != Blocks.CHORUS_FLOWER) {
+                if (method21696 != Blocks.field29403) {
                     final boolean b = false;
-                    return (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Class7096>)method21702).with((IProperty<Comparable>)field17926, b)).with((IProperty<Comparable>)Class3968.field17925, method21697 == this || method21697 == Class7521.field29631)).with((IProperty<Comparable>)Class3968.field17921, method21698 == this || method21698 == Class7521.field29631)).with((IProperty<Comparable>)Class3968.field17922, method21699 == this || method21699 == Class7521.field29631)).with((IProperty<Comparable>)Class3968.field17923, method21700 == this || method21700 == Class7521.field29631)).with((IProperty<Comparable>)Class3968.field17924, method21701 == this || method21701 == Class7521.field29631);
+                    return (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Class7096>)method21702).with((IProperty<Comparable>)field17926, b)).with((IProperty<Comparable>)Class3968.field17925, method21697 == this || method21697 == Blocks.CHORUS_FLOWER)).with((IProperty<Comparable>)Class3968.field17921, method21698 == this || method21698 == Blocks.CHORUS_FLOWER)).with((IProperty<Comparable>)Class3968.field17922, method21699 == this || method21699 == Blocks.CHORUS_FLOWER)).with((IProperty<Comparable>)Class3968.field17923, method21700 == this || method21700 == Blocks.CHORUS_FLOWER)).with((IProperty<Comparable>)Class3968.field17924, method21701 == this || method21701 == Blocks.CHORUS_FLOWER);
                 }
             }
         }
         final boolean b = true;
-        return (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Class7096>)method21702).with((IProperty<Comparable>)field17926, b)).with((IProperty<Comparable>)Class3968.field17925, method21697 == this || method21697 == Class7521.field29631)).with((IProperty<Comparable>)Class3968.field17921, method21698 == this || method21698 == Class7521.field29631)).with((IProperty<Comparable>)Class3968.field17922, method21699 == this || method21699 == Class7521.field29631)).with((IProperty<Comparable>)Class3968.field17923, method21700 == this || method21700 == Class7521.field29631)).with((IProperty<Comparable>)Class3968.field17924, method21701 == this || method21701 == Class7521.field29631);
+        return (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Class7096>)method21702).with((IProperty<Comparable>)field17926, b)).with((IProperty<Comparable>)Class3968.field17925, method21697 == this || method21697 == Blocks.CHORUS_FLOWER)).with((IProperty<Comparable>)Class3968.field17921, method21698 == this || method21698 == Blocks.CHORUS_FLOWER)).with((IProperty<Comparable>)Class3968.field17922, method21699 == this || method21699 == Blocks.CHORUS_FLOWER)).with((IProperty<Comparable>)Class3968.field17923, method21700 == this || method21700 == Blocks.CHORUS_FLOWER)).with((IProperty<Comparable>)Class3968.field17924, method21701 == this || method21701 == Blocks.CHORUS_FLOWER);
     }
     
     @Override
@@ -51,8 +51,8 @@ public class Class3968 extends Class3967
         if (class7096.method21752(class7099, class7100)) {
             final Block method21696 = class7098.method21696();
             if (method21696 != this) {
-                if (method21696 != Class7521.field29631) {
-                    if (class7097 != Direction.DOWN || method21696 != Class7521.field29403) {
+                if (method21696 != Blocks.CHORUS_FLOWER) {
+                    if (class7097 != Direction.DOWN || method21696 != Blocks.field29403) {
                         final boolean b = false;
                         return (Class7096)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class3968.field17927.get(class7097), b);
                     }
@@ -86,13 +86,13 @@ public class Class3968 extends Class3967
                 return false;
             }
             final Block method6703 = class7097.getBlockState(method6702.method1139()).getBlock();
-            if (method6703 != this && method6703 != Class7521.field29403) {
+            if (method6703 != this && method6703 != Blocks.field29403) {
                 continue;
             }
             return true;
         }
         final Block method6704 = method6701.method21696();
-        return method6704 == this || method6704 == Class7521.field29403;
+        return method6704 == this || method6704 == Blocks.field29403;
     }
     
     @Override

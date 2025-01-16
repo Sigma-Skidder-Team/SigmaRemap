@@ -19,7 +19,7 @@ public class Class7302 extends Class7303
 {
     public Class7302(final Function<Dynamic<?>, ? extends Class5117> function) {
         super(function, 128);
-        this.field28285 = (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153, (Object)Class7521.field29156, (Object)Class7521.field29157, (Object[])new Block[] { Class7521.field29158, Class7521.field29155, Class7521.field29338 });
+        this.field28285 = (Set<Block>)ImmutableSet.of((Object) Blocks.STONE, (Object) Blocks.GRANITE, (Object) Blocks.DIORITE, (Object) Blocks.ANDESITE, (Object) Blocks.DIRT, (Object) Blocks.COARSE_DIRT, (Object[])new Block[] { Blocks.PODZOL, Blocks.GRASS_BLOCK, Blocks.field29338 });
         this.field28286 = (Set<Fluid>)ImmutableSet.of((Object)Class7558.field29978, (Object)Class7558.field29976);
     }
     

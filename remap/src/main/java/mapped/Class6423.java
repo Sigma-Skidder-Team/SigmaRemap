@@ -47,7 +47,7 @@ public interface Class6423
         Class3955.method12069(Items.field31349, new Class6420());
         Class3955.method12069(Items.field31277, new Class6403());
         Class3955.method12069(Items.field31400, new Class6399());
-        Class3955.method12069(Class7521.field29283, new Class6407());
+        Class3955.method12069(Blocks.TNT, new Class6407());
         final Class6396 class6421 = new Class6396();
         Class3955.method12069(Items.field31527, class6421);
         Class3955.method12069(Items.field31526, class6421);
@@ -55,8 +55,8 @@ public interface Class6423
         Class3955.method12069(Items.field31523, class6421);
         Class3955.method12069(Items.field31525, class6421);
         Class3955.method12069(Items.field31524, new Class6427());
-        Class3955.method12069(Class7521.field29342, new Class6400());
-        Class3955.method12069(Class7521.field29648.method11704(), new Class6401());
+        Class3955.method12069(Blocks.field29342, new Class6400());
+        Class3955.method12069(Blocks.SHULKER_BOX.method11704(), new Class6401());
         final Class181[] values = Class181.values();
         for (int length = values.length, i = 0; i < length; ++i) {
             Class3955.method12069(Class3942.method12059(values[i]).method11704(), new Class6401());

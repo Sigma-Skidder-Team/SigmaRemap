@@ -89,10 +89,10 @@ public class Class6033 extends Class6032<Class4408>
                             --n12;
                             class1860.method7008(class1865, class1866, false);
                             if (n12 == 0) {
-                                if (class1866.getBlock() == Class7521.field29175) {
+                                if (class1866.getBlock() == Blocks.field29175) {
                                     if (n11 > 1) {
                                         n12 = random.nextInt(4) + Math.max(0, i - 63);
-                                        class1866 = ((class1866.getBlock() != Class7521.field29176) ? Class7521.field29217.getDefaultState() : Class7521.field29587.getDefaultState());
+                                        class1866 = ((class1866.getBlock() != Blocks.field29176) ? Blocks.field29217.getDefaultState() : Blocks.field29587.getDefaultState());
                                     }
                                 }
                             }
@@ -137,7 +137,7 @@ public class Class6033 extends Class6032<Class4408>
                         }
                     }
                 }
-                else if (method9846.getBlock() == Class7521.field29548) {
+                else if (method9846.getBlock() == Blocks.field29548) {
                     if (n13 <= n14) {
                         if (i > n15) {
                             class1860.method7008(class1865, Class6033.field24566, false);
@@ -170,10 +170,10 @@ public class Class6033 extends Class6032<Class4408>
     }
     
     static {
-        field24565 = Class7521.field29548.getDefaultState();
-        field24566 = Class7521.field29331.getDefaultState();
-        field24567 = Class7521.field29147.getDefaultState();
-        field24568 = Class7521.field29177.getDefaultState();
-        field24569 = Class7521.field29330.getDefaultState();
+        field24565 = Blocks.field29548.getDefaultState();
+        field24566 = Blocks.field29331.getDefaultState();
+        field24567 = Blocks.AIR.getDefaultState();
+        field24568 = Blocks.field29177.getDefaultState();
+        field24569 = Blocks.field29330.getDefaultState();
     }
 }

@@ -63,12 +63,12 @@ public class Class3981 extends Block
     public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         final Block method21696 = class7097.getBlockState(class7098.method1139()).getBlock();
         if (method21696 != this) {
-            if (method21696 != Class7521.field29155) {
-                if (method21696 != Class7521.field29156) {
-                    if (method21696 != Class7521.field29157) {
-                        if (method21696 != Class7521.field29158) {
-                            if (method21696 != Class7521.field29175) {
-                                if (method21696 != Class7521.field29176) {
+            if (method21696 != Blocks.GRASS_BLOCK) {
+                if (method21696 != Blocks.DIRT) {
+                    if (method21696 != Blocks.COARSE_DIRT) {
+                        if (method21696 != Blocks.PODZOL) {
+                            if (method21696 != Blocks.field29175) {
+                                if (method21696 != Blocks.field29176) {
                                     return false;
                                 }
                             }
@@ -79,7 +79,7 @@ public class Class3981 extends Block
             final BlockPos method21697 = class7098.method1139();
             for (final Direction class7099 : Plane.HORIZONTAL) {
                 final Class7096 method21698 = class7097.getBlockState(method21697.method1149(class7099));
-                if (!class7097.getFluidState(method21697.method1149(class7099)).isTagged(Class7324.field28319) && method21698.method21696() != Class7521.field29641) {
+                if (!class7097.getFluidState(method21697.method1149(class7099)).isTagged(Class7324.field28319) && method21698.method21696() != Blocks.FROSTED_ICE) {
                     continue;
                 }
                 return true;

@@ -25,7 +25,7 @@ public class Class4397 implements IPacket<Class5813>
     
     public Class4397(final IRecipe<?> class3662) {
         this.field19693 = Class2125.field12397;
-        this.field19694 = class3662.method11298();
+        this.field19694 = class3662.getId();
     }
     
     public Class4397(final boolean field19695, final boolean field19696, final boolean field19697, final boolean field19698, final boolean b, final boolean b2) {

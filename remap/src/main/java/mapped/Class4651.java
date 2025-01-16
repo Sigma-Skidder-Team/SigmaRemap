@@ -39,7 +39,7 @@ public class Class4651 extends Class4654
             if (this.method13927() && this.field20141.method1706()) {
                 n = MathHelper.floor(this.field20141.getPosY());
                 final Mutable class385 = new Mutable(this.field20141.getPosX(), n, this.field20141.getPosZ());
-                for (BlockState class386 = this.field20140.getBlockState(class385); class386.getBlock() == Class7521.field29173 || class386.getFluidState() == Class7558.field29976.method22177(false); class386 = this.field20140.getBlockState(class385)) {
+                for (BlockState class386 = this.field20140.getBlockState(class385); class386.getBlock() == Blocks.field29173 || class386.getFluidState() == Class7558.field29976.method22177(false); class386 = this.field20140.getBlockState(class385)) {
                     ++n;
                     class385.method1286(this.field20141.getPosX(), n, this.field20141.getPosZ());
                 }
@@ -377,8 +377,8 @@ public class Class4651 extends Class4654
                 class1856 = class1857;
                 Label_0165: {
                     if (method21697 != Class257.field1215) {
-                        if (method21696 != Class7521.field29642) {
-                            if (method21696 != Class7521.field29818) {
+                        if (method21696 != Blocks.MAGMA_BLOCK) {
+                            if (method21696 != Blocks.CAMPFIRE) {
                                 break Label_0165;
                             }
                         }
@@ -409,11 +409,11 @@ public class Class4651 extends Class4654
                     for (int k = -1; k <= 1; ++k) {
                         if (i != 0 || k != 0) {
                             final Block method1297 = class1855.getBlockState(method1296.method1300(i + n, j + n2, k + n3)).getBlock();
-                            if (method1297 == Class7521.field29332) {
+                            if (method1297 == Blocks.field29332) {
                                 class1856 = Class257.field1216;
                             }
-                            else if (method1297 != Class7521.field29289 && method1297 != Class7521.field29174) {
-                                if (method1297 == Class7521.field29819) {
+                            else if (method1297 != Blocks.FIRE && method1297 != Blocks.field29174) {
+                                if (method1297 == Blocks.SWEET_BERRY_BUSH) {
                                     class1856 = Class257.field1218;
                                 }
                             }
@@ -436,22 +436,22 @@ public class Class4651 extends Class4654
         if (method6701.method21706()) {
             return Class257.field1206;
         }
-        if (method6702.method11785(Class7188.field27908) || method6702 == Class7521.field29393) {
+        if (method6702.method11785(Class7188.field27908) || method6702 == Blocks.field29393) {
             return Class257.field1208;
         }
-        if (method6702 == Class7521.field29289) {
+        if (method6702 == Blocks.FIRE) {
             return Class257.field1215;
         }
-        if (method6702 == Class7521.field29332) {
+        if (method6702 == Blocks.field29332) {
             return Class257.field1217;
         }
-        if (method6702 == Class7521.field29819) {
+        if (method6702 == Blocks.SWEET_BERRY_BUSH) {
             return Class257.field1219;
         }
-        if (method6702 == Class7521.field29825) {
+        if (method6702 == Blocks.HONEY_BLOCK) {
             return Class257.field1225;
         }
-        if (method6702 == Class7521.field29406) {
+        if (method6702 == Blocks.field29406) {
             return Class257.field1226;
         }
         if (method6702 instanceof Class3969) {

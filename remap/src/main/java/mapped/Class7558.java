@@ -16,7 +16,7 @@ public class Class7558
     public static final Class7257 field29978;
     
     private static <T extends Fluid> T method23729(final String s, final T t) {
-        return Registry.method511(Registry.FLUID, s, t);
+        return Registry.register(Registry.FLUID, s, t);
     }
     
     static {

@@ -301,7 +301,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (!class355.getMaterial().method26438()) {
             final BlockState method6701 = this.world.getBlockState(class354.method1137());
             SoundType class356 = class355.getSoundType();
-            if (method6701.getBlock() == Class7521.field29329) {
+            if (method6701.getBlock() == Blocks.field29329) {
                 class356 = method6701.getSoundType();
             }
             if (this.isBeingRidden() && this.field4352) {
@@ -371,7 +371,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         final Item method27622 = class513.getItem();
         if (method27622 != Items.field31315) {
             if (method27622 != Items.field31406) {
-                if (method27622 != Class7521.field29529.method11704()) {
+                if (method27622 != Blocks.field29529.method11704()) {
                     if (method27622 != Items.field31278) {
                         if (method27622 != Items.field31522) {
                             if (method27622 == Items.field31341 || method27622 == Items.field31342) {
@@ -523,7 +523,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                     if (!this.method4721()) {
                         if (!this.isBeingRidden()) {
                             if (this.rand.nextInt(300) == 0) {
-                                if (this.world.getBlockState(new BlockPos(this).method1139()).method21696() == Class7521.field29155) {
+                                if (this.world.getBlockState(new BlockPos(this).method1139()).method21696() == Blocks.GRASS_BLOCK) {
                                     this.method4747(true);
                                 }
                             }

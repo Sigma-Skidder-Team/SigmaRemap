@@ -76,10 +76,10 @@ public class Class3990 extends Class3986
     @Nullable
     public static Class7096 method12139(final Class7096 class7096) {
         final Block method21696 = class7096.method21696();
-        if (method21696 != Class7521.field29465) {
-            return (method21696 != Class7521.field29466) ? null : ((StateHolder<O, Class7096>)Class7521.field29467.getDefaultState()).with((IProperty<Comparable>)Class3990.field18000, (Comparable)class7096.method21772((IProperty<V>)Class3990.field18000));
+        if (method21696 != Blocks.field29465) {
+            return (method21696 != Blocks.field29466) ? null : ((StateHolder<O, Class7096>) Blocks.field29467.getDefaultState()).with((IProperty<Comparable>)Class3990.field18000, (Comparable)class7096.method21772((IProperty<V>)Class3990.field18000));
         }
-        return ((StateHolder<O, Class7096>)Class7521.field29466.getDefaultState()).with((IProperty<Comparable>)Class3990.field18000, (Comparable)class7096.method21772((IProperty<V>)Class3990.field18000));
+        return ((StateHolder<O, Class7096>) Blocks.field29466.getDefaultState()).with((IProperty<Comparable>)Class3990.field18000, (Comparable)class7096.method21772((IProperty<V>)Class3990.field18000));
     }
     
     @Override

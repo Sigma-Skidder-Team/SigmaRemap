@@ -49,16 +49,16 @@ public abstract class Class4515 extends Class4473
         this.field19919.method32849(class1853);
         this.field19849 = this.field19918.method19966(this.field19919, this.field19920);
         if (this.field19918.method19956(class1851, this.field19920, this.field19919, 2)) {
-            for (final Class9038 class1855 : this.field19918.method19950(this.field19920, this.field19919, Class7521.field29820)) {
+            for (final Class9038 class1855 : this.field19918.method19950(this.field19920, this.field19919, Blocks.STRUCTURE_BLOCK)) {
                 if (class1855.field38250 != null && Class102.valueOf(class1855.field38250.getString("mode")) == Class102.field308) {
                     this.method13511(class1855.field38250.getString("metadata"), class1855.field38248, class1851, random, class1853);
                 }
             }
-            for (final Class9038 class1856 : this.field19918.method19950(this.field19920, this.field19919, Class7521.field29821)) {
+            for (final Class9038 class1856 : this.field19918.method19950(this.field19920, this.field19919, Blocks.JIGSAW)) {
                 if (class1856.field38250 != null) {
                     final String method323 = class1856.field38250.getString("final_state");
                     final Class7572 class1857 = new Class7572(new StringReader(method323), false);
-                    BlockState method324 = Class7521.field29147.getDefaultState();
+                    BlockState method324 = Blocks.AIR.getDefaultState();
                     try {
                         class1857.method23802(true);
                         final BlockState method325 = class1857.method23799();

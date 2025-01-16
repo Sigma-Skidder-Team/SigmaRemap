@@ -216,7 +216,7 @@ public class Explosion
                         method6701.method21743(method6703).forEach(class357 -> method18410((ObjectArrayList<Pair<ItemStack, BlockPos>>)list2, class357, class356));
                     }
                 }
-                this.world.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
+                this.world.setBlockState(class354, Blocks.AIR.getDefaultState(), 3);
                 method6702.method11842(this.world, class354, this);
                 this.world.method6796().endSection();
             }
@@ -235,7 +235,7 @@ public class Explosion
                 if (!this.world.getBlockState(class355.method1139()).method21722(this.world, class355.method1139())) {
                     continue;
                 }
-                this.world.method6692(class355, Class7521.field29289.getDefaultState());
+                this.world.method6692(class355, Blocks.FIRE.getDefaultState());
             }
         }
     }

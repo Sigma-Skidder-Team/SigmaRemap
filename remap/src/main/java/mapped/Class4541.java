@@ -73,7 +73,7 @@ public class Class4541 extends Class4535<Class5122>
                                     if (l != n3) {
                                         if (n8 != 4) {
                                             if (n9 != n6) {
-                                                if (class1851.getBlockState(method1136).getBlock() == Class7521.field29292) {
+                                                if (class1851.getBlockState(method1136).getBlock() == Blocks.CHEST) {
                                                     continue;
                                                 }
                                                 class1851.setBlockState(method1136, Class4541.field20028, 2);
@@ -88,12 +88,12 @@ public class Class4541 extends Class4535<Class5122>
                             class1851.setBlockState(method1136, Class4541.field20028, 2);
                         }
                         else if (class1851.getBlockState(method1136).getMaterial().method26439()) {
-                            if (class1851.getBlockState(method1136).getBlock() != Class7521.field29292) {
+                            if (class1851.getBlockState(method1136).getBlock() != Blocks.CHEST) {
                                 if (n8 == -1 && random.nextInt(4) != 0) {
-                                    class1851.setBlockState(method1136, Class7521.field29285.getDefaultState(), 2);
+                                    class1851.setBlockState(method1136, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 2);
                                 }
                                 else {
-                                    class1851.setBlockState(method1136, Class7521.field29159.getDefaultState(), 2);
+                                    class1851.setBlockState(method1136, Blocks.COBBLESTONE.getDefaultState(), 2);
                                 }
                             }
                         }
@@ -113,14 +113,14 @@ public class Class4541 extends Class4535<Class5122>
                             ++n12;
                         }
                         if (n12 == 1) {
-                            class1851.setBlockState(class1855, Class4473.method13451(class1851, class1855, Class7521.field29292.getDefaultState()), 2);
+                            class1851.setBlockState(class1855, Class4473.method13451(class1851, class1855, Blocks.CHEST.getDefaultState()), 2);
                             Class456.method2323(class1851, random, class1855, Class9020.field38066);
                             break;
                         }
                     }
                 }
             }
-            class1851.setBlockState(class1853, Class7521.field29290.getDefaultState(), 2);
+            class1851.setBlockState(class1853, Blocks.SPAWNER.getDefaultState(), 2);
             final TileEntity method1137 = class1851.getTileEntity(class1853);
             if (!(method1137 instanceof Class494)) {
                 Class4541.field20026.error("Failed to fetch mob spawner entity at ({}, {}, {})", (Object)class1853.getX(), (Object)class1853.getY(), (Object)class1853.getZ());
@@ -140,6 +140,6 @@ public class Class4541 extends Class4535<Class5122>
     static {
         field20026 = LogManager.getLogger();
         field20027 = new EntityType[] { EntityType.field29023, EntityType.field29052, EntityType.field29052, EntityType.field29030 };
-        field20028 = Class7521.field29764.getDefaultState();
+        field20028 = Blocks.CAVE_AIR.getDefaultState();
     }
 }

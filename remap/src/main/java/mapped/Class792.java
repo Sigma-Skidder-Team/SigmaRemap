@@ -41,7 +41,7 @@ public class Class792 extends Class789
         this.field4114.method22062(1, new Class3490(this));
         this.field4114.method22062(1, new Class3612(this, 2.2));
         this.field4114.method22062(2, new Class3587(this, 0.8));
-        this.field4114.method22062(3, new Class3472(this, 1.0, Class120.method618(Items.field31517, Items.field31522, Class7521.field29265), false));
+        this.field4114.method22062(3, new Class3472(this, 1.0, Ingredient.method618(Items.field31517, Items.field31522, Blocks.DANDELION), false));
         this.field4114.method22062(4, new Class3449<Object>(this, PlayerEntity.class, 8.0f, 2.2, 2.2));
         this.field4114.method22062(4, new Class3449<Object>(this, Class799.class, 10.0f, 2.2, 2.2));
         this.field4114.method22062(4, new Class3449<Object>(this, Class763.class, 4.0f, 2.2, 2.2));
@@ -267,7 +267,7 @@ public class Class792 extends Class789
     private boolean method4442(final Item class3820) {
         if (class3820 != Items.field31517) {
             if (class3820 != Items.field31522) {
-                if (class3820 != Class7521.field29265.method11704()) {
+                if (class3820 != Blocks.DANDELION.method11704()) {
                     return false;
                 }
             }
@@ -341,9 +341,9 @@ public class Class792 extends Class789
     
     public static boolean method4447(final EntityType<Class792> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         final Block method21696 = class7500.getBlockState(class7502.method1139()).getBlock();
-        if (method21696 != Class7521.field29155) {
-            if (method21696 != Class7521.field29329) {
-                if (method21696 != Class7521.field29175) {
+        if (method21696 != Blocks.GRASS_BLOCK) {
+            if (method21696 != Blocks.field29329) {
+                if (method21696 != Blocks.field29175) {
                     return false;
                 }
             }

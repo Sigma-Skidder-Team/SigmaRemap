@@ -10,12 +10,12 @@ import net.minecraft.util.math.MathHelper;
 public class Class7997
 {
     private static String[] field32937;
-    private final Class120 field32938;
+    private final Ingredient field32938;
     private final int field32939;
     private final int field32940;
     public final /* synthetic */ Class7877 field32941;
     
-    public Class7997(final Class7877 field32941, final Class120 field32942, final int field32943, final int field32944) {
+    public Class7997(final Class7877 field32941, final Ingredient field32942, final int field32943, final int field32944) {
         this.field32941 = field32941;
         this.field32938 = field32942;
         this.field32939 = field32943;

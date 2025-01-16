@@ -24,6 +24,6 @@ public class Class4219 extends Class4211
     }
     
     public boolean method12702(final IRecipe<?> class3662) {
-        return this.field19016.equals(class3662.method11298());
+        return this.field19016.equals(class3662.getId());
     }
 }

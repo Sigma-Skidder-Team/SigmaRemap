@@ -25,7 +25,7 @@ public class Class804 extends Class789
         this.field4114.method22062(0, new Class3490(this));
         this.field4114.method22062(1, new Class3607(this, 2.0));
         this.field4114.method22062(2, new Class3587(this, 1.0));
-        this.field4114.method22062(3, new Class3472(this, 1.25, Class120.method618(Items.field31315), false));
+        this.field4114.method22062(3, new Class3472(this, 1.25, Ingredient.method618(Items.field31315), false));
         this.field4114.method22062(4, new Class3456(this, 1.25));
         this.field4114.method22062(5, new Class3517(this, 1.0));
         this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 6.0f));

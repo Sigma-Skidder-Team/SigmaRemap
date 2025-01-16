@@ -30,12 +30,12 @@ public class Class3868 extends Class3869 implements Class3867
     
     @Override
     public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
-        return class7096.isSolidSide(class7097, class7098, Direction.UP) && class7096.getBlock() != Class7521.field29642;
+        return class7096.isSolidSide(class7097, class7098, Direction.UP) && class7096.getBlock() != Blocks.MAGMA_BLOCK;
     }
     
     @Override
     public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
-        return new ItemStack(Class7521.field29244);
+        return new ItemStack(Blocks.field29244);
     }
     
     @Nullable

@@ -55,7 +55,7 @@ public class Class4088 extends Item
     }
     
     public static boolean method12323(final ItemStack class8321, final World class8322, final BlockPos class8323, final Direction class8324) {
-        if (class8322.getBlockState(class8323).method21696() != Class7521.field29173 || class8322.getFluidState(class8323).getLevel() != 8) {
+        if (class8322.getBlockState(class8323).method21696() != Blocks.field29173 || class8322.getFluidState(class8323).getLevel() != 8) {
             return false;
         }
         if (class8322 instanceof Class1849) {
@@ -64,7 +64,7 @@ public class Class4088 extends Item
             while (i < 128) {
                 BlockPos method1134 = class8323;
                 Class3090 class8325 = class8322.method6959(class8323);
-                Class7096 class8326 = Class7521.field29244.getDefaultState();
+                Class7096 class8326 = Blocks.field29244.getDefaultState();
                 while (true) {
                     for (int j = 0; j < i / 16; ++j) {
                         method1134 = method1134.add(Class4088.field17363.nextInt(3) - 1, (Class4088.field17363.nextInt(3) - 1) * Class4088.field17363.nextInt(3) / 2, Class4088.field17363.nextInt(3) - 1);
@@ -100,17 +100,17 @@ public class Class4088 extends Item
                         continue;
                     }
                     final Class7096 method1135 = class8322.getBlockState(method1134);
-                    if (method1135.method21696() == Class7521.field29173 && class8322.getFluidState(method1134).getLevel() == 8) {
+                    if (method1135.method21696() == Blocks.field29173 && class8322.getFluidState(method1134).getLevel() == 8) {
                         class8322.setBlockState(method1134, class8326, 3);
                         continue;
                     }
-                    if (method1135.method21696() != Class7521.field29244) {
+                    if (method1135.method21696() != Blocks.field29244) {
                         continue;
                     }
                     if (Class4088.field17363.nextInt(10) != 0) {
                         continue;
                     }
-                    ((Class3872)Class7521.field29244).method11947((Class1849)class8322, Class4088.field17363, method1134, method1135);
+                    ((Class3872) Blocks.field29244).method11947((Class1849)class8322, Class4088.field17363, method1134, method1135);
                     continue;
                 }
             }

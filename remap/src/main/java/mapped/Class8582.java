@@ -19,7 +19,7 @@ public class Class8582
             final BlockPos field38320 = list.get(0).field38320;
             final Class9052[] array = { new Class9052(field38320.method1141(), Direction.SOUTH), new Class9052(field38320.method1147(), Direction.WEST), new Class9052(field38320.method1143(), Direction.NORTH), new Class9052(field38320.method1145(), Direction.EAST), new Class9052(field38320.method1139(), Direction.UP), new Class9052(field38320.method1137(), Direction.DOWN) };
             for (int length = array.length, i = 0; i < length; ++i) {
-                if (Class4609.method13666(array[i].field38320) != Class7521.field29147) {
+                if (Class4609.method13666(array[i].field38320) != Blocks.AIR) {
                     return true;
                 }
             }

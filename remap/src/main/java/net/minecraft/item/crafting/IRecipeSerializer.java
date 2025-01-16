@@ -2,14 +2,15 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.item.crafting;
 
 import com.google.gson.JsonObject;
+import mapped.*;
 
-public interface Class6096<T extends IRecipe<?>>
+public interface IRecipeSerializer<T extends IRecipe<?>>
 {
-    public static final Class6096<Class3664> field24733 = method18182("crafting_shaped", new Class6097());
-    public static final Class6096<Class3679> field24734 = method18182("crafting_shapeless", new Class6099());
+    public static final IRecipeSerializer<Class3664> field24733 = method18182("crafting_shaped", new Class6097());
+    public static final IRecipeSerializer<Class3679> field24734 = method18182("crafting_shapeless", new Class6099());
     public static final Class6095<Class3670> field24735 = method18182("crafting_special_armordye", new Class6095<Class3670>(Class3670::new));
     public static final Class6095<Class3676> field24736 = method18182("crafting_special_bookcloning", new Class6095<Class3676>(Class3676::new));
     public static final Class6095<Class3669> field24737 = method18182("crafting_special_mapcloning", new Class6095<Class3669>(Class3669::new));
@@ -27,7 +28,7 @@ public interface Class6096<T extends IRecipe<?>>
     public static final Class6098<Class3681> field24749 = method18182("blasting", new Class6098<Class3681>(Class3681::new, 100));
     public static final Class6098<Class3683> field24750 = method18182("smoking", new Class6098<Class3683>(Class3683::new, 100));
     public static final Class6098<Class3682> field24751 = method18182("campfire_cooking", new Class6098<Class3682>(Class3682::new, 100));
-    public static final Class6096<Class3686> field24752 = method18182("stonecutting", new Class6100(Class3686::new));
+    public static final IRecipeSerializer<Class3686> field24752 = method18182("stonecutting", new Class6100(Class3686::new));
     
     T method18179(final ResourceLocation p0, final JsonObject p1);
     
@@ -35,7 +36,7 @@ public interface Class6096<T extends IRecipe<?>>
     
     void method18181(final PacketBuffer p0, final T p1);
     
-    default <S extends Class6096<T>, T extends IRecipe<?>> S method18182(final String s, final S n) {
-        return Registry.method511(Registry.field237, s, n);
+    default <S extends IRecipeSerializer<T>, T extends IRecipe<?>> S method18182(final String s, final S n) {
+        return Registry.register(Registry.field237, s, n);
     }
 }

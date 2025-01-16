@@ -16,5 +16,5 @@ public interface Class2038
     
     int method8113();
     
-    Class120 method8114();
+    Ingredient method8114();
 }

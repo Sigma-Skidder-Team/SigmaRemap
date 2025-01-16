@@ -215,56 +215,56 @@ public class Class3942 extends Class3841
     
     public static Block method12059(final Class181 class181) {
         if (class181 == null) {
-            return Class7521.field29648;
+            return Blocks.SHULKER_BOX;
         }
         switch (Class9395.field40302[class181.ordinal()]) {
             case 1: {
-                return Class7521.field29649;
+                return Blocks.WHITE_SHULKER_BOX;
             }
             case 2: {
-                return Class7521.field29650;
+                return Blocks.ORANGE_SHULKER_BOX;
             }
             case 3: {
-                return Class7521.field29651;
+                return Blocks.MAGENTA_SHULKER_BOX;
             }
             case 4: {
-                return Class7521.field29652;
+                return Blocks.LIGHT_BLUE_SHULKER_BOX;
             }
             case 5: {
-                return Class7521.field29653;
+                return Blocks.YELLOW_SHULKER_BOX;
             }
             case 6: {
-                return Class7521.field29654;
+                return Blocks.LIME_SHULKER_BOX;
             }
             case 7: {
-                return Class7521.field29655;
+                return Blocks.PINK_SHULKER_BOX;
             }
             case 8: {
-                return Class7521.field29656;
+                return Blocks.GRAY_SHULKER_BOX;
             }
             case 9: {
-                return Class7521.field29657;
+                return Blocks.LIGHT_GRAY_SHULKER_BOX;
             }
             case 10: {
-                return Class7521.field29658;
+                return Blocks.CYAN_SHULKER_BOX;
             }
             default: {
-                return Class7521.field29659;
+                return Blocks.PURPLE_SHULKER_BOX;
             }
             case 12: {
-                return Class7521.field29660;
+                return Blocks.BLUE_SHULKER_BOX;
             }
             case 13: {
-                return Class7521.field29661;
+                return Blocks.BROWN_SHULKER_BOX;
             }
             case 14: {
-                return Class7521.field29662;
+                return Blocks.GREEN_SHULKER_BOX;
             }
             case 15: {
-                return Class7521.field29663;
+                return Blocks.RED_SHULKER_BOX;
             }
             case 16: {
-                return Class7521.field29664;
+                return Blocks.BLACK_SHULKER_BOX;
             }
         }
     }

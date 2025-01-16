@@ -97,7 +97,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     private boolean method12030(final BlockState class7096) {
-        return class7096.getBlock() == Class7521.field29529;
+        return class7096.getBlock() == Blocks.field29529;
     }
     
     @Override
@@ -212,7 +212,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     private static boolean method12034(final BlockState class7096) {
-        return class7096.getBlock() == Class7521.field29818 && class7096.get((IProperty<Boolean>)Class3918.field17760);
+        return class7096.getBlock() == Blocks.CAMPFIRE && class7096.get((IProperty<Boolean>)Class3918.field17760);
     }
     
     @Override

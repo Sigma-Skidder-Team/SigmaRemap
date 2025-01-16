@@ -33,7 +33,7 @@ public class Class3878 extends Class3874 implements Class3872
     
     @Override
     public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
-        return class7096.getBlock() == Class7521.field29298;
+        return class7096.getBlock() == Blocks.field29298;
     }
     
     public Class7112 method11952() {
@@ -89,7 +89,7 @@ public class Class3878 extends Class3874 implements Class3872
             for (int j = -1; j <= 1; ++j) {
                 float n2 = 0.0f;
                 final BlockState method1140 = class3834.getBlockState(method1139.add(i, 0, j));
-                if (method1140.getBlock() == Class7521.field29298) {
+                if (method1140.getBlock() == Blocks.field29298) {
                     n2 = 1.0f;
                     if (method1140.get((IProperty<Integer>)Class4021.field18105) > 0) {
                         n2 = 3.0f;

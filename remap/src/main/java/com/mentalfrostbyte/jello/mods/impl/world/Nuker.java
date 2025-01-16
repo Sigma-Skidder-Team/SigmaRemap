@@ -88,7 +88,7 @@ public class Nuker extends Module
     public static void method10610(final BlockPos class354) {
         Nuker.mc.method5269().method17292(new Class4399(Class2003.field11240, class354, Direction.UP));
         Nuker.mc.method5269().method17292(new Class4399(Class2003.field11242, class354, Direction.UP));
-        Nuker.mc.world.method6692(class354, new BlockState(Class7521.field29147, (ImmutableMap<IProperty<?>, Comparable<?>>)ImmutableMap.builder().build()));
+        Nuker.mc.world.method6692(class354, new BlockState(Blocks.AIR, (ImmutableMap<IProperty<?>, Comparable<?>>)ImmutableMap.builder().build()));
     }
     
     private boolean method10611(final BlockPos class354) {

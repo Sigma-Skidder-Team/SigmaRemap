@@ -100,12 +100,12 @@ public class Class7067 extends Class7065
         for (final Class9127 class9128 : this.field27517) {
             for (int i = class9128.method33116(); i < class9128.method33116() + class9128.method33114(); ++i) {
                 final BlockState method33115 = class9128.method33115();
-                if (method33115.getBlock() != Class7521.field29147) {
+                if (method33115.getBlock() != Blocks.AIR) {
                     this.field27521 = false;
                     this.field27520[i] = method33115;
                 }
             }
-            if (class9128.method33115().getBlock() != Class7521.field29147) {
+            if (class9128.method33115().getBlock() != Blocks.AIR) {
                 this.field27522 += class9128.method33114() + n2;
                 n2 = 0;
             }
@@ -331,9 +331,9 @@ public class Class7067 extends Class7065
     public static Class7067 method21599() {
         final Class7067 class7067 = Class8705.field36578.method29874();
         class7067.method21588(Class7102.field27633);
-        class7067.method21590().add(new Class9127(1, Class7521.field29172));
-        class7067.method21590().add(new Class9127(2, Class7521.field29156));
-        class7067.method21590().add(new Class9127(1, Class7521.field29155));
+        class7067.method21590().add(new Class9127(1, Blocks.field29172));
+        class7067.method21590().add(new Class9127(2, Blocks.DIRT));
+        class7067.method21590().add(new Class9127(1, Blocks.GRASS_BLOCK));
         class7067.method21591();
         class7067.method21589().put("village", Maps.newHashMap());
         return class7067;
@@ -362,8 +362,8 @@ public class Class7067 extends Class7065
         field27504 = Class4535.field19963.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27505 = Class4535.field19964.method13527(new Class5125(false)).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27506 = Class4535.field19967.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
-        field27507 = Class4535.field20002.method13527(new Class5141(Class7521.field29173.getDefaultState())).method28610(Class7133.field27812.method21889((Object)new Class6928(4)));
-        field27508 = Class4535.field20002.method13527(new Class5141(Class7521.field29174.getDefaultState())).method28610(Class7133.field27811.method21889((Object)new Class6928(80)));
+        field27507 = Class4535.field20002.method13527(new Class5141(Blocks.field29173.getDefaultState())).method28610(Class7133.field27812.method21889((Object)new Class6928(4)));
+        field27508 = Class4535.field20002.method13527(new Class5141(Blocks.field29174.getDefaultState())).method28610(Class7133.field27811.method21889((Object)new Class6928(80)));
         field27509 = Class4535.field19970.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27510 = Class4535.field19960.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27511 = Class4535.field19969.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));

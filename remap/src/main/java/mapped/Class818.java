@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class Class818 extends Class789
 {
-    private static final Class120 field4380;
+    private static final Ingredient field4380;
     public float field4381;
     public float field4382;
     public float field4383;
@@ -167,6 +167,6 @@ public class Class818 extends Class789
     }
     
     static {
-        field4380 = Class120.method618(Items.field31314, Items.field31430, Items.field31429, Items.field31576);
+        field4380 = Ingredient.method618(Items.field31314, Items.field31430, Items.field31429, Items.field31576);
     }
 }

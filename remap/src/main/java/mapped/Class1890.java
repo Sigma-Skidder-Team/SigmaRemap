@@ -71,7 +71,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
             if (mutableInt != null) {
                 mutableInt.setValue(0);
             }
-            return Class7521.field29147.getDefaultState();
+            return Blocks.AIR.getDefaultState();
         }
         final IBlockReader method7295 = this.method7295(Class353.method1095(BlockPos.unpackX(n)), Class353.method1095(BlockPos.unpackZ(n)));
         if (method7295 != null) {
@@ -81,12 +81,12 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
             if (mutableInt != null) {
                 mutableInt.setValue(method7296.getOpacity(this.field10275.method7414(), this.field10279));
             }
-            return b ? method7296 : Class7521.field29147.getDefaultState();
+            return b ? method7296 : Blocks.AIR.getDefaultState();
         }
         if (mutableInt != null) {
             mutableInt.setValue(16);
         }
-        return Class7521.field29172.getDefaultState();
+        return Blocks.field29172.getDefaultState();
     }
     
     public VoxelShape method7298(final BlockState class7096, final long n, final Direction class7097) {

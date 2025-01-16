@@ -44,7 +44,7 @@ public class Class4516 extends Class4515
     @Override
     public void method13511(final String anObject, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if ("chest".equals(anObject)) {
-            class355.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
+            class355.setBlockState(class354, Blocks.AIR.getDefaultState(), 3);
             final TileEntity method6727 = class355.getTileEntity(class354.method1139());
             if (method6727 instanceof Class475) {
                 ((Class475)method6727).method2327(Class9020.field38091, random.nextLong());
@@ -65,8 +65,8 @@ public class Class4516 extends Class4515
             final BlockPos method32857 = this.field19920.add(Class6585.method19953(method32853, new BlockPos(3, 0, 5)));
             final BlockState method32858 = class1851.getBlockState(method32857.method1139());
             if (!method32858.method21706()) {
-                if (method32858.getBlock() != Class7521.field29307) {
-                    class1851.setBlockState(method32857, Class7521.field29331.getDefaultState(), 3);
+                if (method32858.getBlock() != Blocks.field29307) {
+                    class1851.setBlockState(method32857, Blocks.field29331.getDefaultState(), 3);
                 }
             }
         }

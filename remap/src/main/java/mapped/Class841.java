@@ -161,8 +161,8 @@ public class Class841 extends Class785 implements Class762
             if (!this.world.isRemote) {
                 final BlockState method6701 = this.world.getBlockState(class354);
                 if (!method6701.method21706()) {
-                    if (method6701.getBlock() != Class7521.field29264) {
-                        if (method6701.getBlock() != Class7521.field29247) {
+                    if (method6701.getBlock() != Blocks.MOVING_PISTON) {
+                        if (method6701.getBlock() != Blocks.field29247) {
                             this.method5016();
                         }
                         else {

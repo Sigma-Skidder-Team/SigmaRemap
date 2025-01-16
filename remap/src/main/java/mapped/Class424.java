@@ -35,7 +35,7 @@ public class Class424 extends Entity
     
     public Class424(final EntityType<? extends Class424> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field2573 = Class7521.field29175.getDefaultState();
+        this.field2573 = Blocks.field29175.getDefaultState();
         this.field2575 = true;
         this.field2578 = 40;
         this.field2579 = 2.0f;
@@ -144,7 +144,7 @@ public class Class424 extends Entity
                     else {
                         final BlockState method21700 = this.world.getBlockState(method21697);
                         this.method1936(this.getMotion().mul(0.7, -0.5, 0.7));
-                        if (method21700.getBlock() != Class7521.field29264) {
+                        if (method21700.getBlock() != Blocks.MOVING_PISTON) {
                             this.method1652();
                             if (this.field2576) {
                                 if (method21696 instanceof Class3986) {
@@ -276,7 +276,7 @@ public class Class424 extends Entity
             this.field2580 = class51.getCompound("TileEntityData");
         }
         if (this.field2573.method21706()) {
-            this.field2573 = Class7521.field29175.getDefaultState();
+            this.field2573 = Blocks.field29175.getDefaultState();
         }
     }
     

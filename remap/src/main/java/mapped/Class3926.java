@@ -52,7 +52,7 @@ public class Class3926 extends Class3924
         if (class7096.get((IProperty<Boolean>)Class3926.field17782)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
-        return (class7097.getOpposite() == class7096.get((IProperty<Direction>)Class3926.field17791) && !class7096.method21752(class7099, class7100)) ? Class7521.field29147.getDefaultState() : class7096;
+        return (class7097.getOpposite() == class7096.get((IProperty<Direction>)Class3926.field17791) && !class7096.method21752(class7099, class7100)) ? Blocks.AIR.getDefaultState() : class7096;
     }
     
     @Override

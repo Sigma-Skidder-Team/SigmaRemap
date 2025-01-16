@@ -1199,7 +1199,7 @@ public class Class7970
         }
         final BlockPos method6702 = class6782.method1149(method25841(n));
         final Class7096 method6703 = class6780.getBlockState(method6702);
-        return !method6703.method21722(class6780, method6702) && (n != 1 || method6703.method21696() != Class7521.field29329) && !method25864(class6779, class6780, class6781, class6782, method6701, n, class6783, n2);
+        return !method6703.method21722(class6780, method6702) && (n != 1 || method6703.method21696() != Blocks.field29329) && !method25864(class6779, class6780, class6781, class6782, method6701, n, class6783, n2);
     }
     
     private static boolean method25861(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
@@ -1223,7 +1223,7 @@ public class Class7970
         }
         final BlockPos method6702 = class6782.method1149(method25841(n));
         final Class7096 method6703 = class6780.getBlockState(method6702);
-        return !method6703.method21722(class6780, method6702) && (n != 1 || method6703.method21696() != Class7521.field29329);
+        return !method6703.method21722(class6780, method6702) && (n != 1 || method6703.method21696() != Blocks.field29329);
     }
     
     private static boolean method25863(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final TextureAtlasSprite class6783, final int n2) {
@@ -1763,7 +1763,7 @@ public class Class7970
         Class7970.field32753 = null;
         Class7970.field32754 = null;
         Class7970.field32755 = false;
-        field32766 = Class7521.field29147.getDefaultState();
+        field32766 = Blocks.AIR.getDefaultState();
         Class7970.field32767 = null;
         Class7970.field32768 = new ResourceLocation("optifine/ctm/default/empty");
         field32769 = new Class2192[] { Class2192.field13334, Class2192.field13335, Class2192.field13332, Class2192.field13333 };

@@ -17,7 +17,7 @@ public class Class7742<P extends Class367>
     private final Function<Dynamic<?>, P> field31652;
     
     private static <P extends Class367> Class7742<P> method24706(final String s, final Function<Dynamic<?>, P> function) {
-        return Registry.method511(Registry.field221, s, new Class7742<P>(function));
+        return Registry.register(Registry.field221, s, new Class7742<P>(function));
     }
     
     private Class7742(final Function<Dynamic<?>, P> field31652) {

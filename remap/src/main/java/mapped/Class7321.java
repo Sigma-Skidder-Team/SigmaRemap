@@ -44,7 +44,7 @@ public class Class7321
                     Class8787.method30575(s.toLowerCase(), class7494, new BlockPos(n, n2, n3), 2, method23250);
                     for (int i = 0; i < n; ++i) {
                         for (int j = 0; j < n3; ++j) {
-                            new Class118(Class7521.field29154.getDefaultState(), Collections.EMPTY_SET, null).method610(method23250, new BlockPos(class7494.getX() + i, class7494.getY() + 1, class7494.getZ() + j), 2);
+                            new Class118(Blocks.POLISHED_ANDESITE.getDefaultState(), Collections.EMPTY_SET, null).method610(method23250, new BlockPos(class7494.getX() + i, class7494.getY() + 1, class7494.getZ() + j), 2);
                         }
                     }
                     Class8787.method30574(class7494.add(1, 0, -1), method23250);

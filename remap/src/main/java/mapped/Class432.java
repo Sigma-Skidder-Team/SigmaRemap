@@ -32,7 +32,7 @@ public class Class432 extends Class428
     
     @Override
     public BlockState method2141() {
-        return Class7521.field29283.getDefaultState();
+        return Blocks.TNT.getDefaultState();
     }
     
     @Override
@@ -80,7 +80,7 @@ public class Class432 extends Class428
                     if (!this.world.method6765().method31216(Class8878.field37321)) {
                         return;
                     }
-                    this.method1764(Class7521.field29283);
+                    this.method1764(Blocks.TNT);
                     return;
                 }
             }

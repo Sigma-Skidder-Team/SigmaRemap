@@ -20,7 +20,7 @@ public interface Class469
     default void method2403(final PlayerEntity playerEntity) {
         final IRecipe<?> method2402 = this.method2402();
         if (method2402 != null) {
-            if (!method2402.method11295()) {
+            if (!method2402.isDynamic()) {
                 playerEntity.method2862((Collection<IRecipe<?>>)Collections.singleton(method2402));
                 this.method2401(null);
             }
@@ -28,7 +28,7 @@ public interface Class469
     }
     
     default boolean method2416(final World class1847, final Class513 class1848, final IRecipe<?> class1849) {
-        if (!class1849.method11295()) {
+        if (!class1849.isDynamic()) {
             if (class1847.method6765().method31216(Class8878.field37335)) {
                 if (!class1848.method2948().method19695(class1849)) {
                     return false;

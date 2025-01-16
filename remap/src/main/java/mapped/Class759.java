@@ -818,7 +818,7 @@ public abstract class Class759 extends LivingEntity
             }
         }
         final Item method27622 = class8321.getItem();
-        if (method27622 == Class7521.field29342.method11704() || (method27622 instanceof Class4036 && ((Class4036)method27622).method12240() instanceof Class3932)) {
+        if (method27622 == Blocks.field29342.method11704() || (method27622 instanceof Class4036 && ((Class4036)method27622).method12240() instanceof Class3932)) {
             return Class2215.field13605;
         }
         if (method27622 instanceof Class4055) {

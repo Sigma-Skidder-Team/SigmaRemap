@@ -23,9 +23,9 @@ public class Class9356
     }
     
     public void method34678() {
-        this.field40138[0] = Minecraft.method5277().method5322().method6453().method35428(Class7521.field29174.getDefaultState()).method18696();
+        this.field40138[0] = Minecraft.method5277().method5322().method6453().method35428(Blocks.field29174.getDefaultState()).method18696();
         this.field40138[1] = Class7637.field30239.method11332();
-        this.field40139[0] = Minecraft.method5277().method5322().method6453().method35428(Class7521.field29173.getDefaultState()).method18696();
+        this.field40139[0] = Minecraft.method5277().method5322().method6453().method35428(Blocks.field29173.getDefaultState()).method18696();
         this.field40139[1] = Class7637.field30240.method11332();
         this.field40140 = Class7637.field30241.method11332();
     }
@@ -239,10 +239,10 @@ public class Class9356
                             if (Class9570.field41248.method22605()) {
                                 method21822 = Class9570.method35820(method21820, Class9570.field41248, class1856, method21819, class1859);
                             }
-                            if (method21822 || method21821 == Class7521.field29213 || method21821 instanceof Class3844 || method21821 == Class7521.field29417 || method21821 == Class7521.field29516) {
+                            if (method21822 || method21821 == Blocks.field29213 || method21821 instanceof Class3844 || method21821 == Blocks.field29417 || method21821 == Blocks.field29516) {
                                 field40140 = this.field40140;
                             }
-                            if (method21821 == Class7521.field29298 || method21821 == Class7521.field29637) {
+                            if (method21821 == Blocks.field29298 || method21821 == Blocks.GRASS_PATH) {
                                 a = 0.9375f;
                                 a2 = 0.9375f;
                             }

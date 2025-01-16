@@ -41,14 +41,14 @@ public enum Class230
     field840("half_vertical_right", "vhr", " ##", " ##", " ##"), 
     field841("half_horizontal_bottom", "hhb", "   ", "###", "###"), 
     field842("border", "bo", "###", "# #", "###"), 
-    field843("curly_border", "cbo", new ItemStack(Class7521.field29388)),
+    field843("curly_border", "cbo", new ItemStack(Blocks.field29388)),
     field844("gradient", "gra", "# #", " # ", " # "), 
     field845("gradient_up", "gru", " # ", " # ", "# #"), 
-    field846("bricks", "bri", new ItemStack(Class7521.field29282)),
+    field846("bricks", "bri", new ItemStack(Blocks.BRICKS)),
     field847("globe", "glb"), 
     field848("creeper", "cre", new ItemStack(Items.field31527)),
     field849("skull", "sku", new ItemStack(Items.field31524)),
-    field850("flower", "flo", new ItemStack(Class7521.field29274)),
+    field850("flower", "flo", new ItemStack(Blocks.OXEYE_DAISY)),
     field851("mojang", "moj", new ItemStack(Items.field31342));
     
     public static final int field852;

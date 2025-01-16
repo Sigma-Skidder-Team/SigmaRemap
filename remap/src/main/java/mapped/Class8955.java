@@ -168,7 +168,7 @@ public class Class8955
                         final int n36 = n28 + (n32 - 1) * n30 - n31 * n29;
                         final boolean b = n33 < 0;
                         class400.setPos(n34, n35, n36);
-                        this.field37652.method6692(class400, b ? Class7521.field29286.getDefaultState() : Class7521.field29147.getDefaultState());
+                        this.field37652.method6692(class400, b ? Blocks.OBSIDIAN.getDefaultState() : Blocks.AIR.getDefaultState());
                     }
                 }
             }
@@ -185,10 +185,10 @@ public class Class8955
                     }
                 }
                 class400.setPos(n27 + n37 * n29, method35647 + n38, n28 + n37 * n30);
-                this.field37652.setBlockState(class400, Class7521.field29286.getDefaultState(), 3);
+                this.field37652.setBlockState(class400, Blocks.OBSIDIAN.getDefaultState(), 3);
             }
         }
-        final BlockState class401 = ((StateHolder<O, BlockState>)Class7521.field29341.getDefaultState()).with(Class3998.field18018, (n29 != 0) ? Direction.Axis.X : Direction.Axis.Z);
+        final BlockState class401 = ((StateHolder<O, BlockState>) Blocks.field29341.getDefaultState()).with(Class3998.field18018, (n29 != 0) ? Direction.Axis.X : Direction.Axis.Z);
         for (int n39 = 0; n39 < 2; ++n39) {
             for (int n40 = 0; n40 < 3; ++n40) {
                 class400.setPos(n27 + n39 * n29, method35647 + n40, n28 + n39 * n30);

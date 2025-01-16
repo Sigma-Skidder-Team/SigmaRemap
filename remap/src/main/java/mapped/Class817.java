@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 
 public class Class817 extends Class789
 {
-    private static final Class120 field4376;
+    private static final Ingredient field4376;
     private static final DataParameter<Boolean> field4377;
     private Class3452<PlayerEntity> field4378;
     private Class3474 field4379;
@@ -232,7 +232,7 @@ public class Class817 extends Class789
                     return false;
                 }
                 final BlockState method6701 = class1852.getBlockState(class1853.method1139());
-                if (method6701.getBlock() == Class7521.field29155 || method6701.method21755(Class7188.field27907)) {
+                if (method6701.getBlock() == Blocks.GRASS_BLOCK || method6701.method21755(Class7188.field27907)) {
                     return true;
                 }
             }
@@ -251,7 +251,7 @@ public class Class817 extends Class789
     }
     
     static {
-        field4376 = Class120.method618(Items.field31379, Items.field31380);
+        field4376 = Ingredient.method618(Items.field31379, Items.field31380);
         field4377 = EntityDataManager.method33564(Class817.class, Class7709.field30661);
     }
 }

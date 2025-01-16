@@ -15,7 +15,7 @@ public class Class8411
     private static final Logger field34534;
     private final Item field34535;
     private final int field34536;
-    private final List<Class120> field34537;
+    private final List<Ingredient> field34537;
     private final Class6056 field34538;
     private String field34539;
     
@@ -35,7 +35,7 @@ public class Class8411
     }
     
     public Class8411 method28074(final Class7909<Item> class7909) {
-        return this.method28077(Class120.method620(class7909));
+        return this.method28077(Ingredient.method620(class7909));
     }
     
     public Class8411 method28075(final Class3832 class3832) {
@@ -44,16 +44,16 @@ public class Class8411
     
     public Class8411 method28076(final Class3832 class3832, final int n) {
         for (int i = 0; i < n; ++i) {
-            this.method28077(Class120.method618(class3832));
+            this.method28077(Ingredient.method618(class3832));
         }
         return this;
     }
     
-    public Class8411 method28077(final Class120 class120) {
+    public Class8411 method28077(final Ingredient class120) {
         return this.method28078(class120, 1);
     }
     
-    public Class8411 method28078(final Class120 class120, final int n) {
+    public Class8411 method28078(final Ingredient class120, final int n) {
         for (int i = 0; i < n; ++i) {
             this.field34537.add(class120);
         }

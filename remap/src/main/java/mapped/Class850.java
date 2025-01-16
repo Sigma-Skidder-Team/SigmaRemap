@@ -131,7 +131,7 @@ public class Class850 extends Class763
     }
     
     private boolean method5075(final PlayerEntity playerEntity) {
-        if (playerEntity.field3006.field2740.get(3).getItem() != Class7521.field29342.method11704()) {
+        if (playerEntity.field3006.field2740.get(3).getItem() != Blocks.field29342.method11704()) {
             final Vec3d method16738 = playerEntity.method1741(1.0f).normalize();
             final Vec3d class513 = new Vec3d(this.getPosX() - playerEntity.getPosX(), this.method1944() - playerEntity.method1944(), this.getPosZ() - playerEntity.getPosZ());
             return method16738.dotProduct(class513.normalize()) > 1.0 - 0.025 / class513.length() && playerEntity.method2747(this);

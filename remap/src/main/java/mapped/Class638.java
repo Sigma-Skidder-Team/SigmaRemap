@@ -20,8 +20,8 @@ public class Class638 extends Class623<Class638>
         final Block method21696 = class9127.method33115().getBlock();
         Item class9128 = method21696.method11704();
         if (class9128 == Items.AIR) {
-            if (method21696 != Class7521.field29173) {
-                if (method21696 == Class7521.field29174) {
+            if (method21696 != Blocks.field29173) {
+                if (method21696 == Blocks.field29174) {
                     class9128 = Items.field31351;
                 }
             }

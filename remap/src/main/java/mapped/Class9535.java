@@ -41,8 +41,8 @@ public class Class9535
         }
         else {
             final Block method21696 = this.field41037.world.getBlockState(new BlockPos(this.field41037)).method21696();
-            if (method21696 != Class7521.field29307) {
-                if (method21696 == Class7521.field29388) {
+            if (method21696 != Blocks.field29307) {
+                if (method21696 == Blocks.field29388) {
                     this.field41043 = "vines";
                 }
             }

@@ -28,6 +28,6 @@ public class Class5133 implements Class5113
     }
     
     public static Class5133 method16042(final Dynamic<?> dynamic) {
-        return new Class5133(Class2066.method8157(dynamic.get("target").asString("")), dynamic.get("state").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()), dynamic.get("size").asInt(0));
+        return new Class5133(Class2066.method8157(dynamic.get("target").asString("")), dynamic.get("state").map((Function) BlockState::deserialize).orElse(Blocks.AIR.getDefaultState()), dynamic.get("size").asInt(0));
     }
 }

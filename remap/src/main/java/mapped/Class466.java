@@ -13,6 +13,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import com.google.common.collect.Maps;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
@@ -31,9 +32,9 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     private int field2759;
     public final Class7604 field2760;
     private final Map<ResourceLocation, Integer> field2761;
-    public final Class8976<? extends Class3680> field2762;
+    public final IRecipeType<? extends Class3680> field2762;
     
-    public Class466(final Class5412<?> class5412, final Class8976<? extends Class3680> field2762) {
+    public Class466(final Class5412<?> class5412, final IRecipeType<? extends Class3680> field2762) {
         super(class5412);
         this.field2755 = NonNullList.withSize(3, ItemStack.EMPTY);
         this.field2760 = new Class7605(this);
@@ -44,7 +45,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     public static Map<Item, Integer> method2392() {
         final LinkedHashMap linkedHashMap = Maps.newLinkedHashMap();
         method2394(linkedHashMap, Items.field31351, 20000);
-        method2394(linkedHashMap, Class7521.field29547, 16000);
+        method2394(linkedHashMap, Blocks.field29547, 16000);
         method2394(linkedHashMap, Items.field31437, 2400);
         method2394(linkedHashMap, Items.field31281, 1600);
         method2394(linkedHashMap, Items.field31282, 1600);
@@ -54,30 +55,30 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         method2393(linkedHashMap, Class7855.field32244, 150);
         method2393(linkedHashMap, Class7855.field32247, 300);
         method2393(linkedHashMap, Class7855.field32246, 300);
-        method2394(linkedHashMap, Class7521.field29336, 300);
-        method2394(linkedHashMap, Class7521.field29620, 300);
-        method2394(linkedHashMap, Class7521.field29619, 300);
-        method2394(linkedHashMap, Class7521.field29621, 300);
-        method2394(linkedHashMap, Class7521.field29623, 300);
-        method2394(linkedHashMap, Class7521.field29622, 300);
-        method2394(linkedHashMap, Class7521.field29389, 300);
-        method2394(linkedHashMap, Class7521.field29615, 300);
-        method2394(linkedHashMap, Class7521.field29614, 300);
-        method2394(linkedHashMap, Class7521.field29616, 300);
-        method2394(linkedHashMap, Class7521.field29618, 300);
-        method2394(linkedHashMap, Class7521.field29617, 300);
-        method2394(linkedHashMap, Class7521.field29220, 300);
-        method2394(linkedHashMap, Class7521.field29284, 300);
-        method2394(linkedHashMap, Class7521.field29813, 300);
-        method2394(linkedHashMap, Class7521.field29335, 300);
-        method2394(linkedHashMap, Class7521.field29292, 300);
-        method2394(linkedHashMap, Class7521.field29468, 300);
-        method2394(linkedHashMap, Class7521.field29296, 300);
-        method2394(linkedHashMap, Class7521.field29472, 300);
+        method2394(linkedHashMap, Blocks.field29336, 300);
+        method2394(linkedHashMap, Blocks.BIRCH_FENCE, 300);
+        method2394(linkedHashMap, Blocks.SPRUCE_FENCE, 300);
+        method2394(linkedHashMap, Blocks.JUNGLE_FENCE, 300);
+        method2394(linkedHashMap, Blocks.DARK_OAK_FENCE, 300);
+        method2394(linkedHashMap, Blocks.ACACIA_FENCE, 300);
+        method2394(linkedHashMap, Blocks.field29389, 300);
+        method2394(linkedHashMap, Blocks.BIRCH_FENCE_GATE, 300);
+        method2394(linkedHashMap, Blocks.SPRUCE_FENCE_GATE, 300);
+        method2394(linkedHashMap, Blocks.JUNGLE_FENCE_GATE, 300);
+        method2394(linkedHashMap, Blocks.DARK_OAK_FENCE_GATE, 300);
+        method2394(linkedHashMap, Blocks.ACACIA_FENCE_GATE, 300);
+        method2394(linkedHashMap, Blocks.field29220, 300);
+        method2394(linkedHashMap, Blocks.BOOKSHELF, 300);
+        method2394(linkedHashMap, Blocks.LECTERN, 300);
+        method2394(linkedHashMap, Blocks.field29335, 300);
+        method2394(linkedHashMap, Blocks.CHEST, 300);
+        method2394(linkedHashMap, Blocks.field29468, 300);
+        method2394(linkedHashMap, Blocks.CRAFTING_TABLE, 300);
+        method2394(linkedHashMap, Blocks.field29472, 300);
         method2393(linkedHashMap, Class7855.field32257, 300);
         method2394(linkedHashMap, Items.field31279, 300);
         method2394(linkedHashMap, Items.field31376, 300);
-        method2394(linkedHashMap, Class7521.field29307, 300);
+        method2394(linkedHashMap, Blocks.field29307, 300);
         method2393(linkedHashMap, Class7855.field32273, 200);
         method2394(linkedHashMap, Items.field31288, 200);
         method2394(linkedHashMap, Items.field31287, 200);
@@ -92,17 +93,17 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         method2393(linkedHashMap, Class7855.field32249, 100);
         method2394(linkedHashMap, Items.field31300, 100);
         method2393(linkedHashMap, Class7855.field32241, 67);
-        method2394(linkedHashMap, Class7521.field29715, 4001);
+        method2394(linkedHashMap, Blocks.DRIED_KELP_BLOCK, 4001);
         method2394(linkedHashMap, Items.field31611, 300);
-        method2394(linkedHashMap, Class7521.field29761, 50);
-        method2394(linkedHashMap, Class7521.field29243, 100);
-        method2394(linkedHashMap, Class7521.field29805, 400);
-        method2394(linkedHashMap, Class7521.field29806, 300);
-        method2394(linkedHashMap, Class7521.field29807, 300);
-        method2394(linkedHashMap, Class7521.field29810, 300);
-        method2394(linkedHashMap, Class7521.field29811, 300);
-        method2394(linkedHashMap, Class7521.field29814, 300);
-        method2394(linkedHashMap, Class7521.field29822, 300);
+        method2394(linkedHashMap, Blocks.BAMBOO, 50);
+        method2394(linkedHashMap, Blocks.field29243, 100);
+        method2394(linkedHashMap, Blocks.SCAFFOLDING, 400);
+        method2394(linkedHashMap, Blocks.LOOM, 300);
+        method2394(linkedHashMap, Blocks.BARREL, 300);
+        method2394(linkedHashMap, Blocks.CARTOGRAPHY_TABLE, 300);
+        method2394(linkedHashMap, Blocks.FLETCHING_TABLE, 300);
+        method2394(linkedHashMap, Blocks.SMITHING_TABLE, 300);
+        method2394(linkedHashMap, Blocks.COMPOSTER, 300);
         return linkedHashMap;
     }
     
@@ -238,7 +239,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
                 if (!this.field2656.isRemote) {
                     this.method2401(class3662);
                 }
-                if (class3663.getItem() == Class7521.field29212.method11704()) {
+                if (class3663.getItem() == Blocks.field29212.method11704()) {
                     if (!this.field2755.get(1).method27620()) {
                         if (this.field2755.get(1).getItem() == Items.field31349) {
                             this.field2755.set(1, new ItemStack(Items.field31350));
@@ -379,7 +380,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     @Override
     public void method2401(final IRecipe<?> class3662) {
         if (class3662 != null) {
-            this.field2761.compute(class3662.method11298(), (p0, n) -> 1 + ((n != null) ? n : 0));
+            this.field2761.compute(class3662.getId(), (p0, n) -> 1 + ((n != null) ? n : 0));
         }
     }
     

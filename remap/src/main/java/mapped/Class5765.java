@@ -9,6 +9,8 @@ import java.util.Iterator;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipeSerializer;
+
 import java.util.List;
 
 public class Class5765 implements Class5763
@@ -17,11 +19,11 @@ public class Class5765 implements Class5763
     private final Item field23574;
     private final int field23575;
     private final String field23576;
-    private final List<Class120> field23577;
+    private final List<Ingredient> field23577;
     private final Class6056 field23578;
     private final ResourceLocation field23579;
     
-    public Class5765(final ResourceLocation field23573, final Item field23574, final int field23575, final String field23576, final List<Class120> field23577, final Class6056 field23578, final ResourceLocation field23579) {
+    public Class5765(final ResourceLocation field23573, final Item field23574, final int field23575, final String field23576, final List<Ingredient> field23577, final Class6056 field23578, final ResourceLocation field23579) {
         this.field23573 = field23573;
         this.field23574 = field23574;
         this.field23575 = field23575;
@@ -37,7 +39,7 @@ public class Class5765 implements Class5763
             jsonObject.addProperty("group", this.field23576);
         }
         final JsonArray jsonArray = new JsonArray();
-        final Iterator<Class120> iterator = this.field23577.iterator();
+        final Iterator<Ingredient> iterator = this.field23577.iterator();
         while (iterator.hasNext()) {
             jsonArray.add(iterator.next().method615());
         }
@@ -51,8 +53,8 @@ public class Class5765 implements Class5763
     }
     
     @Override
-    public Class6096<?> method17156() {
-        return Class6096.field24734;
+    public IRecipeSerializer<?> method17156() {
+        return IRecipeSerializer.field24734;
     }
     
     @Override

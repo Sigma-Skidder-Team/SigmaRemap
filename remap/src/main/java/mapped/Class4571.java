@@ -21,9 +21,9 @@ public class Class4571 extends Class4535<Class5122>
     
     public Class4571(final Function<Dynamic<?>, ? extends Class5122> function) {
         super(function);
-        this.field20061 = Class7521.field29599.getDefaultState();
-        this.field20062 = Class7521.field29217.getDefaultState();
-        this.field20063 = Class7521.field29173.getDefaultState();
+        this.field20061 = Blocks.field29599.getDefaultState();
+        this.field20062 = Blocks.field29217.getDefaultState();
+        this.field20063 = Blocks.field29173.getDefaultState();
     }
     
     public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, BlockPos class1853, final Class5122 class1854) {
@@ -88,6 +88,6 @@ public class Class4571 extends Class4535<Class5122>
     }
     
     static {
-        field20060 = Class169.method766(Class7521.field29175);
+        field20060 = Class169.method766(Blocks.field29175);
     }
 }

@@ -38,7 +38,7 @@ public class Class3827 extends Item
             return Class2201.field13403;
         }
         method21653.method6705(method21652, method21656, Class8520.field35201, Class286.field1582, 1.0f, Class3827.field17363.nextFloat() * 0.4f + 0.8f);
-        method21653.setBlockState(method21656, ((Class4011)Class7521.field29289).method12184(method21653, method21656), 11);
+        method21653.setBlockState(method21656, ((Class4011) Blocks.FIRE).method12184(method21653, method21656), 11);
         final ItemStack method21657 = class7075.method21651();
         if (method21652 instanceof Class513) {
             Class7770.field31799.method13836((Class513)method21652, method21656, method21657);
@@ -48,7 +48,7 @@ public class Class3827 extends Item
     }
     
     public static boolean method11759(final BlockState class7096) {
-        if (class7096.getBlock() == Class7521.field29818) {
+        if (class7096.getBlock() == Blocks.CAMPFIRE) {
             if (!class7096.get((IProperty<Boolean>)Class8970.field37747)) {
                 if (!class7096.get((IProperty<Boolean>)Class8970.field37736)) {
                     return true;
@@ -59,14 +59,14 @@ public class Class3827 extends Item
     }
     
     public static boolean method11760(final BlockState class7096, final Class1851 class7097, final BlockPos class7098) {
-        final BlockState method12184 = ((Class4011)Class7521.field29289).method12184(class7097, class7098);
+        final BlockState method12184 = ((Class4011) Blocks.FIRE).method12184(class7097, class7098);
         boolean b = false;
         final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
         while (iterator.hasNext()) {
-            if (class7097.getBlockState(class7098.method1149(iterator.next())).getBlock() != Class7521.field29286) {
+            if (class7097.getBlockState(class7098.method1149(iterator.next())).getBlock() != Blocks.OBSIDIAN) {
                 continue;
             }
-            if (((Class3998)Class7521.field29341).method12148(class7097, class7098) == null) {
+            if (((Class3998) Blocks.field29341).method12148(class7097, class7098) == null) {
                 continue;
             }
             b = true;

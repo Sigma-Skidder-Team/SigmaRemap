@@ -92,7 +92,7 @@ public class Class6348 extends Class6346<Class7066>
         field25391 = StreamSupport.stream(Registry.BLOCK.spliterator(), false).flatMap(class3833 -> class3833.getStateContainer().method32902().stream()).collect((Collector<? super Object, ?, List<BlockState>>)Collectors.toList());
         field25392 = MathHelper.ceil(MathHelper.method35640((float)Class6348.field25391.size()));
         field25393 = MathHelper.ceil(Class6348.field25391.size() / (float)Class6348.field25392);
-        field25394 = Class7521.field29147.getDefaultState();
-        field25395 = Class7521.field29517.getDefaultState();
+        field25394 = Blocks.AIR.getDefaultState();
+        field25395 = Blocks.field29517.getDefaultState();
     }
 }

@@ -42,7 +42,7 @@ public class Class4569 extends Class4535<Class5112>
     private boolean method13578(final Class1851 class1851, final BlockPos class1852, final Random random) {
         final BlockPos method1139 = class1852.method1139();
         final BlockState method1140 = class1851.getBlockState(method1139);
-        return (method1140.getBlock() != Class7521.field29637) ? method1140.isSolidSide(class1851, method1139, Direction.UP) : random.nextBoolean();
+        return (method1140.getBlock() != Blocks.GRASS_PATH) ? method1140.isSolidSide(class1851, method1139, Direction.UP) : random.nextBoolean();
     }
     
     private void method13579(final Class1851 class1851, final BlockPos class1852, final Random random, final Class5112 class1853) {

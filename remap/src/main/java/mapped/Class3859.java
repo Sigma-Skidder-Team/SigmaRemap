@@ -115,12 +115,12 @@ public class Class3859 extends Block implements Class3857
             if (n != 0) {
                 final IFluidState method6702 = class1847.getFluidState(class1848);
                 if (method6702.isSource()) {
-                    class1847.method6692(class1848, Class7521.field29286.getDefaultState());
+                    class1847.method6692(class1848, Blocks.OBSIDIAN.getDefaultState());
                     this.method11927(class1847, class1848);
                     return false;
                 }
                 if (method6702.getActualHeight(class1847, class1848) >= 0.44444445f) {
-                    class1847.method6692(class1848, Class7521.field29159.getDefaultState());
+                    class1847.method6692(class1848, Blocks.COBBLESTONE.getDefaultState());
                     this.method11927(class1847, class1848);
                     return false;
                 }
@@ -143,7 +143,7 @@ public class Class3859 extends Block implements Class3857
         if (class1853.get((IProperty<Integer>)Class3859.field17480) != 0) {
             return Class7558.field29974;
         }
-        class1851.setBlockState(class1852, Class7521.field29147.getDefaultState(), 11);
+        class1851.setBlockState(class1852, Blocks.AIR.getDefaultState(), 11);
         return this.field17481;
     }
     

@@ -140,22 +140,22 @@ public class Class5445 extends Class5419<Class824>
                                         if (method6705.getItem() != Items.field31518) {
                                             if (method6705.getItem() != Items.field31517) {
                                                 if (method6705.getItem() == Items.field31576) {
-                                                    class1849.setBlockState(this.field22667, Class7521.field29636.getDefaultState(), 3);
+                                                    class1849.setBlockState(this.field22667, Blocks.BEETROOTS.getDefaultState(), 3);
                                                     n2 = 1;
                                                 }
                                             }
                                             else {
-                                                class1849.setBlockState(this.field22667, Class7521.field29445.getDefaultState(), 3);
+                                                class1849.setBlockState(this.field22667, Blocks.field29445.getDefaultState(), 3);
                                                 n2 = 1;
                                             }
                                         }
                                         else {
-                                            class1849.setBlockState(this.field22667, Class7521.field29446.getDefaultState(), 3);
+                                            class1849.setBlockState(this.field22667, Blocks.field29446.getDefaultState(), 3);
                                             n2 = 1;
                                         }
                                     }
                                     else {
-                                        class1849.setBlockState(this.field22667, Class7521.field29297.getDefaultState(), 3);
+                                        class1849.setBlockState(this.field22667, Blocks.field29297.getDefaultState(), 3);
                                         n2 = 1;
                                     }
                                 }

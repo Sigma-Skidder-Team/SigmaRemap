@@ -111,7 +111,7 @@ public abstract class Class780 extends Class763 implements Class768
             if (now.get(ChronoField.MONTH_OF_YEAR) == 10) {
                 if (value == 31) {
                     if (this.rand.nextFloat() < 0.25f) {
-                        this.method1803(Class2215.field13605, new ItemStack((this.rand.nextFloat() >= 0.1f) ? Class7521.field29342 : Class7521.field29343));
+                        this.method1803(Class2215.field13605, new ItemStack((this.rand.nextFloat() >= 0.1f) ? Blocks.field29342 : Blocks.field29343));
                         this.field4121[Class2215.field13605.method8402()] = 0.0f;
                     }
                 }

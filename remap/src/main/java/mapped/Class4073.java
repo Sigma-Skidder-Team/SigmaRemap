@@ -22,18 +22,18 @@ public class Class4073 extends Class4072
     public boolean method11713(final BlockState class7096) {
         final Block method21696 = class7096.getBlock();
         final int method21697 = this.method12274().method8112();
-        if (method21696 != Class7521.field29286) {
-            if (method21696 != Class7521.field29295) {
-                if (method21696 != Class7521.field29294) {
-                    if (method21696 != Class7521.field29408) {
-                        if (method21696 != Class7521.field29412) {
-                            if (method21696 != Class7521.field29280) {
-                                if (method21696 != Class7521.field29178) {
-                                    if (method21696 != Class7521.field29325) {
-                                        if (method21696 != Class7521.field29281) {
-                                            if (method21696 != Class7521.field29179) {
-                                                if (method21696 != Class7521.field29215) {
-                                                    if (method21696 != Class7521.field29214) {
+        if (method21696 != Blocks.OBSIDIAN) {
+            if (method21696 != Blocks.DIAMOND_BLOCK) {
+                if (method21696 != Blocks.DIAMOND_ORE) {
+                    if (method21696 != Blocks.field29408) {
+                        if (method21696 != Blocks.field29412) {
+                            if (method21696 != Blocks.GOLD_BLOCK) {
+                                if (method21696 != Blocks.field29178) {
+                                    if (method21696 != Blocks.field29325) {
+                                        if (method21696 != Blocks.IRON_BLOCK) {
+                                            if (method21696 != Blocks.field29179) {
+                                                if (method21696 != Blocks.field29215) {
+                                                    if (method21696 != Blocks.field29214) {
                                                         final Material method21698 = class7096.getMaterial();
                                                         if (method21698 != Material.ROCK) {
                                                             if (method21698 != Material.IRON) {
@@ -74,6 +74,6 @@ public class Class4073 extends Class4072
     }
     
     static {
-        field18172 = (Set)ImmutableSet.of((Object)Class7521.field29480, (Object)Class7521.field29180, (Object)Class7521.field29159, (Object)Class7521.field29238, (Object)Class7521.field29295, (Object)Class7521.field29294, (Object[])new Block[] { Class7521.field29237, Class7521.field29280, Class7521.field29178, Class7521.field29330, Class7521.field29281, Class7521.field29179, Class7521.field29215, Class7521.field29214, Class7521.field29285, Class7521.field29338, Class7521.field29548, Class7521.field29758, Class7521.field29308, Class7521.field29325, Class7521.field29217, Class7521.field29218, Class7521.field29219, Class7521.field29588, Class7521.field29589, Class7521.field29587, Class7521.field29148, Class7521.field29149, Class7521.field29150, Class7521.field29151, Class7521.field29152, Class7521.field29153, Class7521.field29154, Class7521.field29597, Class7521.field29598, Class7521.field29599, Class7521.field29601, Class7521.field29602, Class7521.field29603, Class7521.field29604, Class7521.field29605, Class7521.field29606, Class7521.field29607, Class7521.field29609, Class7521.field29612, Class7521.field29613, Class7521.field29611, Class7521.field29610, Class7521.field29328, Class7521.field29317, Class7521.field29780, Class7521.field29781, Class7521.field29782, Class7521.field29783, Class7521.field29784, Class7521.field29785, Class7521.field29786, Class7521.field29787, Class7521.field29788, Class7521.field29789, Class7521.field29790, Class7521.field29791, Class7521.field29792, Class7521.field29648, Class7521.field29664, Class7521.field29660, Class7521.field29661, Class7521.field29658, Class7521.field29656, Class7521.field29662, Class7521.field29652, Class7521.field29657, Class7521.field29654, Class7521.field29651, Class7521.field29650, Class7521.field29655, Class7521.field29659, Class7521.field29663, Class7521.field29649, Class7521.field29653 });
+        field18172 = (Set)ImmutableSet.of((Object) Blocks.field29480, (Object) Blocks.field29180, (Object) Blocks.COBBLESTONE, (Object) Blocks.field29238, (Object) Blocks.DIAMOND_BLOCK, (Object) Blocks.DIAMOND_ORE, (Object[])new Block[] { Blocks.field29237, Blocks.GOLD_BLOCK, Blocks.field29178, Blocks.field29330, Blocks.IRON_BLOCK, Blocks.field29179, Blocks.field29215, Blocks.field29214, Blocks.MOSSY_COBBLESTONE, Blocks.field29338, Blocks.field29548, Blocks.BLUE_ICE, Blocks.field29308, Blocks.field29325, Blocks.field29217, Blocks.field29218, Blocks.field29219, Blocks.field29588, Blocks.field29589, Blocks.field29587, Blocks.STONE, Blocks.GRANITE, Blocks.POLISHED_GRANITE, Blocks.DIORITE, Blocks.POLISHED_DIORITE, Blocks.ANDESITE, Blocks.POLISHED_ANDESITE, Blocks.field29597, Blocks.field29598, Blocks.field29599, Blocks.field29601, Blocks.field29602, Blocks.field29603, Blocks.field29604, Blocks.field29605, Blocks.field29606, Blocks.field29607, Blocks.PURPUR_SLAB, Blocks.SMOOTH_QUARTZ, Blocks.SMOOTH_RED_SANDSTONE, Blocks.SMOOTH_SANDSTONE, Blocks.SMOOTH_STONE, Blocks.field29328, Blocks.field29317, Blocks.POLISHED_GRANITE_SLAB, Blocks.SMOOTH_RED_SANDSTONE_SLAB, Blocks.MOSSY_STONE_BRICK_SLAB, Blocks.POLISHED_DIORITE_SLAB, Blocks.MOSSY_COBBLESTONE_SLAB, Blocks.END_STONE_BRICK_SLAB, Blocks.SMOOTH_SANDSTONE_SLAB, Blocks.SMOOTH_QUARTZ_SLAB, Blocks.GRANITE_SLAB, Blocks.ANDESITE_SLAB, Blocks.RED_NETHER_BRICK_SLAB, Blocks.POLISHED_ANDESITE_SLAB, Blocks.DIORITE_SLAB, Blocks.SHULKER_BOX, Blocks.BLACK_SHULKER_BOX, Blocks.BLUE_SHULKER_BOX, Blocks.BROWN_SHULKER_BOX, Blocks.CYAN_SHULKER_BOX, Blocks.GRAY_SHULKER_BOX, Blocks.GREEN_SHULKER_BOX, Blocks.LIGHT_BLUE_SHULKER_BOX, Blocks.LIGHT_GRAY_SHULKER_BOX, Blocks.LIME_SHULKER_BOX, Blocks.MAGENTA_SHULKER_BOX, Blocks.ORANGE_SHULKER_BOX, Blocks.PINK_SHULKER_BOX, Blocks.PURPLE_SHULKER_BOX, Blocks.RED_SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, Blocks.YELLOW_SHULKER_BOX});
     }
 }

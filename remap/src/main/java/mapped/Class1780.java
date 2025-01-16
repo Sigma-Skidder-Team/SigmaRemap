@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
@@ -34,12 +35,12 @@ public class Class1780 extends Class1779
 {
     private static final Gson field9883;
     private static final Logger field9879;
-    private Map<Class8976<?>, Map<ResourceLocation, IRecipe<?>>> field9884;
+    private Map<IRecipeType<?>, Map<ResourceLocation, IRecipe<?>>> field9884;
     private boolean field9885;
     
     public Class1780() {
         super(Class1780.field9883, "recipes");
-        this.field9884 = (Map<Class8976<?>, Map<ResourceLocation, IRecipe<?>>>)ImmutableMap.of();
+        this.field9884 = (Map<IRecipeType<?>, Map<ResourceLocation, IRecipe<?>>>)ImmutableMap.of();
     }
     
     public void method6377(final Map<ResourceLocation, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
@@ -49,7 +50,7 @@ public class Class1780 extends Class1779
             final ResourceLocation class6584 = entry.getKey();
             try {
                 final IRecipe<?> method6385 = deserializeRecipe(class6584, (JsonObject)entry.getValue());
-                ((ImmutableMap$Builder)hashMap.computeIfAbsent(method6385.method11300(), p0 -> ImmutableMap.builder())).put((Object)class6584, (Object)method6385);
+                ((ImmutableMap$Builder)hashMap.computeIfAbsent(method6385.getType(), p0 -> ImmutableMap.builder())).put((Object)class6584, (Object)method6385);
             }
             catch (final IllegalArgumentException | JsonParseException ex) {
                 Class1780.field9879.error("Parsing error loading recipe {}", (Object)class6584, (Object)ex);
@@ -59,19 +60,19 @@ public class Class1780 extends Class1779
         Class1780.field9879.info("Loaded {} recipes", (Object)hashMap.size());
     }
     
-    public <C extends IInventory, T extends IRecipe<C>> Optional<T> method6378(final Class8976<T> class8976, final C c, final World class8977) {
+    public <C extends IInventory, T extends IRecipe<C>> Optional<T> method6378(final IRecipeType<T> class8976, final C c, final World class8977) {
         return this.method6380(class8976).values().stream().flatMap(class8981 -> Util.method27854(class8978.method31918(class8981, class8979, class8980))).findFirst();
     }
     
-    public <C extends IInventory, T extends IRecipe<C>> List<T> method6379(final Class8976<T> class8976, final C c, final World class8977) {
+    public <C extends IInventory, T extends IRecipe<C>> List<T> method6379(final IRecipeType<T> class8976, final C c, final World class8977) {
         return this.method6380(class8976).values().stream().flatMap(class8981 -> Util.method27854(class8978.method31918(class8981, class8979, class8980))).sorted(Comparator.comparing(class8982 -> class8982.method11292().method27649())).collect((Collector<? super Object, ?, List<T>>)Collectors.toList());
     }
     
-    private <C extends IInventory, T extends IRecipe<C>> Map<ResourceLocation, IRecipe<C>> method6380(final Class8976<T> key) {
+    private <C extends IInventory, T extends IRecipe<C>> Map<ResourceLocation, IRecipe<C>> method6380(final IRecipeType<T> key) {
         return (Map)this.field9884.getOrDefault(key, Collections.emptyMap());
     }
     
-    public <C extends IInventory, T extends IRecipe<C>> NonNullList<ItemStack> method6381(final Class8976<T> class8976, final C c, final World class8977) {
+    public <C extends IInventory, T extends IRecipe<C>> NonNullList<ItemStack> method6381(final IRecipeType<T> class8976, final C c, final World class8977) {
         final Optional<T> method6378 = this.method6378(class8976, c, class8977);
         if (!method6378.isPresent()) {
             final NonNullList<ItemStack> method6379 = NonNullList.withSize(c.getSizeInventory(), ItemStack.EMPTY);
@@ -106,13 +107,13 @@ public class Class1780 extends Class1779
         this.field9885 = false;
         final HashMap hashMap = Maps.newHashMap();
         iterable.forEach(class3662 -> {
-            if (hashMap.computeIfAbsent(class3662.method11300(), p0 -> Maps.newHashMap()).put(class3662.method11298(), class3662) == null) {
+            if (hashMap.computeIfAbsent(class3662.getType(), p0 -> Maps.newHashMap()).put(class3662.getId(), class3662) == null) {
             }
             else {
-                new IllegalStateException("Duplicate recipe ignored with ID " + class3662.method11298());
+                new IllegalStateException("Duplicate recipe ignored with ID " + class3662.getId());
             }
         });
-        this.field9884 = (Map<Class8976<?>, Map<ResourceLocation, IRecipe<?>>>)ImmutableMap.copyOf((Map)hashMap);
+        this.field9884 = (Map<IRecipeType<?>, Map<ResourceLocation, IRecipe<?>>>)ImmutableMap.copyOf((Map)hashMap);
     }
     
     static {

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.world.World;
 
 public class Class3668 extends Class3666
@@ -23,10 +24,10 @@ public class Class3668 extends Class3666
         for (int i = 0; i < class473.getSizeInventory(); ++i) {
             final ItemStack method2157 = class473.getStackInSlot(i);
             if (!method2157.method27620()) {
-                if (method2157.getItem() == Class7521.field29278.method11704() && n3 == 0) {
+                if (method2157.getItem() == Blocks.BROWN_MUSHROOM.method11704() && n3 == 0) {
                     n3 = 1;
                 }
-                else if (method2157.getItem() == Class7521.field29279.method11704() && n2 == 0) {
+                else if (method2157.getItem() == Blocks.RED_MUSHROOM.method11704() && n2 == 0) {
                     n2 = 1;
                 }
                 else if (method2157.getItem().method11742(Class7855.field32266) && n == 0) {
@@ -77,7 +78,7 @@ public class Class3668 extends Class3666
     }
     
     @Override
-    public Class6096<?> method11299() {
-        return Class6096.field24746;
+    public IRecipeSerializer<?> getSerializer() {
+        return IRecipeSerializer.field24746;
     }
 }

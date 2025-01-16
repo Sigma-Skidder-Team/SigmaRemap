@@ -84,7 +84,7 @@ public abstract class Class428 extends Entity
         this.dataManager.register(Class428.field2620, 0);
         this.dataManager.register(Class428.field2621, 1);
         this.dataManager.register(Class428.field2622, 0.0f);
-        this.dataManager.register(Class428.field2623, Block.method11774(Class7521.field29147.getDefaultState()));
+        this.dataManager.register(Class428.field2623, Block.method11774(Blocks.AIR.getDefaultState()));
         this.dataManager.register(Class428.field2624, 6);
         this.dataManager.register(Class428.field2625, false);
     }
@@ -191,7 +191,7 @@ public abstract class Class428 extends Entity
             }
             else {
                 this.method2128(class354, method35647);
-                if (method35647.getBlock() == Class7521.field29480) {
+                if (method35647.getBlock() == Blocks.field29480) {
                     this.method2126(method35644, method35645, method35646, method35647.get((IProperty<Boolean>)Class4019.field18101));
                 }
             }
@@ -294,7 +294,7 @@ public abstract class Class428 extends Entity
         boolean booleanValue = false;
         int n2 = 0;
         final Class4017 class356 = (Class4017)class355.getBlock();
-        if (class356 == Class7521.field29237) {
+        if (class356 == Blocks.field29237) {
             booleanValue = class355.get((IProperty<Boolean>)Class4019.field18101);
             n2 = (booleanValue ? 0 : 1);
         }
@@ -670,7 +670,7 @@ public abstract class Class428 extends Entity
     }
     
     public BlockState method2141() {
-        return Class7521.field29147.getDefaultState();
+        return Blocks.AIR.getDefaultState();
     }
     
     public int method2142() {

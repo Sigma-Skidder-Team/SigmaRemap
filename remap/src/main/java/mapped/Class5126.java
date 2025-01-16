@@ -26,6 +26,6 @@ public class Class5126 implements Class5113
     }
     
     public static <T> Class5126 method16031(final Dynamic<T> dynamic) {
-        return new Class5126(dynamic.get("target").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()), dynamic.get("state").map((Function) BlockState::deserialize).orElse(Class7521.field29147.getDefaultState()));
+        return new Class5126(dynamic.get("target").map((Function) BlockState::deserialize).orElse(Blocks.AIR.getDefaultState()), dynamic.get("state").map((Function) BlockState::deserialize).orElse(Blocks.AIR.getDefaultState()));
     }
 }

@@ -33,11 +33,11 @@ public class Class4474 extends Class4473
         while (class1855.getY() > 0) {
             final BlockState method6701 = class1851.getBlockState(class1855);
             final BlockState method6702 = class1851.getBlockState(class1855.method1139());
-            if (method6702 != Class7521.field29217.getDefaultState()) {
-                if (method6702 != Class7521.field29148.getDefaultState()) {
-                    if (method6702 != Class7521.field29153.getDefaultState()) {
-                        if (method6702 != Class7521.field29149.getDefaultState()) {
-                            if (method6702 != Class7521.field29151.getDefaultState()) {
+            if (method6702 != Blocks.field29217.getDefaultState()) {
+                if (method6702 != Blocks.STONE.getDefaultState()) {
+                    if (method6702 != Blocks.ANDESITE.getDefaultState()) {
+                        if (method6702 != Blocks.GRANITE.getDefaultState()) {
+                            if (method6702 != Blocks.DIORITE.getDefaultState()) {
                                 class1855.method1292(0, -1, 0);
                                 continue;
                             }
@@ -45,7 +45,7 @@ public class Class4474 extends Class4473
                     }
                 }
             }
-            final BlockState class1856 = (!method6701.method21706() && !this.method13459(method6701)) ? method6701 : Class7521.field29175.getDefaultState();
+            final BlockState class1856 = (!method6701.method21706() && !this.method13459(method6701)) ? method6701 : Blocks.field29175.getDefaultState();
             for (final Direction class1857 : Direction.values()) {
                 final BlockPos method6703 = class1855.method1149(class1857);
                 final BlockState method6704 = class1851.getBlockState(method6703);
@@ -69,6 +69,6 @@ public class Class4474 extends Class4473
     }
     
     private boolean method13459(final BlockState class7096) {
-        return class7096 == Class7521.field29173.getDefaultState() || class7096 == Class7521.field29174.getDefaultState();
+        return class7096 == Blocks.field29173.getDefaultState() || class7096 == Blocks.field29174.getDefaultState();
     }
 }

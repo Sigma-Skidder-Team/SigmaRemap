@@ -28,7 +28,7 @@ public class Class3953 extends Class3841
     @Override
     public TileEntity method11898(final IBlockReader class1855) {
         final Class500 class1856 = new Class500();
-        class1856.method2543(this == Class7521.field29640);
+        class1856.method2543(this == Blocks.CHAIN_COMMAND_BLOCK);
         return class1856;
     }
     
@@ -142,7 +142,7 @@ public class Class3953 extends Class3841
             if (!class1847.isRemote) {
                 if (class1851.method27660("BlockEntityTag") == null) {
                     method6728.method5219(class1847.method6765().method31216(Class8878.field37328));
-                    class1852.method2543(this == Class7521.field29640);
+                    class1852.method2543(this == Blocks.CHAIN_COMMAND_BLOCK);
                 }
                 if (class1852.method2550() == Class2182.field12921) {
                     class1852.method2540(class1847.method6749(class1848));
@@ -184,7 +184,7 @@ public class Class3953 extends Class3841
             class1850.method1290(class1849);
             final Class7096 method6767 = class1847.getBlockState(class1850);
             final Block method6768 = method6767.method21696();
-            if (method6768 != Class7521.field29640) {
+            if (method6768 != Blocks.CHAIN_COMMAND_BLOCK) {
                 break;
             }
             final TileEntity method6769 = class1847.getTileEntity(class1850);

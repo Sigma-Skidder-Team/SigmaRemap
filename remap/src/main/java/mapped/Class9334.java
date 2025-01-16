@@ -74,7 +74,7 @@ public class Class9334
         field40062 = method34579("butcher", Class8912.field37463, Class8520.field35683);
         field40063 = method34579("cartographer", Class8912.field37464, Class8520.field35684);
         field40064 = method34579("cleric", Class8912.field37465, Class8520.field35685);
-        field40065 = method34580("farmer", Class8912.field37466, (ImmutableSet<Item>)ImmutableSet.of((Object) Items.field31315, (Object) Items.field31314, (Object) Items.field31576), (ImmutableSet<Block>)ImmutableSet.of((Object)Class7521.field29298), Class8520.field35686);
+        field40065 = method34580("farmer", Class8912.field37466, (ImmutableSet<Item>)ImmutableSet.of((Object) Items.field31315, (Object) Items.field31314, (Object) Items.field31576), (ImmutableSet<Block>)ImmutableSet.of((Object) Blocks.field29298), Class8520.field35686);
         field40066 = method34579("fisherman", Class8912.field37467, Class8520.field35687);
         field40067 = method34579("fletcher", Class8912.field37468, Class8520.field35688);
         field40068 = method34579("leatherworker", Class8912.field37469, Class8520.field35689);

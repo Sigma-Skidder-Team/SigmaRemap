@@ -54,7 +54,7 @@ public abstract class Class6032<C extends Class4407>
     private final Function<Dynamic<?>, ? extends C> field24564;
     
     private static <C extends Class4407, F extends Class6032<C>> F method17961(final String s, final F n) {
-        return Registry.method511(Registry.field214, s, n);
+        return Registry.register(Registry.field214, s, n);
     }
     
     public Class6032(final Function<Dynamic<?>, ? extends C> field24564) {
@@ -67,19 +67,19 @@ public abstract class Class6032<C extends Class4407>
     }
     
     static {
-        field24525 = Class7521.field29147.getDefaultState();
-        field24526 = Class7521.field29156.getDefaultState();
-        field24527 = Class7521.field29155.getDefaultState();
-        field24528 = Class7521.field29158.getDefaultState();
-        field24529 = Class7521.field29177.getDefaultState();
-        field24530 = Class7521.field29148.getDefaultState();
-        field24531 = Class7521.field29157.getDefaultState();
-        field24532 = Class7521.field29175.getDefaultState();
-        field24533 = Class7521.field29176.getDefaultState();
-        field24534 = Class7521.field29482.getDefaultState();
-        field24535 = Class7521.field29392.getDefaultState();
-        field24536 = Class7521.field29338.getDefaultState();
-        field24537 = Class7521.field29403.getDefaultState();
+        field24525 = Blocks.AIR.getDefaultState();
+        field24526 = Blocks.DIRT.getDefaultState();
+        field24527 = Blocks.GRASS_BLOCK.getDefaultState();
+        field24528 = Blocks.PODZOL.getDefaultState();
+        field24529 = Blocks.field29177.getDefaultState();
+        field24530 = Blocks.STONE.getDefaultState();
+        field24531 = Blocks.COARSE_DIRT.getDefaultState();
+        field24532 = Blocks.field29175.getDefaultState();
+        field24533 = Blocks.field29176.getDefaultState();
+        field24534 = Blocks.field29482.getDefaultState();
+        field24535 = Blocks.field29392.getDefaultState();
+        field24536 = Blocks.field29338.getDefaultState();
+        field24537 = Blocks.field29403.getDefaultState();
         field24538 = new Class4408(Class6032.field24525, Class6032.field24525, Class6032.field24525);
         field24539 = new Class4408(Class6032.field24528, Class6032.field24526, Class6032.field24529);
         field24540 = new Class4408(Class6032.field24529, Class6032.field24529, Class6032.field24529);

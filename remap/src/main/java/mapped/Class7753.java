@@ -29,7 +29,7 @@ public class Class7753 extends Class7752
     @Override
     public boolean method24739(final BlockPos class354) {
         if (this.field31657 instanceof Class793 && Class793.method4474((Class793)this.field31657)) {
-            return this.field31658.getBlockState(class354).method21696() == Class7521.field29173;
+            return this.field31658.getBlockState(class354).method21696() == Blocks.field29173;
         }
         return !this.field31658.getBlockState(class354.method1139()).method21706();
     }

@@ -4,7 +4,9 @@
 
 package mapped;
 
-public final class Class8977 implements Class8976<Object>
+import net.minecraft.item.crafting.IRecipeType;
+
+public final class Class8977 implements IRecipeType<Object>
 {
     private static String[] field37849;
     public final /* synthetic */ String field37850;

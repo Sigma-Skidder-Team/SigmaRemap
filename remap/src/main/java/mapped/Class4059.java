@@ -22,7 +22,7 @@ public class Class4059 extends Item
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         final BlockState method21656 = method21654.getBlockState(method21655);
-        if (method21656.getBlock() != Class7521.field29286 && method21656.getBlock() != Class7521.field29172) {
+        if (method21656.getBlock() != Blocks.OBSIDIAN && method21656.getBlock() != Blocks.field29172) {
             return Class2201.field13403;
         }
         final BlockPos method21657 = method21655.method1137();

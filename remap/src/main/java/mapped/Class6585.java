@@ -188,7 +188,7 @@ public class Class6585
                             final BlockState method32867 = class1854.field38249.method21709(class1853.method32855()).method21708(class1853.method32856());
                             if (class1854.field38250 != null) {
                                 Class447.method2267(class1851.getTileEntity(field38248));
-                                class1851.setBlockState(field38248, Class7521.field29517.getDefaultState(), 20);
+                                class1851.setBlockState(field38248, Blocks.field29517.getDefaultState(), 20);
                             }
                             if (!class1851.setBlockState(field38248, method32867, n)) {
                                 continue;

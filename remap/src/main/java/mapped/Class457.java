@@ -91,7 +91,7 @@ public class Class457 extends Class456
         this.field2713 = Class475.method2420(this.field2656, this, this.field2657.getX(), this.field2657.getY(), this.field2657.getZ());
         if (this.field2713 <= 0) {
             final BlockState method2194 = this.method2194();
-            if (method2194.getBlock() != Class7521.field29807) {
+            if (method2194.getBlock() != Blocks.BARREL) {
                 this.method2198();
                 return;
             }

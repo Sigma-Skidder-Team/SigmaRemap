@@ -69,7 +69,7 @@ public class Class6040 extends Class6032<Class4408>
                                 }
                             }
                             else {
-                                class1865 = Class7521.field29147.getDefaultState();
+                                class1865 = Blocks.AIR.getDefaultState();
                                 class1866 = class1862;
                             }
                             if (i < n5) {
@@ -82,22 +82,22 @@ public class Class6040 extends Class6032<Class4408>
                                 class1860.method7008(class1867, class1866, false);
                                 final Block method6702 = class1866.getBlock();
                                 Label_0645: {
-                                    if (method6702 != Class7521.field29482) {
-                                        if (method6702 != Class7521.field29483) {
-                                            if (method6702 != Class7521.field29484) {
-                                                if (method6702 != Class7521.field29485) {
-                                                    if (method6702 != Class7521.field29486) {
-                                                        if (method6702 != Class7521.field29487) {
-                                                            if (method6702 != Class7521.field29488) {
-                                                                if (method6702 != Class7521.field29489) {
-                                                                    if (method6702 != Class7521.field29490) {
-                                                                        if (method6702 != Class7521.field29491) {
-                                                                            if (method6702 != Class7521.field29492) {
-                                                                                if (method6702 != Class7521.field29493) {
-                                                                                    if (method6702 != Class7521.field29494) {
-                                                                                        if (method6702 != Class7521.field29495) {
-                                                                                            if (method6702 != Class7521.field29496) {
-                                                                                                if (method6702 != Class7521.field29497) {
+                                    if (method6702 != Blocks.field29482) {
+                                        if (method6702 != Blocks.field29483) {
+                                            if (method6702 != Blocks.field29484) {
+                                                if (method6702 != Blocks.field29485) {
+                                                    if (method6702 != Blocks.field29486) {
+                                                        if (method6702 != Blocks.field29487) {
+                                                            if (method6702 != Blocks.field29488) {
+                                                                if (method6702 != Blocks.field29489) {
+                                                                    if (method6702 != Blocks.field29490) {
+                                                                        if (method6702 != Blocks.field29491) {
+                                                                            if (method6702 != Blocks.field29492) {
+                                                                                if (method6702 != Blocks.field29493) {
+                                                                                    if (method6702 != Blocks.field29494) {
+                                                                                        if (method6702 != Blocks.field29495) {
+                                                                                            if (method6702 != Blocks.field29496) {
+                                                                                                if (method6702 != Blocks.field29497) {
                                                                                                     break Label_0645;
                                                                                                 }
                                                                                             }
@@ -218,12 +218,12 @@ public class Class6040 extends Class6032<Class4408>
     }
     
     static {
-        field24579 = Class7521.field29482.getDefaultState();
-        field24580 = Class7521.field29483.getDefaultState();
-        field24581 = Class7521.field29546.getDefaultState();
-        field24582 = Class7521.field29486.getDefaultState();
-        field24583 = Class7521.field29494.getDefaultState();
-        field24584 = Class7521.field29496.getDefaultState();
-        field24585 = Class7521.field29490.getDefaultState();
+        field24579 = Blocks.field29482.getDefaultState();
+        field24580 = Blocks.field29483.getDefaultState();
+        field24581 = Blocks.field29546.getDefaultState();
+        field24582 = Blocks.field29486.getDefaultState();
+        field24583 = Blocks.field29494.getDefaultState();
+        field24584 = Blocks.field29496.getDefaultState();
+        field24585 = Blocks.field29490.getDefaultState();
     }
 }

@@ -64,15 +64,15 @@ public class Class4518 extends Class4515
                 class357.method4188(class355, class355.method6784(class354), Class2101.field12177, null, null);
                 class355.method6886(class357);
                 if (class354.getY() <= class355.method6743()) {
-                    class355.setBlockState(class354, Class7521.field29173.getDefaultState(), 2);
+                    class355.setBlockState(class354, Blocks.field29173.getDefaultState(), 2);
                 }
                 else {
-                    class355.setBlockState(class354, Class7521.field29147.getDefaultState(), 2);
+                    class355.setBlockState(class354, Blocks.AIR.getDefaultState(), 2);
                 }
             }
         }
         else {
-            class355.setBlockState(class354, ((StateHolder<O, BlockState>)Class7521.field29292.getDefaultState()).with((IProperty<Comparable>)Class3865.field17499, class355.getFluidState(class354).isTagged(Class7324.field28319)), 2);
+            class355.setBlockState(class354, ((StateHolder<O, BlockState>) Blocks.CHEST.getDefaultState()).with((IProperty<Comparable>)Class3865.field17499, class355.getFluidState(class354).isTagged(Class7324.field28319)), 2);
             final TileEntity method6727 = class355.getTileEntity(class354);
             if (method6727 instanceof Class475) {
                 ((Class475)method6727).method2327(this.field19929 ? Class9020.field38094 : Class9020.field38093, random.nextLong());

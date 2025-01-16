@@ -119,7 +119,7 @@ public class Class3916 extends Block implements Class3856
     @Override
     public void method11828(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7096.method21696()) {
-            this.field17750.method21734(class7097, class7098, Class7521.field29147, class7098, false);
+            this.field17750.method21734(class7097, class7098, Blocks.AIR, class7098, false);
             this.field17749.method11828(this.field17750, class7097, class7098, class7099, false);
         }
     }

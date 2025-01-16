@@ -32,7 +32,7 @@ public abstract class Class5823 extends Class5827
         if (method17515 == null) {
             return false;
         }
-        final BlockState method17516 = Class7521.field29147.getDefaultState();
+        final BlockState method17516 = Blocks.AIR.getDefaultState();
         class1851.setBlockState(class1853.add(n, 0, n2), method17516, 4);
         class1851.setBlockState(class1853.add(n + 1, 0, n2), method17516, 4);
         class1851.setBlockState(class1853.add(n, 0, n2 + 1), method17516, 4);

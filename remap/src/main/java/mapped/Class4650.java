@@ -18,7 +18,7 @@ public class Class4650 extends Class4648
     
     @Override
     public void method13894(final int n) {
-        this.field20135.field2656.method6763(this.field20135.field2657, Class7521.field29290, n, 0);
+        this.field20135.field2656.method6763(this.field20135.field2657, Blocks.SPAWNER, n, 0);
     }
     
     @Override

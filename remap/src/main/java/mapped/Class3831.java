@@ -39,7 +39,7 @@ public class Class3831 extends Item
             final BlockPos method21656 = class7075.method21639();
             final Direction method21657 = class7075.method21648();
             final Class7096 method21658 = method21654.getBlockState(method21656);
-            if (method21658.method21696() == Class7521.field29290) {
+            if (method21658.method21696() == Blocks.SPAWNER) {
                 final TileEntity method21659 = method21654.getTileEntity(method21656);
                 if (method21659 instanceof Class494) {
                     ((Class494)method21659).method2509().method13884(this.method11773(method21655.method27657()));

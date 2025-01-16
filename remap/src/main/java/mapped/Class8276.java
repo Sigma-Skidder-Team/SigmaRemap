@@ -91,13 +91,13 @@ public class Class8276
     
     private static ResourceLocation method27510(final String s, final Class9109 class9109) {
         final ResourceLocation class9110 = new ResourceLocation(s);
-        Registry.method511(Registry.field228, s, class9110);
+        Registry.register(Registry.field228, s, class9110);
         Class8276.field33987.method8447(class9110, class9109);
         return class9110;
     }
     
     private static <T> Class2248<T> method27511(final String s, final Registry<T> class90) {
-        return Registry.method511(Registry.field238, s, new Class2248<T>(class90));
+        return Registry.register(Registry.field238, s, new Class2248<T>(class90));
     }
     
     static {

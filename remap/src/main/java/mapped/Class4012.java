@@ -182,7 +182,7 @@ public class Class4012 extends Block
             return Class2201.field13402;
         }
         if (((Class4036)method2716).method12240() instanceof Class3942 && !class7097.isRemote()) {
-            final ItemStack class7104 = new ItemStack(Class7521.field29648, 1);
+            final ItemStack class7104 = new ItemStack(Blocks.SHULKER_BOX, 1);
             if (method2715.method27656()) {
                 class7104.method27663(method2715.method27657().copy());
             }

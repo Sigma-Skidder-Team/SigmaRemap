@@ -5,12 +5,13 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class468 extends Class466
 {
     public Class468() {
-        super(Class5412.field22567, Class8976.field37846);
+        super(Class5412.field22567, IRecipeType.field37846);
     }
     
     @Override

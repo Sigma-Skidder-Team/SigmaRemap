@@ -58,12 +58,12 @@ public class Class3914 extends Block implements Class3867
         final BlockPos method1139 = class7098.method1139();
         final BlockState method1140 = class7097.getBlockState(method1139);
         final Block method1141 = method1140.getBlock();
-        return method1141 != Class7521.field29642 && (method1141 == this || method1140.isSolidSide(class7097, method1139, Direction.UP));
+        return method1141 != Blocks.MAGMA_BLOCK && (method1141 == this || method1140.isSolidSide(class7097, method1139, Direction.UP));
     }
     
     @Override
     public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
-        return new ItemStack(Class7521.field29713);
+        return new ItemStack(Blocks.KELP);
     }
     
     @Override

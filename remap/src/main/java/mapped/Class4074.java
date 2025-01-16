@@ -27,7 +27,7 @@ public class Class4074 extends Class4072
     @Override
     public boolean method11713(final BlockState class7096) {
         final Block method21696 = class7096.getBlock();
-        return method21696 == Class7521.field29329 || method21696 == Class7521.field29331;
+        return method21696 == Blocks.field29329 || method21696 == Blocks.field29331;
     }
     
     @Override
@@ -64,7 +64,7 @@ public class Class4074 extends Class4072
     }
     
     static {
-        field18174 = Sets.newHashSet((Object[])new Block[] { Class7521.field29333, Class7521.field29156, Class7521.field29157, Class7521.field29158, Class7521.field29298, Class7521.field29155, Class7521.field29177, Class7521.field29392, Class7521.field29175, Class7521.field29176, Class7521.field29331, Class7521.field29329, Class7521.field29339, Class7521.field29637, Class7521.field29697, Class7521.field29698, Class7521.field29699, Class7521.field29700, Class7521.field29701, Class7521.field29702, Class7521.field29703, Class7521.field29704, Class7521.field29705, Class7521.field29706, Class7521.field29707, Class7521.field29708, Class7521.field29709, Class7521.field29710, Class7521.field29711, Class7521.field29712 });
-        field18175 = Maps.newHashMap((Map)ImmutableMap.of((Object)Class7521.field29155, (Object)Class7521.field29637.getDefaultState()));
+        field18174 = Sets.newHashSet((Object[])new Block[] { Blocks.field29333, Blocks.DIRT, Blocks.COARSE_DIRT, Blocks.PODZOL, Blocks.field29298, Blocks.GRASS_BLOCK, Blocks.field29177, Blocks.field29392, Blocks.field29175, Blocks.field29176, Blocks.field29331, Blocks.field29329, Blocks.field29339, Blocks.GRASS_PATH, Blocks.WHITE_CONCRETE_POWDER, Blocks.ORANGE_CONCRETE_POWDER, Blocks.MAGENTA_CONCRETE_POWDER, Blocks.LIGHT_BLUE_CONCRETE_POWDER, Blocks.YELLOW_CONCRETE_POWDER, Blocks.LIME_CONCRETE_POWDER, Blocks.PINK_CONCRETE_POWDER, Blocks.GRAY_CONCRETE_POWDER, Blocks.LIGHT_GRAY_CONCRETE_POWDER, Blocks.CYAN_CONCRETE_POWDER, Blocks.PURPLE_CONCRETE_POWDER, Blocks.BLUE_CONCRETE_POWDER, Blocks.BROWN_CONCRETE_POWDER, Blocks.GREEN_CONCRETE_POWDER, Blocks.RED_CONCRETE_POWDER, Blocks.BLACK_CONCRETE_POWDER});
+        field18175 = Maps.newHashMap((Map)ImmutableMap.of((Object) Blocks.GRASS_BLOCK, (Object) Blocks.GRASS_PATH.getDefaultState()));
     }
 }

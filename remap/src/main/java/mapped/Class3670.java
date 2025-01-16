@@ -7,6 +7,7 @@ package mapped;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.world.World;
 
 public class Class3670 extends Class3666
@@ -70,7 +71,7 @@ public class Class3670 extends Class3666
     }
     
     @Override
-    public Class6096<?> method11299() {
-        return Class6096.field24735;
+    public IRecipeSerializer<?> getSerializer() {
+        return IRecipeSerializer.field24735;
     }
 }

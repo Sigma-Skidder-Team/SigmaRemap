@@ -21,7 +21,7 @@ public class Class7989
     private final Item field32887;
     private final int field32888;
     private final List<String> field32889;
-    private final Map<Character, Class120> field32890;
+    private final Map<Character, Ingredient> field32890;
     private final Class6056 field32891;
     private String field32892;
     
@@ -42,14 +42,14 @@ public class Class7989
     }
     
     public Class7989 method26055(final Character c, final Class7909<Item> class7909) {
-        return this.method26057(c, Class120.method620(class7909));
+        return this.method26057(c, Ingredient.method620(class7909));
     }
     
     public Class7989 method26056(final Character c, final Class3832 class3832) {
-        return this.method26057(c, Class120.method618(class3832));
+        return this.method26057(c, Ingredient.method618(class3832));
     }
     
-    public Class7989 method26057(final Character obj, final Class120 class120) {
+    public Class7989 method26057(final Character obj, final Ingredient class120) {
         if (this.field32890.containsKey(obj)) {
             throw new IllegalArgumentException("Symbol '" + obj + "' is already defined!");
         }

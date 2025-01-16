@@ -96,9 +96,9 @@ public class Class6039 extends Class6032<Class4408>
     }
     
     static {
-        field24573 = Class7521.field29764.getDefaultState();
-        field24574 = Class7521.field29338.getDefaultState();
-        field24575 = Class7521.field29177.getDefaultState();
-        field24576 = Class7521.field29339.getDefaultState();
+        field24573 = Blocks.CAVE_AIR.getDefaultState();
+        field24574 = Blocks.field29338.getDefaultState();
+        field24575 = Blocks.field29177.getDefaultState();
+        field24576 = Blocks.field29339.getDefaultState();
     }
 }

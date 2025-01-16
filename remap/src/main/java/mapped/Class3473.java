@@ -10,7 +10,7 @@ public class Class3473 extends Class3472
     private PlayerEntity field16371;
     private final Class800 field16372;
     
-    public Class3473(final Class800 field16372, final double n, final Class120 class120, final boolean b) {
+    public Class3473(final Class800 field16372, final double n, final Ingredient class120, final boolean b) {
         super(field16372, n, class120, b);
         this.field16372 = field16372;
     }

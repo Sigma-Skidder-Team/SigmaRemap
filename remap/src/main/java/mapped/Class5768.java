@@ -6,20 +6,21 @@ package mapped;
 
 import javax.annotation.Nullable;
 import com.google.gson.JsonObject;
+import net.minecraft.item.crafting.IRecipeSerializer;
 
 public class Class5768 implements Class5763
 {
     private final ResourceLocation field23591;
     private final String field23592;
-    private final Class120 field23593;
+    private final Ingredient field23593;
     private final Item field23594;
     private final float field23595;
     private final int field23596;
     private final Class6056 field23597;
     private final ResourceLocation field23598;
-    private final Class6096<? extends Class3680> field23599;
+    private final IRecipeSerializer<? extends Class3680> field23599;
     
-    public Class5768(final ResourceLocation field23591, final String field23592, final Class120 field23593, final Item field23594, final float field23595, final int field23596, final Class6056 field23597, final ResourceLocation field23598, final Class6096<? extends Class3680> field23599) {
+    public Class5768(final ResourceLocation field23591, final String field23592, final Ingredient field23593, final Item field23594, final float field23595, final int field23596, final Class6056 field23597, final ResourceLocation field23598, final IRecipeSerializer<? extends Class3680> field23599) {
         this.field23591 = field23591;
         this.field23592 = field23592;
         this.field23593 = field23593;
@@ -43,7 +44,7 @@ public class Class5768 implements Class5763
     }
     
     @Override
-    public Class6096<?> method17156() {
+    public IRecipeSerializer<?> method17156() {
         return this.field23599;
     }
     

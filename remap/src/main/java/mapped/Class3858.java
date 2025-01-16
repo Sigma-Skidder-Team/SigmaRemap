@@ -58,13 +58,13 @@ public class Class3858 extends Block implements Class3857
     
     public static void method11923(final Class1851 class1851, final BlockPos class1852, final boolean b) {
         if (method11924(class1851, class1852)) {
-            class1851.setBlockState(class1852, ((StateHolder<O, Class7096>)Class7521.field29765.getDefaultState()).with((IProperty<Comparable>)Class3858.field17478, b), 2);
+            class1851.setBlockState(class1852, ((StateHolder<O, Class7096>) Blocks.BUBBLE_COLUMN.getDefaultState()).with((IProperty<Comparable>)Class3858.field17478, b), 2);
         }
     }
     
     public static boolean method11924(final Class1851 class1851, final BlockPos class1852) {
         final IFluidState method6702 = class1851.getFluidState(class1852);
-        if (class1851.getBlockState(class1852).getBlock() == Class7521.field29173) {
+        if (class1851.getBlockState(class1852).getBlock() == Blocks.field29173) {
             if (method6702.getLevel() >= 8) {
                 if (method6702.isSource()) {
                     return true;
@@ -77,8 +77,8 @@ public class Class3858 extends Block implements Class3857
     private static boolean method11925(final IBlockReader class1855, final BlockPos class1856) {
         final Class7096 method6701 = class1855.getBlockState(class1856);
         final Block method6702 = method6701.method21696();
-        if (method6702 != Class7521.field29765) {
-            return method6702 != Class7521.field29339;
+        if (method6702 != Blocks.BUBBLE_COLUMN) {
+            return method6702 != Blocks.field29339;
         }
         return method6701.method21772((IProperty<Boolean>)Class3858.field17478);
     }
@@ -113,7 +113,7 @@ public class Class3858 extends Block implements Class3857
         if (class7096.method21752(class7099, class7100)) {
             if (class7097 != Direction.DOWN) {
                 if (class7097 == Direction.UP) {
-                    if (class7098.method21696() != Class7521.field29765) {
+                    if (class7098.method21696() != Blocks.BUBBLE_COLUMN) {
                         if (method11924(class7099, class7101)) {
                             class7099.method6833().method21345(class7100, this, this.method11826(class7099));
                         }
@@ -121,20 +121,20 @@ public class Class3858 extends Block implements Class3857
                 }
             }
             else {
-                class7099.setBlockState(class7100, ((StateHolder<O, Class7096>)Class7521.field29765.getDefaultState()).with((IProperty<Comparable>)Class3858.field17478, method11925(class7099, class7101)), 2);
+                class7099.setBlockState(class7100, ((StateHolder<O, Class7096>) Blocks.BUBBLE_COLUMN.getDefaultState()).with((IProperty<Comparable>)Class3858.field17478, method11925(class7099, class7101)), 2);
             }
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
             return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
         }
-        return Class7521.field29173.getDefaultState();
+        return Blocks.field29173.getDefaultState();
     }
     
     @Override
     public boolean method11843(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         final Block method21696 = class7097.getBlockState(class7098.method1139()).getBlock();
-        if (method21696 != Class7521.field29765) {
-            if (method21696 != Class7521.field29642) {
-                if (method21696 != Class7521.field29339) {
+        if (method21696 != Blocks.BUBBLE_COLUMN) {
+            if (method21696 != Blocks.MAGMA_BLOCK) {
+                if (method21696 != Blocks.field29339) {
                     return false;
                 }
             }
@@ -159,7 +159,7 @@ public class Class3858 extends Block implements Class3857
     
     @Override
     public Fluid method11922(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853) {
-        class1851.setBlockState(class1852, Class7521.field29147.getDefaultState(), 11);
+        class1851.setBlockState(class1852, Blocks.AIR.getDefaultState(), 11);
         return Class7558.field29976;
     }
     

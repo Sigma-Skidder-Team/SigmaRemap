@@ -42,7 +42,7 @@ public abstract class Class833 extends Class832
     }
     
     public static boolean method4952(final EntityType<? extends Class833> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
-        return class7500.getBlockState(class7502).getBlock() == Class7521.field29173 && class7500.getBlockState(class7502.method1137()).getBlock() == Class7521.field29173;
+        return class7500.getBlockState(class7502).getBlock() == Blocks.field29173 && class7500.getBlockState(class7502.method1137()).getBlock() == Blocks.field29173;
     }
     
     @Override

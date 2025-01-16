@@ -50,7 +50,7 @@ public class Class858 extends Entity
             final BlockPos class354 = new BlockPos(this);
             if (this.world.dimension instanceof Class6738) {
                 if (this.world.getBlockState(class354).method21706()) {
-                    this.world.method6692(class354, Class7521.field29289.getDefaultState());
+                    this.world.method6692(class354, Blocks.FIRE.getDefaultState());
                 }
             }
         }

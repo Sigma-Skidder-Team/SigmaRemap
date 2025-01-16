@@ -38,10 +38,10 @@ public class Class6043 extends Class6032<Class4408>
                             --n6;
                             class1860.method7008(class1869, class1868, false);
                             if (n6 == 0) {
-                                if (class1868.method21696() == Class7521.field29175) {
+                                if (class1868.method21696() == Blocks.field29175) {
                                     if (n7 > 1) {
                                         n6 = random.nextInt(4) + Math.max(0, i - 63);
-                                        class1868 = ((class1868.method21696() != Class7521.field29176) ? Class7521.field29217.getDefaultState() : Class7521.field29587.getDefaultState());
+                                        class1868 = ((class1868.method21696() != Blocks.field29176) ? Blocks.field29217.getDefaultState() : Blocks.field29587.getDefaultState());
                                     }
                                 }
                             }
@@ -57,7 +57,7 @@ public class Class6043 extends Class6032<Class4408>
                             }
                         }
                         else {
-                            class1867 = Class7521.field29147.getDefaultState();
+                            class1867 = Blocks.AIR.getDefaultState();
                             class1868 = class1862;
                         }
                         if (i < n5) {
@@ -66,7 +66,7 @@ public class Class6043 extends Class6032<Class4408>
                                     class1867 = class1863;
                                 }
                                 else {
-                                    class1867 = Class7521.field29330.getDefaultState();
+                                    class1867 = Blocks.field29330.getDefaultState();
                                 }
                                 class1869.setPos(n8, i, n9);
                             }
@@ -77,7 +77,7 @@ public class Class6043 extends Class6032<Class4408>
                                 class1860.method7008(class1869, class1868, false);
                             }
                             else {
-                                class1867 = Class7521.field29147.getDefaultState();
+                                class1867 = Blocks.AIR.getDefaultState();
                                 class1868 = class1862;
                                 class1860.method7008(class1869, class1866, false);
                             }

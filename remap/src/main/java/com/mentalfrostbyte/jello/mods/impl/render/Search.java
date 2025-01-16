@@ -106,13 +106,13 @@ public class Search extends Module
             if (this.method9883("Holes")) {
             Label_0145:
                 for (final BlockPos class7861 : this.method10373(class7859)) {
-                    if (Search.mc.world.getBlockState(class7861).method21696() != Class7521.field29147) {
+                    if (Search.mc.world.getBlockState(class7861).method21696() != Blocks.AIR) {
                         continue;
                     }
                     for (final Direction class7862 : Direction.values()) {
                         if (class7862 != Direction.UP) {
-                            if (Search.mc.world.getBlockState(class7861.add(class7862.getDirectionVec())).method21696() != Class7521.field29286) {
-                                if (Search.mc.world.getBlockState(class7861.add(class7862.getDirectionVec())).method21696() != Class7521.field29172) {
+                            if (Search.mc.world.getBlockState(class7861.add(class7862.getDirectionVec())).method21696() != Blocks.OBSIDIAN) {
+                                if (Search.mc.world.getBlockState(class7861.add(class7862.getDirectionVec())).method21696() != Blocks.field29172) {
                                     continue Label_0145;
                                 }
                             }
