@@ -94,19 +94,19 @@ public class Class826 extends Class827 implements Class825
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() == Items.field31341 && this.method2653(Class9439.field40491)) {
-            if (!class512.field3025.field27304) {
+            if (!playerEntity.field3025.field27304) {
                 method2715.method27693(1);
             }
             if (!this.world.isRemote) {
-                this.method4914(class512.method1865(), this.rand.nextInt(2401) + 3600);
-                class512.method2708(class513, true);
+                this.method4914(playerEntity.method1865(), this.rand.nextInt(2401) + 3600);
+                playerEntity.method2708(class513, true);
             }
             return true;
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     @Override
@@ -182,7 +182,7 @@ public class Class826 extends Class827 implements Class825
         class1850.method1851(this.method1850());
         class1849.method6886(class1850);
         if (this.field4419 != null) {
-            final Class512 method2719 = class1849.method7143(this.field4419);
+            final PlayerEntity method2719 = class1849.method7143(this.field4419);
             if (method2719 instanceof Class513) {
                 Class7770.field31792.method13734((Class513)method2719, this, class1850);
                 class1849.method6929(Class8156.field33590, method2719, class1850);

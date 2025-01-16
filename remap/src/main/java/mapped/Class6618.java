@@ -27,7 +27,7 @@ public class Class6618 extends Class6601
     }
     
     @Override
-    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
+    public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
         this.field26195.method22437((class514, class515) -> {
             this.method20067(class514);
             final int i;

@@ -38,7 +38,7 @@ public class Class3961 extends Class3841
     }
     
     @Override
-    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final PlayerEntity class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, class1850, class1851, class1852);
         if (!class1847.isRemote) {
             if (class1851 instanceof Class438) {
@@ -56,7 +56,7 @@ public class Class3961 extends Class3841
     private void method12082(final World class1847, final BlockPos class1848) {
         final List<Entity> method7128 = class1847.method7128((Class<? extends Entity>)Class798.class, new AxisAlignedBB(class1848).method18495(8.0, 6.0, 8.0));
         if (!method7128.isEmpty()) {
-            final List<Entity> method7129 = class1847.method7128((Class<? extends Entity>)Class512.class, new AxisAlignedBB(class1848).method18495(8.0, 6.0, 8.0));
+            final List<Entity> method7129 = class1847.method7128((Class<? extends Entity>) PlayerEntity.class, new AxisAlignedBB(class1848).method18495(8.0, 6.0, 8.0));
             final int size = method7129.size();
             for (final Class798 class1849 : method7128) {
                 if (class1849.method4152() != null) {
@@ -72,7 +72,7 @@ public class Class3961 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         final ItemStack method2716 = method2715.method27641();
         final int intValue = class7096.get((IProperty<Integer>)Class3961.field17902);
@@ -123,7 +123,7 @@ public class Class3961 extends Class3841
         return method6727 instanceof Class438 && !((Class438)method6727).method2216();
     }
     
-    public void method12085(final World class1847, final BlockState class1848, final BlockPos class1849, final Class512 class1850, final Class2144 class1851) {
+    public void method12085(final World class1847, final BlockState class1848, final BlockPos class1849, final PlayerEntity class1850, final Class2144 class1851) {
         this.method12086(class1847, class1848, class1849);
         final TileEntity method6727 = class1847.method6727(class1849);
         if (method6727 instanceof Class438) {
@@ -199,7 +199,7 @@ public class Class3961 extends Class3841
     }
     
     @Override
-    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final PlayerEntity class1850) {
         if (!class1847.isRemote) {
             if (class1850.method2889()) {
                 if (class1847.method6765().method31216(Class8878.field37320)) {

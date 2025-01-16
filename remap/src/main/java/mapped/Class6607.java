@@ -9,10 +9,10 @@ import net.minecraft.item.ItemStack;
 public class Class6607 extends Class6601
 {
     private static String[] field26171;
-    private final Class512 field26185;
+    private final PlayerEntity field26185;
     private int field26186;
     
-    public Class6607(final Class512 field26185, final Class446 class446, final int n, final int n2, final int n3) {
+    public Class6607(final PlayerEntity field26185, final Class446 class446, final int n, final int n2, final int n3) {
         super(class446, n, n2, n3);
         this.field26185 = field26185;
     }
@@ -31,9 +31,9 @@ public class Class6607 extends Class6601
     }
     
     @Override
-    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
+    public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
         this.method20052(class513);
-        super.method20047(class512, class513);
+        super.method20047(playerEntity, class513);
         return class513;
     }
     

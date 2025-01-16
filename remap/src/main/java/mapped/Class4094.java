@@ -67,7 +67,7 @@ public class Class4094 extends Class4093
     
     public void method12332(final World class1847, final Entity class1848, final Class6356 class1849) {
         if (class1847.dimension.getType() == class1849.field25422) {
-            if (class1848 instanceof Class512) {
+            if (class1848 instanceof PlayerEntity) {
                 final int n = 1 << class1849.field25425;
                 final int field25420 = class1849.field25420;
                 final int field25421 = class1849.field25421;
@@ -78,7 +78,7 @@ public class Class4094 extends Class4093
                     n4 /= 2;
                 }
                 final Class9244 method18921;
-                final Class9244 class1850 = method18921 = class1849.method18921((Class512)class1848);
+                final Class9244 class1850 = method18921 = class1849.method18921((PlayerEntity)class1848);
                 ++method18921.field39650;
                 int n5 = 0;
                 for (int i = n2 - n4 + 1; i < n2 + n4; ++i) {
@@ -313,15 +313,15 @@ public class Class4094 extends Class4093
         if (!class8322.isRemote) {
             final Class6356 method12328 = method12328(class8321, class8322);
             if (method12328 != null) {
-                if (class8323 instanceof Class512) {
-                    method12328.method18916((Class512)class8323, class8321);
+                if (class8323 instanceof PlayerEntity) {
+                    method12328.method18916((PlayerEntity)class8323, class8321);
                 }
                 if (!method12328.field25427) {
                     if (!b) {
-                        if (!(class8323 instanceof Class512)) {
+                        if (!(class8323 instanceof PlayerEntity)) {
                             return;
                         }
-                        if (((Class512)class8323).method2714() != class8321) {
+                        if (((PlayerEntity)class8323).method2714() != class8321) {
                             return;
                         }
                     }
@@ -333,12 +333,12 @@ public class Class4094 extends Class4093
     
     @Nullable
     @Override
-    public IPacket<?> method12325(final ItemStack class8321, final World class8322, final Class512 class8323) {
+    public IPacket<?> method12325(final ItemStack class8321, final World class8322, final PlayerEntity class8323) {
         return method12328(class8321, class8322).method18919(class8321, class8322, class8323);
     }
     
     @Override
-    public void method11723(final ItemStack class8321, final World class8322, final Class512 class8323) {
+    public void method11723(final ItemStack class8321, final World class8322, final PlayerEntity class8323) {
         final Class51 method27657 = class8321.method27657();
         if (method27657 != null) {
             if (method27657.method316("map_scale_direction", 99)) {

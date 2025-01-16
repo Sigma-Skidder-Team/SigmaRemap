@@ -24,7 +24,7 @@ public class Class425 extends Entity
     private static final DataParameter<Integer> field2583;
     private boolean field2584;
     private int field2585;
-    private final Class512 field2586;
+    private final PlayerEntity field2586;
     private int field2587;
     private int field2588;
     private int field2589;
@@ -35,7 +35,7 @@ public class Class425 extends Entity
     private final int field2594;
     private final int field2595;
     
-    private Class425(final World class1847, final Class512 field2586, final int b, final int b2) {
+    private Class425(final World class1847, final PlayerEntity field2586, final int b, final int b2) {
         super(EntityType.field29059, class1847);
         this.field2593 = Class2064.field11816;
         this.ignoreFrustumCheck = true;
@@ -45,7 +45,7 @@ public class Class425 extends Entity
         this.field2595 = Math.max(0, b2);
     }
     
-    public Class425(final World class1847, final Class512 class1848, final double n, final double n2, final double n3) {
+    public Class425(final World class1847, final PlayerEntity class1848, final double n, final double n2, final double n3) {
         this(class1847, class1848, 0, 0);
         this.setPosition(n, n2, n3);
         this.prevPosX = this.getPosX();
@@ -53,8 +53,8 @@ public class Class425 extends Entity
         this.prevPosZ = this.getPosZ();
     }
     
-    public Class425(final Class512 class512, final World class513, final int n, final int n2) {
-        this(class513, class512, n, n2);
+    public Class425(final PlayerEntity playerEntity, final World class513, final int n, final int n2) {
+        this(class513, playerEntity, n, n2);
         final float field2400 = this.field2586.rotationPitch;
         final float field2401 = this.field2586.rotationYaw;
         final float method35639 = MathHelper.cos(-field2401 * 0.017453292f - 3.1415927f);
@@ -392,8 +392,8 @@ public class Class425 extends Entity
     public void method1798(final byte b) {
         if (b == 31) {
             if (this.world.isRemote) {
-                if (this.field2592 instanceof Class512) {
-                    if (((Class512)this.field2592).method2843()) {
+                if (this.field2592 instanceof PlayerEntity) {
+                    if (((PlayerEntity)this.field2592).method2843()) {
                         this.method2078();
                     }
                 }
@@ -422,7 +422,7 @@ public class Class425 extends Entity
     }
     
     @Nullable
-    public Class512 method2079() {
+    public PlayerEntity method2079() {
         return this.field2586;
     }
     
@@ -433,7 +433,7 @@ public class Class425 extends Entity
     
     @Override
     public IPacket<?> method1932() {
-        final Class512 method2079 = this.method2079();
+        final PlayerEntity method2079 = this.method2079();
         return new Class4339(this, (method2079 != null) ? method2079.getEntityId() : this.getEntityId());
     }
     

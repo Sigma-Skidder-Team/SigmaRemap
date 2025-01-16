@@ -42,9 +42,9 @@ public class Class765 extends Class763 implements Class766
         this.field4114.method22062(3, new Class3448<Object>(this, Class800.class, 6.0f, 1.0, 1.2));
         this.field4114.method22062(4, new Class3574(this, 1.0, false));
         this.field4114.method22062(5, new Class3517(this, 0.8));
-        this.field4114.method22062(6, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(6, new Class3503(this));
-        this.field4115.method22062(1, new Class3555<Object>(this, Class512.class, true));
+        this.field4115.method22062(1, new Class3555<Object>(this, PlayerEntity.class, true));
         this.field4115.method22062(2, new Class3547(this, (Class<?>[])new Class[0]));
     }
     
@@ -182,25 +182,25 @@ public class Class765 extends Class763 implements Class766
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() != Items.field31277) {
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
-        this.world.method6706(class512, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35201, this.method1922(), 1.0f, this.rand.nextFloat() * 0.4f + 0.8f);
+        this.world.method6706(playerEntity, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35201, this.method1922(), 1.0f, this.rand.nextFloat() * 0.4f + 0.8f);
         if (!this.world.isRemote) {
             this.method4240();
-            method2715.method27636(1, class512, class515 -> class515.method2795(class514));
+            method2715.method27636(1, playerEntity, class515 -> class515.method2795(class514));
         }
         return true;
     }
     
     private void method4237() {
         if (!this.world.isRemote) {
-            final Class2196 class2196 = this.world.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365;
+            final Explosion.Mode mode = this.world.method6765().method31216(Class8878.field37316) ? Explosion.Mode.field13367 : Explosion.Mode.field13365;
             final float n = this.method4233() ? 2.0f : 1.0f;
             this.field2958 = true;
-            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), this.field4141 * n, class2196);
+            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), this.field4141 * n, mode);
             this.method1652();
             this.method4238();
         }

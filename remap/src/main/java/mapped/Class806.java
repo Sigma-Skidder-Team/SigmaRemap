@@ -59,7 +59,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         this.field4114.method22062(2, new Class3587(this, 1.0, Class806.class));
         this.field4114.method22062(4, new Class3456(this, 1.0));
         this.field4114.method22062(6, new Class3517(this, 0.7));
-        this.field4114.method22062(7, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(7, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(8, new Class3503(this));
         this.method4712();
     }
@@ -115,8 +115,8 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     @Override
-    public boolean method4204(final Class512 class512) {
-        return super.method4204(class512) && this.method2712() != Class6363.field25461;
+    public boolean method4204(final PlayerEntity playerEntity) {
+        return super.method4204(playerEntity) && this.method2712() != Class6363.field25461;
     }
     
     @Override
@@ -352,17 +352,17 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         return 400;
     }
     
-    public void method4740(final Class512 class512) {
+    public void method4740(final PlayerEntity playerEntity) {
         if (!this.world.isRemote) {
-            if (!this.isBeingRidden() || this.method1909(class512)) {
+            if (!this.isBeingRidden() || this.method1909(playerEntity)) {
                 if (this.method4715()) {
-                    class512.method2832(this, this.field4342);
+                    playerEntity.method2832(this, this.field4342);
                 }
             }
         }
     }
     
-    public boolean method4741(final Class512 class512, final ItemStack class513) {
+    public boolean method4741(final PlayerEntity playerEntity, final ItemStack class513) {
         boolean b = false;
         float n = 0.0f;
         int n2 = 0;
@@ -381,7 +381,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                                     if (this.method4351() == 0) {
                                         if (!this.method4363()) {
                                             b = true;
-                                            this.method4360(class512);
+                                            this.method4360(playerEntity);
                                         }
                                     }
                                 }
@@ -395,7 +395,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                                 if (this.method4351() == 0) {
                                     if (!this.method4363()) {
                                         b = true;
-                                        this.method4360(class512);
+                                        this.method4360(playerEntity);
                                     }
                                 }
                             }
@@ -454,13 +454,13 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         return b;
     }
     
-    public void method4742(final Class512 class512) {
+    public void method4742(final PlayerEntity playerEntity) {
         this.method4747(false);
         this.method4748(false);
         if (!this.world.isRemote) {
-            class512.rotationYaw = this.rotationYaw;
-            class512.rotationPitch = this.rotationPitch;
-            class512.method1778(this);
+            playerEntity.rotationYaw = this.rotationYaw;
+            playerEntity.rotationPitch = this.rotationPitch;
+            playerEntity.method1778(this);
         }
     }
     
@@ -664,11 +664,11 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         }
     }
     
-    public boolean method4751(final Class512 class512) {
-        this.method4717(class512.method1865());
+    public boolean method4751(final PlayerEntity playerEntity) {
+        this.method4717(playerEntity.method1865());
         this.method4719(true);
-        if (class512 instanceof Class513) {
-            Class7770.field31798.method13773((Class513)class512, this);
+        if (playerEntity instanceof Class513) {
+            Class7770.field31798.method13773((Class513) playerEntity, this);
         }
         this.world.method6761(this, (byte)7);
         return true;
@@ -728,7 +728,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                         }
                         this.field2955 = this.method2732() * 0.1f;
                         if (!this.method1919()) {
-                            if (class5488 instanceof Class512) {
+                            if (class5488 instanceof PlayerEntity) {
                                 this.method1936(Vec3d.ZERO);
                             }
                         }

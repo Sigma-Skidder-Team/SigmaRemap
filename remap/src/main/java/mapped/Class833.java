@@ -84,7 +84,7 @@ public abstract class Class833 extends Class832
     public void method4142() {
         super.method4142();
         this.field4114.method22062(0, new Class3607(this, 1.25));
-        this.field4114.method22062(2, new Class3448<Object>(this, Class512.class, 8.0f, 1.6, 1.4, Class9170.field38850::test));
+        this.field4114.method22062(2, new Class3448<Object>(this, PlayerEntity.class, 8.0f, 1.6, 1.4, Class9170.field38850::test));
         this.field4114.method22062(4, new Class3516(this));
     }
     
@@ -124,28 +124,28 @@ public abstract class Class833 extends Class832
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() == Items.field31350 && this.method1768()) {
             this.method1695(Class8520.field35053, 1.0f, 1.0f);
             method2715.method27693(1);
             final ItemStack method2716 = this.method4956();
             this.method4955(method2716);
             if (!this.world.isRemote) {
-                Class7770.field31784.method13862((Class513)class512, method2716);
+                Class7770.field31784.method13862((Class513) playerEntity, method2716);
             }
             if (!method2715.method27620()) {
-                if (!class512.field3006.method2362(method2716)) {
-                    class512.method2822(method2716, false);
+                if (!playerEntity.field3006.method2362(method2716)) {
+                    playerEntity.method2822(method2716, false);
                 }
             }
             else {
-                class512.method2716(class513, method2716);
+                playerEntity.method2716(class513, method2716);
             }
             this.method1652();
             return true;
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     public void method4955(final ItemStack class8321) {

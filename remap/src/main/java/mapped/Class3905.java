@@ -82,7 +82,7 @@ public abstract class Class3905 extends Class3902
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7096.get((IProperty<Boolean>)Class3905.field17693)) {
             this.method12009(class7096, class7097, class7098);
             this.method12010(class7099, class7097, class7098, true);
@@ -97,8 +97,8 @@ public abstract class Class3905 extends Class3902
         class7097.method6833().method21345(class7098, this, this.method11826(class7097));
     }
     
-    public void method12010(final Class512 class512, final Class1851 class513, final BlockPos class514, final boolean b) {
-        class513.method6705(b ? class512 : null, class514, this.method12011(b), Class286.field1582, 0.3f, b ? 0.6f : 0.5f);
+    public void method12010(final PlayerEntity playerEntity, final Class1851 class513, final BlockPos class514, final boolean b) {
+        class513.method6705(b ? playerEntity : null, class514, this.method12011(b), Class286.field1582, 0.3f, b ? 0.6f : 0.5f);
     }
     
     public abstract Class7795 method12011(final boolean p0);

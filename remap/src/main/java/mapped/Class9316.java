@@ -35,12 +35,12 @@ public class Class9316
     }
     
     @Nullable
-    private static BlockState method34478(final Class512 class512) {
+    private static BlockState method34478(final PlayerEntity playerEntity) {
         final Mutable class513 = new Mutable();
         for (int i = 0; i < 8; ++i) {
-            class513.method1286(class512.getPosX() + ((i >> 0) % 2 - 0.5f) * class512.method1930() * 0.8f, class512.method1944() + ((i >> 1) % 2 - 0.5f) * 0.1f, class512.getPosZ() + ((i >> 2) % 2 - 0.5f) * class512.method1930() * 0.8f);
-            final BlockState method6701 = class512.world.getBlockState(class513);
-            if (method6701.method21710() != Class2115.field12305 && method6701.method21747(class512.world, class513)) {
+            class513.method1286(playerEntity.getPosX() + ((i >> 0) % 2 - 0.5f) * playerEntity.method1930() * 0.8f, playerEntity.method1944() + ((i >> 1) % 2 - 0.5f) * 0.1f, playerEntity.getPosZ() + ((i >> 2) % 2 - 0.5f) * playerEntity.method1930() * 0.8f);
+            final BlockState method6701 = playerEntity.world.getBlockState(class513);
+            if (method6701.method21710() != Class2115.field12305 && method6701.method21747(playerEntity.world, class513)) {
                 return method6701;
             }
         }

@@ -58,7 +58,7 @@ public class Class3574 extends Class3446
             return false;
         }
         if (this.field16688) {
-            return this.field16685.method4197(new BlockPos(method4152)) && (!(method4152 instanceof Class512) || (!method4152.isSpectator() && !((Class512)method4152).method2889()));
+            return this.field16685.method4197(new BlockPos(method4152)) && (!(method4152 instanceof PlayerEntity) || (!method4152.isSpectator() && !((PlayerEntity)method4152).method2889()));
         }
         return !this.field16685.method4150().method24731();
     }

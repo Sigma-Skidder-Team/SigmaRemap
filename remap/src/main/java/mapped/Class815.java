@@ -77,7 +77,7 @@ public class Class815 extends Class812 implements Class768
         this.field4114.method22062(4, new Class3587(this, 1.0));
         this.field4114.method22062(5, new Class3456(this, 1.0));
         this.field4114.method22062(6, new Class3517(this, 0.7));
-        this.field4114.method22062(7, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(7, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(8, new Class3503(this));
         this.field4115.method22062(1, new Class3550(this));
         this.field4115.method22062(2, new Class3566(this));
@@ -128,7 +128,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public boolean method4741(final Class512 class512, final ItemStack class513) {
+    public boolean method4741(final PlayerEntity playerEntity, final ItemStack class513) {
         int n = 0;
         int n2 = 0;
         float n3 = 0.0f;
@@ -143,7 +143,7 @@ public class Class815 extends Class812 implements Class768
                     if (this.method4351() == 0) {
                         if (this.method4359()) {
                             b = true;
-                            this.method4360(class512);
+                            this.method4360(playerEntity);
                         }
                     }
                 }

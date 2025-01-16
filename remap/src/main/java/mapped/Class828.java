@@ -93,7 +93,7 @@ public class Class828 extends Class827
         if (this.method4938()) {
             if (this.field4438 != null) {
                 if (method2711 == null) {
-                    final Class512 method2712 = this.world.method7143(this.field4438);
+                    final PlayerEntity method2712 = this.world.method7143(this.field4438);
                     this.method2636(method2712);
                     this.field2956 = method2712;
                     this.field2957 = this.method2635();
@@ -131,7 +131,7 @@ public class Class828 extends Class827
         final String method323 = class51.method323("HurtBy");
         if (!method323.isEmpty()) {
             this.field4438 = UUID.fromString(method323);
-            final Class512 method324 = this.world.method7143(this.field4438);
+            final PlayerEntity method324 = this.world.method7143(this.field4438);
             this.method2636(method324);
             if (method324 != null) {
                 this.field2956 = method324;
@@ -144,8 +144,8 @@ public class Class828 extends Class827
     public boolean attackEntityFrom(final DamageSource class7929, final float n) {
         if (!this.method1849(class7929)) {
             final Entity method25714 = class7929.method25714();
-            if (method25714 instanceof Class512) {
-                if (!((Class512)method25714).method2889()) {
+            if (method25714 instanceof PlayerEntity) {
+                if (!((PlayerEntity)method25714).method2889()) {
                     if (this.method2747(method25714)) {
                         this.method4936((LivingEntity)method25714);
                     }
@@ -197,7 +197,7 @@ public class Class828 extends Class827
     }
     
     @Override
-    public boolean method4232(final Class512 class512) {
+    public boolean method4232(final PlayerEntity playerEntity) {
         return this.method4938();
     }
     

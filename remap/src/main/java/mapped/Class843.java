@@ -54,11 +54,11 @@ public class Class843 extends Class763
         this.field4114.method22062(0, new Class3490(this));
         this.field4114.method22062(4, new Class3510(this));
         this.field4114.method22062(8, new Class3530(this));
-        this.field4114.method22062(9, new Class3628(this, Class512.class, 3.0f, 1.0f));
+        this.field4114.method22062(9, new Class3628(this, PlayerEntity.class, 3.0f, 1.0f));
         this.field4114.method22062(10, new Class3628(this, Class759.class, 8.0f));
         this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[] { Class776.class }).method11100((Class<?>[])new Class[0]));
         this.field4115.method22062(2, new Class3570(this, this));
-        this.field4115.method22062(3, new Class3555<Object>(this, Class512.class, true));
+        this.field4115.method22062(3, new Class3555<Object>(this, PlayerEntity.class, true));
     }
     
     @Override

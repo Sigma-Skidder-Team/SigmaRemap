@@ -20,13 +20,13 @@ public class Class430 extends Class428
     }
     
     @Override
-    public boolean method1770(final Class512 class512, final Class316 class513) {
-        if (class512.method2804()) {
+    public boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
+        if (playerEntity.method2804()) {
             return false;
         }
         if (!this.isBeingRidden()) {
             if (!this.world.isRemote) {
-                class512.method1778(this);
+                playerEntity.method1778(this);
             }
             return true;
         }

@@ -59,8 +59,8 @@ public class DamageSource
         return new Class7931("mob", class399, class400);
     }
     
-    public static DamageSource method25695(final Class512 class512) {
-        return new Class7930("player", class512);
+    public static DamageSource method25695(final PlayerEntity playerEntity) {
+        return new Class7930("player", playerEntity);
     }
     
     public static DamageSource method25696(final Class402 class402, final Entity class403) {
@@ -87,7 +87,7 @@ public class DamageSource
         return new Class7930("thorns", class399).method25727().method25724();
     }
     
-    public static DamageSource method25702(final Explosion explosion) {
+    public static DamageSource causeExplosionDamage(final Explosion explosion) {
         return (explosion != null && explosion.method18414() != null) ? new Class7930("explosion.player", explosion.method18414()).method25721().method25708() : new DamageSource("explosion").method25721().method25708();
     }
     
@@ -205,7 +205,7 @@ public class DamageSource
     
     public boolean method25725() {
         final Entity method25714 = this.method25714();
-        return method25714 instanceof Class512 && ((Class512)method25714).field3025.field27304;
+        return method25714 instanceof PlayerEntity && ((PlayerEntity)method25714).field3025.field27304;
     }
     
     @Nullable

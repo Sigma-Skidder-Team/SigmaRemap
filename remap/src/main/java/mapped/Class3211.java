@@ -166,26 +166,26 @@ public class Class3211 extends Class3167
                             if (Class3211.field15514.field4684.method1732(method26798) <= n) {
                                 if (Class3211.field15514.field4684.method2646((LivingEntity)method26798)) {
                                     if (!(method26798 instanceof Class857)) {
-                                        if (!this.method9883("Players") && method26798 instanceof Class512) {
+                                        if (!this.method9883("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
                                         }
-                                        else if (method26798 instanceof Class512 && Class9463.method35173().method35191().method31751(method26798)) {
+                                        else if (method26798 instanceof PlayerEntity && Class9463.method35173().method35191().method31751(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!this.method9883("Invisible") && method26798.method1823()) {
                                             iterator2.remove();
                                         }
-                                        else if (!this.method9883("Animals/Monsters") && !(method26798 instanceof Class512)) {
+                                        else if (!this.method9883("Animals/Monsters") && !(method26798 instanceof PlayerEntity)) {
                                             iterator2.remove();
                                         }
                                         else if (Class3211.field15514.field4684.method1920() != null && Class3211.field15514.field4684.method1920().equals(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!method26798.method1850()) {
-                                            if (!(method26798 instanceof Class512)) {
+                                            if (!(method26798 instanceof PlayerEntity)) {
                                                 continue;
                                             }
-                                            if (!Class9011.method32262((Class512)method26798)) {
+                                            if (!Class9011.method32262((PlayerEntity)method26798)) {
                                                 continue;
                                             }
                                             if (!Class9463.method35173().method35189().method21551(Class3203.class).method9906()) {

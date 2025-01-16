@@ -111,7 +111,7 @@ public class Class4005 extends Block
     }
     
     @Override
-    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final PlayerEntity class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, class1850, class1851, class1852);
         this.method12169(class1847, class1849, class1850);
     }
@@ -139,7 +139,7 @@ public class Class4005 extends Block
     }
     
     private boolean method12172(final World class1847, final Entity class1848) {
-        return !(class1848 instanceof Class793) && (!(class1848 instanceof LivingEntity) || class1848 instanceof Class512 || class1847.method6765().method31216(Class8878.field37316));
+        return !(class1848 instanceof Class793) && (!(class1848 instanceof LivingEntity) || class1848 instanceof PlayerEntity || class1847.method6765().method31216(Class8878.field37316));
     }
     
     static {

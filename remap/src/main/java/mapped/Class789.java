@@ -94,7 +94,7 @@ public abstract class Class789 extends Class788
     }
     
     @Override
-    public int method2631(final Class512 class512) {
+    public int method2631(final PlayerEntity playerEntity) {
         return 1 + this.world.rand.nextInt(3);
     }
     
@@ -103,30 +103,30 @@ public abstract class Class789 extends Class788
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (this.method4357(method2715)) {
             if (!this.world.isRemote) {
                 if (this.method4351() == 0) {
                     if (this.method4359()) {
-                        this.method4358(class512, method2715);
-                        this.method4360(class512);
-                        class512.method2708(class513, true);
+                        this.method4358(playerEntity, method2715);
+                        this.method4360(playerEntity);
+                        playerEntity.method2708(class513, true);
                         return true;
                     }
                 }
             }
             if (this.method2625()) {
-                this.method4358(class512, method2715);
+                this.method4358(playerEntity, method2715);
                 this.method4352((int)(-this.method4351() / 20 * 0.1f), true);
                 return true;
             }
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
-    public void method4358(final Class512 class512, final ItemStack class513) {
-        if (!class512.field3025.field27304) {
+    public void method4358(final PlayerEntity playerEntity, final ItemStack class513) {
+        if (!playerEntity.field3025.field27304) {
             class513.method27693(1);
         }
     }
@@ -135,10 +135,10 @@ public abstract class Class789 extends Class788
         return this.field4202 <= 0;
     }
     
-    public void method4360(final Class512 class512) {
+    public void method4360(final PlayerEntity playerEntity) {
         this.field4202 = 600;
-        if (class512 != null) {
-            this.field4203 = class512.method1865();
+        if (playerEntity != null) {
+            this.field4203 = playerEntity.method1865();
         }
         this.world.method6761(this, (byte)18);
     }
@@ -150,7 +150,7 @@ public abstract class Class789 extends Class788
     @Nullable
     public Class513 method4362() {
         if (this.field4203 != null) {
-            final Class512 method7143 = this.world.method7143(this.field4203);
+            final PlayerEntity method7143 = this.world.method7143(this.field4203);
             return (method7143 instanceof Class513) ? ((Class513)method7143) : null;
         }
         return null;

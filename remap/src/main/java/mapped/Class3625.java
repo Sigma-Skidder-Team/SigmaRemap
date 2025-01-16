@@ -64,11 +64,11 @@ public class Class3625 extends Class3446
                 if (class399 == null) {
                     return;
                 }
-                if (class399 instanceof Class512) {
+                if (class399 instanceof PlayerEntity) {
                     final int method4726 = this.field16840.method4726();
                     final int method4727 = this.field16840.method4739();
                     if (method4727 > 0 && this.field16840.method2633().nextInt(method4727) < method4726) {
-                        this.field16840.method4751((Class512)class399);
+                        this.field16840.method4751((PlayerEntity)class399);
                         return;
                     }
                     this.field16840.method4728(5);

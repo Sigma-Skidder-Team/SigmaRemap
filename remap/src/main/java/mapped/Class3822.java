@@ -29,8 +29,8 @@ public class Class3822 extends Class3821
     }
     
     @Override
-    public void method11756(final Class512 class512, final Class1851 class513, final BlockPos class514) {
-        class513.method6705(class512, class514, Class8520.field35050, Class286.field1584, 1.0f, 1.0f);
+    public void method11756(final PlayerEntity playerEntity, final Class1851 class513, final BlockPos class514) {
+        class513.method6705(playerEntity, class514, Class8520.field35050, Class286.field1584, 1.0f, 1.0f);
     }
     
     private void method11757(final World class1847, final ItemStack class1848, final BlockPos class1849) {

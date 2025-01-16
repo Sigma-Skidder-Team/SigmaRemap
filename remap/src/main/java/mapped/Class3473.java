@@ -7,7 +7,7 @@ package mapped;
 public class Class3473 extends Class3472
 {
     private static String[] field16370;
-    private Class512 field16371;
+    private PlayerEntity field16371;
     private final Class800 field16372;
     
     public Class3473(final Class800 field16372, final double n, final Class120 class120, final boolean b) {

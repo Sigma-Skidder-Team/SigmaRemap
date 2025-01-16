@@ -48,7 +48,7 @@ public class Class3555<T extends LivingEntity> extends Class3545
     }
     
     public void method11104() {
-        if (this.field16634 != Class512.class && this.field16634 != Class513.class) {
+        if (this.field16634 != PlayerEntity.class && this.field16634 != Class513.class) {
             this.field16636 = this.field16602.world.method7139((Class<? extends LivingEntity>)this.field16634, this.field16637, (LivingEntity)this.field16602, this.field16602.getPosX(), this.field16602.method1944(), this.field16602.getPosZ(), this.method11103(this.method11096()));
         }
         else {

@@ -27,7 +27,7 @@ public class Class3963 extends Block
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (class7097.isRemote) {
             final ItemStack method2715 = class7099.method2715(class7100);
             if (this.method12092(class7097, class7098, class7096, class7099) == Class2201.field13400) {
@@ -40,7 +40,7 @@ public class Class3963 extends Block
         return this.method12092(class7097, class7098, class7096, class7099);
     }
     
-    private Class2201 method12092(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final Class512 class1854) {
+    private Class2201 method12092(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final PlayerEntity class1854) {
         if (class1854.method2878(false)) {
             class1854.method2857(Class8276.field34023);
             class1854.method2877().method33486(2, 0.1f);

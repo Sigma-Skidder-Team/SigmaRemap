@@ -71,12 +71,12 @@ public class Class3969 extends Block
     }
     
     @Override
-    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final PlayerEntity class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, Class7521.field29147.getDefaultState(), class1851, class1852);
     }
     
     @Override
-    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final PlayerEntity class1850) {
         final Class182 class1851 = class1849.get(Class3969.field17935);
         final BlockPos class1852 = (class1851 != Class182.field565) ? class1848.method1139() : class1848.method1137();
         final BlockState method6701 = class1847.getBlockState(class1852);
@@ -186,7 +186,7 @@ public class Class3969 extends Block
     }
     
     @Override
-    public Class2201 method11844(BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (this.field17401 != Material.IRON) {
             class7096 = ((StateHolder<O, BlockState>)class7096).method21768((IProperty<Comparable>)Class3969.field17932);
             class7097.setBlockState(class7098, class7096, 10);

@@ -16,7 +16,7 @@ public class Class4837 extends Class4825
 {
     public static Class6523 field20733;
     public String field20734;
-    private Class512 field20735;
+    private PlayerEntity field20735;
     private Class869 field20736;
     private static Class1848 field20737;
     public Class7971 field20738;

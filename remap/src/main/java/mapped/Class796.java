@@ -68,7 +68,7 @@ public class Class796 extends Class795 implements Class797
         this.field4245 = new Class3495(this);
         this.field4114.method22062(0, new Class3607(this, 1.25));
         this.field4114.method22062(0, new Class3490(this));
-        this.field4114.method22062(1, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(1, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(2, this.field4245);
         this.field4114.method22062(2, new Class3528(this, 1.0, 5.0f, 1.0f, true));
         this.field4114.method22062(2, new Class3518(this, 1.0));
@@ -167,13 +167,13 @@ public class Class796 extends Class795 implements Class797
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() instanceof Class3831) {
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
         if (!this.method4480() && Class796.field4250.contains(method2715.getItem())) {
-            if (!class512.field3025.field27304) {
+            if (!playerEntity.field3025.field27304) {
                 method2715.method27693(1);
             }
             if (!this.method1696()) {
@@ -184,7 +184,7 @@ public class Class796 extends Class795 implements Class797
                     this.world.method6761(this, (byte)6);
                 }
                 else {
-                    this.method4487(class512);
+                    this.method4487(playerEntity);
                     this.world.method6761(this, (byte)7);
                 }
             }
@@ -193,7 +193,7 @@ public class Class796 extends Class795 implements Class797
         if (method2715.getItem() != Class796.field4249) {
             if (!this.method4504()) {
                 if (this.method4480()) {
-                    if (this.method4489(class512)) {
+                    if (this.method4489(playerEntity)) {
                         if (!this.world.isRemote) {
                             this.field4245.method11058(!this.method4483());
                         }
@@ -201,14 +201,14 @@ public class Class796 extends Class795 implements Class797
                     }
                 }
             }
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
-        if (!class512.field3025.field27304) {
+        if (!playerEntity.field3025.field27304) {
             method2715.method27693(1);
         }
         this.method2655(new Class1948(Class9439.field40492, 900));
-        if (class512.method2889() || !this.method1850()) {
-            this.attackEntityFrom(DamageSource.method25695(class512), Float.MAX_VALUE);
+        if (playerEntity.method2889() || !this.method1850()) {
+            this.attackEntityFrom(DamageSource.method25695(playerEntity), Float.MAX_VALUE);
         }
         return true;
     }
@@ -335,7 +335,7 @@ public class Class796 extends Class795 implements Class797
     
     @Override
     public void method2741(final Entity class399) {
-        if (!(class399 instanceof Class512)) {
+        if (!(class399 instanceof PlayerEntity)) {
             super.method2741(class399);
         }
     }

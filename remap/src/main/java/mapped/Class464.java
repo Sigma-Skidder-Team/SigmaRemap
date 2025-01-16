@@ -22,11 +22,11 @@ public class Class464 implements Class446, INameable
     public final Class2265<ItemStack> field2741;
     private final List<Class2265<ItemStack>> field2742;
     public int field2743;
-    public final Class512 field2744;
+    public final PlayerEntity field2744;
     private ItemStack field2745;
     private int field2746;
     
-    public Class464(final Class512 field2744) {
+    public Class464(final PlayerEntity field2744) {
         this.field2739 = Class2265.method8507(36, ItemStack.field34174);
         this.field2740 = Class2265.method8507(4, ItemStack.field34174);
         this.field2741 = Class2265.method8507(1, ItemStack.field34174);
@@ -552,8 +552,8 @@ public class Class464 implements Class446, INameable
     }
     
     @Override
-    public boolean method2162(final Class512 class512) {
-        return !this.field2744.removed && class512.method1734(this.field2744) <= 64.0;
+    public boolean method2162(final PlayerEntity playerEntity) {
+        return !this.field2744.removed && playerEntity.method1734(this.field2744) <= 64.0;
     }
     
     public boolean method2376(final ItemStack class8321) {

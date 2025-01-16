@@ -162,7 +162,7 @@ public class Class862 extends Class860
         if (this.world.method6765().method31216(Class8878.field37321)) {
             final ItemStack method5198 = this.method5198();
             this.method5199(ItemStack.field34174);
-            if (class399 instanceof Class512 && ((Class512)class399).field3025.field27304) {
+            if (class399 instanceof PlayerEntity && ((PlayerEntity)class399).field3025.field27304) {
                 this.method5197(method5198);
                 return;
             }
@@ -292,8 +292,8 @@ public class Class862 extends Class860
     }
     
     @Override
-    public boolean method1770(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         final boolean b = !this.method5198().method27620();
         final boolean b2 = !method2715.method27620();
         if (this.world.isRemote) {
@@ -305,7 +305,7 @@ public class Class862 extends Class860
         }
         else if (b2) {
             this.method5199(method2715);
-            if (!class512.field3025.field27304) {
+            if (!playerEntity.field3025.field27304) {
                 method2715.method27693(1);
             }
         }

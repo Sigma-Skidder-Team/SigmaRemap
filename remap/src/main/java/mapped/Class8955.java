@@ -29,7 +29,7 @@ public class Class8955
     
     public boolean method31767(final Entity class399, final float n) {
         final Vec3d method1859 = class399.method1859();
-        final Class9402 method1860 = this.method31768(new BlockPos(class399), class399.getMotion(), class399.method1860(), method1859.x, method1859.y, class399 instanceof Class512);
+        final Class9402 method1860 = this.method31768(new BlockPos(class399), class399.getMotion(), class399.method1860(), method1859.x, method1859.y, class399 instanceof PlayerEntity);
         if (method1860 != null) {
             final Vec3d field40340 = method1860.field40340;
             class399.method1936(method1860.field40341);

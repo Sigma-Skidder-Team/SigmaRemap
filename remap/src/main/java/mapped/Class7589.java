@@ -46,7 +46,7 @@ public class Class7589
     private static int method23875(final Collection<? extends Entity> collection) {
         final HashSet hashSet = Sets.newHashSet();
         for (final Entity class399 : collection) {
-            if (!(class399 instanceof Class512)) {
+            if (!(class399 instanceof PlayerEntity)) {
                 hashSet.add(null);
             }
             else {
@@ -126,7 +126,7 @@ public class Class7589
                 class1851 = array[n2++];
             }
             else {
-                final Team class1852 = (class1850 instanceof Class512) ? class1850.getTeam() : null;
+                final Team class1852 = (class1850 instanceof PlayerEntity) ? class1850.getTeam() : null;
                 if (!hashMap.containsKey(class1852)) {
                     hashMap.put(class1852, array[n2++]);
                 }

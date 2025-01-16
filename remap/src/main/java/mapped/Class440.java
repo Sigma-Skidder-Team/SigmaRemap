@@ -182,8 +182,8 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     @Override
-    public void method2241(final Class512 class512) {
-        if (!class512.isSpectator()) {
+    public void method2241(final PlayerEntity playerEntity) {
+        if (!playerEntity.isSpectator()) {
             if (this.field2667 < 0) {
                 this.field2667 = 0;
             }
@@ -196,8 +196,8 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     @Override
-    public void method2242(final Class512 class512) {
-        if (!class512.isSpectator()) {
+    public void method2242(final PlayerEntity playerEntity) {
+        if (!playerEntity.isSpectator()) {
             --this.field2667;
             this.field2656.method6763(this.field2657, this.method2194().getBlock(), 1, this.field2667);
             if (this.field2667 <= 0) {

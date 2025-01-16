@@ -18,11 +18,11 @@ public class Class9587
     }
     
     private static int method35951(final Class7492 class7492) {
-        return method35953(class7492, Class512::getDisplayName);
+        return method35953(class7492, PlayerEntity::getDisplayName);
     }
     
     private static int method35952(final Class7492 class7492) {
-        return method35953(class7492, Class512::method2891);
+        return method35953(class7492, PlayerEntity::method2891);
     }
     
     private static int method35953(final Class7492 class7492, final Function<Class513, ITextComponent> function) {

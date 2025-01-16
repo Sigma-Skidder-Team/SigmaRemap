@@ -24,13 +24,13 @@ public class Class3987 extends Class3986
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         this.method12135(class7096, class7097, class7098);
         return Class2201.field13400;
     }
     
     @Override
-    public void method11847(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+    public void method11847(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099) {
         this.method12135(class7096, class7097, class7098);
     }
     

@@ -68,8 +68,8 @@ public class Class7473 extends Class7474
     }
     
     @Override
-    public void method23075(final Class512 class512, final Class9455<?> class513, final int n) {
-        super.method23075(class512, class513, n);
+    public void method23075(final PlayerEntity playerEntity, final Class9455<?> class513, final int n) {
+        super.method23075(playerEntity, class513, n);
         this.field28868.add(class513);
     }
     

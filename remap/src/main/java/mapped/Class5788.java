@@ -64,7 +64,7 @@ public class Class5788 extends Class5784
                     return;
                 }
                 double n2 = 64.0;
-                final Class512 method6959 = this.field23764.world.method7137(Class5788.field23777, method6958.getX(), method6958.getY(), method6958.getZ());
+                final PlayerEntity method6959 = this.field23764.world.method7137(Class5788.field23777, method6958.getX(), method6958.getY(), method6958.getZ());
                 if (method6959 != null) {
                     n2 = method6958.distanceSq(method6959.method1934(), true) / 512.0;
                 }
@@ -109,9 +109,9 @@ public class Class5788 extends Class5784
         this.method17262();
     }
     
-    private void method17261(final Class512 class512) {
+    private void method17261(final PlayerEntity playerEntity) {
         this.field23764.method5127().method33696(Class7193.field27949);
-        this.field23764.method5127().method33698(Class7193.field27949).method17259(class512);
+        this.field23764.method5127().method33698(Class7193.field27949).method17259(playerEntity);
     }
     
     private void method17262() {
@@ -131,7 +131,7 @@ public class Class5788 extends Class5784
     }
     
     @Override
-    public void method17248(final Class858 class858, final BlockPos class859, final DamageSource class860, final Class512 class861) {
+    public void method17248(final Class858 class858, final BlockPos class859, final DamageSource class860, final PlayerEntity class861) {
         if (class861 != null) {
             if (!class861.field3025.field27301) {
                 this.method17261(class861);

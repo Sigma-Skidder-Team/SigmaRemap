@@ -354,8 +354,8 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public boolean method2162(final Class512 class512) {
-        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
+    public boolean method2162(final PlayerEntity playerEntity) {
+        return this.field2656.method6727(this.field2657) == this && playerEntity.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
     }
     
     @Override
@@ -389,24 +389,24 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public void method2403(final Class512 class512) {
+    public void method2403(final PlayerEntity playerEntity) {
     }
     
-    public void method2404(final Class512 class512) {
+    public void method2404(final PlayerEntity playerEntity) {
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<Map.Entry<ResourceLocation, Integer>> iterator = this.field2761.entrySet().iterator();
         while (iterator.hasNext()) {
-            class512.world.method6792().method6382(((Map.Entry<ResourceLocation, V>)iterator.next()).getKey()).ifPresent(class514 -> {
+            playerEntity.world.method6792().method6382(((Map.Entry<ResourceLocation, V>)iterator.next()).getKey()).ifPresent(class514 -> {
                 list.add(class514);
                 method2405(class513, entry.getValue(), ((Class3680)class514).method11328());
                 return;
             });
         }
-        class512.method2862(arrayList);
+        playerEntity.method2862(arrayList);
         this.field2761.clear();
     }
     
-    private static void method2405(final Class512 class512, int i, final float n) {
+    private static void method2405(final PlayerEntity playerEntity, int i, final float n) {
         if (n != 0.0f) {
             if (n < 1.0f) {
                 int method35642 = MathHelper.method35642(i * n);
@@ -424,7 +424,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         while (i > 0) {
             final int method35643 = Class508.method2609(i);
             i -= method35643;
-            class512.world.method6886(new Class508(class512.world, class512.getPosX(), class512.getPosY() + 0.5, class512.getPosZ() + 0.5, method35643));
+            playerEntity.world.method6886(new Class508(playerEntity.world, playerEntity.getPosX(), playerEntity.getPosY() + 0.5, playerEntity.getPosZ() + 0.5, method35643));
         }
     }
     

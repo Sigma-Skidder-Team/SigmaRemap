@@ -44,7 +44,7 @@ public class Class435 extends TileEntity implements Class447, Class434
         Class3930.method12042(this.method2186(), this.getPos(), this.method2194(), false);
     }
     
-    public void method2172(final ItemStack class8321, final Class512 class8322) {
+    public void method2172(final ItemStack class8321, final PlayerEntity class8322) {
         this.field2651 = this.method2176(class8321, class8322);
         this.field2652 = 0;
         this.field2653 = Class4096.method12341(this.field2651);
@@ -68,7 +68,7 @@ public class Class435 extends TileEntity implements Class447, Class434
         return MathHelper.method35642(((this.field2653 <= 1) ? 1.0f : (this.method2174() / (this.field2653 - 1.0f))) * 14.0f) + (this.method2169() ? 1 : 0);
     }
     
-    private ItemStack method2176(final ItemStack class8321, final Class512 class8322) {
+    private ItemStack method2176(final ItemStack class8321, final PlayerEntity class8322) {
         if (this.field2656 instanceof Class1849) {
             if (class8321.getItem() == Items.field31513) {
                 Class4096.method12342(class8321, this.method2177(class8322), class8322);
@@ -77,18 +77,18 @@ public class Class435 extends TileEntity implements Class447, Class434
         return class8321;
     }
     
-    private Class7492 method2177(final Class512 class512) {
+    private Class7492 method2177(final PlayerEntity playerEntity) {
         String string;
         ITextComponent method1871;
-        if (class512 != null) {
-            string = class512.getName().getString();
-            method1871 = class512.getDisplayName();
+        if (playerEntity != null) {
+            string = playerEntity.getName().getString();
+            method1871 = playerEntity.getDisplayName();
         }
         else {
             string = "Lectern";
             method1871 = new StringTextComponent("Lectern");
         }
-        return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, string, method1871, this.field2656.getServer(), class512);
+        return new Class7492(ICommandSource.DUMMY, new Vec3d(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5), Vec2f.ZERO, (Class1849)this.field2656, 2, string, method1871, this.field2656.getServer(), playerEntity);
     }
     
     @Override
@@ -125,7 +125,7 @@ public class Class435 extends TileEntity implements Class447, Class434
     }
     
     @Override
-    public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
+    public Class3418 method2166(final int n, final Class464 class464, final PlayerEntity class465) {
         return new Class3420(n, this.field2649, this.field2650);
     }
     

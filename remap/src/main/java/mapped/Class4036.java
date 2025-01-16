@@ -44,7 +44,7 @@ public class Class4036 extends Item
         if (this.method12238(method12231, method12232)) {
             final BlockPos method12233 = method12231.method21639();
             final World method12234 = method12231.method21654();
-            final Class512 method12235 = method12231.method21652();
+            final PlayerEntity method12235 = method12231.method21652();
             final ItemStack method12236 = method12231.method21651();
             Class7096 class7075 = method12234.getBlockState(method12233);
             final Block method12237 = class7075.method21696();
@@ -73,7 +73,7 @@ public class Class4036 extends Item
         return class7074;
     }
     
-    public boolean method12232(final BlockPos class354, final World class355, final Class512 class356, final ItemStack class357, final Class7096 class358) {
+    public boolean method12232(final BlockPos class354, final World class355, final PlayerEntity class356, final ItemStack class357, final Class7096 class358) {
         return method12239(class355, class356, class354, class357);
     }
     
@@ -108,7 +108,7 @@ public class Class4036 extends Item
     }
     
     public boolean method12236(final Class7074 class7074, final Class7096 class7075) {
-        final Class512 method21652 = class7074.method21652();
+        final PlayerEntity method21652 = class7074.method21652();
         final ISelectionContext class7076 = (method21652 != null) ? ISelectionContext.forEntity(method21652) : ISelectionContext.dummy();
         if (!this.method12237() || class7075.method21752(class7074.method21654(), class7074.method21639())) {
             if (class7074.method21654().method6974(class7075, class7074.method21639(), class7076)) {
@@ -126,7 +126,7 @@ public class Class4036 extends Item
         return class7074.method21654().setBlockState(class7074.method21639(), class7075, 11);
     }
     
-    public static boolean method12239(final World class1847, final Class512 class1848, final BlockPos class1849, final ItemStack class1850) {
+    public static boolean method12239(final World class1847, final PlayerEntity class1848, final BlockPos class1849, final ItemStack class1850) {
         if (class1847.getServer() != null) {
             final Class51 method27660 = class1850.method27660("BlockEntityTag");
             if (method27660 != null) {

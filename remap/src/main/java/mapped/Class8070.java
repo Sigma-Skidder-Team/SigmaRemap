@@ -84,18 +84,18 @@ public class Class8070 extends Class8071
     }
     
     @Override
-    public Class2201 method26479(final Class512 class512, final World class513, final ItemStack class514, final Class316 class515) {
+    public Class2201 method26479(final PlayerEntity playerEntity, final World class513, final ItemStack class514, final Class316 class515) {
         if (!this.field33243) {
-            return super.method26479(class512, class513, class514, class515);
+            return super.method26479(playerEntity, class513, class514, class515);
         }
         this.method26477();
         return Class2201.field13402;
     }
     
     @Override
-    public Class2201 method26480(final Class512 class512, final World class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
+    public Class2201 method26480(final PlayerEntity playerEntity, final World class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
         if (!this.field33243) {
-            return super.method26480(class512, class513, class514, class515, class516);
+            return super.method26480(playerEntity, class513, class514, class515, class516);
         }
         this.method26477();
         return Class2201.field13402;

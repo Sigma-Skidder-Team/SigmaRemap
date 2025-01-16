@@ -95,7 +95,7 @@ public class Class432 extends Class428
             if (sqrt > 5.0) {
                 sqrt = 5.0;
             }
-            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)(4.0 + this.rand.nextDouble() * 1.5 * sqrt), Class2196.field13366);
+            this.world.createExplosion(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)(4.0 + this.rand.nextDouble() * 1.5 * sqrt), Explosion.Mode.field13366);
             this.method1652();
         }
     }

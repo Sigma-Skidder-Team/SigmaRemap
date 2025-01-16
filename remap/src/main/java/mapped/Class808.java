@@ -191,29 +191,29 @@ public class Class808 extends Class806
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         final boolean b = !method2715.method27620();
         if (b && method2715.getItem() instanceof Class3831) {
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
         if (!this.method2625()) {
-            if (this.method4715() && class512.method2804()) {
-                this.method4740(class512);
+            if (this.method4715() && playerEntity.method2804()) {
+                this.method4740(playerEntity);
                 return true;
             }
             if (this.isBeingRidden()) {
-                return super.method4195(class512, class513);
+                return super.method4195(playerEntity, class513);
             }
         }
         if (b) {
-            if (this.method4741(class512, method2715)) {
-                if (!class512.field3025.field27304) {
+            if (this.method4741(playerEntity, method2715)) {
+                if (!playerEntity.field3025.field27304) {
                     method2715.method27693(1);
                 }
                 return true;
             }
-            if (method2715.method27640(class512, this, class513)) {
+            if (method2715.method27640(playerEntity, this, class513)) {
                 return true;
             }
             if (!this.method4715()) {
@@ -234,15 +234,15 @@ public class Class808 extends Class806
             }
             final boolean b3 = b2;
             if (this.method4767(method2715) || b3) {
-                this.method4740(class512);
+                this.method4740(playerEntity);
                 return true;
             }
         }
         if (!this.method2625()) {
-            this.method4742(class512);
+            this.method4742(playerEntity);
             return true;
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     @Override

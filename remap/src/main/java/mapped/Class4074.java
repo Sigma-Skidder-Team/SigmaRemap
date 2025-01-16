@@ -37,7 +37,7 @@ public class Class4074 extends Class4072
         if (class7075.method21648() == Direction.DOWN) {
             return Class2201.field13402;
         }
-        final Class512 method21657 = class7075.method21652();
+        final PlayerEntity method21657 = class7075.method21652();
         final BlockState class7076 = Class4074.field18175.get(method21656.getBlock());
         BlockState class7077 = null;
         if (class7076 != null && method21654.getBlockState(method21655.method1137()).method21706()) {

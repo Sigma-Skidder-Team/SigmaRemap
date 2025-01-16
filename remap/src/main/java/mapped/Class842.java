@@ -27,10 +27,10 @@ public class Class842 extends Class763
         this.field4114.method22062(1, new Class3490(this));
         this.field4114.method22062(2, new Class3574(this, 1.0, false));
         this.field4114.method22062(3, new Class3517(this, 1.0));
-        this.field4114.method22062(7, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(7, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(8, new Class3503(this));
         this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]).method11100((Class<?>[])new Class[0]));
-        this.field4115.method22062(2, new Class3555<Object>(this, Class512.class, true));
+        this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true));
     }
     
     @Override

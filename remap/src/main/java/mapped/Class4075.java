@@ -46,7 +46,7 @@ public class Class4075 extends Class4072
         if (class7076 == null) {
             return Class2201.field13402;
         }
-        final Class512 method21657 = class7075.method21652();
+        final PlayerEntity method21657 = class7075.method21652();
         method21654.method6705(method21657, method21655, Class8520.field34994, Class286.field1582, 1.0f, 1.0f);
         if (!method21654.isRemote) {
             method21654.setBlockState(method21655, (Class7096)((StateHolder<Object, Object>)class7076.getDefaultState()).with(Class4027.field18120, (Comparable)method21656.method21772((IProperty<V>)Class4027.field18120)), 11);

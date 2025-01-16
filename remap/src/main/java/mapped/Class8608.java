@@ -13,7 +13,6 @@ import java.io.Reader;
 import org.apache.commons.io.IOUtils;
 import com.google.gson.JsonParseException;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Type;
 import java.util.List;
 import com.google.common.io.Files;
 import java.nio.charset.StandardCharsets;
@@ -66,7 +65,7 @@ public class Class8608
         gameProfileRepository.findProfilesByNames(new String[] { s }, Agent.MINECRAFT, (ProfileLookupCallback)class9148);
         if (!method29192()) {
             if (array[0] == null) {
-                ((ProfileLookupCallback)class9148).onProfileLookupSucceeded(new GameProfile(Class512.method2893(new GameProfile((UUID)null, s)), s));
+                ((ProfileLookupCallback)class9148).onProfileLookupSucceeded(new GameProfile(PlayerEntity.method2893(new GameProfile((UUID)null, s)), s));
             }
         }
         return array[0];

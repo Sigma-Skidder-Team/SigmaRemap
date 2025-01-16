@@ -28,7 +28,7 @@ public final class Class9170
         final Team method1825 = class399.getTeam();
         return (Predicate<Entity>)((((method1825 != null) ? method1825.method20558() : Class343.field2112) != Class343.field2113) ? Class9170.field38850.and(class403 -> {
             if (class403.method1750()) {
-                if (class400.field2391.field10067 && (class403 instanceof Class512 && ((Class512)class403).method2843())) {
+                if (class400.field2391.field10067 && (class403 instanceof PlayerEntity && ((PlayerEntity)class403).method2843())) {
                     return false;
                 }
                 else {
@@ -82,7 +82,7 @@ public final class Class9170
             return b;
         });
         field38848 = (class400 -> class400 instanceof Class446 && class400.method1768());
-        field38849 = (class401 -> !(class401 instanceof Class512) || (!class401.isSpectator() && !((Class512)class401).method2889()));
+        field38849 = (class401 -> !(class401 instanceof PlayerEntity) || (!class401.isSpectator() && !((PlayerEntity)class401).method2889()));
         field38850 = (class402 -> !class402.isSpectator());
     }
 }

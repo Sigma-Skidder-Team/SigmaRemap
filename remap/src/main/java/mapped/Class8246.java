@@ -41,9 +41,9 @@ public class Class8246 extends Class8245
     }
     
     @Override
-    public Class2201 method27320(final Class512 class512, final World class513, final Class316 class514) {
+    public Class2201 method27320(final PlayerEntity playerEntity, final World class513, final Class316 class514) {
         this.field33875 = true;
-        final Class2201 method27320 = super.method27320(class512, class513, class514);
+        final Class2201 method27320 = super.method27320(playerEntity, class513, class514);
         this.field33875 = false;
         return method27320;
     }
@@ -58,15 +58,15 @@ public class Class8246 extends Class8245
     }
     
     @Override
-    public Class2201 method27322(final Class512 class512, final Entity field33877, final Class316 class513) {
+    public Class2201 method27322(final PlayerEntity playerEntity, final Entity field33877, final Class316 class513) {
         this.field33877 = field33877;
-        return super.method27322(class512, field33877, class513);
+        return super.method27322(playerEntity, field33877, class513);
     }
     
     @Override
-    public Class2201 method27323(final Class512 class512, final Entity field33877, final Class7007 class513, final Class316 class514) {
+    public Class2201 method27323(final PlayerEntity playerEntity, final Entity field33877, final Class7007 class513, final Class316 class514) {
         this.field33877 = field33877;
-        return super.method27323(class512, field33877, class513, class514);
+        return super.method27323(playerEntity, field33877, class513, class514);
     }
     
     public boolean method27341() {

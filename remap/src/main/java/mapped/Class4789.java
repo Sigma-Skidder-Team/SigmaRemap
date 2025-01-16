@@ -20,7 +20,7 @@ public class Class4789 extends Class4703<Class425>
     }
     
     public void method14158(final Class425 class425, final float n, final float n2, final Class7351 class426, final Class7807 class427, final int n3) {
-        final Class512 method2079 = class425.method2079();
+        final PlayerEntity method2079 = class425.method2079();
         if (method2079 != null) {
             class426.method22567();
             class426.method22567();

@@ -130,7 +130,7 @@ public class Class443 implements Class446, Class472
     }
     
     @Override
-    public boolean method2162(final Class512 class512) {
+    public boolean method2162(final PlayerEntity playerEntity) {
         return true;
     }
     

@@ -4,12 +4,12 @@
 
 package mapped;
 
-public class Class3559 extends Class3555<Class512>
+public class Class3559 extends Class3555<PlayerEntity>
 {
     private static String[] field16633;
     
     public Class3559(final Class798 class798) {
-        super(class798, Class512.class, true);
+        super(class798, PlayerEntity.class, true);
     }
     
     @Override

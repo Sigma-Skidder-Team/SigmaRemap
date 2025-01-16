@@ -199,12 +199,12 @@ public class Class791 extends Class789
         this.field4114.method22062(2, new Class3589(this, this, 1.0));
         this.field4114.method22062(3, new Class3578(this, 1.2000000476837158, true));
         this.field4114.method22062(4, new Class3472(this, 1.0, Class120.method618(Class7521.field29761.method11704()), false));
-        this.field4114.method22062(6, new Class3450<Object>(this, Class512.class, 8.0f, 2.0, 2.0));
+        this.field4114.method22062(6, new Class3450<Object>(this, PlayerEntity.class, 8.0f, 2.0, 2.0));
         this.field4114.method22062(6, new Class3450<Object>(this, Class763.class, 4.0f, 2.0, 2.0));
         this.field4114.method22062(7, new Class3524(this));
         this.field4114.method22062(8, new Class3541(this));
         this.field4114.method22062(8, new Class3613(this));
-        this.field4226 = new Class3630(this, Class512.class, 6.0f);
+        this.field4226 = new Class3630(this, PlayerEntity.class, 6.0f);
         this.field4114.method22062(9, this.field4226);
         this.field4114.method22062(10, new Class3503(this));
         this.field4114.method22062(12, new Class3605(this));
@@ -246,7 +246,7 @@ public class Class791 extends Class789
     }
     
     @Override
-    public boolean method4204(final Class512 class512) {
+    public boolean method4204(final PlayerEntity playerEntity) {
         return false;
     }
     
@@ -546,10 +546,10 @@ public class Class791 extends Class789
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() instanceof Class3831) {
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
         if (this.method4398()) {
             return false;
@@ -569,8 +569,8 @@ public class Class791 extends Class789
                 if (!this.world.isRemote) {
                     if (this.method4351() == 0) {
                         if (this.method4359()) {
-                            this.method4358(class512, method2715);
-                            this.method4360(class512);
+                            this.method4358(playerEntity, method2715);
+                            this.method4360(playerEntity);
                             break Label_0281;
                         }
                     }
@@ -582,22 +582,22 @@ public class Class791 extends Class789
                             this.method4379(true);
                             final ItemStack method2716 = this.method2718(Class2215.field13600);
                             if (!method2716.method27620()) {
-                                if (!class512.field3025.field27304) {
+                                if (!playerEntity.field3025.field27304) {
                                     this.method1766(method2716);
                                 }
                             }
                             this.method1803(Class2215.field13600, new ItemStack(method2715.getItem(), 1));
-                            this.method4358(class512, method2715);
+                            this.method4358(playerEntity, method2715);
                             break Label_0281;
                         }
                     }
                 }
                 return false;
             }
-            this.method4358(class512, method2715);
+            this.method4358(playerEntity, method2715);
             this.method4352((int)(-this.method4351() / 20 * 0.1f), true);
         }
-        class512.method2708(class513, true);
+        playerEntity.method2708(class513, true);
         return true;
     }
     

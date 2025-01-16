@@ -76,7 +76,7 @@ public class Class421 extends Class419
                     }
                 }
             }
-            this.world.method6723(this, this.getPosX(), this.getPosY(), this.getPosZ(), 1.0f, false, this.world.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365);
+            this.world.method6723(this, this.getPosX(), this.getPosY(), this.getPosZ(), 1.0f, false, this.world.method6765().method31216(Class8878.field37316) ? Explosion.Mode.field13367 : Explosion.Mode.field13365);
             this.method1652();
         }
     }

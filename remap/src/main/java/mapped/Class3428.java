@@ -15,7 +15,7 @@ public class Class3428 extends Class3426<Class473>
     private final Class473 field16205;
     private final Class470 field16206;
     private final Class7318 field16207;
-    private final Class512 field16208;
+    private final PlayerEntity field16208;
     
     public Class3428(final int n, final Class464 class464) {
         this(n, class464, Class7318.field28308);
@@ -43,7 +43,7 @@ public class Class3428 extends Class3426<Class473>
         }
     }
     
-    public static void method10942(final int n, final World class1847, final Class512 class1848, final Class473 class1849, final Class470 class1850) {
+    public static void method10942(final int n, final World class1847, final PlayerEntity class1848, final Class473 class1849, final Class470 class1850) {
         if (!class1847.isRemote) {
             final Class513 class1851 = (Class513)class1848;
             ItemStack class1852 = ItemStack.field34174;
@@ -81,18 +81,18 @@ public class Class3428 extends Class3426<Class473>
     }
     
     @Override
-    public void method10859(final Class512 class512) {
-        super.method10859(class512);
+    public void method10859(final PlayerEntity playerEntity) {
+        super.method10859(playerEntity);
         this.field16207.method22437((class514, p2) -> this.method10881(class513, class514, this.field16205));
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
-        return Class3418.method10866(this.field16207, class512, Class7521.field29296);
+    public boolean method10854(final PlayerEntity playerEntity) {
+        return Class3418.method10866(this.field16207, playerEntity, Class7521.field29296);
     }
     
     @Override
-    public ItemStack method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
         ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
@@ -132,9 +132,9 @@ public class Class3428 extends Class3426<Class473>
                 if (method20053.method27690() == class513.method27690()) {
                     return ItemStack.field34174;
                 }
-                final ItemStack method20054 = class514.method20047(class512, method20053);
+                final ItemStack method20054 = class514.method20047(playerEntity, method20053);
                 if (n == 0) {
-                    class512.method2822(method20054, false);
+                    playerEntity.method2822(method20054, false);
                 }
             }
         }

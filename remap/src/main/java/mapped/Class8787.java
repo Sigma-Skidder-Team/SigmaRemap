@@ -72,7 +72,7 @@ public class Class8787
         BlockPos.getAllInBox(class6997).forEach(class7000 -> method30586(n2, class7000, class6999));
         class6998.method6907().method21348(class6997, true, false);
         class6998.method6933(class6997);
-        class6998.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class6997.minX, class6997.minY, class6997.minZ, class6997.maxX, class6997.maxY, class6997.maxZ), class7001 -> !(class7001 instanceof Class512)).forEach(Entity::method1652);
+        class6998.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class6997.minX, class6997.minY, class6997.minZ, class6997.maxX, class6997.maxY, class6997.maxZ), class7001 -> !(class7001 instanceof PlayerEntity)).forEach(Entity::method1652);
     }
     
     public static MutableBoundingBox method30579(final BlockPos class354, final BlockPos class355, final int n) {

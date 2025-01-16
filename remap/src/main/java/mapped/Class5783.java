@@ -17,7 +17,7 @@ public interface Class5783
     
     void method17247();
     
-    void method17248(final Class858 p0, final BlockPos p1, final DamageSource p2, final Class512 p3);
+    void method17248(final Class858 p0, final BlockPos p1, final DamageSource p2, final PlayerEntity p3);
     
     void method17249();
     

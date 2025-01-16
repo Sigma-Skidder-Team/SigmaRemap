@@ -22,7 +22,7 @@ public class Class4040 extends Class4036
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         final Class7006 method2716 = Item.method11733(class1847, class1848, Class2191.field13326);
         if (method2716.method21449() != Class2165.field12880) {

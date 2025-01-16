@@ -125,7 +125,7 @@ public class Class1878 implements Class1851
     
     @Nullable
     @Override
-    public Class512 method7130(final double n, final double n2, final double n3, final double n4, final Predicate<Entity> predicate) {
+    public PlayerEntity method7130(final double n, final double n2, final double n3, final double n4, final Predicate<Entity> predicate) {
         return null;
     }
     
@@ -308,7 +308,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public void method6705(final Class512 class512, final BlockPos class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
+    public void method6705(final PlayerEntity playerEntity, final BlockPos class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
     }
     
     @Override
@@ -316,7 +316,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public void method6839(final Class512 class512, final int n, final BlockPos class513, final int n2) {
+    public void method6839(final PlayerEntity playerEntity, final int n, final BlockPos class513, final int n2) {
     }
     
     @Override
@@ -345,7 +345,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public List<Class512> method6840() {
+    public List<PlayerEntity> method6840() {
         return Collections.emptyList();
     }
     

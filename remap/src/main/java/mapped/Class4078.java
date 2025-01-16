@@ -23,8 +23,8 @@ public class Class4078 extends Item
             Class7770.field31800.method13819(class8324, class8321);
             class8324.method2859(Class8276.field33981.method8449(this));
         }
-        if (class8323 instanceof Class512) {
-            if (!((Class512)class8323).field3025.field27304) {
+        if (class8323 instanceof PlayerEntity) {
+            if (!((PlayerEntity)class8323).field3025.field27304) {
                 class8321.method27693(1);
             }
         }
@@ -45,7 +45,7 @@ public class Class4078 extends Item
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         class1848.method2762(class1849);
         return Class9355.method34674(class1848.method2715(class1849));
     }

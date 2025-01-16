@@ -28,7 +28,7 @@ public class Class4102 extends Item
     }
     
     @Override
-    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099) {
         return !class7099.method2889();
     }
     
@@ -44,8 +44,8 @@ public class Class4102 extends Item
     
     @Override
     public void method11727(final ItemStack class8321, final World class8322, final LivingEntity class8323, final int n) {
-        if (class8323 instanceof Class512) {
-            final Class512 class8324 = (Class512)class8323;
+        if (class8323 instanceof PlayerEntity) {
+            final PlayerEntity class8324 = (PlayerEntity)class8323;
             if (this.method11726(class8321) - n >= 10) {
                 final int method30220 = Class8742.method30220(class8321);
                 if (method30220 <= 0 || class8324.method1709()) {
@@ -98,7 +98,7 @@ public class Class4102 extends Item
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         if (method2715.method27632() >= method2715.method27634() - 1) {
             return Class9355.method34677(method2715);

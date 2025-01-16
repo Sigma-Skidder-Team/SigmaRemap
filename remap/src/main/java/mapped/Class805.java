@@ -51,11 +51,11 @@ public class Class805 extends Class804
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() == Items.field31300) {
             if (!this.method2625()) {
-                if (!class512.field3025.field27304) {
+                if (!playerEntity.field3025.field27304) {
                     method2715.method27693(1);
                     boolean b = false;
                     ItemStack class514;
@@ -70,12 +70,12 @@ public class Class805 extends Class804
                         this.field4329 = 0;
                     }
                     if (!method2715.method27620()) {
-                        if (!class512.field3006.method2362(class514)) {
-                            class512.method2822(class514, false);
+                        if (!playerEntity.field3006.method2362(class514)) {
+                            playerEntity.method2822(class514, false);
                         }
                     }
                     else {
-                        class512.method2716(class513, class514);
+                        playerEntity.method2716(class513, class514);
                     }
                     Class7795 class515;
                     if (!b) {
@@ -109,7 +109,7 @@ public class Class805 extends Class804
                 for (int i = 0; i < 5; ++i) {
                     this.world.method6886(new Class427(this.world, this.getPosX(), this.method1942(1.0), this.getPosZ(), new ItemStack(Class1983.method7995(this.method4708()).method21696())));
                 }
-                method2715.method27636(1, class512, class518 -> class518.method2795(class517));
+                method2715.method27636(1, playerEntity, class518 -> class518.method2795(class517));
                 this.method1695(Class8520.field35373, 1.0f, 1.0f);
             }
             return true;
@@ -118,7 +118,7 @@ public class Class805 extends Class804
             if (method2715.getItem().method11742(Class7855.field32266)) {
                 if (this.field4328 == null) {
                     final Pair<Class5328, Integer> method2716 = this.method4706(method2715);
-                    if (!class512.field3025.field27304) {
+                    if (!playerEntity.field3025.field27304) {
                         method2715.method27693(1);
                     }
                     for (int j = 0; j < 4; ++j) {
@@ -135,7 +135,7 @@ public class Class805 extends Class804
                 }
             }
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     @Override

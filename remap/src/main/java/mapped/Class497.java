@@ -16,7 +16,7 @@ public class Class497 extends TileEntity
 {
     public final ITextComponent[] field2850;
     private boolean field2851;
-    private Class512 field2852;
+    private PlayerEntity field2852;
     private final String[] field2853;
     private Class181 field2854;
     
@@ -107,22 +107,22 @@ public class Class497 extends TileEntity
         }
     }
     
-    public void method2525(final Class512 field2852) {
+    public void method2525(final PlayerEntity field2852) {
         this.field2852 = field2852;
     }
     
-    public Class512 method2526() {
+    public PlayerEntity method2526() {
         return this.field2852;
     }
     
-    public boolean method2527(final Class512 class512) {
+    public boolean method2527(final PlayerEntity playerEntity) {
         for (final ITextComponent class513 : this.field2850) {
             final Style class514 = (class513 != null) ? class513.getStyle() : null;
             if (class514 != null) {
                 if (class514.method30410() != null) {
                     final Class9485 method30410 = class514.method30410();
                     if (method30410.method35309() == Class2075.field11973) {
-                        class512.method1897().method1573().method24998(this.method2528((Class513)class512), method30410.method35310());
+                        playerEntity.method1897().method1573().method24998(this.method2528((Class513) playerEntity), method30410.method35310());
                     }
                 }
             }

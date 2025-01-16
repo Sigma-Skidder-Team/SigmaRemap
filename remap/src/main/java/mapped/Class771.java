@@ -27,15 +27,15 @@ public class Class771 extends Class770
         super.method4142();
         this.field4114.method22062(0, new Class3490(this));
         this.field4114.method22062(1, new Class3512(this, null));
-        this.field4114.method22062(2, new Class3448<Object>(this, Class512.class, 8.0f, 0.6, 1.0));
+        this.field4114.method22062(2, new Class3448<Object>(this, PlayerEntity.class, 8.0f, 0.6, 1.0));
         this.field4114.method22062(4, new Class3533(this, null));
         this.field4114.method22062(5, new Class3532(this, null));
         this.field4114.method22062(6, new Class3534(this));
         this.field4114.method22062(8, new Class3514(this, 0.6));
-        this.field4114.method22062(9, new Class3628(this, Class512.class, 3.0f, 1.0f));
+        this.field4114.method22062(9, new Class3628(this, PlayerEntity.class, 3.0f, 1.0f));
         this.field4114.method22062(10, new Class3628(this, Class759.class, 8.0f));
         this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[] { Class776.class }).method11100((Class<?>[])new Class[0]));
-        this.field4115.method22062(2, new Class3555<Object>(this, Class512.class, true).method11099(300));
+        this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true).method11099(300));
         this.field4115.method22062(3, new Class3555<Object>(this, Class819.class, false).method11099(300));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, false));
     }

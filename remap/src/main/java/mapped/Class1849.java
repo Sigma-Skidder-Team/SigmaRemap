@@ -472,7 +472,7 @@ public class Class1849 extends World
     }
     
     public void method6873(final Entity class399) {
-        if (class399 instanceof Class512 || this.method6904().method7408(class399)) {
+        if (class399 instanceof PlayerEntity || this.method6904().method7408(class399)) {
             class399.method1731(class399.getPosX(), class399.getPosY(), class399.getPosZ());
             class399.prevRotationYaw = class399.rotationYaw;
             class399.prevRotationPitch = class399.rotationPitch;
@@ -496,7 +496,7 @@ public class Class1849 extends World
     
     public void method6874(final Entity class399, final Entity class400) {
         if (!class400.removed && class400.method1920() == class399) {
-            if (class400 instanceof Class512 || this.method6904().method7408(class400)) {
+            if (class400 instanceof PlayerEntity || this.method6904().method7408(class400)) {
                 class400.method1731(class400.getPosX(), class400.getPosY(), class400.getPosZ());
                 class400.prevRotationYaw = class400.rotationYaw;
                 class400.prevRotationPitch = class400.rotationPitch;
@@ -553,8 +553,8 @@ public class Class1849 extends World
     }
     
     @Override
-    public boolean method6760(final Class512 class512, final BlockPos class513) {
-        return !this.field10090.method1549(this, class513, class512) && this.getWorldBorder().contains(class513);
+    public boolean method6760(final PlayerEntity playerEntity, final BlockPos class513) {
+        return !this.field10090.method1549(this, class513, playerEntity) && this.getWorldBorder().contains(class513);
     }
     
     public void method6876(final Class8511 class8511) {
@@ -914,13 +914,13 @@ public class Class1849 extends World
     }
     
     @Override
-    public void method6706(final Class512 class512, final double n, final double n2, final double n3, final Class7795 class513, final Class286 class514, final float n4, final float n5) {
-        this.field10090.method1537().method20599(class512, n, n2, n3, (n4 <= 1.0f) ? 16.0 : ((double)(16.0f * n4)), this.dimension.getType(), new Class4282(class513, class514, n, n2, n3, n4, n5));
+    public void method6706(final PlayerEntity playerEntity, final double n, final double n2, final double n3, final Class7795 class513, final Class286 class514, final float n4, final float n5) {
+        this.field10090.method1537().method20599(playerEntity, n, n2, n3, (n4 <= 1.0f) ? 16.0 : ((double)(16.0f * n4)), this.dimension.getType(), new Class4282(class513, class514, n, n2, n3, n4, n5));
     }
     
     @Override
-    public void method6707(final Class512 class512, final Entity class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
-        this.field10090.method1537().method20599(class512, class513.getPosX(), class513.getPosY(), class513.getPosZ(), (n <= 1.0f) ? 16.0 : ((double)(16.0f * n)), this.dimension.getType(), new Class4351(class514, class515, class513, n, n2));
+    public void method6707(final PlayerEntity playerEntity, final Entity class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
+        this.field10090.method1537().method20599(playerEntity, class513.getPosX(), class513.getPosY(), class513.getPosZ(), (n <= 1.0f) ? 16.0 : ((double)(16.0f * n)), this.dimension.getType(), new Class4351(class514, class515, class513, n, n2));
     }
     
     @Override
@@ -929,8 +929,8 @@ public class Class1849 extends World
     }
     
     @Override
-    public void method6839(final Class512 class512, final int n, final BlockPos class513, final int n2) {
-        this.field10090.method1537().method20599(class512, class513.getX(), class513.getY(), class513.getZ(), 64.0, this.dimension.getType(), new Class4395(n, class513, n2, false));
+    public void method6839(final PlayerEntity playerEntity, final int n, final BlockPos class513, final int n2) {
+        this.field10090.method1537().method20599(playerEntity, class513.getX(), class513.getY(), class513.getZ(), 64.0, this.dimension.getType(), new Class4395(n, class513, n2, false));
     }
     
     @Override
@@ -956,14 +956,14 @@ public class Class1849 extends World
     }
     
     @Override
-    public Explosion createExplosion(final Entity class399, final DamageSource class400, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class401) {
+    public Explosion createExplosion(final Entity class399, final DamageSource class400, final double n, final double n2, final double n3, final float n4, final boolean b, final Explosion.Mode class401) {
         final Explosion class402 = new Explosion(this, class399, n, n2, n3, n4, b, class401);
         if (class400 != null) {
             class402.method18412(class400);
         }
         class402.method18408();
         class402.method18409(false);
-        if (class401 == Class2196.field13365) {
+        if (class401 == Explosion.Mode.field13365) {
             class402.method18415();
         }
         for (final Class513 class403 : this.field10088) {

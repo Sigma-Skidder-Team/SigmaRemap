@@ -17,7 +17,7 @@ public class Class3523 extends Class3446
 {
     private static String[] field16526;
     private final Class800 field16527;
-    private Class512 field16528;
+    private PlayerEntity field16528;
     private BlockPos field16529;
     private int field16530;
     
@@ -32,8 +32,8 @@ public class Class3523 extends Class3446
         }
         if (!this.field16527.method4483()) {
             final LivingEntity method4488 = this.field16527.method4488();
-            if (method4488 instanceof Class512) {
-                this.field16528 = (Class512)method4488;
+            if (method4488 instanceof PlayerEntity) {
+                this.field16528 = (PlayerEntity)method4488;
                 if (!method4488.method2783()) {
                     return false;
                 }

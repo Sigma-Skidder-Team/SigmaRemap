@@ -31,7 +31,7 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public abstract class Class512 extends LivingEntity
+public abstract class PlayerEntity extends LivingEntity
 {
     public static final EntitySize field2997;
     private static final Map<Pose, EntitySize> field2998;
@@ -74,7 +74,7 @@ public abstract class Class512 extends LivingEntity
     private final Class7948 field3035;
     public Class425 field3036;
     
-    public Class512(final World class1847, final GameProfile field3032) {
+    public PlayerEntity(final World class1847, final GameProfile field3032) {
         super(EntityType.field29058, class1847);
         this.field3006 = new Class464(this);
         this.field3007 = new Class485();
@@ -117,12 +117,12 @@ public abstract class Class512 extends LivingEntity
     @Override
     public void method1649() {
         super.method1649();
-        this.dataManager.register(Class512.field2999, 0.0f);
-        this.dataManager.register(Class512.field3000, 0);
-        this.dataManager.register(Class512.field3001, (Byte)0);
-        this.dataManager.register(Class512.field3002, (Byte)1);
-        this.dataManager.register(Class512.field3003, new Class51());
-        this.dataManager.register(Class512.field3004, new Class51());
+        this.dataManager.register(PlayerEntity.field2999, 0.0f);
+        this.dataManager.register(PlayerEntity.field3000, 0);
+        this.dataManager.register(PlayerEntity.field3001, (Byte)0);
+        this.dataManager.register(PlayerEntity.field3002, (Byte)1);
+        this.dataManager.register(PlayerEntity.field3003, new Class51());
+        this.dataManager.register(PlayerEntity.field3004, new Class51());
     }
     
     @Override
@@ -526,15 +526,15 @@ public abstract class Class512 extends LivingEntity
     }
     
     public int method2817() {
-        return this.dataManager.get(Class512.field3000);
+        return this.dataManager.get(PlayerEntity.field3000);
     }
     
     public void method2818(final int i) {
-        this.dataManager.set(Class512.field3000, i);
+        this.dataManager.set(PlayerEntity.field3000, i);
     }
     
     public void method2819(final int n) {
-        this.dataManager.set(Class512.field3000, this.method2817() + n);
+        this.dataManager.set(PlayerEntity.field3000, this.method2817() + n);
     }
     
     @Override
@@ -790,9 +790,9 @@ public abstract class Class512 extends LivingEntity
         }
     }
     
-    public boolean method2826(final Class512 class512) {
+    public boolean method2826(final PlayerEntity playerEntity) {
         final Team method1825 = this.getTeam();
-        final Team method1826 = class512.getTeam();
+        final Team method1826 = playerEntity.getTeam();
         return method1825 == null || !method1825.method20565(method1826) || method1825.method20550();
     }
     
@@ -1713,7 +1713,7 @@ public abstract class Class512 extends LivingEntity
     }
     
     @Override
-    public int method2631(final Class512 class512) {
+    public int method2631(final PlayerEntity playerEntity) {
         if (!this.world.method6765().method31216(Class8878.field37317) && !this.isSpectator()) {
             final int n = this.field3026 * 7;
             return (n <= 100) ? n : 100;
@@ -1912,12 +1912,12 @@ public abstract class Class512 extends LivingEntity
         if (f < 0.0f) {
             f = 0.0f;
         }
-        this.method1650().set(Class512.field2999, f);
+        this.method1650().set(PlayerEntity.field2999, f);
     }
     
     @Override
     public float method2750() {
-        return this.method1650().get(Class512.field2999);
+        return this.method1650().get(PlayerEntity.field2999);
     }
     
     public static UUID method2893(final GameProfile gameProfile) {
@@ -1933,7 +1933,7 @@ public abstract class Class512 extends LivingEntity
     }
     
     public boolean method2895(final Class189 class189) {
-        return (this.method1650().get(Class512.field3001) & class189.method828()) == class189.method828();
+        return (this.method1650().get(PlayerEntity.field3001) & class189.method828()) == class189.method828();
     }
     
     @Override
@@ -2004,27 +2004,27 @@ public abstract class Class512 extends LivingEntity
     
     @Override
     public Class2226 method2755() {
-        return (this.dataManager.get(Class512.field3002) != 0) ? Class2226.field13698 : Class2226.field13697;
+        return (this.dataManager.get(PlayerEntity.field3002) != 0) ? Class2226.field13698 : Class2226.field13697;
     }
     
     public void method2898(final Class2226 class2226) {
-        this.dataManager.set(Class512.field3002, (byte)((class2226 != Class2226.field13697) ? 1 : 0));
+        this.dataManager.set(PlayerEntity.field3002, (byte)((class2226 != Class2226.field13697) ? 1 : 0));
     }
     
     public Class51 method2899() {
-        return this.dataManager.get(Class512.field3003);
+        return this.dataManager.get(PlayerEntity.field3003);
     }
     
     public void method2900(final Class51 class51) {
-        this.dataManager.set(Class512.field3003, class51);
+        this.dataManager.set(PlayerEntity.field3003, class51);
     }
     
     public Class51 method2901() {
-        return this.dataManager.get(Class512.field3004);
+        return this.dataManager.get(PlayerEntity.field3004);
     }
     
     public void method2902(final Class51 class51) {
-        this.dataManager.set(Class512.field3004, class51);
+        this.dataManager.set(PlayerEntity.field3004, class51);
     }
     
     public float method2903() {
@@ -2063,7 +2063,7 @@ public abstract class Class512 extends LivingEntity
     
     @Override
     public EntitySize method1933(final Pose key) {
-        return Class512.field2998.getOrDefault(key, Class512.field2997);
+        return PlayerEntity.field2998.getOrDefault(key, PlayerEntity.field2997);
     }
     
     @Override
@@ -2098,12 +2098,12 @@ public abstract class Class512 extends LivingEntity
     
     static {
         field2997 = EntitySize.method27563(0.6f, 1.8f);
-        field2998 = (Map)ImmutableMap.builder().put((Object) Pose.field1663, (Object)Class512.field2997).put((Object) Pose.field1665, (Object)Class512.field2927).put((Object) Pose.field1664, (Object) EntitySize.method27563(0.6f, 0.6f)).put((Object) Pose.field1666, (Object) EntitySize.method27563(0.6f, 0.6f)).put((Object) Pose.field1667, (Object) EntitySize.method27563(0.6f, 0.6f)).put((Object) Pose.field1668, (Object) EntitySize.method27563(0.6f, 1.5f)).put((Object) Pose.field1669, (Object) EntitySize.method27564(0.2f, 0.2f)).build();
-        field2999 = EntityDataManager.method33564(Class512.class, Class7709.field30655);
-        field3000 = EntityDataManager.method33564(Class512.class, Class7709.field30654);
-        field3001 = EntityDataManager.method33564(Class512.class, Class7709.field30653);
-        field3002 = EntityDataManager.method33564(Class512.class, Class7709.field30653);
-        field3003 = EntityDataManager.method33564(Class512.class, Class7709.field30668);
-        field3004 = EntityDataManager.method33564(Class512.class, Class7709.field30668);
+        field2998 = (Map)ImmutableMap.builder().put((Object) Pose.field1663, (Object) PlayerEntity.field2997).put((Object) Pose.field1665, (Object) PlayerEntity.field2927).put((Object) Pose.field1664, (Object) EntitySize.method27563(0.6f, 0.6f)).put((Object) Pose.field1666, (Object) EntitySize.method27563(0.6f, 0.6f)).put((Object) Pose.field1667, (Object) EntitySize.method27563(0.6f, 0.6f)).put((Object) Pose.field1668, (Object) EntitySize.method27563(0.6f, 1.5f)).put((Object) Pose.field1669, (Object) EntitySize.method27564(0.2f, 0.2f)).build();
+        field2999 = EntityDataManager.method33564(PlayerEntity.class, Class7709.field30655);
+        field3000 = EntityDataManager.method33564(PlayerEntity.class, Class7709.field30654);
+        field3001 = EntityDataManager.method33564(PlayerEntity.class, Class7709.field30653);
+        field3002 = EntityDataManager.method33564(PlayerEntity.class, Class7709.field30653);
+        field3003 = EntityDataManager.method33564(PlayerEntity.class, Class7709.field30668);
+        field3004 = EntityDataManager.method33564(PlayerEntity.class, Class7709.field30668);
     }
 }

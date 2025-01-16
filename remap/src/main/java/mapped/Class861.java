@@ -83,7 +83,7 @@ public class Class861 extends Class860
     public void method5192(final Entity class399) {
         if (this.world.method6765().method31216(Class8878.field37321)) {
             this.method1695(Class8520.field35407, 1.0f, 1.0f);
-            if (class399 instanceof Class512 && ((Class512)class399).field3025.field27304) {
+            if (class399 instanceof PlayerEntity && ((PlayerEntity)class399).field3025.field27304) {
                 return;
             }
             this.method1764(Items.field31340);

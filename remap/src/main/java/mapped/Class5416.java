@@ -26,7 +26,7 @@ public class Class5416 implements Class5414
     
     @Override
     public void method16525(final Class51 class51) throws CommandSyntaxException {
-        if (!(this.field22587 instanceof Class512)) {
+        if (!(this.field22587 instanceof PlayerEntity)) {
             final UUID method1865 = this.field22587.method1865();
             this.field22587.method1757(class51);
             this.field22587.method1864(method1865);

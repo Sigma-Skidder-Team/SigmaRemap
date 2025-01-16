@@ -70,7 +70,7 @@ public class Class4086 extends Class4085
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         if (method12296(method2715)) {
             method12304(class1847, class1848, class1849, method2715, method12311(method2715), 1.0f);
@@ -94,7 +94,7 @@ public class Class4086 extends Class4085
             if (!method12296(class8321)) {
                 if (method12294(class8323, class8321)) {
                     method12297(class8321, true);
-                    class8322.method6706(null, class8323.getPosX(), class8323.getPosY(), class8323.getPosZ(), Class8520.field35106, (class8323 instanceof Class512) ? Class286.field1585 : Class286.field1583, 1.0f, 1.0f / (Class4086.field17363.nextFloat() * 0.5f + 1.0f) + 0.2f);
+                    class8322.method6706(null, class8323.getPosX(), class8323.getPosY(), class8323.getPosZ(), Class8520.field35106, (class8323 instanceof PlayerEntity) ? Class286.field1585 : Class286.field1583, 1.0f, 1.0f / (Class4086.field17363.nextFloat() * 0.5f + 1.0f) + 0.2f);
                 }
             }
         }
@@ -102,7 +102,7 @@ public class Class4086 extends Class4085
     
     private static boolean method12294(final LivingEntity class511, final ItemStack class512) {
         final int n = (Class8742.method30195(Class7882.field32379, class512) != 0) ? 3 : 1;
-        final boolean b = class511 instanceof Class512 && ((Class512)class511).field3025.field27304;
+        final boolean b = class511 instanceof PlayerEntity && ((PlayerEntity)class511).field3025.field27304;
         ItemStack class513 = class511.method2790(class512);
         ItemStack class514 = class513.method27641();
         for (int i = 0; i < n; ++i) {
@@ -133,10 +133,10 @@ public class Class4086 extends Class4085
                             if (!class513.method27620()) {
                                 break Label_0083;
                             }
-                            if (!(class511 instanceof Class512)) {
+                            if (!(class511 instanceof PlayerEntity)) {
                                 break Label_0083;
                             }
-                            ((Class512)class511).field3006.method2365(class513);
+                            ((PlayerEntity)class511).field3006.method2365(class513);
                             break Label_0083;
                         }
                     }
@@ -233,7 +233,7 @@ public class Class4086 extends Class4085
     
     private static Class402 method12303(final World class1847, final LivingEntity class1848, final ItemStack class1849, final ItemStack class1850) {
         final Class402 method11758 = ((Class3824)((class1850.getItem() instanceof Class3824) ? class1850.getItem() : Items.field31280)).method11758(class1847, class1850, class1848);
-        if (class1848 instanceof Class512) {
+        if (class1848 instanceof PlayerEntity) {
             method11758.method1978(true);
         }
         method11758.method1962(Class8520.field35105);
@@ -250,7 +250,7 @@ public class Class4086 extends Class4085
         final float[] method12300 = method12305(class1848.method2633());
         for (int i = 0; i < method12299.size(); ++i) {
             final ItemStack class1851 = method12299.get(i);
-            final boolean b = class1848 instanceof Class512 && ((Class512)class1848).field3025.field27304;
+            final boolean b = class1848 instanceof PlayerEntity && ((PlayerEntity)class1848).field3025.field27304;
             if (!class1851.method27620()) {
                 if (i != 0) {
                     if (i != 1) {

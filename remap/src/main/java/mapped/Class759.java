@@ -189,7 +189,7 @@ public abstract class Class759 extends LivingEntity
     }
     
     @Override
-    public int method2631(final Class512 class512) {
+    public int method2631(final PlayerEntity playerEntity) {
         if (this.field4108 <= 0) {
             return this.field4108;
         }
@@ -544,7 +544,7 @@ public abstract class Class759 extends LivingEntity
             this.method1652();
         }
         else if (!this.method4194() && !this.method4169()) {
-            Class512 method7131 = this.world.method7131(this, -1.0);
+            PlayerEntity method7131 = this.world.method7131(this, -1.0);
             if (Class9570.field41263.method22605()) {
                 final Object method7132 = Class9570.field41263.method22608(this);
                 if (method7132 != Class7667.field30453) {
@@ -978,24 +978,24 @@ public abstract class Class759 extends LivingEntity
     }
     
     @Override
-    public final boolean method1770(final Class512 class512, final Class316 class513) {
+    public final boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
         if (!this.method1768()) {
             return false;
         }
-        if (this.method4206() == class512) {
-            this.method4203(true, !class512.field3025.field27304);
+        if (this.method4206() == playerEntity) {
+            this.method4203(true, !playerEntity.field3025.field27304);
             return true;
         }
-        final ItemStack method2715 = class512.method2715(class513);
-        if (method2715.getItem() == Items.field31551 && this.method4204(class512)) {
-            this.method4207(class512, true);
+        final ItemStack method2715 = playerEntity.method2715(class513);
+        if (method2715.getItem() == Items.field31551 && this.method4204(playerEntity)) {
+            this.method4207(playerEntity, true);
             method2715.method27693(1);
             return true;
         }
-        return this.method4195(class512, class513) || super.method1770(class512, class513);
+        return this.method4195(playerEntity, class513) || super.method1770(playerEntity, class513);
     }
     
-    public boolean method4195(final Class512 class512, final Class316 class513) {
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
         return false;
     }
     
@@ -1038,7 +1038,7 @@ public abstract class Class759 extends LivingEntity
     public void method4203(final boolean b, final boolean b2) {
         if (this.field4127 != null) {
             this.forceSpawn = false;
-            if (!(this.field4127 instanceof Class512)) {
+            if (!(this.field4127 instanceof PlayerEntity)) {
                 this.field4127.forceSpawn = false;
             }
             this.field4127 = null;
@@ -1057,7 +1057,7 @@ public abstract class Class759 extends LivingEntity
         }
     }
     
-    public boolean method4204(final Class512 class512) {
+    public boolean method4204(final PlayerEntity playerEntity) {
         return !this.method4205() && !(this instanceof Class762);
     }
     
@@ -1080,7 +1080,7 @@ public abstract class Class759 extends LivingEntity
     public void method4207(final Entity field4127, final boolean b) {
         this.field4127 = field4127;
         this.forceSpawn = true;
-        if (!(this.field4127 instanceof Class512)) {
+        if (!(this.field4127 instanceof PlayerEntity)) {
             this.field4127.forceSpawn = true;
         }
         if (!this.world.isRemote) {
@@ -1237,7 +1237,7 @@ public abstract class Class759 extends LivingEntity
     
     @Override
     public boolean method2646(final LivingEntity class511) {
-        return (class511.getType() != EntityType.field29058 || !((Class512)class511).field3025.field27301) && super.method2646(class511);
+        return (class511.getType() != EntityType.field29058 || !((PlayerEntity)class511).field3025.field27301) && super.method2646(class511);
     }
     
     @Override
@@ -1260,8 +1260,8 @@ public abstract class Class759 extends LivingEntity
                     this.method1936(this.getMotion().mul(0.6, 1.0, 0.6));
                 }
             }
-            if (class399 instanceof Class512) {
-                final Class512 class400 = (Class512)class399;
+            if (class399 instanceof PlayerEntity) {
+                final PlayerEntity class400 = (PlayerEntity)class399;
                 final ItemStack method30210 = this.getHeldItemMainhand();
                 final ItemStack class401 = class400.method2756() ? class400.method2766() : ItemStack.field34174;
                 final boolean method30211 = Class7667.method24310(method30210, class401, class400, this);

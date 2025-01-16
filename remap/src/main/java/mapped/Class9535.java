@@ -122,10 +122,10 @@ public class Class9535
         float method30538 = 0.0f;
         float method30539 = 0.0f;
         for (final Class8779 class513 : this.field41036) {
-            if (class513.method30537().method25714() instanceof Class512) {
+            if (class513.method30537().method25714() instanceof PlayerEntity) {
                 if (class512 == null || class513.method30538() > method30539) {
                     method30539 = class513.method30538();
-                    class512 = (Class512)class513.method30537().method25714();
+                    class512 = (PlayerEntity)class513.method30537().method25714();
                 }
             }
             if (!(class513.method30537().method25714() instanceof LivingEntity)) {

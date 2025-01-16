@@ -265,7 +265,7 @@ public abstract class Class6765
     }
     
     public Class513 method20582(final GameProfile gameProfile) {
-        final UUID method2893 = Class512.method2893(gameProfile);
+        final UUID method2893 = PlayerEntity.method2893(gameProfile);
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < this.field26563.size(); ++i) {
             final Class513 class513 = this.field26563.get(i);
@@ -318,7 +318,7 @@ public abstract class Class6765
         final Class1849 method2856 = this.field26562.method1481(class513.dimension);
         this.method20615(class515, class513, method2856);
         if (method2854 != null) {
-            final Optional<Vec3d> method2857 = Class512.method2850(this.field26562.method1481(class513.dimension), method2854, method2855);
+            final Optional<Vec3d> method2857 = PlayerEntity.method2850(this.field26562.method1481(class513.dimension), method2854, method2855);
             if (!method2857.isPresent()) {
                 class515.field3039.method17469(new Class4306(0, 0.0f));
             }
@@ -374,8 +374,8 @@ public abstract class Class6765
         }
     }
     
-    public void method20588(final Class512 class512, final ITextComponent class513) {
-        final Team method1825 = class512.getTeam();
+    public void method20588(final PlayerEntity playerEntity, final ITextComponent class513) {
+        final Team method1825 = playerEntity.getTeam();
         if (method1825 != null) {
             final Iterator<String> iterator = method1825.method20547().iterator();
             while (iterator.hasNext()) {
@@ -383,7 +383,7 @@ public abstract class Class6765
                 if (method1826 == null) {
                     continue;
                 }
-                if (method1826 == class512) {
+                if (method1826 == playerEntity) {
                     continue;
                 }
                 method1826.sendMessage(class513);
@@ -391,8 +391,8 @@ public abstract class Class6765
         }
     }
     
-    public void method20589(final Class512 class512, final ITextComponent class513) {
-        final Team method1825 = class512.getTeam();
+    public void method20589(final PlayerEntity playerEntity, final ITextComponent class513) {
+        final Team method1825 = playerEntity.getTeam();
         if (method1825 != null) {
             for (int i = 0; i < this.field26563.size(); ++i) {
                 final Class513 class514 = this.field26563.get(i);
@@ -490,10 +490,10 @@ public abstract class Class6765
         return null;
     }
     
-    public void method20599(final Class512 class512, final double n, final double n2, final double n3, final double n4, final DimensionType class513, final IPacket<?> class514) {
+    public void method20599(final PlayerEntity playerEntity, final double n, final double n2, final double n3, final double n4, final DimensionType class513, final IPacket<?> class514) {
         for (int i = 0; i < this.field26563.size(); ++i) {
             final Class513 class515 = this.field26563.get(i);
-            if (class515 != class512) {
+            if (class515 != playerEntity) {
                 if (class515.dimension == class513) {
                     final double n5 = n - class515.getPosX();
                     final double n6 = n2 - class515.getPosY();
@@ -622,14 +622,14 @@ public abstract class Class6765
         this.method20618(class2250, true);
     }
     
-    public Class7473 method20620(final Class512 class512) {
-        final UUID method1865 = class512.method1865();
+    public Class7473 method20620(final PlayerEntity playerEntity) {
+        final UUID method1865 = playerEntity.method1865();
         Class7473 class513 = (method1865 != null) ? this.field26569.get(method1865) : null;
         if (class513 == null) {
             final File file = new File(this.field26562.method1481(DimensionType.field2223).method6917().method29392(), "stats");
             final File dest = new File(file, method1865 + ".json");
             if (!dest.exists()) {
-                final File file2 = new File(file, class512.getName().getString() + ".json");
+                final File file2 = new File(file, playerEntity.getName().getString() + ".json");
                 if (file2.exists()) {
                     if (file2.isFile()) {
                         file2.renameTo(dest);

@@ -1202,7 +1202,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         return 16;
     }
     
-    public boolean method1549(final World class1847, final BlockPos class1848, final Class512 class1849) {
+    public boolean method1549(final World class1847, final BlockPos class1848, final PlayerEntity class1849) {
         return false;
     }
     

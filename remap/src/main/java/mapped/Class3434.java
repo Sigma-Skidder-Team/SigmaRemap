@@ -11,10 +11,10 @@ public class Class3434 extends Class3418
     private static String[] field16224;
     public final Class2265<ItemStack> field16225;
     
-    public Class3434(final Class512 class512) {
+    public Class3434(final PlayerEntity playerEntity) {
         super(null, 0);
         this.field16225 = Class2265.method8506();
-        final Class464 field3006 = class512.field3006;
+        final Class464 field3006 = playerEntity.field3006;
         for (int i = 0; i < 5; ++i) {
             for (int j = 0; j < 9; ++j) {
                 this.method10870(new Class6603(Class525.method3024(), i * 9 + j, 9 + j * 18, 18 + i * 18));
@@ -27,7 +27,7 @@ public class Class3434 extends Class3418
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
+    public boolean method10854(final PlayerEntity playerEntity) {
         return true;
     }
     
@@ -54,7 +54,7 @@ public class Class3434 extends Class3418
     }
     
     @Override
-    public ItemStack method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
         if (n >= this.field16151.size() - 9) {
             if (n < this.field16151.size()) {
                 final Class6601 class513 = this.field16151.get(n);

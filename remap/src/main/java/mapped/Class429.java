@@ -73,8 +73,8 @@ public class Class429 extends Class428
     }
     
     @Override
-    public boolean method1770(final Class512 class512, final Class316 class513) {
-        this.field2639.method5221(class512);
+    public boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
+        this.field2639.method5221(playerEntity);
         return true;
     }
     

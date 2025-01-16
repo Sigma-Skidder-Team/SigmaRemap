@@ -28,12 +28,12 @@ public interface Class446 extends Class447
     
     void method2161();
     
-    boolean method2162(final Class512 p0);
+    boolean method2162(final PlayerEntity p0);
     
-    default void method2241(final Class512 class512) {
+    default void method2241(final PlayerEntity playerEntity) {
     }
     
-    default void method2242(final Class512 class512) {
+    default void method2242(final PlayerEntity playerEntity) {
     }
     
     default boolean method2264(final int n, final ItemStack class8321) {

@@ -134,7 +134,7 @@ public class Class3965 extends Block implements Class3966
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         final int intValue = class7096.method21772((IProperty<Integer>)Class3965.field17915);
         final ItemStack method2715 = class7099.method2715(class7100);
         if (intValue < 8 && Class3965.field17916.containsKey((Object)method2715.getItem())) {

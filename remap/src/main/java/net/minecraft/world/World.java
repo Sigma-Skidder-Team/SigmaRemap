@@ -333,13 +333,13 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public void method6705(final Class512 class512, final BlockPos class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
-        this.method6706(class512, class513.getX() + 0.5, class513.getY() + 0.5, class513.getZ() + 0.5, class514, class515, n, n2);
+    public void method6705(final PlayerEntity playerEntity, final BlockPos class513, final Class7795 class514, final Class286 class515, final float n, final float n2) {
+        this.method6706(playerEntity, class513.getX() + 0.5, class513.getY() + 0.5, class513.getZ() + 0.5, class514, class515, n, n2);
     }
     
-    public abstract void method6706(final Class512 p0, final double p1, final double p2, final double p3, final Class7795 p4, final Class286 p5, final float p6, final float p7);
+    public abstract void method6706(final PlayerEntity p0, final double p1, final double p2, final double p3, final Class7795 p4, final Class286 p5, final float p6, final float p7);
     
-    public abstract void method6707(final Class512 p0, final Entity p1, final Class7795 p2, final Class286 p3, final float p4, final float p5);
+    public abstract void method6707(final PlayerEntity p0, final Entity p1, final Class7795 p2, final Class286 p3, final float p4, final float p5);
     
     public void method6708(final double n, final double n2, final double n3, final Class7795 class7795, final Class286 class7796, final float n4, final float n5, final boolean b) {
     }
@@ -551,15 +551,15 @@ public abstract class World implements Class1851, AutoCloseable
         });
     }
     
-    public Explosion createExplosion(final Entity class399, final double n, final double n2, final double n3, final float n4, final Class2196 class400) {
+    public Explosion createExplosion(final Entity class399, final double n, final double n2, final double n3, final float n4, final Explosion.Mode class400) {
         return this.createExplosion(class399, null, n, n2, n3, n4, false, class400);
     }
     
-    public Explosion method6723(final Entity class399, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class400) {
+    public Explosion method6723(final Entity class399, final double n, final double n2, final double n3, final float n4, final boolean b, final Explosion.Mode class400) {
         return this.createExplosion(class399, null, n, n2, n3, n4, b, class400);
     }
     
-    public Explosion createExplosion(final Entity class399, final DamageSource class400, final double n, final double n2, final double n3, final float n4, final boolean b, final Class2196 class401) {
+    public Explosion createExplosion(final Entity class399, final DamageSource class400, final double n, final double n2, final double n3, final float n4, final boolean b, final Explosion.Mode class401) {
         final Explosion class402 = new Explosion(this, class399, n, n2, n3, n4, b, class401);
         if (class400 != null) {
             class402.method18412(class400);
@@ -569,12 +569,12 @@ public abstract class World implements Class1851, AutoCloseable
         return class402;
     }
     
-    public boolean method6725(final Class512 class512, BlockPos method1149, final Direction class513) {
+    public boolean method6725(final PlayerEntity playerEntity, BlockPos method1149, final Direction class513) {
         method1149 = method1149.method1149(class513);
         if (this.getBlockState(method1149).getBlock() != Class7521.field29289) {
             return false;
         }
-        this.method6839(class512, 1009, method1149, 0);
+        this.method6839(playerEntity, 1009, method1149, 0);
         this.method6690(method1149, false);
         return true;
     }
@@ -894,7 +894,7 @@ public abstract class World implements Class1851, AutoCloseable
         this.worldInfo.method29548(class354);
     }
     
-    public boolean method6760(final Class512 class512, final BlockPos class513) {
+    public boolean method6760(final PlayerEntity playerEntity, final BlockPos class513) {
         return true;
     }
     

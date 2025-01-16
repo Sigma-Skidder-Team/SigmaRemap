@@ -23,7 +23,7 @@ public class Class4079 extends Item
         if (!method21654.getBlockState(method21655).method21696().method11785(Class7188.field27911)) {
             return Class2201.field13402;
         }
-        final Class512 method21656 = class7075.method21652();
+        final PlayerEntity method21656 = class7075.method21652();
         if (!method21654.isRemote) {
             if (method21656 != null) {
                 method12284(method21656, method21654, method21655);
@@ -32,14 +32,14 @@ public class Class4079 extends Item
         return Class2201.field13400;
     }
     
-    public static Class2201 method12284(final Class512 class512, final World class513, final BlockPos class514) {
+    public static Class2201 method12284(final PlayerEntity playerEntity, final World class513, final BlockPos class514) {
         Entity method5205 = null;
         boolean b = false;
         final int method5206 = class514.getX();
         final int method5207 = class514.getY();
         final int method5208 = class514.getZ();
         for (final Class759 class515 : class513.method7128((Class<? extends Class759>)Class759.class, new AxisAlignedBB(method5206 - 7.0, method5207 - 7.0, method5208 - 7.0, method5206 + 7.0, method5207 + 7.0, method5208 + 7.0))) {
-            if (class515.method4206() != class512) {
+            if (class515.method4206() != playerEntity) {
                 continue;
             }
             if (method5205 == null) {

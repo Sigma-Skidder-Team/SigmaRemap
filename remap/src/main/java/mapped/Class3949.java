@@ -22,7 +22,7 @@ public class Class3949 extends Class3948
     }
     
     @Override
-    public void method12066(final World class1847, final BlockPos class1848, final Class512 class1849) {
+    public void method12066(final World class1847, final BlockPos class1848, final PlayerEntity class1849) {
         final TileEntity method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class468) {
             class1849.method2833((Class434)method6727);

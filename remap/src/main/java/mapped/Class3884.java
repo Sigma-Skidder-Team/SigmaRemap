@@ -77,7 +77,7 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         final int intValue = class7096.get((IProperty<Integer>)Class3884.field17541);
         final int n = (intValue == 3) ? 1 : 0;
         if (n == 0 && class7099.method2715(class7100).getItem() == Items.field31400) {

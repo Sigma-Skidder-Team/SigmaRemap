@@ -40,12 +40,12 @@ public class Class3421 extends Class3418
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
-        return this.field16166.method2162(class512);
+    public boolean method10854(final PlayerEntity playerEntity) {
+        return this.field16166.method2162(playerEntity);
     }
     
     @Override
-    public ItemStack method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
         ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
@@ -116,7 +116,7 @@ public class Class3421 extends Class3418
                 if (method20053.method27690() == class513.method27690()) {
                     return ItemStack.field34174;
                 }
-                class514.method20047(class512, method20053);
+                class514.method20047(playerEntity, method20053);
             }
         }
         return class513;

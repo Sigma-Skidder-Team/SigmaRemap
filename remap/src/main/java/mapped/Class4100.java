@@ -48,7 +48,7 @@ public class Class4100 extends Item
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         class1848.method2762(class1849);
         return Class9355.method34675(method2715);

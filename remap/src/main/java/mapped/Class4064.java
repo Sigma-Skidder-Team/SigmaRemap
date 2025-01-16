@@ -19,7 +19,7 @@ public class Class4064 extends Item
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class426.class, class1848.getBoundingBox().method18496(2.0), class1851 -> {
             final boolean b;
             if (class1851 != null) {
@@ -55,7 +55,7 @@ public class Class4064 extends Item
         return Class9355.method34676(method6740);
     }
     
-    public ItemStack method12270(final ItemStack class8321, final Class512 class8322, final ItemStack class8323) {
+    public ItemStack method12270(final ItemStack class8321, final PlayerEntity class8322, final ItemStack class8323) {
         class8321.method27693(1);
         class8322.method2859(Class8276.field33981.method8449(this));
         if (!class8321.method27620()) {

@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 public class Class9244
 {
     private static String[] field39642;
-    public final Class512 field39643;
+    public final PlayerEntity field39643;
     private boolean field39644;
     private int field39645;
     private int field39646;
@@ -21,7 +21,7 @@ public class Class9244
     public int field39650;
     public final /* synthetic */ Class6356 field39651;
     
-    public Class9244(final Class6356 field39651, final Class512 field39652) {
+    public Class9244(final Class6356 field39651, final PlayerEntity field39652) {
         this.field39651 = field39651;
         this.field39644 = true;
         this.field39647 = 127;

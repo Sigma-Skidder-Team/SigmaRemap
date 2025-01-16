@@ -41,7 +41,7 @@ public class Class850 extends Class763
         this.field4114.method22062(1, new Class3447(this));
         this.field4114.method22062(2, new Class3574(this, 1.0, false));
         this.field4114.method22062(7, new Class3517(this, 1.0, 0.0f));
-        this.field4114.method22062(8, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(8, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(8, new Class3503(this));
         this.field4114.method22062(10, new Class3494(this));
         this.field4114.method22062(11, new Class3454(this));
@@ -129,11 +129,11 @@ public class Class850 extends Class763
         this.method5079(method34647);
     }
     
-    private boolean method5075(final Class512 class512) {
-        if (class512.field3006.field2740.get(3).getItem() != Class7521.field29342.method11704()) {
-            final Vec3d method16738 = class512.method1741(1.0f).normalize();
-            final Vec3d class513 = new Vec3d(this.getPosX() - class512.getPosX(), this.method1944() - class512.method1944(), this.getPosZ() - class512.getPosZ());
-            return method16738.dotProduct(class513.normalize()) > 1.0 - 0.025 / class513.length() && class512.method2747(this);
+    private boolean method5075(final PlayerEntity playerEntity) {
+        if (playerEntity.field3006.field2740.get(3).getItem() != Class7521.field29342.method11704()) {
+            final Vec3d method16738 = playerEntity.method1741(1.0f).normalize();
+            final Vec3d class513 = new Vec3d(this.getPosX() - playerEntity.getPosX(), this.method1944() - playerEntity.method1944(), this.getPosZ() - playerEntity.getPosZ());
+            return method16738.dotProduct(class513.normalize()) > 1.0 - 0.025 / class513.length() && playerEntity.method2747(this);
         }
         return false;
     }

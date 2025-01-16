@@ -41,12 +41,12 @@ public class Class792 extends Class789
         this.field4114.method22062(1, new Class3612(this, 2.2));
         this.field4114.method22062(2, new Class3587(this, 0.8));
         this.field4114.method22062(3, new Class3472(this, 1.0, Class120.method618(Items.field31517, Items.field31522, Class7521.field29265), false));
-        this.field4114.method22062(4, new Class3449<Object>(this, Class512.class, 8.0f, 2.2, 2.2));
+        this.field4114.method22062(4, new Class3449<Object>(this, PlayerEntity.class, 8.0f, 2.2, 2.2));
         this.field4114.method22062(4, new Class3449<Object>(this, Class799.class, 10.0f, 2.2, 2.2));
         this.field4114.method22062(4, new Class3449<Object>(this, Class763.class, 4.0f, 2.2, 2.2));
         this.field4114.method22062(5, new Class3483(this));
         this.field4114.method22062(6, new Class3517(this, 0.6));
-        this.field4114.method22062(11, new Class3628(this, Class512.class, 10.0f));
+        this.field4114.method22062(11, new Class3628(this, PlayerEntity.class, 10.0f));
     }
     
     @Override
@@ -303,7 +303,7 @@ public class Class792 extends Class789
             this.method2710(Class8107.field33413).method23941(8.0);
             this.field4114.method22062(4, new Class3575(this));
             this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]).method11100((Class<?>[])new Class[0]));
-            this.field4115.method22062(2, new Class3555<Object>(this, Class512.class, true));
+            this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true));
             this.field4115.method22062(2, new Class3555<Object>(this, Class799.class, true));
             if (!this.hasCustomName()) {
                 this.method1872(new Class2259(Class8349.method27836("entity", Class792.field4229), new Object[0]));

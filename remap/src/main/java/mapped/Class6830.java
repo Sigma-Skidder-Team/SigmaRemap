@@ -10,10 +10,10 @@ import net.minecraft.util.math.MathHelper;
 public class Class6830 extends Class6831
 {
     private static String[] field26824;
-    private final Class512 field26825;
+    private final PlayerEntity field26825;
     private final Class428 field26826;
     
-    public Class6830(final Class512 field26825, final Class428 field26826) {
+    public Class6830(final PlayerEntity field26825, final Class428 field26826) {
         super(Class8520.field35367, Class286.field1584);
         this.field26825 = field26825;
         this.field26826 = field26826;

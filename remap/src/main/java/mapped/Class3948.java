@@ -25,7 +25,7 @@ public abstract class Class3948 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7097.isRemote) {
             this.method12066(class7097, class7098, class7099);
             return Class2201.field13400;
@@ -33,7 +33,7 @@ public abstract class Class3948 extends Class3841
         return Class2201.field13400;
     }
     
-    public abstract void method12066(final World p0, final BlockPos p1, final Class512 p2);
+    public abstract void method12066(final World p0, final BlockPos p1, final PlayerEntity p2);
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {

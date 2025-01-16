@@ -43,12 +43,12 @@ public abstract class Class788 extends Class787
     @Nullable
     public abstract Class788 method4349(final Class788 p0);
     
-    public void method4350(final Class512 class512, final Class788 class513) {
+    public void method4350(final PlayerEntity playerEntity, final Class788 class513) {
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         final Item method2716 = method2715.getItem();
         if (method2716 instanceof Class3831 && ((Class3831)method2716).method11769(method2715.method27657(), this.getType())) {
             if (!this.world.isRemote) {
@@ -60,8 +60,8 @@ public abstract class Class788 extends Class787
                     if (method2715.method27667()) {
                         method2717.method1872(method2715.method27664());
                     }
-                    this.method4350(class512, method2717);
-                    if (!class512.field3025.field27304) {
+                    this.method4350(playerEntity, method2717);
+                    if (!playerEntity.field3025.field27304) {
                         method2715.method27693(1);
                     }
                 }

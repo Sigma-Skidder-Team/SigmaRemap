@@ -43,7 +43,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (class7097.isRemote) {
             return Class2201.field13400;
         }
@@ -74,7 +74,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final PlayerEntity class1850) {
         final TileEntity method6727 = class1847.method6727(class1848);
         Label_0015: {
             if (method6727 instanceof Class440) {

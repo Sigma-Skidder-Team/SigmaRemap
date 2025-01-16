@@ -71,7 +71,7 @@ public class Class758 extends Class754
         final Class1663 method5290 = Class869.method5277().method5290();
         Class1666 method5291 = method5290.method5853(class1932);
         if (method5291 == null) {
-            method5291 = new Class1768(null, String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", Class8272.method27499(s)), Class7634.method24004(Class512.method2894(s)), true, null);
+            method5291 = new Class1768(null, String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", Class8272.method27499(s)), Class7634.method24004(PlayerEntity.method2894(s)), true, null);
             method5290.method5851(class1932, method5291);
         }
         return (Class1768)method5291;

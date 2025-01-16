@@ -68,7 +68,7 @@ public class Class803 extends Class789
         this.field4114.method22062(1, new Class3505(this));
         this.field4114.method22062(2, new Class3609(this, 2.2));
         this.field4114.method22062(3, new Class3590(this, 1.0));
-        this.field4114.method22062(4, new Class3448<Object>(this, Class512.class, 16.0f, 1.6, 1.4, class513 -> {
+        this.field4114.method22062(4, new Class3448<Object>(this, PlayerEntity.class, 16.0f, 1.6, 1.4, class513 -> {
             final boolean b;
             if (!(!Class803.field4317.test(class513))) {
                 if (!this.method4676(class513.method1865())) {
@@ -91,7 +91,7 @@ public class Class803 extends Class789
         this.field4114.method22062(10, new Class3526(this, 0.4f));
         this.field4114.method22062(11, new Class3517(this, 1.0));
         this.field4114.method22062(11, new Class3638(this));
-        this.field4114.method22062(12, new Class3631(this, Class512.class, 24.0f));
+        this.field4114.method22062(12, new Class3631(this, PlayerEntity.class, 24.0f));
         this.field4114.method22062(13, new Class3543(this));
         this.field4115.method22062(3, new Class3564(LivingEntity.class, false, false, class515 -> Class803.field4315.test(class515) && !this.method4676(class515.method1865())));
     }
@@ -267,11 +267,11 @@ public class Class803 extends Class789
     }
     
     @Override
-    public void method4358(final Class512 class512, final ItemStack class513) {
+    public void method4358(final PlayerEntity playerEntity, final ItemStack class513) {
         if (this.method4357(class513)) {
             this.method1695(this.method2687(class513), 1.0f, 1.0f);
         }
-        super.method4358(class512, class513);
+        super.method4358(playerEntity, class513);
     }
     
     @Override
@@ -487,8 +487,8 @@ public class Class803 extends Class789
     }
     
     @Override
-    public void method4350(final Class512 class512, final Class788 class513) {
-        ((Class803)class513).method4653(class512.method1865());
+    public void method4350(final PlayerEntity playerEntity, final Class788 class513) {
+        ((Class803)class513).method4653(playerEntity.method1865());
     }
     
     public boolean method4665() {
@@ -584,7 +584,7 @@ public class Class803 extends Class789
         if (!this.method2783()) {
             if (!this.world.method6703()) {
                 if (this.rand.nextFloat() < 0.1f) {
-                    if (this.world.method6739((Class<? extends Entity>)Class512.class, this.getBoundingBox().method18495(16.0, 16.0, 16.0), (Predicate<? super Entity>)Class9170.field38850).isEmpty()) {
+                    if (this.world.method6739((Class<? extends Entity>) PlayerEntity.class, this.getBoundingBox().method18495(16.0, 16.0, 16.0), (Predicate<? super Entity>)Class9170.field38850).isEmpty()) {
                         return Class8520.field35208;
                     }
                 }

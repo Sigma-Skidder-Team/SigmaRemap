@@ -89,8 +89,8 @@ public class Class477 extends TileEntity implements Class476, Class439
         this.field2656.method6763(this.field2657, Class7521.field29409, 1, this.field2781);
     }
     
-    public boolean method2428(final Class512 class512) {
-        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
+    public boolean method2428(final PlayerEntity playerEntity) {
+        return this.field2656.method6727(this.field2657) == this && playerEntity.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
     }
     
     @Override

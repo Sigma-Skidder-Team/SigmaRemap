@@ -16,7 +16,7 @@ public class Class4007 extends Block
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7097.isRemote) {
             class7099.method2833(class7096.method21754(class7097, class7098));
             class7099.method2857(Class8276.field34042);

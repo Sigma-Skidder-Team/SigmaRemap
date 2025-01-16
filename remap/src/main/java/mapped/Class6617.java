@@ -30,16 +30,16 @@ public class Class6617 extends Class6601
     }
     
     @Override
-    public boolean method20061(final Class512 class512) {
+    public boolean method20061(final PlayerEntity playerEntity) {
         final ItemStack method20053 = this.method20053();
         if (!method20053.method27620()) {
-            if (!class512.method2889()) {
+            if (!playerEntity.method2889()) {
                 if (Class8742.method30217(method20053)) {
                     return false;
                 }
             }
         }
-        return super.method20061(class512);
+        return super.method20061(playerEntity);
     }
     
     @Override

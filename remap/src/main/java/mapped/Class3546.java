@@ -28,16 +28,16 @@ public class Class3546 extends Class3545
     public boolean method11013() {
         final AxisAlignedBB method18495 = this.field16611.getBoundingBox().method18495(10.0, 8.0, 10.0);
         final List<LivingEntity> method18496 = this.field16611.world.method7142((Class<? extends LivingEntity>)Class824.class, this.field16613, (LivingEntity)this.field16611, method18495);
-        final List<Class512> method18497 = this.field16611.world.method7141(this.field16613, this.field16611, method18495);
+        final List<PlayerEntity> method18497 = this.field16611.world.method7141(this.field16613, this.field16611, method18495);
         for (final Class824 class824 : method18496) {
-            for (final Class512 field16612 : method18497) {
+            for (final PlayerEntity field16612 : method18497) {
                 if (class824.method4876(field16612) > -100) {
                     continue;
                 }
                 this.field16612 = field16612;
             }
         }
-        return this.field16612 != null && (!(this.field16612 instanceof Class512) || (!this.field16612.isSpectator() && !((Class512)this.field16612).method2889()));
+        return this.field16612 != null && (!(this.field16612 instanceof PlayerEntity) || (!this.field16612.isSpectator() && !((PlayerEntity)this.field16612).method2889()));
     }
     
     @Override

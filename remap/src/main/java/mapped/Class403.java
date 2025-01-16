@@ -154,10 +154,10 @@ public class Class403 extends Class402
     }
     
     @Override
-    public void method1736(final Class512 class512) {
+    public void method1736(final PlayerEntity playerEntity) {
         final Entity method1973 = this.method1973();
-        if (method1973 == null || method1973.method1865() == class512.method1865()) {
-            super.method1736(class512);
+        if (method1973 == null || method1973.method1865() == playerEntity.method1865()) {
+            super.method1736(playerEntity);
         }
     }
     

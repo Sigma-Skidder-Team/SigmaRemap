@@ -434,7 +434,7 @@ public class Class685 extends Class565
     }
     
     public void method3784(final float n) {
-        final Class512 method3790 = this.method3790();
+        final PlayerEntity method3790 = this.method3790();
         if (method3790 != null) {
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             this.field3753.method5290().method5849(Class685.field3750);
@@ -631,12 +631,12 @@ public class Class685 extends Class565
         }
     }
     
-    private Class512 method3790() {
-        return (this.field3753.method5303() instanceof Class512) ? ((Class512)this.field3753.method5303()) : null;
+    private PlayerEntity method3790() {
+        return (this.field3753.method5303() instanceof PlayerEntity) ? ((PlayerEntity)this.field3753.method5303()) : null;
     }
     
     private LivingEntity method3791() {
-        final Class512 method3790 = this.method3790();
+        final PlayerEntity method3790 = this.method3790();
         if (method3790 != null) {
             final Entity method3791 = method3790.method1920();
             if (method3791 == null) {
@@ -665,7 +665,7 @@ public class Class685 extends Class565
     }
     
     private void method3794() {
-        final Class512 method3790 = this.method3790();
+        final PlayerEntity method3790 = this.method3790();
         if (method3790 != null) {
             final int method3791 = MathHelper.ceil(method3790.method2664());
             final boolean b = this.field3777 > this.field3756 && (this.field3777 - this.field3756) / 3L % 2L == 1L;
@@ -952,7 +952,7 @@ public class Class685 extends Class565
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
     }
     
-    private void method3800(final int n, final int n2, final float n3, final Class512 class512, final ItemStack class513) {
+    private void method3800(final int n, final int n2, final float n3, final PlayerEntity playerEntity, final ItemStack class513) {
         if (!class513.method27620()) {
             final float n4 = class513.method27688() - n3;
             if (n4 > 0.0f) {
@@ -962,7 +962,7 @@ public class Class685 extends Class565
                 Class8726.method30063(1.0f / n5, (n5 + 1.0f) / 2.0f, 1.0f);
                 Class8726.method30065((float)(-(n + 8)), (float)(-(n2 + 12)), 0.0f);
             }
-            this.field3754.method6541(class512, class513, n, n2);
+            this.field3754.method6541(playerEntity, class513, n, n2);
             if (n4 > 0.0f) {
                 Class8726.method30060();
             }

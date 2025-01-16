@@ -50,7 +50,7 @@ public class Class4012 extends Block
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         if (method2715.method27620()) {
             return Class2201.field13402;

@@ -52,8 +52,8 @@ public class Class3423 extends Class3418
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
-        return this.field16182.method4823() == class512;
+    public boolean method10854(final PlayerEntity playerEntity) {
+        return this.field16182.method4823() == playerEntity;
     }
     
     public int method10919() {
@@ -90,7 +90,7 @@ public class Class3423 extends Class3418
     }
     
     @Override
-    public ItemStack method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
         ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
@@ -132,7 +132,7 @@ public class Class3423 extends Class3418
                 if (method20053.method27690() == class513.method27690()) {
                     return ItemStack.field34174;
                 }
-                class514.method20047(class512, method20053);
+                class514.method20047(playerEntity, method20053);
             }
         }
         return class513;
@@ -146,22 +146,22 @@ public class Class3423 extends Class3418
     }
     
     @Override
-    public void method10859(final Class512 class512) {
-        super.method10859(class512);
+    public void method10859(final PlayerEntity playerEntity) {
+        super.method10859(playerEntity);
         this.field16182.method4822(null);
         if (!this.field16182.method4838().isRemote) {
-            if (class512.method1768() && (class512 instanceof Class513 && ((Class513)class512).method2936())) {
-                class512.field3006.method2364(class512.world, this.field16183.method2159(0));
-                class512.field3006.method2364(class512.world, this.field16183.method2159(1));
+            if (playerEntity.method1768() && (playerEntity instanceof Class513 && ((Class513) playerEntity).method2936())) {
+                playerEntity.field3006.method2364(playerEntity.world, this.field16183.method2159(0));
+                playerEntity.field3006.method2364(playerEntity.world, this.field16183.method2159(1));
             }
             else {
                 final ItemStack method2159 = this.field16183.method2159(0);
                 if (!method2159.method27620()) {
-                    class512.method2822(method2159, false);
+                    playerEntity.method2822(method2159, false);
                 }
                 final ItemStack method2160 = this.field16183.method2159(1);
                 if (!method2160.method27620()) {
-                    class512.method2822(method2160, false);
+                    playerEntity.method2822(method2160, false);
                 }
             }
         }

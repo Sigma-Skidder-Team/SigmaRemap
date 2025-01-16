@@ -106,7 +106,7 @@ public abstract class Class763 extends Class787 implements Class762
         return true;
     }
     
-    public boolean method4232(final Class512 class512) {
+    public boolean method4232(final PlayerEntity playerEntity) {
         return true;
     }
     

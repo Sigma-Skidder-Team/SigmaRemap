@@ -22,7 +22,7 @@ public class Class3447 extends Class3446
     @Override
     public boolean method11013() {
         this.field16274 = this.field16273.method4152();
-        return this.field16274 instanceof Class512 && this.field16274.method1734(this.field16273) <= 256.0 && Class850.method5085(this.field16273, (Class512)this.field16274);
+        return this.field16274 instanceof PlayerEntity && this.field16274.method1734(this.field16273) <= 256.0 && Class850.method5085(this.field16273, (PlayerEntity)this.field16274);
     }
     
     @Override

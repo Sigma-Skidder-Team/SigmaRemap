@@ -129,22 +129,22 @@ public abstract class Class812 extends Class806
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() instanceof Class3831) {
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
         if (!this.method2625()) {
-            if (this.method4715() && class512.method2804()) {
-                this.method4740(class512);
+            if (this.method4715() && playerEntity.method2804()) {
+                this.method4740(playerEntity);
                 return true;
             }
             if (this.isBeingRidden()) {
-                return super.method4195(class512, class513);
+                return super.method4195(playerEntity, class513);
             }
         }
         if (!method2715.method27620()) {
-            int method2716 = this.method4741(class512, method2715) ? 1 : 0;
+            int method2716 = this.method4741(playerEntity, method2715) ? 1 : 0;
             if (method2716 == 0) {
                 if (this.method4715() && method2715.getItem() != Items.field31552) {
                     if (!this.method4780()) {
@@ -158,14 +158,14 @@ public abstract class Class812 extends Class806
                     if (!this.method2625()) {
                         if (!this.method4736()) {
                             if (method2715.getItem() == Items.field31353) {
-                                this.method4740(class512);
+                                this.method4740(playerEntity);
                                 return true;
                             }
                         }
                     }
                 }
                 else {
-                    if (!method2715.method27640(class512, this, class513)) {
+                    if (!method2715.method27640(playerEntity, this, class513)) {
                         this.method4750();
                         return true;
                     }
@@ -173,17 +173,17 @@ public abstract class Class812 extends Class806
                 }
             }
             if (method2716 != 0) {
-                if (!class512.field3025.field27304) {
+                if (!playerEntity.field3025.field27304) {
                     method2715.method27693(1);
                 }
                 return true;
             }
         }
         if (!this.method2625()) {
-            this.method4742(class512);
+            this.method4742(playerEntity);
             return true;
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     public void method4782() {

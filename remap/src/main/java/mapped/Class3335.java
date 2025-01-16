@@ -46,7 +46,7 @@ public class Class3335 extends Class3167
             final double[] array2 = Class3335.field15935.get(class5735);
             if (array[3] > 0.0 || array[3] <= 1.0) {
                 Class8726.method30059();
-                if ((method9883 || !class5735.method1823()) && class5735 instanceof Class512 && !(class5735 instanceof Class756)) {
+                if ((method9883 || !class5735.method1823()) && class5735 instanceof PlayerEntity && !(class5735 instanceof Class756)) {
                     this.method10557(class5735);
                     try {
                         final float n = (float)array[1];
@@ -71,7 +71,7 @@ public class Class3335 extends Class3167
                         Class8154.method26880(n4 - 0.5, n - 0.5, n5 + 0.5, n2 + 0.5, 0.9, Class8101.method26624(0, 0), Class8101.method26623(0));
                         Class8154.method26880(n4 + 2.5, n + 2.5, n5 - 2.5, n2 - 2.5, 0.9, Class8101.method26624(0, 0), Class8101.method26623(0));
                         Class8154.method26880(n4 - 5.0f, n - 1.0f, n4 - 1.0f, n2, 1.0, Class8101.method26624(0, 100), Class8101.method26624(0, 255));
-                        final float method9885 = ((Class512)class5735).method2664();
+                        final float method9885 = ((PlayerEntity)class5735).method2664();
                         Class8154.method26876(n4 - 4.0f, n2 - 1.0f, n4 - 2.0f, n2 + (n - n2) * (method9885 * 5.0f * 0.01f), method10553(new float[] { 0.0f, 0.5f, 1.0f }, new Color[] { Color.RED, Color.YELLOW, Color.GREEN }, method9885 * 5.0f * 0.01f).brighter().getRGB());
                         if ((int)Class6029.method17958(method9885 * 5.0f, 1.0) != 100 && method9884) {
                             Class8726.method30059();
@@ -175,18 +175,18 @@ public class Class3335 extends Class3167
         Class3335.field15934.clear();
         Class3335.field15935.clear();
         final float field26528 = Class3335.field15514.field4633.field26528;
-        for (final Class512 next : Class3335.field15514.field4683.method6806()) {
-            if (!(next instanceof Class512)) {
+        for (final PlayerEntity next : Class3335.field15514.field4683.method6806()) {
+            if (!(next instanceof PlayerEntity)) {
                 continue;
             }
             if (next instanceof Class756) {
                 continue;
             }
-            final Class512 class512 = next;
-            final double n = class512.lastTickPosY + (class512.posY - class512.lastTickPosY) * field26528 - method16761;
-            final double n2 = class512.lastTickPosX + (class512.posX + 10.0 - (class512.lastTickPosX + 10.0)) * field26528 - method16760;
-            final double n3 = class512.lastTickPosZ + (class512.posZ + 10.0 - (class512.lastTickPosZ + 10.0)) * field26528 - method16762;
-            final double n4 = n + (class512.method1931() + 0.2);
+            final PlayerEntity playerEntity = next;
+            final double n = playerEntity.lastTickPosY + (playerEntity.posY - playerEntity.lastTickPosY) * field26528 - method16761;
+            final double n2 = playerEntity.lastTickPosX + (playerEntity.posX + 10.0 - (playerEntity.lastTickPosX + 10.0)) * field26528 - method16760;
+            final double n3 = playerEntity.lastTickPosZ + (playerEntity.posZ + 10.0 - (playerEntity.lastTickPosZ + 10.0)) * field26528 - method16762;
+            final double n4 = n + (playerEntity.method1931() + 0.2);
             final double[] method16763 = Class8154.method26931(n2, n4, n3);
             final double abs = Math.abs(Class8154.method26931(n2, n4 + 1.0, n3)[1] - Class8154.method26931(n2, n4, n3)[1]);
             if (!Class3335.field15936 && method16763 == null) {
@@ -198,9 +198,9 @@ public class Class3335 extends Class3167
             if (method16763[2] >= 1.0) {
                 continue;
             }
-            Class3335.field15934.put(class512, new double[] { method16763[0], method16763[1], abs, method16763[2] });
-            final double n5 = class512.lastTickPosY + (class512.posY - 2.2 - (class512.lastTickPosY - 2.2)) * field26528 - method16761;
-            Class3335.field15935.put(class512, new double[] { Class8154.method26931(n2, n5, n3)[0], Class8154.method26931(n2, n5, n3)[1], abs, Class8154.method26931(n2, n5, n3)[2] });
+            Class3335.field15934.put(playerEntity, new double[] { method16763[0], method16763[1], abs, method16763[2] });
+            final double n5 = playerEntity.lastTickPosY + (playerEntity.posY - 2.2 - (playerEntity.lastTickPosY - 2.2)) * field26528 - method16761;
+            Class3335.field15935.put(playerEntity, new double[] { Class8154.method26931(n2, n5, n3)[0], Class8154.method26931(n2, n5, n3)[1], abs, Class8154.method26931(n2, n5, n3)[2] });
         }
     }
     

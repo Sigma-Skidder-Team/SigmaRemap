@@ -54,7 +54,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public Class2201 method11844(BlockState method6701, final World class1847, BlockPos method6702, final Class512 class1848, final Class316 class1849, final Class7005 class1850) {
+    public Class2201 method11844(BlockState method6701, final World class1847, BlockPos method6702, final PlayerEntity class1848, final Class316 class1849, final Class7005 class1850) {
         if (class1847.isRemote) {
             return Class2201.field13401;
         }
@@ -71,7 +71,7 @@ public class Class3900 extends Class3892 implements Class3840
             if (class1847.getBlockState(method6703).method21696() == this) {
                 class1847.method6690(method6703, false);
             }
-            class1847.createExplosion(null, DamageSource.method25704(), method6702.getX() + 0.5, method6702.getY() + 0.5, method6702.getZ() + 0.5, 5.0f, true, Class2196.field13367);
+            class1847.createExplosion(null, DamageSource.method25704(), method6702.getX() + 0.5, method6702.getY() + 0.5, method6702.getZ() + 0.5, 5.0f, true, Explosion.Mode.field13367);
             return Class2201.field13400;
         }
         if (!method6701.get((IProperty<Boolean>)Class3900.field17600)) {
@@ -133,12 +133,12 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final PlayerEntity class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
         super.method11852(class1847, class1848, class1849, Class7521.field29147.getDefaultState(), class1851, class1852);
     }
     
     @Override
-    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final PlayerEntity class1850) {
         final Class105 class1851 = class1849.get(Class3900.field17599);
         final BlockPos method1149 = class1848.method1149(method11988(class1851, class1849.get((IProperty<Direction>)Class3900.field17564)));
         final BlockState method1150 = class1847.getBlockState(method1149);

@@ -24,7 +24,7 @@ public class Class6622 extends Class6601
     }
     
     @Override
-    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
+    public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
         Class3439.method10984(this.field26203).method20060(1);
         Class3439.method10985(this.field26203).method20060(1);
         if (!Class3439.method10984(this.field26203).method20054() || !Class3439.method10985(this.field26203).method20054()) {
@@ -39,6 +39,6 @@ public class Class6622 extends Class6601
             }
             return;
         });
-        return super.method20047(class512, class513);
+        return super.method20047(playerEntity, class513);
     }
 }

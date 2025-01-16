@@ -7,14 +7,14 @@ package mapped;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 
-public class Class3568 extends Class3555<Class512>
+public class Class3568 extends Class3555<PlayerEntity>
 {
     private static String[] field16658;
     public final /* synthetic */ Class841 field16659;
     
     public Class3568(final Class841 field16659, final Class841 class841) {
         this.field16659 = field16659;
-        super(class841, Class512.class, true);
+        super(class841, PlayerEntity.class, true);
     }
     
     @Override

@@ -56,7 +56,7 @@ public class Class802 extends Class789
         this.field4114.method22062(4, new Class3456(this, 1.1));
         this.field4114.method22062(5, this.field4309);
         this.field4114.method22062(6, new Class3517(this, 1.0));
-        this.field4114.method22062(7, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(7, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(8, new Class3503(this));
     }
     
@@ -172,20 +172,20 @@ public class Class802 extends Class789
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() == Items.field31426) {
             if (!this.method4636()) {
                 if (!this.method2625()) {
                     this.method4633();
                     if (!this.world.isRemote) {
-                        method2715.method27636(1, class512, class515 -> class515.method2795(class514));
+                        method2715.method27636(1, playerEntity, class515 -> class515.method2795(class514));
                     }
                     return true;
                 }
             }
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     public void method4633() {

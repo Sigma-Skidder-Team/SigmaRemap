@@ -14,17 +14,17 @@ import javax.annotation.Nullable;
 public class Class7075
 {
     private static String[] field27550;
-    public final Class512 field27551;
+    public final PlayerEntity field27551;
     public final Class316 field27552;
     public final Class7005 field27553;
     public final World field27554;
     public final ItemStack field27555;
     
-    public Class7075(final Class512 class512, final Class316 class513, final Class7005 class514) {
-        this(class512.world, class512, class513, class512.method2715(class513), class514);
+    public Class7075(final PlayerEntity playerEntity, final Class316 class513, final Class7005 class514) {
+        this(playerEntity.world, playerEntity, class513, playerEntity.method2715(class513), class514);
     }
     
-    public Class7075(final World field27554, final Class512 field27555, final Class316 field27556, final ItemStack field27557, final Class7005 field27558) {
+    public Class7075(final World field27554, final PlayerEntity field27555, final Class316 field27556, final ItemStack field27557, final Class7005 field27558) {
         this.field27551 = field27555;
         this.field27552 = field27556;
         this.field27553 = field27558;
@@ -53,7 +53,7 @@ public class Class7075
     }
     
     @Nullable
-    public Class512 method21652() {
+    public PlayerEntity method21652() {
         return this.field27551;
     }
     

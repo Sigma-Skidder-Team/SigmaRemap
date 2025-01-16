@@ -13,10 +13,10 @@ import javax.annotation.Nullable;
 
 public interface Class822
 {
-    void method4822(final Class512 p0);
+    void method4822(final PlayerEntity p0);
     
     @Nullable
-    Class512 method4823();
+    PlayerEntity method4823();
     
     Class57 method4825();
     
@@ -40,12 +40,12 @@ public interface Class822
         return false;
     }
     
-    default void method4854(final Class512 class512, final ITextComponent class513, final int n) {
-        final OptionalInt method2833 = class512.method2833(new Class504((n, class464, class465) -> new Class3423(n, class464, this), class513));
+    default void method4854(final PlayerEntity playerEntity, final ITextComponent class513, final int n) {
+        final OptionalInt method2833 = playerEntity.method2833(new Class504((n, class464, class465) -> new Class3423(n, class464, this), class513));
         if (method2833.isPresent()) {
             final Class57 method2834 = this.method4825();
             if (!method2834.isEmpty()) {
-                class512.method2834(method2833.getAsInt(), method2834, n, this.method4821(), this.method4830(), this.method4853());
+                playerEntity.method2834(method2833.getAsInt(), method2834, n, this.method4821(), this.method4830(), this.method4853());
             }
         }
     }

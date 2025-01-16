@@ -91,16 +91,16 @@ public class Class3232 extends Class3167
             else if (class399 instanceof Class857) {
                 iterator.remove();
             }
-            else if (!this.method9883("Players") && class399 instanceof Class512) {
+            else if (!this.method9883("Players") && class399 instanceof PlayerEntity) {
                 iterator.remove();
             }
-            else if (this.method9883("Anti-Bot") && class399 instanceof Class512 && Class9463.method35173().method35191().method31751(class399)) {
+            else if (this.method9883("Anti-Bot") && class399 instanceof PlayerEntity && Class9463.method35173().method35191().method31751(class399)) {
                 iterator.remove();
             }
             else if (!this.method9883("Invisible") && class399.method1823()) {
                 iterator.remove();
             }
-            else if (!this.method9883("Animals/Monsters") && !(class399 instanceof Class512)) {
+            else if (!this.method9883("Animals/Monsters") && !(class399 instanceof PlayerEntity)) {
                 iterator.remove();
             }
             else if (Class3232.field15514.field4684.method1920() != null && Class3232.field15514.field4684.method1920().equals(class399)) {
@@ -110,7 +110,7 @@ public class Class3232 extends Class3167
                 iterator.remove();
             }
             else {
-                if (!(class399 instanceof Class512) || !Class9011.method32262((Class512)class399) || this.method9883("Teams")) {
+                if (!(class399 instanceof PlayerEntity) || !Class9011.method32262((PlayerEntity)class399) || this.method9883("Teams")) {
                     continue;
                 }
                 iterator.remove();

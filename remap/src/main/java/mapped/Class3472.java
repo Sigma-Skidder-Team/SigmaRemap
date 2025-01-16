@@ -18,7 +18,7 @@ public class Class3472 extends Class3446
     private double field16362;
     private double field16363;
     private double field16364;
-    public Class512 field16365;
+    public PlayerEntity field16365;
     private int field16366;
     private boolean field16367;
     private final Class120 field16368;

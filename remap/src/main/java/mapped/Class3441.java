@@ -21,7 +21,7 @@ public class Class3441 extends Class3418
     private final Class7318 field16256;
     private int field16257;
     private String field16258;
-    private final Class512 field16259;
+    private final PlayerEntity field16259;
     
     public Class3441(final int n, final Class464 class464) {
         this(n, class464, Class7318.field28308);
@@ -211,18 +211,18 @@ public class Class3441 extends Class3418
     }
     
     @Override
-    public void method10859(final Class512 class512) {
-        super.method10859(class512);
+    public void method10859(final PlayerEntity playerEntity) {
+        super.method10859(playerEntity);
         this.field16256.method22437((class514, p2) -> this.method10881(class513, class514, this.field16254));
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
+    public boolean method10854(final PlayerEntity playerEntity) {
         return this.field16256.method22436((class515, class517) -> class515.getBlockState(class517).method21755(Class7188.field27905) && class513.method1733(class517.getX() + 0.5, class517.getY() + 0.5, class517.getZ() + 0.5) <= 64.0, Boolean.valueOf(true));
     }
     
     @Override
-    public ItemStack method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
         ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
@@ -258,7 +258,7 @@ public class Class3441 extends Class3418
                 if (method20053.method27690() == class513.method27690()) {
                     return ItemStack.field34174;
                 }
-                class514.method20047(class512, method20053);
+                class514.method20047(playerEntity, method20053);
             }
         }
         return class513;

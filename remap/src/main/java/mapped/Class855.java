@@ -14,7 +14,7 @@ public abstract class Class855 extends Class759
     }
     
     @Override
-    public boolean method4204(final Class512 class512) {
+    public boolean method4204(final PlayerEntity playerEntity) {
         return false;
     }
 }

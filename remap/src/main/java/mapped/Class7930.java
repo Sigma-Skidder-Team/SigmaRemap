@@ -49,7 +49,7 @@ public class Class7930 extends DamageSource
     public boolean method25722() {
         if (this.field32594 != null) {
             if (this.field32594 instanceof LivingEntity) {
-                if (!(this.field32594 instanceof Class512)) {
+                if (!(this.field32594 instanceof PlayerEntity)) {
                     return true;
                 }
             }

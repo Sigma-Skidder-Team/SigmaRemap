@@ -46,6 +46,6 @@ public class Class4035 extends Item
                 }
             }
         }
-        return (class8323 instanceof Class512 && ((Class512)class8323).field3025.field27304) ? method11707 : new ItemStack(Items.field31300);
+        return (class8323 instanceof PlayerEntity && ((PlayerEntity)class8323).field3025.field27304) ? method11707 : new ItemStack(Items.field31300);
     }
 }

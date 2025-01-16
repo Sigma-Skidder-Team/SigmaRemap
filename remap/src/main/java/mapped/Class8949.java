@@ -41,7 +41,7 @@ public class Class8949
     @Class6763
     private void method31754(final Class5743 class5743) {
         if (this.field37638 != null) {
-            for (final Class512 class5744 : Class6430.method19108()) {
+            for (final PlayerEntity class5744 : Class6430.method19108()) {
                 if (!this.field37638.method25239(class5744)) {
                     if (!this.field37638.method25240(class5744)) {
                         continue;

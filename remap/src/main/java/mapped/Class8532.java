@@ -42,7 +42,7 @@ public final class Class8532
                     class1980.setPos(n2, method7441, n3);
                     final float n5 = n2 + 0.5f;
                     final float n6 = n3 + 0.5f;
-                    final Class512 method7446 = class1977.method7133(n5, n6, -1.0);
+                    final PlayerEntity method7446 = class1977.method7133(n5, n6, -1.0);
                     if (method7446 != null) {
                         final double method7447 = method7446.method1733(n5, method7441, n6);
                         if (method7447 > 576.0) {

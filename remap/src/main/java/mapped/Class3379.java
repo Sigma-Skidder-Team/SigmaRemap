@@ -242,18 +242,18 @@ public class Class3379 extends Class3167
                         if (((LivingEntity)class399).method2664() != 0.0f) {
                             if (Class3379.field15514.field4684.method1732(class399) <= n) {
                                 if (Class3379.field15514.field4684.method2646((LivingEntity)class399)) {
-                                    if (!(class399 instanceof Class857) && !(class399 instanceof Class512)) {
-                                        if (class399 instanceof Class512 && Class9463.method35173().method35191().method31751(class399)) {
+                                    if (!(class399 instanceof Class857) && !(class399 instanceof PlayerEntity)) {
+                                        if (class399 instanceof PlayerEntity && Class9463.method35173().method35191().method31751(class399)) {
                                             iterator.remove();
                                         }
                                         else if (Class3379.field15514.field4684.method1920() != null && Class3379.field15514.field4684.method1920().equals(class399)) {
                                             iterator.remove();
                                         }
                                         else if (!class399.method1850()) {
-                                            if (!(class399 instanceof Class512)) {
+                                            if (!(class399 instanceof PlayerEntity)) {
                                                 continue;
                                             }
-                                            if (!Class9011.method32262((Class512)class399)) {
+                                            if (!Class9011.method32262((PlayerEntity)class399)) {
                                                 continue;
                                             }
                                             iterator.remove();
@@ -307,7 +307,7 @@ public class Class3379 extends Class3167
                             if (Class3379.field15514.field4684.method1732(class400) <= n) {
                                 if (Class3379.field15514.field4684.method2646((LivingEntity)class400)) {
                                     if (!(class400 instanceof Class857)) {
-                                        if (class400 instanceof Class512 && Class9463.method35173().method35191().method31751(class400)) {
+                                        if (class400 instanceof PlayerEntity && Class9463.method35173().method35191().method31751(class400)) {
                                             iterator.remove();
                                         }
                                         else if (Class3379.field15514.field4684.method1920() != null && Class3379.field15514.field4684.method1920().equals(class400)) {

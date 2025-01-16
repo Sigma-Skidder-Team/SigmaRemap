@@ -30,7 +30,7 @@ public interface Class1874
         return (List<T>)this.method6739((Class<? extends Entity>)clazz, class6221, (Predicate<? super Entity>)predicate);
     }
     
-    List<? extends Class512> method6840();
+    List<? extends PlayerEntity> method6840();
     
     default List<Entity> method7127(final Entity class399, final AxisAlignedBB class400) {
         return this.method6737(class399, class400, Class9170.field38850);
@@ -67,10 +67,10 @@ public interface Class1874
     }
     
     @Nullable
-    default Class512 method7130(final double n, final double n2, final double n3, final double n4, final Predicate<Entity> predicate) {
+    default PlayerEntity method7130(final double n, final double n2, final double n3, final double n4, final Predicate<Entity> predicate) {
         double n5 = -1.0;
-        Class512 class512 = null;
-        for (final Class512 class513 : this.method6840()) {
+        PlayerEntity playerEntity = null;
+        for (final PlayerEntity class513 : this.method6840()) {
             if (predicate != null && !predicate.test(class513)) {
                 continue;
             }
@@ -82,26 +82,26 @@ public interface Class1874
                 continue;
             }
             n5 = method1733;
-            class512 = class513;
+            playerEntity = class513;
         }
-        return class512;
+        return playerEntity;
     }
     
     @Nullable
-    default Class512 method7131(final Entity class399, final double n) {
+    default PlayerEntity method7131(final Entity class399, final double n) {
         return this.method7132(class399.getPosX(), class399.getPosY(), class399.getPosZ(), n, false);
     }
     
     @Nullable
-    default Class512 method7132(final double n, final double n2, final double n3, final double n4, final boolean b) {
+    default PlayerEntity method7132(final double n, final double n2, final double n3, final double n4, final boolean b) {
         return this.method7130(n, n2, n3, n4, b ? Class9170.field38849 : Class9170.field38850);
     }
     
     @Nullable
-    default Class512 method7133(final double n, final double n2, final double n3) {
+    default PlayerEntity method7133(final double n, final double n2, final double n3) {
         double n4 = -1.0;
-        Class512 class512 = null;
-        for (final Class512 class513 : this.method6840()) {
+        PlayerEntity playerEntity = null;
+        for (final PlayerEntity class513 : this.method6840()) {
             if (!Class9170.field38850.test(class513)) {
                 continue;
             }
@@ -113,20 +113,20 @@ public interface Class1874
                 continue;
             }
             n4 = method1733;
-            class512 = class513;
+            playerEntity = class513;
         }
-        return class512;
+        return playerEntity;
     }
     
     default boolean method7134(final double n, final double n2, final double n3, final double n4) {
-        for (final Class512 class512 : this.method6840()) {
-            if (!Class9170.field38850.test(class512)) {
+        for (final PlayerEntity playerEntity : this.method6840()) {
+            if (!Class9170.field38850.test(playerEntity)) {
                 continue;
             }
-            if (!Class9170.field38846.test(class512)) {
+            if (!Class9170.field38846.test(playerEntity)) {
                 continue;
             }
-            final double method1733 = class512.method1733(n, n2, n3);
+            final double method1733 = playerEntity.method1733(n, n2, n3);
             if (n4 >= 0.0 && method1733 >= n4 * n4) {
                 continue;
             }
@@ -136,17 +136,17 @@ public interface Class1874
     }
     
     @Nullable
-    default Class512 method7135(final Class7843 class7843, final LivingEntity class7844) {
+    default PlayerEntity method7135(final Class7843 class7843, final LivingEntity class7844) {
         return this.method7140(this.method6840(), class7843, class7844, class7844.getPosX(), class7844.getPosY(), class7844.getPosZ());
     }
     
     @Nullable
-    default Class512 method7136(final Class7843 class7843, final LivingEntity class7844, final double n, final double n2, final double n3) {
+    default PlayerEntity method7136(final Class7843 class7843, final LivingEntity class7844, final double n, final double n2, final double n3) {
         return this.method7140(this.method6840(), class7843, class7844, n, n2, n3);
     }
     
     @Nullable
-    default Class512 method7137(final Class7843 class7843, final double n, final double n2, final double n3) {
+    default PlayerEntity method7137(final Class7843 class7843, final double n, final double n2, final double n3) {
         return this.method7140(this.method6840(), class7843, (LivingEntity)null, n, n2, n3);
     }
     
@@ -178,9 +178,9 @@ public interface Class1874
         return (T)class7845;
     }
     
-    default List<Class512> method7141(final Class7843 class7843, final LivingEntity class7844, final AxisAlignedBB class7845) {
+    default List<PlayerEntity> method7141(final Class7843 class7843, final LivingEntity class7844, final AxisAlignedBB class7845) {
         final ArrayList arrayList = Lists.newArrayList();
-        for (final Class512 class7846 : this.method6840()) {
+        for (final PlayerEntity class7846 : this.method6840()) {
             if (!class7845.method18506(class7846.getPosX(), class7846.getPosY(), class7846.getPosZ())) {
                 continue;
             }
@@ -205,11 +205,11 @@ public interface Class1874
     }
     
     @Nullable
-    default Class512 method7143(final UUID uuid) {
+    default PlayerEntity method7143(final UUID uuid) {
         for (int i = 0; i < this.method6840().size(); ++i) {
-            final Class512 class512 = (Class512)this.method6840().get(i);
-            if (uuid.equals(class512.method1865())) {
-                return class512;
+            final PlayerEntity playerEntity = (PlayerEntity)this.method6840().get(i);
+            if (uuid.equals(playerEntity.method1865())) {
+                return playerEntity;
             }
         }
         return null;

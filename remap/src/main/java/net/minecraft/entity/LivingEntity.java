@@ -76,7 +76,7 @@ public abstract class LivingEntity extends Entity
     public float field2953;
     public float field2954;
     public float field2955;
-    public Class512 field2956;
+    public PlayerEntity field2956;
     public int field2957;
     public boolean field2958;
     public int field2959;
@@ -209,7 +209,7 @@ public abstract class LivingEntity extends Entity
         }
         super.method1660();
         this.world.method6796().startSection("livingEntityBaseTick");
-        final boolean b = this instanceof Class512;
+        final boolean b = this instanceof PlayerEntity;
         if (this.method1768()) {
             if (!this.method1769()) {
                 if (b) {
@@ -231,7 +231,7 @@ public abstract class LivingEntity extends Entity
         if (this.method1704() || this.world.isRemote) {
             this.method1667();
         }
-        final boolean b2 = b && ((Class512)this).field3025.field27301;
+        final boolean b2 = b && ((PlayerEntity)this).field3025.field27301;
         if (this.method1768()) {
             if (this.method1720(Class7324.field28319) && this.world.getBlockState(new BlockPos(this.getPosX(), this.method1944(), this.getPosZ())).method21696() != Class7521.field29765) {
                 if (!this.method2622()) {
@@ -358,7 +358,7 @@ public abstract class LivingEntity extends Entity
         return Math.min(n + 4, this.getMaxAir());
     }
     
-    public int method2631(final Class512 class512) {
+    public int method2631(final PlayerEntity playerEntity) {
         return 0;
     }
     
@@ -800,14 +800,14 @@ public abstract class LivingEntity extends Entity
             if (method25714 instanceof LivingEntity) {
                 this.method2636((LivingEntity)method25714);
             }
-            if (!(method25714 instanceof Class512)) {
+            if (!(method25714 instanceof PlayerEntity)) {
                 if (method25714 instanceof Class799) {
                     final Class799 class799 = (Class799)method25714;
                     if (class799.method4480()) {
                         this.field2957 = 100;
                         final LivingEntity method25715 = class799.method4488();
                         if (method25715 != null && method25715.getType() == EntityType.field29058) {
-                            this.field2956 = (Class512)method25715;
+                            this.field2956 = (PlayerEntity)method25715;
                         }
                         else {
                             this.field2956 = null;
@@ -817,7 +817,7 @@ public abstract class LivingEntity extends Entity
             }
             else {
                 this.field2957 = 100;
-                this.field2956 = (Class512)method25714;
+                this.field2956 = (PlayerEntity)method25714;
             }
         }
         if (b2) {
@@ -1036,7 +1036,7 @@ public abstract class LivingEntity extends Entity
     public void method2675(final DamageSource class7929) {
         final Entity method25714 = class7929.method25714();
         int method25715;
-        if (!(method25714 instanceof Class512)) {
+        if (!(method25714 instanceof PlayerEntity)) {
             method25715 = 0;
         }
         else {
@@ -1391,7 +1391,7 @@ public abstract class LivingEntity extends Entity
                 if (method2684 != null) {
                     this.method1695(method2684, this.method2720(), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f);
                 }
-                if (!(this instanceof Class512)) {
+                if (!(this instanceof PlayerEntity)) {
                     this.method2665(0.0f);
                     this.method2673(DamageSource.field32575);
                     break;
@@ -1714,7 +1714,7 @@ public abstract class LivingEntity extends Entity
                     this.fallDistance = 0.0f;
                 }
             }
-            if (this.method1706() && (this instanceof Class512 && ((Class512)this).field3025.field27302)) {
+            if (this.method1706() && (this instanceof PlayerEntity && ((PlayerEntity)this).field3025.field27302)) {
                 final double method1941 = this.getPosY();
                 float n2 = this.method1815() ? 0.9f : this.method2728();
                 float n3 = 0.02f;
@@ -1766,7 +1766,7 @@ public abstract class LivingEntity extends Entity
                     }
                 }
             }
-            else if (this.method1723() && (this instanceof Class512 && ((Class512)this).field3025.field27302)) {
+            else if (this.method1723() && (this instanceof PlayerEntity && ((PlayerEntity)this).field3025.field27302)) {
                 final double method1945 = this.getPosY();
                 this.method1724(0.02f, class5487);
                 this.method1671(Class2160.field12826, this.getMotion());
@@ -1881,7 +1881,7 @@ public abstract class LivingEntity extends Entity
             if (max < 0.0) {
                 if (this.method2689().method21696() != Class7521.field29805) {
                     if (this.method2772()) {
-                        if (this instanceof Class512) {
+                        if (this instanceof PlayerEntity) {
                             max = 0.0;
                         }
                     }
@@ -2752,7 +2752,7 @@ public abstract class LivingEntity extends Entity
         if (class1848.method27695()) {
             class1847.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), this.method2687(class1848), Class286.field1584, 1.0f, 1.0f + (class1847.rand.nextFloat() - class1847.rand.nextFloat()) * 0.4f);
             this.method2792(class1848, class1847, this);
-            if (!(this instanceof Class512) || !((Class512)this).field3025.field27304) {
+            if (!(this instanceof PlayerEntity) || !((PlayerEntity)this).field3025.field27304) {
                 class1848.method27693(1);
             }
         }

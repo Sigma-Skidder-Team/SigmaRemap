@@ -97,7 +97,7 @@ public class Class3835 extends Class3834
     }
     
     @Override
-    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final PlayerEntity class1850) {
         if (!class1847.isRemote) {
             if (class1850.field3025.field27304) {
                 final BlockPos method1149 = class1848.method1149(class1849.get((IProperty<Direction>)Class3835.field17415).getOpposite());

@@ -24,7 +24,7 @@ public class Class4089 extends Item
     
     @Override
     public ItemStack method11707(final ItemStack class8321, final World class8322, final LivingEntity class8323) {
-        final Class512 class8324 = (class8323 instanceof Class512) ? ((Class512)class8323) : null;
+        final PlayerEntity class8324 = (class8323 instanceof PlayerEntity) ? ((PlayerEntity)class8323) : null;
         if (class8324 instanceof Class513) {
             Class7770.field31800.method13819((Class513)class8324, class8321);
         }
@@ -66,7 +66,7 @@ public class Class4089 extends Item
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         class1848.method2762(class1849);
         return Class9355.method34674(class1848.method2715(class1849));
     }

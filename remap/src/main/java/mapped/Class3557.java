@@ -4,21 +4,21 @@
 
 package mapped;
 
-public class Class3557 extends Class3555<Class512>
+public class Class3557 extends Class3555<PlayerEntity>
 {
     private static String[] field16639;
     private final Class850 field16640;
-    private Class512 field16641;
+    private PlayerEntity field16641;
     private int field16642;
     private int field16643;
     private final Class7843 field16644;
     private final Class7843 field16645;
     
     public Class3557(final Class850 field16640) {
-        super(field16640, Class512.class, false);
+        super(field16640, PlayerEntity.class, false);
         this.field16645 = new Class7843().method25340();
         this.field16640 = field16640;
-        this.field16644 = new Class7843().method25337(this.method11096()).method25343(class851 -> Class850.method5085(class850, (Class512)class851));
+        this.field16644 = new Class7843().method25337(this.method11096()).method25343(class851 -> Class850.method5085(class850, (PlayerEntity)class851));
     }
     
     @Override
@@ -57,7 +57,7 @@ public class Class3557 extends Class3555<Class512>
         if (this.field16641 == null) {
             if (this.field16636 != null) {
                 if (!this.field16640.isPassenger()) {
-                    if (!Class850.method5085(this.field16640, (Class512)this.field16636)) {
+                    if (!Class850.method5085(this.field16640, (PlayerEntity)this.field16636)) {
                         if (this.field16636.method1734(this.field16640) > 256.0) {
                             if (this.field16643++ >= 30) {
                                 if (Class850.method5086(this.field16640, this.field16636)) {

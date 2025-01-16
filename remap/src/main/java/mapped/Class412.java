@@ -104,7 +104,7 @@ public class Class412 extends Class409
     public void method1659() {
         final LivingEntity method2019 = this.method2019();
         if (method2019 != null) {
-            if (method2019 instanceof Class512) {
+            if (method2019 instanceof PlayerEntity) {
                 if (!method2019.method1768()) {
                     this.method1652();
                     return;

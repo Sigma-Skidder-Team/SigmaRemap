@@ -16,7 +16,7 @@ public class Class4048 extends Item
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35595, Class286.field1584, 0.5f, 0.4f / (Class4048.field17363.nextFloat() * 0.4f + 0.8f));
         if (!class1847.isRemote) {

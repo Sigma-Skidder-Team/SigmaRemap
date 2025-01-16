@@ -10,11 +10,11 @@ public class Class6602 extends Class6601
 {
     private static String[] field26177;
     private final Class450 field26178;
-    private final Class512 field26179;
+    private final PlayerEntity field26179;
     private int field26180;
     private final Class822 field26181;
     
-    public Class6602(final Class512 field26179, final Class822 field26180, final Class450 field26181, final int n, final int n2, final int n3) {
+    public Class6602(final PlayerEntity field26179, final Class822 field26180, final Class450 field26181, final int n, final int n2, final int n3) {
         super(field26181, n, n2, n3);
         this.field26179 = field26179;
         this.field26181 = field26180;
@@ -47,7 +47,7 @@ public class Class6602 extends Class6601
     }
     
     @Override
-    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
+    public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
         this.method20052(class513);
         final Class9017 method2281 = this.field26178.method2281();
         if (method2281 != null) {
@@ -55,7 +55,7 @@ public class Class6602 extends Class6601
             final ItemStack method2283 = this.field26178.method2157(1);
             if (method2281.method32304(method2282, method2283) || method2281.method32304(method2283, method2282)) {
                 this.field26181.method4828(method2281);
-                class512.method2857(Class8276.field34022);
+                playerEntity.method2857(Class8276.field34022);
                 this.field26178.method2160(0, method2282);
                 this.field26178.method2160(1, method2283);
             }

@@ -64,14 +64,14 @@ public class Class4096 extends Item
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         class1848.method2835(method2715, class1849);
         class1848.method2859(Class8276.field33981.method8449(this));
         return Class9355.method34674(method2715);
     }
     
-    public static boolean method12342(final ItemStack class8321, final Class7492 class8322, final Class512 class8323) {
+    public static boolean method12342(final ItemStack class8321, final Class7492 class8322, final PlayerEntity class8323) {
         final Class51 method27657 = class8321.method27657();
         if (method27657 == null || method27657.method329("resolved")) {
             return false;

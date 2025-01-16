@@ -125,11 +125,11 @@ public class Class8642 implements Class8643
     }
     
     @Override
-    public void method29396(final Class512 class512) {
+    public void method29396(final PlayerEntity playerEntity) {
         try {
-            final Class51 method1756 = class512.method1756(new Class51());
-            final File file = new File(this.field36245, class512.method1866() + ".dat.tmp");
-            final File dest = new File(this.field36245, class512.method1866() + ".dat");
+            final Class51 method1756 = playerEntity.method1756(new Class51());
+            final File file = new File(this.field36245, playerEntity.method1866() + ".dat.tmp");
+            final File dest = new File(this.field36245, playerEntity.method1866() + ".dat");
             Class8097.method26591(method1756, new FileOutputStream(file));
             if (dest.exists()) {
                 dest.delete();
@@ -137,25 +137,25 @@ public class Class8642 implements Class8643
             file.renameTo(dest);
         }
         catch (final Exception ex) {
-            Class8642.field36243.warn("Failed to save player data for {}", (Object)class512.getName().getString());
+            Class8642.field36243.warn("Failed to save player data for {}", (Object) playerEntity.getName().getString());
         }
     }
     
     @Nullable
     @Override
-    public Class51 method29397(final Class512 class512) {
+    public Class51 method29397(final PlayerEntity playerEntity) {
         Class51 method26590 = null;
         try {
-            final File file = new File(this.field36245, class512.method1866() + ".dat");
+            final File file = new File(this.field36245, playerEntity.method1866() + ".dat");
             if (file.exists() && file.isFile()) {
                 method26590 = Class8097.method26590(new FileInputStream(file));
             }
         }
         catch (final Exception ex) {
-            Class8642.field36243.warn("Failed to load player data for {}", (Object)class512.getName().getString());
+            Class8642.field36243.warn("Failed to load player data for {}", (Object) playerEntity.getName().getString());
         }
         if (method26590 != null) {
-            class512.method1757(Class9346.method34651(this.field36249, Class1959.field10676, method26590, method26590.method316("DataVersion", 3) ? method26590.method319("DataVersion") : -1));
+            playerEntity.method1757(Class9346.method34651(this.field36249, Class1959.field10676, method26590, method26590.method316("DataVersion", 3) ? method26590.method319("DataVersion") : -1));
         }
         return method26590;
     }

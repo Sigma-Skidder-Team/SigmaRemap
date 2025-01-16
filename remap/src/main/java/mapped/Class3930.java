@@ -202,7 +202,7 @@ public class Class3930 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7096.get((IProperty<Boolean>)Class3930.field17800)) {
             final ItemStack method2715 = class7099.method2715(class7100);
             return (!method2715.method27620() && !method2715.getItem().method11742(Class7855.field32277)) ? Class2201.field13401 : Class2201.field13402;
@@ -219,7 +219,7 @@ public class Class3930 extends Class3841
         return class7096.get((IProperty<Boolean>)Class3930.field17800) ? super.method11827(class7096, class7097, class7098) : null;
     }
     
-    private void method12047(final World class1847, final BlockPos class1848, final Class512 class1849) {
+    private void method12047(final World class1847, final BlockPos class1848, final PlayerEntity class1849) {
         final TileEntity method6727 = class1847.method6727(class1848);
         if (method6727 instanceof Class435) {
             class1849.method2833((Class434)method6727);

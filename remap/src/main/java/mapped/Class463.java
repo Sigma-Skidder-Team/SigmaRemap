@@ -51,7 +51,7 @@ public class Class463 extends TileEntity implements INameable, Class439
     public void method2229() {
         this.field2733 = this.field2732;
         this.field2735 = this.field2734;
-        final Class512 method7132 = this.field2656.method7132(this.field2657.getX() + 0.5f, this.field2657.getY() + 0.5f, this.field2657.getZ() + 0.5f, 3.0, false);
+        final PlayerEntity method7132 = this.field2656.method7132(this.field2657.getX() + 0.5f, this.field2657.getY() + 0.5f, this.field2657.getZ() + 0.5f, 3.0, false);
         if (method7132 == null) {
             this.field2736 += 0.02f;
             this.field2732 -= 0.1f;

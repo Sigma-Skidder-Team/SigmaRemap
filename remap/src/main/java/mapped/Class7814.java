@@ -58,22 +58,22 @@ public abstract class Class7814 implements Class7813
         return Class7814.field32015.field4683.method6840();
     }
     
-    public Class512 method25249(final String obj) {
-        for (final Class512 class512 : this.method25248()) {
-            if (!class512.getName().equals(obj)) {
+    public PlayerEntity method25249(final String obj) {
+        for (final PlayerEntity playerEntity : this.method25248()) {
+            if (!playerEntity.getName().equals(obj)) {
                 continue;
             }
-            return class512;
+            return playerEntity;
         }
         return null;
     }
     
-    public Class512 method25250(final UUID obj) {
-        for (final Class512 class512 : this.method25248()) {
-            if (!class512.method1865().equals(obj)) {
+    public PlayerEntity method25250(final UUID obj) {
+        for (final PlayerEntity playerEntity : this.method25248()) {
+            if (!playerEntity.method1865().equals(obj)) {
                 continue;
             }
-            return class512;
+            return playerEntity;
         }
         return null;
     }

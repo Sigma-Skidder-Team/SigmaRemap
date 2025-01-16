@@ -26,7 +26,7 @@ public abstract class Class3418
     private int field16157;
     private final Set<Class6601> field16158;
     private final List<Class514> field16159;
-    private final Set<Class512> field16160;
+    private final Set<PlayerEntity> field16160;
     
     public Class3418(final Class8471<?> field16153, final int field16154) {
         this.field16150 = Class2265.method8506();
@@ -40,7 +40,7 @@ public abstract class Class3418
         this.field16154 = field16154;
     }
     
-    public static boolean method10866(final Class7318 class7318, final Class512 class7319, final Block class7320) {
+    public static boolean method10866(final Class7318 class7318, final PlayerEntity class7319, final Block class7320) {
         return class7318.method22436((class7325, class7326) -> class7325.getBlockState(class7326).method21696() == class7321 && class7323.method1733(class7326.getX() + 0.5, class7326.getY() + 0.5, class7326.getZ() + 0.5) <= 64.0, Boolean.valueOf(true));
     }
     
@@ -128,7 +128,7 @@ public abstract class Class3418
         }
     }
     
-    public boolean method10877(final Class512 class512, final int n) {
+    public boolean method10877(final PlayerEntity playerEntity, final int n) {
         return false;
     }
     
@@ -136,12 +136,12 @@ public abstract class Class3418
         return this.field16151.get(n);
     }
     
-    public ItemStack method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
         final Class6601 class513 = this.field16151.get(n);
         return (class513 == null) ? ItemStack.field34174 : class513.method20053();
     }
     
-    public ItemStack method10879(final int n, final int n2, final Class2133 class2133, final Class512 class2134) {
+    public ItemStack method10879(final int n, final int n2, final Class2133 class2133, final PlayerEntity class2134) {
         ItemStack class2135 = ItemStack.field34174;
         final Class464 field3006 = class2134.field3006;
         if (class2133 != Class2133.field12442) {
@@ -477,23 +477,23 @@ public abstract class Class3418
         return true;
     }
     
-    public void method10859(final Class512 class512) {
-        final Class464 field3006 = class512.field3006;
+    public void method10859(final PlayerEntity playerEntity) {
+        final Class464 field3006 = playerEntity.field3006;
         if (!field3006.method2375().method27620()) {
-            class512.method2822(field3006.method2375(), false);
+            playerEntity.method2822(field3006.method2375(), false);
             field3006.method2374(ItemStack.field34174);
         }
     }
     
-    public void method10881(final Class512 class512, final World class513, final Class446 class514) {
-        if (class512.method1768() && (class512 instanceof Class513 && ((Class513)class512).method2936())) {
+    public void method10881(final PlayerEntity playerEntity, final World class513, final Class446 class514) {
+        if (playerEntity.method1768() && (playerEntity instanceof Class513 && ((Class513) playerEntity).method2936())) {
             for (int i = 0; i < class514.method2239(); ++i) {
-                class512.field3006.method2364(class513, class514.method2159(i));
+                playerEntity.field3006.method2364(class513, class514.method2159(i));
             }
         }
         else {
             for (int j = 0; j < class514.method2239(); ++j) {
-                class512.method2822(class514.method2159(j), false);
+                playerEntity.method2822(class514.method2159(j), false);
             }
         }
     }
@@ -520,20 +520,20 @@ public abstract class Class3418
         return (short)(++this.field16155);
     }
     
-    public boolean method10886(final Class512 class512) {
-        return !this.field16160.contains(class512);
+    public boolean method10886(final PlayerEntity playerEntity) {
+        return !this.field16160.contains(playerEntity);
     }
     
-    public void method10887(final Class512 class512, final boolean b) {
+    public void method10887(final PlayerEntity playerEntity, final boolean b) {
         if (!b) {
-            this.field16160.add(class512);
+            this.field16160.add(playerEntity);
         }
         else {
-            this.field16160.remove(class512);
+            this.field16160.remove(playerEntity);
         }
     }
     
-    public abstract boolean method10854(final Class512 p0);
+    public abstract boolean method10854(final PlayerEntity p0);
     
     public boolean method10888(final ItemStack class8321, final int n, final int n2, final boolean b) {
         boolean b2 = false;
@@ -632,8 +632,8 @@ public abstract class Class3418
         return (n & 0x3) | (n2 & 0x3) << 2;
     }
     
-    public static boolean method10892(final int n, final Class512 class512) {
-        return n == 0 || n == 1 || (n == 2 && class512.field3025.field27304);
+    public static boolean method10892(final int n, final PlayerEntity playerEntity) {
+        return n == 0 || n == 1 || (n == 2 && playerEntity.field3025.field27304);
     }
     
     public void method10893() {

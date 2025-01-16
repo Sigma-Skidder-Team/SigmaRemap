@@ -144,7 +144,7 @@ public class Class3371 extends Class3167
     public void method10724(final Class5749 class5749) {
         if (this.method9906()) {
             if (Class3371.field16038 != Class2092.field12098) {
-                if (class5749.method17056() instanceof Class512) {
+                if (class5749.method17056() instanceof PlayerEntity) {
                     class5749.method16961(true);
                 }
             }
@@ -152,7 +152,7 @@ public class Class3371 extends Class3167
     }
     
     private boolean method10725(final Entity class399) {
-        return class399 instanceof LivingEntity && class399 instanceof Class512 && !(class399 instanceof Class756) && !class399.method1823() && !Class9463.method35173().method35191().method31751(class399);
+        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof Class756) && !class399.method1823() && !Class9463.method35173().method35191().method31751(class399);
     }
     
     private void method10726() {

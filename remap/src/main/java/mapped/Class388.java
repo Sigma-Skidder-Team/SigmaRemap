@@ -526,7 +526,7 @@ public class Class388 extends Class387 implements Class389
                     final Iterator iterator;
                     while (iterator.hasNext()) {
                         final Entity class9303 = iterator.next();
-                        if (class9303 instanceof Class512) {
+                        if (class9303 instanceof PlayerEntity) {
                             continue;
                         }
                         else if (this.field2254.method6895(class9303)) {

@@ -144,7 +144,7 @@ public class Class5803 implements Class5802
     }
     
     public GameProfile method17395(final GameProfile gameProfile) {
-        return new GameProfile(Class512.method2894(gameProfile.getName()), gameProfile.getName());
+        return new GameProfile(PlayerEntity.method2894(gameProfile.getName()), gameProfile.getName());
     }
     
     static {

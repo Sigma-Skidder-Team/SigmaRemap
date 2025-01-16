@@ -31,7 +31,7 @@ public class Class761 extends Class760 implements Class762
         this.field4114.method22062(5, new Class3571(this));
         this.field4114.method22062(7, new Class3596(this));
         this.field4114.method22062(7, new Class3525(this));
-        this.field4115.method22062(1, new Class3555<Object>(this, Class512.class, 10, true, false, class511 -> Math.abs(class511.getPosY() - this.getPosY()) <= 4.0));
+        this.field4115.method22062(1, new Class3555<Object>(this, PlayerEntity.class, 10, true, false, class511 -> Math.abs(class511.getPosY() - this.getPosY()) <= 4.0));
     }
     
     public boolean method4222() {
@@ -56,7 +56,7 @@ public class Class761 extends Class760 implements Class762
         if (this.method1849(class7929)) {
             return false;
         }
-        if (class7929.method25713() instanceof Class417 && class7929.method25714() instanceof Class512) {
+        if (class7929.method25713() instanceof Class417 && class7929.method25714() instanceof PlayerEntity) {
             super.attackEntityFrom(class7929, 1000.0f);
             return true;
         }

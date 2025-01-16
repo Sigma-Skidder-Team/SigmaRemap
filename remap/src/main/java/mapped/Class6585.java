@@ -100,7 +100,7 @@ public class Class6585
     }
     
     private void method19949(final World class1847, final BlockPos class1848, final BlockPos class1849) {
-        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class1848, class1849), class1853 -> !(class1853 instanceof Class512));
+        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class1848, class1849), class1853 -> !(class1853 instanceof PlayerEntity));
         this.field26125.clear();
         for (final Entity class1850 : method6739) {
             final Vec3d class1851 = new Vec3d(class1850.getPosX() - class1848.getX(), class1850.getPosY() - class1848.getY(), class1850.getPosZ() - class1848.getZ());

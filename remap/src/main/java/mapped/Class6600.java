@@ -24,11 +24,11 @@ public class Class6600 extends Class6601
     }
     
     @Override
-    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
+    public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
         if (!this.field26170.field16176.method20060(1).method27620()) {
             Class3422.method10914(this.field26170);
         }
-        class513.getItem().method11723(class513, class512.world, class512);
+        class513.getItem().method11723(class513, playerEntity.world, playerEntity);
         this.field26169.method22437((class514, class515) -> {
             class514.method6754();
             final long n;
@@ -38,6 +38,6 @@ public class Class6600 extends Class6601
             }
             return;
         });
-        return super.method20047(class512, class513);
+        return super.method20047(playerEntity, class513);
     }
 }

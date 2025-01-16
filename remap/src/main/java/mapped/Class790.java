@@ -47,7 +47,7 @@ public class Class790 extends Class789
         this.field4114.method22062(1, new Class3608(this));
         this.field4114.method22062(4, new Class3456(this, 1.25));
         this.field4114.method22062(5, new Class3514(this, 1.0));
-        this.field4114.method22062(6, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(7, new Class3503(this));
         this.field4115.method22062(1, new Class3551(this));
         this.field4115.method22062(2, new Class3565(this));

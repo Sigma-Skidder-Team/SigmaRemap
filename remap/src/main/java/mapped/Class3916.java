@@ -95,7 +95,7 @@ public class Class3916 extends Block implements Class3856
     }
     
     @Override
-    public void method11847(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+    public void method11847(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099) {
         this.field17750.method21745(class7097, class7098, class7099);
     }
     
@@ -140,7 +140,7 @@ public class Class3916 extends Block implements Class3856
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         return this.field17750.method21744(class7097, class7099, class7100, class7101);
     }
     

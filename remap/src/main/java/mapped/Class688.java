@@ -116,7 +116,7 @@ public class Class688 extends Class565
                 final Class9081 class6519 = (Class9081)subList.get(j);
                 final GameProfile method6629 = class6519.method32719();
                 if (b) {
-                    final Class512 method6630 = this.field3785.field4683.method7143(method6629.getId());
+                    final PlayerEntity method6630 = this.field3785.field4683.method7143(method6629.getId());
                     boolean b2 = false;
                     Label_1032: {
                         if (method6630 != null) {

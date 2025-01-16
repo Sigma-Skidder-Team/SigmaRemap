@@ -24,7 +24,7 @@ public class Class4092 extends Class4090
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35346, Class286.field1584, 0.5f, 0.4f / (Class4092.field17363.nextFloat() * 0.4f + 0.8f));
         return super.method11695(class1847, class1848, class1849);
     }

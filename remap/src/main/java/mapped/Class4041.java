@@ -17,7 +17,7 @@ public class Class4041 extends Class4036
     @Nullable
     @Override
     public Class7096 method12233(final Class7074 class7074) {
-        final Class512 method21652 = class7074.method21652();
+        final PlayerEntity method21652 = class7074.method21652();
         return (method21652 != null && !method21652.method2908()) ? null : super.method12233(class7074);
     }
 }

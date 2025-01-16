@@ -87,7 +87,7 @@ public class Item implements Class3832
         return false;
     }
     
-    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099) {
         return true;
     }
     
@@ -108,7 +108,7 @@ public class Item implements Class3832
         return 1.0f;
     }
     
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         if (!this.method11743()) {
             return Class9355.method34676(class1848.method2715(class1849));
         }
@@ -148,7 +148,7 @@ public class Item implements Class3832
         return false;
     }
     
-    public boolean method11714(final ItemStack class8321, final Class512 class8322, final LivingEntity class8323, final Class316 class8324) {
+    public boolean method11714(final ItemStack class8321, final PlayerEntity class8322, final LivingEntity class8323, final Class316 class8324) {
         return false;
     }
     
@@ -192,7 +192,7 @@ public class Item implements Class3832
     public void method11722(final ItemStack class8321, final World class8322, final Entity class8323, final int n, final boolean b) {
     }
     
-    public void method11723(final ItemStack class8321, final World class8322, final Class512 class8323) {
+    public void method11723(final ItemStack class8321, final World class8322, final PlayerEntity class8323) {
     }
     
     public boolean method11724() {
@@ -246,7 +246,7 @@ public class Item implements Class3832
         return this.method11708() == 1 && this.method11710();
     }
     
-    public static Class7006 method11733(final World class1847, final Class512 class1848, final Class2191 class1849) {
+    public static Class7006 method11733(final World class1847, final PlayerEntity class1848, final Class2191 class1849) {
         final float field2400 = class1848.rotationPitch;
         final float field2401 = class1848.rotationYaw;
         final Vec3d method1747 = class1848.method1747(1.0f);
@@ -318,7 +318,7 @@ public class Item implements Class3832
         field17356 = ((class8321, class8322, class8323) -> class8321.method27631() ? 1.0f : 0.0f);
         field17357 = ((class8321, class8322, class8323) -> MathHelper.clamp(class8321.method27632() / (float)class8321.method27634(), 0.0f, 1.0f));
         field17358 = ((class8321, class8322, class8323) -> (class8323 != null && class8323.method2755() != Class2226.field13698) ? 1.0f : 0.0f);
-        field17359 = ((class8321, class8322, class8323) -> (class8323 instanceof Class512) ? ((Class512)class8323).method2906().method25770(class8321.getItem(), 0.0f) : 0.0f);
+        field17359 = ((class8321, class8322, class8323) -> (class8323 instanceof PlayerEntity) ? ((PlayerEntity)class8323).method2906().method25770(class8321.getItem(), 0.0f) : 0.0f);
         field17360 = ((class8321, class8322, class8323) -> class8321.method27656() ? ((float)class8321.method27657().method319("CustomModelData")) : 0.0f);
         field17361 = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
         field17362 = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");

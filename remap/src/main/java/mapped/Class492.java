@@ -172,16 +172,16 @@ public class Class492 extends TileEntity implements Class439
         final int method1074 = this.field2657.getX();
         final int method1075 = this.field2657.getY();
         final int method1076 = this.field2657.getZ();
-        final List<Entity> method1077 = this.field2656.method7128((Class<? extends Entity>)Class512.class, new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
+        final List<Entity> method1077 = this.field2656.method7128((Class<? extends Entity>) PlayerEntity.class, new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
         if (!method1077.isEmpty()) {
-            for (final Class512 class512 : method1077) {
-                if (!this.field2657.withinDistance(new BlockPos(class512), n)) {
+            for (final PlayerEntity playerEntity : method1077) {
+                if (!this.field2657.withinDistance(new BlockPos(playerEntity), n)) {
                     continue;
                 }
-                if (!class512.method1709()) {
+                if (!playerEntity.method1709()) {
                     continue;
                 }
-                class512.method2655(new Class1948(Class9439.field40502, 260, 0, true, true));
+                playerEntity.method2655(new Class1948(Class9439.field40502, 260, 0, true, true));
             }
         }
     }

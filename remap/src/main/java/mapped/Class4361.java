@@ -21,14 +21,14 @@ public class Class4361 implements IPacket<IClientPlayNetHandler>
     public Class4361() {
     }
     
-    public Class4361(final Class512 class512) {
-        this.field19541 = class512.getEntityId();
-        this.field19542 = class512.method2844().getId();
-        this.field19543 = class512.getPosX();
-        this.field19544 = class512.getPosY();
-        this.field19545 = class512.getPosZ();
-        this.field19546 = (byte)(class512.rotationYaw * 256.0f / 360.0f);
-        this.field19547 = (byte)(class512.rotationPitch * 256.0f / 360.0f);
+    public Class4361(final PlayerEntity playerEntity) {
+        this.field19541 = playerEntity.getEntityId();
+        this.field19542 = playerEntity.method2844().getId();
+        this.field19543 = playerEntity.getPosX();
+        this.field19544 = playerEntity.getPosY();
+        this.field19545 = playerEntity.getPosZ();
+        this.field19546 = (byte)(playerEntity.rotationYaw * 256.0f / 360.0f);
+        this.field19547 = (byte)(playerEntity.rotationPitch * 256.0f / 360.0f);
     }
     
     @Override

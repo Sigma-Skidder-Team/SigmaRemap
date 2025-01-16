@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class Class3337 extends Class3167
 {
-    private static Map<Class512, float[][]> field15939;
+    private static Map<PlayerEntity, float[][]> field15939;
     
     public Class3337() {
         super(Class8013.field32984, "Skeleton", "Skeleton ESP.");
@@ -28,7 +28,7 @@ public class Class3337 extends Class3167
         }
     }
     
-    private void method10561(final Class5739 class5739, final Class512 class5740) {
+    private void method10561(final Class5739 class5739, final PlayerEntity class5740) {
         final Color color = new Color(Class9463.method35173().method35190().method29879(class5740.getName().getFormattedText()) ? -8401409 : (class5740.getName().getFormattedText().equalsIgnoreCase(Class3337.field15514.field4684.getName().getFormattedText()) ? -6684775 : new Color(16775672).getRGB()));
         if (!class5740.method1823()) {
             final float[][] array = Class3337.field15939.get(class5740);
@@ -162,17 +162,17 @@ public class Class3337 extends Class3167
         }
     }
     
-    private Class9407 method10562(final Class5739 class5739, final Class512 class5740) {
+    private Class9407 method10562(final Class5739 class5739, final PlayerEntity class5740) {
         final float method5314 = Class3337.field15514.method5314();
         return new Class9407(class5740.lastTickPosX + (class5740.posX - class5740.lastTickPosX) * method5314, class5740.lastTickPosY + (class5740.posY - class5740.lastTickPosY) * method5314, class5740.lastTickPosZ + (class5740.posZ - class5740.lastTickPosZ) * method5314);
     }
     
-    public static void method10563(final Class512 class512, final Class5860<Class512> class513) {
-        Class3337.field15939.put(class512, new float[][] { { class513.field23993.field25183, class513.field23993.field25184, class513.field23993.field25185 }, { class513.field23996.field25183, class513.field23996.field25184, class513.field23996.field25185 }, { class513.field23997.field25183, class513.field23997.field25184, class513.field23997.field25185 }, { class513.field23998.field25183, class513.field23998.field25184, class513.field23998.field25185 }, { class513.field23999.field25183, class513.field23999.field25184, class513.field23999.field25185 } });
+    public static void method10563(final PlayerEntity playerEntity, final Class5860<PlayerEntity> class513) {
+        Class3337.field15939.put(playerEntity, new float[][] { { class513.field23993.field25183, class513.field23993.field25184, class513.field23993.field25185 }, { class513.field23996.field25183, class513.field23996.field25184, class513.field23996.field25185 }, { class513.field23997.field25183, class513.field23997.field25184, class513.field23997.field25185 }, { class513.field23998.field25183, class513.field23998.field25184, class513.field23998.field25185 }, { class513.field23999.field25183, class513.field23999.field25184, class513.field23999.field25185 } });
     }
     
-    private boolean method10564(final Class512 class512) {
-        return !Class3337.field15514.field4683.method6840().contains(class512);
+    private boolean method10564(final PlayerEntity playerEntity) {
+        return !Class3337.field15514.field4683.method6840().contains(playerEntity);
     }
     
     private void method10565(final boolean b) {
@@ -202,6 +202,6 @@ public class Class3337 extends Class3167
     }
     
     static {
-        Class3337.field15939 = new HashMap<Class512, float[][]>();
+        Class3337.field15939 = new HashMap<PlayerEntity, float[][]>();
     }
 }

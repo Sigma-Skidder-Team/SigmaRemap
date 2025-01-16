@@ -36,7 +36,7 @@ public class Class3635 extends Class3634
         if (!method4152.method1768()) {
             return false;
         }
-        if (method4152 instanceof Class512 && (((Class512)method4152).isSpectator() || ((Class512)method4152).method2889())) {
+        if (method4152 instanceof PlayerEntity && (((PlayerEntity)method4152).isSpectator() || ((PlayerEntity)method4152).method2889())) {
             return false;
         }
         if (this.method11013()) {

@@ -27,7 +27,7 @@ public class Class3420 extends Class3418
     }
     
     @Override
-    public boolean method10877(final Class512 class512, final int n) {
+    public boolean method10877(final PlayerEntity playerEntity, final int n) {
         if (n >= 100) {
             this.method10884(0, n - 100);
             return true;
@@ -42,13 +42,13 @@ public class Class3420 extends Class3418
                 return true;
             }
             case 3: {
-                if (!class512.method2880()) {
+                if (!playerEntity.method2880()) {
                     return false;
                 }
                 final ItemStack method2159 = this.field16163.method2159(0);
                 this.field16163.method2161();
-                if (!class512.field3006.method2362(method2159)) {
-                    class512.method2822(method2159, false);
+                if (!playerEntity.field3006.method2362(method2159)) {
+                    playerEntity.method2822(method2159, false);
                 }
                 return true;
             }
@@ -65,8 +65,8 @@ public class Class3420 extends Class3418
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
-        return this.field16163.method2162(class512);
+    public boolean method10854(final PlayerEntity playerEntity) {
+        return this.field16163.method2162(playerEntity);
     }
     
     public ItemStack method10900() {

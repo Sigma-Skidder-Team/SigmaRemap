@@ -8,14 +8,14 @@ import net.minecraft.entity.Entity;
 
 import java.util.Iterator;
 
-public class Class3565 extends Class3555<Class512>
+public class Class3565 extends Class3555<PlayerEntity>
 {
     private static String[] field16633;
     public final /* synthetic */ Class790 field16656;
     
     public Class3565(final Class790 field16656) {
         this.field16656 = field16656;
-        super(field16656, Class512.class, 20, true, true, null);
+        super(field16656, PlayerEntity.class, 20, true, true, null);
     }
     
     @Override

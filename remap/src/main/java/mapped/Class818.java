@@ -37,7 +37,7 @@ public class Class818 extends Class789
         this.field4114.method22062(3, new Class3472(this, 1.0, false, Class818.field4380));
         this.field4114.method22062(4, new Class3456(this, 1.1));
         this.field4114.method22062(5, new Class3517(this, 1.0));
-        this.field4114.method22062(6, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(7, new Class3503(this));
     }
     
@@ -123,8 +123,8 @@ public class Class818 extends Class789
     }
     
     @Override
-    public int method2631(final Class512 class512) {
-        return this.method4817() ? 10 : super.method2631(class512);
+    public int method2631(final PlayerEntity playerEntity) {
+        return this.method4817() ? 10 : super.method2631(playerEntity);
     }
     
     @Override

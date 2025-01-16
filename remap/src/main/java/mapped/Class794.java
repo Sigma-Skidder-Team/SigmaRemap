@@ -72,7 +72,7 @@ public abstract class Class794 extends Class789
     }
     
     @Override
-    public boolean method4204(final Class512 class512) {
+    public boolean method4204(final PlayerEntity playerEntity) {
         return !this.method4205();
     }
     
@@ -142,11 +142,11 @@ public abstract class Class794 extends Class789
         this.dataManager.set(Class794.field4244, Optional.ofNullable(value));
     }
     
-    public void method4487(final Class512 class512) {
+    public void method4487(final PlayerEntity playerEntity) {
         this.method4481(true);
-        this.method4486(class512.method1865());
-        if (class512 instanceof Class513) {
-            Class7770.field31798.method13773((Class513)class512, this);
+        this.method4486(playerEntity.method1865());
+        if (playerEntity instanceof Class513) {
+            Class7770.field31798.method13773((Class513) playerEntity, this);
         }
     }
     

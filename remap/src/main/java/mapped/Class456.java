@@ -45,14 +45,14 @@ public abstract class Class456 extends Class460
         return false;
     }
     
-    public void method2326(final Class512 class512) {
+    public void method2326(final PlayerEntity playerEntity) {
         if (this.field2710 != null) {
             if (this.field2656.getServer() != null) {
                 final Class9317 method6402 = this.field2656.getServer().method1581().method6402(this.field2710);
                 this.field2710 = null;
                 final Class9098 method6403 = new Class9098((Class1849)this.field2656).method32877(Class6683.field26367, new BlockPos(this.field2657)).method32874(this.field2711);
-                if (class512 != null) {
-                    method6403.method32876(class512.method2907()).method32877(Class6683.field26362, class512);
+                if (playerEntity != null) {
+                    method6403.method32876(playerEntity.method2907()).method32877(Class6683.field26362, playerEntity);
                 }
                 method6402.method34488(this, method6403.method32883(Class7104.field27711));
             }
@@ -103,8 +103,8 @@ public abstract class Class456 extends Class460
     }
     
     @Override
-    public boolean method2162(final Class512 class512) {
-        return this.field2656.method6727(this.field2657) == this && class512.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
+    public boolean method2162(final PlayerEntity playerEntity) {
+        return this.field2656.method6727(this.field2657) == this && playerEntity.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
     }
     
     @Override
@@ -117,13 +117,13 @@ public abstract class Class456 extends Class460
     public abstract void method2247(final Class2265<ItemStack> p0);
     
     @Override
-    public boolean method2328(final Class512 class512) {
-        return super.method2328(class512) && (this.field2710 == null || !class512.isSpectator());
+    public boolean method2328(final PlayerEntity playerEntity) {
+        return super.method2328(playerEntity) && (this.field2710 == null || !playerEntity.isSpectator());
     }
     
     @Nullable
     @Override
-    public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
+    public Class3418 method2166(final int n, final Class464 class464, final PlayerEntity class465) {
         if (!this.method2328(class465)) {
             return null;
         }

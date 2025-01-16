@@ -33,7 +33,7 @@ public abstract class Class5784 implements Class5783
     }
     
     @Override
-    public void method17248(final Class858 class858, final BlockPos class859, final DamageSource class860, final Class512 class861) {
+    public void method17248(final Class858 class858, final BlockPos class859, final DamageSource class860, final PlayerEntity class861) {
     }
     
     @Override

@@ -25,7 +25,7 @@ public class Class4077 extends Class4071
     }
     
     @Override
-    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+    public boolean method11703(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099) {
         return !class7099.method2889();
     }
     

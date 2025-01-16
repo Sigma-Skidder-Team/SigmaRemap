@@ -37,7 +37,7 @@ public class Class8589
         if (size < 1) {
             return 0;
         }
-        final Class512 class1850 = class1849.method6840().get(field10062.nextInt(size));
+        final PlayerEntity class1850 = class1849.method6840().get(field10062.nextInt(size));
         if (class1850.isSpectator()) {
             return 0;
         }

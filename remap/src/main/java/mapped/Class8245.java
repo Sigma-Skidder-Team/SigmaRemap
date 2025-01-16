@@ -45,8 +45,8 @@ public class Class8245
         }
     }
     
-    public void method27308(final Class512 class512) {
-        this.field33871.method588(class512.field3025);
+    public void method27308(final PlayerEntity playerEntity) {
+        this.field33871.method588(playerEntity.field3025);
     }
     
     public void method27309(final Class101 field33871) {
@@ -264,19 +264,19 @@ public class Class8245
         return Class2201.field13402;
     }
     
-    public Class2201 method27320(final Class512 class512, final World class513, final Class316 class514) {
+    public Class2201 method27320(final PlayerEntity playerEntity, final World class513, final Class316 class514) {
         if (this.field33871 == Class101.field301) {
             return Class2201.field13402;
         }
         this.method27318();
         this.field33864.method17292(new Class4307(class514));
-        final ItemStack method2715 = class512.method2715(class514);
-        if (!class512.method2906().method25769(method2715.getItem())) {
+        final ItemStack method2715 = playerEntity.method2715(class514);
+        if (!playerEntity.method2906().method25769(method2715.getItem())) {
             final int method2716 = method2715.method27690();
-            final Class9355<ItemStack> method2717 = method2715.method27625(class513, class512, class514);
+            final Class9355<ItemStack> method2717 = method2715.method27625(class513, playerEntity, class514);
             final ItemStack class515 = method2717.method34673();
             if (class515 != method2715 || class515.method27690() != method2716) {
-                class512.method2716(class514, class515);
+                playerEntity.method2716(class514, class515);
             }
             return method2717.method34672();
         }
@@ -287,29 +287,29 @@ public class Class8245
         return new Class756(this.field33863, class1848, this.field33864, class1849, class1850);
     }
     
-    public void method27321(final Class512 class512, final Entity class513) {
+    public void method27321(final PlayerEntity playerEntity, final Entity class513) {
         this.method27318();
         this.field33864.method17292(new Class4381(class513));
         if (this.field33871 != Class101.field301) {
-            class512.method2837(class513);
-            class512.method2905();
+            playerEntity.method2837(class513);
+            playerEntity.method2905();
         }
     }
     
-    public Class2201 method27322(final Class512 class512, final Entity class513, final Class316 class514) {
+    public Class2201 method27322(final PlayerEntity playerEntity, final Entity class513, final Class316 class514) {
         this.method27318();
         this.field33864.method17292(new Class4381(class513, class514));
-        return (this.field33871 != Class101.field301) ? class512.method2836(class513, class514) : Class2201.field13402;
+        return (this.field33871 != Class101.field301) ? playerEntity.method2836(class513, class514) : Class2201.field13402;
     }
     
-    public Class2201 method27323(final Class512 class512, final Entity class513, final Class7007 class514, final Class316 class515) {
+    public Class2201 method27323(final PlayerEntity playerEntity, final Entity class513, final Class7007 class514, final Class316 class515) {
         this.method27318();
         final Vec3d method16742 = class514.method21451().subtract(class513.getPosX(), class513.getPosY(), class513.getPosZ());
         this.field33864.method17292(new Class4381(class513, class515, method16742));
-        return (this.field33871 != Class101.field301) ? class513.method1898(class512, method16742, class515) : Class2201.field13402;
+        return (this.field33871 != Class101.field301) ? class513.method1898(playerEntity, method16742, class515) : Class2201.field13402;
     }
     
-    public ItemStack method27324(final int n, final int n2, final int n3, final Class2133 class2133, final Class512 class2134) {
+    public ItemStack method27324(final int n, final int n2, final int n3, final Class2133 class2133, final PlayerEntity class2134) {
         return Class8639.method29366(n, n2, n3, class2133, class2134);
     }
     
@@ -335,10 +335,10 @@ public class Class8245
         }
     }
     
-    public void method27329(final Class512 class512) {
+    public void method27329(final PlayerEntity playerEntity) {
         this.method27318();
         this.field33864.method17292(new Class4399(Class2003.field11245, BlockPos.ZERO, Direction.DOWN));
-        class512.method2769();
+        playerEntity.method2769();
     }
     
     public boolean method27330() {

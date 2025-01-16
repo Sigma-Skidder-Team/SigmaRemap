@@ -42,7 +42,7 @@ public class Class824 extends Class819 implements Class831, Class825
     private static final Set<Item> field4401;
     private int field4402;
     private boolean field4403;
-    private Class512 field4404;
+    private PlayerEntity field4404;
     private byte field4405;
     private final Class9470 field4406;
     private long field4407;
@@ -182,8 +182,8 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() != Items.field31552) {
             if (method2715.getItem() != Items.field31500) {
                 if (this.method1768()) {
@@ -191,7 +191,7 @@ public class Class824 extends Class819 implements Class831, Class825
                         if (!this.method2783()) {
                             if (this.method2625()) {
                                 this.method4858();
-                                return super.method4195(class512, class513);
+                                return super.method4195(playerEntity, class513);
                             }
                             final boolean empty = this.method4825().isEmpty();
                             if (class513 == Class316.field1877) {
@@ -200,24 +200,24 @@ public class Class824 extends Class819 implements Class831, Class825
                                         this.method4858();
                                     }
                                 }
-                                class512.method2857(Class8276.field34021);
+                                playerEntity.method2857(Class8276.field34021);
                             }
                             if (!empty) {
                                 if (!this.world.isRemote) {
                                     if (!this.field4390.isEmpty()) {
-                                        this.method4859(class512);
+                                        this.method4859(playerEntity);
                                     }
                                 }
                                 return true;
                             }
-                            return super.method4195(class512, class513);
+                            return super.method4195(playerEntity, class513);
                         }
                     }
                 }
             }
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
-        method2715.method27640(class512, this, class513);
+        method2715.method27640(playerEntity, this, class513);
         return true;
     }
     
@@ -228,16 +228,16 @@ public class Class824 extends Class819 implements Class831, Class825
         }
     }
     
-    private void method4859(final Class512 class512) {
-        this.method4867(class512);
-        this.method4822(class512);
-        this.method4854(class512, this.getDisplayName(), this.method4870().method28782());
+    private void method4859(final PlayerEntity playerEntity) {
+        this.method4867(playerEntity);
+        this.method4822(playerEntity);
+        this.method4854(playerEntity, this.getDisplayName(), this.method4870().method28782());
     }
     
     @Override
-    public void method4822(final Class512 class512) {
-        final boolean b = this.method4823() != null && class512 == null;
-        super.method4822(class512);
+    public void method4822(final PlayerEntity playerEntity) {
+        final boolean b = this.method4823() != null && playerEntity == null;
+        super.method4822(playerEntity);
         if (b) {
             this.method4835();
         }
@@ -325,15 +325,15 @@ public class Class824 extends Class819 implements Class831, Class825
         }
     }
     
-    private void method4867(final Class512 class512) {
-        final int method4876 = this.method4876(class512);
+    private void method4867(final PlayerEntity playerEntity) {
+        final int method4876 = this.method4876(playerEntity);
         if (method4876 != 0) {
             for (final Class9017 class513 : this.method4825()) {
                 class513.method32291(-MathHelper.method35642(method4876 * class513.method32295()));
             }
         }
-        if (class512.method2653(Class9439.field40505)) {
-            final int method4877 = class512.method2654(Class9439.field40505).method7908();
+        if (playerEntity.method2653(Class9439.field40505)) {
+            final int method4877 = playerEntity.method2654(Class9439.field40505).method7908();
             for (final Class9017 class514 : this.method4825()) {
                 class514.method32291(-Math.max((int)Math.floor((0.3 + 0.0625 * method4877) * class514.method32280().method27690()), 1));
             }
@@ -447,7 +447,7 @@ public class Class824 extends Class819 implements Class831, Class825
             if (this.world instanceof Class1849) {
                 ((Class1849)this.world).method6929(Class8156.field33592, class511, this);
                 if (this.method1768()) {
-                    if (class511 instanceof Class512) {
+                    if (class511 instanceof PlayerEntity) {
                         this.world.method6761(this, (byte)13);
                     }
                 }
@@ -532,8 +532,8 @@ public class Class824 extends Class819 implements Class831, Class825
         }
     }
     
-    public int method4876(final Class512 class512) {
-        return this.field4406.method35241(class512.method1865(), p0 -> true);
+    public int method4876(final PlayerEntity playerEntity) {
+        return this.field4406.method35241(playerEntity.method1865(), p0 -> true);
     }
     
     private void method4877(final int n) {

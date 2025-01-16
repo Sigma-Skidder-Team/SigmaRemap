@@ -36,7 +36,7 @@ public abstract class Class832 extends Class787
     }
     
     @Override
-    public int method2631(final Class512 class512) {
+    public int method2631(final PlayerEntity playerEntity) {
         return 1 + this.world.rand.nextInt(3);
     }
     
@@ -66,7 +66,7 @@ public abstract class Class832 extends Class787
     }
     
     @Override
-    public boolean method4204(final Class512 class512) {
+    public boolean method4204(final PlayerEntity playerEntity) {
         return false;
     }
 }

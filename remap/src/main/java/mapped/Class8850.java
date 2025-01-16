@@ -249,7 +249,7 @@ public class Class8850
         if (class399 == Config.method28894().method5303() && !Config.method29004()) {
             return 0;
         }
-        if (class399 instanceof Class512 && ((Class512)class399).isSpectator()) {
+        if (class399 instanceof PlayerEntity && ((PlayerEntity)class399).isSpectator()) {
             return 0;
         }
         if (class399.method1804()) {

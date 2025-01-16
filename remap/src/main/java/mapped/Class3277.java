@@ -14,12 +14,12 @@ import java.util.HashMap;
 
 public class Class3277 extends Class3167
 {
-    private HashMap<Class512, Vec2f> field15776;
+    private HashMap<PlayerEntity, Vec2f> field15776;
     public static Class3277 field15777;
     
     public Class3277() {
         super(Class8013.field32984, "NameTags", "Render better name tags");
-        this.field15776 = new HashMap<Class512, Vec2f>();
+        this.field15776 = new HashMap<PlayerEntity, Vec2f>();
         Class3277.field15777 = this;
     }
     
@@ -28,8 +28,8 @@ public class Class3277 extends Class3167
         if (this.method9906()) {
             final int n = 20;
             final int n2 = 32;
-            for (final Map.Entry<Class512, V> entry : this.field15776.entrySet()) {
-                final Class512 class5735 = entry.getKey();
+            for (final Map.Entry<PlayerEntity, V> entry : this.field15776.entrySet()) {
+                final PlayerEntity class5735 = entry.getKey();
                 if (!class5735.method1823()) {
                     final Vec2f class5736 = (Vec2f)entry.getValue();
                     final String method8459 = class5735.getName().getUnformattedComponentText();
@@ -92,13 +92,13 @@ public class Class3277 extends Class3167
         if (this.method9906()) {
             this.field15776.clear();
             for (final Entity class5740 : Class3277.field15514.field4683.method6806()) {
-                if (!(class5740 instanceof Class512)) {
+                if (!(class5740 instanceof PlayerEntity)) {
                     continue;
                 }
                 if (class5740 instanceof Class756) {
                     continue;
                 }
-                final Class512 key = (Class512)class5740;
+                final PlayerEntity key = (PlayerEntity)class5740;
                 final Class9172 method29094 = Class8591.method29094(key);
                 final double[] method29095 = Class8154.method26931(method29094.field38854, method29094.field38855 + key.method1931() + 0.30000001192092896, method29094.field38856);
                 if (method29095 == null) {
@@ -118,7 +118,7 @@ public class Class3277 extends Class3167
     @Class6753
     public void method10326(final Class5749 class5749) {
         if (this.method9906()) {
-            if (class5749.method17056() instanceof Class512) {
+            if (class5749.method17056() instanceof PlayerEntity) {
                 class5749.method16961(true);
             }
         }

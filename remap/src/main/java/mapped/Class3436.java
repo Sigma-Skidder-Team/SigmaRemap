@@ -39,19 +39,19 @@ public class Class3436 extends Class3418
     }
     
     @Override
-    public void method10859(final Class512 class512) {
-        super.method10859(class512);
-        if (!class512.world.isRemote) {
+    public void method10859(final PlayerEntity playerEntity) {
+        super.method10859(playerEntity);
+        if (!playerEntity.world.isRemote) {
             final ItemStack method20060 = this.field16230.method20060(this.field16230.method20057());
             if (!method20060.method27620()) {
-                class512.method2822(method20060, false);
+                playerEntity.method2822(method20060, false);
             }
         }
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
-        return Class3418.method10866(this.field16231, class512, Class7521.field29417);
+    public boolean method10854(final PlayerEntity playerEntity) {
+        return Class3418.method10866(this.field16231, playerEntity, Class7521.field29417);
     }
     
     @Override
@@ -61,7 +61,7 @@ public class Class3436 extends Class3418
     }
     
     @Override
-    public ItemStack method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
         ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
@@ -110,7 +110,7 @@ public class Class3436 extends Class3418
                 if (method20053.method27690() == class513.method27690()) {
                     return ItemStack.field34174;
                 }
-                class514.method20047(class512, method20053);
+                class514.method20047(playerEntity, method20053);
             }
         }
         return class513;

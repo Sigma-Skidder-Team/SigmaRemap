@@ -16,7 +16,7 @@ public class Class3598 extends Class3446
     private static final Class7843 field16756;
     private final Class793 field16757;
     private final double field16758;
-    private Class512 field16759;
+    private PlayerEntity field16759;
     private int field16760;
     private final Set<Item> field16761;
     

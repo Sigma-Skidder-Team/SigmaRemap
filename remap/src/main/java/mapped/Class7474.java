@@ -17,11 +17,11 @@ public class Class7474
         (this.field28871 = (Object2IntMap<Class9455<?>>)Object2IntMaps.synchronize((Object2IntMap)new Object2IntOpenHashMap())).defaultReturnValue(0);
     }
     
-    public void method23089(final Class512 class512, final Class9455<?> class513, final int n) {
-        this.method23075(class512, class513, this.method23091(class513) + n);
+    public void method23089(final PlayerEntity playerEntity, final Class9455<?> class513, final int n) {
+        this.method23075(playerEntity, class513, this.method23091(class513) + n);
     }
     
-    public void method23075(final Class512 class512, final Class9455<?> class513, final int n) {
+    public void method23075(final PlayerEntity playerEntity, final Class9455<?> class513, final int n) {
         this.field28871.put((Object)class513, n);
     }
     

@@ -18,8 +18,8 @@ public class Class518 extends Class517<Class3427> implements Class519
     private boolean field3109;
     private boolean field3110;
     
-    public Class518(final Class512 class512) {
-        super(class512.field3008, class512.field3006, new Class2259("container.crafting", new Object[0]));
+    public Class518(final PlayerEntity playerEntity) {
+        super(playerEntity.field3008, playerEntity.field3006, new Class2259("container.crafting", new Object[0]));
         this.field3107 = new Class581();
         this.field3155 = true;
     }

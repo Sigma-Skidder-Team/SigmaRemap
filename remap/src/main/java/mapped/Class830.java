@@ -39,7 +39,7 @@ public class Class830 extends Class827 implements Class768
         this.field4114.method22062(6, new Class3586(this, 1.0, this.world.method6743()));
         this.field4114.method22062(7, new Class3514(this, 1.0));
         this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[] { Class830.class }).method11100(Class828.class));
-        this.field4115.method22062(2, new Class3555<Object>(this, Class512.class, 10, true, false, this::method4944));
+        this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, 10, true, false, this::method4944));
         this.field4115.method22062(3, new Class3555<Object>(this, Class819.class, false));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, true));
         this.field4115.method22062(5, new Class3555<Object>(this, Class793.class, 10, true, false, Class793.field4242));

@@ -78,12 +78,12 @@ public class Class863 extends Class860
     }
     
     @Override
-    public boolean method1770(final Class512 class512, final Class316 class513) {
+    public boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
         if (!this.world.isRemote) {
             int n = 0;
             final List<Class759> method7128 = this.world.method7128((Class<? extends Class759>)Class759.class, new AxisAlignedBB(this.getPosX() - 7.0, this.getPosY() - 7.0, this.getPosZ() - 7.0, this.getPosX() + 7.0, this.getPosY() + 7.0, this.getPosZ() + 7.0));
             for (final Class759 class514 : method7128) {
-                if (class514.method4206() != class512) {
+                if (class514.method4206() != playerEntity) {
                     continue;
                 }
                 class514.method4207(this, true);
@@ -91,7 +91,7 @@ public class Class863 extends Class860
             }
             if (n == 0) {
                 this.method1652();
-                if (class512.field3025.field27304) {
+                if (playerEntity.field3025.field27304) {
                     for (final Class759 class515 : method7128) {
                         if (!class515.method4205()) {
                             continue;

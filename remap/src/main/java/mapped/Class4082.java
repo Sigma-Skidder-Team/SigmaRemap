@@ -18,7 +18,7 @@ public class Class4082 extends Class4081
     }
     
     @Override
-    public boolean method12287(final Class512 class512, final Direction class513, final ItemStack class514, final BlockPos class515) {
-        return !World.isOutsideBuildHeight(class515) && class512.method2881(class515, class513, class514);
+    public boolean method12287(final PlayerEntity playerEntity, final Direction class513, final ItemStack class514, final BlockPos class515) {
+        return !World.isOutsideBuildHeight(class515) && playerEntity.method2881(class515, class513, class514);
     }
 }

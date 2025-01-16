@@ -31,7 +31,7 @@ public class Class8011
             return 0;
         }
         int n = 0;
-        for (final Class512 class1850 : class1849.method6840()) {
+        for (final PlayerEntity class1850 : class1849.method6840()) {
             if (class1850.isSpectator()) {
                 continue;
             }

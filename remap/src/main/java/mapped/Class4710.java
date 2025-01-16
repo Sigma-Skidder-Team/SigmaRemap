@@ -270,10 +270,10 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
         if (t.field2941 <= 0) {
             if (!t.method2744()) {
                 if (method1654 != Pose.field1665) {
-                    if (t.hasCustomName() || t instanceof Class512) {
+                    if (t.hasCustomName() || t instanceof PlayerEntity) {
                         final String method1655 = TextFormatting.getTextWithoutFormattingCodes(t.getName().getString());
                         if ("Dinnerbone".equals(method1655) || "Grumm".equals(method1655)) {
-                            if (!(t instanceof Class512) || ((Class512)t).method2895(Class189.field610)) {
+                            if (!(t instanceof PlayerEntity) || ((PlayerEntity)t).method2895(Class189.field610)) {
                                 class7351.method22564(0.0, t.method1931() + 0.1f, 0.0);
                                 class7351.method22566(Vector3f.ZP.rotationDegrees(180.0f));
                             }

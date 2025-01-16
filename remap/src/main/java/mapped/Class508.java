@@ -20,7 +20,7 @@ public class Class508 extends Entity
     public int field2899;
     private int field2900;
     private int field2901;
-    private Class512 field2902;
+    private PlayerEntity field2902;
     private int field2903;
     
     public Class508(final World class1847, final double n, final double n2, final double n3, final int field2901) {
@@ -146,13 +146,13 @@ public class Class508 extends Entity
     }
     
     @Override
-    public void method1736(final Class512 class512) {
+    public void method1736(final PlayerEntity playerEntity) {
         if (!this.world.isRemote) {
             if (this.field2899 == 0) {
-                if (class512.field3014 == 0) {
-                    class512.field3014 = 2;
-                    class512.method2746(this, 1);
-                    final Map.Entry<Class2215, ItemStack> method30222 = Class8742.method30222(Class7882.field32382, class512);
+                if (playerEntity.field3014 == 0) {
+                    playerEntity.field3014 = 2;
+                    playerEntity.method2746(this, 1);
+                    final Map.Entry<Class2215, ItemStack> method30222 = Class8742.method30222(Class7882.field32382, playerEntity);
                     if (method30222 != null) {
                         final ItemStack class513 = method30222.getValue();
                         if (!class513.method27620()) {
@@ -164,7 +164,7 @@ public class Class508 extends Entity
                         }
                     }
                     if (this.field2901 > 0) {
-                        class512.method2871(this.field2901);
+                        playerEntity.method2871(this.field2901);
                     }
                     this.method1652();
                 }

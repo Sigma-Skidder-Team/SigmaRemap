@@ -174,7 +174,7 @@ public class Class490 extends TileEntity implements Class434, Class439
                     }
                 }
                 final int n2 = (9 + this.field2811 * 2) * 20;
-                final List<Entity> method7128 = (List<Entity>)this.field2656.method7128((Class<? extends Class512>)Class512.class, new AxisAlignedBB(this.field2657).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
+                final List<Entity> method7128 = (List<Entity>)this.field2656.method7128((Class<? extends PlayerEntity>) PlayerEntity.class, new AxisAlignedBB(this.field2657).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
                 final Iterator<Entity> iterator = (Iterator<Entity>)method7128.iterator();
                 while (iterator.hasNext()) {
                     iterator.next().method2655(new Class1948(this.field2813, n2, (int)(b ? 1 : 0), true, true));
@@ -182,7 +182,7 @@ public class Class490 extends TileEntity implements Class434, Class439
                 if (this.field2811 >= 4) {
                     if (this.field2813 != this.field2814) {
                         if (this.field2814 != null) {
-                            final Iterator<Class512> iterator2 = method7128.iterator();
+                            final Iterator<PlayerEntity> iterator2 = method7128.iterator();
                             while (iterator2.hasNext()) {
                                 iterator2.next().method2655(new Class1948(this.field2814, n2, 0, true, true));
                             }
@@ -257,7 +257,7 @@ public class Class490 extends TileEntity implements Class434, Class439
     
     @Nullable
     @Override
-    public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
+    public Class3418 method2166(final int n, final Class464 class464, final PlayerEntity class465) {
         return Class460.method2336(class465, this.field2816, this.method1871()) ? new Class3436(n, class464, this.field2817, Class7318.method22434(this.field2656, this.getPos())) : null;
     }
     

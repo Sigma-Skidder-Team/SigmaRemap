@@ -211,8 +211,8 @@ public class Class7798
             final Class7492 class401 = (Class7492)commandContext.getSource();
             final Class9098 class402 = new Class9098(class401.method23250());
             final Entity method2680 = class401.method23251();
-            if (method2680 instanceof Class512) {
-                class402.method32877(Class6683.field26363, (Class512)method2680);
+            if (method2680 instanceof PlayerEntity) {
+                class402.method32877(Class6683.field26363, (PlayerEntity)method2680);
             }
             class402.method32877(Class6683.field26364, DamageSource.field32576);
             class402.method32878(Class6683.field26366, method2680);

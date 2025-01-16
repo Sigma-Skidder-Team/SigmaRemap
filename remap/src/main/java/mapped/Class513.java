@@ -28,7 +28,7 @@ import com.mojang.authlib.GameProfile;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class513 extends Class512 implements Class514
+public class Class513 extends PlayerEntity implements Class514
 {
     private static final Logger field3037;
     private String field3038;
@@ -402,7 +402,7 @@ public class Class513 extends Class512 implements Class514
             final String method1867 = this.method1867();
             final String method1868 = class399.method1867();
             this.method2890().method19634(Class9456.field40644, method1867, Class7628::method23968);
-            if (!(class399 instanceof Class512)) {
+            if (!(class399 instanceof PlayerEntity)) {
                 this.method2857(Class8276.field34017);
             }
             else {
@@ -451,13 +451,13 @@ public class Class513 extends Class512 implements Class514
             }
             if (class7929 instanceof Class7930) {
                 final Entity method25714 = class7929.method25714();
-                if (method25714 instanceof Class512 && !this.method2826((Class512)method25714)) {
+                if (method25714 instanceof PlayerEntity && !this.method2826((PlayerEntity)method25714)) {
                     return false;
                 }
                 if (method25714 instanceof Class402) {
                     final Entity method25715 = ((Class402)method25714).method1973();
-                    if (method25715 instanceof Class512) {
-                        if (!this.method2826((Class512)method25715)) {
+                    if (method25715 instanceof PlayerEntity) {
+                        if (!this.method2826((PlayerEntity)method25715)) {
                             return false;
                         }
                     }
@@ -469,8 +469,8 @@ public class Class513 extends Class512 implements Class514
     }
     
     @Override
-    public boolean method2826(final Class512 class512) {
-        return this.method2923() && super.method2826(class512);
+    public boolean method2826(final PlayerEntity playerEntity) {
+        return this.method2923() && super.method2826(playerEntity);
     }
     
     private boolean method2923() {
@@ -1065,7 +1065,7 @@ public class Class513 extends Class512 implements Class514
     }
     
     public void method2949(final Entity class399) {
-        if (!(class399 instanceof Class512)) {
+        if (!(class399 instanceof PlayerEntity)) {
             this.field3042.add(class399.getEntityId());
         }
         else {

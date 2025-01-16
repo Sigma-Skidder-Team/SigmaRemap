@@ -19,7 +19,7 @@ public class Class3821 extends Item
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         final Class7006 method2716 = Item.method11733(class1847, class1848, (this.field17373 != Class7558.field29974) ? Class2191.field13325 : Class2191.field13326);
         if (method2716.method21449() == Class2165.field12880) {
@@ -63,14 +63,14 @@ public class Class3821 extends Item
         return Class9355.method34674(this.method11752(method2715, class1848));
     }
     
-    public ItemStack method11752(final ItemStack class8321, final Class512 class8322) {
+    public ItemStack method11752(final ItemStack class8321, final PlayerEntity class8322) {
         return class8322.field3025.field27304 ? class8321 : new ItemStack(Items.field31349);
     }
     
     public void method11753(final World class1847, final ItemStack class1848, final BlockPos class1849) {
     }
     
-    private ItemStack method11754(final ItemStack class8321, final Class512 class8322, final Item class8323) {
+    private ItemStack method11754(final ItemStack class8321, final PlayerEntity class8322, final Item class8323) {
         if (class8322.field3025.field27304) {
             return class8321;
         }
@@ -84,7 +84,7 @@ public class Class3821 extends Item
         return new ItemStack(class8323);
     }
     
-    public boolean method11755(final Class512 class512, final World class513, final BlockPos class514, final Class7005 class515) {
+    public boolean method11755(final PlayerEntity playerEntity, final World class513, final BlockPos class514, final Class7005 class515) {
         if (this.field17373 instanceof Class7257) {
             final BlockState method6701 = class513.getBlockState(class514);
             final Material method6702 = method6701.getMaterial();
@@ -92,7 +92,7 @@ public class Class3821 extends Item
             if (!method6701.method21706()) {
                 if (!method6703) {
                     if (!(method6701.getBlock() instanceof Class3867) || !((Class3867)method6701.getBlock()).method11920(class513, class514, method6701, this.field17373)) {
-                        return class515 != null && this.method11755(class512, class513, class515.method21447().method1149(class515.method21448()), null);
+                        return class515 != null && this.method11755(playerEntity, class513, class515.method21447().method1149(class515.method21448()), null);
                     }
                 }
             }
@@ -100,14 +100,14 @@ public class Class3821 extends Item
                 final int method6704 = class514.getX();
                 final int method6705 = class514.getY();
                 final int method6706 = class514.getZ();
-                class513.method6705(class512, class514, Class8520.field35199, Class286.field1582, 0.5f, 2.6f + (class513.rand.nextFloat() - class513.rand.nextFloat()) * 0.8f);
+                class513.method6705(playerEntity, class514, Class8520.field35199, Class286.field1582, 0.5f, 2.6f + (class513.rand.nextFloat() - class513.rand.nextFloat()) * 0.8f);
                 for (int i = 0; i < 8; ++i) {
                     class513.method6709(Class8432.field34632, method6704 + Math.random(), method6705 + Math.random(), method6706 + Math.random(), 0.0, 0.0, 0.0);
                 }
             }
             else if (method6701.getBlock() instanceof Class3867 && this.field17373 == Class7558.field29976) {
                 if (((Class3867)method6701.getBlock()).method11921(class513, class514, method6701, ((Class7257)this.field17373).method22177(false))) {
-                    this.method11756(class512, class513, class514);
+                    this.method11756(playerEntity, class513, class514);
                 }
             }
             else {
@@ -118,7 +118,7 @@ public class Class3821 extends Item
                         }
                     }
                 }
-                this.method11756(class512, class513, class514);
+                this.method11756(playerEntity, class513, class514);
                 class513.setBlockState(class514, this.field17373.method22148().method21791(), 11);
             }
             return true;
@@ -126,7 +126,7 @@ public class Class3821 extends Item
         return false;
     }
     
-    public void method11756(final Class512 class512, final Class1851 class513, final BlockPos class514) {
-        class513.method6705(class512, class514, this.field17373.method22166(Class7324.field28320) ? Class8520.field35051 : Class8520.field35049, Class286.field1582, 1.0f, 1.0f);
+    public void method11756(final PlayerEntity playerEntity, final Class1851 class513, final BlockPos class514) {
+        class513.method6705(playerEntity, class514, this.field17373.method22166(Class7324.field28320) ? Class8520.field35051 : Class8520.field35049, Class286.field1582, 1.0f, 1.0f);
     }
 }

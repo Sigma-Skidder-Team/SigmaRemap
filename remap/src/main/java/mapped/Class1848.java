@@ -134,7 +134,7 @@ public class Class1848 extends World
     }
     
     public void method6808(final Entity class399) {
-        if (class399 instanceof Class512 || this.method6835().method7408(class399)) {
+        if (class399 instanceof PlayerEntity || this.method6835().method7408(class399)) {
             class399.method1731(class399.getPosX(), class399.getPosY(), class399.getPosZ());
             class399.prevRotationYaw = class399.rotationYaw;
             class399.prevRotationPitch = class399.rotationPitch;
@@ -158,7 +158,7 @@ public class Class1848 extends World
     
     public void method6809(final Entity class399, final Entity class400) {
         if (!class400.removed && class400.method1920() == class399) {
-            if (class400 instanceof Class512 || this.method6835().method7408(class400)) {
+            if (class400 instanceof PlayerEntity || this.method6835().method7408(class400)) {
                 class400.method1731(class400.getPosX(), class400.getPosY(), class400.getPosZ());
                 class400.prevRotationYaw = class400.rotationYaw;
                 class400.prevRotationPitch = class400.rotationPitch;
@@ -441,9 +441,9 @@ public class Class1848 extends World
     }
     
     @Override
-    public void method6706(final Class512 class512, final double n, final double n2, final double n3, Class7795 class513, Class286 class514, float method35823, final float f) {
+    public void method6706(final PlayerEntity playerEntity, final double n, final double n2, final double n3, Class7795 class513, Class286 class514, float method35823, final float f) {
         if (Class9570.field41267.method22605()) {
-            final Object method35824 = Class9570.field41267.method22608(class512, class513, class514, method35823, f);
+            final Object method35824 = Class9570.field41267.method22608(playerEntity, class513, class514, method35823, f);
             if (Class9570.method35820(method35824, Class9570.field41225, new Object[0]) || Class9570.method35826(method35824, Class9570.field41403, new Object[0]) == null) {
                 return;
             }
@@ -451,15 +451,15 @@ public class Class1848 extends World
             class514 = (Class286)Class9570.method35826(method35824, Class9570.field41404, new Object[0]);
             method35823 = Class9570.method35823(method35824, Class9570.field41405, new Object[0]);
         }
-        if (class512 == this.field10075.field4684) {
+        if (playerEntity == this.field10075.field4684) {
             this.method6708(n, n2, n3, class513, class514, method35823, f, false);
         }
     }
     
     @Override
-    public void method6707(final Class512 class512, final Entity class513, Class7795 class514, Class286 class515, float method35823, final float f) {
+    public void method6707(final PlayerEntity playerEntity, final Entity class513, Class7795 class514, Class286 class515, float method35823, final float f) {
         if (Class9570.field41267.method22605()) {
-            final Object method35824 = Class9570.field41267.method22608(class512, class514, class515, method35823, f);
+            final Object method35824 = Class9570.field41267.method22608(playerEntity, class514, class515, method35823, f);
             if (Class9570.method35820(method35824, Class9570.field41225, new Object[0]) || Class9570.method35826(method35824, Class9570.field41403, new Object[0]) == null) {
                 return;
             }
@@ -467,7 +467,7 @@ public class Class1848 extends World
             class515 = (Class286)Class9570.method35826(method35824, Class9570.field41404, new Object[0]);
             method35823 = Class9570.method35823(method35824, Class9570.field41405, new Object[0]);
         }
-        if (class512 == this.field10075.field4684) {
+        if (playerEntity == this.field10075.field4684) {
             this.field10075.method5299().method6422(new Class6838(class514, class515, class513));
         }
     }
@@ -600,15 +600,15 @@ public class Class1848 extends World
     }
     
     @Override
-    public void method6839(final Class512 class512, final int i, final BlockPos class513, final int j) {
+    public void method6839(final PlayerEntity playerEntity, final int i, final BlockPos class513, final int j) {
         try {
-            this.field10074.method5752(class512, i, class513, j);
+            this.field10074.method5752(playerEntity, i, class513, j);
         }
         catch (final Throwable t) {
             final Class7689 method24421 = Class7689.method24421(t, "Playing level event");
             final Class5204 method24422 = method24421.method24418("Level event being played");
             method24422.method16297("Block coordinates", Class5204.method16294(class513));
-            method24422.method16297("Event source", class512);
+            method24422.method16297("Event source", playerEntity);
             method24422.method16297("Event type", i);
             method24422.method16297("Event data", j);
             throw new Class2365(method24421);

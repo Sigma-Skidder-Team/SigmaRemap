@@ -157,7 +157,7 @@ public class Class3913 extends Block implements Class3872
     }
     
     @Override
-    public float method11830(final BlockState class7096, final Class512 class7097, final Class1855 class7098, final BlockPos class7099) {
+    public float method11830(final BlockState class7096, final PlayerEntity class7097, final Class1855 class7098, final BlockPos class7099) {
         return (class7097.getHeldItemMainhand().getItem() instanceof Class4077) ? 1.0f : super.method11830(class7096, class7097, class7098, class7099);
     }
     

@@ -33,8 +33,8 @@ public class Class9173
         }
     }
     
-    public void method33488(final Class512 class512) {
-        final Class2113 method6954 = class512.world.method6954();
+    public void method33488(final PlayerEntity playerEntity) {
+        final Class2113 method6954 = playerEntity.world.method6954();
         this.field38861 = this.field38857;
         if (this.field38859 > 4.0f) {
             this.field38859 -= 4.0f;
@@ -47,17 +47,17 @@ public class Class9173
                 this.field38858 = Math.max(this.field38858 - 1.0f, 0.0f);
             }
         }
-        final boolean method6955 = class512.world.method6765().method31216(Class8878.field37323);
+        final boolean method6955 = playerEntity.world.method6765().method31216(Class8878.field37323);
         if (method6955) {
             if (this.field38858 > 0.0f) {
-                if (class512.method2879()) {
+                if (playerEntity.method2879()) {
                     if (this.field38857 >= 20) {
                         ++this.field38860;
                         if (this.field38860 < 10) {
                             return;
                         }
                         final float min = Math.min(this.field38858, 6.0f);
-                        class512.method2663(min / 6.0f);
+                        playerEntity.method2663(min / 6.0f);
                         this.method33493(min);
                         this.field38860 = 0;
                         return;
@@ -67,12 +67,12 @@ public class Class9173
         }
         if (method6955) {
             if (this.field38857 >= 18) {
-                if (class512.method2879()) {
+                if (playerEntity.method2879()) {
                     ++this.field38860;
                     if (this.field38860 < 80) {
                         return;
                     }
-                    class512.method2663(1.0f);
+                    playerEntity.method2663(1.0f);
                     this.method33493(6.0f);
                     this.field38860 = 0;
                     return;
@@ -86,9 +86,9 @@ public class Class9173
             ++this.field38860;
             if (this.field38860 >= 80) {
                 Label_0363: {
-                    if (class512.method2664() <= 10.0f) {
+                    if (playerEntity.method2664() <= 10.0f) {
                         if (method6954 != Class2113.field12293) {
-                            if (class512.method2664() <= 1.0f) {
+                            if (playerEntity.method2664() <= 1.0f) {
                                 break Label_0363;
                             }
                             if (method6954 != Class2113.field12292) {
@@ -96,7 +96,7 @@ public class Class9173
                             }
                         }
                     }
-                    class512.attackEntityFrom(DamageSource.field32570, 1.0f);
+                    playerEntity.attackEntityFrom(DamageSource.field32570, 1.0f);
                 }
                 this.field38860 = 0;
             }

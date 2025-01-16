@@ -119,7 +119,7 @@ public final class ItemStack
     }
     
     public Class2201 method27623(final Class7075 class7075) {
-        final Class512 method21652 = class7075.method21652();
+        final PlayerEntity method21652 = class7075.method21652();
         final Class7990 class7076 = new Class7990(class7075.method21654(), class7075.method21639(), false);
         if (method21652 != null) {
             if (!method21652.field3025.field27305) {
@@ -142,7 +142,7 @@ public final class ItemStack
         return this.getItem().method11706(this, class7096);
     }
     
-    public Class9355<ItemStack> method27625(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method27625(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         return this.getItem().method11695(class1847, class1848, class1849);
     }
     
@@ -221,14 +221,14 @@ public final class ItemStack
     
     public <T extends LivingEntity> void method27636(final int n, final T t, final Consumer<T> consumer) {
         if (!t.world.isRemote) {
-            if (!(t instanceof Class512) || !((Class512)t).field3025.field27304) {
+            if (!(t instanceof PlayerEntity) || !((PlayerEntity)t).field3025.field27304) {
                 if (this.method27630()) {
                     if (this.method27635(n, t.method2633(), (t instanceof Class513) ? t : null)) {
                         consumer.accept(t);
                         final Item method27622 = this.getItem();
                         this.method27693(1);
-                        if (t instanceof Class512) {
-                            ((Class512)t).method2859(Class8276.field33982.method8449(method27622));
+                        if (t instanceof PlayerEntity) {
+                            ((PlayerEntity)t).method2859(Class8276.field33982.method8449(method27622));
                         }
                         this.method27633(0);
                     }
@@ -237,14 +237,14 @@ public final class ItemStack
         }
     }
     
-    public void method27637(final LivingEntity class511, final Class512 class512) {
+    public void method27637(final LivingEntity class511, final PlayerEntity playerEntity) {
         final Item method27622 = this.getItem();
-        if (method27622.method11711(this, class511, class512)) {
-            class512.method2859(Class8276.field33981.method8449(method27622));
+        if (method27622.method11711(this, class511, playerEntity)) {
+            playerEntity.method2859(Class8276.field33981.method8449(method27622));
         }
     }
     
-    public void method27638(final World class1847, final Class7096 class1848, final BlockPos class1849, final Class512 class1850) {
+    public void method27638(final World class1847, final Class7096 class1848, final BlockPos class1849, final PlayerEntity class1850) {
         final Item method27622 = this.getItem();
         if (method27622.method11712(this, class1847, class1848, class1849, class1850)) {
             class1850.method2859(Class8276.field33981.method8449(method27622));
@@ -255,8 +255,8 @@ public final class ItemStack
         return this.getItem().method11713(class7096);
     }
     
-    public boolean method27640(final Class512 class512, final LivingEntity class513, final Class316 class514) {
-        return this.getItem().method11714(this, class512, class513, class514);
+    public boolean method27640(final PlayerEntity playerEntity, final LivingEntity class513, final Class316 class514) {
+        return this.getItem().method11714(this, playerEntity, class513, class514);
     }
     
     public ItemStack method27641() {
@@ -320,7 +320,7 @@ public final class ItemStack
         }
     }
     
-    public void method27651(final World class1847, final Class512 class1848, final int n) {
+    public void method27651(final World class1847, final PlayerEntity class1848, final int n) {
         class1848.method2860(Class8276.field33980.method8449(this.getItem()), n);
         this.getItem().method11723(this, class1847, class1848);
     }
@@ -448,7 +448,7 @@ public final class ItemStack
         return method27660 != null && method27660.method316("Name", 8);
     }
     
-    public List<ITextComponent> method27668(final Class512 class512, final Class1981 class513) {
+    public List<ITextComponent> method27668(final PlayerEntity playerEntity, final Class1981 class513) {
         final ArrayList arrayList = Lists.newArrayList();
         final ITextComponent method8469 = new StringTextComponent("").appendSibling(this.method27664()).applyTextStyle(this.method27672().field11190);
         if (this.method27667()) {
@@ -463,7 +463,7 @@ public final class ItemStack
             method8470 = this.field34179.method319("HideFlags");
         }
         if ((method8470 & 0x20) == 0x0) {
-            this.getItem().method11728(this, (class512 == null) ? null : class512.world, arrayList, class513);
+            this.getItem().method11728(this, (playerEntity == null) ? null : playerEntity.world, arrayList, class513);
         }
         if (this.method27656()) {
             if ((method8470 & 0x1) == 0x0) {
@@ -505,13 +505,13 @@ public final class ItemStack
                     final Class7919 class515 = entry.getValue();
                     double method8476 = class515.method25638();
                     boolean b = false;
-                    if (class512 != null) {
+                    if (playerEntity != null) {
                         if (class515.method25635() == Item.field17361) {
-                            method8476 = method8476 + class512.method2710(Class8107.field33410).method23940() + Class8742.method30202(this, Class6363.field25460);
+                            method8476 = method8476 + playerEntity.method2710(Class8107.field33410).method23940() + Class8742.method30202(this, Class6363.field25460);
                             b = true;
                         }
                         else if (class515.method25635() == Item.field17362) {
-                            method8476 += class512.method2710(Class8107.field33412).method23940();
+                            method8476 += playerEntity.method2710(Class8107.field33412).method23940();
                             b = true;
                         }
                     }

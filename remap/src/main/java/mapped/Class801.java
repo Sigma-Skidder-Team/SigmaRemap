@@ -39,7 +39,7 @@ public class Class801 extends Class789
         this.field4114.method22062(4, new Class3472(this, 1.2, false, Class801.field4301));
         this.field4114.method22062(5, new Class3456(this, 1.1));
         this.field4114.method22062(6, new Class3517(this, 1.0));
-        this.field4114.method22062(7, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(7, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(8, new Class3503(this));
     }
     
@@ -59,9 +59,9 @@ public class Class801 extends Class789
     @Override
     public boolean method4189() {
         final Entity method1907 = this.method1907();
-        if (method1907 instanceof Class512) {
-            final Class512 class512 = (Class512)method1907;
-            return class512.getHeldItemMainhand().getItem() == Items.field31529 || class512.method2714().getItem() == Items.field31529;
+        if (method1907 instanceof PlayerEntity) {
+            final PlayerEntity playerEntity = (PlayerEntity)method1907;
+            return playerEntity.getHeldItemMainhand().getItem() == Items.field31529 || playerEntity.method2714().getItem() == Items.field31529;
         }
         return false;
     }
@@ -118,22 +118,22 @@ public class Class801 extends Class789
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        if (super.method4195(class512, class513)) {
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        if (super.method4195(playerEntity, class513)) {
             return true;
         }
-        final ItemStack method2715 = class512.method2715(class513);
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() == Items.field31552) {
-            method2715.method27640(class512, this, class513);
+            method2715.method27640(playerEntity, this, class513);
             return true;
         }
         if (this.method4625() && !this.isBeingRidden()) {
             if (!this.world.isRemote) {
-                class512.method1778(this);
+                playerEntity.method1778(this);
             }
             return true;
         }
-        return method2715.getItem() == Items.field31353 && method2715.method27640(class512, this, class513);
+        return method2715.getItem() == Items.field31353 && method2715.method27640(playerEntity, this, class513);
     }
     
     @Override

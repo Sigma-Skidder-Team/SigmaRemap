@@ -19,8 +19,8 @@ public class Class6604 extends Class6601
     }
     
     @Override
-    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
-        return this.field26182.method20047(class512, class513);
+    public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
+        return this.field26182.method20047(playerEntity, class513);
     }
     
     @Override
@@ -75,7 +75,7 @@ public class Class6604 extends Class6601
     }
     
     @Override
-    public boolean method20061(final Class512 class512) {
-        return this.field26182.method20061(class512);
+    public boolean method20061(final PlayerEntity playerEntity) {
+        return this.field26182.method20061(playerEntity);
     }
 }

@@ -35,10 +35,10 @@ public class Class525 extends Class517<Class3434>
     private boolean field3132;
     private final Map<ResourceLocation, Class7909<Item>> field3133;
     
-    public Class525(final Class512 class512) {
-        super(new Class3434(class512), class512.field3006, new StringTextComponent(""));
+    public Class525(final PlayerEntity playerEntity) {
+        super(new Class3434(playerEntity), playerEntity.field3006, new StringTextComponent(""));
         this.field3133 = Maps.newTreeMap();
-        class512.field3009 = this.field3077;
+        playerEntity.field3009 = this.field3077;
         this.field3155 = true;
         this.field3076 = 136;
         this.field3075 = 195;

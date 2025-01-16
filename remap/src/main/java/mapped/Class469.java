@@ -17,11 +17,11 @@ public interface Class469
     @Nullable
     Class3662<?> method2402();
     
-    default void method2403(final Class512 class512) {
+    default void method2403(final PlayerEntity playerEntity) {
         final Class3662<?> method2402 = this.method2402();
         if (method2402 != null) {
             if (!method2402.method11295()) {
-                class512.method2862((Collection<Class3662<?>>)Collections.singleton(method2402));
+                playerEntity.method2862((Collection<Class3662<?>>)Collections.singleton(method2402));
                 this.method2401(null);
             }
         }

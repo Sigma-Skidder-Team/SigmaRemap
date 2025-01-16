@@ -33,7 +33,7 @@ public class Class786 extends Class785
         this.field4114.method22062(3, new Class3573(this, 0.6, false, 4, () -> false));
         this.field4114.method22062(5, new Class3639(this));
         this.field4114.method22062(6, new Class3517(this, 0.6));
-        this.field4114.method22062(7, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(7, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(8, new Class3503(this));
         this.field4115.method22062(1, new Class3546(this));
         this.field4115.method22062(2, new Class3547(this, (Class<?>[])new Class[0]));
@@ -189,8 +189,8 @@ public class Class786 extends Class785
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() != Items.field31284) {
             return false;
         }
@@ -198,7 +198,7 @@ public class Class786 extends Class785
         this.method2663(25.0f);
         if (this.method2664() != method2716) {
             this.method1695(Class8520.field35317, 1.0f, 1.0f + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f);
-            if (!class512.field3025.field27304) {
+            if (!playerEntity.field3025.field27304) {
                 method2715.method27693(1);
             }
             return true;

@@ -74,20 +74,20 @@ public class Class451 implements Class446
     }
     
     @Override
-    public boolean method2162(final Class512 class512) {
-        return this.field2697.method2162(class512) && this.field2698.method2162(class512);
+    public boolean method2162(final PlayerEntity playerEntity) {
+        return this.field2697.method2162(playerEntity) && this.field2698.method2162(playerEntity);
     }
     
     @Override
-    public void method2241(final Class512 class512) {
-        this.field2697.method2241(class512);
-        this.field2698.method2241(class512);
+    public void method2241(final PlayerEntity playerEntity) {
+        this.field2697.method2241(playerEntity);
+        this.field2698.method2241(playerEntity);
     }
     
     @Override
-    public void method2242(final Class512 class512) {
-        this.field2697.method2242(class512);
-        this.field2698.method2242(class512);
+    public void method2242(final PlayerEntity playerEntity) {
+        this.field2697.method2242(playerEntity);
+        this.field2698.method2242(playerEntity);
     }
     
     @Override

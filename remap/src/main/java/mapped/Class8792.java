@@ -180,12 +180,12 @@ public class Class8792
         return this.field36962;
     }
     
-    public void method30631(final Class512 class512) {
-        if (class512.method2653(Class9439.field40504)) {
-            this.field36962 += class512.method2654(Class9439.field40504).method7908() + 1;
+    public void method30631(final PlayerEntity playerEntity) {
+        if (playerEntity.method2653(Class9439.field40504)) {
+            this.field36962 += playerEntity.method2654(Class9439.field40504).method7908() + 1;
             this.field36962 = MathHelper.method35651(this.field36962, 0, this.method30629());
         }
-        class512.method2659(Class9439.field40504);
+        playerEntity.method2659(Class9439.field40504);
     }
     
     public void method30632() {

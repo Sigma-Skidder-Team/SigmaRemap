@@ -17,7 +17,7 @@ public class Class4095 extends Class4093
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method12326 = Class4094.method12326(class1847, MathHelper.floor(class1848.getPosX()), MathHelper.floor(class1848.getPosZ()), (byte)0, true, false);
         final ItemStack method12327 = class1848.method2715(class1849);
         if (!class1848.field3025.field27304) {

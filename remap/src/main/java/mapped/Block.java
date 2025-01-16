@@ -423,7 +423,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public float method11830(final BlockState class7096, final Class512 class7097, final Class1855 class7098, final BlockPos class7099) {
+    public float method11830(final BlockState class7096, final PlayerEntity class7097, final Class1855 class7098, final BlockPos class7099) {
         final float method21718 = class7096.method21718(class7098, class7099);
         if (method21718 != -1.0f) {
             return class7097.method2824(class7096) / method21718 / (class7097.method2825(class7096) ? 30 : 100);
@@ -519,7 +519,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         return Class2201.field13402;
     }
     
@@ -532,7 +532,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public void method11847(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099) {
+    public void method11847(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099) {
     }
     
     @Deprecated
@@ -554,7 +554,7 @@ public class Block implements Class3832
         return 0;
     }
     
-    public void method11852(final World class1847, final Class512 class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
+    public void method11852(final World class1847, final PlayerEntity class1848, final BlockPos class1849, final BlockState class1850, final TileEntity class1851, final ItemStack class1852) {
         class1848.method2859(Class8276.field33979.method8449(this));
         class1848.method2876(0.005f);
         method11838(class1850, class1847, class1849, class1851, class1848, class1852);
@@ -634,7 +634,7 @@ public class Block implements Class3832
     public void onProjectileCollision(final World class1847, final BlockState class1848, final Class7005 class1849, final Entity class1850) {
     }
     
-    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final PlayerEntity class1850) {
         class1847.method6839(class1850, 2001, class1848, method11774(class1849));
     }
     

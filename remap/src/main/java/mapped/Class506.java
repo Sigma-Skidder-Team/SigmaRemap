@@ -109,19 +109,19 @@ public class Class506 extends Class428
     }
     
     @Override
-    public boolean method1770(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (Class506.field2890.test(method2715)) {
             if (this.field2887 + 3600 <= 32000) {
-                if (!class512.field3025.field27304) {
+                if (!playerEntity.field3025.field27304) {
                     method2715.method27693(1);
                 }
                 this.field2887 += 3600;
             }
         }
         if (this.field2887 > 0) {
-            this.field2888 = this.getPosX() - class512.getPosX();
-            this.field2889 = this.getPosZ() - class512.getPosZ();
+            this.field2888 = this.getPosX() - playerEntity.getPosX();
+            this.field2889 = this.getPosZ() - playerEntity.getPosZ();
         }
         return true;
     }

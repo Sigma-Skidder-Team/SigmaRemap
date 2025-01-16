@@ -70,7 +70,7 @@ public class Class3975 extends Block
     }
     
     @Override
-    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final Class512 class1850) {
+    public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final PlayerEntity class1850) {
         if (!class1847.isRemote) {
             if (!class1850.getHeldItemMainhand().method27620()) {
                 if (class1850.getHeldItemMainhand().getItem() == Items.field31426) {

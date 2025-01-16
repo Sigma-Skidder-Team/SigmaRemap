@@ -57,7 +57,7 @@ public class Class841 extends Class785 implements Class762
     
     @Override
     public void method4142() {
-        this.field4114.method22062(1, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(1, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(4, new Class3458(this));
         this.field4114.method22062(7, new Class3455(this, null));
         this.field4114.method22062(8, new Class3503(this));

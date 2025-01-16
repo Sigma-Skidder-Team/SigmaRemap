@@ -63,7 +63,7 @@ public class Class3306 extends Class3167
             final Iterator iterator = arrayList.iterator();
             while (iterator.hasNext()) {
                 final Entity class5751 = (Entity)iterator.next();
-                if (!(class5751 instanceof Class512) || Class9463.method35173().method35191().method31751(class5751)) {
+                if (!(class5751 instanceof PlayerEntity) || Class9463.method35173().method35191().method31751(class5751)) {
                     iterator.remove();
                 }
             }

@@ -91,7 +91,7 @@ public class Class4021 extends Block
         if (!class1847.isRemote) {
             if (class1847.rand.nextFloat() < n - 0.5f) {
                 if (class1849 instanceof LivingEntity) {
-                    if (class1849 instanceof Class512 || class1847.method6765().method31216(Class8878.field37316)) {
+                    if (class1849 instanceof PlayerEntity || class1847.method6765().method31216(Class8878.field37316)) {
                         if (class1849.method1930() * class1849.method1930() * class1849.method1931() > 0.512f) {
                             method12212(class1847.getBlockState(class1848), class1847, class1848);
                         }

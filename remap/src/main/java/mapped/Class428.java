@@ -118,7 +118,7 @@ public abstract class Class428 extends Entity
             this.method2135(10);
             this.method1739();
             this.method2133(this.method2134() + n * 10.0f);
-            final boolean b = class7929.method25714() instanceof Class512 && ((Class512)class7929.method25714()).field3025.field27304;
+            final boolean b = class7929.method25714() instanceof PlayerEntity && ((PlayerEntity)class7929.method25714()).field3025.field27304;
             if (b || this.method2134() > 40.0f) {
                 this.removePassengers();
                 if (b && !this.hasCustomName()) {
@@ -219,7 +219,7 @@ public abstract class Class428 extends Entity
                 if (!method35648.isEmpty()) {
                     for (int i = 0; i < method35648.size(); ++i) {
                         final Entity class355 = method35648.get(i);
-                        if (!(class355 instanceof Class512)) {
+                        if (!(class355 instanceof PlayerEntity)) {
                             if (!(class355 instanceof Class786)) {
                                 if (!(class355 instanceof Class428)) {
                                     if (!this.isBeingRidden()) {
@@ -339,7 +339,7 @@ public abstract class Class428 extends Entity
         final double min = Math.min(2.0, Math.sqrt(Entity.horizontalMag(method1943)));
         this.method1936(new Vec3d(min * n3 / sqrt, method1943.y, min * n4 / sqrt));
         final Entity class360 = this.method1908().isEmpty() ? null : this.method1908().get(0);
-        if (class360 instanceof Class512) {
+        if (class360 instanceof PlayerEntity) {
             final Vec3d method1945 = class360.getMotion();
             final double method1946 = Entity.horizontalMag(method1945);
             final double method1947 = Entity.horizontalMag(this.getMotion());

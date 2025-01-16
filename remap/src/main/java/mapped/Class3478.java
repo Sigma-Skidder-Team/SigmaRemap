@@ -25,14 +25,14 @@ public class Class3478 extends Class3446
     public boolean method11013() {
         if (this.field16388 <= 0) {
             this.field16388 = 60;
-            final List<Class512> method7141 = this.field16389.world.method7141(this.field16387, this.field16389, this.field16389.getBoundingBox().method18495(16.0, 64.0, 16.0));
+            final List<PlayerEntity> method7141 = this.field16389.world.method7141(this.field16387, this.field16389, this.field16389.getBoundingBox().method18495(16.0, 64.0, 16.0));
             if (!method7141.isEmpty()) {
                 method7141.sort((class513, class514) -> (class513.getPosY() <= class514.getPosY()) ? 1 : -1);
-                for (final Class512 class512 : method7141) {
-                    if (!this.field16389.method2647(class512, Class7843.field32117)) {
+                for (final PlayerEntity playerEntity : method7141) {
+                    if (!this.field16389.method2647(playerEntity, Class7843.field32117)) {
                         continue;
                     }
-                    this.field16389.method4153(class512);
+                    this.field16389.method4153(playerEntity);
                     return true;
                 }
             }

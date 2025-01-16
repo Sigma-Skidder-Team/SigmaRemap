@@ -10,5 +10,5 @@ import javax.annotation.Nullable;
 public interface Class502
 {
     @Nullable
-    Class3418 method2166(final int p0, final Class464 p1, final Class512 p2);
+    Class3418 method2166(final int p0, final Class464 p1, final PlayerEntity p2);
 }

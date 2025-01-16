@@ -40,7 +40,7 @@ public class Class6601
     public void method20052(final ItemStack class8321) {
     }
     
-    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
+    public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
         this.method20056();
         return class513;
     }
@@ -83,7 +83,7 @@ public class Class6601
         return this.field26173.method2158(this.field26172, n);
     }
     
-    public boolean method20061(final Class512 class512) {
+    public boolean method20061(final PlayerEntity playerEntity) {
         return true;
     }
     

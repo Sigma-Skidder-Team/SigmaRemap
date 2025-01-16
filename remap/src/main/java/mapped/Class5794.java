@@ -22,10 +22,10 @@ public class Class5794 extends Class5791
     @Override
     public void method17247() {
         ++this.field23797;
-        final Class512 method7136 = this.field23764.world.method7136(this.field23796, this.field23764, this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
+        final PlayerEntity method7136 = this.field23764.world.method7136(this.field23796, this.field23764, this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
         if (method7136 == null) {
             if (this.field23797 >= 100) {
-                final Class512 method7137 = this.field23764.world.method7136(Class5794.field23795, this.field23764, this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
+                final PlayerEntity method7137 = this.field23764.world.method7136(Class5794.field23795, this.field23764, this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ());
                 this.field23764.method5127().method33696(Class7193.field27952);
                 if (method7137 != null) {
                     this.field23764.method5127().method33696(Class7193.field27956);

@@ -181,8 +181,8 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11800(this, class1855, class1856);
     }
 
-    public float method21719(final Class512 class512, final Class1855 class513, final BlockPos class514) {
-        return this.getBlock().method11830(this, class512, class513, class514);
+    public float method21719(final PlayerEntity playerEntity, final Class1855 class513, final BlockPos class514) {
+        return this.getBlock().method11830(this, playerEntity, class513, class514);
     }
 
     public int method21720(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
@@ -281,11 +281,11 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11833(this, class9098);
     }
 
-    public Class2201 method21744(final World class1847, final Class512 class1848, final Class316 class1849, final Class7005 class1850) {
+    public Class2201 method21744(final World class1847, final PlayerEntity class1848, final Class316 class1849, final Class7005 class1850) {
         return this.getBlock().method11844(this, class1847, class1850.method21447(), class1848, class1849, class1850);
     }
 
-    public void method21745(final World class1847, final BlockPos class1848, final Class512 class1849) {
+    public void method21745(final World class1847, final BlockPos class1848, final PlayerEntity class1849) {
         this.getBlock().method11847(this, class1847, class1848, class1849);
     }
 

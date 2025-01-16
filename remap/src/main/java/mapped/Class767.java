@@ -56,7 +56,7 @@ public class Class767 extends Class763 implements Class766, Class768
         this.field4114.method22062(0, new Class3597(this));
         this.field4114.method22062(2, new Class3507(this, 1.0, 40, 20.0f));
         this.field4114.method22062(5, new Class3517(this, 1.0));
-        this.field4114.method22062(6, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(7, new Class3503(this));
         this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]));
         this.field4115.method22062(2, new Class3555<Object>(this, Class759.class, 0, false, false, Class767.field4156));
@@ -213,11 +213,11 @@ public class Class767 extends Class763 implements Class766, Class768
                             if (class511 != this) {
                                 if (class511.method1768()) {
                                     if (this.method2747(class511)) {
-                                        if (!(class511 instanceof Class512)) {
+                                        if (!(class511 instanceof PlayerEntity)) {
                                             this.method4258(i, class511.getEntityId());
                                             break;
                                         }
-                                        if (((Class512)class511).field3025.field27301) {
+                                        if (((PlayerEntity)class511).field3025.field27301) {
                                             break;
                                         }
                                         this.method4258(i, class511.getEntityId());
@@ -235,7 +235,7 @@ public class Class767 extends Class763 implements Class766, Class768
                                 if (method4259.method1768()) {
                                     if (this.method1734(method4259) <= 900.0) {
                                         if (this.method2747(method4259)) {
-                                            if (method4259 instanceof Class512 && ((Class512)method4259).field3025.field27301) {
+                                            if (method4259 instanceof PlayerEntity && ((PlayerEntity)method4259).field3025.field27301) {
                                                 this.method4258(i, 0);
                                                 break Label_0591;
                                             }
@@ -290,7 +290,7 @@ public class Class767 extends Class763 implements Class766, Class768
         else {
             final int n4 = this.method4255() - 1;
             if (n4 <= 0) {
-                this.world.method6723(this, this.getPosX(), this.method1944(), this.getPosZ(), 7.0f, false, this.world.method6765().method31216(Class8878.field37316) ? Class2196.field13367 : Class2196.field13365);
+                this.world.method6723(this, this.getPosX(), this.method1944(), this.getPosZ(), 7.0f, false, this.world.method6765().method31216(Class8878.field37316) ? Explosion.Mode.field13367 : Explosion.Mode.field13365);
                 this.world.method6777(1023, new BlockPos(this), 0);
             }
             this.method4256(n4);
@@ -392,7 +392,7 @@ public class Class767 extends Class763 implements Class766, Class768
         }
         final Entity method25714 = class7929.method25714();
         if (method25714 != null) {
-            if (!(method25714 instanceof Class512)) {
+            if (!(method25714 instanceof PlayerEntity)) {
                 if (method25714 instanceof LivingEntity) {
                     if (((LivingEntity)method25714).method2712() == this.method2712()) {
                         return false;

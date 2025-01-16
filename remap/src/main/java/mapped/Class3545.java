@@ -60,7 +60,7 @@ public abstract class Class3545 extends Class3446
                 this.field16607 = 0;
             }
         }
-        if (class511 instanceof Class512 && ((Class512)class511).field3025.field27301) {
+        if (class511 instanceof PlayerEntity && ((PlayerEntity)class511).field3025.field27301) {
             return false;
         }
         this.field16602.method4153(class511);

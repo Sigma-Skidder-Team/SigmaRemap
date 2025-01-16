@@ -38,7 +38,7 @@ public class Class821 extends Class819
         this.field4114.method22062(2, new Class3606(this, this, 2.0, 0.35));
         this.field4114.method22062(4, new Class3489(this, 0.35));
         this.field4114.method22062(8, new Class3517(this, 0.35));
-        this.field4114.method22062(9, new Class3629(this, Class512.class, 3.0f, 1.0f));
+        this.field4114.method22062(9, new Class3629(this, PlayerEntity.class, 3.0f, 1.0f));
         this.field4114.method22062(10, new Class3628(this, Class759.class, 8.0f));
     }
     
@@ -54,31 +54,31 @@ public class Class821 extends Class819
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() != Items.field31552) {
             if (method2715.getItem() != Items.field31500) {
                 if (this.method1768()) {
                     if (!this.method4824()) {
                         if (!this.method2625()) {
                             if (class513 == Class316.field1877) {
-                                class512.method2857(Class8276.field34021);
+                                playerEntity.method2857(Class8276.field34021);
                             }
                             if (!this.method4825().isEmpty()) {
                                 if (!this.world.isRemote) {
-                                    this.method4822(class512);
-                                    this.method4854(class512, this.getDisplayName(), 1);
+                                    this.method4822(playerEntity);
+                                    this.method4854(playerEntity, this.getDisplayName(), 1);
                                 }
                                 return true;
                             }
-                            return super.method4195(class512, class513);
+                            return super.method4195(playerEntity, class513);
                         }
                     }
                 }
             }
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
-        method2715.method27640(class512, this, class513);
+        method2715.method27640(playerEntity, this, class513);
         return true;
     }
     

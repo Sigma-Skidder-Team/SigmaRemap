@@ -9,7 +9,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class3317 extends Class3167
 {
-    public static Class512 field15901;
+    public static PlayerEntity field15901;
     private double field15902;
     private double field15903;
     private double field15904;
@@ -272,8 +272,8 @@ public class Class3317 extends Class3167
                 final double field19377 = class5724.field19377;
                 final double field19378 = class5724.field19378;
                 final double field19379 = class5724.field19379;
-                final float field19380 = Class512.field2997.field34097;
-                Class3317.field15514.field4684.method1889(new AxisAlignedBB(field19377 - field19380, field19378, field19379 - field19380, field19377 + field19380, field19378 + Class512.field2997.field34098, field19379 + field19380));
+                final float field19380 = PlayerEntity.field2997.field34097;
+                Class3317.field15514.field4684.method1889(new AxisAlignedBB(field19377 - field19380, field19378, field19379 - field19380, field19377 + field19380, field19378 + PlayerEntity.field2997.field34098, field19379 + field19380));
                 class5723.method16961(true);
                 Class3317.field15901.setMotion(0.0, 0.0, 0.0);
             }

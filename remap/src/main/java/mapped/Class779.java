@@ -35,10 +35,10 @@ public class Class779 extends Class776
         this.field4114.method22062(0, new Class3490(this));
         this.field4114.method22062(4, new Class3582(this));
         this.field4114.method22062(5, new Class3517(this, 0.4));
-        this.field4114.method22062(6, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(10, new Class3628(this, Class759.class, 8.0f));
         this.field4115.method22062(2, new Class3547(this, (Class<?>[])new Class[] { Class776.class }).method11100((Class<?>[])new Class[0]));
-        this.field4115.method22062(3, new Class3555<Object>(this, Class512.class, true));
+        this.field4115.method22062(3, new Class3555<Object>(this, PlayerEntity.class, true));
         this.field4115.method22062(4, new Class3555<Object>(this, Class819.class, true));
         this.field4115.method22062(4, new Class3555<Object>(this, Class786.class, true));
     }

@@ -37,7 +37,7 @@ public class Class3974 extends Block
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         final Item method2716 = method2715.getItem();
         final Block class7102 = (method2716 instanceof Class4036) ? Class3974.field17949.getOrDefault(((Class4036)method2716).method12240(), Class7521.field29147) : Class7521.field29147;

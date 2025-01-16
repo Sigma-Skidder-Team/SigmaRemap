@@ -27,7 +27,7 @@ public class Class804 extends Class789
         this.field4114.method22062(3, new Class3472(this, 1.25, Class120.method618(Items.field31315), false));
         this.field4114.method22062(4, new Class3456(this, 1.25));
         this.field4114.method22062(5, new Class3517(this, 1.0));
-        this.field4114.method22062(6, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(7, new Class3503(this));
     }
     
@@ -64,26 +64,26 @@ public class Class804 extends Class789
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() == Items.field31349) {
-            if (!class512.field3025.field27304) {
+            if (!playerEntity.field3025.field27304) {
                 if (!this.method2625()) {
-                    class512.method1695(Class8520.field35098, 1.0f, 1.0f);
+                    playerEntity.method1695(Class8520.field35098, 1.0f, 1.0f);
                     method2715.method27693(1);
                     if (!method2715.method27620()) {
-                        if (!class512.field3006.method2362(new ItemStack(Items.field31358))) {
-                            class512.method2822(new ItemStack(Items.field31358), false);
+                        if (!playerEntity.field3006.method2362(new ItemStack(Items.field31358))) {
+                            playerEntity.method2822(new ItemStack(Items.field31358), false);
                         }
                     }
                     else {
-                        class512.method2716(class513, new ItemStack(Items.field31358));
+                        playerEntity.method2716(class513, new ItemStack(Items.field31358));
                     }
                     return true;
                 }
             }
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     public Class804 method4704(final Class788 class788) {

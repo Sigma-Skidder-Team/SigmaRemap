@@ -282,11 +282,11 @@ public class Class5799 implements IClientPlayNetHandler
                                     }
                                     else {
                                         final Entity method13032 = this.field23809.getEntityByID(class4339.method13034());
-                                        if (!(method13032 instanceof Class512)) {
+                                        if (!(method13032 instanceof PlayerEntity)) {
                                             class4340 = null;
                                         }
                                         else {
-                                            class4340 = new Class425(this.field23809, (Class512)method13032, method13025, method13026, method13027);
+                                            class4340 = new Class425(this.field23809, (PlayerEntity)method13032, method13025, method13026, method13027);
                                         }
                                     }
                                 }
@@ -680,7 +680,7 @@ public class Class5799 implements IClientPlayNetHandler
                             }
                         }
                         else {
-                            ((Class512)method6741).method2849(false, false);
+                            ((PlayerEntity)method6741).method2849(false, false);
                         }
                     }
                     else {
@@ -785,10 +785,10 @@ public class Class5799 implements IClientPlayNetHandler
         }
     }
     
-    private static ItemStack method17301(final Class512 class512) {
+    private static ItemStack method17301(final PlayerEntity playerEntity) {
         final Class316[] values = Class316.values();
         for (int length = values.length, i = 0; i < length; ++i) {
-            final ItemStack method2715 = class512.method2715(values[i]);
+            final ItemStack method2715 = playerEntity.method2715(values[i]);
             if (method2715.getItem() == Items.field31590) {
                 return method2715;
             }

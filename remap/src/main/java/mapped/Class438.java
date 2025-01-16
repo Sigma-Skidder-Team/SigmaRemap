@@ -55,22 +55,22 @@ public class Class438 extends TileEntity implements Class439
         return this.field2663.size() == 3;
     }
     
-    public void method2218(final Class512 class512, final Class7096 class513, final Class2144 class514) {
+    public void method2218(final PlayerEntity playerEntity, final Class7096 class513, final Class2144 class514) {
         final List<Entity> method2219 = this.method2219(class513, class514);
-        if (class512 != null) {
+        if (playerEntity != null) {
             for (final Entity class515 : method2219) {
                 if (!(class515 instanceof Class798)) {
                     continue;
                 }
                 final Class798 class516 = (Class798)class515;
-                if (class512.method1934().squareDistanceTo(class515.method1934()) > 16.0) {
+                if (playerEntity.method1934().squareDistanceTo(class515.method1934()) > 16.0) {
                     continue;
                 }
                 if (this.method2223()) {
                     class516.method4514(400);
                 }
                 else {
-                    class516.method4541(class512);
+                    class516.method4541(playerEntity);
                 }
             }
         }

@@ -39,7 +39,7 @@ public class Class7816 extends Class7814
         if (Class7816.field32015.field4684.ticksExisted < 10) {
             this.field32022.clear();
         }
-        for (final Class512 class5744 : Class6430.method19108()) {
+        for (final PlayerEntity class5744 : Class6430.method19108()) {
             if (class5744 != Class7816.field32015.field4684) {
                 Label_0079: {
                     if (class5744 != null) {
@@ -78,7 +78,7 @@ public class Class7816 extends Class7814
             }
             if (class5723.method16998() instanceof Class4372) {
                 final Class4372 class5724 = (Class4372)class5723.method16998();
-                if (!(class5724.getEntity(Class7816.field32015.field4683) instanceof Class512)) {
+                if (!(class5724.getEntity(Class7816.field32015.field4683) instanceof PlayerEntity)) {
                     return;
                 }
                 final Entity method13142 = class5724.getEntity(Class7816.field32015.field4683);

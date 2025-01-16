@@ -86,7 +86,7 @@ public class Class3896 extends Class3895 implements Class3840
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (class7099.field3025.field27305) {
             class7096 = ((StateHolder<O, Class7096>)class7096).method21768(Class3896.field17580);
             class7097.method6705(class7099, class7098, Class8520.field35085, Class286.field1582, 0.3f, (class7096.method21772(Class3896.field17580) != Class110.field348) ? 0.5f : 0.55f);

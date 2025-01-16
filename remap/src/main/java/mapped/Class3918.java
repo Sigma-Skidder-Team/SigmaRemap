@@ -33,7 +33,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (class7096.get((IProperty<Boolean>)Class3918.field17760)) {
             final TileEntity method6727 = class7097.method6727(class7098);
             if (method6727 instanceof Class448) {
@@ -167,7 +167,7 @@ public class Class3918 extends Class3841 implements Class3856
                 boolean b = false;
                 Label_0114: {
                     if (method12031 != null) {
-                        if (!(method12031 instanceof Class512)) {
+                        if (!(method12031 instanceof PlayerEntity)) {
                             if (!class1847.method6765().method31216(Class8878.field37316)) {
                                 b = false;
                                 break Label_0114;

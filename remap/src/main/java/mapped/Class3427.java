@@ -19,9 +19,9 @@ public class Class3427 extends Class3426<Class473>
     private final Class473 field16200;
     private final Class470 field16201;
     public final boolean field16202;
-    private final Class512 field16203;
+    private final PlayerEntity field16203;
     
-    public Class3427(final Class464 class464, final boolean field16202, final Class512 field16203) {
+    public Class3427(final Class464 class464, final boolean field16202, final PlayerEntity field16203) {
         super(null, 0);
         this.field16200 = new Class473(this, 2, 2);
         this.field16201 = new Class470();
@@ -69,21 +69,21 @@ public class Class3427 extends Class3426<Class473>
     }
     
     @Override
-    public void method10859(final Class512 class512) {
-        super.method10859(class512);
+    public void method10859(final PlayerEntity playerEntity) {
+        super.method10859(playerEntity);
         this.field16201.method2164();
-        if (!class512.world.isRemote) {
-            this.method10881(class512, class512.world, this.field16200);
+        if (!playerEntity.world.isRemote) {
+            this.method10881(playerEntity, playerEntity.world, this.field16200);
         }
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
+    public boolean method10854(final PlayerEntity playerEntity) {
         return true;
     }
     
     @Override
-    public ItemStack method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
         ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
@@ -142,9 +142,9 @@ public class Class3427 extends Class3426<Class473>
                 if (method20053.method27690() == class513.method27690()) {
                     return ItemStack.field34174;
                 }
-                final ItemStack method20055 = class514.method20047(class512, method20053);
+                final ItemStack method20055 = class514.method20047(playerEntity, method20053);
                 if (n == 0) {
-                    class512.method2822(method20055, false);
+                    playerEntity.method2822(method20055, false);
                 }
             }
         }

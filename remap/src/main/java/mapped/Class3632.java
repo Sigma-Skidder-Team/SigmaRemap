@@ -10,7 +10,7 @@ public class Class3632 extends Class3628
     private final Class819 field16868;
     
     public Class3632(final Class819 field16868) {
-        super(field16868, Class512.class, 8.0f);
+        super(field16868, PlayerEntity.class, 8.0f);
         this.field16868 = field16868;
     }
     

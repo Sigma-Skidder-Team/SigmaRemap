@@ -36,7 +36,7 @@ public class Class3359 extends Class3355
         final Iterator iterator = arrayList.iterator();
         while (iterator.hasNext()) {
             final Entity class399 = (Entity)iterator.next();
-            if (class399 instanceof Class512 && !Class9463.method35173().method35191().method31751(class399)) {
+            if (class399 instanceof PlayerEntity && !Class9463.method35173().method35191().method31751(class399)) {
                 continue;
             }
             iterator.remove();

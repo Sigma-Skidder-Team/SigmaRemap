@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 public abstract class Class819 extends Class788 implements Class820, Class822
 {
     private static final DataParameter<Integer> field4388;
-    private Class512 field4389;
+    private PlayerEntity field4389;
     public Class57 field4390;
     private final Class443 field4391;
     
@@ -67,13 +67,13 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public void method4822(final Class512 field4389) {
+    public void method4822(final PlayerEntity field4389) {
         this.field4389 = field4389;
     }
     
     @Nullable
     @Override
-    public Class512 method4823() {
+    public PlayerEntity method4823() {
         return this.field4389;
     }
     
@@ -194,7 +194,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public boolean method4204(final Class512 class512) {
+    public boolean method4204(final PlayerEntity playerEntity) {
         return false;
     }
     

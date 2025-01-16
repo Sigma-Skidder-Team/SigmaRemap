@@ -24,7 +24,7 @@ public class Class4081 extends Item
         final BlockPos method21639 = class7075.method21639();
         final Direction method21640 = class7075.method21648();
         final BlockPos method21641 = method21639.method1149(method21640);
-        final Class512 method21642 = class7075.method21652();
+        final PlayerEntity method21642 = class7075.method21652();
         final ItemStack method21643 = class7075.method21651();
         if (method21642 != null && !this.method12287(method21642, method21640, method21643, method21641)) {
             return Class2201.field13403;
@@ -55,7 +55,7 @@ public class Class4081 extends Item
         return Class2201.field13400;
     }
     
-    public boolean method12287(final Class512 class512, final Direction class513, final ItemStack class514, final BlockPos class515) {
-        return !class513.getAxis().isVertical() && class512.method2881(class515, class513, class514);
+    public boolean method12287(final PlayerEntity playerEntity, final Direction class513, final ItemStack class514, final BlockPos class515) {
+        return !class513.getAxis().isVertical() && playerEntity.method2881(class515, class513, class514);
     }
 }

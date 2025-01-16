@@ -123,7 +123,7 @@ public class EntityType<T extends Entity>
     public static final EntityType<Class851> field29055;
     public static final EntityType<Class779> field29056;
     public static final EntityType<LightningBoltEntity> field29057;
-    public static final EntityType<Class512> field29058;
+    public static final EntityType<PlayerEntity> field29058;
     public static final EntityType<Class425> field29059;
     private final Class8962<T> field29060;
     private final Class1976 field29061;
@@ -159,19 +159,19 @@ public class EntityType<T extends Entity>
     }
     
     @Nullable
-    public Entity method23356(final World class1847, final ItemStack class1848, final Class512 class1849, final BlockPos class1850, final Class2101 class1851, final boolean b, final boolean b2) {
+    public Entity method23356(final World class1847, final ItemStack class1848, final PlayerEntity class1849, final BlockPos class1850, final Class2101 class1851, final boolean b, final boolean b2) {
         return this.method23357(class1847, (class1848 != null) ? class1848.method27657() : null, (class1848 != null && class1848.method27667()) ? class1848.method27664() : null, class1849, class1850, class1851, b, b2);
     }
     
     @Nullable
-    public T method23357(final World class1847, final Class51 class1848, final ITextComponent class1849, final Class512 class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
+    public T method23357(final World class1847, final Class51 class1848, final ITextComponent class1849, final PlayerEntity class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
         final Entity method23358 = this.method23358(class1847, class1848, class1849, class1850, class1851, class1852, b, b2);
         class1847.method6886(method23358);
         return (T)method23358;
     }
     
     @Nullable
-    public T method23358(final World class1847, final Class51 class1848, final ITextComponent class1849, final Class512 class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
+    public T method23358(final World class1847, final Class51 class1848, final ITextComponent class1849, final PlayerEntity class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
         final Class759 method23371 = (Class759)this.method23371(class1847);
         if (method23371 != null) {
             double method23372;
@@ -209,7 +209,7 @@ public class EntityType<T extends Entity>
         return 1.0 + VoxelShapes.method24498(Axis.Y, class1854, class1852.method6980(null, method18494, Collections.emptySet()), b ? -2.0 : -1.0);
     }
     
-    public static void method23360(final World class1847, final Class512 class1848, final Entity class1849, final Class51 class1850) {
+    public static void method23360(final World class1847, final PlayerEntity class1848, final Entity class1849, final Class51 class1850) {
         if (class1850 != null) {
             if (class1850.method316("EntityTag", 10)) {
                 final MinecraftServer method6679 = class1847.getServer();
@@ -606,7 +606,7 @@ public class EntityType<T extends Entity>
         field29055 = method23353("phantom", (Class8868<Class851>)Class8868.method31155((Class8962<T>)Class851::new, Class1976.field10948).method31157(0.9f, 0.5f));
         field29056 = method23353("ravager", (Class8868<Class779>)Class8868.method31155((Class8962<T>)Class779::new, Class1976.field10948).method31157(1.95f, 2.2f));
         field29057 = method23353("lightning_bolt", (Class8868<LightningBoltEntity>)Class8868.method31156(Class1976.field10952).method31159().method31157(0.0f, 0.0f));
-        field29058 = method23353("player", (Class8868<Class512>)Class8868.method31156(Class1976.field10952).method31159().method31158().method31157(0.6f, 1.8f));
+        field29058 = method23353("player", (Class8868<PlayerEntity>)Class8868.method31156(Class1976.field10952).method31159().method31158().method31157(0.6f, 1.8f));
         field29059 = method23353("fishing_bobber", (Class8868<Class425>)Class8868.method31156(Class1976.field10952).method31159().method31158().method31157(0.25f, 0.25f));
     }
 }

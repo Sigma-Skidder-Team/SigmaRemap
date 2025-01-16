@@ -75,7 +75,7 @@ public class Class3904 extends Class3902
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7097.isRemote) {
             class7097.method6705(null, class7098, Class8520.field35343, Class286.field1582, 0.3f, ((boolean)this.method12006(class7096, class7097, class7098).method21772((IProperty<Boolean>)Class3904.field17684)) ? 0.6f : 0.5f);
             return Class2201.field13400;

@@ -23,8 +23,8 @@ public class Class8233<U>
     public static final Class8233<List<LivingEntity>> field33804;
     public static final Class8233<List<LivingEntity>> field33805;
     public static final Class8233<List<LivingEntity>> field33806;
-    public static final Class8233<List<Class512>> field33807;
-    public static final Class8233<Class512> field33808;
+    public static final Class8233<List<PlayerEntity>> field33807;
+    public static final Class8233<PlayerEntity> field33808;
     public static final Class8233<Class6949> field33809;
     public static final Class8233<Class6438> field33810;
     public static final Class8233<LivingEntity> field33811;

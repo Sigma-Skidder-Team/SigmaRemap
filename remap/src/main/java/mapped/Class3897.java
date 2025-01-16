@@ -21,7 +21,7 @@ public class Class3897 extends Class3895
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (class7099.field3025.field27305) {
             class7097.setBlockState(class7098, ((StateHolder<O, BlockState>)class7096).method21768((IProperty<Comparable>)Class3897.field17583), 3);
             return Class2201.field13400;

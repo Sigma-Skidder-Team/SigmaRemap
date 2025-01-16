@@ -23,7 +23,7 @@ public class Class4093 extends Item
     }
     
     @Nullable
-    public IPacket<?> method12325(final ItemStack class8321, final World class8322, final Class512 class8323) {
+    public IPacket<?> method12325(final ItemStack class8321, final World class8322, final PlayerEntity class8323) {
         return null;
     }
 }

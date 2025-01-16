@@ -24,8 +24,8 @@ public class Class6606 extends Class6601
     }
     
     @Override
-    public boolean method20061(final Class512 class512) {
-        if (class512.field3025.field27304 || class512.field3026 >= Class3441.method11001(this.field26184).method19832()) {
+    public boolean method20061(final PlayerEntity playerEntity) {
+        if (playerEntity.field3025.field27304 || playerEntity.field3026 >= Class3441.method11001(this.field26184).method19832()) {
             if (Class3441.method11001(this.field26184).method19832() > 0) {
                 if (this.method20054()) {
                     return true;
@@ -36,9 +36,9 @@ public class Class6606 extends Class6601
     }
     
     @Override
-    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
-        if (!class512.field3025.field27304) {
-            class512.method2874(-Class3441.method11001(this.field26184).method19832());
+    public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
+        if (!playerEntity.field3025.field27304) {
+            playerEntity.method2874(-Class3441.method11001(this.field26184).method19832());
         }
         Class3441.method11002(this.field26184).method2160(0, ItemStack.field34174);
         if (Class3441.method11003(this.field26184) <= 0) {

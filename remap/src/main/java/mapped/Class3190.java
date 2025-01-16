@@ -63,7 +63,7 @@ public class Class3190 extends Class3167
                 for (int length = method12989.length, i = 0; i < length; ++i) {
                     final Entity method12990 = Class3190.field15514.field4683.getEntityByID(method12989[i]);
                     if (method12990 != null) {
-                        if (method12990 instanceof Class512) {
+                        if (method12990 instanceof PlayerEntity) {
                             if (this.field15594.containsKey(method12990.method1865())) {
                                 this.field15594.remove(method12990.method1865());
                             }

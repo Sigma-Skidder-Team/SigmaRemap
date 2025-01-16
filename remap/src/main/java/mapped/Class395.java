@@ -349,7 +349,7 @@ public class Class395 extends MinecraftServer implements Class396
     }
     
     @Override
-    public boolean method1549(final World class1847, final BlockPos class1848, final Class512 class1849) {
+    public boolean method1549(final World class1847, final BlockPos class1848, final PlayerEntity class1849) {
         if (class1847.dimension.getType() != DimensionType.field2223) {
             return false;
         }

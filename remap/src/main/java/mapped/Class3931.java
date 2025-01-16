@@ -18,7 +18,7 @@ public class Class3931 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7096.method21772((IProperty<Boolean>)Class3931.field17811)) {
             return Class2201.field13402;
         }

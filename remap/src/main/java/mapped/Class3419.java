@@ -13,7 +13,7 @@ public final class Class3419 extends Class3418
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
+    public boolean method10854(final PlayerEntity playerEntity) {
         return false;
     }
 }

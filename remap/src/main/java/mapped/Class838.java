@@ -137,13 +137,13 @@ public class Class838 extends Class833
     }
     
     @Override
-    public void method1736(final Class512 class512) {
+    public void method1736(final PlayerEntity playerEntity) {
         final int method4988 = this.method4988();
-        if (class512 instanceof Class513) {
+        if (playerEntity instanceof Class513) {
             if (method4988 > 0) {
-                if (class512.attackEntityFrom(DamageSource.method25693(this), (float)(1 + method4988))) {
-                    ((Class513)class512).field3039.method17469(new Class4306(9, 0.0f));
-                    class512.method2655(new Class1948(Class9439.field40492, 60 * method4988, 0));
+                if (playerEntity.attackEntityFrom(DamageSource.method25693(this), (float)(1 + method4988))) {
+                    ((Class513) playerEntity).field3039.method17469(new Class4306(9, 0.0f));
+                    playerEntity.method2655(new Class1948(Class9439.field40492, 60 * method4988, 0));
                 }
             }
         }
@@ -192,7 +192,7 @@ public class Class838 extends Class833
         field4455 = EntityDataManager.method33564(Class838.class, Class7709.field30654);
         field4458 = (class511 -> {
             if (class511 != null) {
-                if (class511 instanceof Class512 && (class511.isSpectator() || ((Class512)class511).method2889())) {
+                if (class511 instanceof PlayerEntity && (class511.isSpectator() || ((PlayerEntity)class511).method2889())) {
                     return false;
                 }
                 else {

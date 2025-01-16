@@ -24,7 +24,7 @@ public class Class503 implements Class434
     
     @Nullable
     @Override
-    public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
+    public Class3418 method2166(final int n, final Class464 class464, final PlayerEntity class465) {
         if (this.field2878.method2328(class465) && this.field2879.method2328(class465)) {
             this.field2878.method2326(class464.field2744);
             this.field2879.method2326(class464.field2744);

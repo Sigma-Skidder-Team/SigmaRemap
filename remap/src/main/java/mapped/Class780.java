@@ -34,10 +34,10 @@ public abstract class Class780 extends Class763 implements Class768
         this.field4114.method22062(3, new Class3496(this, 1.0));
         this.field4114.method22062(3, new Class3448<Object>(this, Class799.class, 6.0f, 1.0, 1.2));
         this.field4114.method22062(5, new Class3517(this, 1.0));
-        this.field4114.method22062(6, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(6, new Class3503(this));
         this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]));
-        this.field4115.method22062(2, new Class3555<Object>(this, Class512.class, true));
+        this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, true));
         this.field4115.method22062(3, new Class3555<Object>(this, Class793.class, 10, true, false, Class793.field4242));
     }

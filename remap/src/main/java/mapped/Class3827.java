@@ -20,7 +20,7 @@ public class Class3827 extends Item
     
     @Override
     public Class2201 method11694(final Class7075 class7075) {
-        final Class512 method21652 = class7075.method21652();
+        final PlayerEntity method21652 = class7075.method21652();
         final World method21653 = class7075.method21654();
         final BlockPos method21654 = class7075.method21639();
         final BlockState method21655 = method21653.getBlockState(method21654);

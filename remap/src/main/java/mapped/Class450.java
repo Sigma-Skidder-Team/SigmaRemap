@@ -83,8 +83,8 @@ public class Class450 implements Class446
     }
     
     @Override
-    public boolean method2162(final Class512 class512) {
-        return this.field2691.method4823() == class512;
+    public boolean method2162(final PlayerEntity playerEntity) {
+        return this.field2691.method4823() == playerEntity;
     }
     
     @Override

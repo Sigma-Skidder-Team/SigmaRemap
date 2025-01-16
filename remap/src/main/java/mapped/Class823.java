@@ -13,11 +13,11 @@ public class Class823 implements Class822
 {
     private static String[] field4394;
     private final Class450 field4395;
-    private final Class512 field4396;
+    private final PlayerEntity field4396;
     private Class57 field4397;
     private int field4398;
     
-    public Class823(final Class512 field4396) {
+    public Class823(final PlayerEntity field4396) {
         this.field4397 = new Class57();
         this.field4396 = field4396;
         this.field4395 = new Class450(this);
@@ -25,12 +25,12 @@ public class Class823 implements Class822
     
     @Nullable
     @Override
-    public Class512 method4823() {
+    public PlayerEntity method4823() {
         return this.field4396;
     }
     
     @Override
-    public void method4822(final Class512 class512) {
+    public void method4822(final PlayerEntity playerEntity) {
     }
     
     @Override

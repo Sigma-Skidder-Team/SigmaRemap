@@ -59,7 +59,7 @@ public class Class8522
     
     private static int method28540(final Class7492 class7492, final Class6878 class7493) {
         if (!class7493.method21074().isEmpty()) {
-            class7492.method23257(new Class2259("commands.bossbar.get.players.some", new Object[] { class7493.method21057(), class7493.method21074().size(), Class9479.method35298(class7493.method21074(), Class512::getDisplayName) }), true);
+            class7492.method23257(new Class2259("commands.bossbar.get.players.some", new Object[] { class7493.method21057(), class7493.method21074().size(), Class9479.method35298(class7493.method21074(), PlayerEntity::getDisplayName) }), true);
         }
         else {
             class7492.method23257(new Class2259("commands.bossbar.get.players.none", new Object[] { class7493.method21057() }), true);
@@ -133,7 +133,7 @@ public class Class8522
     private static int method28547(final Class7492 class7492, final Class6878 class7493, final Collection<Class513> collection) throws CommandSyntaxException {
         if (class7493.method21058(collection)) {
             if (!class7493.method21074().isEmpty()) {
-                class7492.method23257(new Class2259("commands.bossbar.set.players.success.some", new Object[] { class7493.method21057(), collection.size(), Class9479.method35298((Collection<Object>)collection, Class512::getDisplayName) }), true);
+                class7492.method23257(new Class2259("commands.bossbar.set.players.success.some", new Object[] { class7493.method21057(), collection.size(), Class9479.method35298((Collection<Object>)collection, PlayerEntity::getDisplayName) }), true);
             }
             else {
                 class7492.method23257(new Class2259("commands.bossbar.set.players.success.none", new Object[] { class7493.method21057() }), true);

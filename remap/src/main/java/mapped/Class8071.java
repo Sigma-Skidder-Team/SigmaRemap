@@ -243,14 +243,14 @@ public class Class8071
         return true;
     }
     
-    public Class2201 method26479(final Class512 class512, final World class513, final ItemStack class514, final Class316 class515) {
+    public Class2201 method26479(final PlayerEntity playerEntity, final World class513, final ItemStack class514, final Class316 class515) {
         if (this.field33249 == Class101.field301) {
             return Class2201.field13402;
         }
-        if (!class512.method2906().method25769(class514.getItem())) {
+        if (!playerEntity.method2906().method25769(class514.getItem())) {
             final int method27690 = class514.method27690();
             final int method27691 = class514.method27632();
-            final Class9355<ItemStack> method27692 = class514.method27625(class513, class512, class515);
+            final Class9355<ItemStack> method27692 = class514.method27625(class513, playerEntity, class515);
             final ItemStack class516 = method27692.method34673();
             if (class516 == class514) {
                 if (class516.method27690() == method27690) {
@@ -263,12 +263,12 @@ public class Class8071
             }
             if (method27692.method34672() == Class2201.field13403) {
                 if (class516.method27652() > 0) {
-                    if (!class512.method2756()) {
+                    if (!playerEntity.method2756()) {
                         return method27692.method34672();
                     }
                 }
             }
-            class512.method2716(class515, class516);
+            playerEntity.method2716(class515, class516);
             if (this.method26484()) {
                 class516.method27691(method27690);
                 if (class516.method27630()) {
@@ -278,31 +278,31 @@ public class Class8071
                 }
             }
             if (class516.method27620()) {
-                class512.method2716(class515, ItemStack.field34174);
+                playerEntity.method2716(class515, ItemStack.field34174);
             }
-            if (!class512.method2756()) {
-                ((Class513)class512).method2929(class512.field3008);
+            if (!playerEntity.method2756()) {
+                ((Class513) playerEntity).method2929(playerEntity.field3008);
             }
             return method27692.method34672();
         }
         return Class2201.field13402;
     }
     
-    public Class2201 method26480(final Class512 class512, final World class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
+    public Class2201 method26480(final PlayerEntity playerEntity, final World class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
         final BlockPos method21447 = class516.method21447();
         final BlockState method21448 = class513.getBlockState(method21447);
         if (this.field33249 != Class101.field301) {
-            final boolean b = !class512.getHeldItemMainhand().method27620() || !class512.method2714().method27620();
-            if (!class512.method2804() || !b) {
-                final Class2201 method21449 = method21448.method21744(class513, class512, class515, class516);
+            final boolean b = !playerEntity.getHeldItemMainhand().method27620() || !playerEntity.method2714().method27620();
+            if (!playerEntity.method2804() || !b) {
+                final Class2201 method21449 = method21448.method21744(class513, playerEntity, class515, class516);
                 if (method21449.method8374()) {
                     return method21449;
                 }
             }
-            if (class514.method27620() || class512.method2906().method25769(class514.getItem())) {
+            if (class514.method27620() || playerEntity.method2906().method25769(class514.getItem())) {
                 return Class2201.field13402;
             }
-            final Class7075 class517 = new Class7075(class512, class515, class516);
+            final Class7075 class517 = new Class7075(playerEntity, class515, class516);
             if (!this.method26484()) {
                 return class514.method27623(class517);
             }
@@ -316,7 +316,7 @@ public class Class8071
             if (method21452 == null) {
                 return Class2201.field13402;
             }
-            class512.method2833(method21452);
+            playerEntity.method2833(method21452);
             return Class2201.field13400;
         }
     }

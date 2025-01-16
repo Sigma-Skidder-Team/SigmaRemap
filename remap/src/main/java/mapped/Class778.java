@@ -27,7 +27,7 @@ public class Class778 extends Class776 implements Class768
     private static final DataParameter<Boolean> field4181;
     private int field4182;
     private Class3567<Class776> field4183;
-    private Class3562<Class512> field4184;
+    private Class3562<PlayerEntity> field4184;
     
     public Class778(final EntityType<? extends Class778> class7499, final World class7500) {
         super(class7499, class7500);
@@ -47,11 +47,11 @@ public class Class778 extends Class776 implements Class768
             }
             return b;
         });
-        this.field4184 = new Class3562<Class512>(this, Class512.class, 10, true, false, null);
+        this.field4184 = new Class3562<PlayerEntity>(this, PlayerEntity.class, 10, true, false, null);
         this.field4114.method22062(1, new Class3490(this));
         this.field4114.method22062(2, new Class3507(this, 1.0, 60, 10.0f));
         this.field4114.method22062(2, new Class3517(this, 1.0));
-        this.field4114.method22062(3, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(3, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(3, new Class3503(this));
         this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[] { Class776.class }));
         this.field4115.method22062(2, this.field4183);

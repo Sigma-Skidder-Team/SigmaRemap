@@ -37,8 +37,8 @@ public class Class3417 extends Class3418
     }
     
     @Override
-    public boolean method10854(final Class512 class512) {
-        return Class3418.method10866(this.field16145, class512, Class7521.field29810);
+    public boolean method10854(final PlayerEntity playerEntity) {
+        return Class3418.method10866(this.field16145, playerEntity, Class7521.field29810);
     }
     
     @Override
@@ -106,7 +106,7 @@ public class Class3417 extends Class3418
     }
     
     @Override
-    public ItemStack method10858(final Class512 class512, final int n) {
+    public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
         ItemStack class513 = ItemStack.field34174;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
@@ -169,7 +169,7 @@ public class Class3417 extends Class3418
                                 }
                             }).orElse(other);
                         }
-                        method20054.method11723(method20053, class512.world, class512);
+                        method20054.method11723(method20053, playerEntity.world, playerEntity);
                         if (!this.method10888(method20053, 3, 39, true)) {
                             return ItemStack.field34174;
                         }
@@ -184,7 +184,7 @@ public class Class3417 extends Class3418
                     return ItemStack.field34174;
                 }
                 this.field16146 = true;
-                class514.method20047(class512, method20053);
+                class514.method20047(playerEntity, method20053);
                 this.field16146 = false;
                 this.method10876();
             }
@@ -193,8 +193,8 @@ public class Class3417 extends Class3418
     }
     
     @Override
-    public void method10859(final Class512 class512) {
-        super.method10859(class512);
+    public void method10859(final PlayerEntity playerEntity) {
+        super.method10859(playerEntity);
         this.field16149.method2159(2);
         this.field16145.method22437((p1, p2) -> this.method10881(class513, class513.field2391, this.field16148));
     }

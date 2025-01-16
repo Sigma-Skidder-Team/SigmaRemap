@@ -34,7 +34,7 @@ public class Class853 extends Class759 implements Class762
         this.field4114.method22062(2, new Class3504(this));
         this.field4114.method22062(3, new Class3527(this));
         this.field4114.method22062(5, new Class3493(this));
-        this.field4115.method22062(1, new Class3555<Object>(this, Class512.class, 10, true, false, class511 -> Math.abs(class511.getPosY() - this.getPosY()) <= 4.0));
+        this.field4115.method22062(1, new Class3555<Object>(this, PlayerEntity.class, 10, true, false, class511 -> Math.abs(class511.getPosY() - this.getPosY()) <= 4.0));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, true));
     }
     
@@ -196,9 +196,9 @@ public class Class853 extends Class759 implements Class762
     }
     
     @Override
-    public void method1736(final Class512 class512) {
+    public void method1736(final PlayerEntity playerEntity) {
         if (this.method5136()) {
-            this.method5135(class512);
+            this.method5135(playerEntity);
         }
     }
     

@@ -30,7 +30,7 @@ public class Class3628 extends Class3446
         this.field16860 = field16860;
         this.field16862 = field16861;
         this.method11019(EnumSet.of(Class2139.field12581));
-        if (field16859 != Class512.class) {
+        if (field16859 != PlayerEntity.class) {
             this.field16864 = new Class7843().method25337(field16860).method25339().method25338().method25341();
         }
         else {
@@ -44,7 +44,7 @@ public class Class3628 extends Class3446
             if (this.field16858.method4152() != null) {
                 this.field16859 = this.field16858.method4152();
             }
-            if (this.field16863 != Class512.class) {
+            if (this.field16863 != PlayerEntity.class) {
                 this.field16859 = this.field16858.world.method7139((Class<? extends Entity>)this.field16863, this.field16864, (LivingEntity)this.field16858, this.field16858.getPosX(), this.field16858.method1944(), this.field16858.getPosZ(), this.field16858.getBoundingBox().method18495(this.field16860, 3.0, this.field16860));
             }
             else {

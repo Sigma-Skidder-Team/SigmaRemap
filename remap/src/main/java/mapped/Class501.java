@@ -133,10 +133,10 @@ public class Class501 extends TileEntity
         return this.method2180(new Class51());
     }
     
-    public boolean method2553(final Class512 class512) {
-        if (class512.method2908()) {
-            if (class512.method1896().isRemote) {
-                class512.method2830(this);
+    public boolean method2553(final PlayerEntity playerEntity) {
+        if (playerEntity.method2908()) {
+            if (playerEntity.method1896().isRemote) {
+                playerEntity.method2830(this);
             }
             return true;
         }

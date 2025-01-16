@@ -1092,7 +1092,7 @@ public abstract class Entity implements INameable, ICommandSource {
         return n * n + n2 * n2 + n3 * n3;
     }
 
-    public void method1736(final Class512 class512) {
+    public void method1736(final PlayerEntity playerEntity) {
     }
 
     public void method1737(final Entity class399) {
@@ -1436,7 +1436,7 @@ public abstract class Entity implements INameable, ICommandSource {
         }
     }
 
-    public boolean method1770(final Class512 class512, final Class316 class513) {
+    public boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
         return false;
     }
 
@@ -1523,8 +1523,8 @@ public abstract class Entity implements INameable, ICommandSource {
     public void method1785(final Entity class399) {
         if (class399.method1920() == this) {
             if (!this.world.isRemote) {
-                if (class399 instanceof Class512) {
-                    if (!(this.method1907() instanceof Class512)) {
+                if (class399 instanceof PlayerEntity) {
+                    if (!(this.method1907() instanceof PlayerEntity)) {
                         this.passengers.add(0, class399);
                         return;
                     }
@@ -1750,12 +1750,12 @@ public abstract class Entity implements INameable, ICommandSource {
         return this.method1829(5);
     }
 
-    public boolean method1824(final Class512 class512) {
-        if (!class512.isSpectator()) {
+    public boolean method1824(final PlayerEntity playerEntity) {
+        if (!playerEntity.isSpectator()) {
             final Team method1825 = this.getTeam();
             if (method1825 != null) {
-                if (class512 != null) {
-                    if (class512.getTeam() == method1825) {
+                if (playerEntity != null) {
+                    if (playerEntity.getTeam() == method1825) {
                         if (method1825.method20552()) {
                             return false;
                         }
@@ -1995,7 +1995,7 @@ public abstract class Entity implements INameable, ICommandSource {
                 final double method1902 = MathHelper.clamp(method1900, min, min3);
                 final double method1903 = MathHelper.clamp(method1901, min2, min4);
                 final Vec3d method1904 = this.method1859();
-                final Class9402 method1905 = method1899.method6909().method31768(new BlockPos(method1902, this.getPosY(), method1903), class5487, this.method1860(), method1904.x, method1904.y, this instanceof Class512);
+                final Class9402 method1905 = method1899.method6909().method31768(new BlockPos(method1902, this.getPosY(), method1903), class5487, this.method1860(), method1904.x, method1904.y, this instanceof PlayerEntity);
                 if (method1905 == null) {
                     return null;
                 }
@@ -2256,7 +2256,7 @@ public abstract class Entity implements INameable, ICommandSource {
         return this.world.getServer();
     }
 
-    public Class2201 method1898(final Class512 class512, final Vec3d class513, final Class316 class514) {
+    public Class2201 method1898(final PlayerEntity playerEntity, final Vec3d class513, final Class316 class514) {
         return Class2201.field13402;
     }
 
@@ -2412,10 +2412,10 @@ public abstract class Entity implements INameable, ICommandSource {
 
     public boolean method1919() {
         final Entity method1907 = this.method1907();
-        if (!(method1907 instanceof Class512)) {
+        if (!(method1907 instanceof PlayerEntity)) {
             return !this.world.isRemote;
         }
-        return ((Class512) method1907).method2843();
+        return ((PlayerEntity) method1907).method2843();
     }
 
     @Nullable
@@ -2518,7 +2518,7 @@ public abstract class Entity implements INameable, ICommandSource {
             if (n > 0) {
                 class7910 = class7910.scale(1.0 / n);
             }
-            if (!(this instanceof Class512)) {
+            if (!(this instanceof PlayerEntity)) {
                 class7910 = class7910.normalize();
             }
             this.method1936(this.getMotion().add(class7910.scale(0.014)));

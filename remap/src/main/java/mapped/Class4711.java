@@ -26,7 +26,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         this.method13978(new Class1819(this));
         this.method13978(new Class1831<Class754, Class5860<Class754>>(this));
         this.method13978(new Class1801<Class754, Class5860<Class754>>(this));
-        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1817((Class4778<Class512, Class5860<Class512>>)this));
+        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1817((Class4778<PlayerEntity, Class5860<PlayerEntity>>)this));
         this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1815((Class4778<LivingEntity, Class5860<LivingEntity>>)this));
         this.method13978(new Class1822<Class754, Class5860<Class754>>(this));
     }

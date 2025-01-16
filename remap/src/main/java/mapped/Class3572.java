@@ -13,7 +13,7 @@ public class Class3572 extends Class3446
 {
     private static String[] field16669;
     private final Class799 field16670;
-    private Class512 field16671;
+    private PlayerEntity field16671;
     private final World field16672;
     private final float field16673;
     private int field16674;
@@ -56,10 +56,10 @@ public class Class3572 extends Class3446
         --this.field16674;
     }
     
-    private boolean method11112(final Class512 class512) {
+    private boolean method11112(final PlayerEntity playerEntity) {
         final Class316[] values = Class316.values();
         for (int length = values.length, i = 0; i < length; ++i) {
-            final ItemStack method2715 = class512.method2715(values[i]);
+            final ItemStack method2715 = playerEntity.method2715(values[i]);
             if (this.field16670.method4480() && method2715.getItem() == Items.field31405) {
                 return true;
             }

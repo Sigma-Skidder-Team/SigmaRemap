@@ -11,7 +11,7 @@ import net.minecraft.util.DamageSource;
 public class Class6683
 {
     public static final Class7915<Entity> field26362;
-    public static final Class7915<Class512> field26363;
+    public static final Class7915<PlayerEntity> field26363;
     public static final Class7915<DamageSource> field26364;
     public static final Class7915<Entity> field26365;
     public static final Class7915<Entity> field26366;

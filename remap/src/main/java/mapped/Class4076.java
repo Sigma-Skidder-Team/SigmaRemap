@@ -32,7 +32,7 @@ public class Class4076 extends Class4071
             if (method21654.getBlockState(method21655.method1137()).method21706()) {
                 final Class7096 class7076 = Class4076.field18180.get(method21654.getBlockState(method21655).method21696());
                 if (class7076 != null) {
-                    final Class512 method21656 = class7075.method21652();
+                    final PlayerEntity method21656 = class7075.method21652();
                     method21654.method6705(method21656, method21655, Class8520.field35264, Class286.field1582, 1.0f, 1.0f);
                     if (!method21654.isRemote) {
                         method21654.setBlockState(method21655, class7076, 11);

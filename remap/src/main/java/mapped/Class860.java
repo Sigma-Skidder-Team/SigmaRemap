@@ -124,10 +124,10 @@ public abstract class Class860 extends Entity
     
     @Override
     public boolean method1848(final Entity class399) {
-        if (!(class399 instanceof Class512)) {
+        if (!(class399 instanceof PlayerEntity)) {
             return false;
         }
-        final Class512 class400 = (Class512)class399;
+        final PlayerEntity class400 = (PlayerEntity)class399;
         return !this.world.method6760(class400, this.field4599) || this.attackEntityFrom(DamageSource.method25695(class400), 0.0f);
     }
     

@@ -56,7 +56,7 @@ public class Class7450
         final String[] array = collection.stream().filter(s2 -> !Class8272.method27500(s2)).toArray(String[]::new);
         if (!class394.method1518()) {
             for (final String s : array) {
-                profileLookupCallback.onProfileLookupSucceeded(new GameProfile(Class512.method2893(new GameProfile((UUID)null, s)), s));
+                profileLookupCallback.onProfileLookupSucceeded(new GameProfile(PlayerEntity.method2893(new GameProfile((UUID)null, s)), s));
             }
         }
         else {
@@ -196,7 +196,7 @@ public class Class7450
             method22919(class394, Lists.newArrayList((Object[])new String[] { s }), (ProfileLookupCallback)new Class8994(class394, arrayList));
             return (!arrayList.isEmpty() && ((GameProfile)arrayList.get(0)).getId() != null) ? ((GameProfile)arrayList.get(0)).getId().toString() : "";
         }
-        return Class512.method2893(new GameProfile((UUID)null, s)).toString();
+        return PlayerEntity.method2893(new GameProfile((UUID)null, s)).toString();
     }
     
     public static boolean method22925(final Class395 class395) {

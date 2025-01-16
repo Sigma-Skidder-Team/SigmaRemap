@@ -11,7 +11,7 @@ public class Class3615 extends Class3446
     private static String[] field16808;
     private final Class840 field16809;
     private final double field16810;
-    private Class512 field16811;
+    private PlayerEntity field16811;
     
     public Class3615(final Class840 field16809, final double field16810) {
         this.field16809 = field16809;

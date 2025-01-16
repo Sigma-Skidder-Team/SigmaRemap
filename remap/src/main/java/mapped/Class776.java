@@ -109,19 +109,19 @@ public abstract class Class776 extends Class777
                     if (((Class1849)this.world).method6927(new BlockPos(this)) == null) {
                         final ItemStack method25716 = this.method2718(Class2215.field13605);
                         LivingEntity class7930 = null;
-                        if (!(method25714 instanceof Class512)) {
+                        if (!(method25714 instanceof PlayerEntity)) {
                             if (method25714 instanceof Class799) {
                                 final Class799 class7931 = (Class799)method25714;
                                 final LivingEntity method25717 = class7931.method4488();
                                 if (class7931.method4480()) {
-                                    if (method25717 instanceof Class512) {
+                                    if (method25717 instanceof PlayerEntity) {
                                         class7930 = method25717;
                                     }
                                 }
                             }
                         }
                         else {
-                            class7930 = (Class512)method25714;
+                            class7930 = (PlayerEntity)method25714;
                         }
                         if (!method25716.method27620()) {
                             if (ItemStack.method27643(method25716, Class8792.method30651())) {

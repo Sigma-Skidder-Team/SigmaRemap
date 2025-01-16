@@ -46,7 +46,7 @@ public class Class827 extends Class763
     @Override
     public void method4142() {
         this.field4114.method22062(4, new Class3486(this, this, 1.0, 3));
-        this.field4114.method22062(8, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(8, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(8, new Class3503(this));
         this.method4157();
     }
@@ -56,7 +56,7 @@ public class Class827 extends Class763
         this.field4114.method22062(6, new Class3573(this, 1.0, true, 4, this::method4924));
         this.field4114.method22062(7, new Class3517(this, 1.0));
         this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]).method11100(Class828.class));
-        this.field4115.method22062(2, new Class3555<Object>(this, Class512.class, true));
+        this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true));
         this.field4115.method22062(3, new Class3555<Object>(this, Class819.class, false));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, true));
         this.field4115.method22062(5, new Class3555<Object>(this, Class793.class, 10, true, false, Class793.field4242));
@@ -117,11 +117,11 @@ public class Class827 extends Class763
     }
     
     @Override
-    public int method2631(final Class512 class512) {
+    public int method2631(final PlayerEntity playerEntity) {
         if (this.method2625()) {
             this.field4108 *= (int)2.5f;
         }
-        return super.method2631(class512);
+        return super.method2631(playerEntity);
     }
     
     public void method4927(final boolean b) {
@@ -242,8 +242,8 @@ public class Class827 extends Class763
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         final Item method2716 = method2715.getItem();
         if (method2716 instanceof Class3831 && ((Class3831)method2716).method11769(method2715.method27657(), this.getType())) {
             if (!this.world.isRemote) {
@@ -255,14 +255,14 @@ public class Class827 extends Class763
                     if (method2715.method27667()) {
                         class514.method1872(method2715.method27664());
                     }
-                    if (!class512.field3025.field27304) {
+                    if (!playerEntity.field3025.field27304) {
                         method2715.method27693(1);
                     }
                 }
             }
             return true;
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     public boolean method4931() {

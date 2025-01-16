@@ -50,24 +50,24 @@ public class Class485 extends Class443
     }
     
     @Override
-    public boolean method2162(final Class512 class512) {
-        return (this.field2794 == null || this.field2794.method2428(class512)) && super.method2162(class512);
+    public boolean method2162(final PlayerEntity playerEntity) {
+        return (this.field2794 == null || this.field2794.method2428(playerEntity)) && super.method2162(playerEntity);
     }
     
     @Override
-    public void method2241(final Class512 class512) {
+    public void method2241(final PlayerEntity playerEntity) {
         if (this.field2794 != null) {
             this.field2794.method2426();
         }
-        super.method2241(class512);
+        super.method2241(playerEntity);
     }
     
     @Override
-    public void method2242(final Class512 class512) {
+    public void method2242(final PlayerEntity playerEntity) {
         if (this.field2794 != null) {
             this.field2794.method2427();
         }
-        super.method2242(class512);
+        super.method2242(playerEntity);
         this.field2794 = null;
     }
 }

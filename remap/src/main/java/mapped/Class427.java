@@ -285,20 +285,20 @@ public class Class427 extends Entity
     }
     
     @Override
-    public void method1736(final Class512 class512) {
+    public void method1736(final PlayerEntity playerEntity) {
         if (!this.world.isRemote) {
             final ItemStack method2107 = this.method2107();
             final Item method2108 = method2107.getItem();
             final int method2109 = method2107.method27690();
             if (this.field2615 == 0) {
-                if (this.field2618 == null || this.field2618.equals(class512.method1865())) {
-                    if (class512.field3006.method2362(method2107)) {
-                        class512.method2746(this, method2109);
+                if (this.field2618 == null || this.field2618.equals(playerEntity.method1865())) {
+                    if (playerEntity.field3006.method2362(method2107)) {
+                        playerEntity.method2746(this, method2109);
                         if (method2107.method27620()) {
                             this.method1652();
                             method2107.method27691(method2109);
                         }
-                        class512.method2860(Class8276.field33983.method8449(method2108), method2109);
+                        playerEntity.method2860(Class8276.field33983.method8449(method2108), method2109);
                     }
                 }
             }

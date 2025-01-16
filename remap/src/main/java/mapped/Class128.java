@@ -28,8 +28,8 @@ public class Class128 extends Class126
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (class8321.getItem() == Items.field31525) {
             final Entity class8323 = class8322.method23579(this.field387.method8153());
-            if (class8323 instanceof Class512) {
-                class8321.method27658().method295("SkullOwner", Class9346.method34641(new Class51(), ((Class512)class8323).method2844()));
+            if (class8323 instanceof PlayerEntity) {
+                class8321.method27658().method295("SkullOwner", Class9346.method34641(new Class51(), ((PlayerEntity)class8323).method2844()));
             }
         }
         return class8321;

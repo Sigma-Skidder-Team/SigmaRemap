@@ -57,7 +57,7 @@ public class Class3940 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (!class7099.method2880()) {
             return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);
         }

@@ -398,7 +398,7 @@ public class Class852 extends Class759 implements Class762
             method17255 = method17255 / 4.0f + Math.min(method17255, 1.0f);
         }
         if (method17255 >= 0.01f) {
-            if (class860.method25714() instanceof Class512 || class860.method25707()) {
+            if (class860.method25714() instanceof PlayerEntity || class860.method25707()) {
                 final float method17256 = this.method2664();
                 this.method5117(class860, method17255);
                 if (this.method2664() <= 0.0f) {
@@ -752,12 +752,12 @@ public class Class852 extends Class759 implements Class762
     }
     
     public void method5126(final Class858 class858, final BlockPos class859, final DamageSource class860) {
-        Class512 method7137;
-        if (!(class860.method25714() instanceof Class512)) {
+        PlayerEntity method7137;
+        if (!(class860.method25714() instanceof PlayerEntity)) {
             method7137 = this.world.method7137(Class852.field4531, class859.getX(), class859.getY(), class859.getZ());
         }
         else {
-            method7137 = (Class512)class860.method25714();
+            method7137 = (PlayerEntity)class860.method25714();
         }
         if (class858 == this.field4548) {
             this.method5116(this.field4535, DamageSource.method25703(method7137), 10.0f);

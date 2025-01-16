@@ -59,7 +59,7 @@ public abstract class Class402 extends Entity implements Class401
     public Class402(final EntityType<? extends Class402> class7499, final LivingEntity class7500, final World class7501) {
         this(class7499, class7500.getPosX(), class7500.method1944() - 0.10000000149011612, class7500.getPosZ(), class7501);
         this.method1972(class7500);
-        if (class7500 instanceof Class512) {
+        if (class7500 instanceof PlayerEntity) {
             this.field2474 = Class2151.field12783;
         }
     }
@@ -191,9 +191,9 @@ public abstract class Class402 extends Entity implements Class401
                     if (method1994.method21449() == Class2165.field12882) {
                         final Entity method1996 = ((Class7007)method1994).method21452();
                         final Entity method1997 = this.method1973();
-                        if (method1996 instanceof Class512) {
-                            if (method1997 instanceof Class512) {
-                                if (!((Class512)method1997).method2826((Class512)method1996)) {
+                        if (method1996 instanceof PlayerEntity) {
+                            if (method1997 instanceof PlayerEntity) {
+                                if (!((PlayerEntity)method1997).method2826((PlayerEntity)method1996)) {
                                     method1994 = null;
                                     method1995 = null;
                                 }
@@ -389,7 +389,7 @@ public abstract class Class402 extends Entity implements Class401
                 this.method1970(class7009);
                 if (method21454 != null) {
                     if (class7009 != method21454) {
-                        if (class7009 instanceof Class512) {
+                        if (class7009 instanceof PlayerEntity) {
                             if (method21454 instanceof Class513) {
                                 ((Class513)method21454).field3039.method17469(new Class4306(6, 0.0f));
                             }
@@ -503,8 +503,8 @@ public abstract class Class402 extends Entity implements Class401
     
     public void method1972(final Entity class399) {
         this.field2476 = ((class399 != null) ? class399.method1865() : null);
-        if (class399 instanceof Class512) {
-            this.field2474 = (((Class512)class399).field3025.field27304 ? Class2151.field12784 : Class2151.field12783);
+        if (class399 instanceof PlayerEntity) {
+            this.field2474 = (((PlayerEntity)class399).field3025.field27304 ? Class2151.field12784 : Class2151.field12783);
         }
     }
     
@@ -514,15 +514,15 @@ public abstract class Class402 extends Entity implements Class401
     }
     
     @Override
-    public void method1736(final Class512 class512) {
+    public void method1736(final PlayerEntity playerEntity) {
         if (!this.world.isRemote) {
             if (this.field2472 || this.method1987()) {
                 if (this.field2475 <= 0) {
                     int n = 0;
                     Label_0122: {
                         if (this.field2474 != Class2151.field12783) {
-                            if (this.field2474 != Class2151.field12784 || !class512.field3025.field27304) {
-                                if (!this.method1987() || this.method1973().method1865() != class512.method1865()) {
+                            if (this.field2474 != Class2151.field12784 || !playerEntity.field3025.field27304) {
+                                if (!this.method1987() || this.method1973().method1865() != playerEntity.method1865()) {
                                     n = 0;
                                     break Label_0122;
                                 }
@@ -532,12 +532,12 @@ public abstract class Class402 extends Entity implements Class401
                     }
                     int n2 = n;
                     if (this.field2474 == Class2151.field12783) {
-                        if (!class512.field3006.method2362(this.method1974())) {
+                        if (!playerEntity.field3006.method2362(this.method1974())) {
                             n2 = 0;
                         }
                     }
                     if (n2 != 0) {
-                        class512.method2746(this, 1);
+                        playerEntity.method2746(this, 1);
                         this.method1652();
                     }
                 }

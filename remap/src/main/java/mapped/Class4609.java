@@ -21,8 +21,8 @@ public class Class4609
     private static String[] field20074;
     private static final Class869 field20075;
     
-    public static boolean method13665(final Class512 class512, final BlockPos class513) {
-        return method13680(class512, class513) < method13690();
+    public static boolean method13665(final PlayerEntity playerEntity, final BlockPos class513) {
+        return method13680(playerEntity, class513) < method13690();
     }
     
     public static final Block method13666(final BlockPos class354) {
@@ -238,7 +238,7 @@ public class Class4609
         return list;
     }
     
-    public static List<Class512> method13679(final List<Class512> list) {
+    public static List<PlayerEntity> method13679(final List<PlayerEntity> list) {
         Collections.sort((List<Object>)list, (Comparator<? super Object>)new Class4453());
         return list;
     }
@@ -279,8 +279,8 @@ public class Class4609
         return MathHelper.method35640((n - 0.5f) * (n - 0.5f) + (n2 - 0.5f) * (n2 - 0.5f) + (n3 - 0.5f) * (n3 - 0.5f));
     }
     
-    public static Block method13689(final Class512 class512) {
-        return method13666(class512.method1894().method1139());
+    public static Block method13689(final PlayerEntity playerEntity) {
+        return method13666(playerEntity.method1894().method1139());
     }
     
     public static float method13690() {

@@ -21,7 +21,7 @@ public class Class6993 implements Class6991
         final Class869 method5277 = Class869.method5277();
         final Map<MinecraftProfileTexture$Type, MinecraftProfileTexture> method5278 = method5277.method5302().method24295(field27284);
         if (!method5278.containsKey(MinecraftProfileTexture$Type.SKIN)) {
-            this.field27285 = Class7634.method24004(Class512.method2893(field27284));
+            this.field27285 = Class7634.method24004(PlayerEntity.method2893(field27284));
         }
         else {
             this.field27285 = method5277.method5302().method24292((MinecraftProfileTexture)method5278.get(MinecraftProfileTexture$Type.SKIN), MinecraftProfileTexture$Type.SKIN);

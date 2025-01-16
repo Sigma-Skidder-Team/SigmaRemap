@@ -125,7 +125,7 @@ public class Class798 extends Class789 implements Class797
         final String method323 = class51.method323("HurtBy");
         if (!method323.isEmpty()) {
             this.field4261 = UUID.fromString(method323);
-            final Class512 method324 = this.world.method7143(this.field4261);
+            final PlayerEntity method324 = this.world.method7143(this.field4261);
             this.method2636(method324);
             if (method324 != null) {
                 this.field2956 = method324;
@@ -545,8 +545,8 @@ public class Class798 extends Class789 implements Class797
         if (!this.method1849(class7929)) {
             final Entity method25714 = class7929.method25714();
             if (!this.world.isRemote) {
-                if (method25714 instanceof Class512) {
-                    if (!((Class512)method25714).method2889()) {
+                if (method25714 instanceof PlayerEntity) {
+                    if (!((PlayerEntity)method25714).method2889()) {
                         if (this.method2747(method25714)) {
                             if (!this.method4214()) {
                                 Class3622.method11161(this.field4272);

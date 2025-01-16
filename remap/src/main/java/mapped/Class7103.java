@@ -57,8 +57,8 @@ public class Class7103
     
     public static Class51 method21808(final Entity class399) {
         final Class51 method1756 = class399.method1756(new Class51());
-        if (class399 instanceof Class512) {
-            final ItemStack method1757 = ((Class512)class399).field3006.method2345();
+        if (class399 instanceof PlayerEntity) {
+            final ItemStack method1757 = ((PlayerEntity)class399).field3006.method2345();
             if (!method1757.method27620()) {
                 method1756.method295("SelectedItem", method1757.method27627(new Class51()));
             }

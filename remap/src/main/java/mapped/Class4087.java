@@ -34,8 +34,8 @@ public class Class4087 extends Class4085
     
     @Override
     public void method11727(final ItemStack class8321, final World class8322, final LivingEntity class8323, final int n) {
-        if (class8323 instanceof Class512) {
-            final Class512 class8324 = (Class512)class8323;
+        if (class8323 instanceof PlayerEntity) {
+            final PlayerEntity class8324 = (PlayerEntity)class8323;
             final boolean b = class8324.field3025.field27304 || Class8742.method30195(Class7882.field32372, class8321) > 0;
             ItemStack method2790 = class8324.method2790(class8321);
             if (!method2790.method27620() || b) {
@@ -113,7 +113,7 @@ public class Class4087 extends Class4085
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         final boolean b = !class1848.method2790(method2715).method27620();
         if (!class1848.field3025.field27304 && !b) {

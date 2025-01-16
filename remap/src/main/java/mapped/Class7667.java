@@ -92,11 +92,11 @@ public class Class7667
         return Class9570.field41247.method22605() ? Class9570.method35820(class7096, Class9570.field41247, class7097, class7098) : class7096.method21706();
     }
     
-    public static boolean method24310(final ItemStack class8321, final ItemStack class8322, final Class512 class8323, final Class759 class8324) {
+    public static boolean method24310(final ItemStack class8321, final ItemStack class8322, final PlayerEntity class8323, final Class759 class8324) {
         return Class9570.field41334.method22605() ? Class9570.method35820(class8321, Class9570.field41334, class8322, class8323, class8324) : (class8321.getItem() instanceof Class4075);
     }
     
-    public static boolean method24311(final ItemStack class8321, final Class512 class8322) {
+    public static boolean method24311(final ItemStack class8321, final PlayerEntity class8322) {
         if (!Class9570.field41337.method22605()) {
             return class8321.getItem() == Items.field31583;
         }

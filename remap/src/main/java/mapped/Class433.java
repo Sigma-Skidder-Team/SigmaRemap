@@ -101,8 +101,8 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     }
     
     @Override
-    public boolean method2162(final Class512 class512) {
-        return !this.removed && class512.method1734(this) <= 64.0;
+    public boolean method2162(final PlayerEntity playerEntity) {
+        return !this.removed && playerEntity.method1734(this) <= 64.0;
     }
     
     @Nullable
@@ -150,8 +150,8 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     }
     
     @Override
-    public boolean method1770(final Class512 class512, final Class316 class513) {
-        class512.method2833(this);
+    public boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
+        playerEntity.method2833(this);
         return true;
     }
     
@@ -164,14 +164,14 @@ public abstract class Class433 extends Class428 implements Class446, Class434
         this.method1936(this.getMotion().mul(n, 0.0, n));
     }
     
-    public void method2163(final Class512 class512) {
+    public void method2163(final PlayerEntity playerEntity) {
         if (this.field2647 != null) {
             if (this.world.getServer() != null) {
                 final Class9317 method6402 = this.world.getServer().method1581().method6402(this.field2647);
                 this.field2647 = null;
                 final Class9098 method6403 = new Class9098((Class1849)this.world).method32877(Class6683.field26367, new BlockPos(this)).method32874(this.field2648);
-                if (class512 != null) {
-                    method6403.method32876(class512.method2907()).method32877(Class6683.field26362, class512);
+                if (playerEntity != null) {
+                    method6403.method32876(playerEntity.method2907()).method32877(Class6683.field26362, playerEntity);
                 }
                 method6402.method34488(this, method6403.method32883(Class7104.field27711));
             }
@@ -191,7 +191,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     
     @Nullable
     @Override
-    public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
+    public Class3418 method2166(final int n, final Class464 class464, final PlayerEntity class465) {
         if (this.field2647 != null && class465.isSpectator()) {
             return null;
         }

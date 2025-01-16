@@ -108,7 +108,7 @@ public class Class3953 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         final TileEntity method6727 = class7097.method6727(class7098);
         if (method6727 instanceof Class500 && class7099.method2908()) {
             class7099.method2829((Class500)method6727);

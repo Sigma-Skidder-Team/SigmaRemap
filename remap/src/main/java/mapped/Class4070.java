@@ -37,8 +37,8 @@ public class Class4070 extends Item
                     break;
                 }
             }
-            if (class8323 instanceof Class512) {
-                ((Class512)class8323).method2906().method25772(this, 20);
+            if (class8323 instanceof PlayerEntity) {
+                ((PlayerEntity)class8323).method2906().method25772(this, 20);
             }
         }
         return method11707;

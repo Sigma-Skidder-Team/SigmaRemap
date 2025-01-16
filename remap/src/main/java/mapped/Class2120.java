@@ -12,7 +12,7 @@ import java.util.function.BiConsumer;
 
 public enum Class2120
 {
-    field12359("points", Class512::method2871, (class513, n) -> {
+    field12359("points", PlayerEntity::method2871, (class513, n) -> {
         if (n < class513.method2875()) {
             class513.method2917(n);
             return true;

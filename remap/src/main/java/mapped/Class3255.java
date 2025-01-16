@@ -32,24 +32,24 @@ public class Class3255 extends Class3247
                             if (Class3255.field15514.field4684.method1732(class400) <= n) {
                                 if (Class3255.field15514.field4684.method2646((LivingEntity)class400)) {
                                     if (!(class400 instanceof Class857)) {
-                                        if (!this.method9883("Players") && class400 instanceof Class512) {
+                                        if (!this.method9883("Players") && class400 instanceof PlayerEntity) {
                                             iterator.remove();
                                         }
-                                        else if (class400 instanceof Class512 && Class9463.method35173().method35191().method31751(class400)) {
+                                        else if (class400 instanceof PlayerEntity && Class9463.method35173().method35191().method31751(class400)) {
                                             iterator.remove();
                                         }
                                         else if (!this.method9883("Invisible") && class400.method1823()) {
                                             iterator.remove();
                                         }
-                                        else if (!this.method9883("Animals/Monsters") && !(class400 instanceof Class512)) {
+                                        else if (!this.method9883("Animals/Monsters") && !(class400 instanceof PlayerEntity)) {
                                             iterator.remove();
                                         }
                                         else if (Class3255.field15514.field4684.method1920() != null && Class3255.field15514.field4684.method1920().equals(class400)) {
                                             iterator.remove();
                                         }
                                         else if (!class400.method1850()) {
-                                            if (class400 instanceof Class512) {
-                                                if (Class9011.method32262((Class512)class400)) {
+                                            if (class400 instanceof PlayerEntity) {
+                                                if (Class9011.method32262((PlayerEntity)class400)) {
                                                     if (Class9463.method35173().method35189().method21551(Class3203.class).method9906()) {
                                                         iterator.remove();
                                                         continue;

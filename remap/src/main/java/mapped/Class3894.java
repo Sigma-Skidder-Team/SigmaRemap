@@ -69,7 +69,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         if (this.field17401 != Material.IRON) {
             class7096 = ((StateHolder<O, Class7096>)class7096).method21768((IProperty<Comparable>)Class3894.field17567);
             class7097.setBlockState(class7098, class7096, 2);
@@ -82,12 +82,12 @@ public class Class3894 extends Class3892 implements Class3856
         return Class2201.field13402;
     }
     
-    public void method11965(final Class512 class512, final World class513, final BlockPos class514, final boolean b) {
+    public void method11965(final PlayerEntity playerEntity, final World class513, final BlockPos class514, final boolean b) {
         if (!b) {
-            class513.method6839(class512, (this.field17401 != Material.IRON) ? 1013 : 1036, class514, 0);
+            class513.method6839(playerEntity, (this.field17401 != Material.IRON) ? 1013 : 1036, class514, 0);
         }
         else {
-            class513.method6839(class512, (this.field17401 != Material.IRON) ? 1007 : 1037, class514, 0);
+            class513.method6839(playerEntity, (this.field17401 != Material.IRON) ? 1007 : 1037, class514, 0);
         }
     }
     

@@ -124,7 +124,7 @@ public class Class423 extends Entity
             this.method2057(10);
             this.method2055(this.method2056() + n * 10.0f);
             this.method1739();
-            final boolean b = class7929.method25714() instanceof Class512 && ((Class512)class7929.method25714()).field3025.field27304;
+            final boolean b = class7929.method25714() instanceof PlayerEntity && ((PlayerEntity)class7929.method25714()).field3025.field27304;
             if (b || this.method2056() > 40.0f) {
                 if (!b) {
                     if (this.world.method6765().method31216(Class8878.field37321)) {
@@ -242,7 +242,7 @@ public class Class423 extends Entity
             this.method1936(Vec3d.ZERO);
         }
         else {
-            if (this.method1908().isEmpty() || !(this.method1908().get(0) instanceof Class512)) {
+            if (this.method1908().isEmpty() || !(this.method1908().get(0) instanceof PlayerEntity)) {
                 this.method2044(false, false);
             }
             this.method2051();
@@ -275,7 +275,7 @@ public class Class423 extends Entity
         this.method1689();
         final List<Entity> method2044 = this.world.method6737(this, this.getBoundingBox().method18495(0.20000000298023224, -0.009999999776482582, 0.20000000298023224), Class9170.method33474(this));
         if (!method2044.isEmpty()) {
-            final boolean b = !this.world.isRemote && !(this.method1907() instanceof Class512);
+            final boolean b = !this.world.isRemote && !(this.method1907() instanceof PlayerEntity);
             for (int j = 0; j < method2044.size(); ++j) {
                 final Entity class399 = method2044.get(j);
                 if (!class399.method1909(this)) {
@@ -285,7 +285,7 @@ public class Class423 extends Entity
                                 if (class399.method1930() < this.method1930()) {
                                     if (class399 instanceof LivingEntity) {
                                         if (!(class399 instanceof Class832)) {
-                                            if (!(class399 instanceof Class512)) {
+                                            if (!(class399 instanceof PlayerEntity)) {
                                                 class399.method1778(this);
                                                 continue;
                                             }
@@ -315,7 +315,7 @@ public class Class423 extends Entity
                         this.method2059(0);
                         final Vec3d method2061 = this.getMotion();
                         if (!this.field2569) {
-                            this.setMotion(method2061.x, this.method1910(Class512.class) ? 2.7 : 0.6, method2061.z);
+                            this.setMotion(method2061.x, this.method1910(PlayerEntity.class) ? 2.7 : 0.6, method2061.z);
                         }
                         else {
                             this.method1936(method2061.add(0.0, -0.7, 0.0));
@@ -555,7 +555,7 @@ public class Class423 extends Entity
                     if (this.field2565 != Class2087.field12069) {
                         if (this.field2565 == Class2087.field12068) {
                             this.field2550 = this.field2564;
-                            if (this.method1907() instanceof Class512) {
+                            if (this.method1907() instanceof PlayerEntity) {
                                 this.field2564 /= 2.0f;
                             }
                         }
@@ -672,8 +672,8 @@ public class Class423 extends Entity
     }
     
     @Override
-    public boolean method1770(final Class512 class512, final Class316 class513) {
-        return !class512.method2804() && !this.world.isRemote && this.field2551 < 60.0f && class512.method1778(this);
+    public boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
+        return !playerEntity.method2804() && !this.world.isRemote && this.field2551 < 60.0f && playerEntity.method1778(this);
     }
     
     @Override

@@ -20,7 +20,7 @@ public class Class817 extends Class789
 {
     private static final Class120 field4376;
     private static final DataParameter<Boolean> field4377;
-    private Class3452<Class512> field4378;
+    private Class3452<PlayerEntity> field4378;
     private Class3474 field4379;
     
     public Class817(final EntityType<? extends Class817> class7499, final World class7500) {
@@ -64,7 +64,7 @@ public class Class817 extends Class789
         this.field4114.method22062(8, new Class3475(this));
         this.field4114.method22062(9, new Class3587(this, 0.8));
         this.field4114.method22062(10, new Class3517(this, 0.8, 1.0000001E-5f));
-        this.field4114.method22062(11, new Class3628(this, Class512.class, 10.0f));
+        this.field4114.method22062(11, new Class3628(this, PlayerEntity.class, 10.0f));
         this.field4115.method22062(1, new Class3555<Object>(this, Class818.class, false));
         this.field4115.method22062(1, new Class3555<Object>(this, Class793.class, 10, false, false, Class793.field4242));
     }
@@ -148,13 +148,13 @@ public class Class817 extends Class789
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (this.field4379 == null || this.field4379.method11040()) {
             if (!this.method4808()) {
                 if (this.method4357(method2715)) {
-                    if (class512.method1734(this) < 9.0) {
-                        this.method4358(class512, method2715);
+                    if (playerEntity.method1734(this) < 9.0) {
+                        this.method4358(playerEntity, method2715);
                         if (!this.world.isRemote) {
                             if (this.rand.nextInt(3) != 0) {
                                 this.method4811(false);
@@ -171,7 +171,7 @@ public class Class817 extends Class789
                 }
             }
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     @Override
@@ -201,7 +201,7 @@ public class Class817 extends Class789
     
     public void method4812() {
         if (this.field4378 == null) {
-            this.field4378 = new Class3452<Class512>(this, Class512.class, 16.0f, 0.8, 1.33);
+            this.field4378 = new Class3452<PlayerEntity>(this, PlayerEntity.class, 16.0f, 0.8, 1.33);
         }
         this.field4114.method22063(this.field4378);
         if (!this.method4808()) {

@@ -63,10 +63,10 @@ public class Class6430
         Class6430.field25541.method5269().method17292(new Class4317(s));
     }
     
-    public static List<Class512> method19108() {
+    public static List<PlayerEntity> method19108() {
         final ArrayList list = new ArrayList();
         Class6430.field25541.field4683.field10072.forEach((p1, class399) -> {
-            if (!(!(class399 instanceof Class512))) {
+            if (!(!(class399 instanceof PlayerEntity))) {
                 list2.add(class399);
             }
             return;
@@ -743,7 +743,7 @@ public class Class6430
     }
     
     public static void method19169() {
-        if (Class6430.field25541.method5303() instanceof Class512) {
+        if (Class6430.field25541.method5303() instanceof PlayerEntity) {
             if (Class9463.method35173().method35193().method32144()) {
                 if (Class6430.field25541.field4644.field9406 != null) {
                     Class6430.field25541.field4644.field9406.close();
@@ -783,7 +783,7 @@ public class Class6430
         if (!(class399 instanceof LivingEntity)) {
             return Class2068.field11841;
         }
-        if (!(class399 instanceof Class512)) {
+        if (!(class399 instanceof PlayerEntity)) {
             if (!(class399 instanceof Class759)) {
                 if (!(class399 instanceof Class763)) {
                     if (!(class399 instanceof Class853)) {
@@ -924,24 +924,24 @@ public class Class6430
         if (class399 instanceof Class857) {
             return false;
         }
-        if (!b && class399 instanceof Class512) {
+        if (!b && class399 instanceof PlayerEntity) {
             return false;
         }
-        if (class399 instanceof Class512 && Class9463.method35173().method35191().method31751(class399)) {
+        if (class399 instanceof PlayerEntity && Class9463.method35173().method35191().method31751(class399)) {
             return false;
         }
         if (!b3 && class399.method1823()) {
             return false;
         }
-        if (!b2 && !(class399 instanceof Class512)) {
+        if (!b2 && !(class399 instanceof PlayerEntity)) {
             return false;
         }
         if (Class6430.field25541.field4684.method1920() != null && Class6430.field25541.field4684.method1920().equals(class399)) {
             return false;
         }
         if (!class399.method1850()) {
-            if (class399 instanceof Class512) {
-                if (Class9011.method32262((Class512)class399)) {
+            if (class399 instanceof PlayerEntity) {
+                if (Class9011.method32262((PlayerEntity)class399)) {
                     if (Class9463.method35173().method35189().method21551(Class3203.class).method9906()) {
                         return false;
                     }

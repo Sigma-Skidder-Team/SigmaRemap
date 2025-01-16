@@ -300,15 +300,15 @@ public class Class857 extends LivingEntity
     }
     
     @Override
-    public Class2201 method1898(final Class512 class512, final Vec3d class513, final Class316 class514) {
-        final ItemStack method2715 = class512.method2715(class514);
+    public Class2201 method1898(final PlayerEntity playerEntity, final Vec3d class513, final Class316 class514) {
+        final ItemStack method2715 = playerEntity.method2715(class514);
         if (this.method5166() || method2715.getItem() == Items.field31552) {
             return Class2201.field13402;
         }
-        if (class512.isSpectator()) {
+        if (playerEntity.isSpectator()) {
             return Class2201.field13400;
         }
-        if (!class512.world.isRemote) {
+        if (!playerEntity.world.isRemote) {
             final Class2215 method2716 = Class759.method4185(method2715);
             if (!method2715.method27620()) {
                 if (this.method5152(method2716)) {
@@ -317,14 +317,14 @@ public class Class857 extends LivingEntity
                 if (method2716.method8401() == Class295.field1681 && !this.method5162()) {
                     return Class2201.field13403;
                 }
-                if (this.method5153(class512, method2716, method2715, class514)) {
+                if (this.method5153(playerEntity, method2716, method2715, class514)) {
                     return Class2201.field13400;
                 }
             }
             else {
                 final Class2215 method2717 = this.method5151(class513);
                 final Class2215 class515 = this.method5152(method2717) ? method2716 : method2717;
-                if (this.method2717(class515) && this.method5153(class512, class515, method2715, class514)) {
+                if (this.method2717(class515) && this.method5153(playerEntity, class515, method2715, class514)) {
                     return Class2201.field13400;
                 }
             }
@@ -377,7 +377,7 @@ public class Class857 extends LivingEntity
         return (this.field4583 & 1 << class2215.method8403()) != 0x0 || (class2215.method8401() == Class295.field1681 && !this.method5162());
     }
     
-    private boolean method5153(final Class512 class512, final Class2215 class513, final ItemStack class514, final Class316 class515) {
+    private boolean method5153(final PlayerEntity playerEntity, final Class2215 class513, final ItemStack class514, final Class316 class515) {
         final ItemStack method2718 = this.method2718(class513);
         if (!method2718.method27620() && (this.field4583 & 1 << class513.method8403() + 8) != 0x0) {
             return false;
@@ -385,7 +385,7 @@ public class Class857 extends LivingEntity
         if (method2718.method27620() && (this.field4583 & 1 << class513.method8403() + 16) != 0x0) {
             return false;
         }
-        if (class512.field3025.field27304) {
+        if (playerEntity.field3025.field27304) {
             if (method2718.method27620()) {
                 if (!class514.method27620()) {
                     final ItemStack method2719 = class514.method27641();
@@ -397,7 +397,7 @@ public class Class857 extends LivingEntity
         }
         if (class514.method27620() || class514.method27690() <= 1) {
             this.method1803(class513, class514);
-            class512.method2716(class515, method2718);
+            playerEntity.method2716(class515, method2718);
             return true;
         }
         if (method2718.method27620()) {
@@ -442,7 +442,7 @@ public class Class857 extends LivingEntity
                         if (!"player".equals(obj.method25720()) && !b) {
                             return false;
                         }
-                        if (obj.method25714() instanceof Class512 && !((Class512)obj.method25714()).field3025.field27305) {
+                        if (obj.method25714() instanceof PlayerEntity && !((PlayerEntity)obj.method25714()).field3025.field27305) {
                             return false;
                         }
                         if (!obj.method25725()) {
@@ -740,7 +740,7 @@ public class Class857 extends LivingEntity
     
     @Override
     public boolean method1848(final Entity class399) {
-        return class399 instanceof Class512 && !this.world.method6760((Class512)class399, new BlockPos(this));
+        return class399 instanceof PlayerEntity && !this.world.method6760((PlayerEntity)class399, new BlockPos(this));
     }
     
     @Override

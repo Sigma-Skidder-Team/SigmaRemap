@@ -2389,7 +2389,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public void method5752(final Class512 class512, final int n, final BlockPos class513, final int n2) {
+    public void method5752(final PlayerEntity playerEntity, final int n, final BlockPos class513, final int n2) {
         final Random field10062 = this.field9292.rand;
         switch (n) {
             case 1000: {

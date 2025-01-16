@@ -40,12 +40,12 @@ public class Class5328
         if (this != Class9439.field40483) {
             if (this != Class9439.field40492) {
                 if (this != Class9439.field40493) {
-                    if (this == Class9439.field40490 && class511 instanceof Class512) {
-                        ((Class512)class511).method2876(0.005f * (n + 1));
+                    if (this == Class9439.field40490 && class511 instanceof PlayerEntity) {
+                        ((PlayerEntity)class511).method2876(0.005f * (n + 1));
                     }
-                    else if (this == Class9439.field40496 && class511 instanceof Class512) {
+                    else if (this == Class9439.field40496 && class511 instanceof PlayerEntity) {
                         if (!class511.world.isRemote) {
-                            ((Class512)class511).method2877().method33486(n + 1, 1.0f);
+                            ((PlayerEntity)class511).method2877().method33486(n + 1, 1.0f);
                         }
                     }
                     else if ((this != Class9439.field40479 || class511.method2657()) && (this != Class9439.field40480 || !class511.method2657())) {

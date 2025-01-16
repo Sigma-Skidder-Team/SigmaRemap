@@ -347,8 +347,8 @@ public class Class1660 implements AutoCloseable, Class1657
     }
     
     private void method5811(final Class7351 class7351, final float n) {
-        if (this.field9380.method5303() instanceof Class512) {
-            final Class512 class7352 = (Class512)this.field9380.method5303();
+        if (this.field9380.method5303() instanceof PlayerEntity) {
+            final PlayerEntity class7352 = (PlayerEntity)this.field9380.method5303();
             final float n2 = -(class7352.distanceWalkedModified + (class7352.distanceWalkedModified - class7352.prevDistanceWalkedModified) * n);
             final float method35700 = MathHelper.method35700(n, class7352.field3012, class7352.field3013);
             class7351.method22564(MathHelper.sin(n2 * 3.1415927f) * method35700 * 0.5f, -Math.abs(MathHelper.cos(n2 * 3.1415927f) * method35700), 0.0);
@@ -629,9 +629,9 @@ public class Class1660 implements AutoCloseable, Class1657
     private boolean method5819() {
         if (this.field9393) {
             final Entity method5303 = this.field9380.method5303();
-            boolean b = method5303 instanceof Class512 && !this.field9380.field4648.field23464;
+            boolean b = method5303 instanceof PlayerEntity && !this.field9380.field4648.field23464;
             if (b) {
-                if (!((Class512)method5303).field3025.field27305) {
+                if (!((PlayerEntity)method5303).field3025.field27305) {
                     final ItemStack method5304 = ((LivingEntity)method5303).getHeldItemMainhand();
                     final Class7006 field4691 = this.field9380.field4691;
                     if (field4691 != null) {

@@ -318,7 +318,7 @@ public class Class6516
     
     public void method19655(final Entity class399) {
         if (class399 != null) {
-            if (!(class399 instanceof Class512)) {
+            if (!(class399 instanceof PlayerEntity)) {
                 if (!class399.method1768()) {
                     final String method1866 = class399.method1866();
                     this.method19641(method1866, null);

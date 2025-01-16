@@ -52,7 +52,7 @@ public class Class6184 extends Class6159
             this.field24939 *= 0.9599999785423279;
             this.field24940 *= 0.9599999785423279;
             this.field24941 *= 0.9599999785423279;
-            final Class512 method7132 = this.field24932.method7132(this.field24936, this.field24937, this.field24938, 2.0, false);
+            final PlayerEntity method7132 = this.field24932.method7132(this.field24936, this.field24937, this.field24938, 2.0, false);
             if (method7132 != null) {
                 final double method7133 = method7132.getPosY();
                 if (this.field24937 > method7133) {

@@ -110,7 +110,7 @@ public class Class840 extends Class832
         this.field4114.method22062(2, new Class3615(this, 4.0));
         this.field4114.method22062(4, new Class3515(this, 1.0, 10));
         this.field4114.method22062(4, new Class3503(this));
-        this.field4114.method22062(5, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(5, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(5, new Class3594(this, 10));
         this.field4114.method22062(6, new Class3574(this, 1.2000000476837158, true));
         this.field4114.method22062(8, new Class3477(this, null));
@@ -245,19 +245,19 @@ public class Class840 extends Class832
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (!method2715.method27620() && method2715.getItem().method11742(Class7855.field32272)) {
             if (!this.world.isRemote) {
                 this.method1695(Class8520.field35120, 1.0f, 1.0f);
             }
             this.method5005(true);
-            if (!class512.field3025.field27304) {
+            if (!playerEntity.field3025.field27304) {
                 method2715.method27693(1);
             }
             return true;
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
     
     public static boolean method5009(final EntityType<Class840> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
@@ -321,7 +321,7 @@ public class Class840 extends Class832
     }
     
     @Override
-    public boolean method4204(final Class512 class512) {
+    public boolean method4204(final PlayerEntity playerEntity) {
         return true;
     }
     

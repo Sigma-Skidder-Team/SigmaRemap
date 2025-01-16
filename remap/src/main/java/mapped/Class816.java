@@ -50,9 +50,9 @@ public class Class816 extends Class815
     }
     
     @Override
-    public void method4742(final Class512 class512) {
+    public void method4742(final PlayerEntity playerEntity) {
         if (!(this.method4206() instanceof Class821)) {
-            super.method4742(class512);
+            super.method4742(playerEntity);
         }
     }
     

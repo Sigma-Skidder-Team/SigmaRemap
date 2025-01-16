@@ -423,18 +423,18 @@ public class Class8639
         return 0;
     }
     
-    public static int method29348(final Class512 class512) {
+    public static int method29348(final PlayerEntity playerEntity) {
         int n = 0;
         for (int i = 5; i <= 8; i = (byte)(i + 1)) {
-            n += method29347(class512.field3006.method2157(i));
+            n += method29347(playerEntity.field3006.method2157(i));
         }
         return n;
     }
     
-    public static float method29349(final Class512 class512) {
-        final float n = (float)method29348(class512);
+    public static float method29349(final PlayerEntity playerEntity) {
+        final float n = (float)method29348(playerEntity);
         final float n2 = 0.0f;
-        final float method29350 = method29350(class512.getHeldItemMainhand());
+        final float method29350 = method29350(playerEntity.getHeldItemMainhand());
         return method29350 * (1.0f - Math.min(20.0f, Math.max(n / 5.0f, n - method29350 / (n2 / 4.0f + 2.0f))) / 25.0f);
     }
     
@@ -642,11 +642,11 @@ public class Class8639
         return false;
     }
     
-    public static ItemStack method29366(final int n, final int n2, final int n3, final Class2133 class2133, final Class512 class2134) {
+    public static ItemStack method29366(final int n, final int n2, final int n3, final Class2133 class2133, final PlayerEntity class2134) {
         return method29367(n, n2, n3, class2133, class2134, false);
     }
     
-    public static ItemStack method29367(final int n, final int n2, final int n3, final Class2133 class2133, final Class512 class2134, final boolean b) {
+    public static ItemStack method29367(final int n, final int n2, final int n3, final Class2133 class2133, final PlayerEntity class2134, final boolean b) {
         ItemStack method27641 = null;
         if (n2 >= 0) {
             method27641 = class2134.field3009.method10878(n2).method20053().method27641();
@@ -737,9 +737,9 @@ public class Class8639
         return class8321 != null && !class8321.getItem().equals(Items.AIR);
     }
     
-    public static List<ItemStack> method29374(final Class512 class512) {
+    public static List<ItemStack> method29374(final PlayerEntity playerEntity) {
         final ArrayList list = new ArrayList();
-        for (final Class6601 class513 : class512.field3008.field16151) {
+        for (final Class6601 class513 : playerEntity.field3008.field16151) {
             if (!method29373(class513.method20053())) {
                 continue;
             }

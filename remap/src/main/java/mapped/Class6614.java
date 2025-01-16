@@ -25,12 +25,12 @@ public class Class6614 extends Class6601
     }
     
     @Override
-    public ItemStack method20047(final Class512 class512, final ItemStack class513) {
+    public ItemStack method20047(final PlayerEntity playerEntity, final ItemStack class513) {
         final Class8061 method16474 = Class5333.method16474(class513);
-        if (class512 instanceof Class513) {
-            Class7770.field31785.method13750((Class513)class512, method16474);
+        if (playerEntity instanceof Class513) {
+            Class7770.field31785.method13750((Class513) playerEntity, method16474);
         }
-        super.method20047(class512, class513);
+        super.method20047(playerEntity, class513);
         return class513;
     }
     

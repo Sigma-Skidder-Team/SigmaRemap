@@ -11,8 +11,8 @@ public class Class6603 extends Class6601
     }
     
     @Override
-    public boolean method20061(final Class512 class512) {
-        if (super.method20061(class512) && this.method20054()) {
+    public boolean method20061(final PlayerEntity playerEntity) {
+        if (super.method20061(playerEntity) && this.method20054()) {
             return this.method20053().method27660("CustomCreativeLock") == null;
         }
         return !this.method20054();
