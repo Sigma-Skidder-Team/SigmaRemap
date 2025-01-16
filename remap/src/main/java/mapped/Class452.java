@@ -27,13 +27,13 @@ public class Class452 implements Class446
     
     @Override
     public ItemStack method2157(final int n) {
-        return (n != 0) ? ItemStack.field34174 : Class435.method2181(this.field2700);
+        return (n != 0) ? ItemStack.EMPTY : Class435.method2181(this.field2700);
     }
     
     @Override
     public ItemStack method2158(final int n, final int n2) {
         if (n != 0) {
-            return ItemStack.field34174;
+            return ItemStack.EMPTY;
         }
         final ItemStack method27621 = Class435.method2181(this.field2700).method27621(n2);
         if (Class435.method2181(this.field2700).method27620()) {
@@ -45,10 +45,10 @@ public class Class452 implements Class446
     @Override
     public ItemStack method2159(final int n) {
         if (n != 0) {
-            return ItemStack.field34174;
+            return ItemStack.EMPTY;
         }
         final ItemStack method2181 = Class435.method2181(this.field2700);
-        Class435.method2183(this.field2700, ItemStack.field34174);
+        Class435.method2183(this.field2700, ItemStack.EMPTY);
         Class435.method2182(this.field2700);
         return method2181;
     }

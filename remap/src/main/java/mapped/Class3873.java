@@ -82,7 +82,7 @@ public class Class3873 extends Class3874 implements Class3872
     @Override
     public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         final Item method11948 = this.method11948();
-        return (method11948 != null) ? new ItemStack(method11948) : ItemStack.field34174;
+        return (method11948 != null) ? new ItemStack(method11948) : ItemStack.EMPTY;
     }
     
     @Override

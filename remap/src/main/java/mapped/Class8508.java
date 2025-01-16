@@ -21,11 +21,11 @@ public class Class8508
                 }
             }
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     public static ItemStack method28423(final List<ItemStack> list, final int n) {
-        return (n >= 0 && n < list.size()) ? list.set(n, ItemStack.field34174) : ItemStack.field34174;
+        return (n >= 0 && n < list.size()) ? list.set(n, ItemStack.EMPTY) : ItemStack.EMPTY;
     }
     
     public static CompoundNBT method28424(final CompoundNBT class51, final Class2265<ItemStack> class52) {

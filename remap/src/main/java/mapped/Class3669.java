@@ -17,7 +17,7 @@ public class Class3669 extends Class3666
     
     public boolean method11301(final Class473 class473, final World class474) {
         int n = 0;
-        ItemStack field34174 = ItemStack.field34174;
+        ItemStack field34174 = ItemStack.EMPTY;
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
@@ -40,19 +40,19 @@ public class Class3669 extends Class3666
     
     public ItemStack method11303(final Class473 class473) {
         int n = 0;
-        ItemStack field34174 = ItemStack.field34174;
+        ItemStack field34174 = ItemStack.EMPTY;
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 if (method2157.getItem() != Items.field31425) {
                     if (method2157.getItem() != Items.field31521) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                     ++n;
                 }
                 else {
                     if (!field34174.method27620()) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                     field34174 = method2157;
                 }
@@ -63,7 +63,7 @@ public class Class3669 extends Class3666
             method2158.method27691(n + 1);
             return method2158;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override

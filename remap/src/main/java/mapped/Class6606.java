@@ -40,9 +40,9 @@ public class Class6606 extends Class6601
         if (!playerEntity.field3025.field27304) {
             playerEntity.method2874(-Class3441.method11001(this.field26184).method19832());
         }
-        Class3441.method11002(this.field26184).method2160(0, ItemStack.field34174);
+        Class3441.method11002(this.field26184).method2160(0, ItemStack.EMPTY);
         if (Class3441.method11003(this.field26184) <= 0) {
-            Class3441.method11002(this.field26184).method2160(1, ItemStack.field34174);
+            Class3441.method11002(this.field26184).method2160(1, ItemStack.EMPTY);
         }
         else {
             final ItemStack method2157 = Class3441.method11002(this.field26184).method2157(1);
@@ -51,7 +51,7 @@ public class Class6606 extends Class6601
                 Class3441.method11002(this.field26184).method2160(1, method2157);
             }
             else {
-                Class3441.method11002(this.field26184).method2160(1, ItemStack.field34174);
+                Class3441.method11002(this.field26184).method2160(1, ItemStack.EMPTY);
             }
         }
         Class3441.method11001(this.field26184).method19833(0);

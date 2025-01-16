@@ -63,7 +63,7 @@ public class Class57 extends ArrayList<Class9017>
         for (int n = class8654.readByte() & 0xFF, i = 0; i < n; ++i) {
             final ItemStack method29511 = class8654.method29511();
             final ItemStack method29512 = class8654.method29511();
-            ItemStack class8656 = ItemStack.field34174;
+            ItemStack class8656 = ItemStack.EMPTY;
             if (class8654.readBoolean()) {
                 class8656 = class8654.method29511();
             }

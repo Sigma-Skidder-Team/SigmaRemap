@@ -22,7 +22,7 @@ public class Class435 extends TileEntity implements Class447, Class434
         super(Class5412.field22569);
         this.field2649 = new Class452(this);
         this.field2650 = new Class7603(this);
-        this.field2651 = ItemStack.field34174;
+        this.field2651 = ItemStack.EMPTY;
     }
     
     public ItemStack method2168() {
@@ -100,7 +100,7 @@ public class Class435 extends TileEntity implements Class447, Class434
     public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
         if (!class51.contains("Book", 10)) {
-            this.field2651 = ItemStack.field34174;
+            this.field2651 = ItemStack.EMPTY;
         }
         else {
             this.field2651 = this.method2176(ItemStack.method27619(class51.getCompound("Book")), null);
@@ -121,7 +121,7 @@ public class Class435 extends TileEntity implements Class447, Class434
     
     @Override
     public void method2164() {
-        this.method2170(ItemStack.field34174);
+        this.method2170(ItemStack.EMPTY);
     }
     
     @Override

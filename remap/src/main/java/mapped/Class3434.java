@@ -43,7 +43,7 @@ public class Class3434 extends Class3418
                     Class525.method3024().method2160(j + i * 9, this.field16225.get(n3));
                 }
                 else {
-                    Class525.method3024().method2160(j + i * 9, ItemStack.field34174);
+                    Class525.method3024().method2160(j + i * 9, ItemStack.EMPTY);
                 }
             }
         }
@@ -60,12 +60,12 @@ public class Class3434 extends Class3418
                 final Class6601 class513 = this.field16151.get(n);
                 if (class513 != null) {
                     if (class513.method20054()) {
-                        class513.method20055(ItemStack.field34174);
+                        class513.method20055(ItemStack.EMPTY);
                     }
                 }
             }
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override

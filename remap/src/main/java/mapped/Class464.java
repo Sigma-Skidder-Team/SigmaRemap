@@ -27,16 +27,16 @@ public class Class464 implements Class446, INameable
     private int field2746;
     
     public Class464(final PlayerEntity field2744) {
-        this.field2739 = Class2265.method8507(36, ItemStack.field34174);
-        this.field2740 = Class2265.method8507(4, ItemStack.field34174);
-        this.field2741 = Class2265.method8507(1, ItemStack.field34174);
+        this.field2739 = Class2265.method8507(36, ItemStack.EMPTY);
+        this.field2740 = Class2265.method8507(4, ItemStack.EMPTY);
+        this.field2741 = Class2265.method8507(1, ItemStack.EMPTY);
         this.field2742 = (List<Class2265<ItemStack>>)ImmutableList.of((Object)this.field2739, (Object)this.field2740, (Object)this.field2741);
-        this.field2745 = ItemStack.field34174;
+        this.field2745 = ItemStack.EMPTY;
         this.field2744 = field2744;
     }
     
     public ItemStack method2345() {
-        return method2352(this.field2743) ? this.field2739.get(this.field2743) : ItemStack.field34174;
+        return method2352(this.field2743) ? this.field2739.get(this.field2743) : ItemStack.EMPTY;
     }
     
     public static int method2346() {
@@ -174,7 +174,7 @@ public class Class464 implements Class446, INameable
                     if (n != 0) {
                         method2157.method27693(n3);
                         if (method2157.method27620()) {
-                            this.method2160(i, ItemStack.field34174);
+                            this.method2160(i, ItemStack.EMPTY);
                         }
                         if (n > 0) {
                             if (n2 >= n) {
@@ -192,7 +192,7 @@ public class Class464 implements Class446, INameable
                 if (n != 0) {
                     this.field2745.method27693(n4);
                     if (this.field2745.method27620()) {
-                        this.field2745 = ItemStack.field34174;
+                        this.field2745 = ItemStack.EMPTY;
                     }
                     if (n > 0) {
                         if (n2 >= n) {
@@ -347,14 +347,14 @@ public class Class464 implements Class446, INameable
             }
             n -= class2265.size();
         }
-        return (list != null && !((ItemStack)list.get(n)).method27620()) ? Class8508.method28422(list, n, n2) : ItemStack.field34174;
+        return (list != null && !((ItemStack)list.get(n)).method27620()) ? Class8508.method28422(list, n, n2) : ItemStack.EMPTY;
     }
     
     public void method2365(final ItemStack class8321) {
         for (final Class2265 class8322 : this.field2742) {
             for (int i = 0; i < class8322.size(); ++i) {
                 if (class8322.get(i) == class8321) {
-                    class8322.set(i, ItemStack.field34174);
+                    class8322.set(i, ItemStack.EMPTY);
                     break;
                 }
             }
@@ -373,10 +373,10 @@ public class Class464 implements Class446, INameable
         }
         if (class2265 != null && !((ItemStack)class2265.get(n)).method27620()) {
             final ItemStack class2267 = (ItemStack)class2265.get(n);
-            class2265.set(n, ItemStack.field34174);
+            class2265.set(n, ItemStack.EMPTY);
             return class2267;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override
@@ -491,7 +491,7 @@ public class Class464 implements Class446, INameable
             }
             n -= class2265.size();
         }
-        return (ItemStack)((list != null) ? list.get(n) : ItemStack.field34174);
+        return (ItemStack)((list != null) ? list.get(n) : ItemStack.EMPTY);
     }
     
     @Override
@@ -528,7 +528,7 @@ public class Class464 implements Class446, INameable
                 final ItemStack class8321 = (ItemStack)list.get(i);
                 if (!class8321.method27620()) {
                     this.field2744.method2823(class8321, true, false);
-                    list.set(i, ItemStack.field34174);
+                    list.set(i, ItemStack.EMPTY);
                 }
             }
         }

@@ -210,7 +210,7 @@ public abstract class World implements Class1851, AutoCloseable
             final IFluidState method6702 = this.getFluidState(class354);
             this.method6955(2001, class354, Block.method11774(method6701));
             if (b) {
-                Block.method11838(method6701, this, class354, method6701.getBlock().method11802() ? this.getTileEntity(class354) : null, class355, ItemStack.field34174);
+                Block.method11838(method6701, this, class354, method6701.getBlock().method11802() ? this.getTileEntity(class354) : null, class355, ItemStack.EMPTY);
             }
             return this.setBlockState(class354, method6702.getBlockState(), 3);
         }

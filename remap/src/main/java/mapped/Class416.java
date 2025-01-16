@@ -45,7 +45,7 @@ public abstract class Class416 extends Class419 implements Class407
     
     @Override
     public void method1649() {
-        this.method1650().register(Class416.field2524, ItemStack.field34174);
+        this.method1650().register(Class416.field2524, ItemStack.EMPTY);
     }
     
     @Override

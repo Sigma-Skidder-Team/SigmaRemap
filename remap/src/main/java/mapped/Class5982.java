@@ -63,12 +63,12 @@ public class Class5982 implements JsonDeserializer<Style>, JsonSerializer<Style>
             if (asJsonObject.has("hoverEvent")) {
                 final JsonObject method35917 = Class9583.method35914(asJsonObject, "hoverEvent");
                 final String method35918 = Class9583.method35896(method35917, "action", null);
-                final Class1961 class8770 = (method35918 != null) ? Class1961.method7949(method35918) : null;
+                final HoverEvent.Action class8770 = (method35918 != null) ? HoverEvent.Action.method7949(method35918) : null;
                 final ITextComponent class8771 = (ITextComponent)jsonDeserializationContext.deserialize(method35917.get("value"), (Type) ITextComponent.class);
                 if (class8770 != null) {
                     if (class8771 != null) {
                         if (class8770.method7947()) {
-                            Style.method30435(class8768, new Class9390(class8770, class8771));
+                            Style.method30435(class8768, new HoverEvent(class8770, class8771));
                         }
                     }
                 }

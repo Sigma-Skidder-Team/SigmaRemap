@@ -78,8 +78,8 @@ public class Class6878 extends Class6879
     public final ITextComponent method21057() {
         return Class9479.method35299(this.method21076()).applyTextStyle(class8768 -> {
             class8768.setColor(this.method21078().method8371());
-            new Class9390(Class1961.field10697, new StringTextComponent(this.method21048().toString()));
-            final Class9390 class8769;
+            new HoverEvent(HoverEvent.Action.field10697, new StringTextComponent(this.method21048().toString()));
+            final HoverEvent class8769;
             final Style class8770;
             class8770.method30420(class8769).method30421(this.method21048().toString());
         });

@@ -76,6 +76,6 @@ public class Class829 extends Class827
     
     @Override
     public ItemStack method4918() {
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
 }

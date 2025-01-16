@@ -55,7 +55,7 @@ public class Class427 extends Entity
     
     @Override
     public void method1649() {
-        this.method1650().register(Class427.field2613, ItemStack.field34174);
+        this.method1650().register(Class427.field2613, ItemStack.EMPTY);
     }
     
     @Override

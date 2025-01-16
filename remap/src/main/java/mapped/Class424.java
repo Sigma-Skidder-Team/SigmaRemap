@@ -151,7 +151,7 @@ public class Class424 extends Entity
                                 }
                             }
                             else {
-                                final boolean method21701 = method21700.method21750(new Class7073(this.world, method21697, Direction.DOWN, ItemStack.field34174, Direction.UP));
+                                final boolean method21701 = method21700.method21750(new Class7073(this.world, method21697, Direction.DOWN, ItemStack.EMPTY, Direction.UP));
                                 final boolean b3 = Class3986.method12131(this.world.getBlockState(method21697.method1139())) && (!b || !b2);
                                 final boolean b4 = this.field2573.method21752(this.world, method21697) && !b3;
                                 if (method21701 && b4) {

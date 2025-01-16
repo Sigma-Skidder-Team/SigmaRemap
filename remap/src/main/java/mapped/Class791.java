@@ -341,7 +341,7 @@ public class Class791 extends Class789
                         if (this.method4380() > 100) {
                             if (this.method4413(this.method2718(Class2215.field13600))) {
                                 if (!this.world.isRemote) {
-                                    this.method1803(Class2215.field13600, ItemStack.field34174);
+                                    this.method1803(Class2215.field13600, ItemStack.EMPTY);
                                 }
                                 this.method4375(false);
                             }

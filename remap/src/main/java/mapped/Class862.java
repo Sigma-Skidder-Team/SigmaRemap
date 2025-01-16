@@ -44,7 +44,7 @@ public class Class862 extends Class860
     
     @Override
     public void method1649() {
-        this.method1650().register(Class862.field4603, ItemStack.field34174);
+        this.method1650().register(Class862.field4603, ItemStack.EMPTY);
         this.method1650().register(Class862.field4604, 0);
     }
     
@@ -161,7 +161,7 @@ public class Class862 extends Class860
     private void method5196(final Entity class399, final boolean b) {
         if (this.world.method6765().method31216(Class8878.field37321)) {
             final ItemStack method5198 = this.method5198();
-            this.method5199(ItemStack.field34174);
+            this.method5199(ItemStack.EMPTY);
             if (class399 instanceof PlayerEntity && ((PlayerEntity)class399).field3025.field27304) {
                 this.method5197(method5198);
                 return;

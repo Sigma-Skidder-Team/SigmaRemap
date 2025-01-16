@@ -33,7 +33,7 @@ public class Class3422 extends Class3418
         super(Class8471.field34777, n);
         this.field16171 = Class6546.method19836();
         this.field16173 = Lists.newArrayList();
-        this.field16174 = ItemStack.field34174;
+        this.field16174 = ItemStack.EMPTY;
         this.field16178 = (() -> {});
         this.field16179 = new Class479(this, 1);
         this.field16180 = new Class470();
@@ -96,7 +96,7 @@ public class Class3422 extends Class3418
     private void method10908(final Class446 class446, final ItemStack class447) {
         this.field16173.clear();
         this.field16171.method19833(-1);
-        this.field16177.method20055(ItemStack.field34174);
+        this.field16177.method20055(ItemStack.EMPTY);
         if (!class447.method27620()) {
             this.field16173 = this.field16172.method6792().method6379(Class8976.field37848, class446, this.field16172);
         }
@@ -104,7 +104,7 @@ public class Class3422 extends Class3418
     
     private void method10909() {
         if (this.field16173.isEmpty()) {
-            this.field16177.method20055(ItemStack.field34174);
+            this.field16177.method20055(ItemStack.EMPTY);
         }
         else {
             this.field16177.method20055(this.field16173.get(this.field16171.method19832()).method11290(this.field16179));
@@ -128,7 +128,7 @@ public class Class3422 extends Class3418
     
     @Override
     public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
-        ItemStack class513 = ItemStack.field34174;
+        ItemStack class513 = ItemStack.EMPTY;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
@@ -140,38 +140,38 @@ public class Class3422 extends Class3418
                         if (!this.field16172.method6792().method6378(Class8976.field37848, new Class443(new ItemStack[] { method20053 }), this.field16172).isPresent()) {
                             if (n >= 2 && n < 29) {
                                 if (!this.method10888(method20053, 29, 38, false)) {
-                                    return ItemStack.field34174;
+                                    return ItemStack.EMPTY;
                                 }
                             }
                             else if (n >= 29) {
                                 if (n < 38) {
                                     if (!this.method10888(method20053, 2, 29, false)) {
-                                        return ItemStack.field34174;
+                                        return ItemStack.EMPTY;
                                     }
                                 }
                             }
                         }
                         else if (!this.method10888(method20053, 0, 1, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (!this.method10888(method20053, 2, 38, false)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                 }
                 else {
                     method20054.method11723(method20053, playerEntity.world, playerEntity);
                     if (!this.method10888(method20053, 2, 38, true)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                     class514.method20049(method20053, class513);
                 }
                 if (method20053.method27620()) {
-                    class514.method20055(ItemStack.field34174);
+                    class514.method20055(ItemStack.EMPTY);
                 }
                 class514.method20056();
                 if (method20053.method27690() == class513.method27690()) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 class514.method20047(playerEntity, method20053);
                 this.method10876();

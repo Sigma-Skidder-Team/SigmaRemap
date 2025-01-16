@@ -16,7 +16,7 @@ public class Class2262 extends ForwardingList<ItemStack>
     private final Class2265<ItemStack> field13822;
     
     public Class2262() {
-        this.field13822 = Class2265.method8507(Class464.method2346(), ItemStack.field34174);
+        this.field13822 = Class2265.method8507(Class464.method2346(), ItemStack.EMPTY);
     }
     
     public List<ItemStack> delegate() {

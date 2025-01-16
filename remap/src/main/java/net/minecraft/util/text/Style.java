@@ -5,7 +5,7 @@
 package net.minecraft.util.text;
 
 import mapped.Class8769;
-import mapped.Class9390;
+import mapped.HoverEvent;
 import mapped.Class9485;
 import mapped.TextFormatting;
 
@@ -22,7 +22,7 @@ public class Style
     private Boolean field36862;
     private Boolean field36863;
     private Class9485 field36864;
-    private Class9390 field36865;
+    private HoverEvent field36865;
     private String field36866;
     private static final Style field36867;
     
@@ -80,8 +80,8 @@ public class Style
     }
     
     @Nullable
-    public Class9390 method30411() {
-        return (this.field36865 != null) ? this.field36865 : this.method30424().method30411();
+    public HoverEvent getHoverEvent() {
+        return (this.field36865 != null) ? this.field36865 : this.method30424().getHoverEvent();
     }
     
     @Nullable
@@ -124,7 +124,7 @@ public class Style
         return this;
     }
     
-    public Style method30420(final Class9390 field36865) {
+    public Style method30420(final HoverEvent field36865) {
         this.field36865 = field36865;
         return this;
     }
@@ -171,7 +171,7 @@ public class Style
     
     @Override
     public String toString() {
-        return "Style{hasParent=" + (this.field36857 != null) + ", color=" + this.field36858 + ", bold=" + this.field36859 + ", italic=" + this.field36860 + ", underlined=" + this.field36861 + ", obfuscated=" + this.field36863 + ", clickEvent=" + this.method30410() + ", hoverEvent=" + this.method30411() + ", insertion=" + this.method30412() + '}';
+        return "Style{hasParent=" + (this.field36857 != null) + ", color=" + this.field36858 + ", bold=" + this.field36859 + ", italic=" + this.field36860 + ", underlined=" + this.field36861 + ", obfuscated=" + this.field36863 + ", clickEvent=" + this.method30410() + ", hoverEvent=" + this.getHoverEvent() + ", insertion=" + this.method30412() + '}';
     }
     
     @Override
@@ -195,12 +195,12 @@ public class Style
                                     else if (!this.method30410().equals(class8768.method30410())) {
                                         return false;
                                     }
-                                    if (this.method30411() == null) {
-                                        if (class8768.method30411() != null) {
+                                    if (this.getHoverEvent() == null) {
+                                        if (class8768.getHoverEvent() != null) {
                                             return false;
                                         }
                                     }
-                                    else if (!this.method30411().equals(class8768.method30411())) {
+                                    else if (!this.getHoverEvent().equals(class8768.getHoverEvent())) {
                                         return false;
                                     }
                                     if (this.method30412() == null) {
@@ -251,7 +251,7 @@ public class Style
         class8768.setObfuscated(this.method30408());
         class8768.setColor(this.method30403());
         class8768.method30419(this.method30410());
-        class8768.method30420(this.method30411());
+        class8768.method30420(this.getHoverEvent());
         class8768.method30421(this.method30412());
         return class8768;
     }

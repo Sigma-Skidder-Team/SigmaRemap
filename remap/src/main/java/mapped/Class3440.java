@@ -89,7 +89,7 @@ public class Class3440 extends Class3418
                             }
                             else {
                                 if (method2157.getItem() != method2158.getItem()) {
-                                    this.field16248.method2160(0, ItemStack.field34174);
+                                    this.field16248.method2160(0, ItemStack.EMPTY);
                                     this.method10876();
                                     return;
                                 }
@@ -98,7 +98,7 @@ public class Class3440 extends Class3418
                                 method2159 = this.method10990(method2157, method2158);
                                 if (!method2159.method27630()) {
                                     if (!ItemStack.method27643(method2157, method2158)) {
-                                        this.field16248.method2160(0, ItemStack.field34174);
+                                        this.field16248.method2160(0, ItemStack.EMPTY);
                                         this.method10876();
                                         return;
                                     }
@@ -110,11 +110,11 @@ public class Class3440 extends Class3418
                         }
                     }
                 }
-                this.field16248.method2160(0, ItemStack.field34174);
+                this.field16248.method2160(0, ItemStack.EMPTY);
                 this.method10876();
                 return;
             }
-            this.field16248.method2160(0, ItemStack.field34174);
+            this.field16248.method2160(0, ItemStack.EMPTY);
         }
         this.method10876();
     }
@@ -172,7 +172,7 @@ public class Class3440 extends Class3418
     
     @Override
     public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
-        ItemStack class513 = ItemStack.field34174;
+        ItemStack class513 = ItemStack.EMPTY;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
@@ -185,28 +185,28 @@ public class Class3440 extends Class3418
                         if (!method20054.method27620() && !method20055.method27620()) {
                             if (n >= 3 && n < 30) {
                                 if (!this.method10888(method20053, 30, 39, false)) {
-                                    return ItemStack.field34174;
+                                    return ItemStack.EMPTY;
                                 }
                             }
                             else if (n >= 30) {
                                 if (n < 39) {
                                     if (!this.method10888(method20053, 3, 30, false)) {
-                                        return ItemStack.field34174;
+                                        return ItemStack.EMPTY;
                                     }
                                 }
                             }
                         }
                         else if (!this.method10888(method20053, 0, 2, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (!this.method10888(method20053, 3, 39, false)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                 }
                 else {
                     if (!this.method10888(method20053, 3, 39, true)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                     class514.method20049(method20053, class513);
                 }
@@ -214,10 +214,10 @@ public class Class3440 extends Class3418
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(ItemStack.field34174);
+                    class514.method20055(ItemStack.EMPTY);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 class514.method20047(playerEntity, method20053);
             }

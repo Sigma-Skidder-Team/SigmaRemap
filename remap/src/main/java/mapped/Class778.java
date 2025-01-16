@@ -158,7 +158,7 @@ public class Class778 extends Class776 implements Class768
                 else if (this.field4182-- <= 0) {
                     this.method4318(false);
                     final ItemStack method2711 = this.getHeldItemMainhand();
-                    this.method1803(Class2215.field13600, ItemStack.field34174);
+                    this.method1803(Class2215.field13600, ItemStack.EMPTY);
                     if (method2711.getItem() == Items.field31441) {
                         final List<Class1948> method2712 = Class5333.method16465(method2711);
                         if (method2712 != null) {

@@ -16,11 +16,11 @@ public class Class4402 implements IPacket<IClientPlayNetHandler>
     private ItemStack field19724;
     
     public Class4402() {
-        this.field19724 = ItemStack.field34174;
+        this.field19724 = ItemStack.EMPTY;
     }
     
     public Class4402(final int field19722, final Class2215 field19723, final ItemStack class8321) {
-        this.field19724 = ItemStack.field34174;
+        this.field19724 = ItemStack.EMPTY;
         this.field19722 = field19722;
         this.field19723 = field19723;
         this.field19724 = class8321.method27641();

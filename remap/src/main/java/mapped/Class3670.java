@@ -18,7 +18,7 @@ public class Class3670 extends Class3666
     }
     
     public boolean method11301(final Class473 class473, final World class474) {
-        ItemStack field34174 = ItemStack.field34174;
+        ItemStack field34174 = ItemStack.EMPTY;
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
@@ -42,26 +42,26 @@ public class Class3670 extends Class3666
     
     public ItemStack method11303(final Class473 class473) {
         final ArrayList arrayList = Lists.newArrayList();
-        ItemStack class474 = ItemStack.field34174;
+        ItemStack class474 = ItemStack.EMPTY;
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620()) {
                 final Item method2158 = method2157.getItem();
                 if (!(method2158 instanceof Class4053)) {
                     if (!(method2158 instanceof Class3829)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                     arrayList.add(method2158);
                 }
                 else {
                     if (!class474.method27620()) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                     class474 = method2157.method27641();
                 }
             }
         }
-        return (!class474.method27620() && !arrayList.isEmpty()) ? Class4053.method12255(class474, arrayList) : ItemStack.field34174;
+        return (!class474.method27620() && !arrayList.isEmpty()) ? Class4053.method12255(class474, arrayList) : ItemStack.EMPTY;
     }
     
     @Override

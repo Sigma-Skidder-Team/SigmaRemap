@@ -145,7 +145,7 @@ public class Class3942 extends Class3841
                 list.add(new StringTextComponent("???????"));
             }
             if (method27660.contains("Items", 9)) {
-                final Class2265<ItemStack> method27661 = Class2265.method8507(27, ItemStack.field34174);
+                final Class2265<ItemStack> method27661 = Class2265.method8507(27, ItemStack.EMPTY);
                 Class8508.method28426(method27660, method27661);
                 int n = 0;
                 int n2 = 0;

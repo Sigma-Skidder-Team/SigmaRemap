@@ -19,11 +19,11 @@ public class Class4256 implements IPacket<Class5813>
     private Class2133 field19099;
     
     public Class4256() {
-        this.field19098 = ItemStack.field34174;
+        this.field19098 = ItemStack.EMPTY;
     }
     
     public Class4256(final int field19094, final int field19095, final int field19096, final Class2133 field19097, final ItemStack class8321, final short field19098) {
-        this.field19098 = ItemStack.field34174;
+        this.field19098 = ItemStack.EMPTY;
         this.field19094 = field19094;
         this.field19095 = field19095;
         this.field19096 = field19096;

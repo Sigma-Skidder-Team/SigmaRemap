@@ -22,7 +22,7 @@ public class Class485 extends Class443
     
     public void method2430(final ListNBT class52) {
         for (int i = 0; i < this.method2239(); ++i) {
-            this.method2160(i, ItemStack.field34174);
+            this.method2160(i, ItemStack.EMPTY);
         }
         for (int j = 0; j < class52.size(); ++j) {
             final CompoundNBT method346 = class52.method346(j);

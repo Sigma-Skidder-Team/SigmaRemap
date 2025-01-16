@@ -39,8 +39,8 @@ public class Class6618 extends Class6601
             class514.method6955(1042, class515, 0);
             return;
         });
-        Class3440.method10994(this.field26196).method2160(0, ItemStack.field34174);
-        Class3440.method10994(this.field26196).method2160(1, ItemStack.field34174);
+        Class3440.method10994(this.field26196).method2160(0, ItemStack.EMPTY);
+        Class3440.method10994(this.field26196).method2160(1, ItemStack.EMPTY);
         return class513;
     }
     

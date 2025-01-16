@@ -35,7 +35,7 @@ public interface Class4053
     }
     
     default ItemStack method12255(final ItemStack class8321, final List<Class3829> list) {
-        ItemStack class8322 = ItemStack.field34174;
+        ItemStack class8322 = ItemStack.EMPTY;
         final int[] array = new int[3];
         int n = 0;
         int n2 = 0;
@@ -84,6 +84,6 @@ public interface Class4053
             class8323.method12254(class8322, (((int)(a5 * n6 / n7) << 8) + (int)(a6 * n6 / n7) << 8) + (int)(b3 * n6 / n7));
             return class8322;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
 }

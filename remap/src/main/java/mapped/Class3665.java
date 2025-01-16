@@ -18,7 +18,7 @@ public class Class3665 extends Class3664
         if (!super.method11301(class473, class474)) {
             return false;
         }
-        ItemStack field34174 = ItemStack.field34174;
+        ItemStack field34174 = ItemStack.EMPTY;
         for (int n = 0; n < class473.method2239() && field34174.method27620(); ++n) {
             final ItemStack method2157 = class473.method2157(n);
             if (method2157.getItem() == Items.field31425) {
@@ -46,7 +46,7 @@ public class Class3665 extends Class3664
     
     @Override
     public ItemStack method11303(final Class473 class473) {
-        ItemStack field34174 = ItemStack.field34174;
+        ItemStack field34174 = ItemStack.EMPTY;
         for (int n = 0; n < class473.method2239() && field34174.method27620(); ++n) {
             final ItemStack method2157 = class473.method2157(n);
             if (method2157.getItem() == Items.field31425) {

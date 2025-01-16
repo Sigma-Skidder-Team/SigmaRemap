@@ -39,7 +39,7 @@ public class Class415 extends Class414 implements Class407
     
     @Override
     public void method1649() {
-        this.method1650().register(Class415.field2521, ItemStack.field34174);
+        this.method1650().register(Class415.field2521, ItemStack.EMPTY);
     }
     
     @Override

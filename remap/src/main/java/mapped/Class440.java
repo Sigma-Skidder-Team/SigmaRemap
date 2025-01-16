@@ -29,7 +29,7 @@ public class Class440 extends Class456 implements Class441, Class439
     
     public Class440(final Class181 field2671) {
         super(Class5412.field22563);
-        this.field2666 = Class2265.method8507(27, ItemStack.field34174);
+        this.field2666 = Class2265.method8507(27, ItemStack.EMPTY);
         this.field2668 = Class2100.field12169;
         this.field2671 = field2671;
     }
@@ -224,7 +224,7 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     public void method2244(final CompoundNBT class51) {
-        this.field2666 = Class2265.method8507(this.method2239(), ItemStack.field34174);
+        this.field2666 = Class2265.method8507(this.method2239(), ItemStack.EMPTY);
         if (!this.method2324(class51)) {
             if (class51.contains("Items", 9)) {
                 Class8508.method28426(class51, this.field2666);

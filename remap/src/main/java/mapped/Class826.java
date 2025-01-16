@@ -244,7 +244,7 @@ public class Class826 extends Class827 implements Class825
     
     @Override
     public ItemStack method4918() {
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     public void method4919(final CompoundNBT field4421) {

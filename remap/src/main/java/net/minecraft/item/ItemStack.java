@@ -39,7 +39,7 @@ import org.apache.logging.log4j.Logger;
 public final class ItemStack
 {
     private static final Logger field34173;
-    public static final ItemStack field34174;
+    public static final ItemStack EMPTY;
     public static final DecimalFormat field34175;
     public int field34176;
     private int field34177;
@@ -98,12 +98,12 @@ public final class ItemStack
         }
         catch (final RuntimeException ex) {
             ItemStack.field34173.debug("Tried to load invalid item: {}", (Object)class51, (Object)ex);
-            return ItemStack.field34174;
+            return ItemStack.EMPTY;
         }
     }
     
     public boolean method27620() {
-        return this == ItemStack.field34174 || this.getItem() == null || this.getItem() == Items.AIR || this.field34176 <= 0;
+        return this == ItemStack.EMPTY || this.getItem() == null || this.getItem() == Items.AIR || this.field34176 <= 0;
     }
     
     public ItemStack method27621(final int a) {
@@ -268,7 +268,7 @@ public final class ItemStack
             }
             return class8321;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     public static boolean method27642(final ItemStack class8321, final ItemStack class8322) {
@@ -855,7 +855,7 @@ public final class ItemStack
     
     static {
         field34173 = LogManager.getLogger();
-        field34174 = new ItemStack((Class3832)null);
+        EMPTY = new ItemStack((Class3832)null);
         field34175 = method27617();
     }
 }

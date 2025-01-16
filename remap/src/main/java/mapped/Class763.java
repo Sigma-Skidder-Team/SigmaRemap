@@ -113,7 +113,7 @@ public abstract class Class763 extends Class787 implements Class762
     @Override
     public ItemStack method2790(final ItemStack class8321) {
         if (!(class8321.getItem() instanceof Class4085)) {
-            return ItemStack.field34174;
+            return ItemStack.EMPTY;
         }
         final ItemStack method12291 = Class4085.method12291(this, ((Class4085)class8321.getItem()).method12289());
         return method12291.method27620() ? new ItemStack(Items.field31280) : method12291;

@@ -47,7 +47,7 @@ public class Class3677 extends Class3666
             Class5333.method16477(class474, Class5333.method16468(method2157));
             return class474;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override

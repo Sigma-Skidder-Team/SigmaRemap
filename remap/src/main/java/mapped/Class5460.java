@@ -69,7 +69,7 @@ public class Class5460 extends Class5419<Class824>
     public void method16562(final Class1849 class1849, final Class824 class1850, final long n) {
         this.method16678(this.method16682(class1850), class1850);
         if (this.field22714.isEmpty()) {
-            class1850.method1803(Class2215.field13600, ItemStack.field34174);
+            class1850.method1803(Class2215.field13600, ItemStack.EMPTY);
             this.field22717 = Math.min(this.field22717, 40);
         }
         else {
@@ -81,7 +81,7 @@ public class Class5460 extends Class5419<Class824>
     public void method16563(final Class1849 class1849, final Class824 class1850, final long n) {
         super.method16548(class1849, class1850, n);
         class1850.method2618().method1195(Class8233.field33811);
-        class1850.method1803(Class2215.field13600, ItemStack.field34174);
+        class1850.method1803(Class2215.field13600, ItemStack.EMPTY);
         this.field22713 = null;
     }
     

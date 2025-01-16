@@ -19,7 +19,7 @@ public class Class450 implements Class446
     private int field2695;
     
     public Class450(final Class822 field2691) {
-        this.field2692 = Class2265.method8507(3, ItemStack.field34174);
+        this.field2692 = Class2265.method8507(3, ItemStack.EMPTY);
         this.field2691 = field2691;
     }
     
@@ -102,7 +102,7 @@ public class Class450 implements Class446
         }
         else {
             class8321 = this.field2692.get(1);
-            field34174 = ItemStack.field34174;
+            field34174 = ItemStack.EMPTY;
         }
         if (!class8321.method27620()) {
             final Class57 method4825 = this.field2691.method4825();
@@ -118,14 +118,14 @@ public class Class450 implements Class446
                     this.field2695 = class8322.method32296();
                 }
                 else {
-                    this.method2160(2, ItemStack.field34174);
+                    this.method2160(2, ItemStack.EMPTY);
                     this.field2695 = 0;
                 }
             }
             this.field2691.method4831(this.method2157(2));
         }
         else {
-            this.method2160(2, ItemStack.field34174);
+            this.method2160(2, ItemStack.EMPTY);
             this.field2695 = 0;
         }
     }

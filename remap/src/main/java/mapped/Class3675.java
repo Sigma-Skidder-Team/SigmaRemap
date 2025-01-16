@@ -58,7 +58,7 @@ public class Class3675 extends Class3666
                             }
                         }
                     }
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
             }
         }
@@ -82,7 +82,7 @@ public class Class3675 extends Class3666
                 }
             }
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override

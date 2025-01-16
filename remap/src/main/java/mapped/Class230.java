@@ -60,7 +60,7 @@ public enum Class230
     
     private Class230(final String field854, final String field855) {
         this.field856 = new String[3];
-        this.field857 = ItemStack.field34174;
+        this.field857 = ItemStack.EMPTY;
         this.field854 = field854;
         this.field855 = field855;
     }

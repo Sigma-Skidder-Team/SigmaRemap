@@ -122,11 +122,11 @@ public abstract class LivingEntity extends Entity
         super(class7499, class7500);
         this.field2929 = new Class9535(this);
         this.field2930 = Maps.newHashMap();
-        this.field2931 = Class2265.method8507(2, ItemStack.field34174);
-        this.field2932 = Class2265.method8507(4, ItemStack.field34174);
+        this.field2931 = Class2265.method8507(2, ItemStack.EMPTY);
+        this.field2932 = Class2265.method8507(4, ItemStack.EMPTY);
         this.field2955 = 0.02f;
         this.field2979 = true;
-        this.field2987 = ItemStack.field34174;
+        this.field2987 = ItemStack.EMPTY;
         this.method2621();
         this.method2665(this.method2701());
         this.preventEntitySpawning = true;
@@ -2487,7 +2487,7 @@ public abstract class LivingEntity extends Entity
                     }
                     else if (!this.method2756()) {
                         if (!this.field2987.method27620()) {
-                            this.field2987 = ItemStack.field34174;
+                            this.field2987 = ItemStack.EMPTY;
                             this.field2988 = 0;
                         }
                     }
@@ -2570,7 +2570,7 @@ public abstract class LivingEntity extends Entity
         if (!this.world.isRemote) {
             this.method2761(1, false);
         }
-        this.field2987 = ItemStack.field34174;
+        this.field2987 = ItemStack.EMPTY;
         this.field2988 = 0;
     }
     
@@ -2745,7 +2745,7 @@ public abstract class LivingEntity extends Entity
     }
     
     public ItemStack method2790(final ItemStack class8321) {
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     public ItemStack method2791(final World class1847, final ItemStack class1848) {

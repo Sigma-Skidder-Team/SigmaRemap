@@ -62,7 +62,7 @@ public class Class3436 extends Class3418
     
     @Override
     public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
-        ItemStack class513 = ItemStack.field34174;
+        ItemStack class513 = ItemStack.EMPTY;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
@@ -76,27 +76,27 @@ public class Class3436 extends Class3418
                                     if (this.method10888(method20053, 0, 1, false)) {
                                         break Label_0093;
                                     }
-                                    return ItemStack.field34174;
+                                    return ItemStack.EMPTY;
                                 }
                             }
                         }
                         if (n >= 1 && n < 28) {
                             if (!this.method10888(method20053, 28, 37, false)) {
-                                return ItemStack.field34174;
+                                return ItemStack.EMPTY;
                             }
                         }
                         else if (n >= 28 && n < 37) {
                             if (!this.method10888(method20053, 1, 28, false)) {
-                                return ItemStack.field34174;
+                                return ItemStack.EMPTY;
                             }
                         }
                         else if (!this.method10888(method20053, 1, 37, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else {
                         if (!this.method10888(method20053, 1, 37, true)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                         class514.method20049(method20053, class513);
                     }
@@ -105,10 +105,10 @@ public class Class3436 extends Class3418
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(ItemStack.field34174);
+                    class514.method20055(ItemStack.EMPTY);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 class514.method20047(playerEntity, method20053);
             }

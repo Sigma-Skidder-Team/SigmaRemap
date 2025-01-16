@@ -48,8 +48,8 @@ public class Class857 extends LivingEntity
     
     public Class857(final EntityType<? extends Class857> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field4579 = Class2265.method8507(2, ItemStack.field34174);
-        this.field4580 = Class2265.method8507(4, ItemStack.field34174);
+        this.field4579 = Class2265.method8507(2, ItemStack.EMPTY);
+        this.field4580 = Class2265.method8507(4, ItemStack.EMPTY);
         this.field4584 = Class857.field4565;
         this.field4585 = Class857.field4566;
         this.field4586 = Class857.field4567;
@@ -114,7 +114,7 @@ public class Class857 extends LivingEntity
                 return this.field4580.get(class2215.method8402());
             }
             default: {
-                return ItemStack.field34174;
+                return ItemStack.EMPTY;
             }
         }
     }
@@ -521,14 +521,14 @@ public class Class857 extends LivingEntity
             final ItemStack class7930 = this.field4579.get(i);
             if (!class7930.method27620()) {
                 Block.method11839(this.world, new BlockPos(this).method1137(), class7930);
-                this.field4579.set(i, ItemStack.field34174);
+                this.field4579.set(i, ItemStack.EMPTY);
             }
         }
         for (int j = 0; j < this.field4580.size(); ++j) {
             final ItemStack class7931 = this.field4580.get(j);
             if (!class7931.method27620()) {
                 Block.method11839(this.world, new BlockPos(this).method1137(), class7931);
-                this.field4580.set(j, ItemStack.field34174);
+                this.field4580.set(j, ItemStack.EMPTY);
             }
         }
     }

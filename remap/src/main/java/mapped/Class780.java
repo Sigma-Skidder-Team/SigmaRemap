@@ -70,7 +70,7 @@ public abstract class Class780 extends Class763 implements Class768
                     method4218.method27633(method4218.method27632() + this.rand.nextInt(2));
                     if (method4218.method27632() >= method4218.method27634()) {
                         this.method2794(Class2215.field13605);
-                        this.method1803(Class2215.field13605, ItemStack.field34174);
+                        this.method1803(Class2215.field13605, ItemStack.EMPTY);
                     }
                 }
                 method4217 = 0;

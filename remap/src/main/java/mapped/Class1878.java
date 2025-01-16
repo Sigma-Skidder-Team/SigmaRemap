@@ -154,7 +154,7 @@ public class Class1878 implements Class1851
         final BlockState method6701 = this.getBlockState(class354);
         if (!method6701.method21706()) {
             if (b) {
-                Block.method11838(method6701, this.field10219, class354, method6701.getBlock().method11802() ? this.getTileEntity(class354) : null, class355, ItemStack.field34174);
+                Block.method11838(method6701, this.field10219, class354, method6701.getBlock().method11802() ? this.getTileEntity(class354) : null, class355, ItemStack.EMPTY);
             }
             return this.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
         }

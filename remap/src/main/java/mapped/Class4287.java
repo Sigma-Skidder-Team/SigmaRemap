@@ -15,11 +15,11 @@ public class Class4287 implements IPacket<Class5813>
     private ItemStack field19228;
     
     public Class4287() {
-        this.field19228 = ItemStack.field34174;
+        this.field19228 = ItemStack.EMPTY;
     }
     
     public Class4287(final int field19227, final ItemStack class8321) {
-        this.field19228 = ItemStack.field34174;
+        this.field19228 = ItemStack.EMPTY;
         this.field19227 = field19227;
         this.field19228 = class8321.method27641();
     }

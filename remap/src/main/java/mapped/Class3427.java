@@ -84,7 +84,7 @@ public class Class3427 extends Class3426<Class473>
     
     @Override
     public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
-        ItemStack class513 = ItemStack.field34174;
+        ItemStack class513 = ItemStack.EMPTY;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
@@ -94,42 +94,42 @@ public class Class3427 extends Class3426<Class473>
                 if (n != 0) {
                     if (n >= 1 && n < 5) {
                         if (!this.method10888(method20053, 9, 45, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (n >= 5 && n < 9) {
                         if (!this.method10888(method20053, 9, 45, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (method20054.method8401() == Class295.field1682 && !this.field16151.get(8 - method20054.method8402()).method20054()) {
                         final int n2 = 8 - method20054.method8402();
                         if (!this.method10888(method20053, n2, n2 + 1, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (method20054 == Class2215.field13601 && !this.field16151.get(45).method20054()) {
                         if (!this.method10888(method20053, 45, 46, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (n >= 9 && n < 36) {
                         if (!this.method10888(method20053, 36, 45, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (n >= 36 && n < 45) {
                         if (!this.method10888(method20053, 9, 36, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (!this.method10888(method20053, 9, 45, false)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                 }
                 else {
                     if (!this.method10888(method20053, 9, 45, true)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                     class514.method20049(method20053, class513);
                 }
@@ -137,10 +137,10 @@ public class Class3427 extends Class3426<Class473>
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(ItemStack.field34174);
+                    class514.method20055(ItemStack.EMPTY);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 final ItemStack method20055 = class514.method20047(playerEntity, method20053);
                 if (n == 0) {

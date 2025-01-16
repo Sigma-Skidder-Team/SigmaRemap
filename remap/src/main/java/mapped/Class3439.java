@@ -86,7 +86,7 @@ public class Class3439 extends Class3418
                             }
                         }
                     }
-                    this.field16244.method20055(ItemStack.field34174);
+                    this.field16244.method20055(ItemStack.EMPTY);
                     this.field16239.method19833(0);
                     break Label_0052;
                 }
@@ -125,7 +125,7 @@ public class Class3439 extends Class3418
     
     @Override
     public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
-        ItemStack class513 = ItemStack.field34174;
+        ItemStack class513 = ItemStack.EMPTY;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
@@ -143,7 +143,7 @@ public class Class3439 extends Class3418
                                                     if (this.method10888(method20053, 31, 40, false)) {
                                                         break Label_0090;
                                                     }
-                                                    return ItemStack.field34174;
+                                                    return ItemStack.EMPTY;
                                                 }
                                                 else {
                                                     if (n < 31) {
@@ -155,39 +155,39 @@ public class Class3439 extends Class3418
                                                     if (this.method10888(method20053, 4, 31, false)) {
                                                         break Label_0090;
                                                     }
-                                                    return ItemStack.field34174;
+                                                    return ItemStack.EMPTY;
                                                 }
                                             }
                                             else {
                                                 if (this.method10888(method20053, this.field16243.field26174, this.field16243.field26174 + 1, false)) {
                                                     break Label_0090;
                                                 }
-                                                return ItemStack.field34174;
+                                                return ItemStack.EMPTY;
                                             }
                                         }
                                         else {
                                             if (this.method10888(method20053, this.field16242.field26174, this.field16242.field26174 + 1, false)) {
                                                 break Label_0090;
                                             }
-                                            return ItemStack.field34174;
+                                            return ItemStack.EMPTY;
                                         }
                                     }
                                     else {
                                         if (this.method10888(method20053, this.field16241.field26174, this.field16241.field26174 + 1, false)) {
                                             break Label_0090;
                                         }
-                                        return ItemStack.field34174;
+                                        return ItemStack.EMPTY;
                                     }
                                 }
                             }
                         }
                         if (!this.method10888(method20053, 4, 40, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else {
                         if (!this.method10888(method20053, 4, 40, true)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                         class514.method20049(method20053, class513);
                     }
@@ -196,10 +196,10 @@ public class Class3439 extends Class3418
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(ItemStack.field34174);
+                    class514.method20055(ItemStack.EMPTY);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 class514.method20047(playerEntity, method20053);
             }
@@ -217,7 +217,7 @@ public class Class3439 extends Class3418
         if (this.field16239.method19832() > 0) {
             final ItemStack method20053 = this.field16241.method20053();
             final ItemStack method20054 = this.field16242.method20053();
-            ItemStack class8321 = ItemStack.field34174;
+            ItemStack class8321 = ItemStack.EMPTY;
             if (!method20053.method27620()) {
                 if (!method20054.method27620()) {
                     class8321 = method20053.method27641();

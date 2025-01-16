@@ -16,7 +16,7 @@ public class Class470 implements Class446, Class469
     private Class3662<?> field2765;
     
     public Class470() {
-        this.field2764 = Class2265.method8507(1, ItemStack.field34174);
+        this.field2764 = Class2265.method8507(1, ItemStack.EMPTY);
     }
     
     @Override

@@ -208,7 +208,7 @@ public class Explosion
                 this.world.method6796().startSection("explosion_blocks");
                 if (method6702.method11872(this)) {
                     if (this.world instanceof Class1849) {
-                        final Class9098 method6703 = new Class9098((Class1849)this.world).method32873(this.world.rand).method32877(Class6683.field26367, class354).method32877(Class6683.field26370, ItemStack.field34174).method32878(Class6683.field26369, method6702.method11802() ? this.world.getTileEntity(class354) : null).method32878(Class6683.field26362, this.exploder);
+                        final Class9098 method6703 = new Class9098((Class1849)this.world).method32873(this.world.rand).method32877(Class6683.field26367, class354).method32877(Class6683.field26370, ItemStack.EMPTY).method32878(Class6683.field26369, method6702.method11802() ? this.world.getTileEntity(class354) : null).method32878(Class6683.field26362, this.exploder);
                         if (this.mode == Mode.field13367) {
                             method6703.method32877(Class6683.field26371, this.size);
                         }

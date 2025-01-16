@@ -21,12 +21,12 @@ public class Class443 implements Class446, Class472
     
     public Class443(final int field2679) {
         this.field2679 = field2679;
-        this.field2680 = Class2265.method8507(field2679, ItemStack.field34174);
+        this.field2680 = Class2265.method8507(field2679, ItemStack.EMPTY);
     }
     
     public Class443(final ItemStack... array) {
         this.field2679 = array.length;
-        this.field2680 = Class2265.method8508(ItemStack.field34174, array);
+        this.field2680 = Class2265.method8508(ItemStack.EMPTY, array);
     }
     
     public void method2255(final Class807 class807) {
@@ -42,7 +42,7 @@ public class Class443 implements Class446, Class472
     
     @Override
     public ItemStack method2157(final int n) {
-        return (n >= 0 && n < this.field2680.size()) ? this.field2680.get(n) : ItemStack.field34174;
+        return (n >= 0 && n < this.field2680.size()) ? this.field2680.get(n) : ItemStack.EMPTY;
     }
     
     @Override
@@ -76,19 +76,19 @@ public class Class443 implements Class446, Class472
         this.method2261(method27641);
         if (!method27641.method27620()) {
             this.method2260(method27641);
-            return method27641.method27620() ? ItemStack.field34174 : method27641;
+            return method27641.method27620() ? ItemStack.EMPTY : method27641;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override
     public ItemStack method2159(final int n) {
         final ItemStack class8321 = this.field2680.get(n);
         if (!class8321.method27620()) {
-            this.field2680.set(n, ItemStack.field34174);
+            this.field2680.set(n, ItemStack.EMPTY);
             return class8321;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override

@@ -23,13 +23,13 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     
     public Class433(final EntityType<?> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field2645 = Class2265.method8507(36, ItemStack.field34174);
+        this.field2645 = Class2265.method8507(36, ItemStack.EMPTY);
         this.field2646 = true;
     }
     
     public Class433(final EntityType<?> class7499, final double n, final double n2, final double n3, final World class7500) {
         super(class7499, class7500, n, n2, n3);
-        this.field2645 = Class2265.method8507(36, ItemStack.field34174);
+        this.field2645 = Class2265.method8507(36, ItemStack.EMPTY);
         this.field2646 = true;
     }
     
@@ -70,10 +70,10 @@ public abstract class Class433 extends Class428 implements Class446, Class434
         this.method2163(null);
         final ItemStack class8321 = this.field2645.get(n);
         if (!class8321.method27620()) {
-            this.field2645.set(n, ItemStack.field34174);
+            this.field2645.set(n, ItemStack.EMPTY);
             return class8321;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override
@@ -139,7 +139,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     @Override
     public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field2645 = Class2265.method8507(this.method2239(), ItemStack.field34174);
+        this.field2645 = Class2265.method8507(this.method2239(), ItemStack.EMPTY);
         if (!class51.contains("LootTable", 8)) {
             Class8508.method28426(class51, this.field2645);
         }

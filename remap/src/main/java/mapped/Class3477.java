@@ -41,7 +41,7 @@ public class Class3477 extends Class3446
         final ItemStack method2718 = this.field16385.method2718(Class2215.field13600);
         if (!method2718.method27620()) {
             this.method11042(method2718);
-            this.field16385.method1803(Class2215.field13600, ItemStack.field34174);
+            this.field16385.method1803(Class2215.field13600, ItemStack.EMPTY);
             this.field16384 = this.field16385.ticksExisted + Class840.method5012(this.field16385).nextInt(100);
         }
     }
@@ -57,7 +57,7 @@ public class Class3477 extends Class3446
         }
         else {
             this.method11042(method6740);
-            this.field16385.method1803(Class2215.field13600, ItemStack.field34174);
+            this.field16385.method1803(Class2215.field13600, ItemStack.EMPTY);
         }
     }
     

@@ -615,7 +615,7 @@ public class Class803 extends Class789
         final ItemStack method2718 = this.method2718(Class2215.field13600);
         if (!method2718.method27620()) {
             this.method1766(method2718);
-            this.method1803(Class2215.field13600, ItemStack.field34174);
+            this.method1803(Class2215.field13600, ItemStack.EMPTY);
         }
         super.method2675(class7929);
     }

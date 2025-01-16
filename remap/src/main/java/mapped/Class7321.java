@@ -65,7 +65,7 @@ public class Class7321
             final Class501 class7493 = (Class501)method21448.getTileEntity(optional.get());
             final BlockPos method21449 = method21447.method1136(optional.get());
             final String string = method21449.getX() + ", " + method21449.getY() + ", " + method21449.getZ();
-            class7492.method23257(new StringTextComponent("Position relative to " + class7493.method2555() + ": ").appendSibling(new StringTextComponent(string).setStyle(new Style().setBold(true).setColor(TextFormatting.GREEN).method30420(new Class9390(Class1961.field10697, new StringTextComponent("Click to copy to clipboard"))).method30419(new Class9485(Class2075.field11976, "final BlockPos " + str + " = new BlockPos(" + string + ");")))), false);
+            class7492.method23257(new StringTextComponent("Position relative to " + class7493.method2555() + ": ").appendSibling(new StringTextComponent(string).setStyle(new Style().setBold(true).setColor(TextFormatting.GREEN).method30420(new HoverEvent(HoverEvent.Action.field10697, new StringTextComponent("Click to copy to clipboard"))).method30419(new Class9485(Class2075.field11976, "final BlockPos " + str + " = new BlockPos(" + string + ");")))), false);
             Class9324.method34529(method21448, new BlockPos(method21447), string, -2147418368, 10000);
             return 1;
         }

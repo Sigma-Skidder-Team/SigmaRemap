@@ -12,7 +12,7 @@ public class Class449 extends TileEntity implements Class447
     
     public Class449() {
         super(Class5412.field22545);
-        this.field2689 = ItemStack.field34174;
+        this.field2689 = ItemStack.EMPTY;
     }
     
     @Override
@@ -43,6 +43,6 @@ public class Class449 extends TileEntity implements Class447
     
     @Override
     public void method2164() {
-        this.method2278(ItemStack.field34174);
+        this.method2278(ItemStack.EMPTY);
     }
 }

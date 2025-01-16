@@ -1116,7 +1116,7 @@ public class Class5814 implements Class5813
                         final Class2265<Object> method8506 = (Class2265<Object>)Class2265.method8506();
                         for (int i = 0; i < this.field23857.field3009.field16151.size(); ++i) {
                             final ItemStack method8507 = this.field23857.field3009.field16151.get(i).method20053();
-                            method8506.add(method8507.method27620() ? ItemStack.field34174 : method8507);
+                            method8506.add(method8507.method27620() ? ItemStack.EMPTY : method8507);
                         }
                         this.field23857.method2930(this.field23857.field3009, (Class2265<ItemStack>)method8506);
                     }
@@ -1217,7 +1217,7 @@ public class Class5814 implements Class5813
                     this.field23857.field3008.method10882(class4287.method12874(), method12875);
                 }
                 else {
-                    this.field23857.field3008.method10882(class4287.method12874(), ItemStack.field34174);
+                    this.field23857.field3008.method10882(class4287.method12874(), ItemStack.EMPTY);
                 }
                 this.field23857.field3008.method10887(this.field23857, true);
                 this.field23857.field3008.method10876();

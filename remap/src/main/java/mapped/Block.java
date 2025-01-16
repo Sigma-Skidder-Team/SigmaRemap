@@ -454,7 +454,7 @@ public class Block implements Class3832
     }
     
     public static List<ItemStack> method11834(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final TileEntity class7099) {
-        return class7096.method21743(new Class9098(class7097).method32873(class7097.rand).method32877(Class6683.field26367, class7098).method32877(Class6683.field26370, ItemStack.field34174).method32878(Class6683.field26369, class7099));
+        return class7096.method21743(new Class9098(class7097).method32873(class7097.rand).method32877(Class6683.field26367, class7098).method32877(Class6683.field26370, ItemStack.EMPTY).method32878(Class6683.field26369, class7099));
     }
     
     public static List<ItemStack> method11835(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final TileEntity class7099, final Entity class7100, final ItemStack class7101) {
@@ -465,14 +465,14 @@ public class Block implements Class3832
         if (class7097 instanceof Class1849) {
             method11834(class7096, (Class1849)class7097, class7098, null).forEach(class7101 -> method11839(class7099, class7100, class7101));
         }
-        class7096.method21742(class7097, class7098, ItemStack.field34174);
+        class7096.method21742(class7097, class7098, ItemStack.EMPTY);
     }
     
     public static void method11837(final BlockState class7096, final World class7097, final BlockPos class7098, final TileEntity class7099) {
         if (class7097 instanceof Class1849) {
             method11834(class7096, (Class1849)class7097, class7098, class7099).forEach(class7102 -> method11839(class7100, class7101, class7102));
         }
-        class7096.method21742(class7097, class7098, ItemStack.field34174);
+        class7096.method21742(class7097, class7098, ItemStack.EMPTY);
     }
     
     public static void method11838(final BlockState class7096, final World class7097, final BlockPos class7098, final TileEntity class7099, final Entity class7100, final ItemStack class7101) {

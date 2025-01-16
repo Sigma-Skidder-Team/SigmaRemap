@@ -26,7 +26,7 @@ public class Class3823 extends Item
         final ItemStack method2715 = class1848.method2715(class1849);
         final CompoundNBT method2716 = method2715.method27657();
         if (!class1848.field3025.field27304) {
-            class1848.method2716(class1849, ItemStack.field34174);
+            class1848.method2716(class1849, ItemStack.EMPTY);
         }
         if (method2716 != null && method2716.contains("Recipes", 9)) {
             if (!class1847.isRemote) {

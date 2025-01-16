@@ -67,11 +67,11 @@ public class Class3672 extends Class3666
                 }
             }
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     public Class2265<ItemStack> method11323(final Class473 class473) {
-        final Class2265<ItemStack> method8507 = Class2265.method8507(class473.method2239(), ItemStack.field34174);
+        final Class2265<ItemStack> method8507 = Class2265.method8507(class473.method2239(), ItemStack.EMPTY);
         for (int i = 0; i < method8507.size(); ++i) {
             final ItemStack method8508 = class473.method2157(i);
             if (!method8508.method27620()) {

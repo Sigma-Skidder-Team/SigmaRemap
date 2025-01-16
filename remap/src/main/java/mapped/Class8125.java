@@ -31,8 +31,8 @@ public class Class8125
                     final Class9485 class7496;
                     final Object o;
                     ((Style)o).method30419(class7496);
-                    new Class9390(Class1961.field10697, new Class2259("chat.coordinates.tooltip", new Object[0]));
-                    final Class9390 class7497;
+                    new HoverEvent(HoverEvent.Action.field10697, new Class2259("chat.coordinates.tooltip", new Object[0]));
+                    final HoverEvent class7497;
                     final Object o2;
                     ((Style)o2).method30420(class7497);
                     return;

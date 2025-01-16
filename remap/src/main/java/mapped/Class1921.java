@@ -72,8 +72,8 @@ public class Class1921 implements AutoCloseable
     public ITextComponent method7618(final boolean b) {
         return Class9479.method35299(new StringTextComponent(this.field10444)).applyTextStyle(class8768 -> {
             class8768.setColor(b2 ? TextFormatting.GREEN : TextFormatting.RED).method30421(StringArgumentType.escapeIfRequired(this.field10444));
-            new Class9390(Class1961.field10697, new StringTextComponent("").appendSibling(this.field10446).appendText("\n").appendSibling(this.field10447));
-            final Class9390 class8769;
+            new HoverEvent(HoverEvent.Action.field10697, new StringTextComponent("").appendSibling(this.field10446).appendText("\n").appendSibling(this.field10447));
+            final HoverEvent class8769;
             final Object o;
             ((Style)o).method30420(class8769);
         });

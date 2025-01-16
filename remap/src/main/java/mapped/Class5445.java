@@ -167,7 +167,7 @@ public class Class5445 extends Class5419<Class824>
                                     if (!method6705.method27620()) {
                                         break;
                                     }
-                                    method6704.method2160(i, ItemStack.field34174);
+                                    method6704.method2160(i, ItemStack.EMPTY);
                                     break;
                                 }
                             }

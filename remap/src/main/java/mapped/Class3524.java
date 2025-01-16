@@ -69,7 +69,7 @@ public class Class3524 extends Class3446
         final ItemStack method2718 = this.field16533.method2718(Class2215.field13600);
         if (!method2718.method27620()) {
             this.field16533.method1766(method2718);
-            this.field16533.method1803(Class2215.field13600, ItemStack.field34174);
+            this.field16533.method1803(Class2215.field13600, ItemStack.EMPTY);
             this.field16532 = this.field16533.ticksExisted + (this.field16533.method4394() ? (Class791.method4431(this.field16533).nextInt(50) + 10) : (Class791.method4432(this.field16533).nextInt(150) + 10)) * 20;
         }
         this.field16533.method4375(false);

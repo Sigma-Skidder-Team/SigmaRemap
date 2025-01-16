@@ -356,7 +356,7 @@ public class Class513 extends PlayerEntity implements Class514
             this.field3039.method17470(new Class4260(this.method2699(), Class344.field2122, method35595), (GenericFutureListener<? extends Future<? super Void>>)(future -> {
                 if (!future.isSuccess()) {
                     final Class2259 class2251 = new Class2259("death.attack.message_too_long", new Object[] { new StringTextComponent(method35595.getStringTruncated(256)).applyTextStyle(TextFormatting.YELLOW) });
-                    this.field3039.method17469(new Class4260(this.method2699(), Class344.field2122, new Class2259("death.attack.even_more_magic", new Object[] { this.getDisplayName() }).applyTextStyle(class2253 -> class2253.method30420(new Class9390(Class1961.field10697, class2252)))));
+                    this.field3039.method17469(new Class4260(this.method2699(), Class344.field2122, new Class2259("death.attack.even_more_magic", new Object[] { this.getDisplayName() }).applyTextStyle(class2253 -> class2253.method30420(new HoverEvent(HoverEvent.Action.field10697, class2252)))));
                 }
             }));
             final Team method35596 = this.getTeam();

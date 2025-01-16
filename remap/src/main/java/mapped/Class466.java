@@ -34,7 +34,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     
     public Class466(final Class5412<?> class5412, final Class8976<? extends Class3680> field2762) {
         super(class5412);
-        this.field2755 = Class2265.method8507(3, ItemStack.field34174);
+        this.field2755 = Class2265.method8507(3, ItemStack.EMPTY);
         this.field2760 = new Class7605(this);
         this.field2761 = Maps.newHashMap();
         this.field2762 = field2762;
@@ -123,7 +123,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     @Override
     public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        Class8508.method28426(class51, this.field2755 = Class2265.method8507(this.method2239(), ItemStack.field34174));
+        Class8508.method28426(class51, this.field2755 = Class2265.method8507(this.method2239(), ItemStack.EMPTY));
         this.field2756 = class51.getShort("BurnTime");
         this.field2758 = class51.getShort("CookTime");
         this.field2759 = class51.getShort("CookTimeTotal");
@@ -179,7 +179,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
                                 class8321.method27693(1);
                                 if (class8321.method27620()) {
                                     final Item method2397 = method2396.method11720();
-                                    this.field2755.set(1, (method2397 != null) ? new ItemStack(method2397) : ItemStack.field34174);
+                                    this.field2755.set(1, (method2397 != null) ? new ItemStack(method2397) : ItemStack.EMPTY);
                                 }
                             }
                         }

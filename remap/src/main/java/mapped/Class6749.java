@@ -53,8 +53,8 @@ public class Class6749 extends Team
     public ITextComponent method20541() {
         final ITextComponent method35299 = Class9479.method35299(this.field26546.deepCopy().applyTextStyle(class8768 -> {
             class8768.method30421(this.field26544);
-            new Class9390(Class1961.field10697, new StringTextComponent(this.field26544));
-            final Class9390 class8769;
+            new HoverEvent(HoverEvent.Action.field10697, new StringTextComponent(this.field26544));
+            final HoverEvent class8769;
             final Object o;
             ((Style)o).method30420(class8769);
             return;

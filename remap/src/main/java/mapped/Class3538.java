@@ -41,7 +41,7 @@ public class Class3538<T extends Class759> extends Class3446
     
     @Override
     public void method11018() {
-        this.field16578.method1803(Class2215.field13600, ItemStack.field34174);
+        this.field16578.method1803(Class2215.field13600, ItemStack.EMPTY);
         if (this.field16581 != null) {
             this.field16578.method1695(this.field16581, 1.0f, this.field16578.method2633().nextFloat() * 0.2f + 0.9f);
         }

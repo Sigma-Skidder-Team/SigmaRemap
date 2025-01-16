@@ -28,14 +28,14 @@ public class Class455 extends Class456 implements Class453, Class439
     
     public Class455() {
         super(Class5412.field22557);
-        this.field2707 = Class2265.method8507(5, ItemStack.field34174);
+        this.field2707 = Class2265.method8507(5, ItemStack.EMPTY);
         this.field2708 = -1;
     }
     
     @Override
     public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2707 = Class2265.method8507(this.method2239(), ItemStack.field34174);
+        this.field2707 = Class2265.method8507(this.method2239(), ItemStack.EMPTY);
         if (!this.method2324(class51)) {
             Class8508.method28426(class51, this.field2707);
         }
@@ -245,7 +245,7 @@ public class Class455 extends Class456 implements Class453, Class439
             }
             else {
                 class447.method2160(n, field34174);
-                field34174 = ItemStack.field34174;
+                field34174 = ItemStack.EMPTY;
                 n2 = 1;
             }
             if (n2 != 0) {

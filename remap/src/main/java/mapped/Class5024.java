@@ -76,7 +76,7 @@ public class Class5024
     }
     
     public static ItemStack method15253(final int n) {
-        return (n != 0) ? new ItemStack(Item.method11697(n)) : ItemStack.field34174;
+        return (n != 0) ? new ItemStack(Item.method11697(n)) : ItemStack.EMPTY;
     }
     
     public void method15254() {

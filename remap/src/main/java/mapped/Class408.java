@@ -50,7 +50,7 @@ public class Class408 extends Entity implements Class407
     
     @Override
     public void method1649() {
-        this.method1650().register(Class408.field2500, ItemStack.field34174);
+        this.method1650().register(Class408.field2500, ItemStack.EMPTY);
     }
     
     @Override

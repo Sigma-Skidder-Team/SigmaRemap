@@ -278,7 +278,7 @@ public class Class8071
                 }
             }
             if (class516.method27620()) {
-                playerEntity.method2716(class515, ItemStack.field34174);
+                playerEntity.method2716(class515, ItemStack.EMPTY);
             }
             if (!playerEntity.method2756()) {
                 ((Class513) playerEntity).method2929(playerEntity.field3008);

@@ -21,7 +21,7 @@ public class Class4365 implements IPacket<IClientPlayNetHandler>
     
     public Class4365(final int field19559, final Class2265<ItemStack> class2265) {
         this.field19559 = field19559;
-        this.field19560 = Class2265.method8507(class2265.size(), ItemStack.field34174);
+        this.field19560 = Class2265.method8507(class2265.size(), ItemStack.EMPTY);
         for (int i = 0; i < this.field19560.size(); ++i) {
             this.field19560.set(i, ((ItemStack)class2265.get(i)).method27641());
         }
@@ -31,7 +31,7 @@ public class Class4365 implements IPacket<IClientPlayNetHandler>
     public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19559 = class8654.readUnsignedByte();
         final short short1 = class8654.readShort();
-        this.field19560 = Class2265.method8507(short1, ItemStack.field34174);
+        this.field19560 = Class2265.method8507(short1, ItemStack.EMPTY);
         for (short n = 0; n < short1; ++n) {
             this.field19560.set(n, class8654.method29511());
         }

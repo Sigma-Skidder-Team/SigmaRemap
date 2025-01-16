@@ -104,7 +104,7 @@ public class Class9317
                 class446.method2160(method34487.remove(method34487.size() - 1), class448);
             }
             else {
-                class446.method2160((int)method34487.remove(method34487.size() - 1), ItemStack.field34174);
+                class446.method2160((int)method34487.remove(method34487.size() - 1), ItemStack.EMPTY);
             }
         }
     }

@@ -278,7 +278,7 @@ public class PacketBuffer extends ByteBuf
             }
             return class8321;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     public String method29512() {

@@ -188,7 +188,7 @@ public class Class827 extends Class763
                         method2718.method27633(method2718.method27632() + this.rand.nextInt(2));
                         if (method2718.method27632() >= method2718.method27634()) {
                             this.method2794(Class2215.field13605);
-                            this.method1803(Class2215.field13605, ItemStack.field34174);
+                            this.method1803(Class2215.field13605, ItemStack.EMPTY);
                         }
                     }
                     n = 0;

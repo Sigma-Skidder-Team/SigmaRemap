@@ -40,7 +40,7 @@ public class Class8863
                 final ITextComponent class2253;
                 final TextFormatting class2254;
                 class2253.deepCopy().applyTextStyle(class2254).appendText("\n").appendSibling(class2252.method22528());
-                class2251.method30420(new Class9390(Class1961.field10697, class2250));
+                class2251.method30420(new HoverEvent(HoverEvent.Action.field10697, class2250));
             })).appendText("]").applyTextStyle(class2252.method22531().method8018());
         }
         else {

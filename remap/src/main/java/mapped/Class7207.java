@@ -40,7 +40,7 @@ public abstract class Class7207
         this.field28012 = new Class242[0];
         this.field28006 = field28006;
         this.field28007 = field28007;
-        this.field28013 = ItemStack.field34174;
+        this.field28013 = ItemStack.EMPTY;
         Class7207.field27992[field28006] = this;
     }
     

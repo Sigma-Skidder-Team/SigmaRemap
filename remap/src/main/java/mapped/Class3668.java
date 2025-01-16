@@ -53,7 +53,7 @@ public class Class3668 extends Class3666
     }
     
     public ItemStack method11303(final Class473 class473) {
-        ItemStack field34174 = ItemStack.field34174;
+        ItemStack field34174 = ItemStack.EMPTY;
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method2157 = class473.method2157(i);
             if (!method2157.method27620() && method2157.getItem().method11742(Class7855.field32266)) {

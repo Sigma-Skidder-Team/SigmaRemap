@@ -21,7 +21,7 @@ public class Class448 extends TileEntity implements Class447, Class439
     
     public Class448() {
         super(Class5412.field22572);
-        this.field2686 = Class2265.method8507(4, ItemStack.field34174);
+        this.field2686 = Class2265.method8507(4, ItemStack.EMPTY);
         this.field2687 = new int[4];
         this.field2688 = new int[4];
     }
@@ -57,7 +57,7 @@ public class Class448 extends TileEntity implements Class447, Class439
                     final ItemStack class8321 = this.field2656.method6792().method6378(Class8976.field37847, new Class443(new ItemStack[] { other }), this.field2656).map(class8323 -> class8323.method11290(class8322)).orElse(other);
                     final BlockPos method2193 = this.getPos();
                     Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8321);
-                    this.field2686.set(i, ItemStack.field34174);
+                    this.field2686.set(i, ItemStack.EMPTY);
                     this.method2274();
                 }
             }

@@ -61,7 +61,7 @@ public class Class3671 extends Class3666
             method27641.method27659("Explosion").putIntArray("FadeColors", arrayList);
             return method27641;
         }
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override

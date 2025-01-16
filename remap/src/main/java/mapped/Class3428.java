@@ -46,7 +46,7 @@ public class Class3428 extends Class3426<Class473>
     public static void method10942(final int n, final World class1847, final PlayerEntity class1848, final Class473 class1849, final Class470 class1850) {
         if (!class1847.isRemote) {
             final Class513 class1851 = (Class513)class1848;
-            ItemStack class1852 = ItemStack.field34174;
+            ItemStack class1852 = ItemStack.EMPTY;
             final Optional<Class3663> method6378 = class1847.getServer().method1577().method6378(Class8976.field37843, class1849, class1847);
             if (method6378.isPresent()) {
                 final Class3663 class1853 = method6378.get();
@@ -93,7 +93,7 @@ public class Class3428 extends Class3426<Class473>
     
     @Override
     public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
-        ItemStack class513 = ItemStack.field34174;
+        ItemStack class513 = ItemStack.EMPTY;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
@@ -104,22 +104,22 @@ public class Class3428 extends Class3426<Class473>
                         if (!this.method10888(method20053, 1, 10, false)) {
                             if (n >= 37) {
                                 if (!this.method10888(method20053, 10, 37, false)) {
-                                    return ItemStack.field34174;
+                                    return ItemStack.EMPTY;
                                 }
                             }
                             else if (!this.method10888(method20053, 37, 46, false)) {
-                                return ItemStack.field34174;
+                                return ItemStack.EMPTY;
                             }
                         }
                     }
                     else if (!this.method10888(method20053, 10, 46, false)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                 }
                 else {
                     this.field16207.method22437((class517, p3) -> class515.method27622().method11723(class515, class517, class516));
                     if (!this.method10888(method20053, 10, 46, true)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                     class514.method20049(method20053, class513);
                 }
@@ -127,10 +127,10 @@ public class Class3428 extends Class3426<Class473>
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(ItemStack.field34174);
+                    class514.method20055(ItemStack.EMPTY);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 final ItemStack method20054 = class514.method20047(playerEntity, method20053);
                 if (n == 0) {

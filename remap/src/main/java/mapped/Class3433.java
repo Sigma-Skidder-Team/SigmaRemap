@@ -179,7 +179,7 @@ public class Class3433 extends Class3418
                         if (!class514.field3025.field27304) {
                             class515.method27693(n4);
                             if (!(!class515.method27620())) {
-                                this.field16217.method2160(1, ItemStack.field34174);
+                                this.field16217.method2160(1, ItemStack.EMPTY);
                             }
                         }
                         class514.method2857(Class8276.field34039);
@@ -232,7 +232,7 @@ public class Class3433 extends Class3418
     
     @Override
     public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
-        ItemStack class513 = ItemStack.field34174;
+        ItemStack class513 = ItemStack.EMPTY;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
@@ -242,7 +242,7 @@ public class Class3433 extends Class3418
                     if (n != 1) {
                         if (method20053.getItem() != Items.field31389) {
                             if (this.field16151.get(0).method20054() || !this.field16151.get(0).method20046(method20053)) {
-                                return ItemStack.field34174;
+                                return ItemStack.EMPTY;
                             }
                             if (method20053.method27656() && method20053.method27690() == 1) {
                                 this.field16151.get(0).method20055(method20053.method27641());
@@ -254,24 +254,24 @@ public class Class3433 extends Class3418
                             }
                         }
                         else if (!this.method10888(method20053, 1, 2, true)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (!this.method10888(method20053, 2, 38, true)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                 }
                 else if (!this.method10888(method20053, 2, 38, true)) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 if (!method20053.method27620()) {
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(ItemStack.field34174);
+                    class514.method20055(ItemStack.EMPTY);
                 }
                 if (method20053.method27690() == class513.method27690()) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 class514.method20047(playerEntity, method20053);
             }

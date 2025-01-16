@@ -49,7 +49,7 @@ public final class Class8769 extends Style
     
     @Nullable
     @Override
-    public Class9390 method30411() {
+    public HoverEvent getHoverEvent() {
         return null;
     }
     
@@ -95,7 +95,7 @@ public final class Class8769 extends Style
     }
     
     @Override
-    public Style method30420(final Class9390 class9390) {
+    public Style method30420(final HoverEvent class9390) {
         throw new UnsupportedOperationException();
     }
     

@@ -16,7 +16,7 @@ public class Class457 extends Class456
     
     private Class457(final Class5412<?> class5412) {
         super(class5412);
-        this.field2712 = Class2265.method8507(27, ItemStack.field34174);
+        this.field2712 = Class2265.method8507(27, ItemStack.EMPTY);
     }
     
     public Class457() {
@@ -35,7 +35,7 @@ public class Class457 extends Class456
     @Override
     public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2712 = Class2265.method8507(this.method2239(), ItemStack.field34174);
+        this.field2712 = Class2265.method8507(this.method2239(), ItemStack.EMPTY);
         if (!this.method2324(class51)) {
             Class8508.method28426(class51, this.field2712);
         }

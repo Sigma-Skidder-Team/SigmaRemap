@@ -47,7 +47,7 @@ public class Class9017
     }
     
     public Class9017(final ItemStack class8321, final ItemStack class8322, final int n, final int n2, final float n3) {
-        this(class8321, ItemStack.field34174, class8322, n, n2, n3);
+        this(class8321, ItemStack.EMPTY, class8322, n, n2, n3);
     }
     
     public Class9017(final ItemStack class8321, final ItemStack class8322, final ItemStack class8323, final int n, final int n2, final float n3) {

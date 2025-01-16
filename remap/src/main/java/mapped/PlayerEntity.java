@@ -80,7 +80,7 @@ public abstract class PlayerEntity extends LivingEntity
         this.field3007 = new Class485();
         this.field3010 = new Class9173();
         this.field3025 = new Class6999();
-        this.field3034 = ItemStack.field34174;
+        this.field3034 = ItemStack.EMPTY;
         this.field3035 = this.method2809();
         this.method1864(method2893(field3032));
         this.field3032 = field3032;
@@ -810,12 +810,12 @@ public abstract class PlayerEntity extends LivingEntity
                 this.field2987.method27636(n2, this, class317 -> class317.method2795(class316));
                 if (this.field2987.method27620()) {
                     if (method2757 != Class316.field1877) {
-                        this.method1803(Class2215.field13601, ItemStack.field34174);
+                        this.method1803(Class2215.field13601, ItemStack.EMPTY);
                     }
                     else {
-                        this.method1803(Class2215.field13600, ItemStack.field34174);
+                        this.method1803(Class2215.field13600, ItemStack.EMPTY);
                     }
-                    this.field2987 = ItemStack.field34174;
+                    this.field2987 = ItemStack.EMPTY;
                     this.method1695(Class8520.field35546, 0.8f, 0.8f + this.world.rand.nextFloat() * 0.4f);
                 }
             }
@@ -893,7 +893,7 @@ public abstract class PlayerEntity extends LivingEntity
                     if (method2715.method27640(this, (LivingEntity)class399, class400)) {
                         if (method2715.method27620()) {
                             if (!this.field3025.field27304) {
-                                this.method2716(class400, ItemStack.field34174);
+                                this.method2716(class400, ItemStack.EMPTY);
                             }
                         }
                         return Class2201.field13400;
@@ -1164,7 +1164,7 @@ public abstract class PlayerEntity extends LivingEntity
                                 if (field4594 instanceof LivingEntity) {
                                     method2908.method27637((LivingEntity)field4594, this);
                                     if (method2908.method27620()) {
-                                        this.method2716(Class316.field1877, ItemStack.field34174);
+                                        this.method2716(Class316.field1877, ItemStack.EMPTY);
                                     }
                                 }
                             }
@@ -1757,7 +1757,7 @@ public abstract class PlayerEntity extends LivingEntity
             return this.field3006.method2345();
         }
         if (class2215 != Class2215.field13601) {
-            return (class2215.method8401() != Class295.field1682) ? ItemStack.field34174 : this.field3006.field2740.get(class2215.method8402());
+            return (class2215.method8401() != Class295.field1682) ? ItemStack.EMPTY : this.field3006.field2740.get(class2215.method8402());
         }
         return this.field3006.field2741.get(0);
     }
@@ -2069,7 +2069,7 @@ public abstract class PlayerEntity extends LivingEntity
     @Override
     public ItemStack method2790(final ItemStack class8321) {
         if (!(class8321.getItem() instanceof Class4085)) {
-            return ItemStack.field34174;
+            return ItemStack.EMPTY;
         }
         final ItemStack method12291 = Class4085.method12291(this, ((Class4085)class8321.getItem()).method12289());
         if (method12291.method27620()) {
@@ -2080,7 +2080,7 @@ public abstract class PlayerEntity extends LivingEntity
                     return method12293;
                 }
             }
-            return this.field3025.field27304 ? new ItemStack(Items.field31280) : ItemStack.field34174;
+            return this.field3025.field27304 ? new ItemStack(Items.field31280) : ItemStack.EMPTY;
         }
         return method12291;
     }

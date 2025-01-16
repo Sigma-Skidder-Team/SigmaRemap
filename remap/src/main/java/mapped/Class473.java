@@ -17,7 +17,7 @@ public class Class473 implements Class446, Class472
     private final Class3418 field2772;
     
     public Class473(final Class3418 field2772, final int field2773, final int field2774) {
-        this.field2769 = Class2265.method8507(field2773 * field2774, ItemStack.field34174);
+        this.field2769 = Class2265.method8507(field2773 * field2774, ItemStack.EMPTY);
         this.field2772 = field2772;
         this.field2770 = field2773;
         this.field2771 = field2774;
@@ -42,7 +42,7 @@ public class Class473 implements Class446, Class472
     
     @Override
     public ItemStack method2157(final int n) {
-        return (n < this.method2239()) ? this.field2769.get(n) : ItemStack.field34174;
+        return (n < this.method2239()) ? this.field2769.get(n) : ItemStack.EMPTY;
     }
     
     @Override

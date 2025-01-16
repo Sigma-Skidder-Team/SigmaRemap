@@ -49,7 +49,7 @@ public class Class3957 extends Class3841
     
     @Override
     public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
-        return ItemStack.field34174;
+        return ItemStack.EMPTY;
     }
     
     @Override

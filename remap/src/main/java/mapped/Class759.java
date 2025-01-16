@@ -53,9 +53,9 @@ public abstract class Class759 extends LivingEntity
     
     public Class759(final EntityType<? extends Class759> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field4118 = Class2265.method8507(2, ItemStack.field34174);
+        this.field4118 = Class2265.method8507(2, ItemStack.EMPTY);
         this.field4119 = new float[2];
-        this.field4120 = Class2265.method8507(4, ItemStack.field34174);
+        this.field4120 = Class2265.method8507(4, ItemStack.EMPTY);
         this.field4121 = new float[4];
         this.field4124 = Maps.newEnumMap((Class)Class257.class);
         this.field4130 = BlockPos.ZERO;
@@ -714,7 +714,7 @@ public abstract class Class759 extends LivingEntity
                 return this.field4120.get(class2215.method8402());
             }
             default: {
-                return ItemStack.field34174;
+                return ItemStack.EMPTY;
             }
         }
     }
@@ -1263,7 +1263,7 @@ public abstract class Class759 extends LivingEntity
             if (class399 instanceof PlayerEntity) {
                 final PlayerEntity class400 = (PlayerEntity)class399;
                 final ItemStack method30210 = this.getHeldItemMainhand();
-                final ItemStack class401 = class400.method2756() ? class400.method2766() : ItemStack.field34174;
+                final ItemStack class401 = class400.method2756() ? class400.method2766() : ItemStack.EMPTY;
                 final boolean method30211 = Class7667.method24310(method30210, class401, class400, this);
                 final boolean method30212 = Class7667.method24311(class401, class400);
                 if (!method30210.method27620()) {

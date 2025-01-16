@@ -32,7 +32,7 @@ public class Class406 extends Entity implements Class407, Class401
     
     @Override
     public void method1649() {
-        this.dataManager.register(Class406.field2494, ItemStack.field34174);
+        this.dataManager.register(Class406.field2494, ItemStack.EMPTY);
         this.dataManager.register(Class406.field2495, OptionalInt.empty());
         this.dataManager.register(Class406.field2496, false);
     }

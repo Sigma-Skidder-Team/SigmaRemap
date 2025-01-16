@@ -41,7 +41,7 @@ public class Class3435 extends Class3418
     
     @Override
     public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
-        ItemStack class513 = ItemStack.field34174;
+        ItemStack class513 = ItemStack.EMPTY;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
@@ -49,17 +49,17 @@ public class Class3435 extends Class3418
                 class513 = method20053.method27641();
                 if (n >= this.field16227.method2239()) {
                     if (!this.method10888(method20053, 0, this.field16227.method2239(), false)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                 }
                 else if (!this.method10888(method20053, this.field16227.method2239(), this.field16151.size(), true)) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 if (!method20053.method27620()) {
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(ItemStack.field34174);
+                    class514.method20055(ItemStack.EMPTY);
                 }
             }
         }

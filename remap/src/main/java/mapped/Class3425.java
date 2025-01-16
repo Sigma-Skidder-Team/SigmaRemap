@@ -52,7 +52,7 @@ public class Class3425 extends Class3418
     
     @Override
     public ItemStack method10858(final PlayerEntity playerEntity, final int n) {
-        ItemStack class513 = ItemStack.field34174;
+        ItemStack class513 = ItemStack.EMPTY;
         final Class6601 class514 = this.field16151.get(n);
         if (class514 != null) {
             if (class514.method20054()) {
@@ -62,7 +62,7 @@ public class Class3425 extends Class3418
                 if (n >= method20054) {
                     if (this.method10878(1).method20046(method20053) && !this.method10878(1).method20054()) {
                         if (!this.method10888(method20053, 1, 2, false)) {
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (!this.method10878(0).method20046(method20053)) {
@@ -71,32 +71,32 @@ public class Class3425 extends Class3418
                             final int n3 = n2 + 9;
                             if (n >= n2 && n < n3) {
                                 if (!this.method10888(method20053, method20054, n2, false)) {
-                                    return ItemStack.field34174;
+                                    return ItemStack.EMPTY;
                                 }
                             }
                             else if (n >= method20054 && n < n2) {
                                 if (!this.method10888(method20053, n2, n3, false)) {
-                                    return ItemStack.field34174;
+                                    return ItemStack.EMPTY;
                                 }
                             }
                             else if (!this.method10888(method20053, n2, n2, false)) {
-                                return ItemStack.field34174;
+                                return ItemStack.EMPTY;
                             }
-                            return ItemStack.field34174;
+                            return ItemStack.EMPTY;
                         }
                     }
                     else if (!this.method10888(method20053, 0, 1, false)) {
-                        return ItemStack.field34174;
+                        return ItemStack.EMPTY;
                     }
                 }
                 else if (!this.method10888(method20053, method20054, this.field16151.size(), true)) {
-                    return ItemStack.field34174;
+                    return ItemStack.EMPTY;
                 }
                 if (!method20053.method27620()) {
                     class514.method20056();
                 }
                 else {
-                    class514.method20055(ItemStack.field34174);
+                    class514.method20055(ItemStack.EMPTY);
                 }
             }
         }
