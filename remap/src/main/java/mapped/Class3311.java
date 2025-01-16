@@ -76,14 +76,14 @@ public class Class3311 extends Class3167
     
     @Class6753
     private void method10477(final Class5726 class5726) {
-        if (this.method9906() && Class3311.field15514.field4684 != null) {
+        if (this.method9906() && Class3311.field15514.player != null) {
             if (!class5726.method17000()) {
                 Class8933.method31642(0.0f, (float)(-this.field15892), 0.0f);
             }
             else {
                 final Class6516 method6782 = Class3311.field15514.world.method6782();
                 Class9290 method6783 = null;
-                final Class6749 method6784 = method6782.method19651(Class3311.field15514.field4684.method1867());
+                final Class6749 method6784 = method6782.method19651(Class3311.field15514.player.method1867());
                 if (method6784 != null) {
                     final int method6785 = method6784.getColor().getColorIndex();
                     if (method6785 >= 0) {
@@ -117,7 +117,7 @@ public class Class3311 extends Class3167
     
     @Class6753
     private void method10478(final Class5740 class5740) {
-        if (!this.method9906() || Class3311.field15514.field4684 == null) {
+        if (!this.method9906() || Class3311.field15514.player == null) {
             return;
         }
         for (final Class3167 key : this.field15893.keySet()) {
@@ -126,7 +126,7 @@ public class Class3311 extends Class3167
             }
             this.field15893.get(key).method35855(key.method9906() ? Class2186.field12964 : Class2186.field12965);
         }
-        if (!Minecraft.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().gameSettings.field23464) {
             int n = 10;
             final int n2 = 1;
             final int method7694 = Minecraft.method5277().field4632.method7694();
@@ -135,7 +135,7 @@ public class Class3311 extends Class3167
             if (this.field15894 == Class9400.field40311) {
                 n -= 3;
             }
-            if (Minecraft.method5277().field4648.field23466) {
+            if (Minecraft.method5277().gameSettings.field23466) {
                 field15895 = (int)(Class3311.field15514.field4647.field3763.field3801.size() * 9 * Class3311.field15514.field4632.method7700() + 7.0);
             }
             int n3 = 0;

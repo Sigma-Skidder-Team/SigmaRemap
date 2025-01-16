@@ -31,7 +31,7 @@ public class Class6114 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         if (!this.field24821.isEmpty()) {
             final long method27837 = Util.method27837();
             for (final Integer n4 : this.field24821.keySet()) {
@@ -47,16 +47,16 @@ public class Class6114 implements Class6113
     }
     
     public static void method18272(final Class9468 class9468, final float n, final boolean b, final boolean b2, final double n2, final double n3, final double n4) {
-        Class8726.method30059();
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30068(0.0f, 1.0f, 0.0f, 0.75f);
-        Class8726.method30041();
-        Class8726.method30072(6.0f);
+        RenderSystem.method30059();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.method30068(0.0f, 1.0f, 0.0f, 0.75f);
+        RenderSystem.disableTexture();
+        RenderSystem.method30072(6.0f);
         method18273(class9468, n, b, b2, n2, n3, n4);
-        Class8726.method30040();
-        Class8726.method30012();
-        Class8726.method30060();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
+        RenderSystem.method30060();
     }
     
     private static void method18273(final Class9468 class9468, final float n, final boolean b, final boolean b2, final double n2, final double n3, final double n4) {
@@ -95,18 +95,18 @@ public class Class6114 implements Class6113
     }
     
     public static void method18274(final Class9468 class9468, final double n, final double n2, final double n3) {
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(3, Class9237.field39615);
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(3, DefaultVertexFormats.POSITION_COLOR);
         for (int i = 0; i < class9468.method35221(); ++i) {
             final Class6772 method22696 = class9468.method35217(i);
             if (method18275(method22696.method20671(), n, n2, n3) <= 80.0f) {
                 final float n4 = i / (float)class9468.method35221() * 0.33f;
                 final int n5 = (i != 0) ? MathHelper.method35697(n4, 0.9f, 0.9f) : 0;
-                method22695.method12432(method22696.field26589 - n + 0.5, method22696.field26590 - n2 + 0.5, method22696.field26591 - n3 + 0.5).method12399(n5 >> 16 & 0xFF, n5 >> 8 & 0xFF, n5 & 0xFF, 255).method12397();
+                method22695.pos(method22696.field26589 - n + 0.5, method22696.field26590 - n2 + 0.5, method22696.field26591 - n3 + 0.5).method12399(n5 >> 16 & 0xFF, n5 >> 8 & 0xFF, n5 & 0xFF, 255).endVertex();
             }
         }
-        method22694.method22695();
+        method22694.draw();
     }
     
     private static float method18275(final BlockPos class354, final double n, final double n2, final double n3) {

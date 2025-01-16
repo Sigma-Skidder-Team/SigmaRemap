@@ -13,10 +13,10 @@ import java.util.List;
 public class Class8936
 {
     public static String method31696(final String s, final boolean b) {
-        return (!b && !Minecraft.method5277().field4648.field23416) ? TextFormatting.getTextWithoutFormattingCodes(s) : s;
+        return (!b && !Minecraft.method5277().gameSettings.field23416) ? TextFormatting.getTextWithoutFormattingCodes(s) : s;
     }
     
-    public static List<ITextComponent> method31697(final ITextComponent class2250, final int n, final Class1844 class2251, final boolean b, final boolean b2) {
+    public static List<ITextComponent> method31697(final ITextComponent class2250, final int n, final FontRenderer class2251, final boolean b, final boolean b2) {
         int n2 = 0;
         StringTextComponent class2252 = new StringTextComponent("");
         final ArrayList arrayList = Lists.newArrayList();
@@ -34,7 +34,7 @@ public class Class8936
             }
             final String method31696 = method31696(class2253.getStyle().getFormattingCode() + str, b2);
             final String s = method31696.endsWith("\n") ? method31696.substring(0, method31696.length() - 1) : method31696;
-            int n3 = class2251.method6617(s);
+            int n3 = class2251.getStringWidth(s);
             ITextComponent method31697 = new StringTextComponent(s).setStyle(class2253.getStyle().createShallowCopy());
             if (n2 + n3 > n) {
                 String s2 = class2251.method6620(method31696, n - n2, false);
@@ -42,7 +42,7 @@ public class Class8936
                 if (substring2 != null) {
                     if (!substring2.isEmpty()) {
                         int beginIndex = (substring2.charAt(0) == ' ') ? s2.length() : s2.lastIndexOf(32);
-                        if (beginIndex >= 0 && class2251.method6617(method31696.substring(0, beginIndex)) > 0) {
+                        if (beginIndex >= 0 && class2251.getStringWidth(method31696.substring(0, beginIndex)) > 0) {
                             s2 = method31696.substring(0, beginIndex);
                             if (b) {
                                 ++beginIndex;
@@ -58,7 +58,7 @@ public class Class8936
                         arrayList2.add(i + 1, new StringTextComponent(substring2).setStyle(class2253.getStyle().createShallowCopy()));
                     }
                 }
-                n3 = class2251.method6617(s2);
+                n3 = class2251.getStringWidth(s2);
                 method31697 = new StringTextComponent(s2);
                 method31697.setStyle(class2253.getStyle().createShallowCopy());
                 b3 = true;

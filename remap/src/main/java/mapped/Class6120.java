@@ -36,21 +36,21 @@ public class Class6120 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
-        Class8726.method30059();
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30041();
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(5, Class9237.field39615);
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
+        RenderSystem.method30059();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.disableTexture();
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(5, DefaultVertexFormats.POSITION_COLOR);
         for (int i = 0; i < this.field24840.size(); ++i) {
             final BlockPos class7353 = this.field24840.get(i);
             final float n4 = this.field24841.get(i) / 2.0f;
             Class1656.method5734(method22695, class7353.getX() + 0.5f - n4 - n, class7353.getY() + 0.5f - n4 - n2, class7353.getZ() + 0.5f - n4 - n3, class7353.getX() + 0.5f + n4 - n, class7353.getY() + 0.5f + n4 - n2, class7353.getZ() + 0.5f + n4 - n3, this.field24843.get(i), this.field24844.get(i), this.field24845.get(i), this.field24842.get(i));
         }
-        method22694.method22695();
-        Class8726.method30040();
-        Class8726.method30060();
+        method22694.draw();
+        RenderSystem.enableTexture();
+        RenderSystem.method30060();
     }
 }

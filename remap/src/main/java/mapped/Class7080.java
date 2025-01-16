@@ -29,7 +29,7 @@ public class Class7080 implements Class7079
         ++this.field27579;
         if (this.field27577.method32928() == Class101.field298) {
             if (this.field27579 == 1) {
-                final Class756 field4684 = this.field27577.method32927().field4684;
+                final Class756 field4684 = this.field27577.method32927().player;
                 if (field4684 != null) {
                     final Iterator<Block> iterator = Class7080.field27574.iterator();
                     while (iterator.hasNext()) {

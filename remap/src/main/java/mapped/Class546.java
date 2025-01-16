@@ -35,35 +35,35 @@ public class Class546 extends Screen
     }
     
     @Override
-    public String method3027() {
-        return super.method3027() + ". " + this.field3290.getString();
+    public String getNarrationMessage() {
+        return super.getNarrationMessage() + ". " + this.field3290.getString();
     }
     
     @Override
     public void init() {
         super.init();
-        this.method3029(new Class654(this.width / 2 - 155, this.height / 6 + 96, 150, 20, this.field3292, class654 -> this.field3295.accept(true)));
-        this.method3029(new Class654(this.width / 2 - 155 + 160, this.height / 6 + 96, 150, 20, this.field3293, class654 -> this.field3295.accept(false)));
+        this.addButton(new Class654(this.width / 2 - 155, this.height / 6 + 96, 150, 20, this.field3292, class654 -> this.field3295.accept(true)));
+        this.addButton(new Class654(this.width / 2 - 155 + 160, this.height / 6 + 96, 150, 20, this.field3293, class654 -> this.field3295.accept(false)));
         this.field3291.clear();
         this.field3291.addAll(this.font.method6626(this.field3290.getFormattedText(), this.width - 50));
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 70, 16777215);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 70, 16777215);
         int n4 = 90;
         final Iterator<String> iterator = this.field3291.iterator();
         while (iterator.hasNext()) {
-            this.method3295(this.font, iterator.next(), this.width / 2, n4, 16777215);
+            this.drawCenteredString(this.font, iterator.next(), this.width / 2, n4, 16777215);
             n4 += 9;
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     public void method3209(final int field3294) {
         this.field3294 = field3294;
-        final Iterator<Class573> iterator = this.buttons.iterator();
+        final Iterator<Widget> iterator = this.buttons.iterator();
         while (iterator.hasNext()) {
             iterator.next().field3431 = false;
         }
@@ -75,7 +75,7 @@ public class Class546 extends Screen
         final int field3294 = this.field3294 - 1;
         this.field3294 = field3294;
         if (field3294 == 0) {
-            final Iterator<Class573> iterator = this.buttons.iterator();
+            final Iterator<Widget> iterator = this.buttons.iterator();
             while (iterator.hasNext()) {
                 iterator.next().field3431 = true;
             }
@@ -83,14 +83,14 @@ public class Class546 extends Screen
     }
     
     @Override
-    public boolean method2989() {
+    public boolean shouldCloseOnEsc() {
         return false;
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (n != 256) {
-            return super.keyPressed(n, n2, n3);
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (keyCode != 256) {
+            return super.keyPressed(keyCode, n2, n3);
         }
         this.field3295.accept(false);
         return true;

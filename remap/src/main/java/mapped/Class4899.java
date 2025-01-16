@@ -57,7 +57,7 @@ public class Class4899 extends Class4841
             if (method14713.size() > 0) {
                 method14713.get(0).method9910();
             }
-            Minecraft.method5277().method5244(null);
+            Minecraft.method5277().displayGuiScreen(null);
         }
     }
     

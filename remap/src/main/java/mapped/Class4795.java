@@ -16,7 +16,7 @@ public class Class4795 extends Class4703<Class507>
         this.field20447 = new Class5897<Class507>();
     }
     
-    public void method14186(final Class507 class507, final float n, final float n2, final Class7351 class508, final Class7807 class509, final int n3) {
+    public void method14186(final Class507 class507, final float n, final float n2, final MatrixStack class508, final IRenderTypeBuffer class509, final int n3) {
         final float method2603 = class507.method2603(n2);
         if (method2603 != 0.0f) {
             float n4 = 2.0f;

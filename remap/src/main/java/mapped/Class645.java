@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class645 extends Class573
+public class Class645 extends Widget
 {
     public ResourceLocation field3657;
     public boolean field3658;
@@ -42,7 +42,7 @@ public class Class645 extends Class573
     @Override
     public void method3353(final int n, final int n2, final float n3) {
         Minecraft.method5277().method5290().method5849(this.field3657);
-        Class8726.method30007();
+        RenderSystem.disableDepthTest();
         int field3659 = this.field3659;
         int field3660 = this.field3660;
         if (this.field3658) {
@@ -51,7 +51,7 @@ public class Class645 extends Class573
         if (this.method3360()) {
             field3660 += this.field3662;
         }
-        this.method3186(this.field3426, this.field3427, field3659, field3660, this.field3424, this.field3425);
-        Class8726.method30008();
+        this.blit(this.field3426, this.field3427, field3659, field3660, this.field3424, this.field3425);
+        RenderSystem.enableDepthTest();
     }
 }

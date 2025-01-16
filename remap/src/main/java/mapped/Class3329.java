@@ -22,14 +22,14 @@ public class Class3329 extends Class3167
     
     @Class6753
     private void method10537(final Class5740 class5740) {
-        if (!this.method9906() || Class3329.field15514.field4684 == null) {
+        if (!this.method9906() || Class3329.field15514.player == null) {
             return;
         }
-        if (Minecraft.method5277().field4648.field23464) {
+        if (Minecraft.method5277().gameSettings.field23464) {
             return;
         }
         if (!(Class3329.field15514.field4700 instanceof Class535)) {
-            final float n = Class3329.field15514.field4684.rotationYaw % 360.0f - this.field15926 % 360.0f;
+            final float n = Class3329.field15514.player.rotationYaw % 360.0f - this.field15926 % 360.0f;
             final float field15926 = this.field15926;
             final float n2 = n;
             final Minecraft field15927 = Class3329.field15514;
@@ -49,9 +49,9 @@ public class Class3329 extends Class3167
     
     public String method10538(final boolean b) {
         if (!b) {
-            return Math.round(Class3329.field15514.field4684.posX) + " " + Math.round(Class3329.field15514.field4684.posY) + " " + Math.round(Class3329.field15514.field4684.posZ);
+            return Math.round(Class3329.field15514.player.posX) + " " + Math.round(Class3329.field15514.player.posY) + " " + Math.round(Class3329.field15514.player.posZ);
         }
-        return Math.round(Class3329.field15514.field4684.posX * 10.0) / 10.0f + " " + Math.round(Class3329.field15514.field4684.posY * 10.0) / 10.0f + " " + Math.round(Class3329.field15514.field4684.posZ * 10.0) / 10.0f;
+        return Math.round(Class3329.field15514.player.posX * 10.0) / 10.0f + " " + Math.round(Class3329.field15514.player.posY * 10.0) / 10.0f + " " + Math.round(Class3329.field15514.player.posZ * 10.0) / 10.0f;
     }
     
     public int method10539(final int n, final int n2) {
@@ -63,8 +63,8 @@ public class Class3329 extends Class3167
     
     public int method10540(final int n, final int n2) {
         int n3 = 0;
-        for (int i = 0; i < Class3329.field15514.field4684.field3006.field2740.size(); ++i) {
-            final ItemStack class8321 = Class3329.field15514.field4684.field3006.field2740.get(i);
+        for (int i = 0; i < Class3329.field15514.player.field3006.field2740.size(); ++i) {
+            final ItemStack class8321 = Class3329.field15514.player.field3006.field2740.get(i);
             if (!(class8321.getItem() instanceof Class4099)) {
                 ++n3;
                 final int n4 = n2 - 32 * n3;

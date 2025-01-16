@@ -27,7 +27,7 @@ public class Class7301 implements Class7300
     }
     
     @Override
-    public String[] method22386(final Class573 class573, final int n) {
+    public String[] method22386(final Widget class573, final int n) {
         if (class573 instanceof Class676) {
             return Class7298.method22387("of.options.shaders.DOWNLOAD");
         }

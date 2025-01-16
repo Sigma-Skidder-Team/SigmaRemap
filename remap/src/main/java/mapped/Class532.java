@@ -35,16 +35,16 @@ public class Class532 extends Screen
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        final Class654 class654 = this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 24 + 5, 200, 20, Class8822.method30773("selectWorld.edit.resetIcon", new Object[0]), class654 -> {
+        final Class654 class654 = this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 24 + 5, 200, 20, Class8822.method30773("selectWorld.edit.resetIcon", new Object[0]), class654 -> {
             FileUtils.deleteQuietly(this.minecraft.method5243().method25800(this.field3180, "icon.png"));
             class654.field3431 = false;
         }));
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 48 + 5, 200, 20, Class8822.method30773("selectWorld.edit.openFolder", new Object[0]), class654 -> Util.method27845().method978(this.minecraft.method5243().method25800(this.field3180, "icon.png").getParentFile())));
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 72 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backup", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 48 + 5, 200, 20, Class8822.method30773("selectWorld.edit.openFolder", new Object[0]), class654 -> Util.method27845().method978(this.minecraft.method5243().method25800(this.field3180, "icon.png").getParentFile())));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 72 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backup", new Object[0]), class654 -> {
             method3066(this.minecraft.method5243(), this.field3180);
             this.field3178.accept(false);
         }));
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 96 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backupFolder", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 96 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backupFolder", new Object[0]), class654 -> {
             final Path method25802 = this.minecraft.method5243().method25802();
             try {
                 Files.createDirectories(Files.exists(method25802, new LinkOption[0]) ? method25802.toRealPath(new LinkOption[0]) : method25802, (FileAttribute<?>[])new FileAttribute[0]);
@@ -54,20 +54,20 @@ public class Class532 extends Screen
             }
             Util.method27845().method978(method25802.toFile());
         }));
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 5, 200, 20, Class8822.method30773("selectWorld.edit.optimize", new Object[0]), class654 -> this.minecraft.method5244(new Class554(this, (b2, b4) -> {
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 5, 200, 20, Class8822.method30773("selectWorld.edit.optimize", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class554(this, (b2, b4) -> {
             if (!(!b2)) {
                 method3066(this.minecraft.method5243(), this.field3180);
             }
-            this.minecraft.method5244(new Class736(this.field3178, this.field3180, this.minecraft.method5243(), b4));
+            this.minecraft.displayGuiScreen(new Class736(this.field3178, this.field3180, this.minecraft.method5243(), b4));
         }, new Class2259("optimizeWorld.confirm.title", new Object[0]), new Class2259("optimizeWorld.confirm.description", new Object[0]), true))));
-        this.field3177 = this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 144 + 5, 98, 20, Class8822.method30773("selectWorld.edit.save", new Object[0]), class654 -> this.method3065()));
-        this.method3029(new Class654(this.width / 2 + 2, this.height / 4 + 144 + 5, 98, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3178.accept(false)));
+        this.field3177 = this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 144 + 5, 98, 20, Class8822.method30773("selectWorld.edit.save", new Object[0]), class654 -> this.method3065()));
+        this.addButton(new Class654(this.width / 2 + 2, this.height / 4 + 144 + 5, 98, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3178.accept(false)));
         class654.field3431 = this.minecraft.method5243().method25800(this.field3180, "icon.png").isFile();
         final WorldInfo method25791 = this.minecraft.method5243().method25791(this.field3180);
         (this.field3179 = new Class576(this.font, this.width / 2 - 100, 53, 200, 20, Class8822.method30773("selectWorld.enterName", new Object[0]))).method3377((method25791 != null) ? method25791.method29549() : "");
         this.field3179.method3374(s -> this.field3177.field3431 = !s.trim().isEmpty());
         this.children.add(this.field3179);
-        this.method3476(this.field3179);
+        this.setFocusedDefault(this.field3179);
     }
     
     @Override
@@ -111,11 +111,11 @@ public class Class532 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 20, 16777215);
-        this.method3297(this.font, Class8822.method30773("selectWorld.enterName", new Object[0]), this.width / 2 - 100, 40, 10526880);
-        this.field3179.method2975(n, n2, n3);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 20, 16777215);
+        this.drawString(this.font, Class8822.method30773("selectWorld.enterName", new Object[0]), this.width / 2 - 100, 40, 10526880);
+        this.field3179.render(n, n2, n3);
+        super.render(n, n2, n3);
     }
 }

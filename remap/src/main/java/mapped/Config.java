@@ -1412,7 +1412,7 @@ public class Config
     }
     
     public static void method28996(final String s, final String s2) {
-        Config.field36028.method5244(new Class715(Config.field36028.field4700, s, s2));
+        Config.field36028.displayGuiScreen(new Class715(Config.field36028.field4700, s, s2));
     }
     
     public static int[] method28997(final int[] array, final int n) {

@@ -13,7 +13,7 @@ public abstract class Class5064 extends RealmsGuiEventListener
     }
     
     public void method15564(final int n, final int n2, final float n3) {
-        this.field21713.method2975(n, n2, n3);
+        this.field21713.render(n, n2, n3);
     }
     
     public int method15565() {

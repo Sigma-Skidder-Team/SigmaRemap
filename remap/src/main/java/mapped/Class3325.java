@@ -20,20 +20,20 @@ public class Class3325 extends Class3167
     private void method10528(final Class5743 class5743) {
         if (this.method9906()) {
             if (Class6430.method19135() > this.field15924) {
-                if (Class3325.field15514.field4684.ticksExisted % 3 == 0) {
+                if (Class3325.field15514.player.ticksExisted % 3 == 0) {
                     ++this.field15924;
                 }
             }
             if (Class6430.method19135() < this.field15924) {
-                if (Class3325.field15514.field4684.ticksExisted % 3 == 0) {
+                if (Class3325.field15514.player.ticksExisted % 3 == 0) {
                     --this.field15924;
                 }
             }
             boolean b = false;
             Label_0141: {
                 if (!Class7482.method23148()) {
-                    if (!Class3325.field15514.field4684.field2967) {
-                        if (!Class3325.field15514.field4684.method1809()) {
+                    if (!Class3325.field15514.player.field2967) {
+                        if (!Class3325.field15514.player.method1809()) {
                             b = false;
                             break Label_0141;
                         }
@@ -60,15 +60,15 @@ public class Class3325 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3325.field15514.field4684 == null) {
+        if (Class3325.field15514.player == null) {
             return;
         }
-        if (Minecraft.method5277().field4648.field23466) {
+        if (Minecraft.method5277().gameSettings.field23466) {
             return;
         }
-        if (!Minecraft.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().gameSettings.field23464) {
             final float min = Math.min(1.0f, 0.6f + this.field15925.method35858() * 4.0f);
-            final String string = Class3325.field15514.field4684.method1894().getX() + " " + Class3325.field15514.field4684.method1894().getY() + " " + Class3325.field15514.field4684.method1894().getZ();
+            final String string = Class3325.field15514.player.method1894().getX() + " " + Class3325.field15514.player.method1894().getY() + " " + Class3325.field15514.player.method1894().getZ();
             final int n = 85;
             final int method17028 = class5740.method17028();
             final float min2 = Math.min(1.0f, 150 / (float)Class9400.field40312.method23505(string));

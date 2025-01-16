@@ -38,7 +38,7 @@ public class Class3178 extends Class3167
     @Class6753
     private void method9972(final Class5740 class5740) throws IOException {
         if (this.method9906()) {
-            if (Class3178.field15514.field4684 != null) {
+            if (Class3178.field15514.player != null) {
                 if (Class3178.field15514.world != null) {
                     final int method7695 = Class3178.field15514.field4632.method7695();
                     final int method7696 = Class3178.field15514.field4632.method7694();

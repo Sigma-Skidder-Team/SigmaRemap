@@ -9,11 +9,11 @@ import java.util.Objects;
 public class Class2124 implements Class2123
 {
     private final ResourceLocation field12393;
-    private final Class9294 field12394;
+    private final TransformationMatrix field12394;
     private final boolean field12395;
     private final int field12396;
     
-    public Class2124(final ResourceLocation field12393, final Class9294 field12394, final boolean field12395, final int field12396) {
+    public Class2124(final ResourceLocation field12393, final TransformationMatrix field12394, final boolean field12395, final int field12396) {
         this.field12393 = field12393;
         this.field12394 = field12394;
         this.field12395 = field12395;
@@ -25,7 +25,7 @@ public class Class2124 implements Class2123
     }
     
     @Override
-    public Class9294 method8274() {
+    public TransformationMatrix method8274() {
         return this.field12394;
     }
     

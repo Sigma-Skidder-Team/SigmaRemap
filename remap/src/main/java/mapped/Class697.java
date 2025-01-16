@@ -50,13 +50,13 @@ public class Class697 extends Screen
     }
     
     @Override
-    public void method3028() {
+    public void onClose() {
         this.method3894();
     }
     
     private void method3894() {
         this.field3836.run();
-        this.minecraft.method5244(null);
+        this.minecraft.displayGuiScreen(null);
     }
     
     @Override
@@ -105,7 +105,7 @@ public class Class697 extends Screen
     }
     
     private void method3895(final int n, final int n2, final float n3) {
-        this.minecraft.method5290().method5849(Class565.field3361);
+        this.minecraft.method5290().method5849(AbstractGui.BACKGROUND_LOCATION);
         final int field3152 = this.width;
         final float n4 = -this.field3837 * 0.5f * this.field3840;
         final float n5 = this.height - this.field3837 * 0.5f * this.field3840;
@@ -118,39 +118,39 @@ public class Class697 extends Screen
             n6 = 1.0f;
         }
         final float n8 = n6 * n6 * 96.0f / 255.0f;
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(7, Class9237.field39619);
-        method22695.method12432(0.0, this.height, this.method3303()).method12391(0.0f, n4 * 0.015625f).method12439(n8, n8, n8, 1.0f).method12397();
-        method22695.method12432(field3152, this.height, this.method3303()).method12391(field3152 * 0.015625f, n4 * 0.015625f).method12439(n8, n8, n8, 1.0f).method12397();
-        method22695.method12432(field3152, 0.0, this.method3303()).method12391(field3152 * 0.015625f, n5 * 0.015625f).method12439(n8, n8, n8, 1.0f).method12397();
-        method22695.method12432(0.0, 0.0, this.method3303()).method12391(0.0f, n5 * 0.015625f).method12439(n8, n8, n8, 1.0f).method12397();
-        method22694.method22695();
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(7, DefaultVertexFormats.field39619);
+        method22695.pos(0.0, this.height, this.getBlitOffset()).tex(0.0f, n4 * 0.015625f).color(n8, n8, n8, 1.0f).endVertex();
+        method22695.pos(field3152, this.height, this.getBlitOffset()).tex(field3152 * 0.015625f, n4 * 0.015625f).color(n8, n8, n8, 1.0f).endVertex();
+        method22695.pos(field3152, 0.0, this.getBlitOffset()).tex(field3152 * 0.015625f, n5 * 0.015625f).color(n8, n8, n8, 1.0f).endVertex();
+        method22695.pos(0.0, 0.0, this.getBlitOffset()).tex(0.0f, n5 * 0.015625f).color(n8, n8, n8, 1.0f).endVertex();
+        method22694.draw();
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.method3895(n, n2, n3);
         final int n4 = this.width / 2 - 137;
         final int n5 = this.height + 50;
         this.field3837 += n3;
         final float n6 = -this.field3837 * this.field3840;
-        Class8726.method30059();
-        Class8726.method30065(0.0f, n6, 0.0f);
+        RenderSystem.method30059();
+        RenderSystem.method30065(0.0f, n6, 0.0f);
         this.minecraft.method5290().method5849(Class697.field3832);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method29999();
-        this.method3186(n4, n5, 0, 0, 155, 44);
-        this.method3186(n4 + 155, n5, 0, 45, 155, 44);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.enableAlphaTest();
+        this.blit(n4, n5, 0, 0, 155, 44);
+        this.blit(n4 + 155, n5, 0, 45, 155, 44);
         this.minecraft.method5290().method5849(Class697.field3833);
-        Class565.method3188(n4 + 88, n5 + 37, 0.0f, 0.0f, 98, 14, 128, 16);
-        Class8726.method29998();
+        AbstractGui.blit(n4 + 88, n5 + 37, 0.0f, 0.0f, 98, 14, 128, 16);
+        RenderSystem.disableAlphaTest();
         int n7 = n5 + 100;
         for (int i = 0; i < this.field3838.size(); ++i) {
             if (i == this.field3838.size() - 1) {
                 final float n8 = n7 + n6 - (this.height / 2 - 6);
                 if (n8 < 0.0f) {
-                    Class8726.method30065(0.0f, -n8, 0.0f);
+                    RenderSystem.method30065(0.0f, -n8, 0.0f);
                 }
             }
             if (n7 + n6 + 12.0f + 8.0f > 0.0f) {
@@ -158,31 +158,31 @@ public class Class697 extends Screen
                     final String s = this.field3838.get(i);
                     if (!s.startsWith("[C]")) {
                         this.font.field10029.setSeed((long)(i * 4238972211L + this.field3837 / 4.0f));
-                        this.font.method6609(s, (float)n4, (float)n7, 16777215);
+                        this.font.drawStringWithShadow(s, (float)n4, (float)n7, 16777215);
                     }
                     else {
-                        this.font.method6609(s.substring(3), (float)(n4 + (274 - this.font.method6617(s.substring(3))) / 2), (float)n7, 16777215);
+                        this.font.drawStringWithShadow(s.substring(3), (float)(n4 + (274 - this.font.getStringWidth(s.substring(3))) / 2), (float)n7, 16777215);
                     }
                 }
             }
             n7 += 12;
         }
-        Class8726.method30060();
+        RenderSystem.method30060();
         this.minecraft.method5290().method5849(Class697.field3834);
-        Class8726.method30011();
-        Class8726.method30013(Class2050.field11696, Class2135.field12461);
+        RenderSystem.enableBlend();
+        RenderSystem.method30013(Class2050.field11696, Class2135.field12461);
         final int field3152 = this.width;
         final int field3153 = this.height;
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(7, Class9237.field39619);
-        method22695.method12432(0.0, field3153, this.method3303()).method12391(0.0f, 1.0f).method12439(1.0f, 1.0f, 1.0f, 1.0f).method12397();
-        method22695.method12432(field3152, field3153, this.method3303()).method12391(1.0f, 1.0f).method12439(1.0f, 1.0f, 1.0f, 1.0f).method12397();
-        method22695.method12432(field3152, 0.0, this.method3303()).method12391(1.0f, 0.0f).method12439(1.0f, 1.0f, 1.0f, 1.0f).method12397();
-        method22695.method12432(0.0, 0.0, this.method3303()).method12391(0.0f, 0.0f).method12439(1.0f, 1.0f, 1.0f, 1.0f).method12397();
-        method22694.method22695();
-        Class8726.method30012();
-        super.method2975(n, n2, n3);
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(7, DefaultVertexFormats.field39619);
+        method22695.pos(0.0, field3153, this.getBlitOffset()).tex(0.0f, 1.0f).color(1.0f, 1.0f, 1.0f, 1.0f).endVertex();
+        method22695.pos(field3152, field3153, this.getBlitOffset()).tex(1.0f, 1.0f).color(1.0f, 1.0f, 1.0f, 1.0f).endVertex();
+        method22695.pos(field3152, 0.0, this.getBlitOffset()).tex(1.0f, 0.0f).color(1.0f, 1.0f, 1.0f, 1.0f).endVertex();
+        method22695.pos(0.0, 0.0, this.getBlitOffset()).tex(0.0f, 0.0f).color(1.0f, 1.0f, 1.0f, 1.0f).endVertex();
+        method22694.draw();
+        RenderSystem.disableBlend();
+        super.render(n, n2, n3);
     }
     
     static {

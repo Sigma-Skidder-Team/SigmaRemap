@@ -28,11 +28,11 @@ public class Class3275 extends Class3167
                     }
                 }
             }
-            if (Class3275.field15514.field4684.field2970 > 0.0f && !((Class3260)Class9463.method35173().method35189().method21551(Class3260.class)).method10278()) {
-                Class3275.field15514.field4684.method1816(true);
+            if (Class3275.field15514.player.field2970 > 0.0f && !((Class3260)Class9463.method35173().method35189().method21551(Class3260.class)).method10278()) {
+                Class3275.field15514.player.method1816(true);
             }
             else {
-                Class3275.field15514.field4684.method1816(false);
+                Class3275.field15514.player.method1816(false);
             }
         }
     }
@@ -40,10 +40,10 @@ public class Class3275 extends Class3167
     @Class6753
     public void method10321(final Class5735 class5735) {
         if (this.method9906()) {
-            if (Class3275.field15514.field4684.field2970 > 0.0f) {
-                if (!Class3275.field15514.field4684.method2756() || Class3275.field15514.field4684.method2766().getItem() != Items.field31279) {
+            if (Class3275.field15514.player.field2970 > 0.0f) {
+                if (!Class3275.field15514.player.method2756() || Class3275.field15514.player.method2766().getItem() != Items.field31279) {
                     if (!((Class3260)Class9463.method35173().method35189().method21551(Class3260.class)).method10278()) {
-                        class5735.field23300 = (float)((Class3275.field15514.field4684.method2710(Class8107.field33408).method23940() + 0.029999999329447746 + 0.015f * Class7482.method23139()) / Class3275.field15514.field4684.field3025.method21427() + 1.0) / 2.0f;
+                        class5735.field23300 = (float)((Class3275.field15514.player.method2710(Class8107.field33408).method23940() + 0.029999999329447746 + 0.015f * Class7482.method23139()) / Class3275.field15514.player.field3025.method21427() + 1.0) / 2.0f;
                     }
                 }
             }
@@ -55,22 +55,22 @@ public class Class3275 extends Class3167
         if (this.method9906() && this.method9883("Keep Sprint")) {
             if (!class5750.method17059()) {
                 if (this.field15769.length == 2) {
-                    final double n = this.field15769[0] - Class3275.field15514.field4684.getMotion().x;
-                    final double n2 = this.field15769[1] - Class3275.field15514.field4684.getMotion().z;
+                    final double n = this.field15769[0] - Class3275.field15514.player.getMotion().x;
+                    final double n2 = this.field15769[1] - Class3275.field15514.player.getMotion().z;
                     if (n != 0.0 || n2 != 0.0) {
-                        Class3275.field15514.field4684.setMotion(this.field15769[0], Class3275.field15514.field4684.getMotion().y, this.field15769[1]);
+                        Class3275.field15514.player.setMotion(this.field15769[0], Class3275.field15514.player.getMotion().y, this.field15769[1]);
                     }
                     if (this.field15770) {
-                        if (!Class3275.field15514.field4684.method1815()) {
-                            Class3275.field15514.field4684.method1816(true);
+                        if (!Class3275.field15514.player.method1815()) {
+                            Class3275.field15514.player.method1816(true);
                         }
                     }
                 }
             }
             else {
-                this.field15769[0] = Class3275.field15514.field4684.getMotion().x;
-                this.field15769[1] = Class3275.field15514.field4684.getMotion().z;
-                this.field15770 = Class3275.field15514.field4684.method1815();
+                this.field15769[0] = Class3275.field15514.player.getMotion().x;
+                this.field15769[1] = Class3275.field15514.player.getMotion().z;
+                this.field15770 = Class3275.field15514.player.method1815();
             }
         }
     }

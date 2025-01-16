@@ -75,7 +75,7 @@ public class Class5899<T extends Class812> extends Class5845<T>
     }
     
     @Override
-    public void method17564(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
+    public void method17564(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         if (!this.field23957) {
             ImmutableList.of((Object)this.field24246, (Object)this.field24247, (Object)this.field24248, (Object)this.field24249, (Object)this.field24250, (Object)this.field24251, (Object)this.field24252, (Object)this.field24253).forEach(class7355 -> class7355.method18644(class7353, class7354, n7, n8, n9, n10, n11, n12));
         }

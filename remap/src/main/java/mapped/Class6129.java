@@ -17,14 +17,14 @@ public class Class6129 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
-        final BlockPos method1894 = this.field24875.field4684.method1894();
-        final World field2391 = this.field24875.field4684.world;
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30068(0.0f, 1.0f, 0.0f, 0.75f);
-        Class8726.method30041();
-        Class8726.method30072(6.0f);
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
+        final BlockPos method1894 = this.field24875.player.method1894();
+        final World field2391 = this.field24875.player.world;
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.method30068(0.0f, 1.0f, 0.0f, 0.75f);
+        RenderSystem.disableTexture();
+        RenderSystem.method30072(6.0f);
         for (final BlockPos class7353 : BlockPos.getAllInBoxMutable(method1894.add(-10, -10, -10), method1894.add(10, 10, 10))) {
             final IFluidState method1895 = field2391.getFluidState(class7353);
             if (!method1895.isTagged(Class7324.field28319)) {
@@ -39,7 +39,7 @@ public class Class6129 implements Class6113
             }
             Class7282.method22339(String.valueOf(method1896.getLevel()), class7354.getX() + 0.5, class7354.getY() + method1896.getActualHeight(field2391, class7354), class7354.getZ() + 0.5, -16777216);
         }
-        Class8726.method30040();
-        Class8726.method30012();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
 }

@@ -22,13 +22,13 @@ public class Class3226 extends Class3167
     @Override
     public void method9879() {
         if (Class9171.field38852) {
-            if (!Class3226.field15514.field4684.onGround) {
+            if (!Class3226.field15514.player.onGround) {
                 this.field15684 = false;
             }
             else {
-                final double field2395 = Class3226.field15514.field4684.posX;
-                final double field2396 = Class3226.field15514.field4684.posY;
-                final double field2397 = Class3226.field15514.field4684.posZ;
+                final double field2395 = Class3226.field15514.player.posX;
+                final double field2396 = Class3226.field15514.player.posY;
+                final double field2397 = Class3226.field15514.player.posZ;
                 this.field15684 = false;
                 Class3226.field15514.method5269().method17292(new Class4354(field2395, field2396 + 0.2, field2397, false));
                 Class3226.field15514.method5269().method17292(new Class4354(field2395, field2396 + 0.1, field2397, false));
@@ -62,9 +62,9 @@ public class Class3226 extends Class3167
     
     @Class6753
     public void method10162(final Class5744 class5744) {
-        if (Class3226.field15514.field4684 != null && Class9171.field38852) {
+        if (Class3226.field15514.player != null && Class9171.field38852) {
             if (!this.field15684) {
-                if (Class3226.field15514.field4684.onGround) {
+                if (Class3226.field15514.player.onGround) {
                     if (!this.method9883("Instant")) {
                         Class9463.method35173().method35197().method25776(new Class6224("Hypixel disabler", "Wait 5s..."));
                     }
@@ -81,7 +81,7 @@ public class Class3226 extends Class3167
     
     @Class6753
     public void method10163(final Class5717 class5717) {
-        if (Class3226.field15514.field4684 == null || !Class9171.field38852) {
+        if (Class3226.field15514.player == null || !Class9171.field38852) {
             return;
         }
         if (!this.method9883("Instant")) {
@@ -130,7 +130,7 @@ public class Class3226 extends Class3167
     
     @Class6753
     public void method10165(final Class5723 class5723) {
-        if (Class3226.field15514.field4684 != null) {
+        if (Class3226.field15514.player != null) {
             if (this.field15684) {
                 if (Class9171.field38852) {
                     if (!this.method9906() && !this.method9883("Instant")) {

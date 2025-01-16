@@ -26,11 +26,11 @@ public class Class737 extends Screen
     
     private void method4046() {
         this.method4048();
-        this.minecraft.method5244(null);
+        this.minecraft.displayGuiScreen(null);
     }
     
     private void method4047() {
-        this.minecraft.method5244(null);
+        this.minecraft.displayGuiScreen(null);
     }
     
     private void method4048() {
@@ -38,15 +38,15 @@ public class Class737 extends Screen
     }
     
     @Override
-    public void method3028() {
+    public void onClose() {
         this.method4047();
     }
     
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.field4003 = this.method3029(new Class654(this.width / 2 - 4 - 150, 210, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method4046()));
-        this.method3029(new Class654(this.width / 2 + 4, 210, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.method4047()));
+        this.field4003 = this.addButton(new Class654(this.width / 2 - 4 - 150, 210, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method4046()));
+        this.addButton(new Class654(this.width / 2 + 4, 210, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.method4047()));
         (this.field4001 = new Class576(this.font, this.width / 2 - 152, 40, 300, 20, Class8822.method30773("jigsaw_block.target_pool", new Object[0]))).method3397(128);
         this.field4001.method3377(this.field3999.method2532().toString());
         this.field4001.method3374(p0 -> this.method4049());
@@ -58,7 +58,7 @@ public class Class737 extends Screen
         (this.field4002 = new Class576(this.font, this.width / 2 - 152, 120, 300, 20, Class8822.method30773("jigsaw_block.final_state", new Object[0]))).method3397(256);
         this.field4002.method3377(this.field3999.method2533());
         this.children.add(this.field4002);
-        this.method3476(this.field4001);
+        this.setFocusedDefault(this.field4001);
         this.method4049();
     }
     
@@ -83,11 +83,11 @@ public class Class737 extends Screen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (super.keyPressed(n, n2, n3)) {
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (super.keyPressed(keyCode, n2, n3)) {
             return true;
         }
-        if (this.field4003.field3431 && (n == 257 || n == 335)) {
+        if (this.field4003.field3431 && (keyCode == 257 || keyCode == 335)) {
             this.method4046();
             return true;
         }
@@ -95,14 +95,14 @@ public class Class737 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3297(this.font, Class8822.method30773("jigsaw_block.target_pool", new Object[0]), this.width / 2 - 153, 30, 10526880);
-        this.field4001.method2975(n, n2, n3);
-        this.method3297(this.font, Class8822.method30773("jigsaw_block.attachement_type", new Object[0]), this.width / 2 - 153, 70, 10526880);
-        this.field4000.method2975(n, n2, n3);
-        this.method3297(this.font, Class8822.method30773("jigsaw_block.final_state", new Object[0]), this.width / 2 - 153, 110, 10526880);
-        this.field4002.method2975(n, n2, n3);
-        super.method2975(n, n2, n3);
+        this.drawString(this.font, Class8822.method30773("jigsaw_block.target_pool", new Object[0]), this.width / 2 - 153, 30, 10526880);
+        this.field4001.render(n, n2, n3);
+        this.drawString(this.font, Class8822.method30773("jigsaw_block.attachement_type", new Object[0]), this.width / 2 - 153, 70, 10526880);
+        this.field4000.render(n, n2, n3);
+        this.drawString(this.font, Class8822.method30773("jigsaw_block.final_state", new Object[0]), this.width / 2 - 153, 110, 10526880);
+        this.field4002.render(n, n2, n3);
+        super.render(n, n2, n3);
     }
 }

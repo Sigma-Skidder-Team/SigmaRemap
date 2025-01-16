@@ -4,7 +4,7 @@
 
 package mapped;
 
-public abstract class Class5610<P extends Class573 & Class664<?>>
+public abstract class Class5610<P extends Widget & Class664<?>>
 {
     public abstract P method16915();
     
@@ -25,11 +25,11 @@ public abstract class Class5610<P extends Class573 & Class664<?>>
     }
     
     public void method16920(final int n, final int n2, final float n3) {
-        this.method16915().method2975(n, n2, n3);
+        this.method16915().render(n, n2, n3);
     }
     
     public void method16921(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
-        this.method16915().method3186(n, n2, n3, n4, n5, n6);
+        this.method16915().blit(n, n2, n3, n4, n5, n6);
     }
     
     public void method16922() {

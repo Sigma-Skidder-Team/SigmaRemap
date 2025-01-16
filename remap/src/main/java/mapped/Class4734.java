@@ -16,7 +16,7 @@ public class Class4734 extends Class4712<Class790, Class5843<Class790>>
         return Class4734.field20340;
     }
     
-    public void method14054(final Class790 class790, final Class7351 class791, final float n) {
+    public void method14054(final Class790 class790, final MatrixStack class791, final float n) {
         class791.method22565(1.2f, 1.2f, 1.2f);
         super.method13990(class790, class791, n);
     }

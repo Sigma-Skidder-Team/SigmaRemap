@@ -9,14 +9,14 @@ import net.minecraft.client.renderer.Vector3f;
 public class Class4706 extends Class4703<Class406>
 {
     private static String[] field20293;
-    private final Class1796 field20294;
+    private final ItemRenderer field20294;
     
-    public Class4706(final Class8551 class8551, final Class1796 field20294) {
+    public Class4706(final Class8551 class8551, final ItemRenderer field20294) {
         super(class8551);
         this.field20294 = field20294;
     }
     
-    public void method13969(final Class406 class406, final float n, final float n2, final Class7351 class407, final Class7807 class408, final int n3) {
+    public void method13969(final Class406 class406, final float n, final float n2, final MatrixStack class407, final IRenderTypeBuffer class408, final int n3) {
         class407.method22567();
         class407.method22566(this.field20283.method28717());
         class407.method22566(Vector3f.YP.rotationDegrees(180.0f));

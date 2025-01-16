@@ -4,7 +4,7 @@
 
 package mapped;
 
-public abstract class Class648 extends Class573
+public abstract class Class648 extends Widget
 {
     public Class648(final int n, final int n2, final int n3, final int n4, final String s) {
         super(n, n2, n3, n4, s);

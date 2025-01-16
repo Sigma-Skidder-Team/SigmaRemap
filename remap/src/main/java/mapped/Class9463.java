@@ -179,20 +179,20 @@ public class Class9463
         GL11.glScaled(n, n, n);
         GL11.glScaled((double)Class9000.field37993, (double)Class9000.field37993, (double)Class9000.field37993);
         GL11.glDisable(2912);
-        Class8726.method30007();
-        Class8726.method30065(0.0f, 0.0f, 1000.0f);
-        Class8726.method30000(519, 0.0f);
-        Class8726.method30011();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.disableDepthTest();
+        RenderSystem.method30065(0.0f, 0.0f, 1000.0f);
+        RenderSystem.method30000(519, 0.0f);
+        RenderSystem.enableBlend();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         GL11.glDisable(2896);
-        Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+        RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
         Class7853.field32193.method24916();
         method35173().method35188().method21097(new Class5734());
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30028();
-        Class8726.method30007();
-        Class8726.method30011();
-        Class8726.method30000(518, 0.1f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30028();
+        RenderSystem.disableDepthTest();
+        RenderSystem.enableBlend();
+        RenderSystem.method30000(518, 0.1f);
         GL11.glPopMatrix();
     }
     
@@ -212,13 +212,13 @@ public class Class9463
             final double n = Class9463.field40683.field4632.method7700() / (float)Math.pow(Class9463.field40683.field4632.method7700(), 2.0);
             GL11.glScaled(n, n, 1.0);
             GL11.glScaled((double)Class9000.field37993, (double)Class9000.field37993, 1.0);
-            Class8726.method30007();
-            Class8726.method30059();
-            Class8726.method30065(0.0f, 0.0f, 1000.0f);
+            RenderSystem.disableDepthTest();
+            RenderSystem.method30059();
+            RenderSystem.method30065(0.0f, 0.0f, 1000.0f);
             this.field40692.method32138();
-            Class8726.method30060();
-            Class8726.method30008();
-            Class8726.method29999();
+            RenderSystem.method30060();
+            RenderSystem.enableDepthTest();
+            RenderSystem.enableAlphaTest();
             GL11.glAlphaFunc(518, 0.1f);
             final Class1663 method5290 = Class9463.field40683.method5290();
             Class9463.field40683.method5290();
@@ -229,15 +229,15 @@ public class Class9463
     public void method35184() {
         if (Class9463.field40683 != null) {
             if (Class9463.field40683.world != null) {
-                if (Class9463.field40683.field4684 != null) {
+                if (Class9463.field40683.player != null) {
                     if (!Class9463.field40711) {
                         GL11.glTranslatef(0.0f, 0.0f, 0.0f);
-                        Class8726.method30007();
-                        Class8726.method30010(false);
+                        RenderSystem.disableDepthTest();
+                        RenderSystem.method30010(false);
                         GL11.glDisable(2896);
                         this.field40689.method21097(new Class5739());
-                        Class8726.method30008();
-                        Class8726.method30010(true);
+                        RenderSystem.enableDepthTest();
+                        RenderSystem.method30010(true);
                         final Class1663 method5290 = Class9463.field40683.method5290();
                         Class9463.field40683.method5290();
                         method5290.method5849(Class1663.field9428);

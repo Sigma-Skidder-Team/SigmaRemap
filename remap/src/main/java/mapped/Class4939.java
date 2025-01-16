@@ -30,15 +30,15 @@ public class Class4939 extends Class4800
         this.method14239(class4878 = new Class4876(this, "pb3", n5 + n2 + 9, n3 + n6 + 9, n2, n4, Class7853.field32214));
         class4876.method14260((class4803, n) -> {
             Class9463.method35173().method35210(Class2209.field13466);
-            Minecraft.method5277().method5244(new Class548());
+            Minecraft.method5277().displayGuiScreen(new Class548());
         });
         class4878.method14260((class4803, n) -> {
             Class9463.method35173().method35210(Class2209.field13464);
-            Minecraft.method5277().method5244(new Class548());
+            Minecraft.method5277().displayGuiScreen(new Class548());
         });
         class4877.method14260((class4803, n) -> {
             Class9463.method35173().method35210(Class2209.field13465);
-            Minecraft.method5277().method5244(new Class548());
+            Minecraft.method5277().displayGuiScreen(new Class548());
         });
         final Class4803 class4879 = new Class4803(this, "socialbtns", (this.method14276() - 174) / 2, this.method14278() - 70, 174, 34);
         final Class4914 class4880;
@@ -98,7 +98,7 @@ public class Class4939 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.method5277().method5244(new Class548());
+            Minecraft.method5277().displayGuiScreen(new Class548());
         }
     }
     

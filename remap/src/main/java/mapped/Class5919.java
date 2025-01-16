@@ -33,7 +33,7 @@ public class Class5919 extends Class5918
     }
     
     @Override
-    public void method17564(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
+    public void method17564(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         class7351.method22567();
         class7351.method22564(0.0, -0.37437498569488525, 0.0);
         class7351.method22565(0.75f, 0.75f, 0.75f);

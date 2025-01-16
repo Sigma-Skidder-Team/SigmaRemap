@@ -23,7 +23,7 @@ public class Class8430
         return Class8430.field34594;
     }
     
-    public String method28152(final Class1844 class1844, final int n) {
+    public String method28152(final FontRenderer class1844, final int n) {
         final int n2 = this.field34595.nextInt(2) + 3;
         String s = "";
         for (int i = 0; i < n2; ++i) {

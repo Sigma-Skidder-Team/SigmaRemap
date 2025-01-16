@@ -65,7 +65,7 @@ public class Class4799 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class4799.field20454.method5244(null);
+            Class4799.field20454.displayGuiScreen(null);
         }
     }
     

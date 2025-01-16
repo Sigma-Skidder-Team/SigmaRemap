@@ -11,7 +11,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 
-public class Class564 extends Class565 implements Class563, IGuiEventListener
+public class Class564 extends AbstractGui implements IRenderable, IGuiEventListener
 {
     private static final ResourceLocation field3351;
     private final List<Class588> field3352;
@@ -31,10 +31,10 @@ public class Class564 extends Class565 implements Class563, IGuiEventListener
     public void method3280(final Minecraft field3356, final Class9586 field3357, final int field3358, final int field3359, final int n, final int n2, final float n3) {
         this.field3356 = field3356;
         this.field3357 = field3357;
-        if (field3356.field4684.field3009 instanceof Class3429) {
+        if (field3356.player.field3009 instanceof Class3429) {
             this.field3360 = true;
         }
-        final boolean method19705 = field3356.field4684.method4122().method19705((Class3426<?>)field3356.field4684.field3009);
+        final boolean method19705 = field3356.player.method4122().method19705((Class3426<?>)field3356.player.field3009);
         final List<Class3662<?>> method19706 = field3357.method35947(true);
         final List<Class3662<?>> list = method19705 ? Collections.emptyList() : field3357.method35947(false);
         final int size = method19706.size();
@@ -109,49 +109,49 @@ public class Class564 extends Class565 implements Class563, IGuiEventListener
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         if (this.field3353) {
             this.field3359 += n3;
-            Class8726.method30011();
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.enableBlend();
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             this.field3356.method5290().method5849(Class564.field3351);
-            Class8726.method30059();
-            Class8726.method30065(0.0f, 0.0f, 170.0f);
+            RenderSystem.method30059();
+            RenderSystem.method30065(0.0f, 0.0f, 170.0f);
             final int b = (this.field3352.size() > 16) ? 5 : 4;
             this.method3284(Math.min(this.field3352.size(), b), MathHelper.ceil(this.field3352.size() / (float)b), 24, 4, 82, 208);
-            Class8726.method30012();
+            RenderSystem.disableBlend();
             final Iterator<Class588> iterator = this.field3352.iterator();
             while (iterator.hasNext()) {
-                iterator.next().method2975(n, n2, n3);
+                iterator.next().render(n, n2, n3);
             }
-            Class8726.method30060();
+            RenderSystem.method30060();
         }
     }
     
     private void method3284(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
-        this.method3186(this.field3354, this.field3355, n5, n6, n4, n4);
-        this.method3186(this.field3354 + n4 * 2 + n * n3, this.field3355, n5 + n3 + n4, n6, n4, n4);
-        this.method3186(this.field3354, this.field3355 + n4 * 2 + n2 * n3, n5, n6 + n3 + n4, n4, n4);
-        this.method3186(this.field3354 + n4 * 2 + n * n3, this.field3355 + n4 * 2 + n2 * n3, n5 + n3 + n4, n6 + n3 + n4, n4, n4);
+        this.blit(this.field3354, this.field3355, n5, n6, n4, n4);
+        this.blit(this.field3354 + n4 * 2 + n * n3, this.field3355, n5 + n3 + n4, n6, n4, n4);
+        this.blit(this.field3354, this.field3355 + n4 * 2 + n2 * n3, n5, n6 + n3 + n4, n4, n4);
+        this.blit(this.field3354 + n4 * 2 + n * n3, this.field3355 + n4 * 2 + n2 * n3, n5 + n3 + n4, n6 + n3 + n4, n4, n4);
         for (int i = 0; i < n; ++i) {
-            this.method3186(this.field3354 + n4 + i * n3, this.field3355, n5 + n4, n6, n3, n4);
-            this.method3186(this.field3354 + n4 + (i + 1) * n3, this.field3355, n5 + n4, n6, n4, n4);
+            this.blit(this.field3354 + n4 + i * n3, this.field3355, n5 + n4, n6, n3, n4);
+            this.blit(this.field3354 + n4 + (i + 1) * n3, this.field3355, n5 + n4, n6, n4, n4);
             for (int j = 0; j < n2; ++j) {
                 if (i == 0) {
-                    this.method3186(this.field3354, this.field3355 + n4 + j * n3, n5, n6 + n4, n4, n3);
-                    this.method3186(this.field3354, this.field3355 + n4 + (j + 1) * n3, n5, n6 + n4, n4, n4);
+                    this.blit(this.field3354, this.field3355 + n4 + j * n3, n5, n6 + n4, n4, n3);
+                    this.blit(this.field3354, this.field3355 + n4 + (j + 1) * n3, n5, n6 + n4, n4, n4);
                 }
-                this.method3186(this.field3354 + n4 + i * n3, this.field3355 + n4 + j * n3, n5 + n4, n6 + n4, n3, n3);
-                this.method3186(this.field3354 + n4 + (i + 1) * n3, this.field3355 + n4 + j * n3, n5 + n4, n6 + n4, n4, n3);
-                this.method3186(this.field3354 + n4 + i * n3, this.field3355 + n4 + (j + 1) * n3, n5 + n4, n6 + n4, n3, n4);
-                this.method3186(this.field3354 + n4 + (i + 1) * n3 - 1, this.field3355 + n4 + (j + 1) * n3 - 1, n5 + n4, n6 + n4, n4 + 1, n4 + 1);
+                this.blit(this.field3354 + n4 + i * n3, this.field3355 + n4 + j * n3, n5 + n4, n6 + n4, n3, n3);
+                this.blit(this.field3354 + n4 + (i + 1) * n3, this.field3355 + n4 + j * n3, n5 + n4, n6 + n4, n4, n3);
+                this.blit(this.field3354 + n4 + i * n3, this.field3355 + n4 + (j + 1) * n3, n5 + n4, n6 + n4, n3, n4);
+                this.blit(this.field3354 + n4 + (i + 1) * n3 - 1, this.field3355 + n4 + (j + 1) * n3 - 1, n5 + n4, n6 + n4, n4 + 1, n4 + 1);
                 if (i == n - 1) {
-                    this.method3186(this.field3354 + n4 * 2 + n * n3, this.field3355 + n4 + j * n3, n5 + n3 + n4, n6 + n4, n4, n3);
-                    this.method3186(this.field3354 + n4 * 2 + n * n3, this.field3355 + n4 + (j + 1) * n3, n5 + n3 + n4, n6 + n4, n4, n4);
+                    this.blit(this.field3354 + n4 * 2 + n * n3, this.field3355 + n4 + j * n3, n5 + n3 + n4, n6 + n4, n4, n3);
+                    this.blit(this.field3354 + n4 * 2 + n * n3, this.field3355 + n4 + (j + 1) * n3, n5 + n3 + n4, n6 + n4, n4, n4);
                 }
             }
-            this.method3186(this.field3354 + n4 + i * n3, this.field3355 + n4 * 2 + n2 * n3, n5 + n4, n6 + n3 + n4, n3, n4);
-            this.method3186(this.field3354 + n4 + (i + 1) * n3, this.field3355 + n4 * 2 + n2 * n3, n5 + n4, n6 + n3 + n4, n4, n4);
+            this.blit(this.field3354 + n4 + i * n3, this.field3355 + n4 * 2 + n2 * n3, n5 + n4, n6 + n3 + n4, n3, n4);
+            this.blit(this.field3354 + n4 + (i + 1) * n3, this.field3355 + n4 * 2 + n2 * n3, n5 + n4, n6 + n3 + n4, n4, n4);
         }
     }
     

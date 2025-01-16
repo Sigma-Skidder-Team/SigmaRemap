@@ -65,14 +65,14 @@ public class Class5860<T extends LivingEntity> extends Class5853<T>
         return Iterables.concat((Iterable)super.method17560(), (Iterable)ImmutableList.of((Object)this.field24024, (Object)this.field24025, (Object)this.field24022, (Object)this.field24023, (Object)this.field24026));
     }
     
-    public void method17593(final Class7351 class7351, final Class4150 class7352, final int n, final int n2) {
+    public void method17593(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2) {
         this.field24028.method18632(this.field23993);
         this.field24028.field25180 = 0.0f;
         this.field24028.field25181 = 0.0f;
         this.field24028.method18643(class7351, class7352, n, n2);
     }
     
-    public void method17594(final Class7351 class7351, final Class4150 class7352, final int n, final int n2) {
+    public void method17594(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2) {
         this.field24027.method18643(class7351, class7352, n, n2);
     }
     
@@ -99,7 +99,7 @@ public class Class5860<T extends LivingEntity> extends Class5853<T>
     }
     
     @Override
-    public void method17578(final Class2226 class2226, final Class7351 class2227) {
+    public void method17578(final Class2226 class2226, final MatrixStack class2227) {
         final Class6300 method17585 = this.method17585(class2226);
         if (!this.field24029) {
             method17585.method18645(class2227);

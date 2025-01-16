@@ -56,20 +56,20 @@ public class Class8707
             if (Class8707.field36588.field24887 != Class8707.field36586.field4667.field24887 || Class8707.field36588.field24886 != Class8707.field36586.field4667.field24886) {
                 Class8707.field36587.method7246(Class8707.field36586.field4667.field24886, Class8707.field36586.field4667.field24887);
             }
-            Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
-            Class8726.method30011();
+            RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+            RenderSystem.enableBlend();
             GL11.glDisable(2929);
             GL11.glDisable(3008);
-            Class8726.method30012();
+            RenderSystem.disableBlend();
             Class8707.field36588.method18402(true);
             Class8707.field36589.method18402(true);
-            Class8726.method30056(256, Minecraft.field4623);
-            Class8726.method30057(5889);
-            Class8726.method30058();
-            Class8726.method30061(0.0, Class8707.field36586.field4632.method7692() / Class8707.field36586.field4632.method7700(), Class8707.field36586.field4632.method7693() / Class8707.field36586.field4632.method7700(), 0.0, 1000.0, 3000.0);
-            Class8726.method30057(5888);
-            Class8726.method30058();
-            Class8726.method30065(0.0f, 0.0f, -2000.0f);
+            RenderSystem.method30056(256, Minecraft.field4623);
+            RenderSystem.method30057(5889);
+            RenderSystem.method30058();
+            RenderSystem.method30061(0.0, Class8707.field36586.field4632.method7692() / Class8707.field36586.field4632.method7700(), Class8707.field36586.field4632.method7693() / Class8707.field36586.field4632.method7700(), 0.0, 1000.0, 3000.0);
+            RenderSystem.method30057(5888);
+            RenderSystem.method30058();
+            RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
             GL11.glScaled(1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0);
             final int n = 35;
             Class8154.method26870(Class8707.field36590, Class8707.field36591 - n, Class8707.field36592, Class8707.field36593 + n);
@@ -91,13 +91,13 @@ public class Class8707
             Class8707.field36588.method18393();
             Class8707.field36588.method18399(Class8707.field36586.field4667.field24886, Class8707.field36586.field4667.field24887);
             GL11.glPopMatrix();
-            Class8726.method30056(256, Minecraft.field4623);
-            Class8726.method30057(5889);
-            Class8726.method30058();
-            Class8726.method30061(0.0, Class8707.field36586.field4632.method7692() / Class8707.field36586.field4632.method7700(), Class8707.field36586.field4632.method7693() / Class8707.field36586.field4632.method7700(), 0.0, 1000.0, 3000.0);
-            Class8726.method30057(5888);
-            Class8726.method30058();
-            Class8726.method30065(0.0f, 0.0f, -2000.0f);
+            RenderSystem.method30056(256, Minecraft.field4623);
+            RenderSystem.method30057(5889);
+            RenderSystem.method30058();
+            RenderSystem.method30061(0.0, Class8707.field36586.field4632.method7692() / Class8707.field36586.field4632.method7700(), Class8707.field36586.field4632.method7693() / Class8707.field36586.field4632.method7700(), 0.0, 1000.0, 3000.0);
+            RenderSystem.method30057(5888);
+            RenderSystem.method30058();
+            RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
             GL11.glScaled(1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0 / Class8707.field36586.field4632.method7700() * Class9000.field37993, 1.0);
             Class8707.field36586.field4667.method18395(true);
         }

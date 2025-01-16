@@ -32,7 +32,7 @@ public class Class3185 extends Class3167
                             }
                         }
                         if (b4) {
-                            if (class5744 != Class3185.field15514.field4684) {
+                            if (class5744 != Class3185.field15514.player) {
                                 class5744.method1822(true);
                                 continue;
                             }

@@ -81,16 +81,16 @@ public class Class3287 extends Class3167
     @Class6753
     @Class6763
     private void method10388(final Class5741 class5741) {
-        if (!this.method9906() || Class3287.field15514.field4684 == null) {
+        if (!this.method9906() || Class3287.field15514.player == null) {
             return;
         }
         if (!Class9463.method35173().method35193().method32146()) {
             return;
         }
-        if (Minecraft.method5277().field4648.field23466) {
+        if (Minecraft.method5277().gameSettings.field23466) {
             return;
         }
-        if (!Minecraft.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().gameSettings.field23464) {
             Class8707.method29896(this.field15806, this.field15807, this.field15808, this.field15809);
             if (this.field15819) {
                 Class8707.method29896(170, this.field15807, this.field15824, this.field15821);
@@ -102,12 +102,12 @@ public class Class3287 extends Class3167
     @Class6763
     private void method10389(final Class5740 class5740) {
         if (this.method9906()) {
-            if (Class3287.field15514.field4684 != null) {
+            if (Class3287.field15514.player != null) {
                 if (Class3287.field15514.world != null) {
-                    if (Minecraft.method5277().field4648.field23466) {
+                    if (Minecraft.method5277().gameSettings.field23466) {
                         return;
                     }
-                    if (!Minecraft.method5277().field4648.field23464) {
+                    if (!Minecraft.method5277().gameSettings.field23464) {
                         this.field15809 = 5 * this.field15816 + this.field15817;
                         final float abs = Math.abs(this.method10390() - this.field15825);
                         this.field15825 += Math.min(abs, abs * 0.14f * this.field15818) * ((this.method10390() - this.field15825 < 0.0f) ? -1 : 1);
@@ -278,7 +278,7 @@ public class Class3287 extends Class3167
     
     @Class6753
     private void method10396(final Class5739 class5739) {
-        if (this.method9906() && Class3287.field15514.field4684 != null) {
+        if (this.method9906() && Class3287.field15514.player != null) {
             this.method10399();
             final float n = 6.0f;
             final Minecraft field15514 = Class3287.field15514;
@@ -375,10 +375,10 @@ public class Class3287 extends Class3167
         if (Class9463.method35173().method35193().method32146()) {
             return;
         }
-        if (Minecraft.method5277().field4648.field23466) {
+        if (Minecraft.method5277().gameSettings.field23466) {
             return;
         }
-        if (!Minecraft.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().gameSettings.field23464) {
             for (int i = 0; i < 3; ++i) {
                 this.field15801[i] = this.method10400(this.field15806 + this.field15808 / 3 * i, this.field15807, this.field15801[i]);
                 this.field15802[i] = this.method10400(this.field15806 + this.field15808 / 3 * i, this.field15807 + this.field15809, this.field15802[i]);

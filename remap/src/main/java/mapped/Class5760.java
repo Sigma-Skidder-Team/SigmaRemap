@@ -52,7 +52,7 @@ public class Class5760
     public double field23391;
     public String field23392;
     public boolean field23393;
-    public boolean field23394;
+    public boolean advancedItemTooltips;
     public boolean field23395;
     private final Set<Class189> field23396;
     public Class2226 field23397;
@@ -598,7 +598,7 @@ public class Class5760
                         this.field23393 = "true".equals(method17120);
                     }
                     if ("advancedItemTooltips".equals(s)) {
-                        this.field23394 = "true".equals(method17120);
+                        this.advancedItemTooltips = "true".equals(method17120);
                     }
                     if ("pauseOnLostFocus".equals(s)) {
                         this.field23395 = "true".equals(method17120);
@@ -771,7 +771,7 @@ public class Class5760
                 printWriter.println("fullscreenResolution:" + this.field23461.method5332().method7681().get().method29726());
             }
             printWriter.println("hideServerAddress:" + this.field23393);
-            printWriter.println("advancedItemTooltips:" + this.field23394);
+            printWriter.println("advancedItemTooltips:" + this.advancedItemTooltips);
             printWriter.println("pauseOnLostFocus:" + this.field23395);
             printWriter.println("overrideWidth:" + this.field23398);
             printWriter.println("overrideHeight:" + this.field23399);
@@ -824,13 +824,13 @@ public class Class5760
     }
     
     public void method17124() {
-        if (this.field23461.field4684 != null) {
+        if (this.field23461.player != null) {
             int n = 0;
             final Iterator<Class189> iterator = this.field23396.iterator();
             while (iterator.hasNext()) {
                 n |= iterator.next().method828();
             }
-            this.field23461.field4684.field4069.method17292(new Class4386(this.field23476, this.field23382, this.field23389, this.field23416, n, this.field23397));
+            this.field23461.player.field4069.method17292(new Class4386(this.field23476, this.field23382, this.field23389, this.field23416, n, this.field23397));
         }
     }
     
@@ -1238,7 +1238,7 @@ public class Class5760
             this.field23400 = !this.field23400;
         }
         if (class6469 == Class6469.field25814) {
-            this.field23394 = !this.field23394;
+            this.advancedItemTooltips = !this.advancedItemTooltips;
         }
         if (class6469 == Class6469.field25820) {
             if (this.field23528 == 0) {
@@ -1657,7 +1657,7 @@ public class Class5760
                                         return this.field23400 ? (str + Class4647.method13878()) : (str + Class4647.method13879());
                                     }
                                     if (class6469 == Class6469.field25814) {
-                                        return this.field23394 ? (str + Class4647.method13878()) : (str + Class4647.method13879());
+                                        return this.advancedItemTooltips ? (str + Class4647.method13878()) : (str + Class4647.method13879());
                                     }
                                     if (class6469 == Class6469.field25712) {
                                         final double method19476 = Class6469.field25712.method19476(this);

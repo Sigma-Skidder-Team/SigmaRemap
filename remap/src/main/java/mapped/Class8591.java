@@ -12,16 +12,16 @@ public class Class8591
     private static Minecraft field36092;
     
     public static double method29091(final Entity class399) {
-        final double n = method29093(Class8591.field36092.field4684).field38854 - method29093(class399).field38854;
-        final double n2 = method29093(Class8591.field36092.field4684).field38855 - method29093(class399).field38855;
-        final double n3 = method29093(Class8591.field36092.field4684).field38856 - method29093(class399).field38856;
+        final double n = method29093(Class8591.field36092.player).field38854 - method29093(class399).field38854;
+        final double n2 = method29093(Class8591.field36092.player).field38855 - method29093(class399).field38855;
+        final double n3 = method29093(Class8591.field36092.player).field38856 - method29093(class399).field38856;
         return n * n + n2 * n2 + n3 * n3;
     }
     
     public static double method29092(final BlockPos class354) {
-        final double n = method29093(Class8591.field36092.field4684).field38854 - class354.getX();
-        final double n2 = method29093(Class8591.field36092.field4684).field38855 - class354.getY();
-        final double n3 = method29093(Class8591.field36092.field4684).field38856 - class354.getZ();
+        final double n = method29093(Class8591.field36092.player).field38854 - class354.getX();
+        final double n2 = method29093(Class8591.field36092.player).field38855 - class354.getY();
+        final double n3 = method29093(Class8591.field36092.player).field38856 - class354.getZ();
         return n * n + n2 * n2 + n3 * n3;
     }
     

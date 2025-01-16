@@ -30,7 +30,7 @@ public class Class3273 extends Class3167
     @Class6753
     public void method10316(final Class5717 class5717) {
         if (this.method9906()) {
-            if (!Class3273.field15514.field4684.onGround) {
+            if (!Class3273.field15514.player.onGround) {
                 if (Class6430.method19114()) {
                     if (Class3348.field15956 >= 7) {
                         ++this.field15767;
@@ -44,7 +44,7 @@ public class Class3273 extends Class3167
                                 this.field15765 = 0.306;
                             }
                         }
-                        if (Class3273.field15514.field4684.collidedHorizontally) {
+                        if (Class3273.field15514.player.collidedHorizontally) {
                             this.field15765 = Class7482.method23136();
                         }
                         this.field15766 = Class7482.method23153(class5717, this.field15765, Class7482.method23144()[0], this.field15766, 45.0f);
@@ -53,10 +53,10 @@ public class Class3273 extends Class3167
             }
             else if (this.method9883("Auto Jump") && Class6430.method19114()) {
                 this.field15767 = 0;
-                Class3273.field15514.field4684.method2725();
-                class5717.method16973(Class3273.field15514.field4684.getMotion().x);
-                class5717.method16975(Class3273.field15514.field4684.getMotion().y);
-                class5717.method16977(Class3273.field15514.field4684.getMotion().z);
+                Class3273.field15514.player.method2725();
+                class5717.method16973(Class3273.field15514.player.getMotion().x);
+                class5717.method16975(Class3273.field15514.player.getMotion().y);
+                class5717.method16977(Class3273.field15514.player.getMotion().z);
             }
             else if (class5717.method16974() != 0.4 + Class7482.method23140() * 0.1) {
                 this.field15768 = 0;

@@ -25,7 +25,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
         this.field9986.method18654(new int[][] { null, null, null, null, { 16, 16, 0, 0 }, { 16, 16, 0, 0 } }, 10.0f, 0.0f, 0.0f, 0.0f, 16.0f, 20.0f, 0.0f);
     }
     
-    public void method6575(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6575(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (!t.method2625()) {
             if (!t.method1823()) {
                 final Class1658 method5305 = Minecraft.method5277().method5305();

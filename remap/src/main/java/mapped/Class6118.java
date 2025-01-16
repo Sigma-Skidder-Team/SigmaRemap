@@ -14,16 +14,16 @@ public class Class6118 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         final Class1848 field4683 = this.field24835.world;
-        Class8726.method30059();
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30041();
+        RenderSystem.method30059();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.disableTexture();
         final BlockPos class7353 = new BlockPos(n, 0.0, n3);
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(5, Class9237.field39615);
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(5, DefaultVertexFormats.POSITION_COLOR);
         for (final BlockPos class7354 : BlockPos.getAllInBoxMutable(class7353.add(-40, 0, -40), class7353.add(40, 0, 40))) {
             final int method22696 = field4683.method6699(Class2020.field11521, class7354.getX(), class7354.getZ());
             if (!field4683.getBlockState(class7354.add(0, method22696, 0).method1139()).method21706()) {
@@ -33,8 +33,8 @@ public class Class6118 implements Class6113
                 Class1656.method5734(method22695, class7354.getX() + 0.25f - n, method22696 - n2, class7354.getZ() + 0.25f - n3, class7354.getX() + 0.75f - n, method22696 + 0.09375 - n2, class7354.getZ() + 0.75f - n3, 0.0f, 0.0f, 1.0f, 0.5f);
             }
         }
-        method22694.method22695();
-        Class8726.method30040();
-        Class8726.method30060();
+        method22694.draw();
+        RenderSystem.enableTexture();
+        RenderSystem.method30060();
     }
 }

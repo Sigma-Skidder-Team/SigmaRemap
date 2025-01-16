@@ -18,7 +18,7 @@ public class Class4767 extends Class4712<Class821, Class5856<Class821>>
         return Class4767.field20394;
     }
     
-    public void method14111(final Class821 class821, final Class7351 class822, final float n) {
+    public void method14111(final Class821 class821, final MatrixStack class822, final float n) {
         class822.method22565(0.9375f, 0.9375f, 0.9375f);
     }
     

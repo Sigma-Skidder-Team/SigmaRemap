@@ -29,7 +29,7 @@ public class Class4164 extends Class4158<Class492>
         (this.field18560 = new Class6300(32, 16, 0, 0)).method18636(-4.0f, -4.0f, -4.0f, 8.0f, 8.0f, 8.0f);
     }
     
-    public void method12470(final Class492 class492, final float n, final Class7351 class493, final Class7807 class494, final int n2, final int n3) {
+    public void method12470(final Class492 class492, final float n, final MatrixStack class493, final IRenderTypeBuffer class494, final int n2, final int n3) {
         final float n4 = class492.field2827 + n;
         if (class492.method2494()) {
             final float n5 = class492.method2498(n) * 57.295776f;

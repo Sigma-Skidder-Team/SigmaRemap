@@ -49,8 +49,8 @@ public class Class3320 extends Class3167
                 return;
             }
         }
-        if (Class3320.field15514.field4684 != null && Class3320.field15514.method5282() != null) {
-            if (Class3320.field15514.field4684.ticksExisted <= 1) {
+        if (Class3320.field15514.player != null && Class3320.field15514.method5282() != null) {
+            if (Class3320.field15514.player.ticksExisted <= 1) {
                 this.field15921.clear();
             }
             if (!this.field15921.isEmpty()) {

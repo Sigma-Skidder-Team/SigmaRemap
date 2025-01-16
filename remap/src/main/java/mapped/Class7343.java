@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 public class Class7343
 {
     private final Minecraft field28355;
-    private final Class1844 field28356;
+    private final FontRenderer field28356;
     private final Supplier<String> field28357;
     private final Consumer<String> field28358;
     private final int field28359;
@@ -42,7 +42,7 @@ public class Class7343
         final String str2 = this.field28357.get();
         this.field28360 = MathHelper.method35651(this.field28360, 0, str2.length());
         final String string = new StringBuilder(str2).insert(this.field28360, str).toString();
-        if (this.field28356.method6617(string) <= this.field28359) {
+        if (this.field28356.getStringWidth(string) <= this.field28359) {
             this.field28358.accept(string);
             final int min = Math.min(string.length(), this.field28360 + str.length());
             this.field28360 = min;
@@ -109,7 +109,7 @@ public class Class7343
             else {
                 this.field28360 = this.field28356.method6629(s, n2, this.field28360, true);
             }
-            if (!Screen.method3047()) {
+            if (!Screen.hasShiftDown()) {
                 this.field28361 = this.field28360;
             }
             return true;
@@ -122,14 +122,14 @@ public class Class7343
             else {
                 this.field28360 = this.field28356.method6629(s, n3, this.field28360, true);
             }
-            if (!Screen.method3047()) {
+            if (!Screen.hasShiftDown()) {
                 this.field28361 = this.field28360;
             }
             return true;
         }
         if (n == 268) {
             this.field28360 = 0;
-            if (!Screen.method3047()) {
+            if (!Screen.hasShiftDown()) {
                 this.field28361 = this.field28360;
             }
             return true;
@@ -138,7 +138,7 @@ public class Class7343
             return false;
         }
         this.field28360 = this.field28357.get().length();
-        if (!Screen.method3047()) {
+        if (!Screen.hasShiftDown()) {
             this.field28361 = this.field28360;
         }
         return true;

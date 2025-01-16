@@ -15,16 +15,16 @@ public class Class4791 extends Class4703<Class862>
     private static final Class1933 field20427;
     private static final Class1933 field20428;
     private final Minecraft field20429;
-    private final Class1796 field20430;
+    private final ItemRenderer field20430;
     private static double field20431;
     
-    public Class4791(final Class8551 class8551, final Class1796 field20430) {
+    public Class4791(final Class8551 class8551, final ItemRenderer field20430) {
         super(class8551);
         this.field20429 = Minecraft.method5277();
         this.field20430 = field20430;
     }
     
-    public void method14168(final Class862 class862, final float n, final float n2, final Class7351 class863, final Class7807 class864, final int i) {
+    public void method14168(final Class862 class862, final float n, final float n2, final MatrixStack class863, final IRenderTypeBuffer class864, final int i) {
         super.method13951(class862, n, n2, class863, class864, i);
         class863.method22567();
         final Direction method1882 = class862.method1882();
@@ -38,7 +38,7 @@ public class Class4791 extends Class4703<Class862>
         final Class1933 class865 = (class862.method5198().getItem() instanceof Class4094) ? Class4791.field20428 : Class4791.field20427;
         class863.method22567();
         class863.method22564(-0.5, -0.5, -0.5);
-        method1884.method5793().method33363(class863.method22569(), class864.method25214(Class8752.method30263()), null, method1885.method6451(class865), 1.0f, 1.0f, 1.0f, i, Class1904.field10335);
+        method1884.method5793().method33363(class863.getLast(), class864.method25214(Class8752.method30263()), null, method1885.method6451(class865), 1.0f, 1.0f, 1.0f, i, Class1904.field10335);
         class863.method22568();
         final ItemStack method1886 = class862.method5198();
         if (!method1886.method27620()) {
@@ -90,7 +90,7 @@ public class Class4791 extends Class4703<Class862>
         return false;
     }
     
-    public void method14172(final Class862 class862, final String s, final Class7351 class863, final Class7807 class864, final int n) {
+    public void method14172(final Class862 class862, final String s, final MatrixStack class863, final IRenderTypeBuffer class864, final int n) {
         super.method13958(class862, class862.method5198().method27664().getFormattedText(), class863, class864, n);
     }
     
@@ -109,7 +109,7 @@ public class Class4791 extends Class4703<Class862>
     
     public static void method14174() {
         final Minecraft method5277 = Minecraft.method5277();
-        final double max = Math.max(6.0 * method5277.method5332().method7695() / Config.method28867(method5277.field4648.field23471, 1.0, 120.0), 16.0);
+        final double max = Math.max(6.0 * method5277.method5332().method7695() / Config.method28867(method5277.gameSettings.field23471, 1.0, 120.0), 16.0);
         Class4791.field20431 = max * max;
     }
     

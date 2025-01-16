@@ -12,7 +12,7 @@ public class Class4765 extends Class4764
         super(class8551, 1.2f);
     }
     
-    public void method14108(final Class844 class844, final Class7351 class845, final float n) {
+    public void method14108(final Class844 class844, final MatrixStack class845, final float n) {
         class845.method22565(Class845.field4508, Class845.field4508, Class845.field4508);
     }
     

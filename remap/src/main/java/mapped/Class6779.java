@@ -34,11 +34,11 @@ public class Class6779
     public Class8998 field26631;
     public int[] field26632;
     public int field26633;
-    public Class1912[] field26634;
-    public Class1912[] field26635;
+    public TextureAtlasSprite[] field26634;
+    public TextureAtlasSprite[] field26635;
     public Class8802[] field26636;
     public String[] field26637;
-    public Class1912[] field26638;
+    public TextureAtlasSprite[] field26638;
     public int field26639;
     public BlockState field26640;
     public Class6332 field26641;
@@ -558,9 +558,9 @@ public class Class6779
         return (String[])((method20711(this.field26611) != null) ? new String[] { this.field26611 } : null);
     }
     
-    private static Class1912 method20711(final String str) {
+    private static TextureAtlasSprite method20711(final String str) {
         final Class1774 method29001 = Config.method29001();
-        final Class1912 method29002 = method29001.method6344(str);
+        final TextureAtlasSprite method29002 = method29001.method6344(str);
         if (method29002 == null) {
             return method29001.method6344("block/" + str);
         }
@@ -797,13 +797,13 @@ public class Class6779
         this.method20729(this.field26635, class1774);
     }
     
-    private void method20729(final Class1912[] array, final Class1774 class1774) {
+    private void method20729(final TextureAtlasSprite[] array, final Class1774 class1774) {
         if (array != null) {
             for (int i = 0; i < array.length; ++i) {
-                final Class1912 class1775 = array[i];
+                final TextureAtlasSprite class1775 = array[i];
                 if (class1775 != null) {
                     final ResourceLocation method7503 = class1775.method7503();
-                    final Class1912 method7504 = class1774.method6338(method7503);
+                    final TextureAtlasSprite method7504 = class1774.method6338(method7503);
                     if (method7504 == null || method7504 instanceof Class1913) {
                         Config.warn("Missing CTM sprite: " + method7503 + ", properties: " + this.field26612);
                     }
@@ -828,7 +828,7 @@ public class Class6779
         }
     }
     
-    private static Class1912[] method20731(final String[] array, final Class1774 class1774, final boolean b, final boolean b2) {
+    private static TextureAtlasSprite[] method20731(final String[] array, final Class1774 class1774, final boolean b, final boolean b2) {
         if (array != null) {
             final ArrayList list = new ArrayList();
             for (int i = 0; i < array.length; ++i) {
@@ -857,7 +857,7 @@ public class Class6779
                     list.add(class1774.method6359(new ResourceLocation(method7798, substring)));
                 }
             }
-            return (Class1912[])list.toArray(new Class1912[list.size()]);
+            return (TextureAtlasSprite[])list.toArray(new TextureAtlasSprite[list.size()]);
         }
         return null;
     }
@@ -870,7 +870,7 @@ public class Class6779
         return Class7980.method26015(n, n2, this.field26613);
     }
     
-    public boolean method20734(final Class1912 class1912) {
+    public boolean method20734(final TextureAtlasSprite class1912) {
         return Class7980.method26018(class1912, this.field26634);
     }
     

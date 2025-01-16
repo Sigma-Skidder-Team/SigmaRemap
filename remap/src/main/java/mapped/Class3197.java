@@ -26,16 +26,16 @@ public class Class3197 extends Class3167
     @Class6753
     public void method10030(final Class5743 class5743) {
         if (this.method9906()) {
-            Class3197.field15514.field4648.field23440.field2162 = false;
-            if (Class3197.field15514.field4684.getMotion().y < 0.08 && !Class3197.field15514.field4684.onGround) {
-                if (!Class3197.field15514.field4684.method2773()) {
-                    Class3197.field15514.method5269().method17292(new Class4336(Class3197.field15514.field4684, Class287.field1599));
-                    Class3197.field15514.field4684.setFlag(7, true);
+            Class3197.field15514.gameSettings.field23440.field2162 = false;
+            if (Class3197.field15514.player.getMotion().y < 0.08 && !Class3197.field15514.player.onGround) {
+                if (!Class3197.field15514.player.method2773()) {
+                    Class3197.field15514.method5269().method17292(new Class4336(Class3197.field15514.player, Class287.field1599));
+                    Class3197.field15514.player.setFlag(7, true);
                 }
             }
             else {
-                Class3197.field15514.field4684.setFlag(7, false);
-                if (Class3197.field15514.field4684.method1809()) {
+                Class3197.field15514.player.setFlag(7, false);
+                if (Class3197.field15514.player.method1809()) {
                     this.method9909(false);
                 }
             }
@@ -48,12 +48,12 @@ public class Class3197 extends Class3167
             double method23136 = Class7482.method23136();
             Class6430.method19114();
             if (!this.method9883("NCP")) {
-                if (Class3197.field15514.field4684.method1809()) {
+                if (Class3197.field15514.player.method1809()) {
                     method23136 *= 2.5;
                 }
             }
             Class7482.method23149(class5717, 0.0);
-            if (!Class3197.field15514.field4684.method2773()) {
+            if (!Class3197.field15514.player.method2773()) {
                 this.field15608 = 0;
             }
             else {
@@ -67,16 +67,16 @@ public class Class3197 extends Class3167
                 ++this.field15608;
             }
             if (this.field15610 > 1.0001E-4f) {
-                if (Class3197.field15514.field4684.field2967) {
+                if (Class3197.field15514.player.field2967) {
                     Class7482.method23149(class5717, method23136 * 6.300000190734863);
                     class5717.method16975(this.field15610);
                 }
             }
-            if (GLFW.glfwGetKey(Class3197.field15514.field4632.method7690(), Class3197.field15514.field4648.field23440.field2161.field32860) == 1 && this.method9883("NCP")) {
+            if (GLFW.glfwGetKey(Class3197.field15514.field4632.method7690(), Class3197.field15514.gameSettings.field23440.field2161.field32860) == 1 && this.method9883("NCP")) {
                 class5717.method16975(-0.8999999761581421);
             }
-            else if (!Class3197.field15514.field4684.method1809()) {
-                if (Class3197.field15514.field4684.field2967) {
+            else if (!Class3197.field15514.player.method1809()) {
+                if (Class3197.field15514.player.field2967) {
                     if (!this.method9883("NCP")) {
                         class5717.method16975(1.399999976158142);
                     }
@@ -92,14 +92,14 @@ public class Class3197 extends Class3167
     @Class6753
     private void method10032(final Class5723 class5723) {
         if (this.method9906()) {
-            if (Class3197.field15514.field4684 != null) {
+            if (Class3197.field15514.player != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();
                     final Entity method6741 = Class3197.field15514.world.getEntityByID(class5724.method12822());
                     if (method6741 instanceof Class406) {
                         final Class406 class5725 = (Class406)method6741;
                         if (class5725.field2499 != null) {
-                            if (class5725.field2499.getEntityId() == Class3197.field15514.field4684.getEntityId()) {
+                            if (class5725.field2499.getEntityId() == Class3197.field15514.player.getEntityId()) {
                                 this.field15609 += class5724.field19165 / 8000.0f;
                                 this.field15611 += class5724.field19167 / 8000.0f;
                                 this.field15610 += class5724.field19166 / 8000.0f;
@@ -118,7 +118,7 @@ public class Class3197 extends Class3167
             final int field15613 = 65;
             if (this.field15613 != field15613 - 1) {
                 if (this.field15613 <= 0) {
-                    if (Class3197.field15514.field4684.field2967) {
+                    if (Class3197.field15514.player.field2967) {
                         this.field15613 = field15613;
                     }
                 }
@@ -126,19 +126,19 @@ public class Class3197 extends Class3167
             else {
                 final int method29340 = Class8639.method29340(Items.field31532);
                 if (method29340 >= 0) {
-                    if (method29340 != Class3197.field15514.field4684.field3006.field2743) {
+                    if (method29340 != Class3197.field15514.player.field3006.field2743) {
                         Class3197.field15514.method5269().method17292(new Class4321(method29340));
                     }
                     Class3197.field15514.method5269().method17292(new Class4307(Class316.field1877));
-                    if (method29340 != Class3197.field15514.field4684.field3006.field2743) {
-                        Class3197.field15514.method5269().method17292(new Class4321(Class3197.field15514.field4684.field3006.field2743));
+                    if (method29340 != Class3197.field15514.player.field3006.field2743) {
+                        Class3197.field15514.method5269().method17292(new Class4321(Class3197.field15514.player.field3006.field2743));
                     }
                 }
             }
             if (this.field15613 > 0) {
                 class5744.method17041(-90.0f);
             }
-            if (!Class3197.field15514.field4684.field2967) {
+            if (!Class3197.field15514.player.field2967) {
                 this.field15613 = 0;
             }
             --this.field15613;
@@ -162,7 +162,7 @@ public class Class3197 extends Class3167
     
     @Override
     public void method9879() {
-        if (Class3197.field15514.field4684.onGround) {
+        if (Class3197.field15514.player.onGround) {
             Class6430.method19155(0.399399995803833);
         }
     }

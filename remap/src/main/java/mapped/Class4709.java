@@ -14,7 +14,7 @@ public class Class4709 extends Class4708<Class432>
         super(class8551);
     }
     
-    public void method13976(final Class432 class432, final float n, final BlockState class433, final Class7351 class434, final Class7807 class435, final int n2) {
+    public void method13976(final Class432 class432, final float n, final BlockState class433, final MatrixStack class434, final IRenderTypeBuffer class435, final int n2) {
         final int method2154 = class432.method2154();
         if (method2154 > -1) {
             if (method2154 - n + 1.0f < 10.0f) {
@@ -27,7 +27,7 @@ public class Class4709 extends Class4708<Class432>
         method13977(class433, class434, class435, n2, method2154 > -1 && method2154 / 5 % 2 == 0);
     }
     
-    public static void method13977(final BlockState class7096, final Class7351 class7097, final Class7807 class7098, final int n, final boolean b) {
+    public static void method13977(final BlockState class7096, final MatrixStack class7097, final IRenderTypeBuffer class7098, final int n, final boolean b) {
         int n2;
         if (!b) {
             n2 = Class1904.field10335;

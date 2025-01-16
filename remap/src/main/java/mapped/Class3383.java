@@ -32,7 +32,7 @@ public class Class3383 extends Class3167
                 this.field16100 = 0;
                 n = 1.15f + Class7482.method23139() * 0.04f;
             }
-            if (Class3383.field15514.field4648.field23437.field2162) {
+            if (Class3383.field15514.gameSettings.field23437.field2162) {
                 n /= 1.3f;
             }
             Class7482.method23149(class5717, n);

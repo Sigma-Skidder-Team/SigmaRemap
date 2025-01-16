@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 
-public final class Class1913 extends Class1912
+public final class Class1913 extends TextureAtlasSprite
 {
     private static final ResourceLocation field10402;
     private static Class1773 field10403;

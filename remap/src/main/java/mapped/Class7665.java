@@ -78,7 +78,7 @@ public class Class7665
                     catch (final InsecureTextureException ex2) {}
                 }
             }
-            Minecraft.method5277().execute(() -> Class8726.method29991(() -> ImmutableList.of((Object)MinecraftProfileTexture$Type.SKIN, (Object)MinecraftProfileTexture$Type.CAPE).forEach(minecraftProfileTexture$Type -> {
+            Minecraft.method5277().execute(() -> RenderSystem.method29991(() -> ImmutableList.of((Object)MinecraftProfileTexture$Type.SKIN, (Object)MinecraftProfileTexture$Type.CAPE).forEach(minecraftProfileTexture$Type -> {
                 if (!(!map2.containsKey(minecraftProfileTexture$Type))) {
                     this.method24293(map2.get(minecraftProfileTexture$Type), minecraftProfileTexture$Type, class7724);
                 }

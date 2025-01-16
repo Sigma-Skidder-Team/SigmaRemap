@@ -77,7 +77,7 @@ public class Class7282
         return this.field28224 = !this.field28224;
     }
     
-    public void method22332(final Class7351 class7351, final Class7808 class7352, final double n, final double n2, final double n3) {
+    public void method22332(final MatrixStack class7351, final IRenderTypeBuffer.Impl class7352, final double n, final double n2, final double n3) {
         if (this.field28224) {
             if (!Minecraft.method5277().method5317()) {
                 this.field28209.method18269(class7351, class7352, n, n2, n3);
@@ -121,11 +121,11 @@ public class Class7282
     }
     
     public static void method22337(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final float n7, final float n8, final float n9, final float n10) {
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(5, Class9237.field39615);
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(5, DefaultVertexFormats.POSITION_COLOR);
         Class1656.method5734(method22695, n, n2, n3, n4, n5, n6, n7, n8, n9, n10);
-        method22694.method22695();
+        method22694.draw();
     }
     
     public static void method22338(final String s, final int n, final int n2, final int n3, final int n4) {
@@ -145,32 +145,32 @@ public class Class7282
         final Class6092 method5278 = method5277.field4644.method5833();
         if (method5278.method18167()) {
             if (method5277.method5306().field35909 != null) {
-                final Class1844 field4643 = method5277.fontRenderer;
+                final FontRenderer field4643 = method5277.fontRenderer;
                 final double field4644 = method5278.method18161().x;
                 final double field4645 = method5278.method18161().y;
                 final double field4646 = method5278.method18161().z;
-                Class8726.method30059();
-                Class8726.method30065((float)(n - field4644), (float)(n2 - field4645) + 0.07f, (float)(n3 - field4646));
-                Class8726.method30006(0.0f, 1.0f, 0.0f);
-                Class8726.method30067(new Matrix4f(method5278.method18165()));
-                Class8726.method30063(n5, -n5, n5);
-                Class8726.method30040();
+                RenderSystem.method30059();
+                RenderSystem.method30065((float)(n - field4644), (float)(n2 - field4645) + 0.07f, (float)(n3 - field4646));
+                RenderSystem.method30006(0.0f, 1.0f, 0.0f);
+                RenderSystem.method30067(new Matrix4f(method5278.method18165()));
+                RenderSystem.method30063(n5, -n5, n5);
+                RenderSystem.enableTexture();
                 if (!b2) {
-                    Class8726.method30008();
+                    RenderSystem.enableDepthTest();
                 }
                 else {
-                    Class8726.method30007();
+                    RenderSystem.disableDepthTest();
                 }
-                Class8726.method30010(true);
-                Class8726.method30063(-1.0f, 1.0f, 1.0f);
-                final float n7 = (b ? (-field4643.method6617(s) / 2.0f) : 0.0f) - n6 / n5;
-                Class8726.method29999();
-                final Class7808 method5279 = Class7807.method25212(Class7392.method22694().method22696());
-                field4643.method6613(s, n7, 0.0f, n4, false, Class9294.method34322().method34328(), method5279, b2, 0, 15728880);
-                method5279.method25216();
-                Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-                Class8726.method30008();
-                Class8726.method30060();
+                RenderSystem.method30010(true);
+                RenderSystem.method30063(-1.0f, 1.0f, 1.0f);
+                final float n7 = (b ? (-field4643.getStringWidth(s) / 2.0f) : 0.0f) - n6 / n5;
+                RenderSystem.enableAlphaTest();
+                final IRenderTypeBuffer.Impl method5279 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
+                field4643.renderString(s, n7, 0.0f, n4, false, TransformationMatrix.identity().getMatrix(), method5279, b2, 0, 15728880);
+                method5279.finish();
+                RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                RenderSystem.enableDepthTest();
+                RenderSystem.method30060();
             }
         }
     }

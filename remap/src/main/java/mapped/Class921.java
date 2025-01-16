@@ -28,7 +28,7 @@ public class Class921 extends Thread
             if (Class9019.method32310(this.field4900)) {
                 return;
             }
-            Class9019.method32311(this.field4900, NetworkManager.method11183(byName, this.field4899, Minecraft.method5277().field4648.method17129()));
+            Class9019.method32311(this.field4900, NetworkManager.method11183(byName, this.field4899, Minecraft.method5277().gameSettings.method17129()));
             if (Class9019.method32310(this.field4900)) {
                 return;
             }

@@ -23,7 +23,7 @@ public class Class4770 extends Class4712<Class767, Class5872<Class767>>
         return (method4255 > 0 && (method4255 > 80 || method4255 / 5 % 2 != 1)) ? Class4770.field20397 : Class4770.field20398;
     }
     
-    public void method14118(final Class767 class767, final Class7351 class768, final float n) {
+    public void method14118(final Class767 class767, final MatrixStack class768, final float n) {
         float n2 = 2.0f;
         final int method4255 = class767.method4255();
         if (method4255 > 0) {

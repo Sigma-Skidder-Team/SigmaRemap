@@ -19,7 +19,7 @@ public class Class3265 extends Class3247
     @Override
     public void method9897() {
         super.method9897();
-        Class3265.field15514.field4684.stepHeight = 0.6f;
+        Class3265.field15514.player.stepHeight = 0.6f;
     }
     
     @Class6753
@@ -39,11 +39,11 @@ public class Class3265 extends Class3247
     }
     
     public Class2166 method10299(final Class5745 class5745) {
-        final double n = Class3265.field15514.field4684.posX + class5745.method17052().x;
-        final double n2 = Class3265.field15514.field4684.posZ + class5745.method17052().z;
+        final double n = Class3265.field15514.player.posX + class5745.method17052().x;
+        final double n2 = Class3265.field15514.player.posZ + class5745.method17052().z;
         final double n3 = 0.41;
         final double n4 = class5745.method17049() - class5745.method17051();
-        final Object[] array = Class3265.field15514.world.method6981(Class3265.field15514.field4684, new AxisAlignedBB(n - n3, Class3265.field15514.field4684.boundingBox.minY, n2 - n3, n + n3, Class3265.field15514.field4684.boundingBox.minY + n4, n2 + n3)).toArray();
+        final Object[] array = Class3265.field15514.world.method6981(Class3265.field15514.player, new AxisAlignedBB(n - n3, Class3265.field15514.player.boundingBox.minY, n2 - n3, n + n3, Class3265.field15514.player.boundingBox.minY + n4, n2 + n3)).toArray();
         final int length = array.length;
         Class7096 class5746 = null;
         BlockPos class5747 = null;
@@ -58,9 +58,9 @@ public class Class3265 extends Class3247
                 field25077 = class5748.getBoundingBox().maxY;
             }
         }
-        if (!Class3265.field15514.field4684.method1706() && !Class3265.field15514.field4684.method1723()) {
+        if (!Class3265.field15514.player.method1706() && !Class3265.field15514.player.method1723()) {
             if (class5746 != null) {
-                if (Class3265.field15514.field4684.onGround) {
+                if (Class3265.field15514.player.onGround) {
                     if (n4 != class5745.method17049()) {
                         if (n4 < 0.5) {
                             if (!(class5746.method21696() instanceof Class3921)) {

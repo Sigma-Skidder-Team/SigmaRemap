@@ -7,11 +7,11 @@ package mapped;
 public final class Class6450 implements Class6451
 {
     @Override
-    public void method19304(final Class4148 class4148, final Class1663 class4149) {
+    public void method19304(final BufferBuilder class4148, final Class1663 class4149) {
     }
     
     @Override
-    public void method19305(final Class7392 class7392) {
+    public void method19305(final Tessellator class7392) {
     }
     
     @Override

@@ -36,8 +36,8 @@ public class Class3366 extends Class3355
                     if (this.field16029 == -1) {
                         if (this.field16028 >= 20) {
                             if (this.field16026 == -1) {
-                                if (Class3366.field15514.field4684.method2664() <= this.method9914().method9886("Health") * 2.0f) {
-                                    if (Class3366.field15514.field4684.method2750() == 0.0f) {
+                                if (Class3366.field15514.player.method2664() <= this.method9914().method9886("Health") * 2.0f) {
+                                    if (Class3366.field15514.player.method2750() == 0.0f) {
                                         this.field16029 = ((Class3263)this.method9914()).method10292(false);
                                         if (this.field16029 >= 0) {
                                             this.field16026 = 0;
@@ -47,7 +47,7 @@ public class Class3366 extends Class3355
                                 }
                                 if (this.field16026 == -1) {
                                     if (this.method9883("Fire resistance potions")) {
-                                        if (!Class3366.field15514.field4684.method2653(Class5328.method16450(12))) {
+                                        if (!Class3366.field15514.player.method2653(Class5328.method16450(12))) {
                                             this.field16029 = ((Class3263)this.method9914()).method10292(true);
                                             if (this.field16029 >= 0) {
                                                 this.field16026 = 0;
@@ -70,15 +70,15 @@ public class Class3366 extends Class3355
                                     Class3366.field15514.method5269().method17292(new Class4307(Class316.field1877));
                                     Class3366.field15514.method5269().method17292(new Class4321(this.field16029 + ((this.field16029 != 8) ? 1 : -1)));
                                     Class3366.field15514.method5269().method17292(new Class4321(this.field16029));
-                                    Class3366.field15514.field4684.field3006.field2743 = this.field16027;
+                                    Class3366.field15514.player.field3006.field2743 = this.field16027;
                                     this.field16027 = -1;
                                     this.field16026 = -1;
                                     this.field16029 = -1;
                                 }
                             }
                             else {
-                                this.field16027 = Class3366.field15514.field4684.field3006.field2743;
-                                Class3366.field15514.field4684.field3006.field2743 = this.field16029;
+                                this.field16027 = Class3366.field15514.player.field3006.field2743;
+                                Class3366.field15514.player.field3006.field2743 = this.field16029;
                             }
                         }
                     }

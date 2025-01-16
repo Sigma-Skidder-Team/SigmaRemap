@@ -63,7 +63,7 @@ public class Class7490 implements Class7491
     
     @Override
     public boolean method23210(final int n) {
-        final Class756 field4684 = this.field28923.field4684;
+        final Class756 field4684 = this.field28923.player;
         return (field4684 == null) ? (n == 0) : field4684.method1926(n);
     }
     

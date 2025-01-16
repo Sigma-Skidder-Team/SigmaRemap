@@ -22,7 +22,7 @@ public class Class391 implements AutoCloseable
         return this.field2278.get(class1932);
     }
     
-    public Class1912 method1415(final Class3687 class3687) {
+    public TextureAtlasSprite method1415(final Class3687 class3687) {
         return this.field2278.get(class3687.method11330()).method6338(class3687.method11331());
     }
     

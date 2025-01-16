@@ -64,7 +64,7 @@ public abstract class Class5611 extends Class5610<Class665>
     }
     
     public void method16935(final String s, final int n, final int n2, final int n3) {
-        this.method16923().method3295(Minecraft.method5277().fontRenderer, s, n, n2, n3);
+        this.method16923().drawCenteredString(Minecraft.method5277().fontRenderer, s, n, n2, n3);
     }
     
     static {

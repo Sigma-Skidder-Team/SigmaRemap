@@ -18,7 +18,7 @@ public class Class4780 extends Class4703<Class861>
         super(class8551);
     }
     
-    public void method14140(final Class861 class861, final float n, final float n2, final Class7351 class862, final Class7807 class863, final int n3) {
+    public void method14140(final Class861 class861, final float n, final float n2, final MatrixStack class862, final IRenderTypeBuffer class863, final int n3) {
         class862.method22567();
         class862.method22566(Vector3f.YP.rotationDegrees(180.0f - n));
         final Class8539 field4601 = class861.field4601;
@@ -34,9 +34,9 @@ public class Class4780 extends Class4703<Class861>
         return Minecraft.method5277().method5324().method6445().method7504().method6340();
     }
     
-    private void method14142(final Class7351 class7351, final Class4150 class7352, final Class861 class7353, final int n, final int n2, final Class1912 class7354, final Class1912 class7355) {
-        final Class8996 method22569 = class7351.method22569();
-        final Matrix4f method22570 = method22569.method32111();
+    private void method14142(final MatrixStack class7351, final Class4150 class7352, final Class861 class7353, final int n, final int n2, final TextureAtlasSprite class7354, final TextureAtlasSprite class7355) {
+        final Class8996 method22569 = class7351.getLast();
+        final Matrix4f method22570 = method22569.getMatrix();
         final Matrix3f method22571 = method22569.method32112();
         final float n3 = -n / 2.0f;
         final float n4 = -n2 / 2.0f;
@@ -112,6 +112,6 @@ public class Class4780 extends Class4703<Class861>
     }
     
     private void method14143(final Matrix4f class6789, final Matrix3f class6790, final Class4150 class6791, final float n, final float n2, final float n3, final float n4, final float n5, final int n6, final int n7, final int n8, final int n9) {
-        class6791.method12444(class6789, n, n2, n5).method12399(255, 255, 255, 255).method12391(n3, n4).method12441(Class1904.field10335).method12440(n9).method12445(class6790, (float)n6, (float)n7, (float)n8).method12397();
+        class6791.pos(class6789, n, n2, n5).method12399(255, 255, 255, 255).tex(n3, n4).method12441(Class1904.field10335).method12440(n9).method12445(class6790, (float)n6, (float)n7, (float)n8).endVertex();
     }
 }

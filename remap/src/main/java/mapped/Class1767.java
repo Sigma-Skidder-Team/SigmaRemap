@@ -38,11 +38,11 @@ public class Class1767 extends Class1666
             method6300 = method6298.method35010();
         }
         final Class1846 method6301 = method6297.method5893();
-        if (Class8726.method29985()) {
+        if (RenderSystem.method29985()) {
             this.method6296(method6301, method6299, method6300);
         }
         else {
-            Class8726.method29991(() -> this.method6296(method6301, method6299, method6300));
+            RenderSystem.method29991(() -> this.method6296(method6301, method6299, method6300));
         }
     }
     

@@ -65,7 +65,7 @@ public class Class7778
         }
     }
     
-    public static void method24950(final Class1660 class1660, final Class7351 class1661, final Class6092 class1662, final float n) {
+    public static void method24950(final Class1660 class1660, final MatrixStack class1661, final Class6092 class1662, final float n) {
         if (!Class9216.field39049) {
             final boolean method33903 = Class9216.method33903();
             final boolean method33904 = Class9216.method33904();
@@ -82,7 +82,7 @@ public class Class7778
         }
     }
     
-    public static void method24951(final Class1660 class1660, final Class7351 class1661, final Class6092 class1662, final float n) {
+    public static void method24951(final Class1660 class1660, final MatrixStack class1661, final Class6092 class1662, final float n) {
         if (!Class9216.field39049) {
             if (!Class9216.method33905()) {
                 Class9216.method33853();
@@ -98,7 +98,7 @@ public class Class7778
         }
     }
     
-    public static void method24952(final Class9458 class9458, final float n, final Class7351 class9459, final Class7808 class9460, final Class756 class9461, final int n2, final boolean b) {
+    public static void method24952(final Class9458 class9458, final float n, final MatrixStack class9459, final IRenderTypeBuffer.Impl class9460, final Class756 class9461, final int n2, final boolean b) {
         Class8933.method31517(true);
         if (b) {
             Class8933.method31516(519);
@@ -116,7 +116,7 @@ public class Class7778
         class9458.method35153(n, class9459, class9460, class9461, n2);
     }
     
-    public static void method24953(final Class1660 class1660, final Class7351 class1661, final Class6092 class1662, final float n) {
+    public static void method24953(final Class1660 class1660, final MatrixStack class1661, final Class6092 class1662, final float n) {
         if (!Class9216.field39049) {
             Class9216.method33863();
             class1660.method5813(class1661, class1662, n, false, true, false);
@@ -159,7 +159,7 @@ public class Class7778
                 Class9216.method33739("shadow bind sfb");
                 method5277.method5327().method15300("shadow camera");
                 method24957(class1661, method5277, n2);
-                final Class7351 class1662 = new Class7351();
+                final MatrixStack class1662 = new MatrixStack();
                 Class9216.method33809(class1662, class1661, n2);
                 Class9216.method33739("shadow camera");
                 Class9216.method33776(Class9216.field39253);
@@ -190,7 +190,7 @@ public class Class7778
                 method5277.method5327().method15300("shadow prepareterrain");
                 method5277.method5290().method5849(Class1774.field9853);
                 method5277.method5327().method15300("shadow setupterrain");
-                field4636.method5707(class1661, class1663, false, method5277.field4636.method5769(), method5277.field4684.isSpectator());
+                field4636.method5707(class1661, class1663, false, method5277.field4636.method5769(), method5277.player.isSpectator());
                 method5277.method5327().method15300("shadow updatechunks");
                 method5277.method5327().method15300("shadow terrain");
                 final double method5279 = method5278.getX();
@@ -216,9 +216,9 @@ public class Class7778
                 method5277.method5327().method15300("shadow entities");
                 final Class1656 field4637 = method5277.field4636;
                 final Class8551 method5282 = method5277.method5306();
-                final Class7808 method5283 = field4637.method5770().method11006();
+                final IRenderTypeBuffer.Impl method5283 = field4637.method5770().method11006();
                 for (final Entity field4638 : method5277.world.method6806()) {
-                    if (!method5282.method28705(field4638, class1663, method5279, method5280, method5281) && !field4638.method1917(method5277.field4684)) {
+                    if (!method5282.method28705(field4638, class1663, method5279, method5280, method5281) && !field4638.method1917(method5277.player)) {
                         continue;
                     }
                     if (field4638 == class1661.method18166()) {
@@ -281,7 +281,7 @@ public class Class7778
                 method5283.method25217(Class8752.method30260());
                 method5283.method25217(Class8752.method30261());
                 method5283.method25217(Class8752.method30262());
-                method5283.method25216();
+                method5283.finish();
                 Class9216.method33739("shadow entities");
                 Class8933.method31633(5888);
                 Class8933.method31636();
@@ -372,7 +372,7 @@ public class Class7778
     }
     
     public static void method24957(final Class6092 class6092, final Minecraft class6093, final float n) {
-        class6092.method18154(class6093.world, (class6093.method5303() != null) ? class6093.method5303() : class6093.field4684, class6093.field4648.field23465 > 0, class6093.field4648.field23465 == 2, n);
+        class6092.method18154(class6093.world, (class6093.method5303() != null) ? class6093.method5303() : class6093.player, class6093.gameSettings.field23465 > 0, class6093.gameSettings.field23465 == 2, n);
     }
     
     public static void method24958(final Class6332 class6332) {
@@ -409,7 +409,7 @@ public class Class7778
         }
     }
     
-    public static void method24960(final Class6332 class6332, final Class4148 class6333) {
+    public static void method24960(final Class6332 class6332, final BufferBuilder class6333) {
         if (Class9216.field39045) {
             if (!Class9216.field39049) {
                 if (class6332 != Class6332.method18784()) {
@@ -429,7 +429,7 @@ public class Class7778
         }
     }
     
-    public static void method24961(final Class6332 class6332, final Class4148 class6333) {
+    public static void method24961(final Class6332 class6332, final BufferBuilder class6333) {
         if (Class9216.field39045) {
             if (!Class9216.field39049) {
                 if (class6332 != Class6332.method18784()) {
@@ -488,13 +488,13 @@ public class Class7778
         }
     }
     
-    public static boolean method24970(final Class489 class489, final float n, final float n2, final Class7351 class490, final Class7807 class491, final int n3, final int n4) {
+    public static boolean method24970(final Class489 class489, final float n, final float n2, final MatrixStack class490, final IRenderTypeBuffer class491, final int n3, final int n4) {
         if (!Class9216.field39049 && Class9216.field39287.method32329() == 0) {
             return false;
         }
         Class8933.method31506();
-        final Class8996 method22569 = class490.method22569();
-        final Matrix4f method22570 = method22569.method32111();
+        final Class8996 method22569 = class490.getLast();
+        final Matrix4f method22570 = method22569.getMatrix();
         final Matrix3f method22571 = method22569.method32112();
         final Class4150 method22572 = class491.method25214(Class6332.method18767(Class7778.field31852));
         final float n5 = 0.5f;
@@ -515,10 +515,10 @@ public class Class7778
             final float method22574 = method22571.getTransformX(n15, n16, n17);
             final float method22575 = method22571.getTransformY(n15, n16, n17);
             final float method22576 = method22571.getTransformZ(n15, n16, n17);
-            method22572.method12444(method22570, n12, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13 + 1.0f, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).method12397();
-            method22572.method12444(method22570, n12, n13 + 1.0f, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).method12397();
+            method22572.pos(method22570, n12, n13, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13 + 1.0f, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).endVertex();
+            method22572.pos(method22570, n12, n13 + 1.0f, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22574, method22575, method22576).endVertex();
         }
         if (class489.method2444(Direction.NORTH)) {
             final Vec3i method22577 = Direction.NORTH.getDirectionVec();
@@ -528,10 +528,10 @@ public class Class7778
             final float method22578 = method22571.getTransformX(n18, n19, n20);
             final float method22579 = method22571.getTransformY(n18, n19, n20);
             final float method22580 = method22571.getTransformZ(n18, n19, n20);
-            method22572.method12444(method22570, n12, n13 + 1.0f, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13 + 1.0f, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).method12397();
-            method22572.method12444(method22570, n12, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).method12397();
+            method22572.pos(method22570, n12, n13 + 1.0f, n14).color(n6, n7, n8, 1.0f).tex(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13 + 1.0f, n14).color(n6, n7, n8, 1.0f).tex(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13, n14).color(n6, n7, n8, 1.0f).tex(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).endVertex();
+            method22572.pos(method22570, n12, n13, n14).color(n6, n7, n8, 1.0f).tex(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22578, method22579, method22580).endVertex();
         }
         if (class489.method2444(Direction.EAST)) {
             final Vec3i method22581 = Direction.EAST.getDirectionVec();
@@ -541,10 +541,10 @@ public class Class7778
             final float method22582 = method22571.getTransformX(n21, n22, n23);
             final float method22583 = method22571.getTransformY(n21, n22, n23);
             final float method22584 = method22571.getTransformZ(n21, n22, n23);
-            method22572.method12444(method22570, n12 + 1.0f, n13 + 1.0f, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13 + 1.0f, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).method12397();
+            method22572.pos(method22570, n12 + 1.0f, n13 + 1.0f, n14).color(n6, n7, n8, 1.0f).tex(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13 + 1.0f, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13, n14).color(n6, n7, n8, 1.0f).tex(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22582, method22583, method22584).endVertex();
         }
         if (class489.method2444(Direction.WEST)) {
             final Vec3i method22585 = Direction.WEST.getDirectionVec();
@@ -554,10 +554,10 @@ public class Class7778
             final float method22586 = method22571.getTransformX(n24, n25, n26);
             final float method22587 = method22571.getTransformY(n24, n25, n26);
             final float method22588 = method22571.getTransformZ(n24, n25, n26);
-            method22572.method12444(method22570, n12, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).method12397();
-            method22572.method12444(method22570, n12, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).method12397();
-            method22572.method12444(method22570, n12, n13 + 1.0f, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).method12397();
-            method22572.method12444(method22570, n12, n13 + 1.0f, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).method12397();
+            method22572.pos(method22570, n12, n13, n14).color(n6, n7, n8, 1.0f).tex(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).endVertex();
+            method22572.pos(method22570, n12, n13, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).endVertex();
+            method22572.pos(method22570, n12, n13 + 1.0f, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).endVertex();
+            method22572.pos(method22570, n12, n13 + 1.0f, n14).color(n6, n7, n8, 1.0f).tex(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22586, method22587, method22588).endVertex();
         }
         if (class489.method2444(Direction.DOWN)) {
             final Vec3i method22589 = Direction.DOWN.getDirectionVec();
@@ -567,10 +567,10 @@ public class Class7778
             final float method22590 = method22571.getTransformX(n27, n28, n29);
             final float method22591 = method22571.getTransformY(n27, n28, n29);
             final float method22592 = method22571.getTransformZ(n27, n28, n29);
-            method22572.method12444(method22570, n12, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13, n14).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).method12397();
-            method22572.method12444(method22570, n12, n13, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).method12397();
+            method22572.pos(method22570, n12, n13, n14).color(n6, n7, n8, 1.0f).tex(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13, n14).color(n6, n7, n8, 1.0f).tex(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).endVertex();
+            method22572.pos(method22570, n12, n13, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22590, method22591, method22592).endVertex();
         }
         if (class489.method2444(Direction.UP)) {
             final Vec3i method22593 = Direction.UP.getDirectionVec();
@@ -580,10 +580,10 @@ public class Class7778
             final float method22594 = method22571.getTransformX(n30, n31, n32);
             final float method22595 = method22571.getTransformY(n30, n31, n32);
             final float method22596 = method22571.getTransformZ(n30, n31, n32);
-            method22572.method12444(method22570, n12, n13 + n2, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13 + n2, n14 + 1.0f).method12439(n6, n7, n8, 1.0f).method12391(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).method12397();
-            method22572.method12444(method22570, n12 + 1.0f, n13 + n2, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).method12397();
-            method22572.method12444(method22570, n12, n13 + n2, n14).method12439(n6, n7, n8, 1.0f).method12391(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).method12397();
+            method22572.pos(method22570, n12, n13 + n2, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n9 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13 + n2, n14 + 1.0f).color(n6, n7, n8, 1.0f).tex(n9 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).endVertex();
+            method22572.pos(method22570, n12 + 1.0f, n13 + n2, n14).color(n6, n7, n8, 1.0f).tex(n10 + n11, n10 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).endVertex();
+            method22572.pos(method22570, n12, n13 + n2, n14).color(n6, n7, n8, 1.0f).tex(n10 + n11, n9 + n11).method12441(n4).method12440(n3).method12436(method22594, method22595, method22596).endVertex();
         }
         Class8933.method31505();
         return true;

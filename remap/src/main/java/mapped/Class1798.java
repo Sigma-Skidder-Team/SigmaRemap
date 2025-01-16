@@ -29,7 +29,7 @@ public class Class1798<T extends LivingEntity & Class825, M extends Class5845<T>
         field9964.method19930(this);
     }
     
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (!t.method1823()) {
             final Class8562 method4870 = t.method4870();
             final Class7611 method4871 = method4870.method28780();

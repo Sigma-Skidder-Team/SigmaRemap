@@ -21,7 +21,7 @@ public class Class3166 extends Class3167
     @Class6757
     private void method9880(final Class5744 class5744) {
         if (this.method9906() && class5744.method17046()) {
-            if (!Class3166.field15514.field4684.onGround) {
+            if (!Class3166.field15514.player.onGround) {
                 this.field15513 = 0;
             }
             else {
@@ -35,9 +35,9 @@ public class Class3166 extends Class3167
                 class5744.method17033(true);
             }
             if (Class3166.field15514.field4682.method27337()) {
-                if (Class3166.field15514.field4684.onGround) {
+                if (Class3166.field15514.player.onGround) {
                     this.field15513 = 0;
-                    class5744.method17037(Class3166.field15514.field4684.posY);
+                    class5744.method17037(Class3166.field15514.player.posY);
                     class5744.method17045(true);
                 }
             }

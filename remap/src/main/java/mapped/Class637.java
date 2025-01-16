@@ -39,14 +39,14 @@ public class Class637 extends Class623<Class637>
     
     private void method3663(final int n, final int n2, final Item class3820) {
         this.method3664(n + 1, n2 + 1);
-        Class8726.method30046();
+        RenderSystem.enableRescaleNormal();
         this.field3636.field3565.itemRenderer.method6538(new ItemStack(class3820), n + 2, n2 + 2);
-        Class8726.method30047();
+        RenderSystem.disableRescaleNormal();
     }
     
     private void method3664(final int n, final int n2) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class611.method3573(this.field3636).method5290().method5849(Class565.field3362);
-        Class565.method3299(n, n2, this.field3636.field3565.method3303(), 0.0f, 0.0f, 18, 18, 128, 128);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        Class611.method3573(this.field3636).method5290().method5849(AbstractGui.STATS_ICON_LOCATION);
+        AbstractGui.blit(n, n2, this.field3636.field3565.getBlitOffset(), 0.0f, 0.0f, 18, 18, 128, 128);
     }
 }

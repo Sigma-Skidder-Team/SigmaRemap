@@ -54,11 +54,11 @@ public class Class7335
                 return true;
             }
             case 67: {
-                if (this.field28331.field4684.method2896()) {
+                if (this.field28331.player.method2896()) {
                     return false;
                 }
                 this.method22497("debug.copy_location.message", new Object[0]);
-                this.method22508(String.format(Locale.ROOT, "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f", DimensionType.method1276(this.field28331.field4684.world.dimension.getType()), this.field28331.field4684.getPosX(), this.field28331.field4684.getPosY(), this.field28331.field4684.getPosZ(), this.field28331.field4684.rotationYaw, this.field28331.field4684.rotationPitch));
+                this.method22508(String.format(Locale.ROOT, "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f", DimensionType.method1276(this.field28331.player.world.dimension.getType()), this.field28331.player.getPosX(), this.field28331.player.getPosY(), this.field28331.player.getPosZ(), this.field28331.player.rotationYaw, this.field28331.player.rotationPitch));
                 return true;
             }
             case 68: {
@@ -71,8 +71,8 @@ public class Class7335
                 return false;
             }
             case 70: {
-                Class6469.field25717.method19475(this.field28331.field4648, MathHelper.clamp(this.field28331.field4648.field23382 + (Screen.method3047() ? -1 : 1), Class6469.field25717.method19472(), Class6469.field25717.method19473()));
-                this.method22497("debug.cycle_renderdistance.message", this.field28331.field4648.field23382);
+                Class6469.field25717.method19475(this.field28331.gameSettings, MathHelper.clamp(this.field28331.gameSettings.field23382 + (Screen.hasShiftDown() ? -1 : 1), Class6469.field25717.method19472(), Class6469.field25717.method19473()));
+                this.method22497("debug.cycle_renderdistance.message", this.field28331.gameSettings.field23382);
                 return true;
             }
             case 71: {
@@ -80,14 +80,14 @@ public class Class7335
                 return true;
             }
             case 72: {
-                this.field28331.field4648.field23394 = !this.field28331.field4648.field23394;
-                this.method22497(this.field28331.field4648.field23394 ? "debug.advanced_tooltips.on" : "debug.advanced_tooltips.off", new Object[0]);
-                this.field28331.field4648.method17121();
+                this.field28331.gameSettings.advancedItemTooltips = !this.field28331.gameSettings.advancedItemTooltips;
+                this.method22497(this.field28331.gameSettings.advancedItemTooltips ? "debug.advanced_tooltips.on" : "debug.advanced_tooltips.off", new Object[0]);
+                this.field28331.gameSettings.method17121();
                 return true;
             }
             case 73: {
-                if (!this.field28331.field4684.method2896()) {
-                    this.method22500(this.field28331.field4684.method1926(2), !Screen.method3047());
+                if (!this.field28331.player.method2896()) {
+                    this.method22500(this.field28331.player.method1926(2), !Screen.hasShiftDown());
                 }
                 return true;
             }
@@ -98,27 +98,27 @@ public class Class7335
                 return true;
             }
             case 78: {
-                if (!this.field28331.field4684.method1926(2)) {
+                if (!this.field28331.player.method1926(2)) {
                     this.method22497("debug.creative_spectator.error", new Object[0]);
                 }
-                else if (this.field28331.field4684.method2889()) {
-                    this.field28331.field4684.method4114("/gamemode spectator");
+                else if (this.field28331.player.method2889()) {
+                    this.field28331.player.method4114("/gamemode spectator");
                 }
                 else {
-                    this.field28331.field4684.method4114("/gamemode creative");
+                    this.field28331.player.method4114("/gamemode creative");
                 }
                 return true;
             }
             case 79: {
                 if (Config.method28955()) {
-                    Config.method28894().method5244(new Class713(null, Config.method28962()));
+                    Config.method28894().displayGuiScreen(new Class713(null, Config.method28962()));
                 }
                 return true;
             }
             case 80: {
-                this.field28331.field4648.field23395 = !this.field28331.field4648.field23395;
-                this.field28331.field4648.method17121();
-                this.method22497(this.field28331.field4648.field23395 ? "debug.pause_focus.on" : "debug.pause_focus.off", new Object[0]);
+                this.field28331.gameSettings.field23395 = !this.field28331.gameSettings.field23395;
+                this.field28331.gameSettings.method17121();
+                this.method22497(this.field28331.gameSettings.field23395 ? "debug.pause_focus.on" : "debug.pause_focus.off", new Object[0]);
                 return true;
             }
             case 81: {
@@ -160,21 +160,21 @@ public class Class7335
             switch (Class8540.field35858[field4691.getType().ordinal()]) {
                 case 1: {
                     final BlockPos method21447 = ((BlockRayTraceResult)field4691).getPos();
-                    final BlockState method21448 = this.field28331.field4684.world.getBlockState(method21447);
+                    final BlockState method21448 = this.field28331.player.world.getBlockState(method21447);
                     if (!b) {
                         this.method22501(method21448, method21447, null);
                         this.method22497("debug.inspect.client.block", new Object[0]);
                         break;
                     }
                     if (b2) {
-                        this.field28331.field4684.field4069.method17378().method26648(method21447, class7098 -> {
+                        this.field28331.player.field4069.method17378().method26648(method21447, class7098 -> {
                             this.method22501(class7096, class7097, class7098);
                             this.method22497("debug.inspect.server.block", new Object[0]);
                             return;
                         });
                         break;
                     }
-                    final TileEntity method21449 = this.field28331.field4684.world.getTileEntity(method21447);
+                    final TileEntity method21449 = this.field28331.player.world.getTileEntity(method21447);
                     this.method22501(method21448, method21447, (method21449 != null) ? method21449.method2180(new CompoundNBT()) : null);
                     this.method22497("debug.inspect.client.block", new Object[0]);
                     break;
@@ -188,7 +188,7 @@ public class Class7335
                         break;
                     }
                     if (b2) {
-                        this.field28331.field4684.field4069.method17378().method26647(method21450.getEntityId(), class7101 -> {
+                        this.field28331.player.field4069.method17378().method26647(method21450.getEntityId(), class7101 -> {
                             this.method22502(class7099, class7100.method1934(), class7101);
                             this.method22497("debug.inspect.server.entity", new Object[0]);
                             return;
@@ -285,12 +285,12 @@ public class Class7335
                     }
                 }
                 else {
-                    if (this.field28331.field4648.field23454.method1066(i, j)) {
+                    if (this.field28331.gameSettings.field23454.method1066(i, j)) {
                         this.field28331.method5332().method7685();
-                        this.field28331.field4648.field23430 = this.field28331.method5332().method7691();
+                        this.field28331.gameSettings.field23430 = this.field28331.method5332().method7691();
                         return;
                     }
-                    if (this.field28331.field4648.field23451.method1066(i, j)) {
+                    if (this.field28331.gameSettings.field23451.method1066(i, j)) {
                         if (!Screen.method3046()) {}
                         Class8283.method27524(this.field28331.field4652, this.field28331.method5332().method7692(), this.field28331.method5332().method7693(), this.field28331.method5234(), p0 -> this.field28331.execute(() -> this.field28331.field4647.method3807().method3761(class5754)));
                         return;
@@ -300,8 +300,8 @@ public class Class7335
             boolean b = false;
             Label_0616: {
                 if (field4700 != null) {
-                    if (field4700.method3471() instanceof Class576) {
-                        if (((Class576)field4700.method3471()).method3394()) {
+                    if (field4700.getFocused() instanceof Class576) {
+                        if (((Class576)field4700.getFocused()).method3394()) {
                             b = false;
                             break Label_0616;
                         }
@@ -314,7 +314,7 @@ public class Class7335
                 if (i == 66) {
                     if (Screen.method3046()) {
                         if (b2) {
-                            Class6469.field25726.method19485(this.field28331.field4648, 1);
+                            Class6469.field25726.method19485(this.field28331.gameSettings, 1);
                             if (field4700 instanceof Class707) {
                                 ((Class707)field4700).method3913();
                             }
@@ -362,7 +362,7 @@ public class Class7335
                     return;
                 }
             }
-            if (this.field28331.field4700 == null || this.field28331.field4700.field3155) {
+            if (this.field28331.field4700 == null || this.field28331.field4700.passEvents) {
                 final Class7985 method27796 = Class8341.method27796(i, j);
                 if (k != 0) {
                     if (i == 293) {
@@ -378,7 +378,7 @@ public class Class7335
                         b3 = (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292) && this.method22499(i));
                         this.field28337 |= b3;
                         if (i == 290) {
-                            this.field28331.field4648.field23464 = !this.field28331.field4648.field23464;
+                            this.field28331.gameSettings.field23464 = !this.field28331.gameSettings.field23464;
                         }
                     }
                     if (!b3) {
@@ -388,7 +388,7 @@ public class Class7335
                     else {
                         Class350.method1052(method27796, false);
                     }
-                    if (this.field28331.field4648.field23467) {
+                    if (this.field28331.gameSettings.field23467) {
                         if (i == 48) {
                             this.field28331.method5251(0);
                         }
@@ -403,15 +403,15 @@ public class Class7335
                     Class350.method1052(method27796, false);
                     if (i == 292) {
                         if (!this.field28337) {
-                            this.field28331.field4648.field23466 = !this.field28331.field4648.field23466;
-                            this.field28331.field4648.field23467 = (this.field28331.field4648.field23466 && Screen.method3047());
-                            this.field28331.field4648.field23468 = (this.field28331.field4648.field23466 && Screen.method3048());
-                            if (this.field28331.field4648.field23466) {
-                                if (this.field28331.field4648.field23496) {
-                                    this.field28331.field4648.field23468 = true;
+                            this.field28331.gameSettings.field23466 = !this.field28331.gameSettings.field23466;
+                            this.field28331.gameSettings.field23467 = (this.field28331.gameSettings.field23466 && Screen.hasShiftDown());
+                            this.field28331.gameSettings.field23468 = (this.field28331.gameSettings.field23466 && Screen.method3048());
+                            if (this.field28331.gameSettings.field23466) {
+                                if (this.field28331.gameSettings.field23496) {
+                                    this.field28331.gameSettings.field23468 = true;
                                 }
-                                if (this.field28331.field4648.field23497) {
-                                    this.field28331.field4648.field23467 = true;
+                                if (this.field28331.gameSettings.field23497) {
+                                    this.field28331.gameSettings.field23467 = true;
                                 }
                             }
                         }

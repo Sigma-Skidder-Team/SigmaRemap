@@ -26,7 +26,7 @@ public class Class3687
         return this.field16993;
     }
     
-    public Class1912 method11332() {
+    public TextureAtlasSprite method11332() {
         return Minecraft.method5277().method5296(this.method11330()).apply(this.method11331());
     }
     
@@ -37,7 +37,7 @@ public class Class3687
         return this.field16994;
     }
     
-    public Class4150 method11334(final Class7807 class7807, final Function<ResourceLocation, Class6332> function) {
+    public Class4150 method11334(final IRenderTypeBuffer class7807, final Function<ResourceLocation, Class6332> function) {
         return this.method11332().method7512(class7807.method25214(this.method11333(function)));
     }
     

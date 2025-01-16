@@ -14,7 +14,7 @@ public class Class1812 extends Class1799<Class803, Class5927<Class803>>
         super(class4778);
     }
     
-    public void method6573(final Class7351 class7351, final Class7807 class7352, final int n, final Class803 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6573(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class803 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final boolean method2783 = class7353.method2783();
         final boolean method2784 = class7353.method2625();
         class7351.method22567();

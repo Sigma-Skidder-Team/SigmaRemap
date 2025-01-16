@@ -79,7 +79,7 @@ public class Class5854<T extends Class759 & Class768> extends Class5853<T>
     }
     
     @Override
-    public void method17578(final Class2226 class2226, final Class7351 class2227) {
+    public void method17578(final Class2226 class2226, final MatrixStack class2227) {
         final float n = (class2226 != Class2226.field13698) ? -1.0f : 1.0f;
         final Class6300 method17585;
         final Class6300 class2228 = method17585 = this.method17585(class2226);

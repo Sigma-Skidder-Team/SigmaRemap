@@ -42,7 +42,7 @@ public class Class627 extends Class624
         Class5069.method15619(this.field3610, Class5069.method15615(this.field3610) + Class5069.method15616(this.field3610) - 22, n2 + 2, n3, n4);
         this.field3610.method15407(RealmsScreen.getLocalizedString("mco.configure.world.activityfeed.disabled"), Class5069.method15620(this.field3610), Class7869.method25488(5), 10526880);
         Class8952.method31759(class7427.method22852(), () -> {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             RealmsScreen.method15410(Class5069.method15615(this.field3610) + 2 + 2, n6 + 1, 8.0f, 8.0f, 8, 8, 8, 8, 64, 64);
             RealmsScreen.method15410(Class5069.method15615(this.field3610) + 2 + 2, n6 + 1, 40.0f, 8.0f, 8, 8, 8, 8, 64, 64);
         });

@@ -23,20 +23,20 @@ public class Class3336 extends Class3167
     
     @Class6753
     public void method10558(final Class5744 class5744) {
-        if (!this.method9906() || Class3336.field15514.field4684 == null) {
+        if (!this.method9906() || Class3336.field15514.player == null) {
             return;
         }
         ++this.field15937;
-        if (class5744.method17036() > Class3336.field15514.field4684.posY - 1.0E-6 && class5744.method17036() < Class3336.field15514.field4684.posY + 1.0E-6) {
-            class5744.method17037(Class3336.field15514.field4684.posY + 0.4);
+        if (class5744.method17036() > Class3336.field15514.player.posY - 1.0E-6 && class5744.method17036() < Class3336.field15514.player.posY + 1.0E-6) {
+            class5744.method17037(Class3336.field15514.player.posY + 0.4);
             class5744.method17045(false);
         }
         if (this.field15937 <= 60) {
             for (int i = 0; i < 10; ++i) {
-                Class3336.field15514.method5269().method17292(new Class4354(Class3336.field15514.field4684.posX, Class3336.field15514.field4684.posY + ((i > 2 && i < 8) ? 0.2 : -0.2), Class3336.field15514.field4684.posZ, true));
+                Class3336.field15514.method5269().method17292(new Class4354(Class3336.field15514.player.posX, Class3336.field15514.player.posY + ((i > 2 && i < 8) ? 0.2 : -0.2), Class3336.field15514.player.posZ, true));
             }
-            Class3336.field15514.field4684.field4075 = 0.0;
-            if (Class3336.field15514.field4684.ticksExisted <= 1) {
+            Class3336.field15514.player.field4075 = 0.0;
+            if (Class3336.field15514.player.ticksExisted <= 1) {
                 this.field15938.clear();
             }
             if (!this.field15938.isEmpty()) {
@@ -50,7 +50,7 @@ public class Class3336 extends Class3167
             }
             return;
         }
-        class5744.method17037(Class3336.field15514.field4684.posY + 0.4);
+        class5744.method17037(Class3336.field15514.player.posY + 0.4);
         class5744.method17045(false);
     }
     

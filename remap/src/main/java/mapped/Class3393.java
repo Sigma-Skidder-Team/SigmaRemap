@@ -29,15 +29,15 @@ public class Class3393 extends Class3167
     private void method10828(final Class5717 class5717) {
         if (this.method9906()) {
             if (class5717.method16974() < -0.5) {
-                if (Class3393.field15514.field4684.fallDistance > 2.0 + Class7482.method23140() * 0.5) {
-                    if (!Class3393.field15514.field4684.onGround) {
+                if (Class3393.field15514.player.fallDistance > 2.0 + Class7482.method23140() * 0.5) {
+                    if (!Class3393.field15514.player.onGround) {
                         if (this.method9887("Mode").equals("Hypixel")) {
                             if (Class6430.method19146()) {
                                 final double[] method19177 = Class6430.method19177();
                                 final int length = method19177.length;
                                 double a = Double.MAX_VALUE;
                                 for (final double n : method19177) {
-                                    final double field2396 = Class3393.field15514.field4684.posY;
+                                    final double field2396 = Class3393.field15514.player.posY;
                                     final double a2 = (int)(field2396 + class5717.method16974()) - field2396 - class5717.method16974() + n;
                                     double n2 = 0.02;
                                     final double n3 = -0.05;
@@ -46,7 +46,7 @@ public class Class3393 extends Class3167
                                     }
                                     if (a2 > n3) {
                                         if (a2 < n2) {
-                                            if (Class3393.field15514.world.method6981(Class3393.field15514.field4684, Class3393.field15514.field4684.boundingBox.offset(class5717.method16972(), class5717.method16974() + a2 + n3, class5717.method16976())).count() != 0L) {
+                                            if (Class3393.field15514.world.method6981(Class3393.field15514.player, Class3393.field15514.player.boundingBox.offset(class5717.method16972(), class5717.method16974() + a2 + n3, class5717.method16976())).count() != 0L) {
                                                 class5717.method16975(class5717.method16974() + (a2 - 1.0E-5));
                                                 Class6430.method19155(class5717.method16974());
                                                 a = Double.MAX_VALUE;
@@ -72,10 +72,10 @@ public class Class3393 extends Class3167
     
     @Class6753
     private void method10829(final Class5744 class5744) {
-        if (!this.method9906() || Class3393.field15514.field4684 == null) {
+        if (!this.method9906() || Class3393.field15514.player == null) {
             return;
         }
-        if (Class3393.field15514.field4684.posY < 2.0) {
+        if (Class3393.field15514.player.posY < 2.0) {
             return;
         }
         String method9887 = this.method9887("Mode");
@@ -88,14 +88,14 @@ public class Class3393 extends Class3167
                 if (class5744.method17046()) {
                     break;
                 }
-                if (Class6430.method19160(Class3393.field15514.field4684, 1.0E-4f)) {
+                if (Class6430.method19160(Class3393.field15514.player, 1.0E-4f)) {
                     this.field16113 = 0.0;
                     return;
                 }
-                if (Class3393.field15514.field4684.getMotion().y < -0.1) {
-                    this.field16113 -= Class3393.field15514.field4684.getMotion().y;
+                if (Class3393.field15514.player.getMotion().y < -0.1) {
+                    this.field16113 -= Class3393.field15514.player.getMotion().y;
                 }
-                if (this.field16113 > 2.8 && (Class3393.field15514.field4684.posY % 0.0625 != 0.0 || Class3393.field15514.field4684.posY % 0.015256 != 0.0)) {
+                if (this.field16113 > 2.8 && (Class3393.field15514.player.posY % 0.0625 != 0.0 || Class3393.field15514.player.posY % 0.015256 != 0.0)) {
                     this.field16113 = 1.0E-14;
                     Class3393.field15514.method5269().method17292(new Class4353(true));
                     break;
@@ -106,15 +106,15 @@ public class Class3393 extends Class3167
                 if (!class5744.method17046()) {
                     break;
                 }
-                if (Class6430.method19160(Class3393.field15514.field4684, 1.0E-4f)) {
+                if (Class6430.method19160(Class3393.field15514.player, 1.0E-4f)) {
                     this.field16113 = 0.0;
                     return;
                 }
-                if (Class3393.field15514.field4684.getMotion().y < -0.1) {
+                if (Class3393.field15514.player.getMotion().y < -0.1) {
                     if (this.field16113 == 0.0) {
                         class5744.method17045(true);
                     }
-                    this.field16113 -= Class3393.field15514.field4684.getMotion().y;
+                    this.field16113 -= Class3393.field15514.player.getMotion().y;
                 }
                 if (this.field16113 > 3.0) {
                     this.field16113 = 1.0E-14;
@@ -127,7 +127,7 @@ public class Class3393 extends Class3167
                 if (!class5744.method17046()) {
                     break;
                 }
-                if (Class3393.field15514.field4684.getMotion().y < 0.0 && !Class3393.field15514.field4684.onGround && Class6430.method19146()) {
+                if (Class3393.field15514.player.getMotion().y < 0.0 && !Class3393.field15514.player.onGround && Class6430.method19146()) {
                     final double[] method9888 = Class6430.method19177();
                     for (int length = method9888.length, i = 0; i < length; ++i) {
                         if ((int)class5744.method17036() - class5744.method17036() + method9888[i] == 0.0) {
@@ -143,12 +143,12 @@ public class Class3393 extends Class3167
                 if (!class5744.method17046()) {
                     break;
                 }
-                if (Class3393.field15514.field4684.ticksExisted == 1) {
+                if (Class3393.field15514.player.ticksExisted == 1) {
                     this.field16111 = false;
                 }
-                if (!this.field16111 && Class3393.field15514.field4684.fallDistance > 3.0f && this.method9887("Mode").equals("AAC")) {
+                if (!this.field16111 && Class3393.field15514.player.fallDistance > 3.0f && this.method9887("Mode").equals("AAC")) {
                     this.field16111 = !this.field16111;
-                    Class3393.field15514.method5269().method17292(new Class4354(Class3393.field15514.field4684.posX, Double.NaN, Class3393.field15514.field4684.posZ, true));
+                    Class3393.field15514.method5269().method17292(new Class4354(Class3393.field15514.player.posX, Double.NaN, Class3393.field15514.player.posZ, true));
                     break;
                 }
                 break;
@@ -157,23 +157,23 @@ public class Class3393 extends Class3167
                 if (!class5744.method17046()) {
                     break;
                 }
-                if (Class3393.field15514.field4684.getMotion().y < -0.1) {
+                if (Class3393.field15514.player.getMotion().y < -0.1) {
                     class5744.method17045(true);
                     break;
                 }
                 break;
             }
             case "Vanilla Legit": {
-                if (Class3393.field15514.field4684.getMotion().y < -0.1) {
+                if (Class3393.field15514.player.getMotion().y < -0.1) {
                     class5744.method17045(true);
                 }
-                if (Class3393.field15514.field4684.fallDistance > 3.0f) {
+                if (Class3393.field15514.player.fallDistance > 3.0f) {
                     this.field16114 = true;
                 }
-                if (this.field16114 && Class3393.field15514.field4684.onGround && !Class3393.field15514.field4684.method1706()) {
-                    final double field2395 = Class3393.field15514.field4684.posX;
-                    final double field2396 = Class3393.field15514.field4684.posY;
-                    final double field2397 = Class3393.field15514.field4684.posZ;
+                if (this.field16114 && Class3393.field15514.player.onGround && !Class3393.field15514.player.method1706()) {
+                    final double field2395 = Class3393.field15514.player.posX;
+                    final double field2396 = Class3393.field15514.player.posY;
+                    final double field2397 = Class3393.field15514.player.posZ;
                     Class3393.field15514.method5269().method17292(new Class4354(field2395, field2396 + 3.01, field2397, false));
                     Class3393.field15514.method5269().method17292(new Class4354(field2395, field2396, field2397, false));
                     Class3393.field15514.method5269().method17292(new Class4354(field2395, field2396, field2397, true));
@@ -187,10 +187,10 @@ public class Class3393 extends Class3167
                 if (!class5744.method17046()) {
                     break;
                 }
-                if (Class3393.field15514.field4684.fallDistance > 3.0f) {
+                if (Class3393.field15514.player.fallDistance > 3.0f) {
                     this.field16112 = true;
                 }
-                if (this.field16112 && Class9463.method35173().method35194().method29228() == 0 && Class3393.field15514.field4684.onGround) {
+                if (this.field16112 && Class9463.method35173().method35194().method29228() == 0 && Class3393.field15514.player.onGround) {
                     class5744.method17037(class5744.method17036() - 11.0);
                     this.field16112 = false;
                     break;

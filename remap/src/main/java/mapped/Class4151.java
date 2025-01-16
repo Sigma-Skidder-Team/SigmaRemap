@@ -8,16 +8,16 @@ public class Class4151 implements Class4150
 {
     private static String[] field18508;
     private final Class4150 field18509;
-    private final Class1912 field18510;
+    private final TextureAtlasSprite field18510;
     
-    public Class4151(final Class4150 field18509, final Class1912 field18510) {
+    public Class4151(final Class4150 field18509, final TextureAtlasSprite field18510) {
         this.field18509 = field18509;
         this.field18510 = field18510;
     }
     
     @Override
-    public Class4150 method12432(final double n, final double n2, final double n3) {
-        return this.field18509.method12432(n, n2, n3);
+    public Class4150 pos(final double n, final double n2, final double n3) {
+        return this.field18509.pos(n, n2, n3);
     }
     
     @Override
@@ -26,8 +26,8 @@ public class Class4151 implements Class4150
     }
     
     @Override
-    public Class4150 method12391(final float n, final float n2) {
-        return this.field18509.method12391(this.field18510.method7499(n * 16.0f), this.field18510.method7502(n2 * 16.0f));
+    public Class4150 tex(final float n, final float n2) {
+        return this.field18509.tex(this.field18510.method7499(n * 16.0f), this.field18510.method7502(n2 * 16.0f));
     }
     
     @Override
@@ -46,8 +46,8 @@ public class Class4151 implements Class4150
     }
     
     @Override
-    public void method12397() {
-        this.field18509.method12397();
+    public void endVertex() {
+        this.field18509.endVertex();
     }
     
     @Override

@@ -23,7 +23,7 @@ public class Class735 extends Screen
     }
     
     @Override
-    public boolean method2989() {
+    public boolean shouldCloseOnEsc() {
         return false;
     }
     
@@ -31,21 +31,21 @@ public class Class735 extends Screen
     public void init() {
         this.field3993 = this.font.method6626(this.field3992.getFormattedText(), this.width - 50);
         this.field3995 = this.field3993.size() * 9;
-        this.method3029(new Class654(this.width / 2 - 100, Math.min(this.height / 2 + this.field3995 / 2 + 9, this.height - 30), 200, 20, Class8822.method30773("gui.toMenu", new Object[0]), class654 -> this.minecraft.method5244(this.field3994)));
+        this.addButton(new Class654(this.width / 2 - 100, Math.min(this.height / 2 + this.field3995 / 2 + 9, this.height - 30), 200, 20, Class8822.method30773("gui.toMenu", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3994)));
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, this.height / 2 - this.field3995 / 2 - 18, 11184810);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, this.height / 2 - this.field3995 / 2 - 18, 11184810);
         int n4 = this.height / 2 - this.field3995 / 2;
         if (this.field3993 != null) {
             final Iterator<String> iterator = this.field3993.iterator();
             while (iterator.hasNext()) {
-                this.method3295(this.font, iterator.next(), this.width / 2, n4, 16777215);
+                this.drawCenteredString(this.font, iterator.next(), this.width / 2, n4, 16777215);
                 n4 += 9;
             }
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
 }

@@ -57,9 +57,9 @@ public class Class3306 extends Class3167
         }
         try {
             final Class9416 class5749 = new Class9416();
-            final Class8733 class5750 = new Class8733(new Class8797(Class3306.field15514.field4684.method1894()));
+            final Class8733 class5750 = new Class8733(new Class8797(Class3306.field15514.player.method1894()));
             final ArrayList arrayList = Lists.newArrayList((Iterable)Class3306.field15514.world.method6806());
-            arrayList.remove(Class3306.field15514.field4684);
+            arrayList.remove(Class3306.field15514.player);
             final Iterator iterator = arrayList.iterator();
             while (iterator.hasNext()) {
                 final Entity class5751 = (Entity)iterator.next();

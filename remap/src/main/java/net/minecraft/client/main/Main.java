@@ -14,7 +14,7 @@ import java.util.List;
 import mapped.Class914;
 import mapped.Class2367;
 import mapped.Minecraft;
-import mapped.Class8726;
+import mapped.RenderSystem;
 import mapped.Class9567;
 import mapped.Class8239;
 import mapped.Class900;
@@ -115,10 +115,10 @@ public class Main
         Minecraft class9409;
         try {
             Thread.currentThread().setName("Render thread");
-            Class8726.method29983();
-            Class8726.method30113();
+            RenderSystem.method29983();
+            RenderSystem.method30113();
             class9409 = new Minecraft(class9408);
-            Class8726.method30114();
+            RenderSystem.method30114();
         }
         catch (final Class2367 class9410) {
             Main.field14380.warn("Failed to create window: ", class9410);
@@ -140,7 +140,7 @@ public class Main
             }
             final Thread thread = null;
             try {
-                Class8726.method29986(false);
+                RenderSystem.method29986(false);
                 class9409.run();
             }
             catch (final Throwable t2) {

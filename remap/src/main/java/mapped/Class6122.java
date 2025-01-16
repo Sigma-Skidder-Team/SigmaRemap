@@ -19,7 +19,7 @@ public class Class6122 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         final double field24851 = (double) Util.method27838();
         if (field24851 - this.field24851 > 3.0E9) {
             this.field24851 = field24851;
@@ -32,11 +32,11 @@ public class Class6122 implements Class6113
             }
         }
         if (this.field24853 != null) {
-            Class8726.method30011();
-            Class8726.method30117();
-            Class8726.method30072(2.0f);
-            Class8726.method30041();
-            Class8726.method30010(false);
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
+            RenderSystem.method30072(2.0f);
+            RenderSystem.disableTexture();
+            RenderSystem.method30010(false);
             final Map<?, ?> map = Class8112.method26664(this.field24853).getNow(null);
             final double n4 = this.field24850.field4644.method5833().method18161().y * 0.85;
             for (final Map.Entry<Class7859, V> entry : Class8112.method26665(this.field24853).entrySet()) {
@@ -53,9 +53,9 @@ public class Class6122 implements Class6113
                     n5 -= 2;
                 }
             }
-            Class8726.method30010(true);
-            Class8726.method30040();
-            Class8726.method30012();
+            RenderSystem.method30010(true);
+            RenderSystem.enableTexture();
+            RenderSystem.disableBlend();
         }
     }
 }

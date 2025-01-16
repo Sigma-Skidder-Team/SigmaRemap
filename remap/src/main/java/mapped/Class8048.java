@@ -42,17 +42,17 @@ public class Class8048
         final float n13 = n2 + n11;
         final float n14 = b ? (1.0f - 0.25f * n10) : 0.0f;
         final float n15 = b ? (1.0f - 0.25f * n11) : 0.0f;
-        class6790.method12444(class6789, n8 + n14, n12, 0.0f).method12439(n3, n4, n5, n6).method12391(this.field33119, this.field33121).method12440(n7).method12397();
-        class6790.method12444(class6789, n8 + n15, n13, 0.0f).method12439(n3, n4, n5, n6).method12391(this.field33119, this.field33122).method12440(n7).method12397();
-        class6790.method12444(class6789, n9 + n15, n13, 0.0f).method12439(n3, n4, n5, n6).method12391(this.field33120, this.field33122).method12440(n7).method12397();
-        class6790.method12444(class6789, n9 + n14, n12, 0.0f).method12439(n3, n4, n5, n6).method12391(this.field33120, this.field33121).method12440(n7).method12397();
+        class6790.pos(class6789, n8 + n14, n12, 0.0f).color(n3, n4, n5, n6).tex(this.field33119, this.field33121).method12440(n7).endVertex();
+        class6790.pos(class6789, n8 + n15, n13, 0.0f).color(n3, n4, n5, n6).tex(this.field33119, this.field33122).method12440(n7).endVertex();
+        class6790.pos(class6789, n9 + n15, n13, 0.0f).color(n3, n4, n5, n6).tex(this.field33120, this.field33122).method12440(n7).endVertex();
+        class6790.pos(class6789, n9 + n14, n12, 0.0f).color(n3, n4, n5, n6).tex(this.field33120, this.field33121).method12440(n7).endVertex();
     }
     
     public void method26394(final Class7469 class7469, final Matrix4f class7470, final Class4150 class7471, final int n) {
-        class7471.method12444(class7470, class7469.field28844, class7469.field28845, class7469.field28848).method12439(class7469.field28849, class7469.field28850, class7469.field28851, class7469.field28852).method12391(this.field33119, this.field33121).method12440(n).method12397();
-        class7471.method12444(class7470, class7469.field28846, class7469.field28845, class7469.field28848).method12439(class7469.field28849, class7469.field28850, class7469.field28851, class7469.field28852).method12391(this.field33119, this.field33122).method12440(n).method12397();
-        class7471.method12444(class7470, class7469.field28846, class7469.field28847, class7469.field28848).method12439(class7469.field28849, class7469.field28850, class7469.field28851, class7469.field28852).method12391(this.field33120, this.field33122).method12440(n).method12397();
-        class7471.method12444(class7470, class7469.field28844, class7469.field28847, class7469.field28848).method12439(class7469.field28849, class7469.field28850, class7469.field28851, class7469.field28852).method12391(this.field33120, this.field33121).method12440(n).method12397();
+        class7471.pos(class7470, class7469.field28844, class7469.field28845, class7469.field28848).color(class7469.field28849, class7469.field28850, class7469.field28851, class7469.field28852).tex(this.field33119, this.field33121).method12440(n).endVertex();
+        class7471.pos(class7470, class7469.field28846, class7469.field28845, class7469.field28848).color(class7469.field28849, class7469.field28850, class7469.field28851, class7469.field28852).tex(this.field33119, this.field33122).method12440(n).endVertex();
+        class7471.pos(class7470, class7469.field28846, class7469.field28847, class7469.field28848).color(class7469.field28849, class7469.field28850, class7469.field28851, class7469.field28852).tex(this.field33120, this.field33122).method12440(n).endVertex();
+        class7471.pos(class7470, class7469.field28844, class7469.field28847, class7469.field28848).color(class7469.field28849, class7469.field28850, class7469.field28851, class7469.field28852).tex(this.field33120, this.field33121).method12440(n).endVertex();
     }
     
     public Class6332 method26395(final boolean b) {

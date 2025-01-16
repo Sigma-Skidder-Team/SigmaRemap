@@ -18,7 +18,7 @@ public class Class1831<T extends LivingEntity, M extends Class5845<T> & Class585
         super(class4778);
     }
     
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final ItemStack method2718 = t.method2718(Class2215.field13605);
         if (!method2718.method27620()) {
             final Item method2719 = method2718.getItem();

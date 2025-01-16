@@ -21,8 +21,8 @@ public class Class4464 implements Comparator<Class8131>
     public int compare(final Class8131 class8131, final Class8131 class8132) {
         final Entity method26798 = class8131.method26798();
         final Entity method26799 = class8132.method26798();
-        final float method26800 = this.field19821.field37269.field4684.method1732(method26798);
-        final float method26801 = this.field19821.field37269.field4684.method1732(method26799);
+        final float method26800 = this.field19821.field37269.player.method1732(method26798);
+        final float method26801 = this.field19821.field37269.player.method1732(method26799);
         if (method26800 - method26801 < 0.0f) {
             return -1;
         }

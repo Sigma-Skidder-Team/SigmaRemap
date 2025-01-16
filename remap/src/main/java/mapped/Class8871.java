@@ -30,7 +30,7 @@ public class Class8871
         this.field37295 = null;
         this.field37296 = Config.method29016(this.field37291);
         this.field37297 = Config.method29016(this.field37291);
-        this.field37298 = Class9237.field39607.method34194();
+        this.field37298 = DefaultVertexFormats.field39607.method34194();
         this.field37299 = 7;
         this.field37289 = field37289;
         this.method31173();

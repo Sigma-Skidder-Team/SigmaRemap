@@ -72,7 +72,7 @@ public class Class5932<T extends Class793> extends Class5839<T>
     }
     
     @Override
-    public void method17564(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
+    public void method17564(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         final boolean field25187 = this.field24402.field25187;
         if (field25187) {
             class7351.method22567();

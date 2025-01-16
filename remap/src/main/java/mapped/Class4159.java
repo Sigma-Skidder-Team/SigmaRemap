@@ -20,7 +20,7 @@ public class Class4159 extends Class4158<Class497>
         this.field18542 = new Class5902();
     }
     
-    public void method12460(final Class497 class497, final float n, final Class7351 class498, final Class7807 class499, final int n2, final int n3) {
+    public void method12460(final Class497 class497, final float n, final MatrixStack class498, final IRenderTypeBuffer class499, final int n2, final int n3) {
         final Class7096 method2194 = class497.method2194();
         class498.method22567();
         if (!(method2194.method21696() instanceof Class3861)) {
@@ -41,7 +41,7 @@ public class Class4159 extends Class4158<Class497>
         this.field18542.field24273.method18643(class498, method2195, n2, n3);
         class498.method22568();
         if (method12462(class497)) {
-            final Class1844 method2196 = this.field18539.method35731();
+            final FontRenderer method2196 = this.field18539.method35731();
             class498.method22564(0.0, 0.3333333432674408, 0.046666666865348816);
             class498.method22565(0.010416667f, -0.010416667f, 0.010416667f);
             int n4 = class497.method2529().method818();
@@ -56,7 +56,7 @@ public class Class4159 extends Class4158<Class497>
                     return list.isEmpty() ? "" : list.get(0).method8461();
                 });
                 if (method2198 != null) {
-                    method2196.method6613(method2198, (float)(-method2196.method6617(method2198) / 2), (float)(i * 10 - class497.field2850.length * 5), method2197, false, class498.method22569().method32111(), class499, false, 0, n2);
+                    method2196.renderString(method2198, (float)(-method2196.getStringWidth(method2198) / 2), (float)(i * 10 - class497.field2850.length * 5), method2197, false, class498.getLast().getMatrix(), class499, false, 0, n2);
                 }
             }
         }
@@ -89,7 +89,7 @@ public class Class4159 extends Class4158<Class497>
     
     public static void method12463() {
         final Minecraft method5277 = Minecraft.method5277();
-        final double max = Math.max(1.5 * method5277.method5332().method7695() / Config.method28867(method5277.field4648.field23471, 1.0, 120.0), 16.0);
+        final double max = Math.max(1.5 * method5277.method5332().method7695() / Config.method28867(method5277.gameSettings.field23471, 1.0, 120.0), 16.0);
         Class4159.field18543 = max * max;
     }
     

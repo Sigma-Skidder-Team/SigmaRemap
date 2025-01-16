@@ -17,6 +17,6 @@ public abstract class Class650 extends Class649
     
     @Override
     public void method3706() {
-        this.method3186(this.field3426 + 2, this.field3427 + 2, this.field3674, this.field3675, 18, 18);
+        this.blit(this.field3426 + 2, this.field3427 + 2, this.field3674, this.field3675, 18, 18);
     }
 }

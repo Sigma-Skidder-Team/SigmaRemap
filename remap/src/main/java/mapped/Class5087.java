@@ -234,19 +234,19 @@ public class Class5087 extends RealmsScreen
         if (b) {
             if (b) {
                 final float n6 = 0.9f + 0.1f * Class8269.method27478(this.field21978 * 0.2f);
-                Class8726.method30068(n6, n6, n6, 1.0f);
+                RenderSystem.method30068(n6, n6, n6, 1.0f);
             }
         }
         else {
-            Class8726.method30068(0.56f, 0.56f, 0.56f, 1.0f);
+            RenderSystem.method30068(0.56f, 0.56f, 0.56f, 1.0f);
         }
         RealmsScreen.method15411(n + 3, n2 + 3, 0.0f, 0.0f, 74, 74, 74, 74);
         RealmsScreen.method15419("realms:textures/gui/realms/slot_frame.png");
         if (!b) {
-            Class8726.method30068(0.56f, 0.56f, 0.56f, 1.0f);
+            RenderSystem.method30068(0.56f, 0.56f, 0.56f, 1.0f);
         }
         else {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         }
         RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 80, 80, 80, 80);
         this.drawCenteredString(s, n + 40, n2 + 66, 16777215);

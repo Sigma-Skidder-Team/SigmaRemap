@@ -47,7 +47,7 @@ public class Class8974
         this.field37833 = field37833;
         this.field37809 = new AtomicReference<Class9006>(Class9006.field38022);
         this.field37812 = Sets.newHashSet();
-        this.field37813 = Class6332.method18795().stream().collect(Collectors.toMap(class6332 -> class6332, p0 -> new Class1918(Class9237.field39607)));
+        this.field37813 = Class6332.method18795().stream().collect(Collectors.toMap(class6332 -> class6332, p0 -> new Class1918(DefaultVertexFormats.field39607)));
         this.field37815 = -1;
         this.field37816 = true;
         this.field37817 = new Mutable(-1, -1, -1);
@@ -75,7 +75,7 @@ public class Class8974
     }
     
     public boolean method31864() {
-        if (Math.sqrt(this.method31868()) <= Minecraft.method5277().field4648.field23382 * 16 && Class9463.method35173().method35192().method28375()) {
+        if (Math.sqrt(this.method31868()) <= Minecraft.method5277().gameSettings.field23382 * 16 && Class9463.method35173().method35192().method28375()) {
             return true;
         }
         if (this.method31868() > 576.0) {
@@ -142,8 +142,8 @@ public class Class8974
         return n * n + n2 * n2 + n3 * n3;
     }
     
-    private void method31869(final Class4148 class4148) {
-        class4148.method12390(7, Class9237.field39607);
+    private void method31869(final BufferBuilder class4148) {
+        class4148.begin(7, DefaultVertexFormats.field39607);
     }
     
     public Class9006 method31870() {
@@ -311,7 +311,7 @@ public class Class8974
     }
     
     private void method31891(final Class6332 class6332, final Class9226 class6333, final Class9006 class6334) {
-        final Class4148 method34024 = class6333.method34024(class6332);
+        final BufferBuilder method34024 = class6333.method34024(class6332);
         if (method34024.method12405()) {
             class6334.method32217(class6332);
             if (method34024.method12418() > 0) {

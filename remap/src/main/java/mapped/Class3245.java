@@ -24,7 +24,7 @@ public class Class3245 extends Class3167
     
     @Class6753
     public void method10250(final Class5744 class5744) {
-        if (!this.method9906() || Class3245.field15514.field4684 == null || !class5744.method17046() || Class3245.field15514.method5282() == null) {
+        if (!this.method9906() || Class3245.field15514.player == null || !class5744.method17046() || Class3245.field15514.method5282() == null) {
             return;
         }
         ++this.field15736;
@@ -32,11 +32,11 @@ public class Class3245 extends Class3167
         final String method9887 = this.method9887("Mode");
         switch (method9887) {
             case "Basic1": {
-                n = Class3245.field15514.field4684.posY - 20.0;
+                n = Class3245.field15514.player.posY - 20.0;
                 break;
             }
             case "Basic2": {
-                n = Class3245.field15514.field4684.posY - 1000.0 + Math.random() * 1000.0;
+                n = Class3245.field15514.player.posY - 1000.0 + Math.random() * 1000.0;
                 break;
             }
             case "MinInfinity": {
@@ -60,7 +60,7 @@ public class Class3245 extends Class3167
             this.field15736 = 0;
             final boolean method9888 = this.method9883("OnGround");
             if (this.method9883("More Packets")) {
-                Class3245.field15514.method5269().method17292(new Class4354(Class3245.field15514.field4684.posX, n, Class3245.field15514.field4684.posX, method9888));
+                Class3245.field15514.method5269().method17292(new Class4354(Class3245.field15514.player.posX, n, Class3245.field15514.player.posX, method9888));
             }
             else {
                 class5744.method17037(n);

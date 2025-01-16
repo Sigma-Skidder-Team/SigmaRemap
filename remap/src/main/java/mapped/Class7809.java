@@ -6,18 +6,18 @@ package mapped;
 
 import java.util.Optional;
 
-public class Class7809 implements Class7807
+public class Class7809 implements IRenderTypeBuffer
 {
     private static String[] field31981;
-    private final Class7808 field31982;
-    private final Class7808 field31983;
+    private final Impl field31982;
+    private final Impl field31983;
     private int field31984;
     private int field31985;
     private int field31986;
     private int field31987;
     
-    public Class7809(final Class7808 field31982) {
-        this.field31983 = Class7807.method25212(new Class4148(256));
+    public Class7809(final Impl field31982) {
+        this.field31983 = IRenderTypeBuffer.getImpl(new BufferBuilder(256));
         this.field31984 = 255;
         this.field31985 = 255;
         this.field31986 = 255;
@@ -46,6 +46,6 @@ public class Class7809 implements Class7807
     }
     
     public void method25219() {
-        this.field31983.method25216();
+        this.field31983.finish();
     }
 }

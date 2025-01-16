@@ -22,7 +22,7 @@ public class Class3364 extends Class3355
     
     @Class6753
     private void method10683(final Class5740 class5740) {
-        if (this.method9906() && Class3364.field15514.field4684 != null) {
+        if (this.method9906() && Class3364.field15514.player != null) {
             if (Class9463.method35173().method35199().method24184()) {
                 if (Class9463.method35173().method35199().field30352.size() != 0) {
                     final float min = Math.min(10.0f, Math.max(0.0f, (System.nanoTime() - this.field16021) / 1.810361E7f));

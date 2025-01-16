@@ -20,7 +20,7 @@ public abstract class Class1785 extends Class1776<Class9430> implements AutoClos
     
     public abstract Stream<ResourceLocation> method6439();
     
-    public Class1912 method6440(final ResourceLocation class1932) {
+    public TextureAtlasSprite method6440(final ResourceLocation class1932) {
         return this.field9901.method6338(this.method6441(class1932));
     }
     

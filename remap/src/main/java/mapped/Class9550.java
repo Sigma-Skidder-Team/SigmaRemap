@@ -14,8 +14,8 @@ public class Class9550
 {
     public final Map<Class5412<?>, Class4158<?>> field41125;
     public static final Class9550 field41126;
-    private final Class4148 field41127;
-    private Class1844 field41128;
+    private final BufferBuilder field41127;
+    private FontRenderer field41128;
     public Class1663 field41129;
     public World field41130;
     public Class6092 field41131;
@@ -24,7 +24,7 @@ public class Class9550
     
     private Class9550() {
         this.field41125 = Maps.newHashMap();
-        this.field41127 = new Class4148(256);
+        this.field41127 = new BufferBuilder(256);
         this.method35723(Class5412.field22548, new Class4159(this));
         this.method35723(Class5412.field22549, new Class4157(this));
         this.method35723(Class5412.field22550, new Class4162(this));
@@ -55,7 +55,7 @@ public class Class9550
         return (Class4158)this.field41125.get(e.getType());
     }
     
-    public void method35725(final World class1847, final Class1663 field41129, final Class1844 field41130, final Class6092 field41131, final RayTraceResult field41132) {
+    public void method35725(final World class1847, final Class1663 field41129, final FontRenderer field41130, final Class6092 field41131, final RayTraceResult field41132) {
         if (this.field41130 != class1847) {
             this.method35730(class1847);
         }
@@ -65,7 +65,7 @@ public class Class9550
         this.field41132 = field41132;
     }
     
-    public <E extends TileEntity> void method35726(final E e, final float n, final Class7351 class7351, final Class7807 class7352) {
+    public <E extends TileEntity> void method35726(final E e, final float n, final MatrixStack class7351, final IRenderTypeBuffer class7352) {
         if (e.method2191(this.field41131.method18161().x, this.field41131.method18161().y, this.field41131.method18161().z) < e.method2192()) {
             if (this.method35724(e) != null) {
                 if (e.hasWorld()) {
@@ -90,7 +90,7 @@ public class Class9550
         }
     }
     
-    private static <T extends TileEntity> void method35727(final Class4158<T> class4158, final T t, final float n, final Class7351 class4159, final Class7807 class4160) {
+    private static <T extends TileEntity> void method35727(final Class4158<T> class4158, final T t, final float n, final MatrixStack class4159, final IRenderTypeBuffer class4160) {
         final World method2186 = t.method2186();
         int method2187;
         if (method2186 == null) {
@@ -102,7 +102,7 @@ public class Class9550
         class4158.method12454(t, n, class4159, class4160, method2187, Class1904.field10335);
     }
     
-    public <E extends TileEntity> boolean method35728(final E e, final Class7351 class7351, final Class7807 class7352, final int n, final int n2) {
+    public <E extends TileEntity> boolean method35728(final E e, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final int n2) {
         if (this.method35724(e) != null) {
             method35729(e, () -> {
                 class7353.method12454(this.field41133 = field41133, 0.0f, class7354, class7355, n3, n4);
@@ -132,7 +132,7 @@ public class Class9550
         }
     }
     
-    public Class1844 method35731() {
+    public FontRenderer method35731() {
         return this.field41128;
     }
     

@@ -17,7 +17,7 @@ public class Class1801<T extends LivingEntity, M extends Class5845<T>> extends C
         this.field9969 = new Class5923<T>();
     }
     
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final ItemStack method2718 = t.method2718(Class2215.field13604);
         if (method2718.getItem() == Items.field31584) {
             ResourceLocation class7353 = null;
@@ -55,7 +55,7 @@ public class Class1801<T extends LivingEntity, M extends Class5845<T>> extends C
             class7351.method22564(0.0, 0.0, 0.125);
             this.method6559().method17569(this.field9969);
             this.field9969.method17580(t, n2, n3, n5, n6, n7);
-            this.field9969.method17564(class7351, Class1796.method6532(class7352, this.field9969.method17647(class7353), false, method2718.method27671()), n, Class1904.field10335, 1.0f, 1.0f, 1.0f, 1.0f);
+            this.field9969.method17564(class7351, ItemRenderer.method6532(class7352, this.field9969.method17647(class7353), false, method2718.method27671()), n, Class1904.field10335, 1.0f, 1.0f, 1.0f, 1.0f);
             class7351.method22568();
         }
     }

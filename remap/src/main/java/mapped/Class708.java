@@ -14,13 +14,13 @@ public class Class708 extends Class703
     public void init() {
         int n = 0;
         for (final Class189 class189 : Class189.values()) {
-            this.method3029(new Class654(this.width / 2 - 155 + n % 2 * 160, this.height / 6 + 24 * (n >> 1), 150, 20, this.method3915(class189), class190 -> {
+            this.addButton(new Class654(this.width / 2 - 155 + n % 2 * 160, this.height / 6 + 24 * (n >> 1), 150, 20, this.method3915(class189), class190 -> {
                 this.field3869.method17127(class189);
                 class190.method3367(this.method3915(class189));
             }));
             ++n;
         }
-        this.method3029(new Class657(this.width / 2 - 155 + n % 2 * 160, this.height / 6 + 24 * (n >> 1), 150, 20, Class6469.field25725, Class6469.field25725.method19486(this.field3869), class654 -> {
+        this.addButton(new Class657(this.width / 2 - 155 + n % 2 * 160, this.height / 6 + 24 * (n >> 1), 150, 20, Class6469.field25725, Class6469.field25725.method19486(this.field3869), class654 -> {
             Class6469.field25725.method19485(this.field3869, 1);
             this.field3869.method17121();
             class654.method3367(Class6469.field25725.method19486(this.field3869));
@@ -29,15 +29,15 @@ public class Class708 extends Class703
         if (++n % 2 == 1) {
             ++n;
         }
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 6 + 24 * (n >> 1), 200, 20, Class8822.method30773("of.options.skinCustomisation.ofCape", new Object[0]), class654 -> this.minecraft.method5244(new Class702(this))));
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 6 + 24 * (n + 2 >> 1), 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.method5244(this.field3868)));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 24 * (n >> 1), 200, 20, Class8822.method30773("of.options.skinCustomisation.ofCape", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class702(this))));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 24 * (n + 2 >> 1), 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 20, 16777215);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 20, 16777215);
+        super.render(n, n2, n3);
     }
     
     private String method3915(final Class189 class189) {

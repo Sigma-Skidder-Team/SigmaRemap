@@ -71,7 +71,7 @@ public class Class3264 extends Class3247
         if (!this.field15754.isEmpty()) {
             final String method9887 = this.method9887("Type");
             try {
-                if (Class3264.field15514.field4684.ticksExisted <= 3) {
+                if (Class3264.field15514.player.ticksExisted <= 3) {
                     this.field15754.clear();
                 }
                 long n = 3200L;

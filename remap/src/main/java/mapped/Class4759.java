@@ -13,7 +13,7 @@ public abstract class Class4759<T extends Class806, M extends Class5928<T>> exte
         this.field20383 = field20383;
     }
     
-    public void method14097(final T t, final Class7351 class7351, final float n) {
+    public void method14097(final T t, final MatrixStack class7351, final float n) {
         class7351.method22565(this.field20383, this.field20383, this.field20383);
         super.method13990(t, class7351, n);
     }

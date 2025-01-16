@@ -161,7 +161,7 @@ public class Class8489
     }
     
     public static void method28353(final int n, final boolean b) {
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         if (n > 0) {
             final GLCapabilities capabilities = GL.getCapabilities();
             if (!capabilities.GL_KHR_debug) {

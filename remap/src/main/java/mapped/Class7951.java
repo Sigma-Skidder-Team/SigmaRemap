@@ -76,7 +76,7 @@ public class Class7951
     
     @Class6753
     private void method25779(final Class5740 class5740) {
-        if (!Minecraft.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().gameSettings.field23464) {
             final int n = 6;
             final Minecraft field32654 = this.field32654;
             this.field32657 = Math.max(Math.round((float)(n - Minecraft.method5338() / 10)), 1);
@@ -118,7 +118,7 @@ public class Class7951
     
     @Class6753
     private void method25781(final Class5739 class5739) {
-        if (this.field32654.field4684 != null) {
+        if (this.field32654.player != null) {
             return;
         }
     }

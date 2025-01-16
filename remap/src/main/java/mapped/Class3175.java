@@ -22,22 +22,22 @@ public class Class3175 extends Class3167
     }
     
     public Class2090 method9949(final int n) {
-        if (n == Class3175.field15514.field4648.field23436.field2161.field32860) {
+        if (n == Class3175.field15514.gameSettings.field23436.field2161.field32860) {
             return Class2090.field12082;
         }
-        if (n == Class3175.field15514.field4648.field23438.field2161.field32860) {
+        if (n == Class3175.field15514.gameSettings.field23438.field2161.field32860) {
             return Class2090.field12083;
         }
-        if (n == Class3175.field15514.field4648.field23435.field2161.field32860) {
+        if (n == Class3175.field15514.gameSettings.field23435.field2161.field32860) {
             return Class2090.field12084;
         }
-        if (n == Class3175.field15514.field4648.field23437.field2161.field32860) {
+        if (n == Class3175.field15514.gameSettings.field23437.field2161.field32860) {
             return Class2090.field12085;
         }
-        if (n == Class3175.field15514.field4648.field23446.field2161.field32860) {
+        if (n == Class3175.field15514.gameSettings.field23446.field2161.field32860) {
             return Class2090.field12086;
         }
-        if (n != Class3175.field15514.field4648.field23445.field2161.field32860) {
+        if (n != Class3175.field15514.gameSettings.field23445.field2161.field32860) {
             return null;
         }
         return Class2090.field12087;
@@ -45,13 +45,13 @@ public class Class3175 extends Class3167
     
     @Class6753
     private void method9950(final Class5740 class5740) {
-        if (!this.method9906() || Class3175.field15514.field4684 == null) {
+        if (!this.method9906() || Class3175.field15514.player == null) {
             return;
         }
-        if (Minecraft.method5277().field4648.field23466) {
+        if (Minecraft.method5277().gameSettings.field23466) {
             return;
         }
-        if (!Minecraft.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().gameSettings.field23464) {
             this.field15539 = class5740.method17028();
             if (Class9463.method35173().method35193().method32146()) {
                 for (final Class2090 class5741 : Class2090.values()) {
@@ -73,8 +73,8 @@ public class Class3175 extends Class3167
                     n = 0.5f;
                 }
                 String method8212 = Class6430.method19166(class5742.field12093.field2161.field32860);
-                if (class5742.field12093 != Class3175.field15514.field4648.field23446) {
-                    if (class5742.field12093 == Class3175.field15514.field4648.field23445) {
+                if (class5742.field12093 != Class3175.field15514.gameSettings.field23446) {
+                    if (class5742.field12093 == Class3175.field15514.gameSettings.field23445) {
                         method8212 = "R";
                     }
                 }
@@ -126,7 +126,7 @@ public class Class3175 extends Class3167
     
     @Class6753
     private void method9951(final Class5752 class5752) {
-        if (this.method9906() && Class3175.field15514.field4684 != null) {
+        if (this.method9906() && Class3175.field15514.player != null) {
             if (this.method9949(class5752.method17061()) != null) {
                 if (!class5752.method17062()) {
                     this.field15540.add(new Class9151(this, this.method9949(class5752.method17061())));
@@ -137,7 +137,7 @@ public class Class3175 extends Class3167
     
     @Class6753
     private void method9952(final Class5748 class5748) {
-        if (this.method9906() && Class3175.field15514.field4684 != null) {
+        if (this.method9906() && Class3175.field15514.player != null) {
             return;
         }
     }

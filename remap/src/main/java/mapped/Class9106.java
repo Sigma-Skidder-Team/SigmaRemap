@@ -67,7 +67,7 @@ public class Class9106
         if (this.field38574 != null) {
             this.method32923();
         }
-        this.field38574 = this.field38573.field4648.field23409.method8052(this);
+        this.field38574 = this.field38573.gameSettings.field23409.method8052(this);
     }
     
     public void method32925() {
@@ -85,8 +85,8 @@ public class Class9106
     }
     
     public void method32926(final Class2012 field23409) {
-        this.field38573.field4648.field23409 = field23409;
-        this.field38573.field4648.method17121();
+        this.field38573.gameSettings.field23409 = field23409;
+        this.field38573.gameSettings.method17121();
         if (this.field38574 != null) {
             this.field38574.method21656();
             this.field38574 = field23409.method8052(this);

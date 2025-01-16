@@ -38,14 +38,14 @@ public class Class1774 extends Class1666 implements Class1664
     public static final ResourceLocation field9853;
     @Deprecated
     public static final ResourceLocation field9854;
-    private final List<Class1912> field9855;
+    private final List<TextureAtlasSprite> field9855;
     private final Set<ResourceLocation> field9856;
-    private final Map<ResourceLocation, Class1912> field9857;
+    private final Map<ResourceLocation, TextureAtlasSprite> field9857;
     private final ResourceLocation field9858;
     private final int field9859;
-    private Map<ResourceLocation, Class1912> field9860;
-    private Map<ResourceLocation, Class1912> field9861;
-    private Class1912[] field9862;
+    private Map<ResourceLocation, TextureAtlasSprite> field9860;
+    private Map<ResourceLocation, TextureAtlasSprite> field9861;
+    private TextureAtlasSprite[] field9862;
     private int field9863;
     private int field9864;
     private int field9865;
@@ -64,8 +64,8 @@ public class Class1774 extends Class1666 implements Class1664
         this.field9855 = Lists.newArrayList();
         this.field9856 = Sets.newHashSet();
         this.field9857 = Maps.newHashMap();
-        this.field9860 = new LinkedHashMap<ResourceLocation, Class1912>();
-        this.field9861 = new LinkedHashMap<ResourceLocation, Class1912>();
+        this.field9860 = new LinkedHashMap<ResourceLocation, TextureAtlasSprite>();
+        this.field9861 = new LinkedHashMap<ResourceLocation, TextureAtlasSprite>();
         this.field9862 = null;
         this.field9863 = -1;
         this.field9864 = -1;
@@ -76,7 +76,7 @@ public class Class1774 extends Class1666 implements Class1664
         this.field9869 = 0;
         this.field9870 = 0;
         this.field9858 = field9858;
-        this.field9859 = Class8726.method30087();
+        this.field9859 = RenderSystem.method30087();
         this.field9873 = field9858.equals(Class1774.field9853);
         this.field9874 = Config.method28955();
         this.field9875 = Config.method28928();
@@ -100,7 +100,7 @@ public class Class1774 extends Class1666 implements Class1664
             Class8990.method32054(class9430.field40455, class9430.field40453, class9430.field40454, this);
         }
         this.method6339();
-        for (final Class1912 class9431 : class9430.field40456) {
+        for (final TextureAtlasSprite class9431 : class9430.field40456) {
             this.field9857.put(class9431.method7503(), class9431);
             try {
                 class9431.method7507();
@@ -120,8 +120,8 @@ public class Class1774 extends Class1666 implements Class1664
         Class8969.method31830(this);
         Config.method28852("Animated sprites: " + this.field9855.size());
         if (Config.method28928()) {
-            for (final Class1912 obj : class9430.field40456) {
-                final Class1912 field10387 = obj.field10387;
+            for (final TextureAtlasSprite obj : class9430.field40456) {
+                final TextureAtlasSprite field10387 = obj.field10387;
                 if (field10387 != null) {
                     field10387.method7516(obj.method7515());
                     obj.method7522();
@@ -137,12 +137,12 @@ public class Class1774 extends Class1666 implements Class1664
             Class8933.method31617(this.method5869());
         }
         if (Config.method28955()) {
-            final List<Class1912> field10388 = class9430.field40456;
+            final List<TextureAtlasSprite> field10388 = class9430.field40456;
             if (Class9216.field39313) {
                 Class8933.method31617(this.method5874().field38157);
-                final Iterator<Class1912> iterator3 = field10388.iterator();
+                final Iterator<TextureAtlasSprite> iterator3 = field10388.iterator();
                 while (iterator3.hasNext()) {
-                    final Class1912 field10389 = iterator3.next().field10391;
+                    final TextureAtlasSprite field10389 = iterator3.next().field10391;
                     if (field10389 != null) {
                         field10389.method7507();
                     }
@@ -150,9 +150,9 @@ public class Class1774 extends Class1666 implements Class1664
             }
             if (Class9216.field39314) {
                 Class8933.method31617(this.method5874().field38158);
-                final Iterator<Class1912> iterator4 = field10388.iterator();
+                final Iterator<TextureAtlasSprite> iterator4 = field10388.iterator();
                 while (iterator4.hasNext()) {
-                    final Class1912 field10390 = iterator4.next().field10392;
+                    final TextureAtlasSprite field10390 = iterator4.next().field10392;
                     if (field10390 != null) {
                         field10390.method7507();
                     }
@@ -269,7 +269,7 @@ public class Class1774 extends Class1666 implements Class1664
             throw new ReportedException(method6356);
         }
         class6583.method15300("loading");
-        final List<Class1912> method6358 = this.method6334(class6582, class6584, n3);
+        final List<TextureAtlasSprite> method6358 = this.method6334(class6582, class6584, n3);
         class6583.endSection();
         return new Class9430((Set<ResourceLocation>)set, class6584.method23339(), class6584.method23340(), n3, method6358);
     }
@@ -340,14 +340,14 @@ public class Class1774 extends Class1666 implements Class1664
         return concurrentLinkedQueue;
     }
     
-    private List<Class1912> method6334(final Class6582 class6582, final Class7498 class6583, final int n) {
+    private List<TextureAtlasSprite> method6334(final Class6582 class6582, final Class7498 class6583, final int n) {
         final ConcurrentLinkedQueue concurrentLinkedQueue = new ConcurrentLinkedQueue();
         final ArrayList arrayList = Lists.newArrayList();
         class6583.method23343((class6583, n2, n3, n4, n5) -> {
             if (!class6583.method34591().equals(Class1913.method7552().method34591())) {
                 arrayList.add(CompletableFuture.runAsync(() -> {
                     this.method6335(class6584, class6585, n6, n7, n8, n9, n10);
-                    final Class1912 e2;
+                    final TextureAtlasSprite e2;
                     if (e2 != null) {
                         concurrentLinkedQueue2.add(e2);
                     }
@@ -364,10 +364,10 @@ public class Class1774 extends Class1666 implements Class1664
     }
     
     @Nullable
-    private Class1912 method6335(final Class6582 class6582, final Class9336 class6583, final int n, final int n2, final int n3, final int n4, final int n5) {
+    private TextureAtlasSprite method6335(final Class6582 class6582, final Class9336 class6583, final int n, final int n2, final int n3, final int n4, final int n5) {
         final ResourceLocation method6336 = this.method6336(class6583.method34591());
         try (final Class1671 method6337 = class6582.method19933(method6336)) {
-            final Class1912 class6584 = new Class1912(this, class6583, n3, n, n2, n4, n5, Class1846.method6637(method6337.method5887()));
+            final TextureAtlasSprite class6584 = new TextureAtlasSprite(this, class6583, n3, n, n2, n4, n5, Class1846.method6637(method6337.method5887()));
             class6584.method7536(class6582);
             return class6584;
         }
@@ -390,7 +390,7 @@ public class Class1774 extends Class1666 implements Class1664
         boolean b2 = false;
         this.method5872();
         int field9871 = 0;
-        for (final Class1912 class1912 : this.field9855) {
+        for (final TextureAtlasSprite class1912 : this.field9855) {
             if (!this.method6348(class1912)) {
                 continue;
             }
@@ -407,14 +407,14 @@ public class Class1774 extends Class1666 implements Class1664
             b2 = true;
         }
         if (Config.method28928()) {
-            for (final Class1912 class1913 : this.field9855) {
+            for (final TextureAtlasSprite class1913 : this.field9855) {
                 if (!this.method6348(class1913)) {
                     continue;
                 }
                 if (!class1913.method7517()) {
                     continue;
                 }
-                final Class1912 field9872 = class1913.field10387;
+                final TextureAtlasSprite field9872 = class1913.field10387;
                 if (field9872 == null) {
                     continue;
                 }
@@ -430,7 +430,7 @@ public class Class1774 extends Class1666 implements Class1664
         if (Config.method28955()) {
             if (b) {
                 Class8933.method31617(this.method5874().field38157);
-                for (final Class1912 class1914 : this.field9855) {
+                for (final TextureAtlasSprite class1914 : this.field9855) {
                     if (class1914.field10391 == null) {
                         continue;
                     }
@@ -449,7 +449,7 @@ public class Class1774 extends Class1666 implements Class1664
             }
             if (b2) {
                 Class8933.method31617(this.method5874().field38158);
-                for (final Class1912 class1915 : this.field9855) {
+                for (final TextureAtlasSprite class1915 : this.field9855) {
                     if (class1915.field10392 == null) {
                         continue;
                     }
@@ -484,26 +484,26 @@ public class Class1774 extends Class1666 implements Class1664
     
     @Override
     public void method5857() {
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             this.method6337();
         }
         else {
-            Class8726.method29991(this::method6337);
+            RenderSystem.method29991(this::method6337);
         }
     }
     
-    public Class1912 method6338(final ResourceLocation class1932) {
-        final Class1912 class1933 = this.field9857.get(class1932);
+    public TextureAtlasSprite method6338(final ResourceLocation class1932) {
+        final TextureAtlasSprite class1933 = this.field9857.get(class1932);
         return (class1933 != null) ? class1933 : this.field9857.get(Class1913.method7551());
     }
     
     public void method6339() {
-        final Iterator<Class1912> iterator = this.field9857.values().iterator();
+        final Iterator<TextureAtlasSprite> iterator = this.field9857.values().iterator();
         while (iterator.hasNext()) {
             iterator.next().close();
         }
         if (this.field9875) {
-            final Iterator<Class1912> iterator2 = this.field9857.values().iterator();
+            final Iterator<TextureAtlasSprite> iterator2 = this.field9857.values().iterator();
             while (iterator2.hasNext()) {
                 iterator2.next().method7523();
             }
@@ -528,23 +528,23 @@ public class Class1774 extends Class1666 implements Class1664
         return s.toLowerCase().startsWith("optifine/");
     }
     
-    public Class1912 method6344(final String s) {
+    public TextureAtlasSprite method6344(final String s) {
         return this.method6345(new ResourceLocation(s));
     }
     
-    public Class1912 method6345(final ResourceLocation class1932) {
+    public TextureAtlasSprite method6345(final ResourceLocation class1932) {
         return this.field9860.get(class1932);
     }
     
-    public Class1912 method6346(final String s) {
+    public TextureAtlasSprite method6346(final String s) {
         return this.method6347(new ResourceLocation(s));
     }
     
-    public Class1912 method6347(final ResourceLocation class1932) {
+    public TextureAtlasSprite method6347(final ResourceLocation class1932) {
         return this.field9857.get(class1932);
     }
     
-    private boolean method6348(final Class1912 class1912) {
+    private boolean method6348(final TextureAtlasSprite class1912) {
         if (!this.field9873) {
             return true;
         }
@@ -655,10 +655,10 @@ public class Class1774 extends Class1666 implements Class1664
         if (this.field9863 > 0) {
             this.field9864 = n / this.field9863;
             this.field9865 = n2 / this.field9863;
-            this.field9862 = new Class1912[this.field9864 * this.field9865];
+            this.field9862 = new TextureAtlasSprite[this.field9864 * this.field9865];
             this.field9866 = 1.0 / this.field9864;
             this.field9867 = 1.0 / this.field9865;
-            for (final Class1912 class1912 : this.field9857.values()) {
+            for (final TextureAtlasSprite class1912 : this.field9857.values()) {
                 final double n3 = 0.5 / n;
                 final double n4 = 0.5 / n2;
                 final double n5 = Math.min(class1912.method7497(), class1912.method7498()) + n3;
@@ -688,7 +688,7 @@ public class Class1774 extends Class1666 implements Class1664
         }
     }
     
-    public Class1912 method6356(final double n, final double n2) {
+    public TextureAtlasSprite method6356(final double n, final double n2) {
         if (this.field9862 != null) {
             final int n3 = (int)(n2 / this.field9867) * this.field9864 + (int)(n / this.field9866);
             return (n3 >= 0 && n3 <= this.field9862.length) ? this.field9862[n3] : null;
@@ -704,14 +704,14 @@ public class Class1774 extends Class1666 implements Class1664
         return this.field9871;
     }
     
-    public Class1912 method6359(final ResourceLocation class1932) {
+    public TextureAtlasSprite method6359(final ResourceLocation class1932) {
         if (class1932 == null) {
             throw new IllegalArgumentException("Location cannot be null!");
         }
-        final Class1912 class1933 = this.field9860.get(class1932);
+        final TextureAtlasSprite class1933 = this.field9860.get(class1932);
         if (class1933 == null) {
             this.field9856.add(class1932);
-            final Class1912 class1934 = new Class1912(class1932);
+            final TextureAtlasSprite class1934 = new TextureAtlasSprite(class1932);
             this.field9860.put(class1932, class1934);
             class1934.method7514(this.field9868);
             return class1934;
@@ -728,7 +728,7 @@ public class Class1774 extends Class1666 implements Class1664
     }
     
     private void method6362(final ResourceLocation class1932) {
-        final Class1912 class1933 = this.field9860.get(class1932);
+        final TextureAtlasSprite class1933 = this.field9860.get(class1932);
         if (class1933 != null) {
             this.field9861.put(class1932, class1933);
         }

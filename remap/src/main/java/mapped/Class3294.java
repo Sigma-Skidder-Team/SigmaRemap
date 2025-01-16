@@ -17,15 +17,15 @@ public class Class3294 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3294.field15514.field4684 != null && Class3294.field15514.world != null) {
+        if (Class3294.field15514.player != null && Class3294.field15514.world != null) {
             this.method10424();
             Class8154.method26926();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             this.method10423(false);
             Class8154.method26927(Class2225.field13695);
             GL11.glLineWidth(3.0f);
-            Class8726.method30000(518, 0.0f);
-            Class8726.method29999();
+            RenderSystem.method30000(518, 0.0f);
+            RenderSystem.enableAlphaTest();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 0.1f);
             GL11.glEnable(3042);
             GL11.glDisable(2896);
@@ -108,7 +108,7 @@ public class Class3294 extends Class3167
         GL11.glDisable(2896);
         GL11.glEnable(3553);
         GL11.glEnable(2903);
-        Class8726.method30084(33986, 240.0f, 240.0f);
+        RenderSystem.method30084(33986, 240.0f, 240.0f);
         Class7777.method24931();
         final Class1663 method5290 = Class3294.field15514.method5290();
         Class3294.field15514.method5290();

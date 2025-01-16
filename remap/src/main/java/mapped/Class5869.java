@@ -66,7 +66,7 @@ public class Class5869 extends Class5846<Class796>
         this.method17608(method17609(class796));
     }
     
-    public void method17606(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6, final int n7) {
+    public void method17606(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6, final int n7) {
         this.method17608(Class319.field1892);
         this.method17607(Class319.field1892, n7, n3, n4, 0.0f, n5, n6);
         this.method17570().forEach(class7355 -> class7355.method18643(class7353, class7354, n8, n9));

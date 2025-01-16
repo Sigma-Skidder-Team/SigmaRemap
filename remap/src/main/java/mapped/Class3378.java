@@ -38,14 +38,14 @@ public class Class3378 extends Class3167
         this.field16078 = 1.0f;
         this.field16075 = -1.0;
         this.field16081 = -1;
-        if (Class3378.field15514.field4684.onGround || Class6430.method19160(Class3378.field15514.field4684, 0.001f)) {
+        if (Class3378.field15514.player.onGround || Class6430.method19160(Class3378.field15514.player, 0.001f)) {
             if (this.method9883("Timer boost")) {
                 this.field16078 = 2.55f;
             }
-            this.field16075 = Class3378.field15514.field4684.posY;
+            this.field16075 = Class3378.field15514.player.posY;
         }
         this.field16080 = false;
-        if (Class3378.field15514.field4684.onGround) {
+        if (Class3378.field15514.player.onGround) {
             this.field16081 = 0;
             final String s = method9887;
             switch (s) {
@@ -95,10 +95,10 @@ public class Class3378 extends Class3167
     @Class6753
     public void method10771(final Class5744 class5744) {
         if (class5744.method17046()) {
-            if (!Class6430.method19160(Class3378.field15514.field4684, 1.0E-5f)) {
+            if (!Class6430.method19160(Class3378.field15514.player, 1.0E-5f)) {
                 Label_0031: {
                     if (Class6430.method19146()) {
-                        if (Class3378.field16077 == 0.0 || Class6430.method19160(Class3378.field15514.field4684, 0.001f)) {
+                        if (Class3378.field16077 == 0.0 || Class6430.method19160(Class3378.field15514.player, 0.001f)) {
                             String method9887 = this.method9887("Mode");
                             if (method9887.equals("Fast") || method9887.equals("NoDmg")) {
                                 if (!Class9171.field38852) {
@@ -135,15 +135,15 @@ public class Class3378 extends Class3167
     
     @Class6753
     public void method10772(final Class5717 class5717) {
-        if (Class3378.field15514.field4684.onGround || Class6430.method19160(Class3378.field15514.field4684, 0.001f)) {
-            this.field16075 = Class3378.field15514.field4684.posY;
+        if (Class3378.field15514.player.onGround || Class6430.method19160(Class3378.field15514.player, 0.001f)) {
+            this.field16075 = Class3378.field15514.player.posY;
         }
         if (this.field16075 == -1.0) {
             final double[] method19177 = Class6430.method19177();
             final int length = method19177.length;
             double a = Double.MAX_VALUE;
             for (final double n : method19177) {
-                final double field2396 = Class3378.field15514.field4684.posY;
+                final double field2396 = Class3378.field15514.player.posY;
                 final double a2 = (int)(field2396 + class5717.method16974()) - field2396 - class5717.method16974() + n;
                 final double n2 = 0.02;
                 if (a2 > -0.05 && a2 < n2 && Math.abs(a2) < a) {
@@ -153,7 +153,7 @@ public class Class3378 extends Class3167
             if (Math.abs(a) < 0.1) {
                 class5717.method16975(class5717.method16974() + a);
                 Class6430.method19155(class5717.method16974());
-                this.field16075 = Class3378.field15514.field4684.posY + class5717.method16974();
+                this.field16075 = Class3378.field15514.player.posY + class5717.method16974();
                 Class3378.field16077 = 0.0;
                 this.field16079 = false;
                 this.field16076 = 0.0;
@@ -180,7 +180,7 @@ public class Class3378 extends Class3167
             final double[] method19179 = Class6430.method19177();
             double field2397 = 0.0;
             final int length2 = method19179.length;
-            final double n4 = Class3378.field15514.field4684.posY - (int)Class3378.field15514.field4684.posY;
+            final double n4 = Class3378.field15514.player.posY - (int)Class3378.field15514.player.posY;
             for (int j = 0; j < length2; ++j) {
                 if (method19179[j] > n4 && (method19178.equals("Basic") || method19179[j] - n4 >= 0.37)) {
                     field2397 = method19179[j] - n4;
@@ -248,7 +248,7 @@ public class Class3378 extends Class3167
         else {
             this.field16074 *= 0.992;
         }
-        if (Class3378.field15514.field4684.collided) {
+        if (Class3378.field15514.player.collided) {
             this.field16074 = 0.0;
         }
         final double n7 = method19178.equals("Basic") ? Class7482.method23137() : (Class7482.method23137() - 0.008);
@@ -259,9 +259,9 @@ public class Class3378 extends Class3167
             this.field16074 = n7;
         }
         Class7482.method23149(class5717, this.field16074);
-        if (!Class3378.field15514.field4684.onGround || !Class6430.method19160(Class3378.field15514.field4684, 0.001f)) {
+        if (!Class3378.field15514.player.onGround || !Class6430.method19160(Class3378.field15514.player, 0.001f)) {
             ++this.field16081;
-            if (!Class6430.method19160(Class3378.field15514.field4684, 0.001f)) {
+            if (!Class6430.method19160(Class3378.field15514.player, 0.001f)) {
                 class5717.method16975(0.0);
                 Class6430.method19155(0.0);
             }
@@ -269,18 +269,18 @@ public class Class3378 extends Class3167
                 return;
             }
             ++Class3378.field16077;
-            final double field2398 = Class3378.field15514.field4684.posX;
+            final double field2398 = Class3378.field15514.player.posX;
             final double n8 = this.field16075 + this.field16076;
-            final double field2399 = Class3378.field15514.field4684.posZ;
+            final double field2399 = Class3378.field15514.player.posZ;
             if (Class3378.field16077 == 1.0) {
-                Class3378.field15514.field4684.setPosition(field2398, n8 - 1.0E-4, field2399);
+                Class3378.field15514.player.setPosition(field2398, n8 - 1.0E-4, field2399);
             }
             else if (Class3378.field16077 >= 3.0) {
                 if (Class6430.method19146()) {
-                    Class3378.field15514.field4684.setPosition(field2398, n8, field2399);
+                    Class3378.field15514.player.setPosition(field2398, n8, field2399);
                 }
                 else {
-                    Class3378.field15514.field4684.setPosition(field2398, n8 + 1.0E-4, field2399);
+                    Class3378.field15514.player.setPosition(field2398, n8 + 1.0E-4, field2399);
                 }
                 Class3378.field16077 = 0.0;
             }
@@ -288,11 +288,11 @@ public class Class3378 extends Class3167
         else {
             Class3378.field16077 = 0.0;
         }
-        if (Class3378.field15514.field4648.field23439.field2162) {
+        if (Class3378.field15514.gameSettings.field23439.field2162) {
             class5717.method16975(0.25);
             this.field16075 += 0.25;
         }
-        final Vec3d method19180 = Class3378.field15514.field4684.getAllowedMovement(class5717.method16978().add(0.0, -class5717.method16978().getY(), 0.0));
+        final Vec3d method19180 = Class3378.field15514.player.getAllowedMovement(class5717.method16978().add(0.0, -class5717.method16978().getY(), 0.0));
         final boolean b = Math.abs(Math.sqrt(method19180.lengthSquared()) - this.field16074) < 1.0E-4;
         if (this.method9883("No Collision") && this.field16074 > n7) {
             final ArrayList list = new ArrayList();
@@ -322,13 +322,13 @@ public class Class3378 extends Class3167
                 list.add(new Vec3d(-1.0, 0.0, 0.0));
             }
             class5717.method16979(method19180);
-            if (!b && Class3378.field15514.field4684.posY % 1.0 > 0.10000000149011612 && Class7482.method23148()) {
+            if (!b && Class3378.field15514.player.posY % 1.0 > 0.10000000149011612 && Class7482.method23148()) {
                 for (final Vec3d class5719 : list) {
                     final Vec3d class5718 = class5719;
                     class5719.x *= this.field16074;
                     final Vec3d class5720 = class5718;
                     class5720.z *= this.field16074;
-                    if (Math.abs(Math.sqrt(Class3378.field15514.field4684.getAllowedMovement(class5718).lengthSquared()) - this.field16074) < 1.0E-4) {
+                    if (Math.abs(Math.sqrt(Class3378.field15514.player.getAllowedMovement(class5718).lengthSquared()) - this.field16074) < 1.0E-4) {
                         class5717.method16979(class5718);
                         break;
                     }
@@ -360,21 +360,21 @@ public class Class3378 extends Class3167
                 if (!method9887.equals("Funcraft")) {
                     if (!method9887.equals("Old")) {
                         if (this.field16075 >= 0.0) {
-                            if (!Class3378.field15514.field4684.onGround) {
-                                if (!Class6430.method19160(Class3378.field15514.field4684, 0.001f)) {
+                            if (!Class3378.field15514.player.onGround) {
+                                if (!Class6430.method19160(Class3378.field15514.player, 0.001f)) {
                                     if (!method9887.equals("Basic")) {
                                         final double n = 0.42 + Class7482.method23140() * 0.1;
-                                        Class3378.field15514.field4684.posY = this.field16075 + n;
-                                        Class3378.field15514.field4684.lastTickPosY = this.field16075 + n;
-                                        Class3378.field15514.field4684.field3019 = this.field16075 + n;
-                                        Class3378.field15514.field4684.prevPosY = this.field16075 + n;
+                                        Class3378.field15514.player.posY = this.field16075 + n;
+                                        Class3378.field15514.player.lastTickPosY = this.field16075 + n;
+                                        Class3378.field15514.player.field3019 = this.field16075 + n;
+                                        Class3378.field15514.player.prevPosY = this.field16075 + n;
                                     }
                                     else {
                                         final double n2 = 0.0;
-                                        Class3378.field15514.field4684.posY = this.field16075 + n2;
-                                        Class3378.field15514.field4684.lastTickPosY = this.field16075 + n2;
-                                        Class3378.field15514.field4684.field3019 = this.field16075 + n2;
-                                        Class3378.field15514.field4684.prevPosY = this.field16075 + n2;
+                                        Class3378.field15514.player.posY = this.field16075 + n2;
+                                        Class3378.field15514.player.lastTickPosY = this.field16075 + n2;
+                                        Class3378.field15514.player.field3019 = this.field16075 + n2;
+                                        Class3378.field15514.player.prevPosY = this.field16075 + n2;
                                     }
                                 }
                             }

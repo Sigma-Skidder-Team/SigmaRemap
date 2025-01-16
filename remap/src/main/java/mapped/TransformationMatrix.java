@@ -14,7 +14,7 @@ import org.apache.commons.lang3.tuple.Triple;
 import com.mojang.datafixers.util.Pair;
 import javax.annotation.Nullable;
 
-public final class Class9294
+public final class TransformationMatrix
 {
     private static String[] field39856;
     private final Matrix4f field39857;
@@ -23,18 +23,18 @@ public final class Class9294
     private Quaternion field39860;
     private Vector3f field39861;
     private Quaternion field39862;
-    private static final Class9294 field39863;
+    private static final TransformationMatrix field39863;
     
-    public Class9294(final Matrix4f field39857) {
+    public TransformationMatrix(final Matrix4f field39857) {
         if (field39857 != null) {
             this.field39857 = field39857;
         }
         else {
-            this.field39857 = Class9294.field39863.field39857;
+            this.field39857 = TransformationMatrix.field39863.field39857;
         }
     }
     
-    public Class9294(final Vector3f class9138, final Quaternion class9139, final Vector3f class9140, final Quaternion class9141) {
+    public TransformationMatrix(final Vector3f class9138, final Quaternion class9139, final Vector3f class9140, final Quaternion class9141) {
         this.field39857 = method34326(class9138, class9139, class9140, class9141);
         this.field39859 = ((class9138 == null) ? new Vector3f() : class9138);
         this.field39860 = ((class9139 == null) ? Quaternion.ONE.copy() : class9139);
@@ -43,21 +43,21 @@ public final class Class9294
         this.field39858 = true;
     }
     
-    public static Class9294 method34322() {
-        return Class9294.field39863;
+    public static TransformationMatrix identity() {
+        return TransformationMatrix.field39863;
     }
     
-    public Class9294 method34323(final Class9294 class9294) {
-        final Matrix4f method34328 = this.method34328();
-        method34328.method20752(class9294.method34328());
-        return new Class9294(method34328);
+    public TransformationMatrix method34323(final TransformationMatrix class9294) {
+        final Matrix4f method34328 = this.getMatrix();
+        method34328.method20752(class9294.getMatrix());
+        return new TransformationMatrix(method34328);
     }
     
     @Nullable
-    public Class9294 method34324() {
-        if (this != Class9294.field39863) {
-            final Matrix4f method34328 = this.method34328();
-            return method34328.method20751() ? new Class9294(method34328) : null;
+    public TransformationMatrix method34324() {
+        if (this != TransformationMatrix.field39863) {
+            final Matrix4f method34328 = this.getMatrix();
+            return method34328.method20751() ? new TransformationMatrix(method34328) : null;
         }
         return this;
     }
@@ -99,7 +99,7 @@ public final class Class9294
         return (Pair<Matrix3f, Vector3f>)Pair.of((Object)new Matrix3f(class6789), (Object)new Vector3f(class6789.field26692, class6789.field26696, class6789.field26700));
     }
     
-    public Matrix4f method34328() {
+    public Matrix4f getMatrix() {
         return this.field39857.method20758();
     }
     
@@ -110,7 +110,7 @@ public final class Class9294
     
     @Override
     public boolean equals(final Object o) {
-        return this == o || (o != null && this.getClass() == o.getClass() && Objects.equals(this.field39857, ((Class9294)o).field39857));
+        return this == o || (o != null && this.getClass() == o.getClass() && Objects.equals(this.field39857, ((TransformationMatrix)o).field39857));
     }
     
     @Override
@@ -122,7 +122,7 @@ public final class Class9294
         field39863 = Util.method27850(() -> {
             final Matrix4f class6789 = new Matrix4f();
             class6789.method20748();
-            final Class9294 class6790 = new Class9294(class6789);
+            final TransformationMatrix class6790 = new TransformationMatrix(class6789);
             class6790.method34329();
             return class6790;
         });

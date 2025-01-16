@@ -122,18 +122,18 @@ public class Class3285 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3285.field15514.field4684.ticksExisted >= 20) {
+        if (Class3285.field15514.player.ticksExisted >= 20) {
             final int n = (int)this.method9886("Chunk Range");
             final ArrayList list = new ArrayList();
             for (int i = -5; i < 5; ++i) {
                 for (int j = -5; j < 5; ++j) {
-                    list.add(new Class7859(Class3285.field15514.field4684.chunkCoordX + i, Class3285.field15514.field4684.chunkCoordZ + j));
+                    list.add(new Class7859(Class3285.field15514.player.chunkCoordX + i, Class3285.field15514.player.chunkCoordZ + j));
                 }
             }
             final Iterator<Class6731> iterator = this.field15793.iterator();
             while (iterator.hasNext()) {
                 final Class6731 class5744 = iterator.next();
-                if (class5744.method20419(new Class7859(Class3285.field15514.field4684.chunkCoordX, Class3285.field15514.field4684.chunkCoordZ)) <= 7 && !this.field15794.contains(class5744.method20420())) {
+                if (class5744.method20419(new Class7859(Class3285.field15514.player.chunkCoordX, Class3285.field15514.player.chunkCoordZ)) <= 7 && !this.field15794.contains(class5744.method20420())) {
                     continue;
                 }
                 iterator.remove();

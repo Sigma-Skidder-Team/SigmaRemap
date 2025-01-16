@@ -42,7 +42,7 @@ public class Class8988
     public int field37902;
     public ResourceLocation field37903;
     public Map field37904;
-    public Class1912 field37905;
+    public TextureAtlasSprite field37905;
     public Map field37906;
     public Class6313 field37907;
     public Map<String, Class6313> field37908;
@@ -561,12 +561,12 @@ public class Class8988
         }
         if (this.field37906 != null) {
             for (final String s : this.field37906.keySet()) {
-                final Class1912 class1775 = this.field37906.get(s);
+                final TextureAtlasSprite class1775 = this.field37906.get(s);
                 if (class1775 == null) {
                     continue;
                 }
                 final ResourceLocation method7503 = class1775.method7503();
-                final Class1912 method7504 = class1774.method6338(method7503);
+                final TextureAtlasSprite method7504 = class1774.method6338(method7503);
                 if (method7504 == null || method7504 instanceof Class1913) {
                     Config.warn("Missing CIT sprite: " + method7503 + ", properties: " + this.field37882);
                 }
@@ -646,7 +646,7 @@ public class Class8988
         return method32026(class1774, class1775.method26985(Class8988::method32022, method32025(array2)), b);
     }
     
-    public static Class1912 method32022(final Class3687 class3687) {
+    public static TextureAtlasSprite method32022(final Class3687 class3687) {
         return Minecraft.method5277().method5322().method6457(class3687.method11330()).method6338(class3687.method11331());
     }
     
@@ -742,7 +742,7 @@ public class Class8988
                 }
                 final Class8754 method25531 = method32027(class1776, class1778, class1775.method24395(class1778.field33425).method11332(), class1777, field12371);
                 if (class1778.field33423 != null) {
-                    method25530.method25528(Direction.rotateFace(field12371.method8274().method34328(), class1778.field33423), method25531);
+                    method25530.method25528(Direction.rotateFace(field12371.method8274().getMatrix(), class1778.field33423), method25531);
                 }
                 else {
                     method25530.method25529(method25531);
@@ -752,7 +752,7 @@ public class Class8988
         return method25530.method25531();
     }
     
-    private static Class8754 method32027(final Class9219 class9219, final Class8111 class9220, final Class1912 class9221, final Direction class9222, final Class2122 class9223) {
+    private static Class8754 method32027(final Class9219 class9219, final Class8111 class9220, final TextureAtlasSprite class9221, final Direction class9222, final Class2122 class9223) {
         return new Class6225().method18519(class9219.field39554, class9219.field39555, class9220, class9221, class9222, class9223, class9219.field39557, class9219.field39558, class9221.method7503());
     }
     

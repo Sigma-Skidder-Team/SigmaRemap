@@ -17,7 +17,7 @@ public class Class680 extends Class654
     
     @Override
     public void method3353(final int n, final int n2, final float n3) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Minecraft.method5277().method5290().method5849(Class723.field3947);
         int n4 = 0;
         int n5 = 192;
@@ -27,7 +27,7 @@ public class Class680 extends Class654
         if (!this.field3720) {
             n5 += 13;
         }
-        this.method3186(this.field3426, this.field3427, n4, n5, 23, 13);
+        this.blit(this.field3426, this.field3427, n4, n5, 23, 13);
     }
     
     @Override

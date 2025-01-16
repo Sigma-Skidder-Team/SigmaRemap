@@ -48,7 +48,7 @@ public class Class568 extends Class566
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.field3379.field4632.method7696();
         this.field3379.field4632.method7697();
         final long method27837 = Util.method27837();
@@ -66,7 +66,7 @@ public class Class568 extends Class566
         if (this.field3379.field4632.method7694() != 0) {
             n9 = (float)(this.field3379.field4632.method7692() / this.field3379.field4632.method7694());
         }
-        final float n10 = this.field3379.field4632.method7687(this.field3379.field4648.field23473, this.field3379.method5240()) * n9;
+        final float n10 = this.field3379.field4632.method7687(this.field3379.gameSettings.field23473, this.field3379.method5240()) * n9;
         GL11.glScalef(1.0f / n10, 1.0f / n10, 0.0f);
         method3314(n6, this.field3383);
         GL11.glPopMatrix();
@@ -126,9 +126,9 @@ public class Class568 extends Class566
         final float n7 = (float)(this.field3386 >> 16 & 0xFF);
         final float n8 = (float)(this.field3386 >> 8 & 0xFF);
         final float n9 = (float)(this.field3386 & 0xFF);
-        Class565.method3293(n - 1, n2 - 1, n3 + 1, n4 + 1, 0xFF000000 | Math.round((1.0f - n6) * n7) << 16 | Math.round((1.0f - n6) * n8) << 8 | Math.round((1.0f - n6) * n9));
-        Class565.method3293(n, n2, n3, n4, this.field3387 | 0xFF000000);
-        Class565.method3293(n + 1, n2 + 1, n + method35649, n4 - 1, 0xFF000000 | (int) MathHelper.method35700(1.0f - n6, (float)(this.field3388 >> 16 & 0xFF), n7) << 16 | (int) MathHelper.method35700(1.0f - n6, (float)(this.field3388 >> 8 & 0xFF), n8) << 8 | (int) MathHelper.method35700(1.0f - n6, (float)(this.field3388 & 0xFF), n9));
+        AbstractGui.fill(n - 1, n2 - 1, n3 + 1, n4 + 1, 0xFF000000 | Math.round((1.0f - n6) * n7) << 16 | Math.round((1.0f - n6) * n8) << 8 | Math.round((1.0f - n6) * n9));
+        AbstractGui.fill(n, n2, n3, n4, this.field3387 | 0xFF000000);
+        AbstractGui.fill(n + 1, n2 + 1, n + method35649, n4 - 1, 0xFF000000 | (int) MathHelper.method35700(1.0f - n6, (float)(this.field3388 >> 16 & 0xFF), n7) << 16 | (int) MathHelper.method35700(1.0f - n6, (float)(this.field3388 >> 8 & 0xFF), n8) << 8 | (int) MathHelper.method35700(1.0f - n6, (float)(this.field3388 & 0xFF), n9));
     }
     
     @Override

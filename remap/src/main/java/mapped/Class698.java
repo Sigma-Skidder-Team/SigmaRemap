@@ -11,8 +11,8 @@ import java.util.List;
 public class Class698 extends Screen
 {
     private static String[] field3841;
-    public List<Class573> field3842;
-    public Class1844 field3843;
+    public List<Widget> field3842;
+    public FontRenderer field3843;
     public boolean field3844;
     
     public Class698(final ITextComponent class2250) {
@@ -22,17 +22,17 @@ public class Class698 extends Screen
         this.field3844 = false;
     }
     
-    public void method3896(final Class573 class573) {
+    public void method3896(final Widget class573) {
     }
     
-    public void method3897(final Class573 class573) {
+    public void method3897(final Widget class573) {
     }
     
     @Override
     public boolean mouseClicked(final double n, final double n2, final int n3) {
         final boolean method2982 = super.mouseClicked(n, n2, n3);
         this.field3844 = true;
-        final Class573 method2983 = method3898((int)n, (int)n2, this.field3842);
+        final Widget method2983 = method3898((int)n, (int)n2, this.field3842);
         if (method2983 != null && method2983.field3431) {
             if (n3 == 1) {
                 if (method2983 instanceof Class659) {
@@ -57,8 +57,8 @@ public class Class698 extends Screen
     @Override
     public boolean mouseReleased(final double n, final double n2, final int n3) {
         if (this.field3844) {
-            this.method3469(this.field3844 = false);
-            return (this.method3471() != null && this.method3471().mouseReleased(n, n2, n3)) || super.mouseReleased(n, n2, n3);
+            this.setDragging(this.field3844 = false);
+            return (this.getFocused() != null && this.getFocused().mouseReleased(n, n2, n3)) || super.mouseReleased(n, n2, n3);
         }
         return false;
     }
@@ -68,9 +68,9 @@ public class Class698 extends Screen
         return this.field3844 && super.mouseDragged(n, n2, n3, n4, n5);
     }
     
-    public static Class573 method3898(final int n, final int n2, final List<Class573> list) {
+    public static Widget method3898(final int n, final int n2, final List<Widget> list) {
         for (int i = 0; i < list.size(); ++i) {
-            final Class573 class573 = list.get(i);
+            final Widget class573 = list.get(i);
             if (class573.field3432) {
                 final int method35784 = Class9563.method35784(class573);
                 final int method35785 = Class9563.method35785(class573);

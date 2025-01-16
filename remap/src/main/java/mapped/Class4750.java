@@ -12,7 +12,7 @@ public class Class4750 extends Class4749
         super(class8551);
     }
     
-    public void method14085(final Class827 class827, final Class7351 class828, final float n) {
+    public void method14085(final Class827 class827, final MatrixStack class828, final float n) {
         class828.method22565(1.0625f, 1.0625f, 1.0625f);
         super.method13990(class827, class828, n);
     }

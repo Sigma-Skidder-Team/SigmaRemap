@@ -39,22 +39,22 @@ public class Class8969
     private static final String field37696 = "nether_portal";
     private static final String field37697 = "glass";
     private static final String field37698 = "glass_pane_top";
-    public static Class1912 field37699;
-    public static Class1912 field37700;
-    public static Class1912 field37701;
-    public static Class1912 field37702;
-    public static Class1912 field37703;
-    public static Class1912 field37704;
-    public static Class1912 field37705;
-    public static Class1912 field37706;
-    public static Class1912 field37707;
-    public static Class1912 field37708;
-    public static Class1912 field37709;
-    public static Class1912 field37710;
-    public static Class1912 field37711;
-    public static Class1912 field37712;
-    public static Class1912 field37713;
-    public static Class1912 field37714;
+    public static TextureAtlasSprite field37699;
+    public static TextureAtlasSprite field37700;
+    public static TextureAtlasSprite field37701;
+    public static TextureAtlasSprite field37702;
+    public static TextureAtlasSprite field37703;
+    public static TextureAtlasSprite field37704;
+    public static TextureAtlasSprite field37705;
+    public static TextureAtlasSprite field37706;
+    public static TextureAtlasSprite field37707;
+    public static TextureAtlasSprite field37708;
+    public static TextureAtlasSprite field37709;
+    public static TextureAtlasSprite field37710;
+    public static TextureAtlasSprite field37711;
+    public static TextureAtlasSprite field37712;
+    public static TextureAtlasSprite field37713;
+    public static TextureAtlasSprite field37714;
     public static final String field37715 = "minecraft:block/";
     public static final String field37716 = "minecraft:item/";
     private static IntBuffer field37717;
@@ -83,8 +83,8 @@ public class Class8969
         }
     }
     
-    public static Class1912 method31818(final Class1774 class1774, final String str) {
-        final Class1912 method6346 = class1774.method6346(str);
+    public static TextureAtlasSprite method31818(final Class1774 class1774, final String str) {
+        final TextureAtlasSprite method6346 = class1774.method6346(str);
         if (method6346 == null || method6346 instanceof Class1913) {
             Config.warn("Sprite not found: " + str);
         }
@@ -343,7 +343,7 @@ public class Class8969
         return null;
     }
     
-    public static void method31844(final Class1912 class1912) {
+    public static void method31844(final TextureAtlasSprite class1912) {
         final Class1846[] method7526 = class1912.method7526();
         for (int i = 0; i < method7526.length; ++i) {
             final Class1846 obj = method7526[i];

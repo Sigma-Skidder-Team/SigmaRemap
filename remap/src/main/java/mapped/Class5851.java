@@ -206,7 +206,7 @@ public class Class5851<T extends Class772> extends Class5846<T> implements Class
     }
     
     @Override
-    public void method17578(final Class2226 class2226, final Class7351 class2227) {
+    public void method17578(final Class2226 class2226, final MatrixStack class2227) {
         this.method17575(class2226).method18645(class2227);
     }
 }

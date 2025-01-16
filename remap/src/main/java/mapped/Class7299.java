@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Class7299 extends Class7298
 {
     @Override
-    public String[] method22386(final Class573 class573, final int n) {
+    public String[] method22386(final Widget class573, final int n) {
         if (class573 instanceof Class674) {
             return this.method22388(((Class674)class573).method3736(), n);
         }
@@ -25,19 +25,19 @@ public class Class7299 extends Class7298
         final Class5760 method16860 = Config.method28962();
         Object string = null;
         if (!method16858.equals(class5601.method16860())) {
-            if (method16860.field23394) {
+            if (method16860.advancedItemTooltips) {
                 string = "§8" + Class4647.method13876("of.general.id") + ": " + class5601.method16860();
             }
         }
         Object string2 = null;
         if (class5601.method16870() != null) {
-            if (method16860.field23394) {
+            if (method16860.advancedItemTooltips) {
                 string2 = "§8" + Class4647.method13876("of.general.from") + ": " + Config.method28888(class5601.method16870());
             }
         }
         Object string3 = null;
         if (class5601.method16865() != null) {
-            if (method16860.field23394) {
+            if (method16860.advancedItemTooltips) {
                 string3 = "§8" + Class4647.method13882() + ": " + (class5601.method16872() ? class5601.method16878(class5601.method16865()) : Class4647.method13876("of.general.ambiguous"));
             }
         }
@@ -70,7 +70,7 @@ public class Class7299 extends Class7298
     }
     
     private String[] method22390(final int n, final List<String> list) {
-        final Class1844 field4643 = Config.method28894().fontRenderer;
+        final FontRenderer field4643 = Config.method28894().fontRenderer;
         final ArrayList list2 = new ArrayList();
         for (int i = 0; i < list.size(); ++i) {
             final String s = list.get(i);

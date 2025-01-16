@@ -21,7 +21,7 @@ public class Class518 extends Class517<Class3427> implements Class519
     public Class518(final PlayerEntity playerEntity) {
         super(playerEntity.field3008, playerEntity.field3006, new Class2259("container.crafting", new Object[0]));
         this.field3107 = new Class581();
-        this.field3155 = true;
+        this.passEvents = true;
     }
     
     @Override
@@ -30,7 +30,7 @@ public class Class518 extends Class517<Class3427> implements Class519
             this.field3107.method3426();
         }
         else {
-            this.minecraft.method5244(new Class525(this.minecraft.field4684));
+            this.minecraft.displayGuiScreen(new Class525(this.minecraft.player));
         }
     }
     
@@ -43,8 +43,8 @@ public class Class518 extends Class517<Class3427> implements Class519
             this.field3108 = true;
             this.field3079 = this.field3107.method3419(this.field3109, this.width, this.field3075);
             this.children.add(this.field3107);
-            this.method3476(this.field3107);
-            this.method3029(new Class679(this.field3079 + 104, this.height / 2 - 22, 20, 18, 0, 0, 19, Class518.field3104, class654 -> {
+            this.setFocusedDefault(this.field3107);
+            this.addButton(new Class679(this.field3079 + 104, this.height / 2 - 22, 20, 18, 0, 0, 19, Class518.field3104, class654 -> {
                 this.field3107.method3416(this.field3109);
                 this.field3107.method3420();
                 this.field3079 = this.field3107.method3419(this.field3109, this.width, this.field3075);
@@ -53,52 +53,52 @@ public class Class518 extends Class517<Class3427> implements Class519
             }));
         }
         else {
-            this.minecraft.method5244(new Class525(this.minecraft.field4684));
+            this.minecraft.displayGuiScreen(new Class525(this.minecraft.player));
         }
     }
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.font.method6610(this.field3148.getFormattedText(), 97.0f, 8.0f, 4210752);
+        this.font.method6610(this.title.getFormattedText(), 97.0f, 8.0f, 4210752);
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         this.field3103 = !this.field3107.method3421();
         if (this.field3107.method3421() && this.field3109) {
             this.method2976(n3, n, n2);
-            this.field3107.method2975(n, n2, n3);
+            this.field3107.render(n, n2, n3);
         }
         else {
-            this.field3107.method2975(n, n2, n3);
-            super.method2975(n, n2, n3);
+            this.field3107.render(n, n2, n3);
+            super.render(n, n2, n3);
             this.field3107.method3431(this.field3079, this.field3080, false, n3);
         }
         this.method2977(n, n2);
         this.field3107.method3428(this.field3079, this.field3080, n, n2);
         this.field3105 = (float)n;
         this.field3106 = (float)n2;
-        this.method3477(this.field3107);
+        this.func_212932_b(this.field3107);
     }
     
     @Override
     public void method2976(final float n, final int n2, final int n3) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.minecraft.method5290().method5849(Class518.field3074);
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
-        this.method3186(field3079, field3080, 0, 0, this.field3075, this.field3076);
-        method2999(field3079 + 51, field3080 + 75, 30, field3079 + 51 - this.field3105, field3080 + 75 - 50 - this.field3106, this.minecraft.field4684);
+        this.blit(field3079, field3080, 0, 0, this.field3075, this.field3076);
+        method2999(field3079 + 51, field3080 + 75, 30, field3079 + 51 - this.field3105, field3080 + 75 - 50 - this.field3106, this.minecraft.player);
     }
     
     public static void method2999(final int n, final int n2, final int n3, final float n4, final float n5, final LivingEntity class511) {
         final float n6 = (float)Math.atan(n4 / 40.0f);
         final float n7 = (float)Math.atan(n5 / 40.0f);
-        Class8726.method30059();
-        Class8726.method30065((float)n, (float)n2, 1050.0f);
-        Class8726.method30063(1.0f, 1.0f, -1.0f);
-        final Class7351 class512 = new Class7351();
+        RenderSystem.method30059();
+        RenderSystem.method30065((float)n, (float)n2, 1050.0f);
+        RenderSystem.method30063(1.0f, 1.0f, -1.0f);
+        final MatrixStack class512 = new MatrixStack();
         class512.method22564(0.0, 0.0, 1000.0);
         class512.method22565((float)n3, (float)n3, (float)n3);
         final Quaternion method33328 = Vector3f.ZP.rotationDegrees(180.0f);
@@ -119,16 +119,16 @@ public class Class518 extends Class517<Class3427> implements Class519
         method33329.conjugate();
         method33330.method28701(method33329);
         method33330.method28702(false);
-        final Class7808 method33331 = Minecraft.method5277().method5333().method11006();
+        final IRenderTypeBuffer.Impl method33331 = Minecraft.method5277().method5333().method11006();
         method33330.method28706(class511, 0.0, 0.0, 0.0, 0.0f, 1.0f, class512, method33331, 15728880);
-        method33331.method25216();
+        method33331.finish();
         method33330.method28702(true);
         class511.field2951 = field2951;
         class511.rotationYaw = field2952;
         class511.rotationPitch = field2953;
         class511.field2954 = field2954;
         class511.field2953 = field2955;
-        Class8726.method30060();
+        RenderSystem.method30060();
     }
     
     @Override

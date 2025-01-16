@@ -12,7 +12,7 @@ public class Class4739 extends Class4712<Class793, Class5932<Class793>>
         super(class8551, new Class5932(0.0f), 0.7f);
     }
     
-    public void method14062(final Class793 class793, final float n, final float n2, final Class7351 class794, final Class7807 class795, final int n3) {
+    public void method14062(final Class793 class793, final float n, final float n2, final MatrixStack class794, final IRenderTypeBuffer class795, final int n3) {
         if (class793.method2625()) {
             this.field20284 *= 0.5f;
         }

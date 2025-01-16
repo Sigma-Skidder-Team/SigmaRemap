@@ -51,18 +51,18 @@ public class Class6115 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
-        Class8726.method30059();
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30041();
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
+        RenderSystem.method30059();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.disableTexture();
         this.method18279();
         this.method18278();
         this.method18280();
-        Class8726.method30040();
-        Class8726.method30012();
-        Class8726.method30060();
-        if (!this.field24824.field4684.isSpectator()) {
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
+        RenderSystem.method30060();
+        if (!this.field24824.player.isSpectator()) {
             this.method18300();
         }
     }
@@ -171,8 +171,8 @@ public class Class6115 implements Class6113
     }
     
     private static void method18287(final BlockPos class354, final float n, final float n2, final float n3, final float n4, final float n5) {
-        Class8726.method30011();
-        Class8726.method30117();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
         Class7282.method22335(class354, n, n2, n3, n4, n5);
     }
     
@@ -257,7 +257,7 @@ public class Class6115 implements Class6113
     }
     
     private boolean method18297(final Class8665 class8665) {
-        final Class756 field4684 = this.field24824.field4684;
+        final Class756 field4684 = this.field24824.player;
         return new BlockPos(field4684.getPosX(), class8665.field36434.getY(), field4684.getPosZ()).withinDistance(new BlockPos(class8665.field36434), 30.0);
     }
     

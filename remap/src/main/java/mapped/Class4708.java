@@ -19,7 +19,7 @@ public class Class4708<T extends Class428> extends Class4703<T>
         this.field20284 = 0.7f;
     }
     
-    public void method13973(final T t, float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int n3) {
+    public void method13973(final T t, float n, final float n2, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n3) {
         super.method13951(t, n, n2, class7351, class7352, n3);
         class7351.method22567();
         final long n4 = t.getEntityId() * 493286711L;
@@ -78,7 +78,7 @@ public class Class4708<T extends Class428> extends Class4703<T>
         return Class4708.field20297;
     }
     
-    public void method13975(final T t, final float n, final BlockState class7096, final Class7351 class7097, final Class7807 class7098, final int n2) {
+    public void method13975(final T t, final float n, final BlockState class7096, final MatrixStack class7097, final IRenderTypeBuffer class7098, final int n2) {
         Minecraft.method5277().method5305().method5795(class7096, class7097, class7098, n2, Class1904.field10335);
     }
     

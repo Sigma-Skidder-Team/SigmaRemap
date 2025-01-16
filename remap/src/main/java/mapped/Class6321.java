@@ -11,16 +11,16 @@ public class Class6321 extends Class6322
     public Class6321(final float field25273) {
         super("alpha", () -> {
             if (n <= 0.0f) {
-                Class8726.method29998();
+                RenderSystem.disableAlphaTest();
             }
             else {
-                Class8726.method29999();
-                Class8726.method30000(516, n);
+                RenderSystem.enableAlphaTest();
+                RenderSystem.method30000(516, n);
             }
             return;
         }, () -> {
-            Class8726.method29998();
-            Class8726.method30118();
+            RenderSystem.disableAlphaTest();
+            RenderSystem.method30118();
             return;
         });
         this.field25273 = field25273;

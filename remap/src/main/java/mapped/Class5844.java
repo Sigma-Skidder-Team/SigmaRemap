@@ -40,7 +40,7 @@ public abstract class Class5844<E extends Entity> extends Class5845<E>
     }
     
     @Override
-    public void method17564(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
+    public void method17564(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         if (!this.field23957) {
             this.method17559().forEach(class7355 -> class7355.method18644(class7353, class7354, n9, n10, n11, n12, n13, n14));
             this.method17560().forEach(class7358 -> class7358.method18644(class7356, class7357, n15, n16, n17, n18, n19, n20));

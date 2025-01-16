@@ -70,13 +70,13 @@ public class Class723 extends Screen
     }
     
     public void method3971() {
-        this.method3029(new Class654(this.width / 2 - 100, 196, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.method5244(null)));
+        this.addButton(new Class654(this.width / 2 - 100, 196, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(null)));
     }
     
     public void method3972() {
         final int n = (this.width - 192) / 2;
-        this.field3952 = this.method3029(new Class680(n + 116, 159, true, class654 -> this.method3975(), this.field3954));
-        this.field3953 = this.method3029(new Class680(n + 43, 159, false, class654 -> this.method3974(), this.field3954));
+        this.field3952 = this.addButton(new Class680(n + 116, 159, true, class654 -> this.method3975(), this.field3954));
+        this.field3953 = this.addButton(new Class680(n + 43, 159, false, class654 -> this.method3974(), this.field3954));
         this.method3976();
     }
     
@@ -104,11 +104,11 @@ public class Class723 extends Screen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (super.keyPressed(n, n2, n3)) {
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (super.keyPressed(keyCode, n2, n3)) {
             return true;
         }
-        switch (n) {
+        switch (keyCode) {
             case 266: {
                 this.field3953.method3705();
                 return true;
@@ -124,12 +124,12 @@ public class Class723 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.minecraft.method5290().method5849(Class723.field3947);
         final int n4 = (this.width - 192) / 2;
-        this.method3186(n4, 2, 0, 0, 192, 192);
+        this.blit(n4, 2, 0, 0, 192, 192);
         final String method30773 = Class8822.method30773("book.pageIndicator", this.field3949 + 1, Math.max(this.method3973(), 1));
         if (this.field3951 != this.field3949) {
             this.field3950 = Class8936.method31697(this.field3948.method24686(this.field3949), 114, this.font, true, true);
@@ -141,13 +141,13 @@ public class Class723 extends Screen
         }
         final ITextComponent method30774 = this.method3978(n, n2);
         if (method30774 != null) {
-            this.method3033(method30774, n, n2);
+            this.renderComponentHoverEffect(method30774, n, n2);
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     private int method3977(final String s) {
-        return this.font.method6617(this.font.method6630() ? this.font.method6611(s) : s);
+        return this.font.getStringWidth(this.font.method6630() ? this.font.method6611(s) : s);
     }
     
     @Override
@@ -180,7 +180,7 @@ public class Class723 extends Screen
         }
         final boolean method30412 = super.method3035(class2250);
         if (method30412 && method30410.method35309() == Class2075.field11973) {
-            this.minecraft.method5244(null);
+            this.minecraft.displayGuiScreen(null);
         }
         return method30412;
     }
@@ -206,7 +206,7 @@ public class Class723 extends Screen
                         if (!(class2251 instanceof StringTextComponent)) {
                             continue;
                         }
-                        n4 += this.minecraft.fontRenderer.method6617(class2251.getFormattedText());
+                        n4 += this.minecraft.fontRenderer.getStringWidth(class2251.getFormattedText());
                         if (n4 <= method35644) {
                             continue;
                         }

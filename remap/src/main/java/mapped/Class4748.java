@@ -19,7 +19,7 @@ public abstract class Class4748<T extends Class827, M extends Class5863<T>> exte
         return Class4748.field20370;
     }
     
-    public void method14084(final T t, final Class7351 class7351, final float n, float n2, final float n3) {
+    public void method14084(final T t, final MatrixStack class7351, final float n, float n2, final float n3) {
         if (t.method4923()) {
             n2 += (float)(Math.cos(t.ticksExisted * 3.25) * 3.141592653589793 * 0.25);
         }

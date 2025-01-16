@@ -15,14 +15,14 @@ public class Class3346 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15950 = Class3346.field15514.field4684.posY;
+        this.field15950 = Class3346.field15514.player.posY;
         this.field15949 = 2;
     }
     
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3346.field15514.field4684.getMotion().y > 0.0) {
+        if (Class3346.field15514.player.getMotion().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
     }
@@ -88,8 +88,8 @@ public class Class3346 extends Class3167
                     this.field15949 = -1;
                 }
                 this.field15950 = class5724.field19378;
-                class5724.field19380 = Class3346.field15514.field4684.rotationYaw;
-                class5724.field19381 = Class3346.field15514.field4684.rotationPitch;
+                class5724.field19380 = Class3346.field15514.player.rotationYaw;
+                class5724.field19381 = Class3346.field15514.player.rotationPitch;
             }
         }
     }
@@ -111,10 +111,10 @@ public class Class3346 extends Class3167
     public void method10587(final Class5741 class5741) {
         if (this.method9906()) {
             final double field15950 = this.field15950;
-            Class3346.field15514.field4684.posY = field15950;
-            Class3346.field15514.field4684.lastTickPosY = field15950;
-            Class3346.field15514.field4684.field3019 = field15950;
-            Class3346.field15514.field4684.prevPosY = field15950;
+            Class3346.field15514.player.posY = field15950;
+            Class3346.field15514.player.lastTickPosY = field15950;
+            Class3346.field15514.player.field3019 = field15950;
+            Class3346.field15514.player.prevPosY = field15950;
         }
     }
 }

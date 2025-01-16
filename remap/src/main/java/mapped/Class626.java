@@ -80,11 +80,11 @@ public class Class626 extends Class624
             }
             if (Class5079.method15844(this.field3608, class7437) && class7437.field28684) {
                 boolean b = false;
-                Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-                Class8726.method30011();
+                RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                RenderSystem.enableBlend();
                 RealmsScreen.method15419("minecraft:textures/gui/widgets.png");
-                Class8726.method30059();
-                Class8726.method30013(Class2050.field11693, Class2135.field12460);
+                RenderSystem.method30059();
+                RenderSystem.method30013(Class2050.field11693, Class2135.field12460);
                 String s = RealmsScreen.getLocalizedString("mco.selectServer.expiredList");
                 String s2 = RealmsScreen.getLocalizedString("mco.selectServer.expiredRenew");
                 if (class7437.field28685) {
@@ -113,8 +113,8 @@ public class Class626 extends Class624
                 RealmsScreen.method15411(n6 + n5 / 2, n7, (float)(200 - n5 / 2), (float)(46 + n8 * 20), n5 / 2, 8, 256, 256);
                 RealmsScreen.method15411(n6, n7 + 8, 0.0f, (float)(46 + n8 * 20 + 12), n5 / 2, 8, 256, 256);
                 RealmsScreen.method15411(n6 + n5 / 2, n7 + 8, (float)(200 - n5 / 2), (float)(46 + n8 * 20 + 12), n5 / 2, 8, 256, 256);
-                Class8726.method30060();
-                Class8726.method30012();
+                RenderSystem.method30060();
+                RenderSystem.disableBlend();
                 final int n9 = n2 + 11 + 5;
                 final int n10 = (!b) ? 16777215 : 16777120;
                 this.field3608.method15407(s, n + 2, n9 + 1, 15553363);
@@ -136,18 +136,18 @@ public class Class626 extends Class624
             }
             this.field3608.method15407(class7437.method22872(), n + 2, n2 + 1, 16777215);
             Class8952.method31759(class7437.field28681, () -> {
-                Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                 RealmsScreen.method15410(n12 - 36, n13, 8.0f, 8.0f, 8, 8, 32, 32, 64, 64);
                 RealmsScreen.method15410(n12 - 36, n13, 40.0f, 8.0f, 8, 8, 32, 32, 64, 64);
             });
         }
         else {
             RealmsScreen.method15419("realms:textures/gui/realms/world_icon.png");
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method29999();
-            Class8726.method30059();
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.enableAlphaTest();
+            RenderSystem.method30059();
             RealmsScreen.method15411(n + 10, n2 + 6, 0.0f, 0.0f, 40, 20, 40, 20);
-            Class8726.method30060();
+            RenderSystem.method30060();
             final float n11 = 0.5f + (1.0f + Class8269.method27459(Class5079.method15841(this.field3608) * 0.25f)) * 0.25f;
             this.field3608.drawCenteredString(RealmsScreen.getLocalizedString("mco.selectServer.uninitialized"), n + 10 + 40 + 75, n2 + 12, 0xFF000000 | (int)(127.0f * n11) << 16 | (int)(255.0f * n11) << 8 | (int)(127.0f * n11));
         }

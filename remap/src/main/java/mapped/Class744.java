@@ -29,23 +29,23 @@ public class Class744 extends Class516<Class3439>
     
     public Class744(final Class3439 class3439, final Class464 class3440, final ITextComponent class3441) {
         super(class3439, class3440, class3441);
-        this.field4022 = ItemStack.field34174;
-        this.field4023 = ItemStack.field34174;
-        this.field4024 = ItemStack.field34174;
+        this.field4022 = ItemStack.EMPTY;
+        this.field4023 = ItemStack.EMPTY;
+        this.field4024 = ItemStack.EMPTY;
         this.field4030 = 1;
         this.field4020 = Class4165.method12471();
         class3439.method10975(this::method4060);
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        super.method2975(n, n2, n3);
+    public void render(final int n, final int n2, final float n3) {
+        super.render(n, n2, n3);
         this.method2977(n, n2);
     }
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.font.method6610(this.field3148.getFormattedText(), 8.0f, 4.0f, 4210752);
+        this.font.method6610(this.title.getFormattedText(), 8.0f, 4.0f, 4210752);
         this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
@@ -55,25 +55,25 @@ public class Class744 extends Class516<Class3439>
         this.minecraft.method5290().method5849(Class744.field4018);
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
-        this.method3186(field3079, field3080, 0, 0, this.field3075, this.field3076);
+        this.blit(field3079, field3080, 0, 0, this.field3075, this.field3076);
         final Class6601 method10977 = ((Class3439)this.field3077).method10977();
         final Class6601 method10978 = ((Class3439)this.field3077).method10978();
         final Class6601 method10979 = ((Class3439)this.field3077).method10979();
         final Class6601 method10980 = ((Class3439)this.field3077).method10980();
         if (!method10977.method20054()) {
-            this.method3186(field3079 + method10977.field26175, field3080 + method10977.field26176, this.field3075, 0, 16, 16);
+            this.blit(field3079 + method10977.field26175, field3080 + method10977.field26176, this.field3075, 0, 16, 16);
         }
         if (!method10978.method20054()) {
-            this.method3186(field3079 + method10978.field26175, field3080 + method10978.field26176, this.field3075 + 16, 0, 16, 16);
+            this.blit(field3079 + method10978.field26175, field3080 + method10978.field26176, this.field3075 + 16, 0, 16, 16);
         }
         if (!method10979.method20054()) {
-            this.method3186(field3079 + method10979.field26175, field3080 + method10979.field26176, this.field3075 + 32, 0, 16, 16);
+            this.blit(field3079 + method10979.field26175, field3080 + method10979.field26176, this.field3075 + 32, 0, 16, 16);
         }
-        this.method3186(field3079 + 119, field3080 + 13 + (int)(41.0f * this.field4028), 232 + (this.field4025 ? 0 : 12), 0, 12, 15);
+        this.blit(field3079 + 119, field3080 + 13 + (int)(41.0f * this.field4028), 232 + (this.field4025 ? 0 : 12), 0, 12, 15);
         Class8317.method27611();
         if (this.field4021 != null && !this.field4027) {
-            final Class7808 method10981 = this.minecraft.method5333().method11006();
-            final Class7351 class7351 = new Class7351();
+            final IRenderTypeBuffer.Impl method10981 = this.minecraft.method5333().method11006();
+            final MatrixStack class7351 = new MatrixStack();
             class7351.method22564(field3079 + 139, field3080 + 52, 0.0);
             class7351.method22565(24.0f, -24.0f, 1.0f);
             class7351.method22564(0.5, 0.5, 0.5);
@@ -81,17 +81,17 @@ public class Class744 extends Class516<Class3439>
             this.field4020.field25183 = 0.0f;
             this.field4020.field25181 = -32.0f;
             Class4165.method12473(class7351, method10981, 15728880, Class1904.field10335, this.field4020, Class7637.field30242, true, this.field4021);
-            method10981.method25216();
+            method10981.finish();
         }
         else if (this.field4027) {
-            this.method3186(field3079 + method10980.field26175 - 2, field3080 + method10980.field26176 - 2, this.field3075, 17, 17, 16);
+            this.blit(field3079 + method10980.field26175 - 2, field3080 + method10980.field26176 - 2, this.field3075, 17, 17, 16);
         }
         if (!this.field4025) {
             if (this.field4026) {
                 final int n4 = field3079 + 60;
                 final int n5 = field3080 + 13;
                 this.minecraft.method5290().method5849(Class744.field4018);
-                this.method3186(n4, n5, 0, this.field3076, 14, 14);
+                this.blit(n4, n5, 0, this.field3076, 14, 14);
                 this.method4059(((Class3439)this.field3077).method10974(), n4, n5);
             }
         }
@@ -118,7 +118,7 @@ public class Class744 extends Class516<Class3439>
                 else {
                     field3082 += 14;
                 }
-                this.method3186(n10, n11, 0, field3082, 14, 14);
+                this.blit(n10, n11, 0, field3082, 14, 14);
                 this.method4059(field3081, n10, n11);
             }
         }
@@ -128,19 +128,19 @@ public class Class744 extends Class516<Class3439>
     private void method4059(final int n, final int n2, final int n3) {
         final ItemStack class8321 = new ItemStack(Items.field31563);
         class8321.method27659("BlockEntityTag").put("Patterns", new Class9142().method33336(Class230.field812, Class181.field544).method33336(Class230.values()[n], Class181.field537).method33337());
-        final Class7351 class8322 = new Class7351();
+        final MatrixStack class8322 = new MatrixStack();
         class8322.method22567();
         class8322.method22564(n2 + 0.5f, n3 + 16, 0.0);
         class8322.method22565(6.0f, -6.0f, 1.0f);
         class8322.method22564(0.5, 0.5, 0.0);
         class8322.method22564(0.5, 0.5, 0.5);
         class8322.method22565(0.6666667f, -0.6666667f, -0.6666667f);
-        final Class7808 method11006 = this.minecraft.method5333().method11006();
+        final IRenderTypeBuffer.Impl method11006 = this.minecraft.method5333().method11006();
         this.field4020.field25183 = 0.0f;
         this.field4020.field25181 = -32.0f;
         Class4165.method12473(class8322, method11006, 15728880, Class1904.field10335, this.field4020, Class7637.field30242, true, Class465.method2387(Class181.field544, Class465.method2382(class8321)));
         class8322.method22568();
-        method11006.method25216();
+        method11006.finish();
     }
     
     @Override
@@ -157,7 +157,7 @@ public class Class744 extends Class516<Class3439>
                     if (n9 >= 0.0) {
                         if (n8 < 14.0) {
                             if (n9 < 14.0) {
-                                if (((Class3439)this.field3077).method10877(this.minecraft.field4684, i)) {
+                                if (((Class3439)this.field3077).method10877(this.minecraft.player, i)) {
                                     Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35663, 1.0f));
                                     this.minecraft.field4682.method27326(((Class3439)this.field3077).field16154, i);
                                     return true;

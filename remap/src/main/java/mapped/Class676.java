@@ -11,12 +11,12 @@ public class Class676 extends Class673
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         if (this.field3432) {
-            super.method2975(n, n2, n3);
+            super.render(n, n2, n3);
             Config.method28895().method5849(new ResourceLocation("optifine/textures/icons.png"));
             Class8933.method31646(1.0f, 1.0f, 1.0f, 1.0f);
-            this.method3186(this.field3426 + 3, this.field3427 + 2, 0, 0, 16, 16);
+            this.blit(this.field3426 + 3, this.field3427 + 2, 0, 0, 16, 16);
         }
     }
 }

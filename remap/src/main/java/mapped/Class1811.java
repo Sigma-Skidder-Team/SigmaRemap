@@ -21,11 +21,11 @@ public class Class1811 extends Class1799
     }
     
     @Override
-    public void method6554(final Class7351 class7351, final Class7807 class7352, final int n, final Entity class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6554(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Entity class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         this.method6571(class7353, class7351, class7352, n, Class1904.field10335);
     }
     
-    public void method6571(final Entity class399, final Class7351 class400, final Class7807 class401, final int n, final int n2) {
+    public void method6571(final Entity class399, final MatrixStack class400, final IRenderTypeBuffer class401, final int n, final int n2) {
         if (Config.method28948()) {
             if (class399 instanceof Class754) {
                 final Class754 class402 = (Class754)class399;

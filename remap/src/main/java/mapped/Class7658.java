@@ -145,8 +145,8 @@ public class Class7658
         if (false) {
             return;
         }
-        if (this.field30396.field4684.ticksExisted % 120 == 0) {
-            final Class2420 method28644 = Class8537.method28644(this.field30396.world.method6965(this.field30396.field4684.method1894()).method7019());
+        if (this.field30396.player.ticksExisted % 120 == 0) {
+            final Class2420 method28644 = Class8537.method28644(this.field30396.world.method6965(this.field30396.player.method1894()).method7019());
             final Iterator<Map.Entry<Long, Class8537>> iterator = this.field30403.entrySet().iterator();
             while (iterator.hasNext()) {
                 final Map.Entry<Long, V> entry = (Map.Entry<Long, V>)iterator.next();
@@ -178,8 +178,8 @@ public class Class7658
                 if (!contains || contains2) {
                     if (!class5745.method7062()) {
                         if (this.field30396.world.method6835().method7409(class5745.method7019())) {
-                            if (!(this.field30396.world.method6959(this.field30396.field4684.method1894()) instanceof Class3158)) {
-                                if (!(this.field30396.world.method6959(this.field30396.field4684.method1894()) instanceof Class3150)) {
+                            if (!(this.field30396.world.method6959(this.field30396.player.method1894()) instanceof Class3158)) {
+                                if (!(this.field30396.world.method6959(this.field30396.player.method1894()) instanceof Class3150)) {
                                     if (!contains) {
                                         this.field30397.add(class5745.method7019());
                                     }

@@ -403,7 +403,7 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public void method1671(final Class2160 class2160, Vec3d class2161) {
-        if (Minecraft.method5277().field4684 != null && Minecraft.method5277().field4684.method1920() != null && Minecraft.method5277().field4684.method1920().getEntityId() == this.getEntityId()) {
+        if (Minecraft.method5277().player != null && Minecraft.method5277().player.method1920() != null && Minecraft.method5277().player.method1920().getEntityId() == this.getEntityId()) {
             final Class5718 class2162 = new Class5718(class2161.x, class2161.y, class2161.z);
             Class9463.method35173().method35188().method21097(class2162);
             if (class2162.method16962()) {
@@ -2186,7 +2186,7 @@ public abstract class Entity implements INameable, ICommandSource {
         return this.method1882();
     }
 
-    public Class9390 method1884() {
+    public HoverEvent method1884() {
         final CompoundNBT class51 = new CompoundNBT();
         final ResourceLocation method23354 = EntityType.method23354(this.getType());
         class51.putString("id", this.method1866());
@@ -2194,7 +2194,7 @@ public abstract class Entity implements INameable, ICommandSource {
             class51.putString("type", method23354.toString());
         }
         class51.putString("name", Class5953.method17869(this.getName()));
-        return new Class9390(Class1961.field10699, new StringTextComponent(class51.toString()));
+        return new HoverEvent(HoverEvent.Action.field10699, new StringTextComponent(class51.toString()));
     }
 
     public boolean method1885(final Class513 class513) {

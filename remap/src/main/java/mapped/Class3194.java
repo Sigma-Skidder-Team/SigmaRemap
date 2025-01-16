@@ -21,9 +21,9 @@ public class Class3194 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15600 = Class3194.field15514.field4684.posX;
-        this.field15601 = Class3194.field15514.field4684.posY;
-        this.field15602 = Class3194.field15514.field4684.posZ;
+        this.field15600 = Class3194.field15514.player.posX;
+        this.field15601 = Class3194.field15514.player.posY;
+        this.field15602 = Class3194.field15514.player.posZ;
         this.field15603 = 0.0;
         this.field15598 = 2;
         this.field15599 = 0;
@@ -32,7 +32,7 @@ public class Class3194 extends Class3167
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3194.field15514.field4684.getMotion().y > 0.0) {
+        if (Class3194.field15514.player.getMotion().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
         Class3194.field15514.field4633.field26532 = 1.0f;
@@ -105,8 +105,8 @@ public class Class3194 extends Class3167
                 this.field15600 = class5724.field19377;
                 this.field15601 = class5724.field19378;
                 this.field15602 = class5724.field19379;
-                class5724.field19380 = Class3194.field15514.field4684.rotationYaw;
-                class5724.field19381 = Class3194.field15514.field4684.rotationPitch;
+                class5724.field19380 = Class3194.field15514.player.rotationYaw;
+                class5724.field19381 = Class3194.field15514.player.rotationPitch;
             }
         }
     }

@@ -36,22 +36,22 @@ public class Class3295 extends Class3167
                             }
                         }
                     }
-                    if (class5753.method17064().getY() >= Class3295.field15514.field4684.posY - ((Class3295.field15514.field4684.posY % 0.5 != 0.0) ? 0.0f : 0.5f)) {
+                    if (class5753.method17064().getY() >= Class3295.field15514.player.posY - ((Class3295.field15514.player.posY % 0.5 != 0.0) ? 0.0f : 0.5f)) {
                         return;
                     }
-                    if (this.method10432(Class3295.field15514.field4684.boundingBox)) {
+                    if (this.method10432(Class3295.field15514.player.boundingBox)) {
                         return;
                     }
-                    if (Class3295.field15514.field4684.method1809()) {
+                    if (Class3295.field15514.player.method1809()) {
                         return;
                     }
-                    if (Class3295.field15514.field4684.fallDistance <= 10.0f) {
+                    if (Class3295.field15514.player.fallDistance <= 10.0f) {
                         final int method21784 = Class3295.field15514.world.getBlockState(class5753.method17064()).method21756().method21784();
                         float n = 0.0f;
                         if (method21784 > 3) {
                             ++n;
                         }
-                        if (Class3295.field15514.field4684.fallDistance > 10.0f) {
+                        if (Class3295.field15514.player.fallDistance > 10.0f) {
                             n -= 0.8f;
                         }
                         class5753.method17067(VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, n, 1.0));
@@ -67,14 +67,14 @@ public class Class3295 extends Class3167
             if (Class3295.field15514.world != null) {
                 if (class5744.method17046()) {
                     if (Class3295.field15514.method5282() != null) {
-                        if (method10433() && !this.method10432(Class3295.field15514.field4684.boundingBox)) {
+                        if (method10433() && !this.method10432(Class3295.field15514.player.boundingBox)) {
                             ++this.field15856;
                         }
                         else {
                             this.field15856 = 0;
                         }
-                        if (method10433() && !this.method10432(Class3295.field15514.field4684.boundingBox)) {
-                            Class3295.field15514.field4684.field2985 = 0;
+                        if (method10433() && !this.method10432(Class3295.field15514.player.boundingBox)) {
+                            Class3295.field15514.player.field2985 = 0;
                             class5744.method17033(true);
                             ++this.field15854;
                             if (this.field15854 % 2 == 0) {
@@ -82,7 +82,7 @@ public class Class3295 extends Class3167
                             }
                         }
                         else {
-                            this.field15854 = (Class3295.field15514.field4684.onGround ? 0 : 1);
+                            this.field15854 = (Class3295.field15514.player.onGround ? 0 : 1);
                         }
                     }
                 }
@@ -96,17 +96,17 @@ public class Class3295 extends Class3167
         if (this.method9906()) {
             if (Class3295.field15514.world != null) {
                 if (!Class3361.method10645()) {
-                    if (this.method10432(Class3295.field15514.field4684.boundingBox) && !Class3295.field15514.field4684.method1809()) {
-                        final BlockState method6701 = Class3295.field15514.world.getBlockState(Class3295.field15514.field4684.method1894());
+                    if (this.method10432(Class3295.field15514.player.boundingBox) && !Class3295.field15514.player.method1809()) {
+                        final BlockState method6701 = Class3295.field15514.world.getBlockState(Class3295.field15514.player.method1894());
                         if (method6701 != null) {
                             if (!method6701.getFluidState().isEmpty()) {
                                 if (method6701.getFluidState().getHeight() > 0.4) {
                                     if (this.method9883("Swim up")) {
                                         class5717.method16975(0.13);
                                     }
-                                    if (!this.method10432(Class3295.field15514.field4684.boundingBox.offset(0.0, class5717.method16974(), 0.0))) {
-                                        class5717.method16975((int)Class3295.field15514.field4684.posY + 1 - Class3295.field15514.field4684.posY);
-                                        Class3295.field15514.field4684.onGround = true;
+                                    if (!this.method10432(Class3295.field15514.player.boundingBox.offset(0.0, class5717.method16974(), 0.0))) {
+                                        class5717.method16975((int)Class3295.field15514.player.posY + 1 - Class3295.field15514.player.posY);
+                                        Class3295.field15514.player.onGround = true;
                                         this.field15854 = 1;
                                     }
                                 }
@@ -123,11 +123,11 @@ public class Class3295 extends Class3167
                     }
                     if (this.method9887("Mode").equals("Dolphin")) {
                         if (this.field15855 > 0) {
-                            if (Class6430.method19160(Class3295.field15514.field4684, 0.001f)) {
+                            if (Class6430.method19160(Class3295.field15514.player, 0.001f)) {
                                 this.field15855 = 0;
                             }
                             else {
-                                if (Class3295.field15514.field4684.method1809() || Class3295.field15514.field4684.collidedVertically) {
+                                if (Class3295.field15514.player.method1809() || Class3295.field15514.player.collidedVertically) {
                                     this.field15855 = 0;
                                     return;
                                 }
@@ -137,7 +137,7 @@ public class Class3295 extends Class3167
                                 }
                                 final double method6702 = this.method10434(this.field15855);
                                 if (method6702 != -999.0) {
-                                    Class3295.field15514.field4684.field4075 = 0.0;
+                                    Class3295.field15514.player.field4075 = 0.0;
                                     class5717.method16975(method6702);
                                 }
                             }
@@ -205,7 +205,7 @@ public class Class3295 extends Class3167
     }
     
     public static boolean method10433() {
-        final Iterator<Object> iterator = Class3295.field15514.world.method6981(Class3295.field15514.field4684, Class3295.field15514.field4684.boundingBox.offset(0.0, -0.001, 0.0)).iterator();
+        final Iterator<Object> iterator = Class3295.field15514.world.method6981(Class3295.field15514.player, Class3295.field15514.player.boundingBox.offset(0.0, -0.001, 0.0)).iterator();
         boolean b = true;
         if (iterator.hasNext()) {
             while (iterator.hasNext()) {

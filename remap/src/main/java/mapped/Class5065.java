@@ -65,7 +65,7 @@ public class Class5065 extends RealmsGuiEventListener
     }
     
     public void method15590(final int n, final int n2, final float n3) {
-        this.field21715.method2975(n, n2, n3);
+        this.field21715.render(n, n2, n3);
     }
     
     public void method15591(final int n) {

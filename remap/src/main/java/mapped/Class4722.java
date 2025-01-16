@@ -20,13 +20,13 @@ public class Class4722 extends Class4712<Class851, Class5891<Class851>>
         return Class4722.field20325;
     }
     
-    public void method14032(final Class851 class851, final Class7351 class852, final float n) {
+    public void method14032(final Class851 class851, final MatrixStack class852, final float n) {
         final float n2 = 1.0f + 0.15f * class851.method5089();
         class852.method22565(n2, n2, n2);
         class852.method22564(0.0, 1.3125, 0.1875);
     }
     
-    public void method14033(final Class851 class851, final Class7351 class852, final float n, final float n2, final float n3) {
+    public void method14033(final Class851 class851, final MatrixStack class852, final float n, final float n2, final float n3) {
         super.method13985(class851, class852, n, n2, n3);
         class852.method22566(Vector3f.XP.rotationDegrees(class851.rotationPitch));
     }

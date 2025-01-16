@@ -25,22 +25,22 @@ public class Class702 extends Class698
     @Override
     public void init() {
         final int n = 0 + 2;
-        this.method3029(new Class673(210, this.width / 2 - 155, this.height / 6 + 24 * (n >> 1), 150, 20, Class8822.method30773("of.options.capeOF.openEditor", new Object[0])));
-        this.method3029(new Class673(220, this.width / 2 - 155 + 160, this.height / 6 + 24 * (n >> 1), 150, 20, Class8822.method30773("of.options.capeOF.reloadCape", new Object[0])));
+        this.addButton(new Class673(210, this.width / 2 - 155, this.height / 6 + 24 * (n >> 1), 150, 20, Class8822.method30773("of.options.capeOF.openEditor", new Object[0])));
+        this.addButton(new Class673(220, this.width / 2 - 155 + 160, this.height / 6 + 24 * (n >> 1), 150, 20, Class8822.method30773("of.options.capeOF.reloadCape", new Object[0])));
         final int n2 = n + 6;
         this.field3866 = new Class673(230, this.width / 2 - 100, this.height / 6 + 24 * (n2 >> 1), 200, 20, Class8822.method30773("of.options.capeOF.copyEditorLink", new Object[0]));
         this.field3866.field3432 = (this.field3865 != null);
-        this.method3029(this.field3866);
-        this.method3029(new Class673(200, this.width / 2 - 100, this.height / 6 + 24 * (n2 + 4 >> 1), Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(this.field3866);
+        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 24 * (n2 + 4 >> 1), Class8822.method30773("gui.done", new Object[0])));
     }
     
     @Override
-    public void method3896(final Class573 class573) {
+    public void method3896(final Widget class573) {
         if (class573 instanceof Class673) {
             final Class673 class574 = (Class673)class573;
             if (class574.field3431) {
                 if (class574.field3708 == 200) {
-                    this.minecraft.method5244(this.field3862);
+                    this.minecraft.displayGuiScreen(this.field3862);
                 }
                 if (class574.field3708 == 210) {
                     try {
@@ -70,8 +70,8 @@ public class Class702 extends Class698
                 }
                 if (class574.field3708 == 220) {
                     this.method3903(Class4647.method13876("of.message.capeOF.reloadCape"), 15000L);
-                    if (this.minecraft.field4684 != null) {
-                        this.minecraft.field4684.method4112(System.currentTimeMillis() + 15000L);
+                    if (this.minecraft.player != null) {
+                        this.minecraft.player.method4112(System.currentTimeMillis() + 15000L);
                     }
                 }
                 if (class574.field3708 == 230 && this.field3865 != null) {
@@ -88,17 +88,17 @@ public class Class702 extends Class698
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.field3843, this.field3148.getFormattedText(), this.width / 2, 20, 16777215);
+        this.drawCenteredString(this.field3843, this.title.getFormattedText(), this.width / 2, 20, 16777215);
         if (this.field3863 != null) {
-            this.method3295(this.field3843, this.field3863, this.width / 2, this.height / 6 + 60, 16777215);
+            this.drawCenteredString(this.field3843, this.field3863, this.width / 2, this.height / 6 + 60, 16777215);
             if (System.currentTimeMillis() > this.field3864) {
                 this.field3863 = null;
                 this.method3904(null);
             }
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     public void method3904(final String field3865) {

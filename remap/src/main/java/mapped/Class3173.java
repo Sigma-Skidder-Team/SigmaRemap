@@ -43,9 +43,9 @@ public class Class3173 extends Class3167
             if (Class3173.field15514.field4682.method27337()) {
                 Class3173.field15534 = 0;
             }
-            if (Class3173.field15514.field4684.onGround && Class3173.field15514.field4684.collidedVertically) {
+            if (Class3173.field15514.player.onGround && Class3173.field15514.player.collidedVertically) {
                 ++Class3173.field15534;
-                Class3173.field15514.field4684.field4075 = 0.0;
+                Class3173.field15514.player.field4075 = 0.0;
                 if (Class3173.field15534 != 2) {
                     if (Class3173.field15534 >= 3) {
                         class5744.method17037(class5744.method17036() + 0.001);

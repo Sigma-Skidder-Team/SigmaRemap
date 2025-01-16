@@ -28,7 +28,7 @@ public class Class4155 extends Class4154
     
     public Class4155(final Class4150 field18519, final Class8996 class8996) {
         this.field18519 = field18519;
-        (this.field18520 = class8996.method32111().method20758()).method20751();
+        (this.field18520 = class8996.getMatrix().method20758()).method20751();
         (this.field18521 = class8996.method32112().copy()).invert();
         this.method12452();
     }
@@ -46,7 +46,7 @@ public class Class4155 extends Class4154
     }
     
     @Override
-    public void method12397() {
+    public void endVertex() {
         final Vector3f class9138 = new Vector3f(this.field18528, this.field18529, this.field18530);
         class9138.transform(this.field18521);
         final Direction method800 = Direction.getFacingFromVector(class9138.getX(), class9138.getY(), class9138.getZ());
@@ -55,12 +55,12 @@ public class Class4155 extends Class4154
         class9139.method28604(Vector3f.YP.rotationDegrees(180.0f));
         class9139.method28604(Vector3f.XP.rotationDegrees(-90.0f));
         class9139.method28604(method800.getRotation());
-        this.field18519.method12432(this.field18522, this.field18523, this.field18524).method12439(1.0f, 1.0f, 1.0f, 1.0f).method12391(-class9139.method28595(), -class9139.method28596()).method12433(this.field18525, this.field18526).method12440(this.field18527).method12436(this.field18528, this.field18529, this.field18530).method12397();
+        this.field18519.pos(this.field18522, this.field18523, this.field18524).color(1.0f, 1.0f, 1.0f, 1.0f).tex(-class9139.method28595(), -class9139.method28596()).method12433(this.field18525, this.field18526).method12440(this.field18527).method12436(this.field18528, this.field18529, this.field18530).endVertex();
         this.method12452();
     }
     
     @Override
-    public Class4150 method12432(final double n, final double n2, final double n3) {
+    public Class4150 pos(final double n, final double n2, final double n3) {
         this.field18522 = (float)n;
         this.field18523 = (float)n2;
         this.field18524 = (float)n3;
@@ -73,7 +73,7 @@ public class Class4155 extends Class4154
     }
     
     @Override
-    public Class4150 method12391(final float n, final float n2) {
+    public Class4150 tex(final float n, final float n2) {
         return this;
     }
     

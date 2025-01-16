@@ -27,7 +27,7 @@ public class Class6121 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         final double field24848 = (double) Util.method27838();
         if (field24848 - this.field24848 > 1.0E8) {
             this.field24848 = field24848;

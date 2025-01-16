@@ -26,7 +26,7 @@ public class Class736 extends Screen
     @Override
     public void init() {
         super.init();
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 150, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 150, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
             this.field3998.method35335();
             this.field3997.accept(false);
         }));
@@ -45,29 +45,29 @@ public class Class736 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 20, 16777215);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 20, 16777215);
         final int n4 = this.width / 2 - 150;
         final int n5 = this.width / 2 + 150;
         final int n6 = this.height / 4 + 100;
         final int n7 = n6 + 10;
-        this.method3295(this.font, this.field3998.method35344().getFormattedText(), this.width / 2, n6 - 9 - 2, 10526880);
+        this.drawCenteredString(this.font, this.field3998.method35344().getFormattedText(), this.width / 2, n6 - 9 - 2, 10526880);
         if (this.field3998.method35341() > 0) {
-            Class565.method3293(n4 - 1, n6 - 1, n5 + 1, n7 + 1, -16777216);
-            this.method3297(this.font, Class8822.method30773("optimizeWorld.info.converted", this.field3998.method35342()), n4, 40, 10526880);
-            this.method3297(this.font, Class8822.method30773("optimizeWorld.info.skipped", this.field3998.method35343()), n4, 52, 10526880);
-            this.method3297(this.font, Class8822.method30773("optimizeWorld.info.total", this.field3998.method35341()), n4, 64, 10526880);
+            AbstractGui.fill(n4 - 1, n6 - 1, n5 + 1, n7 + 1, -16777216);
+            this.drawString(this.font, Class8822.method30773("optimizeWorld.info.converted", this.field3998.method35342()), n4, 40, 10526880);
+            this.drawString(this.font, Class8822.method30773("optimizeWorld.info.skipped", this.field3998.method35343()), n4, 52, 10526880);
+            this.drawString(this.font, Class8822.method30773("optimizeWorld.info.total", this.field3998.method35341()), n4, 64, 10526880);
             int n8 = 0;
             for (final DimensionType class383 : DimensionType.method1269()) {
                 final int method35642 = MathHelper.method35642(this.field3998.method35339(class383) * (n5 - n4));
-                Class565.method3293(n4 + n8, n6, n4 + n8 + method35642, n7, Class736.field3996.getInt((Object)class383));
+                AbstractGui.fill(n4 + n8, n6, n4 + n8 + method35642, n7, Class736.field3996.getInt((Object)class383));
                 n8 += method35642;
             }
-            this.method3295(this.font, this.field3998.method35342() + this.field3998.method35343() + " / " + this.field3998.method35341(), this.width / 2, n6 + 18 + 2, 10526880);
-            this.method3295(this.font, MathHelper.method35642(this.field3998.method35340() * 100.0f) + "%", this.width / 2, n6 + (n7 - n6) / 2 - 4, 10526880);
+            this.drawCenteredString(this.font, this.field3998.method35342() + this.field3998.method35343() + " / " + this.field3998.method35341(), this.width / 2, n6 + 18 + 2, 10526880);
+            this.drawCenteredString(this.font, MathHelper.method35642(this.field3998.method35340() * 100.0f) + "%", this.width / 2, n6 + (n7 - n6) / 2 - 4, 10526880);
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     static {

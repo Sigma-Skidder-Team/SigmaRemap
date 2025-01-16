@@ -153,11 +153,11 @@ public class Class7520
         });
     }
     
-    public CompletableFuture<Void> method23461(final Class4148 class4148, final Class1918 class4149) {
+    public CompletableFuture<Void> method23461(final BufferBuilder class4148, final Class1918 class4149) {
         return CompletableFuture.runAsync(() -> {}, this.field29130::add).thenCompose(p2 -> this.method23462(class4150, class4151));
     }
     
-    private CompletableFuture<Void> method23462(final Class4148 class4148, final Class1918 class4149) {
+    private CompletableFuture<Void> method23462(final BufferBuilder class4148, final Class1918 class4149) {
         return class4149.method7589(class4148);
     }
     

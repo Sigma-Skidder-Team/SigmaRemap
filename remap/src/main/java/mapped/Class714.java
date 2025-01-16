@@ -23,22 +23,22 @@ public class Class714 extends Class698
         this.field3842.clear();
         for (int i = 0; i < Class714.field3902.length; ++i) {
             final Class6469 class6469 = Class714.field3902[i];
-            final Class573 method3029 = this.method3029(class6469.method19362(this.minecraft.field4648, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 21 * (i / 2) - 12, 150));
+            final Widget method3029 = this.addButton(class6469.method19362(this.minecraft.gameSettings, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 21 * (i / 2) - 12, 150));
             if (class6469 == Class6469.field25799 || class6469 == Class6469.field25798) {
                 method3029.field3431 = false;
             }
         }
-        this.method3029(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
     }
     
     @Override
-    public void method3896(final Class573 class573) {
+    public void method3896(final Widget class573) {
         if (class573 instanceof Class673) {
             final Class673 class574 = (Class673)class573;
             if (class574.field3431) {
                 if (class574.field3708 == 200) {
-                    this.minecraft.field4648.method17121();
-                    this.minecraft.method5244(this.field3900);
+                    this.minecraft.gameSettings.method17121();
+                    this.minecraft.displayGuiScreen(this.field3900);
                 }
             }
         }
@@ -46,15 +46,15 @@ public class Class714 extends Class698
     
     @Override
     public void removed() {
-        this.minecraft.field4648.method17121();
+        this.minecraft.gameSettings.method17121();
         super.removed();
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.field3843, this.field3148.getFormattedText(), this.width / 2, 15, 16777215);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.field3843, this.title.getFormattedText(), this.width / 2, 15, 16777215);
+        super.render(n, n2, n3);
         this.field3903.method27577(n, n2, this.field3842);
     }
     

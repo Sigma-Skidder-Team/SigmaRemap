@@ -164,7 +164,7 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9293 = (Set<Class8974>)new ObjectLinkedOpenHashSet();
         this.field9294 = (ObjectList<Class9071>)new ObjectArrayList(69696);
         this.field9295 = Sets.newHashSet();
-        this.field9297 = Class9237.field39614;
+        this.field9297 = DefaultVertexFormats.field39614;
         this.field9301 = true;
         this.field9303 = new Class8836(100);
         this.field9305 = (Int2ObjectMap<Class349>)new Int2ObjectOpenHashMap();
@@ -185,7 +185,7 @@ public class Class1656 implements AutoCloseable, Class1657
         this.field9322 = Integer.MIN_VALUE;
         this.field9323 = Integer.MIN_VALUE;
         this.field9324 = Vec3d.ZERO;
-        this.field9327 = Class9237.field39607;
+        this.field9327 = DefaultVertexFormats.field39607;
         this.field9328 = -1;
         this.field9333 = new Vector4f[8];
         this.field9334 = new Class7283(0.0, 0.0, 0.0);
@@ -248,20 +248,20 @@ public class Class1656 implements AutoCloseable, Class1657
             final int method35828 = MathHelper.floor(n);
             final int method35829 = MathHelper.floor(n2);
             final int method35830 = MathHelper.floor(n3);
-            final Class7392 method35831 = Class7392.method22694();
-            final Class4148 method35832 = method35831.method22696();
-            Class8726.method30029();
-            Class8726.method30006(0.0f, 1.0f, 0.0f);
-            Class8726.method30011();
-            Class8726.method30117();
-            Class8726.method30118();
+            final Tessellator method35831 = Tessellator.getInstance();
+            final BufferBuilder method35832 = method35831.getBuffer();
+            RenderSystem.method30029();
+            RenderSystem.method30006(0.0f, 1.0f, 0.0f);
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
+            RenderSystem.method30118();
             int n4 = 5;
             if (Config.method28855()) {
                 n4 = 10;
             }
             int n5 = -1;
             final float n6 = this.field9304 + f;
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             final Mutable class393 = new Mutable();
             for (int i = method35830 - n4; i <= method35830 + n4; ++i) {
                 for (int j = method35828 - n4; j <= method35828 + n4; ++j) {
@@ -290,11 +290,11 @@ public class Class1656 implements AutoCloseable, Class1657
                             if (method35833.method9845(class393) >= 0.15f) {
                                 if (n5 != 0) {
                                     if (n5 >= 0) {
-                                        method35831.method22695();
+                                        method35831.draw();
                                     }
                                     n5 = 0;
                                     this.field9288.method5290().method5849(Class1656.field9285);
-                                    method35832.method12390(7, Class9237.field39613);
+                                    method35832.begin(7, DefaultVertexFormats.field39613);
                                 }
                                 final float n13 = -((this.field9304 + j * j * 3121 + j * 45238971 + i * i * 418711 + i * 13761 & 0x1F) + f) / 32.0f * (3.0f + random.nextFloat());
                                 final double n14 = j + 0.5f - n;
@@ -303,19 +303,19 @@ public class Class1656 implements AutoCloseable, Class1657
                                 final float n17 = ((1.0f - n16 * n16) * 0.5f + 0.5f) * method35827;
                                 class393.setPos(j, n12, i);
                                 final int method35835 = method5776(field4683, class393);
-                                method35832.method12432(j - n - n8 + 0.5, n11 - n2, i - n3 - n9 + 0.5).method12391(0.0f, n10 * 0.25f + n13).method12439(1.0f, 1.0f, 1.0f, n17).method12440(method35835).method12397();
-                                method35832.method12432(j - n + n8 + 0.5, n11 - n2, i - n3 + n9 + 0.5).method12391(1.0f, n10 * 0.25f + n13).method12439(1.0f, 1.0f, 1.0f, n17).method12440(method35835).method12397();
-                                method35832.method12432(j - n + n8 + 0.5, n10 - n2, i - n3 + n9 + 0.5).method12391(1.0f, n11 * 0.25f + n13).method12439(1.0f, 1.0f, 1.0f, n17).method12440(method35835).method12397();
-                                method35832.method12432(j - n - n8 + 0.5, n10 - n2, i - n3 - n9 + 0.5).method12391(0.0f, n11 * 0.25f + n13).method12439(1.0f, 1.0f, 1.0f, n17).method12440(method35835).method12397();
+                                method35832.pos(j - n - n8 + 0.5, n11 - n2, i - n3 - n9 + 0.5).tex(0.0f, n10 * 0.25f + n13).color(1.0f, 1.0f, 1.0f, n17).method12440(method35835).endVertex();
+                                method35832.pos(j - n + n8 + 0.5, n11 - n2, i - n3 + n9 + 0.5).tex(1.0f, n10 * 0.25f + n13).color(1.0f, 1.0f, 1.0f, n17).method12440(method35835).endVertex();
+                                method35832.pos(j - n + n8 + 0.5, n10 - n2, i - n3 + n9 + 0.5).tex(1.0f, n11 * 0.25f + n13).color(1.0f, 1.0f, 1.0f, n17).method12440(method35835).endVertex();
+                                method35832.pos(j - n - n8 + 0.5, n10 - n2, i - n3 - n9 + 0.5).tex(0.0f, n11 * 0.25f + n13).color(1.0f, 1.0f, 1.0f, n17).method12440(method35835).endVertex();
                             }
                             else {
                                 if (n5 != 1) {
                                     if (n5 >= 0) {
-                                        method35831.method22695();
+                                        method35831.draw();
                                     }
                                     n5 = 1;
                                     this.field9288.method5290().method5849(Class1656.field9286);
-                                    method35832.method12390(7, Class9237.field39613);
+                                    method35832.begin(7, DefaultVertexFormats.field39613);
                                 }
                                 final float n18 = -((this.field9304 & 0x1FF) + f) / 512.0f;
                                 final float n19 = (float)(random.nextDouble() + n6 * 0.01 * (float)random.nextGaussian());
@@ -330,21 +330,21 @@ public class Class1656 implements AutoCloseable, Class1657
                                 final int n26 = (method35836 & 0xFFFF) * 3;
                                 final int n27 = (n25 * 3 + 240) / 4;
                                 final int n28 = (n26 * 3 + 240) / 4;
-                                method35832.method12432(j - n - n8 + 0.5, n11 - n2, i - n3 - n9 + 0.5).method12391(0.0f + n19, n10 * 0.25f + n18 + n20).method12439(1.0f, 1.0f, 1.0f, n24).method12434(n28, n27).method12397();
-                                method35832.method12432(j - n + n8 + 0.5, n11 - n2, i - n3 + n9 + 0.5).method12391(1.0f + n19, n10 * 0.25f + n18 + n20).method12439(1.0f, 1.0f, 1.0f, n24).method12434(n28, n27).method12397();
-                                method35832.method12432(j - n + n8 + 0.5, n10 - n2, i - n3 + n9 + 0.5).method12391(1.0f + n19, n11 * 0.25f + n18 + n20).method12439(1.0f, 1.0f, 1.0f, n24).method12434(n28, n27).method12397();
-                                method35832.method12432(j - n - n8 + 0.5, n10 - n2, i - n3 - n9 + 0.5).method12391(0.0f + n19, n11 * 0.25f + n18 + n20).method12439(1.0f, 1.0f, 1.0f, n24).method12434(n28, n27).method12397();
+                                method35832.pos(j - n - n8 + 0.5, n11 - n2, i - n3 - n9 + 0.5).tex(0.0f + n19, n10 * 0.25f + n18 + n20).color(1.0f, 1.0f, 1.0f, n24).method12434(n28, n27).endVertex();
+                                method35832.pos(j - n + n8 + 0.5, n11 - n2, i - n3 + n9 + 0.5).tex(1.0f + n19, n10 * 0.25f + n18 + n20).color(1.0f, 1.0f, 1.0f, n24).method12434(n28, n27).endVertex();
+                                method35832.pos(j - n + n8 + 0.5, n10 - n2, i - n3 + n9 + 0.5).tex(1.0f + n19, n11 * 0.25f + n18 + n20).color(1.0f, 1.0f, 1.0f, n24).method12434(n28, n27).endVertex();
+                                method35832.pos(j - n - n8 + 0.5, n10 - n2, i - n3 - n9 + 0.5).tex(0.0f + n19, n11 * 0.25f + n18 + n20).color(1.0f, 1.0f, 1.0f, n24).method12434(n28, n27).endVertex();
                             }
                         }
                     }
                 }
             }
             if (n5 >= 0) {
-                method35831.method22695();
+                method35831.draw();
             }
-            Class8726.method30028();
-            Class8726.method30012();
-            Class8726.method30118();
+            RenderSystem.method30028();
+            RenderSystem.disableBlend();
+            RenderSystem.method30118();
             class392.method1417();
         }
     }
@@ -363,10 +363,10 @@ public class Class1656 implements AutoCloseable, Class1657
             double n3 = 0.0;
             int bound = 0;
             int n4 = (int)(100.0f * method6768 * method6768);
-            if (this.field9288.field4648.field23474 == Class2159.field12820) {
+            if (this.field9288.gameSettings.field23474 == Class2159.field12820) {
                 n4 >>= 1;
             }
-            else if (this.field9288.field4648.field23474 == Class2159.field12821) {
+            else if (this.field9288.gameSettings.field23474 == Class2159.field12821) {
                 n4 = 0;
             }
             for (int i = 0; i < n4; ++i) {
@@ -428,9 +428,9 @@ public class Class1656 implements AutoCloseable, Class1657
     @Override
     public void method5691(final Class6582 class6582) {
         this.field9289.method5849(Class1656.field9284);
-        Class8726.method30042(3553, 10242, 10497);
-        Class8726.method30042(3553, 10243, 10497);
-        Class8726.method30044(0);
+        RenderSystem.method30042(3553, 10242, 10497);
+        RenderSystem.method30042(3553, 10243, 10497);
+        RenderSystem.method30044(0);
         this.method5692();
     }
     
@@ -457,41 +457,41 @@ public class Class1656 implements AutoCloseable, Class1657
     
     public void method5693() {
         if (this.method5694()) {
-            Class8726.method30011();
-            Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11696, Class2135.field12455);
+            RenderSystem.enableBlend();
+            RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11696, Class2135.field12455);
             this.field9308.method18400(this.field9288.method5332().method7692(), this.field9288.method5332().method7693(), false);
-            Class8726.method30012();
+            RenderSystem.disableBlend();
         }
     }
     
     public boolean method5694() {
-        return !Config.method28953() && !Config.method28955() && !Config.method28926() && this.field9308 != null && this.field9309 != null && this.field9288.field4684 != null;
+        return !Config.method28953() && !Config.method28955() && !Config.method28926() && this.field9308 != null && this.field9309 != null && this.field9288.player != null;
     }
     
     private void method5695() {
-        final Class4148 method22696 = Class7392.method22694().method22696();
+        final BufferBuilder method22696 = Tessellator.getInstance().getBuffer();
         if (this.field9300 != null) {
             this.field9300.close();
         }
         this.field9300 = new Class1918(this.field9297);
         this.method5697(method22696, -16.0f, true);
-        method22696.method12393();
+        method22696.finishDrawing();
         this.field9300.method7588(method22696);
     }
     
     private void method5696() {
-        final Class4148 method22696 = Class7392.method22694().method22696();
+        final BufferBuilder method22696 = Tessellator.getInstance().getBuffer();
         if (this.field9299 != null) {
             this.field9299.close();
         }
         this.field9299 = new Class1918(this.field9297);
         this.method5697(method22696, 16.0f, false);
-        method22696.method12393();
+        method22696.finishDrawing();
         this.field9299.method7588(method22696);
     }
     
-    private void method5697(final Class4148 class4148, final float n, final boolean b) {
-        class4148.method12390(7, Class9237.field39614);
+    private void method5697(final BufferBuilder class4148, final float n, final boolean b) {
+        class4148.begin(7, DefaultVertexFormats.field39614);
         for (int n2 = (this.field9356 / 64 + 1) * 64 + 64, i = -n2; i <= n2; i += 64) {
             for (int j = -n2; j <= n2; j += 64) {
                 float n3 = (float)i;
@@ -500,28 +500,28 @@ public class Class1656 implements AutoCloseable, Class1657
                     n4 = (float)i;
                     n3 = (float)(i + 64);
                 }
-                class4148.method12432(n3, n, j).method12397();
-                class4148.method12432(n4, n, j).method12397();
-                class4148.method12432(n4, n, j + 64).method12397();
-                class4148.method12432(n3, n, j + 64).method12397();
+                class4148.pos(n3, n, j).endVertex();
+                class4148.pos(n4, n, j).endVertex();
+                class4148.pos(n4, n, j + 64).endVertex();
+                class4148.pos(n3, n, j + 64).endVertex();
             }
         }
     }
     
     private void method5698() {
-        final Class4148 method22696 = Class7392.method22694().method22696();
+        final BufferBuilder method22696 = Tessellator.getInstance().getBuffer();
         if (this.field9298 != null) {
             this.field9298.close();
         }
         this.field9298 = new Class1918(this.field9297);
         this.method5699(method22696);
-        method22696.method12393();
+        method22696.finishDrawing();
         this.field9298.method7588(method22696);
     }
     
-    private void method5699(final Class4148 class4148) {
+    private void method5699(final BufferBuilder class4148) {
         final Random random = new Random(10842L);
-        class4148.method12390(7, Class9237.field39614);
+        class4148.begin(7, DefaultVertexFormats.field39614);
         for (int i = 0; i < 1500; ++i) {
             final double n = random.nextFloat() * 2.0f - 1.0f;
             final double n2 = random.nextFloat() * 2.0f - 1.0f;
@@ -552,7 +552,7 @@ public class Class1656 implements AutoCloseable, Class1657
                     final double n13 = n11 * cos3 + n10 * sin3;
                     final double n14 = n12 * sin2 + 0.0 * cos2;
                     final double n15 = 0.0 * sin2 - n12 * cos2;
-                    class4148.method12432(n6 + (n15 * sin - n13 * cos), n7 + n14, n8 + (n13 * sin + n15 * cos)).method12397();
+                    class4148.pos(n6 + (n15 * sin - n13 * cos), n7 + n14, n8 + (n13 * sin + n15 * cos)).endVertex();
                 }
             }
         }
@@ -610,7 +610,7 @@ public class Class1656 implements AutoCloseable, Class1657
             }
             Class7663.method24284();
             Class1656.field9368 = Minecraft.method5272();
-            this.field9328 = this.field9288.field4648.field23382;
+            this.field9328 = this.field9288.gameSettings.field23382;
             this.field9356 = this.field9328 * 16;
             this.field9357 = this.field9356 * this.field9356;
             this.method5698();
@@ -623,7 +623,7 @@ public class Class1656 implements AutoCloseable, Class1657
             synchronized (this.field9295) {
                 this.field9295.clear();
             }
-            this.field9296 = new Class9112(this.field9326, this.field9292, this.field9288.field4648.field23382, this);
+            this.field9296 = new Class9112(this.field9326, this.field9292, this.field9288.gameSettings.field23382, this);
             if (this.field9292 != null) {
                 final Entity method5303 = this.field9288.method5303();
                 if (method5303 != null) {
@@ -631,7 +631,7 @@ public class Class1656 implements AutoCloseable, Class1657
                 }
             }
         }
-        if (this.field9288.field4684 == null) {
+        if (this.field9288.player == null) {
             this.field9364 = true;
         }
     }
@@ -669,21 +669,21 @@ public class Class1656 implements AutoCloseable, Class1657
     
     public void method5707(final Class6092 class6092, final Class6664 class6093, final boolean b, final int n, final boolean b2) {
         final Vec3d method18161 = class6092.method18161();
-        if (this.field9288.field4648.field23382 != this.field9328) {
+        if (this.field9288.gameSettings.field23382 != this.field9328) {
             this.method5701();
         }
         this.field9292.method6796().startSection("camera");
-        final double n2 = this.field9288.field4684.getPosX() - this.field9310;
-        final double n3 = this.field9288.field4684.getPosY() - this.field9311;
-        final double n4 = this.field9288.field4684.getPosZ() - this.field9312;
-        if (this.field9313 != this.field9288.field4684.chunkCoordX || this.field9314 != this.field9288.field4684.chunkCoordY || this.field9315 != this.field9288.field4684.chunkCoordZ || n2 * n2 + n3 * n3 + n4 * n4 > 16.0) {
-            this.field9310 = this.field9288.field4684.getPosX();
-            this.field9311 = this.field9288.field4684.getPosY();
-            this.field9312 = this.field9288.field4684.getPosZ();
-            this.field9313 = this.field9288.field4684.chunkCoordX;
-            this.field9314 = this.field9288.field4684.chunkCoordY;
-            this.field9315 = this.field9288.field4684.chunkCoordZ;
-            this.field9296.method32961(this.field9288.field4684.getPosX(), this.field9288.field4684.getPosZ());
+        final double n2 = this.field9288.player.getPosX() - this.field9310;
+        final double n3 = this.field9288.player.getPosY() - this.field9311;
+        final double n4 = this.field9288.player.getPosZ() - this.field9312;
+        if (this.field9313 != this.field9288.player.chunkCoordX || this.field9314 != this.field9288.player.chunkCoordY || this.field9315 != this.field9288.player.chunkCoordZ || n2 * n2 + n3 * n3 + n4 * n4 > 16.0) {
+            this.field9310 = this.field9288.player.getPosX();
+            this.field9311 = this.field9288.player.getPosY();
+            this.field9312 = this.field9288.player.getPosZ();
+            this.field9313 = this.field9288.player.chunkCoordX;
+            this.field9314 = this.field9288.player.chunkCoordY;
+            this.field9315 = this.field9288.player.chunkCoordZ;
+            this.field9296.method32961(this.field9288.player.getPosX(), this.field9288.player.getPosZ());
         }
         if (Config.method29002()) {
             Class8850.method30985(this);
@@ -756,7 +756,7 @@ public class Class1656 implements AutoCloseable, Class1657
             this.method5764();
             this.field9347.clear();
             final Deque field9347 = this.field9347;
-            Entity.method1870(MathHelper.clamp(this.field9288.field4648.field23382 / 8.0, 1.0, 2.5));
+            Entity.method1870(MathHelper.clamp(this.field9288.gameSettings.field23382 / 8.0, 1.0, 2.5));
             boolean field9348 = this.field9288.field4710;
             if (method18163 != null && method18163.method31873().getY() <= method18168) {
                 boolean b3 = false;
@@ -927,7 +927,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public void method5711(final Class7351 class7351, final float f, final long n, final boolean b, final Class6092 class7352, final Class1660 class7353, final Class392 class7354, final Matrix4f class7355) {
+    public void method5711(final MatrixStack class7351, final float f, final long n, final boolean b, final Class6092 class7352, final Class1660 class7353, final Class392 class7354, final Matrix4f class7355) {
         Class9550.field41126.method35725(this.field9292, this.field9288.method5290(), this.field9288.fontRenderer, class7352, this.field9288.field4691);
         this.field9290.method28700(this.field9292, class7352, this.field9288.field4690);
         final IProfiler method6796 = this.field9292.method6796();
@@ -937,7 +937,7 @@ public class Class1656 implements AutoCloseable, Class1657
         final double method6798 = method6797.getX();
         final double method6799 = method6797.getY();
         final double method6800 = method6797.getZ();
-        final Matrix4f method6801 = class7351.method22569().method32111();
+        final Matrix4f method6801 = class7351.getLast().getMatrix();
         method6796.method15300("culling");
         final boolean b2 = this.field9332 != null;
         Class6664 field9332;
@@ -959,10 +959,10 @@ public class Class1656 implements AutoCloseable, Class1657
             Class9216.method33801(0, 0, this.field9288.method5332().method7692(), this.field9288.method5332().method7693());
         }
         else {
-            Class8726.method30048(0, 0, this.field9288.method5332().method7692(), this.field9288.method5332().method7693());
+            RenderSystem.method30048(0, 0, this.field9288.method5332().method7692(), this.field9288.method5332().method7693());
         }
-        Class9111.method32952(class7352, f, this.field9288.world, this.field9288.field4648.field23382, class7353.method5831(f));
-        Class8726.method30056(16640, Minecraft.field4623);
+        Class9111.method32952(class7352, f, this.field9288.world, this.field9288.gameSettings.field23382, class7353.method5831(f));
+        RenderSystem.method30056(16640, Minecraft.field4623);
         final boolean method6802 = Config.method28955();
         if (method6802) {
             Class9216.method33805();
@@ -990,10 +990,10 @@ public class Class1656 implements AutoCloseable, Class1657
         method6796.method15300("fog");
         Class9111.method32955(class7352, Class1985.field10994, Math.max(method6803 - 16.0f, 32.0f), b3, f);
         method6796.method15300("terrain_setup");
-        this.method5772(class7352, field9332, this.field9288.field4684.isSpectator());
-        this.method5707(class7352, field9332, b2, this.field9339++, this.field9288.field4684.isSpectator());
+        this.method5772(class7352, field9332, this.field9288.player.isSpectator());
+        this.method5707(class7352, field9332, b2, this.field9339++, this.field9288.player.isSpectator());
         method6796.method15300("updatechunks");
-        final int field9333 = this.field9288.field4648.field23383;
+        final int field9333 = this.field9288.gameSettings.field23383;
         long n2;
         if (field9333 == Class6469.field25712.method19473()) {
             n2 = 0L;
@@ -1007,7 +1007,7 @@ public class Class1656 implements AutoCloseable, Class1657
         Class9036.field38222.method26345();
         method6796.method15300("terrain");
         Class9036.field38225.method26344();
-        if (this.field9288.field4648.field23481) {
+        if (this.field9288.gameSettings.field23481) {
             this.field9288.method5327().method15300("finish");
             GL11.glFinish();
             this.field9288.method5327().method15300("terrain");
@@ -1016,7 +1016,7 @@ public class Class1656 implements AutoCloseable, Class1657
             Class8933.method31687(false);
         }
         this.method5714(Class6332.method18761(), class7351, method6798, method6799, method6800);
-        this.field9288.method5290().method5853(Class1774.field9853).method5868(false, this.field9288.field4648.field23405 > 0);
+        this.field9288.method5290().method5853(Class1774.field9853).method5868(false, this.field9288.gameSettings.field23405 > 0);
         this.method5714(Class6332.method18762(), class7351, method6798, method6799, method6800);
         this.field9288.method5290().method5853(Class1774.field9853).method5876();
         this.method5714(Class6332.method18763(), class7351, method6798, method6799, method6800);
@@ -1024,7 +1024,7 @@ public class Class1656 implements AutoCloseable, Class1657
             Class7778.method24947();
         }
         Class9036.field38225.method26345();
-        Class8317.method27610(class7351.method22569().method32111());
+        Class8317.method27610(class7351.getLast().getMatrix());
         if (method6802) {
             Class9216.method33834();
         }
@@ -1041,16 +1041,16 @@ public class Class1656 implements AutoCloseable, Class1657
             this.field9288.method5234().method18395(false);
         }
         boolean b4 = false;
-        final Class7808 method6805 = this.field9291.method11006();
+        final IRenderTypeBuffer.Impl method6805 = this.field9291.method11006();
         for (final Entity field9334 : this.field9292.method6806()) {
-            if ((this.field9290.method28705(field9334, field9332, method6798, method6799, method6800) || field9334.method1917(this.field9288.field4684)) && (field9334 != class7352.method18166() || Class9216.field39049 || class7352.method18168() || (class7352.method18166() instanceof LivingEntity && ((LivingEntity)class7352.method18166()).method2783())) && (!(field9334 instanceof Class756) || class7352.method18166() == field9334)) {
+            if ((this.field9290.method28705(field9334, field9332, method6798, method6799, method6800) || field9334.method1917(this.field9288.player)) && (field9334 != class7352.method18166() || Class9216.field39049 || class7352.method18168() || (class7352.method18166() instanceof LivingEntity && ((LivingEntity)class7352.method18166()).method2783())) && (!(field9334 instanceof Class756) || class7352.method18166() == field9334)) {
                 ++this.field9329;
                 if (field9334.ticksExisted == 0) {
                     field9334.lastTickPosX = field9334.getPosX();
                     field9334.lastTickPosY = field9334.getPosY();
                     field9334.lastTickPosZ = field9334.getPosZ();
                 }
-                Class7807 method6806;
+                IRenderTypeBuffer method6806;
                 if (this.method5694() && field9334.method1821()) {
                     b4 = true;
                     final Class7809 class7356 = (Class7809)(method6806 = this.field9291.method11008());
@@ -1098,7 +1098,7 @@ public class Class1656 implements AutoCloseable, Class1657
                         Class9216.method33846(class7358);
                     }
                     final BlockPos method6810 = class7358.getPos();
-                    Class7807 class7360 = method6805;
+                    IRenderTypeBuffer class7360 = method6805;
                     class7351.method22567();
                     class7351.method22564(method6810.getX() - method6798, method6810.getY() - method6799, method6810.getZ() - method6800);
                     final SortedSet set = (SortedSet)this.field9306.get(method6810.toLong());
@@ -1170,7 +1170,7 @@ public class Class1656 implements AutoCloseable, Class1657
                 final int method6814 = set2.last().method1048();
                 class7351.method22567();
                 class7351.method22564(method6813.getX() - method6798, method6813.getY() - method6799, method6813.getZ() - method6800);
-                this.field9288.method5305().method5788(this.field9292.getBlockState(method6813), method6813, this.field9292, class7351, new Class4155(this.field9291.method11007().method25214(Class7637.field30247.get(method6814)), class7351.method22569()));
+                this.field9288.method5305().method5788(this.field9292.getBlockState(method6813), method6813, this.field9292, class7351, new Class4155(this.field9291.method11007().method25214(Class7637.field30247.get(method6814)), class7351.getLast()));
                 class7351.method22568();
             }
         }
@@ -1194,23 +1194,23 @@ public class Class1656 implements AutoCloseable, Class1657
                 this.method5727(class7351, method6805.method25214(Class6332.method18791()), class7352.method18166(), method6798, method6799, method6800, method6815, method6816);
             }
         }
-        Class8726.method30059();
-        Class8726.method30067(class7351.method22569().method32111());
+        RenderSystem.method30059();
+        RenderSystem.method30067(class7351.getLast().getMatrix());
         final boolean method6817 = Class8933.method31670();
         Class8933.method31585();
         this.field9288.field4645.method22332(class7351, method6805, method6798, method6799, method6800);
         Class8933.method31671(method6817);
         this.method5725(class7352);
-        Class8726.method30060();
+        RenderSystem.method30060();
         method6805.method25217(Class8752.method30265());
         method6805.method25217(Class8752.method30257());
         method6805.method25217(Class8752.method30258());
         method6805.method25217(Class6332.method18784());
         method6805.method25217(Class6332.method18785());
         method6805.method25217(Class6332.method18782());
-        this.field9291.method11007().method25216();
+        this.field9291.method11007().finish();
         method6805.method25217(Class6332.method18791());
-        method6805.method25216();
+        method6805.finish();
         if (method6802) {
             Class9216.method33856();
             Class7778.method24950(class7353, class7351, class7352, f);
@@ -1235,14 +1235,14 @@ public class Class1656 implements AutoCloseable, Class1657
             Class9216.method33852();
         }
         Class8933.method31687(true);
-        Class8726.method30059();
-        Class8726.method30067(class7351.method22569().method32111());
+        RenderSystem.method30059();
+        RenderSystem.method30067(class7351.getLast().getMatrix());
         method6796.method15300("cloudsLayers");
-        if (this.field9288.field4648.method17128() != Class2202.field13405) {
+        if (this.field9288.gameSettings.method17128() != Class2202.field13405) {
             method6796.method15300("clouds");
             this.method5722(class7351, f, method6798, method6799, method6800);
         }
-        Class8726.method30010(false);
+        RenderSystem.method30010(false);
         if (Config.method28955()) {
             Class8933.method31517(Class9216.method33757());
         }
@@ -1254,26 +1254,26 @@ public class Class1656 implements AutoCloseable, Class1657
         if (method6802) {
             Class9216.method33855();
         }
-        Class8726.method30010(true);
+        RenderSystem.method30010(true);
         this.method5715(class7352);
-        Class8726.method30045(7424);
-        Class8726.method30010(true);
-        Class8726.method30012();
-        Class8726.method30060();
+        RenderSystem.shadeModel(7424);
+        RenderSystem.method30010(true);
+        RenderSystem.disableBlend();
+        RenderSystem.method30060();
         Class9111.method32953();
     }
     
-    public void method5712(final Class7351 class7351) {
+    public void method5712(final MatrixStack class7351) {
         if (!class7351.method22570()) {
             throw new IllegalStateException("Pose stack not empty");
         }
     }
     
-    public void method5713(final Entity class399, final double n, final double n2, final double n3, final float n4, final Class7351 class400, final Class7807 class401) {
+    public void method5713(final Entity class399, final double n, final double n2, final double n3, final float n4, final MatrixStack class400, final IRenderTypeBuffer class401) {
         this.field9290.method28706(class399, MathHelper.lerp(n4, class399.lastTickPosX, class399.getPosX()) - n, MathHelper.lerp(n4, class399.lastTickPosY, class399.getPosY()) - n2, MathHelper.lerp(n4, class399.lastTickPosZ, class399.getPosZ()) - n3, MathHelper.method35700(n4, class399.prevRotationYaw, class399.rotationYaw), n4, class400, class401, this.field9290.method28695(class399, n4));
     }
     
-    public void method5714(final Class6332 class6332, final Class7351 class6333, final double field9335, final double field9336, final double field9337) {
+    public void method5714(final Class6332 class6332, final MatrixStack class6333, final double field9335, final double field9336, final double field9337) {
         class6332.method18709();
         final boolean method28955 = Config.method28955();
         if (class6332 == Class6332.method18765() && !Class9216.field39049) {
@@ -1320,11 +1320,11 @@ public class Class1656 implements AutoCloseable, Class1657
                 final BlockPos method28958 = field9338.method31873();
                 class6333.method22564(method28958.getX() - field9335, method28958.getY() - field9336, method28958.getZ() - field9337);
                 method28957.method7587();
-                Class9237.field39607.method34196(0L);
+                DefaultVertexFormats.field39607.method34196(0L);
                 if (method28955) {
                     Class7778.method24962();
                 }
-                method28957.method7591(class6333.method22569().method32111(), 7);
+                method28957.method7591(class6333.getLast().getMatrix(), 7);
                 class6333.method22568();
                 if (!method28956) {
                     continue;
@@ -1337,8 +1337,8 @@ public class Class1656 implements AutoCloseable, Class1657
             }
         }
         Class1918.method7592();
-        Class8726.method30070();
-        Class9237.field39607.method34197();
+        RenderSystem.method30070();
+        DefaultVertexFormats.field39607.method34197();
         this.field9288.method5327().endSection();
         if (method28955) {
             Class7778.method24959(class6332);
@@ -1347,108 +1347,108 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     private void method5715(final Class6092 class6092) {
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
         if (this.field9288.field4708 || this.field9288.field4709) {
             final double method22696 = class6092.method18161().getX();
             final double method22697 = class6092.method18161().getY();
             final double method22698 = class6092.method18161().getZ();
-            Class8726.method30010(true);
-            Class8726.method30029();
-            Class8726.method30011();
-            Class8726.method30117();
-            Class8726.method30041();
+            RenderSystem.method30010(true);
+            RenderSystem.method30029();
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
+            RenderSystem.disableTexture();
             for (final Class9071 class6093 : this.field9294) {
                 final Class8974 field38417 = class6093.field38417;
-                Class8726.method30059();
+                RenderSystem.method30059();
                 final BlockPos method22699 = field38417.method31873();
-                Class8726.method30066(method22699.getX() - method22696, method22699.getY() - method22697, method22699.getZ() - method22698);
+                RenderSystem.method30066(method22699.getX() - method22696, method22699.getY() - method22697, method22699.getZ() - method22698);
                 if (this.field9288.field4708) {
-                    method22695.method12390(1, Class9237.field39615);
-                    Class8726.method30072(10.0f);
+                    method22695.begin(1, DefaultVertexFormats.POSITION_COLOR);
+                    RenderSystem.method30072(10.0f);
                     final int n = (Class9071.method32683(class6093) == 0) ? 0 : MathHelper.method35697(Class9071.method32683(class6093) / 50.0f, 0.9f, 0.9f);
                     final int n2 = n >> 16 & 0xFF;
                     final int n3 = n >> 8 & 0xFF;
                     final int n4 = n & 0xFF;
                     final Direction method22700 = Class9071.method32681(class6093);
                     if (method22700 != null) {
-                        method22695.method12432(8.0, 8.0, 8.0).method12399(n2, n3, n4, 255).method12397();
-                        method22695.method12432(8 - 16 * method22700.getXOffset(), 8 - 16 * method22700.getYOffset(), 8 - 16 * method22700.getZOffset()).method12399(n2, n3, n4, 255).method12397();
+                        method22695.pos(8.0, 8.0, 8.0).method12399(n2, n3, n4, 255).endVertex();
+                        method22695.pos(8 - 16 * method22700.getXOffset(), 8 - 16 * method22700.getYOffset(), 8 - 16 * method22700.getZOffset()).method12399(n2, n3, n4, 255).endVertex();
                     }
-                    method22694.method22695();
-                    Class8726.method30072(1.0f);
+                    method22694.draw();
+                    RenderSystem.method30072(1.0f);
                 }
                 if (this.field9288.field4709 && !field38417.method31870().method32212()) {
-                    method22695.method12390(1, Class9237.field39615);
-                    Class8726.method30072(10.0f);
+                    method22695.begin(1, DefaultVertexFormats.POSITION_COLOR);
+                    RenderSystem.method30072(10.0f);
                     int n5 = 0;
                     for (final Direction class6094 : Direction.values()) {
                         for (final Direction class6095 : Direction.values()) {
                             if (!field38417.method31870().method32210(class6094, class6095)) {
                                 ++n5;
-                                method22695.method12432(8 + 8 * class6094.getXOffset(), 8 + 8 * class6094.getYOffset(), 8 + 8 * class6094.getZOffset()).method12399(1, 0, 0, 1).method12397();
-                                method22695.method12432(8 + 8 * class6095.getXOffset(), 8 + 8 * class6095.getYOffset(), 8 + 8 * class6095.getZOffset()).method12399(1, 0, 0, 1).method12397();
+                                method22695.pos(8 + 8 * class6094.getXOffset(), 8 + 8 * class6094.getYOffset(), 8 + 8 * class6094.getZOffset()).method12399(1, 0, 0, 1).endVertex();
+                                method22695.pos(8 + 8 * class6095.getXOffset(), 8 + 8 * class6095.getYOffset(), 8 + 8 * class6095.getZOffset()).method12399(1, 0, 0, 1).endVertex();
                             }
                         }
                     }
-                    method22694.method22695();
-                    Class8726.method30072(1.0f);
+                    method22694.draw();
+                    RenderSystem.method30072(1.0f);
                     if (n5 > 0) {
-                        method22695.method12390(7, Class9237.field39615);
-                        method22695.method12432(0.5, 15.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 15.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 15.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 15.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 0.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 0.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 0.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 0.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 15.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 15.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 0.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 0.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 0.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 0.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 15.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 15.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 0.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 0.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 15.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 15.5, 0.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 15.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 15.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(15.5, 0.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22695.method12432(0.5, 0.5, 15.5).method12439(0.9f, 0.9f, 0.0f, 0.2f).method12397();
-                        method22694.method22695();
+                        method22695.begin(7, DefaultVertexFormats.POSITION_COLOR);
+                        method22695.pos(0.5, 15.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 15.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 15.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 15.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 0.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 0.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 0.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 0.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 15.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 15.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 0.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 0.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 0.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 0.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 15.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 15.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 0.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 0.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 15.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 15.5, 0.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 15.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 15.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(15.5, 0.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22695.pos(0.5, 0.5, 15.5).color(0.9f, 0.9f, 0.0f, 0.2f).endVertex();
+                        method22694.draw();
                     }
                 }
-                Class8726.method30060();
+                RenderSystem.method30060();
             }
-            Class8726.method30010(true);
-            Class8726.method30012();
-            Class8726.method30028();
-            Class8726.method30040();
+            RenderSystem.method30010(true);
+            RenderSystem.disableBlend();
+            RenderSystem.method30028();
+            RenderSystem.enableTexture();
         }
         if (this.field9332 != null) {
-            Class8726.method30029();
-            Class8726.method30041();
-            Class8726.method30011();
-            Class8726.method30117();
-            Class8726.method30072(10.0f);
-            Class8726.method30059();
-            Class8726.method30065((float)(this.field9334.field28226 - class6092.method18161().x), (float)(this.field9334.field28227 - class6092.method18161().y), (float)(this.field9334.field28228 - class6092.method18161().z));
-            Class8726.method30010(true);
-            method22695.method12390(7, Class9237.field39615);
+            RenderSystem.method30029();
+            RenderSystem.disableTexture();
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
+            RenderSystem.method30072(10.0f);
+            RenderSystem.method30059();
+            RenderSystem.method30065((float)(this.field9334.field28226 - class6092.method18161().x), (float)(this.field9334.field28227 - class6092.method18161().y), (float)(this.field9334.field28228 - class6092.method18161().z));
+            RenderSystem.method30010(true);
+            method22695.begin(7, DefaultVertexFormats.POSITION_COLOR);
             this.method5717(method22695, 0, 1, 2, 3, 0, 1, 1);
             this.method5717(method22695, 4, 5, 6, 7, 1, 0, 0);
             this.method5717(method22695, 0, 1, 5, 4, 1, 1, 0);
             this.method5717(method22695, 2, 3, 7, 6, 0, 0, 1);
             this.method5717(method22695, 0, 4, 7, 3, 0, 1, 0);
             this.method5717(method22695, 1, 5, 6, 2, 1, 0, 1);
-            method22694.method22695();
-            Class8726.method30010(false);
-            method22695.method12390(1, Class9237.field39614);
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            method22694.draw();
+            RenderSystem.method30010(false);
+            method22695.begin(1, DefaultVertexFormats.field39614);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             this.method5716(method22695, 0);
             this.method5716(method22695, 1);
             this.method5716(method22695, 1);
@@ -1473,25 +1473,25 @@ public class Class1656 implements AutoCloseable, Class1657
             this.method5716(method22695, 6);
             this.method5716(method22695, 3);
             this.method5716(method22695, 7);
-            method22694.method22695();
-            Class8726.method30060();
-            Class8726.method30010(true);
-            Class8726.method30012();
-            Class8726.method30028();
-            Class8726.method30040();
-            Class8726.method30072(1.0f);
+            method22694.draw();
+            RenderSystem.method30060();
+            RenderSystem.method30010(true);
+            RenderSystem.disableBlend();
+            RenderSystem.method30028();
+            RenderSystem.enableTexture();
+            RenderSystem.method30072(1.0f);
         }
     }
     
     private void method5716(final Class4150 class4150, final int n) {
-        class4150.method12432(this.field9333[n].method28595(), this.field9333[n].method28596(), this.field9333[n].method28597()).method12397();
+        class4150.pos(this.field9333[n].method28595(), this.field9333[n].method28596(), this.field9333[n].method28597()).endVertex();
     }
     
     private void method5717(final Class4150 class4150, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7) {
-        class4150.method12432(this.field9333[n].method28595(), this.field9333[n].method28596(), this.field9333[n].method28597()).method12439((float)n5, (float)n6, (float)n7, 0.25f).method12397();
-        class4150.method12432(this.field9333[n2].method28595(), this.field9333[n2].method28596(), this.field9333[n2].method28597()).method12439((float)n5, (float)n6, (float)n7, 0.25f).method12397();
-        class4150.method12432(this.field9333[n3].method28595(), this.field9333[n3].method28596(), this.field9333[n3].method28597()).method12439((float)n5, (float)n6, (float)n7, 0.25f).method12397();
-        class4150.method12432(this.field9333[n4].method28595(), this.field9333[n4].method28596(), this.field9333[n4].method28597()).method12439((float)n5, (float)n6, (float)n7, 0.25f).method12397();
+        class4150.pos(this.field9333[n].method28595(), this.field9333[n].method28596(), this.field9333[n].method28597()).color((float)n5, (float)n6, (float)n7, 0.25f).endVertex();
+        class4150.pos(this.field9333[n2].method28595(), this.field9333[n2].method28596(), this.field9333[n2].method28597()).color((float)n5, (float)n6, (float)n7, 0.25f).endVertex();
+        class4150.pos(this.field9333[n3].method28595(), this.field9333[n3].method28596(), this.field9333[n3].method28597()).color((float)n5, (float)n6, (float)n7, 0.25f).endVertex();
+        class4150.pos(this.field9333[n4].method28595(), this.field9333[n4].method28596(), this.field9333[n4].method28597()).color((float)n5, (float)n6, (float)n7, 0.25f).endVertex();
     }
     
     public void method5718() {
@@ -1517,15 +1517,15 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    private void method5720(final Class7351 class7351) {
+    private void method5720(final MatrixStack class7351) {
         if (Config.method28913()) {
-            Class8726.method29998();
-            Class8726.method30011();
-            Class8726.method30117();
-            Class8726.method30010(false);
+            RenderSystem.disableAlphaTest();
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
+            RenderSystem.method30010(false);
             this.field9289.method5849(Class1656.field9283);
-            final Class7392 method22694 = Class7392.method22694();
-            final Class4148 method22695 = method22694.method22696();
+            final Tessellator method22694 = Tessellator.getInstance();
+            final BufferBuilder method22695 = method22694.getBuffer();
             for (int i = 0; i < 6; ++i) {
                 class7351.method22567();
                 if (i == 1) {
@@ -1543,8 +1543,8 @@ public class Class1656 implements AutoCloseable, Class1657
                 if (i == 5) {
                     class7351.method22566(Vector3f.ZP.rotationDegrees(-90.0f));
                 }
-                final Matrix4f method22696 = class7351.method22569().method32111();
-                method22695.method12390(7, Class9237.field39619);
+                final Matrix4f method22696 = class7351.getLast().getMatrix();
+                method22695.begin(7, DefaultVertexFormats.field39619);
                 int n = 40;
                 int n2 = 40;
                 int n3 = 40;
@@ -1554,21 +1554,21 @@ public class Class1656 implements AutoCloseable, Class1657
                     n2 = (int)(method22697.y * 255.0);
                     n3 = (int)(method22697.z * 255.0);
                 }
-                method22695.method12444(method22696, -100.0f, -100.0f, -100.0f).method12391(0.0f, 0.0f).method12399(n, n2, n3, 255).method12397();
-                method22695.method12444(method22696, -100.0f, -100.0f, 100.0f).method12391(0.0f, 16.0f).method12399(n, n2, n3, 255).method12397();
-                method22695.method12444(method22696, 100.0f, -100.0f, 100.0f).method12391(16.0f, 16.0f).method12399(n, n2, n3, 255).method12397();
-                method22695.method12444(method22696, 100.0f, -100.0f, -100.0f).method12391(16.0f, 0.0f).method12399(n, n2, n3, 255).method12397();
-                method22694.method22695();
+                method22695.pos(method22696, -100.0f, -100.0f, -100.0f).tex(0.0f, 0.0f).method12399(n, n2, n3, 255).endVertex();
+                method22695.pos(method22696, -100.0f, -100.0f, 100.0f).tex(0.0f, 16.0f).method12399(n, n2, n3, 255).endVertex();
+                method22695.pos(method22696, 100.0f, -100.0f, 100.0f).tex(16.0f, 16.0f).method12399(n, n2, n3, 255).endVertex();
+                method22695.pos(method22696, 100.0f, -100.0f, -100.0f).tex(16.0f, 0.0f).method12399(n, n2, n3, 255).endVertex();
+                method22694.draw();
                 class7351.method22568();
             }
-            Class8726.method30010(true);
-            Class8726.method30040();
-            Class8726.method30012();
-            Class8726.method29999();
+            RenderSystem.method30010(true);
+            RenderSystem.enableTexture();
+            RenderSystem.disableBlend();
+            RenderSystem.enableAlphaTest();
         }
     }
     
-    public void method5721(final Class7351 class7351, final float f) {
+    public void method5721(final MatrixStack class7351, final float f) {
         if (Class9570.field41363.method22605()) {
             final Object method35826 = Class9570.method35826(this.field9288.world.dimension, Class9570.field41363, new Object[0]);
             if (method35826 != null) {
@@ -1580,7 +1580,7 @@ public class Class1656 implements AutoCloseable, Class1657
             this.method5720(class7351);
         }
         else if (this.field9288.world.dimension.method20492()) {
-            Class8726.method30041();
+            RenderSystem.disableTexture();
             final boolean method35827 = Config.method28955();
             if (method35827) {
                 Class9216.method33872();
@@ -1593,37 +1593,37 @@ public class Class1656 implements AutoCloseable, Class1657
             final float n2 = (float)method35828.y;
             final float n3 = (float)method35828.z;
             Class9111.method32956();
-            final Class4148 method35829 = Class7392.method22694().method22696();
-            Class8726.method30010(false);
-            Class8726.method30019();
+            final BufferBuilder method35829 = Tessellator.getInstance().getBuffer();
+            RenderSystem.method30010(false);
+            RenderSystem.method30019();
             if (method35827) {
                 Class9216.method33875();
             }
-            Class8726.method30069(n, n2, n3);
+            RenderSystem.method30069(n, n2, n3);
             if (method35827) {
                 Class9216.method33827(class7351);
             }
             if (Config.method28913()) {
                 this.field9299.method7587();
                 this.field9297.method34196(0L);
-                this.field9299.method7591(class7351.method22569().method32111(), 7);
+                this.field9299.method7591(class7351.getLast().getMatrix(), 7);
                 Class1918.method7592();
                 this.field9297.method34197();
             }
-            Class8726.method30020();
+            RenderSystem.method30020();
             if (method35827) {
                 Class9216.method33876();
             }
-            Class8726.method29998();
-            Class8726.method30011();
-            Class8726.method30117();
+            RenderSystem.disableAlphaTest();
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
             final float[] method35830 = this.field9292.dimension.method20497(this.field9292.method6952(f), f);
             if (method35830 != null && Config.method28914()) {
-                Class8726.method30041();
+                RenderSystem.disableTexture();
                 if (method35827) {
                     Class9216.method33872();
                 }
-                Class8726.method30045(7425);
+                RenderSystem.shadeModel(7425);
                 class7351.method22567();
                 class7351.method22566(Vector3f.XP.rotationDegrees(90.0f));
                 class7351.method22566(Vector3f.ZP.rotationDegrees((MathHelper.sin(this.field9292.method6713(f)) < 0.0f) ? 180.0f : 0.0f));
@@ -1631,28 +1631,28 @@ public class Class1656 implements AutoCloseable, Class1657
                 final float n4 = method35830[0];
                 final float n5 = method35830[1];
                 final float n6 = method35830[2];
-                final Matrix4f method35831 = class7351.method22569().method32111();
-                method35829.method12390(6, Class9237.field39615);
-                method35829.method12444(method35831, 0.0f, 100.0f, 0.0f).method12439(n4, n5, n6, method35830[3]).method12397();
+                final Matrix4f method35831 = class7351.getLast().getMatrix();
+                method35829.begin(6, DefaultVertexFormats.POSITION_COLOR);
+                method35829.pos(method35831, 0.0f, 100.0f, 0.0f).color(n4, n5, n6, method35830[3]).endVertex();
                 for (int i = 0; i <= 16; ++i) {
                     final float n7 = i * 6.2831855f / 16.0f;
                     final float method35832 = MathHelper.sin(n7);
                     final float method35833 = MathHelper.cos(n7);
-                    method35829.method12444(method35831, method35832 * 120.0f, method35833 * 120.0f, -method35833 * 40.0f * method35830[3]).method12439(method35830[0], method35830[1], method35830[2], 0.0f).method12397();
+                    method35829.pos(method35831, method35832 * 120.0f, method35833 * 120.0f, -method35833 * 40.0f * method35830[3]).color(method35830[0], method35830[1], method35830[2], 0.0f).endVertex();
                 }
-                method35829.method12393();
-                Class8475.method28282(method35829);
+                method35829.finishDrawing();
+                WorldVertexBufferUploader.draw(method35829);
                 class7351.method22568();
-                Class8726.method30045(7424);
+                RenderSystem.shadeModel(7424);
             }
-            Class8726.method30040();
+            RenderSystem.enableTexture();
             if (method35827) {
                 Class9216.method33871();
             }
-            Class8726.method30015(Class2050.field11693, Class2135.field12455, Class2050.field11686, Class2135.field12464);
+            RenderSystem.method30015(Class2050.field11693, Class2135.field12455, Class2050.field11686, Class2135.field12464);
             class7351.method22567();
             final float n8 = 1.0f - this.field9292.method6768(f);
-            Class8726.method30068(1.0f, 1.0f, 1.0f, n8);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, n8);
             class7351.method22566(Vector3f.YP.rotationDegrees(-90.0f));
             Class9132.method33155(this.field9292, this.field9289, class7351, f);
             if (method35827) {
@@ -1662,17 +1662,17 @@ public class Class1656 implements AutoCloseable, Class1657
             if (method35827) {
                 Class9216.method33811(class7351);
             }
-            final Matrix4f method35834 = class7351.method22569().method32111();
+            final Matrix4f method35834 = class7351.getLast().getMatrix();
             final float n9 = 30.0f;
             if (Config.method28915()) {
                 this.field9289.method5849(Class1656.field9281);
-                method35829.method12390(7, Class9237.field39617);
-                method35829.method12444(method35834, -n9, 100.0f, -n9).method12391(0.0f, 0.0f).method12397();
-                method35829.method12444(method35834, n9, 100.0f, -n9).method12391(1.0f, 0.0f).method12397();
-                method35829.method12444(method35834, n9, 100.0f, n9).method12391(1.0f, 1.0f).method12397();
-                method35829.method12444(method35834, -n9, 100.0f, n9).method12391(0.0f, 1.0f).method12397();
-                method35829.method12393();
-                Class8475.method28282(method35829);
+                method35829.begin(7, DefaultVertexFormats.field39617);
+                method35829.pos(method35834, -n9, 100.0f, -n9).tex(0.0f, 0.0f).endVertex();
+                method35829.pos(method35834, n9, 100.0f, -n9).tex(1.0f, 0.0f).endVertex();
+                method35829.pos(method35834, n9, 100.0f, n9).tex(1.0f, 1.0f).endVertex();
+                method35829.pos(method35834, -n9, 100.0f, n9).tex(0.0f, 1.0f).endVertex();
+                method35829.finishDrawing();
+                WorldVertexBufferUploader.draw(method35829);
             }
             final float n10 = 20.0f;
             if (Config.method28916()) {
@@ -1684,63 +1684,63 @@ public class Class1656 implements AutoCloseable, Class1657
                 final float n14 = (n12 + 0) / 2.0f;
                 final float n15 = (n11 + 1) / 4.0f;
                 final float n16 = (n12 + 1) / 2.0f;
-                method35829.method12390(7, Class9237.field39617);
-                method35829.method12444(method35834, -n10, -100.0f, n10).method12391(n15, n16).method12397();
-                method35829.method12444(method35834, n10, -100.0f, n10).method12391(n13, n16).method12397();
-                method35829.method12444(method35834, n10, -100.0f, -n10).method12391(n13, n14).method12397();
-                method35829.method12444(method35834, -n10, -100.0f, -n10).method12391(n15, n14).method12397();
-                method35829.method12393();
-                Class8475.method28282(method35829);
+                method35829.begin(7, DefaultVertexFormats.field39617);
+                method35829.pos(method35834, -n10, -100.0f, n10).tex(n15, n16).endVertex();
+                method35829.pos(method35834, n10, -100.0f, n10).tex(n13, n16).endVertex();
+                method35829.pos(method35834, n10, -100.0f, -n10).tex(n13, n14).endVertex();
+                method35829.pos(method35834, -n10, -100.0f, -n10).tex(n15, n14).endVertex();
+                method35829.finishDrawing();
+                WorldVertexBufferUploader.draw(method35829);
             }
-            Class8726.method30041();
+            RenderSystem.disableTexture();
             if (method35827) {
                 Class9216.method33872();
             }
             final float n17 = this.field9292.method6846(f) * n8;
             if (n17 > 0.0f && Config.method28918() && !Class9132.method33156(this.field9292)) {
-                Class8726.method30068(n17, n17, n17, n17);
+                RenderSystem.method30068(n17, n17, n17, n17);
                 this.field9298.method7587();
                 this.field9297.method34196(0L);
-                this.field9298.method7591(class7351.method22569().method32111(), 7);
+                this.field9298.method7591(class7351.getLast().getMatrix(), 7);
                 Class1918.method7592();
                 this.field9297.method34197();
             }
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method30012();
-            Class8726.method29999();
-            Class8726.method30019();
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.disableBlend();
+            RenderSystem.enableAlphaTest();
+            RenderSystem.method30019();
             if (method35827) {
                 Class9216.method33875();
             }
             class7351.method22568();
-            Class8726.method30041();
+            RenderSystem.disableTexture();
             if (method35827) {
                 Class9216.method33872();
             }
-            Class8726.method30069(0.0f, 0.0f, 0.0f);
-            if (this.field9288.field4684.method1747(f).y - this.field9292.method6847() < 0.0) {
+            RenderSystem.method30069(0.0f, 0.0f, 0.0f);
+            if (this.field9288.player.method1747(f).y - this.field9292.method6847() < 0.0) {
                 class7351.method22567();
                 class7351.method22564(0.0, 12.0, 0.0);
                 this.field9300.method7587();
                 this.field9297.method34196(0L);
-                this.field9300.method7591(class7351.method22569().method32111(), 7);
+                this.field9300.method7591(class7351.getLast().getMatrix(), 7);
                 Class1918.method7592();
                 this.field9297.method34197();
                 class7351.method22568();
             }
             if (this.field9292.dimension.method20499()) {
-                Class8726.method30069(n * 0.2f + 0.04f, n2 * 0.2f + 0.04f, n3 * 0.6f + 0.1f);
+                RenderSystem.method30069(n * 0.2f + 0.04f, n2 * 0.2f + 0.04f, n3 * 0.6f + 0.1f);
             }
             else {
-                Class8726.method30069(n, n2, n3);
+                RenderSystem.method30069(n, n2, n3);
             }
-            Class8726.method30040();
-            Class8726.method30010(true);
-            Class8726.method30020();
+            RenderSystem.enableTexture();
+            RenderSystem.method30010(true);
+            RenderSystem.method30020();
         }
     }
     
-    public void method5722(final Class7351 class7351, final float f, final double n, final double n2, final double n3) {
+    public void method5722(final MatrixStack class7351, final float f, final double n, final double n2, final double n3) {
         if (!Config.method28858()) {
             if (Class9570.field41362.method22605()) {
                 final Object method35826 = Class9570.method35826(this.field9288.world.dimension, Class9570.field41362, new Object[0]);
@@ -1753,15 +1753,15 @@ public class Class1656 implements AutoCloseable, Class1657
                 if (Config.method28955()) {
                     Class9216.method33832();
                 }
-                Class8726.method30029();
-                Class8726.method30011();
-                Class8726.method29999();
-                Class8726.method30008();
-                Class8726.method30118();
-                Class8726.method30117();
-                Class8726.method30019();
+                RenderSystem.method30029();
+                RenderSystem.enableBlend();
+                RenderSystem.enableAlphaTest();
+                RenderSystem.enableDepthTest();
+                RenderSystem.method30118();
+                RenderSystem.defaultBlendFunc();
+                RenderSystem.method30019();
                 final double n4 = (n + (this.field9304 + f) * 0.03f) / 12.0;
-                final double n5 = this.field9292.dimension.method20498() - (float)n2 + 0.33f + this.field9288.field4648.field23490 * 128.0;
+                final double n5 = this.field9292.dimension.method20498() - (float)n2 + 0.33f + this.field9288.gameSettings.field23490 * 128.0;
                 final double n6 = n3 / 12.0 + 0.33000001311302185;
                 final double a = n4 - MathHelper.floor(n4 / 2048.0) * 2048;
                 final double a2 = n6 - MathHelper.floor(n6 / 2048.0) * 2048;
@@ -1772,23 +1772,23 @@ public class Class1656 implements AutoCloseable, Class1657
                 final int field9321 = (int)Math.floor(a);
                 final int field9322 = (int)Math.floor(n5 / 4.0);
                 final int field9323 = (int)Math.floor(a2);
-                if (field9321 != this.field9321 || field9322 != this.field9322 || field9323 != this.field9323 || this.field9288.field4648.method17128() != this.field9325 || this.field9324.squareDistanceTo(method35827) > 2.0E-4) {
+                if (field9321 != this.field9321 || field9322 != this.field9322 || field9323 != this.field9323 || this.field9288.gameSettings.method17128() != this.field9325 || this.field9324.squareDistanceTo(method35827) > 2.0E-4) {
                     this.field9321 = field9321;
                     this.field9322 = field9322;
                     this.field9323 = field9323;
                     this.field9324 = method35827;
-                    this.field9325 = this.field9288.field4648.method17128();
+                    this.field9325 = this.field9288.gameSettings.method17128();
                     this.field9301 = true;
                 }
                 if (this.field9301) {
                     this.field9301 = false;
-                    final Class4148 method35828 = Class7392.method22694().method22696();
+                    final BufferBuilder method35828 = Tessellator.getInstance().getBuffer();
                     if (this.field9302 != null) {
                         this.field9302.close();
                     }
-                    this.field9302 = new Class1918(Class9237.field39622);
+                    this.field9302 = new Class1918(DefaultVertexFormats.field39622);
                     this.method5723(method35828, a, n5, a2, method35827);
-                    method35828.method12393();
+                    method35828.finishDrawing();
                     this.field9302.method7588(method35828);
                 }
                 this.field9289.method5849(Class1656.field9282);
@@ -1797,25 +1797,25 @@ public class Class1656 implements AutoCloseable, Class1657
                 class7351.method22564(-n7, n8, -n9);
                 if (this.field9302 != null) {
                     this.field9302.method7587();
-                    Class9237.field39622.method34196(0L);
+                    DefaultVertexFormats.field39622.method34196(0L);
                     for (int i = (this.field9325 != Class2202.field13407) ? 1 : 0; i < 2; ++i) {
                         if (i == 0) {
-                            Class8726.method30049(false, false, false, false);
+                            RenderSystem.method30049(false, false, false, false);
                         }
                         else {
-                            Class8726.method30049(true, true, true, true);
+                            RenderSystem.method30049(true, true, true, true);
                         }
-                        this.field9302.method7591(class7351.method22569().method32111(), 7);
+                        this.field9302.method7591(class7351.getLast().getMatrix(), 7);
                     }
                     Class1918.method7592();
-                    Class9237.field39622.method34197();
+                    DefaultVertexFormats.field39622.method34197();
                 }
                 class7351.method22568();
-                Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-                Class8726.method29998();
-                Class8726.method30028();
-                Class8726.method30012();
-                Class8726.method30020();
+                RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                RenderSystem.disableAlphaTest();
+                RenderSystem.method30028();
+                RenderSystem.disableBlend();
+                RenderSystem.method30020();
                 if (Config.method28955()) {
                     Class9216.method33833();
                 }
@@ -1823,7 +1823,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    private void method5723(final Class4148 class4148, final double n, final double n2, final double n3, final Vec3d class4149) {
+    private void method5723(final BufferBuilder class4148, final double n, final double n2, final double n3, final Vec3d class4149) {
         final float n4 = MathHelper.floor(n) * 0.00390625f;
         final float n5 = MathHelper.floor(n3) * 0.00390625f;
         final float n6 = (float)class4149.x;
@@ -1838,7 +1838,7 @@ public class Class1656 implements AutoCloseable, Class1657
         final float n15 = n6 * 0.8f;
         final float n16 = n7 * 0.8f;
         final float n17 = n8 * 0.8f;
-        class4148.method12390(7, Class9237.field39622);
+        class4148.begin(7, DefaultVertexFormats.field39622);
         final float n18 = (float)Math.floor(n2 / 4.0) * 4.0f;
         if (Config.method28857()) {
             for (int i = -3; i <= 4; ++i) {
@@ -1846,47 +1846,47 @@ public class Class1656 implements AutoCloseable, Class1657
                     final float n19 = (float)(i * 8);
                     final float n20 = (float)(j * 8);
                     if (n18 > -5.0f) {
-                        class4148.method12432(n19 + 0.0f, n18 + 0.0f, n20 + 8.0f).method12391((n19 + 0.0f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).method12439(n12, n13, n14, 0.8f).method12436(0.0f, -1.0f, 0.0f).method12397();
-                        class4148.method12432(n19 + 8.0f, n18 + 0.0f, n20 + 8.0f).method12391((n19 + 8.0f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).method12439(n12, n13, n14, 0.8f).method12436(0.0f, -1.0f, 0.0f).method12397();
-                        class4148.method12432(n19 + 8.0f, n18 + 0.0f, n20 + 0.0f).method12391((n19 + 8.0f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).method12439(n12, n13, n14, 0.8f).method12436(0.0f, -1.0f, 0.0f).method12397();
-                        class4148.method12432(n19 + 0.0f, n18 + 0.0f, n20 + 0.0f).method12391((n19 + 0.0f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).method12439(n12, n13, n14, 0.8f).method12436(0.0f, -1.0f, 0.0f).method12397();
+                        class4148.pos(n19 + 0.0f, n18 + 0.0f, n20 + 8.0f).tex((n19 + 0.0f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).color(n12, n13, n14, 0.8f).method12436(0.0f, -1.0f, 0.0f).endVertex();
+                        class4148.pos(n19 + 8.0f, n18 + 0.0f, n20 + 8.0f).tex((n19 + 8.0f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).color(n12, n13, n14, 0.8f).method12436(0.0f, -1.0f, 0.0f).endVertex();
+                        class4148.pos(n19 + 8.0f, n18 + 0.0f, n20 + 0.0f).tex((n19 + 8.0f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).color(n12, n13, n14, 0.8f).method12436(0.0f, -1.0f, 0.0f).endVertex();
+                        class4148.pos(n19 + 0.0f, n18 + 0.0f, n20 + 0.0f).tex((n19 + 0.0f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).color(n12, n13, n14, 0.8f).method12436(0.0f, -1.0f, 0.0f).endVertex();
                     }
                     if (n18 <= 5.0f) {
-                        class4148.method12432(n19 + 0.0f, n18 + 4.0f - 9.765625E-4f, n20 + 8.0f).method12391((n19 + 0.0f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).method12439(n6, n7, n8, 0.8f).method12436(0.0f, 1.0f, 0.0f).method12397();
-                        class4148.method12432(n19 + 8.0f, n18 + 4.0f - 9.765625E-4f, n20 + 8.0f).method12391((n19 + 8.0f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).method12439(n6, n7, n8, 0.8f).method12436(0.0f, 1.0f, 0.0f).method12397();
-                        class4148.method12432(n19 + 8.0f, n18 + 4.0f - 9.765625E-4f, n20 + 0.0f).method12391((n19 + 8.0f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).method12439(n6, n7, n8, 0.8f).method12436(0.0f, 1.0f, 0.0f).method12397();
-                        class4148.method12432(n19 + 0.0f, n18 + 4.0f - 9.765625E-4f, n20 + 0.0f).method12391((n19 + 0.0f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).method12439(n6, n7, n8, 0.8f).method12436(0.0f, 1.0f, 0.0f).method12397();
+                        class4148.pos(n19 + 0.0f, n18 + 4.0f - 9.765625E-4f, n20 + 8.0f).tex((n19 + 0.0f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).color(n6, n7, n8, 0.8f).method12436(0.0f, 1.0f, 0.0f).endVertex();
+                        class4148.pos(n19 + 8.0f, n18 + 4.0f - 9.765625E-4f, n20 + 8.0f).tex((n19 + 8.0f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).color(n6, n7, n8, 0.8f).method12436(0.0f, 1.0f, 0.0f).endVertex();
+                        class4148.pos(n19 + 8.0f, n18 + 4.0f - 9.765625E-4f, n20 + 0.0f).tex((n19 + 8.0f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).color(n6, n7, n8, 0.8f).method12436(0.0f, 1.0f, 0.0f).endVertex();
+                        class4148.pos(n19 + 0.0f, n18 + 4.0f - 9.765625E-4f, n20 + 0.0f).tex((n19 + 0.0f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).color(n6, n7, n8, 0.8f).method12436(0.0f, 1.0f, 0.0f).endVertex();
                     }
                     if (i > -1) {
                         for (int k = 0; k < 8; ++k) {
-                            class4148.method12432(n19 + k + 0.0f, n18 + 0.0f, n20 + 8.0f).method12391((n19 + k + 0.5f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).method12439(n9, n10, n11, 0.8f).method12436(-1.0f, 0.0f, 0.0f).method12397();
-                            class4148.method12432(n19 + k + 0.0f, n18 + 4.0f, n20 + 8.0f).method12391((n19 + k + 0.5f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).method12439(n9, n10, n11, 0.8f).method12436(-1.0f, 0.0f, 0.0f).method12397();
-                            class4148.method12432(n19 + k + 0.0f, n18 + 4.0f, n20 + 0.0f).method12391((n19 + k + 0.5f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).method12439(n9, n10, n11, 0.8f).method12436(-1.0f, 0.0f, 0.0f).method12397();
-                            class4148.method12432(n19 + k + 0.0f, n18 + 0.0f, n20 + 0.0f).method12391((n19 + k + 0.5f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).method12439(n9, n10, n11, 0.8f).method12436(-1.0f, 0.0f, 0.0f).method12397();
+                            class4148.pos(n19 + k + 0.0f, n18 + 0.0f, n20 + 8.0f).tex((n19 + k + 0.5f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).color(n9, n10, n11, 0.8f).method12436(-1.0f, 0.0f, 0.0f).endVertex();
+                            class4148.pos(n19 + k + 0.0f, n18 + 4.0f, n20 + 8.0f).tex((n19 + k + 0.5f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).color(n9, n10, n11, 0.8f).method12436(-1.0f, 0.0f, 0.0f).endVertex();
+                            class4148.pos(n19 + k + 0.0f, n18 + 4.0f, n20 + 0.0f).tex((n19 + k + 0.5f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).color(n9, n10, n11, 0.8f).method12436(-1.0f, 0.0f, 0.0f).endVertex();
+                            class4148.pos(n19 + k + 0.0f, n18 + 0.0f, n20 + 0.0f).tex((n19 + k + 0.5f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).color(n9, n10, n11, 0.8f).method12436(-1.0f, 0.0f, 0.0f).endVertex();
                         }
                     }
                     if (i <= 1) {
                         for (int l = 0; l < 8; ++l) {
-                            class4148.method12432(n19 + l + 1.0f - 9.765625E-4f, n18 + 0.0f, n20 + 8.0f).method12391((n19 + l + 0.5f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).method12439(n9, n10, n11, 0.8f).method12436(1.0f, 0.0f, 0.0f).method12397();
-                            class4148.method12432(n19 + l + 1.0f - 9.765625E-4f, n18 + 4.0f, n20 + 8.0f).method12391((n19 + l + 0.5f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).method12439(n9, n10, n11, 0.8f).method12436(1.0f, 0.0f, 0.0f).method12397();
-                            class4148.method12432(n19 + l + 1.0f - 9.765625E-4f, n18 + 4.0f, n20 + 0.0f).method12391((n19 + l + 0.5f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).method12439(n9, n10, n11, 0.8f).method12436(1.0f, 0.0f, 0.0f).method12397();
-                            class4148.method12432(n19 + l + 1.0f - 9.765625E-4f, n18 + 0.0f, n20 + 0.0f).method12391((n19 + l + 0.5f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).method12439(n9, n10, n11, 0.8f).method12436(1.0f, 0.0f, 0.0f).method12397();
+                            class4148.pos(n19 + l + 1.0f - 9.765625E-4f, n18 + 0.0f, n20 + 8.0f).tex((n19 + l + 0.5f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).color(n9, n10, n11, 0.8f).method12436(1.0f, 0.0f, 0.0f).endVertex();
+                            class4148.pos(n19 + l + 1.0f - 9.765625E-4f, n18 + 4.0f, n20 + 8.0f).tex((n19 + l + 0.5f) * 0.00390625f + n4, (n20 + 8.0f) * 0.00390625f + n5).color(n9, n10, n11, 0.8f).method12436(1.0f, 0.0f, 0.0f).endVertex();
+                            class4148.pos(n19 + l + 1.0f - 9.765625E-4f, n18 + 4.0f, n20 + 0.0f).tex((n19 + l + 0.5f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).color(n9, n10, n11, 0.8f).method12436(1.0f, 0.0f, 0.0f).endVertex();
+                            class4148.pos(n19 + l + 1.0f - 9.765625E-4f, n18 + 0.0f, n20 + 0.0f).tex((n19 + l + 0.5f) * 0.00390625f + n4, (n20 + 0.0f) * 0.00390625f + n5).color(n9, n10, n11, 0.8f).method12436(1.0f, 0.0f, 0.0f).endVertex();
                         }
                     }
                     if (j > -1) {
                         for (int n21 = 0; n21 < 8; ++n21) {
-                            class4148.method12432(n19 + 0.0f, n18 + 4.0f, n20 + n21 + 0.0f).method12391((n19 + 0.0f) * 0.00390625f + n4, (n20 + n21 + 0.5f) * 0.00390625f + n5).method12439(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, -1.0f).method12397();
-                            class4148.method12432(n19 + 8.0f, n18 + 4.0f, n20 + n21 + 0.0f).method12391((n19 + 8.0f) * 0.00390625f + n4, (n20 + n21 + 0.5f) * 0.00390625f + n5).method12439(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, -1.0f).method12397();
-                            class4148.method12432(n19 + 8.0f, n18 + 0.0f, n20 + n21 + 0.0f).method12391((n19 + 8.0f) * 0.00390625f + n4, (n20 + n21 + 0.5f) * 0.00390625f + n5).method12439(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, -1.0f).method12397();
-                            class4148.method12432(n19 + 0.0f, n18 + 0.0f, n20 + n21 + 0.0f).method12391((n19 + 0.0f) * 0.00390625f + n4, (n20 + n21 + 0.5f) * 0.00390625f + n5).method12439(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, -1.0f).method12397();
+                            class4148.pos(n19 + 0.0f, n18 + 4.0f, n20 + n21 + 0.0f).tex((n19 + 0.0f) * 0.00390625f + n4, (n20 + n21 + 0.5f) * 0.00390625f + n5).color(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, -1.0f).endVertex();
+                            class4148.pos(n19 + 8.0f, n18 + 4.0f, n20 + n21 + 0.0f).tex((n19 + 8.0f) * 0.00390625f + n4, (n20 + n21 + 0.5f) * 0.00390625f + n5).color(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, -1.0f).endVertex();
+                            class4148.pos(n19 + 8.0f, n18 + 0.0f, n20 + n21 + 0.0f).tex((n19 + 8.0f) * 0.00390625f + n4, (n20 + n21 + 0.5f) * 0.00390625f + n5).color(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, -1.0f).endVertex();
+                            class4148.pos(n19 + 0.0f, n18 + 0.0f, n20 + n21 + 0.0f).tex((n19 + 0.0f) * 0.00390625f + n4, (n20 + n21 + 0.5f) * 0.00390625f + n5).color(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, -1.0f).endVertex();
                         }
                     }
                     if (j <= 1) {
                         for (int n22 = 0; n22 < 8; ++n22) {
-                            class4148.method12432(n19 + 0.0f, n18 + 4.0f, n20 + n22 + 1.0f - 9.765625E-4f).method12391((n19 + 0.0f) * 0.00390625f + n4, (n20 + n22 + 0.5f) * 0.00390625f + n5).method12439(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, 1.0f).method12397();
-                            class4148.method12432(n19 + 8.0f, n18 + 4.0f, n20 + n22 + 1.0f - 9.765625E-4f).method12391((n19 + 8.0f) * 0.00390625f + n4, (n20 + n22 + 0.5f) * 0.00390625f + n5).method12439(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, 1.0f).method12397();
-                            class4148.method12432(n19 + 8.0f, n18 + 0.0f, n20 + n22 + 1.0f - 9.765625E-4f).method12391((n19 + 8.0f) * 0.00390625f + n4, (n20 + n22 + 0.5f) * 0.00390625f + n5).method12439(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, 1.0f).method12397();
-                            class4148.method12432(n19 + 0.0f, n18 + 0.0f, n20 + n22 + 1.0f - 9.765625E-4f).method12391((n19 + 0.0f) * 0.00390625f + n4, (n20 + n22 + 0.5f) * 0.00390625f + n5).method12439(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, 1.0f).method12397();
+                            class4148.pos(n19 + 0.0f, n18 + 4.0f, n20 + n22 + 1.0f - 9.765625E-4f).tex((n19 + 0.0f) * 0.00390625f + n4, (n20 + n22 + 0.5f) * 0.00390625f + n5).color(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, 1.0f).endVertex();
+                            class4148.pos(n19 + 8.0f, n18 + 4.0f, n20 + n22 + 1.0f - 9.765625E-4f).tex((n19 + 8.0f) * 0.00390625f + n4, (n20 + n22 + 0.5f) * 0.00390625f + n5).color(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, 1.0f).endVertex();
+                            class4148.pos(n19 + 8.0f, n18 + 0.0f, n20 + n22 + 1.0f - 9.765625E-4f).tex((n19 + 8.0f) * 0.00390625f + n4, (n20 + n22 + 0.5f) * 0.00390625f + n5).color(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, 1.0f).endVertex();
+                            class4148.pos(n19 + 0.0f, n18 + 0.0f, n20 + n22 + 1.0f - 9.765625E-4f).tex((n19 + 0.0f) * 0.00390625f + n4, (n20 + n22 + 0.5f) * 0.00390625f + n5).color(n15, n16, n17, 0.8f).method12436(0.0f, 0.0f, 1.0f).endVertex();
                         }
                     }
                 }
@@ -1895,10 +1895,10 @@ public class Class1656 implements AutoCloseable, Class1657
         else {
             for (int n23 = -32; n23 < 32; n23 += 32) {
                 for (int n24 = -32; n24 < 32; n24 += 32) {
-                    class4148.method12432(n23 + 0, n18, n24 + 32).method12391((n23 + 0) * 0.00390625f + n4, (n24 + 32) * 0.00390625f + n5).method12439(n6, n7, n8, 0.8f).method12436(0.0f, -1.0f, 0.0f).method12397();
-                    class4148.method12432(n23 + 32, n18, n24 + 32).method12391((n23 + 32) * 0.00390625f + n4, (n24 + 32) * 0.00390625f + n5).method12439(n6, n7, n8, 0.8f).method12436(0.0f, -1.0f, 0.0f).method12397();
-                    class4148.method12432(n23 + 32, n18, n24 + 0).method12391((n23 + 32) * 0.00390625f + n4, (n24 + 0) * 0.00390625f + n5).method12439(n6, n7, n8, 0.8f).method12436(0.0f, -1.0f, 0.0f).method12397();
-                    class4148.method12432(n23 + 0, n18, n24 + 0).method12391((n23 + 0) * 0.00390625f + n4, (n24 + 0) * 0.00390625f + n5).method12439(n6, n7, n8, 0.8f).method12436(0.0f, -1.0f, 0.0f).method12397();
+                    class4148.pos(n23 + 0, n18, n24 + 32).tex((n23 + 0) * 0.00390625f + n4, (n24 + 32) * 0.00390625f + n5).color(n6, n7, n8, 0.8f).method12436(0.0f, -1.0f, 0.0f).endVertex();
+                    class4148.pos(n23 + 32, n18, n24 + 32).tex((n23 + 32) * 0.00390625f + n4, (n24 + 32) * 0.00390625f + n5).color(n6, n7, n8, 0.8f).method12436(0.0f, -1.0f, 0.0f).endVertex();
+                    class4148.pos(n23 + 32, n18, n24 + 0).tex((n23 + 32) * 0.00390625f + n4, (n24 + 0) * 0.00390625f + n5).color(n6, n7, n8, 0.8f).method12436(0.0f, -1.0f, 0.0f).endVertex();
+                    class4148.pos(n23 + 0, n18, n24 + 0).tex((n23 + 0) * 0.00390625f + n4, (n24 + 0) * 0.00390625f + n5).color(n6, n7, n8, 0.8f).method12436(0.0f, -1.0f, 0.0f).endVertex();
                 }
             }
         }
@@ -1958,29 +1958,29 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     private void method5725(final Class6092 class6092) {
-        final Class4148 method22696 = Class7392.method22694().method22696();
+        final BufferBuilder method22696 = Tessellator.getInstance().getBuffer();
         final WorldBorder method22697 = this.field9292.getWorldBorder();
-        final double n = this.field9288.field4648.field23382 * 16;
+        final double n = this.field9288.gameSettings.field23382 * 16;
         if (class6092.method18161().x >= method22697.method34788() - n || class6092.method18161().x <= method22697.method34786() + n || class6092.method18161().z >= method22697.method34789() - n || class6092.method18161().z <= method22697.method34787() + n) {
             final double pow = Math.pow(1.0 - method22697.method34784(class6092.method18161().x, class6092.method18161().z) / n, 4.0);
             final double field22770 = class6092.method18161().x;
             final double field22771 = class6092.method18161().y;
             final double field22772 = class6092.method18161().z;
-            Class8726.method30011();
-            Class8726.method30008();
-            Class8726.method30015(Class2050.field11693, Class2135.field12455, Class2050.field11686, Class2135.field12464);
+            RenderSystem.enableBlend();
+            RenderSystem.enableDepthTest();
+            RenderSystem.method30015(Class2050.field11693, Class2135.field12455, Class2050.field11686, Class2135.field12464);
             this.field9289.method5849(Class1656.field9284);
-            Class8726.method30010(false);
-            Class8726.method30059();
+            RenderSystem.method30010(false);
+            RenderSystem.method30059();
             final int method22698 = method22697.method34785().method8217();
-            Class8726.method30068((method22698 >> 16 & 0xFF) / 255.0f, (method22698 >> 8 & 0xFF) / 255.0f, (method22698 & 0xFF) / 255.0f, (float)pow);
-            Class8726.method30035(-3.0f, -3.0f);
-            Class8726.method30031();
-            Class8726.method30118();
-            Class8726.method29999();
-            Class8726.method30029();
+            RenderSystem.method30068((method22698 >> 16 & 0xFF) / 255.0f, (method22698 >> 8 & 0xFF) / 255.0f, (method22698 & 0xFF) / 255.0f, (float)pow);
+            RenderSystem.method30035(-3.0f, -3.0f);
+            RenderSystem.method30031();
+            RenderSystem.method30118();
+            RenderSystem.enableAlphaTest();
+            RenderSystem.method30029();
             final float n2 = Util.method27837() % 3000L / 3000.0f;
-            method22696.method12390(7, Class9237.field39617);
+            method22696.begin(7, DefaultVertexFormats.field39617);
             final double max = Math.max(MathHelper.floor(field22772 - n), method22697.method34787());
             final double min = Math.min(MathHelper.ceil(field22772 + n), method22697.method34789());
             if (field22770 > method22697.method34788() - n) {
@@ -2029,29 +2029,29 @@ public class Class1656 implements AutoCloseable, Class1657
                     this.method5726(method22696, field22770, field22771, field22772, n13, 0, method22697.method34787(), n2 + n12, n2 + 128.0f);
                 }
             }
-            method22696.method12393();
-            Class8475.method28282(method22696);
-            Class8726.method30028();
-            Class8726.method29998();
-            Class8726.method30035(0.0f, 0.0f);
-            Class8726.method30032();
-            Class8726.method29999();
-            Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
-            Class8726.method30012();
-            Class8726.method30060();
-            Class8726.method30010(true);
+            method22696.finishDrawing();
+            WorldVertexBufferUploader.draw(method22696);
+            RenderSystem.method30028();
+            RenderSystem.disableAlphaTest();
+            RenderSystem.method30035(0.0f, 0.0f);
+            RenderSystem.method30032();
+            RenderSystem.enableAlphaTest();
+            RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+            RenderSystem.disableBlend();
+            RenderSystem.method30060();
+            RenderSystem.method30010(true);
         }
     }
     
-    private void method5726(final Class4148 class4148, final double n, final double n2, final double n3, final double n4, final int n5, final double n6, final float n7, final float n8) {
-        class4148.method12432(n4 - n, n5 - n2, n6 - n3).method12391(n7, n8).method12397();
+    private void method5726(final BufferBuilder class4148, final double n, final double n2, final double n3, final double n4, final int n5, final double n6, final float n7, final float n8) {
+        class4148.pos(n4 - n, n5 - n2, n6 - n3).tex(n7, n8).endVertex();
     }
     
-    private void method5727(final Class7351 class7351, final Class4150 class7352, final Entity class7353, final double n, final double n2, final double n3, final BlockPos class7354, final Class7096 class7355) {
+    private void method5727(final MatrixStack class7351, final Class4150 class7352, final Entity class7353, final double n, final double n2, final double n3, final BlockPos class7354, final Class7096 class7355) {
         method5729(class7351, class7352, class7355.method21726(this.field9292, class7354, ISelectionContext.forEntity(class7353)), class7354.getX() - n, class7354.getY() - n2, class7354.getZ() - n3, 0.0f, 0.0f, 0.0f, 0.4f);
     }
     
-    public static void method5728(final Class7351 class7351, final Class4150 class7352, final VoxelShape class7353, final double n, final double n2, final double n3, final float n4, final float n5, final float n6, final float n7) {
+    public static void method5728(final MatrixStack class7351, final Class4150 class7352, final VoxelShape class7353, final double n, final double n2, final double n3, final float n4, final float n5, final float n6, final float n7) {
         final List<AxisAlignedBB> method24545 = class7353.toBoundingBoxList();
         final int method24546 = MathHelper.ceil(method24545.size() / 3.0);
         for (int i = 0; i < method24545.size(); ++i) {
@@ -2062,90 +2062,90 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    private static void method5729(final Class7351 class7351, final Class4150 class7352, final VoxelShape class7353, final double n, final double n2, final double n3, final float n4, final float n5, final float n6, final float n7) {
+    private static void method5729(final MatrixStack class7351, final Class4150 class7352, final VoxelShape class7353, final double n, final double n2, final double n3, final float n4, final float n5, final float n6, final float n7) {
         class7353.forEachEdge((n8, n9, n10, n11, n12, n13) -> {
-            class7352.method12444(class4151, (float)(n8 + n), (float)(n9 + n2), (float)(n10 + n3)).method12439(n4, n5, n6, n7).method12397();
-            class7352.method12444(class4151, (float)(n11 + n), (float)(n12 + n2), (float)(n13 + n3)).method12439(n4, n5, n6, n7).method12397();
+            class7352.pos(class4151, (float)(n8 + n), (float)(n9 + n2), (float)(n10 + n3)).color(n4, n5, n6, n7).endVertex();
+            class7352.pos(class4151, (float)(n11 + n), (float)(n12 + n2), (float)(n13 + n3)).color(n4, n5, n6, n7).endVertex();
         });
     }
     
     public static void method5730(final Class4150 class4150, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final float n7, final float n8, final float n9, final float n10) {
-        method5733(new Class7351(), class4150, n, n2, n3, n4, n5, n6, n7, n8, n9, n10, n7, n8, n9);
+        method5733(new MatrixStack(), class4150, n, n2, n3, n4, n5, n6, n7, n8, n9, n10, n7, n8, n9);
     }
     
-    public static void method5731(final Class7351 class7351, final Class4150 class7352, final AxisAlignedBB class7353, final float n, final float n2, final float n3, final float n4) {
+    public static void method5731(final MatrixStack class7351, final Class4150 class7352, final AxisAlignedBB class7353, final float n, final float n2, final float n3, final float n4) {
         method5733(class7351, class7352, class7353.minX, class7353.minY, class7353.minZ, class7353.maxX, class7353.maxY, class7353.maxZ, n, n2, n3, n4, n, n2, n3);
     }
     
-    public static void method5732(final Class7351 class7351, final Class4150 class7352, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final float n7, final float n8, final float n9, final float n10) {
+    public static void method5732(final MatrixStack class7351, final Class4150 class7352, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final float n7, final float n8, final float n9, final float n10) {
         method5733(class7351, class7352, n, n2, n3, n4, n5, n6, n7, n8, n9, n10, n7, n8, n9);
     }
     
-    public static void method5733(final Class7351 class7351, final Class4150 class7352, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final float n7, final float n8, final float n9, final float n10, final float n11, final float n12, final float n13) {
-        final Matrix4f method32111 = class7351.method22569().method32111();
+    public static void method5733(final MatrixStack class7351, final Class4150 class7352, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final float n7, final float n8, final float n9, final float n10, final float n11, final float n12, final float n13) {
+        final Matrix4f method32111 = class7351.getLast().getMatrix();
         final float n14 = (float)n;
         final float n15 = (float)n2;
         final float n16 = (float)n3;
         final float n17 = (float)n4;
         final float n18 = (float)n5;
         final float n19 = (float)n6;
-        class7352.method12444(method32111, n14, n15, n16).method12439(n7, n12, n13, n10).method12397();
-        class7352.method12444(method32111, n17, n15, n16).method12439(n7, n12, n13, n10).method12397();
-        class7352.method12444(method32111, n14, n15, n16).method12439(n11, n8, n13, n10).method12397();
-        class7352.method12444(method32111, n14, n18, n16).method12439(n11, n8, n13, n10).method12397();
-        class7352.method12444(method32111, n14, n15, n16).method12439(n11, n12, n9, n10).method12397();
-        class7352.method12444(method32111, n14, n15, n19).method12439(n11, n12, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n15, n16).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n18, n16).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n18, n16).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n14, n18, n16).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n14, n18, n16).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n14, n18, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n14, n18, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n14, n15, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n14, n15, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n15, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n15, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n15, n16).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n14, n18, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n18, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n15, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n18, n19).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n18, n16).method12439(n7, n8, n9, n10).method12397();
-        class7352.method12444(method32111, n17, n18, n19).method12439(n7, n8, n9, n10).method12397();
+        class7352.pos(method32111, n14, n15, n16).color(n7, n12, n13, n10).endVertex();
+        class7352.pos(method32111, n17, n15, n16).color(n7, n12, n13, n10).endVertex();
+        class7352.pos(method32111, n14, n15, n16).color(n11, n8, n13, n10).endVertex();
+        class7352.pos(method32111, n14, n18, n16).color(n11, n8, n13, n10).endVertex();
+        class7352.pos(method32111, n14, n15, n16).color(n11, n12, n9, n10).endVertex();
+        class7352.pos(method32111, n14, n15, n19).color(n11, n12, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n15, n16).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n18, n16).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n18, n16).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n14, n18, n16).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n14, n18, n16).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n14, n18, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n14, n18, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n14, n15, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n14, n15, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n15, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n15, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n15, n16).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n14, n18, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n18, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n15, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n18, n19).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n18, n16).color(n7, n8, n9, n10).endVertex();
+        class7352.pos(method32111, n17, n18, n19).color(n7, n8, n9, n10).endVertex();
     }
     
-    public static void method5734(final Class4148 class4148, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final float n7, final float n8, final float n9, final float n10) {
-        class4148.method12432(n, n2, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n2, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n2, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n2, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n5, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n5, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n5, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n2, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n5, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n2, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n2, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n2, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n5, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n5, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n5, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n2, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n5, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n2, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n2, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n2, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n2, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n2, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n2, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n5, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n5, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n, n5, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n5, n3).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n5, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n5, n6).method12439(n7, n8, n9, n10).method12397();
-        class4148.method12432(n4, n5, n6).method12439(n7, n8, n9, n10).method12397();
+    public static void method5734(final BufferBuilder class4148, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final float n7, final float n8, final float n9, final float n10) {
+        class4148.pos(n, n2, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n2, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n2, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n2, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n5, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n5, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n5, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n2, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n5, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n2, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n2, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n2, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n5, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n5, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n5, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n2, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n5, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n2, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n2, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n2, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n2, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n2, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n2, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n5, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n5, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n, n5, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n5, n3).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n5, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n5, n6).color(n7, n8, n9, n10).endVertex();
+        class4148.pos(n4, n5, n6).color(n7, n8, n9, n10).endVertex();
     }
     
     public void method5735(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857, final Class7096 class1858, final int n) {
@@ -2341,7 +2341,7 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     private Class2159 method5749(final boolean b) {
-        Class2159 class2159 = this.field9288.field4648.field23474;
+        Class2159 class2159 = this.field9288.gameSettings.field23474;
         if (b && class2159 == Class2159.field12821 && this.field9292.rand.nextInt(10) == 0) {
             class2159 = Class2159.field12820;
         }
@@ -2829,11 +2829,11 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     private void method5773(final Class6092 class6092, final Class6664 class6093, final boolean b) {
-        final int field23504 = this.field9288.field4648.field23504;
-        final boolean field23505 = this.field9288.field4648.field23483;
+        final int field23504 = this.field9288.gameSettings.field23504;
+        final boolean field23505 = this.field9288.gameSettings.field23483;
         try {
-            this.field9288.field4648.field23504 = 1000;
-            this.field9288.field4648.field23483 = false;
+            this.field9288.gameSettings.field23504 = 1000;
+            this.field9288.gameSettings.field23483 = false;
             final Class1656 method28908 = Config.method28908();
             int n = method28908.method5760();
             System.currentTimeMillis();
@@ -2872,8 +2872,8 @@ public class Class1656 implements AutoCloseable, Class1657
             Class7520.field29146 = 0;
         }
         finally {
-            this.field9288.field4648.field23504 = field23504;
-            this.field9288.field4648.field23483 = field23505;
+            this.field9288.gameSettings.field23504 = field23504;
+            this.field9288.gameSettings.field23483 = field23505;
         }
     }
     

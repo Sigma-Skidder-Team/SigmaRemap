@@ -30,7 +30,7 @@ public class Class4794 extends Class4703<Class852>
         this.field20284 = 0.5f;
     }
     
-    public void method14179(final Class852 class852, final float n, final float n2, final Class7351 class853, final Class7807 class854, final int n3) {
+    public void method14179(final Class852 class852, final float n, final float n2, final MatrixStack class853, final IRenderTypeBuffer class854, final int n3) {
         class853.method22567();
         final float n4 = (float)class852.method5108(7, n2)[0];
         final float n5 = (float)(class852.method5108(5, n2)[1] - class852.method5108(10, n2)[1]);
@@ -77,7 +77,7 @@ public class Class4794 extends Class4703<Class852>
                 class853.method22566(Vector3f.ZP.rotationDegrees(random.nextFloat() * 360.0f + n6 * 90.0f));
                 final float n9 = random.nextFloat() * 20.0f + 5.0f + n7 * 10.0f;
                 final float n10 = random.nextFloat() * 2.0f + 1.0f + n7 * 2.0f;
-                final Matrix4f method25216 = class853.method22569().method32111();
+                final Matrix4f method25216 = class853.getLast().getMatrix();
                 final int n11 = (int)(255.0f * (1.0f - n7));
                 method14180(method25215, method25216, n11);
                 method14181(method25215, method25216, n9, n10);
@@ -101,23 +101,23 @@ public class Class4794 extends Class4703<Class852>
     }
     
     private static void method14180(final Class4150 class4150, final Matrix4f class4151, final int n) {
-        class4150.method12444(class4151, 0.0f, 0.0f, 0.0f).method12399(255, 255, 255, n).method12397();
-        class4150.method12444(class4151, 0.0f, 0.0f, 0.0f).method12399(255, 255, 255, n).method12397();
+        class4150.pos(class4151, 0.0f, 0.0f, 0.0f).method12399(255, 255, 255, n).endVertex();
+        class4150.pos(class4151, 0.0f, 0.0f, 0.0f).method12399(255, 255, 255, n).endVertex();
     }
     
     private static void method14181(final Class4150 class4150, final Matrix4f class4151, final float n, final float n2) {
-        class4150.method12444(class4151, -Class4794.field20444 * n2, n, -0.5f * n2).method12399(255, 0, 255, 0).method12397();
+        class4150.pos(class4151, -Class4794.field20444 * n2, n, -0.5f * n2).method12399(255, 0, 255, 0).endVertex();
     }
     
     private static void method14182(final Class4150 class4150, final Matrix4f class4151, final float n, final float n2) {
-        class4150.method12444(class4151, Class4794.field20444 * n2, n, -0.5f * n2).method12399(255, 0, 255, 0).method12397();
+        class4150.pos(class4151, Class4794.field20444 * n2, n, -0.5f * n2).method12399(255, 0, 255, 0).endVertex();
     }
     
     private static void method14183(final Class4150 class4150, final Matrix4f class4151, final float n, final float n2) {
-        class4150.method12444(class4151, 0.0f, n, 1.0f * n2).method12399(255, 0, 255, 0).method12397();
+        class4150.pos(class4151, 0.0f, n, 1.0f * n2).method12399(255, 0, 255, 0).endVertex();
     }
     
-    public static void method14184(final float n, final float n2, final float n3, final float n4, final int n5, final Class7351 class7351, final Class7807 class7352, final int n6) {
+    public static void method14184(final float n, final float n2, final float n3, final float n4, final int n5, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n6) {
         final float method35640 = MathHelper.method35640(n * n + n3 * n3);
         final float method35641 = MathHelper.method35640(n * n + n2 * n2 + n3 * n3);
         class7351.method22567();
@@ -130,17 +130,17 @@ public class Class4794 extends Class4703<Class852>
         float n9 = 0.0f;
         float n10 = 0.75f;
         float n11 = 0.0f;
-        final Class8996 method35643 = class7351.method22569();
-        final Matrix4f method35644 = method35643.method32111();
+        final Class8996 method35643 = class7351.getLast();
+        final Matrix4f method35644 = method35643.getMatrix();
         final Matrix3f method35645 = method35643.method32112();
         for (int i = 1; i <= 8; ++i) {
             final float n12 = MathHelper.sin(i * 6.2831855f / 8.0f) * 0.75f;
             final float n13 = MathHelper.cos(i * 6.2831855f / 8.0f) * 0.75f;
             final float n14 = i / 8.0f;
-            method35642.method12444(method35644, n9 * 0.2f, n10 * 0.2f, 0.0f).method12399(0, 0, 0, 255).method12391(n11, n7).method12441(Class1904.field10335).method12440(n6).method12445(method35645, 0.0f, -1.0f, 0.0f).method12397();
-            method35642.method12444(method35644, n9, n10, method35641).method12399(255, 255, 255, 255).method12391(n11, n8).method12441(Class1904.field10335).method12440(n6).method12445(method35645, 0.0f, -1.0f, 0.0f).method12397();
-            method35642.method12444(method35644, n12, n13, method35641).method12399(255, 255, 255, 255).method12391(n14, n8).method12441(Class1904.field10335).method12440(n6).method12445(method35645, 0.0f, -1.0f, 0.0f).method12397();
-            method35642.method12444(method35644, n12 * 0.2f, n13 * 0.2f, 0.0f).method12399(0, 0, 0, 255).method12391(n14, n7).method12441(Class1904.field10335).method12440(n6).method12445(method35645, 0.0f, -1.0f, 0.0f).method12397();
+            method35642.pos(method35644, n9 * 0.2f, n10 * 0.2f, 0.0f).method12399(0, 0, 0, 255).tex(n11, n7).method12441(Class1904.field10335).method12440(n6).method12445(method35645, 0.0f, -1.0f, 0.0f).endVertex();
+            method35642.pos(method35644, n9, n10, method35641).method12399(255, 255, 255, 255).tex(n11, n8).method12441(Class1904.field10335).method12440(n6).method12445(method35645, 0.0f, -1.0f, 0.0f).endVertex();
+            method35642.pos(method35644, n12, n13, method35641).method12399(255, 255, 255, 255).tex(n14, n8).method12441(Class1904.field10335).method12440(n6).method12445(method35645, 0.0f, -1.0f, 0.0f).endVertex();
+            method35642.pos(method35644, n12 * 0.2f, n13 * 0.2f, 0.0f).method12399(0, 0, 0, 255).tex(n14, n7).method12441(Class1904.field10335).method12440(n6).method12445(method35645, 0.0f, -1.0f, 0.0f).endVertex();
             n9 = n12;
             n10 = n13;
             n11 = n14;

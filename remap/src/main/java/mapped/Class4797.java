@@ -24,7 +24,7 @@ public class Class4797 extends Class4703<Class508>
         return MathHelper.method35651(super.method13954(class508, n) + 7, 0, 15);
     }
     
-    public void method14191(final Class508 class508, final float n, final float n2, final Class7351 class509, final Class7807 class510, final int n3) {
+    public void method14191(final Class508 class508, final float n, final float n2, final MatrixStack class509, final IRenderTypeBuffer class510, final int n3) {
         class509.method22567();
         final int method2608 = class508.method2608();
         final float n4 = (method2608 % 4 * 16 + 0) / 64.0f;
@@ -42,8 +42,8 @@ public class Class4797 extends Class4703<Class508>
         class509.method22566(Vector3f.YP.rotationDegrees(180.0f));
         class509.method22565(0.3f, 0.3f, 0.3f);
         final Class4150 method2610 = class510.method25214(Class4797.field20450);
-        final Class8996 method2611 = class509.method22569();
-        final Matrix4f method2612 = method2611.method32111();
+        final Class8996 method2611 = class509.getLast();
+        final Matrix4f method2612 = method2611.getMatrix();
         final Matrix3f method2613 = method2611.method32112();
         int n10 = n8;
         int n11 = 255;
@@ -65,7 +65,7 @@ public class Class4797 extends Class4703<Class508>
     }
     
     private static void method14192(final Class4150 class4150, final Matrix4f class4151, final Matrix3f class4152, final float n, final float n2, final int n3, final int n4, final int n5, final float n6, final float n7, final int n8) {
-        class4150.method12444(class4151, n, n2, 0.0f).method12399(n3, n4, n5, 128).method12391(n6, n7).method12441(Class1904.field10335).method12440(n8).method12445(class4152, 0.0f, 1.0f, 0.0f).method12397();
+        class4150.pos(class4151, n, n2, 0.0f).method12399(n3, n4, n5, 128).tex(n6, n7).method12441(Class1904.field10335).method12440(n8).method12445(class4152, 0.0f, 1.0f, 0.0f).endVertex();
     }
     
     public ResourceLocation method14193(final Class508 class508) {

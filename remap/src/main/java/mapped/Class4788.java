@@ -16,7 +16,7 @@ public class Class4788 extends Class4703<Class510>
         this.field20284 = 0.5f;
     }
     
-    public void method14156(final Class510 class510, final float n, final float n2, final Class7351 class511, final Class7807 class512, final int n3) {
+    public void method14156(final Class510 class510, final float n, final float n2, final MatrixStack class511, final IRenderTypeBuffer class512, final int n3) {
         class511.method22567();
         class511.method22564(0.0, 0.5, 0.0);
         if (class510.method2617() - n2 + 1.0f < 10.0f) {

@@ -27,5 +27,5 @@ public abstract class Class5901 implements Consumer<Class6300>
         return this.field24268.apply(class1932);
     }
     
-    public abstract void method17564(final Class7351 p0, final Class4150 p1, final int p2, final int p3, final float p4, final float p5, final float p6, final float p7);
+    public abstract void method17564(final MatrixStack p0, final Class4150 p1, final int p2, final int p3, final float p4, final float p5, final float p6, final float p7);
 }

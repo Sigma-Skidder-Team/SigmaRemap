@@ -23,15 +23,15 @@ public class Class1904 implements AutoCloseable
                 }
             }
         }
-        Class8726.method30039(33985);
+        RenderSystem.method30039(33985);
         this.field10336.method5872();
-        Class8726.method30057(5890);
-        Class8726.method30058();
-        Class8726.method30063(0.06666667f, 0.06666667f, 0.06666667f);
-        Class8726.method30057(5888);
+        RenderSystem.method30057(5890);
+        RenderSystem.method30058();
+        RenderSystem.method30063(0.06666667f, 0.06666667f, 0.06666667f);
+        RenderSystem.method30057(5888);
         this.field10336.method5872();
         method6328.method6654(0, 0, 0, 0, 0, method6328.method6644(), method6328.method6645(), false, true, false, false);
-        Class8726.method30039(33984);
+        RenderSystem.method30039(33984);
     }
     
     @Override
@@ -41,7 +41,7 @@ public class Class1904 implements AutoCloseable
     
     public void method7384() {
         if (!Class9216.method33922()) {
-            Class8726.method30105(this.field10336::method5869, 16);
+            RenderSystem.method30105(this.field10336::method5869, 16);
         }
     }
     
@@ -63,7 +63,7 @@ public class Class1904 implements AutoCloseable
     
     public void method7389() {
         if (!Class9216.method33922()) {
-            Class8726.method30106();
+            RenderSystem.method30106();
         }
     }
     

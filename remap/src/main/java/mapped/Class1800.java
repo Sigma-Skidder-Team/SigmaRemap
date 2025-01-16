@@ -14,7 +14,7 @@ public class Class1800 extends Class1799<Class841, Class5876<Class841>>
         super(class4778);
     }
     
-    public void method6561(final Class7351 class7351, final Class7807 class7352, final int n, final Class841 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6561(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class841 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         class7351.method22567();
         class7351.method22564(0.0, 1.0, 0.0);
         class7351.method22565(-1.0f, -1.0f, 1.0f);

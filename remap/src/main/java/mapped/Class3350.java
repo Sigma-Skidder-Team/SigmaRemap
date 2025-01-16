@@ -63,18 +63,18 @@ public class Class3350 extends Class3167
                 break;
             }
             case "On Use": {
-                if (!Class3350.field15514.field4684.onGround && Class3350.field15514.field4684.field2985 == 0 && Class3350.field15514.field4684.field2967 && !this.field15968) {
+                if (!Class3350.field15514.player.onGround && Class3350.field15514.player.field2985 == 0 && Class3350.field15514.player.field2967 && !this.field15968) {
                     this.field15967 = true;
                     break;
                 }
-                if (Class3350.field15514.field4684.onGround) {
+                if (Class3350.field15514.player.onGround) {
                     this.field15967 = false;
                     break;
                 }
                 break;
             }
         }
-        this.field15968 = Class3350.field15514.field4684.field2967;
+        this.field15968 = Class3350.field15514.player.field2967;
         if (Class3350.field15514.field4700 instanceof Class518) {
             this.field15965 = false;
         }
@@ -83,7 +83,7 @@ public class Class3350 extends Class3167
             this.method10602(this.method9887("Mode").equalsIgnoreCase("FakeInv"));
         }
         for (final Class2215 class5744 : Class2215.values()) {
-            if (Class3350.field15514.field4684.field3008.method10878(8 - class5744.method8402()).method20054()) {
+            if (Class3350.field15514.player.field3008.method10878(8 - class5744.method8402()).method20054()) {
                 if (Class8639.method29344(8 - class5744.method8402())) {
                     return;
                 }
@@ -101,8 +101,8 @@ public class Class3350 extends Class3167
     private void method10602(final boolean b) {
         for (final Class2215 class2215 : Class2215.values()) {
             Label_0107: {
-                if (Class3350.field15514.field4684.field3008.method10878(8 - class2215.method8402()).method20054()) {
-                    if (Class8639.method29369(Class3350.field15514.field4684.field3008.method10878(8 - class2215.method8402()).method20053())) {
+                if (Class3350.field15514.player.field3008.method10878(8 - class2215.method8402()).method20054()) {
+                    if (Class8639.method29369(Class3350.field15514.player.field3008.method10878(8 - class2215.method8402()).method20053())) {
                         if (!this.field15967) {
                             break Label_0107;
                         }
@@ -112,24 +112,24 @@ public class Class3350 extends Class3167
                     }
                 }
                 for (int j = 9; j < 45; ++j) {
-                    if (Class3350.field15514.field4684.field3008.method10878(j).method20054()) {
-                        final ItemStack method20053 = Class3350.field15514.field4684.field3008.method10878(j).method20053();
+                    if (Class3350.field15514.player.field3008.method10878(j).method20054()) {
+                        final ItemStack method20053 = Class3350.field15514.player.field3008.method10878(j).method20053();
                         if (method20053.getItem() instanceof Class4080) {
                             if (this.field15967) {
-                                if (!(Class3350.field15514.field4684.field3006.method2157(36 + Class2215.field13604.method8402()).getItem() instanceof Class4080)) {
+                                if (!(Class3350.field15514.player.field3006.method2157(36 + Class2215.field13604.method8402()).getItem() instanceof Class4080)) {
                                     final Class4080 class2216 = (Class4080)method20053.getItem();
                                     if (Class2215.field13604 == class2215) {
                                         if (!Class9463.method35173().method35189().method21551(Class3350.class).method9883("Fake Items") || Class9463.method35173().method35195().method28162(j) >= 1500L) {
                                             this.method10603(b);
-                                            if (!(Class3350.field15514.field4684.field3006.method2157(36 + class2215.method8402()).getItem() instanceof Class4099)) {
+                                            if (!(Class3350.field15514.player.field3006.method2157(36 + class2215.method8402()).getItem() instanceof Class4099)) {
                                                 Class8639.method29323(8 - class2215.method8402(), 0, true);
                                             }
-                                            Class8639.method29367(Class3350.field15514.field4684.field3008.field16154, j, 0, Class2133.field12438, Class3350.field15514.field4684, true);
+                                            Class8639.method29367(Class3350.field15514.player.field3008.field16154, j, 0, Class2133.field12438, Class3350.field15514.player, true);
                                             this.field15964.method23934();
                                             Class3350.field15966 = true;
                                             if (this.method9887("Elytra").equals("On Use")) {
-                                                Class3350.field15514.method5269().method17292(new Class4336(Class3350.field15514.field4684, Class287.field1599));
-                                                Class3350.field15514.field4684.setFlag(7, true);
+                                                Class3350.field15514.method5269().method17292(new Class4336(Class3350.field15514.player, Class287.field1599));
+                                                Class3350.field15514.player.setFlag(7, true);
                                             }
                                             if (Class9463.method35173().method35189().method21551(Class3350.class).method9886("Delay") > 0.0f) {
                                                 return;
@@ -148,7 +148,7 @@ public class Class3350 extends Class3167
                                         if (Class8639.method29347(method20053) > 0) {
                                             if (!Class9463.method35173().method35189().method21551(Class3350.class).method9883("Fake Items") || Class9463.method35173().method35195().method28162(j) >= 1500L) {
                                                 this.method10603(b);
-                                                final Item method20054 = Class3350.field15514.field4684.field3006.method2157(36 + class2217.method12257().method8402()).getItem();
+                                                final Item method20054 = Class3350.field15514.player.field3006.method2157(36 + class2217.method12257().method8402()).getItem();
                                                 if (!(method20054 instanceof Class4080)) {
                                                     if (!(method20054 instanceof Class4099)) {
                                                         Class8639.method29368(8 - class2217.method12257().method8402());
@@ -158,7 +158,7 @@ public class Class3350 extends Class3167
                                                     Class8639.method29323(8 - class2215.method8402(), 0, true);
                                                 }
                                                 System.out.println("swap" + method20054);
-                                                Class8639.method29367(Class3350.field15514.field4684.field3008.field16154, j, 0, Class2133.field12438, Class3350.field15514.field4684, true);
+                                                Class8639.method29367(Class3350.field15514.player.field3008.field16154, j, 0, Class2133.field12438, Class3350.field15514.player, true);
                                                 this.field15964.method23934();
                                                 Class3350.field15966 = true;
                                                 if (Class9463.method35173().method35189().method21551(Class3350.class).method9886("Delay") > 0.0f) {
@@ -189,8 +189,8 @@ public class Class3350 extends Class3167
     
     private boolean method10604(final Class2215 class2215) {
         for (int i = 9; i < 45; ++i) {
-            if (Class3350.field15514.field4684.field3008.method10878(i).method20054()) {
-                final Item method27622 = Class3350.field15514.field4684.field3008.method10878(i).method20053().getItem();
+            if (Class3350.field15514.player.field3008.method10878(i).method20054()) {
+                final Item method27622 = Class3350.field15514.player.field3008.method10878(i).method20053().getItem();
                 if (method27622 instanceof Class4055) {
                     if (class2215 == ((Class4055)method27622).method12257()) {
                         return true;

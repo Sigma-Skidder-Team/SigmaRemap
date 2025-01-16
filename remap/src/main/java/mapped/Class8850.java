@@ -162,7 +162,7 @@ public class Class8850
     
     public static int method30991(final Entity class399, int method30992) {
         double a = method30993(class399.method1894());
-        if (class399 == Config.method28894().field4684) {
+        if (class399 == Config.method28894().player) {
             a = Math.max(a, method30995(class399));
         }
         method30992 = method30992(a, method30992);

@@ -34,10 +34,10 @@ public class Class3169 extends Class3167
     
     @Class6753
     public void method9919(final Class5717 class5717) {
-        if (!this.method9906() || Class3169.field15514.field4684 == null) {
+        if (!this.method9906() || Class3169.field15514.player == null) {
             return;
         }
-        if (Class3169.field15514.field4684.onGround) {
+        if (Class3169.field15514.player.onGround) {
             this.field15527 = 0;
             ++this.field15526;
             if (this.field15528 && class5717.method16974() != 0.599 && this.method9914().method9883("Auto Disable")) {
@@ -45,19 +45,19 @@ public class Class3169 extends Class3167
                 Class7482.method23149(class5717, Class7482.method23137() * 0.8);
                 return;
             }
-            final BlockPos class5718 = new BlockPos(Class3169.field15514.field4684.posX, Class3169.field15514.field4684.posY - 0.4, Class3169.field15514.field4684.posZ);
+            final BlockPos class5718 = new BlockPos(Class3169.field15514.player.posX, Class3169.field15514.player.posY - 0.4, Class3169.field15514.player.posZ);
             if (Class3265.field15758 > 1) {
                 if (this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718) && this.field15526 > 0 && Class6430.method19114()) {
-                    Class3169.field15514.field4684.method2725();
-                    class5717.method16973(Class3169.field15514.field4684.getMotion().x);
-                    class5717.method16975(Class3169.field15514.field4684.getMotion().y);
-                    class5717.method16977(Class3169.field15514.field4684.getMotion().z);
+                    Class3169.field15514.player.method2725();
+                    class5717.method16973(Class3169.field15514.player.getMotion().x);
+                    class5717.method16975(Class3169.field15514.player.getMotion().y);
+                    class5717.method16977(Class3169.field15514.player.getMotion().z);
                 }
                 else if (this.method9914().method9883("Auto Jump") && this.field15526 > (this.field15528 ? 1 : 0) && Class6430.method19114()) {
-                    Class3169.field15514.field4684.method2725();
-                    class5717.method16973(Class3169.field15514.field4684.getMotion().x);
-                    class5717.method16975(Class3169.field15514.field4684.getMotion().y);
-                    class5717.method16977(Class3169.field15514.field4684.getMotion().z);
+                    Class3169.field15514.player.method2725();
+                    class5717.method16973(Class3169.field15514.player.getMotion().x);
+                    class5717.method16975(Class3169.field15514.player.getMotion().y);
+                    class5717.method16977(Class3169.field15514.player.getMotion().z);
                 }
             }
         }
@@ -92,7 +92,7 @@ public class Class3169 extends Class3167
                         this.field15529 = field15529;
                     }
                 }
-                if (Class3169.field15514.field4684.collidedHorizontally || !Class6430.method19114()) {
+                if (Class3169.field15514.player.collidedHorizontally || !Class6430.method19114()) {
                     this.field15529 = field15529;
                 }
                 Class7482.method23149(class5717, this.field15529);
@@ -108,7 +108,7 @@ public class Class3169 extends Class3167
                             if (!Class6430.method19146() || !Class9463.method35173().method35189().method21551(Class3393.class).method9906() || (this.field15527 != 8 && this.field15527 != 21)) {
                                 break;
                             }
-                            final double n3 = Class3169.field15514.field4684.posY + class5717.method16974();
+                            final double n3 = Class3169.field15514.player.posY + class5717.method16974();
                             final double a = n3 - (int)(n3 + 0.001);
                             if (Math.abs(a) < 0.001) {
                                 class5717.method16975(class5717.method16974() - a);
@@ -124,7 +124,7 @@ public class Class3169 extends Class3167
                     }
                 }
             }
-            if (this.field15526 == 1 && Class3169.field15514.field4684.getMotion().y < 0.0 && this.method9914().method9883("Auto Jump")) {
+            if (this.field15526 == 1 && Class3169.field15514.player.getMotion().y < 0.0 && this.method9914().method9883("Auto Jump")) {
                 Class7482.method23149(class5717, Class7482.method23137() * 0.2);
             }
         }
@@ -133,7 +133,7 @@ public class Class3169 extends Class3167
     
     @Class6753
     public void method9920(final Class5722 class5722) {
-        if (this.method9906() && Class3169.field15514.field4684 != null) {
+        if (this.method9906() && Class3169.field15514.player != null) {
             this.field15528 = true;
             class5722.method16996(this.field15529 = Class7482.method23137());
             class5722.method16995(0.425 + Class7482.method23140() * 0.1);
@@ -149,9 +149,9 @@ public class Class3169 extends Class3167
                             Class6430.method19179(true);
                         }
                     }
-                    Class3169.field15514.method5269().method17292(new Class4354(Class3169.field15514.field4684.posX, Class3169.field15514.field4684.posY + 0.425, Class3169.field15514.field4684.posZ, false));
-                    Class3169.field15514.method5269().method17292(new Class4354(Class3169.field15514.field4684.posX, Class3169.field15514.field4684.posY + 0.425 + 0.396, Class3169.field15514.field4684.posZ, false));
-                    Class3169.field15514.method5269().method17292(new Class4354(Class3169.field15514.field4684.posX, Class3169.field15514.field4684.posY + 0.425 + 0.396 - 0.122, Class3169.field15514.field4684.posZ, false));
+                    Class3169.field15514.method5269().method17292(new Class4354(Class3169.field15514.player.posX, Class3169.field15514.player.posY + 0.425, Class3169.field15514.player.posZ, false));
+                    Class3169.field15514.method5269().method17292(new Class4354(Class3169.field15514.player.posX, Class3169.field15514.player.posY + 0.425 + 0.396, Class3169.field15514.player.posZ, false));
+                    Class3169.field15514.method5269().method17292(new Class4354(Class3169.field15514.player.posX, Class3169.field15514.player.posY + 0.425 + 0.396 - 0.122, Class3169.field15514.player.posZ, false));
                 }
             }
         }

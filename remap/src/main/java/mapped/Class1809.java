@@ -15,7 +15,7 @@ public class Class1809 extends Class1799<Class784, Class5894<Class784>>
         super(class4778);
     }
     
-    public void method6569(final Class7351 class7351, final Class7807 class7352, final int n, final Class784 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6569(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class784 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (!class7353.method1823()) {
             if (class7353.method4332()) {
                 class7351.method22567();

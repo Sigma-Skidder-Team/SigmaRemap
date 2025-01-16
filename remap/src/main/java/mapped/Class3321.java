@@ -25,13 +25,13 @@ public class Class3321 extends Class3167
     @Class6753
     private void method10518(final Class5723 class5723) {
         if (this.method9906()) {
-            if (Class3321.field15514.field4684 != null) {
+            if (Class3321.field15514.player != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();
-                    final List<Entity> method6739 = Class3321.field15514.world.method6739((Class<? extends Entity>) PlayerEntity.class, Class3321.field15514.field4684.getBoundingBox().intersect(14.0), class5725 -> {
+                    final List<Entity> method6739 = Class3321.field15514.world.method6739((Class<? extends Entity>) PlayerEntity.class, Class3321.field15514.player.getBoundingBox().intersect(14.0), class5725 -> {
                         final void void1;
-                        if (class5725.method1732(Class3321.field15514.field4684) < 6.0f) {
-                            if (Class3321.field15514.field4684 != class5725) {
+                        if (class5725.method1732(Class3321.field15514.player) < 6.0f) {
+                            if (Class3321.field15514.player != class5725) {
                                 if (!Class9463.method35173().method35191().method31751(class5725)) {
                                     return (boolean)void1;
                                 }
@@ -39,7 +39,7 @@ public class Class3321 extends Class3167
                         }
                         return (boolean)void1;
                     });
-                    if (class5724.method12822() == Class3321.field15514.field4684.getEntityId()) {
+                    if (class5724.method12822() == Class3321.field15514.player.getEntityId()) {
                         if (method6739.size() > 0) {
                             this.field15922.add(class5724);
                             class5723.method16961(true);

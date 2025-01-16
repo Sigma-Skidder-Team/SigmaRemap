@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 import com.google.common.collect.Queues;
 import java.util.Deque;
 
-public class Class690 extends Class565
+public class Class690 extends AbstractGui
 {
     private static String[] field3804;
     private final Minecraft field3805;
@@ -24,7 +24,7 @@ public class Class690 extends Class565
     }
     
     public void method3849() {
-        if (!this.field3805.field4648.field23464) {
+        if (!this.field3805.gameSettings.field23464) {
             for (int i = 0; i < this.field3806.length; ++i) {
                 final Class7767<?> class7767 = this.field3806[i];
                 if (class7767 != null) {

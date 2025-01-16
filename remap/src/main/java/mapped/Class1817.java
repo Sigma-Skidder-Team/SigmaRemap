@@ -16,12 +16,12 @@ public class Class1817<T extends PlayerEntity> extends Class1799<T, Class5860<T>
         this.field9996 = new Class5869();
     }
     
-    public void method6579(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6579(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         this.method6580(class7351, class7352, n, t, n2, n3, n6, n7, true);
         this.method6580(class7351, class7352, n, t, n2, n3, n6, n7, false);
     }
     
-    private void method6580(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final boolean b) {
+    private void method6580(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final boolean b) {
         EntityType.method23355((b ? t.method2899() : t.method2901()).getString("id")).filter(class7353 -> class7353 == EntityType.field29011).ifPresent(p10 -> {
             final Entity field9343 = Config.method28908().field9343;
             if (!(!(class7354 instanceof Class754))) {

@@ -18,9 +18,9 @@ public class Class3281 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3281.field15514.field4684 != null && Class3281.field15514.world != null) {
+        if (Class3281.field15514.player != null && Class3281.field15514.world != null) {
             for (final BlockPos class5745 : Class4609.method13675(Class4609.method13691(Class3281.field15514.field4682.method27315()))) {
-                if (Class4609.method13665(Class3281.field15514.field4684, class5745)) {
+                if (Class4609.method13665(Class3281.field15514.player, class5745)) {
                     final BlockState method6701 = Class3281.field15514.world.getBlockState(class5745);
                     if (!(method6701.getBlock() instanceof Class3878)) {
                         if (!(method6701.getBlock() instanceof Class3880)) {
@@ -97,7 +97,7 @@ public class Class3281 extends Class3167
                             }
                         }
                     }
-                    final ItemStack method6710 = Class3281.field15514.field4684.method2715(Class316.field1877);
+                    final ItemStack method6710 = Class3281.field15514.player.method2715(Class316.field1877);
                     if (method6710 != null && method6710.getItem() instanceof Class3829) {
                         if (method6701.get((IProperty<Integer>)Class8970.field37773) == 7) {
                             continue;

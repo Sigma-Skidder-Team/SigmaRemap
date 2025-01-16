@@ -31,7 +31,7 @@ public class Class611 extends Class608<Class637>
     
     @Override
     public boolean method3561() {
-        return this.field3565.method3471() == this;
+        return this.field3565.getFocused() == this;
     }
     
     @Override

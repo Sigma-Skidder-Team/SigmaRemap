@@ -37,7 +37,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
         return true;
     }
     
-    public void method14006(final T t, final float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int n3) {
+    public void method14006(final T t, final float n, final float n2, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n3) {
         super.method13980(t, n, n2, class7351, class7352, n3);
         final Entity method4206 = t.method4206();
         if (method4206 != null) {
@@ -45,7 +45,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
         }
     }
     
-    private <E extends Entity> void method14007(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final E e) {
+    private <E extends Entity> void method14007(final T t, final float n, final MatrixStack class7351, final IRenderTypeBuffer class7352, final E e) {
         if (!Config.method28955() || !Class9216.field39049) {
             class7351.method22567();
             final double n2 = MathHelper.method35700(n * 0.5f, e.rotationYaw, e.prevRotationYaw) * 0.017453292f;
@@ -73,7 +73,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
             final float n13 = (float)(n5 - method35701);
             final float n14 = (float)(n6 - n11);
             final Class4150 method35702 = class7352.method25214(Class6332.method18781());
-            final Matrix4f method35703 = class7351.method22569().method32111();
+            final Matrix4f method35703 = class7351.getLast().getMatrix();
             final float n15 = MathHelper.fastInvSqrt(n12 * n12 + n14 * n14) * 0.025f / 2.0f;
             final float n16 = n14 * n15;
             final float n17 = n12 * n15;
@@ -116,11 +116,11 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
         final float n16 = n3 * (n14 * n14 + n14) * 0.5f + (n7 - (float)n8) / (n7 * 0.75f) + 0.125f;
         final float n17 = n4 * n14;
         if (!b) {
-            class4150.method12444(class4151, n15 + n9, n16 + n5 - n6, n17 - n10).method12439(n11, n12, n13, 1.0f).method12440(n).method12397();
+            class4150.pos(class4151, n15 + n9, n16 + n5 - n6, n17 - n10).color(n11, n12, n13, 1.0f).method12440(n).endVertex();
         }
-        class4150.method12444(class4151, n15 - n9, n16 + n6, n17 + n10).method12439(n11, n12, n13, 1.0f).method12440(n).method12397();
+        class4150.pos(class4151, n15 - n9, n16 + n6, n17 + n10).color(n11, n12, n13, 1.0f).method12440(n).endVertex();
         if (b) {
-            class4150.method12444(class4151, n15 + n9, n16 + n5 - n6, n17 - n10).method12439(n11, n12, n13, 1.0f).method12440(n).method12397();
+            class4150.pos(class4151, n15 + n9, n16 + n5 - n6, n17 - n10).color(n11, n12, n13, 1.0f).method12440(n).endVertex();
         }
     }
 }

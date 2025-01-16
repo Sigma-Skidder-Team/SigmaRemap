@@ -58,14 +58,14 @@ public class Class3368 extends Class3355
             return;
         }
         if (!this.method10706(this.field16036)) {
-            if (Class3368.field15514.field4684.ticksExisted % 4 == 0) {
+            if (Class3368.field15514.player.ticksExisted % 4 == 0) {
                 this.method10707(this.field16036);
             }
         }
         if (!this.method10705(this.field16036)) {
             return;
         }
-        if (Math.floor(Class3368.field15514.field4684.ticksExisted % this.field16034.method9383()) / 20.0 == 0.0) {
+        if (Math.floor(Class3368.field15514.player.ticksExisted % this.field16034.method9383()) / 20.0 == 0.0) {
             if (this.field16033 > this.field16034.method9377()) {
                 this.field16033 = 0;
             }
@@ -83,14 +83,14 @@ public class Class3368 extends Class3355
                         if (Class2059.method8149(class5744.field40774) != method35385.method32950() - 33) {
                             continue;
                         }
-                        if (Math.sqrt(Class3368.field15514.field4684.method1894().distanceSq(class5744.field40773)) >= Class3368.field15514.field4682.method27315()) {
+                        if (Math.sqrt(Class3368.field15514.player.method1894().distanceSq(class5744.field40773)) >= Class3368.field15514.field4682.method27315()) {
                             continue;
                         }
                         float[] array = Class4609.method13672(class5744.field40773, Direction.UP);
-                        if (class5744.field40773.getY() > Class3368.field15514.field4684.posY + 1.0) {
+                        if (class5744.field40773.getY() > Class3368.field15514.player.posY + 1.0) {
                             array = Class4609.method13672(class5744.field40773, Direction.DOWN);
                         }
-                        Class3368.field15514.method5269().method17292(new Class4356(array[0], array[1], Class3368.field15514.field4684.onGround));
+                        Class3368.field15514.method5269().method17292(new Class4356(array[0], array[1], Class3368.field15514.player.onGround));
                         Class3368.field15514.method5269().method17292(new Class4399(Class2003.field11240, class5744.field40773, Direction.UP));
                         Class3368.field15514.method5269().method17292(new Class4380(Class316.field1877));
                         this.field16037.add(class5744.field40773);
@@ -106,7 +106,7 @@ public class Class3368 extends Class3355
             if (class9486.field40774 != -1.0f && !this.method10710(class9486.field40774, class9486.field40775)) {
                 continue;
             }
-            if (Math.sqrt(Class3368.field15514.field4684.method1894().distanceSq(class9486.field40773)) >= Class3368.field15514.field4682.method27315()) {
+            if (Math.sqrt(Class3368.field15514.player.method1894().distanceSq(class9486.field40773)) >= Class3368.field15514.field4682.method27315()) {
                 continue;
             }
             return false;
@@ -116,9 +116,9 @@ public class Class3368 extends Class3355
     
     public boolean method10706(final List<Class9486> list) {
         for (final Class9486 class9486 : list) {
-            if (class9486.field40774 == -1.0f && Math.sqrt(Class3368.field15514.field4684.method1894().distanceSq(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
+            if (class9486.field40774 == -1.0f && Math.sqrt(Class3368.field15514.player.method1894().distanceSq(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
                 final float[] method13672 = Class4609.method13672(class9486.field40773, Direction.UP);
-                Class3368.field15514.method5269().method17292(new Class4356(method13672[0], method13672[1], Class3368.field15514.field4684.onGround));
+                Class3368.field15514.method5269().method17292(new Class4356(method13672[0], method13672[1], Class3368.field15514.player.onGround));
                 Class3368.field15514.method5269().method17292(new Class4399(Class2003.field11240, class9486.field40773, Direction.UP));
                 this.field16037.clear();
                 this.field16037.add(class9486.field40773);
@@ -130,11 +130,11 @@ public class Class3368 extends Class3355
     
     public boolean method10707(final List<Class9486> list) {
         for (final Class9486 class9486 : list) {
-            if (this.method10710(class9486.field40774, class9486.field40775) && Math.sqrt(Class3368.field15514.field4684.method1894().distanceSq(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
-                if (Class3368.field15514.field4684.ticksExisted % 1 == 0) {
+            if (this.method10710(class9486.field40774, class9486.field40775) && Math.sqrt(Class3368.field15514.player.method1894().distanceSq(class9486.field40773)) < Class3368.field15514.field4682.method27315()) {
+                if (Class3368.field15514.player.ticksExisted % 1 == 0) {
                     final float[] method13672 = Class4609.method13672(class9486.field40773, Direction.UP);
-                    Class3368.field15514.field4684.method2707(Class316.field1877);
-                    Class3368.field15514.method5269().method17292(new Class4356(method13672[0], method13672[1], Class3368.field15514.field4684.onGround));
+                    Class3368.field15514.player.method2707(Class316.field1877);
+                    Class3368.field15514.method5269().method17292(new Class4356(method13672[0], method13672[1], Class3368.field15514.player.onGround));
                     Class3368.field15514.method5269().method17292(new Class4329(Class316.field1877, Class4609.method13697(method13672[0], method13672[1], Class3368.field15514.field4682.method27315() + 1.0f)));
                     this.field16037.clear();
                     this.field16037.add(class9486.field40773);
@@ -171,7 +171,7 @@ public class Class3368 extends Class3355
         GL11.glDisable(2929);
         GL11.glDepthMask(false);
         GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
-        final Vec3d method16755 = new Vec3d(0.0, 0.0, 1.0).rotatePitch(-(float)Math.toRadians(Minecraft.method5277().field4684.rotationPitch)).rotateYaw(-(float)Math.toRadians(Minecraft.method5277().field4684.rotationYaw));
+        final Vec3d method16755 = new Vec3d(0.0, 0.0, 1.0).rotatePitch(-(float)Math.toRadians(Minecraft.method5277().player.rotationPitch)).rotateYaw(-(float)Math.toRadians(Minecraft.method5277().player.rotationYaw));
         GL11.glBegin(1);
         GL11.glVertex3d(method16755.x, method16755.y, method16755.z);
         GL11.glVertex3d(n, n2, n3);

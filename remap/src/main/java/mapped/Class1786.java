@@ -19,11 +19,11 @@ public class Class1786 extends Class1785
         return Stream.concat(Registry.field227.method507().stream(), (Stream<? extends ResourceLocation>)Stream.of(Class1786.field9903));
     }
     
-    public Class1912 method6444(final Class8539 class8539) {
+    public TextureAtlasSprite method6444(final Class8539 class8539) {
         return this.method6440(Registry.field227.getKey(class8539));
     }
     
-    public Class1912 method6445() {
+    public TextureAtlasSprite method6445() {
         return this.method6440(Class1786.field9903);
     }
     

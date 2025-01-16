@@ -18,7 +18,7 @@ public class Class6492 extends Class6490
     @Override
     public int method19527(final Class6108 class6108, final Class8322 class6109) {
         System.out.println("huuu");
-        if (this.field25849.field4684 == null) {
+        if (this.field25849.player == null) {
             return 0;
         }
         final BlockState method6701 = this.field25849.world.getBlockState(new BlockPos(class6109.method27704(), class6109.method27705(), class6109.method27706()));

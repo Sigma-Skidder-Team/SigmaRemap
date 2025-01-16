@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 public abstract class Class6159 extends Class6172
 {
-    public Class1912 field24910;
+    public TextureAtlasSprite field24910;
     
     public Class6159(final World class1847, final double n, final double n2, final double n3) {
         super(class1847, n, n2, n3);
@@ -18,7 +18,7 @@ public abstract class Class6159 extends Class6172
         super(class1847, n, n2, n3, n4, n5, n6);
     }
     
-    public void method18423(final Class1912 field24910) {
+    public void method18423(final TextureAtlasSprite field24910) {
         this.field24910 = field24910;
     }
     

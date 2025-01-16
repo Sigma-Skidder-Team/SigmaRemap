@@ -25,12 +25,12 @@ public class Class3255 extends Class3247
         final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {
             final Entity class400 = iterator.next();
-            if (class400 != Class3255.field15514.field4684) {
+            if (class400 != Class3255.field15514.player) {
                 if (!Class9463.method35173().method35190().method29878(class400)) {
                     if (class400 instanceof LivingEntity) {
                         if (((LivingEntity)class400).method2664() != 0.0f) {
-                            if (Class3255.field15514.field4684.method1732(class400) <= n) {
-                                if (Class3255.field15514.field4684.method2646((LivingEntity)class400)) {
+                            if (Class3255.field15514.player.method1732(class400) <= n) {
+                                if (Class3255.field15514.player.method2646((LivingEntity)class400)) {
                                     if (!(class400 instanceof Class857)) {
                                         if (!this.method9883("Players") && class400 instanceof PlayerEntity) {
                                             iterator.remove();
@@ -44,7 +44,7 @@ public class Class3255 extends Class3247
                                         else if (!this.method9883("Animals/Monsters") && !(class400 instanceof PlayerEntity)) {
                                             iterator.remove();
                                         }
-                                        else if (Class3255.field15514.field4684.method1920() != null && Class3255.field15514.field4684.method1920().equals(class400)) {
+                                        else if (Class3255.field15514.player.method1920() != null && Class3255.field15514.player.method1920().equals(class400)) {
                                             iterator.remove();
                                         }
                                         else if (!class400.method1850()) {
@@ -56,7 +56,7 @@ public class Class3255 extends Class3247
                                                     }
                                                 }
                                             }
-                                            if (class399 != null && Class3255.field15514.field4684.method1732(class400) >= Class3255.field15514.field4684.method1732(class399)) {
+                                            if (class399 != null && Class3255.field15514.player.method1732(class400) >= Class3255.field15514.player.method1732(class399)) {
                                                 continue;
                                             }
                                             class399 = class400;

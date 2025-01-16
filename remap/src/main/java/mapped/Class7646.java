@@ -4,10 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Optional;
 import org.lwjgl.glfw.GLFWVidMode$Buffer;
-import java.util.Comparator;
 import org.lwjgl.glfw.GLFW;
 import com.google.common.collect.Lists;
 import java.util.List;
@@ -27,7 +25,7 @@ public final class Class7646
     }
     
     public void method24205() {
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         this.field30368.clear();
         final GLFWVidMode$Buffer glfwGetVideoModes = GLFW.glfwGetVideoModes(this.field30367);
         final Class8680 class8680 = new Class8680(GLFW.glfwGetVideoMode(this.field30367));
@@ -54,7 +52,7 @@ public final class Class7646
     }
     
     public Class8680 method24206(final Optional<Class8680> optional) {
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         if (optional.isPresent()) {
             final Class8680 class8680 = optional.get();
             for (final Class8680 class8681 : this.field30368) {
@@ -68,7 +66,7 @@ public final class Class7646
     }
     
     public int method24207(final Class8680 class8680) {
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         return this.field30368.indexOf(class8680);
     }
     

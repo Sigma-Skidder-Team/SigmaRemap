@@ -24,29 +24,29 @@ public class Class701 extends Class698
         final Class6469[] array = { Class6469.field25763, Class6469.field25786, Class6469.field25764, Class6469.field25814, Class6469.field25771, Class6469.field25778, Class6469.field25747, Class6469.field25765, Class6469.field25815, Class6469.field25818, class6473, null };
         for (int i = 0; i < array.length; ++i) {
             final Class6469 class6474 = array[i];
-            final Class573 method3029 = this.method3029(class6474.method19362(this.minecraft.field4648, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 21 * (i / 2) - 12, 150));
+            final Widget method3029 = this.addButton(class6474.method19362(this.minecraft.gameSettings, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 21 * (i / 2) - 12, 150));
             if (class6474 == class6473) {
                 method3029.method3365(310);
                 ++i;
             }
         }
-        this.method3029(new Class673(210, this.width / 2 - 100, this.height / 6 + 168 + 11 - 44, Class8822.method30773("of.options.other.reset", new Object[0])));
-        this.method3029(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(210, this.width / 2 - 100, this.height / 6 + 168 + 11 - 44, Class8822.method30773("of.options.other.reset", new Object[0])));
+        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
     }
     
     @Override
-    public void method3896(final Class573 class573) {
+    public void method3896(final Widget class573) {
         if (class573 instanceof Class673) {
             final Class673 class574 = (Class673)class573;
             if (class574.field3431) {
                 if (class574.field3708 == 200) {
-                    this.minecraft.field4648.method17121();
+                    this.minecraft.gameSettings.method17121();
                     this.minecraft.method5332().method7683();
-                    this.minecraft.method5244(this.field3859);
+                    this.minecraft.displayGuiScreen(this.field3859);
                 }
                 if (class574.field3708 == 210) {
-                    this.minecraft.field4648.method17121();
-                    this.minecraft.method5244(new Class546(this::method3902, new StringTextComponent(Class8822.method30773("of.message.other.reset", new Object[0])), new StringTextComponent("")));
+                    this.minecraft.gameSettings.method17121();
+                    this.minecraft.displayGuiScreen(new Class546(this::method3902, new StringTextComponent(Class8822.method30773("of.message.other.reset", new Object[0])), new StringTextComponent("")));
                 }
             }
         }
@@ -54,23 +54,23 @@ public class Class701 extends Class698
     
     @Override
     public void removed() {
-        this.minecraft.field4648.method17121();
+        this.minecraft.gameSettings.method17121();
         this.minecraft.method5332().method7683();
         super.removed();
     }
     
     public void method3902(final boolean b) {
         if (b) {
-            this.minecraft.field4648.method17137();
+            this.minecraft.gameSettings.method17137();
         }
-        this.minecraft.method5244(this);
+        this.minecraft.displayGuiScreen(this);
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.field3843, this.field3148.getFormattedText(), this.width / 2, 15, 16777215);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.field3843, this.title.getFormattedText(), this.width / 2, 15, 16777215);
+        super.render(n, n2, n3);
         this.field3861.method27577(n, n2, this.field3842);
     }
 }

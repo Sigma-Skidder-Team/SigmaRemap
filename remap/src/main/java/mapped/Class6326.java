@@ -12,18 +12,18 @@ public class Class6326 extends Class6322
     public Class6326(final boolean field25322, final boolean field25323) {
         super("write_mask_state", () -> {
             if (!b) {
-                Class8726.method30010(b);
+                RenderSystem.method30010(b);
             }
             if (!b2) {
-                Class8726.method30049(b2, b2, b2, b2);
+                RenderSystem.method30049(b2, b2, b2, b2);
             }
             return;
         }, () -> {
             if (!b3) {
-                Class8726.method30010(true);
+                RenderSystem.method30010(true);
             }
             if (!b4) {
-                Class8726.method30049(true, true, true, true);
+                RenderSystem.method30049(true, true, true, true);
             }
             return;
         });

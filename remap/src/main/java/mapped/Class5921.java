@@ -25,7 +25,7 @@ public abstract class Class5921<E extends Entity> extends Class5844<E>
     }
     
     @Override
-    public void method17564(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
+    public void method17564(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         super.method17564(class7351, class7352, n, n2, this.field24321 * n3, this.field24322 * n4, this.field24323 * n5, n6);
     }
 }

@@ -77,8 +77,8 @@ public class Class9103
     public void method32901(final int a, final int b) {
         Class8933.method31506();
         Class8933.method31585();
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
         Config.method28895().method5849(this.field38550);
         Class8933.method31646(1.0f, 1.0f, 1.0f, 1.0f);
         final float n = (float)(16 * this.field38552);
@@ -110,11 +110,11 @@ public class Class9103
                 break;
             }
         }
-        method22695.method12390(7, Class9237.field39619);
-        method22695.method12432(0.0, b, 0.0).method12391(n4, n5 + n3).method12399(255, 255, 255, 255).method12397();
-        method22695.method12432(a, b, 0.0).method12391(n4 + n2, n5 + n3).method12399(255, 255, 255, 255).method12397();
-        method22695.method12432(a, 0.0, 0.0).method12391(n4 + n2, n5).method12399(255, 255, 255, 255).method12397();
-        method22695.method12432(0.0, 0.0, 0.0).method12391(n4, n5).method12399(255, 255, 255, 255).method12397();
-        method22694.method22695();
+        method22695.begin(7, DefaultVertexFormats.field39619);
+        method22695.pos(0.0, b, 0.0).tex(n4, n5 + n3).method12399(255, 255, 255, 255).endVertex();
+        method22695.pos(a, b, 0.0).tex(n4 + n2, n5 + n3).method12399(255, 255, 255, 255).endVertex();
+        method22695.pos(a, 0.0, 0.0).tex(n4 + n2, n5).method12399(255, 255, 255, 255).endVertex();
+        method22695.pos(0.0, 0.0, 0.0).tex(n4, n5).method12399(255, 255, 255, 255).endVertex();
+        method22694.draw();
     }
 }

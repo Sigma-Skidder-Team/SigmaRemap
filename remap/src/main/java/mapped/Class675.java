@@ -31,7 +31,7 @@ public class Class675 extends Class674
     public void method3354(final Minecraft class869, final int n, final int n2) {
         if (this.field3432) {
             if (this.field3712) {
-                if (!Screen.method3047()) {
+                if (!Screen.hasShiftDown()) {
                     this.field3711 = (n - (this.field3426 + 4)) / (float)(this.field3424 - 8);
                     this.field3711 = MathHelper.clamp(this.field3711, 0.0f, 1.0f);
                     this.field3710.method16886(this.field3711);
@@ -42,8 +42,8 @@ public class Class675 extends Class674
             class869.method5290().method5849(Class675.field3421);
             Class8933.method31646(1.0f, 1.0f, 1.0f, 1.0f);
             final int n3 = (this.method3360() ? 2 : 1) * 20;
-            this.method3186(this.field3426 + (int)(this.field3711 * (this.field3424 - 8)), this.field3427, 0, 46 + n3, 4, 20);
-            this.method3186(this.field3426 + (int)(this.field3711 * (this.field3424 - 8)) + 4, this.field3427, 196, 46 + n3, 4, 20);
+            this.blit(this.field3426 + (int)(this.field3711 * (this.field3424 - 8)), this.field3427, 0, 46 + n3, 4, 20);
+            this.blit(this.field3426 + (int)(this.field3711 * (this.field3424 - 8)) + 4, this.field3427, 196, 46 + n3, 4, 20);
         }
     }
     

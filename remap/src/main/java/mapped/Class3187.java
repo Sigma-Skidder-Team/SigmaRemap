@@ -32,7 +32,7 @@ public class Class3187 extends Class3167
             this.method9883("AutoJump");
             final double method23136 = Class7482.method23136();
             Class6430.method19114();
-            if (!Class3187.field15514.field4684.onGround) {
+            if (!Class3187.field15514.player.onGround) {
                 ++this.field15588;
                 this.field15589 = 0.36 - this.field15588 / 250.0;
                 if (this.field15589 < method23136) {
@@ -42,8 +42,8 @@ public class Class3187 extends Class3167
             }
             else {
                 this.field15588 = 0;
-                Class3187.field15514.field4684.method2725();
-                class5717.method16975(Class3187.field15514.field4684.getMotion().y);
+                Class3187.field15514.player.method2725();
+                class5717.method16975(Class3187.field15514.player.getMotion().y);
             }
         }
     }

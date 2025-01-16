@@ -46,7 +46,7 @@ public class Class696 extends Screen
         this.field3829 = Class8822.method30773("createWorld.customize.flat.height", new Object[0]);
         this.field3830 = new Class618(this);
         this.children.add(this.field3830);
-        this.field3831 = this.method3029(new Class654(this.width / 2 - 155, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.flat.removeLayer", new Object[0]), class654 -> {
+        this.field3831 = this.addButton(new Class654(this.width / 2 - 155, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.flat.removeLayer", new Object[0]), class654 -> {
             if (this.method3888()) {
                 final List<Class9127> method21590 = this.field3827.method21590();
                 final int index = this.field3830.children().indexOf(((Class604<Object>)this.field3830).method3530());
@@ -56,19 +56,19 @@ public class Class696 extends Screen
                 this.method3887();
             }
         }));
-        this.method3029(new Class654(this.width / 2 + 5, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.presets", new Object[0]), class654 -> {
-            this.minecraft.method5244(new Class561(this));
+        this.addButton(new Class654(this.width / 2 + 5, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.presets", new Object[0]), class654 -> {
+            this.minecraft.displayGuiScreen(new Class561(this));
             this.field3827.method21591();
             this.method3887();
         }));
-        this.method3029(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
             this.field3826.field3231 = this.method3884();
-            this.minecraft.method5244(this.field3826);
+            this.minecraft.displayGuiScreen(this.field3826);
             this.field3827.method21591();
             this.method3887();
         }));
-        this.method3029(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
-            this.minecraft.method5244(this.field3826);
+        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
+            this.minecraft.displayGuiScreen(this.field3826);
             this.field3827.method21591();
             this.method3887();
         }));
@@ -86,18 +86,18 @@ public class Class696 extends Screen
     }
     
     @Override
-    public void method3028() {
-        this.minecraft.method5244(this.field3826);
+    public void onClose() {
+        this.minecraft.displayGuiScreen(this.field3826);
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.field3830.method2975(n, n2, n3);
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 8, 16777215);
+        this.field3830.render(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 8, 16777215);
         final int n4 = this.width / 2 - 92 - 16;
-        this.method3297(this.font, this.field3828, n4, 32, 16777215);
-        this.method3297(this.font, this.field3829, n4 + 2 + 213 - this.font.method6617(this.field3829), 32, 16777215);
-        super.method2975(n, n2, n3);
+        this.drawString(this.font, this.field3828, n4, 32, 16777215);
+        this.drawString(this.font, this.field3829, n4 + 2 + 213 - this.font.getStringWidth(this.field3829), 32, 16777215);
+        super.render(n, n2, n3);
     }
 }

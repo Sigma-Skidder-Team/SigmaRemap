@@ -22,13 +22,13 @@ public class Class6110
     private static boolean field24790;
     private static boolean field24791;
     private static boolean field24792;
-    private static Class1912 field24793;
-    private static Class1912 field24794;
-    private static Class1912 field24795;
-    private static Class1912 field24796;
-    private static Class1912 field24797;
-    private static Class1912 field24798;
-    private static Class1912 field24799;
+    private static TextureAtlasSprite field24793;
+    private static TextureAtlasSprite field24794;
+    private static TextureAtlasSprite field24795;
+    private static TextureAtlasSprite field24796;
+    private static TextureAtlasSprite field24797;
+    private static TextureAtlasSprite field24798;
+    private static TextureAtlasSprite field24799;
     private static boolean field24800;
     private static Class6313 field24801;
     private static Class6313 field24802;
@@ -132,15 +132,15 @@ public class Class6110
         Class6110.field24799 = method18258(class1774, Class6110.field24799.method7503());
     }
     
-    private static Class1912 method18258(final Class1774 class1774, final ResourceLocation obj) {
-        final Class1912 method6338 = class1774.method6338(obj);
+    private static TextureAtlasSprite method18258(final Class1774 class1774, final ResourceLocation obj) {
+        final TextureAtlasSprite method6338 = class1774.method6338(obj);
         if (method6338 == null || method6338 instanceof Class1913) {
             Config.warn("Missing BetterGrass sprite: " + obj);
         }
         return method6338;
     }
     
-    private static Class1912 method18259(final Properties properties, final String key, final String s, final Class1774 class1774) {
+    private static TextureAtlasSprite method18259(final Properties properties, final String key, final String s, final Class1774 class1774) {
         String property = properties.getProperty(key);
         if (property == null) {
             property = s;

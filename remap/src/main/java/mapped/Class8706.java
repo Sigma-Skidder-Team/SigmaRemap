@@ -30,7 +30,7 @@ public class Class8706
     
     @Class6753
     private void method29877(final Class5752 class5752) {
-        if (class5752.method17061() == this.field36585.field4648.field23447.field2161.field32860) {
+        if (class5752.method17061() == this.field36585.gameSettings.field23447.field2161.field32860) {
             if (this.field36585.field4690 != null) {
                 if (this.field36585.field4690.getName() != null) {
                     final Class9070 method35204 = Class9463.method35173().method35204();

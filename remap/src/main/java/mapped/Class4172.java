@@ -14,7 +14,7 @@ public class Class4172 extends Class4171<Class488>
         super(class9550);
     }
     
-    public void method12495(final Class488 class488, final float n, final Class7351 class489, final Class7807 class490, final int n2, final int n3) {
+    public void method12495(final Class488 class488, final float n, final MatrixStack class489, final IRenderTypeBuffer class490, final int n2, final int n3) {
         if (class488.method2432() || class488.method2433()) {
             final float n4 = class488.method2432() ? class488.method2434(n) : class488.method2435(n);
             final double n5 = class488.method2432() ? 256.0 : 50.0;

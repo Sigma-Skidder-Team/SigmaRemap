@@ -76,15 +76,15 @@ public class Class8088
         if (!this.method26560()) {
             return;
         }
-        final double sqrt = Math.sqrt(this.field33313.field4684.getMotion().x * this.field33313.field4684.getMotion().x + this.field33313.field4684.getMotion().z * this.field33313.field4684.getMotion().z);
+        final double sqrt = Math.sqrt(this.field33313.player.getMotion().x * this.field33313.player.getMotion().x + this.field33313.player.getMotion().z * this.field33313.player.getMotion().z);
         final int n = this.field33314.size() - 1;
         Class8733 class5743 = this.field33314.get(n);
         Class2049 class5744 = class5743.field36691;
-        boolean equals = class5743.field36684.method30692().equals(this.field33313.field4684.method1894());
+        boolean equals = class5743.field36684.method30692().equals(this.field33313.player.method1894());
         if (class5744 == Class2049.field11679 && this.field33313.world.getBlockState(class5743.field36684.method30692().method1139()).method21706()) {
             equals = false;
         }
-        final boolean b = (this.method26566() == Class2049.field11677 || this.method26566() == Class2049.field11678 || this.method26566() == Class2049.field11679) && !this.field33313.field4684.onGround;
+        final boolean b = (this.method26566() == Class2049.field11677 || this.method26566() == Class2049.field11678 || this.method26566() == Class2049.field11679) && !this.field33313.player.onGround;
         if (equals && !b) {
             this.field33314.remove(n);
             if (this.field33314.size() == 0) {
@@ -95,46 +95,46 @@ public class Class8088
             }
             class5743 = this.field33314.get(this.field33314.size() - 1);
             class5744 = class5743.field36691;
-            if (this.field33313.field4684.onGround) {
-                final float n2 = Class8845.method30920(this.field33313.field4684.method1934(), class5743.field36684.method30686())[0];
+            if (this.field33313.player.onGround) {
+                final float n2 = Class8845.method30920(this.field33313.player.method1934(), class5743.field36684.method30686())[0];
                 final double n3 = Math.cos(Math.toRadians(n2 + 90.0f)) * sqrt;
                 final double n4 = Math.sin(Math.toRadians(n2 + 90.0f)) * sqrt;
                 Class6430.method19154(n3);
                 Class6430.method19156(n4);
             }
         }
-        if (!this.field33313.field4684.onGround && this.method26563(class5743.field36684.method30692())) {
-            this.field33313.field4684.field2970 = 0.0f;
-            this.field33313.field4684.field2968 = 0.0f;
+        if (!this.field33313.player.onGround && this.method26563(class5743.field36684.method30692())) {
+            this.field33313.player.field2970 = 0.0f;
+            this.field33313.player.field2968 = 0.0f;
             Class6430.method19106("STOPED");
             return;
         }
-        this.field33313.field4684.method1816(true);
-        final double method16745 = class5743.field36684.method30686().distanceTo(this.field33313.field4684.method1934());
-        final Vec3d method16746 = class5743.field36684.method30686().subtract(this.field33313.field4684.method1934());
+        this.field33313.player.method1816(true);
+        final double method16745 = class5743.field36684.method30686().distanceTo(this.field33313.player.method1934());
+        final Vec3d method16746 = class5743.field36684.method30686().subtract(this.field33313.player.method1934());
         final double n5 = Math.abs(method16746.x) + Math.abs(method16746.z);
-        final float field33315 = Class8845.method30920(this.field33313.field4684.method1934(), class5743.field36684.method30686())[0];
+        final float field33315 = Class8845.method30920(this.field33313.player.method1934(), class5743.field36684.method30686())[0];
         final double n6 = Math.min(method16745 * 0.75, Class7482.method23137()) * 0.8999999761581421;
         this.field33315 = field33315;
-        if (class5743.field36684.method30692().add(0, -class5743.field36684.method30692().getY(), 0).equals(this.field33313.field4684.method1894().add(0, -this.field33313.field4684.method1894().getY(), 0)) && this.field33313.field4684.fallDistance > 0.0f) {}
-        final double cos = Math.cos(Math.toRadians(this.field33313.field4684.rotationYaw - field33315));
-        final double sin = Math.sin(Math.toRadians(this.field33313.field4684.rotationYaw - field33315));
+        if (class5743.field36684.method30692().add(0, -class5743.field36684.method30692().getY(), 0).equals(this.field33313.player.method1894().add(0, -this.field33313.player.method1894().getY(), 0)) && this.field33313.player.fallDistance > 0.0f) {}
+        final double cos = Math.cos(Math.toRadians(this.field33313.player.rotationYaw - field33315));
+        final double sin = Math.sin(Math.toRadians(this.field33313.player.rotationYaw - field33315));
         final double min = Math.min(1.0 / Math.abs(cos), 1.0 / Math.abs(sin));
-        this.field33313.field4684.field2970 = (float)(cos * min);
-        this.field33313.field4684.field2968 = (float)(sin * min);
+        this.field33313.player.field2970 = (float)(cos * min);
+        this.field33313.player.field2968 = (float)(sin * min);
         final double n7 = Math.cos(Math.toRadians(field33315 + 90.0f)) * sqrt;
         final double n8 = Math.sin(Math.toRadians(field33315 + 90.0f)) * sqrt;
         final boolean method16747 = Class8353.method27876();
         final boolean method16748 = Class8353.method27875(class5743);
-        final boolean b2 = this.field33313.world.method6981(this.field33313.field4684, this.field33313.field4684.getBoundingBox().offset(n7, -1.0, n8)).count() == 0L;
+        final boolean b2 = this.field33313.world.method6981(this.field33313.player, this.field33313.player.getBoundingBox().offset(n7, -1.0, n8)).count() == 0L;
         boolean b3 = false;
         boolean b4 = false;
-        final float field33316 = this.field33313.field4684.rotationYaw;
-        this.field33313.field4684.rotationYaw = field33315;
+        final float field33316 = this.field33313.player.rotationYaw;
+        this.field33313.player.rotationYaw = field33315;
         switch (Class8126.field33476[class5744.ordinal()]) {
             case 1: {
                 if (method16748 && method16747) {
-                    this.field33313.field4684.method2725();
+                    this.field33313.player.method2725();
                     final Class2049 field33317 = Class2049.field11676;
                     break;
                 }
@@ -142,7 +142,7 @@ public class Class8088
             }
             case 2: {
                 if (method16748 && method16747 && b2) {
-                    this.field33313.field4684.method2725();
+                    this.field33313.player.method2725();
                     final Class2049 field33318 = Class2049.field11676;
                     break;
                 }
@@ -157,13 +157,13 @@ public class Class8088
                 break;
             }
         }
-        this.field33313.field4684.rotationYaw = field33316;
-        if (b4 && !this.field33313.field4684.onGround && !Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
+        this.field33313.player.rotationYaw = field33316;
+        if (b4 && !this.field33313.player.onGround && !Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
             Class6430.method19154(0.0);
             Class6430.method19156(0.0);
             return;
         }
-        if (Class9463.method35173().method35189().method21551(Class3259.class).method9906() && !Class6430.method19160(this.field33313.field4684, 5.0f)) {
+        if (Class9463.method35173().method35189().method21551(Class3259.class).method9906() && !Class6430.method19160(this.field33313.player, 5.0f)) {
             b4 = true;
         }
         Class9463.method35173().method35189().method21551(Class3260.class).method9907(b3);
@@ -186,10 +186,10 @@ public class Class8088
     public boolean method26563(final BlockPos class354) {
         final float n = class354.getX() + 0.5f;
         final float n2 = class354.getZ() + 0.5f;
-        double field22770 = this.field33313.field4684.getMotion().x;
-        double field22771 = this.field33313.field4684.getMotion().z;
-        double field22772 = this.field33313.field4684.posX;
-        double field22773 = this.field33313.field4684.posZ;
+        double field22770 = this.field33313.player.getMotion().x;
+        double field22771 = this.field33313.player.getMotion().z;
+        double field22772 = this.field33313.player.posX;
+        double field22773 = this.field33313.player.posZ;
         while (Math.abs(field22770) + Math.abs(field22771) > 0.05) {
             field22770 *= 0.8999999761581421;
             field22771 *= 0.8999999761581421;
@@ -219,7 +219,7 @@ public class Class8088
             final Iterator<Long> iterator = class5745.field36693.iterator();
             while (iterator.hasNext()) {
                 final BlockPos method1129 = BlockPos.fromLong(iterator.next());
-                if (this.field33313.field4684.method1934().squareDistanceTo(method1129.getX(), method1129.getY(), method1129.getZ()) >= 9.0) {
+                if (this.field33313.player.method1934().squareDistanceTo(method1129.getX(), method1129.getY(), method1129.getZ()) >= 9.0) {
                     continue;
                 }
                 if (Class8797.method30696(method1129)) {
@@ -235,13 +235,13 @@ public class Class8088
                 this.field33317 = null;
             }
             else if (this.field33317 != null) {
-                if (this.field33313.world.getBlockState(this.field33317).method21706() || Math.sqrt(this.field33313.field4684.method1733(this.field33317.getX() + 0.5, this.field33317.getY() + 0.5, this.field33317.getZ() + 0.5)) > 6.0) {
+                if (this.field33313.world.getBlockState(this.field33317).method21706() || Math.sqrt(this.field33313.player.method1733(this.field33317.getX() + 0.5, this.field33317.getY() + 0.5, this.field33317.getZ() + 0.5)) > 6.0) {
                     this.field33317 = (BlockPos)list.get(0);
                 }
                 final float[] method1130 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
                 class5744.method17043(method1130[0]);
                 class5744.method17041(method1130[1]);
-                this.field33313.field4684.method2707(Class316.field1877);
+                this.field33313.player.method2707(Class316.field1877);
                 this.field33313.field4682.method27314(this.field33317, Class4609.method13710(this.field33317));
             }
             else {
@@ -260,7 +260,7 @@ public class Class8088
     
     @Class6753
     public void method26565(final Class5738 class5738) {
-        if (this.method26560() && this.field33313.field4684.onGround) {
+        if (this.method26560() && this.field33313.player.onGround) {
             if (this.field33314.get(this.field33314.size() - 1).field36691 == Class2049.field11679) {
                 class5738.method17026(true);
             }
@@ -284,7 +284,7 @@ public class Class8088
                 this.method26568(class5740.field36684.method30683(), class5740.field36684.method30684(), class5740.field36684.method30685(), class5740.field36691 + "");
             }
         }
-        if (Class4609.method13694(this.field33313.field4684.rotationYaw, this.field33313.field4684.rotationPitch, 100.0f) != null) {
+        if (Class4609.method13694(this.field33313.player.rotationYaw, this.field33313.player.rotationPitch, 100.0f) != null) {
             if (this.field33314 != null) {
                 if (this.field33314.size() > 0) {
                     final int method19118 = Class6430.method19118(Class265.field1285.field1292, 0.02f);

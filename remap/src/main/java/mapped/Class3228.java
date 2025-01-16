@@ -13,7 +13,7 @@ public class Class3228 extends Class3167
     @Class6753
     private void method10176(final Class5741 class5741) {
         if (this.method9906()) {
-            Class3228.field15514.field4684.field2938 = 0;
+            Class3228.field15514.player.field2938 = 0;
         }
     }
 }

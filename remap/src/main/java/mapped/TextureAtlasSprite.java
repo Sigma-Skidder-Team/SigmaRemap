@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.Arrays;
 
-public class Class1912 implements AutoCloseable
+public class TextureAtlasSprite implements AutoCloseable
 {
     private final Class1774 field10366;
     private final Class9336 field10367;
@@ -34,14 +34,14 @@ public class Class1912 implements AutoCloseable
     public int field10384;
     public int field10385;
     public int field10386;
-    public Class1912 field10387;
+    public TextureAtlasSprite field10387;
     public boolean field10388;
     public static final String field10389 = ".sprite_single";
     public int field10390;
-    public Class1912 field10391;
-    public Class1912 field10392;
+    public TextureAtlasSprite field10391;
+    public TextureAtlasSprite field10392;
     public boolean field10393;
-    public Class1912 field10394;
+    public TextureAtlasSprite field10394;
     public boolean field10395;
     private int field10396;
     private boolean field10397;
@@ -50,7 +50,7 @@ public class Class1912 implements AutoCloseable
     private boolean field10400;
     private Class6582 field10401;
     
-    public Class1912(final ResourceLocation class1932) {
+    public TextureAtlasSprite(final ResourceLocation class1932) {
         this.field10381 = -1;
         this.field10386 = -1;
         this.field10387 = null;
@@ -78,7 +78,7 @@ public class Class1912 implements AutoCloseable
         this.field10378 = 0.0f;
     }
     
-    private Class1912(final Class1912 class1912) {
+    private TextureAtlasSprite(final TextureAtlasSprite class1912) {
         this.field10381 = -1;
         this.field10386 = -1;
         this.field10387 = null;
@@ -119,7 +119,7 @@ public class Class1912 implements AutoCloseable
         this.field10397 = class1912.field10397;
     }
     
-    public Class1912(final Class1774 field10366, final Class9336 class9336, final int n, final int field10367, final int field10368, final int field10369, final int field10370, Class1846 class9337) {
+    public TextureAtlasSprite(final Class1774 field10366, final Class9336 class9336, final int n, final int field10367, final int field10368, final int field10369, final int field10370, Class1846 class9337) {
         this.field10381 = -1;
         this.field10386 = -1;
         this.field10387 = null;
@@ -342,11 +342,11 @@ public class Class1912 implements AutoCloseable
                     if (!this.field10397) {
                         return;
                     }
-                    if (Class8726.method29984()) {
+                    if (RenderSystem.method29984()) {
                         Class393.method1433(this.field10372);
                     }
                     else {
-                        Class8726.method29991(() -> Class393.method1433(this.field10372));
+                        RenderSystem.method29991(() -> Class393.method1433(this.field10372));
                     }
                 }
             }
@@ -384,7 +384,7 @@ public class Class1912 implements AutoCloseable
     public void method7514(final Class8891 class8891) {
         if (this.field10381 < 0) {
             if (this.field10366 != null) {
-                final Class1912 method6345 = this.field10366.method6345(this.method7503());
+                final TextureAtlasSprite method6345 = this.field10366.method6345(this.method7503());
                 if (method6345 != null) {
                     this.field10381 = method6345.method7513();
                 }
@@ -511,16 +511,16 @@ public class Class1912 implements AutoCloseable
         return (n - this.field10377) / (this.field10378 - this.field10377) * 16.0f;
     }
     
-    public Class1912 method7532() {
-        final Class1912 class1912 = new Class1912(this);
+    public TextureAtlasSprite method7532() {
+        final TextureAtlasSprite class1912 = new TextureAtlasSprite(this);
         class1912.field10388 = true;
         return class1912;
     }
     
-    public Class1912 method7533(final String str, final int n) {
+    public TextureAtlasSprite method7533(final String str, final int n) {
         final ResourceLocation class1932 = new ResourceLocation(this.method7503().method7798(), this.method7503().method7797() + str);
         final ResourceLocation method6336 = this.field10366.method6336(class1932);
-        Class1912 class1933 = null;
+        TextureAtlasSprite class1933 = null;
         if (this.field10401.method19934(method6336)) {
             try (final Class1671 method6337 = this.field10401.method19933(method6336)) {
                 final Class8736 class1934 = new Class8736(method6336.toString(), this.field10401.method19933(method6336).method5887());
@@ -538,14 +538,14 @@ public class Class1912 implements AutoCloseable
                         method6339 = method6340;
                     }
                 }
-                class1933 = new Class1912(this.field10366, class1935, this.field10390, this.field10384, this.field10385, this.field10373, this.field10374, method6339);
+                class1933 = new TextureAtlasSprite(this.field10366, class1935, this.field10390, this.field10384, this.field10385, this.field10373, this.field10374, method6339);
             }
             catch (final IOException ex) {}
         }
         if (class1933 == null) {
             final Class1846 class1936 = new Class1846(this.method7495(), this.method7496(), false);
             class1936.method6663(0, 0, class1936.method6644(), class1936.method6645(), Class8969.method31849(n));
-            class1933 = new Class1912(this.field10366, new Class9336(class1932, this.method7495(), this.method7496(), Class8637.field36232), this.field10390, this.field10384, this.field10385, this.field10373, this.field10374, class1936);
+            class1933 = new TextureAtlasSprite(this.field10366, new Class9336(class1932, this.method7495(), this.method7496(), Class8637.field36232), this.field10390, this.field10384, this.field10385, this.field10373, this.field10374, class1936);
         }
         class1933.field10393 = true;
         return class1933;

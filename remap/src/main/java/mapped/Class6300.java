@@ -137,16 +137,16 @@ public class Class6300
         this.field25182 = field25182;
     }
     
-    public void method18643(final Class7351 class7351, final Class4150 class7352, final int n, final int n2) {
+    public void method18643(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2) {
         this.method18644(class7351, class7352, n, n2, 1.0f, 1.0f, 1.0f, 1.0f);
     }
     
-    public void method18644(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
+    public void method18644(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         if (this.field25187) {
             if (!this.field25188.isEmpty() || !this.field25189.isEmpty()) {
                 class7351.method22567();
                 this.method18645(class7351);
-                this.method18646(class7351.method22569(), class7352, n, n2, n3, n4, n5, n6);
+                this.method18646(class7351.getLast(), class7352, n, n2, n3, n4, n5, n6);
                 for (int size = this.field25189.size(), i = 0; i < size; ++i) {
                     ((Class6300)this.field25189.get(i)).method18644(class7351, class7352, n, n2, n3, n4, n5, n6);
                 }
@@ -155,7 +155,7 @@ public class Class6300
         }
     }
     
-    public void method18645(final Class7351 class7351) {
+    public void method18645(final MatrixStack class7351) {
         class7351.method22564(this.field25180 / 16.0f, this.field25181 / 16.0f, this.field25182 / 16.0f);
         if (this.field25185 != 0.0f) {
             class7351.method22566(Vector3f.ZP.rotation(this.field25185));
@@ -169,7 +169,7 @@ public class Class6300
     }
     
     private void method18646(final Class8996 class8996, final Class4150 class8997, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
-        final Matrix4f method32111 = class8996.method32111();
+        final Matrix4f method32111 = class8996.getMatrix();
         final Matrix3f method32112 = class8996.method32112();
         for (int size = this.field25188.size(), i = 0; i < size; ++i) {
             final Class9536 class8998 = (Class9536)this.field25188.get(i);

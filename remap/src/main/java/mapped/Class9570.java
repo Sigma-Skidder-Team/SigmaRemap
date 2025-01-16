@@ -1045,7 +1045,7 @@ public class Class9570
         Class9570.field41280 = new Class7361(Class9570.field41273, "onLivingSetAttackTarget");
         Class9570.field41281 = new Class7361(Class9570.field41273, "onLivingUpdate");
         Class9570.field41282 = new Class7363("net.minecraftforge.client.ForgeHooksClient");
-        Class9570.field41283 = new Class7361(Class9570.field41282, "dispatchRenderLast", new Class[] { Class1656.class, Class7351.class, Float.TYPE, Matrix4f.class, Long.TYPE });
+        Class9570.field41283 = new Class7361(Class9570.field41282, "dispatchRenderLast", new Class[] { Class1656.class, MatrixStack.class, Float.TYPE, Matrix4f.class, Long.TYPE });
         Class9570.field41284 = new Class7361(Class9570.field41282, "drawScreen");
         Class9570.field41285 = new Class7361(Class9570.field41282, "fillNormal");
         Class9570.field41286 = new Class7361(Class9570.field41282, "fireKeyInput");
@@ -1173,13 +1173,13 @@ public class Class9570
         Class9570.field41408 = new Class7363("net.minecraftforge.fml.client.registry.RenderingRegistry");
         Class9570.field41409 = new Class7361(Class9570.field41408, "loadEntityRenderers", new Class[] { Class8551.class });
         Class9570.field41410 = new Class7363("net.minecraftforge.client.event.RenderItemInFrameEvent");
-        Class9570.field41411 = new Class7362(Class9570.field41410, new Class[] { Class862.class, Class4791.class, Class7351.class, Class7807.class, Integer.TYPE });
+        Class9570.field41411 = new Class7362(Class9570.field41410, new Class[] { Class862.class, Class4791.class, MatrixStack.class, IRenderTypeBuffer.class, Integer.TYPE });
         Class9570.field41412 = new Class7363("net.minecraftforge.client.event.RenderLivingEvent$Pre");
-        Class9570.field41413 = new Class7362(Class9570.field41412, new Class[] { LivingEntity.class, Class4710.class, Float.TYPE, Class7351.class, Class7807.class, Integer.TYPE });
+        Class9570.field41413 = new Class7362(Class9570.field41412, new Class[] { LivingEntity.class, Class4710.class, Float.TYPE, MatrixStack.class, IRenderTypeBuffer.class, Integer.TYPE });
         Class9570.field41414 = new Class7363("net.minecraftforge.client.event.RenderLivingEvent$Post");
-        Class9570.field41415 = new Class7362(Class9570.field41414, new Class[] { LivingEntity.class, Class4710.class, Float.TYPE, Class7351.class, Class7807.class, Integer.TYPE });
+        Class9570.field41415 = new Class7362(Class9570.field41414, new Class[] { LivingEntity.class, Class4710.class, Float.TYPE, MatrixStack.class, IRenderTypeBuffer.class, Integer.TYPE });
         Class9570.field41416 = new Class7363("net.minecraftforge.client.event.RenderNameplateEvent");
-        Class9570.field41417 = new Class7362(Class9570.field41416, new Class[] { Entity.class, String.class, Class4703.class, Class7351.class, Class7807.class, Integer.TYPE });
+        Class9570.field41417 = new Class7362(Class9570.field41416, new Class[] { Entity.class, String.class, Class4703.class, MatrixStack.class, IRenderTypeBuffer.class, Integer.TYPE });
         Class9570.field41418 = new Class7361(Class9570.field41416, "getContent");
         Class9570.field41419 = new Class7363("net.minecraftforge.client.event.ScreenshotEvent");
         Class9570.field41420 = new Class7361(Class9570.field41419, "getCancelMessage");

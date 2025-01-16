@@ -30,7 +30,7 @@ public class Class6470 extends Class6469
     }
     
     @Override
-    public Class573 method19362(final Class5760 class5760, final int n, final int n2, final int n3) {
+    public Widget method19362(final Class5760 class5760, final int n, final int n2, final int n3) {
         return new Class661(class5760, n, n2, n3, 20, this);
     }
     

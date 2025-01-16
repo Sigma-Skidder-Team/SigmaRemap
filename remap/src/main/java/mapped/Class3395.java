@@ -22,11 +22,11 @@ public class Class3395 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3395.field15514.field4684.rotationPitch <= 45.0f) {
+        if (Class3395.field15514.player.rotationPitch <= 45.0f) {
             final Entity method10266 = ((Class3255)this.method9914()).method10266(this.method9886("Range"));
             if (method10266 != null) {
-                double n = Class3395.field15514.field4684.rotationPitch - this.method10836(method10266)[1];
-                double n2 = Class3395.field15514.field4684.rotationYaw - this.method10836(method10266)[0];
+                double n = Class3395.field15514.player.rotationPitch - this.method10836(method10266)[1];
+                double n2 = Class3395.field15514.player.rotationYaw - this.method10836(method10266)[0];
                 if (n2 < 0.0) {
                     n2 *= -1.0;
                 }
@@ -38,23 +38,23 @@ public class Class3395 extends Class3167
                     n3 *= -1.0;
                 }
                 final double n4 = 0.05 * Minecraft.method5338() * (n3 + 1.0);
-                if (Class3395.field15514.field4684.rotationPitch > this.method10836(method10266)[1]) {
-                    final Class756 field4684 = Class3395.field15514.field4684;
+                if (Class3395.field15514.player.rotationPitch > this.method10836(method10266)[1]) {
+                    final Class756 field4684 = Class3395.field15514.player;
                     field4684.rotationPitch -= (float)(n4 * n / 90.0 + Math.min(0.5, n2));
                 }
-                if (Class3395.field15514.field4684.rotationPitch < this.method10836(method10266)[1]) {
-                    final Class756 field4685 = Class3395.field15514.field4684;
+                if (Class3395.field15514.player.rotationPitch < this.method10836(method10266)[1]) {
+                    final Class756 field4685 = Class3395.field15514.player;
                     field4685.rotationPitch += (float)(n4 * n / 90.0 + Math.min(0.5, n2));
                 }
-                if (Class3395.field15514.field4684.rotationYaw > this.method10836(method10266)[0]) {
-                    final Class756 field4686 = Class3395.field15514.field4684;
+                if (Class3395.field15514.player.rotationYaw > this.method10836(method10266)[0]) {
+                    final Class756 field4686 = Class3395.field15514.player;
                     field4686.rotationYaw -= (float)(n4 * n2 / 90.0 + Math.min(0.5, n));
                 }
-                if (Class3395.field15514.field4684.rotationYaw < this.method10836(method10266)[0]) {
-                    final Class756 field4687 = Class3395.field15514.field4684;
+                if (Class3395.field15514.player.rotationYaw < this.method10836(method10266)[0]) {
+                    final Class756 field4687 = Class3395.field15514.player;
                     field4687.rotationYaw += (float)(n4 * n2 / 90.0 + Math.min(0.5, n));
                 }
-                Class3395.field15514.field4684.field2953 = Class3395.field15514.field4684.rotationYaw;
+                Class3395.field15514.player.field2953 = Class3395.field15514.player.rotationYaw;
             }
         }
     }
@@ -66,10 +66,10 @@ public class Class3395 extends Class3167
             }
         }
         this.field16115 = Class3395.field15514.field4690;
-        final double x = class399.posX - Class3395.field15514.field4684.posX + Math.cos((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
-        final double y = class399.posY - 1.6 - this.field16116 + class399.method1892() - Class3395.field15514.field4684.posY;
-        final double y2 = class399.posZ - Class3395.field15514.field4684.posZ + Math.sin((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
-        return new float[] { this.method10837(Class3395.field15514.field4684.rotationYaw, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), this.method10837(Class3395.field15514.field4684.rotationPitch, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
+        final double x = class399.posX - Class3395.field15514.player.posX + Math.cos((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
+        final double y = class399.posY - 1.6 - this.field16116 + class399.method1892() - Class3395.field15514.player.posY;
+        final double y2 = class399.posZ - Class3395.field15514.player.posZ + Math.sin((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
+        return new float[] { this.method10837(Class3395.field15514.player.rotationYaw, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), this.method10837(Class3395.field15514.player.rotationPitch, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f) };
     }
     
     private float method10837(final float n, final float n2, final float n3) {

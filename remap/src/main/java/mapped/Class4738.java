@@ -22,7 +22,7 @@ public class Class4738 extends Class4712<Class854, Class5875<Class854>>
         return Class4738.field20354;
     }
     
-    public void method14061(final Class854 class854, final Class7351 class855, final float n) {
+    public void method14061(final Class854 class854, final MatrixStack class855, final float n) {
         final int method5130 = class854.method5130();
         final float n2 = 1.0f / (MathHelper.method35700(n, class854.field4559, class854.field4558) / (method5130 * 0.5f + 1.0f) + 1.0f);
         class855.method22565(n2 * method5130, 1.0f / n2 * method5130, n2 * method5130);

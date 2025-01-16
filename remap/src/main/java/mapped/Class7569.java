@@ -13,7 +13,7 @@ public class Class7569
     private static boolean field30018;
     private static long field30019;
     
-    public static void method23789(final Class5853 class5853, final Class754 class5854, final Class7351 class5855, final Class7807 class5856, final int n, final int n2) {
+    public static void method23789(final Class5853 class5853, final Class754 class5854, final MatrixStack class5855, final IRenderTypeBuffer class5856, final int n, final int n2) {
         final Class6554 method23790 = method23790(class5854);
         if (method23790 != null) {
             method23790.method19859(class5853, class5854, class5855, class5856, n, n2);
@@ -23,7 +23,7 @@ public class Class7569
     public static synchronized Class6554 method23790(final Class754 class754) {
         if (Class7569.field30018) {
             if (System.currentTimeMillis() > Class7569.field30019 + 5000L) {
-                final Class756 field4684 = Minecraft.method5277().field4684;
+                final Class756 field4684 = Minecraft.method5277().player;
                 if (field4684 != null) {
                     method23791(field4684.method4105(), null);
                     Class7569.field30019 = System.currentTimeMillis();

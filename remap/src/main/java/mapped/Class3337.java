@@ -29,12 +29,12 @@ public class Class3337 extends Class3167
     }
     
     private void method10561(final Class5739 class5739, final PlayerEntity class5740) {
-        final Color color = new Color(Class9463.method35173().method35190().method29879(class5740.getName().getFormattedText()) ? -8401409 : (class5740.getName().getFormattedText().equalsIgnoreCase(Class3337.field15514.field4684.getName().getFormattedText()) ? -6684775 : new Color(16775672).getRGB()));
+        final Color color = new Color(Class9463.method35173().method35190().method29879(class5740.getName().getFormattedText()) ? -8401409 : (class5740.getName().getFormattedText().equalsIgnoreCase(Class3337.field15514.player.getName().getFormattedText()) ? -6684775 : new Color(16775672).getRGB()));
         if (!class5740.method1823()) {
             final float[][] array = Class3337.field15939.get(class5740);
             if (array != null) {
                 if (class5740.method1768()) {
-                    if (class5740 != Class3337.field15514.field4684) {
+                    if (class5740 != Class3337.field15514.player) {
                         if (!class5740.method2783()) {
                             GL11.glPushMatrix();
                             GL11.glLineWidth(2.0f);

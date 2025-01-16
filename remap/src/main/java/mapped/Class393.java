@@ -8,9 +8,9 @@ public final class Class393 implements AutoCloseable
 {
     private static String[] field2289;
     private final Class1846[] field2290;
-    public final /* synthetic */ Class1912 field2291;
+    public final /* synthetic */ TextureAtlasSprite field2291;
     
-    private Class393(final Class1912 field2291, final Class9336 class9336, final int n) {
+    private Class393(final TextureAtlasSprite field2291, final Class9336 class9336, final int n) {
         this.field2291 = field2291;
         this.field2290 = new Class1846[n + 1];
         for (int i = 0; i < this.field2290.length; ++i) {
@@ -23,15 +23,15 @@ public final class Class393 implements AutoCloseable
     }
     
     private void method1430() {
-        final double n = 1.0 - Class1912.method7543(this.field2291) / (double)Class1912.method7545(this.field2291).method29310(Class1912.method7544(this.field2291));
-        final int method29311 = Class1912.method7545(this.field2291).method29311(Class1912.method7544(this.field2291));
-        final int method29312 = Class1912.method7545(this.field2291).method29311((Class1912.method7544(this.field2291) + 1) % ((Class1912.method7545(this.field2291).method29306() != 0) ? Class1912.method7545(this.field2291).method29306() : this.field2291.method7505()));
+        final double n = 1.0 - TextureAtlasSprite.method7543(this.field2291) / (double) TextureAtlasSprite.method7545(this.field2291).method29310(TextureAtlasSprite.method7544(this.field2291));
+        final int method29311 = TextureAtlasSprite.method7545(this.field2291).method29311(TextureAtlasSprite.method7544(this.field2291));
+        final int method29312 = TextureAtlasSprite.method7545(this.field2291).method29311((TextureAtlasSprite.method7544(this.field2291) + 1) % ((TextureAtlasSprite.method7545(this.field2291).method29306() != 0) ? TextureAtlasSprite.method7545(this.field2291).method29306() : this.field2291.method7505()));
         if (method29311 != method29312) {
             if (method29312 >= 0) {
                 if (method29312 < this.field2291.method7505()) {
                     for (int i = 0; i < this.field2290.length; ++i) {
-                        final int n2 = Class9336.method34600(Class1912.method7546(this.field2291)) >> i;
-                        for (int n3 = Class9336.method34601(Class1912.method7546(this.field2291)) >> i, j = 0; j < n3; ++j) {
+                        final int n2 = Class9336.method34600(TextureAtlasSprite.method7546(this.field2291)) >> i;
+                        for (int n3 = Class9336.method34601(TextureAtlasSprite.method7546(this.field2291)) >> i, j = 0; j < n3; ++j) {
                             for (int k = 0; k < n2; ++k) {
                                 final int method29313 = this.method1431(method29311, i, k, j);
                                 final int method29314 = this.method1431(method29312, i, k, j);
@@ -39,14 +39,14 @@ public final class Class393 implements AutoCloseable
                             }
                         }
                     }
-                    Class1912.method7547(this.field2291, 0, 0, this.field2290);
+                    TextureAtlasSprite.method7547(this.field2291, 0, 0, this.field2290);
                 }
             }
         }
     }
     
     private int method1431(final int n, final int n2, final int n3, final int n4) {
-        return this.field2291.field10369[n2].method6647(n3 + (Class1912.method7548(this.field2291)[n] * Class9336.method34600(Class1912.method7546(this.field2291)) >> n2), n4 + (Class1912.method7549(this.field2291)[n] * Class9336.method34601(Class1912.method7546(this.field2291)) >> n2));
+        return this.field2291.field10369[n2].method6647(n3 + (TextureAtlasSprite.method7548(this.field2291)[n] * Class9336.method34600(TextureAtlasSprite.method7546(this.field2291)) >> n2), n4 + (TextureAtlasSprite.method7549(this.field2291)[n] * Class9336.method34601(TextureAtlasSprite.method7546(this.field2291)) >> n2));
     }
     
     private int method1432(final double n, final int n2, final int n3) {

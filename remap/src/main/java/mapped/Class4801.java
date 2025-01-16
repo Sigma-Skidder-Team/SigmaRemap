@@ -205,7 +205,7 @@ public class Class4801 extends Class4800
     private void method14210(final boolean b) {
         Class4801.field20463 = false;
         if (!b) {
-            Class4801.field20460.method5244(null);
+            Class4801.field20460.displayGuiScreen(null);
         }
     }
     

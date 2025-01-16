@@ -33,14 +33,14 @@ public class Class3182 extends Class3167
     public void method9879() {
         this.field15568 = null;
         for (final BlockPos field15568 : Class4609.method13675(Class4609.method13691(Class3182.field15514.field4682.method27315()))) {
-            if (Class4609.method13680(Class3182.field15514.field4684, field15568) >= 2.0f) {
-                if (!Class4609.method13665(Class3182.field15514.field4684, field15568)) {
+            if (Class4609.method13680(Class3182.field15514.player, field15568) >= 2.0f) {
+                if (!Class4609.method13665(Class3182.field15514.player, field15568)) {
                     continue;
                 }
-                if (field15568.getY() < Class3182.field15514.field4684.posY - 2.0) {
+                if (field15568.getY() < Class3182.field15514.player.posY - 2.0) {
                     continue;
                 }
-                if (field15568.getY() > Class3182.field15514.field4684.posY - 1.0) {
+                if (field15568.getY() > Class3182.field15514.player.posY - 1.0) {
                     continue;
                 }
                 if (this.method9981(field15568)) {
@@ -188,21 +188,21 @@ public class Class3182 extends Class3167
                     final float n2 = Class4609.method13673(this.field15568.method1137(), Direction.UP)[1];
                     class5744.method17043(n);
                     class5744.method17041(n2);
-                    final int field2743 = Class3182.field15514.field4684.field3006.field2743;
-                    Class3182.field15514.field4684.field3006.field2743 = this.field15569;
-                    final Class2201 method27319 = Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.world, Class316.field1877, new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
-                    Class3182.field15514.field4684.method2707(Class316.field1877);
+                    final int field2743 = Class3182.field15514.player.field3006.field2743;
+                    Class3182.field15514.player.field3006.field2743 = this.field15569;
+                    final Class2201 method27319 = Class3182.field15514.field4682.method27319(Class3182.field15514.player, Class3182.field15514.world, Class316.field1877, new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
+                    Class3182.field15514.player.method2707(Class316.field1877);
                     if (method27319 == Class2201.field13400) {
                         ++this.field15571;
-                        Class3182.field15514.method5269().method17292(new Class4336(Class3182.field15514.field4684, Class287.field1591));
-                        Class3182.field15514.field4684.field4085.field24728 = true;
-                        Class3182.field15514.field4684.field3006.field2743 = this.field15570;
+                        Class3182.field15514.method5269().method17292(new Class4336(Class3182.field15514.player, Class287.field1591));
+                        Class3182.field15514.player.field4085.field24728 = true;
+                        Class3182.field15514.player.field3006.field2743 = this.field15570;
                         final BlockRayTraceResult class5745 = new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568.method1137()), Direction.UP, this.field15568.method1137(), false);
-                        Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.world, Class316.field1877, class5745);
-                        Class3182.field15514.field4684.method2707(Class316.field1877);
-                        Class3182.field15514.field4684.field4085.field24728 = false;
-                        Class3182.field15514.method5269().method17292(new Class4336(Class3182.field15514.field4684, Class287.field1592));
-                        Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.world, Class316.field1877, class5745);
+                        Class3182.field15514.field4682.method27319(Class3182.field15514.player, Class3182.field15514.world, Class316.field1877, class5745);
+                        Class3182.field15514.player.method2707(Class316.field1877);
+                        Class3182.field15514.player.field4085.field24728 = false;
+                        Class3182.field15514.method5269().method17292(new Class4336(Class3182.field15514.player, Class287.field1592));
+                        Class3182.field15514.field4682.method27319(Class3182.field15514.player, Class3182.field15514.world, Class316.field1877, class5745);
                     }
                 }
             }
@@ -250,15 +250,15 @@ public class Class3182 extends Class3167
                                 method12823.method17292(new Class4256(n, n2, n3, field12438, class5725, field12439));
                                 int n4 = -1;
                                 for (int i = 44; i > 9; --i) {
-                                    if (Class3182.field15514.field4684.field3008.method10878(i).method20053().method27620()) {
+                                    if (Class3182.field15514.player.field3008.method10878(i).method20053().method27620()) {
                                         n4 = i;
                                         break;
                                     }
                                 }
                                 if (n4 != -1) {
-                                    Class3182.field15514.field4684.field3008.method10878(n4).method20055(method12821);
+                                    Class3182.field15514.player.field3008.method10878(n4).method20055(method12821);
                                     if (n4 >= 36) {
-                                        Class3182.field15514.field4684.field3006.field2743 = n4 % 9;
+                                        Class3182.field15514.player.field3006.field2743 = n4 % 9;
                                     }
                                 }
                                 this.field15575 = true;

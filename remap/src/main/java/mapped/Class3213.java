@@ -30,18 +30,18 @@ public class Class3213 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3213.field15514.field4684.getHeldItemMainhand() != null) {
-            final Class234 method872 = Class234.method872(Class3213.field15514.field4684.getHeldItemMainhand().getItem());
+        if (Class3213.field15514.player.getHeldItemMainhand() != null) {
+            final Class234 method872 = Class234.method872(Class3213.field15514.player.getHeldItemMainhand().getItem());
             if (method872 != null) {
-                final float n = (float)Math.toRadians(Class3213.field15514.field4684.rotationYaw - 25.0f);
-                final float n2 = (float)Math.toRadians(Class3213.field15514.field4684.rotationPitch);
+                final float n = (float)Math.toRadians(Class3213.field15514.player.rotationYaw - 25.0f);
+                final float n2 = (float)Math.toRadians(Class3213.field15514.player.rotationPitch);
                 final double n3 = 0.20000000298023224;
-                final double n4 = Class3213.field15514.field4684.boundingBox.getAverageEdgeLength() / 2.0;
+                final double n4 = Class3213.field15514.player.boundingBox.getAverageEdgeLength() / 2.0;
                 final double n5 = MathHelper.cos(n) * n4;
                 final double n6 = MathHelper.sin(n) * n4;
-                final double n7 = Class3213.field15514.field4684.lastTickPosX + (Class3213.field15514.field4684.posX - Class3213.field15514.field4684.lastTickPosX) * Class3213.field15514.field4633.field26528;
-                final double n8 = Class3213.field15514.field4684.lastTickPosY + (Class3213.field15514.field4684.posY - Class3213.field15514.field4684.lastTickPosY) * Class3213.field15514.field4633.field26528;
-                final double n9 = Class3213.field15514.field4684.lastTickPosZ + (Class3213.field15514.field4684.posZ - Class3213.field15514.field4684.lastTickPosZ) * Class3213.field15514.field4633.field26528;
+                final double n7 = Class3213.field15514.player.lastTickPosX + (Class3213.field15514.player.posX - Class3213.field15514.player.lastTickPosX) * Class3213.field15514.field4633.field26528;
+                final double n8 = Class3213.field15514.player.lastTickPosY + (Class3213.field15514.player.posY - Class3213.field15514.player.lastTickPosY) * Class3213.field15514.field4633.field26528;
+                final double n9 = Class3213.field15514.player.lastTickPosZ + (Class3213.field15514.player.posZ - Class3213.field15514.player.lastTickPosZ) * Class3213.field15514.field4633.field26528;
                 GL11.glPushMatrix();
                 GL11.glEnable(2848);
                 GL11.glBlendFunc(770, 771);

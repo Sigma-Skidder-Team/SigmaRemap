@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-public class Class1844 implements AutoCloseable
+public class FontRenderer implements AutoCloseable
 {
     public final int field10028 = 9;
     public final Random field10029;
@@ -29,7 +29,7 @@ public class Class1844 implements AutoCloseable
     private Class9075 field10034;
     private Class2023 field10035;
     
-    public Class1844(final Class1663 field10030, final Class1923 field10031) {
+    public FontRenderer(final Class1663 field10030, final Class1923 field10031) {
         this.field10029 = new Random();
         this.field10033 = false;
         this.field10034 = new Class9075();
@@ -62,14 +62,14 @@ public class Class1844 implements AutoCloseable
         this.field10031.close();
     }
     
-    public int method6609(final String s, final float n, final float n2, final int n3) {
-        Class8726.method29999();
-        return this.method6612(s, n, n2, n3, Class9294.method34322().method34328(), true);
+    public int drawStringWithShadow(final String s, final float n, final float n2, final int n3) {
+        RenderSystem.enableAlphaTest();
+        return this.method6612(s, n, n2, n3, TransformationMatrix.identity().getMatrix(), true);
     }
     
     public int method6610(final String s, final float n, final float n2, final int n3) {
-        Class8726.method29999();
-        return this.method6612(s, n, n2, n3, Class9294.method34322().method34328(), false);
+        RenderSystem.enableAlphaTest();
+        return this.method6612(s, n, n2, n3, TransformationMatrix.identity().getMatrix(), false);
     }
     
     public String method6611(final String s) {
@@ -85,19 +85,19 @@ public class Class1844 implements AutoCloseable
     
     private int method6612(final String s, final float n, final float n2, final int n3, final Matrix4f class6789, final boolean b) {
         if (s != null) {
-            final Class7808 method25212 = Class7807.method25212(Class7392.method22694().method22696());
-            final int method25213 = this.method6613(s, n, n2, n3, b, class6789, method25212, false, 0, 15728880);
-            method25212.method25216();
+            final IRenderTypeBuffer.Impl method25212 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
+            final int method25213 = this.renderString(s, n, n2, n3, b, class6789, method25212, false, 0, 15728880);
+            method25212.finish();
             return method25213;
         }
         return 0;
     }
     
-    public int method6613(final String s, final float n, final float n2, final int n3, final boolean b, final Matrix4f class6789, final Class7807 class6790, final boolean b2, final int n4, final int n5) {
+    public int renderString(final String s, final float n, final float n2, final int n3, final boolean b, final Matrix4f class6789, final IRenderTypeBuffer class6790, final boolean b2, final int n4, final int n5) {
         return this.method6614(s, n, n2, n3, b, class6789, class6790, b2, n4, n5);
     }
     
-    private int method6614(String method6611, float method6612, final float n, int n2, final boolean b, final Matrix4f class6789, final Class7807 class6790, final boolean b2, final int n3, final int n4) {
+    private int method6614(String method6611, float method6612, final float n, int n2, final boolean b, final Matrix4f class6789, final IRenderTypeBuffer class6790, final boolean b2, final int n3, final int n4) {
         if (this.field10032) {
             method6611 = this.method6611(method6611);
         }
@@ -107,7 +107,7 @@ public class Class1844 implements AutoCloseable
         if (this.field10033) {
             Class8933.method31678(this.field10034);
             Class8933.method31519();
-            Class8726.method30013(Class2050.field11693, Class2135.field12460);
+            RenderSystem.method30013(Class2050.field11693, Class2135.field12460);
         }
         if (b) {
             this.method6615(method6611, method6612, n, n2, true, class6789, class6790, b2, n3, n4);
@@ -121,7 +121,7 @@ public class Class1844 implements AutoCloseable
         return (int)method6612 + (b ? 1 : 0);
     }
     
-    private float method6615(String method17001, final float n, final float n2, final int n3, final boolean b, final Matrix4f class6789, final Class7807 class6790, final boolean b2, final int n4, final int n5) {
+    private float method6615(String method17001, final float n, final float n2, final int n3, final boolean b, final Matrix4f class6789, final IRenderTypeBuffer class6790, final boolean b2, final int n4, final int n5) {
         final Class5727 class6791 = new Class5727(method17001);
         Class9463.method35173().method35188().method21097(class6791);
         method17001 = class6791.method17001();
@@ -235,7 +235,7 @@ public class Class1844 implements AutoCloseable
         }
     }
     
-    public int method6617(final String s) {
+    public int getStringWidth(final String s) {
         if (s != null) {
             float n = 0.0f;
             boolean b = false;
@@ -339,11 +339,11 @@ public class Class1844 implements AutoCloseable
     
     private void method6623(final String s, final int n, int n2, final int n3, final int n4) {
         final List<String> method6626 = this.method6626(s, n3);
-        final Matrix4f method6627 = Class9294.method34322().method34328();
+        final Matrix4f method6627 = TransformationMatrix.identity().getMatrix();
         for (final String s2 : method6626) {
             float n5 = (float)n;
             if (this.field10032) {
-                n5 += n3 - this.method6617(this.method6611(s2));
+                n5 += n3 - this.getStringWidth(this.method6611(s2));
             }
             this.method6612(s2, n5, (float)n2, n4, method6627, false);
             n2 += 9;

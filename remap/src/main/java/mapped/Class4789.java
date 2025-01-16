@@ -19,7 +19,7 @@ public class Class4789 extends Class4703<Class425>
         super(class8551);
     }
     
-    public void method14158(final Class425 class425, final float n, final float n2, final Class7351 class426, final Class7807 class427, final int n3) {
+    public void method14158(final Class425 class425, final float n, final float n2, final MatrixStack class426, final IRenderTypeBuffer class427, final int n3) {
         final PlayerEntity method2079 = class425.method2079();
         if (method2079 != null) {
             class426.method22567();
@@ -27,8 +27,8 @@ public class Class4789 extends Class4703<Class425>
             class426.method22565(0.5f, 0.5f, 0.5f);
             class426.method22566(this.field20283.method28717());
             class426.method22566(Vector3f.YP.rotationDegrees(180.0f));
-            final Class8996 method2080 = class426.method22569();
-            final Matrix4f method2081 = method2080.method32111();
+            final Class8996 method2080 = class426.getLast();
+            final Matrix4f method2081 = method2080.getMatrix();
             final Matrix3f method2082 = method2080.method32112();
             final Class4150 method2083 = class427.method25214(Class4789.field20423);
             method14160(method2083, method2081, method2082, n3, 0.0f, 0, 0, 1);
@@ -51,7 +51,7 @@ public class Class4789 extends Class4703<Class425>
             float method2086 = 0.0f;
             Label_0628: {
                 if (this.field20283.field35909 == null || this.field20283.field35909.field23465 <= 0) {
-                    if (method2079 == Minecraft.method5277().field4684) {
+                    if (method2079 == Minecraft.method5277().player) {
                         final double n9 = this.field20283.field35909.field23471 / 100.0;
                         final Vec3d method2085 = new Vec3d(n4 * -0.36 * n9, -0.045 * n9, 0.4).rotatePitch(-MathHelper.method35700(n2, method2079.prevRotationPitch, method2079.rotationPitch) * 0.017453292f).rotateYaw(-MathHelper.method35700(n2, method2079.prevRotationYaw, method2079.rotationYaw) * 0.017453292f).rotateYaw(method2084 * 0.5f).rotatePitch(-method2084 * 0.7f);
                         n10 = MathHelper.lerp(n2, method2079.prevPosX, method2079.getPosX()) + method2085.x;
@@ -73,7 +73,7 @@ public class Class4789 extends Class4703<Class425>
             final float n15 = (float)(n11 - n13) + method2086;
             final float n16 = (float)(n12 - method2088);
             final Class4150 method2089 = class427.method25214(Class6332.method18791());
-            final Matrix4f method2090 = class426.method22569().method32111();
+            final Matrix4f method2090 = class426.getLast().getMatrix();
             for (int i = 0; i < 16; ++i) {
                 method14161(n14, n15, n16, method2089, method2090, method14159(i, 16));
                 method14161(n14, n15, n16, method2089, method2090, method14159(i + 1, 16));
@@ -88,11 +88,11 @@ public class Class4789 extends Class4703<Class425>
     }
     
     private static void method14160(final Class4150 class4150, final Matrix4f class4151, final Matrix3f class4152, final int n, final float n2, final int n3, final int n4, final int n5) {
-        class4150.method12444(class4151, n2 - 0.5f, n3 - 0.5f, 0.0f).method12399(255, 255, 255, 255).method12391((float)n4, (float)n5).method12441(Class1904.field10335).method12440(n).method12445(class4152, 0.0f, 1.0f, 0.0f).method12397();
+        class4150.pos(class4151, n2 - 0.5f, n3 - 0.5f, 0.0f).method12399(255, 255, 255, 255).tex((float)n4, (float)n5).method12441(Class1904.field10335).method12440(n).method12445(class4152, 0.0f, 1.0f, 0.0f).endVertex();
     }
     
     private static void method14161(final float n, final float n2, final float n3, final Class4150 class4150, final Matrix4f class4151, final float n4) {
-        class4150.method12444(class4151, n * n4, n2 * (n4 * n4 + n4) * 0.5f + 0.25f, n3 * n4).method12399(0, 0, 0, 255).method12397();
+        class4150.pos(class4151, n * n4, n2 * (n4 * n4 + n4) * 0.5f + 0.25f, n3 * n4).method12399(0, 0, 0, 255).endVertex();
     }
     
     public ResourceLocation method14162(final Class425 class425) {

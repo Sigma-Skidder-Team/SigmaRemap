@@ -23,14 +23,14 @@ public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, 
         this.field10015 = field10015;
     }
     
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         this.method6595(class7351, class7352, t, n2, n3, n4, n5, n6, n7, Class2215.field13604, n);
         this.method6595(class7351, class7352, t, n2, n3, n4, n5, n6, n7, Class2215.field13603, n);
         this.method6595(class7351, class7352, t, n2, n3, n4, n5, n6, n7, Class2215.field13602, n);
         this.method6595(class7351, class7352, t, n2, n3, n4, n5, n6, n7, Class2215.field13605, n);
     }
     
-    private void method6595(final Class7351 class7351, final Class7807 class7352, final T t, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final Class2215 class7353, final int n7) {
+    private void method6595(final MatrixStack class7351, final IRenderTypeBuffer class7352, final T t, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final Class2215 class7353, final int n7) {
         final ItemStack method2718 = t.method2718(class7353);
         if (method2718.getItem() instanceof Class4055) {
             final Class4055 class7354 = (Class4055)method2718.getItem();
@@ -57,12 +57,12 @@ public abstract class Class1834<T extends LivingEntity, M extends Class5853<T>, 
         }
     }
     
-    private void method6596(final Class7351 class7351, final Class7807 class7352, final int n, final Class4055 class7353, final boolean b, final A a, final boolean b2, final float n2, final float n3, final float n4, final String s) {
+    private void method6596(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class4055 class7353, final boolean b, final A a, final boolean b2, final float n2, final float n3, final float n4, final String s) {
         this.method6597(class7351, class7352, n, b, a, n2, n3, n4, this.method6600(class7353, b2, s));
     }
     
-    private void method6597(final Class7351 class7351, final Class7807 class7352, final int n, final boolean b, final A a, final float n2, final float n3, final float n4, final ResourceLocation class7353) {
-        a.method17564(class7351, Class1796.method6532(class7352, Class6332.method18770(class7353), false, b), n, Class1904.field10335, n2, n3, n4, 1.0f);
+    private void method6597(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final boolean b, final A a, final float n2, final float n3, final float n4, final ResourceLocation class7353) {
+        a.method17564(class7351, ItemRenderer.method6532(class7352, Class6332.method18770(class7353), false, b), n, Class1904.field10335, n2, n3, n4, 1.0f);
     }
     
     public A method6598(final Class2215 class2215) {

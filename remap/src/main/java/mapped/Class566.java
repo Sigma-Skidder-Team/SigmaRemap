@@ -4,7 +4,7 @@
 
 package mapped;
 
-public abstract class Class566 extends Class565 implements Class563
+public abstract class Class566 extends AbstractGui implements IRenderable
 {
     public boolean method3305() {
         return true;

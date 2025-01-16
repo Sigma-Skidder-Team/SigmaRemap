@@ -209,7 +209,7 @@ public class Class1926 implements Class1927, AutoCloseable
     }
     
     public void method7711() {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         Class7844.method25345(0);
         Class1926.field10505 = -1;
         Class1926.field10504 = null;
@@ -222,7 +222,7 @@ public class Class1926 implements Class1927, AutoCloseable
     }
     
     public void method7712() {
-        Class8726.method29989(Class8726::method29987);
+        RenderSystem.method29989(RenderSystem::method29987);
         this.field10515 = false;
         Class1926.field10504 = this;
         this.field10516.method33685();
@@ -231,15 +231,15 @@ public class Class1926 implements Class1927, AutoCloseable
             Class1926.field10505 = this.field10512;
         }
         if (!this.field10514) {
-            Class8726.method30029();
+            RenderSystem.method30029();
         }
         else {
-            Class8726.method30028();
+            RenderSystem.method30028();
         }
         for (int i = 0; i < this.field10508.size(); ++i) {
             if (this.field10506.get(this.field10507.get(i)) != null) {
-                Class8726.method30039(33984 + i);
-                Class8726.method30040();
+                RenderSystem.method30039(33984 + i);
+                RenderSystem.enableTexture();
                 final Object value = this.field10506.get(this.field10507.get(i));
                 int n = -1;
                 if (!(value instanceof Class6153)) {
@@ -256,7 +256,7 @@ public class Class1926 implements Class1927, AutoCloseable
                     n = ((Class6153)value).field24890;
                 }
                 if (n != -1) {
-                    Class8726.method30044(n);
+                    RenderSystem.method30044(n);
                     Class1879.method7157(Class1879.method7156(this.field10512, this.field10507.get(i)), i);
                 }
             }
@@ -274,18 +274,18 @@ public class Class1926 implements Class1927, AutoCloseable
     
     @Nullable
     public Class1879 method7714(final String s) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         return this.field10511.get(s);
     }
     
     public Class1880 method7715(final String s) {
-        Class8726.method29989(Class8726::method29987);
+        RenderSystem.method29989(RenderSystem::method29987);
         final Class1879 method7714 = this.method7714(s);
         return (method7714 != null) ? method7714 : Class1926.field10503;
     }
     
     private void method7716() {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         for (int i = 0, n = 0; i < this.field10507.size(); ++i, ++n) {
             final String s = this.field10507.get(i);
             final int method7156 = Class1879.method7156(this.field10512, s);

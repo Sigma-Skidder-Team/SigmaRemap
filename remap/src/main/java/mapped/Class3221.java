@@ -24,10 +24,10 @@ public class Class3221 extends Class3167
     private void method10156(final Class5744 class5744) {
         if (this.method9906()) {
             final boolean method9898 = Class9463.method35173().method35189().method21551(Class3376.class).method9898();
-            final boolean b = Class3221.field15514.field4684.getHeldItemMainhand() != null && Class3221.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077;
+            final boolean b = Class3221.field15514.player.getHeldItemMainhand() != null && Class3221.field15514.player.getHeldItemMainhand().getItem() instanceof Class4077;
             if (!class5744.method17046()) {
                 if (b) {
-                    if (Class3221.field15514.field4648.field23445.method1056()) {
+                    if (Class3221.field15514.gameSettings.field23445.method1056()) {
                         if (!this.field15679) {
                             if (!method9898) {
                                 if (this.method9887("Mode").equals("NCP")) {
@@ -47,13 +47,13 @@ public class Class3221 extends Class3167
             }
             else if (!this.method9887("Mode").equals("NCP")) {
                 if (this.field15679) {
-                    if (!Class3221.field15514.field4648.field23445.method1056()) {
+                    if (!Class3221.field15514.gameSettings.field23445.method1056()) {
                         this.field15679 = false;
                     }
                 }
             }
             else if (this.field15679) {
-                if (Class3221.field15514.field4648.field23445.method1056()) {
+                if (Class3221.field15514.gameSettings.field23445.method1056()) {
                     if (!method9898) {
                         if (b) {
                             Class6430.method19164();

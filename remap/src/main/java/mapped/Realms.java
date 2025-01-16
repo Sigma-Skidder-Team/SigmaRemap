@@ -20,7 +20,7 @@ public class Realms
     private static final Class8098 field32144;
     
     public static boolean method25351() {
-        return Minecraft.method5277().field4648.field23429;
+        return Minecraft.method5277().gameSettings.field23429;
     }
     
     public static Proxy method25352() {
@@ -73,7 +73,7 @@ public class Realms
     }
     
     public static void method25363(final RealmsScreen class5046) {
-        Minecraft.method5277().method5244(class5046.getProxy());
+        Minecraft.method5277().displayGuiScreen(class5046.getProxy());
     }
     
     public static String method25364() {
@@ -109,7 +109,7 @@ public class Realms
     }
     
     public static boolean method25372() {
-        return Minecraft.method5277().field4648.field23424;
+        return Minecraft.method5277().gameSettings.field23424;
     }
     
     public static boolean method25373() {

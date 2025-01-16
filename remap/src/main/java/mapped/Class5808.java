@@ -92,10 +92,10 @@ public class Class5808 implements Class5807
     @Override
     public void onDisconnect(final ITextComponent class2250) {
         if (this.field23840 != null && this.field23840 instanceof RealmsScreenProxy) {
-            this.field23839.method5244(new Class5070(((RealmsScreenProxy)this.field23840).getScreen(), "connect.failed", class2250).getProxy());
+            this.field23839.displayGuiScreen(new Class5070(((RealmsScreenProxy)this.field23840).getScreen(), "connect.failed", class2250).getProxy());
         }
         else {
-            this.field23839.method5244(new Class735(this.field23840, "connect.failed", class2250));
+            this.field23839.displayGuiScreen(new Class735(this.field23840, "connect.failed", class2250));
         }
     }
     

@@ -69,7 +69,7 @@ public class Class1655 extends MinecraftServer
         this.method1441(method25787.method29392(), method25789);
         this.method1439(method25787, method25789, this.field9270, method25788);
         if (this.method1481(DimensionType.field2223).method6764().method29597() == null) {
-            this.method1505(this.field9269.field4648.field23463, true);
+            this.method1505(this.field9269.gameSettings.field23463, true);
         }
         this.method1442(method25788);
     }
@@ -109,7 +109,7 @@ public class Class1655 extends MinecraftServer
         }
         if (!this.field9271) {
             super.method1469(booleanSupplier);
-            final int max = Math.max(2, this.field9269.field4648.field23382 - 1);
+            final int max = Math.max(2, this.field9269.gameSettings.field23382 - 1);
             if (max != this.method1537().method20613()) {
                 Class1655.field9268.info("Changing view distance to {}, from {}", (Object)max, (Object)this.method1537().method20613());
                 this.method1537().method20622(max);
@@ -129,7 +129,7 @@ public class Class1655 extends MinecraftServer
     
     @Override
     public Class2113 method1446() {
-        return (this.field9269.world != null) ? this.field9269.world.method6764().method29597() : this.field9269.field4648.field23463;
+        return (this.field9269.world != null) ? this.field9269.world.method6764().method29597() : this.field9269.gameSettings.field23463;
     }
     
     @Override
@@ -203,7 +203,7 @@ public class Class1655 extends MinecraftServer
             (this.field9273 = new Class917(this.method1532(), i + "")).start();
             this.method1537().method20614(class101);
             this.method1537().method20616(b);
-            this.field9269.field4684.method4124(this.method1588(this.field9269.field4684.method2844()));
+            this.field9269.player.method4124(this.method1588(this.field9269.player.method2844()));
             final Iterator<Class513> iterator = this.method1537().method20623().iterator();
             while (iterator.hasNext()) {
                 this.method1573().method24999(iterator.next());
@@ -360,7 +360,7 @@ public class Class1655 extends MinecraftServer
     public boolean method1451(final boolean b, final boolean b2, final boolean b3) {
         if (b) {
             final int method1545 = this.method1545();
-            if (method1545 < this.field9275 + this.field9269.field4648.field23495) {
+            if (method1545 < this.field9275 + this.field9269.gameSettings.field23495) {
                 return false;
             }
             this.field9275 = method1545;

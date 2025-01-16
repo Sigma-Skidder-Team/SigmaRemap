@@ -20,7 +20,7 @@ public class Class4747 extends Class4746<Class826, Class5859<Class826>>
         return Class4747.field20369;
     }
     
-    public void method14082(final Class826 class826, final Class7351 class827, final float n, float n2, final float n3) {
+    public void method14082(final Class826 class826, final MatrixStack class827, final float n, float n2, final float n3) {
         if (class826.method4913()) {
             n2 += (float)(Math.cos(class826.ticksExisted * 3.25) * 3.141592653589793 * 0.25);
         }

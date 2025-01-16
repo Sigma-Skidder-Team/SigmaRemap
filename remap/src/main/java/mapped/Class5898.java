@@ -114,7 +114,7 @@ public class Class5898 extends Class5845<Class852>
     }
     
     @Override
-    public void method17564(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
+    public void method17564(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         class7351.method22567();
         final float method35700 = MathHelper.method35700(this.field24244, this.field24243.field4543, this.field24243.field4544);
         this.field24225.field25183 = (float)(Math.sin(method35700 * 6.2831855f) + 1.0) * 0.2f;
@@ -192,7 +192,7 @@ public class Class5898 extends Class5845<Class852>
         class7351.method22568();
     }
     
-    private void method17637(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final Class6300 class7353, final Class6300 class7354, final Class6300 class7355, final Class6300 class7356, final Class6300 class7357, final Class6300 class7358, final Class6300 class7359) {
+    private void method17637(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final Class6300 class7353, final Class6300 class7354, final Class6300 class7355, final Class6300 class7356, final Class6300 class7357, final Class6300 class7358, final Class6300 class7359) {
         class7357.field25183 = 1.0f + n3 * 0.1f;
         class7358.field25183 = 0.5f + n3 * 0.1f;
         class7359.field25183 = 0.75f + n3 * 0.1f;

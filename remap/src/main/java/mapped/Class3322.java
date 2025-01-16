@@ -16,18 +16,18 @@ public class Class3322 extends Class3167
             return;
         }
         final int method10264 = ((Class3249)this.method9914()).method10264();
-        if (method10264 != 0 && Class3322.field15514.field4684.collidedHorizontally) {
-            final double field2395 = Class3322.field15514.field4684.posX;
-            final double field2396 = Class3322.field15514.field4684.posY;
-            final double field2397 = Class3322.field15514.field4684.posZ;
+        if (method10264 != 0 && Class3322.field15514.player.collidedHorizontally) {
+            final double field2395 = Class3322.field15514.player.posX;
+            final double field2396 = Class3322.field15514.player.posY;
+            final double field2397 = Class3322.field15514.player.posZ;
             double n = 1.19209289E-8;
-            if (Class3322.field15514.field4684.getMotion().y <= -0.22768848754498797 || Class3322.field15514.field4684.onGround) {
-                if (!Class3322.field15514.field4684.onGround) {
-                    Class3322.field15514.field4684.setPosition(field2395, field2396 - (field2396 - (int)field2396), field2397);
+            if (Class3322.field15514.player.getMotion().y <= -0.22768848754498797 || Class3322.field15514.player.onGround) {
+                if (!Class3322.field15514.player.onGround) {
+                    Class3322.field15514.player.setPosition(field2395, field2396 - (field2396 - (int)field2396), field2397);
                     class5744.method17037(field2396 - (field2396 - (int)field2396));
                     n = -1.0E-13;
                 }
-                Class3322.field15514.field4684.method2725();
+                Class3322.field15514.player.method2725();
                 class5744.method17045(true);
             }
             switch (method10264) {
@@ -69,10 +69,10 @@ public class Class3322 extends Class3167
     
     @Class6753
     private void method10524(final Class5753 class5753) {
-        if (this.method9906() && Class3322.field15514.field4684 != null) {
+        if (this.method9906() && Class3322.field15514.player != null) {
             if (class5753.method17065() != null) {
                 if (!class5753.method17065().isEmpty()) {
-                    if (class5753.method17065().getBoundingBox().minY > Class3322.field15514.field4684.boundingBox.minY + 1.0) {
+                    if (class5753.method17065().getBoundingBox().minY > Class3322.field15514.player.boundingBox.minY + 1.0) {
                         class5753.method16961(true);
                     }
                 }

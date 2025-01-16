@@ -17,7 +17,7 @@ public class Class4160 extends Class4158<Class440>
         this.field18545 = field18545;
     }
     
-    public void method12465(final Class440 class440, final float n, final Class7351 class441, final Class7807 class442, final int n2, final int n3) {
+    public void method12465(final Class440 class440, final float n, final MatrixStack class441, final IRenderTypeBuffer class442, final int n2, final int n3) {
         Direction field512 = Direction.UP;
         if (class440.hasWorld()) {
             final Class7096 method6701 = class440.method2186().getBlockState(class440.getPos());

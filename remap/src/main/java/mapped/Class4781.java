@@ -10,18 +10,18 @@ import net.minecraft.entity.Entity;
 public class Class4781<T extends Entity & Class407> extends Class4703<T>
 {
     private static String[] field20410;
-    private final Class1796 field20411;
+    private final ItemRenderer field20411;
     private final float field20412;
     private final boolean field20413;
     
-    public Class4781(final Class8551 class8551, final Class1796 field20411, final float field20412, final boolean field20413) {
+    public Class4781(final Class8551 class8551, final ItemRenderer field20411, final float field20412, final boolean field20413) {
         super(class8551);
         this.field20411 = field20411;
         this.field20412 = field20412;
         this.field20413 = field20413;
     }
     
-    public Class4781(final Class8551 class8551, final Class1796 class8552) {
+    public Class4781(final Class8551 class8551, final ItemRenderer class8552) {
         this(class8551, class8552, 1.0f, false);
     }
     
@@ -31,7 +31,7 @@ public class Class4781<T extends Entity & Class407> extends Class4703<T>
     }
     
     @Override
-    public void method13951(final T t, final float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int n3) {
+    public void method13951(final T t, final float n, final float n2, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n3) {
         class7351.method22567();
         class7351.method22565(this.field20412, this.field20412, this.field20412);
         class7351.method22566(this.field20283.method28717());

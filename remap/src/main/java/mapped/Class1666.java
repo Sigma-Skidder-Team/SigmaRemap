@@ -21,7 +21,7 @@ public abstract class Class1666
     }
     
     public void method5868(final boolean field9436, final boolean field9437) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         this.field9436 = field9436;
         this.field9437 = field9437;
         int n;
@@ -41,7 +41,7 @@ public abstract class Class1666
     }
     
     public int method5869() {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         if (this.field9435 == -1) {
             this.field9435 = Class8995.method32101();
         }
@@ -49,7 +49,7 @@ public abstract class Class1666
     }
     
     public void method5870() {
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             if (this.field9435 != -1) {
                 Class8990.method32044(this, this.field9435);
                 Class8995.method32102(this.field9435);
@@ -57,7 +57,7 @@ public abstract class Class1666
             }
         }
         else {
-            Class8726.method29991(() -> {
+            RenderSystem.method29991(() -> {
                 Class8990.method32044(this, this.field9435);
                 if (this.field9435 != -1) {
                     Class8995.method32102(this.field9435);
@@ -70,11 +70,11 @@ public abstract class Class1666
     public abstract void method5871(final Class6582 p0) throws IOException;
     
     public void method5872() {
-        if (Class8726.method29985()) {
+        if (RenderSystem.method29985()) {
             Class8933.method31617(this.method5869());
         }
         else {
-            Class8726.method29991(() -> Class8933.method31617(this.method5869()));
+            RenderSystem.method29991(() -> Class8933.method31617(this.method5869()));
         }
     }
     

@@ -56,28 +56,28 @@ public class Class601 extends Class599
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         if (this.field3523) {
             this.method3489();
             final int method3508 = this.method3508();
             final int n4 = method3508 + 6;
             this.method3496();
-            final Class7392 method3509 = Class7392.method22694();
-            final Class4148 method3510 = method3509.method22696();
+            final Tessellator method3509 = Tessellator.getInstance();
+            final BufferBuilder method3510 = method3509.getBuffer();
             final int n5 = this.field3518 + this.field3513 / 2 - this.method3505() / 2 + 2;
             final int n6 = this.field3515 + 4 - (int)this.field3522;
             if (this.field3525) {
                 this.method3492(n5, n6, method3509);
             }
             this.method3506(n5, n6, n, n2, n3);
-            Class8726.method30007();
+            RenderSystem.disableDepthTest();
             this.method3509(0, this.field3515, 255, 255);
             this.method3509(this.field3516, this.field3514, 255, 255);
-            Class8726.method30011();
-            Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11696, Class2135.field12455);
-            Class8726.method29998();
-            Class8726.method30045(7425);
-            Class8726.method30041();
+            RenderSystem.enableBlend();
+            RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11696, Class2135.field12455);
+            RenderSystem.disableAlphaTest();
+            RenderSystem.shadeModel(7425);
+            RenderSystem.disableTexture();
             final int method3511 = this.method3497();
             if (method3511 > 0) {
                 final int method3512 = MathHelper.method35651((this.field3516 - this.field3515) * (this.field3516 - this.field3515) / this.method3488(), 32, this.field3516 - this.field3515 - 8);
@@ -85,30 +85,30 @@ public class Class601 extends Class599
                 if (field3515 < this.field3515) {
                     field3515 = this.field3515;
                 }
-                method3510.method12390(7, Class9237.field39619);
-                method3510.method12432(method3508, this.field3516, 0.0).method12391(0.0f, 1.0f).method12399(0, 0, 0, 255).method12397();
-                method3510.method12432(n4, this.field3516, 0.0).method12391(1.0f, 1.0f).method12399(0, 0, 0, 255).method12397();
-                method3510.method12432(n4, this.field3515, 0.0).method12391(1.0f, 0.0f).method12399(0, 0, 0, 255).method12397();
-                method3510.method12432(method3508, this.field3515, 0.0).method12391(0.0f, 0.0f).method12399(0, 0, 0, 255).method12397();
-                method3509.method22695();
-                method3510.method12390(7, Class9237.field39619);
-                method3510.method12432(method3508, field3515 + method3512, 0.0).method12391(0.0f, 1.0f).method12399(128, 128, 128, 255).method12397();
-                method3510.method12432(n4, field3515 + method3512, 0.0).method12391(1.0f, 1.0f).method12399(128, 128, 128, 255).method12397();
-                method3510.method12432(n4, field3515, 0.0).method12391(1.0f, 0.0f).method12399(128, 128, 128, 255).method12397();
-                method3510.method12432(method3508, field3515, 0.0).method12391(0.0f, 0.0f).method12399(128, 128, 128, 255).method12397();
-                method3509.method22695();
-                method3510.method12390(7, Class9237.field39619);
-                method3510.method12432(method3508, field3515 + method3512 - 1, 0.0).method12391(0.0f, 1.0f).method12399(192, 192, 192, 255).method12397();
-                method3510.method12432(n4 - 1, field3515 + method3512 - 1, 0.0).method12391(1.0f, 1.0f).method12399(192, 192, 192, 255).method12397();
-                method3510.method12432(n4 - 1, field3515, 0.0).method12391(1.0f, 0.0f).method12399(192, 192, 192, 255).method12397();
-                method3510.method12432(method3508, field3515, 0.0).method12391(0.0f, 0.0f).method12399(192, 192, 192, 255).method12397();
-                method3509.method22695();
+                method3510.begin(7, DefaultVertexFormats.field39619);
+                method3510.pos(method3508, this.field3516, 0.0).tex(0.0f, 1.0f).method12399(0, 0, 0, 255).endVertex();
+                method3510.pos(n4, this.field3516, 0.0).tex(1.0f, 1.0f).method12399(0, 0, 0, 255).endVertex();
+                method3510.pos(n4, this.field3515, 0.0).tex(1.0f, 0.0f).method12399(0, 0, 0, 255).endVertex();
+                method3510.pos(method3508, this.field3515, 0.0).tex(0.0f, 0.0f).method12399(0, 0, 0, 255).endVertex();
+                method3509.draw();
+                method3510.begin(7, DefaultVertexFormats.field39619);
+                method3510.pos(method3508, field3515 + method3512, 0.0).tex(0.0f, 1.0f).method12399(128, 128, 128, 255).endVertex();
+                method3510.pos(n4, field3515 + method3512, 0.0).tex(1.0f, 1.0f).method12399(128, 128, 128, 255).endVertex();
+                method3510.pos(n4, field3515, 0.0).tex(1.0f, 0.0f).method12399(128, 128, 128, 255).endVertex();
+                method3510.pos(method3508, field3515, 0.0).tex(0.0f, 0.0f).method12399(128, 128, 128, 255).endVertex();
+                method3509.draw();
+                method3510.begin(7, DefaultVertexFormats.field39619);
+                method3510.pos(method3508, field3515 + method3512 - 1, 0.0).tex(0.0f, 1.0f).method12399(192, 192, 192, 255).endVertex();
+                method3510.pos(n4 - 1, field3515 + method3512 - 1, 0.0).tex(1.0f, 1.0f).method12399(192, 192, 192, 255).endVertex();
+                method3510.pos(n4 - 1, field3515, 0.0).tex(1.0f, 0.0f).method12399(192, 192, 192, 255).endVertex();
+                method3510.pos(method3508, field3515, 0.0).tex(0.0f, 0.0f).method12399(192, 192, 192, 255).endVertex();
+                method3509.draw();
             }
             this.method3494(n, n2);
-            Class8726.method30040();
-            Class8726.method30045(7424);
-            Class8726.method29999();
-            Class8726.method30012();
+            RenderSystem.enableTexture();
+            RenderSystem.shadeModel(7424);
+            RenderSystem.enableAlphaTest();
+            RenderSystem.disableBlend();
         }
     }
     

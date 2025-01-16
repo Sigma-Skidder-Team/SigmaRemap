@@ -46,28 +46,28 @@ public class Class716 extends Class698
         final int n6 = this.width - n - 20;
         this.field3913 = new Class603(this, n6, this.height, n4, this.height - 50, 16);
         this.children.add(this.field3913);
-        this.method3029(new Class677(Class2222.field13663, n3, 0 * n5 + n4, n, n2));
-        this.method3029(new Class677(Class2222.field13664, n3, 1 * n5 + n4, n, n2));
-        this.method3029(new Class677(Class2222.field13665, n3, 2 * n5 + n4, n, n2));
-        this.method3029(new Class677(Class2222.field13666, n3, 3 * n5 + n4, n, n2));
-        this.method3029(new Class677(Class2222.field13667, n3, 4 * n5 + n4, n, n2));
-        this.method3029(new Class677(Class2222.field13668, n3, 5 * n5 + n4, n, n2));
-        this.method3029(new Class677(Class2222.field13670, n3, 6 * n5 + n4, n, n2));
-        this.method3029(new Class677(Class2222.field13671, n3, 7 * n5 + n4, n, n2));
+        this.addButton(new Class677(Class2222.field13663, n3, 0 * n5 + n4, n, n2));
+        this.addButton(new Class677(Class2222.field13664, n3, 1 * n5 + n4, n, n2));
+        this.addButton(new Class677(Class2222.field13665, n3, 2 * n5 + n4, n, n2));
+        this.addButton(new Class677(Class2222.field13666, n3, 3 * n5 + n4, n, n2));
+        this.addButton(new Class677(Class2222.field13667, n3, 4 * n5 + n4, n, n2));
+        this.addButton(new Class677(Class2222.field13668, n3, 5 * n5 + n4, n, n2));
+        this.addButton(new Class677(Class2222.field13670, n3, 6 * n5 + n4, n, n2));
+        this.addButton(new Class677(Class2222.field13671, n3, 7 * n5 + n4, n, n2));
         final int min = Math.min(150, n6 / 2 - 10);
         final int n7 = n6 / 4 - min / 2;
         final int n8 = this.height - 25;
-        this.method3029(new Class673(201, n7, n8, min - 22 + 1, n2, Class4647.method13876("of.options.shaders.shadersFolder")));
-        this.method3029(new Class676(210, n7 + min - 22 - 1, n8));
-        this.method3029(new Class673(202, n6 / 4 * 3 - min / 2, this.height - 25, min, n2, Class8822.method30773("gui.done", new Object[0])));
-        this.method3029(new Class673(203, n3, this.height - 25, n, n2, Class4647.method13876("of.options.shaders.shaderOptions")));
+        this.addButton(new Class673(201, n7, n8, min - 22 + 1, n2, Class4647.method13876("of.options.shaders.shadersFolder")));
+        this.addButton(new Class676(210, n7 + min - 22 - 1, n8));
+        this.addButton(new Class673(202, n6 / 4 * 3 - min / 2, this.height - 25, min, n2, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(203, n3, this.height - 25, n, n2, Class4647.method13876("of.options.shaders.shaderOptions")));
         this.setFocused(this.field3913);
         this.method3934();
     }
     
     public void method3934() {
         final boolean method28955 = Config.method28955();
-        for (final Class573 class573 : this.field3842) {
+        for (final Widget class573 : this.field3842) {
             if (!(class573 instanceof Class673)) {
                 continue;
             }
@@ -89,7 +89,7 @@ public class Class716 extends Class698
     }
     
     @Override
-    public void method3896(final Class573 class573) {
+    public void method3896(final Widget class573) {
         if (class573.field3431) {
             if (!(class573 instanceof Class677)) {
                 if (class573 instanceof Class673) {
@@ -136,11 +136,11 @@ public class Class716 extends Class698
                         case 202: {
                             Class9216.method33705();
                             this.field3914 = true;
-                            this.minecraft.method5244(this.field3910);
+                            this.minecraft.displayGuiScreen(this.field3910);
                             break;
                         }
                         case 203: {
-                            Config.method28894().method5244(new Class713(this, Config.method28962()));
+                            Config.method28894().displayGuiScreen(new Class713(this, Config.method28962()));
                             break;
                         }
                         case 210: {
@@ -180,7 +180,7 @@ public class Class716 extends Class698
                         final float[] field39305 = Class716.field3915;
                         final String[] field39306 = Class716.field3916;
                         int method3939 = method3939(field39304, field39305);
-                        if (method3047()) {
+                        if (hasShiftDown()) {
                             if (--method3939 < 0) {
                                 method3939 = field39305.length - 1;
                             }
@@ -198,7 +198,7 @@ public class Class716 extends Class698
                         final float[] field39308 = Class716.field3915;
                         final String[] field39309 = Class716.field3916;
                         int method3940 = method3939(field39307, field39308);
-                        if (method3047()) {
+                        if (hasShiftDown()) {
                             if (--method3940 < 0) {
                                 method3940 = field39308.length - 1;
                             }
@@ -216,7 +216,7 @@ public class Class716 extends Class698
                         final float[] field39311 = Class716.field3917;
                         final String[] field39312 = Class716.field3918;
                         int method3941 = method3939(field39310, field39311);
-                        if (method3047()) {
+                        if (hasShiftDown()) {
                             if (--method3941 < 0) {
                                 method3941 = field39311.length - 1;
                             }
@@ -289,22 +289,22 @@ public class Class716 extends Class698
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.field3913.method2975(n, n2, n3);
+        this.field3913.render(n, n2, n3);
         if (this.field3912 <= 0) {
             this.field3913.method3522();
             this.field3912 += 20;
         }
-        this.method3295(this.field3843, this.field3148.getFormattedText(), this.width / 2, 15, 16777215);
+        this.drawCenteredString(this.field3843, this.title.getFormattedText(), this.width / 2, 15, 16777215);
         final String string = "OpenGL: " + Class9216.field39036 + ", " + Class9216.field39037 + ", " + Class9216.field39038;
-        if (this.field3843.method6617(string) >= this.width - 5) {
-            this.method3297(this.field3843, string, 5, this.height - 40, 8421504);
+        if (this.field3843.getStringWidth(string) >= this.width - 5) {
+            this.drawString(this.field3843, string, 5, this.height - 40, 8421504);
         }
         else {
-            this.method3295(this.field3843, string, this.width / 2, this.height - 40, 8421504);
+            this.drawCenteredString(this.field3843, string, this.width / 2, this.height - 40, 8421504);
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
         this.field3911.method27577(n, n2, this.field3842);
     }
     
@@ -319,7 +319,7 @@ public class Class716 extends Class698
     }
     
     public void method3184(final String s, final int n, final int n2, final int n3) {
-        this.method3295(this.field3843, s, n, n2, n3);
+        this.drawCenteredString(this.field3843, s, n, n2, n3);
     }
     
     public static String method3936(final boolean b) {

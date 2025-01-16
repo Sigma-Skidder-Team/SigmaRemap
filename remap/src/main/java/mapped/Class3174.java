@@ -20,9 +20,9 @@ public class Class3174 extends Class3167
     @Class6753
     private void method9943(final Class5748 class5748) {
         if (this.method9906()) {
-            if (Class3174.field15514.field4648.field23440.method1056()) {
+            if (Class3174.field15514.gameSettings.field23440.method1056()) {
                 if (class5748.method17055() == Class1958.field10672) {
-                    if (Class3174.field15514.field4684.rotationPitch >= 0.0f) {
+                    if (Class3174.field15514.player.rotationPitch >= 0.0f) {
                         this.method9948(this.method9946());
                     }
                     else {
@@ -47,8 +47,8 @@ public class Class3174 extends Class3167
             if (method9945(replaceAll)) {
                 int1 = Integer.parseInt(replaceAll);
             }
-            final float n = (float)Math.toRadians(Class3174.field15514.field4684.rotationYaw + 90.0f);
-            Class3174.field15514.field4684.setPosition(Class3174.field15514.field4684.posX + MathHelper.cos(n) * int1, Class3174.field15514.field4684.posY, Class3174.field15514.field4684.posZ + MathHelper.sin(n) * int1);
+            final float n = (float)Math.toRadians(Class3174.field15514.player.rotationYaw + 90.0f);
+            Class3174.field15514.player.setPosition(Class3174.field15514.player.posX + MathHelper.cos(n) * int1, Class3174.field15514.player.posY, Class3174.field15514.player.posZ + MathHelper.sin(n) * int1);
         }
     }
     
@@ -60,7 +60,7 @@ public class Class3174 extends Class3167
         boolean method21723 = false;
         int n = 0;
         for (int i = 0; i < 10; ++i) {
-            final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY - i, Class3174.field15514.field4684.posZ);
+            final BlockPos class354 = new BlockPos(Class3174.field15514.player.posX, Class3174.field15514.player.posY - i, Class3174.field15514.player.posZ);
             if (Class3174.field15514.world.getBlockState(class354).method21723() && method21723) {
                 n = -i;
                 break;
@@ -74,7 +74,7 @@ public class Class3174 extends Class3167
         boolean method21723 = false;
         int n = 0;
         for (int i = 10; i > 0; --i) {
-            final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY + i, Class3174.field15514.field4684.posZ);
+            final BlockPos class354 = new BlockPos(Class3174.field15514.player.posX, Class3174.field15514.player.posY + i, Class3174.field15514.player.posZ);
             if (Class3174.field15514.world.getBlockState(class354).method21723()) {
                 if (method21723) {
                     if (!Class3174.field15514.world.getBlockState(class354.method1139()).method21723()) {
@@ -93,8 +93,8 @@ public class Class3174 extends Class3167
             Class6430.method19106("§cCouldn't VClip");
         }
         else {
-            Class3174.field15514.method5269().method17292(new Class4354(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY + i, Class3174.field15514.field4684.posZ, false));
-            Class3174.field15514.field4684.setPosition(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY + i, Class3174.field15514.field4684.posZ);
+            Class3174.field15514.method5269().method17292(new Class4354(Class3174.field15514.player.posX, Class3174.field15514.player.posY + i, Class3174.field15514.player.posZ, false));
+            Class3174.field15514.player.setPosition(Class3174.field15514.player.posX, Class3174.field15514.player.posY + i, Class3174.field15514.player.posZ);
             Class9463.method35173().method35197().method25776(new Class6224("Successfuly VCliped", i + " Blocks", 2000, Class7853.field32190));
         }
     }

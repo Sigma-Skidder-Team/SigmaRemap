@@ -24,11 +24,11 @@ public class Class8283
     }
     
     public static void method27525(final File file, final String s, final int n, final int n2, final Class6153 class6153, final Consumer<ITextComponent> consumer) {
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             method27526(file, s, n, n2, class6153, consumer);
         }
         else {
-            Class8726.method29991(() -> method27526(file, s, n, n2, class6153, consumer));
+            RenderSystem.method29991(() -> method27526(file, s, n, n2, class6153, consumer));
         }
     }
     
@@ -39,7 +39,7 @@ public class Class8283
         final int method28897 = method28895.method7692();
         final int method28898 = method28895.method7693();
         final int field23473 = method28896.field23473;
-        final int method28899 = method28895.method7687(method28894.field4648.field23473, method28894.field4648.field23421);
+        final int method28899 = method28895.method7687(method28894.gameSettings.field23473, method28894.gameSettings.field23421);
         final int method28900 = Config.method29007();
         final boolean b = Class8543.method28676() && method28900 > 1;
         if (b) {
@@ -106,7 +106,7 @@ public class Class8283
         field24884 = class6153.field24884;
         field24885 = class6153.field24885;
         final Class1846 class6154 = new Class1846(field24884, field24885, false);
-        Class8726.method30044(class6153.field24890);
+        RenderSystem.method30044(class6153.field24890);
         class6154.method6656(0, true);
         class6154.method6665();
         return class6154;

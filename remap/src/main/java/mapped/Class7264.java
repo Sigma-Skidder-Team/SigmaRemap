@@ -23,11 +23,11 @@ public class Class7264
         this.field28143 = field28143;
     }
     
-    public Class1912 method22204(final Class3832 class3832) {
+    public TextureAtlasSprite method22204(final Class3832 class3832) {
         return this.method22205(new ItemStack(class3832));
     }
     
-    public Class1912 method22205(final ItemStack class8321) {
+    public TextureAtlasSprite method22205(final ItemStack class8321) {
         final Class6313 method22206 = this.method22206(class8321);
         return (method22206 == this.field28143.method6452() && class8321.getItem() instanceof Class4036) ? this.field28143.method6453().method35427(((Class4036)class8321.getItem()).method12240().getDefaultState()) : method22206.method18696();
     }

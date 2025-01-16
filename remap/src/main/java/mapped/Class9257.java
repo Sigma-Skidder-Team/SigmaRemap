@@ -36,7 +36,7 @@ public class Class9257
     
     public void method34148(final Minecraft field39700, final int n, final int n2) {
         this.field39700 = field39700;
-        this.field39707 = field39700.field4684.method4122();
+        this.field39707 = field39700.player.method4122();
         for (int i = 0; i < this.field39697.size(); ++i) {
             this.field39697.get(i).method3700(n + 11 + 25 * (i % 5), n2 + 31 + 25 * (i / 5));
         }
@@ -81,11 +81,11 @@ public class Class9257
     public void method34153(final int n, final int n2, final int n3, final int n4, final float n5) {
         if (this.field39705 > 1) {
             final String string = this.field39706 + 1 + "/" + this.field39705;
-            this.field39700.fontRenderer.method6610(string, (float)(n - this.field39700.fontRenderer.method6617(string) / 2 + 73), (float)(n2 + 141), -1);
+            this.field39700.fontRenderer.method6610(string, (float)(n - this.field39700.fontRenderer.getStringWidth(string) / 2 + 73), (float)(n2 + 141), -1);
         }
         this.field39698 = null;
         for (final Class647 field39698 : this.field39697) {
-            field39698.method2975(n3, n4, n5);
+            field39698.render(n3, n4, n5);
             if (!field39698.field3432) {
                 continue;
             }
@@ -94,16 +94,16 @@ public class Class9257
             }
             this.field39698 = field39698;
         }
-        this.field39704.method2975(n3, n4, n5);
-        this.field39703.method2975(n3, n4, n5);
-        this.field39699.method2975(n3, n4, n5);
+        this.field39704.render(n3, n4, n5);
+        this.field39703.render(n3, n4, n5);
+        this.field39699.render(n3, n4, n5);
     }
     
     public void method34154(final int n, final int n2) {
         if (this.field39700.field4700 != null) {
             if (this.field39698 != null) {
                 if (!this.field39699.method3286()) {
-                    this.field39700.field4700.method3032(this.field39698.method3704(this.field39700.field4700), n, n2);
+                    this.field39700.field4700.renderTooltip(this.field39698.method3704(this.field39700.field4700), n, n2);
                 }
             }
         }

@@ -163,8 +163,8 @@ public class Class5047 extends RealmsScreen
     private void method15454() {
         final double d = this.field21645.field33322 / (double)this.field21645.field33323 * 100.0;
         this.field21648 = String.format(Locale.ROOT, "%.1f", d);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30041();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.disableTexture();
         final Class7710 field30674 = Class7710.field30674;
         field30674.method24611(7, Class7785.field31865);
         final double n = this.width() / 2 - 100;
@@ -177,7 +177,7 @@ public class Class5047 extends RealmsScreen
         field30674.method24610(n + 200.0 * d / 100.0, 80.0, 0.0).method24613(128, 128, 128, 255).method24612();
         field30674.method24610(n, 80.0, 0.0).method24613(128, 128, 128, 255).method24612();
         field30674.method24609();
-        Class8726.method30040();
+        RenderSystem.enableTexture();
         this.drawCenteredString(this.field21648 + " %", this.width() / 2, 84, 16777215);
     }
     

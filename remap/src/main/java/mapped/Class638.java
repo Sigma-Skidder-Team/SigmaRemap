@@ -45,7 +45,7 @@ public class Class638 extends Class623<Class638>
         else {
             s = Class8822.method30773("createWorld.customize.flat.layer.top", class9127.method33114());
         }
-        this.field3637.field3591.font.method6610(s, (float)(n3 + 2 + 213 - this.field3637.field3591.font.method6617(s)), (float)(n2 + 3), 16777215);
+        this.field3637.field3591.font.method6610(s, (float)(n3 + 2 + 213 - this.field3637.field3591.font.getStringWidth(s)), (float)(n2 + 3), 16777215);
     }
     
     @Override
@@ -60,16 +60,16 @@ public class Class638 extends Class623<Class638>
     
     private void method3666(final int n, final int n2, final ItemStack class8321) {
         this.method3667(n + 1, n2 + 1);
-        Class8726.method30046();
+        RenderSystem.enableRescaleNormal();
         if (!class8321.method27620()) {
             this.field3637.field3591.itemRenderer.method6538(class8321, n + 2, n2 + 2);
         }
-        Class8726.method30047();
+        RenderSystem.disableRescaleNormal();
     }
     
     private void method3667(final int n, final int n2) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class618.method3596(this.field3637).method5290().method5849(Class565.field3362);
-        Class565.method3299(n, n2, this.field3637.field3591.method3303(), 0.0f, 0.0f, 18, 18, 128, 128);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        Class618.method3596(this.field3637).method5290().method5849(AbstractGui.STATS_ICON_LOCATION);
+        AbstractGui.blit(n, n2, this.field3637.field3591.getBlitOffset(), 0.0f, 0.0f, 18, 18, 128, 128);
     }
 }

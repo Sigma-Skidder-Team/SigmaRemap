@@ -35,18 +35,18 @@ public class Class6708 extends Class6693
             if (this.field26436 == null) {
                 throw new Class2332("No entity to remount");
             }
-            Class6708.field26420.field4684.method1778(this.field26436);
+            Class6708.field26420.player.method1778(this.field26436);
             this.field26436.addedToChunk = true;
             class6428.method19104("Remounted entity " + this.field26436.getType().method23367().getUnformattedComponentText());
             this.field26436 = null;
         }
         else {
-            if (Class6708.field26420.field4684.method1920() == null) {
+            if (Class6708.field26420.player.method1920() == null) {
                 throw new Class2332("You must be riding an entity to use this command");
             }
-            this.field26436 = Class6708.field26420.field4684.method1920();
+            this.field26436 = Class6708.field26420.player.method1920();
             this.field26436.addedToChunk = true;
-            Class6708.field26420.field4684.stopRiding();
+            Class6708.field26420.player.stopRiding();
             class6428.method19104("Dismounted entity " + this.field26436.getType().method23367().getUnformattedComponentText());
         }
     }

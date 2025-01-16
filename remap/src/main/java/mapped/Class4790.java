@@ -13,10 +13,10 @@ import java.util.Random;
 public class Class4790 extends Class4703<Class427>
 {
     private static String[] field20424;
-    private final Class1796 field20425;
+    private final ItemRenderer field20425;
     private final Random field20426;
     
-    public Class4790(final Class8551 class8551, final Class1796 field20425) {
+    public Class4790(final Class8551 class8551, final ItemRenderer field20425) {
         super(class8551);
         this.field20426 = new Random();
         this.field20425 = field20425;
@@ -47,7 +47,7 @@ public class Class4790 extends Class4703<Class427>
         return n;
     }
     
-    public void method14164(final Class427 class427, final float n, final float n2, final Class7351 class428, final Class7807 class429, final int n3) {
+    public void method14164(final Class427 class427, final float n, final float n2, final MatrixStack class428, final IRenderTypeBuffer class429, final int n3) {
         class428.method22567();
         final ItemStack method2107 = class427.method2107();
         this.field20426.setSeed(method2107.method27620() ? 187 : (Item.method11696(method2107.getItem()) + method2107.method27632()));

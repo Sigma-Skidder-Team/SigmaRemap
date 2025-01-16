@@ -37,7 +37,7 @@ public class Class3247 extends Class3167
         this.method10259();
         for (final Class3167 field15743 : this.field15742) {
             final boolean equals = this.method9887("Type").equals(field15743.field15515);
-            if (this.method9906() && Class3247.field15514.field4684 != null) {
+            if (this.method9906() && Class3247.field15514.player != null) {
                 field15743.method9907(equals);
                 if (equals) {
                     this.field15743 = field15743;

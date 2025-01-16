@@ -33,7 +33,7 @@ public class Class6823
     private final Minecraft field26791;
     private final Screen field26792;
     private final Class576 field26793;
-    private final Class1844 field26794;
+    private final FontRenderer field26794;
     private final boolean field26795;
     private final boolean field26796;
     private final int field26797;
@@ -49,7 +49,7 @@ public class Class6823
     private boolean field26807;
     private boolean field26808;
     
-    public Class6823(final Minecraft field26791, final Screen field26792, final Class576 field26793, final Class1844 field26794, final boolean field26795, final boolean field26796, final int field26797, final int field26798, final boolean field26799, final int field26800) {
+    public Class6823(final Minecraft field26791, final Screen field26792, final Class576 field26793, final FontRenderer field26794, final boolean field26795, final boolean field26796, final int field26797, final int field26798, final boolean field26799, final int field26800) {
         this.field26801 = Lists.newArrayList();
         this.field26791 = field26791;
         this.field26792 = field26792;
@@ -75,7 +75,7 @@ public class Class6823
         if (this.field26806 != null && this.field26806.method28358(n, n2, n3)) {
             return true;
         }
-        if (this.field26792.method3471() == this.field26793 && n == 258) {
+        if (this.field26792.getFocused() == this.field26793 && n == 258) {
             this.method20889(true);
             return true;
         }
@@ -98,7 +98,7 @@ public class Class6823
                     int max = 0;
                     final Iterator iterator = suggestions.getList().iterator();
                     while (iterator.hasNext()) {
-                        max = Math.max(max, this.field26794.method6617(((Suggestion)iterator.next()).getText()));
+                        max = Math.max(max, this.field26794.getStringWidth(((Suggestion)iterator.next()).getText()));
                     }
                     this.field26806 = new Class8490(this, MathHelper.method35651(this.field26793.method3412(suggestions.getRange().getStart()), 0, this.field26793.method3412(0) + this.field26793.method3406() - max), this.field26799 ? (this.field26792.height - 12) : 72, max, suggestions, b, null);
                 }
@@ -127,12 +127,12 @@ public class Class6823
         final int method3379 = this.field26793.method3399();
         if (!b2) {
             final String substring = method3378.substring(0, method3379);
-            this.field26805 = Class7491.method23226(this.field26791.field4684.field4069.method17269().method23205(), new SuggestionsBuilder(substring, method20891(substring)));
+            this.field26805 = Class7491.method23226(this.field26791.player.field4069.method17269().method23205(), new SuggestionsBuilder(substring, method20891(substring)));
         }
         else {
-            final CommandDispatcher<Class7491> method3380 = this.field26791.field4684.field4069.method17375();
+            final CommandDispatcher<Class7491> method3380 = this.field26791.player.field4069.method17375();
             if (this.field26804 == null) {
-                this.field26804 = (ParseResults<Class7491>)method3380.parse(stringReader, (Object)this.field26791.field4684.field4069.method17269());
+                this.field26804 = (ParseResults<Class7491>)method3380.parse(stringReader, (Object)this.field26791.player.field4069.method17269());
             }
             if (method3379 >= (this.field26796 ? stringReader.getCursor() : 1)) {
                 if (this.field26806 == null || !this.field26808) {
@@ -187,7 +187,7 @@ public class Class6823
         }
         this.field26806 = null;
         if (this.field26807) {
-            if (this.field26791.field4648.field23415) {
+            if (this.field26791.gameSettings.field23415) {
                 this.method20889(false);
             }
         }
@@ -195,7 +195,7 @@ public class Class6823
     
     private void method20893(final TextFormatting obj) {
         final SuggestionContext suggestionContext = this.field26804.getContext().findSuggestionContext(this.field26793.method3399());
-        final Map smartUsage = this.field26791.field4684.field4069.method17375().getSmartUsage(suggestionContext.parent, (Object)this.field26791.field4684.field4069.method17269());
+        final Map smartUsage = this.field26791.player.field4069.method17375().getSmartUsage(suggestionContext.parent, (Object)this.field26791.player.field4069.method17269());
         final ArrayList arrayList = Lists.newArrayList();
         int max = 0;
         for (final Map.Entry<K, String> entry : smartUsage.entrySet()) {
@@ -203,7 +203,7 @@ public class Class6823
                 continue;
             }
             arrayList.add(obj + entry.getValue());
-            max = Math.max(max, this.field26794.method6617(entry.getValue()));
+            max = Math.max(max, this.field26794.getStringWidth(entry.getValue()));
         }
         if (!arrayList.isEmpty()) {
             this.field26801.addAll(arrayList);
@@ -264,8 +264,8 @@ public class Class6823
             int n3 = 0;
             for (final String s : this.field26801) {
                 final int n4 = this.field26799 ? (this.field26792.height - 14 - 13 - 12 * n3) : (72 + 12 * n3);
-                Class565.method3293(this.field26802 - 1, n4, this.field26802 + this.field26803 + 1, n4 + 12, this.field26800);
-                this.field26794.method6609(s, (float)this.field26802, (float)(n4 + 2), -1);
+                AbstractGui.fill(this.field26802 - 1, n4, this.field26802 + this.field26803 + 1, n4 + 12, this.field26800);
+                this.field26794.drawStringWithShadow(s, (float)this.field26802, (float)(n4 + 2), -1);
                 ++n3;
             }
         }

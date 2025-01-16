@@ -39,11 +39,11 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
     }
     
     public void method5849(final ResourceLocation class1932) {
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             this.method5850(class1932);
         }
         else {
-            Class8726.method29991(() -> this.method5850(class1932));
+            RenderSystem.method29991(() -> this.method5850(class1932));
         }
     }
     
@@ -135,7 +135,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
     }
     
     private static void method5856(final Runnable runnable) {
-        Minecraft.method5277().execute(() -> Class8726.method29991(runnable2::run));
+        Minecraft.method5277().execute(() -> RenderSystem.method29991(runnable2::run));
     }
     
     @Override
@@ -179,7 +179,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
             iterator.remove();
         }
         Class8880.method31243();
-        return CompletableFuture.allOf(Class548.method3215(this, executor), this.method5855(Class573.field3421, executor)).thenCompose((Function<? super Void, ? extends CompletionStage<Object>>)class7885::method25538).thenAcceptAsync(p2 -> {
+        return CompletableFuture.allOf(Class548.method3215(this, executor), this.method5855(Widget.field3421, executor)).thenCompose((Function<? super Void, ? extends CompletionStage<Object>>)class7885::method25538).thenAcceptAsync(p2 -> {
             Class1913.method7553();
             Class5079.method15797(this.field9432);
             new HashSet(this.field9429.entrySet()).iterator();
@@ -195,7 +195,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
                     class7893.method5873(this, class7891, class7892, executor3);
                 }
             }
-        }, runnable -> Class8726.method29991(runnable::run));
+        }, runnable -> RenderSystem.method29991(runnable::run));
     }
     
     public void method5859() {

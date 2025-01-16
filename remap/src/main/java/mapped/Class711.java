@@ -22,10 +22,10 @@ public class Class711 extends Class703
     
     @Override
     public void init() {
-        this.method3029(new Class654(this.width / 2 - 154, this.height - 48, 150, 20, Class8822.method30773("resourcePack.openFolder", new Object[0]), class654 -> Util.method27845().method978(this.minecraft.method5294())));
-        this.method3029(new Class654(this.width / 2 + 4, this.height - 48, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 154, this.height - 48, 150, 20, Class8822.method30773("resourcePack.openFolder", new Object[0]), class654 -> Util.method27845().method978(this.minecraft.method5294())));
+        this.addButton(new Class654(this.width / 2 + 4, this.height - 48, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
             if (!this.field3887) {
-                this.minecraft.method5244(this.field3868);
+                this.minecraft.displayGuiScreen(this.field3868);
             }
             else {
                 final ArrayList arrayList = Lists.newArrayList();
@@ -48,7 +48,7 @@ public class Class711 extends Class703
                     this.field3869.field23388.add(class655.method7621());
                 }
                 this.field3869.method17121();
-                this.minecraft.method5244(this.field3868);
+                this.minecraft.displayGuiScreen(this.field3868);
                 this.minecraft.method5241();
             }
         }));
@@ -103,13 +103,13 @@ public class Class711 extends Class703
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        this.method3043(0);
-        this.field3885.method2975(n, n2, n3);
-        this.field3886.method2975(n, n2, n3);
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 16, 16777215);
-        this.method3295(this.font, Class8822.method30773("resourcePack.folderInfo", new Object[0]), this.width / 2 - 77, this.height - 26, 8421504);
-        super.method2975(n, n2, n3);
+    public void render(final int n, final int n2, final float n3) {
+        this.renderDirtBackground(0);
+        this.field3885.render(n, n2, n3);
+        this.field3886.render(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 16, 16777215);
+        this.drawCenteredString(this.font, Class8822.method30773("resourcePack.folderInfo", new Object[0]), this.width / 2 - 77, this.height - 26, 8421504);
+        super.render(n, n2, n3);
     }
     
     public void method3927() {

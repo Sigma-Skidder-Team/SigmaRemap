@@ -26,11 +26,11 @@ public class Class661 extends Class662
         this.method3367(this.field3692.method19477(this.field3693));
     }
     
-    public static int method3712(final Class573 class573) {
+    public static int method3712(final Widget class573) {
         return class573.field3424;
     }
     
-    public static int method3713(final Class573 class573) {
+    public static int method3713(final Widget class573) {
         return class573.field3425;
     }
     

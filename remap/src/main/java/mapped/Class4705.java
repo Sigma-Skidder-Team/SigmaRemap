@@ -21,7 +21,7 @@ public class Class4705 extends Class4703<Class421>
         return 15;
     }
     
-    public void method13967(final Class421 class421, final float n, final float n2, final Class7351 class422, final Class7807 class423, final int n3) {
+    public void method13967(final Class421 class421, final float n, final float n2, final MatrixStack class422, final IRenderTypeBuffer class423, final int n3) {
         class422.method22567();
         class422.method22565(-1.0f, -1.0f, 1.0f);
         final float method35707 = MathHelper.method35707(class421.prevRotationYaw, class421.rotationYaw, n2);

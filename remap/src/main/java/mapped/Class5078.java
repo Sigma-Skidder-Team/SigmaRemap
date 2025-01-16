@@ -119,18 +119,18 @@ public class Class5078 extends Class5075<Class7430>
             RealmsScreen.method15419(s2);
         }
         if (!b) {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         }
         else {
-            Class8726.method30068(0.56f, 0.56f, 0.56f, 1.0f);
+            RenderSystem.method30068(0.56f, 0.56f, 0.56f, 1.0f);
         }
         RealmsScreen.method15411(n + 2, n2 + 14, 0.0f, 0.0f, 56, 56, 56, 56);
         RealmsScreen.method15419("realms:textures/gui/realms/slot_frame.png");
         if (!b) {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         }
         else {
-            Class8726.method30068(0.56f, 0.56f, 0.56f, 1.0f);
+            RenderSystem.method30068(0.56f, 0.56f, 0.56f, 1.0f);
         }
         RealmsScreen.method15411(n, n2 + 12, 0.0f, 0.0f, 60, 60, 60, 60);
         this.drawCenteredString(s, n + 30, n2, b ? 10526880 : 16777215);

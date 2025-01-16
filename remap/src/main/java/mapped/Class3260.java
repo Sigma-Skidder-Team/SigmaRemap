@@ -71,11 +71,11 @@ public class Class3260 extends Class3247
             int i = 36;
             while (i < 45) {
                 final int n = i - 36;
-                if (Class3260.field15514.field4684.field3008.method10878(i).method20054() && method10279(Class3260.field15514.field4684.field3008.method10878(i).method20053().getItem()) && Class3260.field15514.field4684.field3008.method10878(i).method20053().field34176 != 0) {
-                    if (Class3260.field15514.field4684.field3006.field2743 == n) {
+                if (Class3260.field15514.player.field3008.method10878(i).method20054() && method10279(Class3260.field15514.player.field3008.method10878(i).method20053().getItem()) && Class3260.field15514.player.field3008.method10878(i).method20053().field34176 != 0) {
+                    if (Class3260.field15514.player.field3006.field2743 == n) {
                         return;
                     }
-                    Class3260.field15514.field4684.field3006.field2743 = n;
+                    Class3260.field15514.player.field3006.field2743 = n;
                     if (this.method9887("ItemSpoof").equals("LiteSpoof") && (this.field15750 < 0 || this.field15750 != n)) {
                         Class3260.field15514.method5269().getNetworkManager().method11174(new Class4321(n));
                         this.field15750 = n;
@@ -94,8 +94,8 @@ public class Class3260 extends Class3247
     public int method10281() {
         int n = 0;
         for (int i = 0; i < 45; ++i) {
-            if (Class3260.field15514.field4684.field3008.method10878(i).method20054()) {
-                final ItemStack method20053 = Class3260.field15514.field4684.field3008.method10878(i).method20053();
+            if (Class3260.field15514.player.field3008.method10878(i).method20054()) {
+                final ItemStack method20053 = Class3260.field15514.player.field3008.method10878(i).method20053();
                 if (method10279(method20053.getItem())) {
                     n += method20053.field34176;
                 }
@@ -112,13 +112,13 @@ public class Class3260 extends Class3247
                 if (!this.method10284()) {
                     int n2 = -1;
                     for (int i = 9; i < 36; ++i) {
-                        if (Class3260.field15514.field4684.field3008.method10878(i).method20054() && method10279(Class3260.field15514.field4684.field3008.method10878(i).method20053().getItem())) {
+                        if (Class3260.field15514.player.field3008.method10878(i).method20054() && method10279(Class3260.field15514.player.field3008.method10878(i).method20053().getItem())) {
                             n2 = i;
                             break;
                         }
                     }
                     for (int j = 36; j < 45; ++j) {
-                        if (!Class3260.field15514.field4684.field3008.method10878(j).method20054()) {
+                        if (!Class3260.field15514.player.field3008.method10878(j).method20054()) {
                             n = j;
                             break;
                         }
@@ -142,7 +142,7 @@ public class Class3260 extends Class3247
                 final int method9888 = this.method10283();
                 if (!this.method10284()) {
                     for (int k = 36; k < 45; ++k) {
-                        if (!Class3260.field15514.field4684.field3008.method10878(k).method20054()) {
+                        if (!Class3260.field15514.player.field3008.method10878(k).method20054()) {
                             n = k;
                             break;
                         }
@@ -151,9 +151,9 @@ public class Class3260 extends Class3247
                 else {
                     int l = 36;
                     while (l < 45) {
-                        if (Class3260.field15514.field4684.field3008.method10878(l).method20054() && method10279(Class3260.field15514.field4684.field3008.method10878(l).method20053().getItem())) {
+                        if (Class3260.field15514.player.field3008.method10878(l).method20054() && method10279(Class3260.field15514.player.field3008.method10878(l).method20053().getItem())) {
                             n = l;
-                            if (Class3260.field15514.field4684.field3008.method10878(n).method20053().field34176 != Class3260.field15514.field4684.field3008.method10878(method9888).method20053().field34176) {
+                            if (Class3260.field15514.player.field3008.method10878(n).method20053().field34176 != Class3260.field15514.player.field3008.method10878(method9888).method20053().field34176) {
                                 break;
                             }
                             n = -1;
@@ -165,7 +165,7 @@ public class Class3260 extends Class3247
                     }
                 }
                 if (n >= 0) {
-                    if (Class3260.field15514.field4684.field3008.method10878(n).field26174 != method9888) {
+                    if (Class3260.field15514.player.field3008.method10878(n).field26174 != method9888) {
                         if (!(Class3260.field15514.field4700 instanceof Class518)) {
                             if (method9887.equals("FakeInv")) {
                                 Class3260.field15514.method5269().method17292(new Class4323(Class2218.field13623));
@@ -188,9 +188,9 @@ public class Class3260 extends Class3247
         int field34176 = 0;
         if (this.method10281() != 0) {
             for (int i = 9; i < 45; ++i) {
-                if (Class3260.field15514.field4684.field3008.method10878(i).method20054()) {
-                    final Item method27622 = Class3260.field15514.field4684.field3008.method10878(i).method20053().getItem();
-                    final ItemStack method27623 = Class3260.field15514.field4684.field3008.method10878(i).method20053();
+                if (Class3260.field15514.player.field3008.method10878(i).method20054()) {
+                    final Item method27622 = Class3260.field15514.player.field3008.method10878(i).method20053().getItem();
+                    final ItemStack method27623 = Class3260.field15514.player.field3008.method10878(i).method20053();
                     if (method10279(method27622)) {
                         if (method27623.field34176 > field34176) {
                             field34176 = method27623.field34176;
@@ -206,7 +206,7 @@ public class Class3260 extends Class3247
     
     public boolean method10284() {
         for (int i = 36; i < 45; ++i) {
-            if (Class3260.field15514.field4684.field3008.method10878(i).method20054() && method10279(Class3260.field15514.field4684.field3008.method10878(i).method20053().getItem())) {
+            if (Class3260.field15514.player.field3008.method10878(i).method20054() && method10279(Class3260.field15514.player.field3008.method10878(i).method20053().getItem())) {
                 return true;
             }
         }
@@ -219,14 +219,14 @@ public class Class3260 extends Class3247
                 return false;
             }
         }
-        else if (!method10279(Class3260.field15514.field4684.method2715(class316).getItem())) {
+        else if (!method10279(Class3260.field15514.player.method2715(class316).getItem())) {
             return false;
         }
         return true;
     }
     
     public void method10286(final int n, final int n2) {
-        Class3260.field15514.field4682.method27324(Class3260.field15514.field4684.field3008.field16154, n, n2, Class2133.field12439, Class3260.field15514.field4684);
+        Class3260.field15514.field4682.method27324(Class3260.field15514.player.field3008.field16154, n, n2, Class2133.field12439, Class3260.field15514.player);
     }
     
     public void method10287(final Class5717 class5717) {
@@ -236,7 +236,7 @@ public class Class3260 extends Class3247
         if (Class3260.field15514.field4633.field26532 == 0.8038576f) {
             Class3260.field15514.field4633.field26532 = 1.0f;
         }
-        if (this.method10281() != 0 && (!Class3260.field15514.field4684.collidedVertically || this.method9887("Tower Mode").equalsIgnoreCase("Cubecraft"))) {
+        if (this.method10281() != 0 && (!Class3260.field15514.player.collidedVertically || this.method9887("Tower Mode").equalsIgnoreCase("Cubecraft"))) {
             if (!Class6430.method19114() || this.method9883("Tower while moving")) {
                 final String method9887 = this.method9887("Tower Mode");
                 switch (method9887) {
@@ -244,20 +244,20 @@ public class Class3260 extends Class3247
                         if (class5717.method16974() > 0.0) {
                             if (Class7482.method23140() == 0) {
                                 if (class5717.method16974() > 0.247 && class5717.method16974() < 0.249) {
-                                    class5717.method16975((int)(Class3260.field15514.field4684.posY + class5717.method16974()) - Class3260.field15514.field4684.posY);
+                                    class5717.method16975((int)(Class3260.field15514.player.posY + class5717.method16974()) - Class3260.field15514.player.posY);
                                 }
                             }
                             else {
-                                final double n2 = (int)(Class3260.field15514.field4684.posY + class5717.method16974());
-                                if (n2 != (int)Class3260.field15514.field4684.posY && Class3260.field15514.field4684.posY + class5717.method16974() - n2 < 0.15) {
-                                    class5717.method16975(n2 - Class3260.field15514.field4684.posY);
+                                final double n2 = (int)(Class3260.field15514.player.posY + class5717.method16974());
+                                if (n2 != (int)Class3260.field15514.player.posY && Class3260.field15514.player.posY + class5717.method16974() - n2 < 0.15) {
+                                    class5717.method16975(n2 - Class3260.field15514.player.posY);
                                 }
                             }
                         }
-                        if (Class3260.field15514.field4684.posY != (int)Class3260.field15514.field4684.posY || !Class6430.method19160(Class3260.field15514.field4684, 0.001f)) {
+                        if (Class3260.field15514.player.posY != (int)Class3260.field15514.player.posY || !Class6430.method19160(Class3260.field15514.player, 0.001f)) {
                             break;
                         }
-                        if (Class3260.field15514.field4648.field23439.field2162) {
+                        if (Class3260.field15514.gameSettings.field23439.field2162) {
                             if (!Class6430.method19114()) {
                                 Class7482.method23151(0.0);
                                 Class7482.method23149(class5717, 0.0);
@@ -270,8 +270,8 @@ public class Class3260 extends Class3247
                     }
                     case "AAC": {
                         if (class5717.method16974() > 0.247 && class5717.method16974() < 0.249) {
-                            class5717.method16975((int)(Class3260.field15514.field4684.posY + class5717.method16974()) - Class3260.field15514.field4684.posY);
-                            if (Class3260.field15514.field4648.field23439.field2162 && !Class6430.method19114()) {
+                            class5717.method16975((int)(Class3260.field15514.player.posY + class5717.method16974()) - Class3260.field15514.player.posY);
+                            if (Class3260.field15514.gameSettings.field23439.field2162 && !Class6430.method19114()) {
                                 Class7482.method23151(0.0);
                                 Class7482.method23149(class5717, 0.0);
                                 break;
@@ -279,7 +279,7 @@ public class Class3260 extends Class3247
                             break;
                         }
                         else {
-                            if (Class3260.field15514.field4684.posY == (int)Class3260.field15514.field4684.posY && Class6430.method19160(Class3260.field15514.field4684, 0.001f)) {
+                            if (Class3260.field15514.player.posY == (int)Class3260.field15514.player.posY && Class6430.method19160(Class3260.field15514.player, 0.001f)) {
                                 class5717.method16975(-1.0E-10);
                                 break;
                             }
@@ -288,8 +288,8 @@ public class Class3260 extends Class3247
                         break;
                     }
                     case "Cubecraft": {
-                        if (Class3260.field15514.field4648.field23439.field2162 && Class6430.method19160(Class3260.field15514.field4684, 0.001f) && Class3260.field15514.world.method6981(Class3260.field15514.field4684, Class3260.field15514.field4684.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
-                            Class3260.field15514.field4684.setPosition(Class3260.field15514.field4684.posX, Class3260.field15514.field4684.posY + 1.0, Class3260.field15514.field4684.posZ);
+                        if (Class3260.field15514.gameSettings.field23439.field2162 && Class6430.method19160(Class3260.field15514.player, 0.001f) && Class3260.field15514.world.method6981(Class3260.field15514.player, Class3260.field15514.player.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
+                            Class3260.field15514.player.setPosition(Class3260.field15514.player.posX, Class3260.field15514.player.posY + 1.0, Class3260.field15514.player.posZ);
                             class5717.method16975(0.0);
                             Class7482.method23149(class5717, 0.0);
                             Class3260.field15514.field4633.field26532 = 0.8038576f;
@@ -300,16 +300,16 @@ public class Class3260 extends Class3247
                 }
             }
         }
-        else if (this.method9887("Tower Mode").equals("AAC") && Class6430.method19160(Class3260.field15514.field4684, 0.001f) && Class3260.field15514.field4648.field23439.field2162) {
+        else if (this.method9887("Tower Mode").equals("AAC") && Class6430.method19160(Class3260.field15514.player, 0.001f) && Class3260.field15514.gameSettings.field23439.field2162) {
             if (!Class6430.method19114() || this.method9883("Tower while moving")) {
-                Class3260.field15514.field4684.field2985 = 0;
-                Class3260.field15514.field4684.method2725();
+                Class3260.field15514.player.field2985 = 0;
+                Class3260.field15514.player.method2725();
                 Class7482.method23149(class5717, Class7482.method23136());
                 Class7482.method23151(Class7482.method23136());
             }
         }
-        else if (!this.method9887("Tower Mode").equals("NCP") && !this.method9887("Tower Mode").equals("Cubecraft") && Class6430.method19160(Class3260.field15514.field4684, 0.001f) && Class3260.field15514.field4648.field23439.field2162) {
-            Class3260.field15514.field4684.field2985 = 20;
+        else if (!this.method9887("Tower Mode").equals("NCP") && !this.method9887("Tower Mode").equals("Cubecraft") && Class6430.method19160(Class3260.field15514.player, 0.001f) && Class3260.field15514.gameSettings.field23439.field2162) {
+            Class3260.field15514.player.field2985 = 20;
             class5717.method16975(Class7482.method23141());
         }
         if (!this.method9887("Tower Mode").equalsIgnoreCase("Cubecraft")) {

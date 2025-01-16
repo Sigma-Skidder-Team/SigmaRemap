@@ -28,16 +28,16 @@ public class Class3215 extends Class3167
         this.field15662 = 0.0;
         this.field15664 = 0;
         this.field15663 = 0;
-        if (Class3215.field15514.field4684.onGround || Class6430.method19160(Class3215.field15514.field4684, 0.001f)) {
-            this.field15665 = new Vec3d(Class3215.field15514.field4684.posX, Class3215.field15514.field4684.posY, Class3215.field15514.field4684.posZ);
+        if (Class3215.field15514.player.onGround || Class6430.method19160(Class3215.field15514.player, 0.001f)) {
+            this.field15665 = new Vec3d(Class3215.field15514.player.posX, Class3215.field15514.player.posY, Class3215.field15514.player.posZ);
         }
     }
     
     @Class6753
     private void method10134(final Class5717 class5717) {
         if (this.method9906()) {
-            if (Class3215.field15514.field4684.onGround || Class6430.method19160(Class3215.field15514.field4684, 0.001f)) {
-                this.field15665 = new Vec3d(Class3215.field15514.field4684.posX, Class3215.field15514.field4684.posY, Class3215.field15514.field4684.posZ);
+            if (Class3215.field15514.player.onGround || Class6430.method19160(Class3215.field15514.player, 0.001f)) {
+                this.field15665 = new Vec3d(Class3215.field15514.player.posX, Class3215.field15514.player.posY, Class3215.field15514.player.posZ);
             }
             if (this.field15664 <= 0) {
                 final Class3167 method21551 = Class9463.method35173().method35189().method21551(Class3259.class);
@@ -55,10 +55,10 @@ public class Class3215 extends Class3167
                         method21555 = true;
                     }
                 }
-                if (Class3215.field15514.field4684.getMotion().y < -0.08 && !method21555) {
-                    this.field15662 -= Class3215.field15514.field4684.getMotion().y;
+                if (Class3215.field15514.player.getMotion().y < -0.08 && !method21555) {
+                    this.field15662 -= Class3215.field15514.player.getMotion().y;
                 }
-                else if (Class3215.field15514.field4684.onGround) {
+                else if (Class3215.field15514.player.onGround) {
                     this.field15662 = 0.0;
                 }
             }
@@ -102,13 +102,13 @@ public class Class3215 extends Class3167
     }
     
     private boolean method10137() {
-        return Class3215.field15514.field4684.method1895().y < 1.0 || (!Class3215.field15514.field4684.onGround && Class3215.field15514.world.method6981(Class3215.field15514.field4684, Class3215.field15514.field4684.boundingBox.expand(0.0, -Class3215.field15514.field4684.method1934().y, 0.0)).count() == 0L);
+        return Class3215.field15514.player.method1895().y < 1.0 || (!Class3215.field15514.player.onGround && Class3215.field15514.world.method6981(Class3215.field15514.player, Class3215.field15514.player.boundingBox.expand(0.0, -Class3215.field15514.player.method1934().y, 0.0)).count() == 0L);
     }
     
     private void method10138(String s, final Class5717 class5717) {
-        final double method16760 = Class3215.field15514.field4684.method1895().getX();
-        Class3215.field15514.field4684.method1895().getY();
-        final double method16761 = Class3215.field15514.field4684.method1895().getZ();
+        final double method16760 = Class3215.field15514.player.method1895().getX();
+        Class3215.field15514.player.method1895().getY();
+        final double method16761 = Class3215.field15514.player.method1895().getZ();
         if (s.equals("Cubecraft") && !Class6430.method19148()) {
             s = "Motion";
         }

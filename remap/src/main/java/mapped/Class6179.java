@@ -31,13 +31,13 @@ public class Class6179 extends Class6173
     public void method18432(final Class4150 class4150, final Class6092 class4151, final float n) {
         final float n2 = (this.field24950 + n) / this.field24951;
         final float n3 = 0.05f + 0.5f * MathHelper.sin(n2 * 3.1415927f);
-        final Class7351 class4152 = new Class7351();
+        final MatrixStack class4152 = new MatrixStack();
         class4152.method22566(class4151.method18165());
         class4152.method22566(Vector3f.XP.rotationDegrees(150.0f * n2 - 60.0f));
         class4152.method22565(-1.0f, -1.0f, 1.0f);
         class4152.method22564(0.0, -1.1009999513626099, 1.5);
-        final Class7808 method11006 = Minecraft.method5277().method5333().method11006();
+        final IRenderTypeBuffer.Impl method11006 = Minecraft.method5277().method5333().method11006();
         this.field24979.method17564(class4152, method11006.method25214(this.field24980), 15728880, Class1904.field10335, 1.0f, 1.0f, 1.0f, n3);
-        method11006.method25216();
+        method11006.finish();
     }
 }

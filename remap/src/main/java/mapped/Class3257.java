@@ -17,9 +17,9 @@ public class Class3257 extends Class3247
         final double[] array = { 0.345, 0.2699, 0.183, 0.103, 0.024, -0.008, -0.04, -0.072, -0.104, -0.13, -0.019, -0.097 };
         final double[] array2 = { 0.345, 0.2699, 0.183, 0.103, 0.024, -0.008, -0.04, -0.072, -0.14, -0.17, -0.019, -0.13 };
         if (--n < 0 || n >= array.length) {
-            return Class3257.field15514.field4684.getMotion().y;
+            return Class3257.field15514.player.getMotion().y;
         }
-        if (Class6430.method19114() && !Class3257.field15514.field4684.collidedHorizontally) {
+        if (Class6430.method19114() && !Class3257.field15514.player.collidedHorizontally) {
             return array[n];
         }
         return array2[n];
@@ -30,6 +30,6 @@ public class Class3257 extends Class3247
         if (--n >= 0 && n < array.length) {
             return array[n];
         }
-        return Class3257.field15514.field4684.getMotion().y;
+        return Class3257.field15514.player.getMotion().y;
     }
 }

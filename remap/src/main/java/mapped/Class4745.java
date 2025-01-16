@@ -19,7 +19,7 @@ public class Class4745 extends Class4712<Class839, Class5895<Class839>>
         return Class4745.field20367;
     }
     
-    public void method14078(final Class839 class839, final Class7351 class840, final float n, final float n2, final float n3) {
+    public void method14078(final Class839 class839, final MatrixStack class840, final float n, final float n2, final float n3) {
         final float method35700 = MathHelper.method35700(n3, class839.field4461, class839.field4460);
         final float method35701 = MathHelper.method35700(n3, class839.field4463, class839.field4462);
         class840.method22564(0.0, 0.5, 0.0);

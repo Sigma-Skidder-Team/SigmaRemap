@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.nio.IntBuffer;
-
 public class Class6153
 {
     public int field24884;
@@ -20,7 +18,7 @@ public class Class6153
     public int field24893;
     
     public Class6153(final int n, final int n2, final boolean field24888, final boolean b) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         this.field24888 = field24888;
         this.field24889 = -1;
         this.field24890 = -1;
@@ -33,16 +31,16 @@ public class Class6153
     }
     
     public void method18387(final int n, final int n2, final boolean b) {
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             this.method18388(n, n2, b);
         }
         else {
-            Class8726.method29991(() -> this.method18388(n, n2, b));
+            RenderSystem.method29991(() -> this.method18388(n, n2, b));
         }
     }
     
     private void method18388(final int n, final int n2, final boolean b) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         Class8933.method31515();
         if (this.field24889 >= 0) {
             this.method18389();
@@ -52,7 +50,7 @@ public class Class6153
     }
     
     public void method18389() {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         this.method18394();
         this.method18397();
         if (this.field24891 > -1) {
@@ -71,7 +69,7 @@ public class Class6153
     }
     
     public void method18390(final int n, final int n2, final boolean b) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         this.field24886 = n;
         this.field24887 = n2;
         this.field24884 = n;
@@ -97,7 +95,7 @@ public class Class6153
     }
     
     public void method18391(final int field24893) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         this.field24893 = field24893;
         Class8933.method31617(this.field24890);
         Class8933.method31613(3553, 10241, field24893);
@@ -108,7 +106,7 @@ public class Class6153
     }
     
     public void method18392() {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         final int method31562 = Class8933.method31562(Class9026.field38160);
         if (method31562 == Class9026.field38164) {
             return;
@@ -129,26 +127,26 @@ public class Class6153
     }
     
     public void method18393() {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         Class8933.method31617(this.field24890);
     }
     
     public void method18394() {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         Class8933.method31617(0);
     }
     
     public void method18395(final boolean b) {
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             this.method18396(b);
         }
         else {
-            Class8726.method29991(() -> this.method18396(b));
+            RenderSystem.method29991(() -> this.method18396(b));
         }
     }
     
     private void method18396(final boolean b) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         Class8933.method31554(Class9026.field38160, this.field24889);
         if (b) {
             Class8933.method31624(0, 0, this.field24886, this.field24887);
@@ -156,11 +154,11 @@ public class Class6153
     }
     
     public void method18397() {
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             Class8933.method31554(Class9026.field38160, 0);
         }
         else {
-            Class8726.method29991(() -> Class8933.method31554(Class9026.field38160, 0));
+            RenderSystem.method29991(() -> Class8933.method31554(Class9026.field38160, 0));
         }
     }
     
@@ -176,17 +174,17 @@ public class Class6153
     }
     
     public void method18400(final int n, final int n2, final boolean b) {
-        Class8726.method29989(Class8726::method29988);
-        if (Class8726.method29990()) {
+        RenderSystem.method29989(RenderSystem::method29988);
+        if (RenderSystem.method29990()) {
             this.method18401(n, n2, b);
         }
         else {
-            Class8726.method29991(() -> this.method18401(n, n2, b));
+            RenderSystem.method29991(() -> this.method18401(n, n2, b));
         }
     }
     
     private void method18401(final int n, final int n2, final boolean b) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         Class8933.method31625(true, true, true, false);
         Class8933.method31514();
         Class8933.method31517(false);
@@ -210,21 +208,21 @@ public class Class6153
         final float n4 = (float)n2;
         final float n5 = this.field24886 / (float)this.field24884;
         final float n6 = this.field24887 / (float)this.field24885;
-        final Class7392 method30116 = Class8726.method30116();
-        final Class4148 method30117 = method30116.method22696();
-        method30117.method12390(7, Class9237.field39619);
-        method30117.method12432(0.0, n4, 0.0).method12391(0.0f, 0.0f).method12399(255, 255, 255, 255).method12397();
-        method30117.method12432(n3, n4, 0.0).method12391(n5, 0.0f).method12399(255, 255, 255, 255).method12397();
-        method30117.method12432(n3, 0.0, 0.0).method12391(n5, n6).method12399(255, 255, 255, 255).method12397();
-        method30117.method12432(0.0, 0.0, 0.0).method12391(0.0f, n6).method12399(255, 255, 255, 255).method12397();
-        method30116.method22695();
+        final Tessellator method30116 = RenderSystem.method30116();
+        final BufferBuilder method30117 = method30116.getBuffer();
+        method30117.begin(7, DefaultVertexFormats.field39619);
+        method30117.pos(0.0, n4, 0.0).tex(0.0f, 0.0f).method12399(255, 255, 255, 255).endVertex();
+        method30117.pos(n3, n4, 0.0).tex(n5, 0.0f).method12399(255, 255, 255, 255).endVertex();
+        method30117.pos(n3, 0.0, 0.0).tex(n5, n6).method12399(255, 255, 255, 255).endVertex();
+        method30117.pos(0.0, 0.0, 0.0).tex(0.0f, n6).method12399(255, 255, 255, 255).endVertex();
+        method30116.draw();
         this.method18394();
         Class8933.method31517(true);
         Class8933.method31625(true, true, true, true);
     }
     
     public void method18402(final boolean b) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         this.method18395(true);
         Class8933.method31630(this.field24892[0], this.field24892[1], this.field24892[2], this.field24892[3]);
         int n = 16384;

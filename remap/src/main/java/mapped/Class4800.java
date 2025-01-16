@@ -25,9 +25,9 @@ public abstract class Class4800 extends Class4803
     
     @Override
     public void method14204(final int n) {
-        if (n == Minecraft.method5277().field4648.field23454.field2161.field32860) {
+        if (n == Minecraft.method5277().gameSettings.field23454.field2161.field32860) {
             Minecraft.method5277().field4632.method7685();
-            Minecraft.method5277().field4648.field23430 = Minecraft.method5277().field4632.method7691();
+            Minecraft.method5277().gameSettings.field23430 = Minecraft.method5277().field4632.method7691();
         }
         super.method14204(n);
     }

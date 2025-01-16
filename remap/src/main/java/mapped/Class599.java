@@ -9,7 +9,7 @@ import net.minecraft.util.math.MathHelper;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class Class599 extends Class598 implements Class563
+public abstract class Class599 extends FocusableGui implements IRenderable
 {
     public static final int field3510 = -1;
     public static final int field3511 = -2;
@@ -98,7 +98,7 @@ public abstract class Class599 extends Class598 implements Class563
     
     public abstract void method3491(final int p0, final int p1, final int p2, final int p3, final int p4, final int p5, final float p6);
     
-    public void method3492(final int n, final int n2, final Class7392 class7392) {
+    public void method3492(final int n, final int n2, final Tessellator class7392) {
     }
     
     public void method3493(final int n, final int n2) {
@@ -169,48 +169,48 @@ public abstract class Class599 extends Class598 implements Class563
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         if (this.field3523) {
             this.method3489();
             final int method3508 = this.method3508();
             final int n4 = method3508 + 6;
             this.method3496();
-            final Class7392 method3509 = Class7392.method22694();
-            final Class4148 method3510 = method3509.method22696();
-            this.field3512.method5290().method5849(Class565.field3361);
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            method3510.method12390(7, Class9237.field39619);
-            method3510.method12432(this.field3518, this.field3516, 0.0).method12391(this.field3518 / 32.0f, (this.field3516 + (int)this.field3522) / 32.0f).method12399(32, 32, 32, 255).method12397();
-            method3510.method12432(this.field3517, this.field3516, 0.0).method12391(this.field3517 / 32.0f, (this.field3516 + (int)this.field3522) / 32.0f).method12399(32, 32, 32, 255).method12397();
-            method3510.method12432(this.field3517, this.field3515, 0.0).method12391(this.field3517 / 32.0f, (this.field3515 + (int)this.field3522) / 32.0f).method12399(32, 32, 32, 255).method12397();
-            method3510.method12432(this.field3518, this.field3515, 0.0).method12391(this.field3518 / 32.0f, (this.field3515 + (int)this.field3522) / 32.0f).method12399(32, 32, 32, 255).method12397();
-            method3509.method22695();
+            final Tessellator method3509 = Tessellator.getInstance();
+            final BufferBuilder method3510 = method3509.getBuffer();
+            this.field3512.method5290().method5849(AbstractGui.BACKGROUND_LOCATION);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            method3510.begin(7, DefaultVertexFormats.field39619);
+            method3510.pos(this.field3518, this.field3516, 0.0).tex(this.field3518 / 32.0f, (this.field3516 + (int)this.field3522) / 32.0f).method12399(32, 32, 32, 255).endVertex();
+            method3510.pos(this.field3517, this.field3516, 0.0).tex(this.field3517 / 32.0f, (this.field3516 + (int)this.field3522) / 32.0f).method12399(32, 32, 32, 255).endVertex();
+            method3510.pos(this.field3517, this.field3515, 0.0).tex(this.field3517 / 32.0f, (this.field3515 + (int)this.field3522) / 32.0f).method12399(32, 32, 32, 255).endVertex();
+            method3510.pos(this.field3518, this.field3515, 0.0).tex(this.field3518 / 32.0f, (this.field3515 + (int)this.field3522) / 32.0f).method12399(32, 32, 32, 255).endVertex();
+            method3509.draw();
             final int n5 = this.field3518 + this.field3513 / 2 - this.method3505() / 2 + 2;
             final int n6 = this.field3515 + 4 - (int)this.field3522;
             if (this.field3525) {
                 this.method3492(n5, n6, method3509);
             }
             this.method3506(n5, n6, n, n2, n3);
-            Class8726.method30007();
+            RenderSystem.disableDepthTest();
             this.method3509(0, this.field3515, 255, 255);
             this.method3509(this.field3516, this.field3514, 255, 255);
-            Class8726.method30011();
-            Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11696, Class2135.field12455);
-            Class8726.method29998();
-            Class8726.method30045(7425);
-            Class8726.method30041();
-            method3510.method12390(7, Class9237.field39619);
-            method3510.method12432(this.field3518, this.field3515 + 4, 0.0).method12391(0.0f, 1.0f).method12399(0, 0, 0, 0).method12397();
-            method3510.method12432(this.field3517, this.field3515 + 4, 0.0).method12391(1.0f, 1.0f).method12399(0, 0, 0, 0).method12397();
-            method3510.method12432(this.field3517, this.field3515, 0.0).method12391(1.0f, 0.0f).method12399(0, 0, 0, 255).method12397();
-            method3510.method12432(this.field3518, this.field3515, 0.0).method12391(0.0f, 0.0f).method12399(0, 0, 0, 255).method12397();
-            method3509.method22695();
-            method3510.method12390(7, Class9237.field39619);
-            method3510.method12432(this.field3518, this.field3516, 0.0).method12391(0.0f, 1.0f).method12399(0, 0, 0, 255).method12397();
-            method3510.method12432(this.field3517, this.field3516, 0.0).method12391(1.0f, 1.0f).method12399(0, 0, 0, 255).method12397();
-            method3510.method12432(this.field3517, this.field3516 - 4, 0.0).method12391(1.0f, 0.0f).method12399(0, 0, 0, 0).method12397();
-            method3510.method12432(this.field3518, this.field3516 - 4, 0.0).method12391(0.0f, 0.0f).method12399(0, 0, 0, 0).method12397();
-            method3509.method22695();
+            RenderSystem.enableBlend();
+            RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11696, Class2135.field12455);
+            RenderSystem.disableAlphaTest();
+            RenderSystem.shadeModel(7425);
+            RenderSystem.disableTexture();
+            method3510.begin(7, DefaultVertexFormats.field39619);
+            method3510.pos(this.field3518, this.field3515 + 4, 0.0).tex(0.0f, 1.0f).method12399(0, 0, 0, 0).endVertex();
+            method3510.pos(this.field3517, this.field3515 + 4, 0.0).tex(1.0f, 1.0f).method12399(0, 0, 0, 0).endVertex();
+            method3510.pos(this.field3517, this.field3515, 0.0).tex(1.0f, 0.0f).method12399(0, 0, 0, 255).endVertex();
+            method3510.pos(this.field3518, this.field3515, 0.0).tex(0.0f, 0.0f).method12399(0, 0, 0, 255).endVertex();
+            method3509.draw();
+            method3510.begin(7, DefaultVertexFormats.field39619);
+            method3510.pos(this.field3518, this.field3516, 0.0).tex(0.0f, 1.0f).method12399(0, 0, 0, 255).endVertex();
+            method3510.pos(this.field3517, this.field3516, 0.0).tex(1.0f, 1.0f).method12399(0, 0, 0, 255).endVertex();
+            method3510.pos(this.field3517, this.field3516 - 4, 0.0).tex(1.0f, 0.0f).method12399(0, 0, 0, 0).endVertex();
+            method3510.pos(this.field3518, this.field3516 - 4, 0.0).tex(0.0f, 0.0f).method12399(0, 0, 0, 0).endVertex();
+            method3509.draw();
             final int method3511 = this.method3497();
             if (method3511 > 0) {
                 final int method3512 = MathHelper.method35651((int)((this.field3516 - this.field3515) * (this.field3516 - this.field3515) / (float)this.method3488()), 32, this.field3516 - this.field3515 - 8);
@@ -218,30 +218,30 @@ public abstract class Class599 extends Class598 implements Class563
                 if (field3515 < this.field3515) {
                     field3515 = this.field3515;
                 }
-                method3510.method12390(7, Class9237.field39619);
-                method3510.method12432(method3508, this.field3516, 0.0).method12391(0.0f, 1.0f).method12399(0, 0, 0, 255).method12397();
-                method3510.method12432(n4, this.field3516, 0.0).method12391(1.0f, 1.0f).method12399(0, 0, 0, 255).method12397();
-                method3510.method12432(n4, this.field3515, 0.0).method12391(1.0f, 0.0f).method12399(0, 0, 0, 255).method12397();
-                method3510.method12432(method3508, this.field3515, 0.0).method12391(0.0f, 0.0f).method12399(0, 0, 0, 255).method12397();
-                method3509.method22695();
-                method3510.method12390(7, Class9237.field39619);
-                method3510.method12432(method3508, field3515 + method3512, 0.0).method12391(0.0f, 1.0f).method12399(128, 128, 128, 255).method12397();
-                method3510.method12432(n4, field3515 + method3512, 0.0).method12391(1.0f, 1.0f).method12399(128, 128, 128, 255).method12397();
-                method3510.method12432(n4, field3515, 0.0).method12391(1.0f, 0.0f).method12399(128, 128, 128, 255).method12397();
-                method3510.method12432(method3508, field3515, 0.0).method12391(0.0f, 0.0f).method12399(128, 128, 128, 255).method12397();
-                method3509.method22695();
-                method3510.method12390(7, Class9237.field39619);
-                method3510.method12432(method3508, field3515 + method3512 - 1, 0.0).method12391(0.0f, 1.0f).method12399(192, 192, 192, 255).method12397();
-                method3510.method12432(n4 - 1, field3515 + method3512 - 1, 0.0).method12391(1.0f, 1.0f).method12399(192, 192, 192, 255).method12397();
-                method3510.method12432(n4 - 1, field3515, 0.0).method12391(1.0f, 0.0f).method12399(192, 192, 192, 255).method12397();
-                method3510.method12432(method3508, field3515, 0.0).method12391(0.0f, 0.0f).method12399(192, 192, 192, 255).method12397();
-                method3509.method22695();
+                method3510.begin(7, DefaultVertexFormats.field39619);
+                method3510.pos(method3508, this.field3516, 0.0).tex(0.0f, 1.0f).method12399(0, 0, 0, 255).endVertex();
+                method3510.pos(n4, this.field3516, 0.0).tex(1.0f, 1.0f).method12399(0, 0, 0, 255).endVertex();
+                method3510.pos(n4, this.field3515, 0.0).tex(1.0f, 0.0f).method12399(0, 0, 0, 255).endVertex();
+                method3510.pos(method3508, this.field3515, 0.0).tex(0.0f, 0.0f).method12399(0, 0, 0, 255).endVertex();
+                method3509.draw();
+                method3510.begin(7, DefaultVertexFormats.field39619);
+                method3510.pos(method3508, field3515 + method3512, 0.0).tex(0.0f, 1.0f).method12399(128, 128, 128, 255).endVertex();
+                method3510.pos(n4, field3515 + method3512, 0.0).tex(1.0f, 1.0f).method12399(128, 128, 128, 255).endVertex();
+                method3510.pos(n4, field3515, 0.0).tex(1.0f, 0.0f).method12399(128, 128, 128, 255).endVertex();
+                method3510.pos(method3508, field3515, 0.0).tex(0.0f, 0.0f).method12399(128, 128, 128, 255).endVertex();
+                method3509.draw();
+                method3510.begin(7, DefaultVertexFormats.field39619);
+                method3510.pos(method3508, field3515 + method3512 - 1, 0.0).tex(0.0f, 1.0f).method12399(192, 192, 192, 255).endVertex();
+                method3510.pos(n4 - 1, field3515 + method3512 - 1, 0.0).tex(1.0f, 1.0f).method12399(192, 192, 192, 255).endVertex();
+                method3510.pos(n4 - 1, field3515, 0.0).tex(1.0f, 0.0f).method12399(192, 192, 192, 255).endVertex();
+                method3510.pos(method3508, field3515, 0.0).tex(0.0f, 0.0f).method12399(192, 192, 192, 255).endVertex();
+                method3509.draw();
             }
             this.method3494(n, n2);
-            Class8726.method30040();
-            Class8726.method30045(7424);
-            Class8726.method29999();
-            Class8726.method30012();
+            RenderSystem.enableTexture();
+            RenderSystem.shadeModel(7424);
+            RenderSystem.enableAlphaTest();
+            RenderSystem.disableBlend();
         }
     }
     
@@ -276,7 +276,7 @@ public abstract class Class599 extends Class598 implements Class563
             if (this.children().size() > method3495) {
                 this.setFocused((IGuiEventListener)this.children().get(method3495));
             }
-            this.method3469(true);
+            this.setDragging(true);
             return true;
         }
         return this.field3527;
@@ -284,8 +284,8 @@ public abstract class Class599 extends Class598 implements Class563
     
     @Override
     public boolean mouseReleased(final double n, final double n2, final int n3) {
-        if (this.method3471() != null) {
-            this.method3471().mouseReleased(n, n2, n3);
+        if (this.getFocused() != null) {
+            this.getFocused().mouseReleased(n, n2, n3);
         }
         return false;
     }
@@ -372,8 +372,8 @@ public abstract class Class599 extends Class598 implements Class563
     
     public void method3506(final int n, final int n2, final int n3, final int n4, final float n5) {
         final int method3485 = this.method3485();
-        final Class7392 method3486 = Class7392.method22694();
-        final Class4148 method3487 = method3486.method22696();
+        final Tessellator method3486 = Tessellator.getInstance();
+        final BufferBuilder method3487 = method3486.getBuffer();
         for (int i = 0; i < method3485; ++i) {
             final int n6 = n2 + i * this.field3519 + this.field3526;
             final int n7 = this.field3519 - 4;
@@ -384,23 +384,23 @@ public abstract class Class599 extends Class598 implements Class563
                 if (this.method3487(i)) {
                     final int n8 = this.field3518 + this.field3513 / 2 - this.method3505() / 2;
                     final int n9 = this.field3518 + this.field3513 / 2 + this.method3505() / 2;
-                    Class8726.method30041();
+                    RenderSystem.disableTexture();
                     final float n10 = this.method3507() ? 1.0f : 0.5f;
-                    Class8726.method30068(n10, n10, n10, 1.0f);
-                    method3487.method12390(7, Class9237.field39614);
-                    method3487.method12432(n8, n6 + n7 + 2, 0.0).method12397();
-                    method3487.method12432(n9, n6 + n7 + 2, 0.0).method12397();
-                    method3487.method12432(n9, n6 - 2, 0.0).method12397();
-                    method3487.method12432(n8, n6 - 2, 0.0).method12397();
-                    method3486.method22695();
-                    Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
-                    method3487.method12390(7, Class9237.field39614);
-                    method3487.method12432(n8 + 1, n6 + n7 + 1, 0.0).method12397();
-                    method3487.method12432(n9 - 1, n6 + n7 + 1, 0.0).method12397();
-                    method3487.method12432(n9 - 1, n6 - 1, 0.0).method12397();
-                    method3487.method12432(n8 + 1, n6 - 1, 0.0).method12397();
-                    method3486.method22695();
-                    Class8726.method30040();
+                    RenderSystem.method30068(n10, n10, n10, 1.0f);
+                    method3487.begin(7, DefaultVertexFormats.field39614);
+                    method3487.pos(n8, n6 + n7 + 2, 0.0).endVertex();
+                    method3487.pos(n9, n6 + n7 + 2, 0.0).endVertex();
+                    method3487.pos(n9, n6 - 2, 0.0).endVertex();
+                    method3487.pos(n8, n6 - 2, 0.0).endVertex();
+                    method3486.draw();
+                    RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+                    method3487.begin(7, DefaultVertexFormats.field39614);
+                    method3487.pos(n8 + 1, n6 + n7 + 1, 0.0).endVertex();
+                    method3487.pos(n9 - 1, n6 + n7 + 1, 0.0).endVertex();
+                    method3487.pos(n9 - 1, n6 - 1, 0.0).endVertex();
+                    method3487.pos(n8 + 1, n6 - 1, 0.0).endVertex();
+                    method3486.draw();
+                    RenderSystem.enableTexture();
                 }
             }
             this.method3491(i, n, n6, n7, n3, n4, n5);
@@ -416,16 +416,16 @@ public abstract class Class599 extends Class598 implements Class563
     }
     
     public void method3509(final int n, final int n2, final int n3, final int n4) {
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        this.field3512.method5290().method5849(Class565.field3361);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        method22695.method12390(7, Class9237.field39619);
-        method22695.method12432(this.field3518, n2, 0.0).method12391(0.0f, n2 / 32.0f).method12399(64, 64, 64, n4).method12397();
-        method22695.method12432(this.field3518 + this.field3513, n2, 0.0).method12391(this.field3513 / 32.0f, n2 / 32.0f).method12399(64, 64, 64, n4).method12397();
-        method22695.method12432(this.field3518 + this.field3513, n, 0.0).method12391(this.field3513 / 32.0f, n / 32.0f).method12399(64, 64, 64, n3).method12397();
-        method22695.method12432(this.field3518, n, 0.0).method12391(0.0f, n / 32.0f).method12399(64, 64, 64, n3).method12397();
-        method22694.method22695();
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        this.field3512.method5290().method5849(AbstractGui.BACKGROUND_LOCATION);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        method22695.begin(7, DefaultVertexFormats.field39619);
+        method22695.pos(this.field3518, n2, 0.0).tex(0.0f, n2 / 32.0f).method12399(64, 64, 64, n4).endVertex();
+        method22695.pos(this.field3518 + this.field3513, n2, 0.0).tex(this.field3513 / 32.0f, n2 / 32.0f).method12399(64, 64, 64, n4).endVertex();
+        method22695.pos(this.field3518 + this.field3513, n, 0.0).tex(this.field3513 / 32.0f, n / 32.0f).method12399(64, 64, 64, n3).endVertex();
+        method22695.pos(this.field3518, n, 0.0).tex(0.0f, n / 32.0f).method12399(64, 64, 64, n3).endVertex();
+        method22694.draw();
     }
     
     public void method3510(final int field3518) {

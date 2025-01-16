@@ -33,7 +33,7 @@ public class Class3243 extends Class3167
                         final Entity method6741 = Class3243.field15514.world.getEntityByID(class5724.method13248());
                         if (!this.field15732.toString().equalsIgnoreCase(method6741.getName().getUnformattedComponentText())) {
                             if (this.method9883("Chat Message")) {
-                                Class3243.field15514.field4684.method4114("Murderer is " + method6741.getName() + ", detected by Jello client");
+                                Class3243.field15514.player.method4114("Murderer is " + method6741.getName() + ", detected by Jello client");
                             }
                             this.field15732 = method6741.getName().getUnformattedComponentText();
                             this.field15734 = true;

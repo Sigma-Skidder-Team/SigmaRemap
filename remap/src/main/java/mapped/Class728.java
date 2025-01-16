@@ -18,19 +18,19 @@ public class Class728 extends Screen
     @Override
     public void init() {
         super.init();
-        this.method3029(new Class654(this.width / 2 - 100, 140, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.method5244(null)));
+        this.addButton(new Class654(this.width / 2 - 100, 140, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.displayGuiScreen(null)));
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        this.method3189(0, 0, this.width, this.height, -12574688, -11530224);
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 90, 16777215);
-        this.method3295(this.font, this.field3978, this.width / 2, 110, 16777215);
-        super.method2975(n, n2, n3);
+    public void render(final int n, final int n2, final float n3) {
+        this.fillGradient(0, 0, this.width, this.height, -12574688, -11530224);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 90, 16777215);
+        this.drawCenteredString(this.font, this.field3978, this.width / 2, 110, 16777215);
+        super.render(n, n2, n3);
     }
     
     @Override
-    public boolean method2989() {
+    public boolean shouldCloseOnEsc() {
         return false;
     }
 }

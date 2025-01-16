@@ -17,7 +17,7 @@ public class Class1903 implements AutoCloseable
 {
     private static String[] field10328;
     private static final Logger field10329;
-    private final Map<ResourceLocation, Class1844> field10330;
+    private final Map<ResourceLocation, FontRenderer> field10330;
     private final Class1663 field10331;
     private boolean field10332;
     private final Class1662 field10333;
@@ -30,10 +30,10 @@ public class Class1903 implements AutoCloseable
     }
     
     @Nullable
-    public Class1844 method7376(final ResourceLocation key) {
+    public FontRenderer method7376(final ResourceLocation key) {
         return this.field10330.computeIfAbsent(key, class1932 -> {
-            new Class1844(this.field10331, new Class1923(this.field10331, class1932));
-            final Class1844 class1934;
+            new FontRenderer(this.field10331, new Class1923(this.field10331, class1932));
+            final FontRenderer class1934;
             class1934.method6608(Lists.newArrayList((Object[])new Class1737[] { new Class1739() }));
             return class1934;
         });
@@ -52,7 +52,7 @@ public class Class1903 implements AutoCloseable
     
     @Override
     public void close() {
-        this.field10330.values().forEach(Class1844::close);
+        this.field10330.values().forEach(FontRenderer::close);
     }
     
     static {

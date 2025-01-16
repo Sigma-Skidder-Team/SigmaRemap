@@ -23,7 +23,7 @@ public class Class3348 extends Class3167
     
     @Class6753
     private void method10593(final Class5717 class5717) {
-        if (!this.method9906() || Class3348.field15514.field4684 == null) {
+        if (!this.method9906() || Class3348.field15514.player == null) {
             return;
         }
         if (!this.method10595()) {
@@ -53,12 +53,12 @@ public class Class3348 extends Class3167
             return;
         }
         if (Class3348.field15956 == 0) {
-            if (!Class3348.field15514.field4684.onGround) {
-                if (Class3348.field15514.field4684.field2938 > 0) {
-                    if (Class3348.field15514.field4684.fallDistance < 2.0f) {
-                        Class3348.field15514.field4684.method1738(0.0, -1.0, 0.0);
-                        Class6430.method19155(Class3348.field15514.field4684.getMotion().getY());
-                        Class3348.field15514.field4684.onGround = true;
+            if (!Class3348.field15514.player.onGround) {
+                if (Class3348.field15514.player.field2938 > 0) {
+                    if (Class3348.field15514.player.fallDistance < 2.0f) {
+                        Class3348.field15514.player.method1738(0.0, -1.0, 0.0);
+                        Class6430.method19155(Class3348.field15514.player.getMotion().getY());
+                        Class3348.field15514.player.onGround = true;
                         Class3348.field15956 = 20;
                     }
                 }
@@ -68,7 +68,7 @@ public class Class3348 extends Class3167
     
     @Class6753
     private void method10594(final Class5723 class5723) {
-        if (this.method9906() && Class3348.field15514.field4684 != null) {
+        if (this.method9906() && Class3348.field15514.player != null) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4273) {
                 if (this.method10595()) {
@@ -76,7 +76,7 @@ public class Class3348 extends Class3167
                     return;
                 }
                 final Class4273 class5724 = (Class4273)method16998;
-                if (class5724.method12822() == Class3348.field15514.field4684.getEntityId()) {
+                if (class5724.method12822() == Class3348.field15514.player.getEntityId()) {
                     if (class5724.field19165 != 0 || class5724.field19167 != 0) {
                         this.field15958 = (float)(Math.sqrt(class5724.field19165 * class5724.field19165 + class5724.field19167 * class5724.field19167) / 1000.0);
                         this.field15957 = (float)(Math.atan2(class5724.field19165 / 1000, class5724.field19167 / 1000) * 180.0 / 3.141592653589793) - 90.0f;

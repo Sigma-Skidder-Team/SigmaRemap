@@ -17,14 +17,14 @@ public class Class3172 extends Class3167
     @Override
     public void method9917() {
         if (!this.method9906()) {
-            Class3172.field15514.field4648.field23472 = 1.0;
+            Class3172.field15514.gameSettings.field23472 = 1.0;
         }
     }
     
     @Override
     public void method9879() {
         if (this.method9887("Type").equals("Normal")) {
-            Class3172.field15514.field4648.field23472 = 999.0;
+            Class3172.field15514.gameSettings.field23472 = 999.0;
         }
     }
     
@@ -33,7 +33,7 @@ public class Class3172 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        Class3172.field15514.field4648.field23472 = 999.0;
+        Class3172.field15514.gameSettings.field23472 = 999.0;
         if (Class3172.field15514.world == null) {
             return;
         }
@@ -41,7 +41,7 @@ public class Class3172 extends Class3167
             return;
         }
         int n = 16;
-        final BlockPos method1137 = new BlockPos(Class3172.field15514.field4684.posX, Class3172.field15514.field4684.posY, Class3172.field15514.field4684.posZ).method1137();
+        final BlockPos method1137 = new BlockPos(Class3172.field15514.player.posX, Class3172.field15514.player.posY, Class3172.field15514.player.posZ).method1137();
         final IChunk method1138 = Class3172.field15514.world.method6965(method1137);
         if (method1138 != null) {
             if (method1137.getY() >= 0) {
@@ -54,12 +54,12 @@ public class Class3172 extends Class3167
         }
         this.field15533 += (n - this.field15533) * 0.2f;
         if (this.field15533 >= 1.5f) {
-            Class3172.field15514.field4648.field23472 = Math.min(Math.max(1.0f, this.field15533), 10.0f);
+            Class3172.field15514.gameSettings.field23472 = Math.min(Math.max(1.0f, this.field15533), 10.0f);
         }
     }
     
     @Override
     public void method9897() {
-        Class3172.field15514.field4648.field23472 = 1.0;
+        Class3172.field15514.gameSettings.field23472 = 1.0;
     }
 }

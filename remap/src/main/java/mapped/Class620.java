@@ -47,7 +47,7 @@ public class Class620 extends Class608<Class641>
             }
             catch (final Class2323 class2323) {
                 Class620.field3594.error("Couldn't load level list", (Throwable)class2323);
-                this.field3540.method5244(new Class728(new Class2259("selectWorld.unable_to_load", new Object[0]), class2323.getMessage()));
+                this.field3540.displayGuiScreen(new Class728(new Class2259("selectWorld.unable_to_load", new Object[0]), class2323.getMessage()));
                 return;
             }
             Collections.sort(this.field3599);
@@ -72,7 +72,7 @@ public class Class620 extends Class608<Class641>
     
     @Override
     public boolean method3561() {
-        return this.field3598.method3471() == this;
+        return this.field3598.getFocused() == this;
     }
     
     public void method3609(final Class641 class641) {

@@ -27,9 +27,9 @@ public class Class724 extends Class723 implements Class725<Class3420>
     }
     
     @Override
-    public void method3028() {
-        this.minecraft.field4684.method2814();
-        super.method3028();
+    public void onClose() {
+        this.minecraft.player.method2814();
+        super.onClose();
     }
     
     @Override
@@ -40,12 +40,12 @@ public class Class724 extends Class723 implements Class725<Class3420>
     
     @Override
     public void method3971() {
-        if (!this.minecraft.field4684.method2880()) {
+        if (!this.minecraft.player.method2880()) {
             super.method3971();
         }
         else {
-            this.method3029(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.method5244(null)));
-            this.method3029(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("lectern.take_book", new Object[0]), class654 -> this.method3984(3)));
+            this.addButton(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(null)));
+            this.addButton(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("lectern.take_book", new Object[0]), class654 -> this.method3984(3)));
         }
     }
     

@@ -52,34 +52,34 @@ public class Class720 extends Screen
             (this.field3932 = new Class612(this, this.minecraft, this.width, this.height, 32, this.height - 64, 36)).method3576(this.field3933);
         }
         this.children.add(this.field3932);
-        this.field3935 = this.method3029(new Class654(this.width / 2 - 154, this.height - 52, 100, 20, Class8822.method30773("selectServer.select", new Object[0]), class654 -> this.method3948()));
-        this.method3029(new Class654(this.width / 2 - 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.direct", new Object[0]), class654 -> {
+        this.field3935 = this.addButton(new Class654(this.width / 2 - 154, this.height - 52, 100, 20, Class8822.method30773("selectServer.select", new Object[0]), class654 -> this.method3948()));
+        this.addButton(new Class654(this.width / 2 - 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.direct", new Object[0]), class654 -> {
             this.field3938 = new Class9575(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
-            this.minecraft.method5244(new Class529(this, this::method3947, this.field3938));
+            this.minecraft.displayGuiScreen(new Class529(this, this::method3947, this.field3938));
         }));
-        this.method3029(new Class654(this.width / 2 + 4 + 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.add", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 + 4 + 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.add", new Object[0]), class654 -> {
             this.field3938 = new Class9575(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
-            this.minecraft.method5244(new Class538(this, this::method3946, this.field3938));
+            this.minecraft.displayGuiScreen(new Class538(this, this::method3946, this.field3938));
         }));
-        this.field3934 = this.method3029(new Class654(this.width / 2 - 154, this.height - 28, 70, 20, Class8822.method30773("selectServer.edit", new Object[0]), class654 -> {
+        this.field3934 = this.addButton(new Class654(this.width / 2 - 154, this.height - 28, 70, 20, Class8822.method30773("selectServer.edit", new Object[0]), class654 -> {
             final Class633 class655 = this.field3932.method3530();
             if (class655 instanceof Class634) {
                 final Class9575 method3658 = ((Class634)class655).method3658();
                 (this.field3938 = new Class9575(method3658.field41612, method3658.field41613, false)).method35872(method3658);
-                this.minecraft.method5244(new Class538(this, this::method3945, this.field3938));
+                this.minecraft.displayGuiScreen(new Class538(this, this::method3945, this.field3938));
             }
         }));
-        this.field3936 = this.method3029(new Class654(this.width / 2 - 74, this.height - 28, 70, 20, Class8822.method30773("selectServer.delete", new Object[0]), class654 -> {
+        this.field3936 = this.addButton(new Class654(this.width / 2 - 74, this.height - 28, 70, 20, Class8822.method30773("selectServer.delete", new Object[0]), class654 -> {
             final Class633 class655 = this.field3932.method3530();
             if (class655 instanceof Class634) {
                 final String field41612 = ((Class634)class655).method3658().field41612;
                 if (field41612 != null) {
-                    this.minecraft.method5244(new Class546(this::method3944, new Class2259("selectServer.deleteQuestion", new Object[0]), new Class2259("selectServer.deleteWarning", new Object[] { field41612 }), Class8822.method30773("selectServer.deleteButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
+                    this.minecraft.displayGuiScreen(new Class546(this::method3944, new Class2259("selectServer.deleteQuestion", new Object[0]), new Class2259("selectServer.deleteWarning", new Object[] { field41612 }), Class8822.method30773("selectServer.deleteButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
                 }
             }
         }));
-        this.method3029(new Class654(this.width / 2 + 4, this.height - 28, 70, 20, Class8822.method30773("selectServer.refresh", new Object[0]), class654 -> this.method3943()));
-        this.method3029(new Class654(this.width / 2 + 4 + 76, this.height - 28, 75, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.method5244(this.field3931)));
+        this.addButton(new Class654(this.width / 2 + 4, this.height - 28, 70, 20, Class8822.method30773("selectServer.refresh", new Object[0]), class654 -> this.method3943()));
+        this.addButton(new Class654(this.width / 2 + 4 + 76, this.height - 28, 75, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3931)));
         this.method3951();
     }
     
@@ -105,7 +105,7 @@ public class Class720 extends Screen
     }
     
     private void method3943() {
-        this.minecraft.method5244(new Class720(this.field3931));
+        this.minecraft.displayGuiScreen(new Class720(this.field3931));
     }
     
     private void method3944(final boolean b) {
@@ -118,7 +118,7 @@ public class Class720 extends Screen
                 this.field3932.method3576(this.field3933);
             }
         }
-        this.minecraft.method5244(this);
+        this.minecraft.displayGuiScreen(this);
     }
     
     private void method3945(final boolean b) {
@@ -133,7 +133,7 @@ public class Class720 extends Screen
                 this.field3932.method3576(this.field3933);
             }
         }
-        this.minecraft.method5244(this);
+        this.minecraft.displayGuiScreen(this);
     }
     
     private void method3946(final boolean b) {
@@ -143,12 +143,12 @@ public class Class720 extends Screen
             this.field3932.method3575(null);
             this.field3932.method3576(this.field3933);
         }
-        this.minecraft.method5244(this);
+        this.minecraft.displayGuiScreen(this);
     }
     
     private void method3947(final boolean b) {
         if (!b) {
-            this.minecraft.method5244(this);
+            this.minecraft.displayGuiScreen(this);
         }
         else {
             this.method3949(this.field3938);
@@ -156,33 +156,33 @@ public class Class720 extends Screen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (super.keyPressed(n, n2, n3)) {
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (super.keyPressed(keyCode, n2, n3)) {
             return true;
         }
-        if (n == 294) {
+        if (keyCode == 294) {
             this.method3943();
             return true;
         }
         if (this.field3932.method3530() == null) {
             return false;
         }
-        if (n != 257 && n != 335) {
-            return this.field3932.keyPressed(n, n2, n3);
+        if (keyCode != 257 && keyCode != 335) {
+            return this.field3932.keyPressed(keyCode, n2, n3);
         }
         this.method3948();
         return true;
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.field3937 = null;
         this.renderBackground();
-        this.field3932.method2975(n, n2, n3);
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 20, 16777215);
-        super.method2975(n, n2, n3);
+        this.field3932.render(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 20, 16777215);
+        super.render(n, n2, n3);
         if (this.field3937 != null) {
-            this.method3032(Lists.newArrayList(Splitter.on("\n").split((CharSequence)this.field3937)), n, n2);
+            this.renderTooltip(Lists.newArrayList(Splitter.on("\n").split((CharSequence)this.field3937)), n, n2);
         }
     }
     
@@ -206,7 +206,7 @@ public class Class720 extends Screen
             }
         }
         Class6430.method19176(class9575);
-        this.minecraft.method5244(new Class694(this, this.minecraft, class9575));
+        this.minecraft.displayGuiScreen(new Class694(this, this.minecraft, class9575));
     }
     
     public void method3950(final Class633 class633) {

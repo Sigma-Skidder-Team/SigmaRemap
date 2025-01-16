@@ -41,7 +41,7 @@ public class Class4901 extends Class4841
         final int n5 = 90;
         final int n6 = 40;
         this.method14239(this.field20959 = new Class4847(this, "zoom", n3 - n6 - 10, n4 - n5 - 10, n6, n5));
-        this.field20960 = Minecraft.method5277().world.method6965(Minecraft.method5277().field4684.method1894()).method7019();
+        this.field20960 = Minecraft.method5277().world.method6965(Minecraft.method5277().player.method1894()).method7019();
         this.method14311(false);
     }
     

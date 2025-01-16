@@ -30,9 +30,9 @@ public abstract class Class541 extends Screen
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.field3266 = this.method3029(new Class654(this.width / 2 - 4 - 150, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method3160()));
-        this.field3267 = this.method3029(new Class654(this.width / 2 + 4, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.method3028()));
-        this.field3268 = this.method3029(new Class654(this.width / 2 + 150 - 20, this.method3158(), 20, 20, "O", class654 -> {
+        this.field3266 = this.addButton(new Class654(this.width / 2 - 4 - 150, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method3160()));
+        this.field3267 = this.addButton(new Class654(this.width / 2 + 4, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.onClose()));
+        this.field3268 = this.addButton(new Class654(this.width / 2 + 150 - 20, this.method3158(), 20, 20, "O", class654 -> {
             final Class865 method3157 = this.method3157();
             method3157.method5219(!method3157.method5220());
             this.method3159();
@@ -44,7 +44,7 @@ public abstract class Class541 extends Screen
         this.field3265.method3405(false);
         this.field3265.method3377("-");
         this.children.add(this.field3265);
-        this.method3476(this.field3264);
+        this.setFocusedDefault(this.field3264);
         this.field3264.method3395(true);
         (this.field3270 = new Class6823(this.minecraft, this, this.field3264, this.font, true, true, 0, 7, false, Integer.MIN_VALUE)).method20885(true);
         this.field3270.method20890();
@@ -75,7 +75,7 @@ public abstract class Class541 extends Screen
         if (!method3157.method5220()) {
             method3157.method5218(null);
         }
-        this.minecraft.method5244(null);
+        this.minecraft.displayGuiScreen(null);
     }
     
     @Override
@@ -86,9 +86,9 @@ public abstract class Class541 extends Screen
     public abstract void method3161(final Class865 p0);
     
     @Override
-    public void method3028() {
+    public void onClose() {
         this.method3157().method5219(this.field3269);
-        this.minecraft.method5244(null);
+        this.minecraft.displayGuiScreen(null);
     }
     
     private void method3162(final String s) {
@@ -96,14 +96,14 @@ public abstract class Class541 extends Screen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (this.field3270.method20886(n, n2, n3)) {
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (this.field3270.method20886(keyCode, n2, n3)) {
             return true;
         }
-        if (super.keyPressed(n, n2, n3)) {
+        if (super.keyPressed(keyCode, n2, n3)) {
             return true;
         }
-        if (n != 257 && n != 335) {
+        if (keyCode != 257 && keyCode != 335) {
             return false;
         }
         this.method3160();
@@ -121,17 +121,17 @@ public abstract class Class541 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, Class8822.method30773("advMode.setCommand", new Object[0]), this.width / 2, 20, 16777215);
-        this.method3297(this.font, Class8822.method30773("advMode.command", new Object[0]), this.width / 2 - 150, 40, 10526880);
-        this.field3264.method2975(n, n2, n3);
+        this.drawCenteredString(this.font, Class8822.method30773("advMode.setCommand", new Object[0]), this.width / 2, 20, 16777215);
+        this.drawString(this.font, Class8822.method30773("advMode.command", new Object[0]), this.width / 2 - 150, 40, 10526880);
+        this.field3264.render(n, n2, n3);
         final int n4 = 75;
         if (!this.field3265.method3378().isEmpty()) {
-            this.method3297(this.font, Class8822.method30773("advMode.previousOutput", new Object[0]), this.width / 2 - 150, n4 + (46 + this.method3158() - 135) + 4, 10526880);
-            this.field3265.method2975(n, n2, n3);
+            this.drawString(this.font, Class8822.method30773("advMode.previousOutput", new Object[0]), this.width / 2 - 150, n4 + (46 + this.method3158() - 135) + 4, 10526880);
+            this.field3265.render(n, n2, n3);
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
         this.field3270.method20897(n, n2);
     }
 }

@@ -20,7 +20,7 @@ public class Class3369 extends Class3167
     @Class6753
     public void method10716(final Class5753 class5753) {
         if (this.method9906() && Class3369.field15514.world != null) {
-            if (class5753.method17064().getY() >= Class3369.field15514.field4684.posY) {
+            if (class5753.method17064().getY() >= Class3369.field15514.player.posY) {
                 class5753.method17067(VoxelShapes.empty());
             }
         }
@@ -31,18 +31,18 @@ public class Class3369 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        Class3369.field15514.field4684.field2985 = 3;
-        if (Class3369.field15514.field4684.ticksExisted % 2 != 0) {
+        Class3369.field15514.player.field2985 = 3;
+        if (Class3369.field15514.player.ticksExisted % 2 != 0) {
             return;
         }
-        if (Class3369.field15514.field4684.onGround) {
-            if (!Class3369.field15514.field4684.field2967) {
-                if (Class3369.field15514.field4684.method1809()) {
-                    Class3369.field15514.field4684.setPosition(Class3369.field15514.field4684.posX, Class3369.field15514.field4684.posY - 1.0, Class3369.field15514.field4684.posZ);
+        if (Class3369.field15514.player.onGround) {
+            if (!Class3369.field15514.player.field2967) {
+                if (Class3369.field15514.player.method1809()) {
+                    Class3369.field15514.player.setPosition(Class3369.field15514.player.posX, Class3369.field15514.player.posY - 1.0, Class3369.field15514.player.posZ);
                 }
             }
             else {
-                Class3369.field15514.field4684.setPosition(Class3369.field15514.field4684.posX, Class3369.field15514.field4684.posY + 1.0, Class3369.field15514.field4684.posZ);
+                Class3369.field15514.player.setPosition(Class3369.field15514.player.posX, Class3369.field15514.player.posY + 1.0, Class3369.field15514.player.posZ);
             }
         }
     }

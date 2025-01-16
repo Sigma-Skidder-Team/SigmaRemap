@@ -33,7 +33,7 @@ public class Class8004
                             if (!Class9463.method35173().method35193().method32158(class8880)) {
                                 continue;
                             }
-                            Class8004.field32966.method5244(class8880);
+                            Class8004.field32966.displayGuiScreen(class8880);
                         }
                         catch (final InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException ex) {
                             ((Throwable)ex).printStackTrace();

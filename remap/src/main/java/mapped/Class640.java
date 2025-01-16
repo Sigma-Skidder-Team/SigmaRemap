@@ -16,8 +16,8 @@ public class Class640 extends Class623<Class640>
     
     @Override
     public void method3467(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final float n8) {
-        this.field3640.method3297(this.field3640.field3585.font, new Class2259("stat." + this.field3639.method35135().toString().replace(':', '.'), new Object[0]).applyTextStyle(TextFormatting.GRAY).getString(), n3 + 2, n2 + 1, (n % 2 != 0) ? 9474192 : 16777215);
+        this.field3640.drawString(this.field3640.field3585.font, new Class2259("stat." + this.field3639.method35135().toString().replace(':', '.'), new Object[0]).applyTextStyle(TextFormatting.GRAY).getString(), n3 + 2, n2 + 1, (n % 2 != 0) ? 9474192 : 16777215);
         final String method35136 = this.field3639.method35136(Class691.method3867(this.field3640.field3585).method23091(this.field3639));
-        this.field3640.method3297(this.field3640.field3585.font, method35136, n3 + 2 + 213 - this.field3640.field3585.font.method6617(method35136), n2 + 1, (n % 2 != 0) ? 9474192 : 16777215);
+        this.field3640.drawString(this.field3640.field3585.font, method35136, n3 + 2 + 213 - this.field3640.field3585.font.getStringWidth(method35136), n2 + 1, (n % 2 != 0) ? 9474192 : 16777215);
     }
 }

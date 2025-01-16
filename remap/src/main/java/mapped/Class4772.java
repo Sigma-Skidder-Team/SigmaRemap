@@ -16,12 +16,12 @@ public class Class4772 extends Class4712<Class853, Class5871<Class853>>
         this.method13978((Class1799<Class853, Class5871<Class853>>)new Class1843((Class4778<LivingEntity, Class5871<LivingEntity>>)this));
     }
     
-    public void method14123(final Class853 class853, final float n, final float n2, final Class7351 class854, final Class7807 class855, final int n3) {
+    public void method14123(final Class853 class853, final float n, final float n2, final MatrixStack class854, final IRenderTypeBuffer class855, final int n3) {
         this.field20284 = 0.25f * class853.method5130();
         super.method14006(class853, n, n2, class854, class855, n3);
     }
     
-    public void method14124(final Class853 class853, final Class7351 class854, final float n) {
+    public void method14124(final Class853 class853, final MatrixStack class854, final float n) {
         class854.method22565(0.999f, 0.999f, 0.999f);
         class854.method22564(0.0, 0.0010000000474974513, 0.0);
         final float n2 = (float)class853.method5130();

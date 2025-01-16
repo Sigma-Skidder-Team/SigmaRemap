@@ -15,13 +15,13 @@ public class Class3324 extends Class3167
     @Class6753
     private void method10527(final Class5743 class5743) {
         if (this.method9906()) {
-            if (!Class3324.field15514.field4684.field3025.field27304) {
-                if (Class3324.field15514.field4684.method2877().method33491() > 17) {
-                    if (Class3324.field15514.field4684.method2664() < 20.0f) {
-                        if (Class3324.field15514.field4684.method2664() != 0.0f) {
-                            if (Class3324.field15514.field4684.onGround || !this.method9883("Only OnGround")) {
+            if (!Class3324.field15514.player.field3025.field27304) {
+                if (Class3324.field15514.player.method2877().method33491() > 17) {
+                    if (Class3324.field15514.player.method2664() < 20.0f) {
+                        if (Class3324.field15514.player.method2664() != 0.0f) {
+                            if (Class3324.field15514.player.onGround || !this.method9883("Only OnGround")) {
                                 for (int n = 0; n < this.method9886("Packet amount"); ++n) {
-                                    Class3324.field15514.method5269().method17292(new Class4353(Class3324.field15514.field4684.onGround));
+                                    Class3324.field15514.method5269().method17292(new Class4353(Class3324.field15514.player.onGround));
                                 }
                             }
                         }

@@ -15,16 +15,16 @@ public class Class6327 extends Class6322
         super("line_width", () -> {
             if (!Objects.equals(a, OptionalDouble.of(1.0))) {
                 if (!a.isPresent()) {
-                    Class8726.method30072(Math.max(2.5f, Minecraft.method5277().method5332().method7692() / 1920.0f * 2.5f));
+                    RenderSystem.method30072(Math.max(2.5f, Minecraft.method5277().method5332().method7692() / 1920.0f * 2.5f));
                 }
                 else {
-                    Class8726.method30072((float)a.getAsDouble());
+                    RenderSystem.method30072((float)a.getAsDouble());
                 }
             }
             return;
         }, () -> {
             if (!Objects.equals(a2, OptionalDouble.of(1.0))) {
-                Class8726.method30072(1.0f);
+                RenderSystem.method30072(1.0f);
             }
             return;
         });

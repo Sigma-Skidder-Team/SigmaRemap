@@ -19,7 +19,7 @@ public class Class4720 extends Class4712<Class837, Class5877<Class837>>
         return Class4720.field20323;
     }
     
-    public void method14029(final Class837 class837, final Class7351 class838, final float n, final float n2, final float n3) {
+    public void method14029(final Class837 class837, final MatrixStack class838, final float n, final float n2, final float n3) {
         super.method13985(class837, class838, n, n2, n3);
         float n4 = 1.0f;
         float n5 = 1.0f;

@@ -31,15 +31,15 @@ public class Class6117 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
-        Class8726.method30059();
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30041();
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
+        RenderSystem.method30059();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.disableTexture();
         final BlockPos class7353 = new BlockPos(n, 0.0, n3);
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(5, Class9237.field39615);
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(5, DefaultVertexFormats.POSITION_COLOR);
         for (final Map.Entry<BlockPos, V> entry : this.field24831.entrySet()) {
             final BlockPos class7354 = entry.getKey();
             final BlockPos class7355 = (BlockPos)entry.getValue();
@@ -58,9 +58,9 @@ public class Class6117 implements Class6113
             }
             Class1656.method5734(method22695, class7356.getX() - n, class7356.getY() - n2, class7356.getZ() - n3, class7356.getX() + 1.0f - n, class7356.getY() + 1.0f - n2, class7356.getZ() + 1.0f - n3, 1.0f, 1.0f, 1.0f, 1.0f);
         }
-        method22694.method22695();
-        Class8726.method30008();
-        Class8726.method30040();
-        Class8726.method30060();
+        method22694.draw();
+        RenderSystem.enableDepthTest();
+        RenderSystem.enableTexture();
+        RenderSystem.method30060();
     }
 }

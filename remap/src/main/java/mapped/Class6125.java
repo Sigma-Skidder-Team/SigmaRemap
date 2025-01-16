@@ -40,7 +40,7 @@ public class Class6125 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         final long method6754 = this.field24866.world.method6754();
         final HashSet hashSet = Sets.newHashSet();
         final HashMap hashMap = Maps.newHashMap();

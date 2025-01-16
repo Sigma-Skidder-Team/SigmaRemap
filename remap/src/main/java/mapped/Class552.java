@@ -31,10 +31,10 @@ public class Class552 extends Class551
     @Override
     public void init() {
         if (Class9463.method35173().method35209() == Class2209.field13464) {
-            this.method3029(new Class654(this.width / 2 - 102, this.height - 45, 204, 20, "Jello for Sigma Options", class654 -> this.minecraft.method5244(new Class555())));
+            this.addButton(new Class654(this.width / 2 - 102, this.height - 45, 204, 20, "Jello for Sigma Options", class654 -> this.minecraft.displayGuiScreen(new Class555())));
         }
         super.init();
-        final Iterator<Class573> iterator = this.buttons.iterator();
+        final Iterator<Widget> iterator = this.buttons.iterator();
         while (iterator.hasNext()) {
             if (iterator.next().field3427 != this.height / 4 + 72 - 16) {
                 continue;
@@ -44,8 +44,8 @@ public class Class552 extends Class551
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        super.method2975(n, n2, n3);
+    public void render(final int n, final int n2, final float n3) {
+        super.render(n, n2, n3);
     }
     
     @Override

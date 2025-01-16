@@ -18,11 +18,11 @@ public class Class6315 implements Class6313
     public final boolean field25246;
     public final boolean field25247;
     public final boolean field25248;
-    public final Class1912 field25249;
+    public final TextureAtlasSprite field25249;
     public final Class7503 field25250;
     public final Class9168 field25251;
     
-    public Class6315(final List<Class8754> field25244, final Map<Direction, List<Class8754>> field25245, final boolean field25246, final boolean field25247, final boolean field25248, final Class1912 field25249, final Class7503 field25250, final Class9168 field25251) {
+    public Class6315(final List<Class8754> field25244, final Map<Direction, List<Class8754>> field25245, final boolean field25246, final boolean field25247, final boolean field25248, final TextureAtlasSprite field25249, final Class7503 field25250, final Class9168 field25251) {
         this.field25244 = field25244;
         this.field25245 = field25245;
         this.field25246 = field25246;
@@ -59,7 +59,7 @@ public class Class6315 implements Class6313
     }
     
     @Override
-    public Class1912 method18696() {
+    public TextureAtlasSprite method18696() {
         return this.field25249;
     }
     

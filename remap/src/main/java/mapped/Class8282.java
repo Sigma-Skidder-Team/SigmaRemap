@@ -6,7 +6,7 @@ package mapped;
 
 import org.lwjgl.glfw.GLFWMonitorCallback;
 import org.lwjgl.glfw.GLFWMonitorCallbackI;
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
+
 import javax.annotation.Nullable;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.glfw.GLFW;
@@ -21,7 +21,7 @@ public class Class8282
     
     public Class8282(final Class8547 field34071) {
         this.field34070 = (Long2ObjectMap<Class7646>)new Long2ObjectOpenHashMap();
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         this.field34071 = field34071;
         GLFW.glfwSetMonitorCallback(this::method27519);
         final PointerBuffer glfwGetMonitors = GLFW.glfwGetMonitors();
@@ -34,7 +34,7 @@ public class Class8282
     }
     
     private void method27519(final long n, final int n2) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         if (n2 != 262145) {
             if (n2 == 262146) {
                 this.field34070.remove(n);
@@ -47,7 +47,7 @@ public class Class8282
     
     @Nullable
     public Class7646 method27520(final long n) {
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         return (Class7646)this.field34070.get(n);
     }
     
@@ -86,7 +86,7 @@ public class Class8282
     }
     
     public void method27523() {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         final GLFWMonitorCallback glfwSetMonitorCallback = GLFW.glfwSetMonitorCallback((GLFWMonitorCallbackI)null);
         if (glfwSetMonitorCallback != null) {
             glfwSetMonitorCallback.free();

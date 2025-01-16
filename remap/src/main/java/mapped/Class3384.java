@@ -18,7 +18,7 @@ public class Class3384 extends Class3167
     public void method10797(final Class5739 class5739) {
         if (this.method9906()) {
             for (final Entity class5740 : Class4609.method13679(Class6430.method19108())) {
-                if (class5740 != Class3384.field15514.field4684) {
+                if (class5740 != Class3384.field15514.player) {
                     if (Class9463.method35173().method35191().method31751(class5740)) {
                         continue;
                     }

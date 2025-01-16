@@ -42,7 +42,7 @@ public class RealmsScreenProxy extends Screen
     }
     
     public void drawCenteredString(final String s, final int n, final int n2, final int n3) {
-        super.method3295(this.font, s, n, n2, n3);
+        super.drawCenteredString(this.font, s, n, n2, n3);
     }
     
     public void method3185(final String s, final int n, final int n2, final int n3, final boolean b) {
@@ -50,27 +50,27 @@ public class RealmsScreenProxy extends Screen
             this.font.method6610(s, (float)n, (float)n2, n3);
         }
         else {
-            super.method3297(this.font, s, n, n2, n3);
+            super.drawString(this.font, s, n, n2, n3);
         }
     }
     
     @Override
-    public void method3186(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
+    public void blit(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
         this.screen.method15409(n, n2, n3, n4, n5, n6);
-        super.method3186(n, n2, n3, n4, n5, n6);
+        super.blit(n, n2, n3, n4, n5, n6);
     }
     
     public static void method3187(final int n, final int n2, final float n3, final float n4, final int n5, final int n6, final int n7, final int n8, final int n9, final int n10) {
-        Class565.method3300(n, n2, n7, n8, n3, n4, n5, n6, n9, n10);
+        AbstractGui.blit(n, n2, n7, n8, n3, n4, n5, n6, n9, n10);
     }
     
     public static void method3188(final int n, final int n2, final float n3, final float n4, final int n5, final int n6, final int n7, final int n8) {
-        Class565.method3188(n, n2, n3, n4, n5, n6, n7, n8);
+        AbstractGui.blit(n, n2, n3, n4, n5, n6, n7, n8);
     }
     
     @Override
-    public void method3189(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
-        super.method3189(n, n2, n3, n4, n5, n6);
+    public void fillGradient(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
+        super.fillGradient(n, n2, n3, n4, n5, n6);
     }
     
     @Override
@@ -89,23 +89,23 @@ public class RealmsScreenProxy extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.screen.render(n, n2, n3);
     }
     
     @Override
-    public void method3014(final ItemStack class8321, final int n, final int n2) {
-        super.method3014(class8321, n, n2);
+    public void renderTooltip(final ItemStack class8321, final int n, final int n2) {
+        super.renderTooltip(class8321, n, n2);
     }
     
     @Override
-    public void method3031(final String s, final int n, final int n2) {
-        super.method3031(s, n, n2);
+    public void renderTooltip(final String s, final int n, final int n2) {
+        super.renderTooltip(s, n, n2);
     }
     
     @Override
-    public void method3032(final List<String> list, final int n, final int n2) {
-        super.method3032(list, n, n2);
+    public void renderTooltip(final List<String> list, final int n, final int n2) {
+        super.renderTooltip(list, n, n2);
     }
     
     @Override
@@ -127,11 +127,11 @@ public class RealmsScreenProxy extends Screen
     }
     
     public int method3193(final String s) {
-        return this.font.method6617(s);
+        return this.font.getStringWidth(s);
     }
     
     public void method3194(final String s, final int n, final int n2, final int n3) {
-        this.font.method6609(s, (float)n, (float)n2, n3);
+        this.font.drawStringWithShadow(s, (float)n, (float)n2, n3);
     }
     
     public List<String> method3195(final String s, final int n) {
@@ -163,12 +163,12 @@ public class RealmsScreenProxy extends Screen
     }
     
     public void method3201(final Class5610<?> class5610) {
-        this.method3029(class5610.method16915());
+        this.addButton(class5610.method16915());
     }
     
     public List<Class5610<?>> method3202() {
         final ArrayList arrayListWithExpectedSize = Lists.newArrayListWithExpectedSize(this.buttons.size());
-        final Iterator<Class573> iterator = this.buttons.iterator();
+        final Iterator<Widget> iterator = this.buttons.iterator();
         while (iterator.hasNext()) {
             arrayListWithExpectedSize.add(((Class664<Object>)iterator.next()).method3725());
         }
@@ -201,8 +201,8 @@ public class RealmsScreenProxy extends Screen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        return this.screen.keyPressed(n, n2, n3) || super.keyPressed(n, n2, n3);
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        return this.screen.keyPressed(keyCode, n2, n3) || super.keyPressed(keyCode, n2, n3);
     }
     
     @Override
@@ -217,10 +217,10 @@ public class RealmsScreenProxy extends Screen
     }
     
     public int method3205(final String s, final int n, final int n2, final int n3, final boolean b) {
-        return b ? this.font.method6609(s, (float)n, (float)n2, n3) : this.font.method6610(s, (float)n, (float)n2, n3);
+        return b ? this.font.drawStringWithShadow(s, (float)n, (float)n2, n3) : this.font.method6610(s, (float)n, (float)n2, n3);
     }
     
-    public Class1844 method3206() {
+    public FontRenderer method3206() {
         return this.font;
     }
     

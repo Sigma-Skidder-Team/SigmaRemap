@@ -25,7 +25,7 @@ public abstract class Class517<T extends Class3418> extends Class516<T>
     }
     
     public void method2994() {
-        if (!this.minecraft.field4684.method2651().isEmpty()) {
+        if (!this.minecraft.player.method2651().isEmpty()) {
             this.field3079 = 160 + (this.width - this.field3075 - 200) / 2;
             this.field3103 = true;
         }
@@ -36,8 +36,8 @@ public abstract class Class517<T extends Class3418> extends Class516<T>
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        super.method2975(n, n2, n3);
+    public void render(final int n, final int n2, final float n3) {
+        super.render(n, n2, n3);
         if (this.field3103) {
             this.method2995();
         }
@@ -45,9 +45,9 @@ public abstract class Class517<T extends Class3418> extends Class516<T>
     
     private void method2995() {
         final int n = this.field3079 - 124;
-        final Collection<Class1948> method2651 = this.minecraft.field4684.method2651();
+        final Collection<Class1948> method2651 = this.minecraft.player.method2651();
         if (!method2651.isEmpty()) {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             int n2 = 33;
             if (method2651.size() > 5) {
                 n2 = 132 / (method2651.size() - 1);
@@ -63,8 +63,8 @@ public abstract class Class517<T extends Class3418> extends Class516<T>
         this.minecraft.method5290().method5849(Class517.field3074);
         int field3080 = this.field3080;
         for (final Class1948 class1948 : iterable) {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            this.method3186(n, field3080, 0, 166, 140, 32);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            this.blit(n, field3080, 0, 166, 140, 32);
             field3080 += n2;
         }
     }
@@ -74,9 +74,9 @@ public abstract class Class517<T extends Class3418> extends Class516<T>
         int field3080 = this.field3080;
         final Iterator<Class1948> iterator = iterable.iterator();
         while (iterator.hasNext()) {
-            final Class1912 method5326 = method5325.method6446(iterator.next().method7906());
+            final TextureAtlasSprite method5326 = method5325.method6446(iterator.next().method7906());
             this.minecraft.method5290().method5849(method5326.method7504().method6340());
-            Class565.method3298(n + 6, field3080 + 7, this.method3303(), 18, 18, method5326);
+            AbstractGui.blit(n + 6, field3080 + 7, this.getBlitOffset(), 18, 18, method5326);
             field3080 += n2;
         }
     }
@@ -90,8 +90,8 @@ public abstract class Class517<T extends Class3418> extends Class516<T>
                     str = str + ' ' + Class8822.method30773("enchantment.level." + (class1948.method7908() + 1), new Object[0]);
                 }
             }
-            this.font.method6609(str, (float)(n + 10 + 18), (float)(field3080 + 6), 16777215);
-            this.font.method6609(Class9434.method35057(class1948, 1.0f), (float)(n + 10 + 18), (float)(field3080 + 6 + 10), 8355711);
+            this.font.drawStringWithShadow(str, (float)(n + 10 + 18), (float)(field3080 + 6), 16777215);
+            this.font.drawStringWithShadow(Class9434.method35057(class1948, 1.0f), (float)(n + 10 + 18), (float)(field3080 + 6 + 10), 8355711);
             field3080 += n2;
         }
     }

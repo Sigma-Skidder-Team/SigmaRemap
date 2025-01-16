@@ -21,12 +21,12 @@ public class Class3351 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15971 = Class3351.field15514.field4684.posX;
-        this.field15972 = Class3351.field15514.field4684.posY;
-        this.field15973 = Class3351.field15514.field4684.posZ;
-        this.field15974 = Class3351.field15514.field4684.posX;
-        this.field15975 = Class3351.field15514.field4684.posY;
-        this.field15976 = Class3351.field15514.field4684.posZ;
+        this.field15971 = Class3351.field15514.player.posX;
+        this.field15972 = Class3351.field15514.player.posY;
+        this.field15973 = Class3351.field15514.player.posZ;
+        this.field15974 = Class3351.field15514.player.posX;
+        this.field15975 = Class3351.field15514.player.posY;
+        this.field15976 = Class3351.field15514.player.posZ;
         this.field15969 = 0;
         this.field15970 = 0;
     }
@@ -34,7 +34,7 @@ public class Class3351 extends Class3167
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3351.field15514.field4684.getMotion().y > 0.0) {
+        if (Class3351.field15514.player.getMotion().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
     }
@@ -48,7 +48,7 @@ public class Class3351 extends Class3167
             if (this.field15969 <= 2) {
                 if (this.field15969 != -1) {
                     if (this.field15969 == 0) {
-                        if (!Class3351.field15514.field4648.field23439.method1056()) {
+                        if (!Class3351.field15514.gameSettings.field23439.method1056()) {
                             if (class5717.method16974() > 0.0) {
                                 class5717.method16975(-Class7482.method23141());
                             }
@@ -59,8 +59,8 @@ public class Class3351 extends Class3167
                 }
                 else {
                     class5717.method16975(Class7482.method23141());
-                    if (Class3351.field15514.field4648.field23440.method1056()) {
-                        if (!Class3351.field15514.field4648.field23439.method1056()) {
+                    if (Class3351.field15514.gameSettings.field23440.method1056()) {
+                        if (!Class3351.field15514.gameSettings.field23439.method1056()) {
                             class5717.method16975(-Class7482.method23141());
                         }
                     }
@@ -114,8 +114,8 @@ public class Class3351 extends Class3167
                 this.field15971 = class5724.field19377;
                 this.field15972 = class5724.field19378;
                 this.field15973 = class5724.field19379;
-                class5724.field19380 = Class3351.field15514.field4684.rotationYaw;
-                class5724.field19381 = Class3351.field15514.field4684.rotationPitch;
+                class5724.field19380 = Class3351.field15514.player.rotationYaw;
+                class5724.field19381 = Class3351.field15514.player.rotationPitch;
             }
         }
     }
@@ -163,18 +163,18 @@ public class Class3351 extends Class3167
             final double n4 = field15974 + n * Class3351.field15514.method5314();
             final double n5 = field15975 + n2 * Class3351.field15514.method5314();
             final double n6 = field15976 + n3 * Class3351.field15514.method5314();
-            Class3351.field15514.field4684.posY = n5;
-            Class3351.field15514.field4684.lastTickPosY = n5;
-            Class3351.field15514.field4684.field3019 = n5;
-            Class3351.field15514.field4684.prevPosY = n5;
-            Class3351.field15514.field4684.posX = n4;
-            Class3351.field15514.field4684.lastTickPosX = n4;
-            Class3351.field15514.field4684.field3018 = n4;
-            Class3351.field15514.field4684.prevPosX = n4;
-            Class3351.field15514.field4684.posZ = n6;
-            Class3351.field15514.field4684.lastTickPosZ = n6;
-            Class3351.field15514.field4684.field3020 = n6;
-            Class3351.field15514.field4684.prevPosZ = n6;
+            Class3351.field15514.player.posY = n5;
+            Class3351.field15514.player.lastTickPosY = n5;
+            Class3351.field15514.player.field3019 = n5;
+            Class3351.field15514.player.prevPosY = n5;
+            Class3351.field15514.player.posX = n4;
+            Class3351.field15514.player.lastTickPosX = n4;
+            Class3351.field15514.player.field3018 = n4;
+            Class3351.field15514.player.prevPosX = n4;
+            Class3351.field15514.player.posZ = n6;
+            Class3351.field15514.player.lastTickPosZ = n6;
+            Class3351.field15514.player.field3020 = n6;
+            Class3351.field15514.player.prevPosZ = n6;
         }
     }
 }

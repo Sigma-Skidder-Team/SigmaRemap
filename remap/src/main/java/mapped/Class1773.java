@@ -14,7 +14,7 @@ public class Class1773 extends Class1666 implements AutoCloseable
     
     public Class1773(final Class1846 field9851) {
         this.field9851 = field9851;
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             Class8995.method32103(this.method5869(), this.field9851.method6644(), this.field9851.method6645());
             this.method6327();
             if (Config.method28955()) {
@@ -22,7 +22,7 @@ public class Class1773 extends Class1666 implements AutoCloseable
             }
         }
         else {
-            Class8726.method29991(() -> {
+            RenderSystem.method29991(() -> {
                 Class8995.method32103(this.method5869(), this.field9851.method6644(), this.field9851.method6645());
                 this.method6327();
                 if (!(!Config.method28955())) {
@@ -33,7 +33,7 @@ public class Class1773 extends Class1666 implements AutoCloseable
     }
     
     public Class1773(final int n, final int n2, final boolean b) {
-        Class8726.method29989(Class8726::method29988);
+        RenderSystem.method29989(RenderSystem::method29988);
         this.field9851 = new Class1846(n, n2, b);
         Class8995.method32103(this.method5869(), this.field9851.method6644(), this.field9851.method6645());
         if (Config.method28955()) {

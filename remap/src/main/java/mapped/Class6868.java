@@ -21,9 +21,9 @@ public class Class6868 implements Class6866
     @Override
     public Class2204 method20978(final Class690 class690, final long n) {
         class690.method3853().method5290().method5849(Class6868.field26901);
-        Class8726.method30069(1.0f, 1.0f, 1.0f);
+        RenderSystem.method30069(1.0f, 1.0f, 1.0f);
         final Class7339 method31036 = this.field26906.method31036();
-        class690.method3186(0, 0, 0, 0, 160, 32);
+        class690.blit(0, 0, 0, 0, 160, 32);
         if (method31036 == null) {
             return Class2204.field13418;
         }

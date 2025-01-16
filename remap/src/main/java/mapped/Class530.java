@@ -39,32 +39,32 @@ public class Class530 extends Screen
         this.field3175.clear();
         this.field3175.addAll(this.font.method6626(this.field3170.getFormattedText(), this.width - 50));
         final int n = (this.field3175.size() + 1) * 9;
-        this.method3029(new Class654(this.width / 2 - 155, 100 + n, 150, 20, this.field3172.getFormattedText(), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 155, 100 + n, 150, 20, this.field3172.getFormattedText(), class654 -> {
             if (this.field3174.method3743()) {
-                this.minecraft.field4648.field23434 = true;
-                this.minecraft.field4648.method17121();
+                this.minecraft.gameSettings.field23434 = true;
+                this.minecraft.gameSettings.method17121();
             }
-            this.minecraft.method5244(new Class720(this.field3168));
+            this.minecraft.displayGuiScreen(new Class720(this.field3168));
         }));
-        this.method3029(new Class654(this.width / 2 - 155 + 160, 100 + n, 150, 20, this.field3173.getFormattedText(), class654 -> this.minecraft.method5244(this.field3168)));
-        this.method3029(this.field3174 = new Class682(this.width / 2 - 155 + 80, 76 + n, 150, 20, this.field3171.getFormattedText(), false));
+        this.addButton(new Class654(this.width / 2 - 155 + 160, 100 + n, 150, 20, this.field3173.getFormattedText(), class654 -> this.minecraft.displayGuiScreen(this.field3168)));
+        this.addButton(this.field3174 = new Class682(this.width / 2 - 155 + 80, 76 + n, 150, 20, this.field3171.getFormattedText(), false));
     }
     
     @Override
-    public String method3027() {
+    public String getNarrationMessage() {
         return this.field3169.getString() + "\n" + this.field3170.getString();
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        this.method3043(0);
-        this.method3295(this.font, this.field3169.getFormattedText(), this.width / 2, 30, 16777215);
+    public void render(final int n, final int n2, final float n3) {
+        this.renderDirtBackground(0);
+        this.drawCenteredString(this.font, this.field3169.getFormattedText(), this.width / 2, 30, 16777215);
         int n4 = 70;
         final Iterator<String> iterator = this.field3175.iterator();
         while (iterator.hasNext()) {
-            this.method3295(this.font, iterator.next(), this.width / 2, n4, 16777215);
+            this.drawCenteredString(this.font, iterator.next(), this.width / 2, n4, 16777215);
             n4 += 9;
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
 }

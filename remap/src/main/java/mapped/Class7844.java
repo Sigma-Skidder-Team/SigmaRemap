@@ -13,19 +13,19 @@ public class Class7844
     private static final Logger field32125;
     
     public static void method25345(final int n) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         Class8933.method31532(n);
     }
     
     public static void method25346(final Class1927 class1927) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         class1927.method7721().method34570();
         class1927.method7720().method34570();
         Class8933.method31534(class1927.method7722());
     }
     
     public static int method25347() throws IOException {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         final int method31533 = Class8933.method31533();
         if (method31533 > 0) {
             return method31533;
@@ -34,7 +34,7 @@ public class Class7844
     }
     
     public static void method25348(final Class1927 class1927) throws IOException {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         class1927.method7721().method34569(class1927);
         class1927.method7720().method34569(class1927);
         Class8933.method31535(class1927.method7722());

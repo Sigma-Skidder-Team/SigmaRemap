@@ -155,7 +155,7 @@ public class Class1793 implements Class1662
             class7894.method15300("bindSpriteSets");
             map3.forEach((class7897, list) -> {
                 this.field9931.method6338(Class1913.method7551());
-                this.field9930.get(class7897).method25211((List<Class1912>)(list.isEmpty() ? ImmutableList.of((Object)class7896) : list.stream().map(this.field9931::method6338).collect(ImmutableList.toImmutableList())));
+                this.field9930.get(class7897).method25211((List<TextureAtlasSprite>)(list.isEmpty() ? ImmutableList.of((Object)class7896) : list.stream().map(this.field9931::method6338).collect(ImmutableList.toImmutableList())));
                 return;
             });
             class7894.method15299();
@@ -300,17 +300,17 @@ public class Class1793 implements Class1662
         }
     }
     
-    public void method6484(final Class7351 class7351, final Class7808 class7352, final Class392 class7353, final Class6092 class7354, final float n) {
+    public void method6484(final MatrixStack class7351, final IRenderTypeBuffer.Impl class7352, final Class392 class7353, final Class6092 class7354, final float n) {
         class7353.method1418();
         final Runnable runnable = () -> {
-            Class8726.method29999();
-            Class8726.method30118();
-            Class8726.method30008();
-            Class8726.method30019();
+            RenderSystem.enableAlphaTest();
+            RenderSystem.method30118();
+            RenderSystem.enableDepthTest();
+            RenderSystem.method30019();
             return;
         };
-        Class8726.method30059();
-        Class8726.method30067(class7351.method22569().method32111());
+        RenderSystem.method30059();
+        RenderSystem.method30067(class7351.getLast().getMatrix());
         Object o = Class1793.field9922;
         if (Class9570.field41282.method22623()) {
             o = this.field9924.keySet();
@@ -322,9 +322,9 @@ public class Class1793 implements Class1662
                 if (iterable == null) {
                     continue;
                 }
-                Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-                final Class7392 method22694 = Class7392.method22694();
-                final Class4148 method22695 = method22694.method22696();
+                RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                final Tessellator method22694 = Tessellator.getInstance();
+                final BufferBuilder method22695 = method22694.getBuffer();
                 class7355.method19304(method22695, this.field9926);
                 for (final Class6173 class7356 : iterable) {
                     try {
@@ -341,13 +341,13 @@ public class Class1793 implements Class1662
                 class7355.method19305(method22694);
             }
         }
-        Class8726.method30060();
-        Class8726.method30010(true);
-        Class8726.method30012();
-        Class8726.method30118();
+        RenderSystem.method30060();
+        RenderSystem.method30010(true);
+        RenderSystem.disableBlend();
+        RenderSystem.method30118();
         class7353.method1417();
-        Class8726.method30020();
-        Class8726.method30008();
+        RenderSystem.method30020();
+        RenderSystem.enableDepthTest();
     }
     
     public void method6485(final World field9923) {

@@ -44,17 +44,17 @@ public class Class9210
             if (Class9210.field39013 == null || this.field39020 != Class9210.field39013.method33686()) {
                 Class9210.field39013 = this;
                 if (this.field39020) {
-                    Class8726.method30012();
+                    RenderSystem.disableBlend();
                     return;
                 }
-                Class8726.method30011();
+                RenderSystem.enableBlend();
             }
-            Class8726.method30017(this.field39018);
+            RenderSystem.method30017(this.field39018);
             if (!this.field39019) {
-                Class8726.method30014(this.field39014, this.field39016);
+                RenderSystem.method30014(this.field39014, this.field39016);
             }
             else {
-                Class8726.method30016(this.field39014, this.field39016, this.field39015, this.field39017);
+                RenderSystem.method30016(this.field39014, this.field39016, this.field39015, this.field39017);
             }
         }
     }

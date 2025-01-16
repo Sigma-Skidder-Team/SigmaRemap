@@ -51,7 +51,7 @@ public abstract class Class4703<T extends Entity>
         return Vec3d.ZERO;
     }
     
-    public void method13951(final T t, final float n, final float n2, final Class7351 class7351, final Class7807 class7352, final int i) {
+    public void method13951(final T t, final float n, final float n2, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int i) {
         if (Class9570.field41417.method22619()) {
             final Object method35842 = Class9570.method35842(Class9570.field41417, t, t.getDisplayName().getFormattedText(), this, class7351, class7352, i);
             Class9570.method35841(method35842);
@@ -73,11 +73,11 @@ public abstract class Class4703<T extends Entity>
     
     public abstract ResourceLocation method13950(final T p0);
     
-    public Class1844 method13957() {
+    public FontRenderer method13957() {
         return this.field20283.method28718();
     }
     
-    public void method13958(final T t, final String anObject, final Class7351 class7351, final Class7807 class7352, final int n) {
+    public void method13958(final T t, final String anObject, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n) {
         if (this.field20283.method28715(t) <= 4096.0) {
             final boolean b = !t.method1812();
             final float n2 = t.method1931() + 0.5f;
@@ -86,13 +86,13 @@ public abstract class Class4703<T extends Entity>
             class7351.method22564(0.0, n2, 0.0);
             class7351.method22566(this.field20283.method28717());
             class7351.method22565(-0.025f, -0.025f, 0.025f);
-            final Matrix4f method32111 = class7351.method22569().method32111();
-            final int n4 = (int)(Minecraft.method5277().field4648.method17114(0.25f) * 255.0f) << 24;
-            final Class1844 method32112 = this.method13957();
-            final float n5 = (float)(-method32112.method6617(anObject) / 2);
-            method32112.method6613(anObject, n5, (float)n3, 553648127, false, method32111, class7352, b, n4, n);
+            final Matrix4f method32111 = class7351.getLast().getMatrix();
+            final int n4 = (int)(Minecraft.method5277().gameSettings.method17114(0.25f) * 255.0f) << 24;
+            final FontRenderer method32112 = this.method13957();
+            final float n5 = (float)(-method32112.getStringWidth(anObject) / 2);
+            method32112.renderString(anObject, n5, (float)n3, 553648127, false, method32111, class7352, b, n4, n);
             if (b) {
-                method32112.method6613(anObject, n5, (float)n3, -1, false, method32111, class7352, false, 0, n);
+                method32112.renderString(anObject, n5, (float)n3, -1, false, method32111, class7352, false, 0, n);
             }
             class7351.method22568();
         }

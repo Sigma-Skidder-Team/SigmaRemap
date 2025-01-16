@@ -57,7 +57,7 @@ public class Class4167<T extends TileEntity & Class476> extends Class4158<T>
     }
     
     @Override
-    public void method12454(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final int n2, final int n3) {
+    public void method12454(final T t, final float n, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n2, final int n3) {
         final World method2186 = t.method2186();
         final boolean b = method2186 != null;
         final Class7096 class7353 = b ? t.method2194() : ((StateHolder<O, Class7096>)Class7521.field29292.getDefaultState()).with((IProperty<Comparable>)Class3865.field17497, Direction.SOUTH);
@@ -95,7 +95,7 @@ public class Class4167<T extends TileEntity & Class476> extends Class4158<T>
         }
     }
     
-    private void method12475(final Class7351 class7351, final Class4150 class7352, final Class6300 class7353, final Class6300 class7354, final Class6300 class7355, final float n, final int n2, final int n3) {
+    private void method12475(final MatrixStack class7351, final Class4150 class7352, final Class6300 class7353, final Class6300 class7354, final Class6300 class7355, final float n, final int n2, final int n3) {
         class7353.field25183 = -(n * 1.5707964f);
         class7354.field25183 = class7353.field25183;
         class7353.method18643(class7351, class7352, n2, n3);

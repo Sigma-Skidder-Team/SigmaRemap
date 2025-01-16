@@ -13,16 +13,16 @@ public class Class7482
     
     public static double method23136() {
         double n = 0.2873;
-        float n2 = (float)(1.0f * ((Class7482.field28903.field4684.method2710(Class8107.field33408).method23950() / Class7482.field28903.field4684.field3025.method21427() + 1.0) / 2.0));
-        if (Class7482.field28903.field4684.method1815()) {
+        float n2 = (float)(1.0f * ((Class7482.field28903.player.method2710(Class8107.field33408).method23950() / Class7482.field28903.player.field3025.method21427() + 1.0) / 2.0));
+        if (Class7482.field28903.player.method1815()) {
             n2 -= (float)0.15;
         }
-        if (Class7482.field28903.field4684.method2653(Class9439.field40474)) {
-            if (Class7482.field28903.field4684.method1815()) {
-                n2 -= (float)(0.03000002 * (Class7482.field28903.field4684.method2654(Class9439.field40474).method7908() + 1));
+        if (Class7482.field28903.player.method2653(Class9439.field40474)) {
+            if (Class7482.field28903.player.method1815()) {
+                n2 -= (float)(0.03000002 * (Class7482.field28903.player.method2654(Class9439.field40474).method7908() + 1));
             }
         }
-        if (Class7482.field28903.field4684.method1809()) {
+        if (Class7482.field28903.player.method1809()) {
             n *= 0.25;
         }
         if (method23142()) {
@@ -33,7 +33,7 @@ public class Class7482
     
     public static double method23137() {
         double n = 0.2873 + method23139() * 0.057;
-        if (Class7482.field28903.field4684.method1809()) {
+        if (Class7482.field28903.player.method1809()) {
             n *= 0.25;
         }
         return n;
@@ -41,7 +41,7 @@ public class Class7482
     
     public static double method23138() {
         double n = 0.2873;
-        if (Class7482.field28903.field4684.method1809()) {
+        if (Class7482.field28903.player.method1809()) {
             n *= 0.25;
         }
         if (method23142()) {
@@ -51,17 +51,17 @@ public class Class7482
     }
     
     public static int method23139() {
-        if (!Class7482.field28903.field4684.method2653(Class9439.field40474)) {
+        if (!Class7482.field28903.player.method2653(Class9439.field40474)) {
             return 0;
         }
-        return Class7482.field28903.field4684.method2654(Class9439.field40474).method7908() + 1;
+        return Class7482.field28903.player.method2654(Class9439.field40474).method7908() + 1;
     }
     
     public static int method23140() {
-        if (!Class7482.field28903.field4684.method2653(Class9439.field40481)) {
+        if (!Class7482.field28903.player.method2653(Class9439.field40481)) {
             return 0;
         }
-        return Class7482.field28903.field4684.method2654(Class9439.field40481).method7908() + 1;
+        return Class7482.field28903.player.method2654(Class9439.field40481).method7908() + 1;
     }
     
     public static double method23141() {
@@ -69,21 +69,21 @@ public class Class7482
     }
     
     public static boolean method23142() {
-        return Class7482.field28903.field4684.method1706();
+        return Class7482.field28903.player.method1706();
     }
     
     public static float[] method23143() {
-        final Class6093 field4085 = Class7482.field28903.field4684.field4085;
+        final Class6093 field4085 = Class7482.field28903.player.field4085;
         return method23145(field4085.field24722, field4085.field24721);
     }
     
     public static float[] method23144() {
-        final Class6093 field4085 = Class7482.field28903.field4684.field4085;
+        final Class6093 field4085 = Class7482.field28903.player.field4085;
         return method23146(field4085.field24722, field4085.field24721);
     }
     
     public static float[] method23145(float n, float n2) {
-        float n3 = Class7482.field28903.field4684.rotationYaw + 90.0f;
+        float n3 = Class7482.field28903.player.rotationYaw + 90.0f;
         if (Class9463.method35173().method35205().method26561() != -999.0f) {
             n3 = Class9463.method35173().method35205().method26561() + 90.0f;
         }
@@ -116,7 +116,7 @@ public class Class7482
     }
     
     public static float[] method23146(float n, float n2) {
-        float n3 = Class7482.field28903.field4684.rotationYaw + 90.0f;
+        float n3 = Class7482.field28903.player.rotationYaw + 90.0f;
         if (n == 0.0f) {
             if (n2 != 0.0f) {
                 n3 += ((n2 <= 0.0f) ? 90 : -90);
@@ -148,11 +148,11 @@ public class Class7482
     }
     
     public static float method23147() {
-        float field2970 = Class7482.field28903.field4684.field2970;
-        final float field2971 = Class7482.field28903.field4684.field2968;
-        float n = Class7482.field28903.field4684.rotationYaw + 90.0f;
+        float field2970 = Class7482.field28903.player.field2970;
+        final float field2971 = Class7482.field28903.player.field2968;
+        float n = Class7482.field28903.player.rotationYaw + 90.0f;
         if (field2970 > 0.0f) {
-            if (Class7482.field28903.field4648.field23437.method1056()) {
+            if (Class7482.field28903.gameSettings.field23437.method1056()) {
                 field2970 = -1.0f;
             }
         }
@@ -183,10 +183,10 @@ public class Class7482
     }
     
     public static boolean method23148() {
-        final boolean method1056 = Class7482.field28903.field4648.field23435.method1056();
-        final boolean method1057 = Class7482.field28903.field4648.field23436.method1056();
-        final boolean method1058 = Class7482.field28903.field4648.field23438.method1056();
-        final boolean method1059 = Class7482.field28903.field4648.field23437.method1056();
+        final boolean method1056 = Class7482.field28903.gameSettings.field23435.method1056();
+        final boolean method1057 = Class7482.field28903.gameSettings.field23436.method1056();
+        final boolean method1058 = Class7482.field28903.gameSettings.field23438.method1056();
+        final boolean method1059 = Class7482.field28903.gameSettings.field23437.method1056();
         if (!method1056) {
             if (!method1057) {
                 if (!method1058) {
@@ -260,9 +260,9 @@ public class Class7482
     }
     
     public static void method23152() {
-        final double field2395 = Class7482.field28903.field4684.posX;
-        final double field2396 = Class7482.field28903.field4684.posY;
-        final double field2397 = Class7482.field28903.field4684.posZ;
+        final double field2395 = Class7482.field28903.player.posX;
+        final double field2396 = Class7482.field28903.player.posY;
+        final double field2397 = Class7482.field28903.player.posZ;
         for (int i = 0; i < 49 + method23140() * 17; ++i) {
             Class7482.field28903.method5269().method17292(new Class4354(field2395, field2396 + 0.06248, field2397, false));
             Class7482.field28903.method5269().method17292(new Class4354(field2395, field2396, field2397, false));

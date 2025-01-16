@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Objects;
 
-public abstract class Class573 extends Class565 implements Class563, IGuiEventListener
+public abstract class Widget extends AbstractGui implements IRenderable, IGuiEventListener
 {
     public static final ResourceLocation field3421;
     private static final int field3422 = 750;
@@ -26,11 +26,11 @@ public abstract class Class573 extends Class565 implements Class563, IGuiEventLi
     public long field3434;
     private boolean field3435;
     
-    public Class573(final int n, final int n2, final String s) {
+    public Widget(final int n, final int n2, final String s) {
         this(n, n2, 200, 20, s);
     }
     
-    public Class573(final int field3426, final int field3427, final int field3428, final int field3429, final String field3430) {
+    public Widget(final int field3426, final int field3427, final int field3428, final int field3429, final String field3430) {
         this.field3431 = true;
         this.field3432 = true;
         this.field3433 = 1.0f;
@@ -56,7 +56,7 @@ public abstract class Class573 extends Class565 implements Class563, IGuiEventLi
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         if (this.field3432) {
             boolean field3430 = false;
             Label_0070: {
@@ -112,17 +112,17 @@ public abstract class Class573 extends Class565 implements Class563, IGuiEventLi
     
     public void method3353(final int n, final int n2, final float n3) {
         final Minecraft method5277 = Minecraft.method5277();
-        final Class1844 field4643 = method5277.fontRenderer;
-        method5277.method5290().method5849(Class573.field3421);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, this.field3433);
+        final FontRenderer field4643 = method5277.fontRenderer;
+        method5277.method5290().method5849(Widget.field3421);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, this.field3433);
         final int method5278 = this.method3350(this.method3360());
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30013(Class2050.field11693, Class2135.field12460);
-        this.method3186(this.field3426, this.field3427, 0, 46 + method5278 * 20, this.field3424 / 2, this.field3425);
-        this.method3186(this.field3426 + this.field3424 / 2, this.field3427, 200 - this.field3424 / 2, 46 + method5278 * 20, this.field3424 / 2, this.field3425);
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.method30013(Class2050.field11693, Class2135.field12460);
+        this.blit(this.field3426, this.field3427, 0, 46 + method5278 * 20, this.field3424 / 2, this.field3425);
+        this.blit(this.field3426 + this.field3424 / 2, this.field3427, 200 - this.field3424 / 2, 46 + method5278 * 20, this.field3424 / 2, this.field3425);
         this.method3354(method5277, n, n2);
-        this.method3295(field4643, this.method3369(), this.field3426 + this.field3424 / 2, this.field3427 + (this.field3425 - 8) / 2, (this.field3431 ? 16777215 : 10526880) | MathHelper.ceil(this.field3433 * 255.0f) << 24);
+        this.drawCenteredString(field4643, this.method3369(), this.field3426 + this.field3424 / 2, this.field3427 + (this.field3425 - 8) / 2, (this.field3431 ? 16777215 : 10526880) | MathHelper.ceil(this.field3433 * 255.0f) << 24);
     }
     
     public void method3354(final Minecraft class869, final int n, final int n2) {

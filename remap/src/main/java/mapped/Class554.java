@@ -43,39 +43,39 @@ public class Class554 extends Screen
         this.field3329.clear();
         this.field3329.addAll(this.font.method6626(this.field3327.getFormattedText(), this.width - 50));
         final int n = (this.field3329.size() + 1) * 9;
-        this.method3029(new Class654(this.width / 2 - 155, 100 + n, 150, 20, this.field3331, class654 -> this.field3326.method10853(true, this.field3334.method3743())));
-        this.method3029(new Class654(this.width / 2 - 155 + 160, 100 + n, 150, 20, this.field3332, class654 -> this.field3326.method10853(false, this.field3334.method3743())));
-        this.method3029(new Class654(this.width / 2 - 155 + 80, 124 + n, 150, 20, this.field3333, class654 -> this.minecraft.method5244(this.field3325)));
+        this.addButton(new Class654(this.width / 2 - 155, 100 + n, 150, 20, this.field3331, class654 -> this.field3326.method10853(true, this.field3334.method3743())));
+        this.addButton(new Class654(this.width / 2 - 155 + 160, 100 + n, 150, 20, this.field3332, class654 -> this.field3326.method10853(false, this.field3334.method3743())));
+        this.addButton(new Class654(this.width / 2 - 155 + 80, 124 + n, 150, 20, this.field3333, class654 -> this.minecraft.displayGuiScreen(this.field3325)));
         this.field3334 = new Class682(this.width / 2 - 155 + 80, 76 + n, 150, 20, this.field3330, false);
         if (this.field3328) {
-            this.method3029(this.field3334);
+            this.addButton(this.field3334);
         }
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 50, 16777215);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 50, 16777215);
         int n4 = 70;
         final Iterator<String> iterator = this.field3329.iterator();
         while (iterator.hasNext()) {
-            this.method3295(this.font, iterator.next(), this.width / 2, n4, 16777215);
+            this.drawCenteredString(this.font, iterator.next(), this.width / 2, n4, 16777215);
             n4 += 9;
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     @Override
-    public boolean method2989() {
+    public boolean shouldCloseOnEsc() {
         return false;
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (n != 256) {
-            return super.keyPressed(n, n2, n3);
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (keyCode != 256) {
+            return super.keyPressed(keyCode, n2, n3);
         }
-        this.minecraft.method5244(this.field3325);
+        this.minecraft.displayGuiScreen(this.field3325);
         return true;
     }
 }

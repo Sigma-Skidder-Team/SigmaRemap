@@ -22,7 +22,7 @@ public class Class4166 extends Class4158<Class495>
         this.field18566.method18633(class9551);
     }
     
-    public void method12474(final Class495 class495, final float n, final Class7351 class496, final Class7807 class497, final int n2, final int n3) {
+    public void method12474(final Class495 class495, final float n, final MatrixStack class496, final IRenderTypeBuffer class497, final int n2, final int n3) {
         final float n4 = class495.field2843 + n;
         float field25183 = 0.0f;
         float field25184 = 0.0f;

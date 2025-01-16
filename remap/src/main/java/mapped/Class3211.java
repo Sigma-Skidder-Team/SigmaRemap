@@ -68,7 +68,7 @@ public class Class3211 extends Class3167
             this.field15649.clear();
             this.field15648 -= (int)this.field15648;
             int n = 0;
-            final Entity class5744 = (Class3211.field15514.field4684.method1920() == null) ? Class3211.field15514.field4684 : Class3211.field15514.field4684.method1920();
+            final Entity class5744 = (Class3211.field15514.player.method1920() == null) ? Class3211.field15514.player : Class3211.field15514.player.method1920();
             final Iterator iterator = method10094.iterator();
             while (iterator.hasNext()) {
                 final Entity method10095 = ((Class8131)iterator.next()).method26798();
@@ -87,7 +87,7 @@ public class Class3211 extends Class3167
     }
     
     public void method10092(final List<Class9407> list, final boolean b) {
-        final Entity method1920 = Class3211.field15514.field4684.method1920();
+        final Entity method1920 = Class3211.field15514.player.method1920();
         Class9407 class9407 = null;
         final Iterator<Class9407> iterator = list.iterator();
         while (iterator.hasNext()) {
@@ -100,7 +100,7 @@ public class Class3211 extends Class3167
                 method1920.posY = class9408.method34994();
                 method1920.posZ = class9408.method34995() + 0.5;
                 Class3211.field15514.method5269().method17292(new Class4302(false, false));
-                Class3211.field15514.method5269().method17292(new Class4356(Class3211.field15514.field4684.rotationYaw, Class3211.field15514.field4684.rotationPitch, false));
+                Class3211.field15514.method5269().method17292(new Class4356(Class3211.field15514.player.rotationYaw, Class3211.field15514.player.rotationPitch, false));
                 Class3211.field15514.method5269().method17292(new Class4254(0.0f, 1.0f, false, false));
                 final Class423 class9409 = new Class423(Class3211.field15514.world, class9408.method34993() + 0.5, class9408.method34994(), class9408.method34995() + 0.5);
                 class9409.rotationYaw = method1920.rotationYaw;
@@ -159,12 +159,12 @@ public class Class3211 extends Class3167
         final Iterator iterator2 = list.iterator();
         while (iterator2.hasNext()) {
             final Entity method26798 = ((Class8131)iterator2.next()).method26798();
-            if (method26798 != Class3211.field15514.field4684) {
+            if (method26798 != Class3211.field15514.player) {
                 if (!Class9463.method35173().method35190().method29878(method26798)) {
                     if (method26798 instanceof LivingEntity) {
                         if (((LivingEntity)method26798).method2664() != 0.0f) {
-                            if (Class3211.field15514.field4684.method1732(method26798) <= n) {
-                                if (Class3211.field15514.field4684.method2646((LivingEntity)method26798)) {
+                            if (Class3211.field15514.player.method1732(method26798) <= n) {
+                                if (Class3211.field15514.player.method2646((LivingEntity)method26798)) {
                                     if (!(method26798 instanceof Class857)) {
                                         if (!this.method9883("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
@@ -178,7 +178,7 @@ public class Class3211 extends Class3167
                                         else if (!this.method9883("Animals/Monsters") && !(method26798 instanceof PlayerEntity)) {
                                             iterator2.remove();
                                         }
-                                        else if (Class3211.field15514.field4684.method1920() != null && Class3211.field15514.field4684.method1920().equals(method26798)) {
+                                        else if (Class3211.field15514.player.method1920() != null && Class3211.field15514.player.method1920().equals(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!method26798.method1850()) {
@@ -231,8 +231,8 @@ public class Class3211 extends Class3167
     
     public boolean method10095() {
         if (this.field15647) {
-            if (Minecraft.method5277().field4684.getHeldItemMainhand() != null) {
-                if (Minecraft.method5277().field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
+            if (Minecraft.method5277().player.getHeldItemMainhand() != null) {
+                if (Minecraft.method5277().player.getHeldItemMainhand().getItem() instanceof Class4077) {
                     return true;
                 }
             }

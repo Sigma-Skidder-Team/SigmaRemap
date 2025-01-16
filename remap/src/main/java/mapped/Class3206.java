@@ -185,13 +185,13 @@ public class Class3206 extends Class3167
     @Class6753
     @Class6763
     private void method10066(final Class5740 class5740) {
-        if (!this.method9906() || Class3206.field15514.field4684 == null) {
+        if (!this.method9906() || Class3206.field15514.player == null) {
             return;
         }
-        if (Minecraft.method5277().field4648.field23466) {
+        if (Minecraft.method5277().gameSettings.field23466) {
             return;
         }
-        if (!Minecraft.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().gameSettings.field23464) {
             this.method10067();
             final Iterator<Class8221> iterator = Class3206.field15642.iterator();
             while (iterator.hasNext()) {

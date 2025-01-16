@@ -14,10 +14,10 @@ public class Class3240 extends Class3167
     
     @Class6753
     private void method10233(final Class5717 class5717) {
-        if (this.method9906() && Class3240.field15514.field4684.method2688()) {
+        if (this.method9906() && Class3240.field15514.player.method2688()) {
             final boolean b = Class9367.method34762() >= Class7906.field32453.method25613() || Class3240.field15514.method5282() == null;
-            if (!Class3240.field15514.field4684.collidedHorizontally && (!Class3240.field15514.field4684.field2967 || !b)) {
-                if ((this.method9887("Down mode").equals("OnSneak") && Class3240.field15514.field4648.field23440.method1056()) || this.method9887("Down mode").equals("Always")) {
+            if (!Class3240.field15514.player.collidedHorizontally && (!Class3240.field15514.player.field2967 || !b)) {
+                if ((this.method9887("Down mode").equals("OnSneak") && Class3240.field15514.gameSettings.field23440.method1056()) || this.method9887("Down mode").equals("Always")) {
                     class5717.method16975(-this.method9886("Motion"));
                 }
             }

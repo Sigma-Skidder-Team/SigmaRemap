@@ -12,7 +12,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Map;
 
-public class Class572 extends Class565
+public class Class572 extends AbstractGui
 {
     private static String[] field3402;
     private final Minecraft field3403;
@@ -63,7 +63,7 @@ public class Class572 extends Class565
         this.field3405.method883(this, n, n2, b, this.field3406);
     }
     
-    public void method3340(final int n, final int n2, final Class1796 class1796) {
+    public void method3340(final int n, final int n2, final ItemRenderer class1796) {
         this.field3405.method884(n, n2, this.field3406, class1796, this.field3409);
     }
     
@@ -73,16 +73,16 @@ public class Class572 extends Class565
             this.field3414 = 56 - (this.field3418 + this.field3416) / 2;
             this.field3420 = true;
         }
-        Class8726.method30059();
-        Class8726.method30008();
-        Class8726.method30065(0.0f, 0.0f, 950.0f);
-        Class8726.method30049(false, false, false, false);
-        Class565.method3293(4680, 2260, -4680, -2260, -16777216);
-        Class8726.method30049(true, true, true, true);
-        Class8726.method30065(0.0f, 0.0f, -950.0f);
-        Class8726.method30009(518);
-        Class565.method3293(234, 113, 0, 0, -16777216);
-        Class8726.method30009(515);
+        RenderSystem.method30059();
+        RenderSystem.enableDepthTest();
+        RenderSystem.method30065(0.0f, 0.0f, 950.0f);
+        RenderSystem.method30049(false, false, false, false);
+        AbstractGui.fill(4680, 2260, -4680, -2260, -16777216);
+        RenderSystem.method30049(true, true, true, true);
+        RenderSystem.method30065(0.0f, 0.0f, -950.0f);
+        RenderSystem.method30009(518);
+        AbstractGui.fill(234, 113, 0, 0, -16777216);
+        RenderSystem.method30009(515);
         final ResourceLocation method22530 = this.field3408.method22530();
         if (method22530 == null) {
             this.field3403.method5290().method5849(Class1663.field9428);
@@ -96,26 +96,26 @@ public class Class572 extends Class565
         final int n2 = method22532 % 16;
         for (int i = -1; i <= 15; ++i) {
             for (int j = -1; j <= 8; ++j) {
-                Class565.method3188(n + 16 * i, n2 + 16 * j, 0.0f, 0.0f, 16, 16, 16, 16);
+                AbstractGui.blit(n + 16 * i, n2 + 16 * j, 0.0f, 0.0f, 16, 16, 16, 16);
             }
         }
         this.field3411.method3746(method22531, method22532, true);
         this.field3411.method3746(method22531, method22532, false);
         this.field3411.method3747(method22531, method22532);
-        Class8726.method30009(518);
-        Class8726.method30065(0.0f, 0.0f, -950.0f);
-        Class8726.method30049(false, false, false, false);
-        Class565.method3293(4680, 2260, -4680, -2260, -16777216);
-        Class8726.method30049(true, true, true, true);
-        Class8726.method30065(0.0f, 0.0f, 950.0f);
-        Class8726.method30009(515);
-        Class8726.method30060();
+        RenderSystem.method30009(518);
+        RenderSystem.method30065(0.0f, 0.0f, -950.0f);
+        RenderSystem.method30049(false, false, false, false);
+        AbstractGui.fill(4680, 2260, -4680, -2260, -16777216);
+        RenderSystem.method30049(true, true, true, true);
+        RenderSystem.method30065(0.0f, 0.0f, 950.0f);
+        RenderSystem.method30009(515);
+        RenderSystem.method30060();
     }
     
     public void method3342(final int n, final int n2, final int n3, final int n4) {
-        Class8726.method30059();
-        Class8726.method30065(0.0f, 0.0f, 200.0f);
-        Class565.method3293(0, 0, 234, 113, MathHelper.method35642(this.field3419 * 255.0f) << 24);
+        RenderSystem.method30059();
+        RenderSystem.method30065(0.0f, 0.0f, 200.0f);
+        AbstractGui.fill(0, 0, 234, 113, MathHelper.method35642(this.field3419 * 255.0f) << 24);
         int n5 = 0;
         final int method35644 = MathHelper.floor(this.field3413);
         final int method35645 = MathHelper.floor(this.field3414);
@@ -135,7 +135,7 @@ public class Class572 extends Class565
                 }
             }
         }
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (n5 == 0) {
             this.field3419 = MathHelper.clamp(this.field3419 - 0.04f, 0.0f, 1.0f);
         }

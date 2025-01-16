@@ -38,11 +38,11 @@ public interface Class4150 extends Class4152
         return false;
     }
     
-    Class4150 method12432(final double p0, final double p1, final double p2);
+    Class4150 pos(final double p0, final double p1, final double p2);
     
     Class4150 method12399(final int p0, final int p1, final int p2, final int p3);
     
-    Class4150 method12391(final float p0, final float p1);
+    Class4150 tex(final float p0, final float p1);
     
     Class4150 method12433(final int p0, final int p1);
     
@@ -50,19 +50,19 @@ public interface Class4150 extends Class4152
     
     Class4150 method12436(final float p0, final float p1, final float p2);
     
-    void method12397();
+    void endVertex();
     
     default void method12400(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final int n10, final int n11, final float n12, final float n13, final float n14) {
-        this.method12432(n, n2, n3);
-        this.method12439(n4, n5, n6, n7);
-        this.method12391(n8, n9);
+        this.pos(n, n2, n3);
+        this.color(n4, n5, n6, n7);
+        this.tex(n8, n9);
         this.method12441(n10);
         this.method12440(n11);
         this.method12436(n12, n13, n14);
-        this.method12397();
+        this.endVertex();
     }
     
-    default Class4150 method12439(final float n, final float n2, final float n3, final float n4) {
+    default Class4150 color(final float n, final float n2, final float n3, final float n4) {
         return this.method12399((int)(n * 255.0f), (int)(n2 * 255.0f), (int)(n3 * 255.0f), (int)(n4 * 255.0f));
     }
     
@@ -86,12 +86,12 @@ public interface Class4150 extends Class4152
         final float n5 = (float)method12439.getX();
         final float n6 = (float)method12439.getY();
         final float n7 = (float)method12439.getZ();
-        final Matrix4f method12440 = class8996.method32111();
+        final Matrix4f method12440 = class8996.getMatrix();
         final Matrix3f method12441 = class8996.method32112();
         float n8 = method12441.getTransformX(n5, n6, n7);
         float n9 = method12441.getTransformY(n5, n6, n7);
         float n10 = method12441.getTransformZ(n5, n6, n7);
-        final int method12442 = Class9237.field39607.method34193();
+        final int method12442 = DefaultVertexFormats.field39607.method34193();
         for (int n11 = array3.length / method12442, i = 0; i < n11; ++i) {
             final int n12 = i * method12442;
             final float intBitsToFloat = Float.intBitsToFloat(array3[n12 + 0]);
@@ -141,18 +141,18 @@ public interface Class4150 extends Class4152
         }
     }
     
-    default Class4150 method12444(final Matrix4f class6789, final float n, final float n2, final float n3) {
-        return this.method12432(class6789.method20761(n, n2, n3, 1.0f), class6789.method20762(n, n2, n3, 1.0f), class6789.method20763(n, n2, n3, 1.0f));
+    default Class4150 pos(final Matrix4f class6789, final float n, final float n2, final float n3) {
+        return this.pos(class6789.method20761(n, n2, n3, 1.0f), class6789.method20762(n, n2, n3, 1.0f), class6789.method20763(n, n2, n3, 1.0f));
     }
     
     default Class4150 method12445(final Matrix3f class9429, final float n, final float n2, final float n3) {
         return this.method12436(class9429.getTransformX(n, n2, n3), class9429.getTransformY(n, n2, n3), class9429.getTransformZ(n, n2, n3));
     }
     
-    default void method12406(final Class1912 class1912) {
+    default void method12406(final TextureAtlasSprite class1912) {
     }
     
-    default void method12407(final Class1912 class1912) {
+    default void method12407(final TextureAtlasSprite class1912) {
     }
     
     default void method12412(final Class6332 class6332) {

@@ -14,24 +14,24 @@ public class Class9316
 {
     private static final ResourceLocation field40007;
     
-    public static void method34477(final Minecraft class869, final Class7351 class870) {
-        Class8726.method29998();
-        final Class756 field4684 = class869.field4684;
+    public static void method34477(final Minecraft class869, final MatrixStack class870) {
+        RenderSystem.disableAlphaTest();
+        final Class756 field4684 = class869.player;
         if (!field4684.noClip) {
             final BlockState method34478 = method34478(field4684);
             if (method34478 != null) {
                 method34479(class869, class869.method5305().method5787().method35427(method34478), class870);
             }
         }
-        if (!class869.field4684.isSpectator()) {
-            if (class869.field4684.method1720(Class7324.field28319)) {
+        if (!class869.player.isSpectator()) {
+            if (class869.player.method1720(Class7324.field28319)) {
                 method34480(class869, class870);
             }
-            if (class869.field4684.method1804()) {
+            if (class869.player.method1804()) {
                 method34481(class869, class870);
             }
         }
-        Class8726.method29999();
+        RenderSystem.enableAlphaTest();
     }
     
     @Nullable
@@ -47,55 +47,55 @@ public class Class9316
         return null;
     }
     
-    private static void method34479(final Minecraft class869, final Class1912 class870, final Class7351 class871) {
+    private static void method34479(final Minecraft class869, final TextureAtlasSprite class870, final MatrixStack class871) {
         if (Class7663.method24283()) {
             Class7663.method24285(class870);
         }
         class869.method5290().method5849(class870.method7504().method6340());
-        final Class4148 method22696 = Class7392.method22694().method22696();
+        final BufferBuilder method22696 = Tessellator.getInstance().getBuffer();
         final float method22697 = class870.method7497();
         final float method22698 = class870.method7498();
         final float method22699 = class870.method7500();
         final float method22700 = class870.method7501();
-        final Matrix4f method22701 = class871.method22569().method32111();
-        method22696.method12390(7, Class9237.field39618);
-        method22696.method12444(method22701, -1.0f, -1.0f, -0.5f).method12439(0.1f, 0.1f, 0.1f, 1.0f).method12391(method22698, method22700).method12397();
-        method22696.method12444(method22701, 1.0f, -1.0f, -0.5f).method12439(0.1f, 0.1f, 0.1f, 1.0f).method12391(method22697, method22700).method12397();
-        method22696.method12444(method22701, 1.0f, 1.0f, -0.5f).method12439(0.1f, 0.1f, 0.1f, 1.0f).method12391(method22697, method22699).method12397();
-        method22696.method12444(method22701, -1.0f, 1.0f, -0.5f).method12439(0.1f, 0.1f, 0.1f, 1.0f).method12391(method22698, method22699).method12397();
-        method22696.method12393();
-        Class8475.method28282(method22696);
+        final Matrix4f method22701 = class871.getLast().getMatrix();
+        method22696.begin(7, DefaultVertexFormats.field39618);
+        method22696.pos(method22701, -1.0f, -1.0f, -0.5f).color(0.1f, 0.1f, 0.1f, 1.0f).tex(method22698, method22700).endVertex();
+        method22696.pos(method22701, 1.0f, -1.0f, -0.5f).color(0.1f, 0.1f, 0.1f, 1.0f).tex(method22697, method22700).endVertex();
+        method22696.pos(method22701, 1.0f, 1.0f, -0.5f).color(0.1f, 0.1f, 0.1f, 1.0f).tex(method22697, method22699).endVertex();
+        method22696.pos(method22701, -1.0f, 1.0f, -0.5f).color(0.1f, 0.1f, 0.1f, 1.0f).tex(method22698, method22699).endVertex();
+        method22696.finishDrawing();
+        WorldVertexBufferUploader.draw(method22696);
     }
     
-    private static void method34480(final Minecraft class869, final Class7351 class870) {
+    private static void method34480(final Minecraft class869, final MatrixStack class870) {
         class869.method5290().method5849(Class9316.field40007);
         if (Class7663.method24283()) {
             Class7663.method24289(class869.method5290().method5853(Class9316.field40007).method5869());
         }
-        final Class4148 method22696 = Class7392.method22694().method22696();
-        final float method22697 = class869.field4684.method1726();
-        Class8726.method30011();
-        Class8726.method30117();
-        final float n = -class869.field4684.rotationYaw / 64.0f;
-        final float n2 = class869.field4684.rotationPitch / 64.0f;
-        final Matrix4f method22698 = class870.method22569().method32111();
-        method22696.method12390(7, Class9237.field39618);
-        method22696.method12444(method22698, -1.0f, -1.0f, -0.5f).method12439(method22697, method22697, method22697, 0.1f).method12391(4.0f + n, 4.0f + n2).method12397();
-        method22696.method12444(method22698, 1.0f, -1.0f, -0.5f).method12439(method22697, method22697, method22697, 0.1f).method12391(0.0f + n, 4.0f + n2).method12397();
-        method22696.method12444(method22698, 1.0f, 1.0f, -0.5f).method12439(method22697, method22697, method22697, 0.1f).method12391(0.0f + n, 0.0f + n2).method12397();
-        method22696.method12444(method22698, -1.0f, 1.0f, -0.5f).method12439(method22697, method22697, method22697, 0.1f).method12391(4.0f + n, 0.0f + n2).method12397();
-        method22696.method12393();
-        Class8475.method28282(method22696);
-        Class8726.method30012();
+        final BufferBuilder method22696 = Tessellator.getInstance().getBuffer();
+        final float method22697 = class869.player.method1726();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        final float n = -class869.player.rotationYaw / 64.0f;
+        final float n2 = class869.player.rotationPitch / 64.0f;
+        final Matrix4f method22698 = class870.getLast().getMatrix();
+        method22696.begin(7, DefaultVertexFormats.field39618);
+        method22696.pos(method22698, -1.0f, -1.0f, -0.5f).color(method22697, method22697, method22697, 0.1f).tex(4.0f + n, 4.0f + n2).endVertex();
+        method22696.pos(method22698, 1.0f, -1.0f, -0.5f).color(method22697, method22697, method22697, 0.1f).tex(0.0f + n, 4.0f + n2).endVertex();
+        method22696.pos(method22698, 1.0f, 1.0f, -0.5f).color(method22697, method22697, method22697, 0.1f).tex(0.0f + n, 0.0f + n2).endVertex();
+        method22696.pos(method22698, -1.0f, 1.0f, -0.5f).color(method22697, method22697, method22697, 0.1f).tex(4.0f + n, 0.0f + n2).endVertex();
+        method22696.finishDrawing();
+        WorldVertexBufferUploader.draw(method22696);
+        RenderSystem.disableBlend();
     }
     
-    private static void method34481(final Minecraft class869, final Class7351 class870) {
-        final Class4148 method22696 = Class7392.method22694().method22696();
-        Class8726.method30009(519);
-        Class8726.method30010(false);
-        Class8726.method30011();
-        Class8726.method30117();
-        final Class1912 method22697 = Class7637.field30238.method11332();
+    private static void method34481(final Minecraft class869, final MatrixStack class870) {
+        final BufferBuilder method22696 = Tessellator.getInstance().getBuffer();
+        RenderSystem.method30009(519);
+        RenderSystem.method30010(false);
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        final TextureAtlasSprite method22697 = Class7637.field30238.method11332();
         if (Class7663.method24283()) {
             Class7663.method24285(method22697);
         }
@@ -117,19 +117,19 @@ public class Class9316
             class870.method22567();
             class870.method22564(-(i * 2 - 1) * 0.24f, -0.30000001192092896, 0.0);
             class870.method22566(Vector3f.YP.rotationDegrees((i * 2 - 1) * 10.0f));
-            final Matrix4f method22707 = class870.method22569().method32111();
-            method22696.method12390(7, Class9237.field39618);
-            method22696.method12444(method22707, -0.5f, -0.5f, -0.5f).method12439(1.0f, 1.0f, 1.0f, class871.method17054()).method12391(method22704, method22706).method12397();
-            method22696.method12444(method22707, 0.5f, -0.5f, -0.5f).method12439(1.0f, 1.0f, 1.0f, class871.method17054()).method12391(method22703, method22706).method12397();
-            method22696.method12444(method22707, 0.5f, 0.5f, -0.5f).method12439(1.0f, 1.0f, 1.0f, class871.method17054()).method12391(method22703, method22705).method12397();
-            method22696.method12444(method22707, -0.5f, 0.5f, -0.5f).method12439(1.0f, 1.0f, 1.0f, class871.method17054()).method12391(method22704, method22705).method12397();
-            method22696.method12393();
-            Class8475.method28282(method22696);
+            final Matrix4f method22707 = class870.getLast().getMatrix();
+            method22696.begin(7, DefaultVertexFormats.field39618);
+            method22696.pos(method22707, -0.5f, -0.5f, -0.5f).color(1.0f, 1.0f, 1.0f, class871.method17054()).tex(method22704, method22706).endVertex();
+            method22696.pos(method22707, 0.5f, -0.5f, -0.5f).color(1.0f, 1.0f, 1.0f, class871.method17054()).tex(method22703, method22706).endVertex();
+            method22696.pos(method22707, 0.5f, 0.5f, -0.5f).color(1.0f, 1.0f, 1.0f, class871.method17054()).tex(method22703, method22705).endVertex();
+            method22696.pos(method22707, -0.5f, 0.5f, -0.5f).color(1.0f, 1.0f, 1.0f, class871.method17054()).tex(method22704, method22705).endVertex();
+            method22696.finishDrawing();
+            WorldVertexBufferUploader.draw(method22696);
             class870.method22568();
         }
-        Class8726.method30012();
-        Class8726.method30010(true);
-        Class8726.method30009(515);
+        RenderSystem.disableBlend();
+        RenderSystem.method30010(true);
+        RenderSystem.method30009(515);
     }
     
     static {

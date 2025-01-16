@@ -47,7 +47,7 @@ public class Class7657
                         else {
                             final String trim2 = method28911[0].trim();
                             final String trim3 = method28911[1].trim();
-                            final Class1912 method28912 = method28910.method6346("minecraft:block/" + trim2);
+                            final TextureAtlasSprite method28912 = method28910.method6346("minecraft:block/" + trim2);
                             if (method28912 == null) {
                                 Config.warn("Natural Textures: Texture not found: \"" + str + "\" line: " + trim);
                             }
@@ -88,7 +88,7 @@ public class Class7657
     }
     
     public static Class8754 method24259(final BlockPos class354, final Class8754 class355) {
-        final Class1912 method30295 = class355.method30295();
+        final TextureAtlasSprite method30295 = class355.method30295();
         if (method30295 == null) {
             return class355;
         }
@@ -111,8 +111,8 @@ public class Class7657
         return class355;
     }
     
-    public static Class9497 method24260(final Class1912 class1912) {
-        if (!(class1912 instanceof Class1912)) {
+    public static Class9497 method24260(final TextureAtlasSprite class1912) {
+        if (!(class1912 instanceof TextureAtlasSprite)) {
             return null;
         }
         final int method7513 = class1912.method7513();

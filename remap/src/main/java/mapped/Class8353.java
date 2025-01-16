@@ -25,7 +25,7 @@ public class Class8353
     }
     
     public static boolean method27876() {
-        return Class8353.field34280.field4684.onGround && Class8353.field34280.world.method6981(Class8353.field34280.field4684, Class8353.field34280.field4684.getBoundingBox().offset(0.0, 1.0, 0.0)).count() == 0L;
+        return Class8353.field34280.player.onGround && Class8353.field34280.world.method6981(Class8353.field34280.player, Class8353.field34280.player.getBoundingBox().offset(0.0, 1.0, 0.0)).count() == 0L;
     }
     
     static {

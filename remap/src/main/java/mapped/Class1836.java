@@ -14,7 +14,7 @@ public class Class1836 extends Class1799<Class802, Class5838<Class802>>
         this.field10019 = new Class5841<Class802>();
     }
     
-    public void method6605(final Class7351 class7351, final Class7807 class7352, final int n, final Class802 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6605(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class802 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (!class7353.method4636()) {
             if (!class7353.method1823()) {
                 float n12;

@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
-public class Class581 extends Class565 implements Class563, IGuiEventListener, Class586, Class587<Class120>
+public class Class581 extends AbstractGui implements IRenderable, IGuiEventListener, Class586, Class587<Class120>
 {
     public static final ResourceLocation field3462;
     private int field3463;
@@ -47,9 +47,9 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
         this.field3464 = field3464;
         this.field3465 = field3465;
         this.field3470 = class3426;
-        field3466.field4684.field3009 = class3426;
-        this.field3474 = field3466.field4684.method4122();
-        this.field3477 = field3466.field4684.field3006.method2373();
+        field3466.player.field3009 = class3426;
+        this.field3474 = field3466.player.method4122();
+        this.field3477 = field3466.player.field3006.method2373();
         if (this.method3421()) {
             this.method3416(b);
         }
@@ -61,7 +61,7 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
         final int n = (this.field3464 - 147) / 2 - this.field3463;
         final int n2 = (this.field3465 - 166) / 2;
         this.field3476.method15254();
-        this.field3471.field4684.field3006.method2379(this.field3476);
+        this.field3471.player.field3006.method2379(this.field3476);
         this.field3470.method10934(this.field3476);
         final String s = (this.field3472 == null) ? "" : this.field3472.method3378();
         (this.field3472 = new Class576(this.field3471.fontRenderer, n + 25, n2 + 14, 80, 14, Class8822.method30773("itemGroup.search", new Object[0]))).method3397(50);
@@ -183,38 +183,38 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
     
     public void method3426() {
         if (this.method3421()) {
-            if (this.field3477 != this.field3471.field4684.field3006.method2373()) {
+            if (this.field3477 != this.field3471.player.field3006.method2373()) {
                 this.method3427();
-                this.field3477 = this.field3471.field4684.field3006.method2373();
+                this.field3477 = this.field3471.player.field3006.method2373();
             }
         }
     }
     
     private void method3427() {
         this.field3476.method15254();
-        this.field3471.field4684.field3006.method2379(this.field3476);
+        this.field3471.player.field3006.method2379(this.field3476);
         this.field3470.method10934(this.field3476);
         this.method3424(false);
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         if (this.method3421()) {
-            Class8726.method30059();
-            Class8726.method30065(0.0f, 0.0f, 100.0f);
+            RenderSystem.method30059();
+            RenderSystem.method30065(0.0f, 0.0f, 100.0f);
             this.field3471.method5290().method5849(Class581.field3462);
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             final int n4 = (this.field3464 - 147) / 2 - this.field3463;
             final int n5 = (this.field3465 - 166) / 2;
-            this.method3186(n4, n5, 1, 1, 147, 166);
-            this.field3472.method2975(n, n2, n3);
+            this.blit(n4, n5, 1, 1, 147, 166);
+            this.field3472.render(n, n2, n3);
             final Iterator<Class646> iterator = this.field3467.iterator();
             while (iterator.hasNext()) {
-                iterator.next().method2975(n, n2, n3);
+                iterator.next().render(n, n2, n3);
             }
-            this.field3469.method2975(n, n2, n3);
+            this.field3469.render(n, n2, n3);
             this.field3475.method34153(n4, n5, n, n2, n3);
-            Class8726.method30060();
+            RenderSystem.method30060();
         }
     }
     
@@ -224,7 +224,7 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
             if (this.field3469.method3360()) {
                 final String method3429 = this.method3429();
                 if (this.field3471.field4700 != null) {
-                    this.field3471.field4700.method3031(method3429, n3, n4);
+                    this.field3471.field4700.renderTooltip(method3429, n3, n4);
                 }
             }
             this.method3430(n, n2, n3, n4);
@@ -253,7 +253,7 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
         }
         if (method26164 != null) {
             if (this.field3471.field4700 != null) {
-                this.field3471.field4700.method3032(this.field3471.field4700.method3030(method26164), n3, n4);
+                this.field3471.field4700.renderTooltip(this.field3471.field4700.getTooltipFromItem(method26164), n3, n4);
             }
         }
     }
@@ -264,7 +264,7 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
     
     @Override
     public boolean mouseClicked(final double n, final double n2, final int n3) {
-        if (!this.method3421() || this.field3471.field4684.isSpectator()) {
+        if (!this.method3421() || this.field3471.player.isSpectator()) {
             return false;
         }
         if (this.field3475.method34158(n, n2, n3, (this.field3464 - 147) / 2 - this.field3463, (this.field3465 - 166) / 2, 147, 166)) {
@@ -276,7 +276,7 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
                         return false;
                     }
                     this.field3466.method25520();
-                    this.field3471.field4682.method27325(this.field3471.field4684.field3009.field16154, method34155, Screen.method3047());
+                    this.field3471.field4682.method27325(this.field3471.player.field3009.field16154, method34155, Screen.hasShiftDown());
                     if (!this.method3436()) {
                         this.method3422(false);
                     }
@@ -360,7 +360,7 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
     @Override
     public boolean keyPressed(final int n, final int n2, final int n3) {
         this.field3478 = false;
-        if (!this.method3421() || this.field3471.field4684.isSpectator()) {
+        if (!this.method3421() || this.field3471.player.isSpectator()) {
             return false;
         }
         if (n == 256 && !this.method3436()) {
@@ -378,7 +378,7 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
                 }
             }
         }
-        if (this.field3471.field4648.field23448.method1066(n, n2) && !this.field3472.method3370()) {
+        if (this.field3471.gameSettings.field23448.method1066(n, n2) && !this.field3472.method3370()) {
             this.field3478 = true;
             this.field3472.method3395(true);
             return true;
@@ -397,7 +397,7 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
         if (this.field3478) {
             return false;
         }
-        if (!this.method3421() || this.field3471.field4684.isSpectator()) {
+        if (!this.method3421() || this.field3471.player.isSpectator()) {
             return false;
         }
         if (!this.field3472.charTyped(c, n)) {
@@ -429,10 +429,10 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
                 return;
             }
             method5295.method5844(method5296);
-            this.field3471.field4648.field23476 = method5296.getCode();
+            this.field3471.gameSettings.field23476 = method5296.getCode();
             this.field3471.method5241();
             this.field3471.fontRenderer.method6625(method5295.method5843());
-            this.field3471.field4648.method17121();
+            this.field3471.gameSettings.method17121();
         }
     }
     
@@ -451,7 +451,7 @@ public class Class581 extends Class565 implements Class563, IGuiEventListener, C
     public void method3438(final List<Class3662<?>> list) {
         final Iterator<Class3662<?>> iterator = list.iterator();
         while (iterator.hasNext()) {
-            this.field3471.field4684.method4123(iterator.next());
+            this.field3471.player.method4123(iterator.next());
         }
     }
     

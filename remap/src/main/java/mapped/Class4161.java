@@ -17,7 +17,7 @@ public class Class4161 extends Class4158<Class435>
         this.field18547 = new Class5917();
     }
     
-    public void method12466(final Class435 class435, final float n, final Class7351 class436, final Class7807 class437, final int n2, final int n3) {
+    public void method12466(final Class435 class435, final float n, final MatrixStack class436, final IRenderTypeBuffer class437, final int n2, final int n3) {
         final Class7096 method2194 = class435.method2194();
         if (method2194.method21772((IProperty<Boolean>)Class3930.field17800)) {
             class436.method22567();

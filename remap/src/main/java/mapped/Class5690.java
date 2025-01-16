@@ -26,10 +26,10 @@ public class Class5690 extends Class5611
     @Override
     public void method16934(final int n, final int n2, final float n3) {
         RealmsScreen.method15419("realms:textures/gui/realms/cross_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(this.method16929(), this.method16928(), 0.0f, this.method16923().method3360() ? 12.0f : 0.0f, 12, 12, 12, 24);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (this.method16923().isMouseOver(n, n2)) {
             Class5079.method15830(this.field23123, this.method16923().method3369());
         }

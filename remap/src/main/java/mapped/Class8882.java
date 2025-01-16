@@ -21,7 +21,7 @@ public class Class8882
         return this.field37366;
     }
     
-    public void method31266(final Class5853 class5853, final Class7351 class5854, final Class4150 class5855, final int n, final int n2) {
+    public void method31266(final Class5853 class5853, final MatrixStack class5854, final Class4150 class5855, final int n, final int n2) {
         Class7771.method24881(class5853, this.field37365);
         this.field37366.method18643(class5854, class5855, n, n2);
     }

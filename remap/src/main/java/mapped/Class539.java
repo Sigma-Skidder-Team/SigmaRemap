@@ -69,7 +69,7 @@ public class Class539 extends Screen
             return;
         });
         this.children.add(this.field3206);
-        this.field3219 = this.method3029(new Class668(this, this.width / 2 - 75, 115, 150, 20, Class8822.method30773("selectWorld.gameMode", new Object[0]), class654 -> {
+        this.field3219 = this.addButton(new Class668(this, this.width / 2 - 75, 115, 150, 20, Class8822.method30773("selectWorld.gameMode", new Object[0]), class654 -> {
             switch (Class9088.field38483[this.field3209.ordinal()]) {
                 case 1: {
                     this.method3108(Class1984.field10987);
@@ -89,12 +89,12 @@ public class Class539 extends Screen
         (this.field3207 = new Class576(this.font, this.width / 2 - 100, 60, 200, 20, Class8822.method30773("selectWorld.enterSeed", new Object[0]))).method3377(this.field3228);
         this.field3207.method3374(p0 -> this.field3228 = this.field3207.method3378());
         this.children.add(this.field3207);
-        this.field3221 = this.method3029(new Class672(this, this.width / 2 - 155, 100, 150, 20, Class8822.method30773("selectWorld.mapFeatures", new Object[0]), class654 -> {
+        this.field3221 = this.addButton(new Class672(this, this.width / 2 - 155, 100, 150, 20, Class8822.method30773("selectWorld.mapFeatures", new Object[0]), class654 -> {
             this.field3211 = !this.field3211;
             class654.method3368(250);
         }));
         this.field3221.field3432 = false;
-        this.field3223 = this.method3029(new Class670(this, this.width / 2 + 5, 100, 150, 20, Class8822.method30773("selectWorld.mapType", new Object[0]), class654 -> {
+        this.field3223 = this.addButton(new Class670(this, this.width / 2 + 5, 100, 150, 20, Class8822.method30773("selectWorld.mapType", new Object[0]), class654 -> {
             ++this.field3230;
             if (this.field3230 >= Class9505.field40891.length) {
                 this.field3230 = 0;
@@ -111,32 +111,32 @@ public class Class539 extends Screen
             class654.method3368(250);
         }));
         this.field3223.field3432 = false;
-        this.field3225 = this.method3029(new Class654(this.width / 2 + 5, 120, 150, 20, Class8822.method30773("selectWorld.customizeType", new Object[0]), class654 -> {
+        this.field3225 = this.addButton(new Class654(this.width / 2 + 5, 120, 150, 20, Class8822.method30773("selectWorld.customizeType", new Object[0]), class654 -> {
             if (Class9505.field40891[this.field3230] == Class9505.field40893) {
-                this.minecraft.method5244(new Class696(this, this.field3231));
+                this.minecraft.displayGuiScreen(new Class696(this, this.field3231));
             }
             if (Class9505.field40891[this.field3230] == Class9505.field40897) {
-                this.minecraft.method5244(new Class534(this, this.field3231));
+                this.minecraft.displayGuiScreen(new Class534(this, this.field3231));
             }
         }));
         this.field3225.field3432 = false;
-        this.field3224 = this.method3029(new Class656(this, this.width / 2 - 155, 151, 150, 20, Class8822.method30773("selectWorld.allowCommands", new Object[0]), class654 -> {
+        this.field3224 = this.addButton(new Class656(this, this.width / 2 - 155, 151, 150, 20, Class8822.method30773("selectWorld.allowCommands", new Object[0]), class654 -> {
             this.field3213 = true;
             this.field3212 = !this.field3212;
             class654.method3368(250);
         }));
         this.field3224.field3432 = false;
-        this.field3222 = this.method3029(new Class655(this, this.width / 2 + 5, 151, 150, 20, Class8822.method30773("selectWorld.bonusItems", new Object[0]), class654 -> {
+        this.field3222 = this.addButton(new Class655(this, this.width / 2 + 5, 151, 150, 20, Class8822.method30773("selectWorld.bonusItems", new Object[0]), class654 -> {
             this.field3214 = !this.field3214;
             class654.method3368(250);
         }));
         this.field3222.field3432 = false;
-        this.field3220 = this.method3029(new Class654(this.width / 2 - 75, 187, 150, 20, Class8822.method30773("selectWorld.moreWorldOptions", new Object[0]), class654 -> this.method3107()));
-        this.field3218 = this.method3029(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("selectWorld.create", new Object[0]), class654 -> this.method3105()));
+        this.field3220 = this.addButton(new Class654(this.width / 2 - 75, 187, 150, 20, Class8822.method30773("selectWorld.moreWorldOptions", new Object[0]), class654 -> this.method3107()));
+        this.field3218 = this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("selectWorld.create", new Object[0]), class654 -> this.method3105()));
         this.field3218.field3431 = !this.field3229.isEmpty();
-        this.method3029(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.method5244(this.field3205)));
+        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3205)));
         this.method3109(this.field3217);
-        this.method3476(this.field3206);
+        this.setFocusedDefault(this.field3206);
         this.method3108(this.field3209);
         this.method3104();
     }
@@ -191,7 +191,7 @@ public class Class539 extends Screen
     }
     
     private void method3105() {
-        this.minecraft.method5244(null);
+        this.minecraft.displayGuiScreen(null);
         if (!this.field3216) {
             this.field3216 = true;
             long nextLong = new Random().nextLong();
@@ -221,7 +221,7 @@ public class Class539 extends Screen
     
     private boolean method3106() {
         final Class9505 class9505 = Class9505.field40891[this.field3230];
-        return class9505 != null && class9505.method35407() && (class9505 != Class9505.field40898 || Screen.method3047());
+        return class9505 != null && class9505.method35407() && (class9505 != Class9505.field40898 || Screen.hasShiftDown());
     }
     
     private void method3107() {
@@ -282,11 +282,11 @@ public class Class539 extends Screen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (super.keyPressed(n, n2, n3)) {
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (super.keyPressed(keyCode, n2, n3)) {
             return true;
         }
-        if (n != 257 && n != 335) {
+        if (keyCode != 257 && keyCode != 335) {
             return false;
         }
         this.method3105();
@@ -294,9 +294,9 @@ public class Class539 extends Screen
     }
     
     @Override
-    public void method3028() {
+    public void onClose() {
         if (!this.field3217) {
-            this.minecraft.method5244(this.field3205);
+            this.minecraft.displayGuiScreen(this.field3205);
         }
         else {
             this.method3109(false);
@@ -304,31 +304,31 @@ public class Class539 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 20, -1);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 20, -1);
         if (!this.field3217) {
-            this.method3297(this.font, Class8822.method30773("selectWorld.enterName", new Object[0]), this.width / 2 - 100, 47, -6250336);
-            this.method3297(this.font, Class8822.method30773("selectWorld.resultFolder", new Object[0]) + " " + this.field3208, this.width / 2 - 100, 85, -6250336);
-            this.field3206.method2975(n, n2, n3);
-            this.method3295(this.font, this.field3226, this.width / 2, 137, -6250336);
-            this.method3295(this.font, this.field3227, this.width / 2, 149, -6250336);
+            this.drawString(this.font, Class8822.method30773("selectWorld.enterName", new Object[0]), this.width / 2 - 100, 47, -6250336);
+            this.drawString(this.font, Class8822.method30773("selectWorld.resultFolder", new Object[0]) + " " + this.field3208, this.width / 2 - 100, 85, -6250336);
+            this.field3206.render(n, n2, n3);
+            this.drawCenteredString(this.font, this.field3226, this.width / 2, 137, -6250336);
+            this.drawCenteredString(this.font, this.field3227, this.width / 2, 149, -6250336);
         }
         else {
-            this.method3297(this.font, Class8822.method30773("selectWorld.enterSeed", new Object[0]), this.width / 2 - 100, 47, -6250336);
-            this.method3297(this.font, Class8822.method30773("selectWorld.seedInfo", new Object[0]), this.width / 2 - 100, 85, -6250336);
+            this.drawString(this.font, Class8822.method30773("selectWorld.enterSeed", new Object[0]), this.width / 2 - 100, 47, -6250336);
+            this.drawString(this.font, Class8822.method30773("selectWorld.seedInfo", new Object[0]), this.width / 2 - 100, 85, -6250336);
             if (this.field3221.field3432) {
-                this.method3297(this.font, Class8822.method30773("selectWorld.mapFeatures.info", new Object[0]), this.width / 2 - 150, 122, -6250336);
+                this.drawString(this.font, Class8822.method30773("selectWorld.mapFeatures.info", new Object[0]), this.width / 2 - 150, 122, -6250336);
             }
             if (this.field3224.field3432) {
-                this.method3297(this.font, Class8822.method30773("selectWorld.allowCommands.info", new Object[0]), this.width / 2 - 150, 172, -6250336);
+                this.drawString(this.font, Class8822.method30773("selectWorld.allowCommands.info", new Object[0]), this.width / 2 - 150, 172, -6250336);
             }
-            this.field3207.method2975(n, n2, n3);
+            this.field3207.render(n, n2, n3);
             if (Class9505.field40891[this.field3230].method35412()) {
                 this.font.method6622(Class8822.method30773(Class9505.field40891[this.field3230].method35401(), new Object[0]), this.field3223.field3426 + 2, this.field3223.field3427 + 22, this.field3223.method3364(), 10526880);
             }
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     public void method3110(final WorldInfo class8660) {

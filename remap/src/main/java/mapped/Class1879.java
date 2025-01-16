@@ -46,7 +46,7 @@ public class Class1879 extends Class1880 implements AutoCloseable
     }
     
     public static void method7157(final int n, final int n2) {
-        Class8726.method30091(n, n2);
+        RenderSystem.method30091(n, n2);
     }
     
     public static int method7158(final int n, final CharSequence charSequence) {
@@ -223,19 +223,19 @@ public class Class1879 extends Class1880 implements AutoCloseable
         this.field10234.clear();
         switch (this.field10232) {
             case 0: {
-                Class8726.method30092(this.field10230, this.field10233);
+                RenderSystem.method30092(this.field10230, this.field10233);
                 break;
             }
             case 1: {
-                Class8726.method30093(this.field10230, this.field10233);
+                RenderSystem.method30093(this.field10230, this.field10233);
                 break;
             }
             case 2: {
-                Class8726.method30094(this.field10230, this.field10233);
+                RenderSystem.method30094(this.field10230, this.field10233);
                 break;
             }
             case 3: {
-                Class8726.method30095(this.field10230, this.field10233);
+                RenderSystem.method30095(this.field10230, this.field10233);
                 break;
             }
             default: {
@@ -249,19 +249,19 @@ public class Class1879 extends Class1880 implements AutoCloseable
         this.field10234.clear();
         switch (this.field10232) {
             case 4: {
-                Class8726.method30096(this.field10230, this.field10234);
+                RenderSystem.method30096(this.field10230, this.field10234);
                 break;
             }
             case 5: {
-                Class8726.method30097(this.field10230, this.field10234);
+                RenderSystem.method30097(this.field10230, this.field10234);
                 break;
             }
             case 6: {
-                Class8726.method30098(this.field10230, this.field10234);
+                RenderSystem.method30098(this.field10230, this.field10234);
                 break;
             }
             case 7: {
-                Class8726.method30099(this.field10230, this.field10234);
+                RenderSystem.method30099(this.field10230, this.field10234);
                 break;
             }
             default: {
@@ -275,15 +275,15 @@ public class Class1879 extends Class1880 implements AutoCloseable
         this.field10234.clear();
         switch (this.field10232) {
             case 8: {
-                Class8726.method30100(this.field10230, false, this.field10234);
+                RenderSystem.method30100(this.field10230, false, this.field10234);
                 break;
             }
             case 9: {
-                Class8726.method30101(this.field10230, false, this.field10234);
+                RenderSystem.method30101(this.field10230, false, this.field10234);
                 break;
             }
             case 10: {
-                Class8726.method30102(this.field10230, false, this.field10234);
+                RenderSystem.method30102(this.field10230, false, this.field10234);
                 break;
             }
         }

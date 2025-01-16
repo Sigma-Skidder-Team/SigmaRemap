@@ -31,7 +31,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         this.method13978(new Class1822<Class754, Class5860<Class754>>(this));
     }
     
-    public void method13993(final Class754 class754, final float n, final float n2, final Class7351 class755, final Class7807 class756, final int n3) {
+    public void method13993(final Class754 class754, final float n, final float n2, final MatrixStack class755, final IRenderTypeBuffer class756, final int n3) {
         this.method13995(class754);
         super.method13980(class754, n, n2, class755, class756, n3);
     }
@@ -125,11 +125,11 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         return class754.method4097();
     }
     
-    public void method13998(final Class754 class754, final Class7351 class755, final float n) {
+    public void method13998(final Class754 class754, final MatrixStack class755, final float n) {
         class755.method22565(0.9375f, 0.9375f, 0.9375f);
     }
     
-    public void method13999(final Class754 class754, final String s, final Class7351 class755, final Class7807 class756, final int n) {
+    public void method13999(final Class754 class754, final String s, final MatrixStack class755, final IRenderTypeBuffer class756, final int n) {
         final double method28715 = this.field20283.method28715(class754);
         class755.method22567();
         if (method28715 < 100.0) {
@@ -144,15 +144,15 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         class755.method22568();
     }
     
-    public void method14000(final Class7351 class7351, final Class7807 class7352, final int n, final Class754 class7353) {
+    public void method14000(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class754 class7353) {
         this.method14002(class7351, class7352, n, class7353, ((Class5860)this.field20301).field23996, ((Class5860)this.field20301).field24023);
     }
     
-    public void method14001(final Class7351 class7351, final Class7807 class7352, final int n, final Class754 class7353) {
+    public void method14001(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class754 class7353) {
         this.method14002(class7351, class7352, n, class7353, ((Class5860)this.field20301).field23997, ((Class5860)this.field20301).field24022);
     }
     
-    private void method14002(final Class7351 class7351, final Class7807 class7352, final int n, final Class754 class7353, final Class6300 class7354, final Class6300 class7355) {
+    private void method14002(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class754 class7353, final Class6300 class7354, final Class6300 class7355) {
         final Class5860 class7356 = ((Class4710<T, Class5860>)this).method13979();
         this.method13995(class7353);
         class7356.field23955 = 0.0f;
@@ -164,7 +164,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
         class7355.method18643(class7351, class7352.method25214(Class6332.method18773(class7353.method4097())), n, Class1904.field10335);
     }
     
-    public void method14003(final Class754 class754, final Class7351 class755, final float n, final float n2, final float n3) {
+    public void method14003(final Class754 class754, final MatrixStack class755, final float n, final float n2, final float n3) {
         final float method2623 = class754.method2623(n3);
         if (!class754.method2773()) {
             if (method2623 <= 0.0f) {

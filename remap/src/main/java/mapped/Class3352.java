@@ -32,7 +32,7 @@ public class Class3352 extends Class3167
             }
             else if (Class3352.field15514.field4682.method27336() != Class101.field299) {
                 if (this.field15977 != null) {
-                    if (Class3352.field15514.world.getBlockState(this.field15977).method21706() || Math.sqrt(Class3352.field15514.field4684.method1733(this.field15977.getX() + 0.5, this.field15977.getY() + 0.5, this.field15977.getZ() + 0.5)) > 6.0) {
+                    if (Class3352.field15514.world.getBlockState(this.field15977).method21706() || Math.sqrt(Class3352.field15514.player.method1733(this.field15977.getX() + 0.5, this.field15977.getY() + 0.5, this.field15977.getZ() + 0.5)) > 6.0) {
                         this.field15977 = this.field15978.get(0);
                     }
                     final float[] method30919 = Class8845.method30919(this.field15977.getX(), this.field15977.getZ(), this.field15977.getY());
@@ -41,7 +41,7 @@ public class Class3352 extends Class3167
                     Class9463.method35173().method35188().method21097(new Class5752(0, false, this.field15977));
                     Class3352.field15514.field4682.method27314(this.field15977, Class4609.method13710(this.field15977));
                     if (!this.method9883("NoSwing")) {
-                        Class3352.field15514.field4684.method2707(Class316.field1877);
+                        Class3352.field15514.player.method2707(Class316.field1877);
                     }
                     else {
                         Class3352.field15514.method5269().method17292(new Class4380(Class316.field1877));
@@ -55,7 +55,7 @@ public class Class3352 extends Class3167
                     Class9463.method35173().method35188().method21097(new Class5752(0, false, this.field15977));
                     Class3352.field15514.field4682.method27314(this.field15977, Class4609.method13710(this.field15977));
                     if (!this.method9883("NoSwing")) {
-                        Class3352.field15514.field4684.method2707(Class316.field1877);
+                        Class3352.field15514.player.method2707(Class316.field1877);
                     }
                     else {
                         Class3352.field15514.method5269().method17292(new Class4380(Class316.field1877));
@@ -66,7 +66,7 @@ public class Class3352 extends Class3167
                 for (final BlockPos class5745 : this.field15978) {
                     Class3352.field15514.method5269().method17292(new Class4399(Class2003.field11240, class5745, Class4609.method13710(class5745)));
                     if (!this.method9883("NoSwing")) {
-                        Class3352.field15514.field4684.method2707(Class316.field1877);
+                        Class3352.field15514.player.method2707(Class316.field1877);
                     }
                     else {
                         Class3352.field15514.method5269().method17292(new Class4380(Class316.field1877));
@@ -92,8 +92,8 @@ public class Class3352 extends Class3167
         for (float n2 = n + 2.0f; n2 >= -n + 1.0f; --n2) {
             for (float n3 = -n; n3 <= n; ++n3) {
                 for (float n4 = -n; n4 <= n; ++n4) {
-                    final BlockPos class354 = new BlockPos(Class3352.field15514.field4684.posX + n3, Class3352.field15514.field4684.posY + n2, Class3352.field15514.field4684.posZ + n4);
-                    if (!Class3352.field15514.world.getBlockState(class354).method21706() && Class3352.field15514.world.getBlockState(class354).method21756().method21781() && Math.sqrt(Class3352.field15514.field4684.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
+                    final BlockPos class354 = new BlockPos(Class3352.field15514.player.posX + n3, Class3352.field15514.player.posY + n2, Class3352.field15514.player.posZ + n4);
+                    if (!Class3352.field15514.world.getBlockState(class354).method21706() && Class3352.field15514.world.getBlockState(class354).method21756().method21781() && Math.sqrt(Class3352.field15514.player.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
                         final String method9887 = this.method9887("Mode");
                         switch (method9887) {
                             case "One hit": {

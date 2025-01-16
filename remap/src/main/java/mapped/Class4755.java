@@ -17,7 +17,7 @@ public class Class4755 extends Class4754
         return Class4755.field20378;
     }
     
-    public void method14092(final Class780 class780, final Class7351 class781, final float n) {
+    public void method14092(final Class780 class780, final MatrixStack class781, final float n) {
         class781.method22565(1.2f, 1.2f, 1.2f);
     }
     

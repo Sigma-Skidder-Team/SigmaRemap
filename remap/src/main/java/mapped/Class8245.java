@@ -32,7 +32,7 @@ public class Class8245
     
     public Class8245(final Minecraft field33863, final Class5799 field33864) {
         this.field33865 = new BlockPos(-1, -1, -1);
-        this.field33866 = ItemStack.field34174;
+        this.field33866 = ItemStack.EMPTY;
         this.field33871 = Class101.field298;
         this.field33872 = (Object2ObjectLinkedOpenHashMap<Pair<BlockPos, Class2003>, Class8104>)new Object2ObjectLinkedOpenHashMap();
         this.field33863 = field33863;
@@ -40,7 +40,7 @@ public class Class8245
     }
     
     public static void method27307(final Minecraft class869, final Class8245 class870, final BlockPos class871, final Direction class872) {
-        if (!class869.world.method6725(class869.field4684, class871, class872)) {
+        if (!class869.world.method6725(class869.player, class871, class872)) {
             class870.method27311(class871);
         }
     }
@@ -50,7 +50,7 @@ public class Class8245
     }
     
     public void method27309(final Class101 field33871) {
-        (this.field33871 = field33871).method588(this.field33863.field4684.field3025);
+        (this.field33871 = field33871).method588(this.field33863.player.field3025);
     }
     
     public boolean method27310() {
@@ -58,12 +58,12 @@ public class Class8245
     }
     
     public boolean method27311(final BlockPos class354) {
-        if (this.field33863.field4684.method2803(this.field33863.world, class354, this.field33871)) {
+        if (this.field33863.player.method2803(this.field33863.world, class354, this.field33871)) {
             return false;
         }
         final Class1848 field4683 = this.field33863.world;
         final BlockState method6701 = field4683.getBlockState(class354);
-        if (!this.field33863.field4684.getHeldItemMainhand().getItem().method11703(method6701, field4683, class354, this.field33863.field4684)) {
+        if (!this.field33863.player.getHeldItemMainhand().getItem().method11703(method6701, field4683, class354, this.field33863.player)) {
             return false;
         }
         final Block method6702 = method6701.getBlock();
@@ -75,12 +75,12 @@ public class Class8245
                     }
                 }
             }
-            if (!this.field33863.field4684.method2908()) {
+            if (!this.field33863.player.method2908()) {
                 return false;
             }
         }
         if (!method6701.method21706()) {
-            method6702.method11870(field4683, class354, method6701, this.field33863.field4684);
+            method6702.method11870(field4683, class354, method6701, this.field33863.player);
             final boolean method6703 = field4683.setBlockState(class354, field4683.getFluidState(class354).getBlockState(), 11);
             if (method6703) {
                 method6702.method11824(field4683, class354, method6701);
@@ -91,7 +91,7 @@ public class Class8245
     }
     
     public boolean method27312(final BlockPos field33865, final Direction class179) {
-        if (this.field33863.field4684.method2803(this.field33863.world, field33865, this.field33871)) {
+        if (this.field33863.player.method2803(this.field33863.world, field33865, this.field33871)) {
             return false;
         }
         if (this.field33863.world.getWorldBorder().contains(field33865)) {
@@ -106,19 +106,19 @@ public class Class8245
                     final boolean b = !method6701.method21706();
                     if (b) {
                         if (this.field33867 == 0.0f) {
-                            method6701.method21745(this.field33863.world, field33865, this.field33863.field4684);
+                            method6701.method21745(this.field33863.world, field33865, this.field33863.player);
                         }
                     }
-                    if (b && method6701.method21719(this.field33863.field4684, this.field33863.field4684.world, field33865) >= 1.0f) {
+                    if (b && method6701.method21719(this.field33863.player, this.field33863.player.world, field33865) >= 1.0f) {
                         this.method27311(field33865);
                     }
                     else {
                         this.field33870 = true;
                         this.field33865 = field33865;
-                        this.field33866 = this.field33863.field4684.getHeldItemMainhand();
+                        this.field33866 = this.field33863.player.getHeldItemMainhand();
                         this.field33867 = 0.0f;
                         this.field33868 = 0.0f;
-                        this.field33863.world.method6780(this.field33863.field4684.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
+                        this.field33863.world.method6780(this.field33863.player.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
                     }
                 }
             }
@@ -139,8 +139,8 @@ public class Class8245
             this.method27339(Class2003.field11241, this.field33865, Direction.DOWN);
             this.field33870 = false;
             this.field33867 = 0.0f;
-            this.field33863.world.method6780(this.field33863.field4684.getEntityId(), this.field33865, -1);
-            this.field33863.field4684.method2905();
+            this.field33863.world.method6780(this.field33863.player.getEntityId(), this.field33865, -1);
+            this.field33863.player.method2905();
         }
     }
     
@@ -162,7 +162,7 @@ public class Class8245
         }
         final BlockState method6701 = this.field33863.world.getBlockState(class354);
         if (!method6701.method21706()) {
-            this.field33867 += method6701.method21719(this.field33863.field4684, this.field33863.field4684.world, class354);
+            this.field33867 += method6701.method21719(this.field33863.player, this.field33863.player.world, class354);
             if (this.field33868 % 4.0f == 0.0f) {
                 final SoundType method6702 = method6701.getSoundType();
                 this.field33863.method5299().method6422(new Class6836(method6702.method24482(), Class286.field1582, (method6702.method24477() + 1.0f) / 8.0f, method6702.method24478() * 0.5f, class354));
@@ -177,7 +177,7 @@ public class Class8245
                 this.field33868 = 0.0f;
                 this.field33869 = 5;
             }
-            this.field33863.world.method6780(this.field33863.field4684.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
+            this.field33863.world.method6780(this.field33863.player.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
             return true;
         }
         return this.field33870 = false;
@@ -198,7 +198,7 @@ public class Class8245
     }
     
     private boolean method27317(final BlockPos class354) {
-        final ItemStack method2713 = this.field33863.field4684.getHeldItemMainhand();
+        final ItemStack method2713 = this.field33863.player.getHeldItemMainhand();
         int n = (this.field33866.method27620() && method2713.method27620()) ? 1 : 0;
         if (!this.field33866.method27620()) {
             if (!method2713.method27620()) {
@@ -221,7 +221,7 @@ public class Class8245
     }
     
     public void method27318() {
-        final int field2743 = this.field33863.field4684.field3006.field2743;
+        final int field2743 = this.field33863.player.field3006.field2743;
         if (field2743 != this.field33873) {
             this.field33873 = field2743;
             this.field33864.method17292(new Class4321(this.field33873));
@@ -358,7 +358,7 @@ public class Class8245
     }
     
     public boolean method27334() {
-        return this.field33863.field4684.isPassenger() && this.field33863.field4684.method1920() instanceof Class806;
+        return this.field33863.player.isPassenger() && this.field33863.player.method1920() instanceof Class806;
     }
     
     public boolean method27335() {
@@ -378,7 +378,7 @@ public class Class8245
     }
     
     public void method27339(final Class2003 class2003, final BlockPos class2004, final Direction class2005) {
-        final Class756 field4684 = this.field33863.field4684;
+        final Class756 field4684 = this.field33863.player;
         this.field33872.put((Object)Pair.of((Object)class2004, (Object)class2003), (Object)new Class8104(field4684.method1934(), field4684.rotationPitch, field4684.rotationYaw));
         this.field33864.method17292(new Class4399(class2003, class2004, class2005));
     }
@@ -410,7 +410,7 @@ public class Class8245
                 continue;
             }
             final Vec3d method26627 = class1852.method26627();
-            this.field33863.field4684.method1728(method26627.x, method26627.y, method26627.z, class1852.method26629(), class1852.method26628());
+            this.field33863.player.method1728(method26627.x, method26627.y, method26627.z, class1852.method26629(), class1852.method26628());
             continue;
         }
     }

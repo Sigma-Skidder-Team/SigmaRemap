@@ -18,9 +18,9 @@ public abstract class Class1820<T extends LivingEntity, M extends Class5860<T>> 
     
     public abstract int method6585(final T p0);
     
-    public abstract void method6586(final Class7351 p0, final Class7807 p1, final int p2, final Entity p3, final float p4, final float p5, final float p6, final float p7);
+    public abstract void method6586(final MatrixStack p0, final IRenderTypeBuffer p1, final int p2, final Entity p3, final float p4, final float p5, final float p6, final float p7);
     
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final int method6585 = this.method6585(t);
         final Random random = new Random(t.getEntityId());
         if (method6585 > 0) {

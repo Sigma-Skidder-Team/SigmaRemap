@@ -69,19 +69,19 @@ public class Class713 extends Class698
                             class5602 = new Class675(n + i, n8, n9, n10, n5, class5601, method33727);
                         }
                         class5602.field3431 = class5601.method16872();
-                        this.method3029(class5602);
+                        this.addButton(class5602);
                     }
                 }
             }
         }
-        this.method3029(new Class673(201, this.width / 2 - n4 - 20, this.height / 6 + 168 + 11, n4, n5, Class8822.method30773("controls.reset", new Object[0])));
-        this.method3029(new Class673(200, this.width / 2 + 20, this.height / 6 + 168 + 11, n4, n5, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(201, this.width / 2 - n4 - 20, this.height / 6 + 168 + 11, n4, n5, Class8822.method30773("controls.reset", new Object[0])));
+        this.addButton(new Class673(200, this.width / 2 + 20, this.height / 6 + 168 + 11, n4, n5, Class8822.method30773("gui.done", new Object[0])));
     }
     
     public static String method3931(final Class5601 class5601, final int n) {
         String s = class5601.method16858();
         if (!(class5601 instanceof Class5600)) {
-            for (Class1844 field4643 = Config.method28894().fontRenderer; field4643.method6617(s) + (field4643.method6617(": " + Class4647.method13879()) + 5) >= n && s.length() > 0; s = s.substring(0, s.length() - 1)) {}
+            for (FontRenderer field4643 = Config.method28894().fontRenderer; field4643.getStringWidth(s) + (field4643.getStringWidth(": " + Class4647.method13879()) + 5) >= n && s.length() > 0; s = s.substring(0, s.length() - 1)) {}
             return s + ": " + (class5601.method16874() ? class5601.method16879(class5601.method16863()) : "") + class5601.method16878(class5601.method16863());
         }
         final Class5600 class5602 = (Class5600)class5601;
@@ -89,7 +89,7 @@ public class Class713 extends Class698
     }
     
     @Override
-    public void method3896(final Class573 class573) {
+    public void method3896(final Widget class573) {
         if (class573 instanceof Class673) {
             final Class673 class574 = (Class673)class573;
             if (class574.field3431) {
@@ -98,10 +98,10 @@ public class Class713 extends Class698
                         final Class674 class575 = (Class674)class574;
                         final Class5601 method3736 = class575.method3736();
                         if (method3736 instanceof Class5600) {
-                            this.minecraft.method5244(new Class713(this, this.field3892, method3736.method16860()));
+                            this.minecraft.displayGuiScreen(new Class713(this, this.field3892, method3736.method16860()));
                             return;
                         }
-                        if (!Screen.method3047()) {
+                        if (!Screen.hasShiftDown()) {
                             if (class575.method3738()) {
                                 method3736.method16867();
                             }
@@ -127,7 +127,7 @@ public class Class713 extends Class698
                         this.field3896 = false;
                         Class9216.method33788();
                     }
-                    this.minecraft.method5244(this.field3891);
+                    this.minecraft.displayGuiScreen(this.field3891);
                 }
             }
         }
@@ -144,11 +144,11 @@ public class Class713 extends Class698
     }
     
     @Override
-    public void method3897(final Class573 class573) {
+    public void method3897(final Widget class573) {
         if (class573 instanceof Class674) {
             final Class674 class574 = (Class674)class573;
             final Class5601 method3736 = class574.method3736();
-            if (!Screen.method3047()) {
+            if (!Screen.hasShiftDown()) {
                 if (class574.method3738()) {
                     method3736.method16868();
                 }
@@ -162,7 +162,7 @@ public class Class713 extends Class698
     }
     
     private void method3932() {
-        for (final Class573 class573 : this.field3842) {
+        for (final Widget class573 : this.field3842) {
             if (!(class573 instanceof Class674)) {
                 continue;
             }
@@ -177,15 +177,15 @@ public class Class713 extends Class698
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         if (this.field3895 == null) {
-            this.method3295(this.field3843, this.field3148.getFormattedText(), this.width / 2, 15, 16777215);
+            this.drawCenteredString(this.field3843, this.title.getFormattedText(), this.width / 2, 15, 16777215);
         }
         else {
-            this.method3295(this.field3843, this.field3895, this.width / 2, 15, 16777215);
+            this.drawCenteredString(this.field3843, this.field3895, this.width / 2, 15, 16777215);
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
         this.field3893.method27577(n, n2, this.field3842);
     }
 }

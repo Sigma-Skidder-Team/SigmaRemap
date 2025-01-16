@@ -277,7 +277,7 @@ public class Class4995
     }
     
     public static String method15170(final Screen class527) {
-        final ITextComponent method3026 = class527.method3026();
+        final ITextComponent method3026 = class527.getTitle();
         return (method3026 != null) ? method3026.getUnformattedComponentText() : null;
     }
     

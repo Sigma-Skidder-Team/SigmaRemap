@@ -18,12 +18,12 @@ public class Class6116 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         final Class1848 field4683 = this.field24829.world;
-        Class8726.method30059();
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30041();
+        RenderSystem.method30059();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.disableTexture();
         final BlockPos class7353 = new BlockPos(n, n2, n3);
         final LongOpenHashSet set = new LongOpenHashSet();
         for (final BlockPos class7354 : BlockPos.getAllInBoxMutable(class7353.add(-10, -10, -10), class7353.add(10, 10, 10))) {
@@ -38,7 +38,7 @@ public class Class6116 implements Class6113
             }
             Class7282.method22339(String.valueOf(method6992), class7354.getX() + 0.5, class7354.getY() + 0.25, class7354.getZ() + 0.5, method6993);
         }
-        Class8726.method30040();
-        Class8726.method30060();
+        RenderSystem.enableTexture();
+        RenderSystem.method30060();
     }
 }

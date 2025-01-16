@@ -18,11 +18,11 @@ public class Class3327 extends Class3167
             return;
         }
         final double method17049 = class5745.method17049();
-        if (Class6430.method19160(Class3327.field15514.field4684, 1.0E-4f) && !Class7482.method23142()) {
+        if (Class6430.method19160(Class3327.field15514.player, 1.0E-4f) && !Class7482.method23142()) {
             if (method17049 >= 0.625) {
-                final double field2395 = Class3327.field15514.field4684.posX;
-                final double field2396 = Class3327.field15514.field4684.posY;
-                final double field2397 = Class3327.field15514.field4684.posZ;
+                final double field2395 = Class3327.field15514.player.posX;
+                final double field2396 = Class3327.field15514.player.posY;
+                final double field2397 = Class3327.field15514.player.posZ;
                 if (method17049 >= 1.1) {
                     if (method17049 >= 1.6) {
                         if (method17049 >= 2.1) {
@@ -60,12 +60,12 @@ public class Class3327 extends Class3167
     
     @Class6753
     private void method10533(final Class5738 class5738) {
-        if (this.method9906() && Class3327.field15514.field4684 != null) {
+        if (this.method9906() && Class3327.field15514.player != null) {
             if (!class5738.method17027()) {
-                Class3327.field15514.field4684.stepHeight = this.method9886("Maximum heigh");
+                Class3327.field15514.player.stepHeight = this.method9886("Maximum heigh");
             }
             else {
-                Class3327.field15514.field4684.stepHeight = 0.5f;
+                Class3327.field15514.player.stepHeight = 0.5f;
             }
         }
     }

@@ -19,7 +19,7 @@ public class Class9509
         this.field40922 = field40922;
     }
     
-    public Class1912 method35427(final BlockState class7096) {
+    public TextureAtlasSprite method35427(final BlockState class7096) {
         return this.method35428(class7096).method18696();
     }
     

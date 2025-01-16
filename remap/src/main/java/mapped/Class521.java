@@ -25,7 +25,7 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
         this.field3117 = (this.width < 379);
         this.field3116.method3415(this.width, this.height, this.minecraft, this.field3117, this.field3077);
         this.field3079 = this.field3116.method3419(this.field3117, this.width, this.field3075);
-        this.method3029(new Class679(this.field3079 + 20, this.height / 2 - 49, 20, 18, 0, 0, 19, Class521.field3115, class654 -> {
+        this.addButton(new Class679(this.field3079 + 20, this.height / 2 - 49, 20, 18, 0, 0, 19, Class521.field3115, class654 -> {
             this.field3116.method3416(this.field3117);
             this.field3116.method3420();
             this.field3079 = this.field3116.method3419(this.field3117, this.width, this.field3075);
@@ -40,15 +40,15 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         if (this.field3116.method3421() && this.field3117) {
             this.method2976(n3, n, n2);
-            this.field3116.method2975(n, n2, n3);
+            this.field3116.render(n, n2, n3);
         }
         else {
-            this.field3116.method2975(n, n2, n3);
-            super.method2975(n, n2, n3);
+            this.field3116.render(n, n2, n3);
+            super.render(n, n2, n3);
             this.field3116.method3431(this.field3079, this.field3080, true, n3);
         }
         this.method2977(n, n2);
@@ -57,23 +57,23 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     
     @Override
     public void method2973(final int n, final int n2) {
-        final String method8461 = this.field3148.getFormattedText();
-        this.font.method6610(method8461, (float)(this.field3075 / 2 - this.font.method6617(method8461) / 2), 6.0f, 4210752);
+        final String method8461 = this.title.getFormattedText();
+        this.font.method6610(method8461, (float)(this.field3075 / 2 - this.font.getStringWidth(method8461) / 2), 6.0f, 4210752);
         this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override
     public void method2976(final float n, final int n2, final int n3) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.minecraft.method5290().method5849(this.field3118);
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
-        this.method3186(field3079, field3080, 0, 0, this.field3075, this.field3076);
+        this.blit(field3079, field3080, 0, 0, this.field3075, this.field3076);
         if (this.field3077.method10950()) {
             final int method10949 = this.field3077.method10949();
-            this.method3186(field3079 + 56, field3080 + 36 + 12 - method10949, 176, 12 - method10949, 14, method10949 + 1);
+            this.blit(field3079 + 56, field3080 + 36 + 12 - method10949, 176, 12 - method10949, 14, method10949 + 1);
         }
-        this.method3186(field3079 + 79, field3080 + 34, 176, 14, this.field3077.method10948() + 1, 16);
+        this.blit(field3079 + 79, field3080 + 34, 176, 14, this.field3077.method10948() + 1, 16);
     }
     
     @Override
@@ -88,8 +88,8 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        return !this.field3116.keyPressed(n, n2, n3) && super.keyPressed(n, n2, n3);
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        return !this.field3116.keyPressed(keyCode, n2, n3) && super.keyPressed(keyCode, n2, n3);
     }
     
     @Override

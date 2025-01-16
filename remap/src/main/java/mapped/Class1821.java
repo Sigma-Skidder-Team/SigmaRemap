@@ -25,7 +25,7 @@ public class Class1821<T extends LivingEntity, M extends Class5860<T>> extends C
     }
     
     @Override
-    public void method6586(final Class7351 class7351, final Class7807 class7352, final int n, final Entity class7353, final float n2, final float n3, final float n4, final float n5) {
+    public void method6586(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Entity class7353, final float n2, final float n3, final float n4, final float n5) {
         final float method35640 = MathHelper.method35640(n2 * n2 + n4 * n4);
         this.field10002 = new Class405(class7353.world, class7353.getPosX(), class7353.getPosY(), class7353.getPosZ());
         this.field10002.rotationYaw = (float)(Math.atan2(n2, n4) * 57.2957763671875);

@@ -34,9 +34,9 @@ public class Class3357 extends Class3355
         final String method9887 = this.method9887("Mode");
         switch (method9887) {
             case "Flying Enabled": {
-                final double field2395 = Class3357.field15514.field4684.posX;
-                final double field2396 = Class3357.field15514.field4684.posY;
-                final double field2397 = Class3357.field15514.field4684.posZ;
+                final double field2395 = Class3357.field15514.player.posX;
+                final double field2396 = Class3357.field15514.player.posY;
+                final double field2397 = Class3357.field15514.player.posZ;
                 double n2 = 0.0;
                 for (int i = 0; i < 200; ++i) {
                     n2 = i * 9;
@@ -93,8 +93,8 @@ public class Class3357 extends Class3355
                 break;
             }
             case "BrainFreeze": {
-                Class3357.field15514.method5269().method17292(new Class4354(Class3357.field15514.field4684.posX + 9999.0, Class3357.field15514.field4684.posY + 9999.0, Class3357.field15514.field4684.posZ + 9999.0, false));
-                Class3357.field15514.method5269().method17292(new Class4354(Class3357.field15514.field4684.posX, Class3357.field15514.field4684.getBoundingBox().minY, Class3357.field15514.field4684.posZ + 9999.0, Class3357.field15514.field4684.onGround));
+                Class3357.field15514.method5269().method17292(new Class4354(Class3357.field15514.player.posX + 9999.0, Class3357.field15514.player.posY + 9999.0, Class3357.field15514.player.posZ + 9999.0, false));
+                Class3357.field15514.method5269().method17292(new Class4354(Class3357.field15514.player.posX, Class3357.field15514.player.getBoundingBox().minY, Class3357.field15514.player.posZ + 9999.0, Class3357.field15514.player.onGround));
                 if (this.field15991++ >= 200) {
                     this.method9910();
                     Class9274.method34209("Trying to crash the server..");

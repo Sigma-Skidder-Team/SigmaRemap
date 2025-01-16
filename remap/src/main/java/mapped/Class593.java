@@ -6,18 +6,18 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public abstract class Class593<E extends Class593<E>> extends Class592<E> implements Class597
+public abstract class Class593<E extends Class593<E>> extends Class592<E> implements INestedGuiEventHandler
 {
     private IGuiEventListener field3497;
     private boolean field3498;
     
     @Override
-    public boolean method3468() {
+    public boolean isDragging() {
         return this.field3498;
     }
     
     @Override
-    public void method3469(final boolean field3498) {
+    public void setDragging(final boolean field3498) {
         this.field3498 = field3498;
     }
     
@@ -28,7 +28,7 @@ public abstract class Class593<E extends Class593<E>> extends Class592<E> implem
     
     @Nullable
     @Override
-    public IGuiEventListener method3471() {
+    public IGuiEventListener getFocused() {
         return this.field3497;
     }
 }

@@ -65,31 +65,31 @@ public class Class694 extends Screen
     }
     
     @Override
-    public boolean method2989() {
+    public boolean shouldCloseOnEsc() {
         return false;
     }
     
     @Override
     public void init() {
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
             this.field3819 = true;
             if (this.field3818 != null) {
                 this.field3818.method11181(new Class2259("connect.aborted", new Object[0]));
             }
-            this.minecraft.method5244(this.field3820);
+            this.minecraft.displayGuiScreen(this.field3820);
         }));
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         final long method27837 = Util.method27837();
         if (method27837 - this.field3822 > 2000L) {
             this.field3822 = method27837;
             NarratorChatListener.field32404.method25556(new Class2259("narrator.joining", new Object[0]).getString());
         }
-        this.method3295(this.font, this.field3821.getFormattedText(), this.width / 2, this.height / 2 - 50, 16777215);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.font, this.field3821.getFormattedText(), this.width / 2, this.height / 2 - 50, 16777215);
+        super.render(n, n2, n3);
     }
     
     static {

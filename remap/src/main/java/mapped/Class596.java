@@ -17,7 +17,7 @@ public class Class596 extends Class594
     public Class596(final Class607 field3507, final String s) {
         this.field3507 = field3507;
         this.field3505 = Class8822.method30773(s, new Object[0]);
-        this.field3506 = field3507.field3540.fontRenderer.method6617(this.field3505);
+        this.field3506 = field3507.field3540.fontRenderer.getStringWidth(this.field3505);
     }
     
     @Override

@@ -21,7 +21,7 @@ public class Class6429
         this.field25540 = class9140.copy();
     }
     
-    public void method19105(final boolean b, final Class7351 class7351) {
+    public void method19105(final boolean b, final MatrixStack class7351) {
         if (this != Class6429.field25537) {
             final float method33311 = this.field25538.getX();
             float method33312 = this.field25538.getY();

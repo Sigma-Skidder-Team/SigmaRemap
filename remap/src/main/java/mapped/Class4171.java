@@ -24,12 +24,12 @@ public class Class4171<T extends Class489> extends Class4158<T>
         super(class9550);
     }
     
-    public void method12489(final T t, final float n, final Class7351 class7351, final Class7807 class7352, final int n2, final int n3) {
+    public void method12489(final T t, final float n, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n2, final int n3) {
         if (!Config.method28955() || !Class7778.method24970(t, n, this.method12493(), class7351, class7352, n2, n3)) {
             Class4171.field18586.setSeed(31100L);
             final int method12492 = this.method12492(t.getPos().distanceSq(this.field18539.field41131.method18161(), true));
             final float method12493 = this.method12493();
-            final Matrix4f method12494 = class7351.method22569().method32111();
+            final Matrix4f method12494 = class7351.getLast().getMatrix();
             this.method12490(t, method12493, 0.15f, method12494, class7352.method25214(Class4171.field18587.get(0)));
             for (int i = 1; i < method12492; ++i) {
                 this.method12490(t, method12493, 2.0f / (18 - i), method12494, class7352.method25214(Class4171.field18587.get(i)));
@@ -51,10 +51,10 @@ public class Class4171<T extends Class489> extends Class4158<T>
     
     private void method12491(final T t, final Matrix4f class6789, final Class4150 class6790, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final float n10, final float n11, final Direction class6791) {
         if (t.method2444(class6791)) {
-            class6790.method12444(class6789, n, n3, n5).method12439(n9, n10, n11, 1.0f).method12397();
-            class6790.method12444(class6789, n2, n3, n6).method12439(n9, n10, n11, 1.0f).method12397();
-            class6790.method12444(class6789, n2, n4, n7).method12439(n9, n10, n11, 1.0f).method12397();
-            class6790.method12444(class6789, n, n4, n8).method12439(n9, n10, n11, 1.0f).method12397();
+            class6790.pos(class6789, n, n3, n5).color(n9, n10, n11, 1.0f).endVertex();
+            class6790.pos(class6789, n2, n3, n6).color(n9, n10, n11, 1.0f).endVertex();
+            class6790.pos(class6789, n2, n4, n7).color(n9, n10, n11, 1.0f).endVertex();
+            class6790.pos(class6789, n, n4, n8).color(n9, n10, n11, 1.0f).endVertex();
         }
     }
     

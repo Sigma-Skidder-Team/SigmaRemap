@@ -25,7 +25,7 @@ public class Class7298 implements Class7300
     }
     
     @Override
-    public String[] method22386(final Class573 class573, final int n) {
+    public String[] method22386(final Widget class573, final int n) {
         if (class573 instanceof Class659) {
             return method22387(((Class659)class573).method3709().method19366());
         }

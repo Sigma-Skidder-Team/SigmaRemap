@@ -185,7 +185,7 @@ public class Class1660 implements AutoCloseable, Class1657
         this.method5808();
         this.field9396.method1416();
         if (this.field9380.method5303() == null) {
-            this.field9380.method5304(this.field9380.field4684);
+            this.field9380.method5304(this.field9380.player);
         }
         this.field9411.method18155();
         ++this.field9387;
@@ -288,26 +288,26 @@ public class Class1660 implements AutoCloseable, Class1657
         if (!this.field9398) {
             double field23471 = 70.0;
             if (b) {
-                field23471 = this.field9380.field4648.field23471;
+                field23471 = this.field9380.gameSettings.field23471;
                 if (Config.method28974()) {
                     field23471 *= MathHelper.method35700(f, this.field9389, this.field9388);
                 }
             }
             boolean method1056 = false;
             if (this.field9380.field4700 == null) {
-                method1056 = this.field9380.field4648.field23563.method1056();
+                method1056 = this.field9380.gameSettings.field23563.method1056();
             }
             if (!method1056) {
                 if (Config.field36033) {
                     Config.field36033 = false;
-                    this.field9380.field4648.field23470 = false;
+                    this.field9380.gameSettings.field23470 = false;
                     this.field9380.field4636.method5755();
                 }
             }
             else {
                 if (!Config.field36033) {
                     Config.field36033 = true;
-                    this.field9380.field4648.field23470 = true;
+                    this.field9380.gameSettings.field23470 = true;
                     this.field9380.field4636.method5755();
                 }
                 if (Config.field36033) {
@@ -327,7 +327,7 @@ public class Class1660 implements AutoCloseable, Class1657
         return 90.0;
     }
     
-    private void method5810(final Class7351 class7351, final float n) {
+    private void method5810(final MatrixStack class7351, final float n) {
         if (this.field9380.method5303() instanceof LivingEntity) {
             final LivingEntity class7352 = (LivingEntity)this.field9380.method5303();
             final float n2 = class7352.field2938 - n;
@@ -346,7 +346,7 @@ public class Class1660 implements AutoCloseable, Class1657
         }
     }
     
-    private void method5811(final Class7351 class7351, final float n) {
+    private void method5811(final MatrixStack class7351, final float n) {
         if (this.field9380.method5303() instanceof PlayerEntity) {
             final PlayerEntity class7352 = (PlayerEntity)this.field9380.method5303();
             final float n2 = -(class7352.distanceWalkedModified + (class7352.distanceWalkedModified - class7352.prevDistanceWalkedModified) * n);
@@ -357,35 +357,35 @@ public class Class1660 implements AutoCloseable, Class1657
         }
     }
     
-    private void method5812(final Class7351 class7351, final Class6092 class7352, final float n) {
+    private void method5812(final MatrixStack class7351, final Class6092 class7352, final float n) {
         this.method5813(class7351, class7352, n, true, true, false);
     }
     
-    public void method5813(final Class7351 class7351, final Class6092 class7352, final float n, final boolean b, final boolean b2, final boolean b3) {
+    public void method5813(final MatrixStack class7351, final Class6092 class7352, final float n, final boolean b, final boolean b2, final boolean b3) {
         if (!this.field9398) {
             Class9216.method33914(true);
             this.method5814(this.method5815(class7352, n, false));
-            final Class8996 method22569 = class7351.method22569();
-            method22569.method32111().method20748();
+            final Class8996 method22569 = class7351.getLast();
+            method22569.getMatrix().method20748();
             method22569.method32112().setIdentity();
             boolean b4 = false;
             if (b) {
                 class7351.method22567();
                 this.method5810(class7351, n);
-                if (this.field9380.field4648.field23431) {
+                if (this.field9380.gameSettings.field23431) {
                     this.method5811(class7351, n);
                 }
                 b4 = (this.field9380.method5303() instanceof LivingEntity && ((LivingEntity)this.field9380.method5303()).method2783());
-                if (this.field9380.field4648.field23465 == 0) {
+                if (this.field9380.gameSettings.field23465 == 0) {
                     if (!b4) {
-                        if (!this.field9380.field4648.field23464) {
+                        if (!this.field9380.gameSettings.field23464) {
                             if (this.field9380.field4682.method27336() != Class101.field301) {
                                 this.field9396.method1418();
                                 if (!Config.method28955()) {
-                                    this.field9384.method35153(n, class7351, this.field9386.method11006(), this.field9380.field4684, this.field9380.method5306().method28695(this.field9380.field4684, n));
+                                    this.field9384.method35153(n, class7351, this.field9386.method11006(), this.field9380.player, this.field9380.method5306().method28695(this.field9380.player, n));
                                 }
                                 else {
-                                    Class7778.method24952(this.field9384, n, class7351, this.field9386.method11006(), this.field9380.field4684, this.field9380.method5306().method28695(this.field9380.field4684, n), b3);
+                                    Class7778.method24952(this.field9384, n, class7351, this.field9386.method11006(), this.field9380.player, this.field9380.method5306().method28695(this.field9380.player, n), b3);
                                 }
                                 this.field9396.method1417();
                             }
@@ -401,7 +401,7 @@ public class Class1660 implements AutoCloseable, Class1657
             this.field9396.method1417();
             final Class5746 class7353 = new Class5746();
             Class9463.method35173().method35188().method21097(class7353);
-            if (this.field9380.field4648.field23465 == 0) {
+            if (this.field9380.gameSettings.field23465 == 0) {
                 if (!b4) {
                     if (!class7353.method16962()) {
                         Class9316.method34477(this.field9380, class7351);
@@ -409,22 +409,22 @@ public class Class1660 implements AutoCloseable, Class1657
                     }
                 }
             }
-            if (this.field9380.field4648.field23431) {
+            if (this.field9380.gameSettings.field23431) {
                 this.method5811(class7351, n);
             }
         }
     }
     
     public void method5814(final Matrix4f class6789) {
-        Class8726.method30057(5889);
-        Class8726.method30058();
-        Class8726.method30067(class6789);
-        Class8726.method30057(5888);
+        RenderSystem.method30057(5889);
+        RenderSystem.method30058();
+        RenderSystem.method30067(class6789);
+        RenderSystem.method30057(5888);
     }
     
     public Matrix4f method5815(final Class6092 class6092, final float n, final boolean b) {
-        final Class7351 class6093 = new Class7351();
-        class6093.method22569().method32111().method20748();
+        final MatrixStack class6093 = new MatrixStack();
+        class6093.getLast().getMatrix().method20748();
         if (Config.method28955()) {
             if (Class9216.method33915()) {
                 Class9216.method33860(class6093);
@@ -438,8 +438,8 @@ public class Class1660 implements AutoCloseable, Class1657
             class6093.method22564(this.field9400, -this.field9401, 0.0);
             class6093.method22565(this.field9399, this.field9399, 1.0f);
         }
-        class6093.method22569().method32111().method20752(Matrix4f.method20755(this.method5809(class6092, n, b), this.field9380.method5332().method7692() / (float)this.field9380.method5332().method7693(), 0.05f, this.field9414));
-        return class6093.method22569().method32111();
+        class6093.getLast().getMatrix().method20752(Matrix4f.method20755(this.method5809(class6092, n, b), this.field9380.method5332().method7692() / (float)this.field9380.method5332().method7693(), 0.05f, this.field9414));
+        return class6093.getLast().getMatrix();
     }
     
     public static float method5816(final LivingEntity class511, final float n) {
@@ -449,7 +449,7 @@ public class Class1660 implements AutoCloseable, Class1657
     
     public void method5817(final float n, final long n2, final boolean b) {
         this.method5824();
-        if (!this.field9380.method5320() && this.field9380.field4648.field23395 && (!this.field9380.field4648.field23429 || !this.field9380.field4650.method26958())) {
+        if (!this.field9380.method5320() && this.field9380.gameSettings.field23395 && (!this.field9380.gameSettings.field23429 || !this.field9380.field4650.method26958())) {
             if (Util.method27837() - this.field9395 > 500L) {
                 this.field9380.method5255(false);
             }
@@ -460,7 +460,7 @@ public class Class1660 implements AutoCloseable, Class1657
         if (!this.field9380.field4699) {
             final int i = (int)(this.field9380.field4650.method26959() * this.field9380.method5332().method7696() / this.field9380.method5332().method7694());
             final int j = (int)(this.field9380.field4650.method26960() * this.field9380.method5332().method7697() / this.field9380.method5332().method7695());
-            final Class7351 class7351 = new Class7351();
+            final MatrixStack class7351 = new MatrixStack();
             if (b && this.field9380.world != null && !Config.method29020()) {
                 this.field9380.method5327().startSection("level");
                 Class9463.method35173().method35188().method21097(new Class5741(n, n2));
@@ -473,53 +473,53 @@ public class Class1660 implements AutoCloseable, Class1657
                 }
                 this.field9380.field4636.method5693();
                 if (this.field9406 != null && this.field9410) {
-                    Class8726.method30012();
-                    Class8726.method30007();
-                    Class8726.method29998();
-                    Class8726.method30040();
-                    Class8726.method30057(5890);
-                    Class8726.method30059();
-                    Class8726.method30058();
+                    RenderSystem.disableBlend();
+                    RenderSystem.disableDepthTest();
+                    RenderSystem.disableAlphaTest();
+                    RenderSystem.enableTexture();
+                    RenderSystem.method30057(5890);
+                    RenderSystem.method30059();
+                    RenderSystem.method30058();
                     this.field9406.method7247(n);
-                    Class8726.method30060();
+                    RenderSystem.method30060();
                 }
                 this.field9380.method5234().method18395(true);
             }
             else {
-                Class8726.method30048(0, 0, this.field9380.method5332().method7692(), this.field9380.method5332().method7693());
+                RenderSystem.method30048(0, 0, this.field9380.method5332().method7692(), this.field9380.method5332().method7693());
             }
             final Class1925 method5332 = this.field9380.method5332();
-            Class8726.method30056(256, Minecraft.field4623);
-            Class8726.method30057(5889);
-            Class8726.method30058();
-            Class8726.method30061(0.0, method5332.method7692() / method5332.method7700(), method5332.method7693() / method5332.method7700(), 0.0, 1000.0, 3000.0);
-            Class8726.method30057(5888);
-            Class8726.method30058();
-            Class8726.method30065(0.0f, 0.0f, -2000.0f);
+            RenderSystem.method30056(256, Minecraft.field4623);
+            RenderSystem.method30057(5889);
+            RenderSystem.method30058();
+            RenderSystem.method30061(0.0, method5332.method7692() / method5332.method7700(), method5332.method7693() / method5332.method7700(), 0.0, 1000.0, 3000.0);
+            RenderSystem.method30057(5888);
+            RenderSystem.method30058();
+            RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
             Class8317.method27612();
             if (this.field9396.method1429()) {
                 this.field9396.method1428(false);
             }
             if (b && this.field9380.world != null) {
                 this.field9380.method5327().method15300("gui");
-                if (!this.field9380.field4648.field23464 || this.field9380.field4700 != null) {
-                    Class8726.method30118();
+                if (!this.field9380.gameSettings.field23464 || this.field9380.field4700 != null) {
+                    RenderSystem.method30118();
                     this.method5830(this.field9380.method5332().method7696(), this.field9380.method5332().method7697(), n);
                     Class9463.method35173().method35181();
                     this.field9380.field4647.method3779(n);
-                    if (this.field9380.field4648.field23498 && !this.field9380.field4648.field23466) {
+                    if (this.field9380.gameSettings.field23498 && !this.field9380.gameSettings.field23466) {
                         Config.method28988();
                     }
-                    if (this.field9380.field4648.field23466) {
+                    if (this.field9380.gameSettings.field23466) {
                         Class9036.method32480((int)this.field9380.method5332().method7700());
                     }
-                    Class8726.method30056(256, Minecraft.field4623);
+                    RenderSystem.method30056(256, Minecraft.field4623);
                 }
                 this.field9380.method5327().endSection();
             }
-            Class8726.method30059();
+            RenderSystem.method30059();
             Class9463.method35173().method35183();
-            Class8726.method30060();
+            RenderSystem.method30060();
             if (this.field9422 != (this.field9380.field4701 != null)) {
                 if (this.field9380.field4701 != null) {
                     this.field9380.method5290().method5858(Config.field36042);
@@ -532,7 +532,7 @@ public class Class1660 implements AutoCloseable, Class1657
             Label_1050: {
                 if (this.field9380.field4701 != null) {
                     try {
-                        this.field9380.field4701.method2975(i, j, this.field9380.method5315());
+                        this.field9380.field4701.render(i, j, this.field9380.method5315());
                         break Label_1050;
                     }
                     catch (final Throwable t) {
@@ -547,7 +547,7 @@ public class Class1660 implements AutoCloseable, Class1657
                             Class9570.method35811(Class9570.field41284, this.field9380.field4700, i, j, this.field9380.method5315());
                         }
                         else {
-                            this.field9380.field4700.method2975(i, j, this.field9380.method5315());
+                            this.field9380.field4700.render(i, j, this.field9380.method5315());
                         }
                     }
                     catch (final Throwable t2) {
@@ -566,8 +566,8 @@ public class Class1660 implements AutoCloseable, Class1657
         this.method5823();
         Class7741.method24700();
         Class9036.method32479();
-        if (this.field9380.field4648.field23497) {
-            this.field9380.field4648.field23467 = true;
+        if (this.field9380.gameSettings.field23497) {
+            this.field9380.gameSettings.field23467 = true;
         }
     }
     
@@ -629,7 +629,7 @@ public class Class1660 implements AutoCloseable, Class1657
     private boolean method5819() {
         if (this.field9393) {
             final Entity method5303 = this.field9380.method5303();
-            boolean b = method5303 instanceof PlayerEntity && !this.field9380.field4648.field23464;
+            boolean b = method5303 instanceof PlayerEntity && !this.field9380.gameSettings.field23464;
             if (b) {
                 if (!((PlayerEntity)method5303).field3025.field27305) {
                     final ItemStack method5304 = ((LivingEntity)method5303).getHeldItemMainhand();
@@ -654,10 +654,10 @@ public class Class1660 implements AutoCloseable, Class1657
         return false;
     }
     
-    public void method5820(final float n, final long l, final Class7351 class7351) {
+    public void method5820(final float n, final long l, final MatrixStack class7351) {
         this.field9396.method1419(n);
         if (this.field9380.method5303() == null) {
-            this.field9380.method5304(this.field9380.field4684);
+            this.field9380.method5304(this.field9380.player);
         }
         this.method5807(n);
         if (Config.method28955()) {
@@ -671,27 +671,27 @@ public class Class1660 implements AutoCloseable, Class1657
         final boolean method28956 = this.method5819();
         this.field9380.method5327().method15300("camera");
         final Class6092 field9411 = this.field9411;
-        this.field9383 = (float)(this.field9380.field4648.field23382 * 16);
+        this.field9383 = (float)(this.field9380.gameSettings.field23382 * 16);
         if (Config.method28841()) {
             this.field9383 *= 0.95f;
         }
         if (Config.method28842()) {
             this.field9383 *= 0.83f;
         }
-        Class7351 class7352 = new Class7351();
-        class7352.method22569().method32111().method20752(this.method5815(field9411, n, true));
-        final Class7351 class7353 = class7352;
+        MatrixStack class7352 = new MatrixStack();
+        class7352.getLast().getMatrix().method20752(this.method5815(field9411, n, true));
+        final MatrixStack class7353 = class7352;
         if (Class9216.method33924()) {
             class7352 = class7351;
         }
         this.method5810(class7352, n);
-        if (this.field9380.field4648.field23431) {
+        if (this.field9380.gameSettings.field23431) {
             this.method5811(class7352, n);
         }
-        final float method28957 = MathHelper.method35700(n, this.field9380.field4684.field4096, this.field9380.field4684.field4095);
+        final float method28957 = MathHelper.method35700(n, this.field9380.player.field4096, this.field9380.player.field4095);
         if (method28957 > 0.0f) {
             int n2 = 20;
-            if (this.field9380.field4684.method2653(Class9439.field40482)) {
+            if (this.field9380.player.method2653(Class9439.field40482)) {
                 n2 = 7;
             }
             final float n3 = 5.0f / (method28957 * method28957 + 5.0f) - method28957 * 0.04f;
@@ -704,9 +704,9 @@ public class Class1660 implements AutoCloseable, Class1657
         if (Class9216.method33924()) {
             class7352 = class7353;
         }
-        final Matrix4f method28958 = class7352.method22569().method32111();
+        final Matrix4f method28958 = class7352.getLast().getMatrix();
         this.method5814(method28958);
-        field9411.method18154(this.field9380.world, (this.field9380.method5303() != null) ? this.field9380.method5303() : this.field9380.field4684, this.field9380.field4648.field23465 > 0, this.field9380.field4648.field23465 == 2, n);
+        field9411.method18154(this.field9380.world, (this.field9380.method5303() != null) ? this.field9380.method5303() : this.field9380.player, this.field9380.gameSettings.field23465 > 0, this.field9380.gameSettings.field23465 == 2, n);
         if (Class9570.field41297.method22605()) {
             final Object method28959 = Class9570.field41297.method22608(this, field9411, n);
             final float method28960 = Class9570.method35823(method28959, Class9570.field41212, new Object[0]);
@@ -729,11 +729,11 @@ public class Class1660 implements AutoCloseable, Class1657
                     Class7778.method24951(this, class7351, field9411, n);
                     Class9216.method33817();
                 }
-                Class8726.method30056(256, Minecraft.field4623);
-                Class8726.method30059();
-                Class8726.method30067(class7351.method22569().method32111());
+                RenderSystem.method30056(256, Minecraft.field4623);
+                RenderSystem.method30059();
+                RenderSystem.method30067(class7351.getLast().getMatrix());
                 Class9463.method35173().method35184();
-                Class8726.method30060();
+                RenderSystem.method30060();
                 if (!method28955) {
                     this.method5812(class7351, field9411, n);
                 }
@@ -861,7 +861,7 @@ public class Class1660 implements AutoCloseable, Class1657
         }
         if (this.field9380.field4700 != null) {
             if (this.field9380.field4700.getClass() == Class535.class) {
-                this.field9380.method5244(new Class537((Class535)this.field9380.field4700));
+                this.field9380.displayGuiScreen(new Class537((Class535)this.field9380.field4700));
             }
         }
     }
@@ -954,12 +954,12 @@ public class Class1660 implements AutoCloseable, Class1657
                 final float n7 = (10.25f * n6 * n5 - 24.95f * n5 * n5 + 25.5f * n6 - 13.8f * n5 + 4.0f * n4) * 3.1415927f;
                 final float n8 = this.field9404 * (n / 4);
                 final float n9 = this.field9405 * (n2 / 4);
-                Class8726.method29999();
-                Class8726.method30059();
-                Class8726.method29995();
-                Class8726.method30008();
-                Class8726.method30029();
-                final Class7351 class7351 = new Class7351();
+                RenderSystem.enableAlphaTest();
+                RenderSystem.method30059();
+                RenderSystem.method29995();
+                RenderSystem.enableDepthTest();
+                RenderSystem.method30029();
+                final MatrixStack class7351 = new MatrixStack();
                 class7351.method22567();
                 class7351.method22564(n / 2 + n8 * MathHelper.method35647(MathHelper.sin(n7 * 2.0f)), n2 / 2 + n9 * MathHelper.method35647(MathHelper.sin(n7 * 2.0f)), -50.0);
                 final float n10 = 50.0f + 175.0f * MathHelper.sin(n7);
@@ -967,14 +967,14 @@ public class Class1660 implements AutoCloseable, Class1657
                 class7351.method22566(Vector3f.YP.rotationDegrees(900.0f * MathHelper.method35647(MathHelper.sin(n7))));
                 class7351.method22566(Vector3f.XP.rotationDegrees(6.0f * MathHelper.cos(n4 * 8.0f)));
                 class7351.method22566(Vector3f.ZP.rotationDegrees(6.0f * MathHelper.cos(n4 * 8.0f)));
-                final Class7808 method11006 = this.field9386.method11006();
+                final IRenderTypeBuffer.Impl method11006 = this.field9386.method11006();
                 this.field9380.getItemRenderer().method6536(this.field9402, Class2016.field11494, 15728880, Class1904.field10335, class7351, method11006);
                 class7351.method22568();
-                method11006.method25216();
-                Class8726.method29997();
-                Class8726.method30060();
-                Class8726.method30028();
-                Class8726.method30007();
+                method11006.finish();
+                RenderSystem.method29997();
+                RenderSystem.method30060();
+                RenderSystem.method30028();
+                RenderSystem.disableDepthTest();
             }
         }
     }

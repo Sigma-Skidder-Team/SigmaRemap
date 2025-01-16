@@ -34,22 +34,22 @@ public class Class528 extends Screen
     @Override
     public void init() {
         super.init();
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 6 + 168, 200, 20, this.field3161, class654 -> this.field3158.run()));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 168, 200, 20, this.field3161, class654 -> this.field3158.run()));
         this.field3160.clear();
         this.field3160.addAll(this.font.method6626(this.field3159.getFormattedText(), this.width - 50));
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 70, 16777215);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 70, 16777215);
         int n4 = 90;
         final Iterator<String> iterator = this.field3160.iterator();
         while (iterator.hasNext()) {
-            this.method3295(this.font, iterator.next(), this.width / 2, n4, 16777215);
+            this.drawCenteredString(this.font, iterator.next(), this.width / 2, n4, 16777215);
             n4 += 9;
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     @Override
@@ -58,7 +58,7 @@ public class Class528 extends Screen
         final int field3162 = this.field3162 - 1;
         this.field3162 = field3162;
         if (field3162 == 0) {
-            final Iterator<Class573> iterator = this.buttons.iterator();
+            final Iterator<Widget> iterator = this.buttons.iterator();
             while (iterator.hasNext()) {
                 iterator.next().field3431 = true;
             }

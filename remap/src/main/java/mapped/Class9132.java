@@ -87,7 +87,7 @@ public class Class9132
         return array2;
     }
     
-    public static void method33155(final World class1847, final Class1663 class1848, final Class7351 class1849, final float n) {
+    public static void method33155(final World class1847, final Class1663 class1848, final MatrixStack class1849, final float n) {
         if (Class9132.field38704 != null) {
             final int method1270 = class1847.dimension.getType().method1270();
             if (method1270 >= 0) {

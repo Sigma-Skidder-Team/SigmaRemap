@@ -9,7 +9,7 @@ public class Class666 extends Class662
     private final Class286 field3699;
     
     public Class666(final Minecraft class869, final int n, final int n2, final Class286 field3699, final int n3) {
-        super(class869.field4648, n, n2, n3, 20, class869.field4648.method17122(field3699));
+        super(class869.gameSettings, n, n2, n3, 20, class869.gameSettings.method17122(field3699));
         this.field3699 = field3699;
         this.method3711();
     }

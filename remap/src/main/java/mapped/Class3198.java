@@ -35,12 +35,12 @@ public class Class3198 extends Class3167
     @Class6753
     public void method10037(final Class5752 class5752) {
         if (this.method9906()) {
-            for (int length = Class3198.field15514.field4648.field23457.length, i = 0; i < length; ++i) {
-                final Class350 class5753 = Class3198.field15514.field4648.field23457[i];
+            for (int length = Class3198.field15514.gameSettings.field23457.length, i = 0; i < length; ++i) {
+                final Class350 class5753 = Class3198.field15514.gameSettings.field23457[i];
                 final String method1060 = class5753.method1060();
                 final int int1 = Integer.parseInt(String.valueOf(method1060.charAt(method1060.length() - 1)));
                 if (class5752.method17061() == class5753.field2161.field32860) {
-                    if (int1 - 1 != Class3198.field15514.field4684.field3006.field2743) {
+                    if (int1 - 1 != Class3198.field15514.player.field3006.field2743) {
                         this.field15614 = -1;
                         this.field15616 = 0;
                     }
@@ -58,7 +58,7 @@ public class Class3198 extends Class3167
             ++this.field15616;
         }
         int method10292 = -1;
-        if (Class3198.field15514.field4684.method2664() <= this.method9914().method9886("Health") * 2.0f) {
+        if (Class3198.field15514.player.method2664() <= this.method9914().method9886("Health") * 2.0f) {
             method10292 = ((Class3263)this.method9914()).method10292(false);
             if (this.field15614 == -1) {
                 if (this.field15616 >= 20) {
@@ -76,9 +76,9 @@ public class Class3198 extends Class3167
             ++this.field15614;
             if (this.field15614 != 1) {
                 if (this.field15614 > 1) {
-                    if (Class3198.field15514.field4684.method2715(Class316.field1877).getItem() != Items.field31341) {
-                        if (Class3198.field15514.field4684.method2715(Class316.field1877).getItem() != Items.field31342) {
-                            Class3198.field15514.field4684.field3006.field2743 = this.field15615;
+                    if (Class3198.field15514.player.method2715(Class316.field1877).getItem() != Items.field31341) {
+                        if (Class3198.field15514.player.method2715(Class316.field1877).getItem() != Items.field31342) {
+                            Class3198.field15514.player.field3006.field2743 = this.field15615;
                             this.field15615 = -1;
                             this.field15614 = -1;
                         }
@@ -86,10 +86,10 @@ public class Class3198 extends Class3167
                 }
             }
             else {
-                this.field15615 = Class3198.field15514.field4684.field3006.field2743;
-                Class3198.field15514.field4684.field3006.field2743 = method10292;
+                this.field15615 = Class3198.field15514.player.field3006.field2743;
+                Class3198.field15514.player.field3006.field2743 = method10292;
                 Class3198.field15514.field4682.method27318();
-                Class3198.field15514.field4682.method27320(Class3198.field15514.field4684, Class3198.field15514.world, Class316.field1877);
+                Class3198.field15514.field4682.method27320(Class3198.field15514.player, Class3198.field15514.world, Class316.field1877);
             }
         }
     }
@@ -100,13 +100,13 @@ public class Class3198 extends Class3167
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4268) {
                 final Class4268 class5724 = (Class4268)method16998;
-                if (class5724.method12811() == Class3198.field15514.field4684.getEntityId()) {
+                if (class5724.method12811() == Class3198.field15514.player.getEntityId()) {
                     final Iterator<Class9369<?>> iterator = class5724.method12810().iterator();
                     while (iterator.hasNext()) {
                         if (iterator.next().method34766().method30737() != 14) {
                             continue;
                         }
-                        Class3198.field15514.field4684.field3006.field2743 = this.field15615;
+                        Class3198.field15514.player.field3006.field2743 = this.field15615;
                         this.field15615 = -1;
                         this.field15614 = -1;
                     }

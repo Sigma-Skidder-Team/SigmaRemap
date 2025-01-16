@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.function.Function;
+
 import com.google.common.collect.UnmodifiableIterator;
 import it.unimi.dsi.fastutil.ints.Int2IntArrayMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
@@ -95,7 +95,7 @@ public class Class9272
     }
     
     public void method34196(final long n) {
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             final int method34194 = this.method34194();
             final ImmutableList<Class7187> method34195 = this.method34195();
             for (int i = 0; i < ((List)method34195).size(); ++i) {
@@ -103,19 +103,19 @@ public class Class9272
             }
         }
         else {
-            Class8726.method29991(() -> this.method34196(n));
+            RenderSystem.method29991(() -> this.method34196(n));
         }
     }
     
     public void method34197() {
-        if (Class8726.method29984()) {
+        if (RenderSystem.method29984()) {
             final UnmodifiableIterator iterator = this.method34195().iterator();
             while (((Iterator)iterator).hasNext()) {
                 ((Class7187)((Iterator)iterator).next()).method22055();
             }
         }
         else {
-            Class8726.method29991(this::method34197);
+            RenderSystem.method29991(this::method34197);
         }
     }
     

@@ -23,7 +23,7 @@ public class Class6707 extends Class6693
                 final Minecraft field26420 = Class6707.field26420;
                 new Class531(new StringTextComponent("GuiKeybinds"));
                 final Class531 class6429;
-                field26420.method5244(class6429);
+                field26420.displayGuiScreen(class6429);
                 return;
             });
         }

@@ -65,7 +65,7 @@ public class Class9198
     
     @Class6753
     private void method33658(final Class5743 class5743) {
-        if (this.field38982.field4684.ticksExisted % 100 != 0) {
+        if (this.field38982.player.ticksExisted % 100 != 0) {
             return;
         }
         this.method33659();

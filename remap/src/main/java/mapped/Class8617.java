@@ -34,7 +34,7 @@ public class Class8617
         ++this.field36156;
         ++this.field36157;
         ++this.field36158;
-        if (!this.field36162.field4684.onGround) {
+        if (!this.field36162.player.onGround) {
             this.field36157 = 0;
         }
         if (this.field36162.field4700 != null) {
@@ -44,7 +44,7 @@ public class Class8617
             this.field36158 = 0;
             this.field36159 = true;
         }
-        if (this.field36162.field4684.ticksExisted <= 1) {
+        if (this.field36162.player.ticksExisted <= 1) {
             this.field36159 = false;
         }
     }

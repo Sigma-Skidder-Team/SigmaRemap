@@ -39,7 +39,7 @@ public class Class4169 extends Class4158<Class437>
         this.field18582[3].field25185 = 3.1415927f;
     }
     
-    public void method12483(final Class437 class437, final float n, final Class7351 class438, final Class7807 class439, final int n2, final int n3) {
+    public void method12483(final Class437 class437, final float n, final MatrixStack class438, final IRenderTypeBuffer class439, final int n2, final int n3) {
         final Class3687 class440 = Class8752.field36753[class437.method2213().method813()];
         final World method2186 = class437.method2186();
         if (method2186 == null) {
@@ -52,7 +52,7 @@ public class Class4169 extends Class4158<Class437>
         }
     }
     
-    private void method12484(final Class7351 class7351, final Class7807 class7352, final boolean field25187, final Direction class7353, final Class3687 class7354, final int n, final int n2, final boolean b) {
+    private void method12484(final MatrixStack class7351, final IRenderTypeBuffer class7352, final boolean field25187, final Direction class7353, final Class3687 class7354, final int n, final int n2, final boolean b) {
         this.field18580.field25187 = field25187;
         this.field18581.field25187 = !field25187;
         this.field18582[0].field25187 = !field25187;

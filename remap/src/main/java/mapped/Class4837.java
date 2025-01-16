@@ -37,19 +37,19 @@ public class Class4837 extends Class4825
         }
         GL11.glEnable(2929);
         Class8317.method27608();
-        Class8726.method30007();
-        Class8726.method30029();
-        Class8726.method30059();
-        Class8726.method30065((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 - this.field20481 / 4), -200.0f);
+        RenderSystem.disableDepthTest();
+        RenderSystem.method30029();
+        RenderSystem.method30059();
+        RenderSystem.method30065((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 - this.field20481 / 4), -200.0f);
         GL11.glColor3f(1.0f, 1.0f, 1.0f);
-        Class8726.method30062(180.0f, 1.0f, 0.0f, 0.0f);
-        Class8726.method30062(180.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30062(180.0f, 1.0f, 0.0f, 0.0f);
+        RenderSystem.method30062(180.0f, 0.0f, 0.0f, 1.0f);
         final float n2 = (float)(this.field20736.field4632.method7695() - this.method14321() - this.field20736.field4632.method7695() / 2);
         final float n3 = (float)(this.field20736.field4632.method7694() - this.method14320() - this.field20736.field4632.method7694() / 2);
         final float n4 = (float)Math.atan(n2 / (this.field20736.field4632.method7695() / 2)) * 20.0f;
         final float n5 = (float)Math.atan(n3 / (this.field20736.field4632.method7694() / 2)) * 20.0f;
-        Class8726.method30062(-n4, 1.0f, 0.0f, 0.0f);
-        Class8726.method30062(-n5, 0.0f, 1.0f, 0.0f);
+        RenderSystem.method30062(-n4, 1.0f, 0.0f, 0.0f);
+        RenderSystem.method30062(-n5, 0.0f, 1.0f, 0.0f);
         final Class9206 class9206 = new Class9206(this);
         final UUID fromString = UUID.fromString(this.field20738.method25891().equals("steve") ? "123e4567-e89b-12d3-a456-556642440000" : this.field20738.method25891());
         if (Class4837.field20737 == null) {
@@ -76,26 +76,26 @@ public class Class4837 extends Class4825
         if (this.field20738 != null) {
             final Class4711 class9208 = new Class4711(this.field20736.method5306());
             Minecraft.method5277().method5333().method11006();
-            final Class7351 class9209 = new Class7351();
-            Class8726.method30059();
+            final MatrixStack class9209 = new MatrixStack();
+            RenderSystem.method30059();
             this.field20736.method5306().method28702(false);
             Class8317.method27612();
-            Class8726.method30001();
-            Class8726.method30008();
+            RenderSystem.method30001();
+            RenderSystem.enableDepthTest();
             if (this.field20736.method5306().field35906 == null) {
                 this.field20736.method5306().field35906 = new Class6092();
             }
             this.field20740.field2946 = n6 * 0.5f;
             Class518.method2999(0, 390, 160, 0.0f, 0.0f, this.field20740);
             this.field20736.method5306().method28702(true);
-            Class8726.method30060();
+            RenderSystem.method30060();
         }
-        Class8726.method30060();
+        RenderSystem.method30060();
         Class8317.method27609();
-        Class8726.method30047();
-        Class8726.method30039(33985);
-        Class8726.method30041();
-        Class8726.method30039(33984);
+        RenderSystem.disableRescaleNormal();
+        RenderSystem.method30039(33985);
+        RenderSystem.disableTexture();
+        RenderSystem.method30039(33984);
         GL11.glDisable(2929);
         if (this.field20738.method25900() != null) {
             try {

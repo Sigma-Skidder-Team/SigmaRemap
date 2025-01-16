@@ -53,7 +53,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
         return this.field20301;
     }
     
-    public void method13980(final T field20303, final float n, final float f, final Class7351 class7351, final Class7807 class7352, final int n2) {
+    public void method13980(final T field20303, final float n, final float f, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n2) {
         if (!Class9570.field41413.method22619() || !Class9570.method35840(Class9570.field41413, field20303, this, f, class7351, class7352, n2)) {
             if (Class4710.field20312) {
                 field20303.field2946 = 1.0f;
@@ -146,7 +146,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
                 this.field20309 = f;
             }
             final boolean method35715 = this.method13983(field20303);
-            final boolean b = !method35715 && !field20303.method1824(Minecraft.method5277().field4684);
+            final boolean b = !method35715 && !field20303.method1824(Minecraft.method5277().player);
             class7354.method17005(Class1953.field10633);
             Class9463.method35173().method35188().method21097(class7354);
             Class6332 class7355;
@@ -163,19 +163,19 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
                     Class8880.method31237();
                 }
                 if (this.field20310) {
-                    Class8726.method30059();
+                    RenderSystem.method30059();
                 }
                 this.field20301.method17564(class7351, method35716, n2, method35717, 1.0f, 1.0f, 1.0f, b ? 0.15f : 1.0f);
                 if (this.field20310) {
-                    Class8726.method30060();
+                    RenderSystem.method30060();
                 }
                 if (Class8880.method31235()) {
                     if (Class8880.method31239()) {
                         this.field20310 = true;
                         Class8880.method31240();
-                        Class8726.method30059();
+                        RenderSystem.method30059();
                         this.field20301.method17564(class7351, method35716, n2, method35717, 1.0f, 1.0f, 1.0f, b ? 0.15f : 1.0f);
-                        Class8726.method30060();
+                        RenderSystem.method30060();
                         Class8880.method31241();
                     }
                     Class8880.method31242();
@@ -188,11 +188,11 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
                             Class8880.method31237();
                         }
                         if (this.field20311) {
-                            Class8726.method30059();
+                            RenderSystem.method30059();
                         }
                         class7356.method6554(class7351, class7352, n2, field20303, field20306, method35714, f, method35713, method35710, method35711);
                         if (this.field20311) {
-                            Class8726.method30060();
+                            RenderSystem.method30060();
                         }
                         if (!Class8880.method31235()) {
                             continue;
@@ -200,9 +200,9 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
                         if (Class8880.method31239()) {
                             this.field20311 = true;
                             Class8880.method31240();
-                            Class8726.method30059();
+                            RenderSystem.method30059();
                             class7356.method6554(class7351, class7352, n2, field20303, field20306, method35714, f, method35713, method35710, method35711);
-                            Class8726.method30060();
+                            RenderSystem.method30060();
                             Class8880.method31241();
                         }
                         Class8880.method31242();
@@ -262,7 +262,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
         }
     }
     
-    public void method13985(final T t, final Class7351 class7351, final float n, final float n2, final float n3) {
+    public void method13985(final T t, final MatrixStack class7351, final float n, final float n2, final float n3) {
         final Pose method1654 = t.method1654();
         if (method1654 != Pose.field1665) {
             class7351.method22566(Vector3f.YP.rotationDegrees(180.0f - n2));
@@ -317,7 +317,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
         return 0.0f;
     }
     
-    public void method13990(final T t, final Class7351 class7351, final float n) {
+    public void method13990(final T t, final MatrixStack class7351, final float n) {
     }
     
     public boolean method13991(final T t) {
@@ -332,7 +332,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
             return false;
         }
         final Minecraft method28716 = Minecraft.method5277();
-        final Class756 field4684 = method28716.field4684;
+        final Class756 field4684 = method28716.player;
         final boolean b = !t.method1824(field4684);
         if (t != field4684) {
             final Team method28717 = t.getTeam();

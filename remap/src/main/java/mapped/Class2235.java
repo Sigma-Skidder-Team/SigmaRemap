@@ -46,12 +46,12 @@ public enum Class2235
     }
     
     public void method8431() {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         Class8933.method31659(3333, this.method8430());
     }
     
     public void method8432() {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         Class8933.method31659(3317, this.method8430());
     }
     

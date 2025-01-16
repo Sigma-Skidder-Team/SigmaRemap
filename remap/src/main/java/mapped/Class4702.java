@@ -25,7 +25,7 @@ public class Class4702 extends Class4703<Class858>
         (this.field20282 = new Class6300(64, 32, 0, 16)).method18636(-6.0f, 0.0f, -6.0f, 12.0f, 4.0f, 12.0f);
     }
     
-    public void method13946(final Class858 class858, final float n, final float n2, final Class7351 class859, final Class7807 class860, final int n3) {
+    public void method13946(final Class858 class858, final float n, final float n2, final MatrixStack class859, final IRenderTypeBuffer class860, final int n3) {
         class859.method22567();
         final float method13947 = method13947(class858, n2);
         final float n4 = (class858.field4592 + n2) * 3.0f;

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import org.lwjgl.opengl.GL11;
 import java.util.List;
 import java.util.ArrayList;
@@ -71,9 +70,9 @@ public class Class4855 extends Class4841
         GL11.glLineWidth(1.0f);
         GL11.glColor4d(0.0, 0.0, 0.0, (double)(0.6f * n));
         GL11.glAlphaFunc(519, 0.0f);
-        Class8726.method30011();
-        Class8726.method30041();
-        Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+        RenderSystem.enableBlend();
+        RenderSystem.disableTexture();
+        RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
         GL11.glEnable(2848);
         GL11.glBegin(3);
         GL11.glVertex2f(0.0f, n2);
@@ -92,8 +91,8 @@ public class Class4855 extends Class4841
         GL11.glVertex2f(n2, 0.0f);
         GL11.glVertex2f((float)(this.field20802.method14272() - field20803 + 5), (float)(this.field20802.method14274() - field20803 + 5));
         GL11.glEnd();
-        Class8726.method30012();
-        Class8726.method30040();
+        RenderSystem.disableBlend();
+        RenderSystem.enableTexture();
         GL11.glPopMatrix();
         super.method14205(n);
     }

@@ -81,7 +81,7 @@ public class Class1945 extends Class1944
         final Class8388 class9008 = new Class8388();
         final HashSet hashSet = Sets.newHashSet();
         this.field10600 = null;
-        final Class7351 class9009 = new Class7351();
+        final MatrixStack class9009 = new MatrixStack();
         if (!Class8974.method31910(this.field10599, method1153)) {
             final Class1857 method1155 = Class8974.method31911(this.field10599, method1153);
             method1155.method6997();
@@ -111,7 +111,7 @@ public class Class1945 extends Class1944
                             if (Class7520.method23484()) {
                                 Class9570.method35811(Class9570.field41311, class9011);
                             }
-                            final Class4148 method1162 = class9007.method34024(class9011);
+                            final BufferBuilder method1162 = class9007.method34024(class9011);
                             method1162.method12412(class9011);
                             final Class9145 method1163 = method1162.method12414(method1157, class9010);
                             method1163.method33397(class9007);
@@ -135,7 +135,7 @@ public class Class1945 extends Class1944
                                 Class9570.method35811(Class9570.field41311, class9012);
                             }
                             final Class6332 method1165 = Class8974.method31915(this.field10599, method1155, method1157, class9010, class9012);
-                            final Class4148 method1166 = class9007.method34024(method1165);
+                            final BufferBuilder method1166 = class9007.method34024(method1165);
                             method1166.method12412(method1165);
                             final Class9145 method1167 = method1166.method12414(method1157, class9010);
                             method1167.method33397(class9007);
@@ -163,11 +163,11 @@ public class Class1945 extends Class1944
                 Class9570.method35811(Class9570.field41311, (Object[])null);
             }
             if (Class9006.method32221(class9006).contains(Class6332.method18765())) {
-                final Class4148 method1168 = class9007.method34024(Class6332.method18765());
+                final BufferBuilder method1168 = class9007.method34024(Class6332.method18765());
                 method1168.method12385(n - method1153.getX(), n2 - method1153.getY(), n3 - method1153.getZ());
                 Class9006.method32222(class9006, method1168.method12387());
             }
-            Class9006.method32219(class9006).stream().map(class9007::method34024).forEach(Class4148::method12393);
+            Class9006.method32219(class9006).stream().map(class9007::method34024).forEach(BufferBuilder::finishDrawing);
             final Class6332[] field29141 = Class7520.field29141;
             for (int length = field29141.length, k = 0; k < length; ++k) {
                 class9006.method32211(field29141[k], null);
@@ -176,7 +176,7 @@ public class Class1945 extends Class1944
                 if (Config.method28955()) {
                     Class8900.method31347(class9007.method34024(class9013));
                 }
-                final Class4148 method1169 = class9007.method34024(class9013);
+                final BufferBuilder method1169 = class9007.method34024(class9013);
                 if (method1169.field18497 == null) {
                     continue;
                 }

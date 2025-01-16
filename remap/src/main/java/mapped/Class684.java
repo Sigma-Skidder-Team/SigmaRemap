@@ -14,7 +14,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class684 extends Class565
+public class Class684 extends AbstractGui
 {
     private static final Logger field3741;
     private final Minecraft field3742;
@@ -49,11 +49,11 @@ public class Class684 extends Class565
                 }
                 final double method3774 = this.method3774();
                 int method3775 = MathHelper.ceil(this.method3772() / method3774);
-                Class8726.method30059();
-                Class8726.method30065(2.0f, 8.0f, 0.0f);
-                Class8726.method30064(method3774, method3774, 1.0);
-                final double n2 = this.field3742.field4648.field23390 * 0.8999999761581421 + 0.10000000149011612;
-                final double field23391 = this.field3742.field4648.field23391;
+                RenderSystem.method30059();
+                RenderSystem.method30065(2.0f, 8.0f, 0.0f);
+                RenderSystem.method30064(method3774, method3774, 1.0);
+                final double n2 = this.field3742.gameSettings.field23390 * 0.8999999761581421 + 0.10000000149011612;
+                final double field23391 = this.field3742.gameSettings.field23391;
                 int n3 = 0;
                 final Matrix4f method3776 = Matrix4f.method20760(0.0f, 0.0f, -100.0f);
                 for (int n4 = 0; n4 + this.field3746 < this.field3745.size() && n4 < method3773; ++n4) {
@@ -67,46 +67,46 @@ public class Class684 extends Class565
                             ++n3;
                             if (n7 > 3) {
                                 final int n9 = -n4 * 9;
-                                if (this.field3742.field4648.field23528 == 5) {
-                                    method3775 = this.field3742.fontRenderer.method6617(class8693.method29803().getFormattedText()) - 2;
+                                if (this.field3742.gameSettings.field23528 == 5) {
+                                    method3775 = this.field3742.fontRenderer.getStringWidth(class8693.method29803().getFormattedText()) - 2;
                                 }
-                                if (this.field3742.field4648.field23528 != 3) {
-                                    Class565.method3294(method3776, -2, n9 - 9, 0 + method3775 + 4, n9, n8 << 24);
+                                if (this.field3742.gameSettings.field23528 != 3) {
+                                    AbstractGui.method3294(method3776, -2, n9 - 9, 0 + method3775 + 4, n9, n8 << 24);
                                 }
                                 final String method3777 = class8693.method29803().getFormattedText();
-                                Class8726.method30011();
-                                if (this.field3742.field4648.field23529) {
-                                    this.field3742.fontRenderer.method6609(method3777, 0.0f, (float)(n9 - 8), 16777215 + (n7 << 24));
+                                RenderSystem.enableBlend();
+                                if (this.field3742.gameSettings.field23529) {
+                                    this.field3742.fontRenderer.drawStringWithShadow(method3777, 0.0f, (float)(n9 - 8), 16777215 + (n7 << 24));
                                 }
                                 else {
                                     this.field3742.fontRenderer.method6610(method3777, 0.0f, (float)(n9 - 8), 16777215 + (n7 << 24));
                                 }
-                                Class8726.method29998();
-                                Class8726.method30012();
+                                RenderSystem.disableAlphaTest();
+                                RenderSystem.disableBlend();
                             }
                         }
                     }
                 }
                 if (b) {
                     final int n10 = 9;
-                    Class8726.method30065(-3.0f, 0.0f, 0.0f);
+                    RenderSystem.method30065(-3.0f, 0.0f, 0.0f);
                     final int n11 = size * n10 + size;
                     final int n12 = n3 * n10 + n3;
                     final int n13 = this.field3746 * n12 / size;
                     final int n14 = n12 * n12 / n11;
                     if (n11 != n12) {
                         final int n15 = (n13 <= 0) ? 96 : 170;
-                        Class565.method3293(0, -n13, 2, -n13 - n14, (this.field3747 ? 13382451 : 3355562) + (n15 << 24));
-                        Class565.method3293(2, -n13, 1, -n13 - n14, 13421772 + (n15 << 24));
+                        AbstractGui.fill(0, -n13, 2, -n13 - n14, (this.field3747 ? 13382451 : 3355562) + (n15 << 24));
+                        AbstractGui.fill(2, -n13, 1, -n13 - n14, 13421772 + (n15 << 24));
                     }
                 }
-                Class8726.method30060();
+                RenderSystem.method30060();
             }
         }
     }
     
     private boolean method3758() {
-        return this.field3742.field4648.field23389 != Class2047.field11663;
+        return this.field3742.gameSettings.field23389 != Class2047.field11663;
     }
     
     private static double method3759(final int n) {
@@ -196,7 +196,7 @@ public class Class684 extends Class565
     @Nullable
     public ITextComponent method3769(final double n, final double n2) {
         if (this.method3770()) {
-            if (!this.field3742.field4648.field23464) {
+            if (!this.field3742.gameSettings.field23464) {
                 if (this.method3758()) {
                     final double method3774 = this.method3774();
                     final double n3 = n - 2.0;
@@ -217,7 +217,7 @@ public class Class684 extends Class565
                                     if (!(class8694 instanceof StringTextComponent)) {
                                         continue;
                                     }
-                                    n8 += this.field3742.fontRenderer.method6617(Class8936.method31696(((StringTextComponent)class8694).getText(), false));
+                                    n8 += this.field3742.fontRenderer.getStringWidth(Class8936.method31696(((StringTextComponent)class8694).getText(), false));
                                     if (n8 <= n5) {
                                         continue;
                                     }
@@ -257,17 +257,17 @@ public class Class684 extends Class565
     }
     
     public int method3772() {
-        final int method3775 = method3775(this.field3742.field4648.field23402);
+        final int method3775 = method3775(this.field3742.gameSettings.field23402);
         final Class1925 method3776 = Minecraft.method5277().method5332();
         return MathHelper.method35651(method3775, 0, (int)((method3776.method7692() - 3) / method3776.method7700()));
     }
     
     public int method3773() {
-        return method3776(this.method3770() ? this.field3742.field4648.field23404 : this.field3742.field4648.field23403);
+        return method3776(this.method3770() ? this.field3742.gameSettings.field23404 : this.field3742.gameSettings.field23403);
     }
     
     public double method3774() {
-        return this.field3742.field4648.field23401;
+        return this.field3742.gameSettings.field23401;
     }
     
     public static int method3775(final double n) {

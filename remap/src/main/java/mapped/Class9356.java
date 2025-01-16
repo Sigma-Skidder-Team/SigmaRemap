@@ -11,13 +11,13 @@ import net.minecraft.util.math.Vec3d;
 public class Class9356
 {
     private static String[] field40137;
-    private final Class1912[] field40138;
-    private final Class1912[] field40139;
-    private Class1912 field40140;
+    private final TextureAtlasSprite[] field40138;
+    private final TextureAtlasSprite[] field40139;
+    private TextureAtlasSprite field40140;
     
     public Class9356() {
-        this.field40138 = new Class1912[2];
-        this.field40139 = new Class1912[2];
+        this.field40138 = new TextureAtlasSprite[2];
+        this.field40139 = new TextureAtlasSprite[2];
     }
     
     public void method34678() {
@@ -46,9 +46,9 @@ public class Class9356
                 Class8900.method31337(method21791, class1858);
             }
             final boolean method21792 = class1859.isTagged(Class7324.field28320);
-            Class1912[] array = method21792 ? this.field40138 : this.field40139;
+            TextureAtlasSprite[] array = method21792 ? this.field40138 : this.field40139;
             if (Class9570.field41292.method22605()) {
-                final Class1912[] array2 = (Class1912[])Class9570.method35818(Class9570.field41292, class1856, class1857, class1859);
+                final TextureAtlasSprite[] array2 = (TextureAtlasSprite[])Class9570.method35818(Class9570.field41292, class1856, class1857, class1859);
                 if (array2 != null) {
                     array = array2;
                 }
@@ -102,7 +102,7 @@ public class Class9356
                     float method21802;
                     float method21803;
                     if (method21799.x == 0.0 && method21799.z == 0.0) {
-                        final Class1912 class1860 = array[0];
+                        final TextureAtlasSprite class1860 = array[0];
                         class1858.method12407(class1860);
                         n11 = class1860.method7499(0.0);
                         n12 = class1860.method7502(0.0);
@@ -114,7 +114,7 @@ public class Class9356
                         method21803 = n12;
                     }
                     else {
-                        final Class1912 class1861 = array[1];
+                        final TextureAtlasSprite class1861 = array[1];
                         class1858.method12407(class1861);
                         final float n15 = (float) MathHelper.method35693(method21799.z, method21799.x) - 1.5707964f;
                         final float n16 = MathHelper.sin(n15) * 0.25f;
@@ -223,7 +223,7 @@ public class Class9356
                     if (b8 && !method34680(class1856, class1857, class1862, Math.max(n27, n28))) {
                         b7 = true;
                         final BlockPos method21819 = class1857.method1149(class1862);
-                        Class1912 field40140 = array[1];
+                        TextureAtlasSprite field40140 = array[1];
                         float a = 0.0f;
                         float a2 = 0.0f;
                         boolean b9 = !method21792;
@@ -301,11 +301,11 @@ public class Class9356
     }
     
     private void method34682(final Class4150 class4150, final double n, final double n2, final double n3, final float n4, final float n5, final float n6, final float n7, final float n8, final int n9) {
-        class4150.method12432(n, n2, n3).method12439(n4, n5, n6, 1.0f).method12391(n7, n8).method12440(n9).method12436(0.0f, 1.0f, 0.0f).method12397();
+        class4150.pos(n, n2, n3).color(n4, n5, n6, 1.0f).tex(n7, n8).method12440(n9).method12436(0.0f, 1.0f, 0.0f).endVertex();
     }
     
     private void method34683(final Class4150 class4150, final double n, final double n2, final double n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final int n10) {
-        class4150.method12432(n, n2, n3).method12439(n4, n5, n6, n7).method12391(n8, n9).method12440(n10).method12436(0.0f, 1.0f, 0.0f).method12397();
+        class4150.pos(n, n2, n3).color(n4, n5, n6, n7).tex(n8, n9).method12440(n10).method12436(0.0f, 1.0f, 0.0f).endVertex();
     }
     
     private int method34684(final Class1856 class1856, final BlockPos class1857) {

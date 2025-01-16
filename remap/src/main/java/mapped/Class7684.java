@@ -17,5 +17,5 @@ public interface Class7684
     Collection<Class3687> method24382(final Function<ResourceLocation, Class7684> p0, final Set<Pair<String, String>> p1);
     
     @Nullable
-    Class6313 method24383(final Class7637 p0, final Function<Class3687, Class1912> p1, final Class2123 p2, final ResourceLocation p3);
+    Class6313 method24383(final Class7637 p0, final Function<Class3687, TextureAtlasSprite> p1, final Class2123 p2, final ResourceLocation p3);
 }

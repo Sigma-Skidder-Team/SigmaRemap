@@ -28,8 +28,8 @@ public class Class3191 extends Class3167
     
     @Class6753
     public void method10016(final Class5743 class5743) {
-        if (this.method9906() && Class3191.field15514.field4684 != null) {
-            if (!Class6430.method19160(Class3191.field15514.field4684, 0.001f)) {
+        if (this.method9906() && Class3191.field15514.player != null) {
+            if (!Class6430.method19160(Class3191.field15514.player, 0.001f)) {
                 ++this.field15596;
                 this.field15597 -= 0.005;
                 if (this.field15597 < 0.26 || this.field15596 > 6) {
@@ -46,9 +46,9 @@ public class Class3191 extends Class3167
                     this.method9914().method9910();
                     this.field15596 = 0;
                 }
-                final double field2395 = Class3191.field15514.field4684.posX;
-                final double field2396 = Class3191.field15514.field4684.posY;
-                final double field2397 = Class3191.field15514.field4684.posZ;
+                final double field2395 = Class3191.field15514.player.posX;
+                final double field2396 = Class3191.field15514.player.posY;
+                final double field2397 = Class3191.field15514.player.posZ;
                 for (int n = 49 + Class7482.method23140() * 17, i = 0; i < n; ++i) {
                     Class3191.field15514.method5269().method17292(new Class4354(field2395, field2396 + 0.06248, field2397, false));
                     Class3191.field15514.method5269().method17292(new Class4354(field2395, field2396, field2397, false));

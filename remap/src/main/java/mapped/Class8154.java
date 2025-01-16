@@ -167,20 +167,20 @@ public class Class8154
         final float n9 = (n5 >> 16 & 0xFF) / 255.0f;
         final float n10 = (n5 >> 8 & 0xFF) / 255.0f;
         final float n11 = (n5 & 0xFF) / 255.0f;
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        Class8726.method30011();
-        Class8726.method30041();
-        Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
-        Class8726.method30068(n9, n10, n11, n8);
-        method22695.method12390(7, Class9237.field39614);
-        method22695.method12432(n, n4, 0.0).method12397();
-        method22695.method12432(n3, n4, 0.0).method12397();
-        method22695.method12432(n3, n2, 0.0).method12397();
-        method22695.method12432(n, n2, 0.0).method12397();
-        method22694.method22695();
-        Class8726.method30040();
-        Class8726.method30012();
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        RenderSystem.enableBlend();
+        RenderSystem.disableTexture();
+        RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+        RenderSystem.method30068(n9, n10, n11, n8);
+        method22695.begin(7, DefaultVertexFormats.field39614);
+        method22695.pos(n, n4, 0.0).endVertex();
+        method22695.pos(n3, n4, 0.0).endVertex();
+        method22695.pos(n3, n2, 0.0).endVertex();
+        method22695.pos(n, n2, 0.0).endVertex();
+        method22694.draw();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
     
     public static void method26877(float n, float n2, float n3, float n4, final Class6153 class6153) {
@@ -194,13 +194,13 @@ public class Class8154
             n2 = n4;
             n4 = (float)n6;
         }
-        Class8726.method30011();
-        Class8726.method30041();
-        Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+        RenderSystem.enableBlend();
+        RenderSystem.disableTexture();
+        RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
         class6153.method18395(true);
         class6153.method18399((int)n - (int)n3, (int)n2 - (int)n4);
-        Class8726.method30040();
-        Class8726.method30012();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
     
     public static void method26878(final float n, final float n2, final float n3, final float n4, final int n5) {
@@ -231,23 +231,23 @@ public class Class8154
         final float n12 = (n6 >> 16 & 0xFF) / 255.0f;
         final float n13 = (n6 >> 8 & 0xFF) / 255.0f;
         final float n14 = (n6 & 0xFF) / 255.0f;
-        Class8726.method30041();
-        Class8726.method30011();
-        Class8726.method29998();
-        Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
-        Class8726.method30045(7425);
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(7, Class9237.field39615);
-        method22695.method12432(n3, n2, 0.0).method12439(n8, n9, n10, n7).method12397();
-        method22695.method12432(n, n2, 0.0).method12439(n8, n9, n10, n7).method12397();
-        method22695.method12432(n, n4, 0.0).method12439(n12, n13, n14, n11).method12397();
-        method22695.method12432(n3, n4, 0.0).method12439(n12, n13, n14, n11).method12397();
-        method22694.method22695();
-        Class8726.method30045(7424);
-        Class8726.method30012();
-        Class8726.method29999();
-        Class8726.method30040();
+        RenderSystem.disableTexture();
+        RenderSystem.enableBlend();
+        RenderSystem.disableAlphaTest();
+        RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+        RenderSystem.shadeModel(7425);
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(7, DefaultVertexFormats.POSITION_COLOR);
+        method22695.pos(n3, n2, 0.0).color(n8, n9, n10, n7).endVertex();
+        method22695.pos(n, n2, 0.0).color(n8, n9, n10, n7).endVertex();
+        method22695.pos(n, n4, 0.0).color(n12, n13, n14, n11).endVertex();
+        method22695.pos(n3, n4, 0.0).color(n12, n13, n14, n11).endVertex();
+        method22694.draw();
+        RenderSystem.shadeModel(7424);
+        RenderSystem.disableBlend();
+        RenderSystem.enableAlphaTest();
+        RenderSystem.enableTexture();
     }
     
     public static void method26882(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
@@ -267,78 +267,78 @@ public class Class8154
         final float n22 = (n8 >> 16 & 0xFF) / 255.0f;
         final float n23 = (n8 >> 8 & 0xFF) / 255.0f;
         final float n24 = (n8 & 0xFF) / 255.0f;
-        Class8726.method30041();
-        Class8726.method30011();
-        Class8726.method29998();
-        Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
-        Class8726.method30045(7425);
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(7, Class9237.field39615);
-        method22695.method12432(n3, n2, 0.0).method12439(n14, n15, n16, n13).method12397();
-        method22695.method12432(n, n2, 0.0).method12439(n10, n11, n12, n9).method12397();
-        method22695.method12432(n, n4, 0.0).method12439(n22, n23, n24, n21).method12397();
-        method22695.method12432(n3, n4, 0.0).method12439(n18, n19, n20, n17).method12397();
-        method22694.method22695();
-        Class8726.method30045(7424);
-        Class8726.method30012();
-        Class8726.method29999();
-        Class8726.method30040();
+        RenderSystem.disableTexture();
+        RenderSystem.enableBlend();
+        RenderSystem.disableAlphaTest();
+        RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+        RenderSystem.shadeModel(7425);
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(7, DefaultVertexFormats.POSITION_COLOR);
+        method22695.pos(n3, n2, 0.0).color(n14, n15, n16, n13).endVertex();
+        method22695.pos(n, n2, 0.0).color(n10, n11, n12, n9).endVertex();
+        method22695.pos(n, n4, 0.0).color(n22, n23, n24, n21).endVertex();
+        method22695.pos(n3, n4, 0.0).color(n18, n19, n20, n17).endVertex();
+        method22694.draw();
+        RenderSystem.shadeModel(7424);
+        RenderSystem.disableBlend();
+        RenderSystem.enableAlphaTest();
+        RenderSystem.enableTexture();
     }
     
     public static void method26883(final float n, final float n2, final float n3, final float n4, final int n5, final float n6) {
-        Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
         GL11.glLineWidth(n6);
         final float n7 = (n5 >> 24 & 0xFF) / 255.0f;
         final float n8 = (n5 >> 16 & 0xFF) / 255.0f;
         final float n9 = (n5 >> 8 & 0xFF) / 255.0f;
         final float n10 = (n5 & 0xFF) / 255.0f;
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        Class8726.method30011();
-        Class8726.method30041();
-        Class8726.method30016(770, 771, 1, 0);
-        Class8726.method30068(n8, n9, n10, n7);
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        RenderSystem.enableBlend();
+        RenderSystem.disableTexture();
+        RenderSystem.method30016(770, 771, 1, 0);
+        RenderSystem.method30068(n8, n9, n10, n7);
         GL11.glEnable(2848);
-        method22695.method12390(1, Class9237.field39615);
-        method22695.method12432(n, n2, 0.0);
-        method22695.method12432(n3, n4, 0.0);
-        method22694.method22695();
+        method22695.begin(1, DefaultVertexFormats.POSITION_COLOR);
+        method22695.pos(n, n2, 0.0);
+        method22695.pos(n3, n4, 0.0);
+        method22694.draw();
         GL11.glDisable(2848);
-        Class8726.method30040();
-        Class8726.method30012();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
     
     public static void method26884(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final int n7) {
-        Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
         final float n8 = (n7 >> 24 & 0xFF) / 255.0f;
         final float n9 = (n7 >> 16 & 0xFF) / 255.0f;
         final float n10 = (n7 >> 8 & 0xFF) / 255.0f;
         final float n11 = (n7 & 0xFF) / 255.0f;
-        Class7392.method22694().method22696();
-        Class8726.method30011();
-        Class8726.method30041();
-        Class8726.method30016(770, 771, 1, 0);
-        Class8726.method30068(n9, n10, n11, n8);
+        Tessellator.getInstance().getBuffer();
+        RenderSystem.enableBlend();
+        RenderSystem.disableTexture();
+        RenderSystem.method30016(770, 771, 1, 0);
+        RenderSystem.method30068(n9, n10, n11, n8);
         GL11.glBegin(6);
         GL11.glVertex2f(n, n2);
         GL11.glVertex2f(n5, n6);
         GL11.glVertex2f(n3, n4);
         GL11.glVertex2f(n, n2);
         GL11.glEnd();
-        Class8726.method30040();
-        Class8726.method30012();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
     
     public static void method26885(final float n, final float n2, final float n3, final int n4, final int n5) {
-        Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
-        Class7392.method22694().method22696();
-        Class8726.method30011();
-        Class8726.method30041();
-        Class8726.method30016(770, 771, 1, 0);
+        Tessellator.getInstance().getBuffer();
+        RenderSystem.enableBlend();
+        RenderSystem.disableTexture();
+        RenderSystem.method30016(770, 771, 1, 0);
         GL11.glColor4fv(Class6430.method19139(n4));
         GL11.glEnable(2881);
         GL11.glBegin(4);
@@ -361,8 +361,8 @@ public class Class8154
         GL11.glVertex2f(n - n3 / 2.0f, n2);
         GL11.glEnd();
         GL11.glDisable(2881);
-        Class8726.method30040();
-        Class8726.method30012();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
     
     public static void method26886(final float n, final float n2, final float n3, final int n4) {
@@ -374,16 +374,16 @@ public class Class8154
     }
     
     public static void method26888(final float n, final float n2, final float n3, final int n4) {
-        Class8726.method30068(0.0f, 0.0f, 0.0f, 0.0f);
+        RenderSystem.method30068(0.0f, 0.0f, 0.0f, 0.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
         final float n5 = (n4 >> 24 & 0xFF) / 255.0f;
         final float n6 = (n4 >> 16 & 0xFF) / 255.0f;
         final float n7 = (n4 >> 8 & 0xFF) / 255.0f;
         final float n8 = (n4 & 0xFF) / 255.0f;
-        Class7392.method22694().method22696();
-        Class8726.method30041();
-        Class8726.method30016(770, 771, 1, 0);
-        Class8726.method30068(n6, n7, n8, n5);
+        Tessellator.getInstance().getBuffer();
+        RenderSystem.disableTexture();
+        RenderSystem.method30016(770, 771, 1, 0);
+        RenderSystem.method30068(n6, n7, n8, n5);
         GL11.glEnable(2832);
         GL11.glEnable(3042);
         GL11.glPointSize(n3 * Class9000.field37993);
@@ -392,8 +392,8 @@ public class Class8154
         GL11.glEnd();
         GL11.glDisable(2832);
         GL11.glDisable(3042);
-        Class8726.method30040();
-        Class8726.method30012();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
     
     public static void method26889(final Class7524 class7524, final float n, final float n2, final String s, final int n3) {
@@ -405,7 +405,7 @@ public class Class8154
     }
     
     public static void method26891(Class7524 class7524, final float n, final float n2, final String s, final int n3, final Class2056 class7525, final Class2056 class7526, final boolean b) {
-        Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
         int n4 = 0;
         int n5 = 0;
@@ -474,7 +474,7 @@ public class Class8154
                 n5 *= (int)Class9000.field37993;
             }
         }
-        Class8726.method30011();
+        RenderSystem.enableBlend();
         GL11.glBlendFunc(770, 771);
         if (b) {
             class7524.method23501((float)Math.round(n + n4), (float)(Math.round(n2 + n5) + 2), s, new Class2427(0.0f, 0.0f, 0.0f, 0.35f));
@@ -482,7 +482,7 @@ public class Class8154
         if (s != null) {
             class7524.method23501((float)Math.round(n + n4), (float)Math.round(n2 + n5), s, new Class2427(n7, n8, n9, n6));
         }
-        Class8726.method30012();
+        RenderSystem.disableBlend();
         GL11.glPopMatrix();
     }
     
@@ -495,7 +495,7 @@ public class Class8154
     }
     
     public static void method26894(final Class7522 class7522, final float n, final float n2, final String s, final int n3, final Class2056 class7523, final Class2056 class7524, final boolean b) {
-        Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
         int n4 = 0;
         int n5 = 0;
@@ -523,11 +523,11 @@ public class Class8154
         final float n7 = (n3 >> 16 & 0xFF) / 255.0f;
         final float n8 = (n3 >> 8 & 0xFF) / 255.0f;
         final float n9 = (n3 & 0xFF) / 255.0f;
-        Class8726.method30011();
+        RenderSystem.enableBlend();
         GL11.glBlendFunc(770, 771);
         Class7777.method24930();
         class7522.method23501((float)Math.round(n + n4), (float)Math.round(n2 + n5), s, new Class2427(n7, n8, n9, n6));
-        Class8726.method30012();
+        RenderSystem.disableBlend();
     }
     
     public static void method26895(final float n, final float n2, final float n3, final float n4, final float n5, final int n6) {
@@ -535,7 +535,7 @@ public class Class8154
     }
     
     public static void method26896(final float n, final float n2, float n3, float n4, final float n5, final float n6, final int n7) {
-        Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
         if (n3 > n4) {
             final float n8 = n4;
@@ -546,11 +546,11 @@ public class Class8154
         final float n10 = (n7 >> 16 & 0xFF) / 255.0f;
         final float n11 = (n7 >> 8 & 0xFF) / 255.0f;
         final float n12 = (n7 & 0xFF) / 255.0f;
-        Class7392.method22694().method22696();
-        Class8726.method30011();
-        Class8726.method30041();
-        Class8726.method30016(770, 771, 1, 0);
-        Class8726.method30068(n10, n11, n12, n9);
+        Tessellator.getInstance().getBuffer();
+        RenderSystem.enableBlend();
+        RenderSystem.disableTexture();
+        RenderSystem.method30016(770, 771, 1, 0);
+        RenderSystem.method30068(n10, n11, n12, n9);
         if (n9 > 0.5f) {
             GL11.glEnable(2848);
             GL11.glLineWidth(2.0f);
@@ -566,29 +566,29 @@ public class Class8154
             GL11.glVertex2f(n + (float)Math.cos(n14 * 3.141592653589793 / 180.0) * n5, n2 + (float)Math.sin(n14 * 3.141592653589793 / 180.0) * n6);
         }
         GL11.glEnd();
-        Class8726.method30040();
-        Class8726.method30012();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
     
     public static void method26897(final float n, final float n2, final float[] array, final float[] array2, final int n3) {
-        Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
         final float n4 = (n3 >> 24 & 0xFF) / 255.0f;
         final float n5 = (n3 >> 16 & 0xFF) / 255.0f;
         final float n6 = (n3 >> 8 & 0xFF) / 255.0f;
         final float n7 = (n3 & 0xFF) / 255.0f;
-        Class7392.method22694().method22696();
-        Class8726.method30011();
-        Class8726.method30041();
-        Class8726.method30016(770, 771, 1, 0);
-        Class8726.method30068(n5, n6, n7, n4);
+        Tessellator.getInstance().getBuffer();
+        RenderSystem.enableBlend();
+        RenderSystem.disableTexture();
+        RenderSystem.method30016(770, 771, 1, 0);
+        RenderSystem.method30068(n5, n6, n7, n4);
         GL11.glBegin(6);
         for (int i = array.length - 1; i >= 0; --i) {
             GL11.glVertex2f(n + array[i], n2 + array2[i]);
         }
         GL11.glEnd();
-        Class8726.method30040();
-        Class8726.method30012();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
     
     public static void method26898(final float n, final float n2, final float n3, final float n4, final Class7776 class7776, final int n5) {
@@ -610,7 +610,7 @@ public class Class8154
     
     public static void method26902(float a, float a2, float a3, float a4, final Class7776 class7776, final int n, final float n2, final float n3, final float n4, final float n5, final boolean b) {
         if (class7776 != null) {
-            Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+            RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
             GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
             a = (float)Math.round(a);
             a3 = (float)Math.round(a3);
@@ -620,10 +620,10 @@ public class Class8154
             final float n7 = (n >> 16 & 0xFF) / 255.0f;
             final float n8 = (n >> 8 & 0xFF) / 255.0f;
             final float n9 = (n & 0xFF) / 255.0f;
-            Class8726.method30011();
-            Class8726.method30041();
-            Class8726.method30016(770, 771, 1, 0);
-            Class8726.method30068(n7, n8, n9, n6);
+            RenderSystem.enableBlend();
+            RenderSystem.disableTexture();
+            RenderSystem.method30016(770, 771, 1, 0);
+            RenderSystem.method30068(n7, n8, n9, n6);
             GL11.glEnable(3042);
             GL11.glEnable(3553);
             class7776.method24916();
@@ -651,14 +651,14 @@ public class Class8154
             GL11.glEnd();
             GL11.glDisable(3553);
             GL11.glDisable(3042);
-            Class8726.method30040();
-            Class8726.method30012();
+            RenderSystem.enableTexture();
+            RenderSystem.disableBlend();
         }
     }
     
     public static void method26903(float a, float a2, float a3, float a4, final ByteBuffer byteBuffer, final int n, final float n2, final float n3, final float n4, final float n5, final boolean b, final boolean b2) {
         if (byteBuffer != null) {
-            Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+            RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
             GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
             a = (float)Math.round(a);
             a3 = (float)Math.round(a3);
@@ -668,10 +668,10 @@ public class Class8154
             final float n7 = (n >> 16 & 0xFF) / 255.0f;
             final float n8 = (n >> 8 & 0xFF) / 255.0f;
             final float n9 = (n & 0xFF) / 255.0f;
-            Class8726.method30011();
-            Class8726.method30041();
-            Class8726.method30016(770, 771, 1, 0);
-            Class8726.method30068(n7, n8, n9, n6);
+            RenderSystem.enableBlend();
+            RenderSystem.disableTexture();
+            RenderSystem.method30016(770, 771, 1, 0);
+            RenderSystem.method30068(n7, n8, n9, n6);
             GL11.glEnable(3042);
             GL11.glEnable(3553);
             GL11.glPixelStorei(3312, 0);
@@ -699,8 +699,8 @@ public class Class8154
             GL11.glEnd();
             GL11.glDisable(3553);
             GL11.glDisable(3042);
-            Class8726.method30040();
-            Class8726.method30012();
+            RenderSystem.enableTexture();
+            RenderSystem.disableBlend();
         }
     }
     
@@ -722,7 +722,7 @@ public class Class8154
     }
     
     public static void method26907(float a, float a2, float a3, float a4, final int n, final float n2, final float n3, final float n4, final float n5) {
-        Class8726.method30068(0.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30068(0.0f, 0.0f, 0.0f, 1.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
         a = (float)Math.round(a);
         a3 = (float)Math.round(a3);
@@ -732,10 +732,10 @@ public class Class8154
         final float n7 = (n >> 16 & 0xFF) / 255.0f;
         final float n8 = (n >> 8 & 0xFF) / 255.0f;
         final float n9 = (n & 0xFF) / 255.0f;
-        Class8726.method30011();
-        Class8726.method30041();
-        Class8726.method30016(770, 771, 1, 0);
-        Class8726.method30068(n7, n8, n9, n6);
+        RenderSystem.enableBlend();
+        RenderSystem.disableTexture();
+        RenderSystem.method30016(770, 771, 1, 0);
+        RenderSystem.method30068(n7, n8, n9, n6);
         GL11.glEnable(3042);
         GL11.glEnable(3553);
         GL11.glPixelStorei(3312, 0);
@@ -761,8 +761,8 @@ public class Class8154
         GL11.glEnd();
         GL11.glDisable(3553);
         GL11.glDisable(3042);
-        Class8726.method30040();
-        Class8726.method30012();
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
     }
     
     public static void method26908(final float n, final float n2, final float n3, final int n4) {
@@ -1200,29 +1200,29 @@ public class Class8154
             GL11.glPushMatrix();
             GL11.glTranslatef((float)n, (float)n2, 0.0f);
             GL11.glScalef(n3 / 16.0f, n4 / 16.0f, 0.0f);
-            final Class1796 method5291 = Class8154.field33582.getItemRenderer();
+            final ItemRenderer method5291 = Class8154.field33582.getItemRenderer();
             if (class8321.field34176 == 0) {
                 class8321 = new ItemStack(class8321.getItem());
             }
             Block.method11776(class8321.getItem());
-            Class8726.method30108();
-            Class8726.method30003();
-            Class8726.method30002();
-            Class8726.method30011();
+            RenderSystem.method30108();
+            RenderSystem.method30003();
+            RenderSystem.method30002();
+            RenderSystem.enableBlend();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             GL11.glDepthFunc(519);
             method5291.method6538(class8321, 0, 0);
             GL11.glDepthFunc(515);
-            Class8726.method30029();
-            Class8726.method30060();
+            RenderSystem.method30029();
+            RenderSystem.method30060();
             GL11.glAlphaFunc(519, 0.0f);
-            Class8726.method30084(33986, 240.0f, 240.0f);
+            RenderSystem.method30084(33986, 240.0f, 240.0f);
             GL11.glDisable(2929);
             Class7777.method24931();
             final Class1663 method5292 = Class8154.field33582.method5290();
             Class8154.field33582.method5290();
             method5292.method5849(Class1663.field9428);
-            Class8726.method30109();
+            RenderSystem.method30109();
         }
     }
     

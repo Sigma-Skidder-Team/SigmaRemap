@@ -43,7 +43,7 @@ public class Class8491
     @Class6753
     public void method28366(final Class5751 class5751) {
         if (Class9367.method34762() == Class7906.field32452.method25613()) {
-            if (this.field34856.field4684.method2768() <= 1) {
+            if (this.field34856.player.method2768() <= 1) {
                 class5751.method16961(true);
             }
         }
@@ -51,7 +51,7 @@ public class Class8491
     
     @Class6753
     public void method28367(final Class5752 class5752) {
-        if (class5752.method17061() == this.field34856.field4648.field23442.field2161.method26047()) {
+        if (class5752.method17061() == this.field34856.gameSettings.field23442.field2161.method26047()) {
             if (Class9367.method34762() < Class7906.field32462.method25613()) {
                 this.field34856.method5269().method17292(new Class4323(Class2218.field13623));
             }
@@ -78,10 +78,10 @@ public class Class8491
     @Class6753
     @Class6763
     public void method28369(final Class5740 class5740) {
-        if (this.field34856.field4684 != null) {
-            if (this.field34856.field4684.method1654() == Pose.field1666) {
+        if (this.field34856.player != null) {
+            if (this.field34856.player.method1654() == Pose.field1666) {
                 if (Class9367.method34762() < Class7906.field32463.method25613() || Class6430.method19146()) {
-                    this.field34856.field4684.method1653(Pose.field1663);
+                    this.field34856.player.method1653(Pose.field1663);
                 }
             }
         }
@@ -90,7 +90,7 @@ public class Class8491
     @Class6753
     @Class6763
     public void method28370(final Class5753 class5753) {
-        if (this.field34856.world != null && this.field34856.field4684 != null) {
+        if (this.field34856.world != null && this.field34856.player != null) {
             final Block method21696 = this.field34856.world.getBlockState(class5753.method17064()).method21696();
             if (Class9367.method34762() == Class7906.field32452.method25613()) {
                 if (method21696 instanceof Class3971) {
@@ -98,11 +98,11 @@ public class Class8491
                 }
             }
             if (Class9367.method34762() == Class7906.field32452.method25613()) {
-                if (this.field34856.field4684.boundingBox.maxY - this.field34856.field4684.boundingBox.minY == 1.5) {
-                    this.field34856.field4684.boundingBox = this.field34856.field4684.boundingBox.expand(0.0, 0.2999999523162842, 0.0);
+                if (this.field34856.player.boundingBox.maxY - this.field34856.player.boundingBox.minY == 1.5) {
+                    this.field34856.player.boundingBox = this.field34856.player.boundingBox.expand(0.0, 0.2999999523162842, 0.0);
                 }
-                if (this.field34856.field4684.eyeHeight == 1.27f) {
-                    this.field34856.field4684.eyeHeight = 1.38f;
+                if (this.field34856.player.eyeHeight == 1.27f) {
+                    this.field34856.player.eyeHeight = 1.38f;
                 }
             }
         }
@@ -143,9 +143,9 @@ public class Class8491
         this.field34860.method23920();
         for (int j = -5; j < 5; ++j) {
             for (int k = -5; k < 5; ++k) {
-                final Class1862 method6686 = this.field34856.world.method6686(this.field34856.field4684.chunkCoordX + j, this.field34856.field4684.chunkCoordZ + k);
+                final Class1862 method6686 = this.field34856.world.method6686(this.field34856.player.chunkCoordX + j, this.field34856.player.chunkCoordZ + k);
                 if (method6686 instanceof Class1864) {
-                    this.field34856.world.method6835().field10344.method34013(this.field34856.world.method6835().field10344.method34012(this.field34856.field4684.chunkCoordX + j, this.field34856.field4684.chunkCoordZ + k), new Class1863(this.field34856.world, new Class7859(this.field34856.field4684.chunkCoordX + j, this.field34856.field4684.chunkCoordZ + k), method6686.method7024().clone()));
+                    this.field34856.world.method6835().field10344.method34013(this.field34856.world.method6835().field10344.method34012(this.field34856.player.chunkCoordX + j, this.field34856.player.chunkCoordZ + k), new Class1863(this.field34856.world, new Class7859(this.field34856.player.chunkCoordX + j, this.field34856.player.chunkCoordZ + k), method6686.method7024().clone()));
                 }
             }
         }
@@ -207,7 +207,7 @@ public class Class8491
                     class5723.method16961(true);
                 }
                 else if (!(class5723.method16998() instanceof Class4289)) {
-                    if (class5723.method16998() instanceof Class4379 && this.field34856.field4684 != null) {
+                    if (class5723.method16998() instanceof Class4379 && this.field34856.player != null) {
                         final Class4379 class5725 = (Class4379)class5723.method16998();
                     }
                     else if (!(class5723.method16998() instanceof Class4332)) {
@@ -264,46 +264,46 @@ public class Class8491
     @Class6763
     public void method28374(final Class5717 class5717) {
         if (Class9367.method34762() < Class7906.field32463.method25613() || Class6430.method19146()) {
-            if (this.field34856.field4684.method1706()) {
+            if (this.field34856.player.method1706()) {
                 this.field34863 = true;
-                final double field2396 = this.field34856.field4684.posY;
+                final double field2396 = this.field34856.player.posY;
                 float method34827 = Class9379.method34827();
                 float n = 0.02f;
-                float n2 = (float)Class8742.method30210(this.field34856.field4684);
+                float n2 = (float)Class8742.method30210(this.field34856.player);
                 if (n2 > 3.0f) {
                     n2 = 3.0f;
                 }
-                if (!this.field34856.field4684.onGround) {
+                if (!this.field34856.player.onGround) {
                     n2 *= 0.5f;
                 }
                 if (n2 > 0.0f) {
                     method34827 += (0.54600006f - method34827) * n2 / 3.0f;
-                    n += (this.field34856.field4684.method2732() - n) * n2 / 3.0f;
+                    n += (this.field34856.player.method2732() - n) * n2 / 3.0f;
                 }
-                if (!this.field34856.field4648.field23441.method1056()) {
-                    if (this.field34856.field4684.field2968 == 0.0f) {
-                        if (this.field34856.field4684.field2970 == 0.0f) {
-                            this.field34856.field4684.method1816(false);
+                if (!this.field34856.gameSettings.field23441.method1056()) {
+                    if (this.field34856.player.field2968 == 0.0f) {
+                        if (this.field34856.player.field2970 == 0.0f) {
+                            this.field34856.player.method1816(false);
                         }
                     }
                 }
                 else {
-                    this.field34856.field4684.method1816(true);
+                    this.field34856.player.method1816(true);
                 }
-                Class9379.method34822(this.field34856.field4684.field2968, this.field34856.field4684.field2969, this.field34856.field4684.field2970, n * (this.field34856.field4684.method1815() ? (this.field34856.field4684.onGround ? 1.5f : 1.3f) : 1.0f));
+                Class9379.method34822(this.field34856.player.field2968, this.field34856.player.field2969, this.field34856.player.field2970, n * (this.field34856.player.method1815() ? (this.field34856.player.onGround ? 1.5f : 1.3f) : 1.0f));
                 Class9379.method34825(Class9379.field40221, Class9379.field40222, Class9379.field40223);
                 Class9379.field40221 *= method34827;
                 Class9379.field40222 *= 0.800000011920929;
                 Class9379.field40223 *= method34827;
-                if (!this.field34856.field4684.method1698()) {
+                if (!this.field34856.player.method1698()) {
                     Class9379.field40222 -= 0.02;
                 }
-                if (this.field34856.field4684.collidedHorizontally) {
-                    if (this.field34856.field4684.method1669(Class9379.field40221, Class9379.field40222 + 0.6000000238418579 - this.field34856.field4684.posY + field2396, Class9379.field40223)) {
+                if (this.field34856.player.collidedHorizontally) {
+                    if (this.field34856.player.method1669(Class9379.field40221, Class9379.field40222 + 0.6000000238418579 - this.field34856.player.posY + field2396, Class9379.field40223)) {
                         Class9379.field40222 = 0.30000001192092896;
                     }
                 }
-                if (this.field34856.field4684.field2967) {
+                if (this.field34856.player.field2967) {
                     Class9379.method34826();
                 }
                 class5717.method16973(Class9379.field40221);
@@ -311,14 +311,14 @@ public class Class8491
                 class5717.method16977(Class9379.field40223);
             }
             else {
-                Class9379.field40222 = this.field34856.field4684.getMotion().y;
+                Class9379.field40222 = this.field34856.player.getMotion().y;
                 if (this.field34863) {
                     if (Class9379.method34828()) {
                         Class6430.method19155(Class9379.field40222 = 0.20000000298023224);
                     }
                 }
-                Class9379.field40221 = this.field34856.field4684.getMotion().x;
-                Class9379.field40223 = this.field34856.field4684.getMotion().z;
+                Class9379.field40221 = this.field34856.player.getMotion().x;
+                Class9379.field40223 = this.field34856.player.getMotion().z;
                 this.field34863 = false;
             }
         }
@@ -345,7 +345,7 @@ public class Class8491
     @Class6753
     @Class6763
     public void method28376(final Class5729 class5729) {
-        if (class5729.method17016() != this.field34856.field4684) {
+        if (class5729.method17016() != this.field34856.player) {
             if (class5729.method17016() != Class3317.field15901) {
                 if (class5729.method17016() != Class3276.field15771) {
                     return;
@@ -353,7 +353,7 @@ public class Class8491
             }
         }
         if (class5729.method17011() != 1.0f) {
-            if (Class5744.field23324 - this.field34856.field4684.field2953 == 0.0f) {
+            if (Class5744.field23324 - this.field34856.player.field2953 == 0.0f) {
                 if (this.field34864) {
                     class5729.method17012(MathHelper.method35706(class5729.method17011(), Class5744.field23326, class5729.method17016().field2951));
                     class5729.method17013(MathHelper.method35706(class5729.method17011(), Class5744.field23326, class5729.method17016().field2953));

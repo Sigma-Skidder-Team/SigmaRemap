@@ -21,7 +21,7 @@ public class Class4727 extends Class4723<Class769>
         return Class4727.field20329;
     }
     
-    public void method14039(final Class769 class769, final float n, final float n2, final Class7351 class770, final Class7807 class771, final int n3) {
+    public void method14039(final Class769 class769, final float n, final float n2, final MatrixStack class770, final IRenderTypeBuffer class771, final int n3) {
         if (!class769.method1823()) {
             super.method14006((T)class769, n, n2, class770, class771, n3);
         }

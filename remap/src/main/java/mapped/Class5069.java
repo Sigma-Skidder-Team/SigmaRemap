@@ -167,7 +167,7 @@ public class Class5069 extends RealmsScreen
         final int n4 = Class7869.method25488(12) + 20;
         final Class7710 field30674 = Class7710.field30674;
         RealmsScreen.method15419("textures/gui/options_background.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         field30674.method24611(7, Class7785.field31866);
         field30674.method24610(0.0, this.height(), 0.0).method24614(0.0f, (this.height() - n4) / 32.0f + 0.0f).method24613(64, 64, 64, 255).method24612();
         field30674.method24610(this.width(), this.height(), 0.0).method24614(this.width() / 32.0f, (this.height() - n4) / 32.0f + 0.0f).method24613(64, 64, 64, 255).method24612();
@@ -219,10 +219,10 @@ public class Class5069 extends RealmsScreen
         }
         final boolean b2 = b;
         RealmsScreen.method15419("realms:textures/gui/realms/cross_player_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n, n2, 0.0f, b2 ? 7.0f : 0.0f, 8, 7, 8, 14);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (b2) {
             this.field21731 = RealmsScreen.getLocalizedString("mco.configure.world.invites.remove.tooltip");
         }
@@ -249,10 +249,10 @@ public class Class5069 extends RealmsScreen
         }
         final boolean b2 = b;
         RealmsScreen.method15419("realms:textures/gui/realms/op_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n, n2, 0.0f, b2 ? 8.0f : 0.0f, 8, 8, 8, 16);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (b2) {
             this.field21731 = RealmsScreen.getLocalizedString("mco.configure.world.invites.ops.tooltip");
         }
@@ -279,10 +279,10 @@ public class Class5069 extends RealmsScreen
         }
         final boolean b2 = b;
         RealmsScreen.method15419("realms:textures/gui/realms/user_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n, n2, 0.0f, b2 ? 8.0f : 0.0f, 8, 8, 8, 16);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (b2) {
             this.field21731 = RealmsScreen.getLocalizedString("mco.configure.world.invites.normal.tooltip");
         }

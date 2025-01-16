@@ -29,32 +29,32 @@ public class Class715 extends Class698
     
     @Override
     public void init() {
-        this.method3029(new Class673(0, this.width / 2 - 100, this.height / 6 + 96, this.field3908));
+        this.addButton(new Class673(0, this.width / 2 - 100, this.height / 6 + 96, this.field3908));
         this.field3907.clear();
         this.field3907.addAll(this.minecraft.fontRenderer.method6626(this.field3906, this.width - 50));
     }
     
     @Override
-    public void method3896(final Class573 class573) {
-        Config.method28894().method5244(this.field3904);
+    public void method3896(final Widget class573) {
+        Config.method28894().displayGuiScreen(this.field3904);
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.field3843, this.field3905, this.width / 2, 70, 16777215);
+        this.drawCenteredString(this.field3843, this.field3905, this.width / 2, 70, 16777215);
         int n4 = 90;
         final Iterator<String> iterator = this.field3907.iterator();
         while (iterator.hasNext()) {
-            this.method3295(this.field3843, iterator.next(), this.width / 2, n4, 16777215);
+            this.drawCenteredString(this.field3843, iterator.next(), this.width / 2, n4, 16777215);
             n4 += 9;
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     public void method3933(final int field3909) {
         this.field3909 = field3909;
-        final Iterator<Class573> iterator = this.field3842.iterator();
+        final Iterator<Widget> iterator = this.field3842.iterator();
         while (iterator.hasNext()) {
             iterator.next().field3431 = false;
         }
@@ -66,7 +66,7 @@ public class Class715 extends Class698
         final int field3909 = this.field3909 - 1;
         this.field3909 = field3909;
         if (field3909 == 0) {
-            final Iterator<Class573> iterator = this.field3842.iterator();
+            final Iterator<Widget> iterator = this.field3842.iterator();
             while (iterator.hasNext()) {
                 iterator.next().field3431 = true;
             }

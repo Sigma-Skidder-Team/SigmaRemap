@@ -12,7 +12,7 @@ import com.google.common.collect.Ordering;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class688 extends Class565
+public class Class688 extends AbstractGui
 {
     private static final Ordering<Class9081> field3784;
     private final Minecraft field3785;
@@ -41,18 +41,18 @@ public class Class688 extends Class565
     }
     
     public void method3821(final int n, final Class6516 class6516, final Class9290 class6517) {
-        final List sortedCopy = Class688.field3784.sortedCopy((Iterable)this.field3785.field4684.field4069.method17370());
+        final List sortedCopy = Class688.field3784.sortedCopy((Iterable)this.field3785.player.field4069.method17370());
         int max = 0;
         int max2 = 0;
         for (final Class9081 class6518 : sortedCopy) {
-            max = Math.max(max, this.field3785.fontRenderer.method6617(this.method3819(class6518).getFormattedText()));
+            max = Math.max(max, this.field3785.fontRenderer.getStringWidth(this.method3819(class6518).getFormattedText()));
             if (class6517 == null) {
                 continue;
             }
             if (class6517.method34317() == Class263.field1257) {
                 continue;
             }
-            max2 = Math.max(max2, this.field3785.fontRenderer.method6617(" " + class6516.method19636(class6518.method32719().getName(), class6517).method23969()));
+            max2 = Math.max(max2, this.field3785.fontRenderer.getStringWidth(" " + class6516.method19636(class6518.method32719().getName(), class6517).method23969()));
         }
         final List subList = sortedCopy.subList(0, Math.min(sortedCopy.size(), 80));
         int i;
@@ -81,7 +81,7 @@ public class Class688 extends Class565
             method6626 = this.field3785.fontRenderer.method6626(this.field3788.getFormattedText(), n - 50);
             final Iterator<String> iterator2 = method6626.iterator();
             while (iterator2.hasNext()) {
-                n8 = Math.max(n8, this.field3785.fontRenderer.method6617(iterator2.next()));
+                n8 = Math.max(n8, this.field3785.fontRenderer.getStringWidth(iterator2.next()));
             }
         }
         List<String> method6627 = null;
@@ -89,29 +89,29 @@ public class Class688 extends Class565
             method6627 = this.field3785.fontRenderer.method6626(this.field3787.getFormattedText(), n - 50);
             final Iterator<String> iterator3 = method6627.iterator();
             while (iterator3.hasNext()) {
-                n8 = Math.max(n8, this.field3785.fontRenderer.method6617(iterator3.next()));
+                n8 = Math.max(n8, this.field3785.fontRenderer.getStringWidth(iterator3.next()));
             }
         }
         if (method6626 != null) {
-            Class565.method3293(n / 2 - n8 / 2 - 1, n7 - 1, n / 2 + n8 / 2 + 1, n7 + method6626.size() * 9, Integer.MIN_VALUE);
+            AbstractGui.fill(n / 2 - n8 / 2 - 1, n7 - 1, n / 2 + n8 / 2 + 1, n7 + method6626.size() * 9, Integer.MIN_VALUE);
             for (final String s : method6626) {
-                this.field3785.fontRenderer.method6609(s, (float)(n / 2 - this.field3785.fontRenderer.method6617(s) / 2), (float)n7, -1);
+                this.field3785.fontRenderer.drawStringWithShadow(s, (float)(n / 2 - this.field3785.fontRenderer.getStringWidth(s) / 2), (float)n7, -1);
                 n7 += 9;
             }
             ++n7;
         }
-        Class565.method3293(n / 2 - n8 / 2 - 1, n7 - 1, n / 2 + n8 / 2 + 1, n7 + i * 9, Integer.MIN_VALUE);
-        final int method6628 = this.field3785.field4648.method17116(553648127);
+        AbstractGui.fill(n / 2 - n8 / 2 - 1, n7 - 1, n / 2 + n8 / 2 + 1, n7 + i * 9, Integer.MIN_VALUE);
+        final int method6628 = this.field3785.gameSettings.method17116(553648127);
         for (int j = 0; j < n2; ++j) {
             final int n9 = j / i;
             final int n10 = j % i;
             int n11 = n6 + n9 * n5 + n9 * 5;
             final int n12 = n7 + n10 * 9;
-            Class565.method3293(n11, n12, n11 + n5, n12 + 8, method6628);
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method29999();
-            Class8726.method30011();
-            Class8726.method30117();
+            AbstractGui.fill(n11, n12, n11 + n5, n12 + 8, method6628);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.enableAlphaTest();
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
             if (j < subList.size()) {
                 final Class9081 class6519 = (Class9081)subList.get(j);
                 final GameProfile method6629 = class6519.method32719();
@@ -131,20 +131,20 @@ public class Class688 extends Class565
                     }
                     final boolean b3 = b2;
                     this.field3785.method5290().method5849(class6519.method32726());
-                    Class565.method3300(n11, n12, 8, 8, 8.0f, (float)(8 + (b3 ? 8 : 0)), 8, 8 * (b3 ? -1 : 1), 64, 64);
+                    AbstractGui.blit(n11, n12, 8, 8, 8.0f, (float)(8 + (b3 ? 8 : 0)), 8, 8 * (b3 ? -1 : 1), 64, 64);
                     if (method6630 != null) {
                         if (method6630.method2895(Class189.field616)) {
-                            Class565.method3300(n11, n12, 8, 8, 40.0f, (float)(8 + (b3 ? 8 : 0)), 8, 8 * (b3 ? -1 : 1), 64, 64);
+                            AbstractGui.blit(n11, n12, 8, 8, 40.0f, (float)(8 + (b3 ? 8 : 0)), 8, 8 * (b3 ? -1 : 1), 64, 64);
                         }
                     }
                     n11 += 9;
                 }
                 final String method6631 = this.method3819(class6519).getFormattedText();
                 if (class6519.method32720() != Class101.field301) {
-                    this.field3785.fontRenderer.method6609(method6631, (float)n11, (float)n12, -1);
+                    this.field3785.fontRenderer.drawStringWithShadow(method6631, (float)n11, (float)n12, -1);
                 }
                 else {
-                    this.field3785.fontRenderer.method6609(TextFormatting.ITALIC + method6631, (float)n11, (float)n12, -1862270977);
+                    this.field3785.fontRenderer.drawStringWithShadow(TextFormatting.ITALIC + method6631, (float)n11, (float)n12, -1862270977);
                 }
                 if (class6517 != null) {
                     if (class6519.method32720() != Class101.field301) {
@@ -160,17 +160,17 @@ public class Class688 extends Class565
         }
         if (method6627 != null) {
             int n15 = n7 + i * 9 + 1;
-            Class565.method3293(n / 2 - n8 / 2 - 1, n15 - 1, n / 2 + n8 / 2 + 1, n15 + method6627.size() * 9, Integer.MIN_VALUE);
+            AbstractGui.fill(n / 2 - n8 / 2 - 1, n15 - 1, n / 2 + n8 / 2 + 1, n15 + method6627.size() * 9, Integer.MIN_VALUE);
             for (final String s2 : method6627) {
-                this.field3785.fontRenderer.method6609(s2, (float)(n / 2 - this.field3785.fontRenderer.method6617(s2) / 2), (float)n15, -1);
+                this.field3785.fontRenderer.drawStringWithShadow(s2, (float)(n / 2 - this.field3785.fontRenderer.getStringWidth(s2) / 2), (float)n15, -1);
                 n15 += 9;
             }
         }
     }
     
     public void method3822(final int n, final int n2, final int n3, final Class9081 class9081) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3785.method5290().method5849(Class688.field3363);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        this.field3785.method5290().method5849(Class688.GUI_ICONS_LOCATION);
         int n4;
         if (class9081.method32722() >= 0) {
             if (class9081.method32722() >= 150) {
@@ -198,19 +198,19 @@ public class Class688 extends Class565
         else {
             n4 = 5;
         }
-        this.method3304(this.method3303() + 100);
-        this.method3186(n2 + n - 11, n3, 0, 176 + n4 * 8, 10, 8);
-        this.method3304(this.method3303() - 100);
+        this.setBlitOffset(this.getBlitOffset() + 100);
+        this.blit(n2 + n - 11, n3, 0, 176 + n4 * 8, 10, 8);
+        this.setBlitOffset(this.getBlitOffset() - 100);
     }
     
     private void method3823(final Class9290 class9290, final int n, final String s, final int n2, final int n3, final Class9081 class9291) {
         final int method23969 = class9290.method34311().method19636(s, class9290).method23969();
         if (class9290.method34317() != Class263.field1257) {
             final String string = TextFormatting.YELLOW + "" + method23969;
-            this.field3785.fontRenderer.method6609(string, (float)(n3 - this.field3785.fontRenderer.method6617(string)), (float)n, 16777215);
+            this.field3785.fontRenderer.drawStringWithShadow(string, (float)(n3 - this.field3785.fontRenderer.getStringWidth(string)), (float)n, 16777215);
         }
         else {
-            this.field3785.method5290().method5849(Class688.field3363);
+            this.field3785.method5290().method5849(Class688.GUI_ICONS_LOCATION);
             final long method23970 = Util.method27837();
             if (this.field3789 == class9291.method32741()) {
                 if (method23969 >= class9291.method32733()) {
@@ -240,30 +240,30 @@ public class Class688 extends Class565
                     final float method23973 = MathHelper.clamp(method23969 / 20.0f, 0.0f, 1.0f);
                     final int n4 = (int)((1.0f - method23973) * 255.0f) << 16 | (int)(method23973 * 255.0f) << 8;
                     String s2 = "" + method23969 / 2.0f;
-                    if (n3 - this.field3785.fontRenderer.method6617(s2 + "hp") >= n2) {
+                    if (n3 - this.field3785.fontRenderer.getStringWidth(s2 + "hp") >= n2) {
                         s2 += "hp";
                     }
-                    this.field3785.fontRenderer.method6609(s2, (float)((n3 + n2) / 2 - this.field3785.fontRenderer.method6617(s2) / 2), (float)n, n4);
+                    this.field3785.fontRenderer.drawStringWithShadow(s2, (float)((n3 + n2) / 2 - this.field3785.fontRenderer.getStringWidth(s2) / 2), (float)n, n4);
                 }
                 else {
                     for (int i = method23971; i < max; ++i) {
-                        this.method3186(n2 + i * method23972, n, b ? 25 : 16, 0, 9, 9);
+                        this.blit(n2 + i * method23972, n, b ? 25 : 16, 0, 9, 9);
                     }
                     for (int j = 0; j < method23971; ++j) {
-                        this.method3186(n2 + j * method23972, n, b ? 25 : 16, 0, 9, 9);
+                        this.blit(n2 + j * method23972, n, b ? 25 : 16, 0, 9, 9);
                         if (b) {
                             if (j * 2 + 1 < class9291.method32735()) {
-                                this.method3186(n2 + j * method23972, n, 70, 0, 9, 9);
+                                this.blit(n2 + j * method23972, n, 70, 0, 9, 9);
                             }
                             if (j * 2 + 1 == class9291.method32735()) {
-                                this.method3186(n2 + j * method23972, n, 79, 0, 9, 9);
+                                this.blit(n2 + j * method23972, n, 79, 0, 9, 9);
                             }
                         }
                         if (j * 2 + 1 < method23969) {
-                            this.method3186(n2 + j * method23972, n, (j < 10) ? 52 : 160, 0, 9, 9);
+                            this.blit(n2 + j * method23972, n, (j < 10) ? 52 : 160, 0, 9, 9);
                         }
                         if (j * 2 + 1 == method23969) {
-                            this.method3186(n2 + j * method23972, n, (j < 10) ? 61 : 169, 0, 9, 9);
+                            this.blit(n2 + j * method23972, n, (j < 10) ? 61 : 169, 0, 9, 9);
                         }
                     }
                 }

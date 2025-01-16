@@ -87,11 +87,11 @@ public class Class3376 extends Class3167
         this.field16052 = 0;
         this.field16054 = 0;
         Class3376.field16066 = 0;
-        this.field16065 = new Class7988(Class3376.field15514.field4684.field4077, Class3376.field15514.field4684.field4078);
-        this.field16064 = new Class7988(Class3376.field15514.field4684.rotationYaw, Class3376.field15514.field4684.rotationPitch);
-        Class3376.field16063 = new Class7988(Class3376.field15514.field4684.rotationYaw, Class3376.field15514.field4684.rotationPitch);
+        this.field16065 = new Class7988(Class3376.field15514.player.field4077, Class3376.field15514.player.field4078);
+        this.field16064 = new Class7988(Class3376.field15514.player.rotationYaw, Class3376.field15514.player.rotationPitch);
+        Class3376.field16063 = new Class7988(Class3376.field15514.player.rotationYaw, Class3376.field15514.player.rotationPitch);
         this.field16069 = -1.0f;
-        this.field16050.method31129(Class3376.field15514.field4684.method2715(Class316.field1877).getItem() instanceof Class4077 && Class3376.field15514.field4648.field23445.method1056());
+        this.field16050.method31129(Class3376.field15514.player.method2715(Class316.field1877).getItem() instanceof Class4077 && Class3376.field15514.gameSettings.field23445.method1056());
         this.field16071 = false;
         this.field16058 = -1;
         super.method9879();
@@ -125,7 +125,7 @@ public class Class3376 extends Class3167
         if (!this.method9883("Disable on death")) {
             return;
         }
-        if (Class3376.field15514.field4684.method1768()) {
+        if (Class3376.field15514.player.method1768()) {
             return;
         }
         this.method9910();
@@ -136,14 +136,14 @@ public class Class3376 extends Class3167
     public void method10745(final Class5751 class5751) {
         if (this.method9906()) {
             if (!this.method9887("Autoblock Mode").equals("None")) {
-                if (Class3376.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077 || this.field16055 != Class3376.field15514.field4684.field3006.field2743) {
+                if (Class3376.field15514.player.getHeldItemMainhand().getItem() instanceof Class4077 || this.field16055 != Class3376.field15514.player.field3006.field2743) {
                     if (Class3376.field16060 != null) {
                         class5751.method16961(true);
                         return;
                     }
                 }
             }
-            if (Class3376.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
+            if (Class3376.field15514.player.getHeldItemMainhand().getItem() instanceof Class4077) {
                 this.field16057 = 2;
             }
         }
@@ -152,7 +152,7 @@ public class Class3376 extends Class3167
     @Class6753
     @Class6755
     public void method10746(final Class5744 class5744) {
-        if (!this.method9906() || Class3376.field15514.field4684 == null) {
+        if (!this.method9906() || Class3376.field15514.player == null) {
             return;
         }
         if (class5744.method17046()) {
@@ -169,7 +169,7 @@ public class Class3376 extends Class3167
                 }
             }
             if (this.field16050.method31128()) {
-                if (!(Class3376.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077) || Class3376.field16060 == null) {
+                if (!(Class3376.field15514.player.getHeldItemMainhand().getItem() instanceof Class4077) || Class3376.field16060 == null) {
                     this.field16050.method31129(false);
                 }
             }
@@ -191,7 +191,7 @@ public class Class3376 extends Class3167
                         }
                     }
                     this.method10754();
-                    if (class5744.method17042() - Class3376.field15514.field4684.rotationYaw != 0.0f) {
+                    if (class5744.method17042() - Class3376.field15514.player.rotationYaw != 0.0f) {
                         this.field16064.field32884 = class5744.method17042();
                         this.field16064.field32885 = class5744.method17040();
                     }
@@ -199,7 +199,7 @@ public class Class3376 extends Class3167
                     class5744.method17041(this.field16064.field32885);
                     ++this.field16051;
                     final boolean method9887 = this.field16050.method31135(this.field16051);
-                    final float n = (Class3376.field15514.field4684.method2903() >= 1.26) ? Class3376.field15514.field4684.method2904(0.0f) : 1.0f;
+                    final float n = (Class3376.field15514.player.method2903() >= 1.26) ? Class3376.field15514.player.method2904(0.0f) : 1.0f;
                     boolean b = false;
                     Label_0596: {
                         if (class5745.method9906()) {
@@ -262,7 +262,7 @@ public class Class3376 extends Class3167
             }
             return;
         }
-        this.field16055 = Class3376.field15514.field4684.field3006.field2743;
+        this.field16055 = Class3376.field15514.player.field3006.field2743;
         if (Class3376.field16060 != null) {
             if (this.field16050.method31132()) {
                 if (this.field16064 != null) {
@@ -343,7 +343,7 @@ public class Class3376 extends Class3167
     }
     
     public void method10749(final boolean b, final float n, final float n2, final float n3, final float n4) {
-        Class8726.method30045(7425);
+        RenderSystem.shadeModel(7425);
         GL11.glDisable(32823);
         GL11.glDisable(2929);
         GL11.glBegin(5);
@@ -379,13 +379,13 @@ public class Class3376 extends Class3167
         }
         GL11.glEnd();
         GL11.glEnable(2929);
-        Class8726.method30045(7424);
+        RenderSystem.shadeModel(7424);
     }
     
     public boolean method10750() {
         if (Class3376.field16060 != null) {
-            if (Class3376.field15514.field4684.getHeldItemMainhand() != null) {
-                if (Class3376.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
+            if (Class3376.field15514.player.getHeldItemMainhand() != null) {
+                if (Class3376.field15514.player.getHeldItemMainhand().getItem() instanceof Class4077) {
                     if (!this.method9887("Autoblock Mode").equals("None")) {
                         return true;
                     }
@@ -404,12 +404,12 @@ public class Class3376 extends Class3167
         double n = b ? 1.0E-14 : 0.0;
         boolean b3 = true;
         Label_0077: {
-            if (Class3376.field15514.field4684.method2903() > 1.26f && this.method9883("Cooldown")) {
+            if (Class3376.field15514.player.method2903() > 1.26f && this.method9883("Cooldown")) {
                 if (this.field16052 != 1) {
                     if (this.field16052 == 0) {
                         boolean b4 = false;
                         Label_0229: {
-                            if (Math.round(Class3376.field15514.field4684.method2903() - Class3376.field15514.field4684.field2944) <= (float)(this.method9887("Attack Mode").equals("Pre") ? 2 : 1)) {
+                            if (Math.round(Class3376.field15514.player.method2903() - Class3376.field15514.player.field2944) <= (float)(this.method9887("Attack Mode").equals("Pre") ? 2 : 1)) {
                                 if (this.field16053 >= 1) {
                                     if (Class3265.field15758 > 1) {
                                         b4 = true;
@@ -430,7 +430,7 @@ public class Class3376 extends Class3167
                     this.field16052 = 0;
                     b3 = false;
                 }
-                if (!Class3295.method10433() && (!Class3376.field15514.field4684.onGround && !Class6430.method19160(Class3376.field15514.field4684, 0.001f))) {
+                if (!Class3295.method10433() && (!Class3376.field15514.player.onGround && !Class6430.method19160(Class3376.field15514.player, 0.001f))) {
                     ++this.field16053;
                 }
                 else {
@@ -488,7 +488,7 @@ public class Class3376 extends Class3167
                     b3 = false;
                     if (b) {
                         if (this.field16072 != null) {
-                            if (Class3376.field15514.field4684.getMotion().y < 0.0) {
+                            if (Class3376.field15514.player.getMotion().y < 0.0) {
                                 Class3376.field15514.method5269().method17292(new Class4354(this.field16072[0], this.field16072[1], this.field16072[2], false));
                                 this.field16072 = null;
                             }
@@ -497,22 +497,22 @@ public class Class3376 extends Class3167
                 }
             }
         }
-        final boolean b5 = !Class3295.method10433() && (Class3376.field15514.field4684.onGround || Class6430.method19160(Class3376.field15514.field4684, 0.001f));
+        final boolean b5 = !Class3295.method10433() && (Class3376.field15514.player.onGround || Class6430.method19160(Class3376.field15514.player, 0.001f));
         if (b5) {
             ++this.field16053;
             if (!Class9463.method35173().method35189().method21551(Class3256.class).method9906() || Class9463.method35173().method35189().method21551(Class3256.class).method9887("Type").equalsIgnoreCase("Cubecraft")) {
-                if (Class3376.field15514.field4684.collidedVertically) {
+                if (Class3376.field15514.player.collidedVertically) {
                     if (b5) {
-                        if (!Class3376.field15514.field4684.field2967) {
-                            if (!Class3376.field15514.field4684.method1706()) {
-                                if (!Class3376.field15514.field4648.field23439.field2162) {
+                        if (!Class3376.field15514.player.field2967) {
+                            if (!Class3376.field15514.player.method1706()) {
+                                if (!Class3376.field15514.gameSettings.field23439.field2162) {
                                     if (n <= 0.001) {
                                         Class3376.field16049 = false;
                                     }
                                     else {
                                         Class3376.field16049 = true;
                                     }
-                                    class5744.method17037(Class3376.field15514.field4684.posY + n);
+                                    class5744.method17037(Class3376.field15514.player.posY + n);
                                     class5744.method17045(b3);
                                 }
                             }
@@ -528,7 +528,7 @@ public class Class3376 extends Class3167
     
     private Entity method10752(final List<Class8131> list) {
         final List<Class8131> method31138 = this.field16050.method31138(list);
-        if (!method31138.isEmpty() && ((Class8131)method31138.get(0)).method26798().method1732(Class3376.field15514.field4684) <= this.method9886("Block Range")) {
+        if (!method31138.isEmpty() && ((Class8131)method31138.get(0)).method26798().method1732(Class3376.field15514.player) <= this.method9886("Block Range")) {
             return ((Class8131)method31138.get(0)).method26798();
         }
         return null;
@@ -544,7 +544,7 @@ public class Class3376 extends Class3167
         }
         if (method9889 != null) {
             if (method9889.size() != 0) {
-                if (!Class3376.field15514.field4648.field23446.method1058()) {
+                if (!Class3376.field15514.gameSettings.field23446.method1058()) {
                     Class3376.field16060 = this.method10752(method9889);
                     List<Class8131> field16062 = this.field16050.method31137(method9887);
                     if (method9888.equals("Single") || method9888.equals("Multi")) {
@@ -613,7 +613,7 @@ public class Class3376 extends Class3167
                                     if (Class3376.field16061.method26801() != null) {
                                         if (!Class3376.field16061.method26800()) {
                                             if (this.field16062.contains(Class3376.field16061)) {
-                                                if (Class3376.field15514.field4684.method1732(Class3376.field16061.method26798()) <= method9887) {
+                                                if (Class3376.field15514.player.method1732(Class3376.field16061.method26798()) <= method9887) {
                                                     if (this.method9883("Through walls")) {
                                                         Class3376.field16061.method26802(Class8845.method30922(Class3376.field16061.method26798()));
                                                         break Label_0355;
@@ -697,8 +697,8 @@ public class Class3376 extends Class3167
                     this.field16051 = (int)this.field16050.method31134(0);
                     this.field16052 = 0;
                     Class3376.field16049 = false;
-                    this.field16064.field32884 = Class3376.field15514.field4684.rotationYaw;
-                    this.field16064.field32885 = Class3376.field15514.field4684.rotationPitch;
+                    this.field16064.field32884 = Class3376.field15514.player.rotationYaw;
+                    this.field16064.field32885 = Class3376.field15514.player.rotationPitch;
                     Class3376.field16063.field32884 = this.field16064.field32884;
                     Class3376.field16063.field32885 = this.field16064.field32885;
                     this.field16069 = -1.0f;
@@ -716,8 +716,8 @@ public class Class3376 extends Class3167
         this.field16051 = (int)this.field16050.method31134(0);
         this.field16052 = 0;
         Class3376.field16049 = false;
-        this.field16064.field32884 = Class3376.field15514.field4684.rotationYaw;
-        this.field16064.field32885 = Class3376.field15514.field4684.rotationPitch;
+        this.field16064.field32884 = Class3376.field15514.player.rotationYaw;
+        this.field16064.field32885 = Class3376.field15514.player.rotationPitch;
         Class3376.field16063.field32884 = this.field16064.field32884;
         Class3376.field16063.field32885 = this.field16064.field32885;
         this.field16069 = -1.0f;
@@ -762,11 +762,11 @@ public class Class3376 extends Class3167
                     final Class7988 field16075 = this.field16064;
                     field16075.field32884 += this.field16070 + (float)this.method10757(-n3, n3);
                 }
-                if (Class3376.field15514.field4684.ticksExisted % 5 == 0) {
+                if (Class3376.field15514.player.ticksExisted % 5 == 0) {
                     final Class7988 field16076 = this.field16064;
-                    field16076.field32884 += (float)this.method10757(-25.0, 25.0) / (Class3376.field15514.field4684.method1732(method26800) + 1.0f);
+                    field16076.field32884 += (float)this.method10757(-25.0, 25.0) / (Class3376.field15514.player.method1732(method26800) + 1.0f);
                     final Class7988 field16077 = this.field16064;
-                    field16077.field32885 += (float)this.method10757(-25.0, 25.0) / (Class3376.field15514.field4684.method1732(method26800) + 1.0f);
+                    field16077.field32885 += (float)this.method10757(-25.0, 25.0) / (Class3376.field15514.player.method1732(method26800) + 1.0f);
                 }
                 if (Math.abs(method26802) > 10.0f) {
                     final Class7988 field16078 = this.field16064;
@@ -830,8 +830,8 @@ public class Class3376 extends Class3167
             case "None": {
                 this.field16065.field32884 = this.field16064.field32884;
                 this.field16065.field32885 = this.field16064.field32885;
-                this.field16064.field32884 = Class3376.field15514.field4684.rotationYaw;
-                this.field16064.field32885 = Class3376.field15514.field4684.rotationPitch;
+                this.field16064.field32884 = Class3376.field15514.player.rotationYaw;
+                this.field16064.field32885 = Class3376.field15514.player.rotationPitch;
                 break;
             }
         }
@@ -851,9 +851,9 @@ public class Class3376 extends Class3167
     }
     
     public Class7988 method10756(final Entity class399) {
-        final double x = class399.posX - Class3376.field15514.field4684.posX + Math.cos((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
-        final double y = class399.posY - 1.6 - this.field16067 + class399.method1892() - Class3376.field15514.field4684.posY;
-        final double y2 = class399.posZ - Class3376.field15514.field4684.posZ + Math.sin((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
+        final double x = class399.posX - Class3376.field15514.player.posX + Math.cos((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
+        final double y = class399.posY - 1.6 - this.field16067 + class399.method1892() - Class3376.field15514.player.posY;
+        final double y2 = class399.posZ - Class3376.field15514.player.posZ + Math.sin((class399.method1844() + 90.0f) * 3.141592653589793 / 180.0) * 0.14;
         return new Class7988(Class8845.method30910(this.field16064.field32884, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f), Class8845.method30910(this.field16064.field32885, (float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)), 360.0f));
     }
     

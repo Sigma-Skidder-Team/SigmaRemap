@@ -11,16 +11,16 @@ public final class Class6324 extends Class6323
     
     public Class6324(final float field25319, final float field25320) {
         super("offset_texturing", () -> {
-            Class8726.method30057(5890);
-            Class8726.method30059();
-            Class8726.method30058();
-            Class8726.method30065(n, n2, 0.0f);
-            Class8726.method30057(5888);
+            RenderSystem.method30057(5890);
+            RenderSystem.method30059();
+            RenderSystem.method30058();
+            RenderSystem.method30065(n, n2, 0.0f);
+            RenderSystem.method30057(5888);
             return;
         }, () -> {
-            Class8726.method30057(5890);
-            Class8726.method30060();
-            Class8726.method30057(5888);
+            RenderSystem.method30057(5890);
+            RenderSystem.method30060();
+            RenderSystem.method30057(5888);
             return;
         });
         this.field25319 = field25319;

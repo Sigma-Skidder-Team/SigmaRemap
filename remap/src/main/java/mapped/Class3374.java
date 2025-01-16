@@ -30,7 +30,7 @@ public class Class3374 extends Class3167
         else {
             str = this.method10739();
         }
-        Class3374.field15514.field4684.method4114("" + str);
+        Class3374.field15514.player.method4114("" + str);
         this.method9907(false);
     }
     

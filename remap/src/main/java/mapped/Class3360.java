@@ -22,8 +22,8 @@ public class Class3360 extends Class3355
         if (!this.method9906()) {
             return;
         }
-        if (Class3360.field15514.field4684.method1920() != null) {
-            final Vec3d method1935 = Class3360.field15514.field4684.method1920().getMotion();
+        if (Class3360.field15514.player.method1920() != null) {
+            final Vec3d method1935 = Class3360.field15514.player.method1920().getMotion();
             if (Math.sqrt(method1935.x * method1935.x + method1935.z * method1935.z) >= 1.399999976158142) {}
             final float method1936 = Class7482.method23147();
             double n = Math.cos(Math.toRadians(method1936)) * 5.0;
@@ -32,10 +32,10 @@ public class Class3360 extends Class3355
                 n = 0.0;
                 n2 = 0.0;
             }
-            final Entity method1937 = Class3360.field15514.field4684.method1920();
-            method1937.rotationYaw = Class3360.field15514.field4684.rotationYaw;
-            method1937.setMotion(n, Class3360.field15514.field4684.field2967 ? 1.0 : (this.field16004 ? -1.0 : 0.03999999910593033), n2);
-            if (Class3360.field15514.field4684.ticksExisted % 100 != 0) {}
+            final Entity method1937 = Class3360.field15514.player.method1920();
+            method1937.rotationYaw = Class3360.field15514.player.rotationYaw;
+            method1937.setMotion(n, Class3360.field15514.player.field2967 ? 1.0 : (this.field16004 ? -1.0 : 0.03999999910593033), n2);
+            if (Class3360.field15514.player.ticksExisted % 100 != 0) {}
         }
     }
     
@@ -44,11 +44,11 @@ public class Class3360 extends Class3355
         if (!this.method9906()) {
             return;
         }
-        if (Class3360.field15514.field4684.method1920() == null) {
+        if (Class3360.field15514.player.method1920() == null) {
             return;
         }
-        if (!Class3360.field15514.field4684.method1920().onGround) {
-            if (class5752.method17061() == Class3360.field15514.field4648.field23440.field2161.field32860) {
+        if (!Class3360.field15514.player.method1920().onGround) {
+            if (class5752.method17061() == Class3360.field15514.gameSettings.field23440.field2161.field32860) {
                 class5752.method16961(true);
                 this.field16004 = true;
             }
@@ -62,7 +62,7 @@ public class Class3360 extends Class3355
             if (!class5721.method16990().toString().contains(".play.client.")) {}
             if (!(class5721.method16990() instanceof Class4303)) {
                 if (class5721.method16990() instanceof Class4323) {
-                    if (!Class3360.field15514.field4684.method1768()) {}
+                    if (!Class3360.field15514.player.method1768()) {}
                 }
             }
         }
@@ -73,11 +73,11 @@ public class Class3360 extends Class3355
         if (!this.method9906()) {
             return;
         }
-        if (Class3360.field15514.field4684.method1920() == null) {
+        if (Class3360.field15514.player.method1920() == null) {
             return;
         }
-        if (!Class3360.field15514.field4684.method1920().onGround) {
-            if (class5715.method16963() == Class3360.field15514.field4648.field23440.field2161.field32860) {
+        if (!Class3360.field15514.player.method1920().onGround) {
+            if (class5715.method16963() == Class3360.field15514.gameSettings.field23440.field2161.field32860) {
                 class5715.method16961(true);
                 this.field16004 = false;
             }
@@ -91,6 +91,6 @@ public class Class3360 extends Class3355
     
     @Override
     public void method9897() {
-        Class3360.field15514.field4648.field23440.field2162 = this.field16004;
+        Class3360.field15514.gameSettings.field23440.field2162 = this.field16004;
     }
 }

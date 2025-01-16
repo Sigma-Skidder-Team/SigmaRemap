@@ -51,7 +51,7 @@ public class Class3353 extends Class3167
         if (this.method9883("Speed")) {
             array[2] = 1;
         }
-        if (!Class3353.field15514.field4684.onGround) {
+        if (!Class3353.field15514.player.onGround) {
             this.field15980 = 0;
         }
         else {
@@ -59,7 +59,7 @@ public class Class3353 extends Class3167
         }
         if (this.field15982 != 1) {
             if (this.field15982 >= 2) {
-                Class3353.field15514.field4684.field3006.field2743 = this.field15981;
+                Class3353.field15514.player.field3006.field2743 = this.field15981;
                 Class3353.field15514.field4682.method27318();
                 this.field15982 = 0;
             }
@@ -72,8 +72,8 @@ public class Class3353 extends Class3167
                             }
                         }
                         else if (this.field15979 > 18) {
-                            if (!Class3353.field15514.field4684.method2653(Class5328.method16450(array[i]))) {
-                                if (Class3353.field15514.field4684.method2664() < this.method9886("Health") * 2.0f) {
+                            if (!Class3353.field15514.player.method2653(Class5328.method16450(array[i]))) {
+                                if (Class3353.field15514.player.method2664() < this.method9886("Health") * 2.0f) {
                                     this.method10618(class5744, method10615, array[i]);
                                 }
                             }
@@ -88,11 +88,11 @@ public class Class3353 extends Class3167
     }
     
     public float[] method10614() {
-        final double n = Class3353.field15514.field4684.posX + Class3353.field15514.field4684.getMotion().x * 26.0;
-        final double n2 = Class3353.field15514.field4684.boundingBox.minY - 3.6;
-        final double n3 = Class3353.field15514.field4684.posZ + Class3353.field15514.field4684.getMotion().z * 26.0;
+        final double n = Class3353.field15514.player.posX + Class3353.field15514.player.getMotion().x * 26.0;
+        final double n2 = Class3353.field15514.player.boundingBox.minY - 3.6;
+        final double n3 = Class3353.field15514.player.posZ + Class3353.field15514.player.getMotion().z * 26.0;
         if (!this.method9883("Predict")) {
-            return new float[] { Class3353.field15514.field4684.rotationYaw, 90.0f };
+            return new float[] { Class3353.field15514.player.rotationYaw, 90.0f };
         }
         return Class8845.method30919(n, n3, n2);
     }
@@ -100,7 +100,7 @@ public class Class3353 extends Class3167
     public int method10615() {
         int n = 5;
         for (int i = 36; i < 45; ++i) {
-            if (!Class3353.field15514.field4684.field3008.method10878(i).method20054()) {
+            if (!Class3353.field15514.player.field3008.method10878(i).method20054()) {
                 n = i - 36;
                 break;
             }
@@ -114,8 +114,8 @@ public class Class3353 extends Class3167
         int n4 = -1;
         int n5 = 0;
         for (int i = 9; i < 45; ++i) {
-            if (Class3353.field15514.field4684.field3008.method10878(i).method20054()) {
-                final ItemStack method20053 = Class3353.field15514.field4684.field3008.method10878(i).method20053();
+            if (Class3353.field15514.player.field3008.method10878(i).method20054()) {
+                final ItemStack method20053 = Class3353.field15514.player.field3008.method10878(i).method20053();
                 if (method20053.getItem() instanceof Class4089) {
                     final List<Class1948> method20054 = Class8639.method29355(method20053);
                     final int method20055 = this.method10617(method20054);
@@ -158,7 +158,7 @@ public class Class3353 extends Class3167
                 }
             }
         }
-        if (Class3353.field15514.field4684.method2653(Class5328.method16450(n)) && Class3353.field15514.field4684.method2654(Class5328.method16450(n)).method7908() >= n2) {
+        if (Class3353.field15514.player.method2653(Class5328.method16450(n)) && Class3353.field15514.player.method2654(Class5328.method16450(n)).method7908() >= n2) {
             return -1;
         }
         return n4;
@@ -187,10 +187,10 @@ public class Class3353 extends Class3167
             }
             else {
                 this.field15979 = 0;
-                final int field2743 = Class3353.field15514.field4684.field3006.field2743;
+                final int field2743 = Class3353.field15514.player.field3006.field2743;
                 final boolean b = Class9463.method35173().method35189().method21551(Class3261.class).method9906() && Class9463.method35173().method35189().method21551(Class3261.class).method9887("Type").equalsIgnoreCase("NoGround");
                 final float[] method10617 = this.method10614();
-                Class3353.field15514.field4684.field3006.field2743 = method10616 - 36;
+                Class3353.field15514.player.field3006.field2743 = method10616 - 36;
                 Class3353.field15514.field4682.method27318();
                 if (!this.method9883("Instant")) {
                     this.field15982 = 1;
@@ -198,10 +198,10 @@ public class Class3353 extends Class3167
                     class5744.method17041(method10617[1]);
                 }
                 else {
-                    Class3353.field15514.method5269().method17292(new Class4356(method10617[0], method10617[1], !b && Class3353.field15514.field4684.onGround));
+                    Class3353.field15514.method5269().method17292(new Class4356(method10617[0], method10617[1], !b && Class3353.field15514.player.onGround));
                     Class3353.field15514.method5269().method17292(new Class4307(Class316.field1877));
                     Class3353.field15514.method5269().method17292(new Class4307(Class316.field1878));
-                    Class3353.field15514.field4684.field3006.field2743 = field2743;
+                    Class3353.field15514.player.field3006.field2743 = field2743;
                     Class3353.field15514.field4682.method27318();
                     Class3376.field16066 = 1;
                 }

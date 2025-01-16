@@ -81,7 +81,7 @@ public class Class5867 extends Class5866
     }
     
     @Override
-    public void method17578(final Class2226 class2226, final Class7351 class2227) {
+    public void method17578(final Class2226 class2226, final MatrixStack class2227) {
         final Class6300 method17585 = this.method17585(class2226);
         final boolean field25187 = method17585.field25187;
         method17585.field25187 = true;

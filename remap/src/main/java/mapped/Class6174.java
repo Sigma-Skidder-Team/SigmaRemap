@@ -50,10 +50,10 @@ public class Class6174 extends Class6173
         final double method35703 = MathHelper.lerp(n3, this.field24962.getPosX(), method35701);
         final double method35704 = MathHelper.lerp(n3, this.field24962.getPosY(), n4);
         final double method35705 = MathHelper.lerp(n3, this.field24962.getPosZ(), method35702);
-        final Class7808 method35706 = this.field24961.method11006();
+        final IRenderTypeBuffer.Impl method35706 = this.field24961.method11006();
         final Vec3d method35707 = class4151.method18161();
-        this.field24965.method28706(this.field24962, method35703 - method35707.getX(), method35704 - method35707.getY(), method35705 - method35707.getZ(), this.field24962.rotationYaw, n, new Class7351(), method35706, this.field24965.method28695(this.field24962, n));
-        method35706.method25216();
+        this.field24965.method28706(this.field24962, method35703 - method35707.getX(), method35704 - method35707.getY(), method35705 - method35707.getZ(), this.field24962.rotationYaw, n, new MatrixStack(), method35706, this.field24965.method28695(this.field24962, n));
+        method35706.finish();
         if (Config.method28955()) {
             Class9216.method33836(null);
             Class9216.method33776(field39287);

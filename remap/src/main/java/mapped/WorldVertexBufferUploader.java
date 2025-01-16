@@ -8,12 +8,12 @@ import org.lwjgl.system.MemoryUtil;
 import com.mojang.datafixers.util.Pair;
 import java.nio.ByteBuffer;
 
-public class Class8475
+public class WorldVertexBufferUploader
 {
     private static String[] field34786;
     
-    public static void method28282(final Class4148 class4148) {
-        if (Class8726.method29984()) {
+    public static void draw(final BufferBuilder class4148) {
+        if (RenderSystem.method29984()) {
             final Pair<Class8127, ByteBuffer> method12401 = class4148.method12401();
             final Class8127 class4149 = (Class8127)method12401.getFirst();
             method28283((ByteBuffer)method12401.getSecond(), class4149.method26772(), class4149.method26770(), class4149.method26771());
@@ -24,7 +24,7 @@ public class Class8475
                     class4148.method12416();
                 }
             }
-            Class8726.method29991(() -> {
+            RenderSystem.method29991(() -> {
                 final Pair<Class8127, ByteBuffer> method12401 = class4148.method12401();
                 final Class8127 class4149 = (Class8127)method12401.getFirst();
                 method28283((ByteBuffer)method12401.getSecond(), class4149.method26772(), class4149.method26770(), class4149.method26771());
@@ -33,7 +33,7 @@ public class Class8475
     }
     
     private static void method28283(final ByteBuffer byteBuffer, final int n, final Class9272 class9272, final int n2) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         byteBuffer.clear();
         if (n2 > 0) {
             class9272.method34196(MemoryUtil.memAddress(byteBuffer));

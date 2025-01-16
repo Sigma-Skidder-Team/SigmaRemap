@@ -28,9 +28,9 @@ public class Class3283 extends Class3167
     
     @Class6753
     private void method10366(final Class5748 class5748) {
-        if (this.method9906() && (Class3283.field15514.field4684.method1809() || !this.method9914().method9883("Sneak"))) {
+        if (this.method9906() && (Class3283.field15514.player.method1809() || !this.method9914().method9883("Sneak"))) {
             if (class5748.method17055() == Class1958.field10672) {
-                final BlockRayTraceResult method13697 = Class4609.method13697(Class3283.field15514.field4684.rotationYaw, Class3283.field15514.field4684.rotationPitch, this.method9914().method9886("Maximum range"));
+                final BlockRayTraceResult method13697 = Class4609.method13697(Class3283.field15514.player.rotationYaw, Class3283.field15514.player.rotationPitch, this.method9914().method9886("Maximum range"));
                 BlockPos method13698 = null;
                 if (method13697 != null) {
                     method13698 = method13697.getPos();
@@ -75,7 +75,7 @@ public class Class3283 extends Class3167
                     else {
                         Class3283.field15514.field4633.field26532 = 2.0f;
                     }
-                    Class3283.field15514.method5269().method17292(new Class4354(Class3283.field15514.field4684.posX, Class3283.field15514.field4684.posY, Class3283.field15514.field4684.posZ, true));
+                    Class3283.field15514.method5269().method17292(new Class4354(Class3283.field15514.player.posX, Class3283.field15514.player.posY, Class3283.field15514.player.posZ, true));
                     Class3283.field15514.method5269().method17292(new Class4354(this.field15792.getX() + 0.5, this.field15792.getY() + 1, this.field15792.getZ() + 0.5, true));
                 }
             }

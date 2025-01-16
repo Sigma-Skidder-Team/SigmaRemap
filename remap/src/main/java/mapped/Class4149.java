@@ -18,7 +18,7 @@ public interface Class4149 extends Class4150
     
     void method12396(final int p0, final float p1);
     
-    default Class4150 method12432(final double n, final double n2, final double n3) {
+    default Class4150 pos(final double n, final double n2, final double n3) {
         if (this.method12404().method22048() == Class297.field1700) {
             this.method12396(0, (float)n);
             this.method12396(4, (float)n2);
@@ -45,7 +45,7 @@ public interface Class4149 extends Class4150
         throw new IllegalStateException();
     }
     
-    default Class4150 method12391(final float n, final float n2) {
+    default Class4150 tex(final float n, final float n2) {
         final Class7187 method12404 = this.method12404();
         if (method12404.method22049() != Class2078.field12013 || method12404.method22051() != 0) {
             return this;

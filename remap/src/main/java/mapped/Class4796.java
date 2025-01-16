@@ -17,7 +17,7 @@ public class Class4796 extends Class4703<Class424>
         this.field20284 = 0.5f;
     }
     
-    public void method14188(final Class424 class424, final float n, final float n2, final Class7351 class425, final Class7807 class426, final int n3) {
+    public void method14188(final Class424 class424, final float n, final float n2, final MatrixStack class425, final IRenderTypeBuffer class426, final int n3) {
         final BlockState method2071 = class424.method2071();
         if (method2071.method21710() == Class2115.field12307) {
             final World method2072 = class424.method2069();

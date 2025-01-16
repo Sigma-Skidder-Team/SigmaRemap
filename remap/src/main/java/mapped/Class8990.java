@@ -634,11 +634,11 @@ public class Class8990
         return array2;
     }
     
-    public static int[][] method32075(final Class1912 class1912, final int[][] array, final int n, final int n2) {
+    public static int[][] method32075(final TextureAtlasSprite class1912, final int[][] array, final int n, final int n2) {
         return array;
     }
     
-    public static void method32076(final Class1912 class1912, final int[] array) {
+    public static void method32076(final TextureAtlasSprite class1912, final int[] array) {
     }
     
     static {

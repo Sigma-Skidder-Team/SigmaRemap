@@ -4,12 +4,11 @@
 
 package mapped;
 
-import com.google.common.collect.UnmodifiableIterator;
 import java.nio.ByteBuffer;
 
 public class Class9018
 {
-    public static String method32305(final Class4148 class4148) {
+    public static String method32305(final BufferBuilder class4148) {
         final int method12417 = class4148.method12417();
         String str;
         int n;
@@ -35,7 +34,7 @@ public class Class9018
         return sb.toString();
     }
     
-    private static String method32306(final int n, final Class4148 class4148) {
+    private static String method32306(final int n, final BufferBuilder class4148) {
         final StringBuffer sb = new StringBuffer();
         final ByteBuffer method12423 = class4148.method12423();
         final Class9272 method12424 = class4148.method12428();

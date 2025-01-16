@@ -23,12 +23,12 @@ public class Class3267 extends Class3167
     
     @Class6753
     private void method10300(final Class5723 class5723) {
-        if (this.method9906() && Class3267.field15514.field4684 != null) {
+        if (this.method9906() && Class3267.field15514.player != null) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4378) {
                 final Class4378 class5724 = (Class4378)method16998;
                 final String string = class5724.method13164().getString();
-                final String lowerCase = Class3267.field15514.field4684.getName().getFormattedText().toLowerCase();
+                final String lowerCase = Class3267.field15514.player.getName().getFormattedText().toLowerCase();
                 final String method16999 = class5724.method13164().getFormattedText();
                 Label_0100: {
                     if (this.field15759.method9883("AutoL")) {

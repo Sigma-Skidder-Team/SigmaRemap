@@ -23,9 +23,9 @@ public abstract class Class615 extends Class608<Class632>
     }
     
     @Override
-    public void method3544(final int n, final int b, final Class7392 class7392) {
+    public void method3544(final int n, final int b, final Tessellator class7392) {
         final ITextComponent method8468 = new StringTextComponent("").appendSibling(this.field3590).applyTextStyles(TextFormatting.UNDERLINE, TextFormatting.BOLD);
-        this.field3589.fontRenderer.method6610(method8468.getFormattedText(), (float)(n + this.field3543 / 2 - this.field3589.fontRenderer.method6617(method8468.getFormattedText()) / 2), (float)Math.min(this.field3545 + 3, b), 16777215);
+        this.field3589.fontRenderer.method6610(method8468.getFormattedText(), (float)(n + this.field3543 / 2 - this.field3589.fontRenderer.getStringWidth(method8468.getFormattedText()) / 2), (float)Math.min(this.field3545 + 3, b), 16777215);
     }
     
     @Override

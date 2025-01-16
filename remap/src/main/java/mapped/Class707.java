@@ -7,7 +7,7 @@ package mapped;
 public class Class707 extends Class703
 {
     private static final Class6469[] field3880;
-    private Class573 field3881;
+    private Widget field3881;
     private Class8297 field3882;
     
     public Class707(final Screen class527, final Class5760 class528) {
@@ -19,21 +19,21 @@ public class Class707 extends Class703
     public void init() {
         int n = 0;
         for (final Class6469 class6469 : Class707.field3880) {
-            final Class573 method3029 = this.method3029(class6469.method19362(this.minecraft.field4648, this.width / 2 - 155 + n % 2 * 160, this.height / 6 + 24 * (n >> 1) - 12, 150));
+            final Widget method3029 = this.addButton(class6469.method19362(this.minecraft.gameSettings, this.width / 2 - 155 + n % 2 * 160, this.height / 6 + 24 * (n >> 1) - 12, 150));
             if (class6469 == Class6469.field25726) {
                 this.field3881 = method3029;
                 method3029.field3431 = NarratorChatListener.field32404.method25560();
             }
             ++n;
         }
-        this.method3029(new Class654(this.width / 2 - 100, -12 + this.height / 6 + 24 * (n + 1) / 2, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.method5244(this.field3868)));
+        this.addButton(new Class654(this.width / 2 - 100, -12 + this.height / 6 + 24 * (n + 1) / 2, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 15, 16777215);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 15, 16777215);
+        super.render(n, n2, n3);
         this.field3882.method27577(n, n2, this.buttons);
     }
     

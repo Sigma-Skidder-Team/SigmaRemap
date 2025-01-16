@@ -52,10 +52,10 @@ public abstract class Class6172 extends Class6173
         final float method18166 = this.method18426();
         final float method18167 = this.method18427();
         final int method18168 = this.method18419(n);
-        class4150.method12432(array[0].getX(), array[0].getY(), array[0].getZ()).method12391(method18165, method18167).method12439(this.field24953, this.field24954, this.field24955, this.field24956).method12440(method18168).method12397();
-        class4150.method12432(array[1].getX(), array[1].getY(), array[1].getZ()).method12391(method18165, method18166).method12439(this.field24953, this.field24954, this.field24955, this.field24956).method12440(method18168).method12397();
-        class4150.method12432(array[2].getX(), array[2].getY(), array[2].getZ()).method12391(method18164, method18166).method12439(this.field24953, this.field24954, this.field24955, this.field24956).method12440(method18168).method12397();
-        class4150.method12432(array[3].getX(), array[3].getY(), array[3].getZ()).method12391(method18164, method18167).method12439(this.field24953, this.field24954, this.field24955, this.field24956).method12440(method18168).method12397();
+        class4150.pos(array[0].getX(), array[0].getY(), array[0].getZ()).tex(method18165, method18167).color(this.field24953, this.field24954, this.field24955, this.field24956).method12440(method18168).endVertex();
+        class4150.pos(array[1].getX(), array[1].getY(), array[1].getZ()).tex(method18165, method18166).color(this.field24953, this.field24954, this.field24955, this.field24956).method12440(method18168).endVertex();
+        class4150.pos(array[2].getX(), array[2].getY(), array[2].getZ()).tex(method18164, method18166).color(this.field24953, this.field24954, this.field24955, this.field24956).method12440(method18168).endVertex();
+        class4150.pos(array[3].getX(), array[3].getY(), array[3].getZ()).tex(method18164, method18167).color(this.field24953, this.field24954, this.field24955, this.field24956).method12440(method18168).endVertex();
     }
     
     public float method18430(final float n) {

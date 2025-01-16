@@ -24,7 +24,7 @@ public class Class4156 extends Class4154
     }
     
     @Override
-    public Class4150 method12432(final double field18533, final double field18534, final double field18535) {
+    public Class4150 pos(final double field18533, final double field18534, final double field18535) {
         this.field18533 = field18533;
         this.field18534 = field18534;
         this.field18535 = field18535;
@@ -37,7 +37,7 @@ public class Class4156 extends Class4154
     }
     
     @Override
-    public Class4150 method12391(final float field18536, final float field18537) {
+    public Class4150 tex(final float field18536, final float field18537) {
         this.field18536 = field18536;
         this.field18537 = field18537;
         return this;
@@ -60,11 +60,11 @@ public class Class4156 extends Class4154
     
     @Override
     public void method12400(final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final int n10, final int n11, final float n12, final float n13, final float n14) {
-        this.field18532.method12432(n, n2, n3).method12399(this.field18514, this.field18515, this.field18516, this.field18517).method12391(n8, n9).method12397();
+        this.field18532.pos(n, n2, n3).method12399(this.field18514, this.field18515, this.field18516, this.field18517).tex(n8, n9).endVertex();
     }
     
     @Override
-    public void method12397() {
-        this.field18532.method12432(this.field18533, this.field18534, this.field18535).method12399(this.field18514, this.field18515, this.field18516, this.field18517).method12391(this.field18536, this.field18537).method12397();
+    public void endVertex() {
+        this.field18532.pos(this.field18533, this.field18534, this.field18535).method12399(this.field18514, this.field18515, this.field18516, this.field18517).tex(this.field18536, this.field18537).endVertex();
     }
 }

@@ -19,7 +19,7 @@ public class Class4744 extends Class4712<Class799, Class5922<Class799>>
         return class799.method4596();
     }
     
-    public void method14075(final Class799 class799, final float n, final float n2, final Class7351 class800, final Class7807 class801, final int n3) {
+    public void method14075(final Class799 class799, final float n, final float n2, final MatrixStack class800, final IRenderTypeBuffer class801, final int n3) {
         if (class799.method4592()) {
             final float n4 = class799.method1726() * class799.method4593(n2);
             ((Class5922)this.field20301).method17791(n4, n4, n4);

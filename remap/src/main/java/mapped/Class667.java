@@ -28,7 +28,7 @@ public class Class667 extends Class654
     @Override
     public void method3353(final int n, final int n2, final float n3) {
         Minecraft.method5277().method5290().method5849(Class654.field3421);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class2147 class2147;
         if (this.field3431) {
             if (!this.method3360()) {
@@ -41,6 +41,6 @@ public class Class667 extends Class654
         else {
             class2147 = (this.field3700 ? Class2147.field12641 : Class2147.field12644);
         }
-        this.method3186(this.field3426, this.field3427, class2147.method8311(), class2147.method8312(), this.field3424, this.field3425);
+        this.blit(this.field3426, this.field3427, class2147.method8311(), class2147.method8312(), this.field3424, this.field3425);
     }
 }

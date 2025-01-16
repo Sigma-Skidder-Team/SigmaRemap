@@ -18,11 +18,11 @@ public class Class4742 extends Class4712<Class856, Class5873>
         return Class4742.field20362;
     }
     
-    public void method14070(final Class856 class856, final Class7351 class857, final float n) {
+    public void method14070(final Class856 class856, final MatrixStack class857, final float n) {
         class857.method22565(0.35f, 0.35f, 0.35f);
     }
     
-    public void method14071(final Class856 class856, final Class7351 class857, final float n, final float n2, final float n3) {
+    public void method14071(final Class856 class856, final MatrixStack class857, final float n, final float n2, final float n3) {
         if (!class856.method5144()) {
             class857.method22564(0.0, MathHelper.cos(n * 0.3f) * 0.1f, 0.0);
         }

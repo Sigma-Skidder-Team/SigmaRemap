@@ -97,19 +97,19 @@ public class Class9000
     public static boolean method32131(final Screen class527) {
         if (class527 instanceof Class720 && !(class527 instanceof Class721)) {
             Minecraft.method5277().field4700 = null;
-            Minecraft.method5277().method5244(new Class721(((Class720)class527).field3931));
+            Minecraft.method5277().displayGuiScreen(new Class721(((Class720)class527).field3931));
             return true;
         }
         if (class527 instanceof Class551 && !(class527 instanceof Class552)) {
             Minecraft.method5277().field4700 = null;
-            Minecraft.method5277().method5244(new Class552());
+            Minecraft.method5277().displayGuiScreen(new Class552());
             return true;
         }
         if (Class9463.method35173().method35209() == Class2209.field13466) {
             if (class527 instanceof Class548) {
                 if (!(class527 instanceof Class549)) {
                     Minecraft.method5277().field4700 = null;
-                    Minecraft.method5277().method5244(new Class549());
+                    Minecraft.method5277().displayGuiScreen(new Class549());
                     return true;
                 }
             }
@@ -215,7 +215,7 @@ public class Class9000
             int n = 0;
             final int n2 = 0;
             final int n3 = 170;
-            if (Minecraft.method5277().field4648.field23466) {
+            if (Minecraft.method5277().gameSettings.field23466) {
                 n = Minecraft.method5277().field4632.method7694() / 2 - n3 / 2;
             }
             if (Class9463.method35173().method35209() != Class2209.field13464) {
@@ -406,7 +406,7 @@ public class Class9000
     public void method32157(final Screen class527) {
         if (class527 != null) {
             Minecraft.method5277().field4700 = null;
-            Minecraft.method5277().method5244(class527);
+            Minecraft.method5277().displayGuiScreen(class527);
         }
     }
     

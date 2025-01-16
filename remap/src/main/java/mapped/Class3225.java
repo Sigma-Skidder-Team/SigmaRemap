@@ -26,7 +26,7 @@ public class Class3225 extends Class3167
     
     @Class6753
     private void method10161(final Class5723 class5723) {
-        if (Class3225.field15514.field4684 == null) {
+        if (Class3225.field15514.player == null) {
             return;
         }
         final IPacket method16998 = class5723.method16998();
@@ -37,7 +37,7 @@ public class Class3225 extends Class3167
             if (class5724.method13166() != Class285.field1573 && class5724.method13166() != Class285.field1572) {
                 return;
             }
-            String s = Class3225.field15514.field4684.getName().getFormattedText().toLowerCase();
+            String s = Class3225.field15514.player.getName().getFormattedText().toLowerCase();
             if (Class9463.method35173().method35189().method21551(Class3230.class).method9906()) {
                 s = Class9463.method35173().method35189().method21551(Class3230.class).method9887("Username").toLowerCase();
             }
@@ -58,7 +58,7 @@ public class Class3225 extends Class3167
                 if (replaceAll.toLowerCase().contains("was killed by " + s) || replaceAll.toLowerCase().contains("was thrown into the void by " + s + ".") || replaceAll.toLowerCase().contains("was thrown off a cliff by " + s + ".") || replaceAll.toLowerCase().contains("be sent to davy jones' locker by " + s + ".")) {
                     final Class6516 method17000 = Class3225.field15514.world.method6782();
                     Class9290 method17001 = null;
-                    final Class6749 method17002 = method17000.method19651(Class3225.field15514.field4684.method1867());
+                    final Class6749 method17002 = method17000.method19651(Class3225.field15514.player.method1867());
                     if (method17002 != null) {
                         final int method17003 = method17002.getColor().getColorIndex();
                         if (method17003 >= 0) {

@@ -56,7 +56,7 @@ public class Class7980
         return true;
     }
     
-    public static boolean method26018(final Class1912 class1912, final Class1912[] array) {
+    public static boolean method26018(final TextureAtlasSprite class1912, final TextureAtlasSprite[] array) {
         if (array != null) {
             for (int i = 0; i < array.length; ++i) {
                 if (array[i] == class1912) {

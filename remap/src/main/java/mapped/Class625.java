@@ -37,7 +37,7 @@ public class Class625 extends Class624
         this.field3606.method15407(Class5073.method15661(class7442), n + 38, n2 + 24, 8421504);
         Class7626.method23965(this.field3605, Class5073.method15664(this.field3606), n, n2, n3, n4);
         Class8952.method31759(class7442.field28706, () -> {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             RealmsScreen.method15410(n5, n6, 8.0f, 8.0f, 8, 8, 32, 32, 64, 64);
             RealmsScreen.method15410(n5, n6, 40.0f, 8.0f, 8, 8, 32, 32, 64, 64);
         });

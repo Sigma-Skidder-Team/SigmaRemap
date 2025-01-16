@@ -22,7 +22,7 @@ public class Class3391 extends Class3167
             return;
         }
         if (Class6430.method19146()) {
-            Class3391.field15514.field4648.method17124();
+            Class3391.field15514.gameSettings.method17124();
         }
     }
     

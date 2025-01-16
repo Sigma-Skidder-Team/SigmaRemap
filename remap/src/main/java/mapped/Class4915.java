@@ -49,10 +49,10 @@ public class Class4915 extends Class4825
     @Override
     public void method14204(final int n) {
         super.method14204(n);
-        if (n != this.field21021.field4648.field23435.field2161.field32860) {
-            if (n != this.field21021.field4648.field23437.field2161.field32860) {
-                if (n != this.field21021.field4648.field23436.field2161.field32860) {
-                    if (n == this.field21021.field4648.field23438.field2161.field32860) {
+        if (n != this.field21021.gameSettings.field23435.field2161.field32860) {
+            if (n != this.field21021.gameSettings.field23437.field2161.field32860) {
+                if (n != this.field21021.gameSettings.field23436.field2161.field32860) {
+                    if (n == this.field21021.gameSettings.field23438.field2161.field32860) {
                         this.field21022.method16077().method33121(Class2067.field11836);
                     }
                 }

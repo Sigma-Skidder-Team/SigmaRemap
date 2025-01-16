@@ -13,7 +13,7 @@ public class Class3223 extends Class3167
     @Class6753
     private void method10159(final Class5743 class5743) {
         if (this.method9906()) {
-            Class3223.field15514.field4684.inPortal = false;
+            Class3223.field15514.player.inPortal = false;
         }
     }
 }

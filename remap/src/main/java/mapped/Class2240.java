@@ -20,9 +20,9 @@ public enum Class2240
         this.field13773 = field13773;
     }
     
-    public void method8444(final Class565 class565, final int n, final int n2) {
-        Class8726.method30011();
-        class565.method3186(n, n2, 176 + this.field13772 * 20, this.field13773 * 20, 20, 20);
-        Class8726.method30011();
+    public void method8444(final AbstractGui class565, final int n, final int n2) {
+        RenderSystem.enableBlend();
+        class565.blit(n, n2, 176 + this.field13772 * 20, this.field13773 * 20, 20, 20);
+        RenderSystem.enableBlend();
     }
 }

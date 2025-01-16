@@ -61,7 +61,7 @@ public class Class3279 extends Class3167
             }
             this.field15783.clear();
             for (final Entity class5744 : Class4609.method13679(Class6430.method19108())) {
-                if (class5744 == Class3279.field15514.field4684) {
+                if (class5744 == Class3279.field15514.player) {
                     continue;
                 }
                 if (class5744 == Class3317.field15901) {
@@ -177,7 +177,7 @@ public class Class3279 extends Class3167
     @Class6753
     public void method10333(final Class5739 class5739) {
         if (this.method9906()) {
-            Class8726.method30084(33986, 240.0f, 240.0f);
+            RenderSystem.method30084(33986, 240.0f, 240.0f);
             final boolean method9883 = this.method9883("Magnify");
             for (final Entity class5740 : this.field15783) {
                 float n = 1.0f;
@@ -196,7 +196,7 @@ public class Class3279 extends Class3167
             }
             if (this.method9883("Mob Owners")) {
                 for (final Entity class5741 : Class3279.field15514.world.method6806()) {
-                    if (class5741 != Class3279.field15514.field4684) {
+                    if (class5741 != Class3279.field15514.player) {
                         continue;
                     }
                     if (!(class5741 instanceof Class794) && !(class5741 instanceof Class808)) {
@@ -234,7 +234,7 @@ public class Class3279 extends Class3167
                 }
             }
             GL11.glDisable(2896);
-            Class8726.method30084(33986, 240.0f, 240.0f);
+            RenderSystem.method30084(33986, 240.0f, 240.0f);
             Class7777.method24931();
             final Class1663 method9884 = Class3279.field15514.method5290();
             Class3279.field15514.method5290();

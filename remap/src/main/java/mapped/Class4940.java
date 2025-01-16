@@ -116,7 +116,7 @@ public class Class4940 extends Class4800
         super.method14204(n);
         if (n == 256) {
             Class6430.method19172();
-            Class4940.field21209.method5244(null);
+            Class4940.field21209.displayGuiScreen(null);
         }
     }
     

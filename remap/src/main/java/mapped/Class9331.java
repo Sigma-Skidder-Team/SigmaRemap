@@ -22,13 +22,13 @@ public class Class9331
     }
     
     public void method34569(final Class1927 class1927) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         ++this.field40056;
         Class8933.method31526(class1927.method7722(), this.field40055);
     }
     
     public void method34570() {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         --this.field40056;
         if (this.field40056 <= 0) {
             Class8933.method31527(this.field40055);
@@ -41,7 +41,7 @@ public class Class9331
     }
     
     public static Class9331 method34572(final Class2032 class2032, final String s, final InputStream inputStream) throws IOException {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         final String method32109 = Class8995.method32109(inputStream);
         if (method32109 == null) {
             throw new IOException("Could not load program " + class2032.method8091());

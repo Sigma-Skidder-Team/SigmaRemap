@@ -17,7 +17,7 @@ public class Class1828<T extends LivingEntity> extends Class1827<T, Class5857<T>
     }
     
     @Override
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final ItemStack method2713 = t.getHeldItemMainhand();
         class7351.method22567();
         if (method2713.getItem() == Items.field31441) {

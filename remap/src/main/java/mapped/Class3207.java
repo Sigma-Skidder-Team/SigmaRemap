@@ -21,11 +21,11 @@ public class Class3207 extends Class3167
     @Override
     public void method9879() {
         this.field15643 = 0;
-        if (!Class3207.field15514.field4648.field23440.method1056()) {
+        if (!Class3207.field15514.gameSettings.field23440.method1056()) {
             this.field15645 = false;
         }
         else {
-            Class3207.field15514.field4648.field23440.field2162 = false;
+            Class3207.field15514.gameSettings.field23440.field2162 = false;
             this.field15645 = true;
         }
         this.field15644 = 1;
@@ -34,7 +34,7 @@ public class Class3207 extends Class3167
     @Class6753
     private void method10079(final Class5752 class5752) {
         if (this.method9906()) {
-            if (class5752.method17061() == Class3207.field15514.field4648.field23440.field2161.field32860) {
+            if (class5752.method17061() == Class3207.field15514.gameSettings.field23440.field2161.field32860) {
                 class5752.method16961(true);
                 this.field15645 = true;
             }
@@ -44,7 +44,7 @@ public class Class3207 extends Class3167
     @Class6753
     private void method10080(final Class5715 class5715) {
         if (this.method9906()) {
-            if (class5715.method16963() == Class3207.field15514.field4648.field23440.field2161.field32860) {
+            if (class5715.method16963() == Class3207.field15514.gameSettings.field23440.field2161.field32860) {
                 class5715.method16961(true);
                 this.field15645 = false;
             }
@@ -54,7 +54,7 @@ public class Class3207 extends Class3167
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3207.field15514.field4684.getMotion().y > 0.0) {
+        if (Class3207.field15514.player.getMotion().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
     }
@@ -99,7 +99,7 @@ public class Class3207 extends Class3167
                 class5744.method17037(this.method10084() - 1.0E-4);
                 class5744.method17045(true);
                 class5744.method17033(true);
-                this.field15644 = (this.field15645 ? (Class3207.field15514.field4648.field23439.method1056() ? 1 : 2) : (Class3207.field15514.field4648.field23439.method1056() ? 3 : 1));
+                this.field15644 = (this.field15645 ? (Class3207.field15514.gameSettings.field23439.method1056() ? 1 : 2) : (Class3207.field15514.gameSettings.field23439.method1056() ? 3 : 1));
             }
         }
     }
@@ -113,18 +113,18 @@ public class Class3207 extends Class3167
                 if (this.field15643 >= ((this.field15644 != 3) ? this.field15644 : 1)) {
                     this.field15643 = -1;
                 }
-                class5724.field19380 = Class3207.field15514.field4684.rotationYaw;
-                class5724.field19381 = Class3207.field15514.field4684.rotationPitch;
+                class5724.field19380 = Class3207.field15514.player.rotationYaw;
+                class5724.field19381 = Class3207.field15514.player.rotationPitch;
             }
         }
     }
     
     private double method10084() {
-        if (Class3207.field15514.field4684.method1895().y < 1.0) {
+        if (Class3207.field15514.player.method1895().y < 1.0) {
             return -1.0;
         }
-        if (!Class3207.field15514.field4684.onGround) {
-            final Iterator<Object> iterator = Class3207.field15514.world.method6981(Class3207.field15514.field4684, Class3207.field15514.field4684.boundingBox.expand(0.0, -Class3207.field15514.field4684.method1934().y, 0.0)).iterator();
+        if (!Class3207.field15514.player.onGround) {
+            final Iterator<Object> iterator = Class3207.field15514.world.method6981(Class3207.field15514.player, Class3207.field15514.player.boundingBox.expand(0.0, -Class3207.field15514.player.method1934().y, 0.0)).iterator();
             double field25077 = -1.0;
             BlockPos class354 = null;
             while (iterator.hasNext()) {
@@ -142,6 +142,6 @@ public class Class3207 extends Class3167
             }
             return field25077;
         }
-        return Class3207.field15514.field4684.posY;
+        return Class3207.field15514.player.posY;
     }
 }

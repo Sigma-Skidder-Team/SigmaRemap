@@ -18,7 +18,7 @@ public final class Class914 extends Thread
     @Override
     public void run() {
         try {
-            Class8726.method29986(true);
+            RenderSystem.method29986(true);
             this.field4876.run();
         }
         catch (final Throwable t) {

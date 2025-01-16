@@ -53,8 +53,8 @@ public class Class1772 extends Class1666
                     }
                 }
             }
-            if (!Class8726.method29985()) {
-                Class8726.method29991(() -> this.method6325(method19934));
+            if (!RenderSystem.method29985()) {
+                RenderSystem.method29991(() -> this.method6325(method19934));
             }
             else {
                 this.method6325(method19934);

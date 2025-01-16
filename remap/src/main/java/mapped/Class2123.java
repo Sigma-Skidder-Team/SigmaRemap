@@ -6,8 +6,8 @@ package mapped;
 
 public interface Class2123
 {
-    default Class9294 method8274() {
-        return Class9294.method34322();
+    default TransformationMatrix method8274() {
+        return TransformationMatrix.identity();
     }
     
     default boolean method8278() {

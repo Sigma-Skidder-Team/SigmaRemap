@@ -34,12 +34,12 @@ public class Class8543
     private static final Map<Integer, String> field35884;
     
     public static String method28662() {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         return (GLFW.glfwGetCurrentContext() != 0L) ? (Class8933.method31663(7937) + " GL version " + Class8933.method31663(7938) + ", " + Class8933.method31663(7936)) : "NO CONTEXT";
     }
     
     public static int method28663(final Class1925 class1925) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         long n = GLFW.glfwGetWindowMonitor(class1925.method7690());
         if (n == 0L) {
             n = GLFW.glfwGetPrimaryMonitor();
@@ -49,12 +49,12 @@ public class Class8543
     }
     
     public static String method28664() {
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         return Version.getVersion();
     }
     
     public static LongSupplier method28665() {
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         Class1925.method7664((n, s) -> {
             new IllegalStateException(String.format("GLFW error before init: [0x%X]%s", n, s));
             throw;
@@ -67,14 +67,14 @@ public class Class8543
             while (iterator.hasNext()) {
                 Class8543.field35881.error("GLFW error collected during initialization: {}", (Object)iterator.next());
             }
-            Class8726.method30081((GLFWErrorCallbackI)glfwSetErrorCallback);
+            RenderSystem.method30081((GLFWErrorCallbackI)glfwSetErrorCallback);
             return longSupplier;
         }
         throw new IllegalStateException("Failed to initialize GLFW, errors: " + Joiner.on(",").join((Iterable)arrayList));
     }
     
     public static void method28666(final GLFWErrorCallbackI glfwErrorCallbackI) {
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         final GLFWErrorCallback glfwSetErrorCallback = GLFW.glfwSetErrorCallback(glfwErrorCallbackI);
         if (glfwSetErrorCallback != null) {
             glfwSetErrorCallback.free();
@@ -86,7 +86,7 @@ public class Class8543
     }
     
     public static void method28668() {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         if (GL.getCapabilities().GL_NV_fog_distance) {
             if (Config.method28841()) {
                 Class8933.method31591(34138, 34139);
@@ -98,7 +98,7 @@ public class Class8543
     }
     
     public static void method28669(final int n, final boolean b) {
-        Class8726.method29989(Class8726::method29990);
+        RenderSystem.method29989(RenderSystem::method29990);
         Class8543.field35882 = "Using framebuffer using " + Class8933.method31524(GL.getCapabilities());
         try {
             final Processor[] processors = new SystemInfo().getHardware().getProcessors();
@@ -117,41 +117,41 @@ public class Class8543
     }
     
     public static void method28672(final int n, final boolean b, final boolean b2, final boolean b3) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         Class8933.method31610();
         Class8933.method31517(false);
-        final Class7392 method30116 = Class8726.method30116();
-        final Class4148 method30117 = method30116.method22696();
+        final Tessellator method30116 = RenderSystem.method30116();
+        final BufferBuilder method30117 = method30116.getBuffer();
         GL11.glLineWidth(4.0f);
-        method30117.method12390(1, Class9237.field39615);
+        method30117.begin(1, DefaultVertexFormats.POSITION_COLOR);
         if (b) {
-            method30117.method12432(0.0, 0.0, 0.0).method12399(0, 0, 0, 255).method12397();
-            method30117.method12432(n, 0.0, 0.0).method12399(0, 0, 0, 255).method12397();
+            method30117.pos(0.0, 0.0, 0.0).method12399(0, 0, 0, 255).endVertex();
+            method30117.pos(n, 0.0, 0.0).method12399(0, 0, 0, 255).endVertex();
         }
         if (b2) {
-            method30117.method12432(0.0, 0.0, 0.0).method12399(0, 0, 0, 255).method12397();
-            method30117.method12432(0.0, n, 0.0).method12399(0, 0, 0, 255).method12397();
+            method30117.pos(0.0, 0.0, 0.0).method12399(0, 0, 0, 255).endVertex();
+            method30117.pos(0.0, n, 0.0).method12399(0, 0, 0, 255).endVertex();
         }
         if (b3) {
-            method30117.method12432(0.0, 0.0, 0.0).method12399(0, 0, 0, 255).method12397();
-            method30117.method12432(0.0, 0.0, n).method12399(0, 0, 0, 255).method12397();
+            method30117.pos(0.0, 0.0, 0.0).method12399(0, 0, 0, 255).endVertex();
+            method30117.pos(0.0, 0.0, n).method12399(0, 0, 0, 255).endVertex();
         }
-        method30116.method22695();
+        method30116.draw();
         GL11.glLineWidth(2.0f);
-        method30117.method12390(1, Class9237.field39615);
+        method30117.begin(1, DefaultVertexFormats.POSITION_COLOR);
         if (b) {
-            method30117.method12432(0.0, 0.0, 0.0).method12399(255, 0, 0, 255).method12397();
-            method30117.method12432(n, 0.0, 0.0).method12399(255, 0, 0, 255).method12397();
+            method30117.pos(0.0, 0.0, 0.0).method12399(255, 0, 0, 255).endVertex();
+            method30117.pos(n, 0.0, 0.0).method12399(255, 0, 0, 255).endVertex();
         }
         if (b2) {
-            method30117.method12432(0.0, 0.0, 0.0).method12399(0, 255, 0, 255).method12397();
-            method30117.method12432(0.0, n, 0.0).method12399(0, 255, 0, 255).method12397();
+            method30117.pos(0.0, 0.0, 0.0).method12399(0, 255, 0, 255).endVertex();
+            method30117.pos(0.0, n, 0.0).method12399(0, 255, 0, 255).endVertex();
         }
         if (b3) {
-            method30117.method12432(0.0, 0.0, 0.0).method12399(127, 127, 255, 255).method12397();
-            method30117.method12432(0.0, 0.0, n).method12399(127, 127, 255, 255).method12397();
+            method30117.pos(0.0, 0.0, 0.0).method12399(127, 127, 255, 255).endVertex();
+            method30117.pos(0.0, 0.0, n).method12399(127, 127, 255, 255).endVertex();
         }
-        method30116.method22695();
+        method30116.draw();
         GL11.glLineWidth(1.0f);
         Class8933.method31517(true);
         Class8933.method31609();

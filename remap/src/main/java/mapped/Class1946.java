@@ -44,12 +44,12 @@ public class Class1946 extends Class1944
         if (method23457 == null || !Class9006.method32221(this.field10601).contains(Class6332.method18765())) {
             return CompletableFuture.completedFuture(Class2033.field11590);
         }
-        final Class4148 method23458 = class9226.method34024(Class6332.method18765());
+        final BufferBuilder method23458 = class9226.method34024(Class6332.method18765());
         Class8974.method31913(this.field10599, method23458);
         method23458.method12389(method23457);
         method23458.method12385(n - Class8974.method31909(this.field10599).method1074(), n2 - Class8974.method31909(this.field10599).method1075(), n3 - Class8974.method31909(this.field10599).method1076());
         Class9006.method32222(this.field10601, method23458.method12387());
-        method23458.method12393();
+        method23458.finishDrawing();
         if (!this.field10597.get()) {
             return this.field10599.field37833.method23461(class9226.method34024(Class6332.method18765()), this.field10599.method31866(Class6332.method18765())).thenApply(p0 -> Class2033.field11590).handle((p0, t2) -> {
                 if (t2 != null) {

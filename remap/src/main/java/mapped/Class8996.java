@@ -18,7 +18,7 @@ public final class Class8996
         this.field37955 = field37955;
     }
     
-    public Matrix4f method32111() {
+    public Matrix4f getMatrix() {
         return this.field37954;
     }
     

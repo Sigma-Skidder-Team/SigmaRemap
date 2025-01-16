@@ -13,13 +13,13 @@ import net.minecraft.util.math.MathHelper;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class Class7351
+public class MatrixStack
 {
     private static String[] field28369;
     public Deque<Class8996> field28370;
     private final Deque<Class8996> field28371;
     
-    public Class7351() {
+    public MatrixStack() {
         this.field28370 = new ArrayDeque<Class8996>();
         this.field28371 = Util.method27851(Queues.newArrayDeque(), arrayDeque -> {
             final Matrix4f class6789 = new Matrix4f();
@@ -78,7 +78,7 @@ public class Class7351
         }
     }
     
-    public Class8996 method22569() {
+    public Class8996 getLast() {
         return this.field28371.getLast();
     }
     
@@ -88,6 +88,6 @@ public class Class7351
     
     @Override
     public String toString() {
-        return this.method22569().toString();
+        return this.getLast().toString();
     }
 }

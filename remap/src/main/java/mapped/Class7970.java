@@ -36,7 +36,7 @@ public class Class7970
     private static final int field32764 = 1;
     private static final int field32765 = 2;
     public static final Class7096 field32766;
-    private static Class1912 field32767;
+    private static TextureAtlasSprite field32767;
     private static ResourceLocation field32768;
     private static final Class2192[] field32769;
     private static final Class2192[] field32770;
@@ -54,7 +54,7 @@ public class Class7970
     private static final Class2192[] field32782;
     private static final Class2192[] field32783;
     private static final Class2192[] field32784;
-    public static final Class1912 field32785;
+    public static final TextureAtlasSprite field32785;
     private static final Random field32786;
     
     public static Class8754[] method25831(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, Class8754 method25834, final Class9145 class1859) {
@@ -118,7 +118,7 @@ public class Class7970
         return false;
     }
     
-    public static Class8754[] method25833(final Class1912 class1912, final Class8754 class1913, final Class9145 class1914) {
+    public static Class8754[] method25833(final TextureAtlasSprite class1912, final Class8754 class1913, final Class9145 class1914) {
         if (class1912 == null) {
             return null;
         }
@@ -128,7 +128,7 @@ public class Class7970
         return class1914.method33391(method25834(class1912, class1913));
     }
     
-    private static synchronized Class8754 method25834(final Class1912 class1912, final Class8754 class1913) {
+    private static synchronized Class8754 method25834(final TextureAtlasSprite class1912, final Class8754 class1913) {
         if (Class7970.field32750 == null) {
             return class1913;
         }
@@ -149,7 +149,7 @@ public class Class7970
         return class1913;
     }
     
-    private static synchronized Class8754 method25835(final Class1912 class1912, final Class8754 class1913, final int n) {
+    private static synchronized Class8754 method25835(final TextureAtlasSprite class1912, final Class8754 class1913, final int n) {
         if (Class7970.field32751 == null) {
             return null;
         }
@@ -174,16 +174,16 @@ public class Class7970
         return null;
     }
     
-    private static Class8754 method25836(final Class8754 class8754, final Class1912 class8755) {
+    private static Class8754 method25836(final Class8754 class8754, final TextureAtlasSprite class8755) {
         final int[] array = class8754.method30291().clone();
-        final Class1912 method30295 = class8754.method30295();
+        final TextureAtlasSprite method30295 = class8754.method30295();
         for (int i = 0; i < 4; ++i) {
             method25837(array, i, method30295, class8755);
         }
         return new Class8754(array, class8754.method30293(), class8754.method30294(), class8755);
     }
     
-    private static void method25837(final int[] array, final int n, final Class1912 class1912, final Class1912 class1913) {
+    private static void method25837(final int[] array, final int n, final TextureAtlasSprite class1912, final TextureAtlasSprite class1913) {
         final int n2 = array.length / 4 * n;
         final float intBitsToFloat = Float.intBitsToFloat(array[n2 + 4]);
         final float intBitsToFloat2 = Float.intBitsToFloat(array[n2 + 4 + 1]);
@@ -224,7 +224,7 @@ public class Class7970
     
     public static Class8754[] method25839(final Class1856 class1856, final Class7096 class1857, final BlockPos class1858, final Direction class1859, final Class8754 class1860, final boolean b, final int n, final Class9145 class1861) {
         class1857.method21696();
-        final Class1912 method30295 = class1860.method30295();
+        final TextureAtlasSprite method30295 = class1860.method30295();
         if (Class7970.field32754 != null) {
             final int method30296 = method30295.method7513();
             if (method30296 >= 0 && method30296 < Class7970.field32754.length) {
@@ -347,7 +347,7 @@ public class Class7970
         if (class6779.field26631 != null && !class6779.field26631.method32122(Class8477.method28301(class6780, class6782))) {
             return null;
         }
-        final Class1912 method25848 = class6783.method30295();
+        final TextureAtlasSprite method25848 = class6783.method30295();
         switch (class6779.field26616) {
             case 1: {
                 return method25833(method25848(class6779, class6780, class6781, class6782, method25844, n, method25848, method25845, class6784), class6783, class6784);
@@ -466,7 +466,7 @@ public class Class7970
         }
     }
     
-    private static Class1912 method25845(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, BlockPos class6782, final int n) {
+    private static TextureAtlasSprite method25845(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, BlockPos class6782, final int n) {
         if (class6779.field26635.length == 1) {
             return class6779.field26635[0];
         }
@@ -502,11 +502,11 @@ public class Class7970
         return class6779.field26635[n3];
     }
     
-    private static Class1912 method25846(final Class6779 class6779) {
+    private static TextureAtlasSprite method25846(final Class6779 class6779) {
         return class6779.field26635[0];
     }
     
-    private static Class1912 method25847(final Class6779 class6779, final BlockPos class6780, final int n) {
+    private static TextureAtlasSprite method25847(final Class6779 class6779, final BlockPos class6780, final int n) {
         if (class6779.field26635.length == 1) {
             return class6779.field26635[0];
         }
@@ -558,7 +558,7 @@ public class Class7970
         return class6779.field26635[n5 * class6779.field26625 + n4];
     }
     
-    private static Class1912 method25848(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3, final Class9145 class6784) {
+    private static TextureAtlasSprite method25848(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final TextureAtlasSprite class6783, final int n3, final Class9145 class6784) {
         return class6779.field26635[method25858(class6779, class6780, class6781, class6782, n, n2, class6783, n3, class6784)];
     }
     
@@ -570,7 +570,7 @@ public class Class7970
         if (!class6783.method30310()) {
             return null;
         }
-        final Class1912 method30295 = class6783.method30295();
+        final TextureAtlasSprite method30295 = class6783.method30295();
         final Class2192[] method30296 = method25855(n2, n);
         final boolean[] method30297 = class6784.method33384();
         for (int i = 0; i < 4; ++i) {
@@ -683,7 +683,7 @@ public class Class7970
         final Class8040 method33398 = class6781.method33398(class6779.field26641);
         Class8754[] array;
         try {
-            final Class1912 method33399 = method25846(class6779);
+            final TextureAtlasSprite method33399 = method25846(class6779);
             if (method33399 != null) {
                 method33398.method26376(method25835(method33399, class6780, class6779.field26639), class6779.field26640);
             }
@@ -704,7 +704,7 @@ public class Class7970
         final Class8040 method33398 = class6784.method33398(class6779.field26641);
         Class8754[] array;
         try {
-            final Class1912 method33399 = method25845(class6779, class6780, class6781, class6782, n);
+            final TextureAtlasSprite method33399 = method25845(class6779, class6780, class6781, class6782, n);
             if (method33399 != null) {
                 method33398.method26376(method25835(method33399, class6783, class6779.field26639), class6779.field26640);
             }
@@ -725,7 +725,7 @@ public class Class7970
         final Class8040 method33398 = class6782.method33398(class6779.field26641);
         Class8754[] array;
         try {
-            final Class1912 method33399 = method25847(class6779, class6780, n);
+            final TextureAtlasSprite method33399 = method25847(class6779, class6780, n);
             if (method33399 != null) {
                 method33398.method26376(method25835(method33399, class6781, class6779.field26639), class6779.field26640);
             }
@@ -746,7 +746,7 @@ public class Class7970
         final Class8040 method33398 = class6784.method33398(class6779.field26641);
         Class8754[] array;
         try {
-            final Class1912 method33399 = method25848(class6779, class6780, class6781, class6782, n, n2, class6783.method30295(), n3, class6784);
+            final TextureAtlasSprite method33399 = method25848(class6779, class6780, class6781, class6782, n, n2, class6783.method30295(), n3, class6784);
             if (method33399 != null) {
                 method33398.method26376(method25835(method33399, class6783, class6779.field26639), class6779.field26640);
             }
@@ -828,7 +828,7 @@ public class Class7970
         return Class7970.field32752;
     }
     
-    private static int method25858(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3, final Class9145 class6784) {
+    private static int method25858(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final TextureAtlasSprite class6783, final int n3, final Class9145 class6784) {
         final boolean[] method33384 = class6784.method33384();
         switch (n2) {
             case 0: {
@@ -1184,7 +1184,7 @@ public class Class7970
         array[n2] = b;
     }
     
-    private static boolean method25860(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
+    private static boolean method25860(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final TextureAtlasSprite class6783, final int n2) {
         final Class7096 method6701 = class6780.getBlockState(class6782);
         if (!method25861(method6701, class6780, class6782)) {
             return false;
@@ -1208,7 +1208,7 @@ public class Class7970
         return method21696 instanceof Class3851 || method21696 instanceof Class3844;
     }
     
-    private static boolean method25862(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
+    private static boolean method25862(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final TextureAtlasSprite class6783, final int n2) {
         final Class7096 method6701 = class6780.getBlockState(class6782);
         if (method6701 == Class7970.field32766) {
             return false;
@@ -1224,11 +1224,11 @@ public class Class7970
         return !method6703.method21722(class6780, method6702) && (n != 1 || method6703.method21696() != Class7521.field29329);
     }
     
-    private static boolean method25863(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
+    private static boolean method25863(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final TextureAtlasSprite class6783, final int n2) {
         return method25864(class6779, class6780, class6781, class6782, class6780.getBlockState(class6782), n, class6783, n2);
     }
     
-    private static boolean method25864(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final Class7096 class6783, final int n, final Class1912 class6784, final int n2) {
+    private static boolean method25864(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final Class7096 class6783, final int n, final TextureAtlasSprite class6784, final int n2) {
         if (class6781 == class6783) {
             return true;
         }
@@ -1241,7 +1241,7 @@ public class Class7970
         return class6779.field26618 == 1 && class6783.method21696() == class6781.method21696();
     }
     
-    private static Class1912 method25865(final IBlockReader class1855, final Class7096 class1856, final BlockPos class1857, Class7096 class1858, final int n) {
+    private static TextureAtlasSprite method25865(final IBlockReader class1855, final Class7096 class1856, final BlockPos class1857, Class7096 class1858, final int n) {
         final Class6313 method35428 = Minecraft.method5277().method5305().method5787().method35428(class1858);
         if (method35428 == null) {
             return null;
@@ -1273,7 +1273,7 @@ public class Class7970
         return null;
     }
     
-    private static Class1912 method25866(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
+    private static TextureAtlasSprite method25866(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final TextureAtlasSprite class6783, final int n3) {
         boolean b = false;
         boolean b2 = false;
         Label_0859: {
@@ -1403,7 +1403,7 @@ public class Class7970
         return class6779.field26635[n4];
     }
     
-    private static Class1912 method25867(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
+    private static TextureAtlasSprite method25867(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final TextureAtlasSprite class6783, final int n3) {
         boolean b = false;
         boolean b2 = false;
         switch (n) {
@@ -1471,13 +1471,13 @@ public class Class7970
         return class6779.field26635[n4];
     }
     
-    private static Class1912 method25868(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
-        final Class1912[] field26635 = class6779.field26635;
-        final Class1912 method25866 = method25866(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
+    private static TextureAtlasSprite method25868(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final TextureAtlasSprite class6783, final int n3) {
+        final TextureAtlasSprite[] field26635 = class6779.field26635;
+        final TextureAtlasSprite method25866 = method25866(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
         if (method25866 != null && method25866 != class6783 && method25866 != field26635[3]) {
             return method25866;
         }
-        final Class1912 method25867 = method25867(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
+        final TextureAtlasSprite method25867 = method25867(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
         if (method25867 == field26635[0]) {
             return field26635[4];
         }
@@ -1487,13 +1487,13 @@ public class Class7970
         return (method25867 == field26635[2]) ? field26635[6] : method25867;
     }
     
-    private static Class1912 method25869(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
-        final Class1912[] field26635 = class6779.field26635;
-        final Class1912 method25867 = method25867(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
+    private static TextureAtlasSprite method25869(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final TextureAtlasSprite class6783, final int n3) {
+        final TextureAtlasSprite[] field26635 = class6779.field26635;
+        final TextureAtlasSprite method25867 = method25867(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
         if (method25867 != null && method25867 != class6783 && method25867 != field26635[3]) {
             return method25867;
         }
-        final Class1912 method25868 = method25866(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
+        final TextureAtlasSprite method25868 = method25866(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
         if (method25868 == field26635[0]) {
             return field26635[4];
         }
@@ -1503,7 +1503,7 @@ public class Class7970
         return (method25868 == field26635[2]) ? field26635[6] : method25868;
     }
     
-    private static Class1912 method25870(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
+    private static TextureAtlasSprite method25870(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final TextureAtlasSprite class6783, final int n3) {
         boolean b = false;
         switch (n) {
             case 0: {
@@ -1598,8 +1598,8 @@ public class Class7970
         Class7970.field32767 = method25874(class1774, Class7970.field32768);
     }
     
-    private static Class1912 method25874(final Class1774 class1774, final ResourceLocation obj) {
-        final Class1912 method6338 = class1774.method6338(obj);
+    private static TextureAtlasSprite method25874(final Class1774 class1774, final ResourceLocation obj) {
+        final TextureAtlasSprite method6338 = class1774.method6338(obj);
         if (method6338 == null || method6338 instanceof Class1913) {
             Config.warn("Missing CTM sprite: " + obj);
         }
@@ -1681,8 +1681,8 @@ public class Class7970
     private static void method25879(final Class6779 class6779, final List list) {
         if (class6779.field26634 != null) {
             for (int i = 0; i < class6779.field26634.length; ++i) {
-                final Class1912 obj = class6779.field26634[i];
-                if (!(obj instanceof Class1912)) {
+                final TextureAtlasSprite obj = class6779.field26634[i];
+                if (!(obj instanceof TextureAtlasSprite)) {
                     Config.warn("TextureAtlasSprite is not TextureAtlasSprite: " + obj + ", name: " + obj.method7503());
                 }
                 else {
@@ -1780,7 +1780,7 @@ public class Class7970
         field32782 = new Class2192[] { Class2192.field13340, Class2192.field13341, Class2192.field13342, Class2192.field13343 };
         field32783 = new Class2192[] { Class2192.field13347, Class2192.field13346, Class2192.field13345, Class2192.field13344 };
         field32784 = new Class2192[] { Class2192.field13343, Class2192.field13342, Class2192.field13341, Class2192.field13340 };
-        field32785 = new Class1912(new ResourceLocation("default"));
+        field32785 = new TextureAtlasSprite(new ResourceLocation("default"));
         field32786 = new Random(0L);
     }
 }

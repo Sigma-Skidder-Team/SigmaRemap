@@ -346,7 +346,7 @@ public class Class5853<T extends LivingEntity> extends Class5844<T> implements C
     }
     
     @Override
-    public void method17578(final Class2226 class2226, final Class7351 class2227) {
+    public void method17578(final Class2226 class2226, final MatrixStack class2227) {
         this.method17585(class2226).method18645(class2227);
     }
     

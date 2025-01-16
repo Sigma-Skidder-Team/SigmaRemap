@@ -14,7 +14,7 @@ public interface Class9276
         return false;
     }
     
-    default boolean method34221(final Class6582 class6582, final ResourceLocation class6583, final Function<ResourceLocation, Class1912> function) {
+    default boolean method34221(final Class6582 class6582, final ResourceLocation class6583, final Function<ResourceLocation, TextureAtlasSprite> function) {
         return true;
     }
     

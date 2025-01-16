@@ -22,7 +22,7 @@ public class Class6778
         return method20686(Config.method29001().method6346(s), n);
     }
     
-    public static Class6313 method20686(final Class1912 class1912, final int n) {
+    public static Class6313 method20686(final TextureAtlasSprite class1912, final int n) {
         final ArrayList list = new ArrayList();
         final Direction[] field524 = Direction.VALUES;
         final HashMap hashMap = new HashMap();
@@ -51,7 +51,7 @@ public class Class6778
         return new Class6315(list, hashMap, class6313.method18692(), class6313.method18695(), true, class6313.method18696(), class6313.method18697(), class6313.method18698());
     }
     
-    public static Class8754 method20688(final Direction class179, final Class1912 class180, final int n) {
+    public static Class8754 method20688(final Direction class179, final TextureAtlasSprite class180, final int n) {
         return new Class6225().method18519(new Vector3f(0.0f, 0.0f, 0.0f), new Vector3f(16.0f, 16.0f, 16.0f), new Class8111(class179, n, "#" + class179.getName(), new Class8435(new float[] { 0.0f, 0.0f, 16.0f, 16.0f }, 0)), class180, class179, Class2122.field12371, null, true, class180.method7503());
     }
     
@@ -60,7 +60,7 @@ public class Class6778
         return method20690(s, method29001.method6346(s2), method29001.method6346(s3));
     }
     
-    public static Class6313 method20690(final String s, final Class1912 class1912, final Class1912 class1913) {
+    public static Class6313 method20690(final String s, final TextureAtlasSprite class1912, final TextureAtlasSprite class1913) {
         if (class1912 == null || class1913 == null) {
             return null;
         }
@@ -81,7 +81,7 @@ public class Class6778
         return null;
     }
     
-    private static void method20691(final List<Class8754> list, final Class1912 class1912, final Class1912 class1913) {
+    private static void method20691(final List<Class8754> list, final TextureAtlasSprite class1912, final TextureAtlasSprite class1913) {
         final ArrayList list2 = new ArrayList();
         for (Class8754 class1914 : list) {
             if (class1914.method30295() == class1912) {

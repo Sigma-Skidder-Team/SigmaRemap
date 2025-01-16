@@ -53,7 +53,7 @@ public class Class6987 implements Class6988, Class6991
     @Override
     public void method21404(final float n, final int n2) {
         Minecraft.method5277().method5290().method5849(Class569.field3395);
-        Class565.method3188(0, 0, 0.0f, 0.0f, 16, 16, 256, 256);
+        AbstractGui.blit(0, 0, 0.0f, 0.0f, 16, 16, 256, 256);
     }
     
     @Override

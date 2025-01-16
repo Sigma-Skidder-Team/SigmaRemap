@@ -19,6 +19,6 @@ public class Class4439 implements Comparator<Entity>
     
     @Override
     public int compare(final Entity class399, final Entity class400) {
-        return (Class3167.field15514.field4684.method1732(class399) <= Class3167.field15514.field4684.method1732(class400)) ? -1 : 1;
+        return (Class3167.field15514.player.method1732(class399) <= Class3167.field15514.player.method1732(class400)) ? -1 : 1;
     }
 }

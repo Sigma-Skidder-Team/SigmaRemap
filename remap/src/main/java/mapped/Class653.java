@@ -7,7 +7,7 @@ package mapped;
 public class Class653 extends Class649
 {
     private final Class5328 field3678;
-    private final Class1912 field3679;
+    private final TextureAtlasSprite field3679;
     private final boolean field3680;
     public final /* synthetic */ Class748 field3681;
     
@@ -43,12 +43,12 @@ public class Class653 extends Class649
                 str += " II";
             }
         }
-        this.field3681.method3031(str, n, n2);
+        this.field3681.renderTooltip(str, n, n2);
     }
     
     @Override
     public void method3706() {
         Minecraft.method5277().method5290().method5849(this.field3679.method7504().method6340());
-        Class565.method3298(this.field3426 + 2, this.field3427 + 2, this.method3303(), 18, 18, this.field3679);
+        AbstractGui.blit(this.field3426 + 2, this.field3427 + 2, this.getBlitOffset(), 18, 18, this.field3679);
     }
 }

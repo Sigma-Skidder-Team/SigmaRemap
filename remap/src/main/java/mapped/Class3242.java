@@ -13,12 +13,12 @@ import org.lwjgl.opengl.GL11;
 public class Class3242 extends Class3167
 {
     public boolean field15730;
-    public Class7808 field15731;
+    public IRenderTypeBuffer.Impl field15731;
     
     public Class3242() {
         super(Class8013.field32984, "Fill", "Fill ESP");
         this.field15730 = false;
-        this.field15731 = Class7807.method25213(Class3242.field15514.method5333().field16262, new Class4148(256));
+        this.field15731 = IRenderTypeBuffer.method25213(Class3242.field15514.method5333().field16262, new BufferBuilder(256));
         this.method9881(new Class5003("Color", "The tracers color", Class265.field1278.field1292));
     }
     
@@ -27,11 +27,11 @@ public class Class3242 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3242.field15514.field4684 != null && Class3242.field15514.world != null) {
+        if (Class3242.field15514.player != null && Class3242.field15514.world != null) {
             this.method10245();
             this.method10240();
             this.method10246();
-            this.field15731.method25216();
+            this.field15731.finish();
         }
     }
     
@@ -44,7 +44,7 @@ public class Class3242 extends Class3167
         final float n4 = (method9885 & 0xFF) / 255.0f;
         GL11.glEnable(2896);
         GL11.glLightModelfv(2899, new float[] { n2, n3, n4, n });
-        Class8726.method30001();
+        RenderSystem.method30001();
         GL11.glDepthFunc(519);
         GL11.glEnable(2929);
         GL11.glEnable(32823);
@@ -63,15 +63,15 @@ public class Class3242 extends Class3167
             final double method9887 = method9886.getX();
             final double method9888 = method9886.getY();
             final double method9889 = method9886.getZ();
-            final Class7351 class400 = new Class7351();
-            final boolean field23420 = Class3242.field15514.field4648.field23420;
-            Class8726.method30002();
-            Class8726.method30068(0.0f, 0.0f, 1.0f, 0.5f);
-            Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
-            Class8726.method30011();
-            Class3242.field15514.field4648.field23420 = false;
+            final MatrixStack class400 = new MatrixStack();
+            final boolean field23420 = Class3242.field15514.gameSettings.field23420;
+            RenderSystem.method30002();
+            RenderSystem.method30068(0.0f, 0.0f, 1.0f, 0.5f);
+            RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+            RenderSystem.enableBlend();
+            Class3242.field15514.gameSettings.field23420 = false;
             this.method10242(class399, method9887, method9888, method9889, Class3242.field15514.field4633.field26528, class400, this.field15731);
-            Class3242.field15514.field4648.field23420 = field23420;
+            Class3242.field15514.gameSettings.field23420 = field23420;
             GL11.glPopMatrix();
         }
         this.field15731.method25217(Class6332.method18767(Class1774.field9853));
@@ -79,7 +79,7 @@ public class Class3242 extends Class3167
         this.field15731.method25217(Class6332.method18770(Class1774.field9853));
         this.field15731.method25217(Class6332.method18774(Class1774.field9853));
         this.field15731.method25217(Class6332.method18791());
-        this.field15731.method25216();
+        this.field15731.finish();
         GL11.glDepthFunc(515);
         GL11.glPolygonMode(1032, 6914);
         GL11.glDisable(32823);
@@ -97,7 +97,7 @@ public class Class3242 extends Class3167
         }
     }
     
-    public void method10242(final Entity class399, final double n, final double n2, final double n3, final float n4, final Class7351 class400, final Class7807 class401) {
+    public void method10242(final Entity class399, final double n, final double n2, final double n3, final float n4, final MatrixStack class400, final IRenderTypeBuffer class401) {
         Class3242.field15514.field4636.field9290.method28706(class399, MathHelper.lerp(n4, class399.lastTickPosX, class399.getPosX()) - n, MathHelper.lerp(n4, class399.lastTickPosY, class399.getPosY()) - n2, MathHelper.lerp(n4, class399.lastTickPosZ, class399.getPosZ()) - n3, MathHelper.method35700(n4, class399.prevRotationYaw, class399.rotationYaw), n4, class400, class401, 255);
     }
     
@@ -134,7 +134,7 @@ public class Class3242 extends Class3167
         GL11.glDisable(2896);
         GL11.glEnable(3553);
         GL11.glEnable(2903);
-        Class8726.method30084(33986, 240.0f, 240.0f);
+        RenderSystem.method30084(33986, 240.0f, 240.0f);
         Class7777.method24931();
         final Class1663 method5290 = Class3242.field15514.method5290();
         Class3242.field15514.method5290();

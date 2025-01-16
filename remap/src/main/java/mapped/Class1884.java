@@ -155,12 +155,12 @@ public class Class1884 implements AutoCloseable
                         final int method35927 = Class9583.method35909(method35921, "width");
                         final int method35928 = Class9583.method35909(method35921, "height");
                         if (Class9583.method35900(method35921, "bilinear")) {
-                            Class8726.method30042(3553, 10241, 9729);
-                            Class8726.method30042(3553, 10240, 9729);
+                            RenderSystem.method30042(3553, 10241, 9729);
+                            RenderSystem.method30042(3553, 10240, 9729);
                         }
                         else {
-                            Class8726.method30042(3553, 10241, 9728);
-                            Class8726.method30042(3553, 10240, 9728);
+                            RenderSystem.method30042(3553, 10241, 9728);
+                            RenderSystem.method30042(3553, 10240, 9728);
                         }
                         method35919.method7602(method35922, method35926.method5869(), method35927, method35928);
                     }

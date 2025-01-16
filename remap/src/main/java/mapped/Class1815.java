@@ -17,7 +17,7 @@ public class Class1815<T extends LivingEntity> extends Class1799<T, Class5860<T>
         (this.field9992 = new Class6300(64, 64, 0, 0)).method18636(-8.0f, -16.0f, -8.0f, 16.0f, 32.0f, 16.0f);
     }
     
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (t.method2744()) {
             final Class4150 method25214 = class7352.method25214(Class6332.method18770(Class1815.field9991));
             for (int i = 0; i < 3; ++i) {

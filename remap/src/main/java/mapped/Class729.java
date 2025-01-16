@@ -15,14 +15,14 @@ public class Class729 extends Screen
     }
     
     @Override
-    public boolean method2989() {
+    public boolean shouldCloseOnEsc() {
         return false;
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        this.method3043(0);
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 70, 16777215);
-        super.method2975(n, n2, n3);
+    public void render(final int n, final int n2, final float n3) {
+        this.renderDirtBackground(0);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 70, 16777215);
+        super.render(n, n2, n3);
     }
 }

@@ -30,8 +30,8 @@ public class Class6869 implements Class6866
     @Override
     public Class2204 method20978(final Class690 class690, final long field26913) {
         class690.method3853().method5290().method5849(Class6869.field26901);
-        Class8726.method30069(1.0f, 1.0f, 1.0f);
-        class690.method3186(0, 0, 0, 96, 160, 32);
+        RenderSystem.method30069(1.0f, 1.0f, 1.0f);
+        class690.blit(0, 0, 0, 96, 160, 32);
         this.field26909.method8444(class690, 6, 6);
         if (this.field26911 != null) {
             class690.method3853().fontRenderer.method6610(this.field26910, 30.0f, 7.0f, -11534256);
@@ -41,7 +41,7 @@ public class Class6869 implements Class6866
             class690.method3853().fontRenderer.method6610(this.field26910, 30.0f, 12.0f, -11534256);
         }
         if (this.field26916) {
-            Class565.method3293(3, 28, 157, 29, -1);
+            AbstractGui.fill(3, 28, 157, 29, -1);
             final float field26914 = (float) MathHelper.method35655(this.field26914, this.field26915, (field26913 - this.field26913) / 100.0f);
             int n;
             if (this.field26915 < this.field26914) {
@@ -50,7 +50,7 @@ public class Class6869 implements Class6866
             else {
                 n = -16755456;
             }
-            Class565.method3293(3, 28, (int)(3.0f + 154.0f * field26914), 29, n);
+            AbstractGui.fill(3, 28, (int)(3.0f + 154.0f * field26914), 29, n);
             this.field26914 = field26914;
             this.field26913 = field26913;
         }

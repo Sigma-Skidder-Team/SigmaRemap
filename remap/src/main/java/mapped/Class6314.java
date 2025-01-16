@@ -23,7 +23,7 @@ public interface Class6314
         return this.method18699().method18692();
     }
     
-    default Class6313 method18702(final Class2016 class2016, final Class7351 class2017) {
+    default Class6313 method18702(final Class2016 class2016, final MatrixStack class2017) {
         return (Class6313)Class9570.field41288.method22608(this.method18699(), class2016, class2017);
     }
     
@@ -31,7 +31,7 @@ public interface Class6314
         return class1859;
     }
     
-    default Class1912 method18704(final Class6349 class6349) {
+    default TextureAtlasSprite method18704(final Class6349 class6349) {
         return this.method18699().method18696();
     }
 }

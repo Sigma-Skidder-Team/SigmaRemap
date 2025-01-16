@@ -27,7 +27,7 @@ public class Class8551
     private final Map<EntityType<?>, Class4703<?>> field35900;
     private final Map<String, Class4711> field35901;
     private final Class4711 field35902;
-    private final Class1844 field35903;
+    private final FontRenderer field35903;
     public final Class1663 field35904;
     private World field35905;
     public Class6092 field35906;
@@ -50,7 +50,7 @@ public class Class8551
         this.field35900.put(class7499, class7500);
     }
     
-    private void method28697(final Class1796 class1796, final Class6580 class1797) {
+    private void method28697(final ItemRenderer class1796, final Class6580 class1797) {
         this.method28696(EntityType.field28957, new Class4783(this));
         this.method28696(EntityType.field28958, (Class4703<? super Class857>)new Class4779(this));
         this.method28696(EntityType.field28959, new Class4786(this));
@@ -156,7 +156,7 @@ public class Class8551
         Class1811.method6572(this.field35901);
     }
     
-    public Class8551(final Class1663 field35904, final Class1796 class1796, final Class6580 class1797, final Class1844 field35905, final Class5760 field35906) {
+    public Class8551(final Class1663 field35904, final ItemRenderer class1796, final Class6580 class1797, final FontRenderer field35905, final Class5760 field35906) {
         this.field35900 = Maps.newHashMap();
         this.field35901 = Maps.newHashMap();
         this.field35910 = true;
@@ -213,7 +213,7 @@ public class Class8551
         return this.method28699(e).method13952(e, class6664, n, n2, n3);
     }
     
-    public <E extends Entity> void method28706(final E e, final double n, final double n2, final double n3, final float f, final float f2, final Class7351 class7351, final Class7807 class7352, final int n4) {
+    public <E extends Entity> void method28706(final E e, final double n, final double n2, final double n3, final float f, final float f2, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n4) {
         if (Class3375.field16048 && (e instanceof Class857 || e instanceof Class764 || e instanceof Class862)) {
             return;
         }
@@ -258,7 +258,7 @@ public class Class8551
         }
     }
     
-    private void method28707(final Class7351 class7351, final Class4150 class7352, final Entity class7353, final float n) {
+    private void method28707(final MatrixStack class7351, final Class4150 class7352, final Entity class7353, final float n) {
         final float n2 = class7353.method1930() / 2.0f;
         this.method28708(class7351, class7352, class7353, 1.0f, 1.0f, 1.0f);
         if (class7353 instanceof Class852) {
@@ -276,18 +276,18 @@ public class Class8551
             Class1656.method5732(class7351, class7352, -n2, class7353.method1892() - 0.01f, -n2, n2, class7353.method1892() + 0.01f, n2, 1.0f, 0.0f, 0.0f, 1.0f);
         }
         final Vec3d method5124 = class7353.method1741(n);
-        final Matrix4f method5125 = class7351.method22569().method32111();
-        class7352.method12444(method5125, 0.0f, class7353.method1892(), 0.0f).method12399(0, 0, 255, 255).method12397();
-        class7352.method12444(method5125, (float)(method5124.x * 2.0), (float)(class7353.method1892() + method5124.y * 2.0), (float)(method5124.z * 2.0)).method12399(0, 0, 255, 255).method12397();
+        final Matrix4f method5125 = class7351.getLast().getMatrix();
+        class7352.pos(method5125, 0.0f, class7353.method1892(), 0.0f).method12399(0, 0, 255, 255).endVertex();
+        class7352.pos(method5125, (float)(method5124.x * 2.0), (float)(class7353.method1892() + method5124.y * 2.0), (float)(method5124.z * 2.0)).method12399(0, 0, 255, 255).endVertex();
     }
     
-    private void method28708(final Class7351 class7351, final Class4150 class7352, final Entity class7353, final float n, final float n2, final float n3) {
+    private void method28708(final MatrixStack class7351, final Class4150 class7352, final Entity class7353, final float n, final float n2, final float n3) {
         Class1656.method5731(class7351, class7352, class7353.getBoundingBox().offset(-class7353.getPosX(), -class7353.getPosY(), -class7353.getPosZ()), n, n2, n3, 1.0f);
     }
     
-    private void method28709(final Class7351 class7351, final Class7807 class7352, final Entity class7353) {
-        final Class1912 method11332 = Class7637.field30237.method11332();
-        final Class1912 method11333 = Class7637.field30238.method11332();
+    private void method28709(final MatrixStack class7351, final IRenderTypeBuffer class7352, final Entity class7353) {
+        final TextureAtlasSprite method11332 = Class7637.field30237.method11332();
+        final TextureAtlasSprite method11333 = Class7637.field30238.method11332();
         class7351.method22567();
         final float n = class7353.method1930() * 1.4f;
         class7351.method22565(n, n, n);
@@ -303,9 +303,9 @@ public class Class8551
         if (method11335) {
             method11334.method12412(Class9484.field40759);
         }
-        final Class8996 method11336 = class7351.method22569();
+        final Class8996 method11336 = class7351.getLast();
         while (n3 > 0.0f) {
-            final Class1912 class7354 = (n6 % 2 != 0) ? method11333 : method11332;
+            final TextureAtlasSprite class7354 = (n6 % 2 != 0) ? method11333 : method11332;
             method11334.method12407(class7354);
             float method11337 = class7354.method7497();
             final float method11338 = class7354.method7500();
@@ -334,10 +334,10 @@ public class Class8551
     }
     
     private static void method28710(final Class8996 class8996, final Class4150 class8997, final float n, final float n2, final float n3, final float n4, final float n5) {
-        class8997.method12444(class8996.method32111(), n, n2, n3).method12399(255, 255, 255, 255).method12391(n4, n5).method12433(0, 10).method12440(240).method12445(class8996.method32112(), 0.0f, 1.0f, 0.0f).method12397();
+        class8997.pos(class8996.getMatrix(), n, n2, n3).method12399(255, 255, 255, 255).tex(n4, n5).method12433(0, 10).method12440(240).method12445(class8996.method32112(), 0.0f, 1.0f, 0.0f).endVertex();
     }
     
-    private static void method28711(final Class7351 class7351, final Class7807 class7352, final Entity class7353, final float n, final float n2, final Class1852 class7354, final float n3) {
+    private static void method28711(final MatrixStack class7351, final IRenderTypeBuffer class7352, final Entity class7353, final float n, final float n2, final Class1852 class7354, final float n3) {
         if (!Config.method28955() || !Class9216.field39233) {
             float n4 = n3;
             if (class7353 instanceof Class759) {
@@ -354,7 +354,7 @@ public class Class8551
             final int method35707 = MathHelper.floor(method35702);
             final int method35708 = MathHelper.floor(method35703 - n4);
             final int method35709 = MathHelper.floor(method35703 + n4);
-            final Class8996 method35710 = class7351.method22569();
+            final Class8996 method35710 = class7351.getLast();
             final Class4150 method35711 = class7352.method25214(Class8551.field35899);
             final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(new BlockPos(method35704, method35706, method35708), new BlockPos(method35705, method35707, method35709)).iterator();
             while (iterator.hasNext()) {
@@ -403,7 +403,7 @@ public class Class8551
     }
     
     private static void method28713(final Class8996 class8996, final Class4150 class8997, final float n, final float n2, final float n3, final float n4, final float n5, final float n6) {
-        class8997.method12444(class8996.method32111(), n2, n3, n4).method12439(1.0f, 1.0f, 1.0f, n).method12391(n5, n6).method12441(Class1904.field10335).method12440(15728880).method12445(class8996.method32112(), 0.0f, 1.0f, 0.0f).method12397();
+        class8997.pos(class8996.getMatrix(), n2, n3, n4).color(1.0f, 1.0f, 1.0f, n).tex(n5, n6).method12441(Class1904.field10335).method12440(15728880).method12445(class8996.method32112(), 0.0f, 1.0f, 0.0f).endVertex();
     }
     
     public void method28714(final World field35905) {
@@ -425,7 +425,7 @@ public class Class8551
         return this.field35907;
     }
     
-    public Class1844 method28718() {
+    public FontRenderer method28718() {
         return this.field35903;
     }
     

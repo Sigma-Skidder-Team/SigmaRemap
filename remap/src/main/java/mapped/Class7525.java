@@ -25,7 +25,7 @@ public class Class7525 extends Class7524
     
     @Override
     public int method23505(final String s) {
-        return this.field29871.fontRenderer.method6617(s) * this.field29870;
+        return this.field29871.fontRenderer.getStringWidth(s) * this.field29870;
     }
     
     @Override

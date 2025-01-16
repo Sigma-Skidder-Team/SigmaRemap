@@ -79,14 +79,14 @@ public abstract class Class6322
     }
     
     private static void method18711(final float n) {
-        Class8726.method30057(5890);
-        Class8726.method30059();
-        Class8726.method30058();
+        RenderSystem.method30057(5890);
+        RenderSystem.method30059();
+        RenderSystem.method30058();
         final long n2 = Util.method27837() * 8L;
-        Class8726.method30065(-(n2 % 110000L / 110000.0f), n2 % 30000L / 30000.0f, 0.0f);
-        Class8726.method30062(10.0f, 0.0f, 0.0f, 1.0f);
-        Class8726.method30063(n, n, n);
-        Class8726.method30057(5888);
+        RenderSystem.method30065(-(n2 % 110000L / 110000.0f), n2 % 30000L / 30000.0f, 0.0f);
+        RenderSystem.method30062(10.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30063(n, n, n);
+        RenderSystem.method30057(5888);
     }
     
     public String method18712() {
@@ -94,48 +94,48 @@ public abstract class Class6322
     }
     
     static {
-        field25277 = new Class6331("no_transparency", () -> Class8726.method30012(), () -> {});
+        field25277 = new Class6331("no_transparency", () -> RenderSystem.disableBlend(), () -> {});
         field25278 = new Class6331("additive_transparency", () -> {
-            Class8726.method30011();
-            Class8726.method30013(Class2050.field11686, Class2135.field12455);
+            RenderSystem.enableBlend();
+            RenderSystem.method30013(Class2050.field11686, Class2135.field12455);
             return;
         }, () -> {
-            Class8726.method30012();
-            Class8726.method30117();
+            RenderSystem.disableBlend();
+            RenderSystem.defaultBlendFunc();
             return;
         });
         field25279 = new Class6331("lightning_transparency", () -> {
-            Class8726.method30011();
-            Class8726.method30013(Class2050.field11693, Class2135.field12455);
+            RenderSystem.enableBlend();
+            RenderSystem.method30013(Class2050.field11693, Class2135.field12455);
             return;
         }, () -> {
-            Class8726.method30012();
-            Class8726.method30117();
+            RenderSystem.disableBlend();
+            RenderSystem.defaultBlendFunc();
             return;
         });
         field25280 = new Class6331("glint_transparency", () -> {
-            Class8726.method30011();
-            Class8726.method30013(Class2050.field11695, Class2135.field12455);
+            RenderSystem.enableBlend();
+            RenderSystem.method30013(Class2050.field11695, Class2135.field12455);
             return;
         }, () -> {
-            Class8726.method30012();
-            Class8726.method30117();
+            RenderSystem.disableBlend();
+            RenderSystem.defaultBlendFunc();
             return;
         });
         field25281 = new Class6331("crumbling_transparency", () -> {
-            Class8726.method30011();
-            Class8726.method30015(Class2050.field11685, Class2135.field12463, Class2050.field11686, Class2135.field12464);
+            RenderSystem.enableBlend();
+            RenderSystem.method30015(Class2050.field11685, Class2135.field12463, Class2050.field11686, Class2135.field12464);
             return;
         }, () -> {
-            Class8726.method30012();
-            Class8726.method30117();
+            RenderSystem.disableBlend();
+            RenderSystem.defaultBlendFunc();
             return;
         });
         field25282 = new Class6331("translucent_transparency", () -> {
-            Class8726.method30011();
-            Class8726.method30117();
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
             return;
-        }, () -> Class8726.method30012());
+        }, () -> RenderSystem.disableBlend());
         field25283 = new Class6321(0.0f);
         field25284 = new Class6321(0.003921569f);
         field25285 = new Class6321(0.5f);
@@ -146,17 +146,17 @@ public abstract class Class6322
         field25290 = new Class6340(Class1774.field9853, false, false);
         field25291 = new Class6340();
         field25292 = new Class6323("default_texturing", () -> {}, () -> {});
-        field25293 = new Class6323("outline_texturing", () -> Class8726.method30103(), () -> Class8726.method30104());
+        field25293 = new Class6323("outline_texturing", () -> RenderSystem.method30103(), () -> RenderSystem.method30104());
         field25294 = new Class6323("glint_texturing", () -> method18711(8.0f), () -> {
-            Class8726.method30057(5890);
-            Class8726.method30060();
-            Class8726.method30057(5888);
+            RenderSystem.method30057(5890);
+            RenderSystem.method30060();
+            RenderSystem.method30057(5888);
             return;
         });
         field25295 = new Class6323("entity_glint_texturing", () -> method18711(0.16f), () -> {
-            Class8726.method30057(5890);
-            Class8726.method30060();
-            Class8726.method30057(5888);
+            RenderSystem.method30057(5890);
+            RenderSystem.method30060();
+            RenderSystem.method30057(5888);
             return;
         });
         field25296 = new Class6337(true);
@@ -175,39 +175,39 @@ public abstract class Class6322
         field25309 = new Class6326(false, true);
         field25310 = new Class6330("no_layering", () -> {}, () -> {});
         field25311 = new Class6330("polygon_offset_layering", () -> {
-            Class8726.method30035(-1.0f, -10.0f);
-            Class8726.method30031();
+            RenderSystem.method30035(-1.0f, -10.0f);
+            RenderSystem.method30031();
             return;
         }, () -> {
-            Class8726.method30035(0.0f, 0.0f);
-            Class8726.method30032();
+            RenderSystem.method30035(0.0f, 0.0f);
+            RenderSystem.method30032();
             return;
         });
         field25312 = new Class6330("projection_layering", () -> {
-            Class8726.method30057(5889);
-            Class8726.method30059();
-            Class8726.method30063(1.0f, 1.0f, 0.999f);
-            Class8726.method30057(5888);
+            RenderSystem.method30057(5889);
+            RenderSystem.method30059();
+            RenderSystem.method30063(1.0f, 1.0f, 0.999f);
+            RenderSystem.method30057(5888);
             return;
         }, () -> {
-            Class8726.method30057(5889);
-            Class8726.method30060();
-            Class8726.method30057(5888);
+            RenderSystem.method30057(5889);
+            RenderSystem.method30060();
+            RenderSystem.method30057(5888);
             return;
         });
         field25313 = new Class6329("no_fog", () -> {}, () -> {});
         field25314 = new Class6329("fog", () -> {
             Class9111.method32956();
-            Class8726.method30019();
+            RenderSystem.method30019();
             return;
-        }, () -> Class8726.method30020());
+        }, () -> RenderSystem.method30020());
         field25315 = new Class6329("black_fog", () -> {
-            Class8726.method30026(2918, 0.0f, 0.0f, 0.0f, 1.0f);
-            Class8726.method30019();
+            RenderSystem.method30026(2918, 0.0f, 0.0f, 0.0f, 1.0f);
+            RenderSystem.method30019();
             return;
         }, () -> {
             Class9111.method32956();
-            Class8726.method30020();
+            RenderSystem.method30020();
             return;
         });
         field25316 = new Class6341("main_target", () -> {}, () -> {});

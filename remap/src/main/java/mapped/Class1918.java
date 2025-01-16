@@ -22,38 +22,38 @@ public class Class1918 implements AutoCloseable
     
     public Class1918(final Class9272 field10424) {
         this.field10424 = field10424;
-        Class8726.method30115(n -> this.field10423 = n);
+        RenderSystem.method30115(n -> this.field10423 = n);
     }
     
     public void method7587() {
         Class8933.method31551(34962, this.field10423);
     }
     
-    public void method7588(final Class4148 class4148) {
-        if (Class8726.method29984()) {
+    public void method7588(final BufferBuilder class4148) {
+        if (RenderSystem.method29984()) {
             this.method7590(class4148);
         }
         else {
-            Class8726.method29991(() -> this.method7590(class4148));
+            RenderSystem.method29991(() -> this.method7590(class4148));
         }
     }
     
-    public CompletableFuture<Void> method7589(final Class4148 class4148) {
-        if (Class8726.method29984()) {
+    public CompletableFuture<Void> method7589(final BufferBuilder class4148) {
+        if (RenderSystem.method29984()) {
             this.method7590(class4148);
             return CompletableFuture.completedFuture((Void)null);
         }
-        return CompletableFuture.runAsync(() -> this.method7590(class4149), runnable -> Class8726.method29991(runnable::run));
+        return CompletableFuture.runAsync(() -> this.method7590(class4149), runnable -> RenderSystem.method29991(runnable::run));
     }
     
-    private void method7590(final Class4148 class4148) {
+    private void method7590(final BufferBuilder class4148) {
         final Pair<Class8127, ByteBuffer> method12401 = class4148.method12401();
         if (this.field10426 == null) {
             if (this.field10423 != -1) {
                 final ByteBuffer byteBuffer = (ByteBuffer)method12401.getSecond();
                 this.field10425 = byteBuffer.remaining() / this.field10424.method34194();
                 this.method7587();
-                Class8726.method30089(34962, byteBuffer, 35044);
+                RenderSystem.method30089(34962, byteBuffer, 35044);
                 method7592();
             }
         }
@@ -63,19 +63,19 @@ public class Class1918 implements AutoCloseable
     }
     
     public void method7591(final Matrix4f class6789, int field10428) {
-        Class8726.method30059();
-        Class8726.method30058();
-        Class8726.method30067(class6789);
+        RenderSystem.method30059();
+        RenderSystem.method30058();
+        RenderSystem.method30067(class6789);
         if (this.field10428 > 0) {
             field10428 = this.field10428;
         }
         if (this.field10426 == null) {
-            Class8726.method30071(field10428, 0, this.field10425);
+            RenderSystem.method30071(field10428, 0, this.field10425);
         }
         else {
             this.field10426.method31174(field10428, this.field10427);
         }
-        Class8726.method30060();
+        RenderSystem.method30060();
     }
     
     public static void method7592() {
@@ -85,7 +85,7 @@ public class Class1918 implements AutoCloseable
     @Override
     public void close() {
         if (this.field10423 >= 0) {
-            Class8726.method30090(this.field10423);
+            RenderSystem.method30090(this.field10423);
             this.field10423 = -1;
         }
     }

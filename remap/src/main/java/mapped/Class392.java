@@ -50,9 +50,9 @@ public class Class392 implements AutoCloseable
     }
     
     public void method1417() {
-        Class8726.method30039(33986);
-        Class8726.method30041();
-        Class8726.method30039(33984);
+        RenderSystem.method30039(33986);
+        RenderSystem.disableTexture();
+        RenderSystem.method30039(33984);
         if (Config.method28955()) {
             Class9216.method33881();
         }
@@ -60,20 +60,20 @@ public class Class392 implements AutoCloseable
     
     public void method1418() {
         if (this.field2286) {
-            Class8726.method30039(33986);
-            Class8726.method30057(5890);
-            Class8726.method30058();
-            Class8726.method30063(0.00390625f, 0.00390625f, 0.00390625f);
-            Class8726.method30065(8.0f, 8.0f, 8.0f);
-            Class8726.method30057(5888);
+            RenderSystem.method30039(33986);
+            RenderSystem.method30057(5890);
+            RenderSystem.method30058();
+            RenderSystem.method30063(0.00390625f, 0.00390625f, 0.00390625f);
+            RenderSystem.method30065(8.0f, 8.0f, 8.0f);
+            RenderSystem.method30057(5888);
             this.field2285.method5290().method5849(this.field2281);
-            Class8726.method30042(3553, 10241, 9729);
-            Class8726.method30042(3553, 10240, 9729);
-            Class8726.method30042(3553, 10242, 33071);
-            Class8726.method30042(3553, 10243, 33071);
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method30040();
-            Class8726.method30039(33984);
+            RenderSystem.method30042(3553, 10241, 9729);
+            RenderSystem.method30042(3553, 10240, 9729);
+            RenderSystem.method30042(3553, 10242, 33071);
+            RenderSystem.method30042(3553, 10243, 33071);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.enableTexture();
+            RenderSystem.method30039(33984);
             if (Config.method28955()) {
                 Class9216.method33880();
             }
@@ -87,7 +87,7 @@ public class Class392 implements AutoCloseable
             final Class1848 field4683 = this.field2285.world;
             if (field4683 != null) {
                 this.field2287 = false;
-                if (Config.method28945() && Class8763.method30361(field4683, this.field2283, this.field2280, this.field2285.field4684.method2653(Class9439.field40489) || this.field2285.field4684.method2653(Class9439.field40502), f)) {
+                if (Config.method28945() && Class8763.method30361(field4683, this.field2283, this.field2280, this.field2285.player.method2653(Class9439.field40489) || this.field2285.player.method2653(Class9439.field40502), f)) {
                     this.field2279.method6327();
                     this.field2282 = false;
                     this.field2285.method5327().endSection();
@@ -102,10 +102,10 @@ public class Class392 implements AutoCloseable
                 else {
                     n = 1.0f;
                 }
-                final float method6843 = this.field2285.field4684.method4140();
+                final float method6843 = this.field2285.player.method4140();
                 float method6844;
-                if (!this.field2285.field4684.method2653(Class9439.field40489)) {
-                    if (method6843 > 0.0f && this.field2285.field4684.method2653(Class9439.field40502)) {
+                if (!this.field2285.player.method2653(Class9439.field40489)) {
+                    if (method6843 > 0.0f && this.field2285.player.method2653(Class9439.field40502)) {
                         method6844 = method6843;
                     }
                     else {
@@ -113,7 +113,7 @@ public class Class392 implements AutoCloseable
                     }
                 }
                 else {
-                    method6844 = Class1660.method5816(this.field2285.field4684, f);
+                    method6844 = Class1660.method5816(this.field2285.player, f);
                 }
                 final Vector3f class9138 = new Vector3f(method6842, method6842, 1.0f);
                 class9138.lerp(new Vector3f(1.0f, 1.0f, 1.0f), 0.35f);
@@ -152,7 +152,7 @@ public class Class392 implements AutoCloseable
                                 class9139.lerp(method6848, method6844);
                             }
                         }
-                        final float n4 = (float)this.field2285.field4648.field23472;
+                        final float n4 = (float)this.field2285.gameSettings.field23472;
                         final Vector3f method6849 = this.method1426(class9139);
                         method6849.apply(this::method1420);
                         class9139.lerp(method6849, n4);

@@ -15,7 +15,7 @@ public class Class1841 extends Class1799<Class815, Class5899<Class815>>
         this.field10025 = new Class5899<Class815>(0.5f);
     }
     
-    public void method6607(final Class7351 class7351, final Class7807 class7352, final int n, final Class815 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6607(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class815 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final Class181 method4792 = class7353.method4792();
         ResourceLocation field10024;
         if (method4792 == null) {

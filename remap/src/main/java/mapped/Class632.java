@@ -53,20 +53,20 @@ public class Class632 extends Class623<Class632>
     public void method3467(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final float n8) {
         final Class2009 method3642 = this.method3642();
         if (!method3642.method8043()) {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class565.method3293(n3 - 1, n2 - 1, n3 + n4 - 9, n2 + n5 + 1, -8978432);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            AbstractGui.fill(n3 - 1, n2 - 1, n3 + n4 - 9, n2 + n5 + 1, -8978432);
         }
         this.method3641();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class565.method3188(n3, n2, 0.0f, 0.0f, 32, 32, 32, 32);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        AbstractGui.blit(n3, n2, 0.0f, 0.0f, 32, 32, 32, 32);
         String s = this.method3644();
         String s2 = this.method3643();
         Label_0059: {
             if (this.method3646()) {
-                if (this.field3619.field4648.field23429 || b) {
+                if (this.field3619.gameSettings.field23429 || b) {
                     this.field3619.method5290().method5849(Class615.method3591());
-                    Class565.method3293(n3, n2, n3 + 32, n2 + 32, -1601138544);
-                    Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                    AbstractGui.fill(n3, n2, n3 + 32, n2 + 32, -1601138544);
+                    RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                     final int n9 = n6 - n3;
                     final int n10 = n7 - n2;
                     if (!method3642.method8043()) {
@@ -76,10 +76,10 @@ public class Class632 extends Class623<Class632>
                     if (!this.method3647()) {
                         if (this.method3648()) {
                             if (n9 >= 16) {
-                                Class565.method3188(n3, n2, 32.0f, 0.0f, 32, 32, 256, 256);
+                                AbstractGui.blit(n3, n2, 32.0f, 0.0f, 32, 32, 256, 256);
                             }
                             else {
-                                Class565.method3188(n3, n2, 32.0f, 32.0f, 32, 32, 256, 256);
+                                AbstractGui.blit(n3, n2, 32.0f, 32.0f, 32, 32, 256, 256);
                             }
                         }
                         Label_0255: {
@@ -87,42 +87,42 @@ public class Class632 extends Class623<Class632>
                                 if (n9 < 32) {
                                     if (n9 > 16) {
                                         if (n10 < 16) {
-                                            Class565.method3188(n3, n2, 96.0f, 32.0f, 32, 32, 256, 256);
+                                            AbstractGui.blit(n3, n2, 96.0f, 32.0f, 32, 32, 256, 256);
                                             break Label_0255;
                                         }
                                     }
                                 }
-                                Class565.method3188(n3, n2, 96.0f, 0.0f, 32, 32, 256, 256);
+                                AbstractGui.blit(n3, n2, 96.0f, 0.0f, 32, 32, 256, 256);
                             }
                         }
                         if (this.method3650()) {
                             if (n9 < 32) {
                                 if (n9 > 16) {
                                     if (n10 > 16) {
-                                        Class565.method3188(n3, n2, 64.0f, 32.0f, 32, 32, 256, 256);
+                                        AbstractGui.blit(n3, n2, 64.0f, 32.0f, 32, 32, 256, 256);
                                         break Label_0059;
                                     }
                                 }
                             }
-                            Class565.method3188(n3, n2, 64.0f, 0.0f, 32, 32, 256, 256);
+                            AbstractGui.blit(n3, n2, 64.0f, 0.0f, 32, 32, 256, 256);
                         }
                     }
                     else if (n9 >= 32) {
-                        Class565.method3188(n3, n2, 0.0f, 0.0f, 32, 32, 256, 256);
+                        AbstractGui.blit(n3, n2, 0.0f, 0.0f, 32, 32, 256, 256);
                     }
                     else {
-                        Class565.method3188(n3, n2, 0.0f, 32.0f, 32, 32, 256, 256);
+                        AbstractGui.blit(n3, n2, 0.0f, 32.0f, 32, 32, 256, 256);
                     }
                 }
             }
         }
-        if (this.field3619.fontRenderer.method6617(s) > 157) {
-            s = this.field3619.fontRenderer.method6619(s, 157 - this.field3619.fontRenderer.method6617("...")) + "...";
+        if (this.field3619.fontRenderer.getStringWidth(s) > 157) {
+            s = this.field3619.fontRenderer.method6619(s, 157 - this.field3619.fontRenderer.getStringWidth("...")) + "...";
         }
-        this.field3619.fontRenderer.method6609(s, (float)(n3 + 32 + 2), (float)(n2 + 1), 16777215);
+        this.field3619.fontRenderer.drawStringWithShadow(s, (float)(n3 + 32 + 2), (float)(n2 + 1), 16777215);
         final List<String> method3643 = this.field3619.fontRenderer.method6626(s2, 157);
         for (int n11 = 0; n11 < 2 && n11 < method3643.size(); ++n11) {
-            this.field3619.fontRenderer.method6609((String)method3643.get(n11), (float)(n3 + 32 + 2), (float)(n2 + 12 + 10 * n11), 8421504);
+            this.field3619.fontRenderer.drawStringWithShadow((String)method3643.get(n11), (float)(n3 + 32 + 2), (float)(n2 + 12 + 10 * n11), 8421504);
         }
     }
     
@@ -167,8 +167,8 @@ public class Class632 extends Class623<Class632>
                     this.method3651().method3927();
                     final Class2009 method3642 = this.method3642();
                     if (!method3642.method8043()) {
-                        this.field3619.method5244(new Class546(b -> {
-                            this.field3619.method5244(this.method3651());
+                        this.field3619.displayGuiScreen(new Class546(b -> {
+                            this.field3619.displayGuiScreen(this.method3651());
                             if (b) {
                                 this.method3651().method3924(this);
                             }

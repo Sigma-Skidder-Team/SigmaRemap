@@ -131,7 +131,7 @@ public abstract class Class6469
         this.field25749 = field25749;
     }
     
-    public abstract Class573 method19362(final Class5760 p0, final int p1, final int p2, final int p3);
+    public abstract Widget method19362(final Class5760 p0, final int p1, final int p2, final int p3);
     
     public String method19365() {
         return Class8822.method30773(this.field25749, new Object[0]) + ": ";

@@ -26,7 +26,7 @@ public class Class7081 implements Class7079
         ++this.field27584;
         if (this.field27582.method32928() == Class101.field298) {
             if (this.field27584 == 1) {
-                final Class756 field4684 = this.field27582.method32927().field4684;
+                final Class756 field4684 = this.field27582.method32927().player;
                 if (field4684 != null) {
                     if (field4684.field3006.method2377(Class7855.field32237)) {
                         this.field27582.method32926(Class2012.field11444);

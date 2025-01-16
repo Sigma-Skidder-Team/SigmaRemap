@@ -67,29 +67,29 @@ public class Class727 extends Screen
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.field3974 = this.method3029(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("book.signButton", new Object[0]), class654 -> {
+        this.field3974 = this.addButton(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("book.signButton", new Object[0]), class654 -> {
             this.field3962 = true;
             this.method3994();
         }));
-        this.field3973 = this.method3029(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
-            this.minecraft.method5244(null);
+        this.field3973 = this.addButton(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+            this.minecraft.displayGuiScreen(null);
             this.method3996(false);
         }));
-        this.field3975 = this.method3029(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("book.finalizeButton", new Object[0]), class654 -> {
+        this.field3975 = this.addButton(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("book.finalizeButton", new Object[0]), class654 -> {
             if (this.field3962) {
                 this.method3996(true);
-                this.minecraft.method5244(null);
+                this.minecraft.displayGuiScreen(null);
             }
         }));
-        this.field3976 = this.method3029(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
+        this.field3976 = this.addButton(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
             if (this.field3962) {
                 this.field3962 = false;
             }
             this.method3994();
         }));
         final int n = (this.width - 192) / 2;
-        this.field3971 = this.method3029(new Class680(n + 116, 159, true, class654 -> this.method3993(), true));
-        this.field3972 = this.method3029(new Class680(n + 43, 159, false, class654 -> this.method3992(), true));
+        this.field3971 = this.addButton(new Class680(n + 116, 159, true, class654 -> this.method3993(), true));
+        this.field3972 = this.addButton(new Class680(n + 43, 159, false, class654 -> this.method3992(), true));
         this.method3994();
     }
     
@@ -177,8 +177,8 @@ public class Class727 extends Screen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        return super.keyPressed(n, n2, n3) || (this.field3962 ? this.method4009(n, n2, n3) : this.method3998(n, n2, n3));
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        return super.keyPressed(keyCode, n2, n3) || (this.field3962 ? this.method4009(keyCode, n2, n3) : this.method3998(keyCode, n2, n3));
     }
     
     @Override
@@ -312,7 +312,7 @@ public class Class727 extends Screen
         else {
             this.field3967 = this.font.method6629(s, n, this.field3967, true);
         }
-        if (!Screen.method3047()) {
+        if (!Screen.hasShiftDown()) {
             this.field3968 = this.field3967;
         }
     }
@@ -325,7 +325,7 @@ public class Class727 extends Screen
         else {
             this.field3967 = this.font.method6629(s, n, this.field3967, true);
         }
-        if (!Screen.method3047()) {
+        if (!Screen.hasShiftDown()) {
             this.field3968 = this.field3967;
         }
     }
@@ -337,14 +337,14 @@ public class Class727 extends Screen
                 final int method4019 = this.method4023(s, new Class7116(this, Class7116.method21845(method4018) + this.method4008(s, this.field3967) / 3, Class7116.method21844(method4018) - 9));
                 if (method4019 >= 0) {
                     this.field3967 = method4019;
-                    if (!Screen.method3047()) {
+                    if (!Screen.hasShiftDown()) {
                         this.field3968 = this.field3967;
                     }
                 }
             }
             else {
                 this.field3967 = 0;
-                if (!Screen.method3047()) {
+                if (!Screen.hasShiftDown()) {
                     this.field3968 = this.field3967;
                 }
             }
@@ -358,14 +358,14 @@ public class Class727 extends Screen
                 final int method4019 = this.method4023(str, new Class7116(this, Class7116.method21845(method4018) + this.method4008(str, this.field3967) / 3, Class7116.method21844(method4018) + 9));
                 if (method4019 >= 0) {
                     this.field3967 = method4019;
-                    if (!Screen.method3047()) {
+                    if (!Screen.hasShiftDown()) {
                         this.field3968 = this.field3967;
                     }
                 }
             }
             else {
                 this.field3967 = str.length();
-                if (!Screen.method3047()) {
+                if (!Screen.hasShiftDown()) {
                     this.field3968 = this.field3967;
                 }
             }
@@ -374,14 +374,14 @@ public class Class727 extends Screen
     
     private void method4005(final String s) {
         this.field3967 = this.method4023(s, new Class7116(this, 0, Class7116.method21844(this.method4018(s, this.field3967))));
-        if (!Screen.method3047()) {
+        if (!Screen.hasShiftDown()) {
             this.field3968 = this.field3967;
         }
     }
     
     private void method4006(final String s) {
         this.field3967 = this.method4023(s, new Class7116(this, 113, Class7116.method21844(this.method4018(s, this.field3967))));
-        if (!Screen.method3047()) {
+        if (!Screen.hasShiftDown()) {
             this.field3968 = this.field3967;
         }
     }
@@ -407,7 +407,7 @@ public class Class727 extends Screen
             case 335: {
                 if (!this.field3966.isEmpty()) {
                     this.method3996(true);
-                    this.minecraft.method5244(null);
+                    this.minecraft.displayGuiScreen(null);
                 }
                 return true;
             }
@@ -455,13 +455,13 @@ public class Class727 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         this.setFocused(null);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.minecraft.method5290().method5849(Class723.field3947);
         final int n4 = (this.width - 192) / 2;
-        this.method3186(n4, 2, 0, 0, 192, 192);
+        this.blit(n4, 2, 0, 0, 192, 192);
         if (!this.field3962) {
             final String method30773 = Class8822.method30773("book.pageIndicator", this.field3964 + 1, this.method3990());
             final String method30774 = this.method4010();
@@ -479,7 +479,7 @@ public class Class727 extends Screen
                     this.font.method6610("_", (float)Class7116.method21845(method30775), (float)Class7116.method21844(method30775), 0);
                 }
                 else {
-                    Class565.method3293(Class7116.method21845(method30775), Class7116.method21844(method30775) - 1, Class7116.method21845(method30775) + 1, Class7116.method21844(method30775) + 9, -16777216);
+                    AbstractGui.fill(Class7116.method21845(method30775), Class7116.method21844(method30775) - 1, Class7116.method21845(method30775) + 1, Class7116.method21844(method30775) + 9, -16777216);
                 }
             }
         }
@@ -499,11 +499,11 @@ public class Class727 extends Screen
             this.font.method6610(TextFormatting.DARK_GRAY + method30777, (float)(n4 + 36 + (114 - this.method4013(method30777)) / 2), 60.0f, 0);
             this.font.method6622(Class8822.method30773("book.finalizeWarning", new Object[0]), n4 + 36, 82, 114, 0);
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     private int method4013(final String s) {
-        return this.font.method6617(this.font.method6630() ? this.font.method6611(s) : s);
+        return this.font.getStringWidth(this.font.method6630() ? this.font.method6611(s) : s);
     }
     
     private int method4014(final String s, final int n) {
@@ -556,20 +556,20 @@ public class Class727 extends Screen
         }
         this.method4021(class7118);
         this.method4021(class7119);
-        final Class7392 method21846 = Class7392.method22694();
-        final Class4148 method21847 = method21846.method22696();
-        Class8726.method30068(0.0f, 0.0f, 255.0f, 255.0f);
-        Class8726.method30041();
-        Class8726.method30036();
-        Class8726.method30038(Class2188.field12992);
-        method21847.method12390(7, Class9237.field39614);
-        method21847.method12432(Class7116.method21845(class7118), Class7116.method21844(class7119), 0.0).method12397();
-        method21847.method12432(Class7116.method21845(class7119), Class7116.method21844(class7119), 0.0).method12397();
-        method21847.method12432(Class7116.method21845(class7119), Class7116.method21844(class7118), 0.0).method12397();
-        method21847.method12432(Class7116.method21845(class7118), Class7116.method21844(class7118), 0.0).method12397();
-        method21846.method22695();
-        Class8726.method30037();
-        Class8726.method30040();
+        final Tessellator method21846 = Tessellator.getInstance();
+        final BufferBuilder method21847 = method21846.getBuffer();
+        RenderSystem.method30068(0.0f, 0.0f, 255.0f, 255.0f);
+        RenderSystem.disableTexture();
+        RenderSystem.method30036();
+        RenderSystem.method30038(Class2188.field12992);
+        method21847.begin(7, DefaultVertexFormats.field39614);
+        method21847.pos(Class7116.method21845(class7118), Class7116.method21844(class7119), 0.0).endVertex();
+        method21847.pos(Class7116.method21845(class7119), Class7116.method21844(class7119), 0.0).endVertex();
+        method21847.pos(Class7116.method21845(class7119), Class7116.method21844(class7118), 0.0).endVertex();
+        method21847.pos(Class7116.method21845(class7118), Class7116.method21844(class7118), 0.0).endVertex();
+        method21846.draw();
+        RenderSystem.method30037();
+        RenderSystem.enableTexture();
     }
     
     private Class7116 method4018(final String s, final int n) {
@@ -709,7 +709,7 @@ public class Class727 extends Screen
                     }
                     else {
                         this.field3967 = method27839;
-                        if (!Screen.method3047()) {
+                        if (!Screen.hasShiftDown()) {
                             this.field3968 = this.field3967;
                         }
                     }

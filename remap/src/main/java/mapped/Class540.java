@@ -69,7 +69,7 @@ public class Class540 extends Screen
     
     private void method3131() {
         if (this.method3139(Class2146.field12634)) {
-            this.minecraft.method5244(null);
+            this.minecraft.displayGuiScreen(null);
         }
     }
     
@@ -80,41 +80,41 @@ public class Class540 extends Screen
         this.field3232.method2574(this.field3236);
         this.field3232.method2594(this.field3237);
         this.field3232.method2596(this.field3238);
-        this.minecraft.method5244(null);
+        this.minecraft.displayGuiScreen(null);
     }
     
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.field3249 = this.method3029(new Class654(this.width / 2 - 4 - 150, 210, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method3131()));
-        this.field3250 = this.method3029(new Class654(this.width / 2 + 4, 210, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.method3132()));
-        this.field3251 = this.method3029(new Class654(this.width / 2 + 4 + 100, 185, 50, 20, Class8822.method30773("structure_block.button.save", new Object[0]), class654 -> {
+        this.field3249 = this.addButton(new Class654(this.width / 2 - 4 - 150, 210, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method3131()));
+        this.field3250 = this.addButton(new Class654(this.width / 2 + 4, 210, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.method3132()));
+        this.field3251 = this.addButton(new Class654(this.width / 2 + 4 + 100, 185, 50, 20, Class8822.method30773("structure_block.button.save", new Object[0]), class654 -> {
             if (this.field3232.method2570() == Class102.field305) {
                 this.method3139(Class2146.field12635);
-                this.minecraft.method5244(null);
+                this.minecraft.displayGuiScreen(null);
             }
         }));
-        this.field3252 = this.method3029(new Class654(this.width / 2 + 4 + 100, 185, 50, 20, Class8822.method30773("structure_block.button.load", new Object[0]), class654 -> {
+        this.field3252 = this.addButton(new Class654(this.width / 2 + 4 + 100, 185, 50, 20, Class8822.method30773("structure_block.button.load", new Object[0]), class654 -> {
             if (this.field3232.method2570() == Class102.field306) {
                 this.method3139(Class2146.field12636);
-                this.minecraft.method5244(null);
+                this.minecraft.displayGuiScreen(null);
             }
         }));
-        this.field3257 = this.method3029(new Class654(this.width / 2 - 4 - 150, 185, 50, 20, "MODE", class654 -> {
+        this.field3257 = this.addButton(new Class654(this.width / 2 - 4 - 150, 185, 50, 20, "MODE", class654 -> {
             this.field3232.method2572();
             this.method3138();
         }));
-        this.field3258 = this.method3029(new Class654(this.width / 2 + 4 + 100, 120, 50, 20, Class8822.method30773("structure_block.button.detect_size", new Object[0]), class654 -> {
+        this.field3258 = this.addButton(new Class654(this.width / 2 + 4 + 100, 120, 50, 20, Class8822.method30773("structure_block.button.detect_size", new Object[0]), class654 -> {
             if (this.field3232.method2570() == Class102.field305) {
                 this.method3139(Class2146.field12637);
-                this.minecraft.method5244(null);
+                this.minecraft.displayGuiScreen(null);
             }
         }));
-        this.field3259 = this.method3029(new Class654(this.width / 2 + 4 + 100, 160, 50, 20, "ENTITIES", class654 -> {
+        this.field3259 = this.addButton(new Class654(this.width / 2 + 4 + 100, 160, 50, 20, "ENTITIES", class654 -> {
             this.field3232.method2574(!this.field3232.method2573());
             this.method3133();
         }));
-        this.field3260 = this.method3029(new Class654(this.width / 2 - 20, 185, 40, 20, "MIRROR", class654 -> {
+        this.field3260 = this.addButton(new Class654(this.width / 2 - 20, 185, 40, 20, "MIRROR", class654 -> {
             switch (Class7630.field30220[this.field3232.method2564().ordinal()]) {
                 case 1: {
                     this.field3232.method2565(Class2181.field12918);
@@ -131,27 +131,27 @@ public class Class540 extends Screen
             }
             this.method3136();
         }));
-        this.field3261 = this.method3029(new Class654(this.width / 2 + 4 + 100, 80, 50, 20, "SHOWAIR", class654 -> {
+        this.field3261 = this.addButton(new Class654(this.width / 2 + 4 + 100, 80, 50, 20, "SHOWAIR", class654 -> {
             this.field3232.method2594(!this.field3232.method2593());
             this.method3134();
         }));
-        this.field3262 = this.method3029(new Class654(this.width / 2 + 4 + 100, 80, 50, 20, "SHOWBB", class654 -> {
+        this.field3262 = this.addButton(new Class654(this.width / 2 + 4 + 100, 80, 50, 20, "SHOWBB", class654 -> {
             this.field3232.method2596(!this.field3232.method2595());
             this.method3135();
         }));
-        this.field3253 = this.method3029(new Class654(this.width / 2 - 1 - 40 - 1 - 40 - 20, 185, 40, 20, "0", class654 -> {
+        this.field3253 = this.addButton(new Class654(this.width / 2 - 1 - 40 - 1 - 40 - 20, 185, 40, 20, "0", class654 -> {
             this.field3232.method2567(Class2052.field11707);
             this.method3137();
         }));
-        this.field3254 = this.method3029(new Class654(this.width / 2 - 1 - 40 - 20, 185, 40, 20, "90", class654 -> {
+        this.field3254 = this.addButton(new Class654(this.width / 2 - 1 - 40 - 20, 185, 40, 20, "90", class654 -> {
             this.field3232.method2567(Class2052.field11708);
             this.method3137();
         }));
-        this.field3255 = this.method3029(new Class654(this.width / 2 + 1 + 20, 185, 40, 20, "180", class654 -> {
+        this.field3255 = this.addButton(new Class654(this.width / 2 + 1 + 20, 185, 40, 20, "180", class654 -> {
             this.field3232.method2567(Class2052.field11709);
             this.method3137();
         }));
-        this.field3256 = this.method3029(new Class654(this.width / 2 + 1 + 40 + 1 + 20, 185, 40, 20, "270", class654 -> {
+        this.field3256 = this.addButton(new Class654(this.width / 2 + 1 + 40 + 1 + 20, 185, 40, 20, "270", class654 -> {
             this.field3232.method2567(Class2052.field11710);
             this.method3137();
         }));
@@ -199,7 +199,7 @@ public class Class540 extends Screen
         this.method3134();
         this.field3238 = this.field3232.method2595();
         this.method3135();
-        this.method3476(this.field3239);
+        this.setFocusedDefault(this.field3239);
     }
     
     @Override
@@ -401,16 +401,16 @@ public class Class540 extends Screen
     }
     
     @Override
-    public void method3028() {
+    public void onClose() {
         this.method3132();
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (super.keyPressed(n, n2, n3)) {
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (super.keyPressed(keyCode, n2, n3)) {
             return true;
         }
-        if (n != 257 && n != 335) {
+        if (keyCode != 257 && keyCode != 335) {
             return false;
         }
         this.method3131();
@@ -418,45 +418,45 @@ public class Class540 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         final Class102 method2570 = this.field3232.method2570();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 10, 16777215);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 10, 16777215);
         if (method2570 != Class102.field308) {
-            this.method3297(this.font, Class8822.method30773("structure_block.structure_name", new Object[0]), this.width / 2 - 153, 30, 10526880);
-            this.field3239.method2975(n, n2, n3);
+            this.drawString(this.font, Class8822.method30773("structure_block.structure_name", new Object[0]), this.width / 2 - 153, 30, 10526880);
+            this.field3239.render(n, n2, n3);
         }
         if (method2570 == Class102.field306 || method2570 == Class102.field305) {
-            this.method3297(this.font, Class8822.method30773("structure_block.position", new Object[0]), this.width / 2 - 153, 70, 10526880);
-            this.field3240.method2975(n, n2, n3);
-            this.field3241.method2975(n, n2, n3);
-            this.field3242.method2975(n, n2, n3);
+            this.drawString(this.font, Class8822.method30773("structure_block.position", new Object[0]), this.width / 2 - 153, 70, 10526880);
+            this.field3240.render(n, n2, n3);
+            this.field3241.render(n, n2, n3);
+            this.field3242.render(n, n2, n3);
             final String method2571 = Class8822.method30773("structure_block.include_entities", new Object[0]);
-            this.method3297(this.font, method2571, this.width / 2 + 154 - this.font.method6617(method2571), 150, 10526880);
+            this.drawString(this.font, method2571, this.width / 2 + 154 - this.font.getStringWidth(method2571), 150, 10526880);
         }
         if (method2570 == Class102.field305) {
-            this.method3297(this.font, Class8822.method30773("structure_block.size", new Object[0]), this.width / 2 - 153, 110, 10526880);
-            this.field3243.method2975(n, n2, n3);
-            this.field3244.method2975(n, n2, n3);
-            this.field3245.method2975(n, n2, n3);
+            this.drawString(this.font, Class8822.method30773("structure_block.size", new Object[0]), this.width / 2 - 153, 110, 10526880);
+            this.field3243.render(n, n2, n3);
+            this.field3244.render(n, n2, n3);
+            this.field3245.render(n, n2, n3);
             final String method2572 = Class8822.method30773("structure_block.detect_size", new Object[0]);
-            this.method3297(this.font, method2572, this.width / 2 + 154 - this.font.method6617(method2572), 110, 10526880);
+            this.drawString(this.font, method2572, this.width / 2 + 154 - this.font.getStringWidth(method2572), 110, 10526880);
             final String method2573 = Class8822.method30773("structure_block.show_air", new Object[0]);
-            this.method3297(this.font, method2573, this.width / 2 + 154 - this.font.method6617(method2573), 70, 10526880);
+            this.drawString(this.font, method2573, this.width / 2 + 154 - this.font.getStringWidth(method2573), 70, 10526880);
         }
         if (method2570 == Class102.field306) {
-            this.method3297(this.font, Class8822.method30773("structure_block.integrity", new Object[0]), this.width / 2 - 153, 110, 10526880);
-            this.field3246.method2975(n, n2, n3);
-            this.field3247.method2975(n, n2, n3);
+            this.drawString(this.font, Class8822.method30773("structure_block.integrity", new Object[0]), this.width / 2 - 153, 110, 10526880);
+            this.field3246.render(n, n2, n3);
+            this.field3247.render(n, n2, n3);
             final String method2574 = Class8822.method30773("structure_block.show_boundingbox", new Object[0]);
-            this.method3297(this.font, method2574, this.width / 2 + 154 - this.font.method6617(method2574), 70, 10526880);
+            this.drawString(this.font, method2574, this.width / 2 + 154 - this.font.getStringWidth(method2574), 70, 10526880);
         }
         if (method2570 == Class102.field308) {
-            this.method3297(this.font, Class8822.method30773("structure_block.custom_data", new Object[0]), this.width / 2 - 153, 110, 10526880);
-            this.field3248.method2975(n, n2, n3);
+            this.drawString(this.font, Class8822.method30773("structure_block.custom_data", new Object[0]), this.width / 2 - 153, 110, 10526880);
+            this.field3248.render(n, n2, n3);
         }
-        this.method3297(this.font, Class8822.method30773("structure_block.mode_info." + method2570.getName(), new Object[0]), this.width / 2 - 153, 174, 10526880);
-        super.method2975(n, n2, n3);
+        this.drawString(this.font, Class8822.method30773("structure_block.mode_info." + method2570.getName(), new Object[0]), this.width / 2 - 153, 174, 10526880);
+        super.render(n, n2, n3);
     }
     
     @Override

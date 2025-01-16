@@ -17,16 +17,16 @@ public class Class3183 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15577 = Class3183.field15514.field4684.posX;
-        this.field15578 = Class3183.field15514.field4684.posY;
-        this.field15579 = Class3183.field15514.field4684.posZ;
+        this.field15577 = Class3183.field15514.player.posX;
+        this.field15578 = Class3183.field15514.player.posY;
+        this.field15579 = Class3183.field15514.player.posZ;
         this.field15576 = 0;
     }
     
     @Override
     public void method9897() {
         Class7482.method23151(0.0);
-        if (Class3183.field15514.field4684.getMotion().y > 0.0) {
+        if (Class3183.field15514.player.getMotion().y > 0.0) {
             Class6430.method19155(-0.0789);
         }
     }
@@ -75,8 +75,8 @@ public class Class3183 extends Class3167
                 this.field15577 = class5724.field19377;
                 this.field15578 = class5724.field19378;
                 this.field15579 = class5724.field19379;
-                class5724.field19380 = Class3183.field15514.field4684.rotationYaw;
-                class5724.field19381 = Class3183.field15514.field4684.rotationPitch;
+                class5724.field19380 = Class3183.field15514.player.rotationYaw;
+                class5724.field19381 = Class3183.field15514.player.rotationPitch;
             }
         }
     }
@@ -87,18 +87,18 @@ public class Class3183 extends Class3167
             final double field15578 = this.field15578;
             final double field15579 = this.field15577;
             final double field15580 = this.field15579;
-            Class3183.field15514.field4684.posY = field15578;
-            Class3183.field15514.field4684.lastTickPosY = field15578;
-            Class3183.field15514.field4684.field3019 = field15578;
-            Class3183.field15514.field4684.prevPosY = field15578;
-            Class3183.field15514.field4684.posX = field15579;
-            Class3183.field15514.field4684.lastTickPosX = field15579;
-            Class3183.field15514.field4684.field3018 = field15579;
-            Class3183.field15514.field4684.prevPosX = field15579;
-            Class3183.field15514.field4684.posZ = field15580;
-            Class3183.field15514.field4684.lastTickPosZ = field15580;
-            Class3183.field15514.field4684.field3020 = field15580;
-            Class3183.field15514.field4684.prevPosZ = field15580;
+            Class3183.field15514.player.posY = field15578;
+            Class3183.field15514.player.lastTickPosY = field15578;
+            Class3183.field15514.player.field3019 = field15578;
+            Class3183.field15514.player.prevPosY = field15578;
+            Class3183.field15514.player.posX = field15579;
+            Class3183.field15514.player.lastTickPosX = field15579;
+            Class3183.field15514.player.field3018 = field15579;
+            Class3183.field15514.player.prevPosX = field15579;
+            Class3183.field15514.player.posZ = field15580;
+            Class3183.field15514.player.lastTickPosZ = field15580;
+            Class3183.field15514.player.field3020 = field15580;
+            Class3183.field15514.player.prevPosZ = field15580;
         }
     }
 }

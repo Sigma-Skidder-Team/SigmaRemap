@@ -9,7 +9,7 @@ import com.google.common.collect.Maps;
 import java.util.UUID;
 import java.util.Map;
 
-public class Class571 extends Class565
+public class Class571 extends AbstractGui
 {
     private static final ResourceLocation field3399;
     private final Minecraft field3400;
@@ -26,11 +26,11 @@ public class Class571 extends Class565
             int n = 12;
             for (final Class6881 class6881 : this.field3401.values()) {
                 final int n2 = method7696 / 2 - 91;
-                Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                 this.field3400.method5290().method5849(Class571.field3399);
                 this.method3331(n2, n, class6881);
                 final String method7697 = class6881.method21076().getFormattedText();
-                this.field3400.fontRenderer.method6609(method7697, (float)(method7696 / 2 - this.field3400.fontRenderer.method6617(method7697) / 2), (float)(n - 9), 16777215);
+                this.field3400.fontRenderer.drawStringWithShadow(method7697, (float)(method7696 / 2 - this.field3400.fontRenderer.getStringWidth(method7697) / 2), (float)(n - 9), 16777215);
                 n += 19;
                 if (n < this.field3400.method5332().method7697() / 3) {
                     continue;
@@ -41,15 +41,15 @@ public class Class571 extends Class565
     }
     
     private void method3331(final int n, final int n2, final Class6880 class6880) {
-        this.method3186(n, n2, 0, class6880.method21078().ordinal() * 5 * 2, 182, 5);
+        this.blit(n, n2, 0, class6880.method21078().ordinal() * 5 * 2, 182, 5);
         if (class6880.method21079() != Class342.field2105) {
-            this.method3186(n, n2, 0, 80 + (class6880.method21079().ordinal() - 1) * 5 * 2, 182, 5);
+            this.blit(n, n2, 0, 80 + (class6880.method21079().ordinal() - 1) * 5 * 2, 182, 5);
         }
         final int n3 = (int)(class6880.method21077() * 183.0f);
         if (n3 > 0) {
-            this.method3186(n, n2, 0, class6880.method21078().ordinal() * 5 * 2 + 5, n3, 5);
+            this.blit(n, n2, 0, class6880.method21078().ordinal() * 5 * 2 + 5, n3, 5);
             if (class6880.method21079() != Class342.field2105) {
-                this.method3186(n, n2, 0, 80 + (class6880.method21079().ordinal() - 1) * 5 * 2 + 5, n3, 5);
+                this.blit(n, n2, 0, 80 + (class6880.method21079().ordinal() - 1) * 5 * 2 + 5, n3, 5);
             }
         }
     }

@@ -30,7 +30,7 @@ public class Class8952
     
     public static void method31758(final String s, final String s2) {
         if (s2 != null) {
-            Class8726.method30044(method31762(s, s2));
+            RenderSystem.method30044(method31762(s, s2));
         }
         else {
             RealmsScreen.method15419("textures/gui/presets/isles.png");
@@ -38,13 +38,13 @@ public class Class8952
     }
     
     public static void method31759(final String s, final Runnable runnable) {
-        Class8726.method29996();
+        RenderSystem.method29996();
         try {
             method31761(s);
             runnable.run();
         }
         finally {
-            Class8726.method29997();
+            RenderSystem.method29997();
         }
     }
     
@@ -67,7 +67,7 @@ public class Class8952
                     method31760(fromString);
                 }
                 else {
-                    Class8726.method30044(method31762(s, Class8952.field37647.get(s)));
+                    RenderSystem.method30044(method31762(s, Class8952.field37647.get(s)));
                 }
             }
             else {
@@ -75,7 +75,7 @@ public class Class8952
             }
         }
         else {
-            Class8726.method30044(Class8952.field37645.get(s).field34068);
+            RenderSystem.method30044(Class8952.field37645.get(s).field34068);
         }
     }
     
@@ -86,7 +86,7 @@ public class Class8952
             if (class8281.field34067.equals(anObject)) {
                 return class8281.field34068;
             }
-            Class8726.method30043(class8281.field34068);
+            RenderSystem.method30043(class8281.field34068);
             n = class8281.field34068;
         }
         else {
@@ -115,8 +115,8 @@ public class Class8952
         catch (final IOException ex) {
             ex.printStackTrace();
         }
-        Class8726.method30039(33984);
-        Class8726.method30044(n);
+        RenderSystem.method30039(33984);
+        RenderSystem.method30044(n);
         Class8995.method32110(intBuffer, width, height);
         Class8952.field37645.put(s, new Class8281(anObject, n));
         return n;

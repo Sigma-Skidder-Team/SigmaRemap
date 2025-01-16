@@ -126,7 +126,7 @@ public final class Class1846 implements AutoCloseable
     }
     
     public static void method6641(final boolean b) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         if (!b) {
             Class8933.method31613(3553, 10242, 10497);
             Class8933.method31613(3553, 10243, 10497);
@@ -138,7 +138,7 @@ public final class Class1846 implements AutoCloseable
     }
     
     public static void method6642(final boolean b, final boolean b2) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         if (!b) {
             final int method28838 = Config.method28838();
             Class8933.method31613(3553, 10241, b2 ? method28838 : 9728);
@@ -293,16 +293,16 @@ public final class Class1846 implements AutoCloseable
     }
     
     public void method6654(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final boolean b2, final boolean b3, final boolean b4) {
-        if (Class8726.method29985()) {
+        if (RenderSystem.method29985()) {
             this.method6655(n, n2, n3, n4, n5, n6, n7, b, b2, b3, b4);
         }
         else {
-            Class8726.method29991(() -> this.method6655(n, n2, n3, n4, n5, n6, n7, b, b2, b3, b4));
+            RenderSystem.method29991(() -> this.method6655(n, n2, n3, n4, n5, n6, n7, b, b2, b3, b4));
         }
     }
     
     private void method6655(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final boolean b2, final boolean b3, final boolean b4) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         this.method6643();
         method6642(b, b3);
         method6641(b2);
@@ -322,7 +322,7 @@ public final class Class1846 implements AutoCloseable
     }
     
     public void method6656(final int n, final boolean b) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         this.method6643();
         this.field10042.method8431();
         Class8933.method31620(3553, n, this.field10042.method8433(), 5121, this.field10046);

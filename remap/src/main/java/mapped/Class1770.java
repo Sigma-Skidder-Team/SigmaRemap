@@ -37,6 +37,6 @@ public class Class1770 extends Class1767
     }
     
     private static Executor method6317(final Executor executor) {
-        return p1 -> executor2.execute(() -> Class8726.method29991(runnable2::run));
+        return p1 -> executor2.execute(() -> RenderSystem.method29991(runnable2::run));
     }
 }

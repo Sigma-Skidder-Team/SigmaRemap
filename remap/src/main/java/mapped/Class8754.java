@@ -11,14 +11,14 @@ public class Class8754
     public int[] field36765;
     public final int field36766;
     public Direction field36767;
-    public Class1912 field36768;
+    public TextureAtlasSprite field36768;
     private int[] field36769;
     public boolean field36770;
     private Class9496 field36771;
     private boolean field36772;
     private Class8754 field36773;
     
-    public Class8754(final int[] field36765, final int field36766, final Direction field36767, final Class1912 field36768, final boolean field36769) {
+    public Class8754(final int[] field36765, final int field36766, final Direction field36767, final TextureAtlasSprite field36768, final boolean field36769) {
         this.field36769 = null;
         this.field36770 = Class9570.field41285.method22605();
         this.field36765 = field36765;
@@ -29,7 +29,7 @@ public class Class8754
         this.method30302();
     }
     
-    public Class8754(final int[] field36765, final int field36766, final Direction field36767, final Class1912 field36768) {
+    public Class8754(final int[] field36765, final int field36766, final Direction field36767, final TextureAtlasSprite field36768) {
         this.field36769 = null;
         this.field36770 = Class9570.field41285.method22605();
         this.field36765 = field36765;
@@ -59,7 +59,7 @@ public class Class8754
         return this.field36767;
     }
     
-    public Class1912 method30295() {
+    public TextureAtlasSprite method30295() {
         if (this.field36768 == null) {
             this.field36768 = method30301(this.method30291());
         }
@@ -73,7 +73,7 @@ public class Class8754
         return this.field36769;
     }
     
-    private static int[] method30297(final int[] array, final Class1912 class1912) {
+    private static int[] method30297(final int[] array, final TextureAtlasSprite class1912) {
         final int[] array2 = array.clone();
         final int n = array2.length / 4;
         for (int i = 0; i < 4; ++i) {
@@ -96,11 +96,11 @@ public class Class8754
         return this.field36770;
     }
     
-    public Class1912 method30300() {
+    public TextureAtlasSprite method30300() {
         return this.field36768;
     }
     
-    private static Class1912 method30301(final int[] array) {
+    private static TextureAtlasSprite method30301(final int[] array) {
         float min = 1.0f;
         float min2 = 1.0f;
         float max = 0.0f;
@@ -120,11 +120,11 @@ public class Class8754
     
     public void method30302() {
         if (!Config.method28955()) {
-            if (this.field36765.length == Class9237.field39612) {
+            if (this.field36765.length == DefaultVertexFormats.field39612) {
                 this.field36765 = method30304(this.field36765);
             }
         }
-        else if (this.field36765.length == Class9237.field39611) {
+        else if (this.field36765.length == DefaultVertexFormats.field39611) {
             this.field36765 = method30303(this.field36765);
         }
     }

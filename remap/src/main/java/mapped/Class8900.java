@@ -29,7 +29,7 @@ public class Class8900
         this.field37420[this.field37421] = 0L;
     }
     
-    public static void method31334(final Class4148 class4148) {
+    public static void method31334(final BufferBuilder class4148) {
         class4148.field18495 = new Class8900();
     }
     
@@ -44,23 +44,23 @@ public class Class8900
     }
     
     public static void method31337(final BlockState class7096, final Class4150 class7097) {
-        if (class7097 instanceof Class4148) {
-            ((Class4148)class7097).field18495.method31335(((long)(Class3660.method11271(class7096) & 0xFFFF) << 32) + (((Class3660.method11287(class7096) & 0xFFFF) << 16) + (Class3660.method11269(class7096) & 0xFFFF)));
+        if (class7097 instanceof BufferBuilder) {
+            ((BufferBuilder)class7097).field18495.method31335(((long)(Class3660.method11271(class7096) & 0xFFFF) << 32) + (((Class3660.method11287(class7096) & 0xFFFF) << 16) + (Class3660.method11269(class7096) & 0xFFFF)));
         }
     }
     
     public static void method31338(final Class4150 class4150) {
-        if (class4150 instanceof Class4148) {
-            ((Class4148)class4150).field18495.method31336();
+        if (class4150 instanceof BufferBuilder) {
+            ((BufferBuilder)class4150).field18495.method31336();
         }
     }
     
-    public static boolean method31339(final boolean b, final Class4148 class4148) {
+    public static boolean method31339(final boolean b, final BufferBuilder class4148) {
         class4148.field18495.method31336();
         return b;
     }
     
-    public static void method31340(final Class4148 class4148) {
+    public static void method31340(final BufferBuilder class4148) {
         final Class8900 field18495 = class4148.field18495;
         final Class9272 method12428 = class4148.method12428();
         field18495.field37412 = method12428.method34194() / 4;
@@ -72,13 +72,13 @@ public class Class8900
         field18495.field37415 = 8;
     }
     
-    public static void method31341(final Class4148 class4148) {
+    public static void method31341(final BufferBuilder class4148) {
         if (class4148.method12418() == 0) {
             method31340(class4148);
         }
     }
     
-    public static void method31342(final Class4148 class4148) {
+    public static void method31342(final BufferBuilder class4148) {
         final Class8900 field18495 = class4148.field18495;
         if (field18495.field37412 == 16) {
             if (class4148.method12417() == 7) {
@@ -93,7 +93,7 @@ public class Class8900
         }
     }
     
-    public static void method31343(final Class4148 class4148, final int[] array) {
+    public static void method31343(final BufferBuilder class4148, final int[] array) {
         if (class4148.method12418() == 0) {
             method31340(class4148);
         }
@@ -107,7 +107,7 @@ public class Class8900
         }
     }
     
-    public static void method31344(final Class4148 class4148, final ByteBuffer byteBuffer) {
+    public static void method31344(final BufferBuilder class4148, final ByteBuffer byteBuffer) {
         if (class4148.method12418() == 0) {
             method31340(class4148);
         }
@@ -123,7 +123,7 @@ public class Class8900
         }
     }
     
-    public static void method31345(final Class4148 class4148) {
+    public static void method31345(final BufferBuilder class4148) {
         final Class8900 field18495 = class4148.field18495;
         if (field18495.field37412 == 16) {
             if (class4148.method12417() == 7) {
@@ -134,7 +134,7 @@ public class Class8900
         }
     }
     
-    public void method31346(final Class4148 class4148, int n) {
+    public void method31346(final BufferBuilder class4148, int n) {
         n += class4148.method12430();
         final FloatBuffer method12424 = class4148.method12424();
         final IntBuffer method12425 = class4148.method12425();
@@ -225,7 +225,7 @@ public class Class8900
         method12424.put(n + 3 * this.field37412 + 9 + 1, n46);
     }
     
-    public static void method31347(final Class4148 class4148) {
+    public static void method31347(final BufferBuilder class4148) {
         if (class4148.method12428().method34201()) {
             if (class4148.method12417() == 7) {
                 if (class4148.method12418() % 4 == 0) {
@@ -239,7 +239,7 @@ public class Class8900
         }
     }
     
-    public static void method31348(final int n, final int n2, final int n3, final Class4148 class4148) {
+    public static void method31348(final int n, final int n2, final int n3, final BufferBuilder class4148) {
         if (n3 != 0) {
             final int method34194 = class4148.method12428().method34194();
             if (method34194 != 64) {

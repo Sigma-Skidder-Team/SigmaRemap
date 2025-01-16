@@ -23,13 +23,13 @@ public class Class3217 extends Class3167
     
     @Class6753
     private void method10140(final Class5723 class5723) {
-        if (this.method9906() && Class3217.field15514.field4684 != null) {
+        if (this.method9906() && Class3217.field15514.player != null) {
             final IPacket method16998 = class5723.method16998();
             if (method16998 instanceof Class4378) {
                 final Class4378 class5724 = (Class4378)method16998;
                 final String string = class5724.method13164().getString();
                 final String method16999 = class5724.method13164().getFormattedText();
-                final String lowerCase = Class3217.field15514.field4684.getName().getFormattedText().toLowerCase();
+                final String lowerCase = Class3217.field15514.player.getName().getFormattedText().toLowerCase();
                 Label_0100: {
                     if (this.field15666.method9883("AutoL")) {
                         if (!string.toLowerCase().contains("was slain by " + lowerCase)) {
@@ -73,7 +73,7 @@ public class Class3217 extends Class3167
                     }
                 }
                 if (this.field15666.method9883("AutoGG")) {
-                    if (method16999.equalsIgnoreCase("§e" + Class3217.field15514.field4684.getName().getFormattedText() + "§r§a won the game!§r")) {
+                    if (method16999.equalsIgnoreCase("§e" + Class3217.field15514.player.getName().getFormattedText() + "§r§a won the game!§r")) {
                         this.field15666.method10295();
                     }
                 }

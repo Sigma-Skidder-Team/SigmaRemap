@@ -33,9 +33,9 @@ public class Class3299 extends Class3167
     
     @Class6753
     private void method10454(final Class5748 class5748) {
-        if (this.method9906() && (Class3299.field15514.field4684.method1809() || !this.method9914().method9883("Sneak"))) {
+        if (this.method9906() && (Class3299.field15514.player.method1809() || !this.method9914().method9883("Sneak"))) {
             if (class5748.method17055() == Class1958.field10672) {
-                final BlockRayTraceResult method13697 = Class4609.method13697(Class3299.field15514.field4684.rotationYaw, Class3299.field15514.field4684.rotationPitch, this.method9914().method9886("Maximum range"));
+                final BlockRayTraceResult method13697 = Class4609.method13697(Class3299.field15514.player.rotationYaw, Class3299.field15514.player.rotationPitch, this.method9914().method9886("Maximum range"));
                 Vec3i method13698 = null;
                 if (method13697 != null) {
                     method13698 = method13697.getPos();
@@ -46,16 +46,16 @@ public class Class3299 extends Class3167
                 final double n = method13698.getX() + 0.5;
                 final double n2 = method13698.getY() + 1;
                 final double n3 = method13698.getZ() + 0.5;
-                final double n4 = Class3299.field15514.field4684.posX - n;
-                final double n5 = Class3299.field15514.field4684.posZ - n3;
-                final double a = Class3299.field15514.field4684.posY - n2;
+                final double n4 = Class3299.field15514.player.posX - n;
+                final double n5 = Class3299.field15514.player.posZ - n3;
+                final double a = Class3299.field15514.player.posY - n2;
                 final double n6 = (Math.sqrt(n4 * n4 + n5 * n5) + Math.abs(a)) / 8.0;
                 final double n7 = n4 / n6;
                 final double n8 = n5 / n6;
                 final double n9 = a / n6;
-                double field2395 = Class3299.field15514.field4684.posX;
-                double field2396 = Class3299.field15514.field4684.posZ;
-                double field2397 = Class3299.field15514.field4684.posY;
+                double field2395 = Class3299.field15514.player.posX;
+                double field2396 = Class3299.field15514.player.posZ;
+                double field2397 = Class3299.field15514.player.posY;
                 this.field15867.clear();
                 this.field15867.add(new Class9407(field2395, field2397, field2396));
                 for (int n10 = 0; n10 < n6 - 1.0; ++n10) {
@@ -63,13 +63,13 @@ public class Class3299 extends Class3167
                     field2396 -= n8;
                     field2397 -= n9;
                     final double n11 = 0.3;
-                    if (Class3299.field15514.world.method6981(Class3299.field15514.field4684, new AxisAlignedBB(field2395 - n11, field2397, field2396 - n11, field2395 + n11, field2397 + 1.9, field2396 + n11)).count() == 0L) {
+                    if (Class3299.field15514.world.method6981(Class3299.field15514.player, new AxisAlignedBB(field2395 - n11, field2397, field2396 - n11, field2395 + n11, field2397 + 1.9, field2396 + n11)).count() == 0L) {
                         Class3299.field15514.method5269().method17292(new Class4354(field2395, field2397, field2396, true));
                     }
                     this.field15867.add(new Class9407(field2395, field2397, field2396));
                 }
                 this.field15867.add(new Class9407(n, n2, n3));
-                Class3299.field15514.field4684.setPosition(n, n2, n3);
+                Class3299.field15514.player.setPosition(n, n2, n3);
                 this.field15868.method23934();
                 this.field15868.method23932();
             }

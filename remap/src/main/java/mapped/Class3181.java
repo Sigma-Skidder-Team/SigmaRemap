@@ -19,9 +19,9 @@ public class Class3181 extends Class3167
     @Class6753
     private void method9978(final Class5752 class5752) {
         if (this.method9906()) {
-            if (class5752.method17061() == Class3181.field15514.field4648.field23442.field2161.field32860) {
-                if (Class3181.field15514.field4684.method1815()) {
-                    Class3181.field15514.method5269().method17292(new Class4336(Class3181.field15514.field4684, Class287.field1595));
+            if (class5752.method17061() == Class3181.field15514.gameSettings.field23442.field2161.field32860) {
+                if (Class3181.field15514.player.method1815()) {
+                    Class3181.field15514.method5269().method17292(new Class4336(Class3181.field15514.player, Class287.field1595));
                 }
             }
         }
@@ -49,15 +49,15 @@ public class Class3181 extends Class3167
                 final boolean b = !(Class3181.field15514.field4700 instanceof Class518) || !(Class3181.field15514.field4700 instanceof Class726);
                 if (this.field15567 && !b) {
                     this.field15567 = !this.field15567;
-                    if (Class3181.field15514.field4684.method1815()) {
-                        Class3181.field15514.method5269().method17292(new Class4336(Class3181.field15514.field4684, Class287.field1594));
+                    if (Class3181.field15514.player.method1815()) {
+                        Class3181.field15514.method5269().method17292(new Class4336(Class3181.field15514.player, Class287.field1594));
                     }
                 }
                 else if (!this.field15567) {
                     if (b) {
                         this.field15567 = !this.field15567;
-                        if (Class3181.field15514.field4684.method1815()) {
-                            Class3181.field15514.method5269().method17292(new Class4336(Class3181.field15514.field4684, Class287.field1595));
+                        if (Class3181.field15514.player.method1815()) {
+                            Class3181.field15514.method5269().method17292(new Class4336(Class3181.field15514.player, Class287.field1595));
                         }
                     }
                 }
@@ -76,15 +76,15 @@ public class Class3181 extends Class3167
                     return;
                 }
                 if (Class9463.method35173().method35193().method32154() != null && Class9463.method35173().method35193().method32154().method14230()) {
-                    final Class350[] field23460 = Minecraft.method5277().field4648.field23460;
+                    final Class350[] field23460 = Minecraft.method5277().gameSettings.field23460;
                     for (int length = field23460.length, i = 0; i < length; ++i) {
                         field23460[i].field2162 = false;
                     }
                     return;
                 }
-                for (final Class350 class5744 : Class3181.field15514.field4648.field23460) {
+                for (final Class350 class5744 : Class3181.field15514.gameSettings.field23460) {
                     if (class5744.field2161.field32860 > 0) {
-                        if (Class3181.field15514.field4648.field23440.field2161.field32860 != class5744.field2161.field32860) {
+                        if (Class3181.field15514.gameSettings.field23440.field2161.field32860 != class5744.field2161.field32860) {
                             if (class5744.field2161.field32860 > 4) {
                                 class5744.field2162 = (GLFW.glfwGetKey(Class3181.field15514.field4632.method7690(), class5744.field2161.field32860) == 1);
                             }

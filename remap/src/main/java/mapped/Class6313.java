@@ -21,7 +21,7 @@ public interface Class6313 extends Class6314
     
     boolean method18695();
     
-    Class1912 method18696();
+    TextureAtlasSprite method18696();
     
     default Class7503 method18697() {
         return Class7503.field29079;

@@ -56,7 +56,7 @@ public class Class7846
         this.field32143 = (field32132 + field32137) / field32130.field25177;
     }
     
-    public void method25349(final Class7392 class7392, final float n) {
+    public void method25349(final Tessellator class7392, final float n) {
         Class8933.method31642(this.field32133 * n, this.field32134 * n, this.field32135 * n);
         float n2 = this.field32140;
         float n3 = this.field32142;
@@ -74,7 +74,7 @@ public class Class7846
         Class8933.method31642(-this.field32133 * n, -this.field32134 * n, -this.field32135 * n);
     }
     
-    public static void method25350(final Class7392 class7392, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, float n7, final float n8, final float n9) {
+    public static void method25350(final Tessellator class7392, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, float n7, final float n8, final float n9) {
         if (n7 < 6.25E-4f) {
             n7 = 6.25E-4f;
         }
@@ -82,68 +82,68 @@ public class Class7846
         final float n11 = n4 - n2;
         final double n12 = MathHelper.method35647(n10) * (n8 / 16.0f);
         final double n13 = MathHelper.method35647(n11) * (n9 / 16.0f);
-        final Class4148 method22696 = class7392.method22696();
+        final BufferBuilder method22696 = class7392.getBuffer();
         GL11.glNormal3f(0.0f, 0.0f, -1.0f);
-        method22696.method12390(7, Class9237.field39617);
-        method22696.method12432(0.0, n13, 0.0).method12391(n, n4).method12397();
-        method22696.method12432(n12, n13, 0.0).method12391(n3, n4).method12397();
-        method22696.method12432(n12, 0.0, 0.0).method12391(n3, n2).method12397();
-        method22696.method12432(0.0, 0.0, 0.0).method12391(n, n2).method12397();
-        class7392.method22695();
+        method22696.begin(7, DefaultVertexFormats.field39617);
+        method22696.pos(0.0, n13, 0.0).tex(n, n4).endVertex();
+        method22696.pos(n12, n13, 0.0).tex(n3, n4).endVertex();
+        method22696.pos(n12, 0.0, 0.0).tex(n3, n2).endVertex();
+        method22696.pos(0.0, 0.0, 0.0).tex(n, n2).endVertex();
+        class7392.draw();
         GL11.glNormal3f(0.0f, 0.0f, 1.0f);
-        method22696.method12390(7, Class9237.field39617);
-        method22696.method12432(0.0, 0.0, n7).method12391(n, n2).method12397();
-        method22696.method12432(n12, 0.0, n7).method12391(n3, n2).method12397();
-        method22696.method12432(n12, n13, n7).method12391(n3, n4).method12397();
-        method22696.method12432(0.0, n13, n7).method12391(n, n4).method12397();
-        class7392.method22695();
+        method22696.begin(7, DefaultVertexFormats.field39617);
+        method22696.pos(0.0, 0.0, n7).tex(n, n2).endVertex();
+        method22696.pos(n12, 0.0, n7).tex(n3, n2).endVertex();
+        method22696.pos(n12, n13, n7).tex(n3, n4).endVertex();
+        method22696.pos(0.0, n13, n7).tex(n, n4).endVertex();
+        class7392.draw();
         final float n14 = 0.5f * n10 / n5;
         final float n15 = 0.5f * n11 / n6;
         GL11.glNormal3f(-1.0f, 0.0f, 0.0f);
-        method22696.method12390(7, Class9237.field39617);
+        method22696.begin(7, DefaultVertexFormats.field39617);
         for (int i = 0; i < n5; ++i) {
             final float n16 = i / (float)n5;
             final float n17 = n + n10 * n16 + n14;
-            method22696.method12432(n16 * n12, n13, n7).method12391(n17, n4).method12397();
-            method22696.method12432(n16 * n12, n13, 0.0).method12391(n17, n4).method12397();
-            method22696.method12432(n16 * n12, 0.0, 0.0).method12391(n17, n2).method12397();
-            method22696.method12432(n16 * n12, 0.0, n7).method12391(n17, n2).method12397();
+            method22696.pos(n16 * n12, n13, n7).tex(n17, n4).endVertex();
+            method22696.pos(n16 * n12, n13, 0.0).tex(n17, n4).endVertex();
+            method22696.pos(n16 * n12, 0.0, 0.0).tex(n17, n2).endVertex();
+            method22696.pos(n16 * n12, 0.0, n7).tex(n17, n2).endVertex();
         }
-        class7392.method22695();
+        class7392.draw();
         GL11.glNormal3f(1.0f, 0.0f, 0.0f);
-        method22696.method12390(7, Class9237.field39617);
+        method22696.begin(7, DefaultVertexFormats.field39617);
         for (int j = 0; j < n5; ++j) {
             final float n18 = j / (float)n5;
             final float n19 = n + n10 * n18 + n14;
             final float n20 = n18 + 1.0f / n5;
-            method22696.method12432(n20 * n12, 0.0, n7).method12391(n19, n2).method12397();
-            method22696.method12432(n20 * n12, 0.0, 0.0).method12391(n19, n2).method12397();
-            method22696.method12432(n20 * n12, n13, 0.0).method12391(n19, n4).method12397();
-            method22696.method12432(n20 * n12, n13, n7).method12391(n19, n4).method12397();
+            method22696.pos(n20 * n12, 0.0, n7).tex(n19, n2).endVertex();
+            method22696.pos(n20 * n12, 0.0, 0.0).tex(n19, n2).endVertex();
+            method22696.pos(n20 * n12, n13, 0.0).tex(n19, n4).endVertex();
+            method22696.pos(n20 * n12, n13, n7).tex(n19, n4).endVertex();
         }
-        class7392.method22695();
+        class7392.draw();
         GL11.glNormal3f(0.0f, 1.0f, 0.0f);
-        method22696.method12390(7, Class9237.field39617);
+        method22696.begin(7, DefaultVertexFormats.field39617);
         for (int k = 0; k < n6; ++k) {
             final float n21 = k / (float)n6;
             final float n22 = n2 + n11 * n21 + n15;
             final float n23 = n21 + 1.0f / n6;
-            method22696.method12432(0.0, n23 * n13, n7).method12391(n, n22).method12397();
-            method22696.method12432(n12, n23 * n13, n7).method12391(n3, n22).method12397();
-            method22696.method12432(n12, n23 * n13, 0.0).method12391(n3, n22).method12397();
-            method22696.method12432(0.0, n23 * n13, 0.0).method12391(n, n22).method12397();
+            method22696.pos(0.0, n23 * n13, n7).tex(n, n22).endVertex();
+            method22696.pos(n12, n23 * n13, n7).tex(n3, n22).endVertex();
+            method22696.pos(n12, n23 * n13, 0.0).tex(n3, n22).endVertex();
+            method22696.pos(0.0, n23 * n13, 0.0).tex(n, n22).endVertex();
         }
-        class7392.method22695();
+        class7392.draw();
         GL11.glNormal3f(0.0f, -1.0f, 0.0f);
-        method22696.method12390(7, Class9237.field39617);
+        method22696.begin(7, DefaultVertexFormats.field39617);
         for (int l = 0; l < n6; ++l) {
             final float n24 = l / (float)n6;
             final float n25 = n2 + n11 * n24 + n15;
-            method22696.method12432(n12, n24 * n13, n7).method12391(n3, n25).method12397();
-            method22696.method12432(0.0, n24 * n13, n7).method12391(n, n25).method12397();
-            method22696.method12432(0.0, n24 * n13, 0.0).method12391(n, n25).method12397();
-            method22696.method12432(n12, n24 * n13, 0.0).method12391(n3, n25).method12397();
+            method22696.pos(n12, n24 * n13, n7).tex(n3, n25).endVertex();
+            method22696.pos(0.0, n24 * n13, n7).tex(n, n25).endVertex();
+            method22696.pos(0.0, n24 * n13, 0.0).tex(n, n25).endVertex();
+            method22696.pos(n12, n24 * n13, 0.0).tex(n3, n25).endVertex();
         }
-        class7392.method22695();
+        class7392.draw();
     }
 }

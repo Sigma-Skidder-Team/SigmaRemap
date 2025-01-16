@@ -17,7 +17,7 @@ public class Class7878
     private final Map<Direction, List<Class8754>> field32338;
     private final Class9168 field32339;
     private final boolean field32340;
-    private Class1912 field32341;
+    private TextureAtlasSprite field32341;
     private final boolean field32342;
     private final boolean field32343;
     private final Class7503 field32344;
@@ -50,7 +50,7 @@ public class Class7878
         return this;
     }
     
-    public Class7878 method25530(final Class1912 field32341) {
+    public Class7878 method25530(final TextureAtlasSprite field32341) {
         this.field32341 = field32341;
         return this;
     }

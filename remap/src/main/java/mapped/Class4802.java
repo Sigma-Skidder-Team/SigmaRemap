@@ -70,7 +70,7 @@ public class Class4802 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.method5277().method5244(new Class555());
+            Minecraft.method5277().displayGuiScreen(new Class555());
         }
     }
 }

@@ -49,14 +49,14 @@ public class Class4714 extends Class4712<Class841, Class5876<Class841>>
         return (class841.method5027() != null) ? Class4714.field20316[class841.method5027().method813()] : Class4714.field20315;
     }
     
-    public void method14015(final Class841 class841, final Class7351 class842, final float n, final float n2, final float n3) {
+    public void method14015(final Class841 class841, final MatrixStack class842, final float n, final float n2, final float n3) {
         super.method13985(class841, class842, n, n2, n3);
         class842.method22564(0.0, 0.5, 0.0);
         class842.method22566(class841.method5018().getOpposite().getRotation());
         class842.method22564(0.0, -0.5, 0.0);
     }
     
-    public void method14016(final Class841 class841, final Class7351 class842, final float n) {
+    public void method14016(final Class841 class841, final MatrixStack class842, final float n) {
         class842.method22565(0.999f, 0.999f, 0.999f);
     }
     

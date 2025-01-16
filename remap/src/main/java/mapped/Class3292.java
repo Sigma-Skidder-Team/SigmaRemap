@@ -24,12 +24,12 @@ public class Class3292 extends Class3167
     
     @Class6753
     public void method10420(final Class5717 class5717) {
-        if (this.method9906() && Class3292.field15514.field4684 != null) {
-            if (Class3292.field15514.field4684.fallDistance > 3.0f + this.method9886("Motion") * 4.0f) {
+        if (this.method9906() && Class3292.field15514.player != null) {
+            if (Class3292.field15514.player.fallDistance > 3.0f + this.method9886("Motion") * 4.0f) {
                 if (class5717.method16974() < -0.3) {
                     if (this.field15852) {
-                        if (Class3292.field15514.field4684.posY + class5717.method16974() < this.field15853) {
-                            class5717.method16975(this.field15853 - Class3292.field15514.field4684.posY);
+                        if (Class3292.field15514.player.posY + class5717.method16974() < this.field15853) {
+                            class5717.method16975(this.field15853 - Class3292.field15514.player.posY);
                             this.field15852 = false;
                         }
                     }
@@ -44,11 +44,11 @@ public class Class3292 extends Class3167
                 Class7482.method23149(class5717, 0.0);
                 class5717.method16975(this.method9886("Motion"));
                 this.field15852 = true;
-                this.field15853 = Class3292.field15514.field4684.posY;
+                this.field15853 = Class3292.field15514.player.posY;
                 this.field15851 = -1;
             }
             if (this.field15852) {
-                if (Class6430.method19160(Class3292.field15514.field4684, 0.001f)) {
+                if (Class6430.method19160(Class3292.field15514.player, 0.001f)) {
                     this.field15852 = !this.field15852;
                 }
             }

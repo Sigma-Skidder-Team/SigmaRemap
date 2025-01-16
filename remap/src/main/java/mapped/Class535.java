@@ -33,7 +33,7 @@ public class Class535 extends Screen
         this.field3192.method3374(this::method3089);
         this.children.add(this.field3192);
         (this.field3194 = new Class6823(this.minecraft, this, this.field3192, this.font, false, false, 1, 10, true, -805306368)).method20890();
-        this.method3476(this.field3192);
+        this.setFocusedDefault(this.field3192);
     }
     
     @Override
@@ -61,38 +61,38 @@ public class Class535 extends Screen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (this.field3194.method20886(n, n2, n3)) {
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (this.field3194.method20886(keyCode, n2, n3)) {
             return true;
         }
-        if (super.keyPressed(n, n2, n3)) {
+        if (super.keyPressed(keyCode, n2, n3)) {
             return true;
         }
-        if (n == 256) {
-            this.minecraft.method5244(null);
+        if (keyCode == 256) {
+            this.minecraft.displayGuiScreen(null);
             return true;
         }
-        if (n == 257 || n == 335) {
+        if (keyCode == 257 || keyCode == 335) {
             final String trim = this.field3192.method3378().trim();
             if (!trim.isEmpty()) {
                 this.method3036(trim);
             }
-            this.minecraft.method5244(null);
+            this.minecraft.displayGuiScreen(null);
             return true;
         }
-        if (n == 265) {
+        if (keyCode == 265) {
             this.method3090(-1);
             return true;
         }
-        if (n == 264) {
+        if (keyCode == 264) {
             this.method3090(1);
             return true;
         }
-        if (n == 266) {
+        if (keyCode == 266) {
             this.minecraft.field4647.method3807().method3768(this.minecraft.field4647.method3807().method3777() - 1);
             return true;
         }
-        if (n != 267) {
+        if (keyCode != 267) {
             return false;
         }
         this.minecraft.field4647.method3807().method3768(-this.minecraft.field4647.method3807().method3777() + 1);
@@ -108,7 +108,7 @@ public class Class535 extends Screen
             n3 = -1.0;
         }
         if (!this.field3194.method20887(n3)) {
-            if (!Screen.method3047()) {
+            if (!Screen.hasShiftDown()) {
                 n3 *= 7.0;
             }
             this.minecraft.field4647.method3807().method3768(n3);
@@ -164,19 +164,19 @@ public class Class535 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.setFocused(this.field3192);
         this.field3192.method3395(true);
-        Class565.method3293(2, this.height - 14, this.width - 2, this.height - 2, this.minecraft.field4648.method17116(Integer.MIN_VALUE));
-        this.field3192.method2975(n, n2, n3);
+        AbstractGui.fill(2, this.height - 14, this.width - 2, this.height - 2, this.minecraft.gameSettings.method17116(Integer.MIN_VALUE));
+        this.field3192.render(n, n2, n3);
         this.field3194.method20897(n, n2);
         final ITextComponent method3769 = this.minecraft.field4647.method3807().method3769(n, n2);
         if (method3769 != null) {
-            if (method3769.getStyle().method30411() != null) {
-                this.method3033(method3769, n, n2);
+            if (method3769.getStyle().getHoverEvent() != null) {
+                this.renderComponentHoverEffect(method3769, n, n2);
             }
         }
-        super.method2975(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     @Override

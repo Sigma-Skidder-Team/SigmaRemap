@@ -23,7 +23,7 @@ public class Class5920 extends Class5918
     }
     
     @Override
-    public void method17564(final Class7351 class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
+    public void method17564(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         super.method17564(class7351, class7352, n, n2, n3, n4, n5, n6);
         this.field24320.method18644(class7351, class7352, n, n2, n3, n4, n5, n6);
     }

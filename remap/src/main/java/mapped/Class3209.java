@@ -17,7 +17,7 @@ public class Class3209 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3209.field15514.field4684 != null && Class3209.field15514.world != null) {
+        if (Class3209.field15514.player != null && Class3209.field15514.world != null) {
             this.method10088();
             this.method10087();
             this.method10089();
@@ -93,7 +93,7 @@ public class Class3209 extends Class3167
         GL11.glDisable(2896);
         GL11.glEnable(3553);
         GL11.glEnable(2903);
-        Class8726.method30084(33986, 240.0f, 240.0f);
+        RenderSystem.method30084(33986, 240.0f, 240.0f);
         Class7777.method24931();
         final Class1663 method5290 = Class3209.field15514.method5290();
         Class3209.field15514.method5290();

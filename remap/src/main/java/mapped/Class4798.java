@@ -22,7 +22,7 @@ public class Class4798 extends Class4703<Class509>
         return 15;
     }
     
-    public void method14195(final Class509 class509, final float n, final float n2, final Class7351 class510, final Class7807 class511, final int n3) {
+    public void method14195(final Class509 class509, final float n, final float n2, final MatrixStack class510, final IRenderTypeBuffer class511, final int n3) {
         class510.method22567();
         final float method35707 = MathHelper.method35707(class509.prevRotationYaw, class509.rotationYaw, n2);
         final float method35708 = MathHelper.method35700(n2, class509.prevRotationPitch, class509.rotationPitch);

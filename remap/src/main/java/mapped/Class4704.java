@@ -19,7 +19,7 @@ public class Class4704 extends Class4703<Class423>
         this.field20284 = 0.8f;
     }
     
-    public void method13964(final Class423 class423, final float n, final float n2, final Class7351 class424, final Class7807 class425, final int n3) {
+    public void method13964(final Class423 class423, final float n, final float n2, final MatrixStack class424, final IRenderTypeBuffer class425, final int n3) {
         class424.method22567();
         class424.method22564(0.0, 0.375, 0.0);
         class424.method22566(Vector3f.YP.rotationDegrees(180.0f - n));

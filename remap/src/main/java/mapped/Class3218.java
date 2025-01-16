@@ -25,9 +25,9 @@ public class Class3218 extends Class3167
     @Class6753
     public void method10141(final Class5744 class5744) {
         if (this.method9906()) {
-            if (Class3218.field15514.field4684 != null) {
+            if (Class3218.field15514.player != null) {
                 if (!Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
-                    if (Class3218.field15514.field4684.onGround) {
+                    if (Class3218.field15514.player.onGround) {
                         if (class5744.method17046()) {
                             class5744.method17037(class5744.method17036() + 1.0E-14);
                         }
@@ -40,14 +40,14 @@ public class Class3218 extends Class3167
     @Class6753
     public void method10142(final Class5717 class5717) {
         if (this.method9906()) {
-            if (Class3218.field15514.field4684.onGround) {
-                if (Class3218.field15514.field4684.collidedVertically) {
-                    if (Class3218.field15514.field4684.field2970 != 0.0f || Class3218.field15514.field4684.field2968 != 0.0f) {
+            if (Class3218.field15514.player.onGround) {
+                if (Class3218.field15514.player.collidedVertically) {
+                    if (Class3218.field15514.player.field2970 != 0.0f || Class3218.field15514.player.field2968 != 0.0f) {
                         if (this.method9883("AutoJump")) {
-                            Class3218.field15514.field4684.method2725();
-                            class5717.method16973(Class3218.field15514.field4684.getMotion().x);
-                            class5717.method16975(Class3218.field15514.field4684.getMotion().y);
-                            class5717.method16977(Class3218.field15514.field4684.getMotion().z);
+                            Class3218.field15514.player.method2725();
+                            class5717.method16973(Class3218.field15514.player.getMotion().x);
+                            class5717.method16975(Class3218.field15514.player.getMotion().y);
+                            class5717.method16977(Class3218.field15514.player.getMotion().z);
                         }
                     }
                 }
@@ -62,7 +62,7 @@ public class Class3218 extends Class3167
                 this.field15669 *= (float)0.85;
                 this.field15672 = Math.min(1.0f, this.field15672 + 0.1f);
             }
-            if (Class3218.field15514.field4684.onGround) {
+            if (Class3218.field15514.player.onGround) {
                 if (!this.field15670) {
                     this.field15668 = 0.0f;
                     this.field15669 = 0.0f;
@@ -80,7 +80,7 @@ public class Class3218 extends Class3167
         if (this.method9906()) {
             if (!Class3295.method10433()) {
                 if (!Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
-                    if (Class3218.field15514.field4648.field23439.method1056() && Class9463.method35173().method35189().method21551(Class3260.class).method9906()) {
+                    if (Class3218.field15514.gameSettings.field23439.method1056() && Class9463.method35173().method35189().method21551(Class3260.class).method9906()) {
                         return;
                     }
                     this.field15671 = Class7482.method23144()[0];
@@ -94,9 +94,9 @@ public class Class3218 extends Class3167
     @Class6753
     private void method10144(final Class5723 class5723) {
         if (this.method9906()) {
-            if (Class3218.field15514.field4684 != null) {
+            if (Class3218.field15514.player != null) {
                 if (class5723.method16998() instanceof Class4273) {
-                    if (((Class4273)class5723.method16998()).method12822() != Class3218.field15514.field4684.getEntityId()) {}
+                    if (((Class4273)class5723.method16998()).method12822() != Class3218.field15514.player.getEntityId()) {}
                 }
             }
         }

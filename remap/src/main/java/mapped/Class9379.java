@@ -39,8 +39,8 @@ public class Class9379
             n *= n6;
             n2 *= n6;
             n3 *= n6;
-            final float method35641 = MathHelper.sin(Class9379.field40212.field4684.rotationYaw * 0.017453292f);
-            final float method35642 = MathHelper.cos(Class9379.field40212.field4684.rotationYaw * 0.017453292f);
+            final float method35641 = MathHelper.sin(Class9379.field40212.player.rotationYaw * 0.017453292f);
+            final float method35642 = MathHelper.cos(Class9379.field40212.player.rotationYaw * 0.017453292f);
             Class9379.field40221 += n * method35642 - n3 * method35641;
             Class9379.field40222 += n2;
             Class9379.field40223 += n3 * method35642 + n * method35641;
@@ -48,32 +48,32 @@ public class Class9379
     }
     
     public static void method34823(final float n, final float n2, final float n3) {
-        if (Class9379.field40212.field4684.method2749() || Class9379.field40212.field4684.method1919()) {
-            if (Class9379.field40212.field4684.method1706()) {
-                final double field2396 = Class9379.field40212.field4684.posY;
+        if (Class9379.field40212.player.method2749() || Class9379.field40212.player.method1919()) {
+            if (Class9379.field40212.player.method1706()) {
+                final double field2396 = Class9379.field40212.player.posY;
                 float method34827 = method34827();
                 float n4 = 0.02f;
-                float n5 = (float)Class8742.method30210(Class9379.field40212.field4684);
+                float n5 = (float)Class8742.method30210(Class9379.field40212.player);
                 if (n5 > 3.0f) {
                     n5 = 3.0f;
                 }
-                if (!Class9379.field40212.field4684.onGround) {
+                if (!Class9379.field40212.player.onGround) {
                     n5 *= 0.5f;
                 }
                 if (n5 > 0.0f) {
                     method34827 += (0.54600006f - method34827) * n5 / 3.0f;
-                    n4 += (Class9379.field40212.field4684.method2732() - n4) * n5 / 3.0f;
+                    n4 += (Class9379.field40212.player.method2732() - n4) * n5 / 3.0f;
                 }
                 method34822(n, n2, n3, n4);
                 method34825(Class9379.field40221, Class9379.field40222, Class9379.field40223);
                 Class9379.field40221 *= method34827;
                 Class9379.field40222 *= 0.800000011920929;
                 Class9379.field40223 *= method34827;
-                if (!Class9379.field40212.field4684.method1698()) {
+                if (!Class9379.field40212.player.method1698()) {
                     Class9379.field40222 -= 0.02;
                 }
-                if (Class9379.field40212.field4684.collidedHorizontally) {
-                    if (Class9379.field40212.field4684.method1669(Class9379.field40221, Class9379.field40222 + 0.6000000238418579 - Class9379.field40212.field4684.posY + field2396, Class9379.field40223)) {
+                if (Class9379.field40212.player.collidedHorizontally) {
+                    if (Class9379.field40212.player.method1669(Class9379.field40221, Class9379.field40222 + 0.6000000238418579 - Class9379.field40212.player.posY + field2396, Class9379.field40223)) {
                         Class9379.field40222 = 0.30000001192092896;
                     }
                 }
@@ -119,7 +119,7 @@ public class Class9379
     }
     
     public static boolean method34828() {
-        return method34824(Class9379.field40212.field4684.getBoundingBox().expand(0.0, -0.4000000059604645, 0.0).contract(0.001, 0.001, 0.001), Material.WATER);
+        return method34824(Class9379.field40212.player.getBoundingBox().expand(0.0, -0.4000000059604645, 0.0).contract(0.001, 0.001, 0.001), Material.WATER);
     }
     
     static {

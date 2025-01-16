@@ -55,12 +55,12 @@ public class Class6994 implements Class6991
     public void method21404(final float n, final int n2) {
         final Integer method8256 = this.field27287.getColor().getColor();
         if (method8256 != null) {
-            Class565.method3293(1, 1, 15, 15, MathHelper.method35684((method8256 >> 16 & 0xFF) / 255.0f * n, (method8256 >> 8 & 0xFF) / 255.0f * n, (method8256 & 0xFF) / 255.0f * n) | n2 << 24);
+            AbstractGui.fill(1, 1, 15, 15, MathHelper.method35684((method8256 >> 16 & 0xFF) / 255.0f * n, (method8256 >> 8 & 0xFF) / 255.0f * n, (method8256 & 0xFF) / 255.0f * n) | n2 << 24);
         }
         Minecraft.method5277().method5290().method5849(this.field27288);
-        Class8726.method30068(n, n, n, n2 / 255.0f);
-        Class565.method3300(2, 2, 12, 12, 8.0f, 8.0f, 8, 8, 64, 64);
-        Class565.method3300(2, 2, 12, 12, 40.0f, 8.0f, 8, 8, 64, 64);
+        RenderSystem.method30068(n, n, n, n2 / 255.0f);
+        AbstractGui.blit(2, 2, 12, 12, 8.0f, 8.0f, 8, 8, 64, 64);
+        AbstractGui.blit(2, 2, 12, 12, 40.0f, 8.0f, 8, 8, 64, 64);
     }
     
     @Override

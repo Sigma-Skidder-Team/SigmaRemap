@@ -81,7 +81,7 @@ public class Class756 extends Class754
     
     @Override
     public boolean method1821() {
-        return super.method1821() || (this.field4086.field4684.isSpectator() && this.field4086.field4648.field23455.method1056());
+        return super.method1821() || (this.field4086.player.isSpectator() && this.field4086.gameSettings.field23455.method1056());
     }
     
     @Override
@@ -224,7 +224,7 @@ public class Class756 extends Class754
                     this.field4078 = method1820;
                 }
                 this.field4079 = this.onGround;
-                this.field4100 = this.field4086.field4648.field23414;
+                this.field4100 = this.field4086.gameSettings.field23414;
             }
             final Iterator<Runnable> iterator = class5744.method17048().iterator();
             while (iterator.hasNext()) {
@@ -238,7 +238,7 @@ public class Class756 extends Class754
     @Override
     public boolean method2821(final boolean b) {
         this.field4069.method17292(new Class4399(b ? Class2003.field11243 : Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
-        return this.field3006.method2158(this.field3006.field2743, (b && !this.field3006.method2345().method27620()) ? this.field3006.method2345().method27690() : 1) != ItemStack.field34174;
+        return this.field3006.method2158(this.field3006.field2743, (b && !this.field3006.method2345().method27620()) ? this.field3006.method2345().method27690() : 1) != ItemStack.EMPTY;
     }
     
     public void method4114(final String s) {
@@ -270,9 +270,9 @@ public class Class756 extends Class754
     }
     
     public void method4115() {
-        this.field3006.method2374(ItemStack.field34174);
+        this.field3006.method2374(ItemStack.EMPTY);
         super.method2814();
-        this.field4086.method5244(null);
+        this.field4086.displayGuiScreen(null);
     }
     
     public void method4116(final float n) {
@@ -537,33 +537,33 @@ public class Class756 extends Class754
     
     @Override
     public void method2827(final Class497 class497) {
-        this.field4086.method5244(new Class730(class497));
+        this.field4086.displayGuiScreen(new Class730(class497));
     }
     
     @Override
     public void method2828(final Class865 class865) {
-        this.field4086.method5244(new Class543(class865));
+        this.field4086.displayGuiScreen(new Class543(class865));
     }
     
     @Override
     public void method2829(final Class500 class500) {
-        this.field4086.method5244(new Class542(class500));
+        this.field4086.displayGuiScreen(new Class542(class500));
     }
     
     @Override
     public void method2830(final Class501 class501) {
-        this.field4086.method5244(new Class540(class501));
+        this.field4086.displayGuiScreen(new Class540(class501));
     }
     
     @Override
     public void method2831(final Class498 class498) {
-        this.field4086.method5244(new Class737(class498));
+        this.field4086.displayGuiScreen(new Class737(class498));
     }
     
     @Override
     public void method2835(final ItemStack class8321, final Class316 class8322) {
         if (class8321.getItem() == Items.field31512) {
-            this.field4086.method5244(new Class727(this, class8321, class8322));
+            this.field4086.displayGuiScreen(new Class727(this, class8321, class8322));
         }
     }
     
@@ -662,7 +662,7 @@ public class Class756 extends Class754
                             if (b2) {
                                 if (!this.method2756()) {
                                     if (!this.method2653(Class9439.field40488)) {
-                                        if (this.field4087 <= 0 && !this.field4086.field4648.field23441.method1056()) {
+                                        if (this.field4087 <= 0 && !this.field4086.gameSettings.field23441.method1056()) {
                                             this.field4087 = 7;
                                         }
                                         else {
@@ -682,7 +682,7 @@ public class Class756 extends Class754
                     if (b2) {
                         if (!this.method2756()) {
                             if (!this.method2653(Class9439.field40488)) {
-                                if (this.field4086.field4648.field23441.method1056()) {
+                                if (this.field4086.gameSettings.field23441.method1056()) {
                                     this.method1816(true);
                                 }
                             }
@@ -870,7 +870,7 @@ public class Class756 extends Class754
                     if (this.field4086.field4700 instanceof Class516) {
                         this.method2814();
                     }
-                    this.field4086.method5244(null);
+                    this.field4086.displayGuiScreen(null);
                 }
             }
             if (this.field4095 == 0.0f) {

@@ -14,8 +14,8 @@ public class Class4170 extends Class4158<Class501>
         super(class9550);
     }
     
-    public void method12486(final Class501 class501, final float n, final Class7351 class502, final Class7807 class503, final int n2, final int n3) {
-        if (Minecraft.method5277().field4684.method2908() || Minecraft.method5277().field4684.isSpectator()) {
+    public void method12486(final Class501 class501, final float n, final MatrixStack class502, final IRenderTypeBuffer class503, final int n2, final int n3) {
+        if (Minecraft.method5277().player.method2908() || Minecraft.method5277().player.isSpectator()) {
             final BlockPos method2560 = class501.method2560();
             final BlockPos method2561 = class501.method2562();
             if (method2561.getX() >= 1 && method2561.getY() >= 1 && method2561.getZ() >= 1 && (class501.method2570() == Class102.field305 || class501.method2570() == Class102.field306)) {
@@ -88,7 +88,7 @@ public class Class4170 extends Class4158<Class501>
         }
     }
     
-    private void method12487(final Class501 class501, final Class4150 class502, final BlockPos class503, final boolean b, final Class7351 class504) {
+    private void method12487(final Class501 class501, final Class4150 class502, final BlockPos class503, final boolean b, final MatrixStack class504) {
         final World method2186 = class501.method2186();
         final BlockPos method2187 = class501.getPos();
         final BlockPos method2188 = method2187.add(class503);

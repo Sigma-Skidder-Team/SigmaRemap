@@ -19,7 +19,7 @@ public class Class4757 extends Class4712<Class824, Class5856<Class824>>
         return Class4757.field20380;
     }
     
-    public void method14094(final Class824 class824, final Class7351 class825, final float n) {
+    public void method14094(final Class824 class824, final MatrixStack class825, final float n) {
         float n2 = 0.9375f;
         if (!class824.method2625()) {
             this.field20284 = 0.5f;

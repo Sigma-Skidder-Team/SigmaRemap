@@ -15,10 +15,10 @@ public class Class6317 implements Class6313
     private static String[] field25256;
     private final Class7503 field25257;
     private final Class9168 field25258;
-    private final Class1912 field25259;
+    private final TextureAtlasSprite field25259;
     private final boolean field25260;
     
-    public Class6317(final Class7503 field25257, final Class9168 field25258, final Class1912 field25259, final boolean field25260) {
+    public Class6317(final Class7503 field25257, final Class9168 field25258, final TextureAtlasSprite field25259, final boolean field25260) {
         this.field25257 = field25257;
         this.field25258 = field25258;
         this.field25259 = field25259;
@@ -51,7 +51,7 @@ public class Class6317 implements Class6313
     }
     
     @Override
-    public Class1912 method18696() {
+    public TextureAtlasSprite method18696() {
         return this.field25259;
     }
     

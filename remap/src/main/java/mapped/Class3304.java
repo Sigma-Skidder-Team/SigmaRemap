@@ -56,8 +56,8 @@ public class Class3304 extends Class3167
                     Class8154.method26911(class5742, Class6430.method19118(Class265.field1285.field1292, 0.1f));
                     GL11.glColor3f(1.0f, 1.0f, 1.0f);
                     GL11.glEnable(2929);
-                    final int n4 = Class3304.field15514.field4684.chunkCoordX - class5741.field32290;
-                    final int n5 = Class3304.field15514.field4684.chunkCoordZ - class5741.field32291;
+                    final int n4 = Class3304.field15514.player.chunkCoordX - class5741.field32290;
+                    final int n5 = Class3304.field15514.player.chunkCoordZ - class5741.field32291;
                     if (Math.sqrt(n4 * n4 + n5 * n5) <= 30.0) {
                         continue;
                     }

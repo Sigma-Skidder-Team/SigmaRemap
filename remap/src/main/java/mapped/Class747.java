@@ -23,26 +23,26 @@ public class Class747 extends Class516<Class3422>
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        super.method2975(n, n2, n3);
+    public void render(final int n, final int n2, final float n3) {
+        super.render(n, n2, n3);
         this.method2977(n, n2);
     }
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.font.method6610(this.field3148.getFormattedText(), 8.0f, 4.0f, 4210752);
+        this.font.method6610(this.title.getFormattedText(), 8.0f, 4.0f, 4210752);
         this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 94), 4210752);
     }
     
     @Override
     public void method2976(final float n, final int n2, final int n3) {
         this.renderBackground();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.minecraft.method5290().method5849(Class747.field4037);
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
-        this.method3186(field3079, field3080, 0, 0, this.field3075, this.field3076);
-        this.method3186(field3079 + 119, field3080 + 15 + (int)(41.0f * this.field4038), 176 + (this.method4074() ? 0 : 12), 0, 12, 15);
+        this.blit(field3079, field3080, 0, 0, this.field3075, this.field3076);
+        this.blit(field3079 + 119, field3080 + 15 + (int)(41.0f * this.field4038), 176 + (this.method4074() ? 0 : 12), 0, 12, 15);
         final int n4 = this.field3079 + 52;
         final int n5 = this.field3080 + 14;
         final int n6 = this.field4040 + 12;
@@ -70,7 +70,7 @@ public class Class747 extends Class516<Class3422>
             else {
                 field4041 += 18;
             }
-            this.method3186(n7, n8 - 1, 0, field4041, 16, 18);
+            this.blit(n7, n8 - 1, 0, field4041, 16, 18);
         }
     }
     
@@ -96,7 +96,7 @@ public class Class747 extends Class516<Class3422>
                     if (n9 >= 0.0) {
                         if (n8 < 16.0) {
                             if (n9 < 18.0) {
-                                if (((Class3422)this.field3077).method10877(this.minecraft.field4684, i)) {
+                                if (((Class3422)this.field3077).method10877(this.minecraft.player, i)) {
                                     Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35667, 1.0f));
                                     this.minecraft.field4682.method27326(((Class3422)this.field3077).field16154, i);
                                     return true;

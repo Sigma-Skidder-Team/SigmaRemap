@@ -18,11 +18,11 @@ public class Class3365 extends Class3355
     @Override
     public void method9879() {
         this.field16023 = 0;
-        if (!Class3365.field15514.field4648.field23440.method1056()) {
+        if (!Class3365.field15514.gameSettings.field23440.method1056()) {
             this.field16025 = false;
         }
         else {
-            Class3365.field15514.field4648.field23440.field2162 = false;
+            Class3365.field15514.gameSettings.field23440.field2162 = false;
             this.field16025 = true;
         }
         if (Class6430.method19148()) {
@@ -36,14 +36,14 @@ public class Class3365 extends Class3355
     public void method9897() {
         Class7482.method23151(0.2);
         Class6430.method19155(-0.0789);
-        if (Class6430.method19160(Class3365.field15514.field4684, 0.001f)) {
+        if (Class6430.method19160(Class3365.field15514.player, 0.001f)) {
             Class7482.method23151(0.0);
             Class6430.method19155(-0.0789);
         }
         else {
-            final double field2395 = Class3365.field15514.field4684.posX;
-            final double field2396 = Class3365.field15514.field4684.posY;
-            Class3365.field15514.method5269().method17292(new Class4354(field2395, -150.0, Class3365.field15514.field4684.posZ, false));
+            final double field2395 = Class3365.field15514.player.posX;
+            final double field2396 = Class3365.field15514.player.posY;
+            Class3365.field15514.method5269().method17292(new Class4354(field2395, -150.0, Class3365.field15514.player.posZ, false));
             Class7482.method23151(0.0);
             Class6430.method19155(0.0);
             this.field16023 = -3;
@@ -55,7 +55,7 @@ public class Class3365 extends Class3355
     @Class6753
     private void method10692(final Class5752 class5752) {
         if (this.method9906()) {
-            if (class5752.method17061() == Class3365.field15514.field4648.field23440.field2161.field32860) {
+            if (class5752.method17061() == Class3365.field15514.gameSettings.field23440.field2161.field32860) {
                 class5752.method16961(true);
                 this.field16025 = true;
             }
@@ -65,7 +65,7 @@ public class Class3365 extends Class3355
     @Class6753
     private void method10693(final Class5715 class5715) {
         if (this.method9906()) {
-            if (class5715.method16963() == Class3365.field15514.field4648.field23440.field2161.field32860) {
+            if (class5715.method16963() == Class3365.field15514.gameSettings.field23440.field2161.field32860) {
                 class5715.method16961(true);
                 this.field16025 = false;
             }
@@ -88,7 +88,7 @@ public class Class3365 extends Class3355
                 }
             }
             else {
-                class5717.method16975(Class3365.field15514.field4648.field23439.method1056() ? (this.field16025 ? 1.0E-4 : 0.99) : (this.field16025 ? -0.99 : 1.0E-4));
+                class5717.method16975(Class3365.field15514.gameSettings.field23439.method1056() ? (this.field16025 ? 1.0E-4 : 0.99) : (this.field16025 ? -0.99 : 1.0E-4));
                 Class7482.method23149(class5717, 2.4);
             }
             Class6430.method19155(class5717.method16974());
@@ -148,8 +148,8 @@ public class Class3365 extends Class3355
         final IPacket method16998 = class5723.method16998();
         if (method16998 instanceof Class4328) {
             final Class4328 class5724 = (Class4328)method16998;
-            class5724.field19380 = Class3365.field15514.field4684.rotationYaw;
-            class5724.field19381 = Class3365.field15514.field4684.rotationPitch;
+            class5724.field19380 = Class3365.field15514.player.rotationYaw;
+            class5724.field19381 = Class3365.field15514.player.rotationPitch;
             if (this.field16023 != -3) {
                 this.field16023 = 0;
             }

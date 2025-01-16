@@ -94,9 +94,9 @@ public class Class3238 extends Class3167
             if (method10225 > 0) {
                 final int method10226 = this.method10224(method10225);
                 if (method10226 > 0) {
-                    Class8639.method29367(Class3238.field15514.field4684.field3008.field16154, method10226, 0, Class2133.field12437, Class3238.field15514.field4684, true);
-                    Class8639.method29367(Class3238.field15514.field4684.field3008.field16154, method10226, 0, Class2133.field12443, Class3238.field15514.field4684, true);
-                    Class8639.method29367(Class3238.field15514.field4684.field3008.field16154, method10226, 0, Class2133.field12437, Class3238.field15514.field4684, true);
+                    Class8639.method29367(Class3238.field15514.player.field3008.field16154, method10226, 0, Class2133.field12437, Class3238.field15514.player, true);
+                    Class8639.method29367(Class3238.field15514.player.field3008.field16154, method10226, 0, Class2133.field12443, Class3238.field15514.player, true);
+                    Class8639.method29367(Class3238.field15514.player.field3008.field16154, method10226, 0, Class2133.field12437, Class3238.field15514.player, true);
                     this.field15724 = -5;
                 }
             }
@@ -111,7 +111,7 @@ public class Class3238 extends Class3167
                 boolean b = false;
                 if (Class8639.method29363(this.field15722).getItem() == Items.field31301) {
                     if (Math.random() * 100.0 > this.method9886("Refill accuracy")) {
-                        Class8639.method29367(Class3238.field15514.field4684.field3008.field16154, this.field15722, 0, Class2133.field12438, Class3238.field15514.field4684, true);
+                        Class8639.method29367(Class3238.field15514.player.field3008.field16154, this.field15722, 0, Class2133.field12438, Class3238.field15514.player, true);
                         this.field15724 = 0;
                         b = true;
                     }
@@ -135,7 +135,7 @@ public class Class3238 extends Class3167
     private void method10223() {
         int field2743 = -1;
         for (int i = 36; i < 45; ++i) {
-            if (Class3238.field15514.field4684.field3008.method10878(i).method20053().getItem() == Items.field31301 && Class9463.method35173().method35195().method28162(i) > 100L) {
+            if (Class3238.field15514.player.field3008.method10878(i).method20053().getItem() == Items.field31301 && Class9463.method35173().method35195().method28162(i) > 100L) {
                 field2743 = i - 36;
                 break;
             }
@@ -144,14 +144,14 @@ public class Class3238 extends Class3167
         if (this.method9887("Soup mode").equals("Instant")) {
             if (field2743 >= 0) {
                 if (this.field15721 > 3) {
-                    if (Class3238.field15514.field4684.method2664() <= this.method9886("Health")) {
+                    if (Class3238.field15514.player.method2664() <= this.method9886("Health")) {
                         Class3238.field15514.method5269().method17292(new Class4321(field2743));
                         Class3238.field15514.method5269().method17292(new Class4307(Class316.field1878));
                         Class3238.field15514.method5269().method17292(new Class4307(Class316.field1877));
                         if (equals) {
                             Class3238.field15514.method5269().method17292(new Class4399(Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
                         }
-                        Class3238.field15514.method5269().method17292(new Class4321(Class3238.field15514.field4684.field3006.field2743));
+                        Class3238.field15514.method5269().method17292(new Class4321(Class3238.field15514.player.field3006.field2743));
                         this.field15721 = 0;
                     }
                 }
@@ -161,9 +161,9 @@ public class Class3238 extends Class3167
         if (this.field15723 < 0) {
             if (field2743 >= 0) {
                 if (this.field15721 > 3) {
-                    if (Class3238.field15514.field4684.method2664() <= this.method9886("Health")) {
-                        this.field15723 = Class3238.field15514.field4684.field3006.field2743;
-                        Class3238.field15514.field4684.field3006.field2743 = field2743;
+                    if (Class3238.field15514.player.method2664() <= this.method9886("Health")) {
+                        this.field15723 = Class3238.field15514.player.field3006.field2743;
+                        Class3238.field15514.player.field3006.field2743 = field2743;
                         Class3238.field15514.field4682.method27318();
                         Class3238.field15514.method5269().method17292(new Class4307(Class316.field1878));
                         Class3238.field15514.method5269().method17292(new Class4307(Class316.field1877));
@@ -175,7 +175,7 @@ public class Class3238 extends Class3167
         if (equals) {
             Class3238.field15514.method5269().method17292(new Class4399(Class2003.field11244, BlockPos.ZERO, Direction.DOWN));
         }
-        Class3238.field15514.field4684.field3006.field2743 = this.field15723;
+        Class3238.field15514.player.field3006.field2743 = this.field15723;
         Class3238.field15514.field4682.method27318();
         this.field15721 = 0;
         this.field15723 = -1;
@@ -204,7 +204,7 @@ public class Class3238 extends Class3167
         }
         if (Class8639.method29363(13).getItem() == Items.AIR) {
             for (int k = 36; k < 45; ++k) {
-                if (Class3238.field15514.field4684.field3008.method10878(k).method20053().getItem() == Items.field31300) {
+                if (Class3238.field15514.player.field3008.method10878(k).method20053().getItem() == Items.field31300) {
                     Class8639.method29370(13, k - 36);
                     return 13;
                 }
@@ -213,7 +213,7 @@ public class Class3238 extends Class3167
         for (int l = 9; l < 36; ++l) {
             if (Class8639.method29363(l).getItem() == Items.AIR) {
                 for (int n2 = 36; n2 < 45; ++n2) {
-                    if (Class3238.field15514.field4684.field3008.method10878(n2).method20053().getItem() == Items.field31300) {
+                    if (Class3238.field15514.player.field3008.method10878(n2).method20053().getItem() == Items.field31300) {
                         Class8639.method29370(l, n2 - 36);
                         return -1;
                     }
@@ -221,7 +221,7 @@ public class Class3238 extends Class3167
             }
         }
         for (int n3 = 36; n3 < 45; ++n3) {
-            if (Class3238.field15514.field4684.field3008.method10878(n3).method20053().getItem() == Items.field31300) {
+            if (Class3238.field15514.player.field3008.method10878(n3).method20053().getItem() == Items.field31300) {
                 Class8639.method29370(13, n3 - 36);
                 return -1;
             }
@@ -232,7 +232,7 @@ public class Class3238 extends Class3167
     private int method10225(final Item class3820) {
         int n = 0;
         for (int i = 36; i < 45; ++i) {
-            if (Class3238.field15514.field4684.field3008.method10878(i).method20053().getItem() == class3820) {
+            if (Class3238.field15514.player.field3008.method10878(i).method20053().getItem() == class3820) {
                 ++n;
             }
         }
@@ -242,7 +242,7 @@ public class Class3238 extends Class3167
     private int method10226(final Item class3820) {
         int n = 0;
         for (int i = 9; i < 36; ++i) {
-            if (Class3238.field15514.field4684.field3008.method10878(i).method20053().getItem() == class3820) {
+            if (Class3238.field15514.player.field3008.method10878(i).method20053().getItem() == class3820) {
                 ++n;
             }
         }

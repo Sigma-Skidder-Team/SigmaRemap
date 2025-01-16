@@ -40,7 +40,7 @@ public class Class3170 extends Class3167
     @Class6753
     public void method9924(final Class5739 class5739) {
         if (this.method9906()) {
-            Class8726.method30084(33986, 240.0f, 240.0f);
+            RenderSystem.method30084(33986, 240.0f, 240.0f);
             for (final Entity class5740 : Class6430.method19138()) {
                 if (class5740 instanceof Class427) {
                     final Class427 class5741 = (Class427)class5740;
@@ -59,15 +59,15 @@ public class Class3170 extends Class3167
                         Class8154.method26909(new Class7644(n - n4, n2 + 0.009999999776482582, n3 - n4, n + n4, n2 + n4 * 2.0f, n3 + n4), Class6430.method19118(Class265.field1273.field1292, 0.1f));
                         Class8154.method26912(new Class7644(n - n4, n2 + 0.009999999776482582, n3 - n4, n + n4, n2 + n4 * 2.0f, n3 + n4), 3.0f, Class6430.method19118(Class265.field1273.field1292, 0.3f));
                         GL11.glDisable(3042);
-                        if (Class3170.field15514.field4648.field23445.method1056()) {
-                            Class3170.field15514.field4648.field23445.field2162 = false;
+                        if (Class3170.field15514.gameSettings.field23445.method1056()) {
+                            Class3170.field15514.gameSettings.field23445.field2162 = false;
                             Class6697.method20353(class5741.method2107());
                         }
                     }
                     GL11.glColor3f(1.0f, 1.0f, 1.0f);
                 }
             }
-            Class8726.method30084(33986, 240.0f, 240.0f);
+            RenderSystem.method30084(33986, 240.0f, 240.0f);
             Class7777.method24931();
             final Class1663 method5290 = Class3170.field15514.method5290();
             Class3170.field15514.method5290();
@@ -76,15 +76,15 @@ public class Class3170 extends Class3167
     }
     
     public boolean method9925(final Class427 class427) {
-        if (Class3170.field15514.field4684.method1732(class427) <= 5.0f) {
+        if (Class3170.field15514.player.method1732(class427) <= 5.0f) {
             final float n = 10.0f * (float)Math.sqrt(6.0 / Class8591.method29091(class427));
-            final double x = class427.posX - Class3170.field15514.field4684.posX;
-            final double y = class427.posY - Class3170.field15514.field4684.posY - Class3170.field15514.field4684.method1931() + 0.4000000059604645;
-            final double y2 = class427.posZ - Class3170.field15514.field4684.posZ;
+            final double x = class427.posX - Class3170.field15514.player.posX;
+            final double y = class427.posY - Class3170.field15514.player.posY - Class3170.field15514.player.method1931() + 0.4000000059604645;
+            final double y2 = class427.posZ - Class3170.field15514.player.posZ;
             final double x2 = MathHelper.sqrt(x * x + y2 * y2);
-            final float method30910 = Class8845.method30910(Class3170.field15514.field4684.rotationYaw, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f);
-            final float method30911 = Class8845.method30910(Class3170.field15514.field4684.rotationPitch, (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793)), 360.0f);
-            return this.method9926(Class3170.field15514.field4684.rotationYaw, method30910) <= n && this.method9926(Class3170.field15514.field4684.rotationPitch, method30911) <= n;
+            final float method30910 = Class8845.method30910(Class3170.field15514.player.rotationYaw, (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f, 360.0f);
+            final float method30911 = Class8845.method30910(Class3170.field15514.player.rotationPitch, (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793)), 360.0f);
+            return this.method9926(Class3170.field15514.player.rotationYaw, method30910) <= n && this.method9926(Class3170.field15514.player.rotationPitch, method30911) <= n;
         }
         return false;
     }
@@ -149,11 +149,11 @@ public class Class3170 extends Class3167
                             Class9400.field40314.method23539();
                             this.method9929((int)(Class3170.field15514.field4650.method26959() * Class9000.field37993 - 9 * (round + n) - n2 * 3), (int)(Class3170.field15514.field4650.method26960() * Class9000.field37993 - 33.0), method20054, method20053.method27664().getUnformattedComponentText(), true);
                             GL11.glPopMatrix();
-                            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-                            Class8726.method30028();
-                            Class8726.method30007();
-                            Class8726.method30011();
-                            Class8726.method30000(518, 0.1f);
+                            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                            RenderSystem.method30028();
+                            RenderSystem.disableDepthTest();
+                            RenderSystem.enableBlend();
+                            RenderSystem.method30000(518, 0.1f);
                             return;
                         }
                     }
@@ -171,7 +171,7 @@ public class Class3170 extends Class3167
         final int n4 = 1;
         final int n5 = (int)Math.ceil(list.size() / 9.0f) * (round + n4) + n3 * 2 + method23539;
         final int n6 = 9 * (round + n4) + n3 * 2;
-        Class8726.method30002();
+        RenderSystem.method30002();
         GL11.glAlphaFunc(519, 0.0f);
         if (!b) {
             Class8154.method26874((float)n, (float)n2, (float)n6, (float)n5, Class6430.method19118(Class6430.method19120(Class265.field1278.field1292, Class265.field1273.field1292, 75.0f), 0.7f));
@@ -181,12 +181,12 @@ public class Class3170 extends Class3167
             Class8154.method26917(n, n2, n6, n5, Class6430.method19118(Class265.field1273.field1292, 0.94f));
         }
         Class8154.method26889(Class9400.field40314, (float)(n + n3), (float)(n2 + n3 - 3), s, Class6430.method19118(Class265.field1278.field1292, 0.8f));
-        Class8726.method30001();
+        RenderSystem.method30001();
         for (int i = 0; i < list.size(); ++i) {
             final ItemStack class8321 = list.get(i);
             final int n7 = n2 + method23539 + n3 + i / 9 * (round + n4);
             final int n8 = n + n3 + i % 9 * (round + n4);
-            Class8726.method30002();
+            RenderSystem.method30002();
             if (i == this.field15530) {
                 if (b) {
                     Class8154.method26874((float)n8, (float)n7, (float)round, (float)round, Class6430.method19118(Class265.field1278.field1292, 0.15f));
@@ -197,12 +197,12 @@ public class Class3170 extends Class3167
                 final int n9 = round - Class9400.field40313.method23505("" + class8321.field34176);
                 final int method23540 = Class9400.field40313.method23505("" + class8321.field34176);
                 GL11.glAlphaFunc(519, 0.0f);
-                Class8726.method30002();
+                RenderSystem.method30002();
                 Class8154.method26900((float)(n8 + n9 - 17 - method23540 / 4), (float)(n7 + 7), (float)(40 + method23540), 40.0f, Class7853.field32200, Class6430.method19118(Class265.field1278.field1292, 0.7f), false);
                 Class8154.method26889(Class9400.field40313, (float)(n8 + n9), (float)(n7 + 13), "" + class8321.field34176, Class265.field1278.field1292);
-                Class8726.method30001();
+                RenderSystem.method30001();
             }
-            Class8726.method30001();
+            RenderSystem.method30001();
         }
         for (int j = 0; j < list.size(); ++j) {
             final ItemStack class8322 = list.get(j);
@@ -210,11 +210,11 @@ public class Class3170 extends Class3167
             final int n11 = n + n3 + j % 9 * (round + n4);
             if (j == this.field15530) {
                 if (b) {
-                    Class8726.method30002();
-                    int a = Class3170.field15514.fontRenderer.method6617(class8322.method27664().getUnformattedComponentText());
+                    RenderSystem.method30002();
+                    int a = Class3170.field15514.fontRenderer.getStringWidth(class8322.method27664().getUnformattedComponentText());
                     final List<String> method23541 = this.method9930(class8322);
                     for (int k = 0; k < method23541.size(); ++k) {
-                        a = Math.max(a, Class3170.field15514.fontRenderer.method6617((String)method23541.get(k)));
+                        a = Math.max(a, Class3170.field15514.fontRenderer.getStringWidth((String)method23541.get(k)));
                     }
                     final int n12 = (int)(a * Class8154.method26867());
                     Class8154.method26874((float)n11, (float)(n10 + round), n12 + 9.0f * Class8154.method26867(), 10.0f * Class8154.method26867() * method23541.size() + 7.0f * Class8154.method26867(), Class6430.method19118(Class265.field1273.field1292, 0.8f));
@@ -228,14 +228,14 @@ public class Class3170 extends Class3167
                         Class3170.field15514.fontRenderer.method6610((String)method23541.get(l), (float)(n14 + 5), 5.3f + n13 + round + l * 10, Class265.field1278.field1292);
                     }
                     GL11.glPopMatrix();
-                    Class8726.method30001();
+                    RenderSystem.method30001();
                 }
             }
         }
     }
     
     public List<String> method9930(final ItemStack class8321) {
-        final List<ITextComponent> method27668 = class8321.method27668(Class3170.field15514.field4684, Class3170.field15514.field4648.field23394 ? Class1980.field10973 : Class1980.field10972);
+        final List<ITextComponent> method27668 = class8321.method27668(Class3170.field15514.player, Class3170.field15514.gameSettings.advancedItemTooltips ? TooltipFlags.ADVANCED : TooltipFlags.NORMAL);
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<ITextComponent> iterator = method27668.iterator();
         while (iterator.hasNext()) {
@@ -252,7 +252,7 @@ public class Class3170 extends Class3167
                 final CompoundNBT method27658 = method27657.getCompound("BlockEntityTag");
                 Class6697.method20354(method27658);
                 if (method27658.contains("Items", 9)) {
-                    final Class2265<ItemStack> method27659 = Class2265.method8507(27, ItemStack.field34174);
+                    final Class2265<ItemStack> method27659 = Class2265.method8507(27, ItemStack.EMPTY);
                     Class8508.method28426(method27658, method27659);
                     for (final ItemStack class8322 : method27659) {
                         if (class8322.method27620()) {

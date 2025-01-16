@@ -84,11 +84,11 @@ public class Class603 extends Class599
         }
         final String trim = property.trim();
         if (Config.method28965("G1_pre18", trim) < 0) {
-            this.field3512.method5244(new Class546(b -> {
+            this.field3512.displayGuiScreen(new Class546(b -> {
                 if (b) {
                     this.method3523(n);
                 }
-                this.field3512.method5244(this.field3538);
+                this.field3512.displayGuiScreen(this.field3538);
             }, new StringTextComponent(Class8822.method30773("of.message.shaders.nv1", ("HD_U_" + trim).replace('_', ' '))), new StringTextComponent(Class8822.method30773("of.message.shaders.nv2", new Object[0]))));
             return false;
         }

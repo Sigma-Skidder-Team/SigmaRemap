@@ -36,16 +36,16 @@ public class Class7816 extends Class7814
     
     @Class6753
     private void method25251(final Class5743 class5743) {
-        if (Class7816.field32015.field4684.ticksExisted < 10) {
+        if (Class7816.field32015.player.ticksExisted < 10) {
             this.field32022.clear();
         }
         for (final PlayerEntity class5744 : Class6430.method19108()) {
-            if (class5744 != Class7816.field32015.field4684) {
+            if (class5744 != Class7816.field32015.player) {
                 Label_0079: {
                     if (class5744 != null) {
                         if (Class6430.method19160(class5744, 0.01f)) {
                             if (!class5744.method1823()) {
-                                if (class5744.method1732(Class7816.field32015.field4684) <= 5.0f) {
+                                if (class5744.method1732(Class7816.field32015.player) <= 5.0f) {
                                     if (class5744.posX != class5744.lastTickPosX) {
                                         break Label_0079;
                                     }
@@ -72,8 +72,8 @@ public class Class7816 extends Class7814
     
     @Class6753
     private void method25252(final Class5723 class5723) {
-        if (Class7816.field32015.field4684 != null && this.field32022 != null) {
-            if (Class7816.field32015.field4684.ticksExisted < 10) {
+        if (Class7816.field32015.player != null && this.field32022 != null) {
+            if (Class7816.field32015.player.ticksExisted < 10) {
                 this.field32022.clear();
             }
             if (class5723.method16998() instanceof Class4372) {

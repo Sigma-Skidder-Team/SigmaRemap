@@ -20,7 +20,7 @@ public class Class8163
 {
     public static final List<String> field33624;
     
-    public Class7685 method26985(final Function<Class3687, Class1912> function, final Class7685 class7685) {
+    public Class7685 method26985(final Function<Class3687, TextureAtlasSprite> function, final Class7685 class7685) {
         final HashMap hashMap = Maps.newHashMap();
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < Class8163.field33624.size(); ++i) {
@@ -38,7 +38,7 @@ public class Class8163
         return class7686;
     }
     
-    private List<Class9219> method26986(final int n, final String s, final Class1912 class1912) {
+    private List<Class9219> method26986(final int n, final String s, final TextureAtlasSprite class1912) {
         final HashMap hashMap = Maps.newHashMap();
         hashMap.put(Direction.SOUTH, new Class8111(null, n, s, new Class8435(new float[] { 0.0f, 0.0f, 16.0f, 16.0f }, 0)));
         hashMap.put(Direction.NORTH, new Class8111(null, n, s, new Class8435(new float[] { 16.0f, 0.0f, 0.0f, 16.0f }, 0)));
@@ -48,7 +48,7 @@ public class Class8163
         return arrayList;
     }
     
-    private List<Class9219> method26987(final Class1912 class1912, final String s, final int n) {
+    private List<Class9219> method26987(final TextureAtlasSprite class1912, final String s, final int n) {
         final float n2 = (float)class1912.method7495();
         final float n3 = (float)class1912.method7496();
         final ArrayList arrayList = Lists.newArrayList();
@@ -143,7 +143,7 @@ public class Class8163
         return arrayList;
     }
     
-    private List<Class9438> method26988(final Class1912 class1912) {
+    private List<Class9438> method26988(final TextureAtlasSprite class1912) {
         final int method7495 = class1912.method7495();
         final int method7496 = class1912.method7496();
         final ArrayList arrayList = Lists.newArrayList();
@@ -161,7 +161,7 @@ public class Class8163
         return arrayList;
     }
     
-    private void method26989(final Class231 class231, final List<Class9438> list, final Class1912 class232, final int n, final int n2, final int n3, final int n4, final int n5, final boolean b) {
+    private void method26989(final Class231 class231, final List<Class9438> list, final TextureAtlasSprite class232, final int n, final int n2, final int n3, final int n4, final int n5, final boolean b) {
         if (this.method26991(class232, n, n2 + class231.method863(), n3 + class231.method864(), n4, n5) && b) {
             this.method26990(list, class231, n2, n3);
         }
@@ -185,7 +185,7 @@ public class Class8163
         }
     }
     
-    private boolean method26991(final Class1912 class1912, final int n, final int n2, final int n3, final int n4, final int n5) {
+    private boolean method26991(final TextureAtlasSprite class1912, final int n, final int n2, final int n3, final int n4, final int n5) {
         if (n2 >= 0) {
             if (n3 >= 0) {
                 if (n2 < n4) {

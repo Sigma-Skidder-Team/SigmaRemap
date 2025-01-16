@@ -4,14 +4,14 @@
 
 package mapped;
 
-public enum Class1980 implements Class1981
+public enum TooltipFlags implements Class1981
 {
-    field10972(false), 
-    field10973(true);
+    NORMAL(false),
+    ADVANCED(true);
     
     private final boolean field10974;
     
-    private Class1980(final boolean field10974) {
+    private TooltipFlags(final boolean field10974) {
         this.field10974 = field10974;
     }
     

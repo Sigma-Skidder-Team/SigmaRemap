@@ -14,7 +14,7 @@ public class Class6225
     private static final float field25093;
     private static final float field25094;
     
-    public Class8754 method18519(final Vector3f class9138, final Vector3f class9139, final Class8111 class9140, final Class1912 class9141, final Direction class9142, final Class2123 class9143, final Class8225 class9144, final boolean b, final ResourceLocation class9145) {
+    public Class8754 method18519(final Vector3f class9138, final Vector3f class9139, final Class8111 class9140, final TextureAtlasSprite class9141, final Direction class9142, final Class2123 class9143, final Class8225 class9144, final boolean b, final ResourceLocation class9145) {
         Class8435 class9146 = class9140.field33426;
         if (class9143.method8278()) {
             class9146 = method18520(class9140.field33426, class9142, class9143.method8274(), class9145);
@@ -41,8 +41,8 @@ public class Class6225
         return new Class8754(method7510, class9140.field33424, method7511, class9141, b);
     }
     
-    public static Class8435 method18520(final Class8435 class8435, final Direction class8436, final Class9294 class8437, final ResourceLocation class8438) {
-        final Matrix4f method34328 = Class7235.method22138(class8437, class8436, () -> "Unable to resolve UVLock for model: " + obj).method34328();
+    public static Class8435 method18520(final Class8435 class8435, final Direction class8436, final TransformationMatrix class8437, final ResourceLocation class8438) {
+        final Matrix4f method34328 = Class7235.method22138(class8437, class8436, () -> "Unable to resolve UVLock for model: " + obj).getMatrix();
         final float method34329 = class8435.method28163(class8435.method28166(0));
         final float method34330 = class8435.method28164(class8435.method28166(0));
         final Vector4f class8439 = new Vector4f(method34329 / 16.0f, method34330 / 16.0f, 0.0f, 1.0f);
@@ -81,8 +81,8 @@ public class Class6225
         return new Class8435(new float[] { n5, n7, n6, n8 }, Math.floorMod(-(int)Math.round(Math.toDegrees(Math.atan2(class8441.getY(), class8441.getX())) / 90.0) * 90, 360));
     }
     
-    private int[] method18521(final Class8435 class8435, final Class1912 class8436, final Direction class8437, final float[] array, final Class9294 class8438, final Class8225 class8439, final boolean b) {
-        final int[] array2 = new int[Config.method28955() ? Class9237.field39612 : Class9237.field39611];
+    private int[] method18521(final Class8435 class8435, final TextureAtlasSprite class8436, final Direction class8437, final float[] array, final TransformationMatrix class8438, final Class8225 class8439, final boolean b) {
+        final int[] array2 = new int[Config.method28955() ? DefaultVertexFormats.field39612 : DefaultVertexFormats.field39611];
         for (int i = 0; i < 4; ++i) {
             this.method18525(array2, i, class8437, class8435, array, class8436, class8438, class8439, b);
         }
@@ -136,8 +136,8 @@ public class Class6225
         return array;
     }
     
-    private void method18525(final int[] array, final int n, final Direction class179, final Class8435 class180, final float[] array2, final Class1912 class181, final Class9294 class182, final Class8225 class183, final boolean b) {
-        final Direction method777 = Direction.rotateFace(class182.method34328(), class179);
+    private void method18525(final int[] array, final int n, final Direction class179, final Class8435 class180, final float[] array2, final TextureAtlasSprite class181, final TransformationMatrix class182, final Class8225 class183, final boolean b) {
+        final Direction method777 = Direction.rotateFace(class182.getMatrix(), class179);
         final int n2 = b ? this.method18522(method777) : -1;
         final Class8859 method778 = Class1962.method7951(class179).method7952(n);
         final Vector3f class184 = new Vector3f(array2[method778.field37246], array2[method778.field37247], array2[method778.field37248]);
@@ -147,7 +147,7 @@ public class Class6225
         this.method18526(array, n, class184, n2, class181, class180);
     }
     
-    private void method18526(final int[] array, final int n, final Vector3f class9138, final int n2, final Class1912 class9139, final Class8435 class9140) {
+    private void method18526(final int[] array, final int n, final Vector3f class9138, final int n2, final TextureAtlasSprite class9139, final Class8435 class9140) {
         final int n3 = n * (array.length / 4);
         array[n3] = Float.floatToRawIntBits(class9138.getX());
         array[n3 + 1] = Float.floatToRawIntBits(class9138.getY());
@@ -198,9 +198,9 @@ public class Class6225
         }
     }
     
-    public void method18528(final Vector3f class9138, final Class9294 class9139) {
-        if (class9139 != Class9294.method34322()) {
-            this.method18529(class9138, new Vector3f(0.5f, 0.5f, 0.5f), class9139.method34328(), new Vector3f(1.0f, 1.0f, 1.0f));
+    public void method18528(final Vector3f class9138, final TransformationMatrix class9139) {
+        if (class9139 != TransformationMatrix.identity()) {
+            this.method18529(class9138, new Vector3f(0.5f, 0.5f, 0.5f), class9139.getMatrix(), new Vector3f(1.0f, 1.0f, 1.0f));
         }
     }
     

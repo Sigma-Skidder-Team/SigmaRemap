@@ -63,17 +63,17 @@ public class Class557 extends Screen implements Class558
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (!this.minecraft.field4648.field23456.method1066(n, n2)) {
-            return super.keyPressed(n, n2, n3);
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (!this.minecraft.gameSettings.field23456.method1066(keyCode, n2)) {
+            return super.keyPressed(keyCode, n2, n3);
         }
-        this.minecraft.method5244(null);
+        this.minecraft.displayGuiScreen(null);
         this.minecraft.field4650.method26963();
         return true;
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         final int n4 = (this.width - 252) / 2;
         final int n5 = (this.height - 140) / 2;
         this.renderBackground();
@@ -101,58 +101,58 @@ public class Class557 extends Screen implements Class558
     private void method3260(final int n, final int n2, final int n3, final int n4) {
         final Class572 field3340 = this.field3340;
         if (field3340 != null) {
-            Class8726.method30059();
-            Class8726.method30065((float)(n3 + 9), (float)(n4 + 18), 0.0f);
+            RenderSystem.method30059();
+            RenderSystem.method30065((float)(n3 + 9), (float)(n4 + 18), 0.0f);
             field3340.method3341();
-            Class8726.method30060();
-            Class8726.method30009(515);
-            Class8726.method30007();
+            RenderSystem.method30060();
+            RenderSystem.method30009(515);
+            RenderSystem.disableDepthTest();
         }
         else {
-            Class565.method3293(n3 + 9, n4 + 18, n3 + 9 + 234, n4 + 18 + 113, -16777216);
+            AbstractGui.fill(n3 + 9, n4 + 18, n3 + 9 + 234, n4 + 18 + 113, -16777216);
             final String method30773 = Class8822.method30773("advancements.empty", new Object[0]);
-            this.font.method6610(method30773, (float)(n3 + 9 + 117 - this.font.method6617(method30773) / 2), (float)(n4 + 18 + 56 - 4), -1);
-            this.font.method6610(":(", (float)(n3 + 9 + 117 - this.font.method6617(":(") / 2), (float)(n4 + 18 + 113 - 9), -1);
+            this.font.method6610(method30773, (float)(n3 + 9 + 117 - this.font.getStringWidth(method30773) / 2), (float)(n4 + 18 + 56 - 4), -1);
+            this.font.method6610(":(", (float)(n3 + 9 + 117 - this.font.getStringWidth(":(") / 2), (float)(n4 + 18 + 113 - 9), -1);
         }
     }
     
     public void method3261(final int n, final int n2) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30011();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.enableBlend();
         this.minecraft.method5290().method5849(Class557.field3336);
-        this.method3186(n, n2, 0, 0, 252, 140);
+        this.blit(n, n2, 0, 0, 252, 140);
         if (this.field3339.size() > 1) {
             this.minecraft.method5290().method5849(Class557.field3337);
             for (final Class572 class572 : this.field3339.values()) {
                 class572.method3339(n, n2, class572 == this.field3340);
             }
-            Class8726.method30046();
-            Class8726.method30117();
+            RenderSystem.enableRescaleNormal();
+            RenderSystem.defaultBlendFunc();
             final Iterator<Class572> iterator2 = this.field3339.values().iterator();
             while (iterator2.hasNext()) {
                 iterator2.next().method3340(n, n2, this.itemRenderer);
             }
-            Class8726.method30012();
+            RenderSystem.disableBlend();
         }
         this.font.method6610(Class8822.method30773("gui.advancements", new Object[0]), (float)(n + 8), (float)(n2 + 6), 4210752);
     }
     
     private void method3262(final int n, final int n2, final int n3, final int n4) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         if (this.field3340 != null) {
-            Class8726.method30059();
-            Class8726.method30008();
-            Class8726.method30065((float)(n3 + 9), (float)(n4 + 18), 400.0f);
+            RenderSystem.method30059();
+            RenderSystem.enableDepthTest();
+            RenderSystem.method30065((float)(n3 + 9), (float)(n4 + 18), 400.0f);
             this.field3340.method3342(n - n3 - 9, n2 - n4 - 18, n3, n4);
-            Class8726.method30007();
-            Class8726.method30060();
+            RenderSystem.disableDepthTest();
+            RenderSystem.method30060();
         }
         if (this.field3339.size() > 1) {
             for (final Class572 class572 : this.field3339.values()) {
                 if (!class572.method3343(n3, n4, n, n2)) {
                     continue;
                 }
-                this.method3031(class572.method3338(), n, n2);
+                this.renderTooltip(class572.method3338(), n, n2);
             }
         }
     }

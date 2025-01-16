@@ -27,25 +27,25 @@ public class Class529 extends Screen
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (this.method3471() == this.field3165 && (n == 257 || n == 335)) {
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (this.getFocused() == this.field3165 && (keyCode == 257 || keyCode == 335)) {
             this.method3058();
             return true;
         }
-        return super.keyPressed(n, n2, n3);
+        return super.keyPressed(keyCode, n2, n3);
     }
     
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.field3163 = this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 96 + 12, 200, 20, Class8822.method30773("selectServer.select", new Object[0]), class654 -> this.method3058()));
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3166.accept(false)));
+        this.field3163 = this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 96 + 12, 200, 20, Class8822.method30773("selectServer.select", new Object[0]), class654 -> this.method3058()));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3166.accept(false)));
         (this.field3165 = new Class576(this.font, this.width / 2 - 100, 116, 200, 20, Class8822.method30773("addServer.enterIp", new Object[0]))).method3397(128);
         this.field3165.method3395(true);
-        this.field3165.method3377(this.minecraft.field4648.field23469);
+        this.field3165.method3377(this.minecraft.gameSettings.field23469);
         this.field3165.method3374(p0 -> this.method3059());
         this.children.add(this.field3165);
-        this.method3476(this.field3165);
+        this.setFocusedDefault(this.field3165);
         this.method3059();
     }
     
@@ -62,15 +62,15 @@ public class Class529 extends Screen
     }
     
     @Override
-    public void method3028() {
-        this.minecraft.method5244(this.field3167);
+    public void onClose() {
+        this.minecraft.displayGuiScreen(this.field3167);
     }
     
     @Override
     public void removed() {
         this.minecraft.field4651.method22505(false);
-        this.minecraft.field4648.field23469 = this.field3165.method3378();
-        this.minecraft.field4648.method17121();
+        this.minecraft.gameSettings.field23469 = this.field3165.method3378();
+        this.minecraft.gameSettings.method17121();
     }
     
     private void method3059() {
@@ -92,11 +92,11 @@ public class Class529 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 20, 16777215);
-        this.method3297(this.font, Class8822.method30773("addServer.enterIp", new Object[0]), this.width / 2 - 100, 100, 10526880);
-        this.field3165.method2975(n, n2, n3);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 20, 16777215);
+        this.drawString(this.font, Class8822.method30773("addServer.enterIp", new Object[0]), this.width / 2 - 100, 100, 10526880);
+        this.field3165.render(n, n2, n3);
+        super.render(n, n2, n3);
     }
 }

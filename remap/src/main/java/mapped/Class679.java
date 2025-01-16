@@ -39,12 +39,12 @@ public class Class679 extends Class654
     @Override
     public void method3353(final int n, final int n2, final float n3) {
         Minecraft.method5277().method5290().method5849(this.field3714);
-        Class8726.method30007();
+        RenderSystem.disableDepthTest();
         int field3716 = this.field3716;
         if (this.method3360()) {
             field3716 += this.field3717;
         }
-        Class565.method3188(this.field3426, this.field3427, (float)this.field3715, (float)field3716, this.field3424, this.field3425, this.field3718, this.field3719);
-        Class8726.method30008();
+        AbstractGui.blit(this.field3426, this.field3427, (float)this.field3715, (float)field3716, this.field3424, this.field3425, this.field3718, this.field3719);
+        RenderSystem.enableDepthTest();
     }
 }

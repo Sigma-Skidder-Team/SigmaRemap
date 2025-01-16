@@ -14,11 +14,11 @@ public class Class606 extends Class605<Class622>
     }
     
     public int method3565(final Class6469 class6469) {
-        return this.method3536(Class622.method3620(this.field3540.field4648, this.field3543, class6469));
+        return this.method3536(Class622.method3620(this.field3540.gameSettings, this.field3543, class6469));
     }
     
     public void method3566(final Class6469 class6469, final Class6469 class6470) {
-        this.method3536(Class622.method3621(this.field3540.field4648, this.field3543, class6469, class6470));
+        this.method3536(Class622.method3621(this.field3540.gameSettings, this.field3543, class6469, class6470));
     }
     
     public void method3567(final Class6469[] array) {

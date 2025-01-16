@@ -21,9 +21,9 @@ public class Class644 extends Class623<Class644>
         final String method30773 = Class8822.method30773(Util.method27836("entity", EntityType.method23354(this.field3655)), new Object[0]);
         final int method30774 = Class691.method3867(this.field3656.field3563).method23091(Class8276.field33985.method8449(this.field3655));
         final int method30775 = Class691.method3867(this.field3656.field3563).method23091(Class8276.field33986.method8449(this.field3655));
-        this.field3656.method3297(this.field3656.field3563.font, method30773, n3 + 2, n2 + 1, 16777215);
-        this.field3656.method3297(this.field3656.field3563.font, this.method3688(method30773, method30774), n3 + 2 + 10, n2 + 1 + 9, (method30774 != 0) ? 9474192 : 6316128);
-        this.field3656.method3297(this.field3656.field3563.font, this.method3689(method30773, method30775), n3 + 2 + 10, n2 + 1 + 18, (method30775 != 0) ? 9474192 : 6316128);
+        this.field3656.drawString(this.field3656.field3563.font, method30773, n3 + 2, n2 + 1, 16777215);
+        this.field3656.drawString(this.field3656.field3563.font, this.method3688(method30773, method30774), n3 + 2 + 10, n2 + 1 + 9, (method30774 != 0) ? 9474192 : 6316128);
+        this.field3656.drawString(this.field3656.field3563.font, this.method3689(method30773, method30775), n3 + 2 + 10, n2 + 1 + 18, (method30775 != 0) ? 9474192 : 6316128);
     }
     
     private String method3688(final String s, final int i) {

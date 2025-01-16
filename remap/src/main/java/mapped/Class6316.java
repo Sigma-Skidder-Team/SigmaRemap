@@ -48,7 +48,7 @@ public class Class6316 implements Class6313
     }
     
     @Override
-    public Class1912 method18696() {
+    public TextureAtlasSprite method18696() {
         return this.field25255.method18696();
     }
     

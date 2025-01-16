@@ -19,9 +19,9 @@ public class Class4153 implements Class4150
     }
     
     @Override
-    public Class4150 method12432(final double n, final double n2, final double n3) {
-        this.field18511.method12432(n, n2, n3);
-        this.field18512.method12432(n, n2, n3);
+    public Class4150 pos(final double n, final double n2, final double n3) {
+        this.field18511.pos(n, n2, n3);
+        this.field18512.pos(n, n2, n3);
         return this;
     }
     
@@ -33,9 +33,9 @@ public class Class4153 implements Class4150
     }
     
     @Override
-    public Class4150 method12391(final float n, final float n2) {
-        this.field18511.method12391(n, n2);
-        this.field18512.method12391(n, n2);
+    public Class4150 tex(final float n, final float n2) {
+        this.field18511.tex(n, n2);
+        this.field18512.tex(n, n2);
         return this;
     }
     
@@ -67,8 +67,8 @@ public class Class4153 implements Class4150
     }
     
     @Override
-    public void method12397() {
-        this.field18511.method12397();
-        this.field18512.method12397();
+    public void endVertex() {
+        this.field18511.endVertex();
+        this.field18512.endVertex();
     }
 }

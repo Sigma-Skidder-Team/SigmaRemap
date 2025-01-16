@@ -18,10 +18,10 @@ public class Class3268 extends Class3167
         if (!(class5723.method16998() instanceof Class4282) && !(class5723.method16998() instanceof Class4342)) {
             return;
         }
-        if (Class3268.field15514.field4684.getHeldItemMainhand() == null) {
+        if (Class3268.field15514.player.getHeldItemMainhand() == null) {
             return;
         }
-        if (Class3268.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4047) {
+        if (Class3268.field15514.player.getHeldItemMainhand().getItem() instanceof Class4047) {
             if (!(class5723.method16998() instanceof Class4282)) {
                 if (class5723.method16998() instanceof Class4342) {
                     if (!((Class4342)class5723.method16998()).field19450.equals("entity.bobber.splash")) {

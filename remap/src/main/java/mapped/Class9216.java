@@ -748,7 +748,7 @@ public class Class9216
         final boolean b2 = Class9216.field39325 != field39325;
         final boolean b3 = method33750() != method33750;
         if (b2 || b3) {
-            Class9237.method34060();
+            DefaultVertexFormats.method34060();
             if (Class9570.field41378.method22623()) {
                 Class9570.field41379.method22632(null);
                 Class9570.field41380.method22632(null);
@@ -1754,7 +1754,7 @@ public class Class9216
             if (Class9216.field39295 == null) {
                 Class9216.field39295 = Class8990.method32053();
             }
-            final Class7351 class9025 = new Class7351();
+            final MatrixStack class9025 = new MatrixStack();
             class9025.method22566(Vector3f.YP.rotationDegrees(-90.0f));
             method33810(class9025);
             method33811(class9025);
@@ -2540,7 +2540,7 @@ public class Class9216
                         break;
                     }
                 }
-                final ItemStack class8321 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.getHeldItemMainhand() : null;
+                final ItemStack class8321 = (Class9216.field39031.player != null) ? Class9216.field39031.player.getHeldItemMainhand() : null;
                 final Item class8322 = (class8321 != null) ? class8321.getItem() : null;
                 int method32333 = -1;
                 Block method32334 = null;
@@ -2552,7 +2552,7 @@ public class Class9216
                     method32333 = Class6444.method19214(method32335);
                 }
                 int n2 = (method32334 != null) ? method32334.getLightValue(method32334.getDefaultState()) : 0;
-                final ItemStack class8323 = (Class9216.field39031.field4684 != null) ? Class9216.field39031.field4684.method2714() : null;
+                final ItemStack class8323 = (Class9216.field39031.player != null) ? Class9216.field39031.player.method2714() : null;
                 final Item class8324 = (class8323 != null) ? class8323.getItem() : null;
                 int method32336 = -1;
                 Block method32337 = null;
@@ -2589,7 +2589,7 @@ public class Class9216
                 method33780(Class9216.field39179, (float)Class9216.field39043);
                 method33780(Class9216.field39180, (float)Class9216.field39044);
                 method33780(Class9216.field39181, 0.05f);
-                method33780(Class9216.field39182, (float)(Class9216.field39031.field4648.field23382 * 16));
+                method33780(Class9216.field39182, (float)(Class9216.field39031.gameSettings.field23382 * 16));
                 method33781(Class9216.field39183, Class9216.field39060[0], Class9216.field39060[1], Class9216.field39060[2]);
                 method33781(Class9216.field39184, Class9216.field39061[0], Class9216.field39061[1], Class9216.field39061[2]);
                 method33781(Class9216.field39185, Class9216.field39062[0], Class9216.field39062[1], Class9216.field39062[2]);
@@ -2617,8 +2617,8 @@ public class Class9216
                 method33778(Class9216.field39205, Class9216.field39095);
                 method33780(Class9216.field39206, Class9216.field39105);
                 method33780(Class9216.field39207, Class9216.field39106);
-                method33780(Class9216.field39208, (float)Class9216.field39031.field4648.field23472);
-                method33778(Class9216.field39209, Class9216.field39031.field4648.field23464 ? 1 : 0);
+                method33780(Class9216.field39208, (float)Class9216.field39031.gameSettings.field23472);
+                method33778(Class9216.field39209, Class9216.field39031.gameSettings.field23464 ? 1 : 0);
                 method33780(Class9216.field39210, Class9216.field39101);
                 method33779(Class9216.field39211, Class9216.field39122, Class9216.field39123);
                 if (Class9216.field39363 != null) {
@@ -3288,7 +3288,7 @@ public class Class9216
         }
     }
     
-    public static void method33806(final Class7351 class7351, final Class6092 class7352, final float n) {
+    public static void method33806(final MatrixStack class7351, final Class6092 class7352, final float n) {
         final Entity method18166 = class7352.method18166();
         final Vec3d method18167 = class7352.method18161();
         final double field22770 = method18167.x;
@@ -3302,7 +3302,7 @@ public class Class9216
         Class8425.method28142((FloatBuffer)Class9216.field39400.position(), (FloatBuffer)Class9216.field39399.position(), Class9216.field39392, Class9216.field39391);
         Class9216.field39399.position();
         Class9216.field39400.position();
-        final Matrix4f class7353 = new Matrix4f(class7351.method22569().method32111());
+        final Matrix4f class7353 = new Matrix4f(class7351.getLast().getMatrix());
         class7353.method20750();
         class7353.method20768(Class9216.field39068);
         Class9216.field39401.position();
@@ -3334,7 +3334,7 @@ public class Class9216
         }
     }
     
-    public static void method33809(final Class7351 class7351, final Class6092 class7352, final float n) {
+    public static void method33809(final MatrixStack class7351, final Class6092 class7352, final float n) {
         final Entity method18166 = class7352.method18166();
         final Vec3d method18167 = class7352.method18161();
         final double field22770 = method18167.x;
@@ -3394,7 +3394,7 @@ public class Class9216
         Class8425.method28142((FloatBuffer)Class9216.field39404.position(), (FloatBuffer)Class9216.field39403.position(), Class9216.field39396, Class9216.field39395);
         Class9216.field39403.position();
         Class9216.field39404.position();
-        class7351.method22569().method32111().method20747((FloatBuffer)Class9216.field39405.position());
+        class7351.getLast().getMatrix().method20747((FloatBuffer)Class9216.field39405.position());
         Class8425.method28142((FloatBuffer)Class9216.field39406.position(), (FloatBuffer)Class9216.field39405.position(), Class9216.field39398, Class9216.field39397);
         Class9216.field39405.position();
         Class9216.field39406.position();
@@ -3411,13 +3411,13 @@ public class Class9216
         method33739("setCamera");
     }
     
-    public static void method33810(final Class7351 class7351) {
+    public static void method33810(final MatrixStack class7351) {
         class7351.method22566(Vector3f.ZP.rotationDegrees(Class9216.field39375 * 1.0f));
         method33739("preCelestialRotate");
     }
     
-    public static void method33811(final Class7351 class7351) {
-        final Matrix4f class7352 = new Matrix4f(class7351.method22569().method32111());
+    public static void method33811(final MatrixStack class7351) {
+        final Matrix4f class7352 = new Matrix4f(class7351.getLast().getMatrix());
         class7352.method20750();
         class7352.method20768(Class9216.field39068);
         Class8425.method28140(Class9216.field39060, Class9216.field39068, Class9216.field39066);
@@ -3432,8 +3432,8 @@ public class Class9216
         method33739("postCelestialRotate");
     }
     
-    public static void method33812(final Class7351 class7351) {
-        final Matrix4f class7352 = new Matrix4f(class7351.method22569().method32111());
+    public static void method33812(final MatrixStack class7351) {
+        final Matrix4f class7352 = new Matrix4f(class7351.getLast().getMatrix());
         class7352.method20750();
         class7352.method20768(Class9216.field39068);
         Class8425.method28140(Class9216.field39063, Class9216.field39068, Class9216.field39065);
@@ -3709,9 +3709,9 @@ public class Class9216
         method33781(Class9216.field39168, Class9216.field39072, Class9216.field39073, Class9216.field39074);
     }
     
-    public static void method33826(final Class7351 class7351) {
-        final Class4148 method22696 = Class7392.method22694().method22696();
-        final float n = (float)(Class9216.field39031.field4648.field23382 * 16);
+    public static void method33826(final MatrixStack class7351) {
+        final BufferBuilder method22696 = Tessellator.getInstance().getBuffer();
+        final float n = (float)(Class9216.field39031.gameSettings.field23382 * 16);
         final double n2 = n * 0.9238;
         final double n3 = n * 0.3826;
         final double n4 = -n3;
@@ -3722,45 +3722,45 @@ public class Class9216
             n7 = -4.0;
         }
         Class8933.method31635();
-        Class8933.method31645(class7351.method22569().method32111());
-        method22696.method12390(7, Class9237.field39614);
-        method22696.method12432(n4, n7, n5).method12397();
-        method22696.method12432(n4, n6, n5).method12397();
-        method22696.method12432(n5, n6, n4).method12397();
-        method22696.method12432(n5, n7, n4).method12397();
-        method22696.method12432(n5, n7, n4).method12397();
-        method22696.method12432(n5, n6, n4).method12397();
-        method22696.method12432(n5, n6, n3).method12397();
-        method22696.method12432(n5, n7, n3).method12397();
-        method22696.method12432(n5, n7, n3).method12397();
-        method22696.method12432(n5, n6, n3).method12397();
-        method22696.method12432(n4, n6, n2).method12397();
-        method22696.method12432(n4, n7, n2).method12397();
-        method22696.method12432(n4, n7, n2).method12397();
-        method22696.method12432(n4, n6, n2).method12397();
-        method22696.method12432(n3, n6, n2).method12397();
-        method22696.method12432(n3, n7, n2).method12397();
-        method22696.method12432(n3, n7, n2).method12397();
-        method22696.method12432(n3, n6, n2).method12397();
-        method22696.method12432(n2, n6, n3).method12397();
-        method22696.method12432(n2, n7, n3).method12397();
-        method22696.method12432(n2, n7, n3).method12397();
-        method22696.method12432(n2, n6, n3).method12397();
-        method22696.method12432(n2, n6, n4).method12397();
-        method22696.method12432(n2, n7, n4).method12397();
-        method22696.method12432(n2, n7, n4).method12397();
-        method22696.method12432(n2, n6, n4).method12397();
-        method22696.method12432(n3, n6, n5).method12397();
-        method22696.method12432(n3, n7, n5).method12397();
-        method22696.method12432(n3, n7, n5).method12397();
-        method22696.method12432(n3, n6, n5).method12397();
-        method22696.method12432(n4, n6, n5).method12397();
-        method22696.method12432(n4, n7, n5).method12397();
-        Class7392.method22694().method22695();
+        Class8933.method31645(class7351.getLast().getMatrix());
+        method22696.begin(7, DefaultVertexFormats.field39614);
+        method22696.pos(n4, n7, n5).endVertex();
+        method22696.pos(n4, n6, n5).endVertex();
+        method22696.pos(n5, n6, n4).endVertex();
+        method22696.pos(n5, n7, n4).endVertex();
+        method22696.pos(n5, n7, n4).endVertex();
+        method22696.pos(n5, n6, n4).endVertex();
+        method22696.pos(n5, n6, n3).endVertex();
+        method22696.pos(n5, n7, n3).endVertex();
+        method22696.pos(n5, n7, n3).endVertex();
+        method22696.pos(n5, n6, n3).endVertex();
+        method22696.pos(n4, n6, n2).endVertex();
+        method22696.pos(n4, n7, n2).endVertex();
+        method22696.pos(n4, n7, n2).endVertex();
+        method22696.pos(n4, n6, n2).endVertex();
+        method22696.pos(n3, n6, n2).endVertex();
+        method22696.pos(n3, n7, n2).endVertex();
+        method22696.pos(n3, n7, n2).endVertex();
+        method22696.pos(n3, n6, n2).endVertex();
+        method22696.pos(n2, n6, n3).endVertex();
+        method22696.pos(n2, n7, n3).endVertex();
+        method22696.pos(n2, n7, n3).endVertex();
+        method22696.pos(n2, n6, n3).endVertex();
+        method22696.pos(n2, n6, n4).endVertex();
+        method22696.pos(n2, n7, n4).endVertex();
+        method22696.pos(n2, n7, n4).endVertex();
+        method22696.pos(n2, n6, n4).endVertex();
+        method22696.pos(n3, n6, n5).endVertex();
+        method22696.pos(n3, n7, n5).endVertex();
+        method22696.pos(n3, n7, n5).endVertex();
+        method22696.pos(n3, n6, n5).endVertex();
+        method22696.pos(n4, n6, n5).endVertex();
+        method22696.pos(n4, n7, n5).endVertex();
+        Tessellator.getInstance().draw();
         Class8933.method31636();
     }
     
-    public static void method33827(final Class7351 class7351) {
+    public static void method33827(final MatrixStack class7351) {
         method33812(class7351);
         GL11.glColor3f(Class9216.field39379, Class9216.field39380, Class9216.field39381);
         method33826(class7351);
@@ -4003,13 +4003,13 @@ public class Class9216
         }
     }
     
-    public static void method33860(final Class7351 class7351) {
+    public static void method33860(final MatrixStack class7351) {
         if (Class9216.field39303 != 1.0) {
             class7351.method22565(1.0f, 1.0f, Class9216.field39303);
         }
     }
     
-    public static void method33861(final Class7351 class7351, final boolean b) {
+    public static void method33861(final MatrixStack class7351, final boolean b) {
         GL32.glMatrixMode(5888);
         GL32.glPushMatrix();
         GL32.glMatrixMode(5889);
@@ -4026,7 +4026,7 @@ public class Class9216
         method33738("beginHand");
     }
     
-    public static void method33862(final Class7351 class7351) {
+    public static void method33862(final MatrixStack class7351) {
         method33739("pre endHand");
         method33738("pre endHand");
         class7351.method22568();

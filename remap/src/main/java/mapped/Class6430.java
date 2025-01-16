@@ -135,7 +135,7 @@ public class Class6430
     }
     
     public static final boolean method19114() {
-        return Class6430.field25541.field4684.field2968 != 0.0f || Class6430.field25541.field4684.field2970 != 0.0f;
+        return Class6430.field25541.player.field2968 != 0.0f || Class6430.field25541.player.field2970 != 0.0f;
     }
     
     public static float[] method19115(final BlockPos class354, final Direction class355) {
@@ -154,10 +154,10 @@ public class Class6430
     }
     
     public static float[] method19117(final double n, final double n2, final double n3) {
-        final double x = n - Class6430.field25541.field4684.posX;
-        final double y = n2 - (Class6430.field25541.field4684.posY + Class6430.field25541.field4684.method1892());
-        final double y2 = n3 - Class6430.field25541.field4684.posZ;
-        return new float[] { Class6430.field25541.field4684.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class6430.field25541.field4684.rotationYaw), Class6430.field25541.field4684.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class6430.field25541.field4684.rotationPitch) };
+        final double x = n - Class6430.field25541.player.posX;
+        final double y = n2 - (Class6430.field25541.player.posY + Class6430.field25541.player.method1892());
+        final double y2 = n3 - Class6430.field25541.player.posZ;
+        return new float[] { Class6430.field25541.player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class6430.field25541.player.rotationYaw), Class6430.field25541.player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class6430.field25541.player.rotationPitch) };
     }
     
     public static int method19118(final int n, final float n2) {
@@ -371,7 +371,7 @@ public class Class6430
     
     public static int method19135() {
         for (final Class9081 class9081 : Class6430.field25541.method5269().method17370()) {
-            if (class9081.method32719().getId().equals(Class6430.field25541.field4684.method1865()) && !Class6430.field25541.method5283()) {
+            if (class9081.method32719().getId().equals(Class6430.field25541.player.method1865()) && !Class6430.field25541.method5283()) {
                 return class9081.method32722();
             }
         }
@@ -412,7 +412,7 @@ public class Class6430
     }
     
     public static Class7007 method19142(final float n, final float n2, final float n3, final double n4) {
-        final Vec3d class5487 = new Vec3d(Class6430.field25541.field4684.posX, Class6430.field25541.field4684.posY + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.posZ);
+        final Vec3d class5487 = new Vec3d(Class6430.field25541.player.posX, Class6430.field25541.player.posY + Class6430.field25541.player.method1892(), Class6430.field25541.player.posZ);
         final Entity method5303 = Class6430.field25541.method5303();
         if (method5303 != null && Class6430.field25541.world != null) {
             double n5 = Class6430.field25541.field4682.method27315();
@@ -457,10 +457,10 @@ public class Class6430
         double n4 = n3 * n3;
         Entity class400 = null;
         Vec3d method16742 = null;
-        final Vec3d class401 = new Vec3d(Class6430.field25541.field4684.posX, Class6430.field25541.field4684.posY + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.posZ);
+        final Vec3d class401 = new Vec3d(Class6430.field25541.player.posX, Class6430.field25541.player.posY + Class6430.field25541.player.method1892(), Class6430.field25541.player.posZ);
         final Vec3d method16743 = method19151(n2, n);
         final Vec3d method16744 = class401.add(method16743.x * n4, method16743.y * n4, method16743.z * n4);
-        for (final Entity class402 : Class6430.field25541.world.method6737(Class6430.field25541.field4684, Class6430.field25541.field4684.getBoundingBox().expand(method16743.scale(n4)).grow(1.0, 1.0, 1.0), predicate)) {
+        for (final Entity class402 : Class6430.field25541.world.method6737(Class6430.field25541.player, Class6430.field25541.player.getBoundingBox().expand(method16743.scale(n4)).grow(1.0, 1.0, 1.0), predicate)) {
             final Optional<Vec3d> method16745 = class402.getBoundingBox().rayTrace(class401, method16744);
             if (!method16745.isPresent()) {
                 continue;
@@ -565,26 +565,26 @@ public class Class6430
     }
     
     public static double method19154(final double n) {
-        Class6430.field25541.field4684.setMotion(n, Class6430.field25541.field4684.getMotion().y, Class6430.field25541.field4684.getMotion().z);
+        Class6430.field25541.player.setMotion(n, Class6430.field25541.player.getMotion().y, Class6430.field25541.player.getMotion().z);
         return n;
     }
     
     public static double method19155(final double n) {
-        Class6430.field25541.field4684.setMotion(Class6430.field25541.field4684.getMotion().x, n, Class6430.field25541.field4684.getMotion().z);
+        Class6430.field25541.player.setMotion(Class6430.field25541.player.getMotion().x, n, Class6430.field25541.player.getMotion().z);
         return n;
     }
     
     public static double method19156(final double n) {
-        Class6430.field25541.field4684.setMotion(Class6430.field25541.field4684.getMotion().x, Class6430.field25541.field4684.getMotion().y, n);
+        Class6430.field25541.player.setMotion(Class6430.field25541.player.getMotion().x, Class6430.field25541.player.getMotion().y, n);
         return n;
     }
     
     public static boolean method19157(final double n, final double n2, final boolean b) {
-        AxisAlignedBB class6221 = Class6430.field25541.field4684.boundingBox;
+        AxisAlignedBB class6221 = Class6430.field25541.player.boundingBox;
         if (b) {
             class6221 = class6221.grow(1.2350000143051147, 0.0, 1.2350000143051147);
         }
-        return Class6430.field25541.world.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class6221.minX + n, class6221.minY - 1.5, class6221.minZ + n2, class6221.maxX + n, class6221.maxY, class6221.maxZ + n2), Collections.EMPTY_SET).count() != 0L;
+        return Class6430.field25541.world.method6980(Class6430.field25541.player, new AxisAlignedBB(class6221.minX + n, class6221.minY - 1.5, class6221.minZ + n2, class6221.maxX + n, class6221.maxY, class6221.maxZ + n2), Collections.EMPTY_SET).count() != 0L;
     }
     
     public static boolean method19158(final double n, final double n2) {
@@ -592,15 +592,15 @@ public class Class6430
     }
     
     public static boolean method19159() {
-        AxisAlignedBB class6221 = Class6430.field25541.field4684.boundingBox.offset(0.0, -1.0, 0.0);
-        if (Class6430.field25541.field4684.method1920() != null) {
-            class6221 = Class6430.field25541.field4684.method1920().boundingBox.expand(Math.abs(Class6430.field25541.field4684.method1920().prevPosX - Class6430.field25541.field4684.method1920().posX), 1.0, Math.abs(Class6430.field25541.field4684.method1920().prevPosZ - Class6430.field25541.field4684.method1920().posZ));
+        AxisAlignedBB class6221 = Class6430.field25541.player.boundingBox.offset(0.0, -1.0, 0.0);
+        if (Class6430.field25541.player.method1920() != null) {
+            class6221 = Class6430.field25541.player.method1920().boundingBox.expand(Math.abs(Class6430.field25541.player.method1920().prevPosX - Class6430.field25541.player.method1920().posX), 1.0, Math.abs(Class6430.field25541.player.method1920().prevPosZ - Class6430.field25541.player.method1920().posZ));
         }
-        return Class6430.field25541.world.method6980(Class6430.field25541.field4684, class6221, Collections.EMPTY_SET).count() != 0L;
+        return Class6430.field25541.world.method6980(Class6430.field25541.player, class6221, Collections.EMPTY_SET).count() != 0L;
     }
     
     public static boolean method19160(final Entity class399, final float n) {
-        return Class6430.field25541.world.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - n, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ), Collections.EMPTY_SET).count() != 0L;
+        return Class6430.field25541.world.method6980(Class6430.field25541.player, new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - n, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ), Collections.EMPTY_SET).count() != 0L;
     }
     
     public static List<BlockPos> method19161(final Entity class399) {
@@ -644,22 +644,22 @@ public class Class6430
         if (!class400.method16962()) {
             if (equals) {
                 if (b) {
-                    Class6430.field25541.field4684.method2707(Class316.field1877);
+                    Class6430.field25541.player.method2707(Class316.field1877);
                 }
             }
             Class6430.field25541.method5269().method17292(new Class4381(class400.method17057()));
-            if (Class8742.method30195(Class6257.method18590(11), Class6430.field25541.field4684.method2715(Class316.field1877)) > 0) {
+            if (Class8742.method30195(Class6257.method18590(11), Class6430.field25541.player.method2715(Class316.field1877)) > 0) {
                 Class6430.field25541.field4640.method6476(class400.method17057(), Class8432.field34614);
             }
             boolean b2 = false;
             Label_0290: {
-                if (Class6430.field25541.field4684.method2904(0.5f) > 0.9 || equals) {
-                    if (Class6430.field25541.field4684.fallDistance > 0.0f) {
-                        if (!Class6430.field25541.field4684.onGround) {
-                            if (!Class6430.field25541.field4684.method2688()) {
-                                if (!Class6430.field25541.field4684.method1706()) {
-                                    if (!Class6430.field25541.field4684.method2653(Class9439.field40488)) {
-                                        if (!Class6430.field25541.field4684.isPassenger()) {
+                if (Class6430.field25541.player.method2904(0.5f) > 0.9 || equals) {
+                    if (Class6430.field25541.player.fallDistance > 0.0f) {
+                        if (!Class6430.field25541.player.onGround) {
+                            if (!Class6430.field25541.player.method2688()) {
+                                if (!Class6430.field25541.player.method1706()) {
+                                    if (!Class6430.field25541.player.method2653(Class9439.field40488)) {
+                                        if (!Class6430.field25541.player.isPassenger()) {
                                             b2 = true;
                                             break Label_0290;
                                         }
@@ -673,7 +673,7 @@ public class Class6430
             }
             Label_0330: {
                 if (!b2) {
-                    if (!Class6430.field25541.field4684.onGround) {
+                    if (!Class6430.field25541.player.onGround) {
                         break Label_0330;
                     }
                     if (!Class9463.method35173().method35189().method21551(Class3261.class).method9906()) {
@@ -682,10 +682,10 @@ public class Class6430
                 }
                 Class6430.field25541.field4640.method6476(class400.method17057(), Class8432.field34603);
             }
-            Class6430.field25541.field4684.method2905();
+            Class6430.field25541.player.method2905();
             if (!equals) {
                 if (b) {
-                    Class6430.field25541.field4684.method2707(Class316.field1877);
+                    Class6430.field25541.player.method2707(Class316.field1877);
                 }
             }
             class400.method17060();
@@ -906,7 +906,7 @@ public class Class6430
     }
     
     public static boolean method19178(final Entity class399, final boolean b, final boolean b2, final boolean b3) {
-        if (class399 == Class6430.field25541.field4684 || class399 == Class3276.field15771) {
+        if (class399 == Class6430.field25541.player || class399 == Class3276.field15771) {
             return false;
         }
         if (Class9463.method35173().method35190().method29878(class399)) {
@@ -918,7 +918,7 @@ public class Class6430
         if (((LivingEntity)class399).method2664() == 0.0f) {
             return false;
         }
-        if (!Class6430.field25541.field4684.method2646((LivingEntity)class399)) {
+        if (!Class6430.field25541.player.method2646((LivingEntity)class399)) {
             return false;
         }
         if (class399 instanceof Class857) {
@@ -936,7 +936,7 @@ public class Class6430
         if (!b2 && !(class399 instanceof PlayerEntity)) {
             return false;
         }
-        if (Class6430.field25541.field4684.method1920() != null && Class6430.field25541.field4684.method1920().equals(class399)) {
+        if (Class6430.field25541.player.method1920() != null && Class6430.field25541.player.method1920().equals(class399)) {
             return false;
         }
         if (!class399.method1850()) {
@@ -953,9 +953,9 @@ public class Class6430
     }
     
     public static void method19179(final boolean b) {
-        final double field2395 = Class6430.field25541.field4684.posX;
-        final double field2396 = Class6430.field25541.field4684.posY;
-        final double field2397 = Class6430.field25541.field4684.posZ;
+        final double field2395 = Class6430.field25541.player.posX;
+        final double field2396 = Class6430.field25541.player.posY;
+        final double field2397 = Class6430.field25541.player.posZ;
         for (int n = 49 + Class7482.method23140() * 17, i = 0; i < n; ++i) {
             final double n2 = b ? method19180() : 0.0;
             Class6430.field25541.method5269().method17292(new Class4354(field2395 + n2, field2396 + 0.06248 + method19180(), field2397 + n2, false));

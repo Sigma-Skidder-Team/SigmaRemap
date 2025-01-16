@@ -54,7 +54,7 @@ public class Class8866
     
     public boolean method31132() {
         if (!this.field37268.method9887("Autoblock Mode").equals("None")) {
-            if (this.field37269.field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
+            if (this.field37269.player.getHeldItemMainhand().getItem() instanceof Class4077) {
                 if (!this.method31128()) {
                     return true;
                 }
@@ -111,12 +111,12 @@ public class Class8866
         while (iterator2.hasNext()) {
             final Class8131 class400 = (Class8131)iterator2.next();
             final Entity method26798 = class400.method26798();
-            if (method26798 != this.field37269.field4684 && method26798 != Class3276.field15771) {
+            if (method26798 != this.field37269.player && method26798 != Class3276.field15771) {
                 if (!Class9463.method35173().method35190().method29878(method26798)) {
                     if (method26798 instanceof LivingEntity) {
                         if (((LivingEntity)method26798).method2664() != 0.0f) {
-                            if (this.field37269.field4684.method1732(method26798) <= n) {
-                                if (this.field37269.field4684.method2646((LivingEntity)method26798)) {
+                            if (this.field37269.player.method1732(method26798) <= n) {
+                                if (this.field37269.player.method2646((LivingEntity)method26798)) {
                                     if (!(method26798 instanceof Class857)) {
                                         if (!this.field37268.method9883("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
@@ -130,7 +130,7 @@ public class Class8866
                                         else if (!this.field37268.method9883("Animals/Monsters") && !(method26798 instanceof PlayerEntity)) {
                                             iterator2.remove();
                                         }
-                                        else if (this.field37269.field4684.method1920() != null && this.field37269.field4684.method1920().equals(method26798)) {
+                                        else if (this.field37269.player.method1920() != null && this.field37269.player.method1920().equals(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!method26798.method1850()) {

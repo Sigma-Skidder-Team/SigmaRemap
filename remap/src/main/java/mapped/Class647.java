@@ -10,7 +10,7 @@ import net.minecraft.util.math.MathHelper;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class647 extends Class573
+public class Class647 extends Widget
 {
     private static final ResourceLocation field3666;
     private Class3426<?> field3667;
@@ -26,7 +26,7 @@ public class Class647 extends Class573
     
     public void method3698(final Class9586 field3669, final Class9257 class9257) {
         this.field3669 = field3669;
-        this.field3667 = (Class3426)class9257.method34160().field4684.field3009;
+        this.field3667 = (Class3426)class9257.method34160().player.field3009;
         this.field3668 = class9257.method34161();
         final List<Class3662<?>> method35946 = field3669.method35946(this.field3668.method19705(this.field3667));
         final Iterator<Class3662<?>> iterator = method35946.iterator();
@@ -67,13 +67,13 @@ public class Class647 extends Class573
         final boolean b = this.field3671 > 0.0f;
         if (b) {
             final float n6 = 1.0f + 0.1f * (float)Math.sin(this.field3671 / 15.0f * 3.1415927f);
-            Class8726.method30059();
-            Class8726.method30065((float)(this.field3426 + 8), (float)(this.field3427 + 12), 0.0f);
-            Class8726.method30063(n6, n6, 1.0f);
-            Class8726.method30065((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
+            RenderSystem.method30059();
+            RenderSystem.method30065((float)(this.field3426 + 8), (float)(this.field3427 + 12), 0.0f);
+            RenderSystem.method30063(n6, n6, 1.0f);
+            RenderSystem.method30065((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
             this.field3671 -= n3;
         }
-        this.method3186(this.field3426, this.field3427, n4, n5, this.field3424, this.field3425);
+        this.blit(this.field3426, this.field3427, n4, n5, this.field3424, this.field3425);
         final List<Class3662<?>> method5278 = this.method3701();
         this.field3672 = MathHelper.method35642(this.field3670 / 30.0f) % method5278.size();
         final ItemStack method5279 = method5278.get(this.field3672).method11292();
@@ -86,7 +86,7 @@ public class Class647 extends Class573
         }
         method5277.getItemRenderer().method6540(method5279, this.field3426 + n7, this.field3427 + n7);
         if (b) {
-            Class8726.method30060();
+            RenderSystem.method30060();
         }
     }
     
@@ -107,7 +107,7 @@ public class Class647 extends Class573
     }
     
     public List<String> method3704(final Screen class527) {
-        final List<String> method3030 = class527.method3030(this.method3701().get(this.field3672).method11292());
+        final List<String> method3030 = class527.getTooltipFromItem(this.method3701().get(this.field3672).method11292());
         if (this.field3669.method35946(this.field3668.method19705(this.field3667)).size() > 1) {
             method3030.add(Class8822.method30773("gui.recipebook.moreRecipes", new Object[0]));
         }

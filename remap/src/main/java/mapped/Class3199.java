@@ -16,10 +16,10 @@ public class Class3199 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3199.field15514.field4684.getHeldItemMainhand() == null) {
+        if (Class3199.field15514.player.getHeldItemMainhand() == null) {
             return;
         }
-        if (Class3199.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4036) {
+        if (Class3199.field15514.player.getHeldItemMainhand().getItem() instanceof Class4036) {
             if (!this.method9883("Reduce Delay")) {
                 Class3199.field15514.field4692 = 0;
             }

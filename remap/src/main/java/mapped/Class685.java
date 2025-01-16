@@ -24,14 +24,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-public class Class685 extends Class565
+public class Class685 extends AbstractGui
 {
     private static final ResourceLocation field3749;
     private static final ResourceLocation field3750;
     private static final ResourceLocation field3751;
     private final Random field3752;
     private final Minecraft field3753;
-    private final Class1796 field3754;
+    private final ItemRenderer field3754;
     private final Class684 field3755;
     private int field3756;
     private String field3757;
@@ -63,7 +63,7 @@ public class Class685 extends Class565
         this.field3752 = new Random();
         this.field3757 = "";
         this.field3760 = 1.0f;
-        this.field3762 = ItemStack.field34174;
+        this.field3762 = ItemStack.EMPTY;
         this.field3769 = "";
         this.field3770 = "";
         this.field3780 = Maps.newHashMap();
@@ -97,55 +97,55 @@ public class Class685 extends Class565
     public void method3779(final float n) {
         this.field3778 = this.field3753.method5332().method7696();
         this.field3779 = this.field3753.method5332().method7697();
-        final Class1844 method3809 = this.method3809();
-        Class8726.method30011();
+        final FontRenderer method3809 = this.method3809();
+        RenderSystem.enableBlend();
         if (!Config.method28917()) {
-            Class8726.method30008();
-            Class8726.method30117();
+            RenderSystem.enableDepthTest();
+            RenderSystem.defaultBlendFunc();
         }
         else {
             this.method3798(this.field3753.method5303());
         }
-        final ItemStack method3810 = this.field3753.field4684.field3006.method2370(3);
-        if (this.field3753.field4648.field23465 == 0) {
+        final ItemStack method3810 = this.field3753.player.field3006.method2370(3);
+        if (this.field3753.gameSettings.field23465 == 0) {
             if (method3810.getItem() == Class7521.field29342.method11704()) {
                 this.method3796();
             }
         }
-        if (!this.field3753.field4684.method2653(Class9439.field40482)) {
-            final float method3811 = MathHelper.method35700(n, this.field3753.field4684.field4096, this.field3753.field4684.field4095);
+        if (!this.field3753.player.method2653(Class9439.field40482)) {
+            final float method3811 = MathHelper.method35700(n, this.field3753.player.field4096, this.field3753.player.field4095);
             if (method3811 > 0.0f) {
                 this.method3799(method3811);
             }
         }
         if (this.field3753.field4682.method27336() != Class101.field301) {
-            if (!this.field3753.field4648.field23464) {
+            if (!this.field3753.gameSettings.field23464) {
                 this.method3784(n);
             }
         }
         else {
             this.field3765.method3322(n);
         }
-        if (!this.field3753.field4648.field23464) {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            this.field3753.method5290().method5849(Class685.field3363);
-            Class8726.method30011();
-            Class8726.method29999();
+        if (!this.field3753.gameSettings.field23464) {
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            this.field3753.method5290().method5849(Class685.GUI_ICONS_LOCATION);
+            RenderSystem.enableBlend();
+            RenderSystem.enableAlphaTest();
             this.method3781();
             Class8933.method31503();
-            Class8726.method30117();
+            RenderSystem.defaultBlendFunc();
             this.field3753.method5327().startSection("bossHealth");
             this.field3767.method3330();
             this.field3753.method5327().endSection();
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            this.field3753.method5290().method5849(Class685.field3363);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            this.field3753.method5290().method5849(Class685.GUI_ICONS_LOCATION);
             if (this.field3753.field4682.method27310()) {
                 this.method3794();
             }
             this.method3795();
-            Class8726.method30012();
+            RenderSystem.disableBlend();
             final int n2 = this.field3778 / 2 - 91;
-            if (!this.field3753.field4684.method4129()) {
+            if (!this.field3753.player.method4129()) {
                 if (this.field3753.field4682.method27330()) {
                     this.method3786(n2);
                 }
@@ -153,37 +153,37 @@ public class Class685 extends Class565
             else {
                 this.method3785(n2);
             }
-            if (this.field3753.field4648.field23400 && this.field3753.field4682.method27336() != Class101.field301) {
+            if (this.field3753.gameSettings.field23400 && this.field3753.field4682.method27336() != Class101.field301) {
                 this.method3787();
             }
-            else if (this.field3753.field4684.isSpectator()) {
+            else if (this.field3753.player.isSpectator()) {
                 this.field3765.method3325();
             }
         }
-        if (this.field3753.field4684.method2852() > 0) {
+        if (this.field3753.player.method2852() > 0) {
             this.field3753.method5327().startSection("sleep");
-            Class8726.method30007();
-            Class8726.method29998();
-            final float n3 = (float)this.field3753.field4684.method2852();
+            RenderSystem.disableDepthTest();
+            RenderSystem.disableAlphaTest();
+            final float n3 = (float)this.field3753.player.method2852();
             float n4 = n3 / 100.0f;
             if (n4 > 1.0f) {
                 n4 = 1.0f - (n3 - 100.0f) / 10.0f;
             }
-            Class565.method3293(0, 0, this.field3778, this.field3779, (int)(220.0f * n4) << 24 | 0x101020);
-            Class8726.method29999();
-            Class8726.method30008();
+            AbstractGui.fill(0, 0, this.field3778, this.field3779, (int)(220.0f * n4) << 24 | 0x101020);
+            RenderSystem.enableAlphaTest();
+            RenderSystem.enableDepthTest();
             this.field3753.method5327().endSection();
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         }
         if (this.field3753.method5268()) {
             this.method3788();
         }
         this.method3783();
-        if (this.field3753.field4648.field23466) {
+        if (this.field3753.gameSettings.field23466) {
             this.field3763.method3828();
         }
         Label_0204: {
-            if (!this.field3753.field4648.field23464) {
+            if (!this.field3753.gameSettings.field23464) {
                 if (this.field3758 > 0) {
                     this.field3753.method5327().startSection("overlayMessage");
                     final float n5 = this.field3758 - n;
@@ -192,19 +192,19 @@ public class Class685 extends Class565
                         n6 = 255;
                     }
                     if (n6 > 8) {
-                        Class8726.method30059();
-                        Class8726.method30065((float)(this.field3778 / 2), (float)(this.field3779 - 68), 0.0f);
-                        Class8726.method30011();
-                        Class8726.method30117();
+                        RenderSystem.method30059();
+                        RenderSystem.method30065((float)(this.field3778 / 2), (float)(this.field3779 - 68), 0.0f);
+                        RenderSystem.enableBlend();
+                        RenderSystem.defaultBlendFunc();
                         int n7 = 16777215;
                         if (this.field3759) {
                             n7 = (MathHelper.method35697(n5 / 50.0f, 0.7f, 0.6f) & 0xFFFFFF);
                         }
                         final int n8 = n6 << 24 & 0xFF000000;
-                        this.method3780(method3809, -4, method3809.method6617(this.field3757));
-                        method3809.method6610(this.field3757, (float)(-method3809.method6617(this.field3757) / 2), -4.0f, n7 | n8);
-                        Class8726.method30012();
-                        Class8726.method30060();
+                        this.method3780(method3809, -4, method3809.getStringWidth(this.field3757));
+                        method3809.method6610(this.field3757, (float)(-method3809.getStringWidth(this.field3757) / 2), -4.0f, n7 | n8);
+                        RenderSystem.disableBlend();
+                        RenderSystem.method30060();
                     }
                     this.field3753.method5327().endSection();
                 }
@@ -220,34 +220,34 @@ public class Class685 extends Class565
                     }
                     final int method3812 = MathHelper.method35651(n10, 0, 255);
                     if (method3812 > 8) {
-                        Class8726.method30059();
-                        Class8726.method30065((float)(this.field3778 / 2), (float)(this.field3779 / 2), 0.0f);
-                        Class8726.method30011();
-                        Class8726.method30117();
-                        Class8726.method30059();
-                        Class8726.method30063(4.0f, 4.0f, 4.0f);
+                        RenderSystem.method30059();
+                        RenderSystem.method30065((float)(this.field3778 / 2), (float)(this.field3779 / 2), 0.0f);
+                        RenderSystem.enableBlend();
+                        RenderSystem.defaultBlendFunc();
+                        RenderSystem.method30059();
+                        RenderSystem.method30063(4.0f, 4.0f, 4.0f);
                         final int n11 = method3812 << 24 & 0xFF000000;
-                        final int method3813 = method3809.method6617(this.field3769);
+                        final int method3813 = method3809.getStringWidth(this.field3769);
                         this.method3780(method3809, -10, method3813);
-                        method3809.method6609(this.field3769, (float)(-method3813 / 2), -10.0f, 0xFFFFFF | n11);
-                        Class8726.method30060();
+                        method3809.drawStringWithShadow(this.field3769, (float)(-method3813 / 2), -10.0f, 0xFFFFFF | n11);
+                        RenderSystem.method30060();
                         if (!this.field3770.isEmpty()) {
-                            Class8726.method30059();
-                            Class8726.method30063(2.0f, 2.0f, 2.0f);
-                            final int method3814 = method3809.method6617(this.field3770);
+                            RenderSystem.method30059();
+                            RenderSystem.method30063(2.0f, 2.0f, 2.0f);
+                            final int method3814 = method3809.getStringWidth(this.field3770);
                             this.method3780(method3809, 5, method3814);
-                            method3809.method6609(this.field3770, (float)(-method3814 / 2), 5.0f, 0xFFFFFF | n11);
-                            Class8726.method30060();
+                            method3809.drawStringWithShadow(this.field3770, (float)(-method3814 / 2), 5.0f, 0xFFFFFF | n11);
+                            RenderSystem.method30060();
                         }
-                        Class8726.method30012();
-                        Class8726.method30060();
+                        RenderSystem.disableBlend();
+                        RenderSystem.method30060();
                     }
                     this.field3753.method5327().endSection();
                 }
                 this.field3764.method3817();
                 final Class6516 method3815 = this.field3753.world.method6782();
                 Class9290 method3816 = null;
-                final Class6749 method3817 = method3815.method19651(this.field3753.field4684.method1867());
+                final Class6749 method3817 = method3815.method19651(this.field3753.player.method1867());
                 if (method3817 != null) {
                     final int method3818 = method3817.getColor().getColorIndex();
                     if (method3818 >= 0) {
@@ -264,20 +264,20 @@ public class Class685 extends Class565
                     this.method3789(class9290);
                     Class9463.method35173().method35188().method21097(new Class5726(false));
                 }
-                Class8726.method30011();
-                Class8726.method30117();
-                Class8726.method29998();
-                Class8726.method30059();
-                Class8726.method30065(0.0f, (float)(this.field3779 - 48), 0.0f);
+                RenderSystem.enableBlend();
+                RenderSystem.defaultBlendFunc();
+                RenderSystem.disableAlphaTest();
+                RenderSystem.method30059();
+                RenderSystem.method30065(0.0f, (float)(this.field3779 - 48), 0.0f);
                 this.field3753.method5327().startSection("chat");
                 this.field3755.method3757(this.field3756);
                 this.field3753.method5327().endSection();
-                Class8726.method30060();
+                RenderSystem.method30060();
                 final Class9290 method3819 = method3815.method19644(0);
                 Label_1448: {
-                    if (this.field3753.field4648.field23449.method1056()) {
+                    if (this.field3753.gameSettings.field23449.method1056()) {
                         if (this.field3753.method5283()) {
-                            if (this.field3753.field4684.field4069.method17370().size() <= 1) {
+                            if (this.field3753.player.field4069.method17370().size() <= 1) {
                                 if (method3819 == null) {
                                     break Label_1448;
                                 }
@@ -291,48 +291,48 @@ public class Class685 extends Class565
                 this.field3766.method3820(false);
             }
         }
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method29999();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.enableAlphaTest();
     }
     
-    private void method3780(final Class1844 class1844, final int n, final int n2) {
-        final int method17115 = this.field3753.field4648.method17115(0.0f);
+    private void method3780(final FontRenderer class1844, final int n, final int n2) {
+        final int method17115 = this.field3753.gameSettings.method17115(0.0f);
         if (method17115 != 0) {
             final int n3 = -n2 / 2;
-            Class565.method3293(n3 - 2, n - 2, n3 + n2 + 2, n + 9 + 2, method17115);
+            AbstractGui.fill(n3 - 2, n - 2, n3 + n2 + 2, n + 9 + 2, method17115);
         }
     }
     
     private void method3781() {
-        final Class5760 field4648 = this.field3753.field4648;
+        final Class5760 field4648 = this.field3753.gameSettings;
         if (field4648.field23465 == 0) {
             if (this.field3753.field4682.method27336() != Class101.field301 || this.method3782(this.field3753.field4691)) {
                 if (field4648.field23466) {
                     if (!field4648.field23464) {
-                        if (!this.field3753.field4684.method2896()) {
+                        if (!this.field3753.player.method2896()) {
                             if (!field4648.field23425) {
-                                Class8726.method30059();
-                                Class8726.method30065((float)(this.field3778 / 2), (float)(this.field3779 / 2), (float)this.method3303());
+                                RenderSystem.method30059();
+                                RenderSystem.method30065((float)(this.field3778 / 2), (float)(this.field3779 / 2), (float)this.getBlitOffset());
                                 final Class6092 method5833 = this.field3753.field4644.method5833();
-                                Class8726.method30062(method5833.method18163(), -1.0f, 0.0f, 0.0f);
-                                Class8726.method30062(method5833.method18164(), 0.0f, 1.0f, 0.0f);
-                                Class8726.method30063(-1.0f, -1.0f, -1.0f);
-                                Class8726.method30082(10);
-                                Class8726.method30060();
+                                RenderSystem.method30062(method5833.method18163(), -1.0f, 0.0f, 0.0f);
+                                RenderSystem.method30062(method5833.method18164(), 0.0f, 1.0f, 0.0f);
+                                RenderSystem.method30063(-1.0f, -1.0f, -1.0f);
+                                RenderSystem.method30082(10);
+                                RenderSystem.method30060();
                                 return;
                             }
                         }
                     }
                 }
-                Class8726.method30015(Class2050.field11690, Class2135.field12461, Class2050.field11686, Class2135.field12464);
-                this.method3186((this.field3778 - 15) / 2, (this.field3779 - 15) / 2, 0, 0, 15, 15);
-                if (this.field3753.field4648.field23408 == Class323.field1926) {
-                    final float method5834 = this.field3753.field4684.method2904(0.0f);
+                RenderSystem.method30015(Class2050.field11690, Class2135.field12461, Class2050.field11686, Class2135.field12464);
+                this.blit((this.field3778 - 15) / 2, (this.field3779 - 15) / 2, 0, 0, 15, 15);
+                if (this.field3753.gameSettings.field23408 == Class323.field1926) {
+                    final float method5834 = this.field3753.player.method2904(0.0f);
                     boolean b = false;
                     if (this.field3753.field4690 != null) {
                         if (this.field3753.field4690 instanceof LivingEntity) {
                             if (method5834 >= 1.0f) {
-                                b = (this.field3753.field4684.method2903() > 5.0f & this.field3753.field4690.method1768());
+                                b = (this.field3753.player.method2903() > 5.0f & this.field3753.field4690.method1768());
                             }
                         }
                     }
@@ -341,12 +341,12 @@ public class Class685 extends Class565
                     if (!b) {
                         if (method5834 < 1.0f) {
                             final int n3 = (int)(method5834 * 17.0f);
-                            this.method3186(n2, n, 36, 94, 16, 4);
-                            this.method3186(n2, n, 52, 94, n3, 4);
+                            this.blit(n2, n, 36, 94, 16, 4);
+                            this.blit(n2, n, 52, 94, n3, 4);
                         }
                     }
                     else {
-                        this.method3186(n2, n, 68, 94, 16, 16);
+                        this.blit(n2, n, 68, 94, 16, 16);
                     }
                 }
             }
@@ -369,11 +369,11 @@ public class Class685 extends Class565
     }
     
     public void method3783() {
-        final Collection<Class1948> method2651 = this.field3753.field4684.method2651();
+        final Collection<Class1948> method2651 = this.field3753.player.method2651();
         if (method2651.isEmpty()) {
             return;
         }
-        Class8726.method30011();
+        RenderSystem.enableBlend();
         int n = 0;
         int n2 = 0;
         this.field3753.method5325();
@@ -405,30 +405,30 @@ public class Class685 extends Class565
                 ++n;
                 j = field3778 - 25 * n;
             }
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             float f = 1.0f;
             if (!class1948.method7909()) {
-                this.method3186(j, i, 141, 166, 24, 24);
+                this.blit(j, i, 141, 166, 24, 24);
                 if (class1948.method7907() <= 200) {
                     f = MathHelper.clamp(class1948.method7907() / 10.0f / 5.0f * 0.5f, 0.0f, 0.5f) + MathHelper.cos(class1948.method7907() * 3.1415927f / 5.0f) * MathHelper.clamp((10 - class1948.method7907() / 20) / 10.0f * 0.25f, 0.0f, 0.25f);
                 }
             }
             else {
-                this.method3186(j, i, 165, 166, 24, 24);
+                this.blit(j, i, 165, 166, 24, 24);
             }
             arrayListWithExpectedSize.add(() -> {
                 final Class5328 class1951;
                 final Class1787 class1950;
                 class1950.method6446(class1951);
                 this.field3753.method5290().method5849(class1949.method7504().method6340());
-                Class8726.method30068(1.0f, 1.0f, 1.0f, n3);
-                Class565.method3298(n4 + 3, n5 + 3, this.method3303(), 18, 18, class1949);
+                RenderSystem.method30068(1.0f, 1.0f, 1.0f, n3);
+                AbstractGui.blit(n4 + 3, n5 + 3, this.getBlitOffset(), 18, 18, class1949);
                 return;
             });
             if (!Class9570.field41351.method22605()) {
                 continue;
             }
-            Class9570.method35826(class1948, Class9570.field41351, this, j, i, this.method3303(), f);
+            Class9570.method35826(class1948, Class9570.field41351, this, j, i, this.getBlitOffset(), f);
         }
         arrayListWithExpectedSize.forEach(Runnable::run);
     }
@@ -436,27 +436,27 @@ public class Class685 extends Class565
     public void method3784(final float n) {
         final PlayerEntity method3790 = this.method3790();
         if (method3790 != null) {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             this.field3753.method5290().method5849(Class685.field3750);
             final ItemStack method3791 = method3790.method2714();
             final Class2226 method3792 = method3790.method2755().method8419();
             final int n2 = this.field3778 / 2;
-            final int method3793 = this.method3303();
-            this.method3304(-90);
-            this.method3186(n2 - 91, this.field3779 - 22, 0, 0, 182, 22);
-            this.method3186(n2 - 91 - 1 + method3790.field3006.field2743 * 20, this.field3779 - 22 - 1, 0, 22, 24, 22);
+            final int method3793 = this.getBlitOffset();
+            this.setBlitOffset(-90);
+            this.blit(n2 - 91, this.field3779 - 22, 0, 0, 182, 22);
+            this.blit(n2 - 91 - 1 + method3790.field3006.field2743 * 20, this.field3779 - 22 - 1, 0, 22, 24, 22);
             if (!method3791.method27620()) {
                 if (method3792 != Class2226.field13697) {
-                    this.method3186(n2 + 91, this.field3779 - 23, 53, 22, 29, 24);
+                    this.blit(n2 + 91, this.field3779 - 23, 53, 22, 29, 24);
                 }
                 else {
-                    this.method3186(n2 - 91 - 29, this.field3779 - 23, 24, 22, 29, 24);
+                    this.blit(n2 - 91 - 29, this.field3779 - 23, 24, 22, 29, 24);
                 }
             }
-            this.method3304(method3793);
-            Class8726.method30046();
-            Class8726.method30011();
-            Class8726.method30117();
+            this.setBlitOffset(method3793);
+            RenderSystem.enableRescaleNormal();
+            RenderSystem.enableBlend();
+            RenderSystem.defaultBlendFunc();
             Class9404.method34980(false);
             for (int i = 0; i < 9; ++i) {
                 this.method3800(n2 - 90 + i * 20 + 2, this.field3779 - 16 - 3, n, method3790, method3790.field3006.field2739.get(i));
@@ -472,58 +472,58 @@ public class Class685 extends Class565
                 }
                 Class9404.method34980(false);
             }
-            if (this.field3753.field4648.field23408 == Class323.field1927) {
-                final float method3794 = this.field3753.field4684.method2904(0.0f);
+            if (this.field3753.gameSettings.field23408 == Class323.field1927) {
+                final float method3794 = this.field3753.player.method2904(0.0f);
                 if (method3794 < 1.0f) {
                     final int n4 = this.field3779 - 20;
                     int n5 = n2 + 91 + 6;
                     if (method3792 == Class2226.field13698) {
                         n5 = n2 - 91 - 22;
                     }
-                    this.field3753.method5290().method5849(Class565.field3363);
+                    this.field3753.method5290().method5849(AbstractGui.GUI_ICONS_LOCATION);
                     final int n6 = (int)(method3794 * 19.0f);
-                    Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-                    this.method3186(n5, n4, 0, 94, 18, 18);
-                    this.method3186(n5, n4 + 18 - n6, 18, 112 - n6, 18, n6);
+                    RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                    this.blit(n5, n4, 0, 94, 18, 18);
+                    this.blit(n5, n4 + 18 - n6, 18, 112 - n6, 18, n6);
                 }
             }
-            Class8726.method30047();
-            Class8726.method30012();
+            RenderSystem.disableRescaleNormal();
+            RenderSystem.disableBlend();
         }
     }
     
     public void method3785(final int n) {
         this.field3753.method5327().startSection("jumpBar");
-        this.field3753.method5290().method5849(Class565.field3363);
-        final int n2 = (int)(this.field3753.field4684.method4130() * 183.0f);
+        this.field3753.method5290().method5849(AbstractGui.GUI_ICONS_LOCATION);
+        final int n2 = (int)(this.field3753.player.method4130() * 183.0f);
         final int n3 = this.field3779 - 32 + 3;
-        this.method3186(n, n3, 0, 84, 182, 5);
+        this.blit(n, n3, 0, 84, 182, 5);
         if (n2 > 0) {
-            this.method3186(n, n3, 0, 89, n2, 5);
+            this.blit(n, n3, 0, 89, n2, 5);
         }
         this.field3753.method5327().endSection();
     }
     
     public void method3786(final int n) {
         this.field3753.method5327().startSection("expBar");
-        this.field3753.method5290().method5849(Class565.field3363);
-        if (this.field3753.field4684.method2875() > 0) {
-            final int n2 = (int)(this.field3753.field4684.field3028 * 183.0f);
+        this.field3753.method5290().method5849(AbstractGui.GUI_ICONS_LOCATION);
+        if (this.field3753.player.method2875() > 0) {
+            final int n2 = (int)(this.field3753.player.field3028 * 183.0f);
             final int n3 = this.field3779 - 32 + 3;
-            this.method3186(n, n3, 0, 64, 182, 5);
+            this.blit(n, n3, 0, 64, 182, 5);
             if (n2 > 0) {
-                this.method3186(n, n3, 0, 69, n2, 5);
+                this.blit(n, n3, 0, 69, n2, 5);
             }
         }
         this.field3753.method5327().endSection();
-        if (this.field3753.field4684.field3026 > 0) {
+        if (this.field3753.player.field3026 > 0) {
             this.field3753.method5327().startSection("expLevel");
             int method30384 = 8453920;
             if (Config.method28945()) {
                 method30384 = Class8763.method30384(method30384);
             }
-            final String string = "" + this.field3753.field4684.field3026;
-            final int n4 = (this.field3778 - this.method3809().method6617(string)) / 2;
+            final String string = "" + this.field3753.player.field3026;
+            final int n4 = (this.field3778 - this.method3809().getStringWidth(string)) / 2;
             final int n5 = this.field3779 - 31 - 4;
             this.method3809().method6610(string, (float)(n4 + 1), (float)n5, 0);
             this.method3809().method6610(string, (float)(n4 - 1), (float)n5, 0);
@@ -546,7 +546,7 @@ public class Class685 extends Class565
                 if (Class9570.field41336.method22605()) {
                     s = Class9570.method35825(this.field3762, Class9570.field41336, s);
                 }
-                final int n = (this.field3778 - this.method3809().method6617(s)) / 2;
+                final int n = (this.field3778 - this.method3809().getStringWidth(s)) / 2;
                 int n2 = this.field3779 - 59;
                 if (!this.field3753.field4682.method27310()) {
                     n2 += 14;
@@ -556,22 +556,22 @@ public class Class685 extends Class565
                     n3 = 255;
                 }
                 if (n3 > 0) {
-                    Class8726.method30059();
-                    Class8726.method30011();
-                    Class8726.method30117();
-                    Class565.method3293(n - 2, n2 - 2, n + this.method3809().method6617(s) + 2, n2 + 9 + 2, this.field3753.field4648.method17116(0));
-                    Class1844 class1844 = null;
+                    RenderSystem.method30059();
+                    RenderSystem.enableBlend();
+                    RenderSystem.defaultBlendFunc();
+                    AbstractGui.fill(n - 2, n2 - 2, n + this.method3809().getStringWidth(s) + 2, n2 + 9 + 2, this.field3753.gameSettings.method17116(0));
+                    FontRenderer class1844 = null;
                     if (Class9570.field41326.method22605()) {
-                        class1844 = (Class1844)Class9570.method35826(this.field3762.getItem(), Class9570.field41326, this.field3762);
+                        class1844 = (FontRenderer)Class9570.method35826(this.field3762.getItem(), Class9570.field41326, this.field3762);
                     }
                     if (class1844 == null) {
-                        this.method3809().method6609(s, (float)n, (float)n2, 16777215 + (n3 << 24));
+                        this.method3809().drawStringWithShadow(s, (float)n, (float)n2, 16777215 + (n3 << 24));
                     }
                     else {
-                        class1844.method6609(s, (float)((this.field3778 - class1844.method6617(s)) / 2), (float)n2, 16777215 + (n3 << 24));
+                        class1844.drawStringWithShadow(s, (float)((this.field3778 - class1844.getStringWidth(s)) / 2), (float)n2, 16777215 + (n3 << 24));
                     }
-                    Class8726.method30012();
-                    Class8726.method30060();
+                    RenderSystem.disableBlend();
+                    RenderSystem.method30060();
                 }
             }
         }
@@ -587,7 +587,7 @@ public class Class685 extends Class565
         else {
             s = Class8822.method30773("demo.demoExpired", new Object[0]);
         }
-        this.method3809().method6609(s, (float)(this.field3778 - this.method3809().method6617(s) - 10), 5.0f, 16777215);
+        this.method3809().drawStringWithShadow(s, (float)(this.field3778 - this.method3809().getStringWidth(s) - 10), 5.0f, 16777215);
         this.field3753.method5327().endSection();
     }
     
@@ -604,29 +604,29 @@ public class Class685 extends Class565
         }
         final String method34313 = class9290.method34314().getFormattedText();
         int a;
-        final int n = a = this.method3809().method6617(method34313);
+        final int n = a = this.method3809().getStringWidth(method34313);
         for (final Class7628 class9291 : arrayList) {
-            a = Math.max(a, this.method3809().method6617(Class6749.method20549(method34311.method19651(class9291.method23973()), new StringTextComponent(class9291.method23973())).getFormattedText() + ": " + TextFormatting.RED + class9291.method23969()));
+            a = Math.max(a, this.method3809().getStringWidth(Class6749.method20549(method34311.method19651(class9291.method23973()), new StringTextComponent(class9291.method23973())).getFormattedText() + ": " + TextFormatting.RED + class9291.method23969()));
         }
         final int n2 = this.field3779 / 2 + arrayList.size() * 9 / 3;
         final int n3 = this.field3778 - a - 3;
         int n4 = 0;
-        final int method34314 = this.field3753.field4648.method17115(0.3f);
-        final int method34315 = this.field3753.field4648.method17115(0.4f);
+        final int method34314 = this.field3753.gameSettings.method17115(0.3f);
+        final int method34315 = this.field3753.gameSettings.method17115(0.4f);
         for (final Class7628 class9292 : arrayList) {
             ++n4;
             final String method34316 = Class6749.method20549(method34311.method19651(class9292.method23973()), new StringTextComponent(class9292.method23973())).getFormattedText();
             final String string = TextFormatting.RED + "" + class9292.method23969();
             final int n5 = n2 - n4 * 9;
             final int n6 = this.field3778 - 3 + 2;
-            Class565.method3293(n3 - 2, n5, n6, n5 + 9, method34314);
+            AbstractGui.fill(n3 - 2, n5, n6, n5 + 9, method34314);
             this.method3809().method6610(method34316, (float)n3, (float)n5, -1);
-            this.method3809().method6610(string, (float)(n6 - this.method3809().method6617(string)), (float)n5, -1);
+            this.method3809().method6610(string, (float)(n6 - this.method3809().getStringWidth(string)), (float)n5, -1);
             if (n4 != arrayList.size()) {
                 continue;
             }
-            Class565.method3293(n3 - 2, n5 - 9 - 1, n6, n5 - 1, method34315);
-            Class565.method3293(n3 - 2, n5 - 1, n6, n5, method34314);
+            AbstractGui.fill(n3 - 2, n5 - 9 - 1, n6, n5 - 1, method34315);
+            AbstractGui.fill(n3 - 2, n5 - 1, n6, n5, method34314);
             this.method3809().method6610(method34313, (float)(n3 + a / 2 - n / 2), (float)(n5 - 9), -1);
         }
     }
@@ -710,13 +710,13 @@ public class Class685 extends Class565
                 if (method3797 > 0) {
                     final int n9 = n + i * 8;
                     if (i * 2 + 1 < method3797) {
-                        this.method3186(n9, n5, 34, 9, 9, 9);
+                        this.blit(n9, n5, 34, 9, 9, 9);
                     }
                     if (i * 2 + 1 == method3797) {
-                        this.method3186(n9, n5, 25, 9, 9, 9);
+                        this.blit(n9, n5, 25, 9, 9, 9);
                     }
                     if (i * 2 + 1 > method3797) {
-                        this.method3186(n9, n5, 16, 9, 9, 9);
+                        this.blit(n9, n5, 16, 9, 9, 9);
                     }
                 }
             }
@@ -750,29 +750,29 @@ public class Class685 extends Class565
                 if (method3790.world.method6764().method29568()) {
                     n15 = 5;
                 }
-                this.method3186(n13, n14, 16 + n11 * 9, 9 * n15, 9, 9);
+                this.blit(n13, n14, 16 + n11 * 9, 9 * n15, 9, 9);
                 if (b) {
                     if (j * 2 + 1 < field3775) {
-                        this.method3186(n13, n14, n10 + 54, 9 * n15, 9, 9);
+                        this.blit(n13, n14, n10 + 54, 9 * n15, 9, 9);
                     }
                     if (j * 2 + 1 == field3775) {
-                        this.method3186(n13, n14, n10 + 63, 9 * n15, 9, 9);
+                        this.blit(n13, n14, n10 + 63, 9 * n15, 9, 9);
                     }
                 }
                 if (n7 <= 0) {
                     if (j * 2 + 1 < method3791) {
-                        this.method3186(n13, n14, n10 + 36, 9 * n15, 9, 9);
+                        this.blit(n13, n14, n10 + 36, 9 * n15, 9, 9);
                     }
                     if (j * 2 + 1 == method3791) {
-                        this.method3186(n13, n14, n10 + 45, 9 * n15, 9, 9);
+                        this.blit(n13, n14, n10 + 45, 9 * n15, 9, 9);
                     }
                 }
                 else if (n7 == method3795 && method3795 % 2 == 1) {
-                    this.method3186(n13, n14, n10 + 153, 9 * n15, 9, 9);
+                    this.blit(n13, n14, n10 + 153, 9 * n15, 9, 9);
                     --n7;
                 }
                 else {
-                    this.method3186(n13, n14, n10 + 144, 9 * n15, 9, 9);
+                    this.blit(n13, n14, n10 + 144, 9 * n15, 9, 9);
                     n7 -= 2;
                 }
             }
@@ -793,12 +793,12 @@ public class Class685 extends Class565
                         }
                     }
                     final int n19 = n2 - k * 8 - 9;
-                    this.method3186(n19, n16, 16 + n18 * 9, 27, 9, 9);
+                    this.blit(n19, n16, 16 + n18 * 9, 27, 9, 9);
                     if (k * 2 + 1 < method3793) {
-                        this.method3186(n19, n16, n17 + 36, 27, 9, 9);
+                        this.blit(n19, n16, n17 + 36, 27, 9, 9);
                     }
                     if (k * 2 + 1 == method3793) {
-                        this.method3186(n19, n16, n17 + 45, 27, 9, 9);
+                        this.blit(n19, n16, n17 + 45, 27, 9, 9);
                     }
                 }
                 n6 -= 10;
@@ -810,10 +810,10 @@ public class Class685 extends Class565
                 final int n20 = n6 - (this.method3793(method3798) - 1) * 10;
                 for (int method3801 = MathHelper.ceil((method3799 - 2) * 10.0 / method3800), n21 = MathHelper.ceil(method3799 * 10.0 / method3800) - method3801, l = 0; l < method3801 + n21; ++l) {
                     if (l >= method3801) {
-                        this.method3186(n2 - l * 8 - 9, n20, 25, 18, 9, 9);
+                        this.blit(n2 - l * 8 - 9, n20, 25, 18, 9, 9);
                     }
                     else {
-                        this.method3186(n2 - l * 8 - 9, n20, 16, 18, 9, 9);
+                        this.blit(n2 - l * 8 - 9, n20, 16, 18, 9, 9);
                     }
                 }
             }
@@ -838,12 +838,12 @@ public class Class685 extends Class565
                     for (int j = 0; j < min; ++j) {
                         final int n6 = 0;
                         final int n7 = n3 - j * 8 - 9;
-                        this.method3186(n7, n4, 52 + n6 * 9, 9, 9, 9);
+                        this.blit(n7, n4, 52 + n6 * 9, 9, 9, 9);
                         if (j * 2 + 1 + n5 < n) {
-                            this.method3186(n7, n4, 88, 9, 9, 9);
+                            this.blit(n7, n4, 88, 9, 9, 9);
                         }
                         if (j * 2 + 1 + n5 == n) {
-                            this.method3186(n7, n4, 97, 9, 9, 9);
+                            this.blit(n7, n4, 97, 9, 9, 9);
                         }
                     }
                     n4 -= 10;
@@ -854,24 +854,24 @@ public class Class685 extends Class565
     }
     
     private void method3796() {
-        Class8726.method30007();
-        Class8726.method30010(false);
-        Class8726.method30117();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method29998();
+        RenderSystem.disableDepthTest();
+        RenderSystem.method30010(false);
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.disableAlphaTest();
         this.field3753.method5290().method5849(Class685.field3751);
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        method22695.method12390(7, Class9237.field39617);
-        method22695.method12432(0.0, this.field3779, -90.0).method12391(0.0f, 1.0f).method12397();
-        method22695.method12432(this.field3778, this.field3779, -90.0).method12391(1.0f, 1.0f).method12397();
-        method22695.method12432(this.field3778, 0.0, -90.0).method12391(1.0f, 0.0f).method12397();
-        method22695.method12432(0.0, 0.0, -90.0).method12391(0.0f, 0.0f).method12397();
-        method22694.method22695();
-        Class8726.method30010(true);
-        Class8726.method30008();
-        Class8726.method29999();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        method22695.begin(7, DefaultVertexFormats.field39617);
+        method22695.pos(0.0, this.field3779, -90.0).tex(0.0f, 1.0f).endVertex();
+        method22695.pos(this.field3778, this.field3779, -90.0).tex(1.0f, 1.0f).endVertex();
+        method22695.pos(this.field3778, 0.0, -90.0).tex(1.0f, 0.0f).endVertex();
+        method22695.pos(0.0, 0.0, -90.0).tex(0.0f, 0.0f).endVertex();
+        method22694.draw();
+        RenderSystem.method30010(true);
+        RenderSystem.enableDepthTest();
+        RenderSystem.enableAlphaTest();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
     }
     
     private void method3797(final Entity class399) {
@@ -892,32 +892,32 @@ public class Class685 extends Class565
             else {
                 n2 = 1.0f - (float)(n / max);
             }
-            Class8726.method30007();
-            Class8726.method30010(false);
-            Class8726.method30015(Class2050.field11696, Class2135.field12461, Class2050.field11686, Class2135.field12464);
+            RenderSystem.disableDepthTest();
+            RenderSystem.method30010(false);
+            RenderSystem.method30015(Class2050.field11696, Class2135.field12461, Class2050.field11686, Class2135.field12464);
             if (n2 <= 0.0f) {
-                Class8726.method30068(this.field3760, this.field3760, this.field3760, 1.0f);
+                RenderSystem.method30068(this.field3760, this.field3760, this.field3760, 1.0f);
             }
             else {
-                Class8726.method30068(0.0f, n2, n2, 1.0f);
+                RenderSystem.method30068(0.0f, n2, n2, 1.0f);
             }
             this.field3753.method5290().method5849(Class685.field3749);
-            final Class7392 method6788 = Class7392.method22694();
-            final Class4148 method6789 = method6788.method22696();
-            method6789.method12390(7, Class9237.field39617);
-            method6789.method12432(0.0, this.field3779, -90.0).method12391(0.0f, 1.0f).method12397();
-            method6789.method12432(this.field3778, this.field3779, -90.0).method12391(1.0f, 1.0f).method12397();
-            method6789.method12432(this.field3778, 0.0, -90.0).method12391(1.0f, 0.0f).method12397();
-            method6789.method12432(0.0, 0.0, -90.0).method12391(0.0f, 0.0f).method12397();
-            method6788.method22695();
-            Class8726.method30010(true);
-            Class8726.method30008();
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method30117();
+            final Tessellator method6788 = Tessellator.getInstance();
+            final BufferBuilder method6789 = method6788.getBuffer();
+            method6789.begin(7, DefaultVertexFormats.field39617);
+            method6789.pos(0.0, this.field3779, -90.0).tex(0.0f, 1.0f).endVertex();
+            method6789.pos(this.field3778, this.field3779, -90.0).tex(1.0f, 1.0f).endVertex();
+            method6789.pos(this.field3778, 0.0, -90.0).tex(1.0f, 0.0f).endVertex();
+            method6789.pos(0.0, 0.0, -90.0).tex(0.0f, 0.0f).endVertex();
+            method6788.draw();
+            RenderSystem.method30010(true);
+            RenderSystem.enableDepthTest();
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.defaultBlendFunc();
         }
         else {
-            Class8726.method30008();
-            Class8726.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
+            RenderSystem.enableDepthTest();
+            RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
         }
     }
     
@@ -927,44 +927,44 @@ public class Class685 extends Class565
             n *= n;
             n = n * 0.8f + 0.2f;
         }
-        Class8726.method29998();
-        Class8726.method30007();
-        Class8726.method30010(false);
-        Class8726.method30117();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, n);
+        RenderSystem.disableAlphaTest();
+        RenderSystem.disableDepthTest();
+        RenderSystem.method30010(false);
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, n);
         this.field3753.method5290().method5849(Class1774.field9853);
-        final Class1912 method35427 = this.field3753.method5305().method5787().method35427(Class7521.field29341.getDefaultState());
+        final TextureAtlasSprite method35427 = this.field3753.method5305().method5787().method35427(Class7521.field29341.getDefaultState());
         final float method35428 = method35427.method7497();
         final float method35429 = method35427.method7500();
         final float method35430 = method35427.method7498();
         final float method35431 = method35427.method7501();
-        final Class7392 method35432 = Class7392.method22694();
-        final Class4148 method35433 = method35432.method22696();
-        method35433.method12390(7, Class9237.field39617);
-        method35433.method12432(0.0, this.field3779, -90.0).method12391(method35428, method35431).method12397();
-        method35433.method12432(this.field3778, this.field3779, -90.0).method12391(method35430, method35431).method12397();
-        method35433.method12432(this.field3778, 0.0, -90.0).method12391(method35430, method35429).method12397();
-        method35433.method12432(0.0, 0.0, -90.0).method12391(method35428, method35429).method12397();
-        method35432.method22695();
-        Class8726.method30010(true);
-        Class8726.method30008();
-        Class8726.method29999();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        final Tessellator method35432 = Tessellator.getInstance();
+        final BufferBuilder method35433 = method35432.getBuffer();
+        method35433.begin(7, DefaultVertexFormats.field39617);
+        method35433.pos(0.0, this.field3779, -90.0).tex(method35428, method35431).endVertex();
+        method35433.pos(this.field3778, this.field3779, -90.0).tex(method35430, method35431).endVertex();
+        method35433.pos(this.field3778, 0.0, -90.0).tex(method35430, method35429).endVertex();
+        method35433.pos(0.0, 0.0, -90.0).tex(method35428, method35429).endVertex();
+        method35432.draw();
+        RenderSystem.method30010(true);
+        RenderSystem.enableDepthTest();
+        RenderSystem.enableAlphaTest();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
     }
     
     private void method3800(final int n, final int n2, final float n3, final PlayerEntity playerEntity, final ItemStack class513) {
         if (!class513.method27620()) {
             final float n4 = class513.method27688() - n3;
             if (n4 > 0.0f) {
-                Class8726.method30059();
+                RenderSystem.method30059();
                 final float n5 = 1.0f + n4 / 5.0f;
-                Class8726.method30065((float)(n + 8), (float)(n2 + 12), 0.0f);
-                Class8726.method30063(1.0f / n5, (n5 + 1.0f) / 2.0f, 1.0f);
-                Class8726.method30065((float)(-(n + 8)), (float)(-(n2 + 12)), 0.0f);
+                RenderSystem.method30065((float)(n + 8), (float)(n2 + 12), 0.0f);
+                RenderSystem.method30063(1.0f / n5, (n5 + 1.0f) / 2.0f, 1.0f);
+                RenderSystem.method30065((float)(-(n + 8)), (float)(-(n2 + 12)), 0.0f);
             }
             this.field3754.method6541(playerEntity, class513, n, n2);
             if (n4 > 0.0f) {
-                Class8726.method30060();
+                RenderSystem.method30060();
             }
             this.field3754.method6542(this.field3753.fontRenderer, class513, n, n2);
         }
@@ -989,8 +989,8 @@ public class Class685 extends Class565
         if (method5303 != null) {
             this.method3797(method5303);
         }
-        if (this.field3753.field4684 != null) {
-            final ItemStack method5304 = this.field3753.field4684.field3006.method2345();
+        if (this.field3753.player != null) {
+            final ItemStack method5304 = this.field3753.player.field3006.method2345();
             boolean equals = true;
             if (Class9570.field41336.method22605()) {
                 equals = Config.equals(Class9570.method35825(method5304, Class9570.field41336, method5304.method27664().getUnformattedComponentText()), Class9570.method35825(this.field3762, Class9570.field41336, this.field3762.method27664().getUnformattedComponentText()));
@@ -1089,7 +1089,7 @@ public class Class685 extends Class565
         return this.field3756;
     }
     
-    public Class1844 method3809() {
+    public FontRenderer method3809() {
         return this.field3753.fontRenderer;
     }
     

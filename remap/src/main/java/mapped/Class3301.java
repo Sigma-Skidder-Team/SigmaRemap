@@ -28,17 +28,17 @@ public class Class3301 extends Class3167
         }
         if (this.method9883("Sneak")) {
             if (this.field15870) {
-                Class3301.field15514.method5269().method17292(new Class4336(Class3301.field15514.field4684, Class287.field1592));
+                Class3301.field15514.method5269().method17292(new Class4336(Class3301.field15514.player, Class287.field1592));
             }
             else {
-                Class3301.field15514.method5269().method17292(new Class4336(Class3301.field15514.field4684, Class287.field1591));
+                Class3301.field15514.method5269().method17292(new Class4336(Class3301.field15514.player, Class287.field1591));
             }
         }
         this.field15870 = !this.field15870;
         ++this.field15871;
         if (this.method9883("Hit") && this.field15871 > this.field15869.nextInt(5) + 3) {
             this.field15871 = 0;
-            Class3301.field15514.field4684.method2707(Class316.values()[this.field15869.nextInt(1)]);
+            Class3301.field15514.player.method2707(Class316.values()[this.field15869.nextInt(1)]);
         }
         final String method9887 = this.method9887("Rotation Mode");
         switch (method9887) {
@@ -60,6 +60,6 @@ public class Class3301 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15872 = (int)Class3301.field15514.field4684.rotationYaw;
+        this.field15872 = (int)Class3301.field15514.player.rotationYaw;
     }
 }

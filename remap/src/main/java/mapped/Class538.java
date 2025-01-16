@@ -65,12 +65,12 @@ public class Class538 extends Screen
         this.field3200.method3380(this.field3204);
         this.field3200.method3374(this::method3096);
         this.children.add(this.field3200);
-        this.field3202 = this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 72, 200, 20, Class8822.method30773("addServer.resourcePack", new Object[0]) + ": " + this.field3199.method35866().method8380().getFormattedText(), class654 -> {
+        this.field3202 = this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 72, 200, 20, Class8822.method30773("addServer.resourcePack", new Object[0]) + ": " + this.field3199.method35866().method8380().getFormattedText(), class654 -> {
             this.field3199.method35867(Class2203.values()[(this.field3199.method35866().ordinal() + 1) % Class2203.values().length]);
             this.field3202.method3367(Class8822.method30773("addServer.resourcePack", new Object[0]) + ": " + this.field3199.method35866().method8380().getFormattedText());
         }));
-        this.field3197 = this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 96 + 18, 200, 20, Class8822.method30773("addServer.add", new Object[0]), class654 -> this.method3097()));
-        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 18, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3198.accept(false)));
+        this.field3197 = this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 96 + 18, 200, 20, Class8822.method30773("addServer.add", new Object[0]), class654 -> this.method3097()));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 18, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3198.accept(false)));
         this.method3098();
     }
     
@@ -99,9 +99,9 @@ public class Class538 extends Screen
     }
     
     @Override
-    public void method3028() {
+    public void onClose() {
         this.method3098();
-        this.minecraft.method5244(this.field3203);
+        this.minecraft.displayGuiScreen(this.field3203);
     }
     
     private void method3098() {
@@ -122,13 +122,13 @@ public class Class538 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 17, 16777215);
-        this.method3297(this.font, Class8822.method30773("addServer.enterName", new Object[0]), this.width / 2 - 100, 53, 10526880);
-        this.method3297(this.font, Class8822.method30773("addServer.enterIp", new Object[0]), this.width / 2 - 100, 94, 10526880);
-        this.field3201.method2975(n, n2, n3);
-        this.field3200.method2975(n, n2, n3);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 17, 16777215);
+        this.drawString(this.font, Class8822.method30773("addServer.enterName", new Object[0]), this.width / 2 - 100, 53, 10526880);
+        this.drawString(this.font, Class8822.method30773("addServer.enterIp", new Object[0]), this.width / 2 - 100, 94, 10526880);
+        this.field3201.render(n, n2, n3);
+        this.field3200.render(n, n2, n3);
+        super.render(n, n2, n3);
     }
 }

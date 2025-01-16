@@ -28,7 +28,7 @@ public class Class3195 extends Class3167
             GL11.glDepthMask(false);
             GL11.glShadeModel(7425);
             for (final Entity class5740 : Class6430.method19108()) {
-                if (class5740 == Class3195.field15514.field4684) {
+                if (class5740 == Class3195.field15514.player) {
                     continue;
                 }
                 if (!class5740.method1768()) {
@@ -57,7 +57,7 @@ public class Class3195 extends Class3167
         final double field38854 = Class8591.method29094(class399).field38854;
         final double n = Class8591.method29094(class399).field38855 + class399.method1931() / 2.0f;
         final double field38855 = Class8591.method29094(class399).field38856;
-        final Vec3d method16755 = new Vec3d(0.0, 0.0, 10.0).rotatePitch(-(float)Math.toRadians(Minecraft.method5277().field4684.rotationPitch)).rotateYaw(-(float)Math.toRadians(Minecraft.method5277().field4684.rotationYaw));
+        final Vec3d method16755 = new Vec3d(0.0, 0.0, 10.0).rotatePitch(-(float)Math.toRadians(Minecraft.method5277().player.rotationPitch)).rotateYaw(-(float)Math.toRadians(Minecraft.method5277().player.rotationYaw));
         final int method16756 = this.method9885("Color");
         GL11.glBegin(1);
         GL11.glColor4fv(Class6430.method19139(Class6430.method19118(method16756, 0.45f)));

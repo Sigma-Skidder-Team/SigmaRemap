@@ -45,7 +45,7 @@ public class Class4764 extends Class4712<Class844, Class5879>
         return new Vec3d(MathHelper.lerp(n2, class511.lastTickPosX, class511.getPosX()), MathHelper.lerp(n2, class511.lastTickPosY, class511.getPosY()) + n, MathHelper.lerp(n2, class511.lastTickPosZ, class511.getPosZ()));
     }
     
-    public void method14105(final Class844 class844, final float n, final float n2, final Class7351 class845, final Class7807 class846, final int n3) {
+    public void method14105(final Class844 class844, final float n, final float n2, final MatrixStack class845, final IRenderTypeBuffer class846, final int n3) {
         super.method14006(class844, n, n2, class845, class846, n3);
         final LivingEntity method5059 = class844.method5059();
         if (method5059 != null) {
@@ -85,8 +85,8 @@ public class Class4764 extends Class4712<Class844, Class5879>
             final float n29 = -1.0f + n5;
             final float n30 = n6 * 2.5f + n29;
             final Class4150 method5064 = class846.method25214(Class4764.field20391);
-            final Class8996 method5065 = class845.method22569();
-            final Matrix4f method5066 = method5065.method32111();
+            final Class8996 method5065 = class845.getLast();
+            final Matrix4f method5066 = method5065.getMatrix();
             final Matrix3f method5067 = method5065.method32112();
             method14106(method5064, method5066, method5067, n21, n6, n22, n10, n11, n12, 0.4999f, n30);
             method14106(method5064, method5066, method5067, n21, 0.0f, n22, n10, n11, n12, 0.4999f, n29);
@@ -109,7 +109,7 @@ public class Class4764 extends Class4712<Class844, Class5879>
     }
     
     private static void method14106(final Class4150 class4150, final Matrix4f class4151, final Matrix3f class4152, final float n, final float n2, final float n3, final int n4, final int n5, final int n6, final float n7, final float n8) {
-        class4150.method12444(class4151, n, n2, n3).method12399(n4, n5, n6, 255).method12391(n7, n8).method12441(Class1904.field10335).method12440(15728880).method12445(class4152, 0.0f, 1.0f, 0.0f).method12397();
+        class4150.pos(class4151, n, n2, n3).method12399(n4, n5, n6, 255).tex(n7, n8).method12441(Class1904.field10335).method12440(15728880).method12445(class4152, 0.0f, 1.0f, 0.0f).endVertex();
     }
     
     public ResourceLocation method14107(final Class844 class844) {

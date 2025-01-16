@@ -30,7 +30,7 @@ public class Class3270 extends Class3167
     @Class6753
     public void method10304(final Class5751 class5751) {
         if (this.method9906()) {
-            if (Class3270.field15514.field4684.method2715(Class316.field1877).getItem() == Items.field31279) {
+            if (Class3270.field15514.player.method2715(Class316.field1877).getItem() == Items.field31279) {
                 if (this.field15760 >= 1) {
                     class5751.method16961(true);
                 }
@@ -56,8 +56,8 @@ public class Class3270 extends Class3167
             final double sin = Math.sin(Math.toRadians(n3));
             class5717.method16973(n * method16752 * cos + n2 * method16752 * sin);
             class5717.method16977(n * method16752 * sin - n2 * method16752 * cos);
-            Class3270.field15514.field4684.getMotion().x = class5717.method16972();
-            Class3270.field15514.field4684.getMotion().y = class5717.method16974();
+            Class3270.field15514.player.getMotion().x = class5717.method16972();
+            Class3270.field15514.player.getMotion().y = class5717.method16974();
             return;
         }
         class5717.method16973(0.0);
@@ -76,7 +76,7 @@ public class Class3270 extends Class3167
         if (method10307 < 0 && method10307 > 8) {
             return;
         }
-        if (Class3270.field15514.field4684.method2715(Class316.field1877).getItem() == Items.field31279) {
+        if (Class3270.field15514.player.method2715(Class316.field1877).getItem() == Items.field31279) {
             if (Class3363.method10673(Items.field31280) == 0) {
                 if (this.field15761.method23935() > 5000L) {
                     Class9463.method35173().method35197().method25776(new Class6224("BowFly", "You have no arrows"));
@@ -87,23 +87,23 @@ public class Class3270 extends Class3167
                 }
                 return;
             }
-            float field2399 = Class3270.field15514.field4684.rotationYaw;
+            float field2399 = Class3270.field15514.player.rotationYaw;
             float n = -90.0f;
-            if (Class3270.field15514.field4684.field2970 != 0.0f || Class3270.field15514.field4684.field2968 != 0.0f) {
+            if (Class3270.field15514.player.field2970 != 0.0f || Class3270.field15514.player.field2968 != 0.0f) {
                 n = -80.0f;
             }
-            if (Class3270.field15514.field4684.field2970 < 0.0f) {
+            if (Class3270.field15514.player.field2970 < 0.0f) {
                 field2399 -= 180.0f;
             }
-            if (Class3270.field15514.field4684.getMotion().y < -0.1) {
+            if (Class3270.field15514.player.getMotion().y < -0.1) {
                 n = 90.0f;
             }
             class5744.method17041(n);
             class5744.method17043(field2399);
-            if (Class3270.field15514.field4684.onGround && Class3270.field15514.field4684.collidedVertically) {
-                Class3270.field15514.field4684.method2725();
+            if (Class3270.field15514.player.onGround && Class3270.field15514.player.collidedVertically) {
+                Class3270.field15514.player.method2725();
             }
-            else if (Class3270.field15514.field4684.getMotion().y >= 0.0) {
+            else if (Class3270.field15514.player.getMotion().y >= 0.0) {
                 if (Class3270.field15514.field4633.field26532 == 0.1f) {
                     Class3270.field15514.field4633.field26532 = 1.0f;
                 }
@@ -126,12 +126,12 @@ public class Class3270 extends Class3167
     
     private int method10307() {
         for (int i = 36; i < 45; ++i) {
-            if (Class3270.field15514.field4684.field3008.method10878(i).method20054() && Class3270.field15514.field4684.field3008.method10878(i).method20053().getItem() == Items.field31279) {
+            if (Class3270.field15514.player.field3008.method10878(i).method20054() && Class3270.field15514.player.field3008.method10878(i).method20053().getItem() == Items.field31279) {
                 return i - 36;
             }
         }
         for (int j = 9; j < 36; ++j) {
-            if (Class3270.field15514.field4684.field3008.method10878(j).method20054() && Class3270.field15514.field4684.field3008.method10878(j).method20053().getItem() == Items.field31279) {
+            if (Class3270.field15514.player.field3008.method10878(j).method20054() && Class3270.field15514.player.field3008.method10878(j).method20053().getItem() == Items.field31279) {
                 Class8639.method29370(j, 7);
                 return 7;
             }

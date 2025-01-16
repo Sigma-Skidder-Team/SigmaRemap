@@ -53,7 +53,7 @@ public class Class4809 extends Class4807
         this.method14239(this.field20534 = new Class4853(this, "other", 201, 358, 170, 130, "Others", Class4809.field20549, Class4809.field20550));
         final Class4886 class4804;
         this.method14239(class4804 = new Class4886(this, "exit", this.method14276() - 41, 9));
-        class4804.method14260((class4803, n) -> Minecraft.method5277().method5244(null));
+        class4804.method14260((class4803, n) -> Minecraft.method5277().displayGuiScreen(null));
         final Class4799 class4805 = (Class4799)this.method14267();
         this.field20532.method14260((class4800, n) -> class4805.method14198("Combat", Class8013.field32986));
         this.field20533.method14260((class4800, n) -> class4805.method14198("Movement", Class8013.field32990));

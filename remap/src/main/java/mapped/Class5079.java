@@ -551,14 +551,14 @@ public class Class5079 extends RealmsScreen
             if (!this.field21850) {
                 if (this.method15745()) {
                     RealmsScreen.method15419("realms:textures/gui/realms/trial_icon.png");
-                    Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-                    Class8726.method30059();
+                    RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                    RenderSystem.method30059();
                     int n4 = 0;
                     if ((System.currentTimeMillis() / 800L & 0x1L) == 0x1L) {
                         n4 = 8;
                     }
                     RealmsScreen.method15411(this.field21866.method16929() + this.field21866.method16926() - 8 - 4, this.field21866.method16928() + this.field21866.method16927() / 2 - 4, 0.0f, (float)n4, 8, 8, 8, 16);
-                    Class8726.method30060();
+                    RenderSystem.method30060();
                 }
             }
         }
@@ -566,11 +566,11 @@ public class Class5079 extends RealmsScreen
     
     private void method15774(final int n, final int n2) {
         RealmsScreen.method15419("realms:textures/gui/title/realms.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
-        Class8726.method30063(0.5f, 0.5f, 0.5f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
+        RenderSystem.method30063(0.5f, 0.5f, 0.5f);
         RealmsScreen.method15411(n * 2, n2 * 2 - 5, 0.0f, 0.0f, 200, 50, 200, 50);
-        Class8726.method30060();
+        RenderSystem.method30060();
     }
     
     @Override
@@ -615,24 +615,24 @@ public class Class5079 extends RealmsScreen
         if (this.field21846) {
             this.field21851 = true;
         }
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 0.7f);
-        Class8726.method30011();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 0.7f);
+        RenderSystem.enableBlend();
         RealmsScreen.method15419("realms:textures/gui/realms/darken.png");
-        Class8726.method30059();
+        RenderSystem.method30059();
         RealmsScreen.method15411(0, 32, 0.0f, 0.0f, this.width(), this.height() - 40 - 32, 310, 166);
-        Class8726.method30060();
-        Class8726.method30012();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30060();
+        RenderSystem.disableBlend();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         RealmsScreen.method15419("realms:textures/gui/realms/popup.png");
-        Class8726.method30059();
+        RenderSystem.method30059();
         RealmsScreen.method15411(method15777, method15778, 0.0f, 0.0f, 310, 166, 310, 166);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (!Class5079.field21828.isEmpty()) {
             RealmsScreen.method15419(Class5079.field21828.get(this.field21854).toString());
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method30059();
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30059();
             RealmsScreen.method15411(method15777 + 7, method15778 + 7, 0.0f, 0.0f, 195, 152, 195, 152);
-            Class8726.method30060();
+            RenderSystem.method30060();
             if (this.field21855 % 95 >= 5) {
                 this.field21856 = false;
             }
@@ -671,18 +671,18 @@ public class Class5079 extends RealmsScreen
             this.method15412(n3 - 2, n4 + 17, n3 + 18, n4 + 18, n7, n7);
         }
         RealmsScreen.method15419("realms:textures/gui/realms/invite_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n3, n4 - 6, (b2 && b) ? 16.0f : 0.0f, 0.0f, 15, 25, 31, 25);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (b2 && field21841 != 0) {
             final int n8 = (Math.min(field21841, 6) - 1) * 8;
             final int n9 = (int)(Math.max(0.0f, Math.max(Class8269.method27459((10 + this.field21842) * 0.57f), Class8269.method27478(this.field21842 * 0.35f))) * -6.0f);
             RealmsScreen.method15419("realms:textures/gui/realms/invitation_icons.png");
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method30059();
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30059();
             RealmsScreen.method15411(n3 + 4, n4 + 4 + n9, (float)n8, method15780 ? 8.0f : 0.0f, 8, 8, 48, 16);
-            Class8726.method30060();
+            RenderSystem.method30060();
         }
         final int n10 = n + 12;
         if (b2 && method15780) {
@@ -756,10 +756,10 @@ public class Class5079 extends RealmsScreen
     
     private void method15785(final int n, final int n2, final int n3, final int n4) {
         RealmsScreen.method15419("realms:textures/gui/realms/expired_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
@@ -779,15 +779,15 @@ public class Class5079 extends RealmsScreen
     
     private void method15786(final int n, final int n2, final int n3, final int n4, final int i) {
         RealmsScreen.method15419("realms:textures/gui/realms/expires_soon_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         if (this.field21842 % 20 >= 10) {
             RealmsScreen.method15411(n, n2, 10.0f, 0.0f, 10, 28, 20, 28);
         }
         else {
             RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 20, 28);
         }
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
@@ -817,10 +817,10 @@ public class Class5079 extends RealmsScreen
     
     private void method15787(final int n, final int n2, final int n3, final int n4) {
         RealmsScreen.method15419("realms:textures/gui/realms/on_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
@@ -840,10 +840,10 @@ public class Class5079 extends RealmsScreen
     
     private void method15788(final int n, final int n2, final int n3, final int n4) {
         RealmsScreen.method15419("realms:textures/gui/realms/off_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
@@ -879,10 +879,10 @@ public class Class5079 extends RealmsScreen
             }
         }
         RealmsScreen.method15419("realms:textures/gui/realms/leave_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n, n2, (!b) ? 0.0f : 28.0f, 0.0f, 28, 28, 56, 28);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (b) {
             this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.leave");
         }
@@ -906,10 +906,10 @@ public class Class5079 extends RealmsScreen
             }
         }
         RealmsScreen.method15419("realms:textures/gui/realms/configure_icon.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n, n2, (!b) ? 0.0f : 28.0f, 0.0f, 28, 28, 56, 28);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (b) {
             this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.configure");
         }
@@ -950,10 +950,10 @@ public class Class5079 extends RealmsScreen
             }
         }
         RealmsScreen.method15419("realms:textures/gui/realms/questionmark.png");
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
         RealmsScreen.method15411(n3, n4, b ? 20.0f : 0.0f, 0.0f, 20, 20, 40, 20);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (b2) {
             this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.info");
         }
@@ -972,14 +972,14 @@ public class Class5079 extends RealmsScreen
         }
         RealmsScreen.method15419("realms:textures/gui/realms/news_icon.png");
         if (!b3) {
-            Class8726.method30068(0.5f, 0.5f, 0.5f, 1.0f);
+            RenderSystem.method30068(0.5f, 0.5f, 0.5f, 1.0f);
         }
         else {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         }
-        Class8726.method30059();
+        RenderSystem.method30059();
         RealmsScreen.method15411(n3, n4, (b3 && b2) ? 20.0f : 0.0f, 0.0f, 20, 20, 40, 20);
-        Class8726.method30060();
+        RenderSystem.method30060();
         if (b4) {
             if (b3) {
                 this.field21839 = RealmsScreen.getLocalizedString("mco.news");
@@ -989,32 +989,32 @@ public class Class5079 extends RealmsScreen
             if (b3) {
                 final int n5 = b4 ? 0 : ((int)(Math.max(0.0f, Math.max(Class8269.method27459((10 + this.field21842) * 0.57f), Class8269.method27478(this.field21842 * 0.35f))) * -6.0f));
                 RealmsScreen.method15419("realms:textures/gui/realms/invitation_icons.png");
-                Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-                Class8726.method30059();
+                RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+                RenderSystem.method30059();
                 RealmsScreen.method15411(n3 + 10, n4 + 2 + n5, 40.0f, 0.0f, 8, 8, 48, 16);
-                Class8726.method30060();
+                RenderSystem.method30060();
             }
         }
     }
     
     private void method15794() {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
-        Class8726.method30065((float)(this.width() / 2 - 25), 20.0f, 0.0f);
-        Class8726.method30062(-20.0f, 0.0f, 0.0f, 1.0f);
-        Class8726.method30063(1.5f, 1.5f, 1.5f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
+        RenderSystem.method30065((float)(this.width() / 2 - 25), 20.0f, 0.0f);
+        RenderSystem.method30062(-20.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30063(1.5f, 1.5f, 1.5f);
         this.method15407("LOCAL!", 0, 0, 8388479);
-        Class8726.method30060();
+        RenderSystem.method30060();
     }
     
     private void method15795() {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30059();
-        Class8726.method30065((float)(this.width() / 2 - 25), 20.0f, 0.0f);
-        Class8726.method30062(-20.0f, 0.0f, 0.0f, 1.0f);
-        Class8726.method30063(1.5f, 1.5f, 1.5f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30059();
+        RenderSystem.method30065((float)(this.width() / 2 - 25), 20.0f, 0.0f);
+        RenderSystem.method30062(-20.0f, 0.0f, 0.0f, 1.0f);
+        RenderSystem.method30063(1.5f, 1.5f, 1.5f);
         this.method15407("STAGE!", 0, 0, -256);
-        Class8726.method30060();
+        RenderSystem.method30060();
     }
     
     public Class5079 method15796() {

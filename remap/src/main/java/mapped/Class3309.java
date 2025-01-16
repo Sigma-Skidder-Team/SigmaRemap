@@ -17,9 +17,9 @@ public class Class3309 extends Class3167
     @Class6753
     private void method10472(final Class5743 class5743) {
         if (this.method9906()) {
-            if (Class3309.field15514.field4684.getHeldItemMainhand() != null) {
-                if (Class3309.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4087) {
-                    if (Class3309.field15514.field4684.onGround) {
+            if (Class3309.field15514.player.getHeldItemMainhand() != null) {
+                if (Class3309.field15514.player.getHeldItemMainhand().getItem() instanceof Class4087) {
+                    if (Class3309.field15514.player.onGround) {
                         for (int i = 0; i < 25; ++i) {
                             Class3309.field15514.method5269().method17292(new Class4353(true));
                         }

@@ -32,15 +32,15 @@ public class Class542 extends Class541
     @Override
     public void init() {
         super.init();
-        this.field3272 = this.method3029(new Class654(this.width / 2 - 50 - 100 - 4, 165, 100, 20, Class8822.method30773("advMode.mode.sequence", new Object[0]), class654 -> {
+        this.field3272 = this.addButton(new Class654(this.width / 2 - 50 - 100 - 4, 165, 100, 20, Class8822.method30773("advMode.mode.sequence", new Object[0]), class654 -> {
             this.method3169();
             this.method3168();
         }));
-        this.field3273 = this.method3029(new Class654(this.width / 2 - 50, 165, 100, 20, Class8822.method30773("advMode.mode.unconditional", new Object[0]), class654 -> {
+        this.field3273 = this.addButton(new Class654(this.width / 2 - 50, 165, 100, 20, Class8822.method30773("advMode.mode.unconditional", new Object[0]), class654 -> {
             this.field3276 = !this.field3276;
             this.method3170();
         }));
-        this.field3274 = this.method3029(new Class654(this.width / 2 + 50 + 4, 165, 100, 20, Class8822.method30773("advMode.mode.redstoneTriggered", new Object[0]), class654 -> {
+        this.field3274 = this.addButton(new Class654(this.width / 2 + 50 + 4, 165, 100, 20, Class8822.method30773("advMode.mode.redstoneTriggered", new Object[0]), class654 -> {
             this.field3277 = !this.field3277;
             this.method3171();
         }));

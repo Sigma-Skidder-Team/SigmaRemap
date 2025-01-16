@@ -31,7 +31,7 @@ public class Class4165 extends Class4158<Class465>
         return class6300;
     }
     
-    public void method12472(final Class465 class465, final float n, final Class7351 class466, final Class7807 class467, final int n2, final int n3) {
+    public void method12472(final Class465 class465, final float n, final MatrixStack class466, final IRenderTypeBuffer class467, final int n2, final int n3) {
         final List<Pair<Class230, Class181>> method2386 = class465.method2386();
         if (method2386 != null) {
             final boolean b = class465.method2186() == null;
@@ -71,7 +71,7 @@ public class Class4165 extends Class4158<Class465>
         }
     }
     
-    public static void method12473(final Class7351 class7351, final Class7807 class7352, final int n, final int n2, final Class6300 class7353, final Class3687 class7354, final boolean b, final List<Pair<Class230, Class181>> list) {
+    public static void method12473(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final int n2, final Class6300 class7353, final Class3687 class7354, final boolean b, final List<Pair<Class230, Class181>> list) {
         class7353.method18643(class7351, class7354.method11334(class7352, Class6332::method18767), n, n2);
         for (int n3 = 0; n3 < 17 && n3 < list.size(); ++n3) {
             final Pair pair = list.get(n3);

@@ -23,13 +23,13 @@ public class Class3302 extends Class3167
     
     @Override
     public void method9879() {
-        if (!Class3302.field15514.field4648.field23440.method1056()) {
-            if (!Class3302.field15514.field4648.field23440.method1056()) {
+        if (!Class3302.field15514.gameSettings.field23440.method1056()) {
+            if (!Class3302.field15514.gameSettings.field23440.method1056()) {
                 this.field15873 = false;
             }
         }
         else {
-            Class3302.field15514.field4648.field23440.field2162 = false;
+            Class3302.field15514.gameSettings.field23440.field2162 = false;
             this.field15873 = true;
         }
     }
@@ -43,7 +43,7 @@ public class Class3302 extends Class3167
     @Class6753
     private void method10457(final Class5752 class5752) {
         if (this.method9906()) {
-            if (class5752.method17061() == Class3302.field15514.field4648.field23440.field2161.field32860) {
+            if (class5752.method17061() == Class3302.field15514.gameSettings.field23440.field2161.field32860) {
                 class5752.method16961(true);
                 this.field15873 = true;
             }
@@ -53,7 +53,7 @@ public class Class3302 extends Class3167
     @Class6753
     private void method10458(final Class5715 class5715) {
         if (this.method9906()) {
-            if (class5715.method16963() == Class3302.field15514.field4648.field23440.field2161.field32860) {
+            if (class5715.method16963() == Class3302.field15514.gameSettings.field23440.field2161.field32860) {
                 class5715.method16961(true);
                 this.field15873 = false;
             }
@@ -65,10 +65,10 @@ public class Class3302 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (!Class3302.field15514.field4684.onGround && this.method9883("Kick bypass")) {
+        if (!Class3302.field15514.player.onGround && this.method9883("Kick bypass")) {
             if (this.field15874 > 0) {
                 if (this.field15874 % 30 == 0) {
-                    if (!Class6430.method19160(Class3302.field15514.field4684, 0.01f)) {
+                    if (!Class6430.method19160(Class3302.field15514.player, 0.01f)) {
                         if (Class9367.method34762() != Class7906.field32452.method25613()) {
                             class5744.method17037(class5744.method17036() - 0.04);
                         }
@@ -111,19 +111,19 @@ public class Class3302 extends Class3167
     @Class6753
     public void method10460(final Class5717 class5717) {
         if (this.method9906()) {
-            if (!Class6430.method19160(Class3302.field15514.field4684, 0.01f)) {
+            if (!Class6430.method19160(Class3302.field15514.player, 0.01f)) {
                 ++this.field15874;
             }
             else {
                 this.field15874 = 0;
             }
             final double n = Class7482.method23136() * this.method9886("Speed");
-            double n2 = Class3302.field15514.field4648.field23439.field2162 ? (n / 2.0) : 0.0;
-            if (Class3302.field15514.field4648.field23439.field2162 && Class3302.field15514.field4648.field23440.field2162) {
+            double n2 = Class3302.field15514.gameSettings.field23439.field2162 ? (n / 2.0) : 0.0;
+            if (Class3302.field15514.gameSettings.field23439.field2162 && Class3302.field15514.gameSettings.field23440.field2162) {
                 n2 = 0.0;
             }
             else if (!this.field15873) {
-                if (Class3302.field15514.field4648.field23439.field2162) {
+                if (Class3302.field15514.gameSettings.field23439.field2162) {
                     n2 = n / 2.0;
                 }
             }
@@ -136,11 +136,11 @@ public class Class3302 extends Class3167
     }
     
     private double method10461() {
-        if (Class3302.field15514.field4684.method1895().y < 1.0) {
+        if (Class3302.field15514.player.method1895().y < 1.0) {
             return -1.0;
         }
-        if (!Class3302.field15514.field4684.onGround) {
-            final Iterator<Object> iterator = Class3302.field15514.world.method6981(Class3302.field15514.field4684, Class3302.field15514.field4684.boundingBox.expand(0.0, -Class3302.field15514.field4684.method1934().y, 0.0)).iterator();
+        if (!Class3302.field15514.player.onGround) {
+            final Iterator<Object> iterator = Class3302.field15514.world.method6981(Class3302.field15514.player, Class3302.field15514.player.boundingBox.expand(0.0, -Class3302.field15514.player.method1934().y, 0.0)).iterator();
             double field25077 = -1.0;
             while (iterator.hasNext()) {
                 final VoxelShape class7702 = iterator.next();
@@ -151,6 +151,6 @@ public class Class3302 extends Class3167
             }
             return field25077;
         }
-        return Class3302.field15514.field4684.posY;
+        return Class3302.field15514.player.posY;
     }
 }

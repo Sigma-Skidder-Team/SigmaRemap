@@ -27,7 +27,7 @@ public class Class6124 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         final Class6092 method5833 = this.field24861.field4644.method5833();
         final DimensionType method5834 = this.field24861.world.method6789().getType();
         final BlockPos class7353 = new BlockPos(method5833.method18161().x, 0.0, method5833.method18161().z);

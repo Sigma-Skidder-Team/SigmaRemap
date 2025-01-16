@@ -15,7 +15,7 @@ public class Class703 extends Class698
     public Class703(final Screen field3868, final ITextComponent class2250) {
         super(class2250);
         this.field3868 = field3868;
-        this.field3869 = Minecraft.method5277().field4648;
+        this.field3869 = Minecraft.method5277().gameSettings;
     }
     
     public Class703(final Screen field3868, final Class5760 field3869, final ITextComponent class2250) {
@@ -26,11 +26,11 @@ public class Class703 extends Class698
     
     @Override
     public void removed() {
-        this.minecraft.field4648.method17121();
+        this.minecraft.gameSettings.method17121();
     }
     
     @Override
-    public void method3028() {
-        this.minecraft.method5244(this.field3868);
+    public void onClose() {
+        this.minecraft.displayGuiScreen(this.field3868);
     }
 }

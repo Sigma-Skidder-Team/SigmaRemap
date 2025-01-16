@@ -22,19 +22,19 @@ public class Class699 extends Class698
     public void init() {
         this.field3842.clear();
         for (int i = 0; i < Class699.field3847.length; ++i) {
-            this.method3029(Class699.field3847[i].method19362(this.minecraft.field4648, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 21 * (i / 2) - 12, 150));
+            this.addButton(Class699.field3847[i].method19362(this.minecraft.gameSettings, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 21 * (i / 2) - 12, 150));
         }
-        this.method3029(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
     }
     
     @Override
-    public void method3896(final Class573 class573) {
+    public void method3896(final Widget class573) {
         if (class573 instanceof Class673) {
             final Class673 class574 = (Class673)class573;
             if (class574.field3431) {
                 if (class574.field3708 == 200) {
-                    this.minecraft.field4648.method17121();
-                    this.minecraft.method5244(this.field3845);
+                    this.minecraft.gameSettings.method17121();
+                    this.minecraft.displayGuiScreen(this.field3845);
                 }
             }
         }
@@ -42,15 +42,15 @@ public class Class699 extends Class698
     
     @Override
     public void removed() {
-        this.minecraft.field4648.method17121();
+        this.minecraft.gameSettings.method17121();
         super.removed();
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.method3295(this.minecraft.fontRenderer, this.field3148.getFormattedText(), this.width / 2, 15, 16777215);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.minecraft.fontRenderer, this.title.getFormattedText(), this.width / 2, 15, 16777215);
+        super.render(n, n2, n3);
         this.field3848.method27577(n, n2, this.field3842);
     }
     

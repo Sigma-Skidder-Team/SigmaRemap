@@ -7,16 +7,12 @@ import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
-public interface INestedGuiEventHandler extends IGuiEventListener
-{
-    List <? extends IGuiEventListener > children();
+public interface INestedGuiEventHandler extends IGuiEventListener {
+    List<? extends IGuiEventListener> children();
 
-default Optional<IGuiEventListener> getEventListenerForPos(double mouseX, double mouseY)
-    {
-        for (IGuiEventListener iguieventlistener : this.children())
-        {
-            if (iguieventlistener.isMouseOver(mouseX, mouseY))
-            {
+    default Optional<IGuiEventListener> getEventListenerForPos(double mouseX, double mouseY) {
+        for (IGuiEventListener iguieventlistener : this.children()) {
+            if (iguieventlistener.isMouseOver(mouseX, mouseY)) {
                 return Optional.of(iguieventlistener);
             }
         }
@@ -24,16 +20,12 @@ default Optional<IGuiEventListener> getEventListenerForPos(double mouseX, double
         return Optional.empty();
     }
 
-default boolean mouseClicked(double p_mouseClicked_1_, double p_mouseClicked_3_, int p_mouseClicked_5_)
-    {
-        for (IGuiEventListener iguieventlistener : this.children())
-        {
-            if (iguieventlistener.mouseClicked(p_mouseClicked_1_, p_mouseClicked_3_, p_mouseClicked_5_))
-            {
+    default boolean mouseClicked(double p_mouseClicked_1_, double p_mouseClicked_3_, int p_mouseClicked_5_) {
+        for (IGuiEventListener iguieventlistener : this.children()) {
+            if (iguieventlistener.mouseClicked(p_mouseClicked_1_, p_mouseClicked_3_, p_mouseClicked_5_)) {
                 this.setFocused(iguieventlistener);
 
-                if (p_mouseClicked_5_ == 0)
-                {
+                if (p_mouseClicked_5_ == 0) {
                     this.setDragging(true);
                 }
 
@@ -44,8 +36,7 @@ default boolean mouseClicked(double p_mouseClicked_1_, double p_mouseClicked_3_,
         return false;
     }
 
-default boolean mouseReleased(double p_mouseReleased_1_, double p_mouseReleased_3_, int p_mouseReleased_5_)
-    {
+    default boolean mouseReleased(double p_mouseReleased_1_, double p_mouseReleased_3_, int p_mouseReleased_5_) {
         this.setDragging(false);
         return this.getEventListenerForPos(p_mouseReleased_1_, p_mouseReleased_3_).filter((p_212931_5_) ->
         {
@@ -53,8 +44,7 @@ default boolean mouseReleased(double p_mouseReleased_1_, double p_mouseReleased_
         }).isPresent();
     }
 
-default boolean mouseDragged(double p_mouseDragged_1_, double p_mouseDragged_3_, int p_mouseDragged_5_, double p_mouseDragged_6_, double p_mouseDragged_8_)
-    {
+    default boolean mouseDragged(double p_mouseDragged_1_, double p_mouseDragged_3_, int p_mouseDragged_5_, double p_mouseDragged_6_, double p_mouseDragged_8_) {
         return this.getFocused() != null && this.isDragging() && p_mouseDragged_5_ == 0 ? this.getFocused().mouseDragged(p_mouseDragged_1_, p_mouseDragged_3_, p_mouseDragged_5_, p_mouseDragged_6_, p_mouseDragged_8_) : false;
     }
 
@@ -62,26 +52,22 @@ default boolean mouseDragged(double p_mouseDragged_1_, double p_mouseDragged_3_,
 
     void setDragging(boolean p_setDragging_1_);
 
-default boolean mouseScrolled(double p_mouseScrolled_1_, double p_mouseScrolled_3_, double p_mouseScrolled_5_)
-    {
+    default boolean mouseScrolled(double p_mouseScrolled_1_, double p_mouseScrolled_3_, double p_mouseScrolled_5_) {
         return this.getEventListenerForPos(p_mouseScrolled_1_, p_mouseScrolled_3_).filter((p_212929_6_) ->
         {
             return p_212929_6_.mouseScrolled(p_mouseScrolled_1_, p_mouseScrolled_3_, p_mouseScrolled_5_);
         }).isPresent();
     }
 
-default boolean keyPressed(int p_keyPressed_1_, int p_keyPressed_2_, int p_keyPressed_3_)
-    {
+    default boolean keyPressed(int p_keyPressed_1_, int p_keyPressed_2_, int p_keyPressed_3_) {
         return this.getFocused() != null && this.getFocused().keyPressed(p_keyPressed_1_, p_keyPressed_2_, p_keyPressed_3_);
     }
 
-default boolean keyReleased(int keyCode, int scanCode, int modifiers)
-    {
+    default boolean keyReleased(int keyCode, int scanCode, int modifiers) {
         return this.getFocused() != null && this.getFocused().keyReleased(keyCode, scanCode, modifiers);
     }
 
-default boolean charTyped(char p_charTyped_1_, int p_charTyped_2_)
-    {
+    default boolean charTyped(char p_charTyped_1_, int p_charTyped_2_) {
         return this.getFocused() != null && this.getFocused().charTyped(p_charTyped_1_, p_charTyped_2_);
     }
 
@@ -90,60 +76,47 @@ default boolean charTyped(char p_charTyped_1_, int p_charTyped_2_)
 
     void setFocused(@Nullable IGuiEventListener p_setFocused_1_);
 
-default void setFocusedDefault(@Nullable IGuiEventListener eventListener)
-    {
+    default void setFocusedDefault(@Nullable IGuiEventListener eventListener) {
         this.setFocused(eventListener);
     }
 
-default void func_212932_b(@Nullable IGuiEventListener eventListener)
-    {
+    default void func_212932_b(@Nullable IGuiEventListener eventListener) {
         this.setFocused(eventListener);
     }
 
-default boolean changeFocus(boolean p_changeFocus_1_)
-    {
+    default boolean changeFocus(boolean p_changeFocus_1_) {
         IGuiEventListener iguieventlistener = this.getFocused();
         boolean flag = iguieventlistener != null;
 
-        if (flag && iguieventlistener.changeFocus(p_changeFocus_1_))
-        {
+        if (flag && iguieventlistener.changeFocus(p_changeFocus_1_)) {
             return true;
-        }
-        else
-        {
-            List <? extends IGuiEventListener > list = this.children();
+        } else {
+            List<? extends IGuiEventListener> list = this.children();
             int j = list.indexOf(iguieventlistener);
             int i;
 
-            if (flag && j >= 0)
-            {
+            if (flag && j >= 0) {
                 i = j + (p_changeFocus_1_ ? 1 : 0);
-            }
-            else if (p_changeFocus_1_)
-            {
+            } else if (p_changeFocus_1_) {
                 i = 0;
-            }
-            else
-            {
+            } else {
                 i = list.size();
             }
 
-            ListIterator <? extends IGuiEventListener > listiterator = list.listIterator(i);
+            ListIterator<? extends IGuiEventListener> listiterator = list.listIterator(i);
             BooleanSupplier booleansupplier = p_changeFocus_1_ ? listiterator::hasNext : listiterator::hasPrevious;
-            Supplier <? extends IGuiEventListener > supplier = p_changeFocus_1_ ? listiterator::next : listiterator::previous;
+            Supplier<? extends IGuiEventListener> supplier = p_changeFocus_1_ ? listiterator::next : listiterator::previous;
 
-            while (booleansupplier.getAsBoolean())
-            {
+            while (booleansupplier.getAsBoolean()) {
                 IGuiEventListener iguieventlistener1 = supplier.get();
 
-                if (iguieventlistener1.changeFocus(p_changeFocus_1_))
-                {
+                if (iguieventlistener1.changeFocus(p_changeFocus_1_)) {
                     this.setFocused(iguieventlistener1);
                     return true;
                 }
             }
 
-            this.setFocused((IGuiEventListener)null);
+            this.setFocused((IGuiEventListener) null);
             return false;
         }
     }

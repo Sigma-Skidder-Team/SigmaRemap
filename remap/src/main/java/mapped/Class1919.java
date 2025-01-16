@@ -51,7 +51,7 @@ public class Class1919 implements AutoCloseable
         this.field10430.method18397();
         final float n2 = (float)this.field10431.field24884;
         final float n3 = (float)this.field10431.field24885;
-        Class8726.method30048(0, 0, (int)n2, (int)n3);
+        RenderSystem.method30048(0, 0, (int)n2, (int)n3);
         this.field10429.method7718("DiffuseSampler", this.field10430);
         for (int i = 0; i < this.field10432.size(); ++i) {
             this.field10429.method7718(this.field10433.get(i), this.field10432.get(i));
@@ -66,16 +66,16 @@ public class Class1919 implements AutoCloseable
         this.field10429.method7712();
         this.field10431.method18402(Minecraft.field4623);
         this.field10431.method18395(false);
-        Class8726.method30010(false);
-        final Class4148 method5278 = Class7392.method22694().method22696();
-        method5278.method12390(7, Class9237.field39615);
-        method5278.method12432(0.0, 0.0, 500.0).method12399(255, 255, 255, 255).method12397();
-        method5278.method12432(n2, 0.0, 500.0).method12399(255, 255, 255, 255).method12397();
-        method5278.method12432(n2, n3, 500.0).method12399(255, 255, 255, 255).method12397();
-        method5278.method12432(0.0, n3, 500.0).method12399(255, 255, 255, 255).method12397();
-        method5278.method12393();
-        Class8475.method28282(method5278);
-        Class8726.method30010(true);
+        RenderSystem.method30010(false);
+        final BufferBuilder method5278 = Tessellator.getInstance().getBuffer();
+        method5278.begin(7, DefaultVertexFormats.POSITION_COLOR);
+        method5278.pos(0.0, 0.0, 500.0).method12399(255, 255, 255, 255).endVertex();
+        method5278.pos(n2, 0.0, 500.0).method12399(255, 255, 255, 255).endVertex();
+        method5278.pos(n2, n3, 500.0).method12399(255, 255, 255, 255).endVertex();
+        method5278.pos(0.0, n3, 500.0).method12399(255, 255, 255, 255).endVertex();
+        method5278.finishDrawing();
+        WorldVertexBufferUploader.draw(method5278);
+        RenderSystem.method30010(true);
         this.field10429.method7711();
         this.field10431.method18397();
         this.field10430.method18394();

@@ -24,7 +24,7 @@ public class Class731 extends Screen implements Class732
     }
     
     @Override
-    public boolean method2989() {
+    public boolean shouldCloseOnEsc() {
         return false;
     }
     
@@ -56,7 +56,7 @@ public class Class731 extends Screen implements Class732
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         if (!this.field3988) {
             if (this.field3989 != null && this.minecraft.world == null) {
                 this.field3989.method32901(this.width, this.height);
@@ -65,17 +65,17 @@ public class Class731 extends Screen implements Class732
                 this.renderBackground();
             }
             if (this.field3987 > 0) {
-                this.method3295(this.font, this.field3985, this.width / 2, 70, 16777215);
+                this.drawCenteredString(this.font, this.field3985, this.width / 2, 70, 16777215);
                 if (!Objects.equals(this.field3986, "")) {
                     if (this.field3987 != 0) {
-                        this.method3295(this.font, this.field3986 + " " + this.field3987 + "%", this.width / 2, 90, 16777215);
+                        this.drawCenteredString(this.font, this.field3986 + " " + this.field3987 + "%", this.width / 2, 90, 16777215);
                     }
                 }
             }
-            super.method2975(n, n2, n3);
+            super.render(n, n2, n3);
         }
         else if (!this.minecraft.method5311()) {
-            this.minecraft.method5244(null);
+            this.minecraft.displayGuiScreen(null);
         }
     }
 }

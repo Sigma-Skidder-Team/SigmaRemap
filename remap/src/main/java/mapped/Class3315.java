@@ -43,7 +43,7 @@ public class Class3315 extends Class3167
     
     @Class6753
     private void method10488(final Class5740 class5740) {
-        if (this.method9906() && Class3315.field15514.field4684 != null) {
+        if (this.method9906() && Class3315.field15514.player != null) {
             final String method9887 = this.method9887("Animation");
             final String method9888 = this.method9887("Outline");
             this.method10489();
@@ -76,7 +76,7 @@ public class Class3315 extends Class3167
                 if (method9887.equalsIgnoreCase("Smooth") || method9887.equalsIgnoreCase("Both")) {
                     n6 *= (int)n7;
                 }
-                Class8726.method30059();
+                RenderSystem.method30059();
                 if (method9888.equalsIgnoreCase("Right")) {
                     GL11.glTranslated(-3.0, 0.0, 0.0);
                 }
@@ -97,8 +97,8 @@ public class Class3315 extends Class3167
                         Class8154.method26876((float)(n2 - method9890 - 3), (float)(n + 1), (float)(n2 - n5 - 5), (float)(n + 3), n4);
                     }
                 }
-                Class8726.method30070();
-                Class8726.method30011();
+                RenderSystem.method30070();
+                RenderSystem.enableBlend();
                 if (method9887.equalsIgnoreCase("Slide") || method9887.equalsIgnoreCase("Both")) {
                     GL11.glTranslated((double)(method9890 * Class7791.method25030(class5741.method35858(), 0.0f, 1.0f, 1.0f)), 0.0, 0.0);
                 }
@@ -106,9 +106,9 @@ public class Class3315 extends Class3167
                 this.field15897.method23501((float)(n2 - method9890), (float)n, class5742.method9900(), new Class2427(hsBtoRGB));
                 this.field15898.method23501((float)(n2 - this.field15898.method23505(this.method10490(class5742))), n + 1.6f, this.method10490(class5742), new Class2427(160, 160, 160));
                 Class8154.method26872();
-                Class8726.method30012();
+                RenderSystem.disableBlend();
                 n += n6;
-                Class8726.method30060();
+                RenderSystem.method30060();
                 n5 = method9890;
                 method9889 += (float)0.0196078431372549;
                 if (method9889 <= 1.0f) {

@@ -17,7 +17,7 @@ public abstract class Class5056<E extends Class624> extends RealmsGuiEventListen
     }
     
     public void method15510(final int n, final int n2, final float n3) {
-        this.field21705.method2975(n, n2, n3);
+        this.field21705.render(n, n2, n3);
     }
     
     public void method15511(final E e) {

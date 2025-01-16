@@ -19,7 +19,7 @@ public class Class3308 extends Class3167
     
     @Override
     public void method9879() {
-        if (Class6430.method19160(Class3308.field15514.field4684, 0.001f)) {
+        if (Class6430.method19160(Class3308.field15514.player, 0.001f)) {
             this.field15885 = this.method9887("Offset").equals("OldHypixel");
             this.field15884 = (this.field15885 ? 2 : 1);
         }
@@ -54,11 +54,11 @@ public class Class3308 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3308.field15514.field4684.onGround) {
+        if (Class3308.field15514.player.onGround) {
             this.field15887 = false;
             if (this.field15886 && this.field15884 != 1) {
                 this.field15886 = !this.field15886;
-                Class3308.field15514.field4684.method2725();
+                Class3308.field15514.player.method2725();
             }
             if (this.method9887("Offset").equals("OldHypixel") != this.field15885) {
                 this.field15885 = this.method9887("Offset").equals("OldHypixel");
@@ -67,7 +67,7 @@ public class Class3308 extends Class3167
             double n = this.field15885 ? 1.0E-14 : 0.0;
             boolean b = false;
             final boolean b2 = Class3308.field15514.field4691 != null && Class3308.field15514.field4691.getType() == RayTraceResult.Type.BLOCK;
-            if (Class3308.field15514.field4682.method27337() || (Class3308.field15514.field4648.field23446.method1056() && b2) || Class3295.method10433()) {
+            if (Class3308.field15514.field4682.method27337() || (Class3308.field15514.gameSettings.field23446.method1056() && b2) || Class3295.method10433()) {
                 this.field15884 = 2;
                 b = true;
             }
@@ -111,7 +111,7 @@ public class Class3308 extends Class3167
         }
         else {
             this.field15884 = ((this.method9883("Avoid Fall Damage") && !this.field15885) ? 3 : 0);
-            if (this.method9883("Avoid Fall Damage") && this.field15885 && !this.field15887 && Class3308.field15514.field4684.getMotion().y < -0.1) {
+            if (this.method9883("Avoid Fall Damage") && this.field15885 && !this.field15887 && Class3308.field15514.player.getMotion().y < -0.1) {
                 this.field15887 = !this.field15887;
                 class5744.method17045(true);
             }

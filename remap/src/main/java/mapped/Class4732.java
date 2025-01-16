@@ -24,12 +24,12 @@ public class Class4732 extends Class4712<Class800, Class5926<Class800>>
         return class800.method4606();
     }
     
-    public void method14049(final Class800 class800, final Class7351 class801, final float n) {
+    public void method14049(final Class800 class800, final MatrixStack class801, final float n) {
         super.method13990(class800, class801, n);
         class801.method22565(0.8f, 0.8f, 0.8f);
     }
     
-    public void method14050(final Class800 class800, final Class7351 class801, final float n, final float n2, final float n3) {
+    public void method14050(final Class800 class800, final MatrixStack class801, final float n, final float n2, final float n3) {
         super.method13985(class800, class801, n, n2, n3);
         final float method4620 = class800.method4620(n3);
         if (method4620 > 0.0f) {

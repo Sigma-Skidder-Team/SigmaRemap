@@ -11,9 +11,9 @@ import java.util.function.BiFunction;
 import java.util.function.Predicate;
 import java.util.function.Consumer;
 
-public class Class576 extends Class573 implements Class563, IGuiEventListener
+public class Class576 extends Widget implements IRenderable, IGuiEventListener
 {
-    private final Class1844 field3438;
+    private final FontRenderer field3438;
     private String field3439;
     private int field3440;
     private int field3441;
@@ -31,11 +31,11 @@ public class Class576 extends Class573 implements Class563, IGuiEventListener
     private Predicate<String> field3453;
     private BiFunction<String, Integer, String> field3454;
     
-    public Class576(final Class1844 class1844, final int n, final int n2, final int n3, final int n4, final String s) {
+    public Class576(final FontRenderer class1844, final int n, final int n2, final int n3, final int n4, final String s) {
         this(class1844, n, n2, n3, n4, null, s);
     }
     
-    public Class576(final Class1844 field3438, final int n, final int n2, final int n3, final int n4, final Class576 class576, final String s) {
+    public Class576(final FontRenderer field3438, final int n, final int n2, final int n3, final int n4, final Class576 class576, final String s) {
         super(n, n2, n3, n4, s);
         this.field3439 = "";
         this.field3440 = 32;
@@ -262,7 +262,7 @@ public class Class576 extends Class573 implements Class563, IGuiEventListener
         if (!this.method3394()) {
             return false;
         }
-        this.field3445 = Screen.method3047();
+        this.field3445 = Screen.hasShiftDown();
         if (Screen.method3052(n)) {
             this.method3393();
             this.method3407(0);
@@ -290,7 +290,7 @@ public class Class576 extends Class573 implements Class563, IGuiEventListener
                 if (this.field3444) {
                     this.field3445 = false;
                     this.method3383(-1);
-                    this.field3445 = Screen.method3047();
+                    this.field3445 = Screen.hasShiftDown();
                 }
                 return true;
             }
@@ -301,7 +301,7 @@ public class Class576 extends Class573 implements Class563, IGuiEventListener
                 if (this.field3444) {
                     this.field3445 = false;
                     this.method3383(1);
-                    this.field3445 = Screen.method3047();
+                    this.field3445 = Screen.hasShiftDown();
                 }
                 return true;
             }
@@ -405,8 +405,8 @@ public class Class576 extends Class573 implements Class563, IGuiEventListener
     public void method3353(final int n, final int n2, final float n3) {
         if (this.method3409()) {
             if (this.method3400()) {
-                Class565.method3293(this.field3426 - 1, this.field3427 - 1, this.field3426 + this.field3424 + 1, this.field3427 + this.field3425 + 1, -6250336);
-                Class565.method3293(this.field3426, this.field3427, this.field3426 + this.field3424, this.field3427 + this.field3425, -16777216);
+                AbstractGui.fill(this.field3426 - 1, this.field3427 - 1, this.field3426 + this.field3424 + 1, this.field3427 + this.field3425 + 1, -6250336);
+                AbstractGui.fill(this.field3426, this.field3427, this.field3426 + this.field3424, this.field3427 + this.field3425, -16777216);
             }
             final int n4 = this.field3444 ? this.field3449 : this.field3450;
             final int n5 = this.field3447 - this.field3446;
@@ -433,7 +433,7 @@ public class Class576 extends Class573 implements Class563, IGuiEventListener
                 length = method6619.length();
             }
             if (!method6619.isEmpty()) {
-                method6620 = this.field3438.method6609(this.field3454.apply(b ? method6619.substring(0, n5) : method6619, this.field3446), (float)n6, (float)n7, n4);
+                method6620 = this.field3438.drawStringWithShadow(this.field3454.apply(b ? method6619.substring(0, n5) : method6619, this.field3446), (float)n6, (float)n7, n4);
             }
             final boolean b4 = this.field3447 < this.field3439.length() || this.field3439.length() >= this.method3398();
             int n8 = method6620;
@@ -449,25 +449,25 @@ public class Class576 extends Class573 implements Class563, IGuiEventListener
             if (!method6619.isEmpty()) {
                 if (b) {
                     if (n5 < method6619.length()) {
-                        this.field3438.method6609(this.field3454.apply(method6619.substring(n5), this.field3447), (float)method6620, (float)n7, n4);
+                        this.field3438.drawStringWithShadow(this.field3454.apply(method6619.substring(n5), this.field3447), (float)method6620, (float)n7, n4);
                     }
                 }
             }
             if (!b4) {
                 if (this.field3451 != null) {
-                    this.field3438.method6609(this.field3451, (float)(n8 - 1), (float)n7, -8355712);
+                    this.field3438.drawStringWithShadow(this.field3451, (float)(n8 - 1), (float)n7, -8355712);
                 }
             }
             if (b3) {
                 if (!b4) {
-                    this.field3438.method6609("_", (float)n8, (float)n7, n4);
+                    this.field3438.drawStringWithShadow("_", (float)n8, (float)n7, n4);
                 }
                 else {
-                    Class565.method3293(n8, n7 - 1, n8 + 1, n7 + 1 + 9, -3092272);
+                    AbstractGui.fill(n8, n7 - 1, n8 + 1, n7 + 1 + 9, -3092272);
                 }
             }
             if (length != n5) {
-                this.method3396(n8, n7 - 1, n6 + this.field3438.method6617(method6619.substring(0, length)) - 1, n7 + 1 + 9);
+                this.method3396(n8, n7 - 1, n6 + this.field3438.getStringWidth(method6619.substring(0, length)) - 1, n7 + 1 + 9);
             }
         }
     }
@@ -489,20 +489,20 @@ public class Class576 extends Class573 implements Class563, IGuiEventListener
         if (n > this.field3426 + this.field3424) {
             n = this.field3426 + this.field3424;
         }
-        final Class7392 method22694 = Class7392.method22694();
-        final Class4148 method22695 = method22694.method22696();
-        Class8726.method30068(0.0f, 0.0f, 255.0f, 255.0f);
-        Class8726.method30041();
-        Class8726.method30036();
-        Class8726.method30038(Class2188.field12992);
-        method22695.method12390(7, Class9237.field39614);
-        method22695.method12432(n, n4, 0.0).method12397();
-        method22695.method12432(n3, n4, 0.0).method12397();
-        method22695.method12432(n3, n2, 0.0).method12397();
-        method22695.method12432(n, n2, 0.0).method12397();
-        method22694.method22695();
-        Class8726.method30037();
-        Class8726.method30040();
+        final Tessellator method22694 = Tessellator.getInstance();
+        final BufferBuilder method22695 = method22694.getBuffer();
+        RenderSystem.method30068(0.0f, 0.0f, 255.0f, 255.0f);
+        RenderSystem.disableTexture();
+        RenderSystem.method30036();
+        RenderSystem.method30038(Class2188.field12992);
+        method22695.begin(7, DefaultVertexFormats.field39614);
+        method22695.pos(n, n4, 0.0).endVertex();
+        method22695.pos(n3, n4, 0.0).endVertex();
+        method22695.pos(n3, n2, 0.0).endVertex();
+        method22695.pos(n, n2, 0.0).endVertex();
+        method22694.draw();
+        RenderSystem.method30037();
+        RenderSystem.enableTexture();
     }
     
     public void method3397(final int n) {
@@ -617,7 +617,7 @@ public class Class576 extends Class573 implements Class563, IGuiEventListener
     }
     
     public int method3412(final int endIndex) {
-        return (endIndex <= this.field3439.length()) ? (this.field3426 + this.field3438.method6617(this.field3439.substring(0, endIndex))) : this.field3426;
+        return (endIndex <= this.field3439.length()) ? (this.field3426 + this.field3438.getStringWidth(this.field3439.substring(0, endIndex))) : this.field3426;
     }
     
     public void method3413(final int field3426) {

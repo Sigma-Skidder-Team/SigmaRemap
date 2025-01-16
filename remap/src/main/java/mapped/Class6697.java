@@ -19,7 +19,7 @@ public class Class6697 extends Class6693
         if (array.length != 0) {
             throw new Class2332();
         }
-        final ItemStack method2345 = Class6697.field26420.field4684.field3006.method2345();
+        final ItemStack method2345 = Class6697.field26420.player.field3006.method2345();
         if (method2345.getItem() instanceof Class4036 && ((Class4036)method2345.getItem()).method12240() instanceof Class3841) {
             method20353(method2345);
             class6428.method19104("Now peeking shulker");
@@ -47,9 +47,9 @@ public class Class6697 extends Class6693
             final Class2265<ItemStack> class8324;
             final Object o = new Class443((ItemStack[])class8324.toArray((Object[])new ItemStack[0]));
             final Minecraft field26420 = Class6697.field26420;
-            new Class745(new Class3435(-1, Class6697.field26420.field4684.field3006, class8322), Class6697.field26420.field4684.field3006, class8323.method27664());
+            new Class745(new Class3435(-1, Class6697.field26420.player.field3006, class8322), Class6697.field26420.player.field3006, class8323.method27664());
             final Class745 class8325;
-            field26420.method5244(class8325);
+            field26420.displayGuiScreen(class8325);
         });
     }
     

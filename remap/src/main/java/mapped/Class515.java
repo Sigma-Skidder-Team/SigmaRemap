@@ -29,7 +29,7 @@ public class Class515 extends Class516<Class3441> implements Class514
         this.field3073.method3374(this::method2974);
         this.children.add(this.field3073);
         this.field3077.method10873(this);
-        this.method3476(this.field3073);
+        this.setFocusedDefault(this.field3073);
     }
     
     @Override
@@ -47,23 +47,23 @@ public class Class515 extends Class516<Class3441> implements Class514
     }
     
     @Override
-    public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (n == 256) {
-            this.minecraft.field4684.method2814();
+    public boolean keyPressed(final int keyCode, final int n2, final int n3) {
+        if (keyCode == 256) {
+            this.minecraft.player.method2814();
         }
-        return this.field3073.keyPressed(n, n2, n3) || this.field3073.method3394() || super.keyPressed(n, n2, n3);
+        return this.field3073.keyPressed(keyCode, n2, n3) || this.field3073.method3394() || super.keyPressed(keyCode, n2, n3);
     }
     
     @Override
     public void method2973(final int n, final int n2) {
-        Class8726.method30012();
-        this.font.method6610(this.field3148.getFormattedText(), 60.0f, 6.0f, 4210752);
+        RenderSystem.disableBlend();
+        this.font.method6610(this.title.getFormattedText(), 60.0f, 6.0f, 4210752);
         final int method10998 = ((Class3441)this.field3077).method10998();
         if (method10998 > 0) {
             int n3 = 8453920;
             int n4 = 1;
             String s = Class8822.method30773("container.repair.cost", method10998);
-            if (method10998 >= 40 && !this.minecraft.field4684.field3025.field27304) {
+            if (method10998 >= 40 && !this.minecraft.player.field3025.field27304) {
                 s = Class8822.method30773("container.repair.expensive", new Object[0]);
                 n3 = 16736352;
             }
@@ -76,9 +76,9 @@ public class Class515 extends Class516<Class3441> implements Class514
                 n4 = 0;
             }
             if (n4 != 0) {
-                final int n5 = this.field3075 - 8 - this.font.method6617(s) - 2;
-                Class565.method3293(n5 - 2, 67, this.field3075 - 8, 79, 1325400064);
-                this.font.method6609(s, (float)n5, 69.0f, n3);
+                final int n5 = this.field3075 - 8 - this.font.getStringWidth(s) - 2;
+                AbstractGui.fill(n5 - 2, 67, this.field3075 - 8, 79, 1325400064);
+                this.font.drawStringWithShadow(s, (float)n5, 69.0f, n3);
             }
         }
     }
@@ -97,30 +97,30 @@ public class Class515 extends Class516<Class3441> implements Class514
                 }
             }
             ((Class3441)this.field3077).method10997(s2);
-            this.minecraft.field4684.field4069.method17292(new Class4362(s2));
+            this.minecraft.player.field4069.method17292(new Class4362(s2));
         }
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        super.method2975(n, n2, n3);
-        Class8726.method30012();
-        this.field3073.method2975(n, n2, n3);
+        super.render(n, n2, n3);
+        RenderSystem.disableBlend();
+        this.field3073.render(n, n2, n3);
         this.method2977(n, n2);
     }
     
     @Override
     public void method2976(final float n, final int n2, final int n3) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.minecraft.method5290().method5849(Class515.field3072);
         final int n4 = (this.width - this.field3075) / 2;
         final int n5 = (this.height - this.field3076) / 2;
-        this.method3186(n4, n5, 0, 0, this.field3075, this.field3076);
-        this.method3186(n4 + 59, n5 + 20, 0, this.field3076 + (this.field3077.method10878(0).method20054() ? 0 : 16), 110, 16);
+        this.blit(n4, n5, 0, 0, this.field3075, this.field3076);
+        this.blit(n4 + 59, n5 + 20, 0, this.field3076 + (this.field3077.method10878(0).method20054() ? 0 : 16), 110, 16);
         if (this.field3077.method10878(0).method20054() || this.field3077.method10878(1).method20054()) {
             if (!this.field3077.method10878(2).method20054()) {
-                this.method3186(n4 + 99, n5 + 45, this.field3075, 0, 28, 21);
+                this.blit(n4 + 99, n5 + 45, this.field3075, 0, 28, 21);
             }
         }
     }

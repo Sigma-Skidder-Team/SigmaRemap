@@ -33,12 +33,12 @@ public class Class526 extends Class516<Class3433>
     public Class526(final Class3433 class3433, final Class464 class3434, final ITextComponent class3435) {
         super(class3433, class3434, class3435);
         this.field3137 = new Random();
-        this.field3145 = ItemStack.field34174;
+        this.field3145 = ItemStack.EMPTY;
     }
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.font.method6610(this.field3148.getFormattedText(), 12.0f, 5.0f, 4210752);
+        this.font.method6610(this.title.getFormattedText(), 12.0f, 5.0f, 4210752);
         this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
@@ -59,7 +59,7 @@ public class Class526 extends Class516<Class3433>
                 if (n7 >= 0.0) {
                     if (n6 < 108.0) {
                         if (n7 < 19.0) {
-                            if (((Class3433)this.field3077).method10877(this.minecraft.field4684, i)) {
+                            if (((Class3433)this.field3077).method10877(this.minecraft.player, i)) {
                                 this.minecraft.field4682.method27326(((Class3433)this.field3077).field16154, i);
                                 return true;
                             }
@@ -74,23 +74,23 @@ public class Class526 extends Class516<Class3433>
     @Override
     public void method2976(final float n, final int n2, final int n3) {
         Class8317.method27611();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.minecraft.method5290().method5849(Class526.field3134);
         final int n4 = (this.width - this.field3075) / 2;
         final int n5 = (this.height - this.field3076) / 2;
-        this.method3186(n4, n5, 0, 0, this.field3075, this.field3076);
-        Class8726.method30057(5889);
-        Class8726.method30059();
-        Class8726.method30058();
+        this.blit(n4, n5, 0, 0, this.field3075, this.field3076);
+        RenderSystem.method30057(5889);
+        RenderSystem.method30059();
+        RenderSystem.method30058();
         final int n6 = (int)this.minecraft.method5332().method7700();
-        Class8726.method30048((this.width - 320) / 2 * n6, (this.height - 240) / 2 * n6, 320 * n6, 240 * n6);
-        Class8726.method30065(-0.34f, 0.23f, 0.0f);
-        Class8726.method30067(Matrix4f.method20755(90.0, 1.3333334f, 9.0f, 80.0f));
-        Class8726.method30057(5888);
-        final Class7351 class7351 = new Class7351();
+        RenderSystem.method30048((this.width - 320) / 2 * n6, (this.height - 240) / 2 * n6, 320 * n6, 240 * n6);
+        RenderSystem.method30065(-0.34f, 0.23f, 0.0f);
+        RenderSystem.method30067(Matrix4f.method20755(90.0, 1.3333334f, 9.0f, 80.0f));
+        RenderSystem.method30057(5888);
+        final MatrixStack class7351 = new MatrixStack();
         class7351.method22567();
-        final Class8996 method22569 = class7351.method22569();
-        method22569.method32111().method20748();
+        final Class8996 method22569 = class7351.getLast();
+        method22569.getMatrix().method20748();
         method22569.method32112().setIdentity();
         class7351.method22564(0.0, 3.299999952316284, 1984.0);
         class7351.method22565(5.0f, 5.0f, 5.0f);
@@ -116,39 +116,39 @@ public class Class526 extends Class516<Class3433>
         if (n10 > 1.0f) {
             n10 = 1.0f;
         }
-        Class8726.method30046();
+        RenderSystem.enableRescaleNormal();
         Class526.field3136.method17788(0.0f, n9, n10, method22570);
-        final Class7808 method22571 = Class7807.method25212(Class7392.method22694().method22696());
+        final IRenderTypeBuffer.Impl method22571 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
         Class526.field3136.method17564(class7351, method22571.method25214(Class526.field3136.method17647(Class526.field3135)), 15728880, Class1904.field10335, 1.0f, 1.0f, 1.0f, 1.0f);
-        method22571.method25216();
+        method22571.finish();
         class7351.method22568();
-        Class8726.method30057(5889);
-        Class8726.method30048(0, 0, this.minecraft.method5332().method7692(), this.minecraft.method5332().method7693());
-        Class8726.method30060();
-        Class8726.method30057(5888);
+        RenderSystem.method30057(5889);
+        RenderSystem.method30048(0, 0, this.minecraft.method5332().method7692(), this.minecraft.method5332().method7693());
+        RenderSystem.method30060();
+        RenderSystem.method30057(5888);
         Class8317.method27612();
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8430.method28151().method28153(((Class3433)this.field3077).method10953());
         final int method22572 = ((Class3433)this.field3077).method10952();
         for (int i = 0; i < 3; ++i) {
             final int n11 = n4 + 60;
             final int n12 = n11 + 20;
-            this.method3304(0);
+            this.setBlitOffset(0);
             this.minecraft.method5290().method5849(Class526.field3134);
             final int j = ((Class3433)this.field3077).field16221[i];
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             if (j != 0) {
                 final String string = "" + j;
-                final int n13 = 86 - this.font.method6617(string);
+                final int n13 = 86 - this.font.getStringWidth(string);
                 final String method22573 = Class8430.method28151().method28152(this.font, n13);
-                final Class1844 method22574 = this.minecraft.method5323().method7376(Minecraft.field4625);
+                final FontRenderer method22574 = this.minecraft.method5323().method7376(Minecraft.field4625);
                 int n14 = 6839882;
                 int n15 = 0;
                 Label_1122: {
-                    if (method22572 < i + 1 || this.minecraft.field4684.field3026 < j) {
-                        if (!this.minecraft.field4684.field3025.field27304) {
-                            this.method3186(n11, n5 + 14 + 19 * i, 0, 185, 108, 19);
-                            this.method3186(n11 + 1, n5 + 15 + 19 * i, 16 * i, 239, 16, 16);
+                    if (method22572 < i + 1 || this.minecraft.player.field3026 < j) {
+                        if (!this.minecraft.player.field3025.field27304) {
+                            this.blit(n11, n5 + 14 + 19 * i, 0, 185, 108, 19);
+                            this.blit(n11 + 1, n5 + 15 + 19 * i, 16 * i, 239, 16, 16);
                             method22574.method6622(method22573, n12, n5 + 16 + 19 * i, n13, (n14 & 0xFEFEFE) >> 1);
                             n15 = 4226832;
                             break Label_1122;
@@ -161,35 +161,35 @@ public class Class526 extends Class516<Class3433>
                             if (n17 >= 0) {
                                 if (n16 < 108) {
                                     if (n17 < 19) {
-                                        this.method3186(n11, n5 + 14 + 19 * i, 0, 204, 108, 19);
+                                        this.blit(n11, n5 + 14 + 19 * i, 0, 204, 108, 19);
                                         n14 = 16777088;
                                         break Label_1062;
                                     }
                                 }
                             }
                         }
-                        this.method3186(n11, n5 + 14 + 19 * i, 0, 166, 108, 19);
+                        this.blit(n11, n5 + 14 + 19 * i, 0, 166, 108, 19);
                     }
-                    this.method3186(n11 + 1, n5 + 15 + 19 * i, 16 * i, 223, 16, 16);
+                    this.blit(n11 + 1, n5 + 15 + 19 * i, 16 * i, 223, 16, 16);
                     method22574.method6622(method22573, n12, n5 + 16 + 19 * i, n13, n14);
                     n15 = 8453920;
                 }
-                final Class1844 field4643 = this.minecraft.fontRenderer;
-                field4643.method6609(string, (float)(n12 + 86 - field4643.method6617(string)), (float)(n5 + 16 + 19 * i + 7), n15);
+                final FontRenderer field4643 = this.minecraft.fontRenderer;
+                field4643.drawStringWithShadow(string, (float)(n12 + 86 - field4643.getStringWidth(string)), (float)(n5 + 16 + 19 * i + 7), n15);
             }
             else {
-                this.method3186(n11, n5 + 14 + 19 * i, 0, 185, 108, 19);
+                this.blit(n11, n5 + 14 + 19 * i, 0, 185, 108, 19);
             }
         }
     }
     
     @Override
-    public void method2975(final int n, final int n2, float method5314) {
+    public void render(final int n, final int n2, float method5314) {
         method5314 = this.minecraft.method5314();
         this.renderBackground();
-        super.method2975(n, n2, method5314);
+        super.render(n, n2, method5314);
         this.method2977(n, n2);
-        final boolean field27304 = this.minecraft.field4684.field3025.field27304;
+        final boolean field27304 = this.minecraft.player.field3025.field27304;
         final int method5315 = ((Class3433)this.field3077).method10952();
         for (int i = 0; i < 3; ++i) {
             final int n3 = ((Class3433)this.field3077).field16221[i];
@@ -204,7 +204,7 @@ public class Class526 extends Class516<Class3433>
                             arrayList.add("" + TextFormatting.WHITE + TextFormatting.ITALIC + Class8822.method30773("container.enchant.clue", method5316.method18599(n4).getFormattedText()));
                             if (!field27304) {
                                 arrayList.add("");
-                                if (this.minecraft.field4684.field3026 >= n3) {
+                                if (this.minecraft.player.field3026 >= n3) {
                                     String str;
                                     if (n5 != 1) {
                                         str = Class8822.method30773("container.enchant.lapis.many", n5);
@@ -226,7 +226,7 @@ public class Class526 extends Class516<Class3433>
                                     arrayList.add(TextFormatting.RED + Class8822.method30773("container.enchant.level.requirement", ((Class3433)this.field3077).field16221[i]));
                                 }
                             }
-                            this.method3032(arrayList, n, n2);
+                            this.renderTooltip(arrayList, n, n2);
                             break;
                         }
                     }

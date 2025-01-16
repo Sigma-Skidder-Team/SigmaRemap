@@ -142,24 +142,24 @@ public class Class5700 extends Class5611
             Class8952.method31758(String.valueOf(n6), s2);
         }
         if (!b) {
-            Class8726.method30068(0.56f, 0.56f, 0.56f, 1.0f);
+            RenderSystem.method30068(0.56f, 0.56f, 0.56f, 1.0f);
         }
         else {
             final float n7 = 0.85f + 0.15f * Class8269.method27478(this.field23146 * 0.2f);
-            Class8726.method30068(n7, n7, n7, 1.0f);
+            RenderSystem.method30068(n7, n7, n7, 1.0f);
         }
         RealmsScreen.method15411(n + 3, n2 + 3, 0.0f, 0.0f, 74, 74, 74, 74);
         Realms.method25380("realms:textures/gui/realms/slot_frame.png");
         if (!method3360 || class2210 == Class2210.field13468) {
             if (!b) {
-                Class8726.method30068(0.56f, 0.56f, 0.56f, 1.0f);
+                RenderSystem.method30068(0.56f, 0.56f, 0.56f, 1.0f);
             }
             else {
-                Class8726.method30068(0.8f, 0.8f, 0.8f, 1.0f);
+                RenderSystem.method30068(0.8f, 0.8f, 0.8f, 1.0f);
             }
         }
         else {
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         }
         RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 80, 80, 80, 80);
         this.method16935(s, n + 40, n2 + 66, 16777215);

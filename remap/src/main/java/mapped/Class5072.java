@@ -86,31 +86,31 @@ public class Class5072 extends RealmsScreen
         int n6 = 0;
         if (Class5072.field21769) {
             RealmsScreen.method15419("realms:textures/gui/realms/news_notification_mainscreen.png");
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method30059();
-            Class8726.method30063(0.4f, 0.4f, 0.4f);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30059();
+            RenderSystem.method30063(0.4f, 0.4f, 0.4f);
             RealmsScreen.method15411((int)((n4 + 2 - n6) * 2.5), (int)(n5 * 2.5), 0.0f, 0.0f, 40, 40, 40, 40);
-            Class8726.method30060();
+            RenderSystem.method30060();
             n6 += 14;
         }
         if (field21765 != 0) {
             RealmsScreen.method15419("realms:textures/gui/realms/invite_icon.png");
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method30059();
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30059();
             RealmsScreen.method15411(n4 - n6, n5 - 6, 0.0f, 0.0f, 15, 25, 31, 25);
-            Class8726.method30060();
+            RenderSystem.method30060();
             n6 += 16;
         }
         if (Class5072.field21767) {
             RealmsScreen.method15419("realms:textures/gui/realms/trial_icon.png");
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class8726.method30059();
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            RenderSystem.method30059();
             int n7 = 0;
             if ((System.currentTimeMillis() / 800L & 0x1L) == 0x1L) {
                 n7 = 8;
             }
             RealmsScreen.method15411(n4 + 4 - n6, n5 + 4, 0.0f, (float)n7, 8, 8, 8, 16);
-            Class8726.method30060();
+            RenderSystem.method30060();
         }
     }
     

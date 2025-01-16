@@ -26,18 +26,18 @@ public class Class706 extends Class703
             this.field3878.method3567(Stream.concat((Stream<?>)Arrays.stream(Class706.field3879), (Stream<?>)Stream.of(Class6469.field25716)).toArray(Class6469[]::new));
         }
         this.children.add(this.field3878);
-        this.method3029(new Class654(this.width / 2 - 100, this.height - 27, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, this.height - 27, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
             this.field3869.method17121();
-            this.minecraft.method5244(this.field3868);
+            this.minecraft.displayGuiScreen(this.field3868);
         }));
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.field3878.method2975(n, n2, n3);
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 5, 16777215);
-        super.method2975(n, n2, n3);
+        this.field3878.render(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 5, 16777215);
+        super.render(n, n2, n3);
     }
     
     static {

@@ -51,8 +51,8 @@ public enum Class2122 implements Class2123
     }
     
     @Override
-    public Class9294 method8274() {
-        return new Class9294(null, this.field12389, null, null);
+    public TransformationMatrix method8274() {
+        return new TransformationMatrix(null, this.field12389, null, null);
     }
     
     public static Class2122 method8275(final int n, final int n2) {

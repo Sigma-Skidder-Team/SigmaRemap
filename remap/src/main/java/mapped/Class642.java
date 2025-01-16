@@ -17,7 +17,7 @@ public class Class642 extends Class623<Class642>
     
     @Override
     public void method3467(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final float n8) {
-        this.field3651.method3297(this.field3651.field3600.font, Registry.field217.getOrDefault(this.field3650).method9864().getString(), n3 + 5, n2 + 2, 16777215);
+        this.field3651.drawString(this.field3651.field3600.font, Registry.field217.getOrDefault(this.field3650).method9864().getString(), n3 + 5, n2 + 2, 16777215);
     }
     
     @Override

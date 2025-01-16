@@ -26,7 +26,7 @@ public class Class6318 implements Class6313
     public final boolean field25263;
     public final boolean field25264;
     public final boolean field25265;
-    public final Class1912 field25266;
+    public final TextureAtlasSprite field25266;
     public final Class7503 field25267;
     public final Class9168 field25268;
     private final Map<BlockState, BitSet> field25269;
@@ -89,7 +89,7 @@ public class Class6318 implements Class6313
     }
     
     @Override
-    public Class1912 method18696() {
+    public TextureAtlasSprite method18696() {
         return this.field25266;
     }
     

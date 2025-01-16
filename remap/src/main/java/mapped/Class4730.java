@@ -21,7 +21,7 @@ public class Class4730 extends Class4712<Class850, Class5868<Class850>>
         this.method13978(new Class1833(this));
     }
     
-    public void method14043(final Class850 class850, final float n, final float n2, final Class7351 class851, final Class7807 class852, final int n3) {
+    public void method14043(final Class850 class850, final float n, final float n2, final MatrixStack class851, final IRenderTypeBuffer class852, final int n3) {
         final BlockState method5080 = class850.method5080();
         final Class5868 class853 = ((Class4710<T, Class5868>)this).method13979();
         class853.field24042 = (method5080 != null);

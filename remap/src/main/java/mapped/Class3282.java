@@ -46,7 +46,7 @@ public class Class3282 extends Class3167
                     class5745.method17050((method17051 <= 0.42) ? method17051 : 0.4199998);
                     this.field15790 = Class7482.method23144()[0] - 90.0f;
                     this.field15787 = 1;
-                    this.field15788 = Class3282.field15514.field4684.posY;
+                    this.field15788 = Class3282.field15514.player.posY;
                     class5745.method17049();
                 }
             }
@@ -56,7 +56,7 @@ public class Class3282 extends Class3167
     @Class6753
     private void method10363(final Class5744 class5744) {
         if (this.method9906()) {
-            if (Class3282.field15514.field4684 != null) {
+            if (Class3282.field15514.player != null) {
                 if (class5744.method17046()) {
                     if (this.field15787 != 1) {
                         if (this.field15787 == 3) {
@@ -79,11 +79,11 @@ public class Class3282 extends Class3167
     
     @Class6753
     private void method10364(final Class5717 class5717) {
-        if (this.method9906() && Class3282.field15514.field4684 != null) {
+        if (this.method9906() && Class3282.field15514.player != null) {
             if (this.field15787 != 1) {
                 if (this.field15787 != 2) {
                     if (this.field15787 == 3) {
-                        if (!Class6430.method19160(Class3282.field15514.field4684, 0.001f)) {
+                        if (!Class6430.method19160(Class3282.field15514.player, 0.001f)) {
                             Class7482.method23149(class5717, 0.25);
                         }
                         else {
@@ -97,7 +97,7 @@ public class Class3282 extends Class3167
                     }
                 }
                 else {
-                    class5717.method16975(this.field15788 + this.field15789 - Class3282.field15514.field4684.posY);
+                    class5717.method16975(this.field15788 + this.field15789 - Class3282.field15514.player.posY);
                     final double n = this.method9883("AAC") ? 0.301 : Class7482.method23136();
                     final float n2 = this.field15790 * 0.017453292f;
                     class5717.method16973(-MathHelper.sin(n2) * n);
@@ -119,12 +119,12 @@ public class Class3282 extends Class3167
     
     @Class6753
     private void method10365(final Class5738 class5738) {
-        if (this.method9906() && Class3282.field15514.field4684 != null) {
+        if (this.method9906() && Class3282.field15514.player != null) {
             if (!class5738.method17027()) {
-                Class3282.field15514.field4684.stepHeight = 1.07f;
+                Class3282.field15514.player.stepHeight = 1.07f;
             }
             else {
-                Class3282.field15514.field4684.stepHeight = 0.5f;
+                Class3282.field15514.player.stepHeight = 0.5f;
             }
         }
     }

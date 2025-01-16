@@ -36,8 +36,8 @@ public class Class4609
     public static boolean method13668(final Block class3833, final BlockPos class3834) {
         final VoxelShape method21727 = class3833.getDefaultState().getCollisionShape(Class4609.field20075.world, class3834);
         if (!method13708(class3834)) {
-            if (Class4609.field20075.world.method6957(Class4609.field20075.field4684, method21727)) {
-                if (class3834.getY() <= Class4609.field20075.field4684.method1894().getY()) {
+            if (Class4609.field20075.world.method6957(Class4609.field20075.player, method21727)) {
+                if (class3834.getY() <= Class4609.field20075.player.method1894().getY()) {
                     return true;
                 }
             }
@@ -46,28 +46,28 @@ public class Class4609
     }
     
     public static void method13669(final BlockPos class354) {
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().field4684.posX;
-        final double y = class354.getY() + 0.5 - (Minecraft.method5277().field4684.posY + Minecraft.method5277().field4684.method1892());
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().field4684.posZ;
+        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX;
+        final double y = class354.getY() + 0.5 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892());
+        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ;
         final double x2 = MathHelper.sqrt(x * x + y2 * y2);
         final float n = (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f;
         final float n2 = (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793));
-        Minecraft.method5277().field4684.rotationYaw += MathHelper.method35668(n - Minecraft.method5277().field4684.rotationYaw);
-        Minecraft.method5277().field4684.rotationPitch += MathHelper.method35668(n2 - Minecraft.method5277().field4684.rotationPitch);
+        Minecraft.method5277().player.rotationYaw += MathHelper.method35668(n - Minecraft.method5277().player.rotationYaw);
+        Minecraft.method5277().player.rotationPitch += MathHelper.method35668(n2 - Minecraft.method5277().player.rotationPitch);
     }
     
     public static void method13670(final BlockPos class354) {
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().field4684.posX;
-        final double y = class354.getY() + 0.5 - (Minecraft.method5277().field4684.posY + Minecraft.method5277().field4684.method1892());
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().field4684.posZ;
-        Minecraft.method5277().method5269().method17292(new Class4356(Minecraft.method5277().field4684.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().field4684.rotationYaw), Minecraft.method5277().field4684.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().field4684.rotationPitch), Minecraft.method5277().field4684.onGround));
+        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX;
+        final double y = class354.getY() + 0.5 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892());
+        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ;
+        Minecraft.method5277().method5269().method17292(new Class4356(Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch), Minecraft.method5277().player.onGround));
     }
     
     public static float[] method13671(final BlockPos class354) {
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().field4684.posX;
-        final double y = class354.getY() - 0.25 - (Minecraft.method5277().field4684.posY + Minecraft.method5277().field4684.method1892());
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().field4684.posZ;
-        return new float[] { Minecraft.method5277().field4684.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().field4684.rotationYaw), Minecraft.method5277().field4684.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().field4684.rotationPitch) };
+        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX;
+        final double y = class354.getY() - 0.25 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892());
+        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ;
+        return new float[] { Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch) };
     }
     
     public static float[] method13672(final BlockPos class354, final Direction class355) {
@@ -99,10 +99,10 @@ public class Class4609
                 break;
             }
         }
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().field4684.posX + n;
-        final double y = class354.getY() - 0.02 - (Minecraft.method5277().field4684.posY + Minecraft.method5277().field4684.method1892()) + n3;
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().field4684.posZ + n2;
-        return new float[] { Minecraft.method5277().field4684.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().field4684.rotationYaw), Minecraft.method5277().field4684.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().field4684.rotationPitch) };
+        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX + n;
+        final double y = class354.getY() - 0.02 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892()) + n3;
+        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ + n2;
+        return new float[] { Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch) };
     }
     
     public static float[] method13673(final BlockPos class354, final Direction class355) {
@@ -146,10 +146,10 @@ public class Class4609
         if (n3 == 0.0f) {
             n3 = (float)(0.6000000238418579 - Math.sin((System.currentTimeMillis() - 500L) / 1600.0) * 0.2);
         }
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().field4684.posX + n;
-        final double y = class354.getY() - 0.02 - (Minecraft.method5277().field4684.posY + Minecraft.method5277().field4684.method1892()) + n3;
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().field4684.posZ + n2;
-        return new float[] { Minecraft.method5277().field4684.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().field4684.rotationYaw), Minecraft.method5277().field4684.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().field4684.rotationPitch) };
+        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX + n;
+        final double y = class354.getY() - 0.02 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892()) + n3;
+        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ + n2;
+        return new float[] { Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch) };
     }
     
     public static float method13674(final BlockPos class354, final Direction class355) {
@@ -173,18 +173,18 @@ public class Class4609
                 break;
             }
         }
-        final double n3 = class354.getX() + 0.5 - Minecraft.method5277().field4684.posX + n;
-        final double n4 = class354.getZ() + 0.5 - Minecraft.method5277().field4684.posZ + n2;
-        final double y = class354.getY() - 0.02 - (Minecraft.method5277().field4684.posY + Minecraft.method5277().field4684.method1892()) + 1.0;
-        final double y2 = class354.getY() - 0.02 - (Minecraft.method5277().field4684.posY + Minecraft.method5277().field4684.method1892());
+        final double n3 = class354.getX() + 0.5 - Minecraft.method5277().player.posX + n;
+        final double n4 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ + n2;
+        final double y = class354.getY() - 0.02 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892()) + 1.0;
+        final double y2 = class354.getY() - 0.02 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892());
         final double n5 = MathHelper.sqrt(n3 * n3 + n4 * n4);
         return (float)(-(Math.atan2(y2, n5) * 180.0 / 3.141592653589793)) - (float)(-(Math.atan2(y, n5) * 180.0 / 3.141592653589793));
     }
     
     public static List<BlockPos> method13675(final List<BlockPos> list) {
         list.sort((class354, class355) -> {
-            method13680(Class4609.field20075.field4684, class354);
-            method13680(Class4609.field20075.field4684, class355);
+            method13680(Class4609.field20075.player, class354);
+            method13680(Class4609.field20075.player, class355);
             final float n;
             final float n2;
             if (n <= n2) {
@@ -292,7 +292,7 @@ public class Class4609
         for (float n2 = -n; n2 <= n; ++n2) {
             for (float n3 = -n; n3 <= n; ++n3) {
                 for (float n4 = -n; n4 <= n; ++n4) {
-                    list.add(new BlockPos(Class4609.field20075.field4684.posX + n3, Class4609.field20075.field4684.posY + n2, Class4609.field20075.field4684.posZ + n4));
+                    list.add(new BlockPos(Class4609.field20075.player.posX + n3, Class4609.field20075.player.posY + n2, Class4609.field20075.player.posZ + n4));
                 }
             }
         }
@@ -318,7 +318,7 @@ public class Class4609
         for (float n3 = (float)(-n); n3 <= n; ++n3) {
             for (float n4 = (float)(-n2); n4 <= n2; ++n4) {
                 for (float n5 = (float)(-n2); n5 <= n2; ++n5) {
-                    final BlockPos class354 = new BlockPos(Class4609.field20075.field4684.posX + n4, Class4609.field20075.field4684.posY + n3, Class4609.field20075.field4684.posZ + n5);
+                    final BlockPos class354 = new BlockPos(Class4609.field20075.player.posX + n4, Class4609.field20075.player.posY + n3, Class4609.field20075.player.posZ + n5);
                     if (Class4609.field20075.world.getBlockState(class354).method21696() instanceof Class3992) {
                         list.add(class354);
                     }
@@ -342,26 +342,26 @@ public class Class4609
             final double n = method13696.getHitVec().x - method13696.getPos().getX();
             final double n2 = method13696.getHitVec().z - method13696.getPos().getZ();
             final double n3 = method13696.getHitVec().y - method13696.getPos().getY();
-            final double x = method13696.getPos().getX() - Minecraft.method5277().field4684.posX + n;
-            final double y = method13696.getPos().getY() - (Minecraft.method5277().field4684.posY + Minecraft.method5277().field4684.method1892()) + n3;
-            final double y2 = method13696.getPos().getZ() - Minecraft.method5277().field4684.posZ + n2;
-            return new float[] { Minecraft.method5277().field4684.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().field4684.rotationYaw), Minecraft.method5277().field4684.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().field4684.rotationPitch) };
+            final double x = method13696.getPos().getX() - Minecraft.method5277().player.posX + n;
+            final double y = method13696.getPos().getY() - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892()) + n3;
+            final double y2 = method13696.getPos().getZ() - Minecraft.method5277().player.posZ + n2;
+            return new float[] { Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch) };
         }
         return null;
     }
     
     public static BlockRayTraceResult method13696(float n) {
-        final Vec3d class5487 = new Vec3d(Class4609.field20075.field4684.field4074, Class4609.field20075.field4684.field4075 - 0.800000011920929, Class4609.field20075.field4684.field4076);
+        final Vec3d class5487 = new Vec3d(Class4609.field20075.player.field4074, Class4609.field20075.player.field4075 - 0.800000011920929, Class4609.field20075.player.field4076);
         n = (float)Math.toRadians(n);
         final float n2 = 0.0f;
         final float n3 = -MathHelper.sin(n) * MathHelper.cos(n2);
         final float n4 = MathHelper.cos(n) * MathHelper.cos(n2);
         final float n5 = 2.3f;
-        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.field4684.field4074 + n3 * n5, Class4609.field20075.field4684.field4075 - 0.800000011920929 - (Class4609.field20075.field4684.field2967 ? 0.6f : 0.0f), Class4609.field20075.field4684.field4076 + n4 * n5), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
+        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.player.field4074 + n3 * n5, Class4609.field20075.player.field4075 - 0.800000011920929 - (Class4609.field20075.player.field2967 ? 0.6f : 0.0f), Class4609.field20075.player.field4076 + n4 * n5), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
     
     public static BlockRayTraceResult method13697(float n, float n2, float method27315) {
-        final Vec3d class5487 = new Vec3d(Class4609.field20075.field4684.field4074, Class4609.field20075.field4684.field4075 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076);
+        final Vec3d class5487 = new Vec3d(Class4609.field20075.player.field4074, Class4609.field20075.player.field4075 + Class4609.field20075.player.method1892(), Class4609.field20075.player.field4076);
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
         final float n3 = -MathHelper.sin(n) * MathHelper.cos(n2);
@@ -370,11 +370,11 @@ public class Class4609
         if (method27315 == 0.0f) {
             method27315 = Class4609.field20075.field4682.method27315();
         }
-        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.field4684.field4074 + n3 * method27315, Class4609.field20075.field4684.field4075 + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
+        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.player.field4074 + n3 * method27315, Class4609.field20075.player.field4075 + n4 * method27315 + Class4609.field20075.player.method1892(), Class4609.field20075.player.field4076 + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
     
     public static BlockRayTraceResult method13698(float n, float n2, float method27315, final Class5744 class5744) {
-        final Vec3d class5745 = new Vec3d(class5744.method17034(), Class4609.field20075.field4684.method1892() + class5744.method17036(), class5744.method17038());
+        final Vec3d class5745 = new Vec3d(class5744.method17034(), Class4609.field20075.player.method1892() + class5744.method17036(), class5744.method17038());
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
         final float n3 = -MathHelper.sin(n) * MathHelper.cos(n2);
@@ -383,11 +383,11 @@ public class Class4609
         if (method27315 == 0.0f) {
             method27315 = Class4609.field20075.field4682.method27315();
         }
-        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5745, new Vec3d(Class4609.field20075.field4684.field4074 + n3 * method27315, Class4609.field20075.field4684.field4075 + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
+        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5745, new Vec3d(Class4609.field20075.player.field4074 + n3 * method27315, Class4609.field20075.player.field4075 + n4 * method27315 + Class4609.field20075.player.method1892(), Class4609.field20075.player.field4076 + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
     
     public static RayTraceResult method13699(float n, float n2, float method27315, final float n3) {
-        final Vec3d class5487 = new Vec3d(Class4609.field20075.field4684.posX + Math.cos(Class7482.method23147() * 3.141592653589793 / 180.0) * n3, Class4609.field20075.field4684.posY + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.posZ + Math.sin(Class7482.method23147() * 3.141592653589793 / 180.0) * n3);
+        final Vec3d class5487 = new Vec3d(Class4609.field20075.player.posX + Math.cos(Class7482.method23147() * 3.141592653589793 / 180.0) * n3, Class4609.field20075.player.posY + Class4609.field20075.player.method1892(), Class4609.field20075.player.posZ + Math.sin(Class7482.method23147() * 3.141592653589793 / 180.0) * n3);
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
         final float n4 = -MathHelper.sin(n) * MathHelper.cos(n2);
@@ -396,22 +396,22 @@ public class Class4609
         if (method27315 == 0.0f) {
             method27315 = Class4609.field20075.field4682.method27315();
         }
-        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.field4684.field4074 + n4 * method27315, Class4609.field20075.field4684.field4075 + n5 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n6 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
+        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.player.field4074 + n4 * method27315, Class4609.field20075.player.field4075 + n5 * method27315 + Class4609.field20075.player.method1892(), Class4609.field20075.player.field4076 + n6 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
     
     public static RayTraceResult method13700(final BlockPos class354) {
-        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(new Vec3d(Class4609.field20075.field4684.posX, Class4609.field20075.field4684.posY + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.posZ), new Vec3d(class354.getX() + 0.5 + RandomUtils.nextDouble(0.01, 0.04), class354.getY(), class354.getZ() + 0.5 + RandomUtils.nextDouble(0.01, 0.04)), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
+        return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(new Vec3d(Class4609.field20075.player.posX, Class4609.field20075.player.posY + Class4609.field20075.player.method1892(), Class4609.field20075.player.posZ), new Vec3d(class354.getX() + 0.5 + RandomUtils.nextDouble(0.01, 0.04), class354.getY(), class354.getZ() + 0.5 + RandomUtils.nextDouble(0.01, 0.04)), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
     
     private boolean method13701(final Class9052 class9052, float n, float n2) {
-        final Vec3d class9053 = new Vec3d(Class4609.field20075.field4684.posX, Class4609.field20075.field4684.posY + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.posZ);
+        final Vec3d class9053 = new Vec3d(Class4609.field20075.player.posX, Class4609.field20075.player.posY + Class4609.field20075.player.method1892(), Class4609.field20075.player.posZ);
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
         final float n3 = -MathHelper.sin(n) * MathHelper.cos(n2);
         final float n4 = -MathHelper.sin(n2);
         final float n5 = MathHelper.cos(n) * MathHelper.cos(n2);
         final float method27315 = Class4609.field20075.field4682.method27315();
-        final BlockRayTraceResult method27316 = Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class9053, new Vec3d(Class4609.field20075.field4684.posX + n3 * method27315, Class4609.field20075.field4684.posY + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.posZ + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.ANY, Class4609.field20075.method5303()));
+        final BlockRayTraceResult method27316 = Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class9053, new Vec3d(Class4609.field20075.player.posX + n3 * method27315, Class4609.field20075.player.posY + n4 * method27315 + Class4609.field20075.player.method1892(), Class4609.field20075.player.posZ + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.ANY, Class4609.field20075.method5303()));
         return method27316 != null && method27316.getPos().equals(class9052.field38320) && method27316.getFace() == class9052.field38321;
     }
     
@@ -451,7 +451,7 @@ public class Class4609
             for (float n3 = -n; n3 <= n; ++n3) {
                 for (float n4 = -n; n4 <= n; ++n4) {
                     final BlockPos method1133 = class354.add(n3, n2, n4);
-                    if (Class4609.field20075.field4684.getPosY() >= method1133.getY()) {
+                    if (Class4609.field20075.player.getPosY() >= method1133.getY()) {
                         list.add(method1133);
                     }
                 }
@@ -462,7 +462,7 @@ public class Class4609
     
     public static Class9301 method13707(final BlockPos class354, final boolean b, final boolean b2) {
         method13690();
-        for (final BlockPos class355 : method13677(method13706(class354), new Vec3d(Class4609.field20075.field4684.posX, Class4609.field20075.field4684.posY, Class4609.field20075.field4684.posZ), b2)) {
+        for (final BlockPos class355 : method13677(method13706(class354), new Vec3d(Class4609.field20075.player.posX, Class4609.field20075.player.posY, Class4609.field20075.player.posZ), b2)) {
             for (final Direction class356 : Direction.values()) {
                 if (class356 != Direction.DOWN || !b) {
                     if (!method13708(class355)) {
@@ -541,9 +541,9 @@ public class Class4609
     }
     
     public static float[] method13711(final BlockPos class354, final Direction class355) {
-        final double x = class354.getX() + 0.5 - Class4609.field20075.field4684.posX + class355.getXOffset() / 2.0;
-        final double y = class354.getZ() + 0.5 - Class4609.field20075.field4684.posZ + class355.getZOffset() / 2.0;
-        final double y2 = Class4609.field20075.field4684.posY + Class4609.field20075.field4684.method1892() - (class354.getY() + 0.5);
+        final double x = class354.getX() + 0.5 - Class4609.field20075.player.posX + class355.getXOffset() / 2.0;
+        final double y = class354.getZ() + 0.5 - Class4609.field20075.player.posZ + class355.getZOffset() / 2.0;
+        final double y2 = Class4609.field20075.player.posY + Class4609.field20075.player.method1892() - (class354.getY() + 0.5);
         final double x2 = MathHelper.sqrt(x * x + y * y);
         float n = (float)(Math.atan2(y, x) * 180.0 / 3.141592653589793) - 90.0f;
         final float n2 = (float)(Math.atan2(y2, x2) * 180.0 / 3.141592653589793);

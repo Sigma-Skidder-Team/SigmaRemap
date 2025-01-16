@@ -168,15 +168,15 @@ public class Class8424
         }
     }
     
-    private static Class8754[] method28128(final int n, final int n2, final Class1912[] array, final int n3, final Class8754 class8754, final Class9145 class8755) {
+    private static Class8754[] method28128(final int n, final int n2, final TextureAtlasSprite[] array, final int n3, final Class8754 class8754, final Class9145 class8755) {
         return method28132(Class1960.field10693, n, Class1960.field10689, n2, array, n3, class8754, class8755);
     }
     
-    private static Class8754[] method28129(final int n, final int n2, final Class1912[] array, final int n3, final Class8754 class8754, final Class9145 class8755) {
+    private static Class8754[] method28129(final int n, final int n2, final TextureAtlasSprite[] array, final int n3, final Class8754 class8754, final Class9145 class8755) {
         return method28132(Class1960.field10687, n, Class1960.field10691, n2, array, n3, class8754, class8755);
     }
     
-    private static Class8754[] method28130(final int n, final int n2, final int n3, final int n4, final Class1912[] array, final int n5, final Class8754 class8754, final Class9145 class8755) {
+    private static Class8754[] method28130(final int n, final int n2, final int n3, final int n4, final TextureAtlasSprite[] array, final int n5, final Class8754 class8754, final Class9145 class8755) {
         if (n == n2) {
             return (n3 != n4) ? method28133(Class1960.field10687, n, Class1960.field10692, n3, Class1960.field10690, n4, array, n5, class8754, class8755) : method28132(Class1960.field10687, n, Class1960.field10691, n3, array, n5, class8754, class8755);
         }
@@ -189,23 +189,23 @@ public class Class8424
         return (n2 != n4) ? method28133(Class1960.field10693, n, Class1960.field10688, n2, Class1960.field10690, n4, array, n5, class8754, class8755) : method28132(Class1960.field10693, n, Class1960.field10689, n2, array, n5, class8754, class8755);
     }
     
-    private static Class8754[] method28131(final int n, final Class1912[] array, final Class8754 class8754, final Class9145 class8755) {
+    private static Class8754[] method28131(final int n, final TextureAtlasSprite[] array, final Class8754 class8754, final Class9145 class8755) {
         return Class7970.method25833(array[n], class8754, class8755);
     }
     
-    private static Class8754[] method28132(final Class1960 class1960, final int n, final Class1960 class1961, final int n2, final Class1912[] array, final int n3, final Class8754 class1962, final Class9145 class1963) {
+    private static Class8754[] method28132(final Class1960 class1960, final int n, final Class1960 class1961, final int n2, final TextureAtlasSprite[] array, final int n3, final Class8754 class1962, final Class9145 class1963) {
         return class1963.method33392(method28135(array[n], class1960, n3, class1962, class1963), method28135(array[n2], class1961, n3, class1962, class1963));
     }
     
-    private static Class8754[] method28133(final Class1960 class1960, final int n, final Class1960 class1961, final int n2, final Class1960 class1962, final int n3, final Class1912[] array, final int n4, final Class8754 class1963, final Class9145 class1964) {
+    private static Class8754[] method28133(final Class1960 class1960, final int n, final Class1960 class1961, final int n2, final Class1960 class1962, final int n3, final TextureAtlasSprite[] array, final int n4, final Class8754 class1963, final Class9145 class1964) {
         return class1964.method33393(method28135(array[n], class1960, n4, class1963, class1964), method28135(array[n2], class1961, n4, class1963, class1964), method28135(array[n3], class1962, n4, class1963, class1964));
     }
     
-    private static Class8754[] method28134(final Class1960 class1960, final int n, final Class1960 class1961, final int n2, final Class1960 class1962, final int n3, final Class1960 class1963, final int n4, final Class1912[] array, final int n5, final Class8754 class1964, final Class9145 class1965) {
+    private static Class8754[] method28134(final Class1960 class1960, final int n, final Class1960 class1961, final int n2, final Class1960 class1962, final int n3, final Class1960 class1963, final int n4, final TextureAtlasSprite[] array, final int n5, final Class8754 class1964, final Class9145 class1965) {
         return class1965.method33394(method28135(array[n], class1960, n5, class1964, class1965), method28135(array[n2], class1961, n5, class1964, class1965), method28135(array[n3], class1962, n5, class1964, class1965), method28135(array[n4], class1963, n5, class1964, class1965));
     }
     
-    private static Class8754 method28135(final Class1912 class1912, final Class1960 class1913, final int n, final Class8754 class1914, final Class9145 class1915) {
+    private static Class8754 method28135(final TextureAtlasSprite class1912, final Class1960 class1913, final int n, final Class8754 class1914, final Class9145 class1915) {
         switch (Class8658.field36336[class1913.ordinal()]) {
             case 1: {
                 return method28136(class1912, class1913, 0, 0, 16, 8, n, class1914, class1915);
@@ -237,7 +237,7 @@ public class Class8424
         }
     }
     
-    private static Class8754 method28136(final Class1912 class1912, final Class1960 class1913, final int n, final int n2, final int n3, final int n4, final int n5, final Class8754 class1914, final Class9145 class1915) {
+    private static Class8754 method28136(final TextureAtlasSprite class1912, final Class1960 class1913, final int n, final int n2, final int n3, final int n4, final int n5, final Class8754 class1914, final Class9145 class1915) {
         final Map[][] method25857 = Class7970.method25857();
         if (method25857 == null) {
             return class1914;
@@ -264,16 +264,16 @@ public class Class8424
         return class1914;
     }
     
-    private static Class8754 method28137(final Class8754 class8754, final Class1912 class8755, final int n, final int n2, final int n3, final int n4, final int n5) {
+    private static Class8754 method28137(final Class8754 class8754, final TextureAtlasSprite class8755, final int n, final int n2, final int n3, final int n4, final int n5) {
         final int[] array = class8754.method30291().clone();
-        final Class1912 method30295 = class8754.method30295();
+        final TextureAtlasSprite method30295 = class8754.method30295();
         for (int i = 0; i < 4; ++i) {
             method28138(array, i, method30295, class8755, n, n2, n3, n4, n5);
         }
         return new Class8754(array, class8754.method30293(), class8754.method30294(), class8755);
     }
     
-    private static void method28138(final int[] array, final int n, final Class1912 class1912, final Class1912 class1913, final int n2, final int n3, final int n4, final int n5, final int n6) {
+    private static void method28138(final int[] array, final int n, final TextureAtlasSprite class1912, final TextureAtlasSprite class1913, final int n2, final int n3, final int n4, final int n5, final int n6) {
         final int n7 = array.length / 4 * n;
         final float intBitsToFloat = Float.intBitsToFloat(array[n7 + 4]);
         final float intBitsToFloat2 = Float.intBitsToFloat(array[n7 + 4 + 1]);

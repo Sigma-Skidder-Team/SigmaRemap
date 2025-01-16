@@ -79,7 +79,7 @@ public class Class9497
         final int[] method30291 = class8754.method30291();
         final int method30292 = class8754.method30293();
         final Direction method30293 = class8754.method30294();
-        final Class1912 method30294 = class8754.method30295();
+        final TextureAtlasSprite method30294 = class8754.method30295();
         if (!this.method35360(class8754)) {
             n = 0;
         }
@@ -112,7 +112,7 @@ public class Class9497
     }
     
     private boolean method35360(final Class8754 class8754) {
-        final Class1912 method30295 = class8754.method30295();
+        final TextureAtlasSprite method30295 = class8754.method30295();
         final float method30296 = method30295.method7497();
         final float method30297 = method30295.method7498();
         final float n = (method30297 - method30296) / 256.0f;

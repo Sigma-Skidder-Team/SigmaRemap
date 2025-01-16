@@ -21,13 +21,13 @@ public class Class4782 extends Class4703<Class420>
         return 15;
     }
     
-    public void method14145(final Class420 class420, final float n, final float n2, final Class7351 class421, final Class7807 class422, final int n3) {
+    public void method14145(final Class420 class420, final float n, final float n2, final MatrixStack class421, final IRenderTypeBuffer class422, final int n3) {
         class421.method22567();
         class421.method22565(2.0f, 2.0f, 2.0f);
         class421.method22566(this.field20283.method28717());
         class421.method22566(Vector3f.YP.rotationDegrees(180.0f));
-        final Class8996 method22569 = class421.method22569();
-        final Matrix4f method22570 = method22569.method32111();
+        final Class8996 method22569 = class421.getLast();
+        final Matrix4f method22570 = method22569.getMatrix();
         final Matrix3f method22571 = method22569.method32112();
         final Class4150 method22572 = class422.method25214(Class4782.field20415);
         method14146(method22572, method22570, method22571, n3, 0.0f, 0, 0, 1);
@@ -39,7 +39,7 @@ public class Class4782 extends Class4703<Class420>
     }
     
     private static void method14146(final Class4150 class4150, final Matrix4f class4151, final Matrix3f class4152, final int n, final float n2, final int n3, final int n4, final int n5) {
-        class4150.method12444(class4151, n2 - 0.5f, n3 - 0.25f, 0.0f).method12399(255, 255, 255, 255).method12391((float)n4, (float)n5).method12441(Class1904.field10335).method12440(n).method12445(class4152, 0.0f, 1.0f, 0.0f).method12397();
+        class4150.pos(class4151, n2 - 0.5f, n3 - 0.25f, 0.0f).method12399(255, 255, 255, 255).tex((float)n4, (float)n5).method12441(Class1904.field10335).method12440(n).method12445(class4152, 0.0f, 1.0f, 0.0f).endVertex();
     }
     
     public ResourceLocation method14147(final Class420 class420) {

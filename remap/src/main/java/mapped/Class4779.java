@@ -26,7 +26,7 @@ public class Class4779 extends Class4710<Class857, Class5866>
         return Class4779.field20408;
     }
     
-    public void method14137(final Class857 class857, final Class7351 class858, final float n, final float n2, final float n3) {
+    public void method14137(final Class857 class857, final MatrixStack class858, final float n, final float n2, final float n3) {
         class858.method22566(Vector3f.YP.rotationDegrees(180.0f - n2));
         final float n4 = class857.world.method6754() - class857.field4582 + n3;
         if (n4 < 5.0f) {

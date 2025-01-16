@@ -17,7 +17,7 @@ public class Class4792 extends Class4703<Class400>
         this.field20433 = new Class5870<Class400>();
     }
     
-    public void method14175(final Class400 class400, final float n, final float n2, final Class7351 class401, final Class7807 class402, final int n3) {
+    public void method14175(final Class400 class400, final float n, final float n2, final MatrixStack class401, final IRenderTypeBuffer class402, final int n3) {
         class401.method22567();
         class401.method22564(0.0, 0.15000000596046448, 0.0);
         class401.method22566(Vector3f.YP.rotationDegrees(MathHelper.method35700(n2, class400.prevRotationYaw, class400.rotationYaw) - 90.0f));

@@ -54,7 +54,7 @@ public class Class3219 extends Class3167
                     Class3219.field15514.method5269().method17292(new Class4380(Class316.field1877));
                 }
                 else if (!this.method9883("No Swing")) {
-                    Class3219.field15514.field4684.method2707(Class316.field1877);
+                    Class3219.field15514.player.method2707(Class316.field1877);
                 }
                 Class3219.field15514.method5269().method17292(new Class4329(Class316.field1877, new BlockRayTraceResult(new Vec3d(Class3219.field15674.getX() + 0.4 + Math.random() * 0.2, Class3219.field15674.getY() + 0.5, Class3219.field15674.getZ() + 0.4 + Math.random() * 0.2), Direction.UP, Class3219.field15674, false)));
             }
@@ -81,9 +81,9 @@ public class Class3219 extends Class3167
         for (float n2 = n + 2.0f; n2 >= -n + 1.0f; --n2) {
             for (float n3 = -n; n3 <= n; ++n3) {
                 for (float n4 = -n; n4 <= n; ++n4) {
-                    final BlockPos class354 = new BlockPos(Class3219.field15514.field4684.posX + n3, Class3219.field15514.field4684.posY + n2, Class3219.field15514.field4684.posZ + n4);
+                    final BlockPos class354 = new BlockPos(Class3219.field15514.player.posX + n3, Class3219.field15514.player.posY + n2, Class3219.field15514.player.posZ + n4);
                     if (Class3219.field15514.world.getBlockState(class354).method21696() instanceof Class3963) {
-                        if (Math.sqrt(Class3219.field15514.field4684.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
+                        if (Math.sqrt(Class3219.field15514.player.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
                             list.add(class354);
                         }
                     }

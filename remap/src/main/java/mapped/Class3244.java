@@ -13,8 +13,8 @@ public class Class3244 extends Class3167
     @Class6753
     private void method10249(final Class5741 class5741) {
         if (this.method9906()) {
-            Class3244.field15514.field4684.method2659(Class9439.field40482);
-            Class3244.field15514.field4684.method2659(Class9439.field40488);
+            Class3244.field15514.player.method2659(Class9439.field40482);
+            Class3244.field15514.player.method2659(Class9439.field40488);
         }
     }
 }

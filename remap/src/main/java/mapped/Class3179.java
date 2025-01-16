@@ -16,8 +16,8 @@ public class Class3179 extends Class3167
     @Class6753
     public void method9974(final Class5743 class5743) {
         if (this.method9906()) {
-            if (!Class3179.field15514.field4684.method1768()) {
-                Class3179.field15514.field4684.method2842();
+            if (!Class3179.field15514.player.method1768()) {
+                Class3179.field15514.player.method2842();
             }
         }
     }

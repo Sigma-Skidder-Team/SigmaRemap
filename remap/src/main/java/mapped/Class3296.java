@@ -28,11 +28,11 @@ public class Class3296 extends Class3167
             return;
         }
         if (class5744.method17046()) {
-            final boolean b = Class3296.field15514.field4684.getHeldItemMainhand() != null && Class3296.field15514.field4684.getHeldItemMainhand().getItem() instanceof Class4077;
+            final boolean b = Class3296.field15514.player.getHeldItemMainhand() != null && Class3296.field15514.player.getHeldItemMainhand().getItem() instanceof Class4077;
             final boolean method9898 = Class9463.method35173().method35189().method21551(Class3376.class).method9898();
             boolean b2 = true;
             Label_0104: {
-                if (!Class3296.field15514.field4684.method1809()) {
+                if (!Class3296.field15514.player.method1809()) {
                     if (Class3296.field15514.field4691.getType() == RayTraceResult.Type.BLOCK) {
                         if (!Class9463.method35173().method35189().method21551(Class3376.class).method9898()) {
                             final Block method9899 = Class3296.field15514.world.getBlockState(((BlockRayTraceResult)Class3296.field15514.field4691).getPos()).method21696();
@@ -58,7 +58,7 @@ public class Class3296 extends Class3167
             boolean field15857 = false;
             Label_0459: {
                 Label_0446: {
-                    if (Class3296.field15514.field4648.field23445.method1056()) {
+                    if (Class3296.field15514.gameSettings.field23445.method1056()) {
                         if (b) {
                             if (b2) {
                                 if (b2) {
@@ -75,12 +75,12 @@ public class Class3296 extends Class3167
                 field15857 = true;
             }
             if (!(Class3296.field15857 = field15857)) {
-                if (Class8491.field34858.contains(Class3296.field15514.field4684)) {
-                    Class8491.field34858.remove(Class3296.field15514.field4684);
+                if (Class8491.field34858.contains(Class3296.field15514.player)) {
+                    Class8491.field34858.remove(Class3296.field15514.player);
                 }
             }
-            else if (!Class8491.field34858.contains(Class3296.field15514.field4684)) {
-                Class8491.field34858.add(Class3296.field15514.field4684);
+            else if (!Class8491.field34858.contains(Class3296.field15514.player)) {
+                Class8491.field34858.add(Class3296.field15514.player);
             }
             if (Class3296.field15857 && !this.field15858) {
                 this.field15858 = !this.field15858;
@@ -102,11 +102,11 @@ public class Class3296 extends Class3167
         if (!this.method9906() && Class9367.field40167 != Class7906.field32452) {
             return;
         }
-        if (Class3296.field15514.field4684 != null) {
+        if (Class3296.field15514.player != null) {
             if (class5723.method16998() instanceof Class4402) {
                 final Class4402 class5724 = (Class4402)class5723.method16998();
                 if (class5724.method13247() != null) {
-                    if (class5724.method13248() == Class3296.field15514.field4684.getEntityId()) {
+                    if (class5724.method13248() == Class3296.field15514.player.getEntityId()) {
                         if (class5724.method13247().getItem() instanceof Class4100) {
                             class5723.method16961(true);
                         }
@@ -178,11 +178,11 @@ public class Class3296 extends Class3167
         }
     }
     
-    private void method10438(final float n, final float n2, final float n3, final float n4, final Class7351 class7351) {
+    private void method10438(final float n, final float n2, final float n3, final float n4, final MatrixStack class7351) {
         class7351.method22566(new Vector3f(n2, n3, n4).rotationDegrees(n));
     }
     
-    private void method10439(final float n, final float n2, final Class7351 class7351) {
+    private void method10439(final float n, final float n2, final MatrixStack class7351) {
         class7351.method22564(0.47999998927116394, -0.550000011920929, -0.7199999690055847);
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
@@ -197,7 +197,7 @@ public class Class3296 extends Class3167
         class7351.method22565(n3, n3, n3);
     }
     
-    private void method10440(final float n, final float n2, final Class7351 class7351) {
+    private void method10440(final float n, final float n2, final MatrixStack class7351) {
         class7351.method22564(0.47999998927116394, -0.38999998569488525, -0.7199999690055847);
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(100.0f, 0.0f, 1.0f, 0.0f, class7351);
@@ -212,7 +212,7 @@ public class Class3296 extends Class3167
         class7351.method22565(n3, n3, n3);
     }
     
-    private void method10441(final float n, final float n2, final Class7351 class7351) {
+    private void method10441(final float n, final float n2, final MatrixStack class7351) {
         class7351.method22564(0.47999998927116394, -0.550000011920929, -0.7199999690055847);
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
@@ -227,7 +227,7 @@ public class Class3296 extends Class3167
         class7351.method22565(n3, n3, n3);
     }
     
-    private void method10442(final float n, final float n2, final Class7351 class7351) {
+    private void method10442(final float n, final float n2, final MatrixStack class7351) {
         class7351.method22564(0.0, -3.5, 0.0);
         class7351.method22564(0.5600000023841858, -0.5199999809265137, -0.7200000286102295);
         class7351.method22564(0.5600000023841858, -0.2199999988079071, -0.7199999690055847);
@@ -241,7 +241,7 @@ public class Class3296 extends Class3167
         class7351.method22565(2.7f, 2.7f, 2.7f);
     }
     
-    private void method10443(final float n, final float n2, final Class7351 class7351) {
+    private void method10443(final float n, final float n2, final MatrixStack class7351) {
         class7351.method22564(0.6480000019073486, -0.550000011920929, -0.7199999690055847);
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
@@ -253,7 +253,7 @@ public class Class3296 extends Class3167
         class7351.method22565(n3, n3, n3);
     }
     
-    private void method10444(final float n, final float n2, final Class7351 class7351) {
+    private void method10444(final float n, final float n2, final MatrixStack class7351) {
         class7351.method22564(0.6480000019073486, -0.550000011920929, -0.7199999690055847);
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
@@ -265,7 +265,7 @@ public class Class3296 extends Class3167
         class7351.method22565(n3, n3, n3);
     }
     
-    private void method10445(final float n, final float n2, final Class7351 class7351) {
+    private void method10445(final float n, final float n2, final MatrixStack class7351) {
         class7351.method22564(0.47999998927116394, -0.550000011920929, -0.7199999690055847);
         class7351.method22564(0.0, n * -0.6f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
@@ -280,7 +280,7 @@ public class Class3296 extends Class3167
         class7351.method22565(n3, n3, n3);
     }
     
-    private void method10446(final float n, final float n2, final Class7351 class7351) {
+    private void method10446(final float n, final float n2, final MatrixStack class7351) {
         class7351.method22564(0.47999998927116394, -0.550000011920929, -0.7199999690055847);
         class7351.method22564(0.0, n * -0.2f, 0.0);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
@@ -291,7 +291,7 @@ public class Class3296 extends Class3167
         class7351.method22565(n3, n3, n3);
     }
     
-    private void method10447(final float n, final float n2, final Class7351 class7351) {
+    private void method10447(final float n, final float n2, final MatrixStack class7351) {
         class7351.method22564(0.56, -0.52, -0.72);
         final float method35638 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         this.method10438(77.0f, 0.0f, 1.0f, 0.0f, class7351);
@@ -301,7 +301,7 @@ public class Class3296 extends Class3167
         this.method10438(method35638 * 30.0f, 1.0f, -0.0f, -1.0f, class7351);
     }
     
-    private void method10448(final float n, final float n2, final Class7351 class7351) {
+    private void method10448(final float n, final float n2, final MatrixStack class7351) {
         final float method35638 = MathHelper.sin(MathHelper.method35640(n2) * 3.1415927f);
         class7351.method22564(0.47999998927116394, -0.550000011920929, -0.7199999690055847);
         class7351.method22564(0.0, method35638 * -0.2f, 0.0);

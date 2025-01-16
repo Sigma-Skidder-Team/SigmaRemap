@@ -11,7 +11,7 @@ import net.minecraft.util.math.Vec3d;
 
 import java.util.List;
 
-public class Class686 extends Class565 implements Class687
+public class Class686 extends AbstractGui implements Class687
 {
     private final Minecraft field3781;
     private final List<Class8395> field3782;
@@ -23,37 +23,37 @@ public class Class686 extends Class565 implements Class687
     }
     
     public void method3817() {
-        if (!this.field3783 && this.field3781.field4648.field23427) {
+        if (!this.field3783 && this.field3781.gameSettings.field23427) {
             this.field3781.method5299().method6433(this);
             this.field3783 = true;
         }
         else if (this.field3783) {
-            if (!this.field3781.field4648.field23427) {
+            if (!this.field3781.gameSettings.field23427) {
                 this.field3781.method5299().method6434(this);
                 this.field3783 = false;
             }
         }
         if (this.field3783) {
             if (!this.field3782.isEmpty()) {
-                Class8726.method30059();
-                Class8726.method30011();
-                Class8726.method30117();
-                final Vec3d class5487 = new Vec3d(this.field3781.field4684.getPosX(), this.field3781.field4684.method1944(), this.field3781.field4684.getPosZ());
-                final Vec3d method16755 = new Vec3d(0.0, 0.0, -1.0).rotatePitch(-this.field3781.field4684.rotationPitch * 0.017453292f).rotateYaw(-this.field3781.field4684.rotationYaw * 0.017453292f);
-                final Vec3d method16756 = method16755.crossProduct(new Vec3d(0.0, 1.0, 0.0).rotatePitch(-this.field3781.field4684.rotationPitch * 0.017453292f).rotateYaw(-this.field3781.field4684.rotationYaw * 0.017453292f));
+                RenderSystem.method30059();
+                RenderSystem.enableBlend();
+                RenderSystem.defaultBlendFunc();
+                final Vec3d class5487 = new Vec3d(this.field3781.player.getPosX(), this.field3781.player.method1944(), this.field3781.player.getPosZ());
+                final Vec3d method16755 = new Vec3d(0.0, 0.0, -1.0).rotatePitch(-this.field3781.player.rotationPitch * 0.017453292f).rotateYaw(-this.field3781.player.rotationYaw * 0.017453292f);
+                final Vec3d method16756 = method16755.crossProduct(new Vec3d(0.0, 1.0, 0.0).rotatePitch(-this.field3781.player.rotationPitch * 0.017453292f).rotateYaw(-this.field3781.player.rotationYaw * 0.017453292f));
                 int n = 0;
                 int max = 0;
                 final Iterator<Class8395> iterator = this.field3782.iterator();
                 while (iterator.hasNext()) {
                     final Class8395 class5488 = iterator.next();
                     if (class5488.method27993() + 3000L > Util.method27837()) {
-                        max = Math.max(max, this.field3781.fontRenderer.method6617(class5488.method27992()));
+                        max = Math.max(max, this.field3781.fontRenderer.getStringWidth(class5488.method27992()));
                     }
                     else {
                         iterator.remove();
                     }
                 }
-                final int n2 = max + this.field3781.fontRenderer.method6617("<") + this.field3781.fontRenderer.method6617(" ") + this.field3781.fontRenderer.method6617(">") + this.field3781.fontRenderer.method6617(" ");
+                final int n2 = max + this.field3781.fontRenderer.getStringWidth("<") + this.field3781.fontRenderer.getStringWidth(" ") + this.field3781.fontRenderer.getStringWidth(">") + this.field3781.fontRenderer.getStringWidth(" ");
                 for (final Class8395 class5489 : this.field3782) {
                     final String method16757 = class5489.method27992();
                     final Vec3d method16758 = class5489.method27994().subtract(class5487).normalize();
@@ -62,14 +62,14 @@ public class Class686 extends Class565 implements Class687
                     final int n4 = n2 / 2;
                     final int n5 = 9;
                     final int n6 = n5 / 2;
-                    final int method16759 = this.field3781.fontRenderer.method6617(method16757);
+                    final int method16759 = this.field3781.fontRenderer.getStringWidth(method16757);
                     final int method16760 = MathHelper.floor(MathHelper.method35655(255.0, 75.0, (Util.method27837() - class5489.method27993()) / 3000.0f));
                     final int n7 = method16760 << 16 | method16760 << 8 | method16760;
-                    Class8726.method30059();
-                    Class8726.method30065(this.field3781.method5332().method7696() - n4 * 1.0f - 2.0f, this.field3781.method5332().method7697() - 30 - n * (n5 + 1) * 1.0f, 0.0f);
-                    Class8726.method30063(1.0f, 1.0f, 1.0f);
-                    Class565.method3293(-n4 - 1, -n6 - 1, n4 + 1, n6 + 1, this.field3781.field4648.method17115(0.8f));
-                    Class8726.method30011();
+                    RenderSystem.method30059();
+                    RenderSystem.method30065(this.field3781.method5332().method7696() - n4 * 1.0f - 2.0f, this.field3781.method5332().method7697() - 30 - n * (n5 + 1) * 1.0f, 0.0f);
+                    RenderSystem.method30063(1.0f, 1.0f, 1.0f);
+                    AbstractGui.fill(-n4 - 1, -n6 - 1, n4 + 1, n6 + 1, this.field3781.gameSettings.method17115(0.8f));
+                    RenderSystem.enableBlend();
                     if (!b) {
                         if (n3 <= 0.0) {
                             if (n3 < 0.0) {
@@ -77,15 +77,15 @@ public class Class686 extends Class565 implements Class687
                             }
                         }
                         else {
-                            this.field3781.fontRenderer.method6610(">", (float)(n4 - this.field3781.fontRenderer.method6617(">")), (float)(-n6), n7 - 16777216);
+                            this.field3781.fontRenderer.method6610(">", (float)(n4 - this.field3781.fontRenderer.getStringWidth(">")), (float)(-n6), n7 - 16777216);
                         }
                     }
                     this.field3781.fontRenderer.method6610(method16757, (float)(-method16759 / 2), (float)(-n6), n7 - 16777216);
-                    Class8726.method30060();
+                    RenderSystem.method30060();
                     ++n;
                 }
-                Class8726.method30012();
-                Class8726.method30060();
+                RenderSystem.disableBlend();
+                RenderSystem.method30060();
             }
         }
     }

@@ -21,6 +21,6 @@ public class Class652 extends Class650
     
     @Override
     public void method3362(final int n, final int n2) {
-        this.field3677.method3031(Class8822.method30773("gui.cancel", new Object[0]), n, n2);
+        this.field3677.renderTooltip(Class8822.method30773("gui.cancel", new Object[0]), n, n2);
     }
 }

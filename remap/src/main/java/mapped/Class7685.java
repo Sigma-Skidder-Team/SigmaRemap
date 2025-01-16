@@ -147,20 +147,20 @@ public class Class7685 implements Class7684
     }
     
     @Override
-    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, Class1912> function, final Class2123 class7638, final ResourceLocation class7639) {
+    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, TextureAtlasSprite> function, final Class2123 class7638, final ResourceLocation class7639) {
         return this.method24392(class7637, this, function, class7638, class7639, true);
     }
     
-    public Class6313 method24392(final Class7637 class7637, final Class7685 class7638, final Function<Class3687, Class1912> function, final Class2123 class7639, final ResourceLocation class7640, final boolean b) {
-        final Class1912 class7641 = function.apply(this.method24395("particle"));
+    public Class6313 method24392(final Class7637 class7637, final Class7685 class7638, final Function<Class3687, TextureAtlasSprite> function, final Class2123 class7639, final ResourceLocation class7640, final boolean b) {
+        final TextureAtlasSprite class7641 = function.apply(this.method24395("particle"));
         if (this.method24398() != Class7637.field30257) {
             final Class7878 method25530 = new Class7878(this, this.method24391(class7637, class7638), b).method25530(class7641);
             for (final Class9219 class7642 : this.method24387()) {
                 for (final Direction class7643 : class7642.field39556.keySet()) {
                     final Class8111 class7644 = class7642.field39556.get(class7643);
-                    final Class1912 class7645 = function.apply(this.method24395(class7644.field33425));
+                    final TextureAtlasSprite class7645 = function.apply(this.method24395(class7644.field33425));
                     if (class7644.field33423 != null) {
-                        method25530.method25528(Direction.rotateFace(class7639.method8274().method34328(), class7644.field33423), method24393(class7642, class7644, class7645, class7643, class7639, class7640));
+                        method25530.method25528(Direction.rotateFace(class7639.method8274().getMatrix(), class7644.field33423), method24393(class7642, class7644, class7645, class7643, class7639, class7640));
                     }
                     else {
                         method25530.method25529(method24393(class7642, class7644, class7645, class7643, class7639, class7640));
@@ -172,7 +172,7 @@ public class Class7685 implements Class7684
         return new Class6317(this.method24399(), this.method24391(class7637, class7638), class7641, this.method24389().method889());
     }
     
-    private static Class8754 method24393(final Class9219 class9219, final Class8111 class9220, final Class1912 class9221, final Direction class9222, final Class2123 class9223, final ResourceLocation class9224) {
+    private static Class8754 method24393(final Class9219 class9219, final Class8111 class9220, final TextureAtlasSprite class9221, final Direction class9222, final Class2123 class9223, final ResourceLocation class9224) {
         return Class7685.field30516.method18519(class9219.field39554, class9219.field39555, class9220, class9221, class9222, class9223, class9219.field39557, class9219.field39558, class9224);
     }
     

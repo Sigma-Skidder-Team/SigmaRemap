@@ -25,7 +25,7 @@ public class Class8824
     }
     
     public void method30778(final boolean field37105) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         if (field37105 != this.field37105) {
             if (!(this.field37105 = field37105)) {
                 GL11.glDisable(this.field37104);

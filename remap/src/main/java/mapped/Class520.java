@@ -25,8 +25,8 @@ public class Class520 extends Class516<Class3428> implements Class519
         this.field3113.method3415(this.width, this.height, this.minecraft, this.field3114, (Class3426<?>)this.field3077);
         this.field3079 = this.field3113.method3419(this.field3114, this.width, this.field3075);
         this.children.add(this.field3113);
-        this.method3476(this.field3113);
-        this.method3029(new Class679(this.field3079 + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, Class520.field3112, class654 -> {
+        this.setFocusedDefault(this.field3113);
+        this.addButton(new Class679(this.field3079 + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, Class520.field3112, class654 -> {
             this.field3113.method3416(this.field3114);
             this.field3113.method3420();
             this.field3079 = this.field3113.method3419(this.field3114, this.width, this.field3075);
@@ -41,33 +41,33 @@ public class Class520 extends Class516<Class3428> implements Class519
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         if (this.field3113.method3421() && this.field3114) {
             this.method2976(n3, n, n2);
-            this.field3113.method2975(n, n2, n3);
+            this.field3113.render(n, n2, n3);
         }
         else {
-            this.field3113.method2975(n, n2, n3);
-            super.method2975(n, n2, n3);
+            this.field3113.render(n, n2, n3);
+            super.render(n, n2, n3);
             this.field3113.method3431(this.field3079, this.field3080, true, n3);
         }
         this.method2977(n, n2);
         this.field3113.method3428(this.field3079, this.field3080, n, n2);
-        this.method3477(this.field3113);
+        this.func_212932_b(this.field3113);
     }
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.font.method6610(this.field3148.getFormattedText(), 28.0f, 6.0f, 4210752);
+        this.font.method6610(this.title.getFormattedText(), 28.0f, 6.0f, 4210752);
         this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override
     public void method2976(final float n, final int n2, final int n3) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.minecraft.method5290().method5849(Class520.field3111);
-        this.method3186(this.field3079, (this.height - this.field3076) / 2, 0, 0, this.field3075, this.field3076);
+        this.blit(this.field3079, (this.height - this.field3076) / 2, 0, 0, this.field3075, this.field3076);
     }
     
     @Override

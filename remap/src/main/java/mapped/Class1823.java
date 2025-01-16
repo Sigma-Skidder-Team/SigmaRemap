@@ -16,7 +16,7 @@ public class Class1823<T extends LivingEntity, M extends Class5845<T> & Class585
         super(class4778);
     }
     
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         final boolean b = t.method2755() == Class2226.field13698;
         final ItemStack class7353 = b ? t.method2714() : t.getHeldItemMainhand();
         final ItemStack class7354 = b ? t.getHeldItemMainhand() : t.method2714();
@@ -32,7 +32,7 @@ public class Class1823<T extends LivingEntity, M extends Class5845<T> & Class585
         }
     }
     
-    private void method6588(final LivingEntity class511, final ItemStack class512, final Class2016 class513, final Class2226 class514, final Class7351 class515, final Class7807 class516, final int n) {
+    private void method6588(final LivingEntity class511, final ItemStack class512, final Class2016 class513, final Class2226 class514, final MatrixStack class515, final IRenderTypeBuffer class516, final int n) {
         if (!class512.method27620()) {
             class515.method22567();
             this.method6559().method17578(class514, class515);

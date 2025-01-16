@@ -15,7 +15,7 @@ public class Class6554
         this.field26042 = false;
     }
     
-    public void method19859(final Class5853 class5853, final Class754 class5854, final Class7351 class5855, final Class7807 class5856, final int n, final int n2) {
+    public void method19859(final Class5853 class5853, final Class754 class5854, final MatrixStack class5855, final IRenderTypeBuffer class5856, final int n, final int n2) {
         if (this.field26042) {
             for (int i = 0; i < this.field26041.length; ++i) {
                 this.field26041[i].method24880(class5853, class5854, class5855, class5856, n, n2);

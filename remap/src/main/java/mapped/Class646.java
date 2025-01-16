@@ -22,12 +22,12 @@ public class Class646 extends Class645
     }
     
     public void method3694(final Minecraft class869) {
-        final Class6520 method4122 = class869.field4684.method4122();
+        final Class6520 method4122 = class869.player.method4122();
         final List<Class9586> method4123 = method4122.method19689(this.field3664);
-        if (class869.field4684.field3009 instanceof Class3426) {
+        if (class869.player.field3009 instanceof Class3426) {
             final Iterator<Class9586> iterator = method4123.iterator();
             while (iterator.hasNext()) {
-                final Iterator<Class3662<?>> iterator2 = iterator.next().method35946(method4122.method19705((Class3426<?>)class869.field4684.field3009)).iterator();
+                final Iterator<Class3662<?>> iterator2 = iterator.next().method35946(method4122.method19705((Class3426<?>)class869.player.field3009)).iterator();
                 while (iterator2.hasNext()) {
                     if (!method4122.method19699(iterator2.next())) {
                         continue;
@@ -42,14 +42,14 @@ public class Class646 extends Class645
     public void method3353(final int n, final int n2, final float n3) {
         if (this.field3665 > 0.0f) {
             final float n4 = 1.0f + 0.1f * (float)Math.sin(this.field3665 / 15.0f * 3.1415927f);
-            Class8726.method30059();
-            Class8726.method30065((float)(this.field3426 + 8), (float)(this.field3427 + 12), 0.0f);
-            Class8726.method30063(1.0f, n4, 1.0f);
-            Class8726.method30065((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
+            RenderSystem.method30059();
+            RenderSystem.method30065((float)(this.field3426 + 8), (float)(this.field3427 + 12), 0.0f);
+            RenderSystem.method30063(1.0f, n4, 1.0f);
+            RenderSystem.method30065((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
         }
         final Minecraft method5277 = Minecraft.method5277();
         method5277.method5290().method5849(this.field3657);
-        Class8726.method30007();
+        RenderSystem.disableDepthTest();
         int field3659 = this.field3659;
         int field3660 = this.field3660;
         if (this.field3658) {
@@ -62,17 +62,17 @@ public class Class646 extends Class645
         if (this.field3658) {
             field3661 -= 2;
         }
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.method3186(field3661, this.field3427, field3659, field3660, this.field3424, this.field3425);
-        Class8726.method30008();
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        this.blit(field3661, this.field3427, field3659, field3660, this.field3424, this.field3425);
+        RenderSystem.enableDepthTest();
         this.method3695(method5277.getItemRenderer());
         if (this.field3665 > 0.0f) {
-            Class8726.method30060();
+            RenderSystem.method30060();
             this.field3665 -= n3;
         }
     }
     
-    private void method3695(final Class1796 class1796) {
+    private void method3695(final ItemRenderer class1796) {
         final List<ItemStack> method7942 = this.field3664.method7942();
         final int n = this.field3658 ? -2 : 0;
         if (method7942.size() != 1) {

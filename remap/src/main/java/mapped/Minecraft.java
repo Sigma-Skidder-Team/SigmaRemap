@@ -69,17 +69,17 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     private final Class3442 field4635;
     public final Class1656 field4636;
     private final Class8551 field4637;
-    private final Class1796 field4638;
+    private final ItemRenderer field4638;
     private final Class9458 field4639;
     public final Class1793 field4640;
     private final Class1659 field4641;
     public Class9212 field4642;
-    public final Class1844 fontRenderer;
+    public final FontRenderer fontRenderer;
     public final Class1660 field4644;
     public final Class7282 field4645;
     private final AtomicReference<Class6461> field4646;
     public final Class685 field4647;
-    public final Class5760 field4648;
+    public final Class5760 gameSettings;
     private final Class8653 field4649;
     public final Class8161 field4650;
     public final Class7335 field4651;
@@ -115,7 +115,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     public static byte[] field4681;
     public Class8245 field4682;
     public Class1848 world;
-    public Class756 field4684;
+    public Class756 player;
     private Class1655 field4685;
     private Class9575 field4686;
     private NetworkManager field4687;
@@ -203,20 +203,20 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         this.field4678 = new Class690(this);
         this.field4680 = new Class9106(this);
         this.field4703 = Thread.currentThread();
-        this.field4648 = new Class5760(this, this.field4652);
+        this.gameSettings = new Class5760(this, this.field4652);
         this.field4649 = new Class8653(this.field4652, this.field4630);
         this.method5237();
-        Minecraft.field4622.info("Backend library: {}", (Object)Class8726.method30077());
+        Minecraft.field4622.info("Backend library: {}", (Object) RenderSystem.method30077());
         Class9154 field37235;
-        if (this.field4648.field23399 > 0 && this.field4648.field23398 > 0) {
-            field37235 = new Class9154(this.field4648.field23398, this.field4648.field23399, class9408.field40378.field38789, class9408.field40378.field38790, class9408.field40378.field38791);
+        if (this.gameSettings.field23399 > 0 && this.gameSettings.field23398 > 0) {
+            field37235 = new Class9154(this.gameSettings.field23398, this.gameSettings.field23399, class9408.field40378.field38789, class9408.field40378.field38790, class9408.field40378.field38791);
         }
         else {
             field37235 = class9408.field40378;
         }
-        Util.field34268 = Class8726.method30079();
+        Util.field34268 = RenderSystem.method30079();
         this.field4631 = new Class390(this);
-        this.field4632 = this.field4631.method1413(field37235, this.field4648.field23392, this.method5228());
+        this.field4632 = this.field4631.method1413(field37235, this.gameSettings.field23392, this.method5228());
         this.method5326(true);
         try {
             this.field4632.method7665(this.method5293().method25740().method6097(Class346.field2137, new ResourceLocation("icons/icon_16x16.png")), this.method5293().method25740().method6097(Class346.field2137, new ResourceLocation("icons/icon_32x32.png")));
@@ -224,28 +224,28 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         catch (final IOException ex) {
             Minecraft.field4622.error("Couldn't set icon", (Throwable)ex);
         }
-        this.field4632.method7678(this.field4648.field23383);
+        this.field4632.method7678(this.gameSettings.field23383);
         (this.field4650 = new Class8161(this)).method26954(this.field4632.method7690());
         (this.field4651 = new Class7335(this)).method22506(this.field4632.method7690());
-        Class8726.method30080(this.field4648.field23413, false);
+        RenderSystem.method30080(this.gameSettings.field23413, false);
         (this.field4667 = new Class6153(this.field4632.method7692(), this.field4632.method7693(), true, Minecraft.field4623)).method18398(0.0f, 0.0f, 0.0f, 0.0f);
         this.field4661 = new Class6581(Class346.field2137, this.field4703);
-        this.field4648.method17146(this.field4663);
+        this.gameSettings.method17146(this.field4663);
         this.field4663.method7606();
-        this.field4664 = new Class1661(this.field4648.field23476);
+        this.field4664 = new Class1661(this.gameSettings.field23476);
         this.field4661.method19930(this.field4664);
         this.field4629 = new Class1663(this.field4661);
         this.field4661.method19930(this.field4629);
         this.field4673 = new Class7665(this.field4629, new File(field37232, "skins"), this.field4672);
         this.field4656 = new Class7952(this.field4652.toPath().resolve("saves"), this.field4652.toPath().resolve("backups"), this.field4630);
-        this.field4668 = new Class1784(this.field4661, this.field4648);
+        this.field4668 = new Class1784(this.field4661, this.gameSettings);
         this.field4661.method19930(this.field4668);
         this.field4671 = new Class1791(this.field4642);
         this.field4661.method19930(this.field4671);
         this.field4669 = new Class8086(this);
         this.field4670 = new Class1903(this.field4629, this.method5240());
         this.field4661.method19930(this.field4670.method7378());
-        final Class1844 method7376 = this.field4670.method7376(Minecraft.field4624);
+        final FontRenderer method7376 = this.field4670.method7376(Minecraft.field4624);
         if (method7376 == null) {
             throw new IllegalStateException("Default font is null");
         }
@@ -253,14 +253,14 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         this.field4661.method19930(new Class1788());
         this.field4661.method19930(new Class1777());
         this.field4632.method7667("Startup");
-        Class8726.method30086(0, 0, this.field4632.method7692(), this.field4632.method7693());
+        RenderSystem.method30086(0, 0, this.field4632.method7692(), this.field4632.method7693());
         this.field4632.method7667("Post startup");
         this.field4665 = Class7860.method25439();
         this.field4666 = Class6457.method19306(this.field4665);
-        this.field4674 = new Class1790(this.field4629, this.field4665, this.field4648.field23405);
+        this.field4674 = new Class1790(this.field4629, this.field4665, this.gameSettings.field23405);
         this.field4661.method19930(this.field4674);
-        this.field4638 = new Class1796(this.field4629, this.field4674, this.field4666);
-        this.field4637 = new Class8551(this.field4629, this.field4638, this.field4661, this.fontRenderer, this.field4648);
+        this.field4638 = new ItemRenderer(this.field4629, this.field4674, this.field4666);
+        this.field4637 = new Class8551(this.field4629, this.field4638, this.field4661, this.fontRenderer, this.gameSettings);
         this.field4639 = new Class9458(this);
         this.field4661.method19930(this.field4638);
         this.field4635 = new Class3442();
@@ -281,20 +281,20 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         Class9463.method35173().method35175();
         this.field4647 = new Class685(this);
         this.field4645 = new Class7282(this);
-        Class8726.method30081(this::method5232);
-        if (this.field4648.field23430 && !this.field4632.method7691()) {
+        RenderSystem.method30081(this::method5232);
+        if (this.gameSettings.field23430 && !this.field4632.method7691()) {
             this.field4632.method7685();
-            this.field4648.field23430 = this.field4632.method7691();
+            this.gameSettings.field23430 = this.field4632.method7691();
         }
-        this.field4632.method7672(this.field4648.field23419);
-        this.field4632.method7702(this.field4648.field23412);
+        this.field4632.method7672(this.gameSettings.field23419);
+        this.field4632.method7702(this.gameSettings.field23412);
         this.field4632.method7671();
         this.method5248();
         if (field37233 != null) {
-            this.method5244(new Class694(new Class548(), this, field37233, field37234));
+            this.displayGuiScreen(new Class694(new Class548(), this, field37233, field37234));
         }
         else {
-            this.method5244(new Class548(true));
+            this.displayGuiScreen(new Class548(true));
         }
         Class567.method3306(this);
         this.method5245(new Class568(this, this.field4661.method19929(Util.method27841(), this, Minecraft.field4626, (List<Class1727>)this.field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList())), optional -> Util.method27855(optional, this::method5230, () -> {
@@ -341,9 +341,9 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             }
             Minecraft.field4622.info("Caught error loading resourcepacks, removing all selected resourcepacks", t);
             this.field4663.method7608((Collection<Class1922>)Collections.emptyList());
-            this.field4648.field23387.clear();
-            this.field4648.field23388.clear();
-            this.field4648.method17121();
+            this.gameSettings.field23387.clear();
+            this.gameSettings.field23388.clear();
+            this.gameSettings.method17121();
             this.method5241().thenRun(() -> Class6865.method20981(this.method5318(), Class2174.field12899, new Class2259("resourcePack.load_fail", new Object[0]), class2261));
         }
         else {
@@ -369,7 +369,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                         throw outOfMemoryError;
                     }
                     this.method5250();
-                    this.method5244(new Class734());
+                    this.displayGuiScreen(new Class734());
                     System.gc();
                     Minecraft.field4622.fatal("Out of memory", (Throwable)outOfMemoryError);
                     n = 1;
@@ -391,7 +391,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     }
     
     private void method5231() {
-        final Class8922 class8922 = new Class8922(class8925 -> class8925.method27668(null, Class1980.field10972).stream().map(class8926 -> TextFormatting.getTextWithoutFormattingCodes(class8926.getString()).trim()).filter(s -> !s.isEmpty()), class8927 -> Stream.of(Registry.field211.getKey(class8927.method27622())));
+        final Class8922 class8922 = new Class8922(class8925 -> class8925.method27668(null, TooltipFlags.NORMAL).stream().map(class8926 -> TextFormatting.getTextWithoutFormattingCodes(class8926.getString()).trim()).filter(s -> !s.isEmpty()), class8927 -> Stream.of(Registry.field211.getKey(class8927.method27622())));
         final Class8923 class8923 = new Class8923(class8928 -> Class7855.method25402().method18463(class8928.method27622()).stream());
         final Class2265<Object> method8506 = Class2265.method8506();
         final Iterator<Object> iterator = Registry.field211.iterator();
@@ -403,15 +403,15 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             class8930.method31458(class8931);
             return;
         });
-        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.method11292().method27668(null, Class1980.field10972).stream()).map(class8934 -> TextFormatting.getTextWithoutFormattingCodes(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Registry.field211.getKey(class8936.method11292().getItem())));
+        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.method11292().method27668(null, TooltipFlags.NORMAL).stream()).map(class8934 -> TextFormatting.getTextWithoutFormattingCodes(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Registry.field211.getKey(class8936.method11292().getItem())));
         this.field4641.method5798(Class1659.field9375, class8922);
         this.field4641.method5798(Class1659.field9376, class8923);
         this.field4641.method5798(Class1659.field9377, class8924);
     }
     
     private void method5232(final int n, final long n2) {
-        this.field4648.field23419 = false;
-        this.field4648.method17121();
+        this.gameSettings.field23419 = false;
+        this.gameSettings.method17121();
     }
     
     private static boolean method5233() {
@@ -466,7 +466,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     }
     
     public boolean method5240() {
-        return this.field4648.field23421;
+        return this.gameSettings.field23421;
     }
     
     public CompletableFuture<Void> method5241() {
@@ -499,11 +499,11 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                 }
             }
         }
-        final Class1912 method5789 = method5788.method18696();
+        final TextureAtlasSprite method5789 = method5788.method18696();
         final Iterator<Object> iterator3 = Registry.BLOCK.iterator();
         while (iterator3.hasNext()) {
             for (final BlockState class7097 : iterator3.next().method11876().method32902()) {
-                final Class1912 method5790 = method5787.method35427(class7097);
+                final TextureAtlasSprite method5790 = method5787.method35427(class7097);
                 if (!class7097.method21706() && method5790 == method5789) {
                     Minecraft.field4622.debug("Missing particle icon for: {}", (Object)class7097);
                     b = true;
@@ -530,23 +530,23 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         return this.field4656;
     }
     
-    public void method5244(Screen field4700) {
+    public void displayGuiScreen(Screen field4700) {
         if (this.field4700 != null) {
             this.field4700.removed();
         }
         if (field4700 == null && this.world == null) {
             field4700 = new Class548();
         }
-        else if (field4700 == null && this.field4684.method2664() <= 0.0f) {
-            if (this.field4684.method4128()) {
+        else if (field4700 == null && this.player.method2664() <= 0.0f) {
+            if (this.player.method4128()) {
                 field4700 = new Class533(null, this.world.method6764().method29568());
             }
             else {
-                this.field4684.method2842();
+                this.player.method2842();
             }
         }
         if (field4700 instanceof Class548 || field4700 instanceof Class720) {
-            this.field4648.field23466 = false;
+            this.gameSettings.field23466 = false;
             this.field4647.method3807().method3760(true);
         }
         this.field4700 = field4700;
@@ -556,7 +556,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             Class350.method1054();
             field4700.init(this, this.field4632.method7696(), this.field4632.method7697());
             this.field4699 = false;
-            NarratorChatListener.field32404.method25556(field4700.method3027());
+            NarratorChatListener.field32404.method25556(field4700.getNarrationMessage());
         }
         else {
             this.field4668.method6429();
@@ -655,12 +655,12 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         this.field4668.method6424(this.field4644.method5833());
         this.field4660.endSection();
         this.field4660.startSection("render");
-        Class8726.method30059();
-        Class8726.method30056(16640, Minecraft.field4623);
+        RenderSystem.method30059();
+        RenderSystem.method30056(16640, Minecraft.field4623);
         this.field4667.method18395(true);
         Class9111.method32953();
         this.field4660.startSection("display");
-        Class8726.method30040();
+        RenderSystem.enableTexture();
         this.field4660.endSection();
         if (!this.field4699) {
             this.field4660.method15300("gameRenderer");
@@ -670,7 +670,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             this.field4660.endSection();
         }
         this.field4660.method15296();
-        if (this.field4648.field23466 && this.field4648.field23467 && !this.field4648.field23464) {
+        if (this.gameSettings.field23466 && this.gameSettings.field23467 && !this.gameSettings.field23464) {
             this.field4660.method15305().method19596();
             this.method5252();
         }
@@ -678,16 +678,16 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             this.field4660.method15305().method19594();
         }
         this.field4667.method18397();
-        Class8726.method30060();
-        Class8726.method30059();
+        RenderSystem.method30060();
+        RenderSystem.method30059();
         this.field4667.method18399(this.field4632.method7692(), this.field4632.method7693());
-        Class8726.method30060();
+        RenderSystem.method30060();
         this.field4660.method15295();
         this.field4660.startSection("updateDisplay");
         this.field4632.method7680();
         final int method27839 = this.method5249();
         if (method27839 < Class6469.field25712.method19473()) {
-            Class8726.method29994(method27839);
+            RenderSystem.method29994(method27839);
         }
         this.field4660.method15300("yield");
         Thread.yield();
@@ -709,7 +709,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         this.field4696 = method27840;
         while (Util.method27837() >= this.field4697 + 1000L) {
             Minecraft.field4706 = this.field4698;
-            this.field4707 = String.format("%d fps T: %s%s%s%s B: %d", Minecraft.field4706, (this.field4648.field23383 == Class6469.field25712.method19473()) ? "inf" : Integer.valueOf(this.field4648.field23383), this.field4648.field23419 ? " vsync" : "", this.field4648.field23385 ? "" : " fast", (this.field4648.field23384 == Class2202.field13405) ? "" : ((this.field4648.field23384 == Class2202.field13406) ? " fast-clouds" : " fancy-clouds"), this.field4648.field23410);
+            this.field4707 = String.format("%d fps T: %s%s%s%s B: %d", Minecraft.field4706, (this.gameSettings.field23383 == Class6469.field25712.method19473()) ? "inf" : Integer.valueOf(this.gameSettings.field23383), this.gameSettings.field23419 ? " vsync" : "", this.gameSettings.field23385 ? "" : " fast", (this.gameSettings.field23384 == Class2202.field13405) ? "" : ((this.gameSettings.field23384 == Class2202.field13406) ? " fast-clouds" : " fancy-clouds"), this.gameSettings.field23410);
             this.field4697 += 1000L;
             this.field4698 = 0;
             this.field4634.method32485();
@@ -722,7 +722,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     
     @Override
     public void method5248() {
-        this.field4632.method7688(this.field4632.method7687(this.field4648.field23473, this.method5240()));
+        this.field4632.method7688(this.field4632.method7687(this.gameSettings.field23473, this.method5240()));
         if (this.field4700 != null) {
             this.field4700.method2970(this, this.field4632.method7696(), this.field4632.method7697());
             Class9463.method35173().method35193().method32153();
@@ -778,57 +778,57 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         if (this.field4660.method15305().method19593()) {
             final List<Class1943> method17084 = this.field4660.method15305().method19595().method17084(this.field4714);
             final Class1943 class1943 = method17084.remove(0);
-            Class8726.method30056(256, Minecraft.field4623);
-            Class8726.method30057(5889);
-            Class8726.method30058();
-            Class8726.method30061(0.0, this.field4632.method7692(), this.field4632.method7693(), 0.0, 1000.0, 3000.0);
-            Class8726.method30057(5888);
-            Class8726.method30058();
-            Class8726.method30065(0.0f, 0.0f, -2000.0f);
-            Class8726.method30072(1.0f);
-            Class8726.method30041();
-            final Class7392 method17085 = Class7392.method22694();
-            final Class4148 method17086 = method17085.method22696();
+            RenderSystem.method30056(256, Minecraft.field4623);
+            RenderSystem.method30057(5889);
+            RenderSystem.method30058();
+            RenderSystem.method30061(0.0, this.field4632.method7692(), this.field4632.method7693(), 0.0, 1000.0, 3000.0);
+            RenderSystem.method30057(5888);
+            RenderSystem.method30058();
+            RenderSystem.method30065(0.0f, 0.0f, -2000.0f);
+            RenderSystem.method30072(1.0f);
+            RenderSystem.disableTexture();
+            final Tessellator method17085 = Tessellator.getInstance();
+            final BufferBuilder method17086 = method17085.getBuffer();
             final int n = this.field4632.method7692() - 160 - 10;
             final int n2 = this.field4632.method7693() - 320;
-            Class8726.method30011();
-            method17086.method12390(7, Class9237.field39615);
-            method17086.method12432(n - 176.0f, n2 - 96.0f - 16.0f, 0.0).method12399(200, 0, 0, 0).method12397();
-            method17086.method12432(n - 176.0f, n2 + 320, 0.0).method12399(200, 0, 0, 0).method12397();
-            method17086.method12432(n + 176.0f, n2 + 320, 0.0).method12399(200, 0, 0, 0).method12397();
-            method17086.method12432(n + 176.0f, n2 - 96.0f - 16.0f, 0.0).method12399(200, 0, 0, 0).method12397();
-            method17085.method22695();
-            Class8726.method30012();
+            RenderSystem.enableBlend();
+            method17086.begin(7, DefaultVertexFormats.POSITION_COLOR);
+            method17086.pos(n - 176.0f, n2 - 96.0f - 16.0f, 0.0).method12399(200, 0, 0, 0).endVertex();
+            method17086.pos(n - 176.0f, n2 + 320, 0.0).method12399(200, 0, 0, 0).endVertex();
+            method17086.pos(n + 176.0f, n2 + 320, 0.0).method12399(200, 0, 0, 0).endVertex();
+            method17086.pos(n + 176.0f, n2 - 96.0f - 16.0f, 0.0).method12399(200, 0, 0, 0).endVertex();
+            method17085.draw();
+            RenderSystem.disableBlend();
             double n3 = 0.0;
             for (final Class1943 class1944 : method17084) {
                 final int n4 = MathHelper.floor(class1944.field10592 / 4.0) + 1;
-                method17086.method12390(6, Class9237.field39615);
+                method17086.begin(6, DefaultVertexFormats.POSITION_COLOR);
                 final int method17087 = class1944.method7893();
                 final int n5 = method17087 >> 16 & 0xFF;
                 final int n6 = method17087 >> 8 & 0xFF;
                 final int n7 = method17087 & 0xFF;
-                method17086.method12432(n, n2, 0.0).method12399(n5, n6, n7, 255).method12397();
+                method17086.pos(n, n2, 0.0).method12399(n5, n6, n7, 255).endVertex();
                 for (int i = n4; i >= 0; --i) {
                     final float n8 = (float)((n3 + class1944.field10592 * i / n4) * 6.2831854820251465 / 100.0);
-                    method17086.method12432(n + MathHelper.sin(n8) * 160.0f, n2 - MathHelper.cos(n8) * 160.0f * 0.5f, 0.0).method12399(n5, n6, n7, 255).method12397();
+                    method17086.pos(n + MathHelper.sin(n8) * 160.0f, n2 - MathHelper.cos(n8) * 160.0f * 0.5f, 0.0).method12399(n5, n6, n7, 255).endVertex();
                 }
-                method17085.method22695();
-                method17086.method12390(5, Class9237.field39615);
+                method17085.draw();
+                method17086.begin(5, DefaultVertexFormats.POSITION_COLOR);
                 for (int j = n4; j >= 0; --j) {
                     final float n9 = (float)((n3 + class1944.field10592 * j / n4) * 6.2831854820251465 / 100.0);
                     final float n10 = MathHelper.sin(n9) * 160.0f;
                     final float n11 = MathHelper.cos(n9) * 160.0f * 0.5f;
                     if (n11 <= 0.0f) {
-                        method17086.method12432(n + n10, n2 - n11, 0.0).method12399(n5 >> 1, n6 >> 1, n7 >> 1, 255).method12397();
-                        method17086.method12432(n + n10, n2 - n11 + 10.0f, 0.0).method12399(n5 >> 1, n6 >> 1, n7 >> 1, 255).method12397();
+                        method17086.pos(n + n10, n2 - n11, 0.0).method12399(n5 >> 1, n6 >> 1, n7 >> 1, 255).endVertex();
+                        method17086.pos(n + n10, n2 - n11 + 10.0f, 0.0).method12399(n5 >> 1, n6 >> 1, n7 >> 1, 255).endVertex();
                     }
                 }
-                method17085.method22695();
+                method17085.draw();
                 n3 += class1944.field10592;
             }
             final DecimalFormat decimalFormat = new DecimalFormat("##0.00");
             decimalFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT));
-            Class8726.method30040();
+            RenderSystem.enableTexture();
             final String method17088 = Class5756.method17107(class1943.field10595);
             String string = "";
             if (!"unspecified".equals(method17088)) {
@@ -841,9 +841,9 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             else {
                 s = string + method17088 + ' ';
             }
-            this.fontRenderer.method6609(s, (float)(n - 160), (float)(n2 - 80 - 16), 16777215);
+            this.fontRenderer.drawStringWithShadow(s, (float)(n - 160), (float)(n2 - 80 - 16), 16777215);
             final String string2 = decimalFormat.format(class1943.field10593) + "%";
-            this.fontRenderer.method6609(string2, (float)(n + 160 - this.fontRenderer.method6617(string2)), (float)(n2 - 80 - 16), 16777215);
+            this.fontRenderer.drawStringWithShadow(string2, (float)(n + 160 - this.fontRenderer.getStringWidth(string2)), (float)(n2 - 80 - 16), 16777215);
             for (int k = 0; k < method17084.size(); ++k) {
                 final Class1943 class1945 = method17084.get(k);
                 final StringBuilder sb = new StringBuilder();
@@ -853,11 +853,11 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                 else {
                     sb.append("[").append(k + 1).append("] ");
                 }
-                this.fontRenderer.method6609(sb.append(class1945.field10595).toString(), (float)(n - 160), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
+                this.fontRenderer.drawStringWithShadow(sb.append(class1945.field10595).toString(), (float)(n - 160), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
                 final String string3 = decimalFormat.format(class1945.field10592) + "%";
-                this.fontRenderer.method6609(string3, (float)(n + 160 - 50 - this.fontRenderer.method6617(string3)), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
+                this.fontRenderer.drawStringWithShadow(string3, (float)(n + 160 - 50 - this.fontRenderer.getStringWidth(string3)), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
                 final String string4 = decimalFormat.format(class1945.field10593) + "%";
-                this.fontRenderer.method6609(string4, (float)(n + 160 - this.fontRenderer.method6617(string4)), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
+                this.fontRenderer.drawStringWithShadow(string4, (float)(n + 160 - this.fontRenderer.getStringWidth(string4)), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
             }
         }
     }
@@ -876,11 +876,11 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     public void method5255(final boolean b) {
         if (this.field4700 == null) {
             if (this.method5284() && !this.field4685.method1539()) {
-                this.method5244(new Class551(!b));
+                this.displayGuiScreen(new Class551(!b));
                 this.field4668.method6425();
             }
             else {
-                this.method5244(new Class551(true));
+                this.displayGuiScreen(new Class551(true));
             }
         }
     }
@@ -889,7 +889,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         if (!b) {
             this.field4693 = 0;
         }
-        if (this.field4693 <= 0 && !this.field4684.method2756()) {
+        if (this.field4693 <= 0 && !this.player.method2756()) {
             if (b && this.field4691 != null && this.field4691.getType() == RayTraceResult.Type.BLOCK) {
                 final BlockRayTraceResult blockRayTraceResult = (BlockRayTraceResult)this.field4691;
                 final BlockPos method21447 = blockRayTraceResult.getPos();
@@ -897,7 +897,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                     final Direction method21448 = blockRayTraceResult.getFace();
                     if (this.field4682.method27314(method21447, method21448)) {
                         this.field4640.method6487(method21447, method21448);
-                        this.field4684.method2707(Class316.field1877);
+                        this.player.method2707(Class316.field1877);
                     }
                 }
             }
@@ -920,7 +920,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                     this.field4693 = 10;
                 }
             }
-            else if (!this.field4684.method4134()) {
+            else if (!this.player.method4134()) {
                 Class5714 class5749 = null;
                 if (this.field4691.getType() == RayTraceResult.Type.ENTITY) {
                     class5749 = new Class5750(((Class7007)this.field4691).method21452(), true);
@@ -931,11 +931,11 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                 }
                 final boolean equals = Class9367.field40167.equals(Class7906.field32452);
                 if (equals) {
-                    this.field4684.method2707(Class316.field1877);
+                    this.player.method2707(Class316.field1877);
                 }
                 switch (Class8853.field37235[this.field4691.getType().ordinal()]) {
                     case 1: {
-                        this.field4682.method27321(this.field4684, ((Class7007)this.field4691).method21452());
+                        this.field4682.method27321(this.player, ((Class7007)this.field4691).method21452());
                         if (class5749 != null) {
                             ((Class5750)class5749).method17060();
                             Class9463.method35173().method35188().method21097(class5749);
@@ -955,12 +955,12 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                         if (this.field4682.method27331()) {
                             this.field4693 = 10;
                         }
-                        this.field4684.method2905();
+                        this.player.method2905();
                         break;
                     }
                 }
                 if (!equals) {
-                    this.field4684.method2707(Class316.field1877);
+                    this.player.method2707(Class316.field1877);
                 }
             }
         }
@@ -974,24 +974,24 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         }
         if (!this.field4682.method27337()) {
             this.field4692 = 4;
-            if (!this.field4684.method4134()) {
+            if (!this.player.method4134()) {
                 if (this.field4691 == null) {
                     Minecraft.field4622.warn("Null returned as 'hitResult', this shouldn't happen!");
                 }
                 for (final Class316 class5749 : Class316.values()) {
-                    final ItemStack method2715 = this.field4684.method2715(class5749);
+                    final ItemStack method2715 = this.player.method2715(class5749);
                     if (this.field4691 != null) {
                         switch (Class8853.field37235[this.field4691.getType().ordinal()]) {
                             case 1: {
                                 final Class7007 class5750 = (Class7007)this.field4691;
                                 final Entity method2716 = class5750.method21452();
-                                Class2201 class5751 = this.field4682.method27323(this.field4684, method2716, class5750, class5749);
+                                Class2201 class5751 = this.field4682.method27323(this.player, method2716, class5750, class5749);
                                 if (!class5751.method8374()) {
-                                    class5751 = this.field4682.method27322(this.field4684, method2716, class5749);
+                                    class5751 = this.field4682.method27322(this.player, method2716, class5749);
                                 }
                                 if (class5751.method8374()) {
                                     if (class5751.method8375()) {
-                                        this.field4684.method2707(class5749);
+                                        this.player.method2707(class5749);
                                     }
                                     return;
                                 }
@@ -1000,10 +1000,10 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                             case 2: {
                                 final BlockRayTraceResult class5752 = (BlockRayTraceResult)this.field4691;
                                 final int method2717 = method2715.method27690();
-                                final Class2201 method2718 = this.field4682.method27319(this.field4684, this.world, class5749, class5752);
+                                final Class2201 method2718 = this.field4682.method27319(this.player, this.world, class5749, class5752);
                                 if (method2718.method8374()) {
                                     if (method2718.method8375()) {
-                                        this.field4684.method2707(class5749);
+                                        this.player.method2707(class5749);
                                         if (!method2715.method27620() && (method2715.method27690() != method2717 || this.field4682.method27332())) {
                                             this.field4644.field9384.method35156(class5749);
                                         }
@@ -1018,10 +1018,10 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                         }
                     }
                     if (!method2715.method27620()) {
-                        final Class2201 method2719 = this.field4682.method27320(this.field4684, this.world, class5749);
+                        final Class2201 method2719 = this.field4682.method27320(this.player, this.world, class5749);
                         if (method2719.method8374()) {
                             if (method2719.method8375() && Class9367.method34762() > Class7906.field32452.method25613()) {
-                                this.field4684.method2707(class5749);
+                                this.player.method2707(class5749);
                             }
                             this.field4644.field9384.method35156(class5749);
                             return;
@@ -1055,16 +1055,16 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         if (this.world != null) {
             this.field4629.method5857();
         }
-        if (this.field4700 == null && this.field4684 != null) {
-            if (this.field4684.method2664() <= 0.0f && !(this.field4700 instanceof Class533)) {
-                this.method5244(null);
+        if (this.field4700 == null && this.player != null) {
+            if (this.player.method2664() <= 0.0f && !(this.field4700 instanceof Class533)) {
+                this.displayGuiScreen(null);
             }
-            else if (this.field4684.method2783() && this.world != null) {
-                this.method5244(new Class536());
+            else if (this.player.method2783() && this.world != null) {
+                this.displayGuiScreen(new Class536());
             }
         }
-        else if (this.field4700 != null && this.field4700 instanceof Class536 && !this.field4684.method2783()) {
-            this.method5244(null);
+        else if (this.field4700 != null && this.field4700 instanceof Class536 && !this.player.method2783()) {
+            this.displayGuiScreen(null);
         }
         if (this.field4700 != null) {
             this.field4693 = 10000;
@@ -1072,10 +1072,10 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         if (this.field4700 != null) {
             Screen.method3053(() -> this.field4700.tick(), "Ticking screen", this.field4700.getClass().getCanonicalName());
         }
-        if (!this.field4648.field23466) {
+        if (!this.gameSettings.field23466) {
             this.field4647.method3814();
         }
-        if (this.field4701 == null && (this.field4700 == null || this.field4700.field3155)) {
+        if (this.field4701 == null && (this.field4700 == null || this.field4700.passEvents)) {
             this.field4660.method15300("Keybindings");
             this.method5261();
             if (this.field4693 > 0) {
@@ -1126,7 +1126,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             }
             this.field4660.method15300("animateTick");
             if (!this.field4694 && this.world != null) {
-                this.world.method6825(MathHelper.floor(this.field4684.getPosX()), MathHelper.floor(this.field4684.getPosY()), MathHelper.floor(this.field4684.getPosZ()));
+                this.world.method6825(MathHelper.floor(this.player.getPosX()), MathHelper.floor(this.player.getPosY()), MathHelper.floor(this.player.getPosZ()));
             }
             this.field4660.method15300("particles");
             if (!this.field4694) {
@@ -1143,95 +1143,95 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     }
     
     private void method5261() {
-        while (this.field4648.field23452.method1058()) {
-            final Class5760 field4648 = this.field4648;
+        while (this.gameSettings.field23452.method1058()) {
+            final Class5760 field4648 = this.gameSettings;
             ++field4648.field23465;
-            if (this.field4648.field23465 > 2) {
-                this.field4648.field23465 = 0;
+            if (this.gameSettings.field23465 > 2) {
+                this.gameSettings.field23465 = 0;
             }
-            if (this.field4648.field23465 == 0) {
+            if (this.gameSettings.field23465 == 0) {
                 this.field4644.method5802(this.method5303());
             }
-            else if (this.field4648.field23465 == 1) {
+            else if (this.gameSettings.field23465 == 1) {
                 this.field4644.method5802(null);
             }
             this.field4636.method5755();
         }
-        while (this.field4648.field23453.method1058()) {
-            this.field4648.field23470 = !this.field4648.field23470;
+        while (this.gameSettings.field23453.method1058()) {
+            this.gameSettings.field23470 = !this.gameSettings.field23470;
         }
         for (int i = 0; i < 9; ++i) {
-            final boolean method1056 = this.field4648.field23458.method1056();
-            final boolean method1057 = this.field4648.field23459.method1056();
-            if (this.field4648.field23457[i].method1058()) {
-                if (this.field4684.isSpectator()) {
+            final boolean method1056 = this.gameSettings.field23458.method1056();
+            final boolean method1057 = this.gameSettings.field23459.method1056();
+            if (this.gameSettings.field23457[i].method1058()) {
+                if (this.player.isSpectator()) {
                     this.field4647.method3810().method3320(i);
                 }
-                else if (!this.field4684.method2889() || this.field4700 != null || (!method1057 && !method1056)) {
-                    this.field4684.field3006.field2743 = i;
+                else if (!this.player.method2889() || this.field4700 != null || (!method1057 && !method1056)) {
+                    this.player.field3006.field2743 = i;
                 }
                 else {
                     Class525.method3019(this, i, method1057, method1056);
                 }
             }
         }
-        while (this.field4648.field23442.method1058()) {
+        while (this.gameSettings.field23442.method1058()) {
             if (this.field4682.method27334()) {
-                this.field4684.method4118();
+                this.player.method4118();
             }
             else {
                 this.field4680.method32921();
-                this.method5244(new Class518(this.field4684));
+                this.displayGuiScreen(new Class518(this.player));
             }
         }
-        while (this.field4648.field23456.method1058()) {
-            this.method5244(new Class557(this.field4684.field4069.method17374()));
+        while (this.gameSettings.field23456.method1058()) {
+            this.displayGuiScreen(new Class557(this.player.field4069.method17374()));
         }
-        while (this.field4648.field23443.method1058()) {
-            if (!this.field4684.isSpectator()) {
+        while (this.gameSettings.field23443.method1058()) {
+            if (!this.player.isSpectator()) {
                 this.method5269().method17292(new Class4399(Class2003.field11246, BlockPos.ZERO, Direction.DOWN));
             }
         }
-        while (this.field4648.field23444.method1058()) {
-            if (!this.field4684.isSpectator() && this.field4684.method2821(Screen.method3046())) {
-                this.field4684.method2707(Class316.field1877);
+        while (this.gameSettings.field23444.method1058()) {
+            if (!this.player.isSpectator() && this.player.method2821(Screen.method3046())) {
+                this.player.method2707(Class316.field1877);
             }
         }
-        if (this.field4648.field23389 != Class2047.field11663) {
-            while (this.field4648.field23448.method1058()) {
-                this.method5244(new Class535(""));
+        if (this.gameSettings.field23389 != Class2047.field11663) {
+            while (this.gameSettings.field23448.method1058()) {
+                this.displayGuiScreen(new Class535(""));
             }
-            if (this.field4700 == null && this.field4701 == null && this.field4648.field23450.method1058()) {
-                this.method5244(new Class535("/"));
+            if (this.field4700 == null && this.field4701 == null && this.gameSettings.field23450.method1058()) {
+                this.displayGuiScreen(new Class535("/"));
             }
         }
-        if (this.field4684.method2756()) {
-            if (!this.field4648.field23445.method1056() && !this.field4648.field23445.method1056()) {
+        if (this.player.method2756()) {
+            if (!this.gameSettings.field23445.method1056() && !this.gameSettings.field23445.method1056()) {
                 final Class5751 class5751 = new Class5751();
                 Class9463.method35173().method35188().method21097(class5751);
                 if (!class5751.method16962()) {
-                    this.field4682.method27329(this.field4684);
+                    this.field4682.method27329(this.player);
                 }
             }
-            while (this.field4648.field23446.method1058()) {}
-            while (this.field4648.field23445.method1058()) {}
-            while (this.field4648.field23447.method1058()) {}
+            while (this.gameSettings.field23446.method1058()) {}
+            while (this.gameSettings.field23445.method1058()) {}
+            while (this.gameSettings.field23447.method1058()) {}
         }
         else {
-            while (this.field4648.field23446.method1058()) {
+            while (this.gameSettings.field23446.method1058()) {
                 this.method5257();
             }
-            while (this.field4648.field23445.method1058()) {
+            while (this.gameSettings.field23445.method1058()) {
                 this.method5258();
             }
-            while (this.field4648.field23447.method1058()) {
+            while (this.gameSettings.field23447.method1058()) {
                 this.method5273();
             }
         }
-        if (this.field4648.field23445.method1056() && this.field4692 == 0 && !this.field4684.method2756()) {
+        if (this.gameSettings.field23445.method1056() && this.field4692 == 0 && !this.player.method2756()) {
             this.method5258();
         }
-        this.method5256(this.field4700 == null && this.field4648.field23446.method1056() && this.field4650.method26962());
+        this.method5256(this.field4700 == null && this.gameSettings.field23446.method1056() && this.field4650.method26962());
     }
     
     public void method5262(final String s, final String s2, Class8511 class8511) {
@@ -1273,7 +1273,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             Thread.yield();
         }
         final Class695 class8513 = new Class695(this.field4646.get());
-        this.method5244(class8513);
+        this.displayGuiScreen(class8513);
         while (!this.field4685.method1542()) {
             class8513.tick();
             this.method5247(false);
@@ -1339,7 +1339,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         }
         this.world = null;
         this.method5267(null);
-        this.field4684 = null;
+        this.player = null;
     }
     
     private void method5266(final Screen class527) {
@@ -1347,7 +1347,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         this.field4668.method6426();
         this.field4689 = null;
         this.field4687 = null;
-        this.method5244(class527);
+        this.displayGuiScreen(class527);
         this.method5247(false);
     }
     
@@ -1364,19 +1364,19 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     
     @Nullable
     public Class5799 method5269() {
-        return (this.field4684 == null) ? null : this.field4684.field4069;
+        return (this.player == null) ? null : this.player.field4069;
     }
     
     public static boolean method5270() {
-        return !Minecraft.field4621.field4648.field23464;
+        return !Minecraft.field4621.gameSettings.field23464;
     }
     
     public static boolean method5271() {
-        return Minecraft.field4621.field4648.field23385;
+        return Minecraft.field4621.gameSettings.field23385;
     }
     
     public static boolean method5272() {
-        return Minecraft.field4621.field4648.field23386 != Class2007.field11398;
+        return Minecraft.field4621.gameSettings.field23386 != Class2007.field11398;
     }
     
     private void method5273() {
@@ -1386,7 +1386,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             return;
         }
         if (this.field4691 != null && this.field4691.getType() != RayTraceResult.Type.MISS) {
-            final boolean field27304 = this.field4684.field3025.field27304;
+            final boolean field27304 = this.player.field3025.field27304;
             TileEntity method6727 = null;
             final RayTraceResult.Type method6728 = this.field4691.getType();
             ItemStack class5749;
@@ -1483,14 +1483,14 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                 Minecraft.field4622.warn("Picking on: [{}] {} gave null item", (Object)method6728, (Object)s);
             }
             else {
-                final Class464 field27305 = this.field4684.field3006;
+                final Class464 field27305 = this.player.field3006;
                 if (method6727 != null) {
                     this.method5274(class5749, method6727);
                 }
                 final int method6735 = field27305.method2353(class5749);
                 if (field27304) {
                     field27305.method2350(class5749);
-                    this.field4682.method27327(this.field4684.method2715(Class316.field1877), 36 + field27305.field2743);
+                    this.field4682.method27327(this.player.method2715(Class316.field1877), 36 + field27305.field2743);
                 }
                 else if (method6735 != -1) {
                     if (Class464.method2352(method6735)) {
@@ -1520,7 +1520,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     }
     
     public CrashReport method5275(final CrashReport class7689) {
-        method5276(this.field4664, this.field4653, this.field4648, class7689);
+        method5276(this.field4664, this.field4653, this.gameSettings, class7689);
         if (this.world != null) {
             this.world.method6779(class7689);
         }
@@ -1530,9 +1530,9 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     public static void method5276(final Class1661 class1661, final String s, final Class5760 class1662, final CrashReport class1663) {
         final CrashReportCategory method24417 = class1663.method24417();
         method24417.addDetail("Launched Version", () -> s2);
-        method24417.addDetail("Backend library", Class8726::method30077);
-        method24417.addDetail("Backend API", Class8726::method30078);
-        method24417.addDetail("GL Caps", Class8726::method30085);
+        method24417.addDetail("Backend library", RenderSystem::method30077);
+        method24417.addDetail("Backend API", RenderSystem::method30078);
+        method24417.addDetail("GL Caps", RenderSystem::method30085);
         method24417.addDetail("Using VBOs", () -> "Yes");
         method24417.addDetail("Is Modded", () -> {
             Class7932.method25729();
@@ -1580,15 +1580,15 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     @Override
     public void method1516(final Class9037 class9037) {
         class9037.method32486("fps", Minecraft.field4706);
-        class9037.method32486("vsync_enabled", this.field4648.field23419);
+        class9037.method32486("vsync_enabled", this.gameSettings.field23419);
         class9037.method32486("display_frequency", this.field4632.method7662());
         class9037.method32486("display_type", this.field4632.method7691() ? "fullscreen" : "windowed");
         class9037.method32486("run_time", (Util.method27837() - class9037.method32491()) / 60L * 1000L);
         class9037.method32486("current_action", this.method5280());
-        class9037.method32486("language", (this.field4648.field23476 == null) ? "en_us" : this.field4648.field23476);
+        class9037.method32486("language", (this.gameSettings.field23476 == null) ? "en_us" : this.gameSettings.field23476);
         class9037.method32486("endianness", (ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN) ? "little" : "big");
-        class9037.method32486("subtitles", this.field4648.field23427);
-        class9037.method32486("touch", this.field4648.field23429 ? "touch" : "mouse");
+        class9037.method32486("subtitles", this.gameSettings.field23427);
+        class9037.method32486("touch", this.gameSettings.field23429 ? "touch" : "mouse");
         int i = 0;
         for (final Class1922 class9038 : this.field4663.method7611()) {
             if (!class9038.method7622() && !class9038.method7623()) {
@@ -1706,7 +1706,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         return this.field4664;
     }
     
-    public Function<ResourceLocation, Class1912> method5296(final ResourceLocation class1932) {
+    public Function<ResourceLocation, TextureAtlasSprite> method5296(final ResourceLocation class1932) {
         return this.field4674.method6457(class1932)::method6338;
     }
     
@@ -1726,18 +1726,18 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         if (this.field4700 instanceof Class697) {
             return Class264.field1264;
         }
-        if (this.field4684 == null) {
+        if (this.player == null) {
             return Class264.field1261;
         }
-        if (this.field4684.world.dimension instanceof Class6739) {
+        if (this.player.world.dimension instanceof Class6739) {
             return Class264.field1265;
         }
-        if (this.field4684.world.dimension instanceof Class6738) {
+        if (this.player.world.dimension instanceof Class6738) {
             return this.field4647.method3813().method3334() ? Class264.field1266 : Class264.field1267;
         }
-        final Class2140 method9870 = this.field4684.world.method6959(new BlockPos(this.field4684)).method9870();
-        if (!this.field4669.method26548(Class264.field1268) && (!this.field4684.method1712() || this.field4669.method26548(Class264.field1262) || (method9870 != Class2140.field12596 && method9870 != Class2140.field12598))) {
-            return (this.field4684.field3025.field27304 && this.field4684.field3025.field27303) ? Class264.field1263 : Class264.field1262;
+        final Class2140 method9870 = this.player.world.method6959(new BlockPos(this.player)).method9870();
+        if (!this.field4669.method26548(Class264.field1268) && (!this.player.method1712() || this.field4669.method26548(Class264.field1262) || (method9870 != Class2140.field12596 && method9870 != Class2140.field12598))) {
+            return (this.player.field3025.field27304 && this.player.field3025.field27303) ? Class264.field1263 : Class264.field1262;
         }
         return Class264.field1268;
     }
@@ -1783,7 +1783,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         return this.field4637;
     }
     
-    public Class1796 getItemRenderer() {
+    public ItemRenderer getItemRenderer() {
         return this.field4638;
     }
     
@@ -1824,7 +1824,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     }
     
     public boolean method5317() {
-        return (this.field4684 != null && this.field4684.method2896()) || this.field4648.field23425;
+        return (this.player != null && this.player.method2896()) || this.gameSettings.field23425;
     }
     
     public Class690 method5318() {

@@ -23,12 +23,12 @@ public class Class8995
     private static final Logger field37952;
     
     public static int method32101() {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         return Class8933.method31615();
     }
     
     public static void method32102(final int n) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         Class8933.method31616(n);
     }
     
@@ -45,7 +45,7 @@ public class Class8995
     }
     
     public static void method32106(final Class2063 class2063, final int n, final int n2, final int n3, final int n4) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         method32107(n);
         if (n2 >= 0) {
             Class8933.method31613(3553, 33085, n2);
@@ -59,7 +59,7 @@ public class Class8995
     }
     
     private static void method32107(final int n) {
-        Class8726.method29989(Class8726::method29985);
+        RenderSystem.method29989(RenderSystem::method29985);
         Class8933.method31617(n);
     }
     
@@ -83,7 +83,7 @@ public class Class8995
     }
     
     public static String method32109(final InputStream inputStream) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         ByteBuffer method32108 = null;
         try {
             method32108 = method32108(inputStream);
@@ -101,7 +101,7 @@ public class Class8995
     }
     
     public static void method32110(final IntBuffer intBuffer, final int n, final int n2) {
-        Class8726.method29989(Class8726::method29984);
+        RenderSystem.method29989(RenderSystem::method29984);
         GL11.glPixelStorei(3312, 0);
         GL11.glPixelStorei(3313, 0);
         GL11.glPixelStorei(3314, 0);

@@ -60,7 +60,7 @@ public class Class634 extends Class633
             this.field3623.fontRenderer.method6610((String)method6626.get(i), (float)(n3 + 32 + 3), (float)(n2 + 12 + 9 * i), 8421504);
         }
         final String s = b4 ? (TextFormatting.DARK_RED + this.field3624.field41618) : this.field3624.field41614;
-        final int method6627 = this.field3623.fontRenderer.method6617(s);
+        final int method6627 = this.field3623.fontRenderer.getStringWidth(s);
         this.field3623.fontRenderer.method6610(s, (float)(n3 + n4 - method6627 - 15 - 2), (float)(n2 + 1), 8421504);
         int n9 = 0;
         String s2 = null;
@@ -116,9 +116,9 @@ public class Class634 extends Class633
             s3 = Class8822.method30773(b2 ? "multiplayer.status.client_out_of_date" : "multiplayer.status.server_out_of_date", new Object[0]);
             s2 = this.field3624.field41620;
         }
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3623.method5290().method5849(Class565.field3363);
-        Class565.method3188(n3 + n4 - 15, n2, (float)(n9 * 10), (float)(176 + n10 * 8), 10, 8, 256, 256);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        this.field3623.method5290().method5849(AbstractGui.GUI_ICONS_LOCATION);
+        AbstractGui.blit(n3 + n4 - 15, n2, (float)(n9 * 10), (float)(176 + n10 * 8), 10, 8, 256, 256);
         if (this.field3624.method35869() != null) {
             if (!this.field3624.method35869().equals(this.field3626)) {
                 this.field3626 = this.field3624.method35869();
@@ -155,34 +155,34 @@ public class Class634 extends Class633
                 }
             }
         }
-        if (this.field3623.field4648.field23429 || b) {
+        if (this.field3623.gameSettings.field23429 || b) {
             this.field3623.method5290().method5849(Class612.method3580());
-            Class565.method3293(n3, n2, n3 + 32, n2 + 32, -1601138544);
-            Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+            AbstractGui.fill(n3, n2, n3 + 32, n2 + 32, -1601138544);
+            RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             final int n13 = n6 - n3;
             final int n14 = n7 - n2;
             if (this.method3655()) {
                 if (n13 < 32 && n13 > 16) {
-                    Class565.method3188(n3, n2, 0.0f, 32.0f, 32, 32, 256, 256);
+                    AbstractGui.blit(n3, n2, 0.0f, 32.0f, 32, 32, 256, 256);
                 }
                 else {
-                    Class565.method3188(n3, n2, 0.0f, 0.0f, 32, 32, 256, 256);
+                    AbstractGui.blit(n3, n2, 0.0f, 0.0f, 32, 32, 256, 256);
                 }
             }
             if (n > 0) {
                 if (n13 < 16 && n14 < 16) {
-                    Class565.method3188(n3, n2, 96.0f, 32.0f, 32, 32, 256, 256);
+                    AbstractGui.blit(n3, n2, 96.0f, 32.0f, 32, 32, 256, 256);
                 }
                 else {
-                    Class565.method3188(n3, n2, 96.0f, 0.0f, 32, 32, 256, 256);
+                    AbstractGui.blit(n3, n2, 96.0f, 0.0f, 32, 32, 256, 256);
                 }
             }
             if (n < this.field3622.method3954().method34336() - 1) {
                 if (n13 < 16 && n14 > 16) {
-                    Class565.method3188(n3, n2, 64.0f, 32.0f, 32, 32, 256, 256);
+                    AbstractGui.blit(n3, n2, 64.0f, 32.0f, 32, 32, 256, 256);
                 }
                 else {
-                    Class565.method3188(n3, n2, 64.0f, 0.0f, 32, 32, 256, 256);
+                    AbstractGui.blit(n3, n2, 64.0f, 0.0f, 32, 32, 256, 256);
                 }
             }
         }
@@ -190,9 +190,9 @@ public class Class634 extends Class633
     
     public void method3654(final int n, final int n2, final ResourceLocation class1932) {
         this.field3623.method5290().method5849(class1932);
-        Class8726.method30011();
-        Class565.method3188(n, n2, 0.0f, 0.0f, 32, 32, 32, 32);
-        Class8726.method30012();
+        RenderSystem.enableBlend();
+        AbstractGui.blit(n, n2, 0.0f, 0.0f, 32, 32, 32, 32);
+        RenderSystem.disableBlend();
     }
     
     private boolean method3655() {
@@ -231,7 +231,7 @@ public class Class634 extends Class633
     
     @Override
     public boolean keyPressed(final int n, final int n2, final int n3) {
-        if (Screen.method3047()) {
+        if (Screen.hasShiftDown()) {
             final int index = this.field3622.field3932.children().indexOf(this);
             if (n != 264 || index >= this.field3622.method3954().method34336() - 1) {
                 if (n != 265) {

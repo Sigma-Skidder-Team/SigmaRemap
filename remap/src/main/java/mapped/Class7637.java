@@ -72,7 +72,7 @@ public class Class7637
     private final Set<ResourceLocation> field30264;
     private final Class9333 field30265;
     private final Map<ResourceLocation, Class7684> field30266;
-    private final Map<Triple<ResourceLocation, Class9294, Boolean>, Class6313> field30267;
+    private final Map<Triple<ResourceLocation, TransformationMatrix, Boolean>, Class6313> field30267;
     private final Map<ResourceLocation, Class7684> field30268;
     private final Map<ResourceLocation, Class6313> field30269;
     private Map<ResourceLocation, Pair<Class1774, Class9430>> field30270;
@@ -621,7 +621,7 @@ public class Class7637
         return this.method24021(class1932, class1933, this.field30262::method1415);
     }
     
-    public Class6313 method24021(final ResourceLocation class1932, final Class2123 class1933, final Function<Class3687, Class1912> function) {
+    public Class6313 method24021(final ResourceLocation class1932, final Class2123 class1933, final Function<Class3687, TextureAtlasSprite> function) {
         final Triple of = Triple.of((Object)class1932, (Object)class1933.method8274(), (Object)class1933.method8278());
         if (this.field30267.containsKey(of)) {
             return this.field30267.get(of);
@@ -641,7 +641,7 @@ public class Class7637
             if (Class9570.field41282.method22623()) {
                 class1935 = method24014.method24383(this, function, class1933, class1932);
             }
-            this.field30267.put((Triple<ResourceLocation, Class9294, Boolean>)of, class1935);
+            this.field30267.put((Triple<ResourceLocation, TransformationMatrix, Boolean>)of, class1935);
             return class1935;
         }
         throw new IllegalStateException("bake called too early");

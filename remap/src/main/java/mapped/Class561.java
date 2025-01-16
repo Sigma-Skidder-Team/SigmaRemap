@@ -36,11 +36,11 @@ public class Class561 extends Screen
         this.children.add(this.field3349);
         this.field3347 = new Class611(this);
         this.children.add(this.field3347);
-        this.field3348 = this.method3029(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("createWorld.customize.presets.select", new Object[0]), class654 -> {
+        this.field3348 = this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("createWorld.customize.presets.select", new Object[0]), class654 -> {
             this.field3344.method3885(this.field3349.method3378());
-            this.minecraft.method5244(this.field3344);
+            this.minecraft.displayGuiScreen(this.field3344);
         }));
-        this.method3029(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.method5244(this.field3344)));
+        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3344)));
         this.method3272(this.field3347.method3530() != null);
     }
     
@@ -57,8 +57,8 @@ public class Class561 extends Screen
     }
     
     @Override
-    public void method3028() {
-        this.minecraft.method5244(this.field3344);
+    public void onClose() {
+        this.minecraft.displayGuiScreen(this.field3344);
     }
     
     @Override
@@ -67,17 +67,17 @@ public class Class561 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.field3347.method2975(n, n2, n3);
-        Class8726.method30059();
-        Class8726.method30065(0.0f, 0.0f, 400.0f);
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 8, 16777215);
-        this.method3297(this.font, this.field3345, 50, 30, 10526880);
-        this.method3297(this.font, this.field3346, 50, 70, 10526880);
-        Class8726.method30060();
-        this.field3349.method2975(n, n2, n3);
-        super.method2975(n, n2, n3);
+        this.field3347.render(n, n2, n3);
+        RenderSystem.method30059();
+        RenderSystem.method30065(0.0f, 0.0f, 400.0f);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 8, 16777215);
+        this.drawString(this.font, this.field3345, 50, 30, 10526880);
+        this.drawString(this.font, this.field3346, 50, 70, 10526880);
+        RenderSystem.method30060();
+        this.field3349.render(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     @Override

@@ -38,7 +38,7 @@ public class Class3232 extends Class3167
     @Class6753
     private void method10191(final Class5744 class5744) {
         if (this.method9906() && class5744.method17046()) {
-            if (!(Class3232.field15514.field4684.method2766().getItem() instanceof Class4087)) {
+            if (!(Class3232.field15514.player.method2766().getItem() instanceof Class4087)) {
                 this.field15703.clear();
             }
             else {
@@ -59,8 +59,8 @@ public class Class3232 extends Class3167
         if (this.method9906() && !this.method9883("Silent")) {
             if (!this.field15703.isEmpty()) {
                 final float[] method30921 = Class8845.method30921(this.field15703.get(0));
-                Class3232.field15514.field4684.rotationYaw = method30921[0];
-                Class3232.field15514.field4684.rotationPitch = method30921[1];
+                Class3232.field15514.player.rotationYaw = method30921[0];
+                Class3232.field15514.player.rotationPitch = method30921[1];
             }
         }
     }
@@ -70,7 +70,7 @@ public class Class3232 extends Class3167
         final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {
             final Entity class399 = iterator.next();
-            if (class399 == Class3232.field15514.field4684) {
+            if (class399 == Class3232.field15514.player) {
                 iterator.remove();
             }
             else if (Class9463.method35173().method35190().method29878(class399)) {
@@ -82,10 +82,10 @@ public class Class3232 extends Class3167
             else if (((LivingEntity)class399).method2664() == 0.0f) {
                 iterator.remove();
             }
-            else if (Class3232.field15514.field4684.method1732(class399) > n) {
+            else if (Class3232.field15514.player.method1732(class399) > n) {
                 iterator.remove();
             }
-            else if (!Class3232.field15514.field4684.method2646((LivingEntity)class399)) {
+            else if (!Class3232.field15514.player.method2646((LivingEntity)class399)) {
                 iterator.remove();
             }
             else if (class399 instanceof Class857) {
@@ -103,7 +103,7 @@ public class Class3232 extends Class3167
             else if (!this.method9883("Animals/Monsters") && !(class399 instanceof PlayerEntity)) {
                 iterator.remove();
             }
-            else if (Class3232.field15514.field4684.method1920() != null && Class3232.field15514.field4684.method1920().equals(class399)) {
+            else if (Class3232.field15514.player.method1920() != null && Class3232.field15514.player.method1920().equals(class399)) {
                 iterator.remove();
             }
             else if (class399.method1850()) {

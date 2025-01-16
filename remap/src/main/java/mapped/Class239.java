@@ -31,7 +31,7 @@ public enum Class239
         return this.field1175;
     }
     
-    public void method883(final Class565 class565, final int n, final int n2, final boolean b, final int n3) {
+    public void method883(final AbstractGui class565, final int n, final int n2, final boolean b, final int n3) {
         int field1171 = this.field1171;
         if (n3 > 0) {
             field1171 += this.field1173;
@@ -39,10 +39,10 @@ public enum Class239
         if (n3 == this.field1175 - 1) {
             field1171 += this.field1173;
         }
-        class565.method3186(n + this.method885(n3), n2 + this.method886(n3), field1171, b ? (this.field1172 + this.field1174) : this.field1172, this.field1173, this.field1174);
+        class565.blit(n + this.method885(n3), n2 + this.method886(n3), field1171, b ? (this.field1172 + this.field1174) : this.field1172, this.field1173, this.field1174);
     }
     
-    public void method884(final int n, final int n2, final int n3, final Class1796 class1796, final ItemStack class1797) {
+    public void method884(final int n, final int n2, final int n3, final ItemRenderer class1796, final ItemStack class1797) {
         int n4 = n + this.method885(n3);
         int n5 = n2 + this.method886(n3);
         switch (Class6030.field24524[this.ordinal()]) {

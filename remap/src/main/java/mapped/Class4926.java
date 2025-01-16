@@ -43,7 +43,7 @@ public class Class4926 extends Class4800
             this.field21079 = true;
             this.field21078.method14297(true);
         });
-        this.field21078.method14260((class4803, n) -> Minecraft.method5277().method5244(new Class548()));
+        this.field21078.method14260((class4803, n) -> Minecraft.method5277().displayGuiScreen(new Class548()));
     }
     
     public void method14779() {
@@ -169,7 +169,7 @@ public class Class4926 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.method5277().method5244(new Class548());
+            Minecraft.method5277().displayGuiScreen(new Class548());
         }
     }
 }

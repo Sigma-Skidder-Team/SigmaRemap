@@ -184,12 +184,12 @@ public class Class9111
             Class9111.field38599 = Class9570.method35823(method18189, Class9570.field41219, new Object[0]);
         }
         Class9216.method33804(Class9111.field38597, Class9111.field38598, Class9111.field38599, 0.0f);
-        Class8726.method30054(Class9111.field38597, Class9111.field38598, Class9111.field38599, 0.0f);
+        RenderSystem.method30054(Class9111.field38597, Class9111.field38598, Class9111.field38599, 0.0f);
     }
     
     public static void method32953() {
-        Class8726.method30023(0.0f);
-        Class8726.method30021(Class317.field1882);
+        RenderSystem.method30023(0.0f);
+        RenderSystem.method30021(Class317.field1882);
     }
     
     public static void method32954(final Class6092 class6092, final Class1985 class6093, final float n, final boolean b) {
@@ -237,10 +237,10 @@ public class Class9111
                     n2 = a * 0.05f;
                     f = Math.min(a, 192.0f) * 0.5f;
                 }
-                Class8726.method30024(n2);
-                Class8726.method30025(f);
-                Class8726.method30021(Class317.field1880);
-                Class8726.method30083();
+                RenderSystem.method30024(n2);
+                RenderSystem.method30025(f);
+                RenderSystem.method30021(Class317.field1880);
+                RenderSystem.method30083();
                 if (Class9570.field41299.method22605()) {
                     Class9570.method35811(Class9570.field41299, class6093, class6092, n, f);
                 }
@@ -263,8 +263,8 @@ public class Class9111
                         }
                     }
                 }
-                Class8726.method30023(n3);
-                Class8726.method30021(Class317.field1882);
+                RenderSystem.method30023(n3);
+                RenderSystem.method30021(Class317.field1882);
             }
         }
         else {
@@ -273,7 +273,7 @@ public class Class9111
     }
     
     public static void method32956() {
-        Class8726.method30026(2918, Class9111.field38597, Class9111.field38598, Class9111.field38599, 1.0f);
+        RenderSystem.method30026(2918, Class9111.field38597, Class9111.field38598, Class9111.field38599, 1.0f);
         if (Config.method28955()) {
             Class9216.method33803(Class9111.field38597, Class9111.field38598, Class9111.field38599);
         }

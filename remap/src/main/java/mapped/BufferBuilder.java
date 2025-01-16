@@ -20,7 +20,7 @@ import java.util.List;
 import java.nio.ByteBuffer;
 import org.apache.logging.log4j.Logger;
 
-public class Class4148 extends Class4154 implements Class4149
+public class BufferBuilder extends Class4154 implements Class4149
 {
     private static final Logger field18475;
     private ByteBuffer field18476;
@@ -39,9 +39,9 @@ public class Class4148 extends Class4154 implements Class4149
     private boolean field18489;
     private Class6332 field18490;
     private boolean[] field18491;
-    private Class1912[] field18492;
-    private Class1912[] field18493;
-    private Class1912 field18494;
+    private TextureAtlasSprite[] field18492;
+    private TextureAtlasSprite[] field18493;
+    private TextureAtlasSprite field18494;
     public Class8900 field18495;
     public Class9145 field18496;
     public BitSet field18497;
@@ -54,7 +54,7 @@ public class Class4148 extends Class4154 implements Class4149
     private IntBuffer field18504;
     private FloatBuffer field18505;
     
-    public Class4148(final int n) {
+    public BufferBuilder(final int n) {
         this.field18477 = Lists.newArrayList();
         this.field18478 = 0;
         this.field18479 = 0;
@@ -86,7 +86,7 @@ public class Class4148 extends Class4154 implements Class4149
         if (this.field18480 + n > this.field18476.capacity()) {
             final int capacity = this.field18476.capacity();
             final int i = capacity + method12384(n);
-            Class4148.field18475.debug("Needed to grow BufferBuilder buffer: Old size {} bytes, new size {} bytes.", (Object)capacity, (Object)i);
+            BufferBuilder.field18475.debug("Needed to grow BufferBuilder buffer: Old size {} bytes, new size {} bytes.", (Object)capacity, (Object)i);
             final ByteBuffer method32715 = Class9078.method32715(i);
             this.field18476.position();
             method32715.put(this.field18476);
@@ -95,8 +95,8 @@ public class Class4148 extends Class4154 implements Class4149
             this.field18504 = this.field18476.asIntBuffer();
             this.field18505 = this.field18476.asFloatBuffer();
             if (this.field18492 != null) {
-                final Class1912[] field18492 = this.field18492;
-                System.arraycopy(field18492, 0, this.field18492 = new Class1912[this.method12413()], 0, Math.min(field18492.length, this.field18492.length));
+                final TextureAtlasSprite[] field18492 = this.field18492;
+                System.arraycopy(field18492, 0, this.field18492 = new TextureAtlasSprite[this.method12413()], 0, Math.min(field18492.length, this.field18492.length));
                 this.field18493 = null;
             }
         }
@@ -150,7 +150,7 @@ public class Class4148 extends Class4154 implements Class4149
             set.set(k);
         }
         if (this.field18492 != null) {
-            final Class1912[] array3 = new Class1912[this.field18482 / 4];
+            final TextureAtlasSprite[] array3 = new TextureAtlasSprite[this.field18482 / 4];
             final int n7 = this.field18486.method34194() / 4 * 4;
             for (int n8 = 0; n8 < array2.length; ++n8) {
                 array3[n8] = this.field18492[array2[n8]];
@@ -173,7 +173,7 @@ public class Class4148 extends Class4154 implements Class4149
         this.field18476.clear();
         if (this.field18492 != null) {
             final int n = this.field18482 / 4;
-            System.arraycopy(this.field18492, 0, new Class1912[n], 0, n);
+            System.arraycopy(this.field18492, 0, new TextureAtlasSprite[n], 0, n);
         }
         return new Class7819(allocate, this.field18486, this.field18492);
     }
@@ -220,14 +220,14 @@ public class Class4148 extends Class4154 implements Class4149
                 this.field18492 = this.field18493;
             }
             if (this.field18492 == null || this.field18492.length < this.method12413()) {
-                this.field18492 = new Class1912[this.method12413()];
+                this.field18492 = new TextureAtlasSprite[this.method12413()];
             }
-            final Class1912[] method25264 = Class7819.method25264(class7819);
+            final TextureAtlasSprite[] method25264 = Class7819.method25264(class7819);
             System.arraycopy(method25264, 0, this.field18492, 0, method25264.length);
         }
     }
     
-    public void method12390(final int field18485, final Class9272 class9272) {
+    public void begin(final int field18485, final Class9272 class9272) {
         if (!this.field18489) {
             this.field18489 = true;
             this.field18485 = field18485;
@@ -249,7 +249,7 @@ public class Class4148 extends Class4154 implements Class4149
                     this.field18492 = this.field18493;
                 }
                 if (this.field18492 == null || this.field18492.length < this.method12413()) {
-                    this.field18492 = new Class1912[this.method12413()];
+                    this.field18492 = new TextureAtlasSprite[this.method12413()];
                 }
             }
             if (!Class7663.method24283()) {
@@ -269,7 +269,7 @@ public class Class4148 extends Class4154 implements Class4149
     }
     
     @Override
-    public Class4150 method12391(float method7524, float method7525) {
+    public Class4150 tex(float method7524, float method7525) {
         if (this.field18494 != null) {
             if (this.field18492 != null) {
                 method7524 = this.field18494.method7524(method7524);
@@ -277,20 +277,20 @@ public class Class4148 extends Class4154 implements Class4149
                 this.field18492[this.field18482 / 4] = this.field18494;
             }
         }
-        return super.method12391(method7524, method7525);
+        return super.tex(method7524, method7525);
     }
     
     private void method12392(final Class9272 field18486) {
         if (this.field18486 != field18486) {
             this.field18486 = field18486;
-            final boolean field18487 = field18486 == Class9237.field39608;
-            final boolean b = field18486 == Class9237.field39607;
+            final boolean field18487 = field18486 == DefaultVertexFormats.field39608;
+            final boolean b = field18486 == DefaultVertexFormats.field39607;
             this.field18487 = (field18487 || b);
             this.field18488 = field18487;
         }
     }
     
-    public void method12393() {
+    public void finishDrawing() {
         if (this.field18489) {
             this.field18489 = false;
             this.field18477.add(new Class8127(this.field18486, this.field18482, this.field18485, null));
@@ -319,7 +319,7 @@ public class Class4148 extends Class4154 implements Class4149
     }
     
     @Override
-    public void method12397() {
+    public void endVertex() {
         if (this.field18484 == 0) {
             ++this.field18482;
             this.method12382();
@@ -387,7 +387,7 @@ public class Class4148 extends Class4154 implements Class4149
                 this.method12394(n15 + 5, Class4149.method12437(n13));
                 this.method12394(n15 + 6, Class4149.method12437(n14));
                 this.field18480 += this.field18486.method34194();
-                this.method12397();
+                this.endVertex();
             }
             return;
         }
@@ -412,7 +412,7 @@ public class Class4148 extends Class4154 implements Class4149
     
     public void method12402() {
         if (this.field18479 != this.field18481) {
-            Class4148.field18475.warn("Bytes mismatch " + this.field18479 + " " + this.field18481);
+            BufferBuilder.field18475.warn("Bytes mismatch " + this.field18479 + " " + this.field18481);
         }
         this.method12403();
     }
@@ -440,7 +440,7 @@ public class Class4148 extends Class4154 implements Class4149
     }
     
     @Override
-    public void method12406(final Class1912 class1912) {
+    public void method12406(final TextureAtlasSprite class1912) {
         if (this.field18497 != null) {
             if (class1912 != null) {
                 if (class1912.method7534()) {
@@ -456,7 +456,7 @@ public class Class4148 extends Class4154 implements Class4149
     }
     
     @Override
-    public void method12407(final Class1912 field18494) {
+    public void method12407(final TextureAtlasSprite field18494) {
         if (this.field18497 != null) {
             if (field18494 != null) {
                 if (field18494.method7534()) {
@@ -486,7 +486,7 @@ public class Class4148 extends Class4154 implements Class4149
             int n = 0;
             int n2 = -1;
             for (int n3 = this.field18482 / 4, i = 0; i < n3; ++i) {
-                final Class1912 class1912 = this.field18492[i];
+                final TextureAtlasSprite class1912 = this.field18492[i];
                 if (class1912 != null) {
                     final int method6350 = class1912.method7513();
                     if (!this.field18491[method6350]) {
@@ -511,7 +511,7 @@ public class Class4148 extends Class4154 implements Class4149
         }
     }
     
-    private int method12410(final Class1912 class1912, final int n) {
+    private int method12410(final TextureAtlasSprite class1912, final int n) {
         GL11.glBindTexture(3553, class1912.field10386);
         int n2 = -1;
         int n3 = -1;

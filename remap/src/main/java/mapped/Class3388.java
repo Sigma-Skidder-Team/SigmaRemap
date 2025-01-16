@@ -12,7 +12,7 @@ public class Class3388 extends Class3167
     
     @Override
     public void method9879() {
-        ("op " + Class3388.field15514.field4684.getName()).replace("&", "§");
+        ("op " + Class3388.field15514.player.getName()).replace("&", "§");
         this.method9897();
     }
 }

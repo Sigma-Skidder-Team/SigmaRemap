@@ -78,14 +78,14 @@ public class Class8161
                 final int field33606 = n2;
                 if (!field33605) {
                     if (this.field33611 != -1) {
-                        if (this.field33604.field4648.field23429 && --this.field33613 > 0) {
+                        if (this.field33604.gameSettings.field23429 && --this.field33613 > 0) {
                             return;
                         }
                         this.field33611 = -1;
                     }
                 }
                 else {
-                    if (this.field33604.field4648.field23429 && this.field33613++ > 0) {
+                    if (this.field33604.gameSettings.field23429 && this.field33613++ > 0) {
                         return;
                     }
                     this.field33611 = field33606;
@@ -110,7 +110,7 @@ public class Class8161
                     }
                 }
                 if (!array[0]) {
-                    if (this.field33604.field4700 == null || this.field33604.field4700.field3155) {
+                    if (this.field33604.field4700 == null || this.field33604.field4700.passEvents) {
                         if (this.field33604.field4701 == null) {
                             if (field33606 != 0) {
                                 if (field33606 != 2) {
@@ -127,7 +127,7 @@ public class Class8161
                             }
                             Class350.method1052(Class2136.field12469.method8289(field33606), field33605);
                             if (field33605) {
-                                if (this.field33604.field4684.isSpectator() && field33606 == 2) {
+                                if (this.field33604.player.isSpectator() && field33606 == 2) {
                                     this.field33604.field4647.method3810().method3329();
                                 }
                                 else {
@@ -152,10 +152,10 @@ public class Class8161
         Class9463.method35173().method35188().method21097(class5720);
         if (!class5720.method16962()) {
             if (n == Minecraft.method5277().method5332().method7690()) {
-                final double d2 = (this.field33604.field4648.field23423 ? Math.signum(d) : d) * this.field33604.field4648.field23411;
+                final double d2 = (this.field33604.gameSettings.field23423 ? Math.signum(d) : d) * this.field33604.gameSettings.field23411;
                 if (this.field33604.field4701 == null) {
                     if (this.field33604.field4700 == null) {
-                        if (this.field33604.field4684 != null) {
+                        if (this.field33604.player != null) {
                             if (this.field33619 != 0.0) {
                                 if (Math.signum(d2) != Math.signum(this.field33619)) {
                                     this.field33619 = 0.0;
@@ -167,11 +167,11 @@ public class Class8161
                                 return;
                             }
                             this.field33619 -= n3;
-                            if (!this.field33604.field4684.isSpectator()) {
-                                this.field33604.field4684.field3006.method2356(n3);
+                            if (!this.field33604.player.isSpectator()) {
+                                this.field33604.player.field3006.method2356(n3);
                             }
                             else if (!this.field33604.field4647.method3810().method3327()) {
-                                this.field33604.field4684.field3025.method21426(MathHelper.clamp(this.field33604.field4684.field3025.method21425() + n3 * 0.005f, 0.0f, 0.2f));
+                                this.field33604.player.field3025.method21426(MathHelper.clamp(this.field33604.player.field3025.method21425() + n3 * 0.005f, 0.0f, 0.2f));
                             }
                             else {
                                 this.field33604.field4647.method3810().method3328(-n3);
@@ -234,11 +234,11 @@ public class Class8161
         final double n = method35321 - this.field33620;
         this.field33620 = method35321;
         if (this.method26962() && this.field33604.method5320()) {
-            final double n2 = this.field33604.field4648.field23381 * 0.6000000238418579 + 0.20000000298023224;
+            final double n2 = this.field33604.gameSettings.field23381 * 0.6000000238418579 + 0.20000000298023224;
             final double n3 = n2 * n2 * n2 * 8.0;
             double n4;
             double n5;
-            if (!this.field33604.field4648.field23470) {
+            if (!this.field33604.gameSettings.field23470) {
                 this.field33615.method26161();
                 this.field33616.method26161();
                 n4 = this.field33617 * n3;
@@ -253,12 +253,12 @@ public class Class8161
             this.field33617 = 0.0;
             this.field33618 = 0.0;
             int n6 = 1;
-            if (this.field33604.field4648.field23422) {
+            if (this.field33604.gameSettings.field23422) {
                 n6 = -1;
             }
             this.field33604.method5319().method32918(n4, n5);
-            if (this.field33604.field4684 != null) {
-                this.field33604.field4684.method1658(n4, n5 * n6);
+            if (this.field33604.player != null) {
+                this.field33604.player.method1658(n4, n5 * n6);
             }
         }
         else {
@@ -301,7 +301,7 @@ public class Class8161
                 this.field33608 = this.field33604.method5332().method7694() / 2;
                 this.field33609 = this.field33604.method5332().method7695() / 2;
                 Class8341.method27801(this.field33604.method5332().method7690(), 212995, this.field33608, this.field33609);
-                this.field33604.method5244(null);
+                this.field33604.displayGuiScreen(null);
                 this.field33604.field4693 = 10000;
                 this.field33612 = true;
             }

@@ -36,7 +36,7 @@ public class Class7771
         this.field31815 = field31815;
     }
     
-    public void method24880(final Class5853 class5853, final Class754 class5854, final Class7351 class5855, final Class7807 class5856, final int n, final int n2) {
+    public void method24880(final Class5853 class5853, final Class754 class5854, final MatrixStack class5855, final IRenderTypeBuffer class5856, final int n, final int n2) {
         final Class1663 method28895 = Config.method28895();
         if (!this.field31814) {
             if (this.field31816 == null) {

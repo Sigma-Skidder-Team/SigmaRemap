@@ -22,15 +22,15 @@ public class Class3171 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3171.field15514.field4684 != null && Class3171.field15514.world != null) {
+        if (Class3171.field15514.player != null && Class3171.field15514.world != null) {
             this.method9935();
             Class8154.method26926();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             this.method9934(false);
             Class8154.method26927(Class2225.field13695);
             GL11.glLineWidth(3.0f);
-            Class8726.method30000(518, 0.0f);
-            Class8726.method29999();
+            RenderSystem.method30000(518, 0.0f);
+            RenderSystem.enableAlphaTest();
             this.method9933();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 0.1f);
             GL11.glEnable(3042);
@@ -50,7 +50,7 @@ public class Class3171 extends Class3167
                 if (!Class9463.method35173().method35191().method31751(class399)) {
                     if (!(!b)) {
                         if (!(!b2)) {
-                            if (class399 != Class3171.field15514.field4684) {
+                            if (class399 != Class3171.field15514.player) {
                                 final double field38854 = Class8591.method29094(class399).field38854;
                                 final double field38855 = Class8591.method29094(class399).field38855;
                                 final double field38856 = Class8591.method29094(class399).field38856;
@@ -89,7 +89,7 @@ public class Class3171 extends Class3167
                 if (!b5) {
                     continue;
                 }
-                if (class399 == Class3171.field15514.field4684) {
+                if (class399 == Class3171.field15514.player) {
                     continue;
                 }
                 GL11.glPushMatrix();
@@ -130,7 +130,7 @@ public class Class3171 extends Class3167
         GL11.glDisable(2896);
         GL11.glEnable(3553);
         GL11.glEnable(2903);
-        Class8726.method30084(33986, 240.0f, 240.0f);
+        RenderSystem.method30084(33986, 240.0f, 240.0f);
         Class7777.method24931();
         final Class1663 method5290 = Class3171.field15514.method5290();
         Class3171.field15514.method5290();

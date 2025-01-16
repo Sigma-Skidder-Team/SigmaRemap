@@ -14,20 +14,20 @@ public class Class556 extends Screen
     }
     
     @Override
-    public boolean method2989() {
+    public boolean shouldCloseOnEsc() {
         return false;
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         if (this.field3335 == null) {
-            this.method3043(0);
+            this.renderDirtBackground(0);
         }
         else {
             this.field3335.method32901(this.width, this.height);
         }
-        this.method3295(this.font, Class8822.method30773("multiplayer.downloadingTerrain", new Object[0]), this.width / 2, this.height / 2 - 50, 16777215);
-        super.method2975(n, n2, n3);
+        this.drawCenteredString(this.font, Class8822.method30773("multiplayer.downloadingTerrain", new Object[0]), this.width / 2, this.height / 2 - 50, 16777215);
+        super.render(n, n2, n3);
     }
     
     @Override

@@ -23,7 +23,7 @@ public class Class4771 extends Class4712<Class791, Class5840<Class791>>
         return Class4771.field20399.getOrDefault(class791.method4393(), Class4771.field20399.get(Class1965.field10723));
     }
     
-    public void method14120(final Class791 class791, final Class7351 class792, final float n, final float n2, final float n3) {
+    public void method14120(final Class791 class791, final MatrixStack class792, final float n, final float n2, final float n3) {
         super.method13985(class791, class792, n, n2, n3);
         if (class791.field4218 > 0) {
             final int field4218 = class791.field4218;

@@ -15,7 +15,7 @@ public class Class1827<T extends LivingEntity, M extends Class5845<T>> extends C
         super(class4778);
     }
     
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         class7351.method22567();
         class7351.method22564(0.0, 0.4000000059604645, -0.4000000059604645);
         class7351.method22566(Vector3f.XP.rotationDegrees(180.0f));

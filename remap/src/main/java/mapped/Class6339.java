@@ -9,7 +9,7 @@ public class Class6339 extends Class6322
     private final boolean field25353;
     
     public Class6339(final boolean field25353) {
-        super("shade_model", () -> Class8726.method30045(b ? 7425 : 7424), () -> Class8726.method30045(7424));
+        super("shade_model", () -> RenderSystem.shadeModel(b ? 7425 : 7424), () -> RenderSystem.shadeModel(7424));
         this.field25353 = field25353;
     }
     

@@ -227,13 +227,13 @@ public class Class6741
         return i;
     }
     
-    public void method20519(final World class1847, final Class7351 class1848, final int n, final float n2, final float n3, final float n4) {
+    public void method20519(final World class1847, final MatrixStack class1848, final int n, final float n2, final float n3, final float n4) {
         final float method28866 = Config.method28866(this.method20520(class1847) * this.method20522(n3, n4) * this.method20523(n), 0.0f, 1.0f);
         if (method28866 >= 1.0E-4f) {
             Class8933.method31617(this.field26520);
             Class9540.method35616(this.field26507, method28866);
             Class8933.method31635();
-            Class8933.method31645(class1848.method22569().method32111());
+            Class8933.method31645(class1848.getLast().getMatrix());
             if (this.field26508) {
                 float n5 = 0.0f;
                 if (this.field26509 != Math.round(this.field26509)) {
@@ -241,7 +241,7 @@ public class Class6741
                 }
                 Class8933.method31639(360.0f * (n5 + n2 * this.field26509), this.field26510[0], this.field26510[1], this.field26510[2]);
             }
-            final Class7392 method28867 = Class7392.method22694();
+            final Tessellator method28867 = Tessellator.getInstance();
             Class8933.method31639(90.0f, 1.0f, 0.0f, 0.0f);
             Class8933.method31639(-90.0f, 0.0f, 0.0f, 1.0f);
             this.method20524(method28867, 4);
@@ -321,16 +321,16 @@ public class Class6741
         return 1.0f - this.method20518(n - this.field26505) / (float)this.method20518(this.field26506 - this.field26505);
     }
     
-    private void method20524(final Class7392 class7392, final int n) {
-        final Class4148 method22696 = class7392.method22696();
+    private void method20524(final Tessellator class7392, final int n) {
+        final BufferBuilder method22696 = class7392.getBuffer();
         final float n2 = n % 3 / 3.0f;
         final float n3 = n / 3 / 2.0f;
-        method22696.method12390(7, Class9237.field39617);
-        method22696.method12432(-100.0, -100.0, -100.0).method12391(n2, n3).method12397();
-        method22696.method12432(-100.0, -100.0, 100.0).method12391(n2, n3 + 0.5f).method12397();
-        method22696.method12432(100.0, -100.0, 100.0).method12391(n2 + 0.33333334f, n3 + 0.5f).method12397();
-        method22696.method12432(100.0, -100.0, -100.0).method12391(n2 + 0.33333334f, n3).method12397();
-        class7392.method22695();
+        method22696.begin(7, DefaultVertexFormats.field39617);
+        method22696.pos(-100.0, -100.0, -100.0).tex(n2, n3).endVertex();
+        method22696.pos(-100.0, -100.0, 100.0).tex(n2, n3 + 0.5f).endVertex();
+        method22696.pos(100.0, -100.0, 100.0).tex(n2 + 0.33333334f, n3 + 0.5f).endVertex();
+        method22696.pos(100.0, -100.0, -100.0).tex(n2 + 0.33333334f, n3).endVertex();
+        class7392.draw();
     }
     
     public boolean method20525(final World field26521, final int n) {

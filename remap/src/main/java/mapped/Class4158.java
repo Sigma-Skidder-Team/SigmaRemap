@@ -18,7 +18,7 @@ public abstract class Class4158<T extends TileEntity>
         this.field18539 = field18539;
     }
     
-    public abstract void method12454(final T p0, final float p1, final Class7351 p2, final Class7807 p3, final int p4, final int p5);
+    public abstract void method12454(final T p0, final float p1, final MatrixStack p2, final IRenderTypeBuffer p3, final int p4, final int p5);
     
     public boolean method12455(final T t) {
         return false;

@@ -42,19 +42,19 @@ public class Class8490
             this.field34851 = new Vec2f((float)n, (float)n2);
         }
         if (b3) {
-            Class565.method3293(this.field34846.method27808(), this.field34846.method27809() - 1, this.field34846.method27808() + this.field34846.method27810(), this.field34846.method27809(), Class6823.method20903(this.field34854));
-            Class565.method3293(this.field34846.method27808(), this.field34846.method27809() + this.field34846.method27811(), this.field34846.method27808() + this.field34846.method27810(), this.field34846.method27809() + this.field34846.method27811() + 1, Class6823.method20903(this.field34854));
+            AbstractGui.fill(this.field34846.method27808(), this.field34846.method27809() - 1, this.field34846.method27808() + this.field34846.method27810(), this.field34846.method27809(), Class6823.method20903(this.field34854));
+            AbstractGui.fill(this.field34846.method27808(), this.field34846.method27809() + this.field34846.method27811(), this.field34846.method27808() + this.field34846.method27810(), this.field34846.method27809() + this.field34846.method27811() + 1, Class6823.method20903(this.field34854));
             if (b) {
                 for (int i = 0; i < this.field34846.method27810(); ++i) {
                     if (i % 2 == 0) {
-                        Class565.method3293(this.field34846.method27808() + i, this.field34846.method27809() - 1, this.field34846.method27808() + i + 1, this.field34846.method27809(), -1);
+                        AbstractGui.fill(this.field34846.method27808() + i, this.field34846.method27809() - 1, this.field34846.method27808() + i + 1, this.field34846.method27809(), -1);
                     }
                 }
             }
             if (b2) {
                 for (int j = 0; j < this.field34846.method27810(); ++j) {
                     if (j % 2 == 0) {
-                        Class565.method3293(this.field34846.method27808() + j, this.field34846.method27809() + this.field34846.method27811(), this.field34846.method27808() + j + 1, this.field34846.method27809() + this.field34846.method27811() + 1, -1);
+                        AbstractGui.fill(this.field34846.method27808() + j, this.field34846.method27809() + this.field34846.method27811(), this.field34846.method27808() + j + 1, this.field34846.method27809() + this.field34846.method27811() + 1, -1);
                     }
                 }
             }
@@ -62,7 +62,7 @@ public class Class8490
         int n3 = 0;
         for (int k = 0; k < min; ++k) {
             final Suggestion suggestion = this.field34847.getList().get(k + this.field34849);
-            Class565.method3293(this.field34846.method27808(), this.field34846.method27809() + 12 * k, this.field34846.method27808() + this.field34846.method27810(), this.field34846.method27809() + 12 * k + 12, Class6823.method20903(this.field34854));
+            AbstractGui.fill(this.field34846.method27808(), this.field34846.method27809() + 12 * k, this.field34846.method27808() + this.field34846.method27810(), this.field34846.method27809() + 12 * k + 12, Class6823.method20903(this.field34854));
             if (n > this.field34846.method27808()) {
                 if (n < this.field34846.method27808() + this.field34846.method27810()) {
                     if (n2 > this.field34846.method27809() + 12 * k) {
@@ -120,7 +120,7 @@ public class Class8490
         }
         if (n == 258) {
             if (this.field34852) {
-                this.method28359(Screen.method3047() ? -1 : 1);
+                this.method28359(Screen.hasShiftDown() ? -1 : 1);
             }
             this.method28361();
             return true;

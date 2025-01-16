@@ -6,13 +6,13 @@ package mapped;
 
 import net.minecraft.util.math.MathHelper;
 
-public abstract class Class662 extends Class573
+public abstract class Class662 extends Widget
 {
     public final Class5760 field3693;
     public double field3694;
     
     public Class662(final int n, final int n2, final int n3, final int n4, final double n5) {
-        this(Minecraft.method5277().field4648, n, n2, n3, n4, n5);
+        this(Minecraft.method5277().gameSettings, n, n2, n3, n4, n5);
     }
     
     public Class662(final Class5760 field3693, final int n, final int n2, final int n3, final int n4, final double field3694) {
@@ -34,10 +34,10 @@ public abstract class Class662 extends Class573
     @Override
     public void method3354(final Minecraft class869, final int n, final int n2) {
         class869.method5290().method5849(Class662.field3421);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         final int n3 = (this.method3360() ? 2 : 1) * 20;
-        this.method3186(this.field3426 + (int)(this.field3694 * (this.field3424 - 8)), this.field3427, 0, 46 + n3, 4, 20);
-        this.method3186(this.field3426 + (int)(this.field3694 * (this.field3424 - 8)) + 4, this.field3427, 196, 46 + n3, 4, 20);
+        this.blit(this.field3426 + (int)(this.field3694 * (this.field3424 - 8)), this.field3427, 0, 46 + n3, 4, 20);
+        this.blit(this.field3426 + (int)(this.field3694 * (this.field3424 - 8)) + 4, this.field3427, 196, 46 + n3, 4, 20);
     }
     
     @Override

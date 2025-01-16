@@ -40,12 +40,12 @@ public class Class3335 extends Class3167
         }
         final boolean method9883 = this.method9914().method9883("Show Invisibles");
         final boolean method9884 = this.method9883("Show Health");
-        Class8726.method30059();
+        RenderSystem.method30059();
         for (final Entity class5735 : Class3335.field15934.keySet()) {
             final double[] array = Class3335.field15934.get(class5735);
             final double[] array2 = Class3335.field15935.get(class5735);
             if (array[3] > 0.0 || array[3] <= 1.0) {
-                Class8726.method30059();
+                RenderSystem.method30059();
                 if ((method9883 || !class5735.method1823()) && class5735 instanceof PlayerEntity && !(class5735 instanceof Class756)) {
                     this.method10557(class5735);
                     try {
@@ -58,13 +58,13 @@ public class Class3335 extends Class3167
                             n5 = n4;
                             n4 = (float)array2[0] + n3 / 4.0f;
                         }
-                        Class8726.method30059();
-                        Class8726.method30063(2.0f, 2.0f, 2.0f);
-                        Class8726.method30060();
+                        RenderSystem.method30059();
+                        RenderSystem.method30063(2.0f, 2.0f, 2.0f);
+                        RenderSystem.method30060();
                         GL11.glEnable(3042);
                         GL11.glDisable(3553);
                         int n6 = -65536;
-                        if (!Class3335.field15514.field4684.method2747(class5735)) {
+                        if (!Class3335.field15514.player.method2747(class5735)) {
                             n6 = -256;
                         }
                         Class8154.method26880(n4, n, n5, n2, 2.25, Class8101.method26626(0, 0, 0, 0), n6);
@@ -74,21 +74,21 @@ public class Class3335 extends Class3167
                         final float method9885 = ((PlayerEntity)class5735).method2664();
                         Class8154.method26876(n4 - 4.0f, n2 - 1.0f, n4 - 2.0f, n2 + (n - n2) * (method9885 * 5.0f * 0.01f), method10553(new float[] { 0.0f, 0.5f, 1.0f }, new Color[] { Color.RED, Color.YELLOW, Color.GREEN }, method9885 * 5.0f * 0.01f).brighter().getRGB());
                         if ((int)Class6029.method17958(method9885 * 5.0f, 1.0) != 100 && method9884) {
-                            Class8726.method30059();
-                            Class8726.method30063(2.0f, 2.0f, 2.0f);
+                            RenderSystem.method30059();
+                            RenderSystem.method30063(2.0f, 2.0f, 2.0f);
                             new StringBuilder().append((int)Class6029.method17958(method9885 * 5.0f, 1.0)).append("HP").toString();
-                            Class8726.method30060();
+                            RenderSystem.method30060();
                         }
                     }
                     catch (final Exception ex) {}
                 }
-                Class8726.method30060();
+                RenderSystem.method30060();
                 GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
             }
         }
         GL11.glScalef(1.0f, 1.0f, 1.0f);
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8726.method30060();
+        RenderSystem.method30060();
     }
     
     public static Color method10553(final float[] array, final Color[] array2, final float n) {
@@ -206,13 +206,13 @@ public class Class3335 extends Class3167
     
     private void method10557(final Entity class399) {
         final float n = 1.0f;
-        final float n2 = (float)(n * (Class3335.field15514.field4648.field23471 / Class3335.field15514.field4648.field23471));
+        final float n2 = (float)(n * (Class3335.field15514.gameSettings.field23471 / Class3335.field15514.gameSettings.field23471));
         if (this.field15933 == 0.0 || Double.isNaN(this.field15933)) {
             this.field15933 = n2;
         }
         this.field15933 += (n2 - this.field15933) / (Minecraft.method5338() * 0.7);
         final float n3 = (float)(n * this.field15933);
-        Class8726.method30063(n3, n3, n3);
+        RenderSystem.method30063(n3, n3, n3);
     }
     
     static {

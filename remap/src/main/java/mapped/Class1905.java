@@ -25,7 +25,7 @@ public class Class1905 implements AutoCloseable
         Class1845.method6634(this.method7392(class6356));
     }
     
-    public void method7391(final Class7351 class7351, final Class7807 class7352, final Class6356 class7353, final boolean b, final int n) {
+    public void method7391(final MatrixStack class7351, final IRenderTypeBuffer class7352, final Class6356 class7353, final boolean b, final int n) {
         Class1845.method6635(this.method7392(class7353), class7351, class7352, b, n);
     }
     

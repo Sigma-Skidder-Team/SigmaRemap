@@ -125,8 +125,8 @@ public class Class8880
             if (!class1775.method7797().endsWith(method31236)) {
                 final ResourceLocation class1776 = new ResourceLocation(class1775.method7798(), class1775.method7797() + method31236);
                 if (Config.method28900(class1774.method6336(class1776))) {
-                    final Class1912 method31237 = class1774.method6359(class1775);
-                    final Class1912 method31238 = class1774.method6359(class1776);
+                    final TextureAtlasSprite method31237 = class1774.method6359(class1775);
+                    final TextureAtlasSprite method31238 = class1774.method6359(class1776);
                     method31238.field10395 = true;
                     method31237.field10394 = method31238;
                 }

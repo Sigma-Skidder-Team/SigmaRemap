@@ -236,9 +236,9 @@ public class Class1848 extends World
     }
     
     private void method6815() {
-        if (this.field10075.field4684 != null) {
+        if (this.field10075.player != null) {
             if (this.field10077 <= 0) {
-                final BlockPos class354 = new BlockPos(this.field10075.field4684);
+                final BlockPos class354 = new BlockPos(this.field10075.player);
                 final BlockPos method1134 = class354.add(4 * (this.rand.nextInt(3) - 1), 4 * (this.rand.nextInt(3) - 1), 4 * (this.rand.nextInt(3) - 1));
                 final double method1135 = class354.distanceSq(method1134);
                 if (method1135 >= 4.0) {
@@ -344,7 +344,7 @@ public class Class1848 extends World
         final Random random = new Random();
         boolean b = false;
         if (this.field10075.field4682.method27336() == Class101.field299) {
-            final Iterator<ItemStack> iterator = this.field10075.field4684.method1800().iterator();
+            final Iterator<ItemStack> iterator = this.field10075.player.method1800().iterator();
             while (iterator.hasNext()) {
                 if (iterator.next().getItem() != Class7521.field29517.method11704()) {
                     continue;
@@ -435,7 +435,7 @@ public class Class1848 extends World
     @Override
     public CrashReportCategory method6779(final CrashReport class7689) {
         final CrashReportCategory method6779 = super.method6779(class7689);
-        method6779.addDetail("Server brand", () -> this.field10075.field4684.method4120());
+        method6779.addDetail("Server brand", () -> this.field10075.player.method4120());
         method6779.addDetail("Server type", () -> (this.field10075.method5285() != null) ? "Integrated singleplayer server" : "Non-integrated multiplayer server");
         return method6779;
     }
@@ -451,7 +451,7 @@ public class Class1848 extends World
             class514 = (Class286)Class9570.method35826(method35824, Class9570.field41404, new Object[0]);
             method35823 = Class9570.method35823(method35824, Class9570.field41405, new Object[0]);
         }
-        if (playerEntity == this.field10075.field4684) {
+        if (playerEntity == this.field10075.player) {
             this.method6708(n, n2, n3, class513, class514, method35823, f, false);
         }
     }
@@ -467,7 +467,7 @@ public class Class1848 extends World
             class515 = (Class286)Class9570.method35826(method35824, Class9570.field41404, new Object[0]);
             method35823 = Class9570.method35823(method35824, Class9570.field41405, new Object[0]);
         }
-        if (playerEntity == this.field10075.field4684) {
+        if (playerEntity == this.field10075.player) {
             this.field10075.method5299().method6422(new Class6838(class514, class515, class513));
         }
     }
@@ -742,7 +742,7 @@ public class Class1848 extends World
     }
     
     public int method6850(final BlockPos class354, final Class8895 class355) {
-        final int field23410 = Minecraft.method5277().field4648.field23410;
+        final int field23410 = Minecraft.method5277().gameSettings.field23410;
         if (field23410 != 0) {
             final int n = (field23410 * 2 + 1) * (field23410 * 2 + 1);
             int n2 = 0;

@@ -87,13 +87,13 @@ public class Class3246 extends Class3167
                 if (this.field15737) {
                     continue;
                 }
-                if (this.field15741 != null && Class3246.field15514.field4684.method1733(n2, n3, n4) <= Class3246.field15514.field4684.method1733(n2, n3, n4)) {
+                if (this.field15741 != null && Class3246.field15514.player.method1733(n2, n3, n4) <= Class3246.field15514.player.method1733(n2, n3, n4)) {
                     continue;
                 }
                 if (booleanValue) {
                     continue;
                 }
-                if (Math.sqrt(Class3246.field15514.field4684.method1733(n2, n3, n4)) >= 5.0) {
+                if (Math.sqrt(Class3246.field15514.player.method1733(n2, n3, n4)) >= 5.0) {
                     continue;
                 }
                 if (this.field15740.method23935() <= 1000L) {
@@ -160,7 +160,7 @@ public class Class3246 extends Class3167
         }
         if (Class8639.method29372()) {
             if (this.method9883("Close")) {
-                Class3246.field15514.field4684.method2814();
+                Class3246.field15514.player.method2814();
             }
             return;
         }
@@ -184,10 +184,10 @@ public class Class3246 extends Class3167
                     this.field15737 = !this.field15737;
                 }
                 if (!this.method9883("Fix ViaVersion")) {
-                    Class8639.method29366(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, Class3246.field15514.field4684);
+                    Class8639.method29366(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, Class3246.field15514.player);
                 }
                 else {
-                    Class8639.method29367(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, Class3246.field15514.field4684, true);
+                    Class8639.method29367(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, Class3246.field15514.player, true);
                 }
                 this.field15739.method23934();
                 n = 0;
@@ -201,7 +201,7 @@ public class Class3246 extends Class3167
                     this.field15737 = !this.field15737;
                 }
                 if (this.method9883("Close")) {
-                    Class3246.field15514.field4684.method2814();
+                    Class3246.field15514.player.method2814();
                 }
                 for (final Class475 key : this.field15738.keySet()) {
                     if (key != this.field15741) {
@@ -223,7 +223,7 @@ public class Class3246 extends Class3167
         final List<BlockPos> method13691 = Class4609.method13691(8.0f);
         final Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
-            if (!class726.method3027().toLowerCase().contains((CharSequence)iterator.next())) {
+            if (!class726.getNarrationMessage().toLowerCase().contains((CharSequence)iterator.next())) {
                 continue;
             }
             return false;

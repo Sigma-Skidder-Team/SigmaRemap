@@ -648,7 +648,7 @@ public class Class9404
         return Class9404.field40361;
     }
     
-    public static boolean method34977(final Class1796 class1796, final ItemStack class1797, final Class6313 class1798) {
+    public static boolean method34977(final ItemRenderer class1796, final ItemStack class1797, final Class6313 class1798) {
         if (Class9404.field40347 == null) {
             return false;
         }

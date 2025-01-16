@@ -60,16 +60,16 @@ public class Class3289 extends Class3167
     @Class6753
     private void method10405(final Class5743 class5743) {
         if (this.method9906()) {
-            if (Class3289.field15514.field4684 != null) {
+            if (Class3289.field15514.player != null) {
                 if (Class3289.field15514.world != null) {
                     ++this.field15835;
-                    if (Class3289.field15836 < Class3289.field15514.field4684.posY) {
-                        if (Class3289.field15514.field4684.onGround) {
+                    if (Class3289.field15836 < Class3289.field15514.player.posY) {
+                        if (Class3289.field15514.player.onGround) {
                             Class3289.field15836 += 0.5f;
                         }
                     }
-                    if (Class3289.field15836 > Class3289.field15514.field4684.posY) {
-                        if (Class3289.field15514.field4684.onGround) {
+                    if (Class3289.field15836 > Class3289.field15514.player.posY) {
+                        if (Class3289.field15514.player.onGround) {
                             Class3289.field15836 -= 0.5f;
                         }
                     }
@@ -77,12 +77,12 @@ public class Class3289 extends Class3167
                         final ArrayList list = new ArrayList();
                         for (int i = -this.field15843 / 2; i < this.field15843 / 2; ++i) {
                             for (int j = -this.field15843 / 2; j < this.field15843 / 2; ++j) {
-                                list.add(Class3289.field15514.world.method6686(Class3289.field15514.field4684.chunkCoordX + i, Class3289.field15514.field4684.chunkCoordZ + j));
+                                list.add(Class3289.field15514.world.method6686(Class3289.field15514.player.chunkCoordX + i, Class3289.field15514.player.chunkCoordZ + j));
                             }
                         }
                         final Iterator<Class6824> iterator = this.field15844.iterator();
                         while (iterator.hasNext()) {
-                            if (iterator.next().field26810.method7019().method25436(new Class7859(Class3289.field15514.field4684.chunkCoordX, Class3289.field15514.field4684.chunkCoordZ)) <= 7) {
+                            if (iterator.next().field26810.method7019().method25436(new Class7859(Class3289.field15514.player.chunkCoordX, Class3289.field15514.player.chunkCoordZ)) <= 7) {
                                 continue;
                             }
                             iterator.remove();
@@ -109,10 +109,10 @@ public class Class3289 extends Class3167
                         while (iterator4.hasNext()) {
                             iterator4.next().method20912();
                         }
-                        this.field15845 = (Class3289.field15514.field4684.posX - Class3289.field15514.field4684.chunkCoordX * 16) / 16.0;
-                        this.field15846 = (Class3289.field15514.field4684.posZ - Class3289.field15514.field4684.chunkCoordZ * 16) / 16.0;
+                        this.field15845 = (Class3289.field15514.player.posX - Class3289.field15514.player.chunkCoordX * 16) / 16.0;
+                        this.field15846 = (Class3289.field15514.player.posZ - Class3289.field15514.player.chunkCoordZ * 16) / 16.0;
                         this.field15832 = this.method10407(this.field15834);
-                        this.field15842 = Class3289.field15514.field4684.method1894();
+                        this.field15842 = Class3289.field15514.player.method1894();
                         this.field15835 = 0;
                     }
                 }
@@ -124,15 +124,15 @@ public class Class3289 extends Class3167
     @Class6757
     private void method10406(final Class5740 class5740) throws IOException {
         if (this.method9906()) {
-            if (Class3289.field15514.field4684 != null) {
+            if (Class3289.field15514.player != null) {
                 if (Class3289.field15514.world != null) {
                     if (this.field15832 == null) {
                         return;
                     }
-                    if (Minecraft.method5277().field4648.field23466) {
+                    if (Minecraft.method5277().gameSettings.field23466) {
                         return;
                     }
-                    if (!Minecraft.method5277().field4648.field23464) {
+                    if (!Minecraft.method5277().gameSettings.field23464) {
                         final ByteBuffer field15832 = this.field15832;
                         this.field15840 = class5740.method17028();
                         if (field15832 != null) {
@@ -145,7 +145,7 @@ public class Class3289 extends Class3167
                             final float n3 = (float)(n2 * n * this.field15846);
                             final float n4 = (float)(-n2 * n * this.field15845);
                             GL11.glTranslatef((float)(this.field15839 + this.field15838 / 2), (float)(this.field15840 + this.field15837 / 2), 0.0f);
-                            GL11.glRotatef(90.0f - Class3289.field15514.field4684.rotationYaw, 0.0f, 0.0f, 1.0f);
+                            GL11.glRotatef(90.0f - Class3289.field15514.player.rotationYaw, 0.0f, 0.0f, 1.0f);
                             GL11.glTranslatef((float)(-this.field15838 / 2), (float)(-this.field15837 / 2), 0.0f);
                             final float n5 = this.field15838 * n;
                             final float n6 = this.field15837 * n;
@@ -173,7 +173,7 @@ public class Class3289 extends Class3167
         final ArrayList list = new ArrayList();
         for (int i = -this.field15843 / 2; i < this.field15843 / 2; ++i) {
             for (int j = -this.field15843 / 2; j < this.field15843 / 2; ++j) {
-                list.add(Class3289.field15514.world.method6686(Class3289.field15514.field4684.chunkCoordX + i, Class3289.field15514.field4684.chunkCoordZ + j));
+                list.add(Class3289.field15514.world.method6686(Class3289.field15514.player.chunkCoordX + i, Class3289.field15514.player.chunkCoordZ + j));
             }
         }
         final ByteBuffer byteBuffer = BufferUtils.createByteBuffer(this.field15843 * 16 * this.field15843 * 16 * 3);

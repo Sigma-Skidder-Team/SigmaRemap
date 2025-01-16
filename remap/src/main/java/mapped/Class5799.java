@@ -95,27 +95,27 @@ public class Class5799 implements IClientPlayNetHandler
         this.field23816 = class4383.method13182();
         this.field23809 = new Class1848(this, new Class8511(class4383.method13177(), class4383.method13179(), false, class4383.method13178(), class4383.method13181()), class4383.method13180(), this.field23816, this.field23808.method5327(), this.field23808.field4636);
         this.field23808.method5263(this.field23809);
-        if (this.field23808.field4684 == null) {
-            this.field23808.field4684 = this.field23808.field4682.method27306(this.field23809, new Class7474(), new Class6520(this.field23809.method6792()));
-            this.field23808.field4684.rotationYaw = -180.0f;
+        if (this.field23808.player == null) {
+            this.field23808.player = this.field23808.field4682.method27306(this.field23809, new Class7474(), new Class6520(this.field23809.method6792()));
+            this.field23808.player.rotationYaw = -180.0f;
             if (this.field23808.method5285() != null) {
-                this.field23808.method5285().method5680(this.field23808.field4684.method1865());
+                this.field23808.method5285().method5680(this.field23808.player.method1865());
             }
         }
         this.field23808.field4645.method22330();
-        this.field23808.field4684.method1651();
+        this.field23808.player.method1651();
         final int method13176 = class4383.method13176();
-        this.field23809.method6818(method13176, this.field23808.field4684);
-        this.field23808.field4684.field4085 = new Class6094(this.field23808.field4648);
-        this.field23808.field4682.method27308(this.field23808.field4684);
-        this.field23808.field4689 = this.field23808.field4684;
-        this.field23808.field4684.dimension = class4383.method13180();
-        this.field23808.method5244(new Class556());
-        this.field23808.field4684.method1644(method13176);
-        this.field23808.field4684.method2897(class4383.method13183());
-        this.field23808.field4684.method4127(class4383.method13184());
+        this.field23809.method6818(method13176, this.field23808.player);
+        this.field23808.player.field4085 = new Class6094(this.field23808.gameSettings);
+        this.field23808.field4682.method27308(this.field23808.player);
+        this.field23808.field4689 = this.field23808.player;
+        this.field23808.player.dimension = class4383.method13180();
+        this.field23808.displayGuiScreen(new Class556());
+        this.field23808.player.method1644(method13176);
+        this.field23808.player.method2897(class4383.method13183());
+        this.field23808.player.method4127(class4383.method13184());
         this.field23808.field4682.method27309(class4383.method13179());
-        this.field23808.field4648.method17124();
+        this.field23808.gameSettings.method17124();
         this.field23805.method11174(new Class4326(Class4326.field19371, new PacketBuffer(Unpooled.buffer()).method29514(Class7932.method25729())));
         this.field23808.method5328().method25567();
     }
@@ -229,7 +229,7 @@ public class Class5799 implements IClientPlayNetHandler
                                                                                 }
                                                                             }
                                                                             else {
-                                                                                class4340 = new Class406(this.field23809, method13025, method13026, method13027, ItemStack.field34174);
+                                                                                class4340 = new Class406(this.field23809, method13025, method13026, method13027, ItemStack.EMPTY);
                                                                             }
                                                                         }
                                                                         else {
@@ -441,7 +441,7 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17281(final Class4388 class4388) {
         Class8663.method29632((IPacket<Class5799>)class4388, this, this.field23808);
         if (Class464.method2352(class4388.method13205())) {
-            this.field23808.field4684.field3006.field2743 = class4388.method13205();
+            this.field23808.player.field3006.field2743 = class4388.method13205();
         }
     }
     
@@ -491,7 +491,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17285(final Class4328 class4328) {
         Class8663.method29632((IPacket<Class5799>)class4328, this, this.field23808);
-        final Class756 field4684 = this.field23808.field4684;
+        final Class756 field4684 = this.field23808.player;
         final Vec3d method1935 = field4684.getMotion();
         final boolean contains = class4328.method12998().contains(Class2143.field12617);
         final boolean contains2 = class4328.method12998().contains(Class2143.field12618);
@@ -553,7 +553,7 @@ public class Class5799 implements IClientPlayNetHandler
         this.field23805.method11174(new Class4355(field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), field4684.rotationYaw, field4684.rotationPitch, false));
         if (!this.field23810) {
             this.field23810 = true;
-            this.field23808.method5244(null);
+            this.field23808.displayGuiScreen(null);
         }
     }
     
@@ -618,13 +618,13 @@ public class Class5799 implements IClientPlayNetHandler
     public void onDisconnect(final ITextComponent class2250) {
         this.field23808.method5264();
         if (this.field23807 == null) {
-            this.field23808.method5244(new Class735(new Class720(new Class548()), "disconnect.lost", class2250));
+            this.field23808.displayGuiScreen(new Class735(new Class720(new Class548()), "disconnect.lost", class2250));
         }
         else if (!(this.field23807 instanceof RealmsScreenProxy)) {
-            this.field23808.method5244(new Class735(this.field23807, "disconnect.lost", class2250));
+            this.field23808.displayGuiScreen(new Class735(this.field23807, "disconnect.lost", class2250));
         }
         else {
-            this.field23808.method5244(new Class5070(((RealmsScreenProxy)this.field23807).getScreen(), "disconnect.lost", class2250).getProxy());
+            this.field23808.displayGuiScreen(new Class5070(((RealmsScreenProxy)this.field23807).getScreen(), "disconnect.lost", class2250).getProxy());
         }
     }
     
@@ -638,7 +638,7 @@ public class Class5799 implements IClientPlayNetHandler
         final Entity method6741 = this.field23809.getEntityByID(class4304.method12943());
         LivingEntity field4684 = (LivingEntity)this.field23809.getEntityByID(class4304.method12944());
         if (field4684 == null) {
-            field4684 = this.field23808.field4684;
+            field4684 = this.field23808.player;
         }
         if (method6741 != null) {
             if (!(method6741 instanceof Class508)) {
@@ -747,7 +747,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17298(final Class4335 class4335) {
         Class8663.method29632((IPacket<Class5799>)class4335, this, this.field23808);
-        this.field23808.field4684.method2856(class4335.method13017(), true, false);
+        this.field23808.player.method2856(class4335.method13017(), true, false);
         this.field23808.world.method6764().method29548(class4335.method13017());
     }
     
@@ -756,16 +756,16 @@ public class Class5799 implements IClientPlayNetHandler
         Class8663.method29632((IPacket<Class5799>)class4286, this, this.field23808);
         final Entity method6741 = this.field23809.getEntityByID(class4286.method12873());
         if (method6741 != null) {
-            final boolean method6742 = method6741.method1917(this.field23808.field4684);
+            final boolean method6742 = method6741.method1917(this.field23808.player);
             method6741.removePassengers();
             final int[] method6743 = class4286.method12872();
             for (int length = method6743.length, i = 0; i < length; ++i) {
                 final Entity method6744 = this.field23809.getEntityByID(method6743[i]);
                 if (method6744 != null) {
                     method6744.method1780(method6741, true);
-                    if (method6744 == this.field23808.field4684) {
+                    if (method6744 == this.field23808.player) {
                         if (!method6742) {
-                            this.field23808.field4647.method3803(Class8822.method30773("mount.onboard", this.field23808.field4648.field23440.method1068()), false);
+                            this.field23808.field4647.method3803(Class8822.method30773("mount.onboard", this.field23808.gameSettings.field23440.method1068()), false);
                         }
                     }
                 }
@@ -808,8 +808,8 @@ public class Class5799 implements IClientPlayNetHandler
                 else {
                     this.field23808.field4640.method6477(method12799, Class8432.field34644, 30);
                     this.field23809.method6708(method12799.getPosX(), method12799.getPosY(), method12799.getPosZ(), Class8520.field35633, method12799.method1922(), 1.0f, 1.0f, false);
-                    if (method12799 == this.field23808.field4684) {
-                        this.field23808.field4644.method5829(method17301(this.field23808.field4684));
+                    if (method12799 == this.field23808.player) {
+                        this.field23808.field4644.method5829(method17301(this.field23808.player));
                     }
                 }
             }
@@ -822,28 +822,28 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17303(final Class4292 class4292) {
         Class8663.method29632((IPacket<Class5799>)class4292, this, this.field23808);
-        this.field23808.field4684.method4116(class4292.method12891());
-        this.field23808.field4684.method2877().method33495(class4292.method12892());
-        this.field23808.field4684.method2877().method33496(class4292.method12893());
+        this.field23808.player.method4116(class4292.method12891());
+        this.field23808.player.method2877().method33495(class4292.method12892());
+        this.field23808.player.method2877().method33496(class4292.method12893());
     }
     
     @Override
     public void method17304(final Class4313 class4313) {
         Class8663.method29632((IPacket<Class5799>)class4313, this, this.field23808);
-        this.field23808.field4684.method4126(class4313.method12964(), class4313.method12965(), class4313.method12966());
+        this.field23808.player.method4126(class4313.method12964(), class4313.method12965(), class4313.method12966());
     }
     
     @Override
     public void method17305(final Class4359 class4359) {
         Class8663.method29632((IPacket<Class5799>)class4359, this, this.field23808);
         final DimensionType method13097 = class4359.method13097();
-        final Class756 field4684 = this.field23808.field4684;
+        final Class756 field4684 = this.field23808.player;
         final int method13098 = field4684.getEntityId();
         if (method13097 != field4684.dimension) {
             this.field23810 = false;
             (this.field23809 = new Class1848(this, new Class8511(class4359.method13098(), class4359.method13099(), false, this.field23808.world.method6764().method29568(), class4359.method13100()), class4359.method13097(), this.field23816, this.field23808.method5327(), this.field23808.field4636)).method6832(this.field23809.method6782());
             this.field23808.method5263(this.field23809);
-            this.field23808.method5244(new Class556());
+            this.field23808.displayGuiScreen(new Class556());
         }
         this.field23809.setInitialSpawnLocation();
         this.field23809.method6830();
@@ -852,7 +852,7 @@ public class Class5799 implements IClientPlayNetHandler
         final Class756 method13100 = this.field23808.field4682.method27306(this.field23809, field4684.method4121(), field4684.method4122());
         method13100.method1644(method13098);
         method13100.dimension = method13097;
-        this.field23808.field4684 = method13100;
+        this.field23808.player = method13100;
         this.field23808.field4689 = method13100;
         method13100.method1650().method33577(field4684.method1650().method33573());
         method13100.method2711().method20883(field4684.method2711());
@@ -860,12 +860,12 @@ public class Class5799 implements IClientPlayNetHandler
         method13100.method4119(method13099);
         this.field23809.method6818(method13098, method13100);
         method13100.rotationYaw = -180.0f;
-        method13100.field4085 = new Class6094(this.field23808.field4648);
+        method13100.field4085 = new Class6094(this.field23808.gameSettings);
         this.field23808.field4682.method27308(method13100);
         method13100.method2897(field4684.method2896());
         method13100.method4127(field4684.method4128());
         if (this.field23808.field4700 instanceof Class533) {
-            this.field23808.method5244(null);
+            this.field23808.displayGuiScreen(null);
         }
         this.field23808.field4682.method27309(class4359.method13099());
     }
@@ -874,7 +874,7 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17306(final Class4394 class4394) {
         Class8663.method29632((IPacket<Class5799>)class4394, this, this.field23808);
         new Explosion(this.field23808.world, null, class4394.method13214(), class4394.method13215(), class4394.method13216(), class4394.method13217(), class4394.method13218()).method18409(true);
-        this.field23808.field4684.method1936(this.field23808.field4684.getMotion().add(class4394.method13211(), class4394.method13212(), class4394.method13213()));
+        this.field23808.player.method1936(this.field23808.player.getMotion().add(class4394.method13211(), class4394.method13212(), class4394.method13213()));
     }
     
     @Override
@@ -882,11 +882,11 @@ public class Class5799 implements IClientPlayNetHandler
         Class8663.method29632((IPacket<Class5799>)class4259, this, this.field23808);
         final Entity method6741 = this.field23809.getEntityByID(class4259.method12790());
         if (method6741 instanceof Class806) {
-            final Class756 field4684 = this.field23808.field4684;
+            final Class756 field4684 = this.field23808.player;
             final Class806 class4260 = (Class806)method6741;
             final Class3425 field4685 = new Class3425(class4259.method12788(), field4684.field3006, new Class443(class4259.method12789()), class4260);
             field4684.field3009 = field4685;
-            this.field23808.method5244(new Class742(field4685, field4684.field3006, class4260));
+            this.field23808.displayGuiScreen(new Class742(field4685, field4684.field3006, class4260));
         }
     }
     
@@ -899,7 +899,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17309(final Class4272 class4272) {
         Class8663.method29632((IPacket<Class5799>)class4272, this, this.field23808);
-        final Class756 field4684 = this.field23808.field4684;
+        final Class756 field4684 = this.field23808.player;
         final ItemStack method12821 = class4272.method12821();
         final int method12822 = class4272.method12820();
         this.field23808.method5319().method32922(method12821);
@@ -942,7 +942,7 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17310(final Class4393 class4393) {
         Class8663.method29632((IPacket<Class5799>)class4393, this, this.field23808);
         Class3418 class4394 = null;
-        final Class756 field4684 = this.field23808.field4684;
+        final Class756 field4684 = this.field23808.player;
         if (class4393.method13208() != 0) {
             if (class4393.method13208() == field4684.field3009.field16154) {
                 class4394 = field4684.field3009;
@@ -961,7 +961,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17311(final Class4365 class4365) {
         Class8663.method29632((IPacket<Class5799>)class4365, this, this.field23808);
-        final Class756 field4684 = this.field23808.field4684;
+        final Class756 field4684 = this.field23808.player;
         if (class4365.method13129() != 0) {
             if (class4365.method13129() == field4684.field3009.field16154) {
                 field4684.field3009.method10883(class4365.method13130());
@@ -980,7 +980,7 @@ public class Class5799 implements IClientPlayNetHandler
             method6727 = new Class497();
             method6727.method2187(this.field23809, class4350.method13067());
         }
-        this.field23808.field4684.method2827((Class497)method6727);
+        this.field23808.player.method2827((Class497)method6727);
     }
     
     @Override
@@ -1034,7 +1034,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17314(final Class4311 class4311) {
         Class8663.method29632((IPacket<Class5799>)class4311, this, this.field23808);
-        final Class756 field4684 = this.field23808.field4684;
+        final Class756 field4684 = this.field23808.player;
         if (field4684.field3009 != null) {
             if (field4684.field3009.field16154 == class4311.method12960()) {
                 field4684.field3009.method10884(class4311.method12961(), class4311.method12962());
@@ -1054,7 +1054,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17316(final Class4284 class4284) {
         Class8663.method29632((IPacket<Class5799>)class4284, this, this.field23808);
-        this.field23808.field4684.method4115();
+        this.field23808.player.method4115();
     }
     
     @Override
@@ -1072,7 +1072,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17319(final Class4306 class4306) {
         Class8663.method29632((IPacket<Class5799>)class4306, this, this.field23808);
-        final Class756 field4684 = this.field23808.field4684;
+        final Class756 field4684 = this.field23808.player;
         final int method12948 = class4306.method12948();
         final float method12949 = class4306.method12949();
         final int method12950 = MathHelper.method35642(method12949 + 0.5f);
@@ -1094,7 +1094,7 @@ public class Class5799 implements IClientPlayNetHandler
                                         if (method12948 != 9) {
                                             if (method12948 != 10) {
                                                 if (method12948 == 11) {
-                                                    this.field23808.field4684.method4127(method12949 == 0.0f);
+                                                    this.field23808.player.method4127(method12949 == 0.0f);
                                                 }
                                             }
                                             else {
@@ -1119,7 +1119,7 @@ public class Class5799 implements IClientPlayNetHandler
                             }
                         }
                         else {
-                            final Class5760 field4685 = this.field23808.field4648;
+                            final Class5760 field4685 = this.field23808.gameSettings;
                             if (method12949 != 0.0f) {
                                 if (method12949 != 101.0f) {
                                     if (method12949 != 102.0f) {
@@ -1141,18 +1141,18 @@ public class Class5799 implements IClientPlayNetHandler
                                 }
                             }
                             else {
-                                this.field23808.method5244(new Class562());
+                                this.field23808.displayGuiScreen(new Class562());
                             }
                         }
                     }
                     else if (method12950 != 0) {
                         if (method12950 == 1) {
-                            this.field23808.method5244(new Class697(true, () -> this.field23808.field4684.field4069.method17292(new Class4323(Class2218.field13621))));
+                            this.field23808.displayGuiScreen(new Class697(true, () -> this.field23808.player.field4069.method17292(new Class4323(Class2218.field13621))));
                         }
                     }
                     else {
-                        this.field23808.field4684.field4069.method17292(new Class4323(Class2218.field13621));
-                        this.field23808.method5244(new Class556());
+                        this.field23808.player.field4069.method17292(new Class4323(Class2218.field13621));
+                        this.field23808.displayGuiScreen(new Class556());
                     }
                 }
                 else {
@@ -1243,7 +1243,7 @@ public class Class5799 implements IClientPlayNetHandler
         this.field23819.method6386(class4281.method12859());
         final Class8924<Class9586> method5309 = this.field23808.method5309(Class1659.field9377);
         method5309.method31459();
-        final Class6520 method5310 = this.field23808.field4684.method4122();
+        final Class6520 method5310 = this.field23808.player.method4122();
         method5310.method19683();
         method5310.method19688().forEach(method5309::method31458);
         method5309.method31454();
@@ -1254,7 +1254,7 @@ public class Class5799 implements IClientPlayNetHandler
         Class8663.method29632((IPacket<Class5799>)class4280, this, this.field23808);
         final Vec3d method12858 = class4280.method12858(this.field23809);
         if (method12858 != null) {
-            this.field23808.field4684.method1927(class4280.method12857(), method12858);
+            this.field23808.player.method1927(class4280.method12857(), method12858);
         }
     }
     
@@ -1270,7 +1270,7 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17330(final Class4279 class4279) {
         Class8663.method29632((IPacket<Class5799>)class4279, this, this.field23808);
         for (final Map.Entry<Class9455, V> entry : class4279.method12856().entrySet()) {
-            this.field23808.field4684.method4121().method23075(this.field23808.field4684, entry.getKey(), (int)entry.getValue());
+            this.field23808.player.method4121().method23075(this.field23808.player, entry.getKey(), (int)entry.getValue());
         }
         if (this.field23808.field4700 instanceof Class692) {
             ((Class692)this.field23808.field4700).method3857();
@@ -1280,7 +1280,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17331(final Class4331 class4331) {
         Class8663.method29632((IPacket<Class5799>)class4331, this, this.field23808);
-        final Class6520 method4122 = this.field23808.field4684.method4122();
+        final Class6520 method4122 = this.field23808.player.method4122();
         method4122.method19704(class4331.method13005());
         method4122.method19707(class4331.method13006());
         method4122.method19709(class4331.method13007());
@@ -1354,12 +1354,12 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17334(final Class4260 class4260) {
         Class8663.method29632((IPacket<Class5799>)class4260, this, this.field23808);
         if (class4260.field19115 == Class344.field2122) {
-            if (this.field23809.getEntityByID(class4260.field19116) == this.field23808.field4684) {
-                if (!this.field23808.field4684.method4128()) {
-                    this.field23808.field4684.method2842();
+            if (this.field23809.getEntityByID(class4260.field19116) == this.field23808.player) {
+                if (!this.field23808.player.method4128()) {
+                    this.field23808.player.method2842();
                 }
                 else {
-                    this.field23808.method5244(new Class533(class4260.field19119, this.field23809.method6764().method29568()));
+                    this.field23808.displayGuiScreen(new Class533(class4260.field19119, this.field23809.method6764().method29568()));
                 }
             }
         }
@@ -1479,7 +1479,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17343(final Class4300 class4300) {
         Class8663.method29632((IPacket<Class5799>)class4300, this, this.field23808);
-        final Class756 field4684 = this.field23808.field4684;
+        final Class756 field4684 = this.field23808.player;
         field4684.field3025.field27302 = class4300.method12919();
         field4684.field3025.field27304 = class4300.method12923();
         field4684.field3025.field27301 = class4300.method12917();
@@ -1491,7 +1491,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17344(final Class4282 class4282) {
         Class8663.method29632((IPacket<Class5799>)class4282, this, this.field23808);
-        this.field23808.world.method6706(this.field23808.field4684, class4282.method12865(), class4282.method12866(), class4282.method12867(), class4282.method12863(), class4282.method12864(), class4282.method12868(), class4282.method12869());
+        this.field23808.world.method6706(this.field23808.player, class4282.method12865(), class4282.method12866(), class4282.method12867(), class4282.method12863(), class4282.method12864(), class4282.method12868(), class4282.method12869());
     }
     
     @Override
@@ -1499,7 +1499,7 @@ public class Class5799 implements IClientPlayNetHandler
         Class8663.method29632((IPacket<Class5799>)class4351, this, this.field23808);
         final Entity method6741 = this.field23809.getEntityByID(class4351.method13070());
         if (method6741 != null) {
-            this.field23808.world.method6707(this.field23808.field4684, method6741, class4351.method13068(), class4351.method13069(), class4351.method13071(), class4351.method13072());
+            this.field23808.world.method6707(this.field23808.player, method6741, class4351.method13068(), class4351.method13069(), class4351.method13071(), class4351.method13072());
         }
     }
     
@@ -1555,10 +1555,10 @@ public class Class5799 implements IClientPlayNetHandler
                                 this.method17349(this.field23808.method5293().method25742(s, s2));
                             }
                             Class9295.method34339(method5282);
-                            this.field23808.method5244(null);
+                            this.field23808.displayGuiScreen(null);
                         }, new Class2259("multiplayer.texturePrompt.line1", new Object[0]), new Class2259("multiplayer.texturePrompt.line2", new Object[0]));
                         final Class546 class4284;
-                        field23808.method5244(class4284);
+                        field23808.displayGuiScreen(class4284);
                     });
                 }
             }
@@ -1604,18 +1604,18 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17352(final Class4391 class4391) {
         Class8663.method29632((IPacket<Class5799>)class4391, this, this.field23808);
         if (class4391.method13207() != 0) {
-            this.field23808.field4684.method2906().method25772(class4391.method13206(), class4391.method13207());
+            this.field23808.player.method2906().method25772(class4391.method13206(), class4391.method13207());
         }
         else {
-            this.field23808.field4684.method2906().method25773(class4391.method13206());
+            this.field23808.player.method2906().method25773(class4391.method13206());
         }
     }
     
     @Override
     public void method17353(final Class4263 class4263) {
         Class8663.method29632((IPacket<Class5799>)class4263, this, this.field23808);
-        final Entity method1915 = this.field23808.field4684.method1915();
-        if (method1915 != this.field23808.field4684) {
+        final Entity method1915 = this.field23808.player.method1915();
+        if (method1915 != this.field23808.player) {
             if (method1915.method1919()) {
                 method1915.method1728(class4263.method12794(), class4263.method12795(), class4263.method12796(), class4263.method12797(), class4263.method12798());
                 this.field23805.method11174(new Class4251(method1915));
@@ -1626,9 +1626,9 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17354(final Class4316 class4316) {
         Class8663.method29632((IPacket<Class5799>)class4316, this, this.field23808);
-        final ItemStack method2715 = this.field23808.field4684.method2715(class4316.method12972());
+        final ItemStack method2715 = this.field23808.player.method2715(class4316.method12972());
         if (method2715.getItem() == Items.field31513) {
-            this.field23808.method5244(new Class723(new Class7738(method2715)));
+            this.field23808.displayGuiScreen(new Class723(new Class7738(method2715)));
         }
     }
     
@@ -1640,7 +1640,7 @@ public class Class5799 implements IClientPlayNetHandler
         try {
             method13159 = class4376.method13159();
             if (Class4376.field19590.equals(method13158)) {
-                this.field23808.field4684.method4119(method13159.method29513(32767));
+                this.field23808.player.method4119(method13159.method29513(32767));
             }
             else if (Class4376.field19591.equals(method13158)) {
                 this.field23808.field4645.field28207.method18271(method13159.readInt(), Class9468.method35231(method13159), method13159.readFloat());
@@ -1943,9 +1943,9 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17362(final Class4257 class4257) {
         Class8663.method29632((IPacket<Class5799>)class4257, this, this.field23808);
-        final Class3418 field3009 = this.field23808.field4684.field3009;
+        final Class3418 field3009 = this.field23808.player.field3009;
         if (field3009.field16154 == class4257.method12780()) {
-            if (field3009.method10886(this.field23808.field4684)) {
+            if (field3009.method10886(this.field23808.player)) {
                 this.field23819.method6382(class4257.method12779()).ifPresent(class4259 -> {
                     if (!(!(this.field23808.field4700 instanceof Class519))) {
                         ((Class519)this.field23808.field4700).method3001().method3439(class4259, class4258.field16151);
@@ -1968,7 +1968,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17364(final Class4346 class4346) {
         Class8663.method29632((IPacket<Class5799>)class4346, this, this.field23808);
-        final Class3418 field3009 = this.field23808.field4684.field3009;
+        final Class3418 field3009 = this.field23808.player.field3009;
         if (class4346.method13050() == field3009.field16154) {
             if (field3009 instanceof Class3423) {
                 ((Class3423)field3009).method10930(new Class57(class4346.method13051().method362()));

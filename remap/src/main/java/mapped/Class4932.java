@@ -51,7 +51,7 @@ public class Class4932 extends Class4800
         super.method14204(n);
         if (n == 256) {
             Class6430.method19172();
-            Minecraft.method5277().method5244(null);
+            Minecraft.method5277().displayGuiScreen(null);
         }
     }
 }

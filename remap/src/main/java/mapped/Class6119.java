@@ -29,12 +29,12 @@ public class Class6119 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
         this.field24837.field4644.method5833();
-        Class8726.method30059();
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30041();
+        RenderSystem.method30059();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.disableTexture();
         this.field24838.forEach((p1, list) -> {
             final Class6092 class7354;
             final Object o = new BlockPos(class7354.method18161().x, 0.0, class7354.method18161().z);
@@ -48,8 +48,8 @@ public class Class6119 implements Class6113
             }
             return;
         });
-        Class8726.method30008();
-        Class8726.method30040();
-        Class8726.method30060();
+        RenderSystem.enableDepthTest();
+        RenderSystem.enableTexture();
+        RenderSystem.method30060();
     }
 }

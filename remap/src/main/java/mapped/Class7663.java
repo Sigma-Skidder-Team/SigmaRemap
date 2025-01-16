@@ -21,7 +21,7 @@ public class Class7663
         Class7663.field30439 = Config.method28962().field23485;
     }
     
-    public static void method24285(final Class1912 class1912) {
+    public static void method24285(final TextureAtlasSprite class1912) {
         if (class1912.method7534()) {
             final int method7515 = class1912.method7515();
             if (method7515 >= 0) {
@@ -36,7 +36,7 @@ public class Class7663
         }
     }
     
-    public static boolean method24287(final Class1912 class1912) {
+    public static boolean method24287(final TextureAtlasSprite class1912) {
         if (class1912.method7534()) {
             final int method7515 = class1912.method7515();
             return method7515 >= 0 && Class7663.field30440.get(method7515);

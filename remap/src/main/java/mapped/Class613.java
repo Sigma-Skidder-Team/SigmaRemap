@@ -75,7 +75,7 @@ public class Class613 extends Class608<Class639>
     }
     
     @Override
-    public void method3544(final int n, final int n2, final Class7392 class7392) {
+    public void method3544(final int n, final int n2, final Tessellator class7392) {
         if (!this.field3540.field4650.method26957()) {
             this.field3578 = -1;
         }
@@ -168,11 +168,11 @@ public class Class613 extends Class608<Class639>
             final String method8461 = class2250.getFormattedText();
             final int n3 = n + 12;
             final int n4 = n2 - 12;
-            this.method3189(n3 - 3, n4 - 3, n3 + this.field3583.font.method6617(method8461) + 3, n4 + 8 + 3, -1073741824, -1073741824);
-            Class8726.method30059();
-            Class8726.method30065(0.0f, 0.0f, 400.0f);
-            this.field3583.font.method6609(method8461, (float)n3, (float)n4, -1);
-            Class8726.method30060();
+            this.fillGradient(n3 - 3, n4 - 3, n3 + this.field3583.font.getStringWidth(method8461) + 3, n4 + 8 + 3, -1073741824, -1073741824);
+            RenderSystem.method30059();
+            RenderSystem.method30065(0.0f, 0.0f, 400.0f);
+            this.field3583.font.drawStringWithShadow(method8461, (float)n3, (float)n4, -1);
+            RenderSystem.method30060();
         }
     }
     

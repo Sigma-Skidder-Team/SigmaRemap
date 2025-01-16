@@ -16,11 +16,11 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.Set;
 
-public class Class1796 implements Class1657
+public class ItemRenderer implements Class1657
 {
     public static final ResourceLocation field9950;
     private static final Set<Item> field9951;
-    public float field9952;
+    public float zLevel;
     private final Class7264 field9953;
     private final Class1663 field9954;
     private final Class6457 field9955;
@@ -29,7 +29,7 @@ public class Class1796 implements Class1657
     private boolean field9958;
     private static boolean field9959;
     
-    public Class1796(final Class1663 field9954, final Class1790 field9955, final Class6457 field9956) {
+    public ItemRenderer(final Class1663 field9954, final Class1790 field9955, final Class6457 field9956) {
         this.field9956 = null;
         this.field9957 = false;
         this.field9958 = false;
@@ -42,7 +42,7 @@ public class Class1796 implements Class1657
             this.field9953 = (Class7264)Class9570.method35842(Class9570.field41370, this.field9956);
         }
         for (final Item class3820 : Registry.field211) {
-            if (Class1796.field9951.contains(class3820)) {
+            if (ItemRenderer.field9951.contains(class3820)) {
                 continue;
             }
             this.field9953.method22209(class3820, new Class1933(Registry.field211.getKey(class3820), "inventory"));
@@ -54,7 +54,7 @@ public class Class1796 implements Class1657
         return this.field9953;
     }
     
-    public void method6530(final Class6313 class6313, final ItemStack class6314, final int n, final int n2, final Class7351 class6315, final Class4150 class6316) {
+    public void method6530(final Class6313 class6313, final ItemStack class6314, final int n, final int n2, final MatrixStack class6315, final Class4150 class6316) {
         final boolean method6354 = Config.method29001().method6354();
         final boolean b = Config.method28928() && method6354;
         if (b) {
@@ -73,7 +73,7 @@ public class Class1796 implements Class1657
         }
     }
     
-    public void method6531(final ItemStack class8321, final Class2016 class8322, final boolean b, final Class7351 class8323, final Class7807 class8324, final int n, final int n2, Class6313 class8325) {
+    public void method6531(final ItemStack class8321, final Class2016 class8322, final boolean b, final MatrixStack class8323, final IRenderTypeBuffer class8324, final int n, final int n2, Class6313 class8325) {
         if (!class8321.method27620()) {
             class8323.method22567();
             final boolean b2 = class8322 == Class2016.field11492;
@@ -138,13 +138,13 @@ public class Class1796 implements Class1657
         }
     }
     
-    public static Class4150 method6532(final Class7807 class7807, final Class6332 class7808, final boolean b, final boolean b2) {
+    public static Class4150 method6532(final IRenderTypeBuffer class7807, final Class6332 class7808, final boolean b, final boolean b2) {
         return b2 ? Class9343.method34633(class7807.method25214(b ? Class6332.method18784() : Class6332.method18785()), class7807.method25214(class7808)) : class7807.method25214(class7808);
     }
     
-    private void method6533(final Class7351 class7351, final Class4150 class7352, final List<Class8754> list, final ItemStack class7353, final int n, final int n2) {
+    private void method6533(final MatrixStack class7351, final Class4150 class7352, final List<Class8754> list, final ItemStack class7353, final int n, final int n2) {
         final boolean b = !class7353.method27620();
-        final Class8996 method22569 = class7351.method22569();
+        final Class8996 method22569 = class7351.getLast();
         for (int size = list.size(), i = 0; i < size; ++i) {
             final Class8754 class7354 = list.get(i);
             int method22570 = -1;
@@ -188,11 +188,11 @@ public class Class1796 implements Class1657
         return (method33469 != null) ? method33469 : this.field9953.method22210().method6452();
     }
     
-    public void method6536(final ItemStack class8321, final Class2016 class8322, final int n, final int n2, final Class7351 class8323, final Class7807 class8324) {
+    public void method6536(final ItemStack class8321, final Class2016 class8322, final int n, final int n2, final MatrixStack class8323, final IRenderTypeBuffer class8324) {
         this.method6537(null, class8321, class8322, false, class8323, class8324, null, n, n2);
     }
     
-    public void method6537(final LivingEntity class511, final ItemStack class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final World class516, final int n, final int n2) {
+    public void method6537(final LivingEntity class511, final ItemStack class512, final Class2016 class513, final boolean b, final MatrixStack class514, final IRenderTypeBuffer class515, final World class516, final int n, final int n2) {
         if (!class512.method27620()) {
             this.method6531(class512, class513, b, class514, class515, n, n2, this.method6534(class512, class516, class511));
         }
@@ -203,48 +203,48 @@ public class Class1796 implements Class1657
     }
     
     public void method6539(final ItemStack class8321, final int n, final int n2, Class6313 method34966) {
-        Class1796.field9959 = true;
-        Class8726.method30059();
+        ItemRenderer.field9959 = true;
+        RenderSystem.method30059();
         this.field9954.method5849(Class1774.field9853);
         this.field9954.method5853(Class1774.field9853).method5868(false, false);
-        Class8726.method30046();
-        Class8726.method29999();
-        Class8726.method30118();
-        Class8726.method30011();
-        Class8726.method30013(Class2050.field11693, Class2135.field12460);
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        RenderSystem.enableRescaleNormal();
+        RenderSystem.enableAlphaTest();
+        RenderSystem.method30118();
+        RenderSystem.enableBlend();
+        RenderSystem.method30013(Class2050.field11693, Class2135.field12460);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         if (Config.method28987()) {
             method34966 = Class9404.method34966(class8321, method34966, Class9168.field38843, true);
         }
-        Class8726.method30065((float)n, (float)n2, 100.0f + this.field9952);
-        Class8726.method30065(8.0f, 8.0f, 0.0f);
-        Class8726.method30063(1.0f, -1.0f, 1.0f);
-        Class8726.method30063(16.0f, 16.0f, 16.0f);
-        final Class7351 class8322 = new Class7351();
-        final Class7808 method34967 = Minecraft.method5277().method5333().method11006();
+        RenderSystem.method30065((float)n, (float)n2, 100.0f + this.zLevel);
+        RenderSystem.method30065(8.0f, 8.0f, 0.0f);
+        RenderSystem.method30063(1.0f, -1.0f, 1.0f);
+        RenderSystem.method30063(16.0f, 16.0f, 16.0f);
+        final MatrixStack class8322 = new MatrixStack();
+        final IRenderTypeBuffer.Impl method34967 = Minecraft.method5277().method5333().method11006();
         final boolean b = !method34966.method18694();
         if (b) {
             Class8317.method27611();
         }
         this.method6531(class8321, Class2016.field11492, false, class8322, method34967, 15728880, Class1904.field10335, method34966);
-        method34967.method25216();
-        Class8726.method30008();
+        method34967.finish();
+        RenderSystem.enableDepthTest();
         if (b) {
             Class8317.method27612();
         }
-        Class8726.method29998();
-        Class8726.method30047();
-        Class8726.method30060();
-        Class1796.field9959 = false;
+        RenderSystem.disableAlphaTest();
+        RenderSystem.disableRescaleNormal();
+        RenderSystem.method30060();
+        ItemRenderer.field9959 = false;
     }
     
     public void method6540(final ItemStack class8321, final int n, final int n2) {
-        this.method6541(Minecraft.method5277().field4684, class8321, n, n2);
+        this.method6541(Minecraft.method5277().player, class8321, n, n2);
     }
     
     public void method6541(final LivingEntity class511, final ItemStack class512, final int n, final int n2) {
         if (!class512.method27620()) {
-            this.field9952 += 50.0f;
+            this.zLevel += 50.0f;
             try {
                 this.method6539(class512, n, n2, this.method6534(class512, null, class511));
             }
@@ -258,30 +258,30 @@ public class Class1796 implements Class1657
                 method24422.addDetail("Item Foil", () -> String.valueOf(class517.method27671()));
                 throw new ReportedException(method24421);
             }
-            this.field9952 -= 50.0f;
+            this.zLevel -= 50.0f;
         }
     }
     
-    public void method6542(final Class1844 class1844, final ItemStack class1845, final int n, final int n2) {
+    public void method6542(final FontRenderer class1844, final ItemStack class1845, final int n, final int n2) {
         this.method6543(class1844, class1845, n, n2, null);
     }
     
-    public void method6543(final Class1844 class1844, final ItemStack class1845, final int n, final int n2, final String s) {
+    public void method6543(final FontRenderer class1844, final ItemStack class1845, final int n, final int n2, final String s) {
         if (!class1845.method27620()) {
-            final Class7351 class1846 = new Class7351();
+            final MatrixStack class1846 = new MatrixStack();
             if (class1845.method27690() != 1 || s != null) {
                 final String s2 = (s != null) ? s : String.valueOf(class1845.method27690());
-                class1846.method22564(0.0, 0.0, this.field9952 + 200.0f);
-                final Class7808 method25212 = Class7807.method25212(Class7392.method22694().method22696());
-                class1844.method6613(s2, (float)(n + 19 - 2 - class1844.method6617(s2)), (float)(n2 + 6 + 3), 16777215, true, class1846.method22569().method32111(), method25212, false, 0, 15728880);
-                method25212.method25216();
+                class1846.method22564(0.0, 0.0, this.zLevel + 200.0f);
+                final IRenderTypeBuffer.Impl method25212 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
+                class1844.renderString(s2, (float)(n + 19 - 2 - class1844.getStringWidth(s2)), (float)(n2 + 6 + 3), 16777215, true, class1846.getLast().getMatrix(), method25212, false, 0, 15728880);
+                method25212.finish();
             }
             if (Class7667.method24305(class1845)) {
-                Class8726.method30007();
-                Class8726.method30041();
-                Class8726.method29998();
-                Class8726.method30012();
-                final Class4148 method25213 = Class7392.method22694().method22696();
+                RenderSystem.disableDepthTest();
+                RenderSystem.disableTexture();
+                RenderSystem.disableAlphaTest();
+                RenderSystem.disableBlend();
+                final BufferBuilder method25213 = Tessellator.getInstance().getBuffer();
                 final float n3 = (float)class1845.method27632();
                 final float n4 = (float)class1845.method27634();
                 final float max = Math.max(0.0f, (n4 - n3) / n4);
@@ -300,32 +300,32 @@ public class Class1796 implements Class1657
                 }
                 this.method6544(method25213, n + 2, n2 + 13, 13, 2, 0, 0, 0, 255);
                 this.method6544(method25213, n + 2, n2 + 13, n5, 1, n6 >> 16 & 0xFF, n6 >> 8 & 0xFF, n6 & 0xFF, 255);
-                Class8726.method30011();
-                Class8726.method29999();
-                Class8726.method30040();
-                Class8726.method30008();
+                RenderSystem.enableBlend();
+                RenderSystem.enableAlphaTest();
+                RenderSystem.enableTexture();
+                RenderSystem.enableDepthTest();
             }
-            final Class756 field4684 = Minecraft.method5277().field4684;
+            final Class756 field4684 = Minecraft.method5277().player;
             final float n7 = (field4684 != null) ? field4684.method2906().method25770(class1845.getItem(), Minecraft.method5277().method5314()) : 0.0f;
             if (n7 > 0.0f) {
-                Class8726.method30007();
-                Class8726.method30041();
-                Class8726.method30011();
-                Class8726.method30117();
-                this.method6544(Class7392.method22694().method22696(), n, n2 + MathHelper.method35642(16.0f * (1.0f - n7)), 16, MathHelper.ceil(16.0f * n7), 255, 255, 255, 127);
-                Class8726.method30040();
-                Class8726.method30008();
+                RenderSystem.disableDepthTest();
+                RenderSystem.disableTexture();
+                RenderSystem.enableBlend();
+                RenderSystem.defaultBlendFunc();
+                this.method6544(Tessellator.getInstance().getBuffer(), n, n2 + MathHelper.method35642(16.0f * (1.0f - n7)), 16, MathHelper.ceil(16.0f * n7), 255, 255, 255, 127);
+                RenderSystem.enableTexture();
+                RenderSystem.enableDepthTest();
             }
         }
     }
     
-    private void method6544(final Class4148 class4148, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
-        class4148.method12390(7, Class9237.field39615);
-        class4148.method12432(n + 0, n2 + 0, 0.0).method12399(n5, n6, n7, n8).method12397();
-        class4148.method12432(n + 0, n2 + n4, 0.0).method12399(n5, n6, n7, n8).method12397();
-        class4148.method12432(n + n3, n2 + n4, 0.0).method12399(n5, n6, n7, n8).method12397();
-        class4148.method12432(n + n3, n2 + 0, 0.0).method12399(n5, n6, n7, n8).method12397();
-        Class7392.method22694().method22695();
+    private void method6544(final BufferBuilder class4148, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
+        class4148.begin(7, DefaultVertexFormats.POSITION_COLOR);
+        class4148.pos(n + 0, n2 + 0, 0.0).method12399(n5, n6, n7, n8).endVertex();
+        class4148.pos(n + 0, n2 + n4, 0.0).method12399(n5, n6, n7, n8).endVertex();
+        class4148.pos(n + n3, n2 + n4, 0.0).method12399(n5, n6, n7, n8).endVertex();
+        class4148.pos(n + n3, n2 + 0, 0.0).method12399(n5, n6, n7, n8).endVertex();
+        Tessellator.getInstance().draw();
     }
     
     @Override
@@ -340,6 +340,6 @@ public class Class1796 implements Class1657
     static {
         field9950 = new ResourceLocation("textures/misc/enchanted_item_glint.png");
         field9951 = Sets.newHashSet((Object[])new Item[] { Items.AIR});
-        Class1796.field9959 = false;
+        ItemRenderer.field9959 = false;
     }
 }

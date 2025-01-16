@@ -58,11 +58,11 @@ public class Class1768 extends Class1767
         }
         Minecraft.method5277().execute(() -> {
             this.field9840 = true;
-            if (Class8726.method29984()) {
+            if (RenderSystem.method29984()) {
                 this.method6302(class1847);
             }
             else {
-                Class8726.method29991(() -> this.method6302(class1847));
+                RenderSystem.method29991(() -> this.method6302(class1847));
             }
         });
     }

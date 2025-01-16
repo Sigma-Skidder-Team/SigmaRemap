@@ -84,7 +84,7 @@ public class Class3362 extends Class3355
     }
     
     private List<Entity> method10653() {
-        return Class3362.field15514.world.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(9.0, 9.0, 9.0), Class9170.field38850.and((Predicate<? super Entity>)new Class167(this)));
+        return Class3362.field15514.world.method6737(Class3362.field15514.player, Class3362.field15514.player.boundingBox.grow(9.0, 9.0, 9.0), Class9170.field38850.and((Predicate<? super Entity>)new Class167(this)));
     }
     
     private List<Class7014> method10654(final Entity class399) {
@@ -98,7 +98,7 @@ public class Class3362 extends Class3355
             final BlockPos class400 = treeMap.lastEntry().getValue();
             final ArrayList list = new ArrayList();
             for (final Map.Entry entry : treeMap.entrySet()) {
-                list.add(new Class7014(class400, treeMap.lastKey(), this.method10655(Class3362.field15514.field4684, class400)));
+                list.add(new Class7014(class400, treeMap.lastKey(), this.method10655(Class3362.field15514.player, class400)));
             }
             Collections.reverse(list);
             return list;
@@ -160,12 +160,12 @@ public class Class3362 extends Class3355
     
     public List<Entity> method10657() {
         final float method9886 = this.method9886("Reach");
-        return Class3362.field15514.world.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(method9886, method9886, method9886), Class9170.field38850.and((Predicate<? super Entity>)new Class164(this, method9886)));
+        return Class3362.field15514.world.method6737(Class3362.field15514.player, Class3362.field15514.player.boundingBox.grow(method9886, method9886, method9886), Class9170.field38850.and((Predicate<? super Entity>)new Class164(this, method9886)));
     }
     
     private List<Entity> method10658() {
         final float n = this.method9886("Reach") + 1.0f;
-        return Class3362.field15514.world.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(n, n, n), Class9170.field38850.and((Predicate<? super Entity>)new Class165(this, n)));
+        return Class3362.field15514.world.method6737(Class3362.field15514.player, Class3362.field15514.player.boundingBox.grow(n, n, n), Class9170.field38850.and((Predicate<? super Entity>)new Class165(this, n)));
     }
     
     private void method10659(final Class5744 class5744) {
@@ -231,9 +231,9 @@ public class Class3362 extends Class3355
         if (this.field16011 != null && this.field16012 != null) {
             final int method29340 = Class8639.method29340(Items.field31572);
             if (method29340 >= 0) {
-                Class3362.field15514.field4684.field3006.field2743 = method29340;
+                Class3362.field15514.player.field3006.field2743 = method29340;
                 Class3362.field15514.field4682.method27318();
-                Class3362.field15514.field4682.method27319(Class3362.field15514.field4684, Class3362.field15514.world, Class316.field1877, this.field16012);
+                Class3362.field15514.field4682.method27319(Class3362.field15514.player, Class3362.field15514.world, Class316.field1877, this.field16012);
             }
         }
     }

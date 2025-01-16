@@ -38,14 +38,14 @@ public class Class9388
         this.field40290 = new Class5905();
     }
     
-    public void method34897(final ItemStack class8321, final Class7351 class8322, final Class7807 class8323, final int n, final int n2) {
+    public void method34897(final ItemStack class8321, final MatrixStack class8322, final IRenderTypeBuffer class8323, final int n, final int n2) {
         final Item method27622 = class8321.getItem();
         if (!(method27622 instanceof Class4036)) {
             if (method27622 != Items.field31583) {
                 if (method27622 == Items.field31607) {
                     class8322.method22567();
                     class8322.method22565(1.0f, -1.0f, -1.0f);
-                    this.field40290.method17564(class8322, Class1796.method6532(class8323, this.field40290.method17647(Class5905.field24278), false, class8321.method27671()), n, n2, 1.0f, 1.0f, 1.0f, 1.0f);
+                    this.field40290.method17564(class8322, ItemRenderer.method6532(class8323, this.field40290.method17647(Class5905.field24278), false, class8321.method27671()), n, n2, 1.0f, 1.0f, 1.0f, 1.0f);
                     class8322.method22568();
                 }
             }
@@ -54,7 +54,7 @@ public class Class9388
                 class8322.method22567();
                 class8322.method22565(1.0f, -1.0f, -1.0f);
                 final Class3687 class8324 = b ? Class7637.field30243 : Class7637.field30244;
-                final Class4150 method27623 = class8324.method11332().method7512(Class1796.method6532(class8323, this.field40289.method17647(class8324.method11330()), false, class8321.method27671()));
+                final Class4150 method27623 = class8324.method11332().method7512(ItemRenderer.method6532(class8323, this.field40289.method17647(class8324.method11330()), false, class8321.method27671()));
                 this.field40289.method17649().method18644(class8322, method27623, n, n2, 1.0f, 1.0f, 1.0f, 1.0f);
                 if (!b) {
                     this.field40289.method17648().method18644(class8322, method27623, n, n2, 1.0f, 1.0f, 1.0f, 1.0f);

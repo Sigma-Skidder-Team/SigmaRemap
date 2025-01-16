@@ -17,7 +17,7 @@ public class Class1787 extends Class1785
         return Registry.field207.method507().stream();
     }
     
-    public Class1912 method6446(final Class5328 class5328) {
+    public TextureAtlasSprite method6446(final Class5328 class5328) {
         return this.method6440(Registry.field207.getKey(class5328));
     }
 }

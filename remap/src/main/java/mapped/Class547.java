@@ -28,12 +28,12 @@ public class Class547 extends Class546
         super.init();
         this.buttons.clear();
         this.children.clear();
-        this.method3029(new Class654(this.width / 2 - 50 - 105, this.height / 6 + 96, 100, 20, this.field3292, class654 -> this.field3295.accept(true)));
-        this.method3029(new Class654(this.width / 2 - 50, this.height / 6 + 96, 100, 20, this.field3297, class654 -> {
+        this.addButton(new Class654(this.width / 2 - 50 - 105, this.height / 6 + 96, 100, 20, this.field3292, class654 -> this.field3295.accept(true)));
+        this.addButton(new Class654(this.width / 2 - 50, this.height / 6 + 96, 100, 20, this.field3297, class654 -> {
             this.method3212();
             this.field3295.accept(false);
         }));
-        this.method3029(new Class654(this.width / 2 - 50 + 105, this.height / 6 + 96, 100, 20, this.field3293, class654 -> this.field3295.accept(false)));
+        this.addButton(new Class654(this.width / 2 - 50 + 105, this.height / 6 + 96, 100, 20, this.field3293, class654 -> this.field3295.accept(false)));
     }
     
     public void method3212() {
@@ -41,10 +41,10 @@ public class Class547 extends Class546
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        super.method2975(n, n2, n3);
+    public void render(final int n, final int n2, final float n3) {
+        super.render(n, n2, n3);
         if (this.field3299) {
-            this.method3295(this.font, this.field3296, this.width / 2, 110, 16764108);
+            this.drawCenteredString(this.font, this.field3296, this.width / 2, 110, 16764108);
         }
     }
 }

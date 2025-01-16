@@ -60,7 +60,7 @@ public class Class9066
     private static void method32641(final Class795 class795, final boolean b) {
         LivingEntity class796 = class795.method4488();
         if (class796 == null) {
-            class796 = Config.method28894().field4684;
+            class796 = Config.method28894().player;
         }
         if (class796 instanceof Class754) {
             final Class754 class797 = (Class754)class796;

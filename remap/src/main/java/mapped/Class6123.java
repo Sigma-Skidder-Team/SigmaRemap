@@ -77,16 +77,16 @@ public class Class6123 implements Class6113
     }
     
     @Override
-    public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
-        Class8726.method30059();
-        Class8726.method30011();
-        Class8726.method30117();
-        Class8726.method30041();
+    public void method18269(final MatrixStack class7351, final IRenderTypeBuffer class7352, final double n, final double n2, final double n3) {
+        RenderSystem.method30059();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.disableTexture();
         this.method18323(n, n2, n3);
-        Class8726.method30040();
-        Class8726.method30012();
-        Class8726.method30060();
-        if (!this.field24855.field4684.isSpectator()) {
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
+        RenderSystem.method30060();
+        if (!this.field24855.player.isSpectator()) {
             this.method18338();
         }
     }
@@ -130,14 +130,14 @@ public class Class6123 implements Class6113
     }
     
     private static void method18325(final BlockPos class354) {
-        Class8726.method30011();
-        Class8726.method30117();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
         Class7282.method22335(class354, 0.05f, 0.2f, 0.2f, 1.0f, 0.3f);
     }
     
     private void method18326(final BlockPos class354, final List<String> obj) {
-        Class8726.method30011();
-        Class8726.method30117();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
         Class7282.method22335(class354, 0.05f, 0.2f, 0.2f, 1.0f, 0.3f);
         method18331("" + obj, class354, 0, -256);
         method18331("Ghost POI", class354, 1, -65536);
@@ -241,7 +241,7 @@ public class Class6123 implements Class6113
     }
     
     private boolean method18335(final Class9307 class9307) {
-        final Class756 field4684 = this.field24855.field4684;
+        final Class756 field4684 = this.field24855.player;
         return new BlockPos(field4684.getPosX(), class9307.field39938.getY(), field4684.getPosZ()).withinDistance(new BlockPos(class9307.field39938), 30.0);
     }
     

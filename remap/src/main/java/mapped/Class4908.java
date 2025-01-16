@@ -39,9 +39,9 @@ public class Class4908 extends Class4825
         GL11.glMatrixMode(5888);
         GL11.glEnable(2929);
         GL11.glTranslatef((float)(this.field20478 + this.field20480 / 2), (float)(this.field20479 + this.field20481 / 2), -1000.0f);
-        Class8726.method30067(Matrix4f.method20755(20.0, (float)(Minecraft.method5277().field4632.method7692() / Minecraft.method5277().field4632.method7693()), 0.5f, 1.0f));
-        Class8726.method30057(5888);
-        Class8726.method30058();
+        RenderSystem.method30067(Matrix4f.method20755(20.0, (float)(Minecraft.method5277().field4632.method7692() / Minecraft.method5277().field4632.method7693()), 0.5f, 1.0f));
+        RenderSystem.method30057(5888);
+        RenderSystem.method30058();
         GL11.glRotated(1.0 * Math.abs(max * max2), max2, max, 0.0);
         GL11.glTranslatef((float)(-this.field20478 - this.field20480 / 2), (float)(-this.field20479 - this.field20481 / 2), 0.0f);
         GL11.glDisable(2929);

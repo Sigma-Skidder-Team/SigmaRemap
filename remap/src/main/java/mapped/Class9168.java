@@ -36,7 +36,7 @@ public class Class9168
         this(class7637, class7638, function, class7637.method24030()::method1415, list);
     }
     
-    public Class9168(final Class7637 class7637, final Class7684 class7638, final Function<ResourceLocation, Class7684> function, final Function<Class3687, Class1912> function2, final List<Class6559> list) {
+    public Class9168(final Class7637 class7637, final Class7684 class7638, final Function<ResourceLocation, Class7684> function, final Function<Class3687, TextureAtlasSprite> function2, final List<Class6559> list) {
         this.field38840 = Lists.newArrayList();
         Collections.reverse(this.field38841 = (List<Class6313>)list.stream().map(class7640 -> Objects.equals(function3.apply(class7640.method19882()), b) ? null : class7639.method24021(class7640.method19882(), Class2122.field12371, function4)).collect(Collectors.toList()));
         for (int i = list.size() - 1; i >= 0; --i) {

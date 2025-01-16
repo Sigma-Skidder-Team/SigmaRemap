@@ -58,19 +58,19 @@ public abstract class RealmsScreen extends RealmsGuiEventListener implements Rea
     }
     
     public void method15409(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
-        this.proxy.method3186(n, n2, n3, n4, n5, n6);
+        this.proxy.blit(n, n2, n3, n4, n5, n6);
     }
     
     public static void method15410(final int n, final int n2, final float n3, final float n4, final int n5, final int n6, final int n7, final int n8, final int n9, final int n10) {
-        Class565.method3300(n, n2, n7, n8, n3, n4, n5, n6, n9, n10);
+        AbstractGui.blit(n, n2, n7, n8, n3, n4, n5, n6, n9, n10);
     }
     
     public static void method15411(final int n, final int n2, final float n3, final float n4, final int n5, final int n6, final int n7, final int n8) {
-        Class565.method3188(n, n2, n3, n4, n5, n6, n7, n8);
+        AbstractGui.blit(n, n2, n3, n4, n5, n6, n7, n8);
     }
     
     public void method15412(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
-        this.proxy.method3189(n, n2, n3, n4, n5, n6);
+        this.proxy.fillGradient(n, n2, n3, n4, n5, n6);
     }
     
     public void method15413() {
@@ -92,15 +92,15 @@ public abstract class RealmsScreen extends RealmsGuiEventListener implements Rea
     }
     
     public void method15416(final ItemStack class8321, final int n, final int n2) {
-        this.proxy.method3014(class8321, n, n2);
+        this.proxy.renderTooltip(class8321, n, n2);
     }
     
     public void method15417(final String s, final int n, final int n2) {
-        this.proxy.method3031(s, n, n2);
+        this.proxy.renderTooltip(s, n, n2);
     }
     
     public void method15418(final List<String> list, final int n, final int n2) {
-        this.proxy.method3032(list, n, n2);
+        this.proxy.renderTooltip(list, n, n2);
     }
     
     public static void method15419(final String s) {
@@ -171,7 +171,7 @@ public abstract class RealmsScreen extends RealmsGuiEventListener implements Rea
     }
     
     public void method15434(final RealmsGuiEventListener class5053) {
-        this.proxy.method3477(class5053.getProxy());
+        this.proxy.func_212932_b(class5053.getProxy());
     }
     
     public Class5065 method15435(final int n, final int n2, final int n3, final int n4, final int n5) {
@@ -222,6 +222,6 @@ public abstract class RealmsScreen extends RealmsGuiEventListener implements Rea
     }
     
     public boolean method15447(final RealmsGuiEventListener class5053) {
-        return this.getProxy().method3471() == class5053.getProxy();
+        return this.getProxy().getFocused() == class5053.getProxy();
     }
 }

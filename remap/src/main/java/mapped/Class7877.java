@@ -57,17 +57,17 @@ public class Class7877
             final int n4 = class870.method26162() + n;
             final int n5 = class870.method26163() + n2;
             if (i == 0 && b) {
-                Class565.method3293(n4 - 4, n5 - 4, n4 + 20, n5 + 20, 822018048);
+                AbstractGui.fill(n4 - 4, n5 - 4, n4 + 20, n5 + 20, 822018048);
             }
             else {
-                Class565.method3293(n4, n5, n4 + 16, n5 + 16, 822018048);
+                AbstractGui.fill(n4, n5, n4 + 16, n5 + 16, 822018048);
             }
             final ItemStack method26164 = class870.method26164();
-            final Class1796 method26165 = class869.getItemRenderer();
-            method26165.method6541(class869.field4684, method26164, n4, n5);
-            Class8726.method30009(516);
-            Class565.method3293(n4, n5, n4 + 16, n5 + 16, 822083583);
-            Class8726.method30009(515);
+            final ItemRenderer method26165 = class869.getItemRenderer();
+            method26165.method6541(class869.player, method26164, n4, n5);
+            RenderSystem.method30009(516);
+            AbstractGui.fill(n4, n5, n4 + 16, n5 + 16, 822083583);
+            RenderSystem.method30009(515);
             if (i == 0) {
                 method26165.method6542(class869.fontRenderer, method26164, n4, n5);
             }

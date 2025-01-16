@@ -62,7 +62,7 @@ public class NarratorChatListener implements Class7894
     }
     
     private static Class2051 method25557() {
-        return Minecraft.method5277().field4648.field23475;
+        return Minecraft.method5277().gameSettings.field23475;
     }
     
     private void method25558(final boolean b, final String s) {

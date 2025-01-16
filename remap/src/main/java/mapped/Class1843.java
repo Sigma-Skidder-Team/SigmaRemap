@@ -16,7 +16,7 @@ public class Class1843<T extends LivingEntity> extends Class1799<T, Class5871<T>
         this.field10027 = new Class5871<T>(0);
     }
     
-    public void method6551(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6551(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (!t.method1823()) {
             this.method6559().method17569(this.field10027);
             this.field10027.method17558(t, n2, n3, n4);

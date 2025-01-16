@@ -36,10 +36,10 @@ public class Class691 extends Screen implements Class692
     }
     
     public void method3856() {
-        this.method3029(new Class654(this.width / 2 - 120, this.height - 52, 80, 20, Class8822.method30773("stat.generalButton", new Object[0]), class654 -> this.method3859(this.field3809)));
-        final Class654 class654 = this.method3029(new Class654(this.width / 2 - 40, this.height - 52, 80, 20, Class8822.method30773("stat.itemsButton", new Object[0]), class654 -> this.method3859(this.field3810)));
-        final Class654 class655 = this.method3029(new Class654(this.width / 2 + 40, this.height - 52, 80, 20, Class8822.method30773("stat.mobsButton", new Object[0]), class654 -> this.method3859(this.field3811)));
-        this.method3029(new Class654(this.width / 2 - 100, this.height - 28, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.method5244(this.field3808)));
+        this.addButton(new Class654(this.width / 2 - 120, this.height - 52, 80, 20, Class8822.method30773("stat.generalButton", new Object[0]), class654 -> this.method3859(this.field3809)));
+        final Class654 class654 = this.addButton(new Class654(this.width / 2 - 40, this.height - 52, 80, 20, Class8822.method30773("stat.itemsButton", new Object[0]), class654 -> this.method3859(this.field3810)));
+        final Class654 class655 = this.addButton(new Class654(this.width / 2 + 40, this.height - 52, 80, 20, Class8822.method30773("stat.mobsButton", new Object[0]), class654 -> this.method3859(this.field3811)));
+        this.addButton(new Class654(this.width / 2 - 100, this.height - 28, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3808)));
         if (this.field3810.children().isEmpty()) {
             class654.field3431 = false;
         }
@@ -49,16 +49,16 @@ public class Class691 extends Screen implements Class692
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         if (!this.field3814) {
-            this.method3858().method2975(n, n2, n3);
-            this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 20, 16777215);
-            super.method2975(n, n2, n3);
+            this.method3858().render(n, n2, n3);
+            this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 20, 16777215);
+            super.render(n, n2, n3);
         }
         else {
             this.renderBackground();
-            this.method3295(this.font, Class8822.method30773("multiplayer.downloadingStats", new Object[0]), this.width / 2, this.height / 2, 16777215);
-            this.method3295(this.font, Class691.field3815[(int)(Util.method27837() / 150L % Class691.field3815.length)], this.width / 2, this.height / 2 + 18, 16777215);
+            this.drawCenteredString(this.font, Class8822.method30773("multiplayer.downloadingStats", new Object[0]), this.width / 2, this.height / 2, 16777215);
+            this.drawCenteredString(this.font, Class691.field3815[(int)(Util.method27837() / 150L % Class691.field3815.length)], this.width / 2, this.height / 2 + 18, 16777215);
         }
     }
     
@@ -98,14 +98,14 @@ public class Class691 extends Screen implements Class692
     
     private void method3861(final int n, final int n2, final Item class3820) {
         this.method3862(n + 1, n2 + 1, 0, 0);
-        Class8726.method30046();
+        RenderSystem.enableRescaleNormal();
         this.itemRenderer.method6538(class3820.method11741(), n + 2, n2 + 2);
-        Class8726.method30047();
+        RenderSystem.disableRescaleNormal();
     }
     
     private void method3862(final int n, final int n2, final int n3, final int n4) {
-        Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.minecraft.method5290().method5849(Class691.field3362);
-        Class565.method3299(n, n2, this.method3303(), (float)n3, (float)n4, 18, 18, 128, 128);
+        RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
+        this.minecraft.method5290().method5849(Class691.STATS_ICON_LOCATION);
+        AbstractGui.blit(n, n2, this.getBlitOffset(), (float)n3, (float)n4, 18, 18, 128, 128);
     }
 }

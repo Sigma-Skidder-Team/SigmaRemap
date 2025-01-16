@@ -35,7 +35,7 @@ public class Class9036
     public static void method32479() {
         if (Class9036.field38216 == null) {
             Class9036.field38216 = Minecraft.method5277();
-            Class9036.field38217 = Class9036.field38216.field4648;
+            Class9036.field38217 = Class9036.field38216.gameSettings;
             Class9036.field38218 = Class9036.field38216.method5327();
         }
         if (Class9036.field38217.field23466 && (Class9036.field38217.field23496 || Class9036.field38217.field23468)) {
@@ -91,9 +91,9 @@ public class Class9036
                 Class8933.method31642(0.0f, 0.0f, -2000.0f);
                 GL11.glLineWidth(1.0f);
                 Class8933.method31610();
-                final Class7392 method7694 = Class7392.method22694();
-                final Class4148 method7695 = method7694.method22696();
-                method7695.method12390(1, Class9237.field39615);
+                final Tessellator method7694 = Tessellator.getInstance();
+                final BufferBuilder method7695 = method7694.getBuffer();
+                method7695.begin(1, DefaultVertexFormats.POSITION_COLOR);
                 for (int i = 0; i < Class9036.field38227.length; ++i) {
                     final int n2 = (i - Class9036.field38236 & Class9036.field38227.length - 1) * 100 / Class9036.field38227.length + 155;
                     final float n3 = (float)method7693;
@@ -113,7 +113,7 @@ public class Class9036
                 }
                 method32482(0, Class9036.field38227.length, 33333333L, 196, 196, 196, (float)method7693, method7695);
                 method32482(0, Class9036.field38227.length, 16666666L, 196, 196, 196, (float)method7693, method7695);
-                method7694.method22695();
+                method7694.draw();
                 Class8933.method31609();
                 final int n11 = method7693 - 80;
                 final int n12 = method7693 - 160;
@@ -131,28 +131,28 @@ public class Class9036
                 final int n14 = 512 / n + 2;
                 final int n15 = method7693 / n - 8;
                 final Class685 field4647 = Class9036.field38216.field4647;
-                Class565.method3293(n14 - 1, n15 - 1, n14 + 50, n15 + 10, -1605349296);
+                AbstractGui.fill(n14 - 1, n15 - 1, n14 + 50, n15 + 10, -1605349296);
                 Class9036.field38216.fontRenderer.method6610(" " + Class7741.method24705() + " MB/s", (float)n14, (float)n15, n13);
                 Class9036.field38238 = System.nanoTime() - nanoTime;
             }
         }
     }
     
-    private static long method32481(final int n, final long n2, final int n3, final int n4, final int n5, final float n6, final Class4148 class4148) {
+    private static long method32481(final int n, final long n2, final int n3, final int n4, final int n5, final float n6, final BufferBuilder class4148) {
         final long n7 = n2 / 200000L;
         if (n7 >= 3L) {
-            class4148.method12432(n + 0.5f, n6 - n7 + 0.5f, 0.0).method12399(n3, n4, n5, 255).method12397();
-            class4148.method12432(n + 0.5f, n6 + 0.5f, 0.0).method12399(n3, n4, n5, 255).method12397();
+            class4148.pos(n + 0.5f, n6 - n7 + 0.5f, 0.0).method12399(n3, n4, n5, 255).endVertex();
+            class4148.pos(n + 0.5f, n6 + 0.5f, 0.0).method12399(n3, n4, n5, 255).endVertex();
             return n7;
         }
         return 0L;
     }
     
-    private static long method32482(final int n, final int n2, final long n3, final int n4, final int n5, final int n6, final float n7, final Class4148 class4148) {
+    private static long method32482(final int n, final int n2, final long n3, final int n4, final int n5, final int n6, final float n7, final BufferBuilder class4148) {
         final long n8 = n3 / 200000L;
         if (n8 >= 3L) {
-            class4148.method12432(n + 0.5f, n7 - n8 + 0.5f, 0.0).method12399(n4, n5, n6, 255).method12397();
-            class4148.method12432(n2 + 0.5f, n7 - n8 + 0.5f, 0.0).method12399(n4, n5, n6, 255).method12397();
+            class4148.pos(n + 0.5f, n7 - n8 + 0.5f, 0.0).method12399(n4, n5, n6, 255).endVertex();
+            class4148.pos(n2 + 0.5f, n7 - n8 + 0.5f, 0.0).method12399(n4, n5, n6, 255).endVertex();
             return n8;
         }
         return 0L;

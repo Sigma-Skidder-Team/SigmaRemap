@@ -28,14 +28,14 @@ public class Class3222 extends Class3167
                         if (method17057.hurtResistantTime <= (int)this.method9886("HurtTime")) {
                             if (Class3265.field15758 > 1) {
                                 if (this.field15680.method23935() > 200L || method17057.hurtResistantTime > 0) {
-                                    if (Class3222.field15514.field4684.onGround) {
-                                        if (Class3222.field15514.field4684.collidedVertically) {
+                                    if (Class3222.field15514.player.onGround) {
+                                        if (Class3222.field15514.player.collidedVertically) {
                                             double[] array = { 0.2, 0.0 };
                                             if (this.method9914().method9883("Hypixel")) {
                                                 array = new double[] { 0.121600046157806, 0.200000047683686, 0.0 };
                                             }
                                             for (int i = 0; i < array.length; ++i) {
-                                                Class3222.field15514.method5269().method17292(new Class4354(Class3222.field15514.field4684.posX, Class3222.field15514.field4684.posY + array[i], Class3222.field15514.field4684.posZ, false));
+                                                Class3222.field15514.method5269().method17292(new Class4354(Class3222.field15514.player.posX, Class3222.field15514.player.posY + array[i], Class3222.field15514.player.posZ, false));
                                             }
                                             this.field15681 = true;
                                             this.field15680.method23934();
@@ -59,7 +59,7 @@ public class Class3222 extends Class3167
                     this.field15680.method23932();
                 }
                 if (this.field15681) {
-                    if (Class3222.field15514.field4684.onGround) {
+                    if (Class3222.field15514.player.onGround) {
                         class5721.method16961(true);
                         this.field15681 = false;
                     }

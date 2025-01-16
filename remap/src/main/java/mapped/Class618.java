@@ -38,7 +38,7 @@ public class Class618 extends Class608<Class638>
     
     @Override
     public boolean method3561() {
-        return this.field3591.method3471() == this;
+        return this.field3591.getFocused() == this;
     }
     
     @Override

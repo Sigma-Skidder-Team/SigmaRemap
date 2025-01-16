@@ -70,7 +70,7 @@ public class Class7686 implements Class7684
     
     @Nullable
     @Override
-    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, Class1912> function, final Class2123 class7638, final ResourceLocation class7639) {
+    public Class6313 method24383(final Class7637 class7637, final Function<Class3687, TextureAtlasSprite> function, final Class2123 class7638, final ResourceLocation class7639) {
         final Class7897 class7640 = new Class7897();
         for (final Class8997 class7641 : this.method24404()) {
             final Class6313 method24383 = class7641.method32115().method24383(class7637, function, class7638, class7639);

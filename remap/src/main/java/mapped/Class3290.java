@@ -18,21 +18,21 @@ public class Class3290 extends Class3167
     @Override
     public void method9879() {
         this.field15848 = 1;
-        final double field22770 = Class3290.field15514.field4684.getMotion().x;
-        final double field22771 = Class3290.field15514.field4684.getMotion().z;
+        final double field22770 = Class3290.field15514.player.getMotion().x;
+        final double field22771 = Class3290.field15514.player.getMotion().z;
         this.field15849 = Math.sqrt(field22770 * field22770 + field22771 * field22771);
     }
     
     @Class6753
     public void method10412(final Class5744 class5744) {
         if (this.method9906()) {
-            if (Class3290.field15514.field4684 != null) {
+            if (Class3290.field15514.player != null) {
                 if (!Class3295.method10433()) {
                     if (!Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
                         if (class5744.method17046()) {
                             if (Class3256.field15748 > 1) {
-                                final double n = Class3290.field15514.field4684.posX - Class3290.field15514.field4684.field4074;
-                                final double n2 = Class3290.field15514.field4684.posZ - Class3290.field15514.field4684.field4076;
+                                final double n = Class3290.field15514.player.posX - Class3290.field15514.player.field4074;
+                                final double n2 = Class3290.field15514.player.posZ - Class3290.field15514.player.field4076;
                                 if (this.field15847 != 0) {
                                     this.field15849 = Math.sqrt(n * n + n2 * n2);
                                 }
@@ -49,14 +49,14 @@ public class Class3290 extends Class3167
     
     @Class6753
     public void method10413(final Class5717 class5717) {
-        if (!this.method9906() || Class3290.field15514.field4684 == null) {
+        if (!this.method9906() || Class3290.field15514.player == null) {
             return;
         }
-        if (!Class3295.method10433() && !Class3290.field15514.field4684.method1706()) {
+        if (!Class3295.method10433() && !Class3290.field15514.player.method1706()) {
             if (this.field15848 < 2) {
                 ++this.field15848;
             }
-            if (!Class3290.field15514.field4684.onGround) {
+            if (!Class3290.field15514.player.onGround) {
                 if (this.field15847 >= 0) {
                     ++this.field15847;
                     double n = this.field15849;
@@ -75,12 +75,12 @@ public class Class3290 extends Class3167
                 }
             }
             else if (this.field15848 > 1) {
-                if ((this.method9883("Auto Jump") && Class6430.method19114()) || Class3290.field15514.field4648.field23439.method1056()) {
+                if ((this.method9883("Auto Jump") && Class6430.method19114()) || Class3290.field15514.gameSettings.field23439.method1056()) {
                     this.field15847 = 0;
-                    Class3290.field15514.field4684.method2725();
-                    class5717.method16973(Class3290.field15514.field4684.getMotion().x);
-                    class5717.method16975(Class3290.field15514.field4684.getMotion().y);
-                    class5717.method16977(Class3290.field15514.field4684.getMotion().z);
+                    Class3290.field15514.player.method2725();
+                    class5717.method16973(Class3290.field15514.player.getMotion().x);
+                    class5717.method16975(Class3290.field15514.player.getMotion().y);
+                    class5717.method16977(Class3290.field15514.player.getMotion().z);
                 }
             }
             return;
@@ -97,7 +97,7 @@ public class Class3290 extends Class3167
         if (this.field15847 != 0) {
             class5722.method16961(true);
         }
-        if (Class3290.field15514.field4648.field23439.method1056() && Class9463.method35173().method35189().method21551(Class3260.class).method9906()) {
+        if (Class3290.field15514.gameSettings.field23439.method1056() && Class9463.method35173().method35189().method21551(Class3260.class).method9906()) {
             return;
         }
         double b = 0.56 + Class7482.method23139() * 0.1;

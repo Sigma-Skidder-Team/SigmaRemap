@@ -28,7 +28,7 @@ public class Class534 extends Screen
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.method3029(new Class654((this.width - 200) / 2, 40, 200, 20, Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]), class654 -> {
+        this.addButton(new Class654((this.width - 200) / 2, 40, 200, 20, Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]), class654 -> {
             ++this.field3188;
             if (this.field3188 >= Class534.field3184.size()) {
                 this.field3188 = 0;
@@ -37,11 +37,11 @@ public class Class534 extends Screen
         }));
         this.field3187 = new Class621(this, null);
         this.children.add(this.field3187);
-        this.field3189 = this.method3029(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.field3189 = this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
             this.field3185.field3231 = this.method3082();
-            this.minecraft.method5244(this.field3185);
+            this.minecraft.displayGuiScreen(this.field3185);
         }));
-        this.method3029(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.method5244(this.field3185)));
+        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3185)));
         this.method3081();
         this.method3083();
     }
@@ -100,13 +100,13 @@ public class Class534 extends Screen
     }
     
     @Override
-    public void method2975(final int n, final int n2, final float n3) {
-        this.method3043(0);
-        this.field3187.method2975(n, n2, n3);
-        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 8, 16777215);
-        this.method3295(this.font, Class8822.method30773("createWorld.customize.buffet.generator", new Object[0]), this.width / 2, 30, 10526880);
-        this.method3295(this.font, Class8822.method30773("createWorld.customize.buffet.biome", new Object[0]), this.width / 2, 68, 10526880);
-        super.method2975(n, n2, n3);
+    public void render(final int n, final int n2, final float n3) {
+        this.renderDirtBackground(0);
+        this.field3187.render(n, n2, n3);
+        this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 8, 16777215);
+        this.drawCenteredString(this.font, Class8822.method30773("createWorld.customize.buffet.generator", new Object[0]), this.width / 2, 30, 10526880);
+        this.drawCenteredString(this.font, Class8822.method30773("createWorld.customize.buffet.biome", new Object[0]), this.width / 2, 68, 10526880);
+        super.render(n, n2, n3);
     }
     
     static {
