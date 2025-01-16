@@ -12,36 +12,50 @@ import java.util.List;
 
 public enum Action
 {
-    REPLACE("replace") {
-        @Override
-        public void runAction(final INBT class41, final NBTPath class42, final List<INBT> list) throws CommandSyntaxException {
-            class42.func_218076_b(class41, (INBT)Iterables.getLast((Iterable)list)::copy);
-        }
-    }, 
-    APPEND("append") {
-        @Override
-        public void runAction(final INBT class41, final NBTPath class42, final List<INBT> list) throws CommandSyntaxException {
-            class42.func_218073_a(class41, ListNBT::new).forEach(class43 -> {
-                if (!(!(class43 instanceof ListNBT))) {
-                    list2.forEach(class45 -> ((ListNBT)class44).add(class45.copy()));
+    REPLACE("replace")
+            {
+                public void runAction(INBT p_216227_1_, NBTPath p_216227_2_, List<INBT> p_216227_3_) throws CommandSyntaxException
+                {
+                    p_216227_2_.func_218076_b(p_216227_1_, Iterables.getLast(p_216227_3_)::copy);
                 }
-            });
-        }
-    }, 
-    MERGE("merge") {
-        @Override
-        public void runAction(final INBT class41, final NBTPath class42, final List<INBT> list) throws CommandSyntaxException {
-            class42.func_218073_a(class41, CompoundNBT::new).forEach(class43 -> {
-                if (!(!(class43 instanceof CompoundNBT))) {
-                    list2.forEach(class45 -> {
-                        if (!(!(class45 instanceof CompoundNBT))) {
-                            ((CompoundNBT)class44).merge((CompoundNBT)class45);
+            },
+    APPEND("append")
+            {
+                public void runAction(INBT p_216227_1_, NBTPath p_216227_2_, List<INBT> p_216227_3_) throws CommandSyntaxException
+                {
+                    List<INBT> list = p_216227_2_.func_218073_a(p_216227_1_, ListNBT::new);
+                    list.forEach((p_216232_1_) ->
+                    {
+                        if (p_216232_1_ instanceof ListNBT)
+                        {
+                            p_216227_3_.forEach((p_216231_1_) ->
+                            {
+                                ((ListNBT)p_216232_1_).add(p_216231_1_.copy());
+                            });
                         }
                     });
                 }
-            });
-        }
-    };
+            },
+    MERGE("merge")
+            {
+                public void runAction(INBT p_216227_1_, NBTPath p_216227_2_, List<INBT> p_216227_3_) throws CommandSyntaxException
+                {
+                    List<INBT> list = p_216227_2_.func_218073_a(p_216227_1_, CompoundNBT::new);
+                    list.forEach((p_216234_1_) ->
+                    {
+                        if (p_216234_1_ instanceof CompoundNBT)
+                        {
+                            p_216227_3_.forEach((p_216233_1_) ->
+                            {
+                                if (p_216233_1_ instanceof CompoundNBT)
+                                {
+                                    ((CompoundNBT)p_216234_1_).merge((CompoundNBT)p_216233_1_);
+                                }
+                            });
+                        }
+                    });
+                }
+            };
     
     private final String op;
     
