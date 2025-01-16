@@ -34,7 +34,7 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public Class7099 method6702(final BlockPos class354) {
+    public IFluidState method6702(final BlockPos class354) {
         return Class7558.field29974.method22148();
     }
     

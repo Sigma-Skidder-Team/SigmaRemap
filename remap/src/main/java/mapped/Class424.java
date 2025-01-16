@@ -108,7 +108,7 @@ public class Class424 extends Entity
                     final double method21698 = this.getMotion().lengthSquared();
                     if (b) {
                         if (method21698 > 1.0) {
-                            final Class7005 method21699 = this.world.method6987(new Class8478(new Vec3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.method1934(), Class2040.field11632, Class2191.field13326, this));
+                            final Class7005 method21699 = this.world.rayTraceBlocks(new RayTraceContext(new Vec3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.method1934(), Class2040.field11632, Class2191.field13326, this));
                             if (method21699.method21449() != Class2165.field12880) {
                                 if (this.world.method6702(method21699.method21447()).method21793(Class7324.field28319)) {
                                     method21697 = method21699.method21447();

@@ -387,7 +387,7 @@ public class Class689 extends Class565
                 }
             }
             if (this.field3795.method21449() == Class2165.field12881) {
-                final Class7099 method6703 = this.field3792.field4683.method6702(((Class7005)this.field3795).method21447());
+                final IFluidState method6703 = this.field3792.field4683.method6702(((Class7005)this.field3795).method21447());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Fluid");
                 arrayList.add(String.valueOf(Registry.field206.getKey(method6703.method21779())));

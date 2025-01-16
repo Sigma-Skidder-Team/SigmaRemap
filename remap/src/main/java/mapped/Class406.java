@@ -224,7 +224,7 @@ public class Class406 extends Entity implements Class407, Class401
                 }
                 int n2 = 0;
                 for (int i = 0; i < 2; ++i) {
-                    if (this.world.method6987(new Class8478(method1934, new Vec3d(class8324.getPosX(), class8324.method1942(0.5 * i), class8324.getPosZ()), Class2040.field11632, Class2191.field13325, this)).method21449() == Class2165.field12880) {
+                    if (this.world.rayTraceBlocks(new RayTraceContext(method1934, new Vec3d(class8324.getPosX(), class8324.method1942(0.5 * i), class8324.getPosZ()), Class2040.field11632, Class2191.field13325, this)).method21449() == Class2165.field12880) {
                         n2 = 1;
                         break;
                     }

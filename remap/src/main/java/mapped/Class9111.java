@@ -22,7 +22,7 @@ public class Class9111
     public static boolean field38603;
     
     public static void method32952(final Class6092 class6092, final float f, final Class1848 class6093, final int n, final float n2) {
-        final Class7099 method18169 = class6092.method18169();
+        final IFluidState method18169 = class6092.method18169();
         if (!method18169.method21793(Class7324.field28319)) {
             if (!method18169.method21793(Class7324.field28320)) {
                 final float n3 = 1.0f - (float)Math.pow(0.25f + 0.75f * n / 32.0f, 0.25);
@@ -198,7 +198,7 @@ public class Class9111
     
     public static void method32955(final Class6092 class6092, final Class1985 class6093, final float a, final boolean b, final float n) {
         Class9111.field38603 = false;
-        final Class7099 method18169 = class6092.method18169();
+        final IFluidState method18169 = class6092.method18169();
         final Entity method18170 = class6092.method18166();
         final boolean b2 = method18169.method21779() != Class7558.field29974;
         float method18171 = -1.0f;

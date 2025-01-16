@@ -285,7 +285,7 @@ public class Class3916 extends Block implements Class3856
     }
     
     @Override
-    public Class7099 method11864(final Class7096 class7096) {
+    public IFluidState method11864(final Class7096 class7096) {
         return class7096.method21772((IProperty<Boolean>)Class3916.field17735) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     

@@ -21,7 +21,7 @@ public class Class3859 extends Block implements Class3857
     private static String[] field17479;
     public static final Class7112 field17480;
     public final Class7257 field17481;
-    private final List<Class7099> field17482;
+    private final List<IFluidState> field17482;
     
     public Class3859(final Class7257 field17481, final Class9288 class9288) {
         super(class9288);
@@ -50,7 +50,7 @@ public class Class3859 extends Block implements Class3857
     }
     
     @Override
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return this.field17482.get(Math.min(class7096.get((IProperty<Integer>)Class3859.field17480), 8));
     }
     
@@ -111,7 +111,7 @@ public class Class3859 extends Block implements Class3857
                 }
             }
             if (n != 0) {
-                final Class7099 method6702 = class1847.method6702(class1848);
+                final IFluidState method6702 = class1847.method6702(class1848);
                 if (method6702.method21780()) {
                     class1847.method6692(class1848, Class7521.field29286.getDefaultState());
                     this.method11927(class1847, class1848);
@@ -137,7 +137,7 @@ public class Class3859 extends Block implements Class3857
     }
     
     @Override
-    public Class7255 method11922(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
+    public Fluid method11922(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
         if (class1853.get((IProperty<Integer>)Class3859.field17480) != 0) {
             return Class7558.field29974;
         }

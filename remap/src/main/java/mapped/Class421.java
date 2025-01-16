@@ -40,7 +40,7 @@ public class Class421 extends Class419
     }
     
     @Override
-    public float method1856(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final Class7099 class6158, final float b) {
+    public float method1856(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final IFluidState class6158, final float b) {
         return (this.method2036() && Class767.method4244(class6157)) ? Math.min(0.8f, b) : b;
     }
     

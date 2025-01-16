@@ -19,7 +19,7 @@ public class Class1858 implements Class1856
     public final int field10133;
     public final Class1862[][] field10134;
     public final BlockState[] field10135;
-    public final Class7099[] field10136;
+    public final IFluidState[] field10136;
     public final World field10137;
     
     @Nullable
@@ -84,7 +84,7 @@ public class Class1858 implements Class1856
     }
     
     @Override
-    public Class7099 method6702(final BlockPos class354) {
+    public IFluidState method6702(final BlockPos class354) {
         return this.field10134[(class354.getX() >> 4) - this.field10128][(class354.getZ() >> 4) - this.field10129].method6702(class354);
     }
     

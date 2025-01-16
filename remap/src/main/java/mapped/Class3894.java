@@ -111,7 +111,7 @@ public class Class3894 extends Class3892 implements Class3856
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         final Class7096 method11878 = this.getDefaultState();
-        final Class7099 method11879 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method11879 = class7074.method21654().method6702(class7074.method21639());
         final Direction method11880 = class7074.method21648();
         Class7096 class7075;
         if (!class7074.method21641() && method11880.getAxis().isHorizontal()) {
@@ -132,7 +132,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public Class7099 method11864(final Class7096 class7096) {
+    public IFluidState method11864(final Class7096 class7096) {
         return class7096.method21772((IProperty<Boolean>)Class3894.field17570) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     

@@ -107,7 +107,7 @@ public enum Class234
                 }
                 break;
             }
-            final Class7005 method6738 = Class3213.method10132().field4683.method6987(new Class8478(class5487, class5488, Class2040.field11632, Class2191.field13325, Class3213.method10131().field4684));
+            final Class7005 method6738 = Class3213.method10132().field4683.method6987(new RayTraceContext(class5487, class5488, Class2040.field11632, Class2191.field13325, Class3213.method10131().field4684));
             if (method6738 != null && method6738.method21449() != Class2165.field12880) {
                 this.field894 = method6738;
                 this.field888 = this.field894.method21451().x;

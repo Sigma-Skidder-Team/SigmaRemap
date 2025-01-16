@@ -11,9 +11,9 @@ import net.minecraft.world.World;
 public class Class3821 extends Item
 {
     private static String[] field17372;
-    private final Class7255 field17373;
+    private final Fluid field17373;
     
-    public Class3821(final Class7255 field17373, final Class8959 class8959) {
+    public Class3821(final Fluid field17373, final Class8959 class8959) {
         super(class8959);
         this.field17373 = field17373;
     }
@@ -38,7 +38,7 @@ public class Class3821 extends Item
         if (this.field17373 == Class7558.field29974) {
             final BlockState method2720 = class1847.getBlockState(method2717);
             if (method2720.getBlock() instanceof Class3857) {
-                final Class7255 method2721 = ((Class3857)method2720.getBlock()).method11922(class1847, method2717, method2720);
+                final Fluid method2721 = ((Class3857)method2720.getBlock()).method11922(class1847, method2717, method2720);
                 if (method2721 != Class7558.field29974) {
                     class1848.method2859(Class8276.field33981.method8449(this));
                     class1848.method1695(method2721.method22166(Class7324.field28320) ? Class8520.field35054 : Class8520.field35052, 1.0f, 1.0f);

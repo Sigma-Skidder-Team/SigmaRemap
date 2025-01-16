@@ -18,13 +18,13 @@ public class Class1792 implements Class1662
 {
     private final Class6209<Block> field9918;
     private final Class6209<Item> field9919;
-    private final Class6209<Class7255> field9920;
+    private final Class6209<Fluid> field9920;
     private final Class6209<EntityType<?>> field9921;
     
     public Class1792() {
         this.field9918 = new Class6209<Block>(Registry.BLOCK, "tags/blocks", "block");
         this.field9919 = new Class6209<Item>(Registry.field211, "tags/items", "item");
-        this.field9920 = new Class6209<Class7255>(Registry.field206, "tags/fluids", "fluid");
+        this.field9920 = new Class6209<Fluid>(Registry.field206, "tags/fluids", "fluid");
         this.field9921 = new Class6209<EntityType<?>>(Registry.field210, "tags/entity_types", "entity_type");
     }
     
@@ -36,7 +36,7 @@ public class Class1792 implements Class1662
         return this.field9919;
     }
     
-    public Class6209<Class7255> method6465() {
+    public Class6209<Fluid> method6465() {
         return this.field9920;
     }
     
@@ -62,7 +62,7 @@ public class Class1792 implements Class1662
     
     @Override
     public CompletableFuture<Void> method5785(final Class7885 class7885, final Class6582 class7886, final IProfiler class7887, final IProfiler class7888, final Executor executor, final Executor executor2) {
-        return this.field9918.method18464(class7886, executor).thenCombine((CompletionStage<?>)this.field9919.method18464(class7886, executor), (BiFunction<? super Map<ResourceLocation, Class8162<Object>>, ? super Object, ?>)Pair::of).thenCombine((CompletionStage<?>)this.field9920.method18464(class7886, executor).thenCombine((CompletionStage<?>)this.field9921.method18464(class7886, executor), (BiFunction<? super Map<ResourceLocation, Class8162<Object>>, ? super Object, ?>)Pair::of), (pair, pair2) -> new Class6950((Map<ResourceLocation, Class8162<Block>>)pair.getFirst(), (Map<ResourceLocation, Class8162<Item>>)pair.getSecond(), (Map<ResourceLocation, Class8162<Class7255>>)pair2.getFirst(), (Map<ResourceLocation, Class8162<EntityType<?>>>)pair2.getSecond())).thenCompose((Function<? super Object, ? extends CompletionStage<Object>>)class7885::method25538).thenAcceptAsync(class7889 -> {
+        return this.field9918.method18464(class7886, executor).thenCombine((CompletionStage<?>)this.field9919.method18464(class7886, executor), (BiFunction<? super Map<ResourceLocation, Class8162<Object>>, ? super Object, ?>)Pair::of).thenCombine((CompletionStage<?>)this.field9920.method18464(class7886, executor).thenCombine((CompletionStage<?>)this.field9921.method18464(class7886, executor), (BiFunction<? super Map<ResourceLocation, Class8162<Object>>, ? super Object, ?>)Pair::of), (pair, pair2) -> new Class6950((Map<ResourceLocation, Class8162<Block>>)pair.getFirst(), (Map<ResourceLocation, Class8162<Item>>)pair.getSecond(), (Map<ResourceLocation, Class8162<Fluid>>)pair2.getFirst(), (Map<ResourceLocation, Class8162<EntityType<?>>>)pair2.getSecond())).thenCompose((Function<? super Object, ? extends CompletionStage<Object>>)class7885::method25538).thenAcceptAsync(class7889 -> {
             this.field9918.method18465(class7889.field27211);
             this.field9919.method18465(class7889.field27212);
             this.field9920.method18465(class7889.field27213);

@@ -128,7 +128,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Class7099 class1854) {
+    public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final IFluidState class1854) {
         if (!class1853.get((IProperty<Boolean>)Class8970.field37747) && class1854.method21779() == Class7558.field29976) {
             if (class1853.get((IProperty<Boolean>)Class3918.field17760)) {
                 if (!class1851.isRemote()) {
@@ -214,7 +214,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return class7096.get((IProperty<Boolean>)Class3918.field17762) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     

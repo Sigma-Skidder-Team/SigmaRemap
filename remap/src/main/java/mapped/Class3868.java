@@ -41,7 +41,7 @@ public class Class3868 extends Class3869 implements Class3867
     public BlockState method11846(final Class7074 class7074) {
         final BlockState method11846 = super.method11846(class7074);
         if (method11846 != null) {
-            final Class7099 method11847 = class7074.method21654().method6702(class7074.method21639().method1137());
+            final IFluidState method11847 = class7074.method21654().method6702(class7074.method21639().method1137());
             if (method11847.method21793(Class7324.field28319)) {
                 if (method11847.method21784() == 8) {
                     return method11846;
@@ -54,7 +54,7 @@ public class Class3868 extends Class3869 implements Class3867
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         if (class7096.get(Class3868.field17508) != Class182.field564) {
-            final Class7099 method6702 = class7097.method6702(class7098);
+            final IFluidState method6702 = class7097.method6702(class7098);
             if (super.method11843(class7096, class7097, class7098)) {
                 if (method6702.method21793(Class7324.field28319)) {
                     if (method6702.method21784() == 8) {
@@ -69,17 +69,17 @@ public class Class3868 extends Class3869 implements Class3867
     }
     
     @Override
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return Class7558.field29976.method22177(false);
     }
     
     @Override
-    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Class7255 class1858) {
+    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
         return false;
     }
     
     @Override
-    public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Class7099 class1854) {
+    public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final IFluidState class1854) {
         return false;
     }
     

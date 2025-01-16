@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 
-public class Class1817<T extends Class512> extends Class1799<T, Class5860<T>>
+public class Class1817<T extends PlayerEntity> extends Class1799<T, Class5860<T>>
 {
     private final Class5869 field9996;
     

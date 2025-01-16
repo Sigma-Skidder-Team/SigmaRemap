@@ -351,7 +351,7 @@ public class Class3279 extends Class3167
             else {
                 n8 = Class6430.method19118(-16171506, 0.5f);
             }
-            final int method9888 = Class6430.method19118((class399 instanceof Class512) ? new Color(Class9011.method32263((Class512)class399)).getRGB() : Class265.field1278.field1292, 0.5f);
+            final int method9888 = Class6430.method19118((class399 instanceof PlayerEntity) ? new Color(Class9011.method32263((PlayerEntity)class399)).getRGB() : Class265.field1278.field1292, 0.5f);
             final int n9 = field40314.method23505(method9887) / 2;
             if (!Class3279.field15781.containsKey(method9887)) {
                 Class8154.method26913((float)(-n9 - 10), -25.0f, (float)(n9 * 2 + 20), (float)(field40314.method23539() + 27), 20.0f, 0.5f);
@@ -390,7 +390,7 @@ public class Class3279 extends Class3167
     @Class6753
     public void method10337(final Class5749 class5749) {
         if (this.method9906()) {
-            if (class5749.method17056() instanceof Class512) {
+            if (class5749.method17056() instanceof PlayerEntity) {
                 class5749.method16961(true);
             }
         }

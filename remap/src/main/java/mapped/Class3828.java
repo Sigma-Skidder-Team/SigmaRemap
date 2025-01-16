@@ -37,7 +37,7 @@ public class Class3828 extends Item
                 ((Class3931)Class7521.field29335).method12048(method21654, method21655, method21656, method21657);
                 method21654.method6839(null, 1010, method21655, Item.method11696(this));
                 method21657.method27693(1);
-                final Class512 method21658 = class7075.method21652();
+                final PlayerEntity method21658 = class7075.method21652();
                 if (method21658 != null) {
                     method21658.method2857(Class8276.field34040);
                 }

@@ -309,7 +309,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11798(this, class7074);
     }
 
-    public boolean method21751(final Class7255 class7255) {
+    public boolean method21751(final Fluid class7255) {
         return this.getBlock().method11799(this, class7255);
     }
 
@@ -330,7 +330,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11785(class7909);
     }
 
-    public Class7099 getFluidState() {
+    public IFluidState getFluidState() {
         return this.getBlock().method11864(this);
     }
 

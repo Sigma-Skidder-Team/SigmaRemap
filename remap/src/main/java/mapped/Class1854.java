@@ -87,7 +87,7 @@ public class Class1854 implements Class1855, Class1853
     }
     
     @Override
-    public Class7099 method6702(final BlockPos class354) {
+    public IFluidState method6702(final BlockPos class354) {
         if (!World.isOutsideBuildHeight(class354)) {
             return this.method6982(class354).method6702(class354);
         }

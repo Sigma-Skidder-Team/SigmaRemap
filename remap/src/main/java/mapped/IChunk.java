@@ -111,7 +111,7 @@ public interface IChunk extends Class1855, Class1861
     
     Class6952<Block> method7036();
     
-    Class6952<Class7255> method7037();
+    Class6952<Fluid> method7037();
     
     default BitSet method7038(final Class2126 class2126) {
         throw Class8349.method27859(new RuntimeException("Meaningless in this context"));

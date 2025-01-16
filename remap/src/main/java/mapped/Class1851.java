@@ -31,7 +31,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
     
     Class6952<Block> method6833();
     
-    Class6952<Class7255> method6834();
+    Class6952<Fluid> method6834();
     
     World method6744();
     

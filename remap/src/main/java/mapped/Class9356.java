@@ -28,7 +28,7 @@ public class Class9356
         this.field40140 = Class7637.field30241.method11332();
     }
     
-    private static boolean method34679(final Class1855 class1855, final BlockPos class1856, final Direction class1857, final Class7099 class1858) {
+    private static boolean method34679(final Class1855 class1855, final BlockPos class1856, final Direction class1857, final IFluidState class1858) {
         return class1855.method6702(class1856.method1149(class1857)).method21779().method22165(class1858.method21779());
     }
     
@@ -38,7 +38,7 @@ public class Class9356
         return method1150.isSolid() && VoxelShapes.method24502(VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, n, 1.0), method1150.getRenderShape(class1855, method1149), class1857);
     }
     
-    public boolean method34681(final Class1856 class1856, final BlockPos class1857, final Class4150 class1858, final Class7099 class1859) {
+    public boolean method34681(final Class1856 class1856, final BlockPos class1857, final Class4150 class1858, final IFluidState class1859) {
         final BlockState method21791 = class1859.method21791();
         boolean b7;
         try {
@@ -318,7 +318,7 @@ public class Class9356
         return ((n <= n2) ? n2 : n) | ((n3 <= n4) ? n4 : n3) << 16;
     }
     
-    private float method34685(final Class1855 class1855, final BlockPos class1856, final Class7255 class1857) {
+    private float method34685(final Class1855 class1855, final BlockPos class1856, final Fluid class1857) {
         int n = 0;
         float n2 = 0.0f;
         for (int i = 0; i < 4; ++i) {
@@ -326,7 +326,7 @@ public class Class9356
             if (class1855.method6702(method1134.method1137()).method21779().method22165(class1857)) {
                 return 1.0f;
             }
-            final Class7099 method1135 = class1855.method6702(method1134);
+            final IFluidState method1135 = class1855.method6702(method1134);
             if (!method1135.method21779().method22165(class1857)) {
                 if (!class1855.getBlockState(method1134).getMaterial().method26439()) {
                     ++n;

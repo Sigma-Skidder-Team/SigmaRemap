@@ -476,7 +476,7 @@ public class Class4651 extends Class4654
             if (!method6702.method11785(Class7188.field27911)) {
                 if (!method6702.method11785(Class7188.field27904)) {
                     if (!(method6702 instanceof Class3898) || method6701.get((IProperty<Boolean>)Class3898.field17585)) {
-                        final Class7099 method6704 = class1855.method6702(class1856);
+                        final IFluidState method6704 = class1855.method6702(class1856);
                         if (method6704.method21793(Class7324.field28319)) {
                             return Class257.field1211;
                         }

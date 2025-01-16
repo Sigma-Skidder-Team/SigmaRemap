@@ -47,16 +47,16 @@ public class Class1865 implements IChunk
     private final Map<String, LongSet> field10182;
     private final Class8288 field10183;
     private final Class6951<Block> field10184;
-    private final Class6951<Class7255> field10185;
+    private final Class6951<Fluid> field10185;
     private long field10186;
     private final Map<Class2126, BitSet> field10187;
     private volatile boolean field10188;
     
     public Class1865(final Class7859 class7859, final Class8288 class7860) {
-        this(class7859, class7860, null, new Class6951<Block>(class7861 -> class7861 == null || class7861.getDefaultState().method21706(), class7859), new Class6951<Class7255>(class7862 -> class7862 == null || class7862 == Class7558.field29974, class7859));
+        this(class7859, class7860, null, new Class6951<Block>(class7861 -> class7861 == null || class7861.getDefaultState().method21706(), class7859), new Class6951<Fluid>(class7862 -> class7862 == null || class7862 == Class7558.field29974, class7859));
     }
     
-    public Class1865(final Class7859 field10169, final Class8288 field10170, final Class8199[] array, final Class6951<Block> field10171, final Class6951<Class7255> field10172) {
+    public Class1865(final Class7859 field10169, final Class8288 field10170, final Class8199[] array, final Class6951<Block> field10171, final Class6951<Fluid> field10172) {
         this.field10173 = Maps.newEnumMap((Class)Class2020.class);
         this.field10174 = ChunkStatus.field39977;
         this.field10175 = Maps.newHashMap();
@@ -93,7 +93,7 @@ public class Class1865 implements IChunk
     }
     
     @Override
-    public Class7099 method6702(final BlockPos class354) {
+    public IFluidState method6702(final BlockPos class354) {
         final int method1075 = class354.getY();
         if (!World.method6684(method1075)) {
             final Class8199 class355 = this.method7014()[method1075 >> 4];
@@ -371,7 +371,7 @@ public class Class1865 implements IChunk
         return this.field10184;
     }
     
-    public Class6951<Class7255> method7103() {
+    public Class6951<Fluid> method7103() {
         return this.field10185;
     }
     

@@ -567,7 +567,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     @Override
-    public void method2727(final Class7909<Class7255> class7909) {
+    public void method2727(final Class7909<Fluid> class7909) {
         this.method1936(this.getMotion().add(0.0, 0.01, 0.0));
     }
     

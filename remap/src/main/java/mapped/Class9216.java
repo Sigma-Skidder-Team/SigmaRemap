@@ -3049,7 +3049,7 @@ public class Class9216
                 final float n4 = (float)Math.exp(Math.log(0.5) * (Class9216.field39084 * 0.01f) / Class9216.field39093);
                 Class9216.field39097 = Class9216.field39097 * n4 + (Class9216.field39096 & 0xFFFF) * (1.0f - n4);
                 Class9216.field39098 = Class9216.field39098 * n4 + (Class9216.field39096 >> 16) * (1.0f - n4);
-                final Class7099 method18167 = class6092.method18169();
+                final IFluidState method18167 = class6092.method18169();
                 if (method18167.method21793(Class7324.field28319)) {
                     Class9216.field39095 = 1;
                 }

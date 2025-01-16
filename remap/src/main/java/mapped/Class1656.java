@@ -377,7 +377,7 @@ public class Class1656 implements AutoCloseable, Class1657
                     final double nextDouble = random.nextDouble();
                     final double nextDouble2 = random.nextDouble();
                     final Class7096 method6772 = field4683.getBlockState(method6771);
-                    final Class7099 method6773 = field4683.method6702(method6769);
+                    final IFluidState method6773 = field4683.method6702(method6769);
                     final VoxelShape method6774 = method6772.method21727(field4683, method6771);
                     final double method6775 = method6774.method24547(Axis.Y, nextDouble, nextDouble2);
                     double n5;

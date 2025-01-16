@@ -101,7 +101,7 @@ public class Class1945 extends Class1944
                         this.method7898(class9006, hashSet, method1158);
                     }
                 }
-                final Class7099 method1159 = method1157.getFluidState();
+                final IFluidState method1159 = method1157.getFluidState();
                 final Class6349 method1160 = this.method7896(class9010);
                 if (!method1159.isEmpty()) {
                     final Class6332[] method1161 = Class8974.method31912(this.field10599, method1159, array);

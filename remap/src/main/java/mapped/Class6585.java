@@ -183,7 +183,7 @@ public class Class6585
                             if (method32866 != null && !method32866.isVecInside(field38248)) {
                                 continue;
                             }
-                            final Class7099 class1855 = class1853.method32864() ? class1851.method6702(field38248) : null;
+                            final IFluidState class1855 = class1853.method32864() ? class1851.method6702(field38248) : null;
                             final BlockState method32867 = class1854.field38249.method21709(class1853.method32855()).method21708(class1853.method32856());
                             if (class1854.field38250 != null) {
                                 Class447.method2267(class1851.method6727(field38248));
@@ -230,10 +230,10 @@ public class Class6585
                             while (iterator2.hasNext()) {
                                 BlockPos class1857;
                                 final BlockPos class1856 = class1857 = (BlockPos)iterator2.next();
-                                Class7099 method32869 = class1851.method6702(class1856);
+                                IFluidState method32869 = class1851.method6702(class1856);
                                 for (int n3 = 0; n3 < array.length && !method32869.method21780(); ++n3) {
                                     final BlockPos method32870 = class1857.method1149(array[n3]);
-                                    final Class7099 method32871 = class1851.method6702(method32870);
+                                    final IFluidState method32871 = class1851.method6702(method32870);
                                     if (method32871.method21782(class1851, method32870) <= method32869.method21782(class1851, class1857)) {
                                         if (!method32871.method21780()) {
                                             continue;

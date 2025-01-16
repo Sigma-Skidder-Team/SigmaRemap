@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Class727 extends Class527
 {
-    private final Class512 field3959;
+    private final PlayerEntity field3959;
     private final ItemStack field3960;
     private boolean field3961;
     private boolean field3962;
@@ -34,7 +34,7 @@ public class Class727 extends Class527
     private Class654 field3976;
     private final Class316 field3977;
     
-    public Class727(final Class512 field3959, final ItemStack field3960, final Class316 field3961) {
+    public Class727(final PlayerEntity field3959, final ItemStack field3960, final Class316 field3961) {
         super(Class7895.field32402);
         this.field3965 = Lists.newArrayList();
         this.field3966 = "";

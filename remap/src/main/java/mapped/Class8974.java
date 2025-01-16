@@ -260,9 +260,9 @@ public class Class8974
         return this.field37822;
     }
     
-    private Class6332[] method31887(final Class7099 class7099, final Class6332[] array) {
+    private Class6332[] method31887(final IFluidState IFluidState, final Class6332[] array) {
         if (!Class7520.method23482()) {
-            array[0] = Class7969.method25827(class7099);
+            array[0] = Class7969.method25827(IFluidState);
             return array;
         }
         return Class7520.field29141;

@@ -34,7 +34,7 @@ public class Class3877 extends Class3874 implements Class3872, Class3867
     @Nullable
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        final Class7099 method6702 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method6702 = class7074.method21654().method6702(class7074.method21639());
         return (method6702.method21793(Class7324.field28319) && method6702.method21784() == 8) ? super.method11846(class7074) : null;
     }
     
@@ -58,7 +58,7 @@ public class Class3877 extends Class3874 implements Class3872, Class3867
     }
     
     @Override
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return Class7558.field29976.method22177(false);
     }
     
@@ -74,12 +74,12 @@ public class Class3877 extends Class3874 implements Class3872, Class3867
     }
     
     @Override
-    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Class7255 class1858) {
+    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
         return false;
     }
     
     @Override
-    public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Class7099 class1854) {
+    public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final IFluidState class1854) {
         return false;
     }
     

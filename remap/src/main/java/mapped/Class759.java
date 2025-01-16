@@ -1303,7 +1303,7 @@ public abstract class Class759 extends LivingEntity
     }
     
     @Override
-    public void method2727(final Class7909<Class7255> class7909) {
+    public void method2727(final Class7909<Fluid> class7909) {
         if (!this.method4150().method24742()) {
             this.method1936(this.getMotion().add(0.0, 0.3, 0.0));
         }

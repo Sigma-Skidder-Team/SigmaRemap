@@ -109,7 +109,7 @@ public class Class425 extends Entity
                 }
                 float method21782 = 0.0f;
                 final BlockPos class354 = new BlockPos(this);
-                final Class7099 method21783 = this.world.method6702(class354);
+                final IFluidState method21783 = this.world.method6702(class354);
                 if (method21783.method21793(Class7324.field28319)) {
                     method21782 = method21783.method21782(this.world, class354);
                 }

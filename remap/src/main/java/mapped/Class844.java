@@ -47,7 +47,7 @@ public class Class844 extends Class763
         this.field4114.method22062(4, new Class3624(this));
         this.field4114.method22062(5, class3489);
         this.field4114.method22062(7, this.field4507);
-        this.field4114.method22062(8, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(8, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(8, new Class3628(this, Class844.class, 12.0f, 0.01f));
         this.field4114.method22062(9, new Class3503(this));
         this.field4507.method11019(EnumSet.of(Class2139.field12580, Class2139.field12581));

@@ -35,7 +35,7 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public Class7099 method6702(final BlockPos class354) {
+    public IFluidState method6702(final BlockPos class354) {
         return this.field10190.method6702(class354);
     }
     
@@ -193,8 +193,8 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public Class6951<Class7255> method7103() {
-        return new Class6951<Class7255>(class7255 -> class7255 == Class7558.field29974, this.method7019());
+    public Class6951<Fluid> method7103() {
+        return new Class6951<Fluid>(class7255 -> class7255 == Class7558.field29974, this.method7019());
     }
     
     @Override

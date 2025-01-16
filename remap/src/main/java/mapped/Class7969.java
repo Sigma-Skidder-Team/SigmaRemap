@@ -13,7 +13,7 @@ public class Class7969
 {
     private static String[] field32746;
     private static final Map<Block, Class6332> field32747;
-    private static final Map<Class7255, Class6332> field32748;
+    private static final Map<Fluid, Class6332> field32748;
     private static boolean field32749;
     
     public static Class6332 method25824(final BlockState class7096) {
@@ -37,8 +37,8 @@ public class Class7969
         return method25825(((Class4036)method27622).method12240().getDefaultState());
     }
     
-    public static Class6332 method25827(final Class7099 class7099) {
-        final Class6332 class7100 = Class7969.field32748.get(class7099.method21779());
+    public static Class6332 method25827(final IFluidState IFluidState) {
+        final Class6332 class7100 = Class7969.field32748.get(IFluidState.method21779());
         return (class7100 == null) ? Class6332.method18761() : class7100;
     }
     

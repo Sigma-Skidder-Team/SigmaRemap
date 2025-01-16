@@ -74,7 +74,7 @@ public class Class1849 extends World
     private int field10094;
     private final Class8955 field10095;
     private final Class6953<Block> field10096;
-    private final Class6953<Class7255> field10097;
+    private final Class6953<Fluid> field10097;
     private final Set<Class7746> field10098;
     public final Class6357 field10099;
     private final ObjectLinkedOpenHashSet<Class9569> field10100;
@@ -89,7 +89,7 @@ public class Class1849 extends World
         this.field10087 = Queues.newArrayDeque();
         this.field10088 = Lists.newArrayList();
         this.field10096 = new Class6953<Block>(this, class8672 -> class8672 == null || class8672.getDefaultState().method21706(), Registry.BLOCK::getKey, Registry.BLOCK::getOrDefault, this::method6872);
-        this.field10097 = new Class6953<Class7255>(this, class8673 -> class8673 == null || class8673 == Class7558.field29974, Registry.field206::getKey, Registry.field206::getOrDefault, this::method6871);
+        this.field10097 = new Class6953<Fluid>(this, class8673 -> class8673 == null || class8673 == Class7558.field29974, Registry.field206::getKey, Registry.field206::getOrDefault, this::method6871);
         this.field10098 = Sets.newHashSet();
         this.field10100 = (ObjectLinkedOpenHashSet<Class9569>)new ObjectLinkedOpenHashSet();
         this.field10091 = field10091;
@@ -363,7 +363,7 @@ public class Class1849 extends World
                             if (method7032.method21757()) {
                                 method7032.method21740(this, method7031, this.rand);
                             }
-                            final Class7099 method7033 = method7032.getFluidState();
+                            final IFluidState method7033 = method7032.getFluidState();
                             if (method7033.method21788()) {
                                 method7033.method21789(this, method7031, this.rand);
                             }
@@ -457,8 +457,8 @@ public class Class1849 extends World
         this.field10094 = 0;
     }
     
-    private void method6871(final Class7460<Class7255> class7460) {
-        final Class7099 method6702 = this.method6702(class7460.field28774);
+    private void method6871(final Class7460<Fluid> class7460) {
+        final IFluidState method6702 = this.method6702(class7460.field28774);
         if (method6702.method21779() == class7460.method22980()) {
             method6702.method21786(this, class7460.field28774);
         }
@@ -961,7 +961,7 @@ public class Class1849 extends World
         if (class400 != null) {
             class402.method18412(class400);
         }
-        class402.method18408();
+        class402.doExplosionA();
         class402.method18409(false);
         if (class401 == Explosion.Mode.field13365) {
             class402.method18415();
@@ -999,7 +999,7 @@ public class Class1849 extends World
         return this.field10096;
     }
     
-    public Class6953<Class7255> method6908() {
+    public Class6953<Fluid> method6908() {
         return this.field10097;
     }
     

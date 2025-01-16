@@ -19,37 +19,37 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
-public abstract class Class7257 extends Class7255
+public abstract class Class7257 extends Fluid
 {
     public static final Class7113 field28132;
     public static final Class7112 field28133;
     private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Class8266>> field28134;
-    private final Map<Class7099, VoxelShape> field28135;
+    private final Map<IFluidState, VoxelShape> field28135;
     
     public Class7257() {
         this.field28135 = Maps.newIdentityHashMap();
     }
     
     @Override
-    public void method22145(final Class9500<Class7255, Class7099> class9500) {
+    public void method22145(final Class9500<Fluid, IFluidState> class9500) {
         class9500.method35378(Class7257.field28132);
     }
     
     @Override
-    public Vec3d method22155(final Class1855 class1855, final BlockPos class1856, final Class7099 class1857) {
+    public Vec3d method22155(final Class1855 class1855, final BlockPos class1856, final IFluidState class1857) {
         double n = 0.0;
         double n2 = 0.0;
         Vec3d method1302;
         try (final Class386 method1296 = Class386.method1296()) {
             for (final Direction class1858 : Plane.HORIZONTAL) {
                 method1296.method1303(class1856).method1304(class1858);
-                final Class7099 method1297 = class1855.method6702(method1296);
+                final IFluidState method1297 = class1855.method6702(method1296);
                 if (this.method22168(method1297)) {
                     final float method1298 = method1297.method21783();
                     float n3 = 0.0f;
                     if (method1298 == 0.0f) {
                         if (!class1855.getBlockState(method1296).getMaterial().method26440()) {
-                            final Class7099 method1299 = class1855.method6702(method1296.method1139());
+                            final IFluidState method1299 = class1855.method6702(method1296.method1139());
                             if (this.method22168(method1299)) {
                                 final float method1300 = method1299.method21783();
                                 if (method1300 > 0.0f) {
@@ -83,8 +83,8 @@ public abstract class Class7257 extends Class7255
         return method1302;
     }
     
-    private boolean method22168(final Class7099 class7099) {
-        return class7099.isEmpty() || class7099.method21779().method22165(this);
+    private boolean method22168(final IFluidState IFluidState) {
+        return IFluidState.isEmpty() || IFluidState.method21779().method22165(this);
     }
     
     public boolean method22169(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
@@ -92,12 +92,12 @@ public abstract class Class7257 extends Class7255
         return !class1855.method6702(class1856).method21779().method22165(this) && (class1857 == Direction.UP || (method6701.getMaterial() != Material.ICE && method6701.isSolidSide(class1855, class1856, class1857)));
     }
     
-    public void method22170(final Class1851 class1851, final BlockPos class1852, final Class7099 class1853) {
+    public void method22170(final Class1851 class1851, final BlockPos class1852, final IFluidState class1853) {
         if (!class1853.isEmpty()) {
             final BlockState method6701 = class1851.getBlockState(class1852);
             final BlockPos method6702 = class1852.method1139();
             final BlockState method6703 = class1851.getBlockState(method6702);
-            final Class7099 method6704 = this.method22172(class1851, method6702, method6703);
+            final IFluidState method6704 = this.method22172(class1851, method6702, method6703);
             if (!this.method22190(class1851, class1852, method6701, Direction.DOWN, method6702, method6703, class1851.method6702(method6702), method6704.method21779())) {
                 if (class1853.method21780() || !this.method22183(class1851, method6704.method21779(), class1852, method6701, method6702, method6703)) {
                     this.method22171(class1851, class1852, class1853, method6701);
@@ -112,7 +112,7 @@ public abstract class Class7257 extends Class7255
         }
     }
     
-    private void method22171(final Class1851 class1851, final BlockPos class1852, final Class7099 class1853, final BlockState class1854) {
+    private void method22171(final Class1851 class1851, final BlockPos class1852, final IFluidState class1853, final BlockState class1854) {
         int n = class1853.method21784() - this.method22191(class1851);
         if (class1853.get((IProperty<Boolean>)Class7257.field28132)) {
             n = 7;
@@ -120,7 +120,7 @@ public abstract class Class7257 extends Class7255
         if (n > 0) {
             for (final Map.Entry<Direction, V> entry : this.method22188(class1851, class1852, class1854).entrySet()) {
                 final Direction class1855 = entry.getKey();
-                final Class7099 class1856 = (Class7099)entry.getValue();
+                final IFluidState class1856 = (IFluidState)entry.getValue();
                 final BlockPos method1149 = class1852.method1149(class1855);
                 final BlockState method1150 = class1851.getBlockState(method1149);
                 if (!this.method22190(class1851, class1852, class1854, class1855, method1149, method1150, class1851.method6702(method1149), class1856.method21779())) {
@@ -131,13 +131,13 @@ public abstract class Class7257 extends Class7255
         }
     }
     
-    public Class7099 method22172(final Class1852 class1852, final BlockPos class1853, final BlockState class1854) {
+    public IFluidState method22172(final Class1852 class1852, final BlockPos class1853, final BlockState class1854) {
         int max = 0;
         int n = 0;
         for (final Direction class1855 : Plane.HORIZONTAL) {
             final BlockPos method1149 = class1853.method1149(class1855);
             final BlockState method1150 = class1852.getBlockState(method1149);
-            final Class7099 method1151 = method1150.getFluidState();
+            final IFluidState method1151 = method1150.getFluidState();
             if (!method1151.method21779().method22165(this)) {
                 continue;
             }
@@ -152,7 +152,7 @@ public abstract class Class7257 extends Class7255
         if (this.method22178()) {
             if (n >= 2) {
                 final BlockState method1152 = class1852.getBlockState(class1853.method1139());
-                final Class7099 method1153 = method1152.getFluidState();
+                final IFluidState method1153 = method1152.getFluidState();
                 if (method1152.getMaterial().method26439() || this.method22185(method1153)) {
                     return this.method22177(false);
                 }
@@ -160,7 +160,7 @@ public abstract class Class7257 extends Class7255
         }
         final BlockPos method1154 = class1853.method1137();
         final BlockState method1155 = class1852.getBlockState(method1154);
-        final Class7099 method1156 = method1155.getFluidState();
+        final IFluidState method1156 = method1155.getFluidState();
         if (!method1156.isEmpty()) {
             if (method1156.method21779().method22165(this)) {
                 if (this.method22173(Direction.UP, class1852, class1853, class1854, method1154, method1155)) {
@@ -201,21 +201,21 @@ public abstract class Class7257 extends Class7255
         return b;
     }
     
-    public abstract Class7255 method22174();
+    public abstract Fluid method22174();
     
-    public Class7099 method22175(final int i, final boolean b) {
+    public IFluidState method22175(final int i, final boolean b) {
         return this.method22174().method22148().with((IProperty<Comparable>)Class7257.field28133, i).with((IProperty<Comparable>)Class7257.field28132, b);
     }
     
-    public abstract Class7255 method22176();
+    public abstract Fluid method22176();
     
-    public Class7099 method22177(final boolean b) {
+    public IFluidState method22177(final boolean b) {
         return this.method22176().method22148().with((IProperty<Comparable>)Class7257.field28132, b);
     }
     
     public abstract boolean method22178();
     
-    public void method22179(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Direction class1854, final Class7099 class1855) {
+    public void method22179(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Direction class1854, final IFluidState class1855) {
         if (!(class1853.getBlock() instanceof Class3867)) {
             if (!class1853.method21706()) {
                 this.method22180(class1851, class1852, class1853);
@@ -233,7 +233,7 @@ public abstract class Class7257 extends Class7255
         return (short)((class355.getX() - class354.getX() + 128 & 0xFF) << 8 | (class355.getZ() - class354.getZ() + 128 & 0xFF));
     }
     
-    public int method22182(final Class1852 class1852, final BlockPos class1853, final int n, final Direction class1854, final BlockState class1855, final BlockPos class1856, final Short2ObjectMap<Pair<BlockState, Class7099>> short2ObjectMap, final Short2BooleanMap short2BooleanMap) {
+    public int method22182(final Class1852 class1852, final BlockPos class1853, final int n, final Direction class1854, final BlockState class1855, final BlockPos class1856, final Short2ObjectMap<Pair<BlockState, IFluidState>> short2ObjectMap, final Short2BooleanMap short2BooleanMap) {
         int n2 = 1000;
         for (final Direction class1857 : Plane.HORIZONTAL) {
             if (class1857 == class1854) {
@@ -247,7 +247,7 @@ public abstract class Class7257 extends Class7255
                 return Pair.of((Object)class1861, (Object)class1861.getFluidState());
             });
             final BlockState class1858 = (BlockState)pair.getFirst();
-            if (!this.method22184(class1852, this.method22174(), class1853, class1855, class1857, method1149, class1858, (Class7099)pair.getSecond())) {
+            if (!this.method22184(class1852, this.method22174(), class1853, class1855, class1857, method1149, class1858, (IFluidState)pair.getSecond())) {
                 continue;
             }
             if (short2BooleanMap.computeIfAbsent(method1150, p3 -> {
@@ -269,11 +269,11 @@ public abstract class Class7257 extends Class7255
         return n2;
     }
     
-    private boolean method22183(final Class1855 class1855, final Class7255 class1856, final BlockPos class1857, final BlockState class1858, final BlockPos class1859, final BlockState class1860) {
+    private boolean method22183(final Class1855 class1855, final Fluid class1856, final BlockPos class1857, final BlockState class1858, final BlockPos class1859, final BlockState class1860) {
         return this.method22173(Direction.DOWN, class1855, class1857, class1858, class1859, class1860) && (class1860.getFluidState().method21779().method22165(this) || this.method22189(class1855, class1859, class1860, class1856));
     }
     
-    private boolean method22184(final Class1855 class1855, final Class7255 class1856, final BlockPos class1857, final BlockState class1858, final Direction class1859, final BlockPos class1860, final BlockState class1861, final Class7099 class1862) {
+    private boolean method22184(final Class1855 class1855, final Fluid class1856, final BlockPos class1857, final BlockState class1858, final Direction class1859, final BlockPos class1860, final BlockState class1861, final IFluidState class1862) {
         if (!this.method22185(class1862)) {
             if (this.method22173(class1859, class1855, class1857, class1858, class1860, class1861)) {
                 if (this.method22189(class1855, class1860, class1861, class1856)) {
@@ -284,8 +284,8 @@ public abstract class Class7257 extends Class7255
         return false;
     }
     
-    private boolean method22185(final Class7099 class7099) {
-        return class7099.method21779().method22165(this) && class7099.method21780();
+    private boolean method22185(final IFluidState IFluidState) {
+        return IFluidState.method21779().method22165(this) && IFluidState.method21780();
     }
     
     public abstract int method22186(final Class1852 p0);
@@ -302,7 +302,7 @@ public abstract class Class7257 extends Class7255
         return n;
     }
     
-    public Map<Direction, Class7099> method22188(final Class1852 class1852, final BlockPos class1853, final BlockState class1854) {
+    public Map<Direction, IFluidState> method22188(final Class1852 class1852, final BlockPos class1853, final BlockState class1854) {
         int n = 1000;
         final EnumMap enumMap = Maps.newEnumMap((Class) Direction.class);
         final Short2ObjectOpenHashMap short2ObjectOpenHashMap = new Short2ObjectOpenHashMap();
@@ -316,8 +316,8 @@ public abstract class Class7257 extends Class7255
                 return Pair.of((Object)class1860, (Object)class1860.getFluidState());
             });
             final BlockState class1856 = (BlockState)pair.getFirst();
-            final Class7099 class1857 = (Class7099)pair.getSecond();
-            final Class7099 method1151 = this.method22172(class1852, class1865, class1856);
+            final IFluidState class1857 = (IFluidState)pair.getSecond();
+            final IFluidState method1151 = this.method22172(class1852, class1865, class1856);
             if (!this.method22184(class1852, method1151.method21779(), class1853, class1854, class1855, class1865, class1856, class1857)) {
                 continue;
             }
@@ -327,7 +327,7 @@ public abstract class Class7257 extends Class7255
                 class1865.method1139();
                 return this.method22183(class1861, this.method22174(), class1863, class1864, class1862, class1861.method6701(class1862));
             })) {
-                method1152 = this.method22182(class1852, class1865, 1, class1855.getOpposite(), class1856, class1853, (Short2ObjectMap<Pair<BlockState, Class7099>>)short2ObjectOpenHashMap, (Short2BooleanMap)short2BooleanOpenHashMap);
+                method1152 = this.method22182(class1852, class1865, 1, class1855.getOpposite(), class1856, class1853, (Short2ObjectMap<Pair<BlockState, IFluidState>>)short2ObjectOpenHashMap, (Short2BooleanMap)short2BooleanOpenHashMap);
             }
             else {
                 method1152 = 0;
@@ -344,7 +344,7 @@ public abstract class Class7257 extends Class7255
         return enumMap;
     }
     
-    private boolean method22189(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Class7255 class1858) {
+    private boolean method22189(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
         final Block method21696 = class1857.getBlock();
         if (!(method21696 instanceof Class3867)) {
             if (!(method21696 instanceof Class3969)) {
@@ -373,7 +373,7 @@ public abstract class Class7257 extends Class7255
         return ((Class3867)method21696).method11920(class1855, class1856, class1857, class1858);
     }
     
-    public boolean method22190(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Direction class1858, final BlockPos class1859, final BlockState class1860, final Class7099 class1861, final Class7255 class1862) {
+    public boolean method22190(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Direction class1858, final BlockPos class1859, final BlockState class1860, final IFluidState class1861, final Fluid class1862) {
         if (class1861.method21795(class1855, class1859, class1862, class1858)) {
             if (this.method22173(class1858, class1855, class1856, class1857, class1859, class1860)) {
                 if (this.method22189(class1855, class1859, class1860, class1862)) {
@@ -386,14 +386,14 @@ public abstract class Class7257 extends Class7255
     
     public abstract int method22191(final Class1852 p0);
     
-    public int method22192(final World class1847, final BlockPos class1848, final Class7099 class1849, final Class7099 class1850) {
+    public int method22192(final World class1847, final BlockPos class1848, final IFluidState class1849, final IFluidState class1850) {
         return this.method22156(class1847);
     }
     
     @Override
-    public void method22151(final World class1847, final BlockPos class1848, Class7099 obj) {
+    public void method22151(final World class1847, final BlockPos class1848, IFluidState obj) {
         if (!obj.method21780()) {
-            final Class7099 method22172 = this.method22172(class1847, class1848, class1847.getBlockState(class1848));
+            final IFluidState method22172 = this.method22172(class1847, class1848, class1847.getBlockState(class1848));
             final int method22173 = this.method22192(class1847, class1848, obj, method22172);
             if (!method22172.isEmpty()) {
                 if (!method22172.equals(obj)) {
@@ -412,26 +412,26 @@ public abstract class Class7257 extends Class7255
         this.method22170(class1847, class1848, obj);
     }
     
-    public static int method22193(final Class7099 class7099) {
-        return class7099.method21780() ? 0 : (8 - Math.min(class7099.method21784(), 8) + (class7099.get((IProperty<Boolean>)Class7257.field28132) ? 8 : 0));
+    public static int method22193(final IFluidState IFluidState) {
+        return IFluidState.method21780() ? 0 : (8 - Math.min(IFluidState.method21784(), 8) + (IFluidState.get((IProperty<Boolean>)Class7257.field28132) ? 8 : 0));
     }
     
-    private static boolean method22194(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101) {
-        return class7099.method21779().method22165(class7100.method6702(class7101.method1137()).method21779());
-    }
-    
-    @Override
-    public float method22160(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101) {
-        return method22194(class7099, class7100, class7101) ? 1.0f : class7099.method21783();
+    private static boolean method22194(final IFluidState IFluidState, final Class1855 class7100, final BlockPos class7101) {
+        return IFluidState.method21779().method22165(class7100.method6702(class7101.method1137()).method21779());
     }
     
     @Override
-    public float method22161(final Class7099 class7099) {
-        return class7099.method21784() / 9.0f;
+    public float method22160(final IFluidState IFluidState, final Class1855 class7100, final BlockPos class7101) {
+        return method22194(IFluidState, class7100, class7101) ? 1.0f : IFluidState.method21783();
     }
     
     @Override
-    public VoxelShape method22167(final Class7099 key, final Class1855 class1855, final BlockPos class1856) {
+    public float method22161(final IFluidState IFluidState) {
+        return IFluidState.method21784() / 9.0f;
+    }
+    
+    @Override
+    public VoxelShape method22167(final IFluidState key, final Class1855 class1855, final BlockPos class1856) {
         return (key.method21784() == 9 && method22194(key, class1855, class1856)) ? VoxelShapes.method24487() : this.field28135.computeIfAbsent(key, class1859 -> VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, class1859.method21782(class1857, class1858), 1.0));
     }
     

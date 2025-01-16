@@ -178,10 +178,10 @@ public abstract class Class865 implements ICommandSource
         return this.field4613;
     }
     
-    public boolean method5221(final Class512 class512) {
-        if (class512.method2908()) {
-            if (class512.method1896().isRemote) {
-                class512.method2828(this);
+    public boolean method5221(final PlayerEntity playerEntity) {
+        if (playerEntity.method2908()) {
+            if (playerEntity.method1896().isRemote) {
+                playerEntity.method2828(this);
             }
             return true;
         }

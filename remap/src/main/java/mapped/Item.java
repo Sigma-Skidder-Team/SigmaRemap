@@ -253,7 +253,7 @@ public class Item implements Class3832
         final float method1748 = MathHelper.cos(-field2401 * 0.017453292f - 3.1415927f);
         final float method1749 = MathHelper.sin(-field2401 * 0.017453292f - 3.1415927f);
         final float n = -MathHelper.cos(-field2400 * 0.017453292f);
-        return class1847.method6987(new Class8478(method1747, method1747.add(method1749 * n * 5.0, MathHelper.sin(-field2400 * 0.017453292f) * 5.0, method1748 * n * 5.0), Class2040.field11633, class1849, class1848));
+        return class1847.rayTraceBlocks(new RayTraceContext(method1747, method1747.add(method1749 * n * 5.0, MathHelper.sin(-field2400 * 0.017453292f) * 5.0, method1748 * n * 5.0), Class2040.field11633, class1849, class1848));
     }
     
     public int method11734() {

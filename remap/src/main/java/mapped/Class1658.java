@@ -58,7 +58,7 @@ public class Class1658 implements Class1657
         }
     }
     
-    public boolean method5792(final BlockPos class354, final Class1856 class355, final Class4150 class356, final Class7099 class357) {
+    public boolean method5792(final BlockPos class354, final Class1856 class355, final Class4150 class356, final IFluidState class357) {
         try {
             return this.field9371.method34681(class355, class354, class356, class357);
         }

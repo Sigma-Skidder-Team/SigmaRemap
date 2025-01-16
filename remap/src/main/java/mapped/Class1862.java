@@ -48,7 +48,7 @@ public class Class1862 implements IChunk
     private final Map<String, LongSet> field10152;
     private final ShortList[] field10153;
     private Class6952<Block> field10154;
-    private Class6952<Class7255> field10155;
+    private Class6952<Fluid> field10155;
     private boolean field10156;
     private long field10157;
     private volatile boolean field10158;
@@ -59,10 +59,10 @@ public class Class1862 implements IChunk
     private volatile boolean field10163;
     
     public Class1862(final World class1847, final Class7859 class1848, final Class1873 class1849) {
-        this(class1847, class1848, class1849, Class8288.field34078, (Class6952<Block>)Class6954.method21355(), (Class6952<Class7255>)Class6954.method21355(), 0L, null, null);
+        this(class1847, class1848, class1849, Class8288.field34078, (Class6952<Block>)Class6954.method21355(), (Class6952<Fluid>)Class6954.method21355(), 0L, null, null);
     }
     
-    public Class1862(final World field10146, final Class7859 field10147, final Class1873 field10148, final Class8288 field10149, final Class6952<Block> field10150, final Class6952<Class7255> field10151, final long field10152, final Class8199[] array, final Consumer<Class1862> field10153) {
+    public Class1862(final World field10146, final Class7859 field10147, final Class1873 field10148, final Class8288 field10149, final Class6952<Block> field10150, final Class6952<Fluid> field10151, final long field10152, final Class8199[] array, final Consumer<Class1862> field10153) {
         this.field10142 = new Class8199[16];
         this.field10144 = Maps.newHashMap();
         this.field10147 = Maps.newEnumMap((Class)Class2020.class);
@@ -175,11 +175,11 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public Class7099 method6702(final BlockPos class354) {
+    public IFluidState method6702(final BlockPos class354) {
         return this.method7051(class354.getX(), class354.getY(), class354.getZ());
     }
     
-    public Class7099 method7051(final int n, final int n2, final int n3) {
+    public IFluidState method7051(final int n, final int n2, final int n3) {
         try {
             if (n2 >= 0 && n2 >> 4 < this.field10142.length) {
                 final Class8199 class8199 = this.field10142[n2 >> 4];
@@ -567,7 +567,7 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public Class6952<Class7255> method7037() {
+    public Class6952<Fluid> method7037() {
         return this.field10155;
     }
     
@@ -714,12 +714,12 @@ public class Class1862 implements IChunk
         if (!(this.field10155 instanceof Class6951)) {
             if (this.field10155 instanceof Class6956) {
                 this.field10146.method6834().method21343(((Class6956)this.field10155).method21357());
-                this.field10155 = (Class6952<Class7255>)Class6954.method21355();
+                this.field10155 = (Class6952<Fluid>)Class6954.method21355();
             }
         }
         else {
             ((Class6951)this.field10155).method21339(this.field10146.method6834(), class355 -> this.method6702(class355).method21779());
-            this.field10155 = (Class6952<Class7255>)Class6954.method21355();
+            this.field10155 = (Class6952<Fluid>)Class6954.method21355();
         }
     }
     
@@ -729,7 +729,7 @@ public class Class1862 implements IChunk
             this.method7025(true);
         }
         if (this.field10155 == Class6954.method21355()) {
-            this.field10155 = new Class6956<Class7255>(Registry.field206::getKey, class1849.method6908().method21347(this.field10162, true, false));
+            this.field10155 = new Class6956<Fluid>(Registry.field206::getKey, class1849.method6908().method21347(this.field10162, true, false));
             this.method7025(true);
         }
     }

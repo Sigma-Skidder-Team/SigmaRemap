@@ -367,7 +367,7 @@ public class Class1848 extends World
         class385.setPos(n5, n6, n7);
         final Class7096 method6701 = this.getBlockState(class385);
         method6701.method21696().method11823(method6701, this, class385, random);
-        final Class7099 method6702 = this.method6702(class385);
+        final IFluidState method6702 = this.method6702(class385);
         if (!method6702.isEmpty()) {
             method6702.method21787(this, class385, random);
             final Class6909 method6703 = method6702.method21792();
@@ -525,8 +525,8 @@ public class Class1848 extends World
     }
     
     @Override
-    public Class6952<Class7255> method6834() {
-        return (Class6952<Class7255>)Class6954.method21355();
+    public Class6952<Fluid> method6834() {
+        return (Class6952<Fluid>)Class6954.method21355();
     }
     
     public Class1907 method6835() {

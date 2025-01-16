@@ -44,7 +44,7 @@ public class Class3862 extends Class3860
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         Class7096 method11878 = this.getDefaultState();
-        final Class7099 method11879 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method11879 = class7074.method21654().method6702(class7074.method21639());
         final World method11880 = class7074.method21654();
         final BlockPos method11881 = class7074.method21639();
         for (final Direction class7075 : class7074.method21643()) {

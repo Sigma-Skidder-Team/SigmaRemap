@@ -128,7 +128,7 @@ public class Class8742
         if (class511 != null) {
             method30200(class513, class511.method1802());
         }
-        if (class512 instanceof Class512) {
+        if (class512 instanceof PlayerEntity) {
             method30199(class513, class511.getHeldItemMainhand());
         }
     }
@@ -138,7 +138,7 @@ public class Class8742
         if (class511 != null) {
             method30200(class513, class511.method1802());
         }
-        if (class511 instanceof Class512) {
+        if (class511 instanceof PlayerEntity) {
             method30199(class513, class511.getHeldItemMainhand());
         }
     }

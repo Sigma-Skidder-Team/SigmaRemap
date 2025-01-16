@@ -16,7 +16,7 @@ public class Class4090 extends Class4089
     }
     
     @Override
-    public Class9355<ItemStack> method11695(final World class1847, final Class512 class1848, final Class316 class1849) {
+    public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
         if (!class1847.isRemote) {
             final Class415 class1850 = new Class415(class1847, class1848);

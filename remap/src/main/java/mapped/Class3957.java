@@ -53,7 +53,7 @@ public class Class3957 extends Class3841
     }
     
     @Override
-    public boolean method11799(final BlockState class7096, final Class7255 class7097) {
+    public boolean method11799(final BlockState class7096, final Fluid class7097) {
         return false;
     }
 }

@@ -255,7 +255,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public boolean method11799(final BlockState class7096, final Class7255 class7097) {
+    public boolean method11799(final BlockState class7096, final Fluid class7097) {
         return this.field17401.method26442() || !this.field17401.method26439();
     }
     
@@ -610,7 +610,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return Class7558.field29974.method22148();
     }
     

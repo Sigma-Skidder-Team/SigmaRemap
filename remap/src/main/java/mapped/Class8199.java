@@ -31,7 +31,7 @@ public class Class8199
         return this.field33724.method25507(n, n2, n3);
     }
     
-    public Class7099 method27149(final int n, final int n2, final int n3) {
+    public IFluidState method27149(final int n, final int n2, final int n3) {
         return this.field33724.method25507(n, n2, n3).getFluidState();
     }
     
@@ -55,8 +55,8 @@ public class Class8199
         else {
             class7097 = this.field33724.method25503(n, n2, n3, class7096);
         }
-        final Class7099 method21756 = class7097.getFluidState();
-        final Class7099 method21757 = class7096.getFluidState();
+        final IFluidState method21756 = class7097.getFluidState();
+        final IFluidState method21757 = class7096.getFluidState();
         if (!class7097.method21706()) {
             --this.field33721;
             if (class7097.method21757()) {
@@ -126,7 +126,7 @@ public class Class8199
         this.field33722 = 0;
         this.field33723 = 0;
         this.field33724.method25515((class7096, n) -> {
-            final Class7099 method21756 = class7096.getFluidState();
+            final IFluidState method21756 = class7096.getFluidState();
             if (!class7096.method21706()) {
                 this.field33721 += (short)n;
                 if (class7096.method21757()) {

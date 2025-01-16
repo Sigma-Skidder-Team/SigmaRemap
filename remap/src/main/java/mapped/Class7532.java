@@ -40,7 +40,7 @@ public class Class7532
         final Class1873 class1853 = new Class1873(a, method7439, (int[])(method7440.method316("Biomes", 11) ? method7440.method325("Biomes") : null));
         final Class8288 class1854 = method7440.method316("UpgradeData", 10) ? new Class8288(method7440.method327("UpgradeData")) : Class8288.field34078;
         final Class6951 class1855 = new Class6951<Block>(class1862 -> class1862 == null || class1862.getDefaultState().method21706(), a, method7440.method328("ToBeTicked", 9));
-        final Class6951 class1856 = new Class6951<Class7255>(class1863 -> class1863 == null || class1863 == Class7558.field29974, a, method7440.method328("LiquidsToBeTicked", 9));
+        final Class6951 class1856 = new Class6951<Fluid>(class1863 -> class1863 == null || class1863 == Class7558.field29974, a, method7440.method328("LiquidsToBeTicked", 9));
         final boolean method7441 = method7440.method329("isLightOn");
         final Class52 method7442 = method7440.method328("Sections", 10);
         final Class8199[] array = new Class8199[16];
@@ -78,7 +78,7 @@ public class Class7532
         final Class260 method7448 = method23594(class1852);
         IChunk class1859;
         if (method7448 != Class260.field1244) {
-            final Class1865 class1858 = new Class1865(a, class1854, array, (Class6951<Block>)class1855, (Class6951<Class7255>)class1856);
+            final Class1865 class1858 = new Class1865(a, class1854, array, (Class6951<Block>)class1855, (Class6951<Fluid>)class1856);
             class1858.method7097(class1853);
             class1859 = class1858;
             class1858.method7040(method7447);
@@ -112,7 +112,7 @@ public class Class7532
             else {
                 method7450 = Class6956.method21359(method7440.method328("LiquidTicks", 10), Registry.field206::getKey, Registry.field206::getOrDefault);
             }
-            class1859 = new Class1862(class1849.method6744(), a, class1853, class1854, (Class6952<Block>)method7449, (Class6952<Class7255>)method7450, method7447, array, class1865 -> method23595(class1864, class1865));
+            class1859 = new Class1862(class1849.method6744(), a, class1853, class1854, (Class6952<Block>)method7449, (Class6952<Fluid>)method7450, method7447, array, class1865 -> method23595(class1864, class1865));
         }
         class1859.method7044(method7441);
         final Class51 method7451 = method7440.method327("Heightmaps");
@@ -270,7 +270,7 @@ public class Class7532
         else {
             class1852.method295("ToBeTicked", ((Class6951)method7028).method21338());
         }
-        final Class6952<Class7255> method7029 = class1850.method7037();
+        final Class6952<Fluid> method7029 = class1850.method7037();
         if (!(method7029 instanceof Class6951)) {
             if (!(method7029 instanceof Class6956)) {
                 class1852.method295("LiquidTicks", class1849.method6908().method21351(method7019));

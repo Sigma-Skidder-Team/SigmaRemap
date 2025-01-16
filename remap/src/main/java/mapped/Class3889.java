@@ -37,7 +37,7 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     public Class7096 method11846(final Class7074 class7074) {
         final Class7096 method6701 = class7074.method21654().getBlockState(class7074.method21639());
         if (method6701.method21696() != this) {
-            final Class7099 method6702 = class7074.method21654().method6702(class7074.method21639());
+            final IFluidState method6702 = class7074.method21654().method6702(class7074.method21639());
             return (Class7096)((StateHolder<Object, Object>)super.method11846(class7074)).with((IProperty<Comparable>)Class3889.field17552, method6702.method21793(Class7324.field28319) && method6702.method21784() == 8);
         }
         return ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class3889.field17551, Math.min(4, ((StateHolder<Object, Class7096>)method6701).get((IProperty<Integer>)Class3889.field17551) + 1));
@@ -93,7 +93,7 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     }
     
     @Override
-    public Class7099 method11864(final Class7096 class7096) {
+    public IFluidState method11864(final Class7096 class7096) {
         return class7096.method21772((IProperty<Boolean>)Class3889.field17552) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     

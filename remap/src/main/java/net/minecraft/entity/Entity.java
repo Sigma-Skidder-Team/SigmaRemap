@@ -985,11 +985,11 @@ public abstract class Entity implements INameable, ICommandSource {
         }
     }
 
-    public boolean method1720(final Class7909<Class7255> class7909) {
+    public boolean method1720(final Class7909<Fluid> class7909) {
         return this.method1721(class7909, false);
     }
 
-    public boolean method1721(final Class7909<Class7255> class7909, final boolean b) {
+    public boolean method1721(final Class7909<Fluid> class7909, final boolean b) {
         if (this.method1920() instanceof Class423) {
             return false;
         }
@@ -998,7 +998,7 @@ public abstract class Entity implements INameable, ICommandSource {
         if (b && !this.world.method6814(class7910.getX() >> 4, class7910.getZ() >> 4)) {
             return false;
         }
-        final Class7099 method1945 = this.world.method6702(class7910);
+        final IFluidState method1945 = this.world.method6702(class7910);
         return method1945.method21793(class7909) && method1944 < class7910.getY() + method1945.method21782(this.world, class7910) + 0.11111111f;
     }
 
@@ -1184,7 +1184,7 @@ public abstract class Entity implements INameable, ICommandSource {
     public Class7006 method1748(final double n, final float n2, final boolean b) {
         final Vec3d method1747 = this.method1747(n2);
         final Vec3d method1748 = this.method1741(n2);
-        return this.world.method6987(new Class8478(method1747, method1747.add(method1748.x * n, method1748.y * n, method1748.z * n), Class2040.field11633, b ? Class2191.field13327 : Class2191.field13325, this));
+        return this.world.rayTraceBlocks(new RayTraceContext(method1747, method1747.add(method1748.x * n, method1748.y * n, method1748.z * n), Class2040.field11633, b ? Class2191.field13327 : Class2191.field13325, this));
     }
 
     public boolean method1749() {
@@ -2027,7 +2027,7 @@ public abstract class Entity implements INameable, ICommandSource {
         return true;
     }
 
-    public float method1856(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final Class7099 class6158, final float n) {
+    public float method1856(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final IFluidState class6158, final float n) {
         return n;
     }
 
@@ -2473,7 +2473,7 @@ public abstract class Entity implements INameable, ICommandSource {
         this.prevRotationYaw = this.rotationYaw;
     }
 
-    public boolean method1928(final Class7909<Class7255> class7909) {
+    public boolean method1928(final Class7909<Fluid> class7909) {
         final AxisAlignedBB method18511 = this.getBoundingBox().method18511(0.001);
         final int method18512 = MathHelper.floor(method18511.minX);
         final int method18513 = MathHelper.ceil(method18511.maxX);
@@ -2494,7 +2494,7 @@ public abstract class Entity implements INameable, ICommandSource {
                 for (int j = method18514; j < method18515; ++j) {
                     for (int k = method18516; k < method18517; ++k) {
                         method18519.method1300(i, j, k);
-                        final Class7099 method18520 = this.world.method6702(method18519);
+                        final IFluidState method18520 = this.world.method6702(method18519);
                         if (method18520.method21793(class7909)) {
                             final double n2 = j + method18520.method21782(this.world, method18519);
                             if (n2 >= method18511.minY) {

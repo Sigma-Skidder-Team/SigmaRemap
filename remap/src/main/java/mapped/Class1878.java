@@ -31,12 +31,12 @@ public class Class1878 implements Class1851
     private final Dimension field10224;
     private final Class7065 field10225;
     private final Class6952<Block> field10226;
-    private final Class6952<Class7255> field10227;
+    private final Class6952<Fluid> field10227;
     private final BiomeManager field10228;
     
     public Class1878(final Class1849 field10219, final List<IChunk> field10220) {
         this.field10226 = new Class6955<Block>(class355 -> this.method6965(class355).method7036());
-        this.field10227 = new Class6955<Class7255>(class357 -> this.method6965(class357).method7037());
+        this.field10227 = new Class6955<Fluid>(class357 -> this.method6965(class357).method7037());
         final int method35644 = MathHelper.floor(Math.sqrt(field10220.size()));
         if (method35644 * method35644 == field10220.size()) {
             final Class7859 method35645 = field10220.get(field10220.size() / 2).method7019();
@@ -119,7 +119,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class7099 method6702(final BlockPos class354) {
+    public IFluidState method6702(final BlockPos class354) {
         return this.method6965(class354).method6702(class354);
     }
     
@@ -284,7 +284,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class6952<Class7255> method6834() {
+    public Class6952<Fluid> method6834() {
         return this.field10227;
     }
     

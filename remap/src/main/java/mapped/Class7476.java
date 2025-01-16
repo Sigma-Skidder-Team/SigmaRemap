@@ -56,7 +56,7 @@ public final class Class7476
             return new Class7005(method1936, Direction.getFacingFromVector(method1935.x, method1935.y, method1935.z), new BlockPos(class399), false);
         }
         Vec3d class403 = method1936.add(method1935);
-        Class7005 method1937 = field2391.method6987(new Class8478(method1936, class403, class401, Class2191.field13325, class399));
+        Class7005 method1937 = field2391.rayTraceBlocks(new RayTraceContext(method1936, class403, class401, Class2191.field13325, class399));
         if (b) {
             if (method1937.method21449() != Class2165.field12880) {
                 class403 = method1937.method21451();

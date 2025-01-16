@@ -97,7 +97,7 @@ public class Class4518 extends Class4515
             int b = class354.getY() - 1;
             final Mutable class358 = new Mutable(method1076, b, method1077);
             BlockState class359 = class355.getBlockState(class358);
-            Class7099 class360 = class355.method6702(class358);
+            IFluidState class360 = class355.method6702(class358);
             while (true) {
                 if (!class359.method21706()) {
                     if (!class360.method21793(Class7324.field28319)) {

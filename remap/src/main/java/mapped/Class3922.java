@@ -43,7 +43,7 @@ public class Class3922 extends Block implements Class3856
     @Nullable
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        final Class7099 method6702 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method6702 = class7074.method21654().method6702(class7074.method21639());
         return (BlockState)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3922.field17782, method6702.method21793(Class7324.field28319) && method6702.method21784() == 8);
     }
     
@@ -72,7 +72,7 @@ public class Class3922 extends Block implements Class3856
     }
     
     @Override
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return class7096.get((IProperty<Boolean>)Class3922.field17782) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     

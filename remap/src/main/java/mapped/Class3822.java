@@ -16,7 +16,7 @@ public class Class3822 extends Class3821
 {
     private final EntityType<?> field17374;
     
-    public Class3822(final EntityType<?> field17374, final Class7255 class7255, final Class8959 class7256) {
+    public Class3822(final EntityType<?> field17374, final Fluid class7255, final Class8959 class7256) {
         super(class7255, class7256);
         this.field17374 = field17374;
     }

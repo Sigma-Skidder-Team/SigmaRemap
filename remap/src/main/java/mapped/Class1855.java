@@ -20,7 +20,7 @@ public interface Class1855
     
     BlockState getBlockState(final BlockPos p0);
     
-    Class7099 method6702(final BlockPos p0);
+    IFluidState method6702(final BlockPos p0);
     
     default int method6984(final BlockPos class354) {
         return this.getBlockState(class354).method21704();
@@ -34,8 +34,8 @@ public interface Class1855
         return 256;
     }
     
-    default Class7005 method6987(final Class8478 class8478) {
-        return method6989(class8478, (class8480, class8482) -> {
+    default Class7005 rayTraceBlocks(final RayTraceContext rayTraceContext) {
+        return method6989(rayTraceContext, (class8480, class8482) -> {
             this.getBlockState(class8482);
             this.method6702(class8482);
             class8480.method28308();
@@ -44,7 +44,7 @@ public interface Class1855
             final Vec3d class8484;
             final BlockState class8485;
             this.method6988(class8483, class8484, class8482, class8480.method28309(class8485, this, class8482), class8485);
-            final Class7099 class8486;
+            final IFluidState class8486;
             class8480.method28310(class8486, this, class8482).method24550(class8483, class8484, class8482);
             final Class7005 class8487;
             final Class7005 class8488;
@@ -70,11 +70,11 @@ public interface Class1855
         return method24550;
     }
     
-    default <T> T method6989(final Class8478 class8478, final BiFunction<Class8478, BlockPos, T> biFunction, final Function<Class8478, T> function) {
-        final Vec3d method28308 = class8478.method28308();
-        final Vec3d method28309 = class8478.method28307();
+    default <T> T method6989(final RayTraceContext rayTraceContext, final BiFunction<RayTraceContext, BlockPos, T> biFunction, final Function<RayTraceContext, T> function) {
+        final Vec3d method28308 = rayTraceContext.method28308();
+        final Vec3d method28309 = rayTraceContext.method28307();
         if (method28308.equals(method28309)) {
-            return function.apply(class8478);
+            return function.apply(rayTraceContext);
         }
         final double method28310 = MathHelper.method35701(-1.0E-7, method28309.x, method28308.x);
         final double method28311 = MathHelper.method35701(-1.0E-7, method28309.y, method28308.y);
@@ -86,7 +86,7 @@ public interface Class1855
         int method28317 = MathHelper.floor(method28314);
         int method28318 = MathHelper.floor(method28315);
         final Mutable class8479 = new Mutable(method28316, method28317, method28318);
-        final T apply = biFunction.apply(class8478, class8479);
+        final T apply = biFunction.apply(rayTraceContext, class8479);
         if (apply != null) {
             return apply;
         }
@@ -106,7 +106,7 @@ public interface Class1855
             if (n7 > 1.0) {
                 if (n8 > 1.0) {
                     if (n9 > 1.0) {
-                        return function.apply(class8478);
+                        return function.apply(rayTraceContext);
                     }
                 }
             }
@@ -128,7 +128,7 @@ public interface Class1855
                 method28316 += method28319;
                 n7 += n4;
             }
-            final T apply2 = biFunction.apply(class8478, class8479.setPos(method28316, method28317, method28318));
+            final T apply2 = biFunction.apply(rayTraceContext, class8479.setPos(method28316, method28317, method28318));
             if (apply2 == null) {
                 continue;
             }

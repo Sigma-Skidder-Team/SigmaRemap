@@ -50,7 +50,7 @@ public class Class3858 extends Block implements Class3857
     }
     
     @Override
-    public Class7099 method11864(final Class7096 class7096) {
+    public IFluidState method11864(final Class7096 class7096) {
         return Class7558.field29976.method22177(false);
     }
     
@@ -61,7 +61,7 @@ public class Class3858 extends Block implements Class3857
     }
     
     public static boolean method11924(final Class1851 class1851, final BlockPos class1852) {
-        final Class7099 method6702 = class1851.method6702(class1852);
+        final IFluidState method6702 = class1851.method6702(class1852);
         if (class1851.getBlockState(class1852).getBlock() == Class7521.field29173) {
             if (method6702.method21784() >= 8) {
                 if (method6702.method21780()) {
@@ -156,7 +156,7 @@ public class Class3858 extends Block implements Class3857
     }
     
     @Override
-    public Class7255 method11922(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853) {
+    public Fluid method11922(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853) {
         class1851.setBlockState(class1852, Class7521.field29147.getDefaultState(), 11);
         return Class7558.field29976;
     }

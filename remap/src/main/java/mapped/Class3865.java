@@ -106,7 +106,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     public BlockState method11846(final Class7074 class7074) {
         Class180 class7075 = Class180.field530;
         Direction method782 = class7074.method21644().getOpposite();
-        final Class7099 method783 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method783 = class7074.method21654().method6702(class7074.method21639());
         final boolean method784 = class7074.method21645();
         final Direction method785 = class7074.method21648();
         if (method785.getAxis().isHorizontal()) {
@@ -136,7 +136,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     @Override
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return class7096.get((IProperty<Boolean>)Class3865.field17499) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     

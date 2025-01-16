@@ -10,7 +10,7 @@ public class Class6205 extends Class6156
 {
     private static String[] field24907;
     
-    private Class6205(final World class1847, final double n, final double n2, final double n3, final Class7255 class1848) {
+    private Class6205(final World class1847, final double n, final double n2, final double n3, final Fluid class1848) {
         super(class1847, n, n2, n3, class1848, null);
         this.field24951 = (int)(64.0 / (Math.random() * 0.8 + 0.2));
     }

@@ -26,7 +26,7 @@ public final class Class6420 extends Class6404
         if (!(method16766 instanceof Class3857)) {
             return super.method19087(class5491, class5492);
         }
-        final Class7255 method16767 = ((Class3857)method16766).method11922(method16763, method16764, method16765);
+        final Fluid method16767 = ((Class3857)method16766).method11922(method16763, method16764, method16765);
         if (!(method16767 instanceof Class7257)) {
             return super.method19087(class5491, class5492);
         }

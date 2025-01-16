@@ -67,7 +67,7 @@ public abstract class Class3860 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class7099 method11864(final Class7096 class7096) {
+    public IFluidState method11864(final Class7096 class7096) {
         return class7096.method21772((IProperty<Boolean>)Class3860.field17483) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     

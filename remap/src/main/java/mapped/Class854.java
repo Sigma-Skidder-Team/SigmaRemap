@@ -78,7 +78,7 @@ public class Class854 extends Class853
     }
     
     @Override
-    public void method2727(final Class7909<Class7255> class7909) {
+    public void method2727(final Class7909<Fluid> class7909) {
         if (class7909 != Class7324.field28320) {
             super.method2727(class7909);
         }

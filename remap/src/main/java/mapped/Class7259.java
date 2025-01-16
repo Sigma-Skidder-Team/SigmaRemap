@@ -9,18 +9,18 @@ public class Class7259 extends Class7258
     private static String[] field28136;
     
     @Override
-    public void method22145(final Class9500<Class7255, Class7099> class9500) {
+    public void method22145(final Class9500<Fluid, IFluidState> class9500) {
         super.method22145(class9500);
         class9500.method35378(Class7259.field28133);
     }
     
     @Override
-    public int method22164(final Class7099 class7099) {
-        return class7099.get((IProperty<Integer>)Class7259.field28133);
+    public int method22164(final IFluidState IFluidState) {
+        return IFluidState.get((IProperty<Integer>)Class7259.field28133);
     }
     
     @Override
-    public boolean method22163(final Class7099 class7099) {
+    public boolean method22163(final IFluidState IFluidState) {
         return false;
     }
 }

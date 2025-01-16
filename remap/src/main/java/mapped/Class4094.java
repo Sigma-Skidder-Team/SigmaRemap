@@ -196,7 +196,7 @@ public class Class4094 extends Class4093
     }
     
     private Class7096 method12333(final World class1847, final Class7096 class1848, final BlockPos class1849) {
-        final Class7099 method21756 = class1848.method21756();
+        final IFluidState method21756 = class1848.method21756();
         return (!method21756.isEmpty() && !class1848.method21761(class1847, class1849, Direction.UP)) ? method21756.method21791() : class1848;
     }
     

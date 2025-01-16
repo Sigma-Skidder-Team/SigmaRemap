@@ -19,9 +19,9 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public interface Class7099 extends IStateHolder<Class7099>
+public interface IFluidState extends IStateHolder<IFluidState>
 {
-    Class7255 method21779();
+    Fluid method21779();
     
     default boolean method21780() {
         return this.method21779().method22163(this);
@@ -84,7 +84,7 @@ public interface Class7099 extends IStateHolder<Class7099>
         return this.method21779().method22153();
     }
     
-    default boolean method21793(final Class7909<Class7255> class7909) {
+    default boolean method21793(final Class7909<Fluid> class7909) {
         return this.method21779().method22166(class7909);
     }
     
@@ -92,28 +92,28 @@ public interface Class7099 extends IStateHolder<Class7099>
         return this.method21779().method22159();
     }
     
-    default boolean method21795(final Class1855 class1855, final BlockPos class1856, final Class7255 class1857, final Direction class1858) {
+    default boolean method21795(final Class1855 class1855, final BlockPos class1856, final Fluid class1857, final Direction class1858) {
         return this.method21779().method22154(this, class1855, class1856, class1857, class1858);
     }
     
-    default <T> Dynamic<T> method21796(final DynamicOps<T> dynamicOps, final Class7099 class7099) {
-        final ImmutableMap<IProperty<?>, Comparable<?>> method21776 = class7099.getValues();
+    default <T> Dynamic<T> method21796(final DynamicOps<T> dynamicOps, final IFluidState IFluidState) {
+        final ImmutableMap<IProperty<?>, Comparable<?>> method21776 = IFluidState.getValues();
         Object o;
         if (!method21776.isEmpty()) {
-            o = dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Name"), dynamicOps.createString(Registry.field206.getKey(class7099.method21779()).toString()), dynamicOps.createString("Properties"), dynamicOps.createMap((Map)method21776.entrySet().stream().map(entry -> Pair.of(dynamicOps2.createString(entry.getKey().getName()), dynamicOps2.createString(IStateHolder.getName((IProperty<Comparable>)entry.getKey(), (Comparable<?>)entry.getValue())))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond)))));
+            o = dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Name"), dynamicOps.createString(Registry.field206.getKey(IFluidState.method21779()).toString()), dynamicOps.createString("Properties"), dynamicOps.createMap((Map)method21776.entrySet().stream().map(entry -> Pair.of(dynamicOps2.createString(entry.getKey().getName()), dynamicOps2.createString(IStateHolder.getName((IProperty<Comparable>)entry.getKey(), (Comparable<?>)entry.getValue())))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond)))));
         }
         else {
-            o = dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Name"), dynamicOps.createString(Registry.field206.getKey(class7099.method21779()).toString())));
+            o = dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Name"), dynamicOps.createString(Registry.field206.getKey(IFluidState.method21779()).toString())));
         }
         return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, o);
     }
     
-    default <T> Class7099 method21797(final Dynamic<T> dynamic) {
-        final Class7255 class7255 = Registry.field206.getOrDefault(new ResourceLocation(dynamic.getElement("Name").flatMap(dynamic.getOps()::getStringValue).orElse("minecraft:empty")));
+    default <T> IFluidState method21797(final Dynamic<T> dynamic) {
+        final Fluid class7255 = Registry.field206.getOrDefault(new ResourceLocation(dynamic.getElement("Name").flatMap(dynamic.getOps()::getStringValue).orElse("minecraft:empty")));
         final Map map = dynamic.get("Properties").asMap(dynamic2 -> dynamic2.asString(""), dynamic3 -> dynamic3.asString(""));
-        Class7099 method22148 = class7255.method22148();
-        final StateContainer<Class7255, Class7099> method22149 = class7255.method22146();
-        for (final Map.Entry<String, V> entry : map.entrySet()) {
+        IFluidState method22148 = class7255.method22148();
+        final StateContainer<Fluid, IFluidState> method22149 = class7255.method22146();
+        for (final Map.Entry<String, String> entry : map.entrySet()) {
             final String s = entry.getKey();
             final IProperty method22150 = method22149.getProperty(s);
             if (method22150 == null) {

@@ -24,10 +24,10 @@ public abstract class Class7304<C extends Class5118>
     public static final Class7304<Class5117> field28280;
     public static final BlockState field28281;
     public static final BlockState field28282;
-    public static final Class7099 field28283;
-    public static final Class7099 field28284;
+    public static final IFluidState field28283;
+    public static final IFluidState field28284;
     public Set<Block> field28285;
-    public Set<Class7255> field28286;
+    public Set<Fluid> field28286;
     private final Function<Dynamic<?>, ? extends C> field28287;
     public final int field28288;
     
@@ -37,7 +37,7 @@ public abstract class Class7304<C extends Class5118>
     
     public Class7304(final Function<Dynamic<?>, ? extends C> field28287, final int field28288) {
         this.field28285 = (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153, (Object)Class7521.field29156, (Object)Class7521.field29157, (Object[])new Block[] { Class7521.field29158, Class7521.field29155, Class7521.field29546, Class7521.field29482, Class7521.field29483, Class7521.field29484, Class7521.field29485, Class7521.field29486, Class7521.field29487, Class7521.field29488, Class7521.field29489, Class7521.field29490, Class7521.field29491, Class7521.field29492, Class7521.field29493, Class7521.field29494, Class7521.field29495, Class7521.field29496, Class7521.field29497, Class7521.field29217, Class7521.field29587, Class7521.field29392, Class7521.field29329, Class7521.field29548 });
-        this.field28286 = (Set<Class7255>)ImmutableSet.of((Object)Class7558.field29976);
+        this.field28286 = (Set<Fluid>)ImmutableSet.of((Object)Class7558.field29976);
         this.field28287 = field28287;
         this.field28288 = field28288;
     }

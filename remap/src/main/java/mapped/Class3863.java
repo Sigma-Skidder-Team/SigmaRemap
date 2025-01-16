@@ -44,7 +44,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final Class512 class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
         final Class485 method2884 = class7099.method2884();
         final TileEntity method2885 = class7097.method6727(class7098);
         if (method2884 == null || !(method2885 instanceof Class477)) {
@@ -93,7 +93,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     }
     
     @Override
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return class7096.get((IProperty<Boolean>)Class3863.field17492) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     

@@ -207,7 +207,7 @@ public abstract class World implements Class1851, AutoCloseable
     public boolean method6691(final BlockPos class354, final boolean b, final Entity class355) {
         final BlockState method6701 = this.getBlockState(class354);
         if (!method6701.method21706()) {
-            final Class7099 method6702 = this.method6702(class354);
+            final IFluidState method6702 = this.method6702(class354);
             this.method6955(2001, class354, Block.method11774(method6701));
             if (b) {
                 Block.method11838(method6701, this, class354, method6701.getBlock().method11802() ? this.method6727(class354) : null, class355, ItemStack.field34174);
@@ -317,7 +317,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public Class7099 method6702(final BlockPos class354) {
+    public IFluidState method6702(final BlockPos class354) {
         if (!isOutsideBuildHeight(class354)) {
             return this.method6685(class354).method6702(class354);
         }
@@ -564,7 +564,7 @@ public abstract class World implements Class1851, AutoCloseable
         if (class400 != null) {
             class402.method18412(class400);
         }
-        class402.method18408();
+        class402.doExplosionA();
         class402.method18409(true);
         return class402;
     }

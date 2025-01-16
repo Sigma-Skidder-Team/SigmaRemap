@@ -123,7 +123,7 @@ public final class Class8532
         return new BlockPos(n, class1847.rand.nextInt(class1848.method7018(Class2020.field11522, n, n2) + 1 + 1), n2);
     }
     
-    public static boolean method28620(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Class7099 class1858) {
+    public static boolean method28620(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final IFluidState class1858) {
         return !class1857.isCollisionShapeOpaque(class1855, class1856) && !class1857.method21714() && class1858.isEmpty() && !class1857.method21755(Class7188.field27906);
     }
     
@@ -135,7 +135,7 @@ public final class Class8532
             return false;
         }
         final BlockState method6701 = class2195.getBlockState(class2196);
-        final Class7099 method6702 = class2195.method6702(class2196);
+        final IFluidState method6702 = class2195.method6702(class2196);
         final BlockPos method6703 = class2196.method1137();
         final BlockPos method6704 = class2196.method1139();
         switch (Class8621.field36186[class2194.ordinal()]) {

@@ -29,7 +29,7 @@ public class Class784 extends Class785 implements Class768
     public void method4142() {
         this.field4114.method22062(1, new Class3507(this, 1.25, 20, 10.0f));
         this.field4114.method22062(2, new Class3517(this, 1.0, 1.0000001E-5f));
-        this.field4114.method22062(3, new Class3628(this, Class512.class, 6.0f));
+        this.field4114.method22062(3, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(4, new Class3503(this));
         this.field4115.method22062(1, new Class3555<Object>(this, Class759.class, 10, true, false, class511 -> class511 instanceof Class762));
     }
@@ -109,12 +109,12 @@ public class Class784 extends Class785 implements Class768
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() == Items.field31426 && this.method4332()) {
             if (!this.world.isRemote) {
                 this.method4333(false);
-                method2715.method27636(1, class512, class515 -> class515.method2795(class514));
+                method2715.method27636(1, playerEntity, class515 -> class515.method2795(class514));
             }
             return true;
         }

@@ -178,7 +178,7 @@ public abstract class Class402 extends Entity implements Class401
             ++this.field2478;
             final Vec3d method1993 = this.method1934();
             Vec3d class355 = method1993.add(method1988);
-            Class7006 method1994 = this.world.method6987(new Class8478(method1993, class355, Class2040.field11632, Class2191.field13325, this));
+            Class7006 method1994 = this.world.rayTraceBlocks(new RayTraceContext(method1993, class355, Class2040.field11632, Class2191.field13325, this));
             if (method1994.method21449() != Class2165.field12880) {
                 class355 = method1994.method21451();
             }

@@ -139,7 +139,7 @@ public class Class8845
     }
     
     public static boolean method30923(final Vec3d class5487) {
-        final Class7005 method6987 = Class8845.field37174.field4683.method6987(new Class8478(new Vec3d(Class8845.field37174.field4684.posX, Class8845.field37174.field4684.posY + Class8845.field37174.field4684.method1892(), Class8845.field37174.field4684.posZ), class5487, Class2040.field11633, Class2191.field13325, Class8845.field37174.field4684));
+        final Class7005 method6987 = Class8845.field37174.field4683.rayTraceBlocks(new RayTraceContext(new Vec3d(Class8845.field37174.field4684.posX, Class8845.field37174.field4684.posY + Class8845.field37174.field4684.method1892(), Class8845.field37174.field4684.posZ), class5487, Class2040.field11633, Class2191.field13325, Class8845.field37174.field4684));
         final boolean b = method6987.method21449() == Class2165.field12880 || method6987.method21449() == Class2165.field12882;
         Class8845.field37174.field4683.getBlockState(method6987.method21447()).method21696();
         return b;

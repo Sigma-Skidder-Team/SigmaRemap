@@ -34,7 +34,7 @@ public class Class3454 extends Class3446
         final BlockPos class354 = new BlockPos(method2634, method2635, method2636);
         final BlockState method2637 = field2391.getBlockState(class354);
         final Block method2638 = method2637.getBlock();
-        final boolean equals = field2391.method6987(new Class8478(new Vec3d(MathHelper.floor(this.field16294.getPosX()) + 0.5, method2635 + 0.5, MathHelper.floor(this.field16294.getPosZ()) + 0.5), new Vec3d(method2634 + 0.5, method2635 + 0.5, method2636 + 0.5), Class2040.field11633, Class2191.field13325, this.field16294)).method21447().equals(class354);
+        final boolean equals = field2391.rayTraceBlocks(new RayTraceContext(new Vec3d(MathHelper.floor(this.field16294.getPosX()) + 0.5, method2635 + 0.5, MathHelper.floor(this.field16294.getPosZ()) + 0.5), new Vec3d(method2634 + 0.5, method2635 + 0.5, method2636 + 0.5), Class2040.field11633, Class2191.field13325, this.field16294)).method21447().equals(class354);
         if (method2638.method11785(Class7188.field27916)) {
             if (equals) {
                 this.field16294.method5079(method2637);

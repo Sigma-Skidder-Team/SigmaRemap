@@ -28,7 +28,7 @@ public class Class6356 extends Class6354
     public byte[] field25426;
     public boolean field25427;
     public final List<Class9244> field25428;
-    private final Map<Class512, Class9244> field25429;
+    private final Map<PlayerEntity, Class9244> field25429;
     private final Map<String, Class8843> field25430;
     public final Map<String, Class9323> field25431;
     private final Map<String, Class8525> field25432;
@@ -128,14 +128,14 @@ public class Class6356 extends Class6354
         this.method18903();
     }
     
-    public void method18916(final Class512 class512, final ItemStack class513) {
-        if (!this.field25429.containsKey(class512)) {
-            final Class9244 class514 = new Class9244(this, class512);
-            this.field25429.put(class512, class514);
+    public void method18916(final PlayerEntity playerEntity, final ItemStack class513) {
+        if (!this.field25429.containsKey(playerEntity)) {
+            final Class9244 class514 = new Class9244(this, playerEntity);
+            this.field25429.put(playerEntity, class514);
             this.field25428.add(class514);
         }
-        if (!class512.field3006.method2376(class513)) {
-            this.field25431.remove(class512.getName().getString());
+        if (!playerEntity.field3006.method2376(class513)) {
+            this.field25431.remove(playerEntity.getName().getString());
         }
         for (int i = 0; i < this.field25428.size(); ++i) {
             final Class9244 class515 = this.field25428.get(i);
@@ -168,7 +168,7 @@ public class Class6356 extends Class6354
                     }
                 }
                 final Class8525 class517 = new Class8525(method27680, method27679.method1882().getHorizontalIndex() * 90, method27679.getEntityId());
-                this.method18918(Class2095.field12112, class512.world, "frame-" + method27679.getEntityId(), method27680.getX(), method27680.getZ(), method27679.method1882().getHorizontalIndex() * 90, null);
+                this.method18918(Class2095.field12112, playerEntity.world, "frame-" + method27679.getEntityId(), method27680.getX(), method27680.getZ(), method27679.method1882().getHorizontalIndex() * 90, null);
                 this.field25432.put(class517.method28593(), class517);
             }
         }
@@ -179,7 +179,7 @@ public class Class6356 extends Class6354
                 for (int j = 0; j < method27682.size(); ++j) {
                     final Class51 method27683 = method27682.method346(j);
                     if (!this.field25431.containsKey(method27683.method323("id"))) {
-                        this.method18918(Class2095.method8216(method27683.method317("type")), class512.world, method27683.method323("id"), method27683.method322("x"), method27683.method322("z"), method27683.method322("rot"), null);
+                        this.method18918(Class2095.method8216(method27683.method317("type")), playerEntity.world, method27683.method323("id"), method27683.method322("x"), method27683.method322("z"), method27683.method322("rot"), null);
                     }
                 }
             }
@@ -266,7 +266,7 @@ public class Class6356 extends Class6354
     }
     
     @Nullable
-    public IPacket<?> method18919(final ItemStack class8321, final Class1855 class8322, final Class512 class8323) {
+    public IPacket<?> method18919(final ItemStack class8321, final Class1855 class8322, final PlayerEntity class8323) {
         final Class9244 class8324 = this.field25429.get(class8323);
         return (class8324 != null) ? class8324.method34084(class8321) : null;
     }
@@ -279,11 +279,11 @@ public class Class6356 extends Class6354
         }
     }
     
-    public Class9244 method18921(final Class512 class512) {
-        Class9244 class513 = this.field25429.get(class512);
+    public Class9244 method18921(final PlayerEntity playerEntity) {
+        Class9244 class513 = this.field25429.get(playerEntity);
         if (class513 == null) {
-            class513 = new Class9244(this, class512);
-            this.field25429.put(class512, class513);
+            class513 = new Class9244(this, playerEntity);
+            this.field25429.put(playerEntity, class513);
             this.field25428.add(class513);
         }
         return class513;

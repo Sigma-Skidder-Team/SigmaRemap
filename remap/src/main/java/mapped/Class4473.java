@@ -177,7 +177,7 @@ public abstract class Class4473
                 class1852 = class1852.method21708(this.field19852);
             }
             class1851.setBlockState(class1854, class1852, 2);
-            final Class7099 method6702 = class1851.method6702(class1854);
+            final IFluidState method6702 = class1851.method6702(class1854);
             if (!method6702.isEmpty()) {
                 class1851.method6834().method21345(class1854, method6702.method21779(), 0);
             }

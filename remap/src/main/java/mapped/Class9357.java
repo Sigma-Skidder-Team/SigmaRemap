@@ -56,8 +56,8 @@ public class Class9357
         return this.method34688(class7096.getBlock().getStateContainer(), class7096);
     }
     
-    public boolean method34690(final Class7099 class7099) {
-        return this.method34688(class7099.method21779().method22146(), class7099);
+    public boolean method34690(final IFluidState IFluidState) {
+        return this.method34688(IFluidState.method21779().method22146(), IFluidState);
     }
     
     public void method34691(final StateContainer<?, ?> class9104, final Consumer<String> consumer) {

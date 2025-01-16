@@ -10,7 +10,7 @@ public class Class6158 extends Class6157
 {
     private static String[] field24907;
     
-    private Class6158(final World class1847, final double n, final double n2, final double n3, final Class7255 class1848, final Class6909 class1849) {
+    private Class6158(final World class1847, final double n, final double n2, final double n3, final Fluid class1848, final Class6909 class1849) {
         super(class1847, n, n2, n3, class1848, class1849, null);
     }
     

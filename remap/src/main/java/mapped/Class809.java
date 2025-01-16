@@ -155,34 +155,34 @@ public class Class809 extends Class806
     }
     
     @Override
-    public boolean method4195(final Class512 class512, final Class316 class513) {
-        final ItemStack method2715 = class512.method2715(class513);
+    public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
+        final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() instanceof Class3831) {
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
         if (!this.method4715()) {
             return false;
         }
         if (this.method2625()) {
-            return super.method4195(class512, class513);
+            return super.method4195(playerEntity, class513);
         }
-        if (class512.method2804()) {
-            this.method4740(class512);
+        if (playerEntity.method2804()) {
+            this.method4740(playerEntity);
             return true;
         }
         if (!this.isBeingRidden()) {
             if (!method2715.method27620()) {
                 if (method2715.getItem() == Items.field31353 && !this.method4736()) {
-                    this.method4740(class512);
+                    this.method4740(playerEntity);
                     return true;
                 }
-                if (method2715.method27640(class512, this, class513)) {
+                if (method2715.method27640(playerEntity, this, class513)) {
                     return true;
                 }
             }
-            this.method4742(class512);
+            this.method4742(playerEntity);
             return true;
         }
-        return super.method4195(class512, class513);
+        return super.method4195(playerEntity, class513);
     }
 }

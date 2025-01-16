@@ -130,7 +130,7 @@ public class Class7752 extends Class7746
     
     @Override
     public boolean method24738(final Vec3d class5487, final Vec3d class5488, final int n, final int n2, final int n3) {
-        return this.field31658.method6987(new Class8478(class5487, new Vec3d(class5488.x, class5488.y + this.field31657.method1931() * 0.5, class5488.z), Class2040.field11632, Class2191.field13325, this.field31657)).method21449() == Class2165.field12880;
+        return this.field31658.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(class5488.x, class5488.y + this.field31657.method1931() * 0.5, class5488.z), Class2040.field11632, Class2191.field13325, this.field31657)).method21449() == Class2165.field12880;
     }
     
     @Override

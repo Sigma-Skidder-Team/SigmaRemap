@@ -150,7 +150,7 @@ public class Class1857 implements Class1856
     }
     
     @Override
-    public Class7099 method6702(final BlockPos class354) {
+    public IFluidState method6702(final BlockPos class354) {
         return this.getBlockState(class354).getFluidState();
     }
     

@@ -23,7 +23,7 @@ public final class Class504 implements Class434
     }
     
     @Override
-    public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
+    public Class3418 method2166(final int n, final Class464 class464, final PlayerEntity class465) {
         return this.field2884.method2166(n, class464, class465);
     }
 }

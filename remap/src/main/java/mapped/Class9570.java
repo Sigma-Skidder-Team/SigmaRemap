@@ -1033,7 +1033,7 @@ public class Class9570
         Class9570.field41268 = new Class7361(Class9570.field41262, "renderBlockOverlay");
         Class9570.field41269 = new Class7361(Class9570.field41262, "renderFireOverlay");
         Class9570.field41270 = new Class7361(Class9570.field41262, "renderWaterOverlay");
-        Class9570.field41271 = new Class7363(Class7255.class);
+        Class9570.field41271 = new Class7363(Fluid.class);
         Class9570.field41272 = new Class7361(Class9570.field41271, "getTags");
         Class9570.field41273 = new Class7363("net.minecraftforge.common.ForgeHooks");
         Class9570.field41274 = new Class7361(Class9570.field41273, "onLivingAttack");
@@ -1118,7 +1118,7 @@ public class Class9570
         Class9570.field41353 = new Class7361(Class9570.field41352, "getRegistryName");
         Class9570.field41354 = new Class7363(Class7969.class);
         Class9570.field41355 = new Class7361(Class9570.field41354, "canRenderInLayer", new Class[] { BlockState.class, Class6332.class });
-        Class9570.field41356 = new Class7361(Class9570.field41354, "canRenderInLayer", new Class[] { Class7099.class, Class6332.class });
+        Class9570.field41356 = new Class7361(Class9570.field41354, "canRenderInLayer", new Class[] { IFluidState.class, Class6332.class });
         Class9570.field41357 = new Class7363("net.minecraftforge.common.extensions.IForgeTileEntity");
         Class9570.field41358 = new Class7361(Class9570.field41357, "canRenderBreaking");
         Class9570.field41359 = new Class7361(Class9570.field41357, "getRenderBoundingBox");

@@ -144,7 +144,7 @@ public class Class793 extends Class789
         this.field4114.method22062(3, new Class3488(this, 1.0, null));
         this.field4114.method22062(4, new Class3540(this, 1.0));
         this.field4114.method22062(7, new Class3506(this, 1.0));
-        this.field4114.method22062(8, new Class3628(this, Class512.class, 8.0f));
+        this.field4114.method22062(8, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(9, new Class3519(this, 1.0, 100, null));
     }
     
@@ -299,7 +299,7 @@ public class Class793 extends Class789
     }
     
     @Override
-    public boolean method4204(final Class512 class512) {
+    public boolean method4204(final PlayerEntity playerEntity) {
         return false;
     }
     

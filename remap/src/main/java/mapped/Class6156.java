@@ -9,9 +9,9 @@ import net.minecraft.world.World;
 public class Class6156 extends Class6159
 {
     private static String[] field24907;
-    private final Class7255 field24908;
+    private final Fluid field24908;
     
-    private Class6156(final World class1847, final double n, final double n2, final double n3, final Class7255 field24908) {
+    private Class6156(final World class1847, final double n, final double n2, final double n3, final Fluid field24908) {
         super(class1847, n, n2, n3);
         this.method18440(0.01f, 0.01f);
         this.field24952 = 0.06f;
@@ -43,7 +43,7 @@ public class Class6156 extends Class6159
                 this.field24940 *= 0.9800000190734863;
                 this.field24941 *= 0.9800000190734863;
                 final BlockPos class354 = new BlockPos(this.field24936, this.field24937, this.field24938);
-                final Class7099 method6702 = this.field24932.method6702(class354);
+                final IFluidState method6702 = this.field24932.method6702(class354);
                 if (method6702.method21779() == this.field24908) {
                     if (this.field24937 < class354.getY() + method6702.method21782(this.field24932, class354)) {
                         this.method18439();

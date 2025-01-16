@@ -80,7 +80,7 @@ public class Class6092
             final float n5 = n2 * 0.1f;
             final float n6 = n3 * 0.1f;
             final float n7 = n4 * 0.1f;
-            final Class7005 method6987 = this.field24706.method6987(new Class8478(this.field24708.add(n5, n6, n7), new Vec3d(this.field24708.x - this.field24710.getX() * n + n5 + n7, this.field24708.y - this.field24710.getY() * n + n6, this.field24708.z - this.field24710.getZ() * n + n7), Class2040.field11632, Class2191.field13325, this.field24707));
+            final Class7005 method6987 = this.field24706.rayTraceBlocks(new RayTraceContext(this.field24708.add(n5, n6, n7), new Vec3d(this.field24708.x - this.field24710.getX() * n + n5 + n7, this.field24708.y - this.field24710.getY() * n + n6, this.field24708.z - this.field24710.getZ() * n + n7), Class2040.field11632, Class2191.field13325, this.field24707));
             if (method6987.method21449() != Class2165.field12880) {
                 final double method6988 = method6987.method21451().distanceTo(this.field24708);
                 if (method6988 < n) {
@@ -152,9 +152,9 @@ public class Class6092
         return this.field24716;
     }
     
-    public Class7099 method18169() {
+    public IFluidState method18169() {
         if (this.field24705) {
-            final Class7099 method6702 = this.field24706.method6702(this.field24709);
+            final IFluidState method6702 = this.field24706.method6702(this.field24709);
             return (!method6702.isEmpty() && this.field24708.y >= this.field24709.getY() + method6702.method21782(this.field24706, this.field24709)) ? Class7558.field29974.method22148() : method6702;
         }
         return Class7558.field29974.method22148();

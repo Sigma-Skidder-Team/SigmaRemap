@@ -120,7 +120,7 @@ public class Class3362 extends Class3355
                 final double n8 = class399.method1944() - n3;
                 final double n9 = class399.getPosZ() - n4;
                 if (MathHelper.sqrt(n7 * n7 + n8 * n8 + n9 * n9) != 0.0) {
-                    final double n10 = (1.0 - n6) * Explosion.method18407(class401, class399);
+                    final double n10 = (1.0 - n6) * Explosion.getBlockDensity(class401, class399);
                     return (float)(int)((n10 * n10 + n10) / 2.0 * 7.0 * n5 + 1.0);
                 }
             }

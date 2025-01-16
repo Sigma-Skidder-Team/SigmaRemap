@@ -418,7 +418,7 @@ public class Class423 extends Entity
                     while (j < method1888) {
                         for (int k = method1891; k < method1892; ++k) {
                             method1893.method1300(j, i, k);
-                            final Class7099 method1894 = this.world.method6702(method1893);
+                            final IFluidState method1894 = this.world.method6702(method1893);
                             if (method1894.method21793(Class7324.field28319)) {
                                 max = Math.max(max, method1894.method21782(this.world, method1893));
                             }
@@ -490,7 +490,7 @@ public class Class423 extends Entity
                 for (int j = method1889; j < method1890; ++j) {
                     for (int k = method1891; k < method1892; ++k) {
                         method1893.method1300(i, j, k);
-                        final Class7099 method1894 = this.world.method6702(method1893);
+                        final IFluidState method1894 = this.world.method6702(method1893);
                         if (method1894.method21793(Class7324.field28319)) {
                             final float n = j + method1894.method21782(this.world, method1893);
                             this.field2563 = Math.max(n, this.field2563);
@@ -519,7 +519,7 @@ public class Class423 extends Entity
                 for (int j = method1889; j < method1890; ++j) {
                     for (int k = method1891; k < method1892; ++k) {
                         method1893.method1300(i, j, k);
-                        final Class7099 method1894 = this.world.method6702(method1893);
+                        final IFluidState method1894 = this.world.method6702(method1893);
                         if (method1894.method21793(Class7324.field28319) && n < method1893.getY() + method1894.method21782(this.world, method1893)) {
                             if (!method1894.method21780()) {
                                 return Class2087.field12067;

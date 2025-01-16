@@ -81,17 +81,17 @@ public class Class3921 extends Block implements Class3856
     }
     
     @Override
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return class7096.get((IProperty<Boolean>)Class3921.field17778) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     @Override
-    public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Class7099 class1854) {
+    public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final IFluidState class1854) {
         return class1853.get(Class3921.field17777) != Class186.field600 && super.method11921(class1851, class1852, class1853, class1854);
     }
     
     @Override
-    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Class7255 class1858) {
+    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
         return class1857.get(Class3921.field17777) != Class186.field600 && super.method11920(class1855, class1856, class1857, class1858);
     }
     

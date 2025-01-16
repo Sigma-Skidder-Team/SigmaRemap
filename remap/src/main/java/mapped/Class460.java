@@ -60,14 +60,14 @@ public abstract class Class460 extends TileEntity implements Class446, Class434,
     
     public abstract ITextComponent method2243();
     
-    public boolean method2328(final Class512 class512) {
-        return method2336(class512, this.field2716, this.getDisplayName());
+    public boolean method2328(final PlayerEntity playerEntity) {
+        return method2336(playerEntity, this.field2716, this.getDisplayName());
     }
     
-    public static boolean method2336(final Class512 class512, final Class9115 class513, final ITextComponent class514) {
-        if (!class512.isSpectator() && !class513.method32976(class512.getHeldItemMainhand())) {
-            class512.method2853(new Class2259("container.isLocked", new Object[] { class514 }), true);
-            class512.method2812(Class8520.field35066, Class286.field1582, 1.0f, 1.0f);
+    public static boolean method2336(final PlayerEntity playerEntity, final Class9115 class513, final ITextComponent class514) {
+        if (!playerEntity.isSpectator() && !class513.method32976(playerEntity.getHeldItemMainhand())) {
+            playerEntity.method2853(new Class2259("container.isLocked", new Object[] { class514 }), true);
+            playerEntity.method2812(Class8520.field35066, Class286.field1582, 1.0f, 1.0f);
             return false;
         }
         return true;
@@ -75,7 +75,7 @@ public abstract class Class460 extends TileEntity implements Class446, Class434,
     
     @Nullable
     @Override
-    public Class3418 method2166(final int n, final Class464 class464, final Class512 class465) {
+    public Class3418 method2166(final int n, final Class464 class464, final PlayerEntity class465) {
         return this.method2328(class465) ? this.method2253(n, class464) : null;
     }
     

@@ -6,7 +6,7 @@ package mapped;
 
 import java.nio.file.Path;
 
-public class Class3697 extends Class3693<Class7255>
+public class Class3697 extends Class3693<Fluid>
 {
     public Class3697(final Class7203 class7203) {
         super(class7203, Registry.field206);
@@ -29,7 +29,7 @@ public class Class3697 extends Class3693<Class7255>
     }
     
     @Override
-    public void method11366(final Class6208<Class7255> class6208) {
+    public void method11366(final Class6208<Fluid> class6208) {
         Class7324.method22477(class6208);
     }
 }

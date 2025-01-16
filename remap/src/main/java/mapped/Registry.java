@@ -25,7 +25,7 @@ public abstract class Registry<T> implements Class89<T>
     private static final Map<ResourceLocation, Supplier<?>> field203;
     public static final Class91<Class91<?>> field204;
     public static final Registry<Class7795> field205;
-    public static final Class93<Class7255> field206;
+    public static final Class93<Fluid> field206;
     public static final Registry<Class5328> field207;
     public static final Class93<Block> BLOCK;
     public static final Registry<Class6257> field209;

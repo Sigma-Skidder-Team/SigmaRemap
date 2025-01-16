@@ -13,12 +13,12 @@ import java.util.Random;
 public abstract class Class7261 extends Class7257
 {
     @Override
-    public Class7255 method22174() {
+    public Fluid method22174() {
         return Class7558.field29977;
     }
     
     @Override
-    public Class7255 method22176() {
+    public Fluid method22176() {
         return Class7558.field29978;
     }
     
@@ -28,7 +28,7 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public void method22150(final World class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
+    public void method22150(final World class1847, final BlockPos class1848, final IFluidState class1849, final Random random) {
         final BlockPos method1137 = class1848.method1137();
         if (class1847.getBlockState(method1137).method21706()) {
             if (!class1847.getBlockState(method1137).method21722(class1847, method1137)) {
@@ -47,7 +47,7 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public void method22152(final World class1847, final BlockPos class1848, final Class7099 class1849, final Random random) {
+    public void method22152(final World class1847, final BlockPos class1848, final IFluidState class1849, final Random random) {
         if (class1847.method6765().method31216(Class8878.field37315)) {
             final int nextInt = random.nextInt(3);
             if (nextInt <= 0) {
@@ -123,12 +123,12 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public BlockState method22162(final Class7099 class7099) {
-        return ((StateHolder<O, BlockState>)Class7521.field29174.getDefaultState()).with((IProperty<Comparable>)Class3859.field17480, Class7257.method22193(class7099));
+    public BlockState method22162(final IFluidState IFluidState) {
+        return ((StateHolder<O, BlockState>)Class7521.field29174.getDefaultState()).with((IProperty<Comparable>)Class3859.field17480, Class7257.method22193(IFluidState));
     }
     
     @Override
-    public boolean method22165(final Class7255 class7255) {
+    public boolean method22165(final Fluid class7255) {
         return class7255 == Class7558.field29978 || class7255 == Class7558.field29977;
     }
     
@@ -138,8 +138,8 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public boolean method22154(final Class7099 class7099, final Class1855 class7100, final BlockPos class7101, final Class7255 class7102, final Direction class7103) {
-        return class7099.method21782(class7100, class7101) >= 0.44444445f && class7102.method22166(Class7324.field28319);
+    public boolean method22154(final IFluidState IFluidState, final Class1855 class7100, final BlockPos class7101, final Fluid class7102, final Direction class7103) {
+        return IFluidState.method21782(class7100, class7101) >= 0.44444445f && class7102.method22166(Class7324.field28319);
     }
     
     @Override
@@ -148,7 +148,7 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public int method22192(final World class1847, final BlockPos class1848, final Class7099 class1849, final Class7099 class1850) {
+    public int method22192(final World class1847, final BlockPos class1848, final IFluidState class1849, final IFluidState class1850) {
         int method22156 = this.method22156(class1847);
         if (!class1849.isEmpty()) {
             if (!class1850.isEmpty()) {
@@ -176,9 +176,9 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public void method22179(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Direction class1854, final Class7099 class1855) {
+    public void method22179(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Direction class1854, final IFluidState class1855) {
         if (class1854 == Direction.DOWN) {
-            final Class7099 method6702 = class1851.method6702(class1852);
+            final IFluidState method6702 = class1851.method6702(class1852);
             if (this.method22166(Class7324.field28320)) {
                 if (method6702.method21793(Class7324.field28319)) {
                     if (class1853.getBlock() instanceof Class3859) {

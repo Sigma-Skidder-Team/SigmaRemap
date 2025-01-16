@@ -1696,7 +1696,7 @@ public abstract class LivingEntity extends Entity
         this.method1936(this.getMotion().add(0.0, -0.03999999910593033, 0.0));
     }
     
-    public void method2727(final Class7909<Class7255> class7909) {
+    public void method2727(final Class7909<Fluid> class7909) {
         this.method1936(this.getMotion().add(0.0, 0.03999999910593033, 0.0));
     }
     
@@ -2329,7 +2329,7 @@ public abstract class LivingEntity extends Entity
     }
     
     public boolean method2747(final Entity class399) {
-        return this.world.method6987(new Class8478(new Vec3d(this.getPosX(), this.method1944(), this.getPosZ()), new Vec3d(class399.getPosX(), class399.method1944(), class399.getPosZ()), Class2040.field11632, Class2191.field13325, this)).method21449() == Class2165.field12880;
+        return this.world.rayTraceBlocks(new RayTraceContext(new Vec3d(this.getPosX(), this.method1944(), this.getPosZ()), new Vec3d(class399.getPosX(), class399.method1944(), class399.getPosZ()), Class2040.field11632, Class2191.field13325, this)).method21449() == Class2165.field12880;
     }
     
     @Override

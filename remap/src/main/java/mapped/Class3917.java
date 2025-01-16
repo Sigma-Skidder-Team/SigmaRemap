@@ -80,7 +80,7 @@ public class Class3917 extends Block implements Class3856
         BlockState method6702 = this.getDefaultState();
         final World method6703 = class7074.method21654();
         final BlockPos method6704 = class7074.method21639();
-        final Class7099 method6705 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method6705 = class7074.method21654().method6702(class7074.method21639());
         for (final Direction class7075 : class7074.method21643()) {
             if (class7075.getAxis().isHorizontal()) {
                 method6702 = ((StateHolder<Object, BlockState>)method6702).with((IProperty<Comparable>)Class3917.field17752, class7075.getOpposite());
@@ -108,7 +108,7 @@ public class Class3917 extends Block implements Class3856
     }
     
     @Override
-    public Class7099 method11864(final BlockState class7096) {
+    public IFluidState method11864(final BlockState class7096) {
         return class7096.get((IProperty<Boolean>)Class3917.field17753) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
