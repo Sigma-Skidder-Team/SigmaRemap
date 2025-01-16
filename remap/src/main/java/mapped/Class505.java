@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
 public class Class505 extends Class433

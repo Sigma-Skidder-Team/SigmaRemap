@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.Matrix3f;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4780 extends Class4703<Class861>

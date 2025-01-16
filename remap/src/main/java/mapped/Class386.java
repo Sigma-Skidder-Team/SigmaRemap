@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3i;
 

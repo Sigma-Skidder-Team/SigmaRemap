@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
 public class Class3861 extends Class3860

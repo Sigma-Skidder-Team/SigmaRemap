@@ -8,7 +8,7 @@ import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import java.util.Arrays;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 public final class VoxelShapeArray extends VoxelShape
 {

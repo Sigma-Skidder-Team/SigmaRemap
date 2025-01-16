@@ -16,7 +16,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.*;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
 import java.util.Map;

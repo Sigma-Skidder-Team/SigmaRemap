@@ -8,7 +8,7 @@ import com.mentalfrostbyte.Client;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Pose;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;

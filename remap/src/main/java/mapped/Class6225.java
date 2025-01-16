@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.*;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3i;
 

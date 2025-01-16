@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.dispenser.IPosition;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
 public abstract class Class6409 extends Class6404

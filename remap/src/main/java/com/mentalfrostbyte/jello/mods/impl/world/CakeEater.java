@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.mods.impl.movement.flys.MineplexFly;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;

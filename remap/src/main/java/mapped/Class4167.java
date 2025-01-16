@@ -7,7 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
 import net.minecraft.client.renderer.Vector3f;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
 import java.util.Calendar;

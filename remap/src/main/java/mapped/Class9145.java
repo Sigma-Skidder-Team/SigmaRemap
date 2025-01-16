@@ -7,7 +7,7 @@ package mapped;
 import java.util.ArrayList;
 import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import java.util.List;
 import java.util.BitSet;

@@ -15,7 +15,7 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.chunk.IChunkLightProvider;
 
 public abstract class Class1897<M extends Class7501<M>> extends Class1896

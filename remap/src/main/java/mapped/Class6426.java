@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.dispenser.IPosition;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
 import java.util.Random;

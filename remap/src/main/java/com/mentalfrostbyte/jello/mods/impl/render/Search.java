@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import mapped.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.HashSet;

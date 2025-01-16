@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import mapped.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
 
 public class MineplexFly extends PremiumModule

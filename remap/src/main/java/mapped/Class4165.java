@@ -7,7 +7,7 @@ package mapped;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.List;

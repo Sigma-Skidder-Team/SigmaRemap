@@ -6,7 +6,7 @@ package mapped;
 
 import java.lang.reflect.Type;
 import com.google.gson.GsonBuilder;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import java.util.Optional;
 import java.util.ArrayList;

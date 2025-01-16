@@ -6,7 +6,7 @@ package net.minecraft.util.math;
 
 import com.google.common.base.MoreObjects;
 import net.minecraft.dispenser.IPosition;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import javax.annotation.concurrent.Immutable;
 

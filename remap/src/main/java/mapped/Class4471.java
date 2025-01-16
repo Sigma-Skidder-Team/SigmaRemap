@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import java.util.Random;
 import java.util.List;

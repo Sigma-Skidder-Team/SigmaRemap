@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
 
 public class Class4791 extends Class4703<Class862>

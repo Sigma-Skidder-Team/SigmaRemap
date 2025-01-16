@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Iterators;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import java.util.Iterator;
 import java.util.Random;

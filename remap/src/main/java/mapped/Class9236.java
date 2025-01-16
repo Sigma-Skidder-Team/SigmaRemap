@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
 import java.util.List;

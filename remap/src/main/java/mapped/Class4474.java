@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import java.util.Random;
 

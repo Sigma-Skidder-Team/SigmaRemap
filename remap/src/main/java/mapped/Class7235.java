@@ -8,7 +8,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Supplier;
 import java.util.EnumMap;

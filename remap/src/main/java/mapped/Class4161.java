@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 public class Class4161 extends Class4158<Class435>
 {

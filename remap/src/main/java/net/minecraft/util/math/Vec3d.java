@@ -7,7 +7,7 @@ package net.minecraft.util.math;
 import net.minecraft.dispenser.IPosition;
 import mapped.Vec2f;
 import net.minecraft.client.renderer.Vector3f;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import java.util.EnumSet;
 

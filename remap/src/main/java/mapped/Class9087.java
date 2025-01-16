@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import java.util.List;
 

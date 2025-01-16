@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.stream.Stream;
 import java.util.Arrays;
 import com.google.common.math.IntMath;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;

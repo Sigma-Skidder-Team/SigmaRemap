@@ -6,7 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 public class SplitVoxelShape extends VoxelShape
 {

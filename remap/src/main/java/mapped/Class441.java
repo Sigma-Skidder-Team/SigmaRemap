@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 public interface Class441 extends Class446
 {

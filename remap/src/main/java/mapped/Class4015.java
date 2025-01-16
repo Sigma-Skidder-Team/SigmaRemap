@@ -7,7 +7,7 @@ package mapped;
 import java.util.LinkedList;
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
 public class Class4015 extends Block

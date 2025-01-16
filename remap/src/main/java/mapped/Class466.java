@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import com.google.common.collect.Maps;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Map;

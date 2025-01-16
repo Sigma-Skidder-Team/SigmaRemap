@@ -7,7 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 public final class Class7705 extends VoxelShape
 {

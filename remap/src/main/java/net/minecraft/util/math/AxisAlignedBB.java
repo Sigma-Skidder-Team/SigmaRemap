@@ -6,7 +6,7 @@ package net.minecraft.util.math;
 
 import mapped.MutableBoundingBox;
 import mapped.BlockRayTraceResult;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import javax.annotation.Nullable;
 import java.util.Iterator;

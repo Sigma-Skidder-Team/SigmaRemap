@@ -7,7 +7,7 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;

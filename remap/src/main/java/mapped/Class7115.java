@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import java.util.List;
 import java.util.stream.Collector;

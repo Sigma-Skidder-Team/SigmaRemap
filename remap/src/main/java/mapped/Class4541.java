@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import java.util.Random;

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 public abstract class Class3892 extends Block
 {

@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 
 public class Class6191 extends Class6159

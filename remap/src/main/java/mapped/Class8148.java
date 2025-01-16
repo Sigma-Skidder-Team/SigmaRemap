@@ -13,7 +13,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import java.util.EnumSet;
 import com.mojang.brigadier.arguments.ArgumentType;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 public class Class8148 implements ArgumentType<EnumSet<Direction.Axis>>
 {

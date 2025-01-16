@@ -11,7 +11,7 @@ import mapped.Mutable;
 import mapped.MutableBoundingBox;
 import net.minecraft.dispenser.IPosition;
 import net.minecraft.entity.Entity;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 
 import java.util.Spliterators;
 import java.util.function.Consumer;

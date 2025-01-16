@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util2.Direction;
+import net.minecraft.util.Direction;
 import net.minecraft.world.chunk.IChunkLightProvider;
 import org.apache.commons.lang3.mutable.MutableInt;
 
