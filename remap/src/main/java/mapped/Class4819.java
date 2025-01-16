@@ -6,10 +6,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
-import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
+import com.mentalfrostbyte.jello.settings.impl.*;
 import com.mentalfrostbyte.jello.settings.Setting;
-import com.mentalfrostbyte.jello.settings.impl.StringSetting;
-import com.mentalfrostbyte.jello.settings.impl.TextInputSetting;
 import org.lwjgl.opengl.GL11;
 import java.util.Map;
 import java.util.Iterator;
@@ -128,7 +126,7 @@ public class Class4819 extends Class4817 implements Class4820
             case 6: {
                 final Class4803 class4810 = new Class4803(class4803, class4804.method15204() + "view", n, n2, class4803.method14276(), 0);
                 int method15186 = 0;
-                final Iterator<Setting> iterator = (Iterator<Setting>)((SubOptionSetting)class4804).method15224().iterator();
+                final Iterator<Setting> iterator = (Iterator<Setting>)((SubOptionSettingExtender)class4804).method15224().iterator();
                 while (iterator.hasNext()) {
                     method15186 = this.method14402(class4810, iterator.next(), 0, method15186, n3);
                 }
@@ -156,7 +154,7 @@ public class Class4819 extends Class4817 implements Class4820
             }
             case 8: {
                 final Class4834 key6 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 200, Class4834.field20719, class4804.method15204());
-                final Class4854 class4812 = new Class4854(class4803, class4804.method15204() + "picker", class4803.method14276() - n3, n2 + 5, 175, 200, ((Class5000)class4804).method15209(), (String[])((Setting<List>)class4804).method15198().toArray(new String[0]));
+                final Class4854 class4812 = new Class4854(class4803, class4804.method15204() + "picker", class4803.method14276() - n3, n2 + 5, 175, 200, ((StringListSetting)class4804).method15209(), (String[])((Setting<List>)class4804).method15198().toArray(new String[0]));
                 this.field20624.put(key6, class4804);
                 class4812.method14516(class4999 -> class4804.method15199(class4812.method14563()));
                 class4812.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 175 - n3));

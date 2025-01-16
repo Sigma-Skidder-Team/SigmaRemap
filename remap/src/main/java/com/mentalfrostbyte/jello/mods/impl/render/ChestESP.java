@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.mods.impl.render.chestesps.BoxChestESP;
 import com.mentalfrostbyte.jello.mods.impl.render.chestesps.OutlineChestESP;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.Class265;
-import mapped.ColorSetting;
+import com.mentalfrostbyte.jello.settings.impl.ColorSetting;
 
 public class ChestESP extends ModuleWithSettings
 {

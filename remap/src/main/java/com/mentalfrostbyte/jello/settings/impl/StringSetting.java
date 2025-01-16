@@ -14,46 +14,45 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StringSetting extends Setting<String>
-{
+public class StringSetting extends Setting<String> {
     private List<String> field21518;
     private List<String> field21519;
-    
+
     public StringSetting(final String s, final String s2, final int n, final String... a) {
         super(s, s2, Type.STRING, a[n]);
         this.field21518 = new ArrayList<String>();
         this.field21519 = new ArrayList<String>();
         this.field21518 = Arrays.asList(a);
     }
-    
+
     public StringSetting(final String s, final String s2, final String s3, final String... a) {
         super(s, s2, Type.STRING, s3);
         this.field21518 = new ArrayList<String>();
         this.field21519 = new ArrayList<String>();
         this.field21518 = Arrays.asList(a);
     }
-    
+
     public StringSetting setPremiumMode(final String... array) {
         return this;
     }
-    
+
     @Override
     public boolean getValue() {
         return this.field21519.size() > 0;
     }
-    
+
     @Override
     public void method15201() {
         this.field21519.clear();
     }
-    
+
     public String method15212() {
         if (!this.field21519.contains(this.currentValue)) {
             return super.method15198();
         }
-        return (String)this.value;
+        return (String) this.value;
     }
-    
+
     public int method15213() {
         int n = 0;
         final Iterator<String> iterator = this.field21518.iterator();
@@ -65,7 +64,7 @@ public class StringSetting extends Setting<String>
         }
         return 0;
     }
-    
+
     public void method15214(final int n) {
         if (n > this.field21518.size()) {
             return;
@@ -76,7 +75,7 @@ public class StringSetting extends Setting<String>
         }
         this.method15199(this.field21518.get(n));
     }
-    
+
     @Override
     public Class4405 method15186(final Class4405 class4405) {
         this.currentValue = Class8105.method26636(class4405, "value", this.method15203());
@@ -93,7 +92,7 @@ public class StringSetting extends Setting<String>
         }
         return class4405;
     }
-    
+
     public List<String> method15215() {
         return this.field21518;
     }

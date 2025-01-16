@@ -7,6 +7,7 @@ package com.mentalfrostbyte.jello.mods;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.impl.render.ActiveMods;
 import com.mentalfrostbyte.jello.settings.Setting;
+import com.mentalfrostbyte.jello.settings.impl.BezierSetting;
 import mapped.*;
 
 import java.util.ArrayList;

@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
+import com.mentalfrostbyte.jello.settings.impl.ButtonSetting;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;

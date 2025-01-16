@@ -10,6 +10,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
+import com.mentalfrostbyte.jello.settings.impl.StringListSetting;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
@@ -27,7 +28,7 @@ public class Nuker extends Module
         this.addSetting(new NumberSetting("Range", "Range value for nuker", 6.0f, Float.class, 2.0f, 10.0f, 1.0f));
         this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "All", "One hit", "Bed", "Egg" }));
         this.addSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", false));
-        this.addSetting(new Class5000("Blocks", "Blocks to destroy", true));
+        this.addSetting(new StringListSetting("Blocks", "Blocks to destroy", true));
     }
     
     @EventListener

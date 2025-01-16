@@ -16,6 +16,7 @@ import com.mentalfrostbyte.jello.mods.impl.movement.Speed;
 import com.mentalfrostbyte.jello.mods.impl.movement.Jesus;
 import com.mentalfrostbyte.jello.mods.impl.movement.flys.HypixelFly;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
+import com.mentalfrostbyte.jello.settings.impl.ColorSetting;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
