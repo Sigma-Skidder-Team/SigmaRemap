@@ -157,16 +157,16 @@ public class Class432 extends Class428
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("TNTFuse", 99)) {
-            this.field2644 = class51.method319("TNTFuse");
+        if (class51.contains("TNTFuse", 99)) {
+            this.field2644 = class51.getInt("TNTFuse");
         }
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("TNTFuse", this.field2644);
+        class51.putInt("TNTFuse", this.field2644);
     }
 }

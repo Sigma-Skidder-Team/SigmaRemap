@@ -5,10 +5,9 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
+
 import java.io.IOException;
 import java.io.DataInputStream;
-import java.io.InputStream;
 import java.io.PushbackInputStream;
 import java.io.FileInputStream;
 import javax.annotation.Nullable;
@@ -63,7 +62,7 @@ public class Class8213
         try {
             if (this.method27207(s).exists()) {
                 final Class6354 class6354 = supplier.get();
-                class6354.method18901(this.method27212(s, Class9528.method35579().getWorldVersion()).method327("data"));
+                class6354.method18901(this.method27212(s, Class9528.method35579().getWorldVersion()).getCompound("data"));
                 return (T)class6354;
             }
         }
@@ -77,10 +76,10 @@ public class Class8213
         this.field33754.put(class6354.method18906(), class6354);
     }
     
-    public Class51 method27212(final String s, final int n) throws IOException {
-        Class51 method34652;
+    public CompoundNBT method27212(final String s, final int n) throws IOException {
+        CompoundNBT method34652;
         try (final PushbackInputStream in = new PushbackInputStream(new FileInputStream(this.method27207(s)), 2)) {
-            Class51 class51;
+            CompoundNBT class51;
             if (this.method27213(in)) {
                 class51 = Class8097.method26590(in);
             }
@@ -89,7 +88,7 @@ public class Class8213
                     class51 = Class8097.method26595(dataInputStream);
                 }
             }
-            method34652 = Class9346.method34652(this.field33755, Class1959.field10682, class51, class51.method316("DataVersion", 99) ? class51.method319("DataVersion") : 1343, n);
+            method34652 = Class9346.method34652(this.field33755, Class1959.field10682, class51, class51.contains("DataVersion", 99) ? class51.getInt("DataVersion") : 1343, n);
         }
         return method34652;
     }

@@ -218,45 +218,45 @@ public class Class1948 implements Comparable<Class1948>
         return 31 * (31 * (31 * (31 * this.field10607.hashCode() + this.field10608) + this.field10609) + (this.field10610 ? 1 : 0)) + (this.field10611 ? 1 : 0);
     }
     
-    public Class51 method7916(final Class51 class51) {
-        class51.method296("Id", (byte)Class5328.method16451(this.method7906()));
+    public CompoundNBT method7916(final CompoundNBT class51) {
+        class51.putByte("Id", (byte)Class5328.method16451(this.method7906()));
         this.method7917(class51);
         return class51;
     }
     
-    private void method7917(final Class51 class51) {
-        class51.method296("Amplifier", (byte)this.method7908());
-        class51.method298("Duration", this.method7907());
-        class51.method312("Ambient", this.method7909());
-        class51.method312("ShowParticles", this.method7910());
-        class51.method312("ShowIcon", this.method7911());
+    private void method7917(final CompoundNBT class51) {
+        class51.putByte("Amplifier", (byte)this.method7908());
+        class51.putInt("Duration", this.method7907());
+        class51.putBoolean("Ambient", this.method7909());
+        class51.putBoolean("ShowParticles", this.method7910());
+        class51.putBoolean("ShowIcon", this.method7911());
         if (this.field10615 != null) {
-            final Class51 class52 = new Class51();
+            final CompoundNBT class52 = new CompoundNBT();
             this.field10615.method7916(class52);
-            class51.method295("HiddenEffect", class52);
+            class51.put("HiddenEffect", class52);
         }
     }
     
-    public static Class1948 method7918(final Class51 class51) {
-        final Class5328 method16450 = Class5328.method16450(class51.method317("Id"));
+    public static Class1948 method7918(final CompoundNBT class51) {
+        final Class5328 method16450 = Class5328.method16450(class51.getByte("Id"));
         return (method16450 != null) ? method7919(method16450, class51) : null;
     }
     
-    private static Class1948 method7919(final Class5328 class5328, final Class51 class5329) {
-        final byte method317 = class5329.method317("Amplifier");
-        final int method318 = class5329.method319("Duration");
-        final boolean method319 = class5329.method329("Ambient");
+    private static Class1948 method7919(final Class5328 class5328, final CompoundNBT class5329) {
+        final byte method317 = class5329.getByte("Amplifier");
+        final int method318 = class5329.getInt("Duration");
+        final boolean method319 = class5329.getBoolean("Ambient");
         int method320 = 1;
-        if (class5329.method316("ShowParticles", 1)) {
-            method320 = (class5329.method329("ShowParticles") ? 1 : 0);
+        if (class5329.contains("ShowParticles", 1)) {
+            method320 = (class5329.getBoolean("ShowParticles") ? 1 : 0);
         }
         int method321 = method320;
-        if (class5329.method316("ShowIcon", 1)) {
-            method321 = (class5329.method329("ShowIcon") ? 1 : 0);
+        if (class5329.contains("ShowIcon", 1)) {
+            method321 = (class5329.getBoolean("ShowIcon") ? 1 : 0);
         }
         Class1948 method322 = null;
-        if (class5329.method316("HiddenEffect", 10)) {
-            method322 = method7919(class5328, class5329.method327("HiddenEffect"));
+        if (class5329.contains("HiddenEffect", 10)) {
+            method322 = method7919(class5328, class5329.getCompound("HiddenEffect"));
         }
         return new Class1948(class5328, method318, (method317 >= 0) ? method317 : 0, method319, (boolean)(method320 != 0), (boolean)(method321 != 0), method322);
     }

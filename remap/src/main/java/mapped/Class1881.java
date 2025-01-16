@@ -7,7 +7,6 @@ package mapped;
 import java.util.Iterator;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import java.io.DataOutputStream;
-import java.io.DataOutput;
 import javax.annotation.Nullable;
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -42,8 +41,8 @@ public final class Class1881 implements AutoCloseable
     }
     
     @Nullable
-    public Class51 method7176(final Class7859 class7859) throws IOException {
-        Class51 method7640;
+    public CompoundNBT method7176(final Class7859 class7859) throws IOException {
+        CompoundNBT method7640;
         try (final DataInputStream method7639 = this.method7175(class7859).method7639(class7859)) {
             if (method7639 != null) {
                 method7640 = Class8097.method26595(method7639);
@@ -55,7 +54,7 @@ public final class Class1881 implements AutoCloseable
         return method7640;
     }
     
-    public void method7177(final Class7859 class7859, final Class51 class7860) throws IOException {
+    public void method7177(final Class7859 class7859, final CompoundNBT class7860) throws IOException {
         try (final DataOutputStream method7650 = this.method7175(class7859).method7650(class7859)) {
             Class8097.method26597(class7860, method7650);
         }

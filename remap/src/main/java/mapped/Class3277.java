@@ -51,10 +51,10 @@ public class Class3277 extends Class3167
                     GL11.glTranslatef((float)(-n4 / 2), (float)(-n - n2 - 2), 0.0f);
                     for (int i = 0; i < method8460.size(); ++i) {
                         final ItemStack class5737 = method8460.get(i);
-                        final Class52 method8461 = class5737.method27662();
+                        final ListNBT method8461 = class5737.method27662();
                         final int n5 = round2 - Math.max(0, method8461.size() - 4) * 8 - 2;
                         for (int j = 0; j < method8461.size(); ++j) {
-                            Registry.field209.method506(ResourceLocation.method7795(method8461.method346(j).method323("id"))).ifPresent(class5739 -> {
+                            Registry.field209.method506(ResourceLocation.method7795(method8461.method346(j).getString("id"))).ifPresent(class5739 -> {
                                 class5739.method18599(1).getUnformattedComponentText();
                                 final String s;
                                 new StringBuilder().append("§f").append(s.substring(0, Math.min(2, s.length()))).toString();

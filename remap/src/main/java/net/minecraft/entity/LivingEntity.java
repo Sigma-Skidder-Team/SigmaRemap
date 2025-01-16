@@ -136,7 +136,7 @@ public abstract class LivingEntity extends Entity
         this.rotationYaw = (float)(Math.random() * 6.2831854820251465);
         this.field2953 = this.rotationYaw;
         this.stepHeight = 0.6f;
-        this.field2996 = this.method2619((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)new Class51()));
+        this.field2996 = this.method2619((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)new CompoundNBT()));
     }
     
     public Class365<?> method2618() {
@@ -428,43 +428,43 @@ public abstract class LivingEntity extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method304("Health", this.method2664());
-        class51.method297("HurtTime", (short)this.field2938);
-        class51.method298("HurtByTimestamp", this.field2981);
-        class51.method297("DeathTime", (short)this.field2941);
-        class51.method304("AbsorptionAmount", this.method2750());
-        class51.method295("Attributes", Class8107.method26639(this.method2711()));
+    public void method1761(final CompoundNBT class51) {
+        class51.putFloat("Health", this.method2664());
+        class51.putShort("HurtTime", (short)this.field2938);
+        class51.putInt("HurtByTimestamp", this.field2981);
+        class51.putShort("DeathTime", (short)this.field2941);
+        class51.putFloat("AbsorptionAmount", this.method2750());
+        class51.put("Attributes", Class8107.method26639(this.method2711()));
         if (!this.field2930.isEmpty()) {
-            final Class52 class52 = new Class52();
+            final ListNBT class52 = new ListNBT();
             final Iterator<Class1948> iterator = this.field2930.values().iterator();
             while (iterator.hasNext()) {
-                ((AbstractList<Class51>)class52).add(iterator.next().method7916(new Class51()));
+                ((AbstractList<CompoundNBT>)class52).add(iterator.next().method7916(new CompoundNBT()));
             }
-            class51.method295("ActiveEffects", class52);
+            class51.put("ActiveEffects", class52);
         }
-        class51.method312("FallFlying", this.method2773());
+        class51.putBoolean("FallFlying", this.method2773());
         this.method2780().ifPresent(class54 -> {
             class53.method298("SleepingX", class54.getX());
             class53.method298("SleepingY", class54.getY());
             class53.method298("SleepingZ", class54.getZ());
             return;
         });
-        class51.method295("Brain", this.field2996.serialize((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
+        class51.put("Brain", this.field2996.serialize((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.method2751(class51.method321("AbsorptionAmount"));
-        if (class51.method316("Attributes", 9)) {
+    public void method1760(final CompoundNBT class51) {
+        this.method2751(class51.getFloat("AbsorptionAmount"));
+        if (class51.contains("Attributes", 9)) {
             if (this.world != null) {
                 if (!this.world.isRemote) {
-                    Class8107.method26642(this.method2711(), class51.method328("Attributes", 10));
+                    Class8107.method26642(this.method2711(), class51.getList("Attributes", 10));
                 }
             }
         }
-        if (class51.method316("ActiveEffects", 9)) {
-            final Class52 method328 = class51.method328("ActiveEffects", 10);
+        if (class51.contains("ActiveEffects", 9)) {
+            final ListNBT method328 = class51.getList("ActiveEffects", 10);
             for (int i = 0; i < method328.size(); ++i) {
                 final Class1948 method329 = Class1948.method7918(method328.method346(i));
                 if (method329 != null) {
@@ -472,26 +472,26 @@ public abstract class LivingEntity extends Entity
                 }
             }
         }
-        if (class51.method316("Health", 99)) {
-            this.method2665(class51.method321("Health"));
+        if (class51.contains("Health", 99)) {
+            this.method2665(class51.getFloat("Health"));
         }
-        this.field2938 = class51.method318("HurtTime");
-        this.field2941 = class51.method318("DeathTime");
-        this.field2981 = class51.method319("HurtByTimestamp");
-        if (class51.method316("Team", 8)) {
-            final String method330 = class51.method323("Team");
+        this.field2938 = class51.getShort("HurtTime");
+        this.field2941 = class51.getShort("DeathTime");
+        this.field2981 = class51.getInt("HurtByTimestamp");
+        if (class51.contains("Team", 8)) {
+            final String method330 = class51.getString("Team");
             final Class6749 method331 = this.world.method6782().method19645(method330);
             if (method331 == null || !this.world.method6782().method19615(this.method1866(), method331)) {
                 LivingEntity.LOGGER.warn("Unable to add mob to team \"{}\" (that team probably doesn't exist)", (Object)method330);
             }
         }
-        if (class51.method329("FallFlying")) {
+        if (class51.getBoolean("FallFlying")) {
             this.setFlag(7, true);
         }
-        if (class51.method316("SleepingX", 99)) {
-            if (class51.method316("SleepingY", 99)) {
-                if (class51.method316("SleepingZ", 99)) {
-                    final BlockPos class52 = new BlockPos(class51.method319("SleepingX"), class51.method319("SleepingY"), class51.method319("SleepingZ"));
+        if (class51.contains("SleepingX", 99)) {
+            if (class51.contains("SleepingY", 99)) {
+                if (class51.contains("SleepingZ", 99)) {
+                    final BlockPos class52 = new BlockPos(class51.getInt("SleepingX"), class51.getInt("SleepingY"), class51.getInt("SleepingZ"));
                     this.method2781(class52);
                     this.dataManager.set(LivingEntity.POSE, Pose.field1665);
                     if (!this.firstUpdate) {
@@ -500,8 +500,8 @@ public abstract class LivingEntity extends Entity
                 }
             }
         }
-        if (class51.method316("Brain", 10)) {
-            this.field2996 = this.method2619((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.method313("Brain")));
+        if (class51.contains("Brain", 10)) {
+            this.field2996 = this.method2619((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.get("Brain")));
         }
     }
     

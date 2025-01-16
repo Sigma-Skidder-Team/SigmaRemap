@@ -86,15 +86,15 @@ public class Class801 extends Class789
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method312("Saddle", this.method4625());
+        class51.putBoolean("Saddle", this.method4625());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4626(class51.method329("Saddle"));
+        this.method4626(class51.getBoolean("Saddle"));
     }
     
     @Override

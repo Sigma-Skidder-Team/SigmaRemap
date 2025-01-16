@@ -255,20 +255,20 @@ public class Class862 extends Class860
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (!this.method5198().method27620()) {
-            class51.method295("Item", this.method5198().method27627(new Class51()));
-            class51.method296("ItemRotation", (byte)this.method5201());
-            class51.method304("ItemDropChance", this.field4605);
+            class51.put("Item", this.method5198().method27627(new CompoundNBT()));
+            class51.putByte("ItemRotation", (byte)this.method5201());
+            class51.putFloat("ItemDropChance", this.field4605);
         }
-        class51.method296("Facing", (byte)this.field4600.getIndex());
+        class51.putByte("Facing", (byte)this.field4600.getIndex());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        final Class51 method327 = class51.method327("Item");
+        final CompoundNBT method327 = class51.getCompound("Item");
         if (method327 != null) {
             if (!method327.method331()) {
                 final ItemStack method328 = ItemStack.method27619(method327);
@@ -282,13 +282,13 @@ public class Class862 extends Class860
                     }
                 }
                 this.method5200(method328, false);
-                this.method5203(class51.method317("ItemRotation"), false);
-                if (class51.method316("ItemDropChance", 99)) {
-                    this.field4605 = class51.method321("ItemDropChance");
+                this.method5203(class51.getByte("ItemRotation"), false);
+                if (class51.contains("ItemDropChance", 99)) {
+                    this.field4605 = class51.getFloat("ItemDropChance");
                 }
             }
         }
-        this.method5186(Direction.byIndex(class51.method317("Facing")));
+        this.method5186(Direction.byIndex(class51.getByte("Facing")));
     }
     
     @Override

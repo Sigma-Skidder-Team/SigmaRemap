@@ -61,28 +61,28 @@ public class Class6356 extends Class6354
     }
     
     @Override
-    public void method18901(final Class51 class51) {
-        final int method319 = class51.method319("dimension");
+    public void method18901(final CompoundNBT class51) {
+        final int method319 = class51.getInt("dimension");
         final DimensionType method320 = DimensionType.method1274(method319);
         if (method320 != null) {
             this.field25422 = method320;
-            this.field25420 = class51.method319("xCenter");
-            this.field25421 = class51.method319("zCenter");
-            this.field25425 = (byte) MathHelper.method35651(class51.method317("scale"), 0, 4);
-            this.field25423 = (!class51.method316("trackingPosition", 1) || class51.method329("trackingPosition"));
-            this.field25424 = class51.method329("unlimitedTracking");
-            this.field25427 = class51.method329("locked");
-            this.field25426 = class51.method324("colors");
+            this.field25420 = class51.getInt("xCenter");
+            this.field25421 = class51.getInt("zCenter");
+            this.field25425 = (byte) MathHelper.method35651(class51.getByte("scale"), 0, 4);
+            this.field25423 = (!class51.contains("trackingPosition", 1) || class51.getBoolean("trackingPosition"));
+            this.field25424 = class51.getBoolean("unlimitedTracking");
+            this.field25427 = class51.getBoolean("locked");
+            this.field25426 = class51.getByteArray("colors");
             if (this.field25426.length != 16384) {
                 this.field25426 = new byte[16384];
             }
-            final Class52 method321 = class51.method328("banners", 10);
+            final ListNBT method321 = class51.getList("banners", 10);
             for (int i = 0; i < method321.size(); ++i) {
                 final Class8843 method322 = Class8843.method30895(method321.method346(i));
                 this.field25430.put(method322.method30901(), method322);
                 this.method18918(method322.method30898(), null, method322.method30901(), method322.method30897().getX(), method322.method30897().getZ(), 180.0, method322.method30899());
             }
-            final Class52 method323 = class51.method328("frames", 10);
+            final ListNBT method323 = class51.getList("frames", 10);
             for (int j = 0; j < method323.size(); ++j) {
                 final Class8525 method324 = Class8525.method28588(method323.method346(j));
                 this.field25432.put(method324.method28593(), method324);
@@ -94,27 +94,27 @@ public class Class6356 extends Class6354
     }
     
     @Override
-    public Class51 method18902(final Class51 class51) {
-        class51.method298("dimension", this.field25422.method1270());
-        class51.method298("xCenter", this.field25420);
-        class51.method298("zCenter", this.field25421);
-        class51.method296("scale", this.field25425);
-        class51.method307("colors", this.field25426);
-        class51.method312("trackingPosition", this.field25423);
-        class51.method312("unlimitedTracking", this.field25424);
-        class51.method312("locked", this.field25427);
-        final Class52 class52 = new Class52();
+    public CompoundNBT method18902(final CompoundNBT class51) {
+        class51.putInt("dimension", this.field25422.method1270());
+        class51.putInt("xCenter", this.field25420);
+        class51.putInt("zCenter", this.field25421);
+        class51.putByte("scale", this.field25425);
+        class51.putByteArray("colors", this.field25426);
+        class51.putBoolean("trackingPosition", this.field25423);
+        class51.putBoolean("unlimitedTracking", this.field25424);
+        class51.putBoolean("locked", this.field25427);
+        final ListNBT class52 = new ListNBT();
         final Iterator<Class8843> iterator = this.field25430.values().iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<Class51>)class52).add(iterator.next().method30900());
+            ((AbstractList<CompoundNBT>)class52).add(iterator.next().method30900());
         }
-        class51.method295("banners", class52);
-        final Class52 class53 = new Class52();
+        class51.put("banners", class52);
+        final ListNBT class53 = new ListNBT();
         final Iterator<Class8525> iterator2 = this.field25432.values().iterator();
         while (iterator2.hasNext()) {
-            ((AbstractList<Class51>)class53).add(iterator2.next().method28589());
+            ((AbstractList<CompoundNBT>)class53).add(iterator2.next().method28589());
         }
-        class51.method295("frames", class53);
+        class51.put("frames", class53);
         return class51;
     }
     
@@ -172,14 +172,14 @@ public class Class6356 extends Class6354
                 this.field25432.put(class517.method28593(), class517);
             }
         }
-        final Class51 method27681 = class513.method27657();
+        final CompoundNBT method27681 = class513.method27657();
         if (method27681 != null) {
-            if (method27681.method316("Decorations", 9)) {
-                final Class52 method27682 = method27681.method328("Decorations", 10);
+            if (method27681.contains("Decorations", 9)) {
+                final ListNBT method27682 = method27681.getList("Decorations", 10);
                 for (int j = 0; j < method27682.size(); ++j) {
-                    final Class51 method27683 = method27682.method346(j);
-                    if (!this.field25431.containsKey(method27683.method323("id"))) {
-                        this.method18918(Class2095.method8216(method27683.method317("type")), playerEntity.world, method27683.method323("id"), method27683.method322("x"), method27683.method322("z"), method27683.method322("rot"), null);
+                    final CompoundNBT method27683 = method27682.method346(j);
+                    if (!this.field25431.containsKey(method27683.getString("id"))) {
+                        this.method18918(Class2095.method8216(method27683.getByte("type")), playerEntity.world, method27683.getString("id"), method27683.getDouble("x"), method27683.getDouble("z"), method27683.getDouble("rot"), null);
                     }
                 }
             }
@@ -187,23 +187,23 @@ public class Class6356 extends Class6354
     }
     
     public static void method18917(final ItemStack class8321, final BlockPos class8322, final String s, final Class2095 class8323) {
-        Class52 method328;
-        if (class8321.method27656() && class8321.method27657().method316("Decorations", 9)) {
-            method328 = class8321.method27657().method328("Decorations", 10);
+        ListNBT method328;
+        if (class8321.method27656() && class8321.method27657().contains("Decorations", 9)) {
+            method328 = class8321.method27657().getList("Decorations", 10);
         }
         else {
-            method328 = new Class52();
+            method328 = new ListNBT();
             class8321.method27676("Decorations", method328);
         }
-        final Class51 e = new Class51();
-        e.method296("type", class8323.method8212());
-        e.method306("id", s);
-        e.method305("x", class8322.getX());
-        e.method305("z", class8322.getZ());
-        e.method305("rot", 180.0);
-        ((AbstractList<Class51>)method328).add(e);
+        final CompoundNBT e = new CompoundNBT();
+        e.putByte("type", class8323.method8212());
+        e.putString("id", s);
+        e.putDouble("x", class8322.getX());
+        e.putDouble("z", class8322.getZ());
+        e.putDouble("rot", 180.0);
+        ((AbstractList<CompoundNBT>)method328).add(e);
         if (class8323.method8214()) {
-            class8321.method27659("display").method298("MapColor", class8323.method8215());
+            class8321.method27659("display").putInt("MapColor", class8323.method8215());
         }
     }
     

@@ -50,16 +50,16 @@ public class Class404 extends Class402
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method315("Duration")) {
-            this.field2489 = class51.method319("Duration");
+        if (class51.contains("Duration")) {
+            this.field2489 = class51.getInt("Duration");
         }
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Duration", this.field2489);
+        class51.putInt("Duration", this.field2489);
     }
 }

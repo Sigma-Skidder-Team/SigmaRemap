@@ -55,7 +55,7 @@ public class Class3665 extends Class3664
         }
         final ItemStack method2158 = field34174.method27641();
         method2158.method27691(1);
-        method2158.method27658().method298("map_scale_direction", 1);
+        method2158.method27658().putInt("map_scale_direction", 1);
         return method2158;
     }
     

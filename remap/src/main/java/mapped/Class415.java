@@ -157,10 +157,10 @@ public class Class415 extends Class414 implements Class407
         while (iterator.hasNext()) {
             class8323.method2085(new Class1948(iterator.next()));
         }
-        final Class51 method27657 = class8321.method27657();
+        final CompoundNBT method27657 = class8321.method27657();
         if (method27657 != null) {
-            if (method27657.method316("CustomPotionColor", 99)) {
-                class8323.method2087(method27657.method319("CustomPotionColor"));
+            if (method27657.contains("CustomPotionColor", 99)) {
+                class8323.method2087(method27657.getInt("CustomPotionColor"));
             }
         }
         this.world.method6886(class8323);
@@ -187,9 +187,9 @@ public class Class415 extends Class414 implements Class407
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        final ItemStack method27619 = ItemStack.method27619(class51.method327("Potion"));
+        final ItemStack method27619 = ItemStack.method27619(class51.getCompound("Potion"));
         if (!method27619.method27620()) {
             this.method2022(method27619);
         }
@@ -199,11 +199,11 @@ public class Class415 extends Class414 implements Class407
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         final ItemStack method2005 = this.method2005();
         if (!method2005.method27620()) {
-            class51.method295("Potion", method2005.method27627(new Class51()));
+            class51.put("Potion", method2005.method27627(new CompoundNBT()));
         }
     }
     

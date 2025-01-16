@@ -98,12 +98,12 @@ public class Class1795 implements Class1657
         return this.method6523(Class8097.method26590(inputStream));
     }
     
-    public Class6585 method6523(final Class51 class51) {
-        if (!class51.method316("DataVersion", 99)) {
-            class51.method298("DataVersion", 500);
+    public Class6585 method6523(final CompoundNBT class51) {
+        if (!class51.contains("DataVersion", 99)) {
+            class51.putInt("DataVersion", 500);
         }
         final Class6585 class52 = new Class6585();
-        class52.method19969(Class9346.method34651(this.field9947, Class1959.field10680, class51, class51.method319("DataVersion")));
+        class52.method19969(Class9346.method34651(this.field9947, Class1959.field10680, class51, class51.getInt("DataVersion")));
         return class52;
     }
     
@@ -124,7 +124,7 @@ public class Class1795 implements Class1657
             Class1795.field9945.error("Failed to create parent directory: {}", (Object)parent);
             return false;
         }
-        final Class51 method6527 = class1933.method19968(new Class51());
+        final CompoundNBT method6527 = class1933.method19968(new CompoundNBT());
         try (final FileOutputStream fileOutputStream = new FileOutputStream(method6526.toFile())) {
             Class8097.method26591(method6527, fileOutputStream);
             return true;

@@ -16,9 +16,9 @@ import net.minecraft.nbt.INBT;
 public class Class7103
 {
     public static final Class7103 field27707;
-    private final Class51 field27708;
+    private final CompoundNBT field27708;
     
-    public Class7103(final Class51 field27708) {
+    public Class7103(final CompoundNBT field27708) {
         this.field27708 = field27708;
     }
     
@@ -43,7 +43,7 @@ public class Class7103
     
     public static Class7103 method21807(final JsonElement jsonElement) {
         if (jsonElement != null && !jsonElement.isJsonNull()) {
-            Class51 method16938;
+            CompoundNBT method16938;
             try {
                 method16938 = Class5704.method16938(Class9583.method35894(jsonElement, "nbt"));
             }
@@ -55,12 +55,12 @@ public class Class7103
         return Class7103.field27707;
     }
     
-    public static Class51 method21808(final Entity class399) {
-        final Class51 method1756 = class399.method1756(new Class51());
+    public static CompoundNBT method21808(final Entity class399) {
+        final CompoundNBT method1756 = class399.method1756(new CompoundNBT());
         if (class399 instanceof PlayerEntity) {
             final ItemStack method1757 = ((PlayerEntity)class399).field3006.method2345();
             if (!method1757.method27620()) {
-                method1756.method295("SelectedItem", method1757.method27627(new Class51()));
+                method1756.put("SelectedItem", method1757.method27627(new CompoundNBT()));
             }
         }
         return method1756;

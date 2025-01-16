@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Class7651
 {
-    public static void method24236(final Class7689 class7689, final Class5204 class7690) {
+    public static void method24236(final CrashReport class7689, final CrashReportCategory class7690) {
         try {
             final Throwable method24411 = class7689.method24411();
             if (method24411 == null) {
@@ -44,7 +44,7 @@ public class Class7651
         }
     }
     
-    private static String method24237(final Class7689 class7689) {
+    private static String method24237(final CrashReport class7689) {
         final StringBuffer sb = new StringBuffer();
         sb.append("OptiFineVersion: " + Config.method28814() + "\n");
         sb.append("Summary: " + method24238(class7689) + "\n");
@@ -54,7 +54,7 @@ public class Class7651
         return sb.toString();
     }
     
-    private static String method24238(final Class7689 class7689) {
+    private static String method24238(final CrashReport class7689) {
         final Throwable method24411 = class7689.method24411();
         if (method24411 != null) {
             final StackTraceElement[] stackTrace = method24411.getStackTrace();
@@ -67,20 +67,20 @@ public class Class7651
         return "Unknown";
     }
     
-    public static void method24239(final Class5204 class5204) {
-        class5204.method16297("OptiFine Version", Config.method28814());
-        class5204.method16297("OptiFine Build", Config.method28820());
+    public static void method24239(final CrashReportCategory class5204) {
+        class5204.addDetail("OptiFine Version", Config.method28814());
+        class5204.addDetail("OptiFine Build", Config.method28820());
         if (Config.method28962() != null) {
-            class5204.method16297("Render Distance Chunks", "" + Config.method28976());
-            class5204.method16297("Mipmaps", "" + Config.method28837());
-            class5204.method16297("Anisotropic Filtering", "" + Config.method28923());
-            class5204.method16297("Antialiasing", "" + Config.method28925());
-            class5204.method16297("Multitexture", "" + Config.method28928());
+            class5204.addDetail("Render Distance Chunks", "" + Config.method28976());
+            class5204.addDetail("Mipmaps", "" + Config.method28837());
+            class5204.addDetail("Anisotropic Filtering", "" + Config.method28923());
+            class5204.addDetail("Antialiasing", "" + Config.method28925());
+            class5204.addDetail("Multitexture", "" + Config.method28928());
         }
-        class5204.method16297("Shaders", "" + Class9216.method33891());
-        class5204.method16297("OpenGlVersion", "" + Config.field36018);
-        class5204.method16297("OpenGlRenderer", "" + Config.field36019);
-        class5204.method16297("OpenGlVendor", "" + Config.field36020);
-        class5204.method16297("CpuCount", "" + Config.method28969());
+        class5204.addDetail("Shaders", "" + Class9216.method33891());
+        class5204.addDetail("OpenGlVersion", "" + Config.field36018);
+        class5204.addDetail("OpenGlRenderer", "" + Config.field36019);
+        class5204.addDetail("OpenGlVendor", "" + Config.field36020);
+        class5204.addDetail("CpuCount", "" + Config.method28969());
     }
 }

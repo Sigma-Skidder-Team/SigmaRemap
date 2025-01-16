@@ -17,29 +17,29 @@ public class Class4035 extends Item
     }
     
     public static void method12228(final ItemStack class8321, final Class5328 class8322, final int n) {
-        final Class51 method27658 = class8321.method27658();
-        final Class52 method27659 = method27658.method328("Effects", 9);
-        final Class51 e = new Class51();
-        e.method296("EffectId", (byte)Class5328.method16451(class8322));
-        e.method298("EffectDuration", n);
-        ((AbstractList<Class51>)method27659).add(e);
-        method27658.method295("Effects", method27659);
+        final CompoundNBT method27658 = class8321.method27658();
+        final ListNBT method27659 = method27658.getList("Effects", 9);
+        final CompoundNBT e = new CompoundNBT();
+        e.putByte("EffectId", (byte)Class5328.method16451(class8322));
+        e.putInt("EffectDuration", n);
+        ((AbstractList<CompoundNBT>)method27659).add(e);
+        method27658.put("Effects", method27659);
     }
     
     @Override
     public ItemStack method11707(final ItemStack class8321, final World class8322, final LivingEntity class8323) {
         final ItemStack method11707 = super.method11707(class8321, class8322, class8323);
-        final Class51 method11708 = class8321.method27657();
+        final CompoundNBT method11708 = class8321.method27657();
         if (method11708 != null) {
-            if (method11708.method316("Effects", 9)) {
-                final Class52 method11709 = method11708.method328("Effects", 10);
+            if (method11708.contains("Effects", 9)) {
+                final ListNBT method11709 = method11708.getList("Effects", 10);
                 for (int i = 0; i < method11709.size(); ++i) {
                     int method11710 = 160;
-                    final Class51 method11711 = method11709.method346(i);
-                    if (method11711.method316("EffectDuration", 3)) {
-                        method11710 = method11711.method319("EffectDuration");
+                    final CompoundNBT method11711 = method11709.method346(i);
+                    if (method11711.contains("EffectDuration", 3)) {
+                        method11710 = method11711.getInt("EffectDuration");
                     }
-                    final Class5328 method11712 = Class5328.method16450(method11711.method317("EffectId"));
+                    final Class5328 method11712 = Class5328.method16450(method11711.getByte("EffectId"));
                     if (method11712 != null) {
                         class8323.method2655(new Class1948(method11712, method11710));
                     }

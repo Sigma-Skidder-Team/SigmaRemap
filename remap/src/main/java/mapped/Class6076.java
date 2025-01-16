@@ -9,11 +9,11 @@ import net.minecraft.nbt.INBTType;
 import java.io.IOException;
 import java.io.DataInput;
 
-public final class Class6076 implements INBTType<Class48>
+public final class Class6076 implements INBTType<ShortNBT>
 {
-    public Class48 method18131(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
+    public ShortNBT method18131(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
         class7553.read(80L);
-        return Class48.method286(dataInput.readShort());
+        return ShortNBT.method286(dataInput.readShort());
     }
     
     @Override

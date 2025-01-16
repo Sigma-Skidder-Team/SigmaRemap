@@ -31,9 +31,9 @@ public class Class147 extends Class126
         this.field433 = (List<Class9254>)ImmutableList.copyOf((Collection)list);
     }
     
-    private static Class8570 method711(final String str) {
+    private static NBTPath method711(final String str) {
         try {
-            return new Class8258().parse(new StringReader(str));
+            return new NBTPathArgument().parse(new StringReader(str));
         }
         catch (final CommandSyntaxException cause) {
             throw new IllegalArgumentException("Failed to parse path " + str, (Throwable)cause);
@@ -59,6 +59,6 @@ public class Class147 extends Class126
     
     static {
         field434 = Class7103::method21808;
-        field435 = (class436 -> class436.method2180(new Class51()));
+        field435 = (class436 -> class436.method2180(new CompoundNBT()));
     }
 }

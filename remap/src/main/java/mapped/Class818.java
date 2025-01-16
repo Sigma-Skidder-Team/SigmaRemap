@@ -128,19 +128,19 @@ public class Class818 extends Class789
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field4387 = class51.method329("IsChickenJockey");
-        if (class51.method315("EggLayTime")) {
-            this.field4386 = class51.method319("EggLayTime");
+        this.field4387 = class51.getBoolean("IsChickenJockey");
+        if (class51.contains("EggLayTime")) {
+            this.field4386 = class51.getInt("EggLayTime");
         }
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method312("IsChickenJockey", this.field4387);
-        class51.method298("EggLayTime", this.field4386);
+        class51.putBoolean("IsChickenJockey", this.field4387);
+        class51.putInt("EggLayTime", this.field4386);
     }
     
     @Override

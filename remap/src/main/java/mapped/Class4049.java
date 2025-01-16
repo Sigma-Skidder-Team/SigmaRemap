@@ -32,12 +32,12 @@ public class Class4049 extends Item
         return Class9355.method34674(method2715);
     }
     
-    public static boolean method12247(final Class51 class51) {
+    public static boolean method12247(final CompoundNBT class51) {
         if (class51 == null) {
             return false;
         }
-        if (class51.method316("pages", 9)) {
-            final Class52 method328 = class51.method328("pages", 8);
+        if (class51.contains("pages", 9)) {
+            final ListNBT method328 = class51.getList("pages", 8);
             for (int i = 0; i < method328.size(); ++i) {
                 if (method328.method353(i).length() > 32767) {
                     return false;

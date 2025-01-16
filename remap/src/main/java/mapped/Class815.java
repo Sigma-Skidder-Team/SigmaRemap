@@ -47,22 +47,22 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Variant", this.method4788());
-        class51.method298("Strength", this.method4787());
+        class51.putInt("Variant", this.method4788());
+        class51.putInt("Strength", this.method4787());
         if (!this.field4342.method2157(1).method27620()) {
-            class51.method295("DecorItem", this.field4342.method2157(1).method27627(new Class51()));
+            class51.put("DecorItem", this.field4342.method2157(1).method27627(new CompoundNBT()));
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.method4785(class51.method319("Strength"));
+    public void method1760(final CompoundNBT class51) {
+        this.method4785(class51.getInt("Strength"));
         super.method1760(class51);
-        this.method4789(class51.method319("Variant"));
-        if (class51.method316("DecorItem", 10)) {
-            this.field4342.method2160(1, ItemStack.method27619(class51.method327("DecorItem")));
+        this.method4789(class51.getInt("Variant"));
+        if (class51.contains("DecorItem", 10)) {
+            this.field4342.method2160(1, ItemStack.method27619(class51.getCompound("DecorItem")));
         }
         this.method4732();
     }
@@ -194,7 +194,7 @@ public class Class815 extends Class812 implements Class768
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         this.method4786();
         int n;
         if (!(class1854 instanceof Class5501)) {

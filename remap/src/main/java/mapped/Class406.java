@@ -55,7 +55,7 @@ public class Class406 extends Entity implements Class407, Class401
         if (!class1848.method27620()) {
             if (class1848.method27656()) {
                 this.dataManager.set(Class406.field2494, class1848.method27641());
-                n4 += class1848.method27659("Fireworks").method317("Flight");
+                n4 += class1848.method27659("Fireworks").getByte("Flight");
             }
         }
         this.setMotion(this.rand.nextGaussian() * 0.001, 0.05, this.rand.nextGaussian() * 0.001);
@@ -195,16 +195,16 @@ public class Class406 extends Entity implements Class407, Class401
     
     private boolean method2001() {
         final ItemStack class8321 = this.dataManager.get(Class406.field2494);
-        final Class51 class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
-        final Class52 class8323 = (class8322 == null) ? null : class8322.method328("Explosions", 10);
+        final CompoundNBT class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
+        final ListNBT class8323 = (class8322 == null) ? null : class8322.getList("Explosions", 10);
         return class8323 != null && !class8323.isEmpty();
     }
     
     private void method2002() {
         float n = 0.0f;
         final ItemStack class8321 = this.dataManager.get(Class406.field2494);
-        final Class51 class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
-        final Class52 class8323 = (class8322 == null) ? null : class8322.method328("Explosions", 10);
+        final CompoundNBT class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
+        final ListNBT class8323 = (class8322 == null) ? null : class8322.getList("Explosions", 10);
         if (class8323 != null) {
             if (!class8323.isEmpty()) {
                 n = 5.0f + class8323.size() * 2;
@@ -251,7 +251,7 @@ public class Class406 extends Entity implements Class407, Class401
             if (this.world.isRemote) {
                 if (this.method2001()) {
                     final ItemStack class8321 = this.dataManager.get(Class406.field2494);
-                    final Class51 class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
+                    final CompoundNBT class8322 = class8321.method27620() ? null : class8321.method27660("Fireworks");
                     final Vec3d method1935 = this.getMotion();
                     this.world.method6781(this.getPosX(), this.getPosY(), this.getPosZ(), method1935.x, method1935.y, method1935.z, class8322);
                 }
@@ -266,26 +266,26 @@ public class Class406 extends Entity implements Class407, Class401
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method298("Life", this.field2497);
-        class51.method298("LifeTime", this.field2498);
+    public void method1761(final CompoundNBT class51) {
+        class51.putInt("Life", this.field2497);
+        class51.putInt("LifeTime", this.field2498);
         final ItemStack class52 = this.dataManager.get(Class406.field2494);
         if (!class52.method27620()) {
-            class51.method295("FireworksItem", class52.method27627(new Class51()));
+            class51.put("FireworksItem", class52.method27627(new CompoundNBT()));
         }
-        class51.method312("ShotAtAngle", this.dataManager.get(Class406.field2496));
+        class51.putBoolean("ShotAtAngle", this.dataManager.get(Class406.field2496));
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field2497 = class51.method319("Life");
-        this.field2498 = class51.method319("LifeTime");
-        final ItemStack method27619 = ItemStack.method27619(class51.method327("FireworksItem"));
+    public void method1760(final CompoundNBT class51) {
+        this.field2497 = class51.getInt("Life");
+        this.field2498 = class51.getInt("LifeTime");
+        final ItemStack method27619 = ItemStack.method27619(class51.getCompound("FireworksItem"));
         if (!method27619.method27620()) {
             this.dataManager.set(Class406.field2494, method27619);
         }
-        if (class51.method315("ShotAtAngle")) {
-            this.dataManager.set(Class406.field2496, class51.method329("ShotAtAngle"));
+        if (class51.contains("ShotAtAngle")) {
+            this.dataManager.set(Class406.field2496, class51.getBoolean("ShotAtAngle"));
         }
     }
     

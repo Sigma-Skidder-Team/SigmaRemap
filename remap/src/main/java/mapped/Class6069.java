@@ -9,11 +9,11 @@ import net.minecraft.nbt.INBTType;
 import java.io.IOException;
 import java.io.DataInput;
 
-public final class Class6069 implements INBTType<Class44>
+public final class Class6069 implements INBTType<DoubleNBT>
 {
-    public Class44 method18125(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
+    public DoubleNBT method18125(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
         class7553.read(128L);
-        return Class44.method277(dataInput.readDouble());
+        return DoubleNBT.method277(dataInput.readDouble());
     }
     
     @Override

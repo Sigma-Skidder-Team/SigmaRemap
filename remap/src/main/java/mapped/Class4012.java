@@ -182,7 +182,7 @@ public class Class4012 extends Block
         if (((Class4036)method2716).method12240() instanceof Class3942 && !class7097.isRemote()) {
             final ItemStack class7104 = new ItemStack(Class7521.field29648, 1);
             if (method2715.method27656()) {
-                class7104.method27663(method2715.method27657().method333());
+                class7104.method27663(method2715.method27657().copy());
             }
             class7099.method2716(class7100, class7104);
             this.method12195(class7097, class7098, class7096, intValue - 1);

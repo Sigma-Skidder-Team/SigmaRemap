@@ -97,15 +97,15 @@ public interface IChunk extends IBlockReader, Class1861
         method7042(this.method7030(), n2).add(n);
     }
     
-    default void method7032(final Class51 class51) {
+    default void method7032(final CompoundNBT class51) {
         LogManager.getLogger().warn("Trying to set a BlockEntity, but this operation is not supported.");
     }
     
     @Nullable
-    Class51 method7033(final BlockPos p0);
+    CompoundNBT method7033(final BlockPos p0);
     
     @Nullable
-    Class51 method7034(final BlockPos p0);
+    CompoundNBT method7034(final BlockPos p0);
     
     Stream<BlockPos> method7035();
     

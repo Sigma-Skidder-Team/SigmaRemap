@@ -4,16 +4,16 @@
 
 package mapped;
 
-public class Class2365 extends RuntimeException
+public class ReportedException extends RuntimeException
 {
     private static String[] field14154;
-    private final Class7689 field14155;
+    private final CrashReport field14155;
     
-    public Class2365(final Class7689 field14155) {
+    public ReportedException(final CrashReport field14155) {
         this.field14155 = field14155;
     }
     
-    public Class7689 method9500() {
+    public CrashReport method9500() {
         return this.field14155;
     }
     

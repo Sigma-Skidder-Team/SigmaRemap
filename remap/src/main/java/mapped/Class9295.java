@@ -27,11 +27,11 @@ public class Class9295
     public void method34331() {
         try {
             this.field39866.clear();
-            final Class51 method26594 = Class8097.method26594(new File(this.field39865.field4652, "servers.dat"));
+            final CompoundNBT method26594 = Class8097.method26594(new File(this.field39865.field4652, "servers.dat"));
             if (method26594 == null) {
                 return;
             }
-            final Class52 method26595 = method26594.method328("servers", 10);
+            final ListNBT method26595 = method26594.getList("servers", 10);
             for (int i = 0; i < method26595.size(); ++i) {
                 this.field39866.add(Class9575.method35868(method26595.method346(i)));
             }
@@ -43,13 +43,13 @@ public class Class9295
     
     public void method34332() {
         try {
-            final Class52 class52 = new Class52();
+            final ListNBT class52 = new ListNBT();
             final Iterator<Class9575> iterator = this.field39866.iterator();
             while (iterator.hasNext()) {
-                ((AbstractList<Class51>)class52).add(iterator.next().method35865());
+                ((AbstractList<CompoundNBT>)class52).add(iterator.next().method35865());
             }
-            final Class51 class53 = new Class51();
-            class53.method295("servers", class52);
+            final CompoundNBT class53 = new CompoundNBT();
+            class53.put("servers", class52);
             Class8097.method26592(class53, new File(this.field39865.field4652, "servers.dat"));
         }
         catch (final Exception ex) {

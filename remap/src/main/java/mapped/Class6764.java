@@ -11,7 +11,7 @@ import java.net.SocketAddress;
 
 public class Class6764 extends Class6765
 {
-    private Class51 field26555;
+    private CompoundNBT field26555;
     
     public Class6764(final Class1655 class1655) {
         super(class1655, 8);
@@ -21,7 +21,7 @@ public class Class6764 extends Class6765
     @Override
     public void method20572(final Class513 class513) {
         if (class513.getName().getString().equals(this.method20574().method1498())) {
-            this.field26555 = class513.method1756(new Class51());
+            this.field26555 = class513.method1756(new CompoundNBT());
         }
         super.method20572(class513);
     }
@@ -36,7 +36,7 @@ public class Class6764 extends Class6765
     }
     
     @Override
-    public Class51 method20575() {
+    public CompoundNBT method20575() {
         return this.field26555;
     }
 }

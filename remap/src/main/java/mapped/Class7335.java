@@ -175,7 +175,7 @@ public class Class7335
                         break;
                     }
                     final TileEntity method21449 = this.field28331.field4684.world.getTileEntity(method21447);
-                    this.method22501(method21448, method21447, (method21449 != null) ? method21449.method2180(new Class51()) : null);
+                    this.method22501(method21448, method21447, (method21449 != null) ? method21449.method2180(new CompoundNBT()) : null);
                     this.method22497("debug.inspect.client.block", new Object[0]);
                     break;
                 }
@@ -195,7 +195,7 @@ public class Class7335
                         });
                         break;
                     }
-                    this.method22502(method21451, method21450.method1934(), method21450.method1756(new Class51()));
+                    this.method22502(method21451, method21450.method1934(), method21450.method1756(new CompoundNBT()));
                     this.method22497("debug.inspect.client.entity", new Object[0]);
                     break;
                 }
@@ -203,12 +203,12 @@ public class Class7335
         }
     }
     
-    private void method22501(final BlockState class7096, final BlockPos class7097, final Class51 obj) {
+    private void method22501(final BlockState class7096, final BlockPos class7097, final CompoundNBT obj) {
         if (obj != null) {
-            obj.method330("x");
-            obj.method330("y");
-            obj.method330("z");
-            obj.method330("id");
+            obj.remove("x");
+            obj.remove("y");
+            obj.remove("z");
+            obj.remove("id");
         }
         final StringBuilder sb = new StringBuilder(Class7572.toString(class7096));
         if (obj != null) {
@@ -217,16 +217,16 @@ public class Class7335
         this.method22508(String.format(Locale.ROOT, "/setblock %d %d %d %s", class7097.getX(), class7097.getY(), class7097.getZ(), sb));
     }
     
-    private void method22502(final ResourceLocation class1932, final Vec3d class1933, final Class51 class1934) {
+    private void method22502(final ResourceLocation class1932, final Vec3d class1933, final CompoundNBT class1934) {
         String s;
         if (class1934 == null) {
             s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f", class1932.toString(), class1933.x, class1933.y, class1933.z);
         }
         else {
-            class1934.method330("UUIDMost");
-            class1934.method330("UUIDLeast");
-            class1934.method330("Pos");
-            class1934.method330("Dimension");
+            class1934.remove("UUIDMost");
+            class1934.remove("UUIDLeast");
+            class1934.remove("Pos");
+            class1934.remove("Dimension");
             s = String.format(Locale.ROOT, "/summon %s %.2f %.2f %.2f %s", class1932.toString(), class1933.x, class1933.y, class1933.z, class1934.toFormattedComponent().getString());
         }
         this.method22508(s);
@@ -566,7 +566,7 @@ public class Class7335
                 if (Class527.method3046()) {
                     Class9491.method35320();
                 }
-                throw new Class2365(new Class7689("Manually triggered debug crash", new Throwable()));
+                throw new ReportedException(new CrashReport("Manually triggered debug crash", new Throwable()));
             }
             if (n5 >= 1000L) {
                 if (this.field28336 != 0L) {

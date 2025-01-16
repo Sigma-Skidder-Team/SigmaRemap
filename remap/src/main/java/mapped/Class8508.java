@@ -28,32 +28,32 @@ public class Class8508
         return (n >= 0 && n < list.size()) ? list.set(n, ItemStack.field34174) : ItemStack.field34174;
     }
     
-    public static Class51 method28424(final Class51 class51, final Class2265<ItemStack> class52) {
+    public static CompoundNBT method28424(final CompoundNBT class51, final Class2265<ItemStack> class52) {
         return method28425(class51, class52, true);
     }
     
-    public static Class51 method28425(final Class51 class51, final Class2265<ItemStack> class52, final boolean b) {
-        final Class52 class53 = new Class52();
+    public static CompoundNBT method28425(final CompoundNBT class51, final Class2265<ItemStack> class52, final boolean b) {
+        final ListNBT class53 = new ListNBT();
         for (int i = 0; i < class52.size(); ++i) {
             final ItemStack class54 = class52.get(i);
             if (!class54.method27620()) {
-                final Class51 e = new Class51();
-                e.method296("Slot", (byte)i);
+                final CompoundNBT e = new CompoundNBT();
+                e.putByte("Slot", (byte)i);
                 class54.method27627(e);
-                ((AbstractList<Class51>)class53).add(e);
+                ((AbstractList<CompoundNBT>)class53).add(e);
             }
         }
         if (!class53.isEmpty() || b) {
-            class51.method295("Items", class53);
+            class51.put("Items", class53);
         }
         return class51;
     }
     
-    public static void method28426(final Class51 class51, final Class2265<ItemStack> class52) {
-        final Class52 method328 = class51.method328("Items", 10);
+    public static void method28426(final CompoundNBT class51, final Class2265<ItemStack> class52) {
+        final ListNBT method328 = class51.getList("Items", 10);
         for (int i = 0; i < method328.size(); ++i) {
-            final Class51 method329 = method328.method346(i);
-            final int n = method329.method317("Slot") & 0xFF;
+            final CompoundNBT method329 = method328.method346(i);
+            final int n = method329.getByte("Slot") & 0xFF;
             if (n >= 0) {
                 if (n < class52.size()) {
                     class52.set(n, ItemStack.method27619(method329));

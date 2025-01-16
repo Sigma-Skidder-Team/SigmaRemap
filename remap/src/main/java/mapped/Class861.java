@@ -58,14 +58,14 @@ public class Class861 extends Class860
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method306("Motive", Registry.field227.getKey(this.field4601).toString());
+    public void method1761(final CompoundNBT class51) {
+        class51.putString("Motive", Registry.field227.getKey(this.field4601).toString());
         super.method1761(class51);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field4601 = Registry.field227.getOrDefault(ResourceLocation.method7795(class51.method323("Motive")));
+    public void method1760(final CompoundNBT class51) {
+        this.field4601 = Registry.field227.getOrDefault(ResourceLocation.method7795(class51.getString("Motive")));
         super.method1760(class51);
     }
     

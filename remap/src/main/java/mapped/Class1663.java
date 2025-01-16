@@ -97,11 +97,11 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
             return Class1913.method7553();
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Registering texture");
-            final Class5204 method24422 = method24421.method24418("Resource location being registered");
-            method24422.method16297("Resource location", class1932);
-            method24422.method16296("Texture object class", () -> class1934.getClass().getName());
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Registering texture");
+            final CrashReportCategory method24422 = method24421.makeCategory("Resource location being registered");
+            method24422.addDetail("Resource location", class1932);
+            method24422.addDetail("Texture object class", () -> class1934.getClass().getName());
+            throw new ReportedException(method24421);
         }
     }
     

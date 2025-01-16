@@ -16,13 +16,13 @@ public class Class8732
     private final Class6213 field36679;
     private final Class6213 field36680;
     private final BlockState field36681;
-    private final Class51 field36682;
+    private final CompoundNBT field36682;
     
     public Class8732(final Class6213 class6213, final Class6213 class6214, final BlockState class6215) {
         this(class6213, class6214, class6215, null);
     }
     
-    public Class8732(final Class6213 field36679, final Class6213 field36680, final BlockState field36681, final Class51 field36682) {
+    public Class8732(final Class6213 field36679, final Class6213 field36680, final BlockState field36681, final CompoundNBT field36682) {
         this.field36679 = field36679;
         this.field36680 = field36680;
         this.field36681 = field36681;
@@ -38,7 +38,7 @@ public class Class8732
     }
     
     @Nullable
-    public Class51 method30164() {
+    public CompoundNBT method30164() {
         return this.field36682;
     }
     

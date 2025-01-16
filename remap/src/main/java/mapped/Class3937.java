@@ -26,16 +26,16 @@ public class Class3937 extends Class3936
             final Class493 class1852 = (Class493)method6727;
             GameProfile method6728 = null;
             if (class1851.method27656()) {
-                final Class51 method6729 = class1851.method27657();
-                if (!method6729.method316("SkullOwner", 10)) {
-                    if (method6729.method316("SkullOwner", 8)) {
-                        if (!StringUtils.isBlank((CharSequence)method6729.method323("SkullOwner"))) {
-                            method6728 = new GameProfile((UUID)null, method6729.method323("SkullOwner"));
+                final CompoundNBT method6729 = class1851.method27657();
+                if (!method6729.contains("SkullOwner", 10)) {
+                    if (method6729.contains("SkullOwner", 8)) {
+                        if (!StringUtils.isBlank((CharSequence)method6729.getString("SkullOwner"))) {
+                            method6728 = new GameProfile((UUID)null, method6729.getString("SkullOwner"));
                         }
                     }
                 }
                 else {
-                    method6728 = Class9346.method34640(method6729.method327("SkullOwner"));
+                    method6728 = Class9346.method34640(method6729.getCompound("SkullOwner"));
                 }
             }
             class1852.method2506(method6728);

@@ -6,7 +6,6 @@ package mapped;
 
 import org.apache.logging.log4j.LogManager;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.FileOutputStream;
 import java.io.File;
 import org.apache.logging.log4j.Logger;
@@ -21,9 +20,9 @@ public abstract class Class6354
         this.field25417 = field25417;
     }
     
-    public abstract void method18901(final Class51 p0);
+    public abstract void method18901(final CompoundNBT p0);
     
-    public abstract Class51 method18902(final Class51 p0);
+    public abstract CompoundNBT method18902(final CompoundNBT p0);
     
     public void method18903() {
         this.method18904(true);
@@ -43,9 +42,9 @@ public abstract class Class6354
     
     public void method18907(final File file) {
         if (this.method18905()) {
-            final Class51 class51 = new Class51();
-            class51.method295("data", this.method18902(new Class51()));
-            class51.method298("DataVersion", Class9528.method35579().getWorldVersion());
+            final CompoundNBT class51 = new CompoundNBT();
+            class51.put("data", this.method18902(new CompoundNBT()));
+            class51.putInt("DataVersion", Class9528.method35579().getWorldVersion());
             try (final FileOutputStream fileOutputStream = new FileOutputStream(file)) {
                 Class8097.method26591(class51, fileOutputStream);
             }

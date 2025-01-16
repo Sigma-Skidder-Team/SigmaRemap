@@ -250,35 +250,35 @@ public class Class427 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method297("Health", (short)this.field2616);
-        class51.method297("Age", (short)this.field2614);
-        class51.method297("PickupDelay", (short)this.field2615);
+    public void method1761(final CompoundNBT class51) {
+        class51.putShort("Health", (short)this.field2616);
+        class51.putShort("Age", (short)this.field2614);
+        class51.putShort("PickupDelay", (short)this.field2615);
         if (this.method2111() != null) {
-            class51.method295("Thrower", Class9346.method34643(this.method2111()));
+            class51.put("Thrower", Class9346.method34643(this.method2111()));
         }
         if (this.method2109() != null) {
-            class51.method295("Owner", Class9346.method34643(this.method2109()));
+            class51.put("Owner", Class9346.method34643(this.method2109()));
         }
         if (!this.method2107().method27620()) {
-            class51.method295("Item", this.method2107().method27627(new Class51()));
+            class51.put("Item", this.method2107().method27627(new CompoundNBT()));
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field2616 = class51.method318("Health");
-        this.field2614 = class51.method318("Age");
-        if (class51.method315("PickupDelay")) {
-            this.field2615 = class51.method318("PickupDelay");
+    public void method1760(final CompoundNBT class51) {
+        this.field2616 = class51.getShort("Health");
+        this.field2614 = class51.getShort("Age");
+        if (class51.contains("PickupDelay")) {
+            this.field2615 = class51.getShort("PickupDelay");
         }
-        if (class51.method316("Owner", 10)) {
-            this.field2618 = Class9346.method34644(class51.method327("Owner"));
+        if (class51.contains("Owner", 10)) {
+            this.field2618 = Class9346.method34644(class51.getCompound("Owner"));
         }
-        if (class51.method316("Thrower", 10)) {
-            this.field2617 = Class9346.method34644(class51.method327("Thrower"));
+        if (class51.contains("Thrower", 10)) {
+            this.field2617 = Class9346.method34644(class51.getCompound("Thrower"));
         }
-        this.method2108(ItemStack.method27619(class51.method327("Item")));
+        this.method2108(ItemStack.method27619(class51.getCompound("Item")));
         if (this.method2107().method27620()) {
             this.method1652();
         }

@@ -51,15 +51,15 @@ public class Class4063 extends Item
     
     @Override
     public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
-        final Class51 method27660 = class8321.method27660("Fireworks");
+        final CompoundNBT method27660 = class8321.method27660("Fireworks");
         if (method27660 != null) {
-            if (method27660.method316("Flight", 99)) {
-                list.add(new Class2259("item.minecraft.firework_rocket.flight", new Object[0]).appendText(" ").appendText(String.valueOf(method27660.method317("Flight"))).applyTextStyle(TextFormatting.GRAY));
+            if (method27660.contains("Flight", 99)) {
+                list.add(new Class2259("item.minecraft.firework_rocket.flight", new Object[0]).appendText(" ").appendText(String.valueOf(method27660.getByte("Flight"))).applyTextStyle(TextFormatting.GRAY));
             }
-            final Class52 method27661 = method27660.method328("Explosions", 10);
+            final ListNBT method27661 = method27660.getList("Explosions", 10);
             if (!method27661.isEmpty()) {
                 for (int i = 0; i < method27661.size(); ++i) {
-                    final Class51 method27662 = method27661.method346(i);
+                    final CompoundNBT method27662 = method27661.method346(i);
                     final ArrayList arrayList = Lists.newArrayList();
                     Class4057.method12262(method27662, arrayList);
                     if (!arrayList.isEmpty()) {

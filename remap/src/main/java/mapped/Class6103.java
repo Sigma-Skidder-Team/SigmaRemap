@@ -10,7 +10,7 @@ import net.minecraft.nbt.INBT;
 import java.util.function.Supplier;
 import java.util.List;
 
-public class Class6103 implements Class6102
+public class Class6103 implements INode
 {
     private static String[] field24758;
     private final int field24759;
@@ -20,7 +20,7 @@ public class Class6103 implements Class6102
     }
     
     @Override
-    public void method18197(final INBT class41, final List<INBT> list) {
+    public void addMatchingElements(final INBT class41, final List<INBT> list) {
         if (class41 instanceof CollectionNBT) {
             final CollectionNBT class42 = (CollectionNBT)class41;
             final int size = class42.size();
@@ -34,17 +34,17 @@ public class Class6103 implements Class6102
     }
     
     @Override
-    public void method18198(final INBT class41, final Supplier<INBT> supplier, final List<INBT> list) {
-        this.method18197(class41, list);
+    public void func_218054_a(final INBT class41, final Supplier<INBT> supplier, final List<INBT> list) {
+        this.addMatchingElements(class41, list);
     }
     
     @Override
-    public INBT method18199() {
-        return new Class52();
+    public INBT createEmptyElement() {
+        return new ListNBT();
     }
     
     @Override
-    public int method18200(final INBT class41, final Supplier<INBT> supplier) {
+    public int func_218051_a(final INBT class41, final Supplier<INBT> supplier) {
         if (class41 instanceof CollectionNBT) {
             final CollectionNBT class42 = (CollectionNBT)class41;
             final int size = class42.size();
@@ -65,7 +65,7 @@ public class Class6103 implements Class6102
     }
     
     @Override
-    public int method18201(final INBT class41) {
+    public int func_218053_a(final INBT class41) {
         if (class41 instanceof CollectionNBT) {
             final CollectionNBT class42 = (CollectionNBT)class41;
             final int size = class42.size();

@@ -74,7 +74,7 @@ public class Class4471 extends Class4469
         this.field19846.add(new Class4524(method13455, method13461));
     }
     
-    public Class4471(final Class1795 class1795, final Class51 class1796) {
+    public Class4471(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40982, class1796);
         this.field19846 = Lists.newArrayList();
     }

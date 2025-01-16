@@ -433,10 +433,10 @@ public class Class1848 extends World
     }
     
     @Override
-    public Class5204 method6779(final Class7689 class7689) {
-        final Class5204 method6779 = super.method6779(class7689);
-        method6779.method16296("Server brand", () -> this.field10075.field4684.method4120());
-        method6779.method16296("Server type", () -> (this.field10075.method5285() != null) ? "Integrated singleplayer server" : "Non-integrated multiplayer server");
+    public CrashReportCategory method6779(final CrashReport class7689) {
+        final CrashReportCategory method6779 = super.method6779(class7689);
+        method6779.addDetail("Server brand", () -> this.field10075.field4684.method4120());
+        method6779.addDetail("Server type", () -> (this.field10075.method5285() != null) ? "Integrated singleplayer server" : "Non-integrated multiplayer server");
         return method6779;
     }
     
@@ -489,7 +489,7 @@ public class Class1848 extends World
     }
     
     @Override
-    public void method6781(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class51 class51) {
+    public void method6781(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final CompoundNBT class51) {
         this.field10075.field4640.method6480(new Class6176(this, n, n2, n3, n4, n5, n6, this.field10075.field4640, class51));
     }
     
@@ -605,13 +605,13 @@ public class Class1848 extends World
             this.field10074.method5752(playerEntity, i, class513, j);
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Playing level event");
-            final Class5204 method24422 = method24421.method24418("Level event being played");
-            method24422.method16297("Block coordinates", Class5204.method16294(class513));
-            method24422.method16297("Event source", playerEntity);
-            method24422.method16297("Event type", i);
-            method24422.method16297("Event data", j);
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Playing level event");
+            final CrashReportCategory method24422 = method24421.makeCategory("Level event being played");
+            method24422.addDetail("Block coordinates", CrashReportCategory.method16294(class513));
+            method24422.addDetail("Event source", playerEntity);
+            method24422.addDetail("Event type", i);
+            method24422.addDetail("Event data", j);
+            throw new ReportedException(method24421);
         }
     }
     

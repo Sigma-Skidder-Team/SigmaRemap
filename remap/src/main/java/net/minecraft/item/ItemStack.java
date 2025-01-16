@@ -45,7 +45,7 @@ public final class ItemStack
     private int field34177;
     @Deprecated
     private final Item field34178;
-    private Class51 field34179;
+    private CompoundNBT field34179;
     private boolean field34180;
     private Class862 field34181;
     private Class7990 field34182;
@@ -79,11 +79,11 @@ public final class ItemStack
         this.field34180 = this.method27620();
     }
     
-    private ItemStack(final Class51 class51) {
-        this.field34178 = Registry.field211.getOrDefault(new ResourceLocation(class51.method323("id")));
-        this.field34176 = class51.method317("Count");
-        if (class51.method316("tag", 10)) {
-            this.field34179 = class51.method327("tag");
+    private ItemStack(final CompoundNBT class51) {
+        this.field34178 = Registry.field211.getOrDefault(new ResourceLocation(class51.getString("id")));
+        this.field34176 = class51.getByte("Count");
+        if (class51.contains("tag", 10)) {
+            this.field34179 = class51.getCompound("tag");
             this.getItem().method11702(class51);
         }
         if (this.getItem().method11710()) {
@@ -92,7 +92,7 @@ public final class ItemStack
         this.method27618();
     }
     
-    public static ItemStack method27619(final Class51 class51) {
+    public static ItemStack method27619(final CompoundNBT class51) {
         try {
             return new ItemStack(class51);
         }
@@ -150,12 +150,12 @@ public final class ItemStack
         return this.getItem().method11707(this, class1847, class1848);
     }
     
-    public Class51 method27627(final Class51 class51) {
+    public CompoundNBT method27627(final CompoundNBT class51) {
         final ResourceLocation method503 = Registry.field211.getKey(this.getItem());
-        class51.method306("id", (method503 != null) ? method503.toString() : "minecraft:air");
-        class51.method296("Count", (byte)this.field34176);
+        class51.putString("id", (method503 != null) ? method503.toString() : "minecraft:air");
+        class51.putByte("Count", (byte)this.field34176);
         if (this.field34179 != null) {
-            class51.method295("tag", this.field34179.method333());
+            class51.put("tag", this.field34179.copy());
         }
         return class51;
     }
@@ -170,8 +170,8 @@ public final class ItemStack
     
     public boolean method27630() {
         if (!this.field34180 && this.getItem().method11709() > 0) {
-            final Class51 method27657 = this.method27657();
-            return method27657 == null || !method27657.method329("Unbreakable");
+            final CompoundNBT method27657 = this.method27657();
+            return method27657 == null || !method27657.getBoolean("Unbreakable");
         }
         return false;
     }
@@ -181,11 +181,11 @@ public final class ItemStack
     }
     
     public int method27632() {
-        return (this.field34179 != null) ? this.field34179.method319("Damage") : 0;
+        return (this.field34179 != null) ? this.field34179.getInt("Damage") : 0;
     }
     
     public void method27633(final int b) {
-        this.method27658().method298("Damage", Math.max(0, b));
+        this.method27658().putInt("Damage", Math.max(0, b));
     }
     
     public int method27634() {
@@ -264,7 +264,7 @@ public final class ItemStack
             final ItemStack class8321 = new ItemStack(this.getItem(), this.field34176);
             class8321.method27689(this.method27688());
             if (this.field34179 != null) {
-                class8321.field34179 = this.field34179.method333();
+                class8321.field34179 = this.field34179.copy();
             }
             return class8321;
         }
@@ -353,35 +353,35 @@ public final class ItemStack
     }
     
     @Nullable
-    public Class51 method27657() {
+    public CompoundNBT method27657() {
         return this.field34179;
     }
     
-    public Class51 method27658() {
+    public CompoundNBT method27658() {
         if (this.field34179 == null) {
-            this.method27663(new Class51());
+            this.method27663(new CompoundNBT());
         }
         return this.field34179;
     }
     
-    public Class51 method27659(final String s) {
-        if (this.field34179 != null && this.field34179.method316(s, 10)) {
-            return this.field34179.method327(s);
+    public CompoundNBT method27659(final String s) {
+        if (this.field34179 != null && this.field34179.contains(s, 10)) {
+            return this.field34179.getCompound(s);
         }
-        final Class51 class51 = new Class51();
+        final CompoundNBT class51 = new CompoundNBT();
         this.method27676(s, class51);
         return class51;
     }
     
     @Nullable
-    public Class51 method27660(final String s) {
-        return (this.field34179 != null && this.field34179.method316(s, 10)) ? this.field34179.method327(s) : null;
+    public CompoundNBT method27660(final String s) {
+        return (this.field34179 != null && this.field34179.contains(s, 10)) ? this.field34179.getCompound(s) : null;
     }
     
     public void method27661(final String s) {
         if (this.field34179 != null) {
-            if (this.field34179.method315(s)) {
-                this.field34179.method330(s);
+            if (this.field34179.contains(s)) {
+                this.field34179.remove(s);
                 if (this.field34179.method331()) {
                     this.field34179 = null;
                 }
@@ -389,11 +389,11 @@ public final class ItemStack
         }
     }
     
-    public Class52 method27662() {
-        return (this.field34179 == null) ? new Class52() : this.field34179.method328("Enchantments", 10);
+    public ListNBT method27662() {
+        return (this.field34179 == null) ? new ListNBT() : this.field34179.getList("Enchantments", 10);
     }
     
-    public void method27663(final Class51 field34179) {
+    public void method27663(final CompoundNBT field34179) {
         this.field34179 = field34179;
         if (this.getItem().method11710()) {
             this.method27633(this.method27632());
@@ -401,37 +401,37 @@ public final class ItemStack
     }
     
     public ITextComponent method27664() {
-        final Class51 method27660 = this.method27660("display");
-        if (method27660 != null && method27660.method316("Name", 8)) {
+        final CompoundNBT method27660 = this.method27660("display");
+        if (method27660 != null && method27660.contains("Name", 8)) {
             try {
-                final ITextComponent method27661 = Class5953.method17871(method27660.method323("Name"));
+                final ITextComponent method27661 = Class5953.method17871(method27660.getString("Name"));
                 if (method27661 != null) {
                     return method27661;
                 }
-                method27660.method330("Name");
+                method27660.remove("Name");
             }
             catch (final JsonParseException ex) {
-                method27660.method330("Name");
+                method27660.remove("Name");
             }
         }
         return this.getItem().method11729(this);
     }
     
     public ItemStack method27665(final ITextComponent class2250) {
-        final Class51 method27659 = this.method27659("display");
+        final CompoundNBT method27659 = this.method27659("display");
         if (class2250 == null) {
-            method27659.method330("Name");
+            method27659.remove("Name");
         }
         else {
-            method27659.method306("Name", Class5953.method17869(class2250));
+            method27659.putString("Name", Class5953.method17869(class2250));
         }
         return this;
     }
     
     public void method27666() {
-        final Class51 method27660 = this.method27660("display");
+        final CompoundNBT method27660 = this.method27660("display");
         if (method27660 != null) {
-            method27660.method330("Name");
+            method27660.remove("Name");
             if (method27660.method331()) {
                 this.method27661("display");
             }
@@ -444,8 +444,8 @@ public final class ItemStack
     }
     
     public boolean method27667() {
-        final Class51 method27660 = this.method27660("display");
-        return method27660 != null && method27660.method316("Name", 8);
+        final CompoundNBT method27660 = this.method27660("display");
+        return method27660 != null && method27660.contains("Name", 8);
     }
     
     public List<ITextComponent> method27668(final PlayerEntity playerEntity, final Class1981 class513) {
@@ -459,8 +459,8 @@ public final class ItemStack
             arrayList.add(new StringTextComponent("#" + Class4094.method12329(this)).applyTextStyle(TextFormatting.GRAY));
         }
         int method8470 = 0;
-        if (this.method27656() && this.field34179.method316("HideFlags", 99)) {
-            method8470 = this.field34179.method319("HideFlags");
+        if (this.method27656() && this.field34179.contains("HideFlags", 99)) {
+            method8470 = this.field34179.getInt("HideFlags");
         }
         if ((method8470 & 0x20) == 0x0) {
             this.getItem().method11728(this, (playerEntity == null) ? null : playerEntity.world, arrayList, class513);
@@ -469,18 +469,18 @@ public final class ItemStack
             if ((method8470 & 0x1) == 0x0) {
                 method27669(arrayList, this.method27662());
             }
-            if (this.field34179.method316("display", 10)) {
-                final Class51 method8471 = this.field34179.method327("display");
-                if (method8471.method316("color", 3)) {
+            if (this.field34179.contains("display", 10)) {
+                final CompoundNBT method8471 = this.field34179.getCompound("display");
+                if (method8471.contains("color", 3)) {
                     if (class513.method7991()) {
-                        arrayList.add(new Class2259("item.color", new Object[] { String.format("#%06X", method8471.method319("color")) }).applyTextStyle(TextFormatting.GRAY));
+                        arrayList.add(new Class2259("item.color", new Object[] { String.format("#%06X", method8471.getInt("color")) }).applyTextStyle(TextFormatting.GRAY));
                     }
                     else {
                         arrayList.add(new Class2259("item.dyed", new Object[0]).applyTextStyles(TextFormatting.GRAY, TextFormatting.ITALIC));
                     }
                 }
-                if (method8471.method314("Lore") == 9) {
-                    final Class52 method8472 = method8471.method328("Lore", 8);
+                if (method8471.getTagId("Lore") == 9) {
+                    final ListNBT method8472 = method8471.getList("Lore", 8);
                     for (int i = 0; i < method8472.size(); ++i) {
                         final String method8473 = method8472.method353(i);
                         try {
@@ -490,7 +490,7 @@ public final class ItemStack
                             }
                         }
                         catch (final JsonParseException ex) {
-                            method8471.method330("Lore");
+                            method8471.remove("Lore");
                         }
                     }
                 }
@@ -537,11 +537,11 @@ public final class ItemStack
                 }
             }
         }
-        if (this.method27656() && this.method27657().method329("Unbreakable") && (method8470 & 0x4) == 0x0) {
+        if (this.method27656() && this.method27657().getBoolean("Unbreakable") && (method8470 & 0x4) == 0x0) {
             arrayList.add(new Class2259("item.unbreakable", new Object[0]).applyTextStyle(TextFormatting.BLUE));
         }
-        if (this.method27656() && this.field34179.method316("CanDestroy", 9) && (method8470 & 0x8) == 0x0) {
-            final Class52 method8477 = this.field34179.method328("CanDestroy", 8);
+        if (this.method27656() && this.field34179.contains("CanDestroy", 9) && (method8470 & 0x8) == 0x0) {
+            final ListNBT method8477 = this.field34179.getList("CanDestroy", 8);
             if (!method8477.isEmpty()) {
                 arrayList.add(new StringTextComponent(""));
                 arrayList.add(new Class2259("item.canBreak", new Object[0]).applyTextStyle(TextFormatting.GRAY));
@@ -550,8 +550,8 @@ public final class ItemStack
                 }
             }
         }
-        if (this.method27656() && this.field34179.method316("CanPlaceOn", 9) && (method8470 & 0x10) == 0x0) {
-            final Class52 method8478 = this.field34179.method328("CanPlaceOn", 8);
+        if (this.method27656() && this.field34179.contains("CanPlaceOn", 9) && (method8470 & 0x10) == 0x0) {
+            final ListNBT method8478 = this.field34179.getList("CanPlaceOn", 8);
             if (!method8478.isEmpty()) {
                 arrayList.add(new StringTextComponent(""));
                 arrayList.add(new Class2259("item.canPlace", new Object[0]).applyTextStyle(TextFormatting.GRAY));
@@ -566,15 +566,15 @@ public final class ItemStack
             }
             arrayList.add(new StringTextComponent(Registry.field211.getKey(this.getItem()).toString()).applyTextStyle(TextFormatting.DARK_GRAY));
             if (this.method27656()) {
-                arrayList.add(new Class2259("item.nbt_tags", new Object[] { this.method27657().method293().size() }).applyTextStyle(TextFormatting.DARK_GRAY));
+                arrayList.add(new Class2259("item.nbt_tags", new Object[] { this.method27657().keySet().size() }).applyTextStyle(TextFormatting.DARK_GRAY));
             }
         }
         return arrayList;
     }
     
-    public static void method27669(final List<ITextComponent> list, final Class52 class52) {
+    public static void method27669(final List<ITextComponent> list, final ListNBT class52) {
         for (int i = 0; i < class52.size(); ++i) {
-            Registry.field209.method506(ResourceLocation.method7795(class52.method346(i).method323("id"))).ifPresent(class54 -> list2.add(class54.method18599(class53.method319("lvl"))));
+            Registry.field209.method506(ResourceLocation.method7795(class52.method346(i).getString("id"))).ifPresent(class54 -> list2.add(class54.method18599(class53.method319("lvl"))));
         }
     }
     
@@ -616,22 +616,22 @@ public final class ItemStack
     
     public void method27674(final Class6257 class6257, final int n) {
         this.method27658();
-        if (!this.field34179.method316("Enchantments", 9)) {
-            this.field34179.method295("Enchantments", new Class52());
+        if (!this.field34179.contains("Enchantments", 9)) {
+            this.field34179.put("Enchantments", new ListNBT());
         }
-        final Class52 method328 = this.field34179.method328("Enchantments", 10);
-        final Class51 e = new Class51();
-        e.method306("id", String.valueOf(Registry.field209.getKey(class6257)));
-        e.method297("lvl", (byte)n);
-        ((AbstractList<Class51>)method328).add(e);
+        final ListNBT method328 = this.field34179.getList("Enchantments", 10);
+        final CompoundNBT e = new CompoundNBT();
+        e.putString("id", String.valueOf(Registry.field209.getKey(class6257)));
+        e.putShort("lvl", (byte)n);
+        ((AbstractList<CompoundNBT>)method328).add(e);
     }
     
     public boolean method27675() {
-        return this.field34179 != null && this.field34179.method316("Enchantments", 9) && !this.field34179.method328("Enchantments", 10).isEmpty();
+        return this.field34179 != null && this.field34179.contains("Enchantments", 9) && !this.field34179.getList("Enchantments", 10).isEmpty();
     }
     
     public void method27676(final String s, final INBT class41) {
-        this.method27658().method295(s, class41);
+        this.method27658().put(s, class41);
     }
     
     public boolean method27677() {
@@ -648,26 +648,26 @@ public final class ItemStack
     }
     
     public int method27680() {
-        return (this.method27656() && this.field34179.method316("RepairCost", 3)) ? this.field34179.method319("RepairCost") : 0;
+        return (this.method27656() && this.field34179.contains("RepairCost", 3)) ? this.field34179.getInt("RepairCost") : 0;
     }
     
     public void method27681(final int n) {
-        this.method27658().method298("RepairCost", n);
+        this.method27658().putInt("RepairCost", n);
     }
     
     public Multimap<String, Class7919> method27682(final Class2215 class2215) {
         Object o;
-        if (this.method27656() && this.field34179.method316("AttributeModifiers", 9)) {
+        if (this.method27656() && this.field34179.contains("AttributeModifiers", 9)) {
             o = HashMultimap.create();
-            final Class52 method328 = this.field34179.method328("AttributeModifiers", 10);
+            final ListNBT method328 = this.field34179.getList("AttributeModifiers", 10);
             for (int i = 0; i < method328.size(); ++i) {
-                final Class51 method329 = method328.method346(i);
+                final CompoundNBT method329 = method328.method346(i);
                 final Class7919 method330 = Class8107.method26644(method329);
                 if (method330 != null) {
-                    if (!method329.method316("Slot", 8) || method329.method323("Slot").equals(class2215.method8404())) {
+                    if (!method329.contains("Slot", 8) || method329.getString("Slot").equals(class2215.method8404())) {
                         if (method330.method25635().getLeastSignificantBits() != 0L) {
                             if (method330.method25635().getMostSignificantBits() != 0L) {
-                                ((Multimap)o).put((Object)method329.method323("AttributeName"), (Object)method330);
+                                ((Multimap)o).put((Object)method329.getString("AttributeName"), (Object)method330);
                             }
                         }
                     }
@@ -683,16 +683,16 @@ public final class ItemStack
     
     public void method27683(final String s, final Class7919 class7919, final Class2215 class7920) {
         this.method27658();
-        if (!this.field34179.method316("AttributeModifiers", 9)) {
-            this.field34179.method295("AttributeModifiers", new Class52());
+        if (!this.field34179.contains("AttributeModifiers", 9)) {
+            this.field34179.put("AttributeModifiers", new ListNBT());
         }
-        final Class52 method328 = this.field34179.method328("AttributeModifiers", 10);
-        final Class51 method329 = Class8107.method26641(class7919);
-        method329.method306("AttributeName", s);
+        final ListNBT method328 = this.field34179.getList("AttributeModifiers", 10);
+        final CompoundNBT method329 = Class8107.method26641(class7919);
+        method329.putString("AttributeName", s);
         if (class7920 != null) {
-            method329.method306("Slot", class7920.method8404());
+            method329.putString("Slot", class7920.method8404());
         }
-        ((AbstractList<Class51>)method328).add(method329);
+        ((AbstractList<CompoundNBT>)method328).add(method329);
     }
     
     public ITextComponent method27684() {
@@ -769,7 +769,7 @@ public final class ItemStack
     }
     
     private static boolean method27685(final Class7990 class7990, final Class7990 class7991) {
-        return class7991 != null && class7990.method26065() == class7991.method26065() && ((class7990.method26066() == null && class7991.method26066() == null) || (class7990.method26066() != null && class7991.method26066() != null && Objects.equals(class7990.method26066().method2180(new Class51()), class7991.method26066().method2180(new Class51()))));
+        return class7991 != null && class7990.method26065() == class7991.method26065() && ((class7990.method26066() == null && class7991.method26066() == null) || (class7990.method26066() != null && class7991.method26066() != null && Objects.equals(class7990.method26066().method2180(new CompoundNBT()), class7991.method26066().method2180(new CompoundNBT()))));
     }
     
     public boolean method27686(final Class1792 class1792, final Class7990 field34182) {
@@ -777,8 +777,8 @@ public final class ItemStack
             return this.field34183;
         }
         this.field34182 = field34182;
-        if (this.method27656() && this.field34179.method316("CanDestroy", 9)) {
-            final Class52 method328 = this.field34179.method328("CanDestroy", 8);
+        if (this.method27656() && this.field34179.contains("CanDestroy", 9)) {
+            final ListNBT method328 = this.field34179.getList("CanDestroy", 8);
             for (int i = 0; i < method328.size(); ++i) {
                 final String method329 = method328.method353(i);
                 try {
@@ -797,8 +797,8 @@ public final class ItemStack
             return this.field34185;
         }
         this.field34184 = field34184;
-        if (this.method27656() && this.field34179.method316("CanPlaceOn", 9)) {
-            final Class52 method328 = this.field34179.method328("CanPlaceOn", 8);
+        if (this.method27656() && this.field34179.contains("CanPlaceOn", 9)) {
+            final ListNBT method328 = this.field34179.getList("CanPlaceOn", 8);
             for (int i = 0; i < method328.size(); ++i) {
                 final String method329 = method328.method353(i);
                 try {

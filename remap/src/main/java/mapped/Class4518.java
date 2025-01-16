@@ -27,13 +27,13 @@ public class Class4518 extends Class4515
         this.method13514(class1795);
     }
     
-    public Class4518(final Class1795 class1795, final Class51 class1796) {
+    public Class4518(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40978, class1796);
-        this.field19927 = new ResourceLocation(class1796.method323("Template"));
-        this.field19928 = Class2052.valueOf(class1796.method323("Rot"));
-        this.field19926 = class1796.method321("Integrity");
-        this.field19925 = Class1957.valueOf(class1796.method323("BiomeType"));
-        this.field19929 = class1796.method329("IsLarge");
+        this.field19927 = new ResourceLocation(class1796.getString("Template"));
+        this.field19928 = Class2052.valueOf(class1796.getString("Rot"));
+        this.field19926 = class1796.getFloat("Integrity");
+        this.field19925 = Class1957.valueOf(class1796.getString("BiomeType"));
+        this.field19929 = class1796.getBoolean("IsLarge");
         this.method13514(class1795);
     }
     
@@ -42,13 +42,13 @@ public class Class4518 extends Class4515
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method306("Template", this.field19927.toString());
-        class51.method306("Rot", this.field19928.name());
-        class51.method304("Integrity", this.field19926);
-        class51.method306("BiomeType", this.field19925.toString());
-        class51.method312("IsLarge", this.field19929);
+        class51.putString("Template", this.field19927.toString());
+        class51.putString("Rot", this.field19928.name());
+        class51.putFloat("Integrity", this.field19926);
+        class51.putString("BiomeType", this.field19925.toString());
+        class51.putBoolean("IsLarge", this.field19929);
     }
     
     @Override

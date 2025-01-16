@@ -11,12 +11,12 @@ public class Class4296 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19262;
     private int field19263;
-    private Class51 field19264;
+    private CompoundNBT field19264;
     
     public Class4296() {
     }
     
-    public Class4296(final int field19263, final Class51 field19264) {
+    public Class4296(final int field19263, final CompoundNBT field19264) {
         this.field19263 = field19263;
         this.field19264 = field19264;
     }
@@ -42,7 +42,7 @@ public class Class4296 implements IPacket<IClientPlayNetHandler>
     }
     
     @Nullable
-    public Class51 method12903() {
+    public CompoundNBT method12903() {
         return this.field19264;
     }
     

@@ -68,21 +68,21 @@ public class Class853 extends Class759 implements Class762
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Size", this.method5130() - 1);
-        class51.method312("wasOnGround", this.field4560);
+        class51.putInt("Size", this.method5130() - 1);
+        class51.putBoolean("wasOnGround", this.field4560);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        int method319 = class51.method319("Size");
+    public void method1760(final CompoundNBT class51) {
+        int method319 = class51.getInt("Size");
         if (method319 < 0) {
             method319 = 0;
         }
         this.method5129(method319 + 1, false);
         super.method1760(class51);
-        this.field4560 = class51.method329("wasOnGround");
+        this.field4560 = class51.getBoolean("wasOnGround");
     }
     
     public boolean method5131() {
@@ -302,7 +302,7 @@ public class Class853 extends Class759 implements Class762
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         int nextInt = this.rand.nextInt(3);
         if (nextInt < 2) {
             if (this.rand.nextFloat() < 0.5f * class1852.method35975()) {

@@ -30,26 +30,26 @@ public class Class488 extends Class489 implements Class439
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
-        class51.method299("Age", this.field2802);
+        class51.putLong("Age", this.field2802);
         if (this.field2804 != null) {
-            class51.method295("ExitPortal", Class9346.method34646(this.field2804));
+            class51.put("ExitPortal", Class9346.method34646(this.field2804));
         }
         if (this.field2805) {
-            class51.method312("ExactTeleport", this.field2805);
+            class51.putBoolean("ExactTeleport", this.field2805);
         }
         return class51;
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2802 = class51.method320("Age");
-        if (class51.method316("ExitPortal", 10)) {
-            this.field2804 = Class9346.method34645(class51.method327("ExitPortal"));
+        this.field2802 = class51.getLong("Age");
+        if (class51.contains("ExitPortal", 10)) {
+            this.field2804 = Class9346.method34645(class51.getCompound("ExitPortal"));
         }
-        this.field2805 = class51.method329("ExactTeleport");
+        this.field2805 = class51.getBoolean("ExactTeleport");
     }
     
     @Override
@@ -104,8 +104,8 @@ public class Class488 extends Class489 implements Class439
     }
     
     @Override
-    public Class51 method2196() {
-        return this.method2180(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2180(new CompoundNBT());
     }
     
     public void method2436() {

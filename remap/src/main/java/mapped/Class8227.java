@@ -53,7 +53,7 @@ public class Class8227 extends Class8228
             if (class1798.field38250 == null) {
                 continue;
             }
-            if (Class102.valueOf(class1798.field38250.method323("mode")) != Class102.field308) {
+            if (Class102.valueOf(class1798.field38250.getString("mode")) != Class102.field308) {
                 continue;
             }
             arrayList.add(class1798);

@@ -78,27 +78,27 @@ public class Class765 extends Class763 implements Class766
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (this.dataManager.get(Class765.field4136)) {
-            class51.method312("powered", true);
+            class51.putBoolean("powered", true);
         }
-        class51.method297("Fuse", (short)this.field4140);
-        class51.method296("ExplosionRadius", (byte)this.field4141);
-        class51.method312("ignited", this.method4239());
+        class51.putShort("Fuse", (short)this.field4140);
+        class51.putByte("ExplosionRadius", (byte)this.field4141);
+        class51.putBoolean("ignited", this.method4239());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.dataManager.set(Class765.field4136, class51.method329("powered"));
-        if (class51.method316("Fuse", 99)) {
-            this.field4140 = class51.method318("Fuse");
+        this.dataManager.set(Class765.field4136, class51.getBoolean("powered"));
+        if (class51.contains("Fuse", 99)) {
+            this.field4140 = class51.getShort("Fuse");
         }
-        if (class51.method316("ExplosionRadius", 99)) {
-            this.field4141 = class51.method317("ExplosionRadius");
+        if (class51.contains("ExplosionRadius", 99)) {
+            this.field4141 = class51.getByte("ExplosionRadius");
         }
-        if (class51.method329("ignited")) {
+        if (class51.getBoolean("ignited")) {
             this.method4240();
         }
     }

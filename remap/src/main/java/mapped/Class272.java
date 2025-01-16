@@ -10,11 +10,11 @@ import java.util.List;
 
 public enum Class272
 {
-    field1477(Class272.\uab7b\u6a9b\ud553\u85cc\ubfb4\u35ef[0]), 
-    field1478(Class272.\uab7b\u6a9b\ud553\u85cc\ubfb4\u35ef[1]), 
-    field1479(Class272.\uab7b\u6a9b\ud553\u85cc\ubfb4\u35ef[2]), 
-    field1480(Class272.\uab7b\u6a9b\ud553\u85cc\ubfb4\u35ef[3]), 
-    field1481(Class272.\uab7b\u6a9b\ud553\u85cc\ubfb4\u35ef[4]);
+    field1477("TLSv1.3"),
+    field1478("TLSv1.2"),
+    field1479("TLSv1.1"),
+    field1480("TLSv1"),
+    field1481("SSLv3");
     
     public final String field1482;
     

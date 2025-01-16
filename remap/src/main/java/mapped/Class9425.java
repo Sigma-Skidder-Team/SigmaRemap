@@ -41,7 +41,7 @@ public class Class9425
         return this;
     }
     
-    public Class9425 method35027(final Class51 class51) {
+    public Class9425 method35027(final CompoundNBT class51) {
         this.field40433 = new Class7103(class51);
         return this;
     }

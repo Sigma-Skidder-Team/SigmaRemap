@@ -111,13 +111,13 @@ public class IntArrayNBT extends CollectionNBT<IntNBT>
     @Override
     public IntNBT set(final int n, final IntNBT class45) {
         final int n2 = this.intArray[n];
-        this.intArray[n] = class45.method271();
+        this.intArray[n] = class45.getInt();
         return IntNBT.valueOf(n2);
     }
     
     @Override
     public void add(final int n, final IntNBT class45) {
-        this.intArray = ArrayUtils.add(this.intArray, n, class45.method271());
+        this.intArray = ArrayUtils.add(this.intArray, n, class45.getInt());
     }
     
     @Override
@@ -125,7 +125,7 @@ public class IntArrayNBT extends CollectionNBT<IntNBT>
         if (!(class41 instanceof NumberNBT)) {
             return false;
         }
-        this.intArray[n] = ((NumberNBT)class41).method271();
+        this.intArray[n] = ((NumberNBT)class41).getInt();
         return true;
     }
     
@@ -134,7 +134,7 @@ public class IntArrayNBT extends CollectionNBT<IntNBT>
         if (!(class41 instanceof NumberNBT)) {
             return false;
         }
-        this.intArray = ArrayUtils.add(this.intArray, n, ((NumberNBT)class41).method271());
+        this.intArray = ArrayUtils.add(this.intArray, n, ((NumberNBT)class41).getInt());
         return true;
     }
     

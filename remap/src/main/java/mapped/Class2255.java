@@ -23,12 +23,12 @@ public abstract class Class2255 extends TextComponent implements Class2253
     private static final Logger field13800;
     public final boolean field13801;
     public final String field13802;
-    public final Class8570 field13803;
+    public final NBTPath field13803;
     
     @Nullable
-    private static Class8570 method8480(final String s) {
+    private static NBTPath method8480(final String s) {
         try {
-            return new Class8258().parse(new StringReader(s));
+            return new NBTPathArgument().parse(new StringReader(s));
         }
         catch (final CommandSyntaxException ex) {
             return null;
@@ -39,13 +39,13 @@ public abstract class Class2255 extends TextComponent implements Class2253
         this(s, method8480(s), b);
     }
     
-    public Class2255(final String field13802, final Class8570 field13803, final boolean field13804) {
+    public Class2255(final String field13802, final NBTPath field13803, final boolean field13804) {
         this.field13802 = field13802;
         this.field13803 = field13803;
         this.field13801 = field13804;
     }
     
-    public abstract Stream<Class51> method8481(final Class7492 p0) throws CommandSyntaxException;
+    public abstract Stream<CompoundNBT> method8481(final Class7492 p0) throws CommandSyntaxException;
     
     @Override
     public String getUnformattedComponentText() {
@@ -65,7 +65,7 @@ public abstract class Class2255 extends TextComponent implements Class2253
         if (class7492 != null && this.field13803 != null) {
             final Stream<Object> map = this.method8481(class7492).flatMap(class7494 -> {
                 try {
-                    return this.field13803.method28804(class7494).stream();
+                    return this.field13803.func_218071_a(class7494).stream();
                 }
                 catch (final CommandSyntaxException ex) {
                     return Stream.empty();

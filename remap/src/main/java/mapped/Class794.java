@@ -35,26 +35,26 @@ public abstract class Class794 extends Class789
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (this.method4485() != null) {
-            class51.method306("OwnerUUID", this.method4485().toString());
+            class51.putString("OwnerUUID", this.method4485().toString());
         }
         else {
-            class51.method306("OwnerUUID", "");
+            class51.putString("OwnerUUID", "");
         }
-        class51.method312("Sitting", this.method4483());
+        class51.putBoolean("Sitting", this.method4483());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
         String name;
-        if (class51.method316("OwnerUUID", 8)) {
-            name = class51.method323("OwnerUUID");
+        if (class51.contains("OwnerUUID", 8)) {
+            name = class51.getString("OwnerUUID");
         }
         else {
-            name = Class7450.method22924(this.method1897(), class51.method323("Owner"));
+            name = Class7450.method22924(this.method1897(), class51.getString("Owner"));
         }
         if (!name.isEmpty()) {
             try {
@@ -66,9 +66,9 @@ public abstract class Class794 extends Class789
             }
         }
         if (this.field4245 != null) {
-            this.field4245.method11058(class51.method329("Sitting"));
+            this.field4245.method11058(class51.getBoolean("Sitting"));
         }
-        this.method4484(class51.method329("Sitting"));
+        this.method4484(class51.getBoolean("Sitting"));
     }
     
     @Override

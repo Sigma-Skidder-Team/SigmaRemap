@@ -43,8 +43,8 @@ public class Class3688 implements Class3689
         return this;
     }
     
-    private Class51 method11336(final String s, final Class51 class51) {
-        Class51 method22833 = class51;
+    private CompoundNBT method11336(final String s, final CompoundNBT class51) {
+        CompoundNBT method22833 = class51;
         final Iterator<Class7420> iterator = this.field16997.iterator();
         while (iterator.hasNext()) {
             method22833 = iterator.next().method22833(s, method22833);

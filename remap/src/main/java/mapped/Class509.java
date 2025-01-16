@@ -59,50 +59,50 @@ public class Class509 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         if (this.field2904 != null) {
             final BlockPos class52 = new BlockPos(this.field2904);
-            final Class51 method34643 = Class9346.method34643(this.field2904.method1865());
-            method34643.method298("X", class52.getX());
-            method34643.method298("Y", class52.getY());
-            method34643.method298("Z", class52.getZ());
-            class51.method295("Owner", method34643);
+            final CompoundNBT method34643 = Class9346.method34643(this.field2904.method1865());
+            method34643.putInt("X", class52.getX());
+            method34643.putInt("Y", class52.getY());
+            method34643.putInt("Z", class52.getZ());
+            class51.put("Owner", method34643);
         }
         if (this.field2905 != null) {
             final BlockPos class53 = new BlockPos(this.field2905);
-            final Class51 method34644 = Class9346.method34643(this.field2905.method1865());
-            method34644.method298("X", class53.getX());
-            method34644.method298("Y", class53.getY());
-            method34644.method298("Z", class53.getZ());
-            class51.method295("Target", method34644);
+            final CompoundNBT method34644 = Class9346.method34643(this.field2905.method1865());
+            method34644.putInt("X", class53.getX());
+            method34644.putInt("Y", class53.getY());
+            method34644.putInt("Z", class53.getZ());
+            class51.put("Target", method34644);
         }
         if (this.field2906 != null) {
-            class51.method298("Dir", this.field2906.getIndex());
+            class51.putInt("Dir", this.field2906.getIndex());
         }
-        class51.method298("Steps", this.field2907);
-        class51.method305("TXD", this.field2908);
-        class51.method305("TYD", this.field2909);
-        class51.method305("TZD", this.field2910);
+        class51.putInt("Steps", this.field2907);
+        class51.putDouble("TXD", this.field2908);
+        class51.putDouble("TYD", this.field2909);
+        class51.putDouble("TZD", this.field2910);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field2907 = class51.method319("Steps");
-        this.field2908 = class51.method322("TXD");
-        this.field2909 = class51.method322("TYD");
-        this.field2910 = class51.method322("TZD");
-        if (class51.method316("Dir", 99)) {
-            this.field2906 = Direction.byIndex(class51.method319("Dir"));
+    public void method1760(final CompoundNBT class51) {
+        this.field2907 = class51.getInt("Steps");
+        this.field2908 = class51.getDouble("TXD");
+        this.field2909 = class51.getDouble("TYD");
+        this.field2910 = class51.getDouble("TZD");
+        if (class51.contains("Dir", 99)) {
+            this.field2906 = Direction.byIndex(class51.getInt("Dir"));
         }
-        if (class51.method316("Owner", 10)) {
-            final Class51 method327 = class51.method327("Owner");
+        if (class51.contains("Owner", 10)) {
+            final CompoundNBT method327 = class51.getCompound("Owner");
             this.field2911 = Class9346.method34644(method327);
-            this.field2912 = new BlockPos(method327.method319("X"), method327.method319("Y"), method327.method319("Z"));
+            this.field2912 = new BlockPos(method327.getInt("X"), method327.getInt("Y"), method327.getInt("Z"));
         }
-        if (class51.method316("Target", 10)) {
-            final Class51 method328 = class51.method327("Target");
+        if (class51.contains("Target", 10)) {
+            final CompoundNBT method328 = class51.getCompound("Target");
             this.field2913 = Class9346.method34644(method328);
-            this.field2914 = new BlockPos(method328.method319("X"), method328.method319("Y"), method328.method319("Z"));
+            this.field2914 = new BlockPos(method328.getInt("X"), method328.getInt("Y"), method328.getInt("Z"));
         }
     }
     

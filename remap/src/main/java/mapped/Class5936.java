@@ -62,25 +62,25 @@ public abstract class Class5936
         }
     }
     
-    public Class51 method17855(final int n, final int n2) {
-        final Class51 class51 = new Class51();
+    public CompoundNBT method17855(final int n, final int n2) {
+        final CompoundNBT class51 = new CompoundNBT();
         if (this.method17858()) {
-            class51.method306("id", Registry.field230.getKey(this.method17866()).toString());
-            class51.method298("ChunkX", n);
-            class51.method298("ChunkZ", n2);
-            class51.method298("references", this.field24435);
-            class51.method295("BB", this.field24432.toNBTTagIntArray());
-            final Class52 class52 = new Class52();
+            class51.putString("id", Registry.field230.getKey(this.method17866()).toString());
+            class51.putInt("ChunkX", n);
+            class51.putInt("ChunkZ", n2);
+            class51.putInt("references", this.field24435);
+            class51.put("BB", this.field24432.toNBTTagIntArray());
+            final ListNBT class52 = new ListNBT();
             synchronized (this.field24431) {
                 final Iterator<Class4473> iterator = this.field24431.iterator();
                 while (iterator.hasNext()) {
-                    ((AbstractList<Class51>)class52).add(iterator.next().method13430());
+                    ((AbstractList<CompoundNBT>)class52).add(iterator.next().method13430());
                 }
             }
-            class51.method295("Children", class52);
+            class51.put("Children", class52);
             return class51;
         }
-        class51.method306("id", "INVALID");
+        class51.putString("id", "INVALID");
         return class51;
     }
     

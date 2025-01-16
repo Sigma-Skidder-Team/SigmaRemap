@@ -46,6 +46,6 @@ public class Class6061<T> implements Class6058<T>
     }
     
     @Override
-    public void method18032(final Class52 class52) {
+    public void method18032(final ListNBT class52) {
     }
 }

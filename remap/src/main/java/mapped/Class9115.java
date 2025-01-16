@@ -32,14 +32,14 @@ public class Class9115
         return true;
     }
     
-    public void method32977(final Class51 class51) {
+    public void method32977(final CompoundNBT class51) {
         if (!this.field38617.isEmpty()) {
-            class51.method306("Lock", this.field38617);
+            class51.putString("Lock", this.field38617);
         }
     }
     
-    public static Class9115 method32978(final Class51 class51) {
-        return class51.method316("Lock", 8) ? new Class9115(class51.method323("Lock")) : Class9115.field38616;
+    public static Class9115 method32978(final CompoundNBT class51) {
+        return class51.contains("Lock", 8) ? new Class9115(class51.getString("Lock")) : Class9115.field38616;
     }
     
     static {

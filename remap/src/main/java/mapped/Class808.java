@@ -37,11 +37,11 @@ public class Class808 extends Class806
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Variant", this.method4772());
+        class51.putInt("Variant", this.method4772());
         if (!this.field4342.method2157(1).method27620()) {
-            class51.method295("ArmorItem", this.field4342.method2157(1).method27627(new Class51()));
+            class51.put("ArmorItem", this.field4342.method2157(1).method27627(new CompoundNBT()));
         }
     }
     
@@ -55,11 +55,11 @@ public class Class808 extends Class806
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4771(class51.method319("Variant"));
-        if (class51.method316("ArmorItem", 10)) {
-            final ItemStack method27619 = ItemStack.method27619(class51.method327("ArmorItem"));
+        this.method4771(class51.getInt("Variant"));
+        if (class51.contains("ArmorItem", 10)) {
+            final ItemStack method27619 = ItemStack.method27619(class51.getCompound("ArmorItem"));
             if (!method27619.method27620()) {
                 if (this.method4767(method27619)) {
                     this.field4342.method2160(1, method27619);
@@ -303,7 +303,7 @@ public class Class808 extends Class806
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         int n;
         if (!(class1854 instanceof Class5500)) {
             n = this.rand.nextInt(7);

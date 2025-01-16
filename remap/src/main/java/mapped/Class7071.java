@@ -27,7 +27,7 @@ public class Class7071
     private final boolean field27538;
     private final Map<IProperty<?>, Comparable<?>> field27539;
     private Item field27540;
-    private Class51 field27541;
+    private CompoundNBT field27541;
     private ResourceLocation field27542;
     private int field27543;
     private Function<SuggestionsBuilder, CompletableFuture<Suggestions>> field27544;
@@ -45,7 +45,7 @@ public class Class7071
     }
     
     @Nullable
-    public Class51 method21627() {
+    public CompoundNBT method21627() {
         return this.field27541;
     }
     

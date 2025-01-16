@@ -9,7 +9,7 @@ import net.minecraft.nbt.INBT;
 import java.util.function.Supplier;
 import java.util.List;
 
-public class Class6106 implements Class6102
+public class Class6106 implements INode
 {
     private static String[] field24766;
     private final String field24767;
@@ -19,9 +19,9 @@ public class Class6106 implements Class6102
     }
     
     @Override
-    public void method18197(final INBT class41, final List<INBT> list) {
-        if (class41 instanceof Class51) {
-            final INBT method313 = ((Class51)class41).method313(this.field24767);
+    public void addMatchingElements(final INBT class41, final List<INBT> list) {
+        if (class41 instanceof CompoundNBT) {
+            final INBT method313 = ((CompoundNBT)class41).get(this.field24767);
             if (method313 != null) {
                 list.add(method313);
             }
@@ -29,32 +29,32 @@ public class Class6106 implements Class6102
     }
     
     @Override
-    public void method18198(final INBT class41, final Supplier<INBT> supplier, final List<INBT> list) {
-        if (class41 instanceof Class51) {
-            final Class51 class42 = (Class51)class41;
+    public void func_218054_a(final INBT class41, final Supplier<INBT> supplier, final List<INBT> list) {
+        if (class41 instanceof CompoundNBT) {
+            final CompoundNBT class42 = (CompoundNBT)class41;
             INBT method313;
-            if (!class42.method315(this.field24767)) {
+            if (!class42.contains(this.field24767)) {
                 method313 = supplier.get();
-                class42.method295(this.field24767, method313);
+                class42.put(this.field24767, method313);
             }
             else {
-                method313 = class42.method313(this.field24767);
+                method313 = class42.get(this.field24767);
             }
             list.add(method313);
         }
     }
     
     @Override
-    public INBT method18199() {
-        return new Class51();
+    public INBT createEmptyElement() {
+        return new CompoundNBT();
     }
     
     @Override
-    public int method18200(final INBT class41, final Supplier<INBT> supplier) {
-        if (class41 instanceof Class51) {
-            final Class51 class42 = (Class51)class41;
+    public int func_218051_a(final INBT class41, final Supplier<INBT> supplier) {
+        if (class41 instanceof CompoundNBT) {
+            final CompoundNBT class42 = (CompoundNBT)class41;
             final INBT class43 = supplier.get();
-            if (!class43.equals(class42.method295(this.field24767, class43))) {
+            if (!class43.equals(class42.put(this.field24767, class43))) {
                 return 1;
             }
         }
@@ -62,11 +62,11 @@ public class Class6106 implements Class6102
     }
     
     @Override
-    public int method18201(final INBT class41) {
-        if (class41 instanceof Class51) {
-            final Class51 class42 = (Class51)class41;
-            if (class42.method315(this.field24767)) {
-                class42.method330(this.field24767);
+    public int func_218053_a(final INBT class41) {
+        if (class41 instanceof CompoundNBT) {
+            final CompoundNBT class42 = (CompoundNBT)class41;
+            if (class42.contains(this.field24767)) {
+                class42.remove(this.field24767);
                 return 1;
             }
         }

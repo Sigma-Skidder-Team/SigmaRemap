@@ -21,27 +21,27 @@ import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
 import net.minecraft.nbt.INBT;
 
-public class Class8258 implements ArgumentType<Class8570>
+public class NBTPathArgument implements ArgumentType<NBTPath>
 {
     private static final Collection<String> field33907;
     public static final SimpleCommandExceptionType field33908;
-    public static final DynamicCommandExceptionType field33909;
+    public static final DynamicCommandExceptionType NOTHING_FOUND;
     
-    public static Class8258 method27403() {
-        return new Class8258();
+    public static NBTPathArgument method27403() {
+        return new NBTPathArgument();
     }
     
-    public static Class8570 method27404(final CommandContext<Class7492> commandContext, final String s) {
-        return (Class8570)commandContext.getArgument(s, (Class)Class8570.class);
+    public static NBTPath method27404(final CommandContext<Class7492> commandContext, final String s) {
+        return (NBTPath)commandContext.getArgument(s, (Class) NBTPath.class);
     }
     
-    public Class8570 parse(final StringReader stringReader) throws CommandSyntaxException {
+    public NBTPath parse(final StringReader stringReader) throws CommandSyntaxException {
         final ArrayList arrayList = Lists.newArrayList();
         final int cursor = stringReader.getCursor();
         final Object2IntOpenHashMap object2IntOpenHashMap = new Object2IntOpenHashMap();
         boolean b = true;
         while (stringReader.canRead() && stringReader.peek() != ' ') {
-            final Class6102 method27405 = method27405(stringReader, b);
+            final INode method27405 = method27405(stringReader, b);
             arrayList.add(method27405);
             ((Object2IntMap)object2IntOpenHashMap).put((Object)method27405, stringReader.getCursor() - cursor);
             b = false;
@@ -60,10 +60,10 @@ public class Class8258 implements ArgumentType<Class8570>
             }
             stringReader.expect('.');
         }
-        return new Class8570(stringReader.getString().substring(cursor, stringReader.getCursor()), (Class6102[])arrayList.toArray(new Class6102[0]), (Object2IntMap<Class6102>)object2IntOpenHashMap);
+        return new NBTPath(stringReader.getString().substring(cursor, stringReader.getCursor()), (INode[])arrayList.toArray(new INode[0]), (Object2IntMap<INode>)object2IntOpenHashMap);
     }
     
-    private static Class6102 method27405(final StringReader stringReader, final boolean b) throws CommandSyntaxException {
+    private static INode method27405(final StringReader stringReader, final boolean b) throws CommandSyntaxException {
         switch (stringReader.peek()) {
             case '\"': {
                 return method27406(stringReader, stringReader.readString());
@@ -72,7 +72,7 @@ public class Class8258 implements ArgumentType<Class8570>
                 stringReader.skip();
                 final char peek = stringReader.peek();
                 if (peek == '{') {
-                    final Class51 method16945 = new Class5704(stringReader).method16945();
+                    final CompoundNBT method16945 = new Class5704(stringReader).method16945();
                     stringReader.expect(']');
                     return new Class6107(method16945);
                 }
@@ -86,7 +86,7 @@ public class Class8258 implements ArgumentType<Class8570>
             }
             case '{': {
                 if (!b) {
-                    throw Class8258.field33908.createWithContext((ImmutableStringReader)stringReader);
+                    throw NBTPathArgument.field33908.createWithContext((ImmutableStringReader)stringReader);
                 }
                 return new Class6104(new Class5704(stringReader).method16945());
             }
@@ -96,7 +96,7 @@ public class Class8258 implements ArgumentType<Class8570>
         }
     }
     
-    private static Class6102 method27406(final StringReader stringReader, final String s) throws CommandSyntaxException {
+    private static INode method27406(final StringReader stringReader, final String s) throws CommandSyntaxException {
         if (stringReader.canRead() && stringReader.peek() == '{') {
             return new Class6105(s, new Class5704(stringReader).method16945());
         }
@@ -111,11 +111,11 @@ public class Class8258 implements ArgumentType<Class8570>
         if (stringReader.getCursor() != cursor) {
             return stringReader.getString().substring(cursor, stringReader.getCursor());
         }
-        throw Class8258.field33908.createWithContext((ImmutableStringReader)stringReader);
+        throw NBTPathArgument.field33908.createWithContext((ImmutableStringReader)stringReader);
     }
     
     public Collection<String> getExamples() {
-        return Class8258.field33907;
+        return NBTPathArgument.field33907;
     }
     
     private static boolean method27408(final char c) {
@@ -137,14 +137,14 @@ public class Class8258 implements ArgumentType<Class8570>
         return false;
     }
     
-    private static Predicate<INBT> method27409(final Class51 class51) {
+    private static Predicate<INBT> method27409(final CompoundNBT class51) {
         return class53 -> Class9346.method34642(class52, class53, true);
     }
     
     static {
         field33907 = Arrays.asList("foo", "foo.bar", "foo[0]", "[0]", "[]", "{foo=bar}");
         field33908 = new SimpleCommandExceptionType((Message)new Class2259("arguments.nbtpath.node.invalid", new Object[0]));
-        field33909 = new DynamicCommandExceptionType(o -> {
+        NOTHING_FOUND = new DynamicCommandExceptionType(o -> {
             new Class2259("arguments.nbtpath.nothing_found", new Object[] { o });
             return;
         });

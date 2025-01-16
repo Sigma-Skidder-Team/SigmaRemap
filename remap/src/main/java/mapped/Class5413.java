@@ -24,10 +24,10 @@ public class Class5413 implements Class5414
     }
     
     @Override
-    public void method16525(final Class51 class51) {
-        class51.method298("x", this.field22580.getX());
-        class51.method298("y", this.field22580.getY());
-        class51.method298("z", this.field22580.getZ());
+    public void method16525(final CompoundNBT class51) {
+        class51.putInt("x", this.field22580.getX());
+        class51.putInt("y", this.field22580.getY());
+        class51.putInt("z", this.field22580.getZ());
         this.field22579.method2179(class51);
         this.field22579.method2161();
         final BlockState method6701 = this.field22579.method2186().getBlockState(this.field22580);
@@ -35,8 +35,8 @@ public class Class5413 implements Class5414
     }
     
     @Override
-    public Class51 method16526() {
-        return this.field22579.method2180(new Class51());
+    public CompoundNBT method16526() {
+        return this.field22579.method2180(new CompoundNBT());
     }
     
     @Override
@@ -50,7 +50,7 @@ public class Class5413 implements Class5414
     }
     
     @Override
-    public ITextComponent method16529(final Class8570 class8570, final double d, final int i) {
+    public ITextComponent method16529(final NBTPath class8570, final double d, final int i) {
         return new Class2259("commands.data.block.get", new Object[] { class8570, this.field22580.getX(), this.field22580.getY(), this.field22580.getZ(), String.format(Locale.ROOT, "%.2f", d), i });
     }
     

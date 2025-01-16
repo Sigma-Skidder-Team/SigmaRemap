@@ -24,13 +24,13 @@ public class Class3823 extends Item
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class51 method2716 = method2715.method27657();
+        final CompoundNBT method2716 = method2715.method27657();
         if (!class1848.field3025.field27304) {
             class1848.method2716(class1849, ItemStack.field34174);
         }
-        if (method2716 != null && method2716.method316("Recipes", 9)) {
+        if (method2716 != null && method2716.contains("Recipes", 9)) {
             if (!class1847.isRemote) {
-                final Class52 method2717 = method2716.method328("Recipes", 8);
+                final ListNBT method2717 = method2716.getList("Recipes", 8);
                 final ArrayList arrayList = Lists.newArrayList();
                 final Class1780 method2718 = class1847.getServer().method1577();
                 for (int i = 0; i < method2717.size(); ++i) {

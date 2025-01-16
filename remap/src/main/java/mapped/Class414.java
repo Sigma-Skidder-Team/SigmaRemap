@@ -185,27 +185,27 @@ public abstract class Class414 extends Entity implements Class401
     public abstract void method2016(final RayTraceResult p0);
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method298("xTile", this.field2512);
-        class51.method298("yTile", this.field2513);
-        class51.method298("zTile", this.field2514);
-        class51.method296("shake", (byte)this.field2516);
-        class51.method312("inGround", this.field2515);
+    public void method1761(final CompoundNBT class51) {
+        class51.putInt("xTile", this.field2512);
+        class51.putInt("yTile", this.field2513);
+        class51.putInt("zTile", this.field2514);
+        class51.putByte("shake", (byte)this.field2516);
+        class51.putBoolean("inGround", this.field2515);
         if (this.field2518 != null) {
-            class51.method295("owner", Class9346.method34643(this.field2518));
+            class51.put("owner", Class9346.method34643(this.field2518));
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field2512 = class51.method319("xTile");
-        this.field2513 = class51.method319("yTile");
-        this.field2514 = class51.method319("zTile");
-        this.field2516 = (class51.method317("shake") & 0xFF);
-        this.field2515 = class51.method329("inGround");
+    public void method1760(final CompoundNBT class51) {
+        this.field2512 = class51.getInt("xTile");
+        this.field2513 = class51.getInt("yTile");
+        this.field2514 = class51.getInt("zTile");
+        this.field2516 = (class51.getByte("shake") & 0xFF);
+        this.field2515 = class51.getBoolean("inGround");
         this.field2517 = null;
-        if (class51.method316("owner", 10)) {
-            this.field2518 = Class9346.method34644(class51.method327("owner"));
+        if (class51.contains("owner", 10)) {
+            this.field2518 = Class9346.method34644(class51.getCompound("owner"));
         }
     }
     

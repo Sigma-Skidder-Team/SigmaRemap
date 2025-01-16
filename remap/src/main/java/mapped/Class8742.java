@@ -29,12 +29,12 @@ public class Class8742
     public static int method30195(final Class6257 class6257, final ItemStack class6258) {
         if (!class6258.method27620()) {
             final ResourceLocation method503 = Registry.field209.getKey(class6257);
-            final Class52 method504 = class6258.method27662();
+            final ListNBT method504 = class6258.method27662();
             for (int i = 0; i < method504.size(); ++i) {
-                final Class51 method505 = method504.method346(i);
-                final ResourceLocation method506 = ResourceLocation.method7795(method505.method323("id"));
+                final CompoundNBT method505 = method504.method346(i);
+                final ResourceLocation method506 = ResourceLocation.method7795(method505.getString("id"));
                 if (method506 != null && method506.equals(method503)) {
-                    return MathHelper.method35651(method505.method319("lvl"), 0, 255);
+                    return MathHelper.method35651(method505.getInt("lvl"), 0, 255);
                 }
             }
             return 0;
@@ -46,10 +46,10 @@ public class Class8742
         return method30197((class8321.getItem() != Items.field31534) ? class8321.method27662() : Class4034.method12225(class8321));
     }
     
-    public static Map<Class6257, Integer> method30197(final Class52 class52) {
+    public static Map<Class6257, Integer> method30197(final ListNBT class52) {
         final LinkedHashMap linkedHashMap = Maps.newLinkedHashMap();
         for (int i = 0; i < class52.size(); ++i) {
-            Registry.field209.method506(ResourceLocation.method7795(class52.method346(i).method323("id"))).ifPresent(class54 -> {
+            Registry.field209.method506(ResourceLocation.method7795(class52.method346(i).getString("id"))).ifPresent(class54 -> {
                 final Integer n = map.put(class54, class53.method319("lvl"));
                 return;
             });
@@ -58,17 +58,17 @@ public class Class8742
     }
     
     public static void method30198(final Map<Class6257, Integer> map, final ItemStack class8321) {
-        final Class52 class8322 = new Class52();
+        final ListNBT class8322 = new ListNBT();
         for (final Map.Entry<Class6257, V> entry : map.entrySet()) {
             final Class6257 class8323 = entry.getKey();
             if (class8323 == null) {
                 continue;
             }
             final int intValue = (int)entry.getValue();
-            final Class51 e = new Class51();
-            e.method306("id", String.valueOf(Registry.field209.getKey(class8323)));
-            e.method297("lvl", (short)intValue);
-            ((AbstractList<Class51>)class8322).add(e);
+            final CompoundNBT e = new CompoundNBT();
+            e.putString("id", String.valueOf(Registry.field209.getKey(class8323)));
+            e.putShort("lvl", (short)intValue);
+            ((AbstractList<CompoundNBT>)class8322).add(e);
             if (class8321.getItem() != Items.field31534) {
                 continue;
             }
@@ -86,12 +86,12 @@ public class Class8742
     
     private static void method30199(final Class7311 class7311, final ItemStack class7312) {
         if (!class7312.method27620()) {
-            final Class52 class7315 = class7312.method27662();
+            final ListNBT class7315 = class7312.method27662();
             for (int n2 = 0; n2 < class7315.size(); ++n2) {
-                Registry.field209.method506(ResourceLocation.method7795(class7315.method346(n2).method323("id"))).ifPresent(class7314 -> {
-                    final Class52 class7315;
+                Registry.field209.method506(ResourceLocation.method7795(class7315.method346(n2).getString("id"))).ifPresent(class7314 -> {
+                    final ListNBT class7315;
                     final int n2;
-                    class7315.method346(n2).method319("lvl");
+                    class7315.method346(n2).getInt("lvl");
                     class7313.method22427(class7314, n);
                     return;
                 });

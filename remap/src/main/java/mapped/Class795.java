@@ -16,8 +16,8 @@ public abstract class Class795 extends Class794
     }
     
     public boolean method4492(final Class513 class513) {
-        final Class51 class514 = new Class51();
-        class514.method306("id", this.method1759());
+        final CompoundNBT class514 = new CompoundNBT();
+        class514.putString("id", this.method1759());
         this.method1756(class514);
         if (!class513.method2886(class514)) {
             return false;

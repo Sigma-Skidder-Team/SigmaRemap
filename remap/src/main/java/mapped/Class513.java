@@ -137,23 +137,23 @@ public class Class513 extends PlayerEntity implements Class514
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("playerGameType", 99)) {
+        if (class51.contains("playerGameType", 99)) {
             if (!this.method1897().method1551()) {
-                this.field3041.method26481(Class101.method592(class51.method319("playerGameType")));
+                this.field3041.method26481(Class101.method592(class51.getInt("playerGameType")));
             }
             else {
                 this.field3041.method26481(this.method1897().method1445());
             }
         }
-        if (class51.method316("enteredNetherPosition", 10)) {
-            final Class51 method327 = class51.method327("enteredNetherPosition");
-            this.field3066 = new Vec3d(method327.method322("x"), method327.method322("y"), method327.method322("z"));
+        if (class51.contains("enteredNetherPosition", 10)) {
+            final CompoundNBT method327 = class51.getCompound("enteredNetherPosition");
+            this.field3066 = new Vec3d(method327.getDouble("x"), method327.getDouble("y"), method327.getDouble("z"));
         }
-        this.field3061 = class51.method329("seenCredits");
-        if (class51.method316("recipeBook", 10)) {
-            this.field3062.method19724(class51.method327("recipeBook"));
+        this.field3061 = class51.getBoolean("seenCredits");
+        if (class51.contains("recipeBook", 10)) {
+            this.field3062.method19724(class51.getCompound("recipeBook"));
         }
         if (this.method2783()) {
             this.method2787();
@@ -161,32 +161,32 @@ public class Class513 extends PlayerEntity implements Class514
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("playerGameType", this.field3041.method26482().method585());
-        class51.method312("seenCredits", this.field3061);
+        class51.putInt("playerGameType", this.field3041.method26482().method585());
+        class51.putBoolean("seenCredits", this.field3061);
         if (this.field3066 != null) {
-            final Class51 class52 = new Class51();
-            class52.method305("x", this.field3066.x);
-            class52.method305("y", this.field3066.y);
-            class52.method305("z", this.field3066.z);
-            class51.method295("enteredNetherPosition", class52);
+            final CompoundNBT class52 = new CompoundNBT();
+            class52.putDouble("x", this.field3066.x);
+            class52.putDouble("y", this.field3066.y);
+            class52.putDouble("z", this.field3066.z);
+            class51.put("enteredNetherPosition", class52);
         }
         final Entity method1915 = this.method1915();
         final Entity method1916 = this.method1920();
         if (method1916 != null) {
             if (method1915 != this) {
                 if (method1915.method1913()) {
-                    final Class51 class53 = new Class51();
-                    final Class51 class54 = new Class51();
+                    final CompoundNBT class53 = new CompoundNBT();
+                    final CompoundNBT class54 = new CompoundNBT();
                     method1915.method1755(class54);
-                    class53.method300("Attach", method1916.method1865());
-                    class53.method295("Entity", class54);
-                    class51.method295("RootVehicle", class53);
+                    class53.putUniqueId("Attach", method1916.method1865());
+                    class53.put("Entity", class54);
+                    class51.put("RootVehicle", class53);
                 }
             }
         }
-        class51.method295("recipeBook", this.field3062.method19723());
+        class51.put("recipeBook", this.field3062.method19723());
     }
     
     public void method2917(final int n) {
@@ -336,9 +336,9 @@ public class Class513 extends PlayerEntity implements Class514
             }
         }
         catch (final Throwable t) {
-            final Class7689 method2159 = Class7689.method24421(t, "Ticking player");
-            this.method1862(method2159.method24418("Player being ticked"));
-            throw new Class2365(method2159);
+            final CrashReport method2159 = CrashReport.makeCrashReport(t, "Ticking player");
+            this.method1862(method2159.makeCategory("Player being ticked"));
+            throw new ReportedException(method2159);
         }
     }
     

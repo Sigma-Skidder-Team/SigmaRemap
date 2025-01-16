@@ -5,7 +5,7 @@
 package mapped;
 
 import java.util.AbstractList;
-import java.util.Iterator;
+
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.tuple.Pair;
 import java.util.List;
@@ -23,13 +23,13 @@ public class Class9142
         return this;
     }
     
-    public Class52 method33337() {
-        final Class52 class52 = new Class52();
+    public ListNBT method33337() {
+        final ListNBT class52 = new ListNBT();
         for (final Pair pair : this.field38728) {
-            final Class51 e = new Class51();
-            e.method306("Pattern", Class230.method861((Class230)pair.getLeft()));
-            e.method298("Color", ((Class181)pair.getRight()).method813());
-            ((AbstractList<Class51>)class52).add(e);
+            final CompoundNBT e = new CompoundNBT();
+            e.putString("Pattern", Class230.method861((Class230)pair.getLeft()));
+            e.putInt("Color", ((Class181)pair.getRight()).method813());
+            ((AbstractList<CompoundNBT>)class52).add(e);
         }
         return class52;
     }

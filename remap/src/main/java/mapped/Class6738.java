@@ -19,8 +19,8 @@ public class Class6738 extends Dimension
     
     public Class6738(final World class1847, final DimensionType class1848) {
         super(class1847, class1848, 0.0f);
-        final Class51 method29603 = class1847.method6764().method29603(DimensionType.field2225);
-        this.field26499 = ((class1847 instanceof Class1849) ? new Class8619((Class1849)class1847, method29603.method327("DragonFight")) : null);
+        final CompoundNBT method29603 = class1847.method6764().method29603(DimensionType.field2225);
+        this.field26499 = ((class1847 instanceof Class1849) ? new Class8619((Class1849)class1847, method29603.getCompound("DragonFight")) : null);
     }
     
     @Override
@@ -100,9 +100,9 @@ public class Class6738 extends Dimension
     
     @Override
     public void method20507() {
-        final Class51 class51 = new Class51();
+        final CompoundNBT class51 = new CompoundNBT();
         if (this.field26499 != null) {
-            class51.method295("DragonFight", this.field26499.method29234());
+            class51.put("DragonFight", this.field26499.method29234());
         }
         this.field26492.method6764().method29604(DimensionType.field2225, class51);
     }

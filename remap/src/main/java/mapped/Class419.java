@@ -124,26 +124,26 @@ public abstract class Class419 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         final Vec3d method1935 = this.getMotion();
-        class51.method295("direction", this.method1762(method1935.x, method1935.y, method1935.z));
-        class51.method295("power", this.method1762(this.field2530, this.field2531, this.field2532));
-        class51.method298("life", this.field2528);
+        class51.put("direction", this.method1762(method1935.x, method1935.y, method1935.z));
+        class51.put("power", this.method1762(this.field2530, this.field2531, this.field2532));
+        class51.putInt("life", this.field2528);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        if (class51.method316("power", 9)) {
-            final Class52 method328 = class51.method328("power", 6);
+    public void method1760(final CompoundNBT class51) {
+        if (class51.contains("power", 9)) {
+            final ListNBT method328 = class51.getList("power", 6);
             if (method328.size() == 3) {
                 this.field2530 = method328.method351(0);
                 this.field2531 = method328.method351(1);
                 this.field2532 = method328.method351(2);
             }
         }
-        this.field2528 = class51.method319("life");
-        if (class51.method316("direction", 9) && class51.method328("direction", 6).size() == 3) {
-            final Class52 method329 = class51.method328("direction", 6);
+        this.field2528 = class51.getInt("life");
+        if (class51.contains("direction", 9) && class51.getList("direction", 6).size() == 3) {
+            final ListNBT method329 = class51.getList("direction", 6);
             this.setMotion(method329.method351(0), method329.method351(1), method329.method351(2));
         }
         else {

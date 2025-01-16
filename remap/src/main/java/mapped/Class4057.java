@@ -18,26 +18,26 @@ public class Class4057 extends Item
     
     @Override
     public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
-        final Class51 method27660 = class8321.method27660("Explosion");
+        final CompoundNBT method27660 = class8321.method27660("Explosion");
         if (method27660 != null) {
             method12262(method27660, list);
         }
     }
     
-    public static void method12262(final Class51 class51, final List<ITextComponent> list) {
-        list.add(new Class2259("item.minecraft.firework_star.shape." + Class2141.method8302(class51.method317("Type")).method8301(), new Object[0]).applyTextStyle(TextFormatting.GRAY));
-        final int[] method325 = class51.method325("Colors");
+    public static void method12262(final CompoundNBT class51, final List<ITextComponent> list) {
+        list.add(new Class2259("item.minecraft.firework_star.shape." + Class2141.method8302(class51.getByte("Type")).method8301(), new Object[0]).applyTextStyle(TextFormatting.GRAY));
+        final int[] method325 = class51.getIntArray("Colors");
         if (method325.length > 0) {
             list.add(method12263(new StringTextComponent("").applyTextStyle(TextFormatting.GRAY), method325));
         }
-        final int[] method326 = class51.method325("FadeColors");
+        final int[] method326 = class51.getIntArray("FadeColors");
         if (method326.length > 0) {
             list.add(method12263(new Class2259("item.minecraft.firework_star.fade_to", new Object[0]).appendText(" ").applyTextStyle(TextFormatting.GRAY), method326));
         }
-        if (class51.method329("Trail")) {
+        if (class51.getBoolean("Trail")) {
             list.add(new Class2259("item.minecraft.firework_star.trail", new Object[0]).applyTextStyle(TextFormatting.GRAY));
         }
-        if (class51.method329("Flicker")) {
+        if (class51.getBoolean("Flicker")) {
             list.add(new Class2259("item.minecraft.firework_star.flicker", new Object[0]).applyTextStyle(TextFormatting.GRAY));
         }
     }

@@ -7,5 +7,5 @@ package mapped;
 @FunctionalInterface
 public interface Class7420
 {
-    Class51 method22833(final String p0, final Class51 p1);
+    CompoundNBT method22833(final String p0, final CompoundNBT p1);
 }

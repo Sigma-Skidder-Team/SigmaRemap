@@ -98,7 +98,7 @@ public class Class6512
                 for (int j = 0; j < 32; ++j) {
                     final Class7859 class1872 = new Class7859(i, j);
                     if (class1870.method7656(class1872) && !class1871.method7656(class1872)) {
-                        Class51 method7640;
+                        CompoundNBT method7640;
                         try (final DataInputStream method7639 = class1870.method7639(class1872)) {
                             if (method7639 == null) {
                                 Class6512.field25888.warn("Failed to fetch input stream for chunk {}", (Object)class1872);
@@ -110,10 +110,10 @@ public class Class6512
                             Class6512.field25888.warn("Failed to read data for chunk {}", (Object)class1872, (Object)ex);
                             continue;
                         }
-                        final Class6822 method7641 = Class6774.method20679(method7640.method327("Level"));
-                        final Class51 class1873 = new Class51();
-                        final Class51 class1874 = new Class51();
-                        class1873.method295("Level", class1874);
+                        final Class6822 method7641 = Class6774.method20679(method7640.getCompound("Level"));
+                        final CompoundNBT class1873 = new CompoundNBT();
+                        final CompoundNBT class1874 = new CompoundNBT();
+                        class1873.put("Level", class1874);
                         Class6774.method20680(method7641, class1874, class1868);
                         try (final DataOutputStream method7642 = class1871.method7650(class1872)) {
                             Class8097.method26597(class1873, method7642);

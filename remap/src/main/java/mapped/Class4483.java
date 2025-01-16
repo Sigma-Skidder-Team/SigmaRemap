@@ -14,17 +14,17 @@ public class Class4483 extends Class4479
     private final Direction field19876;
     private final boolean field19877;
     
-    public Class4483(final Class1795 class1795, final Class51 class1796) {
+    public Class4483(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40944, class1796);
-        this.field19877 = class1796.method329("tf");
-        this.field19876 = Direction.byHorizontalIndex(class1796.method319("D"));
+        this.field19877 = class1796.getBoolean("tf");
+        this.field19876 = Direction.byHorizontalIndex(class1796.getInt("D"));
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method312("tf", this.field19877);
-        class51.method298("D", this.field19876.getHorizontalIndex());
+        class51.putBoolean("tf", this.field19877);
+        class51.putInt("D", this.field19876.getHorizontalIndex());
     }
     
     public Class4483(final int n, final MutableBoundingBox field19849, final Direction field19850, final Class1964 class1964) {

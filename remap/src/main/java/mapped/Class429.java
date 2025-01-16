@@ -35,7 +35,7 @@ public class Class429 extends Class428
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
         this.field2639.method5210(class51);
         this.method1650().set(Class429.field2637, this.method2149().method5212());
@@ -43,7 +43,7 @@ public class Class429 extends Class428
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         this.field2639.method5209(class51);
     }

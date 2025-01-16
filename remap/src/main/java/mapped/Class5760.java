@@ -417,7 +417,7 @@ public class Class5760
                 return;
             }
             this.field23406.clear();
-            final Class51 class51 = new Class51();
+            final CompoundNBT class51 = new CompoundNBT();
             try (final BufferedReader reader = Files.newReader(this.field23462, Charsets.UTF_8)) {
                 reader.lines().forEach(s2 -> {
                     try {
@@ -431,9 +431,9 @@ public class Class5760
                     return;
                 });
             }
-            final Class51 method17119 = this.method17119(class51);
-            for (final String s : method17119.method293()) {
-                final String method17120 = method17119.method323(s);
+            final CompoundNBT method17119 = this.method17119(class51);
+            for (final String s : method17119.keySet()) {
+                final String method17120 = method17119.getString(s);
                 try {
                     if ("autoJump".equals(s)) {
                         Class6469.field25730.method19358(this, method17120);
@@ -691,10 +691,10 @@ public class Class5760
         this.method17134();
     }
     
-    private Class51 method17119(final Class51 class51) {
+    private CompoundNBT method17119(final CompoundNBT class51) {
         int int1 = 0;
         try {
-            int1 = Integer.parseInt(class51.method323("version"));
+            int1 = Integer.parseInt(class51.getString("version"));
         }
         catch (final RuntimeException ex) {}
         return Class9346.method34651(this.field23461.method5313(), Class1959.field10679, class51, int1);

@@ -37,7 +37,7 @@ public class Class840 extends Class832
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.setAir(this.getMaxAir());
         this.rotationPitch = 0.0f;
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
@@ -85,21 +85,21 @@ public class Class840 extends Class832
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("TreasurePosX", this.method5003().getX());
-        class51.method298("TreasurePosY", this.method5003().getY());
-        class51.method298("TreasurePosZ", this.method5003().getZ());
-        class51.method312("GotFish", this.method5004());
-        class51.method298("Moistness", this.method5006());
+        class51.putInt("TreasurePosX", this.method5003().getX());
+        class51.putInt("TreasurePosY", this.method5003().getY());
+        class51.putInt("TreasurePosZ", this.method5003().getZ());
+        class51.putBoolean("GotFish", this.method5004());
+        class51.putInt("Moistness", this.method5006());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.method5002(new BlockPos(class51.method319("TreasurePosX"), class51.method319("TreasurePosY"), class51.method319("TreasurePosZ")));
+    public void method1760(final CompoundNBT class51) {
+        this.method5002(new BlockPos(class51.getInt("TreasurePosX"), class51.getInt("TreasurePosY"), class51.getInt("TreasurePosZ")));
         super.method1760(class51);
-        this.method5005(class51.method329("GotFish"));
-        this.method5007(class51.method319("Moistness"));
+        this.method5005(class51.getBoolean("GotFish"));
+        this.method5007(class51.getInt("Moistness"));
     }
     
     @Override

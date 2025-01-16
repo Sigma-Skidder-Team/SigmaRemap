@@ -163,18 +163,18 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public void method7032(final Class51 class51) {
+    public void method7032(final CompoundNBT class51) {
     }
     
     @Nullable
     @Override
-    public Class51 method7033(final BlockPos class354) {
+    public CompoundNBT method7033(final BlockPos class354) {
         return this.field10190.method7033(class354);
     }
     
     @Nullable
     @Override
-    public Class51 method7034(final BlockPos class354) {
+    public CompoundNBT method7034(final BlockPos class354) {
         return this.field10190.method7034(class354);
     }
     

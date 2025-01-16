@@ -83,7 +83,7 @@ public class Class3942 extends Class3841
                     if (class1850.method2889()) {
                         if (!class1851.method2156()) {
                             final ItemStack method6728 = method12061(this.method12060());
-                            final Class51 method6729 = class1851.method2245(new Class51());
+                            final CompoundNBT method6729 = class1851.method2245(new CompoundNBT());
                             if (!method6729.method331()) {
                                 method6728.method27676("BlockEntityTag", method6729);
                             }
@@ -139,12 +139,12 @@ public class Class3942 extends Class3841
     @Override
     public void method11883(final ItemStack class8321, final IBlockReader class8322, final List<ITextComponent> list, final Class1981 class8323) {
         super.method11883(class8321, class8322, list, class8323);
-        final Class51 method27660 = class8321.method27660("BlockEntityTag");
+        final CompoundNBT method27660 = class8321.method27660("BlockEntityTag");
         if (method27660 != null) {
-            if (method27660.method316("LootTable", 8)) {
+            if (method27660.contains("LootTable", 8)) {
                 list.add(new StringTextComponent("???????"));
             }
-            if (method27660.method316("Items", 9)) {
+            if (method27660.contains("Items", 9)) {
                 final Class2265<ItemStack> method27661 = Class2265.method8507(27, ItemStack.field34174);
                 Class8508.method28426(method27660, method27661);
                 int n = 0;
@@ -193,7 +193,7 @@ public class Class3942 extends Class3841
     @Override
     public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         final ItemStack method11862 = super.method11862(class1855, class1856, class1857);
-        final Class51 method11863 = ((Class440)class1855.getTileEntity(class1856)).method2245(new Class51());
+        final CompoundNBT method11863 = ((Class440)class1855.getTileEntity(class1856)).method2245(new CompoundNBT());
         if (!method11863.method331()) {
             method11862.method27676("BlockEntityTag", method11863);
         }

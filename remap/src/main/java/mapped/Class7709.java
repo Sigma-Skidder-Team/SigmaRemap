@@ -33,7 +33,7 @@ public class Class7709
     public static final Class4410<Optional<BlockPos>> field30665;
     public static final Class4410<Direction> field30666;
     public static final Class4410<Optional<UUID>> field30667;
-    public static final Class4410<Class51> field30668;
+    public static final Class4410<CompoundNBT> field30668;
     public static final Class4410<Class8562> field30669;
     public static final Class4410<OptionalInt> field30670;
     public static final Class4410<Pose> field30671;

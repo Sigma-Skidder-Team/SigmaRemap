@@ -12,9 +12,9 @@ public class Class116 implements Predicate<Class7990>
     private static String[] field360;
     private final Class7096 field361;
     private final Set<IProperty<?>> field362;
-    private final Class51 field363;
+    private final CompoundNBT field363;
     
-    public Class116(final Class7096 field361, final Set<IProperty<?>> field362, final Class51 field363) {
+    public Class116(final Class7096 field361, final Set<IProperty<?>> field362, final CompoundNBT field363) {
         this.field361 = field361;
         this.field362 = field362;
         this.field363 = field363;
@@ -34,7 +34,7 @@ public class Class116 implements Predicate<Class7990>
         }
         if (this.field363 != null) {
             final TileEntity method26066 = class7990.method26066();
-            return method26066 != null && Class9346.method34642(this.field363, method26066.method2180(new Class51()), true);
+            return method26066 != null && Class9346.method34642(this.field363, method26066.method2180(new CompoundNBT()), true);
         }
         return true;
     }

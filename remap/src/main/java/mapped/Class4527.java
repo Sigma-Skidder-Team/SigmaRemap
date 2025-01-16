@@ -18,7 +18,7 @@ public class Class4527 extends Class4469
         this.field19948 = (n & 0x1);
     }
     
-    public Class4527(final Class1795 class1795, final Class51 class1796) {
+    public Class4527(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40993, class1796);
     }
     

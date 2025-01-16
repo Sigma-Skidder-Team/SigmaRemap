@@ -16,7 +16,7 @@ import java.util.UUID;
 public class Class400 extends Entity implements Class401
 {
     public Class815 field2466;
-    private Class51 field2467;
+    private CompoundNBT field2467;
     
     public Class400(final EntityType<? extends Class400> class7499, final World class7500) {
         super(class7499, class7500);
@@ -128,25 +128,25 @@ public class Class400 extends Entity implements Class401
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        if (class51.method316("Owner", 10)) {
-            this.field2467 = class51.method327("Owner");
+    public void method1760(final CompoundNBT class51) {
+        if (class51.contains("Owner", 10)) {
+            this.field2467 = class51.getCompound("Owner");
         }
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         if (this.field2466 != null) {
-            final Class51 class52 = new Class51();
-            class52.method300("OwnerUUID", this.field2466.method1865());
-            class51.method295("Owner", class52);
+            final CompoundNBT class52 = new CompoundNBT();
+            class52.putUniqueId("OwnerUUID", this.field2466.method1865());
+            class51.put("Owner", class52);
         }
     }
     
     private void method1960() {
         if (this.field2467 != null) {
-            if (this.field2467.method302("OwnerUUID")) {
-                final UUID method301 = this.field2467.method301("OwnerUUID");
+            if (this.field2467.hasUniqueId("OwnerUUID")) {
+                final UUID method301 = this.field2467.getUniqueId("OwnerUUID");
                 for (final Class815 field2466 : this.world.method7128((Class<? extends Class815>)Class815.class, this.getBoundingBox().intersect(15.0))) {
                     if (!field2466.method1865().equals(method301)) {
                         continue;

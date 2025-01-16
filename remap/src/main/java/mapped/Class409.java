@@ -51,18 +51,18 @@ public abstract class Class409 extends Class414 implements Class407
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         final ItemStack method2014 = this.method2014();
         if (!method2014.method27620()) {
-            class51.method295("Item", method2014.method27627(new Class51()));
+            class51.put("Item", method2014.method27627(new CompoundNBT()));
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method2012(ItemStack.method27619(class51.method327("Item")));
+        this.method2012(ItemStack.method27619(class51.getCompound("Item")));
     }
     
     static {

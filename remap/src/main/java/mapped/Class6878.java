@@ -135,37 +135,37 @@ public class Class6878 extends Class6879
         return !hashSet.isEmpty() || !hashSet2.isEmpty();
     }
     
-    public Class51 method21059() {
-        final Class51 class51 = new Class51();
-        class51.method306("Name", Class5953.method17869(this.field26956));
-        class51.method312("Visible", this.method21072());
-        class51.method298("Value", this.field26949);
-        class51.method298("Max", this.field26950);
-        class51.method306("Color", this.method21078().method8372());
-        class51.method306("Overlay", this.method21079().method1019());
-        class51.method312("DarkenScreen", this.method21080());
-        class51.method312("PlayBossMusic", this.method21081());
-        class51.method312("CreateWorldFog", this.method21082());
-        final Class52 class52 = new Class52();
+    public CompoundNBT method21059() {
+        final CompoundNBT class51 = new CompoundNBT();
+        class51.putString("Name", Class5953.method17869(this.field26956));
+        class51.putBoolean("Visible", this.method21072());
+        class51.putInt("Value", this.field26949);
+        class51.putInt("Max", this.field26950);
+        class51.putString("Color", this.method21078().method8372());
+        class51.putString("Overlay", this.method21079().method1019());
+        class51.putBoolean("DarkenScreen", this.method21080());
+        class51.putBoolean("PlayBossMusic", this.method21081());
+        class51.putBoolean("CreateWorldFog", this.method21082());
+        final ListNBT class52 = new ListNBT();
         final Iterator<UUID> iterator = this.field26948.iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<Class51>)class52).add(Class9346.method34643(iterator.next()));
+            ((AbstractList<CompoundNBT>)class52).add(Class9346.method34643(iterator.next()));
         }
-        class51.method295("Players", class52);
+        class51.put("Players", class52);
         return class51;
     }
     
-    public static Class6878 method21060(final Class51 class51, final ResourceLocation class52) {
-        final Class6878 class53 = new Class6878(class52, Class5953.method17871(class51.method323("Name")));
-        class53.method21073(class51.method329("Visible"));
-        class53.method21055(class51.method319("Value"));
-        class53.method21056(class51.method319("Max"));
-        class53.method21065(Class2200.method8373(class51.method323("Color")));
-        class53.method21066(Class342.method1020(class51.method323("Overlay")));
-        class53.method21067(class51.method329("DarkenScreen"));
-        class53.method21068(class51.method329("PlayBossMusic"));
-        class53.method21069(class51.method329("CreateWorldFog"));
-        final Class52 method328 = class51.method328("Players", 10);
+    public static Class6878 method21060(final CompoundNBT class51, final ResourceLocation class52) {
+        final Class6878 class53 = new Class6878(class52, Class5953.method17871(class51.getString("Name")));
+        class53.method21073(class51.getBoolean("Visible"));
+        class53.method21055(class51.getInt("Value"));
+        class53.method21056(class51.getInt("Max"));
+        class53.method21065(Class2200.method8373(class51.getString("Color")));
+        class53.method21066(Class342.method1020(class51.getString("Overlay")));
+        class53.method21067(class51.getBoolean("DarkenScreen"));
+        class53.method21068(class51.getBoolean("PlayBossMusic"));
+        class53.method21069(class51.getBoolean("CreateWorldFog"));
+        final ListNBT method328 = class51.getList("Players", 10);
         for (int i = 0; i < method328.size(); ++i) {
             class53.method21050(Class9346.method34644(method328.method346(i)));
         }

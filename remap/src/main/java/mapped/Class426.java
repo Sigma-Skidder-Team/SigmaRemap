@@ -300,32 +300,32 @@ public class Class426 extends Entity
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.ticksExisted = class51.method319("Age");
-        this.field2604 = class51.method319("Duration");
-        this.field2605 = class51.method319("WaitTime");
-        this.field2606 = class51.method319("ReapplicationDelay");
-        this.field2608 = class51.method319("DurationOnUse");
-        this.field2609 = class51.method321("RadiusOnUse");
-        this.field2610 = class51.method321("RadiusPerTick");
-        this.method2081(class51.method321("Radius"));
-        this.field2612 = class51.method301("OwnerUUID");
-        if (class51.method316("Particle", 8)) {
+    public void method1760(final CompoundNBT class51) {
+        this.ticksExisted = class51.getInt("Age");
+        this.field2604 = class51.getInt("Duration");
+        this.field2605 = class51.getInt("WaitTime");
+        this.field2606 = class51.getInt("ReapplicationDelay");
+        this.field2608 = class51.getInt("DurationOnUse");
+        this.field2609 = class51.getFloat("RadiusOnUse");
+        this.field2610 = class51.getFloat("RadiusPerTick");
+        this.method2081(class51.getFloat("Radius"));
+        this.field2612 = class51.getUniqueId("OwnerUUID");
+        if (class51.contains("Particle", 8)) {
             try {
-                this.method2089(Class7384.method22674(new StringReader(class51.method323("Particle"))));
+                this.method2089(Class7384.method22674(new StringReader(class51.getString("Particle"))));
             }
             catch (final CommandSyntaxException ex) {
-                Class426.field2596.warn("Couldn't load custom particle {}", (Object)class51.method323("Particle"), (Object)ex);
+                Class426.field2596.warn("Couldn't load custom particle {}", (Object)class51.getString("Particle"), (Object)ex);
             }
         }
-        if (class51.method316("Color", 99)) {
-            this.method2087(class51.method319("Color"));
+        if (class51.contains("Color", 99)) {
+            this.method2087(class51.getInt("Color"));
         }
-        if (class51.method316("Potion", 8)) {
+        if (class51.contains("Potion", 8)) {
             this.method2083(Class5333.method16475(class51));
         }
-        if (class51.method316("Effects", 9)) {
-            final Class52 method328 = class51.method328("Effects", 10);
+        if (class51.contains("Effects", 9)) {
+            final ListNBT method328 = class51.getList("Effects", 10);
             this.field2602.clear();
             for (int i = 0; i < method328.size(); ++i) {
                 final Class1948 method329 = Class1948.method7918(method328.method346(i));
@@ -337,34 +337,34 @@ public class Class426 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method298("Age", this.ticksExisted);
-        class51.method298("Duration", this.field2604);
-        class51.method298("WaitTime", this.field2605);
-        class51.method298("ReapplicationDelay", this.field2606);
-        class51.method298("DurationOnUse", this.field2608);
-        class51.method304("RadiusOnUse", this.field2609);
-        class51.method304("RadiusPerTick", this.field2610);
-        class51.method304("Radius", this.method2082());
-        class51.method306("Particle", this.method2088().method21274());
+    public void method1761(final CompoundNBT class51) {
+        class51.putInt("Age", this.ticksExisted);
+        class51.putInt("Duration", this.field2604);
+        class51.putInt("WaitTime", this.field2605);
+        class51.putInt("ReapplicationDelay", this.field2606);
+        class51.putInt("DurationOnUse", this.field2608);
+        class51.putFloat("RadiusOnUse", this.field2609);
+        class51.putFloat("RadiusPerTick", this.field2610);
+        class51.putFloat("Radius", this.method2082());
+        class51.putString("Particle", this.method2088().method21274());
         if (this.field2612 != null) {
-            class51.method300("OwnerUUID", this.field2612);
+            class51.putUniqueId("OwnerUUID", this.field2612);
         }
         if (this.field2607) {
-            class51.method298("Color", this.method2086());
+            class51.putInt("Color", this.method2086());
         }
         if (this.field2601 != Class8644.field36250) {
             if (this.field2601 != null) {
-                class51.method306("Potion", Registry.field212.getKey(this.field2601).toString());
+                class51.putString("Potion", Registry.field212.getKey(this.field2601).toString());
             }
         }
         if (!this.field2602.isEmpty()) {
-            final Class52 class52 = new Class52();
+            final ListNBT class52 = new ListNBT();
             final Iterator<Class1948> iterator = this.field2602.iterator();
             while (iterator.hasNext()) {
-                ((AbstractList<Class51>)class52).add(iterator.next().method7916(new Class51()));
+                ((AbstractList<CompoundNBT>)class52).add(iterator.next().method7916(new CompoundNBT()));
             }
-            class51.method295("Effects", class52);
+            class51.put("Effects", class52);
         }
     }
     

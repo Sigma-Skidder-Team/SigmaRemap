@@ -45,7 +45,7 @@ public class Class841 extends Class785 implements Class762
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.field2951 = 180.0f;
         this.field2952 = 180.0f;
         this.rotationYaw = 180.0f;
@@ -119,30 +119,30 @@ public class Class841 extends Class785 implements Class762
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.dataManager.set(Class841.field4481, Direction.byIndex(class51.method317("AttachFace")));
-        this.dataManager.set(Class841.field4483, class51.method317("Peek"));
-        this.dataManager.set(Class841.field4484, class51.method317("Color"));
-        if (!class51.method315("APX")) {
+        this.dataManager.set(Class841.field4481, Direction.byIndex(class51.getByte("AttachFace")));
+        this.dataManager.set(Class841.field4483, class51.getByte("Peek"));
+        this.dataManager.set(Class841.field4484, class51.getByte("Color"));
+        if (!class51.contains("APX")) {
             this.dataManager.set(Class841.field4482, Optional.empty());
         }
         else {
-            this.dataManager.set(Class841.field4482, Optional.of(new BlockPos(class51.method319("APX"), class51.method319("APY"), class51.method319("APZ"))));
+            this.dataManager.set(Class841.field4482, Optional.of(new BlockPos(class51.getInt("APX"), class51.getInt("APY"), class51.getInt("APZ"))));
         }
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method296("AttachFace", (byte)this.dataManager.get(Class841.field4481).getIndex());
-        class51.method296("Peek", this.dataManager.get(Class841.field4483));
-        class51.method296("Color", this.dataManager.get(Class841.field4484));
+        class51.putByte("AttachFace", (byte)this.dataManager.get(Class841.field4481).getIndex());
+        class51.putByte("Peek", this.dataManager.get(Class841.field4483));
+        class51.putByte("Color", this.dataManager.get(Class841.field4484));
         final BlockPos method5019 = this.method5019();
         if (method5019 != null) {
-            class51.method298("APX", method5019.getX());
-            class51.method298("APY", method5019.getY());
-            class51.method298("APZ", method5019.getZ());
+            class51.putInt("APX", method5019.getX());
+            class51.putInt("APY", method5019.getY());
+            class51.putInt("APZ", method5019.getZ());
         }
     }
     

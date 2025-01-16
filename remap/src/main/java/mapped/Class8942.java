@@ -71,7 +71,7 @@ public class Class8942
                             }
                         }
                         else {
-                            arrayList2.add(new Class8696(method1137, method1138, method1139.method2180(new Class51())));
+                            arrayList2.add(new Class8696(method1137, method1138, method1139.method2180(new CompoundNBT())));
                             linkedList.addLast(class7500);
                         }
                     }
@@ -108,9 +108,9 @@ public class Class8942
             final TileEntity method1140 = method1136.getTileEntity(class7505.field36541);
             if (class7505.field36543 != null) {
                 if (method1140 != null) {
-                    class7505.field36543.method298("x", class7505.field36541.getX());
-                    class7505.field36543.method298("y", class7505.field36541.getY());
-                    class7505.field36543.method298("z", class7505.field36541.getZ());
+                    class7505.field36543.putInt("x", class7505.field36541.getX());
+                    class7505.field36543.putInt("y", class7505.field36541.getY());
+                    class7505.field36543.putInt("z", class7505.field36541.getZ());
                     method1140.method2179(class7505.field36543);
                     method1140.method2161();
                 }

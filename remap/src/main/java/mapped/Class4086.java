@@ -150,35 +150,35 @@ public class Class4086 extends Class4085
     }
     
     public static boolean method12296(final ItemStack class8321) {
-        final Class51 method27657 = class8321.method27657();
-        return method27657 != null && method27657.method329("Charged");
+        final CompoundNBT method27657 = class8321.method27657();
+        return method27657 != null && method27657.getBoolean("Charged");
     }
     
     public static void method12297(final ItemStack class8321, final boolean b) {
-        class8321.method27658().method312("Charged", b);
+        class8321.method27658().putBoolean("Charged", b);
     }
     
     private static void method12298(final ItemStack class8321, final ItemStack class8322) {
-        final Class51 method27658 = class8321.method27658();
-        Class52 method27659;
-        if (!method27658.method316("ChargedProjectiles", 9)) {
-            method27659 = new Class52();
+        final CompoundNBT method27658 = class8321.method27658();
+        ListNBT method27659;
+        if (!method27658.contains("ChargedProjectiles", 9)) {
+            method27659 = new ListNBT();
         }
         else {
-            method27659 = method27658.method328("ChargedProjectiles", 10);
+            method27659 = method27658.getList("ChargedProjectiles", 10);
         }
-        final Class51 e = new Class51();
+        final CompoundNBT e = new CompoundNBT();
         class8322.method27627(e);
-        ((AbstractList<Class51>)method27659).add(e);
-        method27658.method295("ChargedProjectiles", method27659);
+        ((AbstractList<CompoundNBT>)method27659).add(e);
+        method27658.put("ChargedProjectiles", method27659);
     }
     
     private static List<ItemStack> method12299(final ItemStack class8321) {
         final ArrayList arrayList = Lists.newArrayList();
-        final Class51 method27657 = class8321.method27657();
+        final CompoundNBT method27657 = class8321.method27657();
         if (method27657 != null) {
-            if (method27657.method316("ChargedProjectiles", 9)) {
-                final Class52 method27658 = method27657.method328("ChargedProjectiles", 10);
+            if (method27657.contains("ChargedProjectiles", 9)) {
+                final ListNBT method27658 = method27657.getList("ChargedProjectiles", 10);
                 if (method27658 != null) {
                     for (int i = 0; i < method27658.size(); ++i) {
                         arrayList.add(ItemStack.method27619(method27658.method346(i)));
@@ -190,11 +190,11 @@ public class Class4086 extends Class4085
     }
     
     private static void method12300(final ItemStack class8321) {
-        final Class51 method27657 = class8321.method27657();
+        final CompoundNBT method27657 = class8321.method27657();
         if (method27657 != null) {
-            final Class52 method27658 = method27657.method328("ChargedProjectiles", 9);
+            final ListNBT method27658 = method27657.getList("ChargedProjectiles", 9);
             method27658.clear();
-            method27657.method295("ChargedProjectiles", method27658);
+            method27657.put("ChargedProjectiles", method27658);
         }
     }
     

@@ -70,7 +70,7 @@ public final class Class7125
                 final BlockPos method13523 = field27295.method1149(class4523);
                 final int n3 = field27295.getY() - field27294;
                 int n4 = -1;
-                final Class8795 method13524 = Class7323.field28316.method25554(new ResourceLocation(class4522.field38250.method323("target_pool")));
+                final Class8795 method13524 = Class7323.field28316.method25554(new ResourceLocation(class4522.field38250.getString("target_pool")));
                 final Class8795 method13525 = Class7323.field28316.method25554(method13524.method30672());
                 if (method13524 != Class8795.field36978 && (method13524.method30676() != 0 || method13524 == Class8795.field36977)) {
                     AtomicReference<VoxelShape> atomicReference3;
@@ -101,7 +101,7 @@ public final class Class7125
                             if (class4524.method27254(this.field27769, BlockPos.ZERO, class4525).getYSize() <= 16) {
                                 orElse = method13526.stream().mapToInt(class4529 -> {
                                     if (class4528.method21415(class4529.field38248.method1149(class4529.field38249.get((IProperty<Direction>)Class3839.field17415)))) {
-                                        Class7323.field28316.method25554(new ResourceLocation(class4529.field38250.method323("target_pool")));
+                                        Class7323.field28316.method25554(new ResourceLocation(class4529.field38250.getString("target_pool")));
                                         final Class8795 class4530;
                                         return Math.max(class4530.method30671(this.field27769), Class7323.field28316.method25554(class4530.method30672()).method30671(this.field27769));
                                     }
@@ -182,7 +182,7 @@ public final class Class7125
                     }
                 }
                 else {
-                    Class7323.method22476().warn("Empty or none existent pool: {}", (Object)class4522.field38250.method323("target_pool"));
+                    Class7323.method22476().warn("Empty or none existent pool: {}", (Object)class4522.field38250.getString("target_pool"));
                 }
             }
             break;

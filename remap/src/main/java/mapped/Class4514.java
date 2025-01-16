@@ -20,15 +20,15 @@ public class Class4514 extends Class4500
         this.field19916 = ((class179 != Direction.NORTH && class179 != Direction.SOUTH) ? field19849.getXSize() : field19849.getZSize());
     }
     
-    public Class4514(final Class1795 class1795, final Class51 class1796) {
+    public Class4514(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40965, class1796);
-        this.field19916 = class1796.method319("Steps");
+        this.field19916 = class1796.getInt("Steps");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method298("Steps", this.field19916);
+        class51.putInt("Steps", this.field19916);
     }
     
     public static MutableBoundingBox method13509(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179) {

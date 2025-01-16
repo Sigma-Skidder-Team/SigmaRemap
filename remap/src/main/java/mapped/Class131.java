@@ -20,12 +20,12 @@ public class Class131 extends Class126
     @Override
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (!class8321.method27620()) {
-            final Class51 class8323 = new Class51();
-            class8323.method306("LootTable", this.field399.toString());
+            final CompoundNBT class8323 = new CompoundNBT();
+            class8323.putString("LootTable", this.field399.toString());
             if (this.field400 != 0L) {
-                class8323.method299("LootTableSeed", this.field400);
+                class8323.putLong("LootTableSeed", this.field400);
             }
-            class8321.method27658().method295("BlockEntityTag", class8323);
+            class8321.method27658().put("BlockEntityTag", class8323);
             return class8321;
         }
         return class8321;

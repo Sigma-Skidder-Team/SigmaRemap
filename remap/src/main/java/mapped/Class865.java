@@ -45,37 +45,37 @@ public abstract class Class865 implements ICommandSource
         return (this.field4614 != null) ? this.field4614 : new StringTextComponent("");
     }
     
-    public Class51 method5209(final Class51 class51) {
-        class51.method306("Command", this.field4615);
-        class51.method298("SuccessCount", this.field4612);
-        class51.method306("CustomName", Class5953.method17869(this.field4616));
-        class51.method312("TrackOutput", this.field4613);
+    public CompoundNBT method5209(final CompoundNBT class51) {
+        class51.putString("Command", this.field4615);
+        class51.putInt("SuccessCount", this.field4612);
+        class51.putString("CustomName", Class5953.method17869(this.field4616));
+        class51.putBoolean("TrackOutput", this.field4613);
         if (this.field4614 != null) {
             if (this.field4613) {
-                class51.method306("LastOutput", Class5953.method17869(this.field4614));
+                class51.putString("LastOutput", Class5953.method17869(this.field4614));
             }
         }
-        class51.method312("UpdateLastExecution", this.field4611);
+        class51.putBoolean("UpdateLastExecution", this.field4611);
         if (this.field4611) {
             if (this.field4610 > 0L) {
-                class51.method299("LastExecution", this.field4610);
+                class51.putLong("LastExecution", this.field4610);
             }
         }
         return class51;
     }
     
-    public void method5210(final Class51 class51) {
-        this.field4615 = class51.method323("Command");
-        this.field4612 = class51.method319("SuccessCount");
-        if (class51.method316("CustomName", 8)) {
-            this.method5215(Class5953.method17871(class51.method323("CustomName")));
+    public void method5210(final CompoundNBT class51) {
+        this.field4615 = class51.getString("Command");
+        this.field4612 = class51.getInt("SuccessCount");
+        if (class51.contains("CustomName", 8)) {
+            this.method5215(Class5953.method17871(class51.getString("CustomName")));
         }
-        if (class51.method316("TrackOutput", 1)) {
-            this.field4613 = class51.method329("TrackOutput");
+        if (class51.contains("TrackOutput", 1)) {
+            this.field4613 = class51.getBoolean("TrackOutput");
         }
-        if (class51.method316("LastOutput", 8) && this.field4613) {
+        if (class51.contains("LastOutput", 8) && this.field4613) {
             try {
-                this.field4614 = Class5953.method17871(class51.method323("LastOutput"));
+                this.field4614 = Class5953.method17871(class51.getString("LastOutput"));
             }
             catch (final Throwable t) {
                 this.field4614 = new StringTextComponent(t.getMessage());
@@ -84,11 +84,11 @@ public abstract class Class865 implements ICommandSource
         else {
             this.field4614 = null;
         }
-        if (class51.method315("UpdateLastExecution")) {
-            this.field4611 = class51.method329("UpdateLastExecution");
+        if (class51.contains("UpdateLastExecution")) {
+            this.field4611 = class51.getBoolean("UpdateLastExecution");
         }
-        if (this.field4611 && class51.method315("LastExecution")) {
-            this.field4610 = class51.method320("LastExecution");
+        if (this.field4611 && class51.contains("LastExecution")) {
+            this.field4610 = class51.getLong("LastExecution");
         }
         else {
             this.field4610 = -1L;
@@ -125,11 +125,11 @@ public abstract class Class865 implements ICommandSource
                 })), this.field4615);
             }
             catch (final Throwable t) {
-                final Class7689 method6680 = Class7689.method24421(t, "Executing command block");
-                final Class5204 method6681 = method6680.method24418("Command to be executed");
-                method6681.method16296("Command", this::method5212);
-                method6681.method16296("Name", () -> this.method5214().getString());
-                throw new Class2365(method6680);
+                final CrashReport method6680 = CrashReport.makeCrashReport(t, "Executing command block");
+                final CrashReportCategory method6681 = method6680.makeCategory("Command to be executed");
+                method6681.addDetail("Command", this::method5212);
+                method6681.addDetail("Name", () -> this.method5214().getString());
+                throw new ReportedException(method6680);
             }
         }
         if (this.field4611) {

@@ -192,15 +192,15 @@ public class Class856 extends Class855
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.dataManager.set(Class856.field4562, class51.method317("BatFlags"));
+        this.dataManager.set(Class856.field4562, class51.getByte("BatFlags"));
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method296("BatFlags", this.dataManager.get(Class856.field4562));
+        class51.putByte("BatFlags", this.dataManager.get(Class856.field4562));
     }
     
     public static boolean method5146(final EntityType<Class856> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {

@@ -16,23 +16,23 @@ public class Class4096 extends Item
         super(class8959);
     }
     
-    public static boolean method12339(final Class51 class51) {
-        return Class4049.method12247(class51) && class51.method316("title", 8) && class51.method323("title").length() <= 32 && class51.method316("author", 8);
+    public static boolean method12339(final CompoundNBT class51) {
+        return Class4049.method12247(class51) && class51.contains("title", 8) && class51.getString("title").length() <= 32 && class51.contains("author", 8);
     }
     
     public static int method12340(final ItemStack class8321) {
-        return class8321.method27657().method319("generation");
+        return class8321.method27657().getInt("generation");
     }
     
     public static int method12341(final ItemStack class8321) {
-        final Class51 method27657 = class8321.method27657();
-        return (method27657 == null) ? 0 : method27657.method328("pages", 8).size();
+        final CompoundNBT method27657 = class8321.method27657();
+        return (method27657 == null) ? 0 : method27657.getList("pages", 8).size();
     }
     
     @Override
     public ITextComponent method11729(final ItemStack class8321) {
         if (class8321.method27656()) {
-            final String method323 = class8321.method27657().method323("title");
+            final String method323 = class8321.method27657().getString("title");
             if (!Class8272.method27500(method323)) {
                 return new StringTextComponent(method323);
             }
@@ -43,12 +43,12 @@ public class Class4096 extends Item
     @Override
     public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
         if (class8321.method27656()) {
-            final Class51 method27657 = class8321.method27657();
-            final String method27658 = method27657.method323("author");
+            final CompoundNBT method27657 = class8321.method27657();
+            final String method27658 = method27657.getString("author");
             if (!Class8272.method27500(method27658)) {
                 list.add(new Class2259("book.byAuthor", new Object[] { method27658 }).applyTextStyle(TextFormatting.GRAY));
             }
-            list.add(new Class2259("book.generation." + method27657.method319("generation"), new Object[0]).applyTextStyle(TextFormatting.GRAY));
+            list.add(new Class2259("book.generation." + method27657.getInt("generation"), new Object[0]).applyTextStyle(TextFormatting.GRAY));
         }
     }
     
@@ -72,15 +72,15 @@ public class Class4096 extends Item
     }
     
     public static boolean method12342(final ItemStack class8321, final Class7492 class8322, final PlayerEntity class8323) {
-        final Class51 method27657 = class8321.method27657();
-        if (method27657 == null || method27657.method329("resolved")) {
+        final CompoundNBT method27657 = class8321.method27657();
+        if (method27657 == null || method27657.getBoolean("resolved")) {
             return false;
         }
-        method27657.method312("resolved", true);
+        method27657.putBoolean("resolved", true);
         if (!method12339(method27657)) {
             return false;
         }
-        final Class52 method27658 = method27657.method328("pages", 8);
+        final ListNBT method27658 = method27657.getList("pages", 8);
         for (int i = 0; i < method27658.size(); ++i) {
             final String method27659 = method27658.method353(i);
             ITextComponent method27660;
@@ -90,9 +90,9 @@ public class Class4096 extends Item
             catch (final Exception ex) {
                 method27660 = new StringTextComponent(method27659);
             }
-            method27658.set(i, Class50.method290(Class5953.method17869(method27660)));
+            method27658.set(i, StringNBT.method290(Class5953.method17869(method27660)));
         }
-        method27657.method295("pages", method27658);
+        method27657.put("pages", method27658);
         return true;
     }
     

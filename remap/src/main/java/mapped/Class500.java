@@ -22,22 +22,22 @@ public class Class500 extends TileEntity
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         this.field2863.method5209(class51);
-        class51.method312("powered", this.method2541());
-        class51.method312("conditionMet", this.method2546());
-        class51.method312("auto", this.method2542());
+        class51.putBoolean("powered", this.method2541());
+        class51.putBoolean("conditionMet", this.method2546());
+        class51.putBoolean("auto", this.method2542());
         return class51;
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
         this.field2863.method5210(class51);
-        this.field2859 = class51.method329("powered");
-        this.field2861 = class51.method329("conditionMet");
-        this.method2543(class51.method329("auto"));
+        this.field2859 = class51.getBoolean("powered");
+        this.field2861 = class51.getBoolean("conditionMet");
+        this.method2543(class51.getBoolean("auto"));
     }
     
     @Nullable
@@ -47,7 +47,7 @@ public class Class500 extends TileEntity
             return null;
         }
         this.method2549(false);
-        return new Class4357(this.field2657, 2, this.method2180(new Class51()));
+        return new Class4357(this.field2657, 2, this.method2180(new CompoundNBT()));
     }
     
     @Override

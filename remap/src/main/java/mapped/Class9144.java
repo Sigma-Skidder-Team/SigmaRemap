@@ -93,11 +93,11 @@ public class Class9144
             return b3;
         }
         catch (final Throwable t) {
-            final Class7689 method32836 = Class7689.method24421(t, "Tesselating block model");
-            final Class5204 method32837 = method32836.method24418("Block model being tesselated");
-            Class5204.method16304(method32837, class1858, class1857);
-            method32837.method16297("Using AO", b2);
-            throw new Class2365(method32836);
+            final CrashReport method32836 = CrashReport.makeCrashReport(t, "Tesselating block model");
+            final CrashReportCategory method32837 = method32836.makeCategory("Block model being tesselated");
+            CrashReportCategory.method16304(method32837, class1858, class1857);
+            method32837.addDetail("Using AO", b2);
+            throw new ReportedException(method32836);
         }
     }
     

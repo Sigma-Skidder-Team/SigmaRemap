@@ -8,37 +8,37 @@ import java.util.AbstractList;
 
 public class Class6774
 {
-    public static Class6822 method20679(final Class51 class51) {
-        final Class6822 class52 = new Class6822(class51.method319("xPos"), class51.method319("zPos"));
-        class52.field26784 = class51.method324("Blocks");
-        class52.field26783 = new Class9364(class51.method324("Data"), 7);
-        class52.field26782 = new Class9364(class51.method324("SkyLight"), 7);
-        class52.field26781 = new Class9364(class51.method324("BlockLight"), 7);
-        class52.field26780 = class51.method324("HeightMap");
-        class52.field26779 = class51.method329("TerrainPopulated");
-        class52.field26785 = class51.method328("Entities", 10);
-        class52.field26786 = class51.method328("TileEntities", 10);
-        class52.field26787 = class51.method328("TileTicks", 10);
+    public static Class6822 method20679(final CompoundNBT class51) {
+        final Class6822 class52 = new Class6822(class51.getInt("xPos"), class51.getInt("zPos"));
+        class52.field26784 = class51.getByteArray("Blocks");
+        class52.field26783 = new Class9364(class51.getByteArray("Data"), 7);
+        class52.field26782 = new Class9364(class51.getByteArray("SkyLight"), 7);
+        class52.field26781 = new Class9364(class51.getByteArray("BlockLight"), 7);
+        class52.field26780 = class51.getByteArray("HeightMap");
+        class52.field26779 = class51.getBoolean("TerrainPopulated");
+        class52.field26785 = class51.getList("Entities", 10);
+        class52.field26786 = class51.getList("TileEntities", 10);
+        class52.field26787 = class51.getList("TileTicks", 10);
         try {
-            class52.field26778 = class51.method320("LastUpdate");
+            class52.field26778 = class51.getLong("LastUpdate");
         }
         catch (final ClassCastException ex) {
-            class52.field26778 = class51.method319("LastUpdate");
+            class52.field26778 = class51.getInt("LastUpdate");
         }
         return class52;
     }
     
-    public static void method20680(final Class6822 class6822, final Class51 class6823, final Class1868 class6824) {
-        class6823.method298("xPos", class6822.field26788);
-        class6823.method298("zPos", class6822.field26789);
-        class6823.method299("LastUpdate", class6822.field26778);
+    public static void method20680(final Class6822 class6822, final CompoundNBT class6823, final Class1868 class6824) {
+        class6823.putInt("xPos", class6822.field26788);
+        class6823.putInt("zPos", class6822.field26789);
+        class6823.putLong("LastUpdate", class6822.field26778);
         final int[] array = new int[class6822.field26780.length];
         for (int i = 0; i < class6822.field26780.length; ++i) {
             array[i] = class6822.field26780[i];
         }
-        class6823.method308("HeightMap", array);
-        class6823.method312("TerrainPopulated", class6822.field26779);
-        final Class52 class6825 = new Class52();
+        class6823.putIntArray("HeightMap", array);
+        class6823.putBoolean("TerrainPopulated", class6822.field26779);
+        final ListNBT class6825 = new ListNBT();
         for (int j = 0; j < 8; ++j) {
             int n = 1;
             for (int n2 = 0; n2 < 16 && n != 0; ++n2) {
@@ -66,22 +66,22 @@ public class Class6774
                         }
                     }
                 }
-                final Class51 e = new Class51();
-                e.method296("Y", (byte)(j & 0xFF));
-                e.method307("Blocks", array2);
-                e.method307("Data", class6826.method22321());
-                e.method307("SkyLight", class6827.method22321());
-                e.method307("BlockLight", class6828.method22321());
-                ((AbstractList<Class51>)class6825).add(e);
+                final CompoundNBT e = new CompoundNBT();
+                e.putByte("Y", (byte)(j & 0xFF));
+                e.putByteArray("Blocks", array2);
+                e.putByteArray("Data", class6826.method22321());
+                e.putByteArray("SkyLight", class6827.method22321());
+                e.putByteArray("BlockLight", class6828.method22321());
+                ((AbstractList<CompoundNBT>)class6825).add(e);
             }
         }
-        class6823.method295("Sections", class6825);
-        class6823.method308("Biomes", new Class1873(new Class7859(class6822.field26788, class6822.field26789), class6824).method7125());
-        class6823.method295("Entities", class6822.field26785);
-        class6823.method295("TileEntities", class6822.field26786);
+        class6823.put("Sections", class6825);
+        class6823.putIntArray("Biomes", new Class1873(new Class7859(class6822.field26788, class6822.field26789), class6824).method7125());
+        class6823.put("Entities", class6822.field26785);
+        class6823.put("TileEntities", class6822.field26786);
         if (class6822.field26787 != null) {
-            class6823.method295("TileTicks", class6822.field26787);
+            class6823.put("TileTicks", class6822.field26787);
         }
-        class6823.method312("convertedFromAlphaFormat", true);
+        class6823.putBoolean("convertedFromAlphaFormat", true);
     }
 }

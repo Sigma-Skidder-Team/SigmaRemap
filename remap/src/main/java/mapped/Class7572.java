@@ -41,7 +41,7 @@ public class Class7572
     private ResourceLocation field30036;
     private StateContainer<Block, Class7096> field30037;
     private Class7096 field30038;
-    private Class51 field30039;
+    private CompoundNBT field30039;
     private ResourceLocation field30040;
     private int field30041;
     private Function<SuggestionsBuilder, CompletableFuture<Suggestions>> field30042;
@@ -66,7 +66,7 @@ public class Class7572
     }
     
     @Nullable
-    public Class51 method23800() {
+    public CompoundNBT method23800() {
         return this.field30039;
     }
     

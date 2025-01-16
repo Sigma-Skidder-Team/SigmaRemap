@@ -30,13 +30,13 @@ public class Class137 extends Class126
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         final Class7096 class8323 = class8322.method23579(Class6683.field26368);
         if (class8323 != null) {
-            final Class51 method27658 = class8321.method27658();
-            if (!method27658.method316("BlockStateTag", 10)) {
-                final Class51 method27659 = new Class51();
-                method27658.method295("BlockStateTag", method27659);
+            final CompoundNBT method27658 = class8321.method27658();
+            if (!method27658.contains("BlockStateTag", 10)) {
+                final CompoundNBT method27659 = new CompoundNBT();
+                method27658.put("BlockStateTag", method27659);
             }
             else {
-                final Class51 method27659 = method27658.method327("BlockStateTag");
+                final CompoundNBT method27659 = method27658.getCompound("BlockStateTag");
             }
             this.field412.stream().filter((Predicate<? super Object>)class8323::method21771).forEach(class8326 -> class8324.method306(class8326.getName(), method676(class8325, (IProperty<Comparable>)class8326)));
         }

@@ -63,37 +63,37 @@ public class IntNBT extends NumberNBT
     }
     
     @Override
-    public long method270() {
+    public long getLong() {
         return this.data;
     }
     
     @Override
-    public int method271() {
+    public int getInt() {
         return this.data;
     }
     
     @Override
-    public short method272() {
+    public short getShort() {
         return (short)(this.data & 0xFFFF);
     }
     
     @Override
-    public byte method273() {
+    public byte getByte() {
         return (byte)(this.data & 0xFF);
     }
     
     @Override
-    public double method274() {
+    public double getDouble() {
         return this.data;
     }
     
     @Override
-    public float method275() {
+    public float getFloat() {
         return (float)this.data;
     }
     
     @Override
-    public Number method276() {
+    public Number getAsNumber() {
         return this.data;
     }
     

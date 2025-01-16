@@ -160,7 +160,7 @@ public class Class790 extends Class789
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         if (class1854 == null) {
             class1854 = new Class5497();
             ((Class5497)class1854).method16803(1.0f);

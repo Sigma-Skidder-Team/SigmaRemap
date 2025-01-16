@@ -19,22 +19,22 @@ public class Class6951<T> implements Class6952<T>
     private final ShortList[] field27218;
     
     public Class6951(final Predicate<T> predicate, final Class7859 class7859) {
-        this(predicate, class7859, new Class52());
+        this(predicate, class7859, new ListNBT());
     }
     
-    public Class6951(final Predicate<T> field27216, final Class7859 field27217, final Class52 class52) {
+    public Class6951(final Predicate<T> field27216, final Class7859 field27217, final ListNBT class52) {
         this.field27218 = new ShortList[16];
         this.field27216 = field27216;
         this.field27217 = field27217;
         for (int i = 0; i < class52.size(); ++i) {
-            final Class52 method347 = class52.method347(i);
+            final ListNBT method347 = class52.method347(i);
             for (int j = 0; j < method347.size(); ++j) {
                 IChunk.method7042(this.field27218, i).add(method347.method348(j));
             }
         }
     }
     
-    public Class52 method21338() {
+    public ListNBT method21338() {
         return Class7532.method23599(this.field27218);
     }
     

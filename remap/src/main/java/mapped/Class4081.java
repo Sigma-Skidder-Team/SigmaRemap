@@ -40,7 +40,7 @@ public class Class4081 extends Item
         else {
             class7076 = new Class861(method21644, method21641, method21640);
         }
-        final Class51 method21645 = method21643.method27657();
+        final CompoundNBT method21645 = method21643.method27657();
         if (method21645 != null) {
             EntityType.method23360(method21644, method21642, class7076, method21645);
         }

@@ -106,7 +106,7 @@ public class Class438 extends TileEntity implements Class439
         if (this.field2663.size() < 3) {
             class399.stopRiding();
             class399.removePassengers();
-            final Class51 class400 = new Class51();
+            final CompoundNBT class400 = new CompoundNBT();
             class399.method1755(class400);
             this.field2663.add(new Class7829(class400, n, b ? 2400 : 600, null));
             if (this.field2656 != null) {
@@ -125,16 +125,16 @@ public class Class438 extends TileEntity implements Class439
         }
     }
     
-    private boolean method2226(final Class7096 class7096, final Class51 class7097, final List<Entity> list, final Class2144 class7098) {
+    private boolean method2226(final Class7096 class7096, final CompoundNBT class7097, final List<Entity> list, final Class2144 class7098) {
         final BlockPos method2193 = this.getPos();
         if (this.field2656.method6704() || this.field2656.method6771()) {
             if (class7098 != Class2144.field12626) {
                 return false;
             }
         }
-        class7097.method330("Passengers");
-        class7097.method330("Leash");
-        class7097.method303("UUID");
+        class7097.remove("Passengers");
+        class7097.remove("Leash");
+        class7097.removeUniqueId("UUID");
         final Direction class7099 = class7096.method21772((IProperty<Direction>)Class3961.field17901);
         final BlockPos method2194 = method2193.method1149(class7099);
         final boolean b = !this.field2656.getBlockState(method2194).method21727(this.field2656, method2194).method24540();
@@ -196,8 +196,8 @@ public class Class438 extends TileEntity implements Class439
                 Class7829.method25299(class7829);
             }
             else {
-                final Class51 method2195 = Class7829.method25298(class7829);
-                if (!this.method2226(method2194, method2195, null, method2195.method329("HasNectar") ? Class2144.field12624 : Class2144.field12625)) {
+                final CompoundNBT method2195 = Class7829.method25298(class7829);
+                if (!this.method2226(method2194, method2195, null, method2195.getBoolean("HasNectar") ? Class2144.field12624 : Class2144.field12625)) {
                     continue;
                 }
                 iterator.remove();
@@ -220,39 +220,39 @@ public class Class438 extends TileEntity implements Class439
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
         this.field2663.clear();
-        final Class52 method328 = class51.method328("Bees", 10);
+        final ListNBT method328 = class51.getList("Bees", 10);
         for (int i = 0; i < method328.size(); ++i) {
-            final Class51 method329 = method328.method346(i);
-            this.field2663.add(new Class7829(method329.method327("EntityData"), method329.method319("TicksInHive"), method329.method319("MinOccupationTicks"), null));
+            final CompoundNBT method329 = method328.method346(i);
+            this.field2663.add(new Class7829(method329.getCompound("EntityData"), method329.getInt("TicksInHive"), method329.getInt("MinOccupationTicks"), null));
         }
         this.field2664 = null;
-        if (class51.method315("FlowerPos")) {
-            this.field2664 = Class9346.method34645(class51.method327("FlowerPos"));
+        if (class51.contains("FlowerPos")) {
+            this.field2664 = Class9346.method34645(class51.getCompound("FlowerPos"));
         }
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
-        class51.method295("Bees", this.method2230());
+        class51.put("Bees", this.method2230());
         if (this.method2227()) {
-            class51.method295("FlowerPos", Class9346.method34646(this.field2664));
+            class51.put("FlowerPos", Class9346.method34646(this.field2664));
         }
         return class51;
     }
     
-    public Class52 method2230() {
-        final Class52 class52 = new Class52();
+    public ListNBT method2230() {
+        final ListNBT class52 = new ListNBT();
         for (final Class7829 class53 : this.field2663) {
             Class7829.method25298(class53).method303("UUID");
-            final Class51 e = new Class51();
-            e.method295("EntityData", Class7829.method25298(class53));
-            e.method298("TicksInHive", Class7829.method25296(class53));
-            e.method298("MinOccupationTicks", Class7829.method25297(class53));
-            ((AbstractList<Class51>)class52).add(e);
+            final CompoundNBT e = new CompoundNBT();
+            e.put("EntityData", Class7829.method25298(class53));
+            e.putInt("TicksInHive", Class7829.method25296(class53));
+            e.putInt("MinOccupationTicks", Class7829.method25297(class53));
+            ((AbstractList<CompoundNBT>)class52).add(e);
         }
         return class52;
     }

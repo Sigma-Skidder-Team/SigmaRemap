@@ -536,9 +536,9 @@ public class Class1660 implements AutoCloseable, Class1657
                         break Label_1050;
                     }
                     catch (final Throwable t) {
-                        final Class7689 method5333 = Class7689.method24421(t, "Rendering overlay");
-                        method5333.method24418("Overlay render details").method16296("Overlay name", () -> this.field9380.field4701.getClass().getCanonicalName());
-                        throw new Class2365(method5333);
+                        final CrashReport method5333 = CrashReport.makeCrashReport(t, "Rendering overlay");
+                        method5333.makeCategory("Overlay render details").addDetail("Overlay name", () -> this.field9380.field4701.getClass().getCanonicalName());
+                        throw new ReportedException(method5333);
                     }
                 }
                 if (this.field9380.field4700 != null && Class9463.method35173().method35193().method32154() == null) {
@@ -551,12 +551,12 @@ public class Class1660 implements AutoCloseable, Class1657
                         }
                     }
                     catch (final Throwable t2) {
-                        final Class7689 method5334 = Class7689.method24421(t2, "Rendering screen");
-                        final Class5204 method5335 = method5334.method24418("Screen render details");
-                        method5335.method16296("Screen name", () -> this.field9380.field4700.getClass().getCanonicalName());
-                        method5335.method16296("Mouse location", () -> String.format(Locale.ROOT, "Scaled: (%d, %d). Absolute: (%f, %f)", k, l, this.field9380.field4650.method26959(), this.field9380.field4650.method26960()));
-                        method5335.method16296("Screen size", () -> String.format(Locale.ROOT, "Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %f", this.field9380.method5332().method7696(), this.field9380.method5332().method7697(), this.field9380.method5332().method7692(), this.field9380.method5332().method7693(), this.field9380.method5332().method7700()));
-                        throw new Class2365(method5334);
+                        final CrashReport method5334 = CrashReport.makeCrashReport(t2, "Rendering screen");
+                        final CrashReportCategory method5335 = method5334.makeCategory("Screen render details");
+                        method5335.addDetail("Screen name", () -> this.field9380.field4700.getClass().getCanonicalName());
+                        method5335.addDetail("Mouse location", () -> String.format(Locale.ROOT, "Scaled: (%d, %d). Absolute: (%f, %f)", k, l, this.field9380.field4650.method26959(), this.field9380.field4650.method26960()));
+                        method5335.addDetail("Screen size", () -> String.format(Locale.ROOT, "Scaled: (%d, %d). Absolute: (%d, %d). Scale factor of %f", this.field9380.method5332().method7696(), this.field9380.method5332().method7697(), this.field9380.method5332().method7692(), this.field9380.method5332().method7693(), this.field9380.method5332().method7700()));
+                        throw new ReportedException(method5334);
                     }
                 }
             }

@@ -17,21 +17,21 @@ public class Class4481 extends Class4479
     private boolean field19873;
     private final int field19874;
     
-    public Class4481(final Class1795 class1795, final Class51 class1796) {
+    public Class4481(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40943, class1796);
-        this.field19871 = class1796.method329("hr");
-        this.field19872 = class1796.method329("sc");
-        this.field19873 = class1796.method329("hps");
-        this.field19874 = class1796.method319("Num");
+        this.field19871 = class1796.getBoolean("hr");
+        this.field19872 = class1796.getBoolean("sc");
+        this.field19873 = class1796.getBoolean("hps");
+        this.field19874 = class1796.getInt("Num");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method312("hr", this.field19871);
-        class51.method312("sc", this.field19872);
-        class51.method312("hps", this.field19873);
-        class51.method298("Num", this.field19874);
+        class51.putBoolean("hr", this.field19871);
+        class51.putBoolean("sc", this.field19872);
+        class51.putBoolean("hps", this.field19873);
+        class51.putInt("Num", this.field19874);
     }
     
     public Class4481(final int n, final Random random, final MutableBoundingBox field19849, final Direction class179, final Class1964 class180) {

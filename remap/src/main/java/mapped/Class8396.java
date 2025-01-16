@@ -19,15 +19,15 @@ public class Class8396
         this.field34421 = ((!Float.isInfinite(n3) && !Float.isNaN(n3)) ? (n3 % 360.0f) : 0.0f);
     }
     
-    public Class8396(final Class52 class52) {
+    public Class8396(final ListNBT class52) {
         this(class52.method352(0), class52.method352(1), class52.method352(2));
     }
     
-    public Class52 method27996() {
-        final Class52 class52 = new Class52();
-        ((AbstractList<Class46>)class52).add(Class46.method281(this.field34419));
-        ((AbstractList<Class46>)class52).add(Class46.method281(this.field34420));
-        ((AbstractList<Class46>)class52).add(Class46.method281(this.field34421));
+    public ListNBT method27996() {
+        final ListNBT class52 = new ListNBT();
+        ((AbstractList<FloatNBT>)class52).add(FloatNBT.method281(this.field34419));
+        ((AbstractList<FloatNBT>)class52).add(FloatNBT.method281(this.field34420));
+        ((AbstractList<FloatNBT>)class52).add(FloatNBT.method281(this.field34421));
         return class52;
     }
     

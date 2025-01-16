@@ -60,6 +60,6 @@ public class Class4100 extends Item
     }
     
     public static Class181 method12343(final ItemStack class8321) {
-        return Class181.method819(class8321.method27659("BlockEntityTag").method319("Base"));
+        return Class181.method819(class8321.method27659("BlockEntityTag").getInt("Base"));
     }
 }

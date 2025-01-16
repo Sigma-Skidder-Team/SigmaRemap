@@ -163,15 +163,15 @@ public class Class1655 extends MinecraftServer
     }
     
     @Override
-    public void method1467(final Class7689 class7689) {
+    public void method1467(final CrashReport class7689) {
         this.field9269.method5238(class7689);
     }
     
     @Override
-    public Class7689 method1491(Class7689 method1491) {
+    public CrashReport method1491(CrashReport method1491) {
         method1491 = super.method1491(method1491);
-        method1491.method24417().method16297("Type", "Integrated Server (map_client.txt)");
-        method1491.method24417().method16296("Is Modded", () -> this.method1492().orElse("Probably not. Jar signature remains and both client + server brands are untouched."));
+        method1491.method24417().addDetail("Type", "Integrated Server (map_client.txt)");
+        method1491.method24417().addDetail("Is Modded", () -> this.method1492().orElse("Probably not. Jar signature remains and both client + server brands are untouched."));
         return method1491;
     }
     

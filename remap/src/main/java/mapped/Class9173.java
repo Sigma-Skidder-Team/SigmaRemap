@@ -103,20 +103,20 @@ public class Class9173
         }
     }
     
-    public void method33489(final Class51 class51) {
-        if (class51.method316("foodLevel", 99)) {
-            this.field38857 = class51.method319("foodLevel");
-            this.field38860 = class51.method319("foodTickTimer");
-            this.field38858 = class51.method321("foodSaturationLevel");
-            this.field38859 = class51.method321("foodExhaustionLevel");
+    public void method33489(final CompoundNBT class51) {
+        if (class51.contains("foodLevel", 99)) {
+            this.field38857 = class51.getInt("foodLevel");
+            this.field38860 = class51.getInt("foodTickTimer");
+            this.field38858 = class51.getFloat("foodSaturationLevel");
+            this.field38859 = class51.getFloat("foodExhaustionLevel");
         }
     }
     
-    public void method33490(final Class51 class51) {
-        class51.method298("foodLevel", this.field38857);
-        class51.method298("foodTickTimer", this.field38860);
-        class51.method304("foodSaturationLevel", this.field38858);
-        class51.method304("foodExhaustionLevel", this.field38859);
+    public void method33490(final CompoundNBT class51) {
+        class51.putInt("foodLevel", this.field38857);
+        class51.putInt("foodTickTimer", this.field38860);
+        class51.putFloat("foodSaturationLevel", this.field38858);
+        class51.putFloat("foodExhaustionLevel", this.field38859);
     }
     
     public int method33491() {

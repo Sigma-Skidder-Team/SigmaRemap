@@ -38,9 +38,9 @@ public class Class1865 implements IChunk
     private final Map<Class2020, Class9548> field10173;
     private volatile ChunkStatus field10174;
     private final Map<BlockPos, TileEntity> field10175;
-    private final Map<BlockPos, Class51> field10176;
+    private final Map<BlockPos, CompoundNBT> field10176;
     private final Class8199[] field10177;
-    private final List<Class51> field10178;
+    private final List<CompoundNBT> field10178;
     private final List<BlockPos> field10179;
     private final ShortList[] field10180;
     private final Map<String, Class5936> field10181;
@@ -206,18 +206,18 @@ public class Class1865 implements IChunk
         return this.field10175;
     }
     
-    public void method7095(final Class51 class51) {
+    public void method7095(final CompoundNBT class51) {
         this.field10178.add(class51);
     }
     
     @Override
     public void method7010(final Entity class399) {
-        final Class51 class400 = new Class51();
+        final CompoundNBT class400 = new CompoundNBT();
         class399.method1755(class400);
         this.method7095(class400);
     }
     
-    public List<Class51> method7096() {
+    public List<CompoundNBT> method7096() {
         return this.field10178;
     }
     
@@ -391,24 +391,24 @@ public class Class1865 implements IChunk
     }
     
     @Override
-    public void method7032(final Class51 class51) {
-        this.field10176.put(new BlockPos(class51.method319("x"), class51.method319("y"), class51.method319("z")), class51);
+    public void method7032(final CompoundNBT class51) {
+        this.field10176.put(new BlockPos(class51.getInt("x"), class51.getInt("y"), class51.getInt("z")), class51);
     }
     
-    public Map<BlockPos, Class51> method7104() {
-        return Collections.unmodifiableMap((Map<? extends BlockPos, ? extends Class51>)this.field10176);
+    public Map<BlockPos, CompoundNBT> method7104() {
+        return Collections.unmodifiableMap((Map<? extends BlockPos, ? extends CompoundNBT>)this.field10176);
     }
     
     @Override
-    public Class51 method7033(final BlockPos class354) {
+    public CompoundNBT method7033(final BlockPos class354) {
         return this.field10176.get(class354);
     }
     
     @Nullable
     @Override
-    public Class51 method7034(final BlockPos class354) {
+    public CompoundNBT method7034(final BlockPos class354) {
         final TileEntity method6727 = this.getTileEntity(class354);
-        return (method6727 == null) ? this.field10176.get(class354) : method6727.method2180(new Class51());
+        return (method6727 == null) ? this.field10176.get(class354) : method6727.method2180(new CompoundNBT());
     }
     
     @Override

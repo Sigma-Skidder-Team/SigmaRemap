@@ -171,8 +171,8 @@ public abstract class Class527 extends Class598 implements Class563
             if (method30411.method34911() == Class1961.field10698) {
                 ItemStack class2251 = ItemStack.field34174;
                 try {
-                    final Class51 method30412 = Class5704.method16938(method30411.method34912().getString());
-                    if (method30412 instanceof Class51) {
+                    final CompoundNBT method30412 = Class5704.method16938(method30411.method34912().getString());
+                    if (method30412 instanceof CompoundNBT) {
                         class2251 = ItemStack.method27619(method30412);
                     }
                 }
@@ -187,16 +187,16 @@ public abstract class Class527 extends Class598 implements Class563
             else if (method30411.method34911() == Class1961.field10699) {
                 if (this.field3150.field4648.field23394) {
                     try {
-                        final Class51 method30413 = Class5704.method16938(method30411.method34912().getString());
+                        final CompoundNBT method30413 = Class5704.method16938(method30411.method34912().getString());
                         final ArrayList arrayList = Lists.newArrayList();
-                        final ITextComponent method30414 = Class5953.method17871(method30413.method323("name"));
+                        final ITextComponent method30414 = Class5953.method17871(method30413.getString("name"));
                         if (method30414 != null) {
                             arrayList.add(method30414.getFormattedText());
                         }
-                        if (method30413.method316("type", 8)) {
-                            arrayList.add("Type: " + method30413.method323("type"));
+                        if (method30413.contains("type", 8)) {
+                            arrayList.add("Type: " + method30413.getString("type"));
                         }
-                        arrayList.add(method30413.method323("id"));
+                        arrayList.add(method30413.getString("id"));
                         this.method3032(arrayList, n, n2);
                     }
                     catch (final CommandSyntaxException | JsonSyntaxException ex2) {
@@ -429,9 +429,9 @@ public abstract class Class527 extends Class598 implements Class563
             runnable.run();
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, s);
-            method24421.method24418("Affected screen").method16296("Screen name", () -> s3);
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, s);
+            method24421.makeCategory("Affected screen").addDetail("Screen name", () -> s3);
+            throw new ReportedException(method24421);
         }
     }
     

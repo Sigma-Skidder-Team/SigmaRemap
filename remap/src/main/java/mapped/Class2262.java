@@ -23,16 +23,16 @@ public class Class2262 extends ForwardingList<ItemStack>
         return this.field13822;
     }
     
-    public Class52 method8504() {
-        final Class52 class52 = new Class52();
+    public ListNBT method8504() {
+        final ListNBT class52 = new ListNBT();
         final Iterator<ItemStack> iterator = this.delegate().iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<Class51>)class52).add(iterator.next().method27627(new Class51()));
+            ((AbstractList<CompoundNBT>)class52).add(iterator.next().method27627(new CompoundNBT()));
         }
         return class52;
     }
     
-    public void method8505(final Class52 class52) {
+    public void method8505(final ListNBT class52) {
         final List<ItemStack> delegate = this.delegate();
         for (int i = 0; i < delegate.size(); ++i) {
             delegate.set(i, ItemStack.method27619(class52.method346(i)));

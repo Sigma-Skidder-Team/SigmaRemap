@@ -31,19 +31,19 @@ public class Class463 extends TileEntity implements INameable, Class439
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         if (this.hasCustomName()) {
-            class51.method306("CustomName", Class5953.method17869(this.field2738));
+            class51.putString("CustomName", Class5953.method17869(this.field2738));
         }
         return class51;
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        if (class51.method316("CustomName", 8)) {
-            this.field2738 = Class5953.method17871(class51.method323("CustomName"));
+        if (class51.contains("CustomName", 8)) {
+            this.field2738 = Class5953.method17871(class51.getString("CustomName"));
         }
     }
     

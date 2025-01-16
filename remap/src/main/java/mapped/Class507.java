@@ -61,18 +61,18 @@ public class Class507 extends Entity
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field2891 = class51.method319("Warmup");
-        if (class51.method302("OwnerUUID")) {
-            this.field2896 = class51.method301("OwnerUUID");
+    public void method1760(final CompoundNBT class51) {
+        this.field2891 = class51.getInt("Warmup");
+        if (class51.hasUniqueId("OwnerUUID")) {
+            this.field2896 = class51.getUniqueId("OwnerUUID");
         }
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method298("Warmup", this.field2891);
+    public void method1761(final CompoundNBT class51) {
+        class51.putInt("Warmup", this.field2891);
         if (this.field2896 != null) {
-            class51.method300("OwnerUUID", this.field2896);
+            class51.putUniqueId("OwnerUUID", this.field2896);
         }
     }
     

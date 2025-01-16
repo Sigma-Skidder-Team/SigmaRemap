@@ -36,8 +36,8 @@ public class Class9380
     }
     
     @Nullable
-    public static Class5936 method34831(final Class6346<?> class6346, final Class1795 class6347, final Class51 class6348) {
-        final String method323 = class6348.method323("id");
+    public static Class5936 method34831(final Class6346<?> class6346, final Class1795 class6347, final CompoundNBT class6348) {
+        final String method323 = class6348.getString("id");
         if ("INVALID".equals(method323)) {
             return Class5936.field24429;
         }
@@ -46,16 +46,16 @@ public class Class9380
             Class9380.field40225.error("Unknown feature id: {}", (Object)method323);
             return null;
         }
-        final int method324 = class6348.method319("ChunkX");
-        final int method325 = class6348.method319("ChunkZ");
-        final int method326 = class6348.method319("references");
-        final MutableBoundingBox class6350 = class6348.method315("BB") ? new MutableBoundingBox(class6348.method325("BB")) : MutableBoundingBox.getNewBoundingBox();
-        final Class52 method327 = class6348.method328("Children", 10);
+        final int method324 = class6348.getInt("ChunkX");
+        final int method325 = class6348.getInt("ChunkZ");
+        final int method326 = class6348.getInt("references");
+        final MutableBoundingBox class6350 = class6348.contains("BB") ? new MutableBoundingBox(class6348.getIntArray("BB")) : MutableBoundingBox.getNewBoundingBox();
+        final ListNBT method327 = class6348.getList("Children", 10);
         try {
             final Class5936 method328 = class6349.method13595().method19048(class6349, method324, method325, class6350, method326, class6346.method18880());
             for (int i = 0; i < method327.size(); ++i) {
-                final Class51 method329 = method327.method346(i);
-                final String method330 = method329.method323("id");
+                final CompoundNBT method329 = method327.method346(i);
+                final String method330 = method329.getString("id");
                 final Class9520 class6351 = Registry.field231.getOrDefault(new ResourceLocation(method330.toLowerCase(Locale.ROOT)));
                 if (class6351 == null) {
                     Class9380.field40225.error("Unknown structure piece id: {}", (Object)method330);

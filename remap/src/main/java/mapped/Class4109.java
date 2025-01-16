@@ -23,7 +23,7 @@ public class Class4109 extends Class4107
         if (class1855.field38249.getBlock() != Class7521.field29821) {
             return class1855;
         }
-        final Class7572 class1857 = new Class7572(new StringReader(class1855.field38250.method323("final_state")), false);
+        final Class7572 class1857 = new Class7572(new StringReader(class1855.field38250.getString("final_state")), false);
         try {
             class1857.method23802(true);
         }

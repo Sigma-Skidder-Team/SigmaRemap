@@ -21,15 +21,15 @@ public class Class4501 extends Class4500
         this.field19897 = (field19849.getYSize() > 6);
     }
     
-    public Class4501(final Class1795 class1795, final Class51 class1796) {
+    public Class4501(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40968, class1796);
-        this.field19897 = class1796.method329("Tall");
+        this.field19897 = class1796.getBoolean("Tall");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method312("Tall", this.field19897);
+        class51.putBoolean("Tall", this.field19897);
     }
     
     public static Class4501 method13498(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4) {

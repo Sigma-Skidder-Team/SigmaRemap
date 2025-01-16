@@ -292,11 +292,11 @@ public class Class1793 implements Class1662
             class6173.method18420();
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Ticking Particle");
-            final Class5204 method24422 = method24421.method24418("Particle being ticked");
-            method24422.method16296("Particle", class6173::toString);
-            method24422.method16296("Particle Type", class6173.method18418()::toString);
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Ticking Particle");
+            final CrashReportCategory method24422 = method24421.makeCategory("Particle being ticked");
+            method24422.addDetail("Particle", class6173::toString);
+            method24422.addDetail("Particle Type", class6173.method18418()::toString);
+            throw new ReportedException(method24421);
         }
     }
     
@@ -331,11 +331,11 @@ public class Class1793 implements Class1662
                         class7356.method18432(method22695, class7354, n);
                     }
                     catch (final Throwable t) {
-                        final Class7689 method22696 = Class7689.method24421(t, "Rendering Particle");
-                        final Class5204 method22697 = method22696.method24418("Particle being rendered");
-                        method22697.method16296("Particle", class7356::toString);
-                        method22697.method16296("Particle Type", class7355::toString);
-                        throw new Class2365(method22696);
+                        final CrashReport method22696 = CrashReport.makeCrashReport(t, "Rendering Particle");
+                        final CrashReportCategory method22697 = method22696.makeCategory("Particle being rendered");
+                        method22697.addDetail("Particle", class7356::toString);
+                        method22697.addDetail("Particle Type", class7355::toString);
+                        throw new ReportedException(method22696);
                     }
                 }
                 class7355.method19305(method22694);

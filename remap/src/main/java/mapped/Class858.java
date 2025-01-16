@@ -56,20 +56,20 @@ public class Class858 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         if (this.method5183() != null) {
-            class51.method295("BeamTarget", Class9346.method34646(this.method5183()));
+            class51.put("BeamTarget", Class9346.method34646(this.method5183()));
         }
-        class51.method312("ShowBottom", this.method5185());
+        class51.putBoolean("ShowBottom", this.method5185());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        if (class51.method316("BeamTarget", 10)) {
-            this.method5182(Class9346.method34645(class51.method327("BeamTarget")));
+    public void method1760(final CompoundNBT class51) {
+        if (class51.contains("BeamTarget", 10)) {
+            this.method5182(Class9346.method34645(class51.getCompound("BeamTarget")));
         }
-        if (class51.method316("ShowBottom", 1)) {
-            this.method5184(class51.method329("ShowBottom"));
+        if (class51.contains("ShowBottom", 1)) {
+            this.method5184(class51.getBoolean("ShowBottom"));
         }
     }
     

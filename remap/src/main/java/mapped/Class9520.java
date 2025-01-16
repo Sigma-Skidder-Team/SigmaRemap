@@ -64,7 +64,7 @@ public interface Class9520
     public static final Class9520 field40996 = method35541(Class4474::new, "BTP");
     public static final Class9520 field40997 = method35541(Class4519::new, "Shipwreck");
     
-    Class4473 method35540(final Class1795 p0, final Class51 p1);
+    Class4473 method35540(final Class1795 p0, final CompoundNBT p1);
     
     default Class9520 method35541(final Class9520 class9520, final String s) {
         return Registry.method511(Registry.field231, s.toLowerCase(Locale.ROOT), class9520);

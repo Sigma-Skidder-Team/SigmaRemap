@@ -48,20 +48,20 @@ public class Class498 extends TileEntity
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
-        class51.method306("attachement_type", this.field2855.toString());
-        class51.method306("target_pool", this.field2856.toString());
-        class51.method306("final_state", this.field2857);
+        class51.putString("attachement_type", this.field2855.toString());
+        class51.putString("target_pool", this.field2856.toString());
+        class51.putString("final_state", this.field2857);
         return class51;
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2855 = new ResourceLocation(class51.method323("attachement_type"));
-        this.field2856 = new ResourceLocation(class51.method323("target_pool"));
-        this.field2857 = class51.method323("final_state");
+        this.field2855 = new ResourceLocation(class51.getString("attachement_type"));
+        this.field2856 = new ResourceLocation(class51.getString("target_pool"));
+        this.field2857 = class51.getString("final_state");
     }
     
     @Nullable
@@ -71,7 +71,7 @@ public class Class498 extends TileEntity
     }
     
     @Override
-    public Class51 method2196() {
-        return this.method2180(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2180(new CompoundNBT());
     }
 }

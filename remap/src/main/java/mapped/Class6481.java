@@ -35,7 +35,7 @@ public class Class6481 extends Class6480
     }
     
     @Override
-    public Class74 method19508(final Class51 class51) {
+    public Class74 method19508(final CompoundNBT class51) {
         if (class51 == null) {
             return null;
         }

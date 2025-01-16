@@ -9,9 +9,9 @@ import net.minecraft.nbt.INBTType;
 import java.io.IOException;
 import java.io.DataInput;
 
-public final class Class6080 implements INBTType<Class39>
+public final class Class6080 implements INBTType<LongArrayNBT>
 {
-    public Class39 method18135(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
+    public LongArrayNBT method18135(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
         class7553.read(192L);
         final int int1 = dataInput.readInt();
         class7553.read(64L * int1);
@@ -19,7 +19,7 @@ public final class Class6080 implements INBTType<Class39>
         for (int i = 0; i < int1; ++i) {
             array[i] = dataInput.readLong();
         }
-        return new Class39(array);
+        return new LongArrayNBT(array);
     }
     
     @Override

@@ -54,7 +54,7 @@ public class Class771 extends Class770
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
     }
     
@@ -64,7 +64,7 @@ public class Class771 extends Class770
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
     }
     

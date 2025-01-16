@@ -32,17 +32,17 @@ public class Class7271<C>
         return (Class6810)this.field28168.get(clazz);
     }
     
-    public <T extends Class8183<C>> Class51 method22279(final T t) {
+    public <T extends Class8183<C>> CompoundNBT method22279(final T t) {
         final Class6810<C, Class8183> method22278 = this.method22278(t.getClass());
-        final Class51 class51 = new Class51();
+        final CompoundNBT class51 = new CompoundNBT();
         method22278.method20843(class51, t);
-        class51.method306("Type", method22278.method20844().toString());
+        class51.putString("Type", method22278.method20844().toString());
         return class51;
     }
     
     @Nullable
-    public Class8183<C> method22280(final Class51 class51) {
-        final Class6810 class52 = this.field28167.get(ResourceLocation.method7795(class51.method323("Type")));
+    public Class8183<C> method22280(final CompoundNBT class51) {
+        final Class6810 class52 = this.field28167.get(ResourceLocation.method7795(class51.getString("Type")));
         if (class52 == null) {
             Class7271.field28165.error("Failed to deserialize timer callback: " + class51);
             return null;

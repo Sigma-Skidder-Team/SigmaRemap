@@ -25,21 +25,21 @@ import java.io.InputStream;
 
 public class Class8097
 {
-    public static Class51 method26590(final InputStream in) throws IOException {
-        Class51 method26596;
+    public static CompoundNBT method26590(final InputStream in) throws IOException {
+        CompoundNBT method26596;
         try (final DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(new GZIPInputStream(in)))) {
             method26596 = method26596(dataInputStream, NBTSizeTracker.INFINITE);
         }
         return method26596;
     }
     
-    public static void method26591(final Class51 class51, final OutputStream out) throws IOException {
+    public static void method26591(final CompoundNBT class51, final OutputStream out) throws IOException {
         try (final DataOutputStream dataOutputStream = new DataOutputStream(new BufferedOutputStream(new GZIPOutputStream(out)))) {
             method26597(class51, dataOutputStream);
         }
     }
     
-    public static void method26592(final Class51 class51, final File file) throws IOException {
+    public static void method26592(final CompoundNBT class51, final File file) throws IOException {
         final File file2 = new File(file.getAbsolutePath() + "_tmp");
         if (file2.exists()) {
             file2.delete();
@@ -55,7 +55,7 @@ public class Class8097
         throw new IOException("Failed to delete " + file);
     }
     
-    public static void method26593(final Class51 class51, final File file) throws IOException {
+    public static void method26593(final CompoundNBT class51, final File file) throws IOException {
         final DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(file));
         try {
             method26597(class51, dataOutputStream);
@@ -66,12 +66,12 @@ public class Class8097
     }
     
     @Nullable
-    public static Class51 method26594(final File file) throws IOException {
+    public static CompoundNBT method26594(final File file) throws IOException {
         if (!file.exists()) {
             return null;
         }
         final DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
-        Class51 method26596;
+        CompoundNBT method26596;
         try {
             method26596 = method26596(dataInputStream, NBTSizeTracker.INFINITE);
         }
@@ -81,19 +81,19 @@ public class Class8097
         return method26596;
     }
     
-    public static Class51 method26595(final DataInputStream dataInputStream) throws IOException {
+    public static CompoundNBT method26595(final DataInputStream dataInputStream) throws IOException {
         return method26596(dataInputStream, NBTSizeTracker.INFINITE);
     }
     
-    public static Class51 method26596(final DataInput dataInput, final NBTSizeTracker class7553) throws IOException {
+    public static CompoundNBT method26596(final DataInput dataInput, final NBTSizeTracker class7553) throws IOException {
         final INBT method26599 = method26599(dataInput, 0, class7553);
-        if (!(method26599 instanceof Class51)) {
+        if (!(method26599 instanceof CompoundNBT)) {
             throw new IOException("Root tag must be a named compound tag");
         }
-        return (Class51)method26599;
+        return (CompoundNBT)method26599;
     }
     
-    public static void method26597(final Class51 class51, final DataOutput dataOutput) throws IOException {
+    public static void method26597(final CompoundNBT class51, final DataOutput dataOutput) throws IOException {
         method26598(class51, dataOutput);
     }
     
@@ -112,12 +112,12 @@ public class Class8097
         }
         dataInput.readUTF();
         try {
-            return (INBT)Class7638.method24059(byte1).func_225649_b_(dataInput, n, class7553);
+            return (INBT) NBTTypes.func_229710_a_(byte1).func_225649_b_(dataInput, n, class7553);
         }
         catch (final IOException ex) {
-            final Class7689 method24421 = Class7689.method24421(ex, "Loading NBT data");
-            method24421.method24418("NBT Tag").method16297("Tag type", byte1);
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(ex, "Loading NBT data");
+            method24421.makeCategory("NBT Tag").addDetail("Tag type", byte1);
+            throw new ReportedException(method24421);
         }
     }
 }

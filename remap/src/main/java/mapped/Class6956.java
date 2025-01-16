@@ -49,17 +49,17 @@ public class Class6956<T> implements Class6952<T>
         return this.field27232.stream();
     }
     
-    public Class52 method21358(final long n) {
+    public ListNBT method21358(final long n) {
         return Class6953.method21352(this.field27233, this.field27232, n);
     }
     
-    public static <T> Class6956<T> method21359(final Class52 class52, final Function<T, ResourceLocation> function, final Function<ResourceLocation, T> function2) {
+    public static <T> Class6956<T> method21359(final ListNBT class52, final Function<T, ResourceLocation> function, final Function<ResourceLocation, T> function2) {
         final HashSet hashSet = Sets.newHashSet();
         for (int i = 0; i < class52.size(); ++i) {
-            final Class51 method346 = class52.method346(i);
-            final T apply = function2.apply(new ResourceLocation(method346.method323("i")));
+            final CompoundNBT method346 = class52.method346(i);
+            final T apply = function2.apply(new ResourceLocation(method346.getString("i")));
             if (apply != null) {
-                hashSet.add(new Class7460(new BlockPos(method346.method319("x"), method346.method319("y"), method346.method319("z")), apply, method346.method319("t"), Class1955.method7940(method346.method319("p"))));
+                hashSet.add(new Class7460(new BlockPos(method346.getInt("x"), method346.getInt("y"), method346.getInt("z")), apply, method346.getInt("t"), Class1955.method7940(method346.getInt("p"))));
             }
         }
         return new Class6956<T>((Function<Object, ResourceLocation>)function, hashSet);

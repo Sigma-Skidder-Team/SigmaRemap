@@ -57,7 +57,7 @@ public class Class3673 extends Class3666
         }
         final ItemStack method2159 = Class3942.method12061(class474.method11767());
         if (field34174.method27656()) {
-            method2159.method27663(field34174.method27657().method333());
+            method2159.method27663(field34174.method27657().copy());
         }
         return method2159;
     }

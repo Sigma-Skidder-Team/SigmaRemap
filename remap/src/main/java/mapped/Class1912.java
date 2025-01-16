@@ -191,8 +191,8 @@ public class Class1912 implements AutoCloseable
                 this.field10369 = Class8767.method30398(class9337, n);
             }
             catch (final Throwable t) {
-                final Class7689 method34603 = Class7689.method24421(t, "Generating mipmaps for frame");
-                method34603.method24418("Frame being iterated").method16296("First frame", () -> {
+                final CrashReport method34603 = CrashReport.makeCrashReport(t, "Generating mipmaps for frame");
+                method34603.makeCategory("Frame being iterated").addDetail("First frame", () -> {
                     final StringBuilder sb = new StringBuilder();
                     if (sb.length() > 0) {
                         sb.append(", ");
@@ -200,17 +200,17 @@ public class Class1912 implements AutoCloseable
                     sb.append(class9338.method6644()).append("x").append(class9338.method6645());
                     return sb.toString();
                 });
-                throw new Class2365(method34603);
+                throw new ReportedException(method34603);
             }
         }
         catch (final Throwable t2) {
-            final Class7689 method34604 = Class7689.method24421(t2, "Applying mipmap");
-            final Class5204 method34605 = method34604.method24418("Sprite being mipmapped");
-            method34605.method16296("Sprite name", () -> this.method7503().toString());
-            method34605.method16296("Sprite size", () -> this.method7495() + " x " + this.method7496());
-            method34605.method16296("Sprite frames", () -> this.method7505() + " frames");
-            method34605.method16297("Mipmap levels", n);
-            throw new Class2365(method34604);
+            final CrashReport method34604 = CrashReport.makeCrashReport(t2, "Applying mipmap");
+            final CrashReportCategory method34605 = method34604.makeCategory("Sprite being mipmapped");
+            method34605.addDetail("Sprite name", () -> this.method7503().toString());
+            method34605.addDetail("Sprite size", () -> this.method7495() + " x " + this.method7496());
+            method34605.addDetail("Sprite frames", () -> this.method7505() + " frames");
+            method34605.addDetail("Mipmap levels", n);
+            throw new ReportedException(method34604);
         }
         if (method34599.method29308()) {
             this.field10372 = new Class393(this, class9336, n, null);

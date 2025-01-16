@@ -97,28 +97,28 @@ public class Class793 extends Class789
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("HomePosX", this.method4453().getX());
-        class51.method298("HomePosY", this.method4453().getY());
-        class51.method298("HomePosZ", this.method4453().getZ());
-        class51.method312("HasEgg", this.method4456());
-        class51.method298("TravelPosX", this.method4455().getX());
-        class51.method298("TravelPosY", this.method4455().getY());
-        class51.method298("TravelPosZ", this.method4455().getZ());
+        class51.putInt("HomePosX", this.method4453().getX());
+        class51.putInt("HomePosY", this.method4453().getY());
+        class51.putInt("HomePosZ", this.method4453().getZ());
+        class51.putBoolean("HasEgg", this.method4456());
+        class51.putInt("TravelPosX", this.method4455().getX());
+        class51.putInt("TravelPosY", this.method4455().getY());
+        class51.putInt("TravelPosZ", this.method4455().getZ());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.method4452(new BlockPos(class51.method319("HomePosX"), class51.method319("HomePosY"), class51.method319("HomePosZ")));
+    public void method1760(final CompoundNBT class51) {
+        this.method4452(new BlockPos(class51.getInt("HomePosX"), class51.getInt("HomePosY"), class51.getInt("HomePosZ")));
         super.method1760(class51);
-        this.method4457(class51.method329("HasEgg"));
-        this.method4454(new BlockPos(class51.method319("TravelPosX"), class51.method319("TravelPosY"), class51.method319("TravelPosZ")));
+        this.method4457(class51.getBoolean("HasEgg"));
+        this.method4454(new BlockPos(class51.getInt("TravelPosX"), class51.getInt("TravelPosY"), class51.getInt("TravelPosZ")));
     }
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.method4452(new BlockPos(this));
         this.method4454(BlockPos.ZERO);
         return super.method4188(class1851, class1852, class1853, class1854, class1855);

@@ -98,7 +98,7 @@ public abstract class Class780 extends Class763 implements Class768
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final Class51 class1854) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         this.method4184(class1852);
         this.method4187(class1852);
@@ -155,7 +155,7 @@ public abstract class Class780 extends Class763 implements Class768
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
         this.method4329();
     }

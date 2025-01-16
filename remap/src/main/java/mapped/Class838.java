@@ -50,15 +50,15 @@ public class Class838 extends Class833
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("PuffState", this.method4988());
+        class51.putInt("PuffState", this.method4988());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4989(class51.method319("PuffState"));
+        this.method4989(class51.getInt("PuffState"));
     }
     
     @Override

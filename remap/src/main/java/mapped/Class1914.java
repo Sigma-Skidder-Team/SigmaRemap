@@ -5,7 +5,7 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.function.BiConsumer;
+
 import java.util.Iterator;
 import java.util.concurrent.locks.LockSupport;
 import java.util.function.Function;
@@ -42,7 +42,7 @@ public class Class1914 implements AutoCloseable
         this.field10407.start();
     }
     
-    public CompletableFuture<Void> method7556(final Class7859 class7859, final Class51 class7860) {
+    public CompletableFuture<Void> method7556(final Class7859 class7859, final CompoundNBT class7860) {
         return this.method7560(p2 -> () -> {
             final Class7312 class7862 = this.field10411.computeIfAbsent(key, p0 -> new Class7312(null));
             Class7312.method22430(class7862, class7861);
@@ -58,8 +58,8 @@ public class Class1914 implements AutoCloseable
     }
     
     @Nullable
-    public Class51 method7557(final Class7859 class7859) throws IOException {
-        final CompletableFuture<Class51> method7560 = this.method7560(p1 -> () -> {
+    public CompoundNBT method7557(final Class7859 class7859) throws IOException {
+        final CompletableFuture<CompoundNBT> method7560 = this.method7560(p1 -> () -> {
             final Class7312 class7861 = this.field10411.get(class7860);
             if (class7861 != null) {
                 completableFuture2.complete(Class7312.method22428(class7861));

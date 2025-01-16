@@ -763,33 +763,33 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method312("EatingHaystack", this.method4721());
-        class51.method312("Bred", this.method4723());
-        class51.method298("Temper", this.method4726());
-        class51.method312("Tame", this.method4715());
+        class51.putBoolean("EatingHaystack", this.method4721());
+        class51.putBoolean("Bred", this.method4723());
+        class51.putInt("Temper", this.method4726());
+        class51.putBoolean("Tame", this.method4715());
         if (this.method4716() != null) {
-            class51.method306("OwnerUUID", this.method4716().toString());
+            class51.putString("OwnerUUID", this.method4716().toString());
         }
         if (!this.field4342.method2157(0).method27620()) {
-            class51.method295("SaddleItem", this.field4342.method2157(0).method27627(new Class51()));
+            class51.put("SaddleItem", this.field4342.method2157(0).method27627(new CompoundNBT()));
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4747(class51.method329("EatingHaystack"));
-        this.method4724(class51.method329("Bred"));
-        this.method4727(class51.method319("Temper"));
-        this.method4719(class51.method329("Tame"));
+        this.method4747(class51.getBoolean("EatingHaystack"));
+        this.method4724(class51.getBoolean("Bred"));
+        this.method4727(class51.getInt("Temper"));
+        this.method4719(class51.getBoolean("Tame"));
         String name;
-        if (!class51.method316("OwnerUUID", 8)) {
-            name = Class7450.method22924(this.method1897(), class51.method323("Owner"));
+        if (!class51.contains("OwnerUUID", 8)) {
+            name = Class7450.method22924(this.method1897(), class51.getString("Owner"));
         }
         else {
-            name = class51.method323("OwnerUUID");
+            name = class51.getString("OwnerUUID");
         }
         if (!name.isEmpty()) {
             this.method4717(UUID.fromString(name));
@@ -798,8 +798,8 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (method20878 != null) {
             this.method2710(Class8107.field33408).method23941(method20878.method23940() * 0.25);
         }
-        if (class51.method316("SaddleItem", 10)) {
-            final ItemStack method20879 = ItemStack.method27619(class51.method327("SaddleItem"));
+        if (class51.contains("SaddleItem", 10)) {
+            final ItemStack method20879 = ItemStack.method27619(class51.getCompound("SaddleItem"));
             if (method20879.getItem() == Items.field31353) {
                 this.field4342.method2160(0, method20879);
             }
@@ -995,7 +995,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         if (class1854 == null) {
             class1854 = new Class5497();
             ((Class5497)class1854).method16803(0.2f);

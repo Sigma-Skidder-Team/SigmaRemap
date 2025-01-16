@@ -32,7 +32,7 @@ public class Class2257 extends Class2255
         }
     }
     
-    private Class2257(final String s, final Class8570 class8570, final boolean b, final String field13806, final Class5346 field13807) {
+    private Class2257(final String s, final NBTPath class8570, final boolean b, final String field13806, final Class5346 field13807) {
         super(s, class8570, b);
         this.field13806 = field13806;
         this.field13807 = field13807;
@@ -49,14 +49,14 @@ public class Class2257 extends Class2255
     }
     
     @Override
-    public Stream<Class51> method8481(final Class7492 class7492) {
+    public Stream<CompoundNBT> method8481(final Class7492 class7492) {
         if (this.field13807 != null) {
             final Class1849 method23250 = class7492.method23250();
             final BlockPos method23251 = this.field13807.method16506(class7492);
             if (method23250.method6731(method23251)) {
                 final TileEntity method23252 = method23250.getTileEntity(method23251);
                 if (method23252 != null) {
-                    return Stream.of(method23252.method2180(new Class51()));
+                    return Stream.of(method23252.method2180(new CompoundNBT()));
                 }
             }
         }

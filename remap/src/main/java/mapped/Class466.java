@@ -121,30 +121,30 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
         Class8508.method28426(class51, this.field2755 = Class2265.method8507(this.method2239(), ItemStack.field34174));
-        this.field2756 = class51.method318("BurnTime");
-        this.field2758 = class51.method318("CookTime");
-        this.field2759 = class51.method318("CookTimeTotal");
+        this.field2756 = class51.getShort("BurnTime");
+        this.field2758 = class51.getShort("CookTime");
+        this.field2759 = class51.getShort("CookTimeTotal");
         this.field2757 = this.method2398(this.field2755.get(1));
-        for (short method318 = class51.method318("RecipesUsedSize"), n = 0; n < method318; ++n) {
-            this.field2761.put(new ResourceLocation(class51.method323("RecipeLocation" + n)), class51.method319("RecipeAmount" + n));
+        for (short method318 = class51.getShort("RecipesUsedSize"), n = 0; n < method318; ++n) {
+            this.field2761.put(new ResourceLocation(class51.getString("RecipeLocation" + n)), class51.getInt("RecipeAmount" + n));
         }
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
-        class51.method297("BurnTime", (short)this.field2756);
-        class51.method297("CookTime", (short)this.field2758);
-        class51.method297("CookTimeTotal", (short)this.field2759);
+        class51.putShort("BurnTime", (short)this.field2756);
+        class51.putShort("CookTime", (short)this.field2758);
+        class51.putShort("CookTimeTotal", (short)this.field2759);
         Class8508.method28424(class51, this.field2755);
-        class51.method297("RecipesUsedSize", (short)this.field2761.size());
+        class51.putShort("RecipesUsedSize", (short)this.field2761.size());
         int n = 0;
         for (final Map.Entry<ResourceLocation, V> entry : this.field2761.entrySet()) {
-            class51.method306("RecipeLocation" + n, entry.getKey().toString());
-            class51.method298("RecipeAmount" + n, (int)entry.getValue());
+            class51.putString("RecipeLocation" + n, entry.getKey().toString());
+            class51.putInt("RecipeAmount" + n, (int)entry.getValue());
             ++n;
         }
         return class51;

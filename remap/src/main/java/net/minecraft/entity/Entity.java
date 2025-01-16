@@ -487,9 +487,9 @@ public abstract class Entity implements INameable, ICommandSource {
                 this.inLava = false;
                 this.method1689();
             } catch (final Throwable t) {
-                final Class7689 method1685 = Class7689.method24421(t, "Checking entity block collision");
-                this.method1862(method1685.method24418("Entity being checked for collision"));
-                throw new Class2365(method1685);
+                final CrashReport method1685 = CrashReport.makeCrashReport(t, "Checking entity block collision");
+                this.method1862(method1685.makeCategory("Entity being checked for collision"));
+                throw new ReportedException(method1685);
             }
             this.method1936(this.getMotion().mul(this.method1674(), 1.0, this.method1674()));
             final boolean method1686 = this.method1710();
@@ -746,9 +746,9 @@ public abstract class Entity implements INameable, ICommandSource {
                                 method1890.method21741(this.world, method1889, this);
                                 this.method1690(method1890);
                             } catch (final Throwable t4) {
-                                final Class7689 method1891 = Class7689.method24421(t4, "Colliding entity with block");
-                                Class5204.method16304(method1891.method24418("Block being collided with"), method1889, method1890);
-                                throw new Class2365(method1891);
+                                final CrashReport method1891 = CrashReport.makeCrashReport(t4, "Colliding entity with block");
+                                CrashReportCategory.method16304(method1891.makeCategory("Block being collided with"), method1889, method1890);
+                                throw new ReportedException(method1891);
                             }
                         }
                     }
@@ -1217,84 +1217,84 @@ public abstract class Entity implements INameable, ICommandSource {
         return n < n2 * n2;
     }
 
-    public boolean method1754(final Class51 class51) {
+    public boolean method1754(final CompoundNBT class51) {
         final String method1759 = this.method1759();
         if (!this.removed && method1759 != null) {
-            class51.method306("id", method1759);
+            class51.putString("id", method1759);
             this.method1756(class51);
             return true;
         }
         return false;
     }
 
-    public boolean method1755(final Class51 class51) {
+    public boolean method1755(final CompoundNBT class51) {
         return !this.isPassenger() && this.method1754(class51);
     }
 
-    public Class51 method1756(final Class51 class51) {
+    public CompoundNBT method1756(final CompoundNBT class51) {
         try {
-            class51.method295("Pos", this.method1762(this.getPosX(), this.getPosY(), this.getPosZ()));
+            class51.put("Pos", this.method1762(this.getPosX(), this.getPosY(), this.getPosZ()));
             final Vec3d method1935 = this.getMotion();
-            class51.method295("Motion", this.method1762(method1935.x, method1935.y, method1935.z));
-            class51.method295("Rotation", this.method1763(this.rotationYaw, this.rotationPitch));
-            class51.method304("FallDistance", this.fallDistance);
-            class51.method297("Fire", (short) this.fire);
-            class51.method297("Air", (short) this.getAir());
-            class51.method312("OnGround", this.onGround);
-            class51.method298("Dimension", this.dimension.method1270());
-            class51.method312("Invulnerable", this.invulnerable);
-            class51.method298("PortalCooldown", this.timeUntilPortal);
-            class51.method300("UUID", this.method1865());
+            class51.put("Motion", this.method1762(method1935.x, method1935.y, method1935.z));
+            class51.put("Rotation", this.method1763(this.rotationYaw, this.rotationPitch));
+            class51.putFloat("FallDistance", this.fallDistance);
+            class51.putShort("Fire", (short) this.fire);
+            class51.putShort("Air", (short) this.getAir());
+            class51.putBoolean("OnGround", this.onGround);
+            class51.putInt("Dimension", this.dimension.method1270());
+            class51.putBoolean("Invulnerable", this.invulnerable);
+            class51.putInt("PortalCooldown", this.timeUntilPortal);
+            class51.putUniqueId("UUID", this.method1865());
             final ITextComponent method1936 = this.getCustomName();
             if (method1936 != null) {
-                class51.method306("CustomName", Class5953.method17869(method1936));
+                class51.putString("CustomName", Class5953.method17869(method1936));
             }
             if (this.method1876()) {
-                class51.method312("CustomNameVisible", this.method1876());
+                class51.putBoolean("CustomNameVisible", this.method1876());
             }
             if (this.method1696()) {
-                class51.method312("Silent", this.method1696());
+                class51.putBoolean("Silent", this.method1696());
             }
             if (this.method1698()) {
-                class51.method312("NoGravity", this.method1698());
+                class51.putBoolean("NoGravity", this.method1698());
             }
             if (this.glowing) {
-                class51.method312("Glowing", this.glowing);
+                class51.putBoolean("Glowing", this.glowing);
             }
             if (!this.tags.isEmpty()) {
-                final Class52 class52 = new Class52();
+                final ListNBT class52 = new ListNBT();
                 final Iterator<String> iterator = this.tags.iterator();
                 while (iterator.hasNext()) {
-                    class52.add(Class50.method290(iterator.next()));
+                    class52.add(StringNBT.method290(iterator.next()));
                 }
-                class51.method295("Tags", class52);
+                class51.put("Tags", class52);
             }
             this.method1761(class51);
             if (this.isBeingRidden()) {
-                final Class52 class53 = new Class52();
+                final ListNBT class53 = new ListNBT();
                 for (final Entity class54 : this.method1908()) {
-                    final Class51 e = new Class51();
+                    final CompoundNBT e = new CompoundNBT();
                     if (class54.method1754(e)) {
                         class53.add(e);
                     }
                 }
                 if (!class53.isEmpty()) {
-                    class51.method295("Passengers", class53);
+                    class51.put("Passengers", class53);
                 }
             }
             return class51;
         } catch (final Throwable t) {
-            final Class7689 method1937 = Class7689.method24421(t, "Saving entity NBT");
-            this.method1862(method1937.method24418("Entity being saved"));
-            throw new Class2365(method1937);
+            final CrashReport method1937 = CrashReport.makeCrashReport(t, "Saving entity NBT");
+            this.method1862(method1937.makeCategory("Entity being saved"));
+            throw new ReportedException(method1937);
         }
     }
 
-    public void method1757(final Class51 class51) {
+    public void method1757(final CompoundNBT class51) {
         try {
-            final Class52 method328 = class51.method328("Pos", 6);
-            final Class52 method329 = class51.method328("Motion", 6);
-            final Class52 method330 = class51.method328("Rotation", 5);
+            final ListNBT method328 = class51.getList("Pos", 6);
+            final ListNBT method329 = class51.getList("Motion", 6);
+            final ListNBT method330 = class51.getList("Rotation", 5);
             final double method331 = method329.method351(0);
             final double method332 = method329.method351(1);
             final double method333 = method329.method351(2);
@@ -1306,17 +1306,17 @@ public abstract class Entity implements INameable, ICommandSource {
             this.prevRotationPitch = this.rotationPitch;
             this.method1845(this.rotationYaw);
             this.method1846(this.rotationYaw);
-            this.fallDistance = class51.method321("FallDistance");
-            this.fire = class51.method318("Fire");
-            this.setAir(class51.method318("Air"));
-            this.onGround = class51.method329("OnGround");
-            if (class51.method315("Dimension")) {
-                this.dimension = DimensionType.method1274(class51.method319("Dimension"));
+            this.fallDistance = class51.getFloat("FallDistance");
+            this.fire = class51.getShort("Fire");
+            this.setAir(class51.getShort("Air"));
+            this.onGround = class51.getBoolean("OnGround");
+            if (class51.contains("Dimension")) {
+                this.dimension = DimensionType.method1274(class51.getInt("Dimension"));
             }
-            this.invulnerable = class51.method329("Invulnerable");
-            this.timeUntilPortal = class51.method319("PortalCooldown");
-            if (class51.method302("UUID")) {
-                this.entityUniqueID = class51.method301("UUID");
+            this.invulnerable = class51.getBoolean("Invulnerable");
+            this.timeUntilPortal = class51.getInt("PortalCooldown");
+            if (class51.hasUniqueId("UUID")) {
+                this.entityUniqueID = class51.getUniqueId("UUID");
                 this.cachedUniqueIdString = this.entityUniqueID.toString();
             }
             if (!Double.isFinite(this.getPosX()) || !Double.isFinite(this.getPosY()) || !Double.isFinite(this.getPosZ())) {
@@ -1327,16 +1327,16 @@ public abstract class Entity implements INameable, ICommandSource {
             }
             this.method1657();
             this.method1655(this.rotationYaw, this.rotationPitch);
-            if (class51.method316("CustomName", 8)) {
-                this.method1872(Class5953.method17871(class51.method323("CustomName")));
+            if (class51.contains("CustomName", 8)) {
+                this.method1872(Class5953.method17871(class51.getString("CustomName")));
             }
-            this.method1875(class51.method329("CustomNameVisible"));
-            this.method1697(class51.method329("Silent"));
-            this.method1699(class51.method329("NoGravity"));
-            this.method1822(class51.method329("Glowing"));
-            if (class51.method316("Tags", 9)) {
+            this.method1875(class51.getBoolean("CustomNameVisible"));
+            this.method1697(class51.getBoolean("Silent"));
+            this.method1699(class51.getBoolean("NoGravity"));
+            this.method1822(class51.getBoolean("Glowing"));
+            if (class51.contains("Tags", 9)) {
                 this.tags.clear();
-                final Class52 method334 = class51.method328("Tags", 8);
+                final ListNBT method334 = class51.getList("Tags", 8);
                 for (int min = Math.min(method334.size(), 1024), i = 0; i < min; ++i) {
                     this.tags.add(method334.method353(i));
                 }
@@ -1346,9 +1346,9 @@ public abstract class Entity implements INameable, ICommandSource {
                 this.method1657();
             }
         } catch (final Throwable t) {
-            final Class7689 method335 = Class7689.method24421(t, "Loading entity NBT");
-            this.method1862(method335.method24418("Entity being loaded"));
-            throw new Class2365(method335);
+            final CrashReport method335 = CrashReport.makeCrashReport(t, "Loading entity NBT");
+            this.method1862(method335.makeCategory("Entity being loaded"));
+            throw new ReportedException(method335);
         }
     }
 
@@ -1363,22 +1363,22 @@ public abstract class Entity implements INameable, ICommandSource {
         return (method1642.method23361() && method1643 != null) ? method1643.toString() : null;
     }
 
-    public abstract void method1760(final Class51 p0);
+    public abstract void method1760(final CompoundNBT p0);
 
-    public abstract void method1761(final Class51 p0);
+    public abstract void method1761(final CompoundNBT p0);
 
-    public Class52 method1762(final double... array) {
-        final Class52 class52 = new Class52();
+    public ListNBT method1762(final double... array) {
+        final ListNBT class52 = new ListNBT();
         for (int length = array.length, i = 0; i < length; ++i) {
-            class52.add(Class44.method277(array[i]));
+            class52.add(DoubleNBT.method277(array[i]));
         }
         return class52;
     }
 
-    public Class52 method1763(final float... array) {
-        final Class52 class52 = new Class52();
+    public ListNBT method1763(final float... array) {
+        final ListNBT class52 = new ListNBT();
         for (int length = array.length, i = 0; i < length; ++i) {
-            class52.add(Class46.method281(array[i]));
+            class52.add(FloatNBT.method281(array[i]));
         }
         return class52;
     }
@@ -1951,8 +1951,8 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public void method1853(final Entity class399) {
-        final Class51 method1756 = class399.method1756(new Class51());
-        method1756.method330("Dimension");
+        final CompoundNBT method1756 = class399.method1756(new CompoundNBT());
+        method1756.remove("Dimension");
         this.method1757(method1756);
         this.timeUntilPortal = class399.timeUntilPortal;
         this.lastPortalPos = class399.lastPortalPos;
@@ -2051,16 +2051,16 @@ public abstract class Entity implements INameable, ICommandSource {
         return false;
     }
 
-    public void method1862(final Class5204 class5204) {
-        class5204.method16296("Entity Type", () -> EntityType.method23354(this.getType()) + " (" + this.getClass().getCanonicalName() + ")");
-        class5204.method16297("Entity ID", this.entityId);
-        class5204.method16296("Entity Name", () -> this.getName().getString());
-        class5204.method16297("Entity's Exact location", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", this.getPosX(), this.getPosY(), this.getPosZ()));
-        class5204.method16297("Entity's Block location", Class5204.method16295(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ())));
+    public void method1862(final CrashReportCategory class5204) {
+        class5204.addDetail("Entity Type", () -> EntityType.method23354(this.getType()) + " (" + this.getClass().getCanonicalName() + ")");
+        class5204.addDetail("Entity ID", this.entityId);
+        class5204.addDetail("Entity Name", () -> this.getName().getString());
+        class5204.addDetail("Entity's Exact location", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", this.getPosX(), this.getPosY(), this.getPosZ()));
+        class5204.addDetail("Entity's Block location", CrashReportCategory.method16295(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ())));
         final Vec3d method1935 = this.getMotion();
-        class5204.method16297("Entity's Momentum", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", method1935.x, method1935.y, method1935.z));
-        class5204.method16296("Entity's Passengers", () -> this.method1908().toString());
-        class5204.method16296("Entity's Vehicle", () -> this.method1920().toString());
+        class5204.addDetail("Entity's Momentum", String.format(Locale.ROOT, "%.2f, %.2f, %.2f", method1935.x, method1935.y, method1935.z));
+        class5204.addDetail("Entity's Passengers", () -> this.method1908().toString());
+        class5204.addDetail("Entity's Vehicle", () -> this.method1920().toString());
     }
 
     public boolean method1863() {
@@ -2187,13 +2187,13 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public Class9390 method1884() {
-        final Class51 class51 = new Class51();
+        final CompoundNBT class51 = new CompoundNBT();
         final ResourceLocation method23354 = EntityType.method23354(this.getType());
-        class51.method306("id", this.method1866());
+        class51.putString("id", this.method1866());
         if (method23354 != null) {
-            class51.method306("type", method23354.toString());
+            class51.putString("type", method23354.toString());
         }
-        class51.method306("name", Class5953.method17869(this.getName()));
+        class51.putString("name", Class5953.method17869(this.getName()));
         return new Class9390(Class1961.field10699, new StringTextComponent(class51.toString()));
     }
 

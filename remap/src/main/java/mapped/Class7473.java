@@ -87,24 +87,24 @@ public class Class7473 extends Class7474
                 Class7473.field28865.error("Unable to parse Stat data from {}", (Object)this.field28867);
                 return;
             }
-            final Class51 method23079 = method23079(parse.getAsJsonObject());
-            if (!method23079.method316("DataVersion", 99)) {
-                method23079.method298("DataVersion", 1343);
+            final CompoundNBT method23079 = method23079(parse.getAsJsonObject());
+            if (!method23079.contains("DataVersion", 99)) {
+                method23079.putInt("DataVersion", 1343);
             }
-            final Class51 method23080 = Class9346.method34651(dataFixer, Class1959.field10681, method23079, method23079.method319("DataVersion"));
-            if (method23080.method316("stats", 10)) {
-                final Class51 method23081 = method23080.method327("stats");
-                for (final String s2 : method23081.method293()) {
-                    if (method23081.method316(s2, 10)) {
+            final CompoundNBT method23080 = Class9346.method34651(dataFixer, Class1959.field10681, method23079, method23079.getInt("DataVersion"));
+            if (method23080.contains("stats", 10)) {
+                final CompoundNBT method23081 = method23080.getCompound("stats");
+                for (final String s2 : method23081.keySet()) {
+                    if (method23081.contains(s2, 10)) {
                         Util.method27855(Registry.field238.method506(new ResourceLocation(s2)), class52 -> {
                             class51.method327(s3);
-                            final Class51 class53;
-                            class53.method293().iterator();
+                            final CompoundNBT class53;
+                            class53.keySet().iterator();
                             final Iterator iterator2;
                             while (iterator2.hasNext()) {
                                 final String s4 = iterator2.next();
-                                if (!class53.method316(s4, 99)) {
-                                    Class7473.field28865.warn("Invalid statistic value in {}: Don't know what {} is for key {}", (Object)this.field28867, (Object)class53.method313(s4), (Object)s4);
+                                if (!class53.contains(s4, 99)) {
+                                    Class7473.field28865.warn("Invalid statistic value in {}: Don't know what {} is for key {}", (Object)this.field28867, (Object)class53.get(s4), (Object)s4);
                                 }
                                 else {
                                     Util.method27855(this.method23078((Class2248<Object>)class52, s4), class55 -> this.field28871.put((Object)class55, class54.method319(s5)), () -> Class7473.field28865.warn("Invalid statistic in {}: Don't know what {} is", (Object)this.field28867, (Object)s6));
@@ -125,8 +125,8 @@ public class Class7473 extends Class7474
         return Optional.ofNullable(ResourceLocation.method7795(s)).flatMap((Function<? super ResourceLocation, ? extends Optional<?>>)class2248.method8448()::method506).map((Function<? super Object, ? extends Class9455<T>>)class2248::method8449);
     }
     
-    private static Class51 method23079(final JsonObject jsonObject) {
-        final Class51 class51 = new Class51();
+    private static CompoundNBT method23079(final JsonObject jsonObject) {
+        final CompoundNBT class51 = new CompoundNBT();
         for (final Map.Entry<K, JsonElement> entry : jsonObject.entrySet()) {
             final JsonElement jsonElement = entry.getValue();
             if (!jsonElement.isJsonObject()) {
@@ -137,10 +137,10 @@ public class Class7473 extends Class7474
                 if (!asJsonPrimitive.isNumber()) {
                     continue;
                 }
-                class51.method298((String)entry.getKey(), asJsonPrimitive.getAsInt());
+                class51.putInt((String)entry.getKey(), asJsonPrimitive.getAsInt());
             }
             else {
-                class51.method295((String)entry.getKey(), method23079(jsonElement.getAsJsonObject()));
+                class51.put((String)entry.getKey(), method23079(jsonElement.getAsJsonObject()));
             }
         }
         return class51;

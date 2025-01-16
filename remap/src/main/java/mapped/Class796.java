@@ -54,7 +54,7 @@ public class Class796 extends Class795 implements Class797
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         this.method4503(this.rand.nextInt(5));
         if (class1854 == null) {
             class1854 = new Class5497();
@@ -366,15 +366,15 @@ public class Class796 extends Class795 implements Class797
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Variant", this.method4502());
+        class51.putInt("Variant", this.method4502());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4503(class51.method319("Variant"));
+        this.method4503(class51.getInt("Variant"));
     }
     
     public boolean method4504() {

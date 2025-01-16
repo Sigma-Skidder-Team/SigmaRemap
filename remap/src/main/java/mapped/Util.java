@@ -82,8 +82,8 @@ public class Util
                 if (!(!(cause instanceof CompletionException))) {
                     cause = cause.getCause();
                 }
-                if (!(!(cause instanceof Class2365))) {
-                    Class9280.method34259(((Class2365)cause).method9500().method24414());
+                if (!(!(cause instanceof ReportedException))) {
+                    Class9280.method34259(((ReportedException)cause).method9500().method24414());
                     System.exit(-1);
                 }
                 Util.field34269.error(String.format("Caught exception in thread %s", thread), cause);

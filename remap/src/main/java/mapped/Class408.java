@@ -166,16 +166,16 @@ public class Class408 extends Entity implements Class407
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         final ItemStack method2009 = this.method2009();
         if (!method2009.method27620()) {
-            class51.method295("Item", method2009.method27627(new Class51()));
+            class51.put("Item", method2009.method27627(new CompoundNBT()));
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.method2008(ItemStack.method27619(class51.method327("Item")));
+    public void method1760(final CompoundNBT class51) {
+        this.method2008(ItemStack.method27619(class51.getCompound("Item")));
     }
     
     @Override

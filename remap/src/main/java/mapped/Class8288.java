@@ -31,18 +31,18 @@ public class Class8288
         this.field34081 = new int[16][];
     }
     
-    public Class8288(final Class51 class51) {
+    public Class8288(final CompoundNBT class51) {
         this();
-        if (class51.method316("Indices", 10)) {
-            final Class51 method327 = class51.method327("Indices");
+        if (class51.contains("Indices", 10)) {
+            final CompoundNBT method327 = class51.getCompound("Indices");
             for (int i = 0; i < this.field34081.length; ++i) {
                 final String value = String.valueOf(i);
-                if (method327.method316(value, 11)) {
-                    this.field34081[i] = method327.method325(value);
+                if (method327.contains(value, 11)) {
+                    this.field34081[i] = method327.getIntArray(value);
                 }
             }
         }
-        final int method328 = class51.method319("Sides");
+        final int method328 = class51.getInt("Sides");
         for (final Class322 e : Class322.values()) {
             if ((method328 & 1 << e.ordinal()) != 0x0) {
                 this.field34080.add(e);
@@ -139,26 +139,26 @@ public class Class8288
         return this.field34080.isEmpty();
     }
     
-    public Class51 method27551() {
-        final Class51 class51 = new Class51();
-        final Class51 class52 = new Class51();
+    public CompoundNBT method27551() {
+        final CompoundNBT class51 = new CompoundNBT();
+        final CompoundNBT class52 = new CompoundNBT();
         for (int i = 0; i < this.field34081.length; ++i) {
             final String value = String.valueOf(i);
             if (this.field34081[i] != null) {
                 if (this.field34081[i].length != 0) {
-                    class52.method308(value, this.field34081[i]);
+                    class52.putIntArray(value, this.field34081[i]);
                 }
             }
         }
         if (!class52.method331()) {
-            class51.method295("Indices", class52);
+            class51.put("Indices", class52);
         }
         int n = 0;
         final Iterator<Object> iterator = this.field34080.iterator();
         while (iterator.hasNext()) {
             n |= 1 << iterator.next().ordinal();
         }
-        class51.method296("Sides", (byte)n);
+        class51.putByte("Sides", (byte)n);
         return class51;
     }
     

@@ -119,9 +119,9 @@ public class Class9550
             runnable.run();
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Rendering Block Entity");
-            tileEntity.method2202(method24421.method24418("Block Entity Details"));
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Rendering Block Entity");
+            tileEntity.method2202(method24421.makeCategory("Block Entity Details"));
+            throw new ReportedException(method24421);
         }
     }
     

@@ -69,15 +69,15 @@ public abstract class Class833 extends Class832
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method312("FromBucket", this.method4953());
+        class51.putBoolean("FromBucket", this.method4953());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4954(class51.method329("FromBucket"));
+        this.method4954(class51.getBoolean("FromBucket"));
     }
     
     @Override

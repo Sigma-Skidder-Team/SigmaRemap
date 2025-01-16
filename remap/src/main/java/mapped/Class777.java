@@ -27,23 +27,23 @@ public abstract class Class777 extends Class763
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (this.field4176 != null) {
-            class51.method295("PatrolTarget", Class9346.method34646(this.field4176));
+            class51.put("PatrolTarget", Class9346.method34646(this.field4176));
         }
-        class51.method312("PatrolLeader", this.field4177);
-        class51.method312("Patrolling", this.field4178);
+        class51.putBoolean("PatrolLeader", this.field4177);
+        class51.putBoolean("Patrolling", this.field4178);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method315("PatrolTarget")) {
-            this.field4176 = Class9346.method34645(class51.method327("PatrolTarget"));
+        if (class51.contains("PatrolTarget")) {
+            this.field4176 = Class9346.method34645(class51.getCompound("PatrolTarget"));
         }
-        this.field4177 = class51.method329("PatrolLeader");
-        this.field4178 = class51.method329("Patrolling");
+        this.field4177 = class51.getBoolean("PatrolLeader");
+        this.field4178 = class51.getBoolean("Patrolling");
     }
     
     @Override
@@ -57,7 +57,7 @@ public abstract class Class777 extends Class763
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         if (class1853 != Class2101.field12189) {
             if (class1853 != Class2101.field12181) {
                 if (class1853 != Class2101.field12177) {

@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Class6355 extends Class6354
 {
-    private final Map<String, Class51> field25419;
+    private final Map<String, CompoundNBT> field25419;
     
     public Class6355(final String s) {
         super(s);
@@ -19,27 +19,27 @@ public class Class6355 extends Class6354
     }
     
     @Override
-    public void method18901(final Class51 class51) {
-        final Class51 method327 = class51.method327("contents");
-        for (final String s : method327.method293()) {
-            this.field25419.put(s, method327.method327(s));
+    public void method18901(final CompoundNBT class51) {
+        final CompoundNBT method327 = class51.getCompound("contents");
+        for (final String s : method327.keySet()) {
+            this.field25419.put(s, method327.getCompound(s));
         }
     }
     
     @Override
-    public Class51 method18902(final Class51 class51) {
-        final Class51 class52 = new Class51();
-        this.field25419.forEach((s, class54) -> class53.method295(s, class54.method333()));
-        class51.method295("contents", class52);
+    public CompoundNBT method18902(final CompoundNBT class51) {
+        final CompoundNBT class52 = new CompoundNBT();
+        this.field25419.forEach((s, class54) -> class53.method295(s, class54.copy()));
+        class51.put("contents", class52);
         return class51;
     }
     
-    public Class51 method18908(final String s) {
-        final Class51 class51 = this.field25419.get(s);
-        return (class51 == null) ? new Class51() : class51;
+    public CompoundNBT method18908(final String s) {
+        final CompoundNBT class51 = this.field25419.get(s);
+        return (class51 == null) ? new CompoundNBT() : class51;
     }
     
-    public void method18909(final String s, final Class51 class51) {
+    public void method18909(final String s, final CompoundNBT class51) {
         if (!class51.method331()) {
             this.field25419.put(s, class51);
         }

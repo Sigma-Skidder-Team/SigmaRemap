@@ -42,9 +42,9 @@ public class Class727 extends Class527
         this.field3959 = field3959;
         this.field3960 = field3960;
         this.field3977 = field3961;
-        final Class51 method27657 = field3960.method27657();
+        final CompoundNBT method27657 = field3960.method27657();
         if (method27657 != null) {
-            final Class52 method27658 = method27657.method328("pages", 8).method355();
+            final ListNBT method27658 = method27657.getList("pages", 8).copy();
             for (int i = 0; i < method27658.size(); ++i) {
                 this.field3965.add(method27658.method353(i));
             }
@@ -156,14 +156,14 @@ public class Class727 extends Class527
     private void method3996(final boolean b) {
         if (this.field3961) {
             this.method3995();
-            final Class52 class52 = new Class52();
-            this.field3965.stream().map((Function<? super Object, ?>)Class50::method290).forEach(class52::add);
+            final ListNBT class52 = new ListNBT();
+            this.field3965.stream().map((Function<? super Object, ?>) StringNBT::method290).forEach(class52::add);
             if (!this.field3965.isEmpty()) {
                 this.field3960.method27676("pages", class52);
             }
             if (b) {
-                this.field3960.method27676("author", Class50.method290(this.field3959.method2844().getName()));
-                this.field3960.method27676("title", Class50.method290(this.field3966.trim()));
+                this.field3960.method27676("author", StringNBT.method290(this.field3959.method2844().getName()));
+                this.field3960.method27676("title", StringNBT.method290(this.field3966.trim()));
             }
             this.field3150.method5269().method17292(new Class4314(this.field3960, b, this.field3977));
         }

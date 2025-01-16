@@ -55,4 +55,29 @@ public class Class8959
         this.field37662 = field37662;
         return this;
     }
+
+
+    public static /* synthetic */ Class7207 method31788(Class8959 class8959) {
+        return class8959.field37661;
+    }
+
+    public static /* synthetic */ Class1998 method31789(Class8959 class8959) {
+        return class8959.field37662;
+    }
+
+    public static /* synthetic */ Item method31790(Class8959 class8959) {
+        return class8959.field37660;
+    }
+
+    public static /* synthetic */ int method31791(Class8959 class8959) {
+        return class8959.field37659;
+    }
+
+    public static /* synthetic */ int method31792(Class8959 class8959) {
+        return class8959.field37658;
+    }
+
+    public static /* synthetic */ Class9082 method31793(Class8959 class8959) {
+        return class8959.field37663;
+    }
 }

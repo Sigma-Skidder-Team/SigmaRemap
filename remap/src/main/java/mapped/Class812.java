@@ -71,34 +71,34 @@ public abstract class Class812 extends Class806
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method312("ChestedHorse", this.method4780());
+        class51.putBoolean("ChestedHorse", this.method4780());
         if (this.method4780()) {
-            final Class52 class52 = new Class52();
+            final ListNBT class52 = new ListNBT();
             for (int i = 2; i < this.field4342.method2239(); ++i) {
                 final ItemStack method2157 = this.field4342.method2157(i);
                 if (!method2157.method27620()) {
-                    final Class51 e = new Class51();
-                    e.method296("Slot", (byte)i);
+                    final CompoundNBT e = new CompoundNBT();
+                    e.putByte("Slot", (byte)i);
                     method2157.method27627(e);
-                    ((AbstractList<Class51>)class52).add(e);
+                    ((AbstractList<CompoundNBT>)class52).add(e);
                 }
             }
-            class51.method295("Items", class52);
+            class51.put("Items", class52);
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4781(class51.method329("ChestedHorse"));
+        this.method4781(class51.getBoolean("ChestedHorse"));
         if (this.method4780()) {
-            final Class52 method328 = class51.method328("Items", 10);
+            final ListNBT method328 = class51.getList("Items", 10);
             this.method4731();
             for (int i = 0; i < method328.size(); ++i) {
-                final Class51 method329 = method328.method346(i);
-                final int n = method329.method317("Slot") & 0xFF;
+                final CompoundNBT method329 = method328.method346(i);
+                final int n = method329.getByte("Slot") & 0xFF;
                 if (n >= 2) {
                     if (n < this.field4342.method2239()) {
                         this.field4342.method2160(n, ItemStack.method27619(method329));

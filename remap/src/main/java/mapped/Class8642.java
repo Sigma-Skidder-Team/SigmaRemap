@@ -43,11 +43,11 @@ public class Class8642 implements Class8643
         this.method29391();
     }
     
-    public void method29390(final WorldInfo class8660, final Class51 class8661) {
+    public void method29390(final WorldInfo class8660, final CompoundNBT class8661) {
         class8660.method29552(19133);
-        final Class51 method29532 = class8660.method29532(class8661);
-        final Class51 class8662 = new Class51();
-        class8662.method295("Data", method29532);
+        final CompoundNBT method29532 = class8660.method29532(class8661);
+        final CompoundNBT class8662 = new CompoundNBT();
+        class8662.put("Data", method29532);
         try {
             final File file = new File(this.field36244, "level.dat_new");
             final File dest = new File(this.field36244, "level.dat_old");
@@ -127,7 +127,7 @@ public class Class8642 implements Class8643
     @Override
     public void method29396(final PlayerEntity playerEntity) {
         try {
-            final Class51 method1756 = playerEntity.method1756(new Class51());
+            final CompoundNBT method1756 = playerEntity.method1756(new CompoundNBT());
             final File file = new File(this.field36245, playerEntity.method1866() + ".dat.tmp");
             final File dest = new File(this.field36245, playerEntity.method1866() + ".dat");
             Class8097.method26591(method1756, new FileOutputStream(file));
@@ -143,8 +143,8 @@ public class Class8642 implements Class8643
     
     @Nullable
     @Override
-    public Class51 method29397(final PlayerEntity playerEntity) {
-        Class51 method26590 = null;
+    public CompoundNBT method29397(final PlayerEntity playerEntity) {
+        CompoundNBT method26590 = null;
         try {
             final File file = new File(this.field36245, playerEntity.method1866() + ".dat");
             if (file.exists() && file.isFile()) {
@@ -155,7 +155,7 @@ public class Class8642 implements Class8643
             Class8642.field36243.warn("Failed to load player data for {}", (Object) playerEntity.getName().getString());
         }
         if (method26590 != null) {
-            playerEntity.method1757(Class9346.method34651(this.field36249, Class1959.field10676, method26590, method26590.method316("DataVersion", 3) ? method26590.method319("DataVersion") : -1));
+            playerEntity.method1757(Class9346.method34651(this.field36249, Class1959.field10676, method26590, method26590.contains("DataVersion", 3) ? method26590.getInt("DataVersion") : -1));
         }
         return method26590;
     }

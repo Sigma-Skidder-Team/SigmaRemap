@@ -106,21 +106,21 @@ public class Class9495
                         final Class7859 class387 = listIterator.next();
                         boolean b2 = false;
                         try {
-                            final Class51 method29395 = class386.method1309(class387);
+                            final CompoundNBT method29395 = class386.method1309(class387);
                             if (method29395 != null) {
                                 final int method29396 = Class387.method1308(method29395);
-                                final Class51 method29397 = class386.method1307(class385, () -> this.field40842, method29395);
-                                final Class51 method29398 = method29397.method327("Level");
-                                final Class7859 class388 = new Class7859(method29398.method319("xPos"), method29398.method319("zPos"));
+                                final CompoundNBT method29397 = class386.method1307(class385, () -> this.field40842, method29395);
+                                final CompoundNBT method29398 = method29397.getCompound("Level");
+                                final Class7859 class388 = new Class7859(method29398.getInt("xPos"), method29398.getInt("zPos"));
                                 if (!class388.equals(class387)) {
                                     Class9495.field40826.warn("Chunk {} has invalid position {}", (Object)class387, (Object)class388);
                                 }
                                 boolean b3 = method29396 < Class9528.method35579().getWorldVersion();
                                 if (this.field40829) {
-                                    final boolean b4 = b3 || method29398.method315("Heightmaps");
-                                    method29398.method330("Heightmaps");
-                                    b3 = (b4 || method29398.method315("isLightOn"));
-                                    method29398.method330("isLightOn");
+                                    final boolean b4 = b3 || method29398.contains("Heightmaps");
+                                    method29398.remove("Heightmaps");
+                                    b3 = (b4 || method29398.contains("isLightOn"));
+                                    method29398.remove("isLightOn");
                                 }
                                 if (b3) {
                                     class386.method1310(class387, method29397);
@@ -128,7 +128,7 @@ public class Class9495
                                 }
                             }
                         }
-                        catch (final Class2365 class389) {
+                        catch (final ReportedException class389) {
                             if (!(class389.getCause() instanceof IOException)) {
                                 throw class389;
                             }

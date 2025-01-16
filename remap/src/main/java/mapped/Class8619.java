@@ -52,34 +52,34 @@ public class Class8619
     private int field36179;
     private List<Class858> field36180;
     
-    public Class8619(final Class1849 field36166, final Class51 class51) {
+    public Class8619(final Class1849 field36166, final CompoundNBT class51) {
         this.field36165 = (Class6879)new Class6879(new Class2259("entity.minecraft.ender_dragon", new Object[0]), Class2200.field13390, Class342.field2105).method21068(true).method21069(true);
         this.field36167 = Lists.newArrayList();
         this.field36176 = true;
         this.field36166 = field36166;
-        if (!class51.method316("DragonKilled", 99)) {
+        if (!class51.contains("DragonKilled", 99)) {
             this.field36173 = true;
             this.field36174 = true;
         }
         else {
-            if (class51.method302("DragonUUID")) {
-                this.field36175 = class51.method301("DragonUUID");
+            if (class51.hasUniqueId("DragonUUID")) {
+                this.field36175 = class51.getUniqueId("DragonUUID");
             }
-            this.field36173 = class51.method329("DragonKilled");
-            this.field36174 = class51.method329("PreviouslyKilled");
-            if (class51.method329("IsRespawning")) {
+            this.field36173 = class51.getBoolean("DragonKilled");
+            this.field36174 = class51.getBoolean("PreviouslyKilled");
+            if (class51.getBoolean("IsRespawning")) {
                 this.field36178 = Class2242.field13779;
             }
-            if (class51.method316("ExitPortalLocation", 10)) {
-                this.field36177 = Class9346.method34645(class51.method327("ExitPortalLocation"));
+            if (class51.contains("ExitPortalLocation", 10)) {
+                this.field36177 = Class9346.method34645(class51.getCompound("ExitPortalLocation"));
             }
         }
-        if (!class51.method316("Gateways", 9)) {
+        if (!class51.contains("Gateways", 9)) {
             this.field36167.addAll((Collection<? extends Integer>)ContiguousSet.create(Range.closedOpen((Comparable)0, (Comparable)20), DiscreteDomain.integers()));
             Collections.shuffle(this.field36167, new Random(field36166.method6753()));
         }
         else {
-            final Class52 method328 = class51.method328("Gateways", 3);
+            final ListNBT method328 = class51.getList("Gateways", 3);
             for (int i = 0; i < method328.size(); ++i) {
                 this.field36167.add(method328.method349(i));
             }
@@ -87,22 +87,22 @@ public class Class8619
         this.field36168 = Class9512.method35439().method35438("       ", "       ", "       ", "   #   ", "       ", "       ", "       ").method35438("       ", "       ", "       ", "   #   ", "       ", "       ", "       ").method35438("       ", "       ", "       ", "   #   ", "       ", "       ", "       ").method35438("  ###  ", " #   # ", "#     #", "#  #  #", "#     #", " #   # ", "  ###  ").method35438("       ", "  ###  ", " ##### ", " ##### ", " ##### ", "  ###  ", "       ").method35440('#', Class7990.method26069(Class117.method608(Class7521.field29172))).method35441();
     }
     
-    public Class51 method29234() {
-        final Class51 class51 = new Class51();
+    public CompoundNBT method29234() {
+        final CompoundNBT class51 = new CompoundNBT();
         if (this.field36175 != null) {
-            class51.method300("DragonUUID", this.field36175);
+            class51.putUniqueId("DragonUUID", this.field36175);
         }
-        class51.method312("DragonKilled", this.field36173);
-        class51.method312("PreviouslyKilled", this.field36174);
+        class51.putBoolean("DragonKilled", this.field36173);
+        class51.putBoolean("PreviouslyKilled", this.field36174);
         if (this.field36177 != null) {
-            class51.method295("ExitPortalLocation", Class9346.method34646(this.field36177));
+            class51.put("ExitPortalLocation", Class9346.method34646(this.field36177));
         }
-        final Class52 class52 = new Class52();
+        final ListNBT class52 = new ListNBT();
         final Iterator<Integer> iterator = this.field36167.iterator();
         while (iterator.hasNext()) {
             ((AbstractList<IntNBT>)class52).add(IntNBT.valueOf(iterator.next()));
         }
-        class51.method295("Gateways", class52);
+        class51.put("Gateways", class52);
         return class51;
     }
     

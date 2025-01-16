@@ -165,14 +165,14 @@ public class EntityType<T extends Entity>
     }
     
     @Nullable
-    public T method23357(final World class1847, final Class51 class1848, final ITextComponent class1849, final PlayerEntity class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
+    public T method23357(final World class1847, final CompoundNBT class1848, final ITextComponent class1849, final PlayerEntity class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
         final Entity method23358 = this.method23358(class1847, class1848, class1849, class1850, class1851, class1852, b, b2);
         class1847.method6886(method23358);
         return (T)method23358;
     }
     
     @Nullable
-    public T method23358(final World class1847, final Class51 class1848, final ITextComponent class1849, final PlayerEntity class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
+    public T method23358(final World class1847, final CompoundNBT class1848, final ITextComponent class1849, final PlayerEntity class1850, final BlockPos class1851, final Class2101 class1852, final boolean b, final boolean b2) {
         final Class759 method23371 = (Class759)this.method23371(class1847);
         if (method23371 != null) {
             double method23372;
@@ -210,9 +210,9 @@ public class EntityType<T extends Entity>
         return 1.0 + VoxelShapes.method24498(Direction.Axis.Y, class1854, class1852.method6980(null, method18494, Collections.emptySet()), b ? -2.0 : -1.0);
     }
     
-    public static void method23360(final World class1847, final PlayerEntity class1848, final Entity class1849, final Class51 class1850) {
+    public static void method23360(final World class1847, final PlayerEntity class1848, final Entity class1849, final CompoundNBT class1850) {
         if (class1850 != null) {
-            if (class1850.method316("EntityTag", 10)) {
+            if (class1850.contains("EntityTag", 10)) {
                 final MinecraftServer method6679 = class1847.getServer();
                 if (method6679 != null) {
                     if (class1849 != null) {
@@ -226,9 +226,9 @@ public class EntityType<T extends Entity>
                                 }
                             }
                         }
-                        final Class51 method6680 = class1849.method1756(new Class51());
+                        final CompoundNBT method6680 = class1849.method1756(new CompoundNBT());
                         final UUID method6681 = class1849.method1865();
-                        method6680.method338(class1850.method327("EntityTag"));
+                        method6680.merge(class1850.getCompound("EntityTag"));
                         class1849.method1864(method6681);
                         class1849.method1757(method6680);
                     }
@@ -297,7 +297,7 @@ public class EntityType<T extends Entity>
         return method23374(class1847, Registry.field210.method499(n));
     }
     
-    public static Optional<Entity> method23373(final Class51 class51, final World class52) {
+    public static Optional<Entity> method23373(final CompoundNBT class51, final World class52) {
         return Util.method27855(method23377(class51).map(class54 -> class54.method23371(class53)), class56 -> class56.method1757(class55), () -> EntityType.field28956.warn("Skipping Entity with id {}", (Object)class57.method323("id")));
     }
     
@@ -315,17 +315,17 @@ public class EntityType<T extends Entity>
         return this.field29069;
     }
     
-    public static Optional<EntityType<?>> method23377(final Class51 class51) {
-        return Registry.field210.method506(new ResourceLocation(class51.method323("id")));
+    public static Optional<EntityType<?>> method23377(final CompoundNBT class51) {
+        return Registry.field210.method506(new ResourceLocation(class51.getString("id")));
     }
     
     @Nullable
-    public static Entity method23378(final Class51 class51, final World class52, final Function<Entity, Entity> mapper) {
+    public static Entity method23378(final CompoundNBT class51, final World class52, final Function<Entity, Entity> mapper) {
         return method23379(class51, class52).map((Function<? super Entity, ?>)mapper).map(class55 -> {
             if (!(!class53.method316("Passengers", 9))) {
                 class53.method328("Passengers", 10);
                 int i = 0;
-                final Class52 class56;
+                final ListNBT class56;
                 while (i < class56.size()) {
                     method23378(class56.method346(i), class54, function);
                     final Entity class57;
@@ -339,7 +339,7 @@ public class EntityType<T extends Entity>
         }).orElse(null);
     }
     
-    private static Optional<Entity> method23379(final Class51 class51, final World class52) {
+    private static Optional<Entity> method23379(final CompoundNBT class51, final World class52) {
         try {
             return method23373(class51, class52);
         }

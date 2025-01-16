@@ -27,61 +27,61 @@ public class Class8107
     public static final Class8725 field33414;
     public static final Class8725 field33415;
     
-    public static Class52 method26639(final Class6821 class6821) {
-        final Class52 class6822 = new Class52();
+    public static ListNBT method26639(final Class6821 class6821) {
+        final ListNBT class6822 = new ListNBT();
         final Iterator<Class7619> iterator = class6821.method20880().iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<Class51>)class6822).add(method26640(iterator.next()));
+            ((AbstractList<CompoundNBT>)class6822).add(method26640(iterator.next()));
         }
         return class6822;
     }
     
-    private static Class51 method26640(final Class7619 class7619) {
-        final Class51 class7620 = new Class51();
-        class7620.method306("Name", class7619.method23939().method29978());
-        class7620.method305("Base", class7619.method23940());
+    private static CompoundNBT method26640(final Class7619 class7619) {
+        final CompoundNBT class7620 = new CompoundNBT();
+        class7620.putString("Name", class7619.method23939().method29978());
+        class7620.putDouble("Base", class7619.method23940());
         final Set<Class7919> method23943 = class7619.method23943();
         if (method23943 != null) {
             if (!method23943.isEmpty()) {
-                final Class52 class7621 = new Class52();
+                final ListNBT class7621 = new ListNBT();
                 for (final Class7919 class7622 : method23943) {
                     if (!class7622.method25639()) {
                         continue;
                     }
-                    ((AbstractList<Class51>)class7621).add(method26641(class7622));
+                    ((AbstractList<CompoundNBT>)class7621).add(method26641(class7622));
                 }
-                class7620.method295("Modifiers", class7621);
+                class7620.put("Modifiers", class7621);
             }
         }
         return class7620;
     }
     
-    public static Class51 method26641(final Class7919 class7919) {
-        final Class51 class7920 = new Class51();
-        class7920.method306("Name", class7919.method25636());
-        class7920.method305("Amount", class7919.method25638());
-        class7920.method298("Operation", class7919.method25637().method8322());
-        class7920.method300("UUID", class7919.method25635());
+    public static CompoundNBT method26641(final Class7919 class7919) {
+        final CompoundNBT class7920 = new CompoundNBT();
+        class7920.putString("Name", class7919.method25636());
+        class7920.putDouble("Amount", class7919.method25638());
+        class7920.putInt("Operation", class7919.method25637().method8322());
+        class7920.putUniqueId("UUID", class7919.method25635());
         return class7920;
     }
     
-    public static void method26642(final Class6821 class6821, final Class52 class6822) {
+    public static void method26642(final Class6821 class6821, final ListNBT class6822) {
         for (int i = 0; i < class6822.size(); ++i) {
-            final Class51 method346 = class6822.method346(i);
-            final Class7619 method347 = class6821.method20878(method346.method323("Name"));
+            final CompoundNBT method346 = class6822.method346(i);
+            final Class7619 method347 = class6821.method20878(method346.getString("Name"));
             if (method347 != null) {
                 method26643(method347, method346);
             }
             else {
-                Class8107.field33404.warn("Ignoring unknown attribute '{}'", (Object)method346.method323("Name"));
+                Class8107.field33404.warn("Ignoring unknown attribute '{}'", (Object)method346.getString("Name"));
             }
         }
     }
     
-    private static void method26643(final Class7619 class7619, final Class51 class7620) {
-        class7619.method23941(class7620.method322("Base"));
-        if (class7620.method316("Modifiers", 9)) {
-            final Class52 method328 = class7620.method328("Modifiers", 10);
+    private static void method26643(final Class7619 class7619, final CompoundNBT class7620) {
+        class7619.method23941(class7620.getDouble("Base"));
+        if (class7620.contains("Modifiers", 9)) {
+            final ListNBT method328 = class7620.getList("Modifiers", 10);
             for (int i = 0; i < method328.size(); ++i) {
                 final Class7919 method329 = method26644(method328.method346(i));
                 if (method329 != null) {
@@ -96,10 +96,10 @@ public class Class8107
     }
     
     @Nullable
-    public static Class7919 method26644(final Class51 class51) {
-        final UUID method301 = class51.method301("UUID");
+    public static Class7919 method26644(final CompoundNBT class51) {
+        final UUID method301 = class51.getUniqueId("UUID");
         try {
-            return new Class7919(method301, class51.method323("Name"), class51.method322("Amount"), Class2157.method8323(class51.method319("Operation")));
+            return new Class7919(method301, class51.getString("Name"), class51.getDouble("Amount"), Class2157.method8323(class51.getInt("Operation")));
         }
         catch (final Exception ex) {
             Class8107.field33404.warn("Unable to create attribute: {}", (Object)ex.getMessage());

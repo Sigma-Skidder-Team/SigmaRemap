@@ -219,8 +219,8 @@ public class Class723 extends Class527
         return null;
     }
     
-    public static List<String> method3979(final Class51 class51) {
-        final Class52 method355 = class51.method328("pages", 8).method355();
+    public static List<String> method3979(final CompoundNBT class51) {
+        final ListNBT method355 = class51.getList("pages", 8).copy();
         final ImmutableList$Builder builder = ImmutableList.builder();
         for (int i = 0; i < method355.size(); ++i) {
             builder.add((Object)method355.method353(i));

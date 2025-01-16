@@ -6,17 +6,17 @@ package net.minecraft.nbt;
 
 public abstract class NumberNBT implements INBT
 {
-    public abstract long method270();
+    public abstract long getLong();
     
-    public abstract int method271();
+    public abstract int getInt();
     
-    public abstract short method272();
+    public abstract short getShort();
     
-    public abstract byte method273();
+    public abstract byte getByte();
     
-    public abstract double method274();
+    public abstract double getDouble();
     
-    public abstract float method275();
+    public abstract float getFloat();
     
-    public abstract Number method276();
+    public abstract Number getAsNumber();
 }

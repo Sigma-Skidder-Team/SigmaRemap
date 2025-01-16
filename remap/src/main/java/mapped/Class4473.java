@@ -28,27 +28,27 @@ public abstract class Class4473
         this.field19853 = field19855;
     }
     
-    public Class4473(final Class9520 class9520, final Class51 class9521) {
-        this(class9520, class9521.method319("GD"));
-        if (class9521.method315("BB")) {
-            this.field19849 = new MutableBoundingBox(class9521.method325("BB"));
+    public Class4473(final Class9520 class9520, final CompoundNBT class9521) {
+        this(class9520, class9521.getInt("GD"));
+        if (class9521.contains("BB")) {
+            this.field19849 = new MutableBoundingBox(class9521.getIntArray("BB"));
         }
-        final int method319 = class9521.method319("O");
+        final int method319 = class9521.getInt("O");
         this.method13456((method319 != -1) ? Direction.byHorizontalIndex(method319) : null);
     }
     
-    public final Class51 method13430() {
-        final Class51 class51 = new Class51();
-        class51.method306("id", Registry.field231.getKey(this.method13458()).toString());
-        class51.method295("BB", this.field19849.toNBTTagIntArray());
+    public final CompoundNBT method13430() {
+        final CompoundNBT class51 = new CompoundNBT();
+        class51.putString("id", Registry.field231.getKey(this.method13458()).toString());
+        class51.put("BB", this.field19849.toNBTTagIntArray());
         final Direction method13455 = this.method13455();
-        class51.method298("O", (method13455 != null) ? method13455.getHorizontalIndex() : -1);
-        class51.method298("GD", this.field19853);
+        class51.putInt("O", (method13455 != null) ? method13455.getHorizontalIndex() : -1);
+        class51.putInt("GD", this.field19853);
         this.method13415(class51);
         return class51;
     }
     
-    public abstract void method13415(final Class51 p0);
+    public abstract void method13415(final CompoundNBT p0);
     
     public void method13431(final Class4473 class4473, final List<Class4473> list, final Random random) {
     }

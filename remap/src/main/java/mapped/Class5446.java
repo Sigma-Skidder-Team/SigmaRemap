@@ -58,20 +58,20 @@ public class Class5446 extends Class5419<Class824>
     private ItemStack method16633(final Class181 class181, final int n) {
         final ItemStack class182 = new ItemStack(Items.field31532, 1);
         final ItemStack class183 = new ItemStack(Items.field31533);
-        final Class51 method27659 = class183.method27659("Explosion");
+        final CompoundNBT method27659 = class183.method27659("Explosion");
         final ArrayList arrayList = Lists.newArrayList();
         arrayList.add(class181.method817());
-        method27659.method309("Colors", arrayList);
-        method27659.method296("Type", (byte)Class2141.field12609.method8300());
-        final Class51 method27660 = class182.method27659("Fireworks");
-        final Class52 class184 = new Class52();
-        final Class51 method27661 = class183.method27660("Explosion");
+        method27659.putIntArray("Colors", arrayList);
+        method27659.putByte("Type", (byte)Class2141.field12609.method8300());
+        final CompoundNBT method27660 = class182.method27659("Fireworks");
+        final ListNBT class184 = new ListNBT();
+        final CompoundNBT method27661 = class183.method27660("Explosion");
         if (method27661 != null) {
-            ((AbstractList<Class51>)class184).add(method27661);
+            ((AbstractList<CompoundNBT>)class184).add(method27661);
         }
-        method27660.method296("Flight", (byte)n);
+        method27660.putByte("Flight", (byte)n);
         if (!class184.isEmpty()) {
-            method27660.method295("Explosions", class184);
+            method27660.put("Explosions", class184);
         }
         return class182;
     }

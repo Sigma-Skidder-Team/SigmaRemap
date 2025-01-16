@@ -33,22 +33,22 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
         this.field2707 = Class2265.method8507(this.method2239(), ItemStack.field34174);
         if (!this.method2324(class51)) {
             Class8508.method28426(class51, this.field2707);
         }
-        this.field2708 = class51.method319("TransferCooldown");
+        this.field2708 = class51.getInt("TransferCooldown");
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         if (!this.method2325(class51)) {
             Class8508.method28424(class51, this.field2707);
         }
-        class51.method298("TransferCooldown", this.field2708);
+        class51.putInt("TransferCooldown", this.field2708);
         return class51;
     }
     

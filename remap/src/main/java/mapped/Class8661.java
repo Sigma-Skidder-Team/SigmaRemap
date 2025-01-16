@@ -15,7 +15,7 @@ public class Class8661 extends WorldInfo
     }
     
     @Override
-    public Class51 method29532(final Class51 class51) {
+    public CompoundNBT method29532(final CompoundNBT class51) {
         return this.field36390.method29532(class51);
     }
     
@@ -50,7 +50,7 @@ public class Class8661 extends WorldInfo
     }
     
     @Override
-    public Class51 method29542() {
+    public CompoundNBT method29542() {
         return this.field36390.method29542();
     }
     
@@ -208,18 +208,18 @@ public class Class8661 extends WorldInfo
     }
     
     @Override
-    public void method29604(final DimensionType class383, final Class51 class384) {
+    public void method29604(final DimensionType class383, final CompoundNBT class384) {
         this.field36390.method29604(class383, class384);
     }
     
     @Override
-    public Class51 method29603(final DimensionType class383) {
+    public CompoundNBT method29603(final DimensionType class383) {
         return this.field36390.method29603(class383);
     }
     
     @Override
-    public void method29602(final Class5204 class5204) {
-        class5204.method16297("Derived", true);
+    public void method29602(final CrashReportCategory class5204) {
+        class5204.addDetail("Derived", true);
         this.field36390.method29602(class5204);
     }
 }

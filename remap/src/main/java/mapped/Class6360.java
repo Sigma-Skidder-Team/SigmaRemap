@@ -19,15 +19,15 @@ public class Class6360 extends Class6354
     }
     
     @Override
-    public void method18901(final Class51 class51) {
+    public void method18901(final CompoundNBT class51) {
         this.field25441 = (LongSet)new LongOpenHashSet(class51.method326("All"));
         this.field25442 = (LongSet)new LongOpenHashSet(class51.method326("Remaining"));
     }
     
     @Override
-    public Class51 method18902(final Class51 class51) {
-        class51.method310("All", this.field25441.toLongArray());
-        class51.method310("Remaining", this.field25442.toLongArray());
+    public CompoundNBT method18902(final CompoundNBT class51) {
+        class51.putLongArray("All", this.field25441.toLongArray());
+        class51.putLongArray("Remaining", this.field25442.toLongArray());
         return class51;
     }
     

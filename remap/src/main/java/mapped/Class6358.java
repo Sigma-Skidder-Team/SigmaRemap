@@ -17,13 +17,13 @@ public class Class6358 extends Class6354
     }
     
     @Override
-    public void method18901(final Class51 class51) {
+    public void method18901(final CompoundNBT class51) {
         this.field25437 = (LongSet)new LongOpenHashSet(class51.method326("Forced"));
     }
     
     @Override
-    public Class51 method18902(final Class51 class51) {
-        class51.method310("Forced", this.field25437.toLongArray());
+    public CompoundNBT method18902(final CompoundNBT class51) {
+        class51.putLongArray("Forced", this.field25437.toLongArray());
         return class51;
     }
     

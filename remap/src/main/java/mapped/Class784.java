@@ -48,16 +48,16 @@ public class Class784 extends Class785 implements Class768
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method312("Pumpkin", this.method4332());
+        class51.putBoolean("Pumpkin", this.method4332());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method315("Pumpkin")) {
-            this.method4333(class51.method329("Pumpkin"));
+        if (class51.contains("Pumpkin")) {
+            this.method4333(class51.getBoolean("Pumpkin"));
         }
     }
     

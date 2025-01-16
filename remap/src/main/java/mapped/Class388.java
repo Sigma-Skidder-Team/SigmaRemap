@@ -429,9 +429,9 @@ public class Class388 extends Class387 implements Class389
             try {
                 this.field2254.method6796().method15302("chunkLoad");
                 this.method1345(class7860);
-                final Class51 class7861;
+                final CompoundNBT class7861;
                 if (class7861 != null) {
-                    if (class7861.method316("Level", 10) && class7861.method327("Level").method316("Status", 8)) {
+                    if (class7861.contains("Level", 10) && class7861.getCompound("Level").contains("Status", 8)) {
                         Class7532.method23592(this.field2254, this.field2268, this.field2259, class7860, class7861);
                         final Class1865 class7862;
                         class7862.method7020(this.field2254.method6754());
@@ -445,7 +445,7 @@ public class Class388 extends Class387 implements Class389
                     }
                 }
             }
-            catch (final Class2365 class7863) {
+            catch (final ReportedException class7863) {
                 if (!(class7863.getCause() instanceof IOException)) {
                     throw class7863;
                 }
@@ -470,14 +470,14 @@ public class Class388 extends Class387 implements Class389
                 return;
             }
             catch (final Exception ex) {
-                Class7689.method24421(ex, "Exception generating new chunk");
-                final Class7689 class9304;
-                class9304.method24418("Chunk to be generated");
-                final Class5204 class9305;
-                class9305.method16297("Location", String.format("%d,%d", class9303.field32290, class9303.field32291));
-                class9305.method16297("Position hash", Class7859.method25423(class9303.field32290, class9303.field32291));
-                class9305.method16297("Generator", this.field2257);
-                throw new Class2365(class9304);
+                CrashReport.makeCrashReport(ex, "Exception generating new chunk");
+                final CrashReport class9304;
+                class9304.makeCategory("Chunk to be generated");
+                final CrashReportCategory class9305;
+                class9305.addDetail("Location", String.format("%d,%d", class9303.field32290, class9303.field32291));
+                class9305.addDetail("Position hash", Class7859.method25423(class9303.field32290, class9303.field32291));
+                class9305.addDetail("Generator", this.field2257);
+                throw new ReportedException(class9304);
             }
         }, class9309 -> {
             this.method1331(class9308);
@@ -599,7 +599,7 @@ public class Class388 extends Class387 implements Class389
         try {
             final ChunkStatus method7020 = class1860.method7027();
             if (method7020.method34448() != Class260.field1244) {
-                final Class51 method7021 = this.method1345(method7019);
+                final CompoundNBT method7021 = this.method1345(method7019);
                 if (method7021 != null && Class7532.method23594(method7021) == Class260.field1244) {
                     return false;
                 }
@@ -608,7 +608,7 @@ public class Class388 extends Class387 implements Class389
                 }
             }
             this.field2254.method6796().method15302("chunkSave");
-            final Class51 method7022 = Class7532.method23593(this.field2254, class1860);
+            final CompoundNBT method7022 = Class7532.method23593(this.field2254, class1860);
             if (Class9570.field41190.method22619()) {
                 Class9570.method35840(Class9570.field41190, class1860, method7022);
             }
@@ -701,8 +701,8 @@ public class Class388 extends Class387 implements Class389
     }
     
     @Nullable
-    private Class51 method1345(final Class7859 class7859) throws IOException {
-        final Class51 method1309 = this.method1309(class7859);
+    private CompoundNBT method1345(final Class7859 class7859) throws IOException {
+        final CompoundNBT method1309 = this.method1309(class7859);
         return (method1309 != null) ? this.method1307(this.field2254.method6789().getType(), this.field2258, method1309) : null;
     }
     

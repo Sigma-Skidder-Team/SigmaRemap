@@ -73,12 +73,12 @@ public abstract class Class4469 extends Class4473
         }
     }
     
-    public Class4469(final Class9520 class9520, final Class51 class9521) {
+    public Class4469(final Class9520 class9520, final CompoundNBT class9521) {
         super(class9520, class9521);
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
     }
     
     public void method13416(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {

@@ -343,11 +343,11 @@ public class Class425 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
     }
     
     public int method2077(final ItemStack class8321) {

@@ -126,10 +126,10 @@ public class Class7952
     @Nullable
     public static WorldInfo method25793(final File file, final DataFixer dataFixer) {
         try {
-            final Class51 method327 = Class8097.method26590(new FileInputStream(file)).method327("Data");
-            final Class51 class51 = method327.method316("Player", 10) ? method327.method327("Player") : null;
-            method327.method330("Player");
-            final int n = method327.method316("DataVersion", 99) ? method327.method319("DataVersion") : -1;
+            final CompoundNBT method327 = Class8097.method26590(new FileInputStream(file)).getCompound("Data");
+            final CompoundNBT class51 = method327.contains("Player", 10) ? method327.getCompound("Player") : null;
+            method327.remove("Player");
+            final int n = method327.contains("DataVersion", 99) ? method327.getInt("DataVersion") : -1;
             return new WorldInfo(Class9346.method34651(dataFixer, Class1959.field10675, method327, n), dataFixer, n, class51);
         }
         catch (final Exception ex) {
@@ -144,8 +144,8 @@ public class Class7952
             final File file = new File(parent, "level.dat");
             if (file.exists()) {
                 try {
-                    final Class51 method26590 = Class8097.method26590(new FileInputStream(file));
-                    method26590.method327("Data").method306("LevelName", s);
+                    final CompoundNBT method26590 = Class8097.method26590(new FileInputStream(file));
+                    method26590.getCompound("Data").putString("LevelName", s);
                     Class8097.method26591(method26590, new FileOutputStream(file));
                 }
                 catch (final Exception ex) {

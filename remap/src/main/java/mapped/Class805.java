@@ -139,24 +139,24 @@ public class Class805 extends Class804
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method306("Type", Class1983.method7994(this.method4708()));
+        class51.putString("Type", Class1983.method7994(this.method4708()));
         if (this.field4328 != null) {
-            class51.method296("EffectId", (byte)Class5328.method16451(this.field4328));
-            class51.method298("EffectDuration", this.field4329);
+            class51.putByte("EffectId", (byte)Class5328.method16451(this.field4328));
+            class51.putInt("EffectDuration", this.field4329);
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4707(Class1983.method7996(class51.method323("Type")));
-        if (class51.method316("EffectId", 1)) {
-            this.field4328 = Class5328.method16450(class51.method317("EffectId"));
+        this.method4707(Class1983.method7996(class51.getString("Type")));
+        if (class51.contains("EffectId", 1)) {
+            this.field4328 = Class5328.method16450(class51.getByte("EffectId"));
         }
-        if (class51.method316("EffectDuration", 3)) {
-            this.field4329 = class51.method319("EffectDuration");
+        if (class51.contains("EffectDuration", 3)) {
+            this.field4329 = class51.getInt("EffectDuration");
         }
     }
     

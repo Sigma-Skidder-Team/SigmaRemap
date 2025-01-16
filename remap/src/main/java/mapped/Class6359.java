@@ -15,7 +15,7 @@ public class Class6359 extends Class6354
 {
     private static final Logger field25438;
     private Class6516 field25439;
-    private Class51 field25440;
+    private CompoundNBT field25440;
     
     public Class6359() {
         super("scoreboard");
@@ -29,15 +29,15 @@ public class Class6359 extends Class6354
     }
     
     @Override
-    public void method18901(final Class51 field25440) {
+    public void method18901(final CompoundNBT field25440) {
         if (this.field25439 != null) {
-            this.method18938(field25440.method328("Objectives", 10));
-            this.field25439.method19657(field25440.method328("PlayerScores", 10));
-            if (field25440.method316("DisplaySlots", 10)) {
-                this.method18937(field25440.method327("DisplaySlots"));
+            this.method18938(field25440.getList("Objectives", 10));
+            this.field25439.method19657(field25440.getList("PlayerScores", 10));
+            if (field25440.contains("DisplaySlots", 10)) {
+                this.method18937(field25440.getCompound("DisplaySlots"));
             }
-            if (field25440.method316("Teams", 9)) {
-                this.method18935(field25440.method328("Teams", 10));
+            if (field25440.contains("Teams", 9)) {
+                this.method18935(field25440.getList("Teams", 10));
             }
         }
         else {
@@ -45,78 +45,78 @@ public class Class6359 extends Class6354
         }
     }
     
-    public void method18935(final Class52 class52) {
+    public void method18935(final ListNBT class52) {
         for (int i = 0; i < class52.size(); ++i) {
-            final Class51 method346 = class52.method346(i);
-            String s = method346.method323("Name");
+            final CompoundNBT method346 = class52.method346(i);
+            String s = method346.getString("Name");
             if (s.length() > 16) {
                 s = s.substring(0, 16);
             }
             final Class6749 method347 = this.field25439.method19646(s);
-            final ITextComponent method348 = Class5953.method17871(method346.method323("DisplayName"));
+            final ITextComponent method348 = Class5953.method17871(method346.getString("DisplayName"));
             if (method348 != null) {
                 method347.method20542(method348);
             }
-            if (method346.method316("TeamColor", 8)) {
-                method347.method20562(TextFormatting.getValueByName(method346.method323("TeamColor")));
+            if (method346.contains("TeamColor", 8)) {
+                method347.method20562(TextFormatting.getValueByName(method346.getString("TeamColor")));
             }
-            if (method346.method316("AllowFriendlyFire", 99)) {
-                method347.method20551(method346.method329("AllowFriendlyFire"));
+            if (method346.contains("AllowFriendlyFire", 99)) {
+                method347.method20551(method346.getBoolean("AllowFriendlyFire"));
             }
-            if (method346.method316("SeeFriendlyInvisibles", 99)) {
-                method347.method20553(method346.method329("SeeFriendlyInvisibles"));
+            if (method346.contains("SeeFriendlyInvisibles", 99)) {
+                method347.method20553(method346.getBoolean("SeeFriendlyInvisibles"));
             }
-            if (method346.method316("MemberNamePrefix", 8)) {
-                final ITextComponent method349 = Class5953.method17871(method346.method323("MemberNamePrefix"));
+            if (method346.contains("MemberNamePrefix", 8)) {
+                final ITextComponent method349 = Class5953.method17871(method346.getString("MemberNamePrefix"));
                 if (method349 != null) {
                     method347.method20543(method349);
                 }
             }
-            if (method346.method316("MemberNameSuffix", 8)) {
-                final ITextComponent method350 = Class5953.method17871(method346.method323("MemberNameSuffix"));
+            if (method346.contains("MemberNameSuffix", 8)) {
+                final ITextComponent method350 = Class5953.method17871(method346.getString("MemberNameSuffix"));
                 if (method350 != null) {
                     method347.method20545(method350);
                 }
             }
-            if (method346.method316("NameTagVisibility", 8)) {
-                final Class2097 method351 = Class2097.method8218(method346.method323("NameTagVisibility"));
+            if (method346.contains("NameTagVisibility", 8)) {
+                final Class2097 method351 = Class2097.method8218(method346.getString("NameTagVisibility"));
                 if (method351 != null) {
                     method347.method20556(method351);
                 }
             }
-            if (method346.method316("DeathMessageVisibility", 8)) {
-                final Class2097 method352 = Class2097.method8218(method346.method323("DeathMessageVisibility"));
+            if (method346.contains("DeathMessageVisibility", 8)) {
+                final Class2097 method352 = Class2097.method8218(method346.getString("DeathMessageVisibility"));
                 if (method352 != null) {
                     method347.method20557(method352);
                 }
             }
-            if (method346.method316("CollisionRule", 8)) {
-                final Class343 method353 = Class343.method1021(method346.method323("CollisionRule"));
+            if (method346.contains("CollisionRule", 8)) {
+                final Class343 method353 = Class343.method1021(method346.getString("CollisionRule"));
                 if (method353 != null) {
                     method347.method20559(method353);
                 }
             }
-            this.method18936(method347, method346.method328("Players", 8));
+            this.method18936(method347, method346.getList("Players", 8));
         }
     }
     
-    public void method18936(final Class6749 class6749, final Class52 class6750) {
+    public void method18936(final Class6749 class6749, final ListNBT class6750) {
         for (int i = 0; i < class6750.size(); ++i) {
             this.field25439.method19615(class6750.method353(i), class6749);
         }
     }
     
-    public void method18937(final Class51 class51) {
+    public void method18937(final CompoundNBT class51) {
         for (int i = 0; i < 19; ++i) {
-            if (class51.method316("slot_" + i, 8)) {
-                this.field25439.method19614(i, this.field25439.method19632(class51.method323("slot_" + i)));
+            if (class51.contains("slot_" + i, 8)) {
+                this.field25439.method19614(i, this.field25439.method19632(class51.getString("slot_" + i)));
             }
         }
     }
     
-    public void method18938(final Class52 class52) {
+    public void method18938(final ListNBT class52) {
         for (int i = 0; i < class52.size(); ++i) {
-            Class9456.method35137(class52.method346(i).method323("CriteriaName")).ifPresent(class54 -> {
+            Class9456.method35137(class52.method346(i).getString("CriteriaName")).ifPresent(class54 -> {
                 class53.method323("Name");
                 String substring = null;
                 if (substring.length() > 16) {
@@ -129,11 +129,11 @@ public class Class6359 extends Class6354
     }
     
     @Override
-    public Class51 method18902(final Class51 class51) {
+    public CompoundNBT method18902(final CompoundNBT class51) {
         if (this.field25439 != null) {
-            class51.method295("Objectives", this.method18941());
-            class51.method295("PlayerScores", this.field25439.method19656());
-            class51.method295("Teams", this.method18939());
+            class51.put("Objectives", this.method18941());
+            class51.put("PlayerScores", this.field25439.method19656());
+            class51.put("Teams", this.method18939());
             this.method18940(class51);
             return class51;
         }
@@ -141,60 +141,60 @@ public class Class6359 extends Class6354
         return class51;
     }
     
-    public Class52 method18939() {
-        final Class52 class52 = new Class52();
+    public ListNBT method18939() {
+        final ListNBT class52 = new ListNBT();
         for (final Class6749 class53 : this.field25439.method19650()) {
-            final Class51 e = new Class51();
-            e.method306("Name", class53.method20539());
-            e.method306("DisplayName", Class5953.method17869(class53.method20540()));
+            final CompoundNBT e = new CompoundNBT();
+            e.putString("Name", class53.method20539());
+            e.putString("DisplayName", Class5953.method17869(class53.method20540()));
             if (class53.getColor().getColorIndex() >= 0) {
-                e.method306("TeamColor", class53.getColor().getFriendlyName());
+                e.putString("TeamColor", class53.getColor().getFriendlyName());
             }
-            e.method312("AllowFriendlyFire", class53.method20550());
-            e.method312("SeeFriendlyInvisibles", class53.method20552());
-            e.method306("MemberNamePrefix", Class5953.method17869(class53.method20544()));
-            e.method306("MemberNameSuffix", Class5953.method17869(class53.method20546()));
-            e.method306("NameTagVisibility", class53.method20554().field12152);
-            e.method306("DeathMessageVisibility", class53.method20555().field12152);
-            e.method306("CollisionRule", class53.method20558().field2117);
-            final Class52 class54 = new Class52();
+            e.putBoolean("AllowFriendlyFire", class53.method20550());
+            e.putBoolean("SeeFriendlyInvisibles", class53.method20552());
+            e.putString("MemberNamePrefix", Class5953.method17869(class53.method20544()));
+            e.putString("MemberNameSuffix", Class5953.method17869(class53.method20546()));
+            e.putString("NameTagVisibility", class53.method20554().field12152);
+            e.putString("DeathMessageVisibility", class53.method20555().field12152);
+            e.putString("CollisionRule", class53.method20558().field2117);
+            final ListNBT class54 = new ListNBT();
             final Iterator<String> iterator2 = class53.method20547().iterator();
             while (iterator2.hasNext()) {
-                ((AbstractList<Class50>)class54).add(Class50.method290(iterator2.next()));
+                ((AbstractList<StringNBT>)class54).add(StringNBT.method290(iterator2.next()));
             }
-            e.method295("Players", class54);
-            ((AbstractList<Class51>)class52).add(e);
+            e.put("Players", class54);
+            ((AbstractList<CompoundNBT>)class52).add(e);
         }
         return class52;
     }
     
-    public void method18940(final Class51 class51) {
-        final Class51 class52 = new Class51();
+    public void method18940(final CompoundNBT class51) {
+        final CompoundNBT class52 = new CompoundNBT();
         int n = 0;
         for (int i = 0; i < 19; ++i) {
             final Class9290 method19644 = this.field25439.method19644(i);
             if (method19644 != null) {
-                class52.method306("slot_" + i, method19644.method34312());
+                class52.putString("slot_" + i, method19644.method34312());
                 n = 1;
             }
         }
         if (n != 0) {
-            class51.method295("DisplaySlots", class52);
+            class51.put("DisplaySlots", class52);
         }
     }
     
-    public Class52 method18941() {
-        final Class52 class52 = new Class52();
+    public ListNBT method18941() {
+        final ListNBT class52 = new ListNBT();
         for (final Class9290 class53 : this.field25439.method19638()) {
             if (class53.method34313() == null) {
                 continue;
             }
-            final Class51 e = new Class51();
-            e.method306("Name", class53.method34312());
-            e.method306("CriteriaName", class53.method34313().method35139());
-            e.method306("DisplayName", Class5953.method17869(class53.method34314()));
-            e.method306("RenderType", class53.method34317().method902());
-            ((AbstractList<Class51>)class52).add(e);
+            final CompoundNBT e = new CompoundNBT();
+            e.putString("Name", class53.method34312());
+            e.putString("CriteriaName", class53.method34313().method35139());
+            e.putString("DisplayName", Class5953.method17869(class53.method34314()));
+            e.putString("RenderType", class53.method34317().method902());
+            ((AbstractList<CompoundNBT>)class52).add(e);
         }
         return class52;
     }

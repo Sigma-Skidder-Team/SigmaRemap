@@ -30,7 +30,7 @@ public class WorldInfo
     public static final Class2113 field36340;
     private long field36341;
     private Class9505 field36342;
-    private Class51 field36343;
+    private CompoundNBT field36343;
     private String field36344;
     private int field36345;
     private int field36346;
@@ -42,7 +42,7 @@ public class WorldInfo
     private final DataFixer field36352;
     private final int field36353;
     private boolean field36354;
-    private Class51 field36355;
+    private CompoundNBT field36355;
     private String field36356;
     private int field36357;
     private int field36358;
@@ -68,8 +68,8 @@ public class WorldInfo
     private int field36378;
     private final Set<String> field36379;
     private final Set<String> field36380;
-    private final Map<DimensionType, Class51> field36381;
-    private Class51 field36382;
+    private final Map<DimensionType, CompoundNBT> field36381;
+    private CompoundNBT field36382;
     private int field36383;
     private int field36384;
     private UUID field36385;
@@ -80,7 +80,7 @@ public class WorldInfo
     
     public WorldInfo() {
         this.field36342 = Class9505.field40892;
-        this.field36343 = new Class51();
+        this.field36343 = new CompoundNBT();
         this.field36372 = 6.0E7;
         this.field36375 = 5.0;
         this.field36376 = 0.2;
@@ -94,12 +94,12 @@ public class WorldInfo
         this.field36389 = new Class7858<MinecraftServer>(Class7271.field28166);
         this.field36352 = null;
         this.field36353 = Class9528.method35579().getWorldVersion();
-        this.method29573(new Class51());
+        this.method29573(new CompoundNBT());
     }
     
-    public WorldInfo(final Class51 class51, final DataFixer field36352, final int field36353, final Class51 field36354) {
+    public WorldInfo(final CompoundNBT class51, final DataFixer field36352, final int field36353, final CompoundNBT field36354) {
         this.field36342 = Class9505.field40892;
-        this.field36343 = new Class51();
+        this.field36343 = new CompoundNBT();
         this.field36372 = 6.0E7;
         this.field36375 = 5.0;
         this.field36376 = 0.2;
@@ -112,158 +112,158 @@ public class WorldInfo
         this.field36388 = new Class8878();
         this.field36389 = new Class7858<MinecraftServer>(Class7271.field28166);
         this.field36352 = field36352;
-        final Class52 method328 = class51.method328("ServerBrands", 8);
+        final ListNBT method328 = class51.getList("ServerBrands", 8);
         for (int i = 0; i < method328.size(); ++i) {
             this.field36386.add(method328.method353(i));
         }
-        this.field36387 = class51.method329("WasModded");
-        if (class51.method316("Version", 10)) {
-            final Class51 method329 = class51.method327("Version");
-            this.field36337 = method329.method323("Name");
-            this.field36338 = method329.method319("Id");
-            this.field36339 = method329.method329("Snapshot");
+        this.field36387 = class51.getBoolean("WasModded");
+        if (class51.contains("Version", 10)) {
+            final CompoundNBT method329 = class51.getCompound("Version");
+            this.field36337 = method329.getString("Name");
+            this.field36338 = method329.getInt("Id");
+            this.field36339 = method329.getBoolean("Snapshot");
         }
-        this.field36341 = class51.method320("RandomSeed");
-        if (class51.method316("generatorName", 8)) {
-            this.field36342 = Class9505.method35410(class51.method323("generatorName"));
+        this.field36341 = class51.getLong("RandomSeed");
+        if (class51.contains("generatorName", 8)) {
+            this.field36342 = Class9505.method35410(class51.getString("generatorName"));
             if (this.field36342 != null) {
                 if (this.field36342 != Class9505.field40896) {
                     if (this.field36342.method35409()) {
                         int method330 = 0;
-                        if (class51.method316("generatorVersion", 99)) {
-                            method330 = class51.method319("generatorVersion");
+                        if (class51.contains("generatorVersion", 99)) {
+                            method330 = class51.getInt("generatorVersion");
                         }
                         this.field36342 = this.field36342.method35403(method330);
                     }
                 }
                 else {
-                    this.field36344 = class51.method323("generatorOptions");
+                    this.field36344 = class51.getString("generatorOptions");
                 }
             }
             else {
                 this.field36342 = Class9505.field40892;
             }
-            this.method29573(class51.method327("generatorOptions"));
+            this.method29573(class51.getCompound("generatorOptions"));
         }
-        this.field36363 = Class101.method592(class51.method319("GameType"));
-        if (class51.method316("legacy_custom_options", 8)) {
-            this.field36344 = class51.method323("legacy_custom_options");
+        this.field36363 = Class101.method592(class51.getInt("GameType"));
+        if (class51.contains("legacy_custom_options", 8)) {
+            this.field36344 = class51.getString("legacy_custom_options");
         }
-        if (!class51.method316("MapFeatures", 99)) {
+        if (!class51.contains("MapFeatures", 99)) {
             this.field36364 = true;
         }
         else {
-            this.field36364 = class51.method329("MapFeatures");
+            this.field36364 = class51.getBoolean("MapFeatures");
         }
-        this.field36345 = class51.method319("SpawnX");
-        this.field36346 = class51.method319("SpawnY");
-        this.field36347 = class51.method319("SpawnZ");
-        this.field36348 = class51.method320("Time");
-        if (!class51.method316("DayTime", 99)) {
+        this.field36345 = class51.getInt("SpawnX");
+        this.field36346 = class51.getInt("SpawnY");
+        this.field36347 = class51.getInt("SpawnZ");
+        this.field36348 = class51.getLong("Time");
+        if (!class51.contains("DayTime", 99)) {
             this.field36349 = this.field36348;
         }
         else {
-            this.field36349 = class51.method320("DayTime");
+            this.field36349 = class51.getLong("DayTime");
         }
-        this.field36350 = class51.method320("LastPlayed");
-        this.field36351 = class51.method320("SizeOnDisk");
-        this.field36356 = class51.method323("LevelName");
-        this.field36357 = class51.method319("version");
-        this.field36358 = class51.method319("clearWeatherTime");
-        this.field36360 = class51.method319("rainTime");
-        this.field36359 = class51.method329("raining");
-        this.field36362 = class51.method319("thunderTime");
-        this.field36361 = class51.method329("thundering");
-        this.field36365 = class51.method329("hardcore");
-        if (!class51.method316("initialized", 99)) {
+        this.field36350 = class51.getLong("LastPlayed");
+        this.field36351 = class51.getLong("SizeOnDisk");
+        this.field36356 = class51.getString("LevelName");
+        this.field36357 = class51.getInt("version");
+        this.field36358 = class51.getInt("clearWeatherTime");
+        this.field36360 = class51.getInt("rainTime");
+        this.field36359 = class51.getBoolean("raining");
+        this.field36362 = class51.getInt("thunderTime");
+        this.field36361 = class51.getBoolean("thundering");
+        this.field36365 = class51.getBoolean("hardcore");
+        if (!class51.contains("initialized", 99)) {
             this.field36367 = true;
         }
         else {
-            this.field36367 = class51.method329("initialized");
+            this.field36367 = class51.getBoolean("initialized");
         }
-        if (!class51.method316("allowCommands", 99)) {
+        if (!class51.contains("allowCommands", 99)) {
             this.field36366 = (this.field36363 == Class101.field299);
         }
         else {
-            this.field36366 = class51.method329("allowCommands");
+            this.field36366 = class51.getBoolean("allowCommands");
         }
         this.field36353 = field36353;
         if (field36354 != null) {
             this.field36355 = field36354;
         }
-        if (class51.method316("GameRules", 10)) {
-            this.field36388.method31213(class51.method327("GameRules"));
+        if (class51.contains("GameRules", 10)) {
+            this.field36388.method31213(class51.getCompound("GameRules"));
         }
-        if (class51.method316("Difficulty", 99)) {
-            this.field36368 = Class2113.method8237(class51.method317("Difficulty"));
+        if (class51.contains("Difficulty", 99)) {
+            this.field36368 = Class2113.method8237(class51.getByte("Difficulty"));
         }
-        if (class51.method316("DifficultyLocked", 1)) {
-            this.field36369 = class51.method329("DifficultyLocked");
+        if (class51.contains("DifficultyLocked", 1)) {
+            this.field36369 = class51.getBoolean("DifficultyLocked");
         }
-        if (class51.method316("BorderCenterX", 99)) {
-            this.field36370 = class51.method322("BorderCenterX");
+        if (class51.contains("BorderCenterX", 99)) {
+            this.field36370 = class51.getDouble("BorderCenterX");
         }
-        if (class51.method316("BorderCenterZ", 99)) {
-            this.field36371 = class51.method322("BorderCenterZ");
+        if (class51.contains("BorderCenterZ", 99)) {
+            this.field36371 = class51.getDouble("BorderCenterZ");
         }
-        if (class51.method316("BorderSize", 99)) {
-            this.field36372 = class51.method322("BorderSize");
+        if (class51.contains("BorderSize", 99)) {
+            this.field36372 = class51.getDouble("BorderSize");
         }
-        if (class51.method316("BorderSizeLerpTime", 99)) {
-            this.field36373 = class51.method320("BorderSizeLerpTime");
+        if (class51.contains("BorderSizeLerpTime", 99)) {
+            this.field36373 = class51.getLong("BorderSizeLerpTime");
         }
-        if (class51.method316("BorderSizeLerpTarget", 99)) {
-            this.field36374 = class51.method322("BorderSizeLerpTarget");
+        if (class51.contains("BorderSizeLerpTarget", 99)) {
+            this.field36374 = class51.getDouble("BorderSizeLerpTarget");
         }
-        if (class51.method316("BorderSafeZone", 99)) {
-            this.field36375 = class51.method322("BorderSafeZone");
+        if (class51.contains("BorderSafeZone", 99)) {
+            this.field36375 = class51.getDouble("BorderSafeZone");
         }
-        if (class51.method316("BorderDamagePerBlock", 99)) {
-            this.field36376 = class51.method322("BorderDamagePerBlock");
+        if (class51.contains("BorderDamagePerBlock", 99)) {
+            this.field36376 = class51.getDouble("BorderDamagePerBlock");
         }
-        if (class51.method316("BorderWarningBlocks", 99)) {
-            this.field36377 = class51.method319("BorderWarningBlocks");
+        if (class51.contains("BorderWarningBlocks", 99)) {
+            this.field36377 = class51.getInt("BorderWarningBlocks");
         }
-        if (class51.method316("BorderWarningTime", 99)) {
-            this.field36378 = class51.method319("BorderWarningTime");
+        if (class51.contains("BorderWarningTime", 99)) {
+            this.field36378 = class51.getInt("BorderWarningTime");
         }
-        if (class51.method316("DimensionData", 10)) {
-            final Class51 method331 = class51.method327("DimensionData");
-            for (final String s : method331.method293()) {
-                this.field36381.put(DimensionType.method1274(Integer.parseInt(s)), method331.method327(s));
+        if (class51.contains("DimensionData", 10)) {
+            final CompoundNBT method331 = class51.getCompound("DimensionData");
+            for (final String s : method331.keySet()) {
+                this.field36381.put(DimensionType.method1274(Integer.parseInt(s)), method331.getCompound(s));
             }
         }
-        if (class51.method316("DataPacks", 10)) {
-            final Class51 method332 = class51.method327("DataPacks");
-            final Class52 method333 = method332.method328("Disabled", 8);
+        if (class51.contains("DataPacks", 10)) {
+            final CompoundNBT method332 = class51.getCompound("DataPacks");
+            final ListNBT method333 = method332.getList("Disabled", 8);
             for (int j = 0; j < method333.size(); ++j) {
                 this.field36379.add(method333.method353(j));
             }
-            final Class52 method334 = method332.method328("Enabled", 8);
+            final ListNBT method334 = method332.getList("Enabled", 8);
             for (int k = 0; k < method334.size(); ++k) {
                 this.field36380.add(method334.method353(k));
             }
         }
-        if (class51.method316("CustomBossEvents", 10)) {
-            this.field36382 = class51.method327("CustomBossEvents");
+        if (class51.contains("CustomBossEvents", 10)) {
+            this.field36382 = class51.getCompound("CustomBossEvents");
         }
-        if (class51.method316("ScheduledEvents", 9)) {
-            this.field36389.method25417(class51.method328("ScheduledEvents", 10));
+        if (class51.contains("ScheduledEvents", 9)) {
+            this.field36389.method25417(class51.getList("ScheduledEvents", 10));
         }
-        if (class51.method316("WanderingTraderSpawnDelay", 99)) {
-            this.field36383 = class51.method319("WanderingTraderSpawnDelay");
+        if (class51.contains("WanderingTraderSpawnDelay", 99)) {
+            this.field36383 = class51.getInt("WanderingTraderSpawnDelay");
         }
-        if (class51.method316("WanderingTraderSpawnChance", 99)) {
-            this.field36384 = class51.method319("WanderingTraderSpawnChance");
+        if (class51.contains("WanderingTraderSpawnChance", 99)) {
+            this.field36384 = class51.getInt("WanderingTraderSpawnChance");
         }
-        if (class51.method316("WanderingTraderId", 8)) {
-            this.field36385 = UUID.fromString(class51.method323("WanderingTraderId"));
+        if (class51.contains("WanderingTraderId", 8)) {
+            this.field36385 = UUID.fromString(class51.getString("WanderingTraderId"));
         }
     }
     
     public WorldInfo(final Class8511 class8511, final String field36356) {
         this.field36342 = Class9505.field40892;
-        this.field36343 = new Class51();
+        this.field36343 = new CompoundNBT();
         this.field36372 = 6.0E7;
         this.field36375 = 5.0;
         this.field36376 = 0.2;
@@ -289,103 +289,103 @@ public class WorldInfo
         this.field36364 = class8511.method28438();
         this.field36365 = class8511.method28437();
         this.field36342 = class8511.method28439();
-        this.method29573((Class51)Dynamic.convert((DynamicOps)JsonOps.INSTANCE, (DynamicOps)Class8453.field34721, (Object)class8511.method28441()));
+        this.method29573((CompoundNBT)Dynamic.convert((DynamicOps)JsonOps.INSTANCE, (DynamicOps)Class8453.field34721, (Object)class8511.method28441()));
         this.field36366 = class8511.method28440();
     }
     
-    public Class51 method29532(Class51 field36355) {
+    public CompoundNBT method29532(CompoundNBT field36355) {
         this.method29541();
         if (field36355 == null) {
             field36355 = this.field36355;
         }
-        final Class51 class51 = new Class51();
+        final CompoundNBT class51 = new CompoundNBT();
         this.method29533(class51, field36355);
         return class51;
     }
     
-    private void method29533(final Class51 class51, final Class51 class52) {
-        final Class52 class53 = new Class52();
-        this.field36386.stream().map((Function<? super Object, ?>)Class50::method290).forEach(class53::add);
-        class51.method295("ServerBrands", class53);
-        class51.method312("WasModded", this.field36387);
-        final Class51 class54 = new Class51();
-        class54.method306("Name", Class9528.method35579().getName());
-        class54.method298("Id", Class9528.method35579().getWorldVersion());
-        class54.method312("Snapshot", !Class9528.method35579().isStable());
-        class51.method295("Version", class54);
-        class51.method298("DataVersion", Class9528.method35579().getWorldVersion());
-        class51.method299("RandomSeed", this.field36341);
-        class51.method306("generatorName", this.field36342.method35399());
-        class51.method298("generatorVersion", this.field36342.method35402());
+    private void method29533(final CompoundNBT class51, final CompoundNBT class52) {
+        final ListNBT class53 = new ListNBT();
+        this.field36386.stream().map((Function<? super Object, ?>) StringNBT::method290).forEach(class53::add);
+        class51.put("ServerBrands", class53);
+        class51.putBoolean("WasModded", this.field36387);
+        final CompoundNBT class54 = new CompoundNBT();
+        class54.putString("Name", Class9528.method35579().getName());
+        class54.putInt("Id", Class9528.method35579().getWorldVersion());
+        class54.putBoolean("Snapshot", !Class9528.method35579().isStable());
+        class51.put("Version", class54);
+        class51.putInt("DataVersion", Class9528.method35579().getWorldVersion());
+        class51.putLong("RandomSeed", this.field36341);
+        class51.putString("generatorName", this.field36342.method35399());
+        class51.putInt("generatorVersion", this.field36342.method35402());
         if (!this.field36343.method331()) {
-            class51.method295("generatorOptions", this.field36343);
+            class51.put("generatorOptions", this.field36343);
         }
         if (this.field36344 != null) {
-            class51.method306("legacy_custom_options", this.field36344);
+            class51.putString("legacy_custom_options", this.field36344);
         }
-        class51.method298("GameType", this.field36363.method585());
-        class51.method312("MapFeatures", this.field36364);
-        class51.method298("SpawnX", this.field36345);
-        class51.method298("SpawnY", this.field36346);
-        class51.method298("SpawnZ", this.field36347);
-        class51.method299("Time", this.field36348);
-        class51.method299("DayTime", this.field36349);
-        class51.method299("SizeOnDisk", this.field36351);
-        class51.method299("LastPlayed", Util.method27839());
-        class51.method306("LevelName", this.field36356);
-        class51.method298("version", this.field36357);
-        class51.method298("clearWeatherTime", this.field36358);
-        class51.method298("rainTime", this.field36360);
-        class51.method312("raining", this.field36359);
-        class51.method298("thunderTime", this.field36362);
-        class51.method312("thundering", this.field36361);
-        class51.method312("hardcore", this.field36365);
-        class51.method312("allowCommands", this.field36366);
-        class51.method312("initialized", this.field36367);
-        class51.method305("BorderCenterX", this.field36370);
-        class51.method305("BorderCenterZ", this.field36371);
-        class51.method305("BorderSize", this.field36372);
-        class51.method299("BorderSizeLerpTime", this.field36373);
-        class51.method305("BorderSafeZone", this.field36375);
-        class51.method305("BorderDamagePerBlock", this.field36376);
-        class51.method305("BorderSizeLerpTarget", this.field36374);
-        class51.method305("BorderWarningBlocks", this.field36377);
-        class51.method305("BorderWarningTime", this.field36378);
+        class51.putInt("GameType", this.field36363.method585());
+        class51.putBoolean("MapFeatures", this.field36364);
+        class51.putInt("SpawnX", this.field36345);
+        class51.putInt("SpawnY", this.field36346);
+        class51.putInt("SpawnZ", this.field36347);
+        class51.putLong("Time", this.field36348);
+        class51.putLong("DayTime", this.field36349);
+        class51.putLong("SizeOnDisk", this.field36351);
+        class51.putLong("LastPlayed", Util.method27839());
+        class51.putString("LevelName", this.field36356);
+        class51.putInt("version", this.field36357);
+        class51.putInt("clearWeatherTime", this.field36358);
+        class51.putInt("rainTime", this.field36360);
+        class51.putBoolean("raining", this.field36359);
+        class51.putInt("thunderTime", this.field36362);
+        class51.putBoolean("thundering", this.field36361);
+        class51.putBoolean("hardcore", this.field36365);
+        class51.putBoolean("allowCommands", this.field36366);
+        class51.putBoolean("initialized", this.field36367);
+        class51.putDouble("BorderCenterX", this.field36370);
+        class51.putDouble("BorderCenterZ", this.field36371);
+        class51.putDouble("BorderSize", this.field36372);
+        class51.putLong("BorderSizeLerpTime", this.field36373);
+        class51.putDouble("BorderSafeZone", this.field36375);
+        class51.putDouble("BorderDamagePerBlock", this.field36376);
+        class51.putDouble("BorderSizeLerpTarget", this.field36374);
+        class51.putDouble("BorderWarningBlocks", this.field36377);
+        class51.putDouble("BorderWarningTime", this.field36378);
         if (this.field36368 != null) {
-            class51.method296("Difficulty", (byte)this.field36368.method8235());
+            class51.putByte("Difficulty", (byte)this.field36368.method8235());
         }
-        class51.method312("DifficultyLocked", this.field36369);
-        class51.method295("GameRules", this.field36388.method31212());
-        final Class51 class55 = new Class51();
+        class51.putBoolean("DifficultyLocked", this.field36369);
+        class51.put("GameRules", this.field36388.method31212());
+        final CompoundNBT class55 = new CompoundNBT();
         for (final Map.Entry entry : this.field36381.entrySet()) {
-            class55.method295(String.valueOf(((DimensionType)entry.getKey()).method1270()), (INBT)entry.getValue());
+            class55.put(String.valueOf(((DimensionType)entry.getKey()).method1270()), (INBT)entry.getValue());
         }
-        class51.method295("DimensionData", class55);
+        class51.put("DimensionData", class55);
         if (class52 != null) {
-            class51.method295("Player", class52);
+            class51.put("Player", class52);
         }
-        final Class51 class56 = new Class51();
-        final Class52 class57 = new Class52();
+        final CompoundNBT class56 = new CompoundNBT();
+        final ListNBT class57 = new ListNBT();
         final Iterator<String> iterator2 = this.field36380.iterator();
         while (iterator2.hasNext()) {
-            ((AbstractList<Class50>)class57).add(Class50.method290(iterator2.next()));
+            ((AbstractList<StringNBT>)class57).add(StringNBT.method290(iterator2.next()));
         }
-        class56.method295("Enabled", class57);
-        final Class52 class58 = new Class52();
+        class56.put("Enabled", class57);
+        final ListNBT class58 = new ListNBT();
         final Iterator<String> iterator3 = this.field36379.iterator();
         while (iterator3.hasNext()) {
-            ((AbstractList<Class50>)class58).add(Class50.method290(iterator3.next()));
+            ((AbstractList<StringNBT>)class58).add(StringNBT.method290(iterator3.next()));
         }
-        class56.method295("Disabled", class58);
-        class51.method295("DataPacks", class56);
+        class56.put("Disabled", class58);
+        class51.put("DataPacks", class56);
         if (this.field36382 != null) {
-            class51.method295("CustomBossEvents", this.field36382);
+            class51.put("CustomBossEvents", this.field36382);
         }
-        class51.method295("ScheduledEvents", this.field36389.method25419());
-        class51.method298("WanderingTraderSpawnDelay", this.field36383);
-        class51.method298("WanderingTraderSpawnChance", this.field36384);
+        class51.put("ScheduledEvents", this.field36389.method25419());
+        class51.putInt("WanderingTraderSpawnDelay", this.field36383);
+        class51.putInt("WanderingTraderSpawnChance", this.field36384);
         if (this.field36385 != null) {
-            class51.method306("WanderingTraderId", this.field36385.toString());
+            class51.putString("WanderingTraderId", this.field36385.toString());
         }
     }
     
@@ -431,7 +431,7 @@ public class WorldInfo
         }
     }
     
-    public Class51 method29542() {
+    public CompoundNBT method29542() {
         this.method29541();
         return this.field36355;
     }
@@ -554,11 +554,11 @@ public class WorldInfo
         this.field36342 = field36342;
     }
     
-    public Class51 method29572() {
+    public CompoundNBT method29572() {
         return this.field36343;
     }
     
-    public void method29573(final Class51 field36343) {
+    public void method29573(final CompoundNBT field36343) {
         this.field36343 = field36343;
     }
     
@@ -674,16 +674,16 @@ public class WorldInfo
         return this.field36389;
     }
     
-    public void method29602(final Class5204 class5204) {
-        class5204.method16296("Level name", () -> this.field36356);
-        class5204.method16296("Level seed", () -> String.valueOf(this.field36341));
-        class5204.method16296("Level generator", () -> String.format("ID %02d - %s, ver %d. Features enabled: %b", this.field36342.method35411(), this.field36342.method35398(), this.field36342.method35402(), this.field36364));
-        class5204.method16296("Level generator options", () -> this.field36343.toString());
-        class5204.method16296("Level spawn location", () -> Class5204.method16295(this.field36345, this.field36346, this.field36347));
-        class5204.method16296("Level time", () -> String.format("%d game time, %d day time", this.field36348, this.field36349));
-        class5204.method16296("Known server brands", () -> String.join(", ", this.field36386));
-        class5204.method16296("Level was modded", () -> Boolean.toString(this.field36387));
-        class5204.method16296("Level storage version", () -> {
+    public void method29602(final CrashReportCategory class5204) {
+        class5204.addDetail("Level name", () -> this.field36356);
+        class5204.addDetail("Level seed", () -> String.valueOf(this.field36341));
+        class5204.addDetail("Level generator", () -> String.format("ID %02d - %s, ver %d. Features enabled: %b", this.field36342.method35411(), this.field36342.method35398(), this.field36342.method35402(), this.field36364));
+        class5204.addDetail("Level generator options", () -> this.field36343.toString());
+        class5204.addDetail("Level spawn location", () -> CrashReportCategory.method16295(this.field36345, this.field36346, this.field36347));
+        class5204.addDetail("Level time", () -> String.format("%d game time, %d day time", this.field36348, this.field36349));
+        class5204.addDetail("Known server brands", () -> String.join(", ", this.field36386));
+        class5204.addDetail("Level was modded", () -> Boolean.toString(this.field36387));
+        class5204.addDetail("Level storage version", () -> {
             try {
                 switch (this.field36357) {
                     case 19132: {
@@ -698,16 +698,16 @@ public class WorldInfo
             final String s;
             return String.format("0x%05X - %s", this.field36357, s);
         });
-        class5204.method16296("Level weather", () -> String.format("Rain time: %d (now: %b), thunder time: %d (now: %b)", this.field36360, this.field36359, this.field36362, this.field36361));
-        class5204.method16296("Level game mode", () -> String.format("Game mode: %s (ID %d). Hardcore: %b. Cheats: %b", this.field36363.method586(), this.field36363.method585(), this.field36365, this.field36366));
+        class5204.addDetail("Level weather", () -> String.format("Rain time: %d (now: %b), thunder time: %d (now: %b)", this.field36360, this.field36359, this.field36362, this.field36361));
+        class5204.addDetail("Level game mode", () -> String.format("Game mode: %s (ID %d). Hardcore: %b. Cheats: %b", this.field36363.method586(), this.field36363.method585(), this.field36365, this.field36366));
     }
     
-    public Class51 method29603(final DimensionType class383) {
-        final Class51 class384 = this.field36381.get(class383);
-        return (class384 != null) ? class384 : new Class51();
+    public CompoundNBT method29603(final DimensionType class383) {
+        final CompoundNBT class384 = this.field36381.get(class383);
+        return (class384 != null) ? class384 : new CompoundNBT();
     }
     
-    public void method29604(final DimensionType class383, final Class51 class384) {
+    public void method29604(final DimensionType class383, final CompoundNBT class384) {
         this.field36381.put(class383, class384);
     }
     
@@ -732,11 +732,11 @@ public class WorldInfo
     }
     
     @Nullable
-    public Class51 method29610() {
+    public CompoundNBT method29610() {
         return this.field36382;
     }
     
-    public void method29611(final Class51 field36382) {
+    public void method29611(final CompoundNBT field36382) {
         this.field36382 = field36382;
     }
     

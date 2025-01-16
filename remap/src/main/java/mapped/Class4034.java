@@ -27,9 +27,9 @@ public class Class4034 extends Item
         return false;
     }
     
-    public static Class52 method12225(final ItemStack class8321) {
-        final Class51 method27657 = class8321.method27657();
-        return (method27657 == null) ? new Class52() : method27657.method328("StoredEnchantments", 10);
+    public static ListNBT method12225(final ItemStack class8321) {
+        final CompoundNBT method27657 = class8321.method27657();
+        return (method27657 == null) ? new ListNBT() : method27657.getList("StoredEnchantments", 10);
     }
     
     @Override
@@ -39,27 +39,27 @@ public class Class4034 extends Item
     }
     
     public static void method12226(final ItemStack class8321, final Class6827 class8322) {
-        final Class52 method12225 = method12225(class8321);
+        final ListNBT method12225 = method12225(class8321);
         int n = 1;
         final ResourceLocation method12226 = Registry.field209.getKey(class8322.field26818);
         for (int i = 0; i < method12225.size(); ++i) {
-            final Class51 method12227 = method12225.method346(i);
-            final ResourceLocation method12228 = ResourceLocation.method7795(method12227.method323("id"));
+            final CompoundNBT method12227 = method12225.method346(i);
+            final ResourceLocation method12228 = ResourceLocation.method7795(method12227.getString("id"));
             if (method12228 != null && method12228.equals(method12226)) {
-                if (method12227.method319("lvl") < class8322.field26819) {
-                    method12227.method297("lvl", (short)class8322.field26819);
+                if (method12227.getInt("lvl") < class8322.field26819) {
+                    method12227.putShort("lvl", (short)class8322.field26819);
                 }
                 n = 0;
                 break;
             }
         }
         if (n != 0) {
-            final Class51 e = new Class51();
-            e.method306("id", String.valueOf(method12226));
-            e.method297("lvl", (short)class8322.field26819);
-            ((AbstractList<Class51>)method12225).add(e);
+            final CompoundNBT e = new CompoundNBT();
+            e.putString("id", String.valueOf(method12226));
+            e.putShort("lvl", (short)class8322.field26819);
+            ((AbstractList<CompoundNBT>)method12225).add(e);
         }
-        class8321.method27658().method295("StoredEnchantments", method12225);
+        class8321.method27658().put("StoredEnchantments", method12225);
     }
     
     public static ItemStack method12227(final Class6827 class6827) {

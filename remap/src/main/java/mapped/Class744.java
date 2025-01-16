@@ -127,7 +127,7 @@ public class Class744 extends Class516<Class3439>
     
     private void method4059(final int n, final int n2, final int n3) {
         final ItemStack class8321 = new ItemStack(Items.field31563);
-        class8321.method27659("BlockEntityTag").method295("Patterns", new Class9142().method33336(Class230.field812, Class181.field544).method33336(Class230.values()[n], Class181.field537).method33337());
+        class8321.method27659("BlockEntityTag").put("Patterns", new Class9142().method33336(Class230.field812, Class181.field544).method33336(Class230.values()[n], Class181.field537).method33337());
         final Class7351 class8322 = new Class7351();
         class8322.method22567();
         class8322.method22564(n2 + 0.5f, n3 + 16, 0.0);
@@ -234,12 +234,12 @@ public class Class744 extends Class516<Class3439>
         final ItemStack method20054 = ((Class3439)this.field3077).method10977().method20053();
         final ItemStack method20055 = ((Class3439)this.field3077).method10978().method20053();
         final ItemStack method20056 = ((Class3439)this.field3077).method10979().method20053();
-        final Class51 method20057 = method20054.method27659("BlockEntityTag");
+        final CompoundNBT method20057 = method20054.method27659("BlockEntityTag");
         boolean field4027 = false;
         Label_0160: {
-            if (method20057.method316("Patterns", 9)) {
+            if (method20057.contains("Patterns", 9)) {
                 if (!method20054.method27620()) {
-                    if (method20057.method328("Patterns", 10).size() >= 6) {
+                    if (method20057.getList("Patterns", 10).size() >= 6) {
                         field4027 = true;
                         break Label_0160;
                     }

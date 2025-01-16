@@ -9,13 +9,13 @@ import net.minecraft.nbt.INBTType;
 import java.io.IOException;
 import java.io.DataInput;
 
-public final class Class6078 implements INBTType<Class50>
+public final class Class6078 implements INBTType<StringNBT>
 {
-    public Class50 method18133(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
+    public StringNBT method18133(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
         class7553.read(288L);
         final String utf = dataInput.readUTF();
         class7553.read(16 * utf.length());
-        return Class50.method290(utf);
+        return StringNBT.method290(utf);
     }
     
     @Override

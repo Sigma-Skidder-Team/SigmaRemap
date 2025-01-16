@@ -11,5 +11,5 @@ import net.minecraft.nbt.INBT;
 
 public interface Class9293
 {
-    int method34321(final CommandContext<Class7492> p0, final Class51 p1, final Class8570 p2, final List<INBT> p3) throws CommandSyntaxException;
+    int method34321(final CommandContext<Class7492> p0, final CompoundNBT p1, final NBTPath p2, final List<INBT> p3) throws CommandSyntaxException;
 }

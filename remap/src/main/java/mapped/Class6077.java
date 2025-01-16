@@ -9,11 +9,11 @@ import net.minecraft.nbt.INBTType;
 import java.io.IOException;
 import java.io.DataInput;
 
-public final class Class6077 implements INBTType<Class46>
+public final class Class6077 implements INBTType<FloatNBT>
 {
-    public Class46 method18132(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
+    public FloatNBT method18132(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
         class7553.read(96L);
-        return Class46.method281(dataInput.readFloat());
+        return FloatNBT.method281(dataInput.readFloat());
     }
     
     @Override

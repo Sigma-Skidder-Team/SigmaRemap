@@ -328,31 +328,31 @@ public class Class6516
         }
     }
     
-    public Class52 method19656() {
-        final Class52 class52 = new Class52();
+    public ListNBT method19656() {
+        final ListNBT class52 = new ListNBT();
         this.field25932.values().stream().map((Function<? super Map<Class9290, Class7628>, ?>)Map::values).forEach(collection -> collection.stream().filter(class53 -> class53.method23972() != null).forEach(class55 -> {
-            final Class51 e = new Class51();
-            e.method306("Name", class55.method23973());
-            e.method306("Objective", class55.method23972().method34312());
-            e.method298("Score", class55.method23969());
-            e.method312("Locked", class55.method23975());
-            ((AbstractList<Class51>)class54).add(e);
+            final CompoundNBT e = new CompoundNBT();
+            e.putString("Name", class55.method23973());
+            e.putString("Objective", class55.method23972().method34312());
+            e.putInt("Score", class55.method23969());
+            e.putBoolean("Locked", class55.method23975());
+            ((AbstractList<CompoundNBT>)class54).add(e);
         }));
         return class52;
     }
     
-    public void method19657(final Class52 class52) {
+    public void method19657(final ListNBT class52) {
         for (int i = 0; i < class52.size(); ++i) {
-            final Class51 method346 = class52.method346(i);
-            final Class9290 method347 = this.method19631(method346.method323("Objective"));
-            String s = method346.method323("Name");
+            final CompoundNBT method346 = class52.method346(i);
+            final Class9290 method347 = this.method19631(method346.getString("Objective"));
+            String s = method346.getString("Name");
             if (s.length() > 40) {
                 s = s.substring(0, 40);
             }
             final Class7628 method348 = this.method19636(s, method347);
-            method348.method23971(method346.method319("Score"));
-            if (method346.method315("Locked")) {
-                method348.method23976(method346.method329("Locked"));
+            method348.method23971(method346.getInt("Score"));
+            if (method346.contains("Locked")) {
+                method348.method23976(method346.getBoolean("Locked"));
             }
         }
     }

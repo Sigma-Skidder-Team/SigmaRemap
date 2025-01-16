@@ -49,66 +49,66 @@ public class Class501 extends TileEntity
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
-        class51.method306("name", this.method2554());
-        class51.method306("author", this.field2865);
-        class51.method306("metadata", this.field2866);
-        class51.method298("posX", this.field2867.getX());
-        class51.method298("posY", this.field2867.getY());
-        class51.method298("posZ", this.field2867.getZ());
-        class51.method298("sizeX", this.field2868.getX());
-        class51.method298("sizeY", this.field2868.getY());
-        class51.method298("sizeZ", this.field2868.getZ());
-        class51.method306("rotation", this.field2870.toString());
-        class51.method306("mirror", this.field2869.toString());
-        class51.method306("mode", this.field2871.toString());
-        class51.method312("ignoreEntities", this.field2872);
-        class51.method312("powered", this.field2873);
-        class51.method312("showair", this.field2874);
-        class51.method312("showboundingbox", this.field2875);
-        class51.method304("integrity", this.field2876);
-        class51.method299("seed", this.field2877);
+        class51.putString("name", this.method2554());
+        class51.putString("author", this.field2865);
+        class51.putString("metadata", this.field2866);
+        class51.putInt("posX", this.field2867.getX());
+        class51.putInt("posY", this.field2867.getY());
+        class51.putInt("posZ", this.field2867.getZ());
+        class51.putInt("sizeX", this.field2868.getX());
+        class51.putInt("sizeY", this.field2868.getY());
+        class51.putInt("sizeZ", this.field2868.getZ());
+        class51.putString("rotation", this.field2870.toString());
+        class51.putString("mirror", this.field2869.toString());
+        class51.putString("mode", this.field2871.toString());
+        class51.putBoolean("ignoreEntities", this.field2872);
+        class51.putBoolean("powered", this.field2873);
+        class51.putBoolean("showair", this.field2874);
+        class51.putBoolean("showboundingbox", this.field2875);
+        class51.putFloat("integrity", this.field2876);
+        class51.putLong("seed", this.field2877);
         return class51;
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.method2557(class51.method323("name"));
-        this.field2865 = class51.method323("author");
-        this.field2866 = class51.method323("metadata");
-        this.field2867 = new BlockPos(MathHelper.method35651(class51.method319("posX"), -32, 32), MathHelper.method35651(class51.method319("posY"), -32, 32), MathHelper.method35651(class51.method319("posZ"), -32, 32));
-        this.field2868 = new BlockPos(MathHelper.method35651(class51.method319("sizeX"), 0, 32), MathHelper.method35651(class51.method319("sizeY"), 0, 32), MathHelper.method35651(class51.method319("sizeZ"), 0, 32));
+        this.method2557(class51.getString("name"));
+        this.field2865 = class51.getString("author");
+        this.field2866 = class51.getString("metadata");
+        this.field2867 = new BlockPos(MathHelper.method35651(class51.getInt("posX"), -32, 32), MathHelper.method35651(class51.getInt("posY"), -32, 32), MathHelper.method35651(class51.getInt("posZ"), -32, 32));
+        this.field2868 = new BlockPos(MathHelper.method35651(class51.getInt("sizeX"), 0, 32), MathHelper.method35651(class51.getInt("sizeY"), 0, 32), MathHelper.method35651(class51.getInt("sizeZ"), 0, 32));
         try {
-            this.field2870 = Class2052.valueOf(class51.method323("rotation"));
+            this.field2870 = Class2052.valueOf(class51.getString("rotation"));
         }
         catch (final IllegalArgumentException ex) {
             this.field2870 = Class2052.field11707;
         }
         try {
-            this.field2869 = Class2181.valueOf(class51.method323("mirror"));
+            this.field2869 = Class2181.valueOf(class51.getString("mirror"));
         }
         catch (final IllegalArgumentException ex2) {
             this.field2869 = Class2181.field12917;
         }
         try {
-            this.field2871 = Class102.valueOf(class51.method323("mode"));
+            this.field2871 = Class102.valueOf(class51.getString("mode"));
         }
         catch (final IllegalArgumentException ex3) {
             this.field2871 = Class102.field308;
         }
-        this.field2872 = class51.method329("ignoreEntities");
-        this.field2873 = class51.method329("powered");
-        this.field2874 = class51.method329("showair");
-        this.field2875 = class51.method329("showboundingbox");
-        if (class51.method315("integrity")) {
-            this.field2876 = class51.method321("integrity");
+        this.field2872 = class51.getBoolean("ignoreEntities");
+        this.field2873 = class51.getBoolean("powered");
+        this.field2874 = class51.getBoolean("showair");
+        this.field2875 = class51.getBoolean("showboundingbox");
+        if (class51.contains("integrity")) {
+            this.field2876 = class51.getFloat("integrity");
         }
         else {
             this.field2876 = 1.0f;
         }
-        this.field2877 = class51.method320("seed");
+        this.field2877 = class51.getLong("seed");
         this.method2552();
     }
     
@@ -129,8 +129,8 @@ public class Class501 extends TileEntity
     }
     
     @Override
-    public Class51 method2196() {
-        return this.method2180(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2180(new CompoundNBT());
     }
     
     public boolean method2553(final PlayerEntity playerEntity) {

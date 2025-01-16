@@ -29,22 +29,22 @@ public class Class497 extends TileEntity
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         for (int i = 0; i < 4; ++i) {
-            class51.method306("Text" + (i + 1), Class5953.method17869(this.field2850[i]));
+            class51.putString("Text" + (i + 1), Class5953.method17869(this.field2850[i]));
         }
-        class51.method306("Color", this.field2854.method814());
+        class51.putString("Color", this.field2854.method814());
         return class51;
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         this.field2851 = false;
         super.method2179(class51);
-        this.field2854 = Class181.method820(class51.method323("Color"), Class181.field552);
+        this.field2854 = Class181.method820(class51.getString("Color"), Class181.field552);
         for (int i = 0; i < 4; ++i) {
-            final String method323 = class51.method323("Text" + (i + 1));
+            final String method323 = class51.getString("Text" + (i + 1));
             final ITextComponent method324 = Class5953.method17871(method323.isEmpty() ? "\"\"" : method323);
             if (this.field2656 instanceof Class1849) {
                 try {
@@ -87,8 +87,8 @@ public class Class497 extends TileEntity
     }
     
     @Override
-    public Class51 method2196() {
-        return this.method2180(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2180(new CompoundNBT());
     }
     
     @Override

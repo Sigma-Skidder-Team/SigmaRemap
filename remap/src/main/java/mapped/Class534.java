@@ -14,12 +14,12 @@ public class Class534 extends Class527
 {
     private static final List<ResourceLocation> field3184;
     private final Class539 field3185;
-    private final Class51 field3186;
+    private final CompoundNBT field3186;
     private Class621 field3187;
     private int field3188;
     private Class654 field3189;
     
-    public Class534(final Class539 field3185, final Class51 field3186) {
+    public Class534(final Class539 field3185, final CompoundNBT field3186) {
         super(new Class2259("createWorld.customize.buffet.title", new Object[0]));
         this.field3185 = field3185;
         this.field3186 = field3186;
@@ -47,9 +47,9 @@ public class Class534 extends Class527
     }
     
     private void method3081() {
-        if (this.field3186.method316("chunk_generator", 10)) {
-            if (this.field3186.method327("chunk_generator").method316("type", 8)) {
-                final ResourceLocation class1932 = new ResourceLocation(this.field3186.method327("chunk_generator").method323("type"));
+        if (this.field3186.contains("chunk_generator", 10)) {
+            if (this.field3186.getCompound("chunk_generator").contains("type", 8)) {
+                final ResourceLocation class1932 = new ResourceLocation(this.field3186.getCompound("chunk_generator").getString("type"));
                 for (int i = 0; i < Class534.field3184.size(); ++i) {
                     if (Class534.field3184.get(i).equals(class1932)) {
                         this.field3188 = i;
@@ -58,12 +58,12 @@ public class Class534 extends Class527
                 }
             }
         }
-        if (this.field3186.method316("biome_source", 10)) {
-            if (this.field3186.method327("biome_source").method316("biomes", 9)) {
-                final Class52 class1934 = this.field3186.method327("biome_source").method328("biomes", 8);
+        if (this.field3186.contains("biome_source", 10)) {
+            if (this.field3186.getCompound("biome_source").contains("biomes", 9)) {
+                final ListNBT class1934 = this.field3186.getCompound("biome_source").getList("biomes", 8);
                 for (int n = 0; n < class1934.size(); ++n) {
                     this.field3187.method3617(this.field3187.method3040().stream().filter(class1933 -> {
-                        final Class52 class1934;
+                        final ListNBT class1934;
                         final int n;
                         final Object o = new ResourceLocation(class1934.method353(n));
                         return Objects.equals(Class642.method3685(class1933), b);
@@ -71,27 +71,27 @@ public class Class534 extends Class527
                 }
             }
         }
-        this.field3186.method330("chunk_generator");
-        this.field3186.method330("biome_source");
+        this.field3186.remove("chunk_generator");
+        this.field3186.remove("biome_source");
     }
     
-    private Class51 method3082() {
-        final Class51 class51 = new Class51();
-        final Class51 class52 = new Class51();
-        class52.method306("type", Registry.field223.getKey(Class7768.field31769).toString());
-        final Class51 class53 = new Class51();
-        final Class52 class54 = new Class52();
-        ((AbstractList<Class50>)class54).add(Class50.method290(Class642.method3685(this.field3187.method3530()).toString()));
-        class53.method295("biomes", class54);
-        class52.method295("options", class53);
-        final Class51 class55 = new Class51();
-        final Class51 class56 = new Class51();
-        class55.method306("type", Class534.field3184.get(this.field3188).toString());
-        class56.method306("default_block", "minecraft:stone");
-        class56.method306("default_fluid", "minecraft:water");
-        class55.method295("options", class56);
-        class51.method295("biome_source", class52);
-        class51.method295("chunk_generator", class55);
+    private CompoundNBT method3082() {
+        final CompoundNBT class51 = new CompoundNBT();
+        final CompoundNBT class52 = new CompoundNBT();
+        class52.putString("type", Registry.field223.getKey(Class7768.field31769).toString());
+        final CompoundNBT class53 = new CompoundNBT();
+        final ListNBT class54 = new ListNBT();
+        ((AbstractList<StringNBT>)class54).add(StringNBT.method290(Class642.method3685(this.field3187.method3530()).toString()));
+        class53.put("biomes", class54);
+        class52.put("options", class53);
+        final CompoundNBT class55 = new CompoundNBT();
+        final CompoundNBT class56 = new CompoundNBT();
+        class55.putString("type", Class534.field3184.get(this.field3188).toString());
+        class56.putString("default_block", "minecraft:stone");
+        class56.putString("default_fluid", "minecraft:water");
+        class55.put("options", class56);
+        class51.put("biome_source", class52);
+        class51.put("chunk_generator", class55);
         return class51;
     }
     

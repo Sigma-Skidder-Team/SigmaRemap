@@ -48,17 +48,17 @@ public class Class3674 extends Class3666
     
     public ItemStack method11303(final Class473 class473) {
         final ItemStack class474 = new ItemStack(Items.field31532, 3);
-        final Class51 method27659 = class474.method27659("Fireworks");
-        final Class52 class475 = new Class52();
+        final CompoundNBT method27659 = class474.method27659("Fireworks");
+        final ListNBT class475 = new ListNBT();
         int n = 0;
         for (int i = 0; i < class473.method2239(); ++i) {
             final ItemStack method27660 = class473.method2157(i);
             if (!method27660.method27620()) {
                 if (!Class3674.field16960.test(method27660)) {
                     if (Class3674.field16961.test(method27660)) {
-                        final Class51 method27661 = method27660.method27660("Explosion");
+                        final CompoundNBT method27661 = method27660.method27660("Explosion");
                         if (method27661 != null) {
-                            ((AbstractList<Class51>)class475).add(method27661);
+                            ((AbstractList<CompoundNBT>)class475).add(method27661);
                         }
                     }
                 }
@@ -67,9 +67,9 @@ public class Class3674 extends Class3666
                 }
             }
         }
-        method27659.method296("Flight", (byte)n);
+        method27659.putByte("Flight", (byte)n);
         if (!class475.isEmpty()) {
-            method27659.method295("Explosions", class475);
+            method27659.put("Explosions", class475);
         }
         return class474;
     }

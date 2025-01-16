@@ -83,19 +83,19 @@ public class Class8453 implements DynamicOps<INBT>
     }
     
     public Optional<Number> getNumberValue(final INBT class41) {
-        return (class41 instanceof NumberNBT) ? Optional.of(((NumberNBT)class41).method276()) : Optional.empty();
+        return (class41 instanceof NumberNBT) ? Optional.of(((NumberNBT)class41).getAsNumber()) : Optional.empty();
     }
     
     public INBT createNumeric(final Number n) {
-        return Class44.method277(n.doubleValue());
+        return DoubleNBT.method277(n.doubleValue());
     }
     
     public INBT createByte(final byte b) {
-        return Class47.method283(b);
+        return ByteNBT.valueOf(b);
     }
     
     public INBT createShort(final short n) {
-        return Class48.method286(n);
+        return ShortNBT.method286(n);
     }
     
     public INBT createInt(final int n) {
@@ -103,43 +103,43 @@ public class Class8453 implements DynamicOps<INBT>
     }
     
     public INBT createLong(final long n) {
-        return Class49.method288(n);
+        return LongNBT.method288(n);
     }
     
     public INBT createFloat(final float n) {
-        return Class46.method281(n);
+        return FloatNBT.method281(n);
     }
     
     public INBT createDouble(final double n) {
-        return Class44.method277(n);
+        return DoubleNBT.method277(n);
     }
     
     public INBT createBoolean(final boolean b) {
-        return Class47.method284(b);
+        return ByteNBT.method284(b);
     }
     
     public Optional<String> getStringValue(final INBT class41) {
-        return (class41 instanceof Class50) ? Optional.of(class41.getString()) : Optional.empty();
+        return (class41 instanceof StringNBT) ? Optional.of(class41.getString()) : Optional.empty();
     }
     
     public INBT createString(final String s) {
-        return Class50.method290(s);
+        return StringNBT.method290(s);
     }
     
     public INBT mergeInto(final INBT class41, final INBT e) {
         if (e instanceof EndNBT) {
             return class41;
         }
-        if (class41 instanceof Class51) {
-            if (e instanceof Class51) {
-                final Class51 class42 = new Class51();
-                final Class51 class43 = (Class51)class41;
-                for (final String s : class43.method293()) {
-                    class42.method295(s, class43.method313(s));
+        if (class41 instanceof CompoundNBT) {
+            if (e instanceof CompoundNBT) {
+                final CompoundNBT class42 = new CompoundNBT();
+                final CompoundNBT class43 = (CompoundNBT)class41;
+                for (final String s : class43.keySet()) {
+                    class42.put(s, class43.get(s));
                 }
-                final Class51 class44 = (Class51)e;
-                for (final String s2 : class44.method293()) {
-                    class42.method295(s2, class44.method313(s2));
+                final CompoundNBT class44 = (CompoundNBT)e;
+                for (final String s2 : class44.keySet()) {
+                    class42.put(s2, class44.get(s2));
                 }
                 return class42;
             }
@@ -152,7 +152,7 @@ public class Class8453 implements DynamicOps<INBT>
             if (!(class41 instanceof CollectionNBT)) {
                 return class41;
             }
-            final Class52 class45 = new Class52();
+            final ListNBT class45 = new ListNBT();
             class45.addAll((Collection<? extends INBT>)class41);
             class45.add(e);
             return class45;
@@ -160,19 +160,19 @@ public class Class8453 implements DynamicOps<INBT>
     }
     
     public INBT mergeInto(final INBT class41, final INBT class42, final INBT class43) {
-        Class51 class45;
+        CompoundNBT class45;
         if (!(class41 instanceof EndNBT)) {
-            if (!(class41 instanceof Class51)) {
+            if (!(class41 instanceof CompoundNBT)) {
                 return class41;
             }
-            final Class51 class44 = (Class51)class41;
-            class45 = new Class51();
-            class44.method293().forEach(s -> class46.method295(s, class47.method313(s)));
+            final CompoundNBT class44 = (CompoundNBT)class41;
+            class45 = new CompoundNBT();
+            class44.keySet().forEach(s -> class46.method295(s, class47.method313(s)));
         }
         else {
-            class45 = new Class51();
+            class45 = new CompoundNBT();
         }
-        class45.method295(class42.getString(), class43);
+        class45.put(class42.getString(), class43);
         return class45;
     }
     
@@ -183,17 +183,17 @@ public class Class8453 implements DynamicOps<INBT>
         if (obj2 instanceof EndNBT) {
             return obj;
         }
-        if (obj instanceof Class51) {
-            if (obj2 instanceof Class51) {
-                final Class51 class51 = (Class51)obj;
-                final Class51 class52 = (Class51)obj2;
-                final Class51 class53 = new Class51();
-                class51.method293().forEach(s -> class55.method295(s, class56.method313(s)));
-                class52.method293().forEach(s2 -> class57.method295(s2, class58.method313(s2)));
+        if (obj instanceof CompoundNBT) {
+            if (obj2 instanceof CompoundNBT) {
+                final CompoundNBT class51 = (CompoundNBT)obj;
+                final CompoundNBT class52 = (CompoundNBT)obj2;
+                final CompoundNBT class53 = new CompoundNBT();
+                class51.keySet().forEach(s -> class55.method295(s, class56.method313(s)));
+                class52.keySet().forEach(s2 -> class57.method295(s2, class58.method313(s2)));
             }
         }
         if (obj instanceof CollectionNBT && obj2 instanceof CollectionNBT) {
-            final Class52 class54 = new Class52();
+            final ListNBT class54 = new ListNBT();
             class54.addAll((Collection<? extends INBT>)obj);
             class54.addAll((Collection<? extends INBT>)obj2);
             return class54;
@@ -202,16 +202,16 @@ public class Class8453 implements DynamicOps<INBT>
     }
     
     public Optional<Map<INBT, INBT>> getMapValues(final INBT class41) {
-        if (!(class41 instanceof Class51)) {
+        if (!(class41 instanceof CompoundNBT)) {
             return Optional.empty();
         }
-        return Optional.of((Map<INBT, INBT>)((Class51)class41).method293().stream().map(s -> Pair.of((Object)this.createString(s), (Object)class42.method313(s))).collect((Collector<? super Object, ?, T>)Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond)));
+        return Optional.of((Map<INBT, INBT>)((CompoundNBT)class41).keySet().stream().map(s -> Pair.of((Object)this.createString(s), (Object)class42.method313(s))).collect((Collector<? super Object, ?, T>)Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond)));
     }
     
     public INBT createMap(final Map<INBT, INBT> map) {
-        final Class51 class51 = new Class51();
+        final CompoundNBT class51 = new CompoundNBT();
         for (final Map.Entry entry : map.entrySet()) {
-            class51.method295(((INBT)entry.getKey()).getString(), (INBT)entry.getValue());
+            class51.put(((INBT)entry.getKey()).getString(), (INBT)entry.getValue());
         }
         return class51;
     }
@@ -221,11 +221,11 @@ public class Class8453 implements DynamicOps<INBT>
     }
     
     public Optional<ByteBuffer> getByteBuffer(final INBT class41) {
-        return (class41 instanceof Class40) ? Optional.of(ByteBuffer.wrap(((Class40)class41).method266())) : super.getByteBuffer((Object)class41);
+        return (class41 instanceof ByteArrayNBT) ? Optional.of(ByteBuffer.wrap(((ByteArrayNBT)class41).getByteArray())) : super.getByteBuffer((Object)class41);
     }
     
     public INBT createByteList(final ByteBuffer byteBuffer) {
-        return new Class40(DataFixUtils.toArray(byteBuffer));
+        return new ByteArrayNBT(DataFixUtils.toArray(byteBuffer));
     }
     
     public Optional<IntStream> getIntStream(final INBT class41) {
@@ -237,27 +237,27 @@ public class Class8453 implements DynamicOps<INBT>
     }
     
     public Optional<LongStream> getLongStream(final INBT class41) {
-        return (class41 instanceof Class39) ? Optional.of(Arrays.stream(((Class39)class41).method264())) : super.getLongStream((Object)class41);
+        return (class41 instanceof LongArrayNBT) ? Optional.of(Arrays.stream(((LongArrayNBT)class41).getAsLongArray())) : super.getLongStream((Object)class41);
     }
     
     public INBT createLongList(final LongStream longStream) {
-        return new Class39(longStream.toArray());
+        return new LongArrayNBT(longStream.toArray());
     }
     
     public INBT createList(final Stream<INBT> stream) {
         final PeekingIterator peekingIterator = Iterators.peekingIterator((Iterator)stream.iterator());
         if (!peekingIterator.hasNext()) {
-            return new Class52();
+            return new ListNBT();
         }
         final INBT class41 = (INBT)peekingIterator.peek();
-        if (class41 instanceof Class47) {
-            return new Class40(Lists.newArrayList(Iterators.transform((Iterator)peekingIterator, class41 -> ((Class47)class41).method273())));
+        if (class41 instanceof ByteNBT) {
+            return new ByteArrayNBT(Lists.newArrayList(Iterators.transform((Iterator)peekingIterator, class41 -> ((ByteNBT)class41).getByte())));
         }
         if (class41 instanceof IntNBT) {
-            return new IntArrayNBT(Lists.newArrayList(Iterators.transform((Iterator)peekingIterator, class41 -> ((IntNBT)class41).method271())));
+            return new IntArrayNBT(Lists.newArrayList(Iterators.transform((Iterator)peekingIterator, class41 -> ((IntNBT)class41).getInt())));
         }
-        if (!(class41 instanceof Class49)) {
-            final Class52 class42 = new Class52();
+        if (!(class41 instanceof LongNBT)) {
+            final ListNBT class42 = new ListNBT();
             while (peekingIterator.hasNext()) {
                 final INBT e = (INBT)peekingIterator.next();
                 if (e instanceof EndNBT) {
@@ -267,16 +267,16 @@ public class Class8453 implements DynamicOps<INBT>
             }
             return class42;
         }
-        return new Class39(Lists.newArrayList(Iterators.transform((Iterator)peekingIterator, class41 -> ((Class49)class41).method270())));
+        return new LongArrayNBT(Lists.newArrayList(Iterators.transform((Iterator)peekingIterator, class41 -> ((LongNBT)class41).getLong())));
     }
     
     public INBT remove(final INBT class41, final String s) {
-        if (!(class41 instanceof Class51)) {
+        if (!(class41 instanceof CompoundNBT)) {
             return class41;
         }
-        final Class51 class42 = (Class51)class41;
-        final Class51 class43 = new Class51();
-        class42.method293().stream().filter(a -> !Objects.equals(a, b)).forEach(s2 -> class44.method295(s2, class45.method313(s2)));
+        final CompoundNBT class42 = (CompoundNBT)class41;
+        final CompoundNBT class43 = new CompoundNBT();
+        class42.keySet().stream().filter(a -> !Objects.equals(a, b)).forEach(s2 -> class44.method295(s2, class45.method313(s2)));
         return class43;
     }
     

@@ -19,19 +19,19 @@ import it.unimi.dsi.fastutil.bytes.ByteSet;
 import net.minecraft.nbt.*;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class52 extends CollectionNBT<INBT>
+public class ListNBT extends CollectionNBT<INBT>
 {
-    public static final INBTType<Class52> field128;
+    public static final INBTType<ListNBT> TYPE;
     private static final ByteSet field129;
     private final List<INBT> field130;
     private byte field131;
     
-    private Class52(final List<INBT> field130, final byte field131) {
+    private ListNBT(final List<INBT> field130, final byte field131) {
         this.field130 = field130;
         this.field131 = field131;
     }
     
-    public Class52() {
+    public ListNBT() {
         this(Lists.newArrayList(), (byte)0);
     }
     
@@ -57,8 +57,8 @@ public class Class52 extends CollectionNBT<INBT>
     }
     
     @Override
-    public INBTType<Class52> getType() {
-        return Class52.field128;
+    public INBTType<ListNBT> getType() {
+        return ListNBT.TYPE;
     }
     
     @Override
@@ -91,28 +91,28 @@ public class Class52 extends CollectionNBT<INBT>
         return this.field130.isEmpty();
     }
     
-    public Class51 method346(final int n) {
+    public CompoundNBT method346(final int n) {
         if (n >= 0) {
             if (n < this.field130.size()) {
                 final INBT class41 = this.field130.get(n);
                 if (class41.getId() == 10) {
-                    return (Class51)class41;
+                    return (CompoundNBT)class41;
                 }
             }
         }
-        return new Class51();
+        return new CompoundNBT();
     }
     
-    public Class52 method347(final int n) {
+    public ListNBT method347(final int n) {
         if (n >= 0) {
             if (n < this.field130.size()) {
                 final INBT class41 = this.field130.get(n);
                 if (class41.getId() == 9) {
-                    return (Class52)class41;
+                    return (ListNBT)class41;
                 }
             }
         }
-        return new Class52();
+        return new ListNBT();
     }
     
     public short method348(final int n) {
@@ -120,7 +120,7 @@ public class Class52 extends CollectionNBT<INBT>
             if (n < this.field130.size()) {
                 final INBT class41 = this.field130.get(n);
                 if (class41.getId() == 2) {
-                    return ((Class48)class41).method272();
+                    return ((ShortNBT)class41).getShort();
                 }
             }
         }
@@ -132,7 +132,7 @@ public class Class52 extends CollectionNBT<INBT>
             if (n < this.field130.size()) {
                 final INBT class41 = this.field130.get(n);
                 if (class41.getId() == 3) {
-                    return ((IntNBT)class41).method271();
+                    return ((IntNBT)class41).getInt();
                 }
             }
         }
@@ -156,7 +156,7 @@ public class Class52 extends CollectionNBT<INBT>
             if (n < this.field130.size()) {
                 final INBT class41 = this.field130.get(n);
                 if (class41.getId() == 6) {
-                    return ((Class44)class41).method274();
+                    return ((DoubleNBT)class41).getDouble();
                 }
             }
         }
@@ -168,7 +168,7 @@ public class Class52 extends CollectionNBT<INBT>
             if (n < this.field130.size()) {
                 final INBT class41 = this.field130.get(n);
                 if (class41.getId() == 5) {
-                    return ((Class46)class41).method275();
+                    return ((FloatNBT)class41).getFloat();
                 }
             }
         }
@@ -239,13 +239,13 @@ public class Class52 extends CollectionNBT<INBT>
         return true;
     }
     
-    public Class52 method355() {
-        return new Class52(Lists.newArrayList((Iterable)(Class7638.method24059(this.field131).func_225651_c_() ? this.field130 : Iterables.transform((Iterable)this.field130, INBT::copy))), this.field131);
+    public ListNBT copy() {
+        return new ListNBT(Lists.newArrayList((Iterable)(NBTTypes.func_229710_a_(this.field131).func_225651_c_() ? this.field130 : Iterables.transform((Iterable)this.field130, INBT::copy))), this.field131);
     }
     
     @Override
     public boolean equals(final Object o) {
-        return this == o || (o instanceof Class52 && Objects.equals(this.field130, ((Class52)o).field130));
+        return this == o || (o instanceof ListNBT && Objects.equals(this.field130, ((ListNBT)o).field130));
     }
     
     @Override
@@ -258,7 +258,7 @@ public class Class52 extends CollectionNBT<INBT>
         if (this.isEmpty()) {
             return new StringTextComponent("[]");
         }
-        if (Class52.field129.contains(this.field131) && this.size() <= 8) {
+        if (ListNBT.field129.contains(this.field131) && this.size() <= 8) {
             final StringTextComponent class2260 = new StringTextComponent("[");
             for (int i = 0; i < this.field130.size(); ++i) {
                 if (i != 0) {
@@ -289,7 +289,7 @@ public class Class52 extends CollectionNBT<INBT>
         return class2261;
     }
     
-    public int method356() {
+    public int getTagType() {
         return this.field131;
     }
     
@@ -300,7 +300,7 @@ public class Class52 extends CollectionNBT<INBT>
     }
     
     static {
-        field128 = new Class6074();
+        TYPE = new Class6074();
         field129 = (ByteSet)new ByteOpenHashSet((Collection)Arrays.asList(1, 2, 3, 4, 5, 6));
     }
 }

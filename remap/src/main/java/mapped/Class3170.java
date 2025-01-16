@@ -246,12 +246,12 @@ public class Class3170 extends Class3167
     
     private List<ItemStack> method9931(final ItemStack class8321) {
         final ArrayList list = new ArrayList();
-        final Class51 method27657 = class8321.method27657();
+        final CompoundNBT method27657 = class8321.method27657();
         if (method27657 != null) {
-            if (method27657.method316("BlockEntityTag", 10)) {
-                final Class51 method27658 = method27657.method327("BlockEntityTag");
+            if (method27657.contains("BlockEntityTag", 10)) {
+                final CompoundNBT method27658 = method27657.getCompound("BlockEntityTag");
                 Class6697.method20354(method27658);
-                if (method27658.method316("Items", 9)) {
+                if (method27658.contains("Items", 9)) {
                     final Class2265<ItemStack> method27659 = Class2265.method8507(27, ItemStack.field34174);
                     Class8508.method28426(method27658, method27659);
                     for (final ItemStack class8322 : method27659) {

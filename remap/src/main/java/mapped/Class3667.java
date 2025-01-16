@@ -59,9 +59,9 @@ public class Class3667 extends Class3666
             }
         }
         if (!class474.method27620()) {
-            final Class51 method2158 = field34174.method27660("BlockEntityTag");
-            final Class51 class475 = (method2158 != null) ? method2158.method333() : new Class51();
-            class475.method298("Base", ((Class4044)field34174.getItem()).method12244().method813());
+            final CompoundNBT method2158 = field34174.method27660("BlockEntityTag");
+            final CompoundNBT class475 = (method2158 != null) ? method2158.copy() : new CompoundNBT();
+            class475.putInt("Base", ((Class4044)field34174.getItem()).method12244().method813());
             class474.method27676("BlockEntityTag", class475);
             return class474;
         }

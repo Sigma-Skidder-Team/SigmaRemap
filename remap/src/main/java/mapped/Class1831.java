@@ -39,18 +39,18 @@ public class Class1831<T extends LivingEntity, M extends Class5845<T> & Class585
                 }
                 GameProfile gameProfile = null;
                 if (method2718.method27656()) {
-                    final Class51 method2720 = method2718.method27657();
-                    if (!method2720.method316("SkullOwner", 10)) {
-                        if (method2720.method316("SkullOwner", 8)) {
-                            final String method2721 = method2720.method323("SkullOwner");
+                    final CompoundNBT method2720 = method2718.method27657();
+                    if (!method2720.contains("SkullOwner", 10)) {
+                        if (method2720.contains("SkullOwner", 8)) {
+                            final String method2721 = method2720.getString("SkullOwner");
                             if (!StringUtils.isBlank((CharSequence)method2721)) {
                                 gameProfile = Class493.method2508(new GameProfile((UUID)null, method2721));
-                                method2720.method295("SkullOwner", Class9346.method34641(new Class51(), gameProfile));
+                                method2720.put("SkullOwner", Class9346.method34641(new CompoundNBT(), gameProfile));
                             }
                         }
                     }
                     else {
-                        gameProfile = Class9346.method34640(method2720.method327("SkullOwner"));
+                        gameProfile = Class9346.method34640(method2720.getCompound("SkullOwner"));
                     }
                 }
                 class7351.method22564(-0.5, 0.0, -0.5);

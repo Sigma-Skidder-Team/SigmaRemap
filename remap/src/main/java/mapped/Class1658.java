@@ -52,9 +52,9 @@ public class Class1658 implements Class1657
             return class7096.method21710() == Class2115.field12307 && this.field9370.method33354(class7098, this.method5794(class7096), class7096, class7097, class7099, class7100, b, random, class7096.method21758(class7097), Class1904.field10335, class7101);
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Tesselating block in world");
-            Class5204.method16304(method24421.method24418("Block being tesselated"), class7097, class7096);
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Tesselating block in world");
+            CrashReportCategory.method16304(method24421.makeCategory("Block being tesselated"), class7097, class7096);
+            throw new ReportedException(method24421);
         }
     }
     
@@ -63,9 +63,9 @@ public class Class1658 implements Class1657
             return this.field9371.method34681(class355, class354, class356, class357);
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Tesselating liquid in world");
-            Class5204.method16304(method24421.method24418("Block being tesselated"), class354, null);
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Tesselating liquid in world");
+            CrashReportCategory.method16304(method24421.makeCategory("Block being tesselated"), class354, null);
+            throw new ReportedException(method24421);
         }
     }
     

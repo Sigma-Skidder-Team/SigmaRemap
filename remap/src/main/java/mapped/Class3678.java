@@ -78,7 +78,7 @@ public class Class3678 extends Class3666
     
     public ItemStack method11303(final Class473 class473) {
         final ItemStack class474 = new ItemStack(Items.field31533);
-        final Class51 method27659 = class474.method27659("Explosion");
+        final CompoundNBT method27659 = class474.method27659("Explosion");
         Class2141 field12605 = Class2141.field12605;
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < class473.method2239(); ++i) {
@@ -92,11 +92,11 @@ public class Class3678 extends Class3666
                             }
                         }
                         else {
-                            method27659.method312("Trail", true);
+                            method27659.putBoolean("Trail", true);
                         }
                     }
                     else {
-                        method27659.method312("Flicker", true);
+                        method27659.putBoolean("Flicker", true);
                     }
                 }
                 else {
@@ -104,8 +104,8 @@ public class Class3678 extends Class3666
                 }
             }
         }
-        method27659.method309("Colors", arrayList);
-        method27659.method296("Type", (byte)field12605.method8300());
+        method27659.putIntArray("Colors", arrayList);
+        method27659.putByte("Type", (byte)field12605.method8300());
         return class474;
     }
     

@@ -18,13 +18,13 @@ public class Class4954 extends Class4943<Class4954>
         this.field21252 = field21252;
     }
     
-    public Class4954 method14923(final String s, final String s2, final Class2229 class2229) {
-        this.field21253.add(new Class9254(s, s2, class2229, null));
+    public Class4954 method14923(final String s, final String s2, final Action action) {
+        this.field21253.add(new Class9254(s, s2, action, null));
         return this;
     }
     
     public Class4954 method14924(final String s, final String s2) {
-        return this.method14923(s, s2, Class2229.field13709);
+        return this.method14923(s, s2, Action.REPLACE);
     }
     
     public Class4954 method14925() {

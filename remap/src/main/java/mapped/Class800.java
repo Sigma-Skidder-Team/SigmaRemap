@@ -109,18 +109,18 @@ public class Class800 extends Class794
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("CatType", this.method4607());
-        class51.method296("CollarColor", (byte)this.method4613().method813());
+        class51.putInt("CatType", this.method4607());
+        class51.putByte("CollarColor", (byte)this.method4613().method813());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4608(class51.method319("CatType"));
-        if (class51.method316("CollarColor", 99)) {
-            this.method4614(Class181.method819(class51.method319("CollarColor")));
+        this.method4608(class51.getInt("CatType"));
+        if (class51.contains("CollarColor", 99)) {
+            this.method4614(Class181.method819(class51.getInt("CollarColor")));
         }
     }
     
@@ -300,7 +300,7 @@ public class Class800 extends Class794
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final Class51 class1854) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (class1851.method6951() <= 0.9f) {
             this.method4608(this.rand.nextInt(10));

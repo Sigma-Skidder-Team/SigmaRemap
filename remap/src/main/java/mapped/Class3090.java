@@ -265,9 +265,9 @@ public abstract class Class3090
                 class2113.method28613(class2110, class2109, class2111, class2112);
             }
             catch (final Exception ex) {
-                final Class7689 method24421 = Class7689.method24421(ex, "Feature placement");
-                method24421.method24418("Feature").method16297("Id", Registry.field215.getKey(class2113.field35804)).method16296("Description", () -> class2114.field35804.toString());
-                throw new Class2365(method24421);
+                final CrashReport method24421 = CrashReport.makeCrashReport(ex, "Feature placement");
+                method24421.makeCategory("Feature").addDetail("Id", Registry.field215.getKey(class2113.field35804)).addDetail("Description", () -> class2114.field35804.toString());
+                throw new ReportedException(method24421);
             }
             ++n2;
         }

@@ -30,21 +30,21 @@ public abstract class Class4475 extends Class4473
         }
     }
     
-    public Class4475(final Class9520 class9520, final Class51 class9521) {
+    public Class4475(final Class9520 class9520, final CompoundNBT class9521) {
         super(class9520, class9521);
         this.field19860 = -1;
-        this.field19857 = class9521.method319("Width");
-        this.field19858 = class9521.method319("Height");
-        this.field19859 = class9521.method319("Depth");
-        this.field19860 = class9521.method319("HPos");
+        this.field19857 = class9521.getInt("Width");
+        this.field19858 = class9521.getInt("Height");
+        this.field19859 = class9521.getInt("Depth");
+        this.field19860 = class9521.getInt("HPos");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
-        class51.method298("Width", this.field19857);
-        class51.method298("Height", this.field19858);
-        class51.method298("Depth", this.field19859);
-        class51.method298("HPos", this.field19860);
+    public void method13415(final CompoundNBT class51) {
+        class51.putInt("Width", this.field19857);
+        class51.putInt("Height", this.field19858);
+        class51.putInt("Depth", this.field19859);
+        class51.putInt("HPos", this.field19860);
     }
     
     public boolean method13460(final Class1851 class1851, final MutableBoundingBox class1852, final int n) {

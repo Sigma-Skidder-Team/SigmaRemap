@@ -83,7 +83,7 @@ public class Item implements Class3832
         return !this.field17364.isEmpty();
     }
     
-    public boolean method11702(final Class51 class51) {
+    public boolean method11702(final CompoundNBT class51) {
         return false;
     }
     
@@ -228,7 +228,7 @@ public class Item implements Class3832
         if (!class8321.method27675()) {
             return this.field17366;
         }
-        switch (Class6305.field25219[this.field17366.ordinal()]) {
+        switch (this.field17366.ordinal()) {
             case 1:
             case 2: {
                 return Class1998.field11188;
@@ -281,7 +281,7 @@ public class Item implements Class3832
     }
     
     public Multimap<String, Class7919> method11739(final Class2215 class2215) {
-        return (Multimap<String, Class7919>)HashMultimap.create();
+        return HashMultimap.create();
     }
     
     public boolean method11740(final ItemStack class8321) {
@@ -319,7 +319,7 @@ public class Item implements Class3832
         field17357 = ((class8321, class8322, class8323) -> MathHelper.clamp(class8321.method27632() / (float)class8321.method27634(), 0.0f, 1.0f));
         field17358 = ((class8321, class8322, class8323) -> (class8323 != null && class8323.method2755() != Class2226.field13698) ? 1.0f : 0.0f);
         field17359 = ((class8321, class8322, class8323) -> (class8323 instanceof PlayerEntity) ? ((PlayerEntity)class8323).method2906().method25770(class8321.getItem(), 0.0f) : 0.0f);
-        field17360 = ((class8321, class8322, class8323) -> class8321.method27656() ? ((float)class8321.method27657().method319("CustomModelData")) : 0.0f);
+        field17360 = ((class8321, class8322, class8323) -> class8321.method27656() ? ((float)class8321.method27657().getInt("CustomModelData")) : 0.0f);
         field17361 = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
         field17362 = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
         field17363 = new Random();

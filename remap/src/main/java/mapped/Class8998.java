@@ -84,14 +84,14 @@ public class Class8998
         this.field37962 = s2;
     }
     
-    public boolean method32117(final Class51 class51) {
+    public boolean method32117(final CompoundNBT class51) {
         if (!this.field37960) {
             return this.method32118(class51);
         }
         return !this.method32118(class51);
     }
     
-    public boolean method32118(final Class51 class51) {
+    public boolean method32118(final CompoundNBT class51) {
         if (class51 == null) {
             return false;
         }
@@ -110,18 +110,18 @@ public class Class8998
     }
     
     private boolean method32119(final INBT class41) {
-        if (class41 instanceof Class51) {
-            final Class51 class42 = (Class51)class41;
-            final Iterator<String> iterator = class42.method293().iterator();
+        if (class41 instanceof CompoundNBT) {
+            final CompoundNBT class42 = (CompoundNBT)class41;
+            final Iterator<String> iterator = class42.keySet().iterator();
             while (iterator.hasNext()) {
-                if (!this.method32121(class42.method313(iterator.next()))) {
+                if (!this.method32121(class42.get(iterator.next()))) {
                     continue;
                 }
                 return true;
             }
         }
-        if (class41 instanceof Class52) {
-            final Class52 class43 = (Class52)class41;
+        if (class41 instanceof ListNBT) {
+            final ListNBT class43 = (ListNBT)class41;
             for (int size = class43.size(), i = 0; i < size; ++i) {
                 if (this.method32121(class43.get(i))) {
                     return true;
@@ -132,13 +132,13 @@ public class Class8998
     }
     
     private static INBT method32120(final INBT class41, final String s) {
-        if (class41 instanceof Class51) {
-            return ((Class51)class41).method313(s);
+        if (class41 instanceof CompoundNBT) {
+            return ((CompoundNBT)class41).get(s);
         }
-        if (!(class41 instanceof Class52)) {
+        if (!(class41 instanceof ListNBT)) {
             return null;
         }
-        final Class52 class42 = (Class52)class41;
+        final ListNBT class42 = (ListNBT)class41;
         if (!s.equals("count")) {
             final int method28933 = Config.method28933(s, -1);
             return (method28933 >= 0 && method28933 < class42.size()) ? class42.get(method28933) : null;
@@ -188,8 +188,8 @@ public class Class8998
         if (class41 == null) {
             return null;
         }
-        if (class41 instanceof Class50) {
-            final String method267 = ((Class50)class41).getString();
+        if (class41 instanceof StringNBT) {
+            final String method267 = ((StringNBT)class41).getString();
             if (method267.startsWith("{")) {
                 final Matcher matcher = Class8998.field37977.matcher(method267);
                 if (matcher.matches()) {
@@ -200,24 +200,24 @@ public class Class8998
         }
         if (class41 instanceof IntNBT) {
             final IntNBT class42 = (IntNBT)class41;
-            return (n != 1) ? Integer.toString(class42.method271()) : ("#" + Class9518.method35513(Integer.toHexString(class42.method271()), 6, '0'));
+            return (n != 1) ? Integer.toString(class42.getInt()) : ("#" + Class9518.method35513(Integer.toHexString(class42.getInt()), 6, '0'));
         }
-        if (class41 instanceof Class47) {
-            return Byte.toString(((Class47)class41).method273());
+        if (class41 instanceof ByteNBT) {
+            return Byte.toString(((ByteNBT)class41).getByte());
         }
-        if (class41 instanceof Class48) {
-            return Short.toString(((Class48)class41).method272());
+        if (class41 instanceof ShortNBT) {
+            return Short.toString(((ShortNBT)class41).getShort());
         }
-        if (class41 instanceof Class49) {
-            return Long.toString(((Class49)class41).method270());
+        if (class41 instanceof LongNBT) {
+            return Long.toString(((LongNBT)class41).getLong());
         }
-        if (class41 instanceof Class46) {
-            return Float.toString(((Class46)class41).method275());
+        if (class41 instanceof FloatNBT) {
+            return Float.toString(((FloatNBT)class41).getFloat());
         }
-        if (!(class41 instanceof Class44)) {
+        if (!(class41 instanceof DoubleNBT)) {
             return class41.toString();
         }
-        return Double.toString(((Class44)class41).method274());
+        return Double.toString(((DoubleNBT)class41).getDouble());
     }
     
     @Override

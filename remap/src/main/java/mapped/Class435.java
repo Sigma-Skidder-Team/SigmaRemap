@@ -97,24 +97,24 @@ public class Class435 extends TileEntity implements Class447, Class434
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        if (!class51.method316("Book", 10)) {
+        if (!class51.contains("Book", 10)) {
             this.field2651 = ItemStack.field34174;
         }
         else {
-            this.field2651 = this.method2176(ItemStack.method27619(class51.method327("Book")), null);
+            this.field2651 = this.method2176(ItemStack.method27619(class51.getCompound("Book")), null);
         }
         this.field2653 = Class4096.method12341(this.field2651);
-        this.field2652 = MathHelper.method35651(class51.method319("Page"), 0, this.field2653 - 1);
+        this.field2652 = MathHelper.method35651(class51.getInt("Page"), 0, this.field2653 - 1);
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         if (!this.method2168().method27620()) {
-            class51.method295("Book", this.method2168().method27627(new Class51()));
-            class51.method298("Page", this.field2652);
+            class51.put("Book", this.method2168().method27627(new CompoundNBT()));
+            class51.putInt("Page", this.field2652);
         }
         return class51;
     }

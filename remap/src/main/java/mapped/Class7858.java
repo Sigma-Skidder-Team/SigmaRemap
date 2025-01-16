@@ -72,22 +72,22 @@ public class Class7858<T>
         return Collections.unmodifiableSet((Set<? extends String>)this.field32288.rowKeySet());
     }
     
-    private void method25416(final Class51 class51) {
-        final Class8183<T> method22280 = this.field32285.method22280(class51.method327("Callback"));
+    private void method25416(final CompoundNBT class51) {
+        final Class8183<T> method22280 = this.field32285.method22280(class51.getCompound("Callback"));
         if (method22280 != null) {
-            this.method25413(class51.method323("Name"), class51.method320("TriggerTime"), method22280);
+            this.method25413(class51.getString("Name"), class51.getLong("TriggerTime"), method22280);
         }
     }
     
-    public void method25417(final Class52 obj) {
+    public void method25417(final ListNBT obj) {
         this.field32286.clear();
         this.field32288.clear();
         this.field32287 = UnsignedLong.ZERO;
         if (!obj.isEmpty()) {
-            if (obj.method356() == 10) {
+            if (obj.getTagType() == 10) {
                 final Iterator<INBT> iterator = obj.iterator();
                 while (iterator.hasNext()) {
-                    this.method25416((Class51)iterator.next());
+                    this.method25416((CompoundNBT)iterator.next());
                 }
             }
             else {
@@ -96,16 +96,16 @@ public class Class7858<T>
         }
     }
     
-    private Class51 method25418(final Class7599<T> class7599) {
-        final Class51 class7600 = new Class51();
-        class7600.method306("Name", class7599.field30136);
-        class7600.method299("TriggerTime", class7599.field30134);
-        class7600.method295("Callback", this.field32285.method22279(class7599.field30137));
+    private CompoundNBT method25418(final Class7599<T> class7599) {
+        final CompoundNBT class7600 = new CompoundNBT();
+        class7600.putString("Name", class7599.field30136);
+        class7600.putLong("TriggerTime", class7599.field30134);
+        class7600.put("Callback", this.field32285.method22279(class7599.field30137));
         return class7600;
     }
     
-    public Class52 method25419() {
-        final Class52 class52 = new Class52();
+    public ListNBT method25419() {
+        final ListNBT class52 = new ListNBT();
         this.field32286.stream().sorted((Comparator<? super Object>)method25412()).map((Function<? super Object, ?>)this::method25418).forEach(class52::add);
         return class52;
     }

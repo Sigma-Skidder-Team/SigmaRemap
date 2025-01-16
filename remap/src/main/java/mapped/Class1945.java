@@ -59,7 +59,7 @@ public class Class1945 extends Class1944
                 if (t3 != null) {
                     if (!(t3 instanceof CancellationException)) {
                         if (!(t3 instanceof InterruptedException)) {
-                            Class869.method5277().method5238(Class7689.method24421(t3, "Rendering chunk"));
+                            Class869.method5277().method5238(CrashReport.makeCrashReport(t3, "Rendering chunk"));
                         }
                     }
                 }

@@ -119,8 +119,8 @@ public class Class7847
     public static void method25374(final File file) {
         if (file.exists()) {
             try {
-                final Class51 method26590 = Class8097.method26590(new FileInputStream(file));
-                method26590.method327("Data").method330("Player");
+                final CompoundNBT method26590 = Class8097.method26590(new FileInputStream(file));
+                method26590.getCompound("Data").remove("Player");
                 Class8097.method26591(method26590, new FileOutputStream(file));
             }
             catch (final Exception ex) {

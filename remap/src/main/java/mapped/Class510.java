@@ -80,13 +80,13 @@ public class Class510 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method297("Fuse", (short)this.method2617());
+    public void method1761(final CompoundNBT class51) {
+        class51.putShort("Fuse", (short)this.method2617());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.method2615(class51.method318("Fuse"));
+    public void method1760(final CompoundNBT class51) {
+        this.method2615(class51.getShort("Fuse"));
     }
     
     @Nullable

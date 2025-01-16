@@ -118,16 +118,16 @@ public class Class761 extends Class760 implements Class762
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("ExplosionPower", this.field4133);
+        class51.putInt("ExplosionPower", this.field4133);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("ExplosionPower", 99)) {
-            this.field4133 = class51.method319("ExplosionPower");
+        if (class51.contains("ExplosionPower", 99)) {
+            this.field4133 = class51.getInt("ExplosionPower");
         }
     }
     

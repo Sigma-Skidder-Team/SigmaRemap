@@ -33,7 +33,7 @@ public class Class6480 implements Class6477
         return new Class7562((short)0, (byte)0, (short)0, null);
     }
     
-    public Class74 method19508(final Class51 class51) {
+    public Class74 method19508(final CompoundNBT class51) {
         if (class51 == null) {
             return null;
         }

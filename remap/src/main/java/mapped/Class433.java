@@ -123,29 +123,29 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (this.field2647 == null) {
             Class8508.method28424(class51, this.field2645);
         }
         else {
-            class51.method306("LootTable", this.field2647.toString());
+            class51.putString("LootTable", this.field2647.toString());
             if (this.field2648 != 0L) {
-                class51.method299("LootTableSeed", this.field2648);
+                class51.putLong("LootTableSeed", this.field2648);
             }
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
         this.field2645 = Class2265.method8507(this.method2239(), ItemStack.field34174);
-        if (!class51.method316("LootTable", 8)) {
+        if (!class51.contains("LootTable", 8)) {
             Class8508.method28426(class51, this.field2645);
         }
         else {
-            this.field2647 = new ResourceLocation(class51.method323("LootTable"));
-            this.field2648 = class51.method320("LootTableSeed");
+            this.field2647 = new ResourceLocation(class51.getString("LootTable"));
+            this.field2648 = class51.getLong("LootTableSeed");
         }
     }
     

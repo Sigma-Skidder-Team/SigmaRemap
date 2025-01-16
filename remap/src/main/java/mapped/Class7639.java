@@ -98,9 +98,9 @@ public class Class7639
                         }
                         catch (final Exception ex) {
                             if (class3641.method11182()) {
-                                final Class7689 method24421 = Class7689.method24421(ex, "Ticking memory connection");
-                                method24421.method24418("Ticking connection").method16296("Connection", class3641::toString);
-                                throw new Class2365(method24421);
+                                final CrashReport method24421 = CrashReport.makeCrashReport(ex, "Ticking memory connection");
+                                method24421.makeCategory("Ticking connection").addDetail("Connection", class3641::toString);
+                                throw new ReportedException(method24421);
                             }
                         }
                         final Exception ex;

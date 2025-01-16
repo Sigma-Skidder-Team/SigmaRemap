@@ -11,10 +11,10 @@ public class Class119 implements Predicate<Class7990>
 {
     private static String[] field369;
     private final Class7909<Block> field370;
-    private final Class51 field371;
+    private final CompoundNBT field371;
     private final Map<String, String> field372;
     
-    private Class119(final Class7909<Block> field370, final Map<String, String> field371, final Class51 field372) {
+    private Class119(final Class7909<Block> field370, final Map<String, String> field371, final CompoundNBT field372) {
         this.field370 = field370;
         this.field372 = field371;
         this.field371 = field372;
@@ -42,7 +42,7 @@ public class Class119 implements Predicate<Class7990>
         }
         if (this.field371 != null) {
             final TileEntity method26067 = class7990.method26066();
-            return method26067 != null && Class9346.method34642(this.field371, method26067.method2180(new Class51()), true);
+            return method26067 != null && Class9346.method34642(this.field371, method26067.method2180(new CompoundNBT()), true);
         }
         return true;
     }

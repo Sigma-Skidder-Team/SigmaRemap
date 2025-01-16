@@ -58,7 +58,7 @@ public class Class3671 extends Class3666
             }
         }
         if (method27641 != null && !arrayList.isEmpty()) {
-            method27641.method27659("Explosion").method309("FadeColors", arrayList);
+            method27641.method27659("Explosion").putIntArray("FadeColors", arrayList);
             return method27641;
         }
         return ItemStack.field34174;

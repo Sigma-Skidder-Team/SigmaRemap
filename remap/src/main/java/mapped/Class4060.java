@@ -49,12 +49,12 @@ public class Class4060 extends Item
             final Collection method21698 = method21697.method32905();
             final String string = Registry.BLOCK.getKey(method21696).toString();
             if (!method21698.isEmpty()) {
-                final Class51 method21699 = class516.method27659("DebugProperty");
-                IProperty method21700 = method21697.getProperty(method21699.method323(string));
+                final CompoundNBT method21699 = class516.method27659("DebugProperty");
+                IProperty method21700 = method21697.getProperty(method21699.getString(string));
                 if (!b) {
                     final IProperty<?> class517 = method12267(method21698, method21700, playerEntity.method2804());
                     final String method21701 = class517.getName();
-                    method21699.method306(string, method21701);
+                    method21699.putString(string, method21701);
                     method12268(playerEntity, new Class2259(this.method11717() + ".select", new Object[] { method21701, method12269(class513, class517) }));
                 }
                 else {

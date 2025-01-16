@@ -94,18 +94,18 @@ public class Class799 extends Class794
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method312("Angry", this.method4597());
-        class51.method296("CollarColor", (byte)this.method4599().method813());
+        class51.putBoolean("Angry", this.method4597());
+        class51.putByte("CollarColor", (byte)this.method4599().method813());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4598(class51.method329("Angry"));
-        if (class51.method316("CollarColor", 99)) {
-            this.method4600(Class181.method819(class51.method319("CollarColor")));
+        this.method4598(class51.getBoolean("Angry"));
+        if (class51.contains("CollarColor", 99)) {
+            this.method4600(Class181.method819(class51.getInt("CollarColor")));
         }
     }
     

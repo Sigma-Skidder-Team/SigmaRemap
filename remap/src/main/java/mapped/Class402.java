@@ -453,52 +453,52 @@ public abstract class Class402 extends Entity implements Class401
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method297("life", (short)this.field2477);
+    public void method1761(final CompoundNBT class51) {
+        class51.putShort("life", (short)this.field2477);
         if (this.field2471 != null) {
-            class51.method295("inBlockState", Class9346.method34649(this.field2471));
+            class51.put("inBlockState", Class9346.method34649(this.field2471));
         }
-        class51.method296("shake", (byte)this.field2475);
-        class51.method312("inGround", this.field2472);
-        class51.method296("pickup", (byte)this.field2474.ordinal());
-        class51.method305("damage", this.field2479);
-        class51.method312("crit", this.method1981());
-        class51.method296("PierceLevel", this.method1983());
+        class51.putByte("shake", (byte)this.field2475);
+        class51.putBoolean("inGround", this.field2472);
+        class51.putByte("pickup", (byte)this.field2474.ordinal());
+        class51.putDouble("damage", this.field2479);
+        class51.putBoolean("crit", this.method1981());
+        class51.putByte("PierceLevel", this.method1983());
         if (this.field2476 != null) {
-            class51.method300("OwnerUUID", this.field2476);
+            class51.putUniqueId("OwnerUUID", this.field2476);
         }
-        class51.method306("SoundEvent", Registry.field205.getKey(this.field2481).toString());
-        class51.method312("ShotFromCrossbow", this.method1982());
+        class51.putString("SoundEvent", Registry.field205.getKey(this.field2481).toString());
+        class51.putBoolean("ShotFromCrossbow", this.method1982());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field2477 = class51.method318("life");
-        if (class51.method316("inBlockState", 10)) {
-            this.field2471 = Class9346.method34647(class51.method327("inBlockState"));
+    public void method1760(final CompoundNBT class51) {
+        this.field2477 = class51.getShort("life");
+        if (class51.contains("inBlockState", 10)) {
+            this.field2471 = Class9346.method34647(class51.getCompound("inBlockState"));
         }
-        this.field2475 = (class51.method317("shake") & 0xFF);
-        this.field2472 = class51.method329("inGround");
-        if (class51.method316("damage", 99)) {
-            this.field2479 = class51.method322("damage");
+        this.field2475 = (class51.getByte("shake") & 0xFF);
+        this.field2472 = class51.getBoolean("inGround");
+        if (class51.contains("damage", 99)) {
+            this.field2479 = class51.getDouble("damage");
         }
-        if (!class51.method316("pickup", 99)) {
-            if (class51.method316("player", 99)) {
-                this.field2474 = (class51.method329("player") ? Class2151.field12783 : Class2151.field12782);
+        if (!class51.contains("pickup", 99)) {
+            if (class51.contains("player", 99)) {
+                this.field2474 = (class51.getBoolean("player") ? Class2151.field12783 : Class2151.field12782);
             }
         }
         else {
-            this.field2474 = Class2151.method8320(class51.method317("pickup"));
+            this.field2474 = Class2151.method8320(class51.getByte("pickup"));
         }
-        this.method1978(class51.method329("crit"));
-        this.method1979(class51.method317("PierceLevel"));
-        if (class51.method302("OwnerUUID")) {
-            this.field2476 = class51.method301("OwnerUUID");
+        this.method1978(class51.getBoolean("crit"));
+        this.method1979(class51.getByte("PierceLevel"));
+        if (class51.hasUniqueId("OwnerUUID")) {
+            this.field2476 = class51.getUniqueId("OwnerUUID");
         }
-        if (class51.method316("SoundEvent", 8)) {
-            this.field2481 = Registry.field205.method506(new ResourceLocation(class51.method323("SoundEvent"))).orElse(this.method1968());
+        if (class51.contains("SoundEvent", 8)) {
+            this.field2481 = Registry.field205.method506(new ResourceLocation(class51.getString("SoundEvent"))).orElse(this.method1968());
         }
-        this.method1988(class51.method329("ShotFromCrossbow"));
+        this.method1988(class51.getBoolean("ShotFromCrossbow"));
     }
     
     public void method1972(final Entity class399) {

@@ -546,19 +546,19 @@ public abstract class Class428 extends Entity
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        if (class51.method329("CustomDisplayTile")) {
-            this.method2144(Class9346.method34647(class51.method327("DisplayState")));
-            this.method2145(class51.method319("DisplayOffset"));
+    public void method1760(final CompoundNBT class51) {
+        if (class51.getBoolean("CustomDisplayTile")) {
+            this.method2144(Class9346.method34647(class51.getCompound("DisplayState")));
+            this.method2145(class51.getInt("DisplayOffset"));
         }
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         if (this.method2146()) {
-            class51.method312("CustomDisplayTile", true);
-            class51.method295("DisplayState", Class9346.method34649(this.method2140()));
-            class51.method298("DisplayOffset", this.method2142());
+            class51.putBoolean("CustomDisplayTile", true);
+            class51.put("DisplayState", Class9346.method34649(this.method2140()));
+            class51.putInt("DisplayOffset", this.method2142());
         }
     }
     

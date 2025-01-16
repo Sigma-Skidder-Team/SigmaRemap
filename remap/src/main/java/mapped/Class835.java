@@ -54,15 +54,15 @@ public class Class835 extends Class834
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Variant", this.method4978());
+        class51.putInt("Variant", this.method4978());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4977(class51.method319("Variant"));
+        this.method4977(class51.getInt("Variant"));
     }
     
     public void method4977(final int i) {
@@ -81,7 +81,7 @@ public class Class835 extends Class834
     @Override
     public void method4955(final ItemStack class8321) {
         super.method4955(class8321);
-        class8321.method27658().method298("BucketVariantTag", this.method4978());
+        class8321.method27658().putInt("BucketVariantTag", this.method4978());
     }
     
     @Override
@@ -147,10 +147,10 @@ public class Class835 extends Class834
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final Class51 class1854) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
-        if (class1854 != null && class1854.method316("BucketVariantTag", 3)) {
-            this.method4977(class1854.method319("BucketVariantTag"));
+        if (class1854 != null && class1854.contains("BucketVariantTag", 3)) {
+            this.method4977(class1854.getInt("BucketVariantTag"));
             return method4188;
         }
         int n;

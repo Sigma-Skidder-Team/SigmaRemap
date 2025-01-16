@@ -11,7 +11,7 @@ import com.mojang.brigadier.context.CommandContext;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
 
-public class Class7418 implements ArgumentType<Class51>
+public class Class7418 implements ArgumentType<CompoundNBT>
 {
     private static final Collection<String> field28590;
     
@@ -22,11 +22,11 @@ public class Class7418 implements ArgumentType<Class51>
         return new Class7418();
     }
     
-    public static <S> Class51 method22832(final CommandContext<S> commandContext, final String s) {
-        return (Class51)commandContext.getArgument(s, (Class)Class51.class);
+    public static <S> CompoundNBT method22832(final CommandContext<S> commandContext, final String s) {
+        return (CompoundNBT)commandContext.getArgument(s, (Class) CompoundNBT.class);
     }
     
-    public Class51 parse(final StringReader stringReader) throws CommandSyntaxException {
+    public CompoundNBT parse(final StringReader stringReader) throws CommandSyntaxException {
         return new Class5704(stringReader).method16945();
     }
     

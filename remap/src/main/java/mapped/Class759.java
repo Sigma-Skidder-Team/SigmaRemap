@@ -47,7 +47,7 @@ public abstract class Class759 extends LivingEntity
     private long field4126;
     private Entity field4127;
     private int field4128;
-    private Class51 field4129;
+    private CompoundNBT field4129;
     private BlockPos field4130;
     private float field4131;
     
@@ -271,112 +271,112 @@ public abstract class Class759 extends LivingEntity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method312("CanPickUpLoot", this.method4192());
-        class51.method312("PersistenceRequired", this.field4123);
-        final Class52 class52 = new Class52();
+        class51.putBoolean("CanPickUpLoot", this.method4192());
+        class51.putBoolean("PersistenceRequired", this.field4123);
+        final ListNBT class52 = new ListNBT();
         for (final ItemStack class53 : this.field4120) {
-            final Class51 e = new Class51();
+            final CompoundNBT e = new CompoundNBT();
             if (!class53.method27620()) {
                 class53.method27627(e);
             }
-            ((AbstractList<Class51>)class52).add(e);
+            ((AbstractList<CompoundNBT>)class52).add(e);
         }
-        class51.method295("ArmorItems", class52);
-        final Class52 class54 = new Class52();
+        class51.put("ArmorItems", class52);
+        final ListNBT class54 = new ListNBT();
         for (final ItemStack class55 : this.field4118) {
-            final Class51 e2 = new Class51();
+            final CompoundNBT e2 = new CompoundNBT();
             if (!class55.method27620()) {
                 class55.method27627(e2);
             }
-            ((AbstractList<Class51>)class54).add(e2);
+            ((AbstractList<CompoundNBT>)class54).add(e2);
         }
-        class51.method295("HandItems", class54);
-        final Class52 class56 = new Class52();
+        class51.put("HandItems", class54);
+        final ListNBT class56 = new ListNBT();
         final float[] field4121 = this.field4121;
         for (int length = field4121.length, i = 0; i < length; ++i) {
-            ((AbstractList<Class46>)class56).add(Class46.method281(field4121[i]));
+            ((AbstractList<FloatNBT>)class56).add(FloatNBT.method281(field4121[i]));
         }
-        class51.method295("ArmorDropChances", class56);
-        final Class52 class57 = new Class52();
+        class51.put("ArmorDropChances", class56);
+        final ListNBT class57 = new ListNBT();
         final float[] field4122 = this.field4119;
         for (int length2 = field4122.length, j = 0; j < length2; ++j) {
-            ((AbstractList<Class46>)class57).add(Class46.method281(field4122[j]));
+            ((AbstractList<FloatNBT>)class57).add(FloatNBT.method281(field4122[j]));
         }
-        class51.method295("HandDropChances", class57);
+        class51.put("HandDropChances", class57);
         if (this.field4127 == null) {
             if (this.field4129 != null) {
-                class51.method295("Leash", this.field4129.method333());
+                class51.put("Leash", this.field4129.copy());
             }
         }
         else {
-            final Class51 class58 = new Class51();
+            final CompoundNBT class58 = new CompoundNBT();
             if (!(this.field4127 instanceof LivingEntity)) {
                 if (this.field4127 instanceof Class860) {
                     final BlockPos method5194 = ((Class860)this.field4127).method5194();
-                    class58.method298("X", method5194.getX());
-                    class58.method298("Y", method5194.getY());
-                    class58.method298("Z", method5194.getZ());
+                    class58.putInt("X", method5194.getX());
+                    class58.putInt("Y", method5194.getY());
+                    class58.putInt("Z", method5194.getZ());
                 }
             }
             else {
-                class58.method300("UUID", this.field4127.method1865());
+                class58.putUniqueId("UUID", this.field4127.method1865());
             }
-            class51.method295("Leash", class58);
+            class51.put("Leash", class58);
         }
-        class51.method312("LeftHanded", this.method4215());
+        class51.putBoolean("LeftHanded", this.method4215());
         if (this.field4125 != null) {
-            class51.method306("DeathLootTable", this.field4125.toString());
+            class51.putString("DeathLootTable", this.field4125.toString());
             if (this.field4126 != 0L) {
-                class51.method299("DeathLootTableSeed", this.field4126);
+                class51.putLong("DeathLootTableSeed", this.field4126);
             }
         }
         if (this.method4214()) {
-            class51.method312("NoAI", this.method4214());
+            class51.putBoolean("NoAI", this.method4214());
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("CanPickUpLoot", 1)) {
-            this.method4193(class51.method329("CanPickUpLoot"));
+        if (class51.contains("CanPickUpLoot", 1)) {
+            this.method4193(class51.getBoolean("CanPickUpLoot"));
         }
-        this.field4123 = class51.method329("PersistenceRequired");
-        if (class51.method316("ArmorItems", 9)) {
-            final Class52 method328 = class51.method328("ArmorItems", 10);
+        this.field4123 = class51.getBoolean("PersistenceRequired");
+        if (class51.contains("ArmorItems", 9)) {
+            final ListNBT method328 = class51.getList("ArmorItems", 10);
             for (int i = 0; i < this.field4120.size(); ++i) {
                 this.field4120.set(i, ItemStack.method27619(method328.method346(i)));
             }
         }
-        if (class51.method316("HandItems", 9)) {
-            final Class52 method329 = class51.method328("HandItems", 10);
+        if (class51.contains("HandItems", 9)) {
+            final ListNBT method329 = class51.getList("HandItems", 10);
             for (int j = 0; j < this.field4118.size(); ++j) {
                 this.field4118.set(j, ItemStack.method27619(method329.method346(j)));
             }
         }
-        if (class51.method316("ArmorDropChances", 9)) {
-            final Class52 method330 = class51.method328("ArmorDropChances", 5);
+        if (class51.contains("ArmorDropChances", 9)) {
+            final ListNBT method330 = class51.getList("ArmorDropChances", 5);
             for (int k = 0; k < method330.size(); ++k) {
                 this.field4121[k] = method330.method352(k);
             }
         }
-        if (class51.method316("HandDropChances", 9)) {
-            final Class52 method331 = class51.method328("HandDropChances", 5);
+        if (class51.contains("HandDropChances", 9)) {
+            final ListNBT method331 = class51.getList("HandDropChances", 5);
             for (int l = 0; l < method331.size(); ++l) {
                 this.field4119[l] = method331.method352(l);
             }
         }
-        if (class51.method316("Leash", 10)) {
-            this.field4129 = class51.method327("Leash");
+        if (class51.contains("Leash", 10)) {
+            this.field4129 = class51.getCompound("Leash");
         }
-        this.method4212(class51.method329("LeftHanded"));
-        if (class51.method316("DeathLootTable", 8)) {
-            this.field4125 = new ResourceLocation(class51.method323("DeathLootTable"));
-            this.field4126 = class51.method320("DeathLootTableSeed");
+        this.method4212(class51.getBoolean("LeftHanded"));
+        if (class51.contains("DeathLootTable", 8)) {
+            this.field4125 = new ResourceLocation(class51.getString("DeathLootTable"));
+            this.field4126 = class51.getLong("DeathLootTableSeed");
         }
-        this.method4211(class51.method329("NoAI"));
+        this.method4211(class51.getBoolean("NoAI"));
     }
     
     @Override
@@ -928,7 +928,7 @@ public abstract class Class759 extends LivingEntity
     }
     
     @Nullable
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.method2710(Class8107.field33406).method23946(new Class7919("Random spawn bonus", this.rand.nextGaussian() * 0.05, Class2157.field12810));
         if (this.rand.nextFloat() >= 0.05f) {
             this.method4212(false);
@@ -1115,11 +1115,11 @@ public abstract class Class759 extends LivingEntity
         if (this.field4129 != null) {
             if (this.world instanceof Class1849) {
                 Label_0194: {
-                    if (!this.field4129.method302("UUID")) {
-                        if (this.field4129.method316("X", 99)) {
-                            if (this.field4129.method316("Y", 99)) {
-                                if (this.field4129.method316("Z", 99)) {
-                                    this.method4207(Class863.method5205(this.world, new BlockPos(this.field4129.method319("X"), this.field4129.method319("Y"), this.field4129.method319("Z"))), true);
+                    if (!this.field4129.hasUniqueId("UUID")) {
+                        if (this.field4129.contains("X", 99)) {
+                            if (this.field4129.contains("Y", 99)) {
+                                if (this.field4129.contains("Z", 99)) {
+                                    this.method4207(Class863.method5205(this.world, new BlockPos(this.field4129.getInt("X"), this.field4129.getInt("Y"), this.field4129.getInt("Z"))), true);
                                     break Label_0194;
                                 }
                             }
@@ -1127,7 +1127,7 @@ public abstract class Class759 extends LivingEntity
                         this.method4203(false, true);
                     }
                     else {
-                        final Entity method6914 = ((Class1849)this.world).method6914(this.field4129.method301("UUID"));
+                        final Entity method6914 = ((Class1849)this.world).method6914(this.field4129.getUniqueId("UUID"));
                         if (method6914 != null) {
                             this.method4207(method6914, true);
                         }

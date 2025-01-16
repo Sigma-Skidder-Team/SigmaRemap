@@ -72,17 +72,17 @@ public class Class842 extends Class763
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field4489 = class51.method319("Lifetime");
-        this.field4490 = class51.method329("PlayerSpawned");
+        this.field4489 = class51.getInt("Lifetime");
+        this.field4490 = class51.getBoolean("PlayerSpawned");
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Lifetime", this.field4489);
-        class51.method312("PlayerSpawned", this.field4490);
+        class51.putInt("Lifetime", this.field4489);
+        class51.putBoolean("PlayerSpawned", this.field4490);
     }
     
     @Override

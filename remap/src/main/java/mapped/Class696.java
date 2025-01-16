@@ -17,7 +17,7 @@ public class Class696 extends Class527
     private Class618 field3830;
     private Class654 field3831;
     
-    public Class696(final Class539 field3826, final Class51 class51) {
+    public Class696(final Class539 field3826, final CompoundNBT class51) {
         super(new Class2259("createWorld.customize.flat.title", new Object[0]));
         this.field3827 = Class7067.method21599();
         this.field3826 = field3826;
@@ -28,15 +28,15 @@ public class Class696 extends Class527
         return this.field3827.toString();
     }
     
-    public Class51 method3884() {
-        return (Class51)this.field3827.method21594((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue();
+    public CompoundNBT method3884() {
+        return (CompoundNBT)this.field3827.method21594((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue();
     }
     
     public void method3885(final String s) {
         this.field3827 = Class7067.method21596(s);
     }
     
-    public void method3886(final Class51 class51) {
+    public void method3886(final CompoundNBT class51) {
         this.field3827 = Class7067.method21595((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51));
     }
     

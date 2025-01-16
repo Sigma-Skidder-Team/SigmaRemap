@@ -16,12 +16,12 @@ public abstract class Class4484 extends Class4473
         super(class9520, n);
     }
     
-    public Class4484(final Class9520 class9520, final Class51 class9521) {
+    public Class4484(final Class9520 class9520, final CompoundNBT class9521) {
         super(class9520, class9521);
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
     }
     
     private int method13471(final List<Class7530> list) {

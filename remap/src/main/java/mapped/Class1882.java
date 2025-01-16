@@ -91,11 +91,11 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
     }
     
     private void method7183(final Class7859 class7859) {
-        this.method7185(class7859, (com.mojang.datafixers.types.DynamicOps<Class51>)Class8453.field34721, this.method7184(class7859));
+        this.method7185(class7859, (com.mojang.datafixers.types.DynamicOps<CompoundNBT>)Class8453.field34721, this.method7184(class7859));
     }
     
     @Nullable
-    private Class51 method7184(final Class7859 class7859) {
+    private CompoundNBT method7184(final Class7859 class7859) {
         try {
             return this.field10242.method7557(class7859);
         }
@@ -134,11 +134,11 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
     
     private void method7186(final Class7859 class7859) {
         final INBT class7860 = (INBT)this.method7187(class7859, (com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue();
-        if (!(class7860 instanceof Class51)) {
+        if (!(class7860 instanceof CompoundNBT)) {
             Class1882.field10241.error("Expected compound tag, got {}", (Object)class7860);
         }
         else {
-            this.field10242.method7556(class7859, (Class51)class7860);
+            this.field10242.method7556(class7859, (CompoundNBT)class7860);
         }
     }
     

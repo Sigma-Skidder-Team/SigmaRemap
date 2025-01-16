@@ -9,15 +9,15 @@ import net.minecraft.nbt.INBTType;
 import java.io.IOException;
 import java.io.DataInput;
 
-public final class Class6081 implements INBTType<Class40>
+public final class Class6081 implements INBTType<ByteArrayNBT>
 {
-    public Class40 method18136(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
+    public ByteArrayNBT method18136(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
         class7553.read(192L);
         final int int1 = dataInput.readInt();
         class7553.read(8L * int1);
         final byte[] array = new byte[int1];
         dataInput.readFully(array);
-        return new Class40(array);
+        return new ByteArrayNBT(array);
     }
     
     @Override

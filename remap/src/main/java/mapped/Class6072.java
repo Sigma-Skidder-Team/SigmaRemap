@@ -9,11 +9,11 @@ import net.minecraft.nbt.INBTType;
 import java.io.IOException;
 import java.io.DataInput;
 
-public final class Class6072 implements INBTType<Class47>
+public final class Class6072 implements INBTType<ByteNBT>
 {
-    public Class47 method18127(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
+    public ByteNBT method18127(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
         class7553.read(72L);
-        return Class47.method283(dataInput.readByte());
+        return ByteNBT.valueOf(dataInput.readByte());
     }
     
     @Override

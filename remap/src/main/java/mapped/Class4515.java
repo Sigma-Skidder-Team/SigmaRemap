@@ -22,9 +22,9 @@ public abstract class Class4515 extends Class4473
         super(class9520, n);
     }
     
-    public Class4515(final Class9520 class9520, final Class51 class9521) {
+    public Class4515(final Class9520 class9520, final CompoundNBT class9521) {
         super(class9520, class9521);
-        this.field19920 = new BlockPos(class9521.method319("TPX"), class9521.method319("TPY"), class9521.method319("TPZ"));
+        this.field19920 = new BlockPos(class9521.getInt("TPX"), class9521.getInt("TPY"), class9521.getInt("TPZ"));
     }
     
     public void method13510(final Class6585 field19918, final BlockPos field19919, final Class9092 field19920) {
@@ -36,10 +36,10 @@ public abstract class Class4515 extends Class4473
     }
     
     @Override
-    public void method13415(final Class51 class51) {
-        class51.method298("TPX", this.field19920.getX());
-        class51.method298("TPY", this.field19920.getY());
-        class51.method298("TPZ", this.field19920.getZ());
+    public void method13415(final CompoundNBT class51) {
+        class51.putInt("TPX", this.field19920.getX());
+        class51.putInt("TPY", this.field19920.getY());
+        class51.putInt("TPZ", this.field19920.getZ());
     }
     
     @Override
@@ -48,13 +48,13 @@ public abstract class Class4515 extends Class4473
         this.field19849 = this.field19918.method19966(this.field19919, this.field19920);
         if (this.field19918.method19956(class1851, this.field19920, this.field19919, 2)) {
             for (final Class9038 class1855 : this.field19918.method19950(this.field19920, this.field19919, Class7521.field29820)) {
-                if (class1855.field38250 != null && Class102.valueOf(class1855.field38250.method323("mode")) == Class102.field308) {
-                    this.method13511(class1855.field38250.method323("metadata"), class1855.field38248, class1851, random, class1853);
+                if (class1855.field38250 != null && Class102.valueOf(class1855.field38250.getString("mode")) == Class102.field308) {
+                    this.method13511(class1855.field38250.getString("metadata"), class1855.field38248, class1851, random, class1853);
                 }
             }
             for (final Class9038 class1856 : this.field19918.method19950(this.field19920, this.field19919, Class7521.field29821)) {
                 if (class1856.field38250 != null) {
-                    final String method323 = class1856.field38250.method323("final_state");
+                    final String method323 = class1856.field38250.getString("final_state");
                     final Class7572 class1857 = new Class7572(new StringReader(method323), false);
                     BlockState method324 = Class7521.field29147.getDefaultState();
                     try {

@@ -18,17 +18,17 @@ public class Class4476 extends Class4475
         super(Class9520.field40980, random, n, 64, n2, 7, 7, 9);
     }
     
-    public Class4476(final Class1795 class1795, final Class51 class1796) {
+    public Class4476(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40980, class1796);
-        this.field19861 = class1796.method329("Witch");
-        this.field19862 = class1796.method329("Cat");
+        this.field19861 = class1796.getBoolean("Witch");
+        this.field19862 = class1796.getBoolean("Cat");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method312("Witch", this.field19861);
-        class51.method312("Cat", this.field19862);
+        class51.putBoolean("Witch", this.field19861);
+        class51.putBoolean("Cat", this.field19862);
     }
     
     @Override

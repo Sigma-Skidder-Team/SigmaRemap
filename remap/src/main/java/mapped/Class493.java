@@ -32,29 +32,29 @@ public class Class493 extends TileEntity implements Class439
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         if (this.field2835 != null) {
-            final Class51 class52 = new Class51();
+            final CompoundNBT class52 = new CompoundNBT();
             Class9346.method34641(class52, this.field2835);
-            class51.method295("Owner", class52);
+            class51.put("Owner", class52);
         }
         return class51;
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        if (!class51.method316("Owner", 10)) {
-            if (class51.method316("ExtraType", 8)) {
-                final String method323 = class51.method323("ExtraType");
+        if (!class51.contains("Owner", 10)) {
+            if (class51.contains("ExtraType", 8)) {
+                final String method323 = class51.getString("ExtraType");
                 if (!Class8272.method27500(method323)) {
                     this.method2506(new GameProfile((UUID)null, method323));
                 }
             }
         }
         else {
-            this.method2506(Class9346.method34640(class51.method327("Owner")));
+            this.method2506(Class9346.method34640(class51.getCompound("Owner")));
         }
     }
     
@@ -88,8 +88,8 @@ public class Class493 extends TileEntity implements Class439
     }
     
     @Override
-    public Class51 method2196() {
-        return this.method2180(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2180(new CompoundNBT());
     }
     
     public void method2506(final GameProfile field2835) {

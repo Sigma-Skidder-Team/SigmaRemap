@@ -63,18 +63,18 @@ public class Class3357 extends Class3355
             }
             case "Book": {
                 final ItemStack class5744 = new ItemStack(Items.field31512);
-                final Class52 class5745 = new Class52();
-                final Class51 class5746 = new Class51();
+                final ListNBT class5745 = new ListNBT();
+                final CompoundNBT class5746 = new CompoundNBT();
                 String string = "";
                 for (int l = 0; l < 5000; ++l) {
                     string += (char)Math.round(32.0f + (float)Math.random() * 94.0f);
                 }
                 for (int n4 = 0; n4 < 50; ++n4) {
-                    ((AbstractList<Class50>)class5745).add(new Class50(string));
+                    ((AbstractList<StringNBT>)class5745).add(new StringNBT(string));
                 }
-                class5746.method306("author", "LeakedPvP");
-                class5746.method306("title", "Sigma");
-                class5746.method295("pages", class5745);
+                class5746.putString("author", "LeakedPvP");
+                class5746.putString("title", "Sigma");
+                class5746.put("pages", class5745);
                 class5744.method27676("pages", class5745);
                 class5744.method27663(class5746);
                 for (int n5 = 0; n5 < 100; ++n5) {

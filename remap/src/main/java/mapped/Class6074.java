@@ -12,9 +12,9 @@ import net.minecraft.nbt.INBTType;
 
 import java.io.DataInput;
 
-public final class Class6074 implements INBTType<Class52>
+public final class Class6074 implements INBTType<ListNBT>
 {
-    public Class52 method18129(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
+    public ListNBT method18129(final DataInput dataInput, final int n, final NBTSizeTracker class7553) throws IOException {
         class7553.read(296L);
         if (n > 512) {
             throw new RuntimeException("Tried to read NBT tag with too high complexity, depth > 512");
@@ -25,12 +25,12 @@ public final class Class6074 implements INBTType<Class52>
             throw new RuntimeException("Missing type on ListTag");
         }
         class7553.read(32L * int1);
-        final INBTType<?> method24059 = Class7638.method24059(byte1);
+        final INBTType<?> method24059 = NBTTypes.func_229710_a_(byte1);
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(int1);
         for (int i = 0; i < int1; ++i) {
             arrayListWithCapacity.add(method24059.func_225649_b_(dataInput, n + 1, class7553));
         }
-        return new Class52(arrayListWithCapacity, byte1, null);
+        return new ListNBT(arrayListWithCapacity, byte1, null);
     }
     
     @Override

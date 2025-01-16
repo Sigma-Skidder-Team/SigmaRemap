@@ -298,12 +298,12 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
                 class8643.method29577(true);
             }
             catch (final Throwable t) {
-                final Class7689 method6920 = Class7689.method24421(t, "Exception initializing level");
+                final CrashReport method6920 = CrashReport.makeCrashReport(t, "Exception initializing level");
                 try {
                     method6919.method6779(method6920);
                 }
                 catch (final Throwable t2) {}
-                throw new Class2365(method6920);
+                throw new ReportedException(method6920);
             }
             class8643.method29577(true);
         }
@@ -544,12 +544,12 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
             }
             catch (final Throwable t2) {
                 MinecraftServer.field2292.error("Encountered an unexpected exception", t2);
-                Class7689 class7689;
-                if (t2 instanceof Class2365) {
-                    class7689 = this.method1491(((Class2365)t2).method9500());
+                CrashReport class7689;
+                if (t2 instanceof ReportedException) {
+                    class7689 = this.method1491(((ReportedException)t2).method9500());
                 }
                 else {
-                    class7689 = this.method1491(new Class7689("Exception in server tick loop", t2));
+                    class7689 = this.method1491(new CrashReport("Exception in server tick loop", t2));
                 }
                 final File file = new File(new File(this.method1466(), "crash-reports"), "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-server.txt");
                 if (class7689.method24416(file)) {
@@ -666,7 +666,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         return new File(".");
     }
     
-    public void method1467(final Class7689 class7689) {
+    public void method1467(final CrashReport class7689) {
     }
     
     public void method1468() {
@@ -732,9 +732,9 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
                     class1849.method6862(booleanSupplier);
                 }
                 catch (final Throwable t) {
-                    final Class7689 method24421 = Class7689.method24421(t, "Exception ticking world");
+                    final CrashReport method24421 = CrashReport.makeCrashReport(t, "Exception ticking world");
                     class1849.method6779(method24421);
-                    throw new Class2365(method24421);
+                    throw new ReportedException(method24421);
                 }
                 this.field2300.endSection();
                 this.field2300.endSection();
@@ -796,7 +796,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
                 MinecraftServer.field2292.info("You need to agree to the EULA in order to run the server. Go to eula.txt for more info.");
                 return;
             }
-            Class7689.method24422();
+            CrashReport.method24422();
             Class9280.method34254();
             Class9280.method34257();
             final String s = (String)parse.valueOf((OptionSpec)defaultsTo);
@@ -898,11 +898,11 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         return "vanilla";
     }
     
-    public Class7689 method1491(final Class7689 class7689) {
+    public CrashReport method1491(final CrashReport class7689) {
         if (this.field2309 != null) {
-            class7689.method24417().method16296("Player Count", () -> this.field2309.method20608() + " / " + this.field2309.method20609() + "; " + this.field2309.method20623());
+            class7689.method24417().addDetail("Player Count", () -> this.field2309.method20608() + " / " + this.field2309.method20609() + "; " + this.field2309.method20623());
         }
-        class7689.method24417().method16296("Data Packs", () -> {
+        class7689.method24417().addDetail("Data Packs", () -> {
             final StringBuilder sb = new StringBuilder();
             this.field2348.method7611().iterator();
             final Iterator iterator;
@@ -922,7 +922,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
             return sb.toString();
         });
         if (this.field2366 != null) {
-            class7689.method24417().method16296("Server Id", () -> this.field2366);
+            class7689.method24417().addDetail("Server Id", () -> this.field2366);
         }
         return class7689;
     }
@@ -1466,7 +1466,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
     }
     
     private void method1595(final Path path) throws IOException {
-        final Class7689 class7689 = new Class7689("Server dump", new Exception("dummy"));
+        final CrashReport class7689 = new CrashReport("Server dump", new Exception("dummy"));
         this.method1491(class7689);
         try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(path, new OpenOption[0])) {
             bufferedWriter.write(class7689.method24414());

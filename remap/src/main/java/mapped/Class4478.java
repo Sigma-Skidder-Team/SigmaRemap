@@ -17,21 +17,21 @@ public class Class4478 extends Class4475
         this.field19868 = new boolean[4];
     }
     
-    public Class4478(final Class1795 class1795, final Class51 class1796) {
+    public Class4478(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40981, class1796);
-        (this.field19868 = new boolean[4])[0] = class1796.method329("hasPlacedChest0");
-        this.field19868[1] = class1796.method329("hasPlacedChest1");
-        this.field19868[2] = class1796.method329("hasPlacedChest2");
-        this.field19868[3] = class1796.method329("hasPlacedChest3");
+        (this.field19868 = new boolean[4])[0] = class1796.getBoolean("hasPlacedChest0");
+        this.field19868[1] = class1796.getBoolean("hasPlacedChest1");
+        this.field19868[2] = class1796.getBoolean("hasPlacedChest2");
+        this.field19868[3] = class1796.getBoolean("hasPlacedChest3");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method312("hasPlacedChest0", this.field19868[0]);
-        class51.method312("hasPlacedChest1", this.field19868[1]);
-        class51.method312("hasPlacedChest2", this.field19868[2]);
-        class51.method312("hasPlacedChest3", this.field19868[3]);
+        class51.putBoolean("hasPlacedChest0", this.field19868[0]);
+        class51.putBoolean("hasPlacedChest1", this.field19868[1]);
+        class51.putBoolean("hasPlacedChest2", this.field19868[2]);
+        class51.putBoolean("hasPlacedChest3", this.field19868[3]);
     }
     
     @Override

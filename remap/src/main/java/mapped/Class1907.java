@@ -69,7 +69,7 @@ public class Class1907 extends AbstractChunkProvider
     }
     
     @Nullable
-    public Class1862 method7415(final int n, final int n2, final Class1873 class1873, final PacketBuffer class1874, final Class51 class1875, final int n3) {
+    public Class1862 method7415(final int n, final int n2, final Class1873 class1873, final PacketBuffer class1874, final CompoundNBT class1875, final int n3) {
         if (Class9225.method34017(this.field10344, n, n2)) {
             final int method34012 = this.field10344.method34012(n, n2);
             Class1862 class1876 = this.field10344.field39563.get(method34012);

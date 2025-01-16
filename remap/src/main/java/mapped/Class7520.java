@@ -108,7 +108,7 @@ public class Class7520
                         });
                     }
                     else {
-                        Class869.method5277().method5238(Class869.method5277().method5275(Class7689.method24421(t2, "Batching chunks")));
+                        Class869.method5277().method5238(Class869.method5277().method5275(CrashReport.makeCrashReport(t2, "Batching chunks")));
                     }
                 });
             }

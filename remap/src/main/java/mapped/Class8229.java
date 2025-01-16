@@ -17,7 +17,7 @@ import net.minecraft.util2.Direction;
 public class Class8229 extends Class8228
 {
     private final Class8530<?, ?> field33792;
-    private final Class51 field33793;
+    private final CompoundNBT field33793;
     
     @Deprecated
     public Class8229(final Class8530<?, ?> class8530) {
@@ -36,11 +36,11 @@ public class Class8229 extends Class8228
         this.field33793 = this.method27266();
     }
     
-    public Class51 method27266() {
-        final Class51 class51 = new Class51();
-        class51.method306("target_pool", "minecraft:empty");
-        class51.method306("attachement_type", "minecraft:bottom");
-        class51.method306("final_state", "minecraft:air");
+    public CompoundNBT method27266() {
+        final CompoundNBT class51 = new CompoundNBT();
+        class51.putString("target_pool", "minecraft:empty");
+        class51.putString("attachement_type", "minecraft:bottom");
+        class51.putString("final_state", "minecraft:air");
         return class51;
     }
     

@@ -13,14 +13,14 @@ public abstract class Class4479 extends Class4473
         this.field19869 = field19869;
     }
     
-    public Class4479(final Class9520 class9520, final Class51 class9521) {
+    public Class4479(final Class9520 class9520, final CompoundNBT class9521) {
         super(class9520, class9521);
-        this.field19869 = Class1964.method7956(class9521.method319("MST"));
+        this.field19869 = Class1964.method7956(class9521.getInt("MST"));
     }
     
     @Override
-    public void method13415(final Class51 class51) {
-        class51.method298("MST", this.field19869.ordinal());
+    public void method13415(final CompoundNBT class51) {
+        class51.putInt("MST", this.field19869.ordinal());
     }
     
     public BlockState method13462() {

@@ -21,8 +21,8 @@ public class Class8843
         this.field37169 = field37169;
     }
     
-    public static Class8843 method30895(final Class51 class51) {
-        return new Class8843(Class9346.method34645(class51.method327("Pos")), Class181.method820(class51.method323("Color"), Class181.field537), class51.method315("Name") ? Class5953.method17871(class51.method323("Name")) : null);
+    public static Class8843 method30895(final CompoundNBT class51) {
+        return new Class8843(Class9346.method34645(class51.getCompound("Pos")), Class181.method820(class51.getString("Color"), Class181.field537), class51.contains("Name") ? Class5953.method17871(class51.getString("Name")) : null);
     }
     
     @Nullable
@@ -121,12 +121,12 @@ public class Class8843
         return Objects.hash(this.field37167, this.field37168, this.field37169);
     }
     
-    public Class51 method30900() {
-        final Class51 class51 = new Class51();
-        class51.method295("Pos", Class9346.method34646(this.field37167));
-        class51.method306("Color", this.field37168.method814());
+    public CompoundNBT method30900() {
+        final CompoundNBT class51 = new CompoundNBT();
+        class51.put("Pos", Class9346.method34646(this.field37167));
+        class51.putString("Color", this.field37168.method814());
         if (this.field37169 != null) {
-            class51.method306("Name", Class5953.method17869(this.field37169));
+            class51.putString("Name", Class5953.method17869(this.field37169));
         }
         return class51;
     }

@@ -39,8 +39,8 @@ public abstract class PlayerEntity extends LivingEntity
     private static final DataParameter<Integer> field3000;
     public static final DataParameter<Byte> field3001;
     public static final DataParameter<Byte> field3002;
-    public static final DataParameter<Class51> field3003;
-    public static final DataParameter<Class51> field3004;
+    public static final DataParameter<CompoundNBT> field3003;
+    public static final DataParameter<CompoundNBT> field3004;
     private long field3005;
     public Class464 field3006;
     public Class485 field3007;
@@ -121,8 +121,8 @@ public abstract class PlayerEntity extends LivingEntity
         this.dataManager.register(PlayerEntity.field3000, 0);
         this.dataManager.register(PlayerEntity.field3001, (Byte)0);
         this.dataManager.register(PlayerEntity.field3002, (Byte)1);
-        this.dataManager.register(PlayerEntity.field3003, new Class51());
-        this.dataManager.register(PlayerEntity.field3004, new Class51());
+        this.dataManager.register(PlayerEntity.field3003, new CompoundNBT());
+        this.dataManager.register(PlayerEntity.field3004, new CompoundNBT());
     }
     
     @Override
@@ -515,9 +515,9 @@ public abstract class PlayerEntity extends LivingEntity
         this.method2887();
     }
     
-    private void method2815(final Class51 class51) {
-        if ((class51 != null && !class51.method315("Silent")) || !class51.method329("Silent")) {
-            EntityType.method23355(class51.method323("id")).filter(class52 -> class52 == EntityType.field29011).ifPresent(p0 -> Class796.method4498(this.world, this));
+    private void method2815(final CompoundNBT class51) {
+        if ((class51 != null && !class51.contains("Silent")) || !class51.getBoolean("Silent")) {
+            EntityType.method23355(class51.getString("id")).filter(class52 -> class52 == EntityType.field29011).ifPresent(p0 -> Class796.method4498(this.world, this));
         }
     }
     
@@ -677,67 +677,67 @@ public abstract class PlayerEntity extends LivingEntity
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
         this.method1864(method2893(this.field3032));
-        this.field3006.method2368(class51.method328("Inventory", 10));
-        this.field3006.field2743 = class51.method319("SelectedItemSlot");
-        this.field3021 = class51.method318("SleepTimer");
-        this.field3028 = class51.method321("XpP");
-        this.field3026 = class51.method319("XpLevel");
-        this.field3027 = class51.method319("XpTotal");
-        this.field3029 = class51.method319("XpSeed");
+        this.field3006.method2368(class51.getList("Inventory", 10));
+        this.field3006.field2743 = class51.getInt("SelectedItemSlot");
+        this.field3021 = class51.getShort("SleepTimer");
+        this.field3028 = class51.getFloat("XpP");
+        this.field3026 = class51.getInt("XpLevel");
+        this.field3027 = class51.getInt("XpTotal");
+        this.field3029 = class51.getInt("XpSeed");
         if (this.field3029 == 0) {
             this.field3029 = this.rand.nextInt();
         }
-        this.method2818(class51.method319("Score"));
-        if (class51.method316("SpawnX", 99)) {
-            if (class51.method316("SpawnY", 99)) {
-                if (class51.method316("SpawnZ", 99)) {
-                    this.field3023 = new BlockPos(class51.method319("SpawnX"), class51.method319("SpawnY"), class51.method319("SpawnZ"));
-                    this.field3024 = class51.method329("SpawnForced");
+        this.method2818(class51.getInt("Score"));
+        if (class51.contains("SpawnX", 99)) {
+            if (class51.contains("SpawnY", 99)) {
+                if (class51.contains("SpawnZ", 99)) {
+                    this.field3023 = new BlockPos(class51.getInt("SpawnX"), class51.getInt("SpawnY"), class51.getInt("SpawnZ"));
+                    this.field3024 = class51.getBoolean("SpawnForced");
                 }
             }
         }
         this.field3010.method33489(class51);
         this.field3025.method21424(class51);
-        if (class51.method316("EnderItems", 9)) {
-            this.field3007.method2430(class51.method328("EnderItems", 10));
+        if (class51.contains("EnderItems", 9)) {
+            this.field3007.method2430(class51.getList("EnderItems", 10));
         }
-        if (class51.method316("ShoulderEntityLeft", 10)) {
-            this.method2900(class51.method327("ShoulderEntityLeft"));
+        if (class51.contains("ShoulderEntityLeft", 10)) {
+            this.method2900(class51.getCompound("ShoulderEntityLeft"));
         }
-        if (class51.method316("ShoulderEntityRight", 10)) {
-            this.method2902(class51.method327("ShoulderEntityRight"));
+        if (class51.contains("ShoulderEntityRight", 10)) {
+            this.method2902(class51.getCompound("ShoulderEntityRight"));
         }
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("DataVersion", Class9528.method35579().getWorldVersion());
-        class51.method295("Inventory", this.field3006.method2367(new Class52()));
-        class51.method298("SelectedItemSlot", this.field3006.field2743);
-        class51.method297("SleepTimer", (short)this.field3021);
-        class51.method304("XpP", this.field3028);
-        class51.method298("XpLevel", this.field3026);
-        class51.method298("XpTotal", this.field3027);
-        class51.method298("XpSeed", this.field3029);
-        class51.method298("Score", this.method2817());
+        class51.putInt("DataVersion", Class9528.method35579().getWorldVersion());
+        class51.put("Inventory", this.field3006.method2367(new ListNBT()));
+        class51.putInt("SelectedItemSlot", this.field3006.field2743);
+        class51.putShort("SleepTimer", (short)this.field3021);
+        class51.putFloat("XpP", this.field3028);
+        class51.putInt("XpLevel", this.field3026);
+        class51.putInt("XpTotal", this.field3027);
+        class51.putInt("XpSeed", this.field3029);
+        class51.putInt("Score", this.method2817());
         if (this.field3023 != null) {
-            class51.method298("SpawnX", this.field3023.getX());
-            class51.method298("SpawnY", this.field3023.getY());
-            class51.method298("SpawnZ", this.field3023.getZ());
-            class51.method312("SpawnForced", this.field3024);
+            class51.putInt("SpawnX", this.field3023.getX());
+            class51.putInt("SpawnY", this.field3023.getY());
+            class51.putInt("SpawnZ", this.field3023.getZ());
+            class51.putBoolean("SpawnForced", this.field3024);
         }
         this.field3010.method33490(class51);
         this.field3025.method21423(class51);
-        class51.method295("EnderItems", this.field3007.method2431());
+        class51.put("EnderItems", this.field3007.method2431());
         if (!this.method2899().method331()) {
-            class51.method295("ShoulderEntityLeft", this.method2899());
+            class51.put("ShoulderEntityLeft", this.method2899());
         }
         if (!this.method2901().method331()) {
-            class51.method295("ShoulderEntityRight", this.method2901());
+            class51.put("ShoulderEntityRight", this.method2901());
         }
     }
     
@@ -1797,7 +1797,7 @@ public abstract class PlayerEntity extends LivingEntity
         return this.field3006.field2740;
     }
     
-    public boolean method2886(final Class51 class51) {
+    public boolean method2886(final CompoundNBT class51) {
         if (!this.isPassenger()) {
             if (this.onGround) {
                 if (!this.method1706()) {
@@ -1821,13 +1821,13 @@ public abstract class PlayerEntity extends LivingEntity
     public void method2887() {
         if (this.field3005 + 20L < this.world.method6754()) {
             this.method2888(this.method2899());
-            this.method2900(new Class51());
+            this.method2900(new CompoundNBT());
             this.method2888(this.method2901());
-            this.method2902(new Class51());
+            this.method2902(new CompoundNBT());
         }
     }
     
-    private void method2888(final Class51 class51) {
+    private void method2888(final CompoundNBT class51) {
         if (!this.world.isRemote) {
             if (!class51.method331()) {
                 EntityType.method23373(class51, this.world).ifPresent(class52 -> {
@@ -2011,19 +2011,19 @@ public abstract class PlayerEntity extends LivingEntity
         this.dataManager.set(PlayerEntity.field3002, (byte)((class2226 != Class2226.field13697) ? 1 : 0));
     }
     
-    public Class51 method2899() {
+    public CompoundNBT method2899() {
         return this.dataManager.get(PlayerEntity.field3003);
     }
     
-    public void method2900(final Class51 class51) {
+    public void method2900(final CompoundNBT class51) {
         this.dataManager.set(PlayerEntity.field3003, class51);
     }
     
-    public Class51 method2901() {
+    public CompoundNBT method2901() {
         return this.dataManager.get(PlayerEntity.field3004);
     }
     
-    public void method2902(final Class51 class51) {
+    public void method2902(final CompoundNBT class51) {
         this.dataManager.set(PlayerEntity.field3004, class51);
     }
     

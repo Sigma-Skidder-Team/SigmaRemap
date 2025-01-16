@@ -110,17 +110,17 @@ public class Class809 extends Class806
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method312("SkeletonTrap", this.method4778());
-        class51.method298("SkeletonTrapTime", this.field4364);
+        class51.putBoolean("SkeletonTrap", this.method4778());
+        class51.putInt("SkeletonTrapTime", this.field4364);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4779(class51.method329("SkeletonTrap"));
-        this.field4364 = class51.method319("SkeletonTrapTime");
+        this.method4779(class51.getBoolean("SkeletonTrap"));
+        this.field4364 = class51.getInt("SkeletonTrapTime");
     }
     
     @Override

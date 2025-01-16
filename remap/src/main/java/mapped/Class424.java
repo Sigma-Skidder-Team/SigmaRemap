@@ -29,7 +29,7 @@ public class Class424 extends Entity
     private boolean field2577;
     private int field2578;
     private float field2579;
-    public Class51 field2580;
+    public CompoundNBT field2580;
     public static final DataParameter<BlockPos> field2581;
     
     public Class424(final EntityType<? extends Class424> class7499, final World class7500) {
@@ -175,9 +175,9 @@ public class Class424 extends Entity
                                             if (method21696 instanceof Class3840) {
                                                 final TileEntity method21702 = this.world.getTileEntity(method21697);
                                                 if (method21702 != null) {
-                                                    final Class51 method21703 = method21702.method2180(new Class51());
-                                                    for (final String anObject : this.field2580.method293()) {
-                                                        final INBT method21704 = this.field2580.method313(anObject);
+                                                    final CompoundNBT method21703 = method21702.method2180(new CompoundNBT());
+                                                    for (final String anObject : this.field2580.keySet()) {
+                                                        final INBT method21704 = this.field2580.get(anObject);
                                                         if ("x".equals(anObject)) {
                                                             continue;
                                                         }
@@ -187,7 +187,7 @@ public class Class424 extends Entity
                                                         if ("z".equals(anObject)) {
                                                             continue;
                                                         }
-                                                        method21703.method295(anObject, method21704.copy());
+                                                        method21703.put(anObject, method21704.copy());
                                                     }
                                                     method21702.method2179(method21703);
                                                     method21702.method2161();
@@ -242,37 +242,37 @@ public class Class424 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method295("BlockState", Class9346.method34649(this.field2573));
-        class51.method298("Time", this.field2574);
-        class51.method312("DropItem", this.field2575);
-        class51.method312("HurtEntities", this.field2577);
-        class51.method304("FallHurtAmount", this.field2579);
-        class51.method298("FallHurtMax", this.field2578);
+    public void method1761(final CompoundNBT class51) {
+        class51.put("BlockState", Class9346.method34649(this.field2573));
+        class51.putInt("Time", this.field2574);
+        class51.putBoolean("DropItem", this.field2575);
+        class51.putBoolean("HurtEntities", this.field2577);
+        class51.putFloat("FallHurtAmount", this.field2579);
+        class51.putInt("FallHurtMax", this.field2578);
         if (this.field2580 != null) {
-            class51.method295("TileEntityData", this.field2580);
+            class51.put("TileEntityData", this.field2580);
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field2573 = Class9346.method34647(class51.method327("BlockState"));
-        this.field2574 = class51.method319("Time");
-        if (!class51.method316("HurtEntities", 99)) {
+    public void method1760(final CompoundNBT class51) {
+        this.field2573 = Class9346.method34647(class51.getCompound("BlockState"));
+        this.field2574 = class51.getInt("Time");
+        if (!class51.contains("HurtEntities", 99)) {
             if (this.field2573.method21755(Class7188.field27905)) {
                 this.field2577 = true;
             }
         }
         else {
-            this.field2577 = class51.method329("HurtEntities");
-            this.field2579 = class51.method321("FallHurtAmount");
-            this.field2578 = class51.method319("FallHurtMax");
+            this.field2577 = class51.getBoolean("HurtEntities");
+            this.field2579 = class51.getFloat("FallHurtAmount");
+            this.field2578 = class51.getInt("FallHurtMax");
         }
-        if (class51.method316("DropItem", 99)) {
-            this.field2575 = class51.method329("DropItem");
+        if (class51.contains("DropItem", 99)) {
+            this.field2575 = class51.getBoolean("DropItem");
         }
-        if (class51.method316("TileEntityData", 10)) {
-            this.field2580 = class51.method327("TileEntityData");
+        if (class51.contains("TileEntityData", 10)) {
+            this.field2580 = class51.getCompound("TileEntityData");
         }
         if (this.field2573.method21706()) {
             this.field2573 = Class7521.field29175.getDefaultState();
@@ -293,9 +293,9 @@ public class Class424 extends Entity
     }
     
     @Override
-    public void method1862(final Class5204 class5204) {
+    public void method1862(final CrashReportCategory class5204) {
         super.method1862(class5204);
-        class5204.method16297("Immitating BlockState", this.field2573.toString());
+        class5204.addDetail("Immitating BlockState", this.field2573.toString());
     }
     
     public BlockState method2071() {

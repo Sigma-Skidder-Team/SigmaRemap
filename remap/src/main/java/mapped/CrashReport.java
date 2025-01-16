@@ -24,20 +24,20 @@ import java.io.File;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class7689
+public class CrashReport
 {
     private static final Logger field30531;
     private final String field30532;
     private final Throwable field30533;
-    private final Class5204 field30534;
-    private final List<Class5204> field30535;
+    private final CrashReportCategory field30534;
+    private final List<CrashReportCategory> field30535;
     private File field30536;
     private boolean field30537;
     private StackTraceElement[] field30538;
     private boolean field30539;
     
-    public Class7689(final String field30532, final Throwable field30533) {
-        this.field30534 = new Class5204(this, "System Details");
+    public CrashReport(final String field30532, final Throwable field30533) {
+        this.field30534 = new CrashReportCategory(this, "System Details");
         this.field30535 = Lists.newArrayList();
         this.field30537 = true;
         this.field30538 = new StackTraceElement[0];
@@ -48,12 +48,12 @@ public class Class7689
     }
     
     private void method24409() {
-        this.field30534.method16296("Minecraft Version", () -> Class9528.method35579().getName());
-        this.field30534.method16296("Minecraft Version ID", () -> Class9528.method35579().getId());
-        this.field30534.method16296("Operating System", () -> System.getProperty("os.name") + " (" + System.getProperty("os.arch") + ") version " + System.getProperty("os.version"));
-        this.field30534.method16296("Java Version", () -> System.getProperty("java.version") + ", " + System.getProperty("java.vendor"));
-        this.field30534.method16296("Java VM Version", () -> System.getProperty("java.vm.name") + " (" + System.getProperty("java.vm.info") + "), " + System.getProperty("java.vm.vendor"));
-        this.field30534.method16296("Memory", () -> {
+        this.field30534.addDetail("Minecraft Version", () -> Class9528.method35579().getName());
+        this.field30534.addDetail("Minecraft Version ID", () -> Class9528.method35579().getId());
+        this.field30534.addDetail("Operating System", () -> System.getProperty("os.name") + " (" + System.getProperty("os.arch") + ") version " + System.getProperty("os.version"));
+        this.field30534.addDetail("Java Version", () -> System.getProperty("java.version") + ", " + System.getProperty("java.vendor"));
+        this.field30534.addDetail("Java VM Version", () -> System.getProperty("java.vm.name") + " (" + System.getProperty("java.vm.info") + "), " + System.getProperty("java.vm.vendor"));
+        this.field30534.addDetail("Memory", () -> {
             Runtime.getRuntime();
             final Runtime runtime;
             runtime.maxMemory();
@@ -64,8 +64,8 @@ public class Class7689
             final long lng3;
             return lng + " bytes (" + lng / 1024L / 1024L + " MB) / " + lng2 + " bytes (" + lng2 / 1024L / 1024L + " MB) up to " + lng3 + " bytes (" + lng3 / 1024L / 1024L + " MB)";
         });
-        this.field30534.method16297("CPUs", Runtime.getRuntime().availableProcessors());
-        this.field30534.method16296("JVM Flags", () -> {
+        this.field30534.addDetail("CPUs", Runtime.getRuntime().availableProcessors());
+        this.field30534.addDetail("JVM Flags", () -> {
             final List<? super String> list = Util.method27846().collect((Collector<? super String, ?, List<? super String>>)Collectors.toList());
             return String.format("%d total; %s", list.size(), list.stream().collect(Collectors.joining(" ")));
         });
@@ -101,7 +101,7 @@ public class Class7689
                 sb.append("\n");
             }
         }
-        final Iterator<Class5204> iterator = this.field30535.iterator();
+        final Iterator<CrashReportCategory> iterator = this.field30535.iterator();
         while (iterator.hasNext()) {
             iterator.next().method16302(sb);
             sb.append("\n\n");
@@ -193,7 +193,7 @@ public class Class7689
             return true;
         }
         catch (final Throwable t) {
-            Class7689.field30531.error("Could not save crash report to {}", (Object)file, (Object)t);
+            CrashReport.field30531.error("Could not save crash report to {}", (Object)file, (Object)t);
             b = false;
         }
         finally {
@@ -202,16 +202,16 @@ public class Class7689
         return b;
     }
     
-    public Class5204 method24417() {
+    public CrashReportCategory method24417() {
         return this.field30534;
     }
     
-    public Class5204 method24418(final String s) {
-        return this.method24419(s, 1);
+    public CrashReportCategory makeCategory(final String s) {
+        return this.makeCategoryDepth(s, 1);
     }
     
-    public Class5204 method24419(final String s, final int n) {
-        final Class5204 class5204 = new Class5204(this, s);
+    public CrashReportCategory makeCategoryDepth(final String s, final int n) {
+        final CrashReportCategory class5204 = new CrashReportCategory(this, s);
         try {
             if (this.field30537) {
                 final int method16299 = class5204.method16299(n);
@@ -257,22 +257,22 @@ public class Class7689
         }
     }
     
-    public static Class7689 method24421(Throwable cause, final String s) {
+    public static CrashReport makeCrashReport(Throwable cause, final String s) {
         while (cause instanceof CompletionException && cause.getCause() != null) {
             cause = cause.getCause();
         }
-        Class7689 method9500;
-        if (!(cause instanceof Class2365)) {
-            method9500 = new Class7689(s, cause);
+        CrashReport method9500;
+        if (!(cause instanceof ReportedException)) {
+            method9500 = new CrashReport(s, cause);
         }
         else {
-            method9500 = ((Class2365)cause).method9500();
+            method9500 = ((ReportedException)cause).method9500();
         }
         return method9500;
     }
     
     public static void method24422() {
-        new Class7689("Don't panic!", new Throwable()).method24414();
+        new CrashReport("Don't panic!", new Throwable()).method24414();
     }
     
     static {

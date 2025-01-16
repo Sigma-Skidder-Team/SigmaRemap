@@ -212,27 +212,27 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
         this.method2244(class51);
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         return this.method2245(class51);
     }
     
-    public void method2244(final Class51 class51) {
+    public void method2244(final CompoundNBT class51) {
         this.field2666 = Class2265.method8507(this.method2239(), ItemStack.field34174);
         if (!this.method2324(class51)) {
-            if (class51.method316("Items", 9)) {
+            if (class51.contains("Items", 9)) {
                 Class8508.method28426(class51, this.field2666);
             }
         }
     }
     
-    public Class51 method2245(final Class51 class51) {
+    public CompoundNBT method2245(final CompoundNBT class51) {
         if (!this.method2325(class51)) {
             Class8508.method28425(class51, this.field2666, false);
         }

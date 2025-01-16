@@ -11,5 +11,5 @@ public interface Class8643
     void method29396(final PlayerEntity p0);
     
     @Nullable
-    Class51 method29397(final PlayerEntity p0);
+    CompoundNBT method29397(final PlayerEntity p0);
 }

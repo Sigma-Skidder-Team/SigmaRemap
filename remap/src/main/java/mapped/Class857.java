@@ -185,96 +185,96 @@ public class Class857 extends LivingEntity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        final Class52 class52 = new Class52();
+        final ListNBT class52 = new ListNBT();
         for (final ItemStack class53 : this.field4580) {
-            final Class51 e = new Class51();
+            final CompoundNBT e = new CompoundNBT();
             if (!class53.method27620()) {
                 class53.method27627(e);
             }
-            ((AbstractList<Class51>)class52).add(e);
+            ((AbstractList<CompoundNBT>)class52).add(e);
         }
-        class51.method295("ArmorItems", class52);
-        final Class52 class54 = new Class52();
+        class51.put("ArmorItems", class52);
+        final ListNBT class54 = new ListNBT();
         for (final ItemStack class55 : this.field4579) {
-            final Class51 e2 = new Class51();
+            final CompoundNBT e2 = new CompoundNBT();
             if (!class55.method27620()) {
                 class55.method27627(e2);
             }
-            ((AbstractList<Class51>)class54).add(e2);
+            ((AbstractList<CompoundNBT>)class54).add(e2);
         }
-        class51.method295("HandItems", class54);
-        class51.method312("Invisible", this.method1823());
-        class51.method312("Small", this.method5160());
-        class51.method312("ShowArms", this.method5162());
-        class51.method298("DisabledSlots", this.field4583);
-        class51.method312("NoBasePlate", this.method5164());
+        class51.put("HandItems", class54);
+        class51.putBoolean("Invisible", this.method1823());
+        class51.putBoolean("Small", this.method5160());
+        class51.putBoolean("ShowArms", this.method5162());
+        class51.putInt("DisabledSlots", this.field4583);
+        class51.putBoolean("NoBasePlate", this.method5164());
         if (this.method5166()) {
-            class51.method312("Marker", this.method5166());
+            class51.putBoolean("Marker", this.method5166());
         }
-        class51.method295("Pose", this.method5150());
+        class51.put("Pose", this.method5150());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("ArmorItems", 9)) {
-            final Class52 method328 = class51.method328("ArmorItems", 10);
+        if (class51.contains("ArmorItems", 9)) {
+            final ListNBT method328 = class51.getList("ArmorItems", 10);
             for (int i = 0; i < this.field4580.size(); ++i) {
                 this.field4580.set(i, ItemStack.method27619(method328.method346(i)));
             }
         }
-        if (class51.method316("HandItems", 9)) {
-            final Class52 method329 = class51.method328("HandItems", 10);
+        if (class51.contains("HandItems", 9)) {
+            final ListNBT method329 = class51.getList("HandItems", 10);
             for (int j = 0; j < this.field4579.size(); ++j) {
                 this.field4579.set(j, ItemStack.method27619(method329.method346(j)));
             }
         }
-        this.method1828(class51.method329("Invisible"));
-        this.method5159(class51.method329("Small"));
-        this.method5161(class51.method329("ShowArms"));
-        this.field4583 = class51.method319("DisabledSlots");
-        this.method5163(class51.method329("NoBasePlate"));
-        this.method5165(class51.method329("Marker"));
+        this.method1828(class51.getBoolean("Invisible"));
+        this.method5159(class51.getBoolean("Small"));
+        this.method5161(class51.getBoolean("ShowArms"));
+        this.field4583 = class51.getInt("DisabledSlots");
+        this.method5163(class51.getBoolean("NoBasePlate"));
+        this.method5165(class51.getBoolean("Marker"));
         this.noClip = !this.method5148();
-        this.method5149(class51.method327("Pose"));
+        this.method5149(class51.getCompound("Pose"));
     }
     
-    private void method5149(final Class51 class51) {
-        final Class52 method328 = class51.method328("Head", 5);
+    private void method5149(final CompoundNBT class51) {
+        final ListNBT method328 = class51.getList("Head", 5);
         this.method5168(method328.isEmpty() ? Class857.field4565 : new Class8396(method328));
-        final Class52 method329 = class51.method328("Body", 5);
+        final ListNBT method329 = class51.getList("Body", 5);
         this.method5169(method329.isEmpty() ? Class857.field4566 : new Class8396(method329));
-        final Class52 method330 = class51.method328("LeftArm", 5);
+        final ListNBT method330 = class51.getList("LeftArm", 5);
         this.method5170(method330.isEmpty() ? Class857.field4567 : new Class8396(method330));
-        final Class52 method331 = class51.method328("RightArm", 5);
+        final ListNBT method331 = class51.getList("RightArm", 5);
         this.method5171(method331.isEmpty() ? Class857.field4568 : new Class8396(method331));
-        final Class52 method332 = class51.method328("LeftLeg", 5);
+        final ListNBT method332 = class51.getList("LeftLeg", 5);
         this.method5172(method332.isEmpty() ? Class857.field4569 : new Class8396(method332));
-        final Class52 method333 = class51.method328("RightLeg", 5);
+        final ListNBT method333 = class51.getList("RightLeg", 5);
         this.method5173(method333.isEmpty() ? Class857.field4570 : new Class8396(method333));
     }
     
-    private Class51 method5150() {
-        final Class51 class51 = new Class51();
+    private CompoundNBT method5150() {
+        final CompoundNBT class51 = new CompoundNBT();
         if (!Class857.field4565.equals(this.field4584)) {
-            class51.method295("Head", this.field4584.method27996());
+            class51.put("Head", this.field4584.method27996());
         }
         if (!Class857.field4566.equals(this.field4585)) {
-            class51.method295("Body", this.field4585.method27996());
+            class51.put("Body", this.field4585.method27996());
         }
         if (!Class857.field4567.equals(this.field4586)) {
-            class51.method295("LeftArm", this.field4586.method27996());
+            class51.put("LeftArm", this.field4586.method27996());
         }
         if (!Class857.field4568.equals(this.field4587)) {
-            class51.method295("RightArm", this.field4587.method27996());
+            class51.put("RightArm", this.field4587.method27996());
         }
         if (!Class857.field4569.equals(this.field4588)) {
-            class51.method295("LeftLeg", this.field4588.method27996());
+            class51.put("LeftLeg", this.field4588.method27996());
         }
         if (!Class857.field4570.equals(this.field4589)) {
-            class51.method295("RightLeg", this.field4589.method27996());
+            class51.put("RightLeg", this.field4589.method27996());
         }
         return class51;
     }

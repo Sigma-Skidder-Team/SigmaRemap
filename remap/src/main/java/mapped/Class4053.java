@@ -12,26 +12,26 @@ import java.util.List;
 public interface Class4053
 {
     default boolean method12251(final ItemStack class8321) {
-        final Class51 method27660 = class8321.method27660("display");
-        return method27660 != null && method27660.method316("color", 99);
+        final CompoundNBT method27660 = class8321.method27660("display");
+        return method27660 != null && method27660.contains("color", 99);
     }
     
     default int method12252(final ItemStack class8321) {
-        final Class51 method27660 = class8321.method27660("display");
-        return (method27660 != null && method27660.method316("color", 99)) ? method27660.method319("color") : 10511680;
+        final CompoundNBT method27660 = class8321.method27660("display");
+        return (method27660 != null && method27660.contains("color", 99)) ? method27660.getInt("color") : 10511680;
     }
     
     default void method12253(final ItemStack class8321) {
-        final Class51 method27660 = class8321.method27660("display");
+        final CompoundNBT method27660 = class8321.method27660("display");
         if (method27660 != null) {
-            if (method27660.method315("color")) {
-                method27660.method330("color");
+            if (method27660.contains("color")) {
+                method27660.remove("color");
             }
         }
     }
     
     default void method12254(final ItemStack class8321, final int n) {
-        class8321.method27659("display").method298("color", n);
+        class8321.method27659("display").putInt("color", n);
     }
     
     default ItemStack method12255(final ItemStack class8321, final List<Class3829> list) {

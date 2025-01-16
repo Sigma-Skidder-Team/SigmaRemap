@@ -113,7 +113,7 @@ public class Class8787
             return method6911;
         }
         final Path value = Paths.get(Class8787.field36936, str + ".snbt");
-        final Class51 method6912 = method30585(value);
+        final CompoundNBT method6912 = method30585(value);
         if (method6912 != null) {
             return method6910.method6523(method6912);
         }
@@ -138,7 +138,7 @@ public class Class8787
     }
     
     @Nullable
-    private static Class51 method30585(final Path path) {
+    private static CompoundNBT method30585(final Path path) {
         try {
             return Class5704.method16938(IOUtils.toString((Reader)Files.newBufferedReader(path)));
         }

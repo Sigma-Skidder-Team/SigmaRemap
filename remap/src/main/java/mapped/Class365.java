@@ -164,7 +164,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
     }
     
     public Class365<E> method1210() {
-        final Class365 class365 = new Class365(this.field2198.keySet(), this.field2199.keySet(), (Dynamic<T>)new Dynamic((DynamicOps)Class8453.field34721, (Object)new Class51()));
+        final Class365 class365 = new Class365(this.field2198.keySet(), this.field2199.keySet(), (Dynamic<T>)new Dynamic((DynamicOps)Class8453.field34721, (Object)new CompoundNBT()));
         this.field2198.forEach((p1, optional) -> optional.ifPresent(value -> {
             final Optional<?> optional2 = class366.field2198.put(class367, Optional.of(value));
         }));

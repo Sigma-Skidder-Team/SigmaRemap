@@ -66,10 +66,10 @@ public class Class775 extends Class772
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (this.field4169) {
-            class51.method312("Johnny", true);
+            class51.putBoolean("Johnny", true);
         }
     }
     
@@ -82,10 +82,10 @@ public class Class775 extends Class772
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("Johnny", 99)) {
-            this.field4169 = class51.method329("Johnny");
+        if (class51.contains("Johnny", 99)) {
+            this.field4169 = class51.getBoolean("Johnny");
         }
     }
     
@@ -96,7 +96,7 @@ public class Class775 extends Class772
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         final Class5496 method4188 = super.method4188(class1851, class1852, class1853, class1854, class1855);
         ((Class7747)this.method4150()).method24747(true);
         this.method4184(class1852);

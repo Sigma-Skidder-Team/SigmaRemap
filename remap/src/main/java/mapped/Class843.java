@@ -75,26 +75,26 @@ public class Class843 extends Class763
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method315("BoundX")) {
-            this.field4493 = new BlockPos(class51.method319("BoundX"), class51.method319("BoundY"), class51.method319("BoundZ"));
+        if (class51.contains("BoundX")) {
+            this.field4493 = new BlockPos(class51.getInt("BoundX"), class51.getInt("BoundY"), class51.getInt("BoundZ"));
         }
-        if (class51.method315("LifeTicks")) {
-            this.method5044(class51.method319("LifeTicks"));
+        if (class51.contains("LifeTicks")) {
+            this.method5044(class51.getInt("LifeTicks"));
         }
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (this.field4493 != null) {
-            class51.method298("BoundX", this.field4493.getX());
-            class51.method298("BoundY", this.field4493.getY());
-            class51.method298("BoundZ", this.field4493.getZ());
+            class51.putInt("BoundX", this.field4493.getX());
+            class51.putInt("BoundY", this.field4493.getY());
+            class51.putInt("BoundZ", this.field4493.getZ());
         }
         if (this.field4494) {
-            class51.method298("LifeTicks", this.field4495);
+            class51.putInt("LifeTicks", this.field4495);
         }
     }
     
@@ -166,7 +166,7 @@ public class Class843 extends Class763
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.method4184(class1852);
         this.method4187(class1852);
         return super.method4188(class1851, class1852, class1853, class1854, class1855);

@@ -167,10 +167,10 @@ public class Class1878 implements Class1851
         final IChunk method6965 = this.method6965(class354);
         final TileEntity method6966 = method6965.getTileEntity(class354);
         if (method6966 == null) {
-            final Class51 method6967 = method6965.method7033(class354);
+            final CompoundNBT method6967 = method6965.method7033(class354);
             if (method6967 != null) {
                 TileEntity class355;
-                if (!"DUMMY".equals(method6967.method323("id"))) {
+                if (!"DUMMY".equals(method6967.getString("id"))) {
                     class355 = TileEntity.method2190(method6967);
                 }
                 else {
@@ -209,11 +209,11 @@ public class Class1878 implements Class1851
             }
         }
         else if (method6965.method7027().method34448() != Class260.field1244) {
-            final Class51 class356 = new Class51();
-            class356.method298("x", class354.getX());
-            class356.method298("y", class354.getY());
-            class356.method298("z", class354.getZ());
-            class356.method306("id", "DUMMY");
+            final CompoundNBT class356 = new CompoundNBT();
+            class356.putInt("x", class354.getX());
+            class356.putInt("y", class354.getY());
+            class356.putInt("z", class354.getZ());
+            class356.putString("id", "DUMMY");
             method6965.method7032(class356);
         }
         else {

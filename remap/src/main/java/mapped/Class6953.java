@@ -80,9 +80,9 @@ public class Class6953<T> implements Class6952<T>
                     continue;
                 }
                 catch (final Throwable t) {
-                    final Class7689 method6905 = Class7689.method24421(t, "Exception while ticking");
-                    Class5204.method16304(method6905.method24418("Block being ticked"), class7461.field28774, null);
-                    throw new Class2365(method6905);
+                    final CrashReport method6905 = CrashReport.makeCrashReport(t, "Exception while ticking");
+                    CrashReportCategory.method16304(method6905.makeCategory("Block being ticked"), class7461.field28774, null);
+                    throw new ReportedException(method6905);
                 }
             }
             this.method21345(class7461.field28774, (T)class7461.method22980(), 0);
@@ -161,21 +161,21 @@ public class Class6953<T> implements Class6952<T>
         }
     }
     
-    public Class52 method21351(final Class7859 class7859) {
+    public ListNBT method21351(final Class7859 class7859) {
         return method21352(this.field27220, this.method21347(class7859, false, true), this.field27224.method6754());
     }
     
-    public static <T> Class52 method21352(final Function<T, ResourceLocation> function, final Iterable<Class7460<T>> iterable, final long n) {
-        final Class52 class52 = new Class52();
+    public static <T> ListNBT method21352(final Function<T, ResourceLocation> function, final Iterable<Class7460<T>> iterable, final long n) {
+        final ListNBT class52 = new ListNBT();
         for (final Class7460 class53 : iterable) {
-            final Class51 e = new Class51();
-            e.method306("i", function.apply((T)class53.method22980()).toString());
-            e.method298("x", class53.field28774.getX());
-            e.method298("y", class53.field28774.getY());
-            e.method298("z", class53.field28774.getZ());
-            e.method298("t", (int)(class53.field28775 - n));
-            e.method298("p", class53.field28776.method7941());
-            ((AbstractList<Class51>)class52).add(e);
+            final CompoundNBT e = new CompoundNBT();
+            e.putString("i", function.apply((T)class53.method22980()).toString());
+            e.putInt("x", class53.field28774.getX());
+            e.putInt("y", class53.field28774.getY());
+            e.putInt("z", class53.field28774.getZ());
+            e.putInt("t", (int)(class53.field28775 - n));
+            e.putInt("p", class53.field28776.method7941());
+            ((AbstractList<CompoundNBT>)class52).add(e);
         }
         return class52;
     }

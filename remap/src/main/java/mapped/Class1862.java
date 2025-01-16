@@ -37,7 +37,7 @@ public class Class1862 implements IChunk
     public static final Class8199 field10141;
     private final Class8199[] field10142;
     private Class1873 field10143;
-    private final Map<BlockPos, Class51> field10144;
+    private final Map<BlockPos, CompoundNBT> field10144;
     public boolean field10145;
     private final World field10146;
     private final Map<Class2020, Class9548> field10147;
@@ -99,9 +99,9 @@ public class Class1862 implements IChunk
     
     public Class1862(final World class1847, final Class1865 class1848) {
         this(class1847, class1848.method7019(), class1848.method7024(), class1848.method7039(), class1848.method7102(), class1848.method7103(), class1848.method7041(), class1848.method7014(), null);
-        final Iterator<Class51> iterator = class1848.method7096().iterator();
+        final Iterator<CompoundNBT> iterator = class1848.method7096().iterator();
         while (iterator.hasNext()) {
-            EntityType.method23378((Class51)iterator.next(), class1847, class1850 -> {
+            EntityType.method23378((CompoundNBT)iterator.next(), class1847, class1850 -> {
                 this.method7010(class1850);
                 return class1850;
             });
@@ -168,9 +168,9 @@ public class Class1862 implements IChunk
             return Class7521.field29147.getDefaultState();
         }
         catch (final Throwable t) {
-            final Class7689 method1077 = Class7689.method24421(t, "Getting block state");
-            method1077.method24418("Block being got").method16296("Location", () -> Class5204.method16295(n, n2, n3));
-            throw new Class2365(method1077);
+            final CrashReport method1077 = CrashReport.makeCrashReport(t, "Getting block state");
+            method1077.makeCategory("Block being got").addDetail("Location", () -> CrashReportCategory.method16295(n, n2, n3));
+            throw new ReportedException(method1077);
         }
     }
     
@@ -190,9 +190,9 @@ public class Class1862 implements IChunk
             return Class7558.field29974.getDefaultState();
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Getting fluid state");
-            method24421.method24418("Block being got").method16296("Location", () -> Class5204.method16295(n4, n5, n6));
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Getting fluid state");
+            method24421.makeCategory("Block being got").addDetail("Location", () -> CrashReportCategory.method16295(n4, n5, n6));
+            throw new ReportedException(method24421);
         }
     }
     
@@ -328,7 +328,7 @@ public class Class1862 implements IChunk
     public TileEntity method7000(final BlockPos class354, final Class2079 class355) {
         TileEntity method7055 = this.field10149.get(class354);
         if (method7055 == null) {
-            final Class51 class356 = this.field10144.remove(class354);
+            final CompoundNBT class356 = this.field10144.remove(class354);
             if (class356 != null) {
                 final TileEntity method7056 = this.method7070(class354, class356);
                 if (method7056 != null) {
@@ -371,23 +371,23 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public void method7032(final Class51 class51) {
-        this.field10144.put(new BlockPos(class51.method319("x"), class51.method319("y"), class51.method319("z")), class51);
+    public void method7032(final CompoundNBT class51) {
+        this.field10144.put(new BlockPos(class51.getInt("x"), class51.getInt("y"), class51.getInt("z")), class51);
     }
     
     @Nullable
     @Override
-    public Class51 method7034(final BlockPos class354) {
+    public CompoundNBT method7034(final BlockPos class354) {
         final TileEntity method6727 = this.getTileEntity(class354);
         if (method6727 != null && !method6727.isRemoved()) {
-            final Class51 method6728 = method6727.method2180(new Class51());
-            method6728.method312("keepPacked", false);
+            final CompoundNBT method6728 = method6727.method2180(new CompoundNBT());
+            method6728.putBoolean("keepPacked", false);
             return method6728;
         }
-        Class51 method6729 = this.field10144.get(class354);
+        CompoundNBT method6729 = this.field10144.get(class354);
         if (method6729 != null) {
-            method6729 = method6729.method333();
-            method6729.method312("keepPacked", true);
+            method6729 = method6729.copy();
+            method6729.putBoolean("keepPacked", true);
         }
         return method6729;
     }
@@ -492,7 +492,7 @@ public class Class1862 implements IChunk
         return this.field10162;
     }
     
-    public void method7063(final Class1873 field10143, final PacketBuffer class8654, final Class51 class8655, final int n) {
+    public void method7063(final Class1873 field10143, final PacketBuffer class8654, final CompoundNBT class8655, final int n) {
         final boolean b = field10143 != null;
         Sets.newHashSet((Iterable)this.field10149.keySet()).stream().filter(b ? (p0 -> true) : (class8658 -> (n2 & 1 << (class8658.method1075() >> 4)) != 0x0)).forEach(this.field10146::method6730);
         for (int i = 0; i < this.field10142.length; ++i) {
@@ -515,7 +515,7 @@ public class Class1862 implements IChunk
         }
         for (final Class2020 class8657 : Class2020.values()) {
             final String method8060 = class8657.method8060();
-            if (class8655.method316(method8060, 12)) {
+            if (class8655.contains(method8060, 12)) {
                 this.method7016(class8657, class8655.method326(method8060));
             }
         }
@@ -552,7 +552,7 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public Class51 method7033(final BlockPos class354) {
+    public CompoundNBT method7033(final BlockPos class354) {
         return this.field10144.get(class354);
     }
     
@@ -665,9 +665,9 @@ public class Class1862 implements IChunk
     }
     
     @Nullable
-    private TileEntity method7070(final BlockPos class354, final Class51 class355) {
+    private TileEntity method7070(final BlockPos class354, final CompoundNBT class355) {
         TileEntity class356;
-        if (!"DUMMY".equals(class355.method323("id"))) {
+        if (!"DUMMY".equals(class355.getString("id"))) {
             class356 = TileEntity.method2190(class355);
         }
         else {

@@ -657,16 +657,16 @@ public class Class852 extends Class759 implements Class762
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("DragonPhase", this.field4550.method33697().method17253().method22077());
+        class51.putInt("DragonPhase", this.field4550.method33697().method17253().method22077());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method315("DragonPhase")) {
-            this.field4550.method33696(Class7193.method22078(class51.method319("DragonPhase")));
+        if (class51.contains("DragonPhase")) {
+            this.field4550.method33696(Class7193.method22078(class51.getInt("DragonPhase")));
         }
     }
     

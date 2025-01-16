@@ -20,9 +20,9 @@ public class Class4485 extends Class4484
         this.field19878 = random.nextInt();
     }
     
-    public Class4485(final Class1795 class1795, final Class51 class1796) {
+    public Class4485(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40950, class1796);
-        this.field19878 = class1796.method319("Seed");
+        this.field19878 = class1796.getInt("Seed");
     }
     
     public static Class4485 method13478(final List<Class4473> list, final Random random, final int n, final int n2, final int n3, final Direction class179, final int n4) {
@@ -31,9 +31,9 @@ public class Class4485 extends Class4484
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method298("Seed", this.field19878);
+        class51.putInt("Seed", this.field19878);
     }
     
     @Override

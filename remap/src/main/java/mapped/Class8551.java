@@ -246,14 +246,14 @@ public class Class8551
                 class7351.method22568();
             }
             catch (final Throwable t) {
-                final Class7689 method28701 = Class7689.method24421(t, "Rendering entity in world");
-                e.method1862(method28701.method24418("Entity being rendered"));
-                final Class5204 method28702 = method28701.method24418("Renderer details");
-                method28702.method16297("Assigned renderer", method28699);
-                method28702.method16297("Location", Class5204.method16293(n, n2, n3));
-                method28702.method16297("Rotation", f);
-                method28702.method16297("Delta", f2);
-                throw new Class2365(method28701);
+                final CrashReport method28701 = CrashReport.makeCrashReport(t, "Rendering entity in world");
+                e.method1862(method28701.makeCategory("Entity being rendered"));
+                final CrashReportCategory method28702 = method28701.makeCategory("Renderer details");
+                method28702.addDetail("Assigned renderer", method28699);
+                method28702.addDetail("Location", CrashReportCategory.method16293(n, n2, n3));
+                method28702.addDetail("Rotation", f);
+                method28702.addDetail("Delta", f2);
+                throw new ReportedException(method28701);
             }
         }
     }

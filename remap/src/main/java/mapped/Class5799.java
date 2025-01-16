@@ -579,8 +579,8 @@ public class Class5799 implements IClientPlayNetHandler
         for (int i = 0; i < 16; ++i) {
             this.field23809.method6838(method12909, i, method12910);
         }
-        for (final Class51 class4299 : class4298.method12914()) {
-            final TileEntity method12912 = this.field23809.getTileEntity(new BlockPos(class4299.method319("x"), class4299.method319("y"), class4299.method319("z")));
+        for (final CompoundNBT class4299 : class4298.method12914()) {
+            final TileEntity method12912 = this.field23809.getTileEntity(new BlockPos(class4299.getInt("x"), class4299.getInt("y"), class4299.getInt("z")));
             if (method12912 == null) {
                 continue;
             }

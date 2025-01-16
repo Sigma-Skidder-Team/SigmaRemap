@@ -14,9 +14,9 @@ public class Class6822
     public Class9364 field26782;
     public Class9364 field26783;
     public byte[] field26784;
-    public Class52 field26785;
-    public Class52 field26786;
-    public Class52 field26787;
+    public ListNBT field26785;
+    public ListNBT field26786;
+    public ListNBT field26787;
     public final int field26788;
     public final int field26789;
     

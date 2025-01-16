@@ -83,46 +83,46 @@ public class Class798 extends Class789 implements Class797
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (this.method4523()) {
-            class51.method295("HivePos", Class9346.method34646(this.method4524()));
+            class51.put("HivePos", Class9346.method34646(this.method4524()));
         }
         if (this.method4510()) {
-            class51.method295("FlowerPos", Class9346.method34646(this.method4509()));
+            class51.put("FlowerPos", Class9346.method34646(this.method4509()));
         }
-        class51.method312("HasNectar", this.method4529());
-        class51.method312("HasStung", this.method4531());
-        class51.method298("TicksSincePollination", this.field4265);
-        class51.method298("CannotEnterHiveTicks", this.field4266);
-        class51.method298("CropsGrownSincePollination", this.field4267);
-        class51.method298("Anger", this.method4520());
+        class51.putBoolean("HasNectar", this.method4529());
+        class51.putBoolean("HasStung", this.method4531());
+        class51.putInt("TicksSincePollination", this.field4265);
+        class51.putInt("CannotEnterHiveTicks", this.field4266);
+        class51.putInt("CropsGrownSincePollination", this.field4267);
+        class51.putInt("Anger", this.method4520());
         if (this.field4261 == null) {
-            class51.method306("HurtBy", "");
+            class51.putString("HurtBy", "");
         }
         else {
-            class51.method306("HurtBy", this.field4261.toString());
+            class51.putString("HurtBy", this.field4261.toString());
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         this.field4271 = null;
-        if (class51.method315("HivePos")) {
-            this.field4271 = Class9346.method34645(class51.method327("HivePos"));
+        if (class51.contains("HivePos")) {
+            this.field4271 = Class9346.method34645(class51.getCompound("HivePos"));
         }
         this.field4270 = null;
-        if (class51.method315("FlowerPos")) {
-            this.field4270 = Class9346.method34645(class51.method327("FlowerPos"));
+        if (class51.contains("FlowerPos")) {
+            this.field4270 = Class9346.method34645(class51.getCompound("FlowerPos"));
         }
         super.method1760(class51);
-        this.method4530(class51.method329("HasNectar"));
-        this.method4532(class51.method329("HasStung"));
-        this.method4521(class51.method319("Anger"));
-        this.field4265 = class51.method319("TicksSincePollination");
-        this.field4266 = class51.method319("CannotEnterHiveTicks");
-        this.field4267 = class51.method319("CropsGrownSincePollination");
-        final String method323 = class51.method323("HurtBy");
+        this.method4530(class51.getBoolean("HasNectar"));
+        this.method4532(class51.getBoolean("HasStung"));
+        this.method4521(class51.getInt("Anger"));
+        this.field4265 = class51.getInt("TicksSincePollination");
+        this.field4266 = class51.getInt("CannotEnterHiveTicks");
+        this.field4267 = class51.getInt("CropsGrownSincePollination");
+        final String method323 = class51.getString("HurtBy");
         if (!method323.isEmpty()) {
             this.field4261 = UUID.fromString(method323);
             final PlayerEntity method324 = this.world.method7143(this.field4261);

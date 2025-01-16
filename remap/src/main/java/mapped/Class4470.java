@@ -18,7 +18,7 @@ public class Class4470 extends Class4469
         this.field19842 = random.nextInt(3);
     }
     
-    public Class4470(final Class1795 class1795, final Class51 class1796) {
+    public Class4470(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40991, class1796);
     }
     

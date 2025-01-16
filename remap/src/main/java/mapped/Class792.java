@@ -212,17 +212,17 @@ public class Class792 extends Class789
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("RabbitType", this.method4444());
-        class51.method298("MoreCarrotTicks", this.field4234);
+        class51.putInt("RabbitType", this.method4444());
+        class51.putInt("MoreCarrotTicks", this.field4234);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4445(class51.method319("RabbitType"));
-        this.field4234 = class51.method319("MoreCarrotTicks");
+        this.method4445(class51.getInt("RabbitType"));
+        this.field4234 = class51.getInt("MoreCarrotTicks");
     }
     
     public Class7795 method4441() {
@@ -314,7 +314,7 @@ public class Class792 extends Class789
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         int n = this.method4446(class1851);
         if (!(class1854 instanceof Class5499)) {
             class1854 = new Class5499(n);

@@ -232,7 +232,7 @@ public class Class803 extends Class789
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         Class2074 class1856 = Class2074.method8173(class1851.method6959(new BlockPos(this)));
         int n = 0;
         if (!(class1854 instanceof Class5498)) {
@@ -304,34 +304,34 @@ public class Class803 extends Class789
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         final List<UUID> method4652 = this.method4652();
-        final Class52 class52 = new Class52();
+        final ListNBT class52 = new ListNBT();
         for (final UUID uuid : method4652) {
             if (uuid == null) {
                 continue;
             }
-            ((AbstractList<Class51>)class52).add(Class9346.method34643(uuid));
+            ((AbstractList<CompoundNBT>)class52).add(Class9346.method34643(uuid));
         }
-        class51.method295("TrustedUUIDs", class52);
-        class51.method312("Sleeping", this.method2783());
-        class51.method306("Type", this.method4650().method8168());
-        class51.method312("Sitting", this.method4654());
-        class51.method312("Crouching", this.method1814());
+        class51.put("TrustedUUIDs", class52);
+        class51.putBoolean("Sleeping", this.method2783());
+        class51.putString("Type", this.method4650().method8168());
+        class51.putBoolean("Sitting", this.method4654());
+        class51.putBoolean("Crouching", this.method1814());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        final Class52 method328 = class51.method328("TrustedUUIDs", 10);
+        final ListNBT method328 = class51.getList("TrustedUUIDs", 10);
         for (int i = 0; i < method328.size(); ++i) {
             this.method4653(Class9346.method34644(method328.method346(i)));
         }
-        this.method4660(class51.method329("Sleeping"));
-        this.method4651(Class2074.method8171(class51.method323("Type")));
-        this.method4655(class51.method329("Sitting"));
-        this.method4668(class51.method329("Crouching"));
+        this.method4660(class51.getBoolean("Sleeping"));
+        this.method4651(Class2074.method8171(class51.getString("Type")));
+        this.method4655(class51.getBoolean("Sitting"));
+        this.method4668(class51.getBoolean("Crouching"));
         this.method4649();
     }
     

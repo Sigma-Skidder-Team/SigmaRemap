@@ -550,19 +550,19 @@ public class Class5814 implements Class5813
                 if (method12967.getItem() == Items.field31512) {
                     if (method12968.getItem() == Items.field31512) {
                         if (!class4314.method12968()) {
-                            method12968.method27676("pages", method12967.method27657().method328("pages", 8));
+                            method12968.method27676("pages", method12967.method27657().getList("pages", 8));
                         }
                         else {
                             final ItemStack class4315 = new ItemStack(Items.field31513);
-                            final Class51 method12969 = method12968.method27657();
+                            final CompoundNBT method12969 = method12968.method27657();
                             if (method12969 != null) {
-                                class4315.method27663(method12969.method333());
+                                class4315.method27663(method12969.copy());
                             }
-                            class4315.method27676("author", Class50.method290(this.field23857.getName().getString()));
-                            class4315.method27676("title", Class50.method290(method12967.method27657().method323("title")));
-                            final Class52 method12970 = method12967.method27657().method328("pages", 8);
+                            class4315.method27676("author", StringNBT.method290(this.field23857.getName().getString()));
+                            class4315.method27676("title", StringNBT.method290(method12967.method27657().getString("title")));
+                            final ListNBT method12970 = method12967.method27657().getList("pages", 8);
                             for (int i = 0; i < method12970.size(); ++i) {
-                                method12970.set(i, Class50.method290(Class5953.method17869(new StringTextComponent(method12970.method353(i)))));
+                                method12970.set(i, StringNBT.method290(Class5953.method17869(new StringTextComponent(method12970.method353(i)))));
                             }
                             class4315.method27676("pages", method12970);
                             this.field23857.method2716(class4314.method12969(), class4315);
@@ -579,7 +579,7 @@ public class Class5814 implements Class5813
         if (this.field23857.method1926(2)) {
             final Entity method6741 = this.field23857.method2940().getEntityByID(class4261.method12792());
             if (method6741 != null) {
-                this.field23857.field3039.method17469(new Class4296(class4261.method12791(), method6741.method1756(new Class51())));
+                this.field23857.field3039.method17469(new Class4296(class4261.method12791(), method6741.method1756(new CompoundNBT())));
             }
         }
     }
@@ -589,7 +589,7 @@ public class Class5814 implements Class5813
         Class8663.method29631((IPacket<Class5814>)class4275, this, this.field23857.method2940());
         if (this.field23857.method1926(2)) {
             final TileEntity method6727 = this.field23857.method2940().getTileEntity(class4275.method12828());
-            this.field23857.field3039.method17469(new Class4296(class4275.method12827(), (method6727 == null) ? null : method6727.method2180(new Class51())));
+            this.field23857.field3039.method17469(new Class4296(class4275.method12827(), (method6727 == null) ? null : method6727.method2180(new CompoundNBT())));
         }
     }
     
@@ -897,9 +897,9 @@ public class Class5814 implements Class5813
             this.field23855.method11175(class4252, genericFutureListener);
         }
         catch (final Throwable t) {
-            final Class7689 method2945 = Class7689.method24421(t, "Sending packet");
-            method2945.method24418("Packet being sent").method16296("Packet class", () -> class4254.getClass().getCanonicalName());
-            throw new Class2365(method2945);
+            final CrashReport method2945 = CrashReport.makeCrashReport(t, "Sending packet");
+            method2945.makeCategory("Packet being sent").addDetail("Packet class", () -> class4254.getClass().getCanonicalName());
+            throw new ReportedException(method2945);
         }
     }
     
@@ -1174,18 +1174,18 @@ public class Class5814 implements Class5813
         if (this.field23857.field3041.method26484()) {
             final boolean b = class4287.method12874() < 0;
             final ItemStack method12875 = class4287.method12875();
-            final Class51 method12876 = method12875.method27660("BlockEntityTag");
+            final CompoundNBT method12876 = method12875.method27660("BlockEntityTag");
             if (!method12875.method27620()) {
                 if (method12876 != null) {
-                    if (method12876.method315("x")) {
-                        if (method12876.method315("y")) {
-                            if (method12876.method315("z")) {
-                                final TileEntity method12877 = this.field23857.world.getTileEntity(new BlockPos(method12876.method319("x"), method12876.method319("y"), method12876.method319("z")));
+                    if (method12876.contains("x")) {
+                        if (method12876.contains("y")) {
+                            if (method12876.contains("z")) {
+                                final TileEntity method12877 = this.field23857.world.getTileEntity(new BlockPos(method12876.getInt("x"), method12876.getInt("y"), method12876.getInt("z")));
                                 if (method12877 != null) {
-                                    final Class51 method12878 = method12877.method2180(new Class51());
-                                    method12878.method330("x");
-                                    method12878.method330("y");
-                                    method12878.method330("z");
+                                    final CompoundNBT method12878 = method12877.method2180(new CompoundNBT());
+                                    method12878.remove("x");
+                                    method12878.remove("y");
+                                    method12878.remove("z");
                                     method12875.method27676("BlockEntityTag", method12878);
                                 }
                             }

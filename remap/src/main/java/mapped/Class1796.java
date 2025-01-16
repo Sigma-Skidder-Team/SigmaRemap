@@ -249,14 +249,14 @@ public class Class1796 implements Class1657
                 this.method6539(class512, n, n2, this.method6534(class512, null, class511));
             }
             catch (final Throwable t) {
-                final Class7689 method24421 = Class7689.method24421(t, "Rendering item");
-                final Class5204 method24422 = method24421.method24418("Item being rendered");
-                method24422.method16296("Item Type", () -> String.valueOf(class513.method27622()));
-                method24422.method16296("Registry Name", () -> String.valueOf(Class9570.method35826(class514.method27622(), Class9570.field41353, new Object[0])));
-                method24422.method16296("Item Damage", () -> String.valueOf(class515.method27632()));
-                method24422.method16296("Item NBT", () -> String.valueOf(class516.method27657()));
-                method24422.method16296("Item Foil", () -> String.valueOf(class517.method27671()));
-                throw new Class2365(method24421);
+                final CrashReport method24421 = CrashReport.makeCrashReport(t, "Rendering item");
+                final CrashReportCategory method24422 = method24421.makeCategory("Item being rendered");
+                method24422.addDetail("Item Type", () -> String.valueOf(class513.method27622()));
+                method24422.addDetail("Registry Name", () -> String.valueOf(Class9570.method35826(class514.method27622(), Class9570.field41353, new Object[0])));
+                method24422.addDetail("Item Damage", () -> String.valueOf(class515.method27632()));
+                method24422.addDetail("Item NBT", () -> String.valueOf(class516.method27657()));
+                method24422.addDetail("Item Foil", () -> String.valueOf(class517.method27671()));
+                throw new ReportedException(method24421);
             }
             this.field9952 -= 50.0f;
         }

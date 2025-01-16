@@ -29,16 +29,16 @@ public class Class6697 extends Class6693
     }
     
     public static void method20353(final ItemStack class8321) {
-        Class51 method333 = new Class51();
+        CompoundNBT method333 = new CompoundNBT();
         if (class8321.method27657() != null) {
-            method333 = class8321.method27657().method333();
+            method333 = class8321.method27657().copy();
         }
         final Class2265<ItemStack> class8324 = Class2265.method8507(27, new ItemStack(Items.AIR));
         if (method333 != null) {
-            if (method333.method315("BlockEntityTag")) {
-                final Class51 method335 = method333.method327("BlockEntityTag");
+            if (method333.contains("BlockEntityTag")) {
+                final CompoundNBT method335 = method333.getCompound("BlockEntityTag");
                 method20354(method335);
-                if (method335.method315("Items")) {
+                if (method335.contains("Items")) {
                     Class8508.method28426(method335, class8324);
                 }
             }
@@ -53,27 +53,27 @@ public class Class6697 extends Class6693
         });
     }
     
-    public static void method20354(final Class51 class51) {
-        if (class51.method315("Items")) {
-            final Class52 method328 = class51.method328("Items", 10);
+    public static void method20354(final CompoundNBT class51) {
+        if (class51.contains("Items")) {
+            final ListNBT method328 = class51.getList("Items", 10);
             for (int i = 0; i < method328.size(); ++i) {
-                final Class51 method329 = method328.method346(i).method327("tag");
-                if (method329.method315("ench")) {
-                    final Class52 method330 = method329.method328("ench", 10);
-                    final Class52 class52 = new Class52();
+                final CompoundNBT method329 = method328.method346(i).getCompound("tag");
+                if (method329.contains("ench")) {
+                    final ListNBT method330 = method329.getList("ench", 10);
+                    final ListNBT class52 = new ListNBT();
                     for (int j = 0; j < method330.size(); ++j) {
-                        final Class51 method331 = method330.method346(j);
-                        final short method332 = method331.method318("lvl");
-                        final short method333 = method331.method318("id");
+                        final CompoundNBT method331 = method330.method346(j);
+                        final short method332 = method331.getShort("lvl");
+                        final short method333 = method331.getShort("id");
                         if (Class9526.field41009 != null) {
                             final String s = (String)Class9526.field41009.get((Object)method333);
-                            final Class51 e = new Class51();
-                            e.method297("lvl", method332);
-                            e.method306("id", s);
-                            ((AbstractList<Class51>)class52).add(e);
+                            final CompoundNBT e = new CompoundNBT();
+                            e.putShort("lvl", method332);
+                            e.putString("id", s);
+                            ((AbstractList<CompoundNBT>)class52).add(e);
                         }
                     }
-                    method329.method295("Enchantments", class52);
+                    method329.put("Enchantments", class52);
                 }
             }
         }

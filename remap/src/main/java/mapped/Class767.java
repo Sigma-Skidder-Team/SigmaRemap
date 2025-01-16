@@ -72,15 +72,15 @@ public class Class767 extends Class763 implements Class766, Class768
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Invul", this.method4255());
+        class51.putInt("Invul", this.method4255());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4256(class51.method319("Invul"));
+        this.method4256(class51.getInt("Invul"));
         if (this.hasCustomName()) {
             this.field4155.method21070(this.getDisplayName());
         }

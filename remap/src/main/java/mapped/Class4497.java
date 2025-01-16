@@ -20,15 +20,15 @@ public class Class4497 extends Class4484
         this.field19849 = field19849;
     }
     
-    public Class4497(final Class1795 class1795, final Class51 class1796) {
+    public Class4497(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40960, class1796);
-        this.field19893 = class1796.method329("Mob");
+        this.field19893 = class1796.getBoolean("Mob");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method312("Mob", this.field19893);
+        class51.putBoolean("Mob", this.field19893);
     }
     
     public static Class4497 method13489(final List<Class4473> list, final int n, final int n2, final int n3, final int n4, final Direction class179) {

@@ -106,9 +106,9 @@ public class EntityDataManager
             class8811 = this.field38917.get(class8810.method30737());
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Getting synched entity data");
-            method24421.method24418("Synched entity data").method16297("Data ID", class8810);
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Getting synched entity data");
+            method24421.makeCategory("Synched entity data").addDetail("Data ID", class8810);
+            throw new ReportedException(method24421);
         }
         finally {
             this.field38918.readLock().unlock();

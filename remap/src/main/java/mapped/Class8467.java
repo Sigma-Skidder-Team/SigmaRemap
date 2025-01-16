@@ -46,18 +46,18 @@ public class Class8467
         return this.field34750.values();
     }
     
-    public Class51 method28265() {
-        final Class51 class51 = new Class51();
+    public CompoundNBT method28265() {
+        final CompoundNBT class51 = new CompoundNBT();
         for (final Class6878 class52 : this.field34750.values()) {
-            class51.method295(class52.method21048().toString(), class52.method21059());
+            class51.put(class52.method21048().toString(), class52.method21059());
         }
         return class51;
     }
     
-    public void method28266(final Class51 class51) {
-        for (final String s : class51.method293()) {
+    public void method28266(final CompoundNBT class51) {
+        for (final String s : class51.keySet()) {
             final ResourceLocation class52 = new ResourceLocation(s);
-            this.field34750.put(class52, Class6878.method21060(class51.method327(s), class52));
+            this.field34750.put(class52, Class6878.method21060(class51.getCompound(s), class52));
         }
     }
     

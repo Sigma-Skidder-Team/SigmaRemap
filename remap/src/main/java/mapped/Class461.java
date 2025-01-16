@@ -157,19 +157,19 @@ public class Class461 extends Class460 implements Class441, Class439
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
         Class8508.method28426(class51, this.field2721 = Class2265.method8507(this.method2239(), ItemStack.field34174));
-        this.field2722 = class51.method318("BrewTime");
-        this.field2725 = class51.method317("Fuel");
+        this.field2722 = class51.getShort("BrewTime");
+        this.field2725 = class51.getByte("Fuel");
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
-        class51.method297("BrewTime", (short)this.field2722);
+        class51.putShort("BrewTime", (short)this.field2722);
         Class8508.method28424(class51, this.field2721);
-        class51.method296("Fuel", (byte)this.field2725);
+        class51.putByte("Fuel", (byte)this.field2725);
         return class51;
     }
     

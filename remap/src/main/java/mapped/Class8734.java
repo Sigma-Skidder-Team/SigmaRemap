@@ -23,7 +23,7 @@ public class Class8734
     private static final Map<String, String> field36696;
     private static final Map<String, String> field36697;
     private final boolean field36698;
-    private final Map<String, Long2ObjectMap<Class51>> field36699;
+    private final Map<String, Long2ObjectMap<CompoundNBT>> field36699;
     private final Map<String, Class6360> field36700;
     private final List<String> field36701;
     private final List<String> field36702;
@@ -57,17 +57,17 @@ public class Class8734
         }
     }
     
-    public Class51 method30171(Class51 method30174) {
-        final Class51 method30175 = method30174.method327("Level");
-        final Class7859 class7859 = new Class7859(method30175.method319("xPos"), method30175.method319("zPos"));
+    public CompoundNBT method30171(CompoundNBT method30174) {
+        final CompoundNBT method30175 = method30174.getCompound("Level");
+        final Class7859 class7859 = new Class7859(method30175.getInt("xPos"), method30175.getInt("zPos"));
         if (this.method30173(class7859.field32290, class7859.field32291)) {
             method30174 = this.method30174(method30174, class7859);
         }
-        final Class51 method30176 = method30175.method327("Structures");
-        final Class51 method30177 = method30176.method327("References");
+        final CompoundNBT method30176 = method30175.getCompound("Structures");
+        final CompoundNBT method30177 = method30176.getCompound("References");
         for (final String s : this.field36702) {
             final Class4574 class7860 = (Class4574)Class4535.field20023.get((Object)s.toLowerCase(Locale.ROOT));
-            if (method30177.method316(s, 12)) {
+            if (method30177.contains(s, 12)) {
                 continue;
             }
             if (class7860 == null) {
@@ -82,11 +82,11 @@ public class Class8734
                     }
                 }
             }
-            method30177.method311(s, (List<Long>)list);
+            method30177.putLongArray(s, (List<Long>)list);
         }
-        method30176.method295("References", method30177);
-        method30175.method295("Structures", method30176);
-        method30174.method295("Level", method30175);
+        method30176.put("References", method30177);
+        method30175.put("Structures", method30176);
+        method30174.put("Level", method30175);
         return method30174;
     }
     
@@ -106,10 +106,10 @@ public class Class8734
         return false;
     }
     
-    private Class51 method30174(final Class51 class51, final Class7859 class52) {
-        final Class51 method327 = class51.method327("Level");
-        final Class51 method328 = method327.method327("Structures");
-        final Class51 method329 = method328.method327("Starts");
+    private CompoundNBT method30174(final CompoundNBT class51, final Class7859 class52) {
+        final CompoundNBT method327 = class51.getCompound("Level");
+        final CompoundNBT method328 = method327.getCompound("Structures");
+        final CompoundNBT method329 = method328.getCompound("Starts");
         for (final String s : this.field36702) {
             final Long2ObjectMap long2ObjectMap = this.field36699.get(s);
             if (long2ObjectMap == null) {
@@ -119,41 +119,41 @@ public class Class8734
             if (!this.field36700.get(Class8734.field36696.get(s)).method18945(method330)) {
                 continue;
             }
-            final Class51 class53 = (Class51)long2ObjectMap.get(method330);
+            final CompoundNBT class53 = (CompoundNBT)long2ObjectMap.get(method330);
             if (class53 == null) {
                 continue;
             }
-            method329.method295(s, class53);
+            method329.put(s, class53);
         }
-        method328.method295("Starts", method329);
-        method327.method295("Structures", method328);
-        class51.method295("Level", method327);
+        method328.put("Starts", method329);
+        method327.put("Structures", method328);
+        class51.put("Level", method327);
         return class51;
     }
     
     private void method30175(final Class8213 class8213) {
         if (class8213 != null) {
             for (final String str : this.field36701) {
-                Class51 method327 = new Class51();
+                CompoundNBT method327 = new CompoundNBT();
                 try {
-                    method327 = class8213.method27212(str, 1493).method327("data").method327("Features");
+                    method327 = class8213.method27212(str, 1493).getCompound("data").getCompound("Features");
                     if (method327.method331()) {
                         continue;
                     }
                 }
                 catch (final IOException ex) {}
-                final Iterator<String> iterator2 = method327.method293().iterator();
+                final Iterator<String> iterator2 = method327.keySet().iterator();
                 while (iterator2.hasNext()) {
-                    final Class51 method328 = method327.method327(iterator2.next());
-                    final long method329 = Class7859.method25423(method328.method319("ChunkX"), method328.method319("ChunkZ"));
-                    final Class52 method330 = method328.method328("Children", 10);
+                    final CompoundNBT method328 = method327.getCompound(iterator2.next());
+                    final long method329 = Class7859.method25423(method328.getInt("ChunkX"), method328.getInt("ChunkZ"));
+                    final ListNBT method330 = method328.getList("Children", 10);
                     if (!method330.isEmpty()) {
-                        final String s = Class8734.field36697.get(method330.method346(0).method323("id"));
+                        final String s = Class8734.field36697.get(method330.method346(0).getString("id"));
                         if (s != null) {
-                            method328.method306("id", s);
+                            method328.putString("id", s);
                         }
                     }
-                    this.field36699.computeIfAbsent(method328.method323("id"), p0 -> new Long2ObjectOpenHashMap()).put(method329, (Object)method328);
+                    this.field36699.computeIfAbsent(method328.getString("id"), p0 -> new Long2ObjectOpenHashMap()).put(method329, (Object)method328);
                 }
                 final String string = str + "_index";
                 final Class6360 class8214 = class8213.method27208(() -> new Class6360(s2), string);
@@ -163,10 +163,10 @@ public class Class8734
                 else {
                     final Class6360 class8215 = new Class6360(string);
                     this.field36700.put(str, class8215);
-                    final Iterator<String> iterator3 = method327.method293().iterator();
+                    final Iterator<String> iterator3 = method327.keySet().iterator();
                     while (iterator3.hasNext()) {
-                        final Class51 method331 = method327.method327(iterator3.next());
-                        class8215.method18943(Class7859.method25423(method331.method319("ChunkX"), method331.method319("ChunkZ")));
+                        final CompoundNBT method331 = method327.getCompound(iterator3.next());
+                        class8215.method18943(Class7859.method25423(method331.getInt("ChunkX"), method331.getInt("ChunkZ")));
                     }
                     class8215.method18903();
                 }

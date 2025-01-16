@@ -544,7 +544,7 @@ public class Class9404
             }
         }
         if (class8988.field37895 != null) {
-            final Class51 method27624 = class8989.method27657();
+            final CompoundNBT method27624 = class8989.method27657();
             for (int k = 0; k < class8988.field37895.length; ++k) {
                 if (!class8988.field37895[k].method32117(method27624)) {
                     return false;
@@ -569,11 +569,11 @@ public class Class9404
     }
     
     private static int method34973(final ItemStack class8321) {
-        final Class51 method27657 = class8321.method27657();
+        final CompoundNBT method27657 = class8321.method27657();
         if (method27657 == null) {
             return 0;
         }
-        final String method27658 = method27657.method323("Potion");
+        final String method27658 = method27657.getString("Potion");
         if (method27658 == null || method27658.equals("")) {
             return 0;
         }
@@ -622,7 +622,7 @@ public class Class9404
     }
     
     private static int[][] method34976(final ItemStack class8321) {
-        Class52 class8322;
+        ListNBT class8322;
         if (class8321.getItem() != Items.field31534) {
             class8322 = class8321.method27662();
         }
@@ -630,13 +630,13 @@ public class Class9404
             final Class4034 class8323 = (Class4034) Items.field31534;
             class8322 = Class4034.method12225(class8321);
         }
-        final Class52 class8324 = class8322;
+        final ListNBT class8324 = class8322;
         if (class8324 != null && class8324.size() > 0) {
             final int[][] array = new int[class8324.size()][2];
             for (int i = 0; i < class8324.size(); ++i) {
-                final Class51 method346 = class8324.method346(i);
-                final String method347 = method346.method323("id");
-                final int method348 = method346.method319("lvl");
+                final CompoundNBT method346 = class8324.method346(i);
+                final String method347 = method346.getString("id");
+                final int method348 = method346.getInt("lvl");
                 final Class6257 method349 = Class7552.method23716(method347);
                 if (method349 != null) {
                     array[i][0] = Registry.field209.getId(method349);

@@ -96,29 +96,29 @@ public class Class448 extends TileEntity implements Class447, Class439
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
         this.field2686.clear();
         Class8508.method28426(class51, this.field2686);
-        if (class51.method316("CookingTimes", 11)) {
-            final int[] method325 = class51.method325("CookingTimes");
+        if (class51.contains("CookingTimes", 11)) {
+            final int[] method325 = class51.getIntArray("CookingTimes");
             System.arraycopy(method325, 0, this.field2687, 0, Math.min(this.field2688.length, method325.length));
         }
-        if (class51.method316("CookingTotalTimes", 11)) {
-            final int[] method326 = class51.method325("CookingTotalTimes");
+        if (class51.contains("CookingTotalTimes", 11)) {
+            final int[] method326 = class51.getIntArray("CookingTotalTimes");
             System.arraycopy(method326, 0, this.field2688, 0, Math.min(this.field2688.length, method326.length));
         }
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         this.method2271(class51);
-        class51.method308("CookingTimes", this.field2687);
-        class51.method308("CookingTotalTimes", this.field2688);
+        class51.putIntArray("CookingTimes", this.field2687);
+        class51.putIntArray("CookingTotalTimes", this.field2688);
         return class51;
     }
     
-    private Class51 method2271(final Class51 class51) {
+    private CompoundNBT method2271(final CompoundNBT class51) {
         super.method2180(class51);
         Class8508.method28425(class51, this.field2686, true);
         return class51;
@@ -131,8 +131,8 @@ public class Class448 extends TileEntity implements Class447, Class439
     }
     
     @Override
-    public Class51 method2196() {
-        return this.method2271(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2271(new CompoundNBT());
     }
     
     public Optional<Class3682> method2272(final ItemStack class8321) {

@@ -21,5 +21,5 @@ public interface Class6058<T>
     
     int method18031();
     
-    void method18032(final Class52 p0);
+    void method18032(final ListNBT p0);
 }

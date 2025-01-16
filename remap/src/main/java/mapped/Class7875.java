@@ -21,8 +21,8 @@ public class Class7875<T> implements Class7876<T>
     private final Class6058<T> field32323;
     private final Class7876<T> field32324;
     private final Class94<T> field32325;
-    private final Function<Class51, T> field32326;
-    private final Function<T, Class51> field32327;
+    private final Function<CompoundNBT, T> field32326;
+    private final Function<T, CompoundNBT> field32327;
     private final T field32328;
     public Class9217 field32329;
     private Class6058<T> field32330;
@@ -32,9 +32,9 @@ public class Class7875<T> implements Class7876<T>
     public void method25498() {
         if (this.field32332.isLocked() && !this.field32332.isHeldByCurrentThread()) {
             final String s = Thread.getAllStackTraces().keySet().stream().filter(Objects::nonNull).map(thread -> thread.getName() + ": \n\tat " + Arrays.stream(thread.getStackTrace()).map((Function<? super StackTraceElement, ?>)Object::toString).collect((Collector<? super Object, ?, String>)Collectors.joining("\n\tat "))).collect((Collector<? super Object, ?, String>)Collectors.joining("\n"));
-            final Class7689 class7689 = new Class7689("Writing into PalettedContainer from multiple threads", new IllegalStateException());
-            class7689.method24418("Thread dumps").method16297("Thread dumps", s);
-            throw new Class2365(class7689);
+            final CrashReport class7689 = new CrashReport("Writing into PalettedContainer from multiple threads", new IllegalStateException());
+            class7689.makeCategory("Thread dumps").addDetail("Thread dumps", s);
+            throw new ReportedException(class7689);
         }
         this.field32332.lock();
     }
@@ -43,7 +43,7 @@ public class Class7875<T> implements Class7876<T>
         this.field32332.unlock();
     }
     
-    public Class7875(final Class6058<T> field32323, final Class94<T> field32324, final Function<Class51, T> field32325, final Function<T, Class51> field32326, final T field32327) {
+    public Class7875(final Class6058<T> field32323, final Class94<T> field32324, final Function<CompoundNBT, T> field32325, final Function<T, CompoundNBT> field32326, final T field32327) {
         this.field32324 = ((p0, p1) -> 0);
         this.field32332 = new ReentrantLock();
         this.field32323 = field32323;
@@ -144,7 +144,7 @@ public class Class7875<T> implements Class7876<T>
         this.method25499();
     }
     
-    public void method25511(final Class52 class52, final long[] array) {
+    public void method25511(final ListNBT class52, final long[] array) {
         this.method25498();
         final int max = Math.max(4, MathHelper.method35681(class52.size()));
         if (max != this.field32331) {
@@ -174,9 +174,9 @@ public class Class7875<T> implements Class7876<T>
         this.method25499();
     }
     
-    public void method25512(final Class51 class51, final String s, final String s2) {
+    public void method25512(final CompoundNBT class51, final String s, final String s2) {
         this.method25498();
-        final Class6060 class52 = new Class6060((Class94<T>)this.field32325, this.field32331, (Class7876<T>)this.field32324, (Function<Class51, T>)this.field32326, (Function<T, Class51>)this.field32327);
+        final Class6060 class52 = new Class6060((Class94<T>)this.field32325, this.field32331, (Class7876<T>)this.field32324, (Function<CompoundNBT, T>)this.field32326, (Function<T, CompoundNBT>)this.field32327);
         T field32328 = this.field32328;
         int n = class52.method18026(this.field32328);
         final int[] array = new int[4096];
@@ -188,14 +188,14 @@ public class Class7875<T> implements Class7876<T>
             }
             array[i] = n;
         }
-        final Class52 class53 = new Class52();
+        final ListNBT class53 = new ListNBT();
         class52.method18035(class53);
-        class51.method295(s, class53);
+        class51.put(s, class53);
         final Class9217 class54 = new Class9217(Math.max(4, MathHelper.method35681(class53.size())), 4096);
         for (int j = 0; j < array.length; ++j) {
             class54.method33926(j, array[j]);
         }
-        class51.method310(s2, class54.method33928());
+        class51.putLongArray(s2, class54.method33928());
         this.method25499();
     }
     

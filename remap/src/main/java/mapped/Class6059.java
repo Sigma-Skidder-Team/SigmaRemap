@@ -14,11 +14,11 @@ public class Class6059<T> implements Class6058<T>
     private final Class94<T> field24625;
     private final T[] field24626;
     private final Class7876<T> field24627;
-    private final Function<Class51, T> field24628;
+    private final Function<CompoundNBT, T> field24628;
     private final int field24629;
     private int field24630;
     
-    public Class6059(final Class94<T> field24625, final int field24626, final Class7876<T> field24627, final Function<Class51, T> field24628) {
+    public Class6059(final Class94<T> field24625, final int field24626, final Class7876<T> field24627, final Function<CompoundNBT, T> field24628) {
         this.field24625 = field24625;
         this.field24626 = (T[])new Object[1 << field24626];
         this.field24629 = field24626;
@@ -83,7 +83,7 @@ public class Class6059<T> implements Class6058<T>
     }
     
     @Override
-    public void method18032(final Class52 class52) {
+    public void method18032(final ListNBT class52) {
         for (int i = 0; i < class52.size(); ++i) {
             this.field24626[i] = this.field24628.apply(class52.method346(i));
         }

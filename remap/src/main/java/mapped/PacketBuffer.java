@@ -210,7 +210,7 @@ public class PacketBuffer extends ByteBuf
         return this;
     }
     
-    public PacketBuffer method29507(final Class51 class51) {
+    public PacketBuffer method29507(final CompoundNBT class51) {
         if (class51 == null) {
             this.writeByte(0);
         }
@@ -226,7 +226,7 @@ public class PacketBuffer extends ByteBuf
     }
     
     @Nullable
-    public Class51 method29508() {
+    public CompoundNBT method29508() {
         final int readerIndex = this.readerIndex();
         if (this.readByte() == 0) {
             return null;
@@ -250,10 +250,10 @@ public class PacketBuffer extends ByteBuf
             final Item method27622 = class8321.getItem();
             this.writeVarInt(Item.method11696(method27622));
             this.writeByte(class8321.method27690());
-            Class51 method27623 = null;
+            CompoundNBT method27623 = null;
             if (method27622.method11710() || method27622.method11719()) {
                 if (b && Class9570.field41335.method22605()) {
-                    method27623 = (Class51)Class9570.method35826(class8321, Class9570.field41335, new Object[0]);
+                    method27623 = (CompoundNBT)Class9570.method35826(class8321, Class9570.field41335, new Object[0]);
                 }
                 else {
                     method27623 = class8321.method27657();

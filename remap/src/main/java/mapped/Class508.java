@@ -132,17 +132,17 @@ public class Class508 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method297("Health", (short)this.field2900);
-        class51.method297("Age", (short)this.field2898);
-        class51.method297("Value", (short)this.field2901);
+    public void method1761(final CompoundNBT class51) {
+        class51.putShort("Health", (short)this.field2900);
+        class51.putShort("Age", (short)this.field2898);
+        class51.putShort("Value", (short)this.field2901);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field2900 = class51.method318("Health");
-        this.field2898 = class51.method318("Age");
-        this.field2901 = class51.method318("Value");
+    public void method1760(final CompoundNBT class51) {
+        this.field2900 = class51.getShort("Health");
+        this.field2898 = class51.getShort("Age");
+        this.field2901 = class51.getShort("Value");
     }
     
     @Override

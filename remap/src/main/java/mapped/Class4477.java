@@ -20,21 +20,21 @@ public class Class4477 extends Class4475
         super(Class9520.field40977, random, n, 64, n2, 12, 10, 15);
     }
     
-    public Class4477(final Class1795 class1795, final Class51 class1796) {
+    public Class4477(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40977, class1796);
-        this.field19863 = class1796.method329("placedMainChest");
-        this.field19864 = class1796.method329("placedHiddenChest");
-        this.field19865 = class1796.method329("placedTrap1");
-        this.field19866 = class1796.method329("placedTrap2");
+        this.field19863 = class1796.getBoolean("placedMainChest");
+        this.field19864 = class1796.getBoolean("placedHiddenChest");
+        this.field19865 = class1796.getBoolean("placedTrap1");
+        this.field19866 = class1796.getBoolean("placedTrap2");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method312("placedMainChest", this.field19863);
-        class51.method312("placedHiddenChest", this.field19864);
-        class51.method312("placedTrap1", this.field19865);
-        class51.method312("placedTrap2", this.field19866);
+        class51.putBoolean("placedMainChest", this.field19863);
+        class51.putBoolean("placedHiddenChest", this.field19864);
+        class51.putBoolean("placedTrap1", this.field19865);
+        class51.putBoolean("placedTrap2", this.field19866);
     }
     
     @Override

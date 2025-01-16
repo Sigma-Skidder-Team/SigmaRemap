@@ -39,29 +39,29 @@ public abstract class TileEntity
         return this.field2656 != null;
     }
     
-    public void method2179(final Class51 class51) {
-        this.field2657 = new BlockPos(class51.method319("x"), class51.method319("y"), class51.method319("z"));
+    public void method2179(final CompoundNBT class51) {
+        this.field2657 = new BlockPos(class51.getInt("x"), class51.getInt("y"), class51.getInt("z"));
     }
     
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         return this.method2189(class51);
     }
     
-    private Class51 method2189(final Class51 class51) {
+    private CompoundNBT method2189(final CompoundNBT class51) {
         final ResourceLocation method16520 = Class5412.method16520(this.getType());
         if (method16520 != null) {
-            class51.method306("id", method16520.toString());
-            class51.method298("x", this.field2657.getX());
-            class51.method298("y", this.field2657.getY());
-            class51.method298("z", this.field2657.getZ());
+            class51.putString("id", method16520.toString());
+            class51.putInt("x", this.field2657.getX());
+            class51.putInt("y", this.field2657.getY());
+            class51.putInt("z", this.field2657.getZ());
             return class51;
         }
         throw new RuntimeException(this.getClass() + " is missing a mapping! This is a bug!");
     }
     
     @Nullable
-    public static TileEntity method2190(final Class51 class51) {
-        return Registry.field224.method506(new ResourceLocation(class51.method323("id"))).map(class52 -> {
+    public static TileEntity method2190(final CompoundNBT class51) {
+        return Registry.field224.method506(new ResourceLocation(class51.getString("id"))).map(class52 -> {
             try {
                 return class52.method16522();
             }
@@ -121,8 +121,8 @@ public abstract class TileEntity
         return null;
     }
     
-    public Class51 method2196() {
-        return this.method2189(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2189(new CompoundNBT());
     }
     
     public boolean isRemoved() {
@@ -145,11 +145,11 @@ public abstract class TileEntity
         this.field2659 = null;
     }
     
-    public void method2202(final Class5204 class5204) {
-        class5204.method16296("Name", () -> Registry.field224.getKey(this.getType()) + " // " + this.getClass().getCanonicalName());
+    public void method2202(final CrashReportCategory class5204) {
+        class5204.addDetail("Name", () -> Registry.field224.getKey(this.getType()) + " // " + this.getClass().getCanonicalName());
         if (this.field2656 != null) {
-            Class5204.method16304(class5204, this.field2657, this.method2194());
-            Class5204.method16304(class5204, this.field2657, this.field2656.getBlockState(this.field2657));
+            CrashReportCategory.method16304(class5204, this.field2657, this.method2194());
+            CrashReportCategory.method16304(class5204, this.field2657, this.field2656.getBlockState(this.field2657));
         }
     }
     

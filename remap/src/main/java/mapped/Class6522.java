@@ -67,37 +67,37 @@ public class Class6522 extends Class6521
         class2228.field3039.method17469(new Class4331(class2227, list, (Collection<ResourceLocation>)Collections.emptyList(), this.field25953, this.field25954, this.field25955, this.field25956));
     }
     
-    public Class51 method19723() {
-        final Class51 class51 = new Class51();
-        class51.method312("isGuiOpen", this.field25953);
-        class51.method312("isFilteringCraftable", this.field25954);
-        class51.method312("isFurnaceGuiOpen", this.field25955);
-        class51.method312("isFurnaceFilteringCraftable", this.field25956);
-        final Class52 class52 = new Class52();
+    public CompoundNBT method19723() {
+        final CompoundNBT class51 = new CompoundNBT();
+        class51.putBoolean("isGuiOpen", this.field25953);
+        class51.putBoolean("isFilteringCraftable", this.field25954);
+        class51.putBoolean("isFurnaceGuiOpen", this.field25955);
+        class51.putBoolean("isFurnaceFilteringCraftable", this.field25956);
+        final ListNBT class52 = new ListNBT();
         final Iterator<ResourceLocation> iterator = this.field25951.iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<Class50>)class52).add(Class50.method290(iterator.next().toString()));
+            ((AbstractList<StringNBT>)class52).add(StringNBT.method290(iterator.next().toString()));
         }
-        class51.method295("recipes", class52);
-        final Class52 class53 = new Class52();
+        class51.put("recipes", class52);
+        final ListNBT class53 = new ListNBT();
         final Iterator<ResourceLocation> iterator2 = this.field25952.iterator();
         while (iterator2.hasNext()) {
-            ((AbstractList<Class50>)class53).add(Class50.method290(iterator2.next().toString()));
+            ((AbstractList<StringNBT>)class53).add(StringNBT.method290(iterator2.next().toString()));
         }
-        class51.method295("toBeDisplayed", class53);
+        class51.put("toBeDisplayed", class53);
         return class51;
     }
     
-    public void method19724(final Class51 class51) {
-        this.field25953 = class51.method329("isGuiOpen");
-        this.field25954 = class51.method329("isFilteringCraftable");
-        this.field25955 = class51.method329("isFurnaceGuiOpen");
-        this.field25956 = class51.method329("isFurnaceFilteringCraftable");
-        this.method19725(class51.method328("recipes", 8), this::method19693);
-        this.method19725(class51.method328("toBeDisplayed", 8), this::method19701);
+    public void method19724(final CompoundNBT class51) {
+        this.field25953 = class51.getBoolean("isGuiOpen");
+        this.field25954 = class51.getBoolean("isFilteringCraftable");
+        this.field25955 = class51.getBoolean("isFurnaceGuiOpen");
+        this.field25956 = class51.getBoolean("isFurnaceFilteringCraftable");
+        this.method19725(class51.getList("recipes", 8), this::method19693);
+        this.method19725(class51.getList("toBeDisplayed", 8), this::method19701);
     }
     
-    private void method19725(final Class52 class52, final Consumer<Class3662<?>> consumer) {
+    private void method19725(final ListNBT class52, final Consumer<Class3662<?>> consumer) {
         for (int i = 0; i < class52.size(); ++i) {
             final String method353 = class52.method353(i);
             try {

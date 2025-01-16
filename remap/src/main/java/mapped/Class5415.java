@@ -28,12 +28,12 @@ public class Class5415 implements Class5414
     }
     
     @Override
-    public void method16525(final Class51 class51) {
+    public void method16525(final CompoundNBT class51) {
         this.field22583.method31806(this.field22584, class51);
     }
     
     @Override
-    public Class51 method16526() {
+    public CompoundNBT method16526() {
         return this.field22583.method31805(this.field22584);
     }
     
@@ -48,7 +48,7 @@ public class Class5415 implements Class5414
     }
     
     @Override
-    public ITextComponent method16529(final Class8570 class8570, final double d, final int i) {
+    public ITextComponent method16529(final NBTPath class8570, final double d, final int i) {
         return new Class2259("commands.data.storage.get", new Object[] { class8570, this.field22584, String.format(Locale.ROOT, "%.2f", d), i });
     }
     

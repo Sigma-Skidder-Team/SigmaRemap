@@ -43,10 +43,10 @@ public class Class3822 extends Class3821
     @Override
     public void method11728(final ItemStack class8321, final World class8322, final List<ITextComponent> list, final Class1981 class8323) {
         if (this.field17374 == EntityType.field29034) {
-            final Class51 method27657 = class8321.method27657();
+            final CompoundNBT method27657 = class8321.method27657();
             if (method27657 != null) {
-                if (method27657.method316("BucketVariantTag", 3)) {
-                    final int method27658 = method27657.method319("BucketVariantTag");
+                if (method27657.contains("BucketVariantTag", 3)) {
+                    final int method27658 = method27657.getInt("BucketVariantTag");
                     final TextFormatting[] array = { TextFormatting.ITALIC, TextFormatting.GRAY};
                     final String string = "color.minecraft." + Class835.method4974(method27658);
                     final String string2 = "color.minecraft." + Class835.method4975(method27658);

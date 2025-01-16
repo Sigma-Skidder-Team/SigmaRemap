@@ -127,19 +127,19 @@ public class Class506 extends Class428
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method305("PushX", this.field2888);
-        class51.method305("PushZ", this.field2889);
-        class51.method297("Fuel", (short)this.field2887);
+        class51.putDouble("PushX", this.field2888);
+        class51.putDouble("PushZ", this.field2889);
+        class51.putShort("Fuel", (short)this.field2887);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field2888 = class51.method322("PushX");
-        this.field2889 = class51.method322("PushZ");
-        this.field2887 = class51.method318("Fuel");
+        this.field2888 = class51.getDouble("PushX");
+        this.field2889 = class51.getDouble("PushZ");
+        this.field2887 = class51.getShort("Fuel");
     }
     
     public boolean method2598() {

@@ -30,11 +30,11 @@ public class Class4493 extends Class4484
         }
     }
     
-    public Class4493(final Class9520 class9520, final Class51 class9521) {
+    public Class4493(final Class9520 class9520, final CompoundNBT class9521) {
         super(class9520, class9521);
     }
     
-    public Class4493(final Class1795 class1795, final Class51 class1796) {
+    public Class4493(final Class1795 class1795, final CompoundNBT class1796) {
         this(Class9520.field40949, class1796);
     }
     

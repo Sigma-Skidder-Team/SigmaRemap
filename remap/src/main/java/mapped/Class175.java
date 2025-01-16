@@ -14,9 +14,9 @@ public class Class175 implements Predicate<ItemStack>
 {
     private static final Dynamic2CommandExceptionType field501;
     private final Item field502;
-    private final Class51 field503;
+    private final CompoundNBT field503;
     
-    public Class175(final Item field502, final Class51 field503) {
+    public Class175(final Item field502, final CompoundNBT field503) {
         this.field502 = field502;
         this.field503 = field503;
     }

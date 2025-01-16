@@ -10,7 +10,7 @@ public abstract class Class4503 extends Class4500
         super(class9520, n);
     }
     
-    public Class4503(final Class9520 class9520, final Class51 class9521) {
+    public Class4503(final Class9520 class9520, final CompoundNBT class9521) {
         super(class9520, class9521);
     }
 }

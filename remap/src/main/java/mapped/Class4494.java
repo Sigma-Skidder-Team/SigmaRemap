@@ -31,7 +31,7 @@ public class Class4494 extends Class4493
         }
     }
     
-    public Class4494(final Class1795 class1795, final Class51 class1796) {
+    public Class4494(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40963, class1796);
         this.field19890 = Lists.newArrayList();
     }

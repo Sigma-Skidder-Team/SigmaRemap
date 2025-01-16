@@ -14,11 +14,11 @@ public class Class6060<T> implements Class6058<T>
     private final Class94<T> field24632;
     private final Class95<T> field24633;
     private final Class7876<T> field24634;
-    private final Function<Class51, T> field24635;
-    private final Function<T, Class51> field24636;
+    private final Function<CompoundNBT, T> field24635;
+    private final Function<T, CompoundNBT> field24636;
     private final int field24637;
     
-    public Class6060(final Class94<T> field24632, final int field24633, final Class7876<T> field24634, final Function<Class51, T> field24635, final Function<T, Class51> field24636) {
+    public Class6060(final Class94<T> field24632, final int field24633, final Class7876<T> field24634, final Function<CompoundNBT, T> field24635, final Function<T, CompoundNBT> field24636) {
         this.field24632 = field24632;
         this.field24637 = field24633;
         this.field24634 = field24634;
@@ -81,16 +81,16 @@ public class Class6060<T> implements Class6058<T>
     }
     
     @Override
-    public void method18032(final Class52 class52) {
+    public void method18032(final ListNBT class52) {
         this.field24633.method574();
         for (int i = 0; i < class52.size(); ++i) {
             this.field24633.method567(this.field24635.apply(class52.method346(i)));
         }
     }
     
-    public void method18035(final Class52 class52) {
+    public void method18035(final ListNBT class52) {
         for (int i = 0; i < this.method18034(); ++i) {
-            ((AbstractList<Class51>)class52).add(this.field24636.apply(this.field24633.method499(i)));
+            ((AbstractList<CompoundNBT>)class52).add(this.field24636.apply(this.field24633.method499(i)));
         }
     }
 }

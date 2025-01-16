@@ -48,8 +48,8 @@ public class Class4094 extends Class4093
     }
     
     public static int method12329(final ItemStack class8321) {
-        final Class51 method27657 = class8321.method27657();
-        return (method27657 != null && method27657.method316("map", 99)) ? method27657.method319("map") : 0;
+        final CompoundNBT method27657 = class8321.method27657();
+        return (method27657 != null && method27657.contains("map", 99)) ? method27657.getInt("map") : 0;
     }
     
     private static Class6356 method12330(final ItemStack class8321, final World class8322, final int n, final int n2, final int n3, final boolean b, final boolean b2, final DimensionType class8323) {
@@ -57,7 +57,7 @@ public class Class4094 extends Class4093
         final Class6356 class8324 = new Class6356(method12331(method6776));
         class8324.method18913(n, n2, n3, b, b2, class8323);
         class8322.method6775(class8324);
-        class8321.method27658().method298("map", method6776);
+        class8321.method27658().putInt("map", method6776);
         return class8324;
     }
     
@@ -339,11 +339,11 @@ public class Class4094 extends Class4093
     
     @Override
     public void method11723(final ItemStack class8321, final World class8322, final PlayerEntity class8323) {
-        final Class51 method27657 = class8321.method27657();
+        final CompoundNBT method27657 = class8321.method27657();
         if (method27657 != null) {
-            if (method27657.method316("map_scale_direction", 99)) {
-                method12336(class8321, class8322, method27657.method319("map_scale_direction"));
-                method27657.method330("map_scale_direction");
+            if (method27657.contains("map_scale_direction", 99)) {
+                method12336(class8321, class8322, method27657.getInt("map_scale_direction"));
+                method27657.remove("map_scale_direction");
             }
         }
     }
@@ -387,9 +387,9 @@ public class Class4094 extends Class4093
     }
     
     public static int method12338(final ItemStack class8321) {
-        final Class51 method27660 = class8321.method27660("display");
-        if (method27660 != null && method27660.method316("MapColor", 99)) {
-            return 0xFF000000 | (method27660.method319("MapColor") & 0xFFFFFF);
+        final CompoundNBT method27660 = class8321.method27660("display");
+        if (method27660 != null && method27660.contains("MapColor", 99)) {
+            return 0xFF000000 | (method27660.getInt("MapColor") & 0xFFFFFF);
         }
         return -12173266;
     }

@@ -16,18 +16,18 @@ public class Class449 extends TileEntity implements Class447
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        if (class51.method316("RecordItem", 10)) {
-            this.method2278(ItemStack.method27619(class51.method327("RecordItem")));
+        if (class51.contains("RecordItem", 10)) {
+            this.method2278(ItemStack.method27619(class51.getCompound("RecordItem")));
         }
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         if (!this.method2277().method27620()) {
-            class51.method295("RecordItem", this.method2277().method27627(new Class51()));
+            class51.put("RecordItem", this.method2277().method27627(new CompoundNBT()));
         }
         return class51;
     }

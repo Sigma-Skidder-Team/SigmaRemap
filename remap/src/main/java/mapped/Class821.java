@@ -99,22 +99,22 @@ public class Class821 extends Class819
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("DespawnDelay", this.field4393);
+        class51.putInt("DespawnDelay", this.field4393);
         if (this.field4392 != null) {
-            class51.method295("WanderTarget", Class9346.method34646(this.field4392));
+            class51.put("WanderTarget", Class9346.method34646(this.field4392));
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("DespawnDelay", 99)) {
-            this.field4393 = class51.method319("DespawnDelay");
+        if (class51.contains("DespawnDelay", 99)) {
+            this.field4393 = class51.getInt("DespawnDelay");
         }
-        if (class51.method315("WanderTarget")) {
-            this.field4392 = Class9346.method34645(class51.method327("WanderTarget"));
+        if (class51.contains("WanderTarget")) {
+            this.field4392 = Class9346.method34645(class51.getCompound("WanderTarget"));
         }
         this.method4354(Math.max(0, this.method4351()));
     }

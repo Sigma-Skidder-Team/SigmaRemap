@@ -22,7 +22,7 @@ public abstract class Class6810<T, C extends Class8183<T>>
         return this.field26749;
     }
     
-    public abstract void method20843(final Class51 p0, final C p1);
+    public abstract void method20843(final CompoundNBT p0, final C p1);
     
-    public abstract C method20842(final Class51 p0);
+    public abstract C method20842(final CompoundNBT p0);
 }

@@ -27,21 +27,21 @@ public class Class4511 extends Class4500
         this.field19912 = (random.nextInt(3) > 0);
     }
     
-    public Class4511(final Class1795 class1795, final Class51 class1796) {
+    public Class4511(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40966, class1796);
-        this.field19909 = class1796.method329("leftLow");
-        this.field19910 = class1796.method329("leftHigh");
-        this.field19911 = class1796.method329("rightLow");
-        this.field19912 = class1796.method329("rightHigh");
+        this.field19909 = class1796.getBoolean("leftLow");
+        this.field19910 = class1796.getBoolean("leftHigh");
+        this.field19911 = class1796.getBoolean("rightLow");
+        this.field19912 = class1796.getBoolean("rightHigh");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method312("leftLow", this.field19909);
-        class51.method312("leftHigh", this.field19910);
-        class51.method312("rightLow", this.field19911);
-        class51.method312("rightHigh", this.field19912);
+        class51.putBoolean("leftLow", this.field19909);
+        class51.putBoolean("leftHigh", this.field19910);
+        class51.putBoolean("rightLow", this.field19911);
+        class51.putBoolean("rightHigh", this.field19912);
     }
     
     @Override

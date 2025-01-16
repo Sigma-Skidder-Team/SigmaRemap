@@ -33,34 +33,34 @@ public abstract class Class4521 extends Class4473
         this.field19849 = field19946;
     }
     
-    public Class4521(final Class1795 field19941, final Class51 class51, final Class9520 class52) {
+    public Class4521(final Class1795 field19941, final CompoundNBT class51, final Class9520 class52) {
         super(class52, class51);
         this.field19940 = Lists.newArrayList();
         this.field19941 = field19941;
-        this.field19937 = new BlockPos(class51.method319("PosX"), class51.method319("PosY"), class51.method319("PosZ"));
-        this.field19938 = class51.method319("ground_level_delta");
-        this.field19936 = Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.method327("pool_element")), Registry.field234, "element_type", Class8230.field33794);
-        this.field19939 = Class2052.valueOf(class51.method323("rotation"));
+        this.field19937 = new BlockPos(class51.getInt("PosX"), class51.getInt("PosY"), class51.getInt("PosZ"));
+        this.field19938 = class51.getInt("ground_level_delta");
+        this.field19936 = Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.getCompound("pool_element")), Registry.field234, "element_type", Class8230.field33794);
+        this.field19939 = Class2052.valueOf(class51.getString("rotation"));
         this.field19849 = this.field19936.method27254(field19941, this.field19937, this.field19939);
-        final Class52 method328 = class51.method328("junctions", 10);
+        final ListNBT method328 = class51.getList("junctions", 10);
         this.field19940.clear();
         method328.forEach(class53 -> this.field19940.add(Class9330.method34568((com.mojang.datafixers.Dynamic<Object>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class53))));
     }
     
     @Override
-    public void method13415(final Class51 class51) {
-        class51.method298("PosX", this.field19937.getX());
-        class51.method298("PosY", this.field19937.getY());
-        class51.method298("PosZ", this.field19937.getZ());
-        class51.method298("ground_level_delta", this.field19938);
-        class51.method295("pool_element", (INBT)this.field19936.method27264((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
-        class51.method306("rotation", this.field19939.name());
-        final Class52 class52 = new Class52();
+    public void method13415(final CompoundNBT class51) {
+        class51.putInt("PosX", this.field19937.getX());
+        class51.putInt("PosY", this.field19937.getY());
+        class51.putInt("PosZ", this.field19937.getZ());
+        class51.putInt("ground_level_delta", this.field19938);
+        class51.put("pool_element", (INBT)this.field19936.method27264((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
+        class51.putString("rotation", this.field19939.name());
+        final ListNBT class52 = new ListNBT();
         final Iterator<Class9330> iterator = this.field19940.iterator();
         while (iterator.hasNext()) {
             class52.add((INBT)iterator.next().method34567((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
         }
-        class51.method295("junctions", class52);
+        class51.put("junctions", class52);
     }
     
     @Override

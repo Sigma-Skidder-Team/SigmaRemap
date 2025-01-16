@@ -38,8 +38,8 @@ public class Class491 extends TileEntity implements Class439
     }
     
     @Override
-    public Class51 method2196() {
-        return this.method2180(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2180(new CompoundNBT());
     }
     
     public boolean method2462() {
@@ -315,24 +315,24 @@ public class Class491 extends TileEntity implements Class439
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2818 = Class9346.method34647(class51.method327("blockState"));
-        this.field2819 = Direction.byIndex(class51.method319("facing"));
-        this.field2823 = class51.method321("progress");
+        this.field2818 = Class9346.method34647(class51.getCompound("blockState"));
+        this.field2819 = Direction.byIndex(class51.getInt("facing"));
+        this.field2823 = class51.getFloat("progress");
         this.field2824 = this.field2823;
-        this.field2820 = class51.method329("extending");
-        this.field2821 = class51.method329("source");
+        this.field2820 = class51.getBoolean("extending");
+        this.field2821 = class51.getBoolean("source");
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
-        class51.method295("blockState", Class9346.method34649(this.field2818));
-        class51.method298("facing", this.field2819.getIndex());
-        class51.method304("progress", this.field2824);
-        class51.method312("extending", this.field2820);
-        class51.method312("source", this.field2821);
+        class51.put("blockState", Class9346.method34649(this.field2818));
+        class51.putInt("facing", this.field2819.getIndex());
+        class51.putFloat("progress", this.field2824);
+        class51.putBoolean("extending", this.field2820);
+        class51.putBoolean("source", this.field2821);
         return class51;
     }
     

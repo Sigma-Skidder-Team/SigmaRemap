@@ -176,18 +176,18 @@ public abstract class Class860 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method296("Facing", (byte)this.field4600.getHorizontalIndex());
+    public void method1761(final CompoundNBT class51) {
+        class51.putByte("Facing", (byte)this.field4600.getHorizontalIndex());
         final BlockPos method5194 = this.method5194();
-        class51.method298("TileX", method5194.getX());
-        class51.method298("TileY", method5194.getY());
-        class51.method298("TileZ", method5194.getZ());
+        class51.putInt("TileX", method5194.getX());
+        class51.putInt("TileY", method5194.getY());
+        class51.putInt("TileZ", method5194.getZ());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        this.field4599 = new BlockPos(class51.method319("TileX"), class51.method319("TileY"), class51.method319("TileZ"));
-        this.field4600 = Direction.byHorizontalIndex(class51.method317("Facing"));
+    public void method1760(final CompoundNBT class51) {
+        this.field4599 = new BlockPos(class51.getInt("TileX"), class51.getInt("TileY"), class51.getInt("TileZ"));
+        this.field4600 = Direction.byHorizontalIndex(class51.getByte("Facing"));
     }
     
     public abstract int method5190();

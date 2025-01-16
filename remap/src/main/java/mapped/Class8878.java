@@ -67,13 +67,13 @@ public class Class8878
         return (T)this.field37346.get(class9424);
     }
     
-    public Class51 method31212() {
-        final Class51 class51 = new Class51();
+    public CompoundNBT method31212() {
+        final CompoundNBT class51 = new CompoundNBT();
         this.field37346.forEach((class53, class54) -> class52.method306(Class9424.method35023(class53), class54.method26710()));
         return class51;
     }
     
-    public void method31213(final Class51 class51) {
+    public void method31213(final CompoundNBT class51) {
         this.field37346.forEach((class53, class54) -> {
             if (!(!class52.method315(Class9424.method35023(class53)))) {
                 class54.method26709(class52.method323(Class9424.method35023(class53)));

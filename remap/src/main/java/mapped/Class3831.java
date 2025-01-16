@@ -91,7 +91,7 @@ public class Class3831 extends Item
         return Class9355.method34676(method2715);
     }
     
-    public boolean method11769(final Class51 class51, final EntityType<?> b) {
+    public boolean method11769(final CompoundNBT class51, final EntityType<?> b) {
         return Objects.equals(this.method11773(class51), b);
     }
     
@@ -108,12 +108,12 @@ public class Class3831 extends Item
         return Iterables.unmodifiableIterable((Iterable)Class3831.field17386.values());
     }
     
-    public EntityType<?> method11773(final Class51 class51) {
+    public EntityType<?> method11773(final CompoundNBT class51) {
         if (class51 != null) {
-            if (class51.method316("EntityTag", 10)) {
-                final Class51 method327 = class51.method327("EntityTag");
-                if (method327.method316("id", 8)) {
-                    return EntityType.method23355(method327.method323("id")).orElse(this.field17389);
+            if (class51.contains("EntityTag", 10)) {
+                final CompoundNBT method327 = class51.getCompound("EntityTag");
+                if (method327.contains("id", 8)) {
+                    return EntityType.method23355(method327.getString("id")).orElse(this.field17389);
                 }
             }
         }

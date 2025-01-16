@@ -83,14 +83,14 @@ public class Class6445
     
     private static ItemStack method19229(final String s, final boolean b, final String str) {
         final ItemStack class8321 = new ItemStack(Items.field31512);
-        final Class52 class8322 = new Class52();
+        final ListNBT class8322 = new ListNBT();
         final StringBuffer sb = new StringBuffer();
         Arrays.stream(s.split("\\.")).forEach(str2 -> sb2.append(str2).append('\n'));
         if (!b) {
             sb.append("(optional)\n");
         }
         sb.append("-------------------\n");
-        ((AbstractList<Class50>)class8322).add(Class50.method290(sb.toString() + str));
+        ((AbstractList<StringNBT>)class8322).add(StringNBT.method290(sb.toString() + str));
         class8321.method27676("pages", class8322);
         return class8321;
     }

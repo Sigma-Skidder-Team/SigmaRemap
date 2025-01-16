@@ -140,10 +140,10 @@ public class Class6357 extends Class6354
     }
     
     @Override
-    public void method18901(final Class51 class51) {
-        this.field25435 = class51.method319("NextAvailableID");
-        this.field25436 = class51.method319("Tick");
-        final Class52 method328 = class51.method328("Raids", 10);
+    public void method18901(final CompoundNBT class51) {
+        this.field25435 = class51.getInt("NextAvailableID");
+        this.field25436 = class51.getInt("Tick");
+        final ListNBT method328 = class51.getList("Raids", 10);
         for (int i = 0; i < method328.size(); ++i) {
             final Class8792 class52 = new Class8792(this.field25434, method328.method346(i));
             this.field25433.put(class52.method30660(), class52);
@@ -151,16 +151,16 @@ public class Class6357 extends Class6354
     }
     
     @Override
-    public Class51 method18902(final Class51 class51) {
-        class51.method298("NextAvailableID", this.field25435);
-        class51.method298("Tick", this.field25436);
-        final Class52 class52 = new Class52();
+    public CompoundNBT method18902(final CompoundNBT class51) {
+        class51.putInt("NextAvailableID", this.field25435);
+        class51.putInt("Tick", this.field25436);
+        final ListNBT class52 = new ListNBT();
         for (final Class8792 class53 : this.field25433.values()) {
-            final Class51 e = new Class51();
+            final CompoundNBT e = new CompoundNBT();
             class53.method30664(e);
-            ((AbstractList<Class51>)class52).add(e);
+            ((AbstractList<CompoundNBT>)class52).add(e);
         }
-        class51.method295("Raids", class52);
+        class51.put("Raids", class52);
         return class51;
     }
     

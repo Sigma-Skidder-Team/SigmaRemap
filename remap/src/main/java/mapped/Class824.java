@@ -66,7 +66,7 @@ public class Class824 extends Class819 implements Class831, Class825
         this.method4150().method24741(true);
         this.method4193(true);
         this.method4869(this.method4870().method28783(class7501).method28784(Class9334.field40060));
-        this.field2996 = this.method2619((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)new Class51()));
+        this.field2996 = this.method2619((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)new CompoundNBT()));
     }
     
     @Override
@@ -347,40 +347,40 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method295("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
-        class51.method296("FoodLevel", this.field4405);
-        class51.method295("Gossips", (INBT)this.field4406.method35243((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
-        class51.method298("Xp", this.field4409);
-        class51.method299("LastRestock", this.field4410);
-        class51.method299("LastGossipDecay", this.field4408);
-        class51.method298("RestocksToday", this.field4411);
+        class51.put("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
+        class51.putByte("FoodLevel", this.field4405);
+        class51.put("Gossips", (INBT)this.field4406.method35243((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
+        class51.putInt("Xp", this.field4409);
+        class51.putLong("LastRestock", this.field4410);
+        class51.putLong("LastGossipDecay", this.field4408);
+        class51.putInt("RestocksToday", this.field4411);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("VillagerData", 10)) {
-            this.method4869(new Class8562((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.method313("VillagerData"))));
+        if (class51.contains("VillagerData", 10)) {
+            this.method4869(new Class8562((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.get("VillagerData"))));
         }
-        if (class51.method316("Offers", 10)) {
-            this.field4390 = new Class57(class51.method327("Offers"));
+        if (class51.contains("Offers", 10)) {
+            this.field4390 = new Class57(class51.getCompound("Offers"));
         }
-        if (class51.method316("FoodLevel", 1)) {
-            this.field4405 = class51.method317("FoodLevel");
+        if (class51.contains("FoodLevel", 1)) {
+            this.field4405 = class51.getByte("FoodLevel");
         }
-        this.field4406.method35244((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.method328("Gossips", 10)));
-        if (class51.method316("Xp", 3)) {
-            this.field4409 = class51.method319("Xp");
+        this.field4406.method35244((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.getList("Gossips", 10)));
+        if (class51.contains("Xp", 3)) {
+            this.field4409 = class51.getInt("Xp");
         }
-        this.field4410 = class51.method320("LastRestock");
-        this.field4408 = class51.method320("LastGossipDecay");
+        this.field4410 = class51.getLong("LastRestock");
+        this.field4408 = class51.getLong("LastGossipDecay");
         this.method4193(true);
         if (this.world instanceof Class1849) {
             this.method4856((Class1849)this.world);
         }
-        this.field4411 = class51.method319("RestocksToday");
+        this.field4411 = class51.getInt("RestocksToday");
     }
     
     @Override
@@ -591,7 +591,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         if (class1853 == Class2101.field12178) {
             this.method4869(this.method4870().method28784(Class9334.field40060));
         }

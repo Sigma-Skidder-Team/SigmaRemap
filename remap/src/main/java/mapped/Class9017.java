@@ -20,30 +20,30 @@ public class Class9017
     private float field38055;
     private int field38056;
     
-    public Class9017(final Class51 class51) {
+    public Class9017(final CompoundNBT class51) {
         this.field38052 = true;
         this.field38056 = 1;
-        this.field38047 = ItemStack.method27619(class51.method327("buy"));
-        this.field38048 = ItemStack.method27619(class51.method327("buyB"));
-        this.field38049 = ItemStack.method27619(class51.method327("sell"));
-        this.field38050 = class51.method319("uses");
-        if (!class51.method316("maxUses", 99)) {
+        this.field38047 = ItemStack.method27619(class51.getCompound("buy"));
+        this.field38048 = ItemStack.method27619(class51.getCompound("buyB"));
+        this.field38049 = ItemStack.method27619(class51.getCompound("sell"));
+        this.field38050 = class51.getInt("uses");
+        if (!class51.contains("maxUses", 99)) {
             this.field38051 = 4;
         }
         else {
-            this.field38051 = class51.method319("maxUses");
+            this.field38051 = class51.getInt("maxUses");
         }
-        if (class51.method316("rewardExp", 1)) {
-            this.field38052 = class51.method329("rewardExp");
+        if (class51.contains("rewardExp", 1)) {
+            this.field38052 = class51.getBoolean("rewardExp");
         }
-        if (class51.method316("xp", 3)) {
-            this.field38056 = class51.method319("xp");
+        if (class51.contains("xp", 3)) {
+            this.field38056 = class51.getInt("xp");
         }
-        if (class51.method316("priceMultiplier", 5)) {
-            this.field38055 = class51.method321("priceMultiplier");
+        if (class51.contains("priceMultiplier", 5)) {
+            this.field38055 = class51.getFloat("priceMultiplier");
         }
-        this.field38053 = class51.method319("specialPrice");
-        this.field38054 = class51.method319("demand");
+        this.field38053 = class51.getInt("specialPrice");
+        this.field38054 = class51.getInt("demand");
     }
     
     public Class9017(final ItemStack class8321, final ItemStack class8322, final int n, final int n2, final float n3) {
@@ -158,18 +158,18 @@ public class Class9017
         return this.field38052;
     }
     
-    public Class51 method32301() {
-        final Class51 class51 = new Class51();
-        class51.method295("buy", this.field38047.method27627(new Class51()));
-        class51.method295("sell", this.field38049.method27627(new Class51()));
-        class51.method295("buyB", this.field38048.method27627(new Class51()));
-        class51.method298("uses", this.field38050);
-        class51.method298("maxUses", this.field38051);
-        class51.method312("rewardExp", this.field38052);
-        class51.method298("xp", this.field38056);
-        class51.method304("priceMultiplier", this.field38055);
-        class51.method298("specialPrice", this.field38053);
-        class51.method298("demand", this.field38054);
+    public CompoundNBT method32301() {
+        final CompoundNBT class51 = new CompoundNBT();
+        class51.put("buy", this.field38047.method27627(new CompoundNBT()));
+        class51.put("sell", this.field38049.method27627(new CompoundNBT()));
+        class51.put("buyB", this.field38048.method27627(new CompoundNBT()));
+        class51.putInt("uses", this.field38050);
+        class51.putInt("maxUses", this.field38051);
+        class51.putBoolean("rewardExp", this.field38052);
+        class51.putInt("xp", this.field38056);
+        class51.putFloat("priceMultiplier", this.field38055);
+        class51.putInt("specialPrice", this.field38053);
+        class51.putInt("demand", this.field38054);
         return class51;
     }
     

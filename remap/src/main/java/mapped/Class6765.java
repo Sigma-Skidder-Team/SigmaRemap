@@ -75,7 +75,7 @@ public abstract class Class6765
         final GameProfile method2846 = method2845.method29196(method2844.getId());
         final String anotherString = (method2846 != null) ? method2846.getName() : method2844.getName();
         method2845.method29193(method2844);
-        final Class51 method2847 = this.method20580(class3642);
+        final CompoundNBT method2847 = this.method20580(class3642);
         final Class1849 method2848 = this.field26562.method1481(class3642.dimension);
         class3642.method1727(method2848);
         class3642.field3041.method26489((Class1849)class3642.world);
@@ -126,11 +126,11 @@ public abstract class Class6765
             class3643.method17469(new Class4384(class3642.getEntityId(), iterator.next()));
         }
         if (method2847 != null) {
-            if (method2847.method316("RootVehicle", 10)) {
-                final Class51 method2851 = method2847.method327("RootVehicle");
-                final Entity method2852 = EntityType.method23378(method2851.method327("Entity"), (World)method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
+            if (method2847.contains("RootVehicle", 10)) {
+                final CompoundNBT method2851 = method2847.getCompound("RootVehicle");
+                final Entity method2852 = EntityType.method23378(method2851.getCompound("Entity"), (World)method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
                 if (method2852 != null) {
-                    final UUID method2853 = method2851.method301("Attach");
+                    final UUID method2853 = method2851.getUniqueId("Attach");
                     if (!method2852.method1865().equals(method2853)) {
                         for (final Entity class3645 : method2852.method1911()) {
                             if (!class3645.method1865().equals(method2853)) {
@@ -183,9 +183,9 @@ public abstract class Class6765
     }
     
     @Nullable
-    public Class51 method20580(final Class513 class513) {
-        final Class51 method29542 = this.field26562.method1481(DimensionType.field2223).method6764().method29542();
-        Class51 method29543;
+    public CompoundNBT method20580(final Class513 class513) {
+        final CompoundNBT method29542 = this.field26562.method1481(DimensionType.field2223).method6764().method29542();
+        CompoundNBT method29543;
         if (class513.getName().getString().equals(this.field26562.method1498()) && method29542 != null) {
             method29543 = method29542;
             class513.method1757(method29542);
@@ -583,7 +583,7 @@ public abstract class Class6765
         return this.field26562;
     }
     
-    public Class51 method20575() {
+    public CompoundNBT method20575() {
         return null;
     }
     

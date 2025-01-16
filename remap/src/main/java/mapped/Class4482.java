@@ -24,10 +24,10 @@ public class Class4482 extends Class4479
         this.field19849 = new MutableBoundingBox(n2, 50, n3, n2 + 7 + random.nextInt(6), 54 + random.nextInt(6), n3 + 7 + random.nextInt(6));
     }
     
-    public Class4482(final Class1795 class1795, final Class51 class1796) {
+    public Class4482(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40945, class1796);
         this.field19875 = Lists.newLinkedList();
-        final Class52 method328 = class1796.method328("Entrances", 11);
+        final ListNBT method328 = class1796.getList("Entrances", 11);
         for (int i = 0; i < method328.size(); ++i) {
             this.field19875.add(new MutableBoundingBox(method328.method350(i)));
         }
@@ -114,13 +114,13 @@ public class Class4482 extends Class4479
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        final Class52 class52 = new Class52();
+        final ListNBT class52 = new ListNBT();
         final Iterator<MutableBoundingBox> iterator = this.field19875.iterator();
         while (iterator.hasNext()) {
             ((AbstractList<IntArrayNBT>)class52).add(iterator.next().toNBTTagIntArray());
         }
-        class51.method295("Entrances", class52);
+        class51.put("Entrances", class52);
     }
 }

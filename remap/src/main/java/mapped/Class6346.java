@@ -78,9 +78,9 @@ public abstract class Class6346<C extends Class7065>
                 method7152.method9857(class1881, this, class1878, method7153, class1880, class1879);
             }
             catch (final Exception ex) {
-                final Class7689 method7154 = Class7689.method24421(ex, "Biome decoration");
-                method7154.method24418("Generation").method16297("CenterX", method7150).method16297("CenterZ", method7151).method16297("Step", class1881).method16297("Seed", method7153).method16297("Biome", Registry.field217.getKey(method7152));
-                throw new Class2365(method7154);
+                final CrashReport method7154 = CrashReport.makeCrashReport(ex, "Biome decoration");
+                method7154.makeCategory("Generation").addDetail("CenterX", method7150).addDetail("CenterZ", method7151).addDetail("Step", class1881).addDetail("Seed", method7153).addDetail("Biome", Registry.field217.getKey(method7152));
+                throw new ReportedException(method7154);
             }
         }
     }

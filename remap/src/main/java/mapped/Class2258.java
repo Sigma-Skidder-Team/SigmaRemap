@@ -18,7 +18,7 @@ public class Class2258 extends Class2255
         this.field13808 = field13808;
     }
     
-    public Class2258(final String s, final Class8570 class8570, final boolean b, final ResourceLocation field13808) {
+    public Class2258(final String s, final NBTPath class8570, final boolean b, final ResourceLocation field13808) {
         super(s, class8570, b);
         this.field13808 = field13808;
     }
@@ -33,7 +33,7 @@ public class Class2258 extends Class2255
     }
     
     @Override
-    public Stream<Class51> method8481(final Class7492 class7492) {
+    public Stream<CompoundNBT> method8481(final Class7492 class7492) {
         return Stream.of(class7492.method23255().method1580().method31805(this.field13808));
     }
     

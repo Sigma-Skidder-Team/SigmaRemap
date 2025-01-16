@@ -70,8 +70,8 @@ public class Class405 extends Class402
     }
     
     public static int method1993(final ItemStack class8321) {
-        final Class51 method27657 = class8321.method27657();
-        return (method27657 != null && method27657.method316("CustomPotionColor", 99)) ? method27657.method319("CustomPotionColor") : -1;
+        final CompoundNBT method27657 = class8321.method27657();
+        return (method27657 != null && method27657.contains("CustomPotionColor", 99)) ? method27657.getInt("CustomPotionColor") : -1;
     }
     
     private void method1994() {
@@ -144,41 +144,41 @@ public class Class405 extends Class402
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (this.field2491 != Class8644.field36250) {
             if (this.field2491 != null) {
-                class51.method306("Potion", Registry.field212.getKey(this.field2491).toString());
+                class51.putString("Potion", Registry.field212.getKey(this.field2491).toString());
             }
         }
         if (this.field2493) {
-            class51.method298("Color", this.method1997());
+            class51.putInt("Color", this.method1997());
         }
         if (!this.field2492.isEmpty()) {
-            final Class52 class52 = new Class52();
+            final ListNBT class52 = new ListNBT();
             final Iterator<Class1948> iterator = this.field2492.iterator();
             while (iterator.hasNext()) {
-                ((AbstractList<Class51>)class52).add(iterator.next().method7916(new Class51()));
+                ((AbstractList<CompoundNBT>)class52).add(iterator.next().method7916(new CompoundNBT()));
             }
-            class51.method295("CustomPotionEffects", class52);
+            class51.put("CustomPotionEffects", class52);
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("Potion", 8)) {
+        if (class51.contains("Potion", 8)) {
             this.field2491 = Class5333.method16475(class51);
         }
         final Iterator<Class1948> iterator = Class5333.method16469(class51).iterator();
         while (iterator.hasNext()) {
             this.method1995(iterator.next());
         }
-        if (!class51.method316("Color", 99)) {
+        if (!class51.contains("Color", 99)) {
             this.method1994();
         }
         else {
-            this.method1998(class51.method319("Color"));
+            this.method1998(class51.getInt("Color"));
         }
     }
     
@@ -205,7 +205,7 @@ public class Class405 extends Class402
         Class5333.method16476(class8321, this.field2491);
         Class5333.method16477(class8321, this.field2492);
         if (this.field2493) {
-            class8321.method27658().method298("CustomPotionColor", this.method1997());
+            class8321.method27658().putInt("CustomPotionColor", this.method1997());
         }
         return class8321;
     }

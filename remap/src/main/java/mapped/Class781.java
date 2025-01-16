@@ -64,7 +64,7 @@ public class Class781 extends Class780
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         final Class5496 method4188 = super.method4188(class1851, class1852, class1853, class1854, class1855);
         this.method2710(Class8107.field33410).method23941(4.0);
         this.method4329();

@@ -108,20 +108,20 @@ public class Class850 extends Class763
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         final BlockState method5080 = this.method5080();
         if (method5080 != null) {
-            class51.method295("carriedBlockState", Class9346.method34649(method5080));
+            class51.put("carriedBlockState", Class9346.method34649(method5080));
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
         BlockState method34647 = null;
-        if (class51.method316("carriedBlockState", 10)) {
-            method34647 = Class9346.method34647(class51.method327("carriedBlockState"));
+        if (class51.contains("carriedBlockState", 10)) {
+            method34647 = Class9346.method34647(class51.getCompound("carriedBlockState"));
             if (method34647.method21706()) {
                 method34647 = null;
             }

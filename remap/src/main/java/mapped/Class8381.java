@@ -59,7 +59,7 @@ public class Class8381
         method27930("message", (Class<ArgumentType>)Class8695.class, new Class6674<ArgumentType>((Supplier<ArgumentType>)Class8695::method29806));
         method27930("nbt_compound_tag", (Class<ArgumentType>)Class7418.class, new Class6674<ArgumentType>((Supplier<ArgumentType>)Class7418::method22831));
         method27930("nbt_tag", (Class<ArgumentType>)Class9136.class, new Class6674<ArgumentType>((Supplier<ArgumentType>)Class9136::method33309));
-        method27930("nbt_path", (Class<ArgumentType>)Class8258.class, new Class6674<ArgumentType>((Supplier<ArgumentType>)Class8258::method27403));
+        method27930("nbt_path", (Class<ArgumentType>) NBTPathArgument.class, new Class6674<ArgumentType>((Supplier<ArgumentType>) NBTPathArgument::method27403));
         method27930("objective", (Class<ArgumentType>)Class8717.class, new Class6674<ArgumentType>((Supplier<ArgumentType>)Class8717::method29933));
         method27930("objective_criteria", (Class<ArgumentType>)Class9286.class, new Class6674<ArgumentType>((Supplier<ArgumentType>)Class9286::method34274));
         method27930("operation", (Class<ArgumentType>)Class6662.class, new Class6674<ArgumentType>((Supplier<ArgumentType>)Class6662::method20250));

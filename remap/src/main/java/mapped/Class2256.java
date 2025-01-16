@@ -33,7 +33,7 @@ public class Class2256 extends Class2255
         }
     }
     
-    private Class2256(final String s, final Class8570 class8570, final boolean b, final String field13804, final Class9043 field13805) {
+    private Class2256(final String s, final NBTPath class8570, final boolean b, final String field13804, final Class9043 field13805) {
         super(s, class8570, b);
         this.field13804 = field13804;
         this.field13805 = field13805;
@@ -49,11 +49,11 @@ public class Class2256 extends Class2255
     }
     
     @Override
-    public Stream<Class51> method8481(final Class7492 class7492) throws CommandSyntaxException {
+    public Stream<CompoundNBT> method8481(final Class7492 class7492) throws CommandSyntaxException {
         if (this.field13805 == null) {
             return Stream.empty();
         }
-        return this.field13805.method32511(class7492).stream().map((Function<? super Object, ? extends Class51>)Class7103::method21808);
+        return this.field13805.method32511(class7492).stream().map((Function<? super Object, ? extends CompoundNBT>)Class7103::method21808);
     }
     
     @Override

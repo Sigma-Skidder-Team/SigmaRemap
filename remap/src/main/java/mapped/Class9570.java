@@ -952,7 +952,7 @@ public class Class9570
         Class9570.field41187 = new Class7361(Class9570.field41186, "isLoading");
         Class9570.field41188 = new Class7361(Class9570.field41186, "renderProgressText");
         Class9570.field41189 = new Class7363("net.minecraftforge.event.world.ChunkDataEvent$Save");
-        Class9570.field41190 = new Class7362(Class9570.field41189, new Class[] { IChunk.class, Class51.class });
+        Class9570.field41190 = new Class7362(Class9570.field41189, new Class[] { IChunk.class, CompoundNBT.class });
         Class9570.field41191 = new Class7363("net.minecraftforge.event.world.ChunkEvent$Load");
         Class9570.field41192 = new Class7362(Class9570.field41191, new Class[] { IChunk.class });
         Class9570.field41193 = new Class7363("net.minecraftforge.event.world.ChunkEvent$Unload");
@@ -1206,7 +1206,7 @@ public class Class9570
         Class9570.field41441 = new Class7363(Class1731.class);
         Class9570.field41442 = new Class7364(Class9570.field41441, Class1727.class);
         Class9570.field41443 = new Class7363(Class869.class);
-        Class9570.field41444 = new Class7364(new Class6946(Class869.class, new Class[] { Class7689.class }, Integer.TYPE, new Class[] { String.class }, "debugFPS"));
+        Class9570.field41444 = new Class7364(new Class6946(Class869.class, new Class[] { CrashReport.class }, Integer.TYPE, new Class[] { String.class }, "debugFPS"));
         Class9570.field41445 = new Class7363(Class5920.class);
         Class9570.field41446 = new Class7364(Class9570.field41445, Class6300.class);
         Class9570.field41447 = new Class7363(Class5867.class);

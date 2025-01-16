@@ -220,7 +220,7 @@ public class Class464 implements Class446, INameable
         if (method27624.method27620()) {
             method27624 = new ItemStack(method27622, 0);
             if (class8321.method27656()) {
-                method27624.method27663(class8321.method27657().method333());
+                method27624.method27663(class8321.method27657().copy());
             }
             this.method2160(n, method27624);
         }
@@ -309,12 +309,12 @@ public class Class464 implements Class446, INameable
             }
         }
         catch (final Throwable t) {
-            final Class7689 method2351 = Class7689.method24421(t, "Adding item to inventory");
-            final Class5204 method2352 = method2351.method24418("Item being added");
-            method2352.method16297("Item ID", Item.method11696(class8321.getItem()));
-            method2352.method16297("Item data", class8321.method27632());
-            method2352.method16296("Item name", () -> class8322.method27664().getString());
-            throw new Class2365(method2351);
+            final CrashReport method2351 = CrashReport.makeCrashReport(t, "Adding item to inventory");
+            final CrashReportCategory method2352 = method2351.makeCategory("Item being added");
+            method2352.addDetail("Item ID", Item.method11696(class8321.getItem()));
+            method2352.addDetail("Item data", class8321.method27632());
+            method2352.addDetail("Item name", () -> class8322.method27664().getString());
+            throw new ReportedException(method2351);
         }
     }
     
@@ -398,41 +398,41 @@ public class Class464 implements Class446, INameable
         return this.field2739.get(this.field2743).method27624(class7096);
     }
     
-    public Class52 method2367(final Class52 class52) {
+    public ListNBT method2367(final ListNBT class52) {
         for (int i = 0; i < this.field2739.size(); ++i) {
             if (!this.field2739.get(i).method27620()) {
-                final Class51 e = new Class51();
-                e.method296("Slot", (byte)i);
+                final CompoundNBT e = new CompoundNBT();
+                e.putByte("Slot", (byte)i);
                 this.field2739.get(i).method27627(e);
-                ((AbstractList<Class51>)class52).add(e);
+                ((AbstractList<CompoundNBT>)class52).add(e);
             }
         }
         for (int j = 0; j < this.field2740.size(); ++j) {
             if (!this.field2740.get(j).method27620()) {
-                final Class51 e2 = new Class51();
-                e2.method296("Slot", (byte)(j + 100));
+                final CompoundNBT e2 = new CompoundNBT();
+                e2.putByte("Slot", (byte)(j + 100));
                 this.field2740.get(j).method27627(e2);
-                ((AbstractList<Class51>)class52).add(e2);
+                ((AbstractList<CompoundNBT>)class52).add(e2);
             }
         }
         for (int k = 0; k < this.field2741.size(); ++k) {
             if (!this.field2741.get(k).method27620()) {
-                final Class51 e3 = new Class51();
-                e3.method296("Slot", (byte)(k + 150));
+                final CompoundNBT e3 = new CompoundNBT();
+                e3.putByte("Slot", (byte)(k + 150));
                 this.field2741.get(k).method27627(e3);
-                ((AbstractList<Class51>)class52).add(e3);
+                ((AbstractList<CompoundNBT>)class52).add(e3);
             }
         }
         return class52;
     }
     
-    public void method2368(final Class52 class52) {
+    public void method2368(final ListNBT class52) {
         this.field2739.clear();
         this.field2740.clear();
         this.field2741.clear();
         for (int i = 0; i < class52.size(); ++i) {
-            final Class51 method346 = class52.method346(i);
-            final int n = method346.method317("Slot") & 0xFF;
+            final CompoundNBT method346 = class52.method346(i);
+            final int n = method346.getByte("Slot") & 0xFF;
             final ItemStack method347 = ItemStack.method27619(method346);
             if (!method347.method27620()) {
                 if (n >= 0 && n < this.field2739.size()) {

@@ -24,7 +24,7 @@ public abstract class Class788 extends Class787
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         if (class1854 == null) {
             class1854 = new Class5497();
         }
@@ -125,17 +125,17 @@ public abstract class Class788 extends Class787
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Age", this.method4351());
-        class51.method298("ForcedAge", this.field4200);
+        class51.putInt("Age", this.method4351());
+        class51.putInt("ForcedAge", this.field4200);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4354(class51.method319("Age"));
-        this.field4200 = class51.method319("ForcedAge");
+        this.method4354(class51.getInt("Age"));
+        this.field4200 = class51.getInt("ForcedAge");
     }
     
     @Override

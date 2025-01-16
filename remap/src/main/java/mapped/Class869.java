@@ -136,7 +136,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     private boolean field4702;
     private Thread field4703;
     private volatile boolean field4704;
-    private Class7689 field4705;
+    private CrashReport field4705;
     private static int field4706;
     public String field4707;
     public boolean field4708;
@@ -376,14 +376,14 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                 }
             }
         }
-        catch (final Class2365 class2365) {
+        catch (final ReportedException class2365) {
             this.method5275(class2365.method9500());
             this.method5250();
             Class869.field4622.fatal("Reported exception thrown!", (Throwable)class2365);
             method5239(class2365.method9500());
         }
         catch (final Throwable t) {
-            final Class7689 method5275 = this.method5275(new Class7689("Unexpected error", t));
+            final CrashReport method5275 = this.method5275(new CrashReport("Unexpected error", t));
             Class869.field4622.fatal("Unreported exception thrown!", t);
             this.method5250();
             method5239(method5275);
@@ -444,11 +444,11 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         class905.start();
     }
     
-    public void method5238(final Class7689 field4705) {
+    public void method5238(final CrashReport field4705) {
         this.field4705 = field4705;
     }
     
-    public static void method5239(final Class7689 class7689) {
+    public static void method5239(final CrashReport class7689) {
         final File file = new File(new File(method5277().field4652, "crash-reports"), "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
         Class9280.method34259(class7689.method24414());
         if (class7689.method24415() != null) {
@@ -1114,14 +1114,14 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     this.field4683.method6805(() -> true);
                 }
                 catch (final Throwable t) {
-                    final Class7689 method24421 = Class7689.method24421(t, "Exception in world tick");
+                    final CrashReport method24421 = CrashReport.makeCrashReport(t, "Exception in world tick");
                     if (this.field4683 == null) {
-                        method24421.method24418("Affected level").method16297("Problem", "Level is null!");
+                        method24421.makeCategory("Affected level").addDetail("Problem", "Level is null!");
                     }
                     else {
                         this.field4683.method6779(method24421);
                     }
-                    throw new Class2365(method24421);
+                    throw new ReportedException(method24421);
                 }
             }
             this.field4660.method15300("animateTick");
@@ -1263,11 +1263,11 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             this.field4688 = true;
         }
         catch (final Throwable t) {
-            final Class7689 method25789 = Class7689.method24421(t, "Starting integrated server");
-            final Class5204 method25790 = method25789.method24418("Starting integrated server");
-            method25790.method16297("Level ID", s);
-            method25790.method16297("Level Name", s2);
-            throw new Class2365(method25789);
+            final CrashReport method25789 = CrashReport.makeCrashReport(t, "Starting integrated server");
+            final CrashReportCategory method25790 = method25789.makeCategory("Starting integrated server");
+            method25790.addDetail("Level ID", s);
+            method25790.addDetail("Level Name", s2);
+            throw new ReportedException(method25789);
         }
         while (this.field4646.get() == null) {
             Thread.yield();
@@ -1505,21 +1505,21 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     }
     
     private ItemStack method5274(final ItemStack class8321, final TileEntity class8322) {
-        final Class51 method2180 = class8322.method2180(new Class51());
-        if (class8321.getItem() instanceof Class4046 && method2180.method315("Owner")) {
-            class8321.method27658().method295("SkullOwner", method2180.method327("Owner"));
+        final CompoundNBT method2180 = class8322.method2180(new CompoundNBT());
+        if (class8321.getItem() instanceof Class4046 && method2180.contains("Owner")) {
+            class8321.method27658().put("SkullOwner", method2180.getCompound("Owner"));
             return class8321;
         }
         class8321.method27676("BlockEntityTag", method2180);
-        final Class51 class8323 = new Class51();
-        final Class52 class8324 = new Class52();
-        ((AbstractList<Class50>)class8324).add(Class50.method290("\"(+NBT)\""));
-        class8323.method295("Lore", class8324);
+        final CompoundNBT class8323 = new CompoundNBT();
+        final ListNBT class8324 = new ListNBT();
+        ((AbstractList<StringNBT>)class8324).add(StringNBT.method290("\"(+NBT)\""));
+        class8323.put("Lore", class8324);
         class8321.method27676("display", class8323);
         return class8321;
     }
     
-    public Class7689 method5275(final Class7689 class7689) {
+    public CrashReport method5275(final CrashReport class7689) {
         method5276(this.field4664, this.field4653, this.field4648, class7689);
         if (this.field4683 != null) {
             this.field4683.method6779(class7689);
@@ -1527,14 +1527,14 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         return class7689;
     }
     
-    public static void method5276(final Class1661 class1661, final String s, final Class5760 class1662, final Class7689 class1663) {
-        final Class5204 method24417 = class1663.method24417();
-        method24417.method16296("Launched Version", () -> s2);
-        method24417.method16296("Backend library", Class8726::method30077);
-        method24417.method16296("Backend API", Class8726::method30078);
-        method24417.method16296("GL Caps", Class8726::method30085);
-        method24417.method16296("Using VBOs", () -> "Yes");
-        method24417.method16296("Is Modded", () -> {
+    public static void method5276(final Class1661 class1661, final String s, final Class5760 class1662, final CrashReport class1663) {
+        final CrashReportCategory method24417 = class1663.method24417();
+        method24417.addDetail("Launched Version", () -> s2);
+        method24417.addDetail("Backend library", Class8726::method30077);
+        method24417.addDetail("Backend API", Class8726::method30078);
+        method24417.addDetail("GL Caps", Class8726::method30085);
+        method24417.addDetail("Using VBOs", () -> "Yes");
+        method24417.addDetail("Is Modded", () -> {
             Class7932.method25729();
             final String s3;
             if (!"vanilla".equals(s3)) {
@@ -1544,9 +1544,9 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                 return (Class869.class.getSigners() == null) ? "Very likely; Jar signature invalidated" : "Probably not. Jar signature remains and client brand is untouched.";
             }
         });
-        method24417.method16297("Type", "Client (map_client.txt)");
+        method24417.addDetail("Type", "Client (map_client.txt)");
         if (class1662 != null) {
-            method24417.method16296("Resource Packs", () -> {
+            method24417.addDetail("Resource Packs", () -> {
                 final StringBuilder sb = new StringBuilder();
                 class1664.field23387.iterator();
                 final Iterator iterator;
@@ -1564,9 +1564,9 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             });
         }
         if (class1661 != null) {
-            method24417.method16296("Current Language", () -> class1665.method5845().toString());
+            method24417.addDetail("Current Language", () -> class1665.method5845().toString());
         }
-        method24417.method16296("CPU", Class7691::method24459);
+        method24417.addDetail("CPU", Class7691::method24459);
     }
     
     public static Class869 method5277() {

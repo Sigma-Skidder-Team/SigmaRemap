@@ -1215,7 +1215,7 @@ public class Class1849 extends World
             bufferedWriter.write("distance_manager: " + field10354.method1341().method30142() + "\n");
             bufferedWriter.write(String.format("pending_tasks: %d\n", this.method6904().method7437()));
         }
-        final Class7689 class7689 = new Class7689("Level dump", new Exception("dummy"));
+        final CrashReport class7689 = new CrashReport("Level dump", new Exception("dummy"));
         this.method6779(class7689);
         try (final BufferedWriter bufferedWriter2 = Files.newBufferedWriter(path.resolve("example_crash.txt"), new OpenOption[0])) {
             bufferedWriter2.write(class7689.method24414());

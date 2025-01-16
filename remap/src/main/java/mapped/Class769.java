@@ -56,7 +56,7 @@ public class Class769 extends Class770 implements Class768
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.method1803(Class2215.field13600, new ItemStack(Items.field31279));
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }

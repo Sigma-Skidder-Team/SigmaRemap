@@ -85,15 +85,15 @@ public class Class9066
                 }
             }
             else {
-                final Class51 method1869 = class797.method2899();
+                final CompoundNBT method1869 = class797.method2899();
                 if (method1869 != null) {
-                    if (Config.equals(method1869.method301("UUID"), method1865)) {
+                    if (Config.equals(method1869.getUniqueId("UUID"), method1865)) {
                         class797.field4065 = class795;
                     }
                 }
-                final Class51 method1870 = class797.method2901();
+                final CompoundNBT method1870 = class797.method2901();
                 if (method1870 != null) {
-                    if (Config.equals(method1870.method301("UUID"), method1865)) {
+                    if (Config.equals(method1870.getUniqueId("UUID"), method1865)) {
                         class797.field4066 = class795;
                     }
                 }

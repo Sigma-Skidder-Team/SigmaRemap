@@ -21,12 +21,12 @@ public class Class6699 extends Class6693
         }
         if (!Class6699.field26420.field4682.method27331()) {
             final ItemStack class6429 = new ItemStack(Items.field31579);
-            final Class51 e = new Class51();
-            e.method298("Amplifier", 125);
-            e.method298("Duration", 2000);
-            e.method298("Id", 6);
-            final Class52 class6430 = new Class52();
-            ((AbstractList<Class51>)class6430).add(e);
+            final CompoundNBT e = new CompoundNBT();
+            e.putInt("Amplifier", 125);
+            e.putInt("Duration", 2000);
+            e.putInt("Id", 6);
+            final ListNBT class6430 = new ListNBT();
+            ((AbstractList<CompoundNBT>)class6430).add(e);
             class6429.method27676("CustomPotionEffects", class6430);
             Class6699.field26420.method5269().method17292(new Class4287(36 + Class8639.method29343(), class6429));
             class6428.method19104("Requested server a killpotion!");

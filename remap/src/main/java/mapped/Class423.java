@@ -660,14 +660,14 @@ public class Class423 extends Entity
     }
     
     @Override
-    public void method1761(final Class51 class51) {
-        class51.method306("Type", this.method2065().method890());
+    public void method1761(final CompoundNBT class51) {
+        class51.putString("Type", this.method2065().method890());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
-        if (class51.method316("Type", 8)) {
-            this.method2064(Class241.method893(class51.method323("Type")));
+    public void method1760(final CompoundNBT class51) {
+        if (class51.contains("Type", 8)) {
+            this.method2064(Class241.method893(class51.getString("Type")));
         }
     }
     

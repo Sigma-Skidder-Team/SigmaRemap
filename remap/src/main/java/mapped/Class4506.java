@@ -34,19 +34,19 @@ public class Class4506 extends Class4500
         this.field19849 = field19849;
     }
     
-    public Class4506(final Class9520 class9520, final Class51 class9521) {
+    public Class4506(final Class9520 class9520, final CompoundNBT class9521) {
         super(class9520, class9521);
-        this.field19901 = class9521.method329("Source");
+        this.field19901 = class9521.getBoolean("Source");
     }
     
-    public Class4506(final Class1795 class1795, final Class51 class1796) {
+    public Class4506(final Class1795 class1795, final CompoundNBT class1796) {
         this(Class9520.field40973, class1796);
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method312("Source", this.field19901);
+        class51.putBoolean("Source", this.field19901);
     }
     
     @Override

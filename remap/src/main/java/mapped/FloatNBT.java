@@ -12,18 +12,18 @@ import net.minecraft.util.text.ITextComponent;
 import java.io.IOException;
 import java.io.DataOutput;
 
-public class Class46 extends NumberNBT
+public class FloatNBT extends NumberNBT
 {
-    public static final Class46 field110;
-    public static final INBTType<Class46> field111;
+    public static final FloatNBT field110;
+    public static final INBTType<FloatNBT> TYPE;
     private final float field112;
     
-    private Class46(final float field112) {
+    private FloatNBT(final float field112) {
         this.field112 = field112;
     }
     
-    public static Class46 method281(final float n) {
-        return (n != 0.0f) ? new Class46(n) : Class46.field110;
+    public static FloatNBT method281(final float n) {
+        return (n != 0.0f) ? new FloatNBT(n) : FloatNBT.field110;
     }
     
     @Override
@@ -37,8 +37,8 @@ public class Class46 extends NumberNBT
     }
     
     @Override
-    public INBTType<Class46> getType() {
-        return Class46.field111;
+    public INBTType<FloatNBT> getType() {
+        return FloatNBT.TYPE;
     }
     
     @Override
@@ -46,13 +46,13 @@ public class Class46 extends NumberNBT
         return this.field112 + "f";
     }
     
-    public Class46 method282() {
+    public FloatNBT copy() {
         return this;
     }
     
     @Override
     public boolean equals(final Object o) {
-        return this == o || (o instanceof Class46 && this.field112 == ((Class46)o).field112);
+        return this == o || (o instanceof FloatNBT && this.field112 == ((FloatNBT)o).field112);
     }
     
     @Override
@@ -62,46 +62,46 @@ public class Class46 extends NumberNBT
     
     @Override
     public ITextComponent toFormattedComponent(final String s, final int n) {
-        return new StringTextComponent(String.valueOf(this.field112)).appendSibling(new StringTextComponent("f").applyTextStyle(Class46.SYNTAX_HIGHLIGHTING_NUMBER_TYPE)).applyTextStyle(Class46.SYNTAX_HIGHLIGHTING_NUMBER);
+        return new StringTextComponent(String.valueOf(this.field112)).appendSibling(new StringTextComponent("f").applyTextStyle(FloatNBT.SYNTAX_HIGHLIGHTING_NUMBER_TYPE)).applyTextStyle(FloatNBT.SYNTAX_HIGHLIGHTING_NUMBER);
     }
     
     @Override
-    public long method270() {
+    public long getLong() {
         return (long)this.field112;
     }
     
     @Override
-    public int method271() {
+    public int getInt() {
         return MathHelper.method35642(this.field112);
     }
     
     @Override
-    public short method272() {
+    public short getShort() {
         return (short)(MathHelper.method35642(this.field112) & 0xFFFF);
     }
     
     @Override
-    public byte method273() {
+    public byte getByte() {
         return (byte)(MathHelper.method35642(this.field112) & 0xFF);
     }
     
     @Override
-    public double method274() {
+    public double getDouble() {
         return this.field112;
     }
     
     @Override
-    public float method275() {
+    public float getFloat() {
         return this.field112;
     }
     
     @Override
-    public Number method276() {
+    public Number getAsNumber() {
         return this.field112;
     }
     
     static {
-        field110 = new Class46(0.0f);
-        field111 = new Class6077();
+        field110 = new FloatNBT(0.0f);
+        TYPE = new Class6077();
     }
 }

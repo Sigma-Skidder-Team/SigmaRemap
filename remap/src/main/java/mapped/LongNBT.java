@@ -11,17 +11,17 @@ import net.minecraft.util.text.ITextComponent;
 import java.io.IOException;
 import java.io.DataOutput;
 
-public class Class49 extends NumberNBT
+public class LongNBT extends NumberNBT
 {
-    public static final INBTType<Class49> field119;
+    public static final INBTType<LongNBT> TYPE;
     private final long field120;
     
-    private Class49(final long field120) {
+    private LongNBT(final long field120) {
         this.field120 = field120;
     }
     
-    public static Class49 method288(final long n) {
-        return (n >= -128L && n <= 1024L) ? Class7458.field28767[(int)n + 128] : new Class49(n);
+    public static LongNBT method288(final long n) {
+        return (n >= -128L && n <= 1024L) ? Class7458.field28767[(int)n + 128] : new LongNBT(n);
     }
     
     @Override
@@ -35,8 +35,8 @@ public class Class49 extends NumberNBT
     }
     
     @Override
-    public INBTType<Class49> getType() {
-        return Class49.field119;
+    public INBTType<LongNBT> getType() {
+        return LongNBT.TYPE;
     }
     
     @Override
@@ -44,13 +44,13 @@ public class Class49 extends NumberNBT
         return this.field120 + "L";
     }
     
-    public Class49 method289() {
+    public LongNBT copy() {
         return this;
     }
     
     @Override
     public boolean equals(final Object o) {
-        return this == o || (o instanceof Class49 && this.field120 == ((Class49)o).field120);
+        return this == o || (o instanceof LongNBT && this.field120 == ((LongNBT)o).field120);
     }
     
     @Override
@@ -60,45 +60,45 @@ public class Class49 extends NumberNBT
     
     @Override
     public ITextComponent toFormattedComponent(final String s, final int n) {
-        return new StringTextComponent(String.valueOf(this.field120)).appendSibling(new StringTextComponent("L").applyTextStyle(Class49.SYNTAX_HIGHLIGHTING_NUMBER_TYPE)).applyTextStyle(Class49.SYNTAX_HIGHLIGHTING_NUMBER);
+        return new StringTextComponent(String.valueOf(this.field120)).appendSibling(new StringTextComponent("L").applyTextStyle(LongNBT.SYNTAX_HIGHLIGHTING_NUMBER_TYPE)).applyTextStyle(LongNBT.SYNTAX_HIGHLIGHTING_NUMBER);
     }
     
     @Override
-    public long method270() {
+    public long getLong() {
         return this.field120;
     }
     
     @Override
-    public int method271() {
+    public int getInt() {
         return (int)(this.field120 & -1L);
     }
     
     @Override
-    public short method272() {
+    public short getShort() {
         return (short)(this.field120 & 0xFFFFL);
     }
     
     @Override
-    public byte method273() {
+    public byte getByte() {
         return (byte)(this.field120 & 0xFFL);
     }
     
     @Override
-    public double method274() {
+    public double getDouble() {
         return (double)this.field120;
     }
     
     @Override
-    public float method275() {
+    public float getFloat() {
         return (float)this.field120;
     }
     
     @Override
-    public Number method276() {
+    public Number getAsNumber() {
         return this.field120;
     }
     
     static {
-        field119 = new Class6067();
+        TYPE = new Class6067();
     }
 }

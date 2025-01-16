@@ -49,7 +49,7 @@ public abstract class Class4648
     
     @Nullable
     private ResourceLocation method13883() {
-        final String method323 = this.field20122.method20916().method323("id");
+        final String method323 = this.field20122.method20916().getString("id");
         try {
             return Class8272.method27500(method323) ? null : new ResourceLocation(method323);
         }
@@ -61,7 +61,7 @@ public abstract class Class4648
     }
     
     public void method13884(final EntityType<?> class7499) {
-        this.field20122.method20916().method306("id", Registry.field210.getKey(class7499).toString());
+        this.field20122.method20916().putString("id", Registry.field210.getKey(class7499).toString());
     }
     
     private boolean method13885() {
@@ -83,13 +83,13 @@ public abstract class Class4648
                 }
                 int n = 0;
                 for (int i = 0; i < this.field20127; ++i) {
-                    final Class51 method13897 = this.field20122.method20916();
+                    final CompoundNBT method13897 = this.field20122.method20916();
                     final Optional<EntityType<?>> method13898 = EntityType.method23377(method13897);
                     if (!method13898.isPresent()) {
                         this.method13888();
                         return;
                     }
-                    final Class52 method13899 = method13897.method328("Pos", 6);
+                    final ListNBT method13899 = method13897.getList("Pos", 6);
                     final int size = method13899.size();
                     final double n2 = (size < 1) ? (method13896.getX() + (method13895.rand.nextDouble() - method13895.rand.nextDouble()) * this.field20131 + 0.5) : method13899.method351(0);
                     final double n3 = (size < 2) ? (method13896.getY() + method13895.rand.nextInt(3) - 1) : method13899.method351(1);
@@ -117,8 +117,8 @@ public abstract class Class4648
                                 if (!class759.method4180(method13895)) {
                                     continue;
                                 }
-                                if (this.field20122.method20916().method294() == 1) {
-                                    if (this.field20122.method20916().method316("id", 8)) {
+                                if (this.field20122.method20916().size() == 1) {
+                                    if (this.field20122.method20916().contains("id", 8)) {
                                         ((Class759)method13900).method4188(method13895, method13895.method6784(new BlockPos(method13900)), Class2101.field12176, null, null);
                                     }
                                 }
@@ -176,61 +176,61 @@ public abstract class Class4648
         this.method13894(1);
     }
     
-    public void method13889(final Class51 class51) {
-        this.field20120 = class51.method318("Delay");
+    public void method13889(final CompoundNBT class51) {
+        this.field20120 = class51.getShort("Delay");
         this.field20121.clear();
-        if (class51.method316("SpawnPotentials", 9)) {
-            final Class52 method328 = class51.method328("SpawnPotentials", 10);
+        if (class51.contains("SpawnPotentials", 9)) {
+            final ListNBT method328 = class51.getList("SpawnPotentials", 10);
             for (int i = 0; i < method328.size(); ++i) {
                 this.field20121.add(new Class6829(method328.method346(i)));
             }
         }
-        if (!class51.method316("SpawnData", 10)) {
+        if (!class51.contains("SpawnData", 10)) {
             if (!this.field20121.isEmpty()) {
                 this.method13893(Class8223.method27251(this.method13895().rand, this.field20121));
             }
         }
         else {
-            this.method13893(new Class6829(1, class51.method327("SpawnData")));
+            this.method13893(new Class6829(1, class51.getCompound("SpawnData")));
         }
-        if (class51.method316("MinSpawnDelay", 99)) {
-            this.field20125 = class51.method318("MinSpawnDelay");
-            this.field20126 = class51.method318("MaxSpawnDelay");
-            this.field20127 = class51.method318("SpawnCount");
+        if (class51.contains("MinSpawnDelay", 99)) {
+            this.field20125 = class51.getShort("MinSpawnDelay");
+            this.field20126 = class51.getShort("MaxSpawnDelay");
+            this.field20127 = class51.getShort("SpawnCount");
         }
-        if (class51.method316("MaxNearbyEntities", 99)) {
-            this.field20129 = class51.method318("MaxNearbyEntities");
-            this.field20130 = class51.method318("RequiredPlayerRange");
+        if (class51.contains("MaxNearbyEntities", 99)) {
+            this.field20129 = class51.getShort("MaxNearbyEntities");
+            this.field20130 = class51.getShort("RequiredPlayerRange");
         }
-        if (class51.method316("SpawnRange", 99)) {
-            this.field20131 = class51.method318("SpawnRange");
+        if (class51.contains("SpawnRange", 99)) {
+            this.field20131 = class51.getShort("SpawnRange");
         }
         if (this.method13895() != null) {
             this.field20128 = null;
         }
     }
     
-    public Class51 method13890(final Class51 class51) {
+    public CompoundNBT method13890(final CompoundNBT class51) {
         if (this.method13883() != null) {
-            class51.method297("Delay", (short)this.field20120);
-            class51.method297("MinSpawnDelay", (short)this.field20125);
-            class51.method297("MaxSpawnDelay", (short)this.field20126);
-            class51.method297("SpawnCount", (short)this.field20127);
-            class51.method297("MaxNearbyEntities", (short)this.field20129);
-            class51.method297("RequiredPlayerRange", (short)this.field20130);
-            class51.method297("SpawnRange", (short)this.field20131);
-            class51.method295("SpawnData", this.field20122.method20916().method333());
-            final Class52 class52 = new Class52();
+            class51.putShort("Delay", (short)this.field20120);
+            class51.putShort("MinSpawnDelay", (short)this.field20125);
+            class51.putShort("MaxSpawnDelay", (short)this.field20126);
+            class51.putShort("SpawnCount", (short)this.field20127);
+            class51.putShort("MaxNearbyEntities", (short)this.field20129);
+            class51.putShort("RequiredPlayerRange", (short)this.field20130);
+            class51.putShort("SpawnRange", (short)this.field20131);
+            class51.put("SpawnData", this.field20122.method20916().copy());
+            final ListNBT class52 = new ListNBT();
             if (!this.field20121.isEmpty()) {
                 final Iterator<Class6829> iterator = this.field20121.iterator();
                 while (iterator.hasNext()) {
-                    ((AbstractList<Class51>)class52).add(iterator.next().method20915());
+                    ((AbstractList<CompoundNBT>)class52).add(iterator.next().method20915());
                 }
             }
             else {
-                ((AbstractList<Class51>)class52).add(this.field20122.method20915());
+                ((AbstractList<CompoundNBT>)class52).add(this.field20122.method20915());
             }
-            class51.method295("SpawnPotentials", class52);
+            class51.put("SpawnPotentials", class52);
             return class51;
         }
         return class51;
@@ -240,8 +240,8 @@ public abstract class Class4648
     public Entity method13891() {
         if (this.field20128 == null) {
             this.field20128 = EntityType.method23378(this.field20122.method20916(), this.method13895(), Function.identity());
-            if (this.field20122.method20916().method294() == 1) {
-                if (this.field20122.method20916().method316("id", 8)) {
+            if (this.field20122.method20916().size() == 1) {
+                if (this.field20122.method20916().contains("id", 8)) {
                     if (this.field20128 instanceof Class759) {
                         ((Class759)this.field20128).method4188(this.method13895(), this.method13895().method6784(new BlockPos(this.field20128)), Class2101.field12176, null, null);
                     }

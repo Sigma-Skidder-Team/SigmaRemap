@@ -379,27 +379,27 @@ public class Class827 extends Class763
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         if (this.method2625()) {
-            class51.method312("IsBaby", true);
+            class51.putBoolean("IsBaby", true);
         }
-        class51.method312("CanBreakDoors", this.method4924());
-        class51.method298("InWaterTime", this.method1706() ? this.field4432 : -1);
-        class51.method298("DrownedConversionTime", this.method4923() ? this.field4433 : -1);
+        class51.putBoolean("CanBreakDoors", this.method4924());
+        class51.putInt("InWaterTime", this.method1706() ? this.field4432 : -1);
+        class51.putInt("DrownedConversionTime", this.method4923() ? this.field4433 : -1);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method329("IsBaby")) {
+        if (class51.getBoolean("IsBaby")) {
             this.method4927(true);
         }
-        this.method4925(class51.method329("CanBreakDoors"));
-        this.field4432 = class51.method319("InWaterTime");
-        if (class51.method316("DrownedConversionTime", 99)) {
-            if (class51.method319("DrownedConversionTime") > -1) {
-                this.method4928(class51.method319("DrownedConversionTime"));
+        this.method4925(class51.getBoolean("CanBreakDoors"));
+        this.field4432 = class51.getInt("InWaterTime");
+        if (class51.contains("DrownedConversionTime", 99)) {
+            if (class51.getInt("DrownedConversionTime") > -1) {
+                this.method4928(class51.getInt("DrownedConversionTime"));
             }
         }
     }
@@ -456,7 +456,7 @@ public class Class827 extends Class763
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final Class51 class1854) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, (Class5496)method4188, class1854);
         final float method4189 = class1852.method35975();
         this.method4193(this.rand.nextFloat() < 0.55f * method4189);

@@ -2230,12 +2230,12 @@ public class Class1656 implements AutoCloseable, Class1657
             this.method5748(IParticleData, b, b2, n, n2, n3, n4, n5, n6);
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Exception while adding particle");
-            final Class5204 method24422 = method24421.method24418("Particle being added");
-            method24422.method16297("ID", Registry.field222.getKey((Class6907<? extends IParticleData>) IParticleData.method21272()));
-            method24422.method16297("Parameters", IParticleData.method21274());
-            method24422.method16296("Position", () -> Class5204.method16293(n7, n8, n9));
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Exception while adding particle");
+            final CrashReportCategory method24422 = method24421.makeCategory("Particle being added");
+            method24422.addDetail("ID", Registry.field222.getKey((Class6907<? extends IParticleData>) IParticleData.method21272()));
+            method24422.addDetail("Parameters", IParticleData.method21274());
+            method24422.addDetail("Position", () -> CrashReportCategory.method16293(n7, n8, n9));
+            throw new ReportedException(method24421);
         }
     }
     

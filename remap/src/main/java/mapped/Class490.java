@@ -212,8 +212,8 @@ public class Class490 extends TileEntity implements Class434, Class439
     }
     
     @Override
-    public Class51 method2196() {
-        return this.method2180(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2180(new CompoundNBT());
     }
     
     @Override
@@ -228,24 +228,24 @@ public class Class490 extends TileEntity implements Class434, Class439
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2813 = method2452(class51.method319("Primary"));
-        this.field2814 = method2452(class51.method319("Secondary"));
-        if (class51.method316("CustomName", 8)) {
-            this.field2815 = Class5953.method17871(class51.method323("CustomName"));
+        this.field2813 = method2452(class51.getInt("Primary"));
+        this.field2814 = method2452(class51.getInt("Secondary"));
+        if (class51.contains("CustomName", 8)) {
+            this.field2815 = Class5953.method17871(class51.getString("CustomName"));
         }
         this.field2816 = Class9115.method32978(class51);
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
-        class51.method298("Primary", Class5328.method16451(this.field2813));
-        class51.method298("Secondary", Class5328.method16451(this.field2814));
-        class51.method298("Levels", this.field2811);
+        class51.putInt("Primary", Class5328.method16451(this.field2813));
+        class51.putInt("Secondary", Class5328.method16451(this.field2814));
+        class51.putInt("Levels", this.field2811);
         if (this.field2815 != null) {
-            class51.method306("CustomName", Class5953.method17869(this.field2815));
+            class51.putString("CustomName", Class5953.method17869(this.field2815));
         }
         this.field2816.method32977(class51);
         return class51;

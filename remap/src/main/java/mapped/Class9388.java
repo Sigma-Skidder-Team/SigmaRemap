@@ -116,18 +116,18 @@ public class Class9388
             else {
                 GameProfile gameProfile = null;
                 if (class8321.method27656()) {
-                    final Class51 method27626 = class8321.method27657();
-                    if (!method27626.method316("SkullOwner", 10)) {
-                        if (method27626.method316("SkullOwner", 8)) {
-                            if (!StringUtils.isBlank((CharSequence)method27626.method323("SkullOwner"))) {
-                                gameProfile = Class493.method2508(new GameProfile((UUID)null, method27626.method323("SkullOwner")));
-                                method27626.method330("SkullOwner");
-                                method27626.method295("SkullOwner", Class9346.method34641(new Class51(), gameProfile));
+                    final CompoundNBT method27626 = class8321.method27657();
+                    if (!method27626.contains("SkullOwner", 10)) {
+                        if (method27626.contains("SkullOwner", 8)) {
+                            if (!StringUtils.isBlank((CharSequence)method27626.getString("SkullOwner"))) {
+                                gameProfile = Class493.method2508(new GameProfile((UUID)null, method27626.getString("SkullOwner")));
+                                method27626.remove("SkullOwner");
+                                method27626.put("SkullOwner", Class9346.method34641(new CompoundNBT(), gameProfile));
                             }
                         }
                     }
                     else {
-                        gameProfile = Class9346.method34640(method27626.method327("SkullOwner"));
+                        gameProfile = Class9346.method34640(method27626.getCompound("SkullOwner"));
                     }
                 }
                 Class4174.method12498(null, 180.0f, ((Class3932)method27624).method12050(), gameProfile, 0.0f, class8322, class8323, n);

@@ -132,17 +132,17 @@ public class Class454 extends Class433 implements Class453
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("TransferCooldown", this.field2705);
-        class51.method312("Enabled", this.field2704);
+        class51.putInt("TransferCooldown", this.field2705);
+        class51.putBoolean("Enabled", this.field2704);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field2705 = class51.method319("TransferCooldown");
-        this.field2704 = (!class51.method315("Enabled") || class51.method329("Enabled"));
+        this.field2705 = class51.getInt("TransferCooldown");
+        this.field2704 = (!class51.contains("Enabled") || class51.getBoolean("Enabled"));
     }
     
     public void method2292(final int field2705) {

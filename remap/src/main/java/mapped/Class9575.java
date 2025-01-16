@@ -30,20 +30,20 @@ public class Class9575
         this.field41623 = field41614;
     }
     
-    public Class51 method35865() {
-        final Class51 class51 = new Class51();
-        class51.method306("name", this.field41612);
-        class51.method306("ip", this.field41613);
+    public CompoundNBT method35865() {
+        final CompoundNBT class51 = new CompoundNBT();
+        class51.putString("name", this.field41612);
+        class51.putString("ip", this.field41613);
         if (this.field41622 != null) {
-            class51.method306("icon", this.field41622);
+            class51.putString("icon", this.field41622);
         }
         if (this.field41621 != Class2203.field13412) {
             if (this.field41621 == Class2203.field13413) {
-                class51.method312("acceptTextures", false);
+                class51.putBoolean("acceptTextures", false);
             }
         }
         else {
-            class51.method312("acceptTextures", true);
+            class51.putBoolean("acceptTextures", true);
         }
         return class51;
     }
@@ -56,15 +56,15 @@ public class Class9575
         this.field41621 = field41621;
     }
     
-    public static Class9575 method35868(final Class51 class51) {
-        final Class9575 class52 = new Class9575(class51.method323("name"), class51.method323("ip"), false);
-        if (class51.method316("icon", 8)) {
-            class52.method35870(class51.method323("icon"));
+    public static Class9575 method35868(final CompoundNBT class51) {
+        final Class9575 class52 = new Class9575(class51.getString("name"), class51.getString("ip"), false);
+        if (class51.contains("icon", 8)) {
+            class52.method35870(class51.getString("icon"));
         }
-        if (!class51.method316("acceptTextures", 1)) {
+        if (!class51.contains("acceptTextures", 1)) {
             class52.method35867(Class2203.field13414);
         }
-        else if (!class51.method329("acceptTextures")) {
+        else if (!class51.getBoolean("acceptTextures")) {
             class52.method35867(Class2203.field13413);
         }
         else {

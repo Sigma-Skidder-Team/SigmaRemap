@@ -28,15 +28,15 @@ public abstract class Class770 extends Class772
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field4162 = class51.method319("SpellTicks");
+        this.field4162 = class51.getInt("SpellTicks");
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("SpellTicks", this.field4162);
+        class51.putInt("SpellTicks", this.field4162);
     }
     
     @Override

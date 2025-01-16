@@ -45,9 +45,9 @@ public class Class1072 implements Runnable
                     sb.append(obj);
                     sb.append("\n");
                 }
-                final Class7689 class7689 = new Class7689("Watching Server", error);
+                final CrashReport class7689 = new CrashReport("Watching Server", error);
                 this.field5768.method1491(class7689);
-                class7689.method24418("Thread Dump").method16297("Threads", sb);
+                class7689.makeCategory("Thread Dump").addDetail("Threads", sb);
                 final File file = new File(new File(this.field5768.method1466(), "crash-reports"), "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-server.txt");
                 if (class7689.method24416(file)) {
                     Class1072.field5767.error("This crash report has been saved to: {}", (Object)file.getAbsolutePath());

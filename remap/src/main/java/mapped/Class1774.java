@@ -106,11 +106,11 @@ public class Class1774 extends Class1666 implements Class1664
                 class9431.method7507();
             }
             catch (final Throwable t) {
-                final Class7689 method24421 = Class7689.method24421(t, "Stitching texture atlas");
-                final Class5204 method24422 = method24421.method24418("Texture being stitched together");
-                method24422.method16297("Atlas path", this.field9858);
-                method24422.method16297("Sprite", class9431);
-                throw new Class2365(method24421);
+                final CrashReport method24421 = CrashReport.makeCrashReport(t, "Stitching texture atlas");
+                final CrashReportCategory method24422 = method24421.makeCategory("Texture being stitched together");
+                method24422.addDetail("Atlas path", this.field9858);
+                method24422.addDetail("Sprite", class9431);
+                throw new ReportedException(method24421);
             }
             if (class9431.method7511()) {
                 class9431.method7516(this.field9855.size());
@@ -262,11 +262,11 @@ public class Class1774 extends Class1666 implements Class1664
             class6584.method23342();
         }
         catch (final Class2361 class6586) {
-            final Class7689 method6356 = Class7689.method24421(class6586, "Stitching");
-            final Class5204 method6357 = method6356.method24418("Stitcher");
-            method6357.method16297("Sprites", class6586.method9498().stream().map(class6588 -> String.format("%s[%dx%d]", class6588.method34591(), class6588.method34592(), class6588.method34593())).collect((Collector<? super Object, ?, String>)Collectors.joining(",")));
-            method6357.method16297("Max Texture Size", method6351);
-            throw new Class2365(method6356);
+            final CrashReport method6356 = CrashReport.makeCrashReport(class6586, "Stitching");
+            final CrashReportCategory method6357 = method6356.makeCategory("Stitcher");
+            method6357.addDetail("Sprites", class6586.method9498().stream().map(class6588 -> String.format("%s[%dx%d]", class6588.method34591(), class6588.method34592(), class6588.method34593())).collect((Collector<? super Object, ?, String>)Collectors.joining(",")));
+            method6357.addDetail("Max Texture Size", method6351);
+            throw new ReportedException(method6356);
         }
         class6583.method15300("loading");
         final List<Class1912> method6358 = this.method6334(class6582, class6584, n3);

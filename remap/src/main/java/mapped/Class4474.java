@@ -17,12 +17,12 @@ public class Class4474 extends Class4473
         this.field19849 = new MutableBoundingBox(class354.getX(), class354.getY(), class354.getZ(), class354.getX(), class354.getY(), class354.getZ());
     }
     
-    public Class4474(final Class1795 class1795, final Class51 class1796) {
+    public Class4474(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40996, class1796);
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
     }
     
     @Override

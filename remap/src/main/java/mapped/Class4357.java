@@ -11,12 +11,12 @@ public class Class4357 implements IPacket<IClientPlayNetHandler>
     private static String[] field19509;
     private BlockPos field19510;
     private int field19511;
-    private Class51 field19512;
+    private CompoundNBT field19512;
     
     public Class4357() {
     }
     
-    public Class4357(final BlockPos field19510, final int field19511, final Class51 field19512) {
+    public Class4357(final BlockPos field19510, final int field19511, final CompoundNBT field19512) {
         this.field19510 = field19510;
         this.field19511 = field19511;
         this.field19512 = field19512;
@@ -48,7 +48,7 @@ public class Class4357 implements IPacket<IClientPlayNetHandler>
         return this.field19511;
     }
     
-    public Class51 method13086() {
+    public CompoundNBT method13086() {
         return this.field19512;
     }
 }

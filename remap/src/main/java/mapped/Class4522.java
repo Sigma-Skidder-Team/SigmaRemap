@@ -12,7 +12,7 @@ public class Class4522 extends Class4521
         super(Class9520.field40948, class1795, class1796, class1797, n, class1798, class1799);
     }
     
-    public Class4522(final Class1795 class1795, final Class51 class1796) {
+    public Class4522(final Class1795 class1795, final CompoundNBT class1796) {
         super(class1795, class1796, Class9520.field40948);
     }
 }

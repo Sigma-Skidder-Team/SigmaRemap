@@ -25,7 +25,7 @@ import mapped.Class8852;
 import mapped.Class9154;
 import mapped.Class8515;
 import mapped.Class9212;
-import mapped.Class7689;
+import mapped.CrashReport;
 import mapped.PlayerEntity;
 import mapped.Class9583;
 import com.google.gson.GsonBuilder;
@@ -106,7 +106,7 @@ public class Main
         final String s6 = parse.has(withRequiredArg6) ? ((String)((OptionSpec)withRequiredArg6).value(parse)) : null;
         final String s7 = method9785(parse, withRequiredArg);
         final Integer n = method9785(parse, defaultsTo);
-        Class7689.method24422();
+        CrashReport.method24422();
         final Class9408 class9408 = new Class9408(new Class8515(new Class9212((String)((OptionSpec)defaultsTo3).value(parse), s5, (String)((OptionSpec)required).value(parse), (String)((OptionSpec)defaultsTo8).value(parse)), propertyMap, propertyMap2, no_PROXY), new Class9154(intValue, intValue2, method9784, method9785, has), new Class8852(file, file3, file2, s6), new Class5836(has2, s3, s4), new Class7918(s7, n));
         final Class900 hook = new Class900("Client Shutdown Thread");
         hook.setUncaughtExceptionHandler((Thread.UncaughtExceptionHandler)new Class8239(Main.field14380));
@@ -125,8 +125,8 @@ public class Main
             return;
         }
         catch (final Throwable t) {
-            final Class7689 method9786 = Class7689.method24421(t, "Initializing game");
-            method9786.method24418("Initialization");
+            final CrashReport method9786 = CrashReport.makeCrashReport(t, "Initializing game");
+            method9786.makeCategory("Initialization");
             Class869.method5276(null, class9408.field40380.field23928, null, method9786);
             Class869.method5239(method9786);
             return;

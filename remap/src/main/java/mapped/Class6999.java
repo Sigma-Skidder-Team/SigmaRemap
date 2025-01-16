@@ -20,31 +20,31 @@ public class Class6999
         this.field27307 = 0.1f;
     }
     
-    public void method21423(final Class51 class51) {
-        final Class51 class52 = new Class51();
-        class52.method312("invulnerable", this.field27301);
-        class52.method312("flying", this.field27302);
-        class52.method312("mayfly", this.field27303);
-        class52.method312("instabuild", this.field27304);
-        class52.method312("mayBuild", this.field27305);
-        class52.method304("flySpeed", this.field27306);
-        class52.method304("walkSpeed", this.field27307);
-        class51.method295("abilities", class52);
+    public void method21423(final CompoundNBT class51) {
+        final CompoundNBT class52 = new CompoundNBT();
+        class52.putBoolean("invulnerable", this.field27301);
+        class52.putBoolean("flying", this.field27302);
+        class52.putBoolean("mayfly", this.field27303);
+        class52.putBoolean("instabuild", this.field27304);
+        class52.putBoolean("mayBuild", this.field27305);
+        class52.putFloat("flySpeed", this.field27306);
+        class52.putFloat("walkSpeed", this.field27307);
+        class51.put("abilities", class52);
     }
     
-    public void method21424(final Class51 class51) {
-        if (class51.method316("abilities", 10)) {
-            final Class51 method327 = class51.method327("abilities");
-            this.field27301 = method327.method329("invulnerable");
-            this.field27302 = method327.method329("flying");
-            this.field27303 = method327.method329("mayfly");
-            this.field27304 = method327.method329("instabuild");
-            if (method327.method316("flySpeed", 99)) {
-                this.field27306 = method327.method321("flySpeed");
-                this.field27307 = method327.method321("walkSpeed");
+    public void method21424(final CompoundNBT class51) {
+        if (class51.contains("abilities", 10)) {
+            final CompoundNBT method327 = class51.getCompound("abilities");
+            this.field27301 = method327.getBoolean("invulnerable");
+            this.field27302 = method327.getBoolean("flying");
+            this.field27303 = method327.getBoolean("mayfly");
+            this.field27304 = method327.getBoolean("instabuild");
+            if (method327.contains("flySpeed", 99)) {
+                this.field27306 = method327.getFloat("flySpeed");
+                this.field27307 = method327.getFloat("walkSpeed");
             }
-            if (method327.method316("mayBuild", 1)) {
-                this.field27305 = method327.method329("mayBuild");
+            if (method327.contains("mayBuild", 1)) {
+                this.field27305 = method327.getBoolean("mayBuild");
             }
         }
     }

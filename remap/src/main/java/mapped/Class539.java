@@ -40,13 +40,13 @@ public class Class539 extends Class527
     private String field3228;
     private String field3229;
     private int field3230;
-    public Class51 field3231;
+    public CompoundNBT field3231;
     
     public Class539(final Class527 field3205) {
         super(new Class2259("selectWorld.create", new Object[0]));
         this.field3209 = Class1984.field10986;
         this.field3211 = true;
-        this.field3231 = new Class51();
+        this.field3231 = new CompoundNBT();
         this.field3205 = field3205;
         this.field3228 = "";
         this.field3229 = Class8822.method30773("selectWorld.newWorld", new Object[0]);
@@ -106,7 +106,7 @@ public class Class539 extends Class527
                 }
                 this.field3230 = 0;
             }
-            this.field3231 = new Class51();
+            this.field3231 = new CompoundNBT();
             this.method3109(this.field3217);
             class654.method3368(250);
         }));

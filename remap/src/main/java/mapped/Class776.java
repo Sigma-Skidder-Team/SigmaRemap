@@ -184,23 +184,23 @@ public abstract class Class776 extends Class777
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("Wave", this.field4173);
-        class51.method312("CanJoinRaid", this.field4174);
+        class51.putInt("Wave", this.field4173);
+        class51.putBoolean("CanJoinRaid", this.field4174);
         if (this.field4172 != null) {
-            class51.method298("RaidId", this.field4172.method30660());
+            class51.putInt("RaidId", this.field4172.method30660());
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field4173 = class51.method319("Wave");
-        this.field4174 = class51.method329("CanJoinRaid");
-        if (class51.method316("RaidId", 3)) {
+        this.field4173 = class51.getInt("Wave");
+        this.field4174 = class51.getBoolean("CanJoinRaid");
+        if (class51.contains("RaidId", 3)) {
             if (this.world instanceof Class1849) {
-                this.field4172 = ((Class1849)this.world).method6926().method18925(class51.method319("RaidId"));
+                this.field4172 = ((Class1849)this.world).method6926().method18925(class51.getInt("RaidId"));
             }
             if (this.field4172 != null) {
                 this.field4172.method30655(this.field4173, this, false);
@@ -266,7 +266,7 @@ public abstract class Class776 extends Class777
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.method4289(this.getType() != EntityType.field29047 || class1853 != Class2101.field12174);
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }

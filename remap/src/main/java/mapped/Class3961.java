@@ -213,12 +213,12 @@ public class Class3961 extends Class3841
                             return;
                         }
                         if (b) {
-                            final Class51 class1853 = new Class51();
-                            class1853.method295("Bees", class1851.method2230());
+                            final CompoundNBT class1853 = new CompoundNBT();
+                            class1853.put("Bees", class1851.method2230());
                             class1852.method27676("BlockEntityTag", class1853);
                         }
-                        final Class51 class1854 = new Class51();
-                        class1854.method298("honey_level", intValue);
+                        final CompoundNBT class1854 = new CompoundNBT();
+                        class1854.putInt("honey_level", intValue);
                         class1852.method27676("BlockStateTag", class1854);
                         final Class427 class1855 = new Class427(class1847, class1848.getX(), class1848.getY(), class1848.getZ(), class1852);
                         class1855.method2114();

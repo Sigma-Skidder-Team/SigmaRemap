@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 import java.util.Collection;
 import java.util.List;
 
-public class Class6101 implements Class6102
+public class Class6101 implements INode
 {
     private static String[] field24756;
     public static final Class6101 field24757;
@@ -20,14 +20,14 @@ public class Class6101 implements Class6102
     }
     
     @Override
-    public void method18197(final INBT class41, final List<INBT> list) {
+    public void addMatchingElements(final INBT class41, final List<INBT> list) {
         if (class41 instanceof CollectionNBT) {
             list.addAll((Collection<? extends INBT>)class41);
         }
     }
     
     @Override
-    public void method18198(final INBT class41, final Supplier<INBT> supplier, final List<INBT> list) {
+    public void func_218054_a(final INBT class41, final Supplier<INBT> supplier, final List<INBT> list) {
         if (class41 instanceof CollectionNBT) {
             final CollectionNBT class42 = (CollectionNBT)class41;
             if (!class42.isEmpty()) {
@@ -43,12 +43,12 @@ public class Class6101 implements Class6102
     }
     
     @Override
-    public INBT method18199() {
-        return new Class52();
+    public INBT createEmptyElement() {
+        return new ListNBT();
     }
     
     @Override
-    public int method18200(final INBT class41, final Supplier<INBT> supplier) {
+    public int func_218051_a(final INBT class41, final Supplier<INBT> supplier) {
         if (!(class41 instanceof CollectionNBT)) {
             return 0;
         }
@@ -74,7 +74,7 @@ public class Class6101 implements Class6102
     }
     
     @Override
-    public int method18201(final INBT class41) {
+    public int func_218053_a(final INBT class41) {
         if (class41 instanceof CollectionNBT) {
             final CollectionNBT class42 = (CollectionNBT)class41;
             final int size = class42.size();

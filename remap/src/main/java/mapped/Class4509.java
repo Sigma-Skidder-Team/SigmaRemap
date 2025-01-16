@@ -21,15 +21,15 @@ public class Class4509 extends Class4500
         this.field19907 = random.nextInt(5);
     }
     
-    public Class4509(final Class1795 class1795, final Class51 class1796) {
+    public Class4509(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40972, class1796);
-        this.field19907 = class1796.method319("Type");
+        this.field19907 = class1796.getInt("Type");
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method298("Type", this.field19907);
+        class51.putInt("Type", this.field19907);
     }
     
     @Override

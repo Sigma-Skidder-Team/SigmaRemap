@@ -93,12 +93,12 @@ public class Class3439 extends Class3418
             }
             if (!method20055.method27620()) {
                 if (method20055.getItem() instanceof Class4056) {
-                    final Class51 method20056 = method20053.method27659("BlockEntityTag");
+                    final CompoundNBT method20056 = method20053.method27659("BlockEntityTag");
                     boolean b = false;
                     Label_0228: {
-                        if (method20056.method316("Patterns", 9)) {
+                        if (method20056.contains("Patterns", 9)) {
                             if (!method20053.method27620()) {
-                                if (method20056.method328("Patterns", 10).size() >= 6) {
+                                if (method20056.getList("Patterns", 10).size() >= 6) {
                                     b = true;
                                     break Label_0228;
                                 }
@@ -224,19 +224,19 @@ public class Class3439 extends Class3418
                     class8321.method27691(1);
                     final Class230 class8322 = Class230.values()[this.field16239.method19832()];
                     final Class181 method20055 = ((Class3829)method20054.getItem()).method11767();
-                    final Class51 method20056 = class8321.method27659("BlockEntityTag");
-                    Class52 method20057;
-                    if (!method20056.method316("Patterns", 9)) {
-                        method20057 = new Class52();
-                        method20056.method295("Patterns", method20057);
+                    final CompoundNBT method20056 = class8321.method27659("BlockEntityTag");
+                    ListNBT method20057;
+                    if (!method20056.contains("Patterns", 9)) {
+                        method20057 = new ListNBT();
+                        method20056.put("Patterns", method20057);
                     }
                     else {
-                        method20057 = method20056.method328("Patterns", 10);
+                        method20057 = method20056.getList("Patterns", 10);
                     }
-                    final Class51 e = new Class51();
-                    e.method306("Pattern", class8322.method859());
-                    e.method298("Color", method20055.method813());
-                    ((AbstractList<Class51>)method20057).add(e);
+                    final CompoundNBT e = new CompoundNBT();
+                    e.putString("Pattern", class8322.method859());
+                    e.putInt("Color", method20055.method813());
+                    ((AbstractList<CompoundNBT>)method20057).add(e);
                 }
             }
             if (!ItemStack.method27643(class8321, this.field16244.method20053())) {

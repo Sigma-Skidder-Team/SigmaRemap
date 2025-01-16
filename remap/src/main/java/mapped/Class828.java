@@ -113,22 +113,22 @@ public class Class828 extends Class827
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method297("Anger", (short)this.field4436);
+        class51.putShort("Anger", (short)this.field4436);
         if (this.field4438 == null) {
-            class51.method306("HurtBy", "");
+            class51.putString("HurtBy", "");
         }
         else {
-            class51.method306("HurtBy", this.field4438.toString());
+            class51.putString("HurtBy", this.field4438.toString());
         }
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field4436 = class51.method318("Anger");
-        final String method323 = class51.method323("HurtBy");
+        this.field4436 = class51.getShort("Anger");
+        final String method323 = class51.getString("HurtBy");
         if (!method323.isEmpty()) {
             this.field4438 = UUID.fromString(method323);
             final PlayerEntity method324 = this.world.method7143(this.field4438);

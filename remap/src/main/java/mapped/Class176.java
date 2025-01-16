@@ -12,9 +12,9 @@ public class Class176 implements Predicate<ItemStack>
 {
     private static String[] field504;
     private final Class7909<Item> field505;
-    private final Class51 field506;
+    private final CompoundNBT field506;
     
-    public Class176(final Class7909<Item> field505, final Class51 field506) {
+    public Class176(final Class7909<Item> field505, final CompoundNBT field506) {
         this.field505 = field505;
         this.field506 = field506;
     }

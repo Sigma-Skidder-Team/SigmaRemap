@@ -39,21 +39,21 @@ public class Class492 extends TileEntity implements Class439
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        if (!class51.method315("target_uuid")) {
+        if (!class51.contains("target_uuid")) {
             this.field2833 = null;
         }
         else {
-            this.field2833 = Class9346.method34644(class51.method327("target_uuid"));
+            this.field2833 = Class9346.method34644(class51.getCompound("target_uuid"));
         }
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         if (this.field2832 != null) {
-            class51.method295("target_uuid", Class9346.method34643(this.field2832.method1865()));
+            class51.put("target_uuid", Class9346.method34643(this.field2832.method1865()));
         }
         return class51;
     }
@@ -65,8 +65,8 @@ public class Class492 extends TileEntity implements Class439
     }
     
     @Override
-    public Class51 method2196() {
-        return this.method2180(new Class51());
+    public CompoundNBT method2196() {
+        return this.method2180(new CompoundNBT());
     }
     
     @Override

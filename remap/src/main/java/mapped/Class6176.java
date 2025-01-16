@@ -11,10 +11,10 @@ public class Class6176 extends Class6175
 {
     private int field24967;
     private final Class1793 field24968;
-    private Class52 field24969;
+    private ListNBT field24969;
     private boolean field24970;
     
-    public Class6176(final World class1847, final double n, final double n2, final double n3, final double field24939, final double field24940, final double field24941, final Class1793 field24942, final Class51 class1848) {
+    public Class6176(final World class1847, final double n, final double n2, final double n3, final double field24939, final double field24940, final double field24941, final Class1793 field24942, final CompoundNBT class1848) {
         super(class1847, n, n2, n3);
         this.field24939 = field24939;
         this.field24940 = field24940;
@@ -22,11 +22,11 @@ public class Class6176 extends Class6175
         this.field24968 = field24942;
         this.field24951 = 8;
         if (class1848 != null) {
-            this.field24969 = class1848.method328("Explosions", 10);
+            this.field24969 = class1848.getList("Explosions", 10);
             if (!this.field24969.isEmpty()) {
                 this.field24951 = this.field24969.size() * 2 - 1;
                 for (int i = 0; i < this.field24969.size(); ++i) {
-                    if (this.field24969.method346(i).method329("Flicker")) {
+                    if (this.field24969.method346(i).getBoolean("Flicker")) {
                         this.field24970 = true;
                         this.field24951 += 15;
                         break;
@@ -49,7 +49,7 @@ public class Class6176 extends Class6175
             }
             else {
                 for (int i = 0; i < this.field24969.size(); ++i) {
-                    if (Class2141.method8302(this.field24969.method346(i).method317("Type")) == Class2141.field12606) {
+                    if (Class2141.method8302(this.field24969.method346(i).getByte("Type")) == Class2141.field12606) {
                         b = true;
                         break;
                     }
@@ -65,12 +65,12 @@ public class Class6176 extends Class6175
             this.field24932.method6708(this.field24936, this.field24937, this.field24938, class7795, Class286.field1586, 20.0f, 0.95f + this.field24949.nextFloat() * 0.1f, true);
         }
         if (this.field24967 % 2 == 0 && this.field24969 != null && this.field24967 / 2 < this.field24969.size()) {
-            final Class51 method18448 = this.field24969.method346(this.field24967 / 2);
-            final Class2141 method18449 = Class2141.method8302(method18448.method317("Type"));
-            final boolean method18450 = method18448.method329("Trail");
-            final boolean method18451 = method18448.method329("Flicker");
-            int[] method18452 = method18448.method325("Colors");
-            final int[] method18453 = method18448.method325("FadeColors");
+            final CompoundNBT method18448 = this.field24969.method346(this.field24967 / 2);
+            final Class2141 method18449 = Class2141.method8302(method18448.getByte("Type"));
+            final boolean method18450 = method18448.getBoolean("Trail");
+            final boolean method18451 = method18448.getBoolean("Flicker");
+            int[] method18452 = method18448.getIntArray("Colors");
+            final int[] method18453 = method18448.getIntArray("FadeColors");
             if (method18452.length == 0) {
                 method18452 = new int[] { Class181.field552.method817() };
             }

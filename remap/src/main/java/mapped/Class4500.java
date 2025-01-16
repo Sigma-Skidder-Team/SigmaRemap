@@ -19,15 +19,15 @@ public abstract class Class4500 extends Class4473
         this.field19896 = Class1982.field10976;
     }
     
-    public Class4500(final Class9520 class9520, final Class51 class9521) {
+    public Class4500(final Class9520 class9520, final CompoundNBT class9521) {
         super(class9520, class9521);
         this.field19896 = Class1982.field10976;
-        this.field19896 = Class1982.valueOf(class9521.method323("EntryDoor"));
+        this.field19896 = Class1982.valueOf(class9521.getString("EntryDoor"));
     }
     
     @Override
-    public void method13415(final Class51 class51) {
-        class51.method306("EntryDoor", this.field19896.name());
+    public void method13415(final CompoundNBT class51) {
+        class51.putString("EntryDoor", this.field19896.name());
     }
     
     public void method13492(final Class1851 class1851, final Random random, final MutableBoundingBox class1852, final Class1982 class1853, final int n, final int n2, final int n3) {

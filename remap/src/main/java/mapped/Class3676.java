@@ -68,8 +68,8 @@ public class Class3676 extends Class3666
                 if (n >= 1) {
                     if (Class4096.method12340(field34174) < 2) {
                         final ItemStack class474 = new ItemStack(Items.field31513, n);
-                        final Class51 method2158 = field34174.method27657().method333();
-                        method2158.method298("generation", Class4096.method12340(field34174) + 1);
+                        final CompoundNBT method2158 = field34174.method27657().copy();
+                        method2158.putInt("generation", Class4096.method12340(field34174) + 1);
                         class474.method27663(method2158);
                         return class474;
                     }

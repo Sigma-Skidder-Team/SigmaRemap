@@ -20,7 +20,7 @@ public class Class7736 implements Class7735
     }
     
     private static List<String> method24688(final ItemStack class8321) {
-        final Class51 method27657 = class8321.method27657();
+        final CompoundNBT method27657 = class8321.method27657();
         return (List<String>)((method27657 == null) ? ImmutableList.of() : Class723.method3979(method27657));
     }
     

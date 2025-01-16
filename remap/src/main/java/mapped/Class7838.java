@@ -5,7 +5,6 @@
 package mapped;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ public class Class7838
     }
     
     public boolean method25316() {
-        Class51 method26590;
+        CompoundNBT method26590;
         try {
             method26590 = Class8097.method26590(new FileInputStream(this.field32086));
         }
@@ -36,23 +35,23 @@ public class Class7838
             ex.printStackTrace();
             return false;
         }
-        this.field32088 = method26590.method318("Width");
-        this.field32089 = method26590.method318("Height");
-        this.field32090 = method26590.method318("Length");
+        this.field32088 = method26590.getShort("Width");
+        this.field32089 = method26590.getShort("Height");
+        this.field32090 = method26590.getShort("Length");
         try {
-            this.field32087 = new Class1941(method26590.method319("WEOriginX"), method26590.method319("WEOriginY"), method26590.method319("WEOriginZ")).method7851(new Class1941(method26590.method319("WEOffsetX"), method26590.method319("WEOffsetY"), method26590.method319("WEOffsetZ")));
+            this.field32087 = new Class1941(method26590.getInt("WEOriginX"), method26590.getInt("WEOriginY"), method26590.getInt("WEOriginZ")).method7851(new Class1941(method26590.getInt("WEOffsetX"), method26590.getInt("WEOffsetY"), method26590.getInt("WEOffsetZ")));
         }
         catch (final Exception ex2) {
             this.field32087 = new Class1941(0, 0, 0);
             System.out.println("Whoops, not alpha schematic?");
         }
-        this.field32091 = method26590.method323("Materials");
-        final byte[] method26591 = method26590.method324("Blocks");
-        final byte[] method26592 = method26590.method324("Data");
+        this.field32091 = method26590.getString("Materials");
+        final byte[] method26591 = method26590.getByteArray("Blocks");
+        final byte[] method26592 = method26590.getByteArray("Data");
         byte[] method26593 = new byte[0];
         final short[] array = new short[method26591.length];
-        if (method26590.method315("AddBlocks")) {
-            method26593 = method26590.method324("AddBlocks");
+        if (method26590.contains("AddBlocks")) {
+            method26593 = method26590.getByteArray("AddBlocks");
         }
         for (int i = 0; i < method26591.length; ++i) {
             if (i >> 1 >= method26593.length) {

@@ -22,17 +22,17 @@ public class Class4046 extends Class4043
         if (class8321.getItem() == Items.field31525) {
             if (class8321.method27656()) {
                 Object o = null;
-                final Class51 method27657 = class8321.method27657();
-                if (!method27657.method316("SkullOwner", 8)) {
-                    if (method27657.method316("SkullOwner", 10)) {
-                        final Class51 method27658 = method27657.method327("SkullOwner");
-                        if (method27658.method316("Name", 8)) {
-                            o = method27658.method323("Name");
+                final CompoundNBT method27657 = class8321.method27657();
+                if (!method27657.contains("SkullOwner", 8)) {
+                    if (method27657.contains("SkullOwner", 10)) {
+                        final CompoundNBT method27658 = method27657.getCompound("SkullOwner");
+                        if (method27658.contains("Name", 8)) {
+                            o = method27658.getString("Name");
                         }
                     }
                 }
                 else {
-                    o = method27657.method323("SkullOwner");
+                    o = method27657.getString("SkullOwner");
                 }
                 if (o != null) {
                     return new Class2259(this.method11717() + ".named", new Object[] { o });
@@ -43,10 +43,10 @@ public class Class4046 extends Class4043
     }
     
     @Override
-    public boolean method11702(final Class51 class51) {
+    public boolean method11702(final CompoundNBT class51) {
         super.method11702(class51);
-        if (class51.method316("SkullOwner", 8) && !StringUtils.isBlank((CharSequence)class51.method323("SkullOwner"))) {
-            class51.method295("SkullOwner", Class9346.method34641(new Class51(), Class493.method2508(new GameProfile((UUID)null, class51.method323("SkullOwner")))));
+        if (class51.contains("SkullOwner", 8) && !StringUtils.isBlank((CharSequence)class51.getString("SkullOwner"))) {
+            class51.put("SkullOwner", Class9346.method34641(new CompoundNBT(), Class493.method2508(new GameProfile((UUID)null, class51.getString("SkullOwner")))));
             return true;
         }
         return false;

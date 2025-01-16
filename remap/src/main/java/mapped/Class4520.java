@@ -28,11 +28,11 @@ public class Class4520 extends Class4515
         this.method13517(class1795);
     }
     
-    public Class4520(final Class1795 class1795, final Class51 class1796) {
+    public Class4520(final Class1795 class1795, final CompoundNBT class1796) {
         super(Class9520.field40995, class1796);
-        this.field19933 = class1796.method323("Template");
-        this.field19934 = Class2052.valueOf(class1796.method323("Rot"));
-        this.field19935 = Class2181.valueOf(class1796.method323("Mi"));
+        this.field19933 = class1796.getString("Template");
+        this.field19934 = Class2052.valueOf(class1796.getString("Rot"));
+        this.field19935 = Class2181.valueOf(class1796.getString("Mi"));
         this.method13517(class1795);
     }
     
@@ -41,11 +41,11 @@ public class Class4520 extends Class4515
     }
     
     @Override
-    public void method13415(final Class51 class51) {
+    public void method13415(final CompoundNBT class51) {
         super.method13415(class51);
-        class51.method306("Template", this.field19933);
-        class51.method306("Rot", this.field19919.method32856().name());
-        class51.method306("Mi", this.field19919.method32855().name());
+        class51.putString("Template", this.field19933);
+        class51.putString("Rot", this.field19919.method32856().name());
+        class51.putString("Mi", this.field19919.method32855().name());
     }
     
     @Override

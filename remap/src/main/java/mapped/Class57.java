@@ -15,8 +15,8 @@ public class Class57 extends ArrayList<Class9017>
     public Class57() {
     }
     
-    public Class57(final Class51 class51) {
-        final Class52 method328 = class51.method328("Recipes", 10);
+    public Class57(final CompoundNBT class51) {
+        final ListNBT method328 = class51.getList("Recipes", 10);
         for (int i = 0; i < method328.size(); ++i) {
             this.add(new Class9017(method328.method346(i)));
         }
@@ -82,13 +82,13 @@ public class Class57 extends ArrayList<Class9017>
         return class8655;
     }
     
-    public Class51 method362() {
-        final Class51 class51 = new Class51();
-        final Class52 class52 = new Class52();
+    public CompoundNBT method362() {
+        final CompoundNBT class51 = new CompoundNBT();
+        final ListNBT class52 = new ListNBT();
         for (int i = 0; i < this.size(); ++i) {
-            ((AbstractList<Class51>)class52).add(this.get(i).method32301());
+            ((AbstractList<CompoundNBT>)class52).add(this.get(i).method32301());
         }
-        class51.method295("Recipes", class52);
+        class51.put("Recipes", class52);
         return class51;
     }
 }

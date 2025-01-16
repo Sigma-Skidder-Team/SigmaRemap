@@ -8,14 +8,14 @@ import java.util.Locale;
 import com.google.common.collect.Lists;
 import java.util.List;
 
-public class Class5204
+public class CrashReportCategory
 {
-    private final Class7689 field22213;
+    private final CrashReport field22213;
     private final String field22214;
     private final List<Class8943> field22215;
     private StackTraceElement[] field22216;
     
-    public Class5204(final Class7689 field22213, final String field22214) {
+    public CrashReportCategory(final CrashReport field22213, final String field22214) {
         this.field22215 = Lists.newArrayList();
         this.field22216 = new StackTraceElement[0];
         this.field22213 = field22213;
@@ -59,9 +59,9 @@ public class Class5204
         return sb.toString();
     }
     
-    public Class5204 method16296(final String s, final Class7077<String> class7077) {
+    public CrashReportCategory addDetail(final String s, final Class7077<String> class7077) {
         try {
-            this.method16297(s, class7077.call());
+            this.addDetail(s, class7077.call());
         }
         catch (final Throwable t) {
             this.method16298(s, t);
@@ -69,13 +69,13 @@ public class Class5204
         return this;
     }
     
-    public Class5204 method16297(final String s, final Object o) {
+    public CrashReportCategory addDetail(final String s, final Object o) {
         this.field22215.add(new Class8943(s, o));
         return this;
     }
     
     public void method16298(final String s, final Throwable t) {
-        this.method16297(s, t);
+        this.addDetail(s, t);
     }
     
     public int method16299(final int n) {
@@ -141,10 +141,10 @@ public class Class5204
         return this.field22216;
     }
     
-    public static void method16304(final Class5204 class5204, final BlockPos class5205, final BlockState class5206) {
+    public static void method16304(final CrashReportCategory class5204, final BlockPos class5205, final BlockState class5206) {
         if (class5206 != null) {
-            class5204.method16296("Block", class5206::toString);
+            class5204.addDetail("Block", class5206::toString);
         }
-        class5204.method16296("Block location", () -> method16294(class5207));
+        class5204.addDetail("Block location", () -> method16294(class5207));
     }
 }

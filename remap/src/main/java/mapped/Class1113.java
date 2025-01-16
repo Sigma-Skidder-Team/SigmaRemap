@@ -9,7 +9,7 @@ import java.util.concurrent.ExecutorService;
 
 public final class Class1113 implements Runnable
 {
-    public final /* synthetic */ Runnable field5999;
+    public final Runnable field5999;
     
     public Class1113(final Runnable field5999) {
         this.field5999 = field5999;
@@ -42,6 +42,5 @@ public final class Class1113 implements Runnable
                 }
             }
         }
-        throw;
     }
 }

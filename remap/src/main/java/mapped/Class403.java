@@ -162,20 +162,20 @@ public class Class403 extends Class402
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("Trident", 10)) {
-            this.field2486 = ItemStack.method27619(class51.method327("Trident"));
+        if (class51.contains("Trident", 10)) {
+            this.field2486 = ItemStack.method27619(class51.getCompound("Trident"));
         }
-        this.field2487 = class51.method329("DealtDamage");
+        this.field2487 = class51.getBoolean("DealtDamage");
         this.dataManager.set(Class403.field2484, (byte)Class8742.method30219(this.field2486));
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method295("Trident", this.field2486.method27627(new Class51()));
-        class51.method312("DealtDamage", this.field2487);
+        class51.put("Trident", this.field2486.method27627(new CompoundNBT()));
+        class51.putBoolean("DealtDamage", this.field2487);
     }
     
     @Override

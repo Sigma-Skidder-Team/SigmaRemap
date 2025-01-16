@@ -13,16 +13,16 @@ public class Class499 extends TileEntity
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
-        class51.method298("OutputSignal", this.field2858);
+        class51.putInt("OutputSignal", this.field2858);
         return class51;
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2858 = class51.method319("OutputSignal");
+        this.field2858 = class51.getInt("OutputSignal");
     }
     
     public int method2537() {

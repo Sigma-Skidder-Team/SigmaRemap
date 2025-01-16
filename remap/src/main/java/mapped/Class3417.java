@@ -70,7 +70,7 @@ public class Class3417 extends Class3418
                             if (class8328.field25425 < 4) {
                                 class8325.method27641();
                                 class8330.method27691(1);
-                                class8330.method27658().method298("map_scale_direction", 1);
+                                class8330.method27658().putInt("map_scale_direction", 1);
                                 this.method10876();
                                 break Label_0169_1;
                             }

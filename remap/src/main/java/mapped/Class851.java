@@ -123,28 +123,28 @@ public class Class851 extends Class760 implements Class762
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.field4528 = new BlockPos(this).method1138(5);
         this.method5087(0);
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method315("AX")) {
-            this.field4528 = new BlockPos(class51.method319("AX"), class51.method319("AY"), class51.method319("AZ"));
+        if (class51.contains("AX")) {
+            this.field4528 = new BlockPos(class51.getInt("AX"), class51.getInt("AY"), class51.getInt("AZ"));
         }
-        this.method5087(class51.method319("Size"));
+        this.method5087(class51.getInt("Size"));
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("AX", this.field4528.getX());
-        class51.method298("AY", this.field4528.getY());
-        class51.method298("AZ", this.field4528.getZ());
-        class51.method298("Size", this.method5089());
+        class51.putInt("AX", this.field4528.getX());
+        class51.putInt("AY", this.field4528.getY());
+        class51.putInt("AZ", this.field4528.getZ());
+        class51.putInt("Size", this.method5089());
     }
     
     @Override

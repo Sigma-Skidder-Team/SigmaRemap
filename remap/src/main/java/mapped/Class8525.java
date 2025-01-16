@@ -16,15 +16,15 @@ public class Class8525
         this.field35794 = field35794;
     }
     
-    public static Class8525 method28588(final Class51 class51) {
-        return new Class8525(Class9346.method34645(class51.method327("Pos")), class51.method319("Rotation"), class51.method319("EntityId"));
+    public static Class8525 method28588(final CompoundNBT class51) {
+        return new Class8525(Class9346.method34645(class51.getCompound("Pos")), class51.getInt("Rotation"), class51.getInt("EntityId"));
     }
     
-    public Class51 method28589() {
-        final Class51 class51 = new Class51();
-        class51.method295("Pos", Class9346.method34646(this.field35792));
-        class51.method298("Rotation", this.field35793);
-        class51.method298("EntityId", this.field35794);
+    public CompoundNBT method28589() {
+        final CompoundNBT class51 = new CompoundNBT();
+        class51.put("Pos", Class9346.method34646(this.field35792));
+        class51.putInt("Rotation", this.field35793);
+        class51.putInt("EntityId", this.field35794);
         return class51;
     }
     

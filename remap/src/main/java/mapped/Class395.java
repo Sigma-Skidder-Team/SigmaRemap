@@ -228,10 +228,10 @@ public class Class395 extends MinecraftServer implements Class396
     }
     
     @Override
-    public Class7689 method1491(Class7689 method1491) {
+    public CrashReport method1491(CrashReport method1491) {
         method1491 = super.method1491(method1491);
-        method1491.method24417().method16296("Is Modded", () -> this.method1492().orElse("Unknown (can't tell)"));
-        method1491.method24417().method16296("Type", () -> "Dedicated Server (map_server.txt)");
+        method1491.method24417().addDetail("Is Modded", () -> this.method1492().orElse("Unknown (can't tell)"));
+        method1491.method24417().addDetail("Type", () -> "Dedicated Server (map_server.txt)");
         return method1491;
     }
     

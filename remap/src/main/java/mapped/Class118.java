@@ -11,9 +11,9 @@ public class Class118 implements Predicate<Class7990>
 {
     private final BlockState field366;
     private final Set<IProperty<?>> field367;
-    private final Class51 field368;
+    private final CompoundNBT field368;
     
-    public Class118(final BlockState field366, final Set<IProperty<?>> field367, final Class51 field368) {
+    public Class118(final BlockState field366, final Set<IProperty<?>> field367, final CompoundNBT field368) {
         this.field366 = field366;
         this.field367 = field367;
         this.field368 = field368;
@@ -37,7 +37,7 @@ public class Class118 implements Predicate<Class7990>
         }
         if (this.field368 != null) {
             final TileEntity method26066 = class7990.method26066();
-            return method26066 != null && Class9346.method34642(this.field368, method26066.method2180(new Class51()), true);
+            return method26066 != null && Class9346.method34642(this.field368, method26066.method2180(new CompoundNBT()), true);
         }
         return true;
     }
@@ -47,10 +47,10 @@ public class Class118 implements Predicate<Class7990>
             if (this.field368 != null) {
                 final TileEntity method6727 = class1849.getTileEntity(class1850);
                 if (method6727 != null) {
-                    final Class51 method6728 = this.field368.method333();
-                    method6728.method298("x", class1850.getX());
-                    method6728.method298("y", class1850.getY());
-                    method6728.method298("z", class1850.getZ());
+                    final CompoundNBT method6728 = this.field368.copy();
+                    method6728.putInt("x", class1850.getX());
+                    method6728.putInt("y", class1850.getY());
+                    method6728.putInt("z", class1850.getZ());
                     method6727.method2179(method6728);
                 }
             }

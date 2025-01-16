@@ -25,20 +25,20 @@ public abstract class Class456 extends Class460
         }
     }
     
-    public boolean method2324(final Class51 class51) {
-        if (!class51.method316("LootTable", 8)) {
+    public boolean method2324(final CompoundNBT class51) {
+        if (!class51.contains("LootTable", 8)) {
             return false;
         }
-        this.field2710 = new ResourceLocation(class51.method323("LootTable"));
-        this.field2711 = class51.method320("LootTableSeed");
+        this.field2710 = new ResourceLocation(class51.getString("LootTable"));
+        this.field2711 = class51.getLong("LootTableSeed");
         return true;
     }
     
-    public boolean method2325(final Class51 class51) {
+    public boolean method2325(final CompoundNBT class51) {
         if (this.field2710 != null) {
-            class51.method306("LootTable", this.field2710.toString());
+            class51.putString("LootTable", this.field2710.toString());
             if (this.field2711 != 0L) {
-                class51.method299("LootTableSeed", this.field2711);
+                class51.putLong("LootTableSeed", this.field2711);
             }
             return true;
         }

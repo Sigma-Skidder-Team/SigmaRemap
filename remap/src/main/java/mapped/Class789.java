@@ -59,11 +59,11 @@ public abstract class Class789 extends Class788
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("InLove", this.field4202);
+        class51.putInt("InLove", this.field4202);
         if (this.field4203 != null) {
-            class51.method300("LoveCause", this.field4203);
+            class51.putUniqueId("LoveCause", this.field4203);
         }
     }
     
@@ -73,10 +73,10 @@ public abstract class Class789 extends Class788
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field4202 = class51.method319("InLove");
-        this.field4203 = (class51.method302("LoveCause") ? class51.method301("LoveCause") : null);
+        this.field4202 = class51.getInt("InLove");
+        this.field4203 = (class51.hasUniqueId("LoveCause") ? class51.getUniqueId("LoveCause") : null);
     }
     
     public static boolean method4356(final EntityType<? extends Class789> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {

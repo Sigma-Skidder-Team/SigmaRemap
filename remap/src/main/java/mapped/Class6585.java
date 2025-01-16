@@ -75,10 +75,10 @@ public class Class6585
                             }
                         }
                         else {
-                            final Class51 method1138 = method1137.method2180(new Class51());
-                            method1138.method330("x");
-                            method1138.method330("y");
-                            method1138.method330("z");
+                            final CompoundNBT method1138 = method1137.method2180(new CompoundNBT());
+                            method1138.remove("x");
+                            method1138.remove("y");
+                            method1138.remove("z");
                             arrayList2.add(new Class9038(method1135, method1136, method1138));
                         }
                     }
@@ -104,7 +104,7 @@ public class Class6585
         this.field26125.clear();
         for (final Entity class1850 : method6739) {
             final Vec3d class1851 = new Vec3d(class1850.getPosX() - class1848.getX(), class1850.getPosY() - class1848.getY(), class1850.getPosZ() - class1848.getZ());
-            final Class51 class1852 = new Class51();
+            final CompoundNBT class1852 = new CompoundNBT();
             class1850.method1755(class1852);
             BlockPos method6740;
             if (!(class1850 instanceof Class861)) {
@@ -202,9 +202,9 @@ public class Class6585
                             if (class1854.field38250 != null) {
                                 final TileEntity method32868 = class1851.getTileEntity(field38248);
                                 if (method32868 != null) {
-                                    class1854.field38250.method298("x", field38248.getX());
-                                    class1854.field38250.method298("y", field38248.getY());
-                                    class1854.field38250.method298("z", field38248.getZ());
+                                    class1854.field38250.putInt("x", field38248.getX());
+                                    class1854.field38250.putInt("y", field38248.getY());
+                                    class1854.field38250.putInt("z", field38248.getZ());
                                     method32868.method2179(class1854.field38250);
                                     method32868.method2205(class1853.method32855());
                                     method32868.method2204(class1853.method32856());
@@ -339,15 +339,15 @@ public class Class6585
             if (class1856 != null && !class1856.isVecInside(method1135)) {
                 continue;
             }
-            final Class51 field30512 = class1857.field30512;
+            final CompoundNBT field30512 = class1857.field30512;
             final Vec3d method1136 = method19963(class1857.field30510, class1853, class1854, class1855).add(class1852.getX(), class1852.getY(), class1852.getZ());
-            final Class52 class1858 = new Class52();
-            ((AbstractList<Class44>)class1858).add(Class44.method277(method1136.x));
-            ((AbstractList<Class44>)class1858).add(Class44.method277(method1136.y));
-            ((AbstractList<Class44>)class1858).add(Class44.method277(method1136.z));
-            field30512.method295("Pos", class1858);
-            field30512.method330("UUIDMost");
-            field30512.method330("UUIDLeast");
+            final ListNBT class1858 = new ListNBT();
+            ((AbstractList<DoubleNBT>)class1858).add(DoubleNBT.method277(method1136.x));
+            ((AbstractList<DoubleNBT>)class1858).add(DoubleNBT.method277(method1136.y));
+            ((AbstractList<DoubleNBT>)class1858).add(DoubleNBT.method277(method1136.z));
+            field30512.put("Pos", class1858);
+            field30512.remove("UUIDMost");
+            field30512.remove("UUIDLeast");
             method19960(class1851, field30512).ifPresent(class1863 -> {
                 class1863.method1730(class1861.field22770, class1861.field22771, class1861.field22772, class1863.method1904(class1859) + (class1863.rotationYaw - class1863.method1903(class1860)), class1863.rotationPitch);
                 class1862.method6886(class1863);
@@ -355,7 +355,7 @@ public class Class6585
         }
     }
     
-    private static Optional<Entity> method19960(final Class1851 class1851, final Class51 class1852) {
+    private static Optional<Entity> method19960(final Class1851 class1851, final CompoundNBT class1852) {
         try {
             return EntityType.method23373(class1852, class1851.method6744());
         }
@@ -541,7 +541,7 @@ public class Class6585
         class2053.offset(class2056.getX(), 0, class2056.getZ());
     }
     
-    public Class51 method19968(final Class51 class51) {
+    public CompoundNBT method19968(final CompoundNBT class51) {
         if (!this.field26124.isEmpty()) {
             final ArrayList arrayList = Lists.newArrayList();
             final Class2249 class52 = new Class2249(null);
@@ -549,109 +549,109 @@ public class Class6585
             for (int i = 1; i < this.field26124.size(); ++i) {
                 arrayList.add(new Class2249(null));
             }
-            final Class52 class53 = new Class52();
+            final ListNBT class53 = new ListNBT();
             final List list = this.field26124.get(0);
             for (int j = 0; j < list.size(); ++j) {
                 final Class9038 class54 = (Class9038)list.get(j);
-                final Class51 e = new Class51();
-                e.method295("pos", this.method19971(class54.field38248.getX(), class54.field38248.getY(), class54.field38248.getZ()));
+                final CompoundNBT e = new CompoundNBT();
+                e.put("pos", this.method19971(class54.field38248.getX(), class54.field38248.getY(), class54.field38248.getZ()));
                 final int method8452 = class52.method8452(class54.field38249);
-                e.method298("state", method8452);
+                e.putInt("state", method8452);
                 if (class54.field38250 != null) {
-                    e.method295("nbt", class54.field38250);
+                    e.put("nbt", class54.field38250);
                 }
-                ((AbstractList<Class51>)class53).add(e);
+                ((AbstractList<CompoundNBT>)class53).add(e);
                 for (int k = 1; k < this.field26124.size(); ++k) {
                     ((Class2249)arrayList.get(k)).method8454(this.field26124.get(k).get(j).field38249, method8452);
                 }
             }
-            class51.method295("blocks", class53);
+            class51.put("blocks", class53);
             if (arrayList.size() != 1) {
-                final Class52 class55 = new Class52();
+                final ListNBT class55 = new ListNBT();
                 for (final Class2249 class56 : arrayList) {
-                    final Class52 e2 = new Class52();
+                    final ListNBT e2 = new ListNBT();
                     final Iterator<BlockState> iterator2 = class56.iterator();
                     while (iterator2.hasNext()) {
-                        ((AbstractList<Class51>)e2).add(Class9346.method34649(iterator2.next()));
+                        ((AbstractList<CompoundNBT>)e2).add(Class9346.method34649(iterator2.next()));
                     }
-                    ((AbstractList<Class52>)class55).add(e2);
+                    ((AbstractList<ListNBT>)class55).add(e2);
                 }
-                class51.method295("palettes", class55);
+                class51.put("palettes", class55);
             }
             else {
-                final Class52 class57 = new Class52();
+                final ListNBT class57 = new ListNBT();
                 final Iterator<BlockState> iterator3 = class52.iterator();
                 while (iterator3.hasNext()) {
-                    ((AbstractList<Class51>)class57).add(Class9346.method34649(iterator3.next()));
+                    ((AbstractList<CompoundNBT>)class57).add(Class9346.method34649(iterator3.next()));
                 }
-                class51.method295("palette", class57);
+                class51.put("palette", class57);
             }
         }
         else {
-            class51.method295("blocks", new Class52());
-            class51.method295("palette", new Class52());
+            class51.put("blocks", new ListNBT());
+            class51.put("palette", new ListNBT());
         }
-        final Class52 class58 = new Class52();
+        final ListNBT class58 = new ListNBT();
         for (final Class7682 class59 : this.field26125) {
-            final Class51 e3 = new Class51();
-            e3.method295("pos", this.method19972(class59.field30510.x, class59.field30510.y, class59.field30510.z));
-            e3.method295("blockPos", this.method19971(class59.field30511.getX(), class59.field30511.getY(), class59.field30511.getZ()));
+            final CompoundNBT e3 = new CompoundNBT();
+            e3.put("pos", this.method19972(class59.field30510.x, class59.field30510.y, class59.field30510.z));
+            e3.put("blockPos", this.method19971(class59.field30511.getX(), class59.field30511.getY(), class59.field30511.getZ()));
             if (class59.field30512 != null) {
-                e3.method295("nbt", class59.field30512);
+                e3.put("nbt", class59.field30512);
             }
-            ((AbstractList<Class51>)class58).add(e3);
+            ((AbstractList<CompoundNBT>)class58).add(e3);
         }
-        class51.method295("entities", class58);
-        class51.method295("size", this.method19971(this.field26126.getX(), this.field26126.getY(), this.field26126.getZ()));
-        class51.method298("DataVersion", Class9528.method35579().getWorldVersion());
+        class51.put("entities", class58);
+        class51.put("size", this.method19971(this.field26126.getX(), this.field26126.getY(), this.field26126.getZ()));
+        class51.putInt("DataVersion", Class9528.method35579().getWorldVersion());
         return class51;
     }
     
-    public void method19969(final Class51 class51) {
+    public void method19969(final CompoundNBT class51) {
         this.field26124.clear();
         this.field26125.clear();
-        final Class52 method328 = class51.method328("size", 3);
+        final ListNBT method328 = class51.getList("size", 3);
         this.field26126 = new BlockPos(method328.method349(0), method328.method349(1), method328.method349(2));
-        final Class52 method329 = class51.method328("blocks", 10);
-        if (!class51.method316("palettes", 9)) {
-            this.method19970(class51.method328("palette", 10), method329);
+        final ListNBT method329 = class51.getList("blocks", 10);
+        if (!class51.contains("palettes", 9)) {
+            this.method19970(class51.getList("palette", 10), method329);
         }
         else {
-            final Class52 method330 = class51.method328("palettes", 9);
+            final ListNBT method330 = class51.getList("palettes", 9);
             for (int i = 0; i < method330.size(); ++i) {
                 this.method19970(method330.method347(i), method329);
             }
         }
-        final Class52 method331 = class51.method328("entities", 10);
+        final ListNBT method331 = class51.getList("entities", 10);
         for (int j = 0; j < method331.size(); ++j) {
-            final Class51 method332 = method331.method346(j);
-            final Class52 method333 = method332.method328("pos", 6);
+            final CompoundNBT method332 = method331.method346(j);
+            final ListNBT method333 = method332.getList("pos", 6);
             final Vec3d class52 = new Vec3d(method333.method351(0), method333.method351(1), method333.method351(2));
-            final Class52 method334 = method332.method328("blockPos", 3);
+            final ListNBT method334 = method332.getList("blockPos", 3);
             final BlockPos class53 = new BlockPos(method334.method349(0), method334.method349(1), method334.method349(2));
-            if (method332.method315("nbt")) {
-                this.field26125.add(new Class7682(class52, class53, method332.method327("nbt")));
+            if (method332.contains("nbt")) {
+                this.field26125.add(new Class7682(class52, class53, method332.getCompound("nbt")));
             }
         }
     }
     
-    private void method19970(final Class52 class52, final Class52 class53) {
+    private void method19970(final ListNBT class52, final ListNBT class53) {
         final Class2249 class54 = new Class2249(null);
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < class52.size(); ++i) {
             class54.method8454(Class9346.method34647(class52.method346(i)), i);
         }
         for (int j = 0; j < class53.size(); ++j) {
-            final Class51 method346 = class53.method346(j);
-            final Class52 method347 = method346.method328("pos", 3);
+            final CompoundNBT method346 = class53.method346(j);
+            final ListNBT method347 = method346.getList("pos", 3);
             final BlockPos class55 = new BlockPos(method347.method349(0), method347.method349(1), method347.method349(2));
-            final BlockState method348 = class54.method8453(method346.method319("state"));
-            Class51 method349;
-            if (!method346.method315("nbt")) {
+            final BlockState method348 = class54.method8453(method346.getInt("state"));
+            CompoundNBT method349;
+            if (!method346.contains("nbt")) {
                 method349 = null;
             }
             else {
-                method349 = method346.method327("nbt");
+                method349 = method346.getCompound("nbt");
             }
             arrayList.add(new Class9038(class55, method348, method349));
         }
@@ -659,18 +659,18 @@ public class Class6585
         this.field26124.add(arrayList);
     }
     
-    private Class52 method19971(final int... array) {
-        final Class52 class52 = new Class52();
+    private ListNBT method19971(final int... array) {
+        final ListNBT class52 = new ListNBT();
         for (int length = array.length, i = 0; i < length; ++i) {
             ((AbstractList<IntNBT>)class52).add(IntNBT.valueOf(array[i]));
         }
         return class52;
     }
     
-    private Class52 method19972(final double... array) {
-        final Class52 class52 = new Class52();
+    private ListNBT method19972(final double... array) {
+        final ListNBT class52 = new ListNBT();
         for (int length = array.length, i = 0; i < length; ++i) {
-            ((AbstractList<Class44>)class52).add(Class44.method277(array[i]));
+            ((AbstractList<DoubleNBT>)class52).add(DoubleNBT.method277(array[i]));
         }
         return class52;
     }

@@ -19,10 +19,10 @@ public class Class4298 implements IPacket<IClientPlayNetHandler>
     private int field19267;
     private int field19268;
     private int field19269;
-    private Class51 field19270;
+    private CompoundNBT field19270;
     private Class1873 field19271;
     private byte[] field19272;
-    public List<Class51> field19273;
+    public List<CompoundNBT> field19273;
     public boolean field19274;
     private Map<String, Object> field19275;
     
@@ -34,12 +34,12 @@ public class Class4298 implements IPacket<IClientPlayNetHandler>
         this.field19267 = method7019.field32290;
         this.field19268 = method7019.field32291;
         this.field19274 = (n == 65535);
-        this.field19270 = new Class51();
+        this.field19270 = new CompoundNBT();
         for (final Map.Entry<Class2020, V> entry : class1862.method7015()) {
             if (!entry.getKey().method8061()) {
                 continue;
             }
-            this.field19270.method295(entry.getKey().method8060(), new Class39(((Class9548)entry.getValue()).method35717()));
+            this.field19270.put(entry.getKey().method8060(), new LongArrayNBT(((Class9548)entry.getValue()).method35717()));
         }
         if (this.field19274) {
             this.field19271 = class1862.method7024().clone();
@@ -95,7 +95,7 @@ public class Class4298 implements IPacket<IClientPlayNetHandler>
         class8654.writeVarInt(this.field19272.length);
         class8654.writeBytes(this.field19272);
         class8654.writeVarInt(this.field19273.size());
-        final Iterator<Class51> iterator = this.field19273.iterator();
+        final Iterator<CompoundNBT> iterator = this.field19273.iterator();
         while (iterator.hasNext()) {
             class8654.method29507(iterator.next());
         }
@@ -164,11 +164,11 @@ public class Class4298 implements IPacket<IClientPlayNetHandler>
         return this.field19274;
     }
     
-    public Class51 method12913() {
+    public CompoundNBT method12913() {
         return this.field19270;
     }
     
-    public List<Class51> method12914() {
+    public List<CompoundNBT> method12914() {
         return this.field19273;
     }
     

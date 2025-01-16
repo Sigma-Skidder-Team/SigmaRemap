@@ -76,7 +76,7 @@ public class Class8792
         this.field36970 = Class302.field1758;
     }
     
-    public Class8792(final Class1849 field36958, final Class51 class51) {
+    public Class8792(final Class1849 field36958, final CompoundNBT class51) {
         this.field36953 = Maps.newHashMap();
         this.field36954 = Maps.newHashMap();
         this.field36955 = Sets.newHashSet();
@@ -84,23 +84,23 @@ public class Class8792
         this.field36968 = new Random();
         this.field36972 = Optional.empty();
         this.field36958 = field36958;
-        this.field36960 = class51.method319("Id");
-        this.field36959 = class51.method329("Started");
-        this.field36963 = class51.method329("Active");
-        this.field36956 = class51.method320("TicksActive");
-        this.field36962 = class51.method319("BadOmenLevel");
-        this.field36964 = class51.method319("GroupsSpawned");
-        this.field36967 = class51.method319("PreRaidTicks");
-        this.field36966 = class51.method319("PostRaidTicks");
-        this.field36961 = class51.method321("TotalHealth");
-        this.field36957 = new BlockPos(class51.method319("CX"), class51.method319("CY"), class51.method319("CZ"));
-        this.field36969 = class51.method319("NumGroups");
-        this.field36970 = Class302.method960(class51.method323("Status"));
+        this.field36960 = class51.getInt("Id");
+        this.field36959 = class51.getBoolean("Started");
+        this.field36963 = class51.getBoolean("Active");
+        this.field36956 = class51.getLong("TicksActive");
+        this.field36962 = class51.getInt("BadOmenLevel");
+        this.field36964 = class51.getInt("GroupsSpawned");
+        this.field36967 = class51.getInt("PreRaidTicks");
+        this.field36966 = class51.getInt("PostRaidTicks");
+        this.field36961 = class51.getFloat("TotalHealth");
+        this.field36957 = new BlockPos(class51.getInt("CX"), class51.getInt("CY"), class51.getInt("CZ"));
+        this.field36969 = class51.getInt("NumGroups");
+        this.field36970 = Class302.method960(class51.getString("Status"));
         this.field36955.clear();
-        if (class51.method316("HeroesOfTheVillage", 9)) {
-            final Class52 method328 = class51.method328("HeroesOfTheVillage", 10);
+        if (class51.contains("HeroesOfTheVillage", 9)) {
+            final ListNBT method328 = class51.getList("HeroesOfTheVillage", 10);
             for (int i = 0; i < method328.size(); ++i) {
-                this.field36955.add(method328.method346(i).method301("UUID"));
+                this.field36955.add(method328.method346(i).getUniqueId("UUID"));
             }
         }
     }
@@ -566,7 +566,7 @@ public class Class8792
     
     public static ItemStack method30651() {
         final ItemStack class8321 = new ItemStack(Items.field31556);
-        class8321.method27659("BlockEntityTag").method295("Patterns", new Class9142().method33336(Class230.field837, Class181.field546).method33336(Class230.field817, Class181.field545).method33336(Class230.field821, Class181.field544).method33336(Class230.field842, Class181.field545).method33336(Class230.field822, Class181.field552).method33336(Class230.field839, Class181.field545).method33336(Class230.field836, Class181.field545).method33336(Class230.field842, Class181.field552).method33337());
+        class8321.method27659("BlockEntityTag").put("Patterns", new Class9142().method33336(Class230.field837, Class181.field546).method33336(Class230.field817, Class181.field545).method33336(Class230.field821, Class181.field544).method33336(Class230.field842, Class181.field545).method33336(Class230.field822, Class181.field552).method33336(Class230.field839, Class181.field545).method33336(Class230.field836, Class181.field545).method33336(Class230.field842, Class181.field552).method33337());
         class8321.method27665(new Class2259("block.minecraft.ominous_banner", new Object[0]).applyTextStyle(TextFormatting.GOLD));
         return class8321;
     }
@@ -699,28 +699,28 @@ public class Class8792
         return this.field36963;
     }
     
-    public Class51 method30664(final Class51 class51) {
-        class51.method298("Id", this.field36960);
-        class51.method312("Started", this.field36959);
-        class51.method312("Active", this.field36963);
-        class51.method299("TicksActive", this.field36956);
-        class51.method298("BadOmenLevel", this.field36962);
-        class51.method298("GroupsSpawned", this.field36964);
-        class51.method298("PreRaidTicks", this.field36967);
-        class51.method298("PostRaidTicks", this.field36966);
-        class51.method304("TotalHealth", this.field36961);
-        class51.method298("NumGroups", this.field36969);
-        class51.method306("Status", this.field36970.method959());
-        class51.method298("CX", this.field36957.getX());
-        class51.method298("CY", this.field36957.getY());
-        class51.method298("CZ", this.field36957.getZ());
-        final Class52 class52 = new Class52();
+    public CompoundNBT method30664(final CompoundNBT class51) {
+        class51.putInt("Id", this.field36960);
+        class51.putBoolean("Started", this.field36959);
+        class51.putBoolean("Active", this.field36963);
+        class51.putLong("TicksActive", this.field36956);
+        class51.putInt("BadOmenLevel", this.field36962);
+        class51.putInt("GroupsSpawned", this.field36964);
+        class51.putInt("PreRaidTicks", this.field36967);
+        class51.putInt("PostRaidTicks", this.field36966);
+        class51.putFloat("TotalHealth", this.field36961);
+        class51.putInt("NumGroups", this.field36969);
+        class51.putString("Status", this.field36970.method959());
+        class51.putInt("CX", this.field36957.getX());
+        class51.putInt("CY", this.field36957.getY());
+        class51.putInt("CZ", this.field36957.getZ());
+        final ListNBT class52 = new ListNBT();
         for (final UUID uuid : this.field36955) {
-            final Class51 e = new Class51();
-            e.method300("UUID", uuid);
-            ((AbstractList<Class51>)class52).add(e);
+            final CompoundNBT e = new CompoundNBT();
+            e.putUniqueId("UUID", uuid);
+            ((AbstractList<CompoundNBT>)class52).add(e);
         }
-        class51.method295("HeroesOfTheVillage", class52);
+        class51.put("HeroesOfTheVillage", class52);
         return class51;
     }
     

@@ -7,12 +7,12 @@ package mapped;
 public class Class8548
 {
     private static String[] field35894;
-    private static final Class47[] field35895;
+    private static final ByteNBT[] field35895;
     
     static {
-        field35895 = new Class47[256];
+        field35895 = new ByteNBT[256];
         for (int i = 0; i < Class8548.field35895.length; ++i) {
-            Class8548.field35895[i] = new Class47((byte)(i - 128), null);
+            Class8548.field35895[i] = new ByteNBT((byte)(i - 128), null);
         }
     }
 }

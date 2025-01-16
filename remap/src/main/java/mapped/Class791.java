@@ -168,17 +168,17 @@ public class Class791 extends Class789
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method306("MainGene", this.method4385().method7959());
-        class51.method306("HiddenGene", this.method4387().method7959());
+        class51.putString("MainGene", this.method4385().method7959());
+        class51.putString("HiddenGene", this.method4387().method7959());
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.method4386(Class1965.method7963(class51.method323("MainGene")));
-        this.method4388(Class1965.method7963(class51.method323("HiddenGene")));
+        this.method4386(Class1965.method7963(class51.getString("MainGene")));
+        this.method4388(Class1965.method7963(class51.getString("HiddenGene")));
     }
     
     @Nullable
@@ -486,7 +486,7 @@ public class Class791 extends Class789
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         this.method4386(Class1965.method7964(this.rand));
         this.method4388(Class1965.method7964(this.rand));
         this.method4411();

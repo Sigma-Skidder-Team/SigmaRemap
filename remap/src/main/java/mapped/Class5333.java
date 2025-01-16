@@ -28,7 +28,7 @@ public class Class5333
         return arrayList;
     }
     
-    public static List<Class1948> method16467(final Class51 class51) {
+    public static List<Class1948> method16467(final CompoundNBT class51) {
         final ArrayList arrayList = Lists.newArrayList();
         arrayList.addAll(method16475(class51).method26449());
         method16470(class51, arrayList);
@@ -39,16 +39,16 @@ public class Class5333
         return method16469(class8321.method27657());
     }
     
-    public static List<Class1948> method16469(final Class51 class51) {
+    public static List<Class1948> method16469(final CompoundNBT class51) {
         final ArrayList arrayList = Lists.newArrayList();
         method16470(class51, arrayList);
         return arrayList;
     }
     
-    public static void method16470(final Class51 class51, final List<Class1948> list) {
+    public static void method16470(final CompoundNBT class51, final List<Class1948> list) {
         if (class51 != null) {
-            if (class51.method316("CustomPotionEffects", 9)) {
-                final Class52 method328 = class51.method328("CustomPotionEffects", 10);
+            if (class51.contains("CustomPotionEffects", 9)) {
+                final ListNBT method328 = class51.getList("CustomPotionEffects", 10);
                 for (int i = 0; i < method328.size(); ++i) {
                     final Class1948 method329 = Class1948.method7918(method328.method346(i));
                     if (method329 != null) {
@@ -60,9 +60,9 @@ public class Class5333
     }
     
     public static int method16471(final ItemStack class8321) {
-        final Class51 method27657 = class8321.method27657();
-        if (method27657 != null && method27657.method316("CustomPotionColor", 99)) {
-            return method27657.method319("CustomPotionColor");
+        final CompoundNBT method27657 = class8321.method27657();
+        if (method27657 != null && method27657.contains("CustomPotionColor", 99)) {
+            return method27657.getInt("CustomPotionColor");
         }
         return (method16474(class8321) != Class8644.field36250) ? method16473(method16465(class8321)) : 16253176;
     }
@@ -104,14 +104,14 @@ public class Class5333
         return method16475(class8321.method27657());
     }
     
-    public static Class8061 method16475(final Class51 class51) {
-        return (class51 != null) ? Class8061.method26447(class51.method323("Potion")) : Class8644.field36250;
+    public static Class8061 method16475(final CompoundNBT class51) {
+        return (class51 != null) ? Class8061.method26447(class51.getString("Potion")) : Class8644.field36250;
     }
     
     public static ItemStack method16476(final ItemStack class8321, final Class8061 class8322) {
         final ResourceLocation method503 = Registry.field212.getKey(class8322);
         if (class8322 != Class8644.field36250) {
-            class8321.method27658().method306("Potion", method503.toString());
+            class8321.method27658().putString("Potion", method503.toString());
         }
         else {
             class8321.method27661("Potion");
@@ -121,13 +121,13 @@ public class Class5333
     
     public static ItemStack method16477(final ItemStack class8321, final Collection<Class1948> collection) {
         if (!collection.isEmpty()) {
-            final Class51 method27658 = class8321.method27658();
-            final Class52 method27659 = method27658.method328("CustomPotionEffects", 9);
+            final CompoundNBT method27658 = class8321.method27658();
+            final ListNBT method27659 = method27658.getList("CustomPotionEffects", 9);
             final Iterator iterator = collection.iterator();
             while (iterator.hasNext()) {
-                ((AbstractList<Class51>)method27659).add(((Class1948)iterator.next()).method7916(new Class51()));
+                ((AbstractList<CompoundNBT>)method27659).add(((Class1948)iterator.next()).method7916(new CompoundNBT()));
             }
-            method27658.method295("CustomPotionEffects", method27659);
+            method27658.put("CustomPotionEffects", method27659);
             return class8321;
         }
         return class8321;

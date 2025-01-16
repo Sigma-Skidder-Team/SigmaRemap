@@ -16,13 +16,13 @@ public class Class494 extends TileEntity implements Class439
     }
     
     @Override
-    public void method2179(final Class51 class51) {
+    public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
         this.field2840.method13889(class51);
     }
     
     @Override
-    public Class51 method2180(final Class51 class51) {
+    public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         this.field2840.method13890(class51);
         return class51;
@@ -40,9 +40,9 @@ public class Class494 extends TileEntity implements Class439
     }
     
     @Override
-    public Class51 method2196() {
-        final Class51 method2180 = this.method2180(new Class51());
-        method2180.method330("SpawnPotentials");
+    public CompoundNBT method2196() {
+        final CompoundNBT method2180 = this.method2180(new CompoundNBT());
+        method2180.remove("SpawnPotentials");
         return method2180;
     }
     

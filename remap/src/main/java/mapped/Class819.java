@@ -34,7 +34,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         if (class1854 == null) {
             class1854 = new Class5497();
             ((Class5497)class1854).method16801(false);
@@ -139,29 +139,29 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         final Class57 method4825 = this.method4825();
         if (!method4825.isEmpty()) {
-            class51.method295("Offers", method4825.method362());
+            class51.put("Offers", method4825.method362());
         }
-        final Class52 class52 = new Class52();
+        final ListNBT class52 = new ListNBT();
         for (int i = 0; i < this.field4391.method2239(); ++i) {
             final ItemStack method4826 = this.field4391.method2157(i);
             if (!method4826.method27620()) {
-                ((AbstractList<Class51>)class52).add(method4826.method27627(new Class51()));
+                ((AbstractList<CompoundNBT>)class52).add(method4826.method27627(new CompoundNBT()));
             }
         }
-        class51.method295("Inventory", class52);
+        class51.put("Inventory", class52);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("Offers", 10)) {
-            this.field4390 = new Class57(class51.method327("Offers"));
+        if (class51.contains("Offers", 10)) {
+            this.field4390 = new Class57(class51.getCompound("Offers"));
         }
-        final Class52 method328 = class51.method328("Inventory", 10);
+        final ListNBT method328 = class51.getList("Inventory", 10);
         for (int i = 0; i < method328.size(); ++i) {
             final ItemStack method329 = ItemStack.method27619(method328.method346(i));
             if (!method329.method27620()) {

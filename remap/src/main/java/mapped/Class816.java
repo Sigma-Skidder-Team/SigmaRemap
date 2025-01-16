@@ -29,16 +29,16 @@ public class Class816 extends Class815
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method298("DespawnDelay", this.field4375);
+        class51.putInt("DespawnDelay", this.field4375);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("DespawnDelay", 99)) {
-            this.field4375 = class51.method319("DespawnDelay");
+        if (class51.contains("DespawnDelay", 99)) {
+            this.field4375 = class51.getInt("DespawnDelay");
         }
     }
     
@@ -95,7 +95,7 @@ public class Class816 extends Class815
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
         if (class1853 == Class2101.field12181) {
             this.method4354(0);
         }

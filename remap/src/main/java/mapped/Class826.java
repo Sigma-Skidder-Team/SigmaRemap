@@ -24,7 +24,7 @@ public class Class826 extends Class827 implements Class825
     private int field4418;
     private UUID field4419;
     private INBT field4420;
-    private Class51 field4421;
+    private CompoundNBT field4421;
     private int field4422;
     
     public Class826(final EntityType<? extends Class826> class7499, final World class7500) {
@@ -40,41 +40,41 @@ public class Class826 extends Class827 implements Class825
     }
     
     @Override
-    public void method1761(final Class51 class51) {
+    public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.method295("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
+        class51.put("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
         if (this.field4421 != null) {
-            class51.method295("Offers", this.field4421);
+            class51.put("Offers", this.field4421);
         }
         if (this.field4420 != null) {
-            class51.method295("Gossips", this.field4420);
+            class51.put("Gossips", this.field4420);
         }
-        class51.method298("ConversionTime", this.method4913() ? this.field4418 : -1);
+        class51.putInt("ConversionTime", this.method4913() ? this.field4418 : -1);
         if (this.field4419 != null) {
-            class51.method300("ConversionPlayer", this.field4419);
+            class51.putUniqueId("ConversionPlayer", this.field4419);
         }
-        class51.method298("Xp", this.field4422);
+        class51.putInt("Xp", this.field4422);
     }
     
     @Override
-    public void method1760(final Class51 class51) {
+    public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        if (class51.method316("VillagerData", 10)) {
-            this.method4921(new Class8562((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.method313("VillagerData"))));
+        if (class51.contains("VillagerData", 10)) {
+            this.method4921(new Class8562((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.get("VillagerData"))));
         }
-        if (class51.method316("Offers", 10)) {
-            this.field4421 = class51.method327("Offers");
+        if (class51.contains("Offers", 10)) {
+            this.field4421 = class51.getCompound("Offers");
         }
-        if (class51.method316("Gossips", 10)) {
-            this.field4420 = class51.method328("Gossips", 10);
+        if (class51.contains("Gossips", 10)) {
+            this.field4420 = class51.getList("Gossips", 10);
         }
-        if (class51.method316("ConversionTime", 99)) {
-            if (class51.method319("ConversionTime") > -1) {
-                this.method4914(class51.method302("ConversionPlayer") ? class51.method301("ConversionPlayer") : null, class51.method319("ConversionTime"));
+        if (class51.contains("ConversionTime", 99)) {
+            if (class51.getInt("ConversionTime") > -1) {
+                this.method4914(class51.hasUniqueId("ConversionPlayer") ? class51.getUniqueId("ConversionPlayer") : null, class51.getInt("ConversionTime"));
             }
         }
-        if (class51.method316("Xp", 3)) {
-            this.field4422 = class51.method319("Xp");
+        if (class51.contains("Xp", 3)) {
+            this.field4422 = class51.getInt("Xp");
         }
     }
     
@@ -247,7 +247,7 @@ public class Class826 extends Class827 implements Class825
         return ItemStack.field34174;
     }
     
-    public void method4919(final Class51 field4421) {
+    public void method4919(final CompoundNBT field4421) {
         this.field4421 = field4421;
     }
     
@@ -257,7 +257,7 @@ public class Class826 extends Class827 implements Class825
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final Class51 class1855) {
+    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.method4921(this.method4870().method28783(Class7611.method23913(class1851.method6959(new BlockPos(this)))));
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }

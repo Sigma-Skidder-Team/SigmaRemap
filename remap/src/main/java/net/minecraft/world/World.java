@@ -270,9 +270,9 @@ public abstract class World implements Class1851, AutoCloseable
                 method6701.method21734(this, class354, blockIn, class356, false);
             }
             catch (final Throwable t) {
-                final Class7689 method6702 = Class7689.method24421(t, "Exception while updating neighbours");
-                final Class5204 method6703 = method6702.method24418("Block being updated");
-                method6703.method16296("Source block type", () -> {
+                final CrashReport method6702 = CrashReport.makeCrashReport(t, "Exception while updating neighbours");
+                final CrashReportCategory method6703 = method6702.makeCategory("Block being updated");
+                method6703.addDetail("Source block type", () -> {
                     try {
                         return String.format("ID #%s (%s // %s)", Registry.BLOCK.getKey(blockIn), blockIn.method11856(), blockIn.getClass().getCanonicalName());
                     }
@@ -280,8 +280,8 @@ public abstract class World implements Class1851, AutoCloseable
                         return "ID #" + Registry.BLOCK.getKey(blockIn);
                     }
                 });
-                Class5204.method16304(method6703, class354, method6701);
-                throw new Class2365(method6702);
+                CrashReportCategory.method16304(method6703, class354, method6701);
+                throw new ReportedException(method6702);
             }
         }
     }
@@ -417,9 +417,9 @@ public abstract class World implements Class1851, AutoCloseable
                         method6796.endSection();
                     }
                     catch (final Throwable t) {
-                        final Class7689 method6798 = Class7689.method24421(t, "Ticking block entity");
-                        tileEntity.method2202(method6798.method24418("Block entity being ticked"));
-                        throw new Class2365(method6798);
+                        final CrashReport method6798 = CrashReport.makeCrashReport(t, "Ticking block entity");
+                        tileEntity.method2202(method6798.makeCategory("Block entity being ticked"));
+                        throw new ReportedException(method6798);
                     }
                 }
             }
@@ -459,9 +459,9 @@ public abstract class World implements Class1851, AutoCloseable
             consumer.accept(class399);
         }
         catch (final Throwable t) {
-            final Class7689 method24421 = Class7689.method24421(t, "Ticking entity");
-            class399.method1862(method24421.method24418("Entity being ticked"));
-            throw new Class2365(method24421);
+            final CrashReport method24421 = CrashReport.makeCrashReport(t, "Ticking entity");
+            class399.method1862(method24421.makeCategory("Entity being ticked"));
+            throw new ReportedException(method24421);
         }
     }
     
@@ -967,11 +967,11 @@ public abstract class World implements Class1851, AutoCloseable
         return this.dimension.method20504() ? 128 : 256;
     }
     
-    public Class5204 method6779(final Class7689 class7689) {
-        final Class5204 method24419 = class7689.method24419("Affected level", 1);
-        method24419.method16296("All players", () -> this.method6840().size() + " total; " + this.method6840());
-        method24419.method16296("Chunk stats", this.chunkProvider::method7404);
-        method24419.method16296("Level dimension", () -> this.dimension.getType().toString());
+    public CrashReportCategory method6779(final CrashReport class7689) {
+        final CrashReportCategory method24419 = class7689.makeCategoryDepth("Affected level", 1);
+        method24419.addDetail("All players", () -> this.method6840().size() + " total; " + this.method6840());
+        method24419.addDetail("Chunk stats", this.chunkProvider::method7404);
+        method24419.addDetail("Level dimension", () -> this.dimension.getType().toString());
         try {
             this.worldInfo.method29602(method24419);
         }
@@ -983,7 +983,7 @@ public abstract class World implements Class1851, AutoCloseable
     
     public abstract void method6780(final int p0, final BlockPos p1, final int p2);
     
-    public void method6781(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final Class51 class51) {
+    public void method6781(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final CompoundNBT class51) {
     }
     
     public abstract Class6516 method6782();

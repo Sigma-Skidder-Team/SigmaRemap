@@ -85,16 +85,16 @@ public class Class4036 extends Item
     
     private Class7096 method12234(final BlockPos class354, final World class355, final ItemStack class356, final Class7096 class357) {
         Class7096 method12235 = class357;
-        final Class51 method12236 = class356.method27657();
+        final CompoundNBT method12236 = class356.method27657();
         if (method12236 != null) {
-            final Class51 method12237 = method12236.method327("BlockStateTag");
+            final CompoundNBT method12237 = method12236.getCompound("BlockStateTag");
             final StateContainer<Block, Class7096> method12238 = class357.method21696().method11876();
-            for (final String s : method12237.method293()) {
+            for (final String s : method12237.keySet()) {
                 final IProperty method12239 = method12238.getProperty(s);
                 if (method12239 == null) {
                     continue;
                 }
-                method12235 = method12235(method12235, method12239, method12237.method313(s).getString());
+                method12235 = method12235(method12235, method12239, method12237.get(s).getString());
             }
         }
         if (method12235 != class357) {
@@ -128,7 +128,7 @@ public class Class4036 extends Item
     
     public static boolean method12239(final World class1847, final PlayerEntity class1848, final BlockPos class1849, final ItemStack class1850) {
         if (class1847.getServer() != null) {
-            final Class51 method27660 = class1850.method27660("BlockEntityTag");
+            final CompoundNBT method27660 = class1850.method27660("BlockEntityTag");
             if (method27660 != null) {
                 final TileEntity method27661 = class1847.getTileEntity(class1849);
                 if (method27661 != null) {
@@ -139,12 +139,12 @@ public class Class4036 extends Item
                             }
                         }
                     }
-                    final Class51 method27662 = method27661.method2180(new Class51());
-                    final Class51 method27663 = method27662.method333();
-                    method27662.method338(method27660);
-                    method27662.method298("x", class1849.getX());
-                    method27662.method298("y", class1849.getY());
-                    method27662.method298("z", class1849.getZ());
+                    final CompoundNBT method27662 = method27661.method2180(new CompoundNBT());
+                    final CompoundNBT method27663 = method27662.copy();
+                    method27662.merge(method27660);
+                    method27662.putInt("x", class1849.getX());
+                    method27662.putInt("y", class1849.getY());
+                    method27662.putInt("z", class1849.getZ());
                     if (!method27662.equals(method27663)) {
                         method27661.method2179(method27662);
                         method27661.method2161();
