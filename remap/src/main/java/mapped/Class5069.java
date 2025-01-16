@@ -13,7 +13,7 @@ public class Class5069 extends RealmsScreen
     private static final Logger field21730;
     private String field21731;
     private final RealmsConfigureWorldScreen field21732;
-    private final Class7437 field21733;
+    private final RealmsServer field21733;
     private Class5060 field21734;
     private int field21735;
     private int field21736;
@@ -26,7 +26,7 @@ public class Class5069 extends RealmsScreen
     private boolean field21743;
     private Class5066 field21744;
     
-    public Class5069(final RealmsConfigureWorldScreen field21732, final Class7437 field21733) {
+    public Class5069(final RealmsConfigureWorldScreen field21732, final RealmsServer field21733) {
         this.field21740 = -1;
         this.field21742 = -1;
         this.field21732 = field21732;
@@ -96,7 +96,7 @@ public class Class5069 extends RealmsScreen
         final RealmsClient method35444 = RealmsClient.func_224911_a();
         final String method35445 = this.field21733.field28682.get(n).method22852();
         try {
-            this.method15601(method35444.method35466(this.field21733.field28675, method35445));
+            this.method15601(method35444.method35466(this.field21733.id, method35445));
         }
         catch (final RealmsServiceException class2330) {
             Class5069.field21730.error("Couldn't op the user");
@@ -108,7 +108,7 @@ public class Class5069 extends RealmsScreen
         final RealmsClient method35444 = RealmsClient.func_224911_a();
         final String method35445 = this.field21733.field28682.get(n).method22852();
         try {
-            this.method15601(method35444.method35467(this.field21733.field28675, method35445));
+            this.method15601(method35444.method35467(this.field21733.id, method35445));
         }
         catch (final RealmsServiceException class2330) {
             Class5069.field21730.error("Couldn't deop the user");
@@ -139,7 +139,7 @@ public class Class5069 extends RealmsScreen
             if (b) {
                 final RealmsClient method35444 = RealmsClient.func_224911_a();
                 try {
-                    method35444.method35456(this.field21733.field28675, this.field21741);
+                    method35444.method35456(this.field21733.id, this.field21741);
                 }
                 catch (final RealmsServiceException class2330) {
                     Class5069.field21730.error("Couldn't uninvite user");

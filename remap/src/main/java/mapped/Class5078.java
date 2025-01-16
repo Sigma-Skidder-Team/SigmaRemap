@@ -11,7 +11,7 @@ public class Class5078 extends Class5075<Class7430>
 {
     private static final Logger field21802;
     private final RealmsScreen field21803;
-    private final Class7437 field21804;
+    private final RealmsServer field21804;
     private final RealmsScreen field21805;
     private Class5066 field21806;
     private Class5066 field21807;
@@ -32,7 +32,7 @@ public class Class5078 extends Class5075<Class7430>
     private String field21822;
     private int field21823;
     
-    public Class5078(final RealmsScreen field21803, final Class7437 field21804, final RealmsScreen field21805) {
+    public Class5078(final RealmsScreen field21803, final RealmsServer field21804, final RealmsScreen field21805) {
         this.field21808 = RealmsScreen.getLocalizedString("mco.reset.world.title");
         this.field21809 = RealmsScreen.getLocalizedString("mco.reset.world.warning");
         this.field21810 = RealmsScreen.getLocalizedString("gui.cancel");
@@ -45,7 +45,7 @@ public class Class5078 extends Class5075<Class7430>
         this.field21805 = field21805;
     }
     
-    public Class5078(final RealmsScreen class5046, final Class7437 class5047, final RealmsScreen class5048, final String field21808, final String field21809, final int field21810, final String field21811) {
+    public Class5078(final RealmsScreen class5046, final RealmsServer class5047, final RealmsScreen class5048, final String field21808, final String field21809, final int field21810, final String field21811) {
         this(class5046, class5047, class5048);
         this.field21808 = field21808;
         this.field21809 = field21809;
@@ -171,7 +171,7 @@ public class Class5078 extends Class5075<Class7430>
     }
     
     public void method15727(final RealmsScreen class5046) {
-        final Class5049 class5047 = new Class5049(this.field21803, new Class1344(this.field21804.field28675, this.field21818, class5046, 100));
+        final Class5049 class5047 = new Class5049(this.field21803, new Class1344(this.field21804.id, this.field21818, class5046, 100));
         class5047.method15466();
         Realms.setScreen(class5047);
     }
@@ -209,7 +209,7 @@ public class Class5078 extends Class5075<Class7430>
     }
     
     public void method15728(final Class7430 class7430) {
-        final Class1340 class7431 = new Class1340(this.field21804.field28675, this.field21805, class7430);
+        final Class1340 class7431 = new Class1340(this.field21804.id, this.field21805, class7430);
         if (this.field21822 != null) {
             class7431.method5627(this.field21822);
         }
@@ -233,7 +233,7 @@ public class Class5078 extends Class5075<Class7430>
     }
     
     private void method15730(final Class8999 class8999) {
-        final Class1340 class9000 = new Class1340(this.field21804.field28675, this.field21805, class8999.field37979, class8999.field37980, class8999.field37981);
+        final Class1340 class9000 = new Class1340(this.field21804.id, this.field21805, class8999.field37979, class8999.field37980, class8999.field37981);
         if (this.field21822 != null) {
             class9000.method5627(this.field21822);
         }

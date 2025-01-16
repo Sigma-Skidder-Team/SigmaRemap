@@ -11,7 +11,7 @@ public class Class5080 extends RealmsScreen
 {
     private static final Logger field21869;
     private Class5065 field21870;
-    private final Class7437 field21871;
+    private final RealmsServer field21871;
     private final RealmsConfigureWorldScreen field21872;
     private final RealmsScreen field21873;
     private final int field21874 = 0;
@@ -21,7 +21,7 @@ public class Class5080 extends RealmsScreen
     private String field21878;
     private boolean field21879;
     
-    public Class5080(final RealmsConfigureWorldScreen field21872, final RealmsScreen field21873, final Class7437 field21874) {
+    public Class5080(final RealmsConfigureWorldScreen field21872, final RealmsScreen field21873, final RealmsServer field21874) {
         this.field21872 = field21872;
         this.field21873 = field21873;
         this.field21871 = field21874;
@@ -50,7 +50,7 @@ public class Class5080 extends RealmsScreen
         final RealmsClient method35444 = RealmsClient.func_224911_a();
         if (this.field21870.method15586() != null && !this.field21870.method15586().isEmpty()) {
             try {
-                final Class7437 method35445 = method35444.method35458(this.field21871.field28675, this.field21870.method15586().trim());
+                final RealmsServer method35445 = method35444.method35458(this.field21871.id, this.field21870.method15586().trim());
                 if (method35445 != null) {
                     this.field21871.field28682 = method35445.field28682;
                     Realms.setScreen(new Class5069(this.field21872, this.field21871));

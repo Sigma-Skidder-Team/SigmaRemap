@@ -6,10 +6,10 @@ package mapped;
 
 public class Class626 extends Class624
 {
-    public final Class7437 field3607;
+    public final RealmsServer field3607;
     public final /* synthetic */ Class5079 field3608;
     
-    public Class626(final Class5079 field3608, final Class7437 field3609) {
+    public Class626(final Class5079 field3608, final RealmsServer field3609) {
         this.field3608 = field3608;
         this.field3607 = field3609;
     }
@@ -21,8 +21,8 @@ public class Class626 extends Class624
     
     @Override
     public boolean mouseClicked(final double n, final double n2, final int n3) {
-        if (this.field3607.field28679 != Class2153.field12793) {
-            Class5079.method15826(this.field3608, this.field3607.field28675);
+        if (this.field3607.state != RealmsServer.Status.field12793) {
+            Class5079.method15826(this.field3608, this.field3607.id);
         }
         else {
             Class5079.method15826(this.field3608, -1L);
@@ -31,18 +31,18 @@ public class Class626 extends Class624
         return true;
     }
     
-    private void method3625(final Class7437 class7437, final int n, final int n2, final int n3, final int n4) {
+    private void method3625(final RealmsServer class7437, final int n, final int n2, final int n3, final int n4) {
         this.method3626(class7437, n + 36, n2, n3, n4);
     }
     
-    private void method3626(final Class7437 class7437, final int n, final int n2, final int n3, final int n4) {
-        if (class7437.field28679 != Class2153.field12793) {
+    private void method3626(final RealmsServer class7437, final int n, final int n2, final int n3, final int n4) {
+        if (class7437.state != RealmsServer.Status.field12793) {
             if (!class7437.field28684) {
-                if (class7437.field28679 != Class2153.field12791) {
+                if (class7437.state != RealmsServer.Status.CLOSED) {
                     if (Class5079.method15844(this.field3608, class7437) && class7437.field28686 < 7) {
                         Class5079.method15845(this.field3608, n + 225 - 14, n2 + 2, n3, n4, class7437.field28686);
                     }
-                    else if (class7437.field28679 == Class2153.field12792) {
+                    else if (class7437.state == RealmsServer.Status.field12792) {
                         Class5079.method15846(this.field3608, n + 225 - 14, n2 + 2, n3, n4);
                     }
                 }

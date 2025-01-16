@@ -34,7 +34,7 @@ public class Class5079 extends RealmsScreen
     private Class5611 field21837;
     private Class5611 field21838;
     private String field21839;
-    private List<Class7437> field21840;
+    private List<RealmsServer> field21840;
     private volatile int field21841;
     private int field21842;
     private static volatile boolean field21843;
@@ -79,7 +79,7 @@ public class Class5079 extends RealmsScreen
         if (this.field21849 && !this.field21850) {
             return true;
         }
-        final Iterator<Class7437> iterator = this.field21840.iterator();
+        final Iterator<RealmsServer> iterator = this.field21840.iterator();
         while (iterator.hasNext()) {
             if (!iterator.next().field28681.equals(Realms.method25357())) {
                 continue;
@@ -169,7 +169,7 @@ public class Class5079 extends RealmsScreen
         this.method15748(this.method15771(this.field21833));
     }
     
-    private void method15748(final Class7437 class7437) {
+    private void method15748(final RealmsServer class7437) {
         this.field21834.method16917(this.method15750(class7437) && !this.method15745());
         this.field21836.method16919(this.method15751(class7437));
         this.field21837.method16919(this.method15752(class7437));
@@ -211,10 +211,10 @@ public class Class5079 extends RealmsScreen
         return false;
     }
     
-    private boolean method15750(final Class7437 class7437) {
+    private boolean method15750(final RealmsServer class7437) {
         if (class7437 != null) {
             if (!class7437.field28684) {
-                if (class7437.field28679 == Class2153.field12792) {
+                if (class7437.state == RealmsServer.Status.field12792) {
                     return true;
                 }
             }
@@ -222,7 +222,7 @@ public class Class5079 extends RealmsScreen
         return false;
     }
     
-    private boolean method15751(final Class7437 class7437) {
+    private boolean method15751(final RealmsServer class7437) {
         if (class7437 != null) {
             if (class7437.field28684) {
                 if (this.method15783(class7437)) {
@@ -233,11 +233,11 @@ public class Class5079 extends RealmsScreen
         return false;
     }
     
-    private boolean method15752(final Class7437 class7437) {
+    private boolean method15752(final RealmsServer class7437) {
         return class7437 != null && this.method15783(class7437);
     }
     
-    private boolean method15753(final Class7437 class7437) {
+    private boolean method15753(final RealmsServer class7437) {
         return class7437 != null && !this.method15783(class7437);
     }
     
@@ -267,7 +267,7 @@ public class Class5079 extends RealmsScreen
         if (this.method15746()) {
             Class5079.field21829.method32589();
             if (Class5079.field21829.method32591(Class2099.field12163)) {
-                final List<Class7437> method32594 = Class5079.field21829.method32594();
+                final List<RealmsServer> method32594 = Class5079.field21829.method32594();
                 this.field21832.method15513();
                 final boolean b = !this.field21846;
                 if (b) {
@@ -275,7 +275,7 @@ public class Class5079 extends RealmsScreen
                 }
                 if (method32594 != null) {
                     boolean b2 = false;
-                    final Iterator<Class7437> iterator = method32594.iterator();
+                    final Iterator<RealmsServer> iterator = method32594.iterator();
                     while (iterator.hasNext()) {
                         if (!this.method15784(iterator.next())) {
                             continue;
@@ -286,7 +286,7 @@ public class Class5079 extends RealmsScreen
                     if (this.method15744()) {
                         ((Class5056<Class629>)this.field21832).method15511(new Class629(this));
                     }
-                    final Iterator<Class7437> iterator2 = this.field21840.iterator();
+                    final Iterator<RealmsServer> iterator2 = this.field21840.iterator();
                     while (iterator2.hasNext()) {
                         ((Class5056<Class626>)this.field21832).method15511(new Class626(this, iterator2.next()));
                     }
@@ -323,8 +323,8 @@ public class Class5079 extends RealmsScreen
             }
             if (Class5079.field21829.method32591(Class2099.field12166)) {
                 for (final Class7429 class7429 : Class5079.field21829.method32597().field28722) {
-                    for (final Class7437 class7430 : this.field21840) {
-                        if (class7430.field28675 != class7429.field28646) {
+                    for (final RealmsServer class7430 : this.field21840) {
+                        if (class7430.id != class7429.field28646) {
                             continue;
                         }
                         class7430.method22876(class7429);
@@ -371,11 +371,11 @@ public class Class5079 extends RealmsScreen
     
     private List<Long> method15757() {
         final ArrayList arrayList = Lists.newArrayList();
-        for (final Class7437 class7437 : this.field21840) {
+        for (final RealmsServer class7437 : this.field21840) {
             if (!this.method15784(class7437)) {
                 continue;
             }
-            arrayList.add(class7437.field28675);
+            arrayList.add(class7437.id);
         }
         return arrayList;
     }
@@ -387,14 +387,14 @@ public class Class5079 extends RealmsScreen
     }
     
     private void method15758() {
-        final Class7437 method15771 = this.method15771(this.field21833);
+        final RealmsServer method15771 = this.method15771(this.field21833);
         if (method15771 != null) {
             this.method15781(method15771, this);
         }
     }
     
     private void method15759() {
-        final Class7437 method15771 = this.method15771(this.field21833);
+        final RealmsServer method15771 = this.method15771(this.field21833);
         if (method15771 != null) {
             this.method15755("https://aka.ms/ExtendJavaRealms?subscriptionId=" + method15771.field28676 + "&profileId=" + Realms.method25357() + "&ref=" + (method15771.field28685 ? "expiredTrial" : "expiredRealm"));
         }
@@ -444,14 +444,14 @@ public class Class5079 extends RealmsScreen
         Class5079.field21829.method32600();
     }
     
-    private void method15768(final Class7437 class7437) {
+    private void method15768(final RealmsServer class7437) {
         if (Realms.method25357().equals(class7437.field28681) || Class5079.field21825) {
             this.method15770();
             Minecraft.method5277().execute(() -> class7438.method5244(new RealmsConfigureWorldScreen(this, class7439.field28675).getProxy()));
         }
     }
     
-    private void method15769(final Class7437 class7437) {
+    private void method15769(final RealmsServer class7437) {
         if (class7437 != null) {
             if (!Realms.method25357().equals(class7437.field28681)) {
                 this.method15770();
@@ -464,9 +464,9 @@ public class Class5079 extends RealmsScreen
         Class5079.field21830 = this.field21832.method15530();
     }
     
-    private Class7437 method15771(final long n) {
-        for (final Class7437 class7437 : this.field21840) {
-            if (class7437.field28675 != n) {
+    private RealmsServer method15771(final long n) {
+        for (final RealmsServer class7437 : this.field21840) {
+            if (class7437.id != n) {
                 continue;
             }
             return class7437;
@@ -715,7 +715,7 @@ public class Class5079 extends RealmsScreen
         return false;
     }
     
-    public void method15781(final Class7437 class7437, final RealmsScreen class7438) {
+    public void method15781(final RealmsServer class7437, final RealmsScreen class7438) {
         if (class7437 != null) {
             try {
                 if (!this.field21861.tryLock(1L, TimeUnit.SECONDS)) {
@@ -733,17 +733,17 @@ public class Class5079 extends RealmsScreen
         }
     }
     
-    private void method15782(final Class7437 class7437, final RealmsScreen class7438) {
+    private void method15782(final RealmsServer class7437, final RealmsScreen class7438) {
         final Class5049 class7439 = new Class5049(class7438, new Class1341(this, class7438, class7437, this.field21861));
         class7439.method15466();
         Realms.setScreen(class7439);
     }
     
-    private boolean method15783(final Class7437 class7437) {
+    private boolean method15783(final RealmsServer class7437) {
         return class7437.field28681 != null && class7437.field28681.equals(Realms.method25357());
     }
     
-    private boolean method15784(final Class7437 class7437) {
+    private boolean method15784(final RealmsServer class7437) {
         if (class7437.field28681 != null) {
             if (class7437.field28681.equals(Realms.method25357())) {
                 if (!class7437.field28684) {

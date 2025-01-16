@@ -16,12 +16,12 @@ public class Class927 extends Thread
     @Override
     public void run() {
         try {
-            final Class7437 method15807 = Class5079.method15807(this.field4911, Class5079.method15806(this.field4911));
+            final RealmsServer method15807 = Class5079.method15807(this.field4911, Class5079.method15806(this.field4911));
             if (method15807 != null) {
-                RealmsClient.func_224911_a().method35457(method15807.field28675);
+                RealmsClient.func_224911_a().method35457(method15807.id);
                 Class5079.method15822().method32604(method15807);
                 Class5079.method15823(this.field4911).remove(method15807);
-                Class5079.method15824(this.field4911).method15535().removeIf(class2331 -> class2331 instanceof Class626 && ((Class626)class2331).field3607.field28675 == Class5079.method15806(this.field4911));
+                Class5079.method15824(this.field4911).method15535().removeIf(class2331 -> class2331 instanceof Class626 && ((Class626)class2331).field3607.id == Class5079.method15806(this.field4911));
                 Class5079.method15824(this.field4911).method15519(-1);
                 Class5079.method15825(this.field4911, null);
                 Class5079.method15826(this.field4911, -1L);

@@ -164,4 +164,62 @@ public class RealmsTasks
             }
         }
     }
+
+    public static class CloseServerTask extends LongRunningTask
+    {
+        private final RealmsServer field_224994_b;
+        private final RealmsConfigureWorldScreen field_224995_c;
+
+        public CloseServerTask(final RealmsServer field7334, final RealmsConfigureWorldScreen field7335) {
+            this.field_224994_b = field7334;
+            this.field_224995_c = field7335;
+        }
+
+        @Override
+        public void run()
+        {
+            this.func_224989_b(RealmsScreen.getLocalizedString("mco.configure.world.closing"));
+            RealmsClient realmsclient = RealmsClient.func_224911_a();
+
+            for (int i = 0; i < 25; ++i)
+            {
+                if (this.func_224988_a())
+                {
+                    return;
+                }
+
+                try
+                {
+                    boolean flag = realmsclient.func_224932_f(this.field_224994_b.id);
+
+                    if (flag)
+                    {
+                        this.field_224995_c.func_224398_a();
+                        this.field_224994_b.state = RealmsServer.Status.CLOSED;
+                        Realms.setScreen(this.field_224995_c);
+                        break;
+                    }
+                }
+                catch (RetryCallException retrycallexception)
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    RealmsTasks.func_225182_b(retrycallexception.field_224985_e);
+                }
+                catch (Exception exception)
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    RealmsTasks.field_225184_a.error("Failed to close server", (Throwable)exception);
+                    this.func_224986_a("Failed to close the server");
+                }
+            }
+        }
+    }
 }

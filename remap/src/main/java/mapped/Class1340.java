@@ -55,7 +55,7 @@ public class Class1340 extends LongRunningTask
                     return;
                 }
                 if (this.field7337 != null) {
-                    method35444.method35471(this.field7340, this.field7337.field28649);
+                    method35444.method35471(this.field7340, this.field7337.id);
                 }
                 else {
                     method35444.method35470(this.field7340, this.field7336, this.field7338, this.field7339);

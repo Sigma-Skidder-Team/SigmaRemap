@@ -17,7 +17,7 @@ public class Class5087 extends RealmsScreen
     private static final Logger field21962;
     private final RealmsScreen field21963;
     private final Class5079 field21964;
-    private Class7437 field21965;
+    private RealmsServer field21965;
     private final long field21966;
     private String field21967;
     private final String field21968;
@@ -162,7 +162,7 @@ public class Class5087 extends RealmsScreen
             else {
                 new Thread(() -> {
                     RealmsClient.func_224911_a();
-                    if (this.field21965.field28679.equals(Class2153.field12791)) {
+                    if (this.field21965.state.equals(RealmsServer.Status.CLOSED)) {
                         final Class5049 class5049 = new Class5049(this, new Class1342(this.field21965, this, this.field21963, true));
                         class5049.method15466();
                         Realms.setScreen(class5049);
@@ -192,7 +192,7 @@ public class Class5087 extends RealmsScreen
     private void method15935(final int i) {
         final RealmsClient method35444 = RealmsClient.func_224911_a();
         try {
-            final RealmsDownloadLatestWorldScreen class5047 = new RealmsDownloadLatestWorldScreen(this, method35444.func_224917_b(this.field21965.field28675, i), this.field21965.field28677 + " (" + this.field21965.field28683.get(i).method22842(i) + ")");
+            final RealmsDownloadLatestWorldScreen class5047 = new RealmsDownloadLatestWorldScreen(this, method35444.func_224917_b(this.field21965.id, i), this.field21965.field28677 + " (" + this.field21965.field28683.get(i).method22842(i) + ")");
             class5047.method15449(Class5087.field21976.get(i - 1));
             Realms.setScreen(class5047);
         }
@@ -253,7 +253,7 @@ public class Class5087 extends RealmsScreen
     }
     
     private void method15938(final int n) {
-        final Class5049 class5049 = new Class5049(this.field21963, new Class1344(this.field21965.field28675, n, this, 13));
+        final Class5049 class5049 = new Class5049(this.field21963, new Class1344(this.field21965.id, n, this, 13));
         class5049.method15466();
         Realms.setScreen(class5049);
     }

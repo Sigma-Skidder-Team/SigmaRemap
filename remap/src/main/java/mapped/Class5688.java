@@ -15,7 +15,7 @@ public class Class5688 extends Class5611
     
     @Override
     public void method16932() {
-        if (!Class5089.method15963(this.field23120).field28679.equals(Class2153.field12792)) {
+        if (!Class5089.method15963(this.field23120).field28679.equals(RealmsServer.Status.field12792)) {
             Class5089.method15962(this.field23120).method15705(false, this.field23120);
         }
         else {

@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 public class Class7430 extends ValueObject
 {
     private static final Logger field28648;
-    public String field28649;
+    public String id;
     public String field28650;
     public String field28651;
     public String field28652;
@@ -24,7 +24,7 @@ public class Class7430 extends ValueObject
     public static Class7430 method22863(final JsonObject jsonObject) {
         final Class7430 class7430 = new Class7430();
         try {
-            class7430.field28649 = JsonUtils.func_225171_a("id", jsonObject, "");
+            class7430.id = JsonUtils.func_225171_a("id", jsonObject, "");
             class7430.field28650 = JsonUtils.func_225171_a("name", jsonObject, "");
             class7430.field28651 = JsonUtils.func_225171_a("version", jsonObject, "");
             class7430.field28652 = JsonUtils.func_225171_a("author", jsonObject, "");

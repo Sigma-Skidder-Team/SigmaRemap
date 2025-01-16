@@ -9,12 +9,12 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Class1341 extends LongRunningTask
 {
-    private final Class7437 field7344;
+    private final RealmsServer field7344;
     private final RealmsScreen field7345;
     private final Class5079 field7346;
     private final ReentrantLock field7347;
     
-    public Class1341(final Class5079 field7346, final RealmsScreen field7347, final Class7437 field7348, final ReentrantLock field7349) {
+    public Class1341(final Class5079 field7346, final RealmsScreen field7347, final RealmsServer field7348, final ReentrantLock field7349) {
         this.field7345 = field7347;
         this.field7346 = field7346;
         this.field7344 = field7348;
@@ -33,7 +33,7 @@ public class Class1341 extends LongRunningTask
         boolean b4 = false;
         for (int n = 0; n < 40 && !this.func_224988_a(); ++n) {
             try {
-                method35445 = method35444.method35451(this.field7344.field28675);
+                method35445 = method35444.method35451(this.field7344.id);
                 b = true;
             }
             catch (final RetryCallException class2331) {
@@ -72,7 +72,7 @@ public class Class1341 extends LongRunningTask
         }
         else if (b4) {
             if (this.field7344.field28681.equals(Realms.method25357())) {
-                final Class5087 class2333 = new Class5087(this.field7345, this.field7346, this.field7344.field28675);
+                final Class5087 class2333 = new Class5087(this.field7345, this.field7346, this.field7344.id);
                 if (this.field7344.field28687.equals(Class271.field1472)) {
                     class2333.method15930(RealmsScreen.getLocalizedString("mco.brokenworld.minigame.title"));
                 }

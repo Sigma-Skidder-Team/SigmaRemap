@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 public class Class7425 extends ValueObject
 {
     private static final Logger field28625;
-    public List<Class7437> field28626;
+    public List<RealmsServer> field28626;
     
     public static Class7425 method22845(final String s) {
         final Class7425 class7425 = new Class7425();
@@ -26,7 +26,7 @@ public class Class7425 extends ValueObject
             if (asJsonObject.get("servers").isJsonArray()) {
                 final Iterator iterator = asJsonObject.get("servers").getAsJsonArray().iterator();
                 while (iterator.hasNext()) {
-                    class7425.field28626.add(Class7437.method22877(((JsonElement)iterator.next()).getAsJsonObject()));
+                    class7425.field28626.add(RealmsServer.method22877(((JsonElement)iterator.next()).getAsJsonObject()));
                 }
             }
         }

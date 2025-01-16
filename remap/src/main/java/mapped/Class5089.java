@@ -7,14 +7,14 @@ package mapped;
 public class Class5089 extends RealmsScreen
 {
     private final RealmsConfigureWorldScreen field21994;
-    private final Class7437 field21995;
+    private final RealmsServer field21995;
     private final int field21996 = 212;
     private Class5611 field21997;
     private Class5065 field21998;
     private Class5065 field21999;
     private Class5066 field22000;
     
-    public Class5089(final RealmsConfigureWorldScreen field21994, final Class7437 field21995) {
+    public Class5089(final RealmsConfigureWorldScreen field21994, final RealmsServer field21995) {
         this.field21994 = field21994;
         this.field21995 = field21995;
     }
@@ -32,7 +32,7 @@ public class Class5089 extends RealmsScreen
         final int n = this.width() / 2 - 106;
         this.buttonsAdd(this.field21997 = new Class5624(this, 1, n - 2, Class7869.method25488(12), 106, 20, RealmsScreen.getLocalizedString("mco.configure.world.buttons.done")));
         this.buttonsAdd(new Class5647(this, 0, this.width() / 2 + 2, Class7869.method25488(12), 106, 20, RealmsScreen.getLocalizedString("gui.cancel")));
-        this.buttonsAdd(new Class5688(this, 5, this.width() / 2 - 53, Class7869.method25488(0), 106, 20, RealmsScreen.getLocalizedString(this.field21995.field28679.equals(Class2153.field12792) ? "mco.configure.world.buttons.close" : "mco.configure.world.buttons.open")));
+        this.buttonsAdd(new Class5688(this, 5, this.width() / 2 - 53, Class7869.method25488(0), 106, 20, RealmsScreen.getLocalizedString(this.field21995.state.equals(RealmsServer.Status.field12792) ? "mco.configure.world.buttons.close" : "mco.configure.world.buttons.open")));
         (this.field21999 = this.method15436(2, n, Class7869.method25488(4), 212, 20, RealmsScreen.getLocalizedString("mco.configure.world.name"))).method15591(32);
         if (this.field21995.method22872() != null) {
             this.field21999.method15588(this.field21995.method22872());

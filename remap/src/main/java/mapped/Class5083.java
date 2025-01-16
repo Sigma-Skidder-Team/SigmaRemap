@@ -16,7 +16,7 @@ public class Class5083 extends RealmsScreen
 {
     private static final Logger field21886;
     private final RealmsScreen field21887;
-    private final Class7437 field21888;
+    private final RealmsServer field21888;
     private final RealmsScreen field21889;
     private final int field21890 = 0;
     private final int field21891 = 1;
@@ -30,7 +30,7 @@ public class Class5083 extends RealmsScreen
     private Class2224 field21899;
     private final String field21900 = "https://aka.ms/ExtendJavaRealms";
     
-    public Class5083(final RealmsScreen field21887, final Class7437 field21888, final RealmsScreen field21889) {
+    public Class5083(final RealmsScreen field21887, final RealmsServer field21888, final RealmsScreen field21889) {
         this.field21887 = field21887;
         this.field21888 = field21888;
         this.field21889 = field21889;
@@ -42,7 +42,7 @@ public class Class5083 extends RealmsScreen
     
     @Override
     public void init() {
-        this.method15863(this.field21888.field28675);
+        this.method15863(this.field21888.id);
         Realms.method25383(this.field21893, this.field21894, this.field21898, this.field21895, this.method15865(this.field21897));
         this.method15444(true);
         this.buttonsAdd(new Class5672(this, 2, this.width() / 2 - 100, Class7869.method25488(6), RealmsScreen.getLocalizedString("mco.configure.world.subscription.extend")));

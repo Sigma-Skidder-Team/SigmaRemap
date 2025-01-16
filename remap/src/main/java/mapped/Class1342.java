@@ -6,12 +6,12 @@ package mapped;
 
 public class Class1342 extends LongRunningTask
 {
-    private final Class7437 field7348;
+    private final RealmsServer field7348;
     private final RealmsScreen field7349;
     private final boolean field7350;
     private final RealmsScreen field7351;
     
-    public Class1342(final Class7437 field7348, final RealmsScreen field7349, final RealmsScreen field7350, final boolean field7351) {
+    public Class1342(final RealmsServer field7348, final RealmsScreen field7349, final RealmsScreen field7350, final boolean field7351) {
         this.field7348 = field7348;
         this.field7349 = field7349;
         this.field7350 = field7351;
@@ -27,11 +27,11 @@ public class Class1342 extends LongRunningTask
                 return;
             }
             try {
-                if (method35444.method35468(this.field7348.field28675)) {
+                if (method35444.method35468(this.field7348.id)) {
                     if (this.field7349 instanceof RealmsConfigureWorldScreen) {
-                        ((RealmsConfigureWorldScreen)this.field7349).method15707();
+                        ((RealmsConfigureWorldScreen)this.field7349).func_224398_a();
                     }
-                    this.field7348.field28679 = Class2153.field12792;
+                    this.field7348.state = RealmsServer.Status.field12792;
                     if (this.field7350) {
                         ((Class5079)this.field7351).method15781(this.field7348, this.field7349);
                     }

@@ -14,7 +14,7 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
     private static final Logger field21783;
     private String field21784;
     private final Class5079 field21785;
-    private Class7437 field21786;
+    private RealmsServer field21786;
     private final long field21787;
     private int field21788;
     private int field21789;
@@ -105,7 +105,7 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
         if (this.field21786 != null) {
             final String method22872 = this.field21786.method22872();
             final int method22873 = this.method15424(method22872);
-            final int n4 = (this.field21786.field28679 != Class2153.field12791) ? 8388479 : 10526880;
+            final int n4 = (this.field21786.state != RealmsServer.Status.CLOSED) ? 8388479 : 10526880;
             final int method22874 = this.method15424(RealmsScreen.getLocalizedString("mco.configure.world.title"));
             this.drawCenteredString(RealmsScreen.getLocalizedString("mco.configure.world.title"), this.width() / 2, 12, 16777215);
             this.drawCenteredString(method22872, this.width() / 2, 24, n4);
@@ -185,8 +185,8 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
         return super.mouseClicked(n, n2, n3);
     }
     
-    private void method15685(final Class7437 class7437) {
-        if (this.field21786.field28679 != Class2153.field12792) {
+    private void method15685(final RealmsServer class7437) {
+        if (this.field21786.state != RealmsServer.Status.field12792) {
             this.method15705(true, new RealmsConfigureWorldScreen(this.field21785.method15796(), this.field21787));
         }
         else {
@@ -229,18 +229,18 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
         Realms.setScreen(class5045);
     }
     
-    private void method15688(final int n, final Class7437 class7437) {
+    private void method15688(final int n, final RealmsServer class7437) {
         Realms.setScreen(new Class5084((b, n2) -> {
             if (!b) {
                 Realms.setScreen(this);
             }
             else {
-                this.method15709(class7437.field28675, n);
+                this.method15709(class7437.id, n);
             }
         }, Class2039.field11628, RealmsScreen.getLocalizedString("mco.configure.world.slot.switch.question.line1"), RealmsScreen.getLocalizedString("mco.configure.world.slot.switch.question.line2"), true, 9));
     }
     
-    private void method15689(final int n, final Class7437 class7437) {
+    private void method15689(final int n, final RealmsServer class7437) {
         Realms.setScreen(new Class5084((b, n2) -> {
             if (!b) {
                 Realms.setScreen(this);
@@ -269,8 +269,8 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
     
     private void method15691(final int n, final int n2, final int n3, final int n4) {
         if (!this.field21786.field28684) {
-            if (this.field21786.field28679 != Class2153.field12791) {
-                if (this.field21786.field28679 == Class2153.field12792) {
+            if (this.field21786.state != RealmsServer.Status.CLOSED) {
+                if (this.field21786.state == RealmsServer.Status.field12792) {
                     if (this.field21786.field28686 >= 7) {
                         this.method15694(n, n2, n3, n4);
                     }
@@ -411,7 +411,7 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
         class7424.field28609 = class7425.field28609;
         final RealmsClient method35444 = RealmsClient.func_224911_a();
         try {
-            method35444.method35461(this.field21786.field28675, this.field21786.field28688, class7424);
+            method35444.method35461(this.field21786.id, this.field21786.field28688, class7424);
             this.field21786.field28683.put(this.field21786.field28688, class7424);
         }
         catch (final RealmsServiceException class7426) {
@@ -429,7 +429,7 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
         final String s3 = (s2 != null && !s2.trim().isEmpty()) ? s2 : null;
         final RealmsClient method35444 = RealmsClient.func_224911_a();
         try {
-            method35444.method35460(this.field21786.field28675, s, s3);
+            method35444.method35460(this.field21786.id, s, s3);
             this.field21786.method22874(s);
             this.field21786.method22875(s3);
         }
@@ -451,12 +451,12 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
     }
     
     public void method15706(final RealmsScreen class5046) {
-        final Class5049 class5047 = new Class5049(class5046, new Class1339(this.field21786, this));
+        final Class5049 class5047 = new Class5049(class5046, new RealmsTasks.CloseServerTask(this.field21786, this));
         class5047.method15466();
         Realms.setScreen(class5047);
     }
     
-    public void method15707() {
+    public void func_224398_a() {
         this.field21799 = true;
     }
     
@@ -475,7 +475,7 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
     }
     
     private void method15710(final Class7430 class7430) {
-        final Class5049 class7431 = new Class5049(this.field21785, new RealmsTasks.SwitchMinigameTask(this.field21786.field28675, class7430, this.func_224407_b()));
+        final Class5049 class7431 = new Class5049(this.field21785, new RealmsTasks.SwitchMinigameTask(this.field21786.id, class7430, this.func_224407_b()));
         class7431.method15466();
         Realms.setScreen(class7431);
     }

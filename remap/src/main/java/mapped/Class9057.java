@@ -29,8 +29,8 @@ public class Class9057
     private final Class1182 field38346;
     private final Class1106 field38347;
     private final Class1087 field38348;
-    private final Set<Class7437> field38349;
-    private List<Class7437> field38350;
+    private final Set<RealmsServer> field38349;
+    private List<RealmsServer> field38350;
     private Class7446 field38351;
     private int field38352;
     private boolean field38353;
@@ -117,7 +117,7 @@ public class Class9057
         this.method32589();
     }
     
-    public synchronized List<Class7437> method32594() {
+    public synchronized List<RealmsServer> method32594() {
         return Lists.newArrayList((Iterable)this.field38350);
     }
     
@@ -181,9 +181,9 @@ public class Class9057
         }
     }
     
-    private synchronized void method32603(final List<Class7437> field38350) {
+    private synchronized void method32603(final List<RealmsServer> field38350) {
         int n = 0;
-        final Iterator<Class7437> iterator = this.field38349.iterator();
+        final Iterator<RealmsServer> iterator = this.field38349.iterator();
         while (iterator.hasNext()) {
             if (!field38350.remove(iterator.next())) {
                 continue;
@@ -196,12 +196,12 @@ public class Class9057
         this.field38350 = field38350;
     }
     
-    public synchronized void method32604(final Class7437 class7437) {
+    public synchronized void method32604(final RealmsServer class7437) {
         this.field38350.remove(class7437);
         this.field38349.add(class7437);
     }
     
-    private void method32605(final List<Class7437> list) {
+    private void method32605(final List<RealmsServer> list) {
         list.sort(new Class4437(Realms.method25358()));
     }
     

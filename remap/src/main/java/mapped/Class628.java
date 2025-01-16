@@ -38,7 +38,7 @@ public class Class628 extends Class624
     }
     
     private void method3631(final int n, final int n2, final int n3, final int n4, final Class7430 class7430) {
-        Class8952.method31758(class7430.field28649, class7430.field28654);
+        Class8952.method31758(class7430.id, class7430.field28654);
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         RealmsScreen.method15411(n + 1, n2 + 1, 0.0f, 0.0f, 38, 38, 38, 38);
         RealmsScreen.method15419("realms:textures/gui/realms/slot_frame.png");

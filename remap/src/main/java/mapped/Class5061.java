@@ -66,7 +66,7 @@ public class Class5061 extends Class5056<Class624>
     public void method15533(final int n) {
         this.method15519(n);
         if (n != -1) {
-            Class7437 class7437;
+            RealmsServer class7437;
             if (!this.field21710.method15744()) {
                 if (n >= Class5079.method15823(this.field21710).size()) {
                     Class5079.method15826(this.field21710, -1L);
@@ -87,8 +87,8 @@ public class Class5061 extends Class5056<Class624>
             }
             Class5079.method15825(this.field21710, class7437);
             if (class7437 != null) {
-                if (class7437.field28679 != Class2153.field12793) {
-                    Class5079.method15826(this.field21710, class7437.field28675);
+                if (class7437.state != RealmsServer.Status.field12793) {
+                    Class5079.method15826(this.field21710, class7437.id);
                     if (Class5079.method15852(this.field21710) >= 10) {
                         if (Class5079.method15827(this.field21710).method16916()) {
                             this.field21710.method15781(Class5079.method15807(this.field21710, Class5079.method15806(this.field21710)), this.field21710);
@@ -117,21 +117,21 @@ public class Class5061 extends Class5056<Class624>
             --n2;
         }
         if (n2 < Class5079.method15823(this.field21710).size()) {
-            final Class7437 class7437 = Class5079.method15823(this.field21710).get(n2);
+            final RealmsServer class7437 = Class5079.method15823(this.field21710).get(n2);
             if (class7437 != null) {
-                if (class7437.field28679 != Class2153.field12793) {
-                    Class5079.method15826(this.field21710, class7437.field28675);
+                if (class7437.state != RealmsServer.Status.field12793) {
+                    Class5079.method15826(this.field21710, class7437.id);
                 }
                 else {
                     Class5079.method15826(this.field21710, -1L);
                     Realms.setScreen(new Class5082(class7437, this.field21710));
                 }
                 if (Class5079.method15853(this.field21710) != null && Class5079.method15853(this.field21710).equals(RealmsScreen.getLocalizedString("mco.selectServer.configure"))) {
-                    Class5079.method15826(this.field21710, class7437.field28675);
+                    Class5079.method15826(this.field21710, class7437.id);
                     Class5079.method15808(this.field21710, class7437);
                 }
                 else if (Class5079.method15853(this.field21710) != null && Class5079.method15853(this.field21710).equals(RealmsScreen.getLocalizedString("mco.selectServer.leave"))) {
-                    Class5079.method15826(this.field21710, class7437.field28675);
+                    Class5079.method15826(this.field21710, class7437.id);
                     Class5079.method15813(this.field21710, class7437);
                 }
                 else if (Class5079.method15844(this.field21710, class7437)) {

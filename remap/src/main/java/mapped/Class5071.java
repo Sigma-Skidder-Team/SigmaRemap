@@ -25,10 +25,10 @@ public class Class5071 extends RealmsScreen
     private Class5611 field21759;
     private Class5611 field21760;
     private Boolean field21761;
-    private final Class7437 field21762;
+    private final RealmsServer field21762;
     private Class5066 field21763;
     
-    public Class5071(final RealmsConfigureWorldScreen field21752, final Class7437 field21753, final int field21754) {
+    public Class5071(final RealmsConfigureWorldScreen field21752, final RealmsServer field21753, final int field21754) {
         this.field21753 = Collections.emptyList();
         this.field21756 = -1;
         this.field21761 = false;
@@ -138,7 +138,7 @@ public class Class5071 extends RealmsScreen
     }
     
     private void method15633() {
-        final Class5049 class5049 = new Class5049(this.field21752.func_224407_b(), new RealmsTasks.DownloadTask(this.field21762.field28675, this.field21757, this.field21762.field28677 + " (" + this.field21762.field28683.get(this.field21762.field28688).method22842(this.field21762.field28688) + ")", this));
+        final Class5049 class5049 = new Class5049(this.field21752.func_224407_b(), new RealmsTasks.DownloadTask(this.field21762.id, this.field21757, this.field21762.field28677 + " (" + this.field21762.field28683.get(this.field21762.field28688).method22842(this.field21762.field28688) + ")", this));
         class5049.method15466();
         Realms.setScreen(class5049);
     }
@@ -165,7 +165,7 @@ public class Class5071 extends RealmsScreen
     private void method15634() {
         final Backup class7426 = this.field21753.get(this.field21756);
         this.field21756 = -1;
-        final Class5049 class7427 = new Class5049(this.field21752.func_224407_b(), new RestoreTask(class7426, this.field21762.field28675, this.field21752));
+        final Class5049 class7427 = new Class5049(this.field21752.func_224407_b(), new RestoreTask(class7426, this.field21762.id, this.field21752));
         class7427.method15466();
         Realms.setScreen(class7427);
     }

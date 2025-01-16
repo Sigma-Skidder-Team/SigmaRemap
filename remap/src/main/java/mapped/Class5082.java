@@ -6,14 +6,14 @@ package mapped;
 
 public class Class5082 extends RealmsScreen
 {
-    private final Class7437 field21880;
+    private final RealmsServer field21880;
     private final Class5079 field21881;
     private Class5065 field21882;
     private Class5065 field21883;
     private Class5611 field21884;
     private Class5066 field21885;
     
-    public Class5082(final Class7437 field21880, final Class5079 field21881) {
+    public Class5082(final RealmsServer field21880, final Class5079 field21881) {
         this.field21880 = field21880;
         this.field21881 = field21881;
     }
@@ -70,7 +70,7 @@ public class Class5082 extends RealmsScreen
         if (this.method15860()) {
             final Class5078 class5078 = new Class5078(this.field21881, this.field21880, this.field21881.method15796(), RealmsScreen.getLocalizedString("mco.selectServer.create"), RealmsScreen.getLocalizedString("mco.create.world.subtitle"), 10526880, RealmsScreen.getLocalizedString("mco.create.world.skip"));
             class5078.method15723(RealmsScreen.getLocalizedString("mco.create.world.reset.title"));
-            final Class5049 class5079 = new Class5049(this.field21881, new Class1338(this.field21880.field28675, this.field21882.method15586(), this.field21883.method15586(), class5078));
+            final Class5049 class5079 = new Class5049(this.field21881, new Class1338(this.field21880.id, this.field21882.method15586(), this.field21883.method15586(), class5078));
             class5079.method15466();
             Realms.setScreen(class5079);
         }

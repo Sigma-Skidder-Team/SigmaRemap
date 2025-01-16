@@ -9,14 +9,14 @@ import java.util.function.Supplier;
 
 public class Class5700 extends Class5611
 {
-    private final Supplier<Class7437> field23142;
+    private final Supplier<RealmsServer> field23142;
     private final Consumer<String> field23143;
     private final Class5077 field23144;
     private final int field23145;
     private int field23146;
     private Class9230 field23147;
     
-    public Class5700(final int n, final int n2, final int n3, final int n4, final Supplier<Class7437> field23142, final Consumer<String> field23143, final int n5, final int field23144, final Class5077 field23145) {
+    public Class5700(final int n, final int n2, final int n3, final int n4, final Supplier<RealmsServer> field23142, final Consumer<String> field23143, final int n5, final int field23144, final Class5077 field23145) {
         super(n5, n, n2, n3, n4, "");
         this.field23142 = field23142;
         this.field23145 = field23144;
@@ -32,7 +32,7 @@ public class Class5700 extends Class5611
     @Override
     public void method16922() {
         ++this.field23146;
-        final Class7437 class7437 = this.field23142.get();
+        final RealmsServer class7437 = this.field23142.get();
         if (class7437 != null) {
             final Class7424 class7438 = class7437.field28683.get(this.field23145);
             final boolean b = this.field23145 == 4;
@@ -71,7 +71,7 @@ public class Class5700 extends Class5611
                 }
             }
             else {
-                final boolean b2 = class7437.field28679 == Class2153.field12792 || class7437.field28679 == Class2153.field12791;
+                final boolean b2 = class7437.state == RealmsServer.Status.field12792 || class7437.state == RealmsServer.Status.CLOSED;
                 if (!class7437.field28684 && b2) {
                     class7439 = Class2210.field13470;
                     s2 = Realms.method25379("mco.configure.world.slot.tooltip.active", new Object[0]);
