@@ -25,7 +25,7 @@ public class Class8910
             Class8910.field37453.warn("Unknown biome id: ", (Object)n);
             return Class7102.field27632;
         }
-        throw Class8349.method27859(new IllegalStateException("Unknown biome id: " + n));
+        throw Util.pauseDevMode(new IllegalStateException("Unknown biome id: " + n));
     }
     
     public Class3090 method31393(final int n, final int n2) {

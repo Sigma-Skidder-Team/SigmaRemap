@@ -34,7 +34,7 @@ public class Class3698 implements Class3689
                     final JsonArray jsonArray = new JsonArray();
                     final Iterator iterator3 = class8844.getAllowedValues().iterator();
                     while (iterator3.hasNext()) {
-                        jsonArray.add(Class8349.method27835((IProperty<Comparable>)class8844, iterator3.next()));
+                        jsonArray.add(Util.method27835((IProperty<Comparable>)class8844, iterator3.next()));
                     }
                     jsonObject3.add(class8844.getName(), (JsonElement)jsonArray);
                 }
@@ -45,7 +45,7 @@ public class Class3698 implements Class3689
                 final JsonObject jsonObject4 = new JsonObject();
                 final JsonObject jsonObject5 = new JsonObject();
                 for (final IProperty class8846 : method504.method32905()) {
-                    jsonObject5.addProperty(class8846.getName(), Class8349.method27835((IProperty<Comparable>)class8846, class8845.get((IProperty<Object>)class8846)));
+                    jsonObject5.addProperty(class8846.getName(), Util.method27835((IProperty<Comparable>)class8846, class8845.get((IProperty<Object>)class8846)));
                 }
                 if (jsonObject5.size() > 0) {
                     jsonObject4.add("properties", (JsonElement)jsonObject5);

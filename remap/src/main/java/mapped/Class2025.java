@@ -41,7 +41,7 @@ public enum Class2025 implements Class2022
     }
     
     static {
-        field11538 = Class8349.method27851(new Class1846(Class2235.field13729, 5, 8, false), class1846 -> {
+        field11538 = Util.method27851(new Class1846(Class2235.field13729, 5, 8, false), class1846 -> {
             int i = 0;
             while (i < 8) {
                 int j = 0;

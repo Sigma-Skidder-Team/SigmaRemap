@@ -67,6 +67,6 @@ public class Class3394 extends Class3167
     
     public static boolean method10834() {
         final double n = 1.0E-7;
-        return Class3394.field15514.field4683.method6981(Class3394.field15514.field4684, Class3394.field15514.field4684.boundingBox.method18494(n, 0.0, n).method18494(-n, 0.0, -n)).count() > 0L;
+        return Class3394.field15514.field4683.method6981(Class3394.field15514.field4684, Class3394.field15514.field4684.boundingBox.expand(n, 0.0, n).expand(-n, 0.0, -n)).count() > 0L;
     }
 }

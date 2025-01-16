@@ -73,7 +73,7 @@ public class Class4174 extends Class4158<Class493>
     }
     
     static {
-        field18591 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field18591 = Util.method27851(Maps.newHashMap(), hashMap -> {
             final Class5918 value = new Class5918(0, 0, 64, 32);
             final Class5920 class5920 = new Class5920();
             final Class5919 value2 = new Class5919(0.0f);
@@ -85,7 +85,7 @@ public class Class4174 extends Class4158<Class493>
             hashMap.put(Class298.field1716, value2);
             return;
         });
-        field18592 = Class8349.method27851(Maps.newHashMap(), hashMap2 -> {
+        field18592 = Util.method27851(Maps.newHashMap(), hashMap2 -> {
             hashMap2.put(Class298.field1711, new ResourceLocation("textures/entity/skeleton/skeleton.png"));
             hashMap2.put(Class298.field1712, new ResourceLocation("textures/entity/skeleton/wither_skeleton.png"));
             hashMap2.put(Class298.field1714, new ResourceLocation("textures/entity/zombie/zombie.png"));

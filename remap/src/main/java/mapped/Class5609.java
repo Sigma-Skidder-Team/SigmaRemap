@@ -31,7 +31,7 @@ public abstract class Class5609 extends Class5610<Class663>
     }
     
     public double method16901(final double n) {
-        return this.method16902(MathHelper.method35701(MathHelper.clamp(n, 0.0, 1.0), this.field22978, this.field22979));
+        return this.method16902(MathHelper.lerp(MathHelper.clamp(n, 0.0, 1.0), this.field22978, this.field22979));
     }
     
     public double method16902(final double n) {

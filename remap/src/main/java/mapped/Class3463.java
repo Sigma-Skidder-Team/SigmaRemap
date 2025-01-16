@@ -34,7 +34,7 @@ public class Class3463 extends Class3446
         }
         if (this.field16324 <= 0) {
             this.field16324 = this.method11027(this.field16322);
-            final List<Entity> method6739 = this.field16322.world.method6739((Class<? extends Entity>)this.field16322.getClass(), this.field16322.getBoundingBox().method18495(8.0, 8.0, 8.0), class834 -> class834.method4965() || !class834.method4960());
+            final List<Entity> method6739 = this.field16322.world.method6739((Class<? extends Entity>)this.field16322.getClass(), this.field16322.getBoundingBox().grow(8.0, 8.0, 8.0), class834 -> class834.method4965() || !class834.method4960());
             method6739.stream().filter(Class834::method4965).findAny().orElse(this.field16322).method4969(method6739.stream().filter(class835 -> !class835.method4960()));
             return this.field16322.method4960();
         }

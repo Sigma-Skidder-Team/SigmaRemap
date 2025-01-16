@@ -114,7 +114,7 @@ public interface IChunk extends IBlockReader, Class1861
     Class6952<Fluid> method7037();
     
     default BitSet method7038(final Class2126 class2126) {
-        throw Class8349.method27859(new RuntimeException("Meaningless in this context"));
+        throw Util.pauseDevMode(new RuntimeException("Meaningless in this context"));
     }
     
     Class8288 method7039();

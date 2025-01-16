@@ -82,7 +82,7 @@ public abstract class Class6257
     
     public String method18597() {
         if (this.field25119 == null) {
-            this.field25119 = Class8349.method27836("enchantment", Registry.field209.getKey(this));
+            this.field25119 = Util.method27836("enchantment", Registry.field209.getKey(this));
         }
         return this.field25119;
     }

@@ -66,9 +66,9 @@ public class Class7080 implements Class7079
     }
     
     @Override
-    public void method21659(final Class1848 class1848, final Class7006 class1849) {
-        if (class1849.method21449() == Class2165.field12881) {
-            if (Class7080.field27574.contains(class1848.getBlockState(((BlockRayTraceResult)class1849).method21447()).method21696())) {
+    public void method21659(final Class1848 class1848, final RayTraceResult class1849) {
+        if (class1849.getType() == RayTraceResult.Type.BLOCK) {
+            if (Class7080.field27574.contains(class1848.getBlockState(((BlockRayTraceResult)class1849).getPos()).method21696())) {
                 this.field27577.method32926(Class2012.field11441);
             }
         }

@@ -27,9 +27,9 @@ public abstract class Class6172 extends Class6173
     @Override
     public void method18432(final Class4150 class4150, final Class6092 class4151, final float n) {
         final Vec3d method18161 = class4151.method18161();
-        final float n2 = (float)(MathHelper.method35701(n, this.field24933, this.field24936) - method18161.getX());
-        final float n3 = (float)(MathHelper.method35701(n, this.field24934, this.field24937) - method18161.getY());
-        final float n4 = (float)(MathHelper.method35701(n, this.field24935, this.field24938) - method18161.getZ());
+        final float n2 = (float)(MathHelper.lerp(n, this.field24933, this.field24936) - method18161.getX());
+        final float n3 = (float)(MathHelper.lerp(n, this.field24934, this.field24937) - method18161.getY());
+        final float n4 = (float)(MathHelper.lerp(n, this.field24935, this.field24938) - method18161.getZ());
         Quaternion method18162;
         if (this.field24957 != 0.0f) {
             method18162 = new Quaternion(class4151.method18165());

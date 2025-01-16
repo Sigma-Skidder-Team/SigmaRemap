@@ -56,7 +56,7 @@ public class Class4002 extends Class4000
     
     @Override
     public int method12165(final World class1847, final BlockPos class1848) {
-        final AxisAlignedBB method18500 = Class4002.field18033.method18500(class1848);
+        final AxisAlignedBB method18500 = Class4002.field18033.offset(class1848);
         List<Entity> list = null;
         switch (Class8318.field34167[this.field18039.ordinal()]) {
             case 1: {

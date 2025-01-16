@@ -44,15 +44,15 @@ public enum Class306
             final Process process = AccessController.doPrivileged(() -> Runtime.getRuntime().exec(this.method979(url2)));
             final Iterator iterator = IOUtils.readLines(process.getErrorStream()).iterator();
             while (iterator.hasNext()) {
-                Class8349.method27871().error((String)iterator.next());
+                Util.method27871().error((String)iterator.next());
             }
             process.getInputStream().close();
             process.getErrorStream().close();
             process.getOutputStream().close();
         }
         catch (final PrivilegedActionException | IOException ex) {
-            Class8349.method27871().error("Couldn't open url '{}'", (Object)url, (Object)ex);
-            Class8349.method27872((Exception)ex);
+            Util.method27871().error("Couldn't open url '{}'", (Object)url, (Object)ex);
+            Util.method27872((Exception)ex);
         }
     }
     
@@ -61,7 +61,7 @@ public enum Class306
             this.method976(uri.toURL());
         }
         catch (final MalformedURLException ex) {
-            Class8349.method27871().error("Couldn't open uri '{}'", (Object)uri, (Object)ex);
+            Util.method27871().error("Couldn't open uri '{}'", (Object)uri, (Object)ex);
         }
     }
     
@@ -70,7 +70,7 @@ public enum Class306
             this.method976(file.toURI().toURL());
         }
         catch (final MalformedURLException ex) {
-            Class8349.method27871().error("Couldn't open file '{}'", (Object)file, (Object)ex);
+            Util.method27871().error("Couldn't open file '{}'", (Object)file, (Object)ex);
         }
     }
     
@@ -87,7 +87,7 @@ public enum Class306
             this.method976(new URI(str).toURL());
         }
         catch (final IllegalArgumentException | URISyntaxException | MalformedURLException ex) {
-            Class8349.method27871().error("Couldn't open uri '{}'", (Object)str, (Object)ex);
+            Util.method27871().error("Couldn't open uri '{}'", (Object)str, (Object)ex);
         }
     }
 }

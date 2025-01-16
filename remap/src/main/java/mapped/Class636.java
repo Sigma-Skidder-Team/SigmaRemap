@@ -17,7 +17,7 @@ public class Class636 extends Class633
         final int n9 = n2 + n5 / 2 - 4;
         this.field3634.field4643.method6610(Class8822.method30773("lanServer.scanning", new Object[0]), (float)(this.field3634.field4700.field3152 / 2 - this.field3634.field4643.method6617(Class8822.method30773("lanServer.scanning", new Object[0])) / 2), (float)n9, 16777215);
         String s = null;
-        switch ((int)(Class8349.method27837() / 300L % 4L)) {
+        switch ((int)(Util.method27837() / 300L % 4L)) {
             default: {
                 s = "O o o";
                 break;

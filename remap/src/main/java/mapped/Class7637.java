@@ -93,7 +93,7 @@ public class Class7637
         this.field30268 = Maps.newHashMap();
         this.field30269 = Maps.newHashMap();
         this.field30271 = 1;
-        this.field30272 = (Object2IntMap<Class7096>)Class8349.method27851((Object2IntMap)new Object2IntOpenHashMap(), object2IntOpenHashMap -> object2IntOpenHashMap.defaultReturnValue(-1));
+        this.field30272 = (Object2IntMap<Class7096>) Util.method27851((Object2IntMap)new Object2IntOpenHashMap(), object2IntOpenHashMap -> object2IntOpenHashMap.defaultReturnValue(-1));
         this.field30261 = field30261;
         this.field30263 = field30262;
     }
@@ -772,7 +772,7 @@ public class Class7637
             return;
         }).collect((Collector<? super Object, ?, List<ResourceLocation>>)Collectors.toList());
         field30247 = Class7637.field30246.stream().map((Function<? super Object, ?>)Class6332::method18786).collect((Collector<? super Object, ?, List<Class6332>>)Collectors.toList());
-        field30248 = Class8349.method27851(Sets.newHashSet(), set -> {
+        field30248 = Util.method27851(Sets.newHashSet(), set -> {
             set.add(Class7637.field30240);
             set.add(Class7637.field30239);
             set.add(Class7637.field30241);
@@ -809,8 +809,8 @@ public class Class7637
         field30253 = Maps.newHashMap((Map)ImmutableMap.of((Object)"missing", (Object)Class7637.field30252));
         field30254 = Splitter.on(',');
         field30255 = Splitter.on('=').limit(2);
-        field30256 = Class8349.method27851(Class7685.method24386("{\"gui_light\": \"front\"}"), class1935 -> class1935.field30523 = "generation marker");
-        field30257 = Class8349.method27851(Class7685.method24386("{\"gui_light\": \"side\"}"), class1936 -> class1936.field30523 = "block entity marker");
+        field30256 = Util.method27851(Class7685.method24386("{\"gui_light\": \"front\"}"), class1935 -> class1935.field30523 = "generation marker");
+        field30257 = Util.method27851(Class7685.method24386("{\"gui_light\": \"side\"}"), class1936 -> class1936.field30523 = "block entity marker");
         field30258 = new Class9500<Block, Class7096>(Class7521.field29147).method35378(Class7113.method21834("map")).method35380((Class6846<Block, Class7096, StateHolder>)Class7096::new);
         field30259 = new Class8163();
         field30260 = (Map)ImmutableMap.of((Object)new ResourceLocation("item_frame"), (Object)Class7637.field30258);

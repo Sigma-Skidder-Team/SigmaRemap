@@ -334,7 +334,7 @@ public class Class1774 extends Class1666 implements Class1664
                 }
                 concurrentLinkedQueue2.add(e);
                 return;
-            }, Class8349.method27841()));
+            }, Util.method27841()));
         }
         CompletableFuture.allOf((CompletableFuture<?>[])arrayList.toArray(new CompletableFuture[0])).join();
         return concurrentLinkedQueue;
@@ -351,7 +351,7 @@ public class Class1774 extends Class1666 implements Class1664
                     if (e2 != null) {
                         concurrentLinkedQueue2.add(e2);
                     }
-                }, Class8349.method27841()));
+                }, Util.method27841()));
             }
             else {
                 final Class1913 e = new Class1913(this, class6583, n, n2, n3, n4, n5);

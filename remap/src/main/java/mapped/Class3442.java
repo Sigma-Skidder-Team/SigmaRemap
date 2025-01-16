@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Map;
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
 import java.util.SortedMap;
 
@@ -19,7 +18,7 @@ public class Class3442
     
     public Class3442() {
         this.field16261 = new Class9226();
-        this.field16262 = Class8349.method27851((SortedMap<Class6332, Class4148>)new Object2ObjectLinkedOpenHashMap(), object2ObjectLinkedOpenHashMap -> {
+        this.field16262 = Util.method27851((SortedMap<Class6332, Class4148>)new Object2ObjectLinkedOpenHashMap(), object2ObjectLinkedOpenHashMap -> {
             object2ObjectLinkedOpenHashMap.put((Object)Class8752.method30263(), (Object)this.field16261.method34024(Class6332.method18761()));
             object2ObjectLinkedOpenHashMap.put((Object)Class8752.method30264(), (Object)this.field16261.method34024(Class6332.method18763()));
             object2ObjectLinkedOpenHashMap.put((Object)Class8752.method30257(), (Object)this.field16261.method34024(Class6332.method18762()));

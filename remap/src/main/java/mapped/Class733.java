@@ -13,7 +13,7 @@ public class Class733 implements Class732
     
     public Class733(final MinecraftServer field3991) {
         this.field3991 = field3991;
-        this.field3990 = Class8349.method27837();
+        this.field3990 = Util.method27837();
     }
     
     @Override
@@ -26,8 +26,8 @@ public class Class733 implements Class732
     
     @Override
     public void method4039(final int i) {
-        if (Class8349.method27837() - this.field3990 >= 1000L) {
-            this.field3990 = Class8349.method27837();
+        if (Util.method27837() - this.field3990 >= 1000L) {
+            this.field3990 = Util.method27837();
             MinecraftServer.method1613().info("Converting... {}%", (Object)i);
         }
     }

@@ -56,7 +56,7 @@ public class Class3942 extends Class3841
         }
         final Direction class7102 = class7096.method21772(Class3942.field17832);
         final Class440 class7103 = (Class440)method6727;
-        if (class7103.method2234() != Class2100.field12169 || class7097.method6976(VoxelShapes.method24487().method24537().method18494(0.5f * class7102.getXOffset(), 0.5f * class7102.getYOffset(), 0.5f * class7102.getZOffset()).method18492(class7102.getXOffset(), class7102.getYOffset(), class7102.getZOffset()).method18500(class7098.method1149(class7102)))) {
+        if (class7103.method2234() != Class2100.field12169 || class7097.method6976(VoxelShapes.fullCube().getBoundingBox().expand(0.5f * class7102.getXOffset(), 0.5f * class7102.getYOffset(), 0.5f * class7102.getZOffset()).contract(class7102.getXOffset(), class7102.getYOffset(), class7102.getZOffset()).offset(class7098.method1149(class7102)))) {
             class7099.method2833(class7103);
             class7099.method2857(Class8276.field34045);
         }
@@ -177,7 +177,7 @@ public class Class3942 extends Class3841
     @Override
     public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final TileEntity method6727 = class7097.getTileEntity(class7098);
-        return (method6727 instanceof Class440) ? VoxelShapes.method24489(((Class440)method6727).method2235(class7096)) : VoxelShapes.method24487();
+        return (method6727 instanceof Class440) ? VoxelShapes.method24489(((Class440)method6727).method2235(class7096)) : VoxelShapes.fullCube();
     }
     
     @Override

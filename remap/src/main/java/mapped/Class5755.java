@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import java.util.Locale;
 import java.io.Writer;
 import org.apache.commons.io.IOUtils;
-import java.io.OutputStream;
+
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.io.FileOutputStream;
@@ -16,7 +16,7 @@ import java.io.File;
 import it.unimi.dsi.fastutil.objects.Object2LongMap;
 import java.util.TreeMap;
 import com.google.common.collect.Maps;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import com.google.common.collect.Lists;
@@ -225,7 +225,7 @@ public class Class5755 implements Class5756
     private static String method17097() {
         final String[] array = { "Shiny numbers!", "Am I not running fast enough? :(", "I'm working as hard as I can!", "Will I ever be good enough for you? :(", "Speedy. Zoooooom!", "Hello world", "40% better than a crash report.", "Now with extra numbers", "Now with less numbers", "Now with the same numbers", "You should add flames to things, it makes them go faster!", "Do you feel the need for... optimization?", "*cracks redstone whip*", "Maybe if you treated it better then it'll have more motivation to work faster! Poor server." };
         try {
-            return array[(int)(Class8349.method27838() % array.length)];
+            return array[(int)(Util.method27838() % array.length)];
         }
         catch (final Throwable t) {
             return "Witty comment unavailable :(";

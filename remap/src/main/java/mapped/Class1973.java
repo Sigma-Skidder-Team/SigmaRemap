@@ -37,7 +37,7 @@ public enum Class1973
     }
     
     static {
-        field10857 = Class8349.method27851(new Class1973[6], array -> {
+        field10857 = Util.method27851(new Class1973[6], array -> {
             array[Direction.DOWN.getIndex()] = Class1973.field10845;
             array[Direction.UP.getIndex()] = Class1973.field10846;
             array[Direction.NORTH.getIndex()] = Class1973.field10847;

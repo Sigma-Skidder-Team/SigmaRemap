@@ -109,9 +109,9 @@ public class Class424 extends Entity
                     if (b) {
                         if (method21698 > 1.0) {
                             final BlockRayTraceResult method21699 = this.world.rayTraceBlocks(new RayTraceContext(new Vec3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.method1934(), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.SOURCE_ONLY, this));
-                            if (method21699.method21449() != Class2165.field12880) {
-                                if (this.world.getFluidState(method21699.method21447()).isTagged(Class7324.field28319)) {
-                                    method21697 = method21699.method21447();
+                            if (method21699.getType() != RayTraceResult.Type.MISS) {
+                                if (this.world.getFluidState(method21699.getPos()).isTagged(Class7324.field28319)) {
+                                    method21697 = method21699.getPos();
                                     b2 = true;
                                 }
                             }

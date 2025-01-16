@@ -151,7 +151,7 @@ public class Class796 extends Class795 implements Class797
         if (class1848.method1768()) {
             if (!class1848.method1696()) {
                 if (class1847.rand.nextInt(50) == 0) {
-                    final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class759.class, class1848.getBoundingBox().method18496(20.0), (Predicate<? super Entity>)Class796.field4248);
+                    final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class759.class, class1848.getBoundingBox().intersect(20.0), (Predicate<? super Entity>)Class796.field4248);
                     if (!method6739.isEmpty()) {
                         final Class759 class1849 = method6739.get(class1847.rand.nextInt(method6739.size()));
                         if (!class1849.method1696()) {
@@ -386,7 +386,7 @@ public class Class796 extends Class795 implements Class797
         field4248 = new Class173();
         field4249 = Items.field31424;
         field4250 = Sets.newHashSet((Object[])new Item[] { Items.field31314, Items.field31430, Items.field31429, Items.field31576 });
-        field4251 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field4251 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put(EntityType.field28962, Class8520.field35425);
             hashMap.put(EntityType.field28965, Class8520.field35444);
             hashMap.put(EntityType.field28969, Class8520.field35426);

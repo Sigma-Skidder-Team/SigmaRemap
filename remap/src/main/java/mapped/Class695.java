@@ -34,7 +34,7 @@ public class Class695 extends Class527
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
         final String string = MathHelper.method35651(this.field3823.method19326(), 0, 100) + "%";
-        final long method27837 = Class8349.method27837();
+        final long method27837 = Util.method27837();
         if (method27837 - this.field3824 > 2000L) {
             this.field3824 = method27837;
             Class7895.field32404.method25556(new Class2259("narrator.loading", new Object[] { string }).getString());
@@ -70,7 +70,7 @@ public class Class695 extends Class527
     }
     
     static {
-        field3825 = Class8349.method27851((Object2IntMap)new Object2IntOpenHashMap(), object2IntOpenHashMap -> {
+        field3825 = Util.method27851((Object2IntMap)new Object2IntOpenHashMap(), object2IntOpenHashMap -> {
             object2IntOpenHashMap.defaultReturnValue(0);
             object2IntOpenHashMap.put((Object) ChunkStatus.field39977, 5526612);
             object2IntOpenHashMap.put((Object) ChunkStatus.field39978, 10066329);

@@ -273,7 +273,7 @@ public class Class423 extends Entity
             }
         }
         this.method1689();
-        final List<Entity> method2044 = this.world.method6737(this, this.getBoundingBox().method18495(0.20000000298023224, -0.009999999776482582, 0.20000000298023224), Class9170.method33474(this));
+        final List<Entity> method2044 = this.world.method6737(this, this.getBoundingBox().grow(0.20000000298023224, -0.009999999776482582, 0.20000000298023224), Class9170.method33474(this));
         if (!method2044.isEmpty()) {
             final boolean b = !this.world.isRemote && !(this.method1907() instanceof PlayerEntity);
             for (int j = 0; j < method2044.size(); ++j) {

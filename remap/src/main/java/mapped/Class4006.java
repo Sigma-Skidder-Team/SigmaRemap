@@ -346,7 +346,7 @@ public class Class4006 extends Block
         field18057 = Class3967.field17922;
         field18058 = Class3967.field17923;
         field18059 = Class3967.field17924;
-        field18060 = Class3967.field17927.entrySet().stream().filter(entry -> entry.getKey() != Direction.DOWN).collect((Collector<? super Object, ?, Map<Direction, Class7113>>)Class8349.method27834());
+        field18060 = Class3967.field17927.entrySet().stream().filter(entry -> entry.getKey() != Direction.DOWN).collect((Collector<? super Object, ?, Map<Direction, Class7113>>) Util.method27834());
         field18061 = Block.method11778(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
         field18062 = Block.method11778(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
         field18063 = Block.method11778(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);

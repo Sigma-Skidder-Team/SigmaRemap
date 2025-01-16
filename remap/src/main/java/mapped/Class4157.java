@@ -28,7 +28,7 @@ public class Class4157 extends Class4158<Class494>
                 n4 /= max;
             }
             class495.method22564(0.0, 0.4000000059604645, 0.0);
-            class495.method22566(Vector3f.YP.rotationDegrees((float) MathHelper.method35701(n, method2509.method13898(), method2509.method13897()) * 10.0f));
+            class495.method22566(Vector3f.YP.rotationDegrees((float) MathHelper.lerp(n, method2509.method13898(), method2509.method13897()) * 10.0f));
             class495.method22564(0.0, -0.20000000298023224, 0.0);
             class495.method22566(Vector3f.XP.rotationDegrees(-30.0f));
             class495.method22565(n4, n4, n4);

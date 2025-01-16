@@ -82,7 +82,7 @@ public class Class507 extends Entity
         if (!this.world.isRemote) {
             if (--this.field2891 < 0) {
                 if (this.field2891 == -8) {
-                    final Iterator<LivingEntity> iterator = this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, this.getBoundingBox().method18495(0.2, 0.0, 0.2)).iterator();
+                    final Iterator<LivingEntity> iterator = this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, this.getBoundingBox().grow(0.2, 0.0, 0.2)).iterator();
                     while (iterator.hasNext()) {
                         this.method2602(iterator.next());
                     }

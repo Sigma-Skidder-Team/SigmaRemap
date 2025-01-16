@@ -103,7 +103,7 @@ public class Class1798<T extends LivingEntity & Class825, M extends Class5845<T>
     }
     
     static {
-        field9961 = Class8349.method27851((Int2ObjectMap)new Int2ObjectOpenHashMap(), int2ObjectOpenHashMap -> {
+        field9961 = Util.method27851((Int2ObjectMap)new Int2ObjectOpenHashMap(), int2ObjectOpenHashMap -> {
             int2ObjectOpenHashMap.put(1, (Object)new ResourceLocation("stone"));
             int2ObjectOpenHashMap.put(2, (Object)new ResourceLocation("iron"));
             int2ObjectOpenHashMap.put(3, (Object)new ResourceLocation("gold"));

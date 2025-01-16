@@ -104,7 +104,7 @@ public abstract class Class4648
                                 this.method13888();
                                 return;
                             }
-                            if (method13895.method7128((Class<? extends Entity>)((Class759)method13900).getClass(), new AxisAlignedBB(method13896.getX(), method13896.getY(), method13896.getZ(), method13896.getX() + 1, method13896.getY() + 1, method13896.getZ() + 1).method18496(this.field20131)).size() >= this.field20129) {
+                            if (method13895.method7128((Class<? extends Entity>)((Class759)method13900).getClass(), new AxisAlignedBB(method13896.getX(), method13896.getY(), method13896.getZ(), method13896.getX() + 1, method13896.getY() + 1, method13896.getZ() + 1).intersect(this.field20131)).size() >= this.field20129) {
                                 this.method13888();
                                 return;
                             }

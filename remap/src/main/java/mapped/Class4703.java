@@ -38,8 +38,8 @@ public abstract class Class4703<T extends Entity>
             return false;
         }
         if (!t.ignoreFrustumCheck) {
-            AxisAlignedBB method18496 = t.method1887().method18496(0.5);
-            if (method18496.method18516() || method18496.method18507() == 0.0) {
+            AxisAlignedBB method18496 = t.method1887().intersect(0.5);
+            if (method18496.hasNaN() || method18496.getAverageEdgeLength() == 0.0) {
                 method18496 = new AxisAlignedBB(t.getPosX() - 2.0, t.getPosY() - 2.0, t.getPosZ() - 2.0, t.getPosX() + 2.0, t.getPosY() + 2.0, t.getPosZ() + 2.0);
             }
             return class6664.method20261(method18496);

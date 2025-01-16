@@ -219,7 +219,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     public static Optional<Vec3d> method11992(final EntityType<?> class7499, final Class1852 class7500, final BlockPos class7501) {
-        if (class7500.getBlockState(class7501).getCollisionShape(class7500, class7501).method24536(Direction.Axis.Y) > 0.4375) {
+        if (class7500.getBlockState(class7501).getCollisionShape(class7500, class7501).getEnd(Direction.Axis.Y) > 0.4375) {
             return Optional.empty();
         }
         final Mutable class7502 = new Mutable(class7501);
@@ -236,7 +236,7 @@ public class Class3900 extends Class3892 implements Class3840
         if (method21727.isEmpty()) {
             return Optional.empty();
         }
-        final double n = class7502.getY() + method21727.method24536(Direction.Axis.Y) + 2.0E-7;
+        final double n = class7502.getY() + method21727.getEnd(Direction.Axis.Y) + 2.0E-7;
         if (class7501.getY() - n <= 2.0) {
             final float n2 = class7499.method23369() / 2.0f;
             final Vec3d value = new Vec3d(class7502.getX() + 0.5, n, class7502.getZ() + 0.5);

@@ -35,7 +35,7 @@ public class Class413 extends Class409
     }
     
     @Override
-    public void method2016(final Class7006 class7006) {
+    public void method2016(final RayTraceResult class7006) {
         if (!this.world.isRemote) {
             this.world.method6955(2002, new BlockPos(this), Class5333.method16472(Class8644.field36251));
             int i = 3 + this.world.rand.nextInt(5) + this.world.rand.nextInt(5);

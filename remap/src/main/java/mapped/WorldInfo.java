@@ -331,7 +331,7 @@ public class WorldInfo
         class51.method299("Time", this.field36348);
         class51.method299("DayTime", this.field36349);
         class51.method299("SizeOnDisk", this.field36351);
-        class51.method299("LastPlayed", Class8349.method27839());
+        class51.method299("LastPlayed", Util.method27839());
         class51.method306("LevelName", this.field36356);
         class51.method298("version", this.field36357);
         class51.method298("clearWeatherTime", this.field36358);
@@ -422,7 +422,7 @@ public class WorldInfo
             if (this.field36355 != null) {
                 if (this.field36353 < Class9528.method35579().getWorldVersion()) {
                     if (this.field36352 == null) {
-                        throw Class8349.method27859(new NullPointerException("Fixer Upper not set inside LevelData, and the player tag is not upgraded."));
+                        throw Util.pauseDevMode(new NullPointerException("Fixer Upper not set inside LevelData, and the player tag is not upgraded."));
                     }
                     this.field36355 = Class9346.method34651(this.field36352, Class1959.field10676, this.field36355, this.field36353);
                 }

@@ -23,7 +23,7 @@ public class Class3994 extends Class3993
             return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);
         }
         if (!class7097.isRemote) {
-            final Direction method2716 = class7101.method21448();
+            final Direction method2716 = class7101.getFace();
             final Direction class7102 = (method2716.getAxis() != Direction.Axis.Y) ? method2716 : class7099.method1882().getOpposite();
             class7097.method6705(null, class7098, Class8520.field35506, Class286.field1582, 1.0f, 1.0f);
             class7097.setBlockState(class7098, (BlockState)((StateHolder<Object, Object>)Class7521.field29342.getDefaultState()).with((IProperty<Comparable>)Class3901.field17611, class7102), 11);

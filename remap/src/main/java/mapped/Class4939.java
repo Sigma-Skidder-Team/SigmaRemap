@@ -49,19 +49,19 @@ public class Class4939 extends Class4800
         class4879.method14239(class4882 = new Class4914(class4879, "guilded", 142, 0, 32, 34, Class7853.field32224));
         class4880.method14260((class4803, n) -> {
             try {
-                Class8349.method27845().method976(new URL("http://jelloconnect.sigmaclient.info/urls/youtube.php"));
+                Util.method27845().method976(new URL("http://jelloconnect.sigmaclient.info/urls/youtube.php"));
             }
             catch (final MalformedURLException ex) {}
         });
         class4881.method14260((class4803, n) -> {
             try {
-                Class8349.method27845().method976(new URL("http://jelloconnect.sigmaclient.info/urls/reddit.php"));
+                Util.method27845().method976(new URL("http://jelloconnect.sigmaclient.info/urls/reddit.php"));
             }
             catch (final MalformedURLException ex) {}
         });
         class4882.method14260((class4803, n) -> {
             try {
-                Class8349.method27845().method976(new URL("http://jelloconnect.sigmaclient.info/urls/guilded.php"));
+                Util.method27845().method976(new URL("http://jelloconnect.sigmaclient.info/urls/guilded.php"));
             }
             catch (final MalformedURLException ex) {}
         });

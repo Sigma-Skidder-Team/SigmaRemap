@@ -99,7 +99,7 @@ public class Class6312
                 while (iterator.hasNext()) {
                     class6581.method19931(iterator.next());
                 }
-                Class3279.method10340().method5785(new Class7884(this), class6581, Class5026.field21549, Class5026.field21549, Class8349.method27841(), Class3279.method10342());
+                Class3279.method10340().method5785(new Class7884(this), class6581, Class5026.field21549, Class5026.field21549, Util.method27841(), Class3279.method10342());
             }
             final Optional<Class3684> method6378 = Class3279.method10340().method6378(Class8976.field37844, new Class443(new ItemStack[] { this.field25240 }), Class3279.method10343().field4683);
             if (method6378.isPresent()) {

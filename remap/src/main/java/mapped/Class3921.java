@@ -38,7 +38,7 @@ public class Class3921 extends Block implements Class3856
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class9296.field39868[class7096.get(Class3921.field17777).ordinal()]) {
             case 1: {
-                return VoxelShapes.method24487();
+                return VoxelShapes.fullCube();
             }
             case 2: {
                 return Class3921.field17780;

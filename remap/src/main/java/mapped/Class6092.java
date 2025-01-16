@@ -47,7 +47,7 @@ public class Class6092
         this.field24716 = field24708;
         this.field24717 = field24709;
         this.method18158(field24707.getYaw(n), field24707.getPitch(n));
-        this.method18159(MathHelper.method35701(n, field24707.prevPosX, field24707.getPosX()), MathHelper.method35701(n, field24707.prevPosY, field24707.getPosY()) + MathHelper.method35700(n, this.field24719, this.field24718), MathHelper.method35701(n, field24707.prevPosZ, field24707.getPosZ()));
+        this.method18159(MathHelper.lerp(n, field24707.prevPosX, field24707.getPosX()), MathHelper.lerp(n, field24707.prevPosY, field24707.getPosY()) + MathHelper.method35700(n, this.field24719, this.field24718), MathHelper.lerp(n, field24707.prevPosZ, field24707.getPosZ()));
         if (!field24708) {
             if (field24707 instanceof LivingEntity) {
                 if (((LivingEntity)field24707).method2783()) {
@@ -81,8 +81,8 @@ public class Class6092
             final float n6 = n3 * 0.1f;
             final float n7 = n4 * 0.1f;
             final BlockRayTraceResult method6987 = this.field24706.rayTraceBlocks(new RayTraceContext(this.field24708.add(n5, n6, n7), new Vec3d(this.field24708.x - this.field24710.getX() * n + n5 + n7, this.field24708.y - this.field24710.getY() * n + n6, this.field24708.z - this.field24710.getZ() * n + n7), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this.field24707));
-            if (method6987.method21449() != Class2165.field12880) {
-                final double method6988 = method6987.method21451().distanceTo(this.field24708);
+            if (method6987.getType() != RayTraceResult.Type.MISS) {
+                final double method6988 = method6987.getHitVec().distanceTo(this.field24708);
                 if (method6988 < n) {
                     if (!Class9463.method35173().method35189().method21551(Class3193.class).method9906()) {
                         n = method6988;

@@ -17,7 +17,6 @@ import java.io.Reader;
 import org.apache.commons.io.IOUtils;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.function.Predicate;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.nio.file.Files;
@@ -59,9 +58,9 @@ public class Class3688 implements Class3689
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<Path> iterator = this.field16996.method22098().iterator();
         while (iterator.hasNext()) {
-            Files.walk(iterator.next(), new FileVisitOption[0]).filter(path -> path.toString().endsWith(".snbt")).forEach(p2 -> list.add(CompletableFuture.supplyAsync(() -> this.method11340(path2, this.method11339(path3, path2)), Class8349.method27841())));
+            Files.walk(iterator.next(), new FileVisitOption[0]).filter(path -> path.toString().endsWith(".snbt")).forEach(p2 -> list.add(CompletableFuture.supplyAsync(() -> this.method11340(path2, this.method11339(path3, path2)), Util.method27841())));
         }
-        Class8349.method27853((List<? extends CompletableFuture<?>>)arrayList).join().stream().filter(Objects::nonNull).forEach(class8844 -> this.method11341(class8843, class8844, path4));
+        Util.method27853((List<? extends CompletableFuture<?>>)arrayList).join().stream().filter(Objects::nonNull).forEach(class8844 -> this.method11341(class8843, class8844, path4));
     }
     
     @Override

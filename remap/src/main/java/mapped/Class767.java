@@ -204,7 +204,7 @@ public class Class767 extends Class763 implements Class766, Class768
                     }
                     final int method4257 = this.method4257(i);
                     if (method4257 <= 0) {
-                        final List<LivingEntity> method4258 = this.world.method7142((Class<? extends LivingEntity>) LivingEntity.class, Class767.field4157, (LivingEntity)this, this.getBoundingBox().method18495(20.0, 8.0, 20.0));
+                        final List<LivingEntity> method4258 = this.world.method7142((Class<? extends LivingEntity>) LivingEntity.class, Class767.field4157, (LivingEntity)this, this.getBoundingBox().grow(20.0, 8.0, 20.0));
                         for (int j = 0; j < 10; ++j) {
                             if (method4258.isEmpty()) {
                                 break;

@@ -61,7 +61,7 @@ public class Class3510 extends Class3446
     @Override
     public void method11016() {
         final LivingEntity method4152 = this.field16503.method4152();
-        if (!this.field16503.getBoundingBox().method18502(method4152.getBoundingBox())) {
+        if (!this.field16503.getBoundingBox().intersects(method4152.getBoundingBox())) {
             if (this.field16503.method1734(method4152) < 9.0) {
                 final Vec3d method4153 = method4152.method1747(1.0f);
                 Class843.method5047(this.field16503).method19907(method4153.x, method4153.y, method4153.z, 1.0);

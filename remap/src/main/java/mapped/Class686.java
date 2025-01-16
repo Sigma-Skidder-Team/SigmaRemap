@@ -46,7 +46,7 @@ public class Class686 extends Class565 implements Class687
                 final Iterator<Class8395> iterator = this.field3782.iterator();
                 while (iterator.hasNext()) {
                     final Class8395 class5488 = iterator.next();
-                    if (class5488.method27993() + 3000L > Class8349.method27837()) {
+                    if (class5488.method27993() + 3000L > Util.method27837()) {
                         max = Math.max(max, this.field3781.field4643.method6617(class5488.method27992()));
                     }
                     else {
@@ -63,7 +63,7 @@ public class Class686 extends Class565 implements Class687
                     final int n5 = 9;
                     final int n6 = n5 / 2;
                     final int method16759 = this.field3781.field4643.method6617(method16757);
-                    final int method16760 = MathHelper.floor(MathHelper.method35655(255.0, 75.0, (Class8349.method27837() - class5489.method27993()) / 3000.0f));
+                    final int method16760 = MathHelper.floor(MathHelper.method35655(255.0, 75.0, (Util.method27837() - class5489.method27993()) / 3000.0f));
                     final int n7 = method16760 << 16 | method16760 << 8 | method16760;
                     Class8726.method30059();
                     Class8726.method30065(this.field3781.method5332().method7696() - n4 * 1.0f - 2.0f, this.field3781.method5332().method7697() - 30 - n * (n5 + 1) * 1.0f, 0.0f);

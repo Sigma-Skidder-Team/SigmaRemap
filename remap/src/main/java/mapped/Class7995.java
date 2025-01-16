@@ -16,7 +16,7 @@ public class Class7995
     public double method26160(final double n, final double n2) {
         this.field32934 += n;
         double d = this.field32934 - this.field32935;
-        final double method35701 = MathHelper.method35701(0.5, this.field32936, d);
+        final double method35701 = MathHelper.lerp(0.5, this.field32936, d);
         final double signum = Math.signum(d);
         if (signum * d > signum * this.field32936) {
             d = method35701;

@@ -72,6 +72,6 @@ public class Class2418 extends JComponent
     }
     
     static {
-        field14306 = Class8349.method27851(new DecimalFormat("########0.000"), decimalFormat -> decimalFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT)));
+        field14306 = Util.method27851(new DecimalFormat("########0.000"), decimalFormat -> decimalFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT)));
     }
 }

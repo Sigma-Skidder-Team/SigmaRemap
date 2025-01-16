@@ -140,8 +140,8 @@ public class Class8845
     
     public static boolean method30923(final Vec3d class5487) {
         final BlockRayTraceResult method6987 = Class8845.field37174.field4683.rayTraceBlocks(new RayTraceContext(new Vec3d(Class8845.field37174.field4684.posX, Class8845.field37174.field4684.posY + Class8845.field37174.field4684.method1892(), Class8845.field37174.field4684.posZ), class5487, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class8845.field37174.field4684));
-        final boolean b = method6987.method21449() == Class2165.field12880 || method6987.method21449() == Class2165.field12882;
-        Class8845.field37174.field4683.getBlockState(method6987.method21447()).method21696();
+        final boolean b = method6987.getType() == RayTraceResult.Type.MISS || method6987.getType() == RayTraceResult.Type.ENTITY;
+        Class8845.field37174.field4683.getBlockState(method6987.getPos()).method21696();
         return b;
     }
     
@@ -150,7 +150,7 @@ public class Class8845
             final double n = i;
             double n2;
             if (i != -1) {
-                n2 = n * class399.boundingBox.method18509();
+                n2 = n * class399.boundingBox.getYSize();
             }
             else {
                 n2 = class399.method1892() - 0.02f;
@@ -171,8 +171,8 @@ public class Class8845
                 double n4 = class399.posX + (class399.posX - class399.lastTickPosX) * Class8845.field37174.method5314();
                 double n5 = class399.posZ + (class399.posZ - class399.lastTickPosZ) * Class8845.field37174.method5314();
                 final double n6 = class399.posY + 0.05 + (class399.posY - class399.lastTickPosY) * Class8845.field37174.method5314() + n2;
-                final double n7 = class399.boundingBox.method18508() / 2.1 * j;
-                final double n8 = class399.boundingBox.method18510() / 2.1 * j;
+                final double n7 = class399.boundingBox.getXSize() / 2.1 * j;
+                final double n8 = class399.boundingBox.getZSize() / 2.1 * j;
                 if (Class8845.field37174.field4684.posX >= n4 + n7) {
                     if (Class8845.field37174.field4684.posX > n4 + n7) {
                         if (Class8845.field37174.field4684.posZ >= n5 - n8) {

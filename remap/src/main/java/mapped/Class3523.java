@@ -54,7 +54,7 @@ public class Class3523 extends Class3446
     }
     
     private boolean method11075() {
-        for (final Class800 class800 : this.field16527.world.method7128((Class<? extends Class800>)Class800.class, new AxisAlignedBB(this.field16529).method18496(2.0))) {
+        for (final Class800 class800 : this.field16527.world.method7128((Class<? extends Class800>)Class800.class, new AxisAlignedBB(this.field16529).intersect(2.0))) {
             if (class800 != this.field16527 && (class800.method4610() || class800.method4612())) {
                 return true;
             }

@@ -118,7 +118,7 @@ public class Class838 extends Class833
         super.method2736();
         if (this.method1768()) {
             if (this.method4988() > 0) {
-                for (final Class759 class759 : this.world.method6739((Class<? extends Class759>)Class759.class, this.getBoundingBox().method18496(0.3), (Predicate<? super Class759>)Class838.field4458)) {
+                for (final Class759 class759 : this.world.method6739((Class<? extends Class759>)Class759.class, this.getBoundingBox().intersect(0.3), (Predicate<? super Class759>)Class838.field4458)) {
                     if (!class759.method1768()) {
                         continue;
                     }

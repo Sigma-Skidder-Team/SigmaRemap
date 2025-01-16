@@ -30,7 +30,7 @@ public class Class9217
         if (field39429.length == i) {
             return;
         }
-        throw Class8349.method27859(new RuntimeException("Invalid length given for storage, got: " + field39429.length + " but expected: " + i));
+        throw Util.pauseDevMode(new RuntimeException("Invalid length given for storage, got: " + field39429.length + " but expected: " + i));
     }
     
     public int method33925(final int n, final int n2) {

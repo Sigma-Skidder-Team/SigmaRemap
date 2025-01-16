@@ -163,6 +163,6 @@ public class Class3955 extends Class3841
     static {
         field17859 = Class3834.field17415;
         field17860 = Class8970.field37745;
-        field17861 = Class8349.method27851((Map<Item, Class6423>)new Object2ObjectOpenHashMap(), object2ObjectOpenHashMap -> object2ObjectOpenHashMap.defaultReturnValue((Object)new Class6404()));
+        field17861 = Util.method27851((Map<Item, Class6423>)new Object2ObjectOpenHashMap(), object2ObjectOpenHashMap -> object2ObjectOpenHashMap.defaultReturnValue((Object)new Class6404()));
     }
 }

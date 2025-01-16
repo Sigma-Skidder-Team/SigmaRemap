@@ -19,7 +19,7 @@ public class Class569 extends Class565 implements Class570
     }
     
     public void method3320(final int n) {
-        this.field3397 = Class8349.method27837();
+        this.field3397 = Util.method27837();
         if (this.field3398 == null) {
             this.field3398 = new Class9039(this);
         }
@@ -29,7 +29,7 @@ public class Class569 extends Class565 implements Class570
     }
     
     private float method3321() {
-        return MathHelper.clamp((this.field3397 - Class8349.method27837() + 5000L) / 2000.0f, 0.0f, 1.0f);
+        return MathHelper.clamp((this.field3397 - Util.method27837() + 5000L) / 2000.0f, 0.0f, 1.0f);
     }
     
     public void method3322(final float n) {
@@ -127,13 +127,13 @@ public class Class569 extends Class565 implements Class570
         if (i >= 0) {
             if (i <= 8) {
                 this.field3398.method32496(i);
-                this.field3397 = Class8349.method27837();
+                this.field3397 = Util.method27837();
             }
         }
     }
     
     public void method3329() {
-        this.field3397 = Class8349.method27837();
+        this.field3397 = Util.method27837();
         if (!this.method3327()) {
             this.field3398 = new Class9039(this);
         }

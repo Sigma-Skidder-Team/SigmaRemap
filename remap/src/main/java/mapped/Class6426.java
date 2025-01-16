@@ -24,7 +24,7 @@ public final class Class6426 extends Class6404
         final double n3 = method12072.getZ() + class5493.getZOffset() * 0.3f;
         final World method12073 = class5491.method16763();
         final Random field10062 = method12073.rand;
-        method12073.method6886(Class8349.method27851(new Class418(method12073, n, n2, n3, field10062.nextGaussian() * 0.05 + class5493.getXOffset(), field10062.nextGaussian() * 0.05 + class5493.getYOffset(), field10062.nextGaussian() * 0.05 + class5493.getZOffset()), class5495 -> class5495.method2029(class5494)));
+        method12073.method6886(Util.method27851(new Class418(method12073, n, n2, n3, field10062.nextGaussian() * 0.05 + class5493.getXOffset(), field10062.nextGaussian() * 0.05 + class5493.getYOffset(), field10062.nextGaussian() * 0.05 + class5493.getZOffset()), class5495 -> class5495.method2029(class5494)));
         class5492.method27693(1);
         return class5492;
     }

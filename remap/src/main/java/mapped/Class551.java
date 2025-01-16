@@ -29,13 +29,13 @@ public class Class551 extends Class527
         this.method3029(new Class654(this.field3152 / 2 + 4, this.field3153 / 4 + 48 - 16, 98, 20, Class8822.method30773("gui.stats", new Object[0]), class654 -> this.field3150.method5244(new Class691(this, this.field3150.field4684.method4121()))));
         this.method3029(new Class654(this.field3152 / 2 - 102, this.field3153 / 4 + 72 - 16, 98, 20, Class8822.method30773("menu.sendFeedback", new Object[0]), class654 -> this.field3150.method5244(new Class547(b -> {
             if (b) {
-                Class8349.method27845().method980(s);
+                Util.method27845().method980(s);
             }
             this.field3150.method5244(this);
         }, s, true))));
         this.method3029(new Class654(this.field3152 / 2 + 4, this.field3153 / 4 + 72 - 16, 98, 20, Class8822.method30773("menu.reportBugs", new Object[0]), class654 -> this.field3150.method5244(new Class547(b -> {
             if (b) {
-                Class8349.method27845().method980("https://aka.ms/snapshotbugs?ref=game");
+                Util.method27845().method980("https://aka.ms/snapshotbugs?ref=game");
             }
             this.field3150.method5244(this);
         }, "https://aka.ms/snapshotbugs?ref=game", true))));

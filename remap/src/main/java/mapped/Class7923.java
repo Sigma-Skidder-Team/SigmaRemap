@@ -22,7 +22,7 @@ public class Class7923 implements Class7924
         this.field32542 = field32548;
         this.field32543 = field32549;
         this.field32546 = (double)n;
-        this.field32545 = Class8349.method27837();
+        this.field32545 = Util.method27837();
         this.field32544 = this.field32545 + n;
     }
     
@@ -48,8 +48,8 @@ public class Class7923 implements Class7924
     
     @Override
     public double method25679() {
-        final double n = (Class8349.method27837() - this.field32545) / this.field32546;
-        return (n >= 1.0) ? this.field32543 : MathHelper.method35701(n, this.field32542, this.field32543);
+        final double n = (Util.method27837() - this.field32545) / this.field32546;
+        return (n >= 1.0) ? this.field32543 : MathHelper.lerp(n, this.field32542, this.field32543);
     }
     
     @Override
@@ -59,7 +59,7 @@ public class Class7923 implements Class7924
     
     @Override
     public long method25681() {
-        return this.field32544 - Class8349.method27837();
+        return this.field32544 - Util.method27837();
     }
     
     @Override

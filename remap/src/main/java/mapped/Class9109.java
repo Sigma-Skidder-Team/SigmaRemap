@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
 
 public interface Class9109
 {
-    public static final DecimalFormat field38588 = Class8349.method27851(new DecimalFormat("########0.00"), decimalFormat -> decimalFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT)));
+    public static final DecimalFormat field38588 = Util.method27851(new DecimalFormat("########0.00"), decimalFormat -> decimalFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT)));
     public static final Class9109 field38589 = NumberFormat.getIntegerInstance(Locale.US)::format;
     public static final Class9109 field38590 = n -> Class9109.field38588.format(n * 0.1);
     public static final Class9109 field38591 = i -> {

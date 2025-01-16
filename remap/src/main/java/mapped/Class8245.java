@@ -230,7 +230,7 @@ public class Class8245
     
     public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final BlockRayTraceResult class759) {
         this.method27318();
-        final BlockPos method21447 = class759.method21447();
+        final BlockPos method21447 = class759.getPos();
         if (!this.field33863.field4683.getWorldBorder().contains(method21447)) {
             return Class2201.field13403;
         }
@@ -304,7 +304,7 @@ public class Class8245
     
     public Class2201 method27323(final PlayerEntity playerEntity, final Entity class513, final Class7007 class514, final Class316 class515) {
         this.method27318();
-        final Vec3d method16742 = class514.method21451().subtract(class513.getPosX(), class513.getPosY(), class513.getPosZ());
+        final Vec3d method16742 = class514.getHitVec().subtract(class513.getPosX(), class513.getPosY(), class513.getPosZ());
         this.field33864.method17292(new Class4381(class513, class515, method16742));
         return (this.field33871 != Class101.field301) ? class513.method1898(playerEntity, method16742, class515) : Class2201.field13402;
     }

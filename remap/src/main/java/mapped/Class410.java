@@ -35,8 +35,8 @@ public class Class410 extends Class409
     }
     
     @Override
-    public void method2016(final Class7006 class7006) {
-        if (class7006.method21449() == Class2165.field12882) {
+    public void method2016(final RayTraceResult class7006) {
+        if (class7006.getType() == RayTraceResult.Type.ENTITY) {
             ((Class7007)class7006).method21452().attackEntityFrom(DamageSource.method25699(this, this.method2019()), 0.0f);
         }
         if (!this.world.isRemote) {

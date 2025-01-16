@@ -190,7 +190,7 @@ public class Class8734
     }
     
     static {
-        field36696 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field36696 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put("Village", "Village");
             hashMap.put("Mineshaft", "Mineshaft");
             hashMap.put("Mansion", "Mansion");
@@ -204,7 +204,7 @@ public class Class8734
             hashMap.put("EndCity", "EndCity");
             return;
         });
-        field36697 = Class8349.method27851(Maps.newHashMap(), hashMap2 -> {
+        field36697 = Util.method27851(Maps.newHashMap(), hashMap2 -> {
             hashMap2.put("Iglu", "Igloo");
             hashMap2.put("TeDP", "Desert_Pyramid");
             hashMap2.put("TeJP", "Jungle_Pyramid");

@@ -22,7 +22,7 @@ public class Class4001 extends Class4000
     
     @Override
     public int method12165(final World class1847, final BlockPos class1848) {
-        final int min = Math.min(class1847.method7128((Class<? extends Entity>) Entity.class, Class4001.field18033.method18500(class1848)).size(), this.field18036);
+        final int min = Math.min(class1847.method7128((Class<? extends Entity>) Entity.class, Class4001.field18033.offset(class1848)).size(), this.field18036);
         if (min <= 0) {
             return 0;
         }

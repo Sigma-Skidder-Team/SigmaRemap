@@ -98,7 +98,7 @@ public class Class3242 extends Class3167
     }
     
     public void method10242(final Entity class399, final double n, final double n2, final double n3, final float n4, final Class7351 class400, final Class7807 class401) {
-        Class3242.field15514.field4636.field9290.method28706(class399, MathHelper.method35701(n4, class399.lastTickPosX, class399.getPosX()) - n, MathHelper.method35701(n4, class399.lastTickPosY, class399.getPosY()) - n2, MathHelper.method35701(n4, class399.lastTickPosZ, class399.getPosZ()) - n3, MathHelper.method35700(n4, class399.prevRotationYaw, class399.rotationYaw), n4, class400, class401, 255);
+        Class3242.field15514.field4636.field9290.method28706(class399, MathHelper.lerp(n4, class399.lastTickPosX, class399.getPosX()) - n, MathHelper.lerp(n4, class399.lastTickPosY, class399.getPosY()) - n2, MathHelper.lerp(n4, class399.lastTickPosZ, class399.getPosZ()) - n3, MathHelper.method35700(n4, class399.prevRotationYaw, class399.rotationYaw), n4, class400, class401, 255);
     }
     
     @Class6753

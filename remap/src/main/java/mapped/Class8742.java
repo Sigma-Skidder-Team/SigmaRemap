@@ -281,7 +281,7 @@ public class Class8742
             if (!method35653.isEmpty()) {
                 arrayList.add(Class8223.method27251(random, (List<Object>)method35653));
                 while (random.nextInt(50) <= method35651) {
-                    method30226(method35653, Class8349.method27847((List<Class6827>)arrayList));
+                    method30226(method35653, Util.method27847((List<Class6827>)arrayList));
                     if (method35653.isEmpty()) {
                         break;
                     }

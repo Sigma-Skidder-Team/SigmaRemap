@@ -42,7 +42,7 @@ public class Class3356 extends Class3355
             }
         }
         if (this.method9883("Smart Visibility")) {
-            if (Class3356.field15514.field4683.method6739((Class<? extends Entity>) PlayerEntity.class, Class3356.field15514.field4684.getBoundingBox().method18496(14.0), class5744 -> {
+            if (Class3356.field15514.field4683.method6739((Class<? extends Entity>) PlayerEntity.class, Class3356.field15514.field4684.getBoundingBox().intersect(14.0), class5744 -> {
                 final boolean b;
                 if (class5744.method1732(Class3356.field15514.field4684) < 12.0f) {
                     if (!this.method10623(class5744)) {
@@ -182,7 +182,7 @@ public class Class3356 extends Class3355
             Class8726.method30040();
             Class8726.method30003();
             Math.max(Math.min(Class869.method5338(), Class3356.field15514.field4648.field23383), 60);
-            final long n = Class8349.method27838() - class5741.field23313;
+            final long n = Util.method27838() - class5741.field23313;
             final float field2399 = Class3356.field15514.field4684.rotationYaw;
             final Class756 field2400 = Class3356.field15514.field4684;
             field2400.rotationYaw += 180.0f;
@@ -194,7 +194,7 @@ public class Class3356 extends Class3355
             Class9463.field40711 = true;
             final Class6153 field2402 = Class3356.field15514.field4636.field9308;
             Class3356.field15514.field4636.field9308 = null;
-            Class3356.field15514.field4644.method5820(class5741.field23312, Class8349.method27838(), new Class7351());
+            Class3356.field15514.field4644.method5820(class5741.field23312, Util.method27838(), new Class7351());
             Class3356.field15514.field4636.field9308 = field2402;
             Class9463.field40711 = false;
             Class3356.field15514.field4644.field9392 = true;

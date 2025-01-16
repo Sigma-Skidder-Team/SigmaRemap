@@ -584,7 +584,7 @@ public class Class803 extends Class789
         if (!this.method2783()) {
             if (!this.world.method6703()) {
                 if (this.rand.nextFloat() < 0.1f) {
-                    if (this.world.method6739((Class<? extends Entity>) PlayerEntity.class, this.getBoundingBox().method18495(16.0, 16.0, 16.0), (Predicate<? super Entity>)Class9170.field38850).isEmpty()) {
+                    if (this.world.method6739((Class<? extends Entity>) PlayerEntity.class, this.getBoundingBox().grow(16.0, 16.0, 16.0), (Predicate<? super Entity>)Class9170.field38850).isEmpty()) {
                         return Class8520.field35208;
                     }
                 }

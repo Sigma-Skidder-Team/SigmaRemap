@@ -44,7 +44,7 @@ public class Class3836 extends Class3834
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.get((IProperty<Boolean>)Class3836.field17438)) {
-            return VoxelShapes.method24487();
+            return VoxelShapes.fullCube();
         }
         switch (Class8558.field35936[class7096.get((IProperty<Direction>)Class3836.field17415).ordinal()]) {
             case 1: {

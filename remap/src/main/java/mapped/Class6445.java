@@ -54,7 +54,7 @@ public class Class6445
     
     private static void method19226(final Class9083 class9083) {
         final Throwable method32765 = class9083.method32765();
-        method19230(class9083.method32758(), TextFormatting.RED, class9083.method32754() + " failed! " + Class8349.method27860(method32765));
+        method19230(class9083.method32758(), TextFormatting.RED, class9083.method32754() + " failed! " + Util.method27860(method32765));
         if (method32765 instanceof Class2360) {
             final Class2360 class9084 = (Class2360)method32765;
             method19232(class9083.method32758(), class9084.method9497(), class9084.method9496());

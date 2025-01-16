@@ -155,7 +155,7 @@ public class Class427 extends Entity
     
     private void method2100() {
         if (this.method2101()) {
-            for (final Class427 class427 : this.world.method6739((Class<? extends Class427>)Class427.class, this.getBoundingBox().method18495(0.5, 0.0, 0.5), class428 -> class428 != this && class428.method2101())) {
+            for (final Class427 class427 : this.world.method6739((Class<? extends Class427>)Class427.class, this.getBoundingBox().grow(0.5, 0.0, 0.5), class428 -> class428 != this && class428.method2101())) {
                 if (!class427.method2101()) {
                     continue;
                 }

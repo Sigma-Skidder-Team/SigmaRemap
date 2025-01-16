@@ -125,7 +125,7 @@ public class Class3361 extends Class3355
         final double field22770 = Class3361.field15514.field4684.getMotion().x;
         final double field22771 = Class3361.field15514.field4684.getMotion().y;
         final double field22772 = Class3361.field15514.field4684.getMotion().z;
-        final Iterator<Object> iterator = Class3361.field15514.field4683.method6980(Class3361.field15514.field4684, Class3361.field15514.field4684.boundingBox.method18494(field22770, 0.0, field22772).method18499(0.0, field22771, 0.0), Collections.EMPTY_SET).iterator();
+        final Iterator<Object> iterator = Class3361.field15514.field4683.method6980(Class3361.field15514.field4684, Class3361.field15514.field4684.boundingBox.expand(field22770, 0.0, field22772).offset(0.0, field22771, 0.0), Collections.EMPTY_SET).iterator();
         Vec3i class352 = null;
         while (iterator.hasNext()) {
             final BlockPos class353 = new BlockPos(iterator.next().method24537().method18517());
@@ -141,7 +141,7 @@ public class Class3361 extends Class3355
             class352 = class353;
         }
         if (class352 == null) {
-            final Iterator<Object> iterator2 = Class3361.field15514.field4683.method6980(Class3361.field15514.field4684, Class3361.field15514.field4684.boundingBox.method18494(field22770, 0.0, field22772).method18499(0.0, Class3361.field15514.field4684.getMotion().y - 1.0, 0.0), Collections.EMPTY_SET).iterator();
+            final Iterator<Object> iterator2 = Class3361.field15514.field4683.method6980(Class3361.field15514.field4684, Class3361.field15514.field4684.boundingBox.expand(field22770, 0.0, field22772).offset(0.0, Class3361.field15514.field4684.getMotion().y - 1.0, 0.0), Collections.EMPTY_SET).iterator();
             while (iterator2.hasNext()) {
                 final BlockPos class354 = new BlockPos(iterator2.next().method24537().method18517());
                 if (!Class4609.method13708(class354)) {

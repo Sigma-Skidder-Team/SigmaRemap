@@ -104,7 +104,7 @@ public class Class3295 extends Class3167
                                     if (this.method9883("Swim up")) {
                                         class5717.method16975(0.13);
                                     }
-                                    if (!this.method10432(Class3295.field15514.field4684.boundingBox.method18499(0.0, class5717.method16974(), 0.0))) {
+                                    if (!this.method10432(Class3295.field15514.field4684.boundingBox.offset(0.0, class5717.method16974(), 0.0))) {
                                         class5717.method16975((int)Class3295.field15514.field4684.posY + 1 - Class3295.field15514.field4684.posY);
                                         Class3295.field15514.field4684.onGround = true;
                                         this.field15854 = 1;
@@ -205,7 +205,7 @@ public class Class3295 extends Class3167
     }
     
     public static boolean method10433() {
-        final Iterator<Object> iterator = Class3295.field15514.field4683.method6981(Class3295.field15514.field4684, Class3295.field15514.field4684.boundingBox.method18499(0.0, -0.001, 0.0)).iterator();
+        final Iterator<Object> iterator = Class3295.field15514.field4683.method6981(Class3295.field15514.field4684, Class3295.field15514.field4684.boundingBox.offset(0.0, -0.001, 0.0)).iterator();
         boolean b = true;
         if (iterator.hasNext()) {
             while (iterator.hasNext()) {

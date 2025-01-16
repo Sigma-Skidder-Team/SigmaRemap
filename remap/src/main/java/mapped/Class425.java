@@ -221,7 +221,7 @@ public class Class425 extends Entity
     }
     
     private void method2074() {
-        final Class7006 method23093 = Class7476.method23093(this, this.getBoundingBox().method18493(this.getMotion()).method18496(1.0), class399 -> {
+        final RayTraceResult method23093 = Class7476.method23093(this, this.getBoundingBox().expand(this.getMotion()).intersect(1.0), class399 -> {
             final boolean b;
             if (!class399.isSpectator()) {
                 if (class399.method1749() || class399 instanceof Class427) {
@@ -232,8 +232,8 @@ public class Class425 extends Entity
             }
             return b;
         }, RayTraceContext.BlockMode.COLLIDER, true);
-        if (method23093.method21449() != Class2165.field12880) {
-            if (method23093.method21449() != Class2165.field12882) {
+        if (method23093.getType() != RayTraceResult.Type.MISS) {
+            if (method23093.getType() != RayTraceResult.Type.ENTITY) {
                 this.field2584 = true;
             }
             else {

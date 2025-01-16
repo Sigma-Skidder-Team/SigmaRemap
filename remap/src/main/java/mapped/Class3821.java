@@ -21,16 +21,16 @@ public class Class3821 extends Item
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class7006 method2716 = Item.method11733(class1847, class1848, (this.field17373 != Class7558.field29974) ? RayTraceContext.FluidMode.NONE : RayTraceContext.FluidMode.SOURCE_ONLY);
-        if (method2716.method21449() == Class2165.field12880) {
+        final RayTraceResult method2716 = Item.method11733(class1847, class1848, (this.field17373 != Class7558.field29974) ? RayTraceContext.FluidMode.NONE : RayTraceContext.FluidMode.SOURCE_ONLY);
+        if (method2716.getType() == RayTraceResult.Type.MISS) {
             return Class9355.method34676(method2715);
         }
-        if (method2716.method21449() != Class2165.field12881) {
+        if (method2716.getType() != RayTraceResult.Type.BLOCK) {
             return Class9355.method34676(method2715);
         }
         final BlockRayTraceResult class1850 = (BlockRayTraceResult)method2716;
-        final BlockPos method2717 = class1850.method21447();
-        final Direction method2718 = class1850.method21448();
+        final BlockPos method2717 = class1850.getPos();
+        final Direction method2718 = class1850.getFace();
         final BlockPos method2719 = method2717.method1149(method2718);
         if (!class1847.method6760(class1848, method2717) || !class1848.method2881(method2719, method2718, method2715)) {
             return Class9355.method34677(method2715);
@@ -92,7 +92,7 @@ public class Class3821 extends Item
             if (!method6701.method21706()) {
                 if (!method6703) {
                     if (!(method6701.getBlock() instanceof Class3867) || !((Class3867)method6701.getBlock()).method11920(class513, class514, method6701, this.field17373)) {
-                        return class515 != null && this.method11755(playerEntity, class513, class515.method21447().method1149(class515.method21448()), null);
+                        return class515 != null && this.method11755(playerEntity, class513, class515.getPos().method1149(class515.getFace()), null);
                     }
                 }
             }

@@ -50,12 +50,12 @@ public class Class3265 extends Class3247
         double field25077 = 0.0;
         for (int i = 0; i < length; ++i) {
             final VoxelShape class5748 = (VoxelShape)array[i];
-            final BlockPos class5749 = new BlockPos(class5748.method24535(Direction.Axis.X), class5748.method24535(Direction.Axis.Y), class5748.method24535(Direction.Axis.Z));
+            final BlockPos class5749 = new BlockPos(class5748.getStart(Direction.Axis.X), class5748.getStart(Direction.Axis.Y), class5748.getStart(Direction.Axis.Z));
             final Class7096 method6701 = Class3265.field15514.field4683.getBlockState(class5749);
-            if (class5746 == null || class5748.method24537().maxY > field25077) {
+            if (class5746 == null || class5748.getBoundingBox().maxY > field25077) {
                 class5746 = method6701;
                 class5747 = class5749;
-                field25077 = class5748.method24537().maxY;
+                field25077 = class5748.getBoundingBox().maxY;
             }
         }
         if (!Class3265.field15514.field4684.method1706() && !Class3265.field15514.field4684.method1723()) {

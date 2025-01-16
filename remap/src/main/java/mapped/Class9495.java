@@ -50,7 +50,7 @@ public class Class9495
     
     public Class9495(final String s, final Class7952 class7952, final WorldInfo class7953, final boolean field40829) {
         this.field40833 = true;
-        this.field40839 = (Object2FloatMap<DimensionType>)Object2FloatMaps.synchronize((Object2FloatMap)new Object2FloatOpenCustomHashMap((Hash$Strategy)Class8349.method27852()));
+        this.field40839 = (Object2FloatMap<DimensionType>)Object2FloatMaps.synchronize((Object2FloatMap)new Object2FloatOpenCustomHashMap((Hash$Strategy) Util.method27852()));
         this.field40840 = new Class2259("optimizeWorld.stage.counting", new Object[0]);
         this.field40828 = class7953.method29549();
         this.field40829 = field40829;
@@ -94,7 +94,7 @@ public class Class9495
                 builder2.put((Object)class384, (Object)new Class387(new File(class384.method1272(method29392), "region"), this.field40830.method29400()));
             }
             final ImmutableMap build2 = builder2.build();
-            final long method29394 = Class8349.method27837();
+            final long method29394 = Util.method27837();
             this.field40840 = new Class2259("optimizeWorld.stage.upgrading", new Object[0]);
             while (this.field40833) {
                 boolean b = false;
@@ -164,7 +164,7 @@ public class Class9495
                 }
             }
             this.field40842.method27214();
-            Class9495.field40826.info("World optimizaton finished after {} ms", (Object)(Class8349.method27837() - method29394));
+            Class9495.field40826.info("World optimizaton finished after {} ms", (Object)(Util.method27837() - method29394));
             this.field40834 = true;
         }
     }

@@ -37,7 +37,7 @@ public class Class7677
     private static Class8573[] field30504;
     
     public static String method24367() {
-        switch (Class7783.field31861[Class8349.method27845().ordinal()]) {
+        switch (Class7783.field31861[Util.method27845().ordinal()]) {
             case 1: {
                 return "MC_OS_WINDOWS";
             }

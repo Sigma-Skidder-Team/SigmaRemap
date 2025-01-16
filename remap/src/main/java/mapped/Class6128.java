@@ -35,7 +35,7 @@ public class Class6128 implements Class6113
             }
             final Iterator<AxisAlignedBB> iterator2 = method6701.getShape(field2391, class7354).toBoundingBoxList().iterator();
             while (iterator2.hasNext()) {
-                final AxisAlignedBB method6702 = iterator2.next().method18500(class7354).method18496(0.002).method18499(-n, -n2, -n3);
+                final AxisAlignedBB method6702 = iterator2.next().offset(class7354).intersect(0.002).offset(-n, -n2, -n3);
                 final double field2392 = method6702.minX;
                 final double field2393 = method6702.minY;
                 final double field2394 = method6702.minZ;

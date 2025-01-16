@@ -15,10 +15,10 @@ public final class Class904 extends ForkJoinWorkerThread
     
     public void onTermination(final Throwable exception) {
         if (exception == null) {
-            Class8349.method27871().debug("{} shutdown", (Object)this.getName());
+            Util.method27871().debug("{} shutdown", (Object)this.getName());
         }
         else {
-            Class8349.method27871().warn("{} died", (Object)this.getName(), (Object)exception);
+            Util.method27871().warn("{} died", (Object)this.getName(), (Object)exception);
         }
         super.onTermination(exception);
     }

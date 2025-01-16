@@ -138,7 +138,7 @@ public class Class3212 extends Class3167
         final BlockRayTraceResult blockRayTraceResult = (BlockRayTraceResult)Class4609.method13699(Class3212.field15514.field4684.field4077, Class3212.field15514.field4684.field4078, Class4609.method13690(), 0.0f);
         boolean b = false;
         if (blockRayTraceResult != null) {
-            if (blockRayTraceResult.method21449() == Class2165.field12881) {
+            if (blockRayTraceResult.getType() == RayTraceResult.Type.BLOCK) {
                 if (this.method9914().method9887("ItemSpoof").equals("None")) {
                     final Class3260 class7006 = (Class3260)this.method9914();
                     if (!Class3260.method10279(Class3212.field15514.field4684.method2715(Class316.field1877).getItem())) {
@@ -148,23 +148,23 @@ public class Class3212 extends Class3167
                 if (this.method9883("Haphe (AACAP)")) {
                     if (!Class3212.field15514.field4684.field2967) {
                         if (!Class3212.field15514.field4684.onGround) {
-                            if (blockRayTraceResult.method21448() == Direction.UP) {
+                            if (blockRayTraceResult.getFace() == Direction.UP) {
                                 return false;
                             }
-                            if (blockRayTraceResult.method21447().getY() != this.field15652 - 1) {
+                            if (blockRayTraceResult.getPos().getY() != this.field15652 - 1) {
                                 return false;
                             }
                         }
                     }
                 }
-                if (blockRayTraceResult.method21448() == Direction.UP) {
-                    if (blockRayTraceResult.method21447().getY() + 2 > Class3212.field15514.field4684.posY) {
-                        if (Class4609.method13708(blockRayTraceResult.method21447())) {
+                if (blockRayTraceResult.getFace() == Direction.UP) {
+                    if (blockRayTraceResult.getPos().getY() + 2 > Class3212.field15514.field4684.posY) {
+                        if (Class4609.method13708(blockRayTraceResult.getPos())) {
                             return false;
                         }
                     }
                 }
-                if (blockRayTraceResult.method21447().getY() == Class3212.field15514.field4684.posY) {
+                if (blockRayTraceResult.getPos().getY() == Class3212.field15514.field4684.posY) {
                     return false;
                 }
                 ((Class3260)this.method9914()).method10282();
@@ -183,8 +183,8 @@ public class Class3212 extends Class3167
                     else {
                         Class3212.field15514.method5269().method17292(new Class4380(Class316.field1877));
                     }
-                    if (blockRayTraceResult.method21448() == Direction.UP) {
-                        this.field15652 = blockRayTraceResult.method21447().getY() + 2;
+                    if (blockRayTraceResult.getFace() == Direction.UP) {
+                        this.field15652 = blockRayTraceResult.getPos().getY() + 2;
                     }
                     b = true;
                 }
@@ -245,7 +245,7 @@ public class Class3212 extends Class3167
                 if (!method10104.isEmpty()) {
                     final Class9052 class5745 = method10104.get(method10104.size() - 1);
                     final BlockRayTraceResult method10105 = Class4609.method13697(this.field15650, this.field15651, 5.0f);
-                    if (!method10105.method21447().equals(class5745.field38320) || !method10105.method21448().equals(class5745.field38321)) {
+                    if (!method10105.getPos().equals(class5745.field38320) || !method10105.getFace().equals(class5745.field38321)) {
                         Class4609.method13673(class5745.field38320, class5745.field38321);
                         this.field15650 = Class4609.method13673(class5745.field38320, class5745.field38321)[0];
                         this.field15651 = Class4609.method13673(class5745.field38320, class5745.field38321)[1];

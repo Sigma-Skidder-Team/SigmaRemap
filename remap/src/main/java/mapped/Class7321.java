@@ -55,7 +55,7 @@ public class Class7321
     }
     
     private static int method22441(final Class7492 class7492, final String str) throws CommandSyntaxException {
-        final BlockPos method21447 = ((BlockRayTraceResult)class7492.method23253().method1748(10.0, 1.0f, false)).method21447();
+        final BlockPos method21447 = ((BlockRayTraceResult)class7492.method23253().method1748(10.0, 1.0f, false)).getPos();
         final Class1849 method21448 = class7492.method23250();
         Optional<BlockPos> optional = Class8787.method30580(method21447, 15, method21448);
         if (!optional.isPresent()) {

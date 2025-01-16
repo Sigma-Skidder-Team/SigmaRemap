@@ -171,7 +171,7 @@ public class Class4651 extends Class4654
     public static double method13906(final IBlockReader class1855, final BlockPos class1856) {
         final BlockPos method1139 = class1856.method1139();
         final VoxelShape method1140 = class1855.getBlockState(method1139).getCollisionShape(class1855, method1139);
-        return method1139.getY() + (method1140.isEmpty() ? 0.0 : method1140.method24536(Direction.Axis.Y));
+        return method1139.getY() + (method1140.isEmpty() ? 0.0 : method1140.getEnd(Direction.Axis.Y));
     }
     
     @Nullable

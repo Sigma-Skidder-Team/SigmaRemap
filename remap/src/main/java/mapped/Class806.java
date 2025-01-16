@@ -544,7 +544,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (this.method4723()) {
             if (this.method2625()) {
                 if (!this.method4721()) {
-                    final LivingEntity method7138 = this.world.method7138((Class<? extends LivingEntity>)Class806.class, Class806.field4332, (LivingEntity)this, this.getPosX(), this.getPosY(), this.getPosZ(), this.getBoundingBox().method18496(16.0));
+                    final LivingEntity method7138 = this.world.method7138((Class<? extends LivingEntity>)Class806.class, Class806.field4332, (LivingEntity)this, this.getPosX(), this.getPosY(), this.getPosZ(), this.getBoundingBox().intersect(16.0));
                     if (method7138 != null) {
                         if (this.method1734(method7138) > 4.0) {
                             this.field4113.method24722(method7138, 0);

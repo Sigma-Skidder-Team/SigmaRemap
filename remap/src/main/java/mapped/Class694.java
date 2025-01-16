@@ -83,7 +83,7 @@ public class Class694 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3041();
-        final long method27837 = Class8349.method27837();
+        final long method27837 = Util.method27837();
         if (method27837 - this.field3822 > 2000L) {
             this.field3822 = method27837;
             Class7895.field32404.method25556(new Class2259("narrator.joining", new Object[0]).getString());

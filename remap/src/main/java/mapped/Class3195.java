@@ -34,7 +34,7 @@ public class Class3195 extends Class3167
                 if (!class5740.method1768()) {
                     continue;
                 }
-                if (class5740.boundingBox.method18507() <= 0.8) {
+                if (class5740.boundingBox.getAverageEdgeLength() <= 0.8) {
                     continue;
                 }
                 if (class5740.ticksExisted <= 30) {

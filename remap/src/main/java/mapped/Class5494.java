@@ -21,7 +21,7 @@ public class Class5494
     private static DataFixer method16767() {
         final DataFixerBuilder dataFixerBuilder = new DataFixerBuilder(Class9528.method35579().getWorldVersion());
         method16769(dataFixerBuilder);
-        return dataFixerBuilder.build(Class8349.method27841());
+        return dataFixerBuilder.build(Util.method27841());
     }
     
     public static DataFixer method16768() {

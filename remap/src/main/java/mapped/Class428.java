@@ -215,7 +215,7 @@ public abstract class Class428 extends Entity
             }
             this.method1655(this.rotationYaw, this.rotationPitch);
             if (this.method2139() == Class2080.field12024 && Entity.horizontalMag(this.getMotion()) > 0.01) {
-                final List<Entity> method35648 = this.world.method6737(this, this.getBoundingBox().method18495(0.20000000298023224, 0.0, 0.20000000298023224), Class9170.method33474(this));
+                final List<Entity> method35648 = this.world.method6737(this, this.getBoundingBox().grow(0.20000000298023224, 0.0, 0.20000000298023224), Class9170.method33474(this));
                 if (!method35648.isEmpty()) {
                     for (int i = 0; i < method35648.size(); ++i) {
                         final Entity class355 = method35648.get(i);
@@ -236,7 +236,7 @@ public abstract class Class428 extends Entity
                 }
             }
             else {
-                for (final Entity class356 : this.world.method7127(this, this.getBoundingBox().method18495(0.20000000298023224, 0.0, 0.20000000298023224))) {
+                for (final Entity class356 : this.world.method7127(this, this.getBoundingBox().grow(0.20000000298023224, 0.0, 0.20000000298023224))) {
                     if (this.method1909(class356)) {
                         continue;
                     }
@@ -542,7 +542,7 @@ public abstract class Class428 extends Entity
     @Override
     public AxisAlignedBB method1887() {
         final AxisAlignedBB method1886 = this.getBoundingBox();
-        return this.method2146() ? method1886.method18496(Math.abs(this.method2142()) / 16.0) : method1886;
+        return this.method2146() ? method1886.intersect(Math.abs(this.method2142()) / 16.0) : method1886;
     }
     
     @Override
@@ -714,7 +714,7 @@ public abstract class Class428 extends Entity
         field2623 = EntityDataManager.method33564(Class428.class, Class7709.field30654);
         field2624 = EntityDataManager.method33564(Class428.class, Class7709.field30654);
         field2625 = EntityDataManager.method33564(Class428.class, Class7709.field30661);
-        field2627 = Class8349.method27851(Maps.newEnumMap((Class)Class104.class), enumMap -> {
+        field2627 = Util.method27851(Maps.newEnumMap((Class)Class104.class), enumMap -> {
             Direction.WEST.getDirectionVec();
             Direction.EAST.getDirectionVec();
             Direction.NORTH.getDirectionVec();

@@ -190,7 +190,7 @@ public abstract class Class6173
                         }
                     }
                 }
-                this.method18445(this.method18444().method18499(field22770, field22771, field22772));
+                this.method18445(this.method18444().offset(field22770, field22771, field22772));
                 this.method18442();
             }
             if (Math.abs(field22771) >= 9.999999747378752E-6) {

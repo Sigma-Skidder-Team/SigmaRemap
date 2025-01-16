@@ -139,6 +139,6 @@ public class Class3854 extends Block implements Class3856
         field17467 = Class3967.field17923;
         field17468 = Class3967.field17924;
         field17469 = Class8970.field37747;
-        field17470 = Class3967.field17927.entrySet().stream().filter(entry -> entry.getKey().getAxis().isHorizontal()).collect((Collector<? super Object, ?, Map<Direction, Class7113>>)Class8349.method27834());
+        field17470 = Class3967.field17927.entrySet().stream().filter(entry -> entry.getKey().getAxis().isHorizontal()).collect((Collector<? super Object, ?, Map<Direction, Class7113>>) Util.method27834());
     }
 }

@@ -34,7 +34,7 @@ public class Class408 extends Entity implements Class407
     
     public void method2008(final ItemStack class8321) {
         if (class8321.getItem() != Items.field31449 || class8321.method27656()) {
-            this.method1650().set(Class408.field2500, (ItemStack)Class8349.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
+            this.method1650().set(Class408.field2500, (ItemStack) Util.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
         }
     }
     
@@ -55,7 +55,7 @@ public class Class408 extends Entity implements Class407
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.getBoundingBox().method18507() * 4.0;
+        double v = this.getBoundingBox().getAverageEdgeLength() * 4.0;
         if (Double.isNaN(v)) {
             v = 4.0;
         }
@@ -127,7 +127,7 @@ public class Class408 extends Entity implements Class407
             final double n5 = this.field2503 - n3;
             final float n6 = (float)Math.sqrt(n4 * n4 + n5 * n5);
             final float n7 = (float) MathHelper.method35693(n5, n4);
-            double method1937 = MathHelper.method35701(0.0025, method1936, n6);
+            double method1937 = MathHelper.lerp(0.0025, method1936, n6);
             double field22771 = method1935.y;
             if (n6 < 1.0f) {
                 method1937 *= 0.8;

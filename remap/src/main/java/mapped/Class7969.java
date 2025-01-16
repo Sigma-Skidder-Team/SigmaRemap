@@ -47,7 +47,7 @@ public class Class7969
     }
     
     static {
-        field32747 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field32747 = Util.method27851(Maps.newHashMap(), hashMap -> {
             Class6332.method18762();
             final Class6332 value;
             hashMap.put(Class7521.field29155, value);
@@ -271,7 +271,7 @@ public class Class7969
             hashMap.put(Class7521.field29765, value3);
             return;
         });
-        field32748 = Class8349.method27851(Maps.newHashMap(), hashMap2 -> {
+        field32748 = Util.method27851(Maps.newHashMap(), hashMap2 -> {
             Class6332.method18765();
             final Class6332 class6332;
             hashMap2.put(Class7558.field29975, class6332);

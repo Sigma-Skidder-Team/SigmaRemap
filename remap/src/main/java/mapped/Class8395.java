@@ -18,7 +18,7 @@ public class Class8395
         this.field34417 = field34417;
         this.field34414 = field34418;
         this.field34416 = field34419;
-        this.field34415 = Class8349.method27837();
+        this.field34415 = Util.method27837();
     }
     
     public String method27992() {
@@ -35,6 +35,6 @@ public class Class8395
     
     public void method27995(final Vec3d field34416) {
         this.field34416 = field34416;
-        this.field34415 = Class8349.method27837();
+        this.field34415 = Util.method27837();
     }
 }

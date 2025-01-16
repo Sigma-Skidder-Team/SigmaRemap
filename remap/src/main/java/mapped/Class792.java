@@ -306,7 +306,7 @@ public class Class792 extends Class789
             this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true));
             this.field4115.method22062(2, new Class3555<Object>(this, Class799.class, true));
             if (!this.hasCustomName()) {
-                this.method1872(new Class2259(Class8349.method27836("entity", Class792.field4229), new Object[0]));
+                this.method1872(new Class2259(Util.method27836("entity", Class792.field4229), new Object[0]));
             }
         }
         this.dataManager.set(Class792.field4228, i);

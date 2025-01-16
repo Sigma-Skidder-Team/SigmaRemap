@@ -70,7 +70,7 @@ public abstract class Class402 extends Entity implements Class401
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.getBoundingBox().method18507() * 10.0;
+        double v = this.getBoundingBox().getAverageEdgeLength() * 10.0;
         if (Double.isNaN(v)) {
             v = 1.0;
         }
@@ -146,7 +146,7 @@ public abstract class Class402 extends Entity implements Class401
                     final Vec3d method1992 = this.method1934();
                     final Iterator<AxisAlignedBB> iterator = method1991.toBoundingBoxList().iterator();
                     while (iterator.hasNext()) {
-                        if (!iterator.next().method18500(class354).method18505(method1992)) {
+                        if (!iterator.next().offset(class354).contains(method1992)) {
                             continue;
                         }
                         this.field2472 = true;
@@ -162,7 +162,7 @@ public abstract class Class402 extends Entity implements Class401
             this.method1667();
         }
         if (this.field2472 && !method1987) {
-            if (this.field2471 != method1990 && this.world.method6976(this.getBoundingBox().method18496(0.06))) {
+            if (this.field2471 != method1990 && this.world.method6976(this.getBoundingBox().intersect(0.06))) {
                 this.field2472 = false;
                 this.method1936(method1988.mul(this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f));
                 this.field2477 = 0;
@@ -178,9 +178,9 @@ public abstract class Class402 extends Entity implements Class401
             ++this.field2478;
             final Vec3d method1993 = this.method1934();
             Vec3d class355 = method1993.add(method1988);
-            Class7006 method1994 = this.world.rayTraceBlocks(new RayTraceContext(method1993, class355, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this));
-            if (method1994.method21449() != Class2165.field12880) {
-                class355 = method1994.method21451();
+            RayTraceResult method1994 = this.world.rayTraceBlocks(new RayTraceContext(method1993, class355, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this));
+            if (method1994.getType() != RayTraceResult.Type.MISS) {
+                class355 = method1994.getHitVec();
             }
             while (!this.removed) {
                 Class7007 method1995 = this.method1971(method1993, class355);
@@ -188,7 +188,7 @@ public abstract class Class402 extends Entity implements Class401
                     method1994 = method1995;
                 }
                 if (method1994 != null) {
-                    if (method1994.method21449() == Class2165.field12882) {
+                    if (method1994.getType() == RayTraceResult.Type.ENTITY) {
                         final Entity method1996 = ((Class7007)method1994).method21452();
                         final Entity method1997 = this.method1973();
                         if (method1996 instanceof PlayerEntity) {
@@ -275,14 +275,14 @@ public abstract class Class402 extends Entity implements Class401
         }
     }
     
-    public void method1965(final Class7006 class7006) {
-        final Class2165 method21449 = class7006.method21449();
-        if (method21449 != Class2165.field12882) {
-            if (method21449 == Class2165.field12881) {
+    public void method1965(final RayTraceResult class7006) {
+        final RayTraceResult.Type method21449 = class7006.getType();
+        if (method21449 != RayTraceResult.Type.ENTITY) {
+            if (method21449 == RayTraceResult.Type.BLOCK) {
                 final BlockRayTraceResult class7007 = (BlockRayTraceResult)class7006;
-                final Class7096 method21450 = this.world.getBlockState(class7007.method21447());
+                final Class7096 method21450 = this.world.getBlockState(class7007.getPos());
                 this.field2471 = method21450;
-                final Vec3d method21451 = class7007.method21451().subtract(this.getPosX(), this.getPosY(), this.getPosZ());
+                final Vec3d method21451 = class7007.getHitVec().subtract(this.getPosX(), this.getPosY(), this.getPosZ());
                 this.method1936(method21451);
                 final Vec3d method21452 = method21451.normalize().scale(0.05000000074505806);
                 this.method1948(this.getPosX() - method21452.x, this.getPosY() - method21452.y, this.getPosZ() - method21452.z);
@@ -435,7 +435,7 @@ public abstract class Class402 extends Entity implements Class401
     
     @Nullable
     public Class7007 method1971(final Vec3d class5487, final Vec3d class5488) {
-        return Class7476.method23094(this.world, this, class5487, class5488, this.getBoundingBox().method18493(this.getMotion()).method18496(1.0), class5489 -> {
+        return Class7476.method23094(this.world, this, class5487, class5488, this.getBoundingBox().expand(this.getMotion()).intersect(1.0), class5489 -> {
             final boolean b;
             if (!class5489.isSpectator()) {
                 if (!(!class5489.method1768())) {

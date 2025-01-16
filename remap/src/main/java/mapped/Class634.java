@@ -104,7 +104,7 @@ public class Class634 extends Class633
             }
             else {
                 n9 = 1;
-                n10 = (int)(Class8349.method27837() / 100L + n * 2 & 0x7L);
+                n10 = (int)(Util.method27837() / 100L + n * 2 & 0x7L);
                 if (n10 > 4) {
                     n10 = 8 - n10;
                 }
@@ -288,10 +288,10 @@ public class Class634 extends Class633
             }
         }
         this.field3622.method3950(this);
-        if (Class8349.method27837() - this.field3628 < 250L) {
+        if (Util.method27837() - this.field3628 < 250L) {
             this.field3622.method3948();
         }
-        this.field3628 = Class8349.method27837();
+        this.field3628 = Util.method27837();
         return false;
     }
     

@@ -30,7 +30,7 @@ public class Class3313 extends Class3167
     @Class6757
     private void method10484(final Class5744 class5744) {
         if (this.method9906() && class5744.method17046()) {
-            final boolean b = Class3313.field15514.field4691 != null && Class3313.field15514.field4691.method21449() == Class2165.field12881;
+            final boolean b = Class3313.field15514.field4691 != null && Class3313.field15514.field4691.getType() == RayTraceResult.Type.BLOCK;
             final boolean b2 = Class3313.field15514.field4682.method27337() || (Class3313.field15514.field4648.field23446.method1056() && b);
             if (Class9463.method35173().method35194().method29228() > 0 && !b2) {
                 this.field15895 -= 1.0E-14;

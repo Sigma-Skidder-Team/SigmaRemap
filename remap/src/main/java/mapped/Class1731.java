@@ -285,7 +285,7 @@ public class Class1731 implements Class1727
     }
     
     static {
-        field9670 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field9670 = Util.method27851(Maps.newHashMap(), hashMap -> {
             new Pair((Object)Class180.field531, (Object)new ResourceLocation("textures/entity/chest/normal_double.png"));
             final Pair value;
             final Object key;

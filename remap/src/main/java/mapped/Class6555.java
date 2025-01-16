@@ -4,14 +4,12 @@
 
 package mapped;
 
-import com.mojang.datafixers.types.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.stream.Collector;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -140,7 +138,7 @@ public class Class6555 extends DataFix
     }
     
     static {
-        field26043 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field26043 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put("0", "minecraft:ocean");
             hashMap.put("1", "minecraft:plains");
             hashMap.put("2", "minecraft:desert");

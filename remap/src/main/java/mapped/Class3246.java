@@ -64,9 +64,9 @@ public class Class3246 extends Class3167
                 if (Class3246.field15514.field4700 == null) {
                     if (this.field15740.method23935() > 1000L) {
                         final BlockRayTraceResult class5745 = (BlockRayTraceResult)Class4609.method13700(this.field15741.getPos());
-                        if (class5745.method21447().getX() == this.field15741.getPos().getX()) {
-                            if (class5745.method21447().getY() == this.field15741.getPos().getY()) {
-                                if (class5745.method21447().getZ() == this.field15741.getPos().getZ()) {
+                        if (class5745.getPos().getX() == this.field15741.getPos().getX()) {
+                            if (class5745.getPos().getY() == this.field15741.getPos().getY()) {
+                                if (class5745.getPos().getZ() == this.field15741.getPos().getZ()) {
                                     this.field15737 = true;
                                     Class3246.field15514.method5269().method17292(new Class4329(Class316.field1877, class5745));
                                     Class3246.field15514.method5269().method17292(new Class4380(Class316.field1877));
@@ -103,13 +103,13 @@ public class Class3246 extends Class3167
                     continue;
                 }
                 final BlockRayTraceResult class5746 = (BlockRayTraceResult)Class4609.method13700(field15741.getPos());
-                if (class5746.method21447().getX() != field15741.getPos().getX()) {
+                if (class5746.getPos().getX() != field15741.getPos().getX()) {
                     continue;
                 }
-                if (class5746.method21447().getY() != field15741.getPos().getY()) {
+                if (class5746.getPos().getY() != field15741.getPos().getY()) {
                     continue;
                 }
-                if (class5746.method21447().getZ() != field15741.getPos().getZ()) {
+                if (class5746.getPos().getZ() != field15741.getPos().getZ()) {
                     continue;
                 }
                 this.field15741 = field15741;

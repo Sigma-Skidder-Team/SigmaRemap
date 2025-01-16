@@ -22,7 +22,7 @@ public class Class3258 extends Class3247
             final BlockRayTraceResult method13697 = Class4609.method13697(Class3258.field15514.field4684.rotationYaw, Class3258.field15514.field4684.rotationPitch, this.method9886("Maximum range"));
             Vec3i method13698 = null;
             if (method13697 != null) {
-                method13698 = method13697.method21447();
+                method13698 = method13697.getPos();
             }
             this.method10274(this.method10273(), method13698.getX() + 0.5 - Class869.method5277().field4644.method5833().method18161().getX(), method13698.getY() + 1 - Class869.method5277().field4644.method5833().method18161().getY(), method13698.getZ() + 0.5 - Class869.method5277().field4644.method5833().method18161().getZ());
         }

@@ -82,7 +82,7 @@ public abstract class Class6322
         Class8726.method30057(5890);
         Class8726.method30059();
         Class8726.method30058();
-        final long n2 = Class8349.method27837() * 8L;
+        final long n2 = Util.method27837() * 8L;
         Class8726.method30065(-(n2 % 110000L / 110000.0f), n2 % 30000L / 30000.0f, 0.0f);
         Class8726.method30062(10.0f, 0.0f, 0.0f, 1.0f);
         Class8726.method30063(n, n, n);

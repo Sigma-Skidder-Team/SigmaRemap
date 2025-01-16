@@ -36,7 +36,7 @@ public class Class3883 extends Class3882
     
     @Override
     public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
-        final Vec3d method18517 = this.method11808(class7096, class7097, class7098, ISelectionContext.dummy()).method24537().method18517();
+        final Vec3d method18517 = this.method11808(class7096, class7097, class7098, ISelectionContext.dummy()).getBoundingBox().getCenter();
         final double n = class7098.getX() + method18517.x;
         final double n2 = class7098.getZ() + method18517.z;
         for (int i = 0; i < 3; ++i) {

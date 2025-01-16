@@ -58,7 +58,7 @@ public enum Class2020
     }
     
     static {
-        field11530 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field11530 = Util.method27851(Maps.newHashMap(), hashMap -> {
             values();
             final Class2020[] array;
             int i = 0;

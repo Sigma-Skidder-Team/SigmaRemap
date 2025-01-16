@@ -447,6 +447,6 @@ public class Class4011 extends Block
         field18074 = Class3967.field17923;
         field18075 = Class3967.field17924;
         field18076 = Class3967.field17925;
-        field18077 = Class3967.field17927.entrySet().stream().filter(entry -> entry.getKey() != Direction.DOWN).collect((Collector<? super Object, ?, Map<Direction, Class7113>>)Class8349.method27834());
+        field18077 = Class3967.field17927.entrySet().stream().filter(entry -> entry.getKey() != Direction.DOWN).collect((Collector<? super Object, ?, Map<Direction, Class7113>>) Util.method27834());
     }
 }

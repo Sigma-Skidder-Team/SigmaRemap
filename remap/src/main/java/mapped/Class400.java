@@ -45,7 +45,7 @@ public class Class400 extends Entity implements Class401
             this.method1960();
         }
         final Vec3d method1935 = this.getMotion();
-        final Class7006 method1936 = Class7476.method23093(this, this.getBoundingBox().method18493(method1935).method18496(1.0), class399 -> !class399.isSpectator() && class399 != this.field2466, RayTraceContext.BlockMode.OUTLINE, true);
+        final RayTraceResult method1936 = Class7476.method23093(this, this.getBoundingBox().expand(method1935).intersect(1.0), class399 -> !class399.isSpectator() && class399 != this.field2466, RayTraceContext.BlockMode.OUTLINE, true);
         if (method1936 != null) {
             this.method1959(method1936);
         }
@@ -111,12 +111,12 @@ public class Class400 extends Entity implements Class401
         this.prevRotationPitch = this.rotationPitch;
     }
     
-    public void method1959(final Class7006 class7006) {
-        final Class2165 method21449 = class7006.method21449();
-        if (method21449 == Class2165.field12882 && this.field2466 != null) {
+    public void method1959(final RayTraceResult class7006) {
+        final RayTraceResult.Type method21449 = class7006.getType();
+        if (method21449 == RayTraceResult.Type.ENTITY && this.field2466 != null) {
             ((Class7007)class7006).method21452().attackEntityFrom(DamageSource.method25694(this, this.field2466).method25706(), 1.0f);
         }
-        else if (method21449 == Class2165.field12881) {
+        else if (method21449 == RayTraceResult.Type.BLOCK) {
             if (!this.world.isRemote) {
                 this.method1652();
             }
@@ -147,7 +147,7 @@ public class Class400 extends Entity implements Class401
         if (this.field2467 != null) {
             if (this.field2467.method302("OwnerUUID")) {
                 final UUID method301 = this.field2467.method301("OwnerUUID");
-                for (final Class815 field2466 : this.world.method7128((Class<? extends Class815>)Class815.class, this.getBoundingBox().method18496(15.0))) {
+                for (final Class815 field2466 : this.world.method7128((Class<? extends Class815>)Class815.class, this.getBoundingBox().intersect(15.0))) {
                     if (!field2466.method1865().equals(method301)) {
                         continue;
                     }

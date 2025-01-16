@@ -484,7 +484,7 @@ public class Class857 extends LivingEntity
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.getBoundingBox().method18507() * 4.0;
+        double v = this.getBoundingBox().getAverageEdgeLength() * 4.0;
         if (Double.isNaN(v) || v == 0.0) {
             v = 4.0;
         }

@@ -19,7 +19,7 @@ public class Class9550
     public Class1663 field41129;
     public World field41130;
     public Class6092 field41131;
-    public Class7006 field41132;
+    public RayTraceResult field41132;
     public TileEntity field41133;
     
     private Class9550() {
@@ -55,7 +55,7 @@ public class Class9550
         return (Class4158)this.field41125.get(e.getType());
     }
     
-    public void method35725(final World class1847, final Class1663 field41129, final Class1844 field41130, final Class6092 field41131, final Class7006 field41132) {
+    public void method35725(final World class1847, final Class1663 field41129, final Class1844 field41130, final Class6092 field41131, final RayTraceResult field41132) {
         if (this.field41130 != class1847) {
             this.method35730(class1847);
         }

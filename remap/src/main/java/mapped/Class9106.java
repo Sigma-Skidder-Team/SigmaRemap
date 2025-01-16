@@ -28,7 +28,7 @@ public class Class9106
         }
     }
     
-    public void method32919(final Class1848 class1848, final Class7006 class1849) {
+    public void method32919(final Class1848 class1848, final RayTraceResult class1849) {
         if (this.field38574 != null) {
             if (class1849 != null) {
                 if (class1848 != null) {

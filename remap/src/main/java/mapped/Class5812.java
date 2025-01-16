@@ -76,7 +76,7 @@ public class Class5812 implements Class5811
                     this.field23852.method35870(method13252.substring("data:image/png;base64,".length()));
                 }
             }
-            this.field23850 = Class8349.method27837();
+            this.field23850 = Util.method27837();
             this.field23851.method11174(new Class4319(this.field23850));
             this.field23848 = true;
         }
@@ -87,7 +87,7 @@ public class Class5812 implements Class5811
     
     @Override
     public void method17416(final Class4274 class4274) {
-        this.field23852.field41616 = Class8349.method27837() - this.field23850;
+        this.field23852.field41616 = Util.method27837() - this.field23850;
         this.field23851.method11181(new Class2259("multiplayer.status.finished", new Object[0]));
     }
     

@@ -77,7 +77,7 @@ public class Explosion
                     for (float n8 = 0.0f; n8 <= 1.0f; n8 += (float)n) {
                         for (float n9 = 0.0f; n9 <= 1.0f; n9 += (float)n2) {
                             for (float n10 = 0.0f; n10 <= 1.0f; n10 += (float)n3) {
-                                if (p_222259_1_.world.rayTraceBlocks(new RayTraceContext(new Vec3d(MathHelper.method35701(n8, axisalignedbb.minX, axisalignedbb.maxX) + n4, MathHelper.method35701(n9, axisalignedbb.minY, axisalignedbb.maxY), MathHelper.method35701(n10, axisalignedbb.minZ, axisalignedbb.maxZ) + n5), p_222259_0_, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, p_222259_1_)).method21449() == Class2165.field12880) {
+                                if (p_222259_1_.world.rayTraceBlocks(new RayTraceContext(new Vec3d(MathHelper.lerp(n8, axisalignedbb.minX, axisalignedbb.maxX) + n4, MathHelper.lerp(n9, axisalignedbb.minY, axisalignedbb.maxY), MathHelper.lerp(n10, axisalignedbb.minZ, axisalignedbb.maxZ) + n5), p_222259_0_, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, p_222259_1_)).getType() == RayTraceResult.Type.MISS) {
                                     ++n6;
                                 }
                                 ++n7;

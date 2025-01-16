@@ -80,7 +80,7 @@ public class Class6564
                             break Label_0593;
                         }
                         if (!method6703.isEmpty()) {
-                            if (this.field26066.getPosY() < method6703.method24536(Direction.Axis.Y) + class354.getY()) {
+                            if (this.field26066.getPosY() < method6703.getEnd(Direction.Axis.Y) + class354.getY()) {
                                 if (!method6702.method11785(Class7188.field27891)) {
                                     if (!method6702.method11785(Class7188.field27911)) {
                                         break Label_0593;

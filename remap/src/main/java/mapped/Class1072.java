@@ -5,7 +5,7 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.TimerTask;
+
 import java.util.Timer;
 import java.lang.management.ThreadInfo;
 import java.util.Date;
@@ -30,7 +30,7 @@ public class Class1072 implements Runnable
     public void run() {
         while (this.field5768.method1455()) {
             final long method1563 = this.field5768.method1563();
-            final long method1564 = Class8349.method27837();
+            final long method1564 = Util.method27837();
             final long n = method1564 - method1563;
             if (n > this.field5769) {
                 Class1072.field5767.fatal("A single server tick took {} seconds (should be max {})", (Object)String.format(Locale.ROOT, "%.2f", n / 1000.0f), (Object)String.format(Locale.ROOT, "%.2f", 0.05f));

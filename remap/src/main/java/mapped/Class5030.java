@@ -77,7 +77,7 @@ public class Class5030 implements Class5027
             }
             this.field21576 += str;
             this.field21570.add(this.field21576);
-            this.field21571.add(Class8349.method27838());
+            this.field21571.add(Util.method27838());
             this.field21578 = null;
         }
         else {
@@ -94,7 +94,7 @@ public class Class5030 implements Class5027
     public void endSection() {
         if (this.field21577) {
             if (!this.field21571.isEmpty()) {
-                final long method27838 = Class8349.method27838();
+                final long method27838 = Util.method27838();
                 final long removeLong = this.field21571.removeLong(this.field21571.size() - 1);
                 this.field21570.remove(this.field21570.size() - 1);
                 final long n = method27838 - removeLong;
@@ -149,7 +149,7 @@ public class Class5030 implements Class5027
     
     @Override
     public Class5756 method15304() {
-        return new Class5755(this.field21572, this.field21574, this.field21575, Class8349.method27838(), this.field21573.getAsInt());
+        return new Class5755(this.field21572, this.field21574, this.field21575, Util.method27838(), this.field21573.getAsInt());
     }
     
     static {

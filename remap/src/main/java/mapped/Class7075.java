@@ -33,19 +33,19 @@ public class Class7075
     }
     
     public BlockPos method21639() {
-        return this.field27553.method21447();
+        return this.field27553.getPos();
     }
     
     public Direction method21648() {
-        return this.field27553.method21448();
+        return this.field27553.getFace();
     }
     
     public Vec3d method21649() {
-        return this.field27553.method21451();
+        return this.field27553.getHitVec();
     }
     
     public boolean method21650() {
-        return this.field27553.method21450();
+        return this.field27553.isInside();
     }
     
     public ItemStack method21651() {

@@ -121,7 +121,7 @@ public class Class9092
     
     public Random method32858(final BlockPos class354) {
         if (this.field38508 == null) {
-            return (class354 != null) ? new Random(MathHelper.method35688(class354)) : new Random(Class8349.method27837());
+            return (class354 != null) ? new Random(MathHelper.method35688(class354)) : new Random(Util.method27837());
         }
         return this.field38508;
     }

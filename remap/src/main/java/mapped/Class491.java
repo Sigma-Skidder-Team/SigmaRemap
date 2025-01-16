@@ -95,7 +95,7 @@ public class Class491 extends TileEntity implements Class439
         if (!method2477.isEmpty()) {
             final List<AxisAlignedBB> method2478 = method2477.toBoundingBoxList();
             final AxisAlignedBB method2479 = this.method2479(this.method2477(method2478));
-            final List<Entity> method2480 = this.field2656.method7127(null, Class8159.method26948(method2479, method2476, b).method18498(method2479));
+            final List<Entity> method2480 = this.field2656.method7127(null, Class8159.method26948(method2479, method2476, b).offset(method2479));
             if (!method2480.isEmpty()) {
                 final boolean b2 = this.field2818.getBlock() == Class7521.field29516;
                 for (final Entity class399 : method2480) {
@@ -126,7 +126,7 @@ public class Class491 extends TileEntity implements Class439
                         while (iterator2.hasNext()) {
                             final AxisAlignedBB method2482 = Class8159.method26948(this.method2479(iterator2.next()), method2476, b);
                             final AxisAlignedBB method2483 = class399.getBoundingBox();
-                            if (method2482.method18502(method2483)) {
+                            if (method2482.intersects(method2483)) {
                                 max = Math.max(max, method2478(method2482, method2476, method2483));
                                 if (max >= b) {
                                     break;
@@ -158,7 +158,7 @@ public class Class491 extends TileEntity implements Class439
         if (this.method2475()) {
             final Direction method2476 = this.method2476();
             if (method2476.getAxis().isHorizontal()) {
-                final AxisAlignedBB method2477 = this.method2479(new AxisAlignedBB(0.0, this.field2818.getCollisionShape(this.field2656, this.field2657).method24536(Direction.Axis.Y), 0.0, 1.0, 1.5000000999999998, 1.0));
+                final AxisAlignedBB method2477 = this.method2479(new AxisAlignedBB(0.0, this.field2818.getCollisionShape(this.field2656, this.field2657).getEnd(Direction.Axis.Y), 0.0, 1.0, 1.5000000999999998, 1.0));
                 final double n2 = n - this.field2823;
                 final Iterator<Entity> iterator = this.field2656.method6737(null, method2477, class6222 -> method2474(class6221, class6222)).iterator();
                 while (iterator.hasNext()) {
@@ -236,16 +236,16 @@ public class Class491 extends TileEntity implements Class439
     
     private AxisAlignedBB method2479(final AxisAlignedBB class6221) {
         final double n = this.method2469(this.field2823);
-        return class6221.method18499(this.field2657.getX() + n * this.field2819.getXOffset(), this.field2657.getY() + n * this.field2819.getYOffset(), this.field2657.getZ() + n * this.field2819.getZOffset());
+        return class6221.offset(this.field2657.getX() + n * this.field2819.getXOffset(), this.field2657.getY() + n * this.field2819.getYOffset(), this.field2657.getZ() + n * this.field2819.getZOffset());
     }
     
     private void method2480(final Entity class399, final Direction class400, final double b) {
         final AxisAlignedBB method1886 = class399.getBoundingBox();
-        final AxisAlignedBB method1887 = VoxelShapes.method24487().method24537().method18500(this.field2657);
-        if (method1886.method18502(method1887)) {
+        final AxisAlignedBB method1887 = VoxelShapes.fullCube().getBoundingBox().offset(this.field2657);
+        if (method1886.intersects(method1887)) {
             final Direction method1888 = class400.getOpposite();
             final double a = method2478(method1887, method1888, method1886) + 0.01;
-            if (Math.abs(a - (method2478(method1887, method1888, method1886.method18497(method1887)) + 0.01)) < 0.01) {
+            if (Math.abs(a - (method2478(method1887, method1888, method1886.union(method1887)) + 0.01)) < 0.01) {
                 method2472(class400, class399, Math.min(a, b) + 0.01, method1888);
             }
         }

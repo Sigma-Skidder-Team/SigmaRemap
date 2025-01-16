@@ -51,7 +51,7 @@ public class Class8974
         this.field37815 = -1;
         this.field37816 = true;
         this.field37817 = new Mutable(-1, -1, -1);
-        this.field37818 = Class8349.method27851(new Mutable[6], array -> {
+        this.field37818 = Util.method27851(new Mutable[6], array -> {
             int i = 0;
             while (i < array.length) {
                 array[i] = new Mutable();

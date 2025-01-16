@@ -40,7 +40,7 @@ public class Class4887 extends Class4841
         this.field20890.method14297(false);
         this.field20891.method14260((class4803, n) -> this.method14630());
         this.field20892.method14260((class4803, n) -> ((Class4926)this.method14267()).method14779());
-        this.field20893.method14260((class4803, n) -> Class8349.method27845().method980("https://sigmaclient.info/pwdreset.php"));
+        this.field20893.method14260((class4803, n) -> Util.method27845().method980("https://sigmaclient.info/pwdreset.php"));
     }
     
     @Override

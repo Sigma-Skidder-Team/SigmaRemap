@@ -395,7 +395,7 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public boolean method1669(final double n, final double n2, final double n3) {
-        return this.method1670(this.getBoundingBox().method18499(n, n2, n3));
+        return this.method1670(this.getBoundingBox().offset(n, n2, n3));
     }
 
     private boolean method1670(final AxisAlignedBB class6221) {
@@ -412,7 +412,7 @@ public abstract class Entity implements INameable, ICommandSource {
             class2161 = new Vec3d(class2162.method16980(), class2162.method16982(), class2162.method16984());
         }
         if (this.noClip) {
-            this.method1889(this.getBoundingBox().method18501(class2161));
+            this.method1889(this.getBoundingBox().offset(class2161));
             this.method1685();
         } else {
             if (class2160 == Class2160.field12828) {
@@ -430,7 +430,7 @@ public abstract class Entity implements INameable, ICommandSource {
             class2161 = this.method1676(class2161, class2160);
             final Vec3d method1679 = this.getAllowedMovement(class2161);
             if (method1679.lengthSquared() > 1.0E-7) {
-                this.method1889(this.getBoundingBox().method18501(method1679));
+                this.method1889(this.getBoundingBox().offset(method1679));
                 this.method1685();
             }
             this.world.method6796().endSection();
@@ -493,7 +493,7 @@ public abstract class Entity implements INameable, ICommandSource {
             }
             this.method1936(this.getMotion().mul(this.method1674(), 1.0, this.method1674()));
             final boolean method1686 = this.method1710();
-            if (this.world.method6719(this.getBoundingBox().method18511(0.001))) {
+            if (this.world.method6719(this.getBoundingBox().shrink(0.001))) {
                 if (!method1686) {
                     ++this.fire;
                     if (this.fire == 0) {
@@ -633,7 +633,7 @@ public abstract class Entity implements INameable, ICommandSource {
         if (!b || !b2) {
             if (!b || !b3) {
                 if (!b2 || !b3) {
-                    return collideBoundingBox(class400, class401, new ReuseableStream<>(Stream.concat(class404.createStream(), class402.method6981(class399, class401.method18493(class400)))));
+                    return collideBoundingBox(class400, class401, new ReuseableStream<>(Stream.concat(class404.createStream(), class402.method6981(class399, class401.expand(class400)))));
                 }
             }
         }
@@ -647,7 +647,7 @@ public abstract class Entity implements INameable, ICommandSource {
         if (n != 0.0) {
             n = VoxelShapes.method24498(Direction.Axis.Y, class5488, class5489.createStream(), n);
             if (n != 0.0) {
-                class5488 = class5488.method18499(0.0, n, 0.0);
+                class5488 = class5488.offset(0.0, n, 0.0);
             }
         }
         final boolean b = Math.abs(a) < Math.abs(a2);
@@ -655,7 +655,7 @@ public abstract class Entity implements INameable, ICommandSource {
             if (a2 != 0.0) {
                 a2 = VoxelShapes.method24498(Direction.Axis.Z, class5488, class5489.createStream(), a2);
                 if (a2 != 0.0) {
-                    class5488 = class5488.method18499(0.0, 0.0, a2);
+                    class5488 = class5488.offset(0.0, 0.0, a2);
                 }
             }
         }
@@ -663,7 +663,7 @@ public abstract class Entity implements INameable, ICommandSource {
             a = VoxelShapes.method24498(Direction.Axis.X, class5488, class5489.createStream(), a);
             if (!b) {
                 if (a != 0.0) {
-                    class5488 = class5488.method18499(a, 0.0, 0.0);
+                    class5488 = class5488.offset(a, 0.0, 0.0);
                 }
             }
         }
@@ -682,7 +682,7 @@ public abstract class Entity implements INameable, ICommandSource {
         if (n != 0.0) {
             n = VoxelShapes.method24499(Direction.Axis.Y, class5488, class5489, n, class5490, class5491.createStream(), b);
             if (n != 0.0) {
-                class5488 = class5488.method18499(0.0, n, 0.0);
+                class5488 = class5488.offset(0.0, n, 0.0);
             }
         }
         final boolean b2 = Math.abs(a) < Math.abs(a2);
@@ -690,7 +690,7 @@ public abstract class Entity implements INameable, ICommandSource {
             if (a2 != 0.0) {
                 a2 = VoxelShapes.method24499(Direction.Axis.Z, class5488, class5489, a2, class5490, class5491.createStream(), b);
                 if (a2 != 0.0) {
-                    class5488 = class5488.method18499(0.0, 0.0, a2);
+                    class5488 = class5488.offset(0.0, 0.0, a2);
                 }
             }
         }
@@ -698,7 +698,7 @@ public abstract class Entity implements INameable, ICommandSource {
             a = VoxelShapes.method24499(Direction.Axis.X, class5488, class5489, a, class5490, class5491.createStream(), b);
             if (!b2) {
                 if (a != 0.0) {
-                    class5488 = class5488.method18499(a, 0.0, 0.0);
+                    class5488 = class5488.offset(a, 0.0, 0.0);
                 }
             }
         }
@@ -1176,12 +1176,12 @@ public abstract class Entity implements INameable, ICommandSource {
 
     public final Vec3d method1747(final float n) {
         if (n != 1.0f) {
-            return new Vec3d(MathHelper.method35701(n, this.prevPosX, this.getPosX()), MathHelper.method35701(n, this.prevPosY, this.getPosY()) + this.method1892(), MathHelper.method35701(n, this.prevPosZ, this.getPosZ()));
+            return new Vec3d(MathHelper.lerp(n, this.prevPosX, this.getPosX()), MathHelper.lerp(n, this.prevPosY, this.getPosY()) + this.method1892(), MathHelper.lerp(n, this.prevPosZ, this.getPosZ()));
         }
         return new Vec3d(this.getPosX(), this.method1944(), this.getPosZ());
     }
 
-    public Class7006 method1748(final double n, final float n2, final boolean b) {
+    public RayTraceResult method1748(final double n, final float n2, final boolean b) {
         final Vec3d method1747 = this.method1747(n2);
         final Vec3d method1748 = this.method1741(n2);
         return this.world.rayTraceBlocks(new RayTraceContext(method1747, method1747.add(method1748.x * n, method1748.y * n, method1748.z * n), RayTraceContext.BlockMode.OUTLINE, b ? RayTraceContext.FluidMode.ANY : RayTraceContext.FluidMode.NONE, this));
@@ -1209,7 +1209,7 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public boolean method1753(final double n) {
-        double method18507 = this.getBoundingBox().method18507();
+        double method18507 = this.getBoundingBox().getAverageEdgeLength();
         if (Double.isNaN(method18507)) {
             method18507 = 1.0;
         }
@@ -2474,7 +2474,7 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public boolean method1928(final Class7909<Fluid> class7909) {
-        final AxisAlignedBB method18511 = this.getBoundingBox().method18511(0.001);
+        final AxisAlignedBB method18511 = this.getBoundingBox().shrink(0.001);
         final int method18512 = MathHelper.floor(method18511.minX);
         final int method18513 = MathHelper.ceil(method18511.maxX);
         final int method18514 = MathHelper.floor(method18511.minY);

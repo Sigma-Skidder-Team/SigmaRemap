@@ -32,10 +32,10 @@ public class Class635 extends Class633
     @Override
     public boolean method2982(final double n, final double n2, final int n3) {
         this.field3630.method3950(this);
-        if (Class8349.method27837() - this.field3633 < 250L) {
+        if (Util.method27837() - this.field3633 < 250L) {
             this.field3630.method3948();
         }
-        this.field3633 = Class8349.method27837();
+        this.field3633 = Util.method27837();
         return false;
     }
     

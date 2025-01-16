@@ -148,7 +148,7 @@ public class Class7788
                         class7492.method23259(new Class2259("command.failed", new Object[0]).applyTextStyle(class7498 -> class7498.method30420(new Class9390(Class1961.field10697, class7497))));
                     }
                     iftrue(Label_0585:)(!Class9528.field41021);
-                    class7492.method23259(new StringTextComponent(Class8349.method27860(ex2)));
+                    class7492.method23259(new StringTextComponent(Util.method27860(ex2)));
                     Class7788.field31874.error("'" + str + "' threw an exception", (Throwable)ex2);
                     return 0;
                 }

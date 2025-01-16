@@ -23,7 +23,7 @@ public final class Class7476
 {
     private static String[] field28874;
     
-    public static Class7006 method23092(final Entity class399, final boolean b, final boolean b2, final Entity class400, final RayTraceContext.BlockMode class401) {
+    public static RayTraceResult method23092(final Entity class399, final boolean b, final boolean b2, final Entity class400, final RayTraceContext.BlockMode class401) {
         return method23095(class399, b, b2, class400, class401, true, class403 -> {
             final boolean b4;
             if (!class403.isSpectator()) {
@@ -36,10 +36,10 @@ public final class Class7476
                 }
             }
             return b4;
-        }, class399.getBoundingBox().method18493(class399.getMotion()).method18496(1.0));
+        }, class399.getBoundingBox().expand(class399.getMotion()).intersect(1.0));
     }
     
-    public static Class7006 method23093(final Entity class399, final AxisAlignedBB class400, final Predicate<Entity> predicate, final RayTraceContext.BlockMode class401, final boolean b) {
+    public static RayTraceResult method23093(final Entity class399, final AxisAlignedBB class400, final Predicate<Entity> predicate, final RayTraceContext.BlockMode class401, final boolean b) {
         return method23095(class399, b, false, null, class401, false, predicate, class400);
     }
     
@@ -48,7 +48,7 @@ public final class Class7476
         return method23097(class1847, class1848, class1849, class1850, class1851, predicate, Double.MAX_VALUE);
     }
     
-    private static Class7006 method23095(final Entity class399, final boolean b, final boolean b2, final Entity class400, final RayTraceContext.BlockMode class401, final boolean b3, final Predicate<Entity> predicate, final AxisAlignedBB class402) {
+    private static RayTraceResult method23095(final Entity class399, final boolean b, final boolean b2, final Entity class400, final RayTraceContext.BlockMode class401, final boolean b3, final Predicate<Entity> predicate, final AxisAlignedBB class402) {
         final Vec3d method1935 = class399.getMotion();
         final World field2391 = class399.world;
         final Vec3d method1936 = class399.method1934();
@@ -58,8 +58,8 @@ public final class Class7476
         Vec3d class403 = method1936.add(method1935);
         BlockRayTraceResult method1937 = field2391.rayTraceBlocks(new RayTraceContext(method1936, class403, class401, RayTraceContext.FluidMode.NONE, class399));
         if (b) {
-            if (method1937.method21449() != Class2165.field12880) {
-                class403 = method1937.method21451();
+            if (method1937.getType() != RayTraceResult.Type.MISS) {
+                class403 = method1937.getHitVec();
             }
             final Class7007 method1938 = method23094(field2391, class399, method1936, class403, class402, predicate);
             if (method1938 != null) {
@@ -76,9 +76,9 @@ public final class Class7476
         Entity class402 = null;
         Vec3d class403 = null;
         for (final Entity class404 : field2391.method6737(class399, class401, predicate)) {
-            final AxisAlignedBB method18496 = class404.getBoundingBox().method18496(class404.method1790());
-            final Optional<Vec3d> method18497 = method18496.method18512(other, class400);
-            if (!method18496.method18505(other)) {
+            final AxisAlignedBB method18496 = class404.getBoundingBox().intersect(class404.method1790());
+            final Optional<Vec3d> method18497 = method18496.rayTrace(other, class400);
+            if (!method18496.contains(other)) {
                 if (!method18497.isPresent()) {
                     continue;
                 }
@@ -117,7 +117,7 @@ public final class Class7476
         double n2 = n;
         Entity class1852 = null;
         for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
-            final Optional<Vec3d> method18512 = class1853.getBoundingBox().method18496(0.30000001192092896).method18512(class1849, class1850);
+            final Optional<Vec3d> method18512 = class1853.getBoundingBox().intersect(0.30000001192092896).rayTrace(class1849, class1850);
             if (!method18512.isPresent()) {
                 continue;
             }

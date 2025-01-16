@@ -27,11 +27,11 @@ public class Class418 extends Class416
     }
     
     @Override
-    public void method2032(final Class7006 class7006) {
+    public void method2032(final RayTraceResult class7006) {
         super.method2032(class7006);
         if (!this.world.isRemote) {
             Label_0067: {
-                if (class7006.method21449() != Class2165.field12882) {
+                if (class7006.getType() != RayTraceResult.Type.ENTITY) {
                     if (this.field2527 != null) {
                         if (this.field2527 instanceof Class759) {
                             if (!this.world.method6765().method31216(Class8878.field37316)) {
@@ -40,7 +40,7 @@ public class Class418 extends Class416
                         }
                     }
                     final BlockRayTraceResult class7007 = (BlockRayTraceResult)class7006;
-                    final BlockPos method1149 = class7007.method21447().method1149(class7007.method21448());
+                    final BlockPos method1149 = class7007.getPos().method1149(class7007.getFace());
                     if (this.world.method6961(method1149)) {
                         this.world.method6692(method1149, Class7521.field29289.getDefaultState());
                     }

@@ -115,7 +115,7 @@ public class Class1362 extends Class1361
     }
     
     private byte[] method5645(final DatagramPacket datagramPacket) throws IOException {
-        final long method27837 = Class8349.method27837();
+        final long method27837 = Util.method27837();
         if (method27837 >= this.field7483 + 5000L) {
             this.field7483 = method27837;
             this.field7482.method22766();
@@ -184,7 +184,7 @@ public class Class1362 extends Class1361
     
     private void method5649() {
         if (this.field7461) {
-            final long method27837 = Class8349.method27837();
+            final long method27837 = Util.method27837();
             if (method27837 >= this.field7468 + 30000L) {
                 this.field7468 = method27837;
                 final Iterator<Map.Entry<SocketAddress, Class8764>> iterator = this.field7480.entrySet().iterator();
@@ -201,7 +201,7 @@ public class Class1362 extends Class1361
     @Override
     public void run() {
         this.method5633("Query running on " + this.field7479 + ":" + this.field7469);
-        this.field7468 = Class8349.method27837();
+        this.field7468 = Util.method27837();
         this.field7476 = new DatagramPacket(this.field7475, this.field7475.length);
         try {
             while (this.field7461) {

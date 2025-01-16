@@ -23,7 +23,7 @@ public class Class8223
         if (bound > 0) {
             return method27250(list, random.nextInt(bound));
         }
-        throw Class8349.method27859(new IllegalArgumentException());
+        throw Util.pauseDevMode(new IllegalArgumentException());
     }
     
     public static <T extends Class6826> T method27250(final List<T> list, int n) {

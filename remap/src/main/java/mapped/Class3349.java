@@ -104,7 +104,7 @@ public class Class3349 extends Class3167
                     this.field15961 = this.field15962 - 0.66 * (this.field15962 - Class7482.method23136());
                 }
                 else {
-                    if (Class3349.field15514.field4683.method6981(Class3349.field15514.field4684, Class3349.field15514.field4684.boundingBox.method18499(0.0, Class3349.field15514.field4684.getMotion().y, 0.0)).count() > 0L || Class3349.field15514.field4684.collidedVertically) {
+                    if (Class3349.field15514.field4683.method6981(Class3349.field15514.field4684, Class3349.field15514.field4684.boundingBox.offset(0.0, Class3349.field15514.field4684.getMotion().y, 0.0)).count() > 0L || Class3349.field15514.field4684.collidedVertically) {
                         this.field15963 = 1;
                     }
                     this.field15961 = this.field15962 - this.field15962 / 159.0;

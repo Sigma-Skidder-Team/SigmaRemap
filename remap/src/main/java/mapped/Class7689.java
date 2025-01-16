@@ -6,7 +6,6 @@ package mapped;
 
 import org.apache.logging.log4j.LogManager;
 import java.util.concurrent.CompletionException;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.io.FileOutputStream;
@@ -67,7 +66,7 @@ public class Class7689
         });
         this.field30534.method16297("CPUs", Runtime.getRuntime().availableProcessors());
         this.field30534.method16296("JVM Flags", () -> {
-            final List<? super String> list = Class8349.method27846().collect((Collector<? super String, ?, List<? super String>>)Collectors.toList());
+            final List<? super String> list = Util.method27846().collect((Collector<? super String, ?, List<? super String>>)Collectors.toList());
             return String.format("%d total; %s", list.size(), list.stream().collect(Collectors.joining(" ")));
         });
         if (Class9570.field41199 != null) {
@@ -251,7 +250,7 @@ public class Class7689
     private static String method24420() {
         final String[] array = { "Who set us up the TNT?", "Everything's going to plan. No, really, that was supposed to happen.", "Uh... Did I do that?", "Oops.", "Why did you do that?", "I feel sad now :(", "My bad.", "I'm sorry, Dave.", "I let you down. Sorry :(", "On the bright side, I bought you a teddy bear!", "Daisy, daisy...", "Oh - I know what I did wrong!", "Hey, that tickles! Hehehe!", "I blame Dinnerbone.", "You should try our sister game, Minceraft!", "Don't be sad. I'll do better next time, I promise!", "Don't be sad, have a hug! <3", "I just don't know what went wrong :(", "Shall we play a game?", "Quite honestly, I wouldn't worry myself about that.", "I bet Cylons wouldn't have this problem.", "Sorry :(", "Surprise! Haha. Well, this is awkward.", "Would you like a cupcake?", "Hi. I'm Minecraft, and I'm a crashaholic.", "Ooh. Shiny.", "This doesn't make any sense!", "Why is it breaking :(", "Don't do that.", "Ouch. That hurt :(", "You're mean.", "This is a token for 1 free hug. Redeem at your nearest Mojangsta: [~~HUG~~]", "There are four lights!", "But it works on my machine." };
         try {
-            return array[(int)(Class8349.method27838() % array.length)];
+            return array[(int)(Util.method27838() % array.length)];
         }
         catch (final Throwable t) {
             return "Witty comment unavailable :(";

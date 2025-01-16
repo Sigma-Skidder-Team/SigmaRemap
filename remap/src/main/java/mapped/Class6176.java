@@ -163,8 +163,8 @@ public class Class6176 extends Class6175
                 final double n9 = array[j][0];
                 final double n10 = array[j][1];
                 for (double n11 = 0.25; n11 <= 1.0; n11 += 0.25) {
-                    final double n12 = MathHelper.method35701(n11, n7, n9) * n;
-                    final double n13 = MathHelper.method35701(n11, n8, n10) * n;
+                    final double n12 = MathHelper.lerp(n11, n7, n9) * n;
+                    final double n13 = MathHelper.lerp(n11, n8, n10) * n;
                     final double n14 = n12 * Math.sin(n6);
                     final double n15 = n12 * Math.cos(n6);
                     for (double n16 = -1.0; n16 <= 1.0; n16 += 2.0) {

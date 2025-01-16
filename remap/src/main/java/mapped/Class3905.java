@@ -156,7 +156,7 @@ public abstract class Class3905 extends Class3902
     }
     
     private void method12012(final BlockState class7096, final World class7097, final BlockPos class7098) {
-        final boolean b = !class7097.method7128((Class<? extends Entity>)Class402.class, class7096.getShape(class7097, class7098).method24537().method18500(class7098)).isEmpty();
+        final boolean b = !class7097.method7128((Class<? extends Entity>)Class402.class, class7096.getShape(class7097, class7098).getBoundingBox().offset(class7098)).isEmpty();
         if (b != class7096.get((IProperty<Boolean>)Class3905.field17693)) {
             class7097.setBlockState(class7098, (BlockState)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class3905.field17693, b), 3);
             this.method12013(class7096, class7097, class7098);

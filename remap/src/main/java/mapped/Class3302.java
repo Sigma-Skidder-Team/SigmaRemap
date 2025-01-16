@@ -140,14 +140,14 @@ public class Class3302 extends Class3167
             return -1.0;
         }
         if (!Class3302.field15514.field4684.onGround) {
-            final Iterator<Object> iterator = Class3302.field15514.field4683.method6981(Class3302.field15514.field4684, Class3302.field15514.field4684.boundingBox.method18494(0.0, -Class3302.field15514.field4684.method1934().y, 0.0)).iterator();
+            final Iterator<Object> iterator = Class3302.field15514.field4683.method6981(Class3302.field15514.field4684, Class3302.field15514.field4684.boundingBox.expand(0.0, -Class3302.field15514.field4684.method1934().y, 0.0)).iterator();
             double field25077 = -1.0;
             while (iterator.hasNext()) {
                 final VoxelShape class7702 = iterator.next();
-                if (class7702.method24537().maxY <= field25077) {
+                if (class7702.getBoundingBox().maxY <= field25077) {
                     continue;
                 }
-                field25077 = class7702.method24537().maxY;
+                field25077 = class7702.getBoundingBox().maxY;
             }
             return field25077;
         }

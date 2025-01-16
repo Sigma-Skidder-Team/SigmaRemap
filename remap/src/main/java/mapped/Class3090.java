@@ -60,7 +60,7 @@ public abstract class Class3090
         this.field15457 = Lists.newArrayList();
         this.field15458 = Maps.newHashMap();
         this.field15459 = Maps.newHashMap();
-        this.field15460 = ThreadLocal.withInitial(() -> Class8349.method27850(() -> {
+        this.field15460 = ThreadLocal.withInitial(() -> Util.method27850(() -> {
             final Class29 class29 = new Class29(this, 1024, 0.25f);
             class29.defaultReturnValue(Float.NaN);
             return class29;
@@ -310,7 +310,7 @@ public abstract class Class3090
     
     public String method9865() {
         if (this.field15443 == null) {
-            this.field15443 = Class8349.method27836("biome", Registry.field217.getKey(this));
+            this.field15443 = Util.method27836("biome", Registry.field217.getKey(this));
         }
         return this.field15443;
     }

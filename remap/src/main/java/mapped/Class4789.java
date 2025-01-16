@@ -54,21 +54,21 @@ public class Class4789 extends Class4703<Class425>
                     if (method2079 == Class869.method5277().field4684) {
                         final double n9 = this.field20283.field35909.field23471 / 100.0;
                         final Vec3d method2085 = new Vec3d(n4 * -0.36 * n9, -0.045 * n9, 0.4).rotatePitch(-MathHelper.method35700(n2, method2079.prevRotationPitch, method2079.rotationPitch) * 0.017453292f).rotateYaw(-MathHelper.method35700(n2, method2079.prevRotationYaw, method2079.rotationYaw) * 0.017453292f).rotateYaw(method2084 * 0.5f).rotatePitch(-method2084 * 0.7f);
-                        n10 = MathHelper.method35701(n2, method2079.prevPosX, method2079.getPosX()) + method2085.x;
-                        n11 = MathHelper.method35701(n2, method2079.prevPosY, method2079.getPosY()) + method2085.y;
-                        n12 = MathHelper.method35701(n2, method2079.prevPosZ, method2079.getPosZ()) + method2085.z;
+                        n10 = MathHelper.lerp(n2, method2079.prevPosX, method2079.getPosX()) + method2085.x;
+                        n11 = MathHelper.lerp(n2, method2079.prevPosY, method2079.getPosY()) + method2085.y;
+                        n12 = MathHelper.lerp(n2, method2079.prevPosZ, method2079.getPosZ()) + method2085.z;
                         method2086 = method2079.method1892();
                         break Label_0628;
                     }
                 }
-                n10 = MathHelper.method35701(n2, method2079.prevPosX, method2079.getPosX()) - n7 * n8 - n6 * 0.8;
+                n10 = MathHelper.lerp(n2, method2079.prevPosX, method2079.getPosX()) - n7 * n8 - n6 * 0.8;
                 n11 = method2079.prevPosY + method2079.method1892() + (method2079.getPosY() - method2079.prevPosY) * n2 - 0.45;
-                n12 = MathHelper.method35701(n2, method2079.prevPosZ, method2079.getPosZ()) - n6 * n8 + n7 * 0.8;
+                n12 = MathHelper.lerp(n2, method2079.prevPosZ, method2079.getPosZ()) - n6 * n8 + n7 * 0.8;
                 method2086 = (method2079.method1814() ? -0.1875f : 0.0f);
             }
-            final double method2087 = MathHelper.method35701(n2, class425.prevPosX, class425.getPosX());
-            final double n13 = MathHelper.method35701(n2, class425.prevPosY, class425.getPosY()) + 0.25;
-            final double method2088 = MathHelper.method35701(n2, class425.prevPosZ, class425.getPosZ());
+            final double method2087 = MathHelper.lerp(n2, class425.prevPosX, class425.getPosX());
+            final double n13 = MathHelper.lerp(n2, class425.prevPosY, class425.getPosY()) + 0.25;
+            final double method2088 = MathHelper.lerp(n2, class425.prevPosZ, class425.getPosZ());
             final float n14 = (float)(n10 - method2087);
             final float n15 = (float)(n11 - n13) + method2086;
             final float n16 = (float)(n12 - method2088);

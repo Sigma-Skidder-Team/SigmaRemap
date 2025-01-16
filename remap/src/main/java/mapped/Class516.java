@@ -119,7 +119,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
             this.method2978(class8321, n - field3079 - 8, n2 - field3080 - n4, string);
         }
         if (!this.field3089.method27620()) {
-            float n5 = (Class8349.method27837() - this.field3088) / 100.0f;
+            float n5 = (Util.method27837() - this.field3088) / 100.0f;
             if (n5 >= 1.0f) {
                 n5 = 1.0f;
                 this.field3089 = ItemStack.field34174;
@@ -276,7 +276,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
         if (!super.method2982(n, n2, n3)) {
             final boolean method1067 = this.field3150.field4648.field23447.method1067(n3);
             final Class6601 method1068 = this.method2981(n, n2);
-            final long method1069 = Class8349.method27837();
+            final long method1069 = Util.method27837();
             boolean field3101 = false;
             Label_0091: {
                 if (this.field3099 == method1068) {
@@ -399,7 +399,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                     if (this.field3084.method27690() > 1) {
                         if (method2981 != null) {
                             if (Class3418.method10894(method2981, this.field3084, false)) {
-                                final long method2983 = Class8349.method27837();
+                                final long method2983 = Util.method27837();
                                 if (this.field3090 != method2981) {
                                     this.field3090 = method2981;
                                     this.field3091 = method2983;
@@ -518,7 +518,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                                         this.field3086 = MathHelper.floor(n2 - field3080);
                                         this.field3087 = this.field3082;
                                         this.field3089 = this.field3084;
-                                        this.field3088 = Class8349.method27837();
+                                        this.field3088 = Util.method27837();
                                         break Label_0469;
                                     }
                                     this.field3089 = ItemStack.field34174;
@@ -531,7 +531,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                             this.field3086 = MathHelper.floor(n2 - field3080);
                             this.field3087 = this.field3082;
                             this.field3089 = this.field3084;
-                            this.field3088 = Class8349.method27837();
+                            this.field3088 = Util.method27837();
                         }
                     }
                     this.field3084 = ItemStack.field34174;

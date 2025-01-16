@@ -119,7 +119,7 @@ public final class Class9294
     }
     
     static {
-        field39863 = Class8349.method27850(() -> {
+        field39863 = Util.method27850(() -> {
             final Matrix4f class6789 = new Matrix4f();
             class6789.method20748();
             final Class9294 class6790 = new Class9294(class6789);

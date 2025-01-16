@@ -77,7 +77,7 @@ public class Class3294 extends Class3167
             else {
                 n = method19119;
             }
-            final Class7644 class437 = new Class7644(tileEntity.method2194().getShape(Class3294.field15514.field4683, tileEntity.getPos()).method24537().method18499(field38854, field38855, field38856));
+            final Class7644 class437 = new Class7644(tileEntity.method2194().getShape(Class3294.field15514.field4683, tileEntity.getPos()).getBoundingBox().offset(field38854, field38855, field38856));
             if (b) {
                 Class8154.method26912(class437, 3.0f, n);
             }

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
@@ -61,7 +60,7 @@ public class Class8206<S> implements Class8207
             arrayList.add(method35078);
             completableFuture2 = method35078;
         }
-        this.field33737 = (CompletableFuture<List<S>>)Class8349.method27853((List<? extends CompletableFuture<?>>)arrayList);
+        this.field33737 = (CompletableFuture<List<S>>) Util.method27853((List<? extends CompletableFuture<?>>)arrayList);
     }
     
     @Override

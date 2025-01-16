@@ -128,7 +128,7 @@ public class Class1883 extends Class1882<Class364>
     }
     
     public void method7213(final Class7859 class7859, final Class8199 class7860) {
-        Class8349.method27855(this.method7180(Class353.method1090(class7859, class7860.method27159() >> 4).method1117()), class7861 -> class7861.method1181(biConsumer -> {
+        Util.method27855(this.method7180(Class353.method1090(class7859, class7860.method27159() >> 4).method1117()), class7861 -> class7861.method1181(biConsumer -> {
             if (!(!method7214(class7862))) {
                 this.method7215(class7862, class7863, biConsumer);
             }

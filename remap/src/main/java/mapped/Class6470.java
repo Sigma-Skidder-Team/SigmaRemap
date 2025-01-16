@@ -39,7 +39,7 @@ public class Class6470 extends Class6469
     }
     
     public double method19470(final double n) {
-        return this.method19471(MathHelper.method35701(MathHelper.clamp(n, 0.0, 1.0), this.field25824, this.field25825));
+        return this.method19471(MathHelper.lerp(MathHelper.clamp(n, 0.0, 1.0), this.field25824, this.field25825));
     }
     
     private double method19471(double n) {

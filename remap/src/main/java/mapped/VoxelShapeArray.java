@@ -35,7 +35,7 @@ public final class VoxelShapeArray extends VoxelShape
                 }
             }
         }
-        throw Class8349.method27859(new IllegalArgumentException("Lengths of point arrays must be consistent with the size of the VoxelShape."));
+        throw Util.pauseDevMode(new IllegalArgumentException("Lengths of point arrays must be consistent with the size of the VoxelShape."));
     }
     
     @Override

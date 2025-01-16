@@ -5,7 +5,7 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
+
 import java.io.InputStream;
 import java.io.IOException;
 import com.google.gson.JsonParseException;
@@ -33,7 +33,7 @@ public class Class8837
             for (final Map.Entry<K, JsonElement> entry : Class9583.method35913((JsonElement)new Gson().fromJson((Reader)new InputStreamReader(resourceAsStream, StandardCharsets.UTF_8), (Class)JsonElement.class), "strings").entrySet()) {
                 this.field37143.put((String)entry.getKey(), Class8837.field37141.matcher(Class9583.method35894(entry.getValue(), (String)entry.getKey())).replaceAll("%$1s"));
             }
-            this.field37144 = Class8349.method27837();
+            this.field37144 = Util.method27837();
         }
         catch (final JsonParseException | IOException ex) {
             Class8837.field37140.error("Couldn't read strings from /assets/minecraft/lang/en_us.json", (Throwable)ex);
@@ -47,7 +47,7 @@ public class Class8837
     public static synchronized void method30859(final Map<String, String> map) {
         Class8837.field37142.field37143.clear();
         Class8837.field37142.field37143.putAll(map);
-        Class8837.field37142.field37144 = Class8349.method27837();
+        Class8837.field37142.field37144 = Util.method27837();
     }
     
     public synchronized String method30860(final String s) {

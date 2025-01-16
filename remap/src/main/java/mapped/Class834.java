@@ -72,7 +72,7 @@ public abstract class Class834 extends Class833
         super.method1659();
         if (this.method4966()) {
             if (this.world.rand.nextInt(200) == 1) {
-                if (this.world.method7128((Class<? extends Entity>)this.getClass(), this.getBoundingBox().method18495(8.0, 8.0, 8.0)).size() <= 1) {
+                if (this.world.method7128((Class<? extends Entity>)this.getClass(), this.getBoundingBox().grow(8.0, 8.0, 8.0)).size() <= 1) {
                     this.field4446 = 1;
                 }
             }

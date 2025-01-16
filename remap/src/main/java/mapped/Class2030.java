@@ -5,7 +5,6 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import java.util.HashMap;
 import com.google.gson.JsonObject;
 import java.util.function.Function;
 import java.util.Map;
@@ -38,7 +37,7 @@ public enum Class2030
     }
     
     static {
-        field11571 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field11571 = Util.method27851(Maps.newHashMap(), hashMap -> {
             values();
             final Class2030[] array;
             int i = 0;

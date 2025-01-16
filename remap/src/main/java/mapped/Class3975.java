@@ -124,7 +124,7 @@ public class Class3975 extends Block
         final BlockState method6701 = class1847.getBlockState(class1848);
         final boolean booleanValue = ((StateHolder<Object, BlockState>)method6701).get((IProperty<Boolean>)Class3975.field17953);
         boolean b = false;
-        final List<Entity> method6702 = class1847.method7127(null, method6701.getShape(class1847, class1848).method24537().method18500(class1848));
+        final List<Entity> method6702 = class1847.method7127(null, method6701.getShape(class1847, class1848).getBoundingBox().offset(class1848));
         if (!method6702.isEmpty()) {
             final Iterator iterator = method6702.iterator();
             while (iterator.hasNext()) {

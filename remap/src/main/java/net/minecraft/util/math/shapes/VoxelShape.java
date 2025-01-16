@@ -25,21 +25,21 @@ public abstract class VoxelShape
         this.part = part;
     }
     
-    public double method24535(final Direction.Axis class111) {
+    public double getStart(final Direction.Axis class111) {
         final int method27417 = this.part.getStart(class111);
         return (method27417 < this.part.getSize(class111)) ? this.getValueUnchecked(class111, method27417) : Double.POSITIVE_INFINITY;
     }
     
-    public double method24536(final Direction.Axis class111) {
+    public double getEnd(final Direction.Axis class111) {
         final int method27418 = this.part.getEnd(class111);
         return (method27418 > 0) ? this.getValueUnchecked(class111, method27418) : Double.NEGATIVE_INFINITY;
     }
     
-    public AxisAlignedBB method24537() {
+    public AxisAlignedBB getBoundingBox() {
         if (!this.isEmpty()) {
-            return new AxisAlignedBB(this.method24535(Direction.Axis.X), this.method24535(Direction.Axis.Y), this.method24535(Direction.Axis.Z), this.method24536(Direction.Axis.X), this.method24536(Direction.Axis.Y), this.method24536(Direction.Axis.Z));
+            return new AxisAlignedBB(this.getStart(Direction.Axis.X), this.getStart(Direction.Axis.Y), this.getStart(Direction.Axis.Z), this.getEnd(Direction.Axis.X), this.getEnd(Direction.Axis.Y), this.getEnd(Direction.Axis.Z));
         }
-        throw Class8349.method27859(new UnsupportedOperationException("No bounds for empty shape."));
+        throw Util.pauseDevMode(new UnsupportedOperationException("No bounds for empty shape."));
     }
     
     public double getValueUnchecked(final Direction.Axis class111, final int n) {
@@ -109,42 +109,42 @@ public abstract class VoxelShape
         }) - 1;
     }
     
-    public boolean method24549(final double n, final double n2, final double n3) {
+    public boolean contains(final double n, final double n2, final double n3) {
         return this.part.contains(this.getClosestIndex(Direction.Axis.X, n), this.getClosestIndex(Direction.Axis.Y, n2), this.getClosestIndex(Direction.Axis.Z, n3));
     }
     
     @Nullable
-    public BlockRayTraceResult method24550(final Vec3d class5487, final Vec3d class5488, final BlockPos class5489) {
+    public BlockRayTraceResult rayTrace(final Vec3d p_212433_1_, final Vec3d p_212433_2_, final BlockPos p_212433_3_) {
         if (this.isEmpty()) {
             return null;
         }
-        final Vec3d method16741 = class5488.subtract(class5487);
-        if (method16741.lengthSquared() >= 1.0E-7) {
-            final Vec3d method16742 = class5487.add(method16741.scale(0.001));
-            return this.method24549(method16742.x - class5489.getX(), method16742.y - class5489.getY(), method16742.z - class5489.getZ()) ? new BlockRayTraceResult(method16742, Direction.getFacingFromVector(method16741.x, method16741.y, method16741.z).getOpposite(), class5489, true) : AxisAlignedBB.method18513(this.toBoundingBoxList(), class5487, class5488, class5489);
+        final Vec3d vec3d = p_212433_2_.subtract(p_212433_1_);
+        if (vec3d.lengthSquared() >= 1.0E-7) {
+            final Vec3d vec3d1 = p_212433_1_.add(vec3d.scale(0.001));
+            return this.contains(vec3d1.x - p_212433_3_.getX(), vec3d1.y - p_212433_3_.getY(), vec3d1.z - p_212433_3_.getZ()) ? new BlockRayTraceResult(vec3d1, Direction.getFacingFromVector(vec3d.x, vec3d.y, vec3d.z).getOpposite(), p_212433_3_, true) : AxisAlignedBB.rayTrace(this.toBoundingBoxList(), p_212433_1_, p_212433_2_, p_212433_3_);
         }
         return null;
     }
     
-    public VoxelShape method24551(final Direction class179) {
-        if (!this.isEmpty() && this != VoxelShapes.method24487()) {
+    public VoxelShape project(final Direction side) {
+        if (!this.isEmpty() && this != VoxelShapes.fullCube()) {
             if (this.projectionCache == null) {
                 this.projectionCache = new VoxelShape[6];
             }
             else {
-                final VoxelShape class180 = this.projectionCache[class179.ordinal()];
-                if (class180 != null) {
-                    return class180;
+                final VoxelShape voxelshape = this.projectionCache[side.ordinal()];
+                if (voxelshape != null) {
+                    return voxelshape;
                 }
             }
-            return this.projectionCache[class179.ordinal()] = this.method24552(class179);
+            return this.projectionCache[side.ordinal()] = this.doProject(side);
         }
         return this;
     }
     
-    private VoxelShape method24552(final Direction class179) {
-        final Direction.Axis method790 = class179.getAxis();
-        final AxisDirection method791 = class179.getAxisDirection();
+    private VoxelShape doProject(final Direction side) {
+        final Direction.Axis method790 = side.getAxis();
+        final AxisDirection method791 = side.getAxisDirection();
         final DoubleList method792 = this.getValues(method790);
         if (method792.size() == 2) {
             if (DoubleMath.fuzzyEquals(method792.getDouble(0), 0.0, 1.0E-7)) {
@@ -153,38 +153,38 @@ public abstract class VoxelShape
                 }
             }
         }
-        return new Class7703(this, method790, this.getClosestIndex(method790, (method791 != AxisDirection.POSITIVE) ? 1.0E-7 : 0.9999999));
+        return new SplitVoxelShape(this, method790, this.getClosestIndex(method790, (method791 != AxisDirection.POSITIVE) ? 1.0E-7 : 0.9999999));
     }
     
-    public double method24553(final Direction.Axis class111, final AxisAlignedBB class112, final double n) {
-        return this.method24554(AxisRotation.from(class111, Direction.Axis.X), class112, n);
+    public double getAllowedOffset(final Direction.Axis class111, final AxisAlignedBB class112, final double n) {
+        return this.getAllowedOffset(AxisRotation.from(class111, Direction.Axis.X), class112, n);
     }
     
-    public double method24554(final AxisRotation axisRotation, final AxisAlignedBB class310, double a) {
+    public double getAllowedOffset(final AxisRotation axisRotation, final AxisAlignedBB class310, double a) {
         if (this.isEmpty()) {
             return a;
         }
         if (Math.abs(a) >= 1.0E-7) {
-            final AxisRotation method984 = axisRotation.reverse();
-            final Direction.Axis method985 = method984.rotate(Direction.Axis.X);
-            final Direction.Axis method986 = method984.rotate(Direction.Axis.Y);
-            final Direction.Axis method987 = method984.rotate(Direction.Axis.Z);
-            final double method988 = class310.method18491(method985);
-            final double method989 = class310.method18490(method985);
-            final int method990 = this.getClosestIndex(method985, method989 + 1.0E-7);
-            final int method991 = this.getClosestIndex(method985, method988 - 1.0E-7);
-            final int max = Math.max(0, this.getClosestIndex(method986, class310.method18490(method986) + 1.0E-7));
-            final int min = Math.min(this.part.getSize(method986), this.getClosestIndex(method986, class310.method18491(method986) - 1.0E-7) + 1);
-            final int max2 = Math.max(0, this.getClosestIndex(method987, class310.method18490(method987) + 1.0E-7));
-            final int min2 = Math.min(this.part.getSize(method987), this.getClosestIndex(method987, class310.method18491(method987) - 1.0E-7) + 1);
-            final int method992 = this.part.getSize(method985);
+            final AxisRotation axisrotation = axisRotation.reverse();
+            final Direction.Axis direction$axis = axisrotation.rotate(Direction.Axis.X);
+            final Direction.Axis direction$axis1 = axisrotation.rotate(Direction.Axis.Y);
+            final Direction.Axis direction$axis2 = axisrotation.rotate(Direction.Axis.Z);
+            final double d0 = class310.getMax(direction$axis);
+            final double d1 = class310.getMin(direction$axis);
+            final int method990 = this.getClosestIndex(direction$axis, d1 + 1.0E-7);
+            final int method991 = this.getClosestIndex(direction$axis, d0 - 1.0E-7);
+            final int max = Math.max(0, this.getClosestIndex(direction$axis1, class310.getMin(direction$axis1) + 1.0E-7));
+            final int min = Math.min(this.part.getSize(direction$axis1), this.getClosestIndex(direction$axis1, class310.getMax(direction$axis1) - 1.0E-7) + 1);
+            final int max2 = Math.max(0, this.getClosestIndex(direction$axis2, class310.getMin(direction$axis2) + 1.0E-7));
+            final int min2 = Math.min(this.part.getSize(direction$axis2), this.getClosestIndex(direction$axis2, class310.getMax(direction$axis2) - 1.0E-7) + 1);
+            final int method992 = this.part.getSize(direction$axis);
             if (a <= 0.0) {
                 if (a < 0.0) {
                     for (int i = method990 - 1; i >= 0; --i) {
                         for (int j = max; j < min; ++j) {
                             for (int k = max2; k < min2; ++k) {
-                                if (this.part.containsWithRotation(method984, i, j, k)) {
-                                    final double b = this.getValueUnchecked(method985, i + 1) - method989;
+                                if (this.part.containsWithRotation(axisrotation, i, j, k)) {
+                                    final double b = this.getValueUnchecked(direction$axis, i + 1) - d1;
                                     if (b <= 1.0E-7) {
                                         a = Math.max(a, b);
                                     }
@@ -199,8 +199,8 @@ public abstract class VoxelShape
                 for (int l = method991 + 1; l < method992; ++l) {
                     for (int n = max; n < min; ++n) {
                         for (int n2 = max2; n2 < min2; ++n2) {
-                            if (this.part.containsWithRotation(method984, l, n, n2)) {
-                                final double b2 = this.getValueUnchecked(method985, l) - method988;
+                            if (this.part.containsWithRotation(axisrotation, l, n, n2)) {
+                                final double b2 = this.getValueUnchecked(direction$axis, l) - d0;
                                 if (b2 >= -1.0E-7) {
                                     a = Math.min(a, b2);
                                 }
@@ -217,6 +217,6 @@ public abstract class VoxelShape
     
     @Override
     public String toString() {
-        return this.isEmpty() ? "EMPTY" : ("VoxelShape[" + this.method24537() + "]");
+        return this.isEmpty() ? "EMPTY" : ("VoxelShape[" + this.getBoundingBox() + "]");
     }
 }

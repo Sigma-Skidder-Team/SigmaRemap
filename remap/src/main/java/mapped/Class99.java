@@ -33,7 +33,7 @@ public enum Class99
     }
     
     static {
-        field283 = Class8349.method27851(new Class99[6], array -> {
+        field283 = Util.method27851(new Class99[6], array -> {
             array[Direction.DOWN.getIndex()] = Class99.field273;
             array[Direction.UP.getIndex()] = Class99.field274;
             array[Direction.NORTH.getIndex()] = Class99.field275;

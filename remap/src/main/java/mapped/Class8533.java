@@ -46,6 +46,6 @@ public class Class8533
         field35814 = method28624(Class8533.field35813, (SuggestionProvider<Class7491>)((commandContext, suggestionsBuilder) -> ((Class7491)commandContext.getSource()).method23211((CommandContext<Class7491>)commandContext, suggestionsBuilder)));
         field35815 = method28624(new ResourceLocation("all_recipes"), (SuggestionProvider<Class7491>)((commandContext, suggestionsBuilder) -> Class7491.method23222(((Class7491)commandContext.getSource()).method23209(), suggestionsBuilder)));
         field35816 = method28624(new ResourceLocation("available_sounds"), (SuggestionProvider<Class7491>)((commandContext, suggestionsBuilder) -> Class7491.method23220(((Class7491)commandContext.getSource()).method23208(), suggestionsBuilder)));
-        field35817 = method28624(new ResourceLocation("summonable_entities"), (SuggestionProvider<Class7491>)((commandContext, suggestionsBuilder) -> Class7491.method23223(Registry.field210.method509().filter(EntityType::method23362), suggestionsBuilder, EntityType::method23354, class7499 -> new Class2259(Class8349.method27836("entity", EntityType.method23354(class7499)), new Object[0]))));
+        field35817 = method28624(new ResourceLocation("summonable_entities"), (SuggestionProvider<Class7491>)((commandContext, suggestionsBuilder) -> Class7491.method23223(Registry.field210.method509().filter(EntityType::method23362), suggestionsBuilder, EntityType::method23354, class7499 -> new Class2259(Util.method27836("entity", EntityType.method23354(class7499)), new Object[0]))));
     }
 }

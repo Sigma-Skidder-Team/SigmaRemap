@@ -172,7 +172,7 @@ public class Class492 extends TileEntity implements Class439
         final int method1074 = this.field2657.getX();
         final int method1075 = this.field2657.getY();
         final int method1076 = this.field2657.getZ();
-        final List<Entity> method1077 = this.field2656.method7128((Class<? extends Entity>) PlayerEntity.class, new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(n).method18494(0.0, this.field2656.getHeight(), 0.0));
+        final List<Entity> method1077 = this.field2656.method7128((Class<? extends Entity>) PlayerEntity.class, new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).intersect(n).expand(0.0, this.field2656.getHeight(), 0.0));
         if (!method1077.isEmpty()) {
             for (final PlayerEntity playerEntity : method1077) {
                 if (!this.field2657.withinDistance(new BlockPos(playerEntity), n)) {
@@ -236,7 +236,7 @@ public class Class492 extends TileEntity implements Class439
         final int method1074 = this.field2657.getX();
         final int method1075 = this.field2657.getY();
         final int method1076 = this.field2657.getZ();
-        return new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).method18496(8.0);
+        return new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).intersect(8.0);
     }
     
     @Nullable

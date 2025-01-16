@@ -192,7 +192,7 @@ public class Class388 extends Class387 implements Class389
                 arrayList.add(method1316.method34354(intFunction.apply(max), this));
             }
         }
-        return (CompletableFuture<Either<List<IChunk>, Class6797>>)Class8349.method27853((List<? extends CompletableFuture<?>>)arrayList).thenApply(list -> {
+        return (CompletableFuture<Either<List<IChunk>, Class6797>>) Util.method27853((List<? extends CompletableFuture<?>>)arrayList).thenApply(list -> {
             Lists.newArrayList();
             list.iterator();
             final Iterator iterator;
@@ -486,7 +486,7 @@ public class Class388 extends Class387 implements Class389
     }
     
     public void method1331(final Class7859 class7859) {
-        this.field2256.method5381(Class8349.method27856(() -> this.field2266.method30131(Class9105.field38569, class7860, 33 + ChunkStatus.method34441(ChunkStatus.field39985), class7860), () -> "release light ticket " + obj));
+        this.field2256.method5381(Util.method27856(() -> this.field2266.method30131(Class9105.field38569, class7860, 33 + ChunkStatus.method34441(ChunkStatus.field39985), class7860), () -> "release light ticket " + obj));
     }
     
     private ChunkStatus method1332(final ChunkStatus class9312, final int n) {
@@ -836,7 +836,7 @@ public class Class388 extends Class387 implements Class389
                 final int n = method1642.method23380() * 16;
                 final int method1643 = method1642.method23381();
                 if (this.field2271.containsKey(class399.getEntityId())) {
-                    throw Class8349.method27859(new IllegalStateException("Entity is already tracked!"));
+                    throw Util.pauseDevMode(new IllegalStateException("Entity is already tracked!"));
                 }
                 final Class9406 class400 = new Class9406(this, class399, n, method1643, method1642.method23382());
                 this.field2271.put(class399.getEntityId(), (Object)class400);

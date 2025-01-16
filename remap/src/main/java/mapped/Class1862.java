@@ -420,7 +420,7 @@ public class Class1862 implements IChunk
         for (int method35647 = MathHelper.method35651(method35645, 0, this.field10150.length - 1), i = method35646; i <= method35647; ++i) {
             if (!this.field10150[i].isEmpty()) {
                 for (final Entity class401 : this.field10150[i]) {
-                    if (!class401.getBoundingBox().method18502(class400)) {
+                    if (!class401.getBoundingBox().intersects(class400)) {
                         continue;
                     }
                     if (class401 == class399) {
@@ -434,7 +434,7 @@ public class Class1862 implements IChunk
                     }
                     for (final Class859 class402 : ((Class852)class401).method5123()) {
                         if (class402 != class399) {
-                            if (class402.getBoundingBox().method18502(class400)) {
+                            if (class402.getBoundingBox().intersects(class400)) {
                                 if (predicate == null || predicate.test(class402)) {
                                     list.add(class402);
                                 }
@@ -455,7 +455,7 @@ public class Class1862 implements IChunk
                 if (class7499 != null && class7501.getType() != class7499) {
                     continue;
                 }
-                if (!class7501.getBoundingBox().method18502(class7500)) {
+                if (!class7501.getBoundingBox().intersects(class7500)) {
                     continue;
                 }
                 if (!predicate.test((Object)class7501)) {
@@ -472,7 +472,7 @@ public class Class1862 implements IChunk
         final int method35646 = MathHelper.method35651(method35644, 0, this.field10150.length - 1);
         for (int method35647 = MathHelper.method35651(method35645, 0, this.field10150.length - 1), i = method35646; i <= method35647; ++i) {
             for (final Entity class6222 : this.field10150[i].method443((Class<T>)clazz)) {
-                if (!class6222.getBoundingBox().method18502(class6221)) {
+                if (!class6222.getBoundingBox().intersects(class6221)) {
                     continue;
                 }
                 if (predicate != null && !predicate.test((T)class6222)) {

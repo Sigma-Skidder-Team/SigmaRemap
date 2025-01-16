@@ -47,7 +47,7 @@ public abstract class Class414 extends Entity implements Class401
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.getBoundingBox().method18507() * 4.0;
+        double v = this.getBoundingBox().getAverageEdgeLength() * 4.0;
         if (Double.isNaN(v)) {
             v = 4.0;
         }
@@ -96,7 +96,7 @@ public abstract class Class414 extends Entity implements Class401
             this.field2515 = false;
             this.method1936(this.getMotion().mul(this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f));
         }
-        final AxisAlignedBB method18496 = this.getBoundingBox().method18493(this.getMotion()).method18496(1.0);
+        final AxisAlignedBB method18496 = this.getBoundingBox().expand(this.getMotion()).intersect(1.0);
         for (final Entity field2519 : this.world.method6737(this, method18496, class399 -> !class399.isSpectator() && class399.method1749())) {
             if (field2519 == this.field2519) {
                 ++this.field2520;
@@ -115,7 +115,7 @@ public abstract class Class414 extends Entity implements Class401
             this.field2520 = 3;
             break;
         }
-        final Class7006 method18497 = Class7476.method23093(this, method18496, class400 -> {
+        final RayTraceResult method18497 = Class7476.method23093(this, method18496, class400 -> {
             final boolean b;
             if (!class400.isSpectator()) {
                 if (!(!class400.method1749())) {
@@ -131,9 +131,9 @@ public abstract class Class414 extends Entity implements Class401
                 this.field2519 = null;
             }
         }
-        if (method18497.method21449() != Class2165.field12880) {
-            if (method18497.method21449() == Class2165.field12881 && this.world.getBlockState(((BlockRayTraceResult)method18497).method21447()).method21696() == Class7521.field29341) {
-                this.method1794(((BlockRayTraceResult)method18497).method21447());
+        if (method18497.getType() != RayTraceResult.Type.MISS) {
+            if (method18497.getType() == RayTraceResult.Type.BLOCK && this.world.getBlockState(((BlockRayTraceResult)method18497).getPos()).method21696() == Class7521.field29341) {
+                this.method1794(((BlockRayTraceResult)method18497).getPos());
             }
             else {
                 this.method2016(method18497);
@@ -182,7 +182,7 @@ public abstract class Class414 extends Entity implements Class401
         return 0.03f;
     }
     
-    public abstract void method2016(final Class7006 p0);
+    public abstract void method2016(final RayTraceResult p0);
     
     @Override
     public void method1761(final Class51 class51) {

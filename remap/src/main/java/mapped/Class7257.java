@@ -432,7 +432,7 @@ public abstract class Class7257 extends Fluid
     
     @Override
     public VoxelShape method22167(final IFluidState key, final IBlockReader class1855, final BlockPos class1856) {
-        return (key.getLevel() == 9 && method22194(key, class1855, class1856)) ? VoxelShapes.method24487() : this.field28135.computeIfAbsent(key, class1859 -> VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, class1859.getActualHeight(class1857, class1858), 1.0));
+        return (key.getLevel() == 9 && method22194(key, class1855, class1856)) ? VoxelShapes.fullCube() : this.field28135.computeIfAbsent(key, class1859 -> VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, class1859.getActualHeight(class1857, class1858), 1.0));
     }
     
     static {

@@ -31,7 +31,7 @@ public class Class6165 extends Class6159
     
     @Override
     public void method18431(final double n, final double n2, final double n3) {
-        this.method18445(this.method18444().method18499(n, n2, n3));
+        this.method18445(this.method18444().offset(n, n2, n3));
         this.method18442();
     }
     

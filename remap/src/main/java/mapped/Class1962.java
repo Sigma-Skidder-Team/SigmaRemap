@@ -31,7 +31,7 @@ public enum Class1962
     }
     
     static {
-        field10710 = Class8349.method27851(new Class1962[6], array -> {
+        field10710 = Util.method27851(new Class1962[6], array -> {
             array[Class6352.field25403] = Class1962.field10704;
             array[Class6352.field25400] = Class1962.field10705;
             array[Class6352.field25402] = Class1962.field10706;

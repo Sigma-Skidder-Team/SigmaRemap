@@ -71,7 +71,7 @@ public class Class736 extends Class527
     }
     
     static {
-        field3996 = Class8349.method27851((Object2IntMap)new Object2IntOpenCustomHashMap((Hash$Strategy)Class8349.method27852()), object2IntOpenCustomHashMap -> {
+        field3996 = Util.method27851((Object2IntMap)new Object2IntOpenCustomHashMap((Hash$Strategy) Util.method27852()), object2IntOpenCustomHashMap -> {
             object2IntOpenCustomHashMap.put((Object) DimensionType.field2223, -13408734);
             object2IntOpenCustomHashMap.put((Object) DimensionType.field2224, -10075085);
             object2IntOpenCustomHashMap.put((Object) DimensionType.field2225, -8943531);

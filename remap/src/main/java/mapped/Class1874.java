@@ -37,7 +37,7 @@ public interface Class1874
     }
     
     default boolean method6957(final Entity class399, final VoxelShape class400) {
-        return class400.isEmpty() || this.method7127(class399, class400.method24537()).stream().filter(class402 -> {
+        return class400.isEmpty() || this.method7127(class399, class400.getBoundingBox()).stream().filter(class402 -> {
             final boolean b;
             if (!class402.removed) {
                 if (!(!class402.preventEntitySpawning)) {
@@ -59,9 +59,9 @@ public interface Class1874
     }
     
     default Stream<VoxelShape> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
-        if (class400.method18507() >= 1.0E-7) {
-            final AxisAlignedBB method18496 = class400.method18496(1.0E-7);
-            return (Stream<VoxelShape>)this.method7127(class399, method18496).stream().filter(class401 -> !set2.contains(class401)).filter(class403 -> class402 == null || !class402.method1916(class403)).flatMap(class405 -> Stream.of(new AxisAlignedBB[] { class405.method1702(), (class404 != null) ? class404.method1771(class405) : null })).filter(Objects::nonNull).filter((Predicate<? super Object>)method18496::method18502).map((Function<? super Object, ?>) VoxelShapes::method24489);
+        if (class400.getAverageEdgeLength() >= 1.0E-7) {
+            final AxisAlignedBB method18496 = class400.intersect(1.0E-7);
+            return (Stream<VoxelShape>)this.method7127(class399, method18496).stream().filter(class401 -> !set2.contains(class401)).filter(class403 -> class402 == null || !class402.method1916(class403)).flatMap(class405 -> Stream.of(new AxisAlignedBB[] { class405.method1702(), (class404 != null) ? class404.method1771(class405) : null })).filter(Objects::nonNull).filter((Predicate<? super Object>)method18496::intersects).map((Function<? super Object, ?>) VoxelShapes::method24489);
         }
         return Stream.empty();
     }
@@ -181,7 +181,7 @@ public interface Class1874
     default List<PlayerEntity> method7141(final Class7843 class7843, final LivingEntity class7844, final AxisAlignedBB class7845) {
         final ArrayList arrayList = Lists.newArrayList();
         for (final PlayerEntity class7846 : this.method6840()) {
-            if (!class7845.method18506(class7846.getPosX(), class7846.getPosY(), class7846.getPosZ())) {
+            if (!class7845.contains(class7846.getPosX(), class7846.getPosY(), class7846.getPosZ())) {
                 continue;
             }
             if (!class7843.method25344(class7844, class7846)) {

@@ -331,20 +331,20 @@ public class Class4609
     public static BlockPos method13694(final float n, final float n2, final float n3) {
         final BlockRayTraceResult method13697 = method13697(n, n2, n3);
         if (method13697 != null) {
-            return method13697.method21447();
+            return method13697.getPos();
         }
         return null;
     }
     
     public static float[] method13695() {
         final BlockRayTraceResult method13696 = method13696(Class7482.method23147() - 270.0f);
-        if (method13696.method21449() != Class2165.field12880) {
-            final double n = method13696.method21451().x - method13696.method21447().getX();
-            final double n2 = method13696.method21451().z - method13696.method21447().getZ();
-            final double n3 = method13696.method21451().y - method13696.method21447().getY();
-            final double x = method13696.method21447().getX() - Class869.method5277().field4684.posX + n;
-            final double y = method13696.method21447().getY() - (Class869.method5277().field4684.posY + Class869.method5277().field4684.method1892()) + n3;
-            final double y2 = method13696.method21447().getZ() - Class869.method5277().field4684.posZ + n2;
+        if (method13696.getType() != RayTraceResult.Type.MISS) {
+            final double n = method13696.getHitVec().x - method13696.getPos().getX();
+            final double n2 = method13696.getHitVec().z - method13696.getPos().getZ();
+            final double n3 = method13696.getHitVec().y - method13696.getPos().getY();
+            final double x = method13696.getPos().getX() - Class869.method5277().field4684.posX + n;
+            final double y = method13696.getPos().getY() - (Class869.method5277().field4684.posY + Class869.method5277().field4684.method1892()) + n3;
+            final double y2 = method13696.getPos().getZ() - Class869.method5277().field4684.posZ + n2;
             return new float[] { Class869.method5277().field4684.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Class869.method5277().field4684.rotationYaw), Class869.method5277().field4684.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Class869.method5277().field4684.rotationPitch) };
         }
         return null;
@@ -386,7 +386,7 @@ public class Class4609
         return Class4609.field20075.field4683.rayTraceBlocks(new RayTraceContext(class5745, new Vec3d(Class4609.field20075.field4684.field4074 + n3 * method27315, Class4609.field20075.field4684.field4075 + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
     
-    public static Class7006 method13699(float n, float n2, float method27315, final float n3) {
+    public static RayTraceResult method13699(float n, float n2, float method27315, final float n3) {
         final Vec3d class5487 = new Vec3d(Class4609.field20075.field4684.posX + Math.cos(Class7482.method23147() * 3.141592653589793 / 180.0) * n3, Class4609.field20075.field4684.posY + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.posZ + Math.sin(Class7482.method23147() * 3.141592653589793 / 180.0) * n3);
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
@@ -399,7 +399,7 @@ public class Class4609
         return Class4609.field20075.field4683.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.field4684.field4074 + n4 * method27315, Class4609.field20075.field4684.field4075 + n5 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.field4076 + n6 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
     
-    public static Class7006 method13700(final BlockPos class354) {
+    public static RayTraceResult method13700(final BlockPos class354) {
         return Class4609.field20075.field4683.rayTraceBlocks(new RayTraceContext(new Vec3d(Class4609.field20075.field4684.posX, Class4609.field20075.field4684.posY + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.posZ), new Vec3d(class354.getX() + 0.5 + RandomUtils.nextDouble(0.01, 0.04), class354.getY(), class354.getZ() + 0.5 + RandomUtils.nextDouble(0.01, 0.04)), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
     
@@ -412,7 +412,7 @@ public class Class4609
         final float n5 = MathHelper.cos(n) * MathHelper.cos(n2);
         final float method27315 = Class4609.field20075.field4682.method27315();
         final BlockRayTraceResult method27316 = Class4609.field20075.field4683.rayTraceBlocks(new RayTraceContext(class9053, new Vec3d(Class4609.field20075.field4684.posX + n3 * method27315, Class4609.field20075.field4684.posY + n4 * method27315 + Class4609.field20075.field4684.method1892(), Class4609.field20075.field4684.posZ + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.ANY, Class4609.field20075.method5303()));
-        return method27316 != null && method27316.method21447().equals(class9052.field38320) && method27316.method21448() == class9052.field38321;
+        return method27316 != null && method27316.getPos().equals(class9052.field38320) && method27316.getFace() == class9052.field38321;
     }
     
     public static Vec3d method13702(final Direction class179, final BlockPos class180) {
@@ -486,7 +486,7 @@ public class Class4609
     
     public static float[] method13709(final float n, final float n2, final Class9301 class9301) {
         final BlockRayTraceResult method13697 = method13697(n, n2, Class4609.field20075.field4682.method27315());
-        if (method13697 != null && method13697.method21447().equals(class9301.field39906)) {
+        if (method13697 != null && method13697.getPos().equals(class9301.field39906)) {
             return new float[] { n, n2 };
         }
         final float n3 = method13671(class9301.field39906)[0];

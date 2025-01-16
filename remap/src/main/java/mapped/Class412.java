@@ -37,17 +37,17 @@ public class Class412 extends Class409
     }
     
     @Override
-    public void method2016(final Class7006 class7006) {
+    public void method2016(final RayTraceResult class7006) {
         final LivingEntity method2019 = this.method2019();
-        if (class7006.method21449() == Class2165.field12882) {
+        if (class7006.getType() == RayTraceResult.Type.ENTITY) {
             final Entity method2020 = ((Class7007)class7006).method21452();
             if (method2020 == this.field2510) {
                 return;
             }
             method2020.attackEntityFrom(DamageSource.method25699(this, method2019), 0.0f);
         }
-        if (class7006.method21449() == Class2165.field12881) {
-            final BlockPos method2021 = ((BlockRayTraceResult)class7006).method21447();
+        if (class7006.getType() == RayTraceResult.Type.BLOCK) {
+            final BlockPos method2021 = ((BlockRayTraceResult)class7006).getPos();
             final TileEntity method2022 = this.world.getTileEntity(method2021);
             if (method2022 instanceof Class488) {
                 final Class488 class7007 = (Class488)method2022;

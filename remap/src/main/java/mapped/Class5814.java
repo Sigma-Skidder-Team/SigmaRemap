@@ -112,7 +112,7 @@ public class Class5814 implements Class5813
             this.field23884 = 0;
         }
         this.field23856.method1590().startSection("keepAlive");
-        final long method27837 = Class8349.method27837();
+        final long method27837 = Util.method27837();
         if (method27837 - this.field23859 >= 15000L) {
             if (!this.field23860) {
                 this.field23860 = true;
@@ -133,7 +133,7 @@ public class Class5814 implements Class5813
         }
         if (this.field23857.method2953() > 0L) {
             if (this.field23856.method1552() > 0) {
-                if (Class8349.method27837() - this.field23857.method2953() > this.field23856.method1552() * 1000 * 60) {
+                if (Util.method27837() - this.field23857.method2953() > this.field23856.method1552() * 1000 * 60) {
                     this.method17463(new Class2259("multiplayer.disconnect.idling", new Object[0]));
                 }
             }
@@ -232,7 +232,7 @@ public class Class5814 implements Class5813
                             this.field23855.method11174(new Class4263(method1915));
                             return;
                         }
-                        final boolean method1925 = method1916.method6978(method1915, method1915.getBoundingBox().method18511(0.0625));
+                        final boolean method1925 = method1916.method6978(method1915, method1915.getBoundingBox().shrink(0.0625));
                         method1915.method1671(Class2160.field12827, new Vec3d(method1920 - this.field23875, method1921 - this.field23876 - 1.0E-6, method1922 - this.field23877));
                         final double n = method1920 - method1915.getPosX();
                         double n2 = method1921 - method1915.getPosY();
@@ -247,7 +247,7 @@ public class Class5814 implements Class5813
                             Class5814.field23854.warn("{} moved wrongly!", (Object)method1915.getName().getString());
                         }
                         method1915.method1728(method1920, method1921, method1922, method1923, method1924);
-                        final boolean method1926 = method1916.method6978(method1915, method1915.getBoundingBox().method18511(0.0625));
+                        final boolean method1926 = method1916.method6978(method1915, method1915.getBoundingBox().shrink(0.0625));
                         if (method1925 && (b || !method1926)) {
                             method1915.method1728(method1917, method1918, method1919, method1923, method1924);
                             this.field23855.method11174(new Class4263(method1915));
@@ -259,7 +259,7 @@ public class Class5814 implements Class5813
                         Label_0691: {
                             if (n2 >= -0.03125) {
                                 if (!this.field23856.method1529()) {
-                                    if (!method1916.method6718(method1915.getBoundingBox().method18496(0.0625).method18494(0.0, -0.55, 0.0))) {
+                                    if (!method1916.method6718(method1915.getBoundingBox().intersect(0.0625).expand(0.0, -0.55, 0.0))) {
                                         field23883 = true;
                                         break Label_0691;
                                     }
@@ -694,7 +694,7 @@ public class Class5814 implements Class5813
                                             if (!this.field23857.field3025.field27303) {
                                                 if (!this.field23857.method2653(Class9439.field40498)) {
                                                     if (!this.field23857.method2773()) {
-                                                        if (!method1481.method6718(this.field23857.getBoundingBox().method18496(0.0625).method18494(0.0, -0.55, 0.0))) {
+                                                        if (!method1481.method6718(this.field23857.getBoundingBox().intersect(0.0625).expand(0.0, -0.55, 0.0))) {
                                                             field23881 = true;
                                                             break Label_1303;
                                                         }
@@ -735,7 +735,7 @@ public class Class5814 implements Class5813
     }
     
     private boolean method17466(final Class1852 class1852) {
-        return class1852.method6978(this.field23857, this.field23857.getBoundingBox().method18511(9.999999747378752E-6));
+        return class1852.method6978(this.field23857, this.field23857.getBoundingBox().shrink(9.999999747378752E-6));
     }
     
     public void method17467(final double n, final double n2, final double n3, final float n4, final float n5) {
@@ -807,8 +807,8 @@ public class Class5814 implements Class5813
         final Class316 method1482 = class4329.method12999();
         final ItemStack method1483 = this.field23857.method2715(method1482);
         final BlockRayTraceResult method1484 = class4329.method13000();
-        final BlockPos method1485 = method1484.method21447();
-        final Direction method1486 = method1484.method21448();
+        final BlockPos method1485 = method1484.getPos();
+        final Direction method1486 = method1484.getFace();
         this.field23857.method2946();
         if (method1485.getY() >= this.field23856.method1534() - 1 && (method1486 == Direction.UP || method1485.getY() >= this.field23856.method1534())) {
             this.field23857.field3039.method17469(new Class4378(new Class2259("build.tooHigh", new Object[] { this.field23856.method1534() }).applyTextStyle(TextFormatting.RED), Class285.field1574));
@@ -1277,7 +1277,7 @@ public class Class5814 implements Class5813
     @Override
     public void method17428(final Class4303 class4303) {
         if (this.field23860 && class4303.method12942() == this.field23861) {
-            this.field23857.field3070 = (this.field23857.field3070 * 3 + (int)(Class8349.method27837() - this.field23859)) / 4;
+            this.field23857.field3070 = (this.field23857.field3070 * 3 + (int)(Util.method27837() - this.field23859)) / 4;
             this.field23860 = false;
         }
         else if (!this.method17462()) {

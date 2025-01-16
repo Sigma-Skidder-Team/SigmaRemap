@@ -166,7 +166,7 @@ public class Class8388
         field34385 = (int)Math.pow(16.0, 1.0);
         field34386 = (int)Math.pow(16.0, 2.0);
         field34387 = Direction.values();
-        field34389 = Class8349.method27851(new int[1352], array -> {
+        field34389 = Util.method27851(new int[1352], array -> {
             int i = 0;
             while (i < 16) {
                 int j = 0;

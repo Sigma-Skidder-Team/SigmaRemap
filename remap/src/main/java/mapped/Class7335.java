@@ -38,7 +38,7 @@ public class Class7335
     }
     
     private boolean method22499(final int n) {
-        if (this.field28334 > 0L && this.field28334 < Class8349.method27837() - 100L) {
+        if (this.field28334 > 0L && this.field28334 < Util.method27837() - 100L) {
             return true;
         }
         switch (n) {
@@ -155,11 +155,11 @@ public class Class7335
     }
     
     private void method22500(final boolean b, final boolean b2) {
-        final Class7006 field4691 = this.field28331.field4691;
+        final RayTraceResult field4691 = this.field28331.field4691;
         if (field4691 != null) {
-            switch (Class8540.field35858[field4691.method21449().ordinal()]) {
+            switch (Class8540.field35858[field4691.getType().ordinal()]) {
                 case 1: {
-                    final BlockPos method21447 = ((BlockRayTraceResult)field4691).method21447();
+                    final BlockPos method21447 = ((BlockRayTraceResult)field4691).getPos();
                     final BlockState method21448 = this.field28331.field4684.world.getBlockState(method21447);
                     if (!b) {
                         this.method22501(method21448, method21447, null);
@@ -266,8 +266,8 @@ public class Class7335
                 if (Class8341.method27798(Class869.method5277().method5332().method7690(), 67)) {
                     if (Class8341.method27798(Class869.method5277().method5332().method7690(), 292)) {
                         this.field28337 = true;
-                        this.field28334 = Class8349.method27837();
-                        this.field28335 = Class8349.method27837();
+                        this.field28334 = Util.method27837();
+                        this.field28335 = Util.method27837();
                         this.field28336 = 0L;
                     }
                 }
@@ -276,7 +276,7 @@ public class Class7335
                 this.field28334 = -1L;
             }
             final Class527 field4700 = this.field28331.field4700;
-            if (!(this.field28331.field4700 instanceof Class705) || ((Class705)field4700).field3875 <= Class8349.method27837() - 20L) {
+            if (!(this.field28331.field4700 instanceof Class705) || ((Class705)field4700).field3875 <= Util.method27837() - 20L) {
                 if (k != 1) {
                     if (k == 0) {
                         if (this.field28331.field4700 instanceof Class705) {
@@ -559,7 +559,7 @@ public class Class7335
     
     public void method22509() {
         if (this.field28334 > 0L) {
-            final long method27837 = Class8349.method27837();
+            final long method27837 = Util.method27837();
             final long n4 = 10000L - (method27837 - this.field28334);
             final long n5 = method27837 - this.field28335;
             if (n4 < 0L) {

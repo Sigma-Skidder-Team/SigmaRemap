@@ -38,8 +38,8 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
         if (!this.field30081) {
             this.field30081 = true;
             final VoxelShape method34783 = this.field30087.getWorldBorder().method34783();
-            final boolean method34784 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().method18511(1.0E-7)), IBooleanFunction.AND);
-            final boolean method34785 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().method18496(1.0E-7)), IBooleanFunction.AND);
+            final boolean method34784 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().shrink(1.0E-7)), IBooleanFunction.AND);
+            final boolean method34785 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().intersect(1.0E-7)), IBooleanFunction.AND);
             if (!method34784) {
                 if (method34785) {
                     consumer.accept(method34783);

@@ -289,7 +289,7 @@ public class Class8071
     }
     
     public Class2201 method26480(final PlayerEntity playerEntity, final World class513, final ItemStack class514, final Class316 class515, final BlockRayTraceResult class516) {
-        final BlockPos method21447 = class516.method21447();
+        final BlockPos method21447 = class516.getPos();
         final BlockState method21448 = class513.getBlockState(method21447);
         if (this.field33249 != Class101.field301) {
             final boolean b = !playerEntity.getHeldItemMainhand().method27620() || !playerEntity.method2714().method27620();

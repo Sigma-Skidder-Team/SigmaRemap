@@ -77,7 +77,7 @@ public class Class4060 extends Item
     }
     
     private static <T> T method12267(final Iterable<T> iterable, final T t, final boolean b) {
-        return b ? Class8349.method27849(iterable, t) : Class8349.method27848(iterable, t);
+        return b ? Util.method27849(iterable, t) : Util.method27848(iterable, t);
     }
     
     private static void method12268(final PlayerEntity playerEntity, final ITextComponent class513) {

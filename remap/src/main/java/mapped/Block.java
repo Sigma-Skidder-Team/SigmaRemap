@@ -74,8 +74,8 @@ public class Block implements Class3832
     
     public static BlockState method11777(final BlockState class7096, final BlockState class7097, final World class7098, final BlockPos class7099) {
         final VoxelShape method24541 = VoxelShapes.method24495(class7096.getCollisionShape(class7098, class7099), class7097.getCollisionShape(class7098, class7099), IBooleanFunction.ONLY_SECOND).withOffset(class7099.getX(), class7099.getY(), class7099.getZ());
-        for (final Entity class7100 : class7098.method7127(null, method24541.method24537())) {
-            class7100.method1878(class7100.getPosX(), class7100.getPosY() + 1.0 + VoxelShapes.method24498(Direction.Axis.Y, class7100.getBoundingBox().method18499(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.getPosZ());
+        for (final Entity class7100 : class7098.method7127(null, method24541.getBoundingBox())) {
+            class7100.method1878(class7100.getPosX(), class7100.getPosY() + 1.0 + VoxelShapes.method24498(Direction.Axis.Y, class7100.getBoundingBox().offset(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.getPosZ());
         }
         return class7097;
     }
@@ -317,7 +317,7 @@ public class Block implements Class3832
     
     @Deprecated
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return VoxelShapes.method24487();
+        return VoxelShapes.fullCube();
     }
     
     @Deprecated
@@ -337,12 +337,12 @@ public class Block implements Class3832
     
     public static boolean method11812(final IBlockReader class1855, final BlockPos class1856) {
         final BlockState method6701 = class1855.getBlockState(class1856);
-        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1855, class1856).method24551(Direction.UP), Block.field17394, IBooleanFunction.ONLY_SECOND);
+        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1855, class1856).project(Direction.UP), Block.field17394, IBooleanFunction.ONLY_SECOND);
     }
     
     public static boolean method11813(final Class1852 class1852, final BlockPos class1853, final Direction class1854) {
         final BlockState method6701 = class1852.getBlockState(class1853);
-        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1852, class1853).method24551(class1854), Block.field17395, IBooleanFunction.ONLY_SECOND);
+        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1852, class1853).project(class1854), Block.field17395, IBooleanFunction.ONLY_SECOND);
     }
     
     public static boolean hasSolidSide(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
@@ -350,7 +350,7 @@ public class Block implements Class3832
     }
     
     public static boolean method11815(final VoxelShape class7702, final Direction class7703) {
-        return isOpaque(class7702.method24551(class7703));
+        return isOpaque(class7702.project(class7703));
     }
     
     public static boolean isOpaque(final VoxelShape class7702) {
@@ -573,7 +573,7 @@ public class Block implements Class3832
     
     public String method11856() {
         if (this.field17412 == null) {
-            this.field17412 = Class8349.method27836("block", Registry.BLOCK.getKey(this));
+            this.field17412 = Util.method27836("block", Registry.BLOCK.getKey(this));
         }
         return this.field17412;
     }
@@ -713,7 +713,7 @@ public class Block implements Class3832
         field17391 = new Class94<BlockState>();
         field17392 = new Direction[] { Direction.WEST, Direction.EAST, Direction.NORTH, Direction.SOUTH, Direction.DOWN, Direction.UP};
         field17393 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build((CacheLoader)new Class6046());
-        field17394 = VoxelShapes.method24494(VoxelShapes.method24487(), method11778(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), IBooleanFunction.ONLY_FIRST);
+        field17394 = VoxelShapes.method24494(VoxelShapes.fullCube(), method11778(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), IBooleanFunction.ONLY_FIRST);
         field17395 = method11778(7.0, 0.0, 7.0, 9.0, 10.0, 9.0);
         field17414 = ThreadLocal.withInitial(() -> {
             final Class2270 class2270 = new Class2270(2048, 0.25f);

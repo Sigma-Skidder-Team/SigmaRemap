@@ -689,7 +689,7 @@ public class Class727 extends Class527
     @Override
     public boolean method2982(final double n, final double n2, final int n3) {
         if (n3 == 0) {
-            final long method27837 = Class8349.method27837();
+            final long method27837 = Util.method27837();
             final String method27838 = this.method4010();
             if (!method27838.isEmpty()) {
                 final Class7116 class7116 = new Class7116(this, (int)n, (int)n2);

@@ -39,7 +39,7 @@ public class Class532 extends Class527
             FileUtils.deleteQuietly(this.field3150.method5243().method25800(this.field3180, "icon.png"));
             class654.field3431 = false;
         }));
-        this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 48 + 5, 200, 20, Class8822.method30773("selectWorld.edit.openFolder", new Object[0]), class654 -> Class8349.method27845().method978(this.field3150.method5243().method25800(this.field3180, "icon.png").getParentFile())));
+        this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 48 + 5, 200, 20, Class8822.method30773("selectWorld.edit.openFolder", new Object[0]), class654 -> Util.method27845().method978(this.field3150.method5243().method25800(this.field3180, "icon.png").getParentFile())));
         this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 72 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backup", new Object[0]), class654 -> {
             method3066(this.field3150.method5243(), this.field3180);
             this.field3178.accept(false);
@@ -52,7 +52,7 @@ public class Class532 extends Class527
             catch (final IOException cause) {
                 throw new RuntimeException(cause);
             }
-            Class8349.method27845().method978(method25802.toFile());
+            Util.method27845().method978(method25802.toFile());
         }));
         this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 120 + 5, 200, 20, Class8822.method30773("selectWorld.edit.optimize", new Object[0]), class654 -> this.field3150.method5244(new Class554(this, (b2, b4) -> {
             if (!(!b2)) {

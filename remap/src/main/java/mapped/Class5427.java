@@ -22,7 +22,7 @@ public class Class5427 extends Class5419<Class824>
     }
     
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {
-        this.field22615 = class1849.method7128((Class<? extends Class427>)Class427.class, class1850.getBoundingBox().method18495(4.0, 2.0, 4.0));
+        this.field22615 = class1849.method7128((Class<? extends Class427>)Class427.class, class1850.getBoundingBox().grow(4.0, 2.0, 4.0));
         return !this.field22615.isEmpty();
     }
     

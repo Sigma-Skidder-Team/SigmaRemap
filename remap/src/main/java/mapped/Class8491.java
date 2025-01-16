@@ -99,7 +99,7 @@ public class Class8491
             }
             if (Class9367.method34762() == Class7906.field32452.method25613()) {
                 if (this.field34856.field4684.boundingBox.maxY - this.field34856.field4684.boundingBox.minY == 1.5) {
-                    this.field34856.field4684.boundingBox = this.field34856.field4684.boundingBox.method18494(0.0, 0.2999999523162842, 0.0);
+                    this.field34856.field4684.boundingBox = this.field34856.field4684.boundingBox.expand(0.0, 0.2999999523162842, 0.0);
                 }
                 if (this.field34856.field4684.eyeHeight == 1.27f) {
                     this.field34856.field4684.eyeHeight = 1.38f;

@@ -57,7 +57,7 @@ public class Class7665
     }
     
     public void method24294(final GameProfile gameProfile, final Class7723 class7723, final boolean b) {
-        Class8349.method27841().execute(() -> {
+        Util.method27841().execute(() -> {
             Maps.newHashMap();
             final HashMap hashMap;
             try {

@@ -132,7 +132,7 @@ public class Class9043
             list.addAll(class1849.method6881(this.field38281, predicate));
         }
         else {
-            list.addAll((Collection<? extends Entity>)class1849.method6738(this.field38281, this.field38276.method18501(class1850), predicate));
+            list.addAll((Collection<? extends Entity>)class1849.method6738(this.field38281, this.field38276.offset(class1850), predicate));
         }
     }
     
@@ -186,7 +186,7 @@ public class Class9043
         Predicate<Entity> predicate = this.field38273;
         if (this.field38276 != null) {
             predicate = predicate.and(class5490 -> {
-                this.field38276.method18501(class5489);
+                this.field38276.offset(class5489);
                 return class5488.method18502(class5490.getBoundingBox());
             });
         }

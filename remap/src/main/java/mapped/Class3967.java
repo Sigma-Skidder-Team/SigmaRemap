@@ -79,7 +79,7 @@ public class Class3967 extends Block
         field17924 = Class8970.field37755;
         field17925 = Class8970.field37750;
         field17926 = Class8970.field37751;
-        field17927 = Class8349.method27851(Maps.newEnumMap((Class) Direction.class), enumMap -> {
+        field17927 = Util.method27851(Maps.newEnumMap((Class) Direction.class), enumMap -> {
             enumMap.put(Direction.NORTH, Class3967.field17921);
             enumMap.put(Direction.EAST, Class3967.field17922);
             enumMap.put(Direction.SOUTH, Class3967.field17923);

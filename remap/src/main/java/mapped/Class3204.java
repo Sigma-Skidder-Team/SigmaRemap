@@ -87,7 +87,7 @@ public class Class3204 extends Class3167
     public void method10044(final Class5738 class5738) {
         if (this.method9906()) {
             if (this.method9887("Speed Mode").equals("Cubecraft") && !Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
-                if (Class3204.field15514.field4683.method6981(Class3204.field15514.field4684, Class3204.field15514.field4684.boundingBox.method18494(0.0, -1.5, 0.0).method18492(0.05, 0.0, 0.05).method18492(-0.05, 0.0, -0.05)).count() == 0L) {
+                if (Class3204.field15514.field4683.method6981(Class3204.field15514.field4684, Class3204.field15514.field4684.boundingBox.expand(0.0, -1.5, 0.0).contract(0.05, 0.0, 0.05).contract(-0.05, 0.0, -0.05)).count() == 0L) {
                     if (Class3204.field15514.field4684.fallDistance < 1.0f) {
                         class5738.method17026(true);
                     }
@@ -176,7 +176,7 @@ public class Class3204 extends Class3167
                 Label_0177: {
                     if (Class3204.field15514.field4684.getMotion().y < 0.0) {
                         if (Class3204.field15514.field4684.fallDistance > 1.0f) {
-                            if (Class4609.method13697(0.0f, 90.0f, 3.0f).method21449() == Class2165.field12880) {
+                            if (Class4609.method13697(0.0f, 90.0f, 3.0f).getType() == RayTraceResult.Type.MISS) {
                                 n3 += Math.min(Class3204.field15514.field4684.getMotion().y * 2.0, 4.0);
                                 break Label_0177;
                             }

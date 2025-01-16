@@ -14,7 +14,7 @@ public class Class9506
     public Class9506(final String field40909, final String field40910) {
         this.field40909 = field40909;
         this.field40910 = field40910;
-        this.field40911 = Class8349.method27837();
+        this.field40911 = Util.method27837();
     }
     
     public String method35414() {
@@ -26,6 +26,6 @@ public class Class9506
     }
     
     public void method35416() {
-        this.field40911 = Class8349.method27837();
+        this.field40911 = Util.method27837();
     }
 }

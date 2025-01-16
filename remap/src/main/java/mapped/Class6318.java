@@ -32,7 +32,7 @@ public class Class6318 implements Class6313
     private final Map<BlockState, BitSet> field25269;
     
     public Class6318(final List<Pair<Predicate<BlockState>, Class6313>> field25262) {
-        this.field25269 = (Map<BlockState, BitSet>)new Object2ObjectOpenCustomHashMap((Hash$Strategy)Class8349.method27852());
+        this.field25269 = (Map<BlockState, BitSet>)new Object2ObjectOpenCustomHashMap((Hash$Strategy) Util.method27852());
         this.field25262 = field25262;
         final Class6313 class6313 = (Class6313)field25262.iterator().next().getRight();
         this.field25263 = class6313.method18692();

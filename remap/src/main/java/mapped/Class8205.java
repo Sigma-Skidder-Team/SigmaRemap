@@ -6,7 +6,6 @@ package mapped;
 
 import org.apache.logging.log4j.LogManager;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 import java.util.concurrent.CompletableFuture;
@@ -24,16 +23,16 @@ public class Class8205 extends Class8206<Class7597>
         super(executor, executor2, class6582, list, (class7885, class7886, class7887, executor2, executor3) -> {
             final AtomicLong atomicLong = new AtomicLong();
             final AtomicLong atomicLong2 = new AtomicLong();
-            return class7887.method5785(class7885, class7886, new Class5030(Class8349.method27838(), () -> 0, false), new Class5030(Class8349.method27838(), () -> 0, false), p2 -> executor4.execute(() -> {
-                Class8349.method27838();
+            return class7887.method5785(class7885, class7886, new Class5030(Util.method27838(), () -> 0, false), new Class5030(Util.method27838(), () -> 0, false), p2 -> executor4.execute(() -> {
+                Util.method27838();
                 runnable2.run();
                 final long n;
-                atomicLong3.addAndGet(Class8349.method27838() - n);
+                atomicLong3.addAndGet(Util.method27838() - n);
             }), p2 -> executor5.execute(() -> {
-                Class8349.method27838();
+                Util.method27838();
                 runnable4.run();
                 final long n2;
-                atomicLong4.addAndGet(Class8349.method27838() - n2);
+                atomicLong4.addAndGet(Util.method27838() - n2);
             })).thenApplyAsync(p5 -> new Class7597(class7888.method5848(), class7889.method15304(), class7890.method15304(), atomicLong5, atomicLong6, null), executor2);
         }, completableFuture);
         (this.field33733 = Stopwatch.createUnstarted()).start();

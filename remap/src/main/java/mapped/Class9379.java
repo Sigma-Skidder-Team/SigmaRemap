@@ -119,7 +119,7 @@ public class Class9379
     }
     
     public static boolean method34828() {
-        return method34824(Class9379.field40212.field4684.getBoundingBox().method18494(0.0, -0.4000000059604645, 0.0).method18492(0.001, 0.001, 0.001), Material.WATER);
+        return method34824(Class9379.field40212.field4684.getBoundingBox().expand(0.0, -0.4000000059604645, 0.0).contract(0.001, 0.001, 0.001), Material.WATER);
     }
     
     static {

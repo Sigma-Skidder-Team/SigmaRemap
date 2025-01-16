@@ -1413,7 +1413,7 @@ public abstract class LivingEntity extends Entity
             case 46: {
                 for (int i = 0; i < 128; ++i) {
                     final double n = i / 127.0;
-                    this.world.method6709(Class8432.field34637, MathHelper.method35701(n, this.prevPosX, this.getPosX()) + (this.rand.nextDouble() - 0.5) * this.method1930() * 2.0, MathHelper.method35701(n, this.prevPosY, this.getPosY()) + this.rand.nextDouble() * this.method1931(), MathHelper.method35701(n, this.prevPosZ, this.getPosZ()) + (this.rand.nextDouble() - 0.5) * this.method1930() * 2.0, (this.rand.nextFloat() - 0.5f) * 0.2f, (this.rand.nextFloat() - 0.5f) * 0.2f, (this.rand.nextFloat() - 0.5f) * 0.2f);
+                    this.world.method6709(Class8432.field34637, MathHelper.lerp(n, this.prevPosX, this.getPosX()) + (this.rand.nextDouble() - 0.5) * this.method1930() * 2.0, MathHelper.lerp(n, this.prevPosY, this.getPosY()) + this.rand.nextDouble() * this.method1931(), MathHelper.lerp(n, this.prevPosZ, this.getPosZ()) + (this.rand.nextDouble() - 0.5) * this.method1930() * 2.0, (this.rand.nextFloat() - 0.5f) * 0.2f, (this.rand.nextFloat() - 0.5f) * 0.2f, (this.rand.nextFloat() - 0.5f) * 0.2f);
                 }
                 break;
             }
@@ -1591,10 +1591,10 @@ public abstract class LivingEntity extends Entity
                             final double n6 = method1941.getZOffset() * array3[0] + method1942.getZOffset() * array3[1];
                             final double n7 = n + n5;
                             final double n8 = n2 + n6;
-                            final AxisAlignedBB method1943 = class400.method18499(n5, 0.0, n6);
+                            final AxisAlignedBB method1943 = class400.offset(n5, 0.0, n6);
                             if (!this.world.method6978(this, method1943)) {
                                 final BlockPos class401 = new BlockPos(n7, this.getPosY() + 1.0, n8);
-                                if (this.world.method6978(this, method1943.method18499(0.0, 1.0, 0.0))) {
+                                if (this.world.method6978(this, method1943.offset(0.0, 1.0, 0.0))) {
                                     if (this.world.getBlockState(class401).method21731(this.world, class401, this)) {
                                         method1938 = n7;
                                         method1939 = this.getPosY() + 2.0;
@@ -1640,14 +1640,14 @@ public abstract class LivingEntity extends Entity
                 final float n14 = -MathHelper.sin(n13);
                 final float n15 = -MathHelper.cos(n13);
                 final double n16 = (Math.abs(n14) <= Math.abs(n15)) ? (n9 / Math.abs(n15)) : (n9 / Math.abs(n14));
-                final AxisAlignedBB method1945 = this.getBoundingBox().method18499(-this.getPosX(), -this.getPosY(), -this.getPosZ());
+                final AxisAlignedBB method1945 = this.getBoundingBox().offset(-this.getPosX(), -this.getPosY(), -this.getPosZ());
                 final ImmutableSet of = ImmutableSet.of((Object)this, (Object)class399);
                 final double n17 = this.getPosX() + n14 * n16;
                 final double n18 = this.getPosZ() + n15 * n16;
                 double n19 = 0.001;
                 for (int j = 0; j < n11; ++j) {
                     final double n20 = n10 + n19;
-                    if (this.world.method6979(this, method1945.method18499(n17, n20, n18), (Set<Entity>)of)) {
+                    if (this.world.method6979(this, method1945.offset(n17, n20, n18), (Set<Entity>)of)) {
                         this.setPosition(n17, n20, n18);
                         return;
                     }
@@ -2230,7 +2230,7 @@ public abstract class LivingEntity extends Entity
     }
     
     public void method2740(final AxisAlignedBB class6221, final AxisAlignedBB class6222) {
-        final List<Entity> method7127 = this.world.method7127(this, class6221.method18498(class6222));
+        final List<Entity> method7127 = this.world.method7127(this, class6221.offset(class6222));
         if (method7127.isEmpty()) {
             if (this.collidedHorizontally) {
                 this.field2993 = 0;
@@ -2329,7 +2329,7 @@ public abstract class LivingEntity extends Entity
     }
     
     public boolean method2747(final Entity class399) {
-        return this.world.rayTraceBlocks(new RayTraceContext(new Vec3d(this.getPosX(), this.method1944(), this.getPosZ()), new Vec3d(class399.getPosX(), class399.method1944(), class399.getPosZ()), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this)).method21449() == Class2165.field12880;
+        return this.world.rayTraceBlocks(new RayTraceContext(new Vec3d(this.getPosX(), this.method1944(), this.getPosZ()), new Vec3d(class399.getPosX(), class399.method1944(), class399.getPosZ()), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this)).getType() == RayTraceResult.Type.MISS;
     }
     
     @Override

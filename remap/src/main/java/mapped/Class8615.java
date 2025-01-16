@@ -46,14 +46,14 @@ public class Class8615
     }
     
     private int method29218(final Class1849 class1849, final BlockPos class1850) {
-        if (class1849.method6921().method7198(Class8912.field37476.method31396(), class1850, 48, Class2045.field11651) > 4L && class1849.method7128((Class<? extends Entity>)Class800.class, new AxisAlignedBB(class1850).method18495(48.0, 8.0, 48.0)).size() < 5) {
+        if (class1849.method6921().method7198(Class8912.field37476.method31396(), class1850, 48, Class2045.field11651) > 4L && class1849.method7128((Class<? extends Entity>)Class800.class, new AxisAlignedBB(class1850).grow(48.0, 8.0, 48.0)).size() < 5) {
             return this.method29220(class1850, class1849);
         }
         return 0;
     }
     
     private int method29219(final World class1847, final BlockPos class1848) {
-        return (class1847.method7128((Class<? extends Entity>)Class800.class, new AxisAlignedBB(class1848).method18495(16.0, 8.0, 16.0)).size() >= 1) ? 0 : this.method29220(class1848, class1847);
+        return (class1847.method7128((Class<? extends Entity>)Class800.class, new AxisAlignedBB(class1848).grow(16.0, 8.0, 16.0)).size() >= 1) ? 0 : this.method29220(class1848, class1847);
     }
     
     private int method29220(final BlockPos class354, final World class355) {

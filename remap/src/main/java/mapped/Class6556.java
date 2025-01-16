@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.function.Function;
 import java.util.Optional;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
@@ -34,10 +33,10 @@ public class Class6556
     }
     
     public <T> Dynamic<T> method19872(final DynamicOps<T> dynamicOps) {
-        return Class8349.method27858("Target", this.field26044, (com.mojang.datafixers.Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Type"), dynamicOps.createString(this.field26045.field290), dynamicOps.createString("Value"), dynamicOps.createInt(this.field26046)))));
+        return Util.method27858("Target", this.field26044, (com.mojang.datafixers.Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Type"), dynamicOps.createString(this.field26045.field290), dynamicOps.createString("Value"), dynamicOps.createInt(this.field26046)))));
     }
     
     public static Optional<Class6556> method19873(final Dynamic<?> dynamic) {
-        return dynamic.get("Type").asString().map(Class100::method583).flatMap(p1 -> Class8349.method27857("Target", (Dynamic<?>)dynamic2).flatMap(p2 -> dynamic3.get("Value").asNumber().map(n -> new Class6556(uuid, class100, n.intValue()))));
+        return dynamic.get("Type").asString().map(Class100::method583).flatMap(p1 -> Util.method27857("Target", (Dynamic<?>)dynamic2).flatMap(p2 -> dynamic3.get("Value").asNumber().map(n -> new Class6556(uuid, class100, n.intValue()))));
     }
 }

@@ -128,7 +128,7 @@ public class Class3678 extends Class3666
         field16964 = Class120.method618(Items.field31511, Items.field31307, Items.field31439, Items.field31523, Items.field31524, Items.field31527, Items.field31525, Items.field31528, Items.field31526);
         field16965 = Class120.method618(Items.field31283);
         field16966 = Class120.method618(Items.field31378);
-        field16967 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field16967 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put(Items.field31511, Class2141.field12606);
             hashMap.put(Items.field31307, Class2141.field12609);
             hashMap.put(Items.field31439, Class2141.field12607);

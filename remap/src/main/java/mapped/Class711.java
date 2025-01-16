@@ -22,7 +22,7 @@ public class Class711 extends Class703
     
     @Override
     public void method2969() {
-        this.method3029(new Class654(this.field3152 / 2 - 154, this.field3153 - 48, 150, 20, Class8822.method30773("resourcePack.openFolder", new Object[0]), class654 -> Class8349.method27845().method978(this.field3150.method5294())));
+        this.method3029(new Class654(this.field3152 / 2 - 154, this.field3153 - 48, 150, 20, Class8822.method30773("resourcePack.openFolder", new Object[0]), class654 -> Util.method27845().method978(this.field3150.method5294())));
         this.method3029(new Class654(this.field3152 / 2 + 4, this.field3153 - 48, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
             if (!this.field3887) {
                 this.field3150.method5244(this.field3868);

@@ -82,7 +82,7 @@ public class Class1730 implements Class1727
     }
     
     static {
-        field9669 = Class8349.method27850(() -> {
+        field9669 = Util.method27850(() -> {
             ImmutableMap.builder();
             final ImmutableMap$Builder immutableMap$Builder;
             immutableMap$Builder.put((Object)new ResourceLocation("textures/block/melon_stem.png"), (Object)new ResourceLocation("textures/block/pumpkin_stem.png"));

@@ -53,7 +53,7 @@ public class Class705 extends Class703
             this.field3869.method17117(this.field3874, Class8341.field34248);
         }
         this.field3874 = null;
-        this.field3875 = Class8349.method27837();
+        this.field3875 = Util.method27837();
         Class350.method1055();
         return true;
     }

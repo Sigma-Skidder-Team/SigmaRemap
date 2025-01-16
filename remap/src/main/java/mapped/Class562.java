@@ -16,7 +16,7 @@ public class Class562 extends Class527
     public void method2969() {
         this.method3029(new Class654(this.field3152 / 2 - 116, this.field3153 / 2 + 62 - 16, 114, 20, Class8822.method30773("demo.help.buy", new Object[0]), class654 -> {
             class654.field3431 = false;
-            Class8349.method27845().method980("http://www.minecraft.net/store?source=demo");
+            Util.method27845().method980("http://www.minecraft.net/store?source=demo");
         }));
         this.method3029(new Class654(this.field3152 / 2 + 2, this.field3153 / 2 + 62 - 16, 114, 20, Class8822.method30773("demo.help.later", new Object[0]), class654 -> {
             this.field3150.method5244(null);

@@ -56,7 +56,7 @@ public abstract class Class419 extends Entity
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.getBoundingBox().method18507() * 4.0;
+        double v = this.getBoundingBox().getAverageEdgeLength() * 4.0;
         if (Double.isNaN(v)) {
             v = 4.0;
         }
@@ -82,8 +82,8 @@ public abstract class Class419 extends Entity
             this.setFire(1);
         }
         ++this.field2529;
-        final Class7006 method23092 = Class7476.method23092(this, true, this.field2529 >= 25, this.field2527, RayTraceContext.BlockMode.COLLIDER);
-        if (method23092.method21449() != Class2165.field12880) {
+        final RayTraceResult method23092 = Class7476.method23092(this, true, this.field2529 >= 25, this.field2527, RayTraceContext.BlockMode.COLLIDER);
+        if (method23092.getType() != RayTraceResult.Type.MISS) {
             this.method2032(method23092);
         }
         final Vec3d method23093 = this.getMotion();
@@ -115,10 +115,10 @@ public abstract class Class419 extends Entity
         return 0.95f;
     }
     
-    public void method2032(final Class7006 class7006) {
-        if (class7006.method21449() == Class2165.field12881) {
+    public void method2032(final RayTraceResult class7006) {
+        if (class7006.getType() == RayTraceResult.Type.BLOCK) {
             final BlockRayTraceResult class7007 = (BlockRayTraceResult)class7006;
-            final Class7096 method6701 = this.world.getBlockState(class7007.method21447());
+            final Class7096 method6701 = this.world.getBlockState(class7007.getPos());
             method6701.method21760(this.world, method6701, class7007, this);
         }
     }

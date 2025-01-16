@@ -307,7 +307,7 @@ public class Class9298
         if (!method34371) {
             if (method34372) {
                 if (this.field39880 != Class9298.field39874) {
-                    throw Class8349.method27859(new IllegalStateException());
+                    throw Util.pauseDevMode(new IllegalStateException());
                 }
                 this.method34355(this.field39880 = class388.method1321(this.field39885));
             }

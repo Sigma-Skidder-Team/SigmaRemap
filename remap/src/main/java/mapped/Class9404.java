@@ -686,7 +686,7 @@ public class Class9404
                                             Class9540.method35616(class1799.field37897, 1.0f);
                                             Class8933.method31635();
                                             Class8933.method31640(method34978, method34978, method34978);
-                                            Class8933.method31642(class1799.field37898 * (Class8349.method27837() % 3000L) / 3000.0f / 8.0f, 0.0f, 0.0f);
+                                            Class8933.method31642(class1799.field37898 * (Util.method27837() % 3000L) / 3000.0f / 8.0f, 0.0f, 0.0f);
                                             Class8933.method31639(class1799.field37899, 0.0f, 0.0f, 1.0f);
                                             Class8933.method31636();
                                         }
@@ -760,7 +760,7 @@ public class Class9404
                                             Class8933.method31639(class514.field37899, 0.0f, 0.0f, 1.0f);
                                             final float n8 = method34978 / 8.0f;
                                             Class8933.method31640(n8, n8 / 2.0f, n8);
-                                            Class8933.method31642(0.0f, class514.field37898 * (Class8349.method27837() % 3000L) / 3000.0f / 8.0f, 0.0f);
+                                            Class8933.method31642(0.0f, class514.field37898 * (Util.method27837() % 3000L) / 3000.0f / 8.0f, 0.0f);
                                             Class8933.method31633(5888);
                                         }
                                     }

@@ -42,7 +42,7 @@ public class Class4764 extends Class4712<Class844, Class5879>
     }
     
     private Vec3d method14104(final LivingEntity class511, final double n, final float n2) {
-        return new Vec3d(MathHelper.method35701(n2, class511.lastTickPosX, class511.getPosX()), MathHelper.method35701(n2, class511.lastTickPosY, class511.getPosY()) + n, MathHelper.method35701(n2, class511.lastTickPosZ, class511.getPosZ()));
+        return new Vec3d(MathHelper.lerp(n2, class511.lastTickPosX, class511.getPosX()), MathHelper.lerp(n2, class511.lastTickPosY, class511.getPosY()) + n, MathHelper.lerp(n2, class511.lastTickPosZ, class511.getPosZ()));
     }
     
     public void method14105(final Class844 class844, final float n, final float n2, final Class7351 class845, final Class7807 class846, final int n3) {

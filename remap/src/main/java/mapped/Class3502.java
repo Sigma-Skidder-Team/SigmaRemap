@@ -37,7 +37,7 @@ public class Class3502 extends Class3446
     
     @Override
     public boolean method11013() {
-        final List<Entity> method6739 = this.field16464.world.method6739((Class<? extends Entity>)Class759.class, this.field16464.getBoundingBox().method18496(this.field16472), (Predicate<? super Entity>)this.field16465);
+        final List<Entity> method6739 = this.field16464.world.method6739((Class<? extends Entity>)Class759.class, this.field16464.getBoundingBox().intersect(this.field16472), (Predicate<? super Entity>)this.field16465);
         if (!method6739.isEmpty()) {
             for (final Class759 field16466 : method6739) {
                 if (field16466.method1823()) {

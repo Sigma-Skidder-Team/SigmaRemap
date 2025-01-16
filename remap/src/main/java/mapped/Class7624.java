@@ -18,7 +18,7 @@ public class Class7624 implements Class7622
     
     @Override
     public void method23959() {
-        final BlockState method6720 = this.field30199.world.method6720(this.field30199.getBoundingBox().method18495(0.0, -0.4000000059604645, 0.0).method18511(0.001), Class7521.field29765);
+        final BlockState method6720 = this.field30199.world.method6720(this.field30199.getBoundingBox().grow(0.0, -0.4000000059604645, 0.0).shrink(0.001), Class7521.field29765);
         if (method6720 == null) {
             this.field30200 = false;
         }

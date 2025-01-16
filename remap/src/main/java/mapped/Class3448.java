@@ -48,7 +48,7 @@ public class Class3448<T extends LivingEntity> extends Class3446
     
     @Override
     public boolean method11013() {
-        this.field16279 = this.field16276.world.method7139((Class<? extends T>)this.field16283, this.field16286, (LivingEntity)this.field16276, this.field16276.getPosX(), this.field16276.getPosY(), this.field16276.getPosZ(), this.field16276.getBoundingBox().method18495(this.field16280, 3.0, this.field16280));
+        this.field16279 = this.field16276.world.method7139((Class<? extends T>)this.field16283, this.field16286, (LivingEntity)this.field16276, this.field16276.getPosX(), this.field16276.getPosY(), this.field16276.getPosZ(), this.field16276.getBoundingBox().grow(this.field16280, 3.0, this.field16280));
         if (this.field16279 == null) {
             return false;
         }

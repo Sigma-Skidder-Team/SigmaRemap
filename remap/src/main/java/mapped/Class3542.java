@@ -25,6 +25,6 @@ public abstract class Class3542 extends Class3446
     }
     
     public boolean method11093() {
-        return !this.field16593.world.method7142((Class<? extends LivingEntity>) LivingEntity.class, this.field16592, (LivingEntity)this.field16593, this.field16593.getBoundingBox().method18495(12.0, 6.0, 12.0)).isEmpty();
+        return !this.field16593.world.method7142((Class<? extends LivingEntity>) LivingEntity.class, this.field16592, (LivingEntity)this.field16593, this.field16593.getBoundingBox().grow(12.0, 6.0, 12.0)).isEmpty();
     }
 }

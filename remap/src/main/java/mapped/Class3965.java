@@ -223,8 +223,8 @@ public class Class3965 extends Block implements Class3966
     static {
         field17915 = Class8970.field37783;
         field17916 = (Object2FloatMap)new Object2FloatOpenHashMap();
-        field17917 = VoxelShapes.method24487();
-        field17918 = Class8349.method27851(new VoxelShape[9], array -> {
+        field17917 = VoxelShapes.fullCube();
+        field17918 = Util.method27851(new VoxelShape[9], array -> {
             int i = 0;
             while (i < 8) {
                 array[i] = VoxelShapes.method24494(Class3965.field17917, Block.method11778(2.0, Math.max(2, 1 + i * 2), 2.0, 14.0, 16.0, 14.0), IBooleanFunction.ONLY_FIRST);

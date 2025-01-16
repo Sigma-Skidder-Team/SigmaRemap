@@ -17,7 +17,7 @@ public interface Class7611
     public static final Class7611 field30167 = method23912("snow");
     public static final Class7611 field30168 = method23912("swamp");
     public static final Class7611 field30169 = method23912("taiga");
-    public static final Map<Class3090, Class7611> field30170 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+    public static final Map<Class3090, Class7611> field30170 = Util.method27851(Maps.newHashMap(), hashMap -> {
         hashMap.put(Class7102.field27669, Class7611.field30163);
         hashMap.put(Class7102.field27671, Class7611.field30163);
         hashMap.put(Class7102.field27634, Class7611.field30163);

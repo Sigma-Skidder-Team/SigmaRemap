@@ -80,7 +80,7 @@ public class Class4771 extends Class4712<Class791, Class5840<Class791>>
     }
     
     static {
-        field20399 = Class8349.method27851(Maps.newEnumMap((Class)Class1965.class), enumMap -> {
+        field20399 = Util.method27851(Maps.newEnumMap((Class)Class1965.class), enumMap -> {
             enumMap.put(Class1965.field10723, new ResourceLocation("textures/entity/panda/panda.png"));
             enumMap.put(Class1965.field10724, new ResourceLocation("textures/entity/panda/lazy_panda.png"));
             enumMap.put(Class1965.field10725, new ResourceLocation("textures/entity/panda/worried_panda.png"));

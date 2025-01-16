@@ -59,7 +59,7 @@ public class Class3445 extends Class3446
         if (!this.field16270) {
             if (!this.field16268.method4483()) {
                 if (!this.field16268.method4205()) {
-                    if (this.field16268.getBoundingBox().method18502(this.field16269.getBoundingBox())) {
+                    if (this.field16268.getBoundingBox().intersects(this.field16269.getBoundingBox())) {
                         this.field16270 = this.field16268.method4492(this.field16269);
                     }
                 }

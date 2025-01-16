@@ -481,10 +481,10 @@ public abstract class PlayerEntity extends LivingEntity
             if (!this.isSpectator()) {
                 AxisAlignedBB class6221;
                 if (this.isPassenger() && !this.method1920().removed) {
-                    class6221 = this.getBoundingBox().method18498(this.method1920().getBoundingBox()).method18495(1.0, 0.0, 1.0);
+                    class6221 = this.getBoundingBox().offset(this.method1920().getBoundingBox()).grow(1.0, 0.0, 1.0);
                 }
                 else {
-                    class6221 = this.getBoundingBox().method18495(1.0, 0.5, 1.0);
+                    class6221 = this.getBoundingBox().grow(1.0, 0.5, 1.0);
                 }
                 final List<Entity> method2711 = this.world.method7127(this, class6221);
                 for (int i = 0; i < method2711.size(); ++i) {
@@ -944,7 +944,7 @@ public abstract class PlayerEntity extends LivingEntity
             double field22770 = class5487.x;
             double field22771 = class5487.z;
             while (field22770 != 0.0) {
-                if (!this.world.method6978(this, this.getBoundingBox().method18499(field22770, -this.stepHeight, 0.0))) {
+                if (!this.world.method6978(this, this.getBoundingBox().offset(field22770, -this.stepHeight, 0.0))) {
                     break;
                 }
                 if (field22770 < 0.05 && field22770 >= -0.05) {
@@ -958,7 +958,7 @@ public abstract class PlayerEntity extends LivingEntity
                 }
             }
             while (field22771 != 0.0) {
-                if (!this.world.method6978(this, this.getBoundingBox().method18499(0.0, -this.stepHeight, field22771))) {
+                if (!this.world.method6978(this, this.getBoundingBox().offset(0.0, -this.stepHeight, field22771))) {
                     break;
                 }
                 if (field22771 < 0.05 && field22771 >= -0.05) {
@@ -975,7 +975,7 @@ public abstract class PlayerEntity extends LivingEntity
                 if (field22771 == 0.0) {
                     break;
                 }
-                if (!this.world.method6978(this, this.getBoundingBox().method18499(field22770, -this.stepHeight, field22771))) {
+                if (!this.world.method6978(this, this.getBoundingBox().offset(field22770, -this.stepHeight, field22771))) {
                     break;
                 }
                 if (field22770 < 0.05 && field22770 >= -0.05) {
@@ -1103,7 +1103,7 @@ public abstract class PlayerEntity extends LivingEntity
                         }
                         if (b5) {
                             final float n9 = 1.0f + Class8742.method30203(this) * n6;
-                            for (final LivingEntity class400 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, class399.getBoundingBox().method18495(1.0, 0.25, 1.0))) {
+                            for (final LivingEntity class400 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, class399.getBoundingBox().grow(1.0, 0.25, 1.0))) {
                                 if (class400 == this) {
                                     continue;
                                 }

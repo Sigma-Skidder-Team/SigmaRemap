@@ -144,7 +144,7 @@ public class Class1768 extends Class1767
                             this.method6306();
                         }
                     }
-                }, Class8349.method27841());
+                }, Util.method27841());
             }
             else {
                 this.method6300(method6303);

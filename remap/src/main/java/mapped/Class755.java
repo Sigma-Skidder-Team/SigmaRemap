@@ -20,7 +20,7 @@ public class Class755 extends Class754
     
     @Override
     public boolean method1753(final double n) {
-        double v = this.getBoundingBox().method18507() * 10.0;
+        double v = this.getBoundingBox().getAverageEdgeLength() * 10.0;
         if (Double.isNaN(v)) {
             v = 1.0;
         }

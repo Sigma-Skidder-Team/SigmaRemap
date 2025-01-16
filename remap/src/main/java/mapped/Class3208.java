@@ -19,12 +19,12 @@ public class Class3208 extends Class3167
             final Entity method19141 = Class6430.method19141(Class3208.field15514.field4684.rotationYaw, Class3208.field15514.field4684.rotationPitch, this.method9886("Range"), 0.0);
             final BlockRayTraceResult method19142 = Class4609.method13697(Class3208.field15514.field4684.rotationYaw, Class3208.field15514.field4684.rotationPitch, this.method9886("Range"));
             if (method19141 != null) {
-                if (Class3208.field15514.field4691.method21449() == Class2165.field12880) {
+                if (Class3208.field15514.field4691.getType() == RayTraceResult.Type.MISS) {
                     Class3208.field15514.field4691 = new Class7007(method19141);
                 }
             }
             if (method19141 == null) {
-                if (Class3208.field15514.field4691.method21449() == Class2165.field12880) {
+                if (Class3208.field15514.field4691.getType() == RayTraceResult.Type.MISS) {
                     if (method19142 != null) {
                         Class3208.field15514.field4691 = method19142;
                     }

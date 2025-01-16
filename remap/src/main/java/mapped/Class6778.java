@@ -113,7 +113,7 @@ public class Class6778
         if (class6222 == Class2180.field12915) {
             n5 = ((n2 >> 20 & 0xFL) / 15.0f - 1.0) * 0.2;
         }
-        return class6221.method18499(n3, n5, n4);
+        return class6221.offset(n3, n5, n4);
     }
     
     static {

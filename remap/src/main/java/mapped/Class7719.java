@@ -19,7 +19,7 @@ public class Class7719<T extends INetHandler>
     private final List<Supplier<? extends IPacket<T>>> field30708;
     
     private Class7719() {
-        this.field30707 = (Object2IntMap<Class<? extends IPacket<T>>>)Class8349.method27851((Object2IntMap)new Object2IntOpenHashMap(), object2IntOpenHashMap -> object2IntOpenHashMap.defaultReturnValue(-1));
+        this.field30707 = (Object2IntMap<Class<? extends IPacket<T>>>) Util.method27851((Object2IntMap)new Object2IntOpenHashMap(), object2IntOpenHashMap -> object2IntOpenHashMap.defaultReturnValue(-1));
         this.field30708 = Lists.newArrayList();
     }
     

@@ -75,7 +75,7 @@ public class Class1660 implements AutoCloseable, Class1657
         this.field9382 = new Random();
         this.field9392 = true;
         this.field9393 = true;
-        this.field9395 = Class8349.method27837();
+        this.field9395 = Util.method27837();
         this.field9397 = new Class1904();
         this.field9399 = 1.0f;
         this.field9409 = Class1660.field9408;
@@ -246,16 +246,16 @@ public class Class1660 implements AutoCloseable, Class1657
                 }
                 double method5305 = n3 * n3;
                 if (this.field9380.field4691 != null) {
-                    method5305 = this.field9380.field4691.method21451().squareDistanceTo(method5304);
+                    method5305 = this.field9380.field4691.getHitVec().squareDistanceTo(method5304);
                 }
                 final Vec3d method5306 = method5303.method1741(1.0f);
-                final Class7007 method5307 = Class7476.method23096(method5303, method5304, method5304.add(method5306.x * n4, method5306.y * n4, method5306.z * n4), method5303.getBoundingBox().method18493(method5306.scale(n4)).method18495(1.0, 1.0, 1.0), class399 -> !class399.isSpectator() && class399.method1749(), method5305);
+                final Class7007 method5307 = Class7476.method23096(method5303, method5304, method5304.add(method5306.x * n4, method5306.y * n4, method5306.z * n4), method5303.getBoundingBox().expand(method5306.scale(n4)).grow(1.0, 1.0, 1.0), class399 -> !class399.isSpectator() && class399.method1749(), method5305);
                 if (method5307 != null) {
                     final Entity method5308 = method5307.method21452();
-                    final Vec3d method5309 = method5307.method21451();
+                    final Vec3d method5309 = method5307.getHitVec();
                     final double method5310 = method5304.squareDistanceTo(method5309);
                     if (b && method5310 > 9.0) {
-                        this.field9380.field4691 = BlockRayTraceResult.method21445(method5309, Direction.getFacingFromVector(method5306.x, method5306.y, method5306.z), new BlockPos(method5309));
+                        this.field9380.field4691 = BlockRayTraceResult.createMiss(method5309, Direction.getFacingFromVector(method5306.x, method5306.y, method5306.z), new BlockPos(method5309));
                     }
                     else if (method5310 < method5305 || this.field9380.field4691 == null) {
                         this.field9380.field4691 = method5307;
@@ -450,12 +450,12 @@ public class Class1660 implements AutoCloseable, Class1657
     public void method5817(final float n, final long n2, final boolean b) {
         this.method5824();
         if (!this.field9380.method5320() && this.field9380.field4648.field23395 && (!this.field9380.field4648.field23429 || !this.field9380.field4650.method26958())) {
-            if (Class8349.method27837() - this.field9395 > 500L) {
+            if (Util.method27837() - this.field9395 > 500L) {
                 this.field9380.method5255(false);
             }
         }
         else {
-            this.field9395 = Class8349.method27837();
+            this.field9395 = Util.method27837();
         }
         if (!this.field9380.field4699) {
             final int i = (int)(this.field9380.field4650.method26959() * this.field9380.method5332().method7696() / this.field9380.method5332().method7694());
@@ -465,8 +465,8 @@ public class Class1660 implements AutoCloseable, Class1657
                 this.field9380.method5327().startSection("level");
                 Class9463.method35173().method35188().method21097(new Class5741(n, n2));
                 this.method5820(n, n2, class7351);
-                if (this.field9380.method5284() && this.field9394 < Class8349.method27837() - 1000L) {
-                    this.field9394 = Class8349.method27837();
+                if (this.field9380.method5284() && this.field9394 < Util.method27837() - 1000L) {
+                    this.field9394 = Util.method27837();
                     if (!this.field9380.method5285().method1464()) {
                         this.method5818();
                     }
@@ -633,10 +633,10 @@ public class Class1660 implements AutoCloseable, Class1657
             if (b) {
                 if (!((PlayerEntity)method5303).field3025.field27305) {
                     final ItemStack method5304 = ((LivingEntity)method5303).getHeldItemMainhand();
-                    final Class7006 field4691 = this.field9380.field4691;
+                    final RayTraceResult field4691 = this.field9380.field4691;
                     if (field4691 != null) {
-                        if (field4691.method21449() == Class2165.field12881) {
-                            final BlockPos method5305 = ((BlockRayTraceResult)field4691).method21447();
+                        if (field4691.getType() == RayTraceResult.Type.BLOCK) {
+                            final BlockPos method5305 = ((BlockRayTraceResult)field4691).getPos();
                             final BlockState method5306 = this.field9380.field4683.getBlockState(method5305);
                             if (this.field9380.field4682.method27336() != Class101.field301) {
                                 final Class7990 class7990 = new Class7990(this.field9380.field4683, method5305, false);

@@ -118,7 +118,7 @@ public class Class5328
     
     public String method16454() {
         if (this.field22365 == null) {
-            this.field22365 = Class8349.method27836("effect", Registry.field207.getKey(this));
+            this.field22365 = Util.method27836("effect", Registry.field207.getKey(this));
         }
         return this.field22365;
     }

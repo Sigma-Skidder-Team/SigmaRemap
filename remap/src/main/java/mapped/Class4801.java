@@ -94,10 +94,10 @@ public class Class4801 extends Class4800
                 this.method14242(this.field20469 = field20469);
                 this.field20469.method14516(class4841 -> {
                     if (!Class9463.method35173().method35199().method24199()) {
-                        Class8349.method27845().method980("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
+                        Util.method27845().method980("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
                     }
                     if (!Class9463.method35173().method35199().method24200()) {
-                        Class8349.method27845().method980("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
+                        Util.method27845().method980("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
                     }
                 });
                 this.field20469.method14745(class4841 -> new Thread(() -> {

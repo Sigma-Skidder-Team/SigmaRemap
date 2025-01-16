@@ -477,7 +477,7 @@ public class Class827 extends Class763
                     }
                 }
                 else {
-                    final List<Entity> method4190 = class1851.method6739((Class<? extends Entity>)Class818.class, this.getBoundingBox().method18495(5.0, 3.0, 5.0), (Predicate<? super Entity>)Class9170.field38847);
+                    final List<Entity> method4190 = class1851.method6739((Class<? extends Entity>)Class818.class, this.getBoundingBox().grow(5.0, 3.0, 5.0), (Predicate<? super Entity>)Class9170.field38847);
                     if (!method4190.isEmpty()) {
                         final Class818 class1856 = method4190.get(0);
                         class1856.method4818(true);

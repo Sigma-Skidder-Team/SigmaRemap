@@ -38,7 +38,7 @@ public class Class3952 extends Class3841
             if (!class7099.isPassenger()) {
                 if (!class7099.isBeingRidden()) {
                     if (class7099.method1855()) {
-                        if (VoxelShapes.method24496(VoxelShapes.method24489(class7099.getBoundingBox().method18499(-class7098.getX(), -class7098.getY(), -class7098.getZ())), class7096.getShape(class7097, class7098), IBooleanFunction.AND)) {
+                        if (VoxelShapes.method24496(VoxelShapes.method24489(class7099.getBoundingBox().offset(-class7098.getX(), -class7098.getY(), -class7098.getZ())), class7096.getShape(class7097, class7098), IBooleanFunction.AND)) {
                             class7099.method1854((class7097.dimension.getType() != DimensionType.field2225) ? DimensionType.field2225 : DimensionType.field2223);
                         }
                     }

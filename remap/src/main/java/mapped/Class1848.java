@@ -55,7 +55,7 @@ public class Class1848 extends World
         this.field10077 = this.rand.nextInt(12000);
         this.field10078 = new Class6516();
         this.field10079 = Maps.newHashMap();
-        this.field10081 = (Object2ObjectArrayMap<Class8895, Class8141>)Class8349.method27851(new Object2ObjectArrayMap(3), object2ObjectArrayMap -> {
+        this.field10081 = (Object2ObjectArrayMap<Class8895, Class8141>) Util.method27851(new Object2ObjectArrayMap(3), object2ObjectArrayMap -> {
             object2ObjectArrayMap.put((Object)Class8364.field34301, (Object)new Class8141());
             object2ObjectArrayMap.put((Object)Class8364.field34302, (Object)new Class8141());
             object2ObjectArrayMap.put((Object)Class8364.field34303, (Object)new Class8141());
@@ -389,9 +389,9 @@ public class Class1848 extends World
     private void method6827(final BlockPos class354, final Class7096 class355, final IParticleData class356, final boolean b) {
         if (class355.method21756().method21781()) {
             final VoxelShape method21727 = class355.method21727(this, class354);
-            if (method21727.method24536(Direction.Axis.Y) >= 1.0) {
+            if (method21727.getEnd(Direction.Axis.Y) >= 1.0) {
                 if (!class355.method21755(Class7188.field27919)) {
-                    final double method21728 = method21727.method24535(Direction.Axis.Y);
+                    final double method21728 = method21727.getStart(Direction.Axis.Y);
                     if (method21728 <= 0.0) {
                         final BlockPos method21729 = class354.method1139();
                         final Class7096 method21730 = this.getBlockState(method21729);
@@ -413,11 +413,11 @@ public class Class1848 extends World
     }
     
     private void method6828(final BlockPos class354, final IParticleData class355, final VoxelShape class356, final double n) {
-        this.method6829(class354.getX() + class356.method24535(Direction.Axis.X), class354.getX() + class356.method24536(Direction.Axis.X), class354.getZ() + class356.method24535(Direction.Axis.Z), class354.getZ() + class356.method24536(Direction.Axis.Z), n, class355);
+        this.method6829(class354.getX() + class356.getStart(Direction.Axis.X), class354.getX() + class356.getEnd(Direction.Axis.X), class354.getZ() + class356.getStart(Direction.Axis.Z), class354.getZ() + class356.getEnd(Direction.Axis.Z), n, class355);
     }
     
     private void method6829(final double n, final double n2, final double n3, final double n4, final double n5, final IParticleData IParticleData) {
-        this.method6709(IParticleData, MathHelper.method35701(this.rand.nextDouble(), n, n2), n5, MathHelper.method35701(this.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
+        this.method6709(IParticleData, MathHelper.lerp(this.rand.nextDouble(), n, n2), n5, MathHelper.lerp(this.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
     }
     
     public void method6830() {

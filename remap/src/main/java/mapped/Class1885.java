@@ -40,22 +40,22 @@ public class Class1885 extends Class1886 implements AutoCloseable
     
     @Override
     public int method7250(final int n, final boolean b, final boolean b2) {
-        throw Class8349.method27859(new UnsupportedOperationException("Ran authomatically on a different thread!"));
+        throw Util.pauseDevMode(new UnsupportedOperationException("Ran authomatically on a different thread!"));
     }
     
     @Override
     public void method7251(final BlockPos class354, final int n) {
-        throw Class8349.method27859(new UnsupportedOperationException("Ran authomatically on a different thread!"));
+        throw Util.pauseDevMode(new UnsupportedOperationException("Ran authomatically on a different thread!"));
     }
     
     @Override
     public void checkBlock(final BlockPos class354) {
         class354.toImmutable();
-        this.method7257(class354.getX() >> 4, class354.getZ() >> 4, Class2216.field13612, Class8349.method27856(() -> super.checkBlock(class355), () -> "checkBlock " + obj));
+        this.method7257(class354.getX() >> 4, class354.getZ() >> 4, Class2216.field13612, Util.method27856(() -> super.checkBlock(class355), () -> "checkBlock " + obj));
     }
     
     public void method7253(final Class7859 class7859) {
-        this.method7258(class7859.field32290, class7859.field32291, () -> 0, Class2216.field13611, Class8349.method27856(() -> {
+        this.method7258(class7859.field32290, class7859.field32291, () -> 0, Class2216.field13611, Util.method27856(() -> {
             super.method7259(class7860, false);
             super.method7255(class7860, false);
             int i = 0;
@@ -74,17 +74,17 @@ public class Class1885 extends Class1886 implements AutoCloseable
     
     @Override
     public void method7254(final Class353 class353, final boolean b) {
-        this.method7258(class353.method1102(), class353.method1104(), () -> 0, Class2216.field13611, Class8349.method27856(() -> super.method7254(class354, b2), () -> "updateSectionStatus " + obj + " " + b3));
+        this.method7258(class353.method1102(), class353.method1104(), () -> 0, Class2216.field13611, Util.method27856(() -> super.method7254(class354, b2), () -> "updateSectionStatus " + obj + " " + b3));
     }
     
     @Override
     public void method7255(final Class7859 class7859, final boolean b) {
-        this.method7257(class7859.field32290, class7859.field32291, Class2216.field13611, Class8349.method27856(() -> super.method7255(class7860, b2), () -> "enableLight " + obj + " " + b3));
+        this.method7257(class7859.field32290, class7859.field32291, Class2216.field13611, Util.method27856(() -> super.method7255(class7860, b2), () -> "enableLight " + obj + " " + b3));
     }
     
     @Override
     public void method7256(final Class237 class237, final Class353 class238, final Class7281 class239) {
-        this.method7258(class238.method1102(), class238.method1104(), () -> 0, Class2216.field13611, Class8349.method27856(() -> super.method7256(class240, class241, class242), () -> "queueData " + obj));
+        this.method7258(class238.method1102(), class238.method1104(), () -> 0, Class2216.field13611, Util.method27856(() -> super.method7256(class240, class241, class242), () -> "queueData " + obj));
     }
     
     private void method7257(final int n, final int n2, final Class2216 class2216, final Runnable runnable) {
@@ -102,13 +102,13 @@ public class Class1885 extends Class1886 implements AutoCloseable
     
     @Override
     public void method7259(final Class7859 class7859, final boolean b) {
-        this.method7258(class7859.field32290, class7859.field32291, () -> 0, Class2216.field13611, Class8349.method27856(() -> super.method7259(class7860, b2), () -> "retainData " + obj));
+        this.method7258(class7859.field32290, class7859.field32291, () -> 0, Class2216.field13611, Util.method27856(() -> super.method7259(class7860, b2), () -> "retainData " + obj));
     }
     
     public CompletableFuture<IChunk> method7260(final IChunk class1860, final boolean b) {
         final Class7859 method7019 = class1860.method7019();
         class1860.method7044(false);
-        this.method7257(method7019.field32290, method7019.field32291, Class2216.field13611, Class8349.method27856(() -> {
+        this.method7257(method7019.field32290, method7019.field32291, Class2216.field13611, Util.method27856(() -> {
             class1861.method7014();
             int i = 0;
             while (i < 16) {

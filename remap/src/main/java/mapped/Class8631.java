@@ -6,8 +6,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import java.util.Arrays;
-import com.mojang.brigadier.Message;
-import java.util.HashMap;
+
 import com.mojang.brigadier.suggestion.Suggestions;
 import java.util.concurrent.CompletableFuture;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
@@ -55,7 +54,7 @@ public class Class8631 implements ArgumentType<Integer>
             new Class2259("slot.unknown", new Object[] { o });
             return;
         });
-        field36226 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field36226 = Util.method27851(Maps.newHashMap(), hashMap -> {
             int i = 0;
             while (i < 54) {
                 hashMap.put("container." + i, i);

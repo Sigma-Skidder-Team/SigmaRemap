@@ -58,7 +58,7 @@ public class Class691 extends Class527 implements Class692
         else {
             this.method3041();
             this.method3295(this.field3156, Class8822.method30773("multiplayer.downloadingStats", new Object[0]), this.field3152 / 2, this.field3153 / 2, 16777215);
-            this.method3295(this.field3156, Class691.field3815[(int)(Class8349.method27837() / 150L % Class691.field3815.length)], this.field3152 / 2, this.field3153 / 2 + 18, 16777215);
+            this.method3295(this.field3156, Class691.field3815[(int)(Util.method27837() / 150L % Class691.field3815.length)], this.field3152 / 2, this.field3153 / 2 + 18, 16777215);
         }
     }
     

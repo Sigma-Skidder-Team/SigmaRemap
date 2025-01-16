@@ -36,7 +36,7 @@ public class Class3213 extends Class3167
                 final float n = (float)Math.toRadians(Class3213.field15514.field4684.rotationYaw - 25.0f);
                 final float n2 = (float)Math.toRadians(Class3213.field15514.field4684.rotationPitch);
                 final double n3 = 0.20000000298023224;
-                final double n4 = Class3213.field15514.field4684.boundingBox.method18507() / 2.0;
+                final double n4 = Class3213.field15514.field4684.boundingBox.getAverageEdgeLength() / 2.0;
                 final double n5 = MathHelper.cos(n) * n4;
                 final double n6 = MathHelper.sin(n) * n4;
                 final double n7 = Class3213.field15514.field4684.lastTickPosX + (Class3213.field15514.field4684.posX - Class3213.field15514.field4684.lastTickPosX) * Class3213.field15514.field4633.field26528;
@@ -96,7 +96,7 @@ public class Class3213 extends Class3167
                     final double n22 = method872.field890 - Class3213.field15514.field4644.method5833().method18161().getZ();
                     GL11.glPushMatrix();
                     GL11.glTranslated(n20, n21, n22);
-                    final BlockPos method874 = new BlockPos(0, 0, 0).method1149(((BlockRayTraceResult)method872.field894).method21448());
+                    final BlockPos method874 = new BlockPos(0, 0, 0).method1149(((BlockRayTraceResult)method872.field894).getFace());
                     GL11.glRotatef(45.0f, this.field15658.method28124((float)method874.getX()), this.field15658.method28125((float)(-method874.getY())), this.field15658.method28126((float)method874.getZ()));
                     GL11.glRotatef(90.0f, this.field15659.method28124((float)method874.getZ()), this.field15659.method28125((float)method874.getY()), this.field15659.method28126((float)(-method874.getX())));
                     GL11.glTranslatef(-0.5f, 0.0f, -0.5f);

@@ -24,7 +24,7 @@ public class Class166 implements Predicate<Entity>
     }
     
     public boolean apply(final Entity class399) {
-        final boolean method18504 = class399.getBoundingBox().method18494(this.field482, this.field482, this.field482).method18504(this.field483, this.field484);
+        final boolean method18504 = class399.getBoundingBox().expand(this.field482, this.field482, this.field482).intersects(this.field483, this.field484);
         if (class399 != null) {
             if (class399.method1749()) {
                 if (method18504) {

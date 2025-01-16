@@ -24,12 +24,12 @@ public class Class4040 extends Class4036
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class7006 method2716 = Item.method11733(class1847, class1848, RayTraceContext.FluidMode.SOURCE_ONLY);
-        if (method2716.method21449() != Class2165.field12880) {
-            if (method2716.method21449() == Class2165.field12881) {
+        final RayTraceResult method2716 = Item.method11733(class1847, class1848, RayTraceContext.FluidMode.SOURCE_ONLY);
+        if (method2716.getType() != RayTraceResult.Type.MISS) {
+            if (method2716.getType() == RayTraceResult.Type.BLOCK) {
                 final BlockRayTraceResult class1850 = (BlockRayTraceResult)method2716;
-                final BlockPos method2717 = class1850.method21447();
-                final Direction method2718 = class1850.method21448();
+                final BlockPos method2717 = class1850.getPos();
+                final Direction method2718 = class1850.getFace();
                 if (!class1847.method6760(class1848, method2717) || !class1848.method2881(method2717.method1149(method2718), method2718, method2715)) {
                     return Class9355.method34677(method2715);
                 }

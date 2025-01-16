@@ -92,7 +92,7 @@ public class Class8787
     
     public static Collection<BlockPos> method30582(final BlockPos class354, final int n, final Class1849 class355) {
         final ArrayList arrayList = Lists.newArrayList();
-        final AxisAlignedBB method18496 = new AxisAlignedBB(class354).method18496(n);
+        final AxisAlignedBB method18496 = new AxisAlignedBB(class354).intersect(n);
         for (int i = (int)method18496.minX; i <= (int)method18496.maxX; ++i) {
             for (int j = (int)method18496.minY; j <= (int)method18496.maxY; ++j) {
                 for (int k = (int)method18496.minZ; k <= (int)method18496.maxZ; ++k) {
@@ -180,7 +180,7 @@ public class Class8787
     }
     
     private static boolean method30587(final BlockPos class354, final BlockPos class355, final Class1849 class356) {
-        return method30573((Class501)class356.getTileEntity(class354)).method18505(new Vec3d(class355));
+        return method30573((Class501)class356.getTileEntity(class354)).contains(new Vec3d(class355));
     }
     
     static {

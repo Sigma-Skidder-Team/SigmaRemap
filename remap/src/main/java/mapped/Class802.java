@@ -314,7 +314,7 @@ public class Class802 extends Class789
     
     static {
         field4305 = EntityDataManager.method33564(Class802.class, Class7709.field30653);
-        field4306 = Class8349.method27851(Maps.newEnumMap((Class)Class181.class), enumMap -> {
+        field4306 = Util.method27851(Maps.newEnumMap((Class)Class181.class), enumMap -> {
             enumMap.put(Class181.field537, Class7521.field29248);
             enumMap.put(Class181.field538, Class7521.field29249);
             enumMap.put(Class181.field539, Class7521.field29250);

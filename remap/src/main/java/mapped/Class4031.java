@@ -227,7 +227,7 @@ public class Class4031 extends Block
     
     @Override
     public void method11869(final World class1847, final Class7096 class1848, final BlockRayTraceResult class1849, final Entity class1850) {
-        class1847.method6691(class1849.method21447(), true, class1850);
+        class1847.method6691(class1849.getPos(), true, class1850);
     }
     
     static {

@@ -22,7 +22,7 @@ public class Class4713 extends Class4712<Class805, Class5931<Class805>>
     }
     
     static {
-        field20314 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field20314 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put(Class1983.field10982, new ResourceLocation("textures/entity/cow/brown_mooshroom.png"));
             hashMap.put(Class1983.field10981, new ResourceLocation("textures/entity/cow/red_mooshroom.png"));
         });

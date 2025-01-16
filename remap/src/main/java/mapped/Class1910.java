@@ -5,7 +5,6 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import com.mojang.datafixers.util.Either;
 import com.google.common.annotations.VisibleForTesting;
 import java.util.stream.Stream;
 import java.util.stream.Collector;
@@ -109,7 +108,7 @@ public class Class1910 implements AutoCloseable, Class1911
             class8589.method29078();
             final Stream stream;
             if (stream != null) {
-                Class8349.method27853((List<? extends CompletableFuture<?>>)stream.map(either -> (CompletableFuture)either.map((Function)class8591::method5391, runnable -> {
+                Util.method27853((List<? extends CompletableFuture<?>>)stream.map(either -> (CompletableFuture)either.map((Function)class8591::method5391, runnable -> {
                     runnable.run();
                     return CompletableFuture.completedFuture(Class315.field1875);
                 })).collect((Collector<? super Object, ?, List<? extends CompletableFuture<? extends V>>>)Collectors.toList())).thenAccept(p2 -> this.method7471(class8592, (Class875<Object>)class8593));
@@ -125,7 +124,7 @@ public class Class1910 implements AutoCloseable, Class1911
         if (class8587 != null) {
             return class8587;
         }
-        throw Class8349.method27859(new IllegalArgumentException("No queue for: " + obj));
+        throw Util.pauseDevMode(new IllegalArgumentException("No queue for: " + obj));
     }
     
     @VisibleForTesting

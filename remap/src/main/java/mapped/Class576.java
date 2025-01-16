@@ -132,7 +132,7 @@ public class Class576 extends Class573 implements Class563, Class574
         if (this.field3452 != null) {
             this.field3452.accept(s);
         }
-        this.field3434 = Class8349.method27837() + 500L;
+        this.field3434 = Util.method27837() + 500L;
     }
     
     private void method3383(final int n) {

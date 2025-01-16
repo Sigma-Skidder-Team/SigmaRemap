@@ -35,7 +35,7 @@ public class Class4732 extends Class4712<Class800, Class5926<Class800>>
         if (method4620 > 0.0f) {
             class801.method22564(0.4f * method4620, 0.15f * method4620, 0.1f * method4620);
             class801.method22566(Vector3f.ZP.rotationDegrees(MathHelper.method35706(method4620, 0.0f, 90.0f)));
-            final Iterator<Entity> iterator = (Iterator<Entity>)class800.world.method7128((Class<? extends PlayerEntity>) PlayerEntity.class, new AxisAlignedBB(new BlockPos(class800)).method18495(2.0, 2.0, 2.0)).iterator();
+            final Iterator<Entity> iterator = (Iterator<Entity>)class800.world.method7128((Class<? extends PlayerEntity>) PlayerEntity.class, new AxisAlignedBB(new BlockPos(class800)).grow(2.0, 2.0, 2.0)).iterator();
             while (iterator.hasNext()) {
                 if (!iterator.next().method2783()) {
                     continue;

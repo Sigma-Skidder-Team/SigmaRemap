@@ -86,8 +86,8 @@ public class Class3279 extends Class3167
         if (this.method9906()) {
             if (class5721.method16990() instanceof Class4329) {
                 final Class4329 class5722 = (Class4329)class5721.method16990();
-                if (Class3279.field15514.field4683.getBlockState(class5722.method13000().method21447()).method21696() instanceof Class3951) {
-                    this.field15779 = class5722.method13000().method21447();
+                if (Class3279.field15514.field4683.getBlockState(class5722.method13000().getPos()).method21696() instanceof Class3951) {
+                    this.field15779 = class5722.method13000().getPos();
                 }
             }
             if (class5721.method16990() instanceof Class4256) {

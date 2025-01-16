@@ -107,6 +107,6 @@ public class Class1864 extends Class1862
     }
     
     static {
-        field10167 = Class8349.method27851(new Class3090[Class1873.field10210], a -> Arrays.fill(a, Class7102.field27633));
+        field10167 = Util.method27851(new Class3090[Class1873.field10210], a -> Arrays.fill(a, Class7102.field27633));
     }
 }

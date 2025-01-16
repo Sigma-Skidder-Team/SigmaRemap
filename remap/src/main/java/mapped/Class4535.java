@@ -209,7 +209,7 @@ public abstract class Class4535<FC extends Class5113>
         field20020 = method13526("random_boolean_selector", new Class4561(Class5142::method16056));
         field20021 = method13526("decorated", new Class4603(Class5114::method16012));
         field20022 = method13526("decorated_flower", new Class4604(Class5114::method16012));
-        field20023 = Class8349.method27851((BiMap)HashBiMap.create(), hashBiMap -> {
+        field20023 = Util.method27851((BiMap)HashBiMap.create(), hashBiMap -> {
             hashBiMap.put((Object)"Pillager_Outpost".toLowerCase(Locale.ROOT), (Object)Class4535.field19958);
             hashBiMap.put((Object)"Mineshaft".toLowerCase(Locale.ROOT), (Object)Class4535.field19959);
             hashBiMap.put((Object)"Mansion".toLowerCase(Locale.ROOT), (Object)Class4535.field19960);

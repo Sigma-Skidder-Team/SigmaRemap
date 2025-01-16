@@ -55,7 +55,7 @@ public class Class1945 extends Class1944
         if (!this.field10597.get()) {
             final ArrayList arrayList = Lists.newArrayList();
             Class9006.method32219(class9227).forEach(class9229 -> list.add(this.field10599.field37833.method23461(class9228.method34024(class9229), this.field10599.method31866(class9229))));
-            return (CompletableFuture<Class2033>)Class8349.method27853((List<? extends CompletableFuture<?>>)arrayList).handle((p1, t3) -> {
+            return (CompletableFuture<Class2033>) Util.method27853((List<? extends CompletableFuture<?>>)arrayList).handle((p1, t3) -> {
                 if (t3 != null) {
                     if (!(t3 instanceof CancellationException)) {
                         if (!(t3 instanceof InterruptedException)) {

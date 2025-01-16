@@ -282,7 +282,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
     }
 
     public Class2201 method21744(final World class1847, final PlayerEntity class1848, final Class316 class1849, final BlockRayTraceResult class1850) {
-        return this.getBlock().method11844(this, class1847, class1850.method21447(), class1848, class1849, class1850);
+        return this.getBlock().method11844(this, class1847, class1850.getPos(), class1848, class1849, class1850);
     }
 
     public void method21745(final World class1847, final BlockPos class1848, final PlayerEntity class1849) {
@@ -422,7 +422,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
                 this.renderShapes = null;
             }
             this.collisionShape = method21696.method11809(class7096, Class1859.field10138, BlockPos.ZERO, ISelectionContext.dummy());
-            this.isCollisionShapeLargerThanFullBlock = Arrays.stream(Direction.Axis.values()).anyMatch(class7099 -> this.collisionShape.method24535(class7099) < 0.0 || this.collisionShape.method24536(class7099) > 1.0);
+            this.isCollisionShapeLargerThanFullBlock = Arrays.stream(Direction.Axis.values()).anyMatch(class7099 -> this.collisionShape.getStart(class7099) < 0.0 || this.collisionShape.getEnd(class7099) > 1.0);
             this.solidSides = new boolean[6];
             for (final Direction class7098 : Cache.DIRECTIONS) {
                 this.solidSides[class7098.ordinal()] = Block.hasSolidSide(class7096, Class1859.field10138, BlockPos.ZERO, class7098);

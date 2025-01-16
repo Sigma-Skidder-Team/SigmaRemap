@@ -73,7 +73,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
         if (method1094 != null) {
             return method1094;
         }
-        throw Class8349.method27859(new IllegalStateException());
+        throw Util.pauseDevMode(new IllegalStateException());
     }
     
     public boolean method7181(final Class353 class353) {

@@ -78,7 +78,7 @@ public class Class3236 extends Class3167
     public void method10208(final Class5738 class5738) {
         if (this.method9906()) {
             if (this.method9887("Speed Mode").equals("Cubecraft") && !Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
-                if (Class3236.field15514.field4683.method6981(Class3236.field15514.field4684, Class3236.field15514.field4684.boundingBox.method18494(0.0, -1.5, 0.0).method18492(0.05, 0.0, 0.05).method18492(-0.05, 0.0, -0.05)).count() == 0L) {
+                if (Class3236.field15514.field4683.method6981(Class3236.field15514.field4684, Class3236.field15514.field4684.boundingBox.expand(0.0, -1.5, 0.0).contract(0.05, 0.0, 0.05).contract(-0.05, 0.0, -0.05)).count() == 0L) {
                     if (Class3236.field15514.field4684.fallDistance < 1.0f) {
                         class5738.method17026(true);
                     }
@@ -101,11 +101,11 @@ public class Class3236 extends Class3167
                     this.field15715.method10282();
                     if (this.field15710 != null) {
                         final BlockRayTraceResult method13698 = Class4609.method13698(this.field15709, this.field15708, 5.0f, class5744);
-                        if (method13698.method21449() == Class2165.field12880) {
+                        if (method13698.getType() == RayTraceResult.Type.MISS) {
                             return;
                         }
-                        if (method13698.method21448() == Direction.UP) {
-                            if (method13698.method21447().getY() <= Class3236.field15514.field4684.posY - 1.0) {
+                        if (method13698.getFace() == Direction.UP) {
+                            if (method13698.getPos().getY() <= Class3236.field15514.field4684.posY - 1.0) {
                                 if (Class3236.field15514.field4684.onGround) {
                                     return;
                                 }
@@ -162,7 +162,7 @@ public class Class3236 extends Class3167
                 Label_0176: {
                     if (Class3236.field15514.field4684.getMotion().y < 0.0) {
                         if (Class3236.field15514.field4684.fallDistance > 1.0f) {
-                            if (Class4609.method13697(0.0f, 90.0f, 3.0f).method21449() == Class2165.field12880) {
+                            if (Class4609.method13697(0.0f, 90.0f, 3.0f).getType() == RayTraceResult.Type.MISS) {
                                 n3 += Math.min(Class3236.field15514.field4684.getMotion().y * 2.0, 4.0);
                                 break Label_0176;
                             }

@@ -29,7 +29,7 @@ public abstract class Class416 extends Class419 implements Class407
     
     public void method2029(final ItemStack class8321) {
         if (class8321.getItem() != Items.field31511 || class8321.method27656()) {
-            this.method1650().set(Class416.field2524, (ItemStack)Class8349.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
+            this.method1650().set(Class416.field2524, (ItemStack) Util.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
         }
     }
     

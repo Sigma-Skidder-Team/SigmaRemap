@@ -235,7 +235,7 @@ public class Class841 extends Class785 implements Class762
             final double n3 = 0.5 - MathHelper.sin((0.5f + this.field4486) * 3.1415927f) * 0.5;
             final double n4 = 0.5 - MathHelper.sin((0.5f + this.field4485) * 3.1415927f) * 0.5;
             final Direction method6702 = this.method5018().getOpposite();
-            this.method1889(new AxisAlignedBB(this.getPosX() - 0.5, this.getPosY(), this.getPosZ() - 0.5, this.getPosX() + 0.5, this.getPosY() + 1.0, this.getPosZ() + 0.5).method18494(method6702.getXOffset() * n3, method6702.getYOffset() * n3, method6702.getZOffset() * n3));
+            this.method1889(new AxisAlignedBB(this.getPosX() - 0.5, this.getPosY(), this.getPosZ() - 0.5, this.getPosX() + 0.5, this.getPosY() + 1.0, this.getPosZ() + 0.5).expand(method6702.getXOffset() * n3, method6702.getYOffset() * n3, method6702.getZOffset() * n3));
             final double n5 = n3 - n4;
             if (n5 > 0.0) {
                 final List<Entity> method6703 = this.world.method7127(this, this.getBoundingBox());

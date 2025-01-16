@@ -195,7 +195,7 @@ public class ChunkStatus
         field39988 = method34434("heightmaps", ChunkStatus.field39987, 0, ChunkStatus.field39975, Class260.field1243, (class1849, class1850, list, class1851) -> {});
         field39989 = method34436("full", ChunkStatus.field39988, 0, ChunkStatus.field39975, Class260.field1244, (class9312, class9313, class9314, class9315, class9316, function, list, class9317) -> function.apply(class9317), (class9312, class9313, class9314, class9315, function, class9316) -> function.apply(class9316));
         field39990 = (List)ImmutableList.of((Object) ChunkStatus.field39989, (Object) ChunkStatus.field39985, (Object) ChunkStatus.field39984, (Object) ChunkStatus.field39978, (Object) ChunkStatus.field39978, (Object) ChunkStatus.field39978, (Object) ChunkStatus.field39978, (Object) ChunkStatus.field39978, (Object) ChunkStatus.field39978, (Object) ChunkStatus.field39978, (Object) ChunkStatus.field39978);
-        field39991 = Class8349.method27851((IntList)new IntArrayList(method34437().size()), list -> {
+        field39991 = Util.method27851((IntList)new IntArrayList(method34437().size()), list -> {
             for (int i = method34437().size() - 1; i >= 0; --i) {
                 int n = 0;
                 while (n + 1 < ChunkStatus.field39990.size() && i <= ChunkStatus.field39990.get(n + 1).method34442()) {

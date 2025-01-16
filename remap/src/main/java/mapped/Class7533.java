@@ -15,12 +15,12 @@ public class Class7533
     private final Long2FloatLinkedOpenHashMap field29914;
     
     private Class7533() {
-        this.field29913 = Class8349.method27850(() -> {
+        this.field29913 = Util.method27850(() -> {
             final Class36 class36 = new Class36(this, 100, 0.25f);
             class36.defaultReturnValue(Integer.MAX_VALUE);
             return class36;
         });
-        this.field29914 = Class8349.method27850(() -> {
+        this.field29914 = Util.method27850(() -> {
             final Class28 class37 = new Class28(this, 100, 0.25f);
             class37.defaultReturnValue(Float.NaN);
             return class37;

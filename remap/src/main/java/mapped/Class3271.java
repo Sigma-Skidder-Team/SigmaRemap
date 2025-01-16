@@ -50,7 +50,7 @@ public class Class3271 extends Class3167
     }
     
     public void method10311(final BlockPos class354) {
-        final BlockPos class355 = (class354 == null) ? ((Class3271.field15514.field4691.method21449() != Class2165.field12881) ? null : ((BlockRayTraceResult)Class3271.field15514.field4691).method21447()) : class354;
+        final BlockPos class355 = (class354 == null) ? ((Class3271.field15514.field4691.getType() != RayTraceResult.Type.BLOCK) ? null : ((BlockRayTraceResult)Class3271.field15514.field4691).getPos()) : class354;
         if (class355 == null) {
             return;
         }

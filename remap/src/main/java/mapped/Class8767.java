@@ -43,7 +43,7 @@ public class Class8767
     }
     
     static {
-        field36856 = Class8349.method27851(new float[256], array -> {
+        field36856 = Util.method27851(new float[256], array -> {
             int i = 0;
             while (i < array.length) {
                 array[i] = (float)Math.pow(i / 255.0f, 2.2);

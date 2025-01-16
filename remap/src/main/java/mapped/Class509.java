@@ -243,8 +243,8 @@ public class Class509 extends Entity
                     this.method1936(this.getMotion().add(0.0, -0.04, 0.0));
                 }
             }
-            final Class7006 method1936 = Class7476.method23092(this, true, false, this.field2904, RayTraceContext.BlockMode.COLLIDER);
-            if (method1936.method21449() != Class2165.field12880) {
+            final RayTraceResult method1936 = Class7476.method23092(this, true, false, this.field2904, RayTraceContext.BlockMode.COLLIDER);
+            if (method1936.getType() != RayTraceResult.Type.MISS) {
                 this.method2612(method1936);
             }
         }
@@ -304,8 +304,8 @@ public class Class509 extends Entity
         return 1.0f;
     }
     
-    public void method2612(final Class7006 class7006) {
-        if (class7006.method21449() != Class2165.field12882) {
+    public void method2612(final RayTraceResult class7006) {
+        if (class7006.getType() != RayTraceResult.Type.ENTITY) {
             ((Class1849)this.world).method6911(Class8432.field34619, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
             this.method1695(Class8520.field35551, 1.0f, 1.0f);
         }

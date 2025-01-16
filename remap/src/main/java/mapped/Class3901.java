@@ -54,7 +54,7 @@ public class Class3901 extends Class3892
                 class1849.method4342(true);
                 class1849.method1730(method29799.getX() + 0.5, method29799.getY() + 0.05, method29799.getZ() + 0.5, 0.0f, 0.0f);
                 class1847.method6886(class1849);
-                final Iterator<Entity> iterator = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1849.getBoundingBox().method18496(5.0)).iterator();
+                final Iterator<Entity> iterator = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1849.getBoundingBox().intersect(5.0)).iterator();
                 while (iterator.hasNext()) {
                     Class7770.field31788.method13788(iterator.next(), class1849);
                 }
@@ -75,7 +75,7 @@ public class Class3901 extends Class3892
             final BlockPos method29801 = method29796.method25270(0, 2, 0).method26068();
             class1850.method1730(method29801.getX() + 0.5, method29801.getY() + 0.05, method29801.getZ() + 0.5, 0.0f, 0.0f);
             class1847.method6886(class1850);
-            final Iterator<Entity> iterator2 = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1850.getBoundingBox().method18496(5.0)).iterator();
+            final Iterator<Entity> iterator2 = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1850.getBoundingBox().intersect(5.0)).iterator();
             while (iterator2.hasNext()) {
                 Class7770.field31788.method13788(iterator2.next(), class1850);
             }

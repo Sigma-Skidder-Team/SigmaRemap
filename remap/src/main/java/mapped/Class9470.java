@@ -100,7 +100,7 @@ public class Class9470
     }
     
     public void method35244(final Dynamic<?> dynamic) {
-        dynamic.asStream().map(Class6556::method19873).flatMap(Class8349::method27854).forEach(class6556 -> Class8585.method29072(this.method35239(class6556.field26044)).put((Object)class6556.field26045, class6556.field26046));
+        dynamic.asStream().map(Class6556::method19873).flatMap(Util::method27854).forEach(class6556 -> Class8585.method29072(this.method35239(class6556.field26044)).put((Object)class6556.field26045, class6556.field26046));
     }
     
     private static int method35245(final int a, final int b) {

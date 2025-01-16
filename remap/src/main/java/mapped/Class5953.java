@@ -275,7 +275,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
     }
     
     static {
-        field24452 = Class8349.method27850(() -> {
+        field24452 = Util.method27850(() -> {
             final GsonBuilder gsonBuilder = new GsonBuilder();
             gsonBuilder.disableHtmlEscaping();
             gsonBuilder.registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953());
@@ -283,7 +283,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
             gsonBuilder.registerTypeAdapterFactory((TypeAdapterFactory)new Class8818());
             return gsonBuilder.create();
         });
-        field24453 = Class8349.method27850(() -> {
+        field24453 = Util.method27850(() -> {
             try {
                 new JsonReader((Reader)new java.io.StringReader(""));
                 JsonReader.class.getDeclaredField("pos");
@@ -295,7 +295,7 @@ public class Class5953 implements JsonDeserializer<ITextComponent>, JsonSerializ
                 throw new IllegalStateException("Couldn't get field 'pos' for JsonReader", cause);
             }
         });
-        field24454 = Class8349.method27850(() -> {
+        field24454 = Util.method27850(() -> {
             try {
                 new JsonReader((Reader)new java.io.StringReader(""));
                 JsonReader.class.getDeclaredField("lineStart");

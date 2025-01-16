@@ -28,7 +28,7 @@ public class Class8642 implements Class8643
     public final DataFixer field36249;
     
     public Class8642(final File parent, final String s, final MinecraftServer class394, final DataFixer field36249) {
-        this.field36246 = Class8349.method27837();
+        this.field36246 = Util.method27837();
         this.field36249 = field36249;
         (this.field36244 = new File(parent, s)).mkdirs();
         this.field36245 = new File(this.field36244, "playerdata");

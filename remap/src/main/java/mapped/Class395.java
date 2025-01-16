@@ -113,7 +113,7 @@ public class Class395 extends MinecraftServer implements Class396
             return false;
         }
         this.method1538(new Class6766(this));
-        final long method25122 = Class8349.method27838();
+        final long method25122 = Util.method27838();
         final String field39780 = method25121.field39780;
         final String field39781 = method25121.field39782;
         long nextLong = new Random().nextLong();
@@ -142,7 +142,7 @@ public class Class395 extends MinecraftServer implements Class396
             method25123 = Class9583.method35932(field39781);
         }
         this.method1438(this.method1501(), this.method1501(), nextLong, field39782, (JsonElement)method25123);
-        Class395.field2367.info("Done ({})! For help, type \"help\"", (Object)String.format(Locale.ROOT, "%.3fs", (Class8349.method27838() - method25122) / 1.0E9));
+        Class395.field2367.info("Done ({})! For help, type \"help\"", (Object)String.format(Locale.ROOT, "%.3fs", (Util.method27838() - method25122) / 1.0E9));
         if (method25121.field39785 != null) {
             this.method1583().method31211(Class8878.field37337).method26724(method25121.field39785, this);
         }
@@ -482,7 +482,7 @@ public class Class395 extends MinecraftServer implements Class396
     @Override
     public void method1452() {
         super.method1452();
-        Class8349.method27842();
+        Util.method27842();
     }
     
     @Override

@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 
-public class Class7007 extends Class7006
+public class Class7007 extends RayTraceResult
 {
     private static String[] field27324;
     private final Entity field27325;
@@ -26,7 +26,7 @@ public class Class7007 extends Class7006
     }
     
     @Override
-    public Class2165 method21449() {
-        return Class2165.field12882;
+    public Type getType() {
+        return Type.ENTITY;
     }
 }

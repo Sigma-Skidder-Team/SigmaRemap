@@ -77,7 +77,7 @@ public class Class9111
             }
         }
         else {
-            final long method18176 = Class8349.method27837();
+            final long method18176 = Util.method27837();
             final int method18177 = class6093.method6959(new BlockPos(class6092.method18161())).method9869();
             if (Class9111.field38602 < 0L) {
                 Class9111.field38600 = method18177;

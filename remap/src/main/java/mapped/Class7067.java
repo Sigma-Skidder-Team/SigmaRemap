@@ -369,7 +369,7 @@ public class Class7067 extends Class7065
         field27511 = Class4535.field19969.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27512 = Class4535.field19968.method13527(new Class5130(Class1957.field10667, 0.3f, 0.1f)).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27513 = Class4535.field19958.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
-        field27514 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field27514 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put(Class7067.field27498, Class2108.field12224);
             hashMap.put(Class7067.field27499, Class2108.field12225);
             hashMap.put(Class7067.field27500, Class2108.field12224);
@@ -388,7 +388,7 @@ public class Class7067 extends Class7065
             hashMap.put(Class7067.field27513, Class2108.field12225);
             return;
         });
-        field27515 = Class8349.method27851(Maps.newHashMap(), hashMap2 -> {
+        field27515 = Util.method27851(Maps.newHashMap(), hashMap2 -> {
             hashMap2.put("mineshaft", new Class8530[] { Class7067.field27498 });
             hashMap2.put("village", new Class8530[] { Class7067.field27499 });
             hashMap2.put("stronghold", new Class8530[] { Class7067.field27500 });
@@ -402,7 +402,7 @@ public class Class7067 extends Class7065
             hashMap2.put("pillager_outpost", new Class8530[] { Class7067.field27513 });
             return;
         });
-        field27516 = Class8349.method27851(Maps.newHashMap(), hashMap3 -> {
+        field27516 = Util.method27851(Maps.newHashMap(), hashMap3 -> {
             hashMap3.put(Class7067.field27498, new Class5132(0.004, Class1964.field10718));
             hashMap3.put(Class7067.field27499, new Class5115("village/plains/town_centers", 6));
             hashMap3.put(Class7067.field27500, Class5113.field22059);

@@ -378,7 +378,7 @@ public class Class1849 extends World
     
     public BlockPos method6865(final BlockPos class354) {
         BlockPos class355 = this.method6958(Class2020.field11525, class354);
-        final List<Entity> method6739 = this.method6739((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(class355, new BlockPos(class355.getX(), this.getHeight(), class355.getZ())).method18496(3.0), class356 -> {
+        final List<Entity> method6739 = this.method6739((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(class355, new BlockPos(class355.getX(), this.getHeight(), class355.getZ())).intersect(3.0), class356 -> {
             final boolean b;
             if (class356 != null) {
                 if (!(!class356.method1768())) {
@@ -818,7 +818,7 @@ public class Class1849 extends World
                     continue;
                 }
                 if (this.field10089) {
-                    throw Class8349.method27859(new IllegalStateException("Removing entity while ticking!"));
+                    throw Util.pauseDevMode(new IllegalStateException("Removing entity while ticking!"));
                 }
                 this.field10085.remove(class1863.getEntityId());
                 this.method6898(class1863);
@@ -870,7 +870,7 @@ public class Class1849 extends World
             this.method6898(class399);
             return;
         }
-        throw Class8349.method27859(new IllegalStateException("Removing entity while ticking!"));
+        throw Util.pauseDevMode(new IllegalStateException("Removing entity while ticking!"));
     }
     
     private void method6901(final Entity class399) {

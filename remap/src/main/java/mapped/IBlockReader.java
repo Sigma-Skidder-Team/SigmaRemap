@@ -56,13 +56,13 @@ public interface IBlockReader
     }
     
     @Nullable
-    default BlockRayTraceResult method6988(final Vec3d class5487, final Vec3d class5488, final BlockPos class5489, final VoxelShape class5490, final BlockState class5491) {
-        final BlockRayTraceResult method24550 = class5490.method24550(class5487, class5488, class5489);
+    default BlockRayTraceResult rayTraceBlocks(final Vec3d class5487, final Vec3d class5488, final BlockPos class5489, final VoxelShape class5490, final BlockState class5491) {
+        final BlockRayTraceResult method24550 = class5490.rayTrace(class5487, class5488, class5489);
         if (method24550 != null) {
-            final BlockRayTraceResult method24551 = class5491.method21730(this, class5489).method24550(class5487, class5488, class5489);
+            final BlockRayTraceResult method24551 = class5491.method21730(this, class5489).rayTrace(class5487, class5488, class5489);
             if (method24551 != null) {
-                if (method24551.method21451().subtract(class5487).lengthSquared() < method24550.method21451().subtract(class5487).lengthSquared()) {
-                    return method24550.method21446(method24551.method21448());
+                if (method24551.getHitVec().subtract(class5487).lengthSquared() < method24550.getHitVec().subtract(class5487).lengthSquared()) {
+                    return method24550.withFace(method24551.getFace());
                 }
             }
         }
@@ -75,12 +75,12 @@ public interface IBlockReader
         if (method28308.equals(method28309)) {
             return function.apply(rayTraceContext);
         }
-        final double method28310 = MathHelper.method35701(-1.0E-7, method28309.x, method28308.x);
-        final double method28311 = MathHelper.method35701(-1.0E-7, method28309.y, method28308.y);
-        final double method28312 = MathHelper.method35701(-1.0E-7, method28309.z, method28308.z);
-        final double method28313 = MathHelper.method35701(-1.0E-7, method28308.x, method28309.x);
-        final double method28314 = MathHelper.method35701(-1.0E-7, method28308.y, method28309.y);
-        final double method28315 = MathHelper.method35701(-1.0E-7, method28308.z, method28309.z);
+        final double method28310 = MathHelper.lerp(-1.0E-7, method28309.x, method28308.x);
+        final double method28311 = MathHelper.lerp(-1.0E-7, method28309.y, method28308.y);
+        final double method28312 = MathHelper.lerp(-1.0E-7, method28309.z, method28308.z);
+        final double method28313 = MathHelper.lerp(-1.0E-7, method28308.x, method28309.x);
+        final double method28314 = MathHelper.lerp(-1.0E-7, method28308.y, method28309.y);
+        final double method28315 = MathHelper.lerp(-1.0E-7, method28308.z, method28309.z);
         int method28316 = MathHelper.floor(method28313);
         int method28317 = MathHelper.floor(method28314);
         int method28318 = MathHelper.floor(method28315);

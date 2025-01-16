@@ -406,7 +406,7 @@ public class Class800 extends Class794
         field4287 = EntityDataManager.method33564(Class800.class, Class7709.field30661);
         field4288 = EntityDataManager.method33564(Class800.class, Class7709.field30661);
         field4289 = EntityDataManager.method33564(Class800.class, Class7709.field30654);
-        field4290 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field4290 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put(0, new ResourceLocation("textures/entity/cat/tabby.png"));
             hashMap.put(1, new ResourceLocation("textures/entity/cat/black.png"));
             hashMap.put(2, new ResourceLocation("textures/entity/cat/red.png"));

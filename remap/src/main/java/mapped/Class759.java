@@ -430,7 +430,7 @@ public abstract class Class759 extends LivingEntity
                 if (this.method1768()) {
                     if (!this.field2958) {
                         if (b) {
-                            for (final Class427 class427 : this.world.method7128((Class<? extends Class427>)Class427.class, this.getBoundingBox().method18495(1.0, 0.0, 1.0))) {
+                            for (final Class427 class427 : this.world.method7128((Class<? extends Class427>)Class427.class, this.getBoundingBox().grow(1.0, 0.0, 1.0))) {
                                 if (class427.removed) {
                                     continue;
                                 }

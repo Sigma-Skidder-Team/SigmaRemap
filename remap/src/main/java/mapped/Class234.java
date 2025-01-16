@@ -34,7 +34,7 @@ public enum Class234
     public float field891;
     public float field892;
     public float field893;
-    public Class7006 field894;
+    public RayTraceResult field894;
     public Entity field895;
     
     private Class234(final Item field884, final float field885, final float field886, final float field887) {
@@ -99,7 +99,7 @@ public enum Class234
             final Vec3d class5487 = new Vec3d(this.field888, this.field889, this.field890);
             final Vec3d class5488 = new Vec3d(this.field888 + this.field891, this.field889 + this.field892, this.field890 + this.field893);
             final float n5 = (float)((this.field884 instanceof Class4087) ? 0.3 : 0.25);
-            final List<Entity> method6737 = Class3213.method10130().field4683.method6737(Class3213.method10129().field4684, new AxisAlignedBB(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).method18499(this.field891, this.field892, this.field893).method18495(1.0, 1.0, 1.0), Class9170.field38850.and((Predicate<? super Entity>)new Class166(this, n5, class5487, class5488)));
+            final List<Entity> method6737 = Class3213.method10130().field4683.method6737(Class3213.method10129().field4684, new AxisAlignedBB(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).offset(this.field891, this.field892, this.field893).grow(1.0, 1.0, 1.0), Class9170.field38850.and((Predicate<? super Entity>)new Class166(this, n5, class5487, class5488)));
             if (method6737.size() > 0) {
                 final Iterator<Entity> iterator = method6737.iterator();
                 while (iterator.hasNext()) {
@@ -108,11 +108,11 @@ public enum Class234
                 break;
             }
             final BlockRayTraceResult method6738 = Class3213.method10132().field4683.method6987(new RayTraceContext(class5487, class5488, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, Class3213.method10131().field4684));
-            if (method6738 != null && method6738.method21449() != Class2165.field12880) {
+            if (method6738 != null && method6738.getType() != RayTraceResult.Type.MISS) {
                 this.field894 = method6738;
-                this.field888 = this.field894.method21451().x;
-                this.field889 = this.field894.method21451().y;
-                this.field890 = this.field894.method21451().z;
+                this.field888 = this.field894.getHitVec().x;
+                this.field889 = this.field894.getHitVec().y;
+                this.field890 = this.field894.getHitVec().z;
                 list.add(new Class8797(this.field888, this.field889, this.field890));
                 break;
             }

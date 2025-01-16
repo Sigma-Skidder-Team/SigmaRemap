@@ -130,9 +130,9 @@ public class Class3233 extends Class3167
     
     public double method10205(final AxisAlignedBB class6221) {
         double n = 6.0;
-        class6221.method18499(0.0, -n, 0.0);
+        class6221.offset(0.0, -n, 0.0);
         while (true) {
-            final AxisAlignedBB method18499 = class6221.method18499(0.0, -n, 0.0);
+            final AxisAlignedBB method18499 = class6221.offset(0.0, -n, 0.0);
             if (Class3233.field15514.field4683.method6981(Class3233.field15514.field4684, method18499).count() == 0L) {
                 return n;
             }

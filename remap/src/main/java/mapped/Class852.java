@@ -105,7 +105,7 @@ public class Class852 extends Class759 implements Class762
         array[0] = n5 + MathHelper.method35669(this.field4532[n4][0] - n5) * n2;
         final double n6 = this.field4532[n3][1];
         array[1] = n6 + (this.field4532[n4][1] - n6) * n2;
-        array[2] = MathHelper.method35701(n2, this.field4532[n3][2], this.field4532[n4][2]);
+        array[2] = MathHelper.lerp(n2, this.field4532[n3][2], this.field4532[n4][2]);
         return array;
     }
     
@@ -225,10 +225,10 @@ public class Class852 extends Class759 implements Class762
                 this.method5109(this.field4542, method35650 * -4.5f, 2.0, method35649 * -4.5f);
                 if (!this.world.isRemote) {
                     if (this.field2938 == 0) {
-                        this.method5112(this.world.method6737(this, this.field4541.getBoundingBox().method18495(4.0, 2.0, 4.0).method18499(0.0, -2.0, 0.0), Class9170.field38849));
-                        this.method5112(this.world.method6737(this, this.field4542.getBoundingBox().method18495(4.0, 2.0, 4.0).method18499(0.0, -2.0, 0.0), Class9170.field38849));
-                        this.method5113(this.world.method6737(this, this.field4535.getBoundingBox().method18496(1.0), Class9170.field38849));
-                        this.method5113(this.world.method6737(this, this.field4536.getBoundingBox().method18496(1.0), Class9170.field38849));
+                        this.method5112(this.world.method6737(this, this.field4541.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class9170.field38849));
+                        this.method5112(this.world.method6737(this, this.field4542.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class9170.field38849));
+                        this.method5113(this.world.method6737(this, this.field4535.getBoundingBox().intersect(1.0), Class9170.field38849));
+                        this.method5113(this.world.method6737(this, this.field4536.getBoundingBox().intersect(1.0), Class9170.field38849));
                     }
                 }
                 final float method35651 = MathHelper.sin(this.rotationYaw * 0.017453292f - this.field4547 * 0.01f);
@@ -304,7 +304,7 @@ public class Class852 extends Class759 implements Class762
             }
         }
         if (this.rand.nextInt(10) == 0) {
-            final List<Class858> method7128 = this.world.method7128((Class<? extends Class858>)Class858.class, this.getBoundingBox().method18496(32.0));
+            final List<Class858> method7128 = this.world.method7128((Class<? extends Class858>)Class858.class, this.getBoundingBox().intersect(32.0));
             Class858 field4548 = null;
             double n = Double.MAX_VALUE;
             for (final Class858 class858 : method7128) {

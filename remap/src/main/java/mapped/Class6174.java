@@ -44,12 +44,12 @@ public class Class6174 extends Class6173
         }
         final float n2 = (this.field24964 + n) / 3.0f;
         final float n3 = n2 * n2;
-        final double method35701 = MathHelper.method35701(n, this.field24963.lastTickPosX, this.field24963.getPosX());
-        final double n4 = MathHelper.method35701(n, this.field24963.lastTickPosY, this.field24963.getPosY()) + 0.5;
-        final double method35702 = MathHelper.method35701(n, this.field24963.lastTickPosZ, this.field24963.getPosZ());
-        final double method35703 = MathHelper.method35701(n3, this.field24962.getPosX(), method35701);
-        final double method35704 = MathHelper.method35701(n3, this.field24962.getPosY(), n4);
-        final double method35705 = MathHelper.method35701(n3, this.field24962.getPosZ(), method35702);
+        final double method35701 = MathHelper.lerp(n, this.field24963.lastTickPosX, this.field24963.getPosX());
+        final double n4 = MathHelper.lerp(n, this.field24963.lastTickPosY, this.field24963.getPosY()) + 0.5;
+        final double method35702 = MathHelper.lerp(n, this.field24963.lastTickPosZ, this.field24963.getPosZ());
+        final double method35703 = MathHelper.lerp(n3, this.field24962.getPosX(), method35701);
+        final double method35704 = MathHelper.lerp(n3, this.field24962.getPosY(), n4);
+        final double method35705 = MathHelper.lerp(n3, this.field24962.getPosZ(), method35702);
         final Class7808 method35706 = this.field24961.method11006();
         final Vec3d method35707 = class4151.method18161();
         this.field24965.method28706(this.field24962, method35703 - method35707.getX(), method35704 - method35707.getY(), method35705 - method35707.getZ(), this.field24962.rotationYaw, n, new Class7351(), method35706, this.field24965.method28695(this.field24962, n));

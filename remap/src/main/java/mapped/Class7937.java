@@ -109,7 +109,7 @@ public class Class7937 implements Class7938
                 else {
                     new RuntimeException("Hash check failure for file " + obj + ", see log");
                     final Throwable t;
-                    o2 = Class8349.method27843(t);
+                    o2 = Util.method27843(t);
                 }
                 return o2;
             }).whenComplete((p1, t3) -> {
@@ -207,7 +207,7 @@ public class Class7937 implements Class7938
             message = ex2.getMessage();
         }
         if (message != null) {
-            return (CompletableFuture<Void>)Class8349.method27843(new RuntimeException(String.format("Invalid resourcepack at %s: %s", file, message)));
+            return (CompletableFuture<Void>) Util.method27843(new RuntimeException(String.format("Invalid resourcepack at %s: %s", file, message)));
         }
         Class7937.field32606.info("Applying server pack {}", (Object)file);
         this.field32613 = new Class1922("server", true, () -> new Class1733(file2), (ITextComponent)new Class2259("resourcePack.server.name", new Object[0]), class8545.method28688(), Class2009.method8044(class8545.method28689()), Class2043.field11642, true, method6637);

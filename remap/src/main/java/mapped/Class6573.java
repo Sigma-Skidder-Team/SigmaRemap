@@ -45,7 +45,7 @@ public class Class6573 extends Class6564
                 method16756 = n6;
                 method16757 = n7;
             }
-            this.field26094.method4147().method24669(MathHelper.method35701(0.125, method16755, n5), MathHelper.method35701(0.125, method16756, n6), MathHelper.method35701(0.125, method16757, n7), 10.0f, 40.0f);
+            this.field26094.method4147().method24669(MathHelper.lerp(0.125, method16755, n5), MathHelper.lerp(0.125, method16756, n6), MathHelper.lerp(0.125, method16757, n7), 10.0f, 40.0f);
             Class844.method5066(this.field26094, true);
         }
         else {

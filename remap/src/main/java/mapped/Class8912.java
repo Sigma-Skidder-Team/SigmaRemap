@@ -102,7 +102,7 @@ public class Class8912
             else {
                 new IllegalStateException(String.format("%s is defined in too many tags", class8914));
                 final IllegalStateException ex;
-                throw Class8349.method27859(ex);
+                throw Util.pauseDevMode(ex);
             }
         });
         return class8912;

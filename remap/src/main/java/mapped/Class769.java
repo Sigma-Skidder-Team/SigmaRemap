@@ -68,7 +68,7 @@ public class Class769 extends Class770 implements Class768
     
     @Override
     public AxisAlignedBB method1887() {
-        return this.getBoundingBox().method18495(3.0, 0.0, 3.0);
+        return this.getBoundingBox().grow(3.0, 0.0, 3.0);
     }
     
     @Override

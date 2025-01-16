@@ -399,7 +399,7 @@ public abstract class Class6469
             Class869.method5277();
             final Class869 class5919;
             if (class5919.method5323() != null) {
-                class5919.method5323().method7377(class5918.field23421, Class8349.method27841(), class5919);
+                class5919.method5323().method7377(class5918.field23421, Util.method27841(), class5919);
             }
             return;
         });

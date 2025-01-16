@@ -121,8 +121,8 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
             this.method3669();
             return true;
         }
-        if (Class8349.method27837() - this.field3647 >= 250L) {
-            this.field3647 = Class8349.method27837();
+        if (Util.method27837() - this.field3647 >= 250L) {
+            this.field3647 = Util.method27837();
             return false;
         }
         this.method3669();

@@ -387,7 +387,7 @@ public class Class501 extends TileEntity
     }
     
     private static Random method2586(final long seed) {
-        return (seed != 0L) ? new Random(seed) : new Random(Class8349.method27837());
+        return (seed != 0L) ? new Random(seed) : new Random(Util.method27837());
     }
     
     public boolean method2587(final boolean b) {

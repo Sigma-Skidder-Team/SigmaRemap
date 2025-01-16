@@ -24,7 +24,7 @@ public class Class6460 implements Class6459
     
     @Override
     public void method19317(final Class7859 class7859) {
-        this.field25671 = Class8349.method27837();
+        this.field25671 = Util.method27837();
         this.field25670 = this.field25671;
     }
     
@@ -34,7 +34,7 @@ public class Class6460 implements Class6459
             ++this.field25669;
         }
         final int method19322 = this.method19322();
-        if (Class8349.method27837() > this.field25671) {
+        if (Util.method27837() > this.field25671) {
             this.field25671 += 500L;
             Class6460.field25667.info(new Class2259("menu.preparingSpawn", new Object[] { MathHelper.method35651(method19322, 0, 100) }).getString());
         }
@@ -42,7 +42,7 @@ public class Class6460 implements Class6459
     
     @Override
     public void method19319() {
-        Class6460.field25667.info("Time elapsed: {} ms", (Object)(Class8349.method27837() - this.field25670));
+        Class6460.field25667.info("Time elapsed: {} ms", (Object)(Util.method27837() - this.field25670));
         this.field25671 = Long.MAX_VALUE;
     }
     

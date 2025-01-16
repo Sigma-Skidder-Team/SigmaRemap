@@ -205,7 +205,7 @@ public class EntityType<T extends Entity>
     public static double method23359(final Class1852 class1852, final BlockPos class1853, final boolean b, final AxisAlignedBB class1854) {
         AxisAlignedBB method18494 = new AxisAlignedBB(class1853);
         if (b) {
-            method18494 = method18494.method18494(0.0, -1.0, 0.0);
+            method18494 = method18494.expand(0.0, -1.0, 0.0);
         }
         return 1.0 + VoxelShapes.method24498(Direction.Axis.Y, class1854, class1852.method6980(null, method18494, Collections.emptySet()), b ? -2.0 : -1.0);
     }
@@ -259,7 +259,7 @@ public class EntityType<T extends Entity>
     
     public String method23366() {
         if (this.field29066 == null) {
-            this.field29066 = Class8349.method27836("entity", Registry.field210.getKey(this));
+            this.field29066 = Util.method27836("entity", Registry.field210.getKey(this));
         }
         return this.field29066;
     }
@@ -298,7 +298,7 @@ public class EntityType<T extends Entity>
     }
     
     public static Optional<Entity> method23373(final Class51 class51, final World class52) {
-        return Class8349.method27855(method23377(class51).map(class54 -> class54.method23371(class53)), class56 -> class56.method1757(class55), () -> EntityType.field28956.warn("Skipping Entity with id {}", (Object)class57.method323("id")));
+        return Util.method27855(method23377(class51).map(class54 -> class54.method23371(class53)), class56 -> class56.method1757(class55), () -> EntityType.field28956.warn("Skipping Entity with id {}", (Object)class57.method323("id")));
     }
     
     @Nullable

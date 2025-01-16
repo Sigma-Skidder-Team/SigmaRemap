@@ -38,7 +38,7 @@ public class Class3299 extends Class3167
                 final BlockRayTraceResult method13697 = Class4609.method13697(Class3299.field15514.field4684.rotationYaw, Class3299.field15514.field4684.rotationPitch, this.method9914().method9886("Maximum range"));
                 Vec3i method13698 = null;
                 if (method13697 != null) {
-                    method13698 = method13697.method21447();
+                    method13698 = method13697.getPos();
                 }
                 if (method13698 == null) {
                     return;

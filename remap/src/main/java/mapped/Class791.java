@@ -441,7 +441,7 @@ public class Class791 extends Class789
         final Vec3d method1935 = this.getMotion();
         this.world.method6709(Class8432.field34640, this.getPosX() - (this.method1930() + 1.0f) * 0.5 * MathHelper.sin(this.field2951 * 0.017453292f), this.method1944() - 0.10000000149011612, this.getPosZ() + (this.method1930() + 1.0f) * 0.5 * MathHelper.cos(this.field2951 * 0.017453292f), method1935.x, 0.0, method1935.z);
         this.method1695(Class8520.field35410, 1.0f, 1.0f);
-        for (final Class791 class791 : this.world.method7128((Class<? extends Class791>)Class791.class, this.getBoundingBox().method18496(10.0))) {
+        for (final Class791 class791 : this.world.method7128((Class<? extends Class791>)Class791.class, this.getBoundingBox().intersect(10.0))) {
             if (class791.method2625()) {
                 continue;
             }

@@ -82,7 +82,7 @@ public class Class513 extends PlayerEntity implements Class514
         this.field3054 = -99999999;
         this.field3055 = 60;
         this.field3057 = true;
-        this.field3058 = Class8349.method27837();
+        this.field3058 = Util.method27837();
         this.field3067 = Class353.method1088(0, 0, 0);
         field3041.field33248 = this;
         this.field3041 = field3041;
@@ -1053,7 +1053,7 @@ public class Class513 extends PlayerEntity implements Class514
     }
     
     public void method2946() {
-        this.field3058 = Class8349.method27837();
+        this.field3058 = Util.method27837();
     }
     
     public Class7473 method2947() {

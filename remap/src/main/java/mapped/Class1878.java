@@ -54,7 +54,7 @@ public class Class1878 implements Class1851
             this.field10228 = new BiomeManager(this, WorldInfo.byHashing(this.field10220), this.field10224.getType().getMagnifier());
             return;
         }
-        throw Class8349.method27859(new IllegalStateException("Cache size is not a square."));
+        throw Util.pauseDevMode(new IllegalStateException("Cache size is not a square."));
     }
     
     public int method7150() {
@@ -92,9 +92,9 @@ public class Class1878 implements Class1851
         Class1878.field10214.error("Requested chunk : {} {}", (Object)i, (Object)j);
         Class1878.field10214.error("Region bounds : {} {} | {} {}", (Object)class9314.method7019().field32290, (Object)class9314.method7019().field32291, (Object)class9315.method7019().field32290, (Object)class9315.method7019().field32291);
         if (class9313 == null) {
-            throw Class8349.method27859(new RuntimeException(String.format("We are asking a region for a chunk out of bound | %s %s", i, j)));
+            throw Util.pauseDevMode(new RuntimeException(String.format("We are asking a region for a chunk out of bound | %s %s", i, j)));
         }
-        throw Class8349.method27859(new RuntimeException(String.format("Chunk is not of correct status. Expecting %s, got %s | %s %s", class9312, class9313.method7027(), i, j)));
+        throw Util.pauseDevMode(new RuntimeException(String.format("Chunk is not of correct status. Expecting %s, got %s | %s %s", class9312, class9313.method7027(), i, j)));
     }
     
     @Override

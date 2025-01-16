@@ -102,7 +102,7 @@ public class Class9130
             catch (final IOException cause) {
                 throw new CompletionException(cause);
             }
-        }, Class8349.method27841()));
+        }, Util.method27841()));
     }
     
     public CompletableFuture<Class1742> method33126(final ResourceLocation class1932) {
@@ -113,7 +113,7 @@ public class Class9130
             catch (final IOException cause) {
                 throw new CompletionException(cause);
             }
-        }, Class8349.method27841());
+        }, Util.method27841());
     }
     
     public void method33127() {

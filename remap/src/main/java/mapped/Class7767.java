@@ -34,7 +34,7 @@ public class Class7767<T extends Class6866>
     }
     
     public boolean method24873(final int n, final int n2) {
-        final long method27837 = Class8349.method27837();
+        final long method27837 = Util.method27837();
         if (this.field31764 == -1L) {
             this.field31764 = method27837;
             this.field31766.method8381(Class690.method3854(this.field31767).method5299());

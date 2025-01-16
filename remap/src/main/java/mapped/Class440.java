@@ -92,19 +92,19 @@ public class Class440 extends Class456 implements Class441, Class439
     
     public AxisAlignedBB method2236(final Direction class179) {
         final float method2251 = this.method2251(1.0f);
-        return VoxelShapes.method24487().method24537().method18494(0.5f * method2251 * class179.getXOffset(), 0.5f * method2251 * class179.getYOffset(), 0.5f * method2251 * class179.getZOffset());
+        return VoxelShapes.fullCube().getBoundingBox().expand(0.5f * method2251 * class179.getXOffset(), 0.5f * method2251 * class179.getYOffset(), 0.5f * method2251 * class179.getZOffset());
     }
     
     private AxisAlignedBB method2237(final Direction class179) {
         final Direction method782 = class179.getOpposite();
-        return this.method2236(class179).method18492(method782.getXOffset(), method782.getYOffset(), method782.getZOffset());
+        return this.method2236(class179).contract(method782.getXOffset(), method782.getYOffset(), method782.getZOffset());
     }
     
     private void method2238() {
         final Class7096 method6701 = this.field2656.getBlockState(this.getPos());
         if (method6701.method21696() instanceof Class3942) {
             final Direction class179 = method6701.method21772(Class3942.field17832);
-            final AxisAlignedBB method6702 = this.method2237(class179).method18500(this.field2657);
+            final AxisAlignedBB method6702 = this.method2237(class179).offset(this.field2657);
             final List<Entity> method6703 = this.field2656.method7127(null, method6702);
             if (!method6703.isEmpty()) {
                 for (int i = 0; i < method6703.size(); ++i) {

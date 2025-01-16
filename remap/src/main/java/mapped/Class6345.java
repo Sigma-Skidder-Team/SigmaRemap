@@ -151,7 +151,7 @@ public class Class6345 extends Class6343<Class7068>
     }
     
     static {
-        field25376 = Class8349.method27851(new float[25], array -> {
+        field25376 = Util.method27851(new float[25], array -> {
             int i = 0;
             while (i <= 2) {
                 int j = 0;

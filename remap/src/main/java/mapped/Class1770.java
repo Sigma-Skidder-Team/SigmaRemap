@@ -33,7 +33,7 @@ public class Class1770 extends Class1767
     
     @Override
     public void method5873(final Class1663 class1663, final Class6582 class1664, final ResourceLocation class1665, final Executor executor) {
-        (this.field9844 = CompletableFuture.supplyAsync(() -> Class1674.method5891(class1666, this.field9830), Class8349.method27841())).thenRunAsync(() -> class1667.method5851(this.field9830, this), method6317(executor));
+        (this.field9844 = CompletableFuture.supplyAsync(() -> Class1674.method5891(class1666, this.field9830), Util.method27841())).thenRunAsync(() -> class1667.method5851(this.field9830, this), method6317(executor));
     }
     
     private static Executor method6317(final Executor executor) {

@@ -118,7 +118,7 @@ public class Class406 extends Entity implements Class407, Class401
             }
         }
         final Vec3d method1793 = this.getMotion();
-        final Class7006 method1794 = Class7476.method23093(this, this.getBoundingBox().method18493(method1793).method18496(1.0), class512 -> {
+        final RayTraceResult method1794 = Class7476.method23093(this, this.getBoundingBox().expand(method1793).intersect(1.0), class512 -> {
             final boolean b;
             if (!class512.isSpectator()) {
                 if (!(!class512.method1768())) {
@@ -174,17 +174,17 @@ public class Class406 extends Entity implements Class407, Class401
         this.method1652();
     }
     
-    public void method2000(final Class7006 class7006) {
-        if (class7006.method21449() == Class2165.field12882 && !this.world.isRemote) {
+    public void method2000(final RayTraceResult class7006) {
+        if (class7006.getType() == RayTraceResult.Type.ENTITY && !this.world.isRemote) {
             this.method1999();
         }
         else if (this.collided) {
             BlockPos class7007;
-            if (class7006.method21449() != Class2165.field12881) {
+            if (class7006.getType() != RayTraceResult.Type.BLOCK) {
                 class7007 = new BlockPos(this);
             }
             else {
-                class7007 = new BlockPos(((BlockRayTraceResult)class7006).method21447());
+                class7007 = new BlockPos(((BlockRayTraceResult)class7006).getPos());
             }
             this.world.getBlockState(class7007).method21741(this.world, class7007, this);
             if (this.method2001()) {
@@ -215,7 +215,7 @@ public class Class406 extends Entity implements Class407, Class401
                 this.field2499.attackEntityFrom(DamageSource.field32581, 5.0f + class8323.size() * 2);
             }
             final Vec3d method1934 = this.method1934();
-            for (final LivingEntity class8324 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, this.getBoundingBox().method18496(5.0))) {
+            for (final LivingEntity class8324 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, this.getBoundingBox().intersect(5.0))) {
                 if (class8324 == this.field2499) {
                     continue;
                 }
@@ -224,7 +224,7 @@ public class Class406 extends Entity implements Class407, Class401
                 }
                 int n2 = 0;
                 for (int i = 0; i < 2; ++i) {
-                    if (this.world.rayTraceBlocks(new RayTraceContext(method1934, new Vec3d(class8324.getPosX(), class8324.method1942(0.5 * i), class8324.getPosZ()), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this)).method21449() == Class2165.field12880) {
+                    if (this.world.rayTraceBlocks(new RayTraceContext(method1934, new Vec3d(class8324.getPosX(), class8324.method1942(0.5 * i), class8324.getPosZ()), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this)).getType() == RayTraceResult.Type.MISS) {
                         n2 = 1;
                         break;
                     }

@@ -970,7 +970,7 @@ public class Class756 extends Class754
                         }
                         final Vec3d method1944 = method1935.add(method1941.scale(Math.max(method1936 * 7.0f, 1.0f / method1940)));
                         final float method1945 = this.method1930();
-                        final AxisAlignedBB method1946 = new AxisAlignedBB(method1934, method1944.add(0.0, this.method1931(), 0.0)).method18495(method1945, 0.0, method1945);
+                        final AxisAlignedBB method1946 = new AxisAlignedBB(method1934, method1944.add(0.0, this.method1931(), 0.0)).grow(method1945, 0.0, method1945);
                         final Vec3d method1947 = method1934.add(0.0, 0.5099999904632568, 0.0);
                         final Vec3d method1948 = method1944.add(0.0, 0.5099999904632568, 0.0);
                         final Vec3d method1949 = method1941.crossProduct(new Vec3d(0.0, 1.0, 0.0)).scale(method1945 * 0.5f);
@@ -982,16 +982,16 @@ public class Class756 extends Class754
                         float n7 = Float.MIN_VALUE;
                         while (iterator.hasNext()) {
                             final AxisAlignedBB class5490 = iterator.next();
-                            if (!class5490.method18504(method1950, method1951) && !class5490.method18504(method1952, method1953)) {
+                            if (!class5490.intersects(method1950, method1951) && !class5490.intersects(method1952, method1953)) {
                                 continue;
                             }
                             n7 = (float)class5490.maxY;
-                            final BlockPos class5491 = new BlockPos(class5490.method18517());
+                            final BlockPos class5491 = new BlockPos(class5490.getCenter());
                             for (int n8 = 1; n8 < n6; ++n8) {
                                 final BlockPos method1954 = class5491.method1138(n8);
                                 final VoxelShape method1955;
                                 if (!(method1955 = this.world.getBlockState(method1954).method21728(this.world, method1954, method1943)).isEmpty()) {
-                                    n7 = (float)method1955.method24536(Direction.Axis.Y) + method1954.getY();
+                                    n7 = (float)method1955.getEnd(Direction.Axis.Y) + method1954.getY();
                                     if (n7 - this.getPosY() > n6) {
                                         return;
                                     }

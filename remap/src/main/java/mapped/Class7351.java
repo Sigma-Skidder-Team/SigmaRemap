@@ -21,7 +21,7 @@ public class Class7351
     
     public Class7351() {
         this.field28370 = new ArrayDeque<Class8996>();
-        this.field28371 = Class8349.method27851(Queues.newArrayDeque(), arrayDeque -> {
+        this.field28371 = Util.method27851(Queues.newArrayDeque(), arrayDeque -> {
             final Matrix4f class6789 = new Matrix4f();
             class6789.method20748();
             final Matrix3f class6790 = new Matrix3f();

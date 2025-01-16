@@ -1625,8 +1625,8 @@ public class Class8933
         field37556 = new Class8766(null);
         field37557 = new Class7656(null);
         field37558 = Class9078.method32716(4);
-        field37559 = Class8349.method27851(new Vector3f(0.2f, 1.0f, -0.7f), Vector3f::normalize);
-        field37560 = Class8349.method27851(new Vector3f(-0.2f, 1.0f, 0.7f), Vector3f::normalize);
+        field37559 = Util.method27851(new Vector3f(0.2f, 1.0f, -0.7f), Vector3f::normalize);
+        field37560 = Util.method27851(new Vector3f(-0.2f, 1.0f, 0.7f), Vector3f::normalize);
         field37562 = IntStream.range(0, 32).mapToObj(p0 -> new Class8887(null)).toArray(Class8887[]::new);
         Class8933.field37563 = 7425;
         field37564 = new Class8824(32826);

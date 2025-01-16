@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import com.google.common.collect.Maps;
-import java.util.HashMap;
+
 import java.util.Objects;
 import java.util.function.Supplier;
 import java.util.Iterator;
@@ -181,7 +181,7 @@ public class Class350 implements Comparable<Class350>
         field2154 = Maps.newHashMap();
         field2155 = Maps.newHashMap();
         field2156 = Sets.newHashSet();
-        field2157 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field2157 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put("key.categories.movement", 1);
             hashMap.put("key.categories.gameplay", 2);
             hashMap.put("key.categories.inventory", 3);

@@ -163,7 +163,7 @@ public class Item implements Class3832
     
     public String method11716() {
         if (this.field17370 == null) {
-            this.field17370 = Class8349.method27836("item", Registry.field211.getKey(this));
+            this.field17370 = Util.method27836("item", Registry.field211.getKey(this));
         }
         return this.field17370;
     }
@@ -246,7 +246,7 @@ public class Item implements Class3832
         return this.method11708() == 1 && this.method11710();
     }
     
-    public static Class7006 method11733(final World class1847, final PlayerEntity class1848, final RayTraceContext.FluidMode class1849) {
+    public static RayTraceResult method11733(final World class1847, final PlayerEntity class1848, final RayTraceContext.FluidMode class1849) {
         final float field2400 = class1848.rotationPitch;
         final float field2401 = class1848.rotationYaw;
         final Vec3d method1747 = class1848.method1747(1.0f);

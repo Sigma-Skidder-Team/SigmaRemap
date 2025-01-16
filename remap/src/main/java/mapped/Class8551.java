@@ -262,12 +262,12 @@ public class Class8551
         final float n2 = class7353.method1930() / 2.0f;
         this.method28708(class7351, class7352, class7353, 1.0f, 1.0f, 1.0f);
         if (class7353 instanceof Class852) {
-            final double n3 = class7353.getPosX() - MathHelper.method35701(n, class7353.lastTickPosX, class7353.getPosX());
-            final double n4 = class7353.getPosY() - MathHelper.method35701(n, class7353.lastTickPosY, class7353.getPosY());
-            final double n5 = class7353.getPosZ() - MathHelper.method35701(n, class7353.lastTickPosZ, class7353.getPosZ());
+            final double n3 = class7353.getPosX() - MathHelper.lerp(n, class7353.lastTickPosX, class7353.getPosX());
+            final double n4 = class7353.getPosY() - MathHelper.lerp(n, class7353.lastTickPosY, class7353.getPosY());
+            final double n5 = class7353.getPosZ() - MathHelper.lerp(n, class7353.lastTickPosZ, class7353.getPosZ());
             for (final Class859 class7354 : ((Class852)class7353).method5123()) {
                 class7351.method22567();
-                class7351.method22564(n3 + MathHelper.method35701(n, class7354.lastTickPosX, class7354.getPosX()), n4 + MathHelper.method35701(n, class7354.lastTickPosY, class7354.getPosY()), n5 + MathHelper.method35701(n, class7354.lastTickPosZ, class7354.getPosZ()));
+                class7351.method22564(n3 + MathHelper.lerp(n, class7354.lastTickPosX, class7354.getPosX()), n4 + MathHelper.lerp(n, class7354.lastTickPosY, class7354.getPosY()), n5 + MathHelper.lerp(n, class7354.lastTickPosZ, class7354.getPosZ()));
                 this.method28708(class7351, class7352, class7354, 0.25f, 1.0f, 0.0f);
                 class7351.method22568();
             }
@@ -282,7 +282,7 @@ public class Class8551
     }
     
     private void method28708(final Class7351 class7351, final Class4150 class7352, final Entity class7353, final float n, final float n2, final float n3) {
-        Class1656.method5731(class7351, class7352, class7353.getBoundingBox().method18499(-class7353.getPosX(), -class7353.getPosY(), -class7353.getPosZ()), n, n2, n3, 1.0f);
+        Class1656.method5731(class7351, class7352, class7353.getBoundingBox().offset(-class7353.getPosX(), -class7353.getPosY(), -class7353.getPosZ()), n, n2, n3, 1.0f);
     }
     
     private void method28709(final Class7351 class7351, final Class7807 class7352, final Entity class7353) {
@@ -345,9 +345,9 @@ public class Class8551
                     n4 = n3 * 0.5f;
                 }
             }
-            final double method35701 = MathHelper.method35701(n2, class7353.lastTickPosX, class7353.getPosX());
-            final double method35702 = MathHelper.method35701(n2, class7353.lastTickPosY, class7353.getPosY());
-            final double method35703 = MathHelper.method35701(n2, class7353.lastTickPosZ, class7353.getPosZ());
+            final double method35701 = MathHelper.lerp(n2, class7353.lastTickPosX, class7353.getPosX());
+            final double method35702 = MathHelper.lerp(n2, class7353.lastTickPosY, class7353.getPosY());
+            final double method35703 = MathHelper.lerp(n2, class7353.lastTickPosZ, class7353.getPosZ());
             final int method35704 = MathHelper.floor(method35701 - n4);
             final int method35705 = MathHelper.floor(method35701 + n4);
             final int method35706 = MathHelper.floor(method35702 - n4);
@@ -376,7 +376,7 @@ public class Class8551
                             if (n6 > 1.0f) {
                                 n6 = 1.0f;
                             }
-                            final AxisAlignedBB method1142 = method1141.method24537();
+                            final AxisAlignedBB method1142 = method1141.getBoundingBox();
                             final double n7 = class8999.getX() + method1142.minX;
                             final double n8 = class8999.getX() + method1142.maxX;
                             final double n9 = class8999.getY() + method1142.minY;

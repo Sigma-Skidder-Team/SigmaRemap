@@ -96,7 +96,7 @@ public class Class7473 extends Class7474
                 final Class51 method23081 = method23080.method327("stats");
                 for (final String s2 : method23081.method293()) {
                     if (method23081.method316(s2, 10)) {
-                        Class8349.method27855(Registry.field238.method506(new ResourceLocation(s2)), class52 -> {
+                        Util.method27855(Registry.field238.method506(new ResourceLocation(s2)), class52 -> {
                             class51.method327(s3);
                             final Class51 class53;
                             class53.method293().iterator();
@@ -107,7 +107,7 @@ public class Class7473 extends Class7474
                                     Class7473.field28865.warn("Invalid statistic value in {}: Don't know what {} is for key {}", (Object)this.field28867, (Object)class53.method313(s4), (Object)s4);
                                 }
                                 else {
-                                    Class8349.method27855(this.method23078((Class2248<Object>)class52, s4), class55 -> this.field28871.put((Object)class55, class54.method319(s5)), () -> Class7473.field28865.warn("Invalid statistic in {}: Don't know what {} is", (Object)this.field28867, (Object)s6));
+                                    Util.method27855(this.method23078((Class2248<Object>)class52, s4), class55 -> this.field28871.put((Object)class55, class54.method319(s5)), () -> Class7473.field28865.warn("Invalid statistic in {}: Don't know what {} is", (Object)this.field28867, (Object)s6));
                                 }
                             }
                             return;

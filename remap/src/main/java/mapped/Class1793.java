@@ -393,7 +393,7 @@ public class Class1793 implements Class1662
             final int method6702 = class354.getX();
             final int method6703 = class354.getY();
             final int method6704 = class354.getZ();
-            final AxisAlignedBB method6705 = method6701.getShape(this.field9923, class354).method24537();
+            final AxisAlignedBB method6705 = method6701.getShape(this.field9923, class354).getBoundingBox();
             double n = method6702 + this.field9927.nextDouble() * (method6705.maxX - method6705.minX - 0.20000000298023224) + 0.10000000149011612 + method6705.minX;
             double n2 = method6703 + this.field9927.nextDouble() * (method6705.maxY - method6705.minY - 0.20000000298023224) + 0.10000000149011612 + method6705.minY;
             double n3 = method6704 + this.field9927.nextDouble() * (method6705.maxZ - method6705.minZ - 0.20000000298023224) + 0.10000000149011612 + method6705.minZ;
@@ -447,7 +447,7 @@ public class Class1793 implements Class1662
         final BlockState method6701 = this.field9923.getBlockState(class354);
         if (method6701 != null) {
             if (!Class9570.method35820(method6701, Class9570.field41242, this.field9923, class355, this)) {
-                this.method6487(class354, class355.method21448());
+                this.method6487(class354, class355.getFace());
             }
         }
     }

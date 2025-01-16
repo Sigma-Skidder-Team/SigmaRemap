@@ -35,8 +35,8 @@ public class Class689 extends Class565
     private static final Map<Class2020, String> field3791;
     private final Class869 field3792;
     private final Class1844 field3793;
-    private Class7006 field3794;
-    private Class7006 field3795;
+    private RayTraceResult field3794;
+    private RayTraceResult field3795;
     private Class7859 field3796;
     private Class1862 field3797;
     private CompletableFuture<Class1862> field3798;
@@ -296,12 +296,12 @@ public class Class689 extends Class565
         if (method5298 != null) {
             arrayList.add("Shader: " + method5298.method7248());
         }
-        if (this.field3794.method21449() == Class2165.field12881) {
-            final BlockPos method5299 = ((BlockRayTraceResult)this.field3794).method21447();
+        if (this.field3794.getType() == RayTraceResult.Type.BLOCK) {
+            final BlockPos method5299 = ((BlockRayTraceResult)this.field3794).getPos();
             arrayList.add(String.format("Looking at block: %d %d %d", method5299.getX(), method5299.getY(), method5299.getZ()));
         }
-        if (this.field3795.method21449() == Class2165.field12881) {
-            final BlockPos method5300 = ((BlockRayTraceResult)this.field3795).method21447();
+        if (this.field3795.getType() == RayTraceResult.Type.BLOCK) {
+            final BlockPos method5300 = ((BlockRayTraceResult)this.field3795).getPos();
             arrayList.add(String.format("Looking at liquid: %d %d %d", method5300.getX(), method5300.getY(), method5300.getZ()));
         }
         arrayList.add(this.field3792.method5299().method6436());
@@ -365,8 +365,8 @@ public class Class689 extends Class565
             }
         }
         if (!this.field3792.method5317()) {
-            if (this.field3794.method21449() == Class2165.field12881) {
-                final BlockState method6701 = this.field3792.field4683.getBlockState(((BlockRayTraceResult)this.field3794).method21447());
+            if (this.field3794.getType() == RayTraceResult.Type.BLOCK) {
+                final BlockState method6701 = this.field3792.field4683.getBlockState(((BlockRayTraceResult)this.field3794).getPos());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Block");
                 arrayList.add(String.valueOf(Registry.BLOCK.getKey(method6701.getBlock())));
@@ -386,8 +386,8 @@ public class Class689 extends Class565
                     arrayList.add("#" + iterator3.next());
                 }
             }
-            if (this.field3795.method21449() == Class2165.field12881) {
-                final IFluidState method6703 = this.field3792.field4683.getFluidState(((BlockRayTraceResult)this.field3795).method21447());
+            if (this.field3795.getType() == RayTraceResult.Type.BLOCK) {
+                final IFluidState method6703 = this.field3792.field4683.getFluidState(((BlockRayTraceResult)this.field3795).getPos());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Fluid");
                 arrayList.add(String.valueOf(Registry.FLUID.getKey(method6703.getFluid())));
@@ -424,7 +424,7 @@ public class Class689 extends Class565
     private String method3838(final Map.Entry<IProperty<?>, Comparable<?>> entry) {
         final IProperty class7111 = entry.getKey();
         final Comparable comparable = entry.getValue();
-        String str = Class8349.method27835((IProperty<Comparable>)class7111, comparable);
+        String str = Util.method27835((IProperty<Comparable>)class7111, comparable);
         if (!Boolean.TRUE.equals(comparable)) {
             if (Boolean.FALSE.equals(comparable)) {
                 str = TextFormatting.RED + str;
@@ -530,7 +530,7 @@ public class Class689 extends Class565
     }
     
     static {
-        field3791 = Class8349.method27851((EnumMap)new EnumMap(Class2020.class), enumMap -> {
+        field3791 = Util.method27851((EnumMap)new EnumMap(Class2020.class), enumMap -> {
             enumMap.put(Class2020.field11521, "SW");
             enumMap.put(Class2020.field11522, "S");
             enumMap.put(Class2020.field11523, "OW");

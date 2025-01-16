@@ -286,7 +286,7 @@ public class Class1909 extends AbstractChunkProvider
                 class9314 = this.method7423(method25422);
                 method25423.endSection();
                 if (this.method7429(class9314, n3)) {
-                    throw Class8349.method27859(new IllegalStateException("No chunk holder after ticket has been added"));
+                    throw Util.pauseDevMode(new IllegalStateException("No chunk holder after ticket has been added"));
                 }
             }
         }

@@ -84,7 +84,7 @@ public class Class3362 extends Class3355
     }
     
     private List<Entity> method10653() {
-        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.method18495(9.0, 9.0, 9.0), Class9170.field38850.and((Predicate<? super Entity>)new Class167(this)));
+        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(9.0, 9.0, 9.0), Class9170.field38850.and((Predicate<? super Entity>)new Class167(this)));
     }
     
     private List<Class7014> method10654(final Entity class399) {
@@ -141,14 +141,14 @@ public class Class3362 extends Class3355
             if (Class3362.field15514.field4683.getBlockState(class400.method1137()).method21696() != Class7521.field29147) {
                 continue;
             }
-            final AxisAlignedBB method10659 = new AxisAlignedBB(class400).method18495(0.5, 0.5, 0.5).method18499(0.0, 1.5, 0.0);
+            final AxisAlignedBB method10659 = new AxisAlignedBB(class400).grow(0.5, 0.5, 0.5).offset(0.0, 1.5, 0.0);
             for (final Entity class401 : method10657) {
                 final AxisAlignedBB method10660 = class401.getBoundingBox();
                 final AxisAlignedBB class402 = new AxisAlignedBB(class400.method1137());
-                if (class401 instanceof Class858 && method10660.method18502(method10659)) {
+                if (class401 instanceof Class858 && method10660.intersects(method10659)) {
                     continue Label_0068;
                 }
-                if (!method10660.method18502(class402)) {
+                if (!method10660.intersects(class402)) {
                     continue;
                 }
                 continue Label_0068;
@@ -160,12 +160,12 @@ public class Class3362 extends Class3355
     
     public List<Entity> method10657() {
         final float method9886 = this.method9886("Reach");
-        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.method18495(method9886, method9886, method9886), Class9170.field38850.and((Predicate<? super Entity>)new Class164(this, method9886)));
+        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(method9886, method9886, method9886), Class9170.field38850.and((Predicate<? super Entity>)new Class164(this, method9886)));
     }
     
     private List<Entity> method10658() {
         final float n = this.method9886("Reach") + 1.0f;
-        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.method18495(n, n, n), Class9170.field38850.and((Predicate<? super Entity>)new Class165(this, n)));
+        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(n, n, n), Class9170.field38850.and((Predicate<? super Entity>)new Class165(this, n)));
     }
     
     private void method10659(final Class5744 class5744) {
@@ -216,7 +216,7 @@ public class Class3362 extends Class3355
             for (final Class7014 field16011 : method10654) {
                 final float[] method10655 = Class4609.method13672(field16011.field27346, Direction.UP);
                 final BlockRayTraceResult method10656 = Class4609.method13697(method10655[0], method10655[1], 5.0f);
-                if (!field16011.field27346.equals(method10656.method21447())) {
+                if (!field16011.field27346.equals(method10656.getPos())) {
                     continue;
                 }
                 this.field16012 = method10656;

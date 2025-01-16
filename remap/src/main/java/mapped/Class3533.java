@@ -21,7 +21,7 @@ public class Class3533 extends Class3531
     
     @Override
     public boolean method11013() {
-        return super.method11013() && Class771.method4273(this.field16567).nextInt(8) + 1 > this.field16567.world.method7142((Class<? extends LivingEntity>)Class843.class, this.field16566, (LivingEntity)this.field16567, this.field16567.getBoundingBox().method18496(16.0)).size();
+        return super.method11013() && Class771.method4273(this.field16567).nextInt(8) + 1 > this.field16567.world.method7142((Class<? extends LivingEntity>)Class843.class, this.field16566, (LivingEntity)this.field16567, this.field16567.getBoundingBox().intersect(16.0)).size();
     }
     
     @Override

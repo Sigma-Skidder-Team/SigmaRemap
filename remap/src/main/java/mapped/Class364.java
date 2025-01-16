@@ -74,7 +74,7 @@ public class Class364 implements IDynamicSerializable
             return true;
         }
         if (!method1260.equals(class378.method1260())) {
-            throw Class8349.method27859(new IllegalStateException("POI data mismatch: already registered at " + method1259));
+            throw Util.pauseDevMode(new IllegalStateException("POI data mismatch: already registered at " + method1259));
         }
         return false;
     }
@@ -98,7 +98,7 @@ public class Class364 implements IDynamicSerializable
             this.field2196.run();
             return method1256;
         }
-        throw Class8349.method27859(new IllegalStateException("POI never registered at " + obj));
+        throw Util.pauseDevMode(new IllegalStateException("POI never registered at " + obj));
     }
     
     public boolean method1179(final BlockPos class354, final Predicate<Class8912> predicate) {

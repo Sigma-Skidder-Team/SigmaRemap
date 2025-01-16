@@ -116,7 +116,7 @@ public class Class779 extends Class776
         super.method2736();
         if (this.method1768()) {
             if (!this.method2722()) {
-                this.method2710(Class8107.field33408).method23941(MathHelper.method35701(0.1, this.method2710(Class8107.field33408).method23940(), (this.method4152() == null) ? 0.3 : 0.35));
+                this.method2710(Class8107.field33408).method23941(MathHelper.lerp(0.1, this.method2710(Class8107.field33408).method23940(), (this.method4152() == null) ? 0.3 : 0.35));
             }
             else {
                 this.method2710(Class8107.field33408).method23941(0.0);
@@ -124,7 +124,7 @@ public class Class779 extends Class776
             if (this.collidedHorizontally) {
                 if (this.world.method6765().method31216(Class8878.field37316)) {
                     boolean b = false;
-                    final AxisAlignedBB method18496 = this.getBoundingBox().method18496(0.2);
+                    final AxisAlignedBB method18496 = this.getBoundingBox().intersect(0.2);
                     for (final BlockPos class354 : BlockPos.getAllInBoxMutable(MathHelper.floor(method18496.minX), MathHelper.floor(method18496.minY), MathHelper.floor(method18496.minZ), MathHelper.floor(method18496.maxX), MathHelper.floor(method18496.maxY), MathHelper.floor(method18496.maxZ))) {
                         if (!(this.world.getBlockState(class354).method21696() instanceof Class3972)) {
                             continue;
@@ -201,13 +201,13 @@ public class Class779 extends Class776
     
     private void method4322() {
         if (this.method1768()) {
-            for (final Entity class399 : this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().method18496(4.0), (Predicate<? super Entity>)Class779.field4185)) {
+            for (final Entity class399 : this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().intersect(4.0), (Predicate<? super Entity>)Class779.field4185)) {
                 if (!(class399 instanceof Class772)) {
                     class399.attackEntityFrom(DamageSource.method25693(this), 6.0f);
                 }
                 this.method4323(class399);
             }
-            final Vec3d method18517 = this.getBoundingBox().method18517();
+            final Vec3d method18517 = this.getBoundingBox().getCenter();
             for (int i = 0; i < 40; ++i) {
                 this.world.method6709(Class8432.field34636, method18517.x, method18517.y, method18517.z, this.rand.nextGaussian() * 0.2, this.rand.nextGaussian() * 0.2, this.rand.nextGaussian() * 0.2);
             }

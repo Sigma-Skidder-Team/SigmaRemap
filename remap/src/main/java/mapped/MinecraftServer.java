@@ -152,7 +152,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
     
     public MinecraftServer(final File field2298, final Proxy field2299, final DataFixer field2300, final Class7788 field2301, final YggdrasilAuthenticationService field2302, final MinecraftSessionService field2303, final GameProfileRepository field2304, final Class8608 field2305, final Class6906 field2306, final String field2307) {
         super("Server");
-        this.field2297 = new Class9037("server", this, Class8349.method27837());
+        this.field2297 = new Class9037("server", this, Util.method27837());
         this.field2299 = Lists.newArrayList();
         this.field2300 = new Class5029(this::method1545);
         this.field2303 = new Class7787();
@@ -163,8 +163,8 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         this.field2323 = new long[100];
         this.field2330 = "";
         this.field2331 = "";
-        this.field2342 = Class8349.method27851(new Thread(this, "Server thread"), thread -> thread.setUncaughtExceptionHandler((p0, t2) -> MinecraftServer.field2292.error((Object)t2)));
-        this.field2343 = Class8349.method27837();
+        this.field2342 = Util.method27851(new Thread(this, "Server thread"), thread -> thread.setUncaughtExceptionHandler((p0, t2) -> MinecraftServer.field2292.error((Object)t2)));
+        this.field2343 = Util.method27837();
         this.field2347 = new Class6581(Class346.field2138, this.field2342);
         this.field2348 = new Class1920<Class1921>(Class1921::new);
         this.field2351 = new Class1780();
@@ -193,7 +193,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         this.field2347.method19930(this.field2357);
         this.field2347.method19930(this.field2359);
         this.field2347.method19930(this.field2358);
-        this.field2365 = Class8349.method27841();
+        this.field2365 = Util.method27841();
         this.field2326 = field2307;
     }
     
@@ -360,13 +360,13 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         class6459.method19317(new Class7859(method1482));
         final Class1909 method1483 = method1481.method6904();
         method1483.method7422().method7263(500);
-        this.field2343 = Class8349.method27837();
+        this.field2343 = Util.method27837();
         method1483.method7441(Class9105.field38565, new Class7859(method1482), 11, Class315.field1875);
         while (method1483.method7424() != 441) {
-            this.field2343 = Class8349.method27837() + 10L;
+            this.field2343 = Util.method27837() + 10L;
             this.method1458();
         }
-        this.field2343 = Class8349.method27837() + 10L;
+        this.field2343 = Util.method27837() + 10L;
         this.method1458();
         for (final DimensionType class6460 : DimensionType.method1269()) {
             final Class6358 class6461 = this.method1481(class6460).method6918().method27209(Class6358::new, "chunks");
@@ -379,7 +379,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
                 method1484.method6904().method7407(new Class7859(iterator2.nextLong()), true);
             }
         }
-        this.field2343 = Class8349.method27837() + 10L;
+        this.field2343 = Util.method27837() + 10L;
         this.method1458();
         class6459.method19319();
         method1483.method7422().method7263(5);
@@ -499,12 +499,12 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
             try {
                 Label_0291: {
                     if (this.method1435()) {
-                        this.field2343 = Class8349.method27837();
+                        this.field2343 = Util.method27837();
                         this.field2303.method24991(new StringTextComponent(this.field2320));
                         this.field2303.method24995(new Class9315(Class9528.method35579().getName(), Class9528.method35579().getProtocolVersion()));
                         this.method1463(this.field2303);
                         while (this.field2310) {
-                            final long l = Class8349.method27837() - this.field2343;
+                            final long l = Util.method27837() - this.field2343;
                             if (l > 2000L && this.field2343 - this.field2333 >= 15000L) {
                                 final long i = l / 50L;
                                 MinecraftServer.field2292.warn("Can't keep up! Is the server overloaded? Running {}ms or {} ticks behind", (Object)l, (Object)i);
@@ -521,7 +521,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
                             this.method1469(this::method1457);
                             this.field2300.method15300("nextTickWait");
                             this.field2345 = true;
-                            this.field2344 = Math.max(Class8349.method27837() + 50L, this.field2343);
+                            this.field2344 = Math.max(Util.method27837() + 50L, this.field2343);
                             this.method1458();
                             this.field2300.endSection();
                             this.field2300.method15296();
@@ -588,7 +588,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
     }
     
     private boolean method1457() {
-        return this.method5373() || Class8349.method27837() < (this.field2345 ? this.field2344 : this.field2343);
+        return this.method5373() || Util.method27837() < (this.field2345 ? this.field2344 : this.field2343);
     }
     
     public void method1458() {
@@ -673,7 +673,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
     }
     
     public void method1469(final BooleanSupplier booleanSupplier) {
-        final long method27838 = Class8349.method27838();
+        final long method27838 = Util.method27838();
         ++this.field2312;
         this.method1470(booleanSupplier);
         if (method27838 - this.field2341 >= 5000000000L) {
@@ -708,10 +708,10 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         this.field2300.startSection("tallying");
         final long[] field2323 = this.field2323;
         final int n = this.field2312 % 100;
-        final long n2 = Class8349.method27838() - method27838;
+        final long n2 = Util.method27838() - method27838;
         field2323[n] = n2;
         this.field2364 = this.field2364 * 0.8f + n2 / 1000000.0f * 0.19999999f;
-        this.field2360.method35167(Class8349.method27838() - method27838);
+        this.field2360.method35167(Util.method27838() - method27838);
         this.field2300.endSection();
     }
     
@@ -1059,7 +1059,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         }
         class9037.method32486("uses_auth", this.field2314);
         class9037.method32486("gui_state", this.method1543() ? "enabled" : "disabled");
-        class9037.method32486("run_time", (Class8349.method27837() - class9037.method32491()) / 60L * 1000L);
+        class9037.method32486("run_time", (Util.method27837() - class9037.method32491()) / 60L * 1000L);
         class9037.method32486("avg_tick_ms", (int)(MathHelper.method35661(this.field2323) * 1.0E-6));
         int i = 0;
         for (final Class1849 class9038 : this.method1482()) {
@@ -1461,7 +1461,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
             bufferedWriter.write(String.format("pending_tasks: %d\n", this.method5375()));
             bufferedWriter.write(String.format("average_tick_time: %f\n", this.method1587()));
             bufferedWriter.write(String.format("tick_times: %s\n", Arrays.toString(this.field2323)));
-            bufferedWriter.write(String.format("queue: %s\n", Class8349.method27841()));
+            bufferedWriter.write(String.format("queue: %s\n", Util.method27841()));
         }
     }
     

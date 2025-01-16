@@ -297,20 +297,20 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                             class1859.method27150();
                         }
                         final double n16 = n12 / (double)this.field25361;
-                        final double method18861 = MathHelper.method35701(n16, n4, n8);
-                        final double method18862 = MathHelper.method35701(n16, n6, n10);
-                        final double method18863 = MathHelper.method35701(n16, n5, n9);
-                        final double method18864 = MathHelper.method35701(n16, n7, n11);
+                        final double method18861 = MathHelper.lerp(n16, n4, n8);
+                        final double method18862 = MathHelper.lerp(n16, n6, n10);
+                        final double method18863 = MathHelper.lerp(n16, n5, n9);
+                        final double method18864 = MathHelper.lerp(n16, n7, n11);
                         for (int n17 = 0; n17 < this.field25362; ++n17) {
                             final int n18 = n + j * this.field25362 + n17;
                             final int n19 = n18 & 0xF;
                             final double n20 = n17 / (double)this.field25362;
-                            final double method18865 = MathHelper.method35701(n20, method18861, method18862);
-                            final double method18866 = MathHelper.method35701(n20, method18863, method18864);
+                            final double method18865 = MathHelper.lerp(n20, method18861, method18862);
+                            final double method18866 = MathHelper.lerp(n20, method18863, method18864);
                             for (int n21 = 0; n21 < this.field25362; ++n21) {
                                 final int n22 = n2 + l * this.field25362 + n21;
                                 final int n23 = n22 & 0xF;
-                                final double method18867 = MathHelper.clamp(MathHelper.method35701(n21 / (double)this.field25362, method18865, method18866) / 200.0, -1.0, 1.0);
+                                final double method18867 = MathHelper.clamp(MathHelper.lerp(n21 / (double)this.field25362, method18865, method18866) / 200.0, -1.0, 1.0);
                                 double n24 = method18867 / 2.0 - method18867 * method18867 * method18867 / 24.0;
                                 while (iterator5.hasNext()) {
                                     final Class4521 class1860 = (Class4521)iterator5.next();
@@ -377,7 +377,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
     }
     
     static {
-        field25359 = Class8349.method27851(new float[13824], array -> {
+        field25359 = Util.method27851(new float[13824], array -> {
             int i = 0;
             while (i < 24) {
                 int j = 0;

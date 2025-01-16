@@ -185,7 +185,7 @@ public class Class4653 extends Class4651
         }
         final BlockPos method1139 = class354.method1139();
         final VoxelShape method1140 = this.field20140.getBlockState(method1139).getCollisionShape(this.field20140, method1139);
-        return method1139.getY() + (method1140.isEmpty() ? 0.0 : method1140.method24536(Direction.Axis.Y));
+        return method1139.getY() + (method1140.isEmpty() ? 0.0 : method1140.getEnd(Direction.Axis.Y));
     }
     
     @Nullable

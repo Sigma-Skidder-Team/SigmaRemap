@@ -339,14 +339,14 @@ public class PacketBuffer extends ByteBuf
     }
     
     public void method29521(final BlockRayTraceResult blockRayTraceResult) {
-        final BlockPos method21447 = blockRayTraceResult.method21447();
+        final BlockPos method21447 = blockRayTraceResult.getPos();
         this.method29495(method21447);
-        this.method29500(blockRayTraceResult.method21448());
-        final Vec3d method21448 = blockRayTraceResult.method21451();
+        this.method29500(blockRayTraceResult.getFace());
+        final Vec3d method21448 = blockRayTraceResult.getHitVec();
         this.writeFloat((float)(method21448.x - method21447.getX()));
         this.writeFloat((float)(method21448.y - method21447.getY()));
         this.writeFloat((float)(method21448.z - method21447.getZ()));
-        this.writeBoolean(blockRayTraceResult.method21450());
+        this.writeBoolean(blockRayTraceResult.isInside());
     }
     
     public int capacity() {

@@ -46,7 +46,7 @@ public class Class3393 extends Class3167
                                     }
                                     if (a2 > n3) {
                                         if (a2 < n2) {
-                                            if (Class3393.field15514.field4683.method6981(Class3393.field15514.field4684, Class3393.field15514.field4684.boundingBox.method18499(class5717.method16972(), class5717.method16974() + a2 + n3, class5717.method16976())).count() != 0L) {
+                                            if (Class3393.field15514.field4683.method6981(Class3393.field15514.field4684, Class3393.field15514.field4684.boundingBox.offset(class5717.method16972(), class5717.method16974() + a2 + n3, class5717.method16976())).count() != 0L) {
                                                 class5717.method16975(class5717.method16974() + (a2 - 1.0E-5));
                                                 Class6430.method19155(class5717.method16974());
                                                 a = Double.MAX_VALUE;

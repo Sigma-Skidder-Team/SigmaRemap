@@ -49,7 +49,7 @@ public class Class567 extends Class566
     public void method2975(final int n, final int n2, final float n3) {
         final int method7696 = this.field3366.method5332().method7696();
         final int method7697 = this.field3366.method5332().method7697();
-        final long method7698 = Class8349.method27837();
+        final long method7698 = Util.method27837();
         if (this.field3369 && (this.field3367.method27190() || this.field3366.field4700 != null) && this.field3372 == -1L) {
             this.field3372 = method7698;
         }
@@ -102,7 +102,7 @@ public class Class567 extends Class566
             catch (final Throwable value) {
                 this.field3368.accept(Optional.of(value));
             }
-            this.field3371 = Class8349.method27837();
+            this.field3371 = Util.method27837();
             if (this.field3366.field4700 != null) {
                 this.field3366.field4700.method3038(this.field3366, this.field3366.method5332().method7696(), this.field3366.method5332().method7697());
             }

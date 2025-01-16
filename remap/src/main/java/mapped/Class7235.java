@@ -40,7 +40,7 @@ public class Class7235
     
     static {
         field28046 = LogManager.getLogger();
-        field28047 = Class8349.method27851(Maps.newEnumMap((Class) Direction.class), enumMap -> {
+        field28047 = Util.method27851(Maps.newEnumMap((Class) Direction.class), enumMap -> {
             enumMap.put(Direction.SOUTH, Class9294.method34322());
             final Direction field28049 = Direction.EAST;
             new(mapped.Class9294.class)();
@@ -84,7 +84,7 @@ public class Class7235
             enumMap.put(field28053, value5);
             return;
         });
-        field28048 = Class8349.method27851(Maps.newEnumMap((Class) Direction.class), enumMap2 -> {
+        field28048 = Util.method27851(Maps.newEnumMap((Class) Direction.class), enumMap2 -> {
             Direction.values();
             final Direction[] array;
             int i = 0;

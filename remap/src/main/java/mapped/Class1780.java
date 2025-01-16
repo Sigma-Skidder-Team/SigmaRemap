@@ -59,11 +59,11 @@ public class Class1780 extends Class1779
     }
     
     public <C extends Class446, T extends Class3662<C>> Optional<T> method6378(final Class8976<T> class8976, final C c, final World class8977) {
-        return this.method6380(class8976).values().stream().flatMap(class8981 -> Class8349.method27854(class8978.method31918(class8981, class8979, class8980))).findFirst();
+        return this.method6380(class8976).values().stream().flatMap(class8981 -> Util.method27854(class8978.method31918(class8981, class8979, class8980))).findFirst();
     }
     
     public <C extends Class446, T extends Class3662<C>> List<T> method6379(final Class8976<T> class8976, final C c, final World class8977) {
-        return this.method6380(class8976).values().stream().flatMap(class8981 -> Class8349.method27854(class8978.method31918(class8981, class8979, class8980))).sorted(Comparator.comparing(class8982 -> class8982.method11292().method27649())).collect((Collector<? super Object, ?, List<T>>)Collectors.toList());
+        return this.method6380(class8976).values().stream().flatMap(class8981 -> Util.method27854(class8978.method31918(class8981, class8979, class8980))).sorted(Comparator.comparing(class8982 -> class8982.method11292().method27649())).collect((Collector<? super Object, ?, List<T>>)Collectors.toList());
     }
     
     private <C extends Class446, T extends Class3662<C>> Map<ResourceLocation, Class3662<C>> method6380(final Class8976<T> key) {

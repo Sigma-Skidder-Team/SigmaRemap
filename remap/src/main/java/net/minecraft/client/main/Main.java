@@ -33,7 +33,7 @@ import java.net.Authenticator;
 import mapped.Class7488;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
-import mapped.Class8349;
+import mapped.Util;
 import java.io.File;
 import org.apache.logging.log4j.Logger;
 
@@ -56,7 +56,7 @@ public class Main
         final ArgumentAcceptingOptionSpec<Integer> ofType3 = optionParser.accepts("proxyPort").withRequiredArg().defaultsTo("8080").ofType(Integer.class);
         final ArgumentAcceptingOptionSpec<String> withRequiredArg3 = optionParser.accepts("proxyUser").withRequiredArg();
         final ArgumentAcceptingOptionSpec<String> withRequiredArg4 = optionParser.accepts("proxyPass").withRequiredArg();
-        final ArgumentAcceptingOptionSpec<String> defaultsTo3 = optionParser.accepts("username").withRequiredArg().defaultsTo(("Player" + Class8349.method27837() % 1000L));
+        final ArgumentAcceptingOptionSpec<String> defaultsTo3 = optionParser.accepts("username").withRequiredArg().defaultsTo(("Player" + Util.method27837() % 1000L));
         final ArgumentAcceptingOptionSpec<String> withRequiredArg5 = optionParser.accepts("uuid").withRequiredArg();
         final ArgumentAcceptingOptionSpec<String> required = optionParser.accepts("accessToken").withRequiredArg().required();
         final ArgumentAcceptingOptionSpec<String> required2 = optionParser.accepts("version").withRequiredArg().required();

@@ -92,7 +92,7 @@ public class Class495 extends TileEntity implements Class439
         final BlockPos method2193 = this.getPos();
         if (this.field2656.method6754() > this.field2842 + 60L || this.field2846 == null) {
             this.field2842 = this.field2656.method6754();
-            this.field2846 = (List<LivingEntity>)this.field2656.method7128((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(method2193).method18496(48.0));
+            this.field2846 = (List<LivingEntity>)this.field2656.method7128((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(method2193).intersect(48.0));
         }
         if (!this.field2656.isRemote) {
             for (final LivingEntity class511 : this.field2846) {

@@ -61,9 +61,9 @@ public class Class3958 extends Class3841
     }
     
     public boolean method12074(final World class1847, final BlockState class1848, final BlockRayTraceResult class1849, final PlayerEntity class1850, final boolean b) {
-        final Direction method21448 = class1849.method21448();
-        final BlockPos method21449 = class1849.method21447();
-        if (b && !this.method12075(class1848, method21448, class1849.method21451().y - method21449.getY())) {
+        final Direction method21448 = class1849.getFace();
+        final BlockPos method21449 = class1849.getPos();
+        if (b && !this.method12075(class1848, method21448, class1849.getHitVec().y - method21449.getY())) {
             return false;
         }
         if (this.method12076(class1847, method21449, method21448)) {

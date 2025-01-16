@@ -26,14 +26,14 @@ public class Class6114 implements Class6113
     
     public void method18271(final int i, final Class9468 class9468, final float f) {
         this.field24821.put(i, class9468);
-        this.field24823.put(i, Class8349.method27837());
+        this.field24823.put(i, Util.method27837());
         this.field24822.put(i, f);
     }
     
     @Override
     public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
         if (!this.field24821.isEmpty()) {
-            final long method27837 = Class8349.method27837();
+            final long method27837 = Util.method27837();
             for (final Integer n4 : this.field24821.keySet()) {
                 method18272(this.field24821.get(n4), this.field24822.get(n4), true, true, n, n2, n3);
             }
@@ -63,23 +63,23 @@ public class Class6114 implements Class6113
         method18274(class9468, n2, n3, n4);
         final BlockPos method35232 = class9468.method35232();
         if (method18275(method35232, n2, n3, n4) <= 80.0f) {
-            Class7282.method22336(new AxisAlignedBB(method35232.getX() + 0.25f, method35232.getY() + 0.25f, method35232.getZ() + 0.25, method35232.getX() + 0.75f, method35232.getY() + 0.75f, method35232.getZ() + 0.75f).method18499(-n2, -n3, -n4), 0.0f, 1.0f, 0.0f, 0.5f);
+            Class7282.method22336(new AxisAlignedBB(method35232.getX() + 0.25f, method35232.getY() + 0.25f, method35232.getZ() + 0.25, method35232.getX() + 0.75f, method35232.getY() + 0.75f, method35232.getZ() + 0.75f).offset(-n2, -n3, -n4), 0.0f, 1.0f, 0.0f, 0.5f);
             for (int i = 0; i < class9468.method35221(); ++i) {
                 final Class6772 method35233 = class9468.method35217(i);
                 if (method18275(method35233.method20671(), n2, n3, n4) <= 80.0f) {
-                    Class7282.method22336(new AxisAlignedBB(method35233.field26589 + 0.5f - n, method35233.field26590 + 0.01f * i, method35233.field26591 + 0.5f - n, method35233.field26589 + 0.5f + n, method35233.field26590 + 0.25f + 0.01f * i, method35233.field26591 + 0.5f + n).method18499(-n2, -n3, -n4), (i != class9468.method35222()) ? 0.0f : 1.0f, 0.0f, (i != class9468.method35222()) ? 1.0f : 0.0f, 0.5f);
+                    Class7282.method22336(new AxisAlignedBB(method35233.field26589 + 0.5f - n, method35233.field26590 + 0.01f * i, method35233.field26591 + 0.5f - n, method35233.field26589 + 0.5f + n, method35233.field26590 + 0.25f + 0.01f * i, method35233.field26591 + 0.5f + n).offset(-n2, -n3, -n4), (i != class9468.method35222()) ? 0.0f : 1.0f, 0.0f, (i != class9468.method35222()) ? 1.0f : 0.0f, 0.5f);
                 }
             }
         }
         if (b) {
             for (final Class6772 class9469 : class9468.method35230()) {
                 if (method18275(class9469.method20671(), n2, n3, n4) <= 80.0f) {
-                    Class7282.method22336(new AxisAlignedBB(class9469.field26589 + 0.5f - n / 2.0f, class9469.field26590 + 0.01f, class9469.field26591 + 0.5f - n / 2.0f, class9469.field26589 + 0.5f + n / 2.0f, class9469.field26590 + 0.1, class9469.field26591 + 0.5f + n / 2.0f).method18499(-n2, -n3, -n4), 1.0f, 0.8f, 0.8f, 0.5f);
+                    Class7282.method22336(new AxisAlignedBB(class9469.field26589 + 0.5f - n / 2.0f, class9469.field26590 + 0.01f, class9469.field26591 + 0.5f - n / 2.0f, class9469.field26589 + 0.5f + n / 2.0f, class9469.field26590 + 0.1, class9469.field26591 + 0.5f + n / 2.0f).offset(-n2, -n3, -n4), 1.0f, 0.8f, 0.8f, 0.5f);
                 }
             }
             for (final Class6772 class9470 : class9468.method35229()) {
                 if (method18275(class9470.method20671(), n2, n3, n4) <= 80.0f) {
-                    Class7282.method22336(new AxisAlignedBB(class9470.field26589 + 0.5f - n / 2.0f, class9470.field26590 + 0.01f, class9470.field26591 + 0.5f - n / 2.0f, class9470.field26589 + 0.5f + n / 2.0f, class9470.field26590 + 0.1, class9470.field26591 + 0.5f + n / 2.0f).method18499(-n2, -n3, -n4), 0.8f, 1.0f, 1.0f, 0.5f);
+                    Class7282.method22336(new AxisAlignedBB(class9470.field26589 + 0.5f - n / 2.0f, class9470.field26590 + 0.01f, class9470.field26591 + 0.5f - n / 2.0f, class9470.field26589 + 0.5f + n / 2.0f, class9470.field26590 + 0.1, class9470.field26591 + 0.5f + n / 2.0f).offset(-n2, -n3, -n4), 0.8f, 1.0f, 1.0f, 0.5f);
                 }
             }
         }

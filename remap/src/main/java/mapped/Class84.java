@@ -10,13 +10,13 @@ import com.google.common.math.IntMath;
 public final class Class84 implements IDoubleListMerger
 {
     private static String[] field187;
-    private final Class81 field188;
+    private final DoubleRangeList field188;
     private final int field189;
     private final int field190;
     private final int field191;
     
     public Class84(final int field189, final int field190) {
-        this.field188 = new Class81((int) VoxelShapes.method24491(field189, field190));
+        this.field188 = new DoubleRangeList((int) VoxelShapes.method24491(field189, field190));
         this.field189 = field189;
         this.field190 = field190;
         this.field191 = IntMath.gcd(field189, field190);

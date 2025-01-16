@@ -102,7 +102,7 @@ public class Class6208<T>
                                         Class6208.field25043.error("Couldn't load {} tag list {} from {} in data pack {} as it's empty or null", (Object)this.field25050, (Object)key, (Object)class6584, (Object)class6585.method5889());
                                     }
                                     else {
-                                        ((Class8162)hashMap.computeIfAbsent(key, p0 -> Class8349.method27851(Class8162.method26975(), class6586 -> class6586.method26980(this.field25049)))).method26983(this.field25047, jsonObject);
+                                        ((Class8162)hashMap.computeIfAbsent(key, p0 -> Util.method27851(Class8162.method26975(), class6586 -> class6586.method26980(this.field25049)))).method26983(this.field25047, jsonObject);
                                     }
                                 }
                                 catch (final Throwable t) {

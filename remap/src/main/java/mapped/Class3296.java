@@ -33,9 +33,9 @@ public class Class3296 extends Class3167
             boolean b2 = true;
             Label_0104: {
                 if (!Class3296.field15514.field4684.method1809()) {
-                    if (Class3296.field15514.field4691.method21449() == Class2165.field12881) {
+                    if (Class3296.field15514.field4691.getType() == RayTraceResult.Type.BLOCK) {
                         if (!Class9463.method35173().method35189().method21551(Class3376.class).method9898()) {
-                            final Block method9899 = Class3296.field15514.field4683.getBlockState(((BlockRayTraceResult)Class3296.field15514.field4691).method21447()).method21696();
+                            final Block method9899 = Class3296.field15514.field4683.getBlockState(((BlockRayTraceResult)Class3296.field15514.field4691).getPos()).method21696();
                             if (!new ArrayList(Arrays.asList(Class7521.field29292, Class7521.field29409, Class7521.field29468, Class7521.field29296, Class7521.field29417, Class7521.field29299, Class7521.field29809, Class7521.field29398, Class7521.field29465, Class7521.field29466, Class7521.field29467, Class7521.field29216, Class7521.field29220, Class7521.field29316, Class7521.field29475, Class7521.field29481, Class7521.field29345, Class7521.field29471)).contains(method9899)) {
                                 if (!(method9899 instanceof Class3907)) {
                                     if (!(method9899 instanceof Class3906)) {

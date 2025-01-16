@@ -45,7 +45,7 @@ public final class Class7125
         method8146.method13454(0, method8148 - (method8147.minY + method8146.method13520()), 0);
         field27770.add(method8146);
         if (field27766 > 0) {
-            this.field27772.addLast(new Class8433(method8146, new AtomicReference(VoxelShapes.method24494(VoxelShapes.method24489(new AxisAlignedBB(n - 80, method8148 - 80, n2 - 80, n + 80 + 1, method8148 + 80 + 1, n2 + 80 + 1)), VoxelShapes.method24489(AxisAlignedBB.method18489(method8147)), IBooleanFunction.ONLY_FIRST)), method8148 + 80, 0, null));
+            this.field27772.addLast(new Class8433(method8146, new AtomicReference(VoxelShapes.method24494(VoxelShapes.method24489(new AxisAlignedBB(n - 80, method8148 - 80, n2 - 80, n + 80 + 1, method8148 + 80 + 1, n2 + 80 + 1)), VoxelShapes.method24489(AxisAlignedBB.toImmutable(method8147)), IBooleanFunction.ONLY_FIRST)), method8148 + 80, 0, null));
             while (!this.field27772.isEmpty()) {
                 final Class8433 class1934 = this.field27772.removeFirst();
                 this.method21866(Class8433.method28156(class1934), Class8433.method28157(class1934), Class8433.method28158(class1934), Class8433.method28159(class1934));
@@ -83,7 +83,7 @@ public final class Class7125
                         atomicReference3 = atomicReference2;
                         n5 = field27294;
                         if (atomicReference2.get() == null) {
-                            atomicReference2.set(VoxelShapes.method24489(AxisAlignedBB.method18489(method13522)));
+                            atomicReference2.set(VoxelShapes.method24489(AxisAlignedBB.toImmutable(method13522)));
                         }
                     }
                     final ArrayList arrayList = Lists.newArrayList();
@@ -141,10 +141,10 @@ public final class Class7125
                                 if (orElse > 0) {
                                     method13530.maxY = method13530.minY + Math.max(orElse + 1, method13530.maxY - method13530.minY);
                                 }
-                                if (VoxelShapes.method24496(atomicReference3.get(), VoxelShapes.method24489(AxisAlignedBB.method18489(method13530).method18511(0.25)), IBooleanFunction.ONLY_SECOND)) {
+                                if (VoxelShapes.method24496(atomicReference3.get(), VoxelShapes.method24489(AxisAlignedBB.toImmutable(method13530).shrink(0.25)), IBooleanFunction.ONLY_SECOND)) {
                                     continue;
                                 }
-                                atomicReference3.set(VoxelShapes.method24495(atomicReference3.get(), VoxelShapes.method24489(AxisAlignedBB.method18489(method13530)), IBooleanFunction.ONLY_FIRST));
+                                atomicReference3.set(VoxelShapes.method24495(atomicReference3.get(), VoxelShapes.method24489(AxisAlignedBB.toImmutable(method13530)), IBooleanFunction.ONLY_FIRST));
                                 final int method13532 = class4521.method13520();
                                 int method13533;
                                 if (!b2) {

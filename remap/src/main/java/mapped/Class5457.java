@@ -110,7 +110,7 @@ public class Class5457 extends Class5419<Class824>
     }
     
     static {
-        field22697 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field22697 = Util.method27851(Maps.newHashMap(), hashMap -> {
             hashMap.put(Class9334.field40061, Class9020.field38121);
             hashMap.put(Class9334.field40062, Class9020.field38122);
             hashMap.put(Class9334.field40063, Class9020.field38123);

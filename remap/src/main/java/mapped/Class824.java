@@ -751,7 +751,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     public void method4891(final long n, final int n2) {
         if (this.method4894(n)) {
-            final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>)Class824.class, this.getBoundingBox().method18495(10.0, 10.0, 10.0));
+            final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>)Class824.class, this.getBoundingBox().grow(10.0, 10.0, 10.0));
             if (method7128.stream().filter(class824 -> class824.method4894(n3)).limit(5L).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()).size() >= n2) {
                 if (this.method4895() != null) {
                     method7128.forEach(class825 -> class825.method4892(n4));

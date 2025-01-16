@@ -242,7 +242,7 @@ public class Class1728 implements Class1727
     
     static {
         field9660 = LogManager.getLogger();
-        field9662 = Class8349.method27851(Maps.newHashMap(), hashMap -> {
+        field9662 = Util.method27851(Maps.newHashMap(), hashMap -> {
             synchronized (Class1728.class) {
                 Class346.values();
                 final Class346[] array;
@@ -272,7 +272,7 @@ public class Class1728 implements Class1727
             }
             return;
         });
-        field9664 = (Class8349.method27845() == Class306.field1833);
+        field9664 = (Util.method27845() == Class306.field1833);
         field9665 = Class9570.field41282.method22623();
     }
 }

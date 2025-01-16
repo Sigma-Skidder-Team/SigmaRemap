@@ -353,17 +353,17 @@ public class Class685 extends Class565
         }
     }
     
-    private boolean method3782(final Class7006 class7006) {
+    private boolean method3782(final RayTraceResult class7006) {
         if (class7006 == null) {
             return false;
         }
-        if (class7006.method21449() == Class2165.field12882) {
+        if (class7006.getType() == RayTraceResult.Type.ENTITY) {
             return ((Class7007)class7006).method21452() instanceof Class434;
         }
-        if (class7006.method21449() != Class2165.field12881) {
+        if (class7006.getType() != RayTraceResult.Type.BLOCK) {
             return false;
         }
-        final BlockPos method21447 = ((BlockRayTraceResult)class7006).method21447();
+        final BlockPos method21447 = ((BlockRayTraceResult)class7006).getPos();
         final Class1848 field4683 = this.field3753.field4683;
         return field4683.getBlockState(method21447).method21754(field4683, method21447) != null;
     }
@@ -669,7 +669,7 @@ public class Class685 extends Class565
         if (method3790 != null) {
             final int method3791 = MathHelper.ceil(method3790.method2664());
             final boolean b = this.field3777 > this.field3756 && (this.field3777 - this.field3756) / 3L % 2L == 1L;
-            final long method3792 = Class8349.method27837();
+            final long method3792 = Util.method27837();
             if (method3791 < this.field3774 && method3790.hurtResistantTime > 0) {
                 this.field3776 = method3792;
                 this.field3777 = this.field3756 + 20;

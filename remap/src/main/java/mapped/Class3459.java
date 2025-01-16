@@ -47,7 +47,7 @@ public class Class3459 extends Class3446
     public void method11015() {
         super.method11015();
         this.field16309.method4150().method24733();
-        final Iterator<LivingEntity> iterator = (Iterator<LivingEntity>)this.field16309.world.method7142((Class<? extends Class776>)Class776.class, this.field16311, (LivingEntity)this.field16309, this.field16309.getBoundingBox().method18495(8.0, 8.0, 8.0)).iterator();
+        final Iterator<LivingEntity> iterator = (Iterator<LivingEntity>)this.field16309.world.method7142((Class<? extends Class776>)Class776.class, this.field16311, (LivingEntity)this.field16309, this.field16309.getBoundingBox().grow(8.0, 8.0, 8.0)).iterator();
         while (iterator.hasNext()) {
             iterator.next().method4153(this.field16309.method4152());
         }
@@ -58,7 +58,7 @@ public class Class3459 extends Class3446
         super.method11018();
         final LivingEntity method4152 = this.field16309.method4152();
         if (method4152 != null) {
-            for (final Class776 class776 : this.field16309.world.method7142((Class<? extends Class776>)Class776.class, this.field16311, (LivingEntity)this.field16309, this.field16309.getBoundingBox().method18495(8.0, 8.0, 8.0))) {
+            for (final Class776 class776 : this.field16309.world.method7142((Class<? extends Class776>)Class776.class, this.field16311, (LivingEntity)this.field16309, this.field16309.getBoundingBox().grow(8.0, 8.0, 8.0))) {
                 class776.method4153(method4152);
                 class776.method4213(true);
             }

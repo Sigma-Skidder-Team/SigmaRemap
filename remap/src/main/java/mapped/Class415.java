@@ -62,17 +62,17 @@ public class Class415 extends Class414 implements Class407
     }
     
     @Override
-    public void method2016(final Class7006 class7006) {
+    public void method2016(final RayTraceResult class7006) {
         if (!this.world.isRemote) {
             final ItemStack method2005 = this.method2005();
             final Class8061 method2006 = Class5333.method16474(method2005);
             final List<Class1948> method2007 = Class5333.method16465(method2005);
             final boolean b = method2006 == Class8644.field36251 && method2007.isEmpty();
-            if (class7006.method21449() == Class2165.field12881) {
+            if (class7006.getType() == RayTraceResult.Type.BLOCK) {
                 if (b) {
                     final BlockRayTraceResult class7007 = (BlockRayTraceResult)class7006;
-                    final Direction method2008 = class7007.method21448();
-                    final BlockPos method2009 = class7007.method21447().method1149(method2008);
+                    final Direction method2008 = class7007.getFace();
+                    final BlockPos method2009 = class7007.getPos().method1149(method2008);
                     this.method2027(method2009, method2008);
                     this.method2027(method2009.method1149(method2008.getOpposite()), method2008);
                     for (final Direction class7008 : Plane.HORIZONTAL) {
@@ -83,7 +83,7 @@ public class Class415 extends Class414 implements Class407
             if (!b) {
                 if (!method2007.isEmpty()) {
                     if (!this.method2026()) {
-                        this.method2024(method2007, (class7006.method21449() != Class2165.field12882) ? null : ((Class7007)class7006).method21452());
+                        this.method2024(method2007, (class7006.getType() != RayTraceResult.Type.ENTITY) ? null : ((Class7007)class7006).method21452());
                     }
                     else {
                         this.method2025(method2005, method2006);
@@ -99,7 +99,7 @@ public class Class415 extends Class414 implements Class407
     }
     
     private void method2023() {
-        final List<Entity> method6739 = this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().method18495(4.0, 2.0, 4.0), (Predicate<? super Entity>)Class415.field2523);
+        final List<Entity> method6739 = this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().grow(4.0, 2.0, 4.0), (Predicate<? super Entity>)Class415.field2523);
         if (!method6739.isEmpty()) {
             for (final LivingEntity class511 : method6739) {
                 if (this.method1734(class511) >= 16.0) {
@@ -114,7 +114,7 @@ public class Class415 extends Class414 implements Class407
     }
     
     private void method2024(final List<Class1948> list, final Entity class399) {
-        final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().method18495(4.0, 2.0, 4.0));
+        final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().grow(4.0, 2.0, 4.0));
         if (!method7128.isEmpty()) {
             for (final LivingEntity class400 : method7128) {
                 if (!class400.method2776()) {

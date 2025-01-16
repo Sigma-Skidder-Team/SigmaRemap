@@ -36,7 +36,7 @@ public class Class6966<T> implements Class6967<T>
             collection.addAll((Collection<? extends T>)this.field27247.method25616());
             return;
         }
-        throw Class8349.method27859(new IllegalStateException("Cannot build unresolved tag entry"));
+        throw Util.pauseDevMode(new IllegalStateException("Cannot build unresolved tag entry"));
     }
     
     public ResourceLocation method21380() {

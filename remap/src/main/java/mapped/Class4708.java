@@ -25,9 +25,9 @@ public class Class4708<T extends Class428> extends Class4703<T>
         final long n4 = t.getEntityId() * 493286711L;
         final long n5 = n4 * n4 * 4392167121L + n4 * 98761L;
         class7351.method22564((((n5 >> 16 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f, (((n5 >> 20 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f, (((n5 >> 24 & 0x7L) + 0.5f) / 8.0f - 0.5f) * 0.004f);
-        final double method35701 = MathHelper.method35701(n2, t.lastTickPosX, t.getPosX());
-        final double method35702 = MathHelper.method35701(n2, t.lastTickPosY, t.getPosY());
-        final double method35703 = MathHelper.method35701(n2, t.lastTickPosZ, t.getPosZ());
+        final double method35701 = MathHelper.lerp(n2, t.lastTickPosX, t.getPosX());
+        final double method35702 = MathHelper.lerp(n2, t.lastTickPosY, t.getPosY());
+        final double method35703 = MathHelper.lerp(n2, t.lastTickPosZ, t.getPosZ());
         final Vec3d method35704 = t.method2132(method35701, method35702, method35703);
         float method35705 = MathHelper.method35700(n2, t.prevRotationPitch, t.rotationPitch);
         if (method35704 != null) {

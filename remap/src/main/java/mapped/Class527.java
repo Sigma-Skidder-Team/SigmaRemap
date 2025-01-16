@@ -350,7 +350,7 @@ public abstract class Class527 extends Class598 implements Class563
     }
     
     private void method3045(final URI uri) {
-        Class8349.method27845().method977(uri);
+        Util.method27845().method977(uri);
     }
     
     public static boolean method3046() {

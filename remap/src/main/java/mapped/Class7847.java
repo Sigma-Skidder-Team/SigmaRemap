@@ -38,7 +38,7 @@ public class Class7847
     }
     
     public static long method25355() {
-        return Class8349.method27837();
+        return Util.method27837();
     }
     
     public static String method25356() {
@@ -130,7 +130,7 @@ public class Class7847
     }
     
     public static void method25375(final String s) {
-        Class8349.method27845().method980(s);
+        Util.method27845().method980(s);
     }
     
     public static void method25376(final String s) {

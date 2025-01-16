@@ -16,7 +16,7 @@ public class Class7281
         if (field28205.length == 2048) {
             return;
         }
-        throw Class8349.method27859(new IllegalArgumentException("ChunkNibbleArrays should be 2048 bytes not: " + field28205.length));
+        throw Util.pauseDevMode(new IllegalArgumentException("ChunkNibbleArrays should be 2048 bytes not: " + field28205.length));
     }
     
     public Class7281(final int n) {

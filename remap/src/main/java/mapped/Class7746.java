@@ -239,7 +239,7 @@ public abstract class Class7746
                     this.field31668 = ((this.field31657.method2732() <= 0.0f) ? 0.0 : (method35227 / this.field31657.method2732() * 1000.0));
                 }
                 else {
-                    this.field31666 += Class8349.method27837() - this.field31667;
+                    this.field31666 += Util.method27837() - this.field31667;
                 }
                 if (this.field31668 > 0.0) {
                     if (this.field31666 > this.field31668 * 3.0) {
@@ -249,7 +249,7 @@ public abstract class Class7746
                         this.method24733();
                     }
                 }
-                this.field31667 = Class8349.method27837();
+                this.field31667 = Util.method27837();
             }
         }
     }

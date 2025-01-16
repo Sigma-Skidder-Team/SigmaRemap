@@ -124,16 +124,16 @@ public class Class3207 extends Class3167
             return -1.0;
         }
         if (!Class3207.field15514.field4684.onGround) {
-            final Iterator<Object> iterator = Class3207.field15514.field4683.method6981(Class3207.field15514.field4684, Class3207.field15514.field4684.boundingBox.method18494(0.0, -Class3207.field15514.field4684.method1934().y, 0.0)).iterator();
+            final Iterator<Object> iterator = Class3207.field15514.field4683.method6981(Class3207.field15514.field4684, Class3207.field15514.field4684.boundingBox.expand(0.0, -Class3207.field15514.field4684.method1934().y, 0.0)).iterator();
             double field25077 = -1.0;
             BlockPos class354 = null;
             while (iterator.hasNext()) {
                 final VoxelShape class355 = iterator.next();
-                if (class355.method24537().maxY <= field25077) {
+                if (class355.getBoundingBox().maxY <= field25077) {
                     continue;
                 }
-                field25077 = class355.method24537().maxY;
-                class354 = new BlockPos(class355.method24537().minX, class355.method24537().minY, class355.method24537().minZ);
+                field25077 = class355.getBoundingBox().maxY;
+                class354 = new BlockPos(class355.getBoundingBox().minX, class355.getBoundingBox().minY, class355.getBoundingBox().minZ);
             }
             if (class354 != null) {
                 if (Class3207.field15514.field4683.getBlockState(class354).method21696() instanceof Class4030) {

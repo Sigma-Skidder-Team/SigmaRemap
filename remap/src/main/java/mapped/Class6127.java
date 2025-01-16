@@ -17,7 +17,7 @@ public class Class6127 implements Class6113
     }
     
     public void method18351(final BlockPos class354, final int n, final String s, final int n2) {
-        this.field24871.put(class354, new Class8340(n, s, Class8349.method27837() + n2));
+        this.field24871.put(class354, new Class8340(n, s, Util.method27837() + n2));
     }
     
     @Override
@@ -28,7 +28,7 @@ public class Class6127 implements Class6113
     @Override
     public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
         this.field24871.entrySet().removeIf(entry -> {
-            Class8349.method27837();
+            Util.method27837();
             return n4 > entry.getValue().field34245;
         });
         this.field24871.forEach(this::method18352);

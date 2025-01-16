@@ -36,14 +36,14 @@ public class Class3920 extends Block implements Class3856
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (class7099.hasItem(class7096.getBlock().method11704())) {
-            return VoxelShapes.method24487();
+            return VoxelShapes.fullCube();
         }
         return class7096.get((IProperty<Boolean>)Class3920.field17775) ? Class3920.field17770 : Class3920.field17769;
     }
     
     @Override
     public VoxelShape method11811(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
-        return VoxelShapes.method24487();
+        return VoxelShapes.fullCube();
     }
     
     @Override
@@ -101,7 +101,7 @@ public class Class3920 extends Block implements Class3856
     
     @Override
     public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        if (class7099.func_216378_a(VoxelShapes.method24487(), class7098, true) && !class7099.func_225581_b_()) {
+        if (class7099.func_216378_a(VoxelShapes.fullCube(), class7098, true) && !class7099.func_225581_b_()) {
             return Class3920.field17769;
         }
         if (class7096.get((IProperty<Integer>)Class3920.field17773) != 0) {
@@ -152,7 +152,7 @@ public class Class3920 extends Block implements Class3856
     
     static {
         field17771 = Block.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
-        field17772 = VoxelShapes.method24487().withOffset(0.0, -1.0, 0.0);
+        field17772 = VoxelShapes.fullCube().withOffset(0.0, -1.0, 0.0);
         field17773 = Class8970.field37792;
         field17774 = Class8970.field37747;
         field17775 = Class8970.field37720;

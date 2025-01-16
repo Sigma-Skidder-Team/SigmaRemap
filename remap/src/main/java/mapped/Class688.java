@@ -34,7 +34,7 @@ public class Class688 extends Class565
     public void method3820(final boolean field3790) {
         if (field3790) {
             if (!this.field3790) {
-                this.field3789 = Class8349.method27837();
+                this.field3789 = Util.method27837();
             }
         }
         this.field3790 = field3790;
@@ -211,7 +211,7 @@ public class Class688 extends Class565
         }
         else {
             this.field3785.method5290().method5849(Class688.field3363);
-            final long method23970 = Class8349.method27837();
+            final long method23970 = Util.method27837();
             if (this.field3789 == class9291.method32741()) {
                 if (method23969 >= class9291.method32733()) {
                     if (method23969 > class9291.method32733()) {

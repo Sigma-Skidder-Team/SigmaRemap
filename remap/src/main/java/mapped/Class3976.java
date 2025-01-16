@@ -97,7 +97,7 @@ public class Class3976 extends Block
                 final Class402 class1851 = (Class402)class1850;
                 final Entity method1973 = class1851.method1973();
                 if (class1851.method1804()) {
-                    final BlockPos method1974 = class1849.method21447();
+                    final BlockPos method1974 = class1849.getPos();
                     method12119(class1847, method1974, (method1973 instanceof LivingEntity) ? ((LivingEntity)method1973) : null);
                     class1847.method6690(method1974, false);
                 }

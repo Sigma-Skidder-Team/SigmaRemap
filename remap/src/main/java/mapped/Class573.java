@@ -95,7 +95,7 @@ public abstract class Class573 extends Class565 implements Class563, Class574
     public void method3351() {
         if (this.field3431) {
             if (this.method3360()) {
-                if (Class8349.method27837() > this.field3434) {
+                if (Util.method27837() > this.field3434) {
                     final String method3352 = this.method3352();
                     if (!method3352.isEmpty()) {
                         Class7895.field32404.method25556(method3352);
@@ -250,7 +250,7 @@ public abstract class Class573 extends Class565 implements Class563, Class574
     }
     
     public void method3368(final int n) {
-        this.field3434 = Class8349.method27837() + n;
+        this.field3434 = Util.method27837() + n;
     }
     
     public String method3369() {

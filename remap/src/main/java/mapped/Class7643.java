@@ -6,13 +6,12 @@ package mapped;
 
 import com.sun.jna.platform.win32.Advapi32Util;
 import com.sun.jna.platform.win32.WinReg;
-import java.io.Reader;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 import javax.sound.sampled.BooleanControl;
-import javax.sound.sampled.Control;
 import javax.sound.sampled.FloatControl;
 import java.net.MalformedURLException;
 import javax.imageio.ImageIO;
@@ -607,7 +606,7 @@ public class Class7643
     
     public boolean method24195() {
         File file = new File(Class9463.method35173().method35208() + "/music/youtube-dl");
-        if (Class8349.method27845() == Class306.field1833) {
+        if (Util.method27845() == Class306.field1833) {
             file = new File(Class9463.method35173().method35208() + "/music/youtube-dl.exe");
         }
         return file.exists();
@@ -623,7 +622,7 @@ public class Class7643
             return;
         }
         Class9463.method35173().method35187().method20243("Updating dependencies");
-        if (Class8349.method27845() == Class306.field1833) {
+        if (Util.method27845() == Class306.field1833) {
             try {
                 FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl.exe"), new File(Class9463.method35173().method35208() + "/music/youtube-dl.exe"));
             }
@@ -645,7 +644,7 @@ public class Class7643
     
     public String method24198() {
         String s = Class9463.method35173().method35208().getAbsolutePath() + "/music/youtube-dl";
-        if (Class8349.method27845() != Class306.field1833) {
+        if (Util.method27845() != Class306.field1833) {
             new File(s).setExecutable(true);
         }
         else {
@@ -655,7 +654,7 @@ public class Class7643
     }
     
     public boolean method24199() {
-        if (Class8349.method27845() == Class306.field1833) {
+        if (Util.method27845() == Class306.field1833) {
             return true;
         }
         if (new File("/usr/local/bin/python").exists()) {
@@ -677,7 +676,7 @@ public class Class7643
     }
     
     public boolean method24200() {
-        if (Class8349.method27845() != Class306.field1833) {
+        if (Util.method27845() != Class306.field1833) {
             return true;
         }
         boolean b = false;

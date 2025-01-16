@@ -49,9 +49,9 @@ public class Class4608 extends Class4535<Class5133>
         final double[] array = new double[class1852.field22108 * 4];
         for (int i = 0; i < class1852.field22108; ++i) {
             final float n10 = i / (float)class1852.field22108;
-            final double method35701 = MathHelper.method35701(n10, n, n2);
-            final double method35702 = MathHelper.method35701(n10, n5, n6);
-            final double method35703 = MathHelper.method35701(n10, n3, n4);
+            final double method35701 = MathHelper.lerp(n10, n, n2);
+            final double method35702 = MathHelper.lerp(n10, n5, n6);
+            final double method35703 = MathHelper.lerp(n10, n3, n4);
             final double n11 = ((MathHelper.sin(3.1415927f * n10) + 1.0f) * (random.nextDouble() * class1852.field22108 / 16.0) + 1.0) / 2.0;
             array[i * 4 + 0] = method35701;
             array[i * 4 + 1] = method35702;

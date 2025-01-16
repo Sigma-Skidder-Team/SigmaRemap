@@ -20,7 +20,7 @@ public class Class998 implements Runnable
         for (int i = 0; i < this.field5328.method462(); ++i) {
             final Class4405 method457 = this.field5328.method457(i);
             if (method457.method13269("url")) {
-                Class8349.method27845().method980(method457.method13268("url"));
+                Util.method27845().method980(method457.method13268("url"));
             }
             final Class4805 class4805;
             this.field5329.field20582.method14396().method14242(class4805 = new Class4805(this.field5329.field20582, "changelog" + i, method457));

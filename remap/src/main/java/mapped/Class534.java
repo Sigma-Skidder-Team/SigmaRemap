@@ -28,12 +28,12 @@ public class Class534 extends Class527
     @Override
     public void method2969() {
         this.field3150.field4651.method22505(true);
-        this.method3029(new Class654((this.field3152 - 200) / 2, 40, 200, 20, Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Class8349.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]), class654 -> {
+        this.method3029(new Class654((this.field3152 - 200) / 2, 40, 200, 20, Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]), class654 -> {
             ++this.field3188;
             if (this.field3188 >= Class534.field3184.size()) {
                 this.field3188 = 0;
             }
-            class654.method3367(Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Class8349.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]));
+            class654.method3367(Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]));
         }));
         this.field3187 = new Class621(this, null);
         this.field3149.add(this.field3187);

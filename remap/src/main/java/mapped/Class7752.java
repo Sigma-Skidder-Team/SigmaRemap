@@ -113,7 +113,7 @@ public class Class7752 extends Class7746
                     this.field31668 = ((this.field31657.method2732() <= 0.0f) ? 0.0 : (method35227 / this.field31657.method2732() * 100.0));
                 }
                 else {
-                    this.field31666 += Class8349.method27837() - this.field31667;
+                    this.field31666 += Util.method27837() - this.field31667;
                 }
                 if (this.field31668 > 0.0) {
                     if (this.field31666 > this.field31668 * 2.0) {
@@ -123,14 +123,14 @@ public class Class7752 extends Class7746
                         this.method24733();
                     }
                 }
-                this.field31667 = Class8349.method27837();
+                this.field31667 = Util.method27837();
             }
         }
     }
     
     @Override
     public boolean method24738(final Vec3d class5487, final Vec3d class5488, final int n, final int n2, final int n3) {
-        return this.field31658.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(class5488.x, class5488.y + this.field31657.method1931() * 0.5, class5488.z), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this.field31657)).method21449() == Class2165.field12880;
+        return this.field31658.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(class5488.x, class5488.y + this.field31657.method1931() * 0.5, class5488.z), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this.field31657)).getType() == RayTraceResult.Type.MISS;
     }
     
     @Override

@@ -179,7 +179,7 @@ public class Class3918 extends Class3841 implements Class3856
                 if (b) {
                     if (!class1848.get((IProperty<Boolean>)Class3918.field17760)) {
                         if (!class1848.get((IProperty<Boolean>)Class3918.field17762)) {
-                            class1847.setBlockState(class1849.method21447(), ((StateHolder<O, BlockState>)class1848).with((IProperty<Comparable>)Class8970.field37736, true), 11);
+                            class1847.setBlockState(class1849.getPos(), ((StateHolder<O, BlockState>)class1848).with((IProperty<Comparable>)Class8970.field37736, true), 11);
                         }
                     }
                 }

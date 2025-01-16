@@ -114,6 +114,6 @@ public class Class3239 extends Class3167
     }
     
     private boolean method10230(final Vec3d class5487) {
-        return Class3239.field15514.field4684.method1895().y < 1.0 || Class3239.field15514.field4683.method6981(Class3239.field15514.field4684, new AxisAlignedBB(class5487.add(-0.15, 0.0, -0.15), class5487.add(0.15, Class3239.field15514.field4684.method1931(), 0.15)).method18494(0.0, -Class3239.field15514.field4684.method1934().y, 0.0)).count() == 0L;
+        return Class3239.field15514.field4684.method1895().y < 1.0 || Class3239.field15514.field4683.method6981(Class3239.field15514.field4684, new AxisAlignedBB(class5487.add(-0.15, 0.0, -0.15), class5487.add(0.15, Class3239.field15514.field4684.method1931(), 0.15)).expand(0.0, -Class3239.field15514.field4684.method1934().y, 0.0)).count() == 0L;
     }
 }

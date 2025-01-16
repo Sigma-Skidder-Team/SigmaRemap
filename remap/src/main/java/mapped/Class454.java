@@ -114,7 +114,7 @@ public class Class454 extends Class433 implements Class453
     
     public boolean method2291() {
         if (!Class455.method2300(this)) {
-            final List<Entity> method6739 = this.world.method6739((Class<? extends Entity>)Class427.class, this.getBoundingBox().method18495(0.25, 0.0, 0.25), (Predicate<? super Entity>)Class9170.field38845);
+            final List<Entity> method6739 = this.world.method6739((Class<? extends Entity>)Class427.class, this.getBoundingBox().grow(0.25, 0.0, 0.25), (Predicate<? super Entity>)Class9170.field38845);
             if (!method6739.isEmpty()) {
                 Class455.method2302(this, (Class427)method6739.get(0));
             }

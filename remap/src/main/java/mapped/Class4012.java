@@ -232,6 +232,6 @@ public class Class4012 extends Block
     static {
         field18081 = Class8970.field37782;
         field18082 = Block.method11778(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
-        field18083 = VoxelShapes.method24494(VoxelShapes.method24487(), VoxelShapes.method24493(Block.method11778(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), Block.method11778(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), Block.method11778(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), Class4012.field18082), IBooleanFunction.ONLY_FIRST);
+        field18083 = VoxelShapes.method24494(VoxelShapes.fullCube(), VoxelShapes.method24493(Block.method11778(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), Block.method11778(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), Block.method11778(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), Class4012.field18082), IBooleanFunction.ONLY_FIRST);
     }
 }

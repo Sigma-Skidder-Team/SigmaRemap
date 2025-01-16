@@ -66,7 +66,7 @@ public class Class3308 extends Class3167
             }
             double n = this.field15885 ? 1.0E-14 : 0.0;
             boolean b = false;
-            final boolean b2 = Class3308.field15514.field4691 != null && Class3308.field15514.field4691.method21449() == Class2165.field12881;
+            final boolean b2 = Class3308.field15514.field4691 != null && Class3308.field15514.field4691.getType() == RayTraceResult.Type.BLOCK;
             if (Class3308.field15514.field4682.method27337() || (Class3308.field15514.field4648.field23446.method1056() && b2) || Class3295.method10433()) {
                 this.field15884 = 2;
                 b = true;

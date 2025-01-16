@@ -7,7 +7,7 @@ package net.minecraft.util.math;
 import java.util.function.IntPredicate;
 import java.util.UUID;
 
-import mapped.Class8349;
+import mapped.Util;
 import mapped.Class8500;
 import org.apache.commons.lang3.math.NumberUtils;
 import java.util.Random;
@@ -120,7 +120,7 @@ public class MathHelper
     
     public static double method35655(final double n, final double n2, final double n3) {
         if (n3 >= 0.0) {
-            return (n3 <= 1.0) ? method35701(n3, n, n2) : n2;
+            return (n3 <= 1.0) ? lerp(n3, n, n2) : n2;
         }
         return n;
     }
@@ -468,16 +468,16 @@ public class MathHelper
         return n2 + n * (n3 - n2);
     }
     
-    public static double method35701(final double n, final double n2, final double n3) {
+    public static double lerp(final double n, final double n2, final double n3) {
         return n2 + n * (n3 - n2);
     }
     
     public static double method35702(final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        return method35701(n2, method35701(n, n3, n4), method35701(n, n5, n6));
+        return lerp(n2, lerp(n, n3, n4), lerp(n, n5, n6));
     }
     
     public static double method35703(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final double n7, final double n8, final double n9, final double n10, final double n11) {
-        return method35701(n3, method35702(n, n2, n4, n5, n6, n7), method35702(n, n2, n8, n9, n10, n11));
+        return lerp(n3, method35702(n, n2, n4, n5, n6, n7), method35702(n, n2, n8, n9, n10, n11));
     }
     
     public static double method35704(final double n) {
@@ -525,7 +525,7 @@ public class MathHelper
         field41103 = Class8500.method28409(0.017453292519943295);
         field41104 = new float[4096];
         MathHelper.field41105 = false;
-        field41106 = Class8349.method27851(new float[65536], array -> {
+        field41106 = Util.method27851(new float[65536], array -> {
             int k = 0;
             while (k < array.length) {
                 array[k] = (float)Math.sin(k * 3.141592653589793 * 2.0 / 65536.0);

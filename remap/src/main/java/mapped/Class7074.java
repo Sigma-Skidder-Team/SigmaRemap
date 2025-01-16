@@ -22,8 +22,8 @@ public class Class7074 extends Class7075
     public Class7074(final World class1847, final PlayerEntity class1848, final Class316 class1849, final ItemStack class1850, final BlockRayTraceResult class1851) {
         super(class1847, class1848, class1849, class1850, class1851);
         this.field27549 = true;
-        this.field27548 = class1851.method21447().method1149(class1851.method21448());
-        this.field27549 = class1847.getBlockState(class1851.method21447()).method21750(this);
+        this.field27548 = class1851.getPos().method1149(class1851.getFace());
+        this.field27549 = class1847.getBlockState(class1851.getPos()).method21750(this);
     }
     
     public static Class7074 method21647(final Class7074 class7074, final BlockPos class7075, final Direction class7076) {

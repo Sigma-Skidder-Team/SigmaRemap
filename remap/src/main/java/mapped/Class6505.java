@@ -35,7 +35,7 @@ public class Class6505 implements Class6504
     @Override
     public void method19596() {
         if (this.field25880 == Class5026.field21549) {
-            this.field25880 = new Class5030(Class8349.method27838(), Class5029.method15306(this.field25881), true);
+            this.field25880 = new Class5030(Util.method27838(), Class5029.method15306(this.field25881), true);
         }
     }
 }

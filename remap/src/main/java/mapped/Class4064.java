@@ -20,7 +20,7 @@ public class Class4064 extends Item
     
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
-        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class426.class, class1848.getBoundingBox().method18496(2.0), class1851 -> {
+        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class426.class, class1848.getBoundingBox().intersect(2.0), class1851 -> {
             final boolean b;
             if (class1851 != null) {
                 if (!(!class1851.method1768())) {
@@ -38,10 +38,10 @@ public class Class4064 extends Item
             class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35042, Class286.field1584, 1.0f, 1.0f);
             return Class9355.method34674(this.method12270(method6740, class1848, new ItemStack(Items.field31578)));
         }
-        final Class7006 method6741 = Item.method11733(class1847, class1848, RayTraceContext.FluidMode.SOURCE_ONLY);
-        if (method6741.method21449() != Class2165.field12880) {
-            if (method6741.method21449() == Class2165.field12881) {
-                final BlockPos method6742 = ((BlockRayTraceResult)method6741).method21447();
+        final RayTraceResult method6741 = Item.method11733(class1847, class1848, RayTraceContext.FluidMode.SOURCE_ONLY);
+        if (method6741.getType() != RayTraceResult.Type.MISS) {
+            if (method6741.getType() == RayTraceResult.Type.BLOCK) {
+                final BlockPos method6742 = ((BlockRayTraceResult)method6741).getPos();
                 if (!class1847.method6760(class1848, method6742)) {
                     return Class9355.method34676(method6740);
                 }

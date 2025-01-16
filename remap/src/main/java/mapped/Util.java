@@ -37,7 +37,7 @@ import java.util.function.LongSupplier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Class8349
+public class Util
 {
     private static final AtomicInteger field34266;
     private static final ExecutorService field34267;
@@ -62,7 +62,7 @@ public class Class8349
     }
     
     public static long method27838() {
-        return Class8349.field34268.getAsLong();
+        return Util.field34268.getAsLong();
     }
     
     public static long method27839() {
@@ -75,10 +75,10 @@ public class Class8349
         if (method35651 > 0) {
             directExecutorService = new ForkJoinPool(method35651, forkJoinPool -> {
                 final Class904 class904 = new Class904(forkJoinPool);
-                class904.setName("Server-Worker-" + Class8349.field34266.getAndIncrement());
+                class904.setName("Server-Worker-" + Util.field34266.getAndIncrement());
                 return class904;
             }, (thread, cause) -> {
-                method27859(cause);
+                pauseDevMode(cause);
                 if (!(!(cause instanceof CompletionException))) {
                     cause = cause.getCause();
                 }
@@ -86,7 +86,7 @@ public class Class8349
                     Class9280.method34259(((Class2365)cause).method9500().method24414());
                     System.exit(-1);
                 }
-                Class8349.field34269.error(String.format("Caught exception in thread %s", thread), cause);
+                Util.field34269.error(String.format("Caught exception in thread %s", thread), cause);
                 return;
             }, true);
         }
@@ -97,20 +97,20 @@ public class Class8349
     }
     
     public static Executor method27841() {
-        return Class8349.field34267;
+        return Util.field34267;
     }
     
     public static void method27842() {
-        Class8349.field34267.shutdown();
+        Util.field34267.shutdown();
         boolean awaitTermination;
         try {
-            awaitTermination = Class8349.field34267.awaitTermination(3L, TimeUnit.SECONDS);
+            awaitTermination = Util.field34267.awaitTermination(3L, TimeUnit.SECONDS);
         }
         catch (final InterruptedException ex) {
             awaitTermination = false;
         }
         if (!awaitTermination) {
-            Class8349.field34267.shutdownNow();
+            Util.field34267.shutdownNow();
         }
     }
     
@@ -249,13 +249,13 @@ public class Class8349
         return (Dynamic<T>)dynamic.set(s + "Most", dynamic.createLong(uuid.getMostSignificantBits())).set(s + "Least", dynamic.createLong(uuid.getLeastSignificantBits()));
     }
     
-    public static <T extends Throwable> T method27859(final T t) {
+    public static <T extends Throwable> T pauseDevMode(final T t) {
         if (Class9528.field41021) {
-            Class8349.field34269.error("Trying to throw a fatal exception, pausing in IDE", (Throwable)t);
+            Util.field34269.error("Trying to throw a fatal exception, pausing in IDE", (Throwable)t);
             try {
                 while (true) {
                     Thread.sleep(1000L);
-                    Class8349.field34269.error("paused");
+                    Util.field34269.error("paused");
                 }
             }
             catch (final InterruptedException ex) {
@@ -273,17 +273,17 @@ public class Class8349
     }
     
     public static Exception method27861() {
-        return Class8349.field34270;
+        return Util.field34270;
     }
     
     public static void method27862(final Exception field34270) {
-        Class8349.field34270 = field34270;
+        Util.field34270 = field34270;
     }
     
     static {
         field34266 = new AtomicInteger(1);
         field34267 = method27840();
-        Class8349.field34268 = System::nanoTime;
+        Util.field34268 = System::nanoTime;
         field34269 = LogManager.getLogger();
     }
 }

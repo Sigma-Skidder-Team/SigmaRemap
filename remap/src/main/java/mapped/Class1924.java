@@ -6,10 +6,8 @@ package mapped;
 
 import org.apache.logging.log4j.LogManager;
 import java.nio.file.StandardCopyOption;
-import java.nio.file.CopyOption;
 import java.nio.file.attribute.FileAttribute;
 import java.io.BufferedOutputStream;
-import java.io.OutputStream;
 import java.io.DataOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.BufferedInputStream;
@@ -233,7 +231,7 @@ public class Class1924 implements AutoCloseable
             method7661 = this.method7653(method7662, byteBuffer);
             this.field10469.write(this.method7652(), n * 4096);
         }
-        final int n2 = (int)(Class8349.method27839() / 1000L);
+        final int n2 = (int)(Util.method27839() / 1000L);
         this.field10473.put(method7657, this.method7645(n, method7660));
         this.field10474.put(method7657, n2);
         this.method7654();

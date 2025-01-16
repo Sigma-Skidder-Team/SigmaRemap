@@ -20,7 +20,7 @@ public interface Class7079
     default void method21658(final double n, final double n2) {
     }
     
-    default void method21659(final Class1848 class1848, final Class7006 class1849) {
+    default void method21659(final Class1848 class1848, final RayTraceResult class1849) {
     }
     
     default void method21660(final Class1848 class1848, final BlockPos class1849, final BlockState class1850, final float n) {

@@ -15,7 +15,7 @@ public final class Class6325 extends Class6323
             Class8726.method30058();
             Class8726.method30065(0.5f, 0.5f, 0.0f);
             Class8726.method30063(0.5f, 0.5f, 1.0f);
-            Class8726.method30065(17.0f / n, (2.0f + n / 1.5f) * (Class8349.method27837() % 800000L / 800000.0f), 0.0f);
+            Class8726.method30065(17.0f / n, (2.0f + n / 1.5f) * (Util.method27837() % 800000L / 800000.0f), 0.0f);
             Class8726.method30062((n * n * 4321.0f + n * 9.0f) * 2.0f, 0.0f, 0.0f, 1.0f);
             Class8726.method30063(4.5f - n / 4.0f, 4.5f - n / 4.0f, 1.0f);
             Class8726.method30110();
