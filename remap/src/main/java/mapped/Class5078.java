@@ -209,12 +209,12 @@ public class Class5078 extends Class5075<Class7430>
     }
     
     public void method15728(final Class7430 class7430) {
-        final Class1340 class7431 = new Class1340(this.field21804.id, this.field21805, class7430);
+        final RealmsTasks.ResettingWorldTask class7431 = new RealmsTasks.ResettingWorldTask(this.field21804.id, this.field21805, class7430);
         if (this.field21822 != null) {
-            class7431.method5627(this.field21822);
+            class7431.func_225012_c(this.field21822);
         }
         if (this.field21823 != -1) {
-            class7431.method5626(this.field21823);
+            class7431.func_225011_a(this.field21823);
         }
         final Class5049 class7432 = new Class5049(this.field21803, class7431);
         class7432.method15466();
@@ -233,12 +233,12 @@ public class Class5078 extends Class5075<Class7430>
     }
     
     private void method15730(final Class8999 class8999) {
-        final Class1340 class9000 = new Class1340(this.field21804.id, this.field21805, class8999.field37979, class8999.field37980, class8999.field37981);
+        final RealmsTasks.ResettingWorldTask class9000 = new RealmsTasks.ResettingWorldTask(this.field21804.id, this.field21805, class8999.field37979, class8999.field37980, class8999.field37981);
         if (this.field21822 != null) {
-            class9000.method5627(this.field21822);
+            class9000.func_225012_c(this.field21822);
         }
         if (this.field21823 != -1) {
-            class9000.method5626(this.field21823);
+            class9000.func_225011_a(this.field21823);
         }
         final Class5049 class9001 = new Class5049(this.field21803, class9000);
         class9001.method15466();

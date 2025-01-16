@@ -222,4 +222,107 @@ public class RealmsTasks
             }
         }
     }
+
+    public static class ResettingWorldTask extends LongRunningTask
+    {
+        private final String field_225013_b;
+        private final Class7430 field_225014_c;
+        private final int field_225015_d;
+        private final boolean field_225016_e;
+        private final long field_225017_f;
+        private final RealmsScreen field_225018_g;
+        private int field_225019_h = -1;
+        private String field_225020_i = RealmsScreen.getLocalizedString("mco.reset.world.resetting.screen.title");
+
+        public ResettingWorldTask(final long field7340, final RealmsScreen field7341, final Class7430 field7342) {
+            this.field_225013_b = null;
+            this.field_225014_c = field7342;
+            this.field_225015_d = -1;
+            this.field_225016_e = true;
+            this.field_225017_f = field7340;
+            this.field_225018_g = field7341;
+        }
+
+        public ResettingWorldTask(final long field7340, final RealmsScreen field7341, final String field7342, final int field7343, final boolean field7344) {
+            this.field_225013_b = field7342;
+            this.field_225014_c = null;
+            this.field_225015_d = field7343;
+            this.field_225016_e = field7344;
+            this.field_225017_f = field7340;
+            this.field_225018_g = field7341;
+        }
+
+        public void func_225011_a(final int field7342) {
+            this.field_225019_h = field7342;
+        }
+
+        public void func_225012_c(final String field7343) {
+            this.field_225020_i = field7343;
+        }
+
+        @Override
+        public void run()
+        {
+            RealmsClient realmsclient = RealmsClient.func_224911_a();
+            this.func_224989_b(this.field_225020_i);
+            int i = 0;
+
+            while (i < 25)
+            {
+                try
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    if (this.field_225014_c != null)
+                    {
+                        realmsclient.func_224924_g(this.field_225017_f, this.field_225014_c.id);
+                    }
+                    else
+                    {
+                        realmsclient.func_224943_a(this.field_225017_f, this.field_225013_b, this.field_225015_d, this.field_225016_e);
+                    }
+
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    if (this.field_225019_h == -1)
+                    {
+                        Realms.setScreen(this.field_225018_g);
+                    }
+                    else
+                    {
+                        this.field_225018_g.confirmResult(true, this.field_225019_h);
+                    }
+
+                    return;
+                }
+                catch (RetryCallException retrycallexception)
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    RealmsTasks.func_225182_b(retrycallexception.field_224985_e);
+                    ++i;
+                }
+                catch (Exception exception)
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    RealmsTasks.field_225184_a.error("Couldn't reset world");
+                    this.func_224986_a(exception.toString());
+                    return;
+                }
+            }
+        }
+    }
 }

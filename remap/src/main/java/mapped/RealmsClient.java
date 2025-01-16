@@ -163,11 +163,11 @@ public class RealmsClient
         return Boolean.valueOf(this.method35486(Class8178.method27091(this.method35484("worlds" + "/$WORLD_ID/close".replace("$WORLD_ID", String.valueOf(l))), "")));
     }
     
-    public Boolean method35470(final long l, final String s, final Integer n, final boolean b) throws RealmsServiceException, IOException {
+    public Boolean func_224943_a(final long l, final String s, final Integer n, final boolean b) throws RealmsServiceException, IOException {
         return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7421(s, -1L, n, b)), 30000, 80000)));
     }
     
-    public Boolean method35471(final long l, final String s) throws RealmsServiceException, IOException {
+    public Boolean func_224924_g(final long l, final String s) throws RealmsServiceException, IOException {
         return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7421(null, Long.valueOf(s), -1, false)), 30000, 80000)));
     }
     
