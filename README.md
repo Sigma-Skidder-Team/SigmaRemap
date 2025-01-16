@@ -5,7 +5,7 @@ Sigma 5.0 (1.15.2) remapping project
 - This entire project could only be possible by the help of **@kitten_12333** himself who deobfuscated sigma 5.0 to be readable enough.
 
 ### [!] TO-DO
-1. Remap;
+1. Make the remap runnable;
 
 ### Contributors
 - Currently none;
