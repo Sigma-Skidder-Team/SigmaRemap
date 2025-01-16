@@ -48,7 +48,7 @@ import java.util.List;
 
 public class Class6430
 {
-    private static final Class869 field25541;
+    private static final Minecraft field25541;
     public static final float field25542 = 0.3f;
     public static final float[] field25543;
     public static final float[] field25544;
@@ -65,7 +65,7 @@ public class Class6430
     
     public static List<PlayerEntity> method19108() {
         final ArrayList list = new ArrayList();
-        Class6430.field25541.field4683.field10072.forEach((p1, class399) -> {
+        Class6430.field25541.world.field10072.forEach((p1, class399) -> {
             if (!(!(class399 instanceof PlayerEntity))) {
                 list2.add(class399);
             }
@@ -117,7 +117,7 @@ public class Class6430
     }
     
     public static final boolean method19112(final Entity class399) {
-        return Class6430.field25541.field4683.method6968(class399.boundingBox);
+        return Class6430.field25541.world.method6968(class399.boundingBox);
     }
     
     public static final boolean method19113(final Entity class399) {
@@ -144,7 +144,7 @@ public class Class6430
     
     public static float[] method19116(final double n, final double n2, final double n3, final Direction class179) {
         final Class411 class181;
-        final Class411 class180 = class181 = new Class411(Class6430.field25541.field4683, n + 0.5, n2 + 0.5, n3 + 0.5);
+        final Class411 class180 = class181 = new Class411(Class6430.field25541.world, n + 0.5, n2 + 0.5, n3 + 0.5);
         class181.posX += class179.getDirectionVec().getX() * 0.25;
         final Class411 class182 = class180;
         class182.posY += class179.getDirectionVec().getY() * 0.25;
@@ -391,7 +391,7 @@ public class Class6430
     
     public static List<Entity> method19138() {
         final ArrayList list = new ArrayList();
-        Class6430.field25541.field4683.field10072.forEach((p1, class399) -> list2.add(class399));
+        Class6430.field25541.world.field10072.forEach((p1, class399) -> list2.add(class399));
         return list;
     }
     
@@ -414,13 +414,13 @@ public class Class6430
     public static Class7007 method19142(final float n, final float n2, final float n3, final double n4) {
         final Vec3d class5487 = new Vec3d(Class6430.field25541.field4684.posX, Class6430.field25541.field4684.posY + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.posZ);
         final Entity method5303 = Class6430.field25541.method5303();
-        if (method5303 != null && Class6430.field25541.field4683 != null) {
+        if (method5303 != null && Class6430.field25541.world != null) {
             double n5 = Class6430.field25541.field4682.method27315();
             if (n3 != 0.0f) {
                 n5 = n3;
             }
             final Vec3d method5304 = method19151(n2, n);
-            return method19143(Class6430.field25541.field4683, method5303, class5487, class5487.add(method5304.x * n5, method5304.y * n5, method5304.z * n5), method5303.getBoundingBox().expand(method5304.scale(n5)).grow(1.0, 1.0, 1.0), class5488 -> class5488 instanceof LivingEntity, n3 * n3, n4);
+            return method19143(Class6430.field25541.world, method5303, class5487, class5487.add(method5304.x * n5, method5304.y * n5, method5304.z * n5), method5303.getBoundingBox().expand(method5304.scale(n5)).grow(1.0, 1.0, 1.0), class5488 -> class5488 instanceof LivingEntity, n3 * n3, n4);
         }
         return null;
     }
@@ -460,7 +460,7 @@ public class Class6430
         final Vec3d class401 = new Vec3d(Class6430.field25541.field4684.posX, Class6430.field25541.field4684.posY + Class6430.field25541.field4684.method1892(), Class6430.field25541.field4684.posZ);
         final Vec3d method16743 = method19151(n2, n);
         final Vec3d method16744 = class401.add(method16743.x * n4, method16743.y * n4, method16743.z * n4);
-        for (final Entity class402 : Class6430.field25541.field4683.method6737(Class6430.field25541.field4684, Class6430.field25541.field4684.getBoundingBox().expand(method16743.scale(n4)).grow(1.0, 1.0, 1.0), predicate)) {
+        for (final Entity class402 : Class6430.field25541.world.method6737(Class6430.field25541.field4684, Class6430.field25541.field4684.getBoundingBox().expand(method16743.scale(n4)).grow(1.0, 1.0, 1.0), predicate)) {
             final Optional<Vec3d> method16745 = class402.getBoundingBox().rayTrace(class401, method16744);
             if (!method16745.isPresent()) {
                 continue;
@@ -584,7 +584,7 @@ public class Class6430
         if (b) {
             class6221 = class6221.grow(1.2350000143051147, 0.0, 1.2350000143051147);
         }
-        return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class6221.minX + n, class6221.minY - 1.5, class6221.minZ + n2, class6221.maxX + n, class6221.maxY, class6221.maxZ + n2), Collections.EMPTY_SET).count() != 0L;
+        return Class6430.field25541.world.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class6221.minX + n, class6221.minY - 1.5, class6221.minZ + n2, class6221.maxX + n, class6221.maxY, class6221.maxZ + n2), Collections.EMPTY_SET).count() != 0L;
     }
     
     public static boolean method19158(final double n, final double n2) {
@@ -596,11 +596,11 @@ public class Class6430
         if (Class6430.field25541.field4684.method1920() != null) {
             class6221 = Class6430.field25541.field4684.method1920().boundingBox.expand(Math.abs(Class6430.field25541.field4684.method1920().prevPosX - Class6430.field25541.field4684.method1920().posX), 1.0, Math.abs(Class6430.field25541.field4684.method1920().prevPosZ - Class6430.field25541.field4684.method1920().posZ));
         }
-        return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, class6221, Collections.EMPTY_SET).count() != 0L;
+        return Class6430.field25541.world.method6980(Class6430.field25541.field4684, class6221, Collections.EMPTY_SET).count() != 0L;
     }
     
     public static boolean method19160(final Entity class399, final float n) {
-        return Class6430.field25541.field4683.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - n, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ), Collections.EMPTY_SET).count() != 0L;
+        return Class6430.field25541.world.method6980(Class6430.field25541.field4684, new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - n, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ), Collections.EMPTY_SET).count() != 0L;
     }
     
     public static List<BlockPos> method19161(final Entity class399) {
@@ -972,7 +972,7 @@ public class Class6430
     }
     
     static {
-        field25541 = Class869.method5277();
+        field25541 = Minecraft.method5277();
         field25543 = new float[4];
         field25544 = new float[4];
         field25545 = new ResourceLocation("shaders/post/blur.json");

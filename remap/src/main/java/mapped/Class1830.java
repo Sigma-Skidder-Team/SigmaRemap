@@ -24,7 +24,7 @@ public class Class1830 extends Class1799<Class840, Class5882<Class840>>
         else {
             class7351.method22564(0.0, 1.0f - n8 * 0.5f, -1.0f + n8 * 0.5f);
         }
-        Class869.method5277().method5308().method35143(class7353, b ? class7353.getHeldItemMainhand() : class7353.method2714(), Class2016.field11493, false, class7351, class7352, n);
+        Minecraft.method5277().method5308().method35143(class7353, b ? class7353.getHeldItemMainhand() : class7353.method2714(), Class2016.field11493, false, class7351, class7352, n);
         class7351.method22568();
     }
 }

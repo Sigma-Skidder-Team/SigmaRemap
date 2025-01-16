@@ -56,7 +56,7 @@ public class Class3225 extends Class3167
                     }
                 }
                 if (replaceAll.toLowerCase().contains("was killed by " + s) || replaceAll.toLowerCase().contains("was thrown into the void by " + s + ".") || replaceAll.toLowerCase().contains("was thrown off a cliff by " + s + ".") || replaceAll.toLowerCase().contains("be sent to davy jones' locker by " + s + ".")) {
-                    final Class6516 method17000 = Class3225.field15514.field4683.method6782();
+                    final Class6516 method17000 = Class3225.field15514.world.method6782();
                     Class9290 method17001 = null;
                     final Class6749 method17002 = method17000.method19651(Class3225.field15514.field4684.method1867());
                     if (method17002 != null) {

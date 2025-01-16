@@ -17,7 +17,7 @@ public class Class4837 extends Class4825
     public static Class6523 field20733;
     public String field20734;
     private PlayerEntity field20735;
-    private Class869 field20736;
+    private Minecraft field20736;
     private static Class1848 field20737;
     public Class7971 field20738;
     private Class1773 field20739;
@@ -26,7 +26,7 @@ public class Class4837 extends Class4825
     public Class4837(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final String field20734) {
         super(class4803, s, n, n2, n3, n4, Class4837.field20733, false);
         this.field20734 = null;
-        this.field20736 = Class869.method5277();
+        this.field20736 = Minecraft.method5277();
         this.field20734 = field20734;
     }
     
@@ -75,7 +75,7 @@ public class Class4837 extends Class4825
         final Class5860 class9207 = new Class5860(0.0f, false);
         if (this.field20738 != null) {
             final Class4711 class9208 = new Class4711(this.field20736.method5306());
-            Class869.method5277().method5333().method11006();
+            Minecraft.method5277().method5333().method11006();
             final Class7351 class9209 = new Class7351();
             Class8726.method30059();
             this.field20736.method5306().method28702(false);

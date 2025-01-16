@@ -17,12 +17,12 @@ import java.util.Locale;
 import com.google.common.collect.ComparisonChain;
 import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
-import java.util.Iterator;
+
 import java.util.Map;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class7437 extends Class7422
+public class Class7437 extends ValueObject
 {
     private static final Logger field28674;
     public long field28675;
@@ -72,7 +72,7 @@ public class Class7437 extends Class7422
         final StringBuilder sb = new StringBuilder();
         int i = 0;
         for (final String str : class7429.field28647) {
-            if (!str.equals(Class7847.method25357())) {
+            if (!str.equals(Realms.method25357())) {
                 String method28146;
                 try {
                     method28146 = Class8428.method28146(str);
@@ -95,12 +95,12 @@ public class Class7437 extends Class7422
     public static Class7437 method22877(final JsonObject jsonObject) {
         final Class7437 class7437 = new Class7437();
         try {
-            class7437.field28675 = Class7610.method23909("id", jsonObject, -1L);
-            class7437.field28676 = Class7610.method23907("remoteSubscriptionId", jsonObject, null);
-            class7437.field28677 = Class7610.method23907("name", jsonObject, null);
-            class7437.field28678 = Class7610.method23907("motd", jsonObject, null);
-            class7437.field28679 = method22883(Class7610.method23907("state", jsonObject, Class2153.field12791.name()));
-            class7437.field28680 = Class7610.method23907("owner", jsonObject, null);
+            class7437.field28675 = JsonUtils.func_225169_a("id", jsonObject, -1L);
+            class7437.field28676 = JsonUtils.func_225171_a("remoteSubscriptionId", jsonObject, null);
+            class7437.field28677 = JsonUtils.func_225171_a("name", jsonObject, null);
+            class7437.field28678 = JsonUtils.func_225171_a("motd", jsonObject, null);
+            class7437.field28679 = method22883(JsonUtils.func_225171_a("state", jsonObject, Class2153.field12791.name()));
+            class7437.field28680 = JsonUtils.func_225171_a("owner", jsonObject, null);
             if (jsonObject.get("players") != null && jsonObject.get("players").isJsonArray()) {
                 class7437.field28682 = method22879(jsonObject.get("players").getAsJsonArray());
                 method22878(class7437);
@@ -108,21 +108,21 @@ public class Class7437 extends Class7422
             else {
                 class7437.field28682 = Lists.newArrayList();
             }
-            class7437.field28686 = Class7610.method23908("daysLeft", jsonObject, 0);
-            class7437.field28684 = Class7610.method23910("expired", jsonObject, false);
-            class7437.field28685 = Class7610.method23910("expiredTrial", jsonObject, false);
-            class7437.field28687 = method22884(Class7610.method23907("worldType", jsonObject, Class271.field1471.name()));
-            class7437.field28681 = Class7610.method23907("ownerUUID", jsonObject, "");
+            class7437.field28686 = JsonUtils.method23908("daysLeft", jsonObject, 0);
+            class7437.field28684 = JsonUtils.method23910("expired", jsonObject, false);
+            class7437.field28685 = JsonUtils.method23910("expiredTrial", jsonObject, false);
+            class7437.field28687 = method22884(JsonUtils.func_225171_a("worldType", jsonObject, Class271.field1471.name()));
+            class7437.field28681 = JsonUtils.func_225171_a("ownerUUID", jsonObject, "");
             if (jsonObject.get("slots") != null && jsonObject.get("slots").isJsonArray()) {
                 class7437.field28683 = method22880(jsonObject.get("slots").getAsJsonArray());
             }
             else {
                 class7437.field28683 = method22881();
             }
-            class7437.field28689 = Class7610.method23907("minigameName", jsonObject, null);
-            class7437.field28688 = Class7610.method23908("activeSlot", jsonObject, -1);
-            class7437.field28690 = Class7610.method23908("minigameId", jsonObject, -1);
-            class7437.field28691 = Class7610.method23907("minigameImage", jsonObject, null);
+            class7437.field28689 = JsonUtils.func_225171_a("minigameName", jsonObject, null);
+            class7437.field28688 = JsonUtils.method23908("activeSlot", jsonObject, -1);
+            class7437.field28690 = JsonUtils.method23908("minigameId", jsonObject, -1);
+            class7437.field28691 = JsonUtils.func_225171_a("minigameImage", jsonObject, null);
         }
         catch (final Exception ex) {
             Class7437.field28674.error("Could not parse McoServer: " + ex.getMessage());
@@ -140,11 +140,11 @@ public class Class7437 extends Class7422
             try {
                 final JsonObject asJsonObject = jsonElement.getAsJsonObject();
                 final Class7427 class7427 = new Class7427();
-                class7427.method22851(Class7610.method23907("name", asJsonObject, null));
-                class7427.method22853(Class7610.method23907("uuid", asJsonObject, null));
-                class7427.method22855(Class7610.method23910("operator", asJsonObject, false));
-                class7427.method22857(Class7610.method23910("accepted", asJsonObject, false));
-                class7427.method22859(Class7610.method23910("online", asJsonObject, false));
+                class7427.method22851(JsonUtils.func_225171_a("name", asJsonObject, null));
+                class7427.method22853(JsonUtils.func_225171_a("uuid", asJsonObject, null));
+                class7427.method22855(JsonUtils.method23910("operator", asJsonObject, false));
+                class7427.method22857(JsonUtils.method23910("accepted", asJsonObject, false));
+                class7427.method22859(JsonUtils.method23910("online", asJsonObject, false));
                 arrayList.add(class7427);
             }
             catch (final Exception ex) {}
@@ -165,7 +165,7 @@ public class Class7437 extends Class7422
                 else {
                     class7424 = Class7424.method22841(parse.getAsJsonObject());
                 }
-                hashMap.put(Class7610.method23908("slotId", asJsonObject, -1), class7424);
+                hashMap.put(JsonUtils.method23908("slotId", asJsonObject, -1), class7424);
             }
             catch (final Exception ex) {}
         }

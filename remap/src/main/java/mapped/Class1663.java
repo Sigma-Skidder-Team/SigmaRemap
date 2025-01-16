@@ -135,7 +135,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
     }
     
     private static void method5856(final Runnable runnable) {
-        Class869.method5277().execute(() -> Class8726.method29991(runnable2::run));
+        Minecraft.method5277().execute(() -> Class8726.method29991(runnable2::run));
     }
     
     @Override

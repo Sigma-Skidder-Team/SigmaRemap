@@ -21,7 +21,7 @@ public class Class1087 implements Runnable
     
     private void method5606() {
         try {
-            final Class9513 method35444 = Class9513.method35444();
+            final RealmsClient method35444 = RealmsClient.func_224911_a();
             if (method35444 != null) {
                 Class7439 method35445 = null;
                 try {

@@ -666,7 +666,7 @@ public class Class8763
     }
     
     public static Class7860 method30341() {
-        return Class869.method5277().method5316();
+        return Minecraft.method5277().method5316();
     }
     
     public static void method30342(final Class6173 class6173) {
@@ -844,23 +844,23 @@ public class Class8763
     
     public static Vec3d method30362(final Vec3d class5487, final World class5488, final Entity class5489, final float n) {
         final DimensionType method20487 = class5488.dimension.getType();
-        final Class869 method20488 = Class869.method5277();
+        final Minecraft method20488 = Minecraft.method5277();
         if (method20487 == DimensionType.field2224) {
             return method30352(class5487);
         }
         if (method20487 != DimensionType.field2223) {
             return (method20487 != DimensionType.field2225) ? class5487 : method30353(class5487);
         }
-        return method30356(class5487, method20488.field4683, class5489.getPosX(), class5489.getPosY() + 1.0, class5489.getPosZ());
+        return method30356(class5487, method20488.world, class5489.getPosX(), class5489.getPosY() + 1.0, class5489.getPosZ());
     }
     
     public static Vec3d method30363(final Vec3d class5487, final World class5488, final Entity class5489, final float n) {
         final DimensionType method20487 = class5488.dimension.getType();
-        final Class869 method20488 = Class869.method5277();
+        final Minecraft method20488 = Minecraft.method5277();
         if (method20487 != DimensionType.field2223) {
             return (method20487 != DimensionType.field2225) ? class5487 : method30354(class5487);
         }
-        return method30355(class5487, method20488.field4683, class5489.getPosX(), class5489.getPosY() + 1.0, class5489.getPosZ());
+        return method30355(class5487, method20488.world, class5489.getPosX(), class5489.getPosY() + 1.0, class5489.getPosZ());
     }
     
     private static int[] method30364(final Properties properties, final String s, final String prefix, final String str) {
@@ -1283,7 +1283,7 @@ public class Class8763
                 }
             }
             if (n != 0) {
-                Class869.method5277().method5290().method5859();
+                Minecraft.method5277().method5290().method5859();
             }
         }
     }

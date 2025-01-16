@@ -18,10 +18,10 @@ public class Class3389 extends Class3167
         if (!this.method9906() || Class3389.field15514.field4684 == null) {
             return;
         }
-        if (!Class869.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().field4648.field23464) {
             final int index = 5;
             final int n = 60;
-            final int n2 = Class869.method5277().field4648.field23466 ? 60 : 0;
+            final int n2 = Minecraft.method5277().field4648.field23466 ? 60 : 0;
             final ArrayList<Integer> method10807 = this.method10807((int)this.method10809(Class3389.field15514.field4684.rotationYaw), index);
             int intValue = method10807.get(index);
             if (intValue == 0) {

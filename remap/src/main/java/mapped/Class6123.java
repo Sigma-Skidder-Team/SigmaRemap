@@ -25,13 +25,13 @@ import org.apache.logging.log4j.Logger;
 public class Class6123 implements Class6113
 {
     private static final Logger field24854;
-    private final Class869 field24855;
+    private final Minecraft field24855;
     private final Map<BlockPos, Class7018> field24856;
     private final Set<Class353> field24857;
     private final Map<UUID, Class9307> field24858;
     private UUID field24859;
     
-    public Class6123(final Class869 field24855) {
+    public Class6123(final Minecraft field24855) {
         this.field24856 = Maps.newHashMap();
         this.field24857 = Sets.newHashSet();
         this.field24858 = Maps.newHashMap();

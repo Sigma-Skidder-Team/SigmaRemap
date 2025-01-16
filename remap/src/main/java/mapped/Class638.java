@@ -32,7 +32,7 @@ public class Class638 extends Class623<Class638>
         final ItemStack class9129 = new ItemStack(class9128);
         final String method21697 = class9128.method11729(class9129).getFormattedText();
         this.method3666(n3, n2, class9129);
-        this.field3637.field3591.field3156.method6610(method21697, (float)(n3 + 18 + 5), (float)(n2 + 3), 16777215);
+        this.field3637.field3591.font.method6610(method21697, (float)(n3 + 18 + 5), (float)(n2 + 3), 16777215);
         String s;
         if (n != 0) {
             if (n != Class696.method3893(this.field3637.field3591).method21590().size() - 1) {
@@ -45,11 +45,11 @@ public class Class638 extends Class623<Class638>
         else {
             s = Class8822.method30773("createWorld.customize.flat.layer.top", class9127.method33114());
         }
-        this.field3637.field3591.field3156.method6610(s, (float)(n3 + 2 + 213 - this.field3637.field3591.field3156.method6617(s)), (float)(n2 + 3), 16777215);
+        this.field3637.field3591.font.method6610(s, (float)(n3 + 2 + 213 - this.field3637.field3591.font.method6617(s)), (float)(n2 + 3), 16777215);
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 != 0) {
             return false;
         }
@@ -62,7 +62,7 @@ public class Class638 extends Class623<Class638>
         this.method3667(n + 1, n2 + 1);
         Class8726.method30046();
         if (!class8321.method27620()) {
-            this.field3637.field3591.field3151.method6538(class8321, n + 2, n2 + 2);
+            this.field3637.field3591.itemRenderer.method6538(class8321, n + 2, n2 + 2);
         }
         Class8726.method30047();
     }

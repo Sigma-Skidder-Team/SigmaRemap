@@ -10,7 +10,7 @@ import net.minecraft.util.math.MathHelper;
 public class Class9379
 {
     private static String[] field40211;
-    public static Class869 field40212;
+    public static Minecraft field40212;
     private static final int field40213;
     private static final int field40214;
     private static final int field40215;
@@ -88,13 +88,13 @@ public class Class9379
         final int method35647 = MathHelper.ceil(class6221.maxY);
         final int method35648 = MathHelper.floor(class6221.minZ);
         final int method35649 = MathHelper.ceil(class6221.maxZ);
-        if (Class9379.field40212.field4683.method6973(method35644, method35646, method35648, method35645, method35647, method35649)) {
+        if (Class9379.field40212.world.method6973(method35644, method35646, method35648, method35645, method35647, method35649)) {
             final Class386 method35650 = Class386.method1296();
             for (int i = method35644; i < method35645; ++i) {
                 for (int j = method35646; j < method35647; ++j) {
                     for (int k = method35648; k < method35649; ++k) {
                         method35650.method1300(i, j, k);
-                        final BlockState method35651 = Class9379.field40212.field4683.getBlockState(method35650);
+                        final BlockState method35651 = Class9379.field40212.world.getBlockState(method35650);
                         method35651.getBlock();
                         if (method35651.getMaterial() == class6222) {
                             return true;
@@ -123,7 +123,7 @@ public class Class9379
     }
     
     static {
-        Class9379.field40212 = Class869.method5277();
+        Class9379.field40212 = Minecraft.method5277();
         field40213 = 1 + MathHelper.log2(MathHelper.smallestEncompassingPowerOfTwo(30000000));
         field40214 = Class9379.field40213;
         field40215 = 64 - Class9379.field40213 - Class9379.field40214;

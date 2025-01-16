@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 public class Class684 extends Class565
 {
     private static final Logger field3741;
-    private final Class869 field3742;
+    private final Minecraft field3742;
     private final List<String> field3743;
     private final List<Class8693> field3744;
     private final List<Class8693> field3745;
@@ -25,7 +25,7 @@ public class Class684 extends Class565
     private boolean field3747;
     private int field3748;
     
-    public Class684(final Class869 field3742) {
+    public Class684(final Minecraft field3742) {
         this.field3743 = Lists.newArrayList();
         this.field3744 = Lists.newArrayList();
         this.field3745 = Lists.newArrayList();
@@ -68,7 +68,7 @@ public class Class684 extends Class565
                             if (n7 > 3) {
                                 final int n9 = -n4 * 9;
                                 if (this.field3742.field4648.field23528 == 5) {
-                                    method3775 = this.field3742.field4643.method6617(class8693.method29803().getFormattedText()) - 2;
+                                    method3775 = this.field3742.fontRenderer.method6617(class8693.method29803().getFormattedText()) - 2;
                                 }
                                 if (this.field3742.field4648.field23528 != 3) {
                                     Class565.method3294(method3776, -2, n9 - 9, 0 + method3775 + 4, n9, n8 << 24);
@@ -76,10 +76,10 @@ public class Class684 extends Class565
                                 final String method3777 = class8693.method29803().getFormattedText();
                                 Class8726.method30011();
                                 if (this.field3742.field4648.field23529) {
-                                    this.field3742.field4643.method6609(method3777, 0.0f, (float)(n9 - 8), 16777215 + (n7 << 24));
+                                    this.field3742.fontRenderer.method6609(method3777, 0.0f, (float)(n9 - 8), 16777215 + (n7 << 24));
                                 }
                                 else {
-                                    this.field3742.field4643.method6610(method3777, 0.0f, (float)(n9 - 8), 16777215 + (n7 << 24));
+                                    this.field3742.fontRenderer.method6610(method3777, 0.0f, (float)(n9 - 8), 16777215 + (n7 << 24));
                                 }
                                 Class8726.method29998();
                                 Class8726.method30012();
@@ -135,7 +135,7 @@ public class Class684 extends Class565
         if (n != 0) {
             this.method3771(n);
         }
-        final List<ITextComponent> method31697 = Class8936.method31697(class2250, MathHelper.floor(this.method3772() / this.method3774()), this.field3742.field4643, false, false);
+        final List<ITextComponent> method31697 = Class8936.method31697(class2250, MathHelper.floor(this.method3772() / this.method3774()), this.field3742.fontRenderer, false, false);
         final boolean method31698 = this.method3770();
         for (final ITextComponent class2251 : method31697) {
             if (method31698) {
@@ -217,7 +217,7 @@ public class Class684 extends Class565
                                     if (!(class8694 instanceof StringTextComponent)) {
                                         continue;
                                     }
-                                    n8 += this.field3742.field4643.method6617(Class8936.method31696(((StringTextComponent)class8694).getText(), false));
+                                    n8 += this.field3742.fontRenderer.method6617(Class8936.method31696(((StringTextComponent)class8694).getText(), false));
                                     if (n8 <= n5) {
                                         continue;
                                     }
@@ -258,7 +258,7 @@ public class Class684 extends Class565
     
     public int method3772() {
         final int method3775 = method3775(this.field3742.field4648.field23402);
-        final Class1925 method3776 = Class869.method5277().method5332();
+        final Class1925 method3776 = Minecraft.method5277().method5332();
         return MathHelper.method35651(method3775, 0, (int)((method3776.method7692() - 3) / method3776.method7700()));
     }
     

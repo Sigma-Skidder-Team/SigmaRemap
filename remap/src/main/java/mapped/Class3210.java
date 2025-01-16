@@ -16,16 +16,16 @@ public class Class3210 extends Class3167
     private void method10090(final Class5740 class5740) {
         if (this.method9906()) {
             if (GLFW.glfwGetWindowAttrib(Class3210.field15514.field4632.method7690(), 131073) == 1) {
-                Class869.method5277().field4632.method7678(Class3210.field15514.field4648.field23383);
+                Minecraft.method5277().field4632.method7678(Class3210.field15514.field4648.field23383);
             }
             else {
-                Class869.method5277().field4632.method7678(5);
+                Minecraft.method5277().field4632.method7678(5);
             }
         }
     }
     
     @Override
     public void method9897() {
-        Class869.method5277().field4632.method7678(Class3210.field15514.field4648.field23383);
+        Minecraft.method5277().field4632.method7678(Class3210.field15514.field4648.field23383);
     }
 }

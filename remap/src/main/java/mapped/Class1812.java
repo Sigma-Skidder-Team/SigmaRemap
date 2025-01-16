@@ -44,7 +44,7 @@ public class Class1812 extends Class1799<Class803, Class5927<Class803>>
         if (method2783) {
             class7351.method22566(Vector3f.ZP.rotationDegrees(90.0f));
         }
-        Class869.method5277().method5308().method35143(class7353, class7353.method2718(Class2215.field13600), Class2016.field11493, false, class7351, class7352, n);
+        Minecraft.method5277().method5308().method35143(class7353, class7353.method2718(Class2215.field13600), Class2016.field11493, false, class7351, class7352, n);
         class7351.method22568();
     }
 }

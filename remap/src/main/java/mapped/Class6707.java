@@ -20,7 +20,7 @@ public class Class6707 extends Class6693
     public void run(final String s, final Class8025[] array, final Class6428 class6428) throws CommandException {
         if (array.length == 0) {
             Class9070.method32674(() -> {
-                final Class869 field26420 = Class6707.field26420;
+                final Minecraft field26420 = Class6707.field26420;
                 new Class531(new StringTextComponent("GuiKeybinds"));
                 final Class531 class6429;
                 field26420.method5244(class6429);

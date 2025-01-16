@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.List;
 
-public class Class723 extends Class527
+public class Class723 extends Screen
 {
     public static final Class7735 field3946;
     public static final ResourceLocation field3947;
@@ -34,7 +34,7 @@ public class Class723 extends Class527
     }
     
     private Class723(final Class7735 field3948, final boolean field3949) {
-        super(Class7895.field32402);
+        super(NarratorChatListener.EMPTY);
         this.field3950 = Collections.emptyList();
         this.field3951 = -1;
         this.field3948 = field3948;
@@ -64,17 +64,17 @@ public class Class723 extends Class527
     }
     
     @Override
-    public void method2969() {
+    public void init() {
         this.method3971();
         this.method3972();
     }
     
     public void method3971() {
-        this.method3029(new Class654(this.field3152 / 2 - 100, 196, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.field3150.method5244(null)));
+        this.method3029(new Class654(this.width / 2 - 100, 196, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.method5244(null)));
     }
     
     public void method3972() {
-        final int n = (this.field3152 - 192) / 2;
+        final int n = (this.width - 192) / 2;
         this.field3952 = this.method3029(new Class680(n + 116, 159, true, class654 -> this.method3975(), this.field3954));
         this.field3953 = this.method3029(new Class680(n + 43, 159, false, class654 -> this.method3974(), this.field3954));
         this.method3976();
@@ -104,8 +104,8 @@ public class Class723 extends Class527
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
-        if (super.method2972(n, n2, n3)) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
+        if (super.keyPressed(n, n2, n3)) {
             return true;
         }
         switch (n) {
@@ -125,19 +125,19 @@ public class Class723 extends Class527
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3150.method5290().method5849(Class723.field3947);
-        final int n4 = (this.field3152 - 192) / 2;
+        this.minecraft.method5290().method5849(Class723.field3947);
+        final int n4 = (this.width - 192) / 2;
         this.method3186(n4, 2, 0, 0, 192, 192);
         final String method30773 = Class8822.method30773("book.pageIndicator", this.field3949 + 1, Math.max(this.method3973(), 1));
         if (this.field3951 != this.field3949) {
-            this.field3950 = Class8936.method31697(this.field3948.method24686(this.field3949), 114, this.field3156, true, true);
+            this.field3950 = Class8936.method31697(this.field3948.method24686(this.field3949), 114, this.font, true, true);
         }
         this.field3951 = this.field3949;
-        this.field3156.method6610(method30773, (float)(n4 - this.method3977(method30773) + 192 - 44), 18.0f, 0);
+        this.font.method6610(method30773, (float)(n4 - this.method3977(method30773) + 192 - 44), 18.0f, 0);
         for (int min = Math.min(14, this.field3950.size()), i = 0; i < min; ++i) {
-            this.field3156.method6610(this.field3950.get(i).getFormattedText(), (float)(n4 + 36), (float)(32 + i * 9), 0);
+            this.font.method6610(this.field3950.get(i).getFormattedText(), (float)(n4 + 36), (float)(32 + i * 9), 0);
         }
         final ITextComponent method30774 = this.method3978(n, n2);
         if (method30774 != null) {
@@ -147,11 +147,11 @@ public class Class723 extends Class527
     }
     
     private int method3977(final String s) {
-        return this.field3156.method6617(this.field3156.method6630() ? this.field3156.method6611(s) : s);
+        return this.font.method6617(this.font.method6630() ? this.font.method6611(s) : s);
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 == 0) {
             final ITextComponent method3978 = this.method3978(n, n2);
             if (method3978 != null) {
@@ -160,7 +160,7 @@ public class Class723 extends Class527
                 }
             }
         }
-        return super.method2982(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     @Override
@@ -180,7 +180,7 @@ public class Class723 extends Class527
         }
         final boolean method30412 = super.method3035(class2250);
         if (method30412 && method30410.method35309() == Class2075.field11973) {
-            this.field3150.method5244(null);
+            this.minecraft.method5244(null);
         }
         return method30412;
     }
@@ -190,7 +190,7 @@ public class Class723 extends Class527
         if (this.field3950 == null) {
             return null;
         }
-        final int method35644 = MathHelper.floor(n - (this.field3152 - 192) / 2 - 36.0);
+        final int method35644 = MathHelper.floor(n - (this.width - 192) / 2 - 36.0);
         final int method35645 = MathHelper.floor(n2 - 2.0 - 30.0);
         if (method35644 < 0 || method35645 < 0) {
             return null;
@@ -206,7 +206,7 @@ public class Class723 extends Class527
                         if (!(class2251 instanceof StringTextComponent)) {
                             continue;
                         }
-                        n4 += this.field3150.field4643.method6617(class2251.getFormattedText());
+                        n4 += this.minecraft.fontRenderer.method6617(class2251.getFormattedText());
                         if (n4 <= method35644) {
                             continue;
                         }

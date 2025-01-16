@@ -30,15 +30,15 @@ public class Class747 extends Class516<Class3422>
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.field3156.method6610(this.field3148.getFormattedText(), 8.0f, 4.0f, 4210752);
-        this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 94), 4210752);
+        this.font.method6610(this.field3148.getFormattedText(), 8.0f, 4.0f, 4210752);
+        this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 94), 4210752);
     }
     
     @Override
     public void method2976(final float n, final int n2, final int n3) {
-        this.method3041();
+        this.renderBackground();
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3150.method5290().method5849(Class747.field4037);
+        this.minecraft.method5290().method5849(Class747.field4037);
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
         this.method3186(field3079, field3080, 0, 0, this.field3075, this.field3076);
@@ -78,12 +78,12 @@ public class Class747 extends Class516<Class3422>
         final List<Class3686> method10905 = ((Class3422)this.field3077).method10905();
         for (int field4040 = this.field4040; field4040 < n3 && field4040 < ((Class3422)this.field3077).method10906(); ++field4040) {
             final int n4 = field4040 - this.field4040;
-            this.field3150.method5307().method6540(method10905.get(field4040).method11292(), n + n4 % 4 * 16, n2 + n4 / 4 * 18 + 2);
+            this.minecraft.getItemRenderer().method6540(method10905.get(field4040).method11292(), n + n4 % 4 * 16, n2 + n4 / 4 * 18 + 2);
         }
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         this.field4039 = false;
         if (this.field4041) {
             final int n4 = this.field3079 + 52;
@@ -96,9 +96,9 @@ public class Class747 extends Class516<Class3422>
                     if (n9 >= 0.0) {
                         if (n8 < 16.0) {
                             if (n9 < 18.0) {
-                                if (((Class3422)this.field3077).method10877(this.field3150.field4684, i)) {
-                                    Class869.method5277().method5299().method6422(Class6836.method20933(Class8520.field35667, 1.0f));
-                                    this.field3150.field4682.method27326(((Class3422)this.field3077).field16154, i);
+                                if (((Class3422)this.field3077).method10877(this.minecraft.field4684, i)) {
+                                    Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35667, 1.0f));
+                                    this.minecraft.field4682.method27326(((Class3422)this.field3077).field16154, i);
                                     return true;
                                 }
                             }
@@ -118,11 +118,11 @@ public class Class747 extends Class516<Class3422>
                 }
             }
         }
-        return super.method2982(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     @Override
-    public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
+    public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
         if (this.field4039 && this.method4074()) {
             final int n6 = this.field3080 + 14;
             this.field4038 = ((float)n2 - n6 - 7.5f) / (n6 + 54 - n6 - 15.0f);
@@ -130,11 +130,11 @@ public class Class747 extends Class516<Class3422>
             this.field4040 = (int)(this.field4038 * this.method4075() + 0.5) * 4;
             return true;
         }
-        return super.method2984(n, n2, n3, n4, n5);
+        return super.mouseDragged(n, n2, n3, n4, n5);
     }
     
     @Override
-    public boolean method3012(final double n, final double n2, final double n3) {
+    public boolean mouseScrolled(final double n, final double n2, final double n3) {
         if (this.method4074()) {
             final int method4075 = this.method4075();
             this.field4038 -= (float)(n3 / method4075);

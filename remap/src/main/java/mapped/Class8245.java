@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
 public class Class8245
 {
     private static final Logger field33862;
-    public final Class869 field33863;
+    public final Minecraft field33863;
     public final Class5799 field33864;
     private BlockPos field33865;
     private ItemStack field33866;
@@ -30,7 +30,7 @@ public class Class8245
     private final Object2ObjectLinkedOpenHashMap<Pair<BlockPos, Class2003>, Class8104> field33872;
     private int field33873;
     
-    public Class8245(final Class869 field33863, final Class5799 field33864) {
+    public Class8245(final Minecraft field33863, final Class5799 field33864) {
         this.field33865 = new BlockPos(-1, -1, -1);
         this.field33866 = ItemStack.field34174;
         this.field33871 = Class101.field298;
@@ -39,8 +39,8 @@ public class Class8245
         this.field33864 = field33864;
     }
     
-    public static void method27307(final Class869 class869, final Class8245 class870, final BlockPos class871, final Direction class872) {
-        if (!class869.field4683.method6725(class869.field4684, class871, class872)) {
+    public static void method27307(final Minecraft class869, final Class8245 class870, final BlockPos class871, final Direction class872) {
+        if (!class869.world.method6725(class869.field4684, class871, class872)) {
             class870.method27311(class871);
         }
     }
@@ -58,10 +58,10 @@ public class Class8245
     }
     
     public boolean method27311(final BlockPos class354) {
-        if (this.field33863.field4684.method2803(this.field33863.field4683, class354, this.field33871)) {
+        if (this.field33863.field4684.method2803(this.field33863.world, class354, this.field33871)) {
             return false;
         }
-        final Class1848 field4683 = this.field33863.field4683;
+        final Class1848 field4683 = this.field33863.world;
         final BlockState method6701 = field4683.getBlockState(class354);
         if (!this.field33863.field4684.getHeldItemMainhand().getItem().method11703(method6701, field4683, class354, this.field33863.field4684)) {
             return false;
@@ -91,22 +91,22 @@ public class Class8245
     }
     
     public boolean method27312(final BlockPos field33865, final Direction class179) {
-        if (this.field33863.field4684.method2803(this.field33863.field4683, field33865, this.field33871)) {
+        if (this.field33863.field4684.method2803(this.field33863.world, field33865, this.field33871)) {
             return false;
         }
-        if (this.field33863.field4683.getWorldBorder().contains(field33865)) {
+        if (this.field33863.world.getWorldBorder().contains(field33865)) {
             if (!this.field33871.method590()) {
                 if (!this.field33870 || !this.method27317(field33865)) {
                     if (this.field33870) {
                         this.method27339(Class2003.field11241, this.field33865, class179);
                     }
-                    final BlockState method6701 = this.field33863.field4683.getBlockState(field33865);
-                    this.field33863.method5319().method32920(this.field33863.field4683, field33865, method6701, 0.0f);
+                    final BlockState method6701 = this.field33863.world.getBlockState(field33865);
+                    this.field33863.method5319().method32920(this.field33863.world, field33865, method6701, 0.0f);
                     this.method27339(Class2003.field11240, field33865, class179);
                     final boolean b = !method6701.method21706();
                     if (b) {
                         if (this.field33867 == 0.0f) {
-                            method6701.method21745(this.field33863.field4683, field33865, this.field33863.field4684);
+                            method6701.method21745(this.field33863.world, field33865, this.field33863.field4684);
                         }
                     }
                     if (b && method6701.method21719(this.field33863.field4684, this.field33863.field4684.world, field33865) >= 1.0f) {
@@ -118,12 +118,12 @@ public class Class8245
                         this.field33866 = this.field33863.field4684.getHeldItemMainhand();
                         this.field33867 = 0.0f;
                         this.field33868 = 0.0f;
-                        this.field33863.field4683.method6780(this.field33863.field4684.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
+                        this.field33863.world.method6780(this.field33863.field4684.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
                     }
                 }
             }
             else {
-                this.field33863.method5319().method32920(this.field33863.field4683, field33865, this.field33863.field4683.getBlockState(field33865), 1.0f);
+                this.field33863.method5319().method32920(this.field33863.world, field33865, this.field33863.world.getBlockState(field33865), 1.0f);
                 this.method27339(Class2003.field11240, field33865, class179);
                 method27307(this.field33863, this, field33865, class179);
                 this.field33869 = 5;
@@ -135,11 +135,11 @@ public class Class8245
     
     public void method27313() {
         if (this.field33870) {
-            this.field33863.method5319().method32920(this.field33863.field4683, this.field33865, this.field33863.field4683.getBlockState(this.field33865), -1.0f);
+            this.field33863.method5319().method32920(this.field33863.world, this.field33865, this.field33863.world.getBlockState(this.field33865), -1.0f);
             this.method27339(Class2003.field11241, this.field33865, Direction.DOWN);
             this.field33870 = false;
             this.field33867 = 0.0f;
-            this.field33863.field4683.method6780(this.field33863.field4684.getEntityId(), this.field33865, -1);
+            this.field33863.world.method6780(this.field33863.field4684.getEntityId(), this.field33865, -1);
             this.field33863.field4684.method2905();
         }
     }
@@ -150,9 +150,9 @@ public class Class8245
             --this.field33869;
             return true;
         }
-        if (this.field33871.method590() && this.field33863.field4683.getWorldBorder().contains(class354)) {
+        if (this.field33871.method590() && this.field33863.world.getWorldBorder().contains(class354)) {
             this.field33869 = 5;
-            this.field33863.method5319().method32920(this.field33863.field4683, class354, this.field33863.field4683.getBlockState(class354), 1.0f);
+            this.field33863.method5319().method32920(this.field33863.world, class354, this.field33863.world.getBlockState(class354), 1.0f);
             this.method27339(Class2003.field11240, class354, class355);
             method27307(this.field33863, this, class354, class355);
             return true;
@@ -160,7 +160,7 @@ public class Class8245
         if (!this.method27317(class354)) {
             return this.method27312(class354, class355);
         }
-        final BlockState method6701 = this.field33863.field4683.getBlockState(class354);
+        final BlockState method6701 = this.field33863.world.getBlockState(class354);
         if (!method6701.method21706()) {
             this.field33867 += method6701.method21719(this.field33863.field4684, this.field33863.field4684.world, class354);
             if (this.field33868 % 4.0f == 0.0f) {
@@ -168,7 +168,7 @@ public class Class8245
                 this.field33863.method5299().method6422(new Class6836(method6702.method24482(), Class286.field1582, (method6702.method24477() + 1.0f) / 8.0f, method6702.method24478() * 0.5f, class354));
             }
             ++this.field33868;
-            this.field33863.method5319().method32920(this.field33863.field4683, class354, method6701, MathHelper.clamp(this.field33867, 0.0f, 1.0f));
+            this.field33863.method5319().method32920(this.field33863.world, class354, method6701, MathHelper.clamp(this.field33867, 0.0f, 1.0f));
             if (this.field33867 >= 1.0f) {
                 this.field33870 = false;
                 this.method27339(Class2003.field11242, class354, class355);
@@ -177,7 +177,7 @@ public class Class8245
                 this.field33868 = 0.0f;
                 this.field33869 = 5;
             }
-            this.field33863.field4683.method6780(this.field33863.field4684.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
+            this.field33863.world.method6780(this.field33863.field4684.getEntityId(), this.field33865, (int)(this.field33867 * 10.0f) - 1);
             return true;
         }
         return this.field33870 = false;
@@ -231,7 +231,7 @@ public class Class8245
     public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final BlockRayTraceResult class759) {
         this.method27318();
         final BlockPos method21447 = class759.getPos();
-        if (!this.field33863.field4683.getWorldBorder().contains(method21447)) {
+        if (!this.field33863.world.getWorldBorder().contains(method21447)) {
             return Class2201.field13403;
         }
         final ItemStack method21448 = class756.method2715(class758);

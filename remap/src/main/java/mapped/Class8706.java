@@ -14,13 +14,13 @@ public class Class8706
     public List<String> field36582;
     public List<String> field36583;
     public int field36584;
-    private Class869 field36585;
+    private Minecraft field36585;
     
     public Class8706() {
         this.field36582 = new CopyOnWriteArrayList<String>();
         this.field36583 = new CopyOnWriteArrayList<String>();
         this.field36584 = 0;
-        this.field36585 = Class869.method5277();
+        this.field36585 = Minecraft.method5277();
     }
     
     public void method29876() {

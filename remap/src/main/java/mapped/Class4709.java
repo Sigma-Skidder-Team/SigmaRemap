@@ -35,6 +35,6 @@ public class Class4709 extends Class4708<Class432>
         else {
             n2 = Class1904.method7387(Class1904.method7385(1.0f), 10);
         }
-        Class869.method5277().method5305().method5795(class7096, class7097, class7098, n, n2);
+        Minecraft.method5277().method5305().method5795(class7096, class7097, class7098, n, n2);
     }
 }

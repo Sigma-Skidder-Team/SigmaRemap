@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 public abstract class Class598 extends Class565 implements Class597
 {
-    private Class574 field3508;
+    private IGuiEventListener field3508;
     private boolean field3509;
     
     @Override
@@ -23,12 +23,12 @@ public abstract class Class598 extends Class565 implements Class597
     
     @Nullable
     @Override
-    public Class574 method3471() {
+    public IGuiEventListener method3471() {
         return this.field3508;
     }
     
     @Override
-    public void method3470(final Class574 field3508) {
+    public void setFocused(final IGuiEventListener field3508) {
         this.field3508 = field3508;
     }
 }

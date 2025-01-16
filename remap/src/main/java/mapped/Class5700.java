@@ -60,11 +60,11 @@ public class Class5700 extends Class5611
             if (!equals) {
                 if (!b) {
                     class7439 = Class2210.field13469;
-                    s2 = Class7847.method25379("mco.configure.world.slot.tooltip", new Object[0]);
+                    s2 = Realms.method25379("mco.configure.world.slot.tooltip", new Object[0]);
                 }
                 else if (!class7437.field28684) {
                     class7439 = Class2210.field13469;
-                    s2 = Class7847.method25379("mco.configure.world.slot.tooltip.minigame", new Object[0]);
+                    s2 = Realms.method25379("mco.configure.world.slot.tooltip.minigame", new Object[0]);
                 }
                 else {
                     class7439 = Class2210.field13468;
@@ -74,7 +74,7 @@ public class Class5700 extends Class5611
                 final boolean b2 = class7437.field28679 == Class2153.field12792 || class7437.field28679 == Class2153.field12791;
                 if (!class7437.field28684 && b2) {
                     class7439 = Class2210.field13470;
-                    s2 = Class7847.method25379("mco.configure.world.slot.tooltip.active", new Object[0]);
+                    s2 = Realms.method25379("mco.configure.world.slot.tooltip.active", new Object[0]);
                 }
                 else {
                     class7439 = Class2210.field13468;
@@ -110,7 +110,7 @@ public class Class5700 extends Class5611
     
     private void method16937(final int n, final int n2, final int n3, final int n4, final boolean b, final String s, final int n5, final long n6, final String s2, final boolean b2, final boolean b3, final Class2210 class2210, final String s3) {
         final boolean method3360 = this.method16923().method3360();
-        if (this.method16923().method3055(n3, n4)) {
+        if (this.method16923().isMouseOver(n3, n4)) {
             if (s3 != null) {
                 this.field23143.accept(s3);
             }
@@ -123,19 +123,19 @@ public class Class5700 extends Class5611
                 else if (n5 != 1) {
                     if (n5 != 2) {
                         if (n5 == 3) {
-                            Class7847.method25380("textures/gui/title/background/panorama_3.png");
+                            Realms.method25380("textures/gui/title/background/panorama_3.png");
                         }
                     }
                     else {
-                        Class7847.method25380("textures/gui/title/background/panorama_2.png");
+                        Realms.method25380("textures/gui/title/background/panorama_2.png");
                     }
                 }
                 else {
-                    Class7847.method25380("textures/gui/title/background/panorama_0.png");
+                    Realms.method25380("textures/gui/title/background/panorama_0.png");
                 }
             }
             else {
-                Class7847.method25380("realms:textures/gui/realms/empty_frame.png");
+                Realms.method25380("realms:textures/gui/realms/empty_frame.png");
             }
         }
         else {
@@ -148,8 +148,8 @@ public class Class5700 extends Class5611
             final float n7 = 0.85f + 0.15f * Class8269.method27478(this.field23146 * 0.2f);
             Class8726.method30068(n7, n7, n7, 1.0f);
         }
-        Class5046.method15411(n + 3, n2 + 3, 0.0f, 0.0f, 74, 74, 74, 74);
-        Class7847.method25380("realms:textures/gui/realms/slot_frame.png");
+        RealmsScreen.method15411(n + 3, n2 + 3, 0.0f, 0.0f, 74, 74, 74, 74);
+        Realms.method25380("realms:textures/gui/realms/slot_frame.png");
         if (!method3360 || class2210 == Class2210.field13468) {
             if (!b) {
                 Class8726.method30068(0.56f, 0.56f, 0.56f, 1.0f);
@@ -161,7 +161,7 @@ public class Class5700 extends Class5611
         else {
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         }
-        Class5046.method15411(n, n2, 0.0f, 0.0f, 80, 80, 80, 80);
+        RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 80, 80, 80, 80);
         this.method16935(s, n + 40, n2 + 66, 16777215);
     }
     

@@ -10,7 +10,7 @@ import com.google.gson.JsonParser;
 import com.google.common.collect.Sets;
 import java.util.Set;
 
-public class Class7434 extends Class7422
+public class Class7434 extends ValueObject
 {
     public Set<String> field28668;
     

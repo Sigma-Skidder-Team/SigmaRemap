@@ -8,14 +8,14 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.util.math.MathHelper;
 
-public class Class695 extends Class527
+public class Class695 extends Screen
 {
     private final Class6461 field3823;
     private long field3824;
     private static final Object2IntMap<ChunkStatus> field3825;
     
     public Class695(final Class6461 field3823) {
-        super(Class7895.field32402);
+        super(NarratorChatListener.EMPTY);
         this.field3824 = -1L;
         this.field3823 = field3823;
     }
@@ -26,23 +26,23 @@ public class Class695 extends Class527
     }
     
     @Override
-    public void method2971() {
-        Class7895.field32404.method25556(Class8822.method30773("narrator.loading.done", new Object[0]));
+    public void removed() {
+        NarratorChatListener.field32404.method25556(Class8822.method30773("narrator.loading.done", new Object[0]));
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         final String string = MathHelper.method35651(this.field3823.method19326(), 0, 100) + "%";
         final long method27837 = Util.method27837();
         if (method27837 - this.field3824 > 2000L) {
             this.field3824 = method27837;
-            Class7895.field32404.method25556(new Class2259("narrator.loading", new Object[] { string }).getString());
+            NarratorChatListener.field32404.method25556(new Class2259("narrator.loading", new Object[] { string }).getString());
         }
-        final int n4 = this.field3152 / 2;
-        final int n5 = this.field3153 / 2;
+        final int n4 = this.width / 2;
+        final int n5 = this.height / 2;
         method3881(this.field3823, n4, n5 + 30, 2, 0);
-        this.method3295(this.field3156, string, n4, n5 - 4 - 30, 16777215);
+        this.method3295(this.font, string, n4, n5 - 4 - 30, 16777215);
     }
     
     public static void method3881(final Class6461 class6461, final int n, final int n2, final int n3, final int n4) {

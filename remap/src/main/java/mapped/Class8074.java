@@ -7,10 +7,10 @@ package mapped;
 public class Class8074
 {
     private static String[] field33263;
-    private Class869 field33264;
+    private Minecraft field33264;
     
     public Class8074() {
-        this.field33264 = Class869.method5277();
+        this.field33264 = Minecraft.method5277();
     }
     
     public void method26494() {

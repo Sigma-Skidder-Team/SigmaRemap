@@ -211,10 +211,10 @@ public class Class3170 extends Class3167
             if (j == this.field15530) {
                 if (b) {
                     Class8726.method30002();
-                    int a = Class3170.field15514.field4643.method6617(class8322.method27664().getUnformattedComponentText());
+                    int a = Class3170.field15514.fontRenderer.method6617(class8322.method27664().getUnformattedComponentText());
                     final List<String> method23541 = this.method9930(class8322);
                     for (int k = 0; k < method23541.size(); ++k) {
-                        a = Math.max(a, Class3170.field15514.field4643.method6617((String)method23541.get(k)));
+                        a = Math.max(a, Class3170.field15514.fontRenderer.method6617((String)method23541.get(k)));
                     }
                     final int n12 = (int)(a * Class8154.method26867());
                     Class8154.method26874((float)n11, (float)(n10 + round), n12 + 9.0f * Class8154.method26867(), 10.0f * Class8154.method26867() * method23541.size() + 7.0f * Class8154.method26867(), Class6430.method19118(Class265.field1273.field1292, 0.8f));
@@ -225,7 +225,7 @@ public class Class3170 extends Class3167
                     round *= (int)(1.0f / Class8154.method26867());
                     final int n15 = (int)(n12 * (1.0f / Class8154.method26867()));
                     for (int l = 0; l < method23541.size(); ++l) {
-                        Class3170.field15514.field4643.method6610((String)method23541.get(l), (float)(n14 + 5), 5.3f + n13 + round + l * 10, Class265.field1278.field1292);
+                        Class3170.field15514.fontRenderer.method6610((String)method23541.get(l), (float)(n14 + 5), 5.3f + n13 + round + l * 10, Class265.field1278.field1292);
                     }
                     GL11.glPopMatrix();
                     Class8726.method30001();

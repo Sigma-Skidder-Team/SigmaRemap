@@ -102,7 +102,7 @@ public class Class3215 extends Class3167
     }
     
     private boolean method10137() {
-        return Class3215.field15514.field4684.method1895().y < 1.0 || (!Class3215.field15514.field4684.onGround && Class3215.field15514.field4683.method6981(Class3215.field15514.field4684, Class3215.field15514.field4684.boundingBox.expand(0.0, -Class3215.field15514.field4684.method1934().y, 0.0)).count() == 0L);
+        return Class3215.field15514.field4684.method1895().y < 1.0 || (!Class3215.field15514.field4684.onGround && Class3215.field15514.world.method6981(Class3215.field15514.field4684, Class3215.field15514.field4684.boundingBox.expand(0.0, -Class3215.field15514.field4684.method1934().y, 0.0)).count() == 0L);
     }
     
     private void method10138(String s, final Class5717 class5717) {

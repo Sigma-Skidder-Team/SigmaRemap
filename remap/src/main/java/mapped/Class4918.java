@@ -69,7 +69,7 @@ public class Class4918 extends Class4825
         for (int i = 0; i < 3; ++i) {
             Class8154.method26905((float)(this.field20478 + 288 * i), (float)this.field20479, 288.0f, 512.0f, this.field21042);
         }
-        final float n2 = 0.026f * (60.0f / Class869.method5338());
+        final float n2 = 0.026f * (60.0f / Minecraft.method5338());
         this.field21048 = Math.max(Math.min(1.0f, this.field21048 + this.field21049 - n2), 0.0f);
         this.field21049 = Math.max(-n2, this.field21049 * 0.965f);
         final int n3 = 100;

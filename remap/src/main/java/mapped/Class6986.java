@@ -22,7 +22,7 @@ public class Class6986 extends Class6977
     @Override
     public Set<Class9488> method21399(final BlockPos field27548, final BlockState class7096, final Class7614 class7097) {
         final HashSet set = new HashSet();
-        final Class7074 class7098 = new Class7074(this.field27275.field4683, this.field27275.field4684, Class316.field1877, new ItemStack(class7096.getBlock()), new BlockRayTraceResult(new Vec3d(0.0, 0.0, 0.0), Direction.DOWN, field27548, false));
+        final Class7074 class7098 = new Class7074(this.field27275.world, this.field27275.field4684, Class316.field1877, new ItemStack(class7096.getBlock()), new BlockRayTraceResult(new Vec3d(0.0, 0.0, 0.0), Direction.DOWN, field27548, false));
         class7098.field27548 = field27548;
         class7098.field27549 = false;
         set.add(new Class9488(field27548, class7096.getBlock().method11846(class7098)));

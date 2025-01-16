@@ -30,8 +30,8 @@ import java.util.regex.Pattern;
 public class Class6823
 {
     private static final Pattern field26790;
-    private final Class869 field26791;
-    private final Class527 field26792;
+    private final Minecraft field26791;
+    private final Screen field26792;
     private final Class576 field26793;
     private final Class1844 field26794;
     private final boolean field26795;
@@ -49,7 +49,7 @@ public class Class6823
     private boolean field26807;
     private boolean field26808;
     
-    public Class6823(final Class869 field26791, final Class527 field26792, final Class576 field26793, final Class1844 field26794, final boolean field26795, final boolean field26796, final int field26797, final int field26798, final boolean field26799, final int field26800) {
+    public Class6823(final Minecraft field26791, final Screen field26792, final Class576 field26793, final Class1844 field26794, final boolean field26795, final boolean field26796, final int field26797, final int field26798, final boolean field26799, final int field26800) {
         this.field26801 = Lists.newArrayList();
         this.field26791 = field26791;
         this.field26792 = field26792;
@@ -100,7 +100,7 @@ public class Class6823
                     while (iterator.hasNext()) {
                         max = Math.max(max, this.field26794.method6617(((Suggestion)iterator.next()).getText()));
                     }
-                    this.field26806 = new Class8490(this, MathHelper.method35651(this.field26793.method3412(suggestions.getRange().getStart()), 0, this.field26793.method3412(0) + this.field26793.method3406() - max), this.field26799 ? (this.field26792.field3153 - 12) : 72, max, suggestions, b, null);
+                    this.field26806 = new Class8490(this, MathHelper.method35651(this.field26793.method3412(suggestions.getRange().getStart()), 0, this.field26793.method3412(0) + this.field26793.method3406() - max), this.field26799 ? (this.field26792.height - 12) : 72, max, suggestions, b, null);
                 }
             }
         }
@@ -181,7 +181,7 @@ public class Class6823
             }
         }
         this.field26802 = 0;
-        this.field26803 = this.field26792.field3152;
+        this.field26803 = this.field26792.width;
         if (this.field26801.isEmpty()) {
             this.method20893(TextFormatting.GRAY);
         }
@@ -263,7 +263,7 @@ public class Class6823
         if (this.field26806 == null) {
             int n3 = 0;
             for (final String s : this.field26801) {
-                final int n4 = this.field26799 ? (this.field26792.field3153 - 14 - 13 - 12 * n3) : (72 + 12 * n3);
+                final int n4 = this.field26799 ? (this.field26792.height - 14 - 13 - 12 * n3) : (72 + 12 * n3);
                 Class565.method3293(this.field26802 - 1, n4, this.field26802 + this.field26803 + 1, n4 + 12, this.field26800);
                 this.field26794.method6609(s, (float)this.field26802, (float)(n4 + 2), -1);
                 ++n3;

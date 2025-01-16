@@ -65,7 +65,7 @@ public class Class4174 extends Class4158<Class493>
     private static Class6332 method12499(final Class299 class299, final GameProfile gameProfile) {
         final ResourceLocation class300 = Class4174.field18592.get(class299);
         if (class299 == Class298.field1713 && gameProfile != null) {
-            final Class869 method5277 = Class869.method5277();
+            final Minecraft method5277 = Minecraft.method5277();
             final Map<MinecraftProfileTexture$Type, MinecraftProfileTexture> method5278 = method5277.method5302().method24295(gameProfile);
             return method5278.containsKey(MinecraftProfileTexture$Type.SKIN) ? Class6332.method18773(method5277.method5302().method24292((MinecraftProfileTexture)method5278.get(MinecraftProfileTexture$Type.SKIN), MinecraftProfileTexture$Type.SKIN)) : Class6332.method18770(Class7634.method24004(PlayerEntity.method2893(gameProfile)));
         }

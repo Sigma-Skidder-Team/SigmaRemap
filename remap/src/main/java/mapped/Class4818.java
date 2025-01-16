@@ -104,7 +104,7 @@ public class Class4818 extends Class4817
     
     @Override
     public void method14205(final float n) {
-        final float min = Math.min(1.0f, 0.21f * (60.0f / Class869.method5338()));
+        final float min = Math.min(1.0f, 0.21f * (60.0f / Minecraft.method5338()));
         for (final Class4846 class4846 : this.field20615) {
             if (!class4846.method14386()) {
                 float n2 = (class4846.method14274() - class4846.field20760) * min;

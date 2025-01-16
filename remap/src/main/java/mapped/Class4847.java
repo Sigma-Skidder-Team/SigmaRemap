@@ -97,7 +97,7 @@ public class Class4847 extends Class4841
                     Class8154.method26871(this.field20478, n4, this.field20478 + this.field20480, n4 + n3, true);
                     Class8154.method26886((float)(this.field20478 + n5), (float)(n4 + this.field20481 / 4), (n5 * 2 - 4) * class7015.field27350 + 4.0f, Class6430.method19118(Class265.field1278.field1292, (1.0f - class7015.field27350 * (0.5f + class7015.field27350 * 0.5f)) * 0.4f));
                     Class8154.method26872();
-                    class7015.field27350 = Math.min(class7015.field27350 + 3.0f / Class869.method5338(), 1.0f);
+                    class7015.field27350 = Math.min(class7015.field27350 + 3.0f / Minecraft.method5338(), 1.0f);
                     if (class7015.field27350 == 1.0f) {
                         iterator.remove();
                     }

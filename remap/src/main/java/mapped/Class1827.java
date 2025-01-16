@@ -19,7 +19,7 @@ public class Class1827<T extends LivingEntity, M extends Class5845<T>> extends C
         class7351.method22567();
         class7351.method22564(0.0, 0.4000000059604645, -0.4000000059604645);
         class7351.method22566(Vector3f.XP.rotationDegrees(180.0f));
-        Class869.method5277().method5308().method35143(t, t.method2718(Class2215.field13600), Class2016.field11493, false, class7351, class7352, n);
+        Minecraft.method5277().method5308().method35143(t, t.method2718(Class2215.field13600), Class2016.field11493, false, class7351, class7352, n);
         class7351.method22568();
     }
 }

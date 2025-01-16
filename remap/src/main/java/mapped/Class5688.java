@@ -19,7 +19,7 @@ public class Class5688 extends Class5611
             Class5089.method15962(this.field23120).method15705(false, this.field23120);
         }
         else {
-            Class7847.method25362(new Class5084(this.field23120, Class2039.field11628, Class5046.method15438("mco.configure.world.close.question.line1"), Class5046.method15438("mco.configure.world.close.question.line2"), true, 5));
+            Realms.setScreen(new Class5084(this.field23120, Class2039.field11628, RealmsScreen.getLocalizedString("mco.configure.world.close.question.line1"), RealmsScreen.getLocalizedString("mco.configure.world.close.question.line2"), true, 5));
         }
     }
 }

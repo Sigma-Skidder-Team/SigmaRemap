@@ -13,11 +13,11 @@ import java.util.List;
 
 public class Class686 extends Class565 implements Class687
 {
-    private final Class869 field3781;
+    private final Minecraft field3781;
     private final List<Class8395> field3782;
     private boolean field3783;
     
-    public Class686(final Class869 field3781) {
+    public Class686(final Minecraft field3781) {
         this.field3782 = Lists.newArrayList();
         this.field3781 = field3781;
     }
@@ -47,13 +47,13 @@ public class Class686 extends Class565 implements Class687
                 while (iterator.hasNext()) {
                     final Class8395 class5488 = iterator.next();
                     if (class5488.method27993() + 3000L > Util.method27837()) {
-                        max = Math.max(max, this.field3781.field4643.method6617(class5488.method27992()));
+                        max = Math.max(max, this.field3781.fontRenderer.method6617(class5488.method27992()));
                     }
                     else {
                         iterator.remove();
                     }
                 }
-                final int n2 = max + this.field3781.field4643.method6617("<") + this.field3781.field4643.method6617(" ") + this.field3781.field4643.method6617(">") + this.field3781.field4643.method6617(" ");
+                final int n2 = max + this.field3781.fontRenderer.method6617("<") + this.field3781.fontRenderer.method6617(" ") + this.field3781.fontRenderer.method6617(">") + this.field3781.fontRenderer.method6617(" ");
                 for (final Class8395 class5489 : this.field3782) {
                     final String method16757 = class5489.method27992();
                     final Vec3d method16758 = class5489.method27994().subtract(class5487).normalize();
@@ -62,7 +62,7 @@ public class Class686 extends Class565 implements Class687
                     final int n4 = n2 / 2;
                     final int n5 = 9;
                     final int n6 = n5 / 2;
-                    final int method16759 = this.field3781.field4643.method6617(method16757);
+                    final int method16759 = this.field3781.fontRenderer.method6617(method16757);
                     final int method16760 = MathHelper.floor(MathHelper.method35655(255.0, 75.0, (Util.method27837() - class5489.method27993()) / 3000.0f));
                     final int n7 = method16760 << 16 | method16760 << 8 | method16760;
                     Class8726.method30059();
@@ -73,14 +73,14 @@ public class Class686 extends Class565 implements Class687
                     if (!b) {
                         if (n3 <= 0.0) {
                             if (n3 < 0.0) {
-                                this.field3781.field4643.method6610("<", (float)(-n4), (float)(-n6), n7 - 16777216);
+                                this.field3781.fontRenderer.method6610("<", (float)(-n4), (float)(-n6), n7 - 16777216);
                             }
                         }
                         else {
-                            this.field3781.field4643.method6610(">", (float)(n4 - this.field3781.field4643.method6617(">")), (float)(-n6), n7 - 16777216);
+                            this.field3781.fontRenderer.method6610(">", (float)(n4 - this.field3781.fontRenderer.method6617(">")), (float)(-n6), n7 - 16777216);
                         }
                     }
-                    this.field3781.field4643.method6610(method16757, (float)(-method16759 / 2), (float)(-n6), n7 - 16777216);
+                    this.field3781.fontRenderer.method6610(method16757, (float)(-method16759 / 2), (float)(-n6), n7 - 16777216);
                     Class8726.method30060();
                     ++n;
                 }

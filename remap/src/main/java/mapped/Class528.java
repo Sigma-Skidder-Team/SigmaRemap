@@ -11,7 +11,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
-public class Class528 extends Class527
+public class Class528 extends Screen
 {
     private final Runnable field3158;
     public final ITextComponent field3159;
@@ -32,33 +32,33 @@ public class Class528 extends Class527
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
-        this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 6 + 168, 200, 20, this.field3161, class654 -> this.field3158.run()));
+    public void init() {
+        super.init();
+        this.method3029(new Class654(this.width / 2 - 100, this.height / 6 + 168, 200, 20, this.field3161, class654 -> this.field3158.run()));
         this.field3160.clear();
-        this.field3160.addAll(this.field3156.method6626(this.field3159.getFormattedText(), this.field3152 - 50));
+        this.field3160.addAll(this.font.method6626(this.field3159.getFormattedText(), this.width - 50));
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
-        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 70, 16777215);
+        this.renderBackground();
+        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 70, 16777215);
         int n4 = 90;
         final Iterator<String> iterator = this.field3160.iterator();
         while (iterator.hasNext()) {
-            this.method3295(this.field3156, iterator.next(), this.field3152 / 2, n4, 16777215);
+            this.method3295(this.font, iterator.next(), this.width / 2, n4, 16777215);
             n4 += 9;
         }
         super.method2975(n, n2, n3);
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
+    public void tick() {
+        super.tick();
         final int field3162 = this.field3162 - 1;
         this.field3162 = field3162;
         if (field3162 == 0) {
-            final Iterator<Class573> iterator = this.field3154.iterator();
+            final Iterator<Class573> iterator = this.buttons.iterator();
             while (iterator.hasNext()) {
                 iterator.next().field3431 = true;
             }

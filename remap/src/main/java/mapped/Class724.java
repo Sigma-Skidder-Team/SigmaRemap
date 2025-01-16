@@ -21,31 +21,31 @@ public class Class724 extends Class723 implements Class725<Class3420>
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
+    public void init() {
+        super.init();
         this.field3955.method10873(this.field3956);
     }
     
     @Override
     public void method3028() {
-        this.field3150.field4684.method2814();
+        this.minecraft.field4684.method2814();
         super.method3028();
     }
     
     @Override
-    public void method2971() {
-        super.method2971();
+    public void removed() {
+        super.removed();
         this.field3955.method10874(this.field3956);
     }
     
     @Override
     public void method3971() {
-        if (!this.field3150.field4684.method2880()) {
+        if (!this.minecraft.field4684.method2880()) {
             super.method3971();
         }
         else {
-            this.method3029(new Class654(this.field3152 / 2 - 100, 196, 98, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.field3150.method5244(null)));
-            this.method3029(new Class654(this.field3152 / 2 + 2, 196, 98, 20, Class8822.method30773("lectern.take_book", new Object[0]), class654 -> this.method3984(3)));
+            this.method3029(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.method5244(null)));
+            this.method3029(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("lectern.take_book", new Object[0]), class654 -> this.method3984(3)));
         }
     }
     
@@ -69,7 +69,7 @@ public class Class724 extends Class723 implements Class725<Class3420>
     }
     
     private void method3984(final int n) {
-        this.field3150.field4682.method27326(this.field3955.field16154, n);
+        this.minecraft.field4682.method27326(this.field3955.field16154, n);
     }
     
     @Override

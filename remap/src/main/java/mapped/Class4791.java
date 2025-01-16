@@ -14,13 +14,13 @@ public class Class4791 extends Class4703<Class862>
 {
     private static final Class1933 field20427;
     private static final Class1933 field20428;
-    private final Class869 field20429;
+    private final Minecraft field20429;
     private final Class1796 field20430;
     private static double field20431;
     
     public Class4791(final Class8551 class8551, final Class1796 field20430) {
         super(class8551);
-        this.field20429 = Class869.method5277();
+        this.field20429 = Minecraft.method5277();
         this.field20430 = field20430;
     }
     
@@ -76,7 +76,7 @@ public class Class4791 extends Class4703<Class862>
     }
     
     public boolean method14171(final Class862 class862) {
-        if (Class869.method5270()) {
+        if (Minecraft.method5270()) {
             if (!class862.method5198().method27620()) {
                 if (class862.method5198().method27667()) {
                     if (this.field20283.field35908 == class862) {
@@ -108,7 +108,7 @@ public class Class4791 extends Class4703<Class862>
     }
     
     public static void method14174() {
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         final double max = Math.max(6.0 * method5277.method5332().method7695() / Config.method28867(method5277.field4648.field23471, 1.0, 120.0), 16.0);
         Class4791.field20431 = max * max;
     }

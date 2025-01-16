@@ -24,7 +24,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.google.common.util.concurrent.RateLimiter;
 import org.apache.logging.log4j.Logger;
 
-public class Class5086 extends Class5046
+public class Class5086 extends RealmsScreen
 {
     private static final Logger field21939;
     private final Class5078 field21940;
@@ -61,10 +61,10 @@ public class Class5086 extends Class5046
     }
     
     @Override
-    public void method15369() {
+    public void init() {
         this.method15444(true);
-        this.field21953 = new Class5662(this, 1, this.method15421() / 2 - 100, this.method15422() - 42, 200, 20, Class5046.method15438("gui.back"));
-        this.method15431(this.field21954 = new Class5676(this, 0, this.method15421() / 2 - 100, this.method15422() - 42, 200, 20, Class5046.method15438("gui.cancel")));
+        this.field21953 = new Class5662(this, 1, this.width() / 2 - 100, this.height() - 42, 200, 20, RealmsScreen.getLocalizedString("gui.back"));
+        this.buttonsAdd(this.field21954 = new Class5676(this, 0, this.width() / 2 - 100, this.height() - 42, 200, 20, RealmsScreen.getLocalizedString("gui.cancel")));
         if (!this.field21952) {
             if (this.field21940.field21818 != -1) {
                 this.field21940.method15727(this);
@@ -76,11 +76,11 @@ public class Class5086 extends Class5046
     }
     
     @Override
-    public void method15437(final boolean b, final int n) {
+    public void confirmResult(final boolean b, final int n) {
         if (b) {
             if (!this.field21952) {
                 this.field21952 = true;
-                Class7847.method25362(this);
+                Realms.setScreen(this);
                 this.method15921();
             }
         }
@@ -92,18 +92,18 @@ public class Class5086 extends Class5046
     }
     
     private void method15911() {
-        this.field21940.method15437(true, 0);
+        this.field21940.confirmResult(true, 0);
     }
     
     private void method15912() {
         this.field21949 = true;
-        Class7847.method25362(this.field21940);
+        Realms.setScreen(this.field21940);
     }
     
     @Override
-    public boolean method15376(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (n != 256) {
-            return super.method15376(n, n2, n3);
+            return super.keyPressed(n, n2, n3);
         }
         if (!this.field21951) {
             this.method15911();
@@ -115,17 +115,17 @@ public class Class5086 extends Class5046
     }
     
     @Override
-    public void method15383(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.method15413();
         if (!this.field21950) {
             if (this.field21944.field37451 != 0L) {
                 if (this.field21944.field37451 == this.field21944.field37452) {
-                    this.field21947 = Class5046.method15438("mco.upload.verifying");
+                    this.field21947 = RealmsScreen.getLocalizedString("mco.upload.verifying");
                     this.field21954.method16917(false);
                 }
             }
         }
-        this.method15405(this.field21947, this.method15421() / 2, 50, 16777215);
+        this.drawCenteredString(this.field21947, this.width() / 2, 50, 16777215);
         if (this.field21951) {
             this.method15913();
         }
@@ -138,10 +138,10 @@ public class Class5086 extends Class5046
         if (this.field21946 != null) {
             final String[] split = this.field21946.split("\\\\n");
             for (int i = 0; i < split.length; ++i) {
-                this.method15405(split[i], this.method15421() / 2, 110 + 12 * i, 16711680);
+                this.drawCenteredString(split[i], this.width() / 2, 110 + 12 * i, 16711680);
             }
         }
-        super.method15383(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     private void method15913() {
@@ -149,7 +149,7 @@ public class Class5086 extends Class5046
         if (this.field21955 % 10 == 0) {
             ++this.field21957;
         }
-        this.method15407(Class5086.field21956[this.field21957 % Class5086.field21956.length], this.method15421() / 2 + method15424 / 2 + 5, 50, 16777215);
+        this.method15407(Class5086.field21956[this.field21957 % Class5086.field21956.length], this.width() / 2 + method15424 / 2 + 5, 50, 16777215);
     }
     
     private void method15914() {
@@ -160,7 +160,7 @@ public class Class5086 extends Class5046
         this.field21948 = String.format(Locale.ROOT, "%.1f", d);
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30041();
-        final double n = this.method15421() / 2 - 100;
+        final double n = this.width() / 2 - 100;
         final Class7710 field30674 = Class7710.field30674;
         field30674.method24611(7, Class7785.field31865);
         field30674.method24610(n - 0.5, 95.5, 0.0).method24613(217, 210, 210, 255).method24612();
@@ -173,7 +173,7 @@ public class Class5086 extends Class5046
         field30674.method24610(n, 80.0, 0.0).method24613(128, 128, 128, 255).method24612();
         field30674.method24609();
         Class8726.method30040();
-        this.method15405(this.field21948 + " %", this.method15421() / 2, 84, 16777215);
+        this.drawCenteredString(this.field21948 + " %", this.width() / 2, 84, 16777215);
     }
     
     private void method15915() {
@@ -195,7 +195,7 @@ public class Class5086 extends Class5046
     
     private void method15916(final long n) {
         if (n > 0L) {
-            this.method15407("(" + method15917(n) + ")", this.method15421() / 2 + this.method15424(this.field21948) / 2 + 15, 84, 16777215);
+            this.method15407("(" + method15917(n) + ")", this.width() / 2 + this.method15424(this.field21948) / 2 + 15, 84, 16777215);
         }
     }
     
@@ -208,8 +208,8 @@ public class Class5086 extends Class5046
     }
     
     @Override
-    public void method15375() {
-        super.method15375();
+    public void tick() {
+        super.tick();
         ++this.field21955;
         if (this.field21947 != null) {
             if (this.field21945.tryAcquire(1)) {
@@ -221,7 +221,7 @@ public class Class5086 extends Class5046
                 if (this.field21946 != null) {
                     arrayList.add(this.field21946);
                 }
-                Class7847.method25381(String.join(System.lineSeparator(), arrayList));
+                Realms.narrateNow(String.join(System.lineSeparator(), arrayList));
             }
         }
     }
@@ -250,11 +250,11 @@ public class Class5086 extends Class5046
     private void method15921() {
         this.field21952 = true;
         new Thread(() -> {
-            Class9513.method35444();
+            RealmsClient.func_224911_a();
             final long field21942 = this.field21942;
             try {
                 if (Class5086.field21961.tryLock(1L, TimeUnit.SECONDS)) {
-                    this.field21947 = Class5046.method15438("mco.upload.preparing");
+                    this.field21947 = RealmsScreen.getLocalizedString("mco.upload.preparing");
                     int i = 0;
                     final File file;
                     Class7444 method35477 = null;
@@ -267,7 +267,7 @@ public class Class5086 extends Class5046
                                     Class5086.field21961.unlock();
                                     this.field21951 = false;
                                     this.method15427();
-                                    this.method15431(this.field21953);
+                                    this.buttonsAdd(this.field21953);
                                     if (file != null) {
                                         Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
                                         file.delete();
@@ -276,25 +276,25 @@ public class Class5086 extends Class5046
                                 return;
                             }
                             else {
-                                final Class9513 class9513;
+                                final RealmsClient class9513;
                                 method35477 = class9513.method35477(field21942, Class9461.method35164(field21942));
                             }
                         }
-                        catch (final Class2331 class9514) {
-                            Thread.sleep(class9514.field14073 * 1000);
+                        catch (final RetryCallException class9514) {
+                            Thread.sleep(class9514.field_224985_e * 1000);
                             ++i;
                             continue;
                         }
                         break;
                     }
                     if (method35477 == null) {
-                        this.field21947 = Class5046.method15438("mco.upload.close.failure");
+                        this.field21947 = RealmsScreen.getLocalizedString("mco.upload.close.failure");
                         this.field21950 = true;
                         if (Class5086.field21961.isHeldByCurrentThread()) {
                             Class5086.field21961.unlock();
                             this.field21951 = false;
                             this.method15427();
-                            this.method15431(this.field21953);
+                            this.buttonsAdd(this.field21953);
                             if (file != null) {
                                 Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
                                 file.delete();
@@ -304,13 +304,13 @@ public class Class5086 extends Class5046
                     else {
                         Class9461.method35166(field21942, method35477.method22891());
                         if (!method35477.method22893()) {
-                            this.field21947 = Class5046.method15438("mco.upload.close.failure");
+                            this.field21947 = RealmsScreen.getLocalizedString("mco.upload.close.failure");
                             this.field21950 = true;
                             if (Class5086.field21961.isHeldByCurrentThread()) {
                                 Class5086.field21961.unlock();
                                 this.field21951 = false;
                                 this.method15427();
-                                this.method15431(this.field21953);
+                                this.buttonsAdd(this.field21953);
                                 if (file != null) {
                                     Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
                                     file.delete();
@@ -324,7 +324,7 @@ public class Class5086 extends Class5046
                                 Class5086.field21961.unlock();
                                 this.field21951 = false;
                                 this.method15427();
-                                this.method15431(this.field21953);
+                                this.buttonsAdd(this.field21953);
                                 if (file != null) {
                                     Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
                                     file.delete();
@@ -332,7 +332,7 @@ public class Class5086 extends Class5046
                             }
                         }
                         else {
-                            this.method15924(new File(new File(Class7847.method25364(), "saves"), this.field21941.method7933()));
+                            this.method15924(new File(new File(Realms.method25364(), "saves"), this.field21941.method7933()));
                             if (this.field21949) {
                                 this.method15922();
                                 this.field21950 = true;
@@ -340,7 +340,7 @@ public class Class5086 extends Class5046
                                     Class5086.field21961.unlock();
                                     this.field21951 = false;
                                     this.method15427();
-                                    this.method15431(this.field21953);
+                                    this.buttonsAdd(this.field21953);
                                     if (file != null) {
                                         Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
                                         file.delete();
@@ -348,20 +348,20 @@ public class Class5086 extends Class5046
                                 }
                             }
                             else if (this.method15923(file)) {
-                                this.field21947 = Class5046.method15439("mco.upload.uploading", this.field21941.method7937());
-                                final Class7585 class9515 = new Class7585(file, this.field21942, this.field21943, method35477, Class7847.method25356(), Class7847.method25358(), Class7847.method25377(), this.field21944);
+                                this.field21947 = RealmsScreen.method15439("mco.upload.uploading", this.field21941.method7937());
+                                final Class7585 class9515 = new Class7585(file, this.field21942, this.field21943, method35477, Realms.method25356(), Realms.method25358(), Realms.method25377(), this.field21944);
                                 class9515.method23862(class9520 -> {
                                     if (class9520.field40461 >= 200 && class9520.field40461 < 300) {
                                         this.field21950 = (1 != 0);
-                                        this.field21947 = Class5046.method15438("mco.upload.done");
-                                        this.field21953.method16925(Class5046.method15438("gui.done"));
+                                        this.field21947 = RealmsScreen.getLocalizedString("mco.upload.done");
+                                        this.field21953.method16925(RealmsScreen.getLocalizedString("gui.done"));
                                         Class9461.method35165(n2);
                                     }
                                     else if (class9520.field40461 == 400 && class9520.field40462 != null) {
-                                        this.field21946 = Class5046.method15439("mco.upload.failed", class9520.field40462);
+                                        this.field21946 = RealmsScreen.method15439("mco.upload.failed", class9520.field40462);
                                     }
                                     else {
-                                        this.field21946 = Class5046.method15439("mco.upload.failed", class9520.field40461);
+                                        this.field21946 = RealmsScreen.method15439("mco.upload.failed", class9520.field40461);
                                     }
                                     return;
                                 });
@@ -374,7 +374,7 @@ public class Class5086 extends Class5046
                                             Class5086.field21961.unlock();
                                             this.field21951 = false;
                                             this.method15427();
-                                            this.method15431(this.field21953);
+                                            this.buttonsAdd(this.field21953);
                                             if (file != null) {
                                                 Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
                                                 file.delete();
@@ -396,7 +396,7 @@ public class Class5086 extends Class5046
                                     Class5086.field21961.unlock();
                                     this.field21951 = false;
                                     this.method15427();
-                                    this.method15431(this.field21953);
+                                    this.buttonsAdd(this.field21953);
                                     if (file != null) {
                                         Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
                                         file.delete();
@@ -412,13 +412,13 @@ public class Class5086 extends Class5046
                                 final Class2121 class9517;
                                 if (method15920(n, class9516).equals(method15920(5368709120L, class9517)) && class9516 != Class2121.field12366) {
                                     final Class2121 class9518 = Class2121.values()[class9516.ordinal() - 1];
-                                    this.field21946 = Class5046.method15439("mco.upload.size.failure.line1", this.field21941.method7937()) + "\\n" + Class5046.method15439("mco.upload.size.failure.line2", method15920(n, class9518), method15920(5368709120L, class9518));
+                                    this.field21946 = RealmsScreen.method15439("mco.upload.size.failure.line1", this.field21941.method7937()) + "\\n" + RealmsScreen.method15439("mco.upload.size.failure.line2", method15920(n, class9518), method15920(5368709120L, class9518));
                                     this.field21950 = true;
                                     if (Class5086.field21961.isHeldByCurrentThread()) {
                                         Class5086.field21961.unlock();
                                         this.field21951 = false;
                                         this.method15427();
-                                        this.method15431(this.field21953);
+                                        this.buttonsAdd(this.field21953);
                                         if (file != null) {
                                             Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
                                             file.delete();
@@ -426,13 +426,13 @@ public class Class5086 extends Class5046
                                     }
                                 }
                                 else {
-                                    this.field21946 = Class5046.method15439("mco.upload.size.failure.line1", this.field21941.method7937()) + "\\n" + Class5046.method15439("mco.upload.size.failure.line2", method15920(n, class9516), method15920(5368709120L, class9517));
+                                    this.field21946 = RealmsScreen.method15439("mco.upload.size.failure.line1", this.field21941.method7937()) + "\\n" + RealmsScreen.method15439("mco.upload.size.failure.line2", method15920(n, class9516), method15920(5368709120L, class9517));
                                     this.field21950 = true;
                                     if (Class5086.field21961.isHeldByCurrentThread()) {
                                         Class5086.field21961.unlock();
                                         this.field21951 = false;
                                         this.method15427();
-                                        this.method15431(this.field21953);
+                                        this.buttonsAdd(this.field21953);
                                         if (file != null) {
                                             Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
                                             file.delete();
@@ -449,7 +449,7 @@ public class Class5086 extends Class5046
                         Class5086.field21961.unlock();
                         this.field21951 = false;
                         this.method15427();
-                        this.method15431(this.field21953);
+                        this.buttonsAdd(this.field21953);
                         final File file;
                         if (file != null) {
                             Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
@@ -459,10 +459,10 @@ public class Class5086 extends Class5046
                 }
             }
             catch (final IOException ex2) {
-                this.field21946 = Class5046.method15439("mco.upload.failed", ex2.getMessage());
+                this.field21946 = RealmsScreen.method15439("mco.upload.failed", ex2.getMessage());
             }
-            catch (final Class2330 class9519) {
-                this.field21946 = Class5046.method15439("mco.upload.failed", class9519.toString());
+            catch (final RealmsServiceException class9519) {
+                this.field21946 = RealmsScreen.method15439("mco.upload.failed", class9519.toString());
             }
             catch (final InterruptedException ex3) {
                 Class5086.field21939.error("Could not acquire upload lock");
@@ -473,7 +473,7 @@ public class Class5086 extends Class5046
                     Class5086.field21961.unlock();
                     this.field21951 = false;
                     this.method15427();
-                    this.method15431(this.field21953);
+                    this.buttonsAdd(this.field21953);
                     final File file;
                     if (file != null) {
                         Class5086.field21939.debug("Deleting file " + file.getAbsolutePath());
@@ -485,7 +485,7 @@ public class Class5086 extends Class5046
     }
     
     private void method15922() {
-        this.field21947 = Class5046.method15438("mco.upload.cancelled");
+        this.field21947 = RealmsScreen.getLocalizedString("mco.upload.cancelled");
         Class5086.field21939.debug("Upload was cancelled");
     }
     

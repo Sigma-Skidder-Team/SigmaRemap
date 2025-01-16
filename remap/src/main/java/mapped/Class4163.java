@@ -28,7 +28,7 @@ public class Class4163 extends Class4158<Class448>
                 class449.method22566(Vector3f.XP.rotationDegrees(90.0f));
                 class449.method22564(-0.3125, -0.3125, 0.0);
                 class449.method22565(0.375f, 0.375f, 0.375f);
-                Class869.method5277().method5307().method6536(class452, Class2016.field11494, n2, n3, class449, class450);
+                Minecraft.method5277().getItemRenderer().method6536(class452, Class2016.field11494, n2, n3, class449, class450);
                 class449.method22568();
             }
         }

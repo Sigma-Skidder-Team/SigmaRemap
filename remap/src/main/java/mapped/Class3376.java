@@ -316,7 +316,7 @@ public class Class3376 extends Class3167
         GL11.glEnable(32925);
         GL11.glEnable(2929);
         GL11.glLineWidth(1.4f);
-        double n = Class869.method5277().field4633.field26528;
+        double n = Minecraft.method5277().field4633.field26528;
         if (!key.method1768()) {
             n = 0.0;
         }

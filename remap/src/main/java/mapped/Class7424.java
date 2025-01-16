@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 
-public class Class7424 extends Class7422
+public class Class7424 extends ValueObject
 {
     public Boolean field28598;
     public Boolean field28599;
@@ -64,10 +64,10 @@ public class Class7424 extends Class7422
     }
     
     public static Class7424 method22841(final JsonObject jsonObject) {
-        final Class7424 class7424 = new Class7424(Class7610.method23910("pvp", jsonObject, true), Class7610.method23910("spawnAnimals", jsonObject, true), Class7610.method23910("spawnMonsters", jsonObject, true), Class7610.method23910("spawnNPCs", jsonObject, true), Class7610.method23908("spawnProtection", jsonObject, 0), Class7610.method23910("commandBlocks", jsonObject, false), Class7610.method23908("difficulty", jsonObject, 2), Class7610.method23908("gameMode", jsonObject, 0), Class7610.method23910("forceGameMode", jsonObject, false), Class7610.method23907("slotName", jsonObject, ""));
-        class7424.field28608 = Class7610.method23909("worldTemplateId", jsonObject, -1L);
-        class7424.field28609 = Class7610.method23907("worldTemplateImage", jsonObject, Class7424.field28623);
-        class7424.field28610 = Class7610.method23910("adventureMap", jsonObject, false);
+        final Class7424 class7424 = new Class7424(JsonUtils.method23910("pvp", jsonObject, true), JsonUtils.method23910("spawnAnimals", jsonObject, true), JsonUtils.method23910("spawnMonsters", jsonObject, true), JsonUtils.method23910("spawnNPCs", jsonObject, true), JsonUtils.method23908("spawnProtection", jsonObject, 0), JsonUtils.method23910("commandBlocks", jsonObject, false), JsonUtils.method23908("difficulty", jsonObject, 2), JsonUtils.method23908("gameMode", jsonObject, 0), JsonUtils.method23910("forceGameMode", jsonObject, false), JsonUtils.func_225171_a("slotName", jsonObject, ""));
+        class7424.field28608 = JsonUtils.func_225169_a("worldTemplateId", jsonObject, -1L);
+        class7424.field28609 = JsonUtils.func_225171_a("worldTemplateImage", jsonObject, Class7424.field28623);
+        class7424.field28610 = JsonUtils.method23910("adventureMap", jsonObject, false);
         return class7424;
     }
     
@@ -75,11 +75,11 @@ public class Class7424 extends Class7422
         if (this.field28607 != null && !this.field28607.isEmpty()) {
             return this.field28607;
         }
-        return this.field28611 ? Class5046.method15438("mco.configure.world.slot.empty") : this.method22843(n);
+        return this.field28611 ? RealmsScreen.getLocalizedString("mco.configure.world.slot.empty") : this.method22843(n);
     }
     
     public String method22843(final int i) {
-        return Class5046.method15439("mco.configure.world.slot", i);
+        return RealmsScreen.method15439("mco.configure.world.slot", i);
     }
     
     public String method22844() {

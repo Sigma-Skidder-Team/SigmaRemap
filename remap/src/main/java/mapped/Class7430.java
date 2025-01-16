@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import com.google.gson.JsonObject;
 import org.apache.logging.log4j.Logger;
 
-public class Class7430 extends Class7422
+public class Class7430 extends ValueObject
 {
     private static final Logger field28648;
     public String field28649;
@@ -24,15 +24,15 @@ public class Class7430 extends Class7422
     public static Class7430 method22863(final JsonObject jsonObject) {
         final Class7430 class7430 = new Class7430();
         try {
-            class7430.field28649 = Class7610.method23907("id", jsonObject, "");
-            class7430.field28650 = Class7610.method23907("name", jsonObject, "");
-            class7430.field28651 = Class7610.method23907("version", jsonObject, "");
-            class7430.field28652 = Class7610.method23907("author", jsonObject, "");
-            class7430.field28653 = Class7610.method23907("link", jsonObject, "");
-            class7430.field28654 = Class7610.method23907("image", jsonObject, null);
-            class7430.field28655 = Class7610.method23907("trailer", jsonObject, "");
-            class7430.field28656 = Class7610.method23907("recommendedPlayers", jsonObject, "");
-            class7430.field28657 = Class2197.valueOf(Class7610.method23907("type", jsonObject, Class2197.field13369.name()));
+            class7430.field28649 = JsonUtils.func_225171_a("id", jsonObject, "");
+            class7430.field28650 = JsonUtils.func_225171_a("name", jsonObject, "");
+            class7430.field28651 = JsonUtils.func_225171_a("version", jsonObject, "");
+            class7430.field28652 = JsonUtils.func_225171_a("author", jsonObject, "");
+            class7430.field28653 = JsonUtils.func_225171_a("link", jsonObject, "");
+            class7430.field28654 = JsonUtils.func_225171_a("image", jsonObject, null);
+            class7430.field28655 = JsonUtils.func_225171_a("trailer", jsonObject, "");
+            class7430.field28656 = JsonUtils.func_225171_a("recommendedPlayers", jsonObject, "");
+            class7430.field28657 = Class2197.valueOf(JsonUtils.func_225171_a("type", jsonObject, Class2197.field13369.name()));
         }
         catch (final Exception ex) {
             Class7430.field28648.error("Could not parse WorldTemplate: " + ex.getMessage());

@@ -20,7 +20,7 @@ public class Class9147
     private ArrayList<Class9035> field38772;
     private double field38773;
     private boolean field38774;
-    private static Class869 field38775;
+    private static Minecraft field38775;
     private static Class9407[] field38776;
     
     public Class9147(final Class9407 class9407, final Class9407 class9408) {
@@ -142,7 +142,7 @@ public class Class9147
     
     public static boolean method33407(final int n, final int n2, final int n3, final boolean b) {
         final AxisAlignedBB class6221 = (Class9147.field38775.field4684.method1920() != null) ? Class9147.field38775.field4684.method1920().getBoundingBox() : Class9147.field38775.field4684.getBoundingBox();
-        return Class9147.field38775.field4683.method6981(Class9147.field38775.field4684, new AxisAlignedBB(n + 0.5f - class6221.getXSize() / 2.0, n2, n3 + 0.5f - class6221.getZSize() / 2.0, n + 0.5f + class6221.getXSize() / 2.0, n2 + class6221.getYSize(), n3 + 0.5f + class6221.getZSize() / 2.0)).count() == 0L;
+        return Class9147.field38775.world.method6981(Class9147.field38775.field4684, new AxisAlignedBB(n + 0.5f - class6221.getXSize() / 2.0, n2, n3 + 0.5f - class6221.getZSize() / 2.0, n + 0.5f + class6221.getXSize() / 2.0, n2 + class6221.getYSize(), n3 + 0.5f + class6221.getZSize() / 2.0)).count() == 0L;
     }
     
     public Class9035 method33408(final Class9407 class9407) {
@@ -213,7 +213,7 @@ public class Class9147
     }
     
     static {
-        Class9147.field38775 = Class869.method5277();
+        Class9147.field38775 = Minecraft.method5277();
         Class9147.field38776 = new Class9407[] { new Class9407(1.0, 0.0, 0.0), new Class9407(-1.0, 0.0, 0.0), new Class9407(0.0, 0.0, 1.0), new Class9407(0.0, 0.0, -1.0) };
     }
 }

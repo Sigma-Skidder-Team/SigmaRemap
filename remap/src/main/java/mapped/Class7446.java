@@ -13,7 +13,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class7446 extends Class7422
+public class Class7446 extends ValueObject
 {
     private static final Logger field28721;
     public List<Class7429> field28722;

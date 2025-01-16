@@ -144,27 +144,27 @@ public abstract class Class6469
     static {
         field25705 = new Class6470("options.biomeBlendRadius", 0.0, 7.0, 1.0f, class5760 -> Double.valueOf(class5760.field23410), (class5762, n) -> {
             class5762.field23410 = MathHelper.method35651(n.intValue(), 0, 7);
-            Class869.method5277().field4636.method5701();
+            Minecraft.method5277().field4636.method5701();
             return;
         }, (class5763, class5765) -> class5765.method19365() + Class8822.method30773("options.biomeBlendRadius." + ((int)class5765.method19476(class5763) * 2 + 1), new Object[0]));
         field25706 = new Class6470("options.chat.height.focused", 0.0, 1.0, 0.0f, class5767 -> class5767.field23404, (class5769, n2) -> {
             class5769.field23404 = n2;
-            Class869.method5277().field4647.method3807().method3764();
+            Minecraft.method5277().field4647.method3807().method3764();
             return;
         }, (class5770, class5772) -> class5772.method19365() + Class684.method3776(class5772.method19469(class5772.method19476(class5770))) + "px");
         field25707 = new Class6470("options.chat.height.unfocused", 0.0, 1.0, 0.0f, class5774 -> class5774.field23403, (class5776, n3) -> {
             class5776.field23403 = n3;
-            Class869.method5277().field4647.method3807().method3764();
+            Minecraft.method5277().field4647.method3807().method3764();
             return;
         }, (class5777, class5779) -> class5779.method19365() + Class684.method3776(class5779.method19469(class5779.method19476(class5777))) + "px");
         field25708 = new Class6470("options.chat.opacity", 0.0, 1.0, 0.0f, class5781 -> class5781.field23390, (class5783, n4) -> {
             class5783.field23390 = n4;
-            Class869.method5277().field4647.method3807().method3764();
+            Minecraft.method5277().field4647.method3807().method3764();
             return;
         }, (class5784, class5786) -> class5786.method19365() + (int)(class5786.method19469(class5786.method19476(class5784)) * 90.0 + 10.0) + "%");
         field25709 = new Class6470("options.chat.scale", 0.0, 1.0, 0.0f, class5788 -> class5788.field23401, (class5790, n5) -> {
             class5790.field23401 = n5;
-            Class869.method5277().field4647.method3807().method3764();
+            Minecraft.method5277().field4647.method3807().method3764();
             return;
         }, (class5791, class5793) -> {
             class5793.method19469(class5793.method19476(class5791));
@@ -184,7 +184,7 @@ public abstract class Class6469
         field25710 = new Class6470("options.chat.width", 0.0, 1.0, 0.0f, class5795 -> class5795.field23402 / 4.0571431, (class5797, value) -> {
             value *= 4.0571431;
             class5797.field23402 = value;
-            Class869.method5277().field4647.method3807().method3764();
+            Minecraft.method5277().field4647.method3807().method3764();
             return;
         }, (class5798, class5800) -> class5800.method19365() + Class684.method3775(class5800.method19469(class5800.method19476(class5798)) * 4.0571431) + "px");
         field25711 = new Class6470("options.fov", 30.0, 110.0, 1.0f, class5802 -> class5802.field23471, (class5804, n7) -> class5804.field23471 = n7, (class5805, class5806) -> {
@@ -216,7 +216,7 @@ public abstract class Class6469
                 class5809.field23419 = true;
             }
             class5809.method17138();
-            Class869.method5277().method5332().method7678(class5809.field23383);
+            Minecraft.method5277().method5332().method7678(class5809.field23383);
             return;
         }, (class5810, class5811) -> {
             class5811.method19476(class5810);
@@ -292,7 +292,7 @@ public abstract class Class6469
         });
         field25716 = new Class6468("options.rawMouseInput", class5829 -> class5829.field23412, (class5830, b) -> {
             class5830.field23412 = b;
-            Class869.method5277().method5332();
+            Minecraft.method5277().method5332();
             final Class1925 class5831;
             if (class5831 != null) {
                 class5831.method7702(b);
@@ -301,7 +301,7 @@ public abstract class Class6469
         });
         field25717 = new Class6470("options.renderDistance", 2.0, 16.0, 1.0f, class5832 -> Double.valueOf(class5832.field23382), (class5834, n17) -> {
             class5834.field23382 = n17.intValue();
-            Class869.method5277().field4636.method5755();
+            Minecraft.method5277().field4636.method5755();
             return;
         }, (class5835, class5837) -> {
             class5837.method19476(class5835);
@@ -331,12 +331,12 @@ public abstract class Class6469
         });
         field25719 = new Class6470("options.accessibility.text_background_opacity", 0.0, 1.0, 0.0f, class5844 -> class5844.field23391, (class5846, n21) -> {
             class5846.field23391 = n21;
-            Class869.method5277().field4647.method3807().method3764();
+            Minecraft.method5277().field4647.method3807().method3764();
             return;
         }, (class5847, class5849) -> class5849.method19365() + (int)(class5849.method19469(class5849.method19476(class5847)) * 100.0) + "%");
         field25720 = new Class6474("options.ao", (class5851, n22) -> {
             class5851.field23386 = Class2007.method8041(class5851.field23386.method8039() + n22);
-            Class869.method5277().field4636.method5701();
+            Minecraft.method5277().field4636.method5701();
             return;
         }, (class5852, class5854) -> class5854.method19365() + Class8822.method30773(class5852.field23386.method8040(), new Object[0]));
         field25721 = new Class6474("options.attackIndicator", (class5856, n23) -> class5856.field23408 = Class323.method996(class5856.field23408.method994() + n23), (class5857, class5859) -> class5859.method19365() + Class8822.method30773(class5857.field23408.method995(), new Object[0]));
@@ -344,7 +344,7 @@ public abstract class Class6469
         field25723 = new Class6474("options.graphics", (class5866, p1) -> {
             class5866.field23385 = !class5866.field23385;
             class5866.method17136();
-            Class869.method5277().field4636.method5701();
+            Minecraft.method5277().field4636.method5701();
             return;
         }, (class5867, class5869) -> {
             String s8;
@@ -356,20 +356,20 @@ public abstract class Class6469
             }
             return s8;
         });
-        field25724 = new Class6474("options.guiScale", (class5871, n25) -> class5871.field23473 = MathHelper.method35664(class5871.field23473 + n25, Class869.method5277().method5332().method7687(0, Class869.method5277().method5240()) + 1), (class5872, class5874) -> class5874.method19365() + ((class5872.field23473 != 0) ? Integer.valueOf(class5872.field23473) : Class8822.method30773("options.guiScale.auto", new Object[0])));
+        field25724 = new Class6474("options.guiScale", (class5871, n25) -> class5871.field23473 = MathHelper.method35664(class5871.field23473 + n25, Minecraft.method5277().method5332().method7687(0, Minecraft.method5277().method5240()) + 1), (class5872, class5874) -> class5874.method19365() + ((class5872.field23473 != 0) ? Integer.valueOf(class5872.field23473) : Class8822.method30773("options.guiScale.auto", new Object[0])));
         field25725 = new Class6474("options.mainHand", (class5876, p1) -> class5876.field23397 = class5876.field23397.method8419(), (class5877, class5879) -> class5879.method19365() + class5877.field23397);
         field25726 = new Class6474("options.narrator", (class5881, n26) -> {
-            if (!Class7895.field32404.method25560()) {
+            if (!NarratorChatListener.field32404.method25560()) {
                 class5881.field23475 = Class2051.field11699;
             }
             else {
                 class5881.field23475 = Class2051.method8139(class5881.field23475.method8137() + n26);
             }
-            Class7895.field32404.method25559(class5881.field23475);
+            NarratorChatListener.field32404.method25559(class5881.field23475);
             return;
         }, (class5882, class5884) -> {
             String s9;
-            if (!Class7895.field32404.method25560()) {
+            if (!NarratorChatListener.field32404.method25560()) {
                 s9 = class5884.method19365() + Class8822.method30773("options.narrator.notavailable", new Object[0]);
             }
             else {
@@ -388,16 +388,16 @@ public abstract class Class6469
         field25735 = new Class6468("options.discrete_mouse_scroll", class5911 -> class5911.field23423, (class5912, b7) -> class5912.field23423 = b7);
         field25736 = new Class6468("options.vsync", class5913 -> class5913.field23419, (class5914, b8) -> {
             class5914.field23419 = b8;
-            if (Class869.method5277().method5332() != null) {
-                Class869.method5277().method5332().method7672(class5914.field23419);
+            if (Minecraft.method5277().method5332() != null) {
+                Minecraft.method5277().method5332().method7672(class5914.field23419);
             }
             return;
         });
         field25737 = new Class6468("options.entityShadows", class5915 -> class5915.field23420, (class5916, b9) -> class5916.field23420 = b9);
         field25738 = new Class6468("options.forceUnicodeFont", class5917 -> class5917.field23421, (class5918, b10) -> {
             class5918.field23421 = b10;
-            Class869.method5277();
-            final Class869 class5919;
+            Minecraft.method5277();
+            final Minecraft class5919;
             if (class5919.method5323() != null) {
                 class5919.method5323().method7377(class5918.field23421, Util.method27841(), class5919);
             }
@@ -416,8 +416,8 @@ public abstract class Class6469
         field25746 = new Class6468("options.touchscreen", class5940 -> class5940.field23429, (class5941, b16) -> class5941.field23429 = b16);
         field25747 = new Class6468("options.fullscreen", class5942 -> class5942.field23430, (class5943, b17) -> {
             class5943.field23430 = b17;
-            Class869.method5277();
-            final Class869 class5944;
+            Minecraft.method5277();
+            final Minecraft class5944;
             if (class5944.method5332() != null) {
                 if (class5944.method5332().method7691() != class5943.field23430) {
                     class5944.method5332().method7685();

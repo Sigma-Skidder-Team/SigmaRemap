@@ -46,7 +46,7 @@ public class Class6697 extends Class6693
         Class9070.method32674(() -> {
             final Class2265<ItemStack> class8324;
             final Object o = new Class443((ItemStack[])class8324.toArray((Object[])new ItemStack[0]));
-            final Class869 field26420 = Class6697.field26420;
+            final Minecraft field26420 = Class6697.field26420;
             new Class745(new Class3435(-1, Class6697.field26420.field4684.field3006, class8322), Class6697.field26420.field4684.field3006, class8323.method27664());
             final Class745 class8325;
             field26420.method5244(class8325);

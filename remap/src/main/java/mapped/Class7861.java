@@ -74,7 +74,7 @@ public class Class7861
     
     public boolean method25463(final Class7971 class7971) {
         try {
-            Class869.method5277().field4642 = class7971.method25903();
+            Minecraft.method5277().field4642 = class7971.method25903();
             this.field32298 = class7971.method25888();
             return true;
         }
@@ -142,6 +142,6 @@ public class Class7861
         if (this.method25469() != null) {
             return class7971.method25888().equals(this.method25469());
         }
-        return class7971.method25889().equals(Class869.method5277().method5287().method33692());
+        return class7971.method25889().equals(Minecraft.method5277().method5287().method33692());
     }
 }

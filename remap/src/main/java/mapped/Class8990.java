@@ -596,7 +596,7 @@ public class Class8990
     }
     
     public static void method32073() {
-        final Class1666 method5853 = Class869.method5277().method5290().method5853(Class1774.field9853);
+        final Class1666 method5853 = Minecraft.method5277().method5290().method5853(Class1774.field9853);
         if (method5853 != null) {
             final Class9025 method5854 = method5853.method5874();
             Class8933.method31617(method5854.field38156);

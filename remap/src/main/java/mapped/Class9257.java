@@ -14,7 +14,7 @@ public class Class9257
     private final List<Class647> field39697;
     private Class647 field39698;
     private final Class564 field39699;
-    private Class869 field39700;
+    private Minecraft field39700;
     private final List<Class586> field39701;
     private List<Class9586> field39702;
     private Class645 field39703;
@@ -34,7 +34,7 @@ public class Class9257
         }
     }
     
-    public void method34148(final Class869 field39700, final int n, final int n2) {
+    public void method34148(final Minecraft field39700, final int n, final int n2) {
         this.field39700 = field39700;
         this.field39707 = field39700.field4684.method4122();
         for (int i = 0; i < this.field39697.size(); ++i) {
@@ -81,7 +81,7 @@ public class Class9257
     public void method34153(final int n, final int n2, final int n3, final int n4, final float n5) {
         if (this.field39705 > 1) {
             final String string = this.field39706 + 1 + "/" + this.field39705;
-            this.field39700.field4643.method6610(string, (float)(n - this.field39700.field4643.method6617(string) / 2 + 73), (float)(n2 + 141), -1);
+            this.field39700.fontRenderer.method6610(string, (float)(n - this.field39700.fontRenderer.method6617(string) / 2 + 73), (float)(n2 + 141), -1);
         }
         this.field39698 = null;
         for (final Class647 field39698 : this.field39697) {
@@ -127,7 +127,7 @@ public class Class9257
         this.field39708 = null;
         this.field39709 = null;
         if (this.field39699.method3286()) {
-            if (!this.field39699.method2982(n, n2, n3)) {
+            if (!this.field39699.mouseClicked(n, n2, n3)) {
                 this.field39699.method3285(false);
             }
             else {
@@ -136,14 +136,14 @@ public class Class9257
             }
             return true;
         }
-        if (this.field39703.method2982(n, n2, n3)) {
+        if (this.field39703.mouseClicked(n, n2, n3)) {
             ++this.field39706;
             this.method34151();
             return true;
         }
-        if (!this.field39704.method2982(n, n2, n3)) {
+        if (!this.field39704.mouseClicked(n, n2, n3)) {
             for (final Class647 class647 : this.field39697) {
-                if (!class647.method2982(n, n2, n3)) {
+                if (!class647.mouseClicked(n, n2, n3)) {
                     continue;
                 }
                 if (n3 != 0) {
@@ -175,7 +175,7 @@ public class Class9257
         }
     }
     
-    public Class869 method34160() {
+    public Minecraft method34160() {
         return this.field39700;
     }
     

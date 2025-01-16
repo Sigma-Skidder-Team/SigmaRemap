@@ -40,10 +40,10 @@ public class Class628 extends Class624
     private void method3631(final int n, final int n2, final int n3, final int n4, final Class7430 class7430) {
         Class8952.method31758(class7430.field28649, class7430.field28654);
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class5046.method15411(n + 1, n2 + 1, 0.0f, 0.0f, 38, 38, 38, 38);
-        Class5046.method15419("realms:textures/gui/realms/slot_frame.png");
+        RealmsScreen.method15411(n + 1, n2 + 1, 0.0f, 0.0f, 38, 38, 38, 38);
+        RealmsScreen.method15419("realms:textures/gui/realms/slot_frame.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class5046.method15411(n, n2, 0.0f, 0.0f, 40, 40, 40, 40);
+        RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 40, 40, 40, 40);
     }
     
     private void method3632(final int n, final int n2, final int n3, final int n4, final String anObject, final String s, final String s2) {
@@ -57,7 +57,7 @@ public class Class628 extends Class624
             if (n3 <= n + n5 + 32) {
                 if (n4 >= n2) {
                     if (n4 <= n2 + 15) {
-                        if (n4 < this.field3612.method15422() - 15) {
+                        if (n4 < this.field3612.height() - 15) {
                             if (n4 > 32) {
                                 if (n3 <= n + 15 + n5 && n3 > n5) {
                                     if (!"".equals(anObject)) {
@@ -77,28 +77,28 @@ public class Class628 extends Class624
             }
         }
         if (!"".equals(anObject)) {
-            Class5046.method15419("realms:textures/gui/realms/link_icons.png");
+            RealmsScreen.method15419("realms:textures/gui/realms/link_icons.png");
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             Class8726.method30059();
             Class8726.method30063(1.0f, 1.0f, 1.0f);
-            Class5046.method15411(n + n5, n2, (!b) ? 0.0f : 15.0f, 0.0f, 15, 15, 30, 15);
+            RealmsScreen.method15411(n + n5, n2, (!b) ? 0.0f : 15.0f, 0.0f, 15, 15, 30, 15);
             Class8726.method30060();
         }
         if (!"".equals(s)) {
-            Class5046.method15419("realms:textures/gui/realms/trailer_icons.png");
+            RealmsScreen.method15419("realms:textures/gui/realms/trailer_icons.png");
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             Class8726.method30059();
             Class8726.method30063(1.0f, 1.0f, 1.0f);
-            Class5046.method15411(n + n5 + ("".equals(anObject) ? 0 : 17), n2, (!b2) ? 0.0f : 15.0f, 0.0f, 15, 15, 30, 15);
+            RealmsScreen.method15411(n + n5 + ("".equals(anObject) ? 0 : 17), n2, (!b2) ? 0.0f : 15.0f, 0.0f, 15, 15, 30, 15);
             Class8726.method30060();
         }
         if (b && !"".equals(anObject)) {
-            Class5045.method15395(this.field3612, Class5046.method15438("mco.template.info.tooltip"));
+            Class5045.method15395(this.field3612, RealmsScreen.getLocalizedString("mco.template.info.tooltip"));
             Class5045.method15396(this.field3612, anObject);
         }
         else if (b2) {
             if (!"".equals(s)) {
-                Class5045.method15395(this.field3612, Class5046.method15438("mco.template.trailer.tooltip"));
+                Class5045.method15395(this.field3612, RealmsScreen.getLocalizedString("mco.template.trailer.tooltip"));
                 Class5045.method15396(this.field3612, s);
             }
         }

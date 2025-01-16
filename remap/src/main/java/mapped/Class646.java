@@ -21,7 +21,7 @@ public class Class646 extends Class645
         this.method3690(153, 2, 35, 0, Class581.field3462);
     }
     
-    public void method3694(final Class869 class869) {
+    public void method3694(final Minecraft class869) {
         final Class6520 method4122 = class869.field4684.method4122();
         final List<Class9586> method4123 = method4122.method19689(this.field3664);
         if (class869.field4684.field3009 instanceof Class3426) {
@@ -47,7 +47,7 @@ public class Class646 extends Class645
             Class8726.method30063(1.0f, n4, 1.0f);
             Class8726.method30065((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
         }
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         method5277.method5290().method5849(this.field3657);
         Class8726.method30007();
         int field3659 = this.field3659;
@@ -65,7 +65,7 @@ public class Class646 extends Class645
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.method3186(field3661, this.field3427, field3659, field3660, this.field3424, this.field3425);
         Class8726.method30008();
-        this.method3695(method5277.method5307());
+        this.method3695(method5277.getItemRenderer());
         if (this.field3665 > 0.0f) {
             Class8726.method30060();
             this.field3665 -= n3;

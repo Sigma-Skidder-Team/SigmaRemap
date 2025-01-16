@@ -275,7 +275,7 @@ public class Class6741
     }
     
     private float method20521(final World class1847) {
-        final Entity method5303 = Class869.method5277().method5303();
+        final Entity method5303 = Minecraft.method5277().method5303();
         if (method5303 != null) {
             final BlockPos method5304 = method5303.method1894();
             if (this.field26516 != null) {

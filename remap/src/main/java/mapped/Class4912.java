@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +15,7 @@ public class Class4912 extends Class4825
     public Class2315 field21014;
     
     public Class4912(final Class4803 class4803, final String s) {
-        super(class4803, s, 0, 0, Class869.method5277().field4632.method7694(), Class869.method5277().field4632.method7695(), false);
+        super(class4803, s, 0, 0, Minecraft.method5277().field4632.method7694(), Minecraft.method5277().field4632.method7695(), false);
         this.field21012 = new ArrayList<Class9159>();
         this.field21013 = new Class8338();
         this.field21014 = new Class2315();
@@ -39,8 +38,8 @@ public class Class4912 extends Class4825
     
     @Override
     public void method14205(final float n) {
-        final int method7696 = Class869.method5277().field4632.method7696();
-        final int method7697 = Class869.method5277().field4632.method7697();
+        final int method7696 = Minecraft.method5277().field4632.method7696();
+        final int method7697 = Minecraft.method5277().field4632.method7697();
         final int n2 = method7696 / 2;
         int n3 = 0;
         while (this.field21012.size() < n2) {

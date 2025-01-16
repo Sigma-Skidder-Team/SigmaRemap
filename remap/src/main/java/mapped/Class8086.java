@@ -12,11 +12,11 @@ public class Class8086
 {
     private static String[] field33306;
     private final Random field33307;
-    private final Class869 field33308;
+    private final Minecraft field33308;
     private Class6834 field33309;
     private int field33310;
     
-    public Class8086(final Class869 field33308) {
+    public Class8086(final Minecraft field33308) {
         this.field33307 = new Random();
         this.field33310 = 100;
         this.field33308 = field33308;

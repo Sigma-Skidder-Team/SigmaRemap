@@ -89,7 +89,7 @@ public class Class3198 extends Class3167
                 this.field15615 = Class3198.field15514.field4684.field3006.field2743;
                 Class3198.field15514.field4684.field3006.field2743 = method10292;
                 Class3198.field15514.field4682.method27318();
-                Class3198.field15514.field4682.method27320(Class3198.field15514.field4684, Class3198.field15514.field4683, Class316.field1877);
+                Class3198.field15514.field4682.method27320(Class3198.field15514.field4684, Class3198.field15514.world, Class316.field1877);
             }
         }
     }

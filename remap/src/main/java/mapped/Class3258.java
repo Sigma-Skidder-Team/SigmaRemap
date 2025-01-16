@@ -24,7 +24,7 @@ public class Class3258 extends Class3247
             if (method13697 != null) {
                 method13698 = method13697.getPos();
             }
-            this.method10274(this.method10273(), method13698.getX() + 0.5 - Class869.method5277().field4644.method5833().method18161().getX(), method13698.getY() + 1 - Class869.method5277().field4644.method5833().method18161().getY(), method13698.getZ() + 0.5 - Class869.method5277().field4644.method5833().method18161().getZ());
+            this.method10274(this.method10273(), method13698.getX() + 0.5 - Minecraft.method5277().field4644.method5833().method18161().getX(), method13698.getY() + 1 - Minecraft.method5277().field4644.method5833().method18161().getY(), method13698.getZ() + 0.5 - Minecraft.method5277().field4644.method5833().method18161().getZ());
         }
     }
     

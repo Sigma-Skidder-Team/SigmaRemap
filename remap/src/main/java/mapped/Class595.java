@@ -29,7 +29,7 @@ public class Class595 extends Class594
     @Override
     public void method3467(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final float n8) {
         final boolean b2 = Class607.method3568(this.field3503).field3874 == this.field3499;
-        this.field3503.field3540.field4643.method6610(this.field3500, (float)(n3 + 90 - Class607.method3569(this.field3503)), (float)(n2 + n5 / 2 - 4), 16777215);
+        this.field3503.field3540.fontRenderer.method6610(this.field3500, (float)(n3 + 90 - Class607.method3569(this.field3503)), (float)(n2 + n5 / 2 - 4), 16777215);
         this.field3502.field3426 = n3 + 190;
         this.field3502.field3427 = n2;
         this.field3502.field3431 = !this.field3499.method1069();
@@ -58,17 +58,17 @@ public class Class595 extends Class594
     }
     
     @Override
-    public List<? extends Class574> method3040() {
-        return (List<? extends Class574>)ImmutableList.of((Object)this.field3501, (Object)this.field3502);
+    public List<? extends IGuiEventListener> children() {
+        return (List<? extends IGuiEventListener>)ImmutableList.of((Object)this.field3501, (Object)this.field3502);
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
-        return this.field3501.method2982(n, n2, n3) || this.field3502.method2982(n, n2, n3);
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
+        return this.field3501.mouseClicked(n, n2, n3) || this.field3502.mouseClicked(n, n2, n3);
     }
     
     @Override
-    public boolean method2985(final double n, final double n2, final int n3) {
-        return this.field3501.method2985(n, n2, n3) || this.field3502.method2985(n, n2, n3);
+    public boolean mouseReleased(final double n, final double n2, final int n3) {
+        return this.field3501.mouseReleased(n, n2, n3) || this.field3502.mouseReleased(n, n2, n3);
     }
 }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-public abstract class Class5075<T> extends Class5046
+public abstract class Class5075<T> extends RealmsScreen
 {
     public abstract void method15677(final T p0);
 }

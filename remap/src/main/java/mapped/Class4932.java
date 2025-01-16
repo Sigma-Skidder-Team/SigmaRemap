@@ -6,7 +6,7 @@ package mapped;
 
 public class Class4932 extends Class4800
 {
-    public Class869 field21122;
+    public Minecraft field21122;
     public Class7617 field21123;
     public Class4915 field21124;
     public Class9572 field21125;
@@ -15,7 +15,7 @@ public class Class4932 extends Class4800
     
     public Class4932() {
         super("SnakeGameScreen");
-        this.field21122 = Class869.method5277();
+        this.field21122 = Minecraft.method5277();
         this.field21123 = new Class7617();
         this.field21127 = 14;
         this.method14311(false);
@@ -51,7 +51,7 @@ public class Class4932 extends Class4800
         super.method14204(n);
         if (n == 256) {
             Class6430.method19172();
-            Class869.method5277().method5244(null);
+            Minecraft.method5277().method5244(null);
         }
     }
 }

@@ -10,10 +10,10 @@ public class Class5057 extends Class5056
     
     public Class5057(final Class5071 field21706) {
         this.field21706 = field21706;
-        super(field21706.method15421() - 150, field21706.method15422(), 32, field21706.method15422() - 15, 36);
+        super(field21706.width() - 150, field21706.height(), 32, field21706.height() - 15, 36);
     }
     
-    public void method15539(final Class7426 class7426) {
+    public void method15539(final Backup class7426) {
         final Class5071 field21706 = this.field21706;
         field21706.getClass();
         this.method15511(new Class631(field21706, class7426));
@@ -45,7 +45,7 @@ public class Class5057 extends Class5056
     }
     
     @Override
-    public boolean method15368(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 == 0) {
             if (n < this.method15524()) {
                 if (n2 >= this.method15525()) {
@@ -95,7 +95,7 @@ public class Class5057 extends Class5056
                         }
                         Class5071.method15646(this.field21706, -1);
                         Class5071.method15648(this.method15530());
-                        Class7847.method25362(new Class5051(this.field21706, Class5071.method15640(this.field21706).get(n2)));
+                        Realms.setScreen(new Class5051(this.field21706, Class5071.method15640(this.field21706).get(n2)));
                         return;
                     }
                 }
@@ -117,7 +117,7 @@ public class Class5057 extends Class5056
     public void method15533(final int n) {
         this.method15519(n);
         if (n != -1) {
-            Class7847.method25381(Class5046.method15439("narrator.select", Class5071.method15640(this.field21706).get(n).field28629.toString()));
+            Realms.narrateNow(RealmsScreen.method15439("narrator.select", Class5071.method15640(this.field21706).get(n).field28629.toString()));
         }
         this.method15540(n);
     }

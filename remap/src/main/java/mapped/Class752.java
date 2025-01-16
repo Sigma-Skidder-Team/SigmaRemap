@@ -9,9 +9,9 @@ import net.minecraft.item.ItemStack;
 public class Class752 implements Class514
 {
     private static String[] field4052;
-    private final Class869 field4053;
+    private final Minecraft field4053;
     
-    public Class752(final Class869 field4053) {
+    public Class752(final Minecraft field4053) {
         this.field4053 = field4053;
     }
     

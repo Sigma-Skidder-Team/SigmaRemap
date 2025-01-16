@@ -12,7 +12,7 @@ import java.io.File;
 public class Class8584
 {
     public static Class8907 method29061() {
-        final File file = new File(Class7847.method25364(), "realms_persistence.json");
+        final File file = new File(Realms.method25364(), "realms_persistence.json");
         final Gson gson = new Gson();
         try {
             return (Class8907)gson.fromJson(FileUtils.readFileToString(file), (Class)Class8907.class);
@@ -23,7 +23,7 @@ public class Class8584
     }
     
     public static void method29062(final Class8907 class8907) {
-        final File file = new File(Class7847.method25364(), "realms_persistence.json");
+        final File file = new File(Realms.method25364(), "realms_persistence.json");
         final String json = new Gson().toJson((Object)class8907);
         try {
             FileUtils.writeStringToFile(file, json);

@@ -4,7 +4,7 @@
 
 package mapped;
 
-public abstract class Class1334 implements Runnable
+public abstract class LongRunningTask implements Runnable
 {
     public Class5049 field7319;
     
@@ -12,15 +12,15 @@ public abstract class Class1334 implements Runnable
         this.field7319 = field7319;
     }
     
-    public void method5620(final String s) {
+    public void func_224986_a(final String s) {
         this.field7319.method15468(s);
     }
     
-    public void method5621(final String s) {
+    public void func_224989_b(final String s) {
         this.field7319.method15469(s);
     }
     
-    public boolean method5622() {
+    public boolean func_224988_a() {
         return this.field7319.method15470();
     }
     

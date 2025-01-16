@@ -30,7 +30,7 @@ import java.awt.image.BufferedImage;
 
 public class Class7643
 {
-    private static Class869 field30332;
+    private static Minecraft field30332;
     private boolean field30333;
     private Class9175 field30334;
     private int field30335;
@@ -125,8 +125,8 @@ public class Class7643
                         }
                     }
                     final float n = 60.0f;
-                    final Class869 field30332 = Class7643.field30332;
-                    final float n2 = n / Class869.method5338();
+                    final Minecraft field30332 = Class7643.field30332;
+                    final float n2 = n / Minecraft.method5338();
                     for (int j = 0; j < array.length; ++j) {
                         final double n3 = this.field30354.get(j) - array[j];
                         final boolean b = this.field30354.get(j) >= Double.MAX_VALUE;
@@ -692,6 +692,6 @@ public class Class7643
     }
     
     static {
-        Class7643.field30332 = Class869.method5277();
+        Class7643.field30332 = Minecraft.method5277();
     }
 }

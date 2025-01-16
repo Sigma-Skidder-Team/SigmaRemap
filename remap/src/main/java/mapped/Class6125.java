@@ -18,10 +18,10 @@ import java.util.Map;
 public class Class6125 implements Class6113
 {
     private static String[] field24865;
-    private final Class869 field24866;
+    private final Minecraft field24866;
     private final Map<Long, Map<BlockPos, Integer>> field24867;
     
-    public Class6125(final Class869 field24866) {
+    public Class6125(final Minecraft field24866) {
         this.field24867 = Maps.newTreeMap((Comparator)Ordering.natural().reverse());
         this.field24866 = field24866;
     }
@@ -41,7 +41,7 @@ public class Class6125 implements Class6113
     
     @Override
     public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
-        final long method6754 = this.field24866.field4683.method6754();
+        final long method6754 = this.field24866.world.method6754();
         final HashSet hashSet = Sets.newHashSet();
         final HashMap hashMap = Maps.newHashMap();
         final Class4150 method6755 = class7352.method25214(Class6332.method18791());

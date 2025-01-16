@@ -33,7 +33,7 @@ public class Class7282
     public final Class6127 field28223;
     private boolean field28224;
     
-    public Class7282(final Class869 class869) {
+    public Class7282(final Minecraft class869) {
         this.field28207 = new Class6114();
         this.field28208 = new Class6129(class869);
         this.field28209 = new Class6112(class869);
@@ -79,7 +79,7 @@ public class Class7282
     
     public void method22332(final Class7351 class7351, final Class7808 class7352, final double n, final double n2, final double n3) {
         if (this.field28224) {
-            if (!Class869.method5277().method5317()) {
+            if (!Minecraft.method5277().method5317()) {
                 this.field28209.method18269(class7351, class7352, n, n2, n3);
             }
         }
@@ -103,14 +103,14 @@ public class Class7282
     }
     
     public static void method22334(final BlockPos class354, final BlockPos class355, final float n, final float n2, final float n3, final float n4) {
-        final Class6092 method5833 = Class869.method5277().field4644.method5833();
+        final Class6092 method5833 = Minecraft.method5277().field4644.method5833();
         if (method5833.method18167()) {
             method22336(new AxisAlignedBB(class354, class355).offset(method5833.method18161().inverse()), n, n2, n3, n4);
         }
     }
     
     public static void method22335(final BlockPos class354, final float n, final float n2, final float n3, final float n4, final float n5) {
-        final Class6092 method5833 = Class869.method5277().field4644.method5833();
+        final Class6092 method5833 = Minecraft.method5277().field4644.method5833();
         if (method5833.method18167()) {
             method22336(new AxisAlignedBB(class354).offset(method5833.method18161().inverse()).intersect(n), n2, n3, n4, n5);
         }
@@ -141,11 +141,11 @@ public class Class7282
     }
     
     public static void method22341(final String s, final double n, final double n2, final double n3, final int n4, final float n5, final boolean b, final float n6, final boolean b2) {
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         final Class6092 method5278 = method5277.field4644.method5833();
         if (method5278.method18167()) {
             if (method5277.method5306().field35909 != null) {
-                final Class1844 field4643 = method5277.field4643;
+                final Class1844 field4643 = method5277.fontRenderer;
                 final double field4644 = method5278.method18161().x;
                 final double field4645 = method5278.method18161().y;
                 final double field4646 = method5278.method18161().z;

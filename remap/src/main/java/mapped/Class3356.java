@@ -42,7 +42,7 @@ public class Class3356 extends Class3355
             }
         }
         if (this.method9883("Smart Visibility")) {
-            if (Class3356.field15514.field4683.method6739((Class<? extends Entity>) PlayerEntity.class, Class3356.field15514.field4684.getBoundingBox().intersect(14.0), class5744 -> {
+            if (Class3356.field15514.world.method6739((Class<? extends Entity>) PlayerEntity.class, Class3356.field15514.field4684.getBoundingBox().intersect(14.0), class5744 -> {
                 final boolean b;
                 if (class5744.method1732(Class3356.field15514.field4684) < 12.0f) {
                     if (!this.method10623(class5744)) {
@@ -82,7 +82,7 @@ public class Class3356 extends Class3355
         if (!this.method9906()) {
             return;
         }
-        if (!Class869.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().field4648.field23464) {
             if (!this.method9883("Smart Visibility")) {
                 this.field15985.method35855((Class3356.field15514.field4700 != null && !this.method9883("Show in GUI")) ? Class2186.field12965 : Class2186.field12964);
             }
@@ -113,7 +113,7 @@ public class Class3356 extends Class3355
             Class8726.method30059();
             this.method10626(Class3356.field15986, n6, n7, Class3356.field15514.field4632.method7692() - n8 - n6, Class3356.field15514.field4632.method7693() + n9);
             Class8726.method30060();
-            Class8726.method30056(256, Class869.field4623);
+            Class8726.method30056(256, Minecraft.field4623);
             Class8726.method30057(5889);
             Class8726.method30058();
             Class8726.method30061(0.0, Class3356.field15514.field4632.method7692() / Class3356.field15514.field4632.method7700(), Class3356.field15514.field4632.method7693() / Class3356.field15514.field4632.method7700(), 0.0, 1000.0, 3000.0);
@@ -181,7 +181,7 @@ public class Class3356 extends Class3355
             Class3356.field15986.method18395(true);
             Class8726.method30040();
             Class8726.method30003();
-            Math.max(Math.min(Class869.method5338(), Class3356.field15514.field4648.field23383), 60);
+            Math.max(Math.min(Minecraft.method5338(), Class3356.field15514.field4648.field23383), 60);
             final long n = Util.method27838() - class5741.field23313;
             final float field2399 = Class3356.field15514.field4684.rotationYaw;
             final Class756 field2400 = Class3356.field15514.field4684;
@@ -213,8 +213,8 @@ public class Class3356 extends Class3355
         final int method7692 = Class3356.field15514.field4632.method7692();
         final int method7693 = Class3356.field15514.field4632.method7693();
         final boolean b = true;
-        final Class869 field15514 = Class3356.field15514;
-        (Class3356.field15986 = new Class6153(method7692, method7693, b, Class869.field4623)).method18398(1.0f, 1.0f, 1.0f, 1.0f);
+        final Minecraft field15514 = Class3356.field15514;
+        (Class3356.field15986 = new Class6153(method7692, method7693, b, Minecraft.field4623)).method18398(1.0f, 1.0f, 1.0f, 1.0f);
     }
     
     @Override

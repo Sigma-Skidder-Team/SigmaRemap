@@ -9,10 +9,10 @@ import net.minecraft.world.World;
 public class Class6492 extends Class6490
 {
     private Class1862 field25848;
-    public Class869 field25849;
+    public Minecraft field25849;
     
     public Class6492() {
-        this.field25849 = Class869.method5277();
+        this.field25849 = Minecraft.method5277();
     }
     
     @Override
@@ -21,7 +21,7 @@ public class Class6492 extends Class6490
         if (this.field25849.field4684 == null) {
             return 0;
         }
-        final BlockState method6701 = this.field25849.field4683.getBlockState(new BlockPos(class6109.method27704(), class6109.method27705(), class6109.method27706()));
+        final BlockState method6701 = this.field25849.world.getBlockState(new BlockPos(class6109.method27704(), class6109.method27705(), class6109.method27706()));
         if (method6701 != null) {
             return Class4609.method13704(method6701.getBlock()) << 4 | Class4609.method13703(method6701);
         }

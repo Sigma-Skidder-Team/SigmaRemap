@@ -8,7 +8,7 @@ import java.util.List;
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.types.DynamicOps;
 
-public class Class696 extends Class527
+public class Class696 extends Screen
 {
     private final Class539 field3826;
     private Class7067 field3827;
@@ -41,34 +41,34 @@ public class Class696 extends Class527
     }
     
     @Override
-    public void method2969() {
+    public void init() {
         this.field3828 = Class8822.method30773("createWorld.customize.flat.tile", new Object[0]);
         this.field3829 = Class8822.method30773("createWorld.customize.flat.height", new Object[0]);
         this.field3830 = new Class618(this);
-        this.field3149.add(this.field3830);
-        this.field3831 = this.method3029(new Class654(this.field3152 / 2 - 155, this.field3153 - 52, 150, 20, Class8822.method30773("createWorld.customize.flat.removeLayer", new Object[0]), class654 -> {
+        this.children.add(this.field3830);
+        this.field3831 = this.method3029(new Class654(this.width / 2 - 155, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.flat.removeLayer", new Object[0]), class654 -> {
             if (this.method3888()) {
                 final List<Class9127> method21590 = this.field3827.method21590();
-                final int index = this.field3830.method3040().indexOf(((Class604<Object>)this.field3830).method3530());
+                final int index = this.field3830.children().indexOf(((Class604<Object>)this.field3830).method3530());
                 method21590.remove(method21590.size() - index - 1);
-                this.field3830.method3594(method21590.isEmpty() ? null : this.field3830.method3040().get(Math.min(index, method21590.size() - 1)));
+                this.field3830.method3594(method21590.isEmpty() ? null : this.field3830.children().get(Math.min(index, method21590.size() - 1)));
                 this.field3827.method21591();
                 this.method3887();
             }
         }));
-        this.method3029(new Class654(this.field3152 / 2 + 5, this.field3153 - 52, 150, 20, Class8822.method30773("createWorld.customize.presets", new Object[0]), class654 -> {
-            this.field3150.method5244(new Class561(this));
+        this.method3029(new Class654(this.width / 2 + 5, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.presets", new Object[0]), class654 -> {
+            this.minecraft.method5244(new Class561(this));
             this.field3827.method21591();
             this.method3887();
         }));
-        this.method3029(new Class654(this.field3152 / 2 - 155, this.field3153 - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.method3029(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
             this.field3826.field3231 = this.method3884();
-            this.field3150.method5244(this.field3826);
+            this.minecraft.method5244(this.field3826);
             this.field3827.method21591();
             this.method3887();
         }));
-        this.method3029(new Class654(this.field3152 / 2 + 5, this.field3153 - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
-            this.field3150.method5244(this.field3826);
+        this.method3029(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
+            this.minecraft.method5244(this.field3826);
             this.field3827.method21591();
             this.method3887();
         }));
@@ -87,17 +87,17 @@ public class Class696 extends Class527
     
     @Override
     public void method3028() {
-        this.field3150.method5244(this.field3826);
+        this.minecraft.method5244(this.field3826);
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         this.field3830.method2975(n, n2, n3);
-        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 8, 16777215);
-        final int n4 = this.field3152 / 2 - 92 - 16;
-        this.method3297(this.field3156, this.field3828, n4, 32, 16777215);
-        this.method3297(this.field3156, this.field3829, n4 + 2 + 213 - this.field3156.method6617(this.field3829), 32, 16777215);
+        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 8, 16777215);
+        final int n4 = this.width / 2 - 92 - 16;
+        this.method3297(this.font, this.field3828, n4, 32, 16777215);
+        this.method3297(this.font, this.field3829, n4 + 2 + 213 - this.font.method6617(this.field3829), 32, 16777215);
         super.method2975(n, n2, n3);
     }
 }

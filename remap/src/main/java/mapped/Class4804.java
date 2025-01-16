@@ -46,20 +46,20 @@ public class Class4804 extends Class4803
         this.field20478 = Math.round(this.field20515);
         this.field20479 = Math.round(this.field20516);
         if (this.field20515 + this.field20480 >= 0.0f) {
-            if (this.field20515 > Class869.method5277().field4632.method7694()) {
+            if (this.field20515 > Minecraft.method5277().field4632.method7694()) {
                 this.field20515 = (float)(0 - this.field20480);
             }
         }
         else {
-            this.field20515 = (float)Class869.method5277().field4632.method7694();
+            this.field20515 = (float) Minecraft.method5277().field4632.method7694();
         }
         if (this.field20516 + this.field20481 >= 0.0f) {
-            if (this.field20516 > Class869.method5277().field4632.method7695()) {
+            if (this.field20516 > Minecraft.method5277().field4632.method7695()) {
                 this.field20516 = (float)(0 - this.field20481);
             }
         }
         else {
-            this.field20516 = (float)Class869.method5277().field4632.method7695();
+            this.field20516 = (float) Minecraft.method5277().field4632.method7695();
         }
         final float n = (float)(field20519 - this.method14280());
         final float n2 = (float)(field20520 - this.method14281());

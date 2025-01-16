@@ -95,7 +95,7 @@ public class Class3197 extends Class3167
             if (Class3197.field15514.field4684 != null) {
                 if (class5723.method16998() instanceof Class4273) {
                     final Class4273 class5724 = (Class4273)class5723.method16998();
-                    final Entity method6741 = Class3197.field15514.field4683.getEntityByID(class5724.method12822());
+                    final Entity method6741 = Class3197.field15514.world.getEntityByID(class5724.method12822());
                     if (method6741 instanceof Class406) {
                         final Class406 class5725 = (Class406)method6741;
                         if (class5725.field2499 != null) {

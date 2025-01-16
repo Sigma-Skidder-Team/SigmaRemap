@@ -16,11 +16,11 @@ import java.util.List;
 public class Class6121 implements Class6113
 {
     private static String[] field24846;
-    private final Class869 field24847;
+    private final Minecraft field24847;
     private double field24848;
     private List<VoxelShape> field24849;
     
-    public Class6121(final Class869 field24847) {
+    public Class6121(final Minecraft field24847) {
         this.field24848 = Double.MIN_VALUE;
         this.field24849 = Collections.emptyList();
         this.field24847 = field24847;

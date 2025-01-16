@@ -34,7 +34,7 @@ public class Class3172 extends Class3167
             return;
         }
         Class3172.field15514.field4648.field23472 = 999.0;
-        if (Class3172.field15514.field4683 == null) {
+        if (Class3172.field15514.world == null) {
             return;
         }
         if (this.method9887("Type").equals("Normal")) {
@@ -42,7 +42,7 @@ public class Class3172 extends Class3167
         }
         int n = 16;
         final BlockPos method1137 = new BlockPos(Class3172.field15514.field4684.posX, Class3172.field15514.field4684.posY, Class3172.field15514.field4684.posZ).method1137();
-        final IChunk method1138 = Class3172.field15514.field4683.method6965(method1137);
+        final IChunk method1138 = Class3172.field15514.world.method6965(method1137);
         if (method1138 != null) {
             if (method1137.getY() >= 0) {
                 if (method1137.getY() < 256) {

@@ -15,14 +15,14 @@ import net.minecraft.util.text.ITextComponent;
 public class Class688 extends Class565
 {
     private static final Ordering<Class9081> field3784;
-    private final Class869 field3785;
+    private final Minecraft field3785;
     private final Class685 field3786;
     private ITextComponent field3787;
     private ITextComponent field3788;
     private long field3789;
     private boolean field3790;
     
-    public Class688(final Class869 field3785, final Class685 field3786) {
+    public Class688(final Minecraft field3785, final Class685 field3786) {
         this.field3785 = field3785;
         this.field3786 = field3786;
     }
@@ -45,14 +45,14 @@ public class Class688 extends Class565
         int max = 0;
         int max2 = 0;
         for (final Class9081 class6518 : sortedCopy) {
-            max = Math.max(max, this.field3785.field4643.method6617(this.method3819(class6518).getFormattedText()));
+            max = Math.max(max, this.field3785.fontRenderer.method6617(this.method3819(class6518).getFormattedText()));
             if (class6517 == null) {
                 continue;
             }
             if (class6517.method34317() == Class263.field1257) {
                 continue;
             }
-            max2 = Math.max(max2, this.field3785.field4643.method6617(" " + class6516.method19636(class6518.method32719().getName(), class6517).method23969()));
+            max2 = Math.max(max2, this.field3785.fontRenderer.method6617(" " + class6516.method19636(class6518.method32719().getName(), class6517).method23969()));
         }
         final List subList = sortedCopy.subList(0, Math.min(sortedCopy.size(), 80));
         int i;
@@ -78,24 +78,24 @@ public class Class688 extends Class565
         int n8 = n5 * n3 + (n3 - 1) * 5;
         List<String> method6626 = null;
         if (this.field3788 != null) {
-            method6626 = this.field3785.field4643.method6626(this.field3788.getFormattedText(), n - 50);
+            method6626 = this.field3785.fontRenderer.method6626(this.field3788.getFormattedText(), n - 50);
             final Iterator<String> iterator2 = method6626.iterator();
             while (iterator2.hasNext()) {
-                n8 = Math.max(n8, this.field3785.field4643.method6617(iterator2.next()));
+                n8 = Math.max(n8, this.field3785.fontRenderer.method6617(iterator2.next()));
             }
         }
         List<String> method6627 = null;
         if (this.field3787 != null) {
-            method6627 = this.field3785.field4643.method6626(this.field3787.getFormattedText(), n - 50);
+            method6627 = this.field3785.fontRenderer.method6626(this.field3787.getFormattedText(), n - 50);
             final Iterator<String> iterator3 = method6627.iterator();
             while (iterator3.hasNext()) {
-                n8 = Math.max(n8, this.field3785.field4643.method6617(iterator3.next()));
+                n8 = Math.max(n8, this.field3785.fontRenderer.method6617(iterator3.next()));
             }
         }
         if (method6626 != null) {
             Class565.method3293(n / 2 - n8 / 2 - 1, n7 - 1, n / 2 + n8 / 2 + 1, n7 + method6626.size() * 9, Integer.MIN_VALUE);
             for (final String s : method6626) {
-                this.field3785.field4643.method6609(s, (float)(n / 2 - this.field3785.field4643.method6617(s) / 2), (float)n7, -1);
+                this.field3785.fontRenderer.method6609(s, (float)(n / 2 - this.field3785.fontRenderer.method6617(s) / 2), (float)n7, -1);
                 n7 += 9;
             }
             ++n7;
@@ -116,7 +116,7 @@ public class Class688 extends Class565
                 final Class9081 class6519 = (Class9081)subList.get(j);
                 final GameProfile method6629 = class6519.method32719();
                 if (b) {
-                    final PlayerEntity method6630 = this.field3785.field4683.method7143(method6629.getId());
+                    final PlayerEntity method6630 = this.field3785.world.method7143(method6629.getId());
                     boolean b2 = false;
                     Label_1032: {
                         if (method6630 != null) {
@@ -141,10 +141,10 @@ public class Class688 extends Class565
                 }
                 final String method6631 = this.method3819(class6519).getFormattedText();
                 if (class6519.method32720() != Class101.field301) {
-                    this.field3785.field4643.method6609(method6631, (float)n11, (float)n12, -1);
+                    this.field3785.fontRenderer.method6609(method6631, (float)n11, (float)n12, -1);
                 }
                 else {
-                    this.field3785.field4643.method6609(TextFormatting.ITALIC + method6631, (float)n11, (float)n12, -1862270977);
+                    this.field3785.fontRenderer.method6609(TextFormatting.ITALIC + method6631, (float)n11, (float)n12, -1862270977);
                 }
                 if (class6517 != null) {
                     if (class6519.method32720() != Class101.field301) {
@@ -162,7 +162,7 @@ public class Class688 extends Class565
             int n15 = n7 + i * 9 + 1;
             Class565.method3293(n / 2 - n8 / 2 - 1, n15 - 1, n / 2 + n8 / 2 + 1, n15 + method6627.size() * 9, Integer.MIN_VALUE);
             for (final String s2 : method6627) {
-                this.field3785.field4643.method6609(s2, (float)(n / 2 - this.field3785.field4643.method6617(s2) / 2), (float)n15, -1);
+                this.field3785.fontRenderer.method6609(s2, (float)(n / 2 - this.field3785.fontRenderer.method6617(s2) / 2), (float)n15, -1);
                 n15 += 9;
             }
         }
@@ -207,7 +207,7 @@ public class Class688 extends Class565
         final int method23969 = class9290.method34311().method19636(s, class9290).method23969();
         if (class9290.method34317() != Class263.field1257) {
             final String string = TextFormatting.YELLOW + "" + method23969;
-            this.field3785.field4643.method6609(string, (float)(n3 - this.field3785.field4643.method6617(string)), (float)n, 16777215);
+            this.field3785.fontRenderer.method6609(string, (float)(n3 - this.field3785.fontRenderer.method6617(string)), (float)n, 16777215);
         }
         else {
             this.field3785.method5290().method5849(Class688.field3363);
@@ -240,10 +240,10 @@ public class Class688 extends Class565
                     final float method23973 = MathHelper.clamp(method23969 / 20.0f, 0.0f, 1.0f);
                     final int n4 = (int)((1.0f - method23973) * 255.0f) << 16 | (int)(method23973 * 255.0f) << 8;
                     String s2 = "" + method23969 / 2.0f;
-                    if (n3 - this.field3785.field4643.method6617(s2 + "hp") >= n2) {
+                    if (n3 - this.field3785.fontRenderer.method6617(s2 + "hp") >= n2) {
                         s2 += "hp";
                     }
-                    this.field3785.field4643.method6609(s2, (float)((n3 + n2) / 2 - this.field3785.field4643.method6617(s2) / 2), (float)n, n4);
+                    this.field3785.fontRenderer.method6609(s2, (float)((n3 + n2) / 2 - this.field3785.fontRenderer.method6617(s2) / 2), (float)n, n4);
                 }
                 else {
                     for (int i = method23971; i < max; ++i) {

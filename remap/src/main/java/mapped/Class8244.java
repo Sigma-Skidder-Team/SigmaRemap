@@ -8,7 +8,7 @@ public class Class8244 extends Class8245
 {
     private static String[] field33861;
     
-    public Class8244(final Class869 class869, final Class5799 class870) {
+    public Class8244(final Minecraft class869, final Class5799 class870) {
         super(class869, class870);
     }
     

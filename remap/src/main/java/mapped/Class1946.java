@@ -55,7 +55,7 @@ public class Class1946 extends Class1944
                 if (t2 != null) {
                     if (!(t2 instanceof CancellationException)) {
                         if (!(t2 instanceof InterruptedException)) {
-                            Class869.method5277().method5238(CrashReport.makeCrashReport(t2, "Rendering chunk"));
+                            Minecraft.method5277().method5238(CrashReport.makeCrashReport(t2, "Rendering chunk"));
                         }
                     }
                 }

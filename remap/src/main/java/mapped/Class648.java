@@ -18,7 +18,7 @@ public abstract class Class648 extends Class573
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (this.field3431 && this.field3432) {
             if (n != 257) {
                 if (n != 32) {
@@ -27,7 +27,7 @@ public abstract class Class648 extends Class573
                     }
                 }
             }
-            this.method3363(Class869.method5277().method5299());
+            this.method3363(Minecraft.method5277().method5299());
             this.method3705();
             return true;
         }

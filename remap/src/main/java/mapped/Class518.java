@@ -25,46 +25,46 @@ public class Class518 extends Class517<Class3427> implements Class519
     }
     
     @Override
-    public void method2992() {
-        if (!this.field3150.field4682.method27332()) {
+    public void tick() {
+        if (!this.minecraft.field4682.method27332()) {
             this.field3107.method3426();
         }
         else {
-            this.field3150.method5244(new Class525(this.field3150.field4684));
+            this.minecraft.method5244(new Class525(this.minecraft.field4684));
         }
     }
     
     @Override
-    public void method2969() {
-        if (!this.field3150.field4682.method27332()) {
-            super.method2969();
-            this.field3109 = (this.field3152 < 379);
-            this.field3107.method3415(this.field3152, this.field3153, this.field3150, this.field3109, (Class3426<?>)this.field3077);
+    public void init() {
+        if (!this.minecraft.field4682.method27332()) {
+            super.init();
+            this.field3109 = (this.width < 379);
+            this.field3107.method3415(this.width, this.height, this.minecraft, this.field3109, (Class3426<?>)this.field3077);
             this.field3108 = true;
-            this.field3079 = this.field3107.method3419(this.field3109, this.field3152, this.field3075);
-            this.field3149.add(this.field3107);
+            this.field3079 = this.field3107.method3419(this.field3109, this.width, this.field3075);
+            this.children.add(this.field3107);
             this.method3476(this.field3107);
-            this.method3029(new Class679(this.field3079 + 104, this.field3153 / 2 - 22, 20, 18, 0, 0, 19, Class518.field3104, class654 -> {
+            this.method3029(new Class679(this.field3079 + 104, this.height / 2 - 22, 20, 18, 0, 0, 19, Class518.field3104, class654 -> {
                 this.field3107.method3416(this.field3109);
                 this.field3107.method3420();
-                this.field3079 = this.field3107.method3419(this.field3109, this.field3152, this.field3075);
-                ((Class679)class654).method3742(this.field3079 + 104, this.field3153 / 2 - 22);
+                this.field3079 = this.field3107.method3419(this.field3109, this.width, this.field3075);
+                ((Class679)class654).method3742(this.field3079 + 104, this.height / 2 - 22);
                 this.field3110 = true;
             }));
         }
         else {
-            this.field3150.method5244(new Class525(this.field3150.field4684));
+            this.minecraft.method5244(new Class525(this.minecraft.field4684));
         }
     }
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.field3156.method6610(this.field3148.getFormattedText(), 97.0f, 8.0f, 4210752);
+        this.font.method6610(this.field3148.getFormattedText(), 97.0f, 8.0f, 4210752);
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         this.field3103 = !this.field3107.method3421();
         if (this.field3107.method3421() && this.field3109) {
             this.method2976(n3, n, n2);
@@ -85,11 +85,11 @@ public class Class518 extends Class517<Class3427> implements Class519
     @Override
     public void method2976(final float n, final int n2, final int n3) {
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3150.method5290().method5849(Class518.field3074);
+        this.minecraft.method5290().method5849(Class518.field3074);
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
         this.method3186(field3079, field3080, 0, 0, this.field3075, this.field3076);
-        method2999(field3079 + 51, field3080 + 75, 30, field3079 + 51 - this.field3105, field3080 + 75 - 50 - this.field3106, this.field3150.field4684);
+        method2999(field3079 + 51, field3080 + 75, 30, field3079 + 51 - this.field3105, field3080 + 75 - 50 - this.field3106, this.minecraft.field4684);
     }
     
     public static void method2999(final int n, final int n2, final int n3, final float n4, final float n5, final LivingEntity class511) {
@@ -115,11 +115,11 @@ public class Class518 extends Class517<Class3427> implements Class519
         class511.rotationPitch = -n7 * 20.0f;
         class511.field2953 = class511.rotationYaw;
         class511.field2954 = class511.rotationYaw;
-        final Class8551 method33330 = Class869.method5277().method5306();
+        final Class8551 method33330 = Minecraft.method5277().method5306();
         method33329.conjugate();
         method33330.method28701(method33329);
         method33330.method28702(false);
-        final Class7808 method33331 = Class869.method5277().method5333().method11006();
+        final Class7808 method33331 = Minecraft.method5277().method5333().method11006();
         method33330.method28706(class511, 0.0, 0.0, 0.0, 0.0f, 1.0f, class512, method33331, 15728880);
         method33331.method25216();
         method33330.method28702(true);
@@ -142,14 +142,14 @@ public class Class518 extends Class517<Class3427> implements Class519
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
-        return this.field3107.method2982(n, n2, n3) || ((!this.field3109 || !this.field3107.method3421()) && super.method2982(n, n2, n3));
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
+        return this.field3107.mouseClicked(n, n2, n3) || ((!this.field3109 || !this.field3107.method3421()) && super.mouseClicked(n, n2, n3));
     }
     
     @Override
-    public boolean method2985(final double n, final double n2, final int n3) {
+    public boolean mouseReleased(final double n, final double n2, final int n3) {
         if (!this.field3110) {
-            return super.method2985(n, n2, n3);
+            return super.mouseReleased(n, n2, n3);
         }
         this.field3110 = false;
         return true;
@@ -187,11 +187,11 @@ public class Class518 extends Class517<Class3427> implements Class519
     }
     
     @Override
-    public void method2971() {
+    public void removed() {
         if (this.field3108) {
             this.field3107.method3418();
         }
-        super.method2971();
+        super.removed();
     }
     
     @Override

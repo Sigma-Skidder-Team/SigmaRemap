@@ -100,7 +100,7 @@ public class Class8222 extends Class8221
         final float n = (float)(this.field33778 * 25);
         final float abs = Math.abs(n - this.field33779);
         final boolean b = n - this.field33779 != abs;
-        float min = Math.min(abs * 0.8f, abs * 0.3f * (60.0f / Class869.method5338()));
+        float min = Math.min(abs * 0.8f, abs * 0.3f * (60.0f / Minecraft.method5338()));
         if (b) {
             min *= -1.0f;
         }

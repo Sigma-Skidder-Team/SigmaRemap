@@ -17,7 +17,7 @@ public class Class3294 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3294.field15514.field4684 != null && Class3294.field15514.field4683 != null) {
+        if (Class3294.field15514.field4684 != null && Class3294.field15514.world != null) {
             this.method10424();
             Class8154.method26926();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
@@ -40,7 +40,7 @@ public class Class3294 extends Class3167
         final int method19118 = Class6430.method19118(this.method9914().method9885("Regular Color"), 0.7f);
         final int method19119 = Class6430.method19118(this.method9914().method9885("Ender Color"), 0.7f);
         final int method19120 = Class6430.method19118(this.method9914().method9885("Trapped Color"), 0.7f);
-        for (final TileEntity tileEntity : Class3294.field15514.field4683.loadedTileEntityList) {
+        for (final TileEntity tileEntity : Class3294.field15514.world.loadedTileEntityList) {
             boolean b2 = false;
             Label_0130: {
                 if (tileEntity instanceof Class475) {
@@ -77,7 +77,7 @@ public class Class3294 extends Class3167
             else {
                 n = method19119;
             }
-            final Class7644 class437 = new Class7644(tileEntity.method2194().getShape(Class3294.field15514.field4683, tileEntity.getPos()).getBoundingBox().offset(field38854, field38855, field38856));
+            final Class7644 class437 = new Class7644(tileEntity.method2194().getShape(Class3294.field15514.world, tileEntity.getPos()).getBoundingBox().offset(field38854, field38855, field38856));
             if (b) {
                 Class8154.method26912(class437, 3.0f, n);
             }

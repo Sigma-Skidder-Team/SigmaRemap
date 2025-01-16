@@ -6,7 +6,7 @@ package mapped;
 
 public interface Class7758
 {
-    Class5046 method24761(final Class5046 p0);
+    RealmsScreen method24761(final RealmsScreen p0);
     
-    Class5046 method24762(final Class5046 p0);
+    RealmsScreen method24762(final RealmsScreen p0);
 }

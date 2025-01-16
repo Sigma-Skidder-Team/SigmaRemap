@@ -16,7 +16,7 @@ public class Class5637 extends Class5631
     @Override
     public void method16932() {
         final Class5045 class5045 = new Class5045(this.field23021, Class271.field1474, Class5078.method15741(this.field23021));
-        class5045.method15366(Class5046.method15438("mco.reset.world.experience"));
-        Class7847.method25362(class5045);
+        class5045.method15366(RealmsScreen.getLocalizedString("mco.reset.world.experience"));
+        Realms.setScreen(class5045);
     }
 }

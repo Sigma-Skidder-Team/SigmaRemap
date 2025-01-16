@@ -27,11 +27,11 @@ public class Class3295 extends Class3167
     @Class6753
     public void method10426(final Class5753 class5753) {
         if (this.method9906()) {
-            if (Class3295.field15514.field4683 != null) {
+            if (Class3295.field15514.world != null) {
                 if (!Class3361.method10645()) {
-                    if (Class3295.field15514.field4683.getBlockState(class5753.method17064()).method21697() != Material.SEA_GRASS) {
-                        if (Class3295.field15514.field4683.getBlockState(class5753.method17064()).method21697() != Material.WATER) {
-                            if (Class3295.field15514.field4683.getBlockState(class5753.method17064()).method21697() != Material.LAVA) {
+                    if (Class3295.field15514.world.getBlockState(class5753.method17064()).method21697() != Material.SEA_GRASS) {
+                        if (Class3295.field15514.world.getBlockState(class5753.method17064()).method21697() != Material.WATER) {
+                            if (Class3295.field15514.world.getBlockState(class5753.method17064()).method21697() != Material.LAVA) {
                                 return;
                             }
                         }
@@ -46,7 +46,7 @@ public class Class3295 extends Class3167
                         return;
                     }
                     if (Class3295.field15514.field4684.fallDistance <= 10.0f) {
-                        final int method21784 = Class3295.field15514.field4683.getBlockState(class5753.method17064()).method21756().method21784();
+                        final int method21784 = Class3295.field15514.world.getBlockState(class5753.method17064()).method21756().method21784();
                         float n = 0.0f;
                         if (method21784 > 3) {
                             ++n;
@@ -64,7 +64,7 @@ public class Class3295 extends Class3167
     @Class6753
     public void method10427(final Class5744 class5744) {
         if (this.method9906()) {
-            if (Class3295.field15514.field4683 != null) {
+            if (Class3295.field15514.world != null) {
                 if (class5744.method17046()) {
                     if (Class3295.field15514.method5282() != null) {
                         if (method10433() && !this.method10432(Class3295.field15514.field4684.boundingBox)) {
@@ -94,10 +94,10 @@ public class Class3295 extends Class3167
     @Class6759
     public void method10428(final Class5717 class5717) {
         if (this.method9906()) {
-            if (Class3295.field15514.field4683 != null) {
+            if (Class3295.field15514.world != null) {
                 if (!Class3361.method10645()) {
                     if (this.method10432(Class3295.field15514.field4684.boundingBox) && !Class3295.field15514.field4684.method1809()) {
-                        final BlockState method6701 = Class3295.field15514.field4683.getBlockState(Class3295.field15514.field4684.method1894());
+                        final BlockState method6701 = Class3295.field15514.world.getBlockState(Class3295.field15514.field4684.method1894());
                         if (method6701 != null) {
                             if (!method6701.getFluidState().isEmpty()) {
                                 if (method6701.getFluidState().getHeight() > 0.4) {
@@ -162,7 +162,7 @@ public class Class3295 extends Class3167
     @Class6753
     public void method10429(final Class5722 class5722) {
         if (this.method9906()) {
-            if (Class3295.field15514.field4683 != null) {
+            if (Class3295.field15514.world != null) {
                 if (Class3295.field15514.method5282() != null) {
                     if (method10433()) {
                         if (this.field15854 % 2 != 0) {
@@ -201,15 +201,15 @@ public class Class3295 extends Class3167
     }
     
     public boolean method10432(final AxisAlignedBB class6221) {
-        return Class3295.field15514.field4683.isMaterialInBB(class6221, Material.WATER) || Class3295.field15514.field4683.isMaterialInBB(class6221, Material.LAVA);
+        return Class3295.field15514.world.isMaterialInBB(class6221, Material.WATER) || Class3295.field15514.world.isMaterialInBB(class6221, Material.LAVA);
     }
     
     public static boolean method10433() {
-        final Iterator<Object> iterator = Class3295.field15514.field4683.method6981(Class3295.field15514.field4684, Class3295.field15514.field4684.boundingBox.offset(0.0, -0.001, 0.0)).iterator();
+        final Iterator<Object> iterator = Class3295.field15514.world.method6981(Class3295.field15514.field4684, Class3295.field15514.field4684.boundingBox.offset(0.0, -0.001, 0.0)).iterator();
         boolean b = true;
         if (iterator.hasNext()) {
             while (iterator.hasNext()) {
-                final Block method21696 = Class3295.field15514.field4683.getBlockState(new BlockPos(iterator.next().method24537().method18517())).method21696();
+                final Block method21696 = Class3295.field15514.world.getBlockState(new BlockPos(iterator.next().method24537().method18517())).method21696();
                 if (method21696 == Class7521.field29173) {
                     continue;
                 }

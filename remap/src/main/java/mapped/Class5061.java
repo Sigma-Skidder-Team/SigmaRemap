@@ -10,7 +10,7 @@ public class Class5061 extends Class5056<Class624>
     
     public Class5061(final Class5079 field21710) {
         this.field21710 = field21710;
-        super(field21710.method15421(), field21710.method15422(), 32, field21710.method15422() - 40, 36);
+        super(field21710.width(), field21710.height(), 32, field21710.height() - 40, 36);
     }
     
     @Override
@@ -19,7 +19,7 @@ public class Class5061 extends Class5056<Class624>
     }
     
     @Override
-    public boolean method15376(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (n != 257) {
             if (n != 32) {
                 if (n != 335) {
@@ -28,11 +28,11 @@ public class Class5061 extends Class5056<Class624>
             }
         }
         final Class624 method15534 = this.method15534();
-        return (method15534 != null) ? method15534.method2982(0.0, 0.0, 0) : super.method15376(n, n2, n3);
+        return (method15534 != null) ? method15534.mouseClicked(0.0, 0.0, 0) : super.keyPressed(n, n2, n3);
     }
     
     @Override
-    public boolean method15368(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 == 0) {
             if (n < this.method15524()) {
                 if (n2 >= this.method15525()) {
@@ -59,7 +59,7 @@ public class Class5061 extends Class5056<Class624>
                 }
             }
         }
-        return super.method15368(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     @Override
@@ -82,7 +82,7 @@ public class Class5061 extends Class5056<Class624>
                 class7437 = Class5079.method15823(this.field21710).get(n - 1);
             }
             else {
-                Class7847.method25383(Class5046.method15438("mco.trial.message.line1"), Class5046.method15438("mco.trial.message.line2"));
+                Realms.method25383(RealmsScreen.getLocalizedString("mco.trial.message.line1"), RealmsScreen.getLocalizedString("mco.trial.message.line2"));
                 class7437 = null;
             }
             Class5079.method15825(this.field21710, class7437);
@@ -94,10 +94,10 @@ public class Class5061 extends Class5056<Class624>
                             this.field21710.method15781(Class5079.method15807(this.field21710, Class5079.method15806(this.field21710)), this.field21710);
                         }
                     }
-                    Class7847.method25381(Class5046.method15439("narrator.select", class7437.field28677));
+                    Realms.narrateNow(RealmsScreen.method15439("narrator.select", class7437.field28677));
                 }
                 else {
-                    Class7847.method25381(Class5046.method15438("mco.selectServer.uninitialized") + Class5046.method15438("mco.gui.button"));
+                    Realms.narrateNow(RealmsScreen.getLocalizedString("mco.selectServer.uninitialized") + RealmsScreen.getLocalizedString("mco.gui.button"));
                     Class5079.method15826(this.field21710, -1L);
                 }
             }
@@ -124,13 +124,13 @@ public class Class5061 extends Class5056<Class624>
                 }
                 else {
                     Class5079.method15826(this.field21710, -1L);
-                    Class7847.method25362(new Class5082(class7437, this.field21710));
+                    Realms.setScreen(new Class5082(class7437, this.field21710));
                 }
-                if (Class5079.method15853(this.field21710) != null && Class5079.method15853(this.field21710).equals(Class5046.method15438("mco.selectServer.configure"))) {
+                if (Class5079.method15853(this.field21710) != null && Class5079.method15853(this.field21710).equals(RealmsScreen.getLocalizedString("mco.selectServer.configure"))) {
                     Class5079.method15826(this.field21710, class7437.field28675);
                     Class5079.method15808(this.field21710, class7437);
                 }
-                else if (Class5079.method15853(this.field21710) != null && Class5079.method15853(this.field21710).equals(Class5046.method15438("mco.selectServer.leave"))) {
+                else if (Class5079.method15853(this.field21710) != null && Class5079.method15853(this.field21710).equals(RealmsScreen.getLocalizedString("mco.selectServer.leave"))) {
                     Class5079.method15826(this.field21710, class7437.field28675);
                     Class5079.method15813(this.field21710, class7437);
                 }

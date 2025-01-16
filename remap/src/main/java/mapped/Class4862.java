@@ -30,7 +30,7 @@ public class Class4862 extends Class4841
         this.field20821 = false;
         this.field20827 = new ArrayList<Class8197>();
         this.field20823 = field20823;
-        if (this.field20479 + this.field20481 <= Class869.method5277().field4632.method7695()) {
+        if (this.field20479 + this.field20481 <= Minecraft.method5277().field4632.method7695()) {
             this.field20479 += 10;
         }
         else {

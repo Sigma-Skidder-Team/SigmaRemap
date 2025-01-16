@@ -50,9 +50,9 @@ import java.io.File;
 import java.util.concurrent.CompletableFuture;
 import org.apache.logging.log4j.Logger;
 
-public class Class869 extends Class871<Runnable> implements Class868, Class870
+public class Minecraft extends Class871<Runnable> implements Class868, Class870
 {
-    private static Class869 field4621;
+    private static Minecraft field4621;
     private static final Logger field4622;
     public static final boolean field4623;
     public static final ResourceLocation field4624;
@@ -74,7 +74,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     public final Class1793 field4640;
     private final Class1659 field4641;
     public Class9212 field4642;
-    public final Class1844 field4643;
+    public final Class1844 fontRenderer;
     public final Class1660 field4644;
     public final Class7282 field4645;
     private final AtomicReference<Class6461> field4646;
@@ -114,7 +114,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     private final Class9106 field4680;
     public static byte[] field4681;
     public Class8245 field4682;
-    public Class1848 field4683;
+    public Class1848 world;
     public Class756 field4684;
     private Class1655 field4685;
     private Class9575 field4686;
@@ -131,7 +131,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     private long field4697;
     private int field4698;
     public boolean field4699;
-    public Class527 field4700;
+    public Screen field4700;
     public Class566 field4701;
     private boolean field4702;
     private Thread field4703;
@@ -148,7 +148,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     private String field4714;
     public boolean field4715;
     
-    public Class869(final Class9408 class9408) {
+    public Minecraft(final Class9408 class9408) {
         super("Client");
         this.field4633 = new Class6742(20.0f, 0L);
         this.field4634 = new Class9037("client", this, Util.method27837());
@@ -164,7 +164,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4712 = Queues.newConcurrentLinkedQueue();
         this.field4714 = "root";
         this.field4715 = true;
-        Class869.field4621 = this;
+        Minecraft.field4621 = this;
         this.field4652 = class9408.field40379.field37230;
         final File field37232 = class9408.field40379.field37232;
         this.field4627 = class9408.field40379.field37231;
@@ -172,13 +172,13 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4654 = class9408.field40380.field23929;
         this.field4628 = class9408.field40377.field34929;
         this.field4662 = new Class7937(new File(this.field4652, "server-resource-packs"), class9408.field40379.method31008());
-        (this.field4663 = new Class1920<Class1922>(Class869::method5334)).method7613(this.field4662);
+        (this.field4663 = new Class1920<Class1922>(Minecraft::method5334)).method7613(this.field4662);
         this.field4663.method7613(new Class7940(this.field4627));
         this.field4655 = class9408.field40377.field34930;
         this.field4672 = new YggdrasilAuthenticationService(this.field4655, UUID.randomUUID().toString()).createMinecraftSessionService();
         this.field4642 = class9408.field40377.field34927;
-        Class869.field4622.info("Setting user: {}", (Object)this.field4642.method33692());
-        Class869.field4622.debug("(Session ID is {})", (Object)this.field4642.method33690());
+        Minecraft.field4622.info("Setting user: {}", (Object)this.field4642.method33692());
+        Minecraft.field4622.debug("(Session ID is {})", (Object)this.field4642.method33690());
         this.method5279();
         this.field4659 = class9408.field40380.field23927;
         this.field4658 = method5233();
@@ -206,7 +206,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4648 = new Class5760(this, this.field4652);
         this.field4649 = new Class8653(this.field4652, this.field4630);
         this.method5237();
-        Class869.field4622.info("Backend library: {}", (Object)Class8726.method30077());
+        Minecraft.field4622.info("Backend library: {}", (Object)Class8726.method30077());
         Class9154 field37235;
         if (this.field4648.field23399 > 0 && this.field4648.field23398 > 0) {
             field37235 = new Class9154(this.field4648.field23398, this.field4648.field23399, class9408.field40378.field38789, class9408.field40378.field38790, class9408.field40378.field38791);
@@ -222,13 +222,13 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             this.field4632.method7665(this.method5293().method25740().method6097(Class346.field2137, new ResourceLocation("icons/icon_16x16.png")), this.method5293().method25740().method6097(Class346.field2137, new ResourceLocation("icons/icon_32x32.png")));
         }
         catch (final IOException ex) {
-            Class869.field4622.error("Couldn't set icon", (Throwable)ex);
+            Minecraft.field4622.error("Couldn't set icon", (Throwable)ex);
         }
         this.field4632.method7678(this.field4648.field23383);
         (this.field4650 = new Class8161(this)).method26954(this.field4632.method7690());
         (this.field4651 = new Class7335(this)).method22506(this.field4632.method7690());
         Class8726.method30080(this.field4648.field23413, false);
-        (this.field4667 = new Class6153(this.field4632.method7692(), this.field4632.method7693(), true, Class869.field4623)).method18398(0.0f, 0.0f, 0.0f, 0.0f);
+        (this.field4667 = new Class6153(this.field4632.method7692(), this.field4632.method7693(), true, Minecraft.field4623)).method18398(0.0f, 0.0f, 0.0f, 0.0f);
         this.field4661 = new Class6581(Class346.field2137, this.field4703);
         this.field4648.method17146(this.field4663);
         this.field4663.method7606();
@@ -245,11 +245,11 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4669 = new Class8086(this);
         this.field4670 = new Class1903(this.field4629, this.method5240());
         this.field4661.method19930(this.field4670.method7378());
-        final Class1844 method7376 = this.field4670.method7376(Class869.field4624);
+        final Class1844 method7376 = this.field4670.method7376(Minecraft.field4624);
         if (method7376 == null) {
             throw new IllegalStateException("Default font is null");
         }
-        (this.field4643 = method7376).method6625(this.field4664.method5843());
+        (this.fontRenderer = method7376).method6625(this.field4664.method5843());
         this.field4661.method19930(new Class1788());
         this.field4661.method19930(new Class1777());
         this.field4632.method7667("Startup");
@@ -260,7 +260,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4674 = new Class1790(this.field4629, this.field4665, this.field4648.field23405);
         this.field4661.method19930(this.field4674);
         this.field4638 = new Class1796(this.field4629, this.field4674, this.field4666);
-        this.field4637 = new Class8551(this.field4629, this.field4638, this.field4661, this.field4643, this.field4648);
+        this.field4637 = new Class8551(this.field4629, this.field4638, this.field4661, this.fontRenderer, this.field4648);
         this.field4639 = new Class9458(this);
         this.field4661.method19930(this.field4638);
         this.field4635 = new Class3442();
@@ -272,7 +272,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4661.method19930(this.field4636);
         this.method5231();
         this.field4661.method19930(this.field4641);
-        this.field4640 = new Class1793(this.field4683, this.field4629);
+        this.field4640 = new Class1793(this.world, this.field4629);
         this.field4661.method19930(this.field4640);
         this.field4676 = new Class1786(this.field4629);
         this.field4661.method19930(this.field4676);
@@ -297,7 +297,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             this.method5244(new Class548(true));
         }
         Class567.method3306(this);
-        this.method5245(new Class568(this, this.field4661.method19929(Util.method27841(), this, Class869.field4626, (List<Class1727>)this.field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList())), optional -> Util.method27855(optional, this::method5230, () -> {
+        this.method5245(new Class568(this, this.field4661.method19929(Util.method27841(), this, Minecraft.field4626, (List<Class1727>)this.field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList())), optional -> Util.method27855(optional, this::method5230, () -> {
             this.field4664.method5842(list);
             if (Class9528.field41021) {
                 this.method5242();
@@ -339,7 +339,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             if (t instanceof Class2370) {
                 final StringTextComponent class2260 = new StringTextComponent(((Class2370)t).method9501().method6102());
             }
-            Class869.field4622.info("Caught error loading resourcepacks, removing all selected resourcepacks", t);
+            Minecraft.field4622.info("Caught error loading resourcepacks, removing all selected resourcepacks", t);
             this.field4663.method7608((Collection<Class1922>)Collections.emptyList());
             this.field4648.field23387.clear();
             this.field4648.field23388.clear();
@@ -371,7 +371,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     this.method5250();
                     this.method5244(new Class734());
                     System.gc();
-                    Class869.field4622.fatal("Out of memory", (Throwable)outOfMemoryError);
+                    Minecraft.field4622.fatal("Out of memory", (Throwable)outOfMemoryError);
                     n = 1;
                 }
             }
@@ -379,12 +379,12 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         catch (final ReportedException class2365) {
             this.method5275(class2365.method9500());
             this.method5250();
-            Class869.field4622.fatal("Reported exception thrown!", (Throwable)class2365);
+            Minecraft.field4622.fatal("Reported exception thrown!", (Throwable)class2365);
             method5239(class2365.method9500());
         }
         catch (final Throwable t) {
             final CrashReport method5275 = this.method5275(new CrashReport("Unexpected error", t));
-            Class869.field4622.fatal("Unreported exception thrown!", t);
+            Minecraft.field4622.fatal("Unreported exception thrown!", t);
             this.method5250();
             method5239(method5275);
         }
@@ -440,7 +440,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     private void method5237() {
         final Class905 class905 = new Class905(this, "Timer hack thread");
         class905.setDaemon(true);
-        class905.setUncaughtExceptionHandler((Thread.UncaughtExceptionHandler)new Class8239(Class869.field4622));
+        class905.setUncaughtExceptionHandler((Thread.UncaughtExceptionHandler)new Class8239(Minecraft.field4622));
         class905.start();
     }
     
@@ -478,7 +478,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             return this.field4713 = field4713;
         }
         this.field4663.method7606();
-        this.method5245(new Class568(this, this.field4661.method19929(Util.method27841(), this, Class869.field4626, (List<Class1727>)this.field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList())), optional -> Util.method27855(optional, this::method5230, () -> {
+        this.method5245(new Class568(this, this.field4661.method19929(Util.method27841(), this, Minecraft.field4626, (List<Class1727>)this.field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList())), optional -> Util.method27855(optional, this::method5230, () -> {
             this.field4664.method5842(list);
             this.field4636.method5701();
             completableFuture.complete(null);
@@ -494,7 +494,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         while (iterator.hasNext()) {
             for (final BlockState class7096 : iterator.next().method11876().method32902()) {
                 if (class7096.method21710() == Class2115.field12307 && method5787.method35428(class7096) == method5788) {
-                    Class869.field4622.debug("Missing model for: {}", (Object)class7096);
+                    Minecraft.field4622.debug("Missing model for: {}", (Object)class7096);
                     b = true;
                 }
             }
@@ -505,7 +505,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             for (final BlockState class7097 : iterator3.next().method11876().method32902()) {
                 final Class1912 method5790 = method5787.method35427(class7097);
                 if (!class7097.method21706() && method5790 == method5789) {
-                    Class869.field4622.debug("Missing particle icon for: {}", (Object)class7097);
+                    Minecraft.field4622.debug("Missing particle icon for: {}", (Object)class7097);
                     b = true;
                 }
             }
@@ -517,7 +517,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             for (final ItemStack class7099 : method5791) {
                 final String method5792 = class7099.method27649();
                 if (new Class2259(method5792, new Object[0]).getString().toLowerCase(Locale.ROOT).equals(class7098.method11717())) {
-                    Class869.field4622.debug("Missing translation for: {} {} {}", (Object)class7099, (Object)method5792, (Object)class7099.getItem());
+                    Minecraft.field4622.debug("Missing translation for: {} {} {}", (Object)class7099, (Object)method5792, (Object)class7099.getItem());
                 }
             }
         }
@@ -530,16 +530,16 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         return this.field4656;
     }
     
-    public void method5244(Class527 field4700) {
+    public void method5244(Screen field4700) {
         if (this.field4700 != null) {
-            this.field4700.method2971();
+            this.field4700.removed();
         }
-        if (field4700 == null && this.field4683 == null) {
+        if (field4700 == null && this.world == null) {
             field4700 = new Class548();
         }
         else if (field4700 == null && this.field4684.method2664() <= 0.0f) {
             if (this.field4684.method4128()) {
-                field4700 = new Class533(null, this.field4683.method6764().method29568());
+                field4700 = new Class533(null, this.world.method6764().method29568());
             }
             else {
                 this.field4684.method2842();
@@ -554,9 +554,9 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         if (field4700 != null) {
             this.field4650.method26964();
             Class350.method1054();
-            field4700.method3038(this, this.field4632.method7696(), this.field4632.method7697());
+            field4700.init(this, this.field4632.method7696(), this.field4632.method7697());
             this.field4699 = false;
-            Class7895.field32404.method25556(field4700.method3027());
+            NarratorChatListener.field32404.method25556(field4700.method3027());
         }
         else {
             this.field4668.method6429();
@@ -571,20 +571,20 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     
     public void method5246() {
         try {
-            Class869.field4622.info("Stopping!");
+            Minecraft.field4622.info("Stopping!");
             try {
-                Class7895.field32404.method25562();
+                NarratorChatListener.field32404.method25562();
             }
             catch (final Throwable t) {}
             try {
-                if (this.field4683 != null) {
-                    this.field4683.method6751();
+                if (this.world != null) {
+                    this.world.method6751();
                 }
                 this.method5264();
             }
             catch (final Throwable t2) {}
             if (this.field4700 != null) {
-                this.field4700.method2971();
+                this.field4700.removed();
             }
             this.close();
         }
@@ -612,7 +612,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             Util.method27842();
         }
         catch (final Throwable t) {
-            Class869.field4622.error("Shutdown failure!", t);
+            Minecraft.field4622.error("Shutdown failure!", t);
             throw t;
         }
         finally {
@@ -656,7 +656,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4660.endSection();
         this.field4660.startSection("render");
         Class8726.method30059();
-        Class8726.method30056(16640, Class869.field4623);
+        Class8726.method30056(16640, Minecraft.field4623);
         this.field4667.method18395(true);
         Class9111.method32953();
         this.field4660.startSection("display");
@@ -708,8 +708,8 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4657.method35167(method27840 - this.field4696);
         this.field4696 = method27840;
         while (Util.method27837() >= this.field4697 + 1000L) {
-            Class869.field4706 = this.field4698;
-            this.field4707 = String.format("%d fps T: %s%s%s%s B: %d", Class869.field4706, (this.field4648.field23383 == Class6469.field25712.method19473()) ? "inf" : Integer.valueOf(this.field4648.field23383), this.field4648.field23419 ? " vsync" : "", this.field4648.field23385 ? "" : " fast", (this.field4648.field23384 == Class2202.field13405) ? "" : ((this.field4648.field23384 == Class2202.field13406) ? " fast-clouds" : " fancy-clouds"), this.field4648.field23410);
+            Minecraft.field4706 = this.field4698;
+            this.field4707 = String.format("%d fps T: %s%s%s%s B: %d", Minecraft.field4706, (this.field4648.field23383 == Class6469.field25712.method19473()) ? "inf" : Integer.valueOf(this.field4648.field23383), this.field4648.field23419 ? " vsync" : "", this.field4648.field23385 ? "" : " fast", (this.field4648.field23384 == Class2202.field13405) ? "" : ((this.field4648.field23384 == Class2202.field13406) ? " fast-clouds" : " fancy-clouds"), this.field4648.field23410);
             this.field4697 += 1000L;
             this.field4698 = 0;
             this.field4634.method32485();
@@ -727,18 +727,18 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             this.field4700.method2970(this, this.field4632.method7696(), this.field4632.method7697());
             Class9463.method35173().method35193().method32153();
         }
-        this.method5234().method18387(this.field4632.method7692(), this.field4632.method7693(), Class869.field4623);
+        this.method5234().method18387(this.field4632.method7692(), this.field4632.method7693(), Minecraft.field4623);
         this.field4644.method5806(this.field4632.method7692(), this.field4632.method7693());
         this.field4650.method26961();
     }
     
     private int method5249() {
-        return (this.field4683 != null || (this.field4700 == null && this.field4701 == null)) ? this.field4632.method7679() : ((Class9463.method35173().method35209() == Class2209.field13464) ? 120 : 60);
+        return (this.world != null || (this.field4700 == null && this.field4701 == null)) ? this.field4632.method7679() : ((Class9463.method35173().method35209() == Class2209.field13464) ? 120 : 60);
     }
     
     public void method5250() {
         try {
-            Class869.field4681 = new byte[0];
+            Minecraft.field4681 = new byte[0];
             this.field4636.method5750();
         }
         catch (final Throwable t) {}
@@ -778,7 +778,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         if (this.field4660.method15305().method19593()) {
             final List<Class1943> method17084 = this.field4660.method15305().method19595().method17084(this.field4714);
             final Class1943 class1943 = method17084.remove(0);
-            Class8726.method30056(256, Class869.field4623);
+            Class8726.method30056(256, Minecraft.field4623);
             Class8726.method30057(5889);
             Class8726.method30058();
             Class8726.method30061(0.0, this.field4632.method7692(), this.field4632.method7693(), 0.0, 1000.0, 3000.0);
@@ -841,9 +841,9 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             else {
                 s = string + method17088 + ' ';
             }
-            this.field4643.method6609(s, (float)(n - 160), (float)(n2 - 80 - 16), 16777215);
+            this.fontRenderer.method6609(s, (float)(n - 160), (float)(n2 - 80 - 16), 16777215);
             final String string2 = decimalFormat.format(class1943.field10593) + "%";
-            this.field4643.method6609(string2, (float)(n + 160 - this.field4643.method6617(string2)), (float)(n2 - 80 - 16), 16777215);
+            this.fontRenderer.method6609(string2, (float)(n + 160 - this.fontRenderer.method6617(string2)), (float)(n2 - 80 - 16), 16777215);
             for (int k = 0; k < method17084.size(); ++k) {
                 final Class1943 class1945 = method17084.get(k);
                 final StringBuilder sb = new StringBuilder();
@@ -853,11 +853,11 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                 else {
                     sb.append("[").append(k + 1).append("] ");
                 }
-                this.field4643.method6609(sb.append(class1945.field10595).toString(), (float)(n - 160), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
+                this.fontRenderer.method6609(sb.append(class1945.field10595).toString(), (float)(n - 160), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
                 final String string3 = decimalFormat.format(class1945.field10592) + "%";
-                this.field4643.method6609(string3, (float)(n + 160 - 50 - this.field4643.method6617(string3)), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
+                this.fontRenderer.method6609(string3, (float)(n + 160 - 50 - this.fontRenderer.method6617(string3)), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
                 final String string4 = decimalFormat.format(class1945.field10593) + "%";
-                this.field4643.method6609(string4, (float)(n + 160 - this.field4643.method6617(string4)), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
+                this.fontRenderer.method6609(string4, (float)(n + 160 - this.fontRenderer.method6617(string4)), (float)(n2 + 80 + k * 8 + 20), class1945.method7893());
             }
         }
     }
@@ -893,7 +893,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             if (b && this.field4691 != null && this.field4691.getType() == RayTraceResult.Type.BLOCK) {
                 final BlockRayTraceResult blockRayTraceResult = (BlockRayTraceResult)this.field4691;
                 final BlockPos method21447 = blockRayTraceResult.getPos();
-                if (!this.field4683.getBlockState(method21447).method21706()) {
+                if (!this.world.getBlockState(method21447).method21706()) {
                     final Direction method21448 = blockRayTraceResult.getFace();
                     if (this.field4682.method27314(method21447, method21448)) {
                         this.field4640.method6487(method21447, method21448);
@@ -915,7 +915,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
         if (this.field4693 <= 0) {
             if (this.field4691 == null) {
-                Class869.field4622.error("Null returned as 'hitResult', this shouldn't happen!");
+                Minecraft.field4622.error("Null returned as 'hitResult', this shouldn't happen!");
                 if (this.field4682.method27331()) {
                     this.field4693 = 10;
                 }
@@ -946,7 +946,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     case 2: {
                         final BlockRayTraceResult class5750 = (BlockRayTraceResult)this.field4691;
                         final BlockPos method21447 = class5750.getPos();
-                        if (!this.field4683.getBlockState(method21447).method21706()) {
+                        if (!this.world.getBlockState(method21447).method21706()) {
                             this.field4682.method27312(method21447, class5750.getFace());
                             break;
                         }
@@ -976,7 +976,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             this.field4692 = 4;
             if (!this.field4684.method4134()) {
                 if (this.field4691 == null) {
-                    Class869.field4622.warn("Null returned as 'hitResult', this shouldn't happen!");
+                    Minecraft.field4622.warn("Null returned as 'hitResult', this shouldn't happen!");
                 }
                 for (final Class316 class5749 : Class316.values()) {
                     final ItemStack method2715 = this.field4684.method2715(class5749);
@@ -1000,7 +1000,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                             case 2: {
                                 final BlockRayTraceResult class5752 = (BlockRayTraceResult)this.field4691;
                                 final int method2717 = method2715.method27690();
-                                final Class2201 method2718 = this.field4682.method27319(this.field4684, this.field4683, class5749, class5752);
+                                final Class2201 method2718 = this.field4682.method27319(this.field4684, this.world, class5749, class5752);
                                 if (method2718.method8374()) {
                                     if (method2718.method8375()) {
                                         this.field4684.method2707(class5749);
@@ -1018,7 +1018,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                         }
                     }
                     if (!method2715.method27620()) {
-                        final Class2201 method2719 = this.field4682.method27320(this.field4684, this.field4683, class5749);
+                        final Class2201 method2719 = this.field4682.method27320(this.field4684, this.world, class5749);
                         if (method2719.method8374()) {
                             if (method2719.method8375() && Class9367.method34762() > Class7906.field32452.method25613()) {
                                 this.field4684.method2707(class5749);
@@ -1046,20 +1046,20 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
         this.field4660.endSection();
         this.field4644.method5807(1.0f);
-        this.field4680.method32919(this.field4683, this.field4691);
+        this.field4680.method32919(this.world, this.field4691);
         this.field4660.startSection("gameMode");
-        if (!this.field4694 && this.field4683 != null) {
+        if (!this.field4694 && this.world != null) {
             this.field4682.method27316();
         }
         this.field4660.method15300("textures");
-        if (this.field4683 != null) {
+        if (this.world != null) {
             this.field4629.method5857();
         }
         if (this.field4700 == null && this.field4684 != null) {
             if (this.field4684.method2664() <= 0.0f && !(this.field4700 instanceof Class533)) {
                 this.method5244(null);
             }
-            else if (this.field4684.method2783() && this.field4683 != null) {
+            else if (this.field4684.method2783() && this.world != null) {
                 this.method5244(new Class536());
             }
         }
@@ -1070,7 +1070,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             this.field4693 = 10000;
         }
         if (this.field4700 != null) {
-            Class527.method3053(() -> this.field4700.method2992(), "Ticking screen", this.field4700.getClass().getCanonicalName());
+            Screen.method3053(() -> this.field4700.tick(), "Ticking screen", this.field4700.getClass().getCanonicalName());
         }
         if (!this.field4648.field23466) {
             this.field4647.method3814();
@@ -1082,7 +1082,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                 --this.field4693;
             }
         }
-        if (this.field4683 != null) {
+        if (this.world != null) {
             this.field4660.method15300("gameRenderer");
             if (!this.field4694) {
                 this.field4644.method5804();
@@ -1093,10 +1093,10 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             }
             this.field4660.method15300("level");
             if (!this.field4694) {
-                if (this.field4683.method6848() > 0) {
-                    this.field4683.method6786(this.field4683.method6848() - 1);
+                if (this.world.method6848() > 0) {
+                    this.world.method6786(this.world.method6848() - 1);
                 }
-                this.field4683.method6807();
+                this.world.method6807();
             }
         }
         else if (this.field4644.method5805() != null) {
@@ -1106,27 +1106,27 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             this.field4669.method26545();
         }
         this.field4668.method6428(this.field4694);
-        if (this.field4683 != null) {
+        if (this.world != null) {
             if (!this.field4694) {
-                this.field4683.method6734(this.field4683.method6954() != Class2113.field12290, true);
+                this.world.method6734(this.world.method6954() != Class2113.field12290, true);
                 this.field4680.method32925();
                 try {
-                    this.field4683.method6805(() -> true);
+                    this.world.method6805(() -> true);
                 }
                 catch (final Throwable t) {
                     final CrashReport method24421 = CrashReport.makeCrashReport(t, "Exception in world tick");
-                    if (this.field4683 == null) {
+                    if (this.world == null) {
                         method24421.makeCategory("Affected level").addDetail("Problem", "Level is null!");
                     }
                     else {
-                        this.field4683.method6779(method24421);
+                        this.world.method6779(method24421);
                     }
                     throw new ReportedException(method24421);
                 }
             }
             this.field4660.method15300("animateTick");
-            if (!this.field4694 && this.field4683 != null) {
-                this.field4683.method6825(MathHelper.floor(this.field4684.getPosX()), MathHelper.floor(this.field4684.getPosY()), MathHelper.floor(this.field4684.getPosZ()));
+            if (!this.field4694 && this.world != null) {
+                this.world.method6825(MathHelper.floor(this.field4684.getPosX()), MathHelper.floor(this.field4684.getPosY()), MathHelper.floor(this.field4684.getPosZ()));
             }
             this.field4660.method15300("particles");
             if (!this.field4694) {
@@ -1193,7 +1193,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             }
         }
         while (this.field4648.field23444.method1058()) {
-            if (!this.field4684.isSpectator() && this.field4684.method2821(Class527.method3046())) {
+            if (!this.field4684.isSpectator() && this.field4684.method2821(Screen.method3046())) {
                 this.field4684.method2707(Class316.field1877);
             }
         }
@@ -1275,7 +1275,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         final Class695 class8513 = new Class695(this.field4646.get());
         this.method5244(class8513);
         while (!this.field4685.method1542()) {
-            class8513.method2992();
+            class8513.tick();
             this.method5247(false);
             try {
                 Thread.sleep(16L);
@@ -1298,7 +1298,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         final Class731 class731 = new Class731();
         class731.method4036(new Class2259("connect.joining", new Object[0]));
         this.method5266(class731);
-        this.method5267(this.field4683 = field4683);
+        this.method5267(this.world = field4683);
         Class9463.method35173().method35188().method21097(new Class5732());
         if (!this.field4688) {
             final YggdrasilAuthenticationService yggdrasilAuthenticationService = new YggdrasilAuthenticationService(this.field4655, UUID.randomUUID().toString());
@@ -1313,7 +1313,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.method5265(new Class731());
     }
     
-    public void method5265(final Class527 class527) {
+    public void method5265(final Screen class527) {
         final Class5799 method5269 = this.method5269();
         if (method5269 != null) {
             this.method5382();
@@ -1323,9 +1323,9 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         this.field4685 = null;
         this.field4644.method5821();
         this.field4682 = null;
-        Class7895.field32404.method25561();
+        NarratorChatListener.field32404.method25561();
         this.method5266(class527);
-        if (this.field4683 != null) {
+        if (this.world != null) {
             if (field4685 != null) {
                 while (!field4685.method1477()) {
                     this.method5247(false);
@@ -1337,12 +1337,12 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             this.field4688 = false;
             this.field4679.method25568();
         }
-        this.field4683 = null;
+        this.world = null;
         this.method5267(null);
         this.field4684 = null;
     }
     
-    private void method5266(final Class527 class527) {
+    private void method5266(final Screen class527) {
         this.field4669.method26547();
         this.field4668.method6426();
         this.field4689 = null;
@@ -1368,15 +1368,15 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     }
     
     public static boolean method5270() {
-        return !Class869.field4621.field4648.field23464;
+        return !Minecraft.field4621.field4648.field23464;
     }
     
     public static boolean method5271() {
-        return Class869.field4621.field4648.field23385;
+        return Minecraft.field4621.field4648.field23385;
     }
     
     public static boolean method5272() {
-        return Class869.field4621.field4648.field23386 != Class2007.field11398;
+        return Minecraft.field4621.field4648.field23386 != Class2007.field11398;
     }
     
     private void method5273() {
@@ -1392,17 +1392,17 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             ItemStack class5749;
             if (method6728 == RayTraceResult.Type.BLOCK) {
                 final BlockPos method6729 = ((BlockRayTraceResult)this.field4691).getPos();
-                final BlockState method6730 = this.field4683.getBlockState(method6729);
+                final BlockState method6730 = this.world.getBlockState(method6729);
                 final Block method6731 = method6730.getBlock();
                 if (method6730.method21706()) {
                     return;
                 }
-                class5749 = method6731.method11862(this.field4683, method6729, method6730);
+                class5749 = method6731.method11862(this.world, method6729, method6730);
                 if (class5749.method27620()) {
                     return;
                 }
-                if (field27304 && Class527.method3046() && method6731.method11802()) {
-                    method6727 = this.field4683.getTileEntity(method6729);
+                if (field27304 && Screen.method3046() && method6731.method11802()) {
+                    method6727 = this.world.getTileEntity(method6729);
                 }
             }
             else {
@@ -1475,12 +1475,12 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             if (class5749.method27620()) {
                 String s = "";
                 if (method6728 == RayTraceResult.Type.BLOCK) {
-                    s = Registry.BLOCK.getKey(this.field4683.getBlockState(((BlockRayTraceResult)this.field4691).getPos()).method21696()).toString();
+                    s = Registry.BLOCK.getKey(this.world.getBlockState(((BlockRayTraceResult)this.field4691).getPos()).method21696()).toString();
                 }
                 else if (method6728 == RayTraceResult.Type.ENTITY) {
                     s = Registry.field210.getKey(((Class7007)this.field4691).method21452().getType()).toString();
                 }
-                Class869.field4622.warn("Picking on: [{}] {} gave null item", (Object)method6728, (Object)s);
+                Minecraft.field4622.warn("Picking on: [{}] {} gave null item", (Object)method6728, (Object)s);
             }
             else {
                 final Class464 field27305 = this.field4684.field3006;
@@ -1521,8 +1521,8 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     
     public CrashReport method5275(final CrashReport class7689) {
         method5276(this.field4664, this.field4653, this.field4648, class7689);
-        if (this.field4683 != null) {
-            this.field4683.method6779(class7689);
+        if (this.world != null) {
+            this.world.method6779(class7689);
         }
         return class7689;
     }
@@ -1541,7 +1541,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                 return "Definitely; Client brand changed to '" + s3 + "'";
             }
             else {
-                return (Class869.class.getSigners() == null) ? "Very likely; Jar signature invalidated" : "Probably not. Jar signature remains and client brand is untouched.";
+                return (Minecraft.class.getSigners() == null) ? "Very likely; Jar signature invalidated" : "Probably not. Jar signature remains and client brand is untouched.";
             }
         });
         method24417.addDetail("Type", "Client (map_client.txt)");
@@ -1569,8 +1569,8 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         method24417.addDetail("CPU", Class7691::method24459);
     }
     
-    public static Class869 method5277() {
-        return Class869.field4621;
+    public static Minecraft method5277() {
+        return Minecraft.field4621;
     }
     
     public CompletableFuture<Void> method5278() {
@@ -1579,7 +1579,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     
     @Override
     public void method1516(final Class9037 class9037) {
-        class9037.method32486("fps", Class869.field4706);
+        class9037.method32486("fps", Minecraft.field4706);
         class9037.method32486("vsync_enabled", this.field4648.field23419);
         class9037.method32486("display_frequency", this.field4632.method7662());
         class9037.method32486("display_type", this.field4632.method7691() ? "fullscreen" : "windowed");
@@ -1783,7 +1783,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         return this.field4637;
     }
     
-    public Class1796 method5307() {
+    public Class1796 getItemRenderer() {
         return this.field4638;
     }
     
@@ -1918,7 +1918,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
     }
     
     public static int method5338() {
-        return Class869.field4706;
+        return Minecraft.field4706;
     }
     
     static {
@@ -1927,6 +1927,6 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         field4624 = new ResourceLocation("default");
         field4625 = new ResourceLocation("alt");
         field4626 = CompletableFuture.completedFuture(Class315.field1875);
-        Class869.field4681 = new byte[10485760];
+        Minecraft.field4681 = new byte[10485760];
     }
 }

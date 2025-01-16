@@ -14,7 +14,7 @@ public abstract class Class649 extends Class648
     
     @Override
     public void method3353(final int n, final int n2, final float n3) {
-        Class869.method5277().method5290().method5849(Class748.method4080());
+        Minecraft.method5277().method5290().method5849(Class748.method4080());
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         int n4 = 0;
         if (this.field3431) {

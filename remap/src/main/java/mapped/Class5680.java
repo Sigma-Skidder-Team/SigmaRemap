@@ -10,7 +10,7 @@ public class Class5680 extends Class5611
     
     public Class5680(final Class5079 field23105) {
         this.field23105 = field23105;
-        super(10, field23105.method15421() - 37, 6, 20, 20, Class5046.method15438("mco.selectServer.info"));
+        super(10, field23105.width() - 37, 6, 20, 20, RealmsScreen.getLocalizedString("mco.selectServer.info"));
     }
     
     @Override

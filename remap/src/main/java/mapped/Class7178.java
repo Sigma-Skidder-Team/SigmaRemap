@@ -5,9 +5,7 @@
 package mapped;
 
 import com.thizzer.jtouchbar.common.Color;
-import com.thizzer.jtouchbar.item.view.action.TouchBarViewAction;
 import com.thizzer.jtouchbar.item.view.TouchBarButton$ButtonType;
-import com.thizzer.jtouchbar.item.view.TouchBarView;
 import com.thizzer.jtouchbar.item.TouchBarItem;
 import com.thizzer.jtouchbar.item.view.TouchBarTextField;
 import org.lwjgl.glfw.GLFWNativeCocoa;
@@ -47,7 +45,7 @@ public class Class7178
         this.method21967();
     }
     
-    public void method21957(final int n, final Class<? extends Class527> clazz) {
+    public void method21957(final int n, final Class<? extends Screen> clazz) {
         this.method21958(clazz);
         this.field27849.add(new Class8879(n, clazz));
         this.method21967();
@@ -63,7 +61,7 @@ public class Class7178
         }
     }
     
-    public int method21959(final Class<? extends Class527> clazz) {
+    public int method21959(final Class<? extends Screen> clazz) {
         for (final Class8879 class8879 : this.field27849) {
             if (class8879.method31231() == Class2093.field12103 && class8879.method31233() == clazz) {
                 return class8879.method31229();
@@ -137,10 +135,10 @@ public class Class7178
     
     @Class6753
     public void method21965(final Class5743 class5743) {
-        if (Class869.method5277().field4683 == null && this.field27850) {
+        if (Minecraft.method5277().world == null && this.field27850) {
             this.method21969();
         }
-        else if (Class869.method5277().field4683 != null) {
+        else if (Minecraft.method5277().world != null) {
             if (!this.field27850) {
                 this.method21967();
             }
@@ -148,7 +146,7 @@ public class Class7178
     }
     
     public boolean method21966() {
-        if (Class869.field4623) {
+        if (Minecraft.field4623) {
             if (Class9463.method35173().method35209() == Class2209.field13464) {
                 if (!System.getProperty("os.version").startsWith("10.14")) {
                     if (!System.getProperty("os.version").startsWith("10.15")) {
@@ -166,7 +164,7 @@ public class Class7178
     public void method21967() {
         if (this.method21966()) {
             if (this.field27848 != null) {
-                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Class869.method5277().field4632.method7690()));
+                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().field4632.method7690()));
             }
             (this.field27848 = new JTouchBar()).setCustomizationIdentifier("JelloTouch");
             this.method21970();
@@ -175,7 +173,7 @@ public class Class7178
                 view.setStringValue(" Jello for Sigma 5.0   -   Open the keybind manager to add keybinds here!");
                 this.field27848.addItem(new TouchBarItem("Jello", view, true));
             }
-            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Class869.method5277().field4632.method7690()));
+            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().field4632.method7690()));
             this.field27850 = true;
         }
     }
@@ -204,13 +202,13 @@ public class Class7178
     public void method21969() {
         if (this.method21966()) {
             if (this.field27848 != null) {
-                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Class869.method5277().field4632.method7690()));
+                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().field4632.method7690()));
             }
             (this.field27848 = new JTouchBar()).setCustomizationIdentifier("JelloTouch");
             final TouchBarTextField view = new TouchBarTextField();
             view.setStringValue(" Jello for Sigma 5.0   -   © SIGMA Prod");
             this.field27848.addItem(new TouchBarItem("Jello", view, true));
-            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Class869.method5277().field4632.method7690()));
+            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().field4632.method7690()));
             this.field27850 = false;
         }
     }

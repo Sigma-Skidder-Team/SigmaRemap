@@ -62,7 +62,7 @@ public class Class5879 extends Class5846<Class844>
         this.field24107.field25183 = n5 * 0.017453292f;
         this.method17626(n3, (1.0f - class844.method5062(n6)) * 0.55f);
         this.field24108.field25182 = -8.25f;
-        Entity class845 = Class869.method5277().method5303();
+        Entity class845 = Minecraft.method5277().method5303();
         if (class844.method5058()) {
             class845 = class844.method5059();
         }

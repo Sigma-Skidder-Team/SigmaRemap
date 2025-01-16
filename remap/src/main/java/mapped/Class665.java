@@ -59,7 +59,7 @@ public class Class665 extends Class654 implements Class664<Class5611>
     }
     
     @Override
-    public void method3354(final Class869 class869, final int n, final int n2) {
+    public void method3354(final Minecraft class869, final int n, final int n2) {
         this.field3698.method16930(n, n2);
     }
     

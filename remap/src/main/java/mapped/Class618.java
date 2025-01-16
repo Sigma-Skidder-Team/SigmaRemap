@@ -14,7 +14,7 @@ public class Class618 extends Class608<Class638>
     
     public Class618(final Class696 field3591) {
         this.field3591 = field3591;
-        super(field3591.field3150, field3591.field3152, field3591.field3153, 43, field3591.field3153 - 60, 24);
+        super(field3591.minecraft, field3591.width, field3591.height, 43, field3591.height - 60, 24);
         for (int i = 0; i < Class696.method3893(field3591).method21590().size(); ++i) {
             this.method3536(new Class638(this, null));
         }
@@ -23,9 +23,9 @@ public class Class618 extends Class608<Class638>
     public void method3594(final Class638 class638) {
         super.method3531(class638);
         if (class638 != null) {
-            final Item method11704 = Class696.method3893(this.field3591).method21590().get(Class696.method3893(this.field3591).method21590().size() - this.method3040().indexOf(class638) - 1).method33115().method21696().method11704();
+            final Item method11704 = Class696.method3893(this.field3591).method21590().get(Class696.method3893(this.field3591).method21590().size() - this.children().indexOf(class638) - 1).method33115().method21696().method11704();
             if (method11704 != Items.AIR) {
-                Class7895.field32404.method25556(new Class2259("narrator.select", new Object[] { method11704.method11729(new ItemStack(method11704)) }).getString());
+                NarratorChatListener.field32404.method25556(new Class2259("narrator.select", new Object[] { method11704.method11729(new ItemStack(method11704)) }).getString());
             }
         }
     }
@@ -47,12 +47,12 @@ public class Class618 extends Class608<Class638>
     }
     
     public void method3595() {
-        final int index = this.method3040().indexOf(((Class604<Object>)this).method3530());
+        final int index = this.children().indexOf(((Class604<Object>)this).method3530());
         this.method3533();
         for (int i = 0; i < Class696.method3893(this.field3591).method21590().size(); ++i) {
             this.method3536(new Class638(this, null));
         }
-        final List<Class638> method3040 = this.method3040();
+        final List<Class638> method3040 = this.children();
         if (index >= 0) {
             if (index < method3040.size()) {
                 this.method3594(method3040.get(index));

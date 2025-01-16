@@ -15,7 +15,7 @@ import java.util.Map;
 public class Class572 extends Class565
 {
     private static String[] field3402;
-    private final Class869 field3403;
+    private final Minecraft field3403;
     private final Class557 field3404;
     private final Class239 field3405;
     private final int field3406;
@@ -34,7 +34,7 @@ public class Class572 extends Class565
     private float field3419;
     private boolean field3420;
     
-    public Class572(final Class869 field3403, final Class557 field3404, final Class239 field3405, final int field3406, final Class8863 field3407, final Class7339 field3408) {
+    public Class572(final Minecraft field3403, final Class557 field3404, final Class239 field3405, final int field3406, final Class8863 field3407, final Class7339 field3408) {
         this.field3412 = Maps.newLinkedHashMap();
         this.field3415 = Integer.MAX_VALUE;
         this.field3416 = Integer.MAX_VALUE;
@@ -149,7 +149,7 @@ public class Class572 extends Class565
     }
     
     @Nullable
-    public static Class572 method3344(final Class869 class869, final Class557 class870, int n, final Class8863 class871) {
+    public static Class572 method3344(final Minecraft class869, final Class557 class870, int n, final Class8863 class871) {
         if (class871.method31036() != null) {
             for (final Class239 class872 : Class239.values()) {
                 if (n < class872.method882()) {

@@ -24,7 +24,7 @@ public class Class4907 extends Class4841
     private final List<Class8214> field20995;
     
     public Class4907(final Class4803 class4803, final String s, final boolean field20991, final String field20992, final Class7976... array) {
-        super(class4803, s, 0, 0, Class869.method5277().field4632.method7694(), Class869.method5277().field4632.method7695(), false);
+        super(class4803, s, 0, 0, Minecraft.method5277().field4632.method7694(), Minecraft.method5277().field4632.method7695(), false);
         this.field20990 = new Class9572(285, 100);
         this.field20992 = 240;
         this.field20993 = 0;

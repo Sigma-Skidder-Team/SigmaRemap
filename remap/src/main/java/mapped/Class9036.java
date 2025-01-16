@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL11;
 
 public class Class9036
 {
-    private static Class869 field38216;
+    private static Minecraft field38216;
     private static Class5760 field38217;
     private static IProfiler field38218;
     public static boolean field38219;
@@ -34,7 +34,7 @@ public class Class9036
     
     public static void method32479() {
         if (Class9036.field38216 == null) {
-            Class9036.field38216 = Class869.method5277();
+            Class9036.field38216 = Minecraft.method5277();
             Class9036.field38217 = Class9036.field38216.field4648;
             Class9036.field38218 = Class9036.field38216.method5327();
         }
@@ -117,10 +117,10 @@ public class Class9036
                 Class8933.method31609();
                 final int n11 = method7693 - 80;
                 final int n12 = method7693 - 160;
-                Class9036.field38216.field4643.method6610("30", 2.0f, (float)(n12 + 1), -8947849);
-                Class9036.field38216.field4643.method6610("30", 1.0f, (float)n12, -3881788);
-                Class9036.field38216.field4643.method6610("60", 2.0f, (float)(n11 + 1), -8947849);
-                Class9036.field38216.field4643.method6610("60", 1.0f, (float)n11, -3881788);
+                Class9036.field38216.fontRenderer.method6610("30", 2.0f, (float)(n12 + 1), -8947849);
+                Class9036.field38216.fontRenderer.method6610("30", 1.0f, (float)n12, -3881788);
+                Class9036.field38216.fontRenderer.method6610("60", 2.0f, (float)(n11 + 1), -8947849);
+                Class9036.field38216.fontRenderer.method6610("60", 1.0f, (float)n11, -3881788);
                 Class8933.method31633(5889);
                 Class8933.method31636();
                 Class8933.method31633(5888);
@@ -132,7 +132,7 @@ public class Class9036
                 final int n15 = method7693 / n - 8;
                 final Class685 field4647 = Class9036.field38216.field4647;
                 Class565.method3293(n14 - 1, n15 - 1, n14 + 50, n15 + 10, -1605349296);
-                Class9036.field38216.field4643.method6610(" " + Class7741.method24705() + " MB/s", (float)n14, (float)n15, n13);
+                Class9036.field38216.fontRenderer.method6610(" " + Class7741.method24705() + " MB/s", (float)n14, (float)n15, n13);
                 Class9036.field38238 = System.nanoTime() - nanoTime;
             }
         }

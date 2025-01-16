@@ -61,11 +61,11 @@ public class Class3174 extends Class3167
         int n = 0;
         for (int i = 0; i < 10; ++i) {
             final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY - i, Class3174.field15514.field4684.posZ);
-            if (Class3174.field15514.field4683.getBlockState(class354).method21723() && method21723) {
+            if (Class3174.field15514.world.getBlockState(class354).method21723() && method21723) {
                 n = -i;
                 break;
             }
-            method21723 = Class3174.field15514.field4683.getBlockState(class354).method21723();
+            method21723 = Class3174.field15514.world.getBlockState(class354).method21723();
         }
         return n;
     }
@@ -75,15 +75,15 @@ public class Class3174 extends Class3167
         int n = 0;
         for (int i = 10; i > 0; --i) {
             final BlockPos class354 = new BlockPos(Class3174.field15514.field4684.posX, Class3174.field15514.field4684.posY + i, Class3174.field15514.field4684.posZ);
-            if (Class3174.field15514.field4683.getBlockState(class354).method21723()) {
+            if (Class3174.field15514.world.getBlockState(class354).method21723()) {
                 if (method21723) {
-                    if (!Class3174.field15514.field4683.getBlockState(class354.method1139()).method21723()) {
+                    if (!Class3174.field15514.world.getBlockState(class354.method1139()).method21723()) {
                         n = i;
                         break;
                     }
                 }
             }
-            method21723 = Class3174.field15514.field4683.getBlockState(class354).method21723();
+            method21723 = Class3174.field15514.world.getBlockState(class354).method21723();
         }
         return n;
     }

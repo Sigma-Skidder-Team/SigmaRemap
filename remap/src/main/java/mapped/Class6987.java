@@ -17,7 +17,7 @@ public class Class6987 implements Class6988, Class6991
     private final List<Class6991> field27280;
     
     public Class6987() {
-        this(Class6987.field27279.sortedCopy((Iterable)Class869.method5277().method5269().method17370()));
+        this(Class6987.field27279.sortedCopy((Iterable) Minecraft.method5277().method5269().method17370()));
     }
     
     public Class6987(final Collection<Class9081> collection) {
@@ -52,7 +52,7 @@ public class Class6987 implements Class6988, Class6991
     
     @Override
     public void method21404(final float n, final int n2) {
-        Class869.method5277().method5290().method5849(Class569.field3395);
+        Minecraft.method5277().method5290().method5849(Class569.field3395);
         Class565.method3188(0, 0, 0.0f, 0.0f, 16, 16, 256, 256);
     }
     

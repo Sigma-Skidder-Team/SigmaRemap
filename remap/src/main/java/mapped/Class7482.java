@@ -9,7 +9,7 @@ import net.minecraft.util.math.MathHelper;
 public class Class7482
 {
     private static String[] field28902;
-    public static Class869 field28903;
+    public static Minecraft field28903;
     
     public static double method23136() {
         double n = 0.2873;
@@ -299,6 +299,6 @@ public class Class7482
     }
     
     static {
-        Class7482.field28903 = Class869.method5277();
+        Class7482.field28903 = Minecraft.method5277();
     }
 }

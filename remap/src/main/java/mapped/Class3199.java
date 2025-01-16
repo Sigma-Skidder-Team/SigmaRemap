@@ -24,7 +24,7 @@ public class Class3199 extends Class3167
                 Class3199.field15514.field4692 = 0;
             }
             else {
-                final Class869 field15514 = Class3199.field15514;
+                final Minecraft field15514 = Class3199.field15514;
                 --field15514.field4692;
             }
         }

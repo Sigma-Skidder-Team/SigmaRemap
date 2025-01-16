@@ -15,10 +15,10 @@ public class Class909 extends Thread
     
     @Override
     public void run() {
-        Class9513.method35444();
+        RealmsClient.func_224911_a();
         try {
-            Class7847.method25361(() -> {
-                final Class9513 class2335;
+            Realms.method25361(() -> {
+                final RealmsClient class2335;
                 class2335.method35464(1, 10, Class271.field1471);
                 class2335.method35464(1, 10, Class271.field1473);
                 class2335.method35464(1, 10, Class271.field1474);
@@ -29,7 +29,7 @@ public class Class909 extends Thread
                 Class5078.method15736(this.field4864, class2334);
             });
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             Class5078.method15732().error("Couldn't fetch templates in reset world", (Throwable)class2330);
         }
     }

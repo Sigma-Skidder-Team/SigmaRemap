@@ -27,7 +27,7 @@ public class Class3687
     }
     
     public Class1912 method11332() {
-        return Class869.method5277().method5296(this.method11330()).apply(this.method11331());
+        return Minecraft.method5277().method5296(this.method11330()).apply(this.method11331());
     }
     
     public Class6332 method11333(final Function<ResourceLocation, Class6332> function) {

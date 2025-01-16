@@ -12,10 +12,10 @@ import com.google.gson.JsonParser;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class7436 extends Class7422
+public class Class7436 extends ValueObject
 {
     private static final Logger field28672;
-    public List<Class7426> field28673;
+    public List<Backup> field28673;
     
     public static Class7436 method22870(final String s) {
         final JsonParser jsonParser = new JsonParser();
@@ -26,7 +26,7 @@ public class Class7436 extends Class7422
             if (value.isJsonArray()) {
                 final Iterator iterator = value.getAsJsonArray().iterator();
                 while (iterator.hasNext()) {
-                    class7436.field28673.add(Class7426.method22846((JsonElement)iterator.next()));
+                    class7436.field28673.add(Backup.parse((JsonElement)iterator.next()));
                 }
             }
         }

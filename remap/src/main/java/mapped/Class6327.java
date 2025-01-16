@@ -15,7 +15,7 @@ public class Class6327 extends Class6322
         super("line_width", () -> {
             if (!Objects.equals(a, OptionalDouble.of(1.0))) {
                 if (!a.isPresent()) {
-                    Class8726.method30072(Math.max(2.5f, Class869.method5277().method5332().method7692() / 1920.0f * 2.5f));
+                    Class8726.method30072(Math.max(2.5f, Minecraft.method5277().method5332().method7692() / 1920.0f * 2.5f));
                 }
                 else {
                     Class8726.method30072((float)a.getAsDouble());

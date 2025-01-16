@@ -57,7 +57,7 @@ import org.lwjgl.opengl.GLCapabilities;
 
 public class Class9216
 {
-    public static Class869 field39031;
+    public static Minecraft field39031;
     public static Class1660 field39032;
     public static boolean field39033;
     public static boolean field39034;
@@ -1301,7 +1301,7 @@ public class Class9216
     }
     
     private static void method33732(final Class7038 class7038, final Properties properties) throws IOException {
-        final File file = new File(Class869.method5277().field4652, "shaderpacks/" + class7038.method21530() + ".txt");
+        final File file = new File(Minecraft.method5277().field4652, "shaderpacks/" + class7038.method21530() + ".txt");
         if (properties.isEmpty()) {
             file.delete();
         }
@@ -1338,7 +1338,7 @@ public class Class9216
     
     private static Properties method33734(final Class7038 class7038) throws IOException {
         final Class27 class7039 = new Class27();
-        final File file = new File(Class869.method5277().field4652, "shaderpacks/" + class7038.method21530() + ".txt");
+        final File file = new File(Minecraft.method5277().field4652, "shaderpacks/" + class7038.method21530() + ".txt");
         if (file.exists() && file.isFile() && file.canRead()) {
             final FileInputStream inStream = new FileInputStream(file);
             class7039.load(inStream);
@@ -1513,10 +1513,10 @@ public class Class9216
         Class8885.method31272(sb.toString());
     }
     
-    public static void method33746(Class869 method5277) {
+    public static void method33746(Minecraft method5277) {
         method33894();
         Class9216.field39031 = method5277;
-        method5277 = Class869.method5277();
+        method5277 = Minecraft.method5277();
         Class9216.field39035 = GL.getCapabilities();
         Class9216.field39036 = GL11.glGetString(7938);
         Class9216.field39037 = GL11.glGetString(7936);
@@ -2988,9 +2988,9 @@ public class Class9216
         }
     }
     
-    public static void method33796(final Class869 field39031, final Class6092 class6092, final float n, final long n2) {
+    public static void method33796(final Minecraft field39031, final Class6092 class6092, final float n, final long n2) {
         method33739("pre beginRender");
-        method33798(Class9216.field39031.field4683);
+        method33798(Class9216.field39031.world);
         Class9216.field39031 = field39031;
         Class9216.field39031.method5327().startSection("init");
         Class9216.field39032 = Class9216.field39031.field4644;
@@ -3029,7 +3029,7 @@ public class Class9216
         Class8933.method31635();
         Class7778.method24957(class6092, field39031, n);
         Class8933.method31636();
-        final Class1848 field39032 = Class9216.field39031.field4683;
+        final Class1848 field39032 = Class9216.field39031.world;
         if (field39032 != null) {
             Class9216.field39075 = field39032.method6755();
             Class9216.field39077 = (Class9216.field39075 - Class9216.field39076) % 24000L;
@@ -3355,7 +3355,7 @@ public class Class9216
         }
         class7351.method22564(0.0, 0.0, -100.0);
         class7351.method22566(Vector3f.XP.rotationDegrees(90.0f));
-        Class9216.field39078 = Class9216.field39031.field4683.method6952(n);
+        Class9216.field39078 = Class9216.field39031.world.method6952(n);
         Class9216.field39079 = ((Class9216.field39078 < 0.75f) ? (Class9216.field39078 + 0.25f) : (Class9216.field39078 - 0.75f));
         final float n2 = Class9216.field39078 * -360.0f;
         final float n3 = (Class9216.field39376 > 0.0f) ? (n2 % Class9216.field39376 - Class9216.field39376 * 0.5f) : 0.0f;
@@ -4685,8 +4685,8 @@ public class Class9216
         field39323 = new int[] { 9728, 9729 };
         Class9216.field39324 = null;
         Class9216.field39325 = false;
-        field39331 = new File(Class869.method5277().field4652, "shaderpacks");
-        Class9216.field39332 = new File(Class869.method5277().field4652, "optionsshaders.txt");
+        field39331 = new File(Minecraft.method5277().field4652, "shaderpacks");
+        Class9216.field39332 = new File(Minecraft.method5277().field4652, "optionsshaders.txt");
         Class9216.field39333 = null;
         Class9216.field39334 = null;
         Class9216.field39335 = null;

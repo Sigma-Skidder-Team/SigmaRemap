@@ -33,6 +33,6 @@ public class Class639 extends Class623<Class639>
     
     public void method3668(final Class9455<?> class9455, final int n, final int n2, final boolean b) {
         final String s = (class9455 != null) ? class9455.method35136(Class691.method3867(this.field3638.field3583).method23091(class9455)) : "-";
-        this.field3638.method3297(this.field3638.field3583.field3156, s, n - this.field3638.field3583.field3156.method6617(s), n2 + 5, b ? 16777215 : 9474192);
+        this.field3638.method3297(this.field3638.field3583.font, s, n - this.field3638.field3583.font.method6617(s), n2 + 5, b ? 16777215 : 9474192);
     }
 }

@@ -213,8 +213,8 @@ public enum Class305
                 return method973 - method974 * MathHelper.method35642(method973 / method974);
             }
             case 32: {
-                final Class869 method975 = Class869.method5277();
-                final Class1848 field4683 = method975.field4683;
+                final Minecraft method975 = Minecraft.method5277();
+                final Class1848 field4683 = method975.world;
                 if (field4683 == null) {
                     return 0.0f;
                 }

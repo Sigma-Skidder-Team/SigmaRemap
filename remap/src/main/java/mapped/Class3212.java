@@ -120,7 +120,7 @@ public class Class3212 extends Class3167
     @Class6753
     private void method10102(final Class5735 class5735) {
         if (this.method9906()) {
-            if (Class3212.field15514.field4683 != null) {
+            if (Class3212.field15514.world != null) {
                 if (Class3212.field15514.field4684 != null) {
                     if (this.method9883("Haphe (AACAP)")) {
                         if (Class7482.method23148()) {
@@ -172,7 +172,7 @@ public class Class3212 extends Class3167
                 if (!this.method9914().method9887("ItemSpoof").equals("None")) {
                     ((Class3260)this.method9914()).method10280();
                 }
-                final Class2201 method27319 = Class3212.field15514.field4682.method27319(Class3212.field15514.field4684, Class3212.field15514.field4683, Class316.field1877, blockRayTraceResult);
+                final Class2201 method27319 = Class3212.field15514.field4682.method27319(Class3212.field15514.field4684, Class3212.field15514.world, Class316.field1877, blockRayTraceResult);
                 if (this.method9914().method9887("ItemSpoof").equals("Spoof") || this.method9914().method9887("ItemSpoof").equals("LiteSpoof")) {
                     Class3212.field15514.field4684.field3006.field2743 = field2743;
                 }

@@ -34,7 +34,7 @@ public class Class4876 extends Class4868
         }
         Class8154.method26869((float)this.method14272(), this.method14274() - n2 * 3.0f, (float)this.method14276(), (float)this.method14278());
         final int n3 = 40;
-        Class8154.method26905(n3 * (-Class4939.field21207 / Class869.method5277().field4632.method7694()), n3 * (-Class4939.field21208 / Class869.method5277().field4632.method7695()), (float)(Class869.method5277().field4632.method7694() + n3), (float)(Class869.method5277().field4632.method7695() + n3), Class568.field3392);
+        Class8154.method26905(n3 * (-Class4939.field21207 / Minecraft.method5277().field4632.method7694()), n3 * (-Class4939.field21208 / Minecraft.method5277().field4632.method7695()), (float)(Minecraft.method5277().field4632.method7694() + n3), (float)(Minecraft.method5277().field4632.method7695() + n3), Class568.field3392);
         Class8154.method26872();
         if (this.field20864) {
             Class8154.method26874((float)this.method14272(), this.method14274() - n2 * 3.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(-12319668, 0.5f));

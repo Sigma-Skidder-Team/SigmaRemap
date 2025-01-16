@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class7445 extends Class7422
+public class Class7445 extends ValueObject
 {
     private static final Logger field28716;
     public List<Class7430> field28717;
@@ -56,9 +56,9 @@ public class Class7445 extends Class7422
                     class7445.field28717.add(Class7430.method22863(((JsonElement)iterator.next()).getAsJsonObject()));
                 }
             }
-            class7445.field28718 = Class7610.method23908("page", asJsonObject, 0);
-            class7445.field28719 = Class7610.method23908("size", asJsonObject, 0);
-            class7445.field28720 = Class7610.method23908("total", asJsonObject, 0);
+            class7445.field28718 = JsonUtils.method23908("page", asJsonObject, 0);
+            class7445.field28719 = JsonUtils.method23908("size", asJsonObject, 0);
+            class7445.field28720 = JsonUtils.method23908("total", asJsonObject, 0);
         }
         catch (final Exception ex) {
             Class7445.field28716.error("Could not parse WorldTemplatePaginatedList: " + ex.getMessage());

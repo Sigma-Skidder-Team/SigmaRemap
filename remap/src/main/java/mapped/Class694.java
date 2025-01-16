@@ -9,21 +9,21 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Class694 extends Class527
+public class Class694 extends Screen
 {
     private static final AtomicInteger field3817;
     private static final Logger field3146;
     private NetworkManager field3818;
     private boolean field3819;
-    private final Class527 field3820;
+    private final Screen field3820;
     private ITextComponent field3821;
     private long field3822;
     
-    public Class694(final Class527 field3820, final Class869 field3821, final Class9575 class9575) {
-        super(Class7895.field32402);
+    public Class694(final Screen field3820, final Minecraft field3821, final Class9575 class9575) {
+        super(NarratorChatListener.EMPTY);
         this.field3821 = new Class2259("connect.connecting", new Object[0]);
         this.field3822 = -1L;
-        this.field3150 = field3821;
+        this.minecraft = field3821;
         this.field3820 = field3820;
         final Class7872 method25494 = Class7872.method25494(class9575.field41613);
         field3821.method5264();
@@ -31,11 +31,11 @@ public class Class694 extends Class527
         this.method3872(method25494.method25492(), method25494.method25493());
     }
     
-    public Class694(final Class527 field3820, final Class869 field3821, final String s, final int n) {
-        super(Class7895.field32402);
+    public Class694(final Screen field3820, final Minecraft field3821, final String s, final int n) {
+        super(NarratorChatListener.EMPTY);
         this.field3821 = new Class2259("connect.connecting", new Object[0]);
         this.field3822 = -1L;
-        this.field3150 = field3821;
+        this.minecraft = field3821;
         this.field3820 = field3820;
         field3821.method5264();
         this.method3872(s, n);
@@ -53,7 +53,7 @@ public class Class694 extends Class527
     }
     
     @Override
-    public void method2992() {
+    public void tick() {
         if (this.field3818 != null) {
             if (!this.field3818.method11187()) {
                 this.field3818.method11193();
@@ -70,25 +70,25 @@ public class Class694 extends Class527
     }
     
     @Override
-    public void method2969() {
-        this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 120 + 12, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
+    public void init() {
+        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
             this.field3819 = true;
             if (this.field3818 != null) {
                 this.field3818.method11181(new Class2259("connect.aborted", new Object[0]));
             }
-            this.field3150.method5244(this.field3820);
+            this.minecraft.method5244(this.field3820);
         }));
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         final long method27837 = Util.method27837();
         if (method27837 - this.field3822 > 2000L) {
             this.field3822 = method27837;
-            Class7895.field32404.method25556(new Class2259("narrator.joining", new Object[0]).getString());
+            NarratorChatListener.field32404.method25556(new Class2259("narrator.joining", new Object[0]).getString());
         }
-        this.method3295(this.field3156, this.field3821.getFormattedText(), this.field3152 / 2, this.field3153 / 2 - 50, 16777215);
+        this.method3295(this.font, this.field3821.getFormattedText(), this.width / 2, this.height / 2 - 50, 16777215);
         super.method2975(n, n2, n3);
     }
     

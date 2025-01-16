@@ -78,7 +78,7 @@ public class Class3236 extends Class3167
     public void method10208(final Class5738 class5738) {
         if (this.method9906()) {
             if (this.method9887("Speed Mode").equals("Cubecraft") && !Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
-                if (Class3236.field15514.field4683.method6981(Class3236.field15514.field4684, Class3236.field15514.field4684.boundingBox.expand(0.0, -1.5, 0.0).contract(0.05, 0.0, 0.05).contract(-0.05, 0.0, -0.05)).count() == 0L) {
+                if (Class3236.field15514.world.method6981(Class3236.field15514.field4684, Class3236.field15514.field4684.boundingBox.expand(0.0, -1.5, 0.0).contract(0.05, 0.0, 0.05).contract(-0.05, 0.0, -0.05)).count() == 0L) {
                     if (Class3236.field15514.field4684.fallDistance < 1.0f) {
                         class5738.method17026(true);
                     }
@@ -118,7 +118,7 @@ public class Class3236 extends Class3167
                         final ItemStack method13699 = Class3236.field15514.field4684.method2715(Class316.field1877);
                         final Class7075 class5745 = new Class7075(Class3236.field15514.field4684, Class316.field1877, method13698);
                         method13699.method27690();
-                        Class3236.field15514.field4682.method27319(Class3236.field15514.field4684, Class3236.field15514.field4683, this.field15714, method13698);
+                        Class3236.field15514.field4682.method27319(Class3236.field15514.field4684, Class3236.field15514.world, this.field15714, method13698);
                         this.field15710 = null;
                         if (!this.method9914().method9883("NoSwing")) {
                             Class3236.field15514.field4684.method2707(this.field15714);

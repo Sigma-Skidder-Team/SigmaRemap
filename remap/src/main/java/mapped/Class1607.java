@@ -4,9 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -23,7 +21,7 @@ public class Class1607 implements Runnable
             try {
                 Thread.sleep(150000L);
                 if (!Thread.currentThread().isInterrupted()) {
-                    if (Class869.method5277().field4683 == null) {
+                    if (Minecraft.method5277().world == null) {
                         continue;
                     }
                     boolean b = false;

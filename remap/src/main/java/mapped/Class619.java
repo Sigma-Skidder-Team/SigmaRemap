@@ -12,7 +12,7 @@ public class Class619<E extends Class623<E>> extends Class608<E>
     private final Class5056 field3593;
     
     public Class619(final Class5056 field3593, final int n, final int n2, final int n3, final int n4, final int n5) {
-        super(Class869.method5277(), n, n2, n3, n4, n5);
+        super(Minecraft.method5277(), n, n2, n3, n4, n5);
         this.field3593 = field3593;
     }
     
@@ -43,7 +43,7 @@ public class Class619<E extends Class623<E>> extends Class608<E>
     
     public void method3599(final E e) {
         super.method3531(e);
-        this.field3593.method15533(super.method3040().indexOf(e));
+        this.field3593.method15533(super.children().indexOf(e));
     }
     
     @Override
@@ -66,8 +66,8 @@ public class Class619<E extends Class623<E>> extends Class608<E>
     }
     
     @Override
-    public boolean method3012(final double n, final double n2, final double n3) {
-        return this.field3593.method15494(n, n2, n3) || super.method3012(n, n2, n3);
+    public boolean mouseScrolled(final double n, final double n2, final double n3) {
+        return this.field3593.mouseScrolled(n, n2, n3) || super.mouseScrolled(n, n2, n3);
     }
     
     @Override
@@ -76,18 +76,18 @@ public class Class619<E extends Class623<E>> extends Class608<E>
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
-        return this.field3593.method15368(n, n2, n3) || super.method2982(n, n2, n3);
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
+        return this.field3593.mouseClicked(n, n2, n3) || super.mouseClicked(n, n2, n3);
     }
     
     @Override
-    public boolean method2985(final double n, final double n2, final int n3) {
-        return this.field3593.method15492(n, n2, n3);
+    public boolean mouseReleased(final double n, final double n2, final int n3) {
+        return this.field3593.mouseReleased(n, n2, n3);
     }
     
     @Override
-    public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
-        return this.field3593.method15493(n, n2, n3, n4, n5) || super.method2984(n, n2, n3, n4, n5);
+    public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
+        return this.field3593.mouseDragged(n, n2, n3, n4, n5) || super.mouseDragged(n, n2, n3, n4, n5);
     }
     
     public final int method3601(final E e) {
@@ -124,8 +124,8 @@ public class Class619<E extends Class623<E>> extends Class608<E>
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
-        return super.method2972(n, n2, n3) || this.field3593.method15376(n, n2, n3);
+    public boolean keyPressed(final int n, final int n2, final int n3) {
+        return super.keyPressed(n, n2, n3) || this.field3593.keyPressed(n, n2, n3);
     }
     
     @Override

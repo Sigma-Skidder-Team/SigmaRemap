@@ -4,15 +4,13 @@
 
 package mapped;
 
-import java.util.Iterator;
-
 public class Class610 extends Class608<Class643>
 {
     public final /* synthetic */ Class704 field3564;
     
-    public Class610(final Class704 field3564, final Class869 class869) {
+    public Class610(final Class704 field3564, final Minecraft class869) {
         this.field3564 = field3564;
-        super(class869, field3564.field3152, field3564.field3153, 32, field3564.field3153 - 65 + 4, 18);
+        super(class869, field3564.width, field3564.height, 32, field3564.height - 65 + 4, 18);
         for (final Class1947 class870 : Class704.method3907(field3564).method5846()) {
             final Class643 class871 = new Class643(this, class870);
             this.method3536(class871);
@@ -39,13 +37,13 @@ public class Class610 extends Class608<Class643>
     public void method3570(final Class643 class643) {
         super.method3531(class643);
         if (class643 != null) {
-            Class7895.field32404.method25556(new Class2259("narrator.select", new Object[] { Class643.method3687(class643) }).getString());
+            NarratorChatListener.field32404.method25556(new Class2259("narrator.select", new Object[] { Class643.method3687(class643) }).getString());
         }
     }
     
     @Override
     public void method3545() {
-        this.field3564.method3041();
+        this.field3564.renderBackground();
     }
     
     @Override

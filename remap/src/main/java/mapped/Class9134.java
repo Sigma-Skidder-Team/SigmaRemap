@@ -9,7 +9,7 @@ import net.minecraft.entity.LivingEntity;
 public class Class9134
 {
     private static String[] field38710;
-    private static final Class869 field38711;
+    private static final Minecraft field38711;
     
     public static double[] method33307(final LivingEntity class511) {
         if (class511 != null) {
@@ -26,6 +26,6 @@ public class Class9134
     }
     
     static {
-        field38711 = Class869.method5277();
+        field38711 = Minecraft.method5277();
     }
 }

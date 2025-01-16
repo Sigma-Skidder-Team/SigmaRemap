@@ -18,11 +18,11 @@ public class Class8866
     private float[] field37266;
     public final int field37267 = 3;
     private Class3167 field37268;
-    public Class869 field37269;
+    public Minecraft field37269;
     public boolean field37270;
     
     public Class8866(final Class3167 field37268) {
-        this.field37269 = Class869.method5277();
+        this.field37269 = Minecraft.method5277();
         this.field37268 = field37268;
         this.method31133();
     }

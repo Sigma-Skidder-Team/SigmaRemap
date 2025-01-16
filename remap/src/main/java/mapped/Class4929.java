@@ -44,10 +44,10 @@ public class Class4929 extends Class4800
         }
         this.field21095.method35855(Class2186.field12965);
         this.field21096.method35855(Class2186.field12965);
-        final int n = Class869.method5277().field4632.method7694() * Class869.method5277().field4632.method7695() / 14000;
+        final int n = Minecraft.method5277().field4632.method7694() * Minecraft.method5277().field4632.method7695() / 14000;
         final Random random = new Random();
         for (int i = 0; i < n; ++i) {
-            this.field21098.add(new Class4804(this, Integer.toString(i), random.nextInt(Class869.method5277().field4632.method7694()), random.nextInt(Class869.method5277().field4632.method7695()), 7 + random.nextInt(5), (1 + random.nextInt(4)) * (random.nextBoolean() ? -1 : 1), 1 + random.nextInt(2)));
+            this.field21098.add(new Class4804(this, Integer.toString(i), random.nextInt(Minecraft.method5277().field4632.method7694()), random.nextInt(Minecraft.method5277().field4632.method7695()), 7 + random.nextInt(5), (1 + random.nextInt(4)) * (random.nextBoolean() ? -1 : 1), 1 + random.nextInt(2)));
         }
         this.method14239(this.field21091 = new Class4811(this, "main", 0, 0, this.field20480, this.field20481));
         this.method14239(this.field21092 = new Class4812(this, "changelog", 0, 0, this.field20480, this.field20481));
@@ -107,10 +107,10 @@ public class Class4929 extends Class4800
         }
         final float n5 = n4 - this.field21088;
         final float n6 = (float)(field21089 - this.field21089);
-        if (Class869.method5277().field4701 == null) {
+        if (Minecraft.method5277().field4701 == null) {
             this.field21095.method35855(Class2186.field12964);
             this.field21096.method35855(Class2186.field12964);
-            final float n7 = 0.5f - this.field21089 / (float)Class869.method5277().field4632.method7694() * -1.0f;
+            final float n7 = 0.5f - this.field21089 / (float) Minecraft.method5277().field4632.method7694() * -1.0f;
             final float n8 = 1.0f - this.field21095.method35858();
             final float n9 = 1.0f - this.field21096.method35858();
             if (Class9463.method35173().method35185()) {}

@@ -16,7 +16,7 @@ import java.util.List;
 import com.google.common.util.concurrent.RateLimiter;
 import org.apache.logging.log4j.Logger;
 
-public class Class5079 extends Class5046
+public class Class5079 extends RealmsScreen
 {
     private static final Logger field21824;
     private static boolean field21825;
@@ -25,7 +25,7 @@ public class Class5079 extends Class5046
     private static List<ResourceLocation> field21828;
     private static final Class9057 field21829;
     private static int field21830;
-    private final Class5046 field21831;
+    private final RealmsScreen field21831;
     private volatile Class5061 field21832;
     private long field21833;
     private Class5611 field21834;
@@ -51,7 +51,7 @@ public class Class5079 extends Class5046
     private int field21854;
     private int field21855;
     private boolean field21856;
-    private static Class5046 field21857;
+    private static RealmsScreen field21857;
     private static boolean field21858;
     private List<Class7836> field21859;
     private int field21860;
@@ -64,7 +64,7 @@ public class Class5079 extends Class5046
     private Class5611 field21867;
     private Class5611 field21868;
     
-    public Class5079(final Class5046 field21831) {
+    public Class5079(final RealmsScreen field21831) {
         this.field21833 = -1L;
         this.field21840 = Lists.newArrayList();
         this.field21861 = new ReentrantLock();
@@ -81,7 +81,7 @@ public class Class5079 extends Class5046
         }
         final Iterator<Class7437> iterator = this.field21840.iterator();
         while (iterator.hasNext()) {
-            if (!iterator.next().field28681.equals(Class7847.method25357())) {
+            if (!iterator.next().field28681.equals(Realms.method25357())) {
                 continue;
             }
             return false;
@@ -107,10 +107,10 @@ public class Class5079 extends Class5046
     }
     
     @Override
-    public void method15369() {
+    public void init() {
         System.out.println("INIT");
         this.field21859 = Lists.newArrayList((Object[])new Class7836[] { new Class7836(new char[] { '3', '2', '1', '4', '5', '6' }, () -> Class5079.field21825 = !Class5079.field21825), new Class7836(new char[] { '9', '8', '7', '1', '2', '3' }, () -> {
-                if (!Class9513.field40930.equals(Class2223.field13686)) {
+                if (!RealmsClient.field40930.equals(Class2223.field13686)) {
                     this.method15764();
                 }
                 else {
@@ -118,7 +118,7 @@ public class Class5079 extends Class5046
                 }
                 return;
             }), new Class7836(new char[] { '9', '8', '7', '4', '5', '6' }, () -> {
-                if (!Class9513.field40930.equals(Class2223.field13687)) {
+                if (!RealmsClient.field40930.equals(Class2223.field13687)) {
                     this.method15765();
                 }
                 else {
@@ -136,7 +136,7 @@ public class Class5079 extends Class5046
             this.method15761();
             this.method15762();
             if (!this.field21827) {
-                Class7847.method25369(false);
+                Realms.method25369(false);
             }
             this.method15444(true);
             if (this.method15746()) {
@@ -146,7 +146,7 @@ public class Class5079 extends Class5046
             this.method15754();
         }
         else {
-            Class7847.method25362(Class5079.field21857);
+            Realms.setScreen(Class5079.field21857);
         }
     }
     
@@ -155,17 +155,17 @@ public class Class5079 extends Class5046
     }
     
     public void method15747() {
-        this.method15431(this.field21837 = new Class5623(this, 1, this.method15421() / 2 - 190, this.method15422() - 32, 90, 20, Class5046.method15438("mco.selectServer.configure")));
-        this.method15431(this.field21834 = new Class5681(this, 3, this.method15421() / 2 - 93, this.method15422() - 32, 90, 20, Class5046.method15438("mco.selectServer.play")));
-        this.method15431(this.field21835 = new Class5659(this, 2, this.method15421() / 2 + 4, this.method15422() - 32, 90, 20, Class5046.method15438("gui.back")));
-        this.method15431(this.field21836 = new Class5671(this, 0, this.method15421() / 2 + 100, this.method15422() - 32, 90, 20, Class5046.method15438("mco.selectServer.expiredRenew")));
-        this.method15431(this.field21838 = new Class5617(this, 7, this.method15421() / 2 - 202, this.method15422() - 32, 90, 20, Class5046.method15438("mco.selectServer.leave")));
-        this.method15431(this.field21864 = new Class5665(this));
-        this.method15431(this.field21865 = new Class5678(this));
-        this.method15431(this.field21863 = new Class5680(this));
-        this.method15431(this.field21868 = new Class5690(this));
-        this.method15431(this.field21866 = new Class5649(this, 6, this.method15421() / 2 + 52, this.method15778() + 137 - 20, 98, 20, Class5046.method15438("mco.selectServer.trial")));
-        this.method15431(this.field21867 = new Class5640(this, 5, this.method15421() / 2 + 52, this.method15778() + 160 - 20, 98, 20, Class5046.method15438("mco.selectServer.buy")));
+        this.buttonsAdd(this.field21837 = new Class5623(this, 1, this.width() / 2 - 190, this.height() - 32, 90, 20, RealmsScreen.getLocalizedString("mco.selectServer.configure")));
+        this.buttonsAdd(this.field21834 = new Class5681(this, 3, this.width() / 2 - 93, this.height() - 32, 90, 20, RealmsScreen.getLocalizedString("mco.selectServer.play")));
+        this.buttonsAdd(this.field21835 = new Class5659(this, 2, this.width() / 2 + 4, this.height() - 32, 90, 20, RealmsScreen.getLocalizedString("gui.back")));
+        this.buttonsAdd(this.field21836 = new Class5671(this, 0, this.width() / 2 + 100, this.height() - 32, 90, 20, RealmsScreen.getLocalizedString("mco.selectServer.expiredRenew")));
+        this.buttonsAdd(this.field21838 = new Class5617(this, 7, this.width() / 2 - 202, this.height() - 32, 90, 20, RealmsScreen.getLocalizedString("mco.selectServer.leave")));
+        this.buttonsAdd(this.field21864 = new Class5665(this));
+        this.buttonsAdd(this.field21865 = new Class5678(this));
+        this.buttonsAdd(this.field21863 = new Class5680(this));
+        this.buttonsAdd(this.field21868 = new Class5690(this));
+        this.buttonsAdd(this.field21866 = new Class5649(this, 6, this.width() / 2 + 52, this.method15778() + 137 - 20, 98, 20, RealmsScreen.getLocalizedString("mco.selectServer.trial")));
+        this.buttonsAdd(this.field21867 = new Class5640(this, 5, this.width() / 2 + 52, this.method15778() + 160 - 20, 98, 20, RealmsScreen.getLocalizedString("mco.selectServer.buy")));
         this.method15748(this.method15771(this.field21833));
     }
     
@@ -256,7 +256,7 @@ public class Class5079 extends Class5046
     }
     
     @Override
-    public void method15375() {
+    public void tick() {
         this.method15420();
         this.field21848 = false;
         ++this.field21842;
@@ -305,7 +305,7 @@ public class Class5079 extends Class5046
                 this.field21841 = Class5079.field21829.method32595();
                 if (this.field21841 > 0) {
                     if (this.field21826.tryAcquire(1)) {
-                        Class7847.method25381(Class5046.method15439("mco.configure.world.invite.narration", this.field21841));
+                        Realms.narrateNow(RealmsScreen.method15439("mco.configure.world.invite.narration", this.field21841));
                     }
                 }
             }
@@ -347,20 +347,20 @@ public class Class5079 extends Class5046
     }
     
     private void method15755(final String s) {
-        Class7847.method25376(s);
+        Realms.method25376(s);
         Class8428.method28148(s);
     }
     
     private void method15756() {
         new Thread(() -> {
             Class9240.method34070();
-            Class9513.method35444();
+            RealmsClient.func_224911_a();
             final Class7443 class7443 = new Class7443();
             final List field28709;
             class7443.field28709 = field28709;
             class7443.field28710 = this.method15757();
             try {
-                final Class9513 class7444;
+                final RealmsClient class7444;
                 class7444.method35481(class7443);
             }
             catch (final Throwable t) {
@@ -396,7 +396,7 @@ public class Class5079 extends Class5046
     private void method15759() {
         final Class7437 method15771 = this.method15771(this.field21833);
         if (method15771 != null) {
-            this.method15755("https://aka.ms/ExtendJavaRealms?subscriptionId=" + method15771.field28676 + "&profileId=" + Class7847.method25357() + "&ref=" + (method15771.field28685 ? "expiredTrial" : "expiredRealm"));
+            this.method15755("https://aka.ms/ExtendJavaRealms?subscriptionId=" + method15771.field28676 + "&profileId=" + Realms.method25357() + "&ref=" + (method15771.field28685 ? "expiredTrial" : "expiredRealm"));
         }
     }
     
@@ -404,7 +404,7 @@ public class Class5079 extends Class5046
         if (this.field21849) {
             if (!this.field21850) {
                 Class8428.method28148("https://aka.ms/startjavarealmstrial");
-                Class7847.method25362(this.field21831);
+                Realms.setScreen(this.field21831);
             }
         }
     }
@@ -424,19 +424,19 @@ public class Class5079 extends Class5046
     }
     
     private void method15764() {
-        if (!Class9513.field40930.equals(Class2223.field13686)) {
+        if (!RealmsClient.field40930.equals(Class2223.field13686)) {
             new Class903(this, "MCO Stage Availability Checker #1").start();
         }
     }
     
     private void method15765() {
-        if (!Class9513.field40930.equals(Class2223.field13687)) {
+        if (!RealmsClient.field40930.equals(Class2223.field13687)) {
             new Class902(this, "MCO Local Availability Checker #1").start();
         }
     }
     
     private void method15766() {
-        Class9513.method35446();
+        RealmsClient.method35446();
         Class5079.field21829.method32593();
     }
     
@@ -445,17 +445,17 @@ public class Class5079 extends Class5046
     }
     
     private void method15768(final Class7437 class7437) {
-        if (Class7847.method25357().equals(class7437.field28681) || Class5079.field21825) {
+        if (Realms.method25357().equals(class7437.field28681) || Class5079.field21825) {
             this.method15770();
-            Class869.method5277().execute(() -> class7438.method5244(new Class5076(this, class7439.field28675).method15403()));
+            Minecraft.method5277().execute(() -> class7438.method5244(new RealmsConfigureWorldScreen(this, class7439.field28675).getProxy()));
         }
     }
     
     private void method15769(final Class7437 class7437) {
         if (class7437 != null) {
-            if (!Class7847.method25357().equals(class7437.field28681)) {
+            if (!Realms.method25357().equals(class7437.field28681)) {
                 this.method15770();
-                Class7847.method25362(new Class5084(this, Class2039.field11628, Class5046.method15438("mco.configure.world.leave.question.line1"), Class5046.method15438("mco.configure.world.leave.question.line2"), true, 4));
+                Realms.setScreen(new Class5084(this, Class2039.field11628, RealmsScreen.getLocalizedString("mco.configure.world.leave.question.line1"), RealmsScreen.getLocalizedString("mco.configure.world.leave.question.line2"), true, 4));
             }
         }
     }
@@ -475,12 +475,12 @@ public class Class5079 extends Class5046
     }
     
     @Override
-    public void method15437(final boolean b, final int n) {
+    public void confirmResult(final boolean b, final int n) {
         if (n == 4) {
             if (b) {
                 new Class927(this, "Realms-leave-server").start();
             }
-            Class7847.method25362(this);
+            Realms.setScreen(this);
         }
     }
     
@@ -489,7 +489,7 @@ public class Class5079 extends Class5046
     }
     
     @Override
-    public boolean method15376(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         switch (n) {
             case 256: {
                 this.field21859.forEach(Class7836::method25315);
@@ -497,7 +497,7 @@ public class Class5079 extends Class5046
                 return true;
             }
             default: {
-                return super.method15376(n, n2, n3);
+                return super.keyPressed(n, n2, n3);
             }
         }
     }
@@ -507,27 +507,27 @@ public class Class5079 extends Class5046
             this.field21847 = false;
         }
         else {
-            Class7847.method25362(this.field21831);
+            Realms.setScreen(this.field21831);
         }
     }
     
     @Override
-    public boolean method15496(final char c, final int n) {
+    public boolean charTyped(final char c, final int n) {
         this.field21859.forEach(class7836 -> class7836.method25314(c2));
         return true;
     }
     
     @Override
-    public void method15383(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.field21862 = false;
         this.field21839 = null;
         this.method15413();
         this.field21832.method15510(n, n2, n3);
-        this.method15774(this.method15421() / 2 - 50, 7);
-        if (Class9513.field40930.equals(Class2223.field13686)) {
+        this.method15774(this.width() / 2 - 50, 7);
+        if (RealmsClient.field40930.equals(Class2223.field13686)) {
             this.method15795();
         }
-        if (Class9513.field40930.equals(Class2223.field13687)) {
+        if (RealmsClient.field40930.equals(Class2223.field13687)) {
             this.method15794();
         }
         if (!this.method15745()) {
@@ -543,21 +543,21 @@ public class Class5079 extends Class5046
         else {
             this.method15776(n, n2);
         }
-        super.method15383(n, n2, n3);
+        super.render(n, n2, n3);
         if (this.field21839 != null) {
             this.method15791(this.field21839, n, n2);
         }
         if (this.field21849) {
             if (!this.field21850) {
                 if (this.method15745()) {
-                    Class5046.method15419("realms:textures/gui/realms/trial_icon.png");
+                    RealmsScreen.method15419("realms:textures/gui/realms/trial_icon.png");
                     Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                     Class8726.method30059();
                     int n4 = 0;
                     if ((System.currentTimeMillis() / 800L & 0x1L) == 0x1L) {
                         n4 = 8;
                     }
-                    Class5046.method15411(this.field21866.method16929() + this.field21866.method16926() - 8 - 4, this.field21866.method16928() + this.field21866.method16927() / 2 - 4, 0.0f, (float)n4, 8, 8, 8, 16);
+                    RealmsScreen.method15411(this.field21866.method16929() + this.field21866.method16926() - 8 - 4, this.field21866.method16928() + this.field21866.method16927() / 2 - 4, 0.0f, (float)n4, 8, 8, 8, 16);
                     Class8726.method30060();
                 }
             }
@@ -565,21 +565,21 @@ public class Class5079 extends Class5046
     }
     
     private void method15774(final int n, final int n2) {
-        Class5046.method15419("realms:textures/gui/title/realms.png");
+        RealmsScreen.method15419("realms:textures/gui/title/realms.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
         Class8726.method30063(0.5f, 0.5f, 0.5f);
-        Class5046.method15411(n * 2, n2 * 2 - 5, 0.0f, 0.0f, 200, 50, 200, 50);
+        RealmsScreen.method15411(n * 2, n2 * 2 - 5, 0.0f, 0.0f, 200, 50, 200, 50);
         Class8726.method30060();
     }
     
     @Override
-    public boolean method15368(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (this.method15775(n, n2) && this.field21847) {
             this.field21847 = false;
             return this.field21848 = true;
         }
-        return super.method15368(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     private boolean method15775(final double n, final double n2) {
@@ -600,7 +600,7 @@ public class Class5079 extends Class5046
     private void method15776(final int n, final int n2) {
         final int method15777 = this.method15777();
         final int method15778 = this.method15778();
-        final String method15779 = Class5046.method15438("mco.selectServer.popup");
+        final String method15779 = RealmsScreen.getLocalizedString("mco.selectServer.popup");
         final List<String> method15780 = this.method15426(method15779, 100);
         if (!this.field21851) {
             this.field21854 = 0;
@@ -610,28 +610,28 @@ public class Class5079 extends Class5046
             if (this.method15430(this.field21832)) {
                 this.method15429(this.field21832);
             }
-            Class7847.method25381(method15779);
+            Realms.narrateNow(method15779);
         }
         if (this.field21846) {
             this.field21851 = true;
         }
         Class8726.method30068(1.0f, 1.0f, 1.0f, 0.7f);
         Class8726.method30011();
-        Class5046.method15419("realms:textures/gui/realms/darken.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/darken.png");
         Class8726.method30059();
-        Class5046.method15411(0, 32, 0.0f, 0.0f, this.method15421(), this.method15422() - 40 - 32, 310, 166);
+        RealmsScreen.method15411(0, 32, 0.0f, 0.0f, this.width(), this.height() - 40 - 32, 310, 166);
         Class8726.method30060();
         Class8726.method30012();
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class5046.method15419("realms:textures/gui/realms/popup.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/popup.png");
         Class8726.method30059();
-        Class5046.method15411(method15777, method15778, 0.0f, 0.0f, 310, 166, 310, 166);
+        RealmsScreen.method15411(method15777, method15778, 0.0f, 0.0f, 310, 166, 310, 166);
         Class8726.method30060();
         if (!Class5079.field21828.isEmpty()) {
-            Class5046.method15419(Class5079.field21828.get(this.field21854).toString());
+            RealmsScreen.method15419(Class5079.field21828.get(this.field21854).toString());
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             Class8726.method30059();
-            Class5046.method15411(method15777 + 7, method15778 + 7, 0.0f, 0.0f, 195, 152, 195, 152);
+            RealmsScreen.method15411(method15777 + 7, method15778 + 7, 0.0f, 0.0f, 195, 152, 195, 152);
             Class8726.method30060();
             if (this.field21855 % 95 >= 5) {
                 this.field21856 = false;
@@ -643,18 +643,18 @@ public class Class5079 extends Class5046
         }
         int n3 = 0;
         for (final String s : method15780) {
-            final int n4 = this.method15421() / 2 + 52;
+            final int n4 = this.width() / 2 + 52;
             ++n3;
             this.method15408(s, n4, method15778 + 10 * n3 - 3, 8421504, false);
         }
     }
     
     private int method15777() {
-        return (this.method15421() - 310) / 2;
+        return (this.width() - 310) / 2;
     }
     
     private int method15778() {
-        return this.method15422() / 2 - 80;
+        return this.height() / 2 - 80;
     }
     
     private void method15779(final int n, final int n2, final int n3, final int n4, final boolean b, final boolean b2) {
@@ -670,31 +670,31 @@ public class Class5079 extends Class5046
             this.method15412(n3 + 17, n4 - 2, n3 + 18, n4 + 18, n7, n7);
             this.method15412(n3 - 2, n4 + 17, n3 + 18, n4 + 18, n7, n7);
         }
-        Class5046.method15419("realms:textures/gui/realms/invite_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/invite_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n3, n4 - 6, (b2 && b) ? 16.0f : 0.0f, 0.0f, 15, 25, 31, 25);
+        RealmsScreen.method15411(n3, n4 - 6, (b2 && b) ? 16.0f : 0.0f, 0.0f, 15, 25, 31, 25);
         Class8726.method30060();
         if (b2 && field21841 != 0) {
             final int n8 = (Math.min(field21841, 6) - 1) * 8;
             final int n9 = (int)(Math.max(0.0f, Math.max(Class8269.method27459((10 + this.field21842) * 0.57f), Class8269.method27478(this.field21842 * 0.35f))) * -6.0f);
-            Class5046.method15419("realms:textures/gui/realms/invitation_icons.png");
+            RealmsScreen.method15419("realms:textures/gui/realms/invitation_icons.png");
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             Class8726.method30059();
-            Class5046.method15411(n3 + 4, n4 + 4 + n9, (float)n8, method15780 ? 8.0f : 0.0f, 8, 8, 48, 16);
+            RealmsScreen.method15411(n3 + 4, n4 + 4 + n9, (float)n8, method15780 ? 8.0f : 0.0f, 8, 8, 48, 16);
             Class8726.method30060();
         }
         final int n10 = n + 12;
         if (b2 && method15780) {
-            final String method15781 = Class5046.method15438((field21841 != 0) ? "mco.invites.pending" : "mco.invites.nopending");
+            final String method15781 = RealmsScreen.getLocalizedString((field21841 != 0) ? "mco.invites.pending" : "mco.invites.nopending");
             this.method15412(n10 - 3, n2 - 3, n10 + this.method15424(method15781) + 3, n2 + 8 + 3, -1073741824, -1073741824);
             this.method15425(method15781, n10, n2, -1);
         }
     }
     
     private boolean method15780(final double n, final double n2) {
-        int n3 = this.method15421() / 2 + 50;
-        int n4 = this.method15421() / 2 + 66;
+        int n3 = this.width() / 2 + 50;
+        int n4 = this.width() / 2 + 66;
         int n5 = 11;
         int n6 = 23;
         if (this.field21841 != 0) {
@@ -715,7 +715,7 @@ public class Class5079 extends Class5046
         return false;
     }
     
-    public void method15781(final Class7437 class7437, final Class5046 class7438) {
+    public void method15781(final Class7437 class7437, final RealmsScreen class7438) {
         if (class7437 != null) {
             try {
                 if (!this.field21861.tryLock(1L, TimeUnit.SECONDS)) {
@@ -733,19 +733,19 @@ public class Class5079 extends Class5046
         }
     }
     
-    private void method15782(final Class7437 class7437, final Class5046 class7438) {
+    private void method15782(final Class7437 class7437, final RealmsScreen class7438) {
         final Class5049 class7439 = new Class5049(class7438, new Class1341(this, class7438, class7437, this.field21861));
         class7439.method15466();
-        Class7847.method25362(class7439);
+        Realms.setScreen(class7439);
     }
     
     private boolean method15783(final Class7437 class7437) {
-        return class7437.field28681 != null && class7437.field28681.equals(Class7847.method25357());
+        return class7437.field28681 != null && class7437.field28681.equals(Realms.method25357());
     }
     
     private boolean method15784(final Class7437 class7437) {
         if (class7437.field28681 != null) {
-            if (class7437.field28681.equals(Class7847.method25357())) {
+            if (class7437.field28681.equals(Realms.method25357())) {
                 if (!class7437.field28684) {
                     return true;
                 }
@@ -755,19 +755,19 @@ public class Class5079 extends Class5046
     }
     
     private void method15785(final int n, final int n2, final int n3, final int n4) {
-        Class5046.method15419("realms:textures/gui/realms/expired_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/expired_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
+        RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
         Class8726.method30060();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
                     if (n4 <= n2 + 27) {
-                        if (n4 < this.method15422() - 40) {
+                        if (n4 < this.height() - 40) {
                             if (n4 > 32) {
                                 if (!this.method15745()) {
-                                    this.field21839 = Class5046.method15438("mco.selectServer.expired");
+                                    this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.expired");
                                 }
                             }
                         }
@@ -778,33 +778,33 @@ public class Class5079 extends Class5046
     }
     
     private void method15786(final int n, final int n2, final int n3, final int n4, final int i) {
-        Class5046.method15419("realms:textures/gui/realms/expires_soon_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/expires_soon_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
         if (this.field21842 % 20 >= 10) {
-            Class5046.method15411(n, n2, 10.0f, 0.0f, 10, 28, 20, 28);
+            RealmsScreen.method15411(n, n2, 10.0f, 0.0f, 10, 28, 20, 28);
         }
         else {
-            Class5046.method15411(n, n2, 0.0f, 0.0f, 10, 28, 20, 28);
+            RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 20, 28);
         }
         Class8726.method30060();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
                     if (n4 <= n2 + 27) {
-                        if (n4 < this.method15422() - 40) {
+                        if (n4 < this.height() - 40) {
                             if (n4 > 32) {
                                 if (!this.method15745()) {
                                     if (i > 0) {
                                         if (i != 1) {
-                                            this.field21839 = Class5046.method15439("mco.selectServer.expires.days", i);
+                                            this.field21839 = RealmsScreen.method15439("mco.selectServer.expires.days", i);
                                         }
                                         else {
-                                            this.field21839 = Class5046.method15438("mco.selectServer.expires.day");
+                                            this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.expires.day");
                                         }
                                     }
                                     else {
-                                        this.field21839 = Class5046.method15438("mco.selectServer.expires.soon");
+                                        this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.expires.soon");
                                     }
                                 }
                             }
@@ -816,19 +816,19 @@ public class Class5079 extends Class5046
     }
     
     private void method15787(final int n, final int n2, final int n3, final int n4) {
-        Class5046.method15419("realms:textures/gui/realms/on_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/on_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
+        RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
         Class8726.method30060();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
                     if (n4 <= n2 + 27) {
-                        if (n4 < this.method15422() - 40) {
+                        if (n4 < this.height() - 40) {
                             if (n4 > 32) {
                                 if (!this.method15745()) {
-                                    this.field21839 = Class5046.method15438("mco.selectServer.open");
+                                    this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.open");
                                 }
                             }
                         }
@@ -839,19 +839,19 @@ public class Class5079 extends Class5046
     }
     
     private void method15788(final int n, final int n2, final int n3, final int n4) {
-        Class5046.method15419("realms:textures/gui/realms/off_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/off_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
+        RealmsScreen.method15411(n, n2, 0.0f, 0.0f, 10, 28, 10, 28);
         Class8726.method30060();
         if (n3 >= n) {
             if (n3 <= n + 9) {
                 if (n4 >= n2) {
                     if (n4 <= n2 + 27) {
-                        if (n4 < this.method15422() - 40) {
+                        if (n4 < this.height() - 40) {
                             if (n4 > 32) {
                                 if (!this.method15745()) {
-                                    this.field21839 = Class5046.method15438("mco.selectServer.closed");
+                                    this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.closed");
                                 }
                             }
                         }
@@ -867,7 +867,7 @@ public class Class5079 extends Class5046
             if (n3 <= n + 28) {
                 if (n4 >= n2) {
                     if (n4 <= n2 + 28) {
-                        if (n4 < this.method15422() - 40) {
+                        if (n4 < this.height() - 40) {
                             if (n4 > 32) {
                                 if (!this.method15745()) {
                                     b = true;
@@ -878,13 +878,13 @@ public class Class5079 extends Class5046
                 }
             }
         }
-        Class5046.method15419("realms:textures/gui/realms/leave_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/leave_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n, n2, (!b) ? 0.0f : 28.0f, 0.0f, 28, 28, 56, 28);
+        RealmsScreen.method15411(n, n2, (!b) ? 0.0f : 28.0f, 0.0f, 28, 28, 56, 28);
         Class8726.method30060();
         if (b) {
-            this.field21839 = Class5046.method15438("mco.selectServer.leave");
+            this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.leave");
         }
     }
     
@@ -894,7 +894,7 @@ public class Class5079 extends Class5046
             if (n3 <= n + 28) {
                 if (n4 >= n2) {
                     if (n4 <= n2 + 28) {
-                        if (n4 < this.method15422() - 40) {
+                        if (n4 < this.height() - 40) {
                             if (n4 > 32) {
                                 if (!this.method15745()) {
                                     b = true;
@@ -905,13 +905,13 @@ public class Class5079 extends Class5046
                 }
             }
         }
-        Class5046.method15419("realms:textures/gui/realms/configure_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/configure_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n, n2, (!b) ? 0.0f : 28.0f, 0.0f, 28, 28, 56, 28);
+        RealmsScreen.method15411(n, n2, (!b) ? 0.0f : 28.0f, 0.0f, 28, 28, 56, 28);
         Class8726.method30060();
         if (b) {
-            this.field21839 = Class5046.method15438("mco.selectServer.configure");
+            this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.configure");
         }
     }
     
@@ -949,13 +949,13 @@ public class Class5079 extends Class5046
                 }
             }
         }
-        Class5046.method15419("realms:textures/gui/realms/questionmark.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/questionmark.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n3, n4, b ? 20.0f : 0.0f, 0.0f, 20, 20, 40, 20);
+        RealmsScreen.method15411(n3, n4, b ? 20.0f : 0.0f, 0.0f, 20, 20, 40, 20);
         Class8726.method30060();
         if (b2) {
-            this.field21839 = Class5046.method15438("mco.selectServer.info");
+            this.field21839 = RealmsScreen.getLocalizedString("mco.selectServer.info");
         }
     }
     
@@ -970,7 +970,7 @@ public class Class5079 extends Class5046
                 }
             }
         }
-        Class5046.method15419("realms:textures/gui/realms/news_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/news_icon.png");
         if (!b3) {
             Class8726.method30068(0.5f, 0.5f, 0.5f, 1.0f);
         }
@@ -978,20 +978,20 @@ public class Class5079 extends Class5046
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         }
         Class8726.method30059();
-        Class5046.method15411(n3, n4, (b3 && b2) ? 20.0f : 0.0f, 0.0f, 20, 20, 40, 20);
+        RealmsScreen.method15411(n3, n4, (b3 && b2) ? 20.0f : 0.0f, 0.0f, 20, 20, 40, 20);
         Class8726.method30060();
         if (b4) {
             if (b3) {
-                this.field21839 = Class5046.method15438("mco.news");
+                this.field21839 = RealmsScreen.getLocalizedString("mco.news");
             }
         }
         if (b) {
             if (b3) {
                 final int n5 = b4 ? 0 : ((int)(Math.max(0.0f, Math.max(Class8269.method27459((10 + this.field21842) * 0.57f), Class8269.method27478(this.field21842 * 0.35f))) * -6.0f));
-                Class5046.method15419("realms:textures/gui/realms/invitation_icons.png");
+                RealmsScreen.method15419("realms:textures/gui/realms/invitation_icons.png");
                 Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                 Class8726.method30059();
-                Class5046.method15411(n3 + 10, n4 + 2 + n5, 40.0f, 0.0f, 8, 8, 48, 16);
+                RealmsScreen.method15411(n3 + 10, n4 + 2 + n5, 40.0f, 0.0f, 8, 8, 48, 16);
                 Class8726.method30060();
             }
         }
@@ -1000,7 +1000,7 @@ public class Class5079 extends Class5046
     private void method15794() {
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class8726.method30065((float)(this.method15421() / 2 - 25), 20.0f, 0.0f);
+        Class8726.method30065((float)(this.width() / 2 - 25), 20.0f, 0.0f);
         Class8726.method30062(-20.0f, 0.0f, 0.0f, 1.0f);
         Class8726.method30063(1.5f, 1.5f, 1.5f);
         this.method15407("LOCAL!", 0, 0, 8388479);
@@ -1010,7 +1010,7 @@ public class Class5079 extends Class5046
     private void method15795() {
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class8726.method30065((float)(this.method15421() / 2 - 25), 20.0f, 0.0f);
+        Class8726.method30065((float)(this.width() / 2 - 25), 20.0f, 0.0f);
         Class8726.method30062(-20.0f, 0.0f, 0.0f, 1.0f);
         Class8726.method30063(1.5f, 1.5f, 1.5f);
         this.method15407("STAGE!", 0, 0, -256);

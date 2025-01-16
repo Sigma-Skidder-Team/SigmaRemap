@@ -46,7 +46,7 @@ public class Class5029 implements IProfiler
     
     @Override
     public void method15295() {
-        this.field21555 = (Class869.method5277().method5327() == this);
+        this.field21555 = (Minecraft.method5277().method5327() == this);
         this.field21556 = (this.field21555 && Class9036.method32483());
         this.field21557 = (this.field21555 && Config.method28953());
         this.field21553.field25880.method15295();

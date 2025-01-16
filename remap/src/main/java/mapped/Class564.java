@@ -11,14 +11,14 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 
-public class Class564 extends Class565 implements Class563, Class574
+public class Class564 extends Class565 implements Class563, IGuiEventListener
 {
     private static final ResourceLocation field3351;
     private final List<Class588> field3352;
     private boolean field3353;
     private int field3354;
     private int field3355;
-    private Class869 field3356;
+    private Minecraft field3356;
     private Class9586 field3357;
     private Class3662<?> field3358;
     private float field3359;
@@ -28,7 +28,7 @@ public class Class564 extends Class565 implements Class563, Class574
         this.field3352 = Lists.newArrayList();
     }
     
-    public void method3280(final Class869 field3356, final Class9586 field3357, final int field3358, final int field3359, final int n, final int n2, final float n3) {
+    public void method3280(final Minecraft field3356, final Class9586 field3357, final int field3358, final int field3359, final int n, final int n2, final float n3) {
         this.field3356 = field3356;
         this.field3357 = field3357;
         if (field3356.field4684.field3009 instanceof Class3429) {
@@ -76,7 +76,7 @@ public class Class564 extends Class565 implements Class563, Class574
     }
     
     @Override
-    public boolean method3281(final boolean b) {
+    public boolean changeFocus(final boolean b) {
         return false;
     }
     
@@ -89,10 +89,10 @@ public class Class564 extends Class565 implements Class563, Class574
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 == 0) {
             for (final Class588 class588 : this.field3352) {
-                if (!class588.method2982(n, n2, n3)) {
+                if (!class588.mouseClicked(n, n2, n3)) {
                     continue;
                 }
                 this.field3358 = Class588.method3457(class588);
@@ -104,7 +104,7 @@ public class Class564 extends Class565 implements Class563, Class574
     }
     
     @Override
-    public boolean method3055(final double n, final double n2) {
+    public boolean isMouseOver(final double n, final double n2) {
         return false;
     }
     

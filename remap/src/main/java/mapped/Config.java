@@ -55,7 +55,7 @@ public class Config
     public static boolean field36025;
     public static boolean field36026;
     private static Class5760 field36027;
-    private static Class869 field36028;
+    private static Minecraft field36028;
     private static boolean field36029;
     private static Thread field36030;
     private static int field36031;
@@ -108,12 +108,12 @@ public class Config
         method28818();
         Config.field36030 = Thread.currentThread();
         method28832();
-        Class9216.method33746(Class869.method5277());
+        Class9216.method33746(Minecraft.method5277());
     }
     
     public static void method28818() {
         if (!Config.field36029) {
-            if (Class869.method5277().method5332() != null) {
+            if (Minecraft.method5277().method5332() != null) {
                 Config.field36029 = true;
                 method28819();
                 method28835();
@@ -536,7 +536,7 @@ public class Config
     }
     
     public static Class1790 method28860() {
-        return Config.field36028.method5307().field9956;
+        return Config.field36028.getItemRenderer().field9956;
     }
     
     public static boolean method28861() {
@@ -736,7 +736,7 @@ public class Config
         return "";
     }
     
-    public static Class869 method28894() {
+    public static Minecraft method28894() {
         return Config.field36028;
     }
     
@@ -1344,7 +1344,7 @@ public class Config
     }
     
     public static void method28988() {
-        Config.field36028.field4643.method6610("" + Class9570.method35833(Class9570.field41444, -1) + "/" + method28989() + " fps, C: " + Config.field36028.field4636.method5757() + ", E: " + Config.field36028.field4636.method5758() + "+" + Config.field36028.field4636.method5759() + ", U: " + method28990(Config.field36028.field4707), 2.0f, 2.0f, -2039584);
+        Config.field36028.fontRenderer.method6610("" + Class9570.method35833(Class9570.field41444, -1) + "/" + method28989() + " fps, C: " + Config.field36028.field4636.method5757() + ", E: " + Config.field36028.field4636.method5758() + "+" + Config.field36028.field4636.method5759() + ", U: " + method28990(Config.field36028.field4707), 2.0f, 2.0f, -2039584);
     }
     
     public static int method28989() {
@@ -1591,7 +1591,7 @@ public class Config
         Config.field36025 = false;
         Config.field36026 = false;
         Config.field36027 = null;
-        Config.field36028 = Class869.method5277();
+        Config.field36028 = Minecraft.method5277();
         Config.field36029 = false;
         Config.field36030 = null;
         Config.field36031 = 0;

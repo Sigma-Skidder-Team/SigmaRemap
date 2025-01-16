@@ -10,11 +10,11 @@ import java.util.HashMap;
 public class Class8434
 {
     private static String[] field34664;
-    private Class869 field34665;
+    private Minecraft field34665;
     private HashMap<Integer, Date> field34666;
     
     public Class8434() {
-        this.field34665 = Class869.method5277();
+        this.field34665 = Minecraft.method5277();
         this.field34666 = new HashMap<Integer, Date>();
     }
     

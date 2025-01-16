@@ -76,7 +76,7 @@ public class Class3181 extends Class3167
                     return;
                 }
                 if (Class9463.method35173().method35193().method32154() != null && Class9463.method35173().method35193().method32154().method14230()) {
-                    final Class350[] field23460 = Class869.method5277().field4648.field23460;
+                    final Class350[] field23460 = Minecraft.method5277().field4648.field23460;
                     for (int length = field23460.length, i = 0; i < length; ++i) {
                         field23460[i].field2162 = false;
                     }

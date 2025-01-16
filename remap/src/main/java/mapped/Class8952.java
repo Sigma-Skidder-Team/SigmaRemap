@@ -33,7 +33,7 @@ public class Class8952
             Class8726.method30044(method31762(s, s2));
         }
         else {
-            Class5046.method15419("textures/gui/presets/isles.png");
+            RealmsScreen.method15419("textures/gui/presets/isles.png");
         }
     }
     
@@ -49,7 +49,7 @@ public class Class8952
     }
     
     private static void method31760(final UUID uuid) {
-        Class5046.method15419(((uuid.hashCode() & 0x1) != 0x1) ? "minecraft:textures/entity/steve.png" : "minecraft:textures/entity/alex.png");
+        RealmsScreen.method15419(((uuid.hashCode() & 0x1) != 0x1) ? "minecraft:textures/entity/steve.png" : "minecraft:textures/entity/alex.png");
     }
     
     private static void method31761(final String s) {

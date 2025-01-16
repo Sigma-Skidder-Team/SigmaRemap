@@ -23,24 +23,24 @@ import java.util.List;
 import java.util.Set;
 import org.apache.logging.log4j.Logger;
 
-public abstract class Class527 extends Class598 implements Class563
+public abstract class Screen extends Class598 implements Class563
 {
     private static final Logger field3146;
     private static final Set<String> field3147;
     public final ITextComponent field3148;
-    public final List<Class574> field3149;
-    public Class869 field3150;
-    public Class1796 field3151;
-    public int field3152;
-    public int field3153;
-    public final List<Class573> field3154;
+    public final List<IGuiEventListener> children;
+    public Minecraft minecraft;
+    public Class1796 itemRenderer;
+    public int width;
+    public int height;
+    public final List<Class573> buttons;
     public boolean field3155;
-    public Class1844 field3156;
+    public Class1844 font;
     private URI field3157;
     
-    public Class527(final ITextComponent field3148) {
-        this.field3149 = Lists.newArrayList();
-        this.field3154 = Lists.newArrayList();
+    public Screen(final ITextComponent field3148) {
+        this.children = Lists.newArrayList();
+        this.buttons = Lists.newArrayList();
         this.field3148 = field3148;
     }
     
@@ -54,23 +54,23 @@ public abstract class Class527 extends Class598 implements Class563
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        for (int i = 0; i < this.field3154.size(); ++i) {
-            this.field3154.get(i).method2975(n, n2, n3);
+        for (int i = 0; i < this.buttons.size(); ++i) {
+            this.buttons.get(i).method2975(n, n2, n3);
         }
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (n == 256 && this.method2989()) {
             this.method3028();
             return true;
         }
         if (n != 258) {
-            return super.method2972(n, n2, n3);
+            return super.keyPressed(n, n2, n3);
         }
         final boolean b = !method3047();
-        if (!this.method3281(b)) {
-            this.method3281(b);
+        if (!this.changeFocus(b)) {
+            this.changeFocus(b);
         }
         return true;
     }
@@ -80,12 +80,12 @@ public abstract class Class527 extends Class598 implements Class563
     }
     
     public void method3028() {
-        this.field3150.method5244(null);
+        this.minecraft.method5244(null);
     }
     
     public <T extends Class573> T method3029(final T t) {
-        this.field3154.add(t);
-        this.field3149.add(t);
+        this.buttons.add(t);
+        this.children.add(t);
         return t;
     }
     
@@ -94,7 +94,7 @@ public abstract class Class527 extends Class598 implements Class563
     }
     
     public List<String> method3030(final ItemStack class8321) {
-        final List<ITextComponent> method27668 = class8321.method27668(this.field3150.field4684, this.field3150.field4648.field23394 ? Class1980.field10973 : Class1980.field10972);
+        final List<ITextComponent> method27668 = class8321.method27668(this.minecraft.field4684, this.minecraft.field4648.field23394 ? Class1980.field10973 : Class1980.field10972);
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<ITextComponent> iterator = method27668.iterator();
         while (iterator.hasNext()) {
@@ -114,7 +114,7 @@ public abstract class Class527 extends Class598 implements Class563
             int n3 = 0;
             final Iterator iterator = list.iterator();
             while (iterator.hasNext()) {
-                final int method6617 = this.field3156.method6617((String)iterator.next());
+                final int method6617 = this.font.method6617((String)iterator.next());
                 if (method6617 <= n3) {
                     continue;
                 }
@@ -126,14 +126,14 @@ public abstract class Class527 extends Class598 implements Class563
             if (list.size() > 1) {
                 n6 += 2 + (list.size() - 1) * 10;
             }
-            if (n4 + n3 > this.field3152) {
+            if (n4 + n3 > this.width) {
                 n4 -= 28 + n3;
             }
-            if (n5 + n6 + 6 > this.field3153) {
-                n5 = this.field3153 - n6 - 6;
+            if (n5 + n6 + 6 > this.height) {
+                n5 = this.height - n6 - 6;
             }
             this.method3304(300);
-            this.field3151.field9952 = 300.0f;
+            this.itemRenderer.field9952 = 300.0f;
             this.method3189(n4 - 3, n5 - 4, n4 + n3 + 3, n5 - 3, -267386864, -267386864);
             this.method3189(n4 - 3, n5 + n6 + 3, n4 + n3 + 3, n5 + n6 + 4, -267386864, -267386864);
             this.method3189(n4 - 3, n5 - 3, n4 + n3 + 3, n5 + n6 + 3, -267386864, -267386864);
@@ -145,12 +145,12 @@ public abstract class Class527 extends Class598 implements Class563
             this.method3189(n4 - 3, n5 + n6 + 2, n4 + n3 + 3, n5 + n6 + 3, 1344798847, 1344798847);
             final Class7351 class7351 = new Class7351();
             final Class7808 method6618 = Class7807.method25212(Class7392.method22694().method22696());
-            class7351.method22564(0.0, 0.0, this.field3151.field9952);
+            class7351.method22564(0.0, 0.0, this.itemRenderer.field9952);
             final Matrix4f method6619 = class7351.method22569().method32111();
             for (int i = 0; i < list.size(); ++i) {
                 final String s = list.get(i);
                 if (s != null) {
-                    this.field3156.method6613(s, (float)n4, (float)n5, -1, true, method6619, method6618, false, 0, 15728880);
+                    this.font.method6613(s, (float)n4, (float)n5, -1, true, method6619, method6618, false, 0, 15728880);
                 }
                 if (i == 0) {
                     n5 += 2;
@@ -159,7 +159,7 @@ public abstract class Class527 extends Class598 implements Class563
             }
             method6618.method25216();
             this.method3304(0);
-            this.field3151.field9952 = 0.0f;
+            this.itemRenderer.field9952 = 0.0f;
             Class8726.method30008();
             Class8726.method30046();
         }
@@ -185,7 +185,7 @@ public abstract class Class527 extends Class598 implements Class563
                 }
             }
             else if (method30411.method34911() == Class1961.field10699) {
-                if (this.field3150.field4648.field23394) {
+                if (this.minecraft.field4648.field23394) {
                     try {
                         final CompoundNBT method30413 = Class5704.method16938(method30411.method34912().getString());
                         final ArrayList arrayList = Lists.newArrayList();
@@ -205,7 +205,7 @@ public abstract class Class527 extends Class598 implements Class563
                 }
             }
             else if (method30411.method34911() == Class1961.field10697) {
-                this.method3032(this.field3150.field4643.method6626(method30411.method34912().getFormattedText(), Math.max(this.field3152 / 2, 200)), n, n2);
+                this.method3032(this.minecraft.fontRenderer.method6626(method30411.method34912().getFormattedText(), Math.max(this.width / 2, 200)), n, n2);
             }
         }
     }
@@ -225,7 +225,7 @@ public abstract class Class527 extends Class598 implements Class563
         }
         else if (method30410 != null) {
             if (method30410.method35309() == Class2075.field11971) {
-                if (!this.field3150.field4648.field23417) {
+                if (!this.minecraft.field4648.field23417) {
                     return false;
                 }
                 try {
@@ -234,19 +234,19 @@ public abstract class Class527 extends Class598 implements Class563
                     if (scheme == null) {
                         throw new URISyntaxException(method30410.method35310(), "Missing protocol");
                     }
-                    if (!Class527.field3147.contains(scheme.toLowerCase(Locale.ROOT))) {
+                    if (!Screen.field3147.contains(scheme.toLowerCase(Locale.ROOT))) {
                         throw new URISyntaxException(method30410.method35310(), "Unsupported protocol: " + scheme.toLowerCase(Locale.ROOT));
                     }
-                    if (this.field3150.field4648.field23418) {
+                    if (this.minecraft.field4648.field23418) {
                         this.field3157 = field3157;
-                        this.field3150.method5244(new Class547(this::method3044, method30410.method35310(), false));
+                        this.minecraft.method5244(new Class547(this::method3044, method30410.method35310(), false));
                     }
                     else {
                         this.method3045(field3157);
                     }
                 }
                 catch (final URISyntaxException ex) {
-                    Class527.field3146.error("Can't open url for {}", (Object)method30410, (Object)ex);
+                    Screen.field3146.error("Can't open url for {}", (Object)method30410, (Object)ex);
                 }
             }
             else if (method30410.method35309() == Class2075.field11972) {
@@ -259,10 +259,10 @@ public abstract class Class527 extends Class598 implements Class563
                 this.method3037(method30410.method35310(), false);
             }
             else if (method30410.method35309() == Class2075.field11976) {
-                this.field3150.field4651.method22508(method30410.method35310());
+                this.minecraft.field4651.method22508(method30410.method35310());
             }
             else {
-                Class527.field3146.error("Don't know how to handle {}", (Object)method30410);
+                Screen.field3146.error("Don't know how to handle {}", (Object)method30410);
             }
             return true;
         }
@@ -275,64 +275,64 @@ public abstract class Class527 extends Class598 implements Class563
     
     public void method3037(final String s, final boolean b) {
         if (b) {
-            this.field3150.field4647.method3807().method3766(s);
+            this.minecraft.field4647.method3807().method3766(s);
         }
-        this.field3150.field4684.method4114(s);
+        this.minecraft.field4684.method4114(s);
     }
     
-    public void method3038(final Class869 field3150, final int field3151, final int field3152) {
-        this.field3150 = field3150;
-        this.field3151 = field3150.method5307();
-        this.field3156 = field3150.field4643;
-        this.field3152 = field3151;
-        this.field3153 = field3152;
-        this.field3154.clear();
-        this.field3149.clear();
-        this.method3470(null);
-        this.method2969();
+    public void init(final Minecraft field3150, final int field3151, final int field3152) {
+        this.minecraft = field3150;
+        this.itemRenderer = field3150.getItemRenderer();
+        this.font = field3150.fontRenderer;
+        this.width = field3151;
+        this.height = field3152;
+        this.buttons.clear();
+        this.children.clear();
+        this.setFocused(null);
+        this.init();
     }
     
-    public void method3039(final int field3152, final int field3153) {
-        this.field3152 = field3152;
-        this.field3153 = field3153;
+    public void setSize(final int field3152, final int field3153) {
+        this.width = field3152;
+        this.height = field3153;
     }
     
     @Override
-    public List<? extends Class574> method3040() {
-        return this.field3149;
+    public List<? extends IGuiEventListener> children() {
+        return this.children;
     }
     
-    public void method2969() {
+    public void init() {
     }
     
-    public void method2992() {
+    public void tick() {
     }
     
-    public void method2971() {
+    public void removed() {
     }
     
-    public void method3041() {
-        this.method3042(0);
+    public void renderBackground() {
+        this.renderBackground(0);
     }
     
-    public void method3042(final int n) {
-        if (this.field3150.field4683 == null) {
+    public void renderBackground(final int n) {
+        if (this.minecraft.world == null) {
             this.method3043(n);
         }
         else {
-            this.method3189(0, 0, this.field3152, this.field3153, -1072689136, -804253680);
+            this.method3189(0, 0, this.width, this.height, -1072689136, -804253680);
         }
     }
     
     public void method3043(final int n) {
         final Class7392 method22694 = Class7392.method22694();
         final Class4148 method22695 = method22694.method22696();
-        this.field3150.method5290().method5849(Class527.field3361);
+        this.minecraft.method5290().method5849(Screen.field3361);
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         method22695.method12390(7, Class9237.field39619);
-        method22695.method12432(0.0, this.field3153, 0.0).method12391(0.0f, this.field3153 / 32.0f + n).method12399(64, 64, 64, 255).method12397();
-        method22695.method12432(this.field3152, this.field3153, 0.0).method12391(this.field3152 / 32.0f, this.field3153 / 32.0f + n).method12399(64, 64, 64, 255).method12397();
-        method22695.method12432(this.field3152, 0.0, 0.0).method12391(this.field3152 / 32.0f, (float)n).method12399(64, 64, 64, 255).method12397();
+        method22695.method12432(0.0, this.height, 0.0).method12391(0.0f, this.height / 32.0f + n).method12399(64, 64, 64, 255).method12397();
+        method22695.method12432(this.width, this.height, 0.0).method12391(this.width / 32.0f, this.height / 32.0f + n).method12399(64, 64, 64, 255).method12397();
+        method22695.method12432(this.width, 0.0, 0.0).method12391(this.width / 32.0f, (float)n).method12399(64, 64, 64, 255).method12397();
         method22695.method12432(0.0, 0.0, 0.0).method12391(0.0f, (float)n).method12399(64, 64, 64, 255).method12397();
         method22694.method22695();
     }
@@ -346,7 +346,7 @@ public abstract class Class527 extends Class598 implements Class563
             this.method3045(this.field3157);
         }
         this.field3157 = null;
-        this.field3150.method5244(this);
+        this.minecraft.method5244(this);
     }
     
     private void method3045(final URI uri) {
@@ -354,18 +354,18 @@ public abstract class Class527 extends Class598 implements Class563
     }
     
     public static boolean method3046() {
-        if (!Class869.field4623) {
-            return Class8341.method27798(Class869.method5277().method5332().method7690(), 341) || Class8341.method27798(Class869.method5277().method5332().method7690(), 345);
+        if (!Minecraft.field4623) {
+            return Class8341.method27798(Minecraft.method5277().method5332().method7690(), 341) || Class8341.method27798(Minecraft.method5277().method5332().method7690(), 345);
         }
-        return Class8341.method27798(Class869.method5277().method5332().method7690(), 343) || Class8341.method27798(Class869.method5277().method5332().method7690(), 347);
+        return Class8341.method27798(Minecraft.method5277().method5332().method7690(), 343) || Class8341.method27798(Minecraft.method5277().method5332().method7690(), 347);
     }
     
     public static boolean method3047() {
-        return Class8341.method27798(Class869.method5277().method5332().method7690(), 340) || Class8341.method27798(Class869.method5277().method5332().method7690(), 344);
+        return Class8341.method27798(Minecraft.method5277().method5332().method7690(), 340) || Class8341.method27798(Minecraft.method5277().method5332().method7690(), 344);
     }
     
     public static boolean method3048() {
-        return Class8341.method27798(Class869.method5277().method5332().method7690(), 342) || Class8341.method27798(Class869.method5277().method5332().method7690(), 346);
+        return Class8341.method27798(Minecraft.method5277().method5332().method7690(), 342) || Class8341.method27798(Minecraft.method5277().method5332().method7690(), 346);
     }
     
     public static boolean method3049(final int n) {
@@ -420,8 +420,8 @@ public abstract class Class527 extends Class598 implements Class563
         return false;
     }
     
-    public void method2970(final Class869 class869, final int n, final int n2) {
-        this.method3038(class869, n, n2);
+    public void method2970(final Minecraft class869, final int n, final int n2) {
+        this.init(class869, n, n2);
     }
     
     public static void method3053(final Runnable runnable, final String s, final String s2) {
@@ -464,7 +464,7 @@ public abstract class Class527 extends Class598 implements Class563
     }
     
     @Override
-    public boolean method3055(final double n, final double n2) {
+    public boolean isMouseOver(final double n, final double n2) {
         return true;
     }
     

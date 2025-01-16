@@ -78,10 +78,10 @@ public class Class7816 extends Class7814
             }
             if (class5723.method16998() instanceof Class4372) {
                 final Class4372 class5724 = (Class4372)class5723.method16998();
-                if (!(class5724.getEntity(Class7816.field32015.field4683) instanceof PlayerEntity)) {
+                if (!(class5724.getEntity(Class7816.field32015.world) instanceof PlayerEntity)) {
                     return;
                 }
-                final Entity method13142 = class5724.getEntity(Class7816.field32015.field4683);
+                final Entity method13142 = class5724.getEntity(Class7816.field32015.world);
                 final boolean method13143 = Class6430.method19160(method13142, 0.5f);
                 final short method13144 = class5724.getY();
                 if (!this.field32023.containsKey(method13142)) {
@@ -143,10 +143,10 @@ public class Class7816 extends Class7814
     }
     
     public boolean method25255(final Entity class399) {
-        if (!Class7816.field32015.field4683.getBlockState(class399.method1894()).method21723()) {
+        if (!Class7816.field32015.world.getBlockState(class399.method1894()).method21723()) {
             final AxisAlignedBB class400 = new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - 0.5, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ);
             for (final BlockPos class401 : method25256(class399)) {
-                final VoxelShape method21725 = Class7816.field32015.field4683.getBlockState(class401).method21725(Class7816.field32015.field4683, class401);
+                final VoxelShape method21725 = Class7816.field32015.world.getBlockState(class401).method21725(Class7816.field32015.world, class401);
                 if (!method21725.isEmpty() && class400.intersects(method21725.getBoundingBox().offset(class401))) {
                     return true;
                 }

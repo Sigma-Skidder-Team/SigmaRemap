@@ -5,7 +5,7 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.Comparator;
+
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.ConcurrentHashMap;
@@ -202,7 +202,7 @@ public class Class9057
     }
     
     private void method32605(final List<Class7437> list) {
-        list.sort(new Class4437(Class7847.method25358()));
+        list.sort(new Class4437(Realms.method25358()));
     }
     
     private boolean method32606() {

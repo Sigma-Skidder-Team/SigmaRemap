@@ -159,7 +159,7 @@ public class Class1907 extends AbstractChunkProvider
     
     @Override
     public void method7420(final Class237 class237, final Class353 class238) {
-        Class869.method5277().field4636.method5740(class238.method1102(), class238.method1103(), class238.method1104());
+        Minecraft.method5277().field4636.method5740(class238.method1102(), class238.method1103(), class238.method1104());
     }
     
     @Override

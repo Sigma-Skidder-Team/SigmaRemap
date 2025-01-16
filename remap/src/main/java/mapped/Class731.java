@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.Objects;
 
-public class Class731 extends Class527 implements Class732
+public class Class731 extends Screen implements Class732
 {
     private String field3985;
     private String field3986;
@@ -17,7 +17,7 @@ public class Class731 extends Class527 implements Class732
     private Class9103 field3989;
     
     public Class731() {
-        super(Class7895.field32402);
+        super(NarratorChatListener.EMPTY);
         this.field3985 = "";
         this.field3986 = "";
         this.field3989 = Class9203.method33675();
@@ -58,24 +58,24 @@ public class Class731 extends Class527 implements Class732
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         if (!this.field3988) {
-            if (this.field3989 != null && this.field3150.field4683 == null) {
-                this.field3989.method32901(this.field3152, this.field3153);
+            if (this.field3989 != null && this.minecraft.world == null) {
+                this.field3989.method32901(this.width, this.height);
             }
             else {
-                this.method3041();
+                this.renderBackground();
             }
             if (this.field3987 > 0) {
-                this.method3295(this.field3156, this.field3985, this.field3152 / 2, 70, 16777215);
+                this.method3295(this.font, this.field3985, this.width / 2, 70, 16777215);
                 if (!Objects.equals(this.field3986, "")) {
                     if (this.field3987 != 0) {
-                        this.method3295(this.field3156, this.field3986 + " " + this.field3987 + "%", this.field3152 / 2, 90, 16777215);
+                        this.method3295(this.font, this.field3986 + " " + this.field3987 + "%", this.width / 2, 90, 16777215);
                     }
                 }
             }
             super.method2975(n, n2, n3);
         }
-        else if (!this.field3150.method5311()) {
-            this.field3150.method5244(null);
+        else if (!this.minecraft.method5311()) {
+            this.minecraft.method5244(null);
         }
     }
 }

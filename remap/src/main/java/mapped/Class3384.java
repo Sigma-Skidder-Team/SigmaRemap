@@ -22,7 +22,7 @@ public class Class3384 extends Class3167
                     if (Class9463.method35173().method35191().method31751(class5740)) {
                         continue;
                     }
-                    method10800(class5740.lastTickPosX + (class5740.posX - class5740.lastTickPosX) * Class869.method5277().field4633.field26528, class5740.lastTickPosY + class5740.method1931() + (class5740.posY - class5740.lastTickPosY) * Class869.method5277().field4633.field26528, class5740.lastTickPosZ + (class5740.posZ - class5740.lastTickPosZ) * Class869.method5277().field4633.field26528, class5740);
+                    method10800(class5740.lastTickPosX + (class5740.posX - class5740.lastTickPosX) * Minecraft.method5277().field4633.field26528, class5740.lastTickPosY + class5740.method1931() + (class5740.posY - class5740.lastTickPosY) * Minecraft.method5277().field4633.field26528, class5740.lastTickPosZ + (class5740.posZ - class5740.lastTickPosZ) * Minecraft.method5277().field4633.field26528, class5740);
                 }
             }
         }

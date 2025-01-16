@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.text.ITextComponent;
 
-public class Class722 extends Class527
+public class Class722 extends Screen
 {
     private static String[] field3945;
     

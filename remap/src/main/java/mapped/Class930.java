@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Collection;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.List;
@@ -20,15 +19,15 @@ public class Class930 extends Thread
     
     @Override
     public void run() {
-        Class9513.method35444();
+        RealmsClient.func_224911_a();
         try {
-            Class7847.method25361(() -> {
-                final Class9513 class2331;
+            Realms.method25361(() -> {
+                final RealmsClient class2331;
                 final Object o = class2331.method35474().field28597.stream().map(p0 -> {}).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList());
                 Class5073.method15664(this.field4918).method15536(list);
             });
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             Class5073.method15662().error("Couldn't list invites");
         }
         finally {

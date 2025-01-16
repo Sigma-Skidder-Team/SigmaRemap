@@ -6,7 +6,7 @@ package mapped;
 
 public class Class4927 extends Class4800
 {
-    private static Class869 field21081;
+    private static Minecraft field21081;
     public Class4899 field21082;
     
     public Class4927() {
@@ -24,6 +24,6 @@ public class Class4927 extends Class4800
     }
     
     static {
-        Class4927.field21081 = Class869.method5277();
+        Class4927.field21081 = Minecraft.method5277();
     }
 }

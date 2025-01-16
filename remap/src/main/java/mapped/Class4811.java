@@ -56,9 +56,9 @@ public class Class4811 extends Class4803
                 this.method14351(new Class4926());
             }
         });
-        this.field20570.method14260((class4803, n) -> this.method14350(new Class544(Class869.method5277().field4700)));
-        this.field20571.method14260((class4803, n) -> this.method14350(new Class721(Class869.method5277().field4700)));
-        this.field20573.method14260((class4803, n) -> this.method14350(new Class550(Class869.method5277().field4700, Class869.method5277().field4648)));
+        this.field20570.method14260((class4803, n) -> this.method14350(new Class544(Minecraft.method5277().field4700)));
+        this.field20571.method14260((class4803, n) -> this.method14350(new Class721(Minecraft.method5277().field4700)));
+        this.field20573.method14260((class4803, n) -> this.method14350(new Class550(Minecraft.method5277().field4700, Minecraft.method5277().field4648)));
         this.field20574.method14260((class4803, n) -> this.method14351(new Class4934()));
         this.field20572.method14260((class4803, n) -> this.method14348());
         this.field20578.method14260((class4803, n) -> {
@@ -105,8 +105,8 @@ public class Class4811 extends Class4803
         Class9463.method35173().method35196().method32830("clicksound");
     }
     
-    public void method14350(final Class527 class527) {
-        Class869.method5277().method5244(class527);
+    public void method14350(final Screen class527) {
+        Minecraft.method5277().method5244(class527);
         this.method14349();
     }
     

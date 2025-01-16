@@ -18,7 +18,7 @@ import java.util.List;
 public class Class8491
 {
     private static String[] field34855;
-    public Class869 field34856;
+    public Minecraft field34856;
     public List<BlockPos> field34857;
     public static List<Entity> field34858;
     public static int field34859;
@@ -29,7 +29,7 @@ public class Class8491
     public boolean field34864;
     
     public Class8491() {
-        this.field34856 = Class869.method5277();
+        this.field34856 = Minecraft.method5277();
         this.field34857 = new ArrayList<BlockPos>();
         this.field34863 = false;
         this.field34860 = new Class7614(this);
@@ -90,8 +90,8 @@ public class Class8491
     @Class6753
     @Class6763
     public void method28370(final Class5753 class5753) {
-        if (this.field34856.field4683 != null && this.field34856.field4684 != null) {
-            final Block method21696 = this.field34856.field4683.getBlockState(class5753.method17064()).method21696();
+        if (this.field34856.world != null && this.field34856.field4684 != null) {
+            final Block method21696 = this.field34856.world.getBlockState(class5753.method17064()).method21696();
             if (Class9367.method34762() == Class7906.field32452.method25613()) {
                 if (method21696 instanceof Class3971) {
                     class5753.method17067(VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, 1.0, 1.0));
@@ -143,9 +143,9 @@ public class Class8491
         this.field34860.method23920();
         for (int j = -5; j < 5; ++j) {
             for (int k = -5; k < 5; ++k) {
-                final Class1862 method6686 = this.field34856.field4683.method6686(this.field34856.field4684.chunkCoordX + j, this.field34856.field4684.chunkCoordZ + k);
+                final Class1862 method6686 = this.field34856.world.method6686(this.field34856.field4684.chunkCoordX + j, this.field34856.field4684.chunkCoordZ + k);
                 if (method6686 instanceof Class1864) {
-                    this.field34856.field4683.method6835().field10344.method34013(this.field34856.field4683.method6835().field10344.method34012(this.field34856.field4684.chunkCoordX + j, this.field34856.field4684.chunkCoordZ + k), new Class1863(this.field34856.field4683, new Class7859(this.field34856.field4684.chunkCoordX + j, this.field34856.field4684.chunkCoordZ + k), method6686.method7024().clone()));
+                    this.field34856.world.method6835().field10344.method34013(this.field34856.world.method6835().field10344.method34012(this.field34856.field4684.chunkCoordX + j, this.field34856.field4684.chunkCoordZ + k), new Class1863(this.field34856.world, new Class7859(this.field34856.field4684.chunkCoordX + j, this.field34856.field4684.chunkCoordZ + k), method6686.method7024().clone()));
                 }
             }
         }
@@ -182,13 +182,13 @@ public class Class8491
                 if (class5724.method13247() != null) {
                     if (Class9463.method35173().method35189().method21551(Class3296.class).method9906() || Class9367.method34762() == Class7906.field32452.method25613()) {
                         if (!(class5724.method13247().getItem() instanceof Class4100)) {
-                            final Entity method6741 = this.field34856.field4683.getEntityByID(class5724.method13248());
+                            final Entity method6741 = this.field34856.world.getEntityByID(class5724.method13248());
                             if (Class8491.field34858.contains(method6741)) {
                                 Class8491.field34858.remove(method6741);
                             }
                         }
                         else {
-                            final Entity method6742 = this.field34856.field4683.getEntityByID(class5724.method13248());
+                            final Entity method6742 = this.field34856.world.getEntityByID(class5724.method13248());
                             if (!Class8491.field34858.contains(method6742)) {
                                 if (!Class6430.method19149()) {
                                     Class8491.field34858.add(method6742);
@@ -242,7 +242,7 @@ public class Class8491
                 }
                 else {
                     final Class4289 class5728 = (Class4289)class5723.method16998();
-                    if (this.field34856.field4683.getEntityByID(class5728.method12878()) != null) {
+                    if (this.field34856.world.getEntityByID(class5728.method12878()) != null) {
                         if (class5728.method12879() == 3) {
                             if (Class9367.method34762() == Class7906.field32452.method25613()) {
                                 class5723.method16961(true);

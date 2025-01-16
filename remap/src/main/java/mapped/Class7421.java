@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class7421 extends Class7422
+public class Class7421 extends ValueObject
 {
     private static String[] field28591;
     private final String field28592;

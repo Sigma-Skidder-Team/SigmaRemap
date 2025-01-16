@@ -4,7 +4,6 @@
 
 package mapped;
 
-import club.minnced.discord.rpc.DiscordUser;
 import java.util.Iterator;
 import org.lwjgl.opengl.GL11;
 import club.minnced.discord.rpc.DiscordRichPresence;
@@ -12,7 +11,6 @@ import club.minnced.discord.rpc.DiscordEventHandlers;
 import club.minnced.discord.rpc.DiscordRPC;
 import org.lwjgl.glfw.GLFW;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.io.File;
 
@@ -23,7 +21,7 @@ public class Class9463
     public static final String field40680 = "Sigma Production";
     public static final boolean field40681 = false;
     private static Class9463 field40682;
-    private static Class869 field40683;
+    private static Minecraft field40683;
     private final File field40684;
     private Class4405 field40685;
     private boolean field40686;
@@ -230,7 +228,7 @@ public class Class9463
     
     public void method35184() {
         if (Class9463.field40683 != null) {
-            if (Class9463.field40683.field4683 != null) {
+            if (Class9463.field40683.world != null) {
                 if (Class9463.field40683.field4684 != null) {
                     if (!Class9463.field40711) {
                         GL11.glTranslatef(0.0f, 0.0f, 0.0f);
@@ -373,7 +371,7 @@ public class Class9463
     }
     
     static {
-        Class9463.field40683 = Class869.method5277();
+        Class9463.field40683 = Minecraft.method5277();
         Class9463.field40710 = new ArrayList<Class7776>();
         Class9463.field40711 = false;
     }

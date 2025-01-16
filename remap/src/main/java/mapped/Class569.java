@@ -10,11 +10,11 @@ public class Class569 extends Class565 implements Class570
 {
     private static final ResourceLocation field3394;
     public static final ResourceLocation field3395;
-    private final Class869 field3396;
+    private final Minecraft field3396;
     private long field3397;
     private Class9039 field3398;
     
-    public Class569(final Class869 field3396) {
+    public Class569(final Minecraft field3396) {
         this.field3396 = field3396;
     }
     
@@ -78,7 +78,7 @@ public class Class569 extends Class565 implements Class570
             final String value = String.valueOf(this.field3396.field4648.field23457[n].method1068());
             if (n5 > 3) {
                 if (class6991.method21405()) {
-                    this.field3396.field4643.method6609(value, (float)(n2 + 19 - 2 - this.field3396.field4643.method6617(value)), n3 + 6.0f + 3.0f, 16777215 + (n5 << 24));
+                    this.field3396.fontRenderer.method6609(value, (float)(n2 + 19 - 2 - this.field3396.fontRenderer.method6617(value)), n3 + 6.0f + 3.0f, 16777215 + (n5 << 24));
                 }
             }
         }
@@ -91,12 +91,12 @@ public class Class569 extends Class565 implements Class570
                 final Class6991 method32494 = this.field3398.method32494();
                 final String s = (method32494 != Class9039.field38256) ? method32494.method21403().getFormattedText() : this.field3398.method32495().method21401().getFormattedText();
                 if (s != null) {
-                    final int n2 = (this.field3396.method5332().method7696() - this.field3396.field4643.method6617(s)) / 2;
+                    final int n2 = (this.field3396.method5332().method7696() - this.field3396.fontRenderer.method6617(s)) / 2;
                     final int n3 = this.field3396.method5332().method7697() - 35;
                     Class8726.method30059();
                     Class8726.method30011();
                     Class8726.method30117();
-                    this.field3396.field4643.method6609(s, (float)n2, (float)n3, 16777215 + (n << 24));
+                    this.field3396.fontRenderer.method6609(s, (float)n2, (float)n3, 16777215 + (n << 24));
                     Class8726.method30012();
                     Class8726.method30060();
                 }

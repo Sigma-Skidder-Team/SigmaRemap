@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,8 +87,8 @@ public class Class4821 extends Class4817 implements Class4820
         final Class4924 class4924 = (Class4924)this.field20475;
         final double n3 = 0.07000000029802322;
         final double n4 = 60.0;
-        Class869.method5277();
-        final float n5 = (float)(n3 * (n4 / Class869.method5338()));
+        Minecraft.method5277();
+        final float n5 = (float)(n3 * (n4 / Minecraft.method5338()));
         this.field20633 += (this.method14403() ? (this.field20632 ? (-n5) : n5) : 0.0f);
         this.field20633 = Math.max(0.0f, Math.min(1.0f, this.field20633));
         class4924.field21063 = this.method14431(this.field20633, 0.0f, 1.0f, 1.0f);

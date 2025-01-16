@@ -278,7 +278,7 @@ public class Class3246 extends Class3167
     }
     
     private void method10256() {
-        final List<TileEntity> field10050 = Class3246.field15514.field4683.loadedTileEntityList;
+        final List<TileEntity> field10050 = Class3246.field15514.world.loadedTileEntityList;
         field10050.removeIf(class437 -> !(class437 instanceof Class475));
         for (final TileEntity tileEntity : field10050) {
             if (this.field15738.containsKey(tileEntity)) {

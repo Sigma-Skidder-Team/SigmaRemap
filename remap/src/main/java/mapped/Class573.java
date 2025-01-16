@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Objects;
 
-public abstract class Class573 extends Class565 implements Class563, Class574
+public abstract class Class573 extends Class565 implements Class563, IGuiEventListener
 {
     public static final ResourceLocation field3421;
     private static final int field3422 = 750;
@@ -98,7 +98,7 @@ public abstract class Class573 extends Class565 implements Class563, Class574
                 if (Util.method27837() > this.field3434) {
                     final String method3352 = this.method3352();
                     if (!method3352.isEmpty()) {
-                        Class7895.field32404.method25556(method3352);
+                        NarratorChatListener.field32404.method25556(method3352);
                         this.field3434 = Long.MAX_VALUE;
                     }
                 }
@@ -111,8 +111,8 @@ public abstract class Class573 extends Class565 implements Class563, Class574
     }
     
     public void method3353(final int n, final int n2, final float n3) {
-        final Class869 method5277 = Class869.method5277();
-        final Class1844 field4643 = method5277.field4643;
+        final Minecraft method5277 = Minecraft.method5277();
+        final Class1844 field4643 = method5277.fontRenderer;
         method5277.method5290().method5849(Class573.field3421);
         Class8726.method30068(1.0f, 1.0f, 1.0f, this.field3433);
         final int method5278 = this.method3350(this.method3360());
@@ -125,7 +125,7 @@ public abstract class Class573 extends Class565 implements Class563, Class574
         this.method3295(field4643, this.method3369(), this.field3426 + this.field3424 / 2, this.field3427 + (this.field3425 - 8) / 2, (this.field3431 ? 16777215 : 10526880) | MathHelper.ceil(this.field3433 * 255.0f) << 24);
     }
     
-    public void method3354(final Class869 class869, final int n, final int n2) {
+    public void method3354(final Minecraft class869, final int n, final int n2) {
     }
     
     public void method3355(final double n, final double n2) {
@@ -138,12 +138,12 @@ public abstract class Class573 extends Class565 implements Class563, Class574
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (!this.field3431 || !this.field3432) {
             return false;
         }
         if (this.method3358(n3) && this.method3359(n, n2)) {
-            this.method3363(Class869.method5277().method5299());
+            this.method3363(Minecraft.method5277().method5299());
             this.method3355(n, n2);
             return true;
         }
@@ -151,7 +151,7 @@ public abstract class Class573 extends Class565 implements Class563, Class574
     }
     
     @Override
-    public boolean method2985(final double n, final double n2, final int n3) {
+    public boolean mouseReleased(final double n, final double n2, final int n3) {
         if (!this.method3358(n3)) {
             return false;
         }
@@ -164,7 +164,7 @@ public abstract class Class573 extends Class565 implements Class563, Class574
     }
     
     @Override
-    public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
+    public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
         if (!this.method3358(n3)) {
             return false;
         }
@@ -194,7 +194,7 @@ public abstract class Class573 extends Class565 implements Class563, Class574
     }
     
     @Override
-    public boolean method3281(final boolean b) {
+    public boolean changeFocus(final boolean b) {
         if (this.field3431 && this.field3432) {
             this.method3361(this.field3435 = !this.field3435);
             return this.field3435;
@@ -206,7 +206,7 @@ public abstract class Class573 extends Class565 implements Class563, Class574
     }
     
     @Override
-    public boolean method3055(final double n, final double n2) {
+    public boolean isMouseOver(final double n, final double n2) {
         if (this.field3431) {
             if (this.field3432) {
                 if (n >= this.field3426) {

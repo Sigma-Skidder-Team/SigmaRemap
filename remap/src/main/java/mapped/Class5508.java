@@ -33,7 +33,7 @@ public class Class5508 extends Class5509
     
     @Override
     public Class9559 method16814(final Class5901 class5901, final float field20284) {
-        final Class4705 class5902 = new Class4705(Class869.method5277().method5306());
+        final Class4705 class5902 = new Class4705(Minecraft.method5277().method5306());
         if (Class9570.field41583.method22634()) {
             Class9570.method35837(class5902, Class9570.field41583, class5901);
             class5902.field20284 = field20284;

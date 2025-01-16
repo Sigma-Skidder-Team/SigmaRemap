@@ -23,7 +23,7 @@ public class Class6996 implements Class6991
     
     @Override
     public void method21404(final float n, final int n2) {
-        Class869.method5277().method5290().method5849(Class569.field3395);
+        Minecraft.method5277().method5290().method5849(Class569.field3395);
         Class565.method3188(0, 0, 128.0f, 0.0f, 16, 16, 256, 256);
     }
     

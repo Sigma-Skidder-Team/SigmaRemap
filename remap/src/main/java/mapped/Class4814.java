@@ -24,16 +24,16 @@ public class Class4814 extends Class4803
         this.method14239(this.field20588 = new Class4859(this, "Accounts", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40799));
         this.method14239(this.field20590 = new Class4859(this, "Agora", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40803));
         this.method14239(this.field20585 = new Class4859(this, "Exit", this.method14376(n5++), this.method14375() + 140 + 10, 114, 140, Class9493.field40800));
-        this.field20584.method14260((class4803, n) -> this.method14372(new Class544(Class869.method5277().field4700)));
-        this.field20589.method14260((class4803, n) -> this.method14372(new Class721(Class869.method5277().field4700)));
-        this.field20587.method14260((class4803, n) -> this.method14372(new Class550(Class869.method5277().field4700, Class869.method5277().field4648)));
+        this.field20584.method14260((class4803, n) -> this.method14372(new Class544(Minecraft.method5277().field4700)));
+        this.field20589.method14260((class4803, n) -> this.method14372(new Class721(Minecraft.method5277().field4700)));
+        this.field20587.method14260((class4803, n) -> this.method14372(new Class550(Minecraft.method5277().field4700, Minecraft.method5277().field4648)));
         this.field20588.method14260((class4803, n) -> this.method14373(new Class4936()));
-        this.field20586.method14260((class4803, n) -> this.method14372(new Class704(Class869.method5277().field4700, Class869.method5277().field4648, Class869.method5277().method5295())));
-        this.field20585.method14260((class4803, n) -> Class869.method5277().method5253());
+        this.field20586.method14260((class4803, n) -> this.method14372(new Class704(Minecraft.method5277().field4700, Minecraft.method5277().field4648, Minecraft.method5277().method5295())));
+        this.field20585.method14260((class4803, n) -> Minecraft.method5277().method5253());
     }
     
-    public void method14372(final Class527 class527) {
-        Class869.method5277().method5244(class527);
+    public void method14372(final Screen class527) {
+        Minecraft.method5277().method5244(class527);
         this.method14374();
     }
     
@@ -43,7 +43,7 @@ public class Class4814 extends Class4803
     }
     
     public void method14374() {
-        Class869.method5277().method5299().method6422(Class6836.method20933(Class8520.field35662, 1.0f));
+        Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35662, 1.0f));
     }
     
     private int method14375() {

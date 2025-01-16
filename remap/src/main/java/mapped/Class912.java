@@ -18,13 +18,13 @@ public class Class912 extends Thread
     @Override
     public void run() {
         try {
-            Class9513.method35444().method35475(Class5073.method15664(this.field4872).method15535().get(this.field4871).field3604.field28703);
-            Class7847.method25361(() -> {
+            RealmsClient.func_224911_a().method35475(Class5073.method15664(this.field4872).method15535().get(this.field4871).field3604.field28703);
+            Realms.method25361(() -> {
                 final Object field4871 = this.field4871;
                 Class5073.method15671(this.field4872, n);
             });
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             Class5073.method15662().error("Couldn't accept invite");
         }
     }

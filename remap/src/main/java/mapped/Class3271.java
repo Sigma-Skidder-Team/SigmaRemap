@@ -54,7 +54,7 @@ public class Class3271 extends Class3167
         if (class355 == null) {
             return;
         }
-        final int method29334 = Class8639.method29334(Class3271.field15514.field4683.getBlockState(class355));
+        final int method29334 = Class8639.method29334(Class3271.field15514.world.getBlockState(class355));
         if (method29334 != -1) {
             if (Class3271.field15514.field4684.field3006.field2743 != method29334 % 9) {
                 if (this.field15762 == -1) {

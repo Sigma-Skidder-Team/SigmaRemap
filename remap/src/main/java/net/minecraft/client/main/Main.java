@@ -13,7 +13,7 @@ import java.util.OptionalInt;
 import java.util.List;
 import mapped.Class914;
 import mapped.Class2367;
-import mapped.Class869;
+import mapped.Minecraft;
 import mapped.Class8726;
 import mapped.Class9567;
 import mapped.Class8239;
@@ -112,12 +112,12 @@ public class Main
         hook.setUncaughtExceptionHandler((Thread.UncaughtExceptionHandler)new Class8239(Main.field14380));
         Runtime.getRuntime().addShutdownHook(hook);
         new Class9567();
-        Class869 class9409;
+        Minecraft class9409;
         try {
             Thread.currentThread().setName("Render thread");
             Class8726.method29983();
             Class8726.method30113();
-            class9409 = new Class869(class9408);
+            class9409 = new Minecraft(class9408);
             Class8726.method30114();
         }
         catch (final Class2367 class9410) {
@@ -127,8 +127,8 @@ public class Main
         catch (final Throwable t) {
             final CrashReport method9786 = CrashReport.makeCrashReport(t, "Initializing game");
             method9786.makeCategory("Initialization");
-            Class869.method5276(null, class9408.field40380.field23928, null, method9786);
-            Class869.method5239(method9786);
+            Minecraft.method5276(null, class9408.field40380.field23928, null, method9786);
+            Minecraft.method5239(method9786);
             return;
         }
         Label_1345: {

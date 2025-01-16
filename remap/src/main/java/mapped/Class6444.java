@@ -34,7 +34,7 @@ public class Class6444
     public static void method19216(final Class7038 class7038) {
         method19221();
         if (class7038 != null) {
-            if (Class9570.field41383.method22605() && Class869.method5277().method5291() == null) {
+            if (Class9570.field41383.method22605() && Minecraft.method5277().method5291() == null) {
                 Config.method28847("[Shaders] Delayed loading of item mappings after resources are loaded");
                 Class6444.field25580 = true;
             }

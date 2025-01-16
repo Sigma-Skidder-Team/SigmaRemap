@@ -19,7 +19,7 @@ public class Class537 extends Class535
             super.method3036(s);
         }
         else {
-            this.field3150.field4647.method3807().method3766(s);
+            this.minecraft.field4647.method3807().method3766(s);
         }
     }
     
@@ -38,7 +38,7 @@ public class Class537 extends Class535
         if (!trim.equals("/reloadChunks")) {
             return false;
         }
-        this.field3150.field4636.method5701();
+        this.minecraft.field4636.method5701();
         return true;
     }
 }

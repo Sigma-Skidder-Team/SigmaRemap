@@ -11,7 +11,7 @@ import java.util.Map;
 public class Class6119 implements Class6113
 {
     private static String[] field24836;
-    private final Class869 field24837;
+    private final Minecraft field24837;
     private final Map<Integer, List<Class7472>> field24838;
     
     @Override
@@ -23,7 +23,7 @@ public class Class6119 implements Class6113
         this.field24838.put(i, list);
     }
     
-    public Class6119(final Class869 field24837) {
+    public Class6119(final Minecraft field24837) {
         this.field24838 = Maps.newHashMap();
         this.field24837 = field24837;
     }

@@ -100,13 +100,13 @@ public abstract class Class582 extends Class581
     public void method3431(final int n, final int n2, final boolean b, final float n3) {
         super.method3431(n, n2, b, n3);
         if (this.field3481 != null) {
-            if (!Class527.method3046()) {
+            if (!Screen.method3046()) {
                 this.field3483 += n3;
             }
             final int n4 = this.field3481.field26175 + n;
             final int n5 = this.field3481.field26176 + n2;
             Class565.method3293(n4, n5, n4 + 16, n5 + 16, 822018048);
-            this.field3471.method5307().method6541(this.field3471.field4684, this.method3454().method11741(), n4, n5);
+            this.field3471.getItemRenderer().method6541(this.field3471.field4684, this.method3454().method11741(), n4, n5);
             Class8726.method30009(516);
             Class565.method3293(n4, n5, n4 + 16, n5 + 16, 822083583);
             Class8726.method30009(515);

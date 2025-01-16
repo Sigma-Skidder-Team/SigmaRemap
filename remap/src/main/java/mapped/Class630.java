@@ -20,7 +20,7 @@ public class Class630 extends Class624
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         Class5088.method15953(this.field3615).method15533(Class5088.method15952(this.field3615).indexOf(this.field3614));
         return true;
     }
@@ -36,10 +36,10 @@ public class Class630 extends Class624
         if (!class1951.method7936()) {
             str2 = Class5088.method15957(this.field3615, class1951);
             if (class1951.method7935()) {
-                str2 = Class314.field1850 + Class5046.method15438("mco.upload.hardcore") + Class314.field1867;
+                str2 = Class314.field1850 + RealmsScreen.getLocalizedString("mco.upload.hardcore") + Class314.field1867;
             }
             if (class1951.method7934()) {
-                str2 = str2 + ", " + Class5046.method15438("selectWorld.cheats");
+                str2 = str2 + ", " + RealmsScreen.getLocalizedString("selectWorld.cheats");
             }
         }
         else {

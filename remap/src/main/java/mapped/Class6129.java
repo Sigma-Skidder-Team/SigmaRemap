@@ -10,9 +10,9 @@ import net.minecraft.world.World;
 public class Class6129 implements Class6113
 {
     private static String[] field24874;
-    private final Class869 field24875;
+    private final Minecraft field24875;
     
-    public Class6129(final Class869 field24875) {
+    public Class6129(final Minecraft field24875) {
         this.field24875 = field24875;
     }
     

@@ -7,15 +7,15 @@ package mapped;
 public class Class6118 implements Class6113
 {
     private static String[] field24834;
-    private final Class869 field24835;
+    private final Minecraft field24835;
     
-    public Class6118(final Class869 field24835) {
+    public Class6118(final Minecraft field24835) {
         this.field24835 = field24835;
     }
     
     @Override
     public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
-        final Class1848 field4683 = this.field24835.field4683;
+        final Class1848 field4683 = this.field24835.world;
         Class8726.method30059();
         Class8726.method30011();
         Class8726.method30117();

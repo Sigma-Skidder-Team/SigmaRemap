@@ -33,7 +33,7 @@ public class Class3190 extends Class3167
     
     @Class6753
     public void method10006(final Class5723 class5723) {
-        if (Class3190.field15514.field4683 != null) {
+        if (Class3190.field15514.world != null) {
             if (!(class5723.method16998() instanceof Class4325)) {
                 if (!(class5723.method16998() instanceof Class4339)) {
                     if (!(class5723.method16998() instanceof Class4276)) {
@@ -61,7 +61,7 @@ public class Class3190 extends Class3167
             else {
                 final int[] method12989 = ((Class4325)class5723.method16998()).method12989();
                 for (int length = method12989.length, i = 0; i < length; ++i) {
-                    final Entity method12990 = Class3190.field15514.field4683.getEntityByID(method12989[i]);
+                    final Entity method12990 = Class3190.field15514.world.getEntityByID(method12989[i]);
                     if (method12990 != null) {
                         if (method12990 instanceof PlayerEntity) {
                             if (this.field15594.containsKey(method12990.method1865())) {
@@ -99,7 +99,7 @@ public class Class3190 extends Class3167
             for (final Class8124 class5740 : this.method10007(Class9463.method35173().method35200().method24262())) {
                 final BlockPos class5741 = new BlockPos(class5740.field33469 - ((class5740.field33469 <= 0) ? 1 : 0), class5740.field33472, class5740.field33470 - ((class5740.field33470 <= 0) ? 1 : 0));
                 if (Math.sqrt(Class8591.method29092(class5741)) <= 300.0) {
-                    if (Class3190.field15514.field4683.method6965(class5741) != null) {
+                    if (Class3190.field15514.world.method6965(class5741) != null) {
                         if (class5740.field33473) {
                             int n = class5741.getX() % 16;
                             int n2 = class5741.getZ() % 16;
@@ -109,7 +109,7 @@ public class Class3190 extends Class3167
                             if (n < 0) {
                                 n += 16;
                             }
-                            int method35713 = Class3190.field15514.field4683.method6965(class5741).method7017(Class2020.field11522).method35713(n, n2);
+                            int method35713 = Class3190.field15514.world.method6965(class5741).method7017(Class2020.field11522).method35713(n, n2);
                             if (method35713 == 0) {
                                 method35713 = 64;
                             }
@@ -119,9 +119,9 @@ public class Class3190 extends Class3167
                             }
                         }
                     }
-                    final float n3 = (float)(class5740.field33472 - Class869.method5277().field4644.method5833().method18161().getY());
-                    float n4 = (float)(class5740.field33469 - Class869.method5277().field4644.method5833().method18161().getX());
-                    float n5 = (float)(class5740.field33470 - Class869.method5277().field4644.method5833().method18161().getZ());
+                    final float n3 = (float)(class5740.field33472 - Minecraft.method5277().field4644.method5833().method18161().getY());
+                    float n4 = (float)(class5740.field33469 - Minecraft.method5277().field4644.method5833().method18161().getX());
+                    float n5 = (float)(class5740.field33470 - Minecraft.method5277().field4644.method5833().method18161().getZ());
                     if (class5740.field33469 < 0) {
                         --n4;
                     }

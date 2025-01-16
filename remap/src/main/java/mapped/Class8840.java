@@ -12,13 +12,13 @@ import org.apache.logging.log4j.Logger;
 public class Class8840
 {
     private static final Logger field37152;
-    private final Class869 field37153;
+    private final Minecraft field37153;
     private final Class6518 field37154;
     private final Map<Class8863, Class348> field37155;
     private Class558 field37156;
     private Class8863 field37157;
     
-    public Class8840(final Class869 field37153) {
+    public Class8840(final Minecraft field37153) {
         this.field37154 = new Class6518();
         this.field37155 = Maps.newHashMap();
         this.field37153 = field37153;

@@ -18,7 +18,7 @@ public class Class5759
                     if (Class5759.field23376.matcher(method4105).matches()) {
                         final String string = "http://s.optifine.net/capes/" + method4105 + ".png";
                         final ResourceLocation class755 = new ResourceLocation("capeof/" + method4105);
-                        final Class1663 method4106 = Class869.method5277().method5290();
+                        final Class1663 method4106 = Minecraft.method5277().method5290();
                         final Class1666 method4107 = method4106.method5853(class755);
                         if (method4107 != null) {
                             if (method4107 instanceof Class1768) {

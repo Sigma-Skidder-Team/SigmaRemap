@@ -11,7 +11,7 @@ import com.google.gson.JsonParser;
 import com.google.common.collect.Lists;
 import java.util.List;
 
-public class Class7438 extends Class7422
+public class Class7438 extends ValueObject
 {
     public long field28693;
     public List<Class7435> field28694;
@@ -25,7 +25,7 @@ public class Class7438 extends Class7422
         final JsonParser jsonParser = new JsonParser();
         try {
             final JsonObject asJsonObject = jsonParser.parse(s).getAsJsonObject();
-            class7438.field28693 = Class7610.method23909("periodInMillis", asJsonObject, -1L);
+            class7438.field28693 = JsonUtils.func_225169_a("periodInMillis", asJsonObject, -1L);
             final JsonElement value = asJsonObject.get("playerActivityDto");
             if (value != null && value.isJsonArray()) {
                 final Iterator iterator = value.getAsJsonArray().iterator();

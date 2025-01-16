@@ -21,7 +21,7 @@ public class Class5522 extends Class5515
     
     @Override
     public Class9559 method16814(final Class5901 class5901, final float n) {
-        final Class8551 method5306 = Class869.method5277().method5306();
+        final Class8551 method5306 = Minecraft.method5277().method5306();
         Class4703 obj = method5306.method28719().get(Class802.class);
         if (obj instanceof Class4729) {
             if (obj.method13960() == null) {

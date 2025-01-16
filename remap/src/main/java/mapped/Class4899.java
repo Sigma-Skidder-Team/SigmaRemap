@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.Iterator;
 import java.util.ArrayList;
 
 public class Class4899 extends Class4841
@@ -58,7 +57,7 @@ public class Class4899 extends Class4841
             if (method14713.size() > 0) {
                 method14713.get(0).method9910();
             }
-            Class869.method5277().method5244(null);
+            Minecraft.method5277().method5244(null);
         }
     }
     

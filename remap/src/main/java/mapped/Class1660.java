@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger;
 public class Class1660 implements AutoCloseable, Class1657
 {
     private static final Logger field9379;
-    private final Class869 field9380;
+    private final Minecraft field9380;
     private final Class6582 field9381;
     private final Random field9382;
     private float field9383;
@@ -71,7 +71,7 @@ public class Class1660 implements AutoCloseable, Class1657
     private Class1884[] field9421;
     private boolean field9422;
     
-    public Class1660(final Class869 field9380, final Class6582 field9381, final Class3442 field9382) {
+    public Class1660(final Minecraft field9380, final Class6582 field9381, final Class3442 field9382) {
         this.field9382 = new Random();
         this.field9392 = true;
         this.field9393 = true;
@@ -226,7 +226,7 @@ public class Class1660 implements AutoCloseable, Class1657
     public void method5807(final float n) {
         final Entity method5303 = this.field9380.method5303();
         if (method5303 != null) {
-            if (this.field9380.field4683 != null) {
+            if (this.field9380.world != null) {
                 this.field9380.method5327().startSection("pick");
                 this.field9380.field4690 = null;
                 final double n2 = this.field9380.field4682.method27315();
@@ -461,7 +461,7 @@ public class Class1660 implements AutoCloseable, Class1657
             final int i = (int)(this.field9380.field4650.method26959() * this.field9380.method5332().method7696() / this.field9380.method5332().method7694());
             final int j = (int)(this.field9380.field4650.method26960() * this.field9380.method5332().method7697() / this.field9380.method5332().method7695());
             final Class7351 class7351 = new Class7351();
-            if (b && this.field9380.field4683 != null && !Config.method29020()) {
+            if (b && this.field9380.world != null && !Config.method29020()) {
                 this.field9380.method5327().startSection("level");
                 Class9463.method35173().method35188().method21097(new Class5741(n, n2));
                 this.method5820(n, n2, class7351);
@@ -489,7 +489,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 Class8726.method30048(0, 0, this.field9380.method5332().method7692(), this.field9380.method5332().method7693());
             }
             final Class1925 method5332 = this.field9380.method5332();
-            Class8726.method30056(256, Class869.field4623);
+            Class8726.method30056(256, Minecraft.field4623);
             Class8726.method30057(5889);
             Class8726.method30058();
             Class8726.method30061(0.0, method5332.method7692() / method5332.method7700(), method5332.method7693() / method5332.method7700(), 0.0, 1000.0, 3000.0);
@@ -500,7 +500,7 @@ public class Class1660 implements AutoCloseable, Class1657
             if (this.field9396.method1429()) {
                 this.field9396.method1428(false);
             }
-            if (b && this.field9380.field4683 != null) {
+            if (b && this.field9380.world != null) {
                 this.field9380.method5327().method15300("gui");
                 if (!this.field9380.field4648.field23464 || this.field9380.field4700 != null) {
                     Class8726.method30118();
@@ -513,7 +513,7 @@ public class Class1660 implements AutoCloseable, Class1657
                     if (this.field9380.field4648.field23466) {
                         Class9036.method32480((int)this.field9380.method5332().method7700());
                     }
-                    Class8726.method30056(256, Class869.field4623);
+                    Class8726.method30056(256, Minecraft.field4623);
                 }
                 this.field9380.method5327().endSection();
             }
@@ -637,13 +637,13 @@ public class Class1660 implements AutoCloseable, Class1657
                     if (field4691 != null) {
                         if (field4691.getType() == RayTraceResult.Type.BLOCK) {
                             final BlockPos method5305 = ((BlockRayTraceResult)field4691).getPos();
-                            final BlockState method5306 = this.field9380.field4683.getBlockState(method5305);
+                            final BlockState method5306 = this.field9380.world.getBlockState(method5305);
                             if (this.field9380.field4682.method27336() != Class101.field301) {
-                                final Class7990 class7990 = new Class7990(this.field9380.field4683, method5305, false);
-                                b = (!method5304.method27620() && (method5304.method27686(this.field9380.field4683.method6793(), class7990) || method5304.method27687(this.field9380.field4683.method6793(), class7990)));
+                                final Class7990 class7990 = new Class7990(this.field9380.world, method5305, false);
+                                b = (!method5304.method27620() && (method5304.method27686(this.field9380.world.method6793(), class7990) || method5304.method27687(this.field9380.world.method6793(), class7990)));
                             }
                             else {
-                                b = (method5306.method21754(this.field9380.field4683, method5305) != null);
+                                b = (method5306.method21754(this.field9380.world, method5305) != null);
                             }
                         }
                     }
@@ -706,7 +706,7 @@ public class Class1660 implements AutoCloseable, Class1657
         }
         final Matrix4f method28958 = class7352.method22569().method32111();
         this.method5814(method28958);
-        field9411.method18154(this.field9380.field4683, (this.field9380.method5303() != null) ? this.field9380.method5303() : this.field9380.field4684, this.field9380.field4648.field23465 > 0, this.field9380.field4648.field23465 == 2, n);
+        field9411.method18154(this.field9380.world, (this.field9380.method5303() != null) ? this.field9380.method5303() : this.field9380.field4684, this.field9380.field4648.field23465 > 0, this.field9380.field4648.field23465 == 2, n);
         if (Class9570.field41297.method22605()) {
             final Object method28959 = Class9570.field41297.method22608(this, field9411, n);
             final float method28960 = Class9570.method35823(method28959, Class9570.field41212, new Object[0]);
@@ -729,7 +729,7 @@ public class Class1660 implements AutoCloseable, Class1657
                     Class7778.method24951(this, class7351, field9411, n);
                     Class9216.method33817();
                 }
-                Class8726.method30056(256, Class869.field4623);
+                Class8726.method30056(256, Minecraft.field4623);
                 Class8726.method30059();
                 Class8726.method30067(class7351.method22569().method32111());
                 Class9463.method35173().method35184();
@@ -833,7 +833,7 @@ public class Class1660 implements AutoCloseable, Class1657
             }
             this.field9412 = true;
         }
-        final Class1848 field4683 = this.field9380.field4683;
+        final Class1848 field4683 = this.field9380.world;
         if (field4683 != null) {
             if (Config.method28963() != null) {
                 final StringTextComponent class2260 = new StringTextComponent(Class8822.method30773("of.message.newVersion", "§n" + ("HD_U".replace("HD_U", "HD Ultra").replace("L", "Light") + " " + Config.method28963()) + "§r"));
@@ -867,7 +867,7 @@ public class Class1660 implements AutoCloseable, Class1657
     }
     
     private void method5825() {
-        if (this.field9380.field4683 != null) {
+        if (this.field9380.world != null) {
             if (Config.method29013()) {
                 if (Class9419.method35020("CheckGlErrorFrameFinish", 10000L)) {
                     final int method31662 = Class8933.method31662();
@@ -925,7 +925,7 @@ public class Class1660 implements AutoCloseable, Class1657
             if (this.field9406 != null && this.field9406 == this.field9421[i]) {
                 return true;
             }
-            if (this.field9380.field4683 != null) {
+            if (this.field9380.world != null) {
                 this.method5803(new ResourceLocation("shaders/post/fxaa_of_" + i + "x.json"));
                 this.field9421[i] = this.field9406;
                 return this.field9410;
@@ -968,7 +968,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 class7351.method22566(Vector3f.XP.rotationDegrees(6.0f * MathHelper.cos(n4 * 8.0f)));
                 class7351.method22566(Vector3f.ZP.rotationDegrees(6.0f * MathHelper.cos(n4 * 8.0f)));
                 final Class7808 method11006 = this.field9386.method11006();
-                this.field9380.method5307().method6536(this.field9402, Class2016.field11494, 15728880, Class1904.field10335, class7351, method11006);
+                this.field9380.getItemRenderer().method6536(this.field9402, Class2016.field11494, 15728880, Class1904.field10335, class7351, method11006);
                 class7351.method22568();
                 method11006.method25216();
                 Class8726.method29997();

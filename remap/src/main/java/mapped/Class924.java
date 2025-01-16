@@ -18,13 +18,13 @@ public class Class924 extends Thread
     
     @Override
     public void run() {
-        final Class9513 method35444 = Class9513.method35444();
+        final RealmsClient method35444 = RealmsClient.func_224911_a();
         try {
             if (!method35444.method35455().equals(Class2112.field12286)) {
                 return;
             }
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             if (class2330.field14069 != 401) {
                 Class5072.method15653(false);
             }

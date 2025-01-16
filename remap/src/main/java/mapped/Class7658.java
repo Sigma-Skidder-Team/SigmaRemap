@@ -22,7 +22,7 @@ import java.util.List;
 
 public class Class7658
 {
-    private Class869 field30396;
+    private Minecraft field30396;
     private List<Class7859> field30397;
     private List<Class7859> field30398;
     private List<Class8124> field30399;
@@ -36,7 +36,7 @@ public class Class7658
     public ByteBuffer field30407;
     
     public Class7658() {
-        this.field30396 = Class869.method5277();
+        this.field30396 = Minecraft.method5277();
         this.field30397 = new ArrayList<Class7859>();
         this.field30398 = new ArrayList<Class7859>();
         this.field30399 = new ArrayList<Class8124>();
@@ -136,7 +136,7 @@ public class Class7658
     
     @Class6753
     private void method24268(final Class5743 class5743) {
-        if (this.field30396.field4683 == null) {
+        if (this.field30396.world == null) {
             return;
         }
         if (this.field30402 == null) {
@@ -146,7 +146,7 @@ public class Class7658
             return;
         }
         if (this.field30396.field4684.ticksExisted % 120 == 0) {
-            final Class2420 method28644 = Class8537.method28644(this.field30396.field4683.method6965(this.field30396.field4684.method1894()).method7019());
+            final Class2420 method28644 = Class8537.method28644(this.field30396.world.method6965(this.field30396.field4684.method1894()).method7019());
             final Iterator<Map.Entry<Long, Class8537>> iterator = this.field30403.entrySet().iterator();
             while (iterator.hasNext()) {
                 final Map.Entry<Long, V> entry = (Map.Entry<Long, V>)iterator.next();
@@ -170,16 +170,16 @@ public class Class7658
         final ArrayList list = new ArrayList();
         final String field30402 = this.field30402;
         int n3 = 0;
-        for (int i = 0; i < this.field30396.field4683.method6835().field10344.field39563.length(); ++i) {
-            final Class1862 class5745 = this.field30396.field4683.method6835().field10344.field39563.get(i);
+        for (int i = 0; i < this.field30396.world.method6835().field10344.field39563.length(); ++i) {
+            final Class1862 class5745 = this.field30396.world.method6835().field10344.field39563.get(i);
             if (class5745 != null) {
                 final boolean contains = this.field30397.contains(class5745.method7019());
                 final boolean contains2 = this.field30398.contains(class5745.method7019());
                 if (!contains || contains2) {
                     if (!class5745.method7062()) {
-                        if (this.field30396.field4683.method6835().method7409(class5745.method7019())) {
-                            if (!(this.field30396.field4683.method6959(this.field30396.field4684.method1894()) instanceof Class3158)) {
-                                if (!(this.field30396.field4683.method6959(this.field30396.field4684.method1894()) instanceof Class3150)) {
+                        if (this.field30396.world.method6835().method7409(class5745.method7019())) {
+                            if (!(this.field30396.world.method6959(this.field30396.field4684.method1894()) instanceof Class3158)) {
+                                if (!(this.field30396.world.method6959(this.field30396.field4684.method1894()) instanceof Class3150)) {
                                     if (!contains) {
                                         this.field30397.add(class5745.method7019());
                                     }
@@ -366,8 +366,8 @@ public class Class7658
     }
     
     private boolean method24277(final Class1862 class1862) {
-        final Class1862 method6686 = this.field30396.field4683.method6686(class1862.method7019().field32290, class1862.method7019().field32291 + 1);
-        final Class1862 method6687 = this.field30396.field4683.method6686(class1862.method7019().field32290, class1862.method7019().field32291 - 1);
+        final Class1862 method6686 = this.field30396.world.method6686(class1862.method7019().field32290, class1862.method7019().field32291 + 1);
+        final Class1862 method6687 = this.field30396.world.method6686(class1862.method7019().field32290, class1862.method7019().field32291 - 1);
         if (method6686 != null) {
             if (!method6686.method7062()) {
                 if (method6687 != null) {
@@ -398,11 +398,11 @@ public class Class7658
     }
     
     public int method24279(BlockPos method1139, final boolean b) {
-        if (this.field30396.field4683.getBlockState(method1139).method21696() == Class7521.field29147) {
+        if (this.field30396.world.getBlockState(method1139).method21696() == Class7521.field29147) {
             method1139 = method1139.method1139();
         }
-        int n = this.field30396.field4683.getBlockState(method1139).method21697().method26446().field37084;
-        final Material method1140 = this.field30396.field4683.getBlockState(method1139.method1137()).method21697();
+        int n = this.field30396.world.getBlockState(method1139).method21697().method26446().field37084;
+        final Material method1140 = this.field30396.world.getBlockState(method1139.method1137()).method21697();
         if (method1140 != Material.SNOW) {
             if (method1140 == Material.LAVA) {
                 n = method1140.method26446().colorValue;
@@ -411,7 +411,7 @@ public class Class7658
         else {
             n = -1;
         }
-        if (this.field30396.field4683.getBlockState(method1139).method21771((IProperty<Comparable>)Class8970.field37747)) {
+        if (this.field30396.world.getBlockState(method1139).method21771((IProperty<Comparable>)Class8970.field37747)) {
             n = Material.WATER.method26446().colorValue;
         }
         int rgba = new Color((n & 0xFF0000) >> 16, (n & 0xFF00) >> 8, n & 0xFF).getRGB();
@@ -420,8 +420,8 @@ public class Class7658
             b2 = (Math.abs(method1139.getZ() % 16) != 16 && Math.abs(method1139.getZ() % 16) != 0);
         }
         if (b || b2) {
-            final Material method1141 = this.field30396.field4683.getBlockState(method1139.method1141()).method21697();
-            final Material method1142 = this.field30396.field4683.getBlockState(method1139.method1143()).method21697();
+            final Material method1141 = this.field30396.world.getBlockState(method1139.method1141()).method21697();
+            final Material method1142 = this.field30396.world.getBlockState(method1139.method1143()).method21697();
             if (method1141 != Material.AIR && method1141 != Material.SNOW) {
                 if (method1142 == Material.AIR || method1142 == Material.SNOW) {
                     rgba = Class6430.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();

@@ -38,7 +38,7 @@ public class Class8663
     
     public static void method29633(final IPacket class4252) {
         if (class4252 instanceof Class4328) {
-            Class869.method5277().field4636.method5765();
+            Minecraft.method5277().field4636.method5765();
         }
         if (!(class4252 instanceof Class4359)) {
             if (!(class4252 instanceof Class4383)) {

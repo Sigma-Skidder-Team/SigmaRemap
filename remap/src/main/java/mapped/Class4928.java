@@ -27,8 +27,8 @@ public class Class4928 extends Class4800
         super.method14205(n);
         final int method24918 = Class7853.field32204.method24918();
         final int method24919 = Class7853.field32204.method24917();
-        final int min = Math.min(method24918, (int)(Class869.method5277().field4632.method7695() / 1.65f));
-        final int min2 = Math.min(method24919, (int)(Class869.method5277().field4632.method7695() / 1.65f));
+        final int min = Math.min(method24918, (int)(Minecraft.method5277().field4632.method7695() / 1.65f));
+        final int min2 = Math.min(method24919, (int)(Minecraft.method5277().field4632.method7695() / 1.65f));
         this.method14789();
         Class8154.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class6430.method19118(Class265.field1278.field1292, 0.9f * this.field21083));
         final float method24920 = Class7707.method24584((this.field21083 >= 0.5) ? ((float)(this.field21083 - 0.5) * 2.0f) : 0.0f, 0.0f, 1.0f, 1.0f);
@@ -45,7 +45,7 @@ public class Class4928 extends Class4800
             this.field21083 = 1.0f;
         }
         else {
-            this.field21083 = (float)Math.max(0.0, Math.min(1.0, this.field21083 + 0.05 * (30.0f / Class869.method5338()) - this.field21083 * 0.04f * (30.0f / Class869.method5338())));
+            this.field21083 = (float)Math.max(0.0, Math.min(1.0, this.field21083 + 0.05 * (30.0f / Minecraft.method5338()) - this.field21083 * 0.04f * (30.0f / Minecraft.method5338())));
         }
     }
     
@@ -73,7 +73,7 @@ public class Class4928 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class869.method5277().method5244(new Class548());
+            Minecraft.method5277().method5244(new Class548());
         }
     }
 }

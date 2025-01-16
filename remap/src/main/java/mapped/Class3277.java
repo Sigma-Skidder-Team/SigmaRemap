@@ -91,7 +91,7 @@ public class Class3277 extends Class3167
     public void method10325(final Class5739 class5739) {
         if (this.method9906()) {
             this.field15776.clear();
-            for (final Entity class5740 : Class3277.field15514.field4683.method6806()) {
+            for (final Entity class5740 : Class3277.field15514.world.method6806()) {
                 if (!(class5740 instanceof PlayerEntity)) {
                     continue;
                 }

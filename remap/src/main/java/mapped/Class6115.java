@@ -24,12 +24,12 @@ import java.util.Map;
 
 public class Class6115 implements Class6113
 {
-    private final Class869 field24824;
+    private final Minecraft field24824;
     private final Map<BlockPos, Class7850> field24825;
     private final Map<UUID, Class8665> field24826;
     private UUID field24827;
     
-    public Class6115(final Class869 field24824) {
+    public Class6115(final Minecraft field24824) {
         this.field24825 = Maps.newHashMap();
         this.field24826 = Maps.newHashMap();
         this.field24824 = field24824;
@@ -68,12 +68,12 @@ public class Class6115 implements Class6113
     }
     
     private void method18278() {
-        this.field24826.entrySet().removeIf(entry -> this.field24824.field4683.getEntityByID(entry.getValue().field36433) == null);
+        this.field24826.entrySet().removeIf(entry -> this.field24824.world.getEntityByID(entry.getValue().field36433) == null);
     }
     
     private void method18279() {
         this.field24825.entrySet().removeIf(entry -> {
-            final Object o = this.field24824.field4683.method6754() - 20L;
+            final Object o = this.field24824.world.method6754() - 20L;
             return entry.getValue().field32151 < n;
         });
     }

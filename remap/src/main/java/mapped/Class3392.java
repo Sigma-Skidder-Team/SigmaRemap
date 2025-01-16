@@ -38,13 +38,13 @@ public class Class3392 extends Class3167
     public void method10815(final Class5723 class5723) {
         if (this.method9906()) {
             if (class5723.method16998() instanceof Class4271) {
-                this.method10816(Class3392.field15514.field4683.method6685(((Class4271)class5723.method16998()).method12818()).method7019());
+                this.method10816(Class3392.field15514.world.method6685(((Class4271)class5723.method16998()).method12818()).method7019());
             }
             if (class5723.method16998() instanceof Class4312) {
                 this.method10816(((Class4312)class5723.method16998()).field19330);
             }
             if (class5723.method16998() instanceof Class4298) {
-                if (Class869.method5277().field4683 != null) {
+                if (Minecraft.method5277().world != null) {
                     final Class4298 class5724 = (Class4298)class5723.method16998();
                     this.method10816(new Class7859(class5724.method12909(), class5724.method12910()));
                 }
@@ -79,7 +79,7 @@ public class Class3392 extends Class3167
             for (float n8 = (float)n; n8 <= n4; ++n8) {
                 for (float n9 = (float)n2; n9 <= n5; ++n9) {
                     final BlockPos class7860 = new BlockPos(n8, n7, n9);
-                    if (Class3392.field15514.field4683.getBlockState(class7860).method21696() == Class7521.field29294) {
+                    if (Class3392.field15514.world.getBlockState(class7860).method21696() == Class7521.field29294) {
                         list.add(class7860);
                     }
                 }

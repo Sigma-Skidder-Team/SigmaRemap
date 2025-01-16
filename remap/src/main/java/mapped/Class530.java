@@ -11,9 +11,9 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
-public class Class530 extends Class527
+public class Class530 extends Screen
 {
-    private final Class527 field3168;
+    private final Screen field3168;
     private final ITextComponent field3169;
     private final ITextComponent field3170;
     private final ITextComponent field3171;
@@ -22,8 +22,8 @@ public class Class530 extends Class527
     private Class682 field3174;
     private final List<String> field3175;
     
-    public Class530(final Class527 field3168) {
-        super(Class7895.field32402);
+    public Class530(final Screen field3168) {
+        super(NarratorChatListener.EMPTY);
         this.field3169 = new Class2259("multiplayerWarning.header", new Object[0]).applyTextStyle(TextFormatting.BOLD);
         this.field3170 = new Class2259("multiplayerWarning.message", new Object[0]);
         this.field3171 = new Class2259("multiplayerWarning.check", new Object[0]);
@@ -34,20 +34,20 @@ public class Class530 extends Class527
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
+    public void init() {
+        super.init();
         this.field3175.clear();
-        this.field3175.addAll(this.field3156.method6626(this.field3170.getFormattedText(), this.field3152 - 50));
+        this.field3175.addAll(this.font.method6626(this.field3170.getFormattedText(), this.width - 50));
         final int n = (this.field3175.size() + 1) * 9;
-        this.method3029(new Class654(this.field3152 / 2 - 155, 100 + n, 150, 20, this.field3172.getFormattedText(), class654 -> {
+        this.method3029(new Class654(this.width / 2 - 155, 100 + n, 150, 20, this.field3172.getFormattedText(), class654 -> {
             if (this.field3174.method3743()) {
-                this.field3150.field4648.field23434 = true;
-                this.field3150.field4648.method17121();
+                this.minecraft.field4648.field23434 = true;
+                this.minecraft.field4648.method17121();
             }
-            this.field3150.method5244(new Class720(this.field3168));
+            this.minecraft.method5244(new Class720(this.field3168));
         }));
-        this.method3029(new Class654(this.field3152 / 2 - 155 + 160, 100 + n, 150, 20, this.field3173.getFormattedText(), class654 -> this.field3150.method5244(this.field3168)));
-        this.method3029(this.field3174 = new Class682(this.field3152 / 2 - 155 + 80, 76 + n, 150, 20, this.field3171.getFormattedText(), false));
+        this.method3029(new Class654(this.width / 2 - 155 + 160, 100 + n, 150, 20, this.field3173.getFormattedText(), class654 -> this.minecraft.method5244(this.field3168)));
+        this.method3029(this.field3174 = new Class682(this.width / 2 - 155 + 80, 76 + n, 150, 20, this.field3171.getFormattedText(), false));
     }
     
     @Override
@@ -58,11 +58,11 @@ public class Class530 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.method3043(0);
-        this.method3295(this.field3156, this.field3169.getFormattedText(), this.field3152 / 2, 30, 16777215);
+        this.method3295(this.font, this.field3169.getFormattedText(), this.width / 2, 30, 16777215);
         int n4 = 70;
         final Iterator<String> iterator = this.field3175.iterator();
         while (iterator.hasNext()) {
-            this.method3295(this.field3156, iterator.next(), this.field3152 / 2, n4, 16777215);
+            this.method3295(this.font, iterator.next(), this.width / 2, n4, 16777215);
             n4 += 9;
         }
         super.method2975(n, n2, n3);

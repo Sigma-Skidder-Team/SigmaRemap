@@ -15,7 +15,7 @@ public class Class579 extends Class576
     }
     
     @Override
-    public boolean method3004(final char c, final int n) {
-        return this.field3460.method3054(this.method3378(), c, this.method3399()) && super.method3004(c, n);
+    public boolean charTyped(final char c, final int n) {
+        return this.field3460.method3054(this.method3378(), c, this.method3399()) && super.charTyped(c, n);
     }
 }

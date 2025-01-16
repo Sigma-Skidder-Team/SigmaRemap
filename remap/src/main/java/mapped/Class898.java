@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.List;
 import java.util.Iterator;
 
 public class Class898 extends Thread
@@ -18,10 +17,10 @@ public class Class898 extends Thread
     
     @Override
     public void run() {
-        Class9513.method35444();
+        RealmsClient.func_224911_a();
         try {
-            Class7847.method25361(() -> {
-                final Class9513 class2331;
+            Realms.method25361(() -> {
+                final RealmsClient class2331;
                 final Object field28673 = class2331.method35459(Class5071.method15636(this.field4845).field28675).field28673;
                 Class5071.method15638(this.field4845, list);
                 Class5071.method15639(this.field4845, Class5071.method15640(this.field4845).isEmpty());
@@ -34,7 +33,7 @@ public class Class898 extends Thread
                 Class5071.method15642(this.field4845);
             });
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             Class5071.method15637().error("Couldn't request backups", (Throwable)class2330);
         }
     }

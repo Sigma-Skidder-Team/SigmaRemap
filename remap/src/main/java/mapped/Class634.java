@@ -12,7 +12,7 @@ import com.google.common.hash.Hashing;
 public class Class634 extends Class633
 {
     private final Class720 field3622;
-    private final Class869 field3623;
+    private final Minecraft field3623;
     private final Class9575 field3624;
     private final ResourceLocation field3625;
     private String field3626;
@@ -24,7 +24,7 @@ public class Class634 extends Class633
         this.field3629 = field3629;
         this.field3622 = field3630;
         this.field3624 = field3631;
-        this.field3623 = Class869.method5277();
+        this.field3623 = Minecraft.method5277();
         this.field3625 = new ResourceLocation("servers/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3631.field41613) + "/icon");
         this.field3627 = (Class1773)this.field3623.method5290().method5853(this.field3625);
     }
@@ -54,14 +54,14 @@ public class Class634 extends Class633
         final boolean b2 = this.field3624.field41617 > Class9528.method35579().getProtocolVersion();
         final boolean b3 = this.field3624.field41617 < Class9528.method35579().getProtocolVersion();
         final boolean b4 = b2 || b3;
-        this.field3623.field4643.method6610(this.field3624.field41612, (float)(n3 + 32 + 3), (float)(n2 + 1), 16777215);
-        final List<String> method6626 = this.field3623.field4643.method6626(this.field3624.field41615, n4 - 32 - 2);
+        this.field3623.fontRenderer.method6610(this.field3624.field41612, (float)(n3 + 32 + 3), (float)(n2 + 1), 16777215);
+        final List<String> method6626 = this.field3623.fontRenderer.method6626(this.field3624.field41615, n4 - 32 - 2);
         for (int i = 0; i < Math.min(method6626.size(), 2); ++i) {
-            this.field3623.field4643.method6610((String)method6626.get(i), (float)(n3 + 32 + 3), (float)(n2 + 12 + 9 * i), 8421504);
+            this.field3623.fontRenderer.method6610((String)method6626.get(i), (float)(n3 + 32 + 3), (float)(n2 + 12 + 9 * i), 8421504);
         }
         final String s = b4 ? (TextFormatting.DARK_RED + this.field3624.field41618) : this.field3624.field41614;
-        final int method6627 = this.field3623.field4643.method6617(s);
-        this.field3623.field4643.method6610(s, (float)(n3 + n4 - method6627 - 15 - 2), (float)(n2 + 1), 8421504);
+        final int method6627 = this.field3623.fontRenderer.method6617(s);
+        this.field3623.fontRenderer.method6610(s, (float)(n3 + n4 - method6627 - 15 - 2), (float)(n2 + 1), 8421504);
         int n9 = 0;
         String s2 = null;
         int n10;
@@ -230,35 +230,35 @@ public class Class634 extends Class633
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
-        if (Class527.method3047()) {
-            final int index = this.field3622.field3932.method3040().indexOf(this);
+    public boolean keyPressed(final int n, final int n2, final int n3) {
+        if (Screen.method3047()) {
+            final int index = this.field3622.field3932.children().indexOf(this);
             if (n != 264 || index >= this.field3622.method3954().method34336() - 1) {
                 if (n != 265) {
-                    return super.method2972(n, n2, n3);
+                    return super.keyPressed(n, n2, n3);
                 }
                 if (index <= 0) {
-                    return super.method2972(n, n2, n3);
+                    return super.keyPressed(n, n2, n3);
                 }
             }
             this.method3657(index, (n != 264) ? (index - 1) : (index + 1));
             return true;
         }
-        return super.method2972(n, n2, n3);
+        return super.keyPressed(n, n2, n3);
     }
     
     private void method3657(final int n, final int n2) {
         this.field3622.method3954().method34337(n, n2);
         this.field3622.field3932.method3576(this.field3622.method3954());
-        final Class633 class633 = this.field3622.field3932.method3040().get(n2);
+        final Class633 class633 = this.field3622.field3932.children().get(n2);
         this.field3622.field3932.method3575(class633);
         Class612.method3582(this.field3629, class633);
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         final double n4 = n - Class612.method3583(this.field3629);
-        final double n5 = n2 - Class612.method3584(this.field3629, this.field3629.method3040().indexOf(this));
+        final double n5 = n2 - Class612.method3584(this.field3629, this.field3629.children().indexOf(this));
         if (n4 <= 32.0) {
             if (n4 < 32.0) {
                 if (n4 > 16.0) {
@@ -269,7 +269,7 @@ public class Class634 extends Class633
                     }
                 }
             }
-            final int index = this.field3622.field3932.method3040().indexOf(this);
+            final int index = this.field3622.field3932.children().indexOf(this);
             if (n4 < 16.0) {
                 if (n5 < 16.0) {
                     if (index > 0) {

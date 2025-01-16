@@ -37,7 +37,7 @@ public class Class8428
     }
     
     public static void method28148(final String s) {
-        Class7847.method25375(s);
+        Realms.method25375(s);
     }
     
     public static String method28149(final Long n) {
@@ -61,7 +61,7 @@ public class Class8428
     }
     
     static {
-        field34589 = new YggdrasilAuthenticationService(Class7847.method25352(), UUID.randomUUID().toString());
+        field34589 = new YggdrasilAuthenticationService(Realms.method25352(), UUID.randomUUID().toString());
         field34590 = Class8428.field34589.createMinecraftSessionService();
         Class8428.field34591 = (LoadingCache<String, GameProfile>)CacheBuilder.newBuilder().expireAfterWrite(60L, TimeUnit.MINUTES).build((CacheLoader)new Class6049());
     }

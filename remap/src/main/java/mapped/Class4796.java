@@ -26,7 +26,7 @@ public class Class4796 extends Class4703<Class424>
                     class425.method22567();
                     final BlockPos class427 = new BlockPos(class424.getPosX(), class424.getBoundingBox().maxY, class424.getPosZ());
                     class425.method22564(-0.5, 0.0, -0.5);
-                    final Class1658 method2073 = Class869.method5277().method5305();
+                    final Class1658 method2073 = Minecraft.method5277().method5305();
                     method2073.method5793().method33353(method2072, method2073.method5794(method2071), method2071, class427, class425, class426.method25214(Class7969.method25824(method2071)), false, new Random(), method2071.method21758(class424.method2068()), Class1904.field10335);
                     class425.method22568();
                     super.method13951(class424, n, n2, class425, class426, n3);

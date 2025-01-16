@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class8161
 {
-    private final Class869 field33604;
+    private final Minecraft field33604;
     private boolean field33605;
     private boolean field33606;
     private boolean field33607;
@@ -27,7 +27,7 @@ public class Class8161
     private double field33620;
     private boolean field33621;
     
-    public Class8161(final Class869 field33604) {
+    public Class8161(final Minecraft field33604) {
         this.field33611 = -1;
         this.field33612 = true;
         this.field33615 = new Class7995();
@@ -61,7 +61,7 @@ public class Class8161
             }
             if (n == this.field33604.method5332().method7690()) {
                 final boolean field33605 = n3 == 1;
-                if (Class869.field4623) {
+                if (Minecraft.field4623) {
                     if (n2 == 0) {
                         if (!field33605) {
                             if (this.field33610 > 0) {
@@ -97,10 +97,10 @@ public class Class8161
                         final double n5 = this.field33608 * this.field33604.method5332().method7696() / this.field33604.method5332().method7694();
                         final double n6 = this.field33609 * this.field33604.method5332().method7697() / this.field33604.method5332().method7695();
                         if (!field33605) {
-                            Class527.method3053(() -> array2[0] = this.field33604.field4700.method2985(n7, n8, n9), "mouseReleased event handler", this.field33604.field4700.getClass().getCanonicalName());
+                            Screen.method3053(() -> array2[0] = this.field33604.field4700.mouseReleased(n7, n8, n9), "mouseReleased event handler", this.field33604.field4700.getClass().getCanonicalName());
                         }
                         else {
-                            Class527.method3053(() -> array3[0] = this.field33604.field4700.method2982(n10, n11, n12), "mouseClicked event handler", this.field33604.field4700.getClass().getCanonicalName());
+                            Screen.method3053(() -> array3[0] = this.field33604.field4700.mouseClicked(n10, n11, n12), "mouseClicked event handler", this.field33604.field4700.getClass().getCanonicalName());
                         }
                     }
                     else if (!this.field33621) {
@@ -151,7 +151,7 @@ public class Class8161
         final Class5720 class5720 = new Class5720(d);
         Class9463.method35173().method35188().method21097(class5720);
         if (!class5720.method16962()) {
-            if (n == Class869.method5277().method5332().method7690()) {
+            if (n == Minecraft.method5277().method5332().method7690()) {
                 final double d2 = (this.field33604.field4648.field23423 ? Math.signum(d) : d) * this.field33604.field4648.field23411;
                 if (this.field33604.field4701 == null) {
                     if (this.field33604.field4700 == null) {
@@ -179,7 +179,7 @@ public class Class8161
                         }
                     }
                     else {
-                        this.field33604.field4700.method3012(this.field33608 * this.field33604.method5332().method7696() / this.field33604.method5332().method7694(), this.field33609 * this.field33604.method5332().method7697() / this.field33604.method5332().method7695(), d2);
+                        this.field33604.field4700.mouseScrolled(this.field33608 * this.field33604.method5332().method7696() / this.field33604.method5332().method7694(), this.field33609 * this.field33604.method5332().method7697() / this.field33604.method5332().method7695(), d2);
                     }
                 }
             }
@@ -191,21 +191,21 @@ public class Class8161
     }
     
     private void method26955(final long n, final double n9, final double n11) {
-        if (n == Class869.method5277().method5332().method7690()) {
+        if (n == Minecraft.method5277().method5332().method7690()) {
             if (this.field33612) {
                 this.field33608 = n9;
                 this.field33609 = n11;
                 this.field33612 = false;
             }
-            final Class527 field4700 = this.field33604.field4700;
+            final Screen field4700 = this.field33604.field4700;
             if (field4700 != null) {
                 if (this.field33604.field4701 == null) {
                     final double n4 = n9 * this.field33604.method5332().method7696() / this.field33604.method5332().method7694();
                     final double n5 = n11 * this.field33604.method5332().method7697() / this.field33604.method5332().method7695();
-                    Class527.method3053(() -> class574.method3372(n6, n7), "mouseMoved event handler", field4700.getClass().getCanonicalName());
+                    Screen.method3053(() -> class574.method3372(n6, n7), "mouseMoved event handler", field4700.getClass().getCanonicalName());
                     if (this.field33611 != -1) {
                         if (this.field33614 > 0.0) {
-                            Class527.method3053(() -> {
+                            Screen.method3053(() -> {
                                 final Object o = (n9 - this.field33608) * this.field33604.method5332().method7696() / this.field33604.method5332().method7694();
                                 final Object o2 = (n11 - this.field33609) * this.field33604.method5332().method7697() / this.field33604.method5332().method7695();
                                 class575.method2984(n8, n10, this.field33611, n12, n13);
@@ -294,7 +294,7 @@ public class Class8161
     public void method26963() {
         if (this.field33604.method5320()) {
             if (!this.field33621) {
-                if (!Class869.field4623) {
+                if (!Minecraft.field4623) {
                     Class350.method1053();
                 }
                 this.field33621 = true;

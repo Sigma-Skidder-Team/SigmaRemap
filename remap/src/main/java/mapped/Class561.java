@@ -11,7 +11,7 @@ import java.util.Iterator;
 import com.google.common.collect.Maps;
 import java.util.List;
 
-public class Class561 extends Class527
+public class Class561 extends Screen
 {
     private static final List<Class9304> field3343;
     private final Class696 field3344;
@@ -27,63 +27,63 @@ public class Class561 extends Class527
     }
     
     @Override
-    public void method2969() {
-        this.field3150.field4651.method22505(true);
+    public void init() {
+        this.minecraft.field4651.method22505(true);
         this.field3345 = Class8822.method30773("createWorld.customize.presets.share", new Object[0]);
         this.field3346 = Class8822.method30773("createWorld.customize.presets.list", new Object[0]);
-        (this.field3349 = new Class576(this.field3156, 50, 40, this.field3152 - 100, 20, this.field3345)).method3397(1230);
+        (this.field3349 = new Class576(this.font, 50, 40, this.width - 100, 20, this.field3345)).method3397(1230);
         this.field3349.method3377(this.field3344.method3883());
-        this.field3149.add(this.field3349);
+        this.children.add(this.field3349);
         this.field3347 = new Class611(this);
-        this.field3149.add(this.field3347);
-        this.field3348 = this.method3029(new Class654(this.field3152 / 2 - 155, this.field3153 - 28, 150, 20, Class8822.method30773("createWorld.customize.presets.select", new Object[0]), class654 -> {
+        this.children.add(this.field3347);
+        this.field3348 = this.method3029(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("createWorld.customize.presets.select", new Object[0]), class654 -> {
             this.field3344.method3885(this.field3349.method3378());
-            this.field3150.method5244(this.field3344);
+            this.minecraft.method5244(this.field3344);
         }));
-        this.method3029(new Class654(this.field3152 / 2 + 5, this.field3153 - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3150.method5244(this.field3344)));
+        this.method3029(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.method5244(this.field3344)));
         this.method3272(this.field3347.method3530() != null);
     }
     
     @Override
-    public boolean method3012(final double n, final double n2, final double n3) {
-        return this.field3347.method3012(n, n2, n3);
+    public boolean mouseScrolled(final double n, final double n2, final double n3) {
+        return this.field3347.mouseScrolled(n, n2, n3);
     }
     
     @Override
-    public void method2970(final Class869 class869, final int n, final int n2) {
+    public void method2970(final Minecraft class869, final int n, final int n2) {
         final String method3378 = this.field3349.method3378();
-        this.method3038(class869, n, n2);
+        this.init(class869, n, n2);
         this.field3349.method3377(method3378);
     }
     
     @Override
     public void method3028() {
-        this.field3150.method5244(this.field3344);
+        this.minecraft.method5244(this.field3344);
     }
     
     @Override
-    public void method2971() {
-        this.field3150.field4651.method22505(false);
+    public void removed() {
+        this.minecraft.field4651.method22505(false);
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         this.field3347.method2975(n, n2, n3);
         Class8726.method30059();
         Class8726.method30065(0.0f, 0.0f, 400.0f);
-        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 8, 16777215);
-        this.method3297(this.field3156, this.field3345, 50, 30, 10526880);
-        this.method3297(this.field3156, this.field3346, 50, 70, 10526880);
+        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 8, 16777215);
+        this.method3297(this.font, this.field3345, 50, 30, 10526880);
+        this.method3297(this.font, this.field3346, 50, 70, 10526880);
         Class8726.method30060();
         this.field3349.method2975(n, n2, n3);
         super.method2975(n, n2, n3);
     }
     
     @Override
-    public void method2992() {
+    public void tick() {
         this.field3349.method3376();
-        super.method2992();
+        super.tick();
     }
     
     public void method3272(final boolean b) {

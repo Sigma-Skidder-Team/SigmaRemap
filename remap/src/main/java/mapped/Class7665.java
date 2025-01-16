@@ -66,8 +66,8 @@ public class Class7665
             catch (final InsecureTextureException ex) {}
             if (hashMap.isEmpty()) {
                 gameProfile2.getProperties().clear();
-                if (gameProfile2.getId().equals(Class869.method5277().method5287().method33694().getId())) {
-                    gameProfile2.getProperties().putAll((Multimap)Class869.method5277().method5288());
+                if (gameProfile2.getId().equals(Minecraft.method5277().method5287().method33694().getId())) {
+                    gameProfile2.getProperties().putAll((Multimap) Minecraft.method5277().method5288());
                     hashMap.putAll(this.field30446.getTextures(gameProfile2, false));
                 }
                 else {
@@ -78,7 +78,7 @@ public class Class7665
                     catch (final InsecureTextureException ex2) {}
                 }
             }
-            Class869.method5277().execute(() -> Class8726.method29991(() -> ImmutableList.of((Object)MinecraftProfileTexture$Type.SKIN, (Object)MinecraftProfileTexture$Type.CAPE).forEach(minecraftProfileTexture$Type -> {
+            Minecraft.method5277().execute(() -> Class8726.method29991(() -> ImmutableList.of((Object)MinecraftProfileTexture$Type.SKIN, (Object)MinecraftProfileTexture$Type.CAPE).forEach(minecraftProfileTexture$Type -> {
                 if (!(!map2.containsKey(minecraftProfileTexture$Type))) {
                     this.method24293(map2.get(minecraftProfileTexture$Type), minecraftProfileTexture$Type, class7724);
                 }

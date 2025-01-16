@@ -403,7 +403,7 @@ public abstract class Entity implements INameable, ICommandSource {
     }
 
     public void method1671(final Class2160 class2160, Vec3d class2161) {
-        if (Class869.method5277().field4684 != null && Class869.method5277().field4684.method1920() != null && Class869.method5277().field4684.method1920().getEntityId() == this.getEntityId()) {
+        if (Minecraft.method5277().field4684 != null && Minecraft.method5277().field4684.method1920() != null && Minecraft.method5277().field4684.method1920().getEntityId() == this.getEntityId()) {
             final Class5718 class2162 = new Class5718(class2161.x, class2161.y, class2161.z);
             Class9463.method35173().method35188().method21097(class2162);
             if (class2162.method16962()) {

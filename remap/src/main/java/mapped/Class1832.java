@@ -23,7 +23,7 @@ public class Class1832 extends Class1799<Class786, Class5874<Class786>>
             class7351.method22565(0.5f, 0.5f, 0.5f);
             class7351.method22566(Vector3f.XP.rotationDegrees(-90.0f));
             class7351.method22564(-0.5, -0.5, -0.5);
-            Class869.method5277().method5305().method5795(Class7521.field29266.getDefaultState(), class7351, class7352, n, Class1904.field10335);
+            Minecraft.method5277().method5305().method5795(Class7521.field29266.getDefaultState(), class7351, class7352, n, Class1904.field10335);
             class7351.method22568();
         }
     }

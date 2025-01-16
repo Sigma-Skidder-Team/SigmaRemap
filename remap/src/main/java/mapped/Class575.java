@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class575 implements Class574
+public class Class575 implements IGuiEventListener
 {
     private static String[] field3436;
     private final Class5066 field3437;

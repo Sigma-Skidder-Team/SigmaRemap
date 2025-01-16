@@ -24,29 +24,29 @@ public class Class683 extends Class565
     private final String field3732;
     private final int field3733;
     private final List<String> field3734;
-    private final Class869 field3735;
+    private final Minecraft field3735;
     private Class683 field3736;
     private final List<Class683> field3737;
     private Class348 field3738;
     private final int field3739;
     private final int field3740;
     
-    public Class683(final Class572 field3729, final Class869 field3730, final Class8863 field3731, final Class7339 field3732) {
+    public Class683(final Class572 field3729, final Minecraft field3730, final Class8863 field3731, final Class7339 field3732) {
         this.field3737 = Lists.newArrayList();
         this.field3729 = field3729;
         this.field3730 = field3731;
         this.field3731 = field3732;
         this.field3735 = field3730;
-        this.field3732 = field3730.field4643.method6619(field3732.method22527().getFormattedText(), 163);
+        this.field3732 = field3730.fontRenderer.method6619(field3732.method22527().getFormattedText(), 163);
         this.field3739 = MathHelper.method35642(field3732.method22532() * 28.0f);
         this.field3740 = MathHelper.method35642(field3732.method22533() * 27.0f);
         final int method31040 = field3731.method31040();
         final int length = String.valueOf(method31040).length();
-        int max = 29 + field3730.field4643.method6617(this.field3732) + ((method31040 <= 1) ? 0 : (field3730.field4643.method6617("  ") + field3730.field4643.method6617("0") * length * 2 + field3730.field4643.method6617("/")));
+        int max = 29 + field3730.fontRenderer.method6617(this.field3732) + ((method31040 <= 1) ? 0 : (field3730.fontRenderer.method6617("  ") + field3730.fontRenderer.method6617("0") * length * 2 + field3730.fontRenderer.method6617("/")));
         this.field3734 = this.method3744(field3732.method22528().getFormattedText(), max);
         final Iterator<String> iterator = this.field3734.iterator();
         while (iterator.hasNext()) {
-            max = Math.max(max, field3730.field4643.method6617(iterator.next()));
+            max = Math.max(max, field3730.fontRenderer.method6617(iterator.next()));
         }
         this.field3733 = max + 3 + 5;
     }
@@ -55,23 +55,23 @@ public class Class683 extends Class565
         if (s.isEmpty()) {
             return Collections.emptyList();
         }
-        final List<String> method6626 = this.field3735.field4643.method6626(s, n);
+        final List<String> method6626 = this.field3735.fontRenderer.method6626(s, n);
         if (method6626.size() < 2) {
             return method6626;
         }
         final String s2 = method6626.get(0);
-        final int method6627 = this.field3735.field4643.method6617(s2 + ' ' + method6626.get(1).split(" ")[0]);
+        final int method6627 = this.field3735.fontRenderer.method6617(s2 + ' ' + method6626.get(1).split(" ")[0]);
         if (method6627 - n > 10) {
             final Matcher matcher = Class683.field3728.matcher(s2);
             if (matcher.matches()) {
-                final int method6628 = this.field3735.field4643.method6617(matcher.group(1));
+                final int method6628 = this.field3735.fontRenderer.method6617(matcher.group(1));
                 if (n - method6628 <= 10) {
-                    return this.field3735.field4643.method6626(s, method6628);
+                    return this.field3735.fontRenderer.method6626(s, method6628);
                 }
             }
             return method6626;
         }
-        return this.field3735.field4643.method6626(s, method6627);
+        return this.field3735.fontRenderer.method6626(s, method6627);
     }
     
     @Nullable
@@ -131,7 +131,7 @@ public class Class683 extends Class565
             }
             this.field3735.method5290().method5849(Class683.field3727);
             this.method3186(n + this.field3739 + 3, n2 + this.field3740, this.field3731.method22531().method8016(), 128 + class1999.method8019() * 26, 26, 26);
-            this.field3735.method5307().method6541(null, this.field3731.method22529(), n + this.field3739 + 8, n2 + this.field3740 + 5);
+            this.field3735.getItemRenderer().method6541(null, this.field3731.method22529(), n + this.field3739 + 8, n2 + this.field3740 + 5);
         }
         final Iterator<Class683> iterator = this.field3737.iterator();
         while (iterator.hasNext()) {
@@ -148,9 +148,9 @@ public class Class683 extends Class565
     }
     
     public void method3750(final int n, final int n2, final float n3, final int n4, final int n5) {
-        final boolean b = n4 + n + this.field3739 + this.field3733 + 26 >= this.field3729.method3349().field3152;
+        final boolean b = n4 + n + this.field3739 + this.field3733 + 26 >= this.field3729.method3349().width;
         final String s = (this.field3738 != null) ? this.field3738.method1039() : null;
-        final int n6 = (s != null) ? this.field3735.field4643.method6617(s) : 0;
+        final int n6 = (s != null) ? this.field3735.fontRenderer.method6617(s) : 0;
         final boolean b2 = 113 - n2 - this.field3740 - 26 <= 6 + this.field3734.size() * 9;
         final float n7 = (this.field3738 != null) ? this.field3738.method1038() : 0.0f;
         int method35642 = MathHelper.method35642(n7 * this.field3733);
@@ -209,28 +209,28 @@ public class Class683 extends Class565
         this.method3186(n10 + method35642, n9, 200 - n8, class2000.method8019() * 26, n8, 26);
         this.method3186(n + this.field3739 + 3, n2 + this.field3740, this.field3731.method22531().method8016(), 128 + class2001.method8019() * 26, 26, 26);
         if (!b) {
-            this.field3735.field4643.method6609(this.field3732, (float)(n + this.field3739 + 32), (float)(n2 + this.field3740 + 9), -1);
+            this.field3735.fontRenderer.method6609(this.field3732, (float)(n + this.field3739 + 32), (float)(n2 + this.field3740 + 9), -1);
             if (s != null) {
-                this.field3735.field4643.method6609(s, (float)(n + this.field3739 + this.field3733 - n6 - 5), (float)(n2 + this.field3740 + 9), -1);
+                this.field3735.fontRenderer.method6609(s, (float)(n + this.field3739 + this.field3733 - n6 - 5), (float)(n2 + this.field3740 + 9), -1);
             }
         }
         else {
-            this.field3735.field4643.method6609(this.field3732, (float)(n10 + 5), (float)(n2 + this.field3740 + 9), -1);
+            this.field3735.fontRenderer.method6609(this.field3732, (float)(n10 + 5), (float)(n2 + this.field3740 + 9), -1);
             if (s != null) {
-                this.field3735.field4643.method6609(s, (float)(n + this.field3739 - n6), (float)(n2 + this.field3740 + 9), -1);
+                this.field3735.fontRenderer.method6609(s, (float)(n + this.field3739 - n6), (float)(n2 + this.field3740 + 9), -1);
             }
         }
         if (!b2) {
             for (int i = 0; i < this.field3734.size(); ++i) {
-                this.field3735.field4643.method6610(this.field3734.get(i), (float)(n10 + 5), (float)(n2 + this.field3740 + 9 + 17 + i * 9), -5592406);
+                this.field3735.fontRenderer.method6610(this.field3734.get(i), (float)(n10 + 5), (float)(n2 + this.field3740 + 9 + 17 + i * 9), -5592406);
             }
         }
         else {
             for (int j = 0; j < this.field3734.size(); ++j) {
-                this.field3735.field4643.method6610(this.field3734.get(j), (float)(n10 + 5), (float)(n9 + 26 - n11 + 7 + j * 9), -5592406);
+                this.field3735.fontRenderer.method6610(this.field3734.get(j), (float)(n10 + 5), (float)(n9 + 26 - n11 + 7 + j * 9), -5592406);
             }
         }
-        this.field3735.method5307().method6541(null, this.field3731.method22529(), n + this.field3739 + 8, n2 + this.field3740 + 5);
+        this.field3735.getItemRenderer().method6541(null, this.field3731.method22529(), n + this.field3739 + 8, n2 + this.field3740 + 5);
     }
     
     public void method3751(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final int n9) {

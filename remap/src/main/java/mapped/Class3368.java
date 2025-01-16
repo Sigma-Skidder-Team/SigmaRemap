@@ -160,9 +160,9 @@ public class Class3368 extends Class3355
     }
     
     public static void method10709(final BlockPos class354) {
-        final double n = class354.getX() + 0.5f - Class869.method5277().field4644.method5833().method18161().getX();
-        final double n2 = class354.getY() + 1.0f - Class869.method5277().field4644.method5833().method18161().getY();
-        final double n3 = class354.getZ() + 0.5f - Class869.method5277().field4644.method5833().method18161().getZ();
+        final double n = class354.getX() + 0.5f - Minecraft.method5277().field4644.method5833().method18161().getX();
+        final double n2 = class354.getY() + 1.0f - Minecraft.method5277().field4644.method5833().method18161().getY();
+        final double n3 = class354.getZ() + 0.5f - Minecraft.method5277().field4644.method5833().method18161().getZ();
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -171,7 +171,7 @@ public class Class3368 extends Class3355
         GL11.glDisable(2929);
         GL11.glDepthMask(false);
         GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
-        final Vec3d method16755 = new Vec3d(0.0, 0.0, 1.0).rotatePitch(-(float)Math.toRadians(Class869.method5277().field4684.rotationPitch)).rotateYaw(-(float)Math.toRadians(Class869.method5277().field4684.rotationYaw));
+        final Vec3d method16755 = new Vec3d(0.0, 0.0, 1.0).rotatePitch(-(float)Math.toRadians(Minecraft.method5277().field4684.rotationPitch)).rotateYaw(-(float)Math.toRadians(Minecraft.method5277().field4684.rotationYaw));
         GL11.glBegin(1);
         GL11.glVertex3d(method16755.x, method16755.y, method16755.z);
         GL11.glVertex3d(n, n2, n3);
@@ -285,7 +285,7 @@ public class Class3368 extends Class3355
             this.field16033 = 0;
             this.field16036.clear();
             for (final BlockPos class354 : Class4609.method13691(Class3368.field15514.field4682.method27315())) {
-                if (!(Class3368.field15514.field4683.getBlockState(class354).method21696() instanceof Class3984)) {
+                if (!(Class3368.field15514.world.getBlockState(class354).method21696() instanceof Class3984)) {
                     continue;
                 }
                 if (this.method10713(new Class9486(class354)) > 24) {

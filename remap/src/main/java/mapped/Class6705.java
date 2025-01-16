@@ -17,8 +17,8 @@ public class Class6705 extends Class6693
         if (array.length > 0) {
             throw new Class2332("Too many arguments");
         }
-        final Class869 field26420 = Class6705.field26420;
-        if (Class869.field4623) {
+        final Minecraft field26420 = Class6705.field26420;
+        if (Minecraft.field4623) {
             if (!Class9463.method35173().method35193().method32148()) {
                 class6428.method19104("HighDPI was enabled!");
             }

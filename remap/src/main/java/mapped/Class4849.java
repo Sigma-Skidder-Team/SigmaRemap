@@ -42,15 +42,15 @@ public class Class4849 extends Class4841
         class4804.method14251();
         this.method14239(this.field20780 = new Class4817(this, "mods", this.field20776 + n5, this.field20775 + n5 + 120, this.field20777 - n5 * 2, this.field20778 - n5 * 2 - 120));
         int n6 = 10;
-        final Iterator<Map.Entry<Class<? extends Class527>, String>> iterator = Class9000.field37983.entrySet().iterator();
+        final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = Class9000.field37983.entrySet().iterator();
         while (iterator.hasNext()) {
-            final Class8799 class4805 = new Class8799(((Map.Entry<Class<? extends Class527>, V>)iterator.next()).getKey());
+            final Class8799 class4805 = new Class8799(((Map.Entry<Class<? extends Screen>, V>)iterator.next()).getKey());
             final Class4868 class4806;
             this.field20780.method14239(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new Class6523(Class6430.method19118(Class265.field1273.field1292, 0.02f), -986896).method19734(Class6430.method19118(Class265.field1273.field1292, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
             class4806.method14260((class4869, n) -> {
-                final Iterator<Map.Entry<Class<? extends Class527>, String>> iterator = Class9000.field37983.entrySet().iterator();
+                final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = Class9000.field37983.entrySet().iterator();
                 while (iterator.hasNext()) {
-                    final Class8799 field20781 = new Class8799(((Map.Entry<Class<? extends Class527>, V>)iterator.next()).getKey());
+                    final Class8799 field20781 = new Class8799(((Map.Entry<Class<? extends Screen>, V>)iterator.next()).getKey());
                     if (field20781.method30702().equals(class4806.method14266()) && !this.field20783) {
                         this.field20781 = field20781;
                         this.field20783 = true;

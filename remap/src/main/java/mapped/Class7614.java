@@ -68,7 +68,7 @@ public class Class7614
     
     public void method23920() {
         for (final Class9488 class9488 : this.field30179) {
-            Class869.method5277().field4683.method6692(class9488.field40785, class9488.field40786);
+            Minecraft.method5277().world.method6692(class9488.field40785, class9488.field40786);
         }
         this.field30179.clear();
     }
@@ -150,7 +150,7 @@ public class Class7614
             return this.field30175.get(class354);
         }
         if (!this.field30176.containsKey(class354)) {
-            return Class869.method5277().field4683.getBlockState(class354);
+            return Minecraft.method5277().world.getBlockState(class354);
         }
         return this.field30176.get(class354);
     }

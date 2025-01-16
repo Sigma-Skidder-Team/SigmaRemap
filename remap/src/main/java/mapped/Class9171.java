@@ -8,11 +8,11 @@ import java.util.Random;
 
 public class Class9171
 {
-    public Class869 field38851;
+    public Minecraft field38851;
     public static boolean field38852;
     
     public Class9171() {
-        this.field38851 = Class869.method5277();
+        this.field38851 = Minecraft.method5277();
         Class9463.method35173().method35188().method21094(this);
     }
     

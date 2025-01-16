@@ -80,6 +80,6 @@ public class Class4874 extends Class4873 implements Class4870
     
     @Override
     public float method14606() {
-        return 0.07f * (30.0f / Class869.method5338());
+        return 0.07f * (30.0f / Minecraft.method5338());
     }
 }

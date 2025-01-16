@@ -12,7 +12,7 @@ import java.util.Map;
 public class Class4801 extends Class4800
 {
     public Class4919 field20459;
-    private static Class869 field20460;
+    private static Minecraft field20460;
     private static Class9572 field20461;
     private static boolean field20462;
     private static boolean field20463;
@@ -186,8 +186,8 @@ public class Class4801 extends Class4800
     
     @Override
     public int method14201() {
-        final Class869 field20460 = Class4801.field20460;
-        return Class869.method5338();
+        final Minecraft field20460 = Class4801.field20460;
+        return Minecraft.method5338();
     }
     
     @Override
@@ -276,7 +276,7 @@ public class Class4801 extends Class4800
     }
     
     static {
-        Class4801.field20460 = Class869.method5277();
+        Class4801.field20460 = Minecraft.method5277();
         Class4801.field20470 = true;
     }
 }

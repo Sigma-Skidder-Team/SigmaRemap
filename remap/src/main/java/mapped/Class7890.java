@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class Class7890
 {
-    private static Class869 field32394;
+    private static Minecraft field32394;
     private static Class8246 field32395;
     private static Class4995[][] field32396;
     public static boolean field32397;
@@ -24,7 +24,7 @@ public class Class7890
         if (Class7890.field32396 == null) {
             return class1932;
         }
-        final Class527 field4700 = Class7890.field32394.field4700;
+        final Screen field4700 = Class7890.field32394.field4700;
         if (!(field4700 instanceof Class516)) {
             return class1932;
         }
@@ -34,7 +34,7 @@ public class Class7890
         if (Class7890.field32395 == null) {
             return class1932;
         }
-        final Class1848 field4701 = Class7890.field32394.field4683;
+        final Class1848 field4701 = Class7890.field32394.world;
         if (field4701 == null) {
             return class1932;
         }
@@ -89,7 +89,7 @@ public class Class7890
         return method25543(Class2005.field11268, Class7890.field32394.field4684.method1894(), field4701, class1932, field4700);
     }
     
-    private static ResourceLocation method25543(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007, final ResourceLocation class2008, final Class527 class2009) {
+    private static ResourceLocation method25543(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007, final ResourceLocation class2008, final Screen class2009) {
         final Class4995[] array = Class7890.field32396[class2005.ordinal()];
         if (array != null) {
             for (int i = 0; i < array.length; ++i) {

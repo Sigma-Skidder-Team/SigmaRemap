@@ -17,25 +17,25 @@ public class Class721 extends Class720
         super(new Class548());
     }
     
-    public Class721(final Class527 class527) {
+    public Class721(final Screen class527) {
         super(class527);
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
-        this.field3944 = this.method3029(new Class6470("jello.portaloption", 0.0, (double)(this.method3963().size() - 1), 1.0f, p0 -> Double.valueOf(this.method3962()), (p0, n) -> Class9367.field40167 = this.method3964(n.intValue()), (class5762, class5764) -> this.method3964((int)class5764.method19476(class5762)).method25614()).method19362(this.field3150.field4648, this.field3152 / 2 + 40, 7, 114));
+    public void init() {
+        super.init();
+        this.field3944 = this.method3029(new Class6470("jello.portaloption", 0.0, (double)(this.method3963().size() - 1), 1.0f, p0 -> Double.valueOf(this.method3962()), (p0, n) -> Class9367.field40167 = this.method3964(n.intValue()), (class5762, class5764) -> this.method3964((int)class5764.method19476(class5762)).method25614()).method19362(this.minecraft.field4648, this.width / 2 + 40, 7, 114));
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         super.method2975(n, n2, n3);
-        Class8154.method26870(0, 0, Class869.method5277().field4632.method7694(), (int)(30.0 * Class869.method5277().field4632.method7700() / Class9000.field37993));
-        this.method3041();
+        Class8154.method26870(0, 0, Minecraft.method5277().field4632.method7694(), (int)(30.0 * Minecraft.method5277().field4632.method7700() / Class9000.field37993));
+        this.renderBackground();
         Class8154.method26872();
         this.field3944.method2975(n, n2, n3);
-        this.method3297(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2 - 146, 13, 16777215);
-        this.method3297(this.field3156, "Jello Portal:", this.field3152 / 2 - 30, 13, Class6430.method19118(Class265.field1278.field1292, 0.5f));
+        this.method3297(this.font, this.field3148.getFormattedText(), this.width / 2 - 146, 13, 16777215);
+        this.method3297(this.font, "Jello Portal:", this.width / 2 - 30, 13, Class6430.method19118(Class265.field1278.field1292, 0.5f));
     }
     
     private int method3962() {

@@ -108,7 +108,7 @@ public class Class7520
                         });
                     }
                     else {
-                        Class869.method5277().method5238(Class869.method5277().method5275(CrashReport.makeCrashReport(t2, "Batching chunks")));
+                        Minecraft.method5277().method5238(Minecraft.method5277().method5275(CrashReport.makeCrashReport(t2, "Batching chunks")));
                     }
                 });
             }

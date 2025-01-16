@@ -9,7 +9,7 @@ import java.util.List;
 
 public abstract class Class7814 implements Class7813
 {
-    public static final Class869 field32015;
+    public static final Minecraft field32015;
     private boolean field32016;
     public String field32017;
     public String field32018;
@@ -51,11 +51,11 @@ public abstract class Class7814 implements Class7813
     }
     
     public List<Class754> method25247() {
-        return Class7814.field32015.field4683.method6840();
+        return Class7814.field32015.world.method6840();
     }
     
     public List<Class754> method25248() {
-        return Class7814.field32015.field4683.method6840();
+        return Class7814.field32015.world.method6840();
     }
     
     public PlayerEntity method25249(final String obj) {
@@ -79,6 +79,6 @@ public abstract class Class7814 implements Class7813
     }
     
     static {
-        field32015 = Class869.method5277();
+        field32015 = Minecraft.method5277();
     }
 }

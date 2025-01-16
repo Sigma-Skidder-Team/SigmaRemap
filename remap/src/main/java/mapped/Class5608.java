@@ -22,6 +22,6 @@ public class Class5608 extends Class5609
     
     @Override
     public String method16899() {
-        return Class5046.method15438("mco.configure.world.spawnProtection") + ": " + ((Class5085.method15910(this.field22974) != 0) ? Class5085.method15910(this.field22974) : Class5046.method15438("mco.configure.world.off"));
+        return RealmsScreen.getLocalizedString("mco.configure.world.spawnProtection") + ": " + ((Class5085.method15910(this.field22974) != 0) ? Class5085.method15910(this.field22974) : RealmsScreen.getLocalizedString("mco.configure.world.off"));
     }
 }

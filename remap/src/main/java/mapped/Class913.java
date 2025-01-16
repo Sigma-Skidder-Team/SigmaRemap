@@ -28,10 +28,10 @@ public class Class913 extends Thread
                 return;
             }
             byName = InetAddress.getByName(this.field4873);
-            Class694.method3876(this.field4875, NetworkManager.method11183(byName, this.field4874, this.field4875.field3150.field4648.method17129()));
-            Class694.method3877(this.field4875).method11173(new Class5808(Class694.method3877(this.field4875), this.field4875.field3150, Class694.method3878(this.field4875), class2250 -> Class694.method3880(this.field4875, class2250)));
+            Class694.method3876(this.field4875, NetworkManager.method11183(byName, this.field4874, this.field4875.minecraft.field4648.method17129()));
+            Class694.method3877(this.field4875).method11173(new Class5808(Class694.method3877(this.field4875), this.field4875.minecraft, Class694.method3878(this.field4875), class2250 -> Class694.method3880(this.field4875, class2250)));
             Class694.method3877(this.field4875).method11174(new Class4398(this.field4873, this.field4874, Class2208.field13457));
-            Class694.method3877(this.field4875).method11174(new Class4327(this.field4875.field3150.method5287().method33694()));
+            Class694.method3877(this.field4875).method11174(new Class4327(this.field4875.minecraft.method5287().method33694()));
         }
         catch (final UnknownHostException ex) {
             if (Class694.method3875(this.field4875)) {
@@ -50,16 +50,16 @@ public class Class913 extends Thread
             else {
                 ex2.toString().replaceAll(byName + ":" + this.field4874, "");
             }
-            this.field4875.field3150.execute(() -> {
-                final Class869 field3150 = this.field4875.field3150;
+            this.field4875.minecraft.execute(() -> {
+                final Minecraft field3150 = this.field4875.minecraft;
                 new(mapped.Class735.class)();
                 Class694.method3878(this.field4875);
                 new Class2259("disconnect.genericReason", new Object[] { s });
                 final Class2259 class2251;
-                final Class527 class2253;
+                final Screen class2253;
                 final String s2;
                 new Class735(class2253, s2, class2251);
-                final Class527 class2252;
+                final Screen class2252;
                 field3150.method5244(class2252);
             });
         }

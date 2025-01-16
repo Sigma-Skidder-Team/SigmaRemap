@@ -5,13 +5,11 @@
 package mapped;
 
 import java.io.IOException;
-import java.util.UUID;
-import java.util.Iterator;
 import java.util.Map;
 
 public class Class4930 extends Class4800
 {
-    private static Class869 field21102;
+    private static Minecraft field21102;
     private static float field21103;
     private float field21104;
     private Class4900 field21105;
@@ -107,6 +105,6 @@ public class Class4930 extends Class4800
     }
     
     static {
-        Class4930.field21102 = Class869.method5277();
+        Class4930.field21102 = Minecraft.method5277();
     }
 }

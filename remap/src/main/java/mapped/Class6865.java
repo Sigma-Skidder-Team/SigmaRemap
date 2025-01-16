@@ -31,11 +31,11 @@ public class Class6865 implements Class6866
         Class8726.method30069(1.0f, 1.0f, 1.0f);
         class690.method3186(0, 0, 0, 64, 160, 32);
         if (this.field26898 != null) {
-            class690.method3853().field4643.method6610(this.field26897, 18.0f, 7.0f, -256);
-            class690.method3853().field4643.method6610(this.field26898, 18.0f, 18.0f, -1);
+            class690.method3853().fontRenderer.method6610(this.field26897, 18.0f, 7.0f, -256);
+            class690.method3853().fontRenderer.method6610(this.field26898, 18.0f, 18.0f, -1);
         }
         else {
-            class690.method3853().field4643.method6610(this.field26897, 18.0f, 12.0f, -256);
+            class690.method3853().fontRenderer.method6610(this.field26897, 18.0f, 12.0f, -256);
         }
         return (field26899 - this.field26899 >= 5000L) ? Class2204.field13418 : Class2204.field13417;
     }

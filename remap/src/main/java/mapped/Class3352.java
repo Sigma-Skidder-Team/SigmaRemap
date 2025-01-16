@@ -32,7 +32,7 @@ public class Class3352 extends Class3167
             }
             else if (Class3352.field15514.field4682.method27336() != Class101.field299) {
                 if (this.field15977 != null) {
-                    if (Class3352.field15514.field4683.getBlockState(this.field15977).method21706() || Math.sqrt(Class3352.field15514.field4684.method1733(this.field15977.getX() + 0.5, this.field15977.getY() + 0.5, this.field15977.getZ() + 0.5)) > 6.0) {
+                    if (Class3352.field15514.world.getBlockState(this.field15977).method21706() || Math.sqrt(Class3352.field15514.field4684.method1733(this.field15977.getX() + 0.5, this.field15977.getY() + 0.5, this.field15977.getZ() + 0.5)) > 6.0) {
                         this.field15977 = this.field15978.get(0);
                     }
                     final float[] method30919 = Class8845.method30919(this.field15977.getX(), this.field15977.getZ(), this.field15977.getY());
@@ -79,12 +79,12 @@ public class Class3352 extends Class3167
     public static void method10610(final BlockPos class354) {
         Class3352.field15514.method5269().method17292(new Class4399(Class2003.field11240, class354, Direction.UP));
         Class3352.field15514.method5269().method17292(new Class4399(Class2003.field11242, class354, Direction.UP));
-        Class3352.field15514.field4683.method6692(class354, new BlockState(Class7521.field29147, (ImmutableMap<IProperty<?>, Comparable<?>>)ImmutableMap.builder().build()));
+        Class3352.field15514.world.method6692(class354, new BlockState(Class7521.field29147, (ImmutableMap<IProperty<?>, Comparable<?>>)ImmutableMap.builder().build()));
     }
     
     private boolean method10611(final BlockPos class354) {
-        final Block method21696 = Class3352.field15514.field4683.getBlockState(class354).method21696();
-        return Class3352.field15514.field4683.getBlockState(class354).method21697().method26442() || method21696 instanceof Class3874;
+        final Block method21696 = Class3352.field15514.world.getBlockState(class354).method21696();
+        return Class3352.field15514.world.getBlockState(class354).method21697().method26442() || method21696 instanceof Class3874;
     }
     
     private List<BlockPos> method10612(final float n) {
@@ -93,7 +93,7 @@ public class Class3352 extends Class3167
             for (float n3 = -n; n3 <= n; ++n3) {
                 for (float n4 = -n; n4 <= n; ++n4) {
                     final BlockPos class354 = new BlockPos(Class3352.field15514.field4684.posX + n3, Class3352.field15514.field4684.posY + n2, Class3352.field15514.field4684.posZ + n4);
-                    if (!Class3352.field15514.field4683.getBlockState(class354).method21706() && Class3352.field15514.field4683.getBlockState(class354).method21756().method21781() && Math.sqrt(Class3352.field15514.field4684.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
+                    if (!Class3352.field15514.world.getBlockState(class354).method21706() && Class3352.field15514.world.getBlockState(class354).method21756().method21781() && Math.sqrt(Class3352.field15514.field4684.method1733(class354.getX() + 0.5, class354.getY() + 0.5, class354.getZ() + 0.5)) < n) {
                         final String method9887 = this.method9887("Mode");
                         switch (method9887) {
                             case "One hit": {
@@ -103,13 +103,13 @@ public class Class3352 extends Class3167
                                 break;
                             }
                             case "Bed": {
-                                if (!(Class3352.field15514.field4683.getBlockState(class354).method21696() instanceof Class3900)) {
+                                if (!(Class3352.field15514.world.getBlockState(class354).method21696() instanceof Class3900)) {
                                     continue;
                                 }
                                 break;
                             }
                             case "Egg": {
-                                if (!(Class3352.field15514.field4683.getBlockState(class354).method21696() instanceof Class3987)) {
+                                if (!(Class3352.field15514.world.getBlockState(class354).method21696() instanceof Class3987)) {
                                     continue;
                                 }
                                 break;

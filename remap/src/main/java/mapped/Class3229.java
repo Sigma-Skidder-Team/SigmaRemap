@@ -300,7 +300,7 @@ public class Class3229 extends Class3167
     
     @Class6753
     public void method10180(final Class5723 class5723) {
-        if (!this.method9906() || Class3229.field15514.field4683 == null || Class3229.field15514.method5269() == null) {
+        if (!this.method9906() || Class3229.field15514.world == null || Class3229.field15514.method5269() == null) {
             return;
         }
         final IPacket method16998 = class5723.method16998();

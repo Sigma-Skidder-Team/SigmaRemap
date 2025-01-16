@@ -44,7 +44,7 @@ public class Class756 extends Class754
     private boolean field4083;
     private String field4084;
     public Class6093 field4085;
-    public final Class869 field4086;
+    public final Minecraft field4086;
     public int field4087;
     public int field4088;
     public float field4089;
@@ -64,7 +64,7 @@ public class Class756 extends Class754
     private int field4103;
     private boolean field4104;
     
-    public Class756(final Class869 field4086, final Class1848 class1848, final Class5799 field4087, final Class7474 field4088, final Class6520 field4089) {
+    public Class756(final Minecraft field4086, final Class1848 class1848, final Class5799 field4087, final Class7474 field4088, final Class6520 field4089) {
         super(class1848, field4087.method17373());
         this.field4072 = Lists.newArrayList();
         this.field4073 = 0;

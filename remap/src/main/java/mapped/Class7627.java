@@ -15,13 +15,13 @@ public class Class7627 extends Class7626
     
     @Override
     public void method23960(final int n, final int n2, final boolean b) {
-        Class5046.method15419("realms:textures/gui/realms/reject_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/reject_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n, n2, b ? 19.0f : 0.0f, 0.0f, 18, 18, 37, 18);
+        RealmsScreen.method15411(n, n2, b ? 19.0f : 0.0f, 0.0f, 18, 18, 37, 18);
         Class8726.method30060();
         if (b) {
-            Class5073.method15672(this.field30207.field3606, Class5046.method15438("mco.invites.button.reject"));
+            Class5073.method15672(this.field30207.field3606, RealmsScreen.getLocalizedString("mco.invites.button.reject"));
         }
     }
     

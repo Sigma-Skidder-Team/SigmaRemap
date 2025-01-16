@@ -31,7 +31,7 @@ public class Class3359 extends Class3355
     }
     
     public List<Entity> method10640() {
-        final ArrayList arrayList = Lists.newArrayList((Iterable)Class3359.field15514.field4683.method6806());
+        final ArrayList arrayList = Lists.newArrayList((Iterable)Class3359.field15514.world.method6806());
         arrayList.remove(Class3359.field15514.field4684);
         final Iterator iterator = arrayList.iterator();
         while (iterator.hasNext()) {

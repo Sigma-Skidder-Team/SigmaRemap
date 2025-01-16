@@ -5,8 +5,6 @@
 package mapped;
 
 import java.util.Iterator;
-import java.util.Collection;
-import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
 
@@ -72,7 +70,7 @@ public class Class4802 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class869.method5277().method5244(new Class555());
+            Minecraft.method5277().method5244(new Class555());
         }
     }
 }

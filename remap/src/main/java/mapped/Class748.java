@@ -23,8 +23,8 @@ public class Class748 extends Class516<Class3436>
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
+    public void init() {
+        super.init();
         this.field4043 = this.method3029(new Class651(this, this.field3079 + 164, this.field3080 + 107));
         this.method3029(new Class652(this, this.field3079 + 190, this.field3080 + 107));
         this.field4044 = true;
@@ -32,8 +32,8 @@ public class Class748 extends Class516<Class3436>
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
+    public void tick() {
+        super.tick();
         final int method10959 = ((Class3436)this.field3077).method10959();
         if (this.field4044) {
             if (method10959 >= 0) {
@@ -89,9 +89,9 @@ public class Class748 extends Class516<Class3436>
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.method3295(this.field3156, Class8822.method30773("block.minecraft.beacon.primary", new Object[0]), 62, 10, 14737632);
-        this.method3295(this.field3156, Class8822.method30773("block.minecraft.beacon.secondary", new Object[0]), 169, 10, 14737632);
-        for (final Class573 class573 : this.field3154) {
+        this.method3295(this.font, Class8822.method30773("block.minecraft.beacon.primary", new Object[0]), 62, 10, 14737632);
+        this.method3295(this.font, Class8822.method30773("block.minecraft.beacon.secondary", new Object[0]), 169, 10, 14737632);
+        for (final Class573 class573 : this.buttons) {
             if (!class573.method3360()) {
                 continue;
             }
@@ -103,21 +103,21 @@ public class Class748 extends Class516<Class3436>
     @Override
     public void method2976(final float n, final int n2, final int n3) {
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3150.method5290().method5849(Class748.field4042);
-        final int n4 = (this.field3152 - this.field3075) / 2;
-        final int n5 = (this.field3153 - this.field3076) / 2;
+        this.minecraft.method5290().method5849(Class748.field4042);
+        final int n4 = (this.width - this.field3075) / 2;
+        final int n5 = (this.height - this.field3076) / 2;
         this.method3186(n4, n5, 0, 0, this.field3075, this.field3076);
-        this.field3151.field9952 = 100.0f;
-        this.field3151.method6540(new ItemStack(Items.field31514), n4 + 42, n5 + 109);
-        this.field3151.method6540(new ItemStack(Items.field31283), n4 + 42 + 22, n5 + 109);
-        this.field3151.method6540(new ItemStack(Items.field31285), n4 + 42 + 44, n5 + 109);
-        this.field3151.method6540(new ItemStack(Items.field31284), n4 + 42 + 66, n5 + 109);
-        this.field3151.field9952 = 0.0f;
+        this.itemRenderer.field9952 = 100.0f;
+        this.itemRenderer.method6540(new ItemStack(Items.field31514), n4 + 42, n5 + 109);
+        this.itemRenderer.method6540(new ItemStack(Items.field31283), n4 + 42 + 22, n5 + 109);
+        this.itemRenderer.method6540(new ItemStack(Items.field31285), n4 + 42 + 44, n5 + 109);
+        this.itemRenderer.method6540(new ItemStack(Items.field31284), n4 + 42 + 66, n5 + 109);
+        this.itemRenderer.field9952 = 0.0f;
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         super.method2975(n, n2, n3);
         this.method2977(n, n2);
     }

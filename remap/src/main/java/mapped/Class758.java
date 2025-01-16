@@ -22,7 +22,7 @@ public class Class758 extends Class754
     
     @Override
     public boolean method2889() {
-        Class869.method5277().method5269().method17371(this.method2844().getId());
+        Minecraft.method5277().method5269().method17371(this.method2844().getId());
         return true;
     }
     
@@ -68,7 +68,7 @@ public class Class758 extends Class754
     }
     
     public static Class1768 method4101(final ResourceLocation class1932, final String s) {
-        final Class1663 method5290 = Class869.method5277().method5290();
+        final Class1663 method5290 = Minecraft.method5277().method5290();
         Class1666 method5291 = method5290.method5853(class1932);
         if (method5291 == null) {
             method5291 = new Class1768(null, String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", Class8272.method27499(s)), Class7634.method24004(PlayerEntity.method2894(s)), true, null);

@@ -14,7 +14,7 @@ import java.util.List;
 public abstract class Class604<E extends Class592<E>> extends Class598 implements Class563
 {
     public static final int field3539 = -2;
-    public final Class869 field3540;
+    public final Minecraft field3540;
     public final int field3541;
     private final List<E> field3542;
     public int field3543;
@@ -32,7 +32,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     private boolean field3555;
     private E field3556;
     
-    public Class604(final Class869 field3540, final int n, final int field3541, final int field3542, final int field3543, final int field3544) {
+    public Class604(final Minecraft field3540, final int n, final int field3541, final int field3542, final int field3543, final int field3544) {
         this.field3542 = (List<E>)new Class2266(this, null);
         this.field3549 = true;
         this.field3550 = -2;
@@ -78,7 +78,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     @Override
-    public final List<E> method3040() {
+    public final List<E> children() {
         return this.field3542;
     }
     
@@ -92,7 +92,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     public E method3535(final int n) {
-        return this.method3040().get(n);
+        return this.children().get(n);
     }
     
     public int method3536(final E e) {
@@ -101,11 +101,11 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     public int method3537() {
-        return this.method3040().size();
+        return this.children().size();
     }
     
     public boolean method3538(final int n) {
-        return Objects.equals(this.method3530(), this.method3040().get(n));
+        return Objects.equals(this.method3530(), this.children().get(n));
     }
     
     @Nullable
@@ -122,7 +122,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
                     if (n8 >= 0) {
                         if (n7 >= 0) {
                             if (n8 < this.method3537()) {
-                                final Class592<E> class592 = this.method3040().get(n8);
+                                final Class592<E> class592 = this.children().get(n8);
                                 return (E)class592;
                             }
                         }
@@ -239,11 +239,11 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     public void method3547(final E e) {
-        this.method3551(this.method3040().indexOf(e) * this.field3541 + this.field3541 / 2 - (this.field3546 - this.field3545) / 2);
+        this.method3551(this.children().indexOf(e) * this.field3541 + this.field3541 / 2 - (this.field3546 - this.field3545) / 2);
     }
     
     public void method3548(final E e) {
-        final int method3559 = this.method3559(this.method3040().indexOf(e));
+        final int method3559 = this.method3559(this.children().indexOf(e));
         final int n = method3559 - this.field3545 - 4 - this.field3541;
         if (n < 0) {
             this.method3549(n);
@@ -296,9 +296,9 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         this.method3554(n, n2, n3);
-        if (this.method3055(n, n2)) {
+        if (this.isMouseOver(n, n2)) {
             final Class592<E> method3539 = (Class592<E>)this.method3539(n, n2);
             if (method3539 == null) {
                 if (n3 == 0) {
@@ -306,8 +306,8 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
                     return true;
                 }
             }
-            else if (method3539.method2982(n, n2, n3)) {
-                this.method3470(method3539);
+            else if (method3539.mouseClicked(n, n2, n3)) {
+                this.setFocused(method3539);
                 this.method3469(true);
                 return true;
             }
@@ -317,16 +317,16 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     @Override
-    public boolean method2985(final double n, final double n2, final int n3) {
+    public boolean mouseReleased(final double n, final double n2, final int n3) {
         if (this.method3532() != null) {
-            this.method3532().method2985(n, n2, n3);
+            this.method3532().mouseReleased(n, n2, n3);
         }
         return false;
     }
     
     @Override
-    public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
-        if (super.method2984(n, n2, n3, n4, n5)) {
+    public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
+        if (super.mouseDragged(n, n2, n3, n4, n5)) {
             return true;
         }
         if (n3 == 0 && this.field3555) {
@@ -349,14 +349,14 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     @Override
-    public boolean method3012(final double n, final double n2, final double n3) {
+    public boolean mouseScrolled(final double n, final double n2, final double n3) {
         this.method3551(this.method3550() - n3 * this.field3541 / 2.0);
         return true;
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
-        if (super.method2972(n, n2, n3)) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
+        if (super.keyPressed(n, n2, n3)) {
             return true;
         }
         if (n == 264) {
@@ -371,15 +371,15 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
     }
     
     public void method3556(final int n) {
-        if (!this.method3040().isEmpty()) {
-            final Class592<E> class592 = this.method3040().get(MathHelper.method35651(this.method3040().indexOf(this.method3530()) + n, 0, this.method3537() - 1));
+        if (!this.children().isEmpty()) {
+            final Class592<E> class592 = this.children().get(MathHelper.method35651(this.children().indexOf(this.method3530()) + n, 0, this.method3537() - 1));
             this.method3531((E)class592);
             this.method3548((E)class592);
         }
     }
     
     @Override
-    public boolean method3055(final double n, final double n2) {
+    public boolean isMouseOver(final double n, final double n2) {
         if (n2 >= this.field3545) {
             if (n2 <= this.field3546) {
                 if (n >= this.field3548) {
@@ -427,7 +427,7 @@ public abstract class Class604<E extends Class592<E>> extends Class598 implement
                             Class8726.method30040();
                         }
                     }
-                    method3541.method3467(i, method3540, this.method3558(), method3542, n7, n3, n4, this.method3055(n3, n4) && Objects.equals(this.method3539(n3, n4), method3541), n5);
+                    method3541.method3467(i, method3540, this.method3558(), method3542, n7, n3, n4, this.isMouseOver(n3, n4) && Objects.equals(this.method3539(n3, n4), method3541), n5);
                 }
             }
         }

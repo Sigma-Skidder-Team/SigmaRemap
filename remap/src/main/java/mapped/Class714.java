@@ -6,12 +6,12 @@ package mapped;
 
 public class Class714 extends Class698
 {
-    private Class527 field3900;
+    private Screen field3900;
     private Class5760 field3901;
     private static Class6469[] field3902;
     private Class8297 field3903;
     
-    public Class714(final Class527 field3900, final Class5760 field3901) {
+    public Class714(final Screen field3900, final Class5760 field3901) {
         super(new StringTextComponent(Class8822.method30773("of.options.qualityTitle", new Object[0])));
         this.field3903 = new Class8297(this, new Class7298());
         this.field3900 = field3900;
@@ -19,16 +19,16 @@ public class Class714 extends Class698
     }
     
     @Override
-    public void method2969() {
+    public void init() {
         this.field3842.clear();
         for (int i = 0; i < Class714.field3902.length; ++i) {
             final Class6469 class6469 = Class714.field3902[i];
-            final Class573 method3029 = this.method3029(class6469.method19362(this.field3150.field4648, this.field3152 / 2 - 155 + i % 2 * 160, this.field3153 / 6 + 21 * (i / 2) - 12, 150));
+            final Class573 method3029 = this.method3029(class6469.method19362(this.minecraft.field4648, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 21 * (i / 2) - 12, 150));
             if (class6469 == Class6469.field25799 || class6469 == Class6469.field25798) {
                 method3029.field3431 = false;
             }
         }
-        this.method3029(new Class673(200, this.field3152 / 2 - 100, this.field3153 / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
+        this.method3029(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
     }
     
     @Override
@@ -37,23 +37,23 @@ public class Class714 extends Class698
             final Class673 class574 = (Class673)class573;
             if (class574.field3431) {
                 if (class574.field3708 == 200) {
-                    this.field3150.field4648.method17121();
-                    this.field3150.method5244(this.field3900);
+                    this.minecraft.field4648.method17121();
+                    this.minecraft.method5244(this.field3900);
                 }
             }
         }
     }
     
     @Override
-    public void method2971() {
-        this.field3150.field4648.method17121();
-        super.method2971();
+    public void removed() {
+        this.minecraft.field4648.method17121();
+        super.removed();
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
-        this.method3295(this.field3843, this.field3148.getFormattedText(), this.field3152 / 2, 15, 16777215);
+        this.renderBackground();
+        this.method3295(this.field3843, this.field3148.getFormattedText(), this.width / 2, 15, 16777215);
         super.method2975(n, n2, n3);
         this.field3903.method27577(n, n2, this.field3842);
     }

@@ -33,7 +33,7 @@ import java.util.Map;
 public class Class689 extends Class565
 {
     private static final Map<Class2020, String> field3791;
-    private final Class869 field3792;
+    private final Minecraft field3792;
     private final Class1844 field3793;
     private RayTraceResult field3794;
     private RayTraceResult field3795;
@@ -46,14 +46,14 @@ public class Class689 extends Class565
     private long field3802;
     private long field3803;
     
-    public Class689(final Class869 field3792) {
+    public Class689(final Minecraft field3792) {
         this.field3799 = null;
         this.field3800 = null;
         this.field3801 = null;
         this.field3802 = 0L;
         this.field3803 = 0L;
         this.field3792 = field3792;
-        this.field3793 = field3792.field4643;
+        this.field3793 = field3792.fontRenderer;
     }
     
     public void method3827() {
@@ -186,7 +186,7 @@ public class Class689 extends Class565
         }
         final BlockPos class354 = new BlockPos(this.field3792.method5303());
         if (this.field3792.method5317()) {
-            return Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + this.field3792.method5235() + "/" + Class7932.method25729() + ")", this.field3792.field4707, s, this.field3792.field4636.method5704(), this.field3792.field4636.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.field4683.method6816(), this.field3792.field4683.method6726(), "", String.format("Chunk-relative: %d %d %d", class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF) });
+            return Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + this.field3792.method5235() + "/" + Class7932.method25729() + ")", this.field3792.field4707, s, this.field3792.field4636.method5704(), this.field3792.field4636.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.world.method6816(), this.field3792.world.method6726(), "", String.format("Chunk-relative: %d %d %d", class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF) });
         }
         final Entity method5289 = this.field3792.method5303();
         final Direction method5290 = method5289.method1882();
@@ -224,25 +224,25 @@ public class Class689 extends Class565
         if (!this.field3792.method5284()) {
             str = Class7906.method25609(Class9367.method34762()).method25614();
         }
-        final ArrayList arrayList = Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + str + "/" + Class7932.method25729() + ("release".equalsIgnoreCase(this.field3792.method5236()) ? "" : ("/" + this.field3792.method5236())) + ")", this.field3792.field4707, s, this.field3792.field4636.method5704(), this.field3792.field4636.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.field4683.method6816(), this.field3792.field4683.method6726() });
+        final ArrayList arrayList = Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + str + "/" + Class7932.method25729() + ("release".equalsIgnoreCase(this.field3792.method5236()) ? "" : ("/" + this.field3792.method5236())) + ")", this.field3792.field4707, s, this.field3792.field4636.method5704(), this.field3792.field4636.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.world.method6816(), this.field3792.world.method6726() });
         final String method5292 = this.method3833();
         if (method5292 != null) {
             arrayList.add(method5292);
         }
-        arrayList.add(DimensionType.method1276(this.field3792.field4683.dimension.getType()).toString() + " FC: " + Integer.toString(((LongSet)o).size()));
+        arrayList.add(DimensionType.method1276(this.field3792.world.dimension.getType()).toString() + " FC: " + Integer.toString(((LongSet)o).size()));
         arrayList.add("");
         arrayList.add(String.format(Locale.ROOT, "XYZ: %.3f / %.5f / %.3f", this.field3792.method5303().getPosX(), this.field3792.method5303().getPosY(), this.field3792.method5303().getPosZ()));
         arrayList.add(String.format("Block: %d %d %d", class354.getX(), class354.getY(), class354.getZ()));
         arrayList.add(String.format("Chunk: %d %d %d in %d %d %d", class354.getX() & 0xF, class354.getY() & 0xF, class354.getZ() & 0xF, class354.getX() >> 4, class354.getY() >> 4, class354.getZ() >> 4));
         arrayList.add(String.format(Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", method5290, s2, MathHelper.method35668(method5289.rotationYaw), MathHelper.method35668(method5289.rotationPitch)));
-        if (this.field3792.field4683 != null) {
-            if (this.field3792.field4683.method6971(class354)) {
+        if (this.field3792.world != null) {
+            if (this.field3792.world.method6971(class354)) {
                 final Class1862 method5293 = this.method3836();
                 if (method5293.method7062()) {
                     arrayList.add("Waiting for chunk...");
                 }
                 else {
-                    arrayList.add("Client Light: " + this.field3792.field4683.method6835().getLightManager().method7290(class354, 0) + " (" + this.field3792.field4683.method6992(Class237.field911, class354) + " sky, " + this.field3792.field4683.method6992(Class237.field912, class354) + " block)");
+                    arrayList.add("Client Light: " + this.field3792.world.method6835().getLightManager().method7290(class354, 0) + " (" + this.field3792.world.method6992(Class237.field911, class354) + " sky, " + this.field3792.world.method6992(Class237.field912, class354) + " block)");
                     final Class1862 method5294 = this.method3835();
                     if (method5294 != null) {
                         final Class1886 method5295 = method5291.getChunkProvider().getLightManager();
@@ -273,7 +273,7 @@ public class Class689 extends Class565
                     }
                     arrayList.add(sb.toString());
                     if (class354.getY() >= 0 && class354.getY() < 256) {
-                        arrayList.add("Biome: " + Registry.field217.getKey(this.field3792.field4683.method6959(class354)));
+                        arrayList.add("Biome: " + Registry.field217.getKey(this.field3792.world.method6959(class354)));
                         long method5296 = 0L;
                         float method5297 = 0.0f;
                         if (method5294 != null) {
@@ -281,7 +281,7 @@ public class Class689 extends Class565
                             method5296 = method5294.method7041();
                         }
                         final Class9592 class358 = new Class9592(method5291.method6954(), method5291.method6755(), method5296, method5297);
-                        arrayList.add(String.format(Locale.ROOT, "Local Difficulty: %.2f // %.2f (Day %d)", class358.method35973(), class358.method35975(), this.field3792.field4683.method6755() / 24000L));
+                        arrayList.add(String.format(Locale.ROOT, "Local Difficulty: %.2f // %.2f (Day %d)", class358.method35973(), class358.method35975(), this.field3792.world.method6755() / 24000L));
                     }
                 }
             }
@@ -312,7 +312,7 @@ public class Class689 extends Class565
     private String method3833() {
         final Class1655 method5285 = this.field3792.method5285();
         if (method5285 != null) {
-            final Class1849 method5286 = method5285.method1481(this.field3792.field4683.method6789().getType());
+            final Class1849 method5286 = method5285.method1481(this.field3792.world.method6789().getType());
             if (method5286 != null) {
                 return method5286.method6726();
             }
@@ -321,7 +321,7 @@ public class Class689 extends Class565
     }
     
     private World method3834() {
-        return (World)DataFixUtils.orElse((Optional)Optional.ofNullable(this.field3792.method5285()).map(class1655 -> class1655.method1481(this.field3792.field4683.dimension.getType())), (Object)this.field3792.field4683);
+        return (World)DataFixUtils.orElse((Optional)Optional.ofNullable(this.field3792.method5285()).map(class1655 -> class1655.method1481(this.field3792.world.dimension.getType())), (Object)this.field3792.world);
     }
     
     @Nullable
@@ -329,7 +329,7 @@ public class Class689 extends Class565
         if (this.field3798 == null) {
             final Class1655 method5285 = this.field3792.method5285();
             if (method5285 != null) {
-                final Class1849 method5286 = method5285.method1481(this.field3792.field4683.dimension.getType());
+                final Class1849 method5286 = method5285.method1481(this.field3792.world.dimension.getType());
                 if (method5286 != null) {
                     this.field3798 = (CompletableFuture<Class1862>)method5286.method6904().method7427(this.field3796.field32290, this.field3796.field32291, ChunkStatus.field39989, false).thenApply(either -> either.map(class1860 -> class1860, p0 -> null));
                 }
@@ -343,7 +343,7 @@ public class Class689 extends Class565
     
     private Class1862 method3836() {
         if (this.field3797 == null) {
-            this.field3797 = this.field3792.field4683.method6686(this.field3796.field32290, this.field3796.field32291);
+            this.field3797 = this.field3792.world.method6686(this.field3796.field32290, this.field3796.field32291);
         }
         return this.field3797;
     }
@@ -352,7 +352,7 @@ public class Class689 extends Class565
         final long maxMemory = Runtime.getRuntime().maxMemory();
         final long totalMemory = Runtime.getRuntime().totalMemory();
         final long n = totalMemory - Runtime.getRuntime().freeMemory();
-        final ArrayList arrayList = Lists.newArrayList((Object[])new String[] { String.format("Java: %s %dbit", System.getProperty("java.version"), this.field3792.method5297() ? 64 : 32), String.format("Mem: % 2d%% %03d/%03dMB", n * 100L / maxMemory, method3842(n), method3842(maxMemory)), String.format("Allocated: % 2d%% %03dMB", totalMemory * 100L / maxMemory, method3842(totalMemory)), "", String.format("CPU: %s", Class7691.method24459()), "", String.format("Display: %dx%d (%s)", Class869.method5277().method5332().method7692(), Class869.method5277().method5332().method7693(), Class7691.method24458()), Class7691.method24460(), Class7691.method24461() });
+        final ArrayList arrayList = Lists.newArrayList((Object[])new String[] { String.format("Java: %s %dbit", System.getProperty("java.version"), this.field3792.method5297() ? 64 : 32), String.format("Mem: % 2d%% %03d/%03dMB", n * 100L / maxMemory, method3842(n), method3842(maxMemory)), String.format("Allocated: % 2d%% %03dMB", totalMemory * 100L / maxMemory, method3842(totalMemory)), "", String.format("CPU: %s", Class7691.method24459()), "", String.format("Display: %dx%d (%s)", Minecraft.method5277().method5332().method7692(), Minecraft.method5277().method5332().method7693(), Class7691.method24458()), Class7691.method24460(), Class7691.method24461() });
         arrayList.add(3, "Native: " + method3842(Class8203.method27170()) + "/" + method3842(Class8203.method27171()) + "+" + method3842(Class8203.method27174()) + "MB");
         arrayList.set(4, "GC: " + Class7741.method24705() + "MB/s");
         if (Class9570.field41180.method22605()) {
@@ -366,7 +366,7 @@ public class Class689 extends Class565
         }
         if (!this.field3792.method5317()) {
             if (this.field3794.getType() == RayTraceResult.Type.BLOCK) {
-                final BlockState method6701 = this.field3792.field4683.getBlockState(((BlockRayTraceResult)this.field3794).getPos());
+                final BlockState method6701 = this.field3792.world.getBlockState(((BlockRayTraceResult)this.field3794).getPos());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Block");
                 arrayList.add(String.valueOf(Registry.BLOCK.getKey(method6701.getBlock())));
@@ -387,7 +387,7 @@ public class Class689 extends Class565
                 }
             }
             if (this.field3795.getType() == RayTraceResult.Type.BLOCK) {
-                final IFluidState method6703 = this.field3792.field4683.getFluidState(((BlockRayTraceResult)this.field3795).getPos());
+                final IFluidState method6703 = this.field3792.world.getFluidState(((BlockRayTraceResult)this.field3795).getPos());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Fluid");
                 arrayList.add(String.valueOf(Registry.FLUID.getKey(method6703.getFluid())));

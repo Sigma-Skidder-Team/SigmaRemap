@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class5066 extends Class5053
+public class Class5066 extends RealmsGuiEventListener
 {
     private static String[] field21716;
     private final Class575 field21717;
@@ -21,12 +21,12 @@ public class Class5066 extends Class5053
         this.field21721 = field21721;
     }
     
-    public void method15593(final Class5046 class5046) {
-        class5046.method15405(this.field21718, this.field21719, this.field21720, this.field21721);
+    public void method15593(final RealmsScreen class5046) {
+        class5046.drawCenteredString(this.field21718, this.field21719, this.field21720, this.field21721);
     }
     
     @Override
-    public Class574 method15448() {
+    public IGuiEventListener getProxy() {
         return this.field21717;
     }
     

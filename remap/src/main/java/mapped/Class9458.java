@@ -16,7 +16,7 @@ public class Class9458
 {
     private static final Class6332 field40656;
     private static final Class6332 field40657;
-    private final Class869 field40658;
+    private final Minecraft field40658;
     private ItemStack field40659;
     private ItemStack field40660;
     private float field40661;
@@ -26,12 +26,12 @@ public class Class9458
     private final Class8551 field40665;
     private final Class1796 field40666;
     
-    public Class9458(final Class869 field40658) {
+    public Class9458(final Minecraft field40658) {
         this.field40659 = ItemStack.field34174;
         this.field40660 = ItemStack.field34174;
         this.field40658 = field40658;
         this.field40665 = field40658.method5306();
-        this.field40666 = field40658.method5307();
+        this.field40666 = field40658.getItemRenderer();
     }
     
     public void method35143(final LivingEntity class511, final ItemStack class512, final Class2016 class513, final boolean b, final Class7351 class514, final Class7807 class515, final int n) {
@@ -106,7 +106,7 @@ public class Class9458
         class7351.method22565(0.38f, 0.38f, 0.38f);
         class7351.method22564(-0.5, -0.5, 0.0);
         class7351.method22565(0.0078125f, 0.0078125f, 0.0078125f);
-        final Class6356 method12328 = Class4094.method12328(class7353, this.field40658.field4683);
+        final Class6356 method12328 = Class4094.method12328(class7353, this.field40658.world);
         final Class4150 method12329 = class7352.method25214((method12328 != null) ? Class9458.field40657 : Class9458.field40656);
         final Matrix4f method12330 = class7351.method22569().method32111();
         method12329.method12444(method12330, -7.0f, 135.0f, 0.0f).method12399(255, 255, 255, 255).method12391(0.0f, 1.0f).method12440(n).method12397();

@@ -27,10 +27,10 @@ public class Class682 extends Class648
     
     @Override
     public void method3353(final int n, final int n2, final float n3) {
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         method5277.method5290().method5849(Class682.field3725);
         Class8726.method30008();
-        final Class1844 field4643 = method5277.field4643;
+        final Class1844 field4643 = method5277.fontRenderer;
         Class8726.method30068(1.0f, 1.0f, 1.0f, this.field3433);
         Class8726.method30011();
         Class8726.method30117();

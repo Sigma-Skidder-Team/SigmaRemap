@@ -48,10 +48,10 @@ public class Class3175 extends Class3167
         if (!this.method9906() || Class3175.field15514.field4684 == null) {
             return;
         }
-        if (Class869.method5277().field4648.field23466) {
+        if (Minecraft.method5277().field4648.field23466) {
             return;
         }
-        if (!Class869.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().field4648.field23464) {
             this.field15539 = class5740.method17028();
             if (Class9463.method35173().method35193().method32146()) {
                 for (final Class2090 class5741 : Class2090.values()) {

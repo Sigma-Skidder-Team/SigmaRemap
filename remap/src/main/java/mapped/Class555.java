@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class555 extends Class527
+public class Class555 extends Screen
 {
     public Class555() {
         super(new StringTextComponent("Jello Options"));

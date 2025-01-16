@@ -144,7 +144,7 @@ public class Class7778
     public static void method24956(final Class1660 class1660, final Class6092 class1661, final int n, final float n2, final long n3) {
         if (Class9216.field39243 > 0) {
             if (--Class9216.field39232 <= 0) {
-                final Class869 method5277 = Class869.method5277();
+                final Minecraft method5277 = Minecraft.method5277();
                 method5277.method5327().method15300("shadow pass");
                 final Class1656 field4636 = method5277.field4636;
                 Class9216.field39049 = true;
@@ -217,7 +217,7 @@ public class Class7778
                 final Class1656 field4637 = method5277.field4636;
                 final Class8551 method5282 = method5277.method5306();
                 final Class7808 method5283 = field4637.method5770().method11006();
-                for (final Entity field4638 : method5277.field4683.method6806()) {
+                for (final Entity field4638 : method5277.world.method6806()) {
                     if (!method5282.method28705(field4638, class1663, method5279, method5280, method5281) && !field4638.method1917(method5277.field4684)) {
                         continue;
                     }
@@ -371,8 +371,8 @@ public class Class7778
         }
     }
     
-    public static void method24957(final Class6092 class6092, final Class869 class6093, final float n) {
-        class6092.method18154(class6093.field4683, (class6093.method5303() != null) ? class6093.method5303() : class6093.field4684, class6093.field4648.field23465 > 0, class6093.field4648.field23465 == 2, n);
+    public static void method24957(final Class6092 class6092, final Minecraft class6093, final float n) {
+        class6092.method18154(class6093.world, (class6093.method5303() != null) ? class6093.method5303() : class6093.field4684, class6093.field4648.field23465 > 0, class6093.field4648.field23465 == 2, n);
     }
     
     public static void method24958(final Class6332 class6332) {

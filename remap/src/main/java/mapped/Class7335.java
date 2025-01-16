@@ -13,7 +13,7 @@ import java.util.Locale;
 
 public class Class7335
 {
-    private final Class869 field28331;
+    private final Minecraft field28331;
     private boolean field28332;
     private final Class9239 field28333;
     private long field28334;
@@ -21,7 +21,7 @@ public class Class7335
     private long field28336;
     private boolean field28337;
     
-    public Class7335(final Class869 field28331) {
+    public Class7335(final Minecraft field28331) {
         this.field28333 = new Class9239();
         this.field28334 = -1L;
         this.field28335 = -1L;
@@ -71,7 +71,7 @@ public class Class7335
                 return false;
             }
             case 70: {
-                Class6469.field25717.method19475(this.field28331.field4648, MathHelper.clamp(this.field28331.field4648.field23382 + (Class527.method3047() ? -1 : 1), Class6469.field25717.method19472(), Class6469.field25717.method19473()));
+                Class6469.field25717.method19475(this.field28331.field4648, MathHelper.clamp(this.field28331.field4648.field23382 + (Screen.method3047() ? -1 : 1), Class6469.field25717.method19472(), Class6469.field25717.method19473()));
                 this.method22497("debug.cycle_renderdistance.message", this.field28331.field4648.field23382);
                 return true;
             }
@@ -87,12 +87,12 @@ public class Class7335
             }
             case 73: {
                 if (!this.field28331.field4684.method2896()) {
-                    this.method22500(this.field28331.field4684.method1926(2), !Class527.method3047());
+                    this.method22500(this.field28331.field4684.method1926(2), !Screen.method3047());
                 }
                 return true;
             }
             case 76: {
-                final Class869 method28894 = Config.method28894();
+                final Minecraft method28894 = Config.method28894();
                 method28894.field4636.field9366 = 1;
                 method28894.field4647.method3807().method3762(new StringTextComponent(Class8822.method30773("of.message.loadingVisibleChunks", new Object[0])), 201435902);
                 return true;
@@ -263,8 +263,8 @@ public class Class7335
                 }
             }
             if (this.field28334 <= 0L) {
-                if (Class8341.method27798(Class869.method5277().method5332().method7690(), 67)) {
-                    if (Class8341.method27798(Class869.method5277().method5332().method7690(), 292)) {
+                if (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 67)) {
+                    if (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292)) {
                         this.field28337 = true;
                         this.field28334 = Util.method27837();
                         this.field28335 = Util.method27837();
@@ -272,10 +272,10 @@ public class Class7335
                     }
                 }
             }
-            else if (!Class8341.method27798(Class869.method5277().method5332().method7690(), 67) || !Class8341.method27798(Class869.method5277().method5332().method7690(), 292)) {
+            else if (!Class8341.method27798(Minecraft.method5277().method5332().method7690(), 67) || !Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292)) {
                 this.field28334 = -1L;
             }
-            final Class527 field4700 = this.field28331.field4700;
+            final Screen field4700 = this.field28331.field4700;
             if (!(this.field28331.field4700 instanceof Class705) || ((Class705)field4700).field3875 <= Util.method27837() - 20L) {
                 if (k != 1) {
                     if (k == 0) {
@@ -291,7 +291,7 @@ public class Class7335
                         return;
                     }
                     if (this.field28331.field4648.field23451.method1066(i, j)) {
-                        if (!Class527.method3046()) {}
+                        if (!Screen.method3046()) {}
                         Class8283.method27524(this.field28331.field4652, this.field28331.method5332().method7692(), this.field28331.method5332().method7693(), this.field28331.method5234(), p0 -> this.field28331.execute(() -> this.field28331.field4647.method3807().method3761(class5754)));
                         return;
                     }
@@ -312,7 +312,7 @@ public class Class7335
             final boolean b2 = b;
             if (k != 0) {
                 if (i == 66) {
-                    if (Class527.method3046()) {
+                    if (Screen.method3046()) {
                         if (b2) {
                             Class6469.field25726.method19485(this.field28331.field4648, 1);
                             if (field4700 instanceof Class707) {
@@ -327,7 +327,7 @@ public class Class7335
             }
             if (field4700 != null) {
                 final boolean[] array = { false };
-                Class527.method3053(() -> {
+                Screen.method3053(() -> {
                     if (n3 != 1 && (n3 != 2 || !this.field28332)) {
                         if (n3 == 0) {
                             if (!(!Class9570.field41304.method22605())) {
@@ -373,9 +373,9 @@ public class Class7335
                     boolean b3 = false;
                     if (this.field28331.field4700 == null) {
                         if (i == 256) {
-                            this.field28331.method5255(Class8341.method27798(Class869.method5277().method5332().method7690(), 292));
+                            this.field28331.method5255(Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292));
                         }
-                        b3 = (Class8341.method27798(Class869.method5277().method5332().method7690(), 292) && this.method22499(i));
+                        b3 = (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 292) && this.method22499(i));
                         this.field28337 |= b3;
                         if (i == 290) {
                             this.field28331.field4648.field23464 = !this.field28331.field4648.field23464;
@@ -404,8 +404,8 @@ public class Class7335
                     if (i == 292) {
                         if (!this.field28337) {
                             this.field28331.field4648.field23466 = !this.field28331.field4648.field23466;
-                            this.field28331.field4648.field23467 = (this.field28331.field4648.field23466 && Class527.method3047());
-                            this.field28331.field4648.field23468 = (this.field28331.field4648.field23466 && Class527.method3048());
+                            this.field28331.field4648.field23467 = (this.field28331.field4648.field23466 && Screen.method3047());
+                            this.field28331.field4648.field23468 = (this.field28331.field4648.field23466 && Screen.method3048());
                             if (this.field28331.field4648.field23466) {
                                 if (this.field28331.field4648.field23496) {
                                     this.field28331.field4648.field23468 = true;
@@ -563,7 +563,7 @@ public class Class7335
             final long n4 = 10000L - (method27837 - this.field28334);
             final long n5 = method27837 - this.field28335;
             if (n4 < 0L) {
-                if (Class527.method3046()) {
+                if (Screen.method3046()) {
                     Class9491.method35320();
                 }
                 throw new ReportedException(new CrashReport("Manually triggered debug crash", new Throwable()));

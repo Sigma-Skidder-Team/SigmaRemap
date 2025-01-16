@@ -10,12 +10,12 @@ public class Class5678 extends Class5611
     
     public Class5678(final Class5079 field23102) {
         this.field23102 = field23102;
-        super(9, field23102.method15421() - 62, 6, 20, 20, "");
+        super(9, field23102.width() - 62, 6, 20, 20, "");
     }
     
     @Override
     public void method16922() {
-        this.method16925(Class7847.method25379("mco.news", new Object[0]));
+        this.method16925(Realms.method25379("mco.news", new Object[0]));
     }
     
     @Override

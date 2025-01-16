@@ -22,7 +22,7 @@ public final class Class4762 extends Class4759<Class808, Class5928<Class808>>
         ResourceLocation class809 = Class4762.field20387.get(method4775);
         if (class809 == null) {
             class809 = new ResourceLocation(method4775);
-            Class869.method5277().method5290().method5851(class809, new Class1772(class808.method4776()));
+            Minecraft.method5277().method5290().method5851(class809, new Class1772(class808.method4776()));
             Class4762.field20387.put(method4775, class809);
         }
         return class809;

@@ -13,7 +13,7 @@ import java.util.List;
 public class Class8936
 {
     public static String method31696(final String s, final boolean b) {
-        return (!b && !Class869.method5277().field4648.field23416) ? TextFormatting.getTextWithoutFormattingCodes(s) : s;
+        return (!b && !Minecraft.method5277().field4648.field23416) ? TextFormatting.getTextWithoutFormattingCodes(s) : s;
     }
     
     public static List<ITextComponent> method31697(final ITextComponent class2250, final int n, final Class1844 class2251, final boolean b, final boolean b2) {

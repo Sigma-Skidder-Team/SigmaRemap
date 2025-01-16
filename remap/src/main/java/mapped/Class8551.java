@@ -240,7 +240,7 @@ public class Class8551
                         method28711(class7351, class7352, e, n8, f2, this.field35905, method28699.field20284);
                     }
                 }
-                if (this.field35911 && !e.method1823() && !Class869.method5277().method5317()) {
+                if (this.field35911 && !e.method1823() && !Minecraft.method5277().method5317()) {
                     this.method28707(class7351, class7352.method25214(Class6332.method18791()), e, f2);
                 }
                 class7351.method22568();

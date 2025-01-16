@@ -4,11 +4,9 @@
 
 package mapped;
 
-import java.util.Iterator;
 import org.lwjgl.opengl.GL11;
 import java.util.Map;
 import java.awt.Color;
-import java.util.Comparator;
 import java.util.TreeMap;
 
 public class Class3315 extends Class3167
@@ -53,7 +51,7 @@ public class Class3315 extends Class3167
                 this.field15899.method35856(0.0f);
             }
             int n = -2;
-            final int n2 = Class869.method5277().field4632.method7694() - 2;
+            final int n2 = Minecraft.method5277().field4632.method7694() - 2;
             final int n3 = -2;
             new Color(0, 192, 255, 255).getRGB();
             int n4 = new Color(0, 192, 255, 255).getRGB();

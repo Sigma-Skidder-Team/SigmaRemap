@@ -24,27 +24,27 @@ public class Class547 extends Class546
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
-        this.field3154.clear();
-        this.field3149.clear();
-        this.method3029(new Class654(this.field3152 / 2 - 50 - 105, this.field3153 / 6 + 96, 100, 20, this.field3292, class654 -> this.field3295.accept(true)));
-        this.method3029(new Class654(this.field3152 / 2 - 50, this.field3153 / 6 + 96, 100, 20, this.field3297, class654 -> {
+    public void init() {
+        super.init();
+        this.buttons.clear();
+        this.children.clear();
+        this.method3029(new Class654(this.width / 2 - 50 - 105, this.height / 6 + 96, 100, 20, this.field3292, class654 -> this.field3295.accept(true)));
+        this.method3029(new Class654(this.width / 2 - 50, this.height / 6 + 96, 100, 20, this.field3297, class654 -> {
             this.method3212();
             this.field3295.accept(false);
         }));
-        this.method3029(new Class654(this.field3152 / 2 - 50 + 105, this.field3153 / 6 + 96, 100, 20, this.field3293, class654 -> this.field3295.accept(false)));
+        this.method3029(new Class654(this.width / 2 - 50 + 105, this.height / 6 + 96, 100, 20, this.field3293, class654 -> this.field3295.accept(false)));
     }
     
     public void method3212() {
-        this.field3150.field4651.method22508(this.field3298);
+        this.minecraft.field4651.method22508(this.field3298);
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         super.method2975(n, n2, n3);
         if (this.field3299) {
-            this.method3295(this.field3156, this.field3296, this.field3152 / 2, 110, 16764108);
+            this.method3295(this.font, this.field3296, this.width / 2, 110, 16764108);
         }
     }
 }

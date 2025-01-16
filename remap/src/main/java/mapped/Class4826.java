@@ -61,7 +61,7 @@ public class Class4826 extends Class4825
         this.field20649 = Math.min(1.0f, Math.max(0.0f, this.field20649));
         if (this.field20647 == null) {
             final int n2 = this.field20480 - 30;
-            Class8154.method26905((float)(this.field20478 + 5), (float)((Class869.method5277().field4632.method7695() - n2 * 342 / 460) / 2 - 60), (float)n2, (float)(n2 * 342 / 460), Class7853.field32201);
+            Class8154.method26905((float)(this.field20478 + 5), (float)((Minecraft.method5277().field4632.method7695() - n2 * 342 / 460) / 2 - 60), (float)n2, (float)(n2 * 342 / 460), Class7853.field32201);
         }
         if (this.field20647 != null) {
             Class6430.method19118(Class265.field1273.field1292, 0.2f);

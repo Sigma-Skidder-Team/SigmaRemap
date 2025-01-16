@@ -17,13 +17,13 @@ public class Class643 extends Class623<Class643>
     
     @Override
     public void method3467(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final float n8) {
-        this.field3654.field3564.field3156.method6625(true);
-        this.field3654.method3295(this.field3654.field3564.field3156, this.field3653.toString(), Class610.method3571(this.field3654) / 2, n2 + 1, 16777215);
-        this.field3654.field3564.field3156.method6625(Class704.method3907(this.field3654.field3564).method5845().method7903());
+        this.field3654.field3564.font.method6625(true);
+        this.field3654.method3295(this.field3654.field3564.font, this.field3653.toString(), Class610.method3571(this.field3654) / 2, n2 + 1, 16777215);
+        this.field3654.field3564.font.method6625(Class704.method3907(this.field3654.field3564).method5845().method7903());
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 != 0) {
             return false;
         }

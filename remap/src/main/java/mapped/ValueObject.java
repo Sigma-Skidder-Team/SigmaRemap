@@ -7,7 +7,7 @@ package mapped;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Field;
 
-public abstract class Class7422
+public abstract class ValueObject
 {
     @Override
     public String toString() {

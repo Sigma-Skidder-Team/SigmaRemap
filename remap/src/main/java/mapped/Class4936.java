@@ -46,7 +46,7 @@ public class Class4936 extends Class4800
         this.method14239(class4920 = new Class4920(this, "particles"));
         class4920.method14303(true);
         final ArrayList list = new ArrayList();
-        final Class9295 class4921 = new Class9295(Class869.method5277());
+        final Class9295 class4921 = new Class9295(Minecraft.method5277());
         class4921.method34331();
         for (int method34336 = class4921.method34336(), i = 0; i < method34336; ++i) {
             final Class9575 method34337 = class4921.method34333(i);
@@ -55,11 +55,11 @@ public class Class4936 extends Class4800
             }
         }
         final int n = 790;
-        this.method14239(this.field21183 = new Class4832(this, "textbox", (Class869.method5277().field4632.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, Class4831.field20670, "", "Search...", Class9400.field40312));
+        this.method14239(this.field21183 = new Class4832(this, "textbox", (Minecraft.method5277().field4632.method7694() - n) / 2 - 140, this.method14278() - 40, 140, 32, Class4831.field20670, "", "Search...", Class9400.field40312));
         this.field21183.method14317(Class9400.field40327);
         this.field21183.method14473(class4831 -> this.method14851());
         this.method14852();
-        this.method14239(this.field21184 = new Class4810(this, "toolbar", (Class869.method5277().field4632.method7694() - n) / 2 + 16, this.method14278() - 94));
+        this.method14239(this.field21184 = new Class4810(this, "toolbar", (Minecraft.method5277().field4632.method7694() - n) / 2 + 16, this.method14278() - 94));
         this.field21184.method14305(false);
     }
     
@@ -120,7 +120,7 @@ public class Class4936 extends Class4800
     public void method14205(final float n) {
         this.method14850();
         super.method14205(n);
-        Class8154.method26889(Class9400.field40327, 20.0f, 20.0f, Class869.method5277().method5287().method33692(), -2236963);
+        Class8154.method26889(Class9400.field40327, 20.0f, 20.0f, Minecraft.method5277().method5287().method33692(), -2236963);
         Class8154.method26890(Class9400.field40327, (float)(this.method14276() / 2), 20.0f, "Account Manager - " + this.method14849() + " alts", Class265.field1278.field1292, Class2056.field11738, Class2056.field11734);
         Class8154.method26891(Class9400.field40327, (float)(this.method14276() / 2), 40.0f, this.field21185, Class265.field1278.field1292, Class2056.field11738, Class2056.field11734, false);
     }
@@ -146,7 +146,7 @@ public class Class4936 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class869.method5277().method5244(new Class548());
+            Minecraft.method5277().method5244(new Class548());
         }
     }
     
@@ -184,8 +184,8 @@ public class Class4936 extends Class4800
         if (method24358 != null) {
             this.method14245(method24358);
         }
-        final int n = Class869.method5277().field4632.method7694() - 200;
-        this.method14242(this.field21172 = new Class4823(this, "alts", (this.method14276() - n) / 2, 69, n, Class869.method5277().field4632.method7695() - 169));
+        final int n = Minecraft.method5277().field4632.method7694() - 200;
+        this.method14242(this.field21172 = new Class4823(this, "alts", (this.method14276() - n) / 2, 69, n, Minecraft.method5277().field4632.method7695() - 169));
         final Iterator<Class7971> iterator = method24356.iterator();
         while (iterator.hasNext()) {
             this.method14844(iterator.next());
@@ -200,7 +200,7 @@ public class Class4936 extends Class4800
     }
     
     public int method14854() {
-        return Class869.method5277().field4632.method7695() / 12 + 280 + Class869.method5277().field4632.method7695() / 12;
+        return Minecraft.method5277().field4632.method7695() / 12 + 280 + Minecraft.method5277().field4632.method7695() / 12;
     }
     
     public Class4836 method14855() {

@@ -5,7 +5,7 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
+
 import java.util.ArrayList;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -15,7 +15,7 @@ import java.util.List;
 import com.google.gson.JsonParser;
 import org.apache.logging.log4j.Logger;
 
-public class Class7429 extends Class7422
+public class Class7429 extends ValueObject
 {
     private static final Logger field28644;
     private static final JsonParser field28645;
@@ -25,8 +25,8 @@ public class Class7429 extends Class7422
     public static Class7429 method22861(final JsonObject jsonObject) {
         final Class7429 class7429 = new Class7429();
         try {
-            class7429.field28646 = Class7610.method23909("serverId", jsonObject, -1L);
-            final String method23907 = Class7610.method23907("playerList", jsonObject, null);
+            class7429.field28646 = JsonUtils.func_225169_a("serverId", jsonObject, -1L);
+            final String method23907 = JsonUtils.func_225171_a("playerList", jsonObject, null);
             if (method23907 != null) {
                 final JsonElement parse = Class7429.field28645.parse(method23907);
                 if (parse.isJsonArray()) {

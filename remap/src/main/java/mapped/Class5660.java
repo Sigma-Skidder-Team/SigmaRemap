@@ -15,6 +15,6 @@ public class Class5660 extends Class5611
     
     @Override
     public void method16932() {
-        Class7847.method25362(new Class5084(this.field23070, Class2039.field11628, Class5046.method15438("mco.configure.world.restore.download.question.line1"), Class5046.method15438("mco.configure.world.restore.download.question.line2"), true, this.method16924()));
+        Realms.setScreen(new Class5084(this.field23070, Class2039.field11628, RealmsScreen.getLocalizedString("mco.configure.world.restore.download.question.line1"), RealmsScreen.getLocalizedString("mco.configure.world.restore.download.question.line2"), true, this.method16924()));
     }
 }

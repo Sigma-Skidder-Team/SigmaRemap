@@ -13,7 +13,7 @@ public abstract class Class599 extends Class598 implements Class563
 {
     public static final int field3510 = -1;
     public static final int field3511 = -2;
-    public final Class869 field3512;
+    public final Minecraft field3512;
     public int field3513;
     public int field3514;
     public int field3515;
@@ -30,7 +30,7 @@ public abstract class Class599 extends Class598 implements Class563
     public int field3526;
     private boolean field3527;
     
-    public Class599(final Class869 field3512, final int n, final int field3513, final int field3514, final int field3515, final int field3516) {
+    public Class599(final Minecraft field3512, final int n, final int field3513, final int field3514, final int field3515, final int field3516) {
         this.field3520 = true;
         this.field3521 = -2;
         this.field3523 = true;
@@ -77,7 +77,7 @@ public abstract class Class599 extends Class598 implements Class563
     public abstract int method3485();
     
     @Override
-    public List<? extends Class574> method3040() {
+    public List<? extends IGuiEventListener> children() {
         return Collections.emptyList();
     }
     
@@ -262,7 +262,7 @@ public abstract class Class599 extends Class598 implements Class563
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         this.method3503(n, n2, n3);
         if (!this.method3484() || !this.method3500(n, n2)) {
             return false;
@@ -273,8 +273,8 @@ public abstract class Class599 extends Class598 implements Class563
             return true;
         }
         if (method3495 != -1 && this.method3486(method3495, n3, n, n2)) {
-            if (this.method3040().size() > method3495) {
-                this.method3470((Class574)this.method3040().get(method3495));
+            if (this.children().size() > method3495) {
+                this.setFocused((IGuiEventListener)this.children().get(method3495));
             }
             this.method3469(true);
             return true;
@@ -283,16 +283,16 @@ public abstract class Class599 extends Class598 implements Class563
     }
     
     @Override
-    public boolean method2985(final double n, final double n2, final int n3) {
+    public boolean mouseReleased(final double n, final double n2, final int n3) {
         if (this.method3471() != null) {
-            this.method3471().method2985(n, n2, n3);
+            this.method3471().mouseReleased(n, n2, n3);
         }
         return false;
     }
     
     @Override
-    public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
-        if (!super.method2984(n, n2, n3, n4, n5)) {
+    public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
+        if (!super.mouseDragged(n, n2, n3, n4, n5)) {
             if (this.method3484()) {
                 if (n3 == 0) {
                     if (this.field3527) {
@@ -326,7 +326,7 @@ public abstract class Class599 extends Class598 implements Class563
     }
     
     @Override
-    public boolean method3012(final double n, final double n2, final double n3) {
+    public boolean mouseScrolled(final double n, final double n2, final double n3) {
         if (this.method3484()) {
             this.field3522 -= n3 * this.field3519 / 2.0;
             return true;
@@ -335,11 +335,11 @@ public abstract class Class599 extends Class598 implements Class563
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (!this.method3484()) {
             return false;
         }
-        if (super.method2972(n, n2, n3)) {
+        if (super.keyPressed(n, n2, n3)) {
             return true;
         }
         if (n == 264) {
@@ -357,12 +357,12 @@ public abstract class Class599 extends Class598 implements Class563
     }
     
     @Override
-    public boolean method3004(final char c, final int n) {
-        return this.method3484() && super.method3004(c, n);
+    public boolean charTyped(final char c, final int n) {
+        return this.method3484() && super.charTyped(c, n);
     }
     
     @Override
-    public boolean method3055(final double n, final double n2) {
+    public boolean isMouseOver(final double n, final double n2) {
         return this.method3500(n, n2);
     }
     

@@ -27,7 +27,7 @@ public class Class3242 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3242.field15514.field4684 != null && Class3242.field15514.field4683 != null) {
+        if (Class3242.field15514.field4684 != null && Class3242.field15514.world != null) {
             this.method10245();
             this.method10240();
             this.method10246();
@@ -54,7 +54,7 @@ public class Class3242 extends Class3167
         GL11.glEnable(3008);
         GL11.glEnable(2896);
         GL11.glPolygonOffset(-30000.0f, 1.0f);
-        for (final Entity class399 : Class3242.field15514.field4683.method6806()) {
+        for (final Entity class399 : Class3242.field15514.world.method6806()) {
             if (!this.method10244(class399)) {
                 continue;
             }

@@ -27,7 +27,7 @@ import java.util.List;
 
 public class Class9198
 {
-    private Class869 field38982;
+    private Minecraft field38982;
     private String field38983;
     private Thread field38984;
     private List<UUID> field38985;
@@ -38,7 +38,7 @@ public class Class9198
     public Class9194 field38990;
     
     public Class9198(final Class6466 field38988) {
-        this.field38982 = Class869.method5277();
+        this.field38982 = Minecraft.method5277();
         this.field38985 = new ArrayList<UUID>();
         this.field38986 = new HashMap<UUID, Class6538>();
         Class9463.method35173().method35188().method21094(this);
@@ -69,7 +69,7 @@ public class Class9198
             return;
         }
         this.method33659();
-        final List<Class754> method6840 = this.field38982.field4683.method6840();
+        final List<Class754> method6840 = this.field38982.world.method6840();
         final Iterator<Class754> iterator = method6840.iterator();
         while (iterator.hasNext()) {
             final Class754 class5744 = iterator.next();
@@ -102,14 +102,14 @@ public class Class9198
     private void method33659() {
         final Iterator<UUID> iterator = this.field38985.iterator();
         while (iterator.hasNext()) {
-            if (this.field38982.field4683.method7143(iterator.next()) != null) {
+            if (this.field38982.world.method7143(iterator.next()) != null) {
                 continue;
             }
             iterator.remove();
         }
         final Iterator<UUID> iterator2 = this.field38986.keySet().iterator();
         while (iterator.hasNext()) {
-            if (this.field38982.field4683.method7143(iterator2.next()) != null) {
+            if (this.field38982.world.method7143(iterator2.next()) != null) {
                 continue;
             }
             iterator2.remove();

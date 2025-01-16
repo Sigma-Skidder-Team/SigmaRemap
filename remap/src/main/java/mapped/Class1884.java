@@ -238,7 +238,7 @@ public class Class1884 implements AutoCloseable
     }
     
     public void method7243(final String s, final int n, final int n2) {
-        final Class6153 class6153 = new Class6153(n, n2, true, Class869.field4623);
+        final Class6153 class6153 = new Class6153(n, n2, true, Minecraft.field4623);
         class6153.method18398(0.0f, 0.0f, 0.0f, 0.0f);
         this.field10256.put(s, class6153);
         if (n == this.field10259) {
@@ -281,7 +281,7 @@ public class Class1884 implements AutoCloseable
         }
         final Iterator<Class6153> iterator2 = this.field10257.iterator();
         while (iterator2.hasNext()) {
-            iterator2.next().method18387(n, n2, Class869.field4623);
+            iterator2.next().method18387(n, n2, Minecraft.field4623);
         }
     }
     

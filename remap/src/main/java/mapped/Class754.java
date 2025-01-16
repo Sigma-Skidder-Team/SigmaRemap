@@ -43,13 +43,13 @@ public abstract class Class754 extends PlayerEntity
     
     @Override
     public boolean isSpectator() {
-        final Class9081 method17371 = Class869.method5277().method5269().method17371(this.method2844().getId());
+        final Class9081 method17371 = Minecraft.method5277().method5269().method17371(this.method2844().getId());
         return method17371 != null && method17371.method32720() == Class101.field301;
     }
     
     @Override
     public boolean method2889() {
-        final Class9081 method17371 = Class869.method5277().method5269().method17371(this.method2844().getId());
+        final Class9081 method17371 = Minecraft.method5277().method5269().method17371(this.method2844().getId());
         return method17371 != null && method17371.method32720() == Class101.field299;
     }
     
@@ -60,7 +60,7 @@ public abstract class Class754 extends PlayerEntity
     @Nullable
     public Class9081 method4095() {
         if (this.field4056 == null) {
-            this.field4056 = Class869.method5277().method5269().method17371(this.method1865());
+            this.field4056 = Minecraft.method5277().method5269().method17371(this.method1865());
         }
         return this.field4056;
     }
@@ -104,7 +104,7 @@ public abstract class Class754 extends PlayerEntity
     }
     
     public static Class1768 method4101(final ResourceLocation class1932, final String s) {
-        final Class1663 method5290 = Class869.method5277().method5290();
+        final Class1663 method5290 = Minecraft.method5277().method5290();
         Class1666 method5291 = method5290.method5853(class1932);
         if (method5291 == null) {
             method5291 = new Class1768(null, String.format("http://skins.minecraft.net/MinecraftSkins/%s.png", Class8272.method27499(s)), Class7634.method24004(PlayerEntity.method2894(s)), true, null);

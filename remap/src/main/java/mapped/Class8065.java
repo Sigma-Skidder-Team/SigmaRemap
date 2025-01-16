@@ -20,7 +20,7 @@ public class Class8065
         }
     }
     
-    public void method26461(final Class869 class869, final float n, final float n2, final float n3) {
+    public void method26461(final Minecraft class869, final float n, final float n2, final float n3) {
         final Class7392 method22694 = Class7392.method22694();
         final Class4148 method22695 = method22694.method22696();
         Class8726.method30057(5889);

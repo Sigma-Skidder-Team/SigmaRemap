@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
-public class Class581 extends Class565 implements Class563, Class574, Class586, Class587<Class120>
+public class Class581 extends Class565 implements Class563, IGuiEventListener, Class586, Class587<Class120>
 {
     public static final ResourceLocation field3462;
     private int field3463;
@@ -25,7 +25,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     private Class646 field3468;
     public Class645 field3469;
     public Class3426<?> field3470;
-    public Class869 field3471;
+    public Minecraft field3471;
     private Class576 field3472;
     private String field3473;
     public Class6520 field3474;
@@ -42,7 +42,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
         this.field3476 = new Class5024();
     }
     
-    public void method3415(final int field3464, final int field3465, final Class869 field3466, final boolean b, final Class3426<?> class3426) {
+    public void method3415(final int field3464, final int field3465, final Minecraft field3466, final boolean b, final Class3426<?> class3426) {
         this.field3471 = field3466;
         this.field3464 = field3464;
         this.field3465 = field3465;
@@ -64,7 +64,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
         this.field3471.field4684.field3006.method2379(this.field3476);
         this.field3470.method10934(this.field3476);
         final String s = (this.field3472 == null) ? "" : this.field3472.method3378();
-        (this.field3472 = new Class576(this.field3471.field4643, n + 25, n2 + 14, 80, 14, Class8822.method30773("itemGroup.search", new Object[0]))).method3397(50);
+        (this.field3472 = new Class576(this.field3471.fontRenderer, n + 25, n2 + 14, 80, 14, Class8822.method30773("itemGroup.search", new Object[0]))).method3397(50);
         this.field3472.method3401(false);
         this.field3472.method3410(true);
         this.field3472.method3402(16777215);
@@ -90,7 +90,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     }
     
     @Override
-    public boolean method3281(final boolean b) {
+    public boolean changeFocus(final boolean b) {
         return false;
     }
     
@@ -263,7 +263,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (!this.method3421() || this.field3471.field4684.isSpectator()) {
             return false;
         }
@@ -276,7 +276,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
                         return false;
                     }
                     this.field3466.method25520();
-                    this.field3471.field4682.method27325(this.field3471.field4684.field3009.field16154, method34155, Class527.method3047());
+                    this.field3471.field4682.method27325(this.field3471.field4684.field3009.field16154, method34155, Screen.method3047());
                     if (!this.method3436()) {
                         this.method3422(false);
                     }
@@ -284,12 +284,12 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
             }
             return true;
         }
-        if (this.field3472.method2982(n, n2, n3)) {
+        if (this.field3472.mouseClicked(n, n2, n3)) {
             return true;
         }
-        if (!this.field3469.method2982(n, n2, n3)) {
+        if (!this.field3469.mouseClicked(n, n2, n3)) {
             for (final Class646 field3468 : this.field3467) {
-                if (!field3468.method2982(n, n2, n3)) {
+                if (!field3468.mouseClicked(n, n2, n3)) {
                     continue;
                 }
                 if (this.field3468 != field3468) {
@@ -358,7 +358,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         this.field3478 = false;
         if (!this.method3421() || this.field3471.field4684.isSpectator()) {
             return false;
@@ -367,7 +367,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
             this.method3422(false);
             return true;
         }
-        if (this.field3472.method2972(n, n2, n3)) {
+        if (this.field3472.keyPressed(n, n2, n3)) {
             this.method3434();
             return true;
         }
@@ -387,20 +387,20 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     }
     
     @Override
-    public boolean method3007(final int n, final int n2, final int n3) {
+    public boolean keyReleased(final int n, final int n2, final int n3) {
         this.field3478 = false;
         return super.method3007(n, n2, n3);
     }
     
     @Override
-    public boolean method3004(final char c, final int n) {
+    public boolean charTyped(final char c, final int n) {
         if (this.field3478) {
             return false;
         }
         if (!this.method3421() || this.field3471.field4684.isSpectator()) {
             return false;
         }
-        if (!this.field3472.method3004(c, n)) {
+        if (!this.field3472.charTyped(c, n)) {
             return super.method3004(c, n);
         }
         this.method3434();
@@ -408,7 +408,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
     }
     
     @Override
-    public boolean method3055(final double n, final double n2) {
+    public boolean isMouseOver(final double n, final double n2) {
         return false;
     }
     
@@ -431,7 +431,7 @@ public class Class581 extends Class565 implements Class563, Class574, Class586, 
             method5295.method5844(method5296);
             this.field3471.field4648.field23476 = method5296.getCode();
             this.field3471.method5241();
-            this.field3471.field4643.method6625(method5295.method5843());
+            this.field3471.fontRenderer.method6625(method5295.method5843());
             this.field3471.field4648.method17121();
         }
     }

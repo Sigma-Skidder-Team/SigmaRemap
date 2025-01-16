@@ -34,7 +34,7 @@ public class Class3272 extends Class3167
             if (!Class3272.field15514.field4684.method1920().onGround) {
                 if (Class6430.method19160(Class3272.field15514.field4684.method1920(), 5.0f)) {
                     if (!Class3272.field15514.field4684.method1920().method1706()) {
-                        if (Class3272.field15514.field4683.getBlockState(Class3272.field15514.field4684.method1920().method1894()).method21696() != Class7521.field29173) {
+                        if (Class3272.field15514.world.getBlockState(Class3272.field15514.field4684.method1920().method1894()).method21696() != Class7521.field29173) {
                             class5718.method16983(-2.0);
                         }
                     }

@@ -14,10 +14,10 @@ public class Class3380 extends Class3167
     @Class6753
     private void method10794(final Class5753 class5753) {
         if (this.method9906()) {
-            if (Class3380.field15514.field4683.getBlockState(class5753.method17064()).method21696() instanceof Class3977) {
+            if (Class3380.field15514.world.getBlockState(class5753.method17064()).method21696() instanceof Class3977) {
                 class5753.method17067(VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, this.method9883("Above") ? 0.999 : 0.9375, 1.0));
             }
-            if (Class3380.field15514.field4683.getBlockState(class5753.method17064()).method21696() instanceof Class4011) {
+            if (Class3380.field15514.world.getBlockState(class5753.method17064()).method21696() instanceof Class4011) {
                 class5753.method17067(VoxelShapes.method24488(-0.01, 0.0, -0.01, 1.02, 1.9375, 1.02));
             }
         }

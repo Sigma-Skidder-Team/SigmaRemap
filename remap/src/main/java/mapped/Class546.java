@@ -12,7 +12,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
-public class Class546 extends Class527
+public class Class546 extends Screen
 {
     private final ITextComponent field3290;
     private final List<String> field3291;
@@ -40,22 +40,22 @@ public class Class546 extends Class527
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
-        this.method3029(new Class654(this.field3152 / 2 - 155, this.field3153 / 6 + 96, 150, 20, this.field3292, class654 -> this.field3295.accept(true)));
-        this.method3029(new Class654(this.field3152 / 2 - 155 + 160, this.field3153 / 6 + 96, 150, 20, this.field3293, class654 -> this.field3295.accept(false)));
+    public void init() {
+        super.init();
+        this.method3029(new Class654(this.width / 2 - 155, this.height / 6 + 96, 150, 20, this.field3292, class654 -> this.field3295.accept(true)));
+        this.method3029(new Class654(this.width / 2 - 155 + 160, this.height / 6 + 96, 150, 20, this.field3293, class654 -> this.field3295.accept(false)));
         this.field3291.clear();
-        this.field3291.addAll(this.field3156.method6626(this.field3290.getFormattedText(), this.field3152 - 50));
+        this.field3291.addAll(this.font.method6626(this.field3290.getFormattedText(), this.width - 50));
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
-        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 70, 16777215);
+        this.renderBackground();
+        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 70, 16777215);
         int n4 = 90;
         final Iterator<String> iterator = this.field3291.iterator();
         while (iterator.hasNext()) {
-            this.method3295(this.field3156, iterator.next(), this.field3152 / 2, n4, 16777215);
+            this.method3295(this.font, iterator.next(), this.width / 2, n4, 16777215);
             n4 += 9;
         }
         super.method2975(n, n2, n3);
@@ -63,19 +63,19 @@ public class Class546 extends Class527
     
     public void method3209(final int field3294) {
         this.field3294 = field3294;
-        final Iterator<Class573> iterator = this.field3154.iterator();
+        final Iterator<Class573> iterator = this.buttons.iterator();
         while (iterator.hasNext()) {
             iterator.next().field3431 = false;
         }
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
+    public void tick() {
+        super.tick();
         final int field3294 = this.field3294 - 1;
         this.field3294 = field3294;
         if (field3294 == 0) {
-            final Iterator<Class573> iterator = this.field3154.iterator();
+            final Iterator<Class573> iterator = this.buttons.iterator();
             while (iterator.hasNext()) {
                 iterator.next().field3431 = true;
             }
@@ -88,9 +88,9 @@ public class Class546 extends Class527
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (n != 256) {
-            return super.method2972(n, n2, n3);
+            return super.keyPressed(n, n2, n3);
         }
         this.field3295.accept(false);
         return true;

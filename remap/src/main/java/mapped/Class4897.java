@@ -36,7 +36,7 @@ public class Class4897 extends Class4841
             field32930 = this.field20948.field32930;
         }
         this.method14277(this.field20496.method23505(field32930) + 50 + 60);
-        this.method14273(Class869.method5277().field4632.method7694() - this.field20480 - 20);
+        this.method14273(Minecraft.method5277().field4632.method7694() - this.field20480 - 20);
         this.field20943 = Math.max(0.0f, Math.min(1.0f, this.field20943 + ((this.field20508 >= this.field20478 && this.field20509 <= this.field20479 + this.method14278()) ? 0.1f : -0.1f)));
         Class8154.method26913((float)this.field20478, (float)this.field20479, (float)this.method14276(), (float)this.method14278(), 20.0f, this.field20943 * 0.2f * n);
         Class8154.method26876((float)this.field20478, (float)this.field20479, (float)(this.field20478 + this.method14276()), (float)(this.field20479 + this.method14278()), Class6430.method19118(Class265.field1282.field1292, (0.2f * this.field20943 + (this.method14309() ? 0.2f : 0.0f)) * n));

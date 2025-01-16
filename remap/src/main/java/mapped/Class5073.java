@@ -7,10 +7,10 @@ package mapped;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class5073 extends Class5046
+public class Class5073 extends RealmsScreen
 {
     private static final Logger field21771;
-    private final Class5046 field21772;
+    private final RealmsScreen field21772;
     private String field21773;
     private boolean field21774;
     private Class5059 field21775;
@@ -19,36 +19,36 @@ public class Class5073 extends Class5046
     private Class5611 field21778;
     private Class5611 field21779;
     
-    public Class5073(final Class5046 field21772) {
+    public Class5073(final RealmsScreen field21772) {
         this.field21777 = -1;
         this.field21772 = field21772;
     }
     
     @Override
-    public void method15369() {
+    public void init() {
         this.method15444(true);
         this.field21775 = new Class5059(this);
         new Class930(this, "Realms-pending-invitations-fetcher").start();
-        this.method15431(this.field21778 = new Class5699(this, 1, this.method15421() / 2 - 174, this.method15422() - 32, 100, 20, Class5046.method15438("mco.invites.button.accept")));
-        this.method15431(new Class5685(this, 0, this.method15421() / 2 - 50, this.method15422() - 32, 100, 20, Class5046.method15438("gui.done")));
-        this.method15431(this.field21779 = new Class5642(this, 2, this.method15421() / 2 + 74, this.method15422() - 32, 100, 20, Class5046.method15438("mco.invites.button.reject")));
-        this.method15428(this.field21776 = new Class5066(Class5046.method15438("mco.invites.title"), this.method15421() / 2, 12, 16777215));
+        this.buttonsAdd(this.field21778 = new Class5699(this, 1, this.width() / 2 - 174, this.height() - 32, 100, 20, RealmsScreen.getLocalizedString("mco.invites.button.accept")));
+        this.buttonsAdd(new Class5685(this, 0, this.width() / 2 - 50, this.height() - 32, 100, 20, RealmsScreen.getLocalizedString("gui.done")));
+        this.buttonsAdd(this.field21779 = new Class5642(this, 2, this.width() / 2 + 74, this.height() - 32, 100, 20, RealmsScreen.getLocalizedString("mco.invites.button.reject")));
+        this.method15428(this.field21776 = new Class5066(RealmsScreen.getLocalizedString("mco.invites.title"), this.width() / 2, 12, 16777215));
         this.method15428(this.field21775);
         this.method15446();
         this.method15659();
     }
     
     @Override
-    public void method15375() {
-        super.method15375();
+    public void tick() {
+        super.tick();
     }
     
     @Override
-    public boolean method15376(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (n != 256) {
-            return super.method15376(n, n2, n3);
+            return super.keyPressed(n, n2, n3);
         }
-        Class7847.method25362(new Class5079(this.field21772));
+        Realms.setScreen(new Class5079(this.field21772));
         return true;
     }
     
@@ -69,7 +69,7 @@ public class Class5073 extends Class5046
     }
     
     @Override
-    public void method15383(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.field21773 = null;
         this.method15413();
         this.field21775.method15510(n, n2, n3);
@@ -79,10 +79,10 @@ public class Class5073 extends Class5046
         }
         if (this.field21775.method15521() == 0) {
             if (this.field21774) {
-                this.method15405(Class5046.method15438("mco.invites.nopending"), this.method15421() / 2, this.method15422() / 2 - 20, 16777215);
+                this.drawCenteredString(RealmsScreen.getLocalizedString("mco.invites.nopending"), this.width() / 2, this.height() / 2 - 20, 16777215);
             }
         }
-        super.method15383(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     public void method15658(final String s, final int n, final int n2) {

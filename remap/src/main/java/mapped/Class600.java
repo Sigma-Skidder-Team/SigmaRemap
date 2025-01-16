@@ -10,7 +10,7 @@ public class Class600 extends Class599
     private final Class5064 field3529;
     
     public Class600(final Class5064 field3529, final int n, final int n2, final int n3, final int n4, final int n5) {
-        super(Class869.method5277(), n, n2, n3, n4, n5);
+        super(Minecraft.method5277(), n, n2, n3, n4, n5);
         this.field3529 = field3529;
     }
     
@@ -58,23 +58,23 @@ public class Class600 extends Class599
     }
     
     @Override
-    public boolean method3012(final double n, final double n2, final double n3) {
-        return this.field3529.method15494(n, n2, n3) || super.method3012(n, n2, n3);
+    public boolean mouseScrolled(final double n, final double n2, final double n3) {
+        return this.field3529.mouseScrolled(n, n2, n3) || super.mouseScrolled(n, n2, n3);
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
-        return this.field3529.method15368(n, n2, n3) || super.method2982(n, n2, n3);
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
+        return this.field3529.mouseClicked(n, n2, n3) || super.mouseClicked(n, n2, n3);
     }
     
     @Override
-    public boolean method2985(final double n, final double n2, final int n3) {
-        return this.field3529.method15492(n, n2, n3);
+    public boolean mouseReleased(final double n, final double n2, final int n3) {
+        return this.field3529.mouseReleased(n, n2, n3);
     }
     
     @Override
-    public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
-        return this.field3529.method15493(n, n2, n3, n4, n5) || super.method2984(n, n2, n3, n4, n5);
+    public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
+        return this.field3529.mouseDragged(n, n2, n3, n4, n5) || super.mouseDragged(n, n2, n3, n4, n5);
     }
     
     public void method3514(final int n, final int n2, final int n3, final Class7710 class7710) {

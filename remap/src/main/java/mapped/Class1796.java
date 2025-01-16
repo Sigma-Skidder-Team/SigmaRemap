@@ -221,7 +221,7 @@ public class Class1796 implements Class1657
         Class8726.method30063(1.0f, -1.0f, 1.0f);
         Class8726.method30063(16.0f, 16.0f, 16.0f);
         final Class7351 class8322 = new Class7351();
-        final Class7808 method34967 = Class869.method5277().method5333().method11006();
+        final Class7808 method34967 = Minecraft.method5277().method5333().method11006();
         final boolean b = !method34966.method18694();
         if (b) {
             Class8317.method27611();
@@ -239,7 +239,7 @@ public class Class1796 implements Class1657
     }
     
     public void method6540(final ItemStack class8321, final int n, final int n2) {
-        this.method6541(Class869.method5277().field4684, class8321, n, n2);
+        this.method6541(Minecraft.method5277().field4684, class8321, n, n2);
     }
     
     public void method6541(final LivingEntity class511, final ItemStack class512, final int n, final int n2) {
@@ -305,8 +305,8 @@ public class Class1796 implements Class1657
                 Class8726.method30040();
                 Class8726.method30008();
             }
-            final Class756 field4684 = Class869.method5277().field4684;
-            final float n7 = (field4684 != null) ? field4684.method2906().method25770(class1845.getItem(), Class869.method5277().method5314()) : 0.0f;
+            final Class756 field4684 = Minecraft.method5277().field4684;
+            final float n7 = (field4684 != null) ? field4684.method2906().method25770(class1845.getItem(), Minecraft.method5277().method5314()) : 0.0f;
             if (n7 > 0.0f) {
                 Class8726.method30007();
                 Class8726.method30041();

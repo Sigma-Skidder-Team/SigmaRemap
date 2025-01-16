@@ -9,14 +9,14 @@ import org.apache.logging.log4j.LogManager;
 import com.mojang.text2speech.Narrator;
 import org.apache.logging.log4j.Logger;
 
-public class Class7895 implements Class7894
+public class NarratorChatListener implements Class7894
 {
-    public static final ITextComponent field32402;
+    public static final ITextComponent EMPTY;
     private static final Logger field32403;
-    public static final Class7895 field32404;
+    public static final NarratorChatListener field32404;
     private final Narrator field32405;
     
-    public Class7895() {
+    public NarratorChatListener() {
         this.field32405 = Narrator.getNarrator();
     }
     
@@ -62,12 +62,12 @@ public class Class7895 implements Class7894
     }
     
     private static Class2051 method25557() {
-        return Class869.method5277().field4648.field23475;
+        return Minecraft.method5277().field4648.field23475;
     }
     
     private void method25558(final boolean b, final String s) {
         if (Class9528.field41021) {
-            Class7895.field32403.debug("Narrating: {}", (Object)s);
+            NarratorChatListener.field32403.debug("Narrating: {}", (Object)s);
         }
         this.field32405.say(s, b);
     }
@@ -75,7 +75,7 @@ public class Class7895 implements Class7894
     public void method25559(final Class2051 class2051) {
         this.method25561();
         this.field32405.say(new Class2259("options.narrator", new Object[0]).getString() + " : " + new Class2259(class2051.method8138(), new Object[0]).getString(), true);
-        final Class690 method5318 = Class869.method5277().method5318();
+        final Class690 method5318 = Minecraft.method5277().method5318();
         if (!this.field32405.active()) {
             Class6865.method20981(method5318, Class2174.field12897, new Class2259("narrator.toast.disabled", new Object[0]), new Class2259("options.narrator.notavailable", new Object[0]));
         }
@@ -104,8 +104,8 @@ public class Class7895 implements Class7894
     }
     
     static {
-        field32402 = new StringTextComponent("");
+        EMPTY = new StringTextComponent("");
         field32403 = LogManager.getLogger();
-        field32404 = new Class7895();
+        field32404 = new NarratorChatListener();
     }
 }

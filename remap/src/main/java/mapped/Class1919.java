@@ -61,10 +61,10 @@ public class Class1919 implements AutoCloseable
         this.field10429.method7715("InSize").method7164((float)this.field10430.field24884, (float)this.field10430.field24885);
         this.field10429.method7715("OutSize").method7164(n2, n3);
         this.field10429.method7715("Time").method7163(n);
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         this.field10429.method7715("ScreenSize").method7164((float)method5277.method5332().method7692(), (float)method5277.method5332().method7693());
         this.field10429.method7712();
-        this.field10431.method18402(Class869.field4623);
+        this.field10431.method18402(Minecraft.field4623);
         this.field10431.method18395(false);
         Class8726.method30010(false);
         final Class4148 method5278 = Class7392.method22694().method22696();

@@ -85,7 +85,7 @@ public class Class3660
         method11286();
         if (class7038 != null) {
             if (!(class7038 instanceof Class7041)) {
-                if (Class9570.field41383.method22605() && Class869.method5277().method5291() == null) {
+                if (Class9570.field41383.method22605() && Minecraft.method5277().method5291() == null) {
                     Config.method28847("[Shaders] Delayed loading of block mappings after resources are loaded");
                     Class3660.field16945 = true;
                 }

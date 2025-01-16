@@ -8,11 +8,11 @@ import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import org.apache.logging.log4j.Logger;
 
-public class Class5069 extends Class5046
+public class Class5069 extends RealmsScreen
 {
     private static final Logger field21730;
     private String field21731;
-    private final Class5076 field21732;
+    private final RealmsConfigureWorldScreen field21732;
     private final Class7437 field21733;
     private Class5060 field21734;
     private int field21735;
@@ -26,7 +26,7 @@ public class Class5069 extends Class5046
     private boolean field21743;
     private Class5066 field21744;
     
-    public Class5069(final Class5076 field21732, final Class7437 field21733) {
+    public Class5069(final RealmsConfigureWorldScreen field21732, final Class7437 field21733) {
         this.field21740 = -1;
         this.field21742 = -1;
         this.field21732 = field21732;
@@ -34,27 +34,27 @@ public class Class5069 extends Class5046
     }
     
     @Override
-    public void method15375() {
-        super.method15375();
+    public void tick() {
+        super.tick();
     }
     
     @Override
-    public void method15369() {
-        this.field21735 = this.method15421() / 2 - 160;
+    public void init() {
+        this.field21735 = this.width() / 2 - 160;
         this.field21736 = 150;
-        this.field21737 = this.method15421() / 2 + 12;
+        this.field21737 = this.width() / 2 + 12;
         this.method15444(true);
-        this.method15431(new Class5703(this, 1, this.field21737, Class7869.method25488(1), this.field21736 + 10, 20, Class5046.method15438("mco.configure.world.buttons.invite")));
-        this.method15431(this.field21738 = new Class5664(this, 4, this.field21737, Class7869.method25488(7), this.field21736 + 10, 20, Class5046.method15438("mco.configure.world.invites.remove.tooltip")));
-        this.method15431(this.field21739 = new Class5673(this, 5, this.field21737, Class7869.method25488(9), this.field21736 + 10, 20, Class5046.method15438("mco.configure.world.invites.ops.tooltip")));
-        this.method15431(new Class5643(this, 0, this.field21737 + this.field21736 / 2 + 2, Class7869.method25488(12), this.field21736 / 2 + 10 - 2, 20, Class5046.method15438("gui.back")));
+        this.buttonsAdd(new Class5703(this, 1, this.field21737, Class7869.method25488(1), this.field21736 + 10, 20, RealmsScreen.getLocalizedString("mco.configure.world.buttons.invite")));
+        this.buttonsAdd(this.field21738 = new Class5664(this, 4, this.field21737, Class7869.method25488(7), this.field21736 + 10, 20, RealmsScreen.getLocalizedString("mco.configure.world.invites.remove.tooltip")));
+        this.buttonsAdd(this.field21739 = new Class5673(this, 5, this.field21737, Class7869.method25488(9), this.field21736 + 10, 20, RealmsScreen.getLocalizedString("mco.configure.world.invites.ops.tooltip")));
+        this.buttonsAdd(new Class5643(this, 0, this.field21737 + this.field21736 / 2 + 2, Class7869.method25488(12), this.field21736 / 2 + 10 - 2, 20, RealmsScreen.getLocalizedString("gui.back")));
         (this.field21734 = new Class5060(this)).method15517(this.field21735);
         this.method15428(this.field21734);
         final Iterator<Class7427> iterator = this.field21733.field28682.iterator();
         while (iterator.hasNext()) {
             this.field21734.method15544(iterator.next());
         }
-        this.method15428(this.field21744 = new Class5066(Class5046.method15438("mco.configure.world.players.title"), this.method15421() / 2, 17, 16777215));
+        this.method15428(this.field21744 = new Class5066(RealmsScreen.getLocalizedString("mco.configure.world.players.title"), this.width() / 2, 17, 16777215));
         this.method15446();
         this.method15596();
     }
@@ -74,9 +74,9 @@ public class Class5069 extends Class5046
     }
     
     @Override
-    public boolean method15376(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (n != 256) {
-            return super.method15376(n, n2, n3);
+            return super.keyPressed(n, n2, n3);
         }
         this.method15598();
         return true;
@@ -84,33 +84,33 @@ public class Class5069 extends Class5046
     
     private void method15598() {
         if (!this.field21743) {
-            Class7847.method25362(this.field21732);
+            Realms.setScreen(this.field21732);
         }
         else {
-            Class7847.method25362(this.field21732.method15711());
+            Realms.setScreen(this.field21732.func_224407_b());
         }
     }
     
     private void method15599(final int n) {
         this.method15596();
-        final Class9513 method35444 = Class9513.method35444();
+        final RealmsClient method35444 = RealmsClient.func_224911_a();
         final String method35445 = this.field21733.field28682.get(n).method22852();
         try {
             this.method15601(method35444.method35466(this.field21733.field28675, method35445));
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             Class5069.field21730.error("Couldn't op the user");
         }
     }
     
     private void method15600(final int n) {
         this.method15596();
-        final Class9513 method35444 = Class9513.method35444();
+        final RealmsClient method35444 = RealmsClient.func_224911_a();
         final String method35445 = this.field21733.field28682.get(n).method22852();
         try {
             this.method15601(method35444.method35467(this.field21733.field28675, method35445));
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             Class5069.field21730.error("Couldn't deop the user");
         }
     }
@@ -128,20 +128,20 @@ public class Class5069 extends Class5046
                 final Class7427 class7427 = this.field21733.field28682.get(field21740);
                 this.field21741 = class7427.method22852();
                 this.field21740 = field21740;
-                Class7847.method25362(new Class5067(this, "Question", Class5046.method15438("mco.configure.world.uninvite.question") + " '" + class7427.method22850() + "' ?", 2));
+                Realms.setScreen(new Class5067(this, "Question", RealmsScreen.getLocalizedString("mco.configure.world.uninvite.question") + " '" + class7427.method22850() + "' ?", 2));
             }
         }
     }
     
     @Override
-    public void method15437(final boolean b, final int n) {
+    public void confirmResult(final boolean b, final int n) {
         if (n == 2) {
             if (b) {
-                final Class9513 method35444 = Class9513.method35444();
+                final RealmsClient method35444 = RealmsClient.func_224911_a();
                 try {
                     method35444.method35456(this.field21733.field28675, this.field21741);
                 }
-                catch (final Class2330 class2330) {
+                catch (final RealmsServiceException class2330) {
                     Class5069.field21730.error("Couldn't uninvite user");
                 }
                 this.method15603(this.field21740);
@@ -149,7 +149,7 @@ public class Class5069 extends Class5046
                 this.method15596();
             }
             this.field21743 = true;
-            Class7847.method25362(this);
+            Realms.setScreen(this);
         }
     }
     
@@ -158,7 +158,7 @@ public class Class5069 extends Class5046
     }
     
     @Override
-    public void method15383(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.field21731 = null;
         this.method15413();
         if (this.field21734 != null) {
@@ -166,22 +166,22 @@ public class Class5069 extends Class5046
         }
         final int n4 = Class7869.method25488(12) + 20;
         final Class7710 field30674 = Class7710.field30674;
-        Class5046.method15419("textures/gui/options_background.png");
+        RealmsScreen.method15419("textures/gui/options_background.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         field30674.method24611(7, Class7785.field31866);
-        field30674.method24610(0.0, this.method15422(), 0.0).method24614(0.0f, (this.method15422() - n4) / 32.0f + 0.0f).method24613(64, 64, 64, 255).method24612();
-        field30674.method24610(this.method15421(), this.method15422(), 0.0).method24614(this.method15421() / 32.0f, (this.method15422() - n4) / 32.0f + 0.0f).method24613(64, 64, 64, 255).method24612();
-        field30674.method24610(this.method15421(), n4, 0.0).method24614(this.method15421() / 32.0f, 0.0f).method24613(64, 64, 64, 255).method24612();
+        field30674.method24610(0.0, this.height(), 0.0).method24614(0.0f, (this.height() - n4) / 32.0f + 0.0f).method24613(64, 64, 64, 255).method24612();
+        field30674.method24610(this.width(), this.height(), 0.0).method24614(this.width() / 32.0f, (this.height() - n4) / 32.0f + 0.0f).method24613(64, 64, 64, 255).method24612();
+        field30674.method24610(this.width(), n4, 0.0).method24614(this.width() / 32.0f, 0.0f).method24613(64, 64, 64, 255).method24612();
         field30674.method24610(0.0, n4, 0.0).method24614(0.0f, 0.0f).method24613(64, 64, 64, 255).method24612();
         field30674.method24609();
         this.field21744.method15593(this);
         if (this.field21733 != null && this.field21733.field28682 != null) {
-            this.method15407(Class5046.method15438("mco.configure.world.invited") + " (" + this.field21733.field28682.size() + ")", this.field21735, Class7869.method25488(0), 10526880);
+            this.method15407(RealmsScreen.getLocalizedString("mco.configure.world.invited") + " (" + this.field21733.field28682.size() + ")", this.field21735, Class7869.method25488(0), 10526880);
         }
         else {
-            this.method15407(Class5046.method15438("mco.configure.world.invited"), this.field21735, Class7869.method25488(0), 10526880);
+            this.method15407(RealmsScreen.getLocalizedString("mco.configure.world.invited"), this.field21735, Class7869.method25488(0), 10526880);
         }
-        super.method15383(n, n2, n3);
+        super.render(n, n2, n3);
         if (this.field21733 != null) {
             if (this.field21731 != null) {
                 this.method15604(this.field21731, n, n2);
@@ -218,13 +218,13 @@ public class Class5069 extends Class5046
             b = false;
         }
         final boolean b2 = b;
-        Class5046.method15419("realms:textures/gui/realms/cross_player_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/cross_player_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n, n2, 0.0f, b2 ? 7.0f : 0.0f, 8, 7, 8, 14);
+        RealmsScreen.method15411(n, n2, 0.0f, b2 ? 7.0f : 0.0f, 8, 7, 8, 14);
         Class8726.method30060();
         if (b2) {
-            this.field21731 = Class5046.method15438("mco.configure.world.invites.remove.tooltip");
+            this.field21731 = RealmsScreen.getLocalizedString("mco.configure.world.invites.remove.tooltip");
         }
     }
     
@@ -248,13 +248,13 @@ public class Class5069 extends Class5046
             b = false;
         }
         final boolean b2 = b;
-        Class5046.method15419("realms:textures/gui/realms/op_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/op_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n, n2, 0.0f, b2 ? 8.0f : 0.0f, 8, 8, 8, 16);
+        RealmsScreen.method15411(n, n2, 0.0f, b2 ? 8.0f : 0.0f, 8, 8, 8, 16);
         Class8726.method30060();
         if (b2) {
-            this.field21731 = Class5046.method15438("mco.configure.world.invites.ops.tooltip");
+            this.field21731 = RealmsScreen.getLocalizedString("mco.configure.world.invites.ops.tooltip");
         }
     }
     
@@ -278,13 +278,13 @@ public class Class5069 extends Class5046
             b = false;
         }
         final boolean b2 = b;
-        Class5046.method15419("realms:textures/gui/realms/user_icon.png");
+        RealmsScreen.method15419("realms:textures/gui/realms/user_icon.png");
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30059();
-        Class5046.method15411(n, n2, 0.0f, b2 ? 8.0f : 0.0f, 8, 8, 8, 16);
+        RealmsScreen.method15411(n, n2, 0.0f, b2 ? 8.0f : 0.0f, 8, 8, 8, 16);
         Class8726.method30060();
         if (b2) {
-            this.field21731 = Class5046.method15438("mco.configure.world.invites.normal.tooltip");
+            this.field21731 = RealmsScreen.getLocalizedString("mco.configure.world.invites.normal.tooltip");
         }
     }
     

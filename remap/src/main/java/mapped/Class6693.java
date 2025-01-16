@@ -11,7 +11,7 @@ import java.util.List;
 
 public abstract class Class6693
 {
-    public static final Class869 field26420;
+    public static final Minecraft field26420;
     private final String field26421;
     private final String field26422;
     private final String[] field26423;
@@ -54,6 +54,6 @@ public abstract class Class6693
     public abstract void run(final String p0, final Class8025[] p1, final Class6428 p2) throws CommandException;
     
     static {
-        field26420 = Class869.method5277();
+        field26420 = Minecraft.method5277();
     }
 }

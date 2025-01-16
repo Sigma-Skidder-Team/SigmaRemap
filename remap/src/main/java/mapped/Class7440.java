@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class7440 extends Class7422
+public class Class7440 extends ValueObject
 {
     public volatile String field28697;
     public volatile String field28698;

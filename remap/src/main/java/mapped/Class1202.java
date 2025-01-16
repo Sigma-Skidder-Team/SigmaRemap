@@ -23,7 +23,7 @@ public class Class1202 implements Runnable
     
     private void method5617() {
         try {
-            final Class9513 method35444 = Class9513.method35444();
+            final RealmsClient method35444 = RealmsClient.func_224911_a();
             if (method35444 != null) {
                 final List<Class7437> field28626 = method35444.method35448().field28626;
                 if (field28626 != null) {

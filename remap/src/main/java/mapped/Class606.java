@@ -8,7 +8,7 @@ public class Class606 extends Class605<Class622>
 {
     private static String[] field3557;
     
-    public Class606(final Class869 class869, final int n, final int n2, final int n3, final int n4, final int n5) {
+    public Class606(final Minecraft class869, final int n, final int n2, final int n3, final int n4, final int n5) {
         super(class869, n, n2, n3, n4, n5);
         this.field3549 = false;
     }

@@ -19,30 +19,30 @@ public class Class520 extends Class516<Class3428> implements Class519
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
-        this.field3114 = (this.field3152 < 379);
-        this.field3113.method3415(this.field3152, this.field3153, this.field3150, this.field3114, (Class3426<?>)this.field3077);
-        this.field3079 = this.field3113.method3419(this.field3114, this.field3152, this.field3075);
-        this.field3149.add(this.field3113);
+    public void init() {
+        super.init();
+        this.field3114 = (this.width < 379);
+        this.field3113.method3415(this.width, this.height, this.minecraft, this.field3114, (Class3426<?>)this.field3077);
+        this.field3079 = this.field3113.method3419(this.field3114, this.width, this.field3075);
+        this.children.add(this.field3113);
         this.method3476(this.field3113);
-        this.method3029(new Class679(this.field3079 + 5, this.field3153 / 2 - 49, 20, 18, 0, 0, 19, Class520.field3112, class654 -> {
+        this.method3029(new Class679(this.field3079 + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, Class520.field3112, class654 -> {
             this.field3113.method3416(this.field3114);
             this.field3113.method3420();
-            this.field3079 = this.field3113.method3419(this.field3114, this.field3152, this.field3075);
-            ((Class679)class654).method3742(this.field3079 + 5, this.field3153 / 2 - 49);
+            this.field3079 = this.field3113.method3419(this.field3114, this.width, this.field3075);
+            ((Class679)class654).method3742(this.field3079 + 5, this.height / 2 - 49);
         }));
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
+    public void tick() {
+        super.tick();
         this.field3113.method3426();
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         if (this.field3113.method3421() && this.field3114) {
             this.method2976(n3, n, n2);
             this.field3113.method2975(n, n2, n3);
@@ -59,15 +59,15 @@ public class Class520 extends Class516<Class3428> implements Class519
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.field3156.method6610(this.field3148.getFormattedText(), 28.0f, 6.0f, 4210752);
-        this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.font.method6610(this.field3148.getFormattedText(), 28.0f, 6.0f, 4210752);
+        this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override
     public void method2976(final float n, final int n2, final int n3) {
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3150.method5290().method5849(Class520.field3111);
-        this.method3186(this.field3079, (this.field3153 - this.field3076) / 2, 0, 0, this.field3075, this.field3076);
+        this.minecraft.method5290().method5849(Class520.field3111);
+        this.method3186(this.field3079, (this.height - this.field3076) / 2, 0, 0, this.field3075, this.field3076);
     }
     
     @Override
@@ -81,8 +81,8 @@ public class Class520 extends Class516<Class3428> implements Class519
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
-        return this.field3113.method2982(n, n2, n3) || (this.field3114 && this.field3113.method3421()) || super.method2982(n, n2, n3);
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
+        return this.field3113.mouseClicked(n, n2, n3) || (this.field3114 && this.field3113.method3421()) || super.mouseClicked(n, n2, n3);
     }
     
     @Override
@@ -117,9 +117,9 @@ public class Class520 extends Class516<Class3428> implements Class519
     }
     
     @Override
-    public void method2971() {
+    public void removed() {
         this.field3113.method3418();
-        super.method2971();
+        super.removed();
     }
     
     @Override

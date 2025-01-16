@@ -27,7 +27,7 @@ public class Class6868 implements Class6866
         if (method31036 == null) {
             return Class2204.field13418;
         }
-        final List<String> method31037 = class690.method3853().field4643.method6626(method31036.method22527().getFormattedText(), 125);
+        final List<String> method31037 = class690.method3853().fontRenderer.method6626(method31036.method22527().getFormattedText(), 125);
         final int n2 = (method31036.method22531() != Class1993.field11163) ? 16776960 : 16746751;
         if (method31037.size() != 1) {
             if (n >= 1500L) {
@@ -35,17 +35,17 @@ public class Class6868 implements Class6866
                 int n4 = 16 - method31037.size() * 9 / 2;
                 final Iterator iterator = method31037.iterator();
                 while (iterator.hasNext()) {
-                    class690.method3853().field4643.method6610((String)iterator.next(), 30.0f, (float)n4, 0xFFFFFF | n3);
+                    class690.method3853().fontRenderer.method6610((String)iterator.next(), 30.0f, (float)n4, 0xFFFFFF | n3);
                     n4 += 9;
                 }
             }
             else {
-                class690.method3853().field4643.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015(), new Object[0]), 30.0f, 11.0f, n2 | (MathHelper.method35642(MathHelper.clamp((1500L - n) / 300.0f, 0.0f, 1.0f) * 255.0f) << 24 | 0x4000000));
+                class690.method3853().fontRenderer.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015(), new Object[0]), 30.0f, 11.0f, n2 | (MathHelper.method35642(MathHelper.clamp((1500L - n) / 300.0f, 0.0f, 1.0f) * 255.0f) << 24 | 0x4000000));
             }
         }
         else {
-            class690.method3853().field4643.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015(), new Object[0]), 30.0f, 7.0f, n2 | 0xFF000000);
-            class690.method3853().field4643.method6610(method31036.method22527().getFormattedText(), 30.0f, 18.0f, -1);
+            class690.method3853().fontRenderer.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015(), new Object[0]), 30.0f, 7.0f, n2 | 0xFF000000);
+            class690.method3853().fontRenderer.method6610(method31036.method22527().getFormattedText(), 30.0f, 18.0f, -1);
         }
         if (!this.field26907) {
             if (n > 0L) {
@@ -55,7 +55,7 @@ public class Class6868 implements Class6866
                 }
             }
         }
-        class690.method3853().method5307().method6541(null, method31036.method22529(), 8, 8);
+        class690.method3853().getItemRenderer().method6541(null, method31036.method22529(), 8, 8);
         return (n < 5000L) ? Class2204.field13417 : Class2204.field13418;
     }
 }

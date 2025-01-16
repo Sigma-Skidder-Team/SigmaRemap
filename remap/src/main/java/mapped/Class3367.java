@@ -152,6 +152,6 @@ public class Class3367 extends Class3355
     }
     
     public static boolean method10703() {
-        return Class3367.field15514.field4683.method6981(Class3367.field15514.field4684, Class3367.field15514.field4684.boundingBox).count() != 0L;
+        return Class3367.field15514.world.method6981(Class3367.field15514.field4684, Class3367.field15514.field4684.boundingBox).count() != 0L;
     }
 }

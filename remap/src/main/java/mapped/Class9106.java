@@ -9,10 +9,10 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class9106
 {
-    private final Class869 field38573;
+    private final Minecraft field38573;
     private Class7079 field38574;
     
-    public Class9106(final Class869 field38573) {
+    public Class9106(final Minecraft field38573) {
         this.field38573 = field38573;
     }
     
@@ -72,11 +72,11 @@ public class Class9106
     
     public void method32925() {
         if (this.field38574 == null) {
-            if (this.field38573.field4683 != null) {
+            if (this.field38573.world != null) {
                 this.method32924();
             }
         }
-        else if (this.field38573.field4683 == null) {
+        else if (this.field38573.world == null) {
             this.method32923();
         }
         else {
@@ -93,7 +93,7 @@ public class Class9106
         }
     }
     
-    public Class869 method32927() {
+    public Minecraft method32927() {
         return this.field38573;
     }
     

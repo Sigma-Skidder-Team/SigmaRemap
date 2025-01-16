@@ -47,7 +47,7 @@ public class Class3291 extends Class3167
     }
     
     public Vec3d method10418(final Vec3d class5487) {
-        return class5487.add(new Vec3d(-Class869.method5277().field4644.method5833().method18161().getX(), -Class869.method5277().field4644.method5833().method18161().getY(), -Class869.method5277().field4644.method5833().method18161().getZ()));
+        return class5487.add(new Vec3d(-Minecraft.method5277().field4644.method5833().method18161().getX(), -Minecraft.method5277().field4644.method5833().method18161().getY(), -Minecraft.method5277().field4644.method5833().method18161().getZ()));
     }
     
     @Class6753

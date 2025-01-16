@@ -43,7 +43,7 @@ public class Class3265 extends Class3247
         final double n2 = Class3265.field15514.field4684.posZ + class5745.method17052().z;
         final double n3 = 0.41;
         final double n4 = class5745.method17049() - class5745.method17051();
-        final Object[] array = Class3265.field15514.field4683.method6981(Class3265.field15514.field4684, new AxisAlignedBB(n - n3, Class3265.field15514.field4684.boundingBox.minY, n2 - n3, n + n3, Class3265.field15514.field4684.boundingBox.minY + n4, n2 + n3)).toArray();
+        final Object[] array = Class3265.field15514.world.method6981(Class3265.field15514.field4684, new AxisAlignedBB(n - n3, Class3265.field15514.field4684.boundingBox.minY, n2 - n3, n + n3, Class3265.field15514.field4684.boundingBox.minY + n4, n2 + n3)).toArray();
         final int length = array.length;
         Class7096 class5746 = null;
         BlockPos class5747 = null;
@@ -51,7 +51,7 @@ public class Class3265 extends Class3247
         for (int i = 0; i < length; ++i) {
             final VoxelShape class5748 = (VoxelShape)array[i];
             final BlockPos class5749 = new BlockPos(class5748.getStart(Direction.Axis.X), class5748.getStart(Direction.Axis.Y), class5748.getStart(Direction.Axis.Z));
-            final Class7096 method6701 = Class3265.field15514.field4683.getBlockState(class5749);
+            final Class7096 method6701 = Class3265.field15514.world.getBlockState(class5749);
             if (class5746 == null || class5748.getBoundingBox().maxY > field25077) {
                 class5746 = method6701;
                 class5747 = class5749;
@@ -68,7 +68,7 @@ public class Class3265 extends Class3247
                                     return Class2166.field12885;
                                 }
                             }
-                            else if (class5746.method21725(Class3265.field15514.field4683, class5747).method24537().field25077 == 1.0) {
+                            else if (class5746.method21725(Class3265.field15514.world, class5747).method24537().field25077 == 1.0) {
                                 return Class2166.field12886;
                             }
                             return Class2166.field12886;
@@ -76,7 +76,7 @@ public class Class3265 extends Class3247
                     }
                 }
                 else {
-                    if (class5746.method21696() instanceof Class3921 && class5746.method21725(Class3265.field15514.field4683, class5747).method24537().field25077 == 1.0) {
+                    if (class5746.method21696() instanceof Class3921 && class5746.method21725(Class3265.field15514.world, class5747).method24537().field25077 == 1.0) {
                         return Class2166.field12884;
                     }
                     if (class5746.method21696() instanceof Class3916) {

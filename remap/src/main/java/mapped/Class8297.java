@@ -10,13 +10,13 @@ import java.util.List;
 
 public class Class8297
 {
-    private Class527 field34103;
+    private Screen field34103;
     private Class7300 field34104;
     private int field34105;
     private int field34106;
     private long field34107;
     
-    public Class8297(final Class527 field34103, final Class7300 field34104) {
+    public Class8297(final Screen field34103, final Class7300 field34104) {
         this.field34105 = 0;
         this.field34106 = 0;
         this.field34107 = 0L;
@@ -46,7 +46,7 @@ public class Class8297
                             if (s.endsWith("!")) {
                                 n = 16719904;
                             }
-                            Class869.method5277().field4643.method6609(s, (float)(method3899.x + 5), (float)(method3899.y + 5 + i * 11), n);
+                            Minecraft.method5277().fontRenderer.method6609(s, (float)(method3899.x + 5), (float)(method3899.y + 5 + i * 11), n);
                         }
                     }
                 }

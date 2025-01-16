@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import javax.annotation.Nullable;
 
-public abstract class Class5056<E extends Class624> extends Class5053
+public abstract class Class5056<E extends Class624> extends RealmsGuiEventListener
 {
     private final Class619 field21705;
     
@@ -98,7 +98,7 @@ public abstract class Class5056<E extends Class624> extends Class5053
     }
     
     @Override
-    public Class574 method15448() {
+    public IGuiEventListener getProxy() {
         return this.field21705;
     }
     
@@ -118,7 +118,7 @@ public abstract class Class5056<E extends Class624> extends Class5053
     }
     
     public List<E> method15535() {
-        return this.field21705.method3040();
+        return this.field21705.children();
     }
     
     public void method15536(final Collection<E> collection) {

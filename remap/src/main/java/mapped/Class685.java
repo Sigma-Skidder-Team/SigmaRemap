@@ -30,7 +30,7 @@ public class Class685 extends Class565
     private static final ResourceLocation field3750;
     private static final ResourceLocation field3751;
     private final Random field3752;
-    private final Class869 field3753;
+    private final Minecraft field3753;
     private final Class1796 field3754;
     private final Class684 field3755;
     private int field3756;
@@ -59,7 +59,7 @@ public class Class685 extends Class565
     private int field3779;
     private final Map<Class285, List<Class7894>> field3780;
     
-    public Class685(final Class869 field3753) {
+    public Class685(final Minecraft field3753) {
         this.field3752 = new Random();
         this.field3757 = "";
         this.field3760 = 1.0f;
@@ -68,7 +68,7 @@ public class Class685 extends Class565
         this.field3770 = "";
         this.field3780 = Maps.newHashMap();
         this.field3753 = field3753;
-        this.field3754 = field3753.method5307();
+        this.field3754 = field3753.getItemRenderer();
         this.field3763 = new Class689(field3753);
         this.field3765 = new Class569(field3753);
         this.field3755 = new Class684(field3753);
@@ -79,7 +79,7 @@ public class Class685 extends Class565
         for (int length = values.length, i = 0; i < length; ++i) {
             this.field3780.put(values[i], Lists.newArrayList());
         }
-        final Class7895 field3754 = Class7895.field32404;
+        final NarratorChatListener field3754 = NarratorChatListener.field32404;
         this.field3780.get(Class285.field1572).add((Object)new Class7893(field3753));
         this.field3780.get(Class285.field1572).add((Object)field3754);
         this.field3780.get(Class285.field1573).add((Object)new Class7893(field3753));
@@ -245,7 +245,7 @@ public class Class685 extends Class565
                     this.field3753.method5327().endSection();
                 }
                 this.field3764.method3817();
-                final Class6516 method3815 = this.field3753.field4683.method6782();
+                final Class6516 method3815 = this.field3753.world.method6782();
                 Class9290 method3816 = null;
                 final Class6749 method3817 = method3815.method19651(this.field3753.field4684.method1867());
                 if (method3817 != null) {
@@ -364,7 +364,7 @@ public class Class685 extends Class565
             return false;
         }
         final BlockPos method21447 = ((BlockRayTraceResult)class7006).getPos();
-        final Class1848 field4683 = this.field3753.field4683;
+        final Class1848 field4683 = this.field3753.world;
         return field4683.getBlockState(method21447).method21754(field4683, method21447) != null;
     }
     
@@ -581,8 +581,8 @@ public class Class685 extends Class565
     public void method3788() {
         this.field3753.method5327().startSection("demo");
         String s;
-        if (this.field3753.field4683.method6754() < 120500L) {
-            s = Class8822.method30773("demo.remainingTime", Class8272.method27498((int)(120500L - this.field3753.field4683.method6754())));
+        if (this.field3753.world.method6754() < 120500L) {
+            s = Class8822.method30773("demo.remainingTime", Class8272.method27498((int)(120500L - this.field3753.world.method6754())));
         }
         else {
             s = Class8822.method30773("demo.demoExpired", new Object[0]);
@@ -882,7 +882,7 @@ public class Class685 extends Class565
     
     private void method3798(final Entity class399) {
         if (Config.method28917()) {
-            final WorldBorder method6787 = this.field3753.field4683.getWorldBorder();
+            final WorldBorder method6787 = this.field3753.world.getWorldBorder();
             final float n = (float)method6787.method34782(class399);
             final double max = Math.max(method6787.method34807(), Math.min(method6787.method34804() * method6787.method34805() * 1000.0, Math.abs(method6787.method34793() - method6787.method34791())));
             float n2;
@@ -966,12 +966,12 @@ public class Class685 extends Class565
             if (n4 > 0.0f) {
                 Class8726.method30060();
             }
-            this.field3754.method6542(this.field3753.field4643, class513, n, n2);
+            this.field3754.method6542(this.field3753.fontRenderer, class513, n, n2);
         }
     }
     
     public void method3801() {
-        if (this.field3753.field4683 == null) {
+        if (this.field3753.world == null) {
             Class8287.method27536();
         }
         if (this.field3758 > 0) {
@@ -1090,7 +1090,7 @@ public class Class685 extends Class565
     }
     
     public Class1844 method3809() {
-        return this.field3753.field4643;
+        return this.field3753.fontRenderer;
     }
     
     public Class569 method3810() {

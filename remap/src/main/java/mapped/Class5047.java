@@ -13,10 +13,10 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.google.common.util.concurrent.RateLimiter;
 import org.apache.logging.log4j.Logger;
 
-public class Class5047 extends Class5046
+public class Class5047 extends RealmsScreen
 {
     private static final Logger field21638;
-    private final Class5046 field21639;
+    private final RealmsScreen field21639;
     private final Class7431 field21640;
     private final String field21641;
     private final RateLimiter field21642;
@@ -41,14 +41,14 @@ public class Class5047 extends Class5046
     private boolean field21661;
     private static final ReentrantLock field21662;
     
-    public Class5047(final Class5046 field21639, final Class7431 field21640, final String field21641) {
+    public Class5047(final RealmsScreen field21639, final Class7431 field21640, final String field21641) {
         this.field21650 = true;
         this.field21660 = -1;
         this.field21639 = field21639;
         this.field21644 = field21641;
         this.field21640 = field21640;
         this.field21645 = new Class8091(this);
-        this.field21641 = Class5046.method15438("mco.download.title");
+        this.field21641 = RealmsScreen.getLocalizedString("mco.download.title");
         this.field21642 = RateLimiter.create(0.10000000149011612);
     }
     
@@ -57,16 +57,16 @@ public class Class5047 extends Class5046
     }
     
     @Override
-    public void method15369() {
+    public void init() {
         this.method15444(true);
-        this.method15431(this.field21643 = new Class5615(this, 0, this.method15421() / 2 - 100, this.method15422() - 42, 200, 20, Class5046.method15438("gui.cancel")));
+        this.buttonsAdd(this.field21643 = new Class5615(this, 0, this.width() / 2 - 100, this.height() - 42, 200, 20, RealmsScreen.getLocalizedString("gui.cancel")));
         this.method15450();
     }
     
     private void method15450() {
         if (!this.field21651) {
             if (!this.field21661 && this.method15451(this.field21640.field28659) >= 5368709120L) {
-                Class7847.method25362(new Class5084(this, Class2039.field11627, Class5046.method15439("mco.download.confirmation.line1", method15458(5368709120L)), Class5046.method15438("mco.download.confirmation.line2"), false, 100));
+                Realms.setScreen(new Class5084(this, Class2039.field11627, RealmsScreen.method15439("mco.download.confirmation.line1", method15458(5368709120L)), RealmsScreen.getLocalizedString("mco.download.confirmation.line2"), false, 100));
             }
             else {
                 this.method15459();
@@ -75,9 +75,9 @@ public class Class5047 extends Class5046
     }
     
     @Override
-    public void method15437(final boolean b, final int n) {
+    public void confirmResult(final boolean b, final int n) {
         this.field21661 = true;
-        Class7847.method25362(this);
+        Realms.setScreen(this);
         this.method15459();
     }
     
@@ -86,8 +86,8 @@ public class Class5047 extends Class5046
     }
     
     @Override
-    public void method15375() {
-        super.method15375();
+    public void tick() {
+        super.tick();
         ++this.field21656;
         if (this.field21647 != null) {
             if (this.field21642.tryAcquire(1)) {
@@ -101,15 +101,15 @@ public class Class5047 extends Class5046
                 if (this.field21646 != null) {
                     arrayList.add(this.field21646);
                 }
-                Class7847.method25381(String.join(System.lineSeparator(), arrayList));
+                Realms.narrateNow(String.join(System.lineSeparator(), arrayList));
             }
         }
     }
     
     @Override
-    public boolean method15376(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (n != 256) {
-            return super.method15376(n, n2, n3);
+            return super.keyPressed(n, n2, n3);
         }
         this.field21649 = true;
         this.method15452();
@@ -120,23 +120,23 @@ public class Class5047 extends Class5046
         if (this.field21651) {
             if (this.field21660 != -1) {
                 if (this.field21646 == null) {
-                    this.field21639.method15437(true, this.field21660);
+                    this.field21639.confirmResult(true, this.field21660);
                 }
             }
         }
-        Class7847.method25362(this.field21639);
+        Realms.setScreen(this.field21639);
     }
     
     @Override
-    public void method15383(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.method15413();
         if (this.field21652) {
             if (!this.field21651) {
-                this.field21647 = Class5046.method15438("mco.download.extracting");
+                this.field21647 = RealmsScreen.getLocalizedString("mco.download.extracting");
             }
         }
-        this.method15405(this.field21641, this.method15421() / 2, 20, 16777215);
-        this.method15405(this.field21647, this.method15421() / 2, 50, 16777215);
+        this.drawCenteredString(this.field21641, this.width() / 2, 20, 16777215);
+        this.drawCenteredString(this.field21647, this.width() / 2, 50, 16777215);
         if (this.field21650) {
             this.method15453();
         }
@@ -147,9 +147,9 @@ public class Class5047 extends Class5046
             }
         }
         if (this.field21646 != null) {
-            this.method15405(this.field21646, this.method15421() / 2, 110, 16711680);
+            this.drawCenteredString(this.field21646, this.width() / 2, 110, 16711680);
         }
-        super.method15383(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     private void method15453() {
@@ -157,7 +157,7 @@ public class Class5047 extends Class5046
         if (this.field21656 % 10 == 0) {
             ++this.field21658;
         }
-        this.method15407(Class5047.field21657[this.field21658 % Class5047.field21657.length], this.method15421() / 2 + method15424 / 2 + 5, 50, 16777215);
+        this.method15407(Class5047.field21657[this.field21658 % Class5047.field21657.length], this.width() / 2 + method15424 / 2 + 5, 50, 16777215);
     }
     
     private void method15454() {
@@ -167,7 +167,7 @@ public class Class5047 extends Class5046
         Class8726.method30041();
         final Class7710 field30674 = Class7710.field30674;
         field30674.method24611(7, Class7785.field31865);
-        final double n = this.method15421() / 2 - 100;
+        final double n = this.width() / 2 - 100;
         field30674.method24610(n - 0.5, 95.5, 0.0).method24613(217, 210, 210, 255).method24612();
         field30674.method24610(n + 200.0 * d / 100.0 + 0.5, 95.5, 0.0).method24613(217, 210, 210, 255).method24612();
         field30674.method24610(n + 200.0 * d / 100.0 + 0.5, 79.5, 0.0).method24613(217, 210, 210, 255).method24612();
@@ -178,7 +178,7 @@ public class Class5047 extends Class5046
         field30674.method24610(n, 80.0, 0.0).method24613(128, 128, 128, 255).method24612();
         field30674.method24609();
         Class8726.method30040();
-        this.method15405(this.field21648 + " %", this.method15421() / 2, 84, 16777215);
+        this.drawCenteredString(this.field21648 + " %", this.width() / 2, 84, 16777215);
     }
     
     private void method15455() {
@@ -200,7 +200,7 @@ public class Class5047 extends Class5046
     
     private void method15456(final long n) {
         if (n > 0L) {
-            this.method15407("(" + method15457(n) + ")", this.method15421() / 2 + this.method15424(this.field21648) / 2 + 15, 84, 16777215);
+            this.method15407("(" + method15457(n) + ")", this.width() / 2 + this.method15424(this.field21648) / 2 + 15, 84, 16777215);
         }
     }
     
@@ -225,7 +225,7 @@ public class Class5047 extends Class5046
             try {
                 try {
                     if (Class5047.field21662.tryLock(1L, TimeUnit.SECONDS)) {
-                        this.field21647 = Class5046.method15438("mco.download.preparing");
+                        this.field21647 = RealmsScreen.getLocalizedString("mco.download.preparing");
                         if (this.field21649) {
                             this.method15460();
                             if (!Class5047.field21662.isHeldByCurrentThread()) {
@@ -239,15 +239,15 @@ public class Class5047 extends Class5046
                             }
                         }
                         else {
-                            this.field21647 = Class5046.method15439("mco.download.downloading", this.field21644);
+                            this.field21647 = RealmsScreen.method15439("mco.download.downloading", this.field21644);
                             final Class8113 class8113 = new Class8113();
                             class8113.method26666(this.field21640.field28659);
                             class8113.method26667(this.field21640, this.field21644, this.field21645, this.method15441());
                             while (!class8113.method26669()) {
                                 if (class8113.method26670()) {
                                     class8113.method26668();
-                                    this.field21646 = Class5046.method15438("mco.download.failed");
-                                    this.field21643.method16925(Class5046.method15438("gui.done"));
+                                    this.field21646 = RealmsScreen.getLocalizedString("mco.download.failed");
+                                    this.field21643.method16925(RealmsScreen.getLocalizedString("gui.done"));
                                     if (!Class5047.field21662.isHeldByCurrentThread()) {
                                         return;
                                     }
@@ -286,8 +286,8 @@ public class Class5047 extends Class5046
                                 }
                             }
                             this.field21651 = true;
-                            this.field21647 = Class5046.method15438("mco.download.done");
-                            this.field21643.method16925(Class5046.method15438("gui.done"));
+                            this.field21647 = RealmsScreen.getLocalizedString("mco.download.done");
+                            this.field21643.method16925(RealmsScreen.getLocalizedString("gui.done"));
                             if (!Class5047.field21662.isHeldByCurrentThread()) {
                                 return;
                             }
@@ -313,7 +313,7 @@ public class Class5047 extends Class5046
                     Class5047.field21638.error("Could not acquire upload lock");
                 }
                 catch (final Exception ex3) {
-                    this.field21646 = Class5046.method15438("mco.download.failed");
+                    this.field21646 = RealmsScreen.getLocalizedString("mco.download.failed");
                     ex3.printStackTrace();
                 }
                 Class5047.field21662.unlock();
@@ -334,7 +334,7 @@ public class Class5047 extends Class5046
     }
     
     private void method15460() {
-        this.field21647 = Class5046.method15438("mco.download.cancelled");
+        this.field21647 = RealmsScreen.getLocalizedString("mco.download.cancelled");
     }
     
     static {

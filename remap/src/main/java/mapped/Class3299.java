@@ -63,7 +63,7 @@ public class Class3299 extends Class3167
                     field2396 -= n8;
                     field2397 -= n9;
                     final double n11 = 0.3;
-                    if (Class3299.field15514.field4683.method6981(Class3299.field15514.field4684, new AxisAlignedBB(field2395 - n11, field2397, field2396 - n11, field2395 + n11, field2397 + 1.9, field2396 + n11)).count() == 0L) {
+                    if (Class3299.field15514.world.method6981(Class3299.field15514.field4684, new AxisAlignedBB(field2395 - n11, field2397, field2396 - n11, field2395 + n11, field2397 + 1.9, field2396 + n11)).count() == 0L) {
                         Class3299.field15514.method5269().method17292(new Class4354(field2395, field2397, field2396, true));
                     }
                     this.field15867.add(new Class9407(field2395, field2397, field2396));

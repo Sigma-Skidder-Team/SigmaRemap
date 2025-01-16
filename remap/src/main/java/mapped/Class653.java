@@ -15,7 +15,7 @@ public class Class653 extends Class649
         this.field3681 = field3681;
         super(n, n2);
         this.field3678 = field3682;
-        this.field3679 = Class869.method5277().method5325().method6446(field3682);
+        this.field3679 = Minecraft.method5277().method5325().method6446(field3682);
         this.field3680 = field3683;
     }
     
@@ -30,8 +30,8 @@ public class Class653 extends Class649
             }
             Class748.method4090(this.field3681).clear();
             Class748.method4091(this.field3681).clear();
-            this.field3681.method2969();
-            this.field3681.method2992();
+            this.field3681.init();
+            this.field3681.tick();
         }
     }
     
@@ -48,7 +48,7 @@ public class Class653 extends Class649
     
     @Override
     public void method3706() {
-        Class869.method5277().method5290().method5849(this.field3679.method7504().method6340());
+        Minecraft.method5277().method5290().method5849(this.field3679.method7504().method6340());
         Class565.method3298(this.field3426 + 2, this.field3427 + 2, this.method3303(), 18, 18, this.field3679);
     }
 }

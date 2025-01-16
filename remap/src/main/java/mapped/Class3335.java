@@ -175,7 +175,7 @@ public class Class3335 extends Class3167
         Class3335.field15934.clear();
         Class3335.field15935.clear();
         final float field26528 = Class3335.field15514.field4633.field26528;
-        for (final PlayerEntity next : Class3335.field15514.field4683.method6806()) {
+        for (final PlayerEntity next : Class3335.field15514.world.method6806()) {
             if (!(next instanceof PlayerEntity)) {
                 continue;
             }
@@ -210,7 +210,7 @@ public class Class3335 extends Class3167
         if (this.field15933 == 0.0 || Double.isNaN(this.field15933)) {
             this.field15933 = n2;
         }
-        this.field15933 += (n2 - this.field15933) / (Class869.method5338() * 0.7);
+        this.field15933 += (n2 - this.field15933) / (Minecraft.method5338() * 0.7);
         final float n3 = (float)(n * this.field15933);
         Class8726.method30063(n3, n3, n3);
     }

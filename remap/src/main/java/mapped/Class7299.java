@@ -70,7 +70,7 @@ public class Class7299 extends Class7298
     }
     
     private String[] method22390(final int n, final List<String> list) {
-        final Class1844 field4643 = Config.method28894().field4643;
+        final Class1844 field4643 = Config.method28894().fontRenderer;
         final ArrayList list2 = new ArrayList();
         for (int i = 0; i < list.size(); ++i) {
             final String s = list.get(i);

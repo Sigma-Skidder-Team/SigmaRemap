@@ -38,20 +38,20 @@ public class Class526 extends Class516<Class3433>
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.field3156.method6610(this.field3148.getFormattedText(), 12.0f, 5.0f, 4210752);
-        this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.font.method6610(this.field3148.getFormattedText(), 12.0f, 5.0f, 4210752);
+        this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
+    public void tick() {
+        super.tick();
         this.method3025();
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
-        final int n4 = (this.field3152 - this.field3075) / 2;
-        final int n5 = (this.field3153 - this.field3076) / 2;
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
+        final int n4 = (this.width - this.field3075) / 2;
+        final int n5 = (this.height - this.field3076) / 2;
         for (int i = 0; i < 3; ++i) {
             final double n6 = n - (n4 + 60);
             final double n7 = n2 - (n5 + 14 + 19 * i);
@@ -59,8 +59,8 @@ public class Class526 extends Class516<Class3433>
                 if (n7 >= 0.0) {
                     if (n6 < 108.0) {
                         if (n7 < 19.0) {
-                            if (((Class3433)this.field3077).method10877(this.field3150.field4684, i)) {
-                                this.field3150.field4682.method27326(((Class3433)this.field3077).field16154, i);
+                            if (((Class3433)this.field3077).method10877(this.minecraft.field4684, i)) {
+                                this.minecraft.field4682.method27326(((Class3433)this.field3077).field16154, i);
                                 return true;
                             }
                         }
@@ -68,22 +68,22 @@ public class Class526 extends Class516<Class3433>
                 }
             }
         }
-        return super.method2982(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     @Override
     public void method2976(final float n, final int n2, final int n3) {
         Class8317.method27611();
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3150.method5290().method5849(Class526.field3134);
-        final int n4 = (this.field3152 - this.field3075) / 2;
-        final int n5 = (this.field3153 - this.field3076) / 2;
+        this.minecraft.method5290().method5849(Class526.field3134);
+        final int n4 = (this.width - this.field3075) / 2;
+        final int n5 = (this.height - this.field3076) / 2;
         this.method3186(n4, n5, 0, 0, this.field3075, this.field3076);
         Class8726.method30057(5889);
         Class8726.method30059();
         Class8726.method30058();
-        final int n6 = (int)this.field3150.method5332().method7700();
-        Class8726.method30048((this.field3152 - 320) / 2 * n6, (this.field3153 - 240) / 2 * n6, 320 * n6, 240 * n6);
+        final int n6 = (int)this.minecraft.method5332().method7700();
+        Class8726.method30048((this.width - 320) / 2 * n6, (this.height - 240) / 2 * n6, 320 * n6, 240 * n6);
         Class8726.method30065(-0.34f, 0.23f, 0.0f);
         Class8726.method30067(Matrix4f.method20755(90.0, 1.3333334f, 9.0f, 80.0f));
         Class8726.method30057(5888);
@@ -123,7 +123,7 @@ public class Class526 extends Class516<Class3433>
         method22571.method25216();
         class7351.method22568();
         Class8726.method30057(5889);
-        Class8726.method30048(0, 0, this.field3150.method5332().method7692(), this.field3150.method5332().method7693());
+        Class8726.method30048(0, 0, this.minecraft.method5332().method7692(), this.minecraft.method5332().method7693());
         Class8726.method30060();
         Class8726.method30057(5888);
         Class8317.method27612();
@@ -134,19 +134,19 @@ public class Class526 extends Class516<Class3433>
             final int n11 = n4 + 60;
             final int n12 = n11 + 20;
             this.method3304(0);
-            this.field3150.method5290().method5849(Class526.field3134);
+            this.minecraft.method5290().method5849(Class526.field3134);
             final int j = ((Class3433)this.field3077).field16221[i];
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             if (j != 0) {
                 final String string = "" + j;
-                final int n13 = 86 - this.field3156.method6617(string);
-                final String method22573 = Class8430.method28151().method28152(this.field3156, n13);
-                final Class1844 method22574 = this.field3150.method5323().method7376(Class869.field4625);
+                final int n13 = 86 - this.font.method6617(string);
+                final String method22573 = Class8430.method28151().method28152(this.font, n13);
+                final Class1844 method22574 = this.minecraft.method5323().method7376(Minecraft.field4625);
                 int n14 = 6839882;
                 int n15 = 0;
                 Label_1122: {
-                    if (method22572 < i + 1 || this.field3150.field4684.field3026 < j) {
-                        if (!this.field3150.field4684.field3025.field27304) {
+                    if (method22572 < i + 1 || this.minecraft.field4684.field3026 < j) {
+                        if (!this.minecraft.field4684.field3025.field27304) {
                             this.method3186(n11, n5 + 14 + 19 * i, 0, 185, 108, 19);
                             this.method3186(n11 + 1, n5 + 15 + 19 * i, 16 * i, 239, 16, 16);
                             method22574.method6622(method22573, n12, n5 + 16 + 19 * i, n13, (n14 & 0xFEFEFE) >> 1);
@@ -174,7 +174,7 @@ public class Class526 extends Class516<Class3433>
                     method22574.method6622(method22573, n12, n5 + 16 + 19 * i, n13, n14);
                     n15 = 8453920;
                 }
-                final Class1844 field4643 = this.field3150.field4643;
+                final Class1844 field4643 = this.minecraft.fontRenderer;
                 field4643.method6609(string, (float)(n12 + 86 - field4643.method6617(string)), (float)(n5 + 16 + 19 * i + 7), n15);
             }
             else {
@@ -185,11 +185,11 @@ public class Class526 extends Class516<Class3433>
     
     @Override
     public void method2975(final int n, final int n2, float method5314) {
-        method5314 = this.field3150.method5314();
-        this.method3041();
+        method5314 = this.minecraft.method5314();
+        this.renderBackground();
         super.method2975(n, n2, method5314);
         this.method2977(n, n2);
-        final boolean field27304 = this.field3150.field4684.field3025.field27304;
+        final boolean field27304 = this.minecraft.field4684.field3025.field27304;
         final int method5315 = ((Class3433)this.field3077).method10952();
         for (int i = 0; i < 3; ++i) {
             final int n3 = ((Class3433)this.field3077).field16221[i];
@@ -204,7 +204,7 @@ public class Class526 extends Class516<Class3433>
                             arrayList.add("" + TextFormatting.WHITE + TextFormatting.ITALIC + Class8822.method30773("container.enchant.clue", method5316.method18599(n4).getFormattedText()));
                             if (!field27304) {
                                 arrayList.add("");
-                                if (this.field3150.field4684.field3026 >= n3) {
+                                if (this.minecraft.field4684.field3026 >= n3) {
                                     String str;
                                     if (n5 != 1) {
                                         str = Class8822.method30773("container.enchant.lapis.many", n5);

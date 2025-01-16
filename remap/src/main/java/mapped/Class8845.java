@@ -14,7 +14,7 @@ import java.util.Date;
 public class Class8845
 {
     private static String[] field37173;
-    private static final Class869 field37174;
+    private static final Minecraft field37174;
     public static float field37175;
     public static float field37176;
     public static long field37177;
@@ -139,9 +139,9 @@ public class Class8845
     }
     
     public static boolean method30923(final Vec3d class5487) {
-        final BlockRayTraceResult method6987 = Class8845.field37174.field4683.rayTraceBlocks(new RayTraceContext(new Vec3d(Class8845.field37174.field4684.posX, Class8845.field37174.field4684.posY + Class8845.field37174.field4684.method1892(), Class8845.field37174.field4684.posZ), class5487, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class8845.field37174.field4684));
+        final BlockRayTraceResult method6987 = Class8845.field37174.world.rayTraceBlocks(new RayTraceContext(new Vec3d(Class8845.field37174.field4684.posX, Class8845.field37174.field4684.posY + Class8845.field37174.field4684.method1892(), Class8845.field37174.field4684.posZ), class5487, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class8845.field37174.field4684));
         final boolean b = method6987.getType() == RayTraceResult.Type.MISS || method6987.getType() == RayTraceResult.Type.ENTITY;
-        Class8845.field37174.field4683.getBlockState(method6987.getPos()).method21696();
+        Class8845.field37174.world.getBlockState(method6987.getPos()).method21696();
         return b;
     }
     
@@ -248,6 +248,6 @@ public class Class8845
     }
     
     static {
-        field37174 = Class869.method5277();
+        field37174 = Minecraft.method5277();
     }
 }

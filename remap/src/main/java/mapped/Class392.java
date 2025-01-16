@@ -16,12 +16,12 @@ public class Class392 implements AutoCloseable
     private boolean field2282;
     private float field2283;
     private final Class1660 field2284;
-    private final Class869 field2285;
+    private final Minecraft field2285;
     private boolean field2286;
     private boolean field2287;
     private Vector3f field2288;
     
-    public Class392(final Class1660 field2284, final Class869 field2285) {
+    public Class392(final Class1660 field2284, final Minecraft field2285) {
         this.field2286 = true;
         this.field2287 = false;
         this.field2288 = new Vector3f();
@@ -84,7 +84,7 @@ public class Class392 implements AutoCloseable
         if (this.field2282) {
             this.field2282 = false;
             this.field2285.method5327().startSection("lightTex");
-            final Class1848 field4683 = this.field2285.field4683;
+            final Class1848 field4683 = this.field2285.world;
             if (field4683 != null) {
                 this.field2287 = false;
                 if (Config.method28945() && Class8763.method30361(field4683, this.field2283, this.field2280, this.field2285.field4684.method2653(Class9439.field40489) || this.field2285.field4684.method2653(Class9439.field40502), f)) {

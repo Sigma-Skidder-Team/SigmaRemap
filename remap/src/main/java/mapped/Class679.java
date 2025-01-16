@@ -38,7 +38,7 @@ public class Class679 extends Class654
     
     @Override
     public void method3353(final int n, final int n2, final float n3) {
-        Class869.method5277().method5290().method5849(this.field3714);
+        Minecraft.method5277().method5290().method5849(this.field3714);
         Class8726.method30007();
         int field3716 = this.field3716;
         if (this.method3360()) {

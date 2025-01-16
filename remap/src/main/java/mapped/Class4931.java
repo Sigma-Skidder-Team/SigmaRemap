@@ -51,7 +51,7 @@ public class Class4931 extends Class4800
         this.field21119.method14260((class4803, n) -> {
             String glfwGetClipboardString = "";
             try {
-                glfwGetClipboardString = GLFW.glfwGetClipboardString(Class869.method5277().field4632.method7690());
+                glfwGetClipboardString = GLFW.glfwGetClipboardString(Minecraft.method5277().field4632.method7690());
             }
             catch (final Exception ex) {}
             if (glfwGetClipboardString != "" && glfwGetClipboardString.contains(":")) {

@@ -120,7 +120,7 @@ public class Class8490
         }
         if (n == 258) {
             if (this.field34852) {
-                this.method28359(Class527.method3047() ? -1 : 1);
+                this.method28359(Screen.method3047() ? -1 : 1);
             }
             this.method28361();
             return true;
@@ -155,9 +155,9 @@ public class Class8490
             this.field34850 -= this.field34847.getList().size();
         }
         Class6823.method20902(this.field34854).method3411(Class6823.method20908(Class6823.method20902(this.field34854).method3378(), this.field34847.getList().get(this.field34850).apply(this.field34848)));
-        if (Class7895.field32404.method25560()) {
+        if (NarratorChatListener.field32404.method25560()) {
             if (this.field34853 != this.field34850) {
-                Class7895.field32404.method25556(this.method28362());
+                NarratorChatListener.field32404.method25556(this.method28362());
             }
         }
     }

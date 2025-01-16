@@ -14,7 +14,7 @@ public class Class9316
 {
     private static final ResourceLocation field40007;
     
-    public static void method34477(final Class869 class869, final Class7351 class870) {
+    public static void method34477(final Minecraft class869, final Class7351 class870) {
         Class8726.method29998();
         final Class756 field4684 = class869.field4684;
         if (!field4684.noClip) {
@@ -47,7 +47,7 @@ public class Class9316
         return null;
     }
     
-    private static void method34479(final Class869 class869, final Class1912 class870, final Class7351 class871) {
+    private static void method34479(final Minecraft class869, final Class1912 class870, final Class7351 class871) {
         if (Class7663.method24283()) {
             Class7663.method24285(class870);
         }
@@ -67,7 +67,7 @@ public class Class9316
         Class8475.method28282(method22696);
     }
     
-    private static void method34480(final Class869 class869, final Class7351 class870) {
+    private static void method34480(final Minecraft class869, final Class7351 class870) {
         class869.method5290().method5849(Class9316.field40007);
         if (Class7663.method24283()) {
             Class7663.method24289(class869.method5290().method5853(Class9316.field40007).method5869());
@@ -89,7 +89,7 @@ public class Class9316
         Class8726.method30012();
     }
     
-    private static void method34481(final Class869 class869, final Class7351 class870) {
+    private static void method34481(final Minecraft class869, final Class7351 class870) {
         final Class4148 method22696 = Class7392.method22694().method22696();
         Class8726.method30009(519);
         Class8726.method30010(false);

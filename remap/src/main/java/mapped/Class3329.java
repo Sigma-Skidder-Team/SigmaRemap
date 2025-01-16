@@ -25,15 +25,15 @@ public class Class3329 extends Class3167
         if (!this.method9906() || Class3329.field15514.field4684 == null) {
             return;
         }
-        if (Class869.method5277().field4648.field23464) {
+        if (Minecraft.method5277().field4648.field23464) {
             return;
         }
         if (!(Class3329.field15514.field4700 instanceof Class535)) {
             final float n = Class3329.field15514.field4684.rotationYaw % 360.0f - this.field15926 % 360.0f;
             final float field15926 = this.field15926;
             final float n2 = n;
-            final Class869 field15927 = Class3329.field15514;
-            this.field15926 = field15926 + n2 / Class869.method5338() * 1.5f;
+            final Minecraft field15927 = Class3329.field15514;
+            this.field15926 = field15926 + n2 / Minecraft.method5338() * 1.5f;
             int n3 = 14;
             if (this.method9883("Show Player")) {
                 n3 += this.method10541(0, Class3329.field15514.field4632.method7695() - 23, 114);

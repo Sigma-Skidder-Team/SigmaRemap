@@ -30,17 +30,17 @@ public class Class542 extends Class541
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
-        this.field3272 = this.method3029(new Class654(this.field3152 / 2 - 50 - 100 - 4, 165, 100, 20, Class8822.method30773("advMode.mode.sequence", new Object[0]), class654 -> {
+    public void init() {
+        super.init();
+        this.field3272 = this.method3029(new Class654(this.width / 2 - 50 - 100 - 4, 165, 100, 20, Class8822.method30773("advMode.mode.sequence", new Object[0]), class654 -> {
             this.method3169();
             this.method3168();
         }));
-        this.field3273 = this.method3029(new Class654(this.field3152 / 2 - 50, 165, 100, 20, Class8822.method30773("advMode.mode.unconditional", new Object[0]), class654 -> {
+        this.field3273 = this.method3029(new Class654(this.width / 2 - 50, 165, 100, 20, Class8822.method30773("advMode.mode.unconditional", new Object[0]), class654 -> {
             this.field3276 = !this.field3276;
             this.method3170();
         }));
-        this.field3274 = this.method3029(new Class654(this.field3152 / 2 + 50 + 4, 165, 100, 20, Class8822.method30773("advMode.mode.redstoneTriggered", new Object[0]), class654 -> {
+        this.field3274 = this.method3029(new Class654(this.width / 2 + 50 + 4, 165, 100, 20, Class8822.method30773("advMode.mode.redstoneTriggered", new Object[0]), class654 -> {
             this.field3277 = !this.field3277;
             this.method3171();
         }));
@@ -70,7 +70,7 @@ public class Class542 extends Class541
     }
     
     @Override
-    public void method2970(final Class869 class869, final int n, final int n2) {
+    public void method2970(final Minecraft class869, final int n, final int n2) {
         super.method2970(class869, n, n2);
         this.method3159();
         this.method3168();
@@ -85,7 +85,7 @@ public class Class542 extends Class541
     
     @Override
     public void method3161(final Class865 class865) {
-        this.field3150.method5269().method17292(new Class4266(new BlockPos(class865.method5222()), this.field3264.method3378(), this.field3275, class865.method5220(), this.field3276, this.field3277));
+        this.minecraft.method5269().method17292(new Class4266(new BlockPos(class865.method5222()), this.field3264.method3378(), this.field3275, class865.method5220(), this.field3276, this.field3277));
     }
     
     private void method3168() {

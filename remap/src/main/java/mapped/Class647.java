@@ -51,10 +51,10 @@ public class Class647 extends Class573
     
     @Override
     public void method3353(final int n, final int n2, final float n3) {
-        if (!Class527.method3046()) {
+        if (!Screen.method3046()) {
             this.field3670 += n3;
         }
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         method5277.method5290().method5849(Class647.field3666);
         int n4 = 29;
         if (!this.field3669.method35943()) {
@@ -80,11 +80,11 @@ public class Class647 extends Class573
         int n7 = 4;
         if (this.field3669.method35949()) {
             if (this.method3701().size() > 1) {
-                method5277.method5307().method6540(method5279, this.field3426 + n7 + 1, this.field3427 + n7 + 1);
+                method5277.getItemRenderer().method6540(method5279, this.field3426 + n7 + 1, this.field3427 + n7 + 1);
                 --n7;
             }
         }
-        method5277.method5307().method6540(method5279, this.field3426 + n7, this.field3427 + n7);
+        method5277.getItemRenderer().method6540(method5279, this.field3426 + n7, this.field3427 + n7);
         if (b) {
             Class8726.method30060();
         }
@@ -106,7 +106,7 @@ public class Class647 extends Class573
         return this.method3701().get(this.field3672);
     }
     
-    public List<String> method3704(final Class527 class527) {
+    public List<String> method3704(final Screen class527) {
         final List<String> method3030 = class527.method3030(this.method3701().get(this.field3672).method11292());
         if (this.field3669.method35946(this.field3668.method19705(this.field3667)).size() > 1) {
             method3030.add(Class8822.method30773("gui.recipebook.moreRecipes", new Object[0]));

@@ -26,7 +26,7 @@ public class Class6994 implements Class6991
         this.field27289 = Lists.newArrayList();
         final Iterator<String> iterator = field27291.method20547().iterator();
         while (iterator.hasNext()) {
-            final Class9081 method17372 = Class869.method5277().method5269().method17372(iterator.next());
+            final Class9081 method17372 = Minecraft.method5277().method5269().method17372(iterator.next());
             if (method17372 == null) {
                 continue;
             }
@@ -57,7 +57,7 @@ public class Class6994 implements Class6991
         if (method8256 != null) {
             Class565.method3293(1, 1, 15, 15, MathHelper.method35684((method8256 >> 16 & 0xFF) / 255.0f * n, (method8256 >> 8 & 0xFF) / 255.0f * n, (method8256 & 0xFF) / 255.0f * n) | n2 << 24);
         }
-        Class869.method5277().method5290().method5849(this.field27288);
+        Minecraft.method5277().method5290().method5849(this.field27288);
         Class8726.method30068(n, n, n, n2 / 255.0f);
         Class565.method3300(2, 2, 12, 12, 8.0f, 8.0f, 8, 8, 64, 64);
         Class565.method3300(2, 2, 12, 12, 40.0f, 8.0f, 8, 8, 64, 64);

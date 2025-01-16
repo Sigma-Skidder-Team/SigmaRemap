@@ -12,10 +12,10 @@ import java.util.Map;
 public class Class571 extends Class565
 {
     private static final ResourceLocation field3399;
-    private final Class869 field3400;
+    private final Minecraft field3400;
     private final Map<UUID, Class6881> field3401;
     
-    public Class571(final Class869 field3400) {
+    public Class571(final Minecraft field3400) {
         this.field3401 = Maps.newLinkedHashMap();
         this.field3400 = field3400;
     }
@@ -30,7 +30,7 @@ public class Class571 extends Class565
                 this.field3400.method5290().method5849(Class571.field3399);
                 this.method3331(n2, n, class6881);
                 final String method7697 = class6881.method21076().getFormattedText();
-                this.field3400.field4643.method6609(method7697, (float)(method7696 / 2 - this.field3400.field4643.method6617(method7697) / 2), (float)(n - 9), 16777215);
+                this.field3400.fontRenderer.method6609(method7697, (float)(method7696 / 2 - this.field3400.fontRenderer.method6617(method7697) / 2), (float)(n - 9), 16777215);
                 n += 19;
                 if (n < this.field3400.method5332().method7697() / 3) {
                     continue;

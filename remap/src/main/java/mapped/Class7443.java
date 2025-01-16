@@ -7,7 +7,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.List;
 
-public class Class7443 extends Class7422
+public class Class7443 extends ValueObject
 {
     private static String[] field28708;
     public List<Class7433> field28709;

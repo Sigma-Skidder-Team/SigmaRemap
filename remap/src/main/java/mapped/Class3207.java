@@ -124,7 +124,7 @@ public class Class3207 extends Class3167
             return -1.0;
         }
         if (!Class3207.field15514.field4684.onGround) {
-            final Iterator<Object> iterator = Class3207.field15514.field4683.method6981(Class3207.field15514.field4684, Class3207.field15514.field4684.boundingBox.expand(0.0, -Class3207.field15514.field4684.method1934().y, 0.0)).iterator();
+            final Iterator<Object> iterator = Class3207.field15514.world.method6981(Class3207.field15514.field4684, Class3207.field15514.field4684.boundingBox.expand(0.0, -Class3207.field15514.field4684.method1934().y, 0.0)).iterator();
             double field25077 = -1.0;
             BlockPos class354 = null;
             while (iterator.hasNext()) {
@@ -136,7 +136,7 @@ public class Class3207 extends Class3167
                 class354 = new BlockPos(class355.getBoundingBox().minX, class355.getBoundingBox().minY, class355.getBoundingBox().minZ);
             }
             if (class354 != null) {
-                if (Class3207.field15514.field4683.getBlockState(class354).method21696() instanceof Class4030) {
+                if (Class3207.field15514.world.getBlockState(class354).method21696() instanceof Class4030) {
                     field25077 = (int)field25077 - 1.0E-4;
                 }
             }

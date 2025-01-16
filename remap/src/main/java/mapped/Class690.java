@@ -6,18 +6,18 @@ package mapped;
 
 import java.util.Arrays;
 import javax.annotation.Nullable;
-import java.util.Iterator;
+
 import com.google.common.collect.Queues;
 import java.util.Deque;
 
 public class Class690 extends Class565
 {
     private static String[] field3804;
-    private final Class869 field3805;
+    private final Minecraft field3805;
     private final Class7767<?>[] field3806;
     private final Deque<Class6866> field3807;
     
-    public Class690(final Class869 field3805) {
+    public Class690(final Minecraft field3805) {
         this.field3806 = new Class7767[5];
         this.field3807 = Queues.newArrayDeque();
         this.field3805 = field3805;
@@ -69,7 +69,7 @@ public class Class690 extends Class565
         this.field3807.add(class6866);
     }
     
-    public Class869 method3853() {
+    public Minecraft method3853() {
         return this.field3805;
     }
 }

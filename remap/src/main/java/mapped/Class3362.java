@@ -36,7 +36,7 @@ public class Class3362 extends Class3355
     
     @Class6753
     private void method10650(final Class5744 class5744) {
-        if (!this.method9906() || Class3362.field15514.field4683 == null) {
+        if (!this.method9906() || Class3362.field15514.world == null) {
             return;
         }
         if (class5744.method17046()) {
@@ -84,7 +84,7 @@ public class Class3362 extends Class3355
     }
     
     private List<Entity> method10653() {
-        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(9.0, 9.0, 9.0), Class9170.field38850.and((Predicate<? super Entity>)new Class167(this)));
+        return Class3362.field15514.world.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(9.0, 9.0, 9.0), Class9170.field38850.and((Predicate<? super Entity>)new Class167(this)));
     }
     
     private List<Class7014> method10654(final Entity class399) {
@@ -134,11 +134,11 @@ public class Class3362 extends Class3355
         final ArrayList list = new ArrayList();
     Label_0068:
         for (final BlockPos class400 : Class4609.method13676(Class4609.method13691(4.0f), new Vec3d(class399.getPosX(), class399.getPosY() - 1.0, class399.getPosZ()))) {
-            final Block method10658 = Class3362.field15514.field4683.getBlockState(class400).method21696();
+            final Block method10658 = Class3362.field15514.world.getBlockState(class400).method21696();
             if (method10658 != Class7521.field29286 && method10658 != Class7521.field29172) {
                 continue;
             }
-            if (Class3362.field15514.field4683.getBlockState(class400.method1137()).method21696() != Class7521.field29147) {
+            if (Class3362.field15514.world.getBlockState(class400.method1137()).method21696() != Class7521.field29147) {
                 continue;
             }
             final AxisAlignedBB method10659 = new AxisAlignedBB(class400).grow(0.5, 0.5, 0.5).offset(0.0, 1.5, 0.0);
@@ -160,12 +160,12 @@ public class Class3362 extends Class3355
     
     public List<Entity> method10657() {
         final float method9886 = this.method9886("Reach");
-        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(method9886, method9886, method9886), Class9170.field38850.and((Predicate<? super Entity>)new Class164(this, method9886)));
+        return Class3362.field15514.world.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(method9886, method9886, method9886), Class9170.field38850.and((Predicate<? super Entity>)new Class164(this, method9886)));
     }
     
     private List<Entity> method10658() {
         final float n = this.method9886("Reach") + 1.0f;
-        return Class3362.field15514.field4683.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(n, n, n), Class9170.field38850.and((Predicate<? super Entity>)new Class165(this, n)));
+        return Class3362.field15514.world.method6737(Class3362.field15514.field4684, Class3362.field15514.field4684.boundingBox.grow(n, n, n), Class9170.field38850.and((Predicate<? super Entity>)new Class165(this, n)));
     }
     
     private void method10659(final Class5744 class5744) {
@@ -233,7 +233,7 @@ public class Class3362 extends Class3355
             if (method29340 >= 0) {
                 Class3362.field15514.field4684.field3006.field2743 = method29340;
                 Class3362.field15514.field4682.method27318();
-                Class3362.field15514.field4682.method27319(Class3362.field15514.field4684, Class3362.field15514.field4683, Class316.field1877, this.field16012);
+                Class3362.field15514.field4682.method27319(Class3362.field15514.field4684, Class3362.field15514.world, Class316.field1877, this.field16012);
             }
         }
     }

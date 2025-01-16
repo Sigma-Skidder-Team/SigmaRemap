@@ -28,10 +28,10 @@ public class Class675 extends Class674
     }
     
     @Override
-    public void method3354(final Class869 class869, final int n, final int n2) {
+    public void method3354(final Minecraft class869, final int n, final int n2) {
         if (this.field3432) {
             if (this.field3712) {
-                if (!Class527.method3047()) {
+                if (!Screen.method3047()) {
                     this.field3711 = (n - (this.field3426 + 4)) / (float)(this.field3424 - 8);
                     this.field3711 = MathHelper.clamp(this.field3711, 0.0f, 1.0f);
                     this.field3710.method16886(this.field3711);
@@ -48,8 +48,8 @@ public class Class675 extends Class674
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
-        if (!super.method2982(n, n2, n3)) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
+        if (!super.mouseClicked(n, n2, n3)) {
             return false;
         }
         this.field3711 = (float)(n - (this.field3426 + 4)) / (this.field3424 - 8);
@@ -60,7 +60,7 @@ public class Class675 extends Class674
     }
     
     @Override
-    public boolean method2985(final double n, final double n2, final int n3) {
+    public boolean mouseReleased(final double n, final double n2, final int n3) {
         this.field3712 = false;
         return true;
     }

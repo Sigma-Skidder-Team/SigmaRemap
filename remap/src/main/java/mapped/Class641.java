@@ -15,7 +15,7 @@ import java.io.File;
 
 public final class Class641 extends Class623<Class641> implements AutoCloseable
 {
-    private final Class869 field3641;
+    private final Minecraft field3641;
     private final Class544 field3642;
     private final Class1934 field3643;
     private final ResourceLocation field3644;
@@ -28,7 +28,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
         this.field3648 = field3648;
         this.field3642 = class620.method3611();
         this.field3643 = field3649;
-        this.field3641 = Class869.method5277();
+        this.field3641 = Minecraft.method5277();
         this.field3644 = new ResourceLocation("worlds/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3649.method7808()) + "/icon");
         this.field3645 = class621.method25800(field3649.method7808(), "icon.png");
         if (!this.field3645.isFile()) {
@@ -68,9 +68,9 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
         else {
             s3 = Class8822.method30773("selectWorld.conversion", new Object[0]) + " " + str;
         }
-        this.field3641.field4643.method6610(s, (float)(n3 + 32 + 3), (float)(n2 + 1), 16777215);
-        this.field3641.field4643.method6610(string, (float)(n3 + 32 + 3), (float)(n2 + 9 + 3), 8421504);
-        this.field3641.field4643.method6610(s3, (float)(n3 + 32 + 3), (float)(n2 + 9 + 9 + 3), 8421504);
+        this.field3641.fontRenderer.method6610(s, (float)(n3 + 32 + 3), (float)(n2 + 1), 16777215);
+        this.field3641.fontRenderer.method6610(string, (float)(n3 + 32 + 3), (float)(n2 + 9 + 3), 8421504);
+        this.field3641.fontRenderer.method6610(s3, (float)(n3 + 32 + 3), (float)(n2 + 9 + 9 + 3), 8421504);
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.field3641.method5290().method5849((this.field3646 == null) ? Class620.method3613() : this.field3644);
         Class8726.method30011();
@@ -106,7 +106,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
                 else {
                     Class565.method3188(n3, n2, 96.0f, (float)n10, 32, 32, 256, 256);
                     if (n9 < 32) {
-                        this.field3642.method3172(this.field3641.field4643.method6627(new Class2259("selectWorld.tooltip.unsupported", new Object[] { this.field3643.method7816() }).applyTextStyle(TextFormatting.RED).getFormattedText(), 175));
+                        this.field3642.method3172(this.field3641.fontRenderer.method6627(new Class2259("selectWorld.tooltip.unsupported", new Object[] { this.field3643.method7816() }).applyTextStyle(TextFormatting.RED).getFormattedText(), 175));
                     }
                 }
             }
@@ -114,7 +114,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         this.field3648.method3609(this);
         this.field3642.method3173(this.field3648.method3610().isPresent());
         if (n - Class620.method3615(this.field3648) <= 32.0) {

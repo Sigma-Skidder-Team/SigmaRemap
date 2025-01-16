@@ -647,7 +647,7 @@ public class Class8988
     }
     
     public static Class1912 method32022(final Class3687 class3687) {
-        return Class869.method5277().method5322().method6457(class3687.method11330()).method6338(class3687.method11331());
+        return Minecraft.method5277().method5322().method6457(class3687.method11330()).method6338(class3687.method11331());
     }
     
     private String[] method32023() {

@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Logger;
 public class Class1655 extends MinecraftServer
 {
     private static final Logger field9268;
-    private final Class869 field9269;
+    private final Minecraft field9269;
     private final Class8511 field9270;
     private boolean field9271;
     private int field9272;
@@ -35,7 +35,7 @@ public class Class1655 extends MinecraftServer
     public BlockPos field9277;
     public Class9592 field9278;
     
-    public Class1655(final Class869 field9269, final String s, final String s2, final Class8511 class8511, final YggdrasilAuthenticationService yggdrasilAuthenticationService, final MinecraftSessionService minecraftSessionService, final GameProfileRepository gameProfileRepository, final Class8608 class8512, final Class6906 class8513) {
+    public Class1655(final Minecraft field9269, final String s, final String s2, final Class8511 class8511, final YggdrasilAuthenticationService yggdrasilAuthenticationService, final MinecraftSessionService minecraftSessionService, final GameProfileRepository gameProfileRepository, final Class8608 class8512, final Class6906 class8513) {
         super(new File(field9269.field4652, "saves"), field9269.method5289(), field9269.method5313(), new Class7788(false), yggdrasilAuthenticationService, minecraftSessionService, gameProfileRepository, class8512, class8513, s);
         this.field9272 = -1;
         this.field9275 = 0L;
@@ -96,7 +96,7 @@ public class Class1655 extends MinecraftServer
     public void method1469(final BooleanSupplier booleanSupplier) {
         this.method5681();
         final boolean field9271 = this.field9271;
-        this.field9271 = (Class869.method5277().method5269() != null && Class869.method5277().method5298());
+        this.field9271 = (Minecraft.method5277().method5269() != null && Minecraft.method5277().method5298());
         final Class5029 method1590 = this.method1590();
         if (!field9271) {
             if (this.field9271) {
@@ -129,7 +129,7 @@ public class Class1655 extends MinecraftServer
     
     @Override
     public Class2113 method1446() {
-        return (this.field9269.field4683 != null) ? this.field9269.field4683.method6764().method29597() : this.field9269.field4648.field23463;
+        return (this.field9269.world != null) ? this.field9269.world.method6764().method29597() : this.field9269.field4648.field23463;
     }
     
     @Override
@@ -183,7 +183,7 @@ public class Class1655 extends MinecraftServer
         }
         final String method25730 = this.method1490();
         if ("vanilla".equals(method25730)) {
-            return (Class869.class.getSigners() != null) ? Optional.empty() : Optional.of("Very likely; Jar signature invalidated");
+            return (Minecraft.class.getSigners() != null) ? Optional.empty() : Optional.of("Very likely; Jar signature invalidated");
         }
         return Optional.of("Definitely; Server brand changed to '" + method25730 + "'");
     }

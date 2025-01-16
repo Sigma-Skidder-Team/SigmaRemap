@@ -13,7 +13,7 @@ public class Class8617
     private boolean field36159;
     private long field36160;
     private float field36161;
-    private Class869 field36162;
+    private Minecraft field36162;
     
     public Class8617() {
         this.field36156 = 0;
@@ -22,7 +22,7 @@ public class Class8617
         this.field36159 = false;
         this.field36160 = System.currentTimeMillis();
         this.field36161 = 1.0f;
-        this.field36162 = Class869.method5277();
+        this.field36162 = Minecraft.method5277();
     }
     
     public void method29223() {

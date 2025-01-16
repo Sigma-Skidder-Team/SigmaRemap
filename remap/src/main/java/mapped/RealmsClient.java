@@ -10,12 +10,11 @@ import java.net.URI;
 import com.google.gson.GsonBuilder;
 import java.io.UnsupportedEncodingException;
 import java.io.IOException;
-import com.mojang.realmsclient.exception.RealmsServiceException;
 import java.net.Proxy;
 import com.google.gson.Gson;
 import org.apache.logging.log4j.Logger;
 
-public class Class9513
+public class RealmsClient
 {
     public static Class2223 field40930;
     private static boolean field40931;
@@ -24,12 +23,12 @@ public class Class9513
     private final String field40934;
     private static final Gson field40935;
     
-    public static Class9513 method35444() {
-        final String method25354 = Class7847.method25354();
-        final String method25355 = Class7847.method25353();
+    public static RealmsClient func_224911_a() {
+        final String method25354 = Realms.method25354();
+        final String method25355 = Realms.method25353();
         if (method25354 != null && method25355 != null) {
-            if (!Class9513.field40931) {
-                Class9513.field40931 = true;
+            if (!RealmsClient.field40931) {
+                RealmsClient.field40931 = true;
                 String s = System.getenv("realms.environment");
                 if (s == null) {
                     s = System.getProperty("realms.environment");
@@ -45,24 +44,24 @@ public class Class9513
                     }
                 }
             }
-            return new Class9513(method25355, method25354, Class7847.method25352());
+            return new RealmsClient(method25355, method25354, Realms.method25352());
         }
         return null;
     }
     
     public static void method35445() {
-        Class9513.field40930 = Class2223.field13686;
+        RealmsClient.field40930 = Class2223.field13686;
     }
     
     public static void method35446() {
-        Class9513.field40930 = Class2223.field13685;
+        RealmsClient.field40930 = Class2223.field13685;
     }
     
     public static void method35447() {
-        Class9513.field40930 = Class2223.field13687;
+        RealmsClient.field40930 = Class2223.field13687;
     }
     
-    public Class9513(final String field40933, final String field40934, final Proxy proxy) {
+    public RealmsClient(final String field40933, final String field40934, final Proxy proxy) {
         this.field40933 = field40933;
         this.field40934 = field40934;
         Class8076.method26497(proxy);
@@ -85,7 +84,7 @@ public class Class9513
     }
     
     public void method35452(final long l, final String s, final String s2) throws RealmsServiceException, IOException {
-        this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/initialize".replace("$WORLD_ID", String.valueOf(l))), Class9513.field40935.toJson((Object)new Class7441(s, s2)), 5000, 10000));
+        this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/initialize".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7441(s, s2)), 5000, 10000));
     }
     
     public Boolean method35453() throws RealmsServiceException, IOException {
@@ -102,7 +101,7 @@ public class Class9513
             return Class2112.valueOf(method35486);
         }
         catch (final IllegalArgumentException ex) {
-            throw new Class2330(500, "Could not check compatible version, got response: " + method35486, -1, "");
+            throw new mapped.RealmsServiceException(500, "Could not check compatible version, got response: " + method35486, -1, "");
         }
     }
     
@@ -117,7 +116,7 @@ public class Class9513
     public Class7437 method35458(final long l, final String s) throws RealmsServiceException, IOException {
         final Class7427 class7427 = new Class7427();
         class7427.method22851(s);
-        return Class7437.method22882(this.method35486(Class8178.method27088(this.method35484("invites" + "/$WORLD_ID".replace("$WORLD_ID", String.valueOf(l))), Class9513.field40935.toJson((Object)class7427))));
+        return Class7437.method22882(this.method35486(Class8178.method27088(this.method35484("invites" + "/$WORLD_ID".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)class7427))));
     }
     
     public Class7436 method35459(final long l) throws RealmsServiceException {
@@ -125,7 +124,7 @@ public class Class9513
     }
     
     public void method35460(final long l, final String s, final String s2) throws RealmsServiceException, UnsupportedEncodingException {
-        this.method35486(Class8178.method27088(this.method35484("worlds" + "/$WORLD_ID".replace("$WORLD_ID", String.valueOf(l))), Class9513.field40935.toJson((Object)new Class7441(s, s2))));
+        this.method35486(Class8178.method27088(this.method35484("worlds" + "/$WORLD_ID".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7441(s, s2))));
     }
     
     public void method35461(final long l, final int i, final Class7424 class7424) throws RealmsServiceException, UnsupportedEncodingException {
@@ -136,7 +135,7 @@ public class Class9513
         return Boolean.valueOf(this.method35486(Class8178.method27091(this.method35484("worlds" + "/$WORLD_ID/slot/$SLOT_ID".replace("$WORLD_ID", String.valueOf(l)).replace("$SLOT_ID", String.valueOf(i))), "")));
     }
     
-    public void method35463(final long l, final String str) throws RealmsServiceException {
+    public void func_224928_c(final long l, final String str) throws RealmsServiceException {
         this.method35486(Class8178.method27092(this.method35485("worlds" + "/$WORLD_ID/backups".replace("$WORLD_ID", String.valueOf(l)), "backupId=" + str), "", 40000, 600000));
     }
     
@@ -165,11 +164,11 @@ public class Class9513
     }
     
     public Boolean method35470(final long l, final String s, final Integer n, final boolean b) throws RealmsServiceException, IOException {
-        return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), Class9513.field40935.toJson((Object)new Class7421(s, -1L, n, b)), 30000, 80000)));
+        return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7421(s, -1L, n, b)), 30000, 80000)));
     }
     
     public Boolean method35471(final long l, final String s) throws RealmsServiceException, IOException {
-        return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), Class9513.field40935.toJson((Object)new Class7421(null, Long.valueOf(s), -1, false)), 30000, 80000)));
+        return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7421(null, Long.valueOf(s), -1, false)), 30000, 80000)));
     }
     
     public Class7432 method35472(final long l) throws RealmsServiceException, IOException {
@@ -216,7 +215,7 @@ public class Class9513
     }
     
     public void method35481(final Class7443 class7443) throws RealmsServiceException {
-        this.method35486(Class8178.method27088(this.method35484("regions/ping/stat"), Class9513.field40935.toJson((Object)class7443)));
+        this.method35486(Class8178.method27088(this.method35484("regions/ping/stat"), RealmsClient.field40935.toJson((Object)class7443)));
     }
     
     public Boolean method35482() throws RealmsServiceException, IOException {
@@ -233,7 +232,7 @@ public class Class9513
     
     private String method35485(final String str, final String query) {
         try {
-            return new URI(Class9513.field40930.field13689, Class9513.field40930.field13688, "/" + str, query, null).toASCIIString();
+            return new URI(RealmsClient.field40930.field13689, RealmsClient.field40930.field13688, "/" + str, query, null).toASCIIString();
         }
         catch (final URISyntaxException ex) {
             ex.printStackTrace();
@@ -244,11 +243,11 @@ public class Class9513
     private String method35486(final Class8178<?> class8178) throws RealmsServiceException {
         class8178.method27077("sid", this.field40933);
         class8178.method27077("user", this.field40934);
-        class8178.method27077("version", Class7847.method25377());
+        class8178.method27077("version", Realms.method25377());
         try {
             final int method27081 = class8178.method27081();
             if (method27081 == 503) {
-                throw new Class2331(class8178.method27079());
+                throw new RetryCallException(class8178.method27079());
             }
             final String method27082 = class8178.method27082();
             if (method27081 >= 200 && method27081 < 300) {
@@ -256,24 +255,24 @@ public class Class9513
             }
             if (method27081 == 401) {
                 final String method27083 = class8178.method27093("WWW-Authenticate");
-                Class9513.field40932.info("Could not authorize you against Realms server: " + method27083);
-                throw new Class2330(method27081, method27083, -1, method27083);
+                RealmsClient.field40932.info("Could not authorize you against Realms server: " + method27083);
+                throw new mapped.RealmsServiceException(method27081, method27083, -1, method27083);
             }
             if (method27082 != null && method27082.length() != 0) {
                 final Class8669 class8179 = new Class8669(method27082);
-                Class9513.field40932.error("Realms http code: " + method27081 + " -  error code: " + class8179.method29678() + " -  message: " + class8179.method29677() + " - raw body: " + method27082);
-                throw new Class2330(method27081, method27082, class8179);
+                RealmsClient.field40932.error("Realms http code: " + method27081 + " -  error code: " + class8179.method29678() + " -  message: " + class8179.method29677() + " - raw body: " + method27082);
+                throw new mapped.RealmsServiceException(method27081, method27082, class8179);
             }
-            Class9513.field40932.error("Realms error code: " + method27081 + " message: " + method27082);
-            throw new Class2330(method27081, method27082, method27081, "");
+            RealmsClient.field40932.error("Realms error code: " + method27081 + " message: " + method27082);
+            throw new mapped.RealmsServiceException(method27081, method27082, method27081, "");
         }
         catch (final Class2356 class8180) {
-            throw new Class2330(500, "Could not connect to Realms: " + class8180.getMessage(), -1, "");
+            throw new mapped.RealmsServiceException(500, "Could not connect to Realms: " + class8180.getMessage(), -1, "");
         }
     }
     
     static {
-        Class9513.field40930 = Class2223.field13685;
+        RealmsClient.field40930 = Class2223.field13685;
         field40932 = LogManager.getLogger();
         field40935 = new Gson();
     }

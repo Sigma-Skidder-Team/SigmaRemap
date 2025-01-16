@@ -89,7 +89,7 @@ public class Class3317 extends Class3167
         this.field15904 = Class3317.field15514.field4684.posZ;
         this.field15908 = Class3317.field15514.field4684.rotationYaw;
         this.field15909 = Class3317.field15514.field4684.rotationPitch;
-        Class3317.field15901 = new Class755(Class3317.field15514.field4683, new GameProfile(Class3317.field15514.field4684.method2844().getId(), Class3317.field15514.field4684.getName().getFormattedText()));
+        Class3317.field15901 = new Class755(Class3317.field15514.world, new GameProfile(Class3317.field15514.field4684.method2844().getId(), Class3317.field15514.field4684.getName().getFormattedText()));
         Class3317.field15901.field3006 = Class3317.field15514.field4684.field3006;
         Class3317.field15901.method1728(this.field15902, this.field15903, this.field15904, this.field15908, this.field15909);
         Class3317.field15901.noClip = true;
@@ -98,7 +98,7 @@ public class Class3317 extends Class3167
         Class3317.field15901.field2954 = this.field15908;
         Class3317.field15901.field2951 = this.field15908;
         Class3317.field15901.field2952 = this.field15908;
-        Class3317.field15514.field4683.method6819(this.field15910 = (int)(Math.random() * -10000.0), Class3317.field15901);
+        Class3317.field15514.world.method6819(this.field15910 = (int)(Math.random() * -10000.0), Class3317.field15901);
         this.field15913 = Class3317.field15514.field4648.field23435.method1056();
         this.field15914 = Class3317.field15514.field4648.field23437.method1056();
         this.field15915 = Class3317.field15514.field4648.field23436.method1056();
@@ -123,7 +123,7 @@ public class Class3317 extends Class3167
         Class3317.field15514.field4648.field23438.field2162 = this.field15916;
         Class3317.field15514.field4648.field23439.field2162 = this.field15917;
         Class3317.field15514.field4648.field23440.field2162 = this.field15918;
-        Class3317.field15514.field4683.method6821(this.field15910);
+        Class3317.field15514.world.method6821(this.field15910);
         Class3317.field15514.field4684.method1685();
         if (Class3317.field15901 != null) {
             Class3317.field15514.field4684.entityCollisionReduction = Class3317.field15901.entityCollisionReduction;
@@ -287,7 +287,7 @@ public class Class3317 extends Class3167
                 Class3317.field15901.method2707(Class316.field1877);
             }
             if (class5721.method16990() instanceof Class4381) {
-                if (((Class4381)class5721.method16990()).method13170(Class3317.field15514.field4683) == null) {
+                if (((Class4381)class5721.method16990()).method13170(Class3317.field15514.world) == null) {
                     class5721.method16961(true);
                 }
             }

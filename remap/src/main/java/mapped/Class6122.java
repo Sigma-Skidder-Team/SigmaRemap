@@ -8,12 +8,12 @@ import java.util.Map;
 
 public class Class6122 implements Class6113
 {
-    private final Class869 field24850;
+    private final Minecraft field24850;
     private double field24851;
     private final int field24852 = 12;
     private Class8112 field24853;
     
-    public Class6122(final Class869 field24850) {
+    public Class6122(final Minecraft field24850) {
         this.field24851 = Double.MIN_VALUE;
         this.field24850 = field24850;
     }

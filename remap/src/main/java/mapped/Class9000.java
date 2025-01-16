@@ -18,8 +18,8 @@ import java.util.Map;
 
 public class Class9000
 {
-    private static final Map<Class<? extends Class527>, Class<? extends Class4800>> field37982;
-    public static final Map<Class<? extends Class527>, String> field37983;
+    private static final Map<Class<? extends Screen>, Class<? extends Class4800>> field37982;
+    public static final Map<Class<? extends Screen>, String> field37983;
     private List<Integer> field37984;
     private List<Integer> field37985;
     private List<Integer> field37986;
@@ -54,8 +54,8 @@ public class Class9000
         Class9000.field37989 = GLFW.glfwCreateStandardCursor(221185);
         Class9000.field37990 = GLFW.glfwCreateStandardCursor(221188);
         Class9000.field37991 = GLFW.glfwCreateStandardCursor(221186);
-        GLFW.glfwSetCursor(Class869.method5277().field4632.method7690(), Class9000.field37989);
-        Class9000.field37993 = (float)(Class869.method5277().field4632.method7693() / Class869.method5277().field4632.method7695());
+        GLFW.glfwSetCursor(Minecraft.method5277().field4632.method7690(), Class9000.field37989);
+        Class9000.field37993 = (float)(Minecraft.method5277().field4632.method7693() / Minecraft.method5277().field4632.method7695());
     }
     
     public void method32126() {
@@ -94,22 +94,22 @@ public class Class9000
         }
     }
     
-    public static boolean method32131(final Class527 class527) {
+    public static boolean method32131(final Screen class527) {
         if (class527 instanceof Class720 && !(class527 instanceof Class721)) {
-            Class869.method5277().field4700 = null;
-            Class869.method5277().method5244(new Class721(((Class720)class527).field3931));
+            Minecraft.method5277().field4700 = null;
+            Minecraft.method5277().method5244(new Class721(((Class720)class527).field3931));
             return true;
         }
         if (class527 instanceof Class551 && !(class527 instanceof Class552)) {
-            Class869.method5277().field4700 = null;
-            Class869.method5277().method5244(new Class552());
+            Minecraft.method5277().field4700 = null;
+            Minecraft.method5277().method5244(new Class552());
             return true;
         }
         if (Class9463.method35173().method35209() == Class2209.field13466) {
             if (class527 instanceof Class548) {
                 if (!(class527 instanceof Class549)) {
-                    Class869.method5277().field4700 = null;
-                    Class869.method5277().method5244(new Class549());
+                    Minecraft.method5277().field4700 = null;
+                    Minecraft.method5277().method5244(new Class549());
                     return true;
                 }
             }
@@ -117,7 +117,7 @@ public class Class9000
         return false;
     }
     
-    public static Class4800 method32132(final Class527 class527) {
+    public static Class4800 method32132(final Screen class527) {
         if (class527 == null) {
             return null;
         }
@@ -148,8 +148,8 @@ public class Class9000
     
     public void method32134() {
         if (this.field37997 != null) {
-            this.field37999[0] = Math.max(0, Math.min(Class869.method5277().field4632.method7694(), (int)Class869.method5277().field4650.method26959()));
-            this.field37999[1] = Math.max(0, Math.min(Class869.method5277().field4632.method7695(), (int)Class869.method5277().field4650.method26960()));
+            this.field37999[0] = Math.max(0, Math.min(Minecraft.method5277().field4632.method7694(), (int) Minecraft.method5277().field4650.method26959()));
+            this.field37999[1] = Math.max(0, Math.min(Minecraft.method5277().field4632.method7695(), (int) Minecraft.method5277().field4650.method26960()));
             final Iterator<Integer> iterator = this.field37984.iterator();
             while (iterator.hasNext()) {
                 this.method32137(iterator.next());
@@ -210,13 +210,13 @@ public class Class9000
     
     public void method32138() {
         Class7853.field32193.method24916();
-        if (Class869.method5277().field4683 != null) {
+        if (Minecraft.method5277().world != null) {
             GL11.glDisable(2896);
             int n = 0;
             final int n2 = 0;
             final int n3 = 170;
-            if (Class869.method5277().field4648.field23466) {
-                n = Class869.method5277().field4632.method7694() / 2 - n3 / 2;
+            if (Minecraft.method5277().field4648.field23466) {
+                n = Minecraft.method5277().field4632.method7694() / 2 - n3 / 2;
             }
             if (Class9463.method35173().method35209() != Class2209.field13464) {
                 final float n4 = 0.5f + Class3206.field15637.method35858() * 0.5f;
@@ -235,7 +235,7 @@ public class Class9000
             Class9463.method35173().method35188().method21097(new Class5740());
         }
         if (this.field37997 != null) {
-            if (Class869.method5277().field4701 == null) {
+            if (Minecraft.method5277().field4701 == null) {
                 this.field37997.method14205(1.0f);
             }
         }
@@ -243,7 +243,7 @@ public class Class9000
     
     public void method32139(final float n) {
         if (this.field37997 != null) {
-            if (Class869.method5277().field4701 == null) {
+            if (Minecraft.method5277().field4701 == null) {
                 this.field37997.method14235(n);
             }
         }
@@ -251,7 +251,7 @@ public class Class9000
     
     public void method32140(final int n, final int n2, final int n3) {
         if (this.field37997 != null) {
-            if (Class869.method5277().field4701 == null) {
+            if (Minecraft.method5277().field4701 == null) {
                 this.field37997.method14211(n, n2, n3);
             }
         }
@@ -259,7 +259,7 @@ public class Class9000
     
     public void method32141(final int n, final int n2, final int n3) {
         if (this.field37997 != null) {
-            if (Class869.method5277().field4701 == null) {
+            if (Minecraft.method5277().field4701 == null) {
                 this.field37997.method14233(n, n2, n3);
             }
         }
@@ -303,8 +303,8 @@ public class Class9000
     }
     
     public static void method32149() {
-        Class869.method5277();
-        if (!Class869.field4623) {
+        Minecraft.method5277();
+        if (!Minecraft.field4623) {
             return;
         }
         try {
@@ -340,7 +340,7 @@ public class Class9000
         }
     }
     
-    public Class<? extends Class527> method32151(final String s) {
+    public Class<? extends Screen> method32151(final String s) {
         for (final Map.Entry<K, Object> entry : Class9000.field37983.entrySet()) {
             if (!s.equals(entry.getValue())) {
                 continue;
@@ -350,7 +350,7 @@ public class Class9000
         return null;
     }
     
-    public String method32152(final Class<? extends Class527> clazz) {
+    public String method32152(final Class<? extends Screen> clazz) {
         if (clazz != null) {
             for (final Map.Entry entry : Class9000.field37983.entrySet()) {
                 if (clazz != entry.getKey()) {
@@ -374,10 +374,10 @@ public class Class9000
             }
             this.method32150(Class9463.method35173().method35206());
         }
-        if (Class869.method5277().field4632.method7694() != 0 && Class869.method5277().field4632.method7695() != 0) {
-            Class9000.field37993 = (float)Math.max(Class869.method5277().field4632.method7692() / Class869.method5277().field4632.method7694(), Class869.method5277().field4632.method7693() / Class869.method5277().field4632.method7695());
+        if (Minecraft.method5277().field4632.method7694() != 0 && Minecraft.method5277().field4632.method7695() != 0) {
+            Class9000.field37993 = (float)Math.max(Minecraft.method5277().field4632.method7692() / Minecraft.method5277().field4632.method7694(), Minecraft.method5277().field4632.method7693() / Minecraft.method5277().field4632.method7695());
         }
-        Class8154.method26861(Class869.method5277().field4632.method7694(), Class869.method5277().field4632.method7695());
+        Class8154.method26861(Minecraft.method5277().field4632.method7694(), Minecraft.method5277().field4632.method7695());
     }
     
     public Class4800 method32154() {
@@ -385,7 +385,7 @@ public class Class9000
     }
     
     public void method32155() {
-        this.method32156(method32132(Class869.method5277().field4700));
+        this.method32156(method32132(Minecraft.method5277().field4700));
     }
     
     public void method32156(final Class4800 field37997) {
@@ -403,20 +403,20 @@ public class Class9000
         }
     }
     
-    public void method32157(final Class527 class527) {
+    public void method32157(final Screen class527) {
         if (class527 != null) {
-            Class869.method5277().field4700 = null;
-            Class869.method5277().method5244(class527);
+            Minecraft.method5277().field4700 = null;
+            Minecraft.method5277().method5244(class527);
         }
     }
     
-    public boolean method32158(final Class527 class527) {
+    public boolean method32158(final Screen class527) {
         return Class9000.field37982.containsKey(class527.getClass());
     }
     
     static {
-        field37982 = new HashMap<Class<? extends Class527>, Class<? extends Class4800>>();
-        field37983 = new HashMap<Class<? extends Class527>, String>();
+        field37982 = new HashMap<Class<? extends Screen>, Class<? extends Class4800>>();
+        field37983 = new HashMap<Class<? extends Screen>, String>();
         Class9000.field37982.put(Class548.class, Class4929.class);
         Class9000.field37982.put(Class722.class, Class4801.class);
         Class9000.field37982.put(Class531.class, Class4940.class);

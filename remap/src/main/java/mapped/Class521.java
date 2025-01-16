@@ -20,28 +20,28 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
-        this.field3117 = (this.field3152 < 379);
-        this.field3116.method3415(this.field3152, this.field3153, this.field3150, this.field3117, this.field3077);
-        this.field3079 = this.field3116.method3419(this.field3117, this.field3152, this.field3075);
-        this.method3029(new Class679(this.field3079 + 20, this.field3153 / 2 - 49, 20, 18, 0, 0, 19, Class521.field3115, class654 -> {
+    public void init() {
+        super.init();
+        this.field3117 = (this.width < 379);
+        this.field3116.method3415(this.width, this.height, this.minecraft, this.field3117, this.field3077);
+        this.field3079 = this.field3116.method3419(this.field3117, this.width, this.field3075);
+        this.method3029(new Class679(this.field3079 + 20, this.height / 2 - 49, 20, 18, 0, 0, 19, Class521.field3115, class654 -> {
             this.field3116.method3416(this.field3117);
             this.field3116.method3420();
-            this.field3079 = this.field3116.method3419(this.field3117, this.field3152, this.field3075);
-            ((Class679)class654).method3742(this.field3079 + 20, this.field3153 / 2 - 49);
+            this.field3079 = this.field3116.method3419(this.field3117, this.width, this.field3075);
+            ((Class679)class654).method3742(this.field3079 + 20, this.height / 2 - 49);
         }));
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
+    public void tick() {
+        super.tick();
         this.field3116.method3426();
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         if (this.field3116.method3421() && this.field3117) {
             this.method2976(n3, n, n2);
             this.field3116.method2975(n, n2, n3);
@@ -58,14 +58,14 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     @Override
     public void method2973(final int n, final int n2) {
         final String method8461 = this.field3148.getFormattedText();
-        this.field3156.method6610(method8461, (float)(this.field3075 / 2 - this.field3156.method6617(method8461) / 2), 6.0f, 4210752);
-        this.field3156.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
+        this.font.method6610(method8461, (float)(this.field3075 / 2 - this.font.method6617(method8461) / 2), 6.0f, 4210752);
+        this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 8.0f, (float)(this.field3076 - 96 + 2), 4210752);
     }
     
     @Override
     public void method2976(final float n, final int n2, final int n3) {
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3150.method5290().method5849(this.field3118);
+        this.minecraft.method5290().method5849(this.field3118);
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
         this.method3186(field3079, field3080, 0, 0, this.field3075, this.field3076);
@@ -77,8 +77,8 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
-        return this.field3116.method2982(n, n2, n3) || (this.field3117 && this.field3116.method3421()) || super.method2982(n, n2, n3);
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
+        return this.field3116.mouseClicked(n, n2, n3) || (this.field3117 && this.field3116.method3421()) || super.mouseClicked(n, n2, n3);
     }
     
     @Override
@@ -88,8 +88,8 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
-        return !this.field3116.method2972(n, n2, n3) && super.method2972(n, n2, n3);
+    public boolean keyPressed(final int n, final int n2, final int n3) {
+        return !this.field3116.keyPressed(n, n2, n3) && super.keyPressed(n, n2, n3);
     }
     
     @Override
@@ -113,8 +113,8 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     }
     
     @Override
-    public boolean method3004(final char c, final int n) {
-        return this.field3116.method3004(c, n) || super.method3004(c, n);
+    public boolean charTyped(final char c, final int n) {
+        return this.field3116.charTyped(c, n) || super.charTyped(c, n);
     }
     
     @Override
@@ -128,9 +128,9 @@ public abstract class Class521<T extends Class3429> extends Class516<T> implemen
     }
     
     @Override
-    public void method2971() {
+    public void removed() {
         this.field3116.method3418();
-        super.method2971();
+        super.removed();
     }
     
     static {

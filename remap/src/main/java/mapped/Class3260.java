@@ -288,7 +288,7 @@ public class Class3260 extends Class3247
                         break;
                     }
                     case "Cubecraft": {
-                        if (Class3260.field15514.field4648.field23439.field2162 && Class6430.method19160(Class3260.field15514.field4684, 0.001f) && Class3260.field15514.field4683.method6981(Class3260.field15514.field4684, Class3260.field15514.field4684.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
+                        if (Class3260.field15514.field4648.field23439.field2162 && Class6430.method19160(Class3260.field15514.field4684, 0.001f) && Class3260.field15514.world.method6981(Class3260.field15514.field4684, Class3260.field15514.field4684.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
                             Class3260.field15514.field4684.setPosition(Class3260.field15514.field4684.posX, Class3260.field15514.field4684.posY + 1.0, Class3260.field15514.field4684.posZ);
                             class5717.method16975(0.0);
                             Class7482.method23149(class5717, 0.0);

@@ -250,7 +250,7 @@ public class Class4995
         return this.field21476 == class2005 && (this.field21479 == null || Class7980.method26019(class2007.method6959(class2006), this.field21479)) && (this.field21480 == null || this.field21480.method24697(class2006.getY()));
     }
     
-    public boolean method15169(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007, final Class527 class2008) {
+    public boolean method15169(final Class2005 class2005, final BlockPos class2006, final Class1852 class2007, final Screen class2008) {
         if (!this.method15168(class2005, class2006, class2007)) {
             return false;
         }
@@ -276,7 +276,7 @@ public class Class4995
         }
     }
     
-    public static String method15170(final Class527 class527) {
+    public static String method15170(final Screen class527) {
         final ITextComponent method3026 = class527.method3026();
         return (method3026 != null) ? method3026.getUnformattedComponentText() : null;
     }

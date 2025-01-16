@@ -18,7 +18,7 @@ import java.util.Arrays;
 public class Class8639
 {
     private static String[] field36239;
-    private static final Class869 field36240;
+    private static final Minecraft field36240;
     
     public static boolean method29316(final int n) {
         final ItemStack method20053 = Class8639.field36240.field4684.field3008.method10878(n).method20053();
@@ -762,6 +762,6 @@ public class Class8639
     }
     
     static {
-        field36240 = Class869.method5277();
+        field36240 = Minecraft.method5277();
     }
 }

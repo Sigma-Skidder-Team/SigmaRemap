@@ -8,11 +8,11 @@ import java.util.Date;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-public class Class7610
+public class JsonUtils
 {
     private static String[] field30162;
     
-    public static String method23907(final String s, final JsonObject jsonObject, final String s2) {
+    public static String func_225171_a(final String s, final JsonObject jsonObject, final String s2) {
         final JsonElement value = jsonObject.get(s);
         if (value == null) {
             return s2;
@@ -28,7 +28,7 @@ public class Class7610
         return value.isJsonNull() ? n : value.getAsInt();
     }
     
-    public static long method23909(final String s, final JsonObject jsonObject, final long n) {
+    public static long func_225169_a(final String s, final JsonObject jsonObject, final long n) {
         final JsonElement value = jsonObject.get(s);
         if (value == null) {
             return n;
@@ -44,7 +44,7 @@ public class Class7610
         return value.isJsonNull() ? b : value.getAsBoolean();
     }
     
-    public static Date method23911(final String s, final JsonObject jsonObject) {
+    public static Date func_225173_a(final String s, final JsonObject jsonObject) {
         final JsonElement value = jsonObject.get(s);
         return (value == null) ? new Date() : new Date(Long.parseLong(value.getAsString()));
     }

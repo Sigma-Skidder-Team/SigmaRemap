@@ -9,19 +9,19 @@ import java.util.List;
 public class Class632 extends Class623<Class632>
 {
     private Class615 field3618;
-    public final Class869 field3619;
+    public final Minecraft field3619;
     public final Class711 field3620;
     private final Class1922 field3621;
     
     public Class632(final Class615 field3618, final Class711 field3619, final Class1922 field3620) {
         this.field3620 = field3619;
-        this.field3619 = Class869.method5277();
+        this.field3619 = Minecraft.method5277();
         this.field3621 = field3620;
         this.field3618 = field3618;
     }
     
     public void method3639(final Class617 class617) {
-        this.method3645().method7624().method8128(class617.method3040(), this, Class632::method3645, true);
+        this.method3645().method7624().method8128(class617.children(), this, Class632::method3645, true);
         this.method3640(class617);
     }
     
@@ -116,13 +116,13 @@ public class Class632 extends Class623<Class632>
                 }
             }
         }
-        if (this.field3619.field4643.method6617(s) > 157) {
-            s = this.field3619.field4643.method6619(s, 157 - this.field3619.field4643.method6617("...")) + "...";
+        if (this.field3619.fontRenderer.method6617(s) > 157) {
+            s = this.field3619.fontRenderer.method6619(s, 157 - this.field3619.fontRenderer.method6617("...")) + "...";
         }
-        this.field3619.field4643.method6609(s, (float)(n3 + 32 + 2), (float)(n2 + 1), 16777215);
-        final List<String> method3643 = this.field3619.field4643.method6626(s2, 157);
+        this.field3619.fontRenderer.method6609(s, (float)(n3 + 32 + 2), (float)(n2 + 1), 16777215);
+        final List<String> method3643 = this.field3619.fontRenderer.method6626(s2, 157);
         for (int n11 = 0; n11 < 2 && n11 < method3643.size(); ++n11) {
-            this.field3619.field4643.method6609((String)method3643.get(n11), (float)(n3 + 32 + 2), (float)(n2 + 12 + 10 * n11), 8421504);
+            this.field3619.fontRenderer.method6609((String)method3643.get(n11), (float)(n3 + 32 + 2), (float)(n2 + 12 + 10 * n11), 8421504);
         }
     }
     
@@ -139,13 +139,13 @@ public class Class632 extends Class623<Class632>
     }
     
     public boolean method3649() {
-        final List<Class632> method3040 = this.field3618.method3040();
+        final List<Class632> method3040 = this.field3618.children();
         final int index = method3040.indexOf(this);
         return index > 0 && !((Class632)method3040.get(index - 1)).field3621.method7623();
     }
     
     public boolean method3650() {
-        final List<Class632> method3040 = this.field3618.method3040();
+        final List<Class632> method3040 = this.field3618.children();
         final int index = method3040.indexOf(this);
         if (index >= 0) {
             if (index < method3040.size() - 1) {
@@ -158,9 +158,9 @@ public class Class632 extends Class623<Class632>
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         final double n4 = n - this.field3618.method3558();
-        final double n5 = n2 - this.field3618.method3559(this.field3618.method3040().indexOf(this));
+        final double n5 = n2 - this.field3618.method3559(this.field3618.children().indexOf(this));
         if (this.method3646()) {
             if (n4 <= 32.0) {
                 if (this.method3647()) {
@@ -186,7 +186,7 @@ public class Class632 extends Class623<Class632>
                 if (n4 > 16.0) {
                     if (n5 < 16.0) {
                         if (this.method3649()) {
-                            final List<Class632> method3643 = this.field3618.method3040();
+                            final List<Class632> method3643 = this.field3618.children();
                             final int index = method3643.indexOf(this);
                             method3643.remove(index);
                             method3643.add(index - 1, this);
@@ -198,7 +198,7 @@ public class Class632 extends Class623<Class632>
                 if (n4 > 16.0) {
                     if (n5 > 16.0) {
                         if (this.method3650()) {
-                            final List<Class632> method3644 = this.field3618.method3040();
+                            final List<Class632> method3644 = this.field3618.children();
                             final int index2 = method3644.indexOf(this);
                             method3644.remove(index2);
                             method3644.add(index2 + 1, this);

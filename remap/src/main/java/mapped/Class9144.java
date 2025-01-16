@@ -68,7 +68,7 @@ public class Class9144
     }
     
     public boolean method33354(final Class1856 class1856, Class6313 method32832, final BlockState class1857, final BlockPos class1858, final Class7351 class1859, final Class4150 class1860, final boolean b, final Random random, long n, final int n2, Class6349 method32833) {
-        final boolean b2 = Class869.method5272() && Class7667.method24306(class1857, class1856, class1858) == 0 && method32832.method18692();
+        final boolean b2 = Minecraft.method5272() && Class7667.method24306(class1857, class1856, class1858) == 0 && method32832.method18692();
         if (this.field38735) {
             method32833 = method32832.method18703(class1856, class1858, class1857, method32833);
         }

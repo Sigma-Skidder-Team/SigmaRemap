@@ -34,11 +34,11 @@ public class Class6869 implements Class6866
         class690.method3186(0, 0, 0, 96, 160, 32);
         this.field26909.method8444(class690, 6, 6);
         if (this.field26911 != null) {
-            class690.method3853().field4643.method6610(this.field26910, 30.0f, 7.0f, -11534256);
-            class690.method3853().field4643.method6610(this.field26911, 30.0f, 18.0f, -16777216);
+            class690.method3853().fontRenderer.method6610(this.field26910, 30.0f, 7.0f, -11534256);
+            class690.method3853().fontRenderer.method6610(this.field26911, 30.0f, 18.0f, -16777216);
         }
         else {
-            class690.method3853().field4643.method6610(this.field26910, 30.0f, 12.0f, -11534256);
+            class690.method3853().fontRenderer.method6610(this.field26910, 30.0f, 12.0f, -11534256);
         }
         if (this.field26916) {
             Class565.method3293(3, 28, 157, 29, -1);

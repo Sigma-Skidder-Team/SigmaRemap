@@ -26,7 +26,7 @@ public class Class3371 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3371.field15514.field4684 != null && Class3371.field15514.field4683 != null) {
+        if (Class3371.field15514.field4684 != null && Class3371.field15514.world != null) {
             this.method10726();
             Class8154.method26926();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
@@ -48,7 +48,7 @@ public class Class3371 extends Class3167
     }
     
     private void method10720() {
-        Class3371.field15514.field4683.field10072.forEach((p1, class399) -> {
+        Class3371.field15514.world.field10072.forEach((p1, class399) -> {
             Class6430.method19118(Class265.field1278.field1292, 0.8f);
             if (!(!this.method10725(class399))) {
                 final double field38854 = Class8591.method29094(class399).field38854;
@@ -87,7 +87,7 @@ public class Class3371 extends Class3167
             GL11.glEnable(3008);
             GL11.glEnable(2896);
         }
-        for (final Entity class399 : Class3371.field15514.field4683.method6806()) {
+        for (final Entity class399 : Class3371.field15514.world.method6806()) {
             if (!this.method10725(class399)) {
                 continue;
             }

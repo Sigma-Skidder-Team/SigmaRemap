@@ -15,7 +15,7 @@ public class Class8246 extends Class8245
     private BlockPos field33876;
     private Entity field33877;
     
-    public Class8246(final Class869 class869, final Class5799 class870) {
+    public Class8246(final Minecraft class869, final Class5799 class870) {
         super(class869, class870);
         this.field33875 = false;
         this.field33876 = null;

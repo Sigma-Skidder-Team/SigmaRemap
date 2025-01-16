@@ -18,8 +18,8 @@ public class Class8669
     public Class8669(final String str) {
         try {
             final JsonObject asJsonObject = new JsonParser().parse(str).getAsJsonObject();
-            this.field36450 = Class7610.method23907("errorMsg", asJsonObject, "");
-            this.field36451 = Class7610.method23908("errorCode", asJsonObject, -1);
+            this.field36450 = JsonUtils.func_225171_a("errorMsg", asJsonObject, "");
+            this.field36451 = JsonUtils.method23908("errorCode", asJsonObject, -1);
         }
         catch (final Exception ex) {
             Class8669.field36449.error("Could not parse RealmsError: " + ex.getMessage());

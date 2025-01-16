@@ -7,14 +7,14 @@ package mapped;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-public class Class1338 extends Class1334
+public class Class1338 extends LongRunningTask
 {
     private final String field7330;
     private final String field7331;
     private final long field7332;
-    private final Class5046 field7333;
+    private final RealmsScreen field7333;
     
-    public Class1338(final long field7332, final String field7333, final String field7334, final Class5046 field7335) {
+    public Class1338(final long field7332, final String field7333, final String field7334, final RealmsScreen field7335) {
         this.field7332 = field7332;
         this.field7330 = field7333;
         this.field7331 = field7334;
@@ -23,27 +23,27 @@ public class Class1338 extends Class1334
     
     @Override
     public void run() {
-        this.method5621(Class5046.method15438("mco.create.world.wait"));
-        final Class9513 method35444 = Class9513.method35444();
+        this.func_224989_b(RealmsScreen.getLocalizedString("mco.create.world.wait"));
+        final RealmsClient method35444 = RealmsClient.func_224911_a();
         try {
             method35444.method35452(this.field7332, this.field7330, this.field7331);
-            Class7847.method25362(this.field7333);
+            Realms.setScreen(this.field7333);
         }
-        catch (final Class2330 class2330) {
-            Class8593.method29100().error("Couldn't create world");
-            this.method5620(class2330.toString());
+        catch (final RealmsServiceException class2330) {
+            RealmsTasks.getLogger().error("Couldn't create world");
+            this.func_224986_a(class2330.toString());
         }
         catch (final UnsupportedEncodingException ex) {
-            Class8593.method29100().error("Couldn't create world");
-            this.method5620(ex.getLocalizedMessage());
+            RealmsTasks.getLogger().error("Couldn't create world");
+            this.func_224986_a(ex.getLocalizedMessage());
         }
         catch (final IOException ex2) {
-            Class8593.method29100().error("Could not parse response creating world");
-            this.method5620(ex2.getLocalizedMessage());
+            RealmsTasks.getLogger().error("Could not parse response creating world");
+            this.func_224986_a(ex2.getLocalizedMessage());
         }
         catch (final Exception ex3) {
-            Class8593.method29100().error("Could not create world");
-            this.method5620(ex3.getLocalizedMessage());
+            RealmsTasks.getLogger().error("Could not create world");
+            this.func_224986_a(ex3.getLocalizedMessage());
         }
     }
 }

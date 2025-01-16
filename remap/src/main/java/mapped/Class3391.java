@@ -45,7 +45,7 @@ public class Class3391 extends Class3167
                     final Iterator iterator;
                     while (iterator.hasNext()) {
                         final Class4646 class5727 = iterator.next();
-                        if (Class3391.field15514.field4683.method7143(class5727.method13869().getId()) == null && class5727.method13871() != null) {
+                        if (Class3391.field15514.world.method7143(class5727.method13869().getId()) == null && class5727.method13871() != null) {
                             Class6430.method19106("Detected an anomaly " + class5727 + class5727.method13869());
                         }
                         else {

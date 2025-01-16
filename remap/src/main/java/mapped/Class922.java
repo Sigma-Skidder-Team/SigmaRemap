@@ -18,9 +18,9 @@ public class Class922 extends Thread
     @Override
     public void run() {
         try {
-            Class9513.method35444().method35483(Class5083.method15866(this.field4901).field28675);
+            RealmsClient.func_224911_a().method35483(Class5083.method15866(this.field4901).field28675);
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             Class5083.method15868().error("Couldn't delete world");
             Class5083.method15868().error((Object)class2330);
         }
@@ -28,6 +28,6 @@ public class Class922 extends Thread
             Class5083.method15868().error("Couldn't delete world");
             ex.printStackTrace();
         }
-        Class7847.method25362(Class5083.method15869(this.field4901));
+        Realms.setScreen(Class5083.method15869(this.field4901));
     }
 }

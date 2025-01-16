@@ -119,7 +119,7 @@ public class Class5760
     public final Class350 field23458;
     public final Class350 field23459;
     public Class350[] field23460;
-    public Class869 field23461;
+    public Minecraft field23461;
     private final File field23462;
     public Class2113 field23463;
     public boolean field23464;
@@ -224,7 +224,7 @@ public class Class5760
     public Class350 field23563;
     private File field23564;
     
-    public Class5760(final Class869 field23461, final File file) {
+    public Class5760(final Minecraft field23461, final File file) {
         this.field23381 = 0.5;
         this.field23382 = -1;
         this.field23383 = 120;

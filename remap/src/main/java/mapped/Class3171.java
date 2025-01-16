@@ -22,7 +22,7 @@ public class Class3171 extends Class3167
         if (!this.method9906()) {
             return;
         }
-        if (Class3171.field15514.field4684 != null && Class3171.field15514.field4683 != null) {
+        if (Class3171.field15514.field4684 != null && Class3171.field15514.world != null) {
             this.method9935();
             Class8154.method26926();
             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
@@ -44,7 +44,7 @@ public class Class3171 extends Class3167
     
     private void method9933() {
         if (Class9463.method35173().method35209() == Class2209.field13464) {
-            Class3171.field15514.field4683.field10072.forEach((p0, class399) -> {
+            Class3171.field15514.world.field10072.forEach((p0, class399) -> {
                 final boolean b = Class6430.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
                 final boolean b2 = !class399.method1823() || this.method9914().method9883("Show Invisibles");
                 if (!Class9463.method35173().method35191().method31751(class399)) {
@@ -73,7 +73,7 @@ public class Class3171 extends Class3167
     }
     
     private void method9934(final boolean b) {
-        for (final Entity class399 : Class3171.field15514.field4683.method6806()) {
+        for (final Entity class399 : Class3171.field15514.world.method6806()) {
             if (!Class9463.method35173().method35191().method31751(class399)) {
                 final boolean b2 = Class6430.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
                 final boolean b3 = Class6430.method19174(class399) == Class2068.field11838 && this.method9914().method9883("Show Mobs");

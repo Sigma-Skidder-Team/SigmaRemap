@@ -9,13 +9,13 @@ import net.minecraft.util.math.MathHelper;
 public class Class9472
 {
     private static String[] field40729;
-    private final Class869 field40730;
+    private final Minecraft field40730;
     private final Class8065 field40731;
     private float field40732;
     
     public Class9472(final Class8065 field40731) {
         this.field40731 = field40731;
-        this.field40730 = Class869.method5277();
+        this.field40730 = Minecraft.method5277();
     }
     
     public void method35257(final float n, final float n2) {

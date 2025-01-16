@@ -14,8 +14,8 @@ public class Class8876
     private static String[] field37312;
     
     public static Class1849 method31206() {
-        final Class869 method28894 = Config.method28894();
-        final Class1848 field4683 = method28894.field4683;
+        final Minecraft method28894 = Config.method28894();
+        final Class1848 field4683 = method28894.world;
         if (field4683 == null) {
             return null;
         }

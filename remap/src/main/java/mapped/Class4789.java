@@ -51,7 +51,7 @@ public class Class4789 extends Class4703<Class425>
             float method2086 = 0.0f;
             Label_0628: {
                 if (this.field20283.field35909 == null || this.field20283.field35909.field23465 <= 0) {
-                    if (method2079 == Class869.method5277().field4684) {
+                    if (method2079 == Minecraft.method5277().field4684) {
                         final double n9 = this.field20283.field35909.field23471 / 100.0;
                         final Vec3d method2085 = new Vec3d(n4 * -0.36 * n9, -0.045 * n9, 0.4).rotatePitch(-MathHelper.method35700(n2, method2079.prevRotationPitch, method2079.rotationPitch) * 0.017453292f).rotateYaw(-MathHelper.method35700(n2, method2079.prevRotationYaw, method2079.rotationYaw) * 0.017453292f).rotateYaw(method2084 * 0.5f).rotatePitch(-method2084 * 0.7f);
                         n10 = MathHelper.lerp(n2, method2079.prevPosX, method2079.getPosX()) + method2085.x;

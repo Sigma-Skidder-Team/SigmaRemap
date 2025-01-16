@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Class8088
 {
-    private Class869 field33313;
+    private Minecraft field33313;
     private List<Class8733> field33314;
     public float field33315;
     public float field33316;
@@ -21,7 +21,7 @@ public class Class8088
     public Class2049 field33319;
     
     public Class8088() {
-        this.field33313 = Class869.method5277();
+        this.field33313 = Minecraft.method5277();
         this.field33314 = new ArrayList<Class8733>();
         this.field33315 = -999.0f;
         this.field33316 = -999.0f;
@@ -81,7 +81,7 @@ public class Class8088
         Class8733 class5743 = this.field33314.get(n);
         Class2049 class5744 = class5743.field36691;
         boolean equals = class5743.field36684.method30692().equals(this.field33313.field4684.method1894());
-        if (class5744 == Class2049.field11679 && this.field33313.field4683.getBlockState(class5743.field36684.method30692().method1139()).method21706()) {
+        if (class5744 == Class2049.field11679 && this.field33313.world.getBlockState(class5743.field36684.method30692().method1139()).method21706()) {
             equals = false;
         }
         final boolean b = (this.method26566() == Class2049.field11677 || this.method26566() == Class2049.field11678 || this.method26566() == Class2049.field11679) && !this.field33313.field4684.onGround;
@@ -126,7 +126,7 @@ public class Class8088
         final double n8 = Math.sin(Math.toRadians(field33315 + 90.0f)) * sqrt;
         final boolean method16747 = Class8353.method27876();
         final boolean method16748 = Class8353.method27875(class5743);
-        final boolean b2 = this.field33313.field4683.method6981(this.field33313.field4684, this.field33313.field4684.getBoundingBox().offset(n7, -1.0, n8)).count() == 0L;
+        final boolean b2 = this.field33313.world.method6981(this.field33313.field4684, this.field33313.field4684.getBoundingBox().offset(n7, -1.0, n8)).count() == 0L;
         boolean b3 = false;
         boolean b4 = false;
         final float field33316 = this.field33313.field4684.rotationYaw;
@@ -225,7 +225,7 @@ public class Class8088
                 if (Class8797.method30696(method1129)) {
                     continue;
                 }
-                if (this.field33313.field4683.getBlockState(method1129).method21706()) {
+                if (this.field33313.world.getBlockState(method1129).method21706()) {
                     continue;
                 }
                 list.add(method1129);
@@ -235,7 +235,7 @@ public class Class8088
                 this.field33317 = null;
             }
             else if (this.field33317 != null) {
-                if (this.field33313.field4683.getBlockState(this.field33317).method21706() || Math.sqrt(this.field33313.field4684.method1733(this.field33317.getX() + 0.5, this.field33317.getY() + 0.5, this.field33317.getZ() + 0.5)) > 6.0) {
+                if (this.field33313.world.getBlockState(this.field33317).method21706() || Math.sqrt(this.field33313.field4684.method1733(this.field33317.getX() + 0.5, this.field33317.getY() + 0.5, this.field33317.getZ() + 0.5)) > 6.0) {
                     this.field33317 = (BlockPos)list.get(0);
                 }
                 final float[] method1130 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
@@ -294,7 +294,7 @@ public class Class8088
                     final Iterator<Long> iterator2 = this.field33314.get(0).field36694.iterator();
                     while (iterator2.hasNext()) {
                         final BlockPos method19120 = BlockPos.fromLong(iterator2.next());
-                        if (!this.field33313.field4683.getBlockState(method19120).method21706()) {
+                        if (!this.field33313.world.getBlockState(method19120).method21706()) {
                             final double n = method19120.getX() - this.field33313.field4644.method5833().method18161().getX();
                             final double n2 = method19120.getY() - this.field33313.field4644.method5833().method18161().getY();
                             final double n3 = method19120.getZ() - this.field33313.field4644.method5833().method18161().getZ();
@@ -304,7 +304,7 @@ public class Class8088
                     final Iterator<Long> iterator3 = this.field33314.get(0).field36695.iterator();
                     while (iterator3.hasNext()) {
                         final BlockPos method19121 = BlockPos.fromLong(iterator3.next());
-                        if (this.field33313.field4683.getBlockState(method19121).method21706()) {
+                        if (this.field33313.world.getBlockState(method19121).method21706()) {
                             final double n4 = method19121.getX() - this.field33313.field4644.method5833().method18161().getX();
                             final double n5 = method19121.getY() - this.field33313.field4644.method5833().method18161().getY();
                             final double n6 = method19121.getZ() - this.field33313.field4644.method5833().method18161().getZ();

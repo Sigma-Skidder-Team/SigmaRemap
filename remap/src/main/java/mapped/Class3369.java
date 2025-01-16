@@ -19,7 +19,7 @@ public class Class3369 extends Class3167
     
     @Class6753
     public void method10716(final Class5753 class5753) {
-        if (this.method9906() && Class3369.field15514.field4683 != null) {
+        if (this.method9906() && Class3369.field15514.world != null) {
             if (class5753.method17064().getY() >= Class3369.field15514.field4684.posY) {
                 class5753.method17067(VoxelShapes.empty());
             }

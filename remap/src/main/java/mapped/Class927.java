@@ -18,7 +18,7 @@ public class Class927 extends Thread
         try {
             final Class7437 method15807 = Class5079.method15807(this.field4911, Class5079.method15806(this.field4911));
             if (method15807 != null) {
-                Class9513.method35444().method35457(method15807.field28675);
+                RealmsClient.func_224911_a().method35457(method15807.field28675);
                 Class5079.method15822().method32604(method15807);
                 Class5079.method15823(this.field4911).remove(method15807);
                 Class5079.method15824(this.field4911).method15535().removeIf(class2331 -> class2331 instanceof Class626 && ((Class626)class2331).field3607.field28675 == Class5079.method15806(this.field4911));
@@ -28,9 +28,9 @@ public class Class927 extends Thread
                 Class5079.method15827(this.field4911).method16917(false);
             }
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             Class5079.method15819().error("Couldn't configure world");
-            Class7847.method25362(new Class5074(class2330, this.field4911));
+            Realms.setScreen(new RealmsGenericErrorScreen(class2330, this.field4911));
         }
     }
 }

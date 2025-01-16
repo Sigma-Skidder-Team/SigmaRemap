@@ -9,9 +9,9 @@ import net.minecraft.util.text.ITextComponent;
 public class Class7893 implements Class7894
 {
     private static String[] field32400;
-    private final Class869 field32401;
+    private final Minecraft field32401;
     
-    public Class7893(final Class869 field32401) {
+    public Class7893(final Minecraft field32401) {
         this.field32401 = field32401;
     }
     

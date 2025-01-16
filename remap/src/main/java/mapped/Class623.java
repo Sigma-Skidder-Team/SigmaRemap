@@ -7,7 +7,7 @@ package mapped;
 public abstract class Class623<E extends Class623<E>> extends Class592<E>
 {
     @Override
-    public boolean method3281(final boolean b) {
+    public boolean changeFocus(final boolean b) {
         return false;
     }
 }

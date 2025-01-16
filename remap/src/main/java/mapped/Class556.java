@@ -4,12 +4,12 @@
 
 package mapped;
 
-public class Class556 extends Class527
+public class Class556 extends Screen
 {
     private Class9103 field3335;
     
     public Class556() {
-        super(Class7895.field32402);
+        super(NarratorChatListener.EMPTY);
         this.field3335 = Class9203.method33675();
     }
     
@@ -24,9 +24,9 @@ public class Class556 extends Class527
             this.method3043(0);
         }
         else {
-            this.field3335.method32901(this.field3152, this.field3153);
+            this.field3335.method32901(this.width, this.height);
         }
-        this.method3295(this.field3156, Class8822.method30773("multiplayer.downloadingTerrain", new Object[0]), this.field3152 / 2, this.field3153 / 2 - 50, 16777215);
+        this.method3295(this.font, Class8822.method30773("multiplayer.downloadingTerrain", new Object[0]), this.width / 2, this.height / 2 - 50, 16777215);
         super.method2975(n, n2, n3);
     }
     

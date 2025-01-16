@@ -79,7 +79,7 @@ public class Class4708<T extends Class428> extends Class4703<T>
     }
     
     public void method13975(final T t, final float n, final BlockState class7096, final Class7351 class7097, final Class7807 class7098, final int n2) {
-        Class869.method5277().method5305().method5795(class7096, class7097, class7098, n2, Class1904.field10335);
+        Minecraft.method5277().method5305().method5795(class7096, class7097, class7098, n2, Class1904.field10335);
     }
     
     static {

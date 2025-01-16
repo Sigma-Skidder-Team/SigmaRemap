@@ -8,7 +8,6 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Arrays;
-import java.util.function.Consumer;
 import java.util.Collections;
 
 public class Class5062 extends Class5056<Class628>
@@ -21,7 +20,7 @@ public class Class5062 extends Class5056<Class628>
     
     public Class5062(final Class5045 field21711, final Iterable<Class7430> iterable) {
         this.field21711 = field21711;
-        super(field21711.method15421(), field21711.method15422(), Class5045.method15397(field21711) ? Class7869.method25488(1) : 32, field21711.method15422() - 40, 46);
+        super(field21711.width(), field21711.height(), Class5045.method15397(field21711) ? Class7869.method25488(1) : 32, field21711.height() - 40, 46);
         iterable.forEach(this::method15546);
     }
     
@@ -32,7 +31,7 @@ public class Class5062 extends Class5056<Class628>
     }
     
     @Override
-    public boolean method15368(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 == 0) {
             if (n2 >= this.method15525()) {
                 if (n2 <= this.method15526()) {
@@ -58,7 +57,7 @@ public class Class5062 extends Class5056<Class628>
                                             }
                                             return true;
                                         }
-                                        return super.method15368(n, n2, n3);
+                                        return super.mouseClicked(n, n2, n3);
                                     }
                                 }
                             }
@@ -67,7 +66,7 @@ public class Class5062 extends Class5056<Class628>
                 }
             }
         }
-        return super.method15368(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     @Override
@@ -76,7 +75,7 @@ public class Class5062 extends Class5056<Class628>
         this.method15519(n);
         if (n != -1) {
             final Class7430 method15548 = Class5045.method15393(this.field21711).method15548(n);
-            Class7847.method25381(Class5046.method15439("narrator.select", Class7847.method25385(Arrays.asList(method15548.field28650, Class5046.method15439("mco.template.select.narrate.authors", method15548.field28652), method15548.field28656, Class5046.method15439("mco.template.select.narrate.version", method15548.field28651), Class5046.method15439("narrator.select.list.position", n + 1, Class5045.method15393(this.field21711).method15521())))));
+            Realms.narrateNow(RealmsScreen.method15439("narrator.select", Realms.method25385(Arrays.asList(method15548.field28650, RealmsScreen.method15439("mco.template.select.narrate.authors", method15548.field28652), method15548.field28656, RealmsScreen.method15439("mco.template.select.narrate.version", method15548.field28651), RealmsScreen.method15439("narrator.select.list.position", n + 1, Class5045.method15393(this.field21711).method15521())))));
         }
         Class5045.method15400(this.field21711);
     }

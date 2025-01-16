@@ -14,12 +14,12 @@ import java.util.Map;
 public class Class6124 implements Class6113
 {
     private static String[] field24860;
-    private final Class869 field24861;
+    private final Minecraft field24861;
     private final Map<DimensionType, Map<String, MutableBoundingBox>> field24862;
     private final Map<DimensionType, Map<String, MutableBoundingBox>> field24863;
     private final Map<DimensionType, Map<String, Boolean>> field24864;
     
-    public Class6124(final Class869 field24861) {
+    public Class6124(final Minecraft field24861) {
         this.field24862 = Maps.newIdentityHashMap();
         this.field24863 = Maps.newIdentityHashMap();
         this.field24864 = Maps.newIdentityHashMap();
@@ -29,7 +29,7 @@ public class Class6124 implements Class6113
     @Override
     public void method18269(final Class7351 class7351, final Class7807 class7352, final double n, final double n2, final double n3) {
         final Class6092 method5833 = this.field24861.field4644.method5833();
-        final DimensionType method5834 = this.field24861.field4683.method6789().getType();
+        final DimensionType method5834 = this.field24861.world.method6789().getType();
         final BlockPos class7353 = new BlockPos(method5833.method18161().x, 0.0, method5833.method18161().z);
         final Class4150 method5835 = class7352.method25214(Class6332.method18791());
         if (this.field24862.containsKey(method5834)) {

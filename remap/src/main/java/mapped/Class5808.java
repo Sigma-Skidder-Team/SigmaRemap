@@ -23,13 +23,13 @@ import org.apache.logging.log4j.Logger;
 public class Class5808 implements Class5807
 {
     private static final Logger field23838;
-    private final Class869 field23839;
-    private final Class527 field23840;
+    private final Minecraft field23839;
+    private final Screen field23840;
     private final Consumer<ITextComponent> field23841;
     private final NetworkManager field23842;
     private GameProfile field23843;
     
-    public Class5808(final NetworkManager field23842, final Class869 field23843, final Class527 field23844, final Consumer<ITextComponent> field23845) {
+    public Class5808(final NetworkManager field23842, final Minecraft field23843, final Screen field23844, final Consumer<ITextComponent> field23845) {
         this.field23842 = field23842;
         this.field23839 = field23843;
         this.field23840 = field23844;
@@ -91,8 +91,8 @@ public class Class5808 implements Class5807
     
     @Override
     public void onDisconnect(final ITextComponent class2250) {
-        if (this.field23840 != null && this.field23840 instanceof Class545) {
-            this.field23839.method5244(new Class5070(((Class545)this.field23840).method3183(), "connect.failed", class2250).method15403());
+        if (this.field23840 != null && this.field23840 instanceof RealmsScreenProxy) {
+            this.field23839.method5244(new Class5070(((RealmsScreenProxy)this.field23840).getScreen(), "connect.failed", class2250).getProxy());
         }
         else {
             this.field23839.method5244(new Class735(this.field23840, "connect.failed", class2250));

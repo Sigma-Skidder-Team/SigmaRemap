@@ -28,7 +28,7 @@ public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
     public void method6575(final Class7351 class7351, final Class7807 class7352, final int n, final T t, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (!t.method2625()) {
             if (!t.method1823()) {
-                final Class1658 method5305 = Class869.method5277().method5305();
+                final Class1658 method5305 = Minecraft.method5277().method5305();
                 final BlockState method5306 = t.method4708().method7992();
                 final ResourceLocation method5307 = this.method6576(method5306);
                 Class4150 method5308 = null;

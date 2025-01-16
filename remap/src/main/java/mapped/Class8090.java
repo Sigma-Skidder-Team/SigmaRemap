@@ -29,9 +29,9 @@ public class Class8090
             class5723.method16999(class5724.method23923(class5723.method16998()));
         }
         if (class5723.method16998() instanceof Class4298) {
-            if (Class869.method5277().field4683 != null) {
+            if (Minecraft.method5277().world != null) {
                 final Class4298 class5727 = (Class4298)class5723.method16998();
-                final Class1862 class5728 = new Class1862(Class869.method5277().field4683, new Class7859(class5727.method12909(), class5727.method12910()), class5727.method12915());
+                final Class1862 class5728 = new Class1862(Minecraft.method5277().world, new Class7859(class5727.method12909(), class5727.method12910()), class5727.method12915());
                 class5728.method7063(class5727.method12915(), new PacketBuffer(class5727.method12905().copy()), class5727.method12913(), class5727.method12911());
                 if (class5728 != null) {
                     int n = 0;

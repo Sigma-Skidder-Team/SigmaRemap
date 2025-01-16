@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 public class Class568 extends Class566
 {
     private static final ResourceLocation field3378;
-    private final Class869 field3379;
+    private final Minecraft field3379;
     private final Class8207 field3380;
     private final Consumer<Optional<Throwable>> field3381;
     private final boolean field3382;
@@ -28,7 +28,7 @@ public class Class568 extends Class566
     public static Class7776 field3392;
     private float field3393;
     
-    public Class568(final Class869 field3379, final Class8207 field3380, final Consumer<Optional<Throwable>> field3381, final boolean field3382) {
+    public Class568(final Minecraft field3379, final Class8207 field3380, final Consumer<Optional<Throwable>> field3381, final boolean field3382) {
         this.field3384 = -1L;
         this.field3385 = -1L;
         this.field3386 = 0;
@@ -88,7 +88,7 @@ public class Class568 extends Class566
             }
             this.field3384 = Util.method27837();
             if (this.field3379.field4700 != null) {
-                this.field3379.field4700.method3038(this.field3379, this.field3379.method5332().method7696(), this.field3379.method5332().method7697());
+                this.field3379.field4700.init(this.field3379, this.field3379.method5332().method7696(), this.field3379.method5332().method7697());
             }
         }
     }
@@ -99,17 +99,17 @@ public class Class568 extends Class566
         }
         GL11.glEnable(3008);
         GL11.glEnable(3042);
-        Class8154.method26904(0.0f, 0.0f, (float)Class869.method5277().field4632.method7694(), (float)Class869.method5277().field4632.method7695(), Class568.field3392, n);
-        Class8154.method26874(0.0f, 0.0f, (float)Class869.method5277().field4632.method7694(), (float)Class869.method5277().field4632.method7695(), Class6430.method19118(0, 0.75f));
+        Class8154.method26904(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class568.field3392, n);
+        Class8154.method26874(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class6430.method19118(0, 0.75f));
         final int n3 = 455;
         final int n4 = 78;
-        final int n5 = (Class869.method5277().field4632.method7694() - n3) / 2;
-        final int round = Math.round((Class869.method5277().field4632.method7695() - n4) / 2 - 14.0f * n);
+        final int n5 = (Minecraft.method5277().field4632.method7694() - n3) / 2;
+        final int round = Math.round((Minecraft.method5277().field4632.method7695() - n4) / 2 - 14.0f * n);
         final float n6 = 0.75f + n * n * n * n * 0.25f;
         GL11.glPushMatrix();
-        GL11.glTranslatef((float)(Class869.method5277().field4632.method7694() / 2), (float)(Class869.method5277().field4632.method7695() / 2), 0.0f);
+        GL11.glTranslatef((float)(Minecraft.method5277().field4632.method7694() / 2), (float)(Minecraft.method5277().field4632.method7695() / 2), 0.0f);
         GL11.glScalef(n6, n6, 0.0f);
-        GL11.glTranslatef((float)(-Class869.method5277().field4632.method7694() / 2), (float)(-Class869.method5277().field4632.method7695() / 2), 0.0f);
+        GL11.glTranslatef((float)(-Minecraft.method5277().field4632.method7694() / 2), (float)(-Minecraft.method5277().field4632.method7695() / 2), 0.0f);
         Class8154.method26899((float)n5, (float)round, (float)n3, (float)n4, Class568.field3390, Class6430.method19118(Class265.field1278.field1292, n));
         final float min = Math.min(1.0f, n2 * 1.02f);
         final int n7 = 80;

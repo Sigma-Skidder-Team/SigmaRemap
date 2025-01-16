@@ -11,7 +11,7 @@ public class Class5055 extends Class5054
     
     public Class5055(final Class5051 field21704) {
         this.field21704 = field21704;
-        super(field21704.method15421(), field21704.method15422(), 32, field21704.method15422() - 64, 36);
+        super(field21704.width(), field21704.height(), 32, field21704.height() - 64, 36);
     }
     
     @Override

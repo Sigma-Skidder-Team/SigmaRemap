@@ -15,7 +15,7 @@ public class Class6340 extends Class6322
     public Class6340(final ResourceLocation value, final boolean field25355, final boolean field25356) {
         super("texture", () -> {
             Class8726.method30040();
-            Class869.method5277().method5290();
+            Minecraft.method5277().method5290();
             final Class1663 class1933;
             class1933.method5849(class1932);
             class1933.method5860().method5868(b, b2);

@@ -44,8 +44,8 @@ public class Class5799 implements IClientPlayNetHandler
     private static final Logger field23804;
     private final NetworkManager field23805;
     private final GameProfile field23806;
-    private final Class527 field23807;
-    private Class869 field23808;
+    private final Screen field23807;
+    private Minecraft field23808;
     private Class1848 field23809;
     private boolean field23810;
     private final Map<UUID, Class9081> field23811;
@@ -59,7 +59,7 @@ public class Class5799 implements IClientPlayNetHandler
     private final Class1780 field23819;
     private final UUID field23820;
     
-    public Class5799(final Class869 field23808, final Class527 field23809, final NetworkManager field23810, final GameProfile field23811) {
+    public Class5799(final Minecraft field23808, final Screen field23809, final NetworkManager field23810, final GameProfile field23811) {
         this.field23811 = Maps.newHashMap();
         this.field23814 = new Class1792();
         this.field23815 = new Class8108(this);
@@ -400,7 +400,7 @@ public class Class5799 implements IClientPlayNetHandler
         final float n2 = class4361.method13121() * 360 / 256.0f;
         if (this.method17371(class4361.method13116()) != null) {
             final int method13120 = class4361.method13115();
-            final Class755 class4362 = new Class755(this.field23808.field4683, this.method17371(class4361.method13116()).method32719());
+            final Class755 class4362 = new Class755(this.field23808.world, this.method17371(class4361.method13116()).method32719());
             class4362.method1644(method13120);
             class4362.method1731(method13117, method13118, method13119);
             class4362.setPacketCoordinates(method13117, method13118, method13119);
@@ -620,11 +620,11 @@ public class Class5799 implements IClientPlayNetHandler
         if (this.field23807 == null) {
             this.field23808.method5244(new Class735(new Class720(new Class548()), "disconnect.lost", class2250));
         }
-        else if (!(this.field23807 instanceof Class545)) {
+        else if (!(this.field23807 instanceof RealmsScreenProxy)) {
             this.field23808.method5244(new Class735(this.field23807, "disconnect.lost", class2250));
         }
         else {
-            this.field23808.method5244(new Class5070(((Class545)this.field23807).method3183(), "disconnect.lost", class2250).method15403());
+            this.field23808.method5244(new Class5070(((RealmsScreenProxy)this.field23807).getScreen(), "disconnect.lost", class2250).getProxy());
         }
     }
     
@@ -705,7 +705,7 @@ public class Class5799 implements IClientPlayNetHandler
         final double method12834 = class4276.method12834();
         final float n = class4276.method12838() * 360 / 256.0f;
         final float n2 = class4276.method12839() * 360 / 256.0f;
-        final LivingEntity class4277 = (LivingEntity) EntityType.method23372(class4276.method12831(), this.field23808.field4683);
+        final LivingEntity class4277 = (LivingEntity) EntityType.method23372(class4276.method12831(), this.field23808.world);
         if (class4277 == null) {
             Class5799.field23804.warn("Skipping Entity with id {}", (Object)class4276.method12831());
         }
@@ -740,15 +740,15 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17297(final Class4345 class4345) {
         Class8663.method29632((IPacket<Class5799>)class4345, this, this.field23808);
-        this.field23808.field4683.method6752(class4345.method13048());
-        this.field23808.field4683.method6756(class4345.method13049());
+        this.field23808.world.method6752(class4345.method13048());
+        this.field23808.world.method6756(class4345.method13049());
     }
     
     @Override
     public void method17298(final Class4335 class4335) {
         Class8663.method29632((IPacket<Class5799>)class4335, this, this.field23808);
         this.field23808.field4684.method2856(class4335.method13017(), true, false);
-        this.field23808.field4683.method6764().method29548(class4335.method13017());
+        this.field23808.world.method6764().method29548(class4335.method13017());
     }
     
     @Override
@@ -841,7 +841,7 @@ public class Class5799 implements IClientPlayNetHandler
         final int method13098 = field4684.getEntityId();
         if (method13097 != field4684.dimension) {
             this.field23810 = false;
-            (this.field23809 = new Class1848(this, new Class8511(class4359.method13098(), class4359.method13099(), false, this.field23808.field4683.method6764().method29568(), class4359.method13100()), class4359.method13097(), this.field23816, this.field23808.method5327(), this.field23808.field4636)).method6832(this.field23809.method6782());
+            (this.field23809 = new Class1848(this, new Class8511(class4359.method13098(), class4359.method13099(), false, this.field23808.world.method6764().method29568(), class4359.method13100()), class4359.method13097(), this.field23816, this.field23808.method5327(), this.field23808.field4636)).method6832(this.field23809.method6782());
             this.field23808.method5263(this.field23809);
             this.field23808.method5244(new Class556());
         }
@@ -873,7 +873,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17306(final Class4394 class4394) {
         Class8663.method29632((IPacket<Class5799>)class4394, this, this.field23808);
-        new Explosion(this.field23808.field4683, null, class4394.method13214(), class4394.method13215(), class4394.method13216(), class4394.method13217(), class4394.method13218()).method18409(true);
+        new Explosion(this.field23808.world, null, class4394.method13214(), class4394.method13215(), class4394.method13216(), class4394.method13217(), class4394.method13218()).method18409(true);
         this.field23808.field4684.method1936(this.field23808.field4684.getMotion().add(class4394.method13211(), class4394.method13212(), class4394.method13213()));
     }
     
@@ -986,8 +986,8 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17313(final Class4357 class4357) {
         Class8663.method29632((IPacket<Class5799>)class4357, this, this.field23808);
-        if (this.field23808.field4683.method6971(class4357.method13084())) {
-            final TileEntity method6727 = this.field23808.field4683.getTileEntity(class4357.method13084());
+        if (this.field23808.world.method6971(class4357.method13084())) {
+            final TileEntity method6727 = this.field23808.world.getTileEntity(class4357.method13084());
             final int method6728 = class4357.method13085();
             final boolean b = method6728 == 2 && method6727 instanceof Class500;
             Label_0190: {
@@ -1060,13 +1060,13 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17317(final Class4363 class4363) {
         Class8663.method29632((IPacket<Class5799>)class4363, this, this.field23808);
-        this.field23808.field4683.method6763(class4363.method13123(), class4363.method13126(), class4363.method13124(), class4363.method13125());
+        this.field23808.world.method6763(class4363.method13123(), class4363.method13126(), class4363.method13124(), class4363.method13125());
     }
     
     @Override
     public void method17318(final Class4310 class4310) {
         Class8663.method29632((IPacket<Class5799>)class4310, this, this.field23808);
-        this.field23808.field4683.method6780(class4310.method12957(), class4310.method12958(), class4310.method12959());
+        this.field23808.world.method6780(class4310.method12957(), class4310.method12958(), class4310.method12959());
     }
     
     @Override
@@ -1175,7 +1175,7 @@ public class Class5799 implements IClientPlayNetHandler
         Class8663.method29632((IPacket<Class5799>)class4333, this, this.field23808);
         final Class1905 method5822 = this.field23808.field4644.method5822();
         final String method5823 = Class4094.method12331(class4333.method13011());
-        Class6356 method5824 = this.field23808.field4683.method6774(method5823);
+        Class6356 method5824 = this.field23808.world.method6774(method5823);
         if (method5824 == null) {
             method5824 = new Class6356(method5823);
             if (method5822.method7393(method5823) != null) {
@@ -1184,7 +1184,7 @@ public class Class5799 implements IClientPlayNetHandler
                     method5824 = method5825;
                 }
             }
-            this.field23808.field4683.method6775(method5824);
+            this.field23808.world.method6775(method5824);
         }
         class4333.method13012(method5824);
         method5822.method7390(method5824);
@@ -1194,10 +1194,10 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17321(final Class4395 class4395) {
         Class8663.method29632((IPacket<Class5799>)class4395, this, this.field23808);
         if (!class4395.method13219()) {
-            this.field23808.field4683.method6955(class4395.method13220(), class4395.method13222(), class4395.method13221());
+            this.field23808.world.method6955(class4395.method13220(), class4395.method13222(), class4395.method13221());
         }
         else {
-            this.field23808.field4683.method6777(class4395.method13220(), class4395.method13222(), class4395.method13221());
+            this.field23808.world.method6777(class4395.method13220(), class4395.method13222(), class4395.method13221());
         }
     }
     
@@ -1368,8 +1368,8 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17335(final Class4315 class4315) {
         Class8663.method29632((IPacket<Class5799>)class4315, this, this.field23808);
-        this.field23808.field4683.method6764().method29598(class4315.method12971());
-        this.field23808.field4683.method6764().method29600(class4315.method12970());
+        this.field23808.world.method6764().method29598(class4315.method12971());
+        this.field23808.world.method6764().method29600(class4315.method12970());
     }
     
     @Override
@@ -1491,7 +1491,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17344(final Class4282 class4282) {
         Class8663.method29632((IPacket<Class5799>)class4282, this, this.field23808);
-        this.field23808.field4683.method6706(this.field23808.field4684, class4282.method12865(), class4282.method12866(), class4282.method12867(), class4282.method12863(), class4282.method12864(), class4282.method12868(), class4282.method12869());
+        this.field23808.world.method6706(this.field23808.field4684, class4282.method12865(), class4282.method12866(), class4282.method12867(), class4282.method12863(), class4282.method12864(), class4282.method12868(), class4282.method12869());
     }
     
     @Override
@@ -1499,7 +1499,7 @@ public class Class5799 implements IClientPlayNetHandler
         Class8663.method29632((IPacket<Class5799>)class4351, this, this.field23808);
         final Entity method6741 = this.field23809.getEntityByID(class4351.method13070());
         if (method6741 != null) {
-            this.field23808.field4683.method6707(this.field23808.field4684, method6741, class4351.method13068(), class4351.method13069(), class4351.method13071(), class4351.method13072());
+            this.field23808.world.method6707(this.field23808.field4684, method6741, class4351.method13068(), class4351.method13069(), class4351.method13071(), class4351.method13072());
         }
     }
     
@@ -1537,9 +1537,9 @@ public class Class5799 implements IClientPlayNetHandler
                 }
                 else {
                     this.field23808.execute(() -> {
-                        final Class869 field23808 = this.field23808;
+                        final Minecraft field23808 = this.field23808;
                         new Class546(b -> {
-                            this.field23808 = Class869.method5277();
+                            this.field23808 = Minecraft.method5277();
                             final Class9575 method5282 = this.field23808.method5282();
                             if (!b) {
                                 if (method5282 != null) {

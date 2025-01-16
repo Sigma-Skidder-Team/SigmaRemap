@@ -12,7 +12,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 
-public class Class727 extends Class527
+public class Class727 extends Screen
 {
     private final PlayerEntity field3959;
     private final ItemStack field3960;
@@ -35,7 +35,7 @@ public class Class727 extends Class527
     private final Class316 field3977;
     
     public Class727(final PlayerEntity field3959, final ItemStack field3960, final Class316 field3961) {
-        super(Class7895.field32402);
+        super(NarratorChatListener.EMPTY);
         this.field3965 = Lists.newArrayList();
         this.field3966 = "";
         this.field3970 = -1;
@@ -59,35 +59,35 @@ public class Class727 extends Class527
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
+    public void tick() {
+        super.tick();
         ++this.field3963;
     }
     
     @Override
-    public void method2969() {
-        this.field3150.field4651.method22505(true);
-        this.field3974 = this.method3029(new Class654(this.field3152 / 2 - 100, 196, 98, 20, Class8822.method30773("book.signButton", new Object[0]), class654 -> {
+    public void init() {
+        this.minecraft.field4651.method22505(true);
+        this.field3974 = this.method3029(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("book.signButton", new Object[0]), class654 -> {
             this.field3962 = true;
             this.method3994();
         }));
-        this.field3973 = this.method3029(new Class654(this.field3152 / 2 + 2, 196, 98, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
-            this.field3150.method5244(null);
+        this.field3973 = this.method3029(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+            this.minecraft.method5244(null);
             this.method3996(false);
         }));
-        this.field3975 = this.method3029(new Class654(this.field3152 / 2 - 100, 196, 98, 20, Class8822.method30773("book.finalizeButton", new Object[0]), class654 -> {
+        this.field3975 = this.method3029(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("book.finalizeButton", new Object[0]), class654 -> {
             if (this.field3962) {
                 this.method3996(true);
-                this.field3150.method5244(null);
+                this.minecraft.method5244(null);
             }
         }));
-        this.field3976 = this.method3029(new Class654(this.field3152 / 2 + 2, 196, 98, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
+        this.field3976 = this.method3029(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
             if (this.field3962) {
                 this.field3962 = false;
             }
             this.method3994();
         }));
-        final int n = (this.field3152 - 192) / 2;
+        final int n = (this.width - 192) / 2;
         this.field3971 = this.method3029(new Class680(n + 116, 159, true, class654 -> this.method3993(), true));
         this.field3972 = this.method3029(new Class680(n + 43, 159, false, class654 -> this.method3992(), true));
         this.method3994();
@@ -132,8 +132,8 @@ public class Class727 extends Class527
     }
     
     @Override
-    public void method2971() {
-        this.field3150.field4651.method22505(false);
+    public void removed() {
+        this.minecraft.field4651.method22505(false);
     }
     
     private void method3994() {
@@ -165,7 +165,7 @@ public class Class727 extends Class527
                 this.field3960.method27676("author", StringNBT.method290(this.field3959.method2844().getName()));
                 this.field3960.method27676("title", StringNBT.method290(this.field3966.trim()));
             }
-            this.field3150.method5269().method17292(new Class4314(this.field3960, b, this.field3977));
+            this.minecraft.method5269().method17292(new Class4314(this.field3960, b, this.field3977));
         }
     }
     
@@ -177,13 +177,13 @@ public class Class727 extends Class527
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
-        return super.method2972(n, n2, n3) || (this.field3962 ? this.method4009(n, n2, n3) : this.method3998(n, n2, n3));
+    public boolean keyPressed(final int n, final int n2, final int n3) {
+        return super.keyPressed(n, n2, n3) || (this.field3962 ? this.method4009(n, n2, n3) : this.method3998(n, n2, n3));
     }
     
     @Override
-    public boolean method3004(final char c, final int n) {
-        if (super.method3004(c, n)) {
+    public boolean charTyped(final char c, final int n) {
+        if (super.charTyped(c, n)) {
             return true;
         }
         if (!this.field3962) {
@@ -205,22 +205,22 @@ public class Class727 extends Class527
     
     private boolean method3998(final int n, final int n2, final int n3) {
         final String method4010 = this.method4010();
-        if (Class527.method3052(n)) {
+        if (Screen.method3052(n)) {
             this.field3968 = 0;
             this.field3967 = method4010.length();
             return true;
         }
-        if (Class527.method3051(n)) {
-            this.field3150.field4651.method22508(this.method4015());
+        if (Screen.method3051(n)) {
+            this.minecraft.field4651.method22508(this.method4015());
             return true;
         }
-        if (Class527.method3050(n)) {
-            this.method4012(this.method3991(TextFormatting.getTextWithoutFormattingCodes(this.field3150.field4651.method22507().replaceAll("\\r", ""))));
+        if (Screen.method3050(n)) {
+            this.method4012(this.method3991(TextFormatting.getTextWithoutFormattingCodes(this.minecraft.field4651.method22507().replaceAll("\\r", ""))));
             this.field3968 = this.field3967;
             return true;
         }
-        if (Class527.method3049(n)) {
-            this.field3150.field4651.method22508(this.method4015());
+        if (Screen.method3049(n)) {
+            this.minecraft.field4651.method22508(this.method4015());
             this.method4007();
             return true;
         }
@@ -305,27 +305,27 @@ public class Class727 extends Class527
     }
     
     private void method4001(final String s) {
-        final int n = this.field3156.method6630() ? 1 : -1;
-        if (!Class527.method3046()) {
+        final int n = this.font.method6630() ? 1 : -1;
+        if (!Screen.method3046()) {
             this.field3967 = Math.max(0, this.field3967 + n);
         }
         else {
-            this.field3967 = this.field3156.method6629(s, n, this.field3967, true);
+            this.field3967 = this.font.method6629(s, n, this.field3967, true);
         }
-        if (!Class527.method3047()) {
+        if (!Screen.method3047()) {
             this.field3968 = this.field3967;
         }
     }
     
     private void method4002(final String s) {
-        final int n = this.field3156.method6630() ? -1 : 1;
-        if (!Class527.method3046()) {
+        final int n = this.font.method6630() ? -1 : 1;
+        if (!Screen.method3046()) {
             this.field3967 = Math.min(s.length(), this.field3967 + n);
         }
         else {
-            this.field3967 = this.field3156.method6629(s, n, this.field3967, true);
+            this.field3967 = this.font.method6629(s, n, this.field3967, true);
         }
-        if (!Class527.method3047()) {
+        if (!Screen.method3047()) {
             this.field3968 = this.field3967;
         }
     }
@@ -337,14 +337,14 @@ public class Class727 extends Class527
                 final int method4019 = this.method4023(s, new Class7116(this, Class7116.method21845(method4018) + this.method4008(s, this.field3967) / 3, Class7116.method21844(method4018) - 9));
                 if (method4019 >= 0) {
                     this.field3967 = method4019;
-                    if (!Class527.method3047()) {
+                    if (!Screen.method3047()) {
                         this.field3968 = this.field3967;
                     }
                 }
             }
             else {
                 this.field3967 = 0;
-                if (!Class527.method3047()) {
+                if (!Screen.method3047()) {
                     this.field3968 = this.field3967;
                 }
             }
@@ -354,18 +354,18 @@ public class Class727 extends Class527
     private void method4004(final String str) {
         if (!str.isEmpty()) {
             final Class7116 method4018 = this.method4018(str, this.field3967);
-            if (Class7116.method21844(method4018) + 9 != this.field3156.method6624(str + "" + TextFormatting.BLACK + "_", 114)) {
+            if (Class7116.method21844(method4018) + 9 != this.font.method6624(str + "" + TextFormatting.BLACK + "_", 114)) {
                 final int method4019 = this.method4023(str, new Class7116(this, Class7116.method21845(method4018) + this.method4008(str, this.field3967) / 3, Class7116.method21844(method4018) + 9));
                 if (method4019 >= 0) {
                     this.field3967 = method4019;
-                    if (!Class527.method3047()) {
+                    if (!Screen.method3047()) {
                         this.field3968 = this.field3967;
                     }
                 }
             }
             else {
                 this.field3967 = str.length();
-                if (!Class527.method3047()) {
+                if (!Screen.method3047()) {
                     this.field3968 = this.field3967;
                 }
             }
@@ -374,14 +374,14 @@ public class Class727 extends Class527
     
     private void method4005(final String s) {
         this.field3967 = this.method4023(s, new Class7116(this, 0, Class7116.method21844(this.method4018(s, this.field3967))));
-        if (!Class527.method3047()) {
+        if (!Screen.method3047()) {
             this.field3968 = this.field3967;
         }
     }
     
     private void method4006(final String s) {
         this.field3967 = this.method4023(s, new Class7116(this, 113, Class7116.method21844(this.method4018(s, this.field3967))));
-        if (!Class527.method3047()) {
+        if (!Screen.method3047()) {
             this.field3968 = this.field3967;
         }
     }
@@ -398,7 +398,7 @@ public class Class727 extends Class527
     }
     
     private int method4008(final String s, final int n) {
-        return (int)this.field3156.method6618(s.charAt(MathHelper.method35651(n, 0, s.length() - 1)));
+        return (int)this.font.method6618(s.charAt(MathHelper.method35651(n, 0, s.length() - 1)));
     }
     
     private boolean method4009(final int n, final int n2, final int n3) {
@@ -407,7 +407,7 @@ public class Class727 extends Class527
             case 335: {
                 if (!this.field3966.isEmpty()) {
                     this.method3996(true);
-                    this.field3150.method5244(null);
+                    this.minecraft.method5244(null);
                 }
                 return true;
             }
@@ -444,7 +444,7 @@ public class Class727 extends Class527
         final String method4010 = this.method4010();
         this.field3967 = MathHelper.method35651(this.field3967, 0, method4010.length());
         final String string = new StringBuilder(method4010).insert(this.field3967, str).toString();
-        if (this.field3156.method6624(string + "" + TextFormatting.BLACK + "_", 114) <= 128) {
+        if (this.font.method6624(string + "" + TextFormatting.BLACK + "_", 114) <= 128) {
             if (string.length() < 1024) {
                 this.method4011(string);
                 final int min = Math.min(this.method4010().length(), this.field3967 + str.length());
@@ -456,27 +456,27 @@ public class Class727 extends Class527
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
-        this.method3470(null);
+        this.renderBackground();
+        this.setFocused(null);
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        this.field3150.method5290().method5849(Class723.field3947);
-        final int n4 = (this.field3152 - 192) / 2;
+        this.minecraft.method5290().method5849(Class723.field3947);
+        final int n4 = (this.width - 192) / 2;
         this.method3186(n4, 2, 0, 0, 192, 192);
         if (!this.field3962) {
             final String method30773 = Class8822.method30773("book.pageIndicator", this.field3964 + 1, this.method3990());
             final String method30774 = this.method4010();
-            this.field3156.method6610(method30773, (float)(n4 - this.method4013(method30773) + 192 - 44), 18.0f, 0);
-            this.field3156.method6622(method30774, n4 + 36, 32, 114, 0);
+            this.font.method6610(method30773, (float)(n4 - this.method4013(method30773) + 192 - 44), 18.0f, 0);
+            this.font.method6622(method30774, n4 + 36, 32, 114, 0);
             this.method4016(method30774);
             if (this.field3963 / 6 % 2 == 0) {
                 final Class7116 method30775 = this.method4018(method30774, this.field3967);
-                if (this.field3156.method6630()) {
+                if (this.font.method6630()) {
                     this.method4019(method30775);
                     Class7116.method21846(method30775, Class7116.method21845(method30775) - 4);
                 }
                 this.method4021(method30775);
                 if (this.field3967 >= method30774.length()) {
-                    this.field3156.method6610("_", (float)Class7116.method21845(method30775), (float)Class7116.method21844(method30775), 0);
+                    this.font.method6610("_", (float)Class7116.method21845(method30775), (float)Class7116.method21844(method30775), 0);
                 }
                 else {
                     Class565.method3293(Class7116.method21845(method30775), Class7116.method21844(method30775) - 1, Class7116.method21845(method30775) + 1, Class7116.method21844(method30775) + 9, -16777216);
@@ -493,21 +493,21 @@ public class Class727 extends Class527
                 s = field3966 + "" + TextFormatting.BLACK + "_";
             }
             final String method30776 = Class8822.method30773("book.editTitle", new Object[0]);
-            this.field3156.method6610(method30776, (float)(n4 + 36 + (114 - this.method4013(method30776)) / 2), 34.0f, 0);
-            this.field3156.method6610(s, (float)(n4 + 36 + (114 - this.method4013(s)) / 2), 50.0f, 0);
+            this.font.method6610(method30776, (float)(n4 + 36 + (114 - this.method4013(method30776)) / 2), 34.0f, 0);
+            this.font.method6610(s, (float)(n4 + 36 + (114 - this.method4013(s)) / 2), 50.0f, 0);
             final String method30777 = Class8822.method30773("book.byAuthor", this.field3959.getName().getString());
-            this.field3156.method6610(TextFormatting.DARK_GRAY + method30777, (float)(n4 + 36 + (114 - this.method4013(method30777)) / 2), 60.0f, 0);
-            this.field3156.method6622(Class8822.method30773("book.finalizeWarning", new Object[0]), n4 + 36, 82, 114, 0);
+            this.font.method6610(TextFormatting.DARK_GRAY + method30777, (float)(n4 + 36 + (114 - this.method4013(method30777)) / 2), 60.0f, 0);
+            this.font.method6622(Class8822.method30773("book.finalizeWarning", new Object[0]), n4 + 36, 82, 114, 0);
         }
         super.method2975(n, n2, n3);
     }
     
     private int method4013(final String s) {
-        return this.field3156.method6617(this.field3156.method6630() ? this.field3156.method6611(s) : s);
+        return this.font.method6617(this.font.method6630() ? this.font.method6611(s) : s);
     }
     
     private int method4014(final String s, final int n) {
-        return this.field3156.method6628(s, n);
+        return this.font.method6628(s, n);
     }
     
     private String method4015() {
@@ -519,7 +519,7 @@ public class Class727 extends Class527
             final int min = Math.min(this.field3967, this.field3968);
             final int max = Math.max(this.field3967, this.field3968);
             String s2 = s.substring(min, max);
-            String s3 = s.substring(min, this.field3156.method6629(s, 1, max, true));
+            String s3 = s.substring(min, this.font.method6629(s, 1, max, true));
             final Class7116 method4018 = this.method4018(s, min);
             final Class7116 class7116 = new Class7116(this, Class7116.method21845(method4018), Class7116.method21844(method4018) + 9);
             while (!s2.isEmpty()) {
@@ -547,7 +547,7 @@ public class Class727 extends Class527
     private void method4017(final Class7116 class7116, final Class7116 class7117) {
         final Class7116 class7118 = new Class7116(this, Class7116.method21845(class7116), Class7116.method21844(class7116));
         final Class7116 class7119 = new Class7116(this, Class7116.method21845(class7117), Class7116.method21844(class7117));
-        if (this.field3156.method6630()) {
+        if (this.font.method6630()) {
             this.method4019(class7118);
             this.method4019(class7119);
             final int method21845 = Class7116.method21845(class7119);
@@ -599,18 +599,18 @@ public class Class727 extends Class527
     }
     
     private void method4019(final Class7116 class7116) {
-        if (this.field3156.method6630()) {
+        if (this.font.method6630()) {
             Class7116.method21846(class7116, 114 - Class7116.method21845(class7116));
         }
     }
     
     private void method4020(final Class7116 class7116) {
-        Class7116.method21846(class7116, Class7116.method21845(class7116) - (this.field3152 - 192) / 2 - 36);
+        Class7116.method21846(class7116, Class7116.method21845(class7116) - (this.width - 192) / 2 - 36);
         Class7116.method21847(class7116, Class7116.method21844(class7116) - 32);
     }
     
     private void method4021(final Class7116 class7116) {
-        Class7116.method21846(class7116, Class7116.method21845(class7116) + (this.field3152 - 192) / 2 + 36);
+        Class7116.method21846(class7116, Class7116.method21845(class7116) + (this.width - 192) / 2 + 36);
         Class7116.method21847(class7116, Class7116.method21844(class7116) + 32);
     }
     
@@ -621,7 +621,7 @@ public class Class727 extends Class527
             final String string = str + " ";
             for (int i = 0; i < string.length(); ++i) {
                 final char char1 = string.charAt(i);
-                float method6618 = this.field3156.method6618(char1);
+                float method6618 = this.font.method6618(char1);
                 if (char1 == '§') {
                     if (i < string.length() - 1) {
                         ++i;
@@ -687,7 +687,7 @@ public class Class727 extends Class527
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 == 0) {
             final long method27837 = Util.method27837();
             final String method27838 = this.method4010();
@@ -703,13 +703,13 @@ public class Class727 extends Class527
                             this.field3967 = this.method4010().length();
                         }
                         else {
-                            this.field3968 = this.field3156.method6629(method27838, -1, method27839, false);
-                            this.field3967 = this.field3156.method6629(method27838, 1, method27839, false);
+                            this.field3968 = this.font.method6629(method27838, -1, method27839, false);
+                            this.field3967 = this.font.method6629(method27838, 1, method27839, false);
                         }
                     }
                     else {
                         this.field3967 = method27839;
-                        if (!Class527.method3047()) {
+                        if (!Screen.method3047()) {
                             this.field3968 = this.field3967;
                         }
                     }
@@ -718,11 +718,11 @@ public class Class727 extends Class527
             }
             this.field3969 = method27837;
         }
-        return super.method2982(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     @Override
-    public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
+    public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
         if (n3 == 0) {
             if (this.field3964 >= 0) {
                 if (this.field3964 < this.field3965.size()) {
@@ -737,6 +737,6 @@ public class Class727 extends Class527
                 }
             }
         }
-        return super.method2984(n, n2, n3, n4, n5);
+        return super.mouseDragged(n, n2, n3, n4, n5);
     }
 }

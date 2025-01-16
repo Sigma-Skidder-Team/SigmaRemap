@@ -15,10 +15,10 @@ import org.apache.logging.log4j.Logger;
 public class Class9295
 {
     private static final Logger field39864;
-    private final Class869 field39865;
+    private final Minecraft field39865;
     private final List<Class9575> field39866;
     
-    public Class9295(final Class869 field39865) {
+    public Class9295(final Minecraft field39865) {
         this.field39866 = Lists.newArrayList();
         this.field39865 = field39865;
         this.method34331();
@@ -85,7 +85,7 @@ public class Class9295
     }
     
     public static void method34339(final Class9575 class9575) {
-        final Class9295 class9576 = new Class9295(Class869.method5277());
+        final Class9295 class9576 = new Class9295(Minecraft.method5277());
         class9576.method34331();
         for (int i = 0; i < class9576.method34336(); ++i) {
             final Class9575 method34333 = class9576.method34333(i);

@@ -14,7 +14,7 @@ public final class Class900 extends Thread
     
     @Override
     public void run() {
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         if (method5277 != null) {
             final Class1655 method5278 = method5277.method5285();
             if (method5278 != null) {

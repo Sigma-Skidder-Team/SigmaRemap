@@ -29,8 +29,8 @@ public class Class3243 extends Class3167
             if (class5723.method16998() instanceof Class4402) {
                 final Class4402 class5724 = (Class4402)class5723.method16998();
                 if (class5724.method13247().getItem() instanceof Class4077) {
-                    if (Class3243.field15514.field4683.getEntityByID(class5724.method13248()) instanceof PlayerEntity) {
-                        final Entity method6741 = Class3243.field15514.field4683.getEntityByID(class5724.method13248());
+                    if (Class3243.field15514.world.getEntityByID(class5724.method13248()) instanceof PlayerEntity) {
+                        final Entity method6741 = Class3243.field15514.world.getEntityByID(class5724.method13248());
                         if (!this.field15732.toString().equalsIgnoreCase(method6741.getName().getUnformattedComponentText())) {
                             if (this.method9883("Chat Message")) {
                                 Class3243.field15514.field4684.method4114("Murderer is " + method6741.getName() + ", detected by Jello client");
@@ -59,8 +59,8 @@ public class Class3243 extends Class3167
         }
         if (this.method9883("GUI")) {
             final Class7524 field40313 = Class9400.field40313;
-            final int method7694 = Class869.method5277().field4632.method7694();
-            final int method7695 = Class869.method5277().field4632.method7695();
+            final int method7694 = Minecraft.method5277().field4632.method7694();
+            final int method7695 = Minecraft.method5277().field4632.method7695();
             if (this.field15734) {
                 if (this.field15733 != null) {
                     this.field15734 = false;

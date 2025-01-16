@@ -21,11 +21,11 @@ import java.util.concurrent.CompletableFuture;
 public class Class7490 implements Class7491
 {
     private final Class5799 field28922;
-    private final Class869 field28923;
+    private final Minecraft field28923;
     private int field28924;
     private CompletableFuture<Suggestions> field28925;
     
-    public Class7490(final Class5799 field28922, final Class869 field28923) {
+    public Class7490(final Class5799 field28922, final Minecraft field28923) {
         this.field28924 = -1;
         this.field28922 = field28922;
         this.field28923 = field28923;

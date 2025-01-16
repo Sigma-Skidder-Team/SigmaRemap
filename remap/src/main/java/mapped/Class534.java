@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.Objects;
 import java.util.List;
 
-public class Class534 extends Class527
+public class Class534 extends Screen
 {
     private static final List<ResourceLocation> field3184;
     private final Class539 field3185;
@@ -26,9 +26,9 @@ public class Class534 extends Class527
     }
     
     @Override
-    public void method2969() {
-        this.field3150.field4651.method22505(true);
-        this.method3029(new Class654((this.field3152 - 200) / 2, 40, 200, 20, Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]), class654 -> {
+    public void init() {
+        this.minecraft.field4651.method22505(true);
+        this.method3029(new Class654((this.width - 200) / 2, 40, 200, 20, Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]), class654 -> {
             ++this.field3188;
             if (this.field3188 >= Class534.field3184.size()) {
                 this.field3188 = 0;
@@ -36,12 +36,12 @@ public class Class534 extends Class527
             class654.method3367(Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]));
         }));
         this.field3187 = new Class621(this, null);
-        this.field3149.add(this.field3187);
-        this.field3189 = this.method3029(new Class654(this.field3152 / 2 - 155, this.field3153 - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.children.add(this.field3187);
+        this.field3189 = this.method3029(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
             this.field3185.field3231 = this.method3082();
-            this.field3150.method5244(this.field3185);
+            this.minecraft.method5244(this.field3185);
         }));
-        this.method3029(new Class654(this.field3152 / 2 + 5, this.field3153 - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3150.method5244(this.field3185)));
+        this.method3029(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.method5244(this.field3185)));
         this.method3081();
         this.method3083();
     }
@@ -62,7 +62,7 @@ public class Class534 extends Class527
             if (this.field3186.getCompound("biome_source").contains("biomes", 9)) {
                 final ListNBT class1934 = this.field3186.getCompound("biome_source").getList("biomes", 8);
                 for (int n = 0; n < class1934.size(); ++n) {
-                    this.field3187.method3617(this.field3187.method3040().stream().filter(class1933 -> {
+                    this.field3187.method3617(this.field3187.children().stream().filter(class1933 -> {
                         final ListNBT class1934;
                         final int n;
                         final Object o = new ResourceLocation(class1934.method353(n));
@@ -103,9 +103,9 @@ public class Class534 extends Class527
     public void method2975(final int n, final int n2, final float n3) {
         this.method3043(0);
         this.field3187.method2975(n, n2, n3);
-        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 8, 16777215);
-        this.method3295(this.field3156, Class8822.method30773("createWorld.customize.buffet.generator", new Object[0]), this.field3152 / 2, 30, 10526880);
-        this.method3295(this.field3156, Class8822.method30773("createWorld.customize.buffet.biome", new Object[0]), this.field3152 / 2, 68, 10526880);
+        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 8, 16777215);
+        this.method3295(this.font, Class8822.method30773("createWorld.customize.buffet.generator", new Object[0]), this.width / 2, 30, 10526880);
+        this.method3295(this.font, Class8822.method30773("createWorld.customize.buffet.biome", new Object[0]), this.width / 2, 68, 10526880);
         super.method2975(n, n2, n3);
     }
     

@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.ArrayList;
-import java.lang.annotation.Annotation;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.HashSet;
@@ -15,7 +14,7 @@ import java.util.List;
 
 public abstract class Class3167
 {
-    public static Class869 field15514;
+    public static Minecraft field15514;
     public String field15515;
     public String field15516;
     public Class8013 field15517;
@@ -167,7 +166,7 @@ public abstract class Class3167
                 }
             }
         }
-        if (this.field15518 && Class3167.field15514.field4683 != null) {
+        if (this.field15518 && Class3167.field15514.world != null) {
             this.method9879();
         }
         return class4405;
@@ -275,7 +274,7 @@ public abstract class Class3167
                     }
                     if (Class9463.method35173().method35209() == Class2209.field13465) {
                         if (Class9463.method35173().method35189().method21551(Class3315.class).method9883("Sound")) {
-                            Class869.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.6f));
+                            Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.6f));
                         }
                     }
                 }
@@ -290,7 +289,7 @@ public abstract class Class3167
                 }
                 if (Class9463.method35173().method35209() == Class2209.field13465) {
                     if (Class9463.method35173().method35189().method21551(Class3315.class).method9883("Sound")) {
-                        Class869.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.7f));
+                        Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.7f));
                     }
                 }
                 this.method9879();
@@ -337,7 +336,7 @@ public abstract class Class3167
     }
     
     static {
-        Class3167.field15514 = Class869.method5277();
+        Class3167.field15514 = Minecraft.method5277();
         Class3167.field15521 = new ArrayList<Class<? extends Class3167>>();
     }
 }

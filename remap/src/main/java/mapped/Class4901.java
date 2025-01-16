@@ -41,7 +41,7 @@ public class Class4901 extends Class4841
         final int n5 = 90;
         final int n6 = 40;
         this.method14239(this.field20959 = new Class4847(this, "zoom", n3 - n6 - 10, n4 - n5 - 10, n6, n5));
-        this.field20960 = Class869.method5277().field4683.method6965(Class869.method5277().field4684.method1894()).method7019();
+        this.field20960 = Minecraft.method5277().world.method6965(Minecraft.method5277().field4684.method1894()).method7019();
         this.method14311(false);
     }
     
@@ -77,7 +77,7 @@ public class Class4901 extends Class4841
             final int max = Math.max(this.field20480, this.field20481);
             final float n4 = (this.field20480 - max) / 2.0f;
             final float n5 = n - (this.method14280() + (this.field20481 - max) / 2.0f + max / 2);
-            final float n6 = Class869.method5277().field4632.method7695() - n2 - (this.method14281() + n4 + max / 2);
+            final float n6 = Minecraft.method5277().field4632.method7695() - n2 - (this.method14281() + n4 + max / 2);
             final float n7 = max / ((this.field20961 - 1) * 2.0f);
             final float n8 = this.field20960.field32290 * 16 - this.field20963 * 16.0f;
             final float n9 = this.field20960.field32291 * 16 - this.field20962 * 16.0f;
@@ -102,7 +102,7 @@ public class Class4901 extends Class4841
     
     @Override
     public void method14205(final float n) {
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         final Class7859 class7859;
         final Class7859 field20970 = class7859 = new Class7859(this.field20960.field32290, this.field20960.field32291);
         class7859.field32290 -= (int)Math.floor(this.field20963);

@@ -26,7 +26,7 @@ public class Class625 extends Class624
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         Class7626.method23966(Class5073.method15664(this.field3606), this, this.field3605, n3, n, n2);
         return true;
     }
@@ -38,8 +38,8 @@ public class Class625 extends Class624
         Class7626.method23965(this.field3605, Class5073.method15664(this.field3606), n, n2, n3, n4);
         Class8952.method31759(class7442.field28706, () -> {
             Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-            Class5046.method15410(n5, n6, 8.0f, 8.0f, 8, 8, 32, 32, 64, 64);
-            Class5046.method15410(n5, n6, 40.0f, 8.0f, 8, 8, 32, 32, 64, 64);
+            RealmsScreen.method15410(n5, n6, 8.0f, 8.0f, 8, 8, 32, 32, 64, 64);
+            RealmsScreen.method15410(n5, n6, 40.0f, 8.0f, 8, 8, 32, 32, 64, 64);
         });
     }
 }

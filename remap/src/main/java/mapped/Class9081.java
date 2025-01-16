@@ -83,14 +83,14 @@ public class Class9081
     
     @Nullable
     public Class6749 method32729() {
-        return Class869.method5277().field4683.method6782().method19651(this.method32719().getName());
+        return Minecraft.method5277().world.method6782().method19651(this.method32719().getName());
     }
     
     public void method32730() {
         synchronized (this) {
             if (!this.field38441) {
                 this.field38441 = true;
-                Class869.method5277().method5302().method24294(this.field38437, (minecraftProfileTexture$Type, class1932, minecraftProfileTexture) -> {
+                Minecraft.method5277().method5302().method24294(this.field38437, (minecraftProfileTexture$Type, class1932, minecraftProfileTexture) -> {
                     this.field38438.put(minecraftProfileTexture$Type, class1932);
                     if (minecraftProfileTexture$Type == MinecraftProfileTexture$Type.SKIN) {
                         this.field38442 = minecraftProfileTexture.getMetadata("model");

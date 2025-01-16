@@ -14,7 +14,7 @@ import java.nio.file.LinkOption;
 import java.io.IOException;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 
-public class Class532 extends Class527
+public class Class532 extends Screen
 {
     private Class654 field3177;
     private final BooleanConsumer field3178;
@@ -28,24 +28,24 @@ public class Class532 extends Class527
     }
     
     @Override
-    public void method2992() {
+    public void tick() {
         this.field3179.method3376();
     }
     
     @Override
-    public void method2969() {
-        this.field3150.field4651.method22505(true);
-        final Class654 class654 = this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 24 + 5, 200, 20, Class8822.method30773("selectWorld.edit.resetIcon", new Object[0]), class654 -> {
-            FileUtils.deleteQuietly(this.field3150.method5243().method25800(this.field3180, "icon.png"));
+    public void init() {
+        this.minecraft.field4651.method22505(true);
+        final Class654 class654 = this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 24 + 5, 200, 20, Class8822.method30773("selectWorld.edit.resetIcon", new Object[0]), class654 -> {
+            FileUtils.deleteQuietly(this.minecraft.method5243().method25800(this.field3180, "icon.png"));
             class654.field3431 = false;
         }));
-        this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 48 + 5, 200, 20, Class8822.method30773("selectWorld.edit.openFolder", new Object[0]), class654 -> Util.method27845().method978(this.field3150.method5243().method25800(this.field3180, "icon.png").getParentFile())));
-        this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 72 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backup", new Object[0]), class654 -> {
-            method3066(this.field3150.method5243(), this.field3180);
+        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 48 + 5, 200, 20, Class8822.method30773("selectWorld.edit.openFolder", new Object[0]), class654 -> Util.method27845().method978(this.minecraft.method5243().method25800(this.field3180, "icon.png").getParentFile())));
+        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 72 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backup", new Object[0]), class654 -> {
+            method3066(this.minecraft.method5243(), this.field3180);
             this.field3178.accept(false);
         }));
-        this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 96 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backupFolder", new Object[0]), class654 -> {
-            final Path method25802 = this.field3150.method5243().method25802();
+        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 96 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backupFolder", new Object[0]), class654 -> {
+            final Path method25802 = this.minecraft.method5243().method25802();
             try {
                 Files.createDirectories(Files.exists(method25802, new LinkOption[0]) ? method25802.toRealPath(new LinkOption[0]) : method25802, (FileAttribute<?>[])new FileAttribute[0]);
             }
@@ -54,41 +54,41 @@ public class Class532 extends Class527
             }
             Util.method27845().method978(method25802.toFile());
         }));
-        this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 120 + 5, 200, 20, Class8822.method30773("selectWorld.edit.optimize", new Object[0]), class654 -> this.field3150.method5244(new Class554(this, (b2, b4) -> {
+        this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 5, 200, 20, Class8822.method30773("selectWorld.edit.optimize", new Object[0]), class654 -> this.minecraft.method5244(new Class554(this, (b2, b4) -> {
             if (!(!b2)) {
-                method3066(this.field3150.method5243(), this.field3180);
+                method3066(this.minecraft.method5243(), this.field3180);
             }
-            this.field3150.method5244(new Class736(this.field3178, this.field3180, this.field3150.method5243(), b4));
+            this.minecraft.method5244(new Class736(this.field3178, this.field3180, this.minecraft.method5243(), b4));
         }, new Class2259("optimizeWorld.confirm.title", new Object[0]), new Class2259("optimizeWorld.confirm.description", new Object[0]), true))));
-        this.field3177 = this.method3029(new Class654(this.field3152 / 2 - 100, this.field3153 / 4 + 144 + 5, 98, 20, Class8822.method30773("selectWorld.edit.save", new Object[0]), class654 -> this.method3065()));
-        this.method3029(new Class654(this.field3152 / 2 + 2, this.field3153 / 4 + 144 + 5, 98, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3178.accept(false)));
-        class654.field3431 = this.field3150.method5243().method25800(this.field3180, "icon.png").isFile();
-        final WorldInfo method25791 = this.field3150.method5243().method25791(this.field3180);
-        (this.field3179 = new Class576(this.field3156, this.field3152 / 2 - 100, 53, 200, 20, Class8822.method30773("selectWorld.enterName", new Object[0]))).method3377((method25791 != null) ? method25791.method29549() : "");
+        this.field3177 = this.method3029(new Class654(this.width / 2 - 100, this.height / 4 + 144 + 5, 98, 20, Class8822.method30773("selectWorld.edit.save", new Object[0]), class654 -> this.method3065()));
+        this.method3029(new Class654(this.width / 2 + 2, this.height / 4 + 144 + 5, 98, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3178.accept(false)));
+        class654.field3431 = this.minecraft.method5243().method25800(this.field3180, "icon.png").isFile();
+        final WorldInfo method25791 = this.minecraft.method5243().method25791(this.field3180);
+        (this.field3179 = new Class576(this.font, this.width / 2 - 100, 53, 200, 20, Class8822.method30773("selectWorld.enterName", new Object[0]))).method3377((method25791 != null) ? method25791.method29549() : "");
         this.field3179.method3374(s -> this.field3177.field3431 = !s.trim().isEmpty());
-        this.field3149.add(this.field3179);
+        this.children.add(this.field3179);
         this.method3476(this.field3179);
     }
     
     @Override
-    public void method2970(final Class869 class869, final int n, final int n2) {
+    public void method2970(final Minecraft class869, final int n, final int n2) {
         final String method3378 = this.field3179.method3378();
-        this.method3038(class869, n, n2);
+        this.init(class869, n, n2);
         this.field3179.method3377(method3378);
     }
     
     @Override
-    public void method2971() {
-        this.field3150.field4651.method22505(false);
+    public void removed() {
+        this.minecraft.field4651.method22505(false);
     }
     
     private void method3065() {
-        this.field3150.method5243().method25794(this.field3180, this.field3179.method3378().trim());
+        this.minecraft.method5243().method25794(this.field3180, this.field3179.method3378().trim());
         this.field3178.accept(true);
     }
     
     public static void method3066(final Class7952 class7952, final String s) {
-        final Class690 method5318 = Class869.method5277().method5318();
+        final Class690 method5318 = Minecraft.method5277().method5318();
         long method5319 = 0L;
         Throwable t = null;
         try {
@@ -112,9 +112,9 @@ public class Class532 extends Class527
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
-        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 20, 16777215);
-        this.method3297(this.field3156, Class8822.method30773("selectWorld.enterName", new Object[0]), this.field3152 / 2 - 100, 40, 10526880);
+        this.renderBackground();
+        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 20, 16777215);
+        this.method3297(this.font, Class8822.method30773("selectWorld.enterName", new Object[0]), this.width / 2 - 100, 40, 10526880);
         this.field3179.method2975(n, n2, n3);
         super.method2975(n, n2, n3);
     }

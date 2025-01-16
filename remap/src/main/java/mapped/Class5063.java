@@ -4,7 +4,7 @@
 
 package mapped;
 
-public abstract class Class5063 extends Class5053
+public abstract class Class5063 extends RealmsGuiEventListener
 {
     private final Class602 field21712;
     
@@ -62,7 +62,7 @@ public abstract class Class5063 extends Class5053
     }
     
     @Override
-    public Class574 method15448() {
+    public IGuiEventListener getProxy() {
         return this.field21712;
     }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 import java.text.DateFormat;
 import org.apache.logging.log4j.Logger;
 
-public class Class5088 extends Class5046
+public class Class5088 extends RealmsScreen
 {
     private static final Logger field21979;
     private final Class5078 field21980;
@@ -51,7 +51,7 @@ public class Class5088 extends Class5046
     }
     
     @Override
-    public void method15369() {
+    public void init() {
         this.method15444(true);
         this.field21987 = new Class5058(this);
         try {
@@ -59,23 +59,23 @@ public class Class5088 extends Class5046
         }
         catch (final Exception ex) {
             Class5088.field21979.error("Couldn't load level list", (Throwable)ex);
-            Class7847.method25362(new Class5074("Unable to load worlds", ex.getMessage(), this.field21980));
+            Realms.setScreen(new RealmsGenericErrorScreen("Unable to load worlds", ex.getMessage(), this.field21980));
             return;
         }
-        this.field21988 = Class5046.method15438("selectWorld.world");
-        this.field21989 = Class5046.method15438("selectWorld.conversion");
-        this.field21990[Class7847.method25365()] = Class5046.method15438("gameMode.survival");
-        this.field21990[Class7847.method25366()] = Class5046.method15438("gameMode.creative");
-        this.field21990[Class7847.method25367()] = Class5046.method15438("gameMode.adventure");
-        this.field21990[Class7847.method25368()] = Class5046.method15438("gameMode.spectator");
+        this.field21988 = RealmsScreen.getLocalizedString("selectWorld.world");
+        this.field21989 = RealmsScreen.getLocalizedString("selectWorld.conversion");
+        this.field21990[Realms.method25365()] = RealmsScreen.getLocalizedString("gameMode.survival");
+        this.field21990[Realms.method25366()] = RealmsScreen.getLocalizedString("gameMode.creative");
+        this.field21990[Realms.method25367()] = RealmsScreen.getLocalizedString("gameMode.adventure");
+        this.field21990[Realms.method25368()] = RealmsScreen.getLocalizedString("gameMode.spectator");
         this.method15428(this.field21987);
-        this.method15431(new Class5616(this, 1, this.method15421() / 2 + 6, this.method15422() - 32, 153, 20, Class5046.method15438("gui.back")));
-        this.method15431(this.field21983 = new Class5628(this, 2, this.method15421() / 2 - 154, this.method15422() - 32, 153, 20, Class5046.method15438("mco.upload.button.name")));
+        this.buttonsAdd(new Class5616(this, 1, this.width() / 2 + 6, this.height() - 32, 153, 20, RealmsScreen.getLocalizedString("gui.back")));
+        this.buttonsAdd(this.field21983 = new Class5628(this, 2, this.width() / 2 - 154, this.height() - 32, 153, 20, RealmsScreen.getLocalizedString("mco.upload.button.name")));
         this.field21983.method16917(this.field21986 >= 0 && this.field21986 < this.field21985.size());
-        this.method15428(this.field21991 = new Class5066(Class5046.method15438("mco.upload.select.world.title"), this.method15421() / 2, 13, 16777215));
-        this.method15428(this.field21992 = new Class5066(Class5046.method15438("mco.upload.select.world.subtitle"), this.method15421() / 2, Class7869.method25488(-1), 10526880));
+        this.method15428(this.field21991 = new Class5066(RealmsScreen.getLocalizedString("mco.upload.select.world.title"), this.width() / 2, 13, 16777215));
+        this.method15428(this.field21992 = new Class5066(RealmsScreen.getLocalizedString("mco.upload.select.world.subtitle"), this.width() / 2, Class7869.method25488(-1), 10526880));
         if (this.field21985.isEmpty()) {
-            this.method15428(this.field21993 = new Class5066(Class5046.method15438("mco.upload.select.world.none"), this.method15421() / 2, this.method15422() / 2 - 20, 16777215));
+            this.method15428(this.field21993 = new Class5066(RealmsScreen.getLocalizedString("mco.upload.select.world.none"), this.width() / 2, this.height() / 2 - 20, 16777215));
         }
         else {
             this.field21993 = null;
@@ -91,13 +91,13 @@ public class Class5088 extends Class5046
     private void method15947() {
         if (this.field21986 != -1) {
             if (!this.field21985.get(this.field21986).method7935()) {
-                Class7847.method25362(new Class5086(this.field21981, this.field21982, this.field21980, this.field21985.get(this.field21986)));
+                Realms.setScreen(new Class5086(this.field21981, this.field21982, this.field21980, this.field21985.get(this.field21986)));
             }
         }
     }
     
     @Override
-    public void method15383(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.method15413();
         this.field21987.method15510(n, n2, n3);
         this.field21991.method15593(this);
@@ -105,21 +105,21 @@ public class Class5088 extends Class5046
         if (this.field21993 != null) {
             this.field21993.method15593(this);
         }
-        super.method15383(n, n2, n3);
+        super.render(n, n2, n3);
     }
     
     @Override
-    public boolean method15376(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (n != 256) {
-            return super.method15376(n, n2, n3);
+            return super.keyPressed(n, n2, n3);
         }
-        Class7847.method25362(this.field21980);
+        Realms.setScreen(this.field21980);
         return true;
     }
     
     @Override
-    public void method15375() {
-        super.method15375();
+    public void tick() {
+        super.tick();
     }
     
     private String method15948(final Class1951 class1951) {

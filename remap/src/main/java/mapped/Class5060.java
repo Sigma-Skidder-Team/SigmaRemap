@@ -30,7 +30,7 @@ public class Class5060 extends Class5056
     }
     
     @Override
-    public boolean method15368(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 == 0) {
             if (n < this.method15524()) {
                 if (n2 >= this.method15525()) {
@@ -56,7 +56,7 @@ public class Class5060 extends Class5056
                 }
             }
         }
-        return super.method15368(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     @Override
@@ -64,8 +64,8 @@ public class Class5060 extends Class5056
         if (n2 >= 0) {
             if (n2 <= Class5069.method15609(this.field21709).field28682.size()) {
                 if (Class5069.method15621(this.field21709) != null) {
-                    if (!Class5069.method15621(this.field21709).equals(Class5046.method15438("mco.configure.world.invites.ops.tooltip")) && !Class5069.method15621(this.field21709).equals(Class5046.method15438("mco.configure.world.invites.normal.tooltip"))) {
-                        if (Class5069.method15621(this.field21709).equals(Class5046.method15438("mco.configure.world.invites.remove.tooltip"))) {
+                    if (!Class5069.method15621(this.field21709).equals(RealmsScreen.getLocalizedString("mco.configure.world.invites.ops.tooltip")) && !Class5069.method15621(this.field21709).equals(RealmsScreen.getLocalizedString("mco.configure.world.invites.normal.tooltip"))) {
+                        if (Class5069.method15621(this.field21709).equals(RealmsScreen.getLocalizedString("mco.configure.world.invites.remove.tooltip"))) {
                             Class5069.method15611(this.field21709, n2);
                         }
                     }
@@ -84,7 +84,7 @@ public class Class5060 extends Class5056
     public void method15533(final int n) {
         this.method15519(n);
         if (n != -1) {
-            Class7847.method25381(Class5046.method15439("narrator.select", Class5069.method15609(this.field21709).field28682.get(n).method22850()));
+            Realms.narrateNow(RealmsScreen.method15439("narrator.select", Class5069.method15609(this.field21709).field28682.get(n).method22850()));
         }
         this.method15545(n);
     }

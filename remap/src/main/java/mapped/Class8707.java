@@ -10,7 +10,7 @@ import com.google.gson.JsonSyntaxException;
 
 public class Class8707
 {
-    private static Class869 field36586;
+    private static Minecraft field36586;
     private static Class1884 field36587;
     public static Class6153 field36588;
     public static Class6153 field36589;
@@ -63,7 +63,7 @@ public class Class8707
             Class8726.method30012();
             Class8707.field36588.method18402(true);
             Class8707.field36589.method18402(true);
-            Class8726.method30056(256, Class869.field4623);
+            Class8726.method30056(256, Minecraft.field4623);
             Class8726.method30057(5889);
             Class8726.method30058();
             Class8726.method30061(0.0, Class8707.field36586.field4632.method7692() / Class8707.field36586.field4632.method7700(), Class8707.field36586.field4632.method7693() / Class8707.field36586.field4632.method7700(), 0.0, 1000.0, 3000.0);
@@ -91,7 +91,7 @@ public class Class8707
             Class8707.field36588.method18393();
             Class8707.field36588.method18399(Class8707.field36586.field4667.field24886, Class8707.field36586.field4667.field24887);
             GL11.glPopMatrix();
-            Class8726.method30056(256, Class869.field4623);
+            Class8726.method30056(256, Minecraft.field4623);
             Class8726.method30057(5889);
             Class8726.method30058();
             Class8726.method30061(0.0, Class8707.field36586.field4632.method7692() / Class8707.field36586.field4632.method7700(), Class8707.field36586.field4632.method7693() / Class8707.field36586.field4632.method7700(), 0.0, 1000.0, 3000.0);
@@ -104,7 +104,7 @@ public class Class8707
     }
     
     static {
-        Class8707.field36586 = Class869.method5277();
+        Class8707.field36586 = Minecraft.method5277();
         Class8707.field36590 = Class8707.field36586.field4667.field24886;
         Class8707.field36591 = Class8707.field36586.field4667.field24887;
         Class8707.field36592 = 0;

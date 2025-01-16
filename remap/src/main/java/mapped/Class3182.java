@@ -78,9 +78,9 @@ public class Class3182 extends Class3167
     }
     
     public boolean method9981(final BlockPos class354) {
-        final BlockState method6701 = Class3182.field15514.field4683.getBlockState(class354);
-        final BlockState method6702 = Class3182.field15514.field4683.getBlockState(class354.method1137());
-        final BlockState method6703 = Class3182.field15514.field4683.getBlockState(class354.method1138(2));
+        final BlockState method6701 = Class3182.field15514.world.getBlockState(class354);
+        final BlockState method6702 = Class3182.field15514.world.getBlockState(class354.method1137());
+        final BlockState method6703 = Class3182.field15514.world.getBlockState(class354.method1138(2));
         if (method6701.isSolid()) {
             if (method6702.method21706()) {
                 if (method6703.method21706()) {
@@ -190,7 +190,7 @@ public class Class3182 extends Class3167
                     class5744.method17041(n2);
                     final int field2743 = Class3182.field15514.field4684.field3006.field2743;
                     Class3182.field15514.field4684.field3006.field2743 = this.field15569;
-                    final Class2201 method27319 = Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.field4683, Class316.field1877, new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
+                    final Class2201 method27319 = Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.world, Class316.field1877, new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
                     Class3182.field15514.field4684.method2707(Class316.field1877);
                     if (method27319 == Class2201.field13400) {
                         ++this.field15571;
@@ -198,11 +198,11 @@ public class Class3182 extends Class3167
                         Class3182.field15514.field4684.field4085.field24728 = true;
                         Class3182.field15514.field4684.field3006.field2743 = this.field15570;
                         final BlockRayTraceResult class5745 = new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568.method1137()), Direction.UP, this.field15568.method1137(), false);
-                        Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.field4683, Class316.field1877, class5745);
+                        Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.world, Class316.field1877, class5745);
                         Class3182.field15514.field4684.method2707(Class316.field1877);
                         Class3182.field15514.field4684.field4085.field24728 = false;
                         Class3182.field15514.method5269().method17292(new Class4336(Class3182.field15514.field4684, Class287.field1592));
-                        Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.field4683, Class316.field1877, class5745);
+                        Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.world, Class316.field1877, class5745);
                     }
                 }
             }

@@ -8,8 +8,7 @@ import java.net.HttpURLConnection;
 import java.awt.image.BufferedImage;
 import java.util.Map;
 import org.apache.commons.codec.binary.Base64;
-import java.io.OutputStream;
-import java.awt.image.RenderedImage;
+
 import java.io.ByteArrayOutputStream;
 import org.apache.commons.io.IOUtils;
 import javax.imageio.ImageIO;
@@ -35,7 +34,7 @@ public final class Class911 extends Thread
             URLConnection urlConnection = null;
             Class8952.method31763().debug("Downloading http texture from {}", (Object)url);
             try {
-                urlConnection = new URL(url).openConnection(Class7847.method25352());
+                urlConnection = new URL(url).openConnection(Realms.method25352());
                 urlConnection.setDoInput(true);
                 urlConnection.setDoOutput(false);
                 urlConnection.connect();

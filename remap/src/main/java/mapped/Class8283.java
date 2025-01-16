@@ -33,7 +33,7 @@ public class Class8283
     }
     
     private static void method27526(final File parent, final String child, final int n, final int n2, final Class6153 class6153, final Consumer<ITextComponent> consumer) {
-        final Class869 method28894 = Config.method28894();
+        final Minecraft method28894 = Config.method28894();
         final Class1925 method28895 = method28894.method5332();
         final Class5760 method28896 = Config.method28962();
         final int method28897 = method28895.method7692();

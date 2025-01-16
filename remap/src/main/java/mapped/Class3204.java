@@ -87,7 +87,7 @@ public class Class3204 extends Class3167
     public void method10044(final Class5738 class5738) {
         if (this.method9906()) {
             if (this.method9887("Speed Mode").equals("Cubecraft") && !Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
-                if (Class3204.field15514.field4683.method6981(Class3204.field15514.field4684, Class3204.field15514.field4684.boundingBox.expand(0.0, -1.5, 0.0).contract(0.05, 0.0, 0.05).contract(-0.05, 0.0, -0.05)).count() == 0L) {
+                if (Class3204.field15514.world.method6981(Class3204.field15514.field4684, Class3204.field15514.field4684.boundingBox.expand(0.0, -1.5, 0.0).contract(0.05, 0.0, 0.05).contract(-0.05, 0.0, -0.05)).count() == 0L) {
                     if (Class3204.field15514.field4684.fallDistance < 1.0f) {
                         class5738.method17026(true);
                     }
@@ -135,7 +135,7 @@ public class Class3204 extends Class3167
                     if (!this.method9914().method9887("ItemSpoof").equals("None")) {
                         this.field15628.method10280();
                     }
-                    Class3204.field15514.field4682.method27319(Class3204.field15514.field4684, Class3204.field15514.field4683, this.field15627, class5745);
+                    Class3204.field15514.field4682.method27319(Class3204.field15514.field4684, Class3204.field15514.world, this.field15627, class5745);
                     if (!this.method9914().method9883("NoSwing")) {
                         Class3204.field15514.field4684.method2707(this.field15627);
                     }

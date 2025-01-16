@@ -14,7 +14,7 @@ public class Class4941 extends Class4800
     public static Class9572 field21224;
     private Class7776 field21225;
     private Class4813 field21226;
-    public static Class527 field21227;
+    public static Screen field21227;
     
     public Class4941() {
         super("options");
@@ -33,7 +33,7 @@ public class Class4941 extends Class4800
         if (Class4941.field21224.method35857() == Class2186.field12965) {
             if (Class4941.field21224.method35858() == 0.0f) {
                 if (Class4941.field21227 != null) {
-                    Class869.method5277().method5244(Class4941.field21227);
+                    Minecraft.method5277().method5244(Class4941.field21227);
                 }
             }
         }
@@ -76,7 +76,7 @@ public class Class4941 extends Class4800
         }
     }
     
-    public static void method14887(final Class527 field21227) {
+    public static void method14887(final Screen field21227) {
         Class4941.field21227 = field21227;
         Class4941.field21224.method35855(Class2186.field12965);
     }
@@ -85,7 +85,7 @@ public class Class4941 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class869.method5277().method5244(null);
+            Minecraft.method5277().method5244(null);
         }
     }
     

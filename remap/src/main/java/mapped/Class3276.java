@@ -27,11 +27,11 @@ public class Class3276 extends Class3167
         this.field15773 = new Vec3d(Class3276.field15514.field4684.posX, Class3276.field15514.field4684.posY, Class3276.field15514.field4684.posZ);
         this.field15774 = Class3276.field15514.field4684.rotationYaw;
         this.field15775 = Class3276.field15514.field4684.rotationPitch;
-        Class3276.field15771 = new Class755(Class3276.field15514.field4683, Class3276.field15514.field4684.method2844());
+        Class3276.field15771 = new Class755(Class3276.field15514.world, Class3276.field15514.field4684.method2844());
         Class3276.field15771.field3006 = Class3276.field15514.field4684.field3006;
         Class3276.field15771.method1728(this.field15773.x, this.field15773.y, this.field15773.z, this.field15774, this.field15775);
         Class3276.field15771.field2953 = Class3276.field15514.field4684.field2953;
-        Class3276.field15514.field4683.method6819(-1, Class3276.field15771);
+        Class3276.field15514.world.method6819(-1, Class3276.field15771);
     }
     
     @Override
@@ -40,7 +40,7 @@ public class Class3276 extends Class3167
             Class3276.field15514.method5269().method17292(this.field15772.get(i));
         }
         this.field15772.clear();
-        Class3276.field15514.field4683.method6821(-1);
+        Class3276.field15514.world.method6821(-1);
     }
     
     @Class6753

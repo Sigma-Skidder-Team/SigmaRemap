@@ -63,10 +63,10 @@ public class Class3325 extends Class3167
         if (Class3325.field15514.field4684 == null) {
             return;
         }
-        if (Class869.method5277().field4648.field23466) {
+        if (Minecraft.method5277().field4648.field23466) {
             return;
         }
-        if (!Class869.method5277().field4648.field23464) {
+        if (!Minecraft.method5277().field4648.field23464) {
             final float min = Math.min(1.0f, 0.6f + this.field15925.method35858() * 4.0f);
             final String string = Class3325.field15514.field4684.method1894().getX() + " " + Class3325.field15514.field4684.method1894().getY() + " " + Class3325.field15514.field4684.method1894().getZ();
             final int n = 85;

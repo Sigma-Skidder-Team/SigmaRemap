@@ -25,9 +25,9 @@ public class Class613 extends Class608<Class639>
     public int field3582;
     public final /* synthetic */ Class691 field3583;
     
-    public Class613(final Class691 field3583, final Class869 class869) {
+    public Class613(final Class691 field3583, final Minecraft class869) {
         this.field3583 = field3583;
-        super(class869, field3583.field3152, field3583.field3153, 32, field3583.field3153 - 64, 20);
+        super(class869, field3583.width, field3583.height, 32, field3583.height - 64, 20);
         this.field3577 = new int[] { 3, 4, 1, 2, 5, 6 };
         this.field3578 = -1;
         this.field3580 = new Class4467(this, null);
@@ -103,7 +103,7 @@ public class Class613 extends Class608<Class639>
     
     @Override
     public void method3545() {
-        this.field3583.method3041();
+        this.field3583.renderBackground();
     }
     
     @Override
@@ -157,7 +157,7 @@ public class Class613 extends Class608<Class639>
                     if (n < n3 + 40 || n > n3 + 40 + 20) {
                         return;
                     }
-                    this.method3587(this.method3588(this.field3579.get(this.method3040().indexOf(class639))), n, n2);
+                    this.method3587(this.method3588(this.field3579.get(this.children().indexOf(class639))), n, n2);
                 }
             }
         }
@@ -168,10 +168,10 @@ public class Class613 extends Class608<Class639>
             final String method8461 = class2250.getFormattedText();
             final int n3 = n + 12;
             final int n4 = n2 - 12;
-            this.method3189(n3 - 3, n4 - 3, n3 + this.field3583.field3156.method6617(method8461) + 3, n4 + 8 + 3, -1073741824, -1073741824);
+            this.method3189(n3 - 3, n4 - 3, n3 + this.field3583.font.method6617(method8461) + 3, n4 + 8 + 3, -1073741824, -1073741824);
             Class8726.method30059();
             Class8726.method30065(0.0f, 0.0f, 400.0f);
-            this.field3583.field3156.method6609(method8461, (float)n3, (float)n4, -1);
+            this.field3583.font.method6609(method8461, (float)n3, (float)n4, -1);
             Class8726.method30060();
         }
     }

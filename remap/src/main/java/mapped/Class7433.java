@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.Locale;
 
-public class Class7433 extends Class7422
+public class Class7433 extends ValueObject
 {
     private final String field28666;
     private final int field28667;

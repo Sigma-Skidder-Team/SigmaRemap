@@ -34,7 +34,7 @@ public class Class622 extends Class593<Class622>
     }
     
     @Override
-    public List<? extends Class574> method3040() {
+    public List<? extends IGuiEventListener> children() {
         return this.field3602;
     }
 }

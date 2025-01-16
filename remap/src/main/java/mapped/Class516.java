@@ -12,7 +12,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.Set;
 
-public abstract class Class516<T extends Class3418> extends Class527 implements Class725<T>
+public abstract class Class516<T extends Class3418> extends Screen implements Class725<T>
 {
     public static final ResourceLocation field3074;
     public int field3075;
@@ -58,10 +58,10 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
-        this.field3079 = (this.field3152 - this.field3075) / 2;
-        this.field3080 = (this.field3153 - this.field3076) / 2;
+    public void init() {
+        super.init();
+        this.field3079 = (this.width - this.field3075) / 2;
+        this.field3080 = (this.height - this.field3076) / 2;
     }
     
     @Override
@@ -98,7 +98,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
             }
         }
         this.method2973(n, n2);
-        final Class464 field3084 = this.field3150.field4684.field3006;
+        final Class464 field3084 = this.minecraft.field4684.field3006;
         ItemStack class8321 = this.field3084.method27620() ? field3084.method2375() : this.field3084;
         if (!class8321.method27620()) {
             final int n4 = this.field3084.method27620() ? 8 : 16;
@@ -131,7 +131,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     public void method2977(final int n, final int n2) {
-        if (this.field3150.field4684.field3006.method2375().method27620()) {
+        if (this.minecraft.field4684.field3006.method2375().method27620()) {
             if (this.field3081 != null) {
                 if (this.field3081.method20054()) {
                     this.method3014(this.field3081.method20053(), n, n2);
@@ -143,11 +143,11 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     private void method2978(final ItemStack class8321, final int n, final int n2, final String s) {
         Class8726.method30065(0.0f, 0.0f, 32.0f);
         this.method3304(200);
-        this.field3151.field9952 = 200.0f;
-        this.field3151.method6540(class8321, n, n2);
-        this.field3151.method6543(this.field3156, class8321, n, n2 - (this.field3084.method27620() ? 0 : 8), s);
+        this.itemRenderer.field9952 = 200.0f;
+        this.itemRenderer.method6540(class8321, n, n2);
+        this.itemRenderer.method6543(this.font, class8321, n, n2 - (this.field3084.method27620() ? 0 : 8), s);
         this.method3304(0);
-        this.field3151.field9952 = 0.0f;
+        this.itemRenderer.field9952 = 0.0f;
     }
     
     public void method2973(final int n, final int n2) {
@@ -173,7 +173,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
             n = 0;
         }
         int n2 = n;
-        final ItemStack method2375 = this.field3150.field4684.field3006.method2375();
+        final ItemStack method2375 = this.minecraft.field4684.field3006.method2375();
         String string = null;
         Label_0095: {
             if (class6601 == this.field3082) {
@@ -212,13 +212,13 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
             }
         }
         this.method3304(100);
-        this.field3151.field9952 = 100.0f;
+        this.itemRenderer.field9952 = 100.0f;
         if (class6602.method27620()) {
             if (class6601.method20062()) {
                 final Pair<ResourceLocation, ResourceLocation> method2376 = class6601.method20059();
                 if (method2376 != null) {
-                    final Class1912 class6603 = this.field3150.method5296((ResourceLocation)method2376.getFirst()).apply((ResourceLocation)method2376.getSecond());
-                    this.field3150.method5290().method5849(class6603.method7504().method6340());
+                    final Class1912 class6603 = this.minecraft.method5296((ResourceLocation)method2376.getFirst()).apply((ResourceLocation)method2376.getSecond());
+                    this.minecraft.method5290().method5849(class6603.method7504().method6340());
                     Class565.method3298(field26175, field26176, this.method3303(), 16, 16, class6603);
                     n2 = 1;
                 }
@@ -229,15 +229,15 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                 Class565.method3293(field26175, field26176, field26175 + 16, field26176 + 16, -2130706433);
             }
             Class8726.method30008();
-            this.field3151.method6541(this.field3150.field4684, class6602, field26175, field26176);
-            this.field3151.method6543(this.field3156, class6602, field26175, field26176, string);
+            this.itemRenderer.method6541(this.minecraft.field4684, class6602, field26175, field26176);
+            this.itemRenderer.method6543(this.font, class6602, field26175, field26176, string);
         }
-        this.field3151.field9952 = 0.0f;
+        this.itemRenderer.field9952 = 0.0f;
         this.method3304(0);
     }
     
     private void method2980() {
-        final ItemStack method2375 = this.field3150.field4684.field3006.method2375();
+        final ItemStack method2375 = this.minecraft.field4684.field3006.method2375();
         if (!method2375.method27620()) {
             if (this.field3093) {
                 if (this.field3094 != 2) {
@@ -272,9 +272,9 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
-        if (!super.method2982(n, n2, n3)) {
-            final boolean method1067 = this.field3150.field4648.field23447.method1067(n3);
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
+        if (!super.mouseClicked(n, n2, n3)) {
+            final boolean method1067 = this.minecraft.field4648.field23447.method1067(n3);
             final Class6601 method1068 = this.method2981(n, n2);
             final long method1069 = Util.method27837();
             boolean field3101 = false;
@@ -307,24 +307,24 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                 if (method1070) {
                     field3102 = -999;
                 }
-                if (this.field3150.field4648.field23429) {
+                if (this.minecraft.field4648.field23429) {
                     if (method1070) {
-                        if (this.field3150.field4684.field3006.method2375().method27620()) {
-                            this.field3150.method5244(null);
+                        if (this.minecraft.field4684.field3006.method2375().method27620()) {
+                            this.minecraft.method5244(null);
                             return true;
                         }
                     }
                 }
                 if (field3102 != -1) {
-                    if (!this.field3150.field4648.field23429) {
+                    if (!this.minecraft.field4648.field23429) {
                         if (!this.field3093) {
-                            if (!this.field3150.field4684.field3006.method2375().method27620()) {
+                            if (!this.minecraft.field4684.field3006.method2375().method27620()) {
                                 this.field3093 = true;
                                 this.field3095 = n3;
                                 this.field3092.clear();
                                 if (n3 != 0) {
                                     if (n3 != 1) {
-                                        if (this.field3150.field4648.field23447.method1067(n3)) {
+                                        if (this.minecraft.field4648.field23447.method1067(n3)) {
                                             this.field3094 = 2;
                                         }
                                     }
@@ -337,8 +337,8 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                                 }
                             }
                             else {
-                                if (!this.field3150.field4648.field23447.method1067(n3)) {
-                                    final boolean b = field3102 != -999 && (Class8341.method27798(Class869.method5277().method5332().method7690(), 340) || Class8341.method27798(Class869.method5277().method5332().method7690(), 344));
+                                if (!this.minecraft.field4648.field23447.method1067(n3)) {
+                                    final boolean b = field3102 != -999 && (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 340) || Class8341.method27798(Minecraft.method5277().method5332().method7690(), 344));
                                     Class2133 class2133 = Class2133.field12437;
                                     if (!b) {
                                         if (field3102 == -999) {
@@ -390,10 +390,10 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     @Override
-    public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
+    public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
         final Class6601 method2981 = this.method2981(n, n2);
-        final ItemStack method2982 = this.field3150.field4684.field3006.method2375();
-        if (this.field3082 != null && this.field3150.field4648.field23429) {
+        final ItemStack method2982 = this.minecraft.field4684.field3006.method2375();
+        if (this.field3082 != null && this.minecraft.field4648.field23429) {
             if (n3 == 0 || n3 == 1) {
                 if (!this.field3084.method27620()) {
                     if (this.field3084.method27690() > 1) {
@@ -442,7 +442,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     @Override
-    public boolean method2985(final double n, final double n2, final int n3) {
+    public boolean mouseReleased(final double n, final double n2, final int n3) {
         final Class6601 method2981 = this.method2981(n, n2);
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
@@ -459,7 +459,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                 if (method2981 != null) {
                     if (n3 == 0) {
                         if (this.field3077.method10857(ItemStack.field34174, method2981)) {
-                            if (!Class527.method3047()) {
+                            if (!Screen.method3047()) {
                                 this.method2988(method2981, field3081, n3, Class2133.field12443);
                             }
                             else if (!this.field3102.method27620()) {
@@ -467,7 +467,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                                     if (class6601 == null) {
                                         continue;
                                     }
-                                    if (!class6601.method20061(this.field3150.field4684)) {
+                                    if (!class6601.method20061(this.minecraft.field4684)) {
                                         continue;
                                     }
                                     if (!class6601.method20054()) {
@@ -498,7 +498,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                 this.field3096 = false;
                 return true;
             }
-            if (this.field3082 != null && this.field3150.field4648.field23429) {
+            if (this.field3082 != null && this.minecraft.field4648.field23429) {
                 if (n3 == 0 || n3 == 1) {
                     if (this.field3084.method27620()) {
                         if (method2981 != this.field3082) {
@@ -512,7 +512,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                                 if (method2983) {
                                     this.method2988(this.field3082, this.field3082.field26174, n3, Class2133.field12437);
                                     this.method2988(method2981, field3081, 0, Class2133.field12437);
-                                    if (!this.field3150.field4684.field3006.method2375().method27620()) {
+                                    if (!this.minecraft.field4684.field3006.method2375().method27620()) {
                                         this.method2988(this.field3082, this.field3082.field26174, n3, Class2133.field12437);
                                         this.field3085 = MathHelper.floor(n - field3079);
                                         this.field3086 = MathHelper.floor(n2 - field3080);
@@ -545,9 +545,9 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                 }
                 this.method2988(null, -999, Class3418.method10891(2, this.field3094), Class2133.field12442);
             }
-            else if (!this.field3150.field4684.field3006.method2375().method27620()) {
-                if (!this.field3150.field4648.field23447.method1067(n3)) {
-                    final boolean b = field3081 != -999 && (Class8341.method27798(Class869.method5277().method5332().method7690(), 340) || Class8341.method27798(Class869.method5277().method5332().method7690(), 344));
+            else if (!this.minecraft.field4684.field3006.method2375().method27620()) {
+                if (!this.minecraft.field4648.field23447.method1067(n3)) {
+                    final boolean b = field3081 != -999 && (Class8341.method27798(Minecraft.method5277().method5332().method7690(), 340) || Class8341.method27798(Minecraft.method5277().method5332().method7690(), 344));
                     if (b) {
                         this.field3102 = ((method2981 != null && method2981.method20054()) ? method2981.method20053().method27641() : ItemStack.field34174);
                     }
@@ -558,7 +558,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
                 }
             }
         }
-        if (this.field3150.field4684.field3006.method2375().method27620()) {
+        if (this.minecraft.field4684.field3006.method2375().method27620()) {
             this.field3098 = 0L;
         }
         this.field3093 = false;
@@ -590,7 +590,7 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
         if (class6601 != null) {
             field26174 = class6601.field26174;
         }
-        this.field3150.field4682.method27324(this.field3077.field16154, field26174, n, class6602, this.field3150.field4684);
+        this.minecraft.field4682.method27324(this.field3077.field16154, field26174, n, class6602, this.minecraft.field4684);
     }
     
     @Override
@@ -599,17 +599,17 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
-        if (!super.method2972(n, n2, n3)) {
-            if (n == 256 || this.field3150.field4648.field23442.method1066(n, n2)) {
-                this.field3150.field4684.method2814();
+    public boolean keyPressed(final int n, final int n2, final int n3) {
+        if (!super.keyPressed(n, n2, n3)) {
+            if (n == 256 || this.minecraft.field4648.field23442.method1066(n, n2)) {
+                this.minecraft.field4684.method2814();
             }
             this.method2990(n, n2);
             if (this.field3081 != null) {
                 if (this.field3081.method20054()) {
-                    if (!this.field3150.field4648.field23447.method1066(n, n2)) {
-                        if (this.field3150.field4648.field23444.method1066(n, n2)) {
-                            this.method2988(this.field3081, this.field3081.field26174, Class527.method3046() ? 1 : 0, Class2133.field12441);
+                    if (!this.minecraft.field4648.field23447.method1066(n, n2)) {
+                        if (this.minecraft.field4648.field23444.method1066(n, n2)) {
+                            this.method2988(this.field3081, this.field3081.field26174, Screen.method3046() ? 1 : 0, Class2133.field12441);
                         }
                     }
                     else {
@@ -623,10 +623,10 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     public boolean method2990(final int n, final int n2) {
-        if (this.field3150.field4684.field3006.method2375().method27620()) {
+        if (this.minecraft.field4684.field3006.method2375().method27620()) {
             if (this.field3081 != null) {
                 for (int i = 0; i < 9; ++i) {
-                    if (this.field3150.field4648.field23457[i].method1066(n, n2)) {
+                    if (this.minecraft.field4648.field23457[i].method1066(n, n2)) {
                         this.method2988(this.field3081, this.field3081.field26174, i, Class2133.field12439);
                         return true;
                     }
@@ -637,9 +637,9 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     @Override
-    public void method2971() {
-        if (this.field3150.field4684 != null) {
-            this.field3077.method10859(this.field3150.field4684);
+    public void removed() {
+        if (this.minecraft.field4684 != null) {
+            this.field3077.method10859(this.minecraft.field4684);
         }
     }
     
@@ -649,10 +649,10 @@ public abstract class Class516<T extends Class3418> extends Class527 implements 
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
-        if (!this.field3150.field4684.method1768() || this.field3150.field4684.removed) {
-            this.field3150.field4684.method2814();
+    public void tick() {
+        super.tick();
+        if (!this.minecraft.field4684.method1768() || this.minecraft.field4684.removed) {
+            this.minecraft.field4684.method2814();
         }
     }
     

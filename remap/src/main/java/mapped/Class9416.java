@@ -19,7 +19,7 @@ public class Class9416
     public float field40399;
     public int field40400;
     public Class7799 field40401;
-    private static Class869 field40402;
+    private static Minecraft field40402;
     public Vec3i field40403;
     public Class8797 field40404;
     public Class8733 field40405;
@@ -518,6 +518,6 @@ public class Class9416
     }
     
     static {
-        Class9416.field40402 = Class869.method5277();
+        Class9416.field40402 = Minecraft.method5277();
     }
 }

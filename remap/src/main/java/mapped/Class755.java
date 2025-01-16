@@ -87,6 +87,6 @@ public class Class755 extends Class754
     
     @Override
     public void sendMessage(final ITextComponent class2250) {
-        Class869.method5277().field4647.method3807().method3761(class2250);
+        Minecraft.method5277().field4647.method3807().method3761(class2250);
     }
 }

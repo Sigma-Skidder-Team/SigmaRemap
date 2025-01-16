@@ -11,7 +11,7 @@ import java.util.function.BiFunction;
 import java.util.function.Predicate;
 import java.util.function.Consumer;
 
-public class Class576 extends Class573 implements Class563, Class574
+public class Class576 extends Class573 implements Class563, IGuiEventListener
 {
     private final Class1844 field3438;
     private String field3439;
@@ -136,7 +136,7 @@ public class Class576 extends Class573 implements Class563, Class574
     }
     
     private void method3383(final int n) {
-        if (!Class527.method3046()) {
+        if (!Screen.method3046()) {
             this.method3385(n);
         }
         else {
@@ -258,28 +258,28 @@ public class Class576 extends Class573 implements Class563, Class574
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         if (!this.method3394()) {
             return false;
         }
-        this.field3445 = Class527.method3047();
-        if (Class527.method3052(n)) {
+        this.field3445 = Screen.method3047();
+        if (Screen.method3052(n)) {
             this.method3393();
             this.method3407(0);
             return true;
         }
-        if (Class527.method3051(n)) {
-            Class869.method5277().field4651.method22508(this.method3379());
+        if (Screen.method3051(n)) {
+            Minecraft.method5277().field4651.method22508(this.method3379());
             return true;
         }
-        if (Class527.method3050(n)) {
+        if (Screen.method3050(n)) {
             if (this.field3444) {
-                this.method3381(Class869.method5277().field4651.method22507());
+                this.method3381(Minecraft.method5277().field4651.method22507());
             }
             return true;
         }
-        if (Class527.method3049(n)) {
-            Class869.method5277().field4651.method22508(this.method3379());
+        if (Screen.method3049(n)) {
+            Minecraft.method5277().field4651.method22508(this.method3379());
             if (this.field3444) {
                 this.method3381("");
             }
@@ -290,7 +290,7 @@ public class Class576 extends Class573 implements Class563, Class574
                 if (this.field3444) {
                     this.field3445 = false;
                     this.method3383(-1);
-                    this.field3445 = Class527.method3047();
+                    this.field3445 = Screen.method3047();
                 }
                 return true;
             }
@@ -301,12 +301,12 @@ public class Class576 extends Class573 implements Class563, Class574
                 if (this.field3444) {
                     this.field3445 = false;
                     this.method3383(1);
-                    this.field3445 = Class527.method3047();
+                    this.field3445 = Screen.method3047();
                 }
                 return true;
             }
             case 262: {
-                if (Class527.method3046()) {
+                if (Screen.method3046()) {
                     this.method3390(this.method3386(1));
                 }
                 else {
@@ -315,7 +315,7 @@ public class Class576 extends Class573 implements Class563, Class574
                 return true;
             }
             case 263: {
-                if (Class527.method3046()) {
+                if (Screen.method3046()) {
                     this.method3390(this.method3386(-1));
                 }
                 else {
@@ -346,7 +346,7 @@ public class Class576 extends Class573 implements Class563, Class574
     }
     
     @Override
-    public boolean method3004(final char c, final int n) {
+    public boolean charTyped(final char c, final int n) {
         if (!this.method3394()) {
             return false;
         }
@@ -360,7 +360,7 @@ public class Class576 extends Class573 implements Class563, Class574
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (this.method3409()) {
             boolean b = false;
             Label_0078: {
@@ -537,12 +537,12 @@ public class Class576 extends Class573 implements Class563, Class574
     }
     
     @Override
-    public boolean method3281(final boolean b) {
-        return this.field3432 && this.field3444 && super.method3281(b);
+    public boolean changeFocus(final boolean b) {
+        return this.field3432 && this.field3444 && super.changeFocus(b);
     }
     
     @Override
-    public boolean method3055(final double n, final double n2) {
+    public boolean isMouseOver(final double n, final double n2) {
         if (this.field3432) {
             if (n >= this.field3426) {
                 if (n < this.field3426 + this.field3424) {

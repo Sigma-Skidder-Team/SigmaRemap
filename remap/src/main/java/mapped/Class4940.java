@@ -11,7 +11,7 @@ import java.util.Date;
 
 public class Class4940 extends Class4800
 {
-    private static Class869 field21209;
+    private static Minecraft field21209;
     private Class7776 field21210;
     public Date field21211;
     public Class4850 field21212;
@@ -61,7 +61,7 @@ public class Class4940 extends Class4800
         while (iterator.hasNext()) {
             list.add(new Class8799(iterator.next()));
         }
-        final Iterator<Map.Entry<Class<? extends Class527>, String>> iterator2 = Class9000.field37983.entrySet().iterator();
+        final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator2 = Class9000.field37983.entrySet().iterator();
         while (iterator2.hasNext()) {
             list.add(new Class8799(((Map.Entry<Class, V>)iterator2.next()).getKey()));
         }
@@ -132,6 +132,6 @@ public class Class4940 extends Class4800
     }
     
     static {
-        Class4940.field21209 = Class869.method5277();
+        Class4940.field21209 = Minecraft.method5277();
     }
 }

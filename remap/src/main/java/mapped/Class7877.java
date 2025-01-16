@@ -48,8 +48,8 @@ public class Class7877
         this.field32334 = field32334;
     }
     
-    public void method25526(final Class869 class869, final int n, final int n2, final boolean b, final float n3) {
-        if (!Class527.method3046()) {
+    public void method25526(final Minecraft class869, final int n, final int n2, final boolean b, final float n3) {
+        if (!Screen.method3046()) {
             this.field32336 += n3;
         }
         for (int i = 0; i < this.field32335.size(); ++i) {
@@ -63,13 +63,13 @@ public class Class7877
                 Class565.method3293(n4, n5, n4 + 16, n5 + 16, 822018048);
             }
             final ItemStack method26164 = class870.method26164();
-            final Class1796 method26165 = class869.method5307();
+            final Class1796 method26165 = class869.getItemRenderer();
             method26165.method6541(class869.field4684, method26164, n4, n5);
             Class8726.method30009(516);
             Class565.method3293(n4, n5, n4 + 16, n5 + 16, 822083583);
             Class8726.method30009(515);
             if (i == 0) {
-                method26165.method6542(class869.field4643, method26164, n4, n5);
+                method26165.method6542(class869.fontRenderer, method26164, n4, n5);
             }
         }
     }

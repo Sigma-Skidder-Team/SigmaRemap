@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class Class716 extends Class698
 {
-    public Class527 field3910;
+    public Screen field3910;
     private Class8297 field3911;
     private int field3912;
     private Class603 field3913;
@@ -25,7 +25,7 @@ public class Class716 extends Class698
     public static final int field3922 = 3;
     public static final int field3923 = 4;
     
-    public Class716(final Class527 field3910, final Class5760 class5760) {
+    public Class716(final Screen field3910, final Class5760 class5760) {
         super(new StringTextComponent(Class8822.method30773("of.options.shadersTitle", new Object[0])));
         this.field3911 = new Class8297(this, new Class7301());
         this.field3912 = -1;
@@ -34,18 +34,18 @@ public class Class716 extends Class698
     }
     
     @Override
-    public void method2969() {
+    public void init() {
         if (Class9216.field39294 == null) {
             Class9216.method33703();
         }
         final int n = 120;
         final int n2 = 20;
-        final int n3 = this.field3152 - n - 10;
+        final int n3 = this.width - n - 10;
         final int n4 = 30;
         final int n5 = 20;
-        final int n6 = this.field3152 - n - 20;
-        this.field3913 = new Class603(this, n6, this.field3153, n4, this.field3153 - 50, 16);
-        this.field3149.add(this.field3913);
+        final int n6 = this.width - n - 20;
+        this.field3913 = new Class603(this, n6, this.height, n4, this.height - 50, 16);
+        this.children.add(this.field3913);
         this.method3029(new Class677(Class2222.field13663, n3, 0 * n5 + n4, n, n2));
         this.method3029(new Class677(Class2222.field13664, n3, 1 * n5 + n4, n, n2));
         this.method3029(new Class677(Class2222.field13665, n3, 2 * n5 + n4, n, n2));
@@ -56,12 +56,12 @@ public class Class716 extends Class698
         this.method3029(new Class677(Class2222.field13671, n3, 7 * n5 + n4, n, n2));
         final int min = Math.min(150, n6 / 2 - 10);
         final int n7 = n6 / 4 - min / 2;
-        final int n8 = this.field3153 - 25;
+        final int n8 = this.height - 25;
         this.method3029(new Class673(201, n7, n8, min - 22 + 1, n2, Class4647.method13876("of.options.shaders.shadersFolder")));
         this.method3029(new Class676(210, n7 + min - 22 - 1, n8));
-        this.method3029(new Class673(202, n6 / 4 * 3 - min / 2, this.field3153 - 25, min, n2, Class8822.method30773("gui.done", new Object[0])));
-        this.method3029(new Class673(203, n3, this.field3153 - 25, n, n2, Class4647.method13876("of.options.shaders.shaderOptions")));
-        this.method3470(this.field3913);
+        this.method3029(new Class673(202, n6 / 4 * 3 - min / 2, this.height - 25, min, n2, Class8822.method30773("gui.done", new Object[0])));
+        this.method3029(new Class673(203, n3, this.height - 25, n, n2, Class4647.method13876("of.options.shaders.shaderOptions")));
+        this.setFocused(this.field3913);
         this.method3934();
     }
     
@@ -120,7 +120,7 @@ public class Class716 extends Class698
                             }
                             boolean b = false;
                             try {
-                                Util.method27845().method977(new File(this.field3150.field4652, "shaderpacks").toURI());
+                                Util.method27845().method977(new File(this.minecraft.field4652, "shaderpacks").toURI());
                             }
                             catch (final Throwable t) {
                                 t.printStackTrace();
@@ -136,7 +136,7 @@ public class Class716 extends Class698
                         case 202: {
                             Class9216.method33705();
                             this.field3914 = true;
-                            this.field3150.method5244(this.field3910);
+                            this.minecraft.method5244(this.field3910);
                             break;
                         }
                         case 203: {
@@ -166,13 +166,13 @@ public class Class716 extends Class698
                     case 2: {
                         Class9216.field39313 = !Class9216.field39313;
                         Class9216.method33788();
-                        this.field3150.method5278();
+                        this.minecraft.method5278();
                         break;
                     }
                     case 3: {
                         Class9216.field39314 = !Class9216.field39314;
                         Class9216.method33788();
-                        this.field3150.method5278();
+                        this.minecraft.method5278();
                         break;
                     }
                     case 4: {
@@ -237,7 +237,7 @@ public class Class716 extends Class698
                         Class9216.field39315.method21678();
                         Class9216.method33747();
                         Class9216.method33788();
-                        this.field3150.method5278();
+                        this.minecraft.method5278();
                         break;
                     }
                     case 9: {
@@ -280,42 +280,42 @@ public class Class716 extends Class698
     }
     
     @Override
-    public void method2971() {
+    public void removed() {
         if (!this.field3914) {
             Class9216.method33705();
             this.field3914 = true;
         }
-        super.method2971();
+        super.removed();
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        this.method3041();
+        this.renderBackground();
         this.field3913.method2975(n, n2, n3);
         if (this.field3912 <= 0) {
             this.field3913.method3522();
             this.field3912 += 20;
         }
-        this.method3295(this.field3843, this.field3148.getFormattedText(), this.field3152 / 2, 15, 16777215);
+        this.method3295(this.field3843, this.field3148.getFormattedText(), this.width / 2, 15, 16777215);
         final String string = "OpenGL: " + Class9216.field39036 + ", " + Class9216.field39037 + ", " + Class9216.field39038;
-        if (this.field3843.method6617(string) >= this.field3152 - 5) {
-            this.method3297(this.field3843, string, 5, this.field3153 - 40, 8421504);
+        if (this.field3843.method6617(string) >= this.width - 5) {
+            this.method3297(this.field3843, string, 5, this.height - 40, 8421504);
         }
         else {
-            this.method3295(this.field3843, string, this.field3152 / 2, this.field3153 - 40, 8421504);
+            this.method3295(this.field3843, string, this.width / 2, this.height - 40, 8421504);
         }
         super.method2975(n, n2, n3);
         this.field3911.method27577(n, n2, this.field3842);
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
+    public void tick() {
+        super.tick();
         --this.field3912;
     }
     
-    public Class869 method3935() {
-        return this.field3150;
+    public Minecraft method3935() {
+        return this.minecraft;
     }
     
     public void method3184(final String s, final int n, final int n2, final int n3) {

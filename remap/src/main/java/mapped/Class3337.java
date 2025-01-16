@@ -172,7 +172,7 @@ public class Class3337 extends Class3167
     }
     
     private boolean method10564(final PlayerEntity playerEntity) {
-        return !Class3337.field15514.field4683.method6840().contains(playerEntity);
+        return !Class3337.field15514.world.method6840().contains(playerEntity);
     }
     
     private void method10565(final boolean b) {

@@ -37,7 +37,7 @@ public class Class3395 extends Class3167
                 if (n3 < 0.0) {
                     n3 *= -1.0;
                 }
-                final double n4 = 0.05 * Class869.method5338() * (n3 + 1.0);
+                final double n4 = 0.05 * Minecraft.method5338() * (n3 + 1.0);
                 if (Class3395.field15514.field4684.rotationPitch > this.method10836(method10266)[1]) {
                     final Class756 field4684 = Class3395.field15514.field4684;
                     field4684.rotationPitch -= (float)(n4 * n / 90.0 + Math.min(0.5, n2));

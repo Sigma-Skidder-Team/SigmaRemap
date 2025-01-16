@@ -12,7 +12,7 @@ public class Class5058 extends Class5056
     
     public Class5058(final Class5088 field21707) {
         this.field21707 = field21707;
-        super(field21707.method15421(), field21707.method15422(), Class7869.method25488(0), field21707.method15422() - 40, 36);
+        super(field21707.width(), field21707.height(), Class7869.method25488(0), field21707.height() - 40, 36);
     }
     
     public void method15541(final Class1951 class1951) {
@@ -46,7 +46,7 @@ public class Class5058 extends Class5056
         this.method15519(n);
         if (n != -1) {
             final Class1951 class1951 = Class5088.method15952(this.field21707).get(n);
-            Class7847.method25381(Class5046.method15439("narrator.select", Class7847.method25385(Arrays.asList(class1951.method7937(), Class5088.method15955(this.field21707, class1951), Class5088.method15957(this.field21707, class1951), Class5046.method15439("narrator.select.list.position", n + 1, Class5088.method15952(this.field21707).size())))));
+            Realms.narrateNow(RealmsScreen.method15439("narrator.select", Realms.method25385(Arrays.asList(class1951.method7937(), Class5088.method15955(this.field21707, class1951), Class5088.method15957(this.field21707, class1951), RealmsScreen.method15439("narrator.select.list.position", n + 1, Class5088.method15952(this.field21707).size())))));
         }
         Class5088.method15958(this.field21707, n);
         final Class5611 method15960 = Class5088.method15960(this.field21707);

@@ -17,15 +17,15 @@ public class Class902 extends Thread
     
     @Override
     public void run() {
-        final Class9513 method35444 = Class9513.method35444();
+        final RealmsClient method35444 = RealmsClient.func_224911_a();
         try {
             if (method35444.method35454()) {
-                Class9513.method35447();
+                RealmsClient.method35447();
                 Class5079.method15819().info("Switched to local");
                 Class5079.method15822().method32593();
             }
         }
-        catch (final Class2330 obj) {
+        catch (final RealmsServiceException obj) {
             Class5079.method15819().error("Couldn't connect to Realms: " + obj);
         }
         catch (final IOException ex) {

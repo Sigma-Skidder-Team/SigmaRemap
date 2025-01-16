@@ -15,8 +15,8 @@ public class Class5672 extends Class5611
     
     @Override
     public void method16932() {
-        final String string = "https://aka.ms/ExtendJavaRealms?subscriptionId=" + Class5083.method15866(this.field23092).field28676 + "&profileId=" + Class7847.method25357();
-        Class7847.method25376(string);
+        final String string = "https://aka.ms/ExtendJavaRealms?subscriptionId=" + Class5083.method15866(this.field23092).field28676 + "&profileId=" + Realms.method25357();
+        Realms.method25376(string);
         Class8428.method28148(string);
     }
 }

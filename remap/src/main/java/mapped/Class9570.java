@@ -967,9 +967,9 @@ public class Class9570
         Class9570.field41202 = new Class7363("net.minecraftforge.common.DimensionManager");
         Class9570.field41203 = new Class7361(Class9570.field41202, "unloadWorld");
         Class9570.field41204 = new Class7363("net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Pre");
-        Class9570.field41205 = new Class7362(Class9570.field41204, new Class[] { Class527.class, Integer.TYPE, Integer.TYPE, Float.TYPE });
+        Class9570.field41205 = new Class7362(Class9570.field41204, new Class[] { Screen.class, Integer.TYPE, Integer.TYPE, Float.TYPE });
         Class9570.field41206 = new Class7363("net.minecraftforge.client.event.GuiScreenEvent$DrawScreenEvent$Post");
-        Class9570.field41207 = new Class7362(Class9570.field41206, new Class[] { Class527.class, Integer.TYPE, Integer.TYPE, Float.TYPE });
+        Class9570.field41207 = new Class7362(Class9570.field41206, new Class[] { Screen.class, Integer.TYPE, Integer.TYPE, Float.TYPE });
         Class9570.field41208 = new Class7363("net.minecraftforge.fml.loading.progress.EarlyProgressVisualization");
         Class9570.field41209 = new Class7364(Class9570.field41208, "INSTANCE");
         Class9570.field41210 = new Class7361(Class9570.field41208, "handOffWindow");
@@ -1161,7 +1161,7 @@ public class Class9570
         Class9570.field41396 = new Class7363("net.minecraftforge.client.model.ModelLoaderRegistry");
         Class9570.field41397 = new Class7364(Class9570.field41396, "textures");
         Class9570.field41398 = new Class7363("net.minecraftforge.fml.client.gui.screen.ModListScreen");
-        Class9570.field41399 = new Class7362(Class9570.field41398, new Class[] { Class527.class });
+        Class9570.field41399 = new Class7362(Class9570.field41398, new Class[] { Screen.class });
         Class9570.field41400 = new Class7363("net.minecraftforge.client.gui.NotificationModUpdateScreen");
         Class9570.field41401 = new Class7361(Class9570.field41400, "init", new Class[] { Class548.class, Class654.class });
         Class9570.field41402 = new Class7363("net.minecraftforge.event.entity.PlaySoundAtEntityEvent");
@@ -1205,8 +1205,8 @@ public class Class9570
         Class9570.field41440 = new Class7364(Class9570.field41439, Class1727.class);
         Class9570.field41441 = new Class7363(Class1731.class);
         Class9570.field41442 = new Class7364(Class9570.field41441, Class1727.class);
-        Class9570.field41443 = new Class7363(Class869.class);
-        Class9570.field41444 = new Class7364(new Class6946(Class869.class, new Class[] { CrashReport.class }, Integer.TYPE, new Class[] { String.class }, "debugFPS"));
+        Class9570.field41443 = new Class7363(Minecraft.class);
+        Class9570.field41444 = new Class7364(new Class6946(Minecraft.class, new Class[] { CrashReport.class }, Integer.TYPE, new Class[] { String.class }, "debugFPS"));
         Class9570.field41445 = new Class7363(Class5920.class);
         Class9570.field41446 = new Class7364(Class9570.field41445, Class6300.class);
         Class9570.field41447 = new Class7363(Class5867.class);

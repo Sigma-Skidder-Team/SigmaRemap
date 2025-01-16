@@ -17,36 +17,36 @@ public class Class908 extends Thread
     
     @Override
     public void run() {
-        final Class9513 method35444 = Class9513.method35444();
+        final RealmsClient method35444 = RealmsClient.func_224911_a();
         try {
             final Class2112 method35445 = method35444.method35455();
             if (method35445.equals(Class2112.field12287)) {
                 Class5079.method15815(new Class5090(Class5079.method15811(this.field4863), true));
-                Class7847.method25362(Class5079.method15816());
+                Realms.setScreen(Class5079.method15816());
             }
             else if (method35445.equals(Class2112.field12288)) {
                 Class5079.method15815(new Class5090(Class5079.method15811(this.field4863), false));
-                Class7847.method25362(Class5079.method15816());
+                Realms.setScreen(Class5079.method15816());
             }
             else {
                 Class5079.method15817(this.field4863);
             }
         }
-        catch (final Class2330 class2330) {
+        catch (final RealmsServiceException class2330) {
             Class5079.method15818(false);
             Class5079.method15819().error("Couldn't connect to realms: ", (Object)class2330.toString());
             if (class2330.field14069 == 401) {
-                Class5079.method15815(new Class5074(Class5046.method15438("mco.error.invalid.session.title"), "Please login to your account through the launcher to use Realms", Class5079.method15811(this.field4863)));
-                Class7847.method25362(Class5079.method15816());
+                Class5079.method15815(new RealmsGenericErrorScreen(RealmsScreen.getLocalizedString("mco.error.invalid.session.title"), "Please login to your account through the launcher to use Realms", Class5079.method15811(this.field4863)));
+                Realms.setScreen(Class5079.method15816());
             }
             else {
-                Class7847.method25362(new Class5074(class2330, Class5079.method15811(this.field4863)));
+                Realms.setScreen(new RealmsGenericErrorScreen(class2330, Class5079.method15811(this.field4863)));
             }
         }
         catch (final IOException ex) {
             Class5079.method15818(false);
             Class5079.method15819().error("Couldn't connect to realms: ", (Object)ex.getMessage());
-            Class7847.method25362(new Class5074(ex.getMessage(), Class5079.method15811(this.field4863)));
+            Realms.setScreen(new RealmsGenericErrorScreen(ex.getMessage(), Class5079.method15811(this.field4863)));
         }
     }
 }

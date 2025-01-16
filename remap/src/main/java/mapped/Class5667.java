@@ -22,6 +22,6 @@ public class Class5667 extends Class5611
             class5078.method15722(n);
         }
         class5078.method15721(14);
-        Class7847.method25362(class5078);
+        Realms.setScreen(class5078);
     }
 }

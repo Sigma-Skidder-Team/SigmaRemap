@@ -56,7 +56,7 @@ public class Class1768 extends Class1767
         if (this.field9838 != null) {
             this.field9838.run();
         }
-        Class869.method5277().execute(() -> {
+        Minecraft.method5277().execute(() -> {
             this.field9840 = true;
             if (Class8726.method29984()) {
                 this.method6302(class1847);
@@ -75,7 +75,7 @@ public class Class1768 extends Class1767
     
     @Override
     public void method5871(final Class6582 class6582) throws IOException {
-        Class869.method5277().execute(() -> {
+        Minecraft.method5277().execute(() -> {
             if (!this.field9840) {
                 try {
                     super.method5871(class6583);
@@ -104,7 +104,7 @@ public class Class1768 extends Class1767
                     }
                     else {
                         try {
-                            final URLConnection urlConnection = new URL(this.field9836).openConnection(Class869.method5277().method5289());
+                            final URLConnection urlConnection = new URL(this.field9836).openConnection(Minecraft.method5277().method5289());
                             urlConnection.setDoInput(true);
                             urlConnection.setDoOutput(false);
                             urlConnection.connect();
@@ -121,7 +121,7 @@ public class Class1768 extends Class1767
                                 else {
                                     final InputStream inputStream = urlConnection.getInputStream();
                                 }
-                                Class869.method5277().execute(() -> {
+                                Minecraft.method5277().execute(() -> {
                                     this.method6303(inputStream2);
                                     final Class1846 class6584;
                                     if (class6584 != null) {
@@ -170,7 +170,7 @@ public class Class1768 extends Class1767
     
     private boolean method6304() {
         if (this.field9842) {
-            final Proxy method5289 = Class869.method5277().method5289();
+            final Proxy method5289 = Minecraft.method5277().method5289();
             return (method5289.type() == Proxy.Type.DIRECT || method5289.type() == Proxy.Type.SOCKS) && this.field9836.startsWith("http://");
         }
         return false;
@@ -178,7 +178,7 @@ public class Class1768 extends Class1767
     
     private void method6305() {
         try {
-            final Class8215 method19926 = Class6579.method19926(Class6579.method19919(this.field9836, Class869.method5277().method5289()));
+            final Class8215 method19926 = Class6579.method19926(Class6579.method19919(this.field9836, Minecraft.method5277().method5289()));
             if (method19926.method27216() / 100 != 2) {
                 return;
             }

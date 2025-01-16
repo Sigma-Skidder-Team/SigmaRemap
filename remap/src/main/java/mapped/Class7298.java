@@ -10,9 +10,9 @@ import java.awt.Rectangle;
 public class Class7298 implements Class7300
 {
     @Override
-    public Rectangle method22384(final Class527 class527, final int n, final int n2) {
-        final int x = class527.field3152 / 2 - 150;
-        int y = class527.field3153 / 6 - 7;
+    public Rectangle method22384(final Screen class527, final int n, final int n2) {
+        final int x = class527.width / 2 - 150;
+        int y = class527.height / 6 - 7;
         if (n2 <= y + 98) {
             y += 105;
         }

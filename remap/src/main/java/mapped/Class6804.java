@@ -4,14 +4,12 @@
 
 package mapped;
 
-import java.awt.image.RenderedImage;
 import java.awt.geom.AffineTransform;
 import java.awt.Color;
 import java.nio.ByteBuffer;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.BufferUtils;
 import java.awt.image.Kernel;
-import java.awt.RenderingHints;
 import java.awt.image.ConvolveOp;
 import java.awt.image.BufferedImage;
 
@@ -97,7 +95,7 @@ public class Class6804
         n3 *= (int)Class9000.field37993;
         n4 *= (int)Class9000.field37993;
         n5 *= (int)Class9000.field37993;
-        n2 = Class869.method5277().field4632.method7693() - n2 - n4;
+        n2 = Minecraft.method5277().field4632.method7693() - n2 - n4;
         if (n5 <= 0) {
             n5 = 1;
         }

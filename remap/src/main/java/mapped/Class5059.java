@@ -13,7 +13,7 @@ public class Class5059 extends Class5056<Class625>
     
     public Class5059(final Class5073 field21708) {
         this.field21708 = field21708;
-        super(field21708.method15421(), field21708.method15422(), 32, field21708.method15422() - 40, 36);
+        super(field21708.width(), field21708.height(), 32, field21708.height() - 40, 36);
     }
     
     public void method15542(final int n) {
@@ -46,7 +46,7 @@ public class Class5059 extends Class5056<Class625>
         if (n != -1) {
             final List<Class625> method15535 = Class5073.method15664(this.field21708).method15535();
             final Class7442 field3604 = method15535.get(n).field3604;
-            Class7847.method25381(Class5046.method15439("narrator.select", Class7847.method25385(Arrays.asList(field3604.field28704, field3604.field28705, Class5073.method15661(field3604), Class5046.method15439("narrator.select.list.position", n + 1, method15535.size())))));
+            Realms.narrateNow(RealmsScreen.method15439("narrator.select", Realms.method25385(Arrays.asList(field3604.field28704, field3604.field28705, Class5073.method15661(field3604), RealmsScreen.method15439("narrator.select.list.position", n + 1, method15535.size())))));
         }
         this.method15543(n);
     }

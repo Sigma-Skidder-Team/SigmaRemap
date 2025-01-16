@@ -9,9 +9,9 @@ import net.minecraft.entity.Entity;
 public class Class6112 implements Class6113
 {
     private static String[] field24819;
-    private final Class869 field24820;
+    private final Minecraft field24820;
     
-    public Class6112(final Class869 field24820) {
+    public Class6112(final Minecraft field24820) {
         this.field24820 = field24820;
     }
     

@@ -13,9 +13,9 @@ import java.util.Iterator;
 public class Class6128 implements Class6113
 {
     private static String[] field24872;
-    private final Class869 field24873;
+    private final Minecraft field24873;
     
-    public Class6128(final Class869 field24873) {
+    public Class6128(final Minecraft field24873) {
         this.field24873 = field24873;
     }
     

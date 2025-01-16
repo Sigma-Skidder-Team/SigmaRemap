@@ -9,7 +9,7 @@ import java.util.Iterator;
 import com.google.common.collect.Maps;
 import java.util.Map;
 
-public class Class557 extends Class527 implements Class558
+public class Class557 extends Screen implements Class558
 {
     private static final ResourceLocation field3336;
     private static final ResourceLocation field3337;
@@ -19,13 +19,13 @@ public class Class557 extends Class527 implements Class558
     private boolean field3341;
     
     public Class557(final Class8840 field3338) {
-        super(Class7895.field32402);
+        super(NarratorChatListener.EMPTY);
         this.field3339 = Maps.newLinkedHashMap();
         this.field3338 = field3338;
     }
     
     @Override
-    public void method2969() {
+    public void init() {
         this.field3339.clear();
         this.field3340 = null;
         this.field3338.method30870(this);
@@ -38,19 +38,19 @@ public class Class557 extends Class527 implements Class558
     }
     
     @Override
-    public void method2971() {
+    public void removed() {
         this.field3338.method30870(null);
-        final Class5799 method5269 = this.field3150.method5269();
+        final Class5799 method5269 = this.minecraft.method5269();
         if (method5269 != null) {
             method5269.method17292(Class4334.method13014());
         }
     }
     
     @Override
-    public boolean method2982(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (n3 == 0) {
-            final int n4 = (this.field3152 - 252) / 2;
-            final int n5 = (this.field3153 - 140) / 2;
+            final int n4 = (this.width - 252) / 2;
+            final int n5 = (this.height - 140) / 2;
             for (final Class572 class572 : this.field3339.values()) {
                 if (!class572.method3343(n4, n5, n, n2)) {
                     continue;
@@ -59,31 +59,31 @@ public class Class557 extends Class527 implements Class558
                 break;
             }
         }
-        return super.method2982(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
-        if (!this.field3150.field4648.field23456.method1066(n, n2)) {
-            return super.method2972(n, n2, n3);
+    public boolean keyPressed(final int n, final int n2, final int n3) {
+        if (!this.minecraft.field4648.field23456.method1066(n, n2)) {
+            return super.keyPressed(n, n2, n3);
         }
-        this.field3150.method5244(null);
-        this.field3150.field4650.method26963();
+        this.minecraft.method5244(null);
+        this.minecraft.field4650.method26963();
         return true;
     }
     
     @Override
     public void method2975(final int n, final int n2, final float n3) {
-        final int n4 = (this.field3152 - 252) / 2;
-        final int n5 = (this.field3153 - 140) / 2;
-        this.method3041();
+        final int n4 = (this.width - 252) / 2;
+        final int n5 = (this.height - 140) / 2;
+        this.renderBackground();
         this.method3260(n, n2, n4, n5);
         this.method3261(n4, n5);
         this.method3262(n, n2, n4, n5);
     }
     
     @Override
-    public boolean method2984(final double n, final double n2, final int n3, final double n4, final double n5) {
+    public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
         if (n3 == 0) {
             if (this.field3341) {
                 if (this.field3340 != null) {
@@ -111,18 +111,18 @@ public class Class557 extends Class527 implements Class558
         else {
             Class565.method3293(n3 + 9, n4 + 18, n3 + 9 + 234, n4 + 18 + 113, -16777216);
             final String method30773 = Class8822.method30773("advancements.empty", new Object[0]);
-            this.field3156.method6610(method30773, (float)(n3 + 9 + 117 - this.field3156.method6617(method30773) / 2), (float)(n4 + 18 + 56 - 4), -1);
-            this.field3156.method6610(":(", (float)(n3 + 9 + 117 - this.field3156.method6617(":(") / 2), (float)(n4 + 18 + 113 - 9), -1);
+            this.font.method6610(method30773, (float)(n3 + 9 + 117 - this.font.method6617(method30773) / 2), (float)(n4 + 18 + 56 - 4), -1);
+            this.font.method6610(":(", (float)(n3 + 9 + 117 - this.font.method6617(":(") / 2), (float)(n4 + 18 + 113 - 9), -1);
         }
     }
     
     public void method3261(final int n, final int n2) {
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class8726.method30011();
-        this.field3150.method5290().method5849(Class557.field3336);
+        this.minecraft.method5290().method5849(Class557.field3336);
         this.method3186(n, n2, 0, 0, 252, 140);
         if (this.field3339.size() > 1) {
-            this.field3150.method5290().method5849(Class557.field3337);
+            this.minecraft.method5290().method5849(Class557.field3337);
             for (final Class572 class572 : this.field3339.values()) {
                 class572.method3339(n, n2, class572 == this.field3340);
             }
@@ -130,11 +130,11 @@ public class Class557 extends Class527 implements Class558
             Class8726.method30117();
             final Iterator<Class572> iterator2 = this.field3339.values().iterator();
             while (iterator2.hasNext()) {
-                iterator2.next().method3340(n, n2, this.field3151);
+                iterator2.next().method3340(n, n2, this.itemRenderer);
             }
             Class8726.method30012();
         }
-        this.field3156.method6610(Class8822.method30773("gui.advancements", new Object[0]), (float)(n + 8), (float)(n2 + 6), 4210752);
+        this.font.method6610(Class8822.method30773("gui.advancements", new Object[0]), (float)(n + 8), (float)(n2 + 6), 4210752);
     }
     
     private void method3262(final int n, final int n2, final int n3, final int n4) {
@@ -159,7 +159,7 @@ public class Class557 extends Class527 implements Class558
     
     @Override
     public void method3263(final Class8863 class8863) {
-        final Class572 method3344 = Class572.method3344(this.field3150, this, this.field3339.size(), class8863);
+        final Class572 method3344 = Class572.method3344(this.minecraft, this, this.field3339.size(), class8863);
         if (method3344 != null) {
             this.field3339.put(class8863, method3344);
         }

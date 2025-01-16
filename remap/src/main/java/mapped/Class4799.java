@@ -6,7 +6,7 @@ package mapped;
 
 public class Class4799 extends Class4800
 {
-    private static Class869 field20454;
+    private static Minecraft field20454;
     private static Class9572 field20455;
     private static boolean field20456;
     private Class4807 field20457;
@@ -46,8 +46,8 @@ public class Class4799 extends Class4800
     
     @Override
     public int method14201() {
-        final Class869 field20454 = Class4799.field20454;
-        return Class869.method5338();
+        final Minecraft field20454 = Class4799.field20454;
+        return Minecraft.method5338();
     }
     
     @Override
@@ -76,7 +76,7 @@ public class Class4799 extends Class4800
     }
     
     static {
-        Class4799.field20454 = Class869.method5277();
+        Class4799.field20454 = Minecraft.method5277();
         Class4799.field20456 = true;
     }
 }

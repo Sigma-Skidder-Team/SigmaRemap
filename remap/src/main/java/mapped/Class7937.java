@@ -72,8 +72,8 @@ public class Class7937 implements Class7938
     
     public static Map<String, String> method25741() {
         final HashMap hashMap = Maps.newHashMap();
-        hashMap.put("X-Minecraft-Username", Class869.method5277().method5287().method33692());
-        hashMap.put("X-Minecraft-UUID", Class869.method5277().method5287().method33691());
+        hashMap.put("X-Minecraft-Username", Minecraft.method5277().method5287().method33692());
+        hashMap.put("X-Minecraft-UUID", Minecraft.method5277().method5287().method33691());
         hashMap.put("X-Minecraft-Version", Class9528.method35579().getName());
         hashMap.put("X-Minecraft-Version-ID", Class9528.method35579().getId());
         hashMap.put("X-Minecraft-Pack-Format", String.valueOf(Class9528.method35579().getPackVersion()));
@@ -97,7 +97,7 @@ public class Class7937 implements Class7938
             else {
                 final Class731 class731 = new Class731();
                 final Map<String, String> method25741 = method25741();
-                final Class869 method25742 = Class869.method5277();
+                final Minecraft method25742 = Minecraft.method5277();
                 method25742.method5380(() -> class732.method5244(class733));
                 completableFuture = Class7676.method24364(file, s, method25741, 104857600, class731, method25742.method5289());
             }
@@ -145,7 +145,7 @@ public class Class7937 implements Class7938
             this.field32612 = null;
             if (this.field32613 != null) {
                 this.field32613 = null;
-                Class869.method5277().method5278();
+                Minecraft.method5277().method5278();
             }
         }
         finally {
@@ -211,7 +211,7 @@ public class Class7937 implements Class7938
         }
         Class7937.field32606.info("Applying server pack {}", (Object)file);
         this.field32613 = new Class1922("server", true, () -> new Class1733(file2), (ITextComponent)new Class2259("resourcePack.server.name", new Object[0]), class8545.method28688(), Class2009.method8044(class8545.method28689()), Class2043.field11642, true, method6637);
-        return Class869.method5277().method5278();
+        return Minecraft.method5277().method5278();
     }
     
     static {

@@ -26,7 +26,7 @@ public class Class612 extends Class608<Class633>
     private final Class633 field3572;
     private final List<Class635> field3573;
     
-    public Class612(final Class720 field3570, final Class869 class869, final int n, final int n2, final int n3, final int n4, final int n5) {
+    public Class612(final Class720 field3570, final Minecraft class869, final int n, final int n2, final int n3, final int n4, final int n5) {
         super(class869, n, n2, n3, n4, n5);
         this.field3571 = Lists.newArrayList();
         this.field3572 = new Class636();
@@ -44,22 +44,22 @@ public class Class612 extends Class608<Class633>
     public void method3575(final Class633 class633) {
         super.method3531(class633);
         if (this.method3530() instanceof Class634) {
-            Class7895.field32404.method25556(new Class2259("narrator.select", new Object[] { Class634.method3660(((Class604<Class634>)this).method3530()).field41612 }).getString());
+            NarratorChatListener.field32404.method25556(new Class2259("narrator.select", new Object[] { Class634.method3660(((Class604<Class634>)this).method3530()).field41612 }).getString());
         }
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         final Class633 class633 = this.method3530();
-        return (class633 != null && class633.method2972(n, n2, n3)) || super.method2972(n, n2, n3);
+        return (class633 != null && class633.keyPressed(n, n2, n3)) || super.keyPressed(n, n2, n3);
     }
     
     @Override
     public void method3556(final int n) {
-        final int method35651 = MathHelper.method35651(this.method3040().indexOf(((Class604<Object>)this).method3530()) + n, 0, this.method3537() - 1);
-        Class633 class633 = this.method3040().get(method35651);
+        final int method35651 = MathHelper.method35651(this.children().indexOf(((Class604<Object>)this).method3530()) + n, 0, this.method3537() - 1);
+        Class633 class633 = this.children().get(method35651);
         if (class633 instanceof Class636) {
-            class633 = this.method3040().get(MathHelper.method35651(method35651 + ((n <= 0) ? -1 : 1), 0, this.method3537() - 1));
+            class633 = this.children().get(MathHelper.method35651(method35651 + ((n <= 0) ? -1 : 1), 0, this.method3537() - 1));
         }
         super.method3531(class633);
         this.method3548(class633);

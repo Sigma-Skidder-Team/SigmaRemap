@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 public class Class567 extends Class566
 {
     private static final ResourceLocation field3365;
-    private final Class869 field3366;
+    private final Minecraft field3366;
     private final Class8207 field3367;
     private final Consumer<Optional<Throwable>> field3368;
     private final boolean field3369;
@@ -27,7 +27,7 @@ public class Class567 extends Class566
     private int field3376;
     private boolean field3377;
     
-    public Class567(final Class869 field3366, final Class8207 field3367, final Consumer<Optional<Throwable>> field3368, final boolean b) {
+    public Class567(final Minecraft field3366, final Class8207 field3367, final Consumer<Optional<Throwable>> field3368, final boolean b) {
         this.field3371 = -1L;
         this.field3372 = -1L;
         this.field3373 = 16777215;
@@ -41,7 +41,7 @@ public class Class567 extends Class566
         this.field3369 = false;
     }
     
-    public static void method3306(final Class869 class869) {
+    public static void method3306(final Minecraft class869) {
         class869.method5290().method5851(Class567.field3365, new Class1769());
     }
     
@@ -104,7 +104,7 @@ public class Class567 extends Class566
             }
             this.field3371 = Util.method27837();
             if (this.field3366.field4700 != null) {
-                this.field3366.field4700.method3038(this.field3366, this.field3366.method5332().method7696(), this.field3366.method5332().method7697());
+                this.field3366.field4700.init(this.field3366, this.field3366.method5332().method7696(), this.field3366.method5332().method7697());
             }
         }
     }

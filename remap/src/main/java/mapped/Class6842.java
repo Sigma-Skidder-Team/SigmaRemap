@@ -27,7 +27,7 @@ public abstract class Class6842 extends Class6831
     public void method20918() {
         if (this.method20940()) {
             if (!this.field26827) {
-                Class869.method5277().method5299().method6421(this.method20939());
+                Minecraft.method5277().method5299().method6421(this.method20939());
                 this.field26859 = true;
             }
         }

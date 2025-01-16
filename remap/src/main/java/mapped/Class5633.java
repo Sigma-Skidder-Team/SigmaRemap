@@ -16,6 +16,6 @@ public class Class5633 extends Class5631
     
     @Override
     public void method16932() {
-        Class7847.method25362(new Class5050(this.field23024, Class5078.method15737(this.field23024)));
+        Realms.setScreen(new Class5050(this.field23024, Class5078.method15737(this.field23024)));
     }
 }

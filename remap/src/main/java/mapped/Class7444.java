@@ -9,7 +9,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.apache.logging.log4j.Logger;
 
-public class Class7444 extends Class7422
+public class Class7444 extends ValueObject
 {
     private static final Logger field28711;
     private boolean field28712;
@@ -26,10 +26,10 @@ public class Class7444 extends Class7422
         final Class7444 class7444 = new Class7444();
         try {
             final JsonObject asJsonObject = new JsonParser().parse(s).getAsJsonObject();
-            class7444.field28712 = Class7610.method23910("worldClosed", asJsonObject, false);
-            class7444.field28713 = Class7610.method23907("token", asJsonObject, null);
-            class7444.field28714 = Class7610.method23907("uploadEndpoint", asJsonObject, null);
-            class7444.field28715 = Class7610.method23908("port", asJsonObject, 8080);
+            class7444.field28712 = JsonUtils.method23910("worldClosed", asJsonObject, false);
+            class7444.field28713 = JsonUtils.func_225171_a("token", asJsonObject, null);
+            class7444.field28714 = JsonUtils.func_225171_a("uploadEndpoint", asJsonObject, null);
+            class7444.field28715 = JsonUtils.method23908("port", asJsonObject, 8080);
         }
         catch (final Exception ex) {
             Class7444.field28711.error("Could not parse UploadInfo: " + ex.getMessage());

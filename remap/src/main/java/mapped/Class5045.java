@@ -5,18 +5,16 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import java.util.Iterator;
 import com.mojang.datafixers.util.Either;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.function.Predicate;
 import java.util.Objects;
 import java.util.stream.Stream;
 import com.google.common.collect.Lists;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class5045 extends Class5046
+public class Class5045 extends RealmsScreen
 {
     private static final Logger field21607;
     private final Class5075<Class7430> field21608;
@@ -52,7 +50,7 @@ public class Class5045 extends Class5046
             this.field21609 = new Class5062(this);
             this.method15381(new Class7445(10));
         }
-        this.field21611 = Class5046.method15438("mco.template.title");
+        this.field21611 = RealmsScreen.getLocalizedString("mco.template.title");
     }
     
     public void method15366(final String field21611) {
@@ -65,28 +63,28 @@ public class Class5045 extends Class5046
     }
     
     @Override
-    public boolean method15368(final double n, final double n2, final int n3) {
+    public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (this.field21622 && this.field21620 != null) {
             Class8428.method28148("https://beta.minecraft.net/realms/adventure-maps-in-1-9");
             return true;
         }
-        return super.method15368(n, n2, n3);
+        return super.mouseClicked(n, n2, n3);
     }
     
     @Override
-    public void method15369() {
+    public void init() {
         this.method15444(true);
         this.field21609 = new Class5062(this.field21609.method15549());
-        this.method15431(this.field21613 = new Class5650(this, 2, this.method15421() / 2 - 206, this.method15422() - 32, 100, 20, Class5046.method15438("mco.template.button.trailer")));
-        this.method15431(this.field21612 = new Class5651(this, 1, this.method15421() / 2 - 100, this.method15422() - 32, 100, 20, Class5046.method15438("mco.template.button.select")));
-        this.method15431(new Class5658(this, 0, this.method15421() / 2 + 6, this.method15422() - 32, 100, 20, Class5046.method15438((this.field21617 != Class271.field1472) ? "gui.back" : "gui.cancel")));
-        this.method15431(this.field21614 = new Class5644(this, 3, this.method15421() / 2 + 112, this.method15422() - 32, 100, 20, Class5046.method15438("mco.template.button.publisher")));
+        this.buttonsAdd(this.field21613 = new Class5650(this, 2, this.width() / 2 - 206, this.height() - 32, 100, 20, RealmsScreen.getLocalizedString("mco.template.button.trailer")));
+        this.buttonsAdd(this.field21612 = new Class5651(this, 1, this.width() / 2 - 100, this.height() - 32, 100, 20, RealmsScreen.getLocalizedString("mco.template.button.select")));
+        this.buttonsAdd(new Class5658(this, 0, this.width() / 2 + 6, this.height() - 32, 100, 20, RealmsScreen.getLocalizedString((this.field21617 != Class271.field1472) ? "gui.back" : "gui.cancel")));
+        this.buttonsAdd(this.field21614 = new Class5644(this, 3, this.width() / 2 + 112, this.height() - 32, 100, 20, RealmsScreen.getLocalizedString("mco.template.button.publisher")));
         this.field21612.method16917(false);
         this.field21613.method16919(false);
         this.field21614.method16919(false);
         this.method15428(this.field21609);
         this.method15434(this.field21609);
-        Class7847.method25384((Iterable<String>)Stream.of(new String[] { this.field21611, this.field21619 }).filter(Objects::nonNull).collect((Collector<? super String, ?, List<? super String>>)Collectors.toList()));
+        Realms.method25384((Iterable<String>)Stream.of(new String[] { this.field21611, this.field21619 }).filter(Objects::nonNull).collect((Collector<? super String, ?, List<? super String>>)Collectors.toList()));
     }
     
     private void method15370() {
@@ -112,8 +110,8 @@ public class Class5045 extends Class5046
     }
     
     @Override
-    public void method15375() {
-        super.method15375();
+    public void tick() {
+        super.tick();
         --this.field21618;
         if (this.field21618 < 0) {
             this.field21618 = 0;
@@ -121,21 +119,21 @@ public class Class5045 extends Class5046
     }
     
     @Override
-    public boolean method15376(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         switch (n) {
             case 256: {
                 this.method15377();
                 return true;
             }
             default: {
-                return super.method15376(n, n2, n3);
+                return super.keyPressed(n, n2, n3);
             }
         }
     }
     
     private void method15377() {
         this.field21608.method15677(null);
-        Class7847.method25362(this.field21608);
+        Realms.setScreen(this.field21608);
     }
     
     private void method15378() {
@@ -172,17 +170,17 @@ public class Class5045 extends Class5046
         new Class928(this, "realms-template-fetcher", class7445).start();
     }
     
-    private Either<Class7445, String> method15382(final Class7445 class7445, final Class9513 class7446) {
+    private Either<Class7445, String> method15382(final Class7445 class7445, final RealmsClient class7446) {
         try {
             return (Either<Class7445, String>)Either.left((Object)class7446.method35464(class7445.field28718 + 1, class7445.field28719, this.field21617));
         }
-        catch (final Class2330 class7447) {
+        catch (final RealmsServiceException class7447) {
             return (Either<Class7445, String>)Either.right((Object)class7447.getMessage());
         }
     }
     
     @Override
-    public void method15383(final int n, final int n2, final float n3) {
+    public void render(final int n, final int n2, final float n3) {
         this.field21615 = null;
         this.field21616 = null;
         this.field21622 = false;
@@ -191,12 +189,12 @@ public class Class5045 extends Class5046
         if (this.field21623 != null) {
             this.method15384(n, n2, this.field21623);
         }
-        this.method15405(this.field21611, this.method15421() / 2, 13, 16777215);
+        this.drawCenteredString(this.field21611, this.width() / 2, 13, 16777215);
         if (this.field21621) {
             final String[] split = this.field21619.split("\\\\n");
             for (int i = 0; i < split.length; ++i) {
                 final int method15424 = this.method15424(split[i]);
-                final int n4 = this.method15421() / 2 - method15424 / 2;
+                final int n4 = this.width() / 2 - method15424 / 2;
                 final int method15425 = Class7869.method25488(-1 + i);
                 if (n >= n4) {
                     if (n <= n4 + method15424) {
@@ -220,10 +218,10 @@ public class Class5045 extends Class5046
                         string = "§n" + string;
                     }
                 }
-                this.method15405(string, this.method15421() / 2, Class7869.method25488(-1 + j), n5);
+                this.drawCenteredString(string, this.width() / 2, Class7869.method25488(-1 + j), n5);
             }
         }
-        super.method15383(n, n2, n3);
+        super.render(n, n2, n3);
         if (this.field21615 != null) {
             this.method15385(this.field21615, n, n2);
         }
@@ -233,7 +231,7 @@ public class Class5045 extends Class5046
         for (int i = 0; i < list.size(); ++i) {
             final Class8578 class8578 = list.get(i);
             final int method25488 = Class7869.method25488(4 + i);
-            int n3 = this.method15421() / 2 - class8578.field36061.stream().mapToInt(class8580 -> this.method15424(class8580.method19064())).sum() / 2;
+            int n3 = this.width() / 2 - class8578.field36061.stream().mapToInt(class8580 -> this.method15424(class8580.method19064())).sum() / 2;
             for (final Class6387 class8579 : class8578.field36061) {
                 final int method25489 = this.method15406(class8579.method19064(), n3, method25488, class8579.method19065() ? 3368635 : 16777215, true);
                 if (class8579.method19065()) {

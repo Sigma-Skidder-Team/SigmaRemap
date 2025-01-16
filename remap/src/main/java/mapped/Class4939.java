@@ -30,15 +30,15 @@ public class Class4939 extends Class4800
         this.method14239(class4878 = new Class4876(this, "pb3", n5 + n2 + 9, n3 + n6 + 9, n2, n4, Class7853.field32214));
         class4876.method14260((class4803, n) -> {
             Class9463.method35173().method35210(Class2209.field13466);
-            Class869.method5277().method5244(new Class548());
+            Minecraft.method5277().method5244(new Class548());
         });
         class4878.method14260((class4803, n) -> {
             Class9463.method35173().method35210(Class2209.field13464);
-            Class869.method5277().method5244(new Class548());
+            Minecraft.method5277().method5244(new Class548());
         });
         class4877.method14260((class4803, n) -> {
             Class9463.method35173().method35210(Class2209.field13465);
-            Class869.method5277().method5244(new Class548());
+            Minecraft.method5277().method5244(new Class548());
         });
         final Class4803 class4879 = new Class4803(this, "socialbtns", (this.method14276() - 174) / 2, this.method14278() - 70, 174, 34);
         final Class4914 class4880;
@@ -82,14 +82,14 @@ public class Class4939 extends Class4800
         if (Class568.field3391 != null) {
             Class4939.field21206.method35855(Class2186.field12964);
             final int n2 = 40;
-            Class8154.method26905(n2 * (-Class4939.field21207 / Class869.method5277().field4632.method7694()), n2 * (-Class4939.field21208 / Class869.method5277().field4632.method7695()), (float)(Class869.method5277().field4632.method7694() + n2), (float)(Class869.method5277().field4632.method7695() + n2), Class568.field3391);
+            Class8154.method26905(n2 * (-Class4939.field21207 / Minecraft.method5277().field4632.method7694()), n2 * (-Class4939.field21208 / Minecraft.method5277().field4632.method7695()), (float)(Minecraft.method5277().field4632.method7694() + n2), (float)(Minecraft.method5277().field4632.method7695() + n2), Class568.field3391);
             final float method31033 = Class8862.method31033(Class4939.field21206.method35858(), 0.16, 0.71, 0.0, 0.99);
-            final int n3 = (Class869.method5277().field4632.method7694() - 455) / 2;
-            final int n4 = (int)((Class869.method5277().field4632.method7695() - 78) / 2 - 14 - 116.0f * method31033);
-            Class8154.method26874(0.0f, 0.0f, (float)Class869.method5277().field4632.method7694(), (float)Class869.method5277().field4632.method7695(), Class6430.method19118(Class265.field1273.field1292, 0.3f));
+            final int n3 = (Minecraft.method5277().field4632.method7694() - 455) / 2;
+            final int n4 = (int)((Minecraft.method5277().field4632.method7695() - 78) / 2 - 14 - 116.0f * method31033);
+            Class8154.method26874(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class6430.method19118(Class265.field1273.field1292, 0.3f));
             super.method14205(n);
-            Class8154.method26899(0.0f, 0.0f, (float)Class869.method5277().field4632.method7694(), (float)Class869.method5277().field4632.method7695(), Class568.field3392, Class6430.method19118(Class265.field1278.field1292, 1.0f - Class4939.field21206.method35858()));
-            Class8154.method26874(0.0f, 0.0f, (float)Class869.method5277().field4632.method7694(), (float)Class869.method5277().field4632.method7695(), Class6430.method19118(0, 0.75f * (1.0f - Class4939.field21206.method35858())));
+            Class8154.method26899(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class568.field3392, Class6430.method19118(Class265.field1278.field1292, 1.0f - Class4939.field21206.method35858()));
+            Class8154.method26874(0.0f, 0.0f, (float) Minecraft.method5277().field4632.method7694(), (float) Minecraft.method5277().field4632.method7695(), Class6430.method19118(0, 0.75f * (1.0f - Class4939.field21206.method35858())));
             Class8154.method26905((float)n3, (float)n4, 455.0f, 78.0f, Class568.field3390);
         }
     }
@@ -98,7 +98,7 @@ public class Class4939 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class869.method5277().method5244(new Class548());
+            Minecraft.method5277().method5244(new Class548());
         }
     }
     

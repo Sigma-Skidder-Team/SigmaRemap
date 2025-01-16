@@ -13,10 +13,10 @@ import java.util.Arrays;
 
 public class Class8327
 {
-    public Class869 field34199;
+    public Minecraft field34199;
     
     public Class8327() {
-        this.field34199 = Class869.method5277();
+        this.field34199 = Minecraft.method5277();
     }
     
     @Class6753

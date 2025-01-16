@@ -10,11 +10,11 @@ import com.google.common.base.Splitter;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class720 extends Class527
+public class Class720 extends Screen
 {
     private static final Logger field3146;
     private final Class8115 field3930;
-    public final Class527 field3931;
+    public final Screen field3931;
     public Class612 field3932;
     private Class9295 field3933;
     private Class654 field3934;
@@ -26,22 +26,22 @@ public class Class720 extends Class527
     private Class929 field3940;
     private boolean field3941;
     
-    public Class720(final Class527 field3931) {
+    public Class720(final Screen field3931) {
         super(new Class2259("multiplayer.title", new Object[0]));
         this.field3930 = new Class8115();
         this.field3931 = field3931;
     }
     
     @Override
-    public void method2969() {
-        super.method2969();
-        this.field3150.field4651.method22505(true);
+    public void init() {
+        super.init();
+        this.minecraft.field4651.method22505(true);
         if (this.field3941) {
-            this.field3932.method3540(this.field3152, this.field3153, 32, this.field3153 - 64);
+            this.field3932.method3540(this.width, this.height, 32, this.height - 64);
         }
         else {
             this.field3941 = true;
-            (this.field3933 = new Class9295(this.field3150)).method34331();
+            (this.field3933 = new Class9295(this.minecraft)).method34331();
             this.field3939 = new Class8027();
             try {
                 (this.field3940 = new Class929(this.field3939)).start();
@@ -49,43 +49,43 @@ public class Class720 extends Class527
             catch (final Exception ex) {
                 Class720.field3146.warn("Unable to start LAN server detection: {}", (Object)ex.getMessage());
             }
-            (this.field3932 = new Class612(this, this.field3150, this.field3152, this.field3153, 32, this.field3153 - 64, 36)).method3576(this.field3933);
+            (this.field3932 = new Class612(this, this.minecraft, this.width, this.height, 32, this.height - 64, 36)).method3576(this.field3933);
         }
-        this.field3149.add(this.field3932);
-        this.field3935 = this.method3029(new Class654(this.field3152 / 2 - 154, this.field3153 - 52, 100, 20, Class8822.method30773("selectServer.select", new Object[0]), class654 -> this.method3948()));
-        this.method3029(new Class654(this.field3152 / 2 - 50, this.field3153 - 52, 100, 20, Class8822.method30773("selectServer.direct", new Object[0]), class654 -> {
+        this.children.add(this.field3932);
+        this.field3935 = this.method3029(new Class654(this.width / 2 - 154, this.height - 52, 100, 20, Class8822.method30773("selectServer.select", new Object[0]), class654 -> this.method3948()));
+        this.method3029(new Class654(this.width / 2 - 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.direct", new Object[0]), class654 -> {
             this.field3938 = new Class9575(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
-            this.field3150.method5244(new Class529(this, this::method3947, this.field3938));
+            this.minecraft.method5244(new Class529(this, this::method3947, this.field3938));
         }));
-        this.method3029(new Class654(this.field3152 / 2 + 4 + 50, this.field3153 - 52, 100, 20, Class8822.method30773("selectServer.add", new Object[0]), class654 -> {
+        this.method3029(new Class654(this.width / 2 + 4 + 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.add", new Object[0]), class654 -> {
             this.field3938 = new Class9575(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
-            this.field3150.method5244(new Class538(this, this::method3946, this.field3938));
+            this.minecraft.method5244(new Class538(this, this::method3946, this.field3938));
         }));
-        this.field3934 = this.method3029(new Class654(this.field3152 / 2 - 154, this.field3153 - 28, 70, 20, Class8822.method30773("selectServer.edit", new Object[0]), class654 -> {
+        this.field3934 = this.method3029(new Class654(this.width / 2 - 154, this.height - 28, 70, 20, Class8822.method30773("selectServer.edit", new Object[0]), class654 -> {
             final Class633 class655 = this.field3932.method3530();
             if (class655 instanceof Class634) {
                 final Class9575 method3658 = ((Class634)class655).method3658();
                 (this.field3938 = new Class9575(method3658.field41612, method3658.field41613, false)).method35872(method3658);
-                this.field3150.method5244(new Class538(this, this::method3945, this.field3938));
+                this.minecraft.method5244(new Class538(this, this::method3945, this.field3938));
             }
         }));
-        this.field3936 = this.method3029(new Class654(this.field3152 / 2 - 74, this.field3153 - 28, 70, 20, Class8822.method30773("selectServer.delete", new Object[0]), class654 -> {
+        this.field3936 = this.method3029(new Class654(this.width / 2 - 74, this.height - 28, 70, 20, Class8822.method30773("selectServer.delete", new Object[0]), class654 -> {
             final Class633 class655 = this.field3932.method3530();
             if (class655 instanceof Class634) {
                 final String field41612 = ((Class634)class655).method3658().field41612;
                 if (field41612 != null) {
-                    this.field3150.method5244(new Class546(this::method3944, new Class2259("selectServer.deleteQuestion", new Object[0]), new Class2259("selectServer.deleteWarning", new Object[] { field41612 }), Class8822.method30773("selectServer.deleteButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
+                    this.minecraft.method5244(new Class546(this::method3944, new Class2259("selectServer.deleteQuestion", new Object[0]), new Class2259("selectServer.deleteWarning", new Object[] { field41612 }), Class8822.method30773("selectServer.deleteButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
                 }
             }
         }));
-        this.method3029(new Class654(this.field3152 / 2 + 4, this.field3153 - 28, 70, 20, Class8822.method30773("selectServer.refresh", new Object[0]), class654 -> this.method3943()));
-        this.method3029(new Class654(this.field3152 / 2 + 4 + 76, this.field3153 - 28, 75, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3150.method5244(this.field3931)));
+        this.method3029(new Class654(this.width / 2 + 4, this.height - 28, 70, 20, Class8822.method30773("selectServer.refresh", new Object[0]), class654 -> this.method3943()));
+        this.method3029(new Class654(this.width / 2 + 4 + 76, this.height - 28, 75, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.method5244(this.field3931)));
         this.method3951();
     }
     
     @Override
-    public void method2992() {
-        super.method2992();
+    public void tick() {
+        super.tick();
         if (this.field3939.method26315()) {
             final List<Class9506> method26317 = this.field3939.method26317();
             this.field3939.method26316();
@@ -95,8 +95,8 @@ public class Class720 extends Class527
     }
     
     @Override
-    public void method2971() {
-        this.field3150.field4651.method22505(false);
+    public void removed() {
+        this.minecraft.field4651.method22505(false);
         if (this.field3940 != null) {
             this.field3940.interrupt();
             this.field3940 = null;
@@ -105,7 +105,7 @@ public class Class720 extends Class527
     }
     
     private void method3943() {
-        this.field3150.method5244(new Class720(this.field3931));
+        this.minecraft.method5244(new Class720(this.field3931));
     }
     
     private void method3944(final boolean b) {
@@ -118,7 +118,7 @@ public class Class720 extends Class527
                 this.field3932.method3576(this.field3933);
             }
         }
-        this.field3150.method5244(this);
+        this.minecraft.method5244(this);
     }
     
     private void method3945(final boolean b) {
@@ -133,7 +133,7 @@ public class Class720 extends Class527
                 this.field3932.method3576(this.field3933);
             }
         }
-        this.field3150.method5244(this);
+        this.minecraft.method5244(this);
     }
     
     private void method3946(final boolean b) {
@@ -143,12 +143,12 @@ public class Class720 extends Class527
             this.field3932.method3575(null);
             this.field3932.method3576(this.field3933);
         }
-        this.field3150.method5244(this);
+        this.minecraft.method5244(this);
     }
     
     private void method3947(final boolean b) {
         if (!b) {
-            this.field3150.method5244(this);
+            this.minecraft.method5244(this);
         }
         else {
             this.method3949(this.field3938);
@@ -156,8 +156,8 @@ public class Class720 extends Class527
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
-        if (super.method2972(n, n2, n3)) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
+        if (super.keyPressed(n, n2, n3)) {
             return true;
         }
         if (n == 294) {
@@ -168,7 +168,7 @@ public class Class720 extends Class527
             return false;
         }
         if (n != 257 && n != 335) {
-            return this.field3932.method2972(n, n2, n3);
+            return this.field3932.keyPressed(n, n2, n3);
         }
         this.method3948();
         return true;
@@ -177,9 +177,9 @@ public class Class720 extends Class527
     @Override
     public void method2975(final int n, final int n2, final float n3) {
         this.field3937 = null;
-        this.method3041();
+        this.renderBackground();
         this.field3932.method2975(n, n2, n3);
-        this.method3295(this.field3156, this.field3148.getFormattedText(), this.field3152 / 2, 20, 16777215);
+        this.method3295(this.font, this.field3148.getFormattedText(), this.width / 2, 20, 16777215);
         super.method2975(n, n2, n3);
         if (this.field3937 != null) {
             this.method3032(Lists.newArrayList(Splitter.on("\n").split((CharSequence)this.field3937)), n, n2);
@@ -206,7 +206,7 @@ public class Class720 extends Class527
             }
         }
         Class6430.method19176(class9575);
-        this.field3150.method5244(new Class694(this, this.field3150, class9575));
+        this.minecraft.method5244(new Class694(this, this.minecraft, class9575));
     }
     
     public void method3950(final Class633 class633) {

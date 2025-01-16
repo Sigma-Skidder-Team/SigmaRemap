@@ -15,6 +15,6 @@ public class Class5641 extends Class5611
     
     @Override
     public void method16932() {
-        Class7847.method25362(new Class5084(this.field23033, Class2039.field11627, Class5046.method15438("mco.configure.world.delete.question.line1"), Class5046.method15438("mco.configure.world.delete.question.line2"), true, 1));
+        Realms.setScreen(new Class5084(this.field23033, Class2039.field11627, RealmsScreen.getLocalizedString("mco.configure.world.delete.question.line1"), RealmsScreen.getLocalizedString("mco.configure.world.delete.question.line2"), true, 1));
     }
 }

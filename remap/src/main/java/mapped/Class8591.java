@@ -9,7 +9,7 @@ import net.minecraft.entity.Entity;
 public class Class8591
 {
     private static String[] field36091;
-    private static Class869 field36092;
+    private static Minecraft field36092;
     
     public static double method29091(final Entity class399) {
         final double n = method29093(Class8591.field36092.field4684).field38854 - method29093(class399).field38854;
@@ -31,14 +31,14 @@ public class Class8591
     
     public static Class9172 method29094(final Entity class399) {
         final Class9172 method29093 = method29093(class399);
-        return new Class9172(method29093.field38854 - Class869.method5277().field4644.method5833().method18161().getX(), method29093.field38855 - Class869.method5277().field4644.method5833().method18161().getY(), method29093.field38856 - Class869.method5277().field4644.method5833().method18161().getZ());
+        return new Class9172(method29093.field38854 - Minecraft.method5277().field4644.method5833().method18161().getX(), method29093.field38855 - Minecraft.method5277().field4644.method5833().method18161().getY(), method29093.field38856 - Minecraft.method5277().field4644.method5833().method18161().getZ());
     }
     
     public static Class9172 method29095(final BlockPos class354) {
-        return new Class9172(class354.getX() - Class869.method5277().field4644.method5833().method18161().getX(), class354.getY() - Class869.method5277().field4644.method5833().method18161().getY(), class354.getZ() - Class869.method5277().field4644.method5833().method18161().getZ());
+        return new Class9172(class354.getX() - Minecraft.method5277().field4644.method5833().method18161().getX(), class354.getY() - Minecraft.method5277().field4644.method5833().method18161().getY(), class354.getZ() - Minecraft.method5277().field4644.method5833().method18161().getZ());
     }
     
     static {
-        Class8591.field36092 = Class869.method5277();
+        Class8591.field36092 = Minecraft.method5277();
     }
 }

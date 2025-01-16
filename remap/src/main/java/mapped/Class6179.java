@@ -36,7 +36,7 @@ public class Class6179 extends Class6173
         class4152.method22566(Vector3f.XP.rotationDegrees(150.0f * n2 - 60.0f));
         class4152.method22565(-1.0f, -1.0f, 1.0f);
         class4152.method22564(0.0, -1.1009999513626099, 1.5);
-        final Class7808 method11006 = Class869.method5277().method5333().method11006();
+        final Class7808 method11006 = Minecraft.method5277().method5333().method11006();
         this.field24979.method17564(class4152, method11006.method25214(this.field24980), 15728880, Class1904.field10335, 1.0f, 1.0f, 1.0f, n3);
         method11006.method25216();
     }

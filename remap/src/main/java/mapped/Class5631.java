@@ -31,6 +31,6 @@ public abstract class Class5631 extends Class5611
     
     @Override
     public void method16934(final int n, final int n2, final float n3) {
-        Class5078.method15743(this.field23021, this.method16929(), this.method16928(), this.method16923().method3369(), this.field23018, this.field23019, this.field23020, this.method16923().method3360(), this.method16923().method3055(n, n2));
+        Class5078.method15743(this.field23021, this.method16929(), this.method16928(), this.method16923().method3369(), this.field23018, this.field23019, this.field23020, this.method16923().method3360(), this.method16923().isMouseOver(n, n2));
     }
 }

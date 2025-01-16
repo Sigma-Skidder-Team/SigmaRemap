@@ -12,7 +12,7 @@ public class Class757 extends Class756
 {
     private static UUID field4105;
     
-    public Class757(final Class869 class869, final Class1848 class870, final Class5799 class871, final Class7474 class872, final Class6520 class873) {
+    public Class757(final Minecraft class869, final Class1848 class870, final Class5799 class871, final Class7474 class872, final Class6520 class873) {
         super(class869, class870, class871, class872, class873);
     }
     

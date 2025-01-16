@@ -19,7 +19,7 @@ public class Class6481 extends Class6480
     
     @Override
     public Class7562 method19507(final Class6108 class6108) {
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         final ItemStack class6109 = Class464.method2352(Class8491.field34859) ? method5277.field4684.field3006.field2739.get(Class8491.field34859) : ItemStack.field34174;
         final Item method5278 = class6109.getItem();
         if (method5278 != null) {

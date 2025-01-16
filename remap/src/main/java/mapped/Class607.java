@@ -13,8 +13,8 @@ public class Class607 extends Class605<Class594>
     private final Class705 field3559;
     private int field3560;
     
-    public Class607(final Class705 field3559, final Class869 class869) {
-        super(class869, field3559.field3152 + 45, field3559.field3153, 43, field3559.field3153 - 32, 20);
+    public Class607(final Class705 field3559, final Minecraft class869) {
+        super(class869, field3559.width + 45, field3559.height, 43, field3559.height - 32, 20);
         this.field3559 = field3559;
         final Class350[] array = (Class350[])ArrayUtils.clone((Object[])class869.field4648.field23460);
         Arrays.sort(array);
@@ -25,7 +25,7 @@ public class Class607 extends Class605<Class594>
                 anObject = method1057;
                 ((Class604<Class596>)this).method3536(new Class596(this, method1057));
             }
-            final int method1058 = class869.field4643.method6617(Class8822.method30773(class870.method1060(), new Object[0]));
+            final int method1058 = class869.fontRenderer.method6617(Class8822.method30773(class870.method1060(), new Object[0]));
             if (method1058 > this.field3560) {
                 this.field3560 = method1058;
             }

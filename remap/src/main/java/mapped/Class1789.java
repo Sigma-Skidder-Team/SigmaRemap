@@ -51,7 +51,7 @@ public class Class1789 extends Class1776<Map<ResourceLocation, List<Class1737>>>
                             try {
                                 final String method7801 = Class9583.method35895(method7800, "type");
                                 final Class2030 method7802 = Class2030.method8086(method7801);
-                                if (!Class1903.method7380(this.field9905) || method7802 == Class2030.field11570 || !key.equals(Class869.field4624)) {
+                                if (!Class1903.method7380(this.field9905) || method7802 == Class2030.field11570 || !key.equals(Minecraft.field4624)) {
                                     class6583.startSection(method7801);
                                     list.add(method7802.method8087(method7800).method25276(class6582));
                                     class6583.endSection();

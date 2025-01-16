@@ -15,7 +15,7 @@ public class Class3354 extends Class3167
         this.method9881(new Class4996("Time", "Time to set the world to", 12000.0f, Float.class, 0.0f, 24000.0f, 1.0f).method15195(class4997 -> {
             if (this.method9883("Custom time")) {
                 if (this.method9906()) {
-                    Class3354.field15514.field4683.method6756(-(long)this.method9886("Time"));
+                    Class3354.field15514.world.method6756(-(long)this.method9886("Time"));
                 }
             }
         }));
@@ -24,16 +24,16 @@ public class Class3354 extends Class3167
     
     @Override
     public void method9879() {
-        this.field15983 = Class3354.field15514.field4683.method6768(1.0f);
-        if (Class3354.field15514.field4683.method6768(1.0f) != 1.0f) {
-            if (Class3354.field15514.field4683.method6768(1.0f) == 0.0f) {
+        this.field15983 = Class3354.field15514.world.method6768(1.0f);
+        if (Class3354.field15514.world.method6768(1.0f) != 1.0f) {
+            if (Class3354.field15514.world.method6768(1.0f) == 0.0f) {
                 this.field15984 = false;
             }
         }
         else {
             this.field15984 = true;
         }
-        Class3354.field15514.field4683.method6752((long)this.method9886("Time"));
+        Class3354.field15514.world.method6752((long)this.method9886("Time"));
     }
     
     @Class6753
@@ -59,8 +59,8 @@ public class Class3354 extends Class3167
             else {
                 this.field15983 -= (float)0.05;
             }
-            Class3354.field15514.field4683.method6769(this.field15983);
-            Class3354.field15514.field4683.method6767(this.field15983);
+            Class3354.field15514.world.method6769(this.field15983);
+            Class3354.field15514.world.method6767(this.field15983);
         }
     }
     

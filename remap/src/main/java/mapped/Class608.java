@@ -8,12 +8,12 @@ public abstract class Class608<E extends Class592<E>> extends Class604<E>
 {
     private boolean field3561;
     
-    public Class608(final Class869 class869, final int n, final int n2, final int n3, final int n4, final int n5) {
+    public Class608(final Minecraft class869, final int n, final int n2, final int n3, final int n4, final int n5) {
         super(class869, n, n2, n3, n4, n5);
     }
     
     @Override
-    public boolean method3281(final boolean b) {
+    public boolean changeFocus(final boolean b) {
         if (!this.field3561 && this.method3537() == 0) {
             return false;
         }

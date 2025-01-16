@@ -77,7 +77,7 @@ public class Class4159 extends Class4158<Class497>
     private static boolean method12462(final Class497 class497) {
         if (!Class9216.field39049) {
             if (!Config.field36033) {
-                final Entity method5303 = Class869.method5277().method5303();
+                final Entity method5303 = Minecraft.method5277().method5303();
                 if (class497.method2191(method5303.getPosX(), method5303.getPosY(), method5303.getPosZ()) > Class4159.field18543) {
                     return false;
                 }
@@ -88,7 +88,7 @@ public class Class4159 extends Class4158<Class497>
     }
     
     public static void method12463() {
-        final Class869 method5277 = Class869.method5277();
+        final Minecraft method5277 = Minecraft.method5277();
         final double max = Math.max(1.5 * method5277.method5332().method7695() / Config.method28867(method5277.field4648.field23471, 1.0, 120.0), 16.0);
         Class4159.field18543 = max * max;
     }

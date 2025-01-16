@@ -5,7 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
-import java.util.List;
+
 import java.util.Collections;
 import java.util.ArrayList;
 
@@ -76,8 +76,8 @@ public class Class4937 extends Class4800
         this.field21197 = (float)(this.method14278() / 2);
     }
     
-    public void method14861(final Class527 class527) {
-        Class869.method5277().method5244(class527);
+    public void method14861(final Screen class527) {
+        Minecraft.method5277().method5244(class527);
         this.method14863();
     }
     

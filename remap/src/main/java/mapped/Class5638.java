@@ -16,6 +16,6 @@ public class Class5638 extends Class5611
     
     @Override
     public void method16932() {
-        this.field23029.field21722.method15437(true, this.field23029.field21727);
+        this.field23029.field21722.confirmResult(true, this.field23029.field21727);
     }
 }

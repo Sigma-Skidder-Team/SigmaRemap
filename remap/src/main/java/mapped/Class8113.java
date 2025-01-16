@@ -5,10 +5,8 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
 import java.util.regex.Matcher;
-import java.util.Iterator;
 import java.io.BufferedOutputStream;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
 import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
@@ -22,7 +20,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.impl.client.CloseableHttpClient;
 import java.io.IOException;
 import org.apache.commons.io.IOUtils;
-import java.awt.event.ActionListener;
+
 import java.io.OutputStream;
 import java.io.FileOutputStream;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -349,7 +347,7 @@ public class Class8113
             }
         }
         TarArchiveInputStream tarArchiveInputStream = null;
-        final File parent = new File(Class7847.method25364(), "saves");
+        final File parent = new File(Realms.method25364(), "saves");
         try {
             parent.mkdir();
             tarArchiveInputStream = new TarArchiveInputStream((InputStream)new GzipCompressorInputStream((InputStream)new BufferedInputStream(new FileInputStream(file))));
@@ -382,7 +380,7 @@ public class Class8113
                 file.delete();
             }
             class7417.method22829(str, str.trim());
-            Class7847.method25374(new File(parent, str + File.separator + "level.dat"));
+            Realms.method25374(new File(parent, str + File.separator + "level.dat"));
             this.field33436 = new File(parent, str + File.separator + "resources.zip");
         }
     }

@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class Class4935 extends Class4800
 {
-    private static Class869 field21156;
+    private static Minecraft field21156;
     private Class7776 field21157;
     public Date field21158;
     public Class4843 field21159;
@@ -24,8 +24,8 @@ public class Class4935 extends Class4800
         super("KeybindManager");
         this.field21160 = false;
         this.field21158 = new Date();
-        final int max = Math.max(300, Math.min(850, Class869.method5277().field4632.method7694() - 40));
-        final int max2 = Math.max(200, Math.min(550, Class869.method5277().field4632.method7695() - 80));
+        final int max = Math.max(300, Math.min(850, Minecraft.method5277().field4632.method7694() - 40));
+        final int max2 = Math.max(200, Math.min(550, Minecraft.method5277().field4632.method7695() - 80));
         this.method14239(this.field21159 = new Class4843(this, "mapView", (this.field20480 - max) / 2, (this.field20481 - max2) / 2, max, max2));
         this.field21159.field20752.method14719((class4936, n, n2, class4937) -> class4935.method14225(new Class1271(this, class4935, n, n2, class4937)));
         this.field21159.field20752.method14721(class4901 -> this.method14839());
@@ -81,6 +81,6 @@ public class Class4935 extends Class4800
     }
     
     static {
-        Class4935.field21156 = Class869.method5277();
+        Class4935.field21156 = Minecraft.method5277();
     }
 }

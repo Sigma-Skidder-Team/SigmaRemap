@@ -20,11 +20,11 @@ public class Class5625 extends Class5611
             Class5087.method15945(this.field23007, i);
         }
         else {
-            final Class5078 class5078 = new Class5078(this.field23007, Class5087.method15943(this.field23007), this.field23007, Class5046.method15438("mco.configure.world.switch.slot"), Class5046.method15438("mco.configure.world.switch.slot.subtitle"), 10526880, Class5046.method15438("gui.cancel"));
+            final Class5078 class5078 = new Class5078(this.field23007, Class5087.method15943(this.field23007), this.field23007, RealmsScreen.getLocalizedString("mco.configure.world.switch.slot"), RealmsScreen.getLocalizedString("mco.configure.world.switch.slot.subtitle"), 10526880, RealmsScreen.getLocalizedString("gui.cancel"));
             class5078.method15722(i);
-            class5078.method15723(Class5046.method15438("mco.create.world.reset.title"));
+            class5078.method15723(RealmsScreen.getLocalizedString("mco.create.world.reset.title"));
             class5078.method15721(14);
-            Class7847.method25362(class5078);
+            Realms.setScreen(class5078);
         }
     }
 }

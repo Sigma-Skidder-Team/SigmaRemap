@@ -37,7 +37,7 @@ public class Class1848 extends World
     public final Int2ObjectMap<Entity> field10072;
     private final Class5799 field10073;
     private final Class1656 field10074;
-    private final Class869 field10075;
+    private final Minecraft field10075;
     private final List<Class754> field10076;
     private int field10077;
     private Class6516 field10078;
@@ -50,7 +50,7 @@ public class Class1848 extends World
         super(new WorldInfo(class8511, "MpServer"), class8512, (class8515, p2) -> new Class1907((Class1848)class8515, n2), class8513, true);
         this.field10071 = Lists.newArrayList();
         this.field10072 = (Int2ObjectMap<Entity>)new Int2ObjectOpenHashMap();
-        this.field10075 = Class869.method5277();
+        this.field10075 = Minecraft.method5277();
         this.field10076 = Lists.newArrayList();
         this.field10077 = this.rand.nextInt(12000);
         this.field10078 = new Class6516();
@@ -742,7 +742,7 @@ public class Class1848 extends World
     }
     
     public int method6850(final BlockPos class354, final Class8895 class355) {
-        final int field23410 = Class869.method5277().field4648.field23410;
+        final int field23410 = Minecraft.method5277().field4648.field23410;
         if (field23410 != 0) {
             final int n = (field23410 * 2 + 1) * (field23410 * 2 + 1);
             int n2 = 0;

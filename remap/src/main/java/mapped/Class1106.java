@@ -21,7 +21,7 @@ public class Class1106 implements Runnable
     
     private void method5609() {
         try {
-            final Class9513 method35444 = Class9513.method35444();
+            final RealmsClient method35444 = RealmsClient.func_224911_a();
             if (method35444 != null) {
                 Class9057.method32608(this.field5972, method35444.method35450());
                 Class9057.method32609(this.field5972).put(Class2099.field12166, true);

@@ -102,7 +102,7 @@ public class Class3211 extends Class3167
                 Class3211.field15514.method5269().method17292(new Class4302(false, false));
                 Class3211.field15514.method5269().method17292(new Class4356(Class3211.field15514.field4684.rotationYaw, Class3211.field15514.field4684.rotationPitch, false));
                 Class3211.field15514.method5269().method17292(new Class4254(0.0f, 1.0f, false, false));
-                final Class423 class9409 = new Class423(Class3211.field15514.field4683, class9408.method34993() + 0.5, class9408.method34994(), class9408.method34995() + 0.5);
+                final Class423 class9409 = new Class423(Class3211.field15514.world, class9408.method34993() + 0.5, class9408.method34994(), class9408.method34995() + 0.5);
                 class9409.rotationYaw = method1920.rotationYaw;
                 class9409.rotationPitch = method1920.rotationPitch;
                 Class3211.field15514.method5269().method17292(new Class4251(class9409));
@@ -231,8 +231,8 @@ public class Class3211 extends Class3167
     
     public boolean method10095() {
         if (this.field15647) {
-            if (Class869.method5277().field4684.getHeldItemMainhand() != null) {
-                if (Class869.method5277().field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
+            if (Minecraft.method5277().field4684.getHeldItemMainhand() != null) {
+                if (Minecraft.method5277().field4684.getHeldItemMainhand().getItem() instanceof Class4077) {
                     return true;
                 }
             }

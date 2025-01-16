@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 
 public class Class7343
 {
-    private final Class869 field28355;
+    private final Minecraft field28355;
     private final Class1844 field28356;
     private final Supplier<String> field28357;
     private final Consumer<String> field28358;
@@ -19,9 +19,9 @@ public class Class7343
     private int field28360;
     private int field28361;
     
-    public Class7343(final Class869 field28355, final Supplier<String> field28356, final Consumer<String> field28357, final int field28358) {
+    public Class7343(final Minecraft field28355, final Supplier<String> field28356, final Consumer<String> field28357, final int field28358) {
         this.field28355 = field28355;
-        this.field28356 = field28355.field4643;
+        this.field28356 = field28355.fontRenderer;
         this.field28357 = field28356;
         this.field28358 = field28357;
         this.field28359 = field28358;
@@ -52,21 +52,21 @@ public class Class7343
     
     public boolean method22553(final int n) {
         final String s = this.field28357.get();
-        if (Class527.method3052(n)) {
+        if (Screen.method3052(n)) {
             this.field28361 = 0;
             this.field28360 = s.length();
             return true;
         }
-        if (Class527.method3051(n)) {
+        if (Screen.method3051(n)) {
             this.field28355.field4651.method22508(this.method22554());
             return true;
         }
-        if (Class527.method3050(n)) {
+        if (Screen.method3050(n)) {
             this.method22552(Class9528.method35577(TextFormatting.getTextWithoutFormattingCodes(this.field28355.field4651.method22507().replaceAll("\\r", ""))));
             this.field28361 = this.field28360;
             return true;
         }
-        if (Class527.method3049(n)) {
+        if (Screen.method3049(n)) {
             this.field28355.field4651.method22508(this.method22554());
             this.method22555();
             return true;
@@ -103,33 +103,33 @@ public class Class7343
         }
         if (n == 263) {
             final int n2 = this.field28356.method6630() ? 1 : -1;
-            if (!Class527.method3046()) {
+            if (!Screen.method3046()) {
                 this.field28360 = Math.max(0, Math.min(s.length(), this.field28360 + n2));
             }
             else {
                 this.field28360 = this.field28356.method6629(s, n2, this.field28360, true);
             }
-            if (!Class527.method3047()) {
+            if (!Screen.method3047()) {
                 this.field28361 = this.field28360;
             }
             return true;
         }
         if (n == 262) {
             final int n3 = this.field28356.method6630() ? -1 : 1;
-            if (!Class527.method3046()) {
+            if (!Screen.method3046()) {
                 this.field28360 = Math.max(0, Math.min(s.length(), this.field28360 + n3));
             }
             else {
                 this.field28360 = this.field28356.method6629(s, n3, this.field28360, true);
             }
-            if (!Class527.method3047()) {
+            if (!Screen.method3047()) {
                 this.field28361 = this.field28360;
             }
             return true;
         }
         if (n == 268) {
             this.field28360 = 0;
-            if (!Class527.method3047()) {
+            if (!Screen.method3047()) {
                 this.field28361 = this.field28360;
             }
             return true;
@@ -138,7 +138,7 @@ public class Class7343
             return false;
         }
         this.field28360 = this.field28357.get().length();
-        if (!Class527.method3047()) {
+        if (!Screen.method3047()) {
             this.field28361 = this.field28360;
         }
         return true;

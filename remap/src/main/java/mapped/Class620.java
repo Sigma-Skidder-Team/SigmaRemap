@@ -24,7 +24,7 @@ public class Class620 extends Class608<Class641>
     private final Class544 field3598;
     private List<Class1934> field3599;
     
-    public Class620(final Class544 field3598, final Class869 class869, final int n, final int n2, final int n3, final int n4, final int n5, final Supplier<String> supplier, final Class620 class870) {
+    public Class620(final Class544 field3598, final Minecraft class869, final int n, final int n2, final int n3, final int n4, final int n5, final Supplier<String> supplier, final Class620 class870) {
         super(class869, n, n2, n3, n4, n5);
         this.field3598 = field3598;
         if (class870 != null) {
@@ -79,7 +79,7 @@ public class Class620 extends Class608<Class641>
         super.method3531(class641);
         if (class641 != null) {
             final Class1934 method3684 = Class641.method3684(class641);
-            Class7895.field32404.method25556(new Class2259("narrator.select", new Object[] { new Class2259("narrator.select.world", new Object[] { method3684.method7809(), new Date(method3684.method7812()), method3684.method7814() ? Class8822.method30773("gameMode.hardcore", new Object[0]) : Class8822.method30773("gameMode." + method3684.method7813().method586(), new Object[0]), method3684.method7815() ? Class8822.method30773("selectWorld.cheats", new Object[0]) : "", method3684.method7816() }) }).getString());
+            NarratorChatListener.field32404.method25556(new Class2259("narrator.select", new Object[] { new Class2259("narrator.select.world", new Object[] { method3684.method7809(), new Date(method3684.method7812()), method3684.method7814() ? Class8822.method30773("gameMode.hardcore", new Object[0]) : Class8822.method30773("gameMode." + method3684.method7813().method586(), new Object[0]), method3684.method7815() ? Class8822.method30773("selectWorld.cheats", new Object[0]) : "", method3684.method7816() }) }).getString());
         }
     }
     

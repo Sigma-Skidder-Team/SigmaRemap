@@ -12,7 +12,7 @@ public abstract class Class662 extends Class573
     public double field3694;
     
     public Class662(final int n, final int n2, final int n3, final int n4, final double n5) {
-        this(Class869.method5277().field4648, n, n2, n3, n4, n5);
+        this(Minecraft.method5277().field4648, n, n2, n3, n4, n5);
     }
     
     public Class662(final Class5760 field3693, final int n, final int n2, final int n3, final int n4, final double field3694) {
@@ -32,7 +32,7 @@ public abstract class Class662 extends Class573
     }
     
     @Override
-    public void method3354(final Class869 class869, final int n, final int n2) {
+    public void method3354(final Minecraft class869, final int n, final int n2) {
         class869.method5290().method5849(Class662.field3421);
         Class8726.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         final int n3 = (this.method3360() ? 2 : 1) * 20;
@@ -46,7 +46,7 @@ public abstract class Class662 extends Class573
     }
     
     @Override
-    public boolean method2972(final int n, final int n2, final int n3) {
+    public boolean keyPressed(final int n, final int n2, final int n3) {
         final boolean b = n == 263;
         if (b || n == 262) {
             this.method3715(this.field3694 + (b ? -1.0f : 1.0f) / (this.field3424 - 8));
@@ -79,7 +79,7 @@ public abstract class Class662 extends Class573
     
     @Override
     public void method3356(final double n, final double n2) {
-        super.method3363(Class869.method5277().method5299());
+        super.method3363(Minecraft.method5277().method5299());
     }
     
     public abstract void method3711();

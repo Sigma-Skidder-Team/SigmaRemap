@@ -17,11 +17,11 @@ import com.mojang.bridge.game.RunningGame;
 public class Class7899 implements RunningGame
 {
     private static String[] field32412;
-    private final Class869 field32413;
+    private final Minecraft field32413;
     private final Launcher field32414;
     private SessionEventListener field32415;
     
-    public Class7899(final Class869 field32413) {
+    public Class7899(final Minecraft field32413) {
         this.field32415 = SessionEventListener.NONE;
         this.field32413 = field32413;
         this.field32414 = Bridge.getLauncher();
@@ -40,7 +40,7 @@ public class Class7899 implements RunningGame
     
     @Nullable
     public GameSession getCurrentSession() {
-        final Class1848 field4683 = this.field32413.field4683;
+        final Class1848 field4683 = this.field32413.world;
         return (GameSession)((field4683 != null) ? new Class6714(field4683, this.field32413.field4684, this.field32413.field4684.field4069) : null);
     }
     

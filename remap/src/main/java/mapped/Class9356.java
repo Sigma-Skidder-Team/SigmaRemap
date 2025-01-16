@@ -21,9 +21,9 @@ public class Class9356
     }
     
     public void method34678() {
-        this.field40138[0] = Class869.method5277().method5322().method6453().method35428(Class7521.field29174.getDefaultState()).method18696();
+        this.field40138[0] = Minecraft.method5277().method5322().method6453().method35428(Class7521.field29174.getDefaultState()).method18696();
         this.field40138[1] = Class7637.field30239.method11332();
-        this.field40139[0] = Class869.method5277().method5322().method6453().method35428(Class7521.field29173.getDefaultState()).method18696();
+        this.field40139[0] = Minecraft.method5277().method5322().method6453().method35428(Class7521.field29173.getDefaultState()).method18696();
         this.field40139[1] = Class7637.field30240.method11332();
         this.field40140 = Class7637.field30241.method11332();
     }

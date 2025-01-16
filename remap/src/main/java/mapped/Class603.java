@@ -133,7 +133,7 @@ public class Class603 extends Class599
     }
     
     @Override
-    public boolean method3012(final double n, final double n2, final double n3) {
-        return super.method3012(n, n2, n3 * 3.0);
+    public boolean mouseScrolled(final double n, final double n2, final double n3) {
+        return super.mouseScrolled(n, n2, n3 * 3.0);
     }
 }

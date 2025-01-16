@@ -15,7 +15,7 @@ public class Class4162 extends Class4158<Class491>
     
     public Class4162(final Class9550 class9550) {
         super(class9550);
-        this.field18549 = Class869.method5277().method5305();
+        this.field18549 = Minecraft.method5277().method5305();
     }
     
     public void method12467(final Class491 class491, final float n, final Class7351 class492, final Class7807 class493, final int n2, final int n3) {

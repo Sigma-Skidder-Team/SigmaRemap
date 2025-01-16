@@ -7,13 +7,13 @@ package mapped;
 public class Class8799
 {
     public Class3167 field36994;
-    public Class<? extends Class527> field36995;
+    public Class<? extends Screen> field36995;
     
     public Class8799(final Class3167 field36994) {
         this.field36994 = field36994;
     }
     
-    public Class8799(final Class<? extends Class527> field36995) {
+    public Class8799(final Class<? extends Screen> field36995) {
         this.field36995 = field36995;
     }
     

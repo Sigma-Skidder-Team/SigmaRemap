@@ -9,10 +9,10 @@ import java.util.Collection;
 
 public class Class6126 implements Class6113
 {
-    private final Class869 field24868;
+    private final Minecraft field24868;
     private Collection<BlockPos> field24869;
     
-    public Class6126(final Class869 field24868) {
+    public Class6126(final Minecraft field24868) {
         this.field24869 = Lists.newArrayList();
         this.field24868 = field24868;
     }
