@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util2.Direction;
 
 public class Class3265 extends Class3247
 {
@@ -49,7 +50,7 @@ public class Class3265 extends Class3247
         double field25077 = 0.0;
         for (int i = 0; i < length; ++i) {
             final VoxelShape class5748 = (VoxelShape)array[i];
-            final BlockPos class5749 = new BlockPos(class5748.method24535(Axis.X), class5748.method24535(Axis.Y), class5748.method24535(Axis.Z));
+            final BlockPos class5749 = new BlockPos(class5748.method24535(Direction.Axis.X), class5748.method24535(Direction.Axis.Y), class5748.method24535(Direction.Axis.Z));
             final Class7096 method6701 = Class3265.field15514.field4683.getBlockState(class5749);
             if (class5746 == null || class5748.method24537().maxY > field25077) {
                 class5746 = method6701;

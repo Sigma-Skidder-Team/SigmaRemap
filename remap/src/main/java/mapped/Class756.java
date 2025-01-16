@@ -991,7 +991,7 @@ public class Class756 extends Class754
                                 final BlockPos method1954 = class5491.method1138(n8);
                                 final VoxelShape method1955;
                                 if (!(method1955 = this.world.getBlockState(method1954).method21728(this.world, method1954, method1943)).isEmpty()) {
-                                    n7 = (float)method1955.method24536(Axis.Y) + method1954.getY();
+                                    n7 = (float)method1955.method24536(Direction.Axis.Y) + method1954.getY();
                                     if (n7 - this.getPosY() > n6) {
                                         return;
                                     }

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class4028 extends Class4027
@@ -13,7 +14,7 @@ public class Class4028 extends Class4027
     
     public Class4028(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class4028.field18120, Axis.Y));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class4028.field18120, Direction.Axis.Y));
     }
     
     @Override

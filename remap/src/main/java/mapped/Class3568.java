@@ -25,8 +25,8 @@ public class Class3568 extends Class3555<PlayerEntity>
     @Override
     public AxisAlignedBB method11103(final double n) {
         final Direction method5018 = ((Class841)this.field16602).method5018();
-        if (method5018.getAxis() != Axis.X) {
-            return (method5018.getAxis() != Axis.Z) ? this.field16602.getBoundingBox().method18495(n, 4.0, n) : this.field16602.getBoundingBox().method18495(n, n, 4.0);
+        if (method5018.getAxis() != Direction.Axis.X) {
+            return (method5018.getAxis() != Direction.Axis.Z) ? this.field16602.getBoundingBox().method18495(n, 4.0, n) : this.field16602.getBoundingBox().method18495(n, n, 4.0);
         }
         return this.field16602.getBoundingBox().method18495(4.0, n, n);
     }

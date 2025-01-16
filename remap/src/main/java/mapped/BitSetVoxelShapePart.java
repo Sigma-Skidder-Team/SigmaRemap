@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util2.Direction;
+
 import java.util.BitSet;
 
 public final class BitSetVoxelShapePart extends VoxelShapePart
@@ -48,12 +50,12 @@ public final class BitSetVoxelShapePart extends VoxelShapePart
         else {
             this.bitSet = (BitSet)((BitSetVoxelShapePart)class8260).bitSet.clone();
         }
-        this.startX = class8260.getStart(Axis.X);
-        this.startY = class8260.getStart(Axis.Y);
-        this.startZ = class8260.getStart(Axis.Z);
-        this.endX = class8260.getEnd(Axis.X);
-        this.endY = class8260.getEnd(Axis.Y);
-        this.endZ = class8260.getEnd(Axis.Z);
+        this.startX = class8260.getStart(Direction.Axis.X);
+        this.startY = class8260.getStart(Direction.Axis.Y);
+        this.startZ = class8260.getStart(Direction.Axis.Z);
+        this.endX = class8260.getEnd(Direction.Axis.X);
+        this.endY = class8260.getEnd(Direction.Axis.Y);
+        this.endZ = class8260.getEnd(Direction.Axis.Z);
     }
     
     public int getIndex(final int n, final int n2, final int n3) {
@@ -86,12 +88,12 @@ public final class BitSetVoxelShapePart extends VoxelShapePart
     }
     
     @Override
-    public int getStart(final Axis class111) {
+    public int getStart(final Direction.Axis class111) {
         return class111.getCoordinate(this.startX, this.startY, this.startZ);
     }
     
     @Override
-    public int getEnd(final Axis class111) {
+    public int getEnd(final Direction.Axis class111) {
         return class111.getCoordinate(this.endX, this.endY, this.endZ);
     }
     

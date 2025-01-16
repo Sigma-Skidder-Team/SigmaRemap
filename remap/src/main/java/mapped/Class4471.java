@@ -25,7 +25,7 @@ public class Class4471 extends Class4469
         this.field19846 = Lists.newArrayList();
         this.method13456(class179);
         final Direction method13455 = this.method13455();
-        if (method13455.getAxis() != Axis.Z) {
+        if (method13455.getAxis() != Direction.Axis.Z) {
             this.field19849 = new MutableBoundingBox(n, 39, n2, n + 58 - 1, 61, n2 + 58 - 1);
         }
         else {

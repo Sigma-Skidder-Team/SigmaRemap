@@ -75,7 +75,7 @@ public class Block implements Class3832
     public static BlockState method11777(final BlockState class7096, final BlockState class7097, final World class7098, final BlockPos class7099) {
         final VoxelShape method24541 = VoxelShapes.method24495(class7096.getCollisionShape(class7098, class7099), class7097.getCollisionShape(class7098, class7099), IBooleanFunction.ONLY_SECOND).withOffset(class7099.getX(), class7099.getY(), class7099.getZ());
         for (final Entity class7100 : class7098.method7127(null, method24541.method24537())) {
-            class7100.method1878(class7100.getPosX(), class7100.getPosY() + 1.0 + VoxelShapes.method24498(Axis.Y, class7100.getBoundingBox().method18499(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.getPosZ());
+            class7100.method1878(class7100.getPosX(), class7100.getPosY() + 1.0 + VoxelShapes.method24498(Direction.Axis.Y, class7100.getBoundingBox().method18499(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.getPosZ());
         }
         return class7097;
     }

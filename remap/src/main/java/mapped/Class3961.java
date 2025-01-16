@@ -148,13 +148,13 @@ public class Class3961 extends Class3841
         if (class1849.getFluidState().isEmpty()) {
             if (class1847.rand.nextFloat() >= 0.3f) {
                 final VoxelShape method21727 = class1849.getCollisionShape(class1847, class1848);
-                if (method21727.method24536(Axis.Y) >= 1.0) {
+                if (method21727.method24536(Direction.Axis.Y) >= 1.0) {
                     if (!class1849.method21755(Class7188.field27919)) {
-                        final double method21728 = method21727.method24535(Axis.Y);
+                        final double method21728 = method21727.method24535(Direction.Axis.Y);
                         if (method21728 <= 0.0) {
                             final BlockPos method21729 = class1848.method1139();
                             final BlockState method21730 = class1847.getBlockState(method21729);
-                            if (method21730.getCollisionShape(class1847, method21729).method24536(Axis.Y) < 1.0 || !method21730.isCollisionShapeOpaque(class1847, method21729)) {
+                            if (method21730.getCollisionShape(class1847, method21729).method24536(Direction.Axis.Y) < 1.0 || !method21730.isCollisionShapeOpaque(class1847, method21729)) {
                                 if (method21730.getFluidState().isEmpty()) {
                                     this.method12088(class1847, class1848, method21727, class1848.getY() - 0.05);
                                 }
@@ -170,7 +170,7 @@ public class Class3961 extends Class3841
     }
     
     private void method12088(final World class1847, final BlockPos class1848, final VoxelShape class1849, final double n) {
-        this.method12089(class1847, class1848.getX() + class1849.method24535(Axis.X), class1848.getX() + class1849.method24536(Axis.X), class1848.getZ() + class1849.method24535(Axis.Z), class1848.getZ() + class1849.method24536(Axis.Z), n);
+        this.method12089(class1847, class1848.getX() + class1849.method24535(Direction.Axis.X), class1848.getX() + class1849.method24536(Direction.Axis.X), class1848.getZ() + class1849.method24535(Direction.Axis.Z), class1848.getZ() + class1849.method24536(Direction.Axis.Z), n);
     }
     
     private void method12089(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5) {

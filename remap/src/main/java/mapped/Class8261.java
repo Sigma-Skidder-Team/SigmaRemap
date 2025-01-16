@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util2.Direction;
+
 public final class Class8261 extends VoxelShapePart
 {
     private static String[] field33922;
@@ -37,12 +39,12 @@ public final class Class8261 extends VoxelShapePart
     }
     
     @Override
-    public int getStart(final Axis class111) {
+    public int getStart(final Direction.Axis class111) {
         return Math.max(0, this.field33923.getStart(class111) - class111.getCoordinate(this.field33924, this.field33925, this.field33926));
     }
     
     @Override
-    public int getEnd(final Axis class111) {
+    public int getEnd(final Direction.Axis class111) {
         return Math.min(class111.getCoordinate(this.field33927, this.field33928, this.field33929), this.field33923.getEnd(class111) - class111.getCoordinate(this.field33924, this.field33925, this.field33926));
     }
 }

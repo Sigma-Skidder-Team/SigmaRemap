@@ -10,6 +10,7 @@ import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class3965 extends Block implements Class3966
@@ -104,7 +105,7 @@ public class Class3965 extends Block implements Class3966
     public static void method12096(final World class1847, final BlockPos class1848, final boolean b) {
         final Class7096 method6701 = class1847.getBlockState(class1848);
         class1847.method6708(class1848.getX(), class1848.getY(), class1848.getZ(), b ? Class8520.field35088 : Class8520.field35087, Class286.field1582, 1.0f, 1.0f, false);
-        final double n = method6701.method21725(class1847, class1848).method24547(Axis.Y, 0.5, 0.5) + 0.03125;
+        final double n = method6701.method21725(class1847, class1848).method24547(Direction.Axis.Y, 0.5, 0.5) + 0.03125;
         final Random method6702 = class1847.method6790();
         for (int i = 0; i < 10; ++i) {
             class1847.method6709(Class8432.field34626, class1848.getX() + 0.13124999403953552 + 0.737500011920929 * method6702.nextFloat(), class1848.getY() + n + method6702.nextFloat() * (1.0 - n), class1848.getZ() + 0.13124999403953552 + 0.737500011920929 * method6702.nextFloat(), method6702.nextGaussian() * 0.02, method6702.nextGaussian() * 0.02, method6702.nextGaussian() * 0.02);

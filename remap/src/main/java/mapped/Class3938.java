@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 import java.util.Iterator;
@@ -48,8 +49,8 @@ public class Class3938 extends Class3936
                             }
                             final Class767 class1850 = EntityType.field29048.method23371(class1847);
                             final BlockPos method21700 = method21698.method25270(1, 2, 0).method26068();
-                            class1850.method1730(method21700.getX() + 0.5, method21700.getY() + 0.55, method21700.getZ() + 0.5, (method21698.method25266().getAxis() != Axis.X) ? 90.0f : 0.0f, 0.0f);
-                            class1850.field2951 = ((method21698.method25266().getAxis() != Axis.X) ? 90.0f : 0.0f);
+                            class1850.method1730(method21700.getX() + 0.5, method21700.getY() + 0.55, method21700.getZ() + 0.5, (method21698.method25266().getAxis() != Direction.Axis.X) ? 90.0f : 0.0f, 0.0f);
+                            class1850.field2951 = ((method21698.method25266().getAxis() != Direction.Axis.X) ? 90.0f : 0.0f);
                             class1850.method4245();
                             final Iterator<Entity> iterator = (Iterator<Entity>)class1847.method7128((Class<? extends Class513>)Class513.class, class1850.getBoundingBox().method18496(50.0)).iterator();
                             while (iterator.hasNext()) {

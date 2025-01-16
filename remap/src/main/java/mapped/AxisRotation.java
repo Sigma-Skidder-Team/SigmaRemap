@@ -4,15 +4,17 @@
 
 package mapped;
 
+import net.minecraft.util2.Direction;
+
 public enum AxisRotation
 {
     NONE {
-        public int getCoordinate(int x, int y, int z, Axis axis)
+        public int getCoordinate(int x, int y, int z, Direction.Axis axis)
         {
             return axis.getCoordinate(x, y, z);
         }
 
-        public Axis rotate(Axis axisIn)
+        public Direction.Axis rotate(Direction.Axis axisIn)
         {
             return axisIn;
         }
@@ -23,13 +25,13 @@ public enum AxisRotation
         }
     }, 
     FORWARD {
-        public int getCoordinate(int x, int y, int z, Axis axis)
+        public int getCoordinate(int x, int y, int z, Direction.Axis axis)
         {
             return axis.getCoordinate(x, y, z);
         }
         
         @Override
-        public Axis rotate(final Axis axisIn) {
+        public Direction.Axis rotate(final Direction.Axis axisIn) {
             return AXES[Math.floorMod(axisIn.ordinal() + 1, 3)];
         }
         
@@ -39,12 +41,12 @@ public enum AxisRotation
         }
     }, 
     BACKWARD {
-        public int getCoordinate(int x, int y, int z, Axis axis)
+        public int getCoordinate(int x, int y, int z, Direction.Axis axis)
         {
             return axis.getCoordinate(y, z, x);
         }
 
-        public Axis rotate(Axis axisIn)
+        public Direction.Axis rotate(Direction.Axis axisIn)
         {
             return AXES[Math.floorMod(axisIn.ordinal() - 1, 3)];
         }
@@ -54,22 +56,22 @@ public enum AxisRotation
         }
     };
     
-    public static final Axis[] AXES;
+    public static final Direction.Axis[] AXES;
     public static final AxisRotation[] AXIS_ROTATIONS;
     
-    public abstract int getCoordinate(final int p0, final int p1, final int p2, final Axis p3);
+    public abstract int getCoordinate(final int p0, final int p1, final int p2, final Direction.Axis p3);
     
-    public abstract Axis rotate(final Axis p0);
+    public abstract Direction.Axis rotate(final Direction.Axis p0);
     
     public abstract AxisRotation reverse();
 
-    public static AxisRotation from(Axis axis1, Axis axis2)
+    public static AxisRotation from(Direction.Axis axis1, Direction.Axis axis2)
     {
         return AXIS_ROTATIONS[Math.floorMod(axis2.ordinal() - axis1.ordinal(), 3)];
     }
     
     static {
-        AXES = Axis.values();
+        AXES = Direction.Axis.values();
         AXIS_ROTATIONS = values();
     }
 }

@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util2.Direction;
 
 import java.util.function.Function;
 
@@ -97,19 +98,19 @@ public class Class4601 extends Class4592<Class5129>
         return (method35649 <= method35648) ? method35648 : method35649;
     }
     
-    private Axis method13654(final BlockPos class354, final BlockPos class355) {
-        Axis class356 = Axis.Y;
+    private Direction.Axis method13654(final BlockPos class354, final BlockPos class355) {
+        Direction.Axis class356 = Direction.Axis.Y;
         final int abs = Math.abs(class355.getX() - class354.getX());
         final int abs2 = Math.abs(class355.getZ() - class354.getZ());
         final int max = Math.max(abs, abs2);
         if (max > 0) {
             if (abs != max) {
                 if (abs2 == max) {
-                    class356 = Axis.Z;
+                    class356 = Direction.Axis.Z;
                 }
             }
             else {
-                class356 = Axis.X;
+                class356 = Direction.Axis.X;
             }
         }
         return class356;

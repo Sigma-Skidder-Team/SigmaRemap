@@ -4,10 +4,10 @@
 
 package net.minecraft.util.math;
 
-import mapped.Axis;
 import net.minecraft.dispenser.IPosition;
 import mapped.Vec2f;
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.util2.Direction;
 
 import java.util.EnumSet;
 
@@ -203,15 +203,15 @@ public class Vec3d implements IPosition
         return new Vec3d((double)(f1 * f2), (double)f3, (double)(f * f2));
     }
 
-    public Vec3d align(EnumSet<Axis> axes)
+    public Vec3d align(EnumSet<Direction.Axis> axes)
     {
-        double d0 = axes.contains(Axis.X) ? (double)MathHelper.floor(this.x) : this.x;
-        double d1 = axes.contains(Axis.Y) ? (double)MathHelper.floor(this.y) : this.y;
-        double d2 = axes.contains(Axis.Z) ? (double)MathHelper.floor(this.z) : this.z;
+        double d0 = axes.contains(Direction.Axis.X) ? (double)MathHelper.floor(this.x) : this.x;
+        double d1 = axes.contains(Direction.Axis.Y) ? (double)MathHelper.floor(this.y) : this.y;
+        double d2 = axes.contains(Direction.Axis.Z) ? (double)MathHelper.floor(this.z) : this.z;
         return new Vec3d(d0, d1, d2);
     }
     
-    public double getCoordinate(final Axis axis) {
+    public double getCoordinate(final Direction.Axis axis) {
         return axis.getCoordinate(this.x, this.y, this.z);
     }
     

@@ -41,11 +41,11 @@ public class Class3951 extends Class3948
                 class7097.method6708(n, n2, n3, Class8520.field35212, Class286.field1582, 1.0f, 1.0f, false);
             }
             final Direction class7099 = class7096.method21772((IProperty<Direction>)Class3951.field17846);
-            final Axis method790 = class7099.getAxis();
+            final Direction.Axis method790 = class7099.getAxis();
             final double n4 = random.nextDouble() * 0.6 - 0.3;
-            final double n5 = (method790 != Axis.X) ? n4 : (class7099.getXOffset() * 0.52);
+            final double n5 = (method790 != Direction.Axis.X) ? n4 : (class7099.getXOffset() * 0.52);
             final double n6 = random.nextDouble() * 6.0 / 16.0;
-            final double n7 = (method790 != Axis.Z) ? n4 : (class7099.getZOffset() * 0.52);
+            final double n7 = (method790 != Direction.Axis.Z) ? n4 : (class7099.getZOffset() * 0.52);
             class7097.method6709(Class8432.field34639, n + n5, n2 + n6, n3 + n7, 0.0, 0.0, 0.0);
             class7097.method6709(Class8432.field34623, n + n5, n2 + n6, n3 + n7, 0.0, 0.0, 0.0);
         }

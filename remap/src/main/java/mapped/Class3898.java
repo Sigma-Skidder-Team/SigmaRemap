@@ -34,9 +34,9 @@ public class Class3898 extends Class3892
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.get((IProperty<Boolean>)Class3898.field17587)) {
-            return (class7096.get((IProperty<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17588 : Class3898.field17589;
+            return (class7096.get((IProperty<Direction>)Class3898.field17564).getAxis() != Direction.Axis.X) ? Class3898.field17588 : Class3898.field17589;
         }
-        return (class7096.get((IProperty<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17590 : Class3898.field17591;
+        return (class7096.get((IProperty<Direction>)Class3898.field17564).getAxis() != Direction.Axis.X) ? Class3898.field17590 : Class3898.field17591;
     }
     
     @Override
@@ -50,7 +50,7 @@ public class Class3898 extends Class3892
     @Override
     public VoxelShape method11809(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.method21772((IProperty<Boolean>)Class3898.field17585)) {
-            return (class7096.method21772((IProperty<Direction>)Class3898.field17564).getAxis() != Axis.Z) ? Class3898.field17593 : Class3898.field17592;
+            return (class7096.method21772((IProperty<Direction>)Class3898.field17564).getAxis() != Direction.Axis.Z) ? Class3898.field17593 : Class3898.field17592;
         }
         return VoxelShapes.empty();
     }
@@ -58,9 +58,9 @@ public class Class3898 extends Class3892
     @Override
     public VoxelShape method11810(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         if (!class7096.method21772((IProperty<Boolean>)Class3898.field17587)) {
-            return (class7096.method21772((IProperty<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17594 : Class3898.field17595;
+            return (class7096.method21772((IProperty<Direction>)Class3898.field17564).getAxis() != Direction.Axis.X) ? Class3898.field17594 : Class3898.field17595;
         }
-        return (class7096.method21772((IProperty<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17596 : Class3898.field17597;
+        return (class7096.method21772((IProperty<Direction>)Class3898.field17564).getAxis() != Direction.Axis.X) ? Class3898.field17596 : Class3898.field17597;
     }
     
     @Override
@@ -87,9 +87,9 @@ public class Class3898 extends Class3892
         final BlockPos method21655 = class7074.method21639();
         final boolean method21656 = method21654.method6749(method21655);
         final Direction method21657 = class7074.method21644();
-        final Axis method21658 = method21657.getAxis();
+        final Direction.Axis method21658 = method21657.getAxis();
         Label_0072: {
-            if (method21658 == Axis.Z) {
+            if (method21658 == Direction.Axis.Z) {
                 if (this.method11982(method21654.getBlockState(method21655.method1145()))) {
                     break Label_0072;
                 }
@@ -97,7 +97,7 @@ public class Class3898 extends Class3892
                     break Label_0072;
                 }
             }
-            if (method21658 == Axis.X) {
+            if (method21658 == Direction.Axis.X) {
                 if (this.method11982(method21654.getBlockState(method21655.method1141()))) {
                     break Label_0072;
                 }

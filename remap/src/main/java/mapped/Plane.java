@@ -13,13 +13,13 @@ import java.util.function.Predicate;
 
 public enum Plane implements Iterable<Direction>, Predicate<Direction>
 {
-    HORIZONTAL(new Direction[] { Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST}, new Axis[] { Axis.X, Axis.Z}),
-    VERTICAL(new Direction[] { Direction.UP, Direction.DOWN}, new Axis[] { Axis.Y});
+    HORIZONTAL(new Direction[] { Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST}, new Direction.Axis[] { Direction.Axis.X, Direction.Axis.Z}),
+    VERTICAL(new Direction[] { Direction.UP, Direction.DOWN}, new Direction.Axis[] { Direction.Axis.Y});
     
     private final Direction[] field270;
-    private final Axis[] field271;
+    private final Direction.Axis[] field271;
     
-    private Plane(final Direction[] field270, final Axis[] field271) {
+    private Plane(final Direction[] field270, final Direction.Axis[] field271) {
         this.field270 = field270;
         this.field271 = field271;
     }

@@ -43,7 +43,7 @@ public class Class509 extends Entity
         this.setMotion(n4, n5, n6);
     }
     
-    public Class509(final World class1847, final LivingEntity field2904, final Entity field2905, final Axis class1848) {
+    public Class509(final World class1847, final LivingEntity field2904, final Entity field2905, final Direction.Axis class1848) {
         this(EntityType.field29021, class1847);
         this.field2904 = field2904;
         final BlockPos class1849 = new BlockPos(field2904);
@@ -114,7 +114,7 @@ public class Class509 extends Entity
         this.field2906 = field2906;
     }
     
-    private void method2611(final Axis class111) {
+    private void method2611(final Direction.Axis class111) {
         double n = 0.5;
         BlockPos method1139;
         if (this.field2905 != null) {
@@ -131,7 +131,7 @@ public class Class509 extends Entity
         if (!method1139.withinDistance(this.method1934(), 2.0)) {
             final BlockPos class113 = new BlockPos(this);
             final ArrayList arrayList = Lists.newArrayList();
-            if (class111 != Axis.X) {
+            if (class111 != Direction.Axis.X) {
                 if (class113.getX() < method1139.getX() && this.world.method6961(class113.method1147())) {
                     arrayList.add(Direction.EAST);
                 }
@@ -141,7 +141,7 @@ public class Class509 extends Entity
                     }
                 }
             }
-            if (class111 != Axis.Y) {
+            if (class111 != Direction.Axis.Y) {
                 if (class113.getY() < method1139.getY() && this.world.method6961(class113.method1137())) {
                     arrayList.add(Direction.UP);
                 }
@@ -151,7 +151,7 @@ public class Class509 extends Entity
                     }
                 }
             }
-            if (class111 != Axis.Z) {
+            if (class111 != Direction.Axis.Z) {
                 if (class113.getZ() < method1139.getZ() && this.world.method6961(class113.method1143())) {
                     arrayList.add(Direction.SOUTH);
                 }
@@ -262,12 +262,12 @@ public class Class509 extends Entity
                     }
                     if (this.field2906 != null) {
                         final BlockPos class354 = new BlockPos(this);
-                        final Axis method1938 = this.field2906.getAxis();
+                        final Direction.Axis method1938 = this.field2906.getAxis();
                         if (!this.world.method6732(class354.method1149(this.field2906), this)) {
                             final BlockPos class355 = new BlockPos(this.field2905);
-                            if (method1938 != Axis.X || class354.getX() != class355.getX()) {
-                                if (method1938 != Axis.Z || class354.getZ() != class355.getZ()) {
-                                    if (method1938 != Axis.Y) {
+                            if (method1938 != Direction.Axis.X || class354.getX() != class355.getX()) {
+                                if (method1938 != Direction.Axis.Z || class354.getZ() != class355.getZ()) {
+                                    if (method1938 != Direction.Axis.Y) {
                                         return;
                                     }
                                     if (class354.getY() != class355.getY()) {

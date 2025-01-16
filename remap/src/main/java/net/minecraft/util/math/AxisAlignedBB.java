@@ -4,7 +4,6 @@
 
 package net.minecraft.util.math;
 
-import mapped.Axis;
 import mapped.BlockPos;
 import mapped.MutableBoundingBox;
 import mapped.BlockRayTraceResult;
@@ -48,11 +47,11 @@ public class AxisAlignedBB
         return new AxisAlignedBB(class6997.minX, class6997.minY, class6997.minZ, class6997.maxX + 1, class6997.maxY + 1, class6997.maxZ + 1);
     }
     
-    public double method18490(final Axis class111) {
+    public double method18490(final Direction.Axis class111) {
         return class111.getCoordinate(this.minX, this.minY, this.minZ);
     }
     
-    public double method18491(final Axis class111) {
+    public double method18491(final Direction.Axis class111) {
         return class111.getCoordinate(this.maxX, this.maxY, this.maxZ);
     }
     

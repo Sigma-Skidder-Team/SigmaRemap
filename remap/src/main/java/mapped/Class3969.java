@@ -57,7 +57,7 @@ public class Class3969 extends Block
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         final Class182 class7102 = class7096.get(Class3969.field17935);
-        if (class7097.getAxis() == Axis.Y && class7102 == Class182.field565 == (class7097 == Direction.UP)) {
+        if (class7097.getAxis() == Direction.Axis.Y && class7102 == Class182.field565 == (class7097 == Direction.UP)) {
             return (class7098.getBlock() == this && class7098.get(Class3969.field17935) != class7102) ? ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3969.field17931, (Comparable)class7098.get((IProperty<V>)Class3969.field17931))).with((IProperty<Comparable>)Class3969.field17932, (Comparable)class7098.get((IProperty<V>)Class3969.field17932))).with(Class3969.field17933, (Comparable)class7098.get((IProperty<V>)Class3969.field17933))).with((IProperty<Comparable>)Class3969.field17934, (Comparable)class7098.get((IProperty<V>)Class3969.field17934)) : Class7521.field29147.getDefaultState();
         }
         if (class7102 == Class182.field565) {

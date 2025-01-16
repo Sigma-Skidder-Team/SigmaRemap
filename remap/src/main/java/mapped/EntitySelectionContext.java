@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util2.Direction;
 
 public class EntitySelectionContext implements ISelectionContext
 {
@@ -45,6 +46,6 @@ public class EntitySelectionContext implements ISelectionContext
     
     @Override
     public boolean func_216378_a(final VoxelShape class7702, final BlockPos class7703, final boolean b) {
-        return this.field_216381_c > class7703.getY() + class7702.method24536(Axis.Y) - 9.999999747378752E-6;
+        return this.field_216381_c > class7703.getY() + class7702.method24536(Direction.Axis.Y) - 9.999999747378752E-6;
     }
 }

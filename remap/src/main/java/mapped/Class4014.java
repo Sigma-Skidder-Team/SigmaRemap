@@ -26,7 +26,7 @@ public class Class4014 extends Block
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         for (final Direction class7075 : class7074.method21643()) {
-            if (class7075.getAxis() == Axis.Y) {
+            if (class7075.getAxis() == Direction.Axis.Y) {
                 final Class7096 class7076 = ((StateHolder<O, Class7096>)this.getDefaultState()).with((IProperty<Comparable>)Class4014.field18086, class7075 == Direction.UP);
                 if (class7076.method21752(class7074.method21654(), class7074.method21639())) {
                     return class7076;

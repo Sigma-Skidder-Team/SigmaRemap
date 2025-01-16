@@ -25,7 +25,7 @@ public class Class3870 extends Class3874
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         final Class182 class7102 = class7096.get(Class3870.field17513);
-        if (class7097.getAxis() == Axis.Y) {
+        if (class7097.getAxis() == Direction.Axis.Y) {
             if (class7102 == Class182.field565 == (class7097 == Direction.UP)) {
                 if (class7098.getBlock() != this || class7098.get(Class3870.field17513) == class7102) {
                     return Class7521.field29147.getDefaultState();

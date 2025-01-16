@@ -40,7 +40,7 @@ public class Class4481 extends Class4479
         this.field19849 = field19849;
         this.field19871 = (random.nextInt(3) == 0);
         this.field19872 = (!this.field19871 && random.nextInt(23) == 0);
-        if (this.method13455().getAxis() != Axis.Z) {
+        if (this.method13455().getAxis() != Direction.Axis.Z) {
             this.field19874 = field19849.getXSize() / 5;
         }
         else {

@@ -32,7 +32,7 @@ public class Class3902 extends Class3892
     public BlockState method11846(final Class7074 class7074) {
         for (final Direction class7075 : class7074.method21643()) {
             BlockState class7076;
-            if (class7075.getAxis() != Axis.Y) {
+            if (class7075.getAxis() != Direction.Axis.Y) {
                 class7076 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3902.field17618, Class107.field333)).with((IProperty<Comparable>)Class3902.field17564, class7075.getOpposite());
             }
             else {

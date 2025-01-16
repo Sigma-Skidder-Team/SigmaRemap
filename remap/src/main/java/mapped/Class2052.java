@@ -88,7 +88,7 @@ public enum Class2052
     }
     
     public Direction method8142(final Direction class179) {
-        if (class179.getAxis() == Axis.Y) {
+        if (class179.getAxis() == Direction.Axis.Y) {
             return class179;
         }
         switch (Class8513.field34925[this.ordinal()]) {

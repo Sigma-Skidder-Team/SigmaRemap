@@ -75,7 +75,7 @@ public class Class3958 extends Class3841
     }
     
     private boolean method12075(final BlockState class7096, final Direction class7097, final double n) {
-        if (class7097.getAxis() == Axis.Y || n > 0.8123999834060669) {
+        if (class7097.getAxis() == Direction.Axis.Y || n > 0.8123999834060669) {
             return false;
         }
         final Direction class7098 = class7096.get((IProperty<Direction>)Class3958.field17865);
@@ -151,19 +151,19 @@ public class Class3958 extends Class3841
         final Direction method21648 = class7074.method21648();
         final BlockPos method21649 = class7074.method21639();
         final World method21650 = class7074.method21654();
-        final Axis method21651 = method21648.getAxis();
-        if (method21651 != Axis.Y) {
+        final Direction.Axis method21651 = method21648.getAxis();
+        if (method21651 != Direction.Axis.Y) {
             boolean b = false;
             Label_0251: {
                 Label_0178: {
-                    if (method21651 == Axis.X) {
+                    if (method21651 == Direction.Axis.X) {
                         if (method21650.getBlockState(method21649.method1145()).method21761(method21650, method21649.method1145(), Direction.EAST)) {
                             if (method21650.getBlockState(method21649.method1147()).method21761(method21650, method21649.method1147(), Direction.WEST)) {
                                 break Label_0178;
                             }
                         }
                     }
-                    if (method21651 == Axis.Z) {
+                    if (method21651 == Direction.Axis.Z) {
                         if (method21650.getBlockState(method21649.method1141()).method21761(method21650, method21649.method1141(), Direction.SOUTH)) {
                             if (method21650.getBlockState(method21649.method1143()).method21761(method21650, method21649.method1143(), Direction.NORTH)) {
                                 break Label_0178;

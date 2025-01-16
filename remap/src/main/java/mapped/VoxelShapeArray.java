@@ -8,6 +8,7 @@ import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import java.util.Arrays;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util2.Direction;
 
 public final class VoxelShapeArray extends VoxelShape
 {
@@ -38,7 +39,7 @@ public final class VoxelShapeArray extends VoxelShape
     }
     
     @Override
-    public DoubleList getValues(final Axis class111) {
+    public DoubleList getValues(final Direction.Axis class111) {
         switch (class111.ordinal()) {
             case 1: {
                 return this.xPoints;

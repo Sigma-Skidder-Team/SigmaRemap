@@ -41,9 +41,9 @@ public class Class3950 extends Class3948
                 class7097.method6708(n, n2, n3, Class8520.field35039, Class286.field1582, 1.0f, 1.0f, false);
             }
             final Direction class7099 = class7096.method21772((IProperty<Direction>)Class3950.field17846);
-            final Axis method790 = class7099.getAxis();
+            final Direction.Axis method790 = class7099.getAxis();
             final double n4 = random.nextDouble() * 0.6 - 0.3;
-            class7097.method6709(Class8432.field34639, n + ((method790 != Axis.X) ? n4 : (class7099.getXOffset() * 0.52)), n2 + random.nextDouble() * 9.0 / 16.0, n3 + ((method790 != Axis.Z) ? n4 : (class7099.getZOffset() * 0.52)), 0.0, 0.0, 0.0);
+            class7097.method6709(Class8432.field34639, n + ((method790 != Direction.Axis.X) ? n4 : (class7099.getXOffset() * 0.52)), n2 + random.nextDouble() * 9.0 / 16.0, n3 + ((method790 != Direction.Axis.Z) ? n4 : (class7099.getZOffset() * 0.52)), 0.0, 0.0, 0.0);
         }
     }
 }

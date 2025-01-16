@@ -226,7 +226,7 @@ public class Class3916 extends Block implements Class3856
         Label_0354: {
             switch (Class7570.field30022[class7097.ordinal()]) {
                 case 1: {
-                    if (class7098.getAxis() != Axis.Z) {
+                    if (class7098.getAxis() != Direction.Axis.Z) {
                         break;
                     }
                     switch (Class7570.field30021[class7099.ordinal()]) {
@@ -249,7 +249,7 @@ public class Class3916 extends Block implements Class3856
                     break;
                 }
                 case 2: {
-                    if (class7098.getAxis() != Axis.X) {
+                    if (class7098.getAxis() != Direction.Axis.X) {
                         break;
                     }
                     switch (Class7570.field30021[class7099.ordinal()]) {

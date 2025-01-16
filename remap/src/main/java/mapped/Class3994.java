@@ -24,7 +24,7 @@ public class Class3994 extends Class3993
         }
         if (!class7097.isRemote) {
             final Direction method2716 = class7101.method21448();
-            final Direction class7102 = (method2716.getAxis() != Axis.Y) ? method2716 : class7099.method1882().getOpposite();
+            final Direction class7102 = (method2716.getAxis() != Direction.Axis.Y) ? method2716 : class7099.method1882().getOpposite();
             class7097.method6705(null, class7098, Class8520.field35506, Class286.field1582, 1.0f, 1.0f);
             class7097.setBlockState(class7098, (BlockState)((StateHolder<Object, Object>)Class7521.field29342.getDefaultState()).with((IProperty<Comparable>)Class3901.field17611, class7102), 11);
             final Class427 class7103 = new Class427(class7097, class7098.getX() + 0.5 + class7102.getXOffset() * 0.65, class7098.getY() + 0.1, class7098.getZ() + 0.5 + class7102.getZOffset() * 0.65, new ItemStack(Items.field31429, 4));

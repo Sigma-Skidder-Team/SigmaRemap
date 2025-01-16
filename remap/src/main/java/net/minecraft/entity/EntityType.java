@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.Function;
@@ -206,7 +207,7 @@ public class EntityType<T extends Entity>
         if (b) {
             method18494 = method18494.method18494(0.0, -1.0, 0.0);
         }
-        return 1.0 + VoxelShapes.method24498(Axis.Y, class1854, class1852.method6980(null, method18494, Collections.emptySet()), b ? -2.0 : -1.0);
+        return 1.0 + VoxelShapes.method24498(Direction.Axis.Y, class1854, class1852.method6980(null, method18494, Collections.emptySet()), b ? -2.0 : -1.0);
     }
     
     public static void method23360(final World class1847, final PlayerEntity class1848, final Entity class1849, final Class51 class1850) {

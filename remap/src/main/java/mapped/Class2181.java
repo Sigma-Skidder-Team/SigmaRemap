@@ -29,14 +29,14 @@ public enum Class2181
     }
     
     public Class2052 method8344(final Direction class179) {
-        final Axis method790 = class179.getAxis();
-        return ((this != Class2181.field12918 || method790 != Axis.Z) && (this != Class2181.field12919 || method790 != Axis.X)) ? Class2052.field11707 : Class2052.field11709;
+        final Direction.Axis method790 = class179.getAxis();
+        return ((this != Class2181.field12918 || method790 != Direction.Axis.Z) && (this != Class2181.field12919 || method790 != Direction.Axis.X)) ? Class2052.field11707 : Class2052.field11709;
     }
     
     public Direction method8345(final Direction class179) {
-        if (this == Class2181.field12919 && class179.getAxis() == Axis.X) {
+        if (this == Class2181.field12919 && class179.getAxis() == Direction.Axis.X) {
             return class179.getOpposite();
         }
-        return (this == Class2181.field12918 && class179.getAxis() == Axis.Z) ? class179.getOpposite() : class179;
+        return (this == Class2181.field12918 && class179.getAxis() == Direction.Axis.Z) ? class179.getOpposite() : class179;
     }
 }

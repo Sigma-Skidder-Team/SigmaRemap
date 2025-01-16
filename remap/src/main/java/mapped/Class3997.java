@@ -82,8 +82,8 @@ public class Class3997 extends Block
         for (final Direction class1849 : Direction.values()) {
             final BlockPos method1149 = class1848.method1149(class1849);
             if (!class1847.getBlockState(method1149).method21722(class1847, method1149)) {
-                final Axis method1150 = class1849.getAxis();
-                class1847.method6709(Class6912.field27101, class1848.getX() + ((method1150 != Axis.X) ? field10062.nextFloat() : (0.5 + 0.5625 * class1849.getXOffset())), class1848.getY() + ((method1150 != Axis.Y) ? field10062.nextFloat() : (0.5 + 0.5625 * class1849.getYOffset())), class1848.getZ() + ((method1150 != Axis.Z) ? field10062.nextFloat() : (0.5 + 0.5625 * class1849.getZOffset())), 0.0, 0.0, 0.0);
+                final Direction.Axis method1150 = class1849.getAxis();
+                class1847.method6709(Class6912.field27101, class1848.getX() + ((method1150 != Direction.Axis.X) ? field10062.nextFloat() : (0.5 + 0.5625 * class1849.getXOffset())), class1848.getY() + ((method1150 != Direction.Axis.Y) ? field10062.nextFloat() : (0.5 + 0.5625 * class1849.getYOffset())), class1848.getZ() + ((method1150 != Direction.Axis.Z) ? field10062.nextFloat() : (0.5 + 0.5625 * class1849.getZOffset())), 0.0, 0.0, 0.0);
             }
         }
     }

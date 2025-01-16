@@ -7,6 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util2.Direction;
 
 public final class Class7705 extends VoxelShape
 {
@@ -17,13 +18,13 @@ public final class Class7705 extends VoxelShape
     }
     
     @Override
-    public DoubleList getValues(final Axis class111) {
+    public DoubleList getValues(final Direction.Axis class111) {
         return (DoubleList)new Class81(this.part.getSize(class111));
     }
     
     @Override
-    public int method24548(final Axis class111, final double n) {
-        final int method27430 = this.part.getSize(class111);
-        return MathHelper.method35651(MathHelper.floor(n * method27430), -1, method27430);
+    public int getClosestIndex(final Direction.Axis axis, final double position) {
+        final int method27430 = this.part.getSize(axis);
+        return MathHelper.method35651(MathHelper.floor(position * method27430), -1, method27430);
     }
 }

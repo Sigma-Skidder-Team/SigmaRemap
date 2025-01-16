@@ -83,7 +83,7 @@ public class Class4006 extends Block
         if (method12176(class1855, class1856.method1149(class1857), class1857)) {
             return true;
         }
-        if (class1857.getAxis() != Axis.Y) {
+        if (class1857.getAxis() != Direction.Axis.Y) {
             final Class7113 class1858 = Class4006.field18060.get(class1857);
             final Class7096 method6701 = class1855.getBlockState(class1856.method1137());
             return method6701.method21696() == this && method6701.method21772((IProperty<Boolean>)class1858);

@@ -13,8 +13,9 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import java.util.EnumSet;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.util2.Direction;
 
-public class Class8148 implements ArgumentType<EnumSet<Axis>>
+public class Class8148 implements ArgumentType<EnumSet<Direction.Axis>>
 {
     private static final Collection<String> field33558;
     private static final SimpleCommandExceptionType field33559;
@@ -23,25 +24,25 @@ public class Class8148 implements ArgumentType<EnumSet<Axis>>
         return new Class8148();
     }
     
-    public static EnumSet<Axis> method26844(final CommandContext<Class7492> commandContext, final String s) {
+    public static EnumSet<Direction.Axis> method26844(final CommandContext<Class7492> commandContext, final String s) {
         return (EnumSet)commandContext.getArgument(s, (Class)EnumSet.class);
     }
     
-    public EnumSet<Axis> parse(final StringReader stringReader) throws CommandSyntaxException {
-        final EnumSet<Axis> none = EnumSet.noneOf(Axis.class);
+    public EnumSet<Direction.Axis> parse(final StringReader stringReader) throws CommandSyntaxException {
+        final EnumSet<Direction.Axis> none = EnumSet.noneOf(Direction.Axis.class);
         while (stringReader.canRead() && stringReader.peek() != ' ') {
-            Axis class111 = null;
+            Direction.Axis class111 = null;
             switch (stringReader.read()) {
                 case 'x': {
-                    class111 = Axis.X;
+                    class111 = Direction.Axis.X;
                     break;
                 }
                 case 'y': {
-                    class111 = Axis.Y;
+                    class111 = Direction.Axis.Y;
                     break;
                 }
                 case 'z': {
-                    class111 = Axis.Z;
+                    class111 = Direction.Axis.Z;
                     break;
                 }
                 default: {

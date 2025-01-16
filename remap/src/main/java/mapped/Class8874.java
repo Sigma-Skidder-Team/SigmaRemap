@@ -10,7 +10,7 @@ public class Class8874
 {
     private static String[] field37302;
     private final Class1851 field37303;
-    private final Axis field37304;
+    private final Direction.Axis field37304;
     private final Direction field37305;
     private final Direction field37306;
     private int field37307;
@@ -18,10 +18,10 @@ public class Class8874
     private int field37309;
     private int field37310;
     
-    public Class8874(final Class1851 field37303, BlockPos method1139, final Axis field37304) {
+    public Class8874(final Class1851 field37303, BlockPos method1139, final Direction.Axis field37304) {
         this.field37303 = field37303;
         this.field37304 = field37304;
-        if (field37304 != Axis.X) {
+        if (field37304 != Direction.Axis.X) {
             this.field37306 = Direction.NORTH;
             this.field37305 = Direction.SOUTH;
         }

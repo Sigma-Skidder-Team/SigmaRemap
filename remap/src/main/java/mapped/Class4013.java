@@ -41,7 +41,7 @@ public class Class4013 extends Block
                 double n6;
                 if (method798 != Direction.DOWN) {
                     n4 = n2 + random.nextDouble() * 0.8;
-                    if (method798.getAxis() != Axis.X) {
+                    if (method798.getAxis() != Direction.Axis.X) {
                         n5 = n + random.nextDouble();
                         if (method798 != Direction.SOUTH) {
                             n6 = n3 + 0.05;

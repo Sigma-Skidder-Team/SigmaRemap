@@ -19,13 +19,13 @@ import java.util.Random;
 public class Class3998 extends Block
 {
     private static String[] field18017;
-    public static final Class7114<Axis> field18018;
+    public static final Class7114<Direction.Axis> field18018;
     public static final VoxelShape field18019;
     public static final VoxelShape field18020;
     
     public Class3998(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class3998.field18018, Axis.X));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class3998.field18018, Direction.Axis.X));
     }
     
     @Override
@@ -70,18 +70,18 @@ public class Class3998 extends Block
     
     @Nullable
     public Class8874 method12148(final Class1851 class1851, final BlockPos class1852) {
-        final Class8874 class1853 = new Class8874(class1851, class1852, Axis.X);
+        final Class8874 class1853 = new Class8874(class1851, class1852, Direction.Axis.X);
         if (class1853.method31195() && Class8874.method31199(class1853) == 0) {
             return class1853;
         }
-        final Class8874 class1854 = new Class8874(class1851, class1852, Axis.Z);
+        final Class8874 class1854 = new Class8874(class1851, class1852, Direction.Axis.Z);
         return (class1854.method31195() && Class8874.method31199(class1854) == 0) ? class1854 : null;
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        final Axis method790 = class7097.getAxis();
-        final Axis class7102 = class7096.get(Class3998.field18018);
+        final Direction.Axis method790 = class7097.getAxis();
+        final Direction.Axis class7102 = class7096.get(Class3998.field18018);
         if (class7102 == method790 || !method790.isHorizontal()) {
             if (class7098.getBlock() != this) {
                 if (!new Class8874(class7099, class7100, class7102).method31198()) {
@@ -140,10 +140,10 @@ public class Class3998 extends Block
             case 2: {
                 switch (Class9275.field39763[class7096.get(Class3998.field18018).ordinal()]) {
                     case 1: {
-                        return ((StateHolder<O, BlockState>)class7096).with(Class3998.field18018, Axis.X);
+                        return ((StateHolder<O, BlockState>)class7096).with(Class3998.field18018, Direction.Axis.X);
                     }
                     case 2: {
-                        return ((StateHolder<O, BlockState>)class7096).with(Class3998.field18018, Axis.Z);
+                        return ((StateHolder<O, BlockState>)class7096).with(Class3998.field18018, Direction.Axis.Z);
                     }
                     default: {
                         return class7096;
@@ -163,12 +163,12 @@ public class Class3998 extends Block
     }
     
     public static Class7820 method12149(final Class1851 class1851, final BlockPos class1852) {
-        Axis class1853 = Axis.Z;
-        Class8874 class1854 = new Class8874(class1851, class1852, Axis.X);
+        Direction.Axis class1853 = Direction.Axis.Z;
+        Class8874 class1854 = new Class8874(class1851, class1852, Direction.Axis.X);
         final LoadingCache<BlockPos, Class7990> method29797 = Class8691.method29797(class1851, true);
         if (!class1854.method31195()) {
-            class1853 = Axis.X;
-            class1854 = new Class8874(class1851, class1852, Axis.Z);
+            class1853 = Direction.Axis.X;
+            class1854 = new Class8874(class1851, class1852, Direction.Axis.Z);
         }
         if (class1854.method31195()) {
             final int[] array = new int[AxisDirection.values().length];

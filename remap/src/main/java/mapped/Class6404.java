@@ -31,7 +31,7 @@ public class Class6404 implements Class6423
         final double method16761 = class1850.getY();
         final double method16762 = class1850.getZ();
         double n2;
-        if (class1849.getAxis() != Axis.Y) {
+        if (class1849.getAxis() != Direction.Axis.Y) {
             n2 = method16761 - 0.15625;
         }
         else {

@@ -88,7 +88,7 @@ public class Class3959 extends Class3841
     @Override
     public BlockState method11846(final Class7074 class7074) {
         final Direction method782 = class7074.method21648().getOpposite();
-        return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3959.field17881, (method782.getAxis() != Axis.Y) ? method782 : Direction.DOWN)).with((IProperty<Comparable>)Class3959.field17882, true);
+        return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3959.field17881, (method782.getAxis() != Direction.Axis.Y) ? method782 : Direction.DOWN)).with((IProperty<Comparable>)Class3959.field17882, true);
     }
     
     @Override

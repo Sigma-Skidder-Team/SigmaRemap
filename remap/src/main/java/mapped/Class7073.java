@@ -65,7 +65,7 @@ public class Class7073 extends Class7074
     
     @Override
     public Direction method21644() {
-        return (this.field27546.getAxis() != Axis.Y) ? this.field27546 : Direction.NORTH;
+        return (this.field27546.getAxis() != Direction.Axis.Y) ? this.field27546 : Direction.NORTH;
     }
     
     @Override

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util2.Direction;
+
 public class Class4029 extends Class4027
 {
     private static String[] field18119;
@@ -16,6 +18,6 @@ public class Class4029 extends Class4027
     
     @Override
     public MaterialColor method11783(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
-        return (class7096.get(Class4029.field18120) != Axis.Y) ? this.field17402 : this.field18122;
+        return (class7096.get(Class4029.field18120) != Direction.Axis.Y) ? this.field17402 : this.field18122;
     }
 }

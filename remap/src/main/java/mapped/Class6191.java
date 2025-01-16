@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class6191 extends Class6159
@@ -44,7 +45,7 @@ public class Class6191 extends Class6159
                 this.field24941 *= 0.699999988079071;
             }
             final BlockPos class354 = new BlockPos(this.field24936, this.field24937, this.field24938);
-            final double max = Math.max(this.field24932.getBlockState(class354).method21727(this.field24932, class354).method24547(Axis.Y, this.field24936 - class354.getX(), this.field24938 - class354.getZ()), this.field24932.getFluidState(class354).getActualHeight(this.field24932, class354));
+            final double max = Math.max(this.field24932.getBlockState(class354).method21727(this.field24932, class354).method24547(Direction.Axis.Y, this.field24936 - class354.getX(), this.field24938 - class354.getZ()), this.field24932.getFluidState(class354).getActualHeight(this.field24932, class354));
             if (max > 0.0) {
                 if (this.field24937 < class354.getY() + max) {
                     this.method18439();

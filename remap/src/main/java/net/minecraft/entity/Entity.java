@@ -562,21 +562,21 @@ public abstract class Entity implements INameable, ICommandSource {
             this.pistonDeltasGameTime = method6754;
         }
         if (class5487.x != 0.0) {
-            final double method6755 = this.calculatePistonDeltas(Axis.X, class5487.x);
+            final double method6755 = this.calculatePistonDeltas(Direction.Axis.X, class5487.x);
             return (Math.abs(method6755) > 9.999999747378752E-6) ? new Vec3d(method6755, 0.0, 0.0) : Vec3d.ZERO;
         }
         if (class5487.y != 0.0) {
-            final double method6756 = this.calculatePistonDeltas(Axis.Y, class5487.y);
+            final double method6756 = this.calculatePistonDeltas(Direction.Axis.Y, class5487.y);
             return (Math.abs(method6756) > 9.999999747378752E-6) ? new Vec3d(0.0, method6756, 0.0) : Vec3d.ZERO;
         }
         if (class5487.z == 0.0) {
             return Vec3d.ZERO;
         }
-        final double method6757 = this.calculatePistonDeltas(Axis.Z, class5487.z);
+        final double method6757 = this.calculatePistonDeltas(Direction.Axis.Z, class5487.z);
         return (Math.abs(method6757) > 9.999999747378752E-6) ? new Vec3d(0.0, 0.0, method6757) : Vec3d.ZERO;
     }
 
-    private double calculatePistonDeltas(final Axis class111, double distance) {
+    private double calculatePistonDeltas(final Direction.Axis class111, double distance) {
         int i = class111.ordinal();
         double d0 = MathHelper.clamp(distance + this.pistonDeltas[i], -0.51, 0.51);
         distance = d0 - this.pistonDeltas[i];
@@ -645,7 +645,7 @@ public abstract class Entity implements INameable, ICommandSource {
         double n = class5487.y;
         double a2 = class5487.z;
         if (n != 0.0) {
-            n = VoxelShapes.method24498(Axis.Y, class5488, class5489.createStream(), n);
+            n = VoxelShapes.method24498(Direction.Axis.Y, class5488, class5489.createStream(), n);
             if (n != 0.0) {
                 class5488 = class5488.method18499(0.0, n, 0.0);
             }
@@ -653,14 +653,14 @@ public abstract class Entity implements INameable, ICommandSource {
         final boolean b = Math.abs(a) < Math.abs(a2);
         if (b) {
             if (a2 != 0.0) {
-                a2 = VoxelShapes.method24498(Axis.Z, class5488, class5489.createStream(), a2);
+                a2 = VoxelShapes.method24498(Direction.Axis.Z, class5488, class5489.createStream(), a2);
                 if (a2 != 0.0) {
                     class5488 = class5488.method18499(0.0, 0.0, a2);
                 }
             }
         }
         if (a != 0.0) {
-            a = VoxelShapes.method24498(Axis.X, class5488, class5489.createStream(), a);
+            a = VoxelShapes.method24498(Direction.Axis.X, class5488, class5489.createStream(), a);
             if (!b) {
                 if (a != 0.0) {
                     class5488 = class5488.method18499(a, 0.0, 0.0);
@@ -669,7 +669,7 @@ public abstract class Entity implements INameable, ICommandSource {
         }
         if (!b) {
             if (a2 != 0.0) {
-                a2 = VoxelShapes.method24498(Axis.Z, class5488, class5489.createStream(), a2);
+                a2 = VoxelShapes.method24498(Direction.Axis.Z, class5488, class5489.createStream(), a2);
             }
         }
         return new Vec3d(a, n, a2);
@@ -680,7 +680,7 @@ public abstract class Entity implements INameable, ICommandSource {
         double n = class5487.y;
         double a2 = class5487.z;
         if (n != 0.0) {
-            n = VoxelShapes.method24499(Axis.Y, class5488, class5489, n, class5490, class5491.createStream(), b);
+            n = VoxelShapes.method24499(Direction.Axis.Y, class5488, class5489, n, class5490, class5491.createStream(), b);
             if (n != 0.0) {
                 class5488 = class5488.method18499(0.0, n, 0.0);
             }
@@ -688,14 +688,14 @@ public abstract class Entity implements INameable, ICommandSource {
         final boolean b2 = Math.abs(a) < Math.abs(a2);
         if (b2) {
             if (a2 != 0.0) {
-                a2 = VoxelShapes.method24499(Axis.Z, class5488, class5489, a2, class5490, class5491.createStream(), b);
+                a2 = VoxelShapes.method24499(Direction.Axis.Z, class5488, class5489, a2, class5490, class5491.createStream(), b);
                 if (a2 != 0.0) {
                     class5488 = class5488.method18499(0.0, 0.0, a2);
                 }
             }
         }
         if (a != 0.0) {
-            a = VoxelShapes.method24499(Axis.X, class5488, class5489, a, class5490, class5491.createStream(), b);
+            a = VoxelShapes.method24499(Direction.Axis.X, class5488, class5489, a, class5490, class5491.createStream(), b);
             if (!b2) {
                 if (a != 0.0) {
                     class5488 = class5488.method18499(a, 0.0, 0.0);
@@ -704,7 +704,7 @@ public abstract class Entity implements INameable, ICommandSource {
         }
         if (!b2) {
             if (a2 != 0.0) {
-                a2 = VoxelShapes.method24499(Axis.Z, class5488, class5489, a2, class5490, class5491.createStream(), b);
+                a2 = VoxelShapes.method24499(Direction.Axis.Z, class5488, class5489, a2, class5490, class5491.createStream(), b);
             }
         }
         return new Vec3d(a, n, a2);
@@ -1581,8 +1581,8 @@ public abstract class Entity implements INameable, ICommandSource {
                     this.lastPortalPos = new BlockPos(class354);
                     final Class3998 class355 = (Class3998) Class7521.field29341;
                     final Class7820 method12149 = Class3998.method12149(this.world, this.lastPortalPos);
-                    final double n = (method12149.method25266().getAxis() != Axis.X) ? method12149.method25265().getX() : ((double) method12149.method25265().getZ());
-                    this.lastPortalVec = new Vec3d(Math.abs(MathHelper.method35692(((method12149.method25266().getAxis() != Axis.X) ? this.getPosX() : this.getPosZ()) - (double) ((method12149.method25266().rotateY().getAxisDirection() == AxisDirection.NEGATIVE) ? 1 : 0), n, n - method12149.method25268())), MathHelper.method35692(this.getPosY() - 1.0, method12149.method25265().getY(), method12149.method25265().getY() - method12149.method25269()), 0.0);
+                    final double n = (method12149.method25266().getAxis() != Direction.Axis.X) ? method12149.method25265().getX() : ((double) method12149.method25265().getZ());
+                    this.lastPortalVec = new Vec3d(Math.abs(MathHelper.method35692(((method12149.method25266().getAxis() != Direction.Axis.X) ? this.getPosX() : this.getPosZ()) - (double) ((method12149.method25266().rotateY().getAxisDirection() == AxisDirection.NEGATIVE) ? 1 : 0), n, n - method12149.method25268())), MathHelper.method35692(this.getPosY() - 1.0, method12149.method25265().getY(), method12149.method25265().getY() - method12149.method25269()), 0.0);
                     this.teleportDirection = method12149.method25266();
                 }
             }
@@ -1863,9 +1863,9 @@ public abstract class Entity implements INameable, ICommandSource {
         final float n6 = this.rand.nextFloat() * 0.2f + 0.1f;
         final float n7 = (float) field512.getAxisDirection().getOffset();
         final Vec3d method16760 = this.getMotion().scale(0.75);
-        if (field512.getAxis() != Axis.X) {
-            if (field512.getAxis() != Axis.Y) {
-                if (field512.getAxis() == Axis.Z) {
+        if (field512.getAxis() != Direction.Axis.X) {
+            if (field512.getAxis() != Direction.Axis.Y) {
+                if (field512.getAxis() == Direction.Axis.Z) {
                     this.setMotion(method16760.x, method16760.y, n7 * n6);
                 }
             } else {

@@ -422,7 +422,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
                 this.renderShapes = null;
             }
             this.collisionShape = method21696.method11809(class7096, Class1859.field10138, BlockPos.ZERO, ISelectionContext.dummy());
-            this.isCollisionShapeLargerThanFullBlock = Arrays.stream(Axis.values()).anyMatch(class7099 -> this.collisionShape.method24535(class7099) < 0.0 || this.collisionShape.method24536(class7099) > 1.0);
+            this.isCollisionShapeLargerThanFullBlock = Arrays.stream(Direction.Axis.values()).anyMatch(class7099 -> this.collisionShape.method24535(class7099) < 0.0 || this.collisionShape.method24536(class7099) > 1.0);
             this.solidSides = new boolean[6];
             for (final Direction class7098 : Cache.DIRECTIONS) {
                 this.solidSides[class7098.ordinal()] = Block.hasSolidSide(class7096, Class1859.field10138, BlockPos.ZERO, class7098);

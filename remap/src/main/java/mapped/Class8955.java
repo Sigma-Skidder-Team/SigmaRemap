@@ -186,7 +186,7 @@ public class Class8955
                 this.field37652.setBlockState(class400, Class7521.field29286.getDefaultState(), 3);
             }
         }
-        final BlockState class401 = ((StateHolder<O, BlockState>)Class7521.field29341.getDefaultState()).with(Class3998.field18018, (n29 != 0) ? Axis.X : Axis.Z);
+        final BlockState class401 = ((StateHolder<O, BlockState>)Class7521.field29341.getDefaultState()).with(Class3998.field18018, (n29 != 0) ? Direction.Axis.X : Direction.Axis.Z);
         for (int n39 = 0; n39 < 2; ++n39) {
             for (int n40 = 0; n40 < 3; ++n40) {
                 class400.setPos(n27 + n39 * n29, method35647 + n40, n28 + n39 * n30);

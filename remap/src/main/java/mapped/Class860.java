@@ -64,7 +64,7 @@ public abstract class Class860 extends Entity
             double n9 = this.method5190();
             final double n10 = this.method5191();
             double n11 = this.method5190();
-            if (this.field4600.getAxis() != Axis.Z) {
+            if (this.field4600.getAxis() != Direction.Axis.Z) {
                 n9 = 1.0;
             }
             else {
@@ -224,7 +224,7 @@ public abstract class Class860 extends Entity
     
     @Override
     public float method1903(final Class2052 class2052) {
-        if (this.field4600.getAxis() != Axis.Y) {
+        if (this.field4600.getAxis() != Direction.Axis.Y) {
             switch (Class7786.field31868[class2052.ordinal()]) {
                 case 1: {
                     this.field4600 = this.field4600.getOpposite();

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util2.Direction;
+
 import java.util.Random;
 
 public abstract class Class4475 extends Class4473
@@ -20,7 +22,7 @@ public abstract class Class4475 extends Class4473
         this.field19858 = field19858;
         this.field19859 = field19859;
         this.method13456(Plane.HORIZONTAL.method576(random));
-        if (this.method13455().getAxis() != Axis.Z) {
+        if (this.method13455().getAxis() != Direction.Axis.Z) {
             this.field19849 = new MutableBoundingBox(n, n2, n3, n + field19859 - 1, n2 + field19858 - 1, n3 + field19857 - 1);
         }
         else {

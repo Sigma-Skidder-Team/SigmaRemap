@@ -37,8 +37,8 @@ public class Class8970
     public static final Class7113 field37745;
     public static final Class7113 field37746;
     public static final Class7113 field37747;
-    public static final Class7114<Axis> field37748;
-    public static final Class7114<Axis> field37749;
+    public static final Class7114<Direction.Axis> field37748;
+    public static final Class7114<Direction.Axis> field37749;
     public static final Class7113 field37750;
     public static final Class7113 field37751;
     public static final Class7113 field37752;
@@ -124,8 +124,8 @@ public class Class8970
         field37745 = Class7113.method21834("triggered");
         field37746 = Class7113.method21834("unstable");
         field37747 = Class7113.method21834("waterlogged");
-        field37748 = Class7114.method21839("axis", Axis.class, Axis.X, Axis.Z);
-        field37749 = Class7114.method21837("axis", Axis.class);
+        field37748 = Class7114.method21839("axis", Direction.Axis.class, Direction.Axis.X, Direction.Axis.Z);
+        field37749 = Class7114.method21837("axis", Direction.Axis.class);
         field37750 = Class7113.method21834("up");
         field37751 = Class7113.method21834("down");
         field37752 = Class7113.method21834("north");

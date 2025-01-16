@@ -4,14 +4,16 @@
 
 package mapped;
 
+import net.minecraft.util2.Direction;
+
 public class Class4027 extends Block
 {
     private static String[] field18119;
-    public static final Class7114<Axis> field18120;
+    public static final Class7114<Direction.Axis> field18120;
     
     public Class4027(final Class9288 class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)this.getDefaultState()).with(Class4027.field18120, Axis.Y));
+        this.method11877(((StateHolder<O, BlockState>)this.getDefaultState()).with(Class4027.field18120, Direction.Axis.Y));
     }
     
     @Override
@@ -21,10 +23,10 @@ public class Class4027 extends Block
             case 2: {
                 switch (Class6210.field25054[class7096.get(Class4027.field18120).ordinal()]) {
                     case 1: {
-                        return ((StateHolder<O, BlockState>)class7096).with(Class4027.field18120, Axis.Z);
+                        return ((StateHolder<O, BlockState>)class7096).with(Class4027.field18120, Direction.Axis.Z);
                     }
                     case 2: {
-                        return ((StateHolder<O, BlockState>)class7096).with(Class4027.field18120, Axis.X);
+                        return ((StateHolder<O, BlockState>)class7096).with(Class4027.field18120, Direction.Axis.X);
                     }
                     default: {
                         return class7096;

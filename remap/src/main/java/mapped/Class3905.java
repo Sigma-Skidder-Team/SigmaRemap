@@ -50,7 +50,7 @@ public abstract class Class3905 extends Class3902
         final boolean booleanValue = class7096.get((IProperty<Boolean>)Class3905.field17693);
         switch (Class8420.field34566[class7096.get(Class3905.field17618).ordinal()]) {
             case 1: {
-                if (class7100.getAxis() == Axis.X) {
+                if (class7100.getAxis() == Direction.Axis.X) {
                     return booleanValue ? Class3905.field17704 : Class3905.field17696;
                 }
                 return booleanValue ? Class3905.field17705 : Class3905.field17697;
@@ -73,7 +73,7 @@ public abstract class Class3905 extends Class3902
                 break;
             }
             default: {
-                if (class7100.getAxis() == Axis.X) {
+                if (class7100.getAxis() == Direction.Axis.X) {
                     return booleanValue ? Class3905.field17702 : Class3905.field17694;
                 }
                 return booleanValue ? Class3905.field17703 : Class3905.field17695;

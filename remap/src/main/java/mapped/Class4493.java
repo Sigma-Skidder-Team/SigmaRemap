@@ -22,7 +22,7 @@ public class Class4493 extends Class4484
     public Class4493(final Random random, final int n, final int n2) {
         super(Class9520.field40949, 0);
         this.method13456(Plane.HORIZONTAL.method576(random));
-        if (this.method13455().getAxis() != Axis.Z) {
+        if (this.method13455().getAxis() != Direction.Axis.Z) {
             this.field19849 = new MutableBoundingBox(n, 64, n2, n + 19 - 1, 73, n2 + 19 - 1);
         }
         else {

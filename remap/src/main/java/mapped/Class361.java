@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.types.DynamicOps;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util2.Direction;
 
 public class Class361 extends Class357
 {
@@ -26,7 +27,7 @@ public class Class361 extends Class357
     
     @Override
     public BlockState method1164(final Random random, final BlockPos class354) {
-        return ((StateHolder<O, BlockState>)this.field2189.getDefaultState()).with(Class4027.field18120, Axis.random(random));
+        return ((StateHolder<O, BlockState>)this.field2189.getDefaultState()).with(Class4027.field18120, Direction.Axis.random(random));
     }
     
     @Override

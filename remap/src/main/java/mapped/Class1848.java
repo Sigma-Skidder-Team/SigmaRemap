@@ -389,13 +389,13 @@ public class Class1848 extends World
     private void method6827(final BlockPos class354, final Class7096 class355, final IParticleData class356, final boolean b) {
         if (class355.method21756().method21781()) {
             final VoxelShape method21727 = class355.method21727(this, class354);
-            if (method21727.method24536(Axis.Y) >= 1.0) {
+            if (method21727.method24536(Direction.Axis.Y) >= 1.0) {
                 if (!class355.method21755(Class7188.field27919)) {
-                    final double method21728 = method21727.method24535(Axis.Y);
+                    final double method21728 = method21727.method24535(Direction.Axis.Y);
                     if (method21728 <= 0.0) {
                         final BlockPos method21729 = class354.method1139();
                         final Class7096 method21730 = this.getBlockState(method21729);
-                        if (method21730.method21727(this, method21729).method24536(Axis.Y) < 1.0) {
+                        if (method21730.method21727(this, method21729).method24536(Direction.Axis.Y) < 1.0) {
                             if (method21730.method21756().method21781()) {
                                 this.method6828(class354, class356, method21727, class354.getY() - 0.05);
                             }
@@ -413,7 +413,7 @@ public class Class1848 extends World
     }
     
     private void method6828(final BlockPos class354, final IParticleData class355, final VoxelShape class356, final double n) {
-        this.method6829(class354.getX() + class356.method24535(Axis.X), class354.getX() + class356.method24536(Axis.X), class354.getZ() + class356.method24535(Axis.Z), class354.getZ() + class356.method24536(Axis.Z), n, class355);
+        this.method6829(class354.getX() + class356.method24535(Direction.Axis.X), class354.getX() + class356.method24536(Direction.Axis.X), class354.getZ() + class356.method24535(Direction.Axis.Z), class354.getZ() + class356.method24536(Direction.Axis.Z), n, class355);
     }
     
     private void method6829(final double n, final double n2, final double n3, final double n4, final double n5, final IParticleData IParticleData) {

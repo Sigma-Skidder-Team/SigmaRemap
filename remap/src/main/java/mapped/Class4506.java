@@ -18,7 +18,7 @@ public class Class4506 extends Class4500
         this.field19901 = true;
         this.method13456(Plane.HORIZONTAL.method576(random));
         this.field19896 = Class1982.field10976;
-        if (this.method13455().getAxis() != Axis.Z) {
+        if (this.method13455().getAxis() != Direction.Axis.Z) {
             this.field19849 = new MutableBoundingBox(n2, 64, n3, n2 + 5 - 1, 74, n3 + 5 - 1);
         }
         else {

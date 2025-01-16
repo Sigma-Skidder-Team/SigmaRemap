@@ -379,12 +379,12 @@ public class Class1656 implements AutoCloseable, Class1657
                     final Class7096 method6772 = field4683.getBlockState(method6771);
                     final IFluidState method6773 = field4683.getFluidState(method6769);
                     final VoxelShape method6774 = method6772.method21727(field4683, method6771);
-                    final double method6775 = method6774.max(Axis.Y, nextDouble, nextDouble2);
+                    final double method6775 = method6774.max(Direction.Axis.Y, nextDouble, nextDouble2);
                     double n5;
                     double method6776;
                     if (method6775 >= method6773.getActualHeight(field4683, method6769)) {
                         n5 = method6775;
-                        method6776 = method6774.min(Axis.Y, nextDouble, nextDouble2);
+                        method6776 = method6774.min(Direction.Axis.Y, nextDouble, nextDouble2);
                     }
                     else {
                         n5 = 0.0;

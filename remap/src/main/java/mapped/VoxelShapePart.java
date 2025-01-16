@@ -8,7 +8,7 @@ import net.minecraft.util2.Direction;
 
 public abstract class VoxelShapePart
 {
-    private static final Axis[] AXIS_VALUES;
+    private static final Direction.Axis[] AXIS_VALUES;
     public final int xSize;
     public final int ySize;
     public final int zSize;
@@ -20,7 +20,7 @@ public abstract class VoxelShapePart
     }
     
     public boolean containsWithRotation(final AxisRotation axisRotation, final int n, final int n2, final int n3) {
-        return this.contains(axisRotation.getCoordinate(n, n2, n3, Axis.X), axisRotation.getCoordinate(n, n2, n3, Axis.Y), axisRotation.getCoordinate(n, n2, n3, Axis.Z));
+        return this.contains(axisRotation.getCoordinate(n, n2, n3, Direction.Axis.X), axisRotation.getCoordinate(n, n2, n3, Direction.Axis.Y), axisRotation.getCoordinate(n, n2, n3, Direction.Axis.Z));
     }
     
     public boolean contains(final int n, final int n2, final int n3) {
@@ -42,7 +42,7 @@ public abstract class VoxelShapePart
     }
     
     public boolean isFilledWithRotation(final AxisRotation axisRotation, final int n, final int n2, final int n3) {
-        return this.isFilled(axisRotation.getCoordinate(n, n2, n3, Axis.X), axisRotation.getCoordinate(n, n2, n3, Axis.Y), axisRotation.getCoordinate(n, n2, n3, Axis.Z));
+        return this.isFilled(axisRotation.getCoordinate(n, n2, n3, Direction.Axis.X), axisRotation.getCoordinate(n, n2, n3, Direction.Axis.Y), axisRotation.getCoordinate(n, n2, n3, Direction.Axis.Z));
     }
     
     public abstract boolean isFilled(final int p0, final int p1, final int p2);
@@ -50,7 +50,7 @@ public abstract class VoxelShapePart
     public abstract void setFilled(final int p0, final int p1, final int p2, final boolean p3, final boolean p4);
     
     public boolean isEmpty() {
-        for (final Axis class111 : VoxelShapePart.AXIS_VALUES) {
+        for (final Direction.Axis class111 : VoxelShapePart.AXIS_VALUES) {
             if (this.getStart(class111) >= this.getEnd(class111)) {
                 return true;
             }
@@ -58,19 +58,19 @@ public abstract class VoxelShapePart
         return false;
     }
     
-    public abstract int getStart(final Axis p0);
+    public abstract int getStart(final Direction.Axis p0);
     
-    public abstract int getEnd(final Axis p0);
+    public abstract int getEnd(final Direction.Axis p0);
     
-    public int firstFilled(final Axis class111, final int n, final int n2) {
+    public int firstFilled(final Direction.Axis class111, final int n, final int n2) {
         final int method27430 = this.getSize(class111);
         if (n < 0 || n2 < 0) {
             return method27430;
         }
-        final Axis method27431 = AxisRotation.FORWARD.rotate(class111);
-        final Axis method27432 = AxisRotation.BACKWARD.rotate(class111);
+        final Direction.Axis method27431 = AxisRotation.FORWARD.rotate(class111);
+        final Direction.Axis method27432 = AxisRotation.BACKWARD.rotate(class111);
         if (n < this.getSize(method27431) && n2 < this.getSize(method27432)) {
-            final AxisRotation method27433 = AxisRotation.from(Axis.X, class111);
+            final AxisRotation method27433 = AxisRotation.from(Direction.Axis.X, class111);
             for (int i = 0; i < method27430; ++i) {
                 if (this.isFilledWithRotation(method27433, i, n, n2)) {
                     return i;
@@ -81,15 +81,15 @@ public abstract class VoxelShapePart
         return method27430;
     }
     
-    public int lastFilled(final Axis class111, final int n, final int n2) {
+    public int lastFilled(final Direction.Axis class111, final int n, final int n2) {
         if (n < 0 || n2 < 0) {
             return 0;
         }
-        final Axis method983 = AxisRotation.FORWARD.rotate(class111);
-        final Axis method984 = AxisRotation.BACKWARD.rotate(class111);
+        final Direction.Axis method983 = AxisRotation.FORWARD.rotate(class111);
+        final Direction.Axis method984 = AxisRotation.BACKWARD.rotate(class111);
         if (n < this.getSize(method983) && n2 < this.getSize(method984)) {
             final int method985 = this.getSize(class111);
-            final AxisRotation method986 = AxisRotation.from(Axis.X, class111);
+            final AxisRotation method986 = AxisRotation.from(Direction.Axis.X, class111);
             for (int i = method985 - 1; i >= 0; --i) {
                 if (this.isFilledWithRotation(method986, i, n, n2)) {
                     return i + 1;
@@ -100,20 +100,20 @@ public abstract class VoxelShapePart
         return 0;
     }
     
-    public int getSize(final Axis class111) {
+    public int getSize(final Direction.Axis class111) {
         return class111.getCoordinate(this.xSize, this.ySize, this.zSize);
     }
     
     public int getXSize() {
-        return this.getSize(Axis.X);
+        return this.getSize(Direction.Axis.X);
     }
     
     public int getYSize() {
-        return this.getSize(Axis.Y);
+        return this.getSize(Direction.Axis.Y);
     }
     
     public int getZSize() {
-        return this.getSize(Axis.Z);
+        return this.getSize(Direction.Axis.Z);
     }
     
     public void forEachEdge(final Class8670 class8670, final boolean b) {
@@ -124,9 +124,9 @@ public abstract class VoxelShapePart
     
     private void forEachEdgeOnAxis(final Class8670 class8670, final AxisRotation class8671, final boolean b) {
         final AxisRotation method984 = class8671.reverse();
-        final int method985 = this.getSize(method984.rotate(Axis.X));
-        final int method986 = this.getSize(method984.rotate(Axis.Y));
-        final int method987 = this.getSize(method984.rotate(Axis.Z));
+        final int method985 = this.getSize(method984.rotate(Direction.Axis.X));
+        final int method986 = this.getSize(method984.rotate(Direction.Axis.Y));
+        final int method987 = this.getSize(method984.rotate(Direction.Axis.Z));
         for (int i = 0; i <= method985; ++i) {
             for (int j = 0; j <= method986; ++j) {
                 int n = -1;
@@ -147,14 +147,14 @@ public abstract class VoxelShapePart
                                 if (n == -1) {
                                     continue;
                                 }
-                                class8670.consume(method984.getCoordinate(i, j, n, Axis.X), method984.getCoordinate(i, j, n, Axis.Y), method984.getCoordinate(i, j, n, Axis.Z), method984.getCoordinate(i, j, k, Axis.X), method984.getCoordinate(i, j, k, Axis.Y), method984.getCoordinate(i, j, k, Axis.Z));
+                                class8670.consume(method984.getCoordinate(i, j, n, Direction.Axis.X), method984.getCoordinate(i, j, n, Direction.Axis.Y), method984.getCoordinate(i, j, n, Direction.Axis.Z), method984.getCoordinate(i, j, k, Direction.Axis.X), method984.getCoordinate(i, j, k, Direction.Axis.Y), method984.getCoordinate(i, j, k, Direction.Axis.Z));
                                 n = -1;
                                 continue;
                             }
                         }
                     }
                     if (!b) {
-                        class8670.consume(method984.getCoordinate(i, j, k, Axis.X), method984.getCoordinate(i, j, k, Axis.Y), method984.getCoordinate(i, j, k, Axis.Z), method984.getCoordinate(i, j, k + 1, Axis.X), method984.getCoordinate(i, j, k + 1, Axis.Y), method984.getCoordinate(i, j, k + 1, Axis.Z));
+                        class8670.consume(method984.getCoordinate(i, j, k, Direction.Axis.X), method984.getCoordinate(i, j, k, Direction.Axis.Y), method984.getCoordinate(i, j, k, Direction.Axis.Z), method984.getCoordinate(i, j, k + 1, Direction.Axis.X), method984.getCoordinate(i, j, k + 1, Direction.Axis.Y), method984.getCoordinate(i, j, k + 1, Direction.Axis.Z));
                     }
                     else if (n == -1) {
                         n = k;
@@ -244,9 +244,9 @@ public abstract class VoxelShapePart
     
     private void method27439(final Class8466 class8466, final AxisRotation class8467) {
         final AxisRotation method984 = class8467.reverse();
-        final Axis method985 = method984.rotate(Axis.Z);
-        final int method986 = this.getSize(method984.rotate(Axis.X));
-        final int method987 = this.getSize(method984.rotate(Axis.Y));
+        final Direction.Axis method985 = method984.rotate(Direction.Axis.Z);
+        final int method986 = this.getSize(method984.rotate(Direction.Axis.X));
+        final int method987 = this.getSize(method984.rotate(Direction.Axis.Y));
         final int method988 = this.getSize(method985);
         final Direction method989 = Direction.getFacingFromAxisDirection(method985, AxisDirection.NEGATIVE);
         final Direction method990 = Direction.getFacingFromAxisDirection(method985, AxisDirection.POSITIVE);
@@ -257,12 +257,12 @@ public abstract class VoxelShapePart
                     final boolean b2 = k != method988 && this.isFilledWithRotation(method984, i, j, k);
                     if (!b) {
                         if (b2) {
-                            class8466.method28259(method989, method984.getCoordinate(i, j, k, Axis.X), method984.getCoordinate(i, j, k, Axis.Y), method984.getCoordinate(i, j, k, Axis.Z));
+                            class8466.method28259(method989, method984.getCoordinate(i, j, k, Direction.Axis.X), method984.getCoordinate(i, j, k, Direction.Axis.Y), method984.getCoordinate(i, j, k, Direction.Axis.Z));
                         }
                     }
                     if (b) {
                         if (!b2) {
-                            class8466.method28259(method990, method984.getCoordinate(i, j, k - 1, Axis.X), method984.getCoordinate(i, j, k - 1, Axis.Y), method984.getCoordinate(i, j, k - 1, Axis.Z));
+                            class8466.method28259(method990, method984.getCoordinate(i, j, k - 1, Direction.Axis.X), method984.getCoordinate(i, j, k - 1, Direction.Axis.Y), method984.getCoordinate(i, j, k - 1, Direction.Axis.Z));
                         }
                     }
                     b = b2;
@@ -272,6 +272,6 @@ public abstract class VoxelShapePart
     }
     
     static {
-        AXIS_VALUES = Axis.values();
+        AXIS_VALUES = Direction.Axis.values();
     }
 }

@@ -97,7 +97,7 @@ public class Mutable extends BlockPos
     }
     
     public Mutable method1289(final AxisRotation axisRotation, final int n, final int n2, final int n3) {
-        return this.setPos(axisRotation.getCoordinate(n, n2, n3, Axis.X), axisRotation.getCoordinate(n, n2, n3, Axis.Y), axisRotation.getCoordinate(n, n2, n3, Axis.Z));
+        return this.setPos(axisRotation.getCoordinate(n, n2, n3, Direction.Axis.X), axisRotation.getCoordinate(n, n2, n3, Direction.Axis.Y), axisRotation.getCoordinate(n, n2, n3, Direction.Axis.Z));
     }
     
     public Mutable method1290(final Direction class179) {

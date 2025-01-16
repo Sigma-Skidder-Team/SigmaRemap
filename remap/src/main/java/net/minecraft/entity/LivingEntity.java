@@ -1578,7 +1578,7 @@ public abstract class LivingEntity extends Entity
                 double method1940 = class399.getPosZ();
                 final Direction method1941 = class399.method1883();
                 if (method1941 != null) {
-                    if (method1941.getAxis() != Axis.Y) {
+                    if (method1941.getAxis() != Direction.Axis.Y) {
                         final Direction method1942 = method1941.rotateY();
                         final int[][] array = { { 0, 1 }, { 0, -1 }, { -1, 1 }, { -1, -1 }, { 1, 1 }, { 1, -1 }, { -1, 0 }, { 1, 0 }, { 0, 1 } };
                         final double n = Math.floor(this.getPosX()) + 0.5;

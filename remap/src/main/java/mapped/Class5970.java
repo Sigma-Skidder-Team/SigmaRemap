@@ -59,9 +59,9 @@ public class Class5970 implements JsonDeserializer<Class9219>
         return method35903;
     }
     
-    private Axis method17884(final JsonObject jsonObject) {
+    private Direction.Axis method17884(final JsonObject jsonObject) {
         final String method35895 = Class9583.method35895(jsonObject, "axis");
-        final Axis method35896 = Axis.byName(method35895.toLowerCase(Locale.ROOT));
+        final Direction.Axis method35896 = Direction.Axis.byName(method35895.toLowerCase(Locale.ROOT));
         if (method35896 != null) {
             return method35896;
         }

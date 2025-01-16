@@ -53,7 +53,7 @@ public class Class3990 extends Class3986
     
     @Override
     public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return (class7096.method21772((IProperty<Direction>)Class3990.field18000).getAxis() != Axis.X) ? Class3990.field18009 : Class3990.field18008;
+        return (class7096.method21772((IProperty<Direction>)Class3990.field18000).getAxis() != Direction.Axis.X) ? Class3990.field18009 : Class3990.field18008;
     }
     
     @Override
