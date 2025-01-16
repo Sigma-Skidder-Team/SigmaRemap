@@ -13,11 +13,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-<<<<<<<< HEAD:src/java/mapped/AbstractTreeGrower.java
-public abstract class AbstractTreeGrower {
-========
 public abstract class Tree {
->>>>>>>> 79cb8ae07f3ea7f9967f332e14026f399b7070ef:src/java/net/minecraft/block/trees/Tree.java
    @Nullable
    public abstract ConfiguredFeature<Class4733, ?> method25186(Random var1, boolean var2);
 

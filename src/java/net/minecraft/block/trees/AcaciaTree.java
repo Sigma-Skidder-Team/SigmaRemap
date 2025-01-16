@@ -7,12 +7,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import java.util.Random;
 import javax.annotation.Nullable;
 
-<<<<<<<< HEAD:src/java/mapped/AcaciaTree.java
-public class AcaciaTree extends AbstractTreeGrower {
-   private static String[] field32861;
-========
 public class AcaciaTree extends Tree {
->>>>>>>> 79cb8ae07f3ea7f9967f332e14026f399b7070ef:src/java/net/minecraft/block/trees/AcaciaTree.java
 
    @Nullable
    @Override
