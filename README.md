@@ -14,6 +14,7 @@ Sigma 5.0 (1.15.2) remapping project
 - Currently none;
 
 ### Tools & stuff used
+- Procyon - https://github.com/mstrobel/procyon
 - Java Decompiler - https://java-decompiler.github.io/
-- Optifine 1.15.2 HD U G1 pre30 source - https://github.com/Hexeption/Optifine-SRC
-- Recaf 4.0.0-SNAPSHOT - https://github.com/Col-E/Recaf-Launcher
+- Optifine source code - https://github.com/Hexeption/Optifine-SRC
+- Recaf - https://github.com/Col-E/Recaf-Launcher
