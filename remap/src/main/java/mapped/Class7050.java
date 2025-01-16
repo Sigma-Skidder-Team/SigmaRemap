@@ -15,10 +15,10 @@ public class Class7050 implements ActionListener
     private final File field27438;
     private final Class7417 field27439;
     private final Class8091 field27440;
-    private final Class7431 field27441;
+    private final WorldDownload field27441;
     public final /* synthetic */ Class8113 field27442;
     
-    private Class7050(final Class8113 field27442, final String field27443, final File field27444, final Class7417 field27445, final Class8091 field27446, final Class7431 field27447) {
+    private Class7050(final Class8113 field27442, final String field27443, final File field27444, final Class7417 field27445, final Class8091 field27446, final WorldDownload field27447) {
         this.field27442 = field27442;
         this.field27437 = field27443;
         this.field27438 = field27444;

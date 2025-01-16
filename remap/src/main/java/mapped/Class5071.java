@@ -138,7 +138,7 @@ public class Class5071 extends RealmsScreen
     }
     
     private void method15633() {
-        final Class5049 class5049 = new Class5049(this.field21752.func_224407_b(), new Class1337(this.field21762.field28675, this.field21757, this.field21762.field28677 + " (" + this.field21762.field28683.get(this.field21762.field28688).method22842(this.field21762.field28688) + ")", this));
+        final Class5049 class5049 = new Class5049(this.field21752.func_224407_b(), new RealmsTasks.DownloadTask(this.field21762.field28675, this.field21757, this.field21762.field28677 + " (" + this.field21762.field28683.get(this.field21762.field28688).method22842(this.field21762.field28688) + ")", this));
         class5049.method15466();
         Realms.setScreen(class5049);
     }

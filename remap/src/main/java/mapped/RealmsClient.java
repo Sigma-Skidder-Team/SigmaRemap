@@ -187,8 +187,8 @@ public class RealmsClient
         this.method35486(Class8178.method27091(this.method35484("invites" + "/accept/$INVITATION_ID".replace("$INVITATION_ID", replacement)), ""));
     }
     
-    public Class7431 method35476(final long l, final int i) throws RealmsServiceException {
-        return Class7431.method22864(this.method35486(Class8178.method27086(this.method35484("worlds" + "/$WORLD_ID/slot/$SLOT_ID/download".replace("$WORLD_ID", String.valueOf(l)).replace("$SLOT_ID", String.valueOf(i))))));
+    public WorldDownload func_224917_b(final long l, final int i) throws RealmsServiceException {
+        return WorldDownload.method22864(this.method35486(Class8178.method27086(this.method35484("worlds" + "/$WORLD_ID/slot/$SLOT_ID/download".replace("$WORLD_ID", String.valueOf(l)).replace("$SLOT_ID", String.valueOf(i))))));
     }
     
     public Class7444 method35477(final long l, final String s) throws RealmsServiceException {

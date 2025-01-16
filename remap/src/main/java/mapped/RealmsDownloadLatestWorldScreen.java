@@ -13,11 +13,11 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.google.common.util.concurrent.RateLimiter;
 import org.apache.logging.log4j.Logger;
 
-public class Class5047 extends RealmsScreen
+public class RealmsDownloadLatestWorldScreen extends RealmsScreen
 {
     private static final Logger field21638;
     private final RealmsScreen field21639;
-    private final Class7431 field21640;
+    private final WorldDownload field21640;
     private final String field21641;
     private final RateLimiter field21642;
     private Class5611 field21643;
@@ -41,7 +41,7 @@ public class Class5047 extends RealmsScreen
     private boolean field21661;
     private static final ReentrantLock field21662;
     
-    public Class5047(final RealmsScreen field21639, final Class7431 field21640, final String field21641) {
+    public RealmsDownloadLatestWorldScreen(final RealmsScreen field21639, final WorldDownload field21640, final String field21641) {
         this.field21650 = true;
         this.field21660 = -1;
         this.field21639 = field21639;
@@ -157,7 +157,7 @@ public class Class5047 extends RealmsScreen
         if (this.field21656 % 10 == 0) {
             ++this.field21658;
         }
-        this.method15407(Class5047.field21657[this.field21658 % Class5047.field21657.length], this.width() / 2 + method15424 / 2 + 5, 50, 16777215);
+        this.method15407(RealmsDownloadLatestWorldScreen.field21657[this.field21658 % RealmsDownloadLatestWorldScreen.field21657.length], this.width() / 2 + method15424 / 2 + 5, 50, 16777215);
     }
     
     private void method15454() {
@@ -224,15 +224,15 @@ public class Class5047 extends RealmsScreen
         new Thread(() -> {
             try {
                 try {
-                    if (Class5047.field21662.tryLock(1L, TimeUnit.SECONDS)) {
+                    if (RealmsDownloadLatestWorldScreen.field21662.tryLock(1L, TimeUnit.SECONDS)) {
                         this.field21647 = RealmsScreen.getLocalizedString("mco.download.preparing");
                         if (this.field21649) {
                             this.method15460();
-                            if (!Class5047.field21662.isHeldByCurrentThread()) {
+                            if (!RealmsDownloadLatestWorldScreen.field21662.isHeldByCurrentThread()) {
                                 return;
                             }
                             else {
-                                Class5047.field21662.unlock();
+                                RealmsDownloadLatestWorldScreen.field21662.unlock();
                                 this.field21650 = false;
                                 this.field21651 = true;
                                 return;
@@ -248,11 +248,11 @@ public class Class5047 extends RealmsScreen
                                     class8113.method26668();
                                     this.field21646 = RealmsScreen.getLocalizedString("mco.download.failed");
                                     this.field21643.method16925(RealmsScreen.getLocalizedString("gui.done"));
-                                    if (!Class5047.field21662.isHeldByCurrentThread()) {
+                                    if (!RealmsDownloadLatestWorldScreen.field21662.isHeldByCurrentThread()) {
                                         return;
                                     }
                                     else {
-                                        Class5047.field21662.unlock();
+                                        RealmsDownloadLatestWorldScreen.field21662.unlock();
                                         this.field21650 = false;
                                         this.field21651 = true;
                                         return;
@@ -265,11 +265,11 @@ public class Class5047 extends RealmsScreen
                                     if (this.field21649) {
                                         class8113.method26668();
                                         this.method15460();
-                                        if (!Class5047.field21662.isHeldByCurrentThread()) {
+                                        if (!RealmsDownloadLatestWorldScreen.field21662.isHeldByCurrentThread()) {
                                             return;
                                         }
                                         else {
-                                            Class5047.field21662.unlock();
+                                            RealmsDownloadLatestWorldScreen.field21662.unlock();
                                             this.field21650 = false;
                                             this.field21651 = true;
                                             return;
@@ -280,7 +280,7 @@ public class Class5047 extends RealmsScreen
                                             Thread.sleep(500L);
                                         }
                                         catch (final InterruptedException ex) {
-                                            Class5047.field21638.error("Failed to check Realms backup download status");
+                                            RealmsDownloadLatestWorldScreen.field21638.error("Failed to check Realms backup download status");
                                         }
                                     }
                                 }
@@ -288,45 +288,45 @@ public class Class5047 extends RealmsScreen
                             this.field21651 = true;
                             this.field21647 = RealmsScreen.getLocalizedString("mco.download.done");
                             this.field21643.method16925(RealmsScreen.getLocalizedString("gui.done"));
-                            if (!Class5047.field21662.isHeldByCurrentThread()) {
+                            if (!RealmsDownloadLatestWorldScreen.field21662.isHeldByCurrentThread()) {
                                 return;
                             }
                             else {
-                                Class5047.field21662.unlock();
+                                RealmsDownloadLatestWorldScreen.field21662.unlock();
                                 this.field21650 = false;
                                 this.field21651 = true;
                                 return;
                             }
                         }
                     }
-                    else if (!Class5047.field21662.isHeldByCurrentThread()) {
+                    else if (!RealmsDownloadLatestWorldScreen.field21662.isHeldByCurrentThread()) {
                         return;
                     }
                     else {
-                        Class5047.field21662.unlock();
+                        RealmsDownloadLatestWorldScreen.field21662.unlock();
                         this.field21650 = false;
                         this.field21651 = true;
                         return;
                     }
                 }
                 catch (final InterruptedException ex2) {
-                    Class5047.field21638.error("Could not acquire upload lock");
+                    RealmsDownloadLatestWorldScreen.field21638.error("Could not acquire upload lock");
                 }
                 catch (final Exception ex3) {
                     this.field21646 = RealmsScreen.getLocalizedString("mco.download.failed");
                     ex3.printStackTrace();
                 }
-                Class5047.field21662.unlock();
+                RealmsDownloadLatestWorldScreen.field21662.unlock();
                 this.field21650 = false;
                 this.field21651 = true;
                 return;
             }
             finally {
-                if (!Class5047.field21662.isHeldByCurrentThread()) {
+                if (!RealmsDownloadLatestWorldScreen.field21662.isHeldByCurrentThread()) {
                     return;
                 }
             }
-            Class5047.field21662.unlock();
+            RealmsDownloadLatestWorldScreen.field21662.unlock();
             this.field21650 = false;
             this.field21651 = true;
             throw;
@@ -339,7 +339,7 @@ public class Class5047 extends RealmsScreen
     
     static {
         field21638 = LogManager.getLogger();
-        field21657 = new String[] { Class5047.\uc350\u52b3\uce93\u65ed\u9bcc\ubfb4[12], ".", ". .", ". . ." };
+        field21657 = new String[] { RealmsDownloadLatestWorldScreen.\uc350\u52b3\uce93\u65ed\u9bcc\ubfb4[12], ".", ". .", ". . ." };
         field21662 = new ReentrantLock();
     }
 }

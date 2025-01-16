@@ -183,7 +183,7 @@ public class Class8113
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    public void method26667(final Class7431 class7431, final String s, final Class8091 class7432, final Class7417 class7433) {
+    public void method26667(final WorldDownload class7431, final String s, final Class8091 class7432, final Class7417 class7433) {
         if (this.field33438 == null) {
             (this.field33438 = new Thread(() -> {
                 try {

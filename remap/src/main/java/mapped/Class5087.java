@@ -192,7 +192,7 @@ public class Class5087 extends RealmsScreen
     private void method15935(final int i) {
         final RealmsClient method35444 = RealmsClient.func_224911_a();
         try {
-            final Class5047 class5047 = new Class5047(this, method35444.method35476(this.field21965.field28675, i), this.field21965.field28677 + " (" + this.field21965.field28683.get(i).method22842(i) + ")");
+            final RealmsDownloadLatestWorldScreen class5047 = new RealmsDownloadLatestWorldScreen(this, method35444.func_224917_b(this.field21965.field28675, i), this.field21965.field28677 + " (" + this.field21965.field28683.get(i).method22842(i) + ")");
             class5047.method15449(Class5087.field21976.get(i - 1));
             Realms.setScreen(class5047);
         }
