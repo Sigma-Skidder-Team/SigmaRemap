@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 
-public class Class236 extends Class219<Class1064, Class2854<Class1064>> {
+public class Class236 extends Class219<LlamaEntity, Class2854<LlamaEntity>> {
    private static final ResourceLocation[] field884 = new ResourceLocation[]{
       new ResourceLocation("textures/entity/llama/decor/white.png"),
       new ResourceLocation("textures/entity/llama/decor/orange.png"),
@@ -24,13 +24,13 @@ public class Class236 extends Class219<Class1064, Class2854<Class1064>> {
       new ResourceLocation("textures/entity/llama/decor/black.png")
    };
    private static final ResourceLocation field885 = new ResourceLocation("textures/entity/llama/decor/trader_llama.png");
-   private final Class2854<Class1064> field886 = new Class2854<Class1064>(0.5F);
+   private final Class2854<LlamaEntity> field886 = new Class2854<LlamaEntity>(0.5F);
 
-   public Class236(Class5714<Class1064, Class2854<Class1064>> var1) {
+   public Class236(Class5714<LlamaEntity, Class2854<LlamaEntity>> var1) {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, Class1064 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, LlamaEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       Class112 var13 = var4.method4906();
       ResourceLocation var14;
       if (var13 == null) {

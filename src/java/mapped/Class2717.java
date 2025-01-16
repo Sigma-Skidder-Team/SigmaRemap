@@ -5,7 +5,7 @@ import net.minecraft.entity.passive.WolfEntity;
 public class Class2717 extends NearestAttackableTargetGoal<WolfEntity> {
    private static String[] field17187;
 
-   public Class2717(Class1064 var1) {
+   public Class2717(LlamaEntity var1) {
       super(var1, WolfEntity.class, 16, false, true, var0 -> !((WolfEntity)var0).method4393());
    }
 

@@ -52,17 +52,17 @@ public class Class3288 extends Class3287 {
          if (var7 != null && var7.contains("BucketVariantTag", 3)) {
             int var8 = var7.getInt("BucketVariantTag");
             TextFormatting[] var9 = new TextFormatting[]{TextFormatting.ITALIC, TextFormatting.GRAY};
-            String var10 = "color.minecraft." + Class1052.method4814(var8);
-            String var11 = "color.minecraft." + Class1052.method4815(var8);
+            String var10 = "color.minecraft." + TropicalFishEntity.method4814(var8);
+            String var11 = "color.minecraft." + TropicalFishEntity.method4815(var8);
 
-            for (int var12 = 0; var12 < Class1052.field5817.length; var12++) {
-               if (var8 == Class1052.field5817[var12]) {
-                  var3.add(new TranslationTextComponent(Class1052.method4813(var12)).mergeStyle(var9));
+            for (int var12 = 0; var12 < TropicalFishEntity.field5817.length; var12++) {
+               if (var8 == TropicalFishEntity.field5817[var12]) {
+                  var3.add(new TranslationTextComponent(TropicalFishEntity.method4813(var12)).mergeStyle(var9));
                   return;
                }
             }
 
-            var3.add(new TranslationTextComponent(Class1052.method4816(var8)).mergeStyle(var9));
+            var3.add(new TranslationTextComponent(TropicalFishEntity.method4816(var8)).mergeStyle(var9));
             TranslationTextComponent var13 = new TranslationTextComponent(var10);
             if (!var10.equals(var11)) {
                var13.appendString(", ").append(new TranslationTextComponent(var11));

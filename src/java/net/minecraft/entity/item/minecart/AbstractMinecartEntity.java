@@ -101,21 +101,21 @@ public abstract class AbstractMinecartEntity extends Entity {
             if (var7 != MinecartType.TNT) {
                if (var7 != MinecartType.field14291) {
                   if (var7 != MinecartType.HOPPER) {
-                     return (AbstractMinecartEntity)(var7 != MinecartType.COMMAND_BLOCK ? new Class917(var0, var1, var3, var5) : new Class918(var0, var1, var3, var5));
+                     return (AbstractMinecartEntity)(var7 != MinecartType.COMMAND_BLOCK ? new MinecartEntity(var0, var1, var3, var5) : new CommandBlockMinecartEntity(var0, var1, var3, var5));
                   } else {
-                     return new Class938(var0, var1, var3, var5);
+                     return new HopperMinecartEntity(var0, var1, var3, var5);
                   }
                } else {
-                  return new Class992(var0, var1, var3, var5);
+                  return new SpawnerMinecartEntity(var0, var1, var3, var5);
                }
             } else {
-               return new Class993(var0, var1, var3, var5);
+               return new TntMinecartEntity(var0, var1, var3, var5);
             }
          } else {
-            return new Class994(var0, var1, var3, var5);
+            return new FurnaceMinecartEntity(var0, var1, var3, var5);
          }
       } else {
-         return new Class991(var0, var1, var3, var5);
+         return new ChestMinecartEntity(var0, var1, var3, var5);
       }
    }
 
@@ -336,7 +336,7 @@ public abstract class AbstractMinecartEntity extends Entity {
                for (int var26 = 0; var26 < var25.size(); var26++) {
                   Entity var24 = (Entity)var25.get(var26);
                   if (!(var24 instanceof PlayerEntity)
-                     && !(var24 instanceof Class1058)
+                     && !(var24 instanceof IronGolemEntity)
                      && !(var24 instanceof AbstractMinecartEntity)
                      && !this.isBeingRidden()
                      && !var24.isPassenger()) {

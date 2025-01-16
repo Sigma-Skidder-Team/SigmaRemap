@@ -9,9 +9,9 @@ public class Class7365 extends Class7362 {
    private static String[] field31526;
    private int field31527;
    private int field31528;
-   private Class999 field31529;
+   private AreaEffectCloudEntity field31529;
 
-   public Class7365(Class1007 var1) {
+   public Class7365(EnderDragonEntity var1) {
       super(var1);
    }
 
@@ -77,7 +77,7 @@ public class Class7365 extends Class7362 {
             }
 
             var11 = (double)(MathHelper.floor(var11) + 1);
-            this.field31529 = new Class999(this.field31519.world, var5, var11, var7);
+            this.field31529 = new AreaEffectCloudEntity(this.field31519.world, var5, var11, var7);
             this.field31529.method4113(this.field31519);
             this.field31529.method4097(5.0F);
             this.field31529.method4109(200);

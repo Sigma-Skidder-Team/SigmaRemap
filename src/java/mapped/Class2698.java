@@ -5,9 +5,9 @@ import java.util.EnumSet;
 public class Class2698 extends Class2595 {
    private static String[] field17150;
    public int field17151;
-   public final Class1095 field17152;
+   public final FoxEntity field17152;
 
-   public Class2698(Class1095 var1) {
+   public Class2698(FoxEntity var1) {
       this.field17152 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14658, Class2240.field14659, Class2240.field14657));
    }
@@ -29,7 +29,7 @@ public class Class2698 extends Class2595 {
 
    @Override
    public void method10807() {
-      Class1095.method5170(this.field17152, false);
+      FoxEntity.method5170(this.field17152, false);
    }
 
    @Override

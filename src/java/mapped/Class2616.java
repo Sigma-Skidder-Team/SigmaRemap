@@ -5,9 +5,9 @@ import net.minecraft.entity.player.PlayerEntity;
 
 public class Class2616 extends Class2612 {
    private static String[] field16880;
-   private final Class1097 field16890;
+   private final PandaEntity field16890;
 
-   public Class2616(Class1097 var1, Class<? extends LivingEntity> var2, float var3) {
+   public Class2616(PandaEntity var1, Class<? extends LivingEntity> var2, float var3) {
       super(var1, var2, var3);
       this.field16890 = var1;
    }

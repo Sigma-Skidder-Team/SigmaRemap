@@ -31,7 +31,7 @@ public class Class3318 extends Item {
          ItemStack var5 = var1.method18357();
          Vector3d var6 = var1.getHitVec();
          Direction var7 = var1.getFace();
-         Class888 var8 = new Class888(
+         FireworkRocketEntity var8 = new FireworkRocketEntity(
             var4,
             var1.method18358(),
             var6.x + (double)var7.getXOffset() * 0.15,
@@ -53,7 +53,7 @@ public class Class3318 extends Item {
       } else {
          ItemStack var6 = var2.getHeldItem(var3);
          if (!var1.isRemote) {
-            var1.addEntity(new Class888(var1, var6, var2));
+            var1.addEntity(new FireworkRocketEntity(var1, var6, var2));
             if (!var2.abilities.isCreativeMode) {
                var6.shrink(1);
             }

@@ -60,7 +60,7 @@ public class GhastEntity extends Class1111 implements IMob {
    @Override
    public boolean attackEntityFrom(DamageSource source, float var2) {
       if (!this.isInvulnerableTo(source)) {
-         if (source.getImmediateSource() instanceof Class899 && source.getTrueSource() instanceof PlayerEntity) {
+         if (source.getImmediateSource() instanceof FireballEntity && source.getTrueSource() instanceof PlayerEntity) {
             super.attackEntityFrom(source, 1000.0F);
             return true;
          } else {

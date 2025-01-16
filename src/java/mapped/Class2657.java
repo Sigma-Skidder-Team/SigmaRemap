@@ -5,7 +5,7 @@ import net.minecraft.entity.LivingEntity;
 public class Class2657 extends Class2647 {
    private static String[] field16989;
 
-   public Class2657(Class1101 var1) {
+   public Class2657(SpiderEntity var1) {
       super(var1, 1.0, true);
    }
 

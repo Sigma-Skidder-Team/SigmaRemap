@@ -178,7 +178,7 @@ public class Explosion {
             double var36 = (double)(MathHelper.sqrt(var35.getDistanceNearest3(var13)) / var53);
             if (var36 <= 1.0) {
                double var38 = var35.getPosX() - this.field33374;
-               double var40 = (!(var35 instanceof Class1004) ? var35.getPosYEye() : var35.getPosY()) - this.field33375;
+               double var40 = (!(var35 instanceof TntEntity) ? var35.getPosYEye() : var35.getPosY()) - this.field33375;
                double var42 = var35.getPosZ() - this.field33376;
                double var44 = (double) MathHelper.sqrt(var38 * var38 + var40 * var40 + var42 * var42);
                if (var44 != 0.0) {
@@ -309,7 +309,7 @@ public class Explosion {
    @Nullable
    public LivingEntity method25789() {
       if (this.field33377 != null) {
-         if (!(this.field33377 instanceof Class1004)) {
+         if (!(this.field33377 instanceof TntEntity)) {
             if (!(this.field33377 instanceof LivingEntity)) {
                if (this.field33377 instanceof ProjectileEntity) {
                   Entity var3 = ((ProjectileEntity)this.field33377).method3460();
@@ -323,7 +323,7 @@ public class Explosion {
                return (LivingEntity)this.field33377;
             }
          } else {
-            return ((Class1004)this.field33377).method4181();
+            return ((TntEntity)this.field33377).method4181();
          }
       } else {
          return null;

@@ -7,7 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Matrix3f;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5720 extends EntityRenderer<Class903> {
+public class Class5720 extends EntityRenderer<DragonFireball> {
    private static final ResourceLocation field25117 = new ResourceLocation("textures/entity/enderdragon/dragon_fireball.png");
    private static final RenderType field25118 = RenderType.getEntityCutoutNoCull(field25117);
 
@@ -15,11 +15,11 @@ public class Class5720 extends EntityRenderer<Class903> {
       super(var1);
    }
 
-   public int method17858(Class903 var1, BlockPos var2) {
+   public int method17858(DragonFireball var1, BlockPos var2) {
       return 15;
    }
 
-   public void render(Class903 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(DragonFireball var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       var4.scale(2.0F, 2.0F, 2.0F);
       var4.rotate(this.field25097.method32230());
@@ -46,7 +46,7 @@ public class Class5720 extends EntityRenderer<Class903> {
          .endVertex();
    }
 
-   public ResourceLocation method17843(Class903 var1) {
+   public ResourceLocation method17843(DragonFireball var1) {
       return field25117;
    }
 }

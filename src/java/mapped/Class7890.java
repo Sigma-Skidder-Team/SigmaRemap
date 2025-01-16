@@ -26,7 +26,7 @@ public class Class7890 extends Class7882<LivingEntity> {
       ArrayList var7 = Lists.newArrayList();
 
       for (LivingEntity var9 : var5.<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of())) {
-         if (var9 instanceof Class1084 || var9 instanceof WitherEntity) {
+         if (var9 instanceof WitherSkeletonEntity || var9 instanceof WitherEntity) {
             var6 = Optional.<LivingEntity>of((MobEntity)var9);
             break;
          }

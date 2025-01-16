@@ -183,7 +183,7 @@ public class InteractAutoBlock {
             entities.remove();
          } else if (!this.parent.getBooleanValueFromSettingName("Invisible") && ent.isInvisible()) {
             entities.remove();
-         } else if (!this.parent.getBooleanValueFromSettingName("Animals") && (ent instanceof AnimalEntity || ent instanceof Class1042)) {
+         } else if (!this.parent.getBooleanValueFromSettingName("Animals") && (ent instanceof AnimalEntity || ent instanceof VillagerEntity)) {
             entities.remove();
          } else if (!this.parent.getBooleanValueFromSettingName("Monsters") && ent instanceof MonsterEntity) {
             entities.remove();

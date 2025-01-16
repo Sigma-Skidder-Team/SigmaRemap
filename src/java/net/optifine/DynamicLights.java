@@ -291,11 +291,11 @@ public class DynamicLights {
             }
 
             if (!(var0 instanceof Class901)) {
-               if (!(var0 instanceof Class1004)) {
-                  if (!(var0 instanceof Class1103)) {
+               if (!(var0 instanceof TntEntity)) {
+                  if (!(var0 instanceof BlazeEntity)) {
                      if (!(var0 instanceof MagmaCubeEntity)) {
-                        if (var0 instanceof Class1081) {
-                           Class1081 var14 = (Class1081)var0;
+                        if (var0 instanceof CreeperEntity) {
+                           CreeperEntity var14 = (CreeperEntity)var0;
                            if ((double)var14.method5019(0.0F) > 0.001) {
                               return 15;
                            }
@@ -325,7 +325,7 @@ public class DynamicLights {
                         return !((double)var13.field6083 > 0.6) ? 8 : 13;
                      }
                   } else {
-                     Class1103 var12 = (Class1103)var0;
+                     BlazeEntity var12 = (BlazeEntity)var0;
                      return !var12.isBurning() ? 10 : 15;
                   }
                } else {

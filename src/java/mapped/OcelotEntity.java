@@ -74,7 +74,7 @@ public class OcelotEntity extends AnimalEntity {
       this.field5600.addGoal(9, new Class2785(this, 0.8));
       this.field5600.addGoal(10, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
       this.field5600.addGoal(11, new Class2612(this, PlayerEntity.class, 10.0F));
-      this.field5601.addGoal(1, new NearestAttackableTargetGoal<Class1089>(this, Class1089.class, false));
+      this.field5601.addGoal(1, new NearestAttackableTargetGoal<ChickenEntity>(this, ChickenEntity.class, false));
       this.field5601.addGoal(1, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, false, false, TurtleEntity.field5963));
    }
 

@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5726 extends EntityRenderer<Class888> {
+public class Class5726 extends EntityRenderer<FireworkRocketEntity> {
    private static String[] field25133;
    private final ItemRenderer field25134;
 
@@ -15,7 +15,7 @@ public class Class5726 extends EntityRenderer<Class888> {
       this.field25134 = var2;
    }
 
-   public void render(Class888 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(FireworkRocketEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       var4.rotate(this.field25097.method32230());
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
@@ -30,7 +30,7 @@ public class Class5726 extends EntityRenderer<Class888> {
       super.render(var1, var2, var3, var4, var5, var6);
    }
 
-   public ResourceLocation method17843(Class888 var1) {
+   public ResourceLocation method17843(FireworkRocketEntity var1) {
       return AtlasTexture.LOCATION_BLOCKS_TEXTURE;
    }
 }

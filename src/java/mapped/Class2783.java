@@ -9,12 +9,12 @@ import java.util.EnumSet;
 
 public class Class2783 extends Class2595 {
    private static String[] field17395;
-   private final Class1103 field17396;
+   private final BlazeEntity field17396;
    private int field17397;
    private int field17398;
    private int field17399;
 
-   public Class2783(Class1103 var1) {
+   public Class2783(BlazeEntity var1) {
       this.field17396 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
    }
@@ -32,7 +32,7 @@ public class Class2783 extends Class2595 {
 
    @Override
    public void method10807() {
-      Class1103.method5295(this.field17396, false);
+      BlazeEntity.method5295(this.field17396, false);
       this.field17399 = 0;
    }
 
@@ -70,13 +70,13 @@ public class Class2783 extends Class2595 {
                   if (this.field17397 > 4) {
                      this.field17398 = 100;
                      this.field17397 = 0;
-                     Class1103.method5295(this.field17396, false);
+                     BlazeEntity.method5295(this.field17396, false);
                   } else {
                      this.field17398 = 6;
                   }
                } else {
                   this.field17398 = 60;
-                  Class1103.method5295(this.field17396, true);
+                  BlazeEntity.method5295(this.field17396, true);
                }
 
                if (this.field17397 > 1) {
@@ -86,7 +86,7 @@ public class Class2783 extends Class2595 {
                   }
 
                   for (int var14 = 0; var14 < 1; var14++) {
-                     Class900 var15 = new Class900(
+                     SmallFireballEntity var15 = new SmallFireballEntity(
                         this.field17396.world,
                         this.field17396,
                         var7 + this.field17396.getRNG().nextGaussian() * (double)var13,

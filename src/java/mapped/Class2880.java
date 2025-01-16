@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2880<T extends Class1058> extends Class2803<T> {
+public class Class2880<T extends IronGolemEntity> extends Class2803<T> {
    private static String[] field17855;
    private final ModelRenderer field17856;
    private final ModelRenderer field17857;

@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2869<T extends Class1019> extends Class2866<T> {
+public class Class2869<T extends SheepEntity> extends Class2866<T> {
    private static String[] field17771;
    private float field17784;
 

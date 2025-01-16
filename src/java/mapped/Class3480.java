@@ -152,7 +152,7 @@ public class Class3480 extends BushBlock implements IGrowable {
 
    @Override
    public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (var4 instanceof Class1029 && var2.getGameRules().getBoolean(GameRules.field24224)) {
+      if (var4 instanceof RavagerEntity && var2.getGameRules().getBoolean(GameRules.field24224)) {
          var2.destroyBlock(var3, true, var4);
       }
 

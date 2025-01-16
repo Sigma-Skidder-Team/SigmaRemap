@@ -111,7 +111,7 @@ public class Class3428 extends Block implements IWaterLoggable {
          var2.method7179(var3, true);
       } else {
          var2.addEntity(
-            new Class907(
+            new FallingBlockEntity(
                var2,
                (double)var3.getX() + 0.5,
                (double)var3.getY(),

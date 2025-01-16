@@ -127,13 +127,13 @@ public class Class6983 {
       return var4.map(var1x -> (LivingEntity)((ServerWorld)var0.world).getEntityByUuid(var1x));
    }
 
-   public static Stream<Class1042> method21587(Class1042 var0, Predicate<Class1042> var1) {
+   public static Stream<VillagerEntity> method21587(VillagerEntity var0, Predicate<VillagerEntity> var1) {
       return var0.getBrain()
          .<List<LivingEntity>>method21410(Class8830.field39818)
-         .<Stream<Class1042>>map(
+         .<Stream<VillagerEntity>>map(
             var2 -> var2.stream()
-                  .filter(var1xx -> var1xx instanceof Class1042 && var1xx != var0)
-                  .<Class1042>map(var0xx -> (Class1042)var0xx)
+                  .filter(var1xx -> var1xx instanceof VillagerEntity && var1xx != var0)
+                  .<VillagerEntity>map(var0xx -> (VillagerEntity)var0xx)
                   .filter(LivingEntity::isAlive)
                   .filter(var1)
          )

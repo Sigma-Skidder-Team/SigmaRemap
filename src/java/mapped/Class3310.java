@@ -14,6 +14,6 @@ public class Class3310 extends Class3308 {
 
    @Override
    public AbstractArrowEntity method11850(World var1, ItemStack var2, LivingEntity var3) {
-      return new Class885(var1, var3);
+      return new SpectralArrowEntity(var1, var3);
    }
 }

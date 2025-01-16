@@ -52,11 +52,11 @@ public enum ProjectileThingy {
       }
    }
 
-   public float method9082() {
+   public float getPosX() {
       return this.posX;
    }
 
-   public float method9083() {
+   public float getPosZ() {
       return this.posZ;
    }
 
@@ -64,9 +64,9 @@ public enum ProjectileThingy {
       return this.item;
    }
 
-   public static ProjectileThingy method9085(Item var0) {
+   public static ProjectileThingy getProjectileThingyForItem(Item item) {
       for (ProjectileThingy var6 : values()) {
-         if (var6.getItem().equals(var0)) {
+         if (var6.getItem().equals(item)) {
             return var6;
          }
       }

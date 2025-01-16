@@ -132,9 +132,9 @@ public class Class3431 extends Class3429 {
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
       if (var1.<Boolean>get(field19194)) {
-         List var6 = this.<Class918>method12096(var2, var3, Class918.class, (Predicate<Entity>)null);
+         List var6 = this.<CommandBlockMinecartEntity>method12096(var2, var3, CommandBlockMinecartEntity.class, (Predicate<Entity>)null);
          if (!var6.isEmpty()) {
-            return ((Class918)var6.get(0)).method3614().method3557();
+            return ((CommandBlockMinecartEntity)var6.get(0)).method3614().method3557();
          }
 
          List var7 = this.<AbstractMinecartEntity>method12096(var2, var3, AbstractMinecartEntity.class, EntityPredicates.field34760);

@@ -5,15 +5,15 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5722 extends EntityRenderer<Class915> {
+public class Class5722 extends EntityRenderer<EvokerFangsEntity> {
    private static final ResourceLocation field25120 = new ResourceLocation("textures/entity/illager/evoker_fangs.png");
-   private final Class2804<Class915> field25121 = new Class2804<Class915>();
+   private final Class2804<EvokerFangsEntity> field25121 = new Class2804<EvokerFangsEntity>();
 
    public Class5722(EntityRendererManager var1) {
       super(var1);
    }
 
-   public void render(Class915 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(EvokerFangsEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       float var9 = var1.method3584(var3);
       if (var9 != 0.0F) {
          float var10 = 2.0F;
@@ -35,7 +35,7 @@ public class Class5722 extends EntityRenderer<Class915> {
       }
    }
 
-   public ResourceLocation method17843(Class915 var1) {
+   public ResourceLocation method17843(EvokerFangsEntity var1) {
       return field25120;
    }
 }

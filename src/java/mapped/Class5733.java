@@ -8,14 +8,14 @@ import net.minecraft.util.math.MathHelper;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 
-public class Class5733 extends Class5732<Class993> {
+public class Class5733 extends Class5732<TntMinecartEntity> {
    private static String[] field25145;
 
    public Class5733(EntityRendererManager var1) {
       super(var1);
    }
 
-   public void method17915(Class993 var1, float var2, BlockState var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void method17915(TntMinecartEntity var1, float var2, BlockState var3, MatrixStack var4, Class7733 var5, int var6) {
       int var9 = var1.method4073();
       if (var9 > -1 && (float)var9 - var2 + 1.0F < 10.0F) {
          float var10 = 1.0F - ((float)var9 - var2 + 1.0F) / 10.0F;

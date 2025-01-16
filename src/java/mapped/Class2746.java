@@ -9,9 +9,9 @@ import java.util.EnumSet;
 public class Class2746 extends Class2595 {
    private static String[] field17277;
    private int field17278;
-   public final Class1057 field17279;
+   public final ShulkerEntity field17279;
 
-   public Class2746(Class1057 var1) {
+   public Class2746(ShulkerEntity var1) {
       this.field17279 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
    }
@@ -43,13 +43,13 @@ public class Class2746 extends Class2595 {
          if (!(var4 < 400.0)) {
             this.field17279.method4233((LivingEntity)null);
          } else if (this.field17278 <= 0) {
-            this.field17278 = 20 + Class1057.method4858(this.field17279).nextInt(10) * 20 / 2;
-            this.field17279.world.addEntity(new Class905(this.field17279.world, this.field17279, var3, this.field17279.method4848().getAxis()));
+            this.field17278 = 20 + ShulkerEntity.method4858(this.field17279).nextInt(10) * 20 / 2;
+            this.field17279.world.addEntity(new ShulkerBulletEntity(this.field17279.world, this.field17279, var3, this.field17279.method4848().getAxis()));
             this.field17279
                .playSound(
                   SoundEvents.field27053,
                   2.0F,
-                  (Class1057.method4859(this.field17279).nextFloat() - Class1057.method4860(this.field17279).nextFloat()) * 0.2F + 1.0F
+                  (ShulkerEntity.method4859(this.field17279).nextFloat() - ShulkerEntity.method4860(this.field17279).nextFloat()) * 0.2F + 1.0F
                );
          }
 

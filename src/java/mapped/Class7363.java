@@ -10,7 +10,7 @@ public class Class7363 extends Class7362 {
    private final Class8522 field31522;
    private int field31523;
 
-   public Class7363(Class1007 var1) {
+   public Class7363(EnderDragonEntity var1) {
       super(var1);
       this.field31522 = new Class8522().method30203(20.0).method30209(var1x -> Math.abs(var1x.getPosY() - var1.getPosY()) <= 10.0);
    }

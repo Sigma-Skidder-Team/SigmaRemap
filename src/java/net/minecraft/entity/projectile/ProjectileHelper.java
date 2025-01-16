@@ -130,8 +130,8 @@ public final class ProjectileHelper {
       Class3308 var5 = (Class3308)(!(var1.getItem() instanceof Class3308) ? Items.field37797 : var1.getItem());
       AbstractArrowEntity var6 = var5.method11850(var0.world, var1, var0);
       var6.method3490(var0, var2);
-      if (var1.getItem() == Items.field38117 && var6 instanceof Class887) {
-         ((Class887)var6).method3497(var1);
+      if (var1.getItem() == Items.field38117 && var6 instanceof ArrowEntity) {
+         ((ArrowEntity)var6).method3497(var1);
       }
 
       return var6;

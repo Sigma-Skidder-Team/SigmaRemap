@@ -10,9 +10,9 @@ import net.minecraft.util.math.vector.Vector3d;
 import javax.annotation.Nullable;
 
 public abstract class Class7361 implements Class7373 {
-   public final Class1007 field31519;
+   public final EnderDragonEntity field31519;
 
-   public Class7361(Class1007 var1) {
+   public Class7361(EnderDragonEntity var1) {
       this.field31519 = var1;
    }
 

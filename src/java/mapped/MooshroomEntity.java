@@ -28,7 +28,7 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
 
-public class MooshroomEntity extends Class1087 implements Class1020 {
+public class MooshroomEntity extends CowEntity implements Class1020 {
    private static final DataParameter<String> field5951 = EntityDataManager.<String>createKey(MooshroomEntity.class, DataSerializers.field33393);
    private Effect field5952;
    private int field5953;
@@ -48,7 +48,7 @@ public class MooshroomEntity extends Class1087 implements Class1020 {
    }
 
    @Override
-   public void method3353(ServerWorld var1, Class906 var2) {
+   public void method3353(ServerWorld var1, LightningBoltEntity var2) {
       UUID var5 = var2.getUniqueID();
       if (!var5.equals(this.field5954)) {
          this.method5036(this.method5037() != Class2210.field14452 ? Class2210.field14452 : Class2210.field14453);
@@ -152,7 +152,7 @@ public class MooshroomEntity extends Class1087 implements Class1020 {
       if (!this.world.isRemote()) {
          ((ServerWorld)this.world).spawnParticle(ParticleTypes.field34070, this.getPosX(), this.getPosYHeight(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
          this.remove();
-         Class1087 var4 = EntityType.COW.create(this.world);
+         CowEntity var4 = EntityType.COW.create(this.world);
          var4.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var4.setHealth(this.getHealth());
          var4.renderYawOffset = this.renderYawOffset;

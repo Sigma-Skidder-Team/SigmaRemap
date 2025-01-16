@@ -7,7 +7,7 @@ public class Class5095 extends Class5094 {
    private final int field23186;
    private final int field23187;
 
-   public Class5095(Class1052 var1, int var2, int var3, int var4, int var5) {
+   public Class5095(TropicalFishEntity var1, int var2, int var3, int var4, int var5) {
       super(var1);
       this.field23184 = var2;
       this.field23185 = var3;

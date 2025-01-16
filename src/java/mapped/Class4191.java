@@ -243,7 +243,7 @@ public class Class4191 extends Class4188 {
       if (var2.method38396(var10) && var1.getBlockState(var10).isAir() && !var1.getBlockState(var10.down()).isAir()) {
          BlockState var11 = Blocks.RAIL.getDefaultState().with(Class3430.field19191, !var3.nextBoolean() ? RailShape.field248 : RailShape.field247);
          this.method12923(var1, var11, var4, var5, var6, var2);
-         Class991 var12 = new Class991(var1.method6970(), (double)var10.getX() + 0.5, (double)var10.getY() + 0.5, (double)var10.getZ() + 0.5);
+         ChestMinecartEntity var12 = new ChestMinecartEntity(var1.method6970(), (double)var10.getX() + 0.5, (double)var10.getY() + 0.5, (double)var10.getZ() + 0.5);
          var12.method3626(var7, var3.nextLong());
          var1.addEntity(var12);
          return true;

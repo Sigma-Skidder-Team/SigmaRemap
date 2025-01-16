@@ -494,8 +494,8 @@ public class Chunk implements IChunk {
                   var3.add(var14);
                }
 
-               if (var14 instanceof Class1007) {
-                  for (EnderDragonPartEntity var18 : ((Class1007)var14).method4332()) {
+               if (var14 instanceof EnderDragonEntity) {
+                  for (EnderDragonPartEntity var18 : ((EnderDragonEntity)var14).method4332()) {
                      if (var18 != var1 && var18.getBoundingBox().method19670(var2) && (var4 == null || var4.test(var18))) {
                         var3.add(var18);
                      }

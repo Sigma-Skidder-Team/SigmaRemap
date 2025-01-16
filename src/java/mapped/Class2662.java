@@ -9,17 +9,17 @@ import net.minecraft.util.math.BlockPos;
 
 public class Class2662 extends Class2661 {
    private static String[] field17023;
-   public final Class1017 field17022;
+   public final BeeEntity field17022;
 
-   private Class2662(Class1017 var1) {
+   private Class2662(BeeEntity var1) {
       super(var1, null);
       this.field17022 = var1;
    }
 
    @Override
    public boolean method10860() {
-      if (Class1017.method4476(this.field17022) < 10) {
-         return Class1017.method4477(this.field17022).nextFloat() < 0.3F ? false : this.field17022.method4438() && Class1017.method4478(this.field17022);
+      if (BeeEntity.method4476(this.field17022) < 10) {
+         return BeeEntity.method4477(this.field17022).nextFloat() < 0.3F ? false : this.field17022.method4438() && BeeEntity.method4478(this.field17022);
       } else {
          return false;
       }
@@ -32,7 +32,7 @@ public class Class2662 extends Class2661 {
 
    @Override
    public void method10805() {
-      if (Class1017.method4479(this.field17022).nextInt(30) == 0) {
+      if (BeeEntity.method4479(this.field17022).nextInt(30) == 0) {
          for (int var3 = 1; var3 <= 2; var3++) {
             BlockPos var4 = this.field17022.getPosition().method8340(var3);
             BlockState var5 = this.field17022.world.getBlockState(var4);
@@ -67,7 +67,7 @@ public class Class2662 extends Class2661 {
                if (var7) {
                   this.field17022.world.playEvent(2005, var4, 0);
                   this.field17022.world.setBlockState(var4, var5.with(var8, Integer.valueOf(var5.<Integer>get(var8) + 1)));
-                  Class1017.method4480(this.field17022);
+                  BeeEntity.method4480(this.field17022);
                }
             }
          }
@@ -75,7 +75,7 @@ public class Class2662 extends Class2661 {
    }
 
    // $VF: synthetic method
-   public Class2662(Class1017 var1, Class6996 var2) {
+   public Class2662(BeeEntity var1, Class6996 var2) {
       this(var1);
    }
 }

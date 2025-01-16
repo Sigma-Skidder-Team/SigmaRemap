@@ -33,13 +33,13 @@ public class FallingBlock extends Block {
    @Override
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (method11598(var2.getBlockState(var3.down())) && var3.getY() >= 0) {
-         Class907 var7 = new Class907(var2, (double)var3.getX() + 0.5, (double)var3.getY(), (double)var3.getZ() + 0.5, var2.getBlockState(var3));
+         FallingBlockEntity var7 = new FallingBlockEntity(var2, (double)var3.getX() + 0.5, (double)var3.getY(), (double)var3.getZ() + 0.5, var2.getBlockState(var3));
          this.method11596(var7);
          var2.addEntity(var7);
       }
    }
 
-   public void method11596(Class907 var1) {
+   public void method11596(FallingBlockEntity var1) {
    }
 
    public int method11597() {
@@ -51,10 +51,10 @@ public class FallingBlock extends Block {
       return var0.isAir() || var0.isIn(BlockTags.field32798) || var3.isLiquid() || var3.isReplaceable();
    }
 
-   public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {
+   public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, FallingBlockEntity var5) {
    }
 
-   public void method11600(World var1, BlockPos var2, Class907 var3) {
+   public void method11600(World var1, BlockPos var2, FallingBlockEntity var3) {
    }
 
    @Override

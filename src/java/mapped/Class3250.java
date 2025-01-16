@@ -122,9 +122,9 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    }
 
    private boolean method11680(World var1, BlockPos var2) {
-      List var5 = var1.<Class1042>getEntitiesInAABBexcluding(Class1042.class, new AxisAlignedBB(var2), LivingEntity::isSleeping);
+      List var5 = var1.<VillagerEntity>getEntitiesInAABBexcluding(VillagerEntity.class, new AxisAlignedBB(var2), LivingEntity::isSleeping);
       if (!var5.isEmpty()) {
-         ((Class1042)var5.get(0)).wakeUp();
+         ((VillagerEntity)var5.get(0)).wakeUp();
          return true;
       } else {
          return false;

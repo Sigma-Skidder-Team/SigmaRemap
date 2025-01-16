@@ -8,14 +8,14 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class Class7891 extends Class7882<Class1042> {
+public class Class7891 extends Class7882<VillagerEntity> {
    private static String[] field33842;
 
    public Class7891() {
       super(40);
    }
 
-   public void method26425(ServerWorld var1, Class1042 var2) {
+   public void method26425(ServerWorld var1, VillagerEntity var2) {
       RegistryKey var5 = var1.getDimensionKey();
       BlockPos var6 = var2.getPosition();
       ArrayList var7 = Lists.newArrayList();

@@ -94,7 +94,7 @@ public class Class7019 implements Class7016 {
                   return false;
                }
 
-               Class1044 var11 = EntityType.WANDERING_TRADER
+               WanderingTraderEntity var11 = EntityType.WANDERING_TRADER
                   .method33201(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var10, SpawnReason.field14398, false, false);
                if (var11 != null) {
                   for (int var12 = 0; var12 < 2; var12++) {
@@ -116,10 +116,10 @@ public class Class7019 implements Class7016 {
       }
    }
 
-   private void method21751(ServerWorld var1, Class1044 var2, int var3) {
+   private void method21751(ServerWorld var1, WanderingTraderEntity var2, int var3) {
       BlockPos var6 = this.method21752(var1, var2.getPosition(), var3);
       if (var6 != null) {
-         Class1065 var7 = EntityType.TRADER_LLAMA.method33201(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var6, SpawnReason.field14398, false, false);
+         TraderLlamaEntity var7 = EntityType.TRADER_LLAMA.method33201(var1, (CompoundNBT)null, (ITextComponent)null, (PlayerEntity)null, var6, SpawnReason.field14398, false, false);
          if (var7 != null) {
             var7.method4298(var2, true);
          }

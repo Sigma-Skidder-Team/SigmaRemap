@@ -6,9 +6,9 @@ import net.minecraft.world.server.ServerWorld;
 
 public class Class912 extends CommandBlockLogic {
    private static String[] field5200;
-   public final Class918 field5201;
+   public final CommandBlockMinecartEntity field5201;
 
-   public Class912(Class918 var1) {
+   public Class912(CommandBlockMinecartEntity var1) {
       this.field5201 = var1;
    }
 
@@ -19,8 +19,8 @@ public class Class912 extends CommandBlockLogic {
 
    @Override
    public void method3568() {
-      this.field5201.getDataManager().method35446(Class918.method3615(), this.method3563());
-      this.field5201.getDataManager().method35446(Class918.method3616(), this.method3559());
+      this.field5201.getDataManager().method35446(CommandBlockMinecartEntity.method3615(), this.method3563());
+      this.field5201.getDataManager().method35446(CommandBlockMinecartEntity.method3616(), this.method3559());
    }
 
    @Override
@@ -28,7 +28,7 @@ public class Class912 extends CommandBlockLogic {
       return this.field5201.getPositionVec();
    }
 
-   public Class918 method3577() {
+   public CommandBlockMinecartEntity method3577() {
       return this.field5201;
    }
 

@@ -6,9 +6,9 @@ import net.minecraft.util.math.vector.Vector3d;
 public class Class6831 extends Class6829 {
    private static String[] field29706;
    private float field29716;
-   public final Class1110 field29717;
+   public final PhantomEntity field29717;
 
-   public Class6831(Class1110 var1, MobEntity var2) {
+   public Class6831(PhantomEntity var1, MobEntity var2) {
       super(var2);
       this.field29717 = var1;
       this.field29716 = 0.1F;
@@ -21,9 +21,9 @@ public class Class6831 extends Class6829 {
          this.field29716 = 0.1F;
       }
 
-      float var3 = (float)(Class1110.method5339(this.field29717).x - this.field29717.getPosX());
-      float var4 = (float)(Class1110.method5339(this.field29717).y - this.field29717.getPosY());
-      float var5 = (float)(Class1110.method5339(this.field29717).z - this.field29717.getPosZ());
+      float var3 = (float)(PhantomEntity.method5339(this.field29717).x - this.field29717.getPosX());
+      float var4 = (float)(PhantomEntity.method5339(this.field29717).y - this.field29717.getPosY());
+      float var5 = (float)(PhantomEntity.method5339(this.field29717).z - this.field29717.getPosZ());
       double var6 = (double) MathHelper.sqrt(var3 * var3 + var5 * var5);
       double var8 = 1.0 - (double) MathHelper.method37771(var4 * 0.7F) / var6;
       var3 = (float)((double)var3 * var8);

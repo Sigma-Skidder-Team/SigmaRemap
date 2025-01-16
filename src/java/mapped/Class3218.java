@@ -72,19 +72,19 @@ public class Class3218 extends FallingBlock {
    }
 
    @Override
-   public void method11596(Class907 var1) {
+   public void method11596(FallingBlockEntity var1) {
       var1.method3555(true);
    }
 
    @Override
-   public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {
+   public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, FallingBlockEntity var5) {
       if (!var5.isSilent()) {
          var1.playEvent(1031, var2, 0);
       }
    }
 
    @Override
-   public void method11600(World var1, BlockPos var2, Class907 var3) {
+   public void method11600(World var1, BlockPos var2, FallingBlockEntity var3) {
       if (!var3.isSilent()) {
          var1.playEvent(1029, var2, 0);
       }

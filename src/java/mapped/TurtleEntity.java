@@ -295,7 +295,7 @@ public class TurtleEntity extends AnimalEntity {
    }
 
    @Override
-   public void method3353(ServerWorld var1, Class906 var2) {
+   public void method3353(ServerWorld var1, LightningBoltEntity var2) {
       this.attackEntityFrom(DamageSource.field38993, Float.MAX_VALUE);
    }
 

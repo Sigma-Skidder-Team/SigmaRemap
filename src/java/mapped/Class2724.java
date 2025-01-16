@@ -15,7 +15,7 @@ public class Class2724 extends Class2595 {
 
    public Class2724(GuardianEntity var1) {
       this.field17217 = var1;
-      this.field17219 = var1 instanceof Class1106;
+      this.field17219 = var1 instanceof ElderGuardianEntity;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
    }
 

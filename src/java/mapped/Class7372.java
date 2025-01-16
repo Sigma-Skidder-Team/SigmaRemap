@@ -12,7 +12,7 @@ public class Class7372 extends Class7361 {
    private Class8238 field31551;
    private Vector3d field31552;
 
-   public Class7372(Class1007 var1) {
+   public Class7372(EnderDragonEntity var1) {
       super(var1);
    }
 

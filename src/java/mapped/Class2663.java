@@ -20,9 +20,9 @@ public class Class2663 extends Class2661 {
    private boolean field17028;
    private Vector3d field17029;
    private int field17030;
-   public final Class1017 field17031;
+   public final BeeEntity field17031;
 
-   public Class2663(Class1017 var1) {
+   public Class2663(BeeEntity var1) {
       super(var1, null);
       this.field17031 = var1;
       this.field17025 = var0 -> {
@@ -40,20 +40,20 @@ public class Class2663 extends Class2661 {
 
    @Override
    public boolean method10860() {
-      if (Class1017.method4481(this.field17031) <= 0) {
+      if (BeeEntity.method4481(this.field17031) <= 0) {
          if (!this.field17031.method4438()) {
             if (!this.field17031.world.method6795()) {
-               if (!(Class1017.method4482(this.field17031).nextFloat() < 0.7F)) {
+               if (!(BeeEntity.method4482(this.field17031).nextFloat() < 0.7F)) {
                   Optional var3 = this.method10867();
                   if (!var3.isPresent()) {
                      return false;
                   } else {
-                     Class1017.method4473(this.field17031, (BlockPos)var3.get());
-                     Class1017.method4483(this.field17031)
+                     BeeEntity.method4473(this.field17031, (BlockPos)var3.get());
+                     BeeEntity.method4483(this.field17031)
                         .method21654(
-                           (double)Class1017.method4469(this.field17031).getX() + 0.5,
-                           (double)Class1017.method4469(this.field17031).getY() + 0.5,
-                           (double)Class1017.method4469(this.field17031).getZ() + 0.5,
+                           (double) BeeEntity.method4469(this.field17031).getX() + 0.5,
+                           (double) BeeEntity.method4469(this.field17031).getY() + 0.5,
+                           (double) BeeEntity.method4469(this.field17031).getZ() + 0.5,
                            1.2F
                         );
                      return true;
@@ -78,14 +78,14 @@ public class Class2663 extends Class2661 {
          if (this.field17031.method4422()) {
             if (!this.field17031.world.method6795()) {
                if (!this.method10862()) {
-                  if (this.field17031.ticksExisted % 20 == 0 && !Class1017.method4470(this.field17031, Class1017.method4469(this.field17031))) {
-                     Class1017.method4473(this.field17031, null);
+                  if (this.field17031.ticksExisted % 20 == 0 && !BeeEntity.method4470(this.field17031, BeeEntity.method4469(this.field17031))) {
+                     BeeEntity.method4473(this.field17031, null);
                      return false;
                   } else {
                      return true;
                   }
                } else {
-                  return Class1017.method4484(this.field17031).nextFloat() < 0.2F;
+                  return BeeEntity.method4484(this.field17031).nextFloat() < 0.2F;
                }
             } else {
                return false;
@@ -122,19 +122,19 @@ public class Class2663 extends Class2661 {
    @Override
    public void method10807() {
       if (this.method10862()) {
-         Class1017.method4485(this.field17031, true);
+         BeeEntity.method4485(this.field17031, true);
       }
 
       this.field17028 = false;
-      Class1017.method4486(this.field17031).method21666();
-      Class1017.method4487(this.field17031, 200);
+      BeeEntity.method4486(this.field17031).method21666();
+      BeeEntity.method4487(this.field17031, 200);
    }
 
    @Override
    public void method10805() {
       this.field17030++;
       if (this.field17030 <= 600) {
-         Vector3d var3 = Vector3d.method11330(Class1017.method4469(this.field17031)).add(0.0, 0.6F, 0.0);
+         Vector3d var3 = Vector3d.method11330(BeeEntity.method4469(this.field17031)).add(0.0, 0.6F, 0.0);
          if (!(var3.method11341(this.field17031.getPositionVec()) > 1.0)) {
             if (this.field17029 == null) {
                this.field17029 = var3;
@@ -143,17 +143,17 @@ public class Class2663 extends Class2661 {
             boolean var4 = this.field17031.getPositionVec().method11341(this.field17029) <= 0.1;
             boolean var5 = true;
             if (!var4 && this.field17030 > 600) {
-               Class1017.method4473(this.field17031, null);
+               BeeEntity.method4473(this.field17031, null);
             } else {
                if (var4) {
-                  boolean var6 = Class1017.method4488(this.field17031).nextInt(25) == 0;
+                  boolean var6 = BeeEntity.method4488(this.field17031).nextInt(25) == 0;
                   if (!var6) {
                      var5 = false;
                   } else {
                      this.field17029 = new Vector3d(
                         var3.getX() + (double)this.method10866(), var3.getY(), var3.getZ() + (double)this.method10866()
                      );
-                     Class1017.method4489(this.field17031).method21666();
+                     BeeEntity.method4489(this.field17031).method21666();
                   }
 
                   this.field17031.method4227().method28041(var3.getX(), var3.getY(), var3.getZ());
@@ -164,7 +164,7 @@ public class Class2663 extends Class2661 {
                }
 
                this.field17026++;
-               if (Class1017.method4490(this.field17031).nextFloat() < 0.05F && this.field17026 > this.field17027 + 60) {
+               if (BeeEntity.method4490(this.field17031).nextFloat() < 0.05F && this.field17026 > this.field17027 + 60) {
                   this.field17027 = this.field17026;
                   this.field17031.playSound(SoundEvents.field26394, 1.0F, 1.0F);
                }
@@ -174,7 +174,7 @@ public class Class2663 extends Class2661 {
             this.method10865();
          }
       } else {
-         Class1017.method4473(this.field17031, null);
+         BeeEntity.method4473(this.field17031, null);
       }
    }
 
@@ -183,7 +183,7 @@ public class Class2663 extends Class2661 {
    }
 
    private float method10866() {
-      return (Class1017.method4491(this.field17031).nextFloat() * 2.0F - 1.0F) * 0.33333334F;
+      return (BeeEntity.method4491(this.field17031).nextFloat() * 2.0F - 1.0F) * 0.33333334F;
    }
 
    private Optional<BlockPos> method10867() {

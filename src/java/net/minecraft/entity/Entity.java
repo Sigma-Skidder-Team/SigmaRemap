@@ -1936,7 +1936,7 @@ public abstract class Entity implements INameable, ICommandSource {
       this.dataManager.method35446(AIR, var1);
    }
 
-   public void method3353(ServerWorld var1, Class906 var2) {
+   public void method3353(ServerWorld var1, LightningBoltEntity var2) {
       this.forceFireTicks(this.fire + 1);
       if (this.fire == 0) {
          this.setFire(8);

@@ -394,14 +394,14 @@ public class ServerWorld extends World implements ISeedReader {
             Class9755 var11 = this.method6807(var10);
             boolean var12 = this.getGameRules().getBoolean(GameRules.field24226) && this.rand.nextDouble() < (double)var11.method38328() * 0.01;
             if (var12) {
-               Class1076 var13 = EntityType.SKELETON_HORSE.create(this);
+               SkeletonHorseEntity var13 = EntityType.SKELETON_HORSE.create(this);
                var13.method5001(true);
                var13.method4770(0);
                var13.setPosition((double)var10.getX(), (double)var10.getY(), (double)var10.getZ());
                this.addEntity(var13);
             }
 
-            Class906 var25 = EntityType.LIGHTNING_BOLT.create(this);
+            LightningBoltEntity var25 = EntityType.LIGHTNING_BOLT.create(this);
             var25.moveForced(Vector3d.method11330(var10));
             var25.method3549(var12);
             this.addEntity(var25);
@@ -644,14 +644,14 @@ public class ServerWorld extends World implements ISeedReader {
       return var5;
    }
 
-   public List<Class1007> method6913() {
+   public List<EnderDragonEntity> method6913() {
       ArrayList var3 = Lists.newArrayList();
       ObjectIterator var4 = this.field9039.values().iterator();
 
       while (var4.hasNext()) {
          Entity var5 = (Entity)var4.next();
-         if (var5 instanceof Class1007 && var5.isAlive()) {
-            var3.add((Class1007)var5);
+         if (var5 instanceof EnderDragonEntity && var5.isAlive()) {
+            var3.add((EnderDragonEntity)var5);
          }
       }
 
@@ -827,8 +827,8 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public void method6930(Entity var1) {
-      if (var1 instanceof Class1007) {
-         for (EnderDragonPartEntity var7 : ((Class1007)var1).method4332()) {
+      if (var1 instanceof EnderDragonEntity) {
+         for (EnderDragonPartEntity var7 : ((EnderDragonEntity)var1).method4332()) {
             var7.remove();
          }
       }
@@ -849,8 +849,8 @@ public class ServerWorld extends World implements ISeedReader {
    private void method6931(Entity var1) {
       if (!this.field9044) {
          this.field9039.put(var1.getEntityId(), var1);
-         if (var1 instanceof Class1007) {
-            for (EnderDragonPartEntity var7 : ((Class1007)var1).method4332()) {
+         if (var1 instanceof EnderDragonEntity) {
+            for (EnderDragonPartEntity var7 : ((EnderDragonEntity)var1).method4332()) {
                this.field9039.put(var7.getEntityId(), var7);
             }
          }

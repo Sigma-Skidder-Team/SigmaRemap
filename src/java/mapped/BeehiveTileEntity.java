@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.Thingy;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
@@ -20,7 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity {
-   private final List<Beeee> field5392 = Lists.newArrayList();
+   private final List<Thingy> field5392 = Lists.newArrayList();
    private BlockPos field5393 = null;
 
    public BeehiveTileEntity() {
@@ -62,8 +63,8 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       List<Entity> var6 = this.method3916(var2, var3);
       if (var1 != null) {
          for (Entity var8 : var6) {
-            if (var8 instanceof Class1017) {
-               Class1017 var9 = (Class1017)var8;
+            if (var8 instanceof BeeEntity) {
+               BeeEntity var9 = (BeeEntity)var8;
                if (var1.getPositionVec().squareDistanceTo(var8.getPositionVec()) <= 16.0) {
                   if (this.method3920()) {
                      var9.method4426(400);
@@ -108,10 +109,10 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
          var1.removePassengers();
          CompoundNBT var6 = new CompoundNBT();
          var1.writeUnlessPassenger(var6);
-         this.field5392.add(new Beeee(var6, var3, !var2 ? 600 : 2400));
+         this.field5392.add(new Thingy(var6, var3, !var2 ? 600 : 2400));
          if (this.world != null) {
-            if (var1 instanceof Class1017) {
-               Class1017 var7 = (Class1017)var1;
+            if (var1 instanceof BeeEntity) {
+               BeeEntity var7 = (BeeEntity)var1;
                if (var7.method4422() && (!this.method3925() || this.world.rand.nextBoolean())) {
                   this.field5393 = var7.method4421();
                }
@@ -135,12 +136,12 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       }
    }
 
-   private boolean method3923(BlockState var1, Beeee var2, List<Entity> var3, Class2084 var4) {
+   private boolean method3923(BlockState var1, Thingy var2, List<Entity> var3, Class2084 var4) {
       if ((this.world.method6741() || this.world.method6795()) && var4 != Class2084.field13573) {
          return false;
       } else {
          BlockPos var7 = this.getPos();
-         CompoundNBT var8 = Beeee.method35245(var2);
+         CompoundNBT var8 = Thingy.method35245(var2);
          var8.remove("Passengers");
          var8.remove("Leash");
          var8.remove("UUID");
@@ -154,8 +155,8 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
             if (var12 == null) {
                return false;
             } else if (var12.getType().method33228(EntityTypeTags.field38736)) {
-               if (var12 instanceof Class1017) {
-                  Class1017 var13 = (Class1017)var12;
+               if (var12 instanceof BeeEntity) {
+                  BeeEntity var13 = (BeeEntity)var12;
                   if (this.method3925() && !var13.method4422() && this.world.rand.nextFloat() < 0.9F) {
                      var13.method4423(this.field5393);
                   }
@@ -175,7 +176,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
                      }
                   }
 
-                  this.method3924(Beeee.method35246(var2), var13);
+                  this.method3924(Thingy.method35246(var2), var13);
                   if (var3 != null) {
                      var3.add(var13);
                   }
@@ -197,7 +198,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       }
    }
 
-   private void method3924(int var1, Class1017 var2) {
+   private void method3924(int var1, BeeEntity var2) {
       int var5 = var2.method4767();
       if (var5 >= 0) {
          if (var5 > 0) {
@@ -220,15 +221,15 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       BlockState var4 = this.getBlockState();
 
       while (var3.hasNext()) {
-         Beeee var5 = (Beeee)var3.next();
-         if (Beeee.method35246(var5) > Beeee.method35248(var5)) {
-            Class2084 var6 = !Beeee.method35245(var5).getBoolean("HasNectar") ? Class2084.field13572 : Class2084.field13571;
+         Thingy var5 = (Thingy)var3.next();
+         if (Thingy.method35246(var5) > Thingy.method35248(var5)) {
+            Class2084 var6 = !Thingy.method35245(var5).getBoolean("HasNectar") ? Class2084.field13572 : Class2084.field13571;
             if (this.method3923(var4, var5, (List<Entity>)null, var6)) {
                var3.remove();
             }
          }
 
-         Beeee.method35247(var5);
+         Thingy.method35247(var5);
       }
    }
 
@@ -256,7 +257,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
          CompoundNBT var7 = var5.getCompound(var6);
-         Beeee var8 = new Beeee(var7.getCompound("EntityData"), var7.getInt("TicksInHive"), var7.getInt("MinOccupationTicks"));
+         Thingy var8 = new Thingy(var7.getCompound("EntityData"), var7.getInt("TicksInHive"), var7.getInt("MinOccupationTicks"));
          this.field5392.add(var8);
       }
 
@@ -280,12 +281,12 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    public ListNBT method3927() {
       ListNBT var3 = new ListNBT();
 
-      for (Beeee var5 : this.field5392) {
-         Beeee.method35245(var5).remove("UUID");
+      for (Thingy var5 : this.field5392) {
+         Thingy.method35245(var5).remove("UUID");
          CompoundNBT var6 = new CompoundNBT();
-         var6.put("EntityData", Beeee.method35245(var5));
-         var6.putInt("TicksInHive", Beeee.method35246(var5));
-         var6.putInt("MinOccupationTicks", Beeee.method35248(var5));
+         var6.put("EntityData", Thingy.method35245(var5));
+         var6.putInt("TicksInHive", Thingy.method35246(var5));
+         var6.putInt("MinOccupationTicks", Thingy.method35248(var5));
          var3.add(var6);
       }
 

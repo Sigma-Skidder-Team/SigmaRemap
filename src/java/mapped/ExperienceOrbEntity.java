@@ -27,7 +27,7 @@ public class ExperienceOrbEntity extends Entity {
    private int field5561;
 
    public ExperienceOrbEntity(World var1, double var2, double var4, double var6, int var8) {
-      this(EntityType.field41029, var1);
+      this(EntityType.EXPERIENCE_ORB, var1);
       this.setPosition(var2, var4, var6);
       this.rotationYaw = (float)(this.rand.nextDouble() * 360.0);
       this.setMotion(

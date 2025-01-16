@@ -13,7 +13,7 @@ import java.util.Optional;
 public class Class9379 {
    private static String[] field43525;
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35581(Class8395 var0, float var1) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35581(Class8395 var0, float var1) {
       return ImmutableList.of(
          Pair.of(0, new Class3691(0.8F)),
          Pair.of(0, new Class3697()),
@@ -40,7 +40,7 @@ public class Class9379 {
       );
    }
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35582(Class8395 var0, float var1) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35582(Class8395 var0, float var1) {
       Object var4;
       if (var0 != Class8395.field36016) {
          var4 = new Class3706();
@@ -71,7 +71,7 @@ public class Class9379 {
       );
    }
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35583(float var0) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35583(float var0) {
       return ImmutableList.of(
          Pair.of(0, new Class3735(80, 120)),
          method35591(),
@@ -94,7 +94,7 @@ public class Class9379 {
       );
    }
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35584(Class8395 var0, float var1) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35584(Class8395 var0, float var1) {
       return ImmutableList.of(
          Pair.of(2, new Class3746(Class8830.field39813, var1, 1, 150, 1200)),
          Pair.of(3, new Class3699(Class4913.field22766, Class8830.field39813)),
@@ -113,7 +113,7 @@ public class Class9379 {
       );
    }
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35585(Class8395 var0, float var1) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35585(Class8395 var0, float var1) {
       return ImmutableList.of(
          Pair.of(2, new Class3693(ImmutableList.of(Pair.of(new Class3726(Class8830.field39816, 0.4F, 40), 2), Pair.of(new Class3727(), 2)))),
          Pair.of(10, new Class3729(400, 1600)),
@@ -136,7 +136,7 @@ public class Class9379 {
       );
    }
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35586(Class8395 var0, float var1) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35586(Class8395 var0, float var1) {
       return ImmutableList.of(
          Pair.of(
             2,
@@ -144,7 +144,7 @@ public class Class9379 {
                ImmutableList.of(
                   Pair.of(Class3696.<LivingEntity>method12551(EntityType.VILLAGER, 8, Class8830.field39828, var1, 2), 2),
                   Pair.of(
-                     new Class3696<Class1042, Class1045>(EntityType.VILLAGER, 8, Class1045::method4700, Class1045::method4700, Class8830.field39829, var1, 2),
+                     new Class3696<VillagerEntity, Class1045>(EntityType.VILLAGER, 8, Class1045::method4700, Class1045::method4700, Class8830.field39829, var1, 2),
                      1
                   ),
                   Pair.of(Class3696.<LivingEntity>method12551(EntityType.CAT, 8, Class8830.field39828, var1, 2), 1),
@@ -183,7 +183,7 @@ public class Class9379 {
       );
    }
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35587(Class8395 var0, float var1) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35587(Class8395 var0, float var1) {
       float var4 = var1 * 1.5F;
       return ImmutableList.of(
          Pair.of(0, new Class3750()),
@@ -194,7 +194,7 @@ public class Class9379 {
       );
    }
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35588(Class8395 var0, float var1) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35588(Class8395 var0, float var1) {
       return ImmutableList.of(
          Pair.of(0, new Class3679()),
          Pair.of(
@@ -206,7 +206,7 @@ public class Class9379 {
       );
    }
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35589(Class8395 var0, float var1) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35589(Class8395 var0, float var1) {
       return ImmutableList.of(
          Pair.of(0, new Class3693(ImmutableList.of(Pair.of(new Class3687(var1), 5), Pair.of(new Class3713(var1 * 1.1F), 2)))),
          Pair.of(0, new Class3677(600, 600)),
@@ -216,7 +216,7 @@ public class Class9379 {
       );
    }
 
-   public static ImmutableList<Pair<Integer, ? extends Class3676<? super Class1042>>> method35590(Class8395 var0, float var1) {
+   public static ImmutableList<Pair<Integer, ? extends Class3676<? super VillagerEntity>>> method35590(Class8395 var0, float var1) {
       byte var4 = 2;
       return ImmutableList.of(Pair.of(0, new Class3716(15, 3)), Pair.of(1, new Class3751(32, var1 * 1.25F, 2)), method35592());
    }

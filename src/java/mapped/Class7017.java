@@ -63,7 +63,7 @@ public class Class7017 implements Class7016 {
    private int method21746(ServerWorld var1, BlockPos var2) {
       byte var5 = 48;
       if (var1.method6951().method6663(Class4913.field22766.method15182(), var2, 48, Class2093.field13636) > 4L) {
-         List var6 = var1.<Class1098>getEntitiesWithinAABB(Class1098.class, new AxisAlignedBB(var2).grow(48.0, 8.0, 48.0));
+         List var6 = var1.<CatEntity>getEntitiesWithinAABB(CatEntity.class, new AxisAlignedBB(var2).grow(48.0, 8.0, 48.0));
          if (var6.size() < 5) {
             return this.method21748(var2, var1);
          }
@@ -74,12 +74,12 @@ public class Class7017 implements Class7016 {
 
    private int method21747(ServerWorld var1, BlockPos var2) {
       byte var5 = 16;
-      List var6 = var1.<Class1098>getEntitiesWithinAABB(Class1098.class, new AxisAlignedBB(var2).grow(16.0, 8.0, 16.0));
+      List var6 = var1.<CatEntity>getEntitiesWithinAABB(CatEntity.class, new AxisAlignedBB(var2).grow(16.0, 8.0, 16.0));
       return var6.size() >= 1 ? 0 : this.method21748(var2, var1);
    }
 
    private int method21748(BlockPos var1, ServerWorld var2) {
-      Class1098 var5 = EntityType.CAT.create(var2);
+      CatEntity var5 = EntityType.CAT.create(var2);
       if (var5 != null) {
          var5.method4276(var2, var2.method6807(var1), SpawnReason.field14391, (Class5093)null, (CompoundNBT)null);
          var5.moveToBlockPosAndAngles(var1, 0.0F, 0.0F);

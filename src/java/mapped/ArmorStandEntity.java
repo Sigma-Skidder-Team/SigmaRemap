@@ -757,7 +757,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    @Override
-   public void method3353(ServerWorld var1, Class906 var2) {
+   public void method3353(ServerWorld var1, LightningBoltEntity var2) {
    }
 
    @Override

@@ -216,15 +216,15 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                              if (var10 != EntityType.ITEM_FRAME) {
                                                 if (var10 != EntityType.LEASH_KNOT) {
                                                    if (var10 != EntityType.ENDER_PEARL) {
-                                                      if (var10 != EntityType.field41030) {
-                                                         if (var10 != EntityType.field41032) {
+                                                      if (var10 != EntityType.EYE_OF_ENDER) {
+                                                         if (var10 != EntityType.FIREWORK_ROCKET) {
                                                             if (var10 != EntityType.FIREBALL) {
                                                                if (var10 != EntityType.DRAGON_FIREBALL) {
                                                                   if (var10 != EntityType.SMALL_FIREBALL) {
                                                                      if (var10 != EntityType.WITHER_SKULL) {
                                                                         if (var10 != EntityType.SHULKER_BULLET) {
                                                                            if (var10 != EntityType.EGG) {
-                                                                              if (var10 != EntityType.field41028) {
+                                                                              if (var10 != EntityType.EVOKER_FANGS) {
                                                                                  if (var10 != EntityType.POTION) {
                                                                                     if (var10 != EntityType.EXPERIENCE_BOTTLE) {
                                                                                        if (var10 != EntityType.BOAT) {
@@ -232,22 +232,22 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                                                              if (var10 != EntityType.ARMOR_STAND) {
                                                                                                 if (var10 != EntityType.field41023) {
                                                                                                    if (var10 != EntityType.ITEM) {
-                                                                                                      if (var10 != EntityType.field41031) {
+                                                                                                      if (var10 != EntityType.FALLING_BLOCK) {
                                                                                                          if (var10 != EntityType.AREA_EFFECT_CLOUD) {
                                                                                                             if (var10 != EntityType.LIGHTNING_BOLT) {
                                                                                                                var11 = null;
                                                                                                             } else {
-                                                                                                               var11 = new Class906(
+                                                                                                               var11 = new LightningBoltEntity(
                                                                                                                   EntityType.LIGHTNING_BOLT, this.field23273
                                                                                                                );
                                                                                                             }
                                                                                                          } else {
-                                                                                                            var11 = new Class999(
+                                                                                                            var11 = new AreaEffectCloudEntity(
                                                                                                                this.field23273, var4, var6, var8
                                                                                                             );
                                                                                                          }
                                                                                                       } else {
-                                                                                                         var11 = new Class907(
+                                                                                                         var11 = new FallingBlockEntity(
                                                                                                             this.field23273,
                                                                                                             var4,
                                                                                                             var6,
@@ -265,7 +265,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                                                                 var11 = new ArmorStandEntity(this.field23273, var4, var6, var8);
                                                                                              }
                                                                                           } else {
-                                                                                             var11 = new Class1004(
+                                                                                             var11 = new TntEntity(
                                                                                                 this.field23273, var4, var6, var8, (LivingEntity)null
                                                                                              );
                                                                                           }
@@ -273,21 +273,21 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                                                           var11 = new BoatEntity(this.field23273, var4, var6, var8);
                                                                                        }
                                                                                     } else {
-                                                                                       var11 = new Class891(this.field23273, var4, var6, var8);
+                                                                                       var11 = new ExperienceBottleEntity(this.field23273, var4, var6, var8);
                                                                                     }
                                                                                  } else {
-                                                                                    var11 = new Class896(this.field23273, var4, var6, var8);
+                                                                                    var11 = new PotionEntity(this.field23273, var4, var6, var8);
                                                                                  }
                                                                               } else {
-                                                                                 var11 = new Class915(
+                                                                                 var11 = new EvokerFangsEntity(
                                                                                     this.field23273, var4, var6, var8, 0.0F, 0, (LivingEntity)null
                                                                                  );
                                                                               }
                                                                            } else {
-                                                                              var11 = new Class892(this.field23273, var4, var6, var8);
+                                                                              var11 = new EggEntity(this.field23273, var4, var6, var8);
                                                                            }
                                                                         } else {
-                                                                           var11 = new Class905(
+                                                                           var11 = new ShulkerBulletEntity(
                                                                               this.field23273,
                                                                               var4,
                                                                               var6,
@@ -298,7 +298,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                                            );
                                                                         }
                                                                      } else {
-                                                                        var11 = new Class902(
+                                                                        var11 = new WitherSkullEntity(
                                                                            this.field23273,
                                                                            var4,
                                                                            var6,
@@ -309,7 +309,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                                         );
                                                                      }
                                                                   } else {
-                                                                     var11 = new Class900(
+                                                                     var11 = new SmallFireballEntity(
                                                                         this.field23273,
                                                                         var4,
                                                                         var6,
@@ -320,7 +320,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                                      );
                                                                   }
                                                                } else {
-                                                                  var11 = new Class903(
+                                                                  var11 = new DragonFireball(
                                                                      this.field23273,
                                                                      var4,
                                                                      var6,
@@ -331,18 +331,18 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                                   );
                                                                }
                                                             } else {
-                                                               var11 = new Class899(
+                                                               var11 = new FireballEntity(
                                                                   this.field23273, var4, var6, var8, var1.method17261(), var1.method17262(), var1.method17263()
                                                                );
                                                             }
                                                          } else {
-                                                            var11 = new Class888(this.field23273, var4, var6, var8, ItemStack.EMPTY);
+                                                            var11 = new FireworkRocketEntity(this.field23273, var4, var6, var8, ItemStack.EMPTY);
                                                          }
                                                       } else {
-                                                         var11 = new Class897(this.field23273, var4, var6, var8);
+                                                         var11 = new EyeOfEnderEntity(this.field23273, var4, var6, var8);
                                                       }
                                                    } else {
-                                                      var11 = new Class895(this.field23273, var4, var6, var8);
+                                                      var11 = new EnderPearlEntity(this.field23273, var4, var6, var8);
                                                    }
                                                 } else {
                                                    var11 = new LeashKnotEntity(this.field23273, new BlockPos(var4, var6, var8));
@@ -351,27 +351,27 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                                 var11 = new ItemFrameEntity(this.field23273, new BlockPos(var4, var6, var8), Direction.byIndex(var1.method17267()));
                                              }
                                           } else {
-                                             var11 = new Class883(this.field23273, var4, var6, var8, var1.method17261(), var1.method17262(), var1.method17263());
+                                             var11 = new LlamaSpitEntity(this.field23273, var4, var6, var8, var1.method17261(), var1.method17262(), var1.method17263());
                                           }
                                        } else {
-                                          var11 = new Class894(this.field23273, var4, var6, var8);
+                                          var11 = new SnowballEntity(this.field23273, var4, var6, var8);
                                        }
                                     } else {
-                                       var11 = new Class886(this.field23273, var4, var6, var8);
+                                       var11 = new TridentEntity(this.field23273, var4, var6, var8);
                                        Entity var12 = this.field23273.getEntityByID(var1.method17267());
                                        if (var12 != null) {
                                           ((AbstractArrowEntity)var11).setShooter(var12);
                                        }
                                     }
                                  } else {
-                                    var11 = new Class885(this.field23273, var4, var6, var8);
+                                    var11 = new SpectralArrowEntity(this.field23273, var4, var6, var8);
                                     Entity var13 = this.field23273.getEntityByID(var1.method17267());
                                     if (var13 != null) {
                                        ((AbstractArrowEntity)var11).setShooter(var13);
                                     }
                                  }
                               } else {
-                                 var11 = new Class887(this.field23273, var4, var6, var8);
+                                 var11 = new ArrowEntity(this.field23273, var4, var6, var8);
                                  Entity var14 = this.field23273.getEntityByID(var1.method17267());
                                  if (var14 != null) {
                                     ((AbstractArrowEntity)var11).setShooter(var14);
@@ -382,29 +382,29 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                               if (!(var15 instanceof PlayerEntity)) {
                                  var11 = null;
                               } else {
-                                 var11 = new Class904(this.field23273, (PlayerEntity)var15, var4, var6, var8);
+                                 var11 = new FishingBobberEntity(this.field23273, (PlayerEntity)var15, var4, var6, var8);
                               }
                            }
                         } else {
-                           var11 = new Class917(this.field23273, var4, var6, var8);
+                           var11 = new MinecartEntity(this.field23273, var4, var6, var8);
                         }
                      } else {
-                        var11 = new Class918(this.field23273, var4, var6, var8);
+                        var11 = new CommandBlockMinecartEntity(this.field23273, var4, var6, var8);
                      }
                   } else {
-                     var11 = new Class938(this.field23273, var4, var6, var8);
+                     var11 = new HopperMinecartEntity(this.field23273, var4, var6, var8);
                   }
                } else {
-                  var11 = new Class992(this.field23273, var4, var6, var8);
+                  var11 = new SpawnerMinecartEntity(this.field23273, var4, var6, var8);
                }
             } else {
-               var11 = new Class993(this.field23273, var4, var6, var8);
+               var11 = new TntMinecartEntity(this.field23273, var4, var6, var8);
             }
          } else {
-            var11 = new Class994(this.field23273, var4, var6, var8);
+            var11 = new FurnaceMinecartEntity(this.field23273, var4, var6, var8);
          }
       } else {
-         var11 = new Class991(this.field23273, var4, var6, var8);
+         var11 = new ChestMinecartEntity(this.field23273, var4, var6, var8);
       }
 
       if (var11 != null) {
@@ -805,8 +805,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          var12.setPacketCoordinates(var4, var6, var8);
          var12.renderYawOffset = (float)(var1.method17546() * 360) / 256.0F;
          var12.rotationYawHead = (float)(var1.method17546() * 360) / 256.0F;
-         if (var12 instanceof Class1007) {
-            EnderDragonPartEntity[] var13 = ((Class1007)var12).method4332();
+         if (var12 instanceof EnderDragonEntity) {
+            EnderDragonPartEntity[] var13 = ((EnderDragonEntity)var12).method4332();
 
             for (int var14 = 0; var14 < var13.length; var14++) {
                var13[var14].setEntityId(var14 + var1.method17535());
@@ -820,13 +820,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             (double)((float)var1.method17541() / 8000.0F), (double)((float)var1.method17542() / 8000.0F), (double)((float)var1.method17543() / 8000.0F)
          );
          this.field23273.addEntity(var1.method17535(), var12);
-         if (var12 instanceof Class1017) {
-            boolean var15 = ((Class1017)var12).method4369();
+         if (var12 instanceof BeeEntity) {
+            boolean var15 = ((BeeEntity)var12).method4369();
             Object var16;
             if (!var15) {
-               var16 = new Class6336((Class1017)var12);
+               var16 = new Class6336((BeeEntity)var12);
             } else {
-               var16 = new Class6335((Class1017)var12);
+               var16 = new Class6335((BeeEntity)var12);
             }
 
             this.mc.getSoundHandler().method999((Class6341)var16);

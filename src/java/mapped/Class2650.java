@@ -5,9 +5,9 @@ import net.minecraft.util.SoundEvents;
 
 public class Class2650 extends Class2647 {
    private static String[] field16989;
-   public final Class1095 field17002;
+   public final FoxEntity field17002;
 
-   public Class2650(Class1095 var1, double var2, boolean var4) {
+   public Class2650(FoxEntity var1, double var2, boolean var4) {
       super(var1, var2, var4);
       this.field17002 = var1;
    }

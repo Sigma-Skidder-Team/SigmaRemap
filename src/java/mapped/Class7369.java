@@ -15,7 +15,7 @@ public class Class7369 extends Class7361 {
    private Vector3d field31541;
    private boolean field31542;
 
-   public Class7369(Class1007 var1) {
+   public Class7369(EnderDragonEntity var1) {
       super(var1);
    }
 

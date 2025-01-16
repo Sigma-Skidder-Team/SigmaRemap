@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.util.ResourceLocation;
 
-public class Class5702<T extends Class1101> extends Class5651<T, Class2813<T>> {
+public class Class5702<T extends SpiderEntity> extends Class5651<T, Class2813<T>> {
    private static final ResourceLocation field25072 = new ResourceLocation("textures/entity/spider/spider.png");
 
    public Class5702(EntityRendererManager var1) {

@@ -110,7 +110,7 @@ public abstract class PlayerEntity extends LivingEntity {
    private boolean field4927;
    private ItemStack field4928 = ItemStack.EMPTY;
    private final Class6462 field4929 = this.method2733();
-   public Class904 field4930;
+   public FishingBobberEntity field4930;
 
    public PlayerEntity(World var1, BlockPos var2, float var3, GameProfile var4) {
       super(EntityType.PLAYER, var1);
@@ -1513,7 +1513,7 @@ public abstract class PlayerEntity extends LivingEntity {
             Entity var10 = this.getRidingEntity();
             if (!(var10 instanceof AbstractMinecartEntity)) {
                if (!(var10 instanceof BoatEntity)) {
-                  if (!(var10 instanceof Class1072)) {
+                  if (!(var10 instanceof PigEntity)) {
                      if (!(var10 instanceof AbstractHorseEntity)) {
                         if (var10 instanceof StriderEntity) {
                            this.addStat(Stats.field40124, var9);

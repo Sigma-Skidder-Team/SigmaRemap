@@ -218,8 +218,8 @@ public class Class6810 {
          if (this.field29654 != null && var1 instanceof Class7460) {
             Class7460 var12 = (Class7460)var1;
             Entity var18 = var12.method24131();
-            if (var18 instanceof Class1042) {
-               Class1042 var6 = (Class1042)var18;
+            if (var18 instanceof VillagerEntity) {
+               VillagerEntity var6 = (VillagerEntity)var18;
                Class7921 var7 = var6.method4674();
                Class8395 var8 = var7.method26571();
                int var9 = var7.method26572();
@@ -244,8 +244,8 @@ public class Class6810 {
                }
             }
 
-            if (var19 instanceof Class1098) {
-               Class1098 var25 = (Class1098)var19;
+            if (var19 instanceof CatEntity) {
+               CatEntity var25 = (CatEntity)var19;
                if (!var25.method4393()) {
                   return false;
                }

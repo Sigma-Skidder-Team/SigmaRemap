@@ -5,9 +5,9 @@ import net.minecraft.world.World;
 
 public class Class7575 extends Class7574 {
    private static String[] field32528;
-   public final Class992 field32529;
+   public final SpawnerMinecartEntity field32529;
 
-   public Class7575(Class992 var1) {
+   public Class7575(SpawnerMinecartEntity var1) {
       this.field32529 = var1;
    }
 

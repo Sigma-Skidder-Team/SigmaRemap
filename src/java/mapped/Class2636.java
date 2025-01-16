@@ -14,9 +14,9 @@ import net.minecraft.world.IWorldReader;
 public class Class2636 extends Class2628 {
    private static String[] field16955;
    public int field16956;
-   public final Class1095 field16957;
+   public final FoxEntity field16957;
 
-   public Class2636(Class1095 var1, double var2, int var4, int var5) {
+   public Class2636(FoxEntity var1, double var2, int var4, int var5) {
       super(var1, var2, var4, var5);
       this.field16957 = var1;
    }
@@ -40,7 +40,7 @@ public class Class2636 extends Class2628 {
    @Override
    public void method10805() {
       if (!this.method10838()) {
-         if (!this.method10838() && Class1095.method5164(this.field16957).nextFloat() < 0.05F) {
+         if (!this.method10838() && FoxEntity.method5164(this.field16957).nextFloat() < 0.05F) {
             this.field16957.playSound(SoundEvents.field26596, 1.0F, 1.0F);
          }
       } else if (this.field16956 < 40) {

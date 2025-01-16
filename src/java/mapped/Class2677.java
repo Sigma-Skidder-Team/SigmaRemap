@@ -8,9 +8,9 @@ import javax.annotation.Nullable;
 
 public class Class2677 extends Class2672 {
    private static String[] field17071;
-   public final Class1033 field17072;
+   public final IllusionerEntity field17072;
 
-   Class2677(Class1033 var1) {
+   Class2677(IllusionerEntity var1) {
       super(var1);
       this.field17072 = var1;
    }

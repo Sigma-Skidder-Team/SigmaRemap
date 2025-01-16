@@ -57,7 +57,7 @@ public class Class3458 extends Block {
    @Override
    public void onExplosionDestroy(World var1, BlockPos var2, Explosion var3) {
       if (!var1.isRemote) {
-         Class1004 var6 = new Class1004(var1, (double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5, var3.method25789());
+         TntEntity var6 = new TntEntity(var1, (double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5, var3.method25789());
          var6.method4182((short)(var1.rand.nextInt(var6.method4184() / 4) + var6.method4184() / 8));
          var1.addEntity(var6);
       }
@@ -69,7 +69,7 @@ public class Class3458 extends Block {
 
    private static void method12132(World var0, BlockPos var1, LivingEntity var2) {
       if (!var0.isRemote) {
-         Class1004 var5 = new Class1004(var0, (double)var1.getX() + 0.5, (double)var1.getY(), (double)var1.getZ() + 0.5, var2);
+         TntEntity var5 = new TntEntity(var0, (double)var1.getX() + 0.5, (double)var1.getY(), (double)var1.getZ() + 0.5, var2);
          var0.addEntity(var5);
          var0.playSound((PlayerEntity)null, var5.getPosX(), var5.getPosY(), var5.getPosZ(), SoundEvents.field27146, SoundCategory.field14732, 1.0F, 1.0F);
       }

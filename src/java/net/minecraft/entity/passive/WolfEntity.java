@@ -53,7 +53,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    public void method4219() {
       this.field5600.addGoal(1, new Class2603(this));
       this.field5600.addGoal(2, new Class2778(this));
-      this.field5600.addGoal(3, new Class2773(this, Class1064.class, 24.0f, 1.5, 1.5));
+      this.field5600.addGoal(3, new Class2773(this, LlamaEntity.class, 24.0f, 1.5, 1.5));
       this.field5600.addGoal(4, new Class2745(this, 0.4F));
       this.field5600.addGoal(5, new Class2647(this, 1.0, true));
       this.field5600.addGoal(6, new Class2725(this, 1.0, 10.0F, 2.0F, false));
@@ -467,7 +467,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
 
    @Override
    public boolean method4388(LivingEntity var1, LivingEntity var2) {
-      if (var1 instanceof Class1081 || var1 instanceof GhastEntity) {
+      if (var1 instanceof CreeperEntity || var1 instanceof GhastEntity) {
          return false;
       } else if (!(var1 instanceof WolfEntity)) {
          if (var1 instanceof PlayerEntity && var2 instanceof PlayerEntity && !((PlayerEntity)var2).method2742((PlayerEntity)var1)) {
@@ -506,12 +506,12 @@ public class WolfEntity extends TameableEntity implements IAngerable {
 
       @Override
       public boolean method10803() {
-         return super.method10803() && this.field17352 instanceof Class1064
-            ? !this.field17362.method4393() && this.method10966((Class1064)this.field17352)
+         return super.method10803() && this.field17352 instanceof LlamaEntity
+            ? !this.field17362.method4393() && this.method10966((LlamaEntity)this.field17352)
             : false;
       }
 
-      private boolean method10966(Class1064 var1) {
+      private boolean method10966(LlamaEntity var1) {
          return var1.method4887() >= method4391(WolfEntity.this).nextInt(5);
       }
 

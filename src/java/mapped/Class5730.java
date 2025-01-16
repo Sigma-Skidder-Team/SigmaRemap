@@ -7,20 +7,20 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5730 extends EntityRenderer<Class905> {
+public class Class5730 extends EntityRenderer<ShulkerBulletEntity> {
    private static final ResourceLocation field25138 = new ResourceLocation("textures/entity/shulker/spark.png");
    private static final RenderType field25139 = RenderType.getEntityTranslucent(field25138);
-   private final Class2821<Class905> field25140 = new Class2821<Class905>();
+   private final Class2821<ShulkerBulletEntity> field25140 = new Class2821<ShulkerBulletEntity>();
 
    public Class5730(EntityRendererManager var1) {
       super(var1);
    }
 
-   public int method17858(Class905 var1, BlockPos var2) {
+   public int method17858(ShulkerBulletEntity var1, BlockPos var2) {
       return 15;
    }
 
-   public void render(Class905 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(ShulkerBulletEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       float var9 = MathHelper.method37828(var1.prevRotationYaw, var1.rotationYaw, var3);
       float var10 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
@@ -40,7 +40,7 @@ public class Class5730 extends EntityRenderer<Class905> {
       super.render(var1, var2, var3, var4, var5, var6);
    }
 
-   public ResourceLocation method17843(Class905 var1) {
+   public ResourceLocation method17843(ShulkerBulletEntity var1) {
       return field25138;
    }
 }

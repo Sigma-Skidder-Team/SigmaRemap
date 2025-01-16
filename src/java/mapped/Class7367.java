@@ -8,7 +8,7 @@ public class Class7367 extends Class7361 {
    private static String[] field31532;
    private Vector3d field31533;
 
-   public Class7367(Class1007 var1) {
+   public Class7367(EnderDragonEntity var1) {
       super(var1);
    }
 

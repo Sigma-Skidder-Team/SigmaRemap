@@ -4,14 +4,14 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Quaternion;
 
-public class Class246 extends Class219<Class1057, Class2887<Class1057>> {
+public class Class246 extends Class219<ShulkerEntity, Class2887<ShulkerEntity>> {
    private static String[] field901;
 
-   public Class246(Class5714<Class1057, Class2887<Class1057>> var1) {
+   public Class246(Class5714<ShulkerEntity, Class2887<ShulkerEntity>> var1) {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, Class1057 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, ShulkerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       var1.push();
       var1.translate(0.0, 1.0, 0.0);
       var1.scale(-1.0F, -1.0F, 1.0F);

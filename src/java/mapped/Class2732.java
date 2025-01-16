@@ -6,9 +6,9 @@ import java.util.EnumSet;
 
 public class Class2732 extends Class2595 {
    private static String[] field17249;
-   private final Class1097 field17250;
+   private final PandaEntity field17250;
 
-   public Class2732(Class1097 var1) {
+   public Class2732(PandaEntity var1) {
       this.field17250 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658, Class2240.field14659));
    }
@@ -33,9 +33,9 @@ public class Class2732 extends Class2595 {
             if (this.field17250.world.getBlockState(this.field17250.getPosition().add(var4, -1, var5)).isAir()) {
                return true;
             } else {
-               return this.field17250.method5212() && Class1097.method5241(this.field17250).nextInt(60) == 1
+               return this.field17250.method5212() && PandaEntity.method5241(this.field17250).nextInt(60) == 1
                   ? true
-                  : Class1097.method5242(this.field17250).nextInt(500) == 1;
+                  : PandaEntity.method5242(this.field17250).nextInt(500) == 1;
             }
          } else {
             return false;
