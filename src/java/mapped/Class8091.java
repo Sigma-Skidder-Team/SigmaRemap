@@ -2,9 +2,9 @@ package mapped;
 
 public class Class8091 extends Class8092 {
    private static String[] field34809;
-   public final Class1095 field34810;
+   public final FoxEntity field34810;
 
-   public Class8091(Class1095 var1) {
+   public Class8091(FoxEntity var1) {
       super(var1);
       this.field34810 = var1;
    }

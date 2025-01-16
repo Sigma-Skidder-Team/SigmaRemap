@@ -3,6 +3,8 @@ package net.minecraft.block;
 import mapped.IGrowable;
 import mapped.AbstractTreeGrower;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.block.trees.Tree;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -15,13 +17,13 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 
 public class SaplingBlock extends BushBlock implements IGrowable {
-   public static final IntegerProperty STAGE = BlockStateProperties.field39760;
+   public static final IntegerProperty STAGE = BlockStateProperties.STAGE;
    public static final VoxelShape SHAPE = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
-   private final AbstractTreeGrower treeGrower;
+   private final Tree generator; // Searge: field_196387_c
 
-   public SaplingBlock(AbstractTreeGrower treeGrower, Properties properties) {
-      super(properties);
-      this.treeGrower = treeGrower;
+   public SaplingBlock(Tree var1, Properties var2) {
+      super(var2);
+      this.generator = var1;
       this.setDefaultState(this.stateContainer.getBaseState().with(STAGE, Integer.valueOf(0)));
    }
 
@@ -39,7 +41,7 @@ public class SaplingBlock extends BushBlock implements IGrowable {
 
    public void method11485(ServerWorld var1, BlockPos var2, BlockState var3, Random var4) {
       if (var3.<Integer>get(STAGE) != 0) {
-         this.treeGrower.method25182(var1, var1.getChunkProvider().getChunkGenerator(), var2, var3, var4);
+         this.generator.method25182(var1, var1.getChunkProvider().getChunkGenerator(), var2, var3, var4);
       } else {
          var1.setBlockState(var2, var3.method23459(STAGE), 4);
       }

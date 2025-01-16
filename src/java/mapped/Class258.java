@@ -4,15 +4,15 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.item.ItemStack;
 
-public class Class258 extends Class219<Class1074, Class2856<Class1074>> {
+public class Class258 extends Class219<HorseEntity, Class2856<HorseEntity>> {
    private static String[] field917;
-   private final Class2856<Class1074> field918 = new Class2856<Class1074>(0.1F);
+   private final Class2856<HorseEntity> field918 = new Class2856<HorseEntity>(0.1F);
 
-   public Class258(Class5714<Class1074, Class2856<Class1074>> var1) {
+   public Class258(Class5714<HorseEntity, Class2856<HorseEntity>> var1) {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, Class1074 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, Class7733 var2, int var3, HorseEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       ItemStack var13 = var4.method4990();
       if (var13.getItem() instanceof Class3275) {
          Class3275 var14 = (Class3275)var13.getItem();

@@ -11,7 +11,7 @@ import net.optifine.shaders.Shaders;
 
 import java.util.Random;
 
-public class Class5718 extends EntityRenderer<Class1007> {
+public class Class5718 extends EntityRenderer<EnderDragonEntity> {
    public static final ResourceLocation field25106 = new ResourceLocation("textures/entity/end_crystal/end_crystal_beam.png");
    private static final ResourceLocation field25107 = new ResourceLocation("textures/entity/enderdragon/dragon_exploding.png");
    private static final ResourceLocation field25108 = new ResourceLocation("textures/entity/enderdragon/dragon.png");
@@ -28,7 +28,7 @@ public class Class5718 extends EntityRenderer<Class1007> {
       this.shadowSize = 0.5F;
    }
 
-   public void render(Class1007 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(EnderDragonEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       float var9 = (float)var1.method4317(7, var3)[0];
       float var10 = (float)(var1.method4317(5, var3)[1] - var1.method4317(10, var3)[1]);
@@ -183,7 +183,7 @@ public class Class5718 extends EntityRenderer<Class1007> {
       var5.pop();
    }
 
-   public ResourceLocation method17843(Class1007 var1) {
+   public ResourceLocation method17843(EnderDragonEntity var1) {
       return field25108;
    }
 }

@@ -5,14 +5,14 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.Random;
 
-public class Class5719 extends EntityRenderer<Class906> {
+public class Class5719 extends EntityRenderer<LightningBoltEntity> {
    private static String[] field25116;
 
    public Class5719(EntityRendererManager var1) {
       super(var1);
    }
 
-   public void render(Class906 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(LightningBoltEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       float[] var9 = new float[8];
       float[] var10 = new float[8];
       float var11 = 0.0F;
@@ -112,7 +112,7 @@ public class Class5719 extends EntityRenderer<Class906> {
          .endVertex();
    }
 
-   public ResourceLocation method17843(Class906 var1) {
+   public ResourceLocation method17843(LightningBoltEntity var1) {
       return AtlasTexture.LOCATION_BLOCKS_TEXTURE;
    }
 }

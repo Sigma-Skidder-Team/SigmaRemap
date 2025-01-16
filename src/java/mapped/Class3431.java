@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.minecart.AbstractMinecartEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.state.BooleanProperty;
@@ -26,7 +27,7 @@ import java.util.function.Predicate;
 
 public class Class3431 extends Class3429 {
    private static String[] field19192;
-   public static final EnumProperty<RailShape> field19193 = BlockStateProperties.field39737;
+   public static final EnumProperty<RailShape> field19193 = BlockStateProperties.RAIL_SHAPE_2;
    public static final BooleanProperty field19194 = BlockStateProperties.POWERED;
 
    public Class3431(Properties var1) {
@@ -95,7 +96,7 @@ public class Class3431 extends Class3429 {
          }
 
          if (var7) {
-            var1.method6860().scheduleTick(var2, this, 20);
+            var1.getBlockTickScheduler().scheduleTick(var2, this, 20);
          }
 
          var1.updateComparatorOutputLevel(var2, this);
@@ -131,9 +132,9 @@ public class Class3431 extends Class3429 {
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
       if (var1.<Boolean>get(field19194)) {
-         List var6 = this.<Class918>method12096(var2, var3, Class918.class, (Predicate<Entity>)null);
+         List var6 = this.<CommandBlockMinecartEntity>method12096(var2, var3, CommandBlockMinecartEntity.class, (Predicate<Entity>)null);
          if (!var6.isEmpty()) {
-            return ((Class918)var6.get(0)).method3614().method3557();
+            return ((CommandBlockMinecartEntity)var6.get(0)).method3614().method3557();
          }
 
          List var7 = this.<AbstractMinecartEntity>method12096(var2, var3, AbstractMinecartEntity.class, EntityPredicates.field34760);

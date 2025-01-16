@@ -6,10 +6,10 @@ import java.util.EnumSet;
 
 public class Class2627 extends Class2595 {
    private static String[] field16925;
-   private final Class1081 field16926;
+   private final CreeperEntity field16926;
    private LivingEntity field16927;
 
-   public Class2627(Class1081 var1) {
+   public Class2627(CreeperEntity var1) {
       this.field16926 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
    }

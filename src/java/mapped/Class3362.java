@@ -27,7 +27,7 @@ import net.minecraft.world.World;
 public class Class3362 extends Class3241 {
    private static String[] field18912;
    public static final DirectionProperty field18913 = BlockStateProperties.FACING_EXCEPT_UP;
-   public static final BooleanProperty field18914 = BlockStateProperties.field39687;
+   public static final BooleanProperty field18914 = BlockStateProperties.ENABLED;
    private static final VoxelShape field18915 = Block.makeCuboidShape(0.0, 10.0, 0.0, 16.0, 16.0, 16.0);
    private static final VoxelShape field18916 = Block.makeCuboidShape(4.0, 4.0, 4.0, 12.0, 10.0, 12.0);
    private static final VoxelShape field18917 = VoxelShapes.or(field18916, field18915);

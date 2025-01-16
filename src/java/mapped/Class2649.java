@@ -2,9 +2,9 @@ package mapped;
 
 public class Class2649 extends Class2647 {
    private static String[] field16989;
-   private final Class1097 field17001;
+   private final PandaEntity field17001;
 
-   public Class2649(Class1097 var1, double var2, boolean var4) {
+   public Class2649(PandaEntity var1, double var2, boolean var4) {
       super(var1, var2, var4);
       this.field17001 = var1;
    }

@@ -316,25 +316,25 @@ public class Class9407 {
       return Class5147.method15932(var0)
          .method15934(Class5138.method15912().method15911(Class6891.field29864, var1))
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39716, true),
+            Class5141.method15919().method15924(BlockStateProperties.NORTH, true),
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39717, true),
+            Class5141.method15919().method15924(BlockStateProperties.EAST, true),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13817)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39718, true),
+            Class5141.method15919().method15924(BlockStateProperties.SOUTH, true),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13818)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39719, true),
+            Class5141.method15919().method15924(BlockStateProperties.WEST, true),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13819)
@@ -344,52 +344,52 @@ public class Class9407 {
 
    private static Class5146 method35824(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5147.method15932(var0)
-         .method15937(Class5141.method15919().method15924(BlockStateProperties.field39714, true), Class5138.method15912().method15911(Class6891.field29864, var1))
+         .method15937(Class5141.method15919().method15924(BlockStateProperties.UP, true), Class5138.method15912().method15911(Class6891.field29864, var1))
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39727, WallHeight.field668),
+            Class5141.method15919().method15924(BlockStateProperties.WALLHEIGHT_NORTH, WallHeight.field668),
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39726, WallHeight.field668),
+            Class5141.method15919().method15924(BlockStateProperties.WALLHEIGHT_EAST, WallHeight.field668),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13817)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39728, WallHeight.field668),
+            Class5141.method15919().method15924(BlockStateProperties.WALLHEIGHT_SOUTH, WallHeight.field668),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13818)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39729, WallHeight.field668),
+            Class5141.method15919().method15924(BlockStateProperties.WALLHEIGHT_WEST, WallHeight.field668),
             Class5138.method15912()
                .method15911(Class6891.field29864, var2)
                .method15911(Class6891.field29863, Class2120.field13819)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39727, WallHeight.field669),
+            Class5141.method15919().method15924(BlockStateProperties.WALLHEIGHT_NORTH, WallHeight.field669),
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39726, WallHeight.field669),
+            Class5141.method15919().method15924(BlockStateProperties.WALLHEIGHT_EAST, WallHeight.field669),
             Class5138.method15912()
                .method15911(Class6891.field29864, var3)
                .method15911(Class6891.field29863, Class2120.field13817)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39728, WallHeight.field669),
+            Class5141.method15919().method15924(BlockStateProperties.WALLHEIGHT_SOUTH, WallHeight.field669),
             Class5138.method15912()
                .method15911(Class6891.field29864, var3)
                .method15911(Class6891.field29863, Class2120.field13818)
                .method15911(Class6891.field29865, true)
          )
          .method15937(
-            Class5141.method15919().method15924(BlockStateProperties.field39729, WallHeight.field669),
+            Class5141.method15919().method15924(BlockStateProperties.WALLHEIGHT_WEST, WallHeight.field669),
             Class5138.method15912()
                .method15911(Class6891.field29864, var3)
                .method15911(Class6891.field29863, Class2120.field13819)
@@ -909,7 +909,7 @@ public class Class9407 {
    }
 
    private static Class3629 method35830() {
-      return Class3629.<Direction.Axis>method12310(BlockStateProperties.field39713)
+      return Class3629.<Direction.Axis>method12310(BlockStateProperties.AXIS)
          .method12320(Direction.Axis.Y, Class5138.method15912())
          .method12320(Direction.Axis.Z, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
          .method12320(
@@ -939,7 +939,7 @@ public class Class9407 {
    private static Class5146 method35835(Block var0, ResourceLocation var1, ResourceLocation var2) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Direction.Axis>method12310(BlockStateProperties.field39713)
+            Class3629.<Direction.Axis>method12310(BlockStateProperties.AXIS)
                .method12320(Direction.Axis.Y, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12320(
                   Direction.Axis.Z, Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29862, Class2120.field13817)
@@ -971,7 +971,7 @@ public class Class9407 {
    private static Class5146 method35839(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<SlabType>method12310(BlockStateProperties.field39770)
+            Class3629.<SlabType>method12310(BlockStateProperties.SLAB_TYPE)
                .method12320(SlabType.field219, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12320(SlabType.field218, Class5138.method15912().method15911(Class6891.field29864, var2))
                .method12320(SlabType.field220, Class5138.method15912().method15911(Class6891.field29864, var3))
@@ -1104,7 +1104,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(var1)
                .method15939(
-                  Class3629.<Integer>method12310(BlockStateProperties.field39742)
+                  Class3629.<Integer>method12310(BlockStateProperties.AGE5)
                      .method12321(
                         var3 -> Class5138.method15912().method15911(Class6891.field29864, Class9756.field45600[var3].method34805(var1, var5, this.field43643))
                      )
@@ -1165,7 +1165,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(var1)
                .method15939(
-                  Class3629.<RailShape>method12310(BlockStateProperties.field39736)
+                  Class3629.<RailShape>method12310(BlockStateProperties.RAIL_SHAPE)
                      .method12320(RailShape.field247, Class5138.method15912().method15911(Class6891.field29864, var6))
                      .method12320(
                         RailShape.field248,
@@ -1205,7 +1205,7 @@ public class Class9407 {
       ResourceLocation var7 = this.method35837(var1, "_on", Class9756.field45583, Class7287::method23005);
       ResourceLocation var8 = this.method35837(var1, "_on", Class9756.field45585, Class7287::method23005);
       ResourceLocation var9 = this.method35837(var1, "_on", Class9756.field45586, Class7287::method23005);
-      Class3629 var10 = Class3629.<Boolean, RailShape>method12311(BlockStateProperties.POWERED, BlockStateProperties.field39737).method12301((var6x, var7x) -> {
+      Class3629 var10 = Class3629.<Boolean, RailShape>method12311(BlockStateProperties.POWERED, BlockStateProperties.RAIL_SHAPE_2).method12301((var6x, var7x) -> {
          switch (Class8902.field40295[var7x.ordinal()]) {
             case 1:
                return Class5138.method15912().method15911(Class6891.field29864, var6x ? var7 : var4);
@@ -1279,24 +1279,24 @@ public class Class9407 {
          .accept(
             Class5147.method15932(var2)
                .method15934(Class5138.method15912().method15911(Class6891.field29864, var6))
-               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var7))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.NORTH, true), Class5138.method15912().method15911(Class6891.field29864, var7))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39717, true),
+                  Class5141.method15919().method15924(BlockStateProperties.EAST, true),
                   Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29863, Class2120.field13817)
                )
-               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39718, true), Class5138.method15912().method15911(Class6891.field29864, var8))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.SOUTH, true), Class5138.method15912().method15911(Class6891.field29864, var8))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39719, true),
+                  Class5141.method15919().method15924(BlockStateProperties.WEST, true),
                   Class5138.method15912().method15911(Class6891.field29864, var8).method15911(Class6891.field29863, Class2120.field13817)
                )
-               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, false), Class5138.method15912().method15911(Class6891.field29864, var9))
-               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39717, false), Class5138.method15912().method15911(Class6891.field29864, var10))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.NORTH, false), Class5138.method15912().method15911(Class6891.field29864, var9))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.EAST, false), Class5138.method15912().method15911(Class6891.field29864, var10))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39718, false),
+                  Class5141.method15919().method15924(BlockStateProperties.SOUTH, false),
                   Class5138.method15912().method15911(Class6891.field29864, var10).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39719, false),
+                  Class5141.method15919().method15924(BlockStateProperties.WEST, false),
                   Class5138.method15912().method15911(Class6891.field29864, var9).method15911(Class6891.field29863, Class2120.field13819)
                )
          );
@@ -1306,7 +1306,7 @@ public class Class9407 {
       Class7287 var4 = Class7287.method23030(var1);
       ResourceLocation var5 = Class9756.field45598.method34805(var1, var4, this.field43643);
       ResourceLocation var6 = this.method35837(var1, "_conditional", Class9756.field45598, var1x -> var4.method22995(Class9588.field44833, var1x));
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.field39684, var6, var5)).method15939(method35813()));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.CONDITIONAL, var6, var5)).method15939(method35813()));
    }
 
    private void method35876(Block var1) {
@@ -1326,14 +1326,14 @@ public class Class9407 {
       this.field43642
          .accept(
             Class5147.method15932(Blocks.BAMBOO)
-               .method15935(Class5141.method15919().method15924(BlockStateProperties.field39738, 0), this.method35877(0))
-               .method15935(Class5141.method15919().method15924(BlockStateProperties.field39738, 1), this.method35877(1))
+               .method15935(Class5141.method15919().method15924(BlockStateProperties.AGE, 0), this.method35877(0))
+               .method15935(Class5141.method15919().method15924(BlockStateProperties.AGE, 1), this.method35877(1))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39773, BambooLeaves.field643),
+                  Class5141.method15919().method15924(BlockStateProperties.LEAVES, BambooLeaves.field643),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.BAMBOO, "_small_leaves"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39773, BambooLeaves.field644),
+                  Class5141.method15919().method15924(BlockStateProperties.LEAVES, BambooLeaves.field644),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.BAMBOO, "_large_leaves"))
                )
          );
@@ -1399,7 +1399,7 @@ public class Class9407 {
       Class7287 var6 = var5.method22995(Class9588.field44831, Class7287.method23042(var1, "_front_honey"));
       ResourceLocation var7 = Class9756.field45544.method34805(var1, var5, this.field43643);
       ResourceLocation var8 = Class9756.field45544.method34806(var1, "_honey", var6, this.field43643);
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35810()).method15939(method35881(BlockStateProperties.field39754, 5, var8, var7)));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35810()).method15939(method35881(BlockStateProperties.HONEY_LEVEL, 5, var8, var7)));
    }
 
    private void method35883(Block var1, Property<Integer> var2, int... var3) {
@@ -1551,7 +1551,7 @@ public class Class9407 {
       ResourceLocation var5 = var2.method25591(var1, this.field43643);
       ResourceLocation var6 = Class7287.method23042(var1, "_front_on");
       ResourceLocation var7 = var2.method25590(var1).method24561(var1x -> var1x.method22991(Class9588.field44831, var6)).method24563(var1, "_on", this.field43643);
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.field39699, var7, var5)).method15939(method35810()));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.LIT, var7, var5)).method15939(method35810()));
    }
 
    private void method35887(Block... var1) {
@@ -1560,12 +1560,12 @@ public class Class9407 {
       for (Block var8 : var1) {
          ResourceLocation var9 = Class9756.field45609.method34805(var8, Class7287.method23037(var8), this.field43643);
          this.method35807(var8.asItem());
-         this.field43642.accept(Class5148.method15941(var8).method15939(method35817(BlockStateProperties.field39699, var9, var4)).method15939(method35811()));
+         this.field43642.accept(Class5148.method15941(var8).method15939(method35817(BlockStateProperties.LIT, var9, var4)).method15939(method35811()));
       }
    }
 
    private void method35888() {
-      Class7287 var3 = Class7287.method23017(Class7287.method23041(Blocks.field36525), Class7287.method23041(Blocks.field36400));
+      Class7287 var3 = Class7287.method23017(Class7287.method23041(Blocks.field36525), Class7287.method23041(Blocks.OAK_PLANKS));
       ResourceLocation var4 = Class9756.field45539.method34805(Blocks.field36525, var3, this.field43643);
       this.field43642.accept(method35829(Blocks.field36525, var4));
    }
@@ -1578,63 +1578,63 @@ public class Class9407 {
                .method15937(
                   Class5141.method15920(
                      Class5141.method15919()
-                        .method15924(BlockStateProperties.field39731, RedstoneSide.field267)
-                        .method15924(BlockStateProperties.field39730, RedstoneSide.field267)
-                        .method15924(BlockStateProperties.field39732, RedstoneSide.field267)
-                        .method15924(BlockStateProperties.field39733, RedstoneSide.field267),
+                        .method15924(BlockStateProperties.REDSTONE_SIDE_NORTH, RedstoneSide.field267)
+                        .method15924(BlockStateProperties.REDSTONE_SIDE_EAST, RedstoneSide.field267)
+                        .method15924(BlockStateProperties.REDSTONE_SIDE_SOUTH, RedstoneSide.field267)
+                        .method15924(BlockStateProperties.REDSTONE_SIDE_WEST, RedstoneSide.field267),
                      Class5141.method15919()
-                        .method15925(BlockStateProperties.field39731, RedstoneSide.field266, RedstoneSide.field265)
-                        .method15925(BlockStateProperties.field39730, RedstoneSide.field266, RedstoneSide.field265),
+                        .method15925(BlockStateProperties.REDSTONE_SIDE_NORTH, RedstoneSide.field266, RedstoneSide.field265)
+                        .method15925(BlockStateProperties.REDSTONE_SIDE_EAST, RedstoneSide.field266, RedstoneSide.field265),
                      Class5141.method15919()
-                        .method15925(BlockStateProperties.field39730, RedstoneSide.field266, RedstoneSide.field265)
-                        .method15925(BlockStateProperties.field39732, RedstoneSide.field266, RedstoneSide.field265),
+                        .method15925(BlockStateProperties.REDSTONE_SIDE_EAST, RedstoneSide.field266, RedstoneSide.field265)
+                        .method15925(BlockStateProperties.REDSTONE_SIDE_SOUTH, RedstoneSide.field266, RedstoneSide.field265),
                      Class5141.method15919()
-                        .method15925(BlockStateProperties.field39732, RedstoneSide.field266, RedstoneSide.field265)
-                        .method15925(BlockStateProperties.field39733, RedstoneSide.field266, RedstoneSide.field265),
+                        .method15925(BlockStateProperties.REDSTONE_SIDE_SOUTH, RedstoneSide.field266, RedstoneSide.field265)
+                        .method15925(BlockStateProperties.REDSTONE_SIDE_WEST, RedstoneSide.field266, RedstoneSide.field265),
                      Class5141.method15919()
-                        .method15925(BlockStateProperties.field39733, RedstoneSide.field266, RedstoneSide.field265)
-                        .method15925(BlockStateProperties.field39731, RedstoneSide.field266, RedstoneSide.field265)
+                        .method15925(BlockStateProperties.REDSTONE_SIDE_WEST, RedstoneSide.field266, RedstoneSide.field265)
+                        .method15925(BlockStateProperties.REDSTONE_SIDE_NORTH, RedstoneSide.field266, RedstoneSide.field265)
                   ),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33720("redstone_dust_dot"))
                )
                .method15937(
-                  Class5141.method15919().method15925(BlockStateProperties.field39731, RedstoneSide.field266, RedstoneSide.field265),
+                  Class5141.method15919().method15925(BlockStateProperties.REDSTONE_SIDE_NORTH, RedstoneSide.field266, RedstoneSide.field265),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33720("redstone_dust_side0"))
                )
                .method15937(
-                  Class5141.method15919().method15925(BlockStateProperties.field39732, RedstoneSide.field266, RedstoneSide.field265),
+                  Class5141.method15919().method15925(BlockStateProperties.REDSTONE_SIDE_SOUTH, RedstoneSide.field266, RedstoneSide.field265),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33720("redstone_dust_side_alt0"))
                )
                .method15937(
-                  Class5141.method15919().method15925(BlockStateProperties.field39730, RedstoneSide.field266, RedstoneSide.field265),
+                  Class5141.method15919().method15925(BlockStateProperties.REDSTONE_SIDE_EAST, RedstoneSide.field266, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_side_alt1"))
                      .method15911(Class6891.field29863, Class2120.field13819)
                )
                .method15937(
-                  Class5141.method15919().method15925(BlockStateProperties.field39733, RedstoneSide.field266, RedstoneSide.field265),
+                  Class5141.method15919().method15925(BlockStateProperties.REDSTONE_SIDE_WEST, RedstoneSide.field266, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_side1"))
                      .method15911(Class6891.field29863, Class2120.field13819)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39731, RedstoneSide.field265),
+                  Class5141.method15919().method15924(BlockStateProperties.REDSTONE_SIDE_NORTH, RedstoneSide.field265),
                   Class5138.method15912().method15911(Class6891.field29864, Class9060.method33720("redstone_dust_up"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39730, RedstoneSide.field265),
+                  Class5141.method15919().method15924(BlockStateProperties.REDSTONE_SIDE_EAST, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_up"))
                      .method15911(Class6891.field29863, Class2120.field13817)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39732, RedstoneSide.field265),
+                  Class5141.method15919().method15924(BlockStateProperties.REDSTONE_SIDE_SOUTH, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_up"))
                      .method15911(Class6891.field29863, Class2120.field13818)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39733, RedstoneSide.field265),
+                  Class5141.method15919().method15924(BlockStateProperties.REDSTONE_SIDE_WEST, RedstoneSide.field265),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, Class9060.method33720("redstone_dust_up"))
                      .method15911(Class6891.field29863, Class2120.field13819)
@@ -1649,7 +1649,7 @@ public class Class9407 {
             Class5148.method15941(Blocks.COMPARATOR)
                .method15939(method35811())
                .method15939(
-                  Class3629.<ComparatorMode, Boolean>method12311(BlockStateProperties.field39766, BlockStateProperties.POWERED)
+                  Class3629.<ComparatorMode, Boolean>method12311(BlockStateProperties.COMPARATOR_MODE, BlockStateProperties.POWERED)
                      .method12300(
                         ComparatorMode.field325, false, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.COMPARATOR))
                      )
@@ -1687,27 +1687,27 @@ public class Class9407 {
             Class5147.method15932(Blocks.BREWING_STAND)
                .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.BREWING_STAND)))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39692, true),
+                  Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_0, true),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_bottle0"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39693, true),
+                  Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_1, true),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_bottle1"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39694, true),
+                  Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_2, true),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_bottle2"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39692, false),
+                  Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_0, false),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_empty0"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39693, false),
+                  Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_1, false),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_empty1"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39694, false),
+                  Class5141.method15919().method15924(BlockStateProperties.HAS_BOTTLE_2, false),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.BREWING_STAND, "_empty2"))
                )
          );
@@ -1719,73 +1719,73 @@ public class Class9407 {
       this.field43642
          .accept(
             Class5147.method15932(var1)
-               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var4))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.NORTH, true), Class5138.method15912().method15911(Class6891.field29864, var4))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39717, true),
+                  Class5141.method15919().method15924(BlockStateProperties.EAST, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39718, true),
+                  Class5141.method15919().method15924(BlockStateProperties.SOUTH, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39719, true),
+                  Class5141.method15919().method15924(BlockStateProperties.WEST, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39714, true),
+                  Class5141.method15919().method15924(BlockStateProperties.UP, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29862, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39715, true),
+                  Class5141.method15919().method15924(BlockStateProperties.DOWN, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29862, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
-               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, false), Class5138.method15912().method15911(Class6891.field29864, var5))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.NORTH, false), Class5138.method15912().method15911(Class6891.field29864, var5))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39717, false),
+                  Class5141.method15919().method15924(BlockStateProperties.EAST, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, false)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39718, false),
+                  Class5141.method15919().method15924(BlockStateProperties.SOUTH, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, false)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39719, false),
+                  Class5141.method15919().method15924(BlockStateProperties.WEST, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, false)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39714, false),
+                  Class5141.method15919().method15924(BlockStateProperties.UP, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29862, Class2120.field13819)
                      .method15911(Class6891.field29865, false)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39715, false),
+                  Class5141.method15919().method15924(BlockStateProperties.DOWN, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -1801,7 +1801,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.CAKE)
                .method15939(
-                  Class3629.<Integer>method12310(BlockStateProperties.field39745)
+                  Class3629.<Integer>method12310(BlockStateProperties.BITES)
                      .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.CAKE)))
                      .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAKE, "_slice1")))
                      .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAKE, "_slice2")))
@@ -1816,7 +1816,7 @@ public class Class9407 {
    private void method35895() {
       Class7287 var3 = new Class7287()
          .method22991(Class9588.field44827, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_side3"))
-         .method22991(Class9588.field44839, Class7287.method23041(Blocks.field36405))
+         .method22991(Class9588.field44839, Class7287.method23041(Blocks.DARK_OAK_PLANKS))
          .method22991(Class9588.field44838, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_top"))
          .method22991(Class9588.field44834, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_side3"))
          .method22991(Class9588.field44836, Class7287.method23042(Blocks.CARTOGRAPHY_TABLE, "_side3"))
@@ -1860,7 +1860,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.CAULDRON)
                .method15939(
-                  Class3629.<Integer>method12310(BlockStateProperties.field39751)
+                  Class3629.<Integer>method12310(BlockStateProperties.LEVEL_2)
                      .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.CAULDRON)))
                      .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAULDRON, "_level1")))
                      .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.CAULDRON, "_level2")))
@@ -1880,7 +1880,7 @@ public class Class9407 {
       Class7287 var3 = Class7287.method22997(Blocks.CHORUS_FLOWER);
       ResourceLocation var4 = Class9756.field45591.method34805(Blocks.CHORUS_FLOWER, var3, this.field43643);
       ResourceLocation var5 = this.method35837(Blocks.CHORUS_FLOWER, "_dead", Class9756.field45591, var1 -> var3.method22995(Class9588.field44826, var1));
-      this.field43642.accept(Class5148.method15941(Blocks.CHORUS_FLOWER).method15939(method35881(BlockStateProperties.field39741, 5, var5, var4)));
+      this.field43642.accept(Class5148.method15941(Blocks.CHORUS_FLOWER).method15939(method35881(BlockStateProperties.AGE4, 5, var5, var4)));
    }
 
    private void method35903(Block var1) {
@@ -1927,7 +1927,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.END_PORTAL_FRAME)
                .method15939(
-                  Class3629.<Boolean>method12310(BlockStateProperties.field39689)
+                  Class3629.<Boolean>method12310(BlockStateProperties.EYE)
                      .method12320(false, Class5138.method15912().method15911(Class6891.field29864, var3))
                      .method12320(true, Class5138.method15912().method15911(Class6891.field29864, var4))
                )
@@ -1944,51 +1944,51 @@ public class Class9407 {
       this.field43642
          .accept(
             Class5147.method15932(Blocks.CHORUS_PLANT)
-               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.NORTH, true), Class5138.method15912().method15911(Class6891.field29864, var3))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39717, true),
+                  Class5141.method15919().method15924(BlockStateProperties.EAST, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39718, true),
+                  Class5141.method15919().method15924(BlockStateProperties.SOUTH, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39719, true),
+                  Class5141.method15919().method15924(BlockStateProperties.WEST, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39714, true),
+                  Class5141.method15919().method15924(BlockStateProperties.UP, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39715, true),
+                  Class5141.method15919().method15924(BlockStateProperties.DOWN, true),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var3)
                      .method15911(Class6891.field29862, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(BlockStateProperties.field39716, false),
+                  Class5141.method15919().method15924(BlockStateProperties.NORTH, false),
                   Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29866, 2),
                   Class5138.method15912().method15911(Class6891.field29864, var5),
                   Class5138.method15912().method15911(Class6891.field29864, var6),
                   Class5138.method15912().method15911(Class6891.field29864, var7)
                )
                .method15936(
-                  Class5141.method15919().method15924(BlockStateProperties.field39717, false),
+                  Class5141.method15919().method15924(BlockStateProperties.EAST, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var5)
                      .method15911(Class6891.field29863, Class2120.field13817)
@@ -2008,7 +2008,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(BlockStateProperties.field39718, false),
+                  Class5141.method15919().method15924(BlockStateProperties.SOUTH, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var6)
                      .method15911(Class6891.field29863, Class2120.field13818)
@@ -2028,7 +2028,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(BlockStateProperties.field39719, false),
+                  Class5141.method15919().method15924(BlockStateProperties.WEST, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var7)
                      .method15911(Class6891.field29863, Class2120.field13819)
@@ -2048,7 +2048,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(BlockStateProperties.field39714, false),
+                  Class5141.method15919().method15924(BlockStateProperties.UP, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var4)
                      .method15911(Class6891.field29866, 2)
@@ -2068,7 +2068,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method15936(
-                  Class5141.method15919().method15924(BlockStateProperties.field39715, false),
+                  Class5141.method15919().method15924(BlockStateProperties.DOWN, false),
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var7)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -2096,35 +2096,35 @@ public class Class9407 {
             Class5147.method15932(Blocks.COMPOSTER)
                .method15934(Class5138.method15912().method15911(Class6891.field29864, Class7287.method23041(Blocks.COMPOSTER)))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39752, 1),
+                  Class5141.method15919().method15924(BlockStateProperties.LEVEL_3, 1),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents1"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39752, 2),
+                  Class5141.method15919().method15924(BlockStateProperties.LEVEL_3, 2),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents2"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39752, 3),
+                  Class5141.method15919().method15924(BlockStateProperties.LEVEL_3, 3),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents3"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39752, 4),
+                  Class5141.method15919().method15924(BlockStateProperties.LEVEL_3, 4),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents4"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39752, 5),
+                  Class5141.method15919().method15924(BlockStateProperties.LEVEL_3, 5),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents5"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39752, 6),
+                  Class5141.method15919().method15924(BlockStateProperties.LEVEL_3, 6),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents6"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39752, 7),
+                  Class5141.method15919().method15924(BlockStateProperties.LEVEL_3, 7),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents7"))
                )
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39752, 8),
+                  Class5141.method15919().method15924(BlockStateProperties.LEVEL_3, 8),
                   Class5138.method15912().method15911(Class6891.field29864, Class7287.method23042(Blocks.COMPOSTER, "_contents_ready"))
                )
          );
@@ -2150,7 +2150,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.DAYLIGHT_DETECTOR)
                .method15939(
-                  Class3629.<Boolean>method12310(BlockStateProperties.field39697)
+                  Class3629.<Boolean>method12310(BlockStateProperties.INVERTED)
                      .method12320(
                         false,
                         Class5138.method15912()
@@ -2184,7 +2184,7 @@ public class Class9407 {
          .method22991(Class9588.field44830, Class7287.method23042(Blocks.FARMLAND, "_moist"));
       ResourceLocation var5 = Class9756.field45603.method34805(Blocks.FARMLAND, var3, this.field43643);
       ResourceLocation var6 = Class9756.field45603.method34808(Class7287.method23042(Blocks.FARMLAND, "_moist"), var4, this.field43643);
-      this.field43642.accept(Class5148.method15941(Blocks.FARMLAND).method15939(method35881(BlockStateProperties.field39756, 7, var6, var5)));
+      this.field43642.accept(Class5148.method15941(Blocks.FARMLAND).method15939(method35881(BlockStateProperties.MOISTURE, 7, var6, var5)));
    }
 
    private List<ResourceLocation> method35911(Block var1) {
@@ -2218,11 +2218,11 @@ public class Class9407 {
 
    private void method35915() {
       Class5142 var3 = Class5141.method15919()
-         .method15924(BlockStateProperties.field39716, false)
-         .method15924(BlockStateProperties.field39717, false)
-         .method15924(BlockStateProperties.field39718, false)
-         .method15924(BlockStateProperties.field39719, false)
-         .method15924(BlockStateProperties.field39714, false);
+         .method15924(BlockStateProperties.NORTH, false)
+         .method15924(BlockStateProperties.EAST, false)
+         .method15924(BlockStateProperties.SOUTH, false)
+         .method15924(BlockStateProperties.WEST, false)
+         .method15924(BlockStateProperties.UP, false);
       List var4 = this.method35911(Blocks.FIRE);
       List var5 = this.method35912(Blocks.FIRE);
       List var6 = this.method35913(Blocks.FIRE);
@@ -2230,20 +2230,20 @@ public class Class9407 {
          .accept(
             Class5147.method15932(Blocks.FIRE)
                .method15935(var3, method35914(var4, var0 -> var0))
-               .method15935(Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.field39716, true), var3), method35914(var5, var0 -> var0))
+               .method15935(Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.NORTH, true), var3), method35914(var5, var0 -> var0))
                .method15935(
-                  Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.field39717, true), var3),
+                  Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.EAST, true), var3),
                   method35914(var5, var0 -> var0.method15911(Class6891.field29863, Class2120.field13817))
                )
                .method15935(
-                  Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.field39718, true), var3),
+                  Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.SOUTH, true), var3),
                   method35914(var5, var0 -> var0.method15911(Class6891.field29863, Class2120.field13818))
                )
                .method15935(
-                  Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.field39719, true), var3),
+                  Class5141.method15920(Class5141.method15919().method15924(BlockStateProperties.WEST, true), var3),
                   method35914(var5, var0 -> var0.method15911(Class6891.field29863, Class2120.field13819))
                )
-               .method15935(Class5141.method15919().method15924(BlockStateProperties.field39714, true), method35914(var6, var0 -> var0))
+               .method15935(Class5141.method15919().method15924(BlockStateProperties.UP, true), method35914(var6, var0 -> var0))
          );
    }
 
@@ -2265,7 +2265,7 @@ public class Class9407 {
       ResourceLocation var4 = Class7524.field32285.method25591(var1, this.field43643);
       ResourceLocation var5 = Class7524.field32286.method25591(var1, this.field43643);
       this.method35807(var1.asItem());
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.field39691, var5, var4)));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.HANGING, var5, var4)));
    }
 
    private void method35918() {
@@ -2273,7 +2273,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.FROSTED_ICE)
                .method15939(
-                  Class3629.<Integer>method12310(BlockStateProperties.field39740)
+                  Class3629.<Integer>method12310(BlockStateProperties.AGE3)
                      .method12320(
                         0,
                         Class5138.method15912()
@@ -2323,7 +2323,7 @@ public class Class9407 {
    private void method35920(Block var1, ResourceLocation var2, Class5138 var3) {
       List var6 = Arrays.<Class5138>asList(method35815(var2));
       this.field43642
-         .accept(Class5148.method15941(var1).method15939(Class3629.<Boolean>method12310(BlockStateProperties.field39707).method12320(true, var3).method12319(false, var6)));
+         .accept(Class5148.method15941(var1).method15939(Class3629.<Boolean>method12310(BlockStateProperties.SNOWY).method12320(true, var3).method12319(false, var6)));
    }
 
    private void method35921() {
@@ -2332,7 +2332,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.COCOA)
                .method15939(
-                  Class3629.<Integer>method12310(BlockStateProperties.field39739)
+                  Class3629.<Integer>method12310(BlockStateProperties.AGE2)
                      .method12320(0, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COCOA, "_stage0")))
                      .method12320(1, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COCOA, "_stage1")))
                      .method12320(2, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.COCOA, "_stage2")))
@@ -2349,7 +2349,7 @@ public class Class9407 {
       Class7287 var5 = Class7287.method22997(var2);
       ResourceLocation var6 = Class9756.field45564.method34805(var1, var5, this.field43643);
       ResourceLocation var7 = Class9756.field45565.method34805(var1, var5, this.field43643);
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35881(BlockStateProperties.field39759, 1, var7, var6)));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35881(BlockStateProperties.POWER, 1, var7, var6)));
    }
 
    private void method35924() {
@@ -2398,52 +2398,52 @@ public class Class9407 {
                .method15934(Class5138.method15912().method15911(Class6891.field29864, var3))
                .method15937(
                   Class5141.method15919()
-                     .method15924(BlockStateProperties.field39716, false)
-                     .method15924(BlockStateProperties.field39717, false)
-                     .method15924(BlockStateProperties.field39718, false)
-                     .method15924(BlockStateProperties.field39719, false),
+                     .method15924(BlockStateProperties.NORTH, false)
+                     .method15924(BlockStateProperties.EAST, false)
+                     .method15924(BlockStateProperties.SOUTH, false)
+                     .method15924(BlockStateProperties.WEST, false),
                   Class5138.method15912().method15911(Class6891.field29864, var4)
                )
                .method15937(
                   Class5141.method15919()
-                     .method15924(BlockStateProperties.field39716, true)
-                     .method15924(BlockStateProperties.field39717, false)
-                     .method15924(BlockStateProperties.field39718, false)
-                     .method15924(BlockStateProperties.field39719, false),
+                     .method15924(BlockStateProperties.NORTH, true)
+                     .method15924(BlockStateProperties.EAST, false)
+                     .method15924(BlockStateProperties.SOUTH, false)
+                     .method15924(BlockStateProperties.WEST, false),
                   Class5138.method15912().method15911(Class6891.field29864, var5)
                )
                .method15937(
                   Class5141.method15919()
-                     .method15924(BlockStateProperties.field39716, false)
-                     .method15924(BlockStateProperties.field39717, true)
-                     .method15924(BlockStateProperties.field39718, false)
-                     .method15924(BlockStateProperties.field39719, false),
+                     .method15924(BlockStateProperties.NORTH, false)
+                     .method15924(BlockStateProperties.EAST, true)
+                     .method15924(BlockStateProperties.SOUTH, false)
+                     .method15924(BlockStateProperties.WEST, false),
                   Class5138.method15912().method15911(Class6891.field29864, var5).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method15937(
                   Class5141.method15919()
-                     .method15924(BlockStateProperties.field39716, false)
-                     .method15924(BlockStateProperties.field39717, false)
-                     .method15924(BlockStateProperties.field39718, true)
-                     .method15924(BlockStateProperties.field39719, false),
+                     .method15924(BlockStateProperties.NORTH, false)
+                     .method15924(BlockStateProperties.EAST, false)
+                     .method15924(BlockStateProperties.SOUTH, true)
+                     .method15924(BlockStateProperties.WEST, false),
                   Class5138.method15912().method15911(Class6891.field29864, var6)
                )
                .method15937(
                   Class5141.method15919()
-                     .method15924(BlockStateProperties.field39716, false)
-                     .method15924(BlockStateProperties.field39717, false)
-                     .method15924(BlockStateProperties.field39718, false)
-                     .method15924(BlockStateProperties.field39719, true),
+                     .method15924(BlockStateProperties.NORTH, false)
+                     .method15924(BlockStateProperties.EAST, false)
+                     .method15924(BlockStateProperties.SOUTH, false)
+                     .method15924(BlockStateProperties.WEST, true),
                   Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13817)
                )
-               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39716, true), Class5138.method15912().method15911(Class6891.field29864, var7))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.NORTH, true), Class5138.method15912().method15911(Class6891.field29864, var7))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39717, true),
+                  Class5141.method15919().method15924(BlockStateProperties.EAST, true),
                   Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29863, Class2120.field13817)
                )
-               .method15937(Class5141.method15919().method15924(BlockStateProperties.field39718, true), Class5138.method15912().method15911(Class6891.field29864, var8))
+               .method15937(Class5141.method15919().method15924(BlockStateProperties.SOUTH, true), Class5138.method15912().method15911(Class6891.field29864, var8))
                .method15937(
-                  Class5141.method15919().method15924(BlockStateProperties.field39719, true),
+                  Class5141.method15919().method15924(BlockStateProperties.WEST, true),
                   Class5138.method15912().method15911(Class6891.field29864, var8).method15911(Class6891.field29863, Class2120.field13817)
                )
          );
@@ -2515,7 +2515,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.NETHER_PORTAL)
                .method15939(
-                  Class3629.<Direction.Axis>method12310(BlockStateProperties.field39712)
+                  Class3629.<Direction.Axis>method12310(BlockStateProperties.HORIZONTAL_AXIS)
                      .method12320(
                         Direction.Axis.X, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.NETHER_PORTAL, "_ns"))
                      )
@@ -2604,7 +2604,7 @@ public class Class9407 {
 
    private void method35934(Block var1, ResourceLocation var2, Class7287 var3) {
       ResourceLocation var6 = Class9756.field45614.method34805(var1, var3, this.field43643);
-      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.field39688, var2, var6)).method15939(method35813()));
+      this.field43642.accept(Class5148.method15941(var1).method15939(method35817(BlockStateProperties.EXTENDED, var2, var6)).method15939(method35813()));
    }
 
    private void method35935() {
@@ -2617,7 +2617,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.PISTON_HEAD)
                .method15939(
-                  Class3629.<Boolean, PistonType>method12311(BlockStateProperties.field39705, BlockStateProperties.field39769)
+                  Class3629.<Boolean, PistonType>method12311(BlockStateProperties.SHORT, BlockStateProperties.PISTON_TYPE)
                      .method12300(
                         false,
                         PistonType.field638,
@@ -2653,13 +2653,13 @@ public class Class9407 {
       ResourceLocation var3 = Class9060.method33722(Blocks.SCAFFOLDING, "_stable");
       ResourceLocation var4 = Class9060.method33722(Blocks.SCAFFOLDING, "_unstable");
       this.method35805(Blocks.SCAFFOLDING, var3);
-      this.field43642.accept(Class5148.method15941(Blocks.SCAFFOLDING).method15939(method35817(BlockStateProperties.field39683, var4, var3)));
+      this.field43642.accept(Class5148.method15941(Blocks.SCAFFOLDING).method15939(method35817(BlockStateProperties.BOTTOM, var4, var3)));
    }
 
    private void method35937() {
       ResourceLocation var3 = Class7524.field32271.method25591(Blocks.REDSTONE_LAMP, this.field43643);
       ResourceLocation var4 = this.method35837(Blocks.REDSTONE_LAMP, "_on", Class9756.field45537, Class7287::method22999);
-      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_LAMP).method15939(method35817(BlockStateProperties.field39699, var4, var3)));
+      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_LAMP).method15939(method35817(BlockStateProperties.LIT, var4, var3)));
    }
 
    private void method35938(Block var1, Block var2) {
@@ -2681,10 +2681,10 @@ public class Class9407 {
       Class7287 var4 = Class7287.method23028(Class7287.method23042(Blocks.REDSTONE_TORCH, "_off"));
       ResourceLocation var5 = Class9756.field45612.method34805(Blocks.REDSTONE_TORCH, var3, this.field43643);
       ResourceLocation var6 = Class9756.field45612.method34806(Blocks.REDSTONE_TORCH, "_off", var4, this.field43643);
-      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_TORCH).method15939(method35817(BlockStateProperties.field39699, var5, var6)));
+      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_TORCH).method15939(method35817(BlockStateProperties.LIT, var5, var6)));
       ResourceLocation var7 = Class9756.field45613.method34805(Blocks.REDSTONE_WALL_TORCH, var3, this.field43643);
       ResourceLocation var8 = Class9756.field45613.method34806(Blocks.REDSTONE_WALL_TORCH, "_off", var4, this.field43643);
-      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_WALL_TORCH).method15939(method35817(BlockStateProperties.field39699, var7, var8)).method15939(method35812()));
+      this.field43642.accept(Class5148.method15941(Blocks.REDSTONE_WALL_TORCH).method15939(method35817(BlockStateProperties.LIT, var7, var8)).method15939(method35812()));
       this.method35808(Blocks.REDSTONE_TORCH);
       this.method35804(Blocks.REDSTONE_WALL_TORCH);
    }
@@ -2695,7 +2695,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.REPEATER)
                .method15939(
-                  Class3629.<Integer, Boolean, Boolean>method12312(BlockStateProperties.field39746, BlockStateProperties.field39700, BlockStateProperties.POWERED)
+                  Class3629.<Integer, Boolean, Boolean>method12312(BlockStateProperties.DELAY, BlockStateProperties.LOCKED, BlockStateProperties.POWERED)
                      .method12327((var0, var1, var2) -> {
                         StringBuilder var5 = new StringBuilder();
                         var5.append('_').append(var0).append("tick");
@@ -2720,7 +2720,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.SEA_PICKLE)
                .method15939(
-                  Class3629.<Integer, Boolean>method12311(BlockStateProperties.field39758, BlockStateProperties.WATERLOGGED)
+                  Class3629.<Integer, Boolean>method12311(BlockStateProperties.PICKLES, BlockStateProperties.WATERLOGGED)
                      .method12299(1, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("dead_sea_pickle"))))
                      .method12299(2, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("two_dead_sea_pickles"))))
                      .method12299(3, false, Arrays.<Class5138>asList(method35815(Class9060.method33720("three_dead_sea_pickles"))))
@@ -2740,7 +2740,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.SNOW)
                .method15939(
-                  Class3629.<Integer>method12310(BlockStateProperties.field39750)
+                  Class3629.<Integer>method12310(BlockStateProperties.LAYERS)
                      .method12321(
                         var1 -> Class5138.method15912()
                               .method15911(Class6891.field29864, var1 >= 8 ? var4 : Class9060.method33722(Blocks.SNOW, "_height" + var1 * 2))
@@ -2766,7 +2766,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field37113)
                .method15939(
-                  Class3629.<StructureMode>method12310(BlockStateProperties.field39772)
+                  Class3629.<StructureMode>method12310(BlockStateProperties.STRUCTURE_MODE)
                      .method12321(
                         var1 -> Class5138.method15912()
                               .method15911(
@@ -2784,7 +2784,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.SWEET_BERRY_BUSH)
                .method15939(
-                  Class3629.<Integer>method12310(BlockStateProperties.field39740)
+                  Class3629.<Integer>method12310(BlockStateProperties.AGE3)
                      .method12321(
                         var1 -> Class5138.method15912()
                               .method15911(
@@ -2802,7 +2802,7 @@ public class Class9407 {
             Class5148.method15941(Blocks.TRIPWIRE)
                .method15939(
                   Class3629.<Boolean, Boolean, Boolean, Boolean, Boolean>method12314(
-                        BlockStateProperties.field39682, BlockStateProperties.field39717, BlockStateProperties.field39716, BlockStateProperties.field39718, BlockStateProperties.field39719
+                        BlockStateProperties.ATTACHED, BlockStateProperties.EAST, BlockStateProperties.NORTH, BlockStateProperties.SOUTH, BlockStateProperties.WEST
                      )
                      .method12318(
                         false,
@@ -3110,7 +3110,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.TRIPWIRE_HOOK)
                .method15939(
-                  Class3629.<Boolean, Boolean>method12311(BlockStateProperties.field39682, BlockStateProperties.POWERED)
+                  Class3629.<Boolean, Boolean>method12311(BlockStateProperties.ATTACHED, BlockStateProperties.POWERED)
                      .method12301(
                         (var0, var1) -> Class5138.method15912()
                               .method15911(Class6891.field29864, Class7287.method23042(Blocks.TRIPWIRE_HOOK, (!var0 ? "" : "_attached") + (!var1 ? "" : "_on")))
@@ -3154,7 +3154,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.TURTLE_EGG)
                .method15939(
-                  Class3629.<Integer, Integer>method12311(BlockStateProperties.field39748, BlockStateProperties.field39749)
+                  Class3629.<Integer, Integer>method12311(BlockStateProperties.EGGS, BlockStateProperties.HATCH)
                      .method12302((var1, var2) -> Arrays.<Class5138>asList(method35815(this.method35949(var1, var2))))
                )
          );
@@ -3167,7 +3167,7 @@ public class Class9407 {
             Class5148.method15941(Blocks.VINE)
                .method15939(
                   Class3629.<Boolean, Boolean, Boolean, Boolean, Boolean>method12314(
-                        BlockStateProperties.field39717, BlockStateProperties.field39716, BlockStateProperties.field39718, BlockStateProperties.field39714, BlockStateProperties.field39719
+                        BlockStateProperties.EAST, BlockStateProperties.NORTH, BlockStateProperties.SOUTH, BlockStateProperties.UP, BlockStateProperties.WEST
                      )
                      .method12318(
                         false,
@@ -3525,7 +3525,7 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.RESPAWN_ANCHOR)
                .method15939(
-                  Class3629.<Integer>method12310(BlockStateProperties.field39762)
+                  Class3629.<Integer>method12310(BlockStateProperties.CHARGES)
                      .method12321(var1 -> Class5138.method15912().method15911(Class6891.field29864, var6[var1]))
                )
          );
@@ -3719,8 +3719,8 @@ public class Class9407 {
       this.method35927(Blocks.LECTERN);
       this.method35938(Blocks.TORCH, Blocks.WALL_TORCH);
       this.method35938(Blocks.SOUL_TORCH, Blocks.SOUL_WALL_TORCH);
-      this.method35897(Blocks.CRAFTING_TABLE, Blocks.field36400, Class7287::method23035);
-      this.method35897(Blocks.FLETCHING_TABLE, Blocks.field36402, Class7287::method23036);
+      this.method35897(Blocks.CRAFTING_TABLE, Blocks.OAK_PLANKS, Class7287::method23035);
+      this.method35897(Blocks.FLETCHING_TABLE, Blocks.BIRCH_PLANKS, Class7287::method23036);
       this.method35907(Blocks.CRIMSON_NYLIUM);
       this.method35907(Blocks.WARPED_NYLIUM);
       this.method35903(Blocks.DISPENSER);
@@ -3742,12 +3742,12 @@ public class Class9407 {
       this.method35898();
       this.method35882(Blocks.BEE_NEST, Class7287::method23031);
       this.method35882(Blocks.BEEHIVE, Class7287::method23033);
-      this.method35883(Blocks.BEETROOTS, BlockStateProperties.field39740, 0, 1, 2, 3);
-      this.method35883(Blocks.CARROTS, BlockStateProperties.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
-      this.method35883(Blocks.NETHER_WART, BlockStateProperties.field39740, 0, 1, 1, 2);
-      this.method35883(Blocks.POTATOES, BlockStateProperties.field39742, 0, 0, 1, 1, 2, 2, 2, 3);
-      this.method35883(Blocks.WHEAT, BlockStateProperties.field39742, 0, 1, 2, 3, 4, 5, 6, 7);
-      this.method35867(Class9060.method33720("banner"), Blocks.field36400)
+      this.method35883(Blocks.BEETROOTS, BlockStateProperties.AGE3, 0, 1, 2, 3);
+      this.method35883(Blocks.CARROTS, BlockStateProperties.AGE5, 0, 0, 1, 1, 2, 2, 2, 3);
+      this.method35883(Blocks.NETHER_WART, BlockStateProperties.AGE3, 0, 1, 1, 2);
+      this.method35883(Blocks.POTATOES, BlockStateProperties.AGE5, 0, 0, 1, 1, 2, 2, 2, 3);
+      this.method35883(Blocks.WHEAT, BlockStateProperties.AGE5, 0, 1, 2, 3, 4, 5, 6, 7);
+      this.method35867(Class9060.method33720("banner"), Blocks.OAK_PLANKS)
          .method26608(
             Class9756.field45628,
             Blocks.WHITE_BANNER,
@@ -3785,7 +3785,7 @@ public class Class9407 {
             Blocks.RED_WALL_BANNER,
             Blocks.BLACK_WALL_BANNER
          );
-      this.method35867(Class9060.method33720("bed"), Blocks.field36400)
+      this.method35867(Class9060.method33720("bed"), Blocks.OAK_PLANKS)
          .method26607(
             Blocks.WHITE_BED,
             Blocks.ORANGE_BED,
@@ -3843,7 +3843,7 @@ public class Class9407 {
       this.method35953(Blocks.field36912);
       this.method35841(Blocks.CONDUIT, Class7524.field32282);
       this.method35804(Blocks.CONDUIT);
-      this.method35867(Class9060.method33720("chest"), Blocks.field36400).method26607(Blocks.CHEST, Blocks.TRAPPED_CHEST);
+      this.method35867(Class9060.method33720("chest"), Blocks.OAK_PLANKS).method26607(Blocks.CHEST, Blocks.TRAPPED_CHEST);
       this.method35867(Class9060.method33720("ender_chest"), Blocks.field36527).method26607(Blocks.ENDER_CHEST);
       this.method35868(Blocks.END_PORTAL, Blocks.field36527).method26606(Blocks.END_PORTAL, Blocks.END_GATEWAY);
       this.method35840(Blocks.field36929);
@@ -4044,7 +4044,7 @@ public class Class9407 {
       );
       this.method35859(Blocks.MELON_STEM, Blocks.ATTACHED_MELON_STEM);
       this.method35859(Blocks.PUMPKIN_STEM, Blocks.ATTACHED_PUMPKIN_STEM);
-      this.method35845(Blocks.field36404)
+      this.method35845(Blocks.ACACIA_PLANKS)
          .method31167(Blocks.field36699)
          .method31169(Blocks.ACACIA_FENCE)
          .method31170(Blocks.field36865)
@@ -4058,7 +4058,7 @@ public class Class9407 {
       this.method35850(Blocks.STRIPPED_ACACIA_LOG).method36613(Blocks.STRIPPED_ACACIA_LOG).method36611(Blocks.STRIPPED_ACACIA_WOOD);
       this.method35857(Blocks.ACACIA_SAPLING, Blocks.POTTED_ACACIA_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36450, Class7524.field32284);
-      this.method35845(Blocks.field36402)
+      this.method35845(Blocks.BIRCH_PLANKS)
          .method31167(Blocks.field36697)
          .method31169(Blocks.BIRCH_FENCE)
          .method31170(Blocks.field36863)
@@ -4072,7 +4072,7 @@ public class Class9407 {
       this.method35850(Blocks.STRIPPED_BIRCH_LOG).method36613(Blocks.STRIPPED_BIRCH_LOG).method36611(Blocks.STRIPPED_BIRCH_WOOD);
       this.method35857(Blocks.BIRCH_SAPLING, Blocks.POTTED_BIRCH_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36448, Class7524.field32284);
-      this.method35845(Blocks.field36400)
+      this.method35845(Blocks.OAK_PLANKS)
          .method31167(Blocks.field36695)
          .method31169(Blocks.OAK_FENCE)
          .method31170(Blocks.OAK_FENCE_GATE)
@@ -4087,7 +4087,7 @@ public class Class9407 {
       this.method35850(Blocks.STRIPPED_OAK_LOG).method36613(Blocks.STRIPPED_OAK_LOG).method36611(Blocks.STRIPPED_OAK_WOOD);
       this.method35857(Blocks.OAK_SAPLING, Blocks.POTTED_OAK_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36446, Class7524.field32284);
-      this.method35845(Blocks.field36401)
+      this.method35845(Blocks.SPRUCE_PLANKS)
          .method31167(Blocks.field36696)
          .method31169(Blocks.SPRUCE_FENCE)
          .method31170(Blocks.field36862)
@@ -4101,7 +4101,7 @@ public class Class9407 {
       this.method35850(Blocks.STRIPPED_SPRUCE_LOG).method36613(Blocks.STRIPPED_SPRUCE_LOG).method36611(Blocks.STRIPPED_SPRUCE_WOOD);
       this.method35857(Blocks.SPRUCE_SAPLING, Blocks.POTTED_SPRUCE_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36447, Class7524.field32284);
-      this.method35845(Blocks.field36405)
+      this.method35845(Blocks.DARK_OAK_PLANKS)
          .method31167(Blocks.field36700)
          .method31169(Blocks.DARK_OAK_FENCE)
          .method31170(Blocks.field36866)
@@ -4115,7 +4115,7 @@ public class Class9407 {
       this.method35850(Blocks.STRIPPED_DARK_OAK_LOG).method36613(Blocks.STRIPPED_DARK_OAK_LOG).method36611(Blocks.STRIPPED_DARK_OAK_WOOD);
       this.method35857(Blocks.DARK_OAK_SAPLING, Blocks.POTTED_DARK_OAK_SAPLING, Class1958.field12763);
       this.method35841(Blocks.field36451, Class7524.field32284);
-      this.method35845(Blocks.field36403)
+      this.method35845(Blocks.JUNGLE_PLANKS)
          .method31167(Blocks.field36698)
          .method31169(Blocks.JUNGLE_FENCE)
          .method31170(Blocks.field36864)
@@ -4169,7 +4169,7 @@ public class Class9407 {
       this.method35849(Blocks.IRON_TRAPDOOR);
       this.method35845(Blocks.field36615).method31168(Blocks.STONE_BRICK_WALL).method31174(Blocks.STONE_BRICK_STAIRS).method31173(Blocks.field36852);
       this.method35845(Blocks.field36616).method31168(Blocks.MOSSY_STONE_BRICK_WALL).method31174(Blocks.field37016).method31173(Blocks.field37030);
-      this.method35845(Blocks.field36399).method31168(Blocks.COBBLESTONE_WALL).method31174(Blocks.COBBLESTONE_STAIRS).method31173(Blocks.field36850);
+      this.method35845(Blocks.COBBLESTONE).method31168(Blocks.COBBLESTONE_WALL).method31174(Blocks.COBBLESTONE_STAIRS).method31173(Blocks.field36850);
       this.method35845(Blocks.field36526).method31168(Blocks.MOSSY_COBBLESTONE_WALL).method31174(Blocks.field37018).method31173(Blocks.field37032);
       this.method35845(Blocks.field36767).method31168(Blocks.PRISMARINE_WALL).method31174(Blocks.field36770).method31173(Blocks.field36773);
       this.method35845(Blocks.field36768).method31174(Blocks.field36771).method31173(Blocks.field36774);
@@ -4252,7 +4252,7 @@ public class Class9407 {
       this.method35889();
       this.method35958();
       this.method35925(Blocks.field36618, Blocks.INFESTED_CHISELED_STONE_BRICKS);
-      this.method35925(Blocks.field36399, Blocks.INFESTED_COBBLESTONE);
+      this.method35925(Blocks.COBBLESTONE, Blocks.INFESTED_COBBLESTONE);
       this.method35925(Blocks.field36617, Blocks.INFESTED_CRACKED_STONE_BRICKS);
       this.method35925(Blocks.field36616, Blocks.INFESTED_MOSSY_STONE_BRICKS);
       this.method35956();

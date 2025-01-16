@@ -19,7 +19,7 @@ import java.util.Random;
 
 public class Class3489 extends BushBlock {
    private static String[] field18470;
-   public static final IntegerProperty field19354 = BlockStateProperties.field39740;
+   public static final IntegerProperty field19354 = BlockStateProperties.AGE3;
    private static final VoxelShape[] field19355 = new VoxelShape[]{
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 5.0, 16.0),
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0),

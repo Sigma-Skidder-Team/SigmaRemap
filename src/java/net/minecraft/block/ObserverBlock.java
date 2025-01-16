@@ -43,7 +43,7 @@ public class ObserverBlock extends Class3433 {
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (!var1.<Boolean>get(field19200)) {
          var2.setBlockState(var3, var1.with(field19200, Boolean.valueOf(true)), 2);
-         var2.method6860().scheduleTick(var3, this, 2);
+         var2.getBlockTickScheduler().scheduleTick(var3, this, 2);
       } else {
          var2.setBlockState(var3, var1.with(field19200, Boolean.valueOf(false)), 2);
       }
@@ -61,8 +61,8 @@ public class ObserverBlock extends Class3433 {
    }
 
    private void method12100(IWorld var1, BlockPos var2) {
-      if (!var1.isRemote() && !var1.method6860().method20718(var2, this)) {
-         var1.method6860().scheduleTick(var2, this, 2);
+      if (!var1.isRemote() && !var1.getBlockTickScheduler().method20718(var2, this)) {
+         var1.getBlockTickScheduler().scheduleTick(var2, this, 2);
       }
    }
 
@@ -90,7 +90,7 @@ public class ObserverBlock extends Class3433 {
 
    @Override
    public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.isIn(var4.getBlock()) && !var2.isRemote() && var1.<Boolean>get(field19200) && !var2.method6860().method20718(var3, this)) {
+      if (!var1.isIn(var4.getBlock()) && !var2.isRemote() && var1.<Boolean>get(field19200) && !var2.getBlockTickScheduler().method20718(var3, this)) {
          BlockState var8 = var1.with(field19200, Boolean.valueOf(false));
          var2.setBlockState(var3, var8, 18);
          this.method12101(var2, var3, var8);
@@ -99,7 +99,7 @@ public class ObserverBlock extends Class3433 {
 
    @Override
    public void onReplaced(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.isIn(var4.getBlock()) && !var2.isRemote && var1.<Boolean>get(field19200) && var2.method6860().method20718(var3, this)) {
+      if (!var1.isIn(var4.getBlock()) && !var2.isRemote && var1.<Boolean>get(field19200) && var2.getBlockTickScheduler().method20718(var3, this)) {
          this.method12101(var2, var3, var1.with(field19200, Boolean.valueOf(false)));
       }
    }

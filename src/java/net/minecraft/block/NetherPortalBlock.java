@@ -13,6 +13,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
@@ -24,7 +25,7 @@ import java.util.Random;
 
 public class NetherPortalBlock extends Block {
    private static String[] field19059;
-   public static final EnumProperty<Direction.Axis> field19060 = BlockStateProperties.field39712;
+   public static final EnumProperty<Direction.Axis> field19060 = BlockStateProperties.HORIZONTAL_AXIS;
    public static final VoxelShape field19061 = Block.makeCuboidShape(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
    public static final VoxelShape field19062 = Block.makeCuboidShape(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
 

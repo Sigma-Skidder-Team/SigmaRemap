@@ -61,8 +61,8 @@ public class EntitySpeed extends Module {
                 double var10 = Math.sin(Math.toRadians(var7));
                 this.field23546 = 2.75F;
                 float var12 = this.field23546;
-                if (mc.player.getRidingEntity() instanceof Class1074) {
-                    Class1074 var15 = (Class1074) mc.player.getRidingEntity();
+                if (mc.player.getRidingEntity() instanceof HorseEntity) {
+                    HorseEntity var15 = (HorseEntity) mc.player.getRidingEntity();
                     if (var15.onGround && mc.gameSettings.keyBindJump.isKeyDown()) {
                         mc.player.field6140 = 1.0F;
                     }

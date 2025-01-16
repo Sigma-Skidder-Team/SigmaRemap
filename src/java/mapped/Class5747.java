@@ -8,24 +8,24 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5747 extends Class5651<Class1098, Class2861<Class1098>> {
+public class Class5747 extends Class5651<CatEntity, Class2861<CatEntity>> {
    private static String[] field25171;
 
    public Class5747(EntityRendererManager var1) {
-      super(var1, new Class2861<Class1098>(0.0F), 0.4F);
+      super(var1, new Class2861<CatEntity>(0.0F), 0.4F);
       this.addLayer(new Class263(this));
    }
 
-   public ResourceLocation method17843(Class1098 var1) {
+   public ResourceLocation method17843(CatEntity var1) {
       return var1.method5249();
    }
 
-   public void method17857(Class1098 var1, MatrixStack var2, float var3) {
+   public void method17857(CatEntity var1, MatrixStack var2, float var3) {
       super.method17857(var1, var2, var3);
       var2.scale(0.8F, 0.8F, 0.8F);
    }
 
-   public void method17842(Class1098 var1, MatrixStack var2, float var3, float var4, float var5) {
+   public void method17842(CatEntity var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
       float var8 = var1.method5264(var5);
       if (var8 > 0.0F) {

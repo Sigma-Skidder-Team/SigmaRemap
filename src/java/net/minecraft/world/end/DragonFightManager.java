@@ -184,7 +184,7 @@ public class DragonFightManager {
 
       List var4 = this.field33538.method6913();
       if (!var4.isEmpty()) {
-         Class1007 var5 = (Class1007)var4.get(0);
+         EnderDragonEntity var5 = (EnderDragonEntity)var4.get(0);
          this.field33547 = var5.getUniqueID();
          LOGGER.info("Found that there's a dragon still alive ({})", var5);
          this.field33545 = false;
@@ -206,7 +206,7 @@ public class DragonFightManager {
       List var3 = this.field33538.method6913();
       if (!var3.isEmpty()) {
          LOGGER.debug("Haven't seen our dragon, but found another one to use.");
-         this.field33547 = ((Class1007)var3.get(0)).getUniqueID();
+         this.field33547 = ((EnderDragonEntity)var3.get(0)).getUniqueID();
       } else {
          LOGGER.debug("Haven't seen the dragon, respawning it");
          this.method26123();
@@ -223,7 +223,7 @@ public class DragonFightManager {
          } else {
             this.field33550 = null;
             this.field33545 = false;
-            Class1007 var4 = this.method26123();
+            EnderDragonEntity var4 = this.method26123();
 
             for (ServerPlayerEntity var6 : this.bossInfo.getPlayers()) {
                CriteriaTriggers.field44478.method15080(var6, var4);
@@ -270,7 +270,7 @@ public class DragonFightManager {
          }
       }
 
-      int var10 = this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994).getY();
+      int var10 = this.field33538.getTopPosition(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994).getY();
 
       for (int var11 = var10; var11 >= 0; var11--) {
          Class9086 var12 = this.field33540
@@ -332,14 +332,14 @@ public class DragonFightManager {
       LOGGER.debug("Found {} end crystals still alive", this.field33542);
    }
 
-   public void method26119(Class1007 var1) {
+   public void method26119(EnderDragonEntity var1) {
       if (var1.getUniqueID().equals(this.field33547)) {
          this.bossInfo.setPercent(0.0F);
          this.bossInfo.setVisible(false);
          this.method26122(true);
          this.method26120();
          if (!this.field33546) {
-            this.field33538.setBlockState(this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994), Blocks.DRAGON_EGG.getDefaultState());
+            this.field33538.setBlockState(this.field33538.getTopPosition(Heightmap.Type.MOTION_BLOCKING, Class2909.field17994), Blocks.DRAGON_EGG.getDefaultState());
          }
 
          this.field33546 = true;
@@ -364,7 +364,7 @@ public class DragonFightManager {
    private void method26122(boolean var1) {
       Class2909 var4 = new Class2909(var1);
       if (this.field33549 == null) {
-         this.field33549 = this.field33538.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994).down();
+         this.field33549 = this.field33538.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994).down();
 
          while (this.field33538.getBlockState(this.field33549).isIn(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.getSeaLevel()) {
             this.field33549 = this.field33549.down();
@@ -374,9 +374,9 @@ public class DragonFightManager {
       var4.method11216(Class4698.field22290).func_242765_a(this.field33538, this.field33538.getChunkProvider().getChunkGenerator(), new Random(), this.field33549);
    }
 
-   private Class1007 method26123() {
+   private EnderDragonEntity method26123() {
       this.field33538.getChunkAt(new BlockPos(0, 128, 0));
-      Class1007 var3 = EntityType.ENDER_DRAGON.create(this.field33538);
+      EnderDragonEntity var3 = EntityType.ENDER_DRAGON.create(this.field33538);
       var3.method4336().method32671(Class9598.field44896);
       var3.setLocationAndAngles(0.0, 128.0, 0.0, this.field33538.rand.nextFloat() * 360.0F, 0.0F);
       this.field33538.addEntity(var3);
@@ -384,7 +384,7 @@ public class DragonFightManager {
       return var3;
    }
 
-   public void method26124(Class1007 var1) {
+   public void method26124(EnderDragonEntity var1) {
       if (var1.getUniqueID().equals(this.field33547)) {
          this.bossInfo.setPercent(var1.getHealth() / var1.method3075());
          this.field33541 = 0;
@@ -408,8 +408,8 @@ public class DragonFightManager {
       } else {
          this.method26118();
          Entity var5 = this.field33538.getEntityByUuid(this.field33547);
-         if (var5 instanceof Class1007) {
-            ((Class1007)var5).method4335(var1, var1.getPosition(), var2);
+         if (var5 instanceof EnderDragonEntity) {
+            ((EnderDragonEntity)var5).method4335(var1, var1.getPosition(), var2);
          }
       }
    }

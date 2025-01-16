@@ -313,7 +313,7 @@ public class ChunkSerializer {
       ITickList var29 = var1.getBlocksToBeTicked();
       if (!(var29 instanceof Class6806)) {
          if (!(var29 instanceof Class6801)) {
-            var6.put("TileTicks", var0.method6860().method20733(var4));
+            var6.put("TileTicks", var0.getBlockTickScheduler().method20733(var4));
          } else {
             var6.put("TileTicks", ((Class6801)var29).method20721());
          }

@@ -25,13 +25,13 @@ public class Items {
    public static final Item field37233 = method30154(Blocks.PODZOL, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37234 = method30154(Blocks.CRIMSON_NYLIUM, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37235 = method30154(Blocks.WARPED_NYLIUM, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37236 = method30154(Blocks.field36399, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37237 = method30154(Blocks.field36400, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37238 = method30154(Blocks.field36401, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37239 = method30154(Blocks.field36402, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37240 = method30154(Blocks.field36403, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37241 = method30154(Blocks.field36404, ItemGroup.BUILDING_BLOCKS);
-   public static final Item field37242 = method30154(Blocks.field36405, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37236 = method30154(Blocks.COBBLESTONE, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37237 = method30154(Blocks.OAK_PLANKS, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37238 = method30154(Blocks.SPRUCE_PLANKS, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37239 = method30154(Blocks.BIRCH_PLANKS, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37240 = method30154(Blocks.JUNGLE_PLANKS, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37241 = method30154(Blocks.ACACIA_PLANKS, ItemGroup.BUILDING_BLOCKS);
+   public static final Item field37242 = method30154(Blocks.DARK_OAK_PLANKS, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37243 = method30154(Blocks.field37091, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37244 = method30154(Blocks.field37092, ItemGroup.BUILDING_BLOCKS);
    public static final Item field37245 = method30154(Blocks.OAK_SAPLING, ItemGroup.field31666);
@@ -1233,7 +1233,7 @@ public class Items {
       new Class3298(Blocks.DRAGON_HEAD, Blocks.DRAGON_WALL_HEAD, new Item.Properties().method17779(ItemGroup.field31666).method17780(Class1978.field12886))
    );
    public static final Item field38064 = method30157(
-      "carrot_on_a_stick", new Class3317<Class1072>(new Item.Properties().method17777(25).method17779(ItemGroup.field31668), EntityType.PIG, 7)
+      "carrot_on_a_stick", new Class3317<PigEntity>(new Item.Properties().method17777(25).method17779(ItemGroup.field31668), EntityType.PIG, 7)
    );
    public static final Item field38065 = method30157(
       "warped_fungus_on_a_stick", new Class3317<StriderEntity>(new Item.Properties().method17777(100).method17779(ItemGroup.field31668), EntityType.STRIDER, 1)

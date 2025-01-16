@@ -77,7 +77,7 @@ public class Class2929 extends Class2898<Class4712> {
                      if (var30 == -1 && var3.nextInt(4) != 0) {
                         var1.setBlockState(var34, Blocks.field36526.getDefaultState(), 2);
                      } else {
-                        var1.setBlockState(var34, Blocks.field36399.getDefaultState(), 2);
+                        var1.setBlockState(var34, Blocks.COBBLESTONE.getDefaultState(), 2);
                      }
                   }
                }

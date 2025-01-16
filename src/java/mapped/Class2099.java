@@ -4,12 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 
 public enum Class2099 {
-   field13680(Blocks.field36400, "oak"),
-   field13681(Blocks.field36401, "spruce"),
-   field13682(Blocks.field36402, "birch"),
-   field13683(Blocks.field36403, "jungle"),
-   field13684(Blocks.field36404, "acacia"),
-   field13685(Blocks.field36405, "dark_oak");
+   field13680(Blocks.OAK_PLANKS, "oak"),
+   field13681(Blocks.SPRUCE_PLANKS, "spruce"),
+   field13682(Blocks.BIRCH_PLANKS, "birch"),
+   field13683(Blocks.JUNGLE_PLANKS, "jungle"),
+   field13684(Blocks.ACACIA_PLANKS, "acacia"),
+   field13685(Blocks.DARK_OAK_PLANKS, "dark_oak");
 
    private final String field13686;
    private final Block field13687;

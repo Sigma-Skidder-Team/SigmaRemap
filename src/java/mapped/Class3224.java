@@ -32,7 +32,7 @@ public class Class3224 extends Block implements IWaterLoggable {
 
    public void method11632(BlockState var1, IWorld var2, BlockPos var3) {
       if (!method11633(var1, var2, var3)) {
-         var2.method6860().scheduleTick(var3, this, 60 + var2.method6814().nextInt(40));
+         var2.getBlockTickScheduler().scheduleTick(var3, this, 60 + var2.method6814().nextInt(40));
       }
    }
 

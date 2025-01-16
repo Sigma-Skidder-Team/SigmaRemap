@@ -23,8 +23,8 @@ public class Class3521 implements Class3499<BlockParticleData> {
       } else {
          BlockPos var18 = new BlockPos(var3, var5, var7);
          int var19 = Minecraft.getInstance().getBlockColors().method29464(var17, var2, var18);
-         if (var17.getBlock() instanceof Class3213) {
-            var19 = ((Class3213)var17.getBlock()).method11601(var17, var2, var18);
+         if (var17.getBlock() instanceof FallingBlock) {
+            var19 = ((FallingBlock)var17.getBlock()).getColor(var17, var2, var18);
          }
 
          float var20 = (float)(var19 >> 16 & 0xFF) / 255.0F;

@@ -63,7 +63,7 @@ public class Class2903 extends Class2898<Class4733> {
       return method11229(var0, var1) || method11231(var0, var1) || method11228(var0, var1);
    }
 
-   private boolean method11234(Class1679 var1, Random var2, BlockPos var3, Set<BlockPos> var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
+   private boolean method11234(IWorldGenerationReader var1, Random var2, BlockPos var3, Set<BlockPos> var4, Set<BlockPos> var5, MutableBoundingBox var6, Class4733 var7) {
       int var10 = var7.field22416.method21066(var2);
       int var11 = var7.field22415.method20788(var2, var10, var7);
       int var12 = var10 - var11;
@@ -182,9 +182,9 @@ public class Class2903 extends Class2898<Class4733> {
             var23.method8377(var26, var16);
             if (!var3.contains(var23)) {
                BlockState var17 = var1.getBlockState(var23);
-               if (var17.method23462(BlockStateProperties.field39747)) {
+               if (var17.method23462(BlockStateProperties.DISTANCE)) {
                   ((Set)var7.get(0)).add(var23.toImmutable());
-                  method11232(var1, var23, var17.with(BlockStateProperties.field39747, Integer.valueOf(1)));
+                  method11232(var1, var23, var17.with(BlockStateProperties.DISTANCE, Integer.valueOf(1)));
                   if (var2.method38396(var23)) {
                      var8.method26718(
                         var23.getX() - var2.field45678, var23.getY() - var2.field45679, var23.getZ() - var2.field45680, true, true
@@ -208,10 +208,10 @@ public class Class2903 extends Class2898<Class4733> {
                var23.method8377(var30, var19);
                if (!var27.contains(var23) && !var28.contains(var23)) {
                   BlockState var20 = var1.getBlockState(var23);
-                  if (var20.method23462(BlockStateProperties.field39747)) {
-                     int var21 = var20.<Integer>get(BlockStateProperties.field39747);
+                  if (var20.method23462(BlockStateProperties.DISTANCE)) {
+                     int var21 = var20.<Integer>get(BlockStateProperties.DISTANCE);
                      if (var21 > var25 + 1) {
-                        BlockState var22 = var20.with(BlockStateProperties.field39747, Integer.valueOf(var25 + 1));
+                        BlockState var22 = var20.with(BlockStateProperties.DISTANCE, Integer.valueOf(var25 + 1));
                         method11232(var1, var23, var22);
                         if (var2.method38396(var23)) {
                            var8.method26718(

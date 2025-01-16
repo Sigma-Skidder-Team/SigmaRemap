@@ -1,5 +1,7 @@
 package net.minecraft.block;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.block.IGrowable;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -9,7 +11,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class PeonyBlock extends LargeFernBlock implements Class3196 {
+public class PeonyBlock extends LargeFernBlock implements IGrowable {
    private static String[] field19277;
 
    public PeonyBlock(Properties var1) {

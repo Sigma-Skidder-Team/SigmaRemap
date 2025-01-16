@@ -312,7 +312,7 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
    }
 
    private Class7999 method11040(Class7999 var1) {
-      Class1098.field6041
+      CatEntity.field6041
          .forEach((var1x, var2) -> var1.method27312(var2.getPath(), Class4460.method14100(Class7552.method24700().method24703(var2).method24717())));
       return var1;
    }

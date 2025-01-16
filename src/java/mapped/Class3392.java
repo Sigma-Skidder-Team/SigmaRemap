@@ -18,12 +18,12 @@ import java.util.Map;
 public class Class3392 extends Block {
    private static String[] field19017;
    private static final Direction[] field19018 = Direction.values();
-   public static final BooleanProperty field19019 = BlockStateProperties.field39716;
-   public static final BooleanProperty field19020 = BlockStateProperties.field39717;
-   public static final BooleanProperty field19021 = BlockStateProperties.field39718;
-   public static final BooleanProperty field19022 = BlockStateProperties.field39719;
-   public static final BooleanProperty field19023 = BlockStateProperties.field39714;
-   public static final BooleanProperty field19024 = BlockStateProperties.field39715;
+   public static final BooleanProperty field19019 = BlockStateProperties.NORTH;
+   public static final BooleanProperty field19020 = BlockStateProperties.EAST;
+   public static final BooleanProperty field19021 = BlockStateProperties.SOUTH;
+   public static final BooleanProperty field19022 = BlockStateProperties.WEST;
+   public static final BooleanProperty field19023 = BlockStateProperties.UP;
+   public static final BooleanProperty field19024 = BlockStateProperties.DOWN;
    public static final Map<Direction, BooleanProperty> field19025 = Util.<Map<Direction, BooleanProperty>>make(Maps.newEnumMap(Direction.class), var0 -> {
       var0.put(Direction.NORTH, field19019);
       var0.put(Direction.EAST, field19020);

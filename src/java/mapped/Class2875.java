@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class2875 extends Class2827<Class1007> {
+public class Class2875 extends Class2827<EnderDragonEntity> {
    private final ModelRenderer field17797;
    private final ModelRenderer field17798;
    private final ModelRenderer field17799;
@@ -25,7 +25,7 @@ public class Class2875 extends Class2827<Class1007> {
    private ModelRenderer field17814;
    private ModelRenderer field17815;
    private ModelRenderer field17816;
-   private Class1007 field17817;
+   private EnderDragonEntity field17817;
    private float field17818;
 
    public Class2875() {
@@ -120,12 +120,12 @@ public class Class2875 extends Class2827<Class1007> {
       this.field17815.method22670(this.field17816);
    }
 
-   public void setLivingAnimations(Class1007 var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(EnderDragonEntity var1, float var2, float var3, float var4) {
       this.field17817 = var1;
       this.field17818 = var4;
    }
 
-   public void setRotationAngles(Class1007 var1, float var2, float var3, float var4, float var5, float var6) {
+   public void setRotationAngles(EnderDragonEntity var1, float var2, float var3, float var4, float var5, float var6) {
    }
 
    @Override

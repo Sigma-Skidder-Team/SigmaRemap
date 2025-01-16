@@ -62,7 +62,7 @@ public class Class3272 extends Item implements IVanishable {
                if (!var2.isRemote) {
                   var1.damageItem(1, var7, var1x -> var1x.sendBreakAnimation(var3.getActiveHand()));
                   if (var9 == 0) {
-                     Class886 var10 = new Class886(var2, var7, var1);
+                     TridentEntity var10 = new TridentEntity(var2, var7, var1);
                      var10.method3463(var7, var7.rotationPitch, var7.rotationYaw, 0.0F, 2.5F + (float)var9 * 0.5F, 1.0F);
                      if (var7.abilities.isCreativeMode) {
                         var10.pickupStatus = AbstractArrowEntityPickupStatus.field14333;

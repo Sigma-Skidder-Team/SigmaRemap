@@ -48,7 +48,7 @@ public class Class7141 extends Class7139 {
                   int var17 = 2 + var2.nextInt(2);
 
                   for (int var18 = 0; var18 < var17; var18++) {
-                     Class1017 var19 = new Class1017(EntityType.BEE, var1.method6970());
+                     BeeEntity var19 = new BeeEntity(EntityType.BEE, var1.method6970());
                      var16.method3922(var19, false, var2.nextInt(599));
                   }
                }

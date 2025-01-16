@@ -53,7 +53,7 @@ public class Class7140 extends Class7139 {
       });
    }
 
-   private void method22275(Class1679 var1, BlockPos var2, BooleanProperty var3, Set<BlockPos> var4, MutableBoundingBox var5) {
+   private void method22275(IWorldGenerationReader var1, BlockPos var2, BooleanProperty var3, Set<BlockPos> var4, MutableBoundingBox var5) {
       this.method22273(var1, var2, var3, var4, var5);
       int var8 = 4;
 

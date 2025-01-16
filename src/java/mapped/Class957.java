@@ -152,10 +152,10 @@ public class Class957 extends Class956 implements ITickableTileEntity {
          if (this.field5374 != null) {
             BlockPos var4 = !this.field5375 ? this.method3878() : this.field5374;
             Entity var5;
-            if (!(var1 instanceof Class895)) {
+            if (!(var1 instanceof EnderPearlEntity)) {
                var5 = var1.method3415();
             } else {
-               Entity var6 = ((Class895)var1).method3460();
+               Entity var6 = ((EnderPearlEntity)var1).method3460();
                if (var6 instanceof ServerPlayerEntity) {
                   CriteriaTriggers.field44468.method15169((ServerPlayerEntity)var6, this.world.getBlockState(this.getPos()));
                }

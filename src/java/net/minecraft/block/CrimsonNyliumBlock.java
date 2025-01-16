@@ -1,5 +1,9 @@
 package net.minecraft.block;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.IGrowable;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -10,7 +14,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class CrimsonNyliumBlock extends Block implements Class3196 {
+public class CrimsonNyliumBlock extends Block implements IGrowable {
    private static String[] field18638;
 
    public CrimsonNyliumBlock(Properties var1) {

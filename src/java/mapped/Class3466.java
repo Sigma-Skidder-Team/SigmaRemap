@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 
 public class Class3466 extends Block implements IWaterLoggable {
    private static String[] field19307;
-   public static final BooleanProperty field19308 = BlockStateProperties.field39691;
+   public static final BooleanProperty field19308 = BlockStateProperties.HANGING;
    public static final BooleanProperty field19309 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field19310 = VoxelShapes.or(
       Block.makeCuboidShape(5.0, 0.0, 5.0, 11.0, 7.0, 11.0), Block.makeCuboidShape(6.0, 7.0, 6.0, 10.0, 9.0, 10.0)

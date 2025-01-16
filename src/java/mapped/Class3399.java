@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -27,7 +28,7 @@ import java.util.stream.Collectors;
 
 public class Class3399 extends AbstractFireBlock {
    private static String[] field19037;
-   public static final IntegerProperty field19038 = BlockStateProperties.field39743;
+   public static final IntegerProperty field19038 = BlockStateProperties.AGE6;
    public static final BooleanProperty field19039 = Class3392.field19019;
    public static final BooleanProperty field19040 = Class3392.field19020;
    public static final BooleanProperty field19041 = Class3392.field19021;
@@ -135,7 +136,7 @@ public class Class3399 extends AbstractFireBlock {
 
    @Override
    public void tick(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      var2.method6860().scheduleTick(var3, this, method12024(var2.rand));
+      var2.getBlockTickScheduler().scheduleTick(var3, this, method12024(var2.rand));
       if (var2.getGameRules().getBoolean(GameRules.field24223)) {
          if (!var1.isValidPosition(var2, var3)) {
             var2.removeBlock(var3, false);
@@ -282,7 +283,7 @@ public class Class3399 extends AbstractFireBlock {
    @Override
    public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       super.onBlockAdded(var1, var2, var3, var4, var5);
-      var2.method6860().scheduleTick(var3, this, method12024(var2.rand));
+      var2.getBlockTickScheduler().scheduleTick(var3, this, method12024(var2.rand));
    }
 
    private static int method12024(Random var0) {
@@ -301,12 +302,12 @@ public class Class3399 extends AbstractFireBlock {
 
    public static void method12026() {
       Class3399 var2 = (Class3399) Blocks.FIRE;
-      var2.method12025(Blocks.field36400, 5, 20);
-      var2.method12025(Blocks.field36401, 5, 20);
-      var2.method12025(Blocks.field36402, 5, 20);
-      var2.method12025(Blocks.field36403, 5, 20);
-      var2.method12025(Blocks.field36404, 5, 20);
-      var2.method12025(Blocks.field36405, 5, 20);
+      var2.method12025(Blocks.OAK_PLANKS, 5, 20);
+      var2.method12025(Blocks.SPRUCE_PLANKS, 5, 20);
+      var2.method12025(Blocks.BIRCH_PLANKS, 5, 20);
+      var2.method12025(Blocks.JUNGLE_PLANKS, 5, 20);
+      var2.method12025(Blocks.ACACIA_PLANKS, 5, 20);
+      var2.method12025(Blocks.DARK_OAK_PLANKS, 5, 20);
       var2.method12025(Blocks.field36839, 5, 20);
       var2.method12025(Blocks.field36840, 5, 20);
       var2.method12025(Blocks.field36841, 5, 20);

@@ -13,14 +13,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
 public class DaylightDetectorBlock extends Class3241 {
    private static String[] field18962;
-   public static final IntegerProperty field18963 = BlockStateProperties.field39759;
-   public static final BooleanProperty field18964 = BlockStateProperties.field39697;
+   public static final IntegerProperty field18963 = BlockStateProperties.POWER;
+   public static final BooleanProperty field18964 = BlockStateProperties.INVERTED;
    public static final VoxelShape field18965 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 6.0, 16.0);
 
    public DaylightDetectorBlock(Properties var1) {

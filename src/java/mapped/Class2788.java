@@ -6,11 +6,11 @@ import net.minecraft.util.math.BlockPos;
 
 public class Class2788 extends Class2785 {
    private static String[] field17405;
-   private final Class1097 field17415;
+   private final PandaEntity field17415;
    private int field17416;
-   public final Class1097 field17417;
+   public final PandaEntity field17417;
 
-   public Class2788(Class1097 var1, Class1097 var2, double var3) {
+   public Class2788(PandaEntity var1, PandaEntity var2, double var3) {
       super(var2, var3);
       this.field17417 = var1;
       this.field17415 = var2;
@@ -27,8 +27,8 @@ public class Class2788 extends Class2785 {
             this.field17415.method5187(32);
             this.field17416 = this.field17415.ticksExisted + 600;
             if (this.field17415.isServerWorld()) {
-               PlayerEntity var3 = this.field17409.method7188(Class1097.method5237(), this.field17415);
-               Class1097.method5238(this.field17415).method10824(var3);
+               PlayerEntity var3 = this.field17409.method7188(PandaEntity.method5237(), this.field17415);
+               PandaEntity.method5238(this.field17415).method10824(var3);
             }
          }
 

@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.util.math.MathHelper;
 
-public class Class2867<T extends Class1097> extends Class2866<T> {
+public class Class2867<T extends PandaEntity> extends Class2866<T> {
    private static String[] field17778;
    private float field17779;
    private float field17780;

@@ -5,9 +5,9 @@ import net.minecraft.util.math.vector.Vector3d;
 
 public class Class6839 extends Class6829 {
    private static String[] field29706;
-   public final Class1100 field29727;
+   public final VexEntity field29727;
 
-   public Class6839(Class1100 var1, Class1100 var2) {
+   public Class6839(VexEntity var1, VexEntity var2) {
       super(var2);
       this.field29727 = var1;
    }

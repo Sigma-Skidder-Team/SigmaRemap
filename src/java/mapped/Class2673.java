@@ -8,9 +8,9 @@ import net.minecraft.world.Difficulty;
 public class Class2673 extends Class2672 {
    private static String[] field17060;
    private int field17061;
-   public final Class1033 field17062;
+   public final IllusionerEntity field17062;
 
-   public Class2673(Class1033 var1) {
+   public Class2673(IllusionerEntity var1) {
       super(var1);
       this.field17062 = var1;
    }

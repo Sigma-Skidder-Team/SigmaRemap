@@ -1,6 +1,7 @@
 package net.minecraft.block;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 public class TwistingVinesPlantBlock extends Class3445 {
    private static String[] field19261;

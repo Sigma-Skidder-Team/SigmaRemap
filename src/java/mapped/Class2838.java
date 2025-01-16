@@ -434,13 +434,13 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11096(Blocks.POLISHED_ANDESITE);
       this.method11096(Blocks.DIRT);
       this.method11096(Blocks.COARSE_DIRT);
-      this.method11096(Blocks.field36399);
-      this.method11096(Blocks.field36400);
-      this.method11096(Blocks.field36401);
-      this.method11096(Blocks.field36402);
-      this.method11096(Blocks.field36403);
-      this.method11096(Blocks.field36404);
-      this.method11096(Blocks.field36405);
+      this.method11096(Blocks.COBBLESTONE);
+      this.method11096(Blocks.OAK_PLANKS);
+      this.method11096(Blocks.SPRUCE_PLANKS);
+      this.method11096(Blocks.BIRCH_PLANKS);
+      this.method11096(Blocks.JUNGLE_PLANKS);
+      this.method11096(Blocks.ACACIA_PLANKS);
+      this.method11096(Blocks.DARK_OAK_PLANKS);
       this.method11096(Blocks.OAK_SAPLING);
       this.method11096(Blocks.SPRUCE_SAPLING);
       this.method11096(Blocks.BIRCH_SAPLING);
@@ -833,7 +833,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11094(Blocks.GRASS_PATH, Blocks.DIRT);
       this.method11094(Blocks.KELP_PLANT, Blocks.KELP);
       this.method11094(Blocks.BAMBOO_SAPLING, Blocks.BAMBOO);
-      this.method11097(Blocks.STONE, var0 -> method11066(var0, Blocks.field36399));
+      this.method11097(Blocks.STONE, var0 -> method11066(var0, Blocks.COBBLESTONE));
       this.method11097(Blocks.GRASS_BLOCK, var0 -> method11066(var0, Blocks.DIRT));
       this.method11097(Blocks.PODZOL, var0 -> method11066(var0, Blocks.DIRT));
       this.method11097(Blocks.MYCELIUM, var0 -> method11066(var0, Blocks.DIRT));
@@ -1434,7 +1434,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11095(Blocks.FIRE_CORAL_FAN);
       this.method11095(Blocks.HORN_CORAL_FAN);
       this.method11093(Blocks.INFESTED_STONE, Blocks.STONE);
-      this.method11093(Blocks.INFESTED_COBBLESTONE, Blocks.field36399);
+      this.method11093(Blocks.INFESTED_COBBLESTONE, Blocks.COBBLESTONE);
       this.method11093(Blocks.INFESTED_STONE_BRICKS, Blocks.field36615);
       this.method11093(Blocks.INFESTED_MOSSY_STONE_BRICKS, Blocks.field36616);
       this.method11093(Blocks.INFESTED_CRACKED_STONE_BRICKS, Blocks.field36617);

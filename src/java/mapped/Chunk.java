@@ -494,8 +494,8 @@ public class Chunk implements IChunk {
                   var3.add(var14);
                }
 
-               if (var14 instanceof Class1007) {
-                  for (EnderDragonPartEntity var18 : ((Class1007)var14).method4332()) {
+               if (var14 instanceof EnderDragonEntity) {
+                  for (EnderDragonPartEntity var18 : ((EnderDragonEntity)var14).method4332()) {
                      if (var18 != var1 && var18.getBoundingBox().method19670(var2) && (var4 == null || var4.test(var18))) {
                         var3.add(var18);
                      }
@@ -771,11 +771,11 @@ public class Chunk implements IChunk {
    public void method7150() {
       if (!(this.field9124 instanceof Class6806)) {
          if (this.field9124 instanceof Class6801) {
-            ((Class6801)this.field9124).method20723(this.field9116.method6860());
+            ((Class6801)this.field9124).method20723(this.field9116.getBlockTickScheduler());
             this.field9124 = Class6804.method20727();
          }
       } else {
-         ((Class6806<Block>)this.field9124).method20738(this.field9116.method6860(), var1 -> this.getBlockState(var1).getBlock());
+         ((Class6806<Block>)this.field9124).method20738(this.field9116.getBlockTickScheduler(), var1 -> this.getBlockState(var1).getBlock());
          this.field9124 = Class6804.method20727();
       }
 
@@ -793,7 +793,7 @@ public class Chunk implements IChunk {
    public void method7151(ServerWorld var1) {
       if (this.field9124 == Class6804.<Block>method20727()) {
          this.field9124 = new Class6801<>(
-                 Registry.BLOCK::getKey, var1.method6860().method20729(this.field9132, true, false), var1.getGameTime()
+                 Registry.BLOCK::getKey, var1.getBlockTickScheduler().method20729(this.field9132, true, false), var1.getGameTime()
          );
          this.setModified(true);
       }

@@ -69,7 +69,7 @@ public class Class3341 extends Item {
          if (var1 instanceof ServerWorld) {
             BlockPos var8 = ((ServerWorld)var1).getChunkProvider().getChunkGenerator().func_235956_a_((ServerWorld)var1, Structure.STRONGHOLD, var2.getPosition(), 100, false);
             if (var8 != null) {
-               Class897 var9 = new Class897(var1, var2.getPosX(), var2.getPosYHeight(0.5), var2.getPosZ());
+               EyeOfEnderEntity var9 = new EyeOfEnderEntity(var1, var2.getPosX(), var2.getPosYHeight(0.5), var2.getPosZ());
                var9.method3522(var6);
                var9.method3524(var8);
                var1.addEntity(var9);

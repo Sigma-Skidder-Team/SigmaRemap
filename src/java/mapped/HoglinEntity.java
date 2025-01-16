@@ -227,7 +227,7 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
    }
 
    private void method5083(ServerWorld var1) {
-      Class1093 var4 = this.<Class1093>method4292(EntityType.ZOGLIN, true);
+      ZoglinEntity var4 = this.<ZoglinEntity>method4292(EntityType.ZOGLIN, true);
       if (var4 != null) {
          var4.addPotionEffect(new EffectInstance(Effects.NAUSEA, 200, 0));
       }

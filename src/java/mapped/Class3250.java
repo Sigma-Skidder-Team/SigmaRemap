@@ -42,8 +42,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class Class3250 extends HorizontalBlock implements Class3245 {
-   public static final EnumProperty<BedPart> field18713 = BlockStateProperties.field39764;
-   public static final BooleanProperty field18714 = BlockStateProperties.field39701;
+   public static final EnumProperty<BedPart> field18713 = BlockStateProperties.PART;
+   public static final BooleanProperty field18714 = BlockStateProperties.OCCUPIED;
    public static final VoxelShape field18715 = Block.makeCuboidShape(0.0, 3.0, 0.0, 16.0, 9.0, 16.0);
    public static final VoxelShape field18716 = Block.makeCuboidShape(0.0, 0.0, 0.0, 3.0, 3.0, 3.0);
    public static final VoxelShape field18717 = Block.makeCuboidShape(0.0, 0.0, 13.0, 3.0, 3.0, 16.0);
@@ -123,9 +123,9 @@ public class Class3250 extends HorizontalBlock implements Class3245 {
    }
 
    private boolean method11680(World var1, BlockPos var2) {
-      List var5 = var1.<Class1042>getEntitiesInAABBexcluding(Class1042.class, new AxisAlignedBB(var2), LivingEntity::isSleeping);
+      List var5 = var1.<VillagerEntity>getEntitiesInAABBexcluding(VillagerEntity.class, new AxisAlignedBB(var2), LivingEntity::isSleeping);
       if (!var5.isEmpty()) {
-         ((Class1042)var5.get(0)).wakeUp();
+         ((VillagerEntity)var5.get(0)).wakeUp();
          return true;
       } else {
          return false;

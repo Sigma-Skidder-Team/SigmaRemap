@@ -144,17 +144,17 @@ public class TargetHUD extends Module {
             Class5743 var5 = new Class5743(var4);
             float var6 = 150;
             UUID uuidForSkin = this.entity.getUniqueID();
-            if (!(this.entity instanceof Class1087)) {
+            if (!(this.entity instanceof CowEntity)) {
                 if (!(this.entity instanceof ZombieEntity)) {
                     if (!(this.entity instanceof EndermanEntity)) {
-                        if (!(this.entity instanceof Class1085)) {
-                            if (!(this.entity instanceof Class1085)) {
-                                if (!(this.entity instanceof Class1081)) {
-                                    if (!(this.entity instanceof Class1072)) {
-                                        if (!(this.entity instanceof Class1019)) {
-                                            if (!(this.entity instanceof Class1089)) {
-                                                if (!(this.entity instanceof Class1074)) {
-                                                    if (!(this.entity instanceof Class1098)) {
+                        if (!(this.entity instanceof SkeletonEntity)) {
+                            if (!(this.entity instanceof SkeletonEntity)) {
+                                if (!(this.entity instanceof CreeperEntity)) {
+                                    if (!(this.entity instanceof PigEntity)) {
+                                        if (!(this.entity instanceof SheepEntity)) {
+                                            if (!(this.entity instanceof ChickenEntity)) {
+                                                if (!(this.entity instanceof HorseEntity)) {
+                                                    if (!(this.entity instanceof CatEntity)) {
                                                         if (!(this.entity instanceof WolfEntity)) {
                                                             if (!(this.entity instanceof SquidEntity)) {
                                                                 if (this.entity instanceof SalmonEntity) {

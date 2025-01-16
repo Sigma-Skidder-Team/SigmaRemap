@@ -5,12 +5,12 @@ import net.minecraft.util.math.BlockPos;
 
 public abstract class Class2692 extends Class2595 {
    private final Class8522 field17132;
-   public final Class1095 field17133;
+   public final FoxEntity field17133;
 
-   public Class2692(Class1095 var1) {
+   public Class2692(FoxEntity var1) {
       this.field17133 = var1;
       Class8522 var10001 = new Class8522().method30203(12.0).method30206();
-      Class1095 var10004 = this.field17133;
+      FoxEntity var10004 = this.field17133;
       this.field17133.getClass();
       this.field17132 = var10001.method30209(new Class168(var10004));
    }

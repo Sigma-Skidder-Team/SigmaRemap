@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class Class3717 extends Class3676<Class1042> {
+public class Class3717 extends Class3676<VillagerEntity> {
    private static String[] field19794;
    private static final Map<Class8395, ResourceLocation> field19795 = Util.<Map<Class8395, ResourceLocation>>make(Maps.newHashMap(), var0 -> {
       var0.put(Class8395.field36012, Class8793.field39596);
@@ -53,7 +53,7 @@ public class Class3717 extends Class3676<Class1042> {
       );
    }
 
-   public boolean method12508(ServerWorld var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, VillagerEntity var2) {
       if (this.method12606(var2)) {
          if (this.field19796 <= 0) {
             return true;
@@ -66,7 +66,7 @@ public class Class3717 extends Class3676<Class1042> {
       }
    }
 
-   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
       this.field19797 = false;
       this.field19798 = var3;
       PlayerEntity var7 = this.method12607(var2).get();
@@ -74,11 +74,11 @@ public class Class3717 extends Class3676<Class1042> {
       Class6983.method21574(var2, var7);
    }
 
-   public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
+   public boolean method12499(ServerWorld var1, VillagerEntity var2, long var3) {
       return this.method12606(var2) && !this.field19797;
    }
 
-   public void method12504(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12504(ServerWorld var1, VillagerEntity var2, long var3) {
       PlayerEntity var7 = this.method12607(var2).get();
       Class6983.method21574(var2, var7);
       if (!this.method12609(var2, var7)) {
@@ -89,20 +89,20 @@ public class Class3717 extends Class3676<Class1042> {
       }
    }
 
-   public void method12506(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
       this.field19796 = method12610(var1);
       var2.getBrain().method21405(Class8830.field39828);
       var2.getBrain().method21405(Class8830.field39824);
       var2.getBrain().method21405(Class8830.field39825);
    }
 
-   private void method12604(Class1042 var1, LivingEntity var2) {
+   private void method12604(VillagerEntity var1, LivingEntity var2) {
       for (ItemStack var6 : this.method12605(var1)) {
          Class6983.method21578(var1, var6, var2.getPositionVec());
       }
    }
 
-   private List<ItemStack> method12605(Class1042 var1) {
+   private List<ItemStack> method12605(VillagerEntity var1) {
       if (!var1.isChild()) {
          Class8395 var4 = var1.method4674().method26571();
          if (!field19795.containsKey(var4)) {
@@ -120,11 +120,11 @@ public class Class3717 extends Class3676<Class1042> {
       }
    }
 
-   private boolean method12606(Class1042 var1) {
+   private boolean method12606(VillagerEntity var1) {
       return this.method12607(var1).isPresent();
    }
 
-   private Optional<PlayerEntity> method12607(Class1042 var1) {
+   private Optional<PlayerEntity> method12607(VillagerEntity var1) {
       return var1.getBrain().<PlayerEntity>method21410(Class8830.field39822).filter(this::method12608);
    }
 
@@ -132,7 +132,7 @@ public class Class3717 extends Class3676<Class1042> {
       return var1.isPotionActive(Effects.HERO_OF_THE_VILLAGE);
    }
 
-   private boolean method12609(Class1042 var1, PlayerEntity var2) {
+   private boolean method12609(VillagerEntity var1, PlayerEntity var2) {
       BlockPos var5 = var2.getPosition();
       BlockPos var6 = var1.getPosition();
       return var6.method8316(var5, 5.0);

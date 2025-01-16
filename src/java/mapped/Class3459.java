@@ -33,7 +33,7 @@ public class Class3459 extends Block {
    private static String[] field19280;
    public static final DirectionProperty field19281 = HorizontalBlock.HORIZONTAL_FACING;
    public static final BooleanProperty field19282 = BlockStateProperties.POWERED;
-   public static final BooleanProperty field19283 = BlockStateProperties.field39682;
+   public static final BooleanProperty field19283 = BlockStateProperties.ATTACHED;
    public static final VoxelShape field19284 = Block.makeCuboidShape(5.0, 0.0, 10.0, 11.0, 10.0, 16.0);
    public static final VoxelShape field19285 = Block.makeCuboidShape(5.0, 0.0, 0.0, 11.0, 10.0, 6.0);
    public static final VoxelShape field19286 = Block.makeCuboidShape(10.0, 0.0, 5.0, 16.0, 10.0, 11.0);
@@ -138,7 +138,7 @@ public class Class3459 extends Block {
             var14 |= var20 && var21;
             var16[var17] = var19;
             if (var17 == var6) {
-               var1.method6860().scheduleTick(var2, this, 10);
+               var1.getBlockTickScheduler().scheduleTick(var2, this, 10);
                var13 &= var20;
             }
          }

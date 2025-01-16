@@ -49,7 +49,7 @@ public abstract class Class3247 extends HorizontalBlock {
          } else if (!var7) {
             var2.setBlockState(var3, var1.with(field18708, Boolean.valueOf(true)), 2);
             if (!var8) {
-               var2.method6860().method20719(var3, this, this.method11658(var1), Class2199.field14368);
+               var2.getBlockTickScheduler().method20719(var3, this, this.method11658(var1), Class2199.field14368);
             }
          }
       }
@@ -88,7 +88,7 @@ public abstract class Class3247 extends HorizontalBlock {
       if (!this.method11667(var1, var2, var3)) {
          boolean var6 = var3.<Boolean>get(field18708);
          boolean var7 = this.method11661(var1, var2, var3);
-         if (var6 != var7 && !var1.method6860().method20720(var2, this)) {
+         if (var6 != var7 && !var1.getBlockTickScheduler().method20720(var2, this)) {
             Class2199 var8 = Class2199.field14369;
             if (!this.method11673(var1, var2, var3)) {
                if (var6) {
@@ -98,7 +98,7 @@ public abstract class Class3247 extends HorizontalBlock {
                var8 = Class2199.field14367;
             }
 
-            var1.method6860().method20719(var2, this, this.method11658(var3), var8);
+            var1.getBlockTickScheduler().method20719(var2, this, this.method11658(var3), var8);
          }
       }
    }
@@ -154,7 +154,7 @@ public abstract class Class3247 extends HorizontalBlock {
    @Override
    public void method11563(World var1, BlockPos var2, BlockState var3, LivingEntity var4, ItemStack var5) {
       if (this.method11661(var1, var2, var3)) {
-         var1.method6860().scheduleTick(var2, this, 1);
+         var1.getBlockTickScheduler().scheduleTick(var2, this, 1);
       }
    }
 

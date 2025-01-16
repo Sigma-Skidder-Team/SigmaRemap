@@ -16,7 +16,7 @@ import net.minecraft.world.IWorldReader;
 
 public class CrimsonSignBlock extends Class3373 {
    private static String[] field18969;
-   public static final IntegerProperty field18970 = BlockStateProperties.field39763;
+   public static final IntegerProperty field18970 = BlockStateProperties.ROTATION;
 
    public CrimsonSignBlock(Properties var1, Class9673 var2) {
       super(var1, var2);

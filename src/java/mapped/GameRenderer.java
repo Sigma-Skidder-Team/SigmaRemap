@@ -169,8 +169,8 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       }
 
       this.shaderGroup = null;
-      if (!(var1 instanceof Class1081)) {
-         if (!(var1 instanceof Class1101)) {
+      if (!(var1 instanceof CreeperEntity)) {
+         if (!(var1 instanceof SpiderEntity)) {
             if (!(var1 instanceof EndermanEntity)) {
                if (Reflector.field42880.exists()) {
                   Reflector.method35062(Reflector.field42880, var1, this);

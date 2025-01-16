@@ -24,7 +24,7 @@ import java.util.Random;
 
 public class Class3220 extends Block {
    private static String[] field18639;
-   public static final IntegerProperty field18640 = BlockStateProperties.field39743;
+   public static final IntegerProperty field18640 = BlockStateProperties.AGE6;
    public static final VoxelShape field18641 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 15.0, 15.0);
    public static final VoxelShape field18642 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 
@@ -77,7 +77,7 @@ public class Class3220 extends Block {
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (!var1.isValidPosition(var4, var5)) {
-         var4.method6860().scheduleTick(var5, this, 1);
+         var4.getBlockTickScheduler().scheduleTick(var5, this, 1);
       }
 
       return super.updatePostPlacement(var1, var2, var3, var4, var5, var6);

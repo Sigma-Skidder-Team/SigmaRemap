@@ -36,12 +36,12 @@ public class Class4454 extends Class4441<Block> {
          );
       this.method14014(BlockTags.field32735)
          .method31560(
-            Blocks.field36400,
-            Blocks.field36401,
-            Blocks.field36402,
-            Blocks.field36403,
-            Blocks.field36404,
-            Blocks.field36405,
+            Blocks.OAK_PLANKS,
+            Blocks.SPRUCE_PLANKS,
+            Blocks.BIRCH_PLANKS,
+            Blocks.JUNGLE_PLANKS,
+            Blocks.ACACIA_PLANKS,
+            Blocks.DARK_OAK_PLANKS,
             Blocks.field37091,
             Blocks.field37092
          );

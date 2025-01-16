@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 
 public class Class3470 extends Class3468 {
    private static String[] field19319;
-   public static final IntegerProperty field19320 = BlockStateProperties.field39759;
+   public static final IntegerProperty field19320 = BlockStateProperties.POWER;
    private final int field19321;
 
    public Class3470(int var1, Properties var2) {

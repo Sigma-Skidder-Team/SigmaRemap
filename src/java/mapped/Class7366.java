@@ -11,7 +11,7 @@ public class Class7366 extends Class7361 {
    private static String[] field31530;
    private Vector3d field31531;
 
-   public Class7366(Class1007 var1) {
+   public Class7366(EnderDragonEntity var1) {
       super(var1);
    }
 
@@ -47,7 +47,7 @@ public class Class7366 extends Class7361 {
    @Override
    public void method23360() {
       if (this.field31531 == null) {
-         this.field31531 = Vector3d.method11330(this.field31519.world.method7006(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994));
+         this.field31531 = Vector3d.method11330(this.field31519.world.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994));
       }
 
       if (this.field31531.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ()) < 1.0) {

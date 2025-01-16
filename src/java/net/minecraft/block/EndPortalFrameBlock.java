@@ -13,12 +13,13 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class EndPortalFrameBlock extends Block {
    public static final DirectionProperty field19053 = HorizontalBlock.HORIZONTAL_FACING;
-   public static final BooleanProperty field19054 = BlockStateProperties.field39689;
+   public static final BooleanProperty field19054 = BlockStateProperties.EYE;
    public static final VoxelShape field19055 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 13.0, 16.0);
    public static final VoxelShape field19056 = Block.makeCuboidShape(4.0, 13.0, 4.0, 12.0, 16.0, 12.0);
    public static final VoxelShape field19057 = VoxelShapes.or(field19055, field19056);

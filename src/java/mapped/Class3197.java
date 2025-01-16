@@ -1,9 +1,6 @@
 package mapped;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.HorizontalBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
@@ -25,7 +22,7 @@ import java.util.Random;
 
 public class Class3197 extends HorizontalBlock implements IGrowable {
    private static String[] field18478;
-   public static final IntegerProperty field18479 = BlockStateProperties.field39739;
+   public static final IntegerProperty field18479 = BlockStateProperties.AGE2;
    public static final VoxelShape[] field18480 = new VoxelShape[]{
       Block.makeCuboidShape(11.0, 7.0, 6.0, 15.0, 12.0, 10.0),
       Block.makeCuboidShape(9.0, 5.0, 5.0, 15.0, 12.0, 11.0),

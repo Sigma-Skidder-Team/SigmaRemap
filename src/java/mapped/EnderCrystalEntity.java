@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
@@ -84,7 +85,7 @@ public class EnderCrystalEntity extends Entity {
    @Override
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.isInvulnerableTo(var1)) {
-         if (!(var1.getTrueSource() instanceof Class1007)) {
+         if (!(var1.getTrueSource() instanceof EnderDragonEntity)) {
             if (!this.removed && !this.world.isRemote) {
                this.remove();
                if (!var1.method31131()) {

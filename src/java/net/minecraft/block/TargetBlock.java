@@ -23,7 +23,7 @@ import java.util.Random;
 
 public class TargetBlock extends Block {
    private static String[] field19031;
-   private static final IntegerProperty field19032 = BlockStateProperties.field39759;
+   private static final IntegerProperty field19032 = BlockStateProperties.POWER;
 
    public TargetBlock(Properties var1) {
       super(var1);
@@ -44,7 +44,7 @@ public class TargetBlock extends Block {
    private static int method12006(IWorld var0, BlockState var1, BlockRayTraceResult var2, Entity var3) {
       int var6 = method12007(var2, var2.getHitVec());
       int var7 = !(var3 instanceof AbstractArrowEntity) ? 8 : 20;
-      if (!var0.method6860().method20718(var2.getPos(), var1.getBlock())) {
+      if (!var0.getBlockTickScheduler().method20718(var2.getPos(), var1.getBlock())) {
          method12008(var0, var1, var6, var2.getPos(), var7);
       }
 
@@ -73,7 +73,7 @@ public class TargetBlock extends Block {
 
    private static void method12008(IWorld var0, BlockState var1, int var2, BlockPos var3, int var4) {
       var0.setBlockState(var3, var1.with(field19032, Integer.valueOf(var2)), 3);
-      var0.method6860().scheduleTick(var3, var1.getBlock(), var4);
+      var0.getBlockTickScheduler().scheduleTick(var3, var1.getBlock(), var4);
    }
 
    @Override
@@ -103,7 +103,7 @@ public class TargetBlock extends Block {
       if (!var2.isRemote()
          && !var1.isIn(var4.getBlock())
          && var1.<Integer>get(field19032) > 0
-         && !var2.method6860().method20718(var3, this)) {
+         && !var2.getBlockTickScheduler().method20718(var3, this)) {
          var2.setBlockState(var3, var1.with(field19032, Integer.valueOf(0)), 18);
       }
    }

@@ -13,6 +13,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -22,7 +23,7 @@ import java.util.Random;
 
 public class ComposterBlock extends Block implements Class3476 {
    private static String[] field19325;
-   public static final IntegerProperty field19326 = BlockStateProperties.field39752;
+   public static final IntegerProperty field19326 = BlockStateProperties.LEVEL_3;
    public static final Object2FloatMap<IItemProvider> field19327 = new Object2FloatOpenHashMap();
    private static final VoxelShape field19328 = VoxelShapes.method27426();
    private static final VoxelShape[] field19329 = Util.<VoxelShape[]>make(
@@ -186,7 +187,7 @@ public class ComposterBlock extends Block implements Class3476 {
    @Override
    public void onBlockAdded(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (var1.<Integer>get(field19326) == 7) {
-         var2.method6860().scheduleTick(var3, var1.getBlock(), 20);
+         var2.getBlockTickScheduler().scheduleTick(var3, var1.getBlock(), 20);
       }
    }
 
@@ -257,7 +258,7 @@ public class ComposterBlock extends Block implements Class3476 {
          BlockState var9 = var0.with(field19326, Integer.valueOf(var8));
          var1.setBlockState(var2, var9, 3);
          if (var8 == 7) {
-            var1.method6860().scheduleTick(var2, var0.getBlock(), 20);
+            var1.getBlockTickScheduler().scheduleTick(var2, var0.getBlock(), 20);
          }
 
          return var9;

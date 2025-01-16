@@ -11,13 +11,15 @@ import net.minecraft.world.chunk.AbstractChunkProvider;
 
 import java.util.Random;
 
-public interface IWorld extends Class1678, Class1661 {
+public interface IWorld extends IBiomeReader, IDayTimeReader {
+   // Searge: func_241851_ab
    @Override
-   default long method6996() {
+   default long getLunarTime() {
       return this.getWorldInfo().getDayTime();
    }
 
-   ITickList<Block> method6860();
+   // Searge: func_205220_G_
+   ITickList<Block> getBlockTickScheduler();
 
    ITickList<Fluid> getPendingFluidTicks();
 

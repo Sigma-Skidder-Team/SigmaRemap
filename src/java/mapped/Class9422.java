@@ -177,7 +177,7 @@ public class Class9422 {
          } else if (var7 == Blocks.PODZOL) {
             return method36151(var0, var1, var2, var3, var4);
          } else if (var7 != Blocks.DIRT) {
-            return !(var7 instanceof Class3473) ? var4 : method36153(var0, var1, var2, var3, var4);
+            return !(var7 instanceof GrassBlock) ? var4 : method36153(var0, var1, var2, var3, var4);
          } else {
             return method36152(var0, var1, var2, var3, var4);
          }

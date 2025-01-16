@@ -258,6 +258,6 @@ public class DoorBlock extends Block {
    }
 
    public static boolean method12145(BlockState var0) {
-      return var0.getBlock() instanceof DoorBlock && (var0.getMaterial() == Material.field38956 || var0.getMaterial() == Material.field38957);
+      return var0.getBlock() instanceof DoorBlock && (var0.getMaterial() == Material.PLANKS || var0.getMaterial() == Material.field38957);
    }
 }

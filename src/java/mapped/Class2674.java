@@ -11,9 +11,9 @@ import net.minecraft.util.math.shapes.VoxelShape;
 
 public class Class2674 extends Class2672 {
    private static String[] field17063;
-   public final Class1032 field17064;
+   public final EvokerEntity field17064;
 
-   Class2674(Class1032 var1) {
+   Class2674(EvokerEntity var1) {
       super(var1);
       this.field17064 = var1;
    }
@@ -105,7 +105,7 @@ public class Class2674 extends Class2672 {
       if (var14) {
          this.field17064
             .world
-            .addEntity(new Class915(this.field17064.world, var1, (double)var13.getY() + var15, var3, var9, var10, this.field17064));
+            .addEntity(new EvokerFangsEntity(this.field17064.world, var1, (double)var13.getY() + var15, var3, var9, var10, this.field17064));
       }
    }
 

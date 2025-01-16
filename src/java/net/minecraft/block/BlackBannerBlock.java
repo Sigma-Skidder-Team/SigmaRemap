@@ -11,6 +11,7 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -19,7 +20,7 @@ import java.util.Map;
 
 public class BlackBannerBlock extends Class3359 {
    private static String[] field18905;
-   public static final IntegerProperty field18906 = BlockStateProperties.field39763;
+   public static final IntegerProperty field18906 = BlockStateProperties.ROTATION;
    private static final Map<Class112, Block> field18907 = Maps.newHashMap();
    private static final VoxelShape field18908 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
 

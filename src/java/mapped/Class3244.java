@@ -41,8 +41,8 @@ import java.util.Random;
 public class Class3244 extends Class3241 implements IWaterLoggable {
    private static String[] field18696;
    public static final VoxelShape field18697 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 7.0, 16.0);
-   public static final BooleanProperty field18698 = BlockStateProperties.field39699;
-   public static final BooleanProperty field18699 = BlockStateProperties.field39706;
+   public static final BooleanProperty field18698 = BlockStateProperties.LIT;
+   public static final BooleanProperty field18699 = BlockStateProperties.SIGNAL_FIRE;
    public static final BooleanProperty field18700 = BlockStateProperties.WATERLOGGED;
    public static final DirectionProperty field18701 = BlockStateProperties.HORIZONTAL_FACING;
    private static final VoxelShape field18702 = Block.makeCuboidShape(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
@@ -214,7 +214,7 @@ public class Class3244 extends Class3241 implements IWaterLoggable {
          boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.getGameRules().getBoolean(GameRules.field24224);
          if (var8 && !var2.<Boolean>get(field18698) && !var2.<Boolean>get(field18700)) {
             BlockPos var9 = var3.getPos();
-            var1.setBlockState(var9, var2.with(BlockStateProperties.field39699, Boolean.valueOf(true)), 11);
+            var1.setBlockState(var9, var2.with(BlockStateProperties.LIT, Boolean.valueOf(true)), 11);
          }
       }
    }
@@ -298,8 +298,8 @@ public class Class3244 extends Class3241 implements IWaterLoggable {
    }
 
    public static boolean method11656(BlockState var0) {
-      return var0.method23447(BlockTags.field32809, var0x -> var0x.method23462(BlockStateProperties.WATERLOGGED) && var0x.method23462(BlockStateProperties.field39699))
+      return var0.method23447(BlockTags.field32809, var0x -> var0x.method23462(BlockStateProperties.WATERLOGGED) && var0x.method23462(BlockStateProperties.LIT))
          && !var0.<Boolean>get(BlockStateProperties.WATERLOGGED)
-         && !var0.<Boolean>get(BlockStateProperties.field39699);
+         && !var0.<Boolean>get(BlockStateProperties.LIT);
    }
 }

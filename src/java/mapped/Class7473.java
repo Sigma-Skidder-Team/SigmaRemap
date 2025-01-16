@@ -189,7 +189,7 @@ public class Class7473 {
    public static PortalInfo method24207(ServerWorld var0, TeleportationRepositioner var1, Direction.Axis var2, Vector3d var3, EntitySize var4, Vector3d var5, float var6, float var7) {
       BlockPos var10 = var1.field44253;
       BlockState var11 = var0.getBlockState(var10);
-      Direction.Axis var12 = var11.<Direction.Axis>get(BlockStateProperties.field39712);
+      Direction.Axis var12 = var11.<Direction.Axis>get(BlockStateProperties.HORIZONTAL_AXIS);
       double var13 = (double)var1.field44254;
       double var15 = (double)var1.field44255;
       int var17 = var2 != var12 ? 90 : 0;

@@ -359,7 +359,7 @@ public class DataFixesManager {
       Schema var97 = var0.addSchema(1963, field21709);
       var0.addFixer(new Class6727(var97, false));
       Schema var98 = var0.addSchema(2100, Class3638::new);
-      var0.addFixer(new Class7335(var98, "Added Bee and Bee Stinger", TypeReferences.ENTITY));
+      var0.addFixer(new Class7335(var98, "Added Thingy and Thingy Stinger", TypeReferences.ENTITY));
       var0.addFixer(new Class7335(var98, "Add beehive", TypeReferences.BLOCK_ENTITY));
       var0.addFixer(new Class8167(var98, false, "Rename sugar recipe", method14184("minecraft:sugar", "sugar_from_sugar_cane")));
       var0.addFixer(

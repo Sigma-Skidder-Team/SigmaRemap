@@ -9,6 +9,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -18,7 +19,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class BambooSaplingBlock extends Block implements Class3196 {
+public class BambooSaplingBlock extends Block implements IGrowable {
    private static String[] field19160;
    public static final VoxelShape field19161 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);
 

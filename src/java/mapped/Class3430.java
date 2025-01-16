@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 public class Class3430 extends Class3429 {
    private static String[] field19190;
-   public static final EnumProperty<RailShape> field19191 = BlockStateProperties.field39736;
+   public static final EnumProperty<RailShape> field19191 = BlockStateProperties.RAIL_SHAPE;
 
    public Class3430(Properties var1) {
       super(false, var1);

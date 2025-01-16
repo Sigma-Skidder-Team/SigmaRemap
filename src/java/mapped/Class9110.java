@@ -180,7 +180,7 @@ public class Class9110 {
          }
       }
 
-      return field41868.world.getBlockState(this.method33979().up(2)).getBlock() instanceof Class3213
+      return field41868.world.getBlockState(this.method33979().up(2)).getBlock() instanceof FallingBlock
          && !this.field41869.field44283.contains(this.method33979().up(2).toLong());
    }
 

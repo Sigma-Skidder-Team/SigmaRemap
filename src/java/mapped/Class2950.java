@@ -162,7 +162,7 @@ public class Class2950 extends Class2898<Class4705> {
 
    private void method11296(BlockPos var1, IWorld var2, Random var3, int var4, int var5, boolean var6, boolean var7, BlockState var8) {
       BlockState var11 = var2.getBlockState(var1);
-      if (var11.getMaterial() == Material.field38932
+      if (var11.getMaterial() == Material.AIR
          || var11.isIn(Blocks.SNOW_BLOCK)
          || var11.isIn(Blocks.ICE)
          || var11.isIn(Blocks.WATER)) {
@@ -224,7 +224,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private boolean method11304(IBlockReader var1, BlockPos var2) {
-      return var1.getBlockState(var2.down()).getMaterial() == Material.field38932;
+      return var1.getBlockState(var2.down()).getMaterial() == Material.AIR;
    }
 
    private void method11305(IWorld var1, BlockPos var2, int var3, int var4, boolean var5, int var6) {

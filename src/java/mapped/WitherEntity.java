@@ -408,7 +408,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
       double var17 = var2 - var11;
       double var19 = var4 - var13;
       double var21 = var6 - var15;
-      Class902 var23 = new Class902(this.world, this, var17, var19, var21);
+      WitherSkullEntity var23 = new WitherSkullEntity(this.world, this, var17, var19, var21);
       var23.setShooter(this);
       if (var8) {
          var23.method3533(true);

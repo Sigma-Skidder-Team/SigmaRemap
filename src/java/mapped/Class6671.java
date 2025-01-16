@@ -136,7 +136,7 @@ public class Class6671 {
                               }
                            }
 
-                           return this.field29255 == null || var3 instanceof Class1098 && ((Class1098)var3).method5249().equals(this.field29255);
+                           return this.field29255 == null || var3 instanceof CatEntity && ((CatEntity)var3).method5249().equals(this.field29255);
                         }
                      } else {
                         return false;

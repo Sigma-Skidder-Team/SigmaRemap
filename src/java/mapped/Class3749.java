@@ -16,7 +16,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class Class3749 extends Class3676<Class1042> {
+public class Class3749 extends Class3676<VillagerEntity> {
    private static String[] field19896;
    private BlockPos field19897;
    private long field19898;
@@ -27,7 +27,7 @@ public class Class3749 extends Class3676<Class1042> {
       super(ImmutableMap.of(Class8830.field39825, Class2217.field14485, Class8830.field39824, Class2217.field14485, Class8830.field39817, Class2217.field14484));
    }
 
-   public boolean method12508(ServerWorld var1, Class1042 var2) {
+   public boolean method12508(ServerWorld var1, VillagerEntity var2) {
       if (!var1.getGameRules().getBoolean(GameRules.field24224)) {
          return false;
       } else if (var2.method4674().method26571() != Class8395.field36016) {
@@ -64,21 +64,21 @@ public class Class3749 extends Class3676<Class1042> {
       return var6 instanceof Class3480 && ((Class3480)var6).method12179(var5) || var5.isAir() && var7 instanceof Class3221;
    }
 
-   public void method12502(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
       if (var3 > this.field19898 && this.field19897 != null) {
          var2.getBrain().method21406(Class8830.field39825, new Class7863(this.field19897));
          var2.getBrain().method21406(Class8830.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));
       }
    }
 
-   public void method12506(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12506(ServerWorld var1, VillagerEntity var2, long var3) {
       var2.getBrain().method21405(Class8830.field39825);
       var2.getBrain().method21405(Class8830.field39824);
       this.field19899 = 0;
       this.field19898 = var3 + 40L;
    }
 
-   public void method12504(ServerWorld var1, Class1042 var2, long var3) {
+   public void method12504(ServerWorld var1, VillagerEntity var2, long var3) {
       if (this.field19897 == null || this.field19897.method8317(var2.getPositionVec(), 1.0)) {
          if (this.field19897 != null && var3 > this.field19898) {
             BlockState var7 = var1.getBlockState(this.field19897);
@@ -151,7 +151,7 @@ public class Class3749 extends Class3676<Class1042> {
       }
    }
 
-   public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
+   public boolean method12499(ServerWorld var1, VillagerEntity var2, long var3) {
       return this.field19899 < 200;
    }
 }

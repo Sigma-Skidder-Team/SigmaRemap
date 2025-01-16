@@ -22,6 +22,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
@@ -34,7 +35,7 @@ import java.util.Random;
 public class BeehiveBlock extends Class3241 {
    private static final Direction[] field18934 = new Direction[]{Direction.WEST, Direction.EAST, Direction.SOUTH};
    public static final DirectionProperty field18935 = HorizontalBlock.HORIZONTAL_FACING;
-   public static final IntegerProperty field18936 = BlockStateProperties.field39754;
+   public static final IntegerProperty field18936 = BlockStateProperties.HONEY_LEVEL;
 
    public BeehiveBlock(Properties var1) {
       super(var1);
@@ -67,12 +68,12 @@ public class BeehiveBlock extends Class3241 {
    }
 
    private void method11943(World var1, BlockPos var2) {
-      List<Class1017> var5 = var1.getEntitiesWithinAABB(Class1017.class, new AxisAlignedBB(var2).grow(8.0, 6.0, 8.0));
+      List<BeeEntity> var5 = var1.getEntitiesWithinAABB(BeeEntity.class, new AxisAlignedBB(var2).grow(8.0, 6.0, 8.0));
       if (!var5.isEmpty()) {
          List var6 = var1.<PlayerEntity>getEntitiesWithinAABB(PlayerEntity.class, new AxisAlignedBB(var2).grow(8.0, 6.0, 8.0));
          int var7 = var6.size();
 
-         for (Class1017 var9 : var5) {
+         for (BeeEntity var9 : var5) {
             if (var9.method4232() == null) {
                var9.method4233((LivingEntity)var6.get(var1.rand.nextInt(var7)));
             }
@@ -260,7 +261,7 @@ public class BeehiveBlock extends Class3241 {
    @Override
    public List<ItemStack> method11697(BlockState var1, Class9464 var2) {
       Entity var5 = var2.<Entity>method36459(Class9525.field44330);
-      if (var5 instanceof Class1004 || var5 instanceof Class1081 || var5 instanceof Class902 || var5 instanceof WitherEntity || var5 instanceof Class993) {
+      if (var5 instanceof TntEntity || var5 instanceof CreeperEntity || var5 instanceof WitherSkullEntity || var5 instanceof WitherEntity || var5 instanceof TntMinecartEntity) {
          TileEntity var6 = var2.<TileEntity>method36459(Class9525.field44337);
          if (var6 instanceof BeehiveTileEntity) {
             BeehiveTileEntity var7 = (BeehiveTileEntity)var6;

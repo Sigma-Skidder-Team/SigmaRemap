@@ -9,11 +9,12 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
 public class CreeperHeadBlock extends Class3251 {
    private static String[] field18854;
-   public static final IntegerProperty field18855 = BlockStateProperties.field39763;
+   public static final IntegerProperty field18855 = BlockStateProperties.ROTATION;
    public static final VoxelShape field18856 = Block.makeCuboidShape(4.0, 0.0, 4.0, 12.0, 8.0, 12.0);
 
    public CreeperHeadBlock(Class2137 var1, Properties var2) {

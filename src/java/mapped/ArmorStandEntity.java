@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.*;
+import net.minecraft.entity.item.minecart.AbstractMinecartEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -472,7 +473,7 @@ public class ArmorStandEntity extends LivingEntity {
       if (this.world instanceof ServerWorld) {
          ((ServerWorld)this.world)
             .spawnParticle(
-               new BlockParticleData(ParticleTypes.field34051, Blocks.field36400.getDefaultState()),
+               new BlockParticleData(ParticleTypes.field34051, Blocks.OAK_PLANKS.getDefaultState()),
                this.getPosX(),
                this.getPosYHeight(0.6666666666666666),
                this.getPosZ(),
@@ -756,7 +757,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    @Override
-   public void method3353(ServerWorld var1, Class906 var2) {
+   public void method3353(ServerWorld var1, LightningBoltEntity var2) {
    }
 
    @Override

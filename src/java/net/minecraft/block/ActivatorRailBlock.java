@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class ActivatorRailBlock extends Class3429 {
    private static String[] field19195;
-   public static final EnumProperty<RailShape> field19196 = BlockStateProperties.field39737;
+   public static final EnumProperty<RailShape> field19196 = BlockStateProperties.RAIL_SHAPE_2;
    public static final BooleanProperty field19197 = BlockStateProperties.POWERED;
 
    public ActivatorRailBlock(Properties var1) {

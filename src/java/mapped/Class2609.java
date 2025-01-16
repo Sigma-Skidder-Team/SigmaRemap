@@ -2,16 +2,16 @@ package mapped;
 
 public class Class2609 extends Class2608 {
    private static String[] field16859;
-   public final Class1095 field16863;
+   public final FoxEntity field16863;
 
-   public Class2609(Class1095 var1, int var2, int var3) {
+   public Class2609(FoxEntity var1, int var2, int var3) {
       super(var1, var3);
       this.field16863 = var1;
    }
 
    @Override
    public void method10804() {
-      Class1095.method5167(this.field16863);
+      FoxEntity.method5167(this.field16863);
       super.method10804();
    }
 
@@ -26,6 +26,6 @@ public class Class2609 extends Class2608 {
    }
 
    private boolean method10816() {
-      return !this.field16863.isSleeping() && !this.field16863.method5129() && !Class1095.method5168(this.field16863) && this.field16863.method4232() == null;
+      return !this.field16863.isSleeping() && !this.field16863.method5129() && !FoxEntity.method5168(this.field16863) && this.field16863.method4232() == null;
    }
 }

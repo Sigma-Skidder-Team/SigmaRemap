@@ -15,6 +15,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -27,8 +28,8 @@ public class TurtleEggBlock extends Block {
    private static String[] field19240;
    private static final VoxelShape field19241 = Block.makeCuboidShape(3.0, 0.0, 3.0, 12.0, 7.0, 12.0);
    private static final VoxelShape field19242 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 7.0, 15.0);
-   public static final IntegerProperty field19243 = BlockStateProperties.field39749;
-   public static final IntegerProperty field19244 = BlockStateProperties.field39748;
+   public static final IntegerProperty field19243 = BlockStateProperties.HATCH;
+   public static final IntegerProperty field19244 = BlockStateProperties.EGGS;
 
    public TurtleEggBlock(Properties var1) {
       super(var1);

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.IGrowable;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
@@ -24,7 +25,7 @@ public abstract class Class3445 extends Class3444 implements IGrowable {
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var2 == this.field19256.getOpposite() && !var1.isValidPosition(var4, var5)) {
-         var4.method6860().scheduleTick(var5, this, 1);
+         var4.getBlockTickScheduler().scheduleTick(var5, this, 1);
       }
 
       Class3452 var9 = this.method12124();

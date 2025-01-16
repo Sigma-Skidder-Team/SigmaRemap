@@ -26,7 +26,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class3218 extends Class3213 {
+public class Class3218 extends FallingBlock {
    public static final DirectionProperty field18627 = HorizontalBlock.HORIZONTAL_FACING;
    private static final VoxelShape field18628 = Block.makeCuboidShape(2.0, 0.0, 2.0, 14.0, 4.0, 14.0);
    private static final VoxelShape field18629 = Block.makeCuboidShape(3.0, 4.0, 4.0, 13.0, 5.0, 12.0);
@@ -73,19 +73,19 @@ public class Class3218 extends Class3213 {
    }
 
    @Override
-   public void method11596(Class907 var1) {
+   public void method11596(FallingBlockEntity var1) {
       var1.method3555(true);
    }
 
    @Override
-   public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {
+   public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, FallingBlockEntity var5) {
       if (!var5.isSilent()) {
          var1.playEvent(1031, var2, 0);
       }
    }
 
    @Override
-   public void method11600(World var1, BlockPos var2, Class907 var3) {
+   public void method11600(World var1, BlockPos var2, FallingBlockEntity var3) {
       if (!var3.isSilent()) {
          var1.playEvent(1029, var2, 0);
       }
@@ -118,7 +118,7 @@ public class Class3218 extends Class3213 {
    }
 
    @Override
-   public int method11601(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public int getColor(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23394(var2, var3).field31006;
    }
 }

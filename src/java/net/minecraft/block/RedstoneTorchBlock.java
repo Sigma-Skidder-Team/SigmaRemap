@@ -18,7 +18,7 @@ import java.util.WeakHashMap;
 
 public class RedstoneTorchBlock extends SoulTorchBlock {
    private static String[] field18982;
-   public static final BooleanProperty field18987 = BlockStateProperties.field39699;
+   public static final BooleanProperty field18987 = BlockStateProperties.LIT;
    private static final Map<IBlockReader, List<Class9018>> field18988 = new WeakHashMap<IBlockReader, List<Class9018>>();
 
    public RedstoneTorchBlock(Properties var1) {
@@ -68,15 +68,15 @@ public class RedstoneTorchBlock extends SoulTorchBlock {
          var2.setBlockState(var3, var1.with(field18987, Boolean.valueOf(false)), 3);
          if (method11982(var2, var3, true)) {
             var2.playEvent(1502, var3, 0);
-            var2.method6860().scheduleTick(var3, var2.getBlockState(var3).getBlock(), 160);
+            var2.getBlockTickScheduler().scheduleTick(var3, var2.getBlockState(var3).getBlock(), 160);
          }
       }
    }
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      if (var1.<Boolean>get(field18987) == this.method11981(var2, var3, var1) && !var2.method6860().method20720(var3, this)) {
-         var2.method6860().scheduleTick(var3, this, 2);
+      if (var1.<Boolean>get(field18987) == this.method11981(var2, var3, var1) && !var2.getBlockTickScheduler().method20720(var3, this)) {
+         var2.getBlockTickScheduler().scheduleTick(var3, this, 2);
       }
    }
 

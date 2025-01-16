@@ -1,6 +1,7 @@
 package net.minecraft.block;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.Random;
 

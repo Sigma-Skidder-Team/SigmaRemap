@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
 import mapped.CommandBlockLogic;
-import mapped.Class918;
+import mapped.CommandBlockMinecartEntity;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.world.World;
 import net.minecraft.entity.Entity;
@@ -47,7 +47,7 @@ public class CUpdateMinecartCommandBlockPacket implements IPacket<IServerPlayNet
    @Nullable
    public CommandBlockLogic method17387(World var1) {
       Entity var4 = var1.getEntityByID(this.field24529);
-      return !(var4 instanceof Class918) ? null : ((Class918)var4).method3614();
+      return !(var4 instanceof CommandBlockMinecartEntity) ? null : ((CommandBlockMinecartEntity)var4).method3614();
    }
 
    public String method17388() {

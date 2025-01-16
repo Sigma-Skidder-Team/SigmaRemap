@@ -9,7 +9,7 @@ import net.minecraft.util.Rotation;
 
 public class StrippedCrimsonHyphaeBlock extends Block {
    private static String[] field18993;
-   public static final EnumProperty<Direction.Axis> field18994 = BlockStateProperties.field39713;
+   public static final EnumProperty<Direction.Axis> field18994 = BlockStateProperties.AXIS;
 
    public StrippedCrimsonHyphaeBlock(Properties var1) {
       super(var1);

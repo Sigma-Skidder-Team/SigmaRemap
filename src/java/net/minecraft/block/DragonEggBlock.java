@@ -8,10 +8,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class DragonEggBlock extends Class3213 {
+public class DragonEggBlock extends FallingBlock {
    private static String[] field18623;
    public static final VoxelShape field18624 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
 

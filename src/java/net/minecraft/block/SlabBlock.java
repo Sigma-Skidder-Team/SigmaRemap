@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 
 public class SlabBlock extends Block implements IWaterLoggable {
    private static String[] field18604;
-   public static final EnumProperty<SlabType> field18605 = BlockStateProperties.field39770;
+   public static final EnumProperty<SlabType> field18605 = BlockStateProperties.SLAB_TYPE;
    public static final BooleanProperty field18606 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape BOTTOM_SHAPE = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
    public static final VoxelShape TOP_SHAPE = Block.makeCuboidShape(0.0, 8.0, 0.0, 16.0, 16.0, 16.0);

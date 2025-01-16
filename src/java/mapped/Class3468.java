@@ -90,7 +90,7 @@ public abstract class Class3468 extends Block {
       }
 
       if (var9) {
-         var1.method6860().scheduleTick(new BlockPos(var2), this, this.method12152());
+         var1.getBlockTickScheduler().scheduleTick(new BlockPos(var2), this, this.method12152());
       }
    }
 

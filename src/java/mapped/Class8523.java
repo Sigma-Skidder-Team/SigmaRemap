@@ -20,15 +20,15 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field36399, 0.8F), Class6435.field28275, Blocks.field36526.getDefaultState()),
+               new Class7872(new Class6439(Blocks.COBBLESTONE, 0.8F), Class6435.field28275, Blocks.field36526.getDefaultState()),
                new Class7872(new Class6437(BlockTags.field32748), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36399, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.COBBLESTONE, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36526, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36730, 0.07F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.OAK_LOG, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36400, 0.1F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.OAK_PLANKS, 0.1F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36533, 0.1F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.STRIPPED_OAK_LOG, 0.02F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.GLASS_PANE, 0.5F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
@@ -75,7 +75,7 @@ public class Class8523 {
                new Class7872(new Class6437(BlockTags.field32748), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36404, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.ACACIA_PLANKS, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36762, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.ACACIA_LOG, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.ACACIA_WOOD, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
@@ -125,7 +125,7 @@ public class Class8523 {
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.LANTERN), Class6435.field28275, Blocks.AIR.getDefaultState()),
-               new Class7872(new Class6439(Blocks.field36401, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.SPRUCE_PLANKS, 0.2F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.field36840, 0.4F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.STRIPPED_SPRUCE_LOG, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.STRIPPED_SPRUCE_WOOD, 0.05F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
@@ -167,7 +167,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6439(Blocks.field36399, 0.8F), Class6435.field28275, Blocks.field36526.getDefaultState()),
+               new Class7872(new Class6439(Blocks.COBBLESTONE, 0.8F), Class6435.field28275, Blocks.field36526.getDefaultState()),
                new Class7872(new Class6437(BlockTags.field32748), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
                new Class7872(new Class6438(Blocks.WALL_TORCH), Class6435.field28275, Blocks.AIR.getDefaultState()),
@@ -176,7 +176,7 @@ public class Class8523 {
                   Class6435.field28275,
                   Blocks.CAMPFIRE.getDefaultState().with(Class3244.field18698, Boolean.valueOf(false))
                ),
-               new Class7872(new Class6439(Blocks.field36399, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
+               new Class7872(new Class6439(Blocks.COBBLESTONE, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.SPRUCE_LOG, 0.08F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(new Class6439(Blocks.GLASS_PANE, 0.5F), Class6435.field28275, Blocks.COBWEB.getDefaultState()),
                new Class7872(
@@ -234,19 +234,19 @@ public class Class8523 {
    public static final Class3622 field38256 = method30211(
       "mossify_10_percent",
       ImmutableList.of(
-         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.field36399, 0.1F), Class6435.field28275, Blocks.field36526.getDefaultState())))
+         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.COBBLESTONE, 0.1F), Class6435.field28275, Blocks.field36526.getDefaultState())))
       )
    );
    public static final Class3622 field38257 = method30211(
       "mossify_20_percent",
       ImmutableList.of(
-         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.field36399, 0.2F), Class6435.field28275, Blocks.field36526.getDefaultState())))
+         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.COBBLESTONE, 0.2F), Class6435.field28275, Blocks.field36526.getDefaultState())))
       )
    );
    public static final Class3622 field38258 = method30211(
       "mossify_70_percent",
       ImmutableList.of(
-         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.field36399, 0.7F), Class6435.field28275, Blocks.field36526.getDefaultState())))
+         new Class7093(ImmutableList.of(new Class7872(new Class6439(Blocks.COBBLESTONE, 0.7F), Class6435.field28275, Blocks.field36526.getDefaultState())))
       )
    );
    public static final Class3622 field38259 = method30211(
@@ -254,7 +254,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.field36400.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.OAK_PLANKS.getDefaultState()),
                new Class7872(new Class6439(Blocks.GRASS_PATH, 0.1F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
                new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
                new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
@@ -267,7 +267,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.field36404.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.ACACIA_PLANKS.getDefaultState()),
                new Class7872(new Class6439(Blocks.GRASS_PATH, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
                new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
                new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())
@@ -280,7 +280,7 @@ public class Class8523 {
       ImmutableList.of(
          new Class7093(
             ImmutableList.of(
-               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.field36401.getDefaultState()),
+               new Class7872(new Class6438(Blocks.GRASS_PATH), new Class6438(Blocks.WATER), Blocks.SPRUCE_PLANKS.getDefaultState()),
                new Class7872(new Class6439(Blocks.GRASS_PATH, 0.2F), Class6435.field28275, Blocks.GRASS_BLOCK.getDefaultState()),
                new Class7872(new Class6438(Blocks.GRASS_BLOCK), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState()),
                new Class7872(new Class6438(Blocks.DIRT), new Class6438(Blocks.WATER), Blocks.WATER.getDefaultState())

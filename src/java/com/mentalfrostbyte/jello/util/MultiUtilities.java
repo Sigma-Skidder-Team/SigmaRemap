@@ -296,7 +296,7 @@ public class MultiUtilities {
 
          return traceEntityRay(
                  mc.world, renderViewEntity, playerEyesPos, rayEndPos, searchBox,
-                 entity -> entity instanceof LivingEntity || entity instanceof Class907,
+                 entity -> entity instanceof LivingEntity || entity instanceof FallingBlockEntity,
                  (double) (reachDistanceModifier * reachDistanceModifier), boundingBoxExpansion
          );
       } else {

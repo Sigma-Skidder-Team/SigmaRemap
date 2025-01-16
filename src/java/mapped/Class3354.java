@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
 public class Class3354 extends Class3241 {
    public static final DirectionProperty field18880 = HorizontalBlock.HORIZONTAL_FACING;
    public static final BooleanProperty field18881 = BlockStateProperties.POWERED;
-   public static final BooleanProperty field18882 = BlockStateProperties.field39696;
+   public static final BooleanProperty field18882 = BlockStateProperties.HAS_BOOK;
    public static final VoxelShape field18883 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
    public static final VoxelShape field18884 = Block.makeCuboidShape(4.0, 2.0, 4.0, 12.0, 14.0, 12.0);
    public static final VoxelShape field18885 = VoxelShapes.or(field18883, field18884);
@@ -177,7 +177,7 @@ public class Class3354 extends Class3241 {
 
    public static void method11922(World var0, BlockPos var1, BlockState var2) {
       method11923(var0, var1, var2, true);
-      var0.method6860().scheduleTick(var1, var2.getBlock(), 2);
+      var0.getBlockTickScheduler().scheduleTick(var1, var2.getBlock(), 2);
       var0.playEvent(1043, var1, 0);
    }
 

@@ -89,7 +89,7 @@ public class WitherSkeletonSkullBlock extends CreeperHeadBlock {
             .method37705("^^^", "###", "~#~")
             .method37707('#', var0 -> var0.method37548().isIn(BlockTags.field32793))
             .method37707('^', CachedBlockInfo.method37552(Class166.method497(Blocks.WITHER_SKELETON_SKULL).or(Class166.method497(Blocks.WITHER_SKELETON_WALL_SKULL))))
-            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.AIR)))
             .method37708();
       }
 
@@ -101,7 +101,7 @@ public class WitherSkeletonSkullBlock extends CreeperHeadBlock {
          field18858 = Class9659.method37706()
             .method37705("   ", "###", "~#~")
             .method37707('#', var0 -> var0.method37548().isIn(BlockTags.field32793))
-            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.AIR)))
             .method37708();
       }
 

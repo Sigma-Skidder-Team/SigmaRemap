@@ -7,7 +7,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class BlackConcretePowderBlock extends Class3213 {
+public class BlackConcretePowderBlock extends FallingBlock {
    private static String[] field18622;
    private final BlockState field18626;
 
@@ -17,7 +17,7 @@ public class BlackConcretePowderBlock extends Class3213 {
    }
 
    @Override
-   public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {
+   public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, FallingBlockEntity var5) {
       if (method11604(var1, var2, var4)) {
          var1.setBlockState(var2, this.field18626, 3);
       }
@@ -64,7 +64,7 @@ public class BlackConcretePowderBlock extends Class3213 {
    }
 
    @Override
-   public int method11601(BlockState var1, IBlockReader var2, BlockPos var3) {
+   public int getColor(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23394(var2, var3).field31006;
    }
 }

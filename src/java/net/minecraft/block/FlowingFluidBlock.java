@@ -16,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -27,7 +28,7 @@ import java.util.Random;
 
 public class FlowingFluidBlock extends Block implements Class3405 {
    private static String[] field19078;
-   public static final IntegerProperty field19079 = BlockStateProperties.field39755;
+   public static final IntegerProperty field19079 = BlockStateProperties.LEVEL;
    public final FlowingFluid field19080;
    private final List<FluidState> field19081;
    public static final VoxelShape field19082 = Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
@@ -132,7 +133,7 @@ public class FlowingFluidBlock extends Block implements Class3405 {
             if (var10 != Direction.DOWN) {
                BlockPos var11 = var2.offset(var10);
                if (var1.getFluidState(var11).method23486(FluidTags.field40469)) {
-                  Block var12 = !var1.getFluidState(var2).isSource() ? Blocks.field36399 : Blocks.field36527;
+                  Block var12 = !var1.getFluidState(var2).isSource() ? Blocks.COBBLESTONE : Blocks.field36527;
                   var1.setBlockState(var2, var12.getDefaultState());
                   this.method12044(var1, var2);
                   return false;

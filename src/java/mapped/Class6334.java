@@ -6,10 +6,10 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.MathHelper;
 
 public abstract class Class6334 extends Class6333 {
-   public final Class1017 field27846;
+   public final BeeEntity field27846;
    private boolean field27847;
 
-   public Class6334(Class1017 var1, SoundEvent var2, SoundCategory var3) {
+   public Class6334(BeeEntity var1, SoundEvent var2, SoundCategory var3) {
       super(var2, var3);
       this.field27846 = var1;
       this.field27858 = (double)((float)var1.getPosX());

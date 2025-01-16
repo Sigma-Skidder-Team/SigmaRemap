@@ -207,7 +207,7 @@ public class CrossbowItem extends Class3262 implements IVanishable {
                ((AbstractArrowEntity)var13).pickupStatus = AbstractArrowEntityPickupStatus.field14333;
             }
          } else {
-            var13 = new Class888(var0, var4, var1, var1.getPosX(), var1.getPosYEye() - 0.15F, var1.getPosZ(), true);
+            var13 = new FireworkRocketEntity(var0, var4, var1, var1.getPosX(), var1.getPosYEye() - 0.15F, var1.getPosZ(), true);
          }
 
          if (!(var1 instanceof Class1023)) {

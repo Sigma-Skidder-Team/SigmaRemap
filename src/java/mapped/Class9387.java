@@ -40,8 +40,8 @@ public class Class9387 {
       "_armor", "_eyes", "_exploding", "_shooting", "_fur", "_eyes", "_invulnerable", "_angry", "_tame", "_collar"
    };
    private static final String field43565 = "horse/";
-   private static final String[] field43566 = (String[])Class9694.method37956(null, Class1074.class, String[].class, 0);
-   private static final String[] field43567 = (String[])Class9694.method37956(null, Class1074.class, String[].class, 1);
+   private static final String[] field43566 = (String[])Class9694.method37956(null, HorseEntity.class, String[].class, 0);
+   private static final String[] field43567 = (String[])Class9694.method37956(null, HorseEntity.class, String[].class, 1);
 
    public static void method35629(Entity var0, World var1) {
       if (var1 != null) {

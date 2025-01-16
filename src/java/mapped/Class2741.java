@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.passive.fish.AbstractFishEntity;
+
 public class Class2741 extends Class2740 {
    private static String[] field17257;
    private final AbstractFishEntity field17268;

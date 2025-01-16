@@ -11,7 +11,7 @@ import java.util.Optional;
 public class Class9743 {
    private static String[] field45489;
 
-   public static Brain<?> method38192(Class1036 var0, Brain<Class1036> var1) {
+   public static Brain<?> method38192(PiglinBruteEntity var0, Brain<PiglinBruteEntity> var1) {
       method38194(var0, var1);
       method38195(var0, var1);
       method38196(var0, var1);
@@ -21,17 +21,17 @@ public class Class9743 {
       return var1;
    }
 
-   public static void method38193(Class1036 var0) {
+   public static void method38193(PiglinBruteEntity var0) {
       Class9378 var3 = Class9378.method35577(var0.world.getDimensionKey(), var0.getPosition());
       var0.getBrain().method21406(Class8830.field39813, var3);
    }
 
-   private static void method38194(Class1036 var0, Brain<Class1036> var1) {
+   private static void method38194(PiglinBruteEntity var0, Brain<PiglinBruteEntity> var1) {
       var1.method21425(Activity.field40219, 0,
               ImmutableList.of(new Class3681(45, 90), new Class3735(), new Class3697(), new Class3701<>()));
    }
 
-   private static void method38195(Class1036 var0, Brain<Class1036> var1) {
+   private static void method38195(PiglinBruteEntity var0, Brain<PiglinBruteEntity> var1) {
       var1.method21425(
          Activity.field40220,
          10,
@@ -39,7 +39,7 @@ public class Class9743 {
       );
    }
 
-   private static void method38196(Class1036 var0, Brain<Class1036> var1) {
+   private static void method38196(PiglinBruteEntity var0, Brain<PiglinBruteEntity> var1) {
       var1.method21426(
          Activity.field40229,
          10,
@@ -48,8 +48,8 @@ public class Class9743 {
       );
    }
 
-   private static Class3693<Class1036> method38197() {
-      return new Class3693<Class1036>(
+   private static Class3693<PiglinBruteEntity> method38197() {
+      return new Class3693<PiglinBruteEntity>(
          ImmutableList.of(
             Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 1),
             Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1),
@@ -60,8 +60,8 @@ public class Class9743 {
       );
    }
 
-   private static Class3693<Class1036> method38198() {
-      return new Class3693<Class1036>(
+   private static Class3693<PiglinBruteEntity> method38198() {
+      return new Class3693<PiglinBruteEntity>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
             Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN, 8, Class8830.field39828, 0.6F, 2), 2),
@@ -73,8 +73,8 @@ public class Class9743 {
       );
    }
 
-   public static void method38199(Class1036 var0) {
-      Brain<Class1036> var3 = var0.getBrain();
+   public static void method38199(PiglinBruteEntity var0) {
+      Brain<PiglinBruteEntity> var3 = var0.getBrain();
       Activity var4 = var3.method21418().orElse(null);
       var3.method21423(ImmutableList.of(Activity.field40229, Activity.field40220));
       Activity var5 = var3.method21418().orElse(null);
@@ -107,19 +107,19 @@ public class Class9743 {
       return var0.getBrain().method21410(var1).filter(var1x -> var1x.isEntityInRange(var0, 12.0));
    }
 
-   public static void method38204(Class1036 var0, LivingEntity var1) {
+   public static void method38204(PiglinBruteEntity var0, LivingEntity var1) {
       if (!(var1 instanceof Class1035)) {
          Class4388.method13836(var0, var1);
       }
    }
 
-   public static void method38205(Class1036 var0) {
+   public static void method38205(PiglinBruteEntity var0) {
       if ((double)var0.world.rand.nextFloat() < 0.0125) {
          method38206(var0);
       }
    }
 
-   private static void method38206(Class1036 var0) {
+   private static void method38206(PiglinBruteEntity var0) {
       var0.getBrain().method21418().ifPresent(var1 -> {
          if (var1 == Activity.field40229) {
             var0.method4638();

@@ -7,6 +7,7 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -15,7 +16,7 @@ import java.util.Random;
 
 public class BeetrootsBlock extends WheatBlock {
    private static String[] field19333;
-   public static final IntegerProperty field19337 = BlockStateProperties.field39740;
+   public static final IntegerProperty field19337 = BlockStateProperties.AGE3;
    private static final VoxelShape[] field19338 = new VoxelShape[]{
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 2.0, 16.0),
       Block.makeCuboidShape(0.0, 0.0, 0.0, 16.0, 4.0, 16.0),

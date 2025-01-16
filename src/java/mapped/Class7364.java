@@ -6,7 +6,7 @@ public class Class7364 extends Class7362 {
    private static String[] field31524;
    private int field31525;
 
-   public Class7364(Class1007 var1) {
+   public Class7364(EnderDragonEntity var1) {
       super(var1);
    }
 

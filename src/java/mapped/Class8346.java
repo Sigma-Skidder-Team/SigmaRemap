@@ -15,7 +15,7 @@ public class Class8346 extends Class8347 {
       if (!(var1.nextFloat() < 0.4F)) {
          this.field35874 = Blocks.field36526.getDefaultState();
       } else {
-         this.field35874 = Blocks.field36399.getDefaultState();
+         this.field35874 = Blocks.COBBLESTONE.getDefaultState();
       }
    }
 }

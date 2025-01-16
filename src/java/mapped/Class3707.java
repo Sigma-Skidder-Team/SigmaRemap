@@ -17,7 +17,7 @@ public class Class3707 extends Class3706 {
    private static final List<Item> field19771 = ImmutableList.of(Items.field37841, Items.field38112);
 
    @Override
-   public void method12585(ServerWorld var1, Class1042 var2) {
+   public void method12585(ServerWorld var1, VillagerEntity var2) {
       Optional var5 = var2.getBrain().<Class9378>method21410(Class8830.field39814);
       if (var5.isPresent()) {
          Class9378 var6 = (Class9378)var5.get();
@@ -29,7 +29,7 @@ public class Class3707 extends Class3706 {
       }
    }
 
-   private void method12587(ServerWorld var1, Class1042 var2, Class9378 var3, BlockState var4) {
+   private void method12587(ServerWorld var1, VillagerEntity var2, Class9378 var3, BlockState var4) {
       BlockPos var7 = var3.method35579();
       if (var4.<Integer>get(Class3475.field19326) == 8) {
          var4 = Class3475.method12166(var4, var1, var7);
@@ -71,7 +71,7 @@ public class Class3707 extends Class3706 {
       var1.playEvent(1500, var3, var4 == var2 ? 0 : 1);
    }
 
-   private void method12589(Class1042 var1) {
+   private void method12589(VillagerEntity var1) {
       Class927 var4 = var1.method4752();
       if (var4.count(Items.field37843) <= 36) {
          int var5 = var4.count(Items.field37842);

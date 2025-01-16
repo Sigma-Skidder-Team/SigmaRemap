@@ -27,7 +27,7 @@ public class Class3634 {
       var5.method6682(this.field19668, var1, var6);
       Optional<Class9343> var7 = var5.method6665(var0 -> var0 == Class4913.field22770, var1, var6, Class2093.field13637)
          .sorted(Comparator.<Class9343>comparingDouble(var1x -> var1x.method35355().distanceSq(var1)).thenComparingInt(var0 -> var0.method35355().getY()))
-         .filter(var1x -> this.field19668.getBlockState(var1x.method35355()).method23462(BlockStateProperties.field39712))
+         .filter(var1x -> this.field19668.getBlockState(var1x.method35355()).method23462(BlockStateProperties.HORIZONTAL_AXIS))
          .findFirst();
       return var7.<TeleportationRepositioner>map(
          var1x -> {
@@ -35,7 +35,7 @@ public class Class3634 {
             this.field19668.getChunkProvider().registerTicket(TicketType.PORTAL, new ChunkPos(var4), 3, var4);
             BlockState var5x = this.field19668.getBlockState(var4);
             return Class7215.method22658(
-               var4, var5x.<Direction.Axis>get(BlockStateProperties.field39712), 21, Direction.Axis.Y, 21, var2x -> this.field19668.getBlockState(var2x) == var5x
+               var4, var5x.<Direction.Axis>get(BlockStateProperties.HORIZONTAL_AXIS), 21, Direction.Axis.Y, 21, var2x -> this.field19668.getBlockState(var2x) == var5x
             );
          }
       );

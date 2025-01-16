@@ -50,7 +50,7 @@ public class Class2639 extends Class2595 {
                var6.method6869((PlayerEntity)null, 1016, this.field16963.getPosition(), 0);
             }
 
-            Class899 var16 = new Class899(var6, this.field16963, var10, var12, var14);
+            FireballEntity var16 = new FireballEntity(var6, this.field16963, var10, var12, var14);
             var16.field5139 = this.field16963.method5359();
             var16.setPosition(
                this.field16963.getPosX() + var9.x * 4.0, this.field16963.getPosYHeight(0.5) + 0.5, var16.getPosZ() + var9.z * 4.0

@@ -29,7 +29,7 @@ public class Class3333 extends Item {
          0.4F / (field18735.nextFloat() * 0.4F + 0.8F)
       );
       if (!var1.isRemote) {
-         Class894 var7 = new Class894(var1, var2);
+         SnowballEntity var7 = new SnowballEntity(var1, var2);
          var7.method3511(var6);
          var7.method3463(var2, var2.rotationPitch, var2.rotationYaw, 0.0F, 1.5F, 1.0F);
          var1.addEntity(var7);

@@ -42,7 +42,7 @@ import javax.annotation.Nullable;
 public class ChestBlock extends Class3346<ChestTileEntity> implements IWaterLoggable {
    private static String[] field18864;
    public static final DirectionProperty field18865 = HorizontalBlock.HORIZONTAL_FACING;
-   public static final EnumProperty<ChestType> TYPE = BlockStateProperties.field39765;
+   public static final EnumProperty<ChestType> TYPE = BlockStateProperties.TYPE;
    public static final BooleanProperty field18867 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18868 = Block.makeCuboidShape(1.0, 0.0, 0.0, 15.0, 14.0, 15.0);
    public static final VoxelShape field18869 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 14.0, 16.0);
@@ -249,8 +249,8 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements IWaterLogg
    }
 
    private static boolean method11915(IWorld var0, BlockPos var1) {
-      List<Class1098> var4 = var0.getEntitiesWithinAABB(
-         Class1098.class,
+      List<CatEntity> var4 = var0.getEntitiesWithinAABB(
+         CatEntity.class,
          new AxisAlignedBB(
             (double)var1.getX(),
             (double)(var1.getY() + 1),
@@ -261,7 +261,7 @@ public class ChestBlock extends Class3346<ChestTileEntity> implements IWaterLogg
          )
       );
       if (!var4.isEmpty()) {
-         for (Class1098 var6 : var4) {
+         for (CatEntity var6 : var4) {
             if (var6.method4395()) {
                return true;
             }

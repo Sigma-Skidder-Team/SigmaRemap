@@ -6,15 +6,15 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class5717 extends EntityRenderer<Class883> {
+public class Class5717 extends EntityRenderer<LlamaSpitEntity> {
    private static final ResourceLocation field25104 = new ResourceLocation("textures/entity/llama/spit.png");
-   private final Class2884<Class883> field25105 = new Class2884<Class883>();
+   private final Class2884<LlamaSpitEntity> field25105 = new Class2884<LlamaSpitEntity>();
 
    public Class5717(EntityRendererManager var1) {
       super(var1);
    }
 
-   public void render(Class883 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(LlamaSpitEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       var4.translate(0.0, 0.15F, 0.0);
       var4.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
@@ -26,7 +26,7 @@ public class Class5717 extends EntityRenderer<Class883> {
       super.render(var1, var2, var3, var4, var5, var6);
    }
 
-   public ResourceLocation method17843(Class883 var1) {
+   public ResourceLocation method17843(LlamaSpitEntity var1) {
       return field25104;
    }
 }

@@ -9,7 +9,7 @@ import net.minecraft.util.math.vector.Vector3f;
 
 import java.util.Map;
 
-public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
+public class Class5696 extends Class5651<PandaEntity, Class2867<PandaEntity>> {
    private static final Map<Class2293, ResourceLocation> field25066 = Util.<Map<Class2293, ResourceLocation>>make(Maps.newEnumMap(Class2293.class), var0 -> {
       var0.put(Class2293.field15234, new ResourceLocation("textures/entity/panda/panda.png"));
       var0.put(Class2293.field15235, new ResourceLocation("textures/entity/panda/lazy_panda.png"));
@@ -21,15 +21,15 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
    });
 
    public Class5696(EntityRendererManager var1) {
-      super(var1, new Class2867<Class1097>(9, 0.0F), 0.9F);
+      super(var1, new Class2867<PandaEntity>(9, 0.0F), 0.9F);
       this.addLayer(new Class256(this));
    }
 
-   public ResourceLocation method17843(Class1097 var1) {
+   public ResourceLocation method17843(PandaEntity var1) {
       return field25066.getOrDefault(var1.method5209(), field25066.get(Class2293.field15234));
    }
 
-   public void method17842(Class1097 var1, MatrixStack var2, float var3, float var4, float var5) {
+   public void method17842(PandaEntity var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
       if (var1.field6026 > 0) {
          int var8 = var1.field6026;

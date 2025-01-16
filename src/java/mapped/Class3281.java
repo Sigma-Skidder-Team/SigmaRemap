@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -43,7 +44,7 @@ public class Class3281 extends Item {
          }
       } else {
          var5.playSound(var4, var6, SoundEvents.field26587, SoundCategory.field14732, 1.0F, field18735.nextFloat() * 0.4F + 0.8F);
-         var5.setBlockState(var6, var7.with(BlockStateProperties.field39699, Boolean.valueOf(true)), 11);
+         var5.setBlockState(var6, var7.with(BlockStateProperties.LIT, Boolean.valueOf(true)), 11);
          if (var4 != null) {
             var1.method18357().damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var1.method18359()));
          }

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.IGrowable;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
@@ -17,7 +18,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 
 public abstract class Class3452 extends Class3444 implements IGrowable {
-   public static final IntegerProperty field19267 = BlockStateProperties.field39744;
+   public static final IntegerProperty field19267 = BlockStateProperties.AGE7;
    private final double field19268;
 
    public Class3452(Properties var1, Direction var2, VoxelShape var3, boolean var4, double var5) {
@@ -49,7 +50,7 @@ public abstract class Class3452 extends Class3444 implements IGrowable {
    @Override
    public BlockState updatePostPlacement(BlockState var1, Direction var2, BlockState var3, IWorld var4, BlockPos var5, BlockPos var6) {
       if (var2 == this.field19256.getOpposite() && !var1.isValidPosition(var4, var5)) {
-         var4.method6860().scheduleTick(var5, this, 1);
+         var4.getBlockTickScheduler().scheduleTick(var5, this, 1);
       }
 
       if (var2 != this.field19256 || !var3.isIn(this) && !var3.isIn(this.method12125())) {
