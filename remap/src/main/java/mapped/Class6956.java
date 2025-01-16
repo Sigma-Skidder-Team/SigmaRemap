@@ -7,6 +7,8 @@ package mapped;
 import java.util.HashSet;
 import java.util.stream.Stream;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 import java.util.function.Function;
 import java.util.Set;

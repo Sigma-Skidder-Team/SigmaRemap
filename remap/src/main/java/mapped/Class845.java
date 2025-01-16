@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Class845 extends Class844

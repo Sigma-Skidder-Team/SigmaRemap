@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 public class Class6772

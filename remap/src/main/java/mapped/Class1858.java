@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.lighting.WorldLightManager;
 
 import javax.annotation.Nullable;
 
@@ -17,7 +20,7 @@ public class Class1858 implements Class1856
     public final int field10131;
     public final int field10132;
     public final int field10133;
-    public final Class1862[][] field10134;
+    public final Chunk[][] field10134;
     public final BlockState[] field10135;
     public final IFluidState[] field10136;
     public final World field10137;
@@ -32,7 +35,7 @@ public class Class1858 implements Class1856
         final int n3 = class1848.getZ() - n >> 4;
         final int n4 = class1849.getX() + n >> 4;
         final int n5 = class1849.getZ() + n >> 4;
-        final Class1862[][] array = new Class1862[n4 - n2 + 1][n5 - n3 + 1];
+        final Chunk[][] array = new Chunk[n4 - n2 + 1][n5 - n3 + 1];
         for (int i = n2; i <= n4; ++i) {
             for (int j = n3; j <= n5; ++j) {
                 array[i - n2][j - n3] = class1847.method6686(i, j);
@@ -57,7 +60,7 @@ public class Class1858 implements Class1856
         return null;
     }
     
-    public Class1858(final World field10137, final int field10138, final int field10139, final Class1862[][] field10140, final BlockPos field10141, final BlockPos class354) {
+    public Class1858(final World field10137, final int field10138, final int field10139, final Chunk[][] field10140, final BlockPos field10141, final BlockPos class354) {
         this.field10137 = field10137;
         this.field10128 = field10138;
         this.field10129 = field10139;
@@ -89,7 +92,7 @@ public class Class1858 implements Class1856
     }
     
     @Override
-    public Class1886 method6700() {
+    public WorldLightManager method6700() {
         return this.field10137.method6700();
     }
     

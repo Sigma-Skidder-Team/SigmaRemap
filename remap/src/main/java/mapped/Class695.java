@@ -7,6 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.chunk.ChunkStatus;
 
 public class Class695 extends Screen
 {
@@ -72,19 +73,19 @@ public class Class695 extends Screen
     static {
         field3825 = Util.method27851((Object2IntMap)new Object2IntOpenHashMap(), object2IntOpenHashMap -> {
             object2IntOpenHashMap.defaultReturnValue(0);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39977, 5526612);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39978, 10066329);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39979, 6250897);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39980, 8434258);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39981, 13750737);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39982, 7497737);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39983, 7169628);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39984, 3159410);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39985, 2213376);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39986, 13421772);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39987, 15884384);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39988, 15658734);
-            object2IntOpenHashMap.put((Object) ChunkStatus.field39989, 16777215);
+            object2IntOpenHashMap.put((Object) ChunkStatus.EMPTY, 5526612);
+            object2IntOpenHashMap.put((Object) ChunkStatus.STRUCTURE_STARTS, 10066329);
+            object2IntOpenHashMap.put((Object) ChunkStatus.STRUCTURE_REFERENCES, 6250897);
+            object2IntOpenHashMap.put((Object) ChunkStatus.BIOMES, 8434258);
+            object2IntOpenHashMap.put((Object) ChunkStatus.NOISE, 13750737);
+            object2IntOpenHashMap.put((Object) ChunkStatus.SURFACE, 7497737);
+            object2IntOpenHashMap.put((Object) ChunkStatus.CARVERS, 7169628);
+            object2IntOpenHashMap.put((Object) ChunkStatus.LIQUID_CARVERS, 3159410);
+            object2IntOpenHashMap.put((Object) ChunkStatus.FEATURES, 2213376);
+            object2IntOpenHashMap.put((Object) ChunkStatus.LIGHT, 13421772);
+            object2IntOpenHashMap.put((Object) ChunkStatus.SPAWN, 15884384);
+            object2IntOpenHashMap.put((Object) ChunkStatus.HEIGHTMAPS, 15658734);
+            object2IntOpenHashMap.put((Object) ChunkStatus.FULL, 16777215);
         });
     }
 }

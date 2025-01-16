@@ -7,6 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IBlockReader;
 
 public abstract class Class4654
 {

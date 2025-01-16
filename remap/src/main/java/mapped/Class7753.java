@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Class7753 extends Class7752

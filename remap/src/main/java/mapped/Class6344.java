@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.List;

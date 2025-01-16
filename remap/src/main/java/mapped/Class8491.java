@@ -11,7 +11,10 @@ import com.mentalfrostbyte.jello.mods.impl.render.Freecam;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.chunk.Chunk;
 
 import java.util.Iterator;
 import java.util.ConcurrentModificationException;
@@ -147,9 +150,9 @@ public class Class8491
         this.field34860.method23920();
         for (int j = -5; j < 5; ++j) {
             for (int k = -5; k < 5; ++k) {
-                final Class1862 method6686 = this.field34856.world.method6686(this.field34856.player.chunkCoordX + j, this.field34856.player.chunkCoordZ + k);
+                final Chunk method6686 = this.field34856.world.method6686(this.field34856.player.chunkCoordX + j, this.field34856.player.chunkCoordZ + k);
                 if (method6686 instanceof Class1864) {
-                    this.field34856.world.method6835().field10344.method34013(this.field34856.world.method6835().field10344.method34012(this.field34856.player.chunkCoordX + j, this.field34856.player.chunkCoordZ + k), new Class1863(this.field34856.world, new Class7859(this.field34856.player.chunkCoordX + j, this.field34856.player.chunkCoordZ + k), method6686.method7024().clone()));
+                    this.field34856.world.method6835().field10344.method34013(this.field34856.world.method6835().field10344.method34012(this.field34856.player.chunkCoordX + j, this.field34856.player.chunkCoordZ + k), new Class1863(this.field34856.world, new ChunkPos(this.field34856.player.chunkCoordX + j, this.field34856.player.chunkCoordZ + k), method6686.method7024().clone()));
                 }
             }
         }

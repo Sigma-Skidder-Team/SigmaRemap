@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.util.math.BlockPos;
 
 public class Class4615 extends Class4611<Class4226>
 {

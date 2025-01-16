@@ -5,7 +5,10 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
+import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -53,7 +56,7 @@ public abstract class Class4473
     public void method13431(final Class4473 class4473, final List<Class4473> list, final Random random) {
     }
     
-    public abstract boolean method13421(final Class1851 p0, final Class6346<?> p1, final Random p2, final MutableBoundingBox p3, final Class7859 p4);
+    public abstract boolean method13421(final Class1851 p0, final Class6346<?> p1, final Random p2, final MutableBoundingBox p3, final ChunkPos p4);
     
     public MutableBoundingBox method13432() {
         return this.field19849;
@@ -63,7 +66,7 @@ public abstract class Class4473
         return this.field19853;
     }
     
-    public boolean method13434(final Class7859 class7859, final int n) {
+    public boolean method13434(final ChunkPos class7859, final int n) {
         final int n2 = class7859.field32290 << 4;
         final int n3 = class7859.field32291 << 4;
         return this.field19849.intersectsWith(n2 - n, n3 - n, n2 + 15 + n, n3 + 15 + n);
@@ -196,7 +199,7 @@ public abstract class Class4473
         final int method13437 = this.method13437(n, n3);
         final int method13438 = this.method13438(n2 + 1);
         final int method13439 = this.method13439(n, n3);
-        return class1853.isVecInside(new BlockPos(method13437, method13438, method13439)) && method13438 < class1852.method6699(Class2020.field11523, method13437, method13439);
+        return class1853.isVecInside(new BlockPos(method13437, method13438, method13439)) && method13438 < class1852.method6699(HeightmapType.field11523, method13437, method13439);
     }
     
     public void method13443(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {

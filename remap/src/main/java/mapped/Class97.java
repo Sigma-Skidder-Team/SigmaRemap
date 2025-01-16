@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Iterator;
 
 public final class Class97 implements Iterable

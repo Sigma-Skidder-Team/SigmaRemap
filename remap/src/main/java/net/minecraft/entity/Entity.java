@@ -12,14 +12,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.*;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.INameable;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
@@ -1976,7 +1975,7 @@ public abstract class Entity implements INameable, ICommandSource {
             float n = 0.0f;
             BlockPos class5488;
             if (field2453 == DimensionType.field2225 && field2452 == DimensionType.field2223) {
-                class5488 = method1899.method6958(Class2020.field11526, method1899.method6758());
+                class5488 = method1899.method6958(HeightmapType.field11526, method1899.method6758());
             } else if (field2452 != DimensionType.field2225) {
                 double method1900 = this.getPosX();
                 double method1901 = this.getPosZ();
@@ -2127,7 +2126,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
     public final void method1877(final double n, final double n2, final double n3) {
         if (this.world instanceof Class1849) {
-            final Class7859 class7859 = new Class7859(new BlockPos(n, n2, n3));
+            final ChunkPos class7859 = new ChunkPos(new BlockPos(n, n2, n3));
             ((Class1849) this.world).method6904().method7441(Class9105.field38571, class7859, 0, this.getEntityId());
             this.world.method6686(class7859.field32290, class7859.field32291);
             this.method1878(n, n2, n3);

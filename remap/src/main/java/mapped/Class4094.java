@@ -11,10 +11,13 @@ import com.google.common.collect.Multisets;
 import com.google.common.collect.LinkedHashMultiset;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.dimension.DimensionType;
 
 import javax.annotation.Nullable;
@@ -96,9 +99,9 @@ public class Class4094 extends Class4093
                                             final int n9 = (field25420 / n + i - 64) * n;
                                             final int n10 = (field25421 / n + j - 64) * n;
                                             final LinkedHashMultiset create = LinkedHashMultiset.create();
-                                            final Class1862 method18922 = class1847.method6685(new BlockPos(n9, 0, n10));
+                                            final Chunk method18922 = class1847.method6685(new BlockPos(n9, 0, n10));
                                             if (!method18922.method7062()) {
-                                                final Class7859 method18923 = method18922.method7019();
+                                                final ChunkPos method18923 = method18922.method7019();
                                                 final int n11 = n9 & 0xF;
                                                 final int n12 = n10 & 0xF;
                                                 int n13 = 0;
@@ -108,7 +111,7 @@ public class Class4094 extends Class4093
                                                     final Mutable class1852 = new Mutable();
                                                     for (int k = 0; k < n; ++k) {
                                                         for (int l = 0; l < n; ++l) {
-                                                            int n15 = method18922.method7018(Class2020.field11522, k + n11, l + n12) + 1;
+                                                            int n15 = method18922.method7018(HeightmapType.field11522, k + n11, l + n12) + 1;
                                                             Class7096 class1853;
                                                             if (n15 > 1) {
                                                                 do {

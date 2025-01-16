@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5468 extends Class5467
 {

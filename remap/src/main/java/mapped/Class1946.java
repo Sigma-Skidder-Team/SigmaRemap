@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.concurrent.CancellationException;
@@ -18,7 +19,7 @@ public class Class1946 extends Class1944
         this(class8974, null, n, class8975);
     }
     
-    public Class1946(final Class8974 field10599, final Class7859 class7859, final double n, final Class9006 field10600) {
+    public Class1946(final Class8974 field10599, final ChunkPos class7859, final double n, final Class9006 field10600) {
         this.field10599 = field10599;
         super(field10599, class7859, n);
         this.field10601 = field10600;

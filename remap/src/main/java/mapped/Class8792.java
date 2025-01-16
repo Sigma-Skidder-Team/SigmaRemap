@@ -20,6 +20,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
@@ -252,7 +254,7 @@ public class Class8792
                             final boolean present = this.field36972.isPresent();
                             int n = (!present && this.field36967 % 5 == 0) ? 1 : 0;
                             if (present) {
-                                if (!this.field36958.method6904().method7409(new Class7859(this.field36972.get()))) {
+                                if (!this.field36958.method6904().isChunkLoaded(new ChunkPos(this.field36972.get()))) {
                                     n = 1;
                                 }
                             }
@@ -584,10 +586,10 @@ public class Class8792
             final float n4 = this.field36958.rand.nextFloat() * 6.2831855f;
             final int n5 = this.field36957.getX() + MathHelper.method35642(MathHelper.cos(n4) * 32.0f * n3) + this.field36958.rand.nextInt(5);
             final int n6 = this.field36957.getZ() + MathHelper.method35642(MathHelper.sin(n4) * 32.0f * n3) + this.field36958.rand.nextInt(5);
-            class385.setPos(n5, this.field36958.method6699(Class2020.field11522, n5, n6), n6);
+            class385.setPos(n5, this.field36958.method6699(HeightmapType.field11522, n5, n6), n6);
             if (!this.field36958.method6922(class385) || n >= 2) {
                 if (this.field36958.method6973(class385.getX() - 10, class385.getY() - 10, class385.getZ() - 10, class385.getX() + 10, class385.getY() + 10, class385.getZ() + 10)) {
-                    if (this.field36958.method6904().method7409(new Class7859(class385))) {
+                    if (this.field36958.method6904().isChunkLoaded(new ChunkPos(class385))) {
                         if (!Class8532.method28621(Class2194.field13354, this.field36958, class385, EntityType.field29056)) {
                             if (this.field36958.getBlockState(class385.method1139()).method21696() != Class7521.field29329) {
                                 continue;

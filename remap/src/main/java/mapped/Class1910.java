@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import org.apache.logging.log4j.LogManager;
 import com.google.common.annotations.VisibleForTesting;
 import java.util.stream.Stream;
@@ -64,7 +65,7 @@ public class Class1910 implements AutoCloseable, Class1911
     }
     
     @Override
-    public void method7468(final Class7859 class7859, final IntSupplier intSupplier, final int n, final IntConsumer intConsumer) {
+    public void method7468(final ChunkPos class7859, final IntSupplier intSupplier, final int n, final IntConsumer intConsumer) {
         this.field10365.method5386(new Class1414(0, () -> {
             this.field10363.values().forEach(class7861 -> {
                 intSupplier2.getAsInt();
@@ -129,7 +130,7 @@ public class Class1910 implements AutoCloseable, Class1911
     
     @VisibleForTesting
     public String method7473() {
-        return this.field10363.entrySet().stream().map(entry -> entry.getKey().method5376() + "=[" + ((Class8587)entry.getValue()).method29079().stream().map(obj -> obj + ":" + new Class7859(obj)).collect((Collector<? super Object, ?, String>)Collectors.joining(",")) + "]").collect((Collector<? super Object, ?, String>)Collectors.joining(",")) + ", s=" + this.field10364.size();
+        return this.field10363.entrySet().stream().map(entry -> entry.getKey().method5376() + "=[" + ((Class8587)entry.getValue()).method29079().stream().map(obj -> obj + ":" + new ChunkPos(obj)).collect((Collector<? super Object, ?, String>)Collectors.joining(",")) + "]").collect((Collector<? super Object, ?, String>)Collectors.joining(",")) + ", s=" + this.field10364.size();
     }
     
     @Override

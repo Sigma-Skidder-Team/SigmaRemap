@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.chunk.IChunk;
+
 import java.util.Random;
 
 public class Class8314<SC extends Class4407>

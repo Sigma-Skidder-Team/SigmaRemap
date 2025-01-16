@@ -9,6 +9,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
@@ -1173,12 +1175,12 @@ public class Class513 extends PlayerEntity implements Class514
         }
     }
     
-    public void method2959(final Class7859 class7859, final IPacket<?> class7860, final IPacket<?> class7861) {
+    public void method2959(final ChunkPos class7859, final IPacket<?> class7860, final IPacket<?> class7861) {
         this.field3039.method17469(class7861);
         this.field3039.method17469(class7860);
     }
     
-    public void method2960(final Class7859 class7859) {
+    public void method2960(final ChunkPos class7859) {
         if (this.method1768()) {
             this.field3039.method17469(new Class4288(class7859.field32290, class7859.field32291));
         }

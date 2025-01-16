@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.List;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
 
 public class Class370 extends Class367
 {

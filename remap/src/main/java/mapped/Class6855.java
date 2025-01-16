@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.ArrayList;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.dimension.DimensionType;
 
 public class Class6855 extends Class6851<Class824>

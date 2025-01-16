@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5425 extends Class5419<LivingEntity>
 {

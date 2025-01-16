@@ -11,9 +11,12 @@ import com.mojang.datafixers.types.JsonOps;
 import com.google.gson.JsonElement;
 import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.dimension.DimensionType;
 
 public class Class6736 extends Dimension
@@ -120,7 +123,7 @@ public class Class6736 extends Dimension
     
     @Nullable
     @Override
-    public BlockPos method20489(final Class7859 class7859, final boolean b) {
+    public BlockPos method20489(final ChunkPos class7859, final boolean b) {
         for (int i = class7859.method25426(); i <= class7859.method25428(); ++i) {
             for (int j = class7859.method25427(); j <= class7859.method25429(); ++j) {
                 final BlockPos method20490 = this.method20490(i, j, b);
@@ -140,12 +143,12 @@ public class Class6736 extends Dimension
         if (b && !method13338.getBlock().method11785(Class7188.field27918)) {
             return null;
         }
-        final Class1862 method13339 = this.field26492.method6686(n >> 4, n2 >> 4);
-        final int method13340 = method13339.method7018(Class2020.field11525, n & 0xF, n2 & 0xF);
+        final Chunk method13339 = this.field26492.method6686(n >> 4, n2 >> 4);
+        final int method13340 = method13339.method7018(HeightmapType.field11525, n & 0xF, n2 & 0xF);
         if (method13340 < 0) {
             return null;
         }
-        if (method13339.method7018(Class2020.field11522, n & 0xF, n2 & 0xF) <= method13339.method7018(Class2020.field11524, n & 0xF, n2 & 0xF)) {
+        if (method13339.method7018(HeightmapType.field11522, n & 0xF, n2 & 0xF) <= method13339.method7018(HeightmapType.field11524, n & 0xF, n2 & 0xF)) {
             for (int i = method13340 + 1; i >= 0; --i) {
                 class385.setPos(n, i, n2);
                 final BlockState method13341 = this.field26492.getBlockState(class385);

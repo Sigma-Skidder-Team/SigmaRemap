@@ -11,6 +11,8 @@ import com.mentalfrostbyte.jello.settings.impl.StringListSetting;
 import com.mentalfrostbyte.jello.settings.impl.ColorSetting;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import mapped.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
@@ -22,12 +24,12 @@ import java.util.List;
 public class Search extends Module
 {
     public List<Class6731> field15793;
-    public Set<Class7859> field15794;
+    public Set<ChunkPos> field15794;
     
     public Search() {
         super(Category.RENDER, "Search", "Searches blocks through the world");
         this.field15793 = new ArrayList<Class6731>();
-        this.field15794 = new HashSet<Class7859>();
+        this.field15794 = new HashSet<ChunkPos>();
         final NumberSetting class4996;
         this.addSetting(class4996 = new NumberSetting("Chunk Range", "Range at which search scans blocks", 5.0f, (Class<? extends T>)Float.class, 1.0f, 12.0f, 1.0f));
         final BooleanSetting class4997;
@@ -52,13 +54,13 @@ public class Search extends Module
             if (class5723.method16998() instanceof Class4298) {
                 if (Minecraft.method5277().world != null) {
                     final Class4298 class5724 = (Class4298)class5723.method16998();
-                    this.method10371(new Class7859(class5724.method12909(), class5724.method12910()));
+                    this.method10371(new ChunkPos(class5724.method12909(), class5724.method12910()));
                 }
             }
         }
     }
     
-    public void method10371(final Class7859 class7859) {
+    public void method10371(final ChunkPos class7859) {
         for (final Class6731 class7860 : this.field15793) {
             if (!class7860.method20418(class7859)) {
                 continue;
@@ -73,7 +75,7 @@ public class Search extends Module
         this.field15794.clear();
     }
     
-    public List<BlockPos> method10373(final Class7859 class7859) {
+    public List<BlockPos> method10373(final ChunkPos class7859) {
         final ArrayList list = new ArrayList();
         final int n = class7859.field32290 * 16;
         final int n2 = class7859.field32291 * 16;
@@ -91,7 +93,7 @@ public class Search extends Module
         return list;
     }
     
-    public List<BlockPos> method10374(final Class7859 class7859) {
+    public List<BlockPos> method10374(final ChunkPos class7859) {
         final ArrayList list = new ArrayList();
         if (class7859 != null) {
             final List list2 = (List)this.method9882("Blocks");
@@ -134,20 +136,20 @@ public class Search extends Module
             final ArrayList list = new ArrayList();
             for (int i = -5; i < 5; ++i) {
                 for (int j = -5; j < 5; ++j) {
-                    list.add(new Class7859(Search.mc.player.chunkCoordX + i, Search.mc.player.chunkCoordZ + j));
+                    list.add(new ChunkPos(Search.mc.player.chunkCoordX + i, Search.mc.player.chunkCoordZ + j));
                 }
             }
             final Iterator<Class6731> iterator = this.field15793.iterator();
             while (iterator.hasNext()) {
                 final Class6731 class5744 = iterator.next();
-                if (class5744.method20419(new Class7859(Search.mc.player.chunkCoordX, Search.mc.player.chunkCoordZ)) <= 7 && !this.field15794.contains(class5744.method20420())) {
+                if (class5744.method20419(new ChunkPos(Search.mc.player.chunkCoordX, Search.mc.player.chunkCoordZ)) <= 7 && !this.field15794.contains(class5744.method20420())) {
                     continue;
                 }
                 iterator.remove();
             }
             this.field15794.clear();
         Label_0259:
-            for (final Class7859 class5745 : list) {
+            for (final ChunkPos class5745 : list) {
                 final Iterator<Class6731> iterator3 = this.field15793.iterator();
                 while (iterator3.hasNext()) {
                     if (!iterator3.next().method20418(class5745)) {

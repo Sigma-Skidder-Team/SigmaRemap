@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class9038
 {
     public final BlockPos field38248;

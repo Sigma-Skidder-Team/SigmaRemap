@@ -11,6 +11,8 @@ import java.io.Reader;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
 import org.apache.commons.io.IOUtils;
 import java.nio.file.Files;
@@ -60,7 +62,7 @@ public class Class8787
     }
     
     private static void method30577(final BlockPos class354, final Class1849 class355) {
-        final Class7859 class356 = new Class7859(class354);
+        final ChunkPos class356 = new ChunkPos(class354);
         for (int i = -1; i < 4; ++i) {
             for (int j = -1; j < 4; ++j) {
                 class355.method6920(class356.field32290 + i, class356.field32291 + j, true);

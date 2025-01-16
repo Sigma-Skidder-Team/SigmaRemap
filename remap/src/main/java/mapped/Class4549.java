@@ -12,6 +12,8 @@ import java.util.stream.IntStream;
 import java.util.List;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 
 import java.util.function.Function;
@@ -23,7 +25,7 @@ public class Class4549 extends Class4535<Class5122>
     }
     
     public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5122 class1854) {
-        final Class7859 class1855 = new Class7859(class1853);
+        final ChunkPos class1855 = new ChunkPos(class1853);
         final List<? super Integer> list = IntStream.rangeClosed(class1855.method25426(), class1855.method25428()).boxed().collect((Collector<? super Integer, ?, List<? super Integer>>)Collectors.toList());
         Collections.shuffle(list, random);
         final List<? super Integer> list2 = IntStream.rangeClosed(class1855.method25427(), class1855.method25429()).boxed().collect((Collector<? super Integer, ?, List<? super Integer>>)Collectors.toList());
@@ -33,7 +35,7 @@ public class Class4549 extends Class4535<Class5122>
             final Iterator<? super Integer> iterator2 = list2.iterator();
             while (iterator2.hasNext()) {
                 class1856.setPos(n, 0, iterator2.next());
-                final BlockPos method6958 = class1851.method6958(Class2020.field11526, class1856);
+                final BlockPos method6958 = class1851.method6958(HeightmapType.field11526, class1856);
                 if (!class1851.method6961(method6958) && !class1851.getBlockState(method6958).getCollisionShape(class1851, method6958).isEmpty()) {
                     continue;
                 }

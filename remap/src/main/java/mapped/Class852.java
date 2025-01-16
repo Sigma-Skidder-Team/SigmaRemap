@@ -11,6 +11,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -520,7 +521,7 @@ public class Class852 extends Class759 implements Class762
                     n3 = MathHelper.method35642(60.0f * MathHelper.cos(2.0f * (-3.1415927f + 0.2617994f * i)));
                     n4 = MathHelper.method35642(60.0f * MathHelper.sin(2.0f * (-3.1415927f + 0.2617994f * i)));
                 }
-                this.field4553[i] = new Class6772(n3, Math.max(this.world.method6743() + 10, this.world.method6958(Class2020.field11526, new BlockPos(n3, 0, n4)).getY() + n), n4);
+                this.field4553[i] = new Class6772(n3, Math.max(this.world.method6743() + 10, this.world.method6958(HeightmapType.field11526, new BlockPos(n3, 0, n4)).getY() + n), n4);
             }
             this.field4554[0] = 6146;
             this.field4554[1] = 8197;
@@ -721,7 +722,7 @@ public class Class852 extends Class759 implements Class762
             }
         }
         else {
-            n2 = n / Math.max(MathHelper.sqrt(this.world.method6958(Class2020.field11526, Class4551.field20031).distanceSq(this.method1934(), true)) / 4.0f, 1.0f);
+            n2 = n / Math.max(MathHelper.sqrt(this.world.method6958(HeightmapType.field11526, Class4551.field20031).distanceSq(this.method1934(), true)) / 4.0f, 1.0f);
         }
         return (float)n2;
     }
@@ -742,7 +743,7 @@ public class Class852 extends Class759 implements Class762
             }
         }
         else {
-            final float n2 = 6.0f / Math.max(MathHelper.sqrt(this.world.method6958(Class2020.field11526, Class4551.field20031).distanceSq(this.method1934(), true)) / 4.0f, 1.0f);
+            final float n2 = 6.0f / Math.max(MathHelper.sqrt(this.world.method6958(HeightmapType.field11526, Class4551.field20031).distanceSq(this.method1934(), true)) / 4.0f, 1.0f);
             final float field2401 = this.rotationPitch;
             this.rotationPitch = -n2 * 1.5f * 5.0f;
             class5487 = this.method1741(n);

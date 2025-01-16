@@ -5,10 +5,12 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Map;
 

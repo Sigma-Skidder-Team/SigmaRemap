@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.mods.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.mods.impl.movement.speeds.AACSpeed;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 
 import java.util.List;

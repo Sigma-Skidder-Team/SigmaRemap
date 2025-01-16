@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 public abstract class Class3845 extends Class3846
 {

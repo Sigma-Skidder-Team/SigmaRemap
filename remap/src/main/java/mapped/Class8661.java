@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.dimension.DimensionType;
 
 public class Class8661 extends WorldInfo

@@ -2,32 +2,34 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.util.math;
+
+import mapped.Class7584;
 
 import java.util.Spliterator;
 import java.util.stream.StreamSupport;
 import java.util.stream.Stream;
 
-public class Class7859
+public class ChunkPos
 {
     public static final long field32289;
     public int field32290;
     public int field32291;
     private int field32292;
     
-    public Class7859(final int field32290, final int field32291) {
+    public ChunkPos(final int field32290, final int field32291) {
         this.field32292 = 0;
         this.field32290 = field32290;
         this.field32291 = field32291;
     }
     
-    public Class7859(final BlockPos class354) {
+    public ChunkPos(final BlockPos class354) {
         this.field32292 = 0;
         this.field32290 = class354.getX() >> 4;
         this.field32291 = class354.getZ() >> 4;
     }
     
-    public Class7859(final long n) {
+    public ChunkPos(final long n) {
         this.field32292 = 0;
         this.field32290 = (int)n;
         this.field32291 = (int)(n >> 32);
@@ -62,8 +64,8 @@ public class Class7859
         if (this == o) {
             return true;
         }
-        if (o instanceof Class7859) {
-            final Class7859 class7859 = (Class7859)o;
+        if (o instanceof ChunkPos) {
+            final ChunkPos class7859 = (ChunkPos)o;
             return this.field32290 == class7859.field32290 && this.field32291 == class7859.field32291;
         }
         return false;
@@ -114,16 +116,16 @@ public class Class7859
         return new BlockPos(this.field32290 << 4, 0, this.field32291 << 4);
     }
     
-    public int method25436(final Class7859 class7859) {
+    public int method25436(final ChunkPos class7859) {
         return Math.max(Math.abs(this.field32290 - class7859.field32290), Math.abs(this.field32291 - class7859.field32291));
     }
     
-    public static Stream<Class7859> method25437(final Class7859 class7859, final int n) {
-        return method25438(new Class7859(class7859.field32290 - n, class7859.field32291 - n), new Class7859(class7859.field32290 + n, class7859.field32291 + n));
+    public static Stream<ChunkPos> method25437(final ChunkPos class7859, final int n) {
+        return method25438(new ChunkPos(class7859.field32290 - n, class7859.field32291 - n), new ChunkPos(class7859.field32290 + n, class7859.field32291 + n));
     }
     
-    public static Stream<Class7859> method25438(final Class7859 class7859, final Class7859 class7860) {
-        return StreamSupport.stream((Spliterator<Class7859>)new Class7584((Math.abs(class7859.field32290 - class7860.field32290) + 1) * (Math.abs(class7859.field32291 - class7860.field32291) + 1), 64, class7859, class7860, (class7859.field32291 >= class7860.field32291) ? -1 : 1, (class7859.field32290 >= class7860.field32290) ? -1 : 1), false);
+    public static Stream<ChunkPos> method25438(final ChunkPos class7859, final ChunkPos class7860) {
+        return StreamSupport.stream((Spliterator<ChunkPos>)new Class7584((Math.abs(class7859.field32290 - class7860.field32290) + 1) * (Math.abs(class7859.field32291 - class7860.field32291) + 1), 64, class7859, class7860, (class7859.field32291 >= class7860.field32291) ? -1 : 1, (class7859.field32290 >= class7860.field32290) ? -1 : 1), false);
     }
     
     static {

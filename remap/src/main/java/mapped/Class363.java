@@ -10,6 +10,7 @@ import com.mojang.datafixers.types.DynamicOps;
 import java.util.Objects;
 import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.dimension.DimensionType;
 
 public final class Class363 implements IDynamicSerializable

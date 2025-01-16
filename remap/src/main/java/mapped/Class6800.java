@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class6800 implements Class6797
+public class Class6800 implements IChunkLoadingError
 {
     public final /* synthetic */ Class9298 field26739;
     

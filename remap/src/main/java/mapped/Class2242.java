@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Random;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Iterator;
 import java.util.List;
 

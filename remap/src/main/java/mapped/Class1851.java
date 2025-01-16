@@ -6,8 +6,10 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.AbstractChunkProvider;
 
 import java.util.stream.Stream;
 import java.util.Set;
@@ -46,7 +48,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
     AbstractChunkProvider getChunkProvider();
     
     default boolean method6814(final int n, final int n2) {
-        return this.getChunkProvider().method7401(n, n2);
+        return this.getChunkProvider().chunkExists(n, n2);
     }
     
     Random method6790();
@@ -73,7 +75,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
         return super.method6957(class399, class400);
     }
     
-    default BlockPos method6958(final Class2020 class2020, final BlockPos class2021) {
+    default BlockPos method6958(final HeightmapType class2020, final BlockPos class2021) {
         return super.method6958(class2020, class2021);
     }
 }

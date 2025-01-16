@@ -13,6 +13,7 @@ import com.mojang.datafixers.Dynamic;
 import java.util.Collection;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.BlockPos;
 
 public class Class4106 extends Class4107
 {

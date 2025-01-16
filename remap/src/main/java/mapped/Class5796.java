@@ -22,7 +22,7 @@ public class Class5796 extends Class5784
     @Override
     public void method17247() {
         if (!this.field23801 && this.field23802 != null) {
-            if (!this.field23764.world.method6958(Class2020.field11526, Class4551.field20031).withinDistance(this.field23764.method1934(), 10.0)) {
+            if (!this.field23764.world.method6958(HeightmapType.field11526, Class4551.field20031).withinDistance(this.field23764.method1934(), 10.0)) {
                 this.field23764.method5127().method33696(Class7193.field27948);
             }
         }

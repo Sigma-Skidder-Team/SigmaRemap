@@ -4,8 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
 
 public class Class3880 extends Class3878
 {

@@ -9,20 +9,24 @@ import java.util.stream.Stream;
 import it.unimi.dsi.fastutil.shorts.ShortListIterator;
 import java.util.function.Function;
 import it.unimi.dsi.fastutil.shorts.ShortList;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.IChunk;
+
 import java.util.function.Predicate;
 
 public class Class6951<T> implements Class6952<T>
 {
     private static String[] field27215;
     public final Predicate<T> field27216;
-    private final Class7859 field27217;
+    private final ChunkPos field27217;
     private final ShortList[] field27218;
     
-    public Class6951(final Predicate<T> predicate, final Class7859 class7859) {
+    public Class6951(final Predicate<T> predicate, final ChunkPos class7859) {
         this(predicate, class7859, new ListNBT());
     }
     
-    public Class6951(final Predicate<T> field27216, final Class7859 field27217, final ListNBT class52) {
+    public Class6951(final Predicate<T> field27216, final ChunkPos field27217, final ListNBT class52) {
         this.field27218 = new ShortList[16];
         this.field27216 = field27216;
         this.field27217 = field27217;

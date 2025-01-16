@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public class Class4591 extends Class4535<Class5121>

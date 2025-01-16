@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.List;

@@ -7,7 +7,13 @@ package mapped;
 import java.util.AbstractCollection;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.lighting.WorldLightManager;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import java.util.Collections;
@@ -31,11 +37,11 @@ import org.apache.logging.log4j.Logger;
 public class Class1865 implements IChunk
 {
     private static final Logger field10168;
-    private final Class7859 field10169;
+    private final ChunkPos field10169;
     private volatile boolean field10170;
     private Class1873 field10171;
-    private volatile Class1886 field10172;
-    private final Map<Class2020, Class9548> field10173;
+    private volatile WorldLightManager field10172;
+    private final Map<HeightmapType, Class9548> field10173;
     private volatile ChunkStatus field10174;
     private final Map<BlockPos, TileEntity> field10175;
     private final Map<BlockPos, CompoundNBT> field10176;
@@ -52,13 +58,13 @@ public class Class1865 implements IChunk
     private final Map<Class2126, BitSet> field10187;
     private volatile boolean field10188;
     
-    public Class1865(final Class7859 class7859, final Class8288 class7860) {
+    public Class1865(final ChunkPos class7859, final Class8288 class7860) {
         this(class7859, class7860, null, new Class6951<Block>(class7861 -> class7861 == null || class7861.getDefaultState().method21706(), class7859), new Class6951<Fluid>(class7862 -> class7862 == null || class7862 == Class7558.field29974, class7859));
     }
     
-    public Class1865(final Class7859 field10169, final Class8288 field10170, final Class8199[] array, final Class6951<Block> field10171, final Class6951<Fluid> field10172) {
-        this.field10173 = Maps.newEnumMap((Class)Class2020.class);
-        this.field10174 = ChunkStatus.field39977;
+    public Class1865(final ChunkPos field10169, final Class8288 field10170, final Class8199[] array, final Class6951<Block> field10171, final Class6951<Fluid> field10172) {
+        this.field10173 = Maps.newEnumMap((Class) HeightmapType.class);
+        this.field10174 = ChunkStatus.EMPTY;
         this.field10175 = Maps.newHashMap();
         this.field10176 = Maps.newHashMap();
         this.field10177 = new Class8199[16];
@@ -132,7 +138,7 @@ public class Class1865 implements IChunk
         if (method1075 < 0 || method1075 >= 256) {
             return Class7521.field29763.getDefaultState();
         }
-        if (this.field10177[method1075 >> 4] == Class1862.field10141 && class355.getBlock() == Class7521.field29147) {
+        if (this.field10177[method1075 >> 4] == Chunk.field10141 && class355.getBlock() == Class7521.field29147) {
             return class355;
         }
         if (class355.getLightValue() > 0) {
@@ -140,7 +146,7 @@ public class Class1865 implements IChunk
         }
         final BlockState method1077 = this.method7093(method1075 >> 4).method27152(method1074 & 0xF, method1075 & 0xF, method1076 & 0xF, class355);
         Label_0111: {
-            if (this.field10174.method34451(ChunkStatus.field39985)) {
+            if (this.field10174.isAtLeast(ChunkStatus.FEATURES)) {
                 if (class355 != method1077) {
                     if (class355.getOpacity(this, class354) == method1077.getOpacity(this, class354)) {
                         if (class355.getLightValue() == method1077.getLightValue()) {
@@ -155,16 +161,16 @@ public class Class1865 implements IChunk
                 }
             }
         }
-        final EnumSet<Class2020> method1078 = this.method7027().method34450();
-        Set<Class2020> none = null;
-        for (final Class2020 e : method1078) {
+        final EnumSet<HeightmapType> method1078 = this.method7027().getHeightMaps();
+        Set<HeightmapType> none = null;
+        for (final HeightmapType e : method1078) {
             if (this.field10173.get(e) != null) {
                 continue;
             }
             if (none == null) {
-                none = EnumSet.noneOf(Class2020.class);
+                none = EnumSet.noneOf(HeightmapType.class);
             }
-            ((AbstractCollection<Class2020>)none).add(e);
+            ((AbstractCollection<HeightmapType>)none).add(e);
         }
         if (none != null) {
             Class9548.method35711(this, none);
@@ -177,7 +183,7 @@ public class Class1865 implements IChunk
     }
     
     public Class8199 method7093(final int n) {
-        if (this.field10177[n] == Class1862.field10141) {
+        if (this.field10177[n] == Chunk.field10141) {
             this.field10177[n] = new Class8199(n << 4);
         }
         return this.field10177[n];
@@ -257,27 +263,27 @@ public class Class1865 implements IChunk
     }
     
     @Nullable
-    public Class1886 method7099() {
+    public WorldLightManager method7099() {
         return this.field10172;
     }
     
     @Override
-    public Collection<Map.Entry<Class2020, Class9548>> method7015() {
-        return (Collection<Map.Entry<Class2020, Class9548>>)Collections.unmodifiableSet((Set<?>)this.field10173.entrySet());
+    public Collection<Map.Entry<HeightmapType, Class9548>> method7015() {
+        return (Collection<Map.Entry<HeightmapType, Class9548>>)Collections.unmodifiableSet((Set<?>)this.field10173.entrySet());
     }
     
     @Override
-    public void method7016(final Class2020 class2020, final long[] array) {
+    public void method7016(final HeightmapType class2020, final long[] array) {
         this.method7017(class2020).method35716(array);
     }
     
     @Override
-    public Class9548 method7017(final Class2020 key) {
+    public Class9548 method7017(final HeightmapType key) {
         return this.field10173.computeIfAbsent(key, class2020 -> new Class9548(this, class2020));
     }
     
     @Override
-    public int method7018(final Class2020 e, final int n, final int n2) {
+    public int method7018(final HeightmapType e, final int n, final int n2) {
         Class9548 class9548 = this.field10173.get(e);
         if (class9548 == null) {
             Class9548.method35711(this, EnumSet.of(e));
@@ -287,7 +293,7 @@ public class Class1865 implements IChunk
     }
     
     @Override
-    public Class7859 method7019() {
+    public ChunkPos method7019() {
         return this.field10169;
     }
     
@@ -346,7 +352,7 @@ public class Class1865 implements IChunk
         return (short)((class354.getX() & 0xF) | (class354.getY() & 0xF) << 4 | (class354.getZ() & 0xF) << 8);
     }
     
-    public static BlockPos method7101(final short n, final int n2, final Class7859 class7859) {
+    public static BlockPos method7101(final short n, final int n2, final ChunkPos class7859) {
         return new BlockPos((n & 0xF) + (class7859.field32290 << 4), (n >>> 4 & 0xF) + (n2 << 4), (n >>> 8 & 0xF) + (class7859.field32291 << 4));
     }
     
@@ -426,7 +432,7 @@ public class Class1865 implements IChunk
         this.field10187.put(class2126, set);
     }
     
-    public void method7106(final Class1886 field10172) {
+    public void method7106(final WorldLightManager field10172) {
         this.field10172 = field10172;
     }
     

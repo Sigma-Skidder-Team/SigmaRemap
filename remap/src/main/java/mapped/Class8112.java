@@ -6,6 +6,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap$Builder;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.dimension.DimensionType;
 
 import java.util.concurrent.CompletableFuture;
@@ -13,8 +15,8 @@ import java.util.Map;
 
 public final class Class8112
 {
-    private final Map<Class7859, String> field33427;
-    private final CompletableFuture<Map<Class7859, String>> field33428;
+    private final Map<ChunkPos, String> field33427;
+    private final CompletableFuture<Map<ChunkPos, String>> field33428;
     public final /* synthetic */ Class6122 field33429;
     
     private Class8112(final Class6122 field33429, final Class1655 class1655, final double n, final double n2) {
@@ -30,9 +32,9 @@ public final class Class8112
         final Class1907 method20488 = field33430.method6835();
         for (int i = n3 - 12; i <= n3 + 12; ++i) {
             for (int j = n4 - 12; j <= n4 + 12; ++j) {
-                final Class7859 class1656 = new Class7859(i, j);
+                final ChunkPos class1656 = new ChunkPos(i, j);
                 final String str = "";
-                final Class1862 method20489 = method20488.method7398(i, j, false);
+                final Chunk method20489 = method20488.getChunk(i, j, false);
                 final String string = str + "Client: ";
                 String s;
                 if (method20489 != null) {
@@ -44,7 +46,7 @@ public final class Class8112
                 builder.put((Object)class1656, (Object)s);
             }
         }
-        this.field33427 = (Map<Class7859, String>)builder.build();
+        this.field33427 = (Map<ChunkPos, String>)builder.build();
         this.field33428 = class1655.method5377(() -> {
             ImmutableMap.builder();
             class1657.method6904();
@@ -53,7 +55,7 @@ public final class Class8112
             while (k <= n5 + 12) {
                 int l = 0;
                 while (l <= n6 + 12) {
-                    final Class7859 class1658 = new Class7859(k, l);
+                    final ChunkPos class1658 = new ChunkPos(k, l);
                     final Class1909 class1659;
                     immutableMap$Builder.put((Object)class1658, (Object)("Server: " + class1659.method7449(class1658)));
                     ++l;

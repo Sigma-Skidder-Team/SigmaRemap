@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
@@ -30,7 +32,7 @@ public class Class9324
         method34543(class1849, new PacketBuffer(Unpooled.buffer()), Class4376.field19605);
     }
     
-    public static void method34531(final Class1849 class1849, final Class7859 class1850) {
+    public static void method34531(final Class1849 class1849, final ChunkPos class1850) {
     }
     
     public static void method34532(final Class1849 class1849, final BlockPos class1850) {

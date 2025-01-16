@@ -9,6 +9,7 @@ import java.util.Locale;
 import java.util.function.Function;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5413 implements Class5414

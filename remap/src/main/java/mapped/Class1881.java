@@ -12,6 +12,7 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.File;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
+import net.minecraft.util.math.ChunkPos;
 
 public final class Class1881 implements AutoCloseable
 {
@@ -23,8 +24,8 @@ public final class Class1881 implements AutoCloseable
         this.field10240 = field10240;
     }
     
-    private Class1924 method7175(final Class7859 class7859) throws IOException {
-        final long method25423 = Class7859.method25423(class7859.method25430(), class7859.method25431());
+    private Class1924 method7175(final ChunkPos class7859) throws IOException {
+        final long method25423 = ChunkPos.method25423(class7859.method25430(), class7859.method25431());
         final Class1924 class7860 = (Class1924)this.field10239.getAndMoveToFirst(method25423);
         if (class7860 == null) {
             if (this.field10239.size() >= 256) {
@@ -41,7 +42,7 @@ public final class Class1881 implements AutoCloseable
     }
     
     @Nullable
-    public CompoundNBT method7176(final Class7859 class7859) throws IOException {
+    public CompoundNBT method7176(final ChunkPos class7859) throws IOException {
         CompoundNBT method7640;
         try (final DataInputStream method7639 = this.method7175(class7859).method7639(class7859)) {
             if (method7639 != null) {
@@ -54,7 +55,7 @@ public final class Class1881 implements AutoCloseable
         return method7640;
     }
     
-    public void method7177(final Class7859 class7859, final CompoundNBT class7860) throws IOException {
+    public void method7177(final ChunkPos class7859, final CompoundNBT class7860) throws IOException {
         try (final DataOutputStream method7650 = this.method7175(class7859).method7650(class7859)) {
             Class8097.method26597(class7860, method7650);
         }

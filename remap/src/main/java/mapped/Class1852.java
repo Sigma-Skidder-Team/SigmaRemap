@@ -4,9 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
 
 import javax.annotation.Nullable;
 
@@ -18,7 +22,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     @Deprecated
     boolean method6814(final int p0, final int p1);
     
-    int method6699(final Class2020 p0, final int p1, final int p2);
+    int method6699(final HeightmapType p0, final int p1, final int p2);
     
     int method6785();
     
@@ -33,7 +37,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     }
     
     default Class3090 method6960(final int n, final int n2, final int n3) {
-        final IChunk method6687 = this.getChunk(n >> 2, n3 >> 2, ChunkStatus.field39980, false);
+        final IChunk method6687 = this.getChunk(n >> 2, n3 >> 2, ChunkStatus.BIOMES, false);
         return (method6687 != null && method6687.method7024() != null) ? method6687.method7024().method6960(n, n2, n3) : this.method6841(n, n2, n3);
     }
     
@@ -45,7 +49,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     
     Dimension method6789();
     
-    default BlockPos method6958(final Class2020 class2020, final BlockPos class2021) {
+    default BlockPos method6958(final HeightmapType class2020, final BlockPos class2021) {
         return new BlockPos(class2021.getX(), this.method6699(class2020, class2021.getX(), class2021.getZ()), class2021.getZ());
     }
     
@@ -84,7 +88,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     }
     
     default IChunk method6798(final int n, final int n2) {
-        return this.getChunk(n, n2, ChunkStatus.field39989, true);
+        return this.getChunk(n, n2, ChunkStatus.FULL, true);
     }
     
     default IChunk method6966(final int n, final int n2, final ChunkStatus class9312) {
@@ -93,7 +97,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     
     @Nullable
     default IBlockReader method6736(final int n, final int n2) {
-        return this.getChunk(n, n2, ChunkStatus.field39977, false);
+        return this.getChunk(n, n2, ChunkStatus.EMPTY, false);
     }
     
     default boolean method6967(final BlockPos class354) {

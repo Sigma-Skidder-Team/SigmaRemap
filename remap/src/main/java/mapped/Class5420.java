@@ -9,6 +9,7 @@ import it.unimi.dsi.fastutil.longs.Long2LongOpenHashMap;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.longs.Long2LongMap;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5420 extends Class5419<Class787>
 {

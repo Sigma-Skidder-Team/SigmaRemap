@@ -9,19 +9,20 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.types.DynamicOps;
 import javax.annotation.Nullable;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
 
 public class Class4112 extends Class4107
 {
-    private final Class2020 field18216;
+    private final HeightmapType field18216;
     private final int field18217;
     
-    public Class4112(final Class2020 field18216, final int field18217) {
+    public Class4112(final HeightmapType field18216, final int field18217) {
         this.field18216 = field18216;
         this.field18217 = field18217;
     }
     
     public Class4112(final Dynamic<?> dynamic) {
-        this(Class2020.method8063(dynamic.get("heightmap").asString(Class2020.field11521.method8060())), dynamic.get("offset").asInt(0));
+        this(HeightmapType.method8063(dynamic.get("heightmap").asString(HeightmapType.field11521.method8060())), dynamic.get("offset").asInt(0));
     }
     
     @Nullable

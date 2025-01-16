@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Class764 extends Class763

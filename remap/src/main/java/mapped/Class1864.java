@@ -6,19 +6,23 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.lighting.WorldLightManager;
 
 import java.util.Arrays;
 import java.util.function.Predicate;
 import java.util.List;
 import javax.annotation.Nullable;
 
-public class Class1864 extends Class1862
+public class Class1864 extends Chunk
 {
     private static String[] field10166;
     private static final Class3090[] field10167;
     
-    public Class1864(final World class1847, final Class7859 class1848) {
+    public Class1864(final World class1847, final ChunkPos class1848) {
         super(class1847, class1848, new Class1873(Class1864.field10167));
     }
     
@@ -40,7 +44,7 @@ public class Class1864 extends Class1862
     
     @Nullable
     @Override
-    public Class1886 method7052() {
+    public WorldLightManager method7052() {
         return null;
     }
     

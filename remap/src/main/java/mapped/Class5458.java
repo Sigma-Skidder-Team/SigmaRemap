@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.function.Predicate;
 

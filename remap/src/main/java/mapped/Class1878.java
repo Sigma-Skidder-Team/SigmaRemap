@@ -7,7 +7,13 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.chunk.AbstractChunkProvider;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.lighting.WorldLightManager;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collections;
 import java.util.function.Predicate;
@@ -39,7 +45,7 @@ public class Class1878 implements Class1851
         this.field10227 = new Class6955<Fluid>(class357 -> this.method6965(class357).method7037());
         final int method35644 = MathHelper.floor(Math.sqrt(field10220.size()));
         if (method35644 * method35644 == field10220.size()) {
-            final Class7859 method35645 = field10220.get(field10220.size() / 2).method7019();
+            final ChunkPos method35645 = field10220.get(field10220.size() / 2).method7019();
             this.field10215 = field10220;
             this.field10216 = method35645.field32290;
             this.field10217 = method35645.field32291;
@@ -67,7 +73,7 @@ public class Class1878 implements Class1851
     
     @Override
     public IChunk method6798(final int n, final int n2) {
-        return this.method6966(n, n2, ChunkStatus.field39977);
+        return this.method6966(n, n2, ChunkStatus.EMPTY);
     }
     
     @Nullable
@@ -78,9 +84,9 @@ public class Class1878 implements Class1851
             class9313 = null;
         }
         else {
-            final Class7859 method7019 = this.field10215.get(0).method7019();
+            final ChunkPos method7019 = this.field10215.get(0).method7019();
             class9313 = this.field10215.get(i - method7019.field32290 + (j - method7019.field32291) * this.field10218);
-            if (class9313.method7027().method34451(class9312)) {
+            if (class9313.method7027().isAtLeast(class9312)) {
                 return class9313;
             }
         }
@@ -145,7 +151,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class1886 method6700() {
+    public WorldLightManager method6700() {
         return this.field10219.method6700();
     }
     
@@ -208,7 +214,7 @@ public class Class1878 implements Class1851
                 }
             }
         }
-        else if (method6965.method7027().method34448() != Class260.field1244) {
+        else if (method6965.method7027().getType() != ChunkStatus.Type.LEVELCHUNK) {
             final CompoundNBT class356 = new CompoundNBT();
             class356.putInt("x", class354.getX());
             class356.putInt("y", class354.getY());
@@ -303,7 +309,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public int method6699(final Class2020 class2020, final int n, final int n2) {
+    public int method6699(final HeightmapType class2020, final int n, final int n2) {
         return this.method6798(n >> 4, n2 >> 4).method7018(class2020, n & 0xF, n2 & 0xF) + 1;
     }
     

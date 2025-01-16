@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Calendar;
 import java.io.InputStream;

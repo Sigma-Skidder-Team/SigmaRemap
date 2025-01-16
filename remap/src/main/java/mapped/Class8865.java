@@ -33,6 +33,7 @@ import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.IntNBT;
+import net.minecraft.util.math.BlockPos;
 
 public class Class8865
 {

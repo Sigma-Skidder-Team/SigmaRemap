@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Locale;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 
 public class CrashReportCategory

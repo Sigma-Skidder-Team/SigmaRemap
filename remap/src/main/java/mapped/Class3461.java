@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
@@ -61,7 +62,7 @@ public class Class3461 extends Class3446
                 if (!this.field16319.withinDistance(this.field16317.method1934(), 10.0)) {
                     final Vec3d class5487 = new Vec3d(this.field16319);
                     final Vec3d method4151 = this.field16317.method1934();
-                    final BlockPos method4152 = this.field16317.world.method6958(Class2020.field11526, new BlockPos(method4151.subtract(class5487).scale(0.4).add(class5487).subtract(method4151).normalize().scale(10.0).add(method4151)));
+                    final BlockPos method4152 = this.field16317.world.method6958(HeightmapType.field11526, new BlockPos(method4151.subtract(class5487).scale(0.4).add(class5487).subtract(method4151).normalize().scale(10.0).add(method4151)));
                     if (!method4150.method24724(method4152.getX(), method4152.getY(), method4152.getZ(), 1.0)) {
                         this.method11024();
                     }
@@ -72,7 +73,7 @@ public class Class3461 extends Class3446
     
     private void method11024() {
         final Random method2633 = this.field16317.method2633();
-        final BlockPos method2634 = this.field16317.world.method6958(Class2020.field11526, new BlockPos(this.field16317).add(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
+        final BlockPos method2634 = this.field16317.world.method6958(HeightmapType.field11526, new BlockPos(this.field16317).add(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
         this.field16317.method4150().method24724(method2634.getX(), method2634.getY(), method2634.getZ(), 1.0);
     }
 }

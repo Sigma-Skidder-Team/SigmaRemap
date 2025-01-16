@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -52,7 +53,7 @@ public class Class8589
             int n = 0;
             for (int n2 = (int)Math.ceil(class1849.method6784(method1292).method35973()) + 1, i = 0; i < n2; ++i) {
                 ++n;
-                method1292.method1294(class1849.method6958(Class2020.field11526, method1292).getY());
+                method1292.method1294(class1849.method6958(HeightmapType.field11526, method1292).getY());
                 if (i != 0) {
                     this.method29088(class1849, method1292, field10062, false);
                 }

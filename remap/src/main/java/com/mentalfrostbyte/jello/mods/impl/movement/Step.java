@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.mods.impl.movement.steps.NCPStep;
 import com.mentalfrostbyte.jello.mods.impl.movement.steps.VanillaStep;
 import mapped.*;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util2.Direction;
 

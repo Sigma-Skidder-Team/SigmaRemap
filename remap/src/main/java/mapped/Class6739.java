@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
@@ -41,7 +43,7 @@ public class Class6739 extends Dimension
     
     @Nullable
     @Override
-    public BlockPos method20489(final Class7859 class7859, final boolean b) {
+    public BlockPos method20489(final ChunkPos class7859, final boolean b) {
         return null;
     }
     

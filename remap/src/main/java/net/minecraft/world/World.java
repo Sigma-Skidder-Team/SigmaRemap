@@ -10,10 +10,16 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.chunk.AbstractChunkProvider;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.lighting.WorldLightManager;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
 import java.util.function.Predicate;
@@ -109,12 +115,12 @@ public abstract class World implements Class1851, AutoCloseable
         return n < 0 || n >= 256;
     }
     
-    public Class1862 method6685(final BlockPos class354) {
+    public Chunk method6685(final BlockPos class354) {
         return this.method6686(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
-    public Class1862 method6686(final int n, final int n2) {
-        return (Class1862)this.method6966(n, n2, ChunkStatus.field39989);
+    public Chunk method6686(final int n, final int n2) {
+        return (Chunk)this.method6966(n, n2, ChunkStatus.FULL);
     }
     
     @Override
@@ -134,7 +140,7 @@ public abstract class World implements Class1851, AutoCloseable
         if (!this.isRemote && this.worldInfo.method29570() == Class9505.field40898) {
             return false;
         }
-        final Class1862 method6685 = this.method6685(class354);
+        final Chunk method6685 = this.method6685(class354);
         final Block method6686 = class355.getBlock();
         final BlockState method6687 = method6685.method7008(class354, class355, (n & 0x40) != 0x0);
         if (method6687 != null) {
@@ -287,7 +293,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public int method6699(final Class2020 class2020, final int n, final int n2) {
+    public int method6699(final HeightmapType class2020, final int n, final int n2) {
         if (n >= -30000000) {
             if (n2 >= -30000000) {
                 if (n < 30000000) {
@@ -304,7 +310,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public Class1886 method6700() {
+    public WorldLightManager method6700() {
         return this.getChunkProvider().getLightManager();
     }
     
@@ -405,7 +411,7 @@ public abstract class World implements Class1851, AutoCloseable
             final TileEntity tileEntity = iterator.next();
             if (!tileEntity.isRemoved() && tileEntity.hasWorld()) {
                 final BlockPos blockpos = tileEntity.getPos();
-                if (this.chunkProvider.method7410(blockpos) && this.getWorldBorder().contains(blockpos)) {
+                if (this.chunkProvider.canTick(blockpos) && this.getWorldBorder().contains(blockpos)) {
                     try {
                         method6796.method15298(() -> String.valueOf(Class5412.method16520(tileEntity.getType())));
                         if (tileEntity.getType().method16523(this.getBlockState(blockpos).getBlock())) {
@@ -442,7 +448,7 @@ public abstract class World implements Class1851, AutoCloseable
                         this.method6714(class437);
                     }
                     if (this.method6971(class437.getPos())) {
-                        final Class1862 method6799 = this.method6685(class437.getPos());
+                        final Chunk method6799 = this.method6685(class437.getPos());
                         final BlockState method6800 = method6799.getBlockState(class437.getPos());
                         method6799.method7009(class437.getPos(), class437);
                         this.method6693(class437.getPos(), method6800, method6800, 3);
@@ -580,7 +586,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public String method6726() {
-        return this.chunkProvider.method7404();
+        return this.chunkProvider.makeString();
     }
     
     @Nullable
@@ -659,12 +665,12 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public boolean method6731(final BlockPos class354) {
-        return !isOutsideBuildHeight(class354) && this.chunkProvider.method7401(class354.getX() >> 4, class354.getZ() >> 4);
+        return !isOutsideBuildHeight(class354) && this.chunkProvider.chunkExists(class354.getX() >> 4, class354.getZ() >> 4);
     }
     
     public boolean method6732(final BlockPos class354, final Entity class355) {
         if (!isOutsideBuildHeight(class354)) {
-            final IChunk method6687 = this.getChunk(class354.getX() >> 4, class354.getZ() >> 4, ChunkStatus.field39989, false);
+            final IChunk method6687 = this.getChunk(class354.getX() >> 4, class354.getZ() >> 4, ChunkStatus.FULL, false);
             return method6687 != null && method6687.getBlockState(class354).method21731(this, class354, class355);
         }
         return false;
@@ -675,7 +681,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public void method6734(final boolean b, final boolean b2) {
-        this.getChunkProvider().method7406(b, b2);
+        this.getChunkProvider().setAllowedSpawnTypes(b, b2);
     }
     
     public void method6735() {
@@ -695,7 +701,7 @@ public abstract class World implements Class1851, AutoCloseable
     @Nullable
     @Override
     public IBlockReader method6736(final int n, final int n2) {
-        return this.getChunk(n, n2, ChunkStatus.field39989, false);
+        return this.getChunk(n, n2, ChunkStatus.FULL, false);
     }
     
     @Override
@@ -708,7 +714,7 @@ public abstract class World implements Class1851, AutoCloseable
         final int method35647 = MathHelper.floor((class400.maxZ + 2.0) / 16.0);
         for (int i = method35644; i <= method35645; ++i) {
             for (int j = method35646; j <= method35647; ++j) {
-                final Class1862 method35648 = this.getChunkProvider().method7398(i, j, false);
+                final Chunk method35648 = this.getChunkProvider().getChunk(i, j, false);
                 if (method35648 != null) {
                     method35648.method7059(class399, class400, arrayList, predicate);
                 }
@@ -726,7 +732,7 @@ public abstract class World implements Class1851, AutoCloseable
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = method35644; i < method35645; ++i) {
             for (int j = method35646; j < method35647; ++j) {
-                final Class1862 method35648 = this.getChunkProvider().method7398(i, j, false);
+                final Chunk method35648 = this.getChunkProvider().getChunk(i, j, false);
                 if (method35648 != null) {
                     method35648.method7060(class7499, class7500, arrayList, (Predicate<? super Entity>)predicate);
                 }
@@ -746,7 +752,7 @@ public abstract class World implements Class1851, AutoCloseable
         final AbstractChunkProvider method35648 = this.getChunkProvider();
         for (int i = method35644; i < method35645; ++i) {
             for (int j = method35646; j < method35647; ++j) {
-                final Class1862 method35649 = method35648.method7398(i, j, false);
+                final Chunk method35649 = method35648.getChunk(i, j, false);
                 if (method35649 != null) {
                     method35649.method7061(clazz, class6221, (List<Entity>)arrayList, (Predicate<? super Entity>)predicate);
                 }
@@ -766,7 +772,7 @@ public abstract class World implements Class1851, AutoCloseable
         final AbstractChunkProvider method35648 = this.getChunkProvider();
         for (int i = method35644; i < method35645; ++i) {
             for (int j = method35646; j < method35647; ++j) {
-                final Class1862 method35649 = method35648.method7399(i, j);
+                final Chunk method35649 = method35648.func_225313_a(i, j);
                 if (method35649 != null) {
                     method35649.method7061(clazz, class6221, (List<Entity>)arrayList, (Predicate<? super Entity>)predicate);
                 }
@@ -885,7 +891,7 @@ public abstract class World implements Class1851, AutoCloseable
     public BlockPos method6758() {
         BlockPos method6958 = new BlockPos(this.worldInfo.method29536(), this.worldInfo.method29537(), this.worldInfo.method29538());
         if (!this.getWorldBorder().contains(method6958)) {
-            method6958 = this.method6958(Class2020.field11525, new BlockPos(this.getWorldBorder().method34777(), 0.0, this.getWorldBorder().method34778()));
+            method6958 = this.method6958(HeightmapType.field11525, new BlockPos(this.getWorldBorder().method34777(), 0.0, this.getWorldBorder().method34778()));
         }
         return method6958;
     }
@@ -946,7 +952,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public boolean method6772(final BlockPos class354) {
-        return this.method6771() && this.method6994(class354) && this.method6958(Class2020.field11525, class354).getY() <= class354.getY() && this.method6959(class354).method9841() == Class2145.field12629;
+        return this.method6771() && this.method6994(class354) && this.method6958(HeightmapType.field11525, class354).getY() <= class354.getY() && this.method6959(class354).method9841() == Class2145.field12629;
     }
     
     public boolean method6773(final BlockPos class354) {
@@ -970,7 +976,7 @@ public abstract class World implements Class1851, AutoCloseable
     public CrashReportCategory method6779(final CrashReport class7689) {
         final CrashReportCategory method24419 = class7689.makeCategoryDepth("Affected level", 1);
         method24419.addDetail("All players", () -> this.method6840().size() + " total; " + this.method6840());
-        method24419.addDetail("Chunk stats", this.chunkProvider::method7404);
+        method24419.addDetail("Chunk stats", this.chunkProvider::makeString);
         method24419.addDetail("Level dimension", () -> this.dimension.getType().toString());
         try {
             this.worldInfo.method29602(method24419);

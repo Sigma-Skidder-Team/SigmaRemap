@@ -9,6 +9,9 @@ import java.awt.Color;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.Chunk;
 import org.lwjgl.BufferUtils;
 import java.io.IOException;
 import org.lwjgl.opengl.GL11;
@@ -86,12 +89,12 @@ public class MiniMap extends Module
                         }
                         final Iterator<Class6824> iterator = this.field15844.iterator();
                         while (iterator.hasNext()) {
-                            if (iterator.next().field26810.method7019().method25436(new Class7859(MiniMap.mc.player.chunkCoordX, MiniMap.mc.player.chunkCoordZ)) <= 7) {
+                            if (iterator.next().field26810.method7019().method25436(new ChunkPos(MiniMap.mc.player.chunkCoordX, MiniMap.mc.player.chunkCoordZ)) <= 7) {
                                 continue;
                             }
                             iterator.remove();
                         }
-                        for (final Class1862 class5744 : list) {
+                        for (final Chunk class5744 : list) {
                             if (class5744 == null) {
                                 return;
                             }
@@ -183,7 +186,7 @@ public class MiniMap extends Module
         final ByteBuffer byteBuffer = BufferUtils.createByteBuffer(this.field15843 * 16 * this.field15843 * 16 * 3);
         int n2 = 0;
         int position = byteBuffer.position();
-        for (final Class1862 class1862 : list) {
+        for (final Chunk class1862 : list) {
             ByteBuffer byteBuffer2 = BufferUtils.createByteBuffer(768);
             method10408(byteBuffer2);
             Class6824 class1863 = null;

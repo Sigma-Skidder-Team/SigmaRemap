@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 public class Class4714 extends Class4712<Class841, Class5876<Class841>>

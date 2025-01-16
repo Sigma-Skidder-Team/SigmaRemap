@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.mods.impl.world.CakeEater;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Comparator;
 

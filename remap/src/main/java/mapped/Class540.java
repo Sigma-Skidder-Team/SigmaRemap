@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import java.text.DecimalFormat;

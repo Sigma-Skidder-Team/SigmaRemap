@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
+
 public interface Class3856 extends Class3857, Class3867
 {
     default boolean method11920(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {

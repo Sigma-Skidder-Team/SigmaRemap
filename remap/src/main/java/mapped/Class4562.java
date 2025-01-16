@@ -6,6 +6,10 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.ChunkStatus;
+
 import java.util.function.Function;
 
 public class Class4562 extends Class4535<Class5141>
@@ -24,8 +28,8 @@ public class Class4562 extends Class4535<Class5141>
             return false;
         }
         class1853 = class1853.method1140(4);
-        final Class7859 class1855 = new Class7859(class1853);
-        if (class1851.method6966(class1855.field32290, class1855.field32291, ChunkStatus.field39979).method7047(Class4535.field19972.method13596()).isEmpty()) {
+        final ChunkPos class1855 = new ChunkPos(class1853);
+        if (class1851.method6966(class1855.field32290, class1855.field32291, ChunkStatus.STRUCTURE_REFERENCES).method7047(Class4535.field19972.method13596()).isEmpty()) {
             final boolean[] array = new boolean[2048];
             for (int n = random.nextInt(4) + 4, i = 0; i < n; ++i) {
                 final double n2 = random.nextDouble() * 6.0 + 3.0;

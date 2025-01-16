@@ -8,9 +8,14 @@ import java.util.HashSet;
 import java.util.stream.Collectors;
 import com.google.common.collect.Sets;
 import com.mentalfrostbyte.Client;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
 
 import java.util.Map;
 import java.util.Set;
@@ -36,7 +41,7 @@ public class Class8974
     public int field37824;
     private final Class8974[] field37825;
     private boolean field37826;
-    private Class1862 field37827;
+    private Chunk field37827;
     private Class8974[] field37828;
     private Class8974[] field37829;
     private boolean field37830;
@@ -72,7 +77,7 @@ public class Class8974
     }
     
     private boolean method31863(final BlockPos class354) {
-        return Class7520.method23478(this.field37833).method6687(class354.getX() >> 4, class354.getZ() >> 4, ChunkStatus.field39989, false) != null;
+        return Class7520.method23478(this.field37833).method6687(class354.getX() >> 4, class354.getZ() >> 4, ChunkStatus.FULL, false) != null;
     }
     
     public boolean method31864() {
@@ -203,7 +208,7 @@ public class Class8974
                 this.field37811 = new Class1946(this, this.method31868(), method31870);
             }
             else {
-                this.field37811 = new Class1946(this, new Class7859(this.method31873()), this.method31868(), method31870);
+                this.field37811 = new Class1946(this, new ChunkPos(this.method31873()), this.method31868(), method31870);
             }
             class6333.method23460(this.field37811);
             return true;
@@ -230,7 +235,7 @@ public class Class8974
             this.field37810 = new Class1945(this, this.method31868(), class1858);
         }
         else {
-            this.field37810 = new Class1945(this, new Class7859(this.method31873()), this.method31868(), class1858);
+            this.field37810 = new Class1945(this, new ChunkPos(this.method31873()), this.method31868(), class1858);
         }
         return this.field37810;
     }
@@ -341,12 +346,12 @@ public class Class8974
         return this.field37825[class9113.ordinal()];
     }
     
-    public Class1862 method31895() {
+    public Chunk method31895() {
         return this.method31896(this.field37817);
     }
     
-    private Class1862 method31896(final BlockPos class354) {
-        final Class1862 field37827 = this.field37827;
+    private Chunk method31896(final BlockPos class354) {
+        final Chunk field37827 = this.field37827;
         if (field37827 != null && Class6502.method19585(field37827)) {
             return field37827;
         }

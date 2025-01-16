@@ -8,7 +8,10 @@ import it.unimi.dsi.fastutil.objects.ObjectList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import it.unimi.dsi.fastutil.longs.LongIterator;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.chunk.IChunk;
 
 import java.util.Iterator;
 import java.util.Random;
@@ -114,7 +117,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
     }
     
     @Override
-    public int method18857(final int n, final int n2, final Class2020 class2020) {
+    public int method18857(final int n, final int n2, final HeightmapType class2020) {
         final int floorDiv = Math.floorDiv(n, this.field25362);
         final int floorDiv2 = Math.floorDiv(n2, this.field25362);
         final int floorMod = Math.floorMod(n, this.field25362);
@@ -160,12 +163,12 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
     
     @Override
     public void method18859(final Class1878 class1878, final IChunk class1879) {
-        final Class7859 method7019 = class1879.method7019();
+        final ChunkPos method7019 = class1879.method7019();
         final int field32290 = method7019.field32290;
         final int field32291 = method7019.field32291;
         final Class2317 class1880 = new Class2317();
         class1880.method9437(field32290, field32291);
-        final Class7859 method7020 = class1879.method7019();
+        final ChunkPos method7020 = class1879.method7019();
         final int method7021 = method7020.method25426();
         final int method7022 = method7020.method25427();
         final Mutable class1881 = new Mutable();
@@ -173,7 +176,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             for (int j = 0; j < 16; ++j) {
                 final int n = method7021 + i;
                 final int n2 = method7022 + j;
-                final int n3 = class1879.method7018(Class2020.field11521, i, j) + 1;
+                final int n3 = class1879.method7018(HeightmapType.field11521, i, j) + 1;
                 class1878.method6959(class1881.setPos(method7021 + i, n3, method7022 + j)).method9860(class1880, class1879, n, n2, n3, this.field25370.method29028(n * 0.0625, n2 * 0.0625, 0.0625, i * 0.0625) * 15.0, this.method18876().method21582(), this.method18876().method21583(), this.method18853(), this.field25383.method6753());
             }
         }
@@ -211,7 +214,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
         final int method18853 = this.method18853();
         final ObjectArrayList list = new ObjectArrayList(10);
         final ObjectArrayList list2 = new ObjectArrayList(32);
-        final Class7859 method18854 = class1852.method7019();
+        final ChunkPos method18854 = class1852.method7019();
         final int field32290 = method18854.field32290;
         final int field32291 = method18854.field32291;
         final int n = field32290 << 4;
@@ -221,7 +224,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             final String method18855 = iterator.next().method13596();
             final LongIterator iterator2 = class1852.method7047(method18855).iterator();
             while (iterator2.hasNext()) {
-                final Class7859 class1853 = new Class7859(iterator2.nextLong());
+                final ChunkPos class1853 = new ChunkPos(iterator2.nextLong());
                 final Class5936 method18856 = class1851.method6798(class1853.field32290, class1853.field32291).method7045(method18855);
                 if (method18856 == null) {
                     continue;
@@ -266,8 +269,8 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
             array[1][i] = new double[this.field25364 + 1];
         }
         final Class1865 class1857 = (Class1865)class1852;
-        final Class9548 method18859 = class1857.method7017(Class2020.field11523);
-        final Class9548 method18860 = class1857.method7017(Class2020.field11521);
+        final Class9548 method18859 = class1857.method7017(HeightmapType.field11523);
+        final Class9548 method18860 = class1857.method7017(HeightmapType.field11521);
         final Mutable class1858 = new Mutable();
         final ObjectListIterator iterator5 = ((ObjectList)list).iterator();
         final ObjectListIterator iterator6 = ((ObjectList)list2).iterator();

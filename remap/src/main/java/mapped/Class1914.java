@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Iterator;
@@ -27,7 +28,7 @@ public class Class1914 implements AutoCloseable
     private final AtomicBoolean field10408;
     private final Queue<Runnable> field10409;
     private final Class1881 field10410;
-    private final Map<Class7859, Class7312> field10411;
+    private final Map<ChunkPos, Class7312> field10411;
     private boolean field10412;
     private CompletableFuture<Void> field10413;
     
@@ -42,7 +43,7 @@ public class Class1914 implements AutoCloseable
         this.field10407.start();
     }
     
-    public CompletableFuture<Void> method7556(final Class7859 class7859, final CompoundNBT class7860) {
+    public CompletableFuture<Void> method7556(final ChunkPos class7859, final CompoundNBT class7860) {
         return this.method7560(p2 -> () -> {
             final Class7312 class7862 = this.field10411.computeIfAbsent(key, p0 -> new Class7312(null));
             Class7312.method22430(class7862, class7861);
@@ -58,7 +59,7 @@ public class Class1914 implements AutoCloseable
     }
     
     @Nullable
-    public CompoundNBT method7557(final Class7859 class7859) throws IOException {
+    public CompoundNBT method7557(final ChunkPos class7859) throws IOException {
         final CompletableFuture<CompoundNBT> method7560 = this.method7560(p1 -> () -> {
             final Class7312 class7861 = this.field10411.get(class7860);
             if (class7861 != null) {
@@ -126,11 +127,11 @@ public class Class1914 implements AutoCloseable
     }
     
     private boolean method7563() {
-        final Iterator<Map.Entry<Class7859, Class7312>> iterator = this.field10411.entrySet().iterator();
+        final Iterator<Map.Entry<ChunkPos, Class7312>> iterator = this.field10411.entrySet().iterator();
         if (iterator.hasNext()) {
             final Map.Entry entry = iterator.next();
             iterator.remove();
-            this.method7565((Class7859)entry.getKey(), (Class7312)entry.getValue());
+            this.method7565((ChunkPos)entry.getKey(), (Class7312)entry.getValue());
             return true;
         }
         return false;
@@ -141,7 +142,7 @@ public class Class1914 implements AutoCloseable
         this.field10411.clear();
     }
     
-    private void method7565(final Class7859 class7859, final Class7312 class7860) {
+    private void method7565(final ChunkPos class7859, final Class7312 class7860) {
         try {
             this.field10410.method7177(class7859, Class7312.method22428(class7860));
             Class7312.method22429(class7860).complete(null);

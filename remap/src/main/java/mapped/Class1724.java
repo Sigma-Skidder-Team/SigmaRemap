@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.io.ByteArrayOutputStream;
@@ -11,10 +13,10 @@ import java.io.ByteArrayOutputStream;
 public class Class1724 extends ByteArrayOutputStream
 {
     private static String[] field9643;
-    private final Class7859 field9644;
+    private final ChunkPos field9644;
     public final /* synthetic */ Class1924 field9645;
     
-    public Class1724(final Class1924 field9645, final Class7859 field9646) {
+    public Class1724(final Class1924 field9645, final ChunkPos field9646) {
         this.field9645 = field9645;
         super(8096);
         super.write(0);

@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.List;
 import com.mojang.datafixers.util.Pair;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.BlockPos;
 
 public class Class8795
 {

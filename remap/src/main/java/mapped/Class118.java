@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Set;
 import java.util.function.Predicate;
 

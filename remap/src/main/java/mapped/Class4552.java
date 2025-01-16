@@ -6,12 +6,15 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.function.Function;
 
 public class Class4552 extends Class4535<Class5122>
 {
     private static final BlockPos field20033;
-    private static final Class7859 field20034;
+    private static final ChunkPos field20034;
     
     public Class4552(final Function<Dynamic<?>, ? extends Class5122> function) {
         super(function);
@@ -22,7 +25,7 @@ public class Class4552 extends Class4535<Class5122>
     }
     
     public boolean method13535(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5122 class1854) {
-        final Class7859 class1855 = new Class7859(class1853);
+        final ChunkPos class1855 = new ChunkPos(class1853);
         if (method13563(class1855.field32290, class1855.field32291, Class4552.field20034.field32290, Class4552.field20034.field32291) <= 1) {
             final Mutable class1856 = new Mutable();
             for (int i = class1855.method25427(); i <= class1855.method25429(); ++i) {
@@ -45,6 +48,6 @@ public class Class4552 extends Class4535<Class5122>
     
     static {
         field20033 = new BlockPos(8, 3, 8);
-        field20034 = new Class7859(Class4552.field20033);
+        field20034 = new ChunkPos(Class4552.field20033);
     }
 }

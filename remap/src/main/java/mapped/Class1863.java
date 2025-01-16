@@ -4,14 +4,16 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 
-public class Class1863 extends Class1862
+public class Class1863 extends Chunk
 {
     private static String[] field10164;
     private Class9489 field10165;
     
-    public Class1863(final World class1847, final Class7859 class1848, final Class1873 class1849) {
+    public Class1863(final World class1847, final ChunkPos class1848, final Class1873 class1849) {
         super(class1847, class1848, class1849);
     }
     
@@ -23,7 +25,7 @@ public class Class1863 extends Class1862
         this.field10165 = field10165;
     }
     
-    public static Class9489 method7088(final Class1862 class1862) {
+    public static Class9489 method7088(final Chunk class1862) {
         Class7383[] array = null;
         final Class8199 method7011 = class1862.method7011();
         if (method7011 != null) {

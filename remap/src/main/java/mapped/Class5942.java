@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 
 public class Class5942 extends Class5936
 {
@@ -39,7 +41,7 @@ public class Class5942 extends Class5936
         }
         final int n5 = (n << 4) + 7;
         final int n6 = (n2 << 4) + 7;
-        final int min = Math.min(Math.min(class6346.method18884(n5, n6, Class2020.field11521), class6346.method18884(n5, n6 + n4, Class2020.field11521)), Math.min(class6346.method18884(n5 + n3, n6, Class2020.field11521), class6346.method18884(n5 + n3, n6 + n4, Class2020.field11521)));
+        final int min = Math.min(Math.min(class6346.method18884(n5, n6, HeightmapType.field11521), class6346.method18884(n5, n6 + n4, HeightmapType.field11521)), Math.min(class6346.method18884(n5 + n3, n6, HeightmapType.field11521), class6346.method18884(n5 + n3, n6 + n4, HeightmapType.field11521)));
         if (min >= 60) {
             final BlockPos class6350 = new BlockPos(n * 16 + 8, min + 1, n2 * 16 + 8);
             final LinkedList linkedList = Lists.newLinkedList();
@@ -50,7 +52,7 @@ public class Class5942 extends Class5936
     }
     
     @Override
-    public void method17853(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+    public void method17853(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         super.method17853(class1851, class1852, random, class1853, class1854);
         final int field27294 = this.field24432.minY;
         for (int i = class1853.minX; i <= class1853.maxX; ++i) {

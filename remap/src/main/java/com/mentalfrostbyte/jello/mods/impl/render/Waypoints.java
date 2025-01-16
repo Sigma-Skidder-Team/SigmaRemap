@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 
 import java.util.Collection;
@@ -114,7 +115,7 @@ public class Waypoints extends Module
                             if (n < 0) {
                                 n += 16;
                             }
-                            int method35713 = Waypoints.mc.world.method6965(class5741).method7017(Class2020.field11522).method35713(n, n2);
+                            int method35713 = Waypoints.mc.world.method6965(class5741).method7017(HeightmapType.field11522).method35713(n, n2);
                             if (method35713 == 0) {
                                 method35713 = 64;
                             }

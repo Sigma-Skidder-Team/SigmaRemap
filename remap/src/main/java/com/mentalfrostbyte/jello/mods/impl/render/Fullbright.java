@@ -7,10 +7,10 @@ package com.mentalfrostbyte.jello.mods.impl.render;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
-import mapped.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import mapped.Class5743;
 import mapped.EventListener;
-import mapped.IChunk;
+import net.minecraft.world.chunk.IChunk;
 
 public class Fullbright extends Module
 {

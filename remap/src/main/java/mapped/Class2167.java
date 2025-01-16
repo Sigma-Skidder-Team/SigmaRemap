@@ -7,6 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 
 import java.util.List;

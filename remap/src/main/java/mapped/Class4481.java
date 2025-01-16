@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 
 import java.util.List;
@@ -183,7 +185,7 @@ public class Class4481 extends Class4479
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         if (!this.method13436(class1851, class1853)) {
             final int n = this.field19874 * 5 - 1;
             final BlockState method13462 = this.method13462();

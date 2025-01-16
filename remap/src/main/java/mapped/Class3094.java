@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 
 public class Class3094 extends Class3090
 {

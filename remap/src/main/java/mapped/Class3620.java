@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.EnumSet;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 
 public class Class3620 extends Class3617

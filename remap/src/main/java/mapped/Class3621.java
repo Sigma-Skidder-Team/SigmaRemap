@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.Comparator;

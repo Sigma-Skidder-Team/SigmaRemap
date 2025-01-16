@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
+import net.minecraft.world.chunk.IChunkLightProvider;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public final class Class1902 extends Class1890<Class7500, Class1898>
@@ -12,7 +14,7 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
     private static final Direction[] field10274;
     private static final Direction[] field10327;
     
-    public Class1902(final Class1908 class1908) {
+    public Class1902(final IChunkLightProvider class1908) {
         super(class1908, Class237.field911, new Class1898(class1908));
     }
     

@@ -2,16 +2,16 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.util.math;
 
 import com.google.common.collect.AbstractIterator;
+import mapped.Class2052;
+import mapped.IDynamicSerializable;
+import mapped.Mutable;
+import mapped.MutableBoundingBox;
 import net.minecraft.dispenser.IPosition;
 import net.minecraft.entity.Entity;
 import net.minecraft.util2.Direction;
-import net.minecraft.util.math.CubeCoordinateIterator;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec3i;
 
 import java.util.Spliterators;
 import java.util.function.Consumer;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.EnumSet;
 
 public class Class3530 extends Class3446

@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunk;
 
 public class Class6347 extends Class6346<Class7067>
 {
@@ -72,7 +74,7 @@ public class Class6347 extends Class6346<Class7067>
         for (int k = 0; k < method21590.length; ++k) {
             final Class7096 class3112 = method21590[k];
             if (class3112 != null) {
-                if (!Class2020.field11525.method8064().test(class3112)) {
+                if (!HeightmapType.field11525.method8064().test(class3112)) {
                     ((Class7067)this.field25386).method21602(k);
                     class3108.method9849(Class2108.field12229, Class4535.field20015.method13527(new Class5140(k, class3112)).method28610(Class7133.field27782.method21889(Class6926.field27145)));
                 }
@@ -87,7 +89,7 @@ public class Class6347 extends Class6346<Class7067>
     
     @Override
     public int method18852() {
-        return this.field25383.method6798(0, 0).method7018(Class2020.field11525, 8, 8);
+        return this.field25383.method6798(0, 0).method7018(HeightmapType.field11525, 8, 8);
     }
     
     @Override
@@ -99,8 +101,8 @@ public class Class6347 extends Class6346<Class7067>
     public void method18861(final Class1851 class1851, final IChunk class1852) {
         final Class7096[] method21601 = ((Class7067)this.field25386).method21601();
         final Mutable class1853 = new Mutable();
-        final Class9548 method21602 = class1852.method7017(Class2020.field11523);
-        final Class9548 method21603 = class1852.method7017(Class2020.field11521);
+        final Class9548 method21602 = class1852.method7017(HeightmapType.field11523);
+        final Class9548 method21603 = class1852.method7017(HeightmapType.field11521);
         for (int i = 0; i < method21601.length; ++i) {
             final Class7096 class1854 = method21601[i];
             if (class1854 != null) {
@@ -116,7 +118,7 @@ public class Class6347 extends Class6346<Class7067>
     }
     
     @Override
-    public int method18857(final int n, final int n2, final Class2020 class2020) {
+    public int method18857(final int n, final int n2, final HeightmapType class2020) {
         final Class7096[] method21601 = ((Class7067)this.field25386).method21601();
         for (int i = method21601.length - 1; i >= 0; --i) {
             final Class7096 class2021 = method21601[i];

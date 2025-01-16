@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.mods.PremiumModule;
 import com.mentalfrostbyte.jello.mods.impl.movement.flys.CubecraftFly;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 
 import java.util.Iterator;

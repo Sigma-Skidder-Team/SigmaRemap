@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.mods.impl.misc.NoteblockPlayer;
+import net.minecraft.util.math.BlockPos;
 
 public class Class9486
 {

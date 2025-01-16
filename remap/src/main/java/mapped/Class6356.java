@@ -10,8 +10,10 @@ import java.util.Iterator;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.dimension.DimensionType;
 
 import java.util.Map;

@@ -10,9 +10,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.IntNBT;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -113,10 +118,10 @@ public class Class8619
             this.field36172 = 0;
         }
         if (this.field36165.method21074().isEmpty()) {
-            this.field36166.method6904().method7442(Class9105.field38566, new Class7859(0, 0), 9, Class315.field1875);
+            this.field36166.method6904().method7442(Class9105.field38566, new ChunkPos(0, 0), 9, Class315.field1875);
         }
         else {
-            this.field36166.method6904().method7441(Class9105.field38566, new Class7859(0, 0), 9, Class315.field1875);
+            this.field36166.method6904().method7441(Class9105.field38566, new ChunkPos(0, 0), 9, Class315.field1875);
             final boolean method29241 = this.method29241();
             if (this.field36176) {
                 if (method29241) {
@@ -257,7 +262,7 @@ public class Class8619
                 }
             }
         }
-        for (int k = this.field36166.method6958(Class2020.field11525, Class4551.field20031).getY(); k >= 0; --k) {
+        for (int k = this.field36166.method6958(HeightmapType.field11525, Class4551.field20031).getY(); k >= 0; --k) {
             final Class7820 method29798 = this.field36168.method29796(this.field36166, new BlockPos(Class4551.field20031.getX(), k, Class4551.field20031.getZ()));
             if (method29798 != null) {
                 if (this.field36177 == null) {
@@ -272,11 +277,11 @@ public class Class8619
     private boolean method29241() {
         for (int i = -8; i <= 8; ++i) {
             for (int j = 8; j <= 8; ++j) {
-                final IChunk method6687 = this.field36166.getChunk(i, j, ChunkStatus.field39989, false);
-                if (!(method6687 instanceof Class1862)) {
+                final IChunk method6687 = this.field36166.getChunk(i, j, ChunkStatus.FULL, false);
+                if (!(method6687 instanceof Chunk)) {
                     return false;
                 }
-                if (!((Class1862)method6687).method7073().method8321(Class2152.field12788)) {
+                if (!((Chunk)method6687).method7073().method8321(Class2152.field12788)) {
                     return false;
                 }
             }
@@ -315,7 +320,7 @@ public class Class8619
             this.method29247(true);
             this.method29245();
             if (!this.field36174) {
-                this.field36166.method6692(this.field36166.method6958(Class2020.field11525, Class4551.field20031), Class7521.field29404.getDefaultState());
+                this.field36166.method6692(this.field36166.method6958(HeightmapType.field11525, Class4551.field20031), Class7521.field29404.getDefaultState());
             }
             this.field36174 = true;
             this.field36173 = true;
@@ -337,7 +342,7 @@ public class Class8619
     private void method29247(final boolean b) {
         final Class4551 class4551 = new Class4551(b);
         if (this.field36177 == null) {
-            this.field36177 = this.field36166.method6958(Class2020.field11526, Class4551.field20031).method1139();
+            this.field36177 = this.field36166.method6958(HeightmapType.field11526, Class4551.field20031).method1139();
             while (this.field36166.getBlockState(this.field36177).method21696() == Class7521.field29172) {
                 if (this.field36177.getY() <= this.field36166.method6743()) {
                     break;

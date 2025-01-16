@@ -15,6 +15,7 @@ import com.mojang.datafixers.Dynamic;
 import java.util.Collection;
 import java.util.List;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4110 extends Class4107

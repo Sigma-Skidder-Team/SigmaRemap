@@ -7,6 +7,7 @@ package mapped;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.util.math.BlockPos;
 
 public class Class8667
 {

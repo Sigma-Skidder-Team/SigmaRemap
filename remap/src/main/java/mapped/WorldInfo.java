@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.Set;
 import com.mojang.datafixers.DataFixer;
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.dimension.DimensionType;
 
 public class WorldInfo

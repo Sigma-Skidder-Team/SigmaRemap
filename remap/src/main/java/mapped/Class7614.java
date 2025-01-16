@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.Chunk;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashSet;
@@ -114,7 +118,7 @@ public class Class7614
         if (hashMap.size() != 0) {
             final BlockPos class4256 = (BlockPos)hashMap.keySet().toArray()[0];
             final Class4312 class4257 = new Class4312();
-            class4257.field19330 = new Class7859(class4256.getX() >> 4, class4256.getZ() >> 4);
+            class4257.field19330 = new ChunkPos(class4256.getX() >> 4, class4256.getZ() >> 4);
             final ArrayList list = new ArrayList();
             for (final Map.Entry<BlockPos, V> entry : hashMap.entrySet()) {
                 final short n = (short)((entry.getKey().getX() & 0xF) << 12 | (entry.getKey().getZ() & 0xF) << 8 | entry.getKey().getY());
@@ -155,7 +159,7 @@ public class Class7614
         return this.field30176.get(class354);
     }
     
-    public void method23928(final Class1862 class1862) {
+    public void method23928(final Chunk class1862) {
         for (final Class9488 class1863 : this.field30178) {
             class1862.method7008(class1863.field40785, class1863.field40786, false);
         }

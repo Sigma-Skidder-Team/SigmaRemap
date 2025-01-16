@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.concurrent.atomic.AtomicReference;
 import com.google.common.collect.Queues;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -41,7 +42,7 @@ public final class Class7125
         final MutableBoundingBox method8147 = method8146.method13432();
         final int n = (method8147.maxX + method8147.minX) / 2;
         final int n2 = (method8147.maxZ + method8147.minZ) / 2;
-        final int method8148 = field27768.method18883(n, n2, Class2020.field11521);
+        final int method8148 = field27768.method18883(n, n2, HeightmapType.field11521);
         method8146.method13454(0, method8148 - (method8147.minY + method8146.method13520()), 0);
         field27770.add(method8146);
         if (field27766 > 0) {
@@ -131,7 +132,7 @@ public final class Class7125
                                 }
                                 else {
                                     if (n4 == -1) {
-                                        n4 = this.field27768.method18883(field27295.getX(), field27295.getZ(), Class2020.field11521);
+                                        n4 = this.field27768.method18883(field27295.getX(), field27295.getZ(), HeightmapType.field11521);
                                     }
                                     n7 = n4 - method13529;
                                 }
@@ -158,7 +159,7 @@ public final class Class7125
                                 if (!b) {
                                     if (!b2) {
                                         if (n4 == -1) {
-                                            n4 = this.field27768.method18883(field27295.getX(), field27295.getZ(), Class2020.field11521);
+                                            n4 = this.field27768.method18883(field27295.getX(), field27295.getZ(), HeightmapType.field11521);
                                         }
                                         n9 = n4 + n6 / 2;
                                     }

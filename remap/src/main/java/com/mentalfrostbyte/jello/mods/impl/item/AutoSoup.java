@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 
 public class AutoSoup extends Module

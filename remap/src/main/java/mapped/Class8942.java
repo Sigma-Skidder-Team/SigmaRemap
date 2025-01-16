@@ -19,6 +19,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import java.util.function.Predicate;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
+import net.minecraft.util.math.BlockPos;
 
 public class Class8942
 {

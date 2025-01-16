@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap$Builder;
 import com.google.common.collect.Sets;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.Map;

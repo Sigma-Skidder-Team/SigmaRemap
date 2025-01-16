@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.IBlockReader;
+
 public abstract class Class4479 extends Class4473
 {
     public Class1964 field19869;

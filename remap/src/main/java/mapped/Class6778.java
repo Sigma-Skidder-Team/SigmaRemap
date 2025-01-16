@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 

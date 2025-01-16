@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import mapped.*;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
 import java.util.Collection;

@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.mods.impl.player.NoFall;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
+import net.minecraft.util.math.BlockPos;
 
 public class NCPLongJump extends Module
 {

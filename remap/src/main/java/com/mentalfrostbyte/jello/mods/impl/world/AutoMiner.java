@@ -10,6 +10,8 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 import java.awt.Color;
@@ -22,7 +24,7 @@ import java.util.List;
 public class AutoMiner extends Module
 {
     public List<Class8938> field16103;
-    public Set<Class7859> field16104;
+    public Set<ChunkPos> field16104;
     public Class9416 field16105;
     public Thread field16106;
     private BlockPos field16107;
@@ -33,7 +35,7 @@ public class AutoMiner extends Module
     public AutoMiner() {
         super(Category.WORLD, "AutoMiner", "Automatically mines blocks");
         this.field16103 = new ArrayList<Class8938>();
-        this.field16104 = new HashSet<Class7859>();
+        this.field16104 = new HashSet<ChunkPos>();
         this.field16109 = new ArrayList<Class8797>();
         this.field16110 = new ArrayList<Class8797>();
     }
@@ -50,13 +52,13 @@ public class AutoMiner extends Module
             if (class5723.method16998() instanceof Class4298) {
                 if (Minecraft.method5277().world != null) {
                     final Class4298 class5724 = (Class4298)class5723.method16998();
-                    this.method10816(new Class7859(class5724.method12909(), class5724.method12910()));
+                    this.method10816(new ChunkPos(class5724.method12909(), class5724.method12910()));
                 }
             }
         }
     }
     
-    public void method10816(final Class7859 class7859) {
+    public void method10816(final ChunkPos class7859) {
         for (final Class8938 class7860 : this.field16103) {
             if (!class7860.method31699(class7859)) {
                 continue;
@@ -71,7 +73,7 @@ public class AutoMiner extends Module
         this.field16104.clear();
     }
     
-    public List<BlockPos> method10818(final Class7859 class7859) {
+    public List<BlockPos> method10818(final ChunkPos class7859) {
         final ArrayList list = new ArrayList();
         final int n = class7859.field32290 * 16;
         final int n2 = class7859.field32291 * 16;
@@ -102,13 +104,13 @@ public class AutoMiner extends Module
             final ArrayList list = new ArrayList();
             for (int i = -4; i < 4; ++i) {
                 for (int j = -4; j < 4; ++j) {
-                    list.add(new Class7859(AutoMiner.mc.player.chunkCoordX + i, AutoMiner.mc.player.chunkCoordZ + j));
+                    list.add(new ChunkPos(AutoMiner.mc.player.chunkCoordX + i, AutoMiner.mc.player.chunkCoordZ + j));
                 }
             }
             final Iterator<Class8938> iterator = this.field16103.iterator();
             while (iterator.hasNext()) {
                 final Class8938 class5744 = iterator.next();
-                if (class5744.method31700(new Class7859(AutoMiner.mc.player.chunkCoordX, AutoMiner.mc.player.chunkCoordZ)) <= 7 && !this.field16104.contains(class5744.method31701())) {
+                if (class5744.method31700(new ChunkPos(AutoMiner.mc.player.chunkCoordX, AutoMiner.mc.player.chunkCoordZ)) <= 7 && !this.field16104.contains(class5744.method31701())) {
                     continue;
                 }
                 iterator.remove();
@@ -116,7 +118,7 @@ public class AutoMiner extends Module
             this.field16104.clear();
             int n2 = 0;
         Label_0262:
-            for (final Class7859 class5745 : list) {
+            for (final ChunkPos class5745 : list) {
                 final Iterator<Class8938> iterator3 = this.field16103.iterator();
                 while (iterator3.hasNext()) {
                     if (!iterator3.next().method31699(class5745)) {

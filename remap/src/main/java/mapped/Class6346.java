@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunk;
 
 import java.util.Map;
 import java.util.List;
@@ -37,7 +40,7 @@ public abstract class Class6346<C extends Class7065>
     
     public void method18873(final BiomeManager class5507, final IChunk class5508, final Class2126 class5509) {
         final Class2317 class5510 = new Class2317();
-        final Class7859 method7019 = class5508.method7019();
+        final ChunkPos method7019 = class5508.method7019();
         final int field32290 = method7019.field32290;
         final int field32291 = method7019.field32291;
         final Class3090 method7020 = this.method18872(class5507, method7019.method25435());
@@ -132,7 +135,7 @@ public abstract class Class6346<C extends Class7065>
             final Class5936 method7045 = class5508.method7045(class5511.method13596());
             final int n = (method7045 == null) ? 0 : method7045.method17864();
             final Class2317 class5512 = new Class2317();
-            final Class7859 method7046 = class5508.method7019();
+            final ChunkPos method7046 = class5508.method7019();
             Class5936 field24429 = Class5936.field24429;
             final Class3090 method7047 = class5507.method16810(new BlockPos(method7046.method25426() + 9, 0, method7046.method25427() + 9));
             if (class5511.method13594(class5507, class5509, class5512, method7046.field32290, method7046.field32291, method7047)) {
@@ -151,7 +154,7 @@ public abstract class Class6346<C extends Class7065>
         final int n2 = field32291 << 4;
         for (int i = field32290 - 8; i <= field32290 + 8; ++i) {
             for (int j = field32291 - 8; j <= field32291 + 8; ++j) {
-                final long method25423 = Class7859.method25423(i, j);
+                final long method25423 = ChunkPos.method25423(i, j);
                 for (final Map.Entry<K, Class5936> entry : class1851.method6798(i, j).method7021().entrySet()) {
                     final Class5936 class1853 = entry.getValue();
                     if (class1853 == Class5936.field24429) {
@@ -173,13 +176,13 @@ public abstract class Class6346<C extends Class7065>
         return 63;
     }
     
-    public abstract int method18857(final int p0, final int p1, final Class2020 p2);
+    public abstract int method18857(final int p0, final int p1, final HeightmapType p2);
     
-    public int method18883(final int n, final int n2, final Class2020 class2020) {
+    public int method18883(final int n, final int n2, final HeightmapType class2020) {
         return this.method18857(n, n2, class2020);
     }
     
-    public int method18884(final int n, final int n2, final Class2020 class2020) {
+    public int method18884(final int n, final int n2, final HeightmapType class2020) {
         return this.method18857(n, n2, class2020) - 1;
     }
 }

@@ -10,6 +10,8 @@ import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
 import com.google.common.collect.Lists;
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 
 import java.util.List;
 
@@ -64,7 +66,7 @@ public abstract class Class4521 extends Class4473
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         return this.field19936.method27255(this.field19941, class1851, class1852, this.field19937, this.field19939, class1853, random);
     }
     

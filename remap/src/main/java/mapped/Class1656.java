@@ -14,13 +14,16 @@ import net.minecraft.client.renderer.Vector4f;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import java.util.BitSet;
@@ -273,7 +276,7 @@ public class Class1656 implements AutoCloseable, Class1657
                     class393.setPos(j, 0, i);
                     final Class3090 method35833 = field4683.method6959(class393);
                     if (method35833.method9841() != Class2145.field12628) {
-                        final int method35834 = field4683.method6958(Class2020.field11525, class393).getY();
+                        final int method35834 = field4683.method6958(HeightmapType.field11525, class393).getY();
                         int n10 = method35829 - n4;
                         int n11 = method35829 + n4;
                         if (n10 < method35834) {
@@ -372,7 +375,7 @@ public class Class1656 implements AutoCloseable, Class1657
                 n4 = 0;
             }
             for (int i = 0; i < n4; ++i) {
-                final BlockPos method6769 = field4683.method6958(Class2020.field11525, class6093.add(random.nextInt(10) - random.nextInt(10), 0, random.nextInt(10) - random.nextInt(10)));
+                final BlockPos method6769 = field4683.method6958(HeightmapType.field11525, class6093.add(random.nextInt(10) - random.nextInt(10), 0, random.nextInt(10) - random.nextInt(10)));
                 final Class3090 method6770 = field4683.method6959(method6769);
                 final BlockPos method6771 = method6769.method1139();
                 if (method6769.getY() <= class6093.getY() + 10 && method6769.getY() >= class6093.getY() - 10 && method6770.method9841() == Class2145.field12629 && method6770.method9845(method6769) >= 0.15f) {
@@ -410,7 +413,7 @@ public class Class1656 implements AutoCloseable, Class1657
             }
             if (bound > 0 && random.nextInt(3) < this.field9340++) {
                 this.field9340 = 0;
-                if (n2 > class6093.getY() + 1 && field4683.method6958(Class2020.field11525, class6093).getY() > MathHelper.method35642((float)class6093.getY())) {
+                if (n2 > class6093.getY() + 1 && field4683.method6958(HeightmapType.field11525, class6093).getY() > MathHelper.method35642((float)class6093.getY())) {
                     this.field9288.world.method6708(n, n2, n3, Class8520.field35712, Class286.field1581, 0.1f, 0.5f, false);
                 }
                 else {
@@ -878,7 +881,7 @@ public class Class1656 implements AutoCloseable, Class1657
         }
         final Class8388 class355 = new Class8388();
         final BlockPos class356 = new BlockPos(class354.getX() >> 4 << 4, class354.getY() >> 4 << 4, class354.getZ() >> 4 << 4);
-        final Class1862 method6685 = this.field9292.method6685(class356);
+        final Chunk method6685 = this.field9292.method6685(class356);
         for (final BlockPos class357 : BlockPos.getAllInBoxMutable(class356, class356.add(15, 15, 15))) {
             if (method6685.getBlockState(class357).isOpaqueCube(this.field9292, class357)) {
                 class355.method27958(class357);

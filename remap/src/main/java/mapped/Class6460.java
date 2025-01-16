@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.chunk.ChunkStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,14 +25,14 @@ public class Class6460 implements Class6459
     }
     
     @Override
-    public void method19317(final Class7859 class7859) {
+    public void method19317(final ChunkPos class7859) {
         this.field25671 = Util.method27837();
         this.field25670 = this.field25671;
     }
     
     @Override
-    public void method19318(final Class7859 class7859, final ChunkStatus class7860) {
-        if (class7860 == ChunkStatus.field39989) {
+    public void method19318(final ChunkPos class7859, final ChunkStatus class7860) {
+        if (class7860 == ChunkStatus.FULL) {
             ++this.field25669;
         }
         final int method19322 = this.method19322();

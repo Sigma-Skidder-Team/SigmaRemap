@@ -8,6 +8,8 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public class Class7142 extends Class7139<Class6927>

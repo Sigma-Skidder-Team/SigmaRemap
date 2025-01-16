@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 import java.io.Serializable;
 
 public class Class2420 implements Serializable
@@ -23,7 +25,7 @@ public class Class2420 implements Serializable
     }
     
     public Long method9723() {
-        return Class7859.method25423(this.field14319, this.field14320);
+        return ChunkPos.method25423(this.field14319, this.field14320);
     }
     
     @Override

@@ -4,7 +4,7 @@
 
 package mapped;
 
-public final class Class6799 implements Class6797
+public final class Class6799 implements IChunkLoadingError
 {
     @Override
     public String toString() {

@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.ChunkStatus;
+
 import java.util.concurrent.Executor;
 
 public class Class6458 implements Class6459
@@ -17,12 +20,12 @@ public class Class6458 implements Class6459
     }
     
     @Override
-    public void method19317(final Class7859 class7859) {
+    public void method19317(final ChunkPos class7859) {
         this.field25666.method5386(() -> this.field25665.method19317(class7860));
     }
     
     @Override
-    public void method19318(final Class7859 class7859, final ChunkStatus class7860) {
+    public void method19318(final ChunkPos class7859, final ChunkStatus class7860) {
         this.field25666.method5386(() -> this.field25665.method19318(class7861, class7862));
     }
     

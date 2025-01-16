@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.chunk.IChunk;
 
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -60,7 +61,7 @@ public class Class6348 extends Class6346<Class7066>
     }
     
     @Override
-    public int method18857(final int n, final int n2, final Class2020 class2020) {
+    public int method18857(final int n, final int n2, final HeightmapType class2020) {
         return 0;
     }
     

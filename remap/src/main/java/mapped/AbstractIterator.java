@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.CubeCoordinateIterator;
 
 public final class AbstractIterator extends com.google.common.collect.AbstractIterator<BlockPos>

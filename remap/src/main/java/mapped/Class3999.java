@@ -12,10 +12,12 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.Iterator;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import java.util.Set;

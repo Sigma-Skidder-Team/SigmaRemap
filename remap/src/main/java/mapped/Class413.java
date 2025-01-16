@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Class413 extends Class409

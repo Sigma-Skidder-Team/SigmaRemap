@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
+
 import java.util.Properties;
 import java.util.List;
 import java.util.ArrayList;

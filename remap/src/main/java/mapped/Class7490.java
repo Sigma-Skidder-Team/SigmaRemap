@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.Collection;
 import com.mojang.brigadier.suggestion.Suggestions;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.concurrent.CompletableFuture;

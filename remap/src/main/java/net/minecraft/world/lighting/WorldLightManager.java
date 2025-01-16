@@ -2,14 +2,19 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.world.lighting;
 
-public class Class1886 implements Class1887
+import mapped.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.IChunkLightProvider;
+
+public class WorldLightManager implements Class1887
 {
     private final Class1890<?, ?> field10270;
     private final Class1890<?, ?> field10271;
     
-    public Class1886(final Class1908 class1908, final boolean b, final boolean b2) {
+    public WorldLightManager(final IChunkLightProvider class1908, final boolean b, final boolean b2) {
         this.field10270 = (b ? new Class1901(class1908) : null);
         this.field10271 = (b2 ? new Class1902(class1908) : null);
     }
@@ -56,7 +61,7 @@ public class Class1886 implements Class1887
         }
     }
     
-    public void method7255(final Class7859 class7859, final boolean b) {
+    public void method7255(final ChunkPos class7859, final boolean b) {
         if (this.field10270 != null) {
             this.field10270.method7312(class7859, b);
         }
@@ -95,7 +100,7 @@ public class Class1886 implements Class1887
         }
     }
     
-    public void method7259(final Class7859 class7859, final boolean b) {
+    public void method7259(final ChunkPos class7859, final boolean b) {
         if (this.field10270 != null) {
             this.field10270.method7313(class7859, b);
         }

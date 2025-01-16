@@ -14,6 +14,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Queues;
 import java.util.Comparator;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.function.Consumer;
 import java.util.List;
 import java.util.Queue;
@@ -62,7 +65,7 @@ public class Class6953<T> implements Class6952<T>
             if (class7460.field28775 > this.field27224.method6754()) {
                 break;
             }
-            if (!method6904.method7410(class7460.field28774)) {
+            if (!method6904.canTick(class7460.field28774)) {
                 continue;
             }
             iterator.remove();
@@ -73,7 +76,7 @@ public class Class6953<T> implements Class6952<T>
         this.field27224.method6796().method15300("ticking");
         Class7460 class7461;
         while ((class7461 = this.field27225.poll()) != null) {
-            if (method6904.method7410(class7461.field28774)) {
+            if (method6904.canTick(class7461.field28774)) {
                 try {
                     this.field27226.add(class7461);
                     this.field27227.accept(class7461);
@@ -102,7 +105,7 @@ public class Class6953<T> implements Class6952<T>
         stream.forEach(this::method21353);
     }
     
-    public List<Class7460<T>> method21347(final Class7859 class7859, final boolean b, final boolean b2) {
+    public List<Class7460<T>> method21347(final ChunkPos class7859, final boolean b, final boolean b2) {
         final int n = (class7859.field32290 << 4) - 2;
         final int n2 = n + 16 + 2;
         final int n3 = (class7859.field32291 << 4) - 2;
@@ -161,7 +164,7 @@ public class Class6953<T> implements Class6952<T>
         }
     }
     
-    public ListNBT method21351(final Class7859 class7859) {
+    public ListNBT method21351(final ChunkPos class7859) {
         return method21352(this.field27220, this.method21347(class7859, false, true), this.field27224.method6754());
     }
     

@@ -1,6 +1,6 @@
 package net.minecraft.util.math.shapes;
 
-import mapped.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import mapped.EntitySelectionContext;
 import mapped.Item;
 import net.minecraft.entity.Entity;

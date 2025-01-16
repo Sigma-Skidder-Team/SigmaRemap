@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -57,7 +58,7 @@ public class Class5788 extends Class5784
     private void method17260() {
         if (this.field23778 != null) {
             if (this.field23778.method35215()) {
-                final BlockPos method6958 = this.field23764.world.method6958(Class2020.field11526, new BlockPos(Class4551.field20031));
+                final BlockPos method6958 = this.field23764.world.method6958(HeightmapType.field11526, new BlockPos(Class4551.field20031));
                 final int n = (this.field23764.method5128() != null) ? this.field23764.method5128().method29250() : 0;
                 if (this.field23764.method2633().nextInt(n + 3) == 0) {
                     this.field23764.method5127().method33696(Class7193.field27950);

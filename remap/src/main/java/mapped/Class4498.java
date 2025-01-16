@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 
 import java.util.Random;
@@ -34,7 +35,7 @@ public class Class4498 extends Class4484
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         this.method13444(class1851, class1853, 0, 0, 0, 6, 1, 6, Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);
         this.method13444(class1851, class1853, 0, 2, 0, 6, 10, 6, Class7521.field29147.getDefaultState(), Class7521.field29147.getDefaultState(), false);
         this.method13444(class1851, class1853, 0, 2, 0, 1, 8, 0, Class7521.field29394.getDefaultState(), Class7521.field29394.getDefaultState(), false);

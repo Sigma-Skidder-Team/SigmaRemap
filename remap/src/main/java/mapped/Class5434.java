@@ -7,6 +7,7 @@ package mapped;
 import java.util.Optional;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5434 extends Class5419<Class759>
 {

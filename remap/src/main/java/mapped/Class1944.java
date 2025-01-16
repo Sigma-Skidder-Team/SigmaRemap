@@ -5,6 +5,9 @@
 package mapped;
 
 import com.google.common.primitives.Doubles;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.Collections;
 import java.util.Map;
@@ -21,7 +24,7 @@ public abstract class Class1944 implements Comparable<Class1944>
         this(class8974, null, n);
     }
     
-    public Class1944(final Class8974 field10599, final Class7859 class7859, final double field10600) {
+    public Class1944(final Class8974 field10599, final ChunkPos class7859, final double field10600) {
         this.field10599 = field10599;
         this.field10597 = new AtomicBoolean(false);
         this.field10596 = field10600;

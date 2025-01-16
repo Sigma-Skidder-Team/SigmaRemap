@@ -14,9 +14,9 @@ public class Class6931 implements Class6926
     public final int field27154;
     public final double field27155;
     public final double field27156;
-    public final Class2020 field27157;
+    public final HeightmapType field27157;
     
-    public Class6931(final int field27154, final double field27155, final double field27156, final Class2020 field27157) {
+    public Class6931(final int field27154, final double field27155, final double field27156, final HeightmapType field27157) {
         this.field27154 = field27154;
         this.field27155 = field27155;
         this.field27156 = field27156;
@@ -29,6 +29,6 @@ public class Class6931 implements Class6926
     }
     
     public static Class6931 method21305(final Dynamic<?> dynamic) {
-        return new Class6931(dynamic.get("noise_to_count_ratio").asInt(10), dynamic.get("noise_factor").asDouble(80.0), dynamic.get("noise_offset").asDouble(0.0), Class2020.method8063(dynamic.get("heightmap").asString("OCEAN_FLOOR_WG")));
+        return new Class6931(dynamic.get("noise_to_count_ratio").asInt(10), dynamic.get("noise_factor").asDouble(80.0), dynamic.get("noise_offset").asDouble(0.0), HeightmapType.method8063(dynamic.get("heightmap").asString("OCEAN_FLOOR_WG")));
     }
 }

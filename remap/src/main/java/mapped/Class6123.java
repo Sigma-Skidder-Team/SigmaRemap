@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.dispenser.IPosition;
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import java.util.HashMap;
 import java.util.Collection;

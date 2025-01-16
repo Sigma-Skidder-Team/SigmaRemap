@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.function.IntSupplier;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 
 public class Class8141
 {
@@ -44,7 +46,7 @@ public class Class8141
             this.field33543.writeLock().lock();
             for (int i = -1; i <= 1; ++i) {
                 for (int j = -1; j <= 1; ++j) {
-                    this.field33542.remove(Class7859.method25423(n + i, n2 + j));
+                    this.field33542.remove(ChunkPos.method25423(n + i, n2 + j));
                 }
             }
         }
@@ -64,7 +66,7 @@ public class Class8141
     }
     
     private int[] method26832(final int n, final int n2) {
-        final long method25423 = Class7859.method25423(n, n2);
+        final long method25423 = ChunkPos.method25423(n, n2);
         this.field33543.readLock().lock();
         int[] array;
         try {

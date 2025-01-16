@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.cache.CacheLoader;
+import net.minecraft.util.math.BlockPos;
 
 public class Class6047 extends CacheLoader<BlockPos, Class7990>
 {

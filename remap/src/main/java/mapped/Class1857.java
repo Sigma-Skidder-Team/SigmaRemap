@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.lighting.WorldLightManager;
+
 import java.util.Arrays;
 
 public class Class1857 implements Class1856
@@ -160,7 +163,7 @@ public class Class1857 implements Class1856
     }
     
     @Override
-    public Class1886 method6700() {
+    public WorldLightManager method6700() {
         return this.field10111.method6700();
     }
     

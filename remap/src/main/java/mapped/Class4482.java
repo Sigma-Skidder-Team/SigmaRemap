@@ -8,6 +8,7 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
 import net.minecraft.nbt.IntArrayNBT;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 
 import java.util.Random;
@@ -91,7 +92,7 @@ public class Class4482 extends Class4479
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         if (!this.method13436(class1851, class1853)) {
             this.method13444(class1851, class1853, this.field19849.minX, this.field19849.minY, this.field19849.minZ, this.field19849.maxX, this.field19849.minY, this.field19849.maxZ, Class7521.field29156.getDefaultState(), Class4482.field19848, true);
             this.method13444(class1851, class1853, this.field19849.minX, this.field19849.minY + 1, this.field19849.minZ, this.field19849.maxX, Math.min(this.field19849.minY + 3, this.field19849.maxY), this.field19849.maxZ, Class4482.field19848, Class4482.field19848, false);

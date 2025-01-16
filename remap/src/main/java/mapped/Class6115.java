@@ -17,6 +17,7 @@ import com.google.common.collect.Sets;
 import java.util.Set;
 import com.google.common.collect.Maps;
 import net.minecraft.dispenser.IPosition;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.UUID;

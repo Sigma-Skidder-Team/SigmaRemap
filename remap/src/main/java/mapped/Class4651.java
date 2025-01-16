@@ -8,10 +8,12 @@ import java.util.EnumSet;
 import javax.annotation.Nullable;
 import java.util.HashSet;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
 
 public class Class4651 extends Class4654
 {

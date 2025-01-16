@@ -4,8 +4,12 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.chunk.IChunkLightProvider;
 import org.apache.commons.lang3.mutable.MutableInt;
 import java.util.Arrays;
 import javax.annotation.Nullable;
@@ -13,7 +17,7 @@ import javax.annotation.Nullable;
 public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> extends Class1891 implements Class1888
 {
     private static final Direction[] field10274;
-    public final Class1908 field10275;
+    public final IChunkLightProvider field10275;
     public final Class237 field10276;
     public final S field10277;
     private boolean field10278;
@@ -21,7 +25,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     private final long[] field10280;
     private final IBlockReader[] field10281;
     
-    public Class1890(final Class1908 field10275, final Class237 field10276, final S field10277) {
+    public Class1890(final IChunkLightProvider field10275, final Class237 field10276, final S field10277) {
         super(16, 256, 8192);
         this.field10279 = new Mutable();
         this.field10280 = new long[2];
@@ -42,13 +46,13 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     
     @Nullable
     private IBlockReader method7295(final int n, final int n2) {
-        final long method25423 = Class7859.method25423(n, n2);
+        final long method25423 = ChunkPos.method25423(n, n2);
         for (int i = 0; i < 2; ++i) {
             if (method25423 == this.field10280[i]) {
                 return this.field10281[i];
             }
         }
-        final IBlockReader method25424 = this.field10275.method7400(n, n2);
+        final IBlockReader method25424 = this.field10275.getChunkForLight(n, n2);
         for (int j = 1; j > 0; --j) {
             this.field10280[j] = this.field10280[j - 1];
             this.field10281[j] = this.field10281[j - 1];
@@ -58,7 +62,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     }
     
     private void method7296() {
-        Arrays.fill(this.field10280, Class7859.field32289);
+        Arrays.fill(this.field10280, ChunkPos.field32289);
         Arrays.fill(this.field10281, null);
     }
     
@@ -197,11 +201,11 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
         this.field10277.method7363(class353.method1117(), b);
     }
     
-    public void method7312(final Class7859 class7859, final boolean b) {
+    public void method7312(final ChunkPos class7859, final boolean b) {
         this.field10277.method7360(Class353.method1112(Class353.method1116(class7859.field32290, 0, class7859.field32291)), b);
     }
     
-    public void method7313(final Class7859 class7859, final boolean b) {
+    public void method7313(final ChunkPos class7859, final boolean b) {
         this.field10277.method7361(Class353.method1112(Class353.method1116(class7859.field32290, 0, class7859.field32291)), b);
     }
     

@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.Random;
 
 public class Class4519 extends Class4515
@@ -59,11 +62,11 @@ public class Class4519 extends Class4515
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         int min = 256;
         int n = 0;
         final BlockPos method19945 = this.field19918.method19945();
-        final Class2020 class1855 = this.field19932 ? Class2020.field11521 : Class2020.field11523;
+        final HeightmapType class1855 = this.field19932 ? HeightmapType.field11521 : HeightmapType.field11523;
         final int n2 = method19945.getX() * method19945.getZ();
         if (n2 != 0) {
             for (final BlockPos class1856 : BlockPos.getAllInBoxMutable(this.field19920, this.field19920.add(method19945.getX() - 1, 0, method19945.getZ() - 1))) {

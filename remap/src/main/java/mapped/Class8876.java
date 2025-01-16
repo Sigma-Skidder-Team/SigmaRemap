@@ -5,6 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.dimension.DimensionType;
 
 import java.util.UUID;
@@ -52,7 +55,7 @@ public class Class8876
         if (method31206 == null) {
             return null;
         }
-        final IChunk method31207 = method31206.method6904().getChunk(class354.getX() >> 4, class354.getZ() >> 4, ChunkStatus.field39989, false);
+        final IChunk method31207 = method31206.method6904().getChunk(class354.getX() >> 4, class354.getZ() >> 4, ChunkStatus.FULL, false);
         if (method31207 != null) {
             return method31207.getTileEntity(class354);
         }

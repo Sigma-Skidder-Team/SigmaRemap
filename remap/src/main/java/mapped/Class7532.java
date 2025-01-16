@@ -9,7 +9,13 @@ import java.util.AbstractList;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.lighting.WorldLightManager;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.shorts.ShortListIterator;
 import it.unimi.dsi.fastutil.shorts.ShortList;
@@ -29,11 +35,11 @@ public class Class7532
 {
     private static final Logger field29910;
     
-    public static Class1865 method23592(final Class1849 class1849, final Class1795 class1850, final Class1883 class1851, final Class7859 a, final CompoundNBT class1852) {
+    public static Class1865 method23592(final Class1849 class1849, final Class1795 class1850, final Class1883 class1851, final ChunkPos a, final CompoundNBT class1852) {
         final Class6346<?> method7438 = class1849.method6904().method7438();
         final Class1868 method7439 = method7438.method18879();
         final CompoundNBT method7440 = class1852.getCompound("Level");
-        final Class7859 b = new Class7859(method7440.getInt("xPos"), method7440.getInt("zPos"));
+        final ChunkPos b = new ChunkPos(method7440.getInt("xPos"), method7440.getInt("zPos"));
         if (!Objects.equals(a, b)) {
             Class7532.field29910.error("Chunk file at {} is in the wrong location; relocating. (Expected {}, got {})", (Object)a, (Object)a, (Object)b);
         }
@@ -45,7 +51,7 @@ public class Class7532
         final ListNBT method7442 = method7440.getList("Sections", 10);
         final Class8199[] array = new Class8199[16];
         final boolean method7443 = class1849.method6789().method20503();
-        final Class1886 method7444 = class1849.method6904().getLightManager();
+        final WorldLightManager method7444 = class1849.method6904().getLightManager();
         if (method7441) {
             method7444.method7259(a, true);
         }
@@ -75,19 +81,19 @@ public class Class7532
             }
         }
         final long method7447 = method7440.getLong("InhabitedTime");
-        final Class260 method7448 = method23594(class1852);
+        final ChunkStatus.Type method7448 = method23594(class1852);
         IChunk class1859;
-        if (method7448 != Class260.field1244) {
+        if (method7448 != ChunkStatus.Type.LEVELCHUNK) {
             final Class1865 class1858 = new Class1865(a, class1854, array, (Class6951<Block>)class1855, (Class6951<Fluid>)class1856);
             class1858.method7097(class1853);
             class1859 = class1858;
             class1858.method7040(method7447);
-            class1858.method7098(ChunkStatus.method34449(method7440.getString("Status")));
-            if (class1858.method7027().method34451(ChunkStatus.field39985)) {
+            class1858.method7098(ChunkStatus.byName(method7440.getString("Status")));
+            if (class1858.method7027().isAtLeast(ChunkStatus.FEATURES)) {
                 class1858.method7106(method7444);
             }
             if (!method7441) {
-                if (class1858.method7027().method34451(ChunkStatus.field39986)) {
+                if (class1858.method7027().isAtLeast(ChunkStatus.LIGHT)) {
                     for (final BlockPos class1860 : BlockPos.getAllInBoxMutable(a.method25426(), 0, a.method25427(), a.method25428(), 255, a.method25429())) {
                         if (class1859.getBlockState(class1860).getLightValue() == 0) {
                             continue;
@@ -112,12 +118,12 @@ public class Class7532
             else {
                 method7450 = Class6956.method21359(method7440.getList("LiquidTicks", 10), Registry.FLUID::getKey, Registry.FLUID::getOrDefault);
             }
-            class1859 = new Class1862(class1849.method6744(), a, class1853, class1854, (Class6952<Block>)method7449, (Class6952<Fluid>)method7450, method7447, array, class1865 -> method23595(class1864, class1865));
+            class1859 = new Chunk(class1849.method6744(), a, class1853, class1854, (Class6952<Block>)method7449, (Class6952<Fluid>)method7450, method7447, array, class1865 -> method23595(class1864, class1865));
         }
         class1859.method7044(method7441);
         final CompoundNBT method7451 = method7440.getCompound("Heightmaps");
-        final EnumSet<Class2020> none = EnumSet.noneOf(Class2020.class);
-        for (final Class2020 e : class1859.method7027().method34450()) {
+        final EnumSet<HeightmapType> none = EnumSet.noneOf(HeightmapType.class);
+        for (final HeightmapType e : class1859.method7027().getHeightMaps()) {
             final String method7452 = e.method8060();
             if (!method7451.contains(method7452, 12)) {
                 none.add(e);
@@ -140,7 +146,7 @@ public class Class7532
                 class1859.method7031(method7455.method348(k), j);
             }
         }
-        if (method7448 != Class260.field1244) {
+        if (method7448 != ChunkStatus.Type.LEVELCHUNK) {
             final Class1865 class1861 = (Class1865)class1859;
             final ListNBT method7456 = method7440.getList("Entities", 10);
             for (int l = 0; l < method7456.size(); ++l) {
@@ -163,11 +169,11 @@ public class Class7532
             }
             return class1861;
         }
-        return new Class1866((Class1862)class1859);
+        return new Class1866((Chunk)class1859);
     }
     
     public static CompoundNBT method23593(final Class1849 class1849, final IChunk class1850) {
-        final Class7859 method7019 = class1850.method7019();
+        final ChunkPos method7019 = class1850.method7019();
         final CompoundNBT class1851 = new CompoundNBT();
         final CompoundNBT class1852 = new CompoundNBT();
         class1851.putInt("DataVersion", Class9528.method35579().getWorldVersion());
@@ -176,7 +182,7 @@ public class Class7532
         class1852.putInt("zPos", method7019.field32291);
         class1852.putLong("LastUpdate", class1849.method6754());
         class1852.putLong("InhabitedTime", class1850.method7041());
-        class1852.putString("Status", class1850.method7027().method34443());
+        class1852.putString("Status", class1850.method7027().getName());
         final Class8288 method7020 = class1850.method7039();
         if (!method7020.method27550()) {
             class1852.put("UpgradeData", method7020.method27551());
@@ -187,10 +193,10 @@ public class Class7532
         final boolean method7023 = class1850.method7043();
         for (int i = -1; i < 17; ++i) {
             final int n = i;
-            final Class8199 class1854 = Arrays.stream(method7021).filter(class1863 -> class1863 != null && class1863.method27159() >> 4 == n2).findFirst().orElse(Class1862.field10141);
+            final Class8199 class1854 = Arrays.stream(method7021).filter(class1863 -> class1863 != null && class1863.method27159() >> 4 == n2).findFirst().orElse(Chunk.field10141);
             final Class7281 method7024 = method7022.method7288(Class237.field912).method7292(Class353.method1090(method7019, n));
             final Class7281 method7025 = method7022.method7288(Class237.field911).method7292(Class353.method1090(method7019, n));
-            if (class1854 == Class1862.field10141) {
+            if (class1854 == Chunk.field10141) {
                 if (method7024 == null) {
                     if (method7025 == null) {
                         continue;
@@ -199,7 +205,7 @@ public class Class7532
             }
             final CompoundNBT e = new CompoundNBT();
             e.putByte("Y", (byte)(n & 0xFF));
-            if (class1854 != Class1862.field10141) {
+            if (class1854 != Chunk.field10141) {
                 class1854.method27161().method25512(e, "Palette", "BlockStates");
             }
             if (method7024 != null) {
@@ -233,7 +239,7 @@ public class Class7532
         }
         class1852.put("TileEntities", class1855);
         final ListNBT class1856 = new ListNBT();
-        if (class1850.method7027().method34448() != Class260.field1244) {
+        if (class1850.method7027().getType() != ChunkStatus.Type.LEVELCHUNK) {
             final Class1865 class1857 = (Class1865)class1850;
             ((AbstractCollection<Object>)class1856).addAll(class1857.method7096());
             class1852.put("Lights", method23599(class1857.method7090()));
@@ -244,7 +250,7 @@ public class Class7532
             class1852.put("CarvingMasks", class1858);
         }
         else {
-            final Class1862 class1860 = (Class1862)class1850;
+            final Chunk class1860 = (Chunk)class1850;
             class1860.method7068(false);
             for (int k = 0; k < class1860.method7067().length; ++k) {
                 for (final Entity class1861 : class1860.method7067()[k]) {
@@ -285,7 +291,7 @@ public class Class7532
         class1852.put("PostProcessing", method23599(class1850.method7030()));
         final CompoundNBT class1862 = new CompoundNBT();
         for (final Map.Entry<Object, V> entry : class1850.method7015()) {
-            if (!class1850.method7027().method34450().contains(entry.getKey())) {
+            if (!class1850.method7027().getHeightMaps().contains(entry.getKey())) {
                 continue;
             }
             class1862.put(entry.getKey().method8060(), new LongArrayNBT(((Class9548)entry.getValue()).method35717()));
@@ -295,17 +301,17 @@ public class Class7532
         return class1851;
     }
     
-    public static Class260 method23594(final CompoundNBT class51) {
+    public static ChunkStatus.Type method23594(final CompoundNBT class51) {
         if (class51 != null) {
-            final ChunkStatus method34449 = ChunkStatus.method34449(class51.getCompound("Level").getString("Status"));
+            final ChunkStatus method34449 = ChunkStatus.byName(class51.getCompound("Level").getString("Status"));
             if (method34449 != null) {
-                return method34449.method34448();
+                return method34449.getType();
             }
         }
-        return Class260.field1243;
+        return ChunkStatus.Type.PROTOCHUNK;
     }
     
-    private static void method23595(final CompoundNBT class51, final Class1862 class52) {
+    private static void method23595(final CompoundNBT class51, final Chunk class52) {
         final ListNBT method328 = class51.getList("Entities", 10);
         final World method329 = class52.method7065();
         for (int i = 0; i < method328.size(); ++i) {
@@ -330,7 +336,7 @@ public class Class7532
         }
     }
     
-    private static CompoundNBT method23596(final Class7859 class7859, final Map<String, Class5936> map, final Map<String, LongSet> map2) {
+    private static CompoundNBT method23596(final ChunkPos class7859, final Map<String, Class5936> map, final Map<String, LongSet> map2) {
         final CompoundNBT class7860 = new CompoundNBT();
         final CompoundNBT class7861 = new CompoundNBT();
         for (final Map.Entry<String, V> entry : map.entrySet()) {
@@ -354,12 +360,12 @@ public class Class7532
         return hashMap;
     }
     
-    private static Map<String, LongSet> method23598(final Class7859 class7859, final CompoundNBT class7860) {
+    private static Map<String, LongSet> method23598(final ChunkPos class7859, final CompoundNBT class7860) {
         final HashMap hashMap = Maps.newHashMap();
         final CompoundNBT method327 = class7860.getCompound("References");
         for (final String s : method327.keySet()) {
             hashMap.put(s, new LongOpenHashSet(Arrays.stream(method327.method326(s)).filter(n2 -> {
-                final Class7859 class7862 = new Class7859(n2);
+                final ChunkPos class7862 = new ChunkPos(n2);
                 if (class7862.method25436(class7861) <= 8) {
                     return true;
                 }

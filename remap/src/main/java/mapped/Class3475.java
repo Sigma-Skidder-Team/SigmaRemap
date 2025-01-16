@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.IBlockReader;
 
 import java.util.EnumSet;
 

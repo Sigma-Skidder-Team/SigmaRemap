@@ -17,6 +17,8 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -106,7 +108,7 @@ public class Class9051
             }
         }
         else {
-            class7493.method6904().method7441(Class9105.field38571, new Class7859(new BlockPos(n, n2, n3)), 1, method23371.getEntityId());
+            class7493.method6904().method7441(Class9105.field38571, new ChunkPos(new BlockPos(n, n2, n3)), 1, method23371.getEntityId());
             method23371.stopRiding();
             if (((Class513)method23371).method2783()) {
                 ((Class513)method23371).method2849(true, true);

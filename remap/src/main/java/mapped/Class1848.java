@@ -21,12 +21,15 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.CubeCoordinateIterator;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.dimension.DimensionType;
 
 import java.util.List;
@@ -83,7 +86,7 @@ public class Class1848 extends World
         this.getWorldBorder().method34809();
         this.method6757();
         this.method6796().startSection("blocks");
-        this.chunkProvider.method7403(booleanSupplier);
+        this.chunkProvider.tick(booleanSupplier);
         this.method6815();
         this.method6796().endSection();
     }
@@ -134,7 +137,7 @@ public class Class1848 extends World
     }
     
     public void method6808(final Entity class399) {
-        if (class399 instanceof PlayerEntity || this.method6835().method7408(class399)) {
+        if (class399 instanceof PlayerEntity || this.method6835().isChunkLoaded(class399)) {
             class399.method1731(class399.getPosX(), class399.getPosY(), class399.getPosZ());
             class399.prevRotationYaw = class399.rotationYaw;
             class399.prevRotationPitch = class399.rotationPitch;
@@ -158,7 +161,7 @@ public class Class1848 extends World
     
     public void method6809(final Entity class399, final Entity class400) {
         if (!class400.removed && class400.method1920() == class399) {
-            if (class400 instanceof PlayerEntity || this.method6835().method7408(class400)) {
+            if (class400 instanceof PlayerEntity || this.method6835().isChunkLoaded(class400)) {
                 class400.method1731(class400.getPosX(), class400.getPosY(), class400.getPosZ());
                 class400.prevRotationYaw = class400.rotationYaw;
                 class400.prevRotationPitch = class400.rotationPitch;
@@ -210,7 +213,7 @@ public class Class1848 extends World
         this.method6796().endSection();
     }
     
-    public void method6811(final Class1862 class1862) {
+    public void method6811(final Chunk class1862) {
         Collection<TileEntity> field10053;
         if (!Class9570.field41360.method22634()) {
             field10053 = this.tileEntitiesToBeRemoved;
@@ -281,7 +284,7 @@ public class Class1848 extends World
         if (!Class9570.field41223.method22619() || !Class9570.method35840(Class9570.field41223, class399, this)) {
             this.method6821(n);
             this.field10072.put(n, (Object)class399);
-            this.method6835().method7413(MathHelper.floor(class399.getPosX() / 16.0), MathHelper.floor(class399.getPosZ() / 16.0), ChunkStatus.field39989, true).method7010(class399);
+            this.method6835().method7413(MathHelper.floor(class399.getPosX() / 16.0), MathHelper.floor(class399.getPosZ() / 16.0), ChunkStatus.FULL, true).method7010(class399);
             if (Class9570.field41253.method22605()) {
                 Class9570.method35826(class399, Class9570.field41253, new Object[0]);
             }
@@ -309,7 +312,7 @@ public class Class1848 extends World
         this.method6852(class399);
     }
     
-    public void method6823(final Class1862 class1862) {
+    public void method6823(final Chunk class1862) {
         final ObjectIterator iterator = this.field10072.int2ObjectEntrySet().iterator();
         while (((Iterator)iterator).hasNext()) {
             final Entity class1863 = (Entity)((Int2ObjectMap$Entry)((Iterator)iterator).next()).getValue();

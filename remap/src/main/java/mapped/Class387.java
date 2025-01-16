@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.function.Supplier;
 import java.io.File;
 import com.mojang.datafixers.DataFixer;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.dimension.DimensionType;
 
 public class Class387 implements AutoCloseable
@@ -45,11 +46,11 @@ public class Class387 implements AutoCloseable
     }
     
     @Nullable
-    public CompoundNBT method1309(final Class7859 class7859) throws IOException {
+    public CompoundNBT method1309(final ChunkPos class7859) throws IOException {
         return this.field2245.method7557(class7859);
     }
     
-    public void method1310(final Class7859 class7859, final CompoundNBT class7860) {
+    public void method1310(final ChunkPos class7859, final CompoundNBT class7860) {
         this.field2245.method7556(class7859, class7860);
         if (this.field2247 != null) {
             this.field2247.method30170(class7859.method25422());

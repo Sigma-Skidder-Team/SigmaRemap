@@ -10,6 +10,7 @@ import com.mojang.datafixers.types.DynamicOps;
 import javax.annotation.Nullable;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
 
 public class Class4108 extends Class4107
 {

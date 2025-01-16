@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.IChunk;
+
 import java.util.BitSet;
 import java.util.function.Function;
 import java.util.Random;

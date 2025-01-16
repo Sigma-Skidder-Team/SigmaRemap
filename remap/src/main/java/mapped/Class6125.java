@@ -12,6 +12,7 @@ import java.util.Comparator;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Ordering;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.Map;
 

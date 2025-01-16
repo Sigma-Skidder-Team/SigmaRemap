@@ -9,7 +9,9 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.Long2IntOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
+import net.minecraft.world.chunk.IChunkLightProvider;
 
 public class Class1898 extends Class1897<Class7500>
 {
@@ -21,7 +23,7 @@ public class Class1898 extends Class1897<Class7500>
     private final LongSet field10318;
     private volatile boolean field10319;
     
-    public Class1898(final Class1908 class1908) {
+    public Class1898(final IChunkLightProvider class1908) {
         super(Class237.field911, class1908, new Class7500((Long2ObjectOpenHashMap<Class7281>)new Long2ObjectOpenHashMap(), new Long2IntOpenHashMap(), Integer.MAX_VALUE));
         this.field10315 = (LongSet)new LongOpenHashSet();
         this.field10316 = (LongSet)new LongOpenHashSet();

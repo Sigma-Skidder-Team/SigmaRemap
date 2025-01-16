@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.chunk.Chunk;
+
 public class Class8199
 {
     private static String[] field33718;
@@ -83,7 +85,7 @@ public class Class8199
     }
     
     public static boolean method27155(final Class8199 class8199) {
-        return class8199 == Class1862.field10141 || class8199.method27154();
+        return class8199 == Chunk.field10141 || class8199.method27154();
     }
     
     public boolean method27156() {

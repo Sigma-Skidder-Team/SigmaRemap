@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.HashMap;
@@ -90,12 +91,12 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
         return method7180.get();
     }
     
-    private void method7183(final Class7859 class7859) {
+    private void method7183(final ChunkPos class7859) {
         this.method7185(class7859, (com.mojang.datafixers.types.DynamicOps<CompoundNBT>)Class8453.field34721, this.method7184(class7859));
     }
     
     @Nullable
-    private CompoundNBT method7184(final Class7859 class7859) {
+    private CompoundNBT method7184(final ChunkPos class7859) {
         try {
             return this.field10242.method7557(class7859);
         }
@@ -105,7 +106,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
         }
     }
     
-    private <T> void method7185(final Class7859 class7859, final DynamicOps<T> dynamicOps, final T t) {
+    private <T> void method7185(final ChunkPos class7859, final DynamicOps<T> dynamicOps, final T t) {
         if (t != null) {
             final Dynamic dynamic = new Dynamic((DynamicOps)dynamicOps, (Object)t);
             final int method7190 = method7190((Dynamic<?>)dynamic);
@@ -132,7 +133,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
         }
     }
     
-    private void method7186(final Class7859 class7859) {
+    private void method7186(final ChunkPos class7859) {
         final INBT class7860 = (INBT)this.method7187(class7859, (com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue();
         if (!(class7860 instanceof CompoundNBT)) {
             Class1882.field10241.error("Expected compound tag, got {}", (Object)class7860);
@@ -142,7 +143,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
         }
     }
     
-    private <T> Dynamic<T> method7187(final Class7859 class7859, final DynamicOps<T> dynamicOps) {
+    private <T> Dynamic<T> method7187(final ChunkPos class7859, final DynamicOps<T> dynamicOps) {
         final HashMap hashMap = Maps.newHashMap();
         for (int i = 0; i < 16; ++i) {
             final long method1117 = Class353.method1090(class7859, i).method1117();
@@ -174,7 +175,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
         return dynamic.get("DataVersion").asNumber().orElse(1945).intValue();
     }
     
-    public void method7191(final Class7859 class7859) {
+    public void method7191(final ChunkPos class7859) {
         if (!this.field10244.isEmpty()) {
             for (int i = 0; i < 16; ++i) {
                 if (this.field10244.contains(Class353.method1090(class7859, i).method1117())) {

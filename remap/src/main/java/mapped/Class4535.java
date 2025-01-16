@@ -13,6 +13,7 @@ import com.mojang.datafixers.Dynamic;
 import java.util.function.Function;
 import java.util.List;
 import com.google.common.collect.BiMap;
+import net.minecraft.util.math.BlockPos;
 
 public abstract class Class4535<FC extends Class5113>
 {

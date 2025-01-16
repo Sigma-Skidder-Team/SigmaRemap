@@ -9,6 +9,7 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 import it.unimi.dsi.fastutil.longs.Long2LongOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2LongMap;
+import net.minecraft.util.math.BlockPos;
 
 public class Class6850 extends Class6851<Class759>
 {

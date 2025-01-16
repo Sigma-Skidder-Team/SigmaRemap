@@ -22,6 +22,9 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import com.mojang.datafixers.DataFixer;
 import java.io.File;
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.ChunkStatus;
 
 public class Class1883 extends Class1882<Class364>
 {
@@ -48,14 +51,14 @@ public class Class1883 extends Class1882<Class364>
     }
     
     public Stream<Class377> method7199(final Predicate<Class8912> predicate, final BlockPos class354, final int x, final Class2045 class355) {
-        return Class7859.method25437(new Class7859(class354), Math.floorDiv(x, 16)).flatMap(class357 -> this.method7201(predicate2, class357, class356));
+        return ChunkPos.method25437(new ChunkPos(class354), Math.floorDiv(x, 16)).flatMap(class357 -> this.method7201(predicate2, class357, class356));
     }
     
     public Stream<Class377> method7200(final Predicate<Class8912> predicate, final BlockPos class354, final int n, final Class2045 class355) {
         return this.method7199(predicate, class354, n, class355).filter(class357 -> class357.method1259().distanceSq(class356) <= n2);
     }
     
-    public Stream<Class377> method7201(final Predicate<Class8912> predicate, final Class7859 class7859, final Class2045 class7860) {
+    public Stream<Class377> method7201(final Predicate<Class8912> predicate, final ChunkPos class7859, final Class2045 class7860) {
         return IntStream.range(0, 16).boxed().flatMap(n -> this.method7202(predicate2, Class353.method1090(class7861, n).method1117(), class7862));
     }
     
@@ -127,7 +130,7 @@ public class Class1883 extends Class1882<Class364>
         this.field10250.method7346(n, this.field10250.method7345(n), false);
     }
     
-    public void method7213(final Class7859 class7859, final Class8199 class7860) {
+    public void method7213(final ChunkPos class7859, final Class8199 class7860) {
         Util.method27855(this.method7180(Class353.method1090(class7859, class7860.method27159() >> 4).method1117()), class7861 -> class7861.method1181(biConsumer -> {
             if (!(!method7214(class7862))) {
                 this.method7215(class7862, class7863, biConsumer);
@@ -148,6 +151,6 @@ public class Class1883 extends Class1882<Class364>
     }
     
     public void method7216(final Class1852 class1852, final BlockPos class1853, final int x) {
-        Class353.method1120(new Class7859(class1853), Math.floorDiv(x, 16)).map(class1854 -> Pair.of((Object)class1854, (Object)this.method7180(class1854.method1117()))).filter(pair -> !((Optional)pair.getSecond()).map(Class364::method1183).orElse(false)).map(pair2 -> ((Class353)pair2.getFirst()).method1115()).filter(class1855 -> this.field10251.add(class1855.method25422())).forEach(class1857 -> class1856.method6966(class1857.field32290, class1857.field32291, ChunkStatus.field39977));
+        Class353.method1120(new ChunkPos(class1853), Math.floorDiv(x, 16)).map(class1854 -> Pair.of((Object)class1854, (Object)this.method7180(class1854.method1117()))).filter(pair -> !((Optional)pair.getSecond()).map(Class364::method1183).orElse(false)).map(pair2 -> ((Class353)pair2.getFirst()).method1115()).filter(class1855 -> this.field10251.add(class1855.method25422())).forEach(class1857 -> class1856.method6966(class1857.field32290, class1857.field32291, ChunkStatus.EMPTY));
     }
 }

@@ -6,6 +6,7 @@ package net.minecraft.network.datasync;
 
 import mapped.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import java.util.Objects;
 import io.netty.handler.codec.DecoderException;

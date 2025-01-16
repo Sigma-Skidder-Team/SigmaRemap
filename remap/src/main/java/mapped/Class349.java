@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class349 implements Comparable<Class349>
 {
     private static String[] field2149;

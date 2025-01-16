@@ -4,11 +4,12 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Comparator;
 
-public class Class4449 implements Comparator<Class7859>
+public class Class4449 implements Comparator<ChunkPos>
 {
     private static String[] field19789;
     private int field19790;
@@ -24,11 +25,11 @@ public class Class4449 implements Comparator<Class7859>
     }
     
     @Override
-    public int compare(final Class7859 class7859, final Class7859 class7860) {
+    public int compare(final ChunkPos class7859, final ChunkPos class7860) {
         return this.method13413(class7859) - this.method13413(class7860);
     }
     
-    private int method13413(final Class7859 class7859) {
+    private int method13413(final ChunkPos class7859) {
         final int n = class7859.field32290 - this.field19790;
         final int n2 = class7859.field32291 - this.field19791;
         final int n3 = n * n + n2 * n2;

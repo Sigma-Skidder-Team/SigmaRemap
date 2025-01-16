@@ -4,7 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3988 extends Class3986

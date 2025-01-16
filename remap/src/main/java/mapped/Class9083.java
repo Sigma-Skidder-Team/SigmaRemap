@@ -11,6 +11,8 @@ import it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap;
 import com.google.common.collect.Lists;
 import com.google.common.base.Stopwatch;
 import it.unimi.dsi.fastutil.objects.Object2LongMap;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Collection;
 
 public class Class9083

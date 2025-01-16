@@ -6,6 +6,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.entity.EntityType;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.commons.lang3.Validate;
@@ -141,7 +142,7 @@ public abstract class Registry<T> implements Class89<T>
         field226 = method500("dimension_type", () -> DimensionType.field2223);
         field227 = method501("motive", "kebab", () -> Class8539.field35829);
         field228 = method500("custom_stat", () -> Class8276.field34007);
-        field229 = method501("chunk_status", "empty", () -> ChunkStatus.field39977);
+        field229 = method501("chunk_status", "empty", () -> ChunkStatus.EMPTY);
         field230 = method500("structure_feature", () -> Class9380.field40226);
         field231 = method500("structure_piece", () -> Class9520.field40945);
         field232 = method500("rule_test", () -> Class7757.field31698);

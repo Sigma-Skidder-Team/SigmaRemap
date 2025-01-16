@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.List;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.math.BlockPos;
 
 public class Class1869 extends Class1868
 {

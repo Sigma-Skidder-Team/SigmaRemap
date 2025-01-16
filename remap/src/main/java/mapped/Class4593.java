@@ -7,6 +7,8 @@ package mapped;
 import java.util.Set;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public abstract class Class4593<T extends Class5127> extends Class4592<T>

@@ -9,6 +9,8 @@ import com.google.common.collect.Lists;
 import java.util.stream.Stream;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public class Class7151 extends Class7139<Class6927>

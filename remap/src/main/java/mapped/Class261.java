@@ -12,7 +12,7 @@ import java.util.Map;
 
 public enum Class261
 {
-    field1246("terrain_matching", (ImmutableList<Class4107>)ImmutableList.of((Object)new Class4112(Class2020.field11521, -1))), 
+    field1246("terrain_matching", (ImmutableList<Class4107>)ImmutableList.of((Object)new Class4112(HeightmapType.field11521, -1))),
     field1247("rigid", (ImmutableList<Class4107>)ImmutableList.of());
     
     private static final Map<String, Class261> field1248;

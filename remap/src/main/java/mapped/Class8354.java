@@ -7,6 +7,7 @@ package mapped;
 import java.util.Iterator;
 import javax.annotation.Nullable;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 

@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 
 import java.util.function.Function;
@@ -23,7 +24,7 @@ public class Class4555 extends Class4535<Class5122>
             for (int j = 0; j < 16; ++j) {
                 final int n = class1853.getX() + i;
                 final int n2 = class1853.getZ() + j;
-                class1855.setPos(n, class1851.method6699(Class2020.field11525, n, n2), n2);
+                class1855.setPos(n, class1851.method6699(HeightmapType.field11525, n, n2), n2);
                 class1856.method1287(class1855).method1291(Direction.DOWN, 1);
                 final Class3090 method6959 = class1851.method6959(class1855);
                 if (method6959.method9847(class1851, class1856, false)) {

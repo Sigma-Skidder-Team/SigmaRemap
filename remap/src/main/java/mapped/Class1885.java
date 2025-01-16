@@ -4,6 +4,11 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.IChunkLightProvider;
+import net.minecraft.world.lighting.WorldLightManager;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import java.util.concurrent.CompletableFuture;
@@ -14,7 +19,7 @@ import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import org.apache.logging.log4j.Logger;
 
-public class Class1885 extends Class1886 implements AutoCloseable
+public class Class1885 extends WorldLightManager implements AutoCloseable
 {
     private static final Logger field10263;
     private final Class877<Runnable> field10264;
@@ -24,7 +29,7 @@ public class Class1885 extends Class1886 implements AutoCloseable
     private volatile int field10268;
     private final AtomicBoolean field10269;
     
-    public Class1885(final Class1908 class1908, final Class388 field10266, final boolean b, final Class877<Runnable> field10267, final Class875<Class7701<Runnable>> field10268) {
+    public Class1885(final IChunkLightProvider class1908, final Class388 field10266, final boolean b, final Class877<Runnable> field10267, final Class875<Class7701<Runnable>> field10268) {
         super(class1908, true, b);
         this.field10265 = (ObjectList<Pair<Class2216, Runnable>>)new ObjectArrayList();
         this.field10268 = 5;
@@ -54,7 +59,7 @@ public class Class1885 extends Class1886 implements AutoCloseable
         this.method7257(class354.getX() >> 4, class354.getZ() >> 4, Class2216.field13612, Util.method27856(() -> super.checkBlock(class355), () -> "checkBlock " + obj));
     }
     
-    public void method7253(final Class7859 class7859) {
+    public void method7253(final ChunkPos class7859) {
         this.method7258(class7859.field32290, class7859.field32291, () -> 0, Class2216.field13611, Util.method27856(() -> {
             super.method7259(class7860, false);
             super.method7255(class7860, false);
@@ -78,7 +83,7 @@ public class Class1885 extends Class1886 implements AutoCloseable
     }
     
     @Override
-    public void method7255(final Class7859 class7859, final boolean b) {
+    public void method7255(final ChunkPos class7859, final boolean b) {
         this.method7257(class7859.field32290, class7859.field32291, Class2216.field13611, Util.method27856(() -> super.method7255(class7860, b2), () -> "enableLight " + obj + " " + b3));
     }
     
@@ -88,7 +93,7 @@ public class Class1885 extends Class1886 implements AutoCloseable
     }
     
     private void method7257(final int n, final int n2, final Class2216 class2216, final Runnable runnable) {
-        this.method7258(n, n2, this.field10266.method1318(Class7859.method25423(n, n2)), class2216, runnable);
+        this.method7258(n, n2, this.field10266.method1318(ChunkPos.method25423(n, n2)), class2216, runnable);
     }
     
     private void method7258(final int n, final int n2, final IntSupplier intSupplier, final Class2216 class2216, final Runnable runnable) {
@@ -97,16 +102,16 @@ public class Class1885 extends Class1886 implements AutoCloseable
             if (this.field10265.size() >= this.field10268) {
                 this.method7262();
             }
-        }, Class7859.method25423(n, n2), intSupplier));
+        }, ChunkPos.method25423(n, n2), intSupplier));
     }
     
     @Override
-    public void method7259(final Class7859 class7859, final boolean b) {
+    public void method7259(final ChunkPos class7859, final boolean b) {
         this.method7258(class7859.field32290, class7859.field32291, () -> 0, Class2216.field13611, Util.method27856(() -> super.method7259(class7860, b2), () -> "retainData " + obj));
     }
     
     public CompletableFuture<IChunk> method7260(final IChunk class1860, final boolean b) {
-        final Class7859 method7019 = class1860.method7019();
+        final ChunkPos method7019 = class1860.method7019();
         class1860.method7044(false);
         this.method7257(method7019.field32290, method7019.field32291, Class2216.field13611, Util.method27856(() -> {
             class1861.method7014();

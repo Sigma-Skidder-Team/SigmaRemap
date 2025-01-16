@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
@@ -67,7 +68,7 @@ public class Class3465<T extends Class777> extends Class3446
             else {
                 final Vec3d class5487 = new Vec3d(this.field16328.method4311());
                 final Vec3d method4317 = this.field16328.method1934();
-                final BlockPos method4318 = this.field16328.world.method6958(Class2020.field11526, new BlockPos(method4317.subtract(class5487).rotateYaw(90.0f).scale(0.4).add(class5487).subtract(method4317).normalize().scale(10.0).add(method4317)));
+                final BlockPos method4318 = this.field16328.world.method6958(HeightmapType.field11526, new BlockPos(method4317.subtract(class5487).rotateYaw(90.0f).scale(0.4).add(class5487).subtract(method4317).normalize().scale(10.0).add(method4317)));
                 if (method4315.method24724(method4318.getX(), method4318.getY(), method4318.getZ(), method4314 ? this.field16330 : this.field16329)) {
                     if (method4314) {
                         final Iterator iterator = method4316.iterator();
@@ -90,7 +91,7 @@ public class Class3465<T extends Class777> extends Class3446
     
     private boolean method11031() {
         final Random method2633 = this.field16328.method2633();
-        final BlockPos method2634 = this.field16328.world.method6958(Class2020.field11526, new BlockPos(this.field16328).add(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
+        final BlockPos method2634 = this.field16328.world.method6958(HeightmapType.field11526, new BlockPos(this.field16328).add(-8 + method2633.nextInt(16), 0, -8 + method2633.nextInt(16)));
         return this.field16328.method4150().method24724(method2634.getX(), method2634.getY(), method2634.getZ(), this.field16329);
     }
 }

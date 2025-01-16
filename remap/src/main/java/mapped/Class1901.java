@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.chunk.IChunkLightProvider;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public final class Class1901 extends Class1890<Class7502, Class1899>
@@ -13,7 +16,7 @@ public final class Class1901 extends Class1890<Class7502, Class1899>
     private static final Direction[] field10325;
     private final Mutable field10326;
     
-    public Class1901(final Class1908 class1908) {
+    public Class1901(final IChunkLightProvider class1908) {
         super(class1908, Class237.field912, new Class1899(class1908));
         this.field10326 = new Mutable();
     }
@@ -22,7 +25,7 @@ public final class Class1901 extends Class1890<Class7502, Class1899>
         final int method1126 = BlockPos.unpackX(n);
         final int method1127 = BlockPos.unpackY(n);
         final int method1128 = BlockPos.unpackZ(n);
-        final IBlockReader method1129 = this.field10275.method7400(method1126 >> 4, method1128 >> 4);
+        final IBlockReader method1129 = this.field10275.getChunkForLight(method1126 >> 4, method1128 >> 4);
         return (method1129 == null) ? 0 : method1129.getLightValue(this.field10326.setPos(method1126, method1127, method1128));
     }
     

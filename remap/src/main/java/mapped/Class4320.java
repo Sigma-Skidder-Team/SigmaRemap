@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import java.io.IOException;
 import org.apache.logging.log4j.Logger;

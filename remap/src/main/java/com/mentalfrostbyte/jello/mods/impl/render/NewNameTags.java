@@ -15,6 +15,7 @@ import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.Map;

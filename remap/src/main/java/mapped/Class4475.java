@@ -58,7 +58,7 @@ public abstract class Class4475 extends Class4473
             for (int j = this.field19849.minX; j <= this.field19849.maxX; ++j) {
                 class1853.setPos(j, 64, i);
                 if (class1852.isVecInside(class1853)) {
-                    n2 += class1851.method6958(Class2020.field11526, class1853).getY();
+                    n2 += class1851.method6958(HeightmapType.field11526, class1853).getY();
                     ++n3;
                 }
             }

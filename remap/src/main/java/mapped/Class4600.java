@@ -8,6 +8,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public class Class4600 extends Class4598<Class5129>

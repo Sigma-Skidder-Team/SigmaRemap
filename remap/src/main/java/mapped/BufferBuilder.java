@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import com.google.common.primitives.Floats;
 import org.lwjgl.opengl.GL11;

@@ -7,6 +7,7 @@ package mapped;
 import java.util.Set;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
 
 public class Class379 extends Class378
 {

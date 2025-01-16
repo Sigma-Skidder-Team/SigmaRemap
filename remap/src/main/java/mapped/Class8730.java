@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.ChunkStatus;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongIterator;
@@ -128,19 +130,19 @@ public abstract class Class8730
         this.field36667.method7329(n, method30123(method30134), false);
     }
     
-    public <T> void method30130(final Class9105<T> class9105, final Class7859 class9106, final int n, final T t) {
+    public <T> void method30130(final Class9105<T> class9105, final ChunkPos class9106, final int n, final T t) {
         this.method30128(class9106.method25422(), new Class1949<Object>(class9105, n, t));
     }
     
-    public <T> void method30131(final Class9105<T> class9105, final Class7859 class9106, final int n, final T t) {
+    public <T> void method30131(final Class9105<T> class9105, final ChunkPos class9106, final int n, final T t) {
         this.method30129(class9106.method25422(), new Class1949<Object>(class9105, n, t));
     }
     
-    public <T> void method30132(final Class9105<T> class9105, final Class7859 class9106, final int n, final T t) {
+    public <T> void method30132(final Class9105<T> class9105, final ChunkPos class9106, final int n, final T t) {
         this.method30128(class9106.method25422(), new Class1949<Object>(class9105, 33 - n, t));
     }
     
-    public <T> void method30133(final Class9105<T> class9105, final Class7859 class9106, final int n, final T t) {
+    public <T> void method30133(final Class9105<T> class9105, final ChunkPos class9106, final int n, final T t) {
         this.method30129(class9106.method25422(), new Class1949<Object>(class9105, 33 - n, t));
     }
     
@@ -148,7 +150,7 @@ public abstract class Class8730
         return (Class79)this.field36666.computeIfAbsent(n, p0 -> Class79.method430(4));
     }
     
-    public void method30135(final Class7859 class7859, final boolean b) {
+    public void method30135(final ChunkPos class7859, final boolean b) {
         final Class1949 class7860 = new Class1949((Class9105<T>)Class9105.field38568, 31, (T)class7859);
         if (!b) {
             this.method30129(class7859.method25422(), class7860);
@@ -208,6 +210,6 @@ public abstract class Class8730
     
     static {
         field36663 = LogManager.getLogger();
-        field36664 = 33 + ChunkStatus.method34441(ChunkStatus.field39989) - 2;
+        field36664 = 33 + ChunkStatus.getDistance(ChunkStatus.FULL) - 2;
     }
 }

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Class6129 implements Class6113

@@ -14,6 +14,7 @@ import java.util.Iterator;
 import com.google.common.collect.Maps;
 import java.util.List;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.dimension.DimensionType;
 
 import java.util.Map;
@@ -59,7 +60,7 @@ public class Class8734
     
     public CompoundNBT method30171(CompoundNBT method30174) {
         final CompoundNBT method30175 = method30174.getCompound("Level");
-        final Class7859 class7859 = new Class7859(method30175.getInt("xPos"), method30175.getInt("zPos"));
+        final ChunkPos class7859 = new ChunkPos(method30175.getInt("xPos"), method30175.getInt("zPos"));
         if (this.method30173(class7859.field32290, class7859.field32291)) {
             method30174 = this.method30174(method30174, class7859);
         }
@@ -78,7 +79,7 @@ public class Class8734
             for (int i = class7859.field32290 - method30178; i <= class7859.field32290 + method30178; ++i) {
                 for (int j = class7859.field32291 - method30178; j <= class7859.field32291 + method30178; ++j) {
                     if (this.method30172(i, j, s)) {
-                        ((LongList)list).add(Class7859.method25423(i, j));
+                        ((LongList)list).add(ChunkPos.method25423(i, j));
                     }
                 }
             }
@@ -91,13 +92,13 @@ public class Class8734
     }
     
     private boolean method30172(final int n, final int n2, final String s) {
-        return this.field36698 && this.field36699.get(s) != null && this.field36700.get(Class8734.field36696.get(s)).method18944(Class7859.method25423(n, n2));
+        return this.field36698 && this.field36699.get(s) != null && this.field36700.get(Class8734.field36696.get(s)).method18944(ChunkPos.method25423(n, n2));
     }
     
     private boolean method30173(final int n, final int n2) {
         if (this.field36698) {
             for (final String s : this.field36702) {
-                if (this.field36699.get(s) != null && this.field36700.get(Class8734.field36696.get(s)).method18945(Class7859.method25423(n, n2))) {
+                if (this.field36699.get(s) != null && this.field36700.get(Class8734.field36696.get(s)).method18945(ChunkPos.method25423(n, n2))) {
                     return true;
                 }
             }
@@ -106,7 +107,7 @@ public class Class8734
         return false;
     }
     
-    private CompoundNBT method30174(final CompoundNBT class51, final Class7859 class52) {
+    private CompoundNBT method30174(final CompoundNBT class51, final ChunkPos class52) {
         final CompoundNBT method327 = class51.getCompound("Level");
         final CompoundNBT method328 = method327.getCompound("Structures");
         final CompoundNBT method329 = method328.getCompound("Starts");
@@ -145,7 +146,7 @@ public class Class8734
                 final Iterator<String> iterator2 = method327.keySet().iterator();
                 while (iterator2.hasNext()) {
                     final CompoundNBT method328 = method327.getCompound(iterator2.next());
-                    final long method329 = Class7859.method25423(method328.getInt("ChunkX"), method328.getInt("ChunkZ"));
+                    final long method329 = ChunkPos.method25423(method328.getInt("ChunkX"), method328.getInt("ChunkZ"));
                     final ListNBT method330 = method328.getList("Children", 10);
                     if (!method330.isEmpty()) {
                         final String s = Class8734.field36697.get(method330.method346(0).getString("id"));
@@ -166,7 +167,7 @@ public class Class8734
                     final Iterator<String> iterator3 = method327.keySet().iterator();
                     while (iterator3.hasNext()) {
                         final CompoundNBT method331 = method327.getCompound(iterator3.next());
-                        class8215.method18943(Class7859.method25423(method331.getInt("ChunkX"), method331.getInt("ChunkZ")));
+                        class8215.method18943(ChunkPos.method25423(method331.getInt("ChunkX"), method331.getInt("ChunkZ")));
                     }
                     class8215.method18903();
                 }

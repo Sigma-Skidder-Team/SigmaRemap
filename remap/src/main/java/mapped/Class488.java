@@ -5,11 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.*;
 import net.minecraft.util2.Direction;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Random;
@@ -198,13 +198,13 @@ public class Class488 extends Class489 implements Class439
         return (class1857 != null) ? class1857 : class1856;
     }
     
-    private static Class1862 method2441(final World class1847, final Vec3d class1848) {
+    private static Chunk method2441(final World class1847, final Vec3d class1848) {
         return class1847.method6686(MathHelper.floor(class1848.x / 16.0), MathHelper.floor(class1848.z / 16.0));
     }
     
     @Nullable
-    private static BlockPos method2442(final Class1862 class1862) {
-        final Class7859 method7019 = class1862.method7019();
+    private static BlockPos method2442(final Chunk class1862) {
+        final ChunkPos method7019 = class1862.method7019();
         final BlockPos class1863 = new BlockPos(method7019.method25426(), 30, method7019.method25427());
         final BlockPos class1864 = new BlockPos(method7019.method25428(), class1862.method7012() + 16 - 1, method7019.method25429());
         BlockPos class1865 = null;

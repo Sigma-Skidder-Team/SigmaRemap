@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import com.google.common.collect.Sets;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.Set;
@@ -97,7 +98,7 @@ public class Class9406
             else {
                 boolean field2390 = this.field40368.forceSpawn;
                 if (!field2390) {
-                    final Class7859 class514 = new Class7859(this.field40368.chunkCoordX, this.field40368.chunkCoordZ);
+                    final ChunkPos class514 = new ChunkPos(this.field40368.chunkCoordX, this.field40368.chunkCoordZ);
                     final Class9298 method16742 = this.field40372.method1317(class514.method25422());
                     if (method16742 != null) {
                         if (method16742.method34345() != null) {

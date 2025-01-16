@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3i;
 
 import java.util.Comparator;
@@ -15,12 +17,12 @@ public class Class9105<T>
     private final long field38564;
     public static final Class9105<Class315> field38565;
     public static final Class9105<Class315> field38566;
-    public static final Class9105<Class7859> field38567;
-    public static final Class9105<Class7859> field38568;
-    public static final Class9105<Class7859> field38569;
+    public static final Class9105<ChunkPos> field38567;
+    public static final Class9105<ChunkPos> field38568;
+    public static final Class9105<ChunkPos> field38569;
     public static final Class9105<BlockPos> field38570;
     public static final Class9105<Integer> field38571;
-    public static final Class9105<Class7859> field38572;
+    public static final Class9105<ChunkPos> field38572;
     
     public static <T> Class9105<T> method32911(final String s, final Comparator<T> comparator) {
         return new Class9105<T>(s, comparator, 0L);
@@ -52,11 +54,11 @@ public class Class9105<T>
     static {
         field38565 = method32911("start", (p0, p1) -> 0);
         field38566 = method32911("dragon", (p0, p1) -> 0);
-        field38567 = method32911("player", Comparator.comparingLong(Class7859::method25422));
-        field38568 = method32911("forced", Comparator.comparingLong(Class7859::method25422));
-        field38569 = method32911("light", Comparator.comparingLong(Class7859::method25422));
+        field38567 = method32911("player", Comparator.comparingLong(ChunkPos::method25422));
+        field38568 = method32911("forced", Comparator.comparingLong(ChunkPos::method25422));
+        field38569 = method32911("light", Comparator.comparingLong(ChunkPos::method25422));
         field38570 = method32912("portal", Vec3i::compareTo, 300);
         field38571 = method32912("post_teleport", Integer::compareTo, 5);
-        field38572 = method32912("unknown", Comparator.comparingLong(Class7859::method25422), 1);
+        field38572 = method32912("unknown", Comparator.comparingLong(ChunkPos::method25422), 1);
     }
 }

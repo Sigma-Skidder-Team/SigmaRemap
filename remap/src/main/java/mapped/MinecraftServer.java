@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.command.ICommandSource;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
@@ -357,11 +359,11 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         final Class1849 method1481 = this.method1481(DimensionType.field2223);
         MinecraftServer.field2292.info("Preparing start region for dimension " + DimensionType.method1276(method1481.dimension.getType()));
         final BlockPos method1482 = method1481.method6758();
-        class6459.method19317(new Class7859(method1482));
+        class6459.method19317(new ChunkPos(method1482));
         final Class1909 method1483 = method1481.method6904();
         method1483.method7422().method7263(500);
         this.field2343 = Util.method27837();
-        method1483.method7441(Class9105.field38565, new Class7859(method1482), 11, Class315.field1875);
+        method1483.method7441(Class9105.field38565, new ChunkPos(method1482), 11, Class315.field1875);
         while (method1483.method7424() != 441) {
             this.field2343 = Util.method27837() + 10L;
             this.method1458();
@@ -376,7 +378,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
             final Class1849 method1484 = this.method1481(class6460);
             final LongIterator iterator2 = class6461.method18933().iterator();
             while (iterator2.hasNext()) {
-                method1484.method6904().method7407(new Class7859(iterator2.nextLong()), true);
+                method1484.method6904().forceChunk(new ChunkPos(iterator2.nextLong()), true);
             }
         }
         this.field2343 = Util.method27837() + 10L;

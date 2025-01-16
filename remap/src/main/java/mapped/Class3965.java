@@ -8,9 +8,11 @@ import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
 import java.util.Random;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util2.Direction;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class Class3965 extends Block implements Class3966

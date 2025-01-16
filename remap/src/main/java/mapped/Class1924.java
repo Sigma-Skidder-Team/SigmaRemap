@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import org.apache.logging.log4j.LogManager;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.attribute.FileAttribute;
@@ -71,12 +72,12 @@ public class Class1924 implements AutoCloseable
         throw new IllegalArgumentException("Expected directory, got " + path2.toAbsolutePath());
     }
     
-    private Path method7638(final Class7859 class7859) {
+    private Path method7638(final ChunkPos class7859) {
         return this.field10470.resolve("c." + class7859.field32290 + "." + class7859.field32291 + ".mcc");
     }
     
     @Nullable
-    public synchronized DataInputStream method7639(final Class7859 class7859) throws IOException {
+    public synchronized DataInputStream method7639(final ChunkPos class7859) throws IOException {
         final int method7655 = this.method7655(class7859);
         if (method7655 == 0) {
             return null;
@@ -123,7 +124,7 @@ public class Class1924 implements AutoCloseable
     }
     
     @Nullable
-    private DataInputStream method7642(final Class7859 class7859, final byte b, final InputStream inputStream) throws IOException {
+    private DataInputStream method7642(final ChunkPos class7859, final byte b, final InputStream inputStream) throws IOException {
         final Class8057 method26430 = Class8057.method26430(b);
         if (method26430 != null) {
             return new DataInputStream(new BufferedInputStream(method26430.method26434(inputStream)));
@@ -133,7 +134,7 @@ public class Class1924 implements AutoCloseable
     }
     
     @Nullable
-    private DataInputStream method7643(final Class7859 class7859, final byte b) throws IOException {
+    private DataInputStream method7643(final ChunkPos class7859, final byte b) throws IOException {
         final Path method7638 = this.method7638(class7859);
         if (Files.isRegularFile(method7638, new LinkOption[0])) {
             return this.method7642(class7859, b, Files.newInputStream(method7638, new OpenOption[0]));
@@ -162,7 +163,7 @@ public class Class1924 implements AutoCloseable
         return (n + 4096 - 1) / 4096;
     }
     
-    public boolean method7649(final Class7859 class7859) {
+    public boolean method7649(final ChunkPos class7859) {
         final int method7655 = this.method7655(class7859);
         if (method7655 == 0) {
             return false;
@@ -205,11 +206,11 @@ public class Class1924 implements AutoCloseable
         }
     }
     
-    public DataOutputStream method7650(final Class7859 class7859) throws IOException {
+    public DataOutputStream method7650(final ChunkPos class7859) throws IOException {
         return new DataOutputStream(new BufferedOutputStream(this.field10471.method26433(new Class1724(this, class7859))));
     }
     
-    public synchronized void method7651(final Class7859 class7859, final ByteBuffer byteBuffer) throws IOException {
+    public synchronized void method7651(final ChunkPos class7859, final ByteBuffer byteBuffer) throws IOException {
         final int method7657 = method7657(class7859);
         final int value = this.field10473.get(method7657);
         final int method7658 = method7647(value);
@@ -262,15 +263,15 @@ public class Class1924 implements AutoCloseable
         this.field10469.write(this.field10472, 0L);
     }
     
-    private int method7655(final Class7859 class7859) {
+    private int method7655(final ChunkPos class7859) {
         return this.field10473.get(method7657(class7859));
     }
     
-    public boolean method7656(final Class7859 class7859) {
+    public boolean method7656(final ChunkPos class7859) {
         return this.method7655(class7859) != 0;
     }
     
-    private static int method7657(final Class7859 class7859) {
+    private static int method7657(final ChunkPos class7859) {
         return class7859.method25432() + class7859.method25433() * 32;
     }
     

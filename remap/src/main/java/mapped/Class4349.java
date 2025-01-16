@@ -7,6 +7,9 @@ package mapped;
 import java.util.Iterator;
 import java.io.IOException;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.lighting.WorldLightManager;
+
 import java.util.List;
 
 public class Class4349 implements IPacket<IClientPlayNetHandler>
@@ -24,7 +27,7 @@ public class Class4349 implements IPacket<IClientPlayNetHandler>
     public Class4349() {
     }
     
-    public Class4349(final Class7859 class7859, final Class1886 class7860) {
+    public Class4349(final ChunkPos class7859, final WorldLightManager class7860) {
         this.field19477 = class7859.field32290;
         this.field19478 = class7859.field32291;
         this.field19483 = Lists.newArrayList();
@@ -53,7 +56,7 @@ public class Class4349 implements IPacket<IClientPlayNetHandler>
         }
     }
     
-    public Class4349(final Class7859 class7859, final Class1886 class7860, final int field19479, final int field19480) {
+    public Class4349(final ChunkPos class7859, final WorldLightManager class7860, final int field19479, final int field19480) {
         this.field19477 = class7859.field32290;
         this.field19478 = class7859.field32291;
         this.field19479 = field19479;

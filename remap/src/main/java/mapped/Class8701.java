@@ -13,6 +13,7 @@ import java.util.Collection;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.CommandDispatcher;
+import net.minecraft.util.math.BlockPos;
 
 public class Class8701
 {

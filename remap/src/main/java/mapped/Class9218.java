@@ -237,7 +237,7 @@ public class Class9218
     }
     
     public static void method33950(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20014.method13527(new Class5117(0.2f)).method28610(Class7133.field27805.method21889((Object)new Class6931(160, 80.0, 0.3, Class2020.field11521))));
+        class3090.method9849(Class2108.field12228, Class4535.field20014.method13527(new Class5117(0.2f)).method28610(Class7133.field27805.method21889((Object)new Class6931(160, 80.0, 0.3, HeightmapType.field11521))));
         class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.05f), (Object)Class4535.field19977.method13527(Class9218.field39513).method28611(0.15f), (Object)Class4535.field19979.method13527(Class9218.field39517).method28611(0.7f)), Class4535.field19982.method13527(Class9218.field39520))).method28610(Class7133.field27794.method21889((Object)new Class6934(30, 0.1f, 1))));
     }
     
@@ -427,7 +427,7 @@ public class Class9218
     }
     
     public static void method33991(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20008.method13527(Class5113.field22059).method28610(Class7133.field27805.method21889((Object)new Class6931(120, 80.0, 0.0, Class2020.field11523))));
+        class3090.method9849(Class2108.field12228, Class4535.field20008.method13527(Class5113.field22059).method28610(Class7133.field27805.method21889((Object)new Class6931(120, 80.0, 0.0, HeightmapType.field11523))));
     }
     
     public static void method33992(final Class3090 class3090) {
@@ -443,7 +443,7 @@ public class Class9218
     }
     
     public static void method33995(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20008.method13527(Class5113.field22059).method28610(Class7133.field27805.method21889((Object)new Class6931(80, 80.0, 0.0, Class2020.field11523))));
+        class3090.method9849(Class2108.field12228, Class4535.field20008.method13527(Class5113.field22059).method28610(Class7133.field27805.method21889((Object)new Class6931(80, 80.0, 0.0, HeightmapType.field11523))));
     }
     
     public static void method33996(final Class3090 class3090) {

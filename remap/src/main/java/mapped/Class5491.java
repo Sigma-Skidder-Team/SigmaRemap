@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public interface Class5491 extends Class5490
 {
     double getX();

@@ -8,6 +8,7 @@ import com.mojang.brigadier.context.CommandContext;
 import java.nio.file.OpenOption;
 import java.io.Reader;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.Style;
 import org.apache.commons.io.IOUtils;
@@ -39,7 +40,7 @@ public class Class7321
                 if (n3 <= 32) {
                     final Class1849 method23250 = class7492.method23250();
                     final BlockPos class7493 = new BlockPos(class7492.method23249());
-                    final BlockPos class7494 = new BlockPos(class7493.getX(), class7492.method23250().method6958(Class2020.field11522, class7493).getY(), class7493.getZ() + 3);
+                    final BlockPos class7494 = new BlockPos(class7493.getX(), class7492.method23250().method6958(HeightmapType.field11522, class7493).getY(), class7493.getZ() + 3);
                     Class8787.method30575(s.toLowerCase(), class7494, new BlockPos(n, n2, n3), 2, method23250);
                     for (int i = 0; i < n; ++i) {
                         for (int j = 0; j < n3; ++j) {
@@ -133,14 +134,14 @@ public class Class7321
     private static int method22446(final Class7492 class7492, final int n) {
         final Class1849 method23250 = class7492.method23250();
         Class6445.method19231(method23250);
-        Class6445.method19233(method23250, new BlockPos(class7492.method23249().x, class7492.method23250().method6958(Class2020.field11522, new BlockPos(class7492.method23249())).getY(), class7492.method23249().z), Class8564.field35990, MathHelper.method35651(n, 0, 1024));
+        Class6445.method19233(method23250, new BlockPos(class7492.method23249().x, class7492.method23250().method6958(HeightmapType.field11522, new BlockPos(class7492.method23249())).getY(), class7492.method23249().z), Class8564.field35990, MathHelper.method35651(n, 0, 1024));
         return 1;
     }
     
     private static int method22447(final Class7492 class7492, final Class6812 class7493) {
         final Class1849 method23250 = class7492.method23250();
         final BlockPos class7494 = new BlockPos(class7492.method23249());
-        final BlockPos class7495 = new BlockPos(class7494.getX(), class7492.method23250().method6958(Class2020.field11522, class7494).getY(), class7494.getZ() + 3);
+        final BlockPos class7495 = new BlockPos(class7494.getX(), class7492.method23250().method6958(HeightmapType.field11522, class7494).getY(), class7494.getZ() + 3);
         Class6445.method19231(method23250);
         method22448(class7493, method23250);
         Class6445.method19222(new Class9083(class7493, class7495, method23250), Class8564.field35990);
@@ -169,7 +170,7 @@ public class Class7321
     
     private static void method22451(final Class7492 class7492, final Collection<Class6812> collection) {
         final BlockPos class7493 = new BlockPos(class7492.method23249());
-        final BlockPos class7494 = new BlockPos(class7493.getX(), class7492.method23250().method6958(Class2020.field11522, class7493).getY(), class7493.getZ() + 3);
+        final BlockPos class7494 = new BlockPos(class7493.getX(), class7492.method23250().method6958(HeightmapType.field11522, class7493).getY(), class7493.getZ() + 3);
         final Class1849 method23250 = class7492.method23250();
         method22452(class7492, "Running " + collection.size() + " tests...");
         final Class7333 class7495 = new Class7333(Class6445.method19224(collection, class7494, method23250, Class8564.field35990));

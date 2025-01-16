@@ -8,6 +8,8 @@ import it.unimi.dsi.fastutil.objects.ObjectList;
 import java.util.Iterator;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.world.chunk.IChunk;
+
 import java.util.Set;
 import java.util.function.Predicate;
 
@@ -20,13 +22,13 @@ public class Class9548
     private final Predicate<BlockState> field41117;
     private final IChunk field41118;
     
-    public Class9548(final IChunk field41118, final Class2020 class2020) {
+    public Class9548(final IChunk field41118, final HeightmapType class2020) {
         this.field41116 = new Class9217(9, 256);
         this.field41117 = class2020.method8064();
         this.field41118 = field41118;
     }
     
-    public static void method35711(final IChunk class1860, final Set<Class2020> set) {
+    public static void method35711(final IChunk class1860, final Set<HeightmapType> set) {
         final int size = set.size();
         final ObjectArrayList list = new ObjectArrayList(size);
         final ObjectListIterator iterator = ((ObjectList)list).iterator();
@@ -36,7 +38,7 @@ public class Class9548
                 for (int j = 0; j < 16; ++j) {
                     final Iterator iterator2 = set.iterator();
                     while (iterator2.hasNext()) {
-                        ((ObjectList)list).add((Object)class1860.method7017((Class2020)iterator2.next()));
+                        ((ObjectList)list).add((Object)class1860.method7017((HeightmapType)iterator2.next()));
                     }
                     for (int k = n - 1; k >= 0; --k) {
                         method1296.method1300(i, k, j);

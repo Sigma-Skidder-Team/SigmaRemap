@@ -8,6 +8,9 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.Random;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.List;
 
 public abstract class Class5936
@@ -41,7 +44,7 @@ public abstract class Class5936
         return this.field24431;
     }
     
-    public void method17853(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+    public void method17853(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         synchronized (this.field24431) {
             final Iterator<Class4473> iterator = this.field24431.iterator();
             while (iterator.hasNext()) {

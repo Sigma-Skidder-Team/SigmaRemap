@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.PremiumModule;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;

@@ -9,11 +9,15 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.lighting.WorldLightManager;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -570,7 +574,7 @@ public class Class5799 implements IClientPlayNetHandler
         Class8663.method29632((IPacket<Class5799>)class4298, this, this.field23808);
         final int method12909 = class4298.method12909();
         final int method12910 = class4298.method12910();
-        final Class1862 method12911 = this.field23809.method6835().method7415(method12909, method12910, class4298.method12915(), class4298.method12905(), class4298.method12913(), class4298.method12911());
+        final Chunk method12911 = this.field23809.method6835().method7415(method12909, method12910, class4298.method12915(), class4298.method12905(), class4298.method12913(), class4298.method12911());
         if (method12911 != null) {
             if (class4298.method12912()) {
                 this.field23809.method6823(method12911);
@@ -595,12 +599,12 @@ public class Class5799 implements IClientPlayNetHandler
         final int method12877 = class4288.method12877();
         final Class1907 method12878 = this.field23809.method6835();
         method12878.method7412(method12876, method12877);
-        final Class1886 method12879 = method12878.getLightManager();
+        final WorldLightManager method12879 = method12878.getLightManager();
         for (int i = 0; i < 16; ++i) {
             this.field23809.method6838(method12876, i, method12877);
             method12879.method7254(Class353.method1088(method12876, i, method12877), true);
         }
-        method12879.method7255(new Class7859(method12876, method12877), false);
+        method12879.method7255(new ChunkPos(method12876, method12877), false);
     }
     
     @Override
@@ -1960,7 +1964,7 @@ public class Class5799 implements IClientPlayNetHandler
         Class8663.method29632((IPacket<Class5799>)class4349, this, this.field23808);
         final int method13059 = class4349.method13059();
         final int method13060 = class4349.method13060();
-        final Class1886 method13061 = this.field23809.method6835().getLightManager();
+        final WorldLightManager method13061 = this.field23809.method6835().getLightManager();
         this.method17368(method13059, method13060, method13061, Class237.field911, class4349.method13061(), class4349.method13062(), class4349.method13063().iterator());
         this.method17368(method13059, method13060, method13061, Class237.field912, class4349.method13064(), class4349.method13065(), class4349.method13066().iterator());
     }
@@ -1999,7 +2003,7 @@ public class Class5799 implements IClientPlayNetHandler
         this.field23808.field4682.method27340(this.field23809, class4320.method12982(), class4320.method12981(), class4320.method12984(), class4320.method12983());
     }
     
-    private void method17368(final int n, final int n2, final Class1886 class1886, final Class237 class1887, final int n3, final int n4, final Iterator<byte[]> iterator) {
+    private void method17368(final int n, final int n2, final WorldLightManager class1886, final Class237 class1887, final int n3, final int n4, final Iterator<byte[]> iterator) {
         for (int i = 0; i < 18; ++i) {
             final int n5 = -1 + i;
             final boolean b = (n3 & 1 << i) != 0x0;

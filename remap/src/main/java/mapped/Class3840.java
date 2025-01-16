@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.IBlockReader;
+
 import javax.annotation.Nullable;
 
 public interface Class3840

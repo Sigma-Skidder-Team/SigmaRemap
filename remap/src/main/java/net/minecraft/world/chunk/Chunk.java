@@ -2,13 +2,17 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.world.chunk;
 
+import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.lighting.WorldLightManager;
 import org.apache.logging.log4j.LogManager;
 import it.unimi.dsi.fastutil.shorts.ShortListIterator;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
@@ -31,7 +35,7 @@ import it.unimi.dsi.fastutil.longs.LongSet;
 import java.util.Map;
 import org.apache.logging.log4j.Logger;
 
-public class Class1862 implements IChunk
+public class Chunk implements IChunk
 {
     private static final Logger field10140;
     public static final Class8199 field10141;
@@ -40,7 +44,7 @@ public class Class1862 implements IChunk
     private final Map<BlockPos, CompoundNBT> field10144;
     public boolean field10145;
     private final World field10146;
-    private final Map<Class2020, Class9548> field10147;
+    private final Map<HeightmapType, Class9548> field10147;
     private final Class8288 field10148;
     private final Map<BlockPos, TileEntity> field10149;
     private final Class80<Entity>[] field10150;
@@ -54,18 +58,18 @@ public class Class1862 implements IChunk
     private volatile boolean field10158;
     private long field10159;
     private Supplier<Class2152> field10160;
-    private Consumer<Class1862> field10161;
-    private final Class7859 field10162;
+    private Consumer<Chunk> field10161;
+    private final ChunkPos field10162;
     private volatile boolean field10163;
     
-    public Class1862(final World class1847, final Class7859 class1848, final Class1873 class1849) {
+    public Chunk(final World class1847, final ChunkPos class1848, final Class1873 class1849) {
         this(class1847, class1848, class1849, Class8288.field34078, (Class6952<Block>)Class6954.method21355(), (Class6952<Fluid>)Class6954.method21355(), 0L, null, null);
     }
     
-    public Class1862(final World field10146, final Class7859 field10147, final Class1873 field10148, final Class8288 field10149, final Class6952<Block> field10150, final Class6952<Fluid> field10151, final long field10152, final Class8199[] array, final Consumer<Class1862> field10153) {
+    public Chunk(final World field10146, final ChunkPos field10147, final Class1873 field10148, final Class8288 field10149, final Class6952<Block> field10150, final Class6952<Fluid> field10151, final long field10152, final Class8199[] array, final Consumer<Chunk> field10153) {
         this.field10142 = new Class8199[16];
         this.field10144 = Maps.newHashMap();
-        this.field10147 = Maps.newEnumMap((Class)Class2020.class);
+        this.field10147 = Maps.newEnumMap((Class) HeightmapType.class);
         this.field10149 = Maps.newHashMap();
         this.field10151 = Maps.newHashMap();
         this.field10152 = Maps.newHashMap();
@@ -74,8 +78,8 @@ public class Class1862 implements IChunk
         this.field10146 = field10146;
         this.field10162 = field10147;
         this.field10148 = field10149;
-        for (final Class2020 o : Class2020.values()) {
-            if (ChunkStatus.field39989.method34450().contains(o)) {
+        for (final HeightmapType o : HeightmapType.values()) {
+            if (ChunkStatus.FULL.getHeightMaps().contains(o)) {
                 this.field10147.put(o, new Class9548(this, o));
             }
         }
@@ -89,7 +93,7 @@ public class Class1862 implements IChunk
         this.field10161 = field10153;
         if (array != null) {
             if (this.field10142.length != array.length) {
-                Class1862.field10140.warn("Could not set level chunk sections, array length is {} instead of {}", (Object)array.length, (Object)this.field10142.length);
+                Chunk.field10140.warn("Could not set level chunk sections, array length is {} instead of {}", (Object)array.length, (Object)this.field10142.length);
             }
             else {
                 System.arraycopy(array, 0, this.field10142, 0, this.field10142.length);
@@ -97,7 +101,7 @@ public class Class1862 implements IChunk
         }
     }
     
-    public Class1862(final World class1847, final Class1865 class1848) {
+    public Chunk(final World class1847, final Class1865 class1848) {
         this(class1847, class1848.method7019(), class1848.method7024(), class1848.method7039(), class1848.method7102(), class1848.method7103(), class1848.method7041(), class1848.method7014(), null);
         final Iterator<CompoundNBT> iterator = class1848.method7096().iterator();
         while (iterator.hasNext()) {
@@ -117,7 +121,7 @@ public class Class1862 implements IChunk
         this.method7022(class1848.method7021());
         this.method7050(class1848.method7049());
         for (final Map.Entry<Object, V> entry : class1848.method7015()) {
-            if (!ChunkStatus.field39989.method34450().contains(entry.getKey())) {
+            if (!ChunkStatus.FULL.getHeightMaps().contains(entry.getKey())) {
                 continue;
             }
             this.method7017(entry.getKey()).method35716(((Class9548)entry.getValue()).method35717());
@@ -127,7 +131,7 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public Class9548 method7017(final Class2020 key) {
+    public Class9548 method7017(final HeightmapType key) {
         return this.field10147.computeIfAbsent(key, class2020 -> new Class9548(this, class2020));
     }
     
@@ -203,7 +207,7 @@ public class Class1862 implements IChunk
         final int method1075 = class354.getY();
         final int n2 = class354.getZ() & 0xF;
         Class8199 class356 = this.field10142[method1075 >> 4];
-        if (class356 == Class1862.field10141) {
+        if (class356 == Chunk.field10141) {
             if (class355.method21706()) {
                 return null;
             }
@@ -217,10 +221,10 @@ public class Class1862 implements IChunk
         }
         final Block method1078 = class355.getBlock();
         final Block method1079 = method1077.getBlock();
-        this.field10147.get(Class2020.field11525).method35712(n, method1075, n2, class355);
-        this.field10147.get(Class2020.field11526).method35712(n, method1075, n2, class355);
-        this.field10147.get(Class2020.field11524).method35712(n, method1075, n2, class355);
-        this.field10147.get(Class2020.field11522).method35712(n, method1075, n2, class355);
+        this.field10147.get(HeightmapType.field11525).method35712(n, method1075, n2, class355);
+        this.field10147.get(HeightmapType.field11526).method35712(n, method1075, n2, class355);
+        this.field10147.get(HeightmapType.field11524).method35712(n, method1075, n2, class355);
+        this.field10147.get(HeightmapType.field11522).method35712(n, method1075, n2, class355);
         final boolean method1080 = class356.method27154();
         if (method1076 != method1080) {
             this.field10146.getChunkProvider().getLightManager().method7291(class354, method1080);
@@ -261,7 +265,7 @@ public class Class1862 implements IChunk
     }
     
     @Nullable
-    public Class1886 method7052() {
+    public WorldLightManager method7052() {
         return this.field10146.getChunkProvider().getLightManager();
     }
     
@@ -271,7 +275,7 @@ public class Class1862 implements IChunk
         final int method35644 = MathHelper.floor(class399.getPosX() / 16.0);
         final int method35645 = MathHelper.floor(class399.getPosZ() / 16.0);
         if (method35644 != this.field10162.field32290 || method35645 != this.field10162.field32291) {
-            Class1862.field10140.warn("Wrong location! ({}, {}) should be ({}, {}), {}", (Object)method35644, (Object)method35645, (Object)this.field10162.field32290, (Object)this.field10162.field32291, (Object)class399);
+            Chunk.field10140.warn("Wrong location! ({}, {}) should be ({}, {}), {}", (Object)method35644, (Object)method35645, (Object)this.field10162.field32290, (Object)this.field10162.field32291, (Object)class399);
             class399.removed = true;
         }
         int method35646 = MathHelper.floor(class399.getPosY() / 16.0);
@@ -289,7 +293,7 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public void method7016(final Class2020 class2020, final long[] array) {
+    public void method7016(final HeightmapType class2020, final long[] array) {
         this.field10147.get(class2020).method35716(array);
     }
     
@@ -308,7 +312,7 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public int method7018(final Class2020 class2020, final int n, final int n2) {
+    public int method7018(final HeightmapType class2020, final int n, final int n2) {
         return this.field10147.get(class2020).method35713(n & 0xF, n2 & 0xF) - 1;
     }
     
@@ -488,7 +492,7 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public Class7859 method7019() {
+    public ChunkPos method7019() {
         return this.field10162;
     }
     
@@ -498,22 +502,22 @@ public class Class1862 implements IChunk
         for (int i = 0; i < this.field10142.length; ++i) {
             Class8199 class8656 = this.field10142[i];
             if ((n & 1 << i) != 0x0) {
-                if (class8656 == Class1862.field10141) {
+                if (class8656 == Chunk.field10141) {
                     class8656 = new Class8199(i << 4);
                     this.field10142[i] = class8656;
                 }
                 class8656.method27162(class8654);
             }
             else if (b) {
-                if (class8656 != Class1862.field10141) {
-                    this.field10142[i] = Class1862.field10141;
+                if (class8656 != Chunk.field10141) {
+                    this.field10142[i] = Chunk.field10141;
                 }
             }
         }
         if (field10143 != null) {
             this.field10143 = field10143;
         }
-        for (final Class2020 class8657 : Class2020.values()) {
+        for (final HeightmapType class8657 : HeightmapType.values()) {
             final String method8060 = class8657.method8060();
             if (class8655.contains(method8060, 12)) {
                 this.method7016(class8657, class8655.method326(method8060));
@@ -539,8 +543,8 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public Collection<Map.Entry<Class2020, Class9548>> method7015() {
-        return (Collection<Map.Entry<Class2020, Class9548>>)Collections.unmodifiableSet((Set<?>)this.field10147.entrySet());
+    public Collection<Map.Entry<HeightmapType, Class9548>> method7015() {
+        return (Collection<Map.Entry<HeightmapType, Class9548>>)Collections.unmodifiableSet((Set<?>)this.field10147.entrySet());
     }
     
     public Map<BlockPos, TileEntity> method7066() {
@@ -644,7 +648,7 @@ public class Class1862 implements IChunk
     }
     
     public void method7069() {
-        final Class7859 method7019 = this.method7019();
+        final ChunkPos method7019 = this.method7019();
         for (int i = 0; i < this.field10153.length; ++i) {
             if (this.field10153[i] != null) {
                 final ShortListIterator iterator = this.field10153[i].iterator();
@@ -674,14 +678,14 @@ public class Class1862 implements IChunk
             final Block method21696 = this.getBlockState(class354).getBlock();
             if (!(method21696 instanceof Class3840)) {
                 class356 = null;
-                Class1862.field10140.warn("Tried to load a DUMMY block entity @ {} but found not block entity block {} at location", (Object)class354, (Object)this.getBlockState(class354));
+                Chunk.field10140.warn("Tried to load a DUMMY block entity @ {} but found not block entity block {} at location", (Object)class354, (Object)this.getBlockState(class354));
             }
             else {
                 class356 = ((Class3840)method21696).method11898(this.field10146);
             }
         }
         if (class356 == null) {
-            Class1862.field10140.warn("Tried to load a block entity for block {} but failed at location {}", (Object)this.getBlockState(class354), (Object)class354);
+            Chunk.field10140.warn("Tried to load a block entity for block {} but failed at location {}", (Object)this.getBlockState(class354), (Object)class354);
         }
         else {
             class356.method2187(this.field10146, class354);
@@ -736,7 +740,7 @@ public class Class1862 implements IChunk
     
     @Override
     public ChunkStatus method7027() {
-        return ChunkStatus.field39989;
+        return ChunkStatus.FULL;
     }
     
     public Class2152 method7073() {

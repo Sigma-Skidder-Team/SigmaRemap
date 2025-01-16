@@ -8,6 +8,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public abstract class Class4598<T extends Class5129> extends Class4592<T>
@@ -28,8 +30,8 @@ public abstract class Class4598<T extends Class5129> extends Class4592<T>
             value = class1876;
         }
         else {
-            final int method1075 = class1875.method6958(Class2020.field11524, class1876).getY();
-            final int method1076 = class1875.method6958(Class2020.field11522, class1876).getY();
+            final int method1075 = class1875.method6958(HeightmapType.field11524, class1876).getY();
+            final int method1076 = class1875.method6958(HeightmapType.field11522, class1876).getY();
             value = new BlockPos(class1876.getX(), method1075, class1876.getZ());
             if (method1076 - method1075 > class1877.field22095) {
                 return Optional.empty();

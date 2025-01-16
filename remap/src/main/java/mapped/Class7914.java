@@ -16,6 +16,8 @@ import java.util.stream.Collectors;
 import java.util.function.Function;
 import java.util.Map;
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Set;
 
 public class Class7914

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.datafixers.DataFixUtils;
 import javax.annotation.Nullable;

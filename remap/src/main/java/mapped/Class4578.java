@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.function.Function;
 
 public class Class4578 extends Class4574<Class5122>
@@ -15,7 +17,7 @@ public class Class4578 extends Class4574<Class5122>
     }
     
     @Override
-    public Class7859 method13593(final Class6346<?> class6346, final Random random, final int n, final int n2, final int n3, final int n4) {
+    public ChunkPos method13593(final Class6346<?> class6346, final Random random, final int n, final int n2, final int n3, final int n4) {
         final int method21578 = class6346.method18876().method21578();
         final int method21579 = class6346.method18876().method21579();
         final int n5 = n + method21578 * n3;
@@ -25,12 +27,12 @@ public class Class4578 extends Class4574<Class5122>
         final int n9 = n7 / method21578;
         final int n10 = n8 / method21578;
         ((Class2317)random).method9441(class6346.method18880(), n9, n10, 10387313);
-        return new Class7859(n9 * method21578 + (random.nextInt(method21578 - method21579) + random.nextInt(method21578 - method21579)) / 2, n10 * method21578 + (random.nextInt(method21578 - method21579) + random.nextInt(method21578 - method21579)) / 2);
+        return new ChunkPos(n9 * method21578 + (random.nextInt(method21578 - method21579) + random.nextInt(method21578 - method21579)) / 2, n10 * method21578 + (random.nextInt(method21578 - method21579) + random.nextInt(method21578 - method21579)) / 2);
     }
     
     @Override
     public boolean method13594(final BiomeManager class5507, final Class6346<?> class5508, final Random random, final int n, final int n2, final Class3090 class5509) {
-        final Class7859 method13593 = this.method13593(class5508, random, n, n2, 0, 0);
+        final ChunkPos method13593 = this.method13593(class5508, random, n, n2, 0, 0);
         return n == method13593.field32290 && n2 == method13593.field32291 && class5508.method18877(class5509, this) && method13601(n, n2, class5508) >= 60;
     }
     
@@ -69,6 +71,6 @@ public class Class4578 extends Class4574<Class5122>
         }
         final int n5 = (n << 4) + 7;
         final int n6 = (n2 << 4) + 7;
-        return Math.min(Math.min(class6346.method18884(n5, n6, Class2020.field11521), class6346.method18884(n5, n6 + n4, Class2020.field11521)), Math.min(class6346.method18884(n5 + n3, n6, Class2020.field11521), class6346.method18884(n5 + n3, n6 + n4, Class2020.field11521)));
+        return Math.min(Math.min(class6346.method18884(n5, n6, HeightmapType.field11521), class6346.method18884(n5, n6 + n4, HeightmapType.field11521)), Math.min(class6346.method18884(n5 + n3, n6, HeightmapType.field11521), class6346.method18884(n5 + n3, n6 + n4, HeightmapType.field11521)));
     }
 }

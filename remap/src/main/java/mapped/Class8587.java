@@ -7,11 +7,10 @@ package mapped;
 import com.google.common.annotations.VisibleForTesting;
 import it.unimi.dsi.fastutil.longs.LongCollection;
 import javax.annotation.Nullable;
-import java.util.function.Function;
+
 import com.mojang.datafixers.util.Either;
 import java.util.stream.Stream;
-import java.util.Iterator;
-import java.util.Collection;
+
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import java.util.stream.Collector;
@@ -20,6 +19,8 @@ import java.util.stream.IntStream;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import java.util.Optional;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.List;
 
 public class Class8587<T>
@@ -39,7 +40,7 @@ public class Class8587<T>
         this.field36084 = field36083;
     }
     
-    public void method29074(final int n, final Class7859 class7859, final int b) {
+    public void method29074(final int n, final ChunkPos class7859, final int b) {
         if (n < Class8587.field36079) {
             final List list = (List)this.field36080.get(n).remove(class7859.method25422());
             if (n == this.field36081) {

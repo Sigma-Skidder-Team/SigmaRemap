@@ -18,8 +18,15 @@ import java.util.function.Supplier;
 import java.util.concurrent.Executor;
 import com.mojang.datafixers.DataFixer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.AbstractChunkProvider;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
 
 import java.io.File;
 import java.util.List;
@@ -224,29 +231,29 @@ public class Class1909 extends AbstractChunkProvider
     
     @Nullable
     @Override
-    public Class1862 method7399(final int n, final int n2) {
+    public Chunk func_225313_a(final int n, final int n2) {
         if (Thread.currentThread() != this.field10351) {
             return null;
         }
         this.field10350.method6796().method15302("getChunkNow");
-        final long method25423 = Class7859.method25423(n, n2);
+        final long method25423 = ChunkPos.method25423(n, n2);
         for (int i = 0; i < 4; ++i) {
-            if (method25423 == this.field10359[i] && this.field10360[i] == ChunkStatus.field39989) {
+            if (method25423 == this.field10359[i] && this.field10360[i] == ChunkStatus.FULL) {
                 final IChunk class1860 = this.field10361[i];
-                return (class1860 instanceof Class1862) ? ((Class1862)class1860) : null;
+                return (class1860 instanceof Chunk) ? ((Chunk)class1860) : null;
             }
         }
         final Class9298 method25424 = this.method7423(method25423);
         if (method25424 == null) {
             return null;
         }
-        final Either either = method25424.method34341(ChunkStatus.field39989).getNow(null);
+        final Either either = method25424.method34341(ChunkStatus.FULL).getNow(null);
         if (either != null) {
             final IChunk class1861 = either.left().orElse(null);
             if (class1861 != null) {
-                this.method7425(method25423, class1861, ChunkStatus.field39989);
-                if (class1861 instanceof Class1862) {
-                    return (Class1862)class1861;
+                this.method7425(method25423, class1861, ChunkStatus.FULL);
+                if (class1861 instanceof Chunk) {
+                    return (Chunk)class1861;
                 }
             }
             return null;
@@ -255,12 +262,12 @@ public class Class1909 extends AbstractChunkProvider
     }
     
     private void method7426() {
-        Arrays.fill(this.field10359, Class7859.field32289);
+        Arrays.fill(this.field10359, ChunkPos.field32289);
         Arrays.fill(this.field10360, null);
         Arrays.fill(this.field10361, null);
     }
     
-    public CompletableFuture<Either<IChunk, Class6797>> method7427(final int n, final int n2, final ChunkStatus class9312, final boolean b) {
+    public CompletableFuture<Either<IChunk, IChunkLoadingError>> method7427(final int n, final int n2, final ChunkStatus class9312, final boolean b) {
         Future<T> future;
         if (Thread.currentThread() != this.field10351) {
             future = (Future<T>)CompletableFuture.supplyAsync(() -> this.method7428(n3, n4, class9313, b2), this.field10353).thenCompose(completableFuture -> completableFuture);
@@ -269,13 +276,13 @@ public class Class1909 extends AbstractChunkProvider
             future = (Future<T>)this.method7428(n, n2, class9312, b);
             this.field10353.method5384(future::isDone);
         }
-        return (CompletableFuture<Either<IChunk, Class6797>>)future;
+        return (CompletableFuture<Either<IChunk, IChunkLoadingError>>)future;
     }
     
-    private CompletableFuture<Either<IChunk, Class6797>> method7428(final int n, final int n2, final ChunkStatus class9312, final boolean b) {
-        final Class7859 class9313 = new Class7859(n, n2);
+    private CompletableFuture<Either<IChunk, IChunkLoadingError>> method7428(final int n, final int n2, final ChunkStatus class9312, final boolean b) {
+        final ChunkPos class9313 = new ChunkPos(n, n2);
         final long method25422 = class9313.method25422();
-        final int n3 = 33 + ChunkStatus.method34441(class9312);
+        final int n3 = 33 + ChunkStatus.getDistance(class9312);
         Class9298 class9314 = this.method7423(method25422);
         if (b) {
             this.field10348.method30130(Class9105.field38572, class9313, n3, class9313);
@@ -298,13 +305,13 @@ public class Class1909 extends AbstractChunkProvider
     }
     
     @Override
-    public boolean method7401(final int n, final int n2) {
-        return !this.method7429(this.method7423(new Class7859(n, n2).method25422()), 33 + ChunkStatus.method34441(ChunkStatus.field39989));
+    public boolean chunkExists(final int n, final int n2) {
+        return !this.method7429(this.method7423(new ChunkPos(n, n2).method25422()), 33 + ChunkStatus.getDistance(ChunkStatus.FULL));
     }
     
     @Override
-    public IBlockReader method7400(final int n, final int n2) {
-        final Class9298 method7423 = this.method7423(Class7859.method25423(n, n2));
+    public IBlockReader getChunkForLight(final int n, final int n2) {
+        final Class9298 method7423 = this.method7423(ChunkPos.method25423(n, n2));
         if (method7423 == null) {
             return null;
         }
@@ -315,7 +322,7 @@ public class Class1909 extends AbstractChunkProvider
             if (left.isPresent()) {
                 return (IBlockReader)left.get();
             }
-            if (class9312 == ChunkStatus.field39986.method34444()) {
+            if (class9312 == ChunkStatus.LIGHT.getParent()) {
                 return null;
             }
             --n3;
@@ -341,25 +348,25 @@ public class Class1909 extends AbstractChunkProvider
     }
     
     @Override
-    public boolean method7408(final Entity class399) {
-        return this.method7434(Class7859.method25423(MathHelper.floor(class399.getPosX()) >> 4, MathHelper.floor(class399.getPosZ()) >> 4), Class9298::method34343);
+    public boolean isChunkLoaded(final Entity class399) {
+        return this.method7434(ChunkPos.method25423(MathHelper.floor(class399.getPosX()) >> 4, MathHelper.floor(class399.getPosZ()) >> 4), Class9298::method34343);
     }
     
     @Override
-    public boolean method7409(final Class7859 class7859) {
+    public boolean isChunkLoaded(final ChunkPos class7859) {
         return this.method7434(class7859.method25422(), Class9298::method34343);
     }
     
     @Override
-    public boolean method7410(final BlockPos class354) {
-        return this.method7434(Class7859.method25423(class354.getX() >> 4, class354.getZ() >> 4), Class9298::method34342);
+    public boolean canTick(final BlockPos class354) {
+        return this.method7434(ChunkPos.method25423(class354.getX() >> 4, class354.getZ() >> 4), Class9298::method34342);
     }
     
     public boolean method7433(final Entity class399) {
-        return this.method7434(Class7859.method25423(MathHelper.floor(class399.getPosX()) >> 4, MathHelper.floor(class399.getPosZ()) >> 4), Class9298::method34344);
+        return this.method7434(ChunkPos.method25423(MathHelper.floor(class399.getPosX()) >> 4, MathHelper.floor(class399.getPosZ()) >> 4), Class9298::method34344);
     }
     
-    private boolean method7434(final long n, final Function<Class9298, CompletableFuture<Either<Class1862, Class6797>>> function) {
+    private boolean method7434(final long n, final Function<Class9298, CompletableFuture<Either<Chunk, IChunkLoadingError>>> function) {
         final Class9298 method7423 = this.method7423(n);
         return method7423 != null && function.apply(method7423).getNow(Class9298.field39873).left().isPresent();
     }
@@ -377,7 +384,7 @@ public class Class1909 extends AbstractChunkProvider
     }
     
     @Override
-    public void method7403(final BooleanSupplier booleanSupplier) {
+    public void tick(final BooleanSupplier booleanSupplier) {
         this.field10350.method6796().startSection("purge");
         this.field10348.method30122();
         this.method7432();
@@ -410,7 +417,7 @@ public class Class1909 extends AbstractChunkProvider
                 class355.method34343().getNow(Class9298.field39873).left();
                 final Optional optional;
                 if (!(!optional.isPresent())) {
-                    final Class1862 class356 = optional.get();
+                    final Chunk class356 = optional.get();
                     this.field10350.method6796().startSection("broadcast");
                     class355.method34351(class356);
                     this.field10350.method6796().endSection();
@@ -455,7 +462,7 @@ public class Class1909 extends AbstractChunkProvider
     }
     
     @Override
-    public String method7404() {
+    public String makeString() {
         return "ServerChunkCache: " + this.method7439();
     }
     
@@ -473,7 +480,7 @@ public class Class1909 extends AbstractChunkProvider
     }
     
     public void method7440(final BlockPos class354) {
-        final Class9298 method7423 = this.method7423(Class7859.method25423(class354.getX() >> 4, class354.getZ() >> 4));
+        final Class9298 method7423 = this.method7423(ChunkPos.method25423(class354.getX() >> 4, class354.getZ() >> 4));
         if (method7423 != null) {
             method7423.method34349(class354.getX() & 0xF, class354.getY(), class354.getZ() & 0xF);
         }
@@ -490,16 +497,16 @@ public class Class1909 extends AbstractChunkProvider
         });
     }
     
-    public <T> void method7441(final Class9105<T> class9105, final Class7859 class9106, final int n, final T t) {
+    public <T> void method7441(final Class9105<T> class9105, final ChunkPos class9106, final int n, final T t) {
         this.field10348.method30132(class9105, class9106, n, t);
     }
     
-    public <T> void method7442(final Class9105<T> class9105, final Class7859 class9106, final int n, final T t) {
+    public <T> void method7442(final Class9105<T> class9105, final ChunkPos class9106, final int n, final T t) {
         this.field10348.method30133(class9105, class9106, n, t);
     }
     
     @Override
-    public void method7407(final Class7859 class7859, final boolean b) {
+    public void forceChunk(final ChunkPos class7859, final boolean b) {
         this.field10348.method30135(class7859, b);
     }
     
@@ -528,12 +535,12 @@ public class Class1909 extends AbstractChunkProvider
     }
     
     @Override
-    public void method7406(final boolean field10357, final boolean field10358) {
+    public void setAllowedSpawnTypes(final boolean field10357, final boolean field10358) {
         this.field10357 = field10357;
         this.field10358 = field10358;
     }
     
-    public String method7449(final Class7859 class7859) {
+    public String method7449(final ChunkPos class7859) {
         return this.field10354.method1319(class7859);
     }
     
@@ -547,6 +554,6 @@ public class Class1909 extends AbstractChunkProvider
     
     static {
         field10346 = (int)Math.pow(17.0, 2.0);
-        field10347 = ChunkStatus.method34437();
+        field10347 = ChunkStatus.getAll();
     }
 }

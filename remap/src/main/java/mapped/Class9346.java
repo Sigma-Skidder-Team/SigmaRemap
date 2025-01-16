@@ -7,6 +7,7 @@ package mapped;
 import java.util.AbstractList;
 
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;

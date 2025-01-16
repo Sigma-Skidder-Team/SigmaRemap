@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.Chunk;
+
 public class Class7870
 {
     private static String[] field32312;
@@ -17,7 +20,7 @@ public class Class7870
         this.field32314 = field32317;
     }
     
-    public Class7870(final Class4312 field32315, final short field32316, final Class1862 class1862) {
+    public Class7870(final Class4312 field32315, final short field32316, final Chunk class1862) {
         this.field32315 = field32315;
         this.field32313 = field32316;
         this.field32314 = class1862.getBlockState(this.method25489());

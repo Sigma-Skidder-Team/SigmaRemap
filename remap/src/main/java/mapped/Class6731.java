@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.List;
 
 public class Class6731
@@ -19,15 +22,15 @@ public class Class6731
         this.field26467 = field26467;
     }
     
-    public boolean method20418(final Class7859 class7859) {
+    public boolean method20418(final ChunkPos class7859) {
         return class7859.field32290 == this.field26465 && class7859.field32291 == this.field26466;
     }
     
-    public int method20419(final Class7859 class7859) {
+    public int method20419(final ChunkPos class7859) {
         return (int)Math.sqrt((class7859.field32290 - this.field26465) * (class7859.field32290 - this.field26465) + (class7859.field32291 - this.field26466) * (class7859.field32291 - this.field26466));
     }
     
-    public Class7859 method20420() {
-        return new Class7859(this.field26465, this.field26466);
+    public ChunkPos method20420() {
+        return new ChunkPos(this.field26465, this.field26466);
     }
 }

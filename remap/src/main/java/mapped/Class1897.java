@@ -14,14 +14,16 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
+import net.minecraft.world.chunk.IChunkLightProvider;
 
 public abstract class Class1897<M extends Class7501<M>> extends Class1896
 {
     public static final Class7281 field10298;
     private static final Direction[] field10299;
     private final Class237 field10300;
-    private final Class1908 field10301;
+    private final IChunkLightProvider field10301;
     public final LongSet field10302;
     public final LongSet field10303;
     public final LongSet field10304;
@@ -34,7 +36,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
     private final LongSet field10311;
     public volatile boolean field10312;
     
-    public Class1897(final Class237 field10300, final Class1908 field10301, final M field10302) {
+    public Class1897(final Class237 field10300, final IChunkLightProvider field10301, final M field10302) {
         super(3, 16, 256);
         this.field10302 = (LongSet)new LongOpenHashSet();
         this.field10303 = (LongSet)new LongOpenHashSet();

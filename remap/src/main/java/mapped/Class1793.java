@@ -25,6 +25,7 @@ import java.util.HashMap;
 import com.google.common.collect.Queues;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;

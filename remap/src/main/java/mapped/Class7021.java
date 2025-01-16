@@ -7,6 +7,7 @@ package mapped;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonObject;
+import net.minecraft.util.math.BlockPos;
 
 public class Class7021 extends Class7020<Class158>
 {

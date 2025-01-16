@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,7 +42,7 @@ public class Class1873 implements Class1867
         }
     }
     
-    public Class1873(final Class7859 class7859, final Class1868 class7860) {
+    public Class1873(final ChunkPos class7859, final Class1868 class7860) {
         this();
         final int n = class7859.method25426() >> 2;
         final int n2 = class7859.method25427() >> 2;
@@ -50,7 +51,7 @@ public class Class1873 implements Class1867
         }
     }
     
-    public Class1873(final Class7859 class7859, final Class1868 class7860, final int[] array) {
+    public Class1873(final ChunkPos class7859, final Class1868 class7860, final int[] array) {
         this();
         final int n = class7859.method25426() >> 2;
         final int n2 = class7859.method25427() >> 2;

@@ -7,8 +7,11 @@ package mapped;
 import com.google.common.collect.Sets;
 import java.util.IdentityHashMap;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import java.util.Set;
@@ -50,7 +53,7 @@ public class Class8288
         }
     }
     
-    public void method27546(final Class1862 class1864) {
+    public void method27546(final Chunk class1864) {
         this.method27549(class1864);
         final Class322[] field34079 = Class8288.field34079;
         for (int length = field34079.length, i = 0; i < length; ++i) {
@@ -62,7 +65,7 @@ public class Class8288
         });
     }
     
-    private static void method27547(final Class1862 class1862, final Class322 o) {
+    private static void method27547(final Chunk class1862, final Class322 o) {
         final World method7065 = class1862.method7065();
         if (class1862.method7039().field34080.remove(o)) {
             final Set<Direction> method7066 = o.method993();
@@ -71,7 +74,7 @@ public class Class8288
             final boolean contains3 = method7066.contains(Direction.SOUTH);
             final boolean contains4 = method7066.contains(Direction.NORTH);
             final boolean b = method7066.size() == 1;
-            final Class7859 method7067 = class1862.method7019();
+            final ChunkPos method7067 = class1862.method7019();
             final int n = method7067.method25426() + ((b && (contains4 || contains3)) ? 1 : (contains2 ? 0 : 15));
             final int n2 = method7067.method25426() + ((b && (contains4 || contains3)) ? 14 : (contains2 ? 0 : 15));
             final int n3 = method7067.method25427() + ((b && (contains || contains2)) ? 1 : (contains4 ? 0 : 15));
@@ -94,10 +97,10 @@ public class Class8288
         return Class8288.field34082.getOrDefault(class7096.getBlock(), Class2167.field12889).method8335(class7096, class7097, class7098.getBlockState(class7100), class7098, class7099, class7100);
     }
     
-    private void method27549(final Class1862 class1862) {
+    private void method27549(final Chunk class1862) {
         try (final Class386 method1296 = Class386.method1296();
              final Class386 method1297 = Class386.method1296()) {
-            final Class7859 method1298 = class1862.method7019();
+            final ChunkPos method1298 = class1862.method7019();
             final World method1299 = class1862.method7065();
             for (int i = 0; i < 16; ++i) {
                 final Class8199 class1863 = class1862.method7014()[i];

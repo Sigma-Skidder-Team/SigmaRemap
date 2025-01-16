@@ -4,9 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
+import net.minecraft.world.lighting.WorldLightManager;
+
 public interface Class1856 extends IBlockReader
 {
-    Class1886 method6700();
+    WorldLightManager method6700();
     
     int method6849(final BlockPos p0, final Class8895 p1);
     

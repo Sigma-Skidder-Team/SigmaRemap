@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -47,7 +49,7 @@ public class Class8955
         return method6921.method7199(class357 -> class357 == Class8912.field37480, class354, 128, Class2045.field11652).collect((Collector<? super Class377, ?, List<? super Class377>>)Collectors.toList()).stream().min(Comparator.comparingDouble(class359 -> class359.method1259().method1083(class358)).thenComparingInt(class360 -> class360.method1259().method1075())).map(class363 -> {
             class363.method1259();
             final BlockPos class364;
-            this.field37652.method6904().method7441(Class9105.field38570, new Class7859(class364), 3, class364);
+            this.field37652.method6904().method7441(Class9105.field38570, new ChunkPos(class364), 3, class364);
             return Class3998.method12149(this.field37652, class364).method25271(class361, class364, n3, class362, n4);
         }).orElse(null);
     }

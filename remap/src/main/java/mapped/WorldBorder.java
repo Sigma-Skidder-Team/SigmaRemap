@@ -8,6 +8,8 @@ import java.util.Iterator;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.shapes.VoxelShape;
 
 import java.util.List;
@@ -48,7 +50,7 @@ public class WorldBorder
         return false;
     }
     
-    public boolean method34780(final Class7859 class7859) {
+    public boolean method34780(final ChunkPos class7859) {
         if (class7859.method25428() > this.method34786()) {
             if (class7859.method25426() < this.method34788()) {
                 if (class7859.method25429() > this.method34787()) {

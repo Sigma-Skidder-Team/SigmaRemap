@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.stream.Collector;

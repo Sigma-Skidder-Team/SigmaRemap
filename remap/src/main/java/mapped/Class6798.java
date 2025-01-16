@@ -5,8 +5,9 @@
 package mapped;
 
 import com.mojang.datafixers.util.Either;
+import net.minecraft.util.math.ChunkPos;
 
-public class Class6798 implements Class6797
+public class Class6798 implements IChunkLoadingError
 {
     public final /* synthetic */ int field26733;
     public final /* synthetic */ int field26734;
@@ -26,6 +27,6 @@ public class Class6798 implements Class6797
     
     @Override
     public String toString() {
-        return "Unloaded " + new Class7859(this.field26733 + this.field26734 % (this.field26735 * 2 + 1), this.field26736 + this.field26734 / (this.field26735 * 2 + 1)) + " " + this.field26737.right().get().toString();
+        return "Unloaded " + new ChunkPos(this.field26733 + this.field26734 % (this.field26735 * 2 + 1), this.field26736 + this.field26734 / (this.field26735 * 2 + 1)) + " " + this.field26737.right().get().toString();
     }
 }

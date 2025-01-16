@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -22,10 +24,10 @@ public class Class9112
     public int field38608;
     public int field38609;
     public Class8974[] field38610;
-    private Map<Class7859, Class8871[]> field38611;
+    private Map<ChunkPos, Class8871[]> field38611;
     
     public Class9112(final Class7520 class7520, final World field38606, final int n, final Class1656 field38607) {
-        this.field38611 = new HashMap<Class7859, Class8871[]>();
+        this.field38611 = new HashMap<ChunkPos, Class8871[]>();
         this.field38605 = field38607;
         this.field38606 = field38606;
         this.method32960(n);
@@ -114,7 +116,7 @@ public class Class9112
     
     private void method32964(final Class8974 class8974) {
         final BlockPos method31873 = class8974.method31873();
-        final Class7859 class8975 = new Class7859(method31873.getX() >> 8 << 8, method31873.getZ() >> 8 << 8);
+        final ChunkPos class8975 = new ChunkPos(method31873.getX() >> 8 << 8, method31873.getZ() >> 8 << 8);
         final Class6332[] field25344 = Class6332.field25344;
         Class8871[] array = this.field38611.get(class8975);
         if (array == null) {
@@ -134,7 +136,7 @@ public class Class9112
     }
     
     public void method32965() {
-        final Iterator<Class7859> iterator = this.field38611.keySet().iterator();
+        final Iterator<ChunkPos> iterator = this.field38611.keySet().iterator();
         while (iterator.hasNext()) {
             final Class8871[] array = this.field38611.get(iterator.next());
             for (int i = 0; i < array.length; ++i) {

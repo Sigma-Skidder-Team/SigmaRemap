@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
+
 public class Class4656 extends Class4651
 {
     private static String[] field20151;

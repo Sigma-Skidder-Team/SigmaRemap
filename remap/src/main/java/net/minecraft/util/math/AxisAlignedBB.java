@@ -4,7 +4,6 @@
 
 package net.minecraft.util.math;
 
-import mapped.BlockPos;
 import mapped.MutableBoundingBox;
 import mapped.BlockRayTraceResult;
 import net.minecraft.util2.Direction;

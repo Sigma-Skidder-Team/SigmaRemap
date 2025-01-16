@@ -15,6 +15,7 @@ import java.util.Arrays;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
@@ -58,7 +59,7 @@ public class Class490 extends TileEntity implements Class434, Class439
             this.field2812 = class354.getY() - 1;
         }
         Class8392 class355 = this.field2810.isEmpty() ? null : this.field2810.get(this.field2810.size() - 1);
-        final int method1077 = this.field2656.method6699(Class2020.field11522, method1074, method1076);
+        final int method1077 = this.field2656.method6699(HeightmapType.field11522, method1074, method1076);
         for (int i = 0; i < 10; ++i) {
             if (class354.getY() > method1077) {
                 break;

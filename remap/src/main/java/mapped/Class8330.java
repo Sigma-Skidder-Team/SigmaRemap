@@ -16,6 +16,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Class8330 implements ArgumentType<Class5346>

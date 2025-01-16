@@ -6,6 +6,8 @@ package mapped;
 
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.types.DynamicOps;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;

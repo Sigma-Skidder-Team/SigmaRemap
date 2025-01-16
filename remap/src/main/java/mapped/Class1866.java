@@ -8,6 +8,10 @@ import java.util.BitSet;
 import java.util.stream.Stream;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.lighting.WorldLightManager;
 
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -15,9 +19,9 @@ import javax.annotation.Nullable;
 public class Class1866 extends Class1865
 {
     private static String[] field10189;
-    private final Class1862 field10190;
+    private final Chunk field10190;
     
-    public Class1866(final Class1862 field10190) {
+    public Class1866(final Chunk field10190) {
         super(field10190.method7019(), Class8288.field34078);
         this.field10190 = field10190;
     }
@@ -69,28 +73,28 @@ public class Class1866 extends Class1865
     
     @Nullable
     @Override
-    public Class1886 method7099() {
+    public WorldLightManager method7099() {
         return this.field10190.method7052();
     }
     
     @Override
-    public void method7016(final Class2020 class2020, final long[] array) {
+    public void method7016(final HeightmapType class2020, final long[] array) {
     }
     
-    private Class2020 method7113(final Class2020 class2020) {
-        if (class2020 != Class2020.field11521) {
-            return (class2020 != Class2020.field11523) ? class2020 : Class2020.field11524;
+    private HeightmapType method7113(final HeightmapType class2020) {
+        if (class2020 != HeightmapType.field11521) {
+            return (class2020 != HeightmapType.field11523) ? class2020 : HeightmapType.field11524;
         }
-        return Class2020.field11522;
+        return HeightmapType.field11522;
     }
     
     @Override
-    public int method7018(final Class2020 class2020, final int n, final int n2) {
+    public int method7018(final HeightmapType class2020, final int n, final int n2) {
         return this.field10190.method7018(this.method7113(class2020), n, n2);
     }
     
     @Override
-    public Class7859 method7019() {
+    public ChunkPos method7019() {
         return this.field10190.method7019();
     }
     
@@ -202,7 +206,7 @@ public class Class1866 extends Class1865
         return this.field10190.method7038(class2126);
     }
     
-    public Class1862 method7114() {
+    public Chunk method7114() {
         return this.field10190;
     }
     

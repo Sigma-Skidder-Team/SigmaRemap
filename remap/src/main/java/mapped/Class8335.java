@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
@@ -104,7 +105,7 @@ public class Class8335
         for (int i = 0; i < 10; ++i) {
             final int n2 = class354.getX() + this.field34222.nextInt(n * 2) - n;
             final int n3 = class354.getZ() + this.field34222.nextInt(n * 2) - n;
-            final BlockPos class356 = new BlockPos(n2, this.field34223.method6699(Class2020.field11522, n2, n3), n3);
+            final BlockPos class356 = new BlockPos(n2, this.field34223.method6699(HeightmapType.field11522, n2, n3), n3);
             if (Class8532.method28621(Class2194.field13354, this.field34223, class356, EntityType.field29046)) {
                 class355 = class356;
                 break;

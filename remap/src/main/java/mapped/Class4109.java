@@ -9,6 +9,7 @@ import com.mojang.datafixers.types.DynamicOps;
 import javax.annotation.Nullable;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
+import net.minecraft.util.math.BlockPos;
 
 public class Class4109 extends Class4107
 {

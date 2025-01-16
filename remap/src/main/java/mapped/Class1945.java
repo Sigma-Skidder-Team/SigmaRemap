@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.concurrent.CancellationException;
 import java.util.List;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.Set;
@@ -26,7 +28,7 @@ public class Class1945 extends Class1944
         this(class8974, null, n, class8975);
     }
     
-    public Class1945(final Class8974 field10599, final Class7859 class7859, final double n, final Class1858 field10600) {
+    public Class1945(final Class8974 field10599, final ChunkPos class7859, final double n, final Class1858 field10600) {
         this.field10599 = field10599;
         super(field10599, class7859, n);
         this.field10600 = field10600;

@@ -14,6 +14,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 import java.util.List;
 

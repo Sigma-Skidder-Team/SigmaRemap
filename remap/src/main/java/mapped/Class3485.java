@@ -5,8 +5,12 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -114,7 +118,7 @@ public class Class3485 extends Class3479
     
     @Override
     public boolean method11050(final Class1852 class1852, final BlockPos class1853) {
-        final IChunk method6687 = class1852.getChunk(class1853.getX() >> 4, class1853.getZ() >> 4, ChunkStatus.field39989, false);
+        final IChunk method6687 = class1852.getChunk(class1853.getX() >> 4, class1853.getZ() >> 4, ChunkStatus.FULL, false);
         if (method6687 != null) {
             if (method6687.getBlockState(class1853).getBlock() == this.field16414) {
                 if (method6687.getBlockState(class1853.method1137()).method21706()) {

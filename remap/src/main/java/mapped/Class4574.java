@@ -4,7 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkStatus;
 import org.apache.logging.log4j.LogManager;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
@@ -40,7 +43,7 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
             boolean b = false;
             final LongIterator iterator = class1851.method6798(n, n2).method7047(this.method13596()).iterator();
             while (((Iterator)iterator).hasNext()) {
-                final Class7859 class1854 = new Class7859((long)((Iterator)iterator).next());
+                final ChunkPos class1854 = new ChunkPos((long)((Iterator)iterator).next());
                 final Class5936 method7045 = class1851.method6798(class1854.field32290, class1854.field32291).method7045(this.method13596());
                 if (method7045 == null) {
                     continue;
@@ -48,7 +51,7 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
                 if (method7045 == Class5936.field24429) {
                     continue;
                 }
-                method7045.method17853(class1851, class1852, random, new MutableBoundingBox(n3, n4, n3 + 15, n4 + 15), new Class7859(n, n2));
+                method7045.method17853(class1851, class1852, random, new MutableBoundingBox(n3, n4, n3 + 15, n4 + 15), new ChunkPos(n, n2));
                 b = true;
             }
             return b;
@@ -95,8 +98,8 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
                     for (int k = -i; k <= i; ++k) {
                         final boolean b3 = k == -i || k == i;
                         if (b2 || b3) {
-                            final Class7859 method13593 = this.method13593(class1848, class1850, n2, n3, j, k);
-                            final Class5936 method13594 = class1847.method6966(method13593.field32290, method13593.field32291, ChunkStatus.field39978).method7045(this.method13596());
+                            final ChunkPos method13593 = this.method13593(class1848, class1850, n2, n3, j, k);
+                            final Class5936 method13594 = class1847.method6966(method13593.field32290, method13593.field32291, ChunkStatus.STRUCTURE_STARTS).method7045(this.method13596());
                             if (method13594 != null) {
                                 if (method13594.method17858()) {
                                     if (b && method13594.method17862()) {
@@ -126,10 +129,10 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
     
     private List<Class5936> method13592(final Class1851 class1851, final int n, final int n2) {
         final ArrayList arrayList = Lists.newArrayList();
-        final LongIterator iterator = class1851.method6966(n, n2, ChunkStatus.field39979).method7047(this.method13596()).iterator();
+        final LongIterator iterator = class1851.method6966(n, n2, ChunkStatus.STRUCTURE_REFERENCES).method7047(this.method13596()).iterator();
         while (iterator.hasNext()) {
             final long nextLong = iterator.nextLong();
-            final Class5936 method7045 = class1851.method6966(Class7859.method25424(nextLong), Class7859.method25425(nextLong), ChunkStatus.field39978).method7045(this.method13596());
+            final Class5936 method7045 = class1851.method6966(ChunkPos.method25424(nextLong), ChunkPos.method25425(nextLong), ChunkStatus.STRUCTURE_STARTS).method7045(this.method13596());
             if (method7045 == null) {
                 continue;
             }
@@ -138,8 +141,8 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
         return arrayList;
     }
     
-    public Class7859 method13593(final Class6346<?> class6346, final Random random, final int n, final int n2, final int n3, final int n4) {
-        return new Class7859(n + n3, n2 + n4);
+    public ChunkPos method13593(final Class6346<?> class6346, final Random random, final int n, final int n2, final int n3, final int n4) {
+        return new ChunkPos(n + n3, n2 + n4);
     }
     
     public abstract boolean method13594(final BiomeManager p0, final Class6346<?> p1, final Random p2, final int p3, final int p4, final Class3090 p5);

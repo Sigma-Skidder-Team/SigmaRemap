@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public class Class4559 extends Class4535<Class5124>
@@ -19,7 +21,7 @@ public class Class4559 extends Class4535<Class5124>
         for (int i = 0; i < class1854.field22074; ++i) {
             final int n2 = random.nextInt(8) - random.nextInt(8);
             final int n3 = random.nextInt(8) - random.nextInt(8);
-            final BlockPos class1855 = new BlockPos(class1853.getX() + n2, class1851.method6699(Class2020.field11524, class1853.getX() + n2, class1853.getZ() + n3), class1853.getZ() + n3);
+            final BlockPos class1855 = new BlockPos(class1853.getX() + n2, class1851.method6699(HeightmapType.field11524, class1853.getX() + n2, class1853.getZ() + n3), class1853.getZ() + n3);
             if (class1851.getBlockState(class1855).getBlock() == Class7521.field29173) {
                 final boolean b = random.nextDouble() < class1854.field22075;
                 final BlockState class1856 = b ? Class7521.field29245.getDefaultState() : Class7521.field29244.getDefaultState();

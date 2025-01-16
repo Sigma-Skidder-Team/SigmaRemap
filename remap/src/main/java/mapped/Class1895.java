@@ -5,13 +5,13 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.LongIterator;
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.longs.Long2ByteMap$Entry;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.Long2IntMaps;
 import it.unimi.dsi.fastutil.longs.Long2IntOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import it.unimi.dsi.fastutil.longs.Long2IntMap;
+import net.minecraft.util.math.ChunkPos;
 
 public class Class1895 extends Class1894
 {
@@ -45,7 +45,7 @@ public class Class1895 extends Class1894
     
     private void method7335(final long n, final int n2, final boolean b, final boolean b2) {
         if (b != b2) {
-            final Class1949 class1949 = new Class1949((Class9105<Object>)Class9105.field38567, Class8730.method30154(), new Class7859(n));
+            final Class1949 class1949 = new Class1949((Class9105<Object>)Class9105.field38567, Class8730.method30154(), new ChunkPos(n));
             if (!b2) {
                 Class8730.method30156(this.field10297).method5386(Class1910.method7465(() -> Class8730.method30158(this.field10297).execute(() -> Class8730.method30159(this.field10297, n3, class1950)), n, true));
             }
@@ -75,7 +75,7 @@ public class Class1895 extends Class1894
                 if (value == method7302) {
                     continue;
                 }
-                Class8730.method30157(this.field10297).method7468(new Class7859(nextLong), () -> this.field10295.get(n), method7302, n4 -> {
+                Class8730.method30157(this.field10297).method7468(new ChunkPos(nextLong), () -> this.field10295.get(n), method7302, n4 -> {
                     if (n4 < this.field10295.defaultReturnValue()) {
                         this.field10295.put(n3, n4);
                     }

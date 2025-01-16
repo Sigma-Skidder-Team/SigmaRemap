@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
@@ -79,7 +80,7 @@ public class Class9495
         this.field40836 = 0;
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         for (final DimensionType class383 : DimensionType.method1269()) {
-            final List<Class7859> method29393 = this.method35337(class383);
+            final List<ChunkPos> method29393 = this.method35337(class383);
             builder.put((Object)class383, (Object)method29393.listIterator());
             this.field40836 += method29393.size();
         }
@@ -103,7 +104,7 @@ public class Class9495
                     final ListIterator listIterator = (ListIterator)build.get((Object)class385);
                     final Class387 class386 = (Class387)build2.get((Object)class385);
                     if (listIterator.hasNext()) {
-                        final Class7859 class387 = listIterator.next();
+                        final ChunkPos class387 = listIterator.next();
                         boolean b2 = false;
                         try {
                             final CompoundNBT method29395 = class386.method1309(class387);
@@ -111,7 +112,7 @@ public class Class9495
                                 final int method29396 = Class387.method1308(method29395);
                                 final CompoundNBT method29397 = class386.method1307(class385, () -> this.field40842, method29395);
                                 final CompoundNBT method29398 = method29397.getCompound("Level");
-                                final Class7859 class388 = new Class7859(method29398.getInt("xPos"), method29398.getInt("zPos"));
+                                final ChunkPos class388 = new ChunkPos(method29398.getInt("xPos"), method29398.getInt("zPos"));
                                 if (!class388.equals(class387)) {
                                     Class9495.field40826.warn("Chunk {} has invalid position {}", (Object)class387, (Object)class388);
                                 }
@@ -169,11 +170,11 @@ public class Class9495
         }
     }
     
-    private List<Class7859> method35337(final DimensionType class383) {
+    private List<ChunkPos> method35337(final DimensionType class383) {
         final File file = new File(class383.method1272(this.field40832), "region");
         final File[] listFiles = file.listFiles((p0, s) -> s.endsWith(".mca"));
         if (listFiles == null) {
-            return (List<Class7859>)ImmutableList.of();
+            return (List<ChunkPos>)ImmutableList.of();
         }
         final ArrayList arrayList = Lists.newArrayList();
         for (final File file2 : listFiles) {
@@ -184,7 +185,7 @@ public class Class9495
                 try (final Class1924 class384 = new Class1924(file2, file)) {
                     for (int j = 0; j < 32; ++j) {
                         for (int k = 0; k < 32; ++k) {
-                            final Class7859 class385 = new Class7859(j + n, k + n2);
+                            final ChunkPos class385 = new ChunkPos(j + n, k + n2);
                             if (class384.method7649(class385)) {
                                 arrayList.add(class385);
                             }

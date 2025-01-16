@@ -4,6 +4,9 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
+
 import java.io.IOException;
 
 public class Class4271 implements IPacket<IClientPlayNetHandler>

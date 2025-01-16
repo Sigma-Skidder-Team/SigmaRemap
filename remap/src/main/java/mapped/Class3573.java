@@ -9,6 +9,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.EnumSet;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.function.BooleanSupplier;

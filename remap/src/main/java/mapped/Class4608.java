@@ -7,6 +7,7 @@ package mapped;
 import java.util.BitSet;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.function.Function;
@@ -34,7 +35,7 @@ public class Class4608 extends Class4535<Class5133>
         final int n13 = 2 * (2 + method35649);
         for (int i = n9; i <= n9 + n12; ++i) {
             for (int j = n11; j <= n11 + n12; ++j) {
-                if (n10 <= class1851.method6699(Class2020.field11523, i, j)) {
+                if (n10 <= class1851.method6699(HeightmapType.field11523, i, j)) {
                     return this.method13664(class1851, random, class1854, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13);
                 }
             }

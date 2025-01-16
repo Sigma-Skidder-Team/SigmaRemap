@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public class Class4565 extends Class4535<Class5144>
@@ -21,7 +23,7 @@ public class Class4565 extends Class4535<Class5144>
             method1165 = class1853;
         }
         else {
-            method1165 = class1851.method6958(Class2020.field11521, class1853);
+            method1165 = class1851.method6958(HeightmapType.field11521, class1853);
         }
         int n = 0;
         final Mutable class1855 = new Mutable();

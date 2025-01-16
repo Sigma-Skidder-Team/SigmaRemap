@@ -8,6 +8,8 @@ import java.util.stream.Stream;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public abstract class Class7133<DC extends Class6926>

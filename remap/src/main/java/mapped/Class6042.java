@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.world.chunk.IChunk;
+
 import java.util.function.Function;
 
 public class Class6042 extends Class6040

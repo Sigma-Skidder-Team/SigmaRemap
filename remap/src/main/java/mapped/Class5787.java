@@ -41,7 +41,7 @@ public class Class5787 extends Class5784
     @Override
     public void method17247() {
         if (this.field23775 == null) {
-            this.field23775 = new Vec3d(this.field23764.world.method6958(Class2020.field11526, Class4551.field20031));
+            this.field23775 = new Vec3d(this.field23764.world.method6958(HeightmapType.field11526, Class4551.field20031));
         }
         if (this.field23775.squareDistanceTo(this.field23764.getPosX(), this.field23764.getPosY(), this.field23764.getPosZ()) < 1.0) {
             this.field23764.method5127().method33698(Class7193.field27953).method17265();

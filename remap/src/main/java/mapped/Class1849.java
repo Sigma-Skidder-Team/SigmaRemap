@@ -9,11 +9,12 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import com.google.common.annotations.VisibleForTesting;
@@ -215,7 +216,7 @@ public class Class1849 extends World
         this.method6733();
         this.method6757();
         method6796.method15300("chunkSource");
-        this.method6904().method7403(booleanSupplier);
+        this.method6904().tick(booleanSupplier);
         method6796.method15300("tickPending");
         if (this.worldInfo.method29570() != Class9505.field40898) {
             this.field10096.method21346();
@@ -305,8 +306,8 @@ public class Class1849 extends World
         this.field10088.stream().filter(LivingEntity::method2783).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()).forEach(class513 -> class513.method2849(false, false));
     }
     
-    public void method6864(final Class1862 class1862, final int n) {
-        final Class7859 method7019 = class1862.method7019();
+    public void method6864(final Chunk class1862, final int n) {
+        final ChunkPos method7019 = class1862.method7019();
         final boolean method7020 = this.method6771();
         final int method7021 = method7019.method25426();
         final int method7022 = method7019.method25427();
@@ -333,7 +334,7 @@ public class Class1849 extends World
         }
         method7023.method15300("iceandsnow");
         if (this.rand.nextInt(16) == 0) {
-            final BlockPos method7026 = this.method6958(Class2020.field11525, this.method6794(method7021, 0, method7022, 15));
+            final BlockPos method7026 = this.method6958(HeightmapType.field11525, this.method6794(method7021, 0, method7022, 15));
             final BlockPos method7027 = method7026.method1139();
             final Class3090 method7028 = this.method6959(method7026);
             if (method7028.method9846(this, method7027)) {
@@ -353,7 +354,7 @@ public class Class1849 extends World
         method7023.method15300("tickBlocks");
         if (n > 0) {
             for (final Class8199 class1864 : class1862.method7014()) {
-                if (class1864 != Class1862.field10141) {
+                if (class1864 != Chunk.field10141) {
                     if (class1864.method27156()) {
                         final int method7030 = class1864.method27159();
                         for (int j = 0; j < n; ++j) {
@@ -377,7 +378,7 @@ public class Class1849 extends World
     }
     
     public BlockPos method6865(final BlockPos class354) {
-        BlockPos class355 = this.method6958(Class2020.field11525, class354);
+        BlockPos class355 = this.method6958(HeightmapType.field11525, class354);
         final List<Entity> method6739 = this.method6739((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(class355, new BlockPos(class355.getX(), this.getHeight(), class355.getZ())).intersect(3.0), class356 -> {
             final boolean b;
             if (class356 != null) {
@@ -472,7 +473,7 @@ public class Class1849 extends World
     }
     
     public void method6873(final Entity class399) {
-        if (class399 instanceof PlayerEntity || this.method6904().method7408(class399)) {
+        if (class399 instanceof PlayerEntity || this.method6904().isChunkLoaded(class399)) {
             class399.method1731(class399.getPosX(), class399.getPosY(), class399.getPosZ());
             class399.prevRotationYaw = class399.rotationYaw;
             class399.prevRotationPitch = class399.rotationPitch;
@@ -496,7 +497,7 @@ public class Class1849 extends World
     
     public void method6874(final Entity class399, final Entity class400) {
         if (!class400.removed && class400.method1920() == class399) {
-            if (class400 instanceof PlayerEntity || this.method6904().method7408(class400)) {
+            if (class400 instanceof PlayerEntity || this.method6904().isChunkLoaded(class400)) {
                 class400.method1731(class400.getPosX(), class400.getPosY(), class400.getPosZ());
                 class400.prevRotationYaw = class400.rotationYaw;
                 class400.prevRotationPitch = class400.rotationPitch;
@@ -562,7 +563,7 @@ public class Class1849 extends World
             if (this.worldInfo.method29570() != Class9505.field40898) {
                 final Class1868 method18879 = this.method6904().method7438().method18879();
                 final BlockPos method18880 = method18879.method7119(0, this.method6743(), 0, 256, method18879.method7117(), new Random(this.method6753()));
-                final Class7859 class8512 = (method18880 != null) ? new Class7859(method18880) : new Class7859(0, 0);
+                final ChunkPos class8512 = (method18880 != null) ? new ChunkPos(method18880) : new ChunkPos(0, 0);
                 if (method18880 == null) {
                     Class1849.field10083.warn("Unable to find spawn biome");
                 }
@@ -585,7 +586,7 @@ public class Class1849 extends World
                         if (n <= 16) {
                             if (n2 > -16) {
                                 if (n2 <= 16) {
-                                    final BlockPos method18881 = this.dimension.method20489(new Class7859(class8512.field32290 + n, class8512.field32291 + n2), b);
+                                    final BlockPos method18881 = this.dimension.method20489(new ChunkPos(class8512.field32290 + n, class8512.field32291 + n2), b);
                                     if (method18881 != null) {
                                         this.worldInfo.method29548(method18881);
                                         break;
@@ -661,7 +662,7 @@ public class Class1849 extends World
             if (class7499 != null && class7500.getType() != class7499) {
                 continue;
             }
-            if (!method6904.method7401(MathHelper.floor(class7500.getPosX()) >> 4, MathHelper.floor(class7500.getPosZ()) >> 4)) {
+            if (!method6904.chunkExists(MathHelper.floor(class7500.getPosX()) >> 4, MathHelper.floor(class7500.getPosZ()) >> 4)) {
                 continue;
             }
             if (!predicate.test(class7500)) {
@@ -768,8 +769,8 @@ public class Class1849 extends World
         }
         this.field10088.add(class513);
         this.method6867();
-        final IChunk method6687 = this.getChunk(MathHelper.floor(class513.getPosX() / 16.0), MathHelper.floor(class513.getPosZ() / 16.0), ChunkStatus.field39989, true);
-        if (method6687 instanceof Class1862) {
+        final IChunk method6687 = this.getChunk(MathHelper.floor(class513.getPosX() / 16.0), MathHelper.floor(class513.getPosZ() / 16.0), ChunkStatus.FULL, true);
+        if (method6687 instanceof Chunk) {
             method6687.method7010(class513);
         }
         this.method6899(class513);
@@ -783,8 +784,8 @@ public class Class1849 extends World
         if (this.method6896(class399)) {
             return false;
         }
-        final IChunk method6687 = this.getChunk(MathHelper.floor(class399.getPosX() / 16.0), MathHelper.floor(class399.getPosZ() / 16.0), ChunkStatus.field39989, class399.forceSpawn);
-        if (method6687 instanceof Class1862) {
+        final IChunk method6687 = this.getChunk(MathHelper.floor(class399.getPosX() / 16.0), MathHelper.floor(class399.getPosZ() / 16.0), ChunkStatus.FULL, class399.forceSpawn);
+        if (method6687 instanceof Chunk) {
             method6687.method7010(class399);
             this.method6899(class399);
             return true;
@@ -809,7 +810,7 @@ public class Class1849 extends World
         return false;
     }
     
-    public void method6897(final Class1862 class1862) {
+    public void method6897(final Chunk class1862) {
         this.tileEntitiesToBeRemoved.addAll(class1862.method7066().values());
         final Class80<Entity>[] method7067 = class1862.method7067();
         for (int length = method7067.length, i = 0; i < length; ++i) {
@@ -874,9 +875,9 @@ public class Class1849 extends World
     }
     
     private void method6901(final Entity class399) {
-        final IChunk method6687 = this.getChunk(class399.chunkCoordX, class399.chunkCoordZ, ChunkStatus.field39989, false);
-        if (method6687 instanceof Class1862) {
-            ((Class1862)method6687).method7053(class399);
+        final IChunk method6687 = this.getChunk(class399.chunkCoordX, class399.chunkCoordZ, ChunkStatus.FULL, false);
+        if (method6687 instanceof Chunk) {
+            ((Chunk)method6687).method7053(class399);
         }
     }
     
@@ -1110,10 +1111,10 @@ public class Class1849 extends World
     
     @Override
     public void setSpawnPoint(final BlockPos class354) {
-        final Class7859 class355 = new Class7859(new BlockPos(this.worldInfo.method29536(), 0, this.worldInfo.method29538()));
+        final ChunkPos class355 = new ChunkPos(new BlockPos(this.worldInfo.method29536(), 0, this.worldInfo.method29538()));
         super.setSpawnPoint(class354);
         this.method6904().method7442(Class9105.field38565, class355, 11, Class315.field1875);
-        this.method6904().method7441(Class9105.field38565, new Class7859(class354), 11, Class315.field1875);
+        this.method6904().method7441(Class9105.field38565, new ChunkPos(class354), 11, Class315.field1875);
     }
     
     public LongSet method6919() {
@@ -1123,7 +1124,7 @@ public class Class1849 extends World
     
     public boolean method6920(final int n, final int n2, final boolean b) {
         final Class6358 class6358 = this.method6918().method27208(Class6358::new, "chunks");
-        final Class7859 class6359 = new Class7859(n, n2);
+        final ChunkPos class6359 = new ChunkPos(n, n2);
         final long method25422 = class6359.method25422();
         boolean b2;
         if (!b) {
@@ -1137,7 +1138,7 @@ public class Class1849 extends World
         }
         class6358.method18904(b2);
         if (b2) {
-            this.method6904().method7407(class6359, b);
+            this.method6904().forceChunk(class6359, b);
         }
         return b2;
     }

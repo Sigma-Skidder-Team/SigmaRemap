@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Iterator;
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.dimension.DimensionType;
 

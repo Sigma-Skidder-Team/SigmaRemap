@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.world.chunk.Chunk;
+
 import java.util.Iterator;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -15,20 +17,20 @@ public class Class6502
     private static Class7364 field25875;
     private static Class7364 field25876;
     
-    public static boolean method19584(final Class1862 class1862) {
+    public static boolean method19584(final Chunk class1862) {
         return Class9570.method35829(class1862, Class6502.field25875, true);
     }
     
-    public static boolean method19585(final Class1862 class1862) {
+    public static boolean method19585(final Chunk class1862) {
         return Class9570.method35829(class1862, Class6502.field25876, true);
     }
     
-    private static Class7364 method19586(final String str, final BiConsumer<Class1862, Boolean> biConsumer) {
+    private static Class7364 method19586(final String str, final BiConsumer<Chunk, Boolean> biConsumer) {
         try {
-            final Class1862 class1862 = new Class1862(null, null, null);
+            final Chunk class1862 = new Chunk(null, null, null);
             final ArrayList list = new ArrayList();
             final ArrayList list2 = new ArrayList();
-            final Field[] declaredFields = Class1862.class.getDeclaredFields();
+            final Field[] declaredFields = Chunk.class.getDeclaredFields();
             for (int i = 0; i < declaredFields.length; ++i) {
                 final Field field = declaredFields[i];
                 if (field.getType() == Boolean.TYPE) {
@@ -67,12 +69,12 @@ public class Class6502
             Config.warn(ex.getClass().getName() + " " + ex.getMessage());
         }
         Config.warn("Error finding Chunk." + str);
-        return new Class7364(new Class7363(Class1862.class), str);
+        return new Class7364(new Class7363(Chunk.class), str);
     }
     
     static {
-        Class6502.field25874 = new Class7363(Class1862.class);
-        Class6502.field25875 = method19586("setHasEntities", Class1862::method7068);
-        Class6502.field25876 = method19586("setLoaded", Class1862::method7064);
+        Class6502.field25874 = new Class7363(Chunk.class);
+        Class6502.field25875 = method19586("setHasEntities", Chunk::method7068);
+        Class6502.field25876 = method19586("setLoaded", Chunk::method7064);
     }
 }

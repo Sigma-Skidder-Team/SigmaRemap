@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Iterator;
 
 public class Class7246 implements Iterator<Class8974>

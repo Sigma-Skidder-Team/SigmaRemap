@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Random;
 

@@ -8,6 +8,7 @@ import java.util.function.Function;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
+import net.minecraft.util.math.BlockPos;
 
 public final class Class6594 implements Class6595
 {

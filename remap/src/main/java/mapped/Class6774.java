@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.AbstractList;
 
 public class Class6774
@@ -76,7 +78,7 @@ public class Class6774
             }
         }
         class6823.put("Sections", class6825);
-        class6823.putIntArray("Biomes", new Class1873(new Class7859(class6822.field26788, class6822.field26789), class6824).method7125());
+        class6823.putIntArray("Biomes", new Class1873(new ChunkPos(class6822.field26788, class6822.field26789), class6824).method7125());
         class6823.put("Entities", class6822.field26785);
         class6823.put("TileEntities", class6822.field26786);
         if (class6822.field26787 != null) {

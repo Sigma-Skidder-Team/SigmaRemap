@@ -4,12 +4,14 @@
 
 package mapped;
 
-public class Class6796 implements Class6797
+import net.minecraft.util.math.ChunkPos;
+
+public class Class6796 implements IChunkLoadingError
 {
-    public final /* synthetic */ Class7859 field26730;
+    public final /* synthetic */ ChunkPos field26730;
     public final /* synthetic */ Class388 field26731;
     
-    public Class6796(final Class388 field26731, final Class7859 field26732) {
+    public Class6796(final Class388 field26731, final ChunkPos field26732) {
         this.field26731 = field26731;
         this.field26730 = field26732;
     }

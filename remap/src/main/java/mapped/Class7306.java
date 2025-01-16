@@ -10,6 +10,9 @@ import java.util.Random;
 import java.util.BitSet;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.IChunk;
+
 import java.util.function.Function;
 
 public class Class7306 extends Class7305

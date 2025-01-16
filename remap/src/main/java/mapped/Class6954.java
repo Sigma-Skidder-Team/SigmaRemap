@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.stream.Stream;
 
 public class Class6954<T> implements Class6952<T>

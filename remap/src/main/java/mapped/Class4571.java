@@ -7,6 +7,7 @@ package mapped;
 import java.util.Iterator;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 
 import java.util.function.Function;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Optional;
 
 public final class Class4418 implements Class4410<Optional<BlockPos>>

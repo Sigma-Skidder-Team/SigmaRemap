@@ -5,6 +5,9 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.Random;
 
@@ -78,9 +81,9 @@ public class Class4518 extends Class4515
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         this.field19919.method32852().method32853(new Class4108(this.field19926)).method32853(Class4106.field18209);
-        this.field19920 = new BlockPos(this.field19920.getX(), class1851.method6699(Class2020.field11523, this.field19920.getX(), this.field19920.getZ()), this.field19920.getZ());
+        this.field19920 = new BlockPos(this.field19920.getX(), class1851.method6699(HeightmapType.field11523, this.field19920.getX(), this.field19920.getZ()), this.field19920.getZ());
         this.field19920 = new BlockPos(this.field19920.getX(), this.method13515(this.field19920, class1851, Class6585.method19962(new BlockPos(this.field19918.method19945().getX() - 1, 0, this.field19918.method19945().getZ() - 1), Class2181.field12917, this.field19928, BlockPos.ZERO).add(this.field19920)), this.field19920.getZ());
         return super.method13421(class1851, class1852, random, class1853, class1854);
     }

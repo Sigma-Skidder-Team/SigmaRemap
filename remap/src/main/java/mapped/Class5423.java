@@ -11,6 +11,7 @@ import java.util.function.Function;
 import java.util.List;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5423 extends Class5419<Class787>
 {

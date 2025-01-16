@@ -11,6 +11,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import mapped.*;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;

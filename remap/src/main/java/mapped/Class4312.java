@@ -4,18 +4,21 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.Chunk;
+
 import java.io.IOException;
 
 public class Class4312 implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19329;
-    public Class7859 field19330;
+    public ChunkPos field19330;
     public Class7870[] field19331;
     
     public Class4312() {
     }
     
-    public Class4312(final int n, final short[] array, final Class1862 class1862) {
+    public Class4312(final int n, final short[] array, final Chunk class1862) {
         this.field19330 = class1862.method7019();
         this.field19331 = new Class7870[n];
         for (int i = 0; i < this.field19331.length; ++i) {
@@ -25,7 +28,7 @@ public class Class4312 implements IPacket<IClientPlayNetHandler>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        this.field19330 = new Class7859(class8654.readInt(), class8654.readInt());
+        this.field19330 = new ChunkPos(class8654.readInt(), class8654.readInt());
         this.field19331 = new Class7870[class8654.readVarInt()];
         for (int i = 0; i < this.field19331.length; ++i) {
             this.field19331[i] = new Class7870(this, class8654.readShort(), Block.field17391.method499(class8654.readVarInt()));

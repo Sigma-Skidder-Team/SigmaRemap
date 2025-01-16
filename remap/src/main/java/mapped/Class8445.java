@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class8445 implements Class8444
 {
     private static String[] field34701;

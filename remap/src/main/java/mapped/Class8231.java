@@ -14,6 +14,8 @@ import com.mojang.datafixers.types.DynamicOps;
 import java.util.Iterator;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.List;
 
 public class Class8231 extends Class8228

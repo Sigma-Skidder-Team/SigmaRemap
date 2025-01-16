@@ -5,6 +5,8 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Collection;
 
 public class Class6126 implements Class6113

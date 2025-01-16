@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;

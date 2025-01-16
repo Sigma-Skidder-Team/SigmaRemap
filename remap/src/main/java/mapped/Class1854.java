@@ -4,7 +4,12 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.AbstractChunkProvider;
+import net.minecraft.world.chunk.IChunk;
 
 import javax.annotation.Nullable;
 
@@ -28,7 +33,7 @@ public class Class1854 implements IBlockReader, Class1853
         this.field10108 = true;
         for (int i = this.field10105; i <= n; ++i) {
             for (int j = this.field10106; j <= n2; ++j) {
-                this.field10107[i - this.field10105][j - this.field10106] = method6762.method7399(i, j);
+                this.field10107[i - this.field10105][j - this.field10106] = method6762.func_225313_a(i, j);
             }
         }
         for (int k = class354.getX() >> 4; k <= class355.getX() >> 4; ++k) {
@@ -54,12 +59,12 @@ public class Class1854 implements IBlockReader, Class1853
                 if (n4 >= 0) {
                     if (n4 < this.field10107[n3].length) {
                         final IChunk class1860 = this.field10107[n3][n4];
-                        return (class1860 == null) ? new Class1864(this.field10109, new Class7859(n, n2)) : class1860;
+                        return (class1860 == null) ? new Class1864(this.field10109, new ChunkPos(n, n2)) : class1860;
                     }
                 }
             }
         }
-        return new Class1864(this.field10109, new Class7859(n, n2));
+        return new Class1864(this.field10109, new ChunkPos(n, n2));
     }
     
     @Override

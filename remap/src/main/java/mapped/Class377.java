@@ -10,6 +10,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.types.DynamicOps;
 import java.util.function.Function;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
 
 public class Class377 implements IDynamicSerializable
 {

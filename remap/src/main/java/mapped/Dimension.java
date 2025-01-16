@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -98,7 +100,7 @@ public abstract class Dimension
     public abstract Class6346<?> method20488();
     
     @Nullable
-    public abstract BlockPos method20489(final Class7859 p0, final boolean p1);
+    public abstract BlockPos method20489(final ChunkPos p0, final boolean p1);
     
     @Nullable
     public abstract BlockPos method20490(final int p0, final int p1, final boolean p2);

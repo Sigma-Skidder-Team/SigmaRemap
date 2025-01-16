@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -71,7 +73,7 @@ public class Class6738 extends Dimension
     
     @Nullable
     @Override
-    public BlockPos method20489(final Class7859 class7859, final boolean b) {
+    public BlockPos method20489(final ChunkPos class7859, final boolean b) {
         final Random random = new Random(this.field26492.method6753());
         final BlockPos class7860 = new BlockPos(class7859.method25426() + random.nextInt(15), 0, class7859.method25429() + random.nextInt(15));
         return this.field26492.getGroundAboveSeaLevel(class7860).method21697().method26440() ? class7860 : null;
@@ -85,7 +87,7 @@ public class Class6738 extends Dimension
     @Nullable
     @Override
     public BlockPos method20490(final int n, final int n2, final boolean b) {
-        return this.method20489(new Class7859(n >> 4, n2 >> 4), b);
+        return this.method20489(new ChunkPos(n >> 4, n2 >> 4), b);
     }
     
     @Override

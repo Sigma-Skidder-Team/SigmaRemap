@@ -11,6 +11,10 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.HashMap;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.Chunk;
+
 import java.util.Map;
 import java.util.List;
 
@@ -29,13 +33,13 @@ public class Class4298 implements IPacket<IClientPlayNetHandler>
     public Class4298() {
     }
     
-    public Class4298(final Class1862 class1862, final int n) {
-        final Class7859 method7019 = class1862.method7019();
+    public Class4298(final Chunk class1862, final int n) {
+        final ChunkPos method7019 = class1862.method7019();
         this.field19267 = method7019.field32290;
         this.field19268 = method7019.field32291;
         this.field19274 = (n == 65535);
         this.field19270 = new CompoundNBT();
-        for (final Map.Entry<Class2020, V> entry : class1862.method7015()) {
+        for (final Map.Entry<HeightmapType, V> entry : class1862.method7015()) {
             if (!entry.getKey().method8061()) {
                 continue;
             }
@@ -115,12 +119,12 @@ public class Class4298 implements IPacket<IClientPlayNetHandler>
         return wrappedBuffer;
     }
     
-    public int method12907(final PacketBuffer class8654, final Class1862 class8655, final int n) {
+    public int method12907(final PacketBuffer class8654, final Chunk class8655, final int n) {
         int n2 = 0;
         final Class8199[] method7014 = class8655.method7014();
         for (int i = 0; i < method7014.length; ++i) {
             final Class8199 class8656 = method7014[i];
-            if (class8656 != Class1862.field10141) {
+            if (class8656 != Chunk.field10141) {
                 if (!this.method12912() || !class8656.method27154()) {
                     if ((n & 1 << i) != 0x0) {
                         n2 |= 1 << i;
@@ -132,12 +136,12 @@ public class Class4298 implements IPacket<IClientPlayNetHandler>
         return n2;
     }
     
-    public int method12908(final Class1862 class1862, final int n) {
+    public int method12908(final Chunk class1862, final int n) {
         int n2 = 0;
         final Class8199[] method7014 = class1862.method7014();
         for (int i = 0; i < method7014.length; ++i) {
             final Class8199 class1863 = method7014[i];
-            if (class1863 != Class1862.field10141) {
+            if (class1863 != Chunk.field10141) {
                 if (!this.method12912() || !class1863.method27154()) {
                     if ((n & 1 << i) != 0x0) {
                         n2 += class1863.method27164();

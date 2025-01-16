@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 import java.io.ObjectOutputStream;
 import java.nio.ByteBuffer;
 import java.io.IOException;
@@ -35,18 +37,18 @@ public class Class8537
         }
     }
     
-    public void method28638(final ByteBuffer byteBuffer, final Class7859 class7859) {
+    public void method28638(final ByteBuffer byteBuffer, final ChunkPos class7859) {
         final byte[] array = new byte[byteBuffer.capacity()];
         byteBuffer.get(array, 0, array.length);
         this.field35828.put(this.method28640(class7859), array);
     }
     
-    public ByteBuffer method28639(final Class7859 class7859) {
+    public ByteBuffer method28639(final ChunkPos class7859) {
         final byte[] array = this.field35828.get(this.method28640(class7859));
         return (array != null) ? ByteBuffer.wrap(array) : null;
     }
     
-    public int method28640(final Class7859 class7859) {
+    public int method28640(final ChunkPos class7859) {
         return Math.max(0, Math.min(Math.abs(class7859.field32290) % 32 * 32 + Math.abs(class7859.field32291) % 32, 1024));
     }
     
@@ -71,7 +73,7 @@ public class Class8537
         }
     }
     
-    public static Class2420 method28644(final Class7859 class7859) {
+    public static Class2420 method28644(final ChunkPos class7859) {
         return new Class2420((int)Math.floor(class7859.field32290 / 32.0), (int)Math.floor(class7859.field32291 / 32.0));
     }
 }

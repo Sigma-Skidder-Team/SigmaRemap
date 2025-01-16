@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 import javax.annotation.Nullable;
@@ -54,7 +55,7 @@ public class Class5790 extends Class5784
     private void method17263() {
         if (this.field23786 == null || this.field23786.method35215()) {
             final int method5119 = this.field23764.method5119();
-            final BlockPos method5120 = this.field23764.world.method6958(Class2020.field11526, Class4551.field20031);
+            final BlockPos method5120 = this.field23764.world.method6958(HeightmapType.field11526, Class4551.field20031);
             final PlayerEntity method5121 = this.field23764.world.method7137(Class5790.field23785, method5120.getX(), method5120.getY(), method5120.getZ());
             int n;
             if (method5121 == null) {

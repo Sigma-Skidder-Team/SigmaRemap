@@ -8,6 +8,8 @@ import net.minecraft.entity.*;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -266,7 +268,7 @@ public class Class853 extends Class759 implements Class762
                     }
                 }
             }
-            final Class7859 class7503 = new Class7859(class7502);
+            final ChunkPos class7503 = new ChunkPos(class7502);
             final boolean b = Class2317.method9442(class7503.field32290, class7503.field32291, class7500.method6753(), 987234911L).nextInt(10) == 0;
             if (random.nextInt(10) == 0) {
                 if (b) {

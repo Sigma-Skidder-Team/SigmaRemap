@@ -5,6 +5,8 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3i;
@@ -29,7 +31,7 @@ public class Class353 extends Vec3i
         return new Class353(method1095(class354.getX()), method1095(class354.getY()), method1095(class354.getZ()));
     }
     
-    public static Class353 method1090(final Class7859 class7859, final int n) {
+    public static Class353 method1090(final ChunkPos class7859, final int n) {
         return new Class353(class7859.field32290, n, class7859.field32291);
     }
     
@@ -129,8 +131,8 @@ public class Class353 extends Vec3i
         return this.method1113().add(8, 8, 8);
     }
     
-    public Class7859 method1115() {
-        return new Class7859(this.method1102(), this.method1104());
+    public ChunkPos method1115() {
+        return new ChunkPos(this.method1102(), this.method1104());
     }
     
     public static long method1116(final int n, final int n2, final int n3) {
@@ -152,7 +154,7 @@ public class Class353 extends Vec3i
         return method1121(method1102 - n, method1103 - n, method1104 - n, method1102 + n, method1103 + n, method1104 + n);
     }
     
-    public static Stream<Class353> method1120(final Class7859 class7859, final int n) {
+    public static Stream<Class353> method1120(final ChunkPos class7859, final int n) {
         final int field32290 = class7859.field32290;
         final int field32291 = class7859.field32291;
         return method1121(field32290 - n, 0, field32291 - n, field32290 + n, 15, field32291 + n);

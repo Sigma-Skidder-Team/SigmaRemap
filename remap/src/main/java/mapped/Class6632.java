@@ -5,6 +5,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2IntLinkedOpenHashMap;
+import net.minecraft.util.math.ChunkPos;
 
 public final class Class6632 implements Class6631
 {
@@ -21,7 +22,7 @@ public final class Class6632 implements Class6631
     
     @Override
     public int method20074(final int n, final int n2) {
-        final long method25423 = Class7859.method25423(n, n2);
+        final long method25423 = ChunkPos.method25423(n, n2);
         synchronized (this.field26218) {
             final int value = this.field26218.get(method25423);
             if (value != Integer.MIN_VALUE) {

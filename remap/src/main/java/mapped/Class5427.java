@@ -7,6 +7,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.List;

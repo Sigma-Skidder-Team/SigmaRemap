@@ -2,13 +2,17 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package net.minecraft.world.chunk;
 
 import it.unimi.dsi.fastutil.shorts.ShortArrayList;
 import java.util.BitSet;
 import java.util.stream.Stream;
 import it.unimi.dsi.fastutil.shorts.ShortList;
+import mapped.*;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.IBlockReader;
 import org.apache.logging.log4j.LogManager;
 import java.util.Map;
 import java.util.Collection;
@@ -45,15 +49,15 @@ public interface IChunk extends IBlockReader, Class1861
     
     Class8199[] method7014();
     
-    Collection<Map.Entry<Class2020, Class9548>> method7015();
+    Collection<Map.Entry<HeightmapType, Class9548>> method7015();
     
-    void method7016(final Class2020 p0, final long[] p1);
+    void method7016(final HeightmapType p0, final long[] p1);
     
-    Class9548 method7017(final Class2020 p0);
+    Class9548 method7017(final HeightmapType p0);
     
-    int method7018(final Class2020 p0, final int p1, final int p2);
+    int method7018(final HeightmapType p0, final int p1, final int p2);
     
-    Class7859 method7019();
+    ChunkPos method7019();
     
     void method7020(final long p0);
     

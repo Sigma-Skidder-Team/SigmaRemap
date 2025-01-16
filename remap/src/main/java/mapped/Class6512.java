@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import java.util.Collections;
@@ -96,7 +97,7 @@ public class Class6512
              final Class1924 class1871 = new Class1924(new File(parent, name.substring(0, name.length() - ".mcr".length()) + ".mca"), parent)) {
             for (int i = 0; i < 32; ++i) {
                 for (int j = 0; j < 32; ++j) {
-                    final Class7859 class1872 = new Class7859(i, j);
+                    final ChunkPos class1872 = new ChunkPos(i, j);
                     if (class1870.method7656(class1872) && !class1871.method7656(class1872)) {
                         CompoundNBT method7640;
                         try (final DataInputStream method7639 = class1870.method7639(class1872)) {

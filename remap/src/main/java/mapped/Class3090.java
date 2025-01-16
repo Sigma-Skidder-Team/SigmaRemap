@@ -5,8 +5,10 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Random;

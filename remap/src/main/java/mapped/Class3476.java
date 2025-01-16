@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public class Class3476 extends Class3446
 {
     private static String[] field16380;
@@ -28,7 +30,7 @@ public class Class3476 extends Class3446
     
     @Override
     public void method11018() {
-        Class851.method5101(this.field16382, this.field16382.world.method6958(Class2020.field11525, Class851.method5100(this.field16382)).method1138(10 + Class851.method5104(this.field16382).nextInt(20)));
+        Class851.method5101(this.field16382, this.field16382.world.method6958(HeightmapType.field11525, Class851.method5100(this.field16382)).method1138(10 + Class851.method5104(this.field16382).nextInt(20)));
     }
     
     @Override

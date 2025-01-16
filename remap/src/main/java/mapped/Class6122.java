@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.ChunkPos;
+
 import java.util.Map;
 
 public class Class6122 implements Class6113
@@ -39,8 +41,8 @@ public class Class6122 implements Class6113
             RenderSystem.method30010(false);
             final Map<?, ?> map = Class8112.method26664(this.field24853).getNow(null);
             final double n4 = this.field24850.field4644.method5833().method18161().y * 0.85;
-            for (final Map.Entry<Class7859, V> entry : Class8112.method26665(this.field24853).entrySet()) {
-                final Class7859 class7353 = entry.getKey();
+            for (final Map.Entry<ChunkPos, V> entry : Class8112.method26665(this.field24853).entrySet()) {
+                final ChunkPos class7353 = entry.getKey();
                 String string = (String)entry.getValue();
                 if (map != null) {
                     string += (String)map.get(class7353);

@@ -8,6 +8,8 @@ import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.Dynamic;
 import com.mojang.datafixers.types.DynamicOps;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.Optional;
 
 public class Class5116 implements Class5113

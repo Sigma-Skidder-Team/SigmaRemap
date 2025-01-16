@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 
 public class Class5446 extends Class5419<Class824>
 {

@@ -9,7 +9,7 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 import java.util.function.Predicate;
 
-public enum Class2020
+public enum HeightmapType
 {
     field11521("WORLD_SURFACE_WG", Class2106.field12209, (Predicate<BlockState>)Class9548.method35721()),
     field11522("WORLD_SURFACE", Class2106.field12211, (Predicate<BlockState>)Class9548.method35721()),
@@ -29,9 +29,9 @@ public enum Class2020
     private final String field11527;
     private final Class2106 field11528;
     private final Predicate<BlockState> field11529;
-    private static final Map<String, Class2020> field11530;
+    private static final Map<String, HeightmapType> field11530;
     
-    private Class2020(final String field11527, final Class2106 field11528, final Predicate<BlockState> field11529) {
+    private HeightmapType(final String field11527, final Class2106 field11528, final Predicate<BlockState> field11529) {
         this.field11527 = field11527;
         this.field11528 = field11528;
         this.field11529 = field11529;
@@ -49,8 +49,8 @@ public enum Class2020
         return this.field11528 != Class2106.field12209;
     }
     
-    public static Class2020 method8063(final String s) {
-        return Class2020.field11530.get(s);
+    public static HeightmapType method8063(final String s) {
+        return HeightmapType.field11530.get(s);
     }
     
     public Predicate<BlockState> method8064() {
@@ -60,10 +60,10 @@ public enum Class2020
     static {
         field11530 = Util.method27851(Maps.newHashMap(), hashMap -> {
             values();
-            final Class2020[] array;
+            final HeightmapType[] array;
             int i = 0;
             for (int length = array.length; i < length; ++i) {
-                final Class2020 value = array[i];
+                final HeightmapType value = array[i];
                 hashMap.put(value.field11527, value);
             }
         });

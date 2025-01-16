@@ -21,10 +21,15 @@ import com.google.common.collect.Lists;
 import com.google.common.base.Strings;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.lighting.WorldLightManager;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -32,14 +37,14 @@ import java.util.Map;
 
 public class Class689 extends AbstractGui
 {
-    private static final Map<Class2020, String> field3791;
+    private static final Map<HeightmapType, String> field3791;
     private final Minecraft field3792;
     private final FontRenderer field3793;
     private RayTraceResult field3794;
     private RayTraceResult field3795;
-    private Class7859 field3796;
-    private Class1862 field3797;
-    private CompletableFuture<Class1862> field3798;
+    private ChunkPos field3796;
+    private Chunk field3797;
+    private CompletableFuture<Chunk> field3798;
     private String field3799;
     private List<String> field3800;
     public List<String> field3801;
@@ -213,7 +218,7 @@ public class Class689 extends AbstractGui
                 break;
             }
         }
-        final Class7859 class355 = new Class7859(class354);
+        final ChunkPos class355 = new ChunkPos(class354);
         if (!Objects.equals(this.field3796, class355)) {
             this.field3796 = class355;
             this.method3827();
@@ -237,22 +242,22 @@ public class Class689 extends AbstractGui
         arrayList.add(String.format(Locale.ROOT, "Facing: %s (%s) (%.1f / %.1f)", method5290, s2, MathHelper.method35668(method5289.rotationYaw), MathHelper.method35668(method5289.rotationPitch)));
         if (this.field3792.world != null) {
             if (this.field3792.world.method6971(class354)) {
-                final Class1862 method5293 = this.method3836();
+                final Chunk method5293 = this.method3836();
                 if (method5293.method7062()) {
                     arrayList.add("Waiting for chunk...");
                 }
                 else {
                     arrayList.add("Client Light: " + this.field3792.world.method6835().getLightManager().method7290(class354, 0) + " (" + this.field3792.world.method6992(Class237.field911, class354) + " sky, " + this.field3792.world.method6992(Class237.field912, class354) + " block)");
-                    final Class1862 method5294 = this.method3835();
+                    final Chunk method5294 = this.method3835();
                     if (method5294 != null) {
-                        final Class1886 method5295 = method5291.getChunkProvider().getLightManager();
+                        final WorldLightManager method5295 = method5291.getChunkProvider().getLightManager();
                         arrayList.add("Server Light: (" + method5295.method7288(Class237.field911).method7293(class354) + " sky, " + method5295.method7288(Class237.field912).method7293(class354) + " block)");
                     }
                     else {
                         arrayList.add("Server Light: (?? sky, ?? block)");
                     }
                     final StringBuilder sb = new StringBuilder("CH");
-                    for (final Class2020 class356 : Class2020.values()) {
+                    for (final HeightmapType class356 : HeightmapType.values()) {
                         if (class356.method8061()) {
                             sb.append(" ").append(Class689.field3791.get(class356)).append(": ").append(method5293.method7018(class356, class354.getX(), class354.getZ()));
                         }
@@ -260,7 +265,7 @@ public class Class689 extends AbstractGui
                     arrayList.add(sb.toString());
                     sb.setLength();
                     sb.append("SH");
-                    for (final Class2020 class357 : Class2020.values()) {
+                    for (final HeightmapType class357 : HeightmapType.values()) {
                         if (class357.method8062()) {
                             sb.append(" ").append(Class689.field3791.get(class357)).append(": ");
                             if (method5294 != null) {
@@ -325,13 +330,13 @@ public class Class689 extends AbstractGui
     }
     
     @Nullable
-    private Class1862 method3835() {
+    private Chunk method3835() {
         if (this.field3798 == null) {
             final Class1655 method5285 = this.field3792.method5285();
             if (method5285 != null) {
                 final Class1849 method5286 = method5285.method1481(this.field3792.world.dimension.getType());
                 if (method5286 != null) {
-                    this.field3798 = (CompletableFuture<Class1862>)method5286.method6904().method7427(this.field3796.field32290, this.field3796.field32291, ChunkStatus.field39989, false).thenApply(either -> either.map(class1860 -> class1860, p0 -> null));
+                    this.field3798 = (CompletableFuture<Chunk>)method5286.method6904().method7427(this.field3796.field32290, this.field3796.field32291, ChunkStatus.FULL, false).thenApply(either -> either.map(class1860 -> class1860, p0 -> null));
                 }
             }
             if (this.field3798 == null) {
@@ -341,7 +346,7 @@ public class Class689 extends AbstractGui
         return this.field3798.getNow(null);
     }
     
-    private Class1862 method3836() {
+    private Chunk method3836() {
         if (this.field3797 == null) {
             this.field3797 = this.field3792.world.method6686(this.field3796.field32290, this.field3796.field32291);
         }
@@ -530,13 +535,13 @@ public class Class689 extends AbstractGui
     }
     
     static {
-        field3791 = Util.method27851((EnumMap)new EnumMap(Class2020.class), enumMap -> {
-            enumMap.put(Class2020.field11521, "SW");
-            enumMap.put(Class2020.field11522, "S");
-            enumMap.put(Class2020.field11523, "OW");
-            enumMap.put(Class2020.field11524, "O");
-            enumMap.put(Class2020.field11525, "M");
-            enumMap.put(Class2020.field11526, "ML");
+        field3791 = Util.method27851((EnumMap)new EnumMap(HeightmapType.class), enumMap -> {
+            enumMap.put(HeightmapType.field11521, "SW");
+            enumMap.put(HeightmapType.field11522, "S");
+            enumMap.put(HeightmapType.field11523, "OW");
+            enumMap.put(HeightmapType.field11524, "O");
+            enumMap.put(HeightmapType.field11525, "M");
+            enumMap.put(HeightmapType.field11526, "ML");
         });
     }
 }

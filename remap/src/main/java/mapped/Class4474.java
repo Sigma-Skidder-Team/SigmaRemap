@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 
 import java.util.Random;
@@ -26,8 +28,8 @@ public class Class4474 extends Class4473
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
-        final Mutable class1855 = new Mutable(this.field19849.minX, class1851.method6699(Class2020.field11523, this.field19849.minX, this.field19849.minZ), this.field19849.minZ);
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
+        final Mutable class1855 = new Mutable(this.field19849.minX, class1851.method6699(HeightmapType.field11523, this.field19849.minX, this.field19849.minZ), this.field19849.minZ);
         while (class1855.getY() > 0) {
             final BlockState method6701 = class1851.getBlockState(class1855);
             final BlockState method6702 = class1851.getBlockState(class1855.method1139());

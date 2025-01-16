@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+
 public interface Class1887
 {
     default void method7291(final BlockPos class354, final boolean b) {

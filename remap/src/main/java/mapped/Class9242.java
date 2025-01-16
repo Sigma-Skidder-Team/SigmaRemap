@@ -5,9 +5,11 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -31,7 +33,7 @@ public class Class9242
         final int field39638 = MathHelper.floor(class399.getPosX()) >> 4;
         final int n2 = MathHelper.floor(class399.getPosY()) >> 4;
         final int field39639 = MathHelper.floor(class399.getPosZ()) >> 4;
-        final Class1862 method6686 = field39637.method6686(field39638, field39639);
+        final Chunk method6686 = field39637.method6686(field39638, field39639);
         int n3 = field39638 - n;
         int n4 = field39638 + n;
         int n5 = field39639 - n;
@@ -71,7 +73,7 @@ public class Class9242
         }
         for (int i = n3; i < n4; ++i) {
             for (int j = n5; j < n6; ++j) {
-                final Class1862 method6687 = field39637.method6686(i, j);
+                final Chunk method6687 = field39637.method6686(i, j);
                 if (!method6687.method7062()) {
                     final Class8199[] method6688 = method6687.method7014();
                     int k = method6688.length - 1;

@@ -7,6 +7,8 @@ package mapped;
 import java.util.stream.Stream;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public abstract class Class7139<DC extends Class6926> extends Class7133<DC>

@@ -7,6 +7,7 @@ package mapped;
 import java.util.Iterator;
 
 import com.mentalfrostbyte.Client;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class Class4901 extends Class4841
     private List<Class4868> field20957;
     public int field20958;
     public Class4847 field20959;
-    public Class7859 field20960;
+    public ChunkPos field20960;
     public int field20961;
     public float field20962;
     public float field20963;
@@ -27,7 +28,7 @@ public class Class4901 extends Class4841
     public int field20967;
     public float field20968;
     public float field20969;
-    public Class7859 field20970;
+    public ChunkPos field20970;
     private final List<Class8058> field20971;
     private final List<Class8345> field20972;
     
@@ -66,7 +67,7 @@ public class Class4901 extends Class4841
     }
     
     public void method14718(final int n, final int n2) {
-        this.field20960 = new Class7859(n / 16, n2 / 16);
+        this.field20960 = new ChunkPos(n / 16, n2 / 16);
         this.field20963 = -0.5f;
         this.field20962 = -0.5f;
         this.field20959.field20770 = true;
@@ -104,10 +105,10 @@ public class Class4901 extends Class4841
     @Override
     public void method14205(final float n) {
         final Minecraft method5277 = Minecraft.method5277();
-        final Class7859 class7859;
-        final Class7859 field20970 = class7859 = new Class7859(this.field20960.field32290, this.field20960.field32291);
+        final ChunkPos class7859;
+        final ChunkPos field20970 = class7859 = new ChunkPos(this.field20960.field32290, this.field20960.field32291);
         class7859.field32290 -= (int)Math.floor(this.field20963);
-        final Class7859 class7860 = field20970;
+        final ChunkPos class7860 = field20970;
         class7860.field32291 -= (int)Math.floor(this.field20962);
         if (n != 1.0f) {
             this.field20959.field20770 = true;

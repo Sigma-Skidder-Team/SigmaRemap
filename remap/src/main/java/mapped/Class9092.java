@@ -8,6 +8,8 @@ import java.util.Collections;
 import javax.annotation.Nullable;
 
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
@@ -20,7 +22,7 @@ public class Class9092
     private Class2052 field38502;
     private BlockPos field38503;
     private boolean field38504;
-    private Class7859 field38505;
+    private ChunkPos field38505;
     private MutableBoundingBox field38506;
     private boolean field38507;
     private Random field38508;
@@ -72,7 +74,7 @@ public class Class9092
         return this;
     }
     
-    public Class9092 method32848(final Class7859 field38505) {
+    public Class9092 method32848(final ChunkPos field38505) {
         this.field38505 = field38505;
         return this;
     }
@@ -164,7 +166,7 @@ public class Class9092
     }
     
     @Nullable
-    private MutableBoundingBox method32866(final Class7859 class7859) {
+    private MutableBoundingBox method32866(final ChunkPos class7859) {
         if (class7859 != null) {
             final int n = class7859.field32290 * 16;
             final int n2 = class7859.field32291 * 16;

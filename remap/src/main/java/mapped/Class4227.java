@@ -7,6 +7,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 
 public class Class4227 extends Class4211
 {

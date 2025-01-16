@@ -5,7 +5,9 @@
 package mapped;
 
 import net.minecraft.util.INameable;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockReader;
 
 public class Class8477
 {

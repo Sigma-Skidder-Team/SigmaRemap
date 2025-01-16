@@ -14,6 +14,7 @@ import java.util.function.Function;
 import java.util.List;
 import com.google.common.cache.LoadingCache;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 public class Class4550 extends Class4535<Class5143>

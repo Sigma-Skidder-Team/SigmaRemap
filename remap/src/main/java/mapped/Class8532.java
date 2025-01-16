@@ -6,9 +6,13 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import org.apache.logging.log4j.LogManager;
 import javax.annotation.Nullable;
 import java.util.List;
@@ -20,7 +24,7 @@ public final class Class8532
 {
     private static final Logger field35811;
     
-    public static void method28616(final Class1976 class1976, final Class1849 class1977, final Class1862 class1978, final BlockPos class1979) {
+    public static void method28616(final Class1976 class1976, final Class1849 class1977, final Chunk class1978, final BlockPos class1979) {
         final Class6346<?> method7438 = class1977.method6904().method7438();
         int n = 0;
         final BlockPos method7439 = method28619(class1977, class1978);
@@ -47,8 +51,8 @@ public final class Class8532
                         final double method7447 = method7446.method1733(n5, method7441, n6);
                         if (method7447 > 576.0) {
                             if (!class1979.withinDistance(new Vec3d(n5, method7441, n6), 24.0)) {
-                                final Class7859 a = new Class7859(class1980);
-                                if (Objects.equals(a, class1978.method7019()) || class1977.method6904().method7409(a)) {
+                                final ChunkPos a = new ChunkPos(class1980);
+                                if (Objects.equals(a, class1978.method7019()) || class1977.method6904().isChunkLoaded(a)) {
                                     if (method7443 == null) {
                                         method7443 = method28617(method7438, class1976, class1977.rand, class1980);
                                         if (method7443 == null) {
@@ -116,11 +120,11 @@ public final class Class8532
         return !method18866.isEmpty() && method18866.contains(class6348);
     }
     
-    private static BlockPos method28619(final World class1847, final Class1862 class1848) {
-        final Class7859 method7019 = class1848.method7019();
+    private static BlockPos method28619(final World class1847, final Chunk class1848) {
+        final ChunkPos method7019 = class1848.method7019();
         final int n = method7019.method25426() + class1847.rand.nextInt(16);
         final int n2 = method7019.method25427() + class1847.rand.nextInt(16);
-        return new BlockPos(n, class1847.rand.nextInt(class1848.method7018(Class2020.field11522, n, n2) + 1 + 1), n2);
+        return new BlockPos(n, class1847.rand.nextInt(class1848.method7018(HeightmapType.field11522, n, n2) + 1 + 1), n2);
     }
     
     public static boolean method28620(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final IFluidState class1858) {

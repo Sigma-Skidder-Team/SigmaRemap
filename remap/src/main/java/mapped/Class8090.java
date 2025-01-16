@@ -4,6 +4,10 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.Chunk;
+
 public class Class8090
 {
     private static String[] field33320;
@@ -31,7 +35,7 @@ public class Class8090
         if (class5723.method16998() instanceof Class4298) {
             if (Minecraft.method5277().world != null) {
                 final Class4298 class5727 = (Class4298)class5723.method16998();
-                final Class1862 class5728 = new Class1862(Minecraft.method5277().world, new Class7859(class5727.method12909(), class5727.method12910()), class5727.method12915());
+                final Chunk class5728 = new Chunk(Minecraft.method5277().world, new ChunkPos(class5727.method12909(), class5727.method12910()), class5727.method12915());
                 class5728.method7063(class5727.method12915(), new PacketBuffer(class5727.method12905().copy()), class5727.method12913(), class5727.method12911());
                 if (class5728 != null) {
                     int n = 0;

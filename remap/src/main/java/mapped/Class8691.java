@@ -9,6 +9,7 @@ import com.google.common.cache.CacheBuilder;
 
 import javax.annotation.Nullable;
 import com.google.common.cache.LoadingCache;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3i;
 

@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.io.File;
 
 import com.mentalfrostbyte.Client;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.world.chunk.Chunk;
 import org.lwjgl.BufferUtils;
 import java.util.ArrayList;
 import java.nio.ByteBuffer;
@@ -25,8 +28,8 @@ import java.util.List;
 public class Class7658
 {
     private Minecraft field30396;
-    private List<Class7859> field30397;
-    private List<Class7859> field30398;
+    private List<ChunkPos> field30397;
+    private List<ChunkPos> field30398;
     private List<Class8124> field30399;
     private boolean field30400;
     private int field30401;
@@ -39,8 +42,8 @@ public class Class7658
     
     public Class7658() {
         this.field30396 = Minecraft.method5277();
-        this.field30397 = new ArrayList<Class7859>();
-        this.field30398 = new ArrayList<Class7859>();
+        this.field30397 = new ArrayList<ChunkPos>();
+        this.field30398 = new ArrayList<ChunkPos>();
         this.field30399 = new ArrayList<Class8124>();
         this.field30400 = false;
         this.field30401 = 10;
@@ -173,13 +176,13 @@ public class Class7658
         final String field30402 = this.field30402;
         int n3 = 0;
         for (int i = 0; i < this.field30396.world.method6835().field10344.field39563.length(); ++i) {
-            final Class1862 class5745 = this.field30396.world.method6835().field10344.field39563.get(i);
+            final Chunk class5745 = this.field30396.world.method6835().field10344.field39563.get(i);
             if (class5745 != null) {
                 final boolean contains = this.field30397.contains(class5745.method7019());
                 final boolean contains2 = this.field30398.contains(class5745.method7019());
                 if (!contains || contains2) {
                     if (!class5745.method7062()) {
-                        if (this.field30396.world.method6835().method7409(class5745.method7019())) {
+                        if (this.field30396.world.method6835().isChunkLoaded(class5745.method7019())) {
                             if (!(this.field30396.world.method6959(this.field30396.player.method1894()) instanceof Class3158)) {
                                 if (!(this.field30396.world.method6959(this.field30396.player.method1894()) instanceof Class3150)) {
                                     if (!contains) {
@@ -296,25 +299,25 @@ public class Class7658
         return str + "/" + class8537.field35826 + "c" + class8537.field35827 + ".jmap";
     }
     
-    public String method24275(final String str, final Class1862 class1862) throws FileNotFoundException {
+    public String method24275(final String str, final Chunk class1862) throws FileNotFoundException {
         final Class2420 method28644 = Class8537.method28644(class1862.method7019());
         return str + "/" + method28644.field14319 + "c" + method28644.field14320 + ".jmap";
     }
     
-    public Class7666 method24276(final Class7859 class7859, final int n) {
+    public Class7666 method24276(final ChunkPos class7859, final int n) {
         final ArrayList list = new ArrayList();
         for (int i = -n / 2; i < n / 2; ++i) {
             for (int j = -n / 2; j < n / 2; ++j) {
-                list.add(new Class7859(class7859.field32290 + i, class7859.field32291 + j));
+                list.add(new ChunkPos(class7859.field32290 + i, class7859.field32291 + j));
             }
         }
         final ByteBuffer byteBuffer = BufferUtils.createByteBuffer(n * 16 * n * 16 * 3);
         int n2 = 0;
         int position = byteBuffer.position();
         final String field30402 = this.field30402;
-        for (final Class7859 class7860 : list) {
+        for (final ChunkPos class7860 : list) {
             ByteBuffer byteBuffer2 = this.field30407.duplicate();
-            Class7859.method25423(class7860.field32290, class7860.field32291);
+            ChunkPos.method25423(class7860.field32290, class7860.field32291);
             byteBuffer2.position();
             final Class2420 method28644 = Class8537.method28644(class7860);
             final Class8537 class7861 = this.field30403.get(method28644.method9723());
@@ -367,9 +370,9 @@ public class Class7658
         return new Class7666(byteBuffer, 16 * n, 16 * n);
     }
     
-    private boolean method24277(final Class1862 class1862) {
-        final Class1862 method6686 = this.field30396.world.method6686(class1862.method7019().field32290, class1862.method7019().field32291 + 1);
-        final Class1862 method6687 = this.field30396.world.method6686(class1862.method7019().field32290, class1862.method7019().field32291 - 1);
+    private boolean method24277(final Chunk class1862) {
+        final Chunk method6686 = this.field30396.world.method6686(class1862.method7019().field32290, class1862.method7019().field32291 + 1);
+        final Chunk method6687 = this.field30396.world.method6686(class1862.method7019().field32290, class1862.method7019().field32291 - 1);
         if (method6686 != null) {
             if (!method6686.method7062()) {
                 if (method6687 != null) {
@@ -382,14 +385,14 @@ public class Class7658
         return false;
     }
     
-    public ByteBuffer method24278(final Class1862 class1862, final boolean b) {
+    public ByteBuffer method24278(final Chunk class1862, final boolean b) {
         final ByteBuffer byteBuffer = BufferUtils.createByteBuffer(768);
         final int n = class1862.method7019().field32290 * 16;
         final int n2 = class1862.method7019().field32291 * 16;
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
                 final BlockPos class1863 = new BlockPos(n + i, 64, n2 + j);
-                final int method24279 = this.method24279(new BlockPos(class1863.getX(), class1862.method7017(Class2020.field11522).method35713(i, j) - 1, class1863.getZ()), b);
+                final int method24279 = this.method24279(new BlockPos(class1863.getX(), class1862.method7017(HeightmapType.field11522).method35713(i, j) - 1, class1863.getZ()), b);
                 byteBuffer.put((byte)(method24279 >> 16 & 0xFF));
                 byteBuffer.put((byte)(method24279 >> 8 & 0xFF));
                 byteBuffer.put((byte)(method24279 & 0xFF));

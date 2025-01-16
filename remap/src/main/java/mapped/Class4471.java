@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util2.Direction;
 
 import java.util.Random;
@@ -191,7 +192,7 @@ public class Class4471 extends Class4469
     }
     
     @Override
-    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final Class7859 class1854) {
+    public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         this.method13416(class1851, class1853, 0, 0, 0, 58, Math.max(class1851.method6743(), 64) - this.field19849.minY, 58);
         this.method13423(false, 0, class1851, random, class1853);
         this.method13423(true, 33, class1851, random, class1853);

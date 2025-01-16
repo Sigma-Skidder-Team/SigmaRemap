@@ -4,11 +4,13 @@
 
 package mapped;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 
 public class Class6492 extends Class6490
 {
-    private Class1862 field25848;
+    private Chunk field25848;
     public Minecraft field25849;
     
     public Class6492() {
@@ -28,7 +30,7 @@ public class Class6492 extends Class6490
         return 0;
     }
     
-    public Class1862 method19534(final World class1847, final int n, final int n2) {
+    public Chunk method19534(final World class1847, final int n, final int n2) {
         if (this.field25848 != null) {
             if (this.field25848.method7019().field32290 == n) {
                 if (this.field25848.method7019().field32291 == n2) {

@@ -7,7 +7,12 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.effect.LightningBoltEntity;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.chunk.IChunkLightProvider;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.Objects;
@@ -80,7 +85,7 @@ public class Class388 extends Class387 implements Class389
     private final Queue<Runnable> field2272;
     private int field2273;
     
-    public Class388(final Class1849 field2254, final File file, final DataFixer dataFixer, final Class1795 field2255, final Executor executor, final Class872<Runnable> field2256, final Class1908 class1908, final Class6346<?> field2257, final Class6459 field2258, final Supplier<Class8213> field2259, final int n) {
+    public Class388(final Class1849 field2254, final File file, final DataFixer dataFixer, final Class1795 field2255, final Executor executor, final Class872<Runnable> field2256, final IChunkLightProvider class1908, final Class6346<?> field2257, final Class6459 field2258, final Supplier<Class8213> field2259, final int n) {
         super(new File(field2254.method6789().getType().method1272(file), "region"), dataFixer);
         this.field2250 = (Long2ObjectLinkedOpenHashMap<Class9298>)new Long2ObjectLinkedOpenHashMap();
         this.field2251 = (Long2ObjectLinkedOpenHashMap<Class9298>)this.field2250.clone();
@@ -110,7 +115,7 @@ public class Class388 extends Class387 implements Class389
         this.method1338(n);
     }
     
-    private static double method1312(final Class7859 class7859, final Entity class7860) {
+    private static double method1312(final ChunkPos class7859, final Entity class7860) {
         final double n = class7859.field32290 * 16 + 8;
         final double n2 = class7859.field32291 * 16 + 8;
         final double n3 = n - class7860.getPosX();
@@ -118,7 +123,7 @@ public class Class388 extends Class387 implements Class389
         return n3 * n3 + n4 * n4;
     }
     
-    private static int method1313(final Class7859 class7859, final Class513 class7860, final boolean b) {
+    private static int method1313(final ChunkPos class7859, final Class513 class7860, final boolean b) {
         int n;
         int n2;
         if (!b) {
@@ -133,7 +138,7 @@ public class Class388 extends Class387 implements Class389
         return method1314(class7859, n, n2);
     }
     
-    private static int method1314(final Class7859 class7859, final int n, final int n2) {
+    private static int method1314(final ChunkPos class7859, final int n, final int n2) {
         return Math.max(Math.abs(class7859.field32290 - n), Math.abs(class7859.field32291 - n2));
     }
     
@@ -159,17 +164,17 @@ public class Class388 extends Class387 implements Class389
         };
     }
     
-    public String method1319(final Class7859 class7859) {
+    public String method1319(final ChunkPos class7859) {
         final Class9298 method1317 = this.method1317(class7859.method25422());
         if (method1317 != null) {
             String str = method1317.method34358() + "\n";
             final ChunkStatus method1318 = method1317.method34346();
             final IChunk method1319 = method1317.method34347();
             if (method1318 != null) {
-                str = str + "St: §" + method1318.method34442() + method1318 + '§' + "r\n";
+                str = str + "St: §" + method1318.ordinal() + method1318 + '§' + "r\n";
             }
             if (method1319 != null) {
-                str = str + "Ch: §" + method1319.method7027().method34442() + method1319.method7027() + '§' + "r\n";
+                str = str + "Ch: §" + method1319.method7027().ordinal() + method1319.method7027() + '§' + "r\n";
             }
             final Class2152 method1320 = method1317.method34356();
             return str + "§" + method1320.ordinal() + method1320 + '§' + "r";
@@ -177,14 +182,14 @@ public class Class388 extends Class387 implements Class389
         return "null";
     }
     
-    private CompletableFuture<Either<List<IChunk>, Class6797>> method1320(final Class7859 class7859, final int n, final IntFunction<ChunkStatus> intFunction) {
+    private CompletableFuture<Either<List<IChunk>, IChunkLoadingError>> method1320(final ChunkPos class7859, final int n, final IntFunction<ChunkStatus> intFunction) {
         final ArrayList arrayList = Lists.newArrayList();
         final int field32290 = class7859.field32290;
         final int field32291 = class7859.field32291;
         for (int i = -n; i <= n; ++i) {
             for (int j = -n; j <= n; ++j) {
                 final int max = Math.max(Math.abs(j), Math.abs(i));
-                final Class7859 class7860 = new Class7859(field32290 + j, field32291 + i);
+                final ChunkPos class7860 = new ChunkPos(field32290 + j, field32291 + i);
                 final Class9298 method1316 = this.method1316(class7860.method25422());
                 if (method1316 == null) {
                     return CompletableFuture.completedFuture(Either.right((Object)new Class6796(this, class7860)));
@@ -192,7 +197,7 @@ public class Class388 extends Class387 implements Class389
                 arrayList.add(method1316.method34354(intFunction.apply(max), this));
             }
         }
-        return (CompletableFuture<Either<List<IChunk>, Class6797>>) Util.method27853((List<? extends CompletableFuture<?>>)arrayList).thenApply(list -> {
+        return (CompletableFuture<Either<List<IChunk>, IChunkLoadingError>>) Util.method27853((List<? extends CompletableFuture<?>>)arrayList).thenApply(list -> {
             Lists.newArrayList();
             list.iterator();
             final Iterator iterator;
@@ -215,8 +220,8 @@ public class Class388 extends Class387 implements Class389
         });
     }
     
-    public CompletableFuture<Either<Class1862, Class6797>> method1321(final Class7859 class7859) {
-        return this.method1320(class7859, 2, p0 -> ChunkStatus.field39989).thenApplyAsync(either -> either.mapLeft(list -> list.get(list.size() / 2)), (Executor)this.field2256);
+    public CompletableFuture<Either<Chunk, IChunkLoadingError>> method1321(final ChunkPos class7859) {
+        return this.method1320(class7859, 2, p0 -> ChunkStatus.FULL).thenApplyAsync(either -> either.mapLeft(list -> list.get(list.size() / 2)), (Executor)this.field2256);
     }
     
     @Nullable
@@ -239,7 +244,7 @@ public class Class388 extends Class387 implements Class389
             if (class9298 == null) {
                 class9298 = (Class9298)this.field2252.remove(n);
                 if (class9298 == null) {
-                    class9298 = new Class9298(new Class7859(n), n2, this.field2255, this.field2262, this);
+                    class9298 = new Class9298(new ChunkPos(n), n2, this.field2255, this.field2262, this);
                 }
                 else {
                     class9298.method34361(n2);
@@ -266,7 +271,7 @@ public class Class388 extends Class387 implements Class389
         if (!b) {
             this.field2251.values().stream().filter(Class9298::method34365).forEach(class9298 -> {
                 final IChunk class9299 = class9298.method34348().getNow(null);
-                if (class9299 instanceof Class1866 || class9299 instanceof Class1862) {
+                if (class9299 instanceof Class1866 || class9299 instanceof Chunk) {
                     this.method1337(class9299);
                     class9298.method34366();
                 }
@@ -290,7 +295,7 @@ public class Class388 extends Class387 implements Class389
                         }
                     }
                     return (IChunk)completableFuture.join();
-                }).filter(class9301 -> class9301 instanceof Class1866 || class9301 instanceof Class1862).filter((Predicate<? super Object>)this::method1337).forEach(p1 -> mutableBoolean2.setTrue());
+                }).filter(class9301 -> class9301 instanceof Class1866 || class9301 instanceof Chunk).filter((Predicate<? super Object>)this::method1337).forEach(p1 -> mutableBoolean2.setTrue());
                 if (mutableBoolean.isTrue()) {
                     continue;
                 }
@@ -353,16 +358,16 @@ public class Class388 extends Class387 implements Class389
             if (class9299.method34348() == completableFuture) {
                 if (!(!this.field2252.remove(n2, (Object)class9299))) {
                     if (class9300 != null) {
-                        if (!(!(class9300 instanceof Class1862))) {
-                            ((Class1862)class9300).method7064(false);
+                        if (!(!(class9300 instanceof Chunk))) {
+                            ((Chunk)class9300).method7064(false);
                             if (!(!Class9570.field41194.method22619())) {
                                 Class9570.method35840(Class9570.field41194, class9300);
                             }
                         }
                         this.method1337(class9300);
                         if (!(!this.field2253.remove(n2))) {
-                            if (!(!(class9300 instanceof Class1862))) {
-                                this.field2254.method6897((Class1862)class9300);
+                            if (!(!(class9300 instanceof Chunk))) {
+                                this.field2254.method6897((Chunk)class9300);
                             }
                         }
                         this.field2255.method7253(class9300.method7019());
@@ -390,23 +395,23 @@ public class Class388 extends Class387 implements Class389
         return false;
     }
     
-    public CompletableFuture<Either<IChunk, Class6797>> method1328(final Class9298 class9298, final ChunkStatus class9299) {
-        final Class7859 method34357 = class9298.method34357();
-        if (class9299 != ChunkStatus.field39977) {
-            return class9298.method34354(class9299.method34444(), this).thenComposeAsync(value -> {
+    public CompletableFuture<Either<IChunk, IChunkLoadingError>> method1328(final Class9298 class9298, final ChunkStatus class9299) {
+        final ChunkPos method34357 = class9298.method34357();
+        if (class9299 != ChunkStatus.EMPTY) {
+            return class9298.method34354(class9299.getParent(), this).thenComposeAsync(value -> {
                 value.left();
                 final Optional optional;
                 if (optional.isPresent()) {
-                    if (class9300 == ChunkStatus.field39986) {
-                        this.field2266.method30130(Class9105.field38569, class9301, 33 + ChunkStatus.method34441(ChunkStatus.field39985), class9301);
+                    if (class9300 == ChunkStatus.LIGHT) {
+                        this.field2266.method30130(Class9105.field38569, class9301, 33 + ChunkStatus.getDistance(ChunkStatus.FEATURES), class9301);
                     }
                     final IChunk class9303 = optional.get();
-                    if (!class9303.method7027().method34451(class9300)) {
+                    if (!class9303.method7027().isAtLeast(class9300)) {
                         return this.method1330(class9302, class9300);
                     }
                     else {
-                        CompletableFuture<Either<IChunk, Class6797>> completableFuture;
-                        if (class9300 != ChunkStatus.field39986) {
+                        CompletableFuture<Either<IChunk, IChunkLoadingError>> completableFuture;
+                        if (class9300 != ChunkStatus.LIGHT) {
                             completableFuture = class9300.method34446(this.field2254, this.field2268, this.field2255, p1 -> this.method1333(class9305), class9303);
                         }
                         else {
@@ -424,7 +429,7 @@ public class Class388 extends Class387 implements Class389
         return this.method1329(method34357);
     }
     
-    private CompletableFuture<Either<IChunk, Class6797>> method1329(final Class7859 class7859) {
+    private CompletableFuture<Either<IChunk, IChunkLoadingError>> method1329(final ChunkPos class7859) {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 this.field2254.method6796().method15302("chunkLoad");
@@ -460,10 +465,10 @@ public class Class388 extends Class387 implements Class389
         }, this.field2256);
     }
     
-    private CompletableFuture<Either<IChunk, Class6797>> method1330(final Class9298 class9298, final ChunkStatus class9299) {
-        final CompletableFuture<Either<List<IChunk>, Class6797>> method1320 = this.method1320(class9298.method34357(), class9299.method34447(), n2 -> this.method1332(class9300, n2));
+    private CompletableFuture<Either<IChunk, IChunkLoadingError>> method1330(final Class9298 class9298, final ChunkStatus class9299) {
+        final CompletableFuture<Either<List<IChunk>, IChunkLoadingError>> method1320 = this.method1320(class9298.method34357(), class9299.getTaskRange(), n2 -> this.method1332(class9300, n2));
         this.field2254.method6796().method15303(() -> "chunkGenerate " + class9301.method34443());
-        return (CompletableFuture<Either<IChunk, Class6797>>)method1320.thenComposeAsync(either -> either.map(list -> {
+        return (CompletableFuture<Either<IChunk, IChunkLoadingError>>)method1320.thenComposeAsync(either -> either.map(list -> {
             try {
                 class9302.method34445(this.field2254, this.field2257, this.field2268, this.field2255, p1 -> this.method1333(class9307), list);
                 this.field2265.method19318(class9303, class9302);
@@ -475,7 +480,7 @@ public class Class388 extends Class387 implements Class389
                 class9304.makeCategory("Chunk to be generated");
                 final CrashReportCategory class9305;
                 class9305.addDetail("Location", String.format("%d,%d", class9303.field32290, class9303.field32291));
-                class9305.addDetail("Position hash", Class7859.method25423(class9303.field32290, class9303.field32291));
+                class9305.addDetail("Position hash", ChunkPos.method25423(class9303.field32290, class9303.field32291));
                 class9305.addDetail("Generator", this.field2257);
                 throw new ReportedException(class9304);
             }
@@ -485,27 +490,27 @@ public class Class388 extends Class387 implements Class389
         }), runnable2 -> this.field2263.method5386(Class1910.method7464(class9310, runnable2)));
     }
     
-    public void method1331(final Class7859 class7859) {
-        this.field2256.method5381(Util.method27856(() -> this.field2266.method30131(Class9105.field38569, class7860, 33 + ChunkStatus.method34441(ChunkStatus.field39985), class7860), () -> "release light ticket " + obj));
+    public void method1331(final ChunkPos class7859) {
+        this.field2256.method5381(Util.method27856(() -> this.field2266.method30131(Class9105.field38569, class7860, 33 + ChunkStatus.getDistance(ChunkStatus.FEATURES), class7860), () -> "release light ticket " + obj));
     }
     
     private ChunkStatus method1332(final ChunkStatus class9312, final int n) {
         ChunkStatus class9313;
         if (n != 0) {
-            class9313 = ChunkStatus.method34439(ChunkStatus.method34441(class9312) + n);
+            class9313 = ChunkStatus.getStatus(ChunkStatus.getDistance(class9312) + n);
         }
         else {
-            class9313 = class9312.method34444();
+            class9313 = class9312.getParent();
         }
         return class9313;
     }
     
-    private CompletableFuture<Either<IChunk, Class6797>> method1333(final Class9298 class9298) {
-        return class9298.method34340(ChunkStatus.field39989.method34444()).thenApplyAsync(either -> Class9298.method34363(class9299.method34358()).method34451(ChunkStatus.field39989) ? either.mapLeft(class9301 -> {
+    private CompletableFuture<Either<IChunk, IChunkLoadingError>> method1333(final Class9298 class9298) {
+        return class9298.method34340(ChunkStatus.FULL.getParent()).thenApplyAsync(either -> Class9298.method34363(class9299.method34358()).isAtLeast(ChunkStatus.FULL) ? either.mapLeft(class9301 -> {
             class9300.method34357();
-            Class1862 method7114;
+            Chunk method7114;
             if (!(class9301 instanceof Class1866)) {
-                method7114 = new Class1862(this.field2254, (Class1865)class9301);
+                method7114 = new Chunk(this.field2254, (Class1865)class9301);
                 class9300.method34367(new Class1866(method7114));
             }
             else {
@@ -513,7 +518,7 @@ public class Class388 extends Class387 implements Class389
             }
             method7114.method7074(() -> Class9298.method34364(class9304.method34358()));
             method7114.method7057();
-            final Class7859 class9302;
+            final ChunkPos class9302;
             if (!(!this.field2253.add(class9302.method25422()))) {
                 method7114.method7064(true);
                 this.field2254.method6715(method7114.method7066().values());
@@ -551,9 +556,9 @@ public class Class388 extends Class387 implements Class389
         }) : Class9298.field39871, runnable2 -> this.field2264.method5386(Class1910.method7463(runnable2, class9305.method34357().method25422(), class9305::method34358)));
     }
     
-    public CompletableFuture<Either<Class1862, Class6797>> method1334(final Class9298 class9298) {
-        final CompletableFuture<Object> thenApplyAsync = this.method1320(class9298.method34357(), 1, p0 -> ChunkStatus.field39989).thenApplyAsync(either -> either.flatMap(list -> {
-            final Class1862 class9299 = list.get(list.size() / 2);
+    public CompletableFuture<Either<Chunk, IChunkLoadingError>> method1334(final Class9298 class9298) {
+        final CompletableFuture<Object> thenApplyAsync = this.method1320(class9298.method34357(), 1, p0 -> ChunkStatus.FULL).thenApplyAsync(either -> either.flatMap(list -> {
+            final Chunk class9299 = list.get(list.size() / 2);
             class9299.method7069();
             return Either.left((Object)class9299);
         }), runnable2 -> this.field2264.method5386(Class1910.method7464(class9300, runnable2)));
@@ -566,12 +571,12 @@ public class Class388 extends Class387 implements Class389
             });
             return Either.left((Object)class9302);
         }), runnable4 -> this.field2264.method5386(Class1910.method7464(class9305, runnable4)));
-        return (CompletableFuture<Either<Class1862, Class6797>>)thenApplyAsync;
+        return (CompletableFuture<Either<Chunk, IChunkLoadingError>>)thenApplyAsync;
     }
     
-    public CompletableFuture<Either<Class1862, Class6797>> method1335(final Class9298 class9298) {
-        return class9298.method34354(ChunkStatus.field39989, this).thenApplyAsync(either -> either.mapLeft(class9299 -> {
-            final Class1862 class9300 = (Class1862)class9299;
+    public CompletableFuture<Either<Chunk, IChunkLoadingError>> method1335(final Class9298 class9298) {
+        return class9298.method34354(ChunkStatus.FULL, this).thenApplyAsync(either -> either.mapLeft(class9299 -> {
+            final Chunk class9300 = (Chunk)class9299;
             class9300.method7071();
             return class9300;
         }), runnable2 -> this.field2264.method5386(Class1910.method7464(class9301, runnable2)));
@@ -595,15 +600,15 @@ public class Class388 extends Class387 implements Class389
         }
         class1860.method7020(this.field2254.method6754());
         class1860.method7025(false);
-        final Class7859 method7019 = class1860.method7019();
+        final ChunkPos method7019 = class1860.method7019();
         try {
             final ChunkStatus method7020 = class1860.method7027();
-            if (method7020.method34448() != Class260.field1244) {
+            if (method7020.getType() != ChunkStatus.Type.LEVELCHUNK) {
                 final CompoundNBT method7021 = this.method1345(method7019);
-                if (method7021 != null && Class7532.method23594(method7021) == Class260.field1244) {
+                if (method7021 != null && Class7532.method23594(method7021) == ChunkStatus.Type.LEVELCHUNK) {
                     return false;
                 }
-                if (method7020 == ChunkStatus.field39977 && class1860.method7021().values().stream().noneMatch(Class5936::method17858)) {
+                if (method7020 == ChunkStatus.EMPTY && class1860.method7021().values().stream().noneMatch(Class5936::method17858)) {
                     return false;
                 }
             }
@@ -639,7 +644,7 @@ public class Class388 extends Class387 implements Class389
         }
     }
     
-    public void method1339(final Class513 class513, final Class7859 class514, final IPacket<?>[] array, final boolean b, final boolean b2) {
+    public void method1339(final Class513 class513, final ChunkPos class514, final IPacket<?>[] array, final boolean b, final boolean b2) {
         if (class513.world == this.field2254) {
             if (Class9570.field41264.method22605()) {
                 Class9570.field41264.method22608(b, b2, class513, class514, this.field2254);
@@ -648,7 +653,7 @@ public class Class388 extends Class387 implements Class389
                 if (!b) {
                     final Class9298 method1317 = this.method1317(class514.method25422());
                     if (method1317 != null) {
-                        final Class1862 method1318 = method1317.method34345();
+                        final Chunk method1318 = method1317.method34345();
                         if (method1318 != null) {
                             this.method1357(class513, array, method1318);
                         }
@@ -679,15 +684,15 @@ public class Class388 extends Class387 implements Class389
     public void method1343(final Writer writer) throws IOException {
         final Class8308 method22418 = Class8308.method27594().method22417("x").method22417("z").method22417("level").method22417("in_memory").method22417("status").method22417("full_status").method22417("accessible_ready").method22417("ticking_ready").method22417("entity_ticking_ready").method22417("ticket").method22417("spawning").method22417("entity_count").method22417("block_entity_count").method22418(writer);
         for (final Long2ObjectMap$Entry long2ObjectMap$Entry : this.field2251.long2ObjectEntrySet()) {
-            final Class7859 class7859 = new Class7859(long2ObjectMap$Entry.getLongKey());
+            final ChunkPos class7859 = new ChunkPos(long2ObjectMap$Entry.getLongKey());
             final Class9298 class7860 = (Class9298)long2ObjectMap$Entry.getValue();
             final Optional<IChunk> ofNullable = Optional.ofNullable(class7860.method34347());
-            final Optional<Object> flatMap = ofNullable.flatMap(class7861 -> (class7861 instanceof Class1862) ? Optional.of(class7861) : Optional.empty());
-            method22418.method27595(class7859.field32290, class7859.field32291, class7860.method34358(), ofNullable.isPresent(), ofNullable.map((Function<? super Object, ? extends ChunkStatus>) IChunk::method7027).orElse(null), flatMap.map((Function<? super Object, ?>)Class1862::method7073).orElse(null), method1344(class7860.method34344()), method1344(class7860.method34342()), method1344(class7860.method34343()), this.field2266.method30138(long2ObjectMap$Entry.getLongKey()), !this.method1346(class7859), flatMap.map(class7862 -> Stream.of(class7862.method7067()).mapToInt(Class80::size).sum()).orElse(0), flatMap.map(class7863 -> class7863.method7066().size()).orElse(0));
+            final Optional<Object> flatMap = ofNullable.flatMap(class7861 -> (class7861 instanceof Chunk) ? Optional.of(class7861) : Optional.empty());
+            method22418.method27595(class7859.field32290, class7859.field32291, class7860.method34358(), ofNullable.isPresent(), ofNullable.map((Function<? super Object, ? extends ChunkStatus>) IChunk::method7027).orElse(null), flatMap.map((Function<? super Object, ?>) Chunk::method7073).orElse(null), method1344(class7860.method34344()), method1344(class7860.method34342()), method1344(class7860.method34343()), this.field2266.method30138(long2ObjectMap$Entry.getLongKey()), !this.method1346(class7859), flatMap.map(class7862 -> Stream.of(class7862.method7067()).mapToInt(Class80::size).sum()).orElse(0), flatMap.map(class7863 -> class7863.method7066().size()).orElse(0));
         }
     }
     
-    private static String method1344(final CompletableFuture<Either<Class1862, Class6797>> completableFuture) {
+    private static String method1344(final CompletableFuture<Either<Chunk, IChunkLoadingError>> completableFuture) {
         try {
             final Either either = completableFuture.getNow(null);
             return (String)((either != null) ? either.map(p0 -> "done", p0 -> "unloaded") : "not completed");
@@ -701,12 +706,12 @@ public class Class388 extends Class387 implements Class389
     }
     
     @Nullable
-    private CompoundNBT method1345(final Class7859 class7859) throws IOException {
+    private CompoundNBT method1345(final ChunkPos class7859) throws IOException {
         final CompoundNBT method1309 = this.method1309(class7859);
         return (method1309 != null) ? this.method1307(this.field2254.method6789().getType(), this.field2258, method1309) : null;
     }
     
-    public boolean method1346(final Class7859 class7859) {
+    public boolean method1346(final ChunkPos class7859) {
         final long method25422 = class7859.method25422();
         return !this.field2266.method30141(method25422) || this.field2270.method27351(method25422).noneMatch(class7861 -> !class7861.isSpectator() && method1312(class7860, class7861) < 16384.0);
     }
@@ -728,7 +733,7 @@ public class Class388 extends Class387 implements Class389
             }
         }
         else {
-            this.field2270.method27352(Class7859.method25423(n, n2), class513, method1347);
+            this.field2270.method27352(ChunkPos.method25423(n, n2), class513, method1347);
             this.method1349(class513);
             if (!method1347) {
                 this.field2266.method30136(Class353.method1091(class513), class513);
@@ -736,7 +741,7 @@ public class Class388 extends Class387 implements Class389
         }
         for (int i = n - this.field2273; i <= n + this.field2273; ++i) {
             for (int j = n2 - this.field2273; j <= n2 + this.field2273; ++j) {
-                this.method1339(class513, new Class7859(i, j), new IPacket[2], !b, b);
+                this.method1339(class513, new ChunkPos(i, j), new IPacket[2], !b, b);
             }
         }
     }
@@ -796,7 +801,7 @@ public class Class388 extends Class387 implements Class389
             final int n6 = Math.max(n2, method2968) + this.field2273;
             for (int i = n3; i <= n5; ++i) {
                 for (int j = n4; j <= n6; ++j) {
-                    final Class7859 class515 = new Class7859(i, j);
+                    final ChunkPos class515 = new ChunkPos(i, j);
                     this.method1339(class513, class515, new IPacket[2], method1314(class515, method2967, method2968) <= this.field2273, method1314(class515, n, n2) <= this.field2273);
                 }
             }
@@ -804,19 +809,19 @@ public class Class388 extends Class387 implements Class389
         else {
             for (int k = method2967 - this.field2273; k <= method2967 + this.field2273; ++k) {
                 for (int l = method2968 - this.field2273; l <= method2968 + this.field2273; ++l) {
-                    this.method1339(class513, new Class7859(k, l), new IPacket[2], true, false);
+                    this.method1339(class513, new ChunkPos(k, l), new IPacket[2], true, false);
                 }
             }
             for (int n7 = n - this.field2273; n7 <= n + this.field2273; ++n7) {
                 for (int n8 = n2 - this.field2273; n8 <= n2 + this.field2273; ++n8) {
-                    this.method1339(class513, new Class7859(n7, n8), new IPacket[2], false, true);
+                    this.method1339(class513, new ChunkPos(n7, n8), new IPacket[2], false, true);
                 }
             }
         }
     }
     
     @Override
-    public Stream<Class513> method1351(final Class7859 class7859, final boolean b) {
+    public Stream<Class513> method1351(final ChunkPos class7859, final boolean b) {
         return this.field2270.method27351(class7859.method25422()).filter(class7861 -> {
             method1313(class7860, class7861, true);
             final int n;
@@ -908,7 +913,7 @@ public class Class388 extends Class387 implements Class389
         }
     }
     
-    private void method1357(final Class513 class513, final IPacket<?>[] array, final Class1862 class514) {
+    private void method1357(final Class513 class513, final IPacket<?>[] array, final Chunk class514) {
         if (array[0] == null) {
             array[0] = new Class4298(class514, 65535);
             array[1] = new Class4349(class514.method7019(), this.field2255);
@@ -956,12 +961,12 @@ public class Class388 extends Class387 implements Class389
         return this.field2259;
     }
     
-    public CompletableFuture<Void> method1359(final Class1862 class1862) {
+    public CompletableFuture<Void> method1359(final Chunk class1862) {
         return this.field2256.method5379(() -> class1863.method7072(this.field2254));
     }
     
     static {
         field2248 = LogManager.getLogger();
-        field2249 = 33 + ChunkStatus.method34440();
+        field2249 = 33 + ChunkStatus.maxDistance();
     }
 }

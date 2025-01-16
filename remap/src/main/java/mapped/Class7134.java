@@ -7,6 +7,8 @@ package mapped;
 import java.util.stream.Stream;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
+import net.minecraft.util.math.BlockPos;
+
 import java.util.function.Function;
 
 public class Class7134 extends Class7133<Class6928>
@@ -21,6 +23,6 @@ public class Class7134 extends Class7133<Class6928>
         }
         final int n = random.nextInt(8) + 4 + class1854.getX();
         final int n2 = random.nextInt(8) + 4 + class1854.getZ();
-        return Stream.of(new BlockPos(n, class1851.method6699(Class2020.field11525, n, n2), n2));
+        return Stream.of(new BlockPos(n, class1851.method6699(HeightmapType.field11525, n, n2), n2));
     }
 }

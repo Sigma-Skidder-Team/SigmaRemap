@@ -7,6 +7,7 @@ package mapped;
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.function.Function;
 import java.util.Optional;
