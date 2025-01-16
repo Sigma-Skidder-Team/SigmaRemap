@@ -7,6 +7,7 @@ package mapped;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 import com.google.common.collect.Sets;
+import com.mentalfrostbyte.Client;
 import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
@@ -75,7 +76,7 @@ public class Class8974
     }
     
     public boolean method31864() {
-        if (Math.sqrt(this.method31868()) <= Minecraft.method5277().gameSettings.field23382 * 16 && Class9463.method35173().method35192().method28375()) {
+        if (Math.sqrt(this.method31868()) <= Minecraft.method5277().gameSettings.field23382 * 16 && Client.method35173().method35192().method28375()) {
             return true;
         }
         if (this.method31868() > 576.0) {

@@ -11,6 +11,8 @@ import java.util.UUID;
 import com.google.common.collect.Lists;
 import java.util.Collection;
 import java.util.Optional;
+
+import com.mentalfrostbyte.Client;
 import com.mojang.datafixers.util.Either;
 
 import java.util.OptionalInt;
@@ -931,7 +933,7 @@ public abstract class PlayerEntity extends LivingEntity
     @Override
     public Vec3d method1676(Vec3d class5487, final Class2160 class5488) {
         final Class5738 class5489 = new Class5738(true);
-        Class9463.method35173().method35188().method21097(class5489);
+        Client.method35173().method35188().method21097(class5489);
         Label_0074: {
             if ((class5488 != Class2160.field12826 && class5488 != Class2160.field12827) || class5489.method17025() != Class2228.field13706) {
                 if (!this.onGround) {
@@ -999,7 +1001,7 @@ public abstract class PlayerEntity extends LivingEntity
             }
             class5487 = new Vec3d(field22770, class5487.y, field22771);
         }
-        Class9463.method35173().method35188().method21097(new Class5738(false));
+        Client.method35173().method35188().method21097(new Class5738(false));
         return class5487;
     }
     

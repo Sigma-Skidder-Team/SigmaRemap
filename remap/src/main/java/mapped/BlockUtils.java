@@ -7,6 +7,7 @@ package mapped;
 import java.util.Collection;
 import java.util.List;
 
+import com.mentalfrostbyte.Client;
 import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.util2.Direction;
@@ -19,7 +20,7 @@ public class BlockUtils
     
     public static boolean method20647(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100) {
         final Class5719 class7101 = new Class5719(class7096);
-        Class9463.method35173().method35188().method21097(class7101);
+        Client.method35173().method35188().method21097(class7101);
         if (class7101.method16987()) {
             return true;
         }

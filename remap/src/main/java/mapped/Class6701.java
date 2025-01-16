@@ -4,8 +4,9 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.commands.CommandException;
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -30,7 +31,7 @@ public class Class6701 extends Class6693
                         break;
                     }
                     if (Pattern.compile("[a-zA-Z0-9_]{2,16}").matcher(array[1].method26314()).matches()) {
-                        if (!Class9463.method35173().method35190().method29883(array[1].method26314())) {
+                        if (!Client.method35173().method35190().method29883(array[1].method26314())) {
                             class6428.method19104("\"" + array[1].method26314() + "\" is already your enemy.");
                         }
                         else {
@@ -47,7 +48,7 @@ public class Class6701 extends Class6693
                         class6428.method19104("Usage : .enemy remove <name>");
                         break;
                     }
-                    if (!Class9463.method35173().method35190().method29887(array[1].method26314())) {
+                    if (!Client.method35173().method35190().method29887(array[1].method26314())) {
                         class6428.method19104("\"" + array[1].method26314() + "\" is not your enemy.");
                     }
                     else {
@@ -56,7 +57,7 @@ public class Class6701 extends Class6693
                     break;
                 }
                 case "list": {
-                    final List<String> method29885 = Class9463.method35173().method35190().method29885();
+                    final List<String> method29885 = Client.method35173().method35190().method29885();
                     if (method29885.isEmpty()) {
                         class6428.method19104("You have no enemies");
                         break;
@@ -75,7 +76,7 @@ public class Class6701 extends Class6693
                     break;
                 }
                 case "clear": {
-                    if (Class9463.method35173().method35190().method29889()) {
+                    if (Client.method35173().method35190().method29889()) {
                         class6428.method19104("Cleared all your enemies.");
                         break;
                     }

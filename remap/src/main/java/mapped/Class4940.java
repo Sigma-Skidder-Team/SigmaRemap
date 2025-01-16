@@ -4,6 +4,9 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Module;
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.ArrayList;
@@ -57,7 +60,7 @@ public class Class4940 extends Class4800
     
     public static ArrayList<Class8799> method14874() {
         final ArrayList list = new ArrayList();
-        final Iterator<Class3167> iterator = Class9463.method35173().method35189().method21553().values().iterator();
+        final Iterator<Module> iterator = Client.method35173().method35189().method21553().values().iterator();
         while (iterator.hasNext()) {
             list.add(new Class8799(iterator.next()));
         }

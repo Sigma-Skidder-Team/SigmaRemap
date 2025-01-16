@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -19,16 +21,16 @@ public class Class8327
         this.field34199 = Minecraft.method5277();
     }
     
-    @Class6753
+    @EventListener
     private void method27711(final Class5723 class5723) {
         if (this.field34199.method5282() != null) {
             if (class5723.method16998() instanceof Class4378) {
                 if (new ArrayList(Arrays.asList("§cYou are permanently banned from MinemenClub. §r", "§cYour connection to the server §r§c§leu-practice§r§c has been prevented due to you being associated to a blacklisted player.§r", "§cYou are blacklisted from MinemenClub. §r")).contains(((Class4378)class5723.method16998()).method13164().getFormattedText())) {
-                    final Class7971 method25462 = Class9463.method35173().method35198().method25462();
+                    final Class7971 method25462 = Client.method35173().method35198().method25462();
                     if (method25462 != null) {
                         method25462.method25895(new Class8848(this.field34199.method5282().field41613, new Date(Long.MAX_VALUE)));
-                        Class9463.method35173().method35198().method25459(method25462);
-                        Class9463.method35173().method35198().method25467();
+                        Client.method35173().method35198().method25459(method25462);
+                        Client.method35173().method35198().method25467();
                     }
                 }
             }
@@ -40,11 +42,11 @@ public class Class8327
                             return;
                         }
                         final Class8848 class5724 = new Class8848(this.field34199.method5282().field41613, new Date(currentTimeMillis));
-                        final Class7971 method25463 = Class9463.method35173().method35198().method25462();
+                        final Class7971 method25463 = Client.method35173().method35198().method25462();
                         if (method25463 != null) {
                             method25463.method25895(class5724);
-                            Class9463.method35173().method35198().method25459(method25463);
-                            Class9463.method35173().method35198().method25467();
+                            Client.method35173().method35198().method25459(method25463);
+                            Client.method35173().method35198().method25467();
                         }
                     }
                 }
@@ -54,11 +56,11 @@ public class Class8327
                         return;
                     }
                     final Class8848 class5725 = new Class8848(this.field34199.method5282().field41613, new Date(method25464));
-                    final Class7971 method25465 = Class9463.method35173().method35198().method25462();
+                    final Class7971 method25465 = Client.method35173().method35198().method25462();
                     if (method25465 != null) {
                         method25465.method25895(class5725);
-                        Class9463.method35173().method35198().method25459(method25465);
-                        Class9463.method35173().method35198().method25467();
+                        Client.method35173().method35198().method25459(method25465);
+                        Client.method35173().method35198().method25467();
                     }
                 }
             }
@@ -68,11 +70,11 @@ public class Class8327
                     return;
                 }
                 final Class8848 class5726 = new Class8848(this.field34199.method5282().field41613, new Date(method25466));
-                final Class7971 method25467 = Class9463.method35173().method35198().method25462();
+                final Class7971 method25467 = Client.method35173().method35198().method25462();
                 if (method25467 != null) {
                     method25467.method25895(class5726);
-                    Class9463.method35173().method35198().method25459(method25467);
-                    Class9463.method35173().method35198().method25467();
+                    Client.method35173().method35198().method25459(method25467);
+                    Client.method35173().method35198().method25467();
                 }
             }
         }

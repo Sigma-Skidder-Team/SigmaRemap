@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.awt.Font;
 
 public class Class9400
@@ -48,7 +50,7 @@ public class Class9400
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            return new Class7524(new Font("Arial", 0, (int)size), Class9463.method35173().method35209() != Class2209.field13465);
+            return new Class7524(new Font("Arial", 0, (int)size), Client.method35173().method35209() != Class2209.field13465);
         }
     }
     

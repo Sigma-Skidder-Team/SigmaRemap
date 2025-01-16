@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.Class4809;
+
 public class Class4886 extends Class4841
 {
     private static String[] field20591;

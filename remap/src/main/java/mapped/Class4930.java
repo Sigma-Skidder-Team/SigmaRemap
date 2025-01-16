@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.io.IOException;
 import java.util.Map;
 
@@ -36,7 +38,7 @@ public class Class4930 extends Class4800
         this.method14239(this.field21107 = new Class4844(this, "chatView", this.field21108 + this.field21112, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110, this.field21109 - this.field21112, this.field21110));
         final int n = 55;
         System.out.println("loading");
-        for (final Map.Entry<K, Class6538> entry : Class9463.method35173().method35201().field25697.method33655().entrySet()) {
+        for (final Map.Entry<K, Class6538> entry : Client.method35173().method35201().field25697.method33655().entrySet()) {
             System.out.println("added " + entry.getValue().field25988);
             this.field21106.method14239(new Class4856(this.field21106, entry.getValue().field25987 + "_" + this.field21106.method14250().size(), 0, 0, this.field21106.method14276(), n, entry.getValue().field25986, entry.getValue().field25989));
         }

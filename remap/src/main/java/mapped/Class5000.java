@@ -4,34 +4,37 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.settings.Setting;
+import com.mentalfrostbyte.jello.settings.Type;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Arrays;
 import java.util.List;
 
-public class Class5000 extends Class4997<List<String>>
+public class Class5000 extends Setting<List<String>>
 {
     private boolean field21517;
     
     public Class5000(final String s, final String s2, final boolean b, final String... a) {
-        super(s, s2, Class2076.field11988, Arrays.asList(a));
+        super(s, s2, Type.field11988, Arrays.asList(a));
         this.method15210(b);
     }
     
     @Override
     public Class4405 method15193(final Class4405 class4405) {
         class4405.method13301("name", this.method15204());
-        class4405.method13301("value", new Class88((Collection<?>)this.field21511));
+        class4405.method13301("value", new Class88((Collection<?>)this.currentValue));
         return class4405;
     }
     
     @Override
     public Class4405 method15186(final Class4405 class4405) {
         final Class88 method26638 = Class8105.method26638(class4405, "value");
-        this.field21511 = (T)new ArrayList();
+        this.currentValue = (T)new ArrayList();
         if (method26638 != null) {
             for (int i = 0; i < method26638.method462(); ++i) {
-                ((List)this.field21511).add(method26638.method459(i));
+                ((List)this.currentValue).add(method26638.method459(i));
             }
         }
         return class4405;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.impl.movement.phases.NCPPhase;
+
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodHandle;
 import java.lang.reflect.Method;
@@ -31,7 +33,7 @@ public class Class7557
             ex.printStackTrace();
         }
         this.field29972 = field29969;
-        this.field29973 = (field29967.getClass().getSuperclass() == Class3367.class.getSuperclass());
+        this.field29973 = (field29967.getClass().getSuperclass() == NCPPhase.class.getSuperclass());
     }
     
     public Object method23723() {

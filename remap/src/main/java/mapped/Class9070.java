@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,7 @@ public class Class9070
     }
     
     public void method32666() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
         this.method32669(new Class6709());
         this.method32669(new Class6700());
         this.method32669(new Class6694());
@@ -89,7 +91,7 @@ public class Class9070
         this.field38414 = true;
     }
     
-    @Class6753
+    @EventListener
     private void method32673(final Class5743 class5743) {
         final Iterator<Runnable> iterator = Class9070.field38415.iterator();
         while (iterator.hasNext()) {
@@ -102,9 +104,9 @@ public class Class9070
         Class9070.field38415.add(runnable);
     }
     
-    @Class6753
+    @EventListener
     private void method32675(final Class5721 class5721) {
-        if (Class9463.method35173().method35209() == Class2209.field13466) {
+        if (Client.method35173().method35209() == Class2209.field13466) {
             return;
         }
         if (class5721.method16990() instanceof Class4317) {

@@ -4,7 +4,9 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.commands.CommandException;
+import com.mentalfrostbyte.jello.mods.Module;
 
 import java.util.Map;
 
@@ -35,7 +37,7 @@ public class Class6707 extends Class6693
                     }
                 }
                 else {
-                    final Class3167 method20363 = this.method20363(array[0].method26314());
+                    final Module method20363 = this.method20363(array[0].method26314());
                     if (method20363 == null || array[0].method26310() != Class1954.field10636) {
                         throw new Class2332("Module " + array[0].method26314() + " not found");
                     }
@@ -44,21 +46,21 @@ public class Class6707 extends Class6693
                         throw new Class2332("Key " + array[1].method26314() + " not found");
                     }
                     if (method20364 != -1) {
-                        class6428.method19104("Key " + array[1].method26314() + " was set for module " + method20363.method9900());
-                        Class9463.method35173().method35189().method21557().method21956(method20364, method20363);
+                        class6428.method19104("Key " + array[1].method26314() + " was set for module " + method20363.getName2());
+                        Client.method35173().method35189().method21557().method21956(method20364, method20363);
                     }
                     else {
-                        class6428.method19104("Keybind was reset for module " + method20363.method9900());
+                        class6428.method19104("Keybind was reset for module " + method20363.getName2());
                     }
                 }
             }
             else {
-                final Class3167 method20365 = this.method20363(array[0].method26314());
+                final Module method20365 = this.method20363(array[0].method26314());
                 if (method20365 == null || array[0].method26310() != Class1954.field10636) {
                     throw new Class2332("Module " + array[0].method26314() + " not found");
                 }
                 final String prefix = "key.keyboard.";
-                final int method20366 = Class9463.method35173().method35189().method21557().method21960(method20365);
+                final int method20366 = Client.method35173().method35189().method21557().method21960(method20365);
                 String substring = null;
                 for (final Map.Entry<String, V> entry : Class7985.field32861.entrySet()) {
                     if (!entry.getKey().startsWith(prefix)) {
@@ -70,10 +72,10 @@ public class Class6707 extends Class6693
                     substring = entry.getKey().substring(prefix.length());
                 }
                 if (substring != null) {
-                    class6428.method19104(method20365.method9900() + " is bound to : " + substring);
+                    class6428.method19104(method20365.getName2() + " is bound to : " + substring);
                 }
                 else {
-                    class6428.method19104("§c[Error] " + method20365.method9900() + " is bound to an unknown key");
+                    class6428.method19104("§c[Error] " + method20365.getName2() + " is bound to an unknown key");
                 }
             }
             return;
@@ -94,9 +96,9 @@ public class Class6707 extends Class6693
         return -1;
     }
     
-    public Class3167 method20363(final String anotherString) {
-        for (final Class3167 class3167 : Class9463.method35173().method35189().method21553().values()) {
-            if (!class3167.method9901().replace(" ", "").equalsIgnoreCase(anotherString)) {
+    public Module method20363(final String anotherString) {
+        for (final Module class3167 : Client.method35173().method35189().method21553().values()) {
+            if (!class3167.getName().replace(" ", "").equalsIgnoreCase(anotherString)) {
                 continue;
             }
             return class3167;

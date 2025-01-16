@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4900 extends Class4841
 {
     public Class4831 field20956;
@@ -34,7 +36,7 @@ public class Class4900 extends Class4841
         super.method14204(n);
         if (n == 257) {
             ((Class4930)this.method14267()).method14804(this.field20956.method14314());
-            Class9463.method35173().method35201().field25697.method33660("SF4FSERFERF", this.field20956.method14314());
+            Client.method35173().method35201().field25697.method33660("SF4FSERFERF", this.field20956.method14314());
             this.field20956.method14315("");
             this.field20956.method14307(true);
         }

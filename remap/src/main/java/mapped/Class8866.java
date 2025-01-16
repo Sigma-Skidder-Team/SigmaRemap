@@ -4,6 +4,10 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Module;
+import com.mentalfrostbyte.jello.mods.impl.combat.Teams;
+import com.mentalfrostbyte.jello.mods.impl.player.Blink;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 
@@ -17,11 +21,11 @@ public class Class8866
 {
     private float[] field37266;
     public final int field37267 = 3;
-    private Class3167 field37268;
+    private Module field37268;
     public Minecraft field37269;
     public boolean field37270;
     
-    public Class8866(final Class3167 field37268) {
+    public Class8866(final Module field37268) {
         this.field37269 = Minecraft.method5277();
         this.field37268 = field37268;
         this.method31133();
@@ -37,7 +41,7 @@ public class Class8866
     
     public void method31130(final Entity class399, final float n, final float n2) {
         if (this.field37268.method9883("Interact autoblock")) {
-            final Class7007 method19144 = Class6430.method19144(this.field37268.method9883("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.method9886("Range"));
+            final Class7007 method19144 = Class6430.method19144(this.field37268.method9883("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.getNumberSettingValueByName("Range"));
             if (method19144 != null) {
                 this.field37269.method5269().method17292(new Class4381(method19144.method21452(), Class316.field1877, method19144.getHitVec()));
                 this.field37269.method5269().method17292(new Class4381(method19144.method21452(), Class316.field1877));
@@ -65,8 +69,8 @@ public class Class8866
     
     public void method31133() {
         this.field37266 = new float[3];
-        float n = 20.0f / this.field37268.method9886("Min CPS");
-        float n2 = 20.0f / this.field37268.method9886("Max CPS");
+        float n = 20.0f / this.field37268.getNumberSettingValueByName("Min CPS");
+        float n2 = 20.0f / this.field37268.getNumberSettingValueByName("Max CPS");
         if (n > n2) {
             final float n3 = n;
             n = n2;
@@ -89,8 +93,8 @@ public class Class8866
     }
     
     public void method31136() {
-        float n = 20.0f / this.field37268.method9886("Min CPS");
-        float n2 = 20.0f / this.field37268.method9886("Max CPS");
+        float n = 20.0f / this.field37268.getNumberSettingValueByName("Min CPS");
+        float n2 = 20.0f / this.field37268.getNumberSettingValueByName("Max CPS");
         if (n > n2) {
             final float n3 = n;
             n = n2;
@@ -111,8 +115,8 @@ public class Class8866
         while (iterator2.hasNext()) {
             final Class8131 class400 = (Class8131)iterator2.next();
             final Entity method26798 = class400.method26798();
-            if (method26798 != this.field37269.player && method26798 != Class3276.field15771) {
-                if (!Class9463.method35173().method35190().method29878(method26798)) {
+            if (method26798 != this.field37269.player && method26798 != Blink.field15771) {
+                if (!Client.method35173().method35190().method29878(method26798)) {
                     if (method26798 instanceof LivingEntity) {
                         if (((LivingEntity)method26798).method2664() != 0.0f) {
                             if (this.field37269.player.method1732(method26798) <= n) {
@@ -121,7 +125,7 @@ public class Class8866
                                         if (!this.field37268.method9883("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
                                         }
-                                        else if (method26798 instanceof PlayerEntity && Class9463.method35173().method35191().method31751(method26798)) {
+                                        else if (method26798 instanceof PlayerEntity && Client.method35173().method35191().method31751(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!this.field37268.method9883("Invisible") && method26798.method1823()) {
@@ -136,7 +140,7 @@ public class Class8866
                                         else if (!method26798.method1850()) {
                                             if (method26798 instanceof PlayerEntity) {
                                                 if (Class9011.method32262((PlayerEntity)method26798)) {
-                                                    if (Class9463.method35173().method35189().method21551(Class3203.class).method9906()) {
+                                                    if (Client.method35173().method35189().method21551(Teams.class).method9906()) {
                                                         iterator2.remove();
                                                         continue;
                                                     }

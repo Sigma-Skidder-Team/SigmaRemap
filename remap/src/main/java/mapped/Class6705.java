@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.commands.CommandException;
 
 public class Class6705 extends Class6693
@@ -19,13 +20,13 @@ public class Class6705 extends Class6693
         }
         final Minecraft field26420 = Class6705.field26420;
         if (Minecraft.field4623) {
-            if (!Class9463.method35173().method35193().method32148()) {
+            if (!Client.method35173().method35193().method32148()) {
                 class6428.method19104("HighDPI was enabled!");
             }
             else {
                 class6428.method19104("HighDPI was disabled!");
             }
-            Class9463.method35173().method35193().method32147(!Class9463.method35173().method35193().method32148());
+            Client.method35173().method35193().method32147(!Client.method35173().method35193().method32148());
             return;
         }
         throw new Class2332("This feature is only available on macOS!");

@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.Objects;
 import com.google.common.base.MoreObjects;
+import com.mentalfrostbyte.Client;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.LivingEntity;
@@ -281,7 +282,7 @@ public class Class9458
             else {
                 final boolean b3 = class759 == Class2226.field13698;
                 final Class5716 class760 = new Class5716(true, n3, n4, class759, class756, class757);
-                Class9463.method35173().method35188().method21097(class760);
+                Client.method35173().method35188().method21097(class760);
                 if (class754.method2756() && class754.method2767() > 0 && class754.method2757() == class755) {
                     final int n10 = b3 ? 1 : -1;
                     switch (Class8442.field34698[class756.method27653().ordinal()]) {
@@ -357,7 +358,7 @@ public class Class9458
                 if (class760 == null || class760.method16970()) {
                     this.method35143(class754, class756, b3 ? Class2016.field11490 : Class2016.field11489, !b3, class757, class758, n5);
                 }
-                Class9463.method35173().method35188().method21097(new Class5716(false, n3, n4, class759, class756, class757));
+                Client.method35173().method35188().method21097(new Class5716(false, n3, n4, class759, class756, class757));
             }
             class757.method22568();
         }

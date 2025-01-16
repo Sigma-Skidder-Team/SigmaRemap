@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.net.URL;
@@ -39,7 +41,7 @@ public class Class8773
     public void finalize() throws Throwable {
         try {
             if (this.field36887 != null) {
-                Class9463.method35173().method35182(this.field36887);
+                Client.method35173().method35182(this.field36887);
             }
         }
         finally {

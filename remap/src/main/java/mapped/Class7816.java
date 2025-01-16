@@ -34,7 +34,7 @@ public class Class7816 extends Class7814
         return this.field32022.getOrDefault(key, 0) < this.field32024;
     }
     
-    @Class6753
+    @EventListener
     private void method25251(final Class5743 class5743) {
         if (Class7816.field32015.player.ticksExisted < 10) {
             this.field32022.clear();
@@ -70,7 +70,7 @@ public class Class7816 extends Class7814
         }
     }
     
-    @Class6753
+    @EventListener
     private void method25252(final Class5723 class5723) {
         if (Class7816.field32015.player != null && this.field32022 != null) {
             if (Class7816.field32015.player.ticksExisted < 10) {

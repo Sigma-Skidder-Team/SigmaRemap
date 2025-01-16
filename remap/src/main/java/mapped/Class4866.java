@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4866 extends Class4841
 {
     private Class4834 field20832;
@@ -52,7 +54,7 @@ public class Class4866 extends Class4841
         Class8154.method26904((float)(this.field20478 + n2), (float)(this.field20479 + n2 + 10), 160.0f, 160.0f, Class7853.field32205, n);
         final int n3 = 305;
         final int n4 = 316;
-        final Class8773 method19344 = Class9463.method35173().method35201().method19344();
+        final Class8773 method19344 = Client.method35173().method35201().method19344();
         if (method19344 != null) {
             this.field20836.method14297(method19344.method30471());
             if (method19344.method30471()) {
@@ -71,13 +73,13 @@ public class Class4866 extends Class4841
         new Thread(() -> {
             this.field20840.method14305(true);
             this.field20837.method14297(false);
-            Class9463.method35173().method35201().method19344();
+            Client.method35173().method35201().method19344();
             final Class8773 class8773;
             if (class8773 != null) {
                 class8773.method30475(this.field20836.method14314());
             }
-            Class9463.method35173().method35201().method19348();
-            Class9463.method35173().method35201().method19340(this.field20833.method14314(), this.field20835.method14314(), this.field20834.method14314(), class8773);
+            Client.method35173().method35201().method19348();
+            Client.method35173().method35201().method19340(this.field20833.method14314(), this.field20835.method14314(), this.field20834.method14314(), class8773);
             final Class4926 class8774 = (Class4926)this.method14267();
             final String s;
             if (s != null) {

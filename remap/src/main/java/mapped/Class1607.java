@@ -4,6 +4,10 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Module;
+import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
+
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,20 +30,20 @@ public class Class1607 implements Runnable
                     }
                     boolean b = false;
                     boolean b2 = false;
-                    if (Class9463.method35173().method35189() == null) {
+                    if (Client.method35173().method35189() == null) {
                         continue;
                     }
-                    final ArrayList list = new ArrayList(Class9463.method35173().method35189().method21553().values());
-                    for (final Class3167 class3167 : Class9463.method35173().method35189().method21553().values()) {
-                        if (class3167 instanceof Class3247) {
-                            list.addAll(Arrays.asList(((Class3247)class3167).field15742));
+                    final ArrayList list = new ArrayList(Client.method35173().method35189().method21553().values());
+                    for (final Module class3167 : Client.method35173().method35189().method21553().values()) {
+                        if (class3167 instanceof ModuleWithSettings) {
+                            list.addAll(Arrays.asList(((ModuleWithSettings)class3167).field15742));
                         }
                     }
-                    for (final Class3167 key : list) {
-                        if (key.getClass().getSuperclass() != Class3167.class && key.getClass().getSuperclass() != Class3247.class) {
+                    for (final Module key : list) {
+                        if (key.getClass().getSuperclass() != Module.class && key.getClass().getSuperclass() != ModuleWithSettings.class) {
                             b = true;
                             if (Class1607.field8978.containsKey(key) && Class1607.field8978.get(key) != key.method9904()) {
-                                System.out.println(key.method9901() + " DIFFER!");
+                                System.out.println(key.getName() + " DIFFER!");
                                 b2 = true;
                             }
                             Class1607.field8978.put(key, key.method9904());

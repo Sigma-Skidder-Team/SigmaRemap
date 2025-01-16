@@ -6,6 +6,7 @@ package mapped;
 
 import java.util.Iterator;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
@@ -119,7 +120,7 @@ public class Class4901 extends Class4841
                     }
                 }
             }
-            this.field20966 = Class9463.method35173().method35200().method24276(field20970, this.field20961 * 2);
+            this.field20966 = Client.method35173().method35200().method24276(field20970, this.field20961 * 2);
         }
         Label_0211: {
             if (this.field20966 != null) {
@@ -152,7 +153,7 @@ public class Class4901 extends Class4841
         GL11.glTranslated(-n6, n7, 0.0);
         Class8154.method26903((float)(this.field20478 + n2), (float)(this.field20479 + n3), (float)max, (float)max, this.field20966.field30451, Class265.field1278.field1292, 0.0f, 0.0f, (float)this.field20966.field30449, (float)this.field20966.field30450, true, false);
         GL11.glPopMatrix();
-        for (final Class8124 class7861 : Class9463.method35173().method35200().method24262()) {
+        for (final Class8124 class7861 : Client.method35173().method35200().method24262()) {
             final float n8 = this.field20960.field32290 * 16 - this.field20963 * 16.0f;
             final float n9 = this.field20960.field32291 * 16 - this.field20962 * 16.0f;
             final float n10 = class7861.field33469 - n8 + 1.0f;

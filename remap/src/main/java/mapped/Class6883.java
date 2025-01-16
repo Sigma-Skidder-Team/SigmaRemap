@@ -4,12 +4,14 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Module;
+
 import java.util.Iterator;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Collection;
 import java.util.ArrayList;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
@@ -18,19 +20,19 @@ import java.util.Map;
 public class Class6883
 {
     public final Map<Class<? extends Class5730>, Class7557[]> field26967;
-    public final Map<Class<? extends Class3167>, Map<Class<? extends Class5730>, List<Class7557>>> field26968;
+    public final Map<Class<? extends Module>, Map<Class<? extends Class5730>, List<Class7557>>> field26968;
     public int field26969;
     public long field26970;
     
     public Class6883() {
         this.field26967 = new HashMap<Class<? extends Class5730>, Class7557[]>();
-        this.field26968 = new HashMap<Class<? extends Class3167>, Map<Class<? extends Class5730>, List<Class7557>>>();
+        this.field26968 = new HashMap<Class<? extends Module>, Map<Class<? extends Class5730>, List<Class7557>>>();
         this.field26969 = 0;
         this.field26970 = System.currentTimeMillis();
     }
     
     public boolean method21087(final Method method) {
-        if (method.isAnnotationPresent(Class6753.class)) {
+        if (method.isAnnotationPresent(EventListener.class)) {
             if (method.getParameterCount() == 1) {
                 if (Class5730.class.isAssignableFrom(method.getParameterTypes()[0])) {
                     return true;
@@ -91,7 +93,7 @@ public class Class6883
         return Class2046.field11659;
     }
     
-    public void method21092(final Class3167 class3167) {
+    public void method21092(final Module class3167) {
         final Map map = this.field26968.get(class3167.getClass());
         if (map != null) {
             for (final Map.Entry<Class, V> entry : map.entrySet()) {
@@ -104,7 +106,7 @@ public class Class6883
         }
     }
     
-    public void method21093(final Class3167 class3167) {
+    public void method21093(final Module class3167) {
         final Map map = this.field26968.get(class3167.getClass());
         if (map != null) {
             for (final Map.Entry<Class, V> entry : map.entrySet()) {
@@ -132,7 +134,7 @@ public class Class6883
                         }
                         final Class7557 class7557 = new Class7557(o, key, method, method2);
                         if (this.method21090(original, key, class7557)) {
-                            if (!Class3167.class.isAssignableFrom(key) || method.isAnnotationPresent(Class6754.class)) {
+                            if (!Module.class.isAssignableFrom(key) || method.isAnnotationPresent(Class6754.class)) {
                                 final Class7557[] array = Arrays.copyOf(original, original.length + 1);
                                 array[array.length - 1] = class7557;
                                 this.field26967.put((Class<? extends Class5730>)clazz, this.method21088(array));
@@ -190,7 +192,7 @@ public class Class6883
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            Class9463.method35173().method35187().method20242("An unhandled exception occured in an event handler's function");
+            Client.method35173().method35187().method20242("An unhandled exception occured in an event handler's function");
         }
         catch (final Throwable t) {
             t.printStackTrace();

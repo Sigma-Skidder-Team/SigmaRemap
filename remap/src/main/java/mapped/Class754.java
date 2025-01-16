@@ -7,6 +7,8 @@ package mapped;
 import com.google.common.hash.Hashing;
 
 import javax.annotation.Nullable;
+
+import com.mentalfrostbyte.Client;
 import com.mojang.authlib.GameProfile;
 
 public abstract class Class754 extends PlayerEntity
@@ -152,7 +154,7 @@ public abstract class Class754 extends PlayerEntity
             }
         }
         final Class5735 class5735 = new Class5735(Class9570.field41295.method22605() ? Class9570.method35815(Class9570.field41295, this, f) : f);
-        Class9463.method35173().method35188().method21097(class5735);
+        Client.method35173().method35188().method21097(class5735);
         return class5735.field23300;
     }
     

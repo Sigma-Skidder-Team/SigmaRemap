@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.awt.Color;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -74,7 +76,7 @@ public class Class7951
         return n2 / n;
     }
     
-    @Class6753
+    @EventListener
     private void method25779(final Class5740 class5740) {
         if (!Minecraft.method5277().gameSettings.field23464) {
             final int n = 6;
@@ -104,7 +106,7 @@ public class Class7951
         }
     }
     
-    @Class6753
+    @EventListener
     private void method25780(final Class5743 class5743) {
         final Iterator<Class6224> iterator = this.field32655.iterator();
         while (iterator.hasNext()) {
@@ -116,7 +118,7 @@ public class Class7951
         }
     }
     
-    @Class6753
+    @EventListener
     private void method25781(final Class5739 class5739) {
         if (this.field32654.player != null) {
             return;
@@ -137,6 +139,6 @@ public class Class7951
     }
     
     public void method25783() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
     }
 }

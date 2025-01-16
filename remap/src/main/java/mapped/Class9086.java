@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Collection;
+import com.mentalfrostbyte.Client;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.io.InputStream;
@@ -34,7 +35,7 @@ public class Class9086
             }
             return;
         }
-        Class9463.method35173().method35187().method20241("Invalid audio file attempted to be played: " + str);
+        Client.method35173().method35187().method20241("Invalid audio file attempted to be played: " + str);
     }
     
     public void method32831() {

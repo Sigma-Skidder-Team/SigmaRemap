@@ -4,14 +4,14 @@
 
 package mapped;
 
-import java.awt.Image;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+
+import com.mentalfrostbyte.Client;
 import org.apache.commons.codec.digest.DigestUtils;
 import java.io.InputStream;
 
@@ -172,7 +172,7 @@ public class Class7853
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            Class9463.method35173().method35187().method20242("Unable to load texture " + str + ". Please make sure it is a valid path and has a valid extension or load it directly from the load(name, type) function.");
+            Client.method35173().method35187().method20242("Unable to load texture " + str + ". Please make sure it is a valid path and has a valid extension or load it directly from the load(name, type) function.");
             throw ex;
         }
     }
@@ -332,8 +332,8 @@ public class Class7853
     public static InputStream method25394(final String s) {
         try {
             final String string = DigestUtils.sha1Hex(s) + ".bmp";
-            if (Class9463.method35173().getClass().getClassLoader().getResource(string) != null) {
-                try (final InputStream resourceAsStream = Class9463.method35173().getClass().getClassLoader().getResourceAsStream(string);
+            if (Client.method35173().getClass().getClassLoader().getResource(string) != null) {
+                try (final InputStream resourceAsStream = Client.method35173().getClass().getClassLoader().getResourceAsStream(string);
                      final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
                     final byte[] array = new byte[4096];
                     int n = 0;
@@ -349,7 +349,7 @@ public class Class7853
                     return new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
                 }
             }
-            return Class9463.method35173().getClass().getClassLoader().getResourceAsStream(s);
+            return Client.method35173().getClass().getClassLoader().getResourceAsStream(s);
         }
         catch (final IOException ex) {
             throw new IllegalStateException("Unable to find " + s + ". You've probably obfuscated the archive and forgot to transfer the assets or keep package names.");

@@ -4,6 +4,10 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.impl.combat.Teams;
+import com.mentalfrostbyte.jello.mods.impl.combat.Criticals;
+import com.mentalfrostbyte.jello.mods.impl.player.Blink;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util2.Direction;
@@ -640,7 +644,7 @@ public class Class6430
     public static void method19165(final Entity class399, final boolean b) {
         final boolean equals = Class9367.field40167.equals(Class7906.field32452);
         final Class5750 class400 = new Class5750(class399, true);
-        Class9463.method35173().method35188().method21097(class400);
+        Client.method35173().method35188().method21097(class400);
         if (!class400.method16962()) {
             if (equals) {
                 if (b) {
@@ -676,7 +680,7 @@ public class Class6430
                     if (!Class6430.field25541.player.onGround) {
                         break Label_0330;
                     }
-                    if (!Class9463.method35173().method35189().method21551(Class3261.class).method9906()) {
+                    if (!Client.method35173().method35189().method21551(Criticals.class).method9906()) {
                         break Label_0330;
                     }
                 }
@@ -689,7 +693,7 @@ public class Class6430
                 }
             }
             class400.method17060();
-            Class9463.method35173().method35188().method21097(class400);
+            Client.method35173().method35188().method21097(class400);
         }
     }
     
@@ -744,7 +748,7 @@ public class Class6430
     
     public static void method19169() {
         if (Class6430.field25541.method5303() instanceof PlayerEntity) {
-            if (Class9463.method35173().method35193().method32144()) {
+            if (Client.method35173().method35193().method32144()) {
                 if (Class6430.field25541.field4644.field9406 != null) {
                     Class6430.field25541.field4644.field9406.close();
                 }
@@ -906,10 +910,10 @@ public class Class6430
     }
     
     public static boolean method19178(final Entity class399, final boolean b, final boolean b2, final boolean b3) {
-        if (class399 == Class6430.field25541.player || class399 == Class3276.field15771) {
+        if (class399 == Class6430.field25541.player || class399 == Blink.field15771) {
             return false;
         }
-        if (Class9463.method35173().method35190().method29878(class399)) {
+        if (Client.method35173().method35190().method29878(class399)) {
             return false;
         }
         if (!(class399 instanceof LivingEntity)) {
@@ -927,7 +931,7 @@ public class Class6430
         if (!b && class399 instanceof PlayerEntity) {
             return false;
         }
-        if (class399 instanceof PlayerEntity && Class9463.method35173().method35191().method31751(class399)) {
+        if (class399 instanceof PlayerEntity && Client.method35173().method35191().method31751(class399)) {
             return false;
         }
         if (!b3 && class399.method1823()) {
@@ -942,7 +946,7 @@ public class Class6430
         if (!class399.method1850()) {
             if (class399 instanceof PlayerEntity) {
                 if (Class9011.method32262((PlayerEntity)class399)) {
-                    if (Class9463.method35173().method35189().method21551(Class3203.class).method9906()) {
+                    if (Client.method35173().method35189().method21551(Teams.class).method9906()) {
                         return false;
                     }
                 }

@@ -5,6 +5,8 @@
 package mapped;
 
 import java.io.IOException;
+
+import com.mentalfrostbyte.Client;
 import org.apache.commons.io.IOUtils;
 import java.io.OutputStream;
 
@@ -52,6 +54,6 @@ public class Class6659 implements Class6658
     
     @Override
     public void method20243(final String s) {
-        Class9463.method35173();
+        Client.method35173();
     }
 }

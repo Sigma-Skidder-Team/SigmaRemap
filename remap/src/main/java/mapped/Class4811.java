@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4811 extends Class4803
 {
     private final Class4868 field20570;
@@ -35,7 +37,7 @@ public class Class4811 extends Class4803
         final int i15 = 10;
         final String v17 = "© Sigma Prod";
         final StringBuilder append = new StringBuilder().append("Jello for Sigma ");
-        Class9463.method35173();
+        Client.method35173();
         final String v18 = append.append("5.0.0b6").toString();
         this.method14239(this.field20570 = new Class4871(this, "Singleplayer", this.method14352(i13++), this.method14353(), 128, 128, Class7853.field32157, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
         this.method14239(this.field20571 = new Class4871(this, "Multiplayer", this.method14352(i13++), this.method14353(), 128, 128, Class7853.field32155, new Class6523(Class265.field1278.field1292, Class265.field1273.field1292)));
@@ -49,7 +51,7 @@ public class Class4811 extends Class4803
         this.method14239(this.field20578 = new Class4897(this, "Account", 0, i15, 0, i14, "Log in"));
         this.method14239(this.field20575 = new Class4839(this, "pre", 0, 0, 240, 100));
         this.field20575.method14256((class4803, n) -> {
-            if (Class9463.method35173().method35201().method19347() != null) {
+            if (Client.method35173().method35201().method19347() != null) {
                 ((Class4929)this.method14267()).method14792();
             }
             else {
@@ -62,7 +64,7 @@ public class Class4811 extends Class4803
         this.field20574.method14260((class4803, n) -> this.method14351(new Class4934()));
         this.field20572.method14260((class4803, n) -> this.method14348());
         this.field20578.method14260((class4803, n) -> {
-            if (Class9463.method35173().method35201().method19347() != null) {
+            if (Client.method35173().method35201().method19347() != null) {
                 ((Class4929)this.method14267()).method14794();
             }
             else {
@@ -71,7 +73,7 @@ public class Class4811 extends Class4803
         });
         this.field20577.method14260((class4803, n) -> {
             if (this.field20580++ > 8) {
-                Class9463.method35173().method35193().method32156(new Class4928());
+                Client.method35173().method35193().method32156(new Class4928());
             }
         });
     }
@@ -96,13 +98,13 @@ public class Class4811 extends Class4803
     
     @Override
     public void method14200(final int n, final int n2) {
-        this.field20575.method14297(!Class9463.method35173().method35201().method19352());
-        this.field20579.method14273(Class9463.method35173().method35201().method19352() ? 30 : 232);
+        this.field20575.method14297(!Client.method35173().method35201().method19352());
+        this.field20579.method14273(Client.method35173().method35201().method19352() ? 30 : 232);
         super.method14200(n, n2);
     }
     
     public void method14349() {
-        Class9463.method35173().method35196().method32830("clicksound");
+        Client.method35173().method35196().method32830("clicksound");
     }
     
     public void method14350(final Screen class527) {
@@ -111,7 +113,7 @@ public class Class4811 extends Class4803
     }
     
     public void method14351(final Class4800 class4800) {
-        Class9463.method35173().method35193().method32156(class4800);
+        Client.method35173().method35193().method32156(class4800);
         this.method14349();
     }
     

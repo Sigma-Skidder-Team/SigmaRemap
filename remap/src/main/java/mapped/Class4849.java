@@ -4,6 +4,9 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Module;
+
 import java.util.TreeMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -60,13 +63,13 @@ public class Class4849 extends Class4841
             });
         }
         n6 += 50;
-        for (final Class3167 class4807 : Class9463.method35173().method35189().method21553().values()) {
+        for (final Module class4807 : Client.method35173().method35189().method21553().values()) {
             final Class4868 class4808;
-            this.field20780.method14239(class4808 = new Class4868(this.field20780, class4807.method9901(), 0, n6++ * 40, this.field20780.method14276(), 40, new Class6523(16777215, -986896).method19734(Class265.field1273.field1292).method19736(Class2056.field11734), new Class8799(class4807).method30702()));
+            this.field20780.method14239(class4808 = new Class4868(this.field20780, class4807.getName(), 0, n6++ * 40, this.field20780.method14276(), 40, new Class6523(16777215, -986896).method19734(Class265.field1273.field1292).method19736(Class2056.field11734), new Class8799(class4807).method30702()));
             class4808.method14603(10);
             class4808.method14260((class4869, n) -> {
-                for (final Class3167 class4870 : Class9463.method35173().method35189().method21553().values()) {
-                    if (class4870.method9901().equals(class4808.method14314()) && !this.field20783) {
+                for (final Module class4870 : Client.method35173().method35189().method21553().values()) {
+                    if (class4870.getName().equals(class4808.method14314()) && !this.field20783) {
                         this.field20781 = new Class8799(class4870);
                         this.field20783 = true;
                         break;

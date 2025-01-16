@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Collections;
 
+import com.mentalfrostbyte.jello.mods.impl.render.XRay;
+import com.mentalfrostbyte.jello.mods.impl.render.FPSBooster;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.Vector4f;
@@ -871,7 +873,7 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     private Set<Direction> method5708(final BlockPos class354) {
-        if (Class3237.field15720.method9906()) {
+        if (XRay.field15720.method9906()) {
             return new HashSet<Direction>(Arrays.asList(Direction.values()));
         }
         final Class8388 class355 = new Class8388();
@@ -1228,7 +1230,7 @@ public class Class1656 implements AutoCloseable, Class1657
         if (method6802) {
             Class9216.method33851();
         }
-        if (!Class3375.field16048) {
+        if (!FPSBooster.field16048) {
             this.field9288.field4640.method6484(class7351, method6805, class7354, class7352, f);
         }
         if (method6802) {

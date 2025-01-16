@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.util.Random;
 
 public class Class4810 extends Class4803
@@ -33,18 +35,18 @@ public class Class4810 extends Class4803
         this.method14239(this.field20567 = new Class4909(this, "edit", n5 + n4 * 2 + 32, 48, n4, 40, "Edit", Class265.field1273.field1292));
         this.method14239(this.field20569 = new Class4909(this, "alpha", n5 + n4 * 3 + 48, 48, n4, 40, "Alphalts", Class265.field1273.field1292));
         final Class4936 class4804 = (Class4936)this.method14267();
-        this.field20564.method14260((class4937, n) -> class4804.method14848(Class9463.method35173().method35198().method25466().get(new Random().nextInt(Class9463.method35173().method35198().method25466().size()))));
+        this.field20564.method14260((class4937, n) -> class4804.method14848(Client.method35173().method35198().method25466().get(new Random().nextInt(Client.method35173().method35198().method25466().size()))));
         this.field20562.method14260((class4803, n) -> Minecraft.method5277().displayGuiScreen(new Class548()));
         this.field20563.method14260((class4937, n) -> class4804.method14845());
         this.field20565.method14260((class4937, n) -> class4804.method14846());
         this.field20567.method14260((class4937, n) -> {
             final Class4836 method14855 = class4804.method14855();
             if (method14855 != null) {
-                Class9463.method35173().method35193().method32156(new Class4933(method14855.field20723));
+                Client.method35173().method35193().method32156(new Class4933(method14855.field20723));
             }
         });
-        this.field20568.method14260((class4803, n) -> Class9463.method35173().method35193().method32156(new Class4938()));
-        this.field20566.method14260((class4803, n) -> Class9463.method35173().method35193().method32156(new Class4931()));
+        this.field20568.method14260((class4803, n) -> Client.method35173().method35193().method32156(new Class4938()));
+        this.field20566.method14260((class4803, n) -> Client.method35173().method35193().method32156(new Class4931()));
     }
     
     @Override

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -24,16 +25,16 @@ public class Class8706
     }
     
     public void method29876() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
         this.method29892();
     }
     
-    @Class6753
+    @EventListener
     private void method29877(final Class5752 class5752) {
         if (class5752.method17061() == this.field36585.gameSettings.field23447.field2161.field32860) {
             if (this.field36585.field4690 != null) {
                 if (this.field36585.field4690.getName() != null) {
-                    final Class9070 method35204 = Class9463.method35173().method35204();
+                    final Class9070 method35204 = Client.method35173().method35204();
                     method35204.method32672();
                     if (this.method29878(this.field36585.field4690)) {
                         this.method29886(this.field36585.field4690.getName().getUnformattedComponentText());
@@ -126,22 +127,22 @@ public class Class8706
     }
     
     public void method29890() {
-        Class9463.method35173().method35206().method13296("friends", this.field36582);
+        Client.method35173().method35206().method13296("friends", this.field36582);
     }
     
     public void method29891() {
-        Class9463.method35173().method35206().method13296("enemies", this.field36583);
+        Client.method35173().method35206().method13296("enemies", this.field36583);
     }
     
     private void method29892() {
-        if (Class9463.method35173().method35206().method13269("friends")) {
-            final Class88 method13263 = Class9463.method35173().method35206().method13263("friends");
+        if (Client.method35173().method35206().method13269("friends")) {
+            final Class88 method13263 = Client.method35173().method35206().method13263("friends");
             if (method13263 != null) {
                 method13263.forEach(o -> this.field36582.add((String)o));
             }
         }
-        if (Class9463.method35173().method35206().method13269("enemies")) {
-            final Class88 method13264 = Class9463.method35173().method35206().method13263("enemies");
+        if (Client.method35173().method35206().method13269("enemies")) {
+            final Class88 method13264 = Client.method35173().method35206().method13263("enemies");
             if (method13264 != null) {
                 method13264.forEach(o2 -> this.field36583.add((String)o2));
             }

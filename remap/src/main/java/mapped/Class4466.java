@@ -4,21 +4,24 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.Module;
+import com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods;
+
 import java.util.Comparator;
 
-public class Class4466 implements Comparator<Class3167>
+public class Class4466 implements Comparator<Module>
 {
     private static String[] field19823;
-    public final /* synthetic */ Class3311 field19824;
+    public final /* synthetic */ ActiveMods field19824;
     
-    public Class4466(final Class3311 field19824) {
+    public Class4466(final ActiveMods field19824) {
         this.field19824 = field19824;
     }
     
     @Override
-    public int compare(final Class3167 class3167, final Class3167 class3168) {
-        final int method23505 = Class9400.field40313.method23505(class3167.method9901());
-        final int method23506 = Class9400.field40313.method23505(class3168.method9901());
+    public int compare(final Module class3167, final Module class3168) {
+        final int method23505 = Class9400.field40313.method23505(class3167.getName());
+        final int method23506 = Class9400.field40313.method23505(class3168.getName());
         if (method23505 > method23506) {
             return -1;
         }

@@ -4,6 +4,12 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
+import com.mentalfrostbyte.jello.mods.impl.movement.Fly;
+import com.mentalfrostbyte.jello.mods.impl.movement.LongJump;
+import com.mentalfrostbyte.jello.mods.impl.world.Disabler;
+
 import java.util.Random;
 
 public class Class9171
@@ -13,15 +19,15 @@ public class Class9171
     
     public Class9171() {
         this.field38851 = Minecraft.method5277();
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
     }
     
-    @Class6753
+    @EventListener
     @Class6754
     public void method33483(final Class5732 class5732) {
-        final Class3247 class5733 = (Class3247)Class9463.method35173().method35189().method21551(Class3259.class);
-        final Class3247 class5734 = (Class3247)Class9463.method35173().method35189().method21551(Class3251.class);
-        final Class3247 class5735 = (Class3247)Class9463.method35173().method35189().method21551(Class3257.class);
+        final ModuleWithSettings class5733 = (ModuleWithSettings) Client.method35173().method35189().method21551(Fly.class);
+        final ModuleWithSettings class5734 = (ModuleWithSettings) Client.method35173().method35189().method21551(Disabler.class);
+        final ModuleWithSettings class5735 = (ModuleWithSettings) Client.method35173().method35189().method21551(LongJump.class);
         boolean field38852 = false;
         Label_0165: {
             Label_0054: {
@@ -50,7 +56,7 @@ public class Class9171
         Class9171.field38852 = field38852;
     }
     
-    @Class6753
+    @EventListener
     @Class6754
     public void method33484(final Class5744 class5744) {
         if (this.field38851.method5282() != null && Class9171.field38852) {
@@ -64,7 +70,7 @@ public class Class9171
         }
     }
     
-    @Class6753
+    @EventListener
     @Class6754
     public void method33485(final Class5723 class5723) {
         if (this.field38851.method5282() != null && Class9171.field38852) {

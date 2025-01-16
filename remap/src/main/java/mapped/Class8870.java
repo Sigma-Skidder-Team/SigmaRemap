@@ -4,14 +4,16 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.impl.exploit.disablers.ViperDisabler;
+
 public class Class8870
 {
     private static String[] field37285;
     private long field37286;
     private IPacket field37287;
-    public final /* synthetic */ Class3336 field37288;
+    public final /* synthetic */ ViperDisabler field37288;
     
-    public Class8870(final Class3336 field37288, final IPacket<?> field37289, final long n) {
+    public Class8870(final ViperDisabler field37288, final IPacket<?> field37289, final long n) {
         this.field37288 = field37288;
         this.field37287 = field37289;
         this.field37286 = System.currentTimeMillis() + n;

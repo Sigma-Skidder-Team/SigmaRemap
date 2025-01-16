@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.util.math.Vec3i;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
@@ -25,7 +26,7 @@ public class Class4843 extends Class4841
         this.field20755 = new ArrayList<Class8383>();
         this.field20754 = 260;
         this.method14239(this.field20753 = new Class4818(this, "waypointList", 0, 65, this.field20754, this.field20481 - 65));
-        for (final Class8124 class4804 : Class9463.method35173().method35200().method24262()) {
+        for (final Class8124 class4804 : Client.method35173().method35200().method24262()) {
             this.field20753.method14398(class4804.field33468, new Vec3i(class4804.field33469, 64, class4804.field33470), class4804.field33471);
         }
         this.method14239(this.field20752 = new Class4901(this, "mapFrame", this.field20754, 0, this.field20480 - this.field20754, this.field20481));
@@ -36,7 +37,7 @@ public class Class4843 extends Class4841
     public void method14200(final int n, final int n2) {
         super.method14200(n, n2);
         if (this.field20492) {
-            Class9463.method35173().method35200().field30406.clear();
+            Client.method35173().method35200().field30406.clear();
         }
     }
     
@@ -45,7 +46,7 @@ public class Class4843 extends Class4841
         final int n2 = 14;
         Class8154.method26913((float)(this.field20478 + n2 / 2), (float)(this.field20479 + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 20.0f, n * 0.9f);
         float n3 = 0.88f;
-        if (!Class9463.method35173().method35193().method32144()) {
+        if (!Client.method35173().method35193().method32144()) {
             n3 = 0.95f;
         }
         Class8154.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, 14.0f, Class6430.method19118(Class265.field1278.field1292, n3));
@@ -66,7 +67,7 @@ public class Class4843 extends Class4841
         Class6430.method19118(Class6430.method19121(-7687425, 0.2f), 0.8f);
         Class8154.method26889(Class9400.field40314, (float)(this.field20478 + 30), (float)(this.field20479 + 25), "Waypoints", Class6430.method19118(Class265.field1273.field1292, 0.6f));
         Class8154.method26889(Class9400.field40325, (float)this.field20478, (float)((this.field20475.method14278() - this.field20481) / 2 - 70), "Jello Maps", Class265.field1278.field1292);
-        final String replace = Class9463.method35173().method35200().method24271().replace("/", " - ");
+        final String replace = Client.method35173().method35200().method24271().replace("/", " - ");
         Class8154.method26889(Class9400.field40318, (float)(this.field20478 + this.field20480 - Class9400.field40318.method23505(replace) - 10), (float)((this.field20475.method14278() - this.field20481) / 2 - 62), replace, Class6430.method19118(Class265.field1278.field1292, 0.5f));
     }
     

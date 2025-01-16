@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import org.apache.logging.log4j.LogManager;
 import org.lwjgl.glfw.Callbacks;
 import org.lwjgl.glfw.GLFWErrorCallbackI;
@@ -294,7 +295,7 @@ public final class Class1925 implements AutoCloseable
     private void method7676(final long n, final int field10490, final int field10491) {
         this.field10490 = field10490;
         this.field10491 = field10491;
-        Class9463.method35173().method35193().method32153();
+        Client.method35173().method35193().method32153();
     }
     
     private void method7677(final long n, final boolean b) {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class8617
 {
     private static String[] field36155;
@@ -26,10 +28,10 @@ public class Class8617
     }
     
     public void method29223() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
     }
     
-    @Class6753
+    @EventListener
     private void method29224(final Class5743 class5743) {
         ++this.field36156;
         ++this.field36157;
@@ -49,7 +51,7 @@ public class Class8617
         }
     }
     
-    @Class6753
+    @EventListener
     private void method29225(final Class5723 class5723) {
         if (class5723.method16998() instanceof Class4396) {
             this.field36161 = Math.min(1.05f, Math.max(0.0f, 15000.0f / (System.currentTimeMillis() - this.field36160)));

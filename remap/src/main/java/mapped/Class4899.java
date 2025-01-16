@@ -4,6 +4,9 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Module;
+
 import java.util.ArrayList;
 
 public class Class4899 extends Class4841
@@ -26,20 +29,20 @@ public class Class4899 extends Class4841
         Class8154.method26913((float)(this.field20478 + n2 / 2), (float)(this.field20479 + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 30.0f, n * 0.4f);
         Class8154.method26925((float)this.field20478, (float)this.field20479, (float)this.field20480, (float)this.field20481, (float)n2, Class6430.method19118(Class265.field1278.field1292, 0.97f));
         Class8154.method26899((float)(this.field20478 + 20), (float)(this.field20479 + 20), 20.0f, 20.0f, Class7853.field32216, Class6430.method19118(Class265.field1273.field1292, 0.3f));
-        final ArrayList<Class3167> method14713 = this.method14713();
+        final ArrayList<Module> method14713 = this.method14713();
         if (method14713.size() > 0) {
-            if (this.method14715(this.field20955, method14713.get(0).method9901())) {
-                Class8154.method26889(this.field20954.method14316(), (float)(this.field20478 + 54), (float)(this.field20479 + 14), this.field20955 + method14713.get(0).method9901().substring(this.field20955.length(), method14713.get(0).method9901().length()) + (method14713.get(0).method9906() ? " - Enabled" : " - Disabled"), Class6430.method19118(Class265.field1273.field1292, 0.25f));
+            if (this.method14715(this.field20955, method14713.get(0).getName())) {
+                Class8154.method26889(this.field20954.method14316(), (float)(this.field20478 + 54), (float)(this.field20479 + 14), this.field20955 + method14713.get(0).getName().substring(this.field20955.length(), method14713.get(0).getName().length()) + (method14713.get(0).method9906() ? " - Enabled" : " - Disabled"), Class6430.method19118(Class265.field1273.field1292, 0.25f));
             }
         }
         super.method14205(n);
     }
     
-    public ArrayList<Class3167> method14713() {
+    public ArrayList<Module> method14713() {
         final ArrayList list = new ArrayList();
         if (this.field20955 != null && this.field20955.length() != 0) {
-            for (final Class3167 e : Class9463.method35173().method35189().method21553().values()) {
-                if (!this.method14715(this.field20955, e.method9901())) {
+            for (final Module e : Client.method35173().method35189().method21553().values()) {
+                if (!this.method14715(this.field20955, e.getName())) {
                     continue;
                 }
                 list.add(e);
@@ -53,7 +56,7 @@ public class Class4899 extends Class4841
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 257) {
-            final ArrayList<Class3167> method14713 = this.method14713();
+            final ArrayList<Module> method14713 = this.method14713();
             if (method14713.size() > 0) {
                 method14713.get(0).method9910();
             }

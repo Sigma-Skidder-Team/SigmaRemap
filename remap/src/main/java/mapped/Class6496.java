@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.util.Iterator;
+import com.mentalfrostbyte.Client;
+
 import java.lang.reflect.Method;
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -29,7 +30,7 @@ public class Class6496
             list.add(class7966);
             return;
         }
-        Class9463.method35173().method35187().method20241("Registered the same method of the same instance twice. Was this intended?");
+        Client.method35173().method35187().method20241("Registered the same method of the same instance twice. Was this intended?");
     }
     
     public void method19538(final Object o) {

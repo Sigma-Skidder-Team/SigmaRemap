@@ -4,9 +4,11 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.Module;
+
 import java.util.Comparator;
 
-public class Class4450 implements Comparator<Class3167>
+public class Class4450 implements Comparator<Module>
 {
     private static String[] field19794;
     public final /* synthetic */ Class7060 field19795;
@@ -16,7 +18,7 @@ public class Class4450 implements Comparator<Class3167>
     }
     
     @Override
-    public int compare(final Class3167 class3167, final Class3167 class3168) {
-        return class3167.method9900().compareTo(class3168.method9900());
+    public int compare(final Module class3167, final Module class3168) {
+        return class3167.getName2().compareTo(class3168.getName2());
     }
 }

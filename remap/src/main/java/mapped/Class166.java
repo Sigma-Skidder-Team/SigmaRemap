@@ -5,6 +5,7 @@
 package mapped;
 
 import com.google.common.base.Predicate;
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 
@@ -28,7 +29,7 @@ public class Class166 implements Predicate<Entity>
         if (class399 != null) {
             if (class399.method1749()) {
                 if (method18504) {
-                    if (!Class9463.method35173().method35191().method31751(class399)) {
+                    if (!Client.method35173().method35191().method31751(class399)) {
                         return true;
                     }
                 }

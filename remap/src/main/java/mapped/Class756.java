@@ -8,6 +8,7 @@ import java.util.Collections;
 import javax.annotation.Nullable;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
 import net.minecraft.item.ItemStack;
@@ -151,7 +152,7 @@ public class Class756 extends Class754
     
     public void method4113() {
         final Class5744 class5744 = new Class5744(this.posX, this.getBoundingBox().minY, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
-        Class9463.method35173().method35188().method21097(class5744);
+        Client.method35173().method35188().method21097(class5744);
         if (!class5744.method16962()) {
             final boolean method1815 = this.method1815();
             if (method1815 != this.field4081) {
@@ -231,7 +232,7 @@ public class Class756 extends Class754
                 iterator.next().run();
             }
             class5744.method17031();
-            Class9463.method35173().method35188().method21097(class5744);
+            Client.method35173().method35188().method21097(class5744);
         }
     }
     
@@ -631,7 +632,7 @@ public class Class756 extends Class754
         if (this.method2756()) {
             if (!this.isPassenger()) {
                 final Class5728 class5728 = new Class5728(0.2f);
-                Class9463.method35173().method35188().method21097(class5728);
+                Client.method35173().method35188().method21097(class5728);
                 if (!class5728.method16962()) {
                     final Class6093 field24729 = this.field4085;
                     field24729.field24721 *= class5728.method17003();

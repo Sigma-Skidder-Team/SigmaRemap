@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
@@ -112,7 +113,7 @@ public class Class9316
         final float method22705 = MathHelper.method35700(method22702, method22700, n2);
         final float method22706 = MathHelper.method35700(method22702, method22701, n2);
         final Class5746 class871 = new Class5746(0.9f);
-        Class9463.method35173().method35188().method21097(class871);
+        Client.method35173().method35188().method21097(class871);
         for (int i = 0; i < 2; ++i) {
             class870.method22567();
             class870.method22564(-(i * 2 - 1) * 0.24f, -0.30000001192092896, 0.0);

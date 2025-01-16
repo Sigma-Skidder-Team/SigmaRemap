@@ -4,6 +4,9 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.Category;
+import com.mentalfrostbyte.jello.Class4809;
+
 public class Class4799 extends Class4800
 {
     private static Minecraft field20454;
@@ -22,7 +25,7 @@ public class Class4799 extends Class4800
         this.method14225(() -> this.method14199());
     }
     
-    public void method14198(final String s, final Class8013... array) {
+    public void method14198(final String s, final Category... array) {
         this.method14225(() -> {
             if (this.field20457 != null) {
                 this.method14245(this.field20457);

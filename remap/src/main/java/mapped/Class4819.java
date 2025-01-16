@@ -4,6 +4,12 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.Module;
+import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
+import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
+import com.mentalfrostbyte.jello.settings.Setting;
+import com.mentalfrostbyte.jello.settings.impl.StringSetting;
+import com.mentalfrostbyte.jello.settings.impl.TextInputSetting;
 import org.lwjgl.opengl.GL11;
 import java.util.Map;
 import java.util.Iterator;
@@ -12,21 +18,21 @@ import java.util.HashMap;
 
 public class Class4819 extends Class4817 implements Class4820
 {
-    private Class3167 field20620;
+    private Module field20620;
     private boolean field20621;
     private boolean field20622;
     public int field20623;
-    private HashMap<Class4834, Class4997> field20624;
-    public HashMap<Class3167, Class4803> field20625;
+    private HashMap<Class4834, Setting> field20624;
+    public HashMap<Module, Class4803> field20625;
     public Class9572 field20626;
     private String field20627;
     private String field20628;
     
-    public Class4819(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class3167 field20620) {
+    public Class4819(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Module field20620) {
         super(class4803, s, n, n2, n3, n4);
         this.field20623 = 200;
-        this.field20624 = new HashMap<Class4834, Class4997>();
-        this.field20625 = new HashMap<Class3167, Class4803>();
+        this.field20624 = new HashMap<Class4834, Setting>();
+        this.field20625 = new HashMap<Module, Class4803>();
         this.field20626 = new Class9572(114, 114);
         this.field20627 = "";
         this.field20628 = "";
@@ -35,7 +41,7 @@ public class Class4819 extends Class4817 implements Class4820
         this.method14390();
     }
     
-    private int method14402(final Class4803 class4803, final Class4997 class4804, final int n, int n2, final int n3) {
+    private int method14402(final Class4803 class4803, final Setting class4804, final int n, int n2, final int n3) {
         switch (Class9155.field38793[class4804.method15197().ordinal()]) {
             case 1: {
                 final Class4834 key = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
@@ -57,7 +63,7 @@ public class Class4819 extends Class4817 implements Class4820
             case 2: {
                 final Class4834 key2 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
                 this.field20624.put(key2, class4804);
-                final Class4996 class4806 = (Class4996)class4804;
+                final NumberSetting class4806 = (NumberSetting)class4804;
                 final Class4892 class4807 = new Class4892(class4803, class4804.method15204() + "slider", class4803.method14276() - 126 - n3, n2 + 6, 126, 24);
                 class4807.method14674().method14317(Class9400.field40311);
                 class4807.method14315(Float.toString((float)class4804.method15198()));
@@ -94,8 +100,8 @@ public class Class4819 extends Class4817 implements Class4820
                 class4808.method14317(Class9400.field40312);
                 class4808.method14473(class4998 -> class4804.method15199(class4998.method14314()));
                 class4804.method15195(class4833 -> {
-                    if (class4808.method14314() != ((Class4998)class4804).method15198()) {
-                        class4808.method14315(((Class4998)class4804).method15198());
+                    if (class4808.method14314() != ((TextInputSetting)class4804).method15198()) {
+                        class4808.method14315(((TextInputSetting)class4804).method15198());
                     }
                 });
                 n2 += n5 + n3;
@@ -103,16 +109,16 @@ public class Class4819 extends Class4817 implements Class4820
             }
             case 4: {
                 final Class4834 key4 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2 + 2, this.field20623, 27, Class4834.field20719, class4804.method15204());
-                final Class4894 class4809 = new Class4894(class4803, class4804.method15204() + "btn", class4803.method14276() - n3, n2 + 6 - 1, 123, 27, ((Class5001)class4804).method15215(), ((Class5001)class4804).method15213());
+                final Class4894 class4809 = new Class4894(class4803, class4804.method15204() + "btn", class4803.method14276() - n3, n2 + 6 - 1, 123, 27, ((StringSetting)class4804).method15215(), ((StringSetting)class4804).method15213());
                 this.field20624.put(key4, class4804);
                 class4804.method15195(class4896 -> {
-                    if (class4809.method14693() != ((Class5001)class4804).method15213()) {
-                        class4809.method14694(((Class5001)class4804).method15213());
+                    if (class4809.method14693() != ((StringSetting)class4804).method15213()) {
+                        class4809.method14694(((StringSetting)class4804).method15213());
                     }
                 });
                 class4809.method14516(class4999 -> {
-                    ((Class5001)class4804).method15214(((Class4894)class4999).method14693());
-                    class4809.method14694(((Class5001)class4804).method15213());
+                    ((StringSetting)class4804).method15214(((Class4894)class4999).method14693());
+                    class4809.method14694(((StringSetting)class4804).method15213());
                 });
                 class4809.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 123 - n3));
                 class4803.method14239(key4);
@@ -122,7 +128,7 @@ public class Class4819 extends Class4817 implements Class4820
             case 6: {
                 final Class4803 class4810 = new Class4803(class4803, class4804.method15204() + "view", n, n2, class4803.method14276(), 0);
                 int method15186 = 0;
-                final Iterator<Class4997> iterator = (Iterator<Class4997>)((Class5007)class4804).method15224().iterator();
+                final Iterator<Setting> iterator = (Iterator<Setting>)((SubOptionSetting)class4804).method15224().iterator();
                 while (iterator.hasNext()) {
                     method15186 = this.method14402(class4810, iterator.next(), 0, method15186, n3);
                 }
@@ -134,7 +140,7 @@ public class Class4819 extends Class4817 implements Class4820
             }
             case 7: {
                 final Class4834 key5 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 27, Class4834.field20719, class4804.method15204());
-                final Class4875 class4811 = new Class4875(class4803, class4804.method15204() + "btn", class4803.method14276() - n3, n2 + 6, 123, 27, ((Class5004)class4804).method15223(), class4804.method15198());
+                final Class4875 class4811 = new Class4875(class4803, class4804.method15204() + "btn", class4803.method14276() - n3, n2 + 6, 123, 27, ((ButtonSetting)class4804).method15223(), class4804.method15198());
                 this.field20624.put(key5, class4804);
                 class4804.method15195(class4876 -> {
                     if (class4811.method14610() != class4876.method15198()) {
@@ -150,7 +156,7 @@ public class Class4819 extends Class4817 implements Class4820
             }
             case 8: {
                 final Class4834 key6 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 200, Class4834.field20719, class4804.method15204());
-                final Class4854 class4812 = new Class4854(class4803, class4804.method15204() + "picker", class4803.method14276() - n3, n2 + 5, 175, 200, ((Class5000)class4804).method15209(), (String[])((Class4997<List>)class4804).method15198().toArray(new String[0]));
+                final Class4854 class4812 = new Class4854(class4803, class4804.method15204() + "picker", class4803.method14276() - n3, n2 + 5, 175, 200, ((Class5000)class4804).method15209(), (String[])((Setting<List>)class4804).method15198().toArray(new String[0]));
                 this.field20624.put(key6, class4804);
                 class4812.method14516(class4999 -> class4804.method15199(class4812.method14563()));
                 class4812.method14270((class4804, class4805) -> class4804.method14273(class4803.method14276() - 175 - n3));
@@ -160,7 +166,7 @@ public class Class4819 extends Class4817 implements Class4820
                 break;
             }
             case 9: {
-                final Class5003 class4813 = (Class5003)class4804;
+                final ColorSetting class4813 = (ColorSetting)class4804;
                 final Class4834 key7 = new Class4834(class4803, class4804.method15204() + "lbl", n, n2, this.field20623, 24, Class4834.field20719, class4804.method15204());
                 final Class4885 class4814 = new Class4885(class4803, class4804.method15204() + "color", class4803.method14276() - 160 - n3 + 10, n2, 160, 114, class4804.method15198(), class4813.method15219());
                 this.field20624.put(key7, class4804);
@@ -186,7 +192,7 @@ public class Class4819 extends Class4817 implements Class4820
                     final Class8531 class5000 = class4804.method15198();
                     class4816.method14568(class5000.field35807, class5000.field35808, class5000.field35809, class5000.field35810);
                 });
-                class4816.method14516(class4999 -> ((Class5002)class4804).method15216(class4816.method14567()[0], class4816.method14567()[1], class4816.method14567()[2], class4816.method14567()[3]));
+                class4816.method14516(class4999 -> ((BezierSetting)class4804).method15216(class4816.method14567()[0], class4816.method14567()[1], class4816.method14567()[2], class4816.method14567()[3]));
                 class4803.method14239(key8);
                 class4803.method14239(class4816);
                 n2 += 150 + n3 - 10;
@@ -198,18 +204,18 @@ public class Class4819 extends Class4817 implements Class4820
     
     private void method14390() {
         int b = 20;
-        final Iterator<Class4997> iterator = this.field20620.method9899().values().iterator();
+        final Iterator<Setting> iterator = this.field20620.method9899().values().iterator();
         while (iterator.hasNext()) {
             b = this.method14402(this, iterator.next(), 20, b, 20);
         }
         final int n = b;
-        if (this.field20620 instanceof Class3247) {
-            final Class3247 class3247 = (Class3247)this.field20620;
-            for (final Class3167 key : class3247.field15742) {
+        if (this.field20620 instanceof ModuleWithSettings) {
+            final ModuleWithSettings class3247 = (ModuleWithSettings)this.field20620;
+            for (final Module key : class3247.field15742) {
                 int a = 0;
-                final Class4803 value = new Class4803(this, key.method9901() + "SubView", 0, n, this.field20480, this.field20481 - b);
+                final Class4803 value = new Class4803(this, key.getName() + "SubView", 0, n, this.field20480, this.field20481 - b);
                 value.method14270((class4803, class4804) -> class4803.method14277(class4804.method14276()));
-                final Iterator<Class4997> iterator2 = key.method9899().values().iterator();
+                final Iterator<Setting> iterator2 = key.method9899().values().iterator();
                 while (iterator2.hasNext()) {
                     a = this.method14402(value, iterator2.next(), 20, a, 20);
                 }
@@ -241,7 +247,7 @@ public class Class4819 extends Class4817 implements Class4820
         boolean b = false;
         for (final Map.Entry<Class4834, V> entry : this.field20624.entrySet()) {
             final Class4834 class4834 = entry.getKey();
-            final Class4997 class4835 = (Class4997)entry.getValue();
+            final Setting class4835 = (Setting)entry.getValue();
             if (class4834.method14308() && class4834.method14298()) {
                 b = true;
                 this.field20627 = class4835.method15205();

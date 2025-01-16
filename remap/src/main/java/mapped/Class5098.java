@@ -4,7 +4,9 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.Module;
+
 public interface Class5098
 {
-    void method15976(final Class3167 p0);
+    void method15976(final Module p0);
 }

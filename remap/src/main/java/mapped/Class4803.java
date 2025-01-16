@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
@@ -169,7 +170,7 @@ public class Class4803 implements Class4925
         }
         catch (final ConcurrentModificationException ex) {
             ex.printStackTrace();
-            Class9463.method35174().method20242("FUCK! Why does this shit happen");
+            Client.method35174().method20242("FUCK! Why does this shit happen");
         }
         this.field20492 &= this.field20491;
         for (final Class6507 class6507 : this.method14269()) {

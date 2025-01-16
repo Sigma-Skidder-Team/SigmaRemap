@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.MarkerManager;
 import org.apache.logging.log4j.LogManager;
@@ -124,7 +125,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
     public void channelRead0(final ChannelHandlerContext channelHandlerContext, final IPacket<?> class4252) throws Exception {
         if (this.field16899.isOpen()) {
             final Class5723 class4253 = new Class5723(class4252);
-            Class9463.method35173().method35188().method21097(class4253);
+            Client.method35173().method35188().method21097(class4253);
             if (class4253.method16962()) {
                 return;
             }
@@ -152,7 +153,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
     
     public void method11175(final IPacket<?> class4252, final GenericFutureListener<? extends Future<? super Void>> genericFutureListener) {
         final Class5721 class4253 = new Class5721(class4252);
-        Class9463.method35173().method35188().method21097(class4253);
+        Client.method35173().method35188().method21097(class4253);
         final IPacket method16990 = class4253.method16990();
         if (!class4253.method16962()) {
             if (!this.method11187()) {

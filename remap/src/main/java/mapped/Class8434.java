@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.util.Date;
 import java.util.HashMap;
 
@@ -19,10 +21,10 @@ public class Class8434
     }
     
     public void method28160() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
     }
     
-    @Class6753
+    @EventListener
     private void method28161(final Class5723 class5723) {
         if (class5723.method16998() instanceof Class4272) {
             final Class4272 class5724 = (Class4272)class5723.method16998();

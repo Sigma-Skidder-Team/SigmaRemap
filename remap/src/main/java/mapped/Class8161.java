@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.util.math.MathHelper;
 
 public class Class8161
@@ -37,12 +38,12 @@ public class Class8161
     }
     
     private void method26952(final long n, int n2, final int n3, final int n4) {
-        if (Class9463.method35173().method35193().method32154() == null) {
+        if (Client.method35173().method35193().method32154() == null) {
             if (this.field33604.field4700 == null) {
                 if (n3 != 1 && n3 != 2) {
                     if (n3 == 0) {
                         final Class5715 class5715 = new Class5715(n2);
-                        Class9463.method35173().method35188().method21097(class5715);
+                        Client.method35173().method35188().method21097(class5715);
                         if (class5715.method16962()) {
                             return;
                         }
@@ -53,7 +54,7 @@ public class Class8161
                         Class8004.method26199(n2);
                     }
                     final Class5752 class5716 = new Class5752(n2, n3 == 2, null);
-                    Class9463.method35173().method35188().method21097(class5716);
+                    Client.method35173().method35188().method21097(class5716);
                     if (class5716.method16962()) {
                         return;
                     }
@@ -140,16 +141,16 @@ public class Class8161
             }
             return;
         }
-        Class9463.method35173().method35193().method32130(n2, n3);
+        Client.method35173().method35193().method32130(n2, n3);
     }
     
     private void method26953(final long n, final double n2, final double d) {
-        if (Class9463.method35173().method35193().method32154() != null) {
-            Class9463.method35173().method35193().method32129(n2, d);
+        if (Client.method35173().method35193().method32154() != null) {
+            Client.method35173().method35193().method32129(n2, d);
             return;
         }
         final Class5720 class5720 = new Class5720(d);
-        Class9463.method35173().method35188().method21097(class5720);
+        Client.method35173().method35188().method21097(class5720);
         if (!class5720.method16962()) {
             if (n == Minecraft.method5277().method5332().method7690()) {
                 final double d2 = (this.field33604.gameSettings.field23423 ? Math.signum(d) : d) * this.field33604.gameSettings.field23411;

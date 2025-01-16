@@ -5,6 +5,8 @@
 package mapped;
 
 import java.awt.Rectangle;
+
+import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 
@@ -120,7 +122,7 @@ public class Class4926 extends Class4800
             }
         }
         if (this.field21079) {
-            final String field32930 = Class9463.method35173().method35201().method19347().field32930;
+            final String field32930 = Client.method35173().method35201().method19347().field32930;
             final String s = "Welcome back";
             final int n3 = 100;
             final int n4 = (this.field20480 - (n3 + Math.max(Class9400.field40325.method23505(s), Class9400.field40319.method23505(field32930)) + 10 * 10)) / 2;

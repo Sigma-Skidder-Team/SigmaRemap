@@ -5,6 +5,8 @@
 package mapped;
 
 import java.util.Iterator;
+
+import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,7 +43,7 @@ public class Class4934 extends Class4800
         this.field21143 = 0.65f;
         this.field21144 = 1.0f - this.field21143;
         this.field21145 = 30;
-        this.field21148 = Class9463.method35173().method35198();
+        this.field21148 = Client.method35173().method35198();
         this.field21152 = Class225.field793;
         this.field21153 = "";
         this.method14311(this.field21154 = false);
@@ -151,7 +153,7 @@ public class Class4934 extends Class4800
                 class7972.method14761(true);
             }
         });
-        if (Class9463.method35173().method35198().method25470(class7971)) {
+        if (Client.method35173().method35198().method25470(class7971)) {
             this.field21146.method14512(class7972.field21031);
             this.field21147.method14455(class7972.field21031);
             class7972.method14762(true, true);
@@ -163,12 +165,12 @@ public class Class4934 extends Class4800
         new Thread(() -> {
             if (!this.field21148.method25463(class4918.field21031)) {
                 class4918.method14768(114);
-                Class9463.method35173().method35196().method32830("error");
+                Client.method35173().method35196().method32830("error");
             }
             else {
                 this.method14819();
                 class4918.method14767(true);
-                Class9463.method35173().method35196().method32830("connect");
+                Client.method35173().method35196().method32830("connect");
                 this.method14823(false);
             }
             class4918.method14769(false);

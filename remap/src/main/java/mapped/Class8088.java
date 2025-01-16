@@ -4,6 +4,9 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.impl.movement.BlockFly;
+import com.mentalfrostbyte.jello.mods.impl.movement.Fly;
 import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
@@ -30,15 +33,15 @@ public class Class8088
     }
     
     public void method26554() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
     }
     
     public void method26555() {
         this.field33314.clear();
         this.field33315 = -999.0f;
         this.field33316 = -999.0f;
-        Class9463.method35173().method35189().method21551(Class3260.class).method9907(false);
-        Class9463.method35173().method35189().method21551(Class3259.class).method9907(false);
+        Client.method35173().method35189().method21551(BlockFly.class).method9907(false);
+        Client.method35173().method35189().method21551(Fly.class).method9907(false);
     }
     
     public void method26556(final List<Class8733> field33314) {
@@ -71,7 +74,7 @@ public class Class8088
         return -999.0f;
     }
     
-    @Class6753
+    @EventListener
     private void method26562(final Class5742 class5742) {
         if (!this.method26560()) {
             return;
@@ -158,16 +161,16 @@ public class Class8088
             }
         }
         this.field33313.player.rotationYaw = field33316;
-        if (b4 && !this.field33313.player.onGround && !Class9463.method35173().method35189().method21551(Class3259.class).method9906()) {
+        if (b4 && !this.field33313.player.onGround && !Client.method35173().method35189().method21551(Fly.class).method9906()) {
             Class6430.method19154(0.0);
             Class6430.method19156(0.0);
             return;
         }
-        if (Class9463.method35173().method35189().method21551(Class3259.class).method9906() && !Class6430.method19160(this.field33313.player, 5.0f)) {
+        if (Client.method35173().method35189().method21551(Fly.class).method9906() && !Class6430.method19160(this.field33313.player, 5.0f)) {
             b4 = true;
         }
-        Class9463.method35173().method35189().method21551(Class3260.class).method9907(b3);
-        Class9463.method35173().method35189().method21551(Class3259.class).method9907(b4);
+        Client.method35173().method35189().method21551(BlockFly.class).method9907(b3);
+        Client.method35173().method35189().method21551(Fly.class).method9907(b4);
         if (b && equals) {
             Class6430.method19154(0.0);
             Class6430.method19156(0.0);
@@ -205,7 +208,7 @@ public class Class8088
         return false;
     }
     
-    @Class6753
+    @EventListener
     private void method26564(final Class5744 class5744) {
         if (!class5744.method17046()) {
             return;
@@ -249,7 +252,7 @@ public class Class8088
                 final float[] method1131 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
                 class5744.method17043(method1131[0]);
                 class5744.method17041(method1131[1]);
-                Class9463.method35173().method35188().method21097(new Class5752(0, false, this.field33317));
+                Client.method35173().method35188().method21097(new Class5752(0, false, this.field33317));
             }
             if (class5745.field36691 != Class2049.field11679) {
                 this.field33316 = class5744.method17040();
@@ -258,7 +261,7 @@ public class Class8088
         }
     }
     
-    @Class6753
+    @EventListener
     public void method26565(final Class5738 class5738) {
         if (this.method26560() && this.field33313.player.onGround) {
             if (this.field33314.get(this.field33314.size() - 1).field36691 == Class2049.field11679) {
@@ -274,7 +277,7 @@ public class Class8088
         return this.field33314.get(this.field33314.size() - 2).field36691;
     }
     
-    @Class6753
+    @EventListener
     public void method26567(final Class5739 class5739) {
         if (!this.method26560()) {
             return;

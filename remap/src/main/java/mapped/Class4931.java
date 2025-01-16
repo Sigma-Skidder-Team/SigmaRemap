@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import org.lwjgl.glfw.GLFW;
 
 public class Class4931 extends Class4800
@@ -18,7 +19,7 @@ public class Class4931 extends Class4800
     
     public Class4931() {
         super("Alt Manager");
-        this.field21120 = Class9463.method35173().method35198();
+        this.field21120 = Client.method35173().method35198();
         this.field21121 = "§7Idle...";
         this.method14311(false);
         final int n = 400;
@@ -47,7 +48,7 @@ public class Class4931 extends Class4800
                 }
             }).start();
         });
-        this.field21118.method14260((class4803, n) -> Class9463.method35173().method35193().method32156(new Class4936()));
+        this.field21118.method14260((class4803, n) -> Client.method35173().method35193().method32156(new Class4936()));
         this.field21119.method14260((class4803, n) -> {
             String glfwGetClipboardString = "";
             try {
@@ -78,7 +79,7 @@ public class Class4931 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class9463.method35173().method35193().method32156(new Class4936());
+            Client.method35173().method35193().method32156(new Class4936());
         }
     }
 }

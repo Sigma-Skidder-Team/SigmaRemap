@@ -4,7 +4,9 @@
 
 package mapped;
 
-import java.util.Iterator;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Category;
+import com.mentalfrostbyte.jello.mods.Module;
 import org.json.JSONException;
 
 public class Class8241
@@ -60,10 +62,10 @@ public class Class8241
                     method26640 = Class8105.method26636(method26639, "name", null);
                 }
                 catch (final Class2381 class2382) {
-                    Class9463.method35173().method35187().method20241("Invalid name in mod list config");
+                    Client.method35173().method35187().method20241("Invalid name in mod list config");
                 }
-                for (final Class3167 class2383 : Class9463.method35173().method35189().method21553().values()) {
-                    if (class2383.method9901().equals(method26640) && class2383.method9903() != Class8013.field32991 && class2383.method9903() != Class8013.field32984) {
+                for (final Module class2383 : Client.method35173().method35189().method21553().values()) {
+                    if (class2383.getName().equals(method26640) && class2383.getCategory2() != Category.GUI && class2383.getCategory2() != Category.RENDER) {
                         method26639.method13301("enabled", "false");
                     }
                 }
@@ -71,7 +73,7 @@ public class Class8241
         }
     }
     
-    public void method27293(final Class4405 class4405, final Class3167 class4406) {
+    public void method27293(final Class4405 class4405, final Module class4406) {
         Class88 method26638 = null;
         try {
             method26638 = Class8105.method26638(this.field33838, "mods");
@@ -86,10 +88,10 @@ public class Class8241
                     method26640 = Class8105.method26636(method26639, "name", null);
                 }
                 catch (final Class2381 class4408) {
-                    Class9463.method35173().method35187().method20241("Invalid name in mod list config");
+                    Client.method35173().method35187().method20241("Invalid name in mod list config");
                 }
-                if (class4406.method9901().equals(method26640)) {
-                    if (class4406.method9903() != Class8013.field32991 && class4406.method9903() != Class8013.field32984) {
+                if (class4406.getName().equals(method26640)) {
+                    if (class4406.getCategory2() != Category.GUI && class4406.getCategory2() != Category.RENDER) {
                         method26638.method493(i, class4405);
                     }
                     b = true;
@@ -101,7 +103,7 @@ public class Class8241
         }
     }
     
-    public Class4405 method27294(final Class3167 class3167) {
+    public Class4405 method27294(final Module class3167) {
         Class88 method26638 = null;
         try {
             method26638 = Class8105.method26638(this.field33838, "mods");
@@ -115,9 +117,9 @@ public class Class8241
                     method26640 = Class8105.method26636(method26639, "name", null);
                 }
                 catch (final Class2381 class3169) {
-                    Class9463.method35173().method35187().method20241("Invalid name in mod list config");
+                    Client.method35173().method35187().method20241("Invalid name in mod list config");
                 }
-                if (class3167.method9901().equals(method26640)) {
+                if (class3167.getName().equals(method26640)) {
                     return method26639;
                 }
             }

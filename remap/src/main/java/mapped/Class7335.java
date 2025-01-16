@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -234,15 +235,15 @@ public class Class7335
     
     public void method22503(final long n, final int i, final int j, final int k, final int l) {
         if (n == this.field28331.method5332().method7690()) {
-            if (Class9463.method35173().method35193().method32154() != null) {
-                Class9463.method35173().method35193().method32127(i, k);
+            if (Client.method35173().method35193().method32154() != null) {
+                Client.method35173().method35193().method32127(i, k);
                 return;
             }
             if (this.field28331.field4700 != null) {
                 if (this.field28331.field4700 instanceof Class535) {
                     if (i == 258) {
                         final Class5752 class5752 = new Class5752(i, k == 2, null);
-                        Class9463.method35173().method35188().method21097(class5752);
+                        Client.method35173().method35188().method21097(class5752);
                         if (class5752.method16962()) {
                             return;
                         }
@@ -257,7 +258,7 @@ public class Class7335
             else {
                 Class8004.method26199(i);
                 final Class5752 class5753 = new Class5752(i, k == 2, null);
-                Class9463.method35173().method35188().method21097(class5753);
+                Client.method35173().method35188().method21097(class5753);
                 if (class5753.method16962()) {
                     return;
                 }

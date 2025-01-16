@@ -7,6 +7,8 @@ package mapped;
 import java.awt.geom.AffineTransform;
 import javax.imageio.ImageIO;
 import java.io.ByteArrayInputStream;
+
+import com.mentalfrostbyte.Client;
 import org.apache.commons.codec.binary.Base64;
 import java.util.Date;
 import org.lwjgl.opengl.GL11;
@@ -36,10 +38,10 @@ public class Class4916 extends Class4825
     public void finalize() throws Throwable {
         try {
             if (this.field21028 != null) {
-                Class9463.method35173().method35182(this.field21028);
+                Client.method35173().method35182(this.field21028);
             }
             if (this.field21027 != null) {
-                Class9463.method35173().method35182(this.field21027);
+                Client.method35173().method35182(this.field21027);
             }
         }
         finally {

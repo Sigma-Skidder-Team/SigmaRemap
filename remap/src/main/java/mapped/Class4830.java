@@ -4,7 +4,10 @@
 
 package mapped;
 
-import java.util.Iterator;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Module;
+import com.mentalfrostbyte.jello.mods.PremiumModule;
+
 import java.io.IOException;
 
 public class Class4830 extends Class4825
@@ -48,12 +51,12 @@ public class Class4830 extends Class4825
             if (this.field20665.method14306() && n == 257) {
                 this.field20665.method14297(false);
                 this.field20665.method14307(false);
-                if (Class9463.method35173().method35189().method21556().method32705(this.field20665.method14314())) {
+                if (Client.method35173().method35189().method21556().method32705(this.field20665.method14314())) {
                     return;
                 }
                 field20669.field33839 = this.field20665.method14314();
                 try {
-                    Class9463.method35173().method35189().method21556().method32706();
+                    Client.method35173().method35189().method21556().method32706();
                 }
                 catch (final IOException ex) {}
             }
@@ -80,14 +83,14 @@ public class Class4830 extends Class4825
             if (n != 1) {
                 this.field20662.method35855(Class2186.field12965);
                 if (this.field20662.method35858() == 0.0f) {
-                    Class9463.method35173().method35189().method21556().method32708(this.field20664);
-                    Class9463.method35173().method35196().method32830("switch");
+                    Client.method35173().method35189().method21556().method32708(this.field20664);
+                    Client.method35173().method35196().method32830("switch");
                     this.method14267().method14267().method14267().method14225(() -> class4805.method14640());
-                    for (final Class3167 class4804 : Class9463.method35173().method35189().method21553().values()) {
-                        if (!(class4804 instanceof Class3355)) {
+                    for (final Module class4804 : Client.method35173().method35189().method21553().values()) {
+                        if (!(class4804 instanceof PremiumModule)) {
                             continue;
                         }
-                        if (Class9463.method35173().method35201().method19352()) {
+                        if (Client.method35173().method35201().method19352()) {
                             continue;
                         }
                         class4804.method9908(false);
@@ -107,7 +110,7 @@ public class Class4830 extends Class4825
             this.field20665.method14307(false);
             this.field20664.field33839 = this.field20665.method14314();
             try {
-                Class9463.method35173().method35189().method21556().method32706();
+                Client.method35173().method35189().method21556().method32706();
             }
             catch (final IOException ex) {}
         }
@@ -124,7 +127,7 @@ public class Class4830 extends Class4825
             if (!this.field20669) {
                 this.field20669 = true;
                 final Class4889 class4889 = (Class4889)this.method14267().method14267().method14267();
-                Class9463.method35173().method35189().method21556().method32701(this.field20664);
+                Client.method35173().method35189().method21556().method32701(this.field20664);
                 class4889.method14225(() -> class4890.method14640());
             }
         }
@@ -143,7 +146,7 @@ public class Class4830 extends Class4825
             Class8154.method26889(Class9400.field40318, this.field20478 + 20 - n2 * this.field20480, (float)(this.field20479 + 18), this.field20664.field33839, Class6430.method19118(Class265.field1273.field1292, 0.9f * n));
         }
         this.field20665.method14293(Math.round(-n2 * this.field20480));
-        if (Class9463.method35173().method35189().method21556().method32707() == this.field20664) {
+        if (Client.method35173().method35189().method21556().method32707() == this.field20664) {
             Class8154.method26899(this.method14272() + this.method14276() - 35 - n2 * this.field20480, (float)(this.method14274() + 27), 17.0f, 13.0f, Class7853.field32198, Class6430.method19118(Class265.field1278.field1292, (1.0f - this.field20662.method35858()) * n));
         }
         super.method14205(n);

@@ -6,19 +6,18 @@ package mapped;
 
 import java.util.regex.Pattern;
 import java.nio.charset.Charset;
+
+import com.mentalfrostbyte.Client;
 import org.apache.commons.codec.binary.Base64;
-import java.awt.image.RenderedImage;
+
 import java.io.OutputStream;
 import org.apache.commons.codec.binary.Base64OutputStream;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import java.net.URL;
 import java.awt.Graphics2D;
-import java.awt.image.ImageObserver;
-import java.awt.Image;
 import java.awt.Rectangle;
 import java.util.Iterator;
 import java.io.IOException;
-import java.io.InputStream;
 import javax.imageio.ImageIO;
 import java.io.ByteArrayInputStream;
 import javax.xml.bind.DatatypeConverter;
@@ -214,7 +213,7 @@ public class Class7971
     public void finalize() throws Throwable {
         try {
             if (this.field32797 != null) {
-                Class9463.method35173().method35182(this.field32797);
+                Client.method35173().method35182(this.field32797);
             }
         }
         finally {

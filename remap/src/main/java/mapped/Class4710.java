@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Pose;
@@ -99,7 +100,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
                 }
             }
             final Class5729 class7354 = new Class5729(method35706, method35707, n3, MathHelper.method35700(f, field20303.prevRotationPitch, field20303.rotationPitch), f, field20303);
-            Class9463.method35173().method35188().method21097(class7354);
+            Client.method35173().method35188().method21097(class7354);
             if (class7354.method16962()) {
                 class7351.method22568();
                 return;
@@ -148,7 +149,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
             final boolean method35715 = this.method13983(field20303);
             final boolean b = !method35715 && !field20303.method1824(Minecraft.method5277().player);
             class7354.method17005(Class1953.field10633);
-            Class9463.method35173().method35188().method21097(class7354);
+            Client.method35173().method35188().method21097(class7354);
             Class6332 class7355;
             if (!class7354.method17019() && field20303 instanceof Class755) {
                 class7355 = this.method13981((T)new Class755(Minecraft.method5277().world, new GameProfile(this.field20313, "Steve")), method35715, b);
@@ -213,7 +214,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
                 this.field20303 = null;
             }
             class7354.method17005(Class1953.field10634);
-            Class9463.method35173().method35188().method21097(class7354);
+            Client.method35173().method35188().method21097(class7354);
             class7351.method22568();
             super.method13951(field20303, n, f, class7351, class7352, n2);
             if (Class9570.field41415.method22619()) {
@@ -322,7 +323,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
     
     public boolean method13991(final T t) {
         final Class5749 class5749 = new Class5749(t);
-        Class9463.method35173().method35188().method21097(class5749);
+        Client.method35173().method35188().method21097(class5749);
         if (class5749.method16962()) {
             return false;
         }

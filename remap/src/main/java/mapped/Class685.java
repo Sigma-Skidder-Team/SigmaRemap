@@ -14,6 +14,7 @@ import java.util.Collection;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -257,12 +258,12 @@ public class Class685 extends AbstractGui
                 final Class9290 class9290 = (method3816 == null) ? method3815.method19644(1) : method3816;
                 if (class9290 != null) {
                     final Class5726 class9291 = new Class5726(true);
-                    Class9463.method35173().method35188().method21097(class9291);
+                    Client.method35173().method35188().method21097(class9291);
                     if (class9291.method16962()) {
                         return;
                     }
                     this.method3789(class9290);
-                    Class9463.method35173().method35188().method21097(new Class5726(false));
+                    Client.method35173().method35188().method21097(new Class5726(false));
                 }
                 RenderSystem.enableBlend();
                 RenderSystem.defaultBlendFunc();

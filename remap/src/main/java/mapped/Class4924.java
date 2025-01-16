@@ -5,13 +5,16 @@
 package mapped;
 
 import java.util.Iterator;
+
+import com.mentalfrostbyte.jello.mods.Category;
+import com.mentalfrostbyte.jello.mods.Module;
 import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Class4924 extends Class4815
 {
-    public final Class8013 field21061;
+    public final Category field21061;
     public Class4821 field21062;
     public float field21063;
     public static final int field21064 = 60;
@@ -20,7 +23,7 @@ public class Class4924 extends Class4815
     private int field21067;
     private final List<Class5098> field21068;
     
-    public Class4924(final Class4803 class4803, final String s, final int n, final int n2, final Class8013 field21061) {
+    public Class4924(final Class4803 class4803, final String s, final int n, final int n2, final Category field21061) {
         super(class4803, s, n, n2, 200, 350, true);
         this.field21068 = new ArrayList<Class5098>();
         this.method14277(200);
@@ -96,7 +99,7 @@ public class Class4924 extends Class4815
         else {
             this.field21067 = 20;
         }
-        Class8154.method26890(Class9400.field40314, (float)(this.method14272() + 20), (float)(this.method14274() + 30), this.method14774().method26228(), Class6430.method19118(Class265.field1273.field1292, n * 0.5f * this.field21063), Class2056.field11734, Class2056.field11738);
+        Class8154.method26890(Class9400.field40314, (float)(this.method14272() + 20), (float)(this.method14274() + 30), this.method14774().getName(), Class6430.method19118(Class265.field1273.field1292, n * 0.5f * this.field21063), Class2056.field11734, Class2056.field11738);
         GL11.glPushMatrix();
         super.method14205(n * n);
         GL11.glPopMatrix();
@@ -105,7 +108,7 @@ public class Class4924 extends Class4815
         }
     }
     
-    public Class8013 method14774() {
+    public Category method14774() {
         return this.field21061;
     }
     
@@ -113,7 +116,7 @@ public class Class4924 extends Class4815
         this.field21068.add(class5098);
     }
     
-    public final void method14776(final Class3167 class3167) {
+    public final void method14776(final Module class3167) {
         final Iterator<Class5098> iterator = this.field21068.iterator();
         while (iterator.hasNext()) {
             iterator.next().method15976(class3167);

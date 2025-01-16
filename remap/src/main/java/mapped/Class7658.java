@@ -14,6 +14,8 @@ import java.util.Map;
 import java.util.Iterator;
 import java.io.IOException;
 import java.io.File;
+
+import com.mentalfrostbyte.Client;
 import org.lwjgl.BufferUtils;
 import java.util.ArrayList;
 import java.nio.ByteBuffer;
@@ -51,7 +53,7 @@ public class Class7658
     }
     
     public void method24261() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
         final int n = -7687425;
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
@@ -91,7 +93,7 @@ public class Class7658
             Class9532.method35585(class89, file);
         }
         catch (final Class2381 | IOException ex) {
-            Class9463.method35173().method35187().method20242(((Throwable)ex).getMessage());
+            Client.method35173().method35187().method20242(((Throwable)ex).getMessage());
         }
     }
     
@@ -117,7 +119,7 @@ public class Class7658
         this.field30399.remove(class8124);
     }
     
-    @Class6753
+    @EventListener
     public void method24267(final Class5732 class5732) {
         try {
             this.method24264();
@@ -134,7 +136,7 @@ public class Class7658
         this.field30399.clear();
     }
     
-    @Class6753
+    @EventListener
     private void method24268(final Class5743 class5743) {
         if (this.field30396.world == null) {
             return;

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.util.text.ITextComponent;
 
 import java.lang.reflect.InvocationTargetException;
@@ -14,13 +15,13 @@ public class Class8004
     private static final Minecraft field32966;
     
     public static void method26199(final int n) {
-        if (Class9463.method35173().method35209() == Class2209.field13466) {
+        if (Client.method35173().method35209() == Class2209.field13466) {
             return;
         }
         if (n == -1) {
             return;
         }
-        for (final Class8879 class8879 : Class9463.method35173().method35189().method21557().method21964(n)) {
+        for (final Class8879 class8879 : Client.method35173().method35189().method21557().method21964(n)) {
             if (class8879 != null && class8879.method31228()) {
                 switch (Class9204.field38998[class8879.method31231().ordinal()]) {
                     case 1: {
@@ -30,7 +31,7 @@ public class Class8004
                     case 2: {
                         try {
                             final Screen class8880 = (Screen)class8879.method31233().getDeclaredConstructor(ITextComponent.class).newInstance(new StringTextComponent(Class9000.field37983.get(class8879.method31233())));
-                            if (!Class9463.method35173().method35193().method32158(class8880)) {
+                            if (!Client.method35173().method35193().method32158(class8880)) {
                                 continue;
                             }
                             Class8004.field32966.displayGuiScreen(class8880);
@@ -46,7 +47,7 @@ public class Class8004
     }
     
     public static void method26200(final int n) {
-        Class9463.method35173().method35188().method21097(new Class5715(n));
+        Client.method35173().method35188().method21097(new Class5715(n));
     }
     
     static {

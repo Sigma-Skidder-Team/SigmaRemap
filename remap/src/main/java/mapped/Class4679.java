@@ -5,6 +5,8 @@
 package mapped;
 
 import java.io.IOException;
+
+import com.mentalfrostbyte.Client;
 import com.mojang.authlib.exceptions.AuthenticationException;
 
 public class Class4679 implements Class4659
@@ -32,6 +34,6 @@ public class Class4679 implements Class4659
         catch (final Class2381 | AuthenticationException | IOException ex) {
             ((Throwable)ex).printStackTrace();
         }
-        Class9463.method35173().method35197().method25776(new Class6224("Jello connect", "Connected!", Class7853.field32193));
+        Client.method35173().method35197().method25776(new Class6224("Jello connect", "Connected!", Class7853.field32193));
     }
 }

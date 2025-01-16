@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.impl.movement.TargetStrafe;
+
 public class Class7105
 {
     private static String[] field27720;
@@ -20,8 +22,8 @@ public class Class7105
     }
     
     public double[] method21822() {
-        final double n = Class3239.method10231().field4684.field2395 - this.field27721;
-        final double n2 = Class3239.method10232().field4684.field2397 - this.field27723;
+        final double n = TargetStrafe.method10231().field4684.field2395 - this.field27721;
+        final double n2 = TargetStrafe.method10232().field4684.field2397 - this.field27723;
         return new double[] { this.field27721 + this.field27724 * n / Math.sqrt(n * n + n2 * n2), this.field27722, this.field27723 + this.field27724 * n2 / Math.sqrt(n * n + n2 * n2) };
     }
 }

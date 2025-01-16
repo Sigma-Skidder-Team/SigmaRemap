@@ -4,7 +4,8 @@
 
 package mapped;
 
-import java.lang.annotation.Annotation;
+import com.mentalfrostbyte.Client;
+
 import java.lang.reflect.Field;
 
 @Deprecated
@@ -74,7 +75,7 @@ public class Class7965 extends Class7966
             }
         }
         catch (final Exception ex) {
-            Class9463.method35173().method35187().method20242(array[0] + "is an invalid input for variable " + this.field32734.getClass().getName() + "::" + this.field32733.getName());
+            Client.method35173().method35187().method20242(array[0] + "is an invalid input for variable " + this.field32734.getClass().getName() + "::" + this.field32733.getName());
             ex.printStackTrace();
         }
     }

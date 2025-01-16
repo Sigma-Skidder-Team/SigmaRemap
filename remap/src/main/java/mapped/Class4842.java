@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4842 extends Class4841
 {
     private static String[] field20591;
@@ -12,7 +14,7 @@ public class Class4842 extends Class4841
     
     public Class4842(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4) {
         super(class4803, s, n, n2, n3, n4, false);
-        this.field20748 = Class9463.method35173().method35199();
+        this.field20748 = Client.method35173().method35199();
         this.field20749 = -1.0f;
         this.method14256((class4803, n) -> this.field20749 = Math.min((int)this.field20748.method24186() / (float)this.field20748.method24192(), 1.0f));
         this.method14258((class4803, n) -> {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.io.IOException;
 import java.awt.Color;
 import javax.imageio.ImageIO;
@@ -13,7 +15,7 @@ public class Class9072
 {
     public static Class7776 method32684(final String name, final BufferedImage bufferedImage) {
         try {
-            final BufferedImage read = ImageIO.read(Class9463.method35173().getClass().getClassLoader().getResourceAsStream(name));
+            final BufferedImage read = ImageIO.read(Client.method35173().getClass().getClassLoader().getResourceAsStream(name));
             final BufferedImage bufferedImage2 = new BufferedImage(bufferedImage.getWidth(), bufferedImage.getHeight(), read.getType());
             for (int i = 0; i < read.getHeight(); ++i) {
                 for (int j = 0; j < read.getWidth(); ++j) {

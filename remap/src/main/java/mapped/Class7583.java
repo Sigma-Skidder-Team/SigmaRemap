@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.CubeCoordinateIterator;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -70,7 +71,7 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
             VoxelShape class7702 = method34791.getCollisionShape(this.field30087, this.field30084, this.field30085);
             if (this.field30082 instanceof PlayerEntity) {
                 final Class5753 class7703 = new Class5753(this.field30084, class7702);
-                Class9463.method35173().method35188().method21097(class7703);
+                Client.method35173().method35188().method21097(class7703);
                 class7702 = class7703.method17065();
                 if (class7703.method16962()) {
                     return false;

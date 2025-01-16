@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.Random;
@@ -113,7 +114,7 @@ public class Class4929 extends Class4800
             final float n7 = 0.5f - this.field21089 / (float) Minecraft.method5277().field4632.method7694() * -1.0f;
             final float n8 = 1.0f - this.field21095.method35858();
             final float n9 = 1.0f - this.field21096.method35858();
-            if (Class9463.method35173().method35185()) {}
+            if (Client.method35173().method35185()) {}
             final float n10 = this.method14276() / 1920.0f;
             final int n11 = (int)(600.0f * n10);
             final int n12 = (int)(450.0f * n10);
@@ -150,9 +151,9 @@ public class Class4929 extends Class4800
                 GL11.glPopMatrix();
             }
             if (n9 > 0.0f) {
-                if (Class9463.method35173().method35185()) {
+                if (Client.method35173().method35185()) {
                     Class568.method3314(n8, 1.0f);
-                    Class9463.method35173().method35186(false);
+                    Client.method35173().method35186(false);
                 }
             }
             Class4929.field21099 *= 0.7f;
@@ -237,7 +238,7 @@ public class Class4929 extends Class4800
                         ex.printStackTrace();
                     }
                 }).start());
-                this.field21101.method14516(class4841 -> Class9463.method35173().method35201().method19348());
+                this.field21101.method14516(class4841 -> Client.method35173().method35201().method19348());
                 this.field21101.method14744(true);
             });
         }

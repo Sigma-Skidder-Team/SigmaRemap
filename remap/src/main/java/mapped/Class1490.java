@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class1490 implements Runnable
 {
     private static String[] field8285;
@@ -16,7 +18,7 @@ public class Class1490 implements Runnable
     @Override
     public void run() {
         while (!Thread.interrupted()) {
-            if (Class9463.method35173().method35209() == Class2209.field13463) {
+            if (Client.method35173().method35209() == Class2209.field13463) {
                 try {
                     Thread.sleep(200L);
                     continue;

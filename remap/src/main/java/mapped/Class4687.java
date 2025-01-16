@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4687 implements Class4659
 {
     public final /* synthetic */ Class9198 field20237;
@@ -15,6 +17,6 @@ public class Class4687 implements Class4659
     @Override
     public void method13945(final Object... array) {
         System.out.println("disconnect");
-        Class9463.method35173().method35197().method25776(new Class6224("Jello connect", "Connexion Failed. Try relogging.", Class7853.field32193));
+        Client.method35173().method35197().method25776(new Class6224("Jello connect", "Connexion Failed. Try relogging.", Class7853.field32193));
     }
 }

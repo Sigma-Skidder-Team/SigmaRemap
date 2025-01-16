@@ -7,6 +7,8 @@ package mapped;
 import java.awt.image.BufferedImage;
 import java.util.Iterator;
 import java.io.IOException;
+
+import com.mentalfrostbyte.Client;
 import org.lwjgl.opengl.GL11;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -58,7 +60,7 @@ public class Class4847 extends Class4841
     public void finalize() throws Throwable {
         try {
             if (this.field20771 != null) {
-                Class9463.method35173().method35182(this.field20771);
+                Client.method35173().method35182(this.field20771);
             }
         }
         finally {

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -211,7 +213,7 @@ public class Class4907 extends Class4841
                 this.field20989 = Class9399.method34928("blur", Class6804.method20830(0, 0, this.method14276(), this.method14278(), 5, 10, Class265.field1278.field1292, true));
             }
             catch (final IOException ex) {
-                Class9463.method35173().method35187().method20242(ex.getMessage());
+                Client.method35173().method35187().method20242(ex.getMessage());
             }
         }
         if (this.method14304() != b && !b) {
@@ -227,7 +229,7 @@ public class Class4907 extends Class4841
     public void finalize() throws Throwable {
         try {
             if (this.field20989 != null) {
-                Class9463.method35173().method35182(this.field20989);
+                Client.method35173().method35182(this.field20989);
             }
         }
         finally {

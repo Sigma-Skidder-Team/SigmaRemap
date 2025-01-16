@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
@@ -400,7 +401,7 @@ public class Class1660 implements AutoCloseable, Class1657
             }
             this.field9396.method1417();
             final Class5746 class7353 = new Class5746();
-            Class9463.method35173().method35188().method21097(class7353);
+            Client.method35173().method35188().method21097(class7353);
             if (this.field9380.gameSettings.field23465 == 0) {
                 if (!b4) {
                     if (!class7353.method16962()) {
@@ -463,7 +464,7 @@ public class Class1660 implements AutoCloseable, Class1657
             final MatrixStack class7351 = new MatrixStack();
             if (b && this.field9380.world != null && !Config.method29020()) {
                 this.field9380.method5327().startSection("level");
-                Class9463.method35173().method35188().method21097(new Class5741(n, n2));
+                Client.method35173().method35188().method21097(new Class5741(n, n2));
                 this.method5820(n, n2, class7351);
                 if (this.field9380.method5284() && this.field9394 < Util.method27837() - 1000L) {
                     this.field9394 = Util.method27837();
@@ -505,7 +506,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 if (!this.field9380.gameSettings.field23464 || this.field9380.field4700 != null) {
                     RenderSystem.method30118();
                     this.method5830(this.field9380.method5332().method7696(), this.field9380.method5332().method7697(), n);
-                    Class9463.method35173().method35181();
+                    Client.method35173().method35181();
                     this.field9380.field4647.method3779(n);
                     if (this.field9380.gameSettings.field23498 && !this.field9380.gameSettings.field23466) {
                         Config.method28988();
@@ -518,7 +519,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 this.field9380.method5327().endSection();
             }
             RenderSystem.method30059();
-            Class9463.method35173().method35183();
+            Client.method35173().method35183();
             RenderSystem.method30060();
             if (this.field9422 != (this.field9380.field4701 != null)) {
                 if (this.field9380.field4701 != null) {
@@ -541,7 +542,7 @@ public class Class1660 implements AutoCloseable, Class1657
                         throw new ReportedException(method5333);
                     }
                 }
-                if (this.field9380.field4700 != null && Class9463.method35173().method35193().method32154() == null) {
+                if (this.field9380.field4700 != null && Client.method35173().method35193().method32154() == null) {
                     try {
                         if (Class9570.field41284.method22605()) {
                             Class9570.method35811(Class9570.field41284, this.field9380.field4700, i, j, this.field9380.method5315());
@@ -732,7 +733,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 RenderSystem.method30056(256, Minecraft.field4623);
                 RenderSystem.method30059();
                 RenderSystem.method30067(class7351.getLast().getMatrix());
-                Class9463.method35173().method35184();
+                Client.method35173().method35184();
                 RenderSystem.method30060();
                 if (!method28955) {
                     this.method5812(class7351, field9411, n);

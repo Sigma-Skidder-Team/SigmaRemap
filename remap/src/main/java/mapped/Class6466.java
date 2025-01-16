@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import org.apache.commons.io.FileUtils;
 import java.nio.file.Files;
 import java.io.File;
@@ -49,7 +50,7 @@ public class Class6466
     }
     
     public void method19338() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
         this.field25697 = new Class9198(this);
     }
     
@@ -116,7 +117,7 @@ public class Class6466
                     this.field25687 = null;
                 }
                 else {
-                    Class9463.method35174().method20243("Logged in!");
+                    Client.method35174().method20243("Logged in!");
                 }
             }
             catch (final IOException ex) {}

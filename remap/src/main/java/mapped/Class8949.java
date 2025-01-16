@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -20,7 +21,7 @@ public class Class8949
     }
     
     public void method31750() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
     }
     
     public boolean method31751(final Entity class399) {
@@ -31,13 +32,13 @@ public class Class8949
         this.field37639.clear();
     }
     
-    @Class6753
+    @EventListener
     @Class6763
     private void method31753(final Class5732 class5732) {
         this.field37639.clear();
     }
     
-    @Class6753
+    @EventListener
     @Class6763
     private void method31754(final Class5743 class5743) {
         if (this.field37638 != null) {

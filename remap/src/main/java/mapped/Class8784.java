@@ -4,7 +4,9 @@
 
 package mapped;
 
-import java.util.Iterator;
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Module;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -53,7 +55,7 @@ public class Class8784
         final Class8241 class8242 = new Class8241(string1, class8241);
         class8242.method27292();
         final Class8241 class8243 = new Class8241("settings", this.method30569(string1).method13264("modConfig"));
-        for (final Class3167 class8244 : Class9463.method35173().method35189().method21553().values()) {
+        for (final Module class8244 : Client.method35173().method35189().method21553().values()) {
             final Class4405 method27294 = class8243.method27294(class8244);
             if (method27294 == null) {
                 continue;

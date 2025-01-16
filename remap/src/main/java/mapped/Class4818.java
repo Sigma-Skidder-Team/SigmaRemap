@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.util.math.Vec3i;
 
 import java.util.Collections;
@@ -40,7 +41,7 @@ public class Class4818 extends Class4817
             this.method14239(class353);
             class353.method14260((class4820, n) -> ((Class4843)class4818.method14267()).field20752.method14718(class353.field20764.getX(), class353.field20764.getZ()));
             class353.method14516(class4848 -> {
-                Class9463.method35173().method35200().method24266(new Class8124(class353.field20763, class353.field20764.getX(), class353.field20764.getZ(), class353.field20765));
+                Client.method35173().method35200().method24266(new Class8124(class353.field20763, class353.field20764.getX(), class353.field20764.getZ(), class353.field20765));
                 class4847.field20610.method14246(class353);
                 this.field20615.remove(class4848);
             });
@@ -90,12 +91,12 @@ public class Class4818 extends Class4817
             }
             if (!field20619.method14386()) {
                 if (this.field20617.method35857() == Class2186.field12964) {
-                    Class9463.method35173().method35200().method24262().clear();
+                    Client.method35173().method35200().method24262().clear();
                     for (final Class4846 class4847 : this.field20615) {
-                        Class9463.method35173().method35200().method24262().add(new Class8124(class4847.field20763, class4847.field20764.getX(), class4847.field20764.getZ(), class4847.field20765));
+                        Client.method35173().method35200().method24262().add(new Class8124(class4847.field20763, class4847.field20764.getX(), class4847.field20764.getZ(), class4847.field20765));
                     }
-                    Collections.reverse(Class9463.method35173().method35200().method24262());
-                    Class9463.method35173().method35200().method24264();
+                    Collections.reverse(Client.method35173().method35200().method24262());
+                    Client.method35173().method35200().method24264();
                 }
             }
             this.field20617.method35855(Class2186.field12965);

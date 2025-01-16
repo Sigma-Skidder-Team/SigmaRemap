@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.impl.gui.TabGUI;
+
 public class Class8221
 {
     private static String[] field33769;
@@ -26,7 +28,7 @@ public class Class8221
     }
     
     public int method27234() {
-        return Class3206.method10070(this.field33771);
+        return TabGUI.method10070(this.field33771);
     }
     
     public int method27235() {

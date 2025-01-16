@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.util.LinkedHashMap;
 import java.io.IOException;
 import java.util.Date;
@@ -52,7 +54,7 @@ public class Class4833 extends Class4825
         this.field20691 = 64;
         this.field20692 = 94;
         this.field20693 = "Music Player";
-        this.field20698 = Class9463.method35173().method35199();
+        this.field20698 = Client.method35173().method35199();
         this.field20715 = 0.0f;
         this.field20716 = 0.0f;
         this.field20717 = new Class9572(80, 150, Class2186.field12965);

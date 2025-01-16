@@ -4,7 +4,9 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.settings.Setting;
+
 public interface Class7655
 {
-    void method24257(final Class4997 p0);
+    void method24257(final Setting p0);
 }

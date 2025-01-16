@@ -7,6 +7,7 @@ package mapped;
 import java.util.Collections;
 import java.util.Iterator;
 import com.google.common.collect.Maps;
+import com.mentalfrostbyte.jello.mods.impl.render.FPSBooster;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
@@ -214,7 +215,7 @@ public class Class8551
     }
     
     public <E extends Entity> void method28706(final E e, final double n, final double n2, final double n3, final float f, final float f2, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n4) {
-        if (Class3375.field16048 && (e instanceof Class857 || e instanceof Class764 || e instanceof Class862)) {
+        if (FPSBooster.field16048 && (e instanceof Class857 || e instanceof Class764 || e instanceof Class862)) {
             return;
         }
         if (this.field35906 != null) {

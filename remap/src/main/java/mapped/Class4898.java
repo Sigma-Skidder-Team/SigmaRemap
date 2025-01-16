@@ -4,8 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
-import java.util.List;
+import com.mentalfrostbyte.Client;
 
 public class Class4898 extends Class4841
 {
@@ -35,8 +34,8 @@ public class Class4898 extends Class4841
                 class4890.method14260((class4890, n) -> {
                     this.method14705(true);
                     new Thread(() -> {
-                        Class9463.method35173();
-                        class4891.method14636(Class4898.field20952.method30570(Class9463.method35173().method35189().method21556().method32707(), s2));
+                        Client.method35173();
+                        class4891.method14636(Class4898.field20952.method30570(Client.method35173().method35189().method21556().method32707(), s2));
                         this.method14705(false);
                     }).start();
                 });

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4897 extends Class4841
 {
     public float field20943;
@@ -29,7 +31,7 @@ public class Class4897 extends Class4841
     
     @Override
     public void method14205(final float n) {
-        this.field20948 = Class9463.method35173().method35201().method19347();
+        this.field20948 = Client.method35173().method35201().method19347();
         String field32930 = "Log in";
         final Class7776 field32931 = Class7853.field32211;
         if (this.field20948 != null) {

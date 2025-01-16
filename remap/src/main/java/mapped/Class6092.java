@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.impl.render.CameraNoClip;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
@@ -84,7 +86,7 @@ public class Class6092
             if (method6987.getType() != RayTraceResult.Type.MISS) {
                 final double method6988 = method6987.getHitVec().distanceTo(this.field24708);
                 if (method6988 < n) {
-                    if (!Class9463.method35173().method35189().method21551(Class3193.class).method9906()) {
+                    if (!Client.method35173().method35189().method21551(CameraNoClip.class).method9906()) {
                         n = method6988;
                     }
                 }

@@ -4,8 +4,9 @@
 
 package mapped;
 
-import java.util.Iterator;
+import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.commands.CommandException;
+import com.mentalfrostbyte.jello.mods.Module;
 
 public class Class6695 extends Class6693
 {
@@ -19,18 +20,18 @@ public class Class6695 extends Class6693
         if (array.length != 1) {
             throw new Class2332();
         }
-        final Class3167 method20352 = this.method20352(array[0].method26314());
+        final Module method20352 = this.method20352(array[0].method26314());
         if (method20352 != null) {
             method20352.method9909(!method20352.method9906());
-            class6428.method19104(method20352.method9901() + " was " + (method20352.method9906() ? "enabled" : "disabled"));
+            class6428.method19104(method20352.getName() + " was " + (method20352.method9906() ? "enabled" : "disabled"));
             return;
         }
         throw new Class2332("Module \"" + array[0].method26314() + "\" not found");
     }
     
-    public Class3167 method20352(final String anotherString) {
-        for (final Class3167 class3167 : Class9463.method35173().method35189().method21553().values()) {
-            if (!class3167.method9901().replace(" ", "").equalsIgnoreCase(anotherString)) {
+    public Module method20352(final String anotherString) {
+        for (final Module class3167 : Client.method35173().method35189().method21553().values()) {
+            if (!class3167.getName().replace(" ", "").equalsIgnoreCase(anotherString)) {
                 continue;
             }
             return class3167;

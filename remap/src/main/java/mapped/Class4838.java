@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 import java.util.ArrayList;
 
 public class Class4838 extends Class4825
@@ -15,7 +17,7 @@ public class Class4838 extends Class4825
     
     public Class4838(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final String s2) {
         super(class4803, s, n, n2, n3, n4, Class6523.field25964, s2, false);
-        this.field20744 = Class9463.method35173().method35199();
+        this.field20744 = Client.method35173().method35199();
         this.method14239(this.field20741 = new Class4817(this, "albumView", 0, 0, n3, n4, Class6523.field25964, "View"));
         this.method14239(this.field20742 = new Class4831(this, "searchInput", 30, 14, n3 - 60, 70, Class4831.field20671, "", "Search..."));
         this.field20742.method14301(true);

@@ -7,6 +7,7 @@ package mapped;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import com.mentalfrostbyte.Client;
 import com.mojang.datafixers.util.Pair;
 
 import java.util.Map;
@@ -118,7 +119,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
 
     public int getLightValue() {
         final Class5719 class5719 = new Class5719(this);
-        Class9463.method35173().method35188().method21097(class5719);
+        Client.method35173().method35188().method21097(class5719);
         if (!class5719.method16987()) {
             return this.lightLevel;
         }

@@ -6,6 +6,7 @@ package net.minecraft.entity;
 
 import java.util.AbstractList;
 
+import com.mentalfrostbyte.Client;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.INBT;
@@ -1678,7 +1679,7 @@ public abstract class LivingEntity extends Entity
         final Vec3d method2725 = this.getMotion();
         final Class5722 class5722 = new Class5722(new Vec3d(method2725.x, method2724, method2725.z));
         if (this instanceof Class756) {
-            Class9463.method35173().method35188().method21097(class5722);
+            Client.method35173().method35188().method21097(class5722);
         }
         if (!class5722.method16962()) {
             this.method1936(class5722.method16994());

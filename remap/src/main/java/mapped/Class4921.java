@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4921 extends Class4825
 {
     private final Class4817 field21055;
@@ -66,7 +68,7 @@ public class Class4921 extends Class4825
         n *= (this.field20593 ? 0.75f : (this.field20491 ? 0.7f : 0.3f));
         int field20478 = this.field20478;
         int field20479 = this.field20480;
-        if (Class9463.method35173().method35209() != Class2209.field13464) {
+        if (Client.method35173().method35209() != Class2209.field13464) {
             final int n3 = 0;
             field20479 -= 7;
             field20478 += 7;

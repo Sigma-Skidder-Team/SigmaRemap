@@ -4,6 +4,10 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.impl.player.Blink;
+import com.mentalfrostbyte.jello.mods.impl.player.OldHitting;
+import com.mentalfrostbyte.jello.mods.impl.render.Freecam;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
 import net.minecraft.item.ItemStack;
@@ -36,11 +40,11 @@ public class Class8491
     }
     
     public void method28365() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
         new Class9367(null);
     }
     
-    @Class6753
+    @EventListener
     public void method28366(final Class5751 class5751) {
         if (Class9367.method34762() == Class7906.field32452.method25613()) {
             if (this.field34856.player.method2768() <= 1) {
@@ -49,7 +53,7 @@ public class Class8491
         }
     }
     
-    @Class6753
+    @EventListener
     public void method28367(final Class5752 class5752) {
         if (class5752.method17061() == this.field34856.gameSettings.field23442.field2161.method26047()) {
             if (Class9367.method34762() < Class7906.field32462.method25613()) {
@@ -68,14 +72,14 @@ public class Class8491
         }
     }
     
-    @Class6753
+    @EventListener
     @Class6763
     public void method28368(final Class5732 class5732) {
         Class8491.field34859 = 0;
         this.field34860.method23919();
     }
     
-    @Class6753
+    @EventListener
     @Class6763
     public void method28369(final Class5740 class5740) {
         if (this.field34856.player != null) {
@@ -87,7 +91,7 @@ public class Class8491
         }
     }
     
-    @Class6753
+    @EventListener
     @Class6763
     public void method28370(final Class5753 class5753) {
         if (this.field34856.world != null && this.field34856.player != null) {
@@ -108,7 +112,7 @@ public class Class8491
         }
     }
     
-    @Class6753
+    @EventListener
     @Class6763
     public void method28371(final Class5743 class5743) {
         if (!this.method28375()) {
@@ -151,7 +155,7 @@ public class Class8491
         }
     }
     
-    @Class6753
+    @EventListener
     public void method28372(final Class5721 class5721) {
         if (class5721.method16990() instanceof Class4321) {
             final int method12985 = ((Class4321)class5721.method16990()).method12985();
@@ -168,10 +172,10 @@ public class Class8491
         }
     }
     
-    @Class6753
+    @EventListener
     @Class6763
     public void method28373(final Class5723 class5723) {
-        if (!Class9463.method35173().method35189().method21551(Class3296.class).method9906() && Class9367.method34762() != Class7906.field32452.method25613()) {
+        if (!Client.method35173().method35189().method21551(OldHitting.class).method9906() && Class9367.method34762() != Class7906.field32452.method25613()) {
             if (!Class8491.field34858.isEmpty()) {
                 Class8491.field34858.clear();
             }
@@ -180,7 +184,7 @@ public class Class8491
             final Class4402 class5724 = (Class4402)class5723.method16998();
             if (class5724.method13249() == Class2215.field13601) {
                 if (class5724.method13247() != null) {
-                    if (Class9463.method35173().method35189().method21551(Class3296.class).method9906() || Class9367.method34762() == Class7906.field32452.method25613()) {
+                    if (Client.method35173().method35189().method21551(OldHitting.class).method9906() || Class9367.method34762() == Class7906.field32452.method25613()) {
                         if (!(class5724.method13247().getItem() instanceof Class4100)) {
                             final Entity method6741 = this.field34856.world.getEntityByID(class5724.method13248());
                             if (Class8491.field34858.contains(method6741)) {
@@ -260,7 +264,7 @@ public class Class8491
         }
     }
     
-    @Class6753
+    @EventListener
     @Class6763
     public void method28374(final Class5717 class5717) {
         if (Class9367.method34762() < Class7906.field32463.method25613() || Class6430.method19146()) {
@@ -342,12 +346,12 @@ public class Class8491
         return Class9367.method34762() <= Class7906.field32462.method25613();
     }
     
-    @Class6753
+    @EventListener
     @Class6763
     public void method28376(final Class5729 class5729) {
         if (class5729.method17016() != this.field34856.player) {
-            if (class5729.method17016() != Class3317.field15901) {
-                if (class5729.method17016() != Class3276.field15771) {
+            if (class5729.method17016() != Freecam.field15901) {
+                if (class5729.method17016() != Blink.field15771) {
                     return;
                 }
             }

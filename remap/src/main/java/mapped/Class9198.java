@@ -5,6 +5,8 @@
 package mapped;
 
 import java.io.IOException;
+
+import com.mentalfrostbyte.Client;
 import com.mojang.authlib.exceptions.AuthenticationException;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import java.net.Proxy;
@@ -41,14 +43,14 @@ public class Class9198
         this.field38982 = Minecraft.method5277();
         this.field38985 = new ArrayList<UUID>();
         this.field38986 = new HashMap<UUID, Class6538>();
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
         this.field38987 = (HttpClient)HttpClients.createDefault();
         this.field38988 = field38988;
         this.field38990 = new Class9194(this);
     }
     
     public static void method33654() {
-        Class9463.method35173().method35201().method19342();
+        Client.method35173().method35201().method19342();
     }
     
     public HashMap<UUID, Class6538> method33655() {
@@ -63,7 +65,7 @@ public class Class9198
         return this.field38986.get(class399.method1865());
     }
     
-    @Class6753
+    @EventListener
     private void method33658(final Class5743 class5743) {
         if (this.field38982.player.ticksExisted % 100 != 0) {
             return;
@@ -74,7 +76,7 @@ public class Class9198
         while (iterator.hasNext()) {
             final Class754 class5744 = iterator.next();
             if (!this.field38985.contains(class5744.method1865())) {
-                if (!Class9463.method35173().method35191().method31751(class5744)) {
+                if (!Client.method35173().method35191().method31751(class5744)) {
                     if (!class5744.getName().getUnformattedComponentText().equals("")) {
                         continue;
                     }
@@ -125,11 +127,11 @@ public class Class9198
         }
     }
     
-    @Class6753
+    @EventListener
     private void method33661(final Class5723 class5723) {
         if (class5723.method16998() instanceof Class4367) {
             final Class4367 class5724 = (Class4367)class5723.method16998();
-            Class9463.method35174().method20240("Connecting...");
+            Client.method35174().method20240("Connecting...");
             try {
                 this.field38989 = Class6593.method20037("http://localhost:3000");
             }
@@ -157,8 +159,8 @@ public class Class9198
     private void method33664(final GameProfile gameProfile, final String s) throws AuthenticationException, IOException {
         final String method33693 = this.field38982.field4642.method33693();
         ((YggdrasilMinecraftSessionService)new YggdrasilAuthenticationService(Proxy.NO_PROXY, method33693).createMinecraftSessionService()).joinServer(gameProfile, method33693, s);
-        Class9463.method35173();
-        Class9463.method35174().method20240("Jello Connect: successfully reached out mojangs servers " + s);
+        Client.method35173();
+        Client.method35174().method20240("Jello Connect: successfully reached out mojangs servers " + s);
         System.out.println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + s + "&username=" + this.field38982.field4642.method33692());
     }
     

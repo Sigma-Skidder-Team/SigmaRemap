@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class8074
 {
     private static String[] field33263;
@@ -14,10 +16,10 @@ public class Class8074
     }
     
     public void method26494() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
     }
     
-    @Class6753
+    @EventListener
     private void method26495(final Class5743 class5743) {
     }
 }

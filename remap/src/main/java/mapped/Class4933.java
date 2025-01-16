@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4933 extends Class4800
 {
     public Class4832 field21128;
@@ -15,7 +17,7 @@ public class Class4933 extends Class4800
     
     public Class4933(final Class7971 class7971) {
         super("Alt Manager");
-        this.field21132 = Class9463.method35173().method35198();
+        this.field21132 = Client.method35173().method35198();
         this.field21133 = "§7Waiting...";
         this.method14311(false);
         final int n = 400;
@@ -40,7 +42,7 @@ public class Class4933 extends Class4800
             class7971.method25893(this.field21129.method14314());
             this.field21133 = "Edited!";
         });
-        this.field21131.method14260((class4803, n) -> Class9463.method35173().method35193().method32156(new Class4936()));
+        this.field21131.method14260((class4803, n) -> Client.method35173().method35193().method32156(new Class4936()));
     }
     
     @Override
@@ -57,7 +59,7 @@ public class Class4933 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class9463.method35173().method35193().method32156(new Class4936());
+            Client.method35173().method35193().method32156(new Class4936());
         }
     }
 }

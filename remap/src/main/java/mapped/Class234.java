@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.impl.render.Projectiles;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
@@ -48,7 +49,7 @@ public enum Class234
         if (!this.field884.equals(Items.field31279)) {
             return this.field886;
         }
-        return (this.field886 * Class4087.method12318(Class3213.method10110().field4684.method2767()) <= 0.0f) ? Class4087.method12318(20) : Class4087.method12318(Class3213.method10111().field4684.method2767());
+        return (this.field886 * Class4087.method12318(Projectiles.method10110().field4684.method2767()) <= 0.0f) ? Class4087.method12318(20) : Class4087.method12318(Projectiles.method10111().field4684.method2767());
     }
     
     public float method869() {
@@ -74,15 +75,15 @@ public enum Class234
     
     public List<Class8797> method873() {
         final ArrayList list = new ArrayList();
-        final float n = (float)Math.toRadians(Class3213.method10112().field4684.field2399);
-        final float n2 = (float)Math.toRadians(Class3213.method10113().field4684.field2400);
-        final double field888 = Class3213.method10114().field4684.field2417 + (Class3213.method10115().field4684.field2395 - Class3213.method10116().field4684.field2417) * Class3213.method10117().field4633.field26528;
-        final double n3 = Class3213.method10118().field4684.field2418 + (Class3213.method10119().field4684.field2396 - Class3213.method10120().field4684.field2418) * Class3213.method10121().field4633.field26528;
-        final double field889 = Class3213.method10122().field4684.field2419 + (Class3213.method10123().field4684.field2397 - Class3213.method10124().field4684.field2419) * Class3213.method10125().field4633.field26528;
+        final float n = (float)Math.toRadians(Projectiles.method10112().field4684.field2399);
+        final float n2 = (float)Math.toRadians(Projectiles.method10113().field4684.field2400);
+        final double field888 = Projectiles.method10114().field4684.field2417 + (Projectiles.method10115().field4684.field2395 - Projectiles.method10116().field4684.field2417) * Projectiles.method10117().field4633.field26528;
+        final double n3 = Projectiles.method10118().field4684.field2418 + (Projectiles.method10119().field4684.field2396 - Projectiles.method10120().field4684.field2418) * Projectiles.method10121().field4633.field26528;
+        final double field889 = Projectiles.method10122().field4684.field2419 + (Projectiles.method10123().field4684.field2397 - Projectiles.method10124().field4684.field2419) * Projectiles.method10125().field4633.field26528;
         this.field888 = field888;
-        this.field889 = n3 + Class3213.method10126().field4684.method1892() - 0.10000000149011612;
+        this.field889 = n3 + Projectiles.method10126().field4684.method1892() - 0.10000000149011612;
         this.field890 = field889;
-        final float n4 = Math.min(20.0f, 72000 - Class3213.method10127().field4684.method2767() + Class3213.method10128().method5314()) / 20.0f;
+        final float n4 = Math.min(20.0f, 72000 - Projectiles.method10127().field4684.method2767() + Projectiles.method10128().method5314()) / 20.0f;
         this.field891 = -MathHelper.sin(n) * MathHelper.cos(n2) * this.field886 * n4;
         this.field892 = -MathHelper.sin(n2) * this.field886 * n4;
         this.field893 = MathHelper.cos(n) * MathHelper.cos(n2) * this.field886 * n4;
@@ -99,7 +100,7 @@ public enum Class234
             final Vec3d class5487 = new Vec3d(this.field888, this.field889, this.field890);
             final Vec3d class5488 = new Vec3d(this.field888 + this.field891, this.field889 + this.field892, this.field890 + this.field893);
             final float n5 = (float)((this.field884 instanceof Class4087) ? 0.3 : 0.25);
-            final List<Entity> method6737 = Class3213.method10130().field4683.method6737(Class3213.method10129().field4684, new AxisAlignedBB(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).offset(this.field891, this.field892, this.field893).grow(1.0, 1.0, 1.0), Class9170.field38850.and((Predicate<? super Entity>)new Class166(this, n5, class5487, class5488)));
+            final List<Entity> method6737 = Projectiles.method10130().field4683.method6737(Projectiles.method10129().field4684, new AxisAlignedBB(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).offset(this.field891, this.field892, this.field893).grow(1.0, 1.0, 1.0), Class9170.field38850.and((Predicate<? super Entity>)new Class166(this, n5, class5487, class5488)));
             if (method6737.size() > 0) {
                 final Iterator<Entity> iterator = method6737.iterator();
                 while (iterator.hasNext()) {
@@ -107,7 +108,7 @@ public enum Class234
                 }
                 break;
             }
-            final BlockRayTraceResult method6738 = Class3213.method10132().field4683.method6987(new RayTraceContext(class5487, class5488, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, Class3213.method10131().field4684));
+            final BlockRayTraceResult method6738 = Projectiles.method10132().field4683.method6987(new RayTraceContext(class5487, class5488, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, Projectiles.method10131().field4684));
             if (method6738 != null && method6738.getType() != RayTraceResult.Type.MISS) {
                 this.field894 = method6738;
                 this.field888 = this.field894.getHitVec().x;

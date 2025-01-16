@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4814 extends Class4803
 {
     public final Class4859 field20584;
@@ -38,7 +40,7 @@ public class Class4814 extends Class4803
     }
     
     public void method14373(final Class4800 class4800) {
-        Class9463.method35173().method35193().method32156(class4800);
+        Client.method35173().method35193().method32156(class4800);
         this.method14374();
     }
     

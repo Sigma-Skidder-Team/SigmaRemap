@@ -4,7 +4,7 @@
 
 package mapped;
 
-import java.util.Iterator;
+import com.mentalfrostbyte.Client;
 
 public class Class5146
 {
@@ -25,7 +25,7 @@ public class Class5146
         if (this.field22148.method33124(this.field22149)) {
             this.method16075();
             this.field22148.method33120();
-            Class9463.method35173().method35196().method32830("pop");
+            Client.method35173().method35196().method32830("pop");
         }
         if (this.field22148.method33122() || this.method16069()) {
             this.method16071();

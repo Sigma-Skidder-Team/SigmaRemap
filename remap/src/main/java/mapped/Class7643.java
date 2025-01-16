@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import com.sun.jna.platform.win32.Advapi32Util;
 import com.sun.jna.platform.win32.WinReg;
 
@@ -78,7 +79,7 @@ public class Class7643
     }
     
     public void method24158() {
-        Class9463.method35173().method35188().method21094(this);
+        Client.method35173().method35188().method21094(this);
         this.method24160();
         if (!this.method24195()) {
             this.method24196();
@@ -91,12 +92,12 @@ public class Class7643
         class4405.method13298("volume", this.field30335);
         class4405.method13295("spectrum", this.field30350);
         class4405.method13298("repeat", this.field30351.field1232);
-        Class9463.method35173().method35206().method13301("music", class4405);
+        Client.method35173().method35206().method13301("music", class4405);
     }
     
     private void method24160() {
-        if (Class9463.method35173().method35206().method13269("music")) {
-            final Class4405 method13264 = Class9463.method35173().method35206().method13264("music");
+        if (Client.method35173().method35206().method13269("music")) {
+            final Class4405 method13264 = Client.method35173().method35206().method13264("music");
             if (method13264 != null) {
                 if (method13264.method13269("volume")) {
                     this.field30335 = Math.max(0, Math.min(100, method13264.method13262("volume")));
@@ -111,9 +112,9 @@ public class Class7643
         }
     }
     
-    @Class6753
+    @EventListener
     private void method24161(final Class5740 class5740) {
-        if (Class9463.method35173().method35209() == Class2209.field13464) {
+        if (Client.method35173().method35209() == Class2209.field13464) {
             if (this.field30333) {
                 if (this.field30352.size() != 0) {
                     final double[] array = this.field30352.get(0);
@@ -143,7 +144,7 @@ public class Class7643
         }
     }
     
-    @Class6753
+    @EventListener
     private void method24162(final Class5734 class5734) {
         if (this.field30333) {
             if (this.field30352.size() != 0) {
@@ -208,7 +209,7 @@ public class Class7643
         }
     }
     
-    @Class6753
+    @EventListener
     private void method24164(final Class5743 class5743) {
         if (!this.field30333) {
             this.field30352.clear();
@@ -224,7 +225,7 @@ public class Class7643
                 }
                 this.field30342 = Class9399.method34928("picture", this.field30341);
                 this.field30340 = Class9399.method34928("picture", this.field30338);
-                Class9463.method35173().method35197().method25776(new Class6224("Now Playing", this.field30339, 7000, this.field30340));
+                Client.method35173().method35197().method25776(new Class6224("Now Playing", this.field30339, 7000, this.field30340));
                 this.field30343 = false;
             }
         }
@@ -264,7 +265,7 @@ public class Class7643
                 for (int i = this.field30348; i < this.field30334.field38866.size(); ++i) {
                     Class5031.method15317(this.field30334.field38866.get(i).field36486);
                     final URL url;
-                    Class9463.method35174().method20243(url.toString());
+                    Client.method35174().method20243(url.toString());
                     this.field30346 = i;
                     this.field30349 = this.field30334.field38866.get(i);
                     this.field30352.clear();
@@ -285,7 +286,7 @@ public class Class7643
                     try {
                         this.method24188(url);
                         final URL url2;
-                        Class9463.method35174().method20243((url2 == null) ? "No stream" : url2.toString());
+                        Client.method35174().method20243((url2 == null) ? "No stream" : url2.toString());
                         if (url2 != null) {
                             url2.openConnection();
                             final URLConnection urlConnection;
@@ -301,7 +302,7 @@ public class Class7643
                             new Class7828(inputStream2).method25294();
                             final Class6476 class1751;
                             if (class1751.method19491().isEmpty()) {
-                                Class9463.method35174().method20243("No content");
+                                Client.method35174().method20243("No content");
                             }
                             final Class6890 class1752 = class1751.method19491().get(1);
                             final AudioFormat format = new AudioFormat((float)class1752.method21188(), class1752.method21189(), class1752.method21187(), true, true);
@@ -310,7 +311,7 @@ public class Class7643
                             this.field30336 = (long)class1751.method19499();
                             if (this.field30336 > 1300L) {
                                 ((Class1750)inputStream2).close();
-                                Class9463.method35173().method35197().method25776(new Class6224("Now Playing", "Music is too long."));
+                                Client.method35173().method35197().method25776(new Class6224("Now Playing", "Music is too long."));
                             }
                             final Class4206 class1753 = new Class4206(class1752.method21178());
                             final Class9157 class1754 = new Class9157();
@@ -553,7 +554,7 @@ public class Class7643
         }
         catch (final Class2333 class6463) {
             if (class6463.getMessage() != null && class6463.getMessage().contains("ERROR: This video contains content from") && class6463.getMessage().contains("who has blocked it in your country on copyright grounds")) {
-                Class9463.method35173().method35197().method25776(new Class6224("Now Playing", "Not available in your region."));
+                Client.method35173().method35197().method25776(new Class6224("Now Playing", "Not available in your region."));
             }
             else {
                 class6463.printStackTrace();
@@ -605,15 +606,15 @@ public class Class7643
     }
     
     public boolean method24195() {
-        File file = new File(Class9463.method35173().method35208() + "/music/youtube-dl");
+        File file = new File(Client.method35173().method35208() + "/music/youtube-dl");
         if (Util.method27845() == Class306.field1833) {
-            file = new File(Class9463.method35173().method35208() + "/music/youtube-dl.exe");
+            file = new File(Client.method35173().method35208() + "/music/youtube-dl.exe");
         }
         return file.exists();
     }
     
     public void method24196() {
-        Class9463.method35173().method35187().method20243("Updating dependencies threaded");
+        Client.method35173().method35187().method20243("Updating dependencies threaded");
         new Thread(() -> this.method24197()).start();
     }
     
@@ -621,10 +622,10 @@ public class Class7643
         if (this.field30353) {
             return;
         }
-        Class9463.method35173().method35187().method20243("Updating dependencies");
+        Client.method35173().method35187().method20243("Updating dependencies");
         if (Util.method27845() == Class306.field1833) {
             try {
-                FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl.exe"), new File(Class9463.method35173().method35208() + "/music/youtube-dl.exe"));
+                FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl.exe"), new File(Client.method35173().method35208() + "/music/youtube-dl.exe"));
             }
             catch (final IOException ex) {
                 ex.printStackTrace();
@@ -632,7 +633,7 @@ public class Class7643
         }
         else {
             try {
-                FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl"), new File(Class9463.method35173().method35208() + "/music/youtube-dl"));
+                FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl"), new File(Client.method35173().method35208() + "/music/youtube-dl"));
             }
             catch (final IOException ex2) {
                 ex2.printStackTrace();
@@ -643,7 +644,7 @@ public class Class7643
     }
     
     public String method24198() {
-        String s = Class9463.method35173().method35208().getAbsolutePath() + "/music/youtube-dl";
+        String s = Client.method35173().method35208().getAbsolutePath() + "/music/youtube-dl";
         if (Util.method27845() != Class306.field1833) {
             new File(s).setExecutable(true);
         }

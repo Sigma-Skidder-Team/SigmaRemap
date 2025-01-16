@@ -4,6 +4,7 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
 import net.minecraft.entity.Entity;
 
 import java.util.Comparator;
@@ -21,8 +22,8 @@ public class Class4455 implements Comparator<Class8131>
     public int compare(final Class8131 class8131, final Class8131 class8132) {
         final Entity method26798 = class8131.method26798();
         final Entity method26799 = class8132.method26798();
-        final boolean method26800 = Class9463.method35173().method35190().method29880(method26798);
-        final boolean method26801 = Class9463.method35173().method35190().method29880(method26799);
+        final boolean method26800 = Client.method35173().method35190().method29880(method26798);
+        final boolean method26801 = Client.method35173().method35190().method29880(method26799);
         if (method26800 && !method26801) {
             return -1;
         }

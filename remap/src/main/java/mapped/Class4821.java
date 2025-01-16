@@ -4,18 +4,22 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.mods.Category;
+import com.mentalfrostbyte.jello.mods.Module;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Class4821 extends Class4817 implements Class4820
 {
-    public final Class8013 field20629;
+    public final Category field20629;
     private List<Class4868> field20630;
     private boolean field20631;
     private boolean field20632;
     private float field20633;
     
-    public Class4821(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Class8013 field20629) {
+    public Class4821(final Class4803 class4803, final String s, final int n, final int n2, final int n3, final int n4, final Category field20629) {
         super(class4803, s, n, n2, n3, n4);
         this.field20630 = new ArrayList<Class4868>();
         this.field20633 = 1.0f;
@@ -29,12 +33,12 @@ public class Class4821 extends Class4817 implements Class4820
     
     public void method14390() {
         int n = 0;
-        for (final Class3167 class3167 : Class9463.method35173().method35189().method21554(this.field20629)) {
+        for (final Module class3167 : Client.method35173().method35189().method21554(this.field20629)) {
             final int method19118 = Class6430.method19118(-3487030, 0.0f);
             final Class6523 method19119 = new Class6523(class3167.method9906() ? -14047489 : 1895167477, class3167.method9906() ? -14042881 : method19118).method19734(class3167.method9906() ? Class265.field1278.field1292 : Class265.field1273.field1292);
             method19119.method19736(Class2056.field11734);
             final Class4868 class3168;
-            this.method14396().method14239(class3168 = new Class4868(this.method14396(), class3167.method9901() + "Button", 0, n * 30, this.method14276(), 30, method19119, class3167.method9901(), Class9400.field40313));
+            this.method14396().method14239(class3168 = new Class4868(this.method14396(), class3167.getName() + "Button", 0, n * 30, this.method14276(), 30, method19119, class3167.getName(), Class9400.field40313));
             if (!class3167.method9906()) {
                 class3168.method14603(22);
             }
@@ -141,11 +145,11 @@ public class Class4821 extends Class4817 implements Class4820
         }
     }
     
-    public int method14432(final Class3167 class3167) {
+    public int method14432(final Module class3167) {
         int n = 0;
         for (final Class4868 class3168 : this.field20630) {
             ++n;
-            if (!class3168.method14266().equals(class3167.method9901() + "Button")) {
+            if (!class3168.method14266().equals(class3167.getName() + "Button")) {
                 continue;
             }
             break;

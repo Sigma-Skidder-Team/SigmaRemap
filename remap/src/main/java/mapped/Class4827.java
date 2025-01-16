@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.Client;
+
 public class Class4827 extends Class4825 implements Class4828
 {
     public int field20650;
@@ -94,7 +96,7 @@ public class Class4827 extends Class4825 implements Class4828
         final int method19118 = Class6430.method19118(Class265.field1273.field1292, 0.2f * n);
         int field20478 = this.field20478;
         int field20479 = this.field20480;
-        if (Class9463.method35173().method35209() != Class2209.field13464) {
+        if (Client.method35173().method35209() != Class2209.field13464) {
             final int n3 = 0;
             field20479 -= 8;
             field20478 += 8;

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import com.mentalfrostbyte.jello.mods.impl.misc.NoteblockPlayer;
+
 public class Class9486
 {
     private static String[] field40772;
@@ -15,7 +17,7 @@ public class Class9486
         this.field40774 = -1.0f;
         this.field40775 = Class185.field579;
         this.field40773 = field40773;
-        this.field40775 = Class185.method826(Class3368.method10714().field4683.method6701(field40773.method1139()));
+        this.field40775 = Class185.method826(NoteblockPlayer.method10714().field4683.method6701(field40773.method1139()));
     }
     
     public int method35311() {
