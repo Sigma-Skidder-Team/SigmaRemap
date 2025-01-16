@@ -475,7 +475,7 @@ public class RealmsConfigureWorldScreen extends Class5075<Class7430> implements 
     }
     
     private void method15710(final Class7430 class7430) {
-        final Class5049 class7431 = new Class5049(this.field21785, new Class1336(this.field21786.field28675, class7430, this.func_224407_b()));
+        final Class5049 class7431 = new Class5049(this.field21785, new RealmsTasks.SwitchMinigameTask(this.field21786.field28675, class7430, this.func_224407_b()));
         class7431.method15466();
         Realms.setScreen(class7431);
     }
