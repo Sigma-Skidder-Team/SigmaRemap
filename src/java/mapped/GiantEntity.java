@@ -10,10 +10,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
-public class Class1099 extends MonsterEntity {
+public class GiantEntity extends MonsterEntity {
    private static String[] field6050;
 
-   public Class1099(EntityType<? extends Class1099> var1, World var2) {
+   public GiantEntity(EntityType<? extends GiantEntity> var1, World var2) {
       super(var1, var2);
    }
 

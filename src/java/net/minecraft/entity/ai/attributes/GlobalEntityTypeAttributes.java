@@ -44,7 +44,7 @@ public class GlobalEntityTypeAttributes {
       .put(EntityType.EVOKER, EvokerEntity.method4600().method21850())
       .put(EntityType.FOX, FoxEntity.method5123().method21850())
       .put(EntityType.GHAST, GhastEntity.method5360().method21850())
-      .put(EntityType.GIANT, Class1099.method5268().method21850())
+      .put(EntityType.GIANT, GiantEntity.method5268().method21850())
       .put(EntityType.GUARDIAN, GuardianEntity.method5300().method21850())
       .put(EntityType.HOGLIN, HoglinEntity.method5080().method21850())
       .put(EntityType.HORSE, AbstractHorseEntity.method4951().method21850())

@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2796 extends Class2795<Class1099> {
+public class Class2796 extends Class2795<GiantEntity> {
    private static String[] field17430;
 
    public Class2796() {
@@ -11,7 +11,7 @@ public class Class2796 extends Class2795<Class1099> {
       super(var1, 0.0F, 64, !var2 ? 64 : 32);
    }
 
-   public boolean method11000(Class1099 var1) {
+   public boolean method11000(GiantEntity var1) {
       return false;
    }
 }

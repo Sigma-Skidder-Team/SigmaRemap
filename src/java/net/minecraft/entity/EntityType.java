@@ -134,8 +134,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<GhastEntity> GHAST = register(
       "ghast", Builder.<GhastEntity>create(GhastEntity::new, EntityClassification.MONSTER).immuneToFire().size(4.0F, 4.0F).trackingRange(10)
    );
-   public static final EntityType<Class1099> GIANT = register(
-      "giant", Builder.<Class1099>create(Class1099::new, EntityClassification.MONSTER).size(3.6F, 12.0F).trackingRange(10)
+   public static final EntityType<GiantEntity> GIANT = register(
+      "giant", Builder.<GiantEntity>create(GiantEntity::new, EntityClassification.MONSTER).size(3.6F, 12.0F).trackingRange(10)
    );
    public static final EntityType<GuardianEntity> GUARDIAN = register(
       "guardian", Builder.<GuardianEntity>create(GuardianEntity::new, EntityClassification.MONSTER).size(0.85F, 0.85F).trackingRange(8)
