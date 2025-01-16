@@ -109,7 +109,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
          var1.removePassengers();
          CompoundNBT var6 = new CompoundNBT();
          var1.writeUnlessPassenger(var6);
-         this.field5392.add(new Thingy(var6, var3, !var2 ? 600 : 2400));
+         this.field5392.add(new BeeThingyIdk(var6, var3, !var2 ? 600 : 2400));
          if (this.world != null) {
             if (var1 instanceof BeeEntity) {
                BeeEntity var7 = (BeeEntity)var1;
@@ -136,12 +136,12 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       }
    }
 
-   private boolean method3923(BlockState var1, Thingy var2, List<Entity> var3, Class2084 var4) {
+   private boolean method3923(BlockState var1, BeeThingyIdk var2, List<Entity> var3, Class2084 var4) {
       if ((this.world.method6741() || this.world.method6795()) && var4 != Class2084.field13573) {
          return false;
       } else {
          BlockPos var7 = this.getPos();
-         CompoundNBT var8 = Thingy.method35245(var2);
+         CompoundNBT var8 = BeeThingyIdk.method35245(var2);
          var8.remove("Passengers");
          var8.remove("Leash");
          var8.remove("UUID");
@@ -176,7 +176,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
                      }
                   }
 
-                  this.method3924(Thingy.method35246(var2), var13);
+                  this.method3924(BeeThingyIdk.method35246(var2), var13);
                   if (var3 != null) {
                      var3.add(var13);
                   }
@@ -221,15 +221,15 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
       BlockState var4 = this.getBlockState();
 
       while (var3.hasNext()) {
-         Thingy var5 = (Thingy)var3.next();
-         if (Thingy.method35246(var5) > Thingy.method35248(var5)) {
-            Class2084 var6 = !Thingy.method35245(var5).getBoolean("HasNectar") ? Class2084.field13572 : Class2084.field13571;
+         BeeThingyIdk var5 = (BeeThingyIdk)var3.next();
+         if (BeeThingyIdk.method35246(var5) > BeeThingyIdk.method35248(var5)) {
+            Class2084 var6 = !BeeThingyIdk.method35245(var5).getBoolean("HasNectar") ? Class2084.field13572 : Class2084.field13571;
             if (this.method3923(var4, var5, (List<Entity>)null, var6)) {
                var3.remove();
             }
          }
 
-         Thingy.method35247(var5);
+         BeeThingyIdk.method35247(var5);
       }
    }
 
@@ -257,7 +257,7 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
          CompoundNBT var7 = var5.getCompound(var6);
-         Thingy var8 = new Thingy(var7.getCompound("EntityData"), var7.getInt("TicksInHive"), var7.getInt("MinOccupationTicks"));
+         BeeThingyIdk var8 = new BeeThingyIdk(var7.getCompound("EntityData"), var7.getInt("TicksInHive"), var7.getInt("MinOccupationTicks"));
          this.field5392.add(var8);
       }
 
@@ -281,12 +281,12 @@ public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity
    public ListNBT method3927() {
       ListNBT var3 = new ListNBT();
 
-      for (Thingy var5 : this.field5392) {
-         Thingy.method35245(var5).remove("UUID");
+      for (BeeThingyIdk var5 : this.field5392) {
+         BeeThingyIdk.method35245(var5).remove("UUID");
          CompoundNBT var6 = new CompoundNBT();
-         var6.put("EntityData", Thingy.method35245(var5));
-         var6.putInt("TicksInHive", Thingy.method35246(var5));
-         var6.putInt("MinOccupationTicks", Thingy.method35248(var5));
+         var6.put("EntityData", BeeThingyIdk.method35245(var5));
+         var6.putInt("TicksInHive", BeeThingyIdk.method35246(var5));
+         var6.putInt("MinOccupationTicks", BeeThingyIdk.method35248(var5));
          var3.add(var6);
       }
 
