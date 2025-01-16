@@ -222,8 +222,8 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         this.field4342 = new Class443(this.method4730());
         if (field4342 != null) {
             field4342.method2256(this);
-            for (int min = Math.min(field4342.method2239(), this.field4342.method2239()), i = 0; i < min; ++i) {
-                final ItemStack method2157 = field4342.method2157(i);
+            for (int min = Math.min(field4342.getSizeInventory(), this.field4342.getSizeInventory()), i = 0; i < min; ++i) {
+                final ItemStack method2157 = field4342.getStackInSlot(i);
                 if (!method2157.method27620()) {
                     this.field4342.method2160(i, method2157.method27641());
                 }
@@ -235,12 +235,12 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     
     public void method4732() {
         if (!this.world.isRemote) {
-            this.method4725(!this.field4342.method2157(0).method27620() && this.method4735());
+            this.method4725(!this.field4342.getStackInSlot(0).method27620() && this.method4735());
         }
     }
     
     @Override
-    public void method4733(final Class446 class446) {
+    public void method4733(final IInventory class446) {
         final boolean method4736 = this.method4736();
         this.method4732();
         if (this.ticksExisted > 20) {
@@ -495,8 +495,8 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     public void method2676() {
         super.method2676();
         if (this.field4342 != null) {
-            for (int i = 0; i < this.field4342.method2239(); ++i) {
-                final ItemStack method2157 = this.field4342.method2157(i);
+            for (int i = 0; i < this.field4342.getSizeInventory(); ++i) {
+                final ItemStack method2157 = this.field4342.getStackInSlot(i);
                 if (!method2157.method27620()) {
                     if (!Class8742.method30218(method2157)) {
                         this.method1766(method2157);
@@ -773,8 +773,8 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         if (this.method4716() != null) {
             class51.putString("OwnerUUID", this.method4716().toString());
         }
-        if (!this.field4342.method2157(0).method27620()) {
-            class51.put("SaddleItem", this.field4342.method2157(0).method27627(new CompoundNBT()));
+        if (!this.field4342.getStackInSlot(0).method27620()) {
+            class51.put("SaddleItem", this.field4342.getStackInSlot(0).method27627(new CompoundNBT()));
         }
     }
     
@@ -967,7 +967,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         final int n2 = n - 400;
         if (n2 >= 0) {
             if (n2 < 2) {
-                if (n2 < this.field4342.method2239()) {
+                if (n2 < this.field4342.getSizeInventory()) {
                     if (n2 == 0 && class8321.getItem() != Items.field31353) {
                         return false;
                     }
@@ -981,7 +981,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
             }
         }
         final int n3 = n - 500 + 2;
-        if (n3 >= 2 && n3 < this.field4342.method2239()) {
+        if (n3 >= 2 && n3 < this.field4342.getSizeInventory()) {
             this.field4342.method2160(n3, class8321);
             return true;
         }

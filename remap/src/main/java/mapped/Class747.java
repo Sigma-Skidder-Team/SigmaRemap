@@ -78,7 +78,7 @@ public class Class747 extends Class516<Class3422>
         final List<Class3686> method10905 = ((Class3422)this.field3077).method10905();
         for (int field4040 = this.field4040; field4040 < n3 && field4040 < ((Class3422)this.field3077).method10906(); ++field4040) {
             final int n4 = field4040 - this.field4040;
-            this.minecraft.getItemRenderer().method6540(method10905.get(field4040).method11292(), n + n4 % 4 * 16, n2 + n4 / 4 * 18 + 2);
+            this.minecraft.getItemRenderer().method6540(method10905.get(field4040).getRecipeOutput(), n + n4 % 4 * 16, n2 + n4 / 4 * 18 + 2);
         }
     }
     

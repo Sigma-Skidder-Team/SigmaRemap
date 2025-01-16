@@ -34,7 +34,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     public static final VoxelShape field17502;
     public static final VoxelShape field17503;
     public static final VoxelShape field17504;
-    private static final Class6389<Class475, Optional<Class446>> field17505;
+    private static final Class6389<Class475, Optional<IInventory>> field17505;
     private static final Class6389<Class475, Optional<Class434>> field17506;
     
     public Class3865(final Class9288 class9288, final Supplier<Class5412<? extends Class475>> supplier) {
@@ -162,8 +162,8 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
-            if (method6727 instanceof Class446) {
-                Class9193.method33638(class7097, class7098, (Class446)method6727);
+            if (method6727 instanceof IInventory) {
+                Class9193.method33638(class7097, class7098, (IInventory)method6727);
                 class7097.method6783(class7098, this);
             }
             super.method11829(class7096, class7097, class7098, class7099, b);
@@ -188,7 +188,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     @Nullable
-    public static Class446 method11936(final Class3865 class3865, final BlockState class3866, final World class3867, final BlockPos class3868, final boolean b) {
+    public static IInventory method11936(final Class3865 class3865, final BlockState class3866, final World class3867, final BlockPos class3868, final boolean b) {
         return class3865.method11929(class3866, class3867, class3868, b).method22074(Class3865.field17505).orElse(null);
     }
     

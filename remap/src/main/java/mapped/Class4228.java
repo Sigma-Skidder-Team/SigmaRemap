@@ -72,8 +72,8 @@ public class Class4228 extends Class4211
         int n2 = 0;
         int n3 = 0;
         final ArrayList arrayList = Lists.newArrayList((Object[])this.field19032);
-        for (int i = 0; i < class464.method2239(); ++i) {
-            final ItemStack method2157 = class464.method2157(i);
+        for (int i = 0; i < class464.getSizeInventory(); ++i) {
+            final ItemStack method2157 = class464.getStackInSlot(i);
             if (!method2157.method27620()) {
                 ++n3;
                 if (method2157.method27690() >= method2157.method27628()) {

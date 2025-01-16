@@ -16,7 +16,7 @@ public class Class4387 implements IPacket<Class5813>
     public Class4387() {
     }
     
-    public Class4387(final int field19659, final Class3662<?> class3662, final boolean field19660) {
+    public Class4387(final int field19659, final IRecipe<?> class3662, final boolean field19660) {
         this.field19659 = field19659;
         this.field19660 = class3662.method11298();
         this.field19661 = field19660;

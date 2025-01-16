@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
 
 public class Class4163 extends Class4158<Class448>
 {
@@ -18,7 +19,7 @@ public class Class4163 extends Class4158<Class448>
     
     public void method12469(final Class448 class448, final float n, final MatrixStack class449, final IRenderTypeBuffer class450, final int n2, final int n3) {
         final Direction class451 = class448.method2194().get((IProperty<Direction>)Class3918.field17763);
-        final Class2265<ItemStack> method2270 = class448.method2270();
+        final NonNullList<ItemStack> method2270 = class448.method2270();
         for (int i = 0; i < method2270.size(); ++i) {
             final ItemStack class452 = method2270.get(i);
             if (class452 != ItemStack.EMPTY) {

@@ -5,8 +5,9 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
-public abstract class Class3685 implements Class3662<Class446>
+public abstract class Class3685 implements IRecipe<IInventory>
 {
     public final Class120 field16985;
     public final ItemStack field16986;
@@ -45,24 +46,24 @@ public abstract class Class3685 implements Class3662<Class446>
     }
     
     @Override
-    public ItemStack method11292() {
+    public ItemStack getRecipeOutput() {
         return this.field16986;
     }
     
     @Override
-    public Class2265<Class120> method11294() {
-        final Class2265<Object> method8506 = Class2265.method8506();
+    public NonNullList<Class120> method11294() {
+        final NonNullList<Object> method8506 = NonNullList.create();
         method8506.add(this.field16985);
-        return (Class2265<Class120>)method8506;
+        return (NonNullList<Class120>)method8506;
     }
     
     @Override
-    public boolean method11291(final int n, final int n2) {
+    public boolean canFit(final int n, final int n2) {
         return true;
     }
     
     @Override
-    public ItemStack method11290(final Class446 class446) {
+    public ItemStack getCraftingResult(final IInventory class446) {
         return this.field16986.method27641();
     }
 }

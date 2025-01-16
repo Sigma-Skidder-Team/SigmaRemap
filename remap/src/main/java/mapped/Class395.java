@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -162,7 +163,7 @@ public class Class395 extends MinecraftServer implements Class396
             thread.setDaemon(true);
             thread.start();
         }
-        Items.AIR.method11735(Class7207.field27998, Class2265.method8506());
+        Items.AIR.method11735(Class7207.field27998, NonNullList.create());
         return true;
     }
     

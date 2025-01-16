@@ -38,7 +38,7 @@ public class Class5045 extends RealmsScreen
         this(class5075, class5076, null);
     }
     
-    public Class5045(final Class5075<Class7430> field21608, final Class271 field21609, final Class7445 class7445) {
+    public Class5045(final Class5075<Class7430> field21608, final Class271 field21609, final WorldTemplatePaginatedList class7445) {
         this.field21610 = -1;
         this.field21608 = field21608;
         this.field21617 = field21609;
@@ -48,7 +48,7 @@ public class Class5045 extends RealmsScreen
         }
         else {
             this.field21609 = new Class5062(this);
-            this.method15381(new Class7445(10));
+            this.method15381(new WorldTemplatePaginatedList(10));
         }
         this.field21611 = RealmsScreen.getLocalizedString("mco.template.title");
     }
@@ -166,16 +166,16 @@ public class Class5045 extends RealmsScreen
         }
     }
     
-    private void method15381(final Class7445 class7445) {
+    private void method15381(final WorldTemplatePaginatedList class7445) {
         new Class928(this, "realms-template-fetcher", class7445).start();
     }
     
-    private Either<Class7445, String> method15382(final Class7445 class7445, final RealmsClient class7446) {
+    private Either<WorldTemplatePaginatedList, String> method15382(final WorldTemplatePaginatedList class7445, final RealmsClient class7446) {
         try {
-            return (Either<Class7445, String>)Either.left((Object)class7446.method35464(class7445.field28718 + 1, class7445.field28719, this.field21617));
+            return (Either<WorldTemplatePaginatedList, String>)Either.left((Object)class7446.func_224930_a(class7445.field28718 + 1, class7445.field28719, this.field21617));
         }
         catch (final RealmsServiceException class7447) {
-            return (Either<Class7445, String>)Either.right((Object)class7447.getMessage());
+            return (Either<WorldTemplatePaginatedList, String>)Either.right((Object)class7447.getMessage());
         }
     }
     

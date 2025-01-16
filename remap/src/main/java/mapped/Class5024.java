@@ -59,19 +59,19 @@ public class Class5024
         this.field21533.put(n, this.field21533.get(n) + n2);
     }
     
-    public boolean method15249(final Class3662<?> class3662, final IntList list) {
+    public boolean method15249(final IRecipe<?> class3662, final IntList list) {
         return this.method15250(class3662, list, 1);
     }
     
-    public boolean method15250(final Class3662<?> class3662, final IntList list, final int n) {
+    public boolean method15250(final IRecipe<?> class3662, final IntList list, final int n) {
         return new Class8830(class3662).method30823(n, list);
     }
     
-    public int method15251(final Class3662<?> class3662, final IntList list) {
+    public int method15251(final IRecipe<?> class3662, final IntList list) {
         return this.method15252(class3662, Integer.MAX_VALUE, list);
     }
     
-    public int method15252(final Class3662<?> class3662, final int n, final IntList list) {
+    public int method15252(final IRecipe<?> class3662, final int n, final IntList list) {
         return new Class8830(class3662).method30836(n, list);
     }
     

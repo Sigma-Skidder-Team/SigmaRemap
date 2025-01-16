@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 
-public interface Class6096<T extends Class3662<?>>
+public interface Class6096<T extends IRecipe<?>>
 {
     public static final Class6096<Class3664> field24733 = method18182("crafting_shaped", new Class6097());
     public static final Class6096<Class3679> field24734 = method18182("crafting_shapeless", new Class6099());
@@ -35,7 +35,7 @@ public interface Class6096<T extends Class3662<?>>
     
     void method18181(final PacketBuffer p0, final T p1);
     
-    default <S extends Class6096<T>, T extends Class3662<?>> S method18182(final String s, final S n) {
+    default <S extends Class6096<T>, T extends IRecipe<?>> S method18182(final String s, final S n) {
         return Registry.method511(Registry.field237, s, n);
     }
 }

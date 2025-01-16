@@ -181,7 +181,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
         Class8880.method31243();
         return CompletableFuture.allOf(Class548.method3215(this, executor), this.method5855(Widget.field3421, executor)).thenCompose((Function<? super Void, ? extends CompletionStage<Object>>)class7885::method25538).thenAcceptAsync(p2 -> {
             Class1913.method7553();
-            Class5079.method15797(this.field9432);
+            RealmsMainScreen.method15797(this.field9432);
             new HashSet(this.field9429.entrySet()).iterator();
             final Iterator iterator2;
             while (iterator2.hasNext()) {

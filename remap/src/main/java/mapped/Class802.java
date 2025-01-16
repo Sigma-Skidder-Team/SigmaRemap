@@ -298,7 +298,7 @@ public class Class802 extends Class789
     }
     
     private Class181 method4640(final Class789 class789, final Class789 class790) {
-        return this.world.method6792().method6378(Class8976.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.world).map(class792 -> class792.method11290(class791)).map((Function<? super Object, ?>) ItemStack::getItem).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.world.rand.nextBoolean() ? class793 : class794);
+        return this.world.method6792().method6378(Class8976.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.world).map(class792 -> class792.getCraftingResult(class791)).map((Function<? super Object, ?>) ItemStack::getItem).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.world.rand.nextBoolean() ? class793 : class794);
     }
     
     private static Class473 method4641(final Class181 class181, final Class181 class182) {

@@ -131,7 +131,7 @@ public class RealmsClient
         this.method35486(Class8178.method27088(this.method35484("worlds" + "/$WORLD_ID/slot/$SLOT_ID".replace("$WORLD_ID", String.valueOf(l)).replace("$SLOT_ID", String.valueOf(i))), class7424.method22844()));
     }
     
-    public boolean method35462(final long l, final int i) throws RealmsServiceException {
+    public boolean func_224927_a(final long l, final int i) throws RealmsServiceException {
         return Boolean.valueOf(this.method35486(Class8178.method27091(this.method35484("worlds" + "/$WORLD_ID/slot/$SLOT_ID".replace("$WORLD_ID", String.valueOf(l)).replace("$SLOT_ID", String.valueOf(i))), "")));
     }
     
@@ -139,8 +139,8 @@ public class RealmsClient
         this.method35486(Class8178.method27092(this.method35485("worlds" + "/$WORLD_ID/backups".replace("$WORLD_ID", String.valueOf(l)), "backupId=" + str), "", 40000, 600000));
     }
     
-    public Class7445 method35464(final int i, final int j, final Class271 class271) throws RealmsServiceException {
-        return Class7445.method22897(this.method35486(Class8178.method27086(this.method35485("worlds" + "/templates/$WORLD_TYPE".replace("$WORLD_TYPE", class271.toString()), String.format("page=%d&pageSize=%d", i, j)))));
+    public WorldTemplatePaginatedList func_224930_a(final int i, final int j, final Class271 class271) throws RealmsServiceException {
+        return WorldTemplatePaginatedList.method22897(this.method35486(Class8178.method27086(this.method35485("worlds" + "/templates/$WORLD_TYPE".replace("$WORLD_TYPE", class271.toString()), String.format("page=%d&pageSize=%d", i, j)))));
     }
     
     public Boolean func_224905_d(final long l, final String replacement) throws RealmsServiceException {
@@ -155,7 +155,7 @@ public class RealmsClient
         return Class7434.method22868(this.method35486(Class8178.method27090(this.method35484("ops" + "/$WORLD_ID/$PROFILE_UUID".replace("$WORLD_ID", String.valueOf(l)).replace("$PROFILE_UUID", replacement)))));
     }
     
-    public Boolean method35468(final long l) throws RealmsServiceException, IOException {
+    public Boolean func_224942_e(final long l) throws RealmsServiceException, IOException {
         return Boolean.valueOf(this.method35486(Class8178.method27091(this.method35484("worlds" + "/$WORLD_ID/open".replace("$WORLD_ID", String.valueOf(l))), "")));
     }
     

@@ -25,7 +25,7 @@ public abstract class Class3666 implements Class3663
     }
     
     @Override
-    public ItemStack method11292() {
+    public ItemStack getRecipeOutput() {
         return ItemStack.EMPTY;
     }
 }

@@ -22,7 +22,7 @@ public class Class3422 extends Class3418
     public final Class6601 field16176;
     public final Class6601 field16177;
     private Runnable field16178;
-    public final Class446 field16179;
+    public final IInventory field16179;
     private final Class470 field16180;
     
     public Class3422(final int n, final Class464 class464) {
@@ -85,7 +85,7 @@ public class Class3422 extends Class3418
     }
     
     @Override
-    public void method10855(final Class446 class446) {
+    public void method10855(final IInventory class446) {
         final ItemStack method20053 = this.field16176.method20053();
         if (method20053.getItem() != this.field16174.getItem()) {
             this.field16174 = method20053.method27641();
@@ -93,7 +93,7 @@ public class Class3422 extends Class3418
         }
     }
     
-    private void method10908(final Class446 class446, final ItemStack class447) {
+    private void method10908(final IInventory class446, final ItemStack class447) {
         this.field16173.clear();
         this.field16171.method19833(-1);
         this.field16177.method20055(ItemStack.EMPTY);
@@ -107,7 +107,7 @@ public class Class3422 extends Class3418
             this.field16177.method20055(ItemStack.EMPTY);
         }
         else {
-            this.field16177.method20055(this.field16173.get(this.field16171.method19832()).method11290(this.field16179));
+            this.field16177.method20055(this.field16173.get(this.field16171.method19832()).getCraftingResult(this.field16179));
         }
         this.method10876();
     }

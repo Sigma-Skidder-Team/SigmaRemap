@@ -11,16 +11,16 @@ import javax.annotation.Nullable;
 public class Class3436 extends Class3418
 {
     private static String[] field16228;
-    private final Class446 field16229;
+    private final IInventory field16229;
     private final Class6629 field16230;
     private final Class7318 field16231;
     private final Class7604 field16232;
     
-    public Class3436(final int n, final Class446 class446) {
+    public Class3436(final int n, final IInventory class446) {
         this(n, class446, new Class7607(3), Class7318.field28308);
     }
     
-    public Class3436(final int n, final Class446 class446, final Class7604 field16232, final Class7318 field16233) {
+    public Class3436(final int n, final IInventory class446, final Class7604 field16232, final Class7318 field16233) {
         super(Class8471.field34763, n);
         this.field16229 = new Class486(this, 1);
         Class3418.method10869(field16232, 3);
@@ -139,6 +139,6 @@ public class Class3436 extends Class3418
     }
     
     public boolean method10963() {
-        return !this.field16229.method2157(0).method27620();
+        return !this.field16229.getStackInSlot(0).method27620();
     }
 }

@@ -12,12 +12,12 @@ import java.util.List;
 
 public class Class4281 implements IPacket<IClientPlayNetHandler>
 {
-    private List<Class3662<?>> field19209;
+    private List<IRecipe<?>> field19209;
     
     public Class4281() {
     }
     
-    public Class4281(final Collection<Class3662<?>> collection) {
+    public Class4281(final Collection<IRecipe<?>> collection) {
         this.field19209 = Lists.newArrayList((Iterable)collection);
     }
     
@@ -36,24 +36,24 @@ public class Class4281 implements IPacket<IClientPlayNetHandler>
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeVarInt(this.field19209.size());
-        final Iterator<Class3662<?>> iterator = this.field19209.iterator();
+        final Iterator<IRecipe<?>> iterator = this.field19209.iterator();
         while (iterator.hasNext()) {
-            method12861((Class3662)iterator.next(), class8654);
+            method12861((IRecipe)iterator.next(), class8654);
         }
     }
     
-    public List<Class3662<?>> method12859() {
+    public List<IRecipe<?>> method12859() {
         return this.field19209;
     }
     
-    public static Class3662<?> method12860(final PacketBuffer class8654) {
+    public static IRecipe<?> method12860(final PacketBuffer class8654) {
         return Registry.field237.method506(class8654.method29516()).orElseThrow(() -> {
             new IllegalArgumentException("Unknown recipe serializer " + obj);
             return;
         }).method18180(class8654.method29516(), class8654);
     }
     
-    public static <T extends Class3662<?>> void method12861(final T t, final PacketBuffer class8654) {
+    public static <T extends IRecipe<?>> void method12861(final T t, final PacketBuffer class8654) {
         class8654.method29517(Registry.field237.getKey(t.method11299()));
         class8654.method29517(t.method11298());
         t.method11299().method18181(class8654, t);

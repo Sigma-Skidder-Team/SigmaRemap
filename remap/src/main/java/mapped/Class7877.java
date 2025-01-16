@@ -13,7 +13,7 @@ import java.util.List;
 public class Class7877
 {
     private static String[] field32333;
-    private Class3662<?> field32334;
+    private IRecipe<?> field32334;
     private final List<Class7997> field32335;
     private float field32336;
     
@@ -40,11 +40,11 @@ public class Class7877
     }
     
     @Nullable
-    public Class3662<?> method25524() {
+    public IRecipe<?> method25524() {
         return this.field32334;
     }
     
-    public void method25525(final Class3662<?> field32334) {
+    public void method25525(final IRecipe<?> field32334) {
         this.field32334 = field32334;
     }
     

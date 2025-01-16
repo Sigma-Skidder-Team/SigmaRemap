@@ -19,7 +19,7 @@ public class Class3677 extends Class3666
         if (class473.method2418() == 3 && class473.method2417() == 3) {
             for (int i = 0; i < class473.method2418(); ++i) {
                 for (int j = 0; j < class473.method2417(); ++j) {
-                    final ItemStack method2157 = class473.method2157(i + j * class473.method2418());
+                    final ItemStack method2157 = class473.getStackInSlot(i + j * class473.method2418());
                     if (method2157.method27620()) {
                         return false;
                     }
@@ -40,7 +40,7 @@ public class Class3677 extends Class3666
     }
     
     public ItemStack method11303(final Class473 class473) {
-        final ItemStack method2157 = class473.method2157(1 + class473.method2418());
+        final ItemStack method2157 = class473.getStackInSlot(1 + class473.method2418());
         if (method2157.getItem() == Items.field31582) {
             final ItemStack class474 = new ItemStack(Items.field31581, 8);
             Class5333.method16476(class474, Class5333.method16474(method2157));
@@ -51,7 +51,7 @@ public class Class3677 extends Class3666
     }
     
     @Override
-    public boolean method11291(final int n, final int n2) {
+    public boolean canFit(final int n, final int n2) {
         return n >= 2 && n2 >= 2;
     }
     

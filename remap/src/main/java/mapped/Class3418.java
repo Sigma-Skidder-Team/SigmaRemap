@@ -8,6 +8,7 @@ import java.util.Iterator;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
@@ -16,7 +17,7 @@ import java.util.List;
 
 public abstract class Class3418
 {
-    private final Class2265<ItemStack> field16150;
+    private final NonNullList<ItemStack> field16150;
     public final List<Class6601> field16151;
     private final List<Class6546> field16152;
     private final Class8471<?> field16153;
@@ -29,7 +30,7 @@ public abstract class Class3418
     private final Set<PlayerEntity> field16160;
     
     public Class3418(final Class8471<?> field16153, final int field16154) {
-        this.field16150 = Class2265.method8506();
+        this.field16150 = NonNullList.create();
         this.field16151 = Lists.newArrayList();
         this.field16152 = Lists.newArrayList();
         this.field16156 = -1;
@@ -51,8 +52,8 @@ public abstract class Class3418
         throw new UnsupportedOperationException("Unable to construct this menu by type");
     }
     
-    public static void method10868(final Class446 class446, final int i) {
-        final int method2239 = class446.method2239();
+    public static void method10868(final IInventory class446, final int i) {
+        final int method2239 = class446.getSizeInventory();
         if (method2239 >= i) {
             return;
         }
@@ -97,12 +98,12 @@ public abstract class Class3418
         this.field16159.remove(class514);
     }
     
-    public Class2265<ItemStack> method10875() {
-        final Class2265<Object> method8506 = Class2265.method8506();
+    public NonNullList<ItemStack> method10875() {
+        final NonNullList<Object> method8506 = NonNullList.create();
         for (int i = 0; i < this.field16151.size(); ++i) {
             method8506.add(this.field16151.get(i).method20053());
         }
-        return (Class2265<ItemStack>)method8506;
+        return (NonNullList<ItemStack>)method8506;
     }
     
     public void method10876() {
@@ -249,7 +250,7 @@ public abstract class Class3418
                         if (n2 >= 0) {
                             if (n2 < 9) {
                                 final Class6601 class2139 = this.field16151.get(n);
-                                final ItemStack method20057 = field3006.method2157(n2);
+                                final ItemStack method20057 = field3006.getStackInSlot(n2);
                                 final ItemStack method20058 = class2139.method20053();
                                 if (!method20057.method27620() || !method20058.method27620()) {
                                     if (!method20057.method27620()) {
@@ -485,20 +486,20 @@ public abstract class Class3418
         }
     }
     
-    public void method10881(final PlayerEntity playerEntity, final World class513, final Class446 class514) {
+    public void method10881(final PlayerEntity playerEntity, final World class513, final IInventory class514) {
         if (playerEntity.method1768() && (playerEntity instanceof Class513 && ((Class513) playerEntity).method2936())) {
-            for (int i = 0; i < class514.method2239(); ++i) {
+            for (int i = 0; i < class514.getSizeInventory(); ++i) {
                 playerEntity.field3006.method2364(class513, class514.method2159(i));
             }
         }
         else {
-            for (int j = 0; j < class514.method2239(); ++j) {
+            for (int j = 0; j < class514.getSizeInventory(); ++j) {
                 playerEntity.method2822(class514.method2159(j), false);
             }
         }
     }
     
-    public void method10855(final Class446 class446) {
+    public void method10855(final IInventory class446) {
         this.method10876();
     }
     
@@ -676,21 +677,21 @@ public abstract class Class3418
     }
     
     public static int method10897(final TileEntity tileEntity) {
-        return (tileEntity instanceof Class446) ? method10898((Class446) tileEntity) : 0;
+        return (tileEntity instanceof IInventory) ? method10898((IInventory) tileEntity) : 0;
     }
     
-    public static int method10898(final Class446 class446) {
+    public static int method10898(final IInventory class446) {
         if (class446 != null) {
             int n = 0;
             float n2 = 0.0f;
-            for (int i = 0; i < class446.method2239(); ++i) {
-                final ItemStack method2157 = class446.method2157(i);
+            for (int i = 0; i < class446.getSizeInventory(); ++i) {
+                final ItemStack method2157 = class446.getStackInSlot(i);
                 if (!method2157.method27620()) {
                     n2 += method2157.method27690() / (float)Math.min(class446.method2254(), method2157.method27628());
                     ++n;
                 }
             }
-            return MathHelper.method35642(n2 / class446.method2239() * 14.0f) + ((n > 0) ? 1 : 0);
+            return MathHelper.method35642(n2 / class446.getSizeInventory() * 14.0f) + ((n > 0) ? 1 : 0);
         }
         return 0;
     }

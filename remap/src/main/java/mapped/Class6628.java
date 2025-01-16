@@ -12,7 +12,7 @@ public class Class6628 extends Class6601
     public final /* synthetic */ Class7318 field26212;
     public final /* synthetic */ Class3417 field26213;
     
-    public Class6628(final Class3417 field26213, final Class446 class446, final int n, final int n2, final int n3, final Class7318 field26214) {
+    public Class6628(final Class3417 field26213, final IInventory class446, final int n, final int n2, final int n3, final Class7318 field26214) {
         this.field26213 = field26213;
         this.field26212 = field26214;
         super(class446, n, n2, n3);
@@ -27,8 +27,8 @@ public class Class6628 extends Class6601
     public ItemStack method20060(final int n) {
         final ItemStack class8321 = this.field26212.method22435((class8325, p2) -> {
             if (!Class3417.method10865(this.field26213)) {
-                if (this.field26213.field16148.method2157(1).getItem() == Items.field30967) {
-                    Class4094.method12337(class8325, this.field26213.field16148.method2157(0));
+                if (this.field26213.field16148.getStackInSlot(1).getItem() == Items.field30967) {
+                    Class4094.method12337(class8325, this.field26213.field16148.getStackInSlot(0));
                     final ItemStack class8326;
                     if (class8326 != null) {
                         class8326.method27691(1);

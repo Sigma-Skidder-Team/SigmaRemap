@@ -90,7 +90,7 @@ public class Class9317
         }
     }
     
-    public void method34488(final Class446 class446, final Class7529 class447) {
+    public void method34488(final IInventory class446, final Class7529 class447) {
         final List<ItemStack> method34485 = this.method34485(class447);
         final Random method34486 = class447.method23586();
         final List<Integer> method34487 = this.method34490(class446, method34486);
@@ -145,10 +145,10 @@ public class Class9317
         Collections.shuffle(list, rnd);
     }
     
-    private List<Integer> method34490(final Class446 class446, final Random rnd) {
+    private List<Integer> method34490(final IInventory class446, final Random rnd) {
         final ArrayList arrayList = Lists.newArrayList();
-        for (int i = 0; i < class446.method2239(); ++i) {
-            if (class446.method2157(i).method27620()) {
+        for (int i = 0; i < class446.getSizeInventory(); ++i) {
+            if (class446.getStackInSlot(i).method27620()) {
                 arrayList.add(i);
             }
         }

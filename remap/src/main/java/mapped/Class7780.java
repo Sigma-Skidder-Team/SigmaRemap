@@ -25,7 +25,7 @@ public class Class7780
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("recipe").requires(class7492 -> class7492.method23210(2))).then(Class7788.method25001("give").then(((RequiredArgumentBuilder)Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21151()).then(Class7788.method25002("recipe", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests((SuggestionProvider)Class8533.field35815).executes(commandContext -> method24972((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), Collections.singleton(Class7000.method21431((CommandContext<Class7492>)commandContext, "recipe")))))).then(Class7788.method25001("*").executes(commandContext -> method24972((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), ((Class7492)commandContext.getSource()).method23255().method1577().method6383())))))).then(Class7788.method25001("take").then(((RequiredArgumentBuilder)Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21151()).then(Class7788.method25002("recipe", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests((SuggestionProvider)Class8533.field35815).executes(commandContext -> method24973((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), Collections.singleton(Class7000.method21431((CommandContext<Class7492>)commandContext, "recipe")))))).then(Class7788.method25001("*").executes(commandContext -> method24973((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), ((Class7492)commandContext.getSource()).method23255().method1577().method6383()))))));
     }
     
-    private static int method24972(final Class7492 class7492, final Collection<Class513> collection, final Collection<Class3662<?>> collection2) throws CommandSyntaxException {
+    private static int method24972(final Class7492 class7492, final Collection<Class513> collection, final Collection<IRecipe<?>> collection2) throws CommandSyntaxException {
         int n = 0;
         final Iterator<Class513> iterator = collection.iterator();
         while (iterator.hasNext()) {
@@ -43,7 +43,7 @@ public class Class7780
         throw Class7780.field31853.create();
     }
     
-    private static int method24973(final Class7492 class7492, final Collection<Class513> collection, final Collection<Class3662<?>> collection2) throws CommandSyntaxException {
+    private static int method24973(final Class7492 class7492, final Collection<Class513> collection, final Collection<IRecipe<?>> collection2) throws CommandSyntaxException {
         int n = 0;
         final Iterator<Class513> iterator = collection.iterator();
         while (iterator.hasNext()) {

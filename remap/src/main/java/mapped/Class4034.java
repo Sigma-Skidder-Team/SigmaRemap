@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
@@ -69,7 +70,7 @@ public class Class4034 extends Item
     }
     
     @Override
-    public void method11735(final Class7207 class7207, final Class2265<ItemStack> class7208) {
+    public void method11735(final Class7207 class7207, final NonNullList<ItemStack> class7208) {
         if (class7207 != Class7207.field27998) {
             if (class7207.method22123().length != 0) {
                 for (final Class6257 class7209 : Registry.field209) {

@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class515 extends Class516<Class3441> implements Class514
@@ -126,7 +127,7 @@ public class Class515 extends Class516<Class3441> implements Class514
     }
     
     @Override
-    public void method2930(final Class3418 class3418, final Class2265<ItemStack> class3419) {
+    public void method2930(final Class3418 class3418, final NonNullList<ItemStack> class3419) {
         this.method2928(class3418, 0, class3418.method10878(0).method20053());
     }
     

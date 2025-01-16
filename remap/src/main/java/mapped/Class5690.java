@@ -6,11 +6,11 @@ package mapped;
 
 public class Class5690 extends Class5611
 {
-    public final /* synthetic */ Class5079 field23123;
+    public final /* synthetic */ RealmsMainScreen field23123;
     
-    public Class5690(final Class5079 field23123) {
+    public Class5690(final RealmsMainScreen field23123) {
         this.field23123 = field23123;
-        super(11, Class5079.method15828(field23123) + 4, Class5079.method15829(field23123) + 4, 12, 12, RealmsScreen.getLocalizedString("mco.selectServer.close"));
+        super(11, RealmsMainScreen.method15828(field23123) + 4, RealmsMainScreen.method15829(field23123) + 4, 12, 12, RealmsScreen.getLocalizedString("mco.selectServer.close"));
     }
     
     @Override
@@ -31,12 +31,12 @@ public class Class5690 extends Class5611
         RealmsScreen.method15411(this.method16929(), this.method16928(), 0.0f, this.method16923().method3360() ? 12.0f : 0.0f, 12, 12, 12, 24);
         RenderSystem.method30060();
         if (this.method16923().isMouseOver(n, n2)) {
-            Class5079.method15830(this.field23123, this.method16923().method3369());
+            RealmsMainScreen.method15830(this.field23123, this.method16923().method3369());
         }
     }
     
     @Override
     public void method16932() {
-        Class5079.method15831(this.field23123);
+        RealmsMainScreen.method15831(this.field23123);
     }
 }

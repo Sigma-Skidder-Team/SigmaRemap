@@ -570,8 +570,8 @@ public abstract class PlayerEntity extends LivingEntity
     }
     
     public void method2820() {
-        for (int i = 0; i < this.field3006.method2239(); ++i) {
-            final ItemStack method2157 = this.field3006.method2157(i);
+        for (int i = 0; i < this.field3006.getSizeInventory(); ++i) {
+            final ItemStack method2157 = this.field3006.getStackInSlot(i);
             if (!method2157.method27620()) {
                 if (Class8742.method30218(method2157)) {
                     this.field3006.method2159(i);
@@ -865,7 +865,7 @@ public abstract class PlayerEntity extends LivingEntity
     public void method2831(final Class498 class498) {
     }
     
-    public void method2832(final Class806 class806, final Class446 class807) {
+    public void method2832(final Class806 class806, final IInventory class807) {
     }
     
     public OptionalInt method2833(final Class434 class434) {
@@ -1385,14 +1385,14 @@ public abstract class PlayerEntity extends LivingEntity
     public void method2861(final Class9455<?> class9455) {
     }
     
-    public int method2862(final Collection<Class3662<?>> collection) {
+    public int method2862(final Collection<IRecipe<?>> collection) {
         return 0;
     }
     
     public void method2863(final ResourceLocation[] array) {
     }
     
-    public int method2864(final Collection<Class3662<?>> collection) {
+    public int method2864(final Collection<IRecipe<?>> collection) {
         return 0;
     }
     
@@ -1990,7 +1990,7 @@ public abstract class PlayerEntity extends LivingEntity
             return true;
         }
         final int n2 = n - 200;
-        if (n2 >= 0 && n2 < this.field3007.method2239()) {
+        if (n2 >= 0 && n2 < this.field3007.getSizeInventory()) {
             this.field3007.method2160(n2, class8321);
             return true;
         }
@@ -2077,8 +2077,8 @@ public abstract class PlayerEntity extends LivingEntity
         final ItemStack method12291 = Class4085.method12291(this, ((Class4085)class8321.getItem()).method12289());
         if (method12291.method27620()) {
             final Predicate<ItemStack> method12292 = ((Class4085)class8321.getItem()).method12290();
-            for (int i = 0; i < this.field3006.method2239(); ++i) {
-                final ItemStack method12293 = this.field3006.method2157(i);
+            for (int i = 0; i < this.field3006.getSizeInventory(); ++i) {
+                final ItemStack method12293 = this.field3006.getStackInSlot(i);
                 if (method12292.test(method12293)) {
                     return method12293;
                 }

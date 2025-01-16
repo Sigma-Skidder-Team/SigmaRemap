@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 
-public interface Class441 extends Class446
+public interface Class441 extends IInventory
 {
     int[] method2248(final Direction p0);
     

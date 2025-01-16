@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -23,20 +24,20 @@ import java.util.List;
 
 public class Class455 extends Class456 implements Class453, Class439
 {
-    private Class2265<ItemStack> field2707;
+    private NonNullList<ItemStack> field2707;
     private int field2708;
     private long field2709;
     
     public Class455() {
         super(Class5412.field22557);
-        this.field2707 = Class2265.method8507(5, ItemStack.EMPTY);
+        this.field2707 = NonNullList.withSize(5, ItemStack.EMPTY);
         this.field2708 = -1;
     }
     
     @Override
     public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2707 = Class2265.method8507(this.method2239(), ItemStack.EMPTY);
+        this.field2707 = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
         if (!this.method2324(class51)) {
             Class8508.method28426(class51, this.field2707);
         }
@@ -54,7 +55,7 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return this.field2707.size();
     }
     
@@ -126,15 +127,15 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     private boolean method2296() {
-        final Class446 method2307 = this.method2307();
+        final IInventory method2307 = this.method2307();
         if (method2307 == null) {
             return false;
         }
         final Direction method2308 = this.method2194().get((IProperty<Direction>)Class3959.field17881).getOpposite();
         if (!this.method2298(method2307, method2308)) {
-            for (int i = 0; i < this.method2239(); ++i) {
-                if (!this.method2157(i).method27620()) {
-                    final ItemStack method2309 = this.method2157(i).method27641();
+            for (int i = 0; i < this.getSizeInventory(); ++i) {
+                if (!this.getStackInSlot(i).method27620()) {
+                    final ItemStack method2309 = this.getStackInSlot(i).method27641();
                     if (method2303(this, method2307, this.method2158(i, 1), method2308).method27620()) {
                         method2307.method2161();
                         return true;
@@ -147,11 +148,11 @@ public class Class455 extends Class456 implements Class453, Class439
         return false;
     }
     
-    private static IntStream method2297(final Class446 class446, final Direction class447) {
-        return (class446 instanceof Class441) ? IntStream.of(((Class441)class446).method2248(class447)) : IntStream.range(0, class446.method2239());
+    private static IntStream method2297(final IInventory class446, final Direction class447) {
+        return (class446 instanceof Class441) ? IntStream.of(((Class441)class446).method2248(class447)) : IntStream.range(0, class446.getSizeInventory());
     }
     
-    private boolean method2298(final Class446 class446, final Direction class447) {
+    private boolean method2298(final IInventory class446, final Direction class447) {
         return method2297(class446, class447).allMatch(n2 -> {
             class448.method2157(n2);
             final ItemStack class449;
@@ -159,12 +160,12 @@ public class Class455 extends Class456 implements Class453, Class439
         });
     }
     
-    private static boolean method2299(final Class446 class446, final Direction class447) {
+    private static boolean method2299(final IInventory class446, final Direction class447) {
         return method2297(class446, class447).allMatch(n2 -> class448.method2157(n2).method27620());
     }
     
     public static boolean method2300(final Class453 class453) {
-        final Class446 method2308 = method2308(class453);
+        final IInventory method2308 = method2308(class453);
         if (method2308 == null) {
             final Iterator<Class427> iterator = method2309(class453).iterator();
             while (iterator.hasNext()) {
@@ -179,8 +180,8 @@ public class Class455 extends Class456 implements Class453, Class439
         return !method2299(method2308, field511) && method2297(method2308, field511).anyMatch(n2 -> method2301(class454, class455, n2, class456));
     }
     
-    private static boolean method2301(final Class453 class453, final Class446 class454, final int n, final Direction class455) {
-        final ItemStack method2157 = class454.method2157(n);
+    private static boolean method2301(final Class453 class453, final IInventory class454, final int n, final Direction class455) {
+        final ItemStack method2157 = class454.getStackInSlot(n);
         if (!method2157.method27620()) {
             if (method2305(class454, method2157, n, class455)) {
                 final ItemStack method2158 = method2157.method27641();
@@ -194,7 +195,7 @@ public class Class455 extends Class456 implements Class453, Class439
         return false;
     }
     
-    public static boolean method2302(final Class446 class446, final Class427 class447) {
+    public static boolean method2302(final IInventory class446, final Class427 class447) {
         boolean b = false;
         final ItemStack method2303 = method2303(null, class446, class447.method2107().method27641(), null);
         if (!method2303.method27620()) {
@@ -207,13 +208,13 @@ public class Class455 extends Class456 implements Class453, Class439
         return b;
     }
     
-    public static ItemStack method2303(final Class446 class446, final Class446 class447, ItemStack class448, final Direction class449) {
+    public static ItemStack method2303(final IInventory class446, final IInventory class447, ItemStack class448, final Direction class449) {
         if (class447 instanceof Class441 && class449 != null) {
             final int[] method2248 = ((Class441)class447).method2248(class449);
             for (int n = 0; n < method2248.length && !class448.method27620(); class448 = method2306(class446, class447, class448, method2248[n], class449), ++n) {}
         }
         else {
-            for (int method2249 = class447.method2239(), i = 0; i < method2249; ++i) {
+            for (int method2249 = class447.getSizeInventory(), i = 0; i < method2249; ++i) {
                 if (class448.method27620()) {
                     break;
                 }
@@ -223,16 +224,16 @@ public class Class455 extends Class456 implements Class453, Class439
         return class448;
     }
     
-    private static boolean method2304(final Class446 class446, final ItemStack class447, final int n, final Direction class448) {
+    private static boolean method2304(final IInventory class446, final ItemStack class447, final int n, final Direction class448) {
         return class446.method2264(n, class447) && (!(class446 instanceof Class441) || ((Class441)class446).method2249(n, class447, class448));
     }
     
-    private static boolean method2305(final Class446 class446, final ItemStack class447, final int n, final Direction class448) {
+    private static boolean method2305(final IInventory class446, final ItemStack class447, final int n, final Direction class448) {
         return !(class446 instanceof Class441) || ((Class441)class446).method2250(n, class447, class448);
     }
     
-    private static ItemStack method2306(final Class446 class446, final Class446 class447, ItemStack field34174, final int n, final Direction class448) {
-        final ItemStack method2157 = class447.method2157(n);
+    private static ItemStack method2306(final IInventory class446, final IInventory class447, ItemStack field34174, final int n, final Direction class448) {
+        final ItemStack method2157 = class447.getStackInSlot(n);
         if (method2304(class447, field34174, n, class448)) {
             int n2 = 0;
             final boolean method2158 = class447.method2156();
@@ -271,12 +272,12 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     @Nullable
-    private Class446 method2307() {
+    private IInventory method2307() {
         return method2310(this.method2186(), this.field2657.method1149(this.method2194().get((IProperty<Direction>)Class3959.field17881)));
     }
     
     @Nullable
-    public static Class446 method2308(final Class453 class453) {
+    public static IInventory method2308(final Class453 class453) {
         return method2311(class453.method2186(), class453.method2286(), class453.method2287() + 1.0, class453.method2288());
     }
     
@@ -285,21 +286,21 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     @Nullable
-    public static Class446 method2310(final World class1847, final BlockPos class1848) {
+    public static IInventory method2310(final World class1847, final BlockPos class1848) {
         return method2311(class1847, class1848.getX() + 0.5, class1848.getY() + 0.5, class1848.getZ() + 0.5);
     }
     
     @Nullable
-    public static Class446 method2311(final World class1847, final double n, final double n2, final double n3) {
-        Class446 class1848 = null;
+    public static IInventory method2311(final World class1847, final double n, final double n2, final double n3) {
+        IInventory class1848 = null;
         final BlockPos class1849 = new BlockPos(n, n2, n3);
         final BlockState method6701 = class1847.getBlockState(class1849);
         final Block method6702 = method6701.getBlock();
         if (!(method6702 instanceof Class3966)) {
             if (method6702.method11802()) {
                 final TileEntity method6703 = class1847.getTileEntity(class1849);
-                if (method6703 instanceof Class446) {
-                    class1848 = (Class446)method6703;
+                if (method6703 instanceof IInventory) {
+                    class1848 = (IInventory)method6703;
                     if (class1848 instanceof Class475) {
                         if (method6702 instanceof Class3865) {
                             class1848 = Class3865.method11936((Class3865)method6702, method6701, class1847, class1849, true);
@@ -314,7 +315,7 @@ public class Class455 extends Class456 implements Class453, Class439
         if (class1848 == null) {
             final List<Entity> method6704 = class1847.method6737(null, new AxisAlignedBB(n - 0.5, n2 - 0.5, n3 - 0.5, n + 0.5, n2 + 0.5, n3 + 0.5), Class9170.field38848);
             if (!method6704.isEmpty()) {
-                class1848 = (Class446)method6704.get(class1847.rand.nextInt(method6704.size()));
+                class1848 = (IInventory)method6704.get(class1847.rand.nextInt(method6704.size()));
             }
         }
         return class1848;
@@ -352,12 +353,12 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     @Override
-    public Class2265<ItemStack> method2246() {
+    public NonNullList<ItemStack> method2246() {
         return this.field2707;
     }
     
     @Override
-    public void method2247(final Class2265<ItemStack> field2707) {
+    public void method2247(final NonNullList<ItemStack> field2707) {
         this.field2707 = field2707;
     }
     

@@ -13,12 +13,12 @@ import java.util.List;
 
 public class Class588 extends Widget implements Class587<Class120>
 {
-    private final Class3662<?> field3484;
+    private final IRecipe<?> field3484;
     private final boolean field3485;
     public final List<Class8370> field3486;
     public final /* synthetic */ Class564 field3487;
     
-    public Class588(final Class564 field3487, final int n, final int n2, final Class3662<?> field3488, final boolean field3489) {
+    public Class588(final Class564 field3487, final int n, final int n2, final IRecipe<?> field3488, final boolean field3489) {
         this.field3487 = field3487;
         super(n, n2, 200, 20, "");
         this.field3486 = Lists.newArrayList();
@@ -29,7 +29,7 @@ public class Class588 extends Widget implements Class587<Class120>
         this.method3456(field3488);
     }
     
-    public void method3456(final Class3662<?> class3662) {
+    public void method3456(final IRecipe<?> class3662) {
         this.method3455(3, 3, -1, class3662, class3662.method11294().iterator(), 0);
     }
     

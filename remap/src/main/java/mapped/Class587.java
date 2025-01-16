@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public interface Class587<T>
 {
-    default void method3455(final int n, final int n2, final int n3, final Class3662<?> class3662, final Iterator<T> iterator, final int n4) {
+    default void method3455(final int n, final int n2, final int n3, final IRecipe<?> class3662, final Iterator<T> iterator, final int n4) {
         int method11304 = n;
         int method11305 = n2;
         if (class3662 instanceof Class3664) {

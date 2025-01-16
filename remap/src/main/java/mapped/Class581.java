@@ -268,7 +268,7 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
             return false;
         }
         if (this.field3475.method34158(n, n2, n3, (this.field3464 - 147) / 2 - this.field3463, (this.field3465 - 166) / 2, 147, 166)) {
-            final Class3662<?> method34155 = this.field3475.method34155();
+            final IRecipe<?> method34155 = this.field3475.method34155();
             final Class9586 method34156 = this.field3475.method34156();
             if (method34155 != null) {
                 if (method34156 != null) {
@@ -448,15 +448,15 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
     }
     
     @Override
-    public void method3438(final List<Class3662<?>> list) {
-        final Iterator<Class3662<?>> iterator = list.iterator();
+    public void method3438(final List<IRecipe<?>> list) {
+        final Iterator<IRecipe<?>> iterator = list.iterator();
         while (iterator.hasNext()) {
             this.field3471.player.method4123(iterator.next());
         }
     }
     
-    public void method3439(final Class3662<?> class3662, final List<Class6601> list) {
-        final ItemStack method11292 = class3662.method11292();
+    public void method3439(final IRecipe<?> class3662, final List<Class6601> list) {
+        final ItemStack method11292 = class3662.getRecipeOutput();
         this.field3466.method25525(class3662);
         this.field3466.method25521(Class120.method619(method11292), list.get(0).field26175, list.get(0).field26176);
         this.method3455(this.field3470.method10938(), this.field3470.method10939(), this.field3470.method10937(), class3662, class3662.method11294().iterator(), 0);

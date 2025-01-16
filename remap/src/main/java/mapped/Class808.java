@@ -40,8 +40,8 @@ public class Class808 extends Class806
     public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         class51.putInt("Variant", this.method4772());
-        if (!this.field4342.method2157(1).method27620()) {
-            class51.put("ArmorItem", this.field4342.method2157(1).method27627(new CompoundNBT()));
+        if (!this.field4342.getStackInSlot(1).method27620()) {
+            class51.put("ArmorItem", this.field4342.getStackInSlot(1).method27627(new CompoundNBT()));
         }
     }
     
@@ -108,7 +108,7 @@ public class Class808 extends Class806
     @Override
     public void method4732() {
         super.method4732();
-        this.method4777(this.field4342.method2157(1));
+        this.method4777(this.field4342.getStackInSlot(1));
         this.method4191(Class2215.field13604, 0.0f);
     }
     
@@ -126,7 +126,7 @@ public class Class808 extends Class806
     }
     
     @Override
-    public void method4733(final Class446 class446) {
+    public void method4733(final IInventory class446) {
         final ItemStack method4769 = this.method4769();
         super.method4733(class446);
         final ItemStack method4770 = this.method4769();

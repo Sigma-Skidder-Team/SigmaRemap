@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 import java.util.List;
 import java.util.Set;
@@ -70,11 +71,11 @@ public abstract class Class582 extends Class581
     }
     
     @Override
-    public void method3439(final Class3662<?> class3662, final List<Class6601> list) {
-        final ItemStack method11292 = class3662.method11292();
+    public void method3439(final IRecipe<?> class3662, final List<Class6601> list) {
+        final ItemStack method11292 = class3662.getRecipeOutput();
         this.field3466.method25525(class3662);
         this.field3466.method25521(Class120.method619(method11292), list.get(2).field26175, list.get(2).field26176);
-        final Class2265 method11293 = class3662.method11294();
+        final NonNullList method11293 = class3662.method11294();
         this.field3481 = list.get(1);
         if (this.field3480 == null) {
             this.field3480 = this.method3453();

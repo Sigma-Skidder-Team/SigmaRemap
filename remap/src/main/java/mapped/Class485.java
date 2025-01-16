@@ -21,14 +21,14 @@ public class Class485 extends Class443
     }
     
     public void method2430(final ListNBT class52) {
-        for (int i = 0; i < this.method2239(); ++i) {
+        for (int i = 0; i < this.getSizeInventory(); ++i) {
             this.method2160(i, ItemStack.EMPTY);
         }
         for (int j = 0; j < class52.size(); ++j) {
             final CompoundNBT method346 = class52.method346(j);
             final int n = method346.getByte("Slot") & 0xFF;
             if (n >= 0) {
-                if (n < this.method2239()) {
+                if (n < this.getSizeInventory()) {
                     this.method2160(n, ItemStack.method27619(method346));
                 }
             }
@@ -37,8 +37,8 @@ public class Class485 extends Class443
     
     public ListNBT method2431() {
         final ListNBT class52 = new ListNBT();
-        for (int i = 0; i < this.method2239(); ++i) {
-            final ItemStack method2157 = this.method2157(i);
+        for (int i = 0; i < this.getSizeInventory(); ++i) {
+            final ItemStack method2157 = this.getStackInSlot(i);
             if (!method2157.method27620()) {
                 final CompoundNBT e = new CompoundNBT();
                 e.putByte("Slot", (byte)i);

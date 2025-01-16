@@ -10,27 +10,28 @@ import java.util.function.Predicate;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.INameable;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
 import java.util.List;
 
-public class Class464 implements Class446, INameable
+public class Class464 implements IInventory, INameable
 {
-    public final Class2265<ItemStack> field2739;
-    public final Class2265<ItemStack> field2740;
-    public final Class2265<ItemStack> field2741;
-    private final List<Class2265<ItemStack>> field2742;
+    public final NonNullList<ItemStack> field2739;
+    public final NonNullList<ItemStack> field2740;
+    public final NonNullList<ItemStack> field2741;
+    private final List<NonNullList<ItemStack>> field2742;
     public int field2743;
     public final PlayerEntity field2744;
     private ItemStack field2745;
     private int field2746;
     
     public Class464(final PlayerEntity field2744) {
-        this.field2739 = Class2265.method8507(36, ItemStack.EMPTY);
-        this.field2740 = Class2265.method8507(4, ItemStack.EMPTY);
-        this.field2741 = Class2265.method8507(1, ItemStack.EMPTY);
-        this.field2742 = (List<Class2265<ItemStack>>)ImmutableList.of((Object)this.field2739, (Object)this.field2740, (Object)this.field2741);
+        this.field2739 = NonNullList.withSize(36, ItemStack.EMPTY);
+        this.field2740 = NonNullList.withSize(4, ItemStack.EMPTY);
+        this.field2741 = NonNullList.withSize(1, ItemStack.EMPTY);
+        this.field2742 = (List<NonNullList<ItemStack>>)ImmutableList.of((Object)this.field2739, (Object)this.field2740, (Object)this.field2741);
         this.field2745 = ItemStack.EMPTY;
         this.field2744 = field2744;
     }
@@ -165,8 +166,8 @@ public class Class464 implements Class446, INameable
     
     public int method2357(final Predicate<ItemStack> predicate, final int n) {
         int n2 = 0;
-        for (int i = 0; i < this.method2239(); ++i) {
-            final ItemStack method2157 = this.method2157(i);
+        for (int i = 0; i < this.getSizeInventory(); ++i) {
+            final ItemStack method2157 = this.getStackInSlot(i);
             if (!method2157.method27620()) {
                 if (predicate.test(method2157)) {
                     final int n3 = (n > 0) ? Math.min(n - n2, method2157.method27690()) : method2157.method27690();
@@ -216,7 +217,7 @@ public class Class464 implements Class446, INameable
     private int method2359(final int n, final ItemStack class8321) {
         final Item method27622 = class8321.getItem();
         final int method27623 = class8321.method27690();
-        ItemStack method27624 = this.method2157(n);
+        ItemStack method27624 = this.getStackInSlot(n);
         if (method27624.method27620()) {
             method27624 = new ItemStack(method27622, 0);
             if (class8321.method27656()) {
@@ -241,10 +242,10 @@ public class Class464 implements Class446, INameable
     }
     
     public int method2360(final ItemStack class8321) {
-        if (this.method2347(this.method2157(this.field2743), class8321)) {
+        if (this.method2347(this.getStackInSlot(this.field2743), class8321)) {
             return this.field2743;
         }
-        if (!this.method2347(this.method2157(40), class8321)) {
+        if (!this.method2347(this.getStackInSlot(40), class8321)) {
             for (int i = 0; i < this.field2739.size(); ++i) {
                 if (this.method2347(this.field2739.get(i), class8321)) {
                     return i;
@@ -256,7 +257,7 @@ public class Class464 implements Class446, INameable
     }
     
     public void method2361() {
-        for (final Class2265 class2265 : this.field2742) {
+        for (final NonNullList class2265 : this.field2742) {
             for (int i = 0; i < class2265.size(); ++i) {
                 if (!((ItemStack)class2265.get(i)).method27620()) {
                     ((ItemStack)class2265.get(i)).method27650(this.field2744.world, this.field2744, i, this.field2743 == i);
@@ -329,10 +330,10 @@ public class Class464 implements Class446, INameable
                     this.field2744.method2822(class1848, false);
                     break;
                 }
-                if (!this.method2363(n, class1848.method27621(class1848.method27628() - this.method2157(n).method27690()))) {
+                if (!this.method2363(n, class1848.method27621(class1848.method27628() - this.getStackInSlot(n).method27690()))) {
                     continue;
                 }
-                ((Class513)this.field2744).field3039.method17469(new Class4272(-2, n, this.method2157(n)));
+                ((Class513)this.field2744).field3039.method17469(new Class4272(-2, n, this.getStackInSlot(n)));
             }
         }
     }
@@ -340,7 +341,7 @@ public class Class464 implements Class446, INameable
     @Override
     public ItemStack method2158(int n, final int n2) {
         List list = null;
-        for (final Class2265 class2265 : this.field2742) {
+        for (final NonNullList class2265 : this.field2742) {
             if (n < class2265.size()) {
                 list = class2265;
                 break;
@@ -351,7 +352,7 @@ public class Class464 implements Class446, INameable
     }
     
     public void method2365(final ItemStack class8321) {
-        for (final Class2265 class8322 : this.field2742) {
+        for (final NonNullList class8322 : this.field2742) {
             for (int i = 0; i < class8322.size(); ++i) {
                 if (class8322.get(i) == class8321) {
                     class8322.set(i, ItemStack.EMPTY);
@@ -363,8 +364,8 @@ public class Class464 implements Class446, INameable
     
     @Override
     public ItemStack method2159(int n) {
-        Class2265 class2265 = null;
-        for (final Class2265 class2266 : this.field2742) {
+        NonNullList class2265 = null;
+        for (final NonNullList class2266 : this.field2742) {
             if (n < class2266.size()) {
                 class2265 = class2266;
                 break;
@@ -381,8 +382,8 @@ public class Class464 implements Class446, INameable
     
     @Override
     public void method2160(int n, final ItemStack class8321) {
-        Class2265<ItemStack> class8322 = null;
-        for (final Class2265 class8323 : this.field2742) {
+        NonNullList<ItemStack> class8322 = null;
+        for (final NonNullList class8323 : this.field2742) {
             if (n < class8323.size()) {
                 class8322 = class8323;
                 break;
@@ -451,7 +452,7 @@ public class Class464 implements Class446, INameable
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return this.field2739.size() + this.field2740.size() + this.field2741.size();
     }
     
@@ -482,9 +483,9 @@ public class Class464 implements Class446, INameable
     }
     
     @Override
-    public ItemStack method2157(int n) {
+    public ItemStack getStackInSlot(int n) {
         List list = null;
-        for (final Class2265 class2265 : this.field2742) {
+        for (final NonNullList class2265 : this.field2742) {
             if (n < class2265.size()) {
                 list = class2265;
                 break;
@@ -500,7 +501,7 @@ public class Class464 implements Class446, INameable
     }
     
     public boolean method2369(final BlockState class7096) {
-        return this.method2157(this.field2743).method27639(class7096);
+        return this.getStackInSlot(this.field2743).method27639(class7096);
     }
     
     public ItemStack method2370(final int n) {
@@ -557,7 +558,7 @@ public class Class464 implements Class446, INameable
     }
     
     public boolean method2376(final ItemStack class8321) {
-        final Iterator<Class2265<ItemStack>> iterator = this.field2742.iterator();
+        final Iterator<NonNullList<ItemStack>> iterator = this.field2742.iterator();
         while (iterator.hasNext()) {
             for (final ItemStack class8322 : iterator.next()) {
                 if (!class8322.method27620() && class8322.method27647(class8321)) {
@@ -569,7 +570,7 @@ public class Class464 implements Class446, INameable
     }
     
     public boolean method2377(final Class7909<Item> class7909) {
-        final Iterator<Class2265<ItemStack>> iterator = this.field2742.iterator();
+        final Iterator<NonNullList<ItemStack>> iterator = this.field2742.iterator();
         while (iterator.hasNext()) {
             for (final ItemStack class7910 : iterator.next()) {
                 if (!class7910.method27620() && class7909.method25618(class7910.getItem())) {
@@ -581,15 +582,15 @@ public class Class464 implements Class446, INameable
     }
     
     public void method2378(final Class464 class464) {
-        for (int i = 0; i < this.method2239(); ++i) {
-            this.method2160(i, class464.method2157(i));
+        for (int i = 0; i < this.getSizeInventory(); ++i) {
+            this.method2160(i, class464.getStackInSlot(i));
         }
         this.field2743 = class464.field2743;
     }
     
     @Override
     public void method2164() {
-        final Iterator<Class2265<ItemStack>> iterator = this.field2742.iterator();
+        final Iterator<NonNullList<ItemStack>> iterator = this.field2742.iterator();
         while (iterator.hasNext()) {
             iterator.next().clear();
         }

@@ -25,10 +25,10 @@ public class Class6522 extends Class6521
         this.field25962 = field25962;
     }
     
-    public int method19720(final Collection<Class3662<?>> collection, final Class513 class513) {
+    public int method19720(final Collection<IRecipe<?>> collection, final Class513 class513) {
         final ArrayList arrayList = Lists.newArrayList();
         int n = 0;
-        for (final Class3662 class514 : collection) {
+        for (final IRecipe class514 : collection) {
             final ResourceLocation method11298 = class514.method11298();
             if (this.field25951.contains(method11298)) {
                 continue;
@@ -46,10 +46,10 @@ public class Class6522 extends Class6521
         return n;
     }
     
-    public int method19721(final Collection<Class3662<?>> collection, final Class513 class513) {
+    public int method19721(final Collection<IRecipe<?>> collection, final Class513 class513) {
         final ArrayList arrayList = Lists.newArrayList();
         int n = 0;
-        final Iterator<Class3662<?>> iterator = collection.iterator();
+        final Iterator<IRecipe<?>> iterator = collection.iterator();
         while (iterator.hasNext()) {
             final ResourceLocation method11298 = iterator.next().method11298();
             if (!this.field25951.contains(method11298)) {
@@ -97,12 +97,12 @@ public class Class6522 extends Class6521
         this.method19725(class51.getList("toBeDisplayed", 8), this::method19701);
     }
     
-    private void method19725(final ListNBT class52, final Consumer<Class3662<?>> consumer) {
+    private void method19725(final ListNBT class52, final Consumer<IRecipe<?>> consumer) {
         for (int i = 0; i < class52.size(); ++i) {
             final String method353 = class52.method353(i);
             try {
                 final ResourceLocation class53 = new ResourceLocation(method353);
-                final Optional<? extends Class3662<?>> method354 = this.field25962.method6382(class53);
+                final Optional<? extends IRecipe<?>> method354 = this.field25962.method6382(class53);
                 if (!method354.isPresent()) {
                     Class6522.field25961.error("Tried to load unrecognized recipe: {} removed now.", (Object)class53);
                 }

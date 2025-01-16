@@ -514,8 +514,8 @@ public class Class824 extends Class819 implements Class831, Class825
     private void method4875() {
         if (this.method4874()) {
             if (this.method4886() != 0) {
-                for (int i = 0; i < this.method4837().method2239(); ++i) {
-                    final ItemStack method2157 = this.method4837().method2157(i);
+                for (int i = 0; i < this.method4837().getSizeInventory(); ++i) {
+                    final ItemStack method2157 = this.method4837().getStackInSlot(i);
                     if (!method2157.method27620()) {
                         final Integer n = Class824.field4400.get(method2157.getItem());
                         if (n != null) {
@@ -649,8 +649,8 @@ public class Class824 extends Class819 implements Class831, Class825
         if (this.method4883(method2108)) {
             final Class443 method2109 = this.method4837();
             int n = 0;
-            for (int i = 0; i < method2109.method2239(); ++i) {
-                final ItemStack method2110 = method2109.method2157(i);
+            for (int i = 0; i < method2109.getSizeInventory(); ++i) {
+                final ItemStack method2110 = method2109.getStackInSlot(i);
                 if (method2110.method27620() || (method2110.getItem() == method2108 && method2110.method27690() < method2110.method27628())) {
                     n = 1;
                     break;

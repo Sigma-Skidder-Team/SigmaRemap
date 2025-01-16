@@ -60,7 +60,7 @@ public class Class3955 extends Class3841
         final Class458 class1850 = class1849.method16766();
         final int method2333 = class1850.method2333();
         if (method2333 >= 0) {
-            final ItemStack method2334 = class1850.method2157(method2333);
+            final ItemStack method2334 = class1850.getStackInSlot(method2333);
             final Class6423 method2335 = this.method12071(method2334);
             if (method2335 != Class6423.field25532) {
                 class1850.method2160(method2333, method2335.method19090(class1849, method2334));
@@ -120,7 +120,7 @@ public class Class3955 extends Class3841
         if (class7096.method21696() != class7099.method21696()) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class458) {
-                Class9193.method33638(class7097, class7098, (Class446)method6727);
+                Class9193.method33638(class7097, class7098, (IInventory)method6727);
                 class7097.method6783(class7098, this);
             }
             super.method11829(class7096, class7097, class7098, class7099, b);

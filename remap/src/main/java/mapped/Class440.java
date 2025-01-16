@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -19,7 +20,7 @@ import java.util.List;
 public class Class440 extends Class456 implements Class441, Class439
 {
     private static final int[] field2665;
-    private Class2265<ItemStack> field2666;
+    private NonNullList<ItemStack> field2666;
     private int field2667;
     private Class2100 field2668;
     private float field2669;
@@ -29,7 +30,7 @@ public class Class440 extends Class456 implements Class441, Class439
     
     public Class440(final Class181 field2671) {
         super(Class5412.field22563);
-        this.field2666 = Class2265.method8507(27, ItemStack.EMPTY);
+        this.field2666 = NonNullList.withSize(27, ItemStack.EMPTY);
         this.field2668 = Class2100.field12169;
         this.field2671 = field2671;
     }
@@ -157,7 +158,7 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return this.field2666.size();
     }
     
@@ -224,7 +225,7 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     public void method2244(final CompoundNBT class51) {
-        this.field2666 = Class2265.method8507(this.method2239(), ItemStack.EMPTY);
+        this.field2666 = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
         if (!this.method2324(class51)) {
             if (class51.contains("Items", 9)) {
                 Class8508.method28426(class51, this.field2666);
@@ -240,12 +241,12 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     @Override
-    public Class2265<ItemStack> method2246() {
+    public NonNullList<ItemStack> method2246() {
         return this.field2666;
     }
     
     @Override
-    public void method2247(final Class2265<ItemStack> field2666) {
+    public void method2247(final NonNullList<ItemStack> field2666) {
         this.field2666 = field2666;
     }
     

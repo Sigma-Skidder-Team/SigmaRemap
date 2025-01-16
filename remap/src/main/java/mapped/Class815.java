@@ -52,8 +52,8 @@ public class Class815 extends Class812 implements Class768
         super.method1761(class51);
         class51.putInt("Variant", this.method4788());
         class51.putInt("Strength", this.method4787());
-        if (!this.field4342.method2157(1).method27620()) {
-            class51.put("DecorItem", this.field4342.method2157(1).method27627(new CompoundNBT()));
+        if (!this.field4342.getStackInSlot(1).method27620()) {
+            class51.put("DecorItem", this.field4342.getStackInSlot(1).method27627(new CompoundNBT()));
         }
     }
     
@@ -268,7 +268,7 @@ public class Class815 extends Class812 implements Class768
     }
     
     @Override
-    public void method4733(final Class446 class446) {
+    public void method4733(final IInventory class446) {
         final Class181 method4792 = this.method4792();
         super.method4733(class446);
         final Class181 method4793 = this.method4792();
@@ -285,7 +285,7 @@ public class Class815 extends Class812 implements Class768
     public void method4732() {
         if (!this.world.isRemote) {
             super.method4732();
-            this.method4790(method4791(this.field4342.method2157(1)));
+            this.method4790(method4791(this.field4342.getStackInSlot(1)));
         }
     }
     

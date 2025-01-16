@@ -9,7 +9,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
 
-public abstract class Class460 extends TileEntity implements Class446, Class434, INameable
+public abstract class Class460 extends TileEntity implements IInventory, Class434, INameable
 {
     private Class9115 field2716;
     private ITextComponent field2717;

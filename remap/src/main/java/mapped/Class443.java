@@ -9,24 +9,25 @@ import java.util.stream.Collectors;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 import java.util.List;
 
-public class Class443 implements Class446, Class472
+public class Class443 implements IInventory, Class472
 {
     private static String[] field2678;
     private final int field2679;
-    private final Class2265<ItemStack> field2680;
+    private final NonNullList<ItemStack> field2680;
     private List<Class807> field2681;
     
     public Class443(final int field2679) {
         this.field2679 = field2679;
-        this.field2680 = Class2265.method8507(field2679, ItemStack.EMPTY);
+        this.field2680 = NonNullList.withSize(field2679, ItemStack.EMPTY);
     }
     
     public Class443(final ItemStack... array) {
         this.field2679 = array.length;
-        this.field2680 = Class2265.method8508(ItemStack.EMPTY, array);
+        this.field2680 = NonNullList.from(ItemStack.EMPTY, array);
     }
     
     public void method2255(final Class807 class807) {
@@ -41,7 +42,7 @@ public class Class443 implements Class446, Class472
     }
     
     @Override
-    public ItemStack method2157(final int n) {
+    public ItemStack getStackInSlot(final int n) {
         return (n >= 0 && n < this.field2680.size()) ? this.field2680.get(n) : ItemStack.EMPTY;
     }
     
@@ -57,7 +58,7 @@ public class Class443 implements Class446, Class472
     public ItemStack method2257(final Item obj, final int n) {
         final ItemStack class8321 = new ItemStack(obj, 0);
         for (int i = this.field2679 - 1; i >= 0; --i) {
-            final ItemStack method2157 = this.method2157(i);
+            final ItemStack method2157 = this.getStackInSlot(i);
             if (method2157.getItem().equals(obj)) {
                 class8321.method27692(method2157.method27621(n - class8321.method27690()).method27690());
                 if (class8321.method27690() == n) {
@@ -103,7 +104,7 @@ public class Class443 implements Class446, Class472
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return this.field2679;
     }
     
@@ -155,7 +156,7 @@ public class Class443 implements Class446, Class472
     
     private void method2260(final ItemStack class8321) {
         for (int i = 0; i < this.field2679; ++i) {
-            if (this.method2157(i).method27620()) {
+            if (this.getStackInSlot(i).method27620()) {
                 this.method2160(i, class8321.method27641());
                 class8321.method27691(0);
                 return;
@@ -165,7 +166,7 @@ public class Class443 implements Class446, Class472
     
     private void method2261(final ItemStack class8321) {
         for (int i = 0; i < this.field2679; ++i) {
-            final ItemStack method2157 = this.method2157(i);
+            final ItemStack method2157 = this.getStackInSlot(i);
             if (ItemStack.method27645(method2157, class8321)) {
                 this.method2262(class8321, method2157);
                 if (class8321.method27620()) {

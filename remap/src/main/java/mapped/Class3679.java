@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 
 public class Class3679 implements Class3663
@@ -13,9 +14,9 @@ public class Class3679 implements Class3663
     private final ResourceLocation field16970;
     private final String field16971;
     private final ItemStack field16972;
-    private final Class2265<Class120> field16973;
+    private final NonNullList<Class120> field16973;
     
-    public Class3679(final ResourceLocation field16970, final String field16971, final ItemStack field16972, final Class2265<Class120> field16973) {
+    public Class3679(final ResourceLocation field16970, final String field16971, final ItemStack field16972, final NonNullList<Class120> field16973) {
         this.field16970 = field16970;
         this.field16971 = field16971;
         this.field16972 = field16972;
@@ -38,20 +39,20 @@ public class Class3679 implements Class3663
     }
     
     @Override
-    public ItemStack method11292() {
+    public ItemStack getRecipeOutput() {
         return this.field16972;
     }
     
     @Override
-    public Class2265<Class120> method11294() {
+    public NonNullList<Class120> method11294() {
         return this.field16973;
     }
     
     public boolean method11301(final Class473 class473, final World class474) {
         final Class5024 class475 = new Class5024();
         int n = 0;
-        for (int i = 0; i < class473.method2239(); ++i) {
-            final ItemStack method2157 = class473.method2157(i);
+        for (int i = 0; i < class473.getSizeInventory(); ++i) {
+            final ItemStack method2157 = class473.getStackInSlot(i);
             if (!method2157.method27620()) {
                 ++n;
                 class475.method15244(method2157, 1);
@@ -65,7 +66,7 @@ public class Class3679 implements Class3663
     }
     
     @Override
-    public boolean method11291(final int n, final int n2) {
+    public boolean canFit(final int n, final int n2) {
         return n * n2 >= this.field16973.size();
     }
 }

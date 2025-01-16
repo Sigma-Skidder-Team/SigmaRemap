@@ -56,7 +56,7 @@ public abstract class Class3948 extends Class3841
         if (class7096.method21696() != class7099.method21696()) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class466) {
-                Class9193.method33638(class7097, class7098, (Class446)method6727);
+                Class9193.method33638(class7097, class7098, (IInventory)method6727);
                 class7097.method6783(class7098, this);
             }
             super.method11829(class7096, class7097, class7098, class7099, b);

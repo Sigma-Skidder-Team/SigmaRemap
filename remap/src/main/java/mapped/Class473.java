@@ -5,26 +5,27 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 import java.util.Iterator;
 
-public class Class473 implements Class446, Class472
+public class Class473 implements IInventory, Class472
 {
     private static String[] field2768;
-    private final Class2265<ItemStack> field2769;
+    private final NonNullList<ItemStack> field2769;
     private final int field2770;
     private final int field2771;
     private final Class3418 field2772;
     
     public Class473(final Class3418 field2772, final int field2773, final int field2774) {
-        this.field2769 = Class2265.method8507(field2773 * field2774, ItemStack.EMPTY);
+        this.field2769 = NonNullList.withSize(field2773 * field2774, ItemStack.EMPTY);
         this.field2772 = field2772;
         this.field2770 = field2773;
         this.field2771 = field2774;
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return this.field2769.size();
     }
     
@@ -41,8 +42,8 @@ public class Class473 implements Class446, Class472
     }
     
     @Override
-    public ItemStack method2157(final int n) {
-        return (n < this.method2239()) ? this.field2769.get(n) : ItemStack.EMPTY;
+    public ItemStack getStackInSlot(final int n) {
+        return (n < this.getSizeInventory()) ? this.field2769.get(n) : ItemStack.EMPTY;
     }
     
     @Override

@@ -7,9 +7,9 @@ package mapped;
 public class Class626 extends Class624
 {
     public final RealmsServer field3607;
-    public final /* synthetic */ Class5079 field3608;
+    public final /* synthetic */ RealmsMainScreen field3608;
     
-    public Class626(final Class5079 field3608, final RealmsServer field3609) {
+    public Class626(final RealmsMainScreen field3608, final RealmsServer field3609) {
         this.field3608 = field3608;
         this.field3607 = field3609;
     }
@@ -22,10 +22,10 @@ public class Class626 extends Class624
     @Override
     public boolean mouseClicked(final double n, final double n2, final int n3) {
         if (this.field3607.state != RealmsServer.Status.field12793) {
-            Class5079.method15826(this.field3608, this.field3607.id);
+            RealmsMainScreen.method15826(this.field3608, this.field3607.id);
         }
         else {
-            Class5079.method15826(this.field3608, -1L);
+            RealmsMainScreen.method15826(this.field3608, -1L);
             Realms.setScreen(new Class5082(this.field3607, this.field3608));
         }
         return true;
@@ -39,25 +39,25 @@ public class Class626 extends Class624
         if (class7437.state != RealmsServer.Status.field12793) {
             if (!class7437.field28684) {
                 if (class7437.state != RealmsServer.Status.CLOSED) {
-                    if (Class5079.method15844(this.field3608, class7437) && class7437.field28686 < 7) {
-                        Class5079.method15845(this.field3608, n + 225 - 14, n2 + 2, n3, n4, class7437.field28686);
+                    if (RealmsMainScreen.method15844(this.field3608, class7437) && class7437.field28686 < 7) {
+                        RealmsMainScreen.method15845(this.field3608, n + 225 - 14, n2 + 2, n3, n4, class7437.field28686);
                     }
-                    else if (class7437.state == RealmsServer.Status.field12792) {
-                        Class5079.method15846(this.field3608, n + 225 - 14, n2 + 2, n3, n4);
+                    else if (class7437.state == RealmsServer.Status.OPEN) {
+                        RealmsMainScreen.method15846(this.field3608, n + 225 - 14, n2 + 2, n3, n4);
                     }
                 }
                 else {
-                    Class5079.method15843(this.field3608, n + 225 - 14, n2 + 2, n3, n4);
+                    RealmsMainScreen.method15843(this.field3608, n + 225 - 14, n2 + 2, n3, n4);
                 }
             }
             else {
-                Class5079.method15842(this.field3608, n + 225 - 14, n2 + 2, n3, n4);
+                RealmsMainScreen.method15842(this.field3608, n + 225 - 14, n2 + 2, n3, n4);
             }
-            if (!Class5079.method15844(this.field3608, class7437) && !Class5079.method15847()) {
-                Class5079.method15848(this.field3608, n + 225, n2 + 2, n3, n4);
+            if (!RealmsMainScreen.method15844(this.field3608, class7437) && !RealmsMainScreen.method15847()) {
+                RealmsMainScreen.method15848(this.field3608, n + 225, n2 + 2, n3, n4);
             }
             else {
-                Class5079.method15849(this.field3608, n + 225, n2 + 2, n3, n4);
+                RealmsMainScreen.method15849(this.field3608, n + 225, n2 + 2, n3, n4);
             }
             if (!"0".equals(class7437.field28692.field28697)) {
                 final String string = Class314.field1853 + "" + class7437.field28692.field28697;
@@ -69,7 +69,7 @@ public class Class626 extends Class624
                                 if (n4 < this.field3608.height() - 40) {
                                     if (n4 > 32) {
                                         if (!this.field3608.method15745()) {
-                                            Class5079.method15830(this.field3608, class7437.field28692.field28698);
+                                            RealmsMainScreen.method15830(this.field3608, class7437.field28692.field28698);
                                         }
                                     }
                                 }
@@ -78,7 +78,7 @@ public class Class626 extends Class624
                     }
                 }
             }
-            if (Class5079.method15844(this.field3608, class7437) && class7437.field28684) {
+            if (RealmsMainScreen.method15844(this.field3608, class7437) && class7437.field28684) {
                 boolean b = false;
                 RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                 RenderSystem.enableBlend();
@@ -101,7 +101,7 @@ public class Class626 extends Class624
                                 if (n4 > 32) {
                                     if (!this.field3608.method15745()) {
                                         b = true;
-                                        Class5079.method15850(this.field3608, true);
+                                        RealmsMainScreen.method15850(this.field3608, true);
                                     }
                                 }
                             }
@@ -130,7 +130,7 @@ public class Class626 extends Class624
                     this.field3608.method15407(string2, n + 2, n2 + 12, 13413468);
                     this.field3608.method15407(class7437.method22873(), n + 2 + method15424, n2 + 12, 8421504);
                 }
-                if (!Class5079.method15844(this.field3608, class7437)) {
+                if (!RealmsMainScreen.method15844(this.field3608, class7437)) {
                     this.field3608.method15407(class7437.field28680, n + 2, n2 + 12 + 11, 8421504);
                 }
             }
@@ -148,7 +148,7 @@ public class Class626 extends Class624
             RenderSystem.method30059();
             RealmsScreen.method15411(n + 10, n2 + 6, 0.0f, 0.0f, 40, 20, 40, 20);
             RenderSystem.method30060();
-            final float n11 = 0.5f + (1.0f + Class8269.method27459(Class5079.method15841(this.field3608) * 0.25f)) * 0.25f;
+            final float n11 = 0.5f + (1.0f + Class8269.method27459(RealmsMainScreen.method15841(this.field3608) * 0.25f)) * 0.25f;
             this.field3608.drawCenteredString(RealmsScreen.getLocalizedString("mco.selectServer.uninitialized"), n + 10 + 40 + 75, n2 + 12, 0xFF000000 | (int)(127.0f * n11) << 16 | (int)(255.0f * n11) << 8 | (int)(127.0f * n11));
         }
     }

@@ -51,7 +51,7 @@ public class Class3428 extends Class3426<Class473>
             if (method6378.isPresent()) {
                 final Class3663 class1853 = method6378.get();
                 if (class1850.method2416(class1847, class1851, class1853)) {
-                    class1852 = class1853.method11290(class1849);
+                    class1852 = class1853.getCraftingResult(class1849);
                 }
             }
             class1850.method2160(0, class1852);
@@ -60,7 +60,7 @@ public class Class3428 extends Class3426<Class473>
     }
     
     @Override
-    public void method10855(final Class446 class446) {
+    public void method10855(final IInventory class446) {
         this.field16207.method22437((class447, p1) -> method10942(this.field16154, class447, this.field16208, this.field16205, this.field16206));
     }
     
@@ -76,8 +76,8 @@ public class Class3428 extends Class3426<Class473>
     }
     
     @Override
-    public boolean method10936(final Class3662<? super Class473> class3662) {
-        return class3662.method11289(this.field16205, this.field16208.world);
+    public boolean method10936(final IRecipe<? super Class473> class3662) {
+        return class3662.matches(this.field16205, this.field16208.world);
     }
     
     @Override

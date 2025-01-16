@@ -9,6 +9,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -290,8 +291,8 @@ public class Class513 extends PlayerEntity implements Class514
             if (!this.isSpectator() || this.world.method6971(new BlockPos(this))) {
                 super.method1659();
             }
-            for (int i = 0; i < this.field3006.method2239(); ++i) {
-                final ItemStack method2157 = this.field3006.method2157(i);
+            for (int i = 0; i < this.field3006.getSizeInventory(); ++i) {
+                final ItemStack method2157 = this.field3006.getStackInSlot(i);
                 if (method2157.getItem().method11724()) {
                     final IPacket<?> method2158 = ((Class4093)method2157.getItem()).method12325(method2157, this.world, this);
                     if (method2158 != null) {
@@ -725,12 +726,12 @@ public class Class513 extends PlayerEntity implements Class514
     }
     
     @Override
-    public void method2832(final Class806 class806, final Class446 class807) {
+    public void method2832(final Class806 class806, final IInventory class807) {
         if (this.field3009 != this.field3008) {
             this.method2814();
         }
         this.method2927();
-        this.field3039.method17469(new Class4259(this.field3068, class807.method2239(), class806.getEntityId()));
+        this.field3039.method17469(new Class4259(this.field3068, class807.getSizeInventory(), class806.getEntityId()));
         (this.field3009 = new Class3425(this.field3068, this.field3006, class807, class806)).method10873(this);
     }
     
@@ -767,7 +768,7 @@ public class Class513 extends PlayerEntity implements Class514
     }
     
     @Override
-    public void method2930(final Class3418 class3418, final Class2265<ItemStack> class3419) {
+    public void method2930(final Class3418 class3418, final NonNullList<ItemStack> class3419) {
         this.field3039.method17469(new Class4365(class3418.field16154, class3419));
         this.field3039.method17469(new Class4272(-1, -1, this.field3006.method2375()));
     }
@@ -824,7 +825,7 @@ public class Class513 extends PlayerEntity implements Class514
     }
     
     @Override
-    public int method2862(final Collection<Class3662<?>> collection) {
+    public int method2862(final Collection<IRecipe<?>> collection) {
         return this.field3062.method19720(collection, this);
     }
     
@@ -838,7 +839,7 @@ public class Class513 extends PlayerEntity implements Class514
     }
     
     @Override
-    public int method2864(final Collection<Class3662<?>> collection) {
+    public int method2864(final Collection<IRecipe<?>> collection) {
         return this.field3062.method19721(collection, this);
     }
     

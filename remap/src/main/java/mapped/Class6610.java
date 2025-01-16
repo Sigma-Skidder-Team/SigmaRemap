@@ -11,7 +11,7 @@ public class Class6610 extends Class6601
     private static String[] field26171;
     public final /* synthetic */ Class3439 field26189;
     
-    public Class6610(final Class3439 field26189, final Class446 class446, final int n, final int n2, final int n3) {
+    public Class6610(final Class3439 field26189, final IInventory class446, final int n, final int n2, final int n3) {
         this.field26189 = field26189;
         super(class446, n, n2, n3);
     }

@@ -123,12 +123,12 @@ public class AutoArmor extends Module
                         final ItemStack method20053 = AutoArmor.mc.player.field3008.method10878(j).method20053();
                         if (method20053.getItem() instanceof Class4080) {
                             if (this.field15967) {
-                                if (!(AutoArmor.mc.player.field3006.method2157(36 + Class2215.field13604.method8402()).getItem() instanceof Class4080)) {
+                                if (!(AutoArmor.mc.player.field3006.getStackInSlot(36 + Class2215.field13604.method8402()).getItem() instanceof Class4080)) {
                                     final Class4080 class2216 = (Class4080)method20053.getItem();
                                     if (Class2215.field13604 == class2215) {
                                         if (!Client.method35173().method35189().method21551(AutoArmor.class).method9883("Fake Items") || Client.method35173().method35195().method28162(j) >= 1500L) {
                                             this.method10603(b);
-                                            if (!(AutoArmor.mc.player.field3006.method2157(36 + class2215.method8402()).getItem() instanceof Class4099)) {
+                                            if (!(AutoArmor.mc.player.field3006.getStackInSlot(36 + class2215.method8402()).getItem() instanceof Class4099)) {
                                                 Class8639.method29323(8 - class2215.method8402(), 0, true);
                                             }
                                             Class8639.method29367(AutoArmor.mc.player.field3008.field16154, j, 0, Class2133.field12438, AutoArmor.mc.player, true);
@@ -155,7 +155,7 @@ public class AutoArmor extends Module
                                         if (Class8639.method29347(method20053) > 0) {
                                             if (!Client.method35173().method35189().method21551(AutoArmor.class).method9883("Fake Items") || Client.method35173().method35195().method28162(j) >= 1500L) {
                                                 this.method10603(b);
-                                                final Item method20054 = AutoArmor.mc.player.field3006.method2157(36 + class2217.method12257().method8402()).getItem();
+                                                final Item method20054 = AutoArmor.mc.player.field3006.getStackInSlot(36 + class2217.method12257().method8402()).getItem();
                                                 if (!(method20054 instanceof Class4080)) {
                                                     if (!(method20054 instanceof Class4099)) {
                                                         Class8639.method29368(8 - class2217.method12257().method8402());

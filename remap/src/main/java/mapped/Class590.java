@@ -14,7 +14,7 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import org.apache.logging.log4j.Logger;
 
-public class Class590<C extends Class446> implements Class587<Integer>
+public class Class590<C extends IInventory> implements Class587<Integer>
 {
     public static final Logger field3490;
     public final Class5024 field3491;
@@ -26,7 +26,7 @@ public class Class590<C extends Class446> implements Class587<Integer>
         this.field3493 = field3493;
     }
     
-    public void method3458(final Class513 class513, final Class3662<C> class514, final boolean b) {
+    public void method3458(final Class513 class513, final IRecipe<C> class514, final boolean b) {
         if (class514 != null) {
             if (class513.method2948().method19695(class514)) {
                 this.field3492 = class513.field3006;
@@ -80,7 +80,7 @@ public class Class590<C extends Class446> implements Class587<Integer>
         }
     }
     
-    public void method3461(final Class3662<C> class3662, final boolean b) {
+    public void method3461(final IRecipe<C> class3662, final boolean b) {
         final boolean method10936 = this.field3493.method10936(class3662);
         final int method10937 = this.field3491.method15251(class3662, null);
         if (method10936) {
@@ -154,7 +154,7 @@ public class Class590<C extends Class446> implements Class587<Integer>
     public void method3463(final Class6601 class6601, final ItemStack class6602) {
         final int method2354 = this.field3492.method2354(class6602);
         if (method2354 != -1) {
-            final ItemStack method2355 = this.field3492.method2157(method2354).method27641();
+            final ItemStack method2355 = this.field3492.getStackInSlot(method2354).method27641();
             if (!method2355.method27620()) {
                 if (method2355.method27690() <= 1) {
                     this.field3492.method2159(method2354);

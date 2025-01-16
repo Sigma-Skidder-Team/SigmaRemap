@@ -12,7 +12,7 @@ public class Class6607 extends Class6601
     private final PlayerEntity field26185;
     private int field26186;
     
-    public Class6607(final PlayerEntity field26185, final Class446 class446, final int n, final int n2, final int n3) {
+    public Class6607(final PlayerEntity field26185, final IInventory class446, final int n, final int n2, final int n3) {
         super(class446, n, n2, n3);
         this.field26185 = field26185;
     }

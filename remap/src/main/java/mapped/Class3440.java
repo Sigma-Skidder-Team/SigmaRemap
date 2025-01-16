@@ -12,8 +12,8 @@ import java.util.Map;
 
 public class Class3440 extends Class3418
 {
-    private final Class446 field16248;
-    private final Class446 field16249;
+    private final IInventory field16248;
+    private final IInventory field16249;
     private final Class7318 field16250;
     
     public Class3440(final int n, final Class464 class464) {
@@ -39,7 +39,7 @@ public class Class3440 extends Class3418
     }
     
     @Override
-    public void method10855(final Class446 class446) {
+    public void method10855(final IInventory class446) {
         super.method10855(class446);
         if (class446 == this.field16249) {
             this.method10989();
@@ -47,8 +47,8 @@ public class Class3440 extends Class3418
     }
     
     private void method10989() {
-        final ItemStack method2157 = this.field16249.method2157(0);
-        final ItemStack method2158 = this.field16249.method2157(1);
+        final ItemStack method2157 = this.field16249.getStackInSlot(0);
+        final ItemStack method2158 = this.field16249.getStackInSlot(1);
         final boolean b = !method2157.method27620() || !method2158.method27620();
         final boolean b2 = !method2157.method27620() && !method2158.method27620();
         Label_0471: {
@@ -178,8 +178,8 @@ public class Class3440 extends Class3418
             if (class514.method20054()) {
                 final ItemStack method20053 = class514.method20053();
                 class513 = method20053.method27641();
-                final ItemStack method20054 = this.field16249.method2157(0);
-                final ItemStack method20055 = this.field16249.method2157(1);
+                final ItemStack method20054 = this.field16249.getStackInSlot(0);
+                final ItemStack method20055 = this.field16249.getStackInSlot(1);
                 if (n != 2) {
                     if (n != 0 && n != 1) {
                         if (!method20054.method27620() && !method20055.method27620()) {

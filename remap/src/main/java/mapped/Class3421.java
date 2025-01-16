@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 public class Class3421 extends Class3418
 {
     private static String[] field16165;
-    private final Class446 field16166;
+    private final IInventory field16166;
     private final Class7604 field16167;
     private final Class6601 field16168;
     
@@ -17,7 +17,7 @@ public class Class3421 extends Class3418
         this(n, class464, new Class443(5), new Class7607(2));
     }
     
-    public Class3421(final int n, final Class464 class464, final Class446 field16166, final Class7604 field16167) {
+    public Class3421(final int n, final Class464 class464, final IInventory field16166, final Class7604 field16167) {
         super(Class8471.field34765, n);
         Class3418.method10868(field16166, 5);
         Class3418.method10869(field16167, 2);

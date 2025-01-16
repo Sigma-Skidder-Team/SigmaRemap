@@ -18,8 +18,8 @@ public class Class3439 extends Class3418
     private final Class6601 field16243;
     private final Class6601 field16244;
     private long field16245;
-    private final Class446 field16246;
-    private final Class446 field16247;
+    private final IInventory field16246;
+    private final IInventory field16247;
     
     public Class3439(final int n, final Class464 class464) {
         this(n, class464, Class7318.field28308);
@@ -67,7 +67,7 @@ public class Class3439 extends Class3418
     }
     
     @Override
-    public void method10855(final Class446 class446) {
+    public void method10855(final IInventory class446) {
         final ItemStack method20053 = this.field16241.method20053();
         final ItemStack method20054 = this.field16242.method20053();
         final ItemStack method20055 = this.field16243.method20053();

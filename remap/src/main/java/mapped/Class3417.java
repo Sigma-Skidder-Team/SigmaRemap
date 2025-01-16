@@ -11,7 +11,7 @@ public class Class3417 extends Class3418
     private final Class7318 field16145;
     private boolean field16146;
     private long field16147;
-    public final Class446 field16148;
+    public final IInventory field16148;
     private final Class470 field16149;
     
     public Class3417(final int n, final Class464 class464) {
@@ -42,10 +42,10 @@ public class Class3417 extends Class3418
     }
     
     @Override
-    public void method10855(final Class446 class446) {
-        final ItemStack method2157 = this.field16148.method2157(0);
-        final ItemStack method2158 = this.field16148.method2157(1);
-        final ItemStack method2159 = this.field16149.method2157(2);
+    public void method10855(final IInventory class446) {
+        final ItemStack method2157 = this.field16148.getStackInSlot(0);
+        final ItemStack method2158 = this.field16148.getStackInSlot(1);
+        final ItemStack method2159 = this.field16149.getStackInSlot(2);
         if (!method2159.method27620() && (method2157.method27620() || method2158.method27620())) {
             this.field16149.method2159(2);
         }
@@ -156,9 +156,9 @@ public class Class3417 extends Class3418
                         }
                     }
                     else {
-                        if (this.field16148.method2157(1).getItem() == Items.field30967) {
+                        if (this.field16148.getStackInSlot(1).getItem() == Items.field30967) {
                             method20053 = this.field16145.method22435((class518, p2) -> {
-                                Class4094.method12337(class518, this.field16148.method2157(0));
+                                Class4094.method12337(class518, this.field16148.getStackInSlot(0));
                                 final ItemStack class519;
                                 if (class519 == null) {
                                     return class516;

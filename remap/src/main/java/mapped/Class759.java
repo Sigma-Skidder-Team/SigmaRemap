@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -37,9 +38,9 @@ public abstract class Class759 extends LivingEntity
     public final Class7189 field4115;
     private LivingEntity field4116;
     private final Class9253 field4117;
-    private final Class2265<ItemStack> field4118;
+    private final NonNullList<ItemStack> field4118;
     public final float[] field4119;
-    private final Class2265<ItemStack> field4120;
+    private final NonNullList<ItemStack> field4120;
     public final float[] field4121;
     private boolean field4122;
     private boolean field4123;
@@ -54,9 +55,9 @@ public abstract class Class759 extends LivingEntity
     
     public Class759(final EntityType<? extends Class759> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field4118 = Class2265.method8507(2, ItemStack.EMPTY);
+        this.field4118 = NonNullList.withSize(2, ItemStack.EMPTY);
         this.field4119 = new float[2];
-        this.field4120 = Class2265.method8507(4, ItemStack.EMPTY);
+        this.field4120 = NonNullList.withSize(4, ItemStack.EMPTY);
         this.field4121 = new float[4];
         this.field4124 = Maps.newEnumMap((Class)Class257.class);
         this.field4130 = BlockPos.ZERO;

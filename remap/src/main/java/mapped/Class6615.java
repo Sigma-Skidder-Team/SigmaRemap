@@ -10,7 +10,7 @@ public class Class6615 extends Class6601
 {
     private static String[] field26171;
     
-    public Class6615(final Class446 class446, final int n, final int n2, final int n3) {
+    public Class6615(final IInventory class446, final int n, final int n2, final int n3) {
         super(class446, n, n2, n3);
     }
     

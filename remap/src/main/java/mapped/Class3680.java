@@ -5,9 +5,10 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 
-public abstract class Class3680 implements Class3662<Class446>
+public abstract class Class3680 implements IRecipe<IInventory>
 {
     public final Class8976<?> field16974;
     public final ResourceLocation field16975;
@@ -28,25 +29,25 @@ public abstract class Class3680 implements Class3662<Class446>
     }
     
     @Override
-    public boolean method11289(final Class446 class446, final World class447) {
-        return this.field16977.test(class446.method2157(0));
+    public boolean matches(final IInventory class446, final World class447) {
+        return this.field16977.test(class446.getStackInSlot(0));
     }
     
     @Override
-    public ItemStack method11290(final Class446 class446) {
+    public ItemStack getCraftingResult(final IInventory class446) {
         return this.field16978.method27641();
     }
     
     @Override
-    public boolean method11291(final int n, final int n2) {
+    public boolean canFit(final int n, final int n2) {
         return true;
     }
     
     @Override
-    public Class2265<Class120> method11294() {
-        final Class2265<Object> method8506 = Class2265.method8506();
+    public NonNullList<Class120> method11294() {
+        final NonNullList<Object> method8506 = NonNullList.create();
         method8506.add(this.field16977);
-        return (Class2265<Class120>)method8506;
+        return (NonNullList<Class120>)method8506;
     }
     
     public float method11328() {
@@ -54,7 +55,7 @@ public abstract class Class3680 implements Class3662<Class446>
     }
     
     @Override
-    public ItemStack method11292() {
+    public ItemStack getRecipeOutput() {
         return this.field16978;
     }
     

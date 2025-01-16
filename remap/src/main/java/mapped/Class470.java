@@ -5,22 +5,23 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 import javax.annotation.Nullable;
 import java.util.Iterator;
 
-public class Class470 implements Class446, Class469
+public class Class470 implements IInventory, Class469
 {
     private static String[] field2763;
-    private final Class2265<ItemStack> field2764;
-    private Class3662<?> field2765;
+    private final NonNullList<ItemStack> field2764;
+    private IRecipe<?> field2765;
     
     public Class470() {
-        this.field2764 = Class2265.method8507(1, ItemStack.EMPTY);
+        this.field2764 = NonNullList.withSize(1, ItemStack.EMPTY);
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return 1;
     }
     
@@ -37,7 +38,7 @@ public class Class470 implements Class446, Class469
     }
     
     @Override
-    public ItemStack method2157(final int n) {
+    public ItemStack getStackInSlot(final int n) {
         return this.field2764.get(0);
     }
     
@@ -71,13 +72,13 @@ public class Class470 implements Class446, Class469
     }
     
     @Override
-    public void method2401(final Class3662<?> field2765) {
+    public void method2401(final IRecipe<?> field2765) {
         this.field2765 = field2765;
     }
     
     @Nullable
     @Override
-    public Class3662<?> method2402() {
+    public IRecipe<?> method2402() {
         return this.field2765;
     }
 }

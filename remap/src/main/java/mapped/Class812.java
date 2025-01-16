@@ -76,8 +76,8 @@ public abstract class Class812 extends Class806
         class51.putBoolean("ChestedHorse", this.method4780());
         if (this.method4780()) {
             final ListNBT class52 = new ListNBT();
-            for (int i = 2; i < this.field4342.method2239(); ++i) {
-                final ItemStack method2157 = this.field4342.method2157(i);
+            for (int i = 2; i < this.field4342.getSizeInventory(); ++i) {
+                final ItemStack method2157 = this.field4342.getStackInSlot(i);
                 if (!method2157.method27620()) {
                     final CompoundNBT e = new CompoundNBT();
                     e.putByte("Slot", (byte)i);
@@ -100,7 +100,7 @@ public abstract class Class812 extends Class806
                 final CompoundNBT method329 = method328.method346(i);
                 final int n = method329.getByte("Slot") & 0xFF;
                 if (n >= 2) {
-                    if (n < this.field4342.method2239()) {
+                    if (n < this.field4342.getSizeInventory()) {
                         this.field4342.method2160(n, ItemStack.method27619(method329));
                     }
                 }

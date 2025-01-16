@@ -8,12 +8,13 @@ import java.util.Iterator;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonObject;
+import net.minecraft.util.NonNullList;
 
 public class Class6099 implements Class6096<Class3679>
 {
     public Class3679 method18190(final ResourceLocation class1932, final JsonObject jsonObject) {
         final String method35896 = Class9583.method35896(jsonObject, "group", "");
-        final Class2265<Class120> method35897 = method18191(Class9583.method35917(jsonObject, "ingredients"));
+        final NonNullList<Class120> method35897 = method18191(Class9583.method35917(jsonObject, "ingredients"));
         if (method35897.isEmpty()) {
             throw new JsonParseException("No ingredients for shapeless recipe");
         }
@@ -23,20 +24,20 @@ public class Class6099 implements Class6096<Class3679>
         throw new JsonParseException("Too many ingredients for shapeless recipe");
     }
     
-    private static Class2265<Class120> method18191(final JsonArray jsonArray) {
-        final Class2265<Object> method8506 = Class2265.method8506();
+    private static NonNullList<Class120> method18191(final JsonArray jsonArray) {
+        final NonNullList<Object> method8506 = NonNullList.create();
         for (int i = 0; i < jsonArray.size(); ++i) {
             final Class120 method8507 = Class120.method622(jsonArray.get(i));
             if (!method8507.method616()) {
                 method8506.add(method8507);
             }
         }
-        return (Class2265<Class120>)method8506;
+        return (NonNullList<Class120>)method8506;
     }
     
     public Class3679 method18192(final ResourceLocation class1932, final PacketBuffer class1933) {
         final String method29513 = class1933.method29513(32767);
-        final Class2265<Class120> method29514 = Class2265.method8507(class1933.readVarInt(), Class120.field374);
+        final NonNullList<Class120> method29514 = NonNullList.withSize(class1933.readVarInt(), Class120.field374);
         for (int i = 0; i < method29514.size(); ++i) {
             method29514.set(i, Class120.method621(class1933));
         }

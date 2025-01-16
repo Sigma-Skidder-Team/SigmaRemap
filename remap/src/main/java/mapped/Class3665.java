@@ -5,12 +5,13 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 
 public class Class3665 extends Class3664
 {
     public Class3665(final ResourceLocation class1932) {
-        super(class1932, "", 3, 3, Class2265.method8508(Class120.field374, Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31425), Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31369)), new ItemStack(Items.field31521));
+        super(class1932, "", 3, 3, NonNullList.from(Class120.field374, Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31425), Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31369), Class120.method618(Items.field31369)), new ItemStack(Items.field31521));
     }
     
     @Override
@@ -19,8 +20,8 @@ public class Class3665 extends Class3664
             return false;
         }
         ItemStack field34174 = ItemStack.EMPTY;
-        for (int n = 0; n < class473.method2239() && field34174.method27620(); ++n) {
-            final ItemStack method2157 = class473.method2157(n);
+        for (int n = 0; n < class473.getSizeInventory() && field34174.method27620(); ++n) {
+            final ItemStack method2157 = class473.getStackInSlot(n);
             if (method2157.getItem() == Items.field31425) {
                 field34174 = method2157;
             }
@@ -47,8 +48,8 @@ public class Class3665 extends Class3664
     @Override
     public ItemStack method11303(final Class473 class473) {
         ItemStack field34174 = ItemStack.EMPTY;
-        for (int n = 0; n < class473.method2239() && field34174.method27620(); ++n) {
-            final ItemStack method2157 = class473.method2157(n);
+        for (int n = 0; n < class473.getSizeInventory() && field34174.method27620(); ++n) {
+            final ItemStack method2157 = class473.getStackInSlot(n);
             if (method2157.getItem() == Items.field31425) {
                 field34174 = method2157;
             }

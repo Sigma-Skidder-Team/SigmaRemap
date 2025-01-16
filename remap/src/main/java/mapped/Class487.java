@@ -52,7 +52,7 @@ public class Class487 extends Class443 implements Class441
     
     @Override
     public void method2161() {
-        final ItemStack method2157 = this.method2157(0);
+        final ItemStack method2157 = this.getStackInSlot(0);
         if (!method2157.method27620()) {
             this.field2800 = true;
             Class3965.method12102(this.field2797, this.field2798, this.field2799, method2157);

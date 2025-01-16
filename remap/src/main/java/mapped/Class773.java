@@ -77,8 +77,8 @@ public class Class773 extends Class772 implements Class774, Class768
     public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
         final ListNBT class52 = new ListNBT();
-        for (int i = 0; i < this.field4167.method2239(); ++i) {
-            final ItemStack method2157 = this.field4167.method2157(i);
+        for (int i = 0; i < this.field4167.getSizeInventory(); ++i) {
+            final ItemStack method2157 = this.field4167.getStackInSlot(i);
             if (!method2157.method27620()) {
                 ((AbstractList<CompoundNBT>)class52).add(method2157.method27627(new CompoundNBT()));
             }
@@ -224,7 +224,7 @@ public class Class773 extends Class772 implements Class774, Class768
             return true;
         }
         final int n2 = n - 300;
-        if (n2 >= 0 && n2 < this.field4167.method2239()) {
+        if (n2 >= 0 && n2 < this.field4167.getSizeInventory()) {
             this.field4167.method2160(n2, class8321);
             return true;
         }

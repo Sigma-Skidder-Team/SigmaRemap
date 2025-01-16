@@ -15,8 +15,8 @@ public class Class3441 extends Class3418
 {
     private static String[] field16251;
     private static final Logger field16252;
-    private final Class446 field16253;
-    private final Class446 field16254;
+    private final IInventory field16253;
+    private final IInventory field16254;
     private final Class6546 field16255;
     private final Class7318 field16256;
     private int field16257;
@@ -49,7 +49,7 @@ public class Class3441 extends Class3418
     }
     
     @Override
-    public void method10855(final Class446 class446) {
+    public void method10855(final IInventory class446) {
         super.method10855(class446);
         if (class446 == this.field16254) {
             this.method10995();
@@ -57,7 +57,7 @@ public class Class3441 extends Class3418
     }
     
     public void method10995() {
-        final ItemStack method2157 = this.field16254.method2157(0);
+        final ItemStack method2157 = this.field16254.getStackInSlot(0);
         this.field16255.method19833(1);
         int n = 0;
         final int n2 = 0;
@@ -68,7 +68,7 @@ public class Class3441 extends Class3418
         }
         else {
             ItemStack class8321 = method2157.method27641();
-            final ItemStack method2158 = this.field16254.method2157(1);
+            final ItemStack method2158 = this.field16254.getStackInSlot(1);
             final Map<Class6257, Integer> method2159 = Class8742.method30196(class8321);
             final int n4 = n2 + method2157.method27680() + (method2158.method27620() ? 0 : method2158.method27680());
             this.field16257 = 0;

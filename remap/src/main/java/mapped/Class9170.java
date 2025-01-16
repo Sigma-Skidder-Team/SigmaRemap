@@ -81,7 +81,7 @@ public final class Class9170
             }
             return b;
         });
-        field38848 = (class400 -> class400 instanceof Class446 && class400.method1768());
+        field38848 = (class400 -> class400 instanceof IInventory && class400.method1768());
         field38849 = (class401 -> !(class401 instanceof PlayerEntity) || (!class401.isSpectator() && !((PlayerEntity)class401).method2889()));
         field38850 = (class402 -> !class402.isSpectator());
     }

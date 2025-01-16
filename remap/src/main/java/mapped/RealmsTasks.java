@@ -4,6 +4,7 @@
 
 package mapped;
 
+import net.minecraft.realms.RealmsConfirmResultListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -321,6 +322,140 @@ public class RealmsTasks
                     RealmsTasks.field_225184_a.error("Couldn't reset world");
                     this.func_224986_a(exception.toString());
                     return;
+                }
+            }
+        }
+    }
+
+    public static class Class1342 extends LongRunningTask
+    {
+        private final RealmsServer field_225000_b;
+        private final RealmsScreen field_225001_c;
+        private final boolean field_225002_d;
+        private final RealmsScreen field_225003_e;
+
+        public Class1342(final RealmsServer field7348, final RealmsScreen field7349, final RealmsScreen field7350, final boolean field7351) {
+            this.field_225000_b = field7348;
+            this.field_225001_c = field7349;
+            this.field_225002_d = field7351;
+            this.field_225003_e = field7350;
+        }
+
+        @Override
+        public void run()
+        {
+            this.func_224989_b(RealmsScreen.getLocalizedString("mco.configure.world.opening"));
+            RealmsClient realmsclient = RealmsClient.func_224911_a();
+
+            for (int i = 0; i < 25; ++i)
+            {
+                if (this.func_224988_a())
+                {
+                    return;
+                }
+
+                try
+                {
+                    boolean flag = realmsclient.func_224942_e(this.field_225000_b.id);
+
+                    if (flag)
+                    {
+                        if (this.field_225001_c instanceof RealmsConfigureWorldScreen)
+                        {
+                            ((RealmsConfigureWorldScreen)this.field_225001_c).func_224398_a();
+                        }
+
+                        this.field_225000_b.state = RealmsServer.Status.OPEN;
+
+                        if (this.field_225002_d)
+                        {
+                            ((RealmsMainScreen)this.field_225003_e).func_223911_a(this.field_225000_b, this.field_225001_c);
+                        }
+                        else
+                        {
+                            Realms.setScreen(this.field_225001_c);
+                        }
+
+                        break;
+                    }
+                }
+                catch (RetryCallException retrycallexception)
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    func_225182_b(retrycallexception.field_224985_e);
+                }
+                catch (Exception exception)
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    field_225184_a.error("Failed to open server", (Throwable)exception);
+                    this.func_224986_a("Failed to open the server");
+                }
+            }
+        }
+    }
+
+    public static class SwitchSlotTask extends LongRunningTask
+    {
+        private final long field_225027_b;
+        private final int field_225028_c;
+        private final RealmsConfirmResultListener field_225029_d;
+        private final int field_225030_e;
+
+        public SwitchSlotTask(final long field7354, final int field7355, final RealmsConfirmResultListener field7356, final int field7357) {
+            this.field_225027_b = field7354;
+            this.field_225028_c = field7355;
+            this.field_225029_d = field7356;
+            this.field_225030_e = field7357;
+        }
+
+        @Override
+        public void run()
+        {
+            RealmsClient realmsclient = RealmsClient.func_224911_a();
+            String s = RealmsScreen.getLocalizedString("mco.minigame.world.slot.screen.title");
+            this.func_224989_b(s);
+
+            for (int i = 0; i < 25; ++i)
+            {
+                try
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    if (realmsclient.func_224927_a(this.field_225027_b, this.field_225028_c))
+                    {
+                        this.field_225029_d.confirmResult(true, this.field_225030_e);
+                        break;
+                    }
+                }
+                catch (RetryCallException retrycallexception)
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    func_225182_b(retrycallexception.field_224985_e);
+                }
+                catch (Exception exception)
+                {
+                    if (this.func_224988_a())
+                    {
+                        return;
+                    }
+
+                    field_225184_a.error("Couldn't switch world!");
+                    this.func_224986_a(exception.toString());
                 }
             }
         }

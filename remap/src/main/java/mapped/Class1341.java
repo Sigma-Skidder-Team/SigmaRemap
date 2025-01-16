@@ -11,10 +11,10 @@ public class Class1341 extends LongRunningTask
 {
     private final RealmsServer field7344;
     private final RealmsScreen field7345;
-    private final Class5079 field7346;
+    private final RealmsMainScreen field7346;
     private final ReentrantLock field7347;
     
-    public Class1341(final Class5079 field7346, final RealmsScreen field7347, final RealmsServer field7348, final ReentrantLock field7349) {
+    public Class1341(final RealmsMainScreen field7346, final RealmsScreen field7347, final RealmsServer field7348, final ReentrantLock field7349) {
         this.field7345 = field7347;
         this.field7346 = field7346;
         this.field7344 = field7348;

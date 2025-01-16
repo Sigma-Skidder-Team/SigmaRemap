@@ -28,8 +28,8 @@ public class Class647 extends Widget
         this.field3669 = field3669;
         this.field3667 = (Class3426)class9257.method34160().player.field3009;
         this.field3668 = class9257.method34161();
-        final List<Class3662<?>> method35946 = field3669.method35946(this.field3668.method19705(this.field3667));
-        final Iterator<Class3662<?>> iterator = method35946.iterator();
+        final List<IRecipe<?>> method35946 = field3669.method35946(this.field3668.method19705(this.field3667));
+        final Iterator<IRecipe<?>> iterator = method35946.iterator();
         while (iterator.hasNext()) {
             if (!this.field3668.method19699(iterator.next())) {
                 continue;
@@ -74,9 +74,9 @@ public class Class647 extends Widget
             this.field3671 -= n3;
         }
         this.blit(this.field3426, this.field3427, n4, n5, this.field3424, this.field3425);
-        final List<Class3662<?>> method5278 = this.method3701();
+        final List<IRecipe<?>> method5278 = this.method3701();
         this.field3672 = MathHelper.method35642(this.field3670 / 30.0f) % method5278.size();
-        final ItemStack method5279 = method5278.get(this.field3672).method11292();
+        final ItemStack method5279 = method5278.get(this.field3672).getRecipeOutput();
         int n7 = 4;
         if (this.field3669.method35949()) {
             if (this.method3701().size() > 1) {
@@ -90,8 +90,8 @@ public class Class647 extends Widget
         }
     }
     
-    private List<Class3662<?>> method3701() {
-        final List<Class3662<?>> method35947 = this.field3669.method35947(true);
+    private List<IRecipe<?>> method3701() {
+        final List<IRecipe<?>> method35947 = this.field3669.method35947(true);
         if (!this.field3668.method19705(this.field3667)) {
             method35947.addAll(this.field3669.method35947(false));
         }
@@ -102,12 +102,12 @@ public class Class647 extends Widget
         return this.method3701().size() == 1;
     }
     
-    public Class3662<?> method3703() {
+    public IRecipe<?> method3703() {
         return this.method3701().get(this.field3672);
     }
     
     public List<String> method3704(final Screen class527) {
-        final List<String> method3030 = class527.getTooltipFromItem(this.method3701().get(this.field3672).method11292());
+        final List<String> method3030 = class527.getTooltipFromItem(this.method3701().get(this.field3672).getRecipeOutput());
         if (this.field3669.method35946(this.field3668.method19705(this.field3667)).size() > 1) {
             method3030.add(Class8822.method30773("gui.recipebook.moreRecipes", new Object[0]));
         }

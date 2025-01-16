@@ -10,7 +10,7 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.item.ItemStack;
 
-public class Class591<C extends Class446> extends Class590<C>
+public class Class591<C extends IInventory> extends Class590<C>
 {
     private static String[] field3494;
     private boolean field3495;
@@ -20,7 +20,7 @@ public class Class591<C extends Class446> extends Class590<C>
     }
     
     @Override
-    public void method3461(final Class3662<C> class3662, final boolean b) {
+    public void method3461(final IRecipe<C> class3662, final boolean b) {
         this.field3495 = this.field3493.method10936(class3662);
         final int method15251 = this.field3491.method15251(class3662, null);
         if (this.field3495) {

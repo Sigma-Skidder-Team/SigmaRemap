@@ -10,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -607,7 +608,7 @@ public class Block implements Class3832
         return new ItemStack(this);
     }
     
-    public void method11863(final Class7207 class7207, final Class2265<ItemStack> class7208) {
+    public void method11863(final Class7207 class7207, final NonNullList<ItemStack> class7208) {
         class7208.add(new ItemStack(this));
     }
     

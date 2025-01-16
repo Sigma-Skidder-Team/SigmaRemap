@@ -7,13 +7,13 @@ package mapped;
 public class Class5082 extends RealmsScreen
 {
     private final RealmsServer field21880;
-    private final Class5079 field21881;
+    private final RealmsMainScreen field21881;
     private Class5065 field21882;
     private Class5065 field21883;
     private Class5611 field21884;
     private Class5066 field21885;
     
-    public Class5082(final RealmsServer field21880, final Class5079 field21881) {
+    public Class5082(final RealmsServer field21880, final RealmsMainScreen field21881) {
         this.field21880 = field21880;
         this.field21881 = field21881;
     }

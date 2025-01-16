@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.text.ITextComponent;
@@ -164,7 +165,7 @@ public class Class4036 extends Item
     }
     
     @Override
-    public void method11735(final Class7207 class7207, final Class2265<ItemStack> class7208) {
+    public void method11735(final Class7207 class7207, final NonNullList<ItemStack> class7208) {
         if (this.method11736(class7207)) {
             this.method12240().method11863(class7207, class7208);
         }

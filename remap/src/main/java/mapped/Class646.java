@@ -27,7 +27,7 @@ public class Class646 extends Class645
         if (class869.player.field3009 instanceof Class3426) {
             final Iterator<Class9586> iterator = method4123.iterator();
             while (iterator.hasNext()) {
-                final Iterator<Class3662<?>> iterator2 = iterator.next().method35946(method4122.method19705((Class3426<?>)class869.player.field3009)).iterator();
+                final Iterator<IRecipe<?>> iterator2 = iterator.next().method35946(method4122.method19705((Class3426<?>)class869.player.field3009)).iterator();
                 while (iterator2.hasNext()) {
                     if (!method4122.method19699(iterator2.next())) {
                         continue;

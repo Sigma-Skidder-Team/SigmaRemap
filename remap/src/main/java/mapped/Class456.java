@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
@@ -73,7 +74,7 @@ public abstract class Class456 extends Class460
     }
     
     @Override
-    public ItemStack method2157(final int n) {
+    public ItemStack getStackInSlot(final int n) {
         this.method2326(null);
         return this.method2246().get(n);
     }
@@ -114,9 +115,9 @@ public abstract class Class456 extends Class460
         this.method2246().clear();
     }
     
-    public abstract Class2265<ItemStack> method2246();
+    public abstract NonNullList<ItemStack> method2246();
     
-    public abstract void method2247(final Class2265<ItemStack> p0);
+    public abstract void method2247(final NonNullList<ItemStack> p0);
     
     @Override
     public boolean method2328(final PlayerEntity playerEntity) {

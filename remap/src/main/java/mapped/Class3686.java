@@ -16,8 +16,8 @@ public class Class3686 extends Class3685
     }
     
     @Override
-    public boolean method11289(final Class446 class446, final World class447) {
-        return this.field16985.test(class446.method2157(0));
+    public boolean matches(final IInventory class446, final World class447) {
+        return this.field16985.test(class446.getStackInSlot(0));
     }
     
     @Override

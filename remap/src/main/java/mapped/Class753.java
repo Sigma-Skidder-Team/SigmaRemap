@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class Class753 implements Class514
 {
@@ -16,7 +17,7 @@ public class Class753 implements Class514
     }
     
     @Override
-    public void method2930(final Class3418 class3418, final Class2265<ItemStack> class3419) {
+    public void method2930(final Class3418 class3418, final NonNullList<ItemStack> class3419) {
         Class724.method3988(this.field4055);
     }
     

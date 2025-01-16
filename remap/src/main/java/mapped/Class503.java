@@ -12,10 +12,10 @@ public class Class503 implements Class434
 {
     public final /* synthetic */ Class475 field2878;
     public final /* synthetic */ Class475 field2879;
-    public final /* synthetic */ Class446 field2880;
+    public final /* synthetic */ IInventory field2880;
     public final /* synthetic */ Class6392 field2881;
     
-    public Class503(final Class6392 field2881, final Class475 field2882, final Class475 field2883, final Class446 field2884) {
+    public Class503(final Class6392 field2881, final Class475 field2882, final Class475 field2883, final IInventory field2884) {
         this.field2881 = field2881;
         this.field2878 = field2882;
         this.field2879 = field2883;

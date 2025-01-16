@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Random;
@@ -12,11 +13,11 @@ import java.util.Random;
 public class Class458 extends Class456
 {
     private static final Random field2714;
-    private Class2265<ItemStack> field2715;
+    private NonNullList<ItemStack> field2715;
     
     public Class458(final Class5412<?> class5412) {
         super(class5412);
-        this.field2715 = Class2265.method8507(9, ItemStack.EMPTY);
+        this.field2715 = NonNullList.withSize(9, ItemStack.EMPTY);
     }
     
     public Class458() {
@@ -24,7 +25,7 @@ public class Class458 extends Class456
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return 9;
     }
     
@@ -60,7 +61,7 @@ public class Class458 extends Class456
     @Override
     public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2715 = Class2265.method8507(this.method2239(), ItemStack.EMPTY);
+        this.field2715 = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
         if (!this.method2324(class51)) {
             Class8508.method28426(class51, this.field2715);
         }
@@ -76,12 +77,12 @@ public class Class458 extends Class456
     }
     
     @Override
-    public Class2265<ItemStack> method2246() {
+    public NonNullList<ItemStack> method2246() {
         return this.field2715;
     }
     
     @Override
-    public void method2247(final Class2265<ItemStack> field2715) {
+    public void method2247(final NonNullList<ItemStack> field2715) {
         this.field2715 = field2715;
     }
     

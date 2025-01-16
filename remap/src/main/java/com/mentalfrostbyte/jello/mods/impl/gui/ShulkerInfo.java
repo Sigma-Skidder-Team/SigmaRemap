@@ -14,6 +14,7 @@ import com.mentalfrostbyte.jello.mods.Module;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import org.lwjgl.opengl.GL11;
@@ -255,7 +256,7 @@ public class ShulkerInfo extends Module
                 final CompoundNBT method27658 = method27657.getCompound("BlockEntityTag");
                 Class6697.method20354(method27658);
                 if (method27658.contains("Items", 9)) {
-                    final Class2265<ItemStack> method27659 = Class2265.method8507(27, ItemStack.EMPTY);
+                    final NonNullList<ItemStack> method27659 = NonNullList.withSize(27, ItemStack.EMPTY);
                     Class8508.method28426(method27658, method27659);
                     for (final ItemStack class8322 : method27659) {
                         if (class8322.method27620()) {

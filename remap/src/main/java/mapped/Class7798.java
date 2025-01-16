@@ -40,16 +40,16 @@ public class Class7798
         return (T)t.then(((LiteralArgumentBuilder)Class7788.method25001("replace").then(Class7788.method25001("entity").then(Class7788.method25002("entities", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).then(class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()), (commandContext, list, class7945) -> method25165(Class6886.method21146((CommandContext<Class7492>)commandContext, "entities"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), list.size(), list, class7945)).then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)), (commandContext, list, class7945) -> method25165(Class6886.method21146((CommandContext<Class7492>)commandContext, "entities"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), IntegerArgumentType.getInteger(commandContext, "count"), list, class7945))))))).then(Class7788.method25001("block").then(Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).then(class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()), (commandContext, list, class7945) -> method25161((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "targetPos"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), list.size(), list, class7945)).then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)), (commandContext, list, class7945) -> method25161((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "targetPos"), IntegerArgumentType.getInteger(commandContext, "slot"), IntegerArgumentType.getInteger(commandContext, "count"), list, class7945))))))).then(Class7788.method25001("insert").then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()), (commandContext, list, class7945) -> method25159((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "targetPos"), list, class7945)))).then(Class7788.method25001("give").then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("players", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21151()), (commandContext, list, class7945) -> method25163(Class6886.method21152((CommandContext<Class7492>)commandContext, "players"), list, class7945)))).then(Class7788.method25001("spawn").then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7555.method23719()), (commandContext, list, class7945) -> method25166((Class7492)commandContext.getSource(), Class7555.method23721((CommandContext<Class7492>)commandContext, "targetPos"), list, class7945))));
     }
     
-    private static Class446 method25158(final Class7492 class7492, final BlockPos class7493) throws CommandSyntaxException {
+    private static IInventory method25158(final Class7492 class7492, final BlockPos class7493) throws CommandSyntaxException {
         final TileEntity method6727 = class7492.method23250().getTileEntity(class7493);
-        if (method6727 instanceof Class446) {
-            return (Class446)method6727;
+        if (method6727 instanceof IInventory) {
+            return (IInventory)method6727;
         }
         throw Class9302.field39908.create();
     }
     
     private static int method25159(final Class7492 class7492, final BlockPos class7493, final List<ItemStack> list, final Class7945 class7494) throws CommandSyntaxException {
-        final Class446 method25158 = method25158(class7492, class7493);
+        final IInventory method25158 = method25158(class7492, class7493);
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(list.size());
         for (final ItemStack class7495 : list) {
             if (!method25160(method25158, class7495.method27641())) {
@@ -62,13 +62,13 @@ public class Class7798
         return arrayListWithCapacity.size();
     }
     
-    private static boolean method25160(final Class446 class446, final ItemStack class447) {
+    private static boolean method25160(final IInventory class446, final ItemStack class447) {
         boolean b = false;
-        for (int i = 0; i < class446.method2239(); ++i) {
+        for (int i = 0; i < class446.getSizeInventory(); ++i) {
             if (class447.method27620()) {
                 break;
             }
-            final ItemStack method2157 = class446.method2157(i);
+            final ItemStack method2157 = class446.getStackInSlot(i);
             if (class446.method2264(i, class447)) {
                 if (method2157.method27620()) {
                     class446.method2160(i, class447);
@@ -87,8 +87,8 @@ public class Class7798
     }
     
     private static int method25161(final Class7492 class7492, final BlockPos class7493, final int i, final int n, final List<ItemStack> list, final Class7945 class7494) throws CommandSyntaxException {
-        final Class446 method25158 = method25158(class7492, class7493);
-        final int method25159 = method25158.method2239();
+        final IInventory method25158 = method25158(class7492, class7493);
+        final int method25159 = method25158.getSizeInventory();
         if (i >= 0 && i < method25159) {
             final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(list.size());
             for (int j = 0; j < n; ++j) {

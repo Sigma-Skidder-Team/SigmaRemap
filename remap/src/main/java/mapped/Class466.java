@@ -14,6 +14,7 @@ import java.util.LinkedHashMap;
 import com.google.common.collect.Maps;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.Map;
@@ -23,7 +24,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     private static final int[] field2752;
     private static final int[] field2753;
     private static final int[] field2754;
-    public Class2265<ItemStack> field2755;
+    public NonNullList<ItemStack> field2755;
     private int field2756;
     private int field2757;
     private int field2758;
@@ -34,7 +35,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     
     public Class466(final Class5412<?> class5412, final Class8976<? extends Class3680> field2762) {
         super(class5412);
-        this.field2755 = Class2265.method8507(3, ItemStack.EMPTY);
+        this.field2755 = NonNullList.withSize(3, ItemStack.EMPTY);
         this.field2760 = new Class7605(this);
         this.field2761 = Maps.newHashMap();
         this.field2762 = field2762;
@@ -123,7 +124,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     @Override
     public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        Class8508.method28426(class51, this.field2755 = Class2265.method8507(this.method2239(), ItemStack.EMPTY));
+        Class8508.method28426(class51, this.field2755 = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY));
         this.field2756 = class51.getShort("BurnTime");
         this.field2758 = class51.getShort("CookTime");
         this.field2759 = class51.getShort("CookTimeTotal");
@@ -167,7 +168,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
                 }
             }
             else {
-                final Class3662 class8322 = (Class3662)this.field2656.method6792().method6378(this.field2762, this, this.field2656).orElse(null);
+                final IRecipe class8322 = (IRecipe)this.field2656.method6792().method6378(this.field2762, this, this.field2656).orElse(null);
                 if (!this.method2395()) {
                     if (this.method2396(class8322)) {
                         this.field2756 = this.method2398(class8321);
@@ -178,7 +179,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
                                 final Item method2396 = class8321.getItem();
                                 class8321.method27693(1);
                                 if (class8321.method27620()) {
-                                    final Item method2397 = method2396.method11720();
+                                    final Item method2397 = method2396.getContainerItem();
                                     this.field2755.set(1, (method2397 != null) ? new ItemStack(method2397) : ItemStack.EMPTY);
                                 }
                             }
@@ -208,11 +209,11 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         }
     }
     
-    public boolean method2396(final Class3662<?> class3662) {
+    public boolean method2396(final IRecipe<?> class3662) {
         if (this.field2755.get(0).method27620() || class3662 == null) {
             return false;
         }
-        final ItemStack method11292 = class3662.method11292();
+        final ItemStack method11292 = class3662.getRecipeOutput();
         if (!method11292.method27620()) {
             final ItemStack class3663 = this.field2755.get(2);
             return class3663.method27620() || (class3663.method27647(method11292) && ((class3663.method27690() < this.method2254() && class3663.method27690() < class3663.method27628()) || class3663.method27690() < method11292.method27628()));
@@ -220,11 +221,11 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         return false;
     }
     
-    private void method2397(final Class3662<?> class3662) {
+    private void method2397(final IRecipe<?> class3662) {
         if (class3662 != null) {
             if (this.method2396(class3662)) {
                 final ItemStack class3663 = this.field2755.get(0);
-                final ItemStack method11292 = class3662.method11292();
+                final ItemStack method11292 = class3662.getRecipeOutput();
                 final ItemStack class3664 = this.field2755.get(2);
                 if (!class3664.method27620()) {
                     if (class3664.getItem() == method11292.getItem()) {
@@ -293,7 +294,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return this.field2755.size();
     }
     
@@ -310,7 +311,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public ItemStack method2157(final int n) {
+    public ItemStack getStackInSlot(final int n) {
         return this.field2755.get(n);
     }
     
@@ -376,7 +377,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     }
     
     @Override
-    public void method2401(final Class3662<?> class3662) {
+    public void method2401(final IRecipe<?> class3662) {
         if (class3662 != null) {
             this.field2761.compute(class3662.method11298(), (p0, n) -> 1 + ((n != null) ? n : 0));
         }
@@ -384,7 +385,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
     
     @Nullable
     @Override
-    public Class3662<?> method2402() {
+    public IRecipe<?> method2402() {
         return null;
     }
     

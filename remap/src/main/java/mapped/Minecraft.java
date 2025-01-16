@@ -10,6 +10,7 @@ import com.mentalfrostbyte.Client;
 import com.mojang.authlib.AuthenticationService;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -396,17 +397,17 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     private void method5231() {
         final Class8922 class8922 = new Class8922(class8925 -> class8925.method27668(null, TooltipFlags.NORMAL).stream().map(class8926 -> TextFormatting.getTextWithoutFormattingCodes(class8926.getString()).trim()).filter(s -> !s.isEmpty()), class8927 -> Stream.of(Registry.field211.getKey(class8927.method27622())));
         final Class8923 class8923 = new Class8923(class8928 -> Class7855.method25402().method18463(class8928.method27622()).stream());
-        final Class2265<Object> method8506 = Class2265.method8506();
+        final NonNullList<Object> method8506 = NonNullList.create();
         final Iterator<Object> iterator = Registry.field211.iterator();
         while (iterator.hasNext()) {
-            iterator.next().method11735(Class7207.field27998, (Class2265<ItemStack>)method8506);
+            iterator.next().method11735(Class7207.field27998, (NonNullList<ItemStack>)method8506);
         }
         method8506.forEach(class8931 -> {
             class8929.method31458(class8931);
             class8930.method31458(class8931);
             return;
         });
-        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.method11292().method27668(null, TooltipFlags.NORMAL).stream()).map(class8934 -> TextFormatting.getTextWithoutFormattingCodes(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Registry.field211.getKey(class8936.method11292().getItem())));
+        final Class8922<Class9586> class8924 = new Class8922<Class9586>(class8932 -> class8932.method35945().stream().flatMap(class8933 -> class8933.getRecipeOutput().method27668(null, TooltipFlags.NORMAL).stream()).map(class8934 -> TextFormatting.getTextWithoutFormattingCodes(class8934.getString()).trim()).filter(s2 -> !s2.isEmpty()), class8935 -> class8935.method35945().stream().map(class8936 -> Registry.field211.getKey(class8936.getRecipeOutput().getItem())));
         this.field4641.method5798(Class1659.field9375, class8922);
         this.field4641.method5798(Class1659.field9376, class8923);
         this.field4641.method5798(Class1659.field9377, class8924);
@@ -513,10 +514,10 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                 }
             }
         }
-        final Class2265<Object> method5791 = Class2265.method8506();
+        final NonNullList<Object> method5791 = NonNullList.create();
         for (final Item class7098 : Registry.field211) {
             method5791.clear();
-            class7098.method11735(Class7207.field27998, (Class2265<ItemStack>)method5791);
+            class7098.method11735(Class7207.field27998, (NonNullList<ItemStack>)method5791);
             for (final ItemStack class7099 : method5791) {
                 final String method5792 = class7099.method27649();
                 if (new Class2259(method5792, new Object[0]).getString().toLowerCase(Locale.ROOT).equals(class7098.method11717())) {

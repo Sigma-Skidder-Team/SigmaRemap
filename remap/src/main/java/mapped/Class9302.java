@@ -34,11 +34,11 @@ public class Class9302
     
     private static int method34396(final Class7492 class7492, final BlockPos class7493, final int i, final ItemStack class7494) throws CommandSyntaxException {
         final TileEntity method6727 = class7492.method23250().getTileEntity(class7493);
-        if (!(method6727 instanceof Class446)) {
+        if (!(method6727 instanceof IInventory)) {
             throw Class9302.field39908.create();
         }
-        final Class446 class7495 = (Class446)method6727;
-        if (i >= 0 && i < class7495.method2239()) {
+        final IInventory class7495 = (IInventory)method6727;
+        if (i >= 0 && i < class7495.getSizeInventory()) {
             class7495.method2160(i, class7494);
             class7492.method23257(new Class2259("commands.replaceitem.block.success", new Object[] { class7493.getX(), class7493.getY(), class7493.getZ(), class7494.method27684() }), true);
             return 1;

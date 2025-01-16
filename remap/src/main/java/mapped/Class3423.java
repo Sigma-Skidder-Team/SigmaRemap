@@ -42,7 +42,7 @@ public class Class3423 extends Class3418
     }
     
     @Override
-    public void method10855(final Class446 class446) {
+    public void method10855(final IInventory class446) {
         this.field16183.method2280();
         super.method10855(class446);
     }
@@ -169,22 +169,22 @@ public class Class3423 extends Class3418
     
     public void method10927(final int n) {
         if (this.method10931().size() > n) {
-            final ItemStack method2157 = this.field16183.method2157(0);
+            final ItemStack method2157 = this.field16183.getStackInSlot(0);
             if (!method2157.method27620()) {
                 if (!this.method10888(method2157, 3, 39, true)) {
                     return;
                 }
                 this.field16183.method2160(0, method2157);
             }
-            final ItemStack method2158 = this.field16183.method2157(1);
+            final ItemStack method2158 = this.field16183.getStackInSlot(1);
             if (!method2158.method27620()) {
                 if (!this.method10888(method2158, 3, 39, true)) {
                     return;
                 }
                 this.field16183.method2160(1, method2158);
             }
-            if (this.field16183.method2157(0).method27620()) {
-                if (this.field16183.method2157(1).method27620()) {
+            if (this.field16183.getStackInSlot(0).method27620()) {
+                if (this.field16183.getStackInSlot(1).method27620()) {
                     this.method10928(0, this.method10931().get(n).method32281());
                     this.method10928(1, this.method10931().get(n).method32282());
                 }
@@ -198,7 +198,7 @@ public class Class3423 extends Class3418
                 final ItemStack method20053 = this.field16151.get(i).method20053();
                 if (!method20053.method27620()) {
                     if (this.method10929(class8321, method20053)) {
-                        final ItemStack method20054 = this.field16183.method2157(n);
+                        final ItemStack method20054 = this.field16183.getStackInSlot(n);
                         final int n2 = method20054.method27620() ? 0 : method20054.method27690();
                         final int min = Math.min(class8321.method27628() - n2, method20053.method27690());
                         final ItemStack method20055 = method20053.method27641();

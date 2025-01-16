@@ -7,6 +7,7 @@ package mapped;
 import java.util.AbstractList;
 import com.mentalfrostbyte.jello.commands.CommandException;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class Class6697 extends Class6693
 {
@@ -33,7 +34,7 @@ public class Class6697 extends Class6693
         if (class8321.method27657() != null) {
             method333 = class8321.method27657().copy();
         }
-        final Class2265<ItemStack> class8324 = Class2265.method8507(27, new ItemStack(Items.AIR));
+        final NonNullList<ItemStack> class8324 = NonNullList.withSize(27, new ItemStack(Items.AIR));
         if (method333 != null) {
             if (method333.contains("BlockEntityTag")) {
                 final CompoundNBT method335 = method333.getCompound("BlockEntityTag");
@@ -44,7 +45,7 @@ public class Class6697 extends Class6693
             }
         }
         Class9070.method32674(() -> {
-            final Class2265<ItemStack> class8324;
+            final NonNullList<ItemStack> class8324;
             final Object o = new Class443((ItemStack[])class8324.toArray((Object[])new ItemStack[0]));
             final Minecraft field26420 = Class6697.field26420;
             new Class745(new Class3435(-1, Class6697.field26420.player.field3006, class8322), Class6697.field26420.player.field3006, class8323.method27664());

@@ -7,7 +7,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import java.util.function.Function;
 
-public class Class6095<T extends Class3662<?>> implements Class6096<T>
+public class Class6095<T extends IRecipe<?>> implements Class6096<T>
 {
     private static String[] field24731;
     private final Function<ResourceLocation, T> field24732;

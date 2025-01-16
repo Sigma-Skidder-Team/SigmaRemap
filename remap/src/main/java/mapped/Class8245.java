@@ -314,7 +314,7 @@ public class Class8245
         return Class8639.method29366(n, n2, n3, class2133, class2134);
     }
     
-    public void method27325(final int n, final Class3662<?> class3662, final boolean b) {
+    public void method27325(final int n, final IRecipe<?> class3662, final boolean b) {
         this.field33864.method17292(new Class4387(n, class3662, b));
     }
     

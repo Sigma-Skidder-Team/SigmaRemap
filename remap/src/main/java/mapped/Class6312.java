@@ -105,7 +105,7 @@ public class Class6312
             }
             final Optional<Class3684> method6378 = NewNameTags.method10340().method6378(Class8976.field37844, new Class443(new ItemStack[] { this.field25240 }), NewNameTags.method10343().field4683);
             if (method6378.isPresent()) {
-                final ItemStack method6379 = method6378.get().method11292();
+                final ItemStack method6379 = method6378.get().getRecipeOutput();
                 if (!method6379.method27620()) {
                     return method6379.method27641();
                 }

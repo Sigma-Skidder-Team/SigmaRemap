@@ -23,7 +23,7 @@ public class Class4219 extends Class4211
         return (JsonElement)jsonObject;
     }
     
-    public boolean method12702(final Class3662<?> class3662) {
+    public boolean method12702(final IRecipe<?> class3662) {
         return this.field19016.equals(class3662.method11298());
     }
 }

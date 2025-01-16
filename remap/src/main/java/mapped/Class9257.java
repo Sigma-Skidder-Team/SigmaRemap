@@ -22,7 +22,7 @@ public class Class9257
     private int field39705;
     private int field39706;
     private Class6521 field39707;
-    private Class3662<?> field39708;
+    private IRecipe<?> field39708;
     private Class9586 field39709;
     
     public Class9257() {
@@ -110,7 +110,7 @@ public class Class9257
     }
     
     @Nullable
-    public Class3662<?> method34155() {
+    public IRecipe<?> method34155() {
         return this.field39708;
     }
     
@@ -168,7 +168,7 @@ public class Class9257
         return true;
     }
     
-    public void method34159(final List<Class3662<?>> list) {
+    public void method34159(final List<IRecipe<?>> list) {
         final Iterator<Class586> iterator = this.field39701.iterator();
         while (iterator.hasNext()) {
             iterator.next().method3438(list);

@@ -7,6 +7,7 @@ package mapped;
 import java.util.Iterator;
 import java.util.Map;
 import com.google.gson.JsonObject;
+import net.minecraft.util.NonNullList;
 
 public class Class6097 implements Class6096<Class3664>
 {
@@ -23,7 +24,7 @@ public class Class6097 implements Class6096<Class3664>
         final int method29501 = class1933.readVarInt();
         final int method29502 = class1933.readVarInt();
         final String method29503 = class1933.method29513(32767);
-        final Class2265<Class120> method29504 = Class2265.method8507(method29501 * method29502, Class120.field374);
+        final NonNullList<Class120> method29504 = NonNullList.withSize(method29501 * method29502, Class120.field374);
         for (int i = 0; i < method29504.size(); ++i) {
             method29504.set(i, Class120.method621(class1933));
         }

@@ -9,10 +9,10 @@ import net.minecraft.item.ItemStack;
 public class Class3425 extends Class3418
 {
     private static String[] field16189;
-    private final Class446 field16190;
+    private final IInventory field16190;
     private final Class806 field16191;
     
-    public Class3425(final int n, final Class464 class464, final Class446 field16190, final Class806 field16191) {
+    public Class3425(final int n, final Class464 class464, final IInventory field16190, final Class806 field16191) {
         super(null, n);
         this.field16190 = field16190;
         this.field16191 = field16191;
@@ -58,7 +58,7 @@ public class Class3425 extends Class3418
             if (class514.method20054()) {
                 final ItemStack method20053 = class514.method20053();
                 class513 = method20053.method27641();
-                final int method20054 = this.field16190.method2239();
+                final int method20054 = this.field16190.getSizeInventory();
                 if (n >= method20054) {
                     if (this.method10878(1).method20046(method20053) && !this.method10878(1).method20054()) {
                         if (!this.method10888(method20053, 1, 2, false)) {

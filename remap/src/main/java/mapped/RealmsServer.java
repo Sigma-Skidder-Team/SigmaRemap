@@ -274,7 +274,7 @@ public class RealmsServer extends ValueObject
     public enum Status
     {
         CLOSED,
-        field12792,
+        OPEN,
         field12793;
     }
 }

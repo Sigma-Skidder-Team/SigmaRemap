@@ -35,7 +35,7 @@ public class Class3823 extends Item
                 final Class1780 method2718 = class1847.getServer().method1577();
                 for (int i = 0; i < method2717.size(); ++i) {
                     final String method2719 = method2717.method353(i);
-                    final Optional<? extends Class3662<?>> method2720 = method2718.method6382(new ResourceLocation(method2719));
+                    final Optional<? extends IRecipe<?>> method2720 = method2718.method6382(new ResourceLocation(method2719));
                     if (!method2720.isPresent()) {
                         Class3823.field17375.error("Invalid recipe: {}", (Object)method2719);
                         return Class9355.method34677(method2715);

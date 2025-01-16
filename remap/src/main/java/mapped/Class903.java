@@ -8,9 +8,9 @@ import java.io.IOException;
 
 public class Class903 extends Thread
 {
-    public final /* synthetic */ Class5079 field4854;
+    public final /* synthetic */ RealmsMainScreen field4854;
     
-    public Class903(final Class5079 field4854, final String name) {
+    public Class903(final RealmsMainScreen field4854, final String name) {
         this.field4854 = field4854;
         super(name);
     }
@@ -21,15 +21,15 @@ public class Class903 extends Thread
         try {
             if (method35444.method35454()) {
                 RealmsClient.method35445();
-                Class5079.method15819().info("Switched to stage");
-                Class5079.method15822().method32593();
+                RealmsMainScreen.method15819().info("Switched to stage");
+                RealmsMainScreen.method15822().method32593();
             }
         }
         catch (final RealmsServiceException obj) {
-            Class5079.method15819().error("Couldn't connect to Realms: " + obj);
+            RealmsMainScreen.method15819().error("Couldn't connect to Realms: " + obj);
         }
         catch (final IOException ex) {
-            Class5079.method15819().error("Couldn't parse response connecting to Realms: " + ex.getMessage());
+            RealmsMainScreen.method15819().error("Couldn't parse response connecting to Realms: " + ex.getMessage());
         }
     }
 }

@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 public class Class3438 extends Class3418
 {
     private static String[] field16235;
-    private final Class446 field16236;
+    private final IInventory field16236;
     private final int field16237;
     
     private Class3438(final Class8471<?> class8471, final int n, final Class464 class8472, final int n2) {
@@ -40,15 +40,15 @@ public class Class3438 extends Class3418
         return new Class3438(Class8471.field34760, n, class464, 6);
     }
     
-    public static Class3438 method10970(final int n, final Class464 class464, final Class446 class465) {
+    public static Class3438 method10970(final int n, final Class464 class464, final IInventory class465) {
         return new Class3438(Class8471.field34757, n, class464, class465, 3);
     }
     
-    public static Class3438 method10971(final int n, final Class464 class464, final Class446 class465) {
+    public static Class3438 method10971(final int n, final Class464 class464, final IInventory class465) {
         return new Class3438(Class8471.field34760, n, class464, class465, 6);
     }
     
-    public Class3438(final Class8471<?> class8471, final int n, final Class464 class8472, final Class446 field16236, final int field16237) {
+    public Class3438(final Class8471<?> class8471, final int n, final Class464 class8472, final IInventory field16236, final int field16237) {
         super(class8471, n);
         Class3418.method10868(field16236, field16237 * 9);
         this.field16236 = field16236;
@@ -108,7 +108,7 @@ public class Class3438 extends Class3418
         this.field16236.method2242(playerEntity);
     }
     
-    public Class446 method10972() {
+    public IInventory method10972() {
         return this.field16236;
     }
     

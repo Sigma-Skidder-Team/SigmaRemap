@@ -12,12 +12,12 @@ public class Class6601
 {
     private static String[] field26171;
     private final int field26172;
-    public final Class446 field26173;
+    public final IInventory field26173;
     public int field26174;
     public final int field26175;
     public final int field26176;
     
-    public Class6601(final Class446 field26173, final int field26174, final int field26175, final int field26176) {
+    public Class6601(final IInventory field26173, final int field26174, final int field26175, final int field26176) {
         this.field26173 = field26173;
         this.field26172 = field26174;
         this.field26175 = field26175;
@@ -50,7 +50,7 @@ public class Class6601
     }
     
     public ItemStack method20053() {
-        return this.field26173.method2157(this.field26172);
+        return this.field26173.getStackInSlot(this.field26172);
     }
     
     public boolean method20054() {

@@ -8,13 +8,13 @@ import net.minecraft.item.ItemStack;
 
 import java.util.Set;
 
-public interface Class446 extends Class447
+public interface IInventory extends Class447
 {
-    int method2239();
+    int getSizeInventory();
     
     boolean method2156();
     
-    ItemStack method2157(final int p0);
+    ItemStack getStackInSlot(final int p0);
     
     ItemStack method2158(final int p0, final int p1);
     
@@ -42,8 +42,8 @@ public interface Class446 extends Class447
     
     default int method2265(final Item obj) {
         int n = 0;
-        for (int i = 0; i < this.method2239(); ++i) {
-            final ItemStack method2157 = this.method2157(i);
+        for (int i = 0; i < this.getSizeInventory(); ++i) {
+            final ItemStack method2157 = this.getStackInSlot(i);
             if (method2157.getItem().equals(obj)) {
                 n += method2157.method27690();
             }
@@ -52,8 +52,8 @@ public interface Class446 extends Class447
     }
     
     default boolean method2266(final Set<Item> set) {
-        for (int i = 0; i < this.method2239(); ++i) {
-            final ItemStack method2157 = this.method2157(i);
+        for (int i = 0; i < this.getSizeInventory(); ++i) {
+            final ItemStack method2157 = this.getStackInSlot(i);
             if (set.contains(method2157.getItem()) && method2157.method27690() > 0) {
                 return true;
             }

@@ -20,7 +20,7 @@ public class Class564 extends AbstractGui implements IRenderable, IGuiEventListe
     private int field3355;
     private Minecraft field3356;
     private Class9586 field3357;
-    private Class3662<?> field3358;
+    private IRecipe<?> field3358;
     private float field3359;
     private boolean field3360;
     
@@ -35,8 +35,8 @@ public class Class564 extends AbstractGui implements IRenderable, IGuiEventListe
             this.field3360 = true;
         }
         final boolean method19705 = field3356.player.method4122().method19705((Class3426<?>)field3356.player.field3009);
-        final List<Class3662<?>> method19706 = field3357.method35947(true);
-        final List<Class3662<?>> list = method19705 ? Collections.emptyList() : field3357.method35947(false);
+        final List<IRecipe<?>> method19706 = field3357.method35947(true);
+        final List<IRecipe<?>> list = method19705 ? Collections.emptyList() : field3357.method35947(false);
         final int size = method19706.size();
         final int a = size + list.size();
         final int b = (a > 16) ? 5 : 4;
@@ -62,7 +62,7 @@ public class Class564 extends AbstractGui implements IRenderable, IGuiEventListe
         this.field3352.clear();
         for (int i = 0; i < a; ++i) {
             final boolean b2 = i < size;
-            final Class3662 class3662 = b2 ? method19706.get(i) : list.get(i - size);
+            final IRecipe class3662 = b2 ? method19706.get(i) : list.get(i - size);
             final int n11 = this.field3354 + 4 + 25 * (i % b);
             final int n12 = this.field3355 + 5 + 25 * (i / b);
             if (!this.field3360) {
@@ -84,7 +84,7 @@ public class Class564 extends AbstractGui implements IRenderable, IGuiEventListe
         return this.field3357;
     }
     
-    public Class3662<?> method3283() {
+    public IRecipe<?> method3283() {
         return this.field3358;
     }
     

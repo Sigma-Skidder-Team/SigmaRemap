@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
@@ -424,8 +425,8 @@ public class Class5814 implements Class5813
     public void method17449(final Class4267 class4267) {
         Class8663.method29631((IPacket<Class5814>)class4267, this, this.field23857.method2940());
         this.field23857.field3006.method2351(class4267.method12809());
-        this.field23857.field3039.method17469(new Class4272(-2, this.field23857.field3006.field2743, this.field23857.field3006.method2157(this.field23857.field3006.field2743)));
-        this.field23857.field3039.method17469(new Class4272(-2, class4267.method12809(), this.field23857.field3006.method2157(class4267.method12809())));
+        this.field23857.field3039.method17469(new Class4272(-2, this.field23857.field3006.field2743, this.field23857.field3006.getStackInSlot(this.field23857.field3006.field2743)));
+        this.field23857.field3039.method17469(new Class4272(-2, class4267.method12809(), this.field23857.field3006.getStackInSlot(class4267.method12809())));
         this.field23857.field3039.method17469(new Class4388(this.field23857.field3006.field2743));
     }
     
@@ -1114,12 +1115,12 @@ public class Class5814 implements Class5813
                         this.field23864.put(this.field23857.field3009.field16154, class4256.method12776());
                         this.field23857.field3039.method17469(new Class4393(class4256.method12773(), class4256.method12776(), false));
                         this.field23857.field3009.method10887(this.field23857, false);
-                        final Class2265<Object> method8506 = (Class2265<Object>)Class2265.method8506();
+                        final NonNullList<Object> method8506 = (NonNullList<Object>) NonNullList.create();
                         for (int i = 0; i < this.field23857.field3009.field16151.size(); ++i) {
                             final ItemStack method8507 = this.field23857.field3009.field16151.get(i).method20053();
                             method8506.add(method8507.method27620() ? ItemStack.EMPTY : method8507);
                         }
-                        this.field23857.method2930(this.field23857.field3009, (Class2265<ItemStack>)method8506);
+                        this.field23857.method2930(this.field23857.field3009, (NonNullList<ItemStack>)method8506);
                     }
                     else {
                         this.field23857.field3039.method17469(new Class4393(class4256.method12773(), class4256.method12776(), true));
@@ -1130,11 +1131,11 @@ public class Class5814 implements Class5813
                     }
                 }
                 else {
-                    final Class2265<Object> method8508 = (Class2265<Object>)Class2265.method8506();
+                    final NonNullList<Object> method8508 = (NonNullList<Object>) NonNullList.create();
                     for (int j = 0; j < this.field23857.field3009.field16151.size(); ++j) {
                         method8508.add(this.field23857.field3009.field16151.get(j).method20053());
                     }
-                    this.field23857.method2930(this.field23857.field3009, (Class2265<ItemStack>)method8508);
+                    this.field23857.method2930(this.field23857.field3009, (NonNullList<ItemStack>)method8508);
                 }
             }
         }

@@ -35,10 +35,10 @@ public class Class3956 extends Class3955
         final Class458 class1850 = class1849.method16766();
         final int method2333 = class1850.method2333();
         if (method2333 >= 0) {
-            final ItemStack method2334 = class1850.method2157(method2333);
+            final ItemStack method2334 = class1850.getStackInSlot(method2333);
             if (!method2334.method27620()) {
                 final Direction class1851 = class1847.getBlockState(class1848).method21772((IProperty<Direction>)Class3956.field17859);
-                final Class446 method2335 = Class455.method2310(class1847, class1848.method1149(class1851));
+                final IInventory method2335 = Class455.method2310(class1847, class1848.method1149(class1851));
                 ItemStack class1852;
                 if (method2335 != null) {
                     if (!Class455.method2303(class1850, method2335, method2334.method27641().method27621(1), class1851.getOpposite()).method27620()) {

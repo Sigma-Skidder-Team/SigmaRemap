@@ -11,7 +11,7 @@ public class Class6625 extends Class6601
     private static String[] field26171;
     private final Class3429 field26208;
     
-    public Class6625(final Class3429 field26208, final Class446 class446, final int n, final int n2, final int n3) {
+    public Class6625(final Class3429 field26208, final IInventory class446, final int n, final int n2, final int n3) {
         super(class446, n, n2, n3);
         this.field26208 = field26208;
     }

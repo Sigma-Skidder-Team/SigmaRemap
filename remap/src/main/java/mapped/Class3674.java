@@ -22,8 +22,8 @@ public class Class3674 extends Class3666
     public boolean method11301(final Class473 class473, final World class474) {
         int n = 0;
         int n2 = 0;
-        for (int i = 0; i < class473.method2239(); ++i) {
-            final ItemStack method2157 = class473.method2157(i);
+        for (int i = 0; i < class473.getSizeInventory(); ++i) {
+            final ItemStack method2157 = class473.getStackInSlot(i);
             if (!method2157.method27620()) {
                 if (!Class3674.field16959.test(method2157)) {
                     if (!Class3674.field16960.test(method2157)) {
@@ -51,8 +51,8 @@ public class Class3674 extends Class3666
         final CompoundNBT method27659 = class474.method27659("Fireworks");
         final ListNBT class475 = new ListNBT();
         int n = 0;
-        for (int i = 0; i < class473.method2239(); ++i) {
-            final ItemStack method27660 = class473.method2157(i);
+        for (int i = 0; i < class473.getSizeInventory(); ++i) {
+            final ItemStack method27660 = class473.getStackInSlot(i);
             if (!method27660.method27620()) {
                 if (!Class3674.field16960.test(method27660)) {
                     if (Class3674.field16961.test(method27660)) {
@@ -75,12 +75,12 @@ public class Class3674 extends Class3666
     }
     
     @Override
-    public boolean method11291(final int n, final int n2) {
+    public boolean canFit(final int n, final int n2) {
         return n * n2 >= 2;
     }
     
     @Override
-    public ItemStack method11292() {
+    public ItemStack getRecipeOutput() {
         return new ItemStack(Items.field31532);
     }
     

@@ -6,7 +6,7 @@ package mapped;
 
 public class Class6603 extends Class6601
 {
-    public Class6603(final Class446 class446, final int n, final int n2, final int n3) {
+    public Class6603(final IInventory class446, final int n, final int n2, final int n3) {
         super(class446, n, n2, n3);
     }
     

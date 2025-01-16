@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -35,8 +36,8 @@ public class Class857 extends LivingEntity
     public static final DataParameter<Class8396> field4576;
     public static final DataParameter<Class8396> field4577;
     private static final Predicate<Entity> field4578;
-    private final Class2265<ItemStack> field4579;
-    private final Class2265<ItemStack> field4580;
+    private final NonNullList<ItemStack> field4579;
+    private final NonNullList<ItemStack> field4580;
     private boolean field4581;
     public long field4582;
     private int field4583;
@@ -49,8 +50,8 @@ public class Class857 extends LivingEntity
     
     public Class857(final EntityType<? extends Class857> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field4579 = Class2265.method8507(2, ItemStack.EMPTY);
-        this.field4580 = Class2265.method8507(4, ItemStack.EMPTY);
+        this.field4579 = NonNullList.withSize(2, ItemStack.EMPTY);
+        this.field4580 = NonNullList.withSize(4, ItemStack.EMPTY);
         this.field4584 = Class857.field4565;
         this.field4585 = Class857.field4566;
         this.field4586 = Class857.field4567;

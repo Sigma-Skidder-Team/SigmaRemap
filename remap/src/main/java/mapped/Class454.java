@@ -49,7 +49,7 @@ public class Class454 extends Class433 implements Class453
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return 5;
     }
     

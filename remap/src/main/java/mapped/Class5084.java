@@ -4,6 +4,8 @@
 
 package mapped;
 
+import net.minecraft.realms.RealmsConfirmResultListener;
+
 public class Class5084 extends RealmsScreen
 {
     private final Class2039 field21901;

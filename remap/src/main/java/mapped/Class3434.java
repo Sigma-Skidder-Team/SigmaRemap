@@ -5,15 +5,16 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class Class3434 extends Class3418
 {
     private static String[] field16224;
-    public final Class2265<ItemStack> field16225;
+    public final NonNullList<ItemStack> field16225;
     
     public Class3434(final PlayerEntity playerEntity) {
         super(null, 0);
-        this.field16225 = Class2265.method8506();
+        this.field16225 = NonNullList.create();
         final Class464 field3006 = playerEntity.field3006;
         for (int i = 0; i < 5; ++i) {
             for (int j = 0; j < 9; ++j) {

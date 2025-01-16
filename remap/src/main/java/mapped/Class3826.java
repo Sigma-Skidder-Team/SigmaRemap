@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
@@ -22,7 +23,7 @@ public class Class3826 extends Class3824
     }
     
     @Override
-    public void method11735(final Class7207 class7207, final Class2265<ItemStack> class7208) {
+    public void method11735(final Class7207 class7207, final NonNullList<ItemStack> class7208) {
         if (this.method11736(class7207)) {
             for (final Class8061 class7209 : Registry.field212) {
                 if (class7209.method26449().isEmpty()) {

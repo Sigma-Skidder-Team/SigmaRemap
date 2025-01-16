@@ -19,10 +19,10 @@ public class Class909 extends Thread
         try {
             Realms.method25361(() -> {
                 final RealmsClient class2335;
-                class2335.method35464(1, 10, Class271.field1471);
-                class2335.method35464(1, 10, Class271.field1473);
-                class2335.method35464(1, 10, Class271.field1474);
-                class2335.method35464(1, 10, Class271.field1475);
+                class2335.func_224930_a(1, 10, Class271.field1471);
+                class2335.func_224930_a(1, 10, Class271.field1473);
+                class2335.func_224930_a(1, 10, Class271.field1474);
+                class2335.func_224930_a(1, 10, Class271.field1475);
                 Class5078.method15733(this.field4864, class2331);
                 Class5078.method15734(this.field4864, class2332);
                 Class5078.method15735(this.field4864, class2333);

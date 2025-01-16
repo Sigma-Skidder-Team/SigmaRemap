@@ -12,13 +12,13 @@ public class Class5091 extends RealmsScreen
 {
     private static final Logger field22003;
     private final RealmsScreen field22004;
-    private final Class5079 field22005;
+    private final RealmsMainScreen field22005;
     private final RealmsServer field22006;
     private Class5611 field22007;
     private boolean field22008;
     private final String field22009 = "https://minecraft.net/realms/terms";
     
-    public Class5091(final RealmsScreen field22004, final Class5079 field22005, final RealmsServer field22006) {
+    public Class5091(final RealmsScreen field22004, final RealmsMainScreen field22005, final RealmsServer field22006) {
         this.field22004 = field22004;
         this.field22005 = field22005;
         this.field22006 = field22006;

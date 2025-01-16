@@ -6,5 +6,5 @@ package mapped;
 
 public interface Class807
 {
-    void method4733(final Class446 p0);
+    void method4733(final IInventory p0);
 }

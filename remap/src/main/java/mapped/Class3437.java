@@ -9,13 +9,13 @@ import net.minecraft.item.ItemStack;
 public class Class3437 extends Class3418
 {
     private static String[] field16233;
-    private final Class446 field16234;
+    private final IInventory field16234;
     
     public Class3437(final int n, final Class464 class464) {
         this(n, class464, new Class443(5));
     }
     
-    public Class3437(final int n, final Class464 class464, final Class446 field16234) {
+    public Class3437(final int n, final Class464 class464, final IInventory field16234) {
         super(Class8471.field34770, n);
         Class3418.method10868(this.field16234 = field16234, 5);
         field16234.method2241(class464.field2744);
@@ -45,12 +45,12 @@ public class Class3437 extends Class3418
             if (class514.method20054()) {
                 final ItemStack method20053 = class514.method20053();
                 class513 = method20053.method27641();
-                if (n >= this.field16234.method2239()) {
-                    if (!this.method10888(method20053, 0, this.field16234.method2239(), false)) {
+                if (n >= this.field16234.getSizeInventory()) {
+                    if (!this.method10888(method20053, 0, this.field16234.getSizeInventory(), false)) {
                         return ItemStack.EMPTY;
                     }
                 }
-                else if (!this.method10888(method20053, this.field16234.method2239(), this.field16151.size(), true)) {
+                else if (!this.method10888(method20053, this.field16234.getSizeInventory(), this.field16151.size(), true)) {
                     return ItemStack.EMPTY;
                 }
                 if (!method20053.method27620()) {

@@ -9,10 +9,10 @@ import java.util.Iterator;
 public class Class928 extends Thread
 {
     public static final /* synthetic */ boolean field4912;
-    public final /* synthetic */ Class7445 field4913;
+    public final /* synthetic */ WorldTemplatePaginatedList field4913;
     public final /* synthetic */ Class5045 field4914;
     
-    public Class928(final Class5045 field4914, final String name, final Class7445 field4915) {
+    public Class928(final Class5045 field4914, final String name, final WorldTemplatePaginatedList field4915) {
         this.field4914 = field4914;
         this.field4913 = field4915;
         super(name);
@@ -20,11 +20,11 @@ public class Class928 extends Thread
     
     @Override
     public void run() {
-        Class7445 class7445 = this.field4913;
+        WorldTemplatePaginatedList class7445 = this.field4913;
         RealmsClient.func_224911_a();
         while (class7445 != null) {
             class7445 = Realms.method25360(() -> {
-                final Class7445 class7445;
+                final WorldTemplatePaginatedList class7445;
                 final RealmsClient class7446;
                 Class5045.method15391(this.field4914, class7445, class7446);
                 if (!either.right().isPresent()) {
@@ -32,7 +32,7 @@ public class Class928 extends Thread
                         throw new AssertionError();
                     }
                     else {
-                        final Class7445 class7447 = either.left().get();
+                        final WorldTemplatePaginatedList class7447 = either.left().get();
                         class7447.field28717.iterator();
                         final Iterator iterator;
                         while (iterator.hasNext()) {

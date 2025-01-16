@@ -12,7 +12,7 @@ import java.util.Random;
 public class Class3433 extends Class3418
 {
     private static String[] field16216;
-    private final Class446 field16217;
+    private final IInventory field16217;
     private final Class7318 field16218;
     private final Random field16219;
     private final Class6546 field16220;
@@ -56,9 +56,9 @@ public class Class3433 extends Class3418
     }
     
     @Override
-    public void method10855(final Class446 class446) {
+    public void method10855(final IInventory class446) {
         if (class446 == this.field16217) {
-            final ItemStack method2157 = class446.method2157(0);
+            final ItemStack method2157 = class446.getStackInSlot(0);
             if (!method2157.method27620() && method2157.method27673()) {
                 this.field16218.method22437((class448, class449) -> {
                     int j = 0;
@@ -139,8 +139,8 @@ public class Class3433 extends Class3418
     
     @Override
     public boolean method10877(final PlayerEntity playerEntity, final int n) {
-        final ItemStack method2157 = this.field16217.method2157(0);
-        final ItemStack method2158 = this.field16217.method2157(1);
+        final ItemStack method2157 = this.field16217.getStackInSlot(0);
+        final ItemStack method2158 = this.field16217.getStackInSlot(1);
         final int n2 = n + 1;
         if (method2158.method27620() || method2158.method27690() < n2) {
             if (!playerEntity.field3025.field27304) {
@@ -211,7 +211,7 @@ public class Class3433 extends Class3418
     }
     
     public int method10952() {
-        final ItemStack method2157 = this.field16217.method2157(1);
+        final ItemStack method2157 = this.field16217.getStackInSlot(1);
         return method2157.method27620() ? 0 : method2157.method27690();
     }
     

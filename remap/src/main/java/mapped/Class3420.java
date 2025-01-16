@@ -9,14 +9,14 @@ import net.minecraft.item.ItemStack;
 public class Class3420 extends Class3418
 {
     private static String[] field16162;
-    private final Class446 field16163;
+    private final IInventory field16163;
     private final Class7604 field16164;
     
     public Class3420(final int n) {
         this(n, new Class443(1), new Class7607(1));
     }
     
-    public Class3420(final int n, final Class446 field16163, final Class7604 field16164) {
+    public Class3420(final int n, final IInventory field16163, final Class7604 field16164) {
         super(Class8471.field34771, n);
         Class3418.method10868(field16163, 1);
         Class3418.method10869(field16164, 1);
@@ -70,7 +70,7 @@ public class Class3420 extends Class3418
     }
     
     public ItemStack method10900() {
-        return this.field16163.method2157(0);
+        return this.field16163.getStackInSlot(0);
     }
     
     public int method10901() {

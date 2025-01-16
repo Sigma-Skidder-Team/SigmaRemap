@@ -23,7 +23,7 @@ public class Class135 extends Class126
         if (!class8321.method27620()) {
             final Optional<Class3684> method6378 = class8322.method23588().method6792().method6378(Class8976.field37844, new Class443(new ItemStack[] { class8321 }), class8322.method23588());
             if (method6378.isPresent()) {
-                final ItemStack method6379 = method6378.get().method11292();
+                final ItemStack method6379 = method6378.get().getRecipeOutput();
                 if (!method6379.method27620()) {
                     final ItemStack method6380 = method6379.method27641();
                     method6380.method27691(class8321.method27690());

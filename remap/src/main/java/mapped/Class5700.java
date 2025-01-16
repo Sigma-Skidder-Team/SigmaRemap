@@ -71,7 +71,7 @@ public class Class5700 extends Class5611
                 }
             }
             else {
-                final boolean b2 = class7437.state == RealmsServer.Status.field12792 || class7437.state == RealmsServer.Status.CLOSED;
+                final boolean b2 = class7437.state == RealmsServer.Status.OPEN || class7437.state == RealmsServer.Status.CLOSED;
                 if (!class7437.field28684 && b2) {
                     class7439 = Class2210.field13470;
                     s2 = Realms.method25379("mco.configure.world.slot.tooltip.active", new Object[0]);

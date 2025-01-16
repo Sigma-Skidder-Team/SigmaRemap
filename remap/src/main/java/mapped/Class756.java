@@ -335,7 +335,7 @@ public class Class756 extends Class754
         return this.field4071;
     }
     
-    public void method4123(final Class3662<?> class3662) {
+    public void method4123(final IRecipe<?> class3662) {
         if (this.field4071.method19699(class3662)) {
             this.field4071.method19700(class3662);
             this.field4069.method17292(new Class4397(class3662));

@@ -800,7 +800,7 @@ public class Class525 extends Class517<Class3434>
         if (!b) {
             if (b2) {
                 for (int i = 0; i < Class464.method2346(); ++i) {
-                    method5322.set(i, (Object)field4684.field3006.method2157(i).method27641());
+                    method5322.set(i, (Object)field4684.field3006.getStackInSlot(i).method27641());
                 }
                 class869.field4647.method3805(new Class2259("inventory.hotbarSaved", new Object[] { class869.gameSettings.field23459.method1068(), class869.gameSettings.field23457[n].method1068() }), false);
                 method5321.method29482();

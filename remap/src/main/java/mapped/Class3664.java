@@ -16,6 +16,7 @@ import java.util.HashSet;
 import com.google.gson.JsonSyntaxException;
 import com.google.common.collect.Sets;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -24,12 +25,12 @@ public class Class3664 implements Class3663
 {
     private final int field16946;
     private final int field16947;
-    private final Class2265<Class120> field16948;
+    private final NonNullList<Class120> field16948;
     private final ItemStack field16949;
     private final ResourceLocation field16950;
     private final String field16951;
     
-    public Class3664(final ResourceLocation field16950, final String field16951, final int field16952, final int field16953, final Class2265<Class120> field16954, final ItemStack field16955) {
+    public Class3664(final ResourceLocation field16950, final String field16951, final int field16952, final int field16953, final NonNullList<Class120> field16954, final ItemStack field16955) {
         this.field16950 = field16950;
         this.field16951 = field16951;
         this.field16946 = field16952;
@@ -54,17 +55,17 @@ public class Class3664 implements Class3663
     }
     
     @Override
-    public ItemStack method11292() {
+    public ItemStack getRecipeOutput() {
         return this.field16949;
     }
     
     @Override
-    public Class2265<Class120> method11294() {
+    public NonNullList<Class120> method11294() {
         return this.field16948;
     }
     
     @Override
-    public boolean method11291(final int n, final int n2) {
+    public boolean canFit(final int n, final int n2) {
         return n >= this.field16946 && n2 >= this.field16947;
     }
     
@@ -102,7 +103,7 @@ public class Class3664 implements Class3663
                         }
                     }
                 }
-                if (!field374.test(class473.method2157(i + j * class473.method2418()))) {
+                if (!field374.test(class473.getStackInSlot(i + j * class473.method2418()))) {
                     return false;
                 }
             }
@@ -111,7 +112,7 @@ public class Class3664 implements Class3663
     }
     
     public ItemStack method11303(final Class473 class473) {
-        return this.method11292().method27641();
+        return this.getRecipeOutput().method27641();
     }
     
     public int method11304() {
@@ -122,8 +123,8 @@ public class Class3664 implements Class3663
         return this.field16947;
     }
     
-    private static Class2265<Class120> method11306(final String[] array, final Map<String, Class120> map, final int n, final int n2) {
-        final Class2265<Class120> method8507 = Class2265.method8507(n * n2, Class120.field374);
+    private static NonNullList<Class120> method11306(final String[] array, final Map<String, Class120> map, final int n, final int n2) {
+        final NonNullList<Class120> method8507 = NonNullList.withSize(n * n2, Class120.field374);
         final HashSet hashSet = Sets.newHashSet((Iterable)map.keySet());
         hashSet.remove(" ");
         for (int i = 0; i < array.length; ++i) {

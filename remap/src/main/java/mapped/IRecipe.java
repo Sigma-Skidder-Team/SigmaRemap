@@ -1,20 +1,21 @@
-package net.minecraft.item.crafting;
+// 
+// Decompiled by Procyon v0.6.0
+// 
 
-import net.minecraft.block.Blocks;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
+package mapped;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public interface IRecipe<C extends IInventory> {
-    boolean matches(C inv, World worldIn);
-
-    ItemStack getCraftingResult(C inv);
-
-    boolean canFit(int width, int height);
-
+public interface IRecipe<C extends IInventory>
+{
+    boolean matches(final C p0, final World p1);
+    
+    ItemStack getCraftingResult(final C p0);
+    
+    boolean canFit(final int p0, final int p1);
+    
     ItemStack getRecipeOutput();
 
     default NonNullList<ItemStack> getRemainingItems(C inv) {
@@ -30,26 +31,26 @@ public interface IRecipe<C extends IInventory> {
 
         return nonnulllist;
     }
-
-    default NonNullList<Ingredient> getIngredients() {
+    
+    default NonNullList<Class120> method11294() {
         return NonNullList.create();
     }
-
-    default boolean isDynamic() {
+    
+    default boolean method11295() {
         return false;
     }
-
-    default String getGroup() {
+    
+    default String method11296() {
         return "";
     }
-
-    default ItemStack getIcon() {
-        return new ItemStack(Blocks.CRAFTING_TABLE);
+    
+    default ItemStack method11297() {
+        return new ItemStack(Class7521.field29296);
     }
-
-    ResourceLocation getId();
-
-    IRecipeSerializer<?> getSerializer();
-
-    IRecipeType<?> getType();
+    
+    ResourceLocation method11298();
+    
+    Class6096<?> method11299();
+    
+    Class8976<?> method11300();
 }

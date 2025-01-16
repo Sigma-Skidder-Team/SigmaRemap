@@ -71,8 +71,8 @@ public class Class5422 extends Class5419<Class824>
     private static void method16565(final Class824 class824, final Set<Item> set, final LivingEntity class825) {
         final Class443 method4837 = class824.method4837();
         ItemStack field34174 = ItemStack.EMPTY;
-        for (int i = 0; i < method4837.method2239(); ++i) {
-            final ItemStack method4838 = method4837.method2157(i);
+        for (int i = 0; i < method4837.getSizeInventory(); ++i) {
+            final ItemStack method4838 = method4837.getStackInSlot(i);
             if (!method4838.method27620()) {
                 final Item method4839 = method4838.getItem();
                 if (set.contains(method4839)) {

@@ -6,19 +6,19 @@ package mapped;
 
 import java.util.Optional;
 
-public final class Class6390 implements Class6389<Class475, Optional<Class446>>
+public final class Class6390 implements Class6389<Class475, Optional<IInventory>>
 {
     private static String[] field25504;
     
-    public Optional<Class446> method19078(final Class475 class475, final Class475 class476) {
-        return (Optional<Class446>)Optional.of(new Class451(class475, class476));
+    public Optional<IInventory> method19078(final Class475 class475, final Class475 class476) {
+        return (Optional<IInventory>)Optional.of(new Class451(class475, class476));
     }
     
-    public Optional<Class446> method19079(final Class475 value) {
-        return (Optional<Class446>)Optional.of(value);
+    public Optional<IInventory> method19079(final Class475 value) {
+        return (Optional<IInventory>)Optional.of(value);
     }
     
-    public Optional<Class446> method19080() {
+    public Optional<IInventory> method19080() {
         return Optional.empty();
     }
 }

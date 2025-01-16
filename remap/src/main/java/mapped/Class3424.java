@@ -9,13 +9,13 @@ import net.minecraft.item.ItemStack;
 public class Class3424 extends Class3418
 {
     private static String[] field16187;
-    private final Class446 field16188;
+    private final IInventory field16188;
     
     public Class3424(final int n, final Class464 class464) {
         this(n, class464, new Class443(9));
     }
     
-    public Class3424(final int n, final Class464 class464, final Class446 field16188) {
+    public Class3424(final int n, final Class464 class464, final IInventory field16188) {
         super(Class8471.field34761, n);
         Class3418.method10868(field16188, 9);
         (this.field16188 = field16188).method2241(class464.field2744);

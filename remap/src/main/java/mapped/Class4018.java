@@ -131,7 +131,7 @@ public class Class4018 extends Class4017
             }
             final List<Class428> method12209 = this.method12208(class7097, class7098, Class428.class, Class9170.field38848);
             if (!method12209.isEmpty()) {
-                return Class3418.method10898((Class446)method12209.get(0));
+                return Class3418.method10898((IInventory)method12209.get(0));
             }
         }
         return 0;

@@ -12,7 +12,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class435 extends TileEntity implements Class447, Class434
 {
-    private final Class446 field2649;
+    private final IInventory field2649;
     private final Class7604 field2650;
     private ItemStack field2651;
     private int field2652;

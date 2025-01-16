@@ -42,7 +42,7 @@ public final class Class1683 implements Class1682
                 throw new IOException(cause);
             }
         }
-        throw;
+        return n;
     }
     
     @Override

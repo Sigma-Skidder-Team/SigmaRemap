@@ -18,6 +18,6 @@ public class Class4437 implements Comparator<RealmsServer>
     
     @Override
     public int compare(final RealmsServer class7437, final RealmsServer class7438) {
-        return ComparisonChain.start().compareTrueFirst(class7437.state.equals(RealmsServer.Status.field12793), class7438.state.equals(RealmsServer.Status.field12793)).compareTrueFirst(class7437.field28685, class7438.field28685).compareTrueFirst(class7437.field28680.equals(this.field19773), class7438.field28680.equals(this.field19773)).compareFalseFirst(class7437.field28684, class7438.field28684).compareTrueFirst(class7437.state.equals(RealmsServer.Status.field12792), class7438.state.equals(RealmsServer.Status.field12792)).compare(class7437.id, class7438.id).result();
+        return ComparisonChain.start().compareTrueFirst(class7437.state.equals(RealmsServer.Status.field12793), class7438.state.equals(RealmsServer.Status.field12793)).compareTrueFirst(class7437.field28685, class7438.field28685).compareTrueFirst(class7437.field28680.equals(this.field19773), class7438.field28680.equals(this.field19773)).compareFalseFirst(class7437.field28684, class7438.field28684).compareTrueFirst(class7437.state.equals(RealmsServer.Status.OPEN), class7438.state.equals(RealmsServer.Status.OPEN)).compare(class7437.id, class7438.id).result();
     }
 }

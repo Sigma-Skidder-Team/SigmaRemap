@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -16,13 +17,13 @@ import java.util.Random;
 
 public class Class448 extends TileEntity implements Class447, Class439
 {
-    private final Class2265<ItemStack> field2686;
+    private final NonNullList<ItemStack> field2686;
     private final int[] field2687;
     private final int[] field2688;
     
     public Class448() {
         super(Class5412.field22572);
-        this.field2686 = Class2265.method8507(4, ItemStack.EMPTY);
+        this.field2686 = NonNullList.withSize(4, ItemStack.EMPTY);
         this.field2687 = new int[4];
         this.field2688 = new int[4];
     }
@@ -55,7 +56,7 @@ public class Class448 extends TileEntity implements Class447, Class439
                 final int n = i;
                 ++field2687[n];
                 if (this.field2687[i] >= this.field2688[i]) {
-                    final ItemStack class8321 = this.field2656.method6792().method6378(Class8976.field37847, new Class443(new ItemStack[] { other }), this.field2656).map(class8323 -> class8323.method11290(class8322)).orElse(other);
+                    final ItemStack class8321 = this.field2656.method6792().method6378(Class8976.field37847, new Class443(new ItemStack[] { other }), this.field2656).map(class8323 -> class8323.getCraftingResult(class8322)).orElse(other);
                     final BlockPos method2193 = this.getPos();
                     Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8321);
                     this.field2686.set(i, ItemStack.EMPTY);
@@ -92,7 +93,7 @@ public class Class448 extends TileEntity implements Class447, Class439
         }
     }
     
-    public Class2265<ItemStack> method2270() {
+    public NonNullList<ItemStack> method2270() {
         return this.field2686;
     }
     

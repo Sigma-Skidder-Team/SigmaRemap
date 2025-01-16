@@ -30,7 +30,7 @@ public class Class6520 extends Class6521
         this.field25949.clear();
         this.field25948.clear();
         final HashBasedTable create = HashBasedTable.create();
-        for (final Class3662 class3662 : this.field25947.method6383()) {
+        for (final IRecipe class3662 : this.field25947.method6383()) {
             if (class3662.method11295()) {
                 continue;
             }
@@ -87,11 +87,11 @@ public class Class6520 extends Class6521
         this.field25948.computeIfAbsent(key, p0 -> Lists.newArrayList()).add(class9586);
     }
     
-    private static Class1956 method19686(final Class3662<?> class3662) {
+    private static Class1956 method19686(final IRecipe<?> class3662) {
         final Class8976<?> method11300 = class3662.method11300();
         if (method11300 != Class8976.field37844) {
             if (method11300 == Class8976.field37845) {
-                return (class3662.method11292().getItem() instanceof Class4036) ? Class1956.field10658 : Class1956.field10659;
+                return (class3662.getRecipeOutput().getItem() instanceof Class4036) ? Class1956.field10658 : Class1956.field10659;
             }
             if (method11300 == Class8976.field37846) {
                 return Class1956.field10661;
@@ -102,7 +102,7 @@ public class Class6520 extends Class6521
             if (method11300 == Class8976.field37847) {
                 return Class1956.field10663;
             }
-            final Class7207 method11301 = class3662.method11292().getItem().method11737();
+            final Class7207 method11301 = class3662.getRecipeOutput().getItem().method11737();
             if (method11301 == Class7207.field27993) {
                 return Class1956.field10649;
             }
@@ -112,8 +112,8 @@ public class Class6520 extends Class6521
             return Class1956.field10651;
         }
         else {
-            if (!class3662.method11292().getItem().method11743()) {
-                return (class3662.method11292().getItem() instanceof Class4036) ? Class1956.field10655 : Class1956.field10656;
+            if (!class3662.getRecipeOutput().getItem().method11743()) {
+                return (class3662.getRecipeOutput().getItem() instanceof Class4036) ? Class1956.field10655 : Class1956.field10656;
             }
             return Class1956.field10654;
         }

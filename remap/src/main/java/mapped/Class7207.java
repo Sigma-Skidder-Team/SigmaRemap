@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 import java.util.Iterator;
 
@@ -134,7 +135,7 @@ public abstract class Class7207
         return false;
     }
     
-    public void method22126(final Class2265<ItemStack> class2265) {
+    public void method22126(final NonNullList<ItemStack> class2265) {
         final Iterator<Object> iterator = Registry.field211.iterator();
         while (iterator.hasNext()) {
             iterator.next().method11735(this, class2265);

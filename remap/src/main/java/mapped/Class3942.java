@@ -6,6 +6,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -147,7 +148,7 @@ public class Class3942 extends Class3841
                 list.add(new StringTextComponent("???????"));
             }
             if (method27660.contains("Items", 9)) {
-                final Class2265<ItemStack> method27661 = Class2265.method8507(27, ItemStack.EMPTY);
+                final NonNullList<ItemStack> method27661 = NonNullList.withSize(27, ItemStack.EMPTY);
                 Class8508.method28426(method27660, method27661);
                 int n = 0;
                 int n2 = 0;
@@ -189,7 +190,7 @@ public class Class3942 extends Class3841
     
     @Override
     public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
-        return Class3418.method10898((Class446)class7097.getTileEntity(class7098));
+        return Class3418.method10898((IInventory)class7097.getTileEntity(class7098));
     }
     
     @Override

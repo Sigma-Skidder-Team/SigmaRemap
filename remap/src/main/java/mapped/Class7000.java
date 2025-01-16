@@ -33,8 +33,8 @@ public class Class7000 implements ArgumentType<ResourceLocation>
         throw Class7000.field27309.create((Object)class1932);
     }
     
-    public static Class3662<?> method21431(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return (Class3662)((Class7492)commandContext.getSource()).method23255().method1577().method6382((ResourceLocation)commandContext.getArgument(s, (Class) ResourceLocation.class)).orElseThrow(() -> Class7000.field27310.create((Object)class1932));
+    public static IRecipe<?> method21431(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
+        return (IRecipe)((Class7492)commandContext.getSource()).method23255().method1577().method6382((ResourceLocation)commandContext.getArgument(s, (Class) ResourceLocation.class)).orElseThrow(() -> Class7000.field27310.create((Object)class1932));
     }
     
     public static Class122 method21432(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {

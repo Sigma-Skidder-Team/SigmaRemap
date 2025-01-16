@@ -13,7 +13,7 @@ public class Class6617 extends Class6601
     public final /* synthetic */ Class2215 field26193;
     public final /* synthetic */ Class3427 field26194;
     
-    public Class6617(final Class3427 field26194, final Class446 class446, final int n, final int n2, final int n3, final Class2215 field26195) {
+    public Class6617(final Class3427 field26194, final IInventory class446, final int n, final int n2, final int n3, final Class2215 field26195) {
         this.field26194 = field26194;
         this.field26193 = field26195;
         super(class446, n, n2, n3);

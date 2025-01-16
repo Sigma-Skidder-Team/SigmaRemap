@@ -51,8 +51,8 @@ public class Class6602 extends Class6601
         this.method20052(class513);
         final Class9017 method2281 = this.field26178.method2281();
         if (method2281 != null) {
-            final ItemStack method2282 = this.field26178.method2157(0);
-            final ItemStack method2283 = this.field26178.method2157(1);
+            final ItemStack method2282 = this.field26178.getStackInSlot(0);
+            final ItemStack method2283 = this.field26178.getStackInSlot(1);
             if (method2281.method32304(method2282, method2283) || method2281.method32304(method2283, method2282)) {
                 this.field26181.method4828(method2281);
                 playerEntity.method2857(Class8276.field34022);

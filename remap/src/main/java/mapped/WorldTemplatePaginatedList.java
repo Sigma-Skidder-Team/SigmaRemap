@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 
-public class Class7445 extends ValueObject
+public class WorldTemplatePaginatedList extends ValueObject
 {
     private static final Logger field28716;
     public List<Class7430> field28717;
@@ -22,10 +22,10 @@ public class Class7445 extends ValueObject
     public int field28719;
     public int field28720;
     
-    public Class7445() {
+    public WorldTemplatePaginatedList() {
     }
     
-    public Class7445(final int field28719) {
+    public WorldTemplatePaginatedList(final int field28719) {
         this.field28717 = Collections.emptyList();
         this.field28718 = 0;
         this.field28719 = field28719;
@@ -45,8 +45,8 @@ public class Class7445 extends ValueObject
         return false;
     }
     
-    public static Class7445 method22897(final String s) {
-        final Class7445 class7445 = new Class7445();
+    public static WorldTemplatePaginatedList method22897(final String s) {
+        final WorldTemplatePaginatedList class7445 = new WorldTemplatePaginatedList();
         class7445.field28717 = Lists.newArrayList();
         try {
             final JsonObject asJsonObject = new JsonParser().parse(s).getAsJsonObject();
@@ -61,7 +61,7 @@ public class Class7445 extends ValueObject
             class7445.field28720 = JsonUtils.method23908("total", asJsonObject, 0);
         }
         catch (final Exception ex) {
-            Class7445.field28716.error("Could not parse WorldTemplatePaginatedList: " + ex.getMessage());
+            WorldTemplatePaginatedList.field28716.error("Could not parse WorldTemplatePaginatedList: " + ex.getMessage());
         }
         return class7445;
     }

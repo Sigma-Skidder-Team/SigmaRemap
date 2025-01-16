@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
@@ -15,22 +16,22 @@ import net.minecraft.world.dimension.DimensionType;
 import javax.annotation.Nullable;
 import java.util.Iterator;
 
-public abstract class Class433 extends Class428 implements Class446, Class434
+public abstract class Class433 extends Class428 implements IInventory, Class434
 {
-    private Class2265<ItemStack> field2645;
+    private NonNullList<ItemStack> field2645;
     private boolean field2646;
     private ResourceLocation field2647;
     private long field2648;
     
     public Class433(final EntityType<?> class7499, final World class7500) {
         super(class7499, class7500);
-        this.field2645 = Class2265.method8507(36, ItemStack.EMPTY);
+        this.field2645 = NonNullList.withSize(36, ItemStack.EMPTY);
         this.field2646 = true;
     }
     
     public Class433(final EntityType<?> class7499, final double n, final double n2, final double n3, final World class7500) {
         super(class7499, class7500, n, n2, n3);
-        this.field2645 = Class2265.method8507(36, ItemStack.EMPTY);
+        this.field2645 = NonNullList.withSize(36, ItemStack.EMPTY);
         this.field2646 = true;
     }
     
@@ -55,7 +56,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     }
     
     @Override
-    public ItemStack method2157(final int n) {
+    public ItemStack getStackInSlot(final int n) {
         this.method2163(null);
         return this.field2645.get(n);
     }
@@ -90,7 +91,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     
     @Override
     public boolean method1893(final int n, final ItemStack class8321) {
-        if (n >= 0 && n < this.method2239()) {
+        if (n >= 0 && n < this.getSizeInventory()) {
             this.method2160(n, class8321);
             return true;
         }
@@ -140,7 +141,7 @@ public abstract class Class433 extends Class428 implements Class446, Class434
     @Override
     public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
-        this.field2645 = Class2265.method8507(this.method2239(), ItemStack.EMPTY);
+        this.field2645 = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
         if (!class51.contains("LootTable", 8)) {
             Class8508.method28426(class51, this.field2645);
         }

@@ -16,7 +16,7 @@ public class Class5087 extends RealmsScreen
 {
     private static final Logger field21962;
     private final RealmsScreen field21963;
-    private final Class5079 field21964;
+    private final RealmsMainScreen field21964;
     private RealmsServer field21965;
     private final long field21966;
     private String field21967;
@@ -32,7 +32,7 @@ public class Class5087 extends RealmsScreen
     private final List<Integer> field21977;
     private int field21978;
     
-    public Class5087(final RealmsScreen field21963, final Class5079 field21964, final long field21965) {
+    public Class5087(final RealmsScreen field21963, final RealmsMainScreen field21964, final long field21965) {
         this.field21967 = RealmsScreen.getLocalizedString("mco.brokenworld.title");
         this.field21968 = RealmsScreen.getLocalizedString("mco.brokenworld.message.line1") + "\\n" + RealmsScreen.getLocalizedString("mco.brokenworld.message.line2");
         this.field21977 = Lists.newArrayList();
@@ -163,14 +163,14 @@ public class Class5087 extends RealmsScreen
                 new Thread(() -> {
                     RealmsClient.func_224911_a();
                     if (this.field21965.state.equals(RealmsServer.Status.CLOSED)) {
-                        final Class5049 class5049 = new Class5049(this, new Class1342(this.field21965, this, this.field21963, true));
+                        final Class5049 class5049 = new Class5049(this, new RealmsTasks.Class1342(this.field21965, this, this.field21963, true));
                         class5049.method15466();
                         Realms.setScreen(class5049);
                     }
                     else {
                         try {
                             final RealmsClient class5050;
-                            this.field21964.method15796().method15781(class5050.method35449(this.field21966), this);
+                            this.field21964.method15796().func_223911_a(class5050.method35449(this.field21966), this);
                         }
                         catch (final RealmsServiceException class5051) {
                             Class5087.field21962.error("Couldn't get own world");
@@ -253,7 +253,7 @@ public class Class5087 extends RealmsScreen
     }
     
     private void method15938(final int n) {
-        final Class5049 class5049 = new Class5049(this.field21963, new Class1344(this.field21965.id, n, this, 13));
+        final Class5049 class5049 = new Class5049(this.field21963, new RealmsTasks.SwitchSlotTask(this.field21965.id, n, this, 13));
         class5049.method15466();
         Realms.setScreen(class5049);
     }

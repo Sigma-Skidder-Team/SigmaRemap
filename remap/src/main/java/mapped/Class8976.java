@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 import java.util.Optional;
 
-public interface Class8976<T extends Class3662<?>>
+public interface Class8976<T extends IRecipe<?>>
 {
     public static final Class8976<Class3663> field37843 = method31917("crafting");
     public static final Class8976<Class3684> field37844 = method31917("smelting");
@@ -17,11 +17,11 @@ public interface Class8976<T extends Class3662<?>>
     public static final Class8976<Class3682> field37847 = method31917("campfire_cooking");
     public static final Class8976<Class3686> field37848 = method31917("stonecutting");
     
-    default <T extends Class3662<?>> Class8976<T> method31917(final String s) {
+    default <T extends IRecipe<?>> Class8976<T> method31917(final String s) {
         return Registry.method512(Registry.field236, new ResourceLocation(s), (Class8976<T>)new Class8977(s));
     }
     
-    default <C extends Class446> Optional<T> method31918(final Class3662<C> value, final World class1847, final C c) {
-        return (Optional<T>)(value.method11289(c, class1847) ? Optional.of(value) : Optional.empty());
+    default <C extends IInventory> Optional<T> method31918(final IRecipe<C> value, final World class1847, final C c) {
+        return (Optional<T>)(value.matches(c, class1847) ? Optional.of(value) : Optional.empty());
     }
 }

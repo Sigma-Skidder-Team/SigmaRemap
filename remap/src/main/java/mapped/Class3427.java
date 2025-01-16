@@ -59,12 +59,12 @@ public class Class3427 extends Class3426<Class473>
     }
     
     @Override
-    public boolean method10936(final Class3662<? super Class473> class3662) {
-        return class3662.method11289(this.field16200, this.field16203.world);
+    public boolean method10936(final IRecipe<? super Class473> class3662) {
+        return class3662.matches(this.field16200, this.field16203.world);
     }
     
     @Override
-    public void method10855(final Class446 class446) {
+    public void method10855(final IInventory class446) {
         Class3428.method10942(this.field16154, this.field16203.world, this.field16203, this.field16200, this.field16201);
     }
     

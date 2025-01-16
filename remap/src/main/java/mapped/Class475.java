@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -15,7 +16,7 @@ import net.minecraft.world.World;
 
 public class Class475 extends Class456 implements Class476, Class439
 {
-    private Class2265<ItemStack> field2773;
+    private NonNullList<ItemStack> field2773;
     public float field2774;
     public float field2775;
     public int field2776;
@@ -23,7 +24,7 @@ public class Class475 extends Class456 implements Class476, Class439
     
     public Class475(final Class5412<?> class5412) {
         super(class5412);
-        this.field2773 = Class2265.method8507(27, ItemStack.EMPTY);
+        this.field2773 = NonNullList.withSize(27, ItemStack.EMPTY);
     }
     
     public Class475() {
@@ -31,7 +32,7 @@ public class Class475 extends Class456 implements Class476, Class439
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return 27;
     }
     
@@ -43,7 +44,7 @@ public class Class475 extends Class456 implements Class476, Class439
     @Override
     public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        this.field2773 = Class2265.method8507(this.method2239(), ItemStack.EMPTY);
+        this.field2773 = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
         if (!this.method2324(class51)) {
             Class8508.method28426(class51, this.field2773);
         }
@@ -120,7 +121,7 @@ public class Class475 extends Class456 implements Class476, Class439
             if (!(class1849.field3009 instanceof Class3438)) {
                 continue;
             }
-            final Class446 method10972 = ((Class3438)class1849.field3009).method10972();
+            final IInventory method10972 = ((Class3438)class1849.field3009).method10972();
             if (method10972 != class1848) {
                 if (!(method10972 instanceof Class451)) {
                     continue;
@@ -186,12 +187,12 @@ public class Class475 extends Class456 implements Class476, Class439
     }
     
     @Override
-    public Class2265<ItemStack> method2246() {
+    public NonNullList<ItemStack> method2246() {
         return this.field2773;
     }
     
     @Override
-    public void method2247(final Class2265<ItemStack> field2773) {
+    public void method2247(final NonNullList<ItemStack> field2773) {
         this.field2773 = field2773;
     }
     
@@ -211,7 +212,7 @@ public class Class475 extends Class456 implements Class476, Class439
     }
     
     public static void method2425(final Class475 class475, final Class475 class476) {
-        final Class2265<ItemStack> method2246 = class475.method2246();
+        final NonNullList<ItemStack> method2246 = class475.method2246();
         class475.method2247(class476.method2246());
         class476.method2247(method2246);
     }

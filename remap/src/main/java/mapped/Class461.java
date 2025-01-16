@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.text.ITextComponent;
@@ -17,7 +18,7 @@ public class Class461 extends Class460 implements Class441, Class439
     private static final int[] field2718;
     private static final int[] field2719;
     private static final int[] field2720;
-    private Class2265<ItemStack> field2721;
+    private NonNullList<ItemStack> field2721;
     private int field2722;
     private boolean[] field2723;
     private Item field2724;
@@ -26,7 +27,7 @@ public class Class461 extends Class460 implements Class441, Class439
     
     public Class461() {
         super(Class5412.field22551);
-        this.field2721 = Class2265.method8507(5, ItemStack.EMPTY);
+        this.field2721 = NonNullList.withSize(5, ItemStack.EMPTY);
         this.field2726 = new Class7608(this);
     }
     
@@ -36,7 +37,7 @@ public class Class461 extends Class460 implements Class441, Class439
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return this.field2721.size();
     }
     
@@ -142,8 +143,8 @@ public class Class461 extends Class460 implements Class441, Class439
         }
         class8321.method27693(1);
         final BlockPos method2193 = this.getPos();
-        if (class8321.getItem().method11721()) {
-            final ItemStack class8322 = new ItemStack(class8321.getItem().method11720());
+        if (class8321.getItem().hasContainerItem()) {
+            final ItemStack class8322 = new ItemStack(class8321.getItem().getContainerItem());
             if (!class8321.method27620()) {
                 if (!this.field2656.isRemote) {
                     Class9193.method33642(this.field2656, method2193.getX(), method2193.getY(), method2193.getZ(), class8322);
@@ -160,7 +161,7 @@ public class Class461 extends Class460 implements Class441, Class439
     @Override
     public void method2179(final CompoundNBT class51) {
         super.method2179(class51);
-        Class8508.method28426(class51, this.field2721 = Class2265.method8507(this.method2239(), ItemStack.EMPTY));
+        Class8508.method28426(class51, this.field2721 = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY));
         this.field2722 = class51.getShort("BrewTime");
         this.field2725 = class51.getByte("Fuel");
     }
@@ -175,7 +176,7 @@ public class Class461 extends Class460 implements Class441, Class439
     }
     
     @Override
-    public ItemStack method2157(final int n) {
+    public ItemStack getStackInSlot(final int n) {
         return (n >= 0 && n < this.field2721.size()) ? this.field2721.get(n) : ItemStack.EMPTY;
     }
     
@@ -219,7 +220,7 @@ public class Class461 extends Class460 implements Class441, Class439
                     }
                 }
             }
-            if (this.method2157(n).method27620()) {
+            if (this.getStackInSlot(n).method27620()) {
                 return true;
             }
             return false;

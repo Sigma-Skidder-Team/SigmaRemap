@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 
 public class Class3676 extends Class3666
@@ -16,8 +17,8 @@ public class Class3676 extends Class3666
     public boolean method11301(final Class473 class473, final World class474) {
         int n = 0;
         ItemStack field34174 = ItemStack.EMPTY;
-        for (int i = 0; i < class473.method2239(); ++i) {
-            final ItemStack method2157 = class473.method2157(i);
+        for (int i = 0; i < class473.getSizeInventory(); ++i) {
+            final ItemStack method2157 = class473.getStackInSlot(i);
             if (!method2157.method27620()) {
                 if (method2157.getItem() != Items.field31513) {
                     if (method2157.getItem() != Items.field31512) {
@@ -46,8 +47,8 @@ public class Class3676 extends Class3666
     public ItemStack method11303(final Class473 class473) {
         int n = 0;
         ItemStack field34174 = ItemStack.EMPTY;
-        for (int i = 0; i < class473.method2239(); ++i) {
-            final ItemStack method2157 = class473.method2157(i);
+        for (int i = 0; i < class473.getSizeInventory(); ++i) {
+            final ItemStack method2157 = class473.getStackInSlot(i);
             if (!method2157.method27620()) {
                 if (method2157.getItem() != Items.field31513) {
                     if (method2157.getItem() != Items.field31512) {
@@ -79,11 +80,11 @@ public class Class3676 extends Class3666
         return ItemStack.EMPTY;
     }
     
-    public Class2265<ItemStack> method11323(final Class473 class473) {
-        final Class2265<ItemStack> method8507 = Class2265.method8507(class473.method2239(), ItemStack.EMPTY);
+    public NonNullList<ItemStack> method11323(final Class473 class473) {
+        final NonNullList<ItemStack> method8507 = NonNullList.withSize(class473.getSizeInventory(), ItemStack.EMPTY);
         for (int i = 0; i < method8507.size(); ++i) {
-            final ItemStack method8508 = class473.method2157(i);
-            if (!method8508.getItem().method11721()) {
+            final ItemStack method8508 = class473.getStackInSlot(i);
+            if (!method8508.getItem().hasContainerItem()) {
                 if (method8508.getItem() instanceof Class4096) {
                     final ItemStack method8509 = method8508.method27641();
                     method8509.method27691(1);
@@ -92,7 +93,7 @@ public class Class3676 extends Class3666
                 }
             }
             else {
-                method8507.set(i, new ItemStack(method8508.getItem().method11720()));
+                method8507.set(i, new ItemStack(method8508.getItem().getContainerItem()));
             }
         }
         return method8507;
@@ -104,7 +105,7 @@ public class Class3676 extends Class3666
     }
     
     @Override
-    public boolean method11291(final int n, final int n2) {
+    public boolean canFit(final int n, final int n2) {
         return n >= 3 && n2 >= 3;
     }
 }

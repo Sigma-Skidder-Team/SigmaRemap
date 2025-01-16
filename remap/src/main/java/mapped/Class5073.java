@@ -48,7 +48,7 @@ public class Class5073 extends RealmsScreen
         if (n != 256) {
             return super.keyPressed(n, n2, n3);
         }
-        Realms.setScreen(new Class5079(this.field21772));
+        Realms.setScreen(new RealmsMainScreen(this.field21772));
         return true;
     }
     

@@ -7,6 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -17,21 +18,21 @@ public class Class9193
     private static String[] field38965;
     private static final Random field38966;
     
-    public static void method33638(final World class1847, final BlockPos class1848, final Class446 class1849) {
+    public static void method33638(final World class1847, final BlockPos class1848, final IInventory class1849) {
         method33640(class1847, class1848.getX(), class1848.getY(), class1848.getZ(), class1849);
     }
     
-    public static void method33639(final World class1847, final Entity class1848, final Class446 class1849) {
+    public static void method33639(final World class1847, final Entity class1848, final IInventory class1849) {
         method33640(class1847, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), class1849);
     }
     
-    private static void method33640(final World class1847, final double n, final double n2, final double n3, final Class446 class1848) {
-        for (int i = 0; i < class1848.method2239(); ++i) {
-            method33642(class1847, n, n2, n3, class1848.method2157(i));
+    private static void method33640(final World class1847, final double n, final double n2, final double n3, final IInventory class1848) {
+        for (int i = 0; i < class1848.getSizeInventory(); ++i) {
+            method33642(class1847, n, n2, n3, class1848.getStackInSlot(i));
         }
     }
     
-    public static void method33641(final World class1847, final BlockPos class1848, final Class2265<ItemStack> class1849) {
+    public static void method33641(final World class1847, final BlockPos class1848, final NonNullList<ItemStack> class1849) {
         class1849.forEach(class1852 -> method33642(class1850, class1851.method1074(), class1851.method1075(), class1851.method1076(), class1852));
     }
     

@@ -30,7 +30,7 @@ public class Class505 extends Class433
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return 27;
     }
     

@@ -9,17 +9,18 @@ import it.unimi.dsi.fastutil.ints.IntIterator;
 import java.util.Iterator;
 import it.unimi.dsi.fastutil.ints.IntCollection;
 import it.unimi.dsi.fastutil.ints.IntAVLTreeSet;
-import java.util.Collection;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntList;
+import net.minecraft.util.NonNullList;
+
 import java.util.BitSet;
 import java.util.List;
 
 public class Class8830
 {
     private static String[] field37119;
-    private final Class3662<?> field37120;
+    private final IRecipe<?> field37120;
     private final List<Class120> field37121;
     private final int field37122;
     private final int[] field37123;
@@ -28,7 +29,7 @@ public class Class8830
     private final IntList field37126;
     public final /* synthetic */ Class5024 field37127;
     
-    public Class8830(final Class5024 field37127, final Class3662<?> field37128) {
+    public Class8830(final Class5024 field37127, final IRecipe<?> field37128) {
         this.field37127 = field37127;
         this.field37121 = Lists.newArrayList();
         this.field37126 = (IntList)new IntArrayList();
@@ -70,7 +71,7 @@ public class Class8830
             }
             this.field37125.clear(0, this.field37122 + this.field37124 + this.field37122);
             int n4 = 0;
-            final Class2265<Class120> method11294 = this.field37120.method11294();
+            final NonNullList<Class120> method11294 = this.field37120.method11294();
             for (int j = 0; j < method11294.size(); ++j) {
                 if (b2 && ((Class120)method11294.get(j)).method616()) {
                     list.add(0);

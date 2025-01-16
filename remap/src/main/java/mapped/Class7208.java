@@ -5,6 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public final class Class7208 extends Class7207
 {
@@ -18,7 +19,7 @@ public final class Class7208 extends Class7207
     }
     
     @Override
-    public void method22126(final Class2265<ItemStack> class2265) {
+    public void method22126(final NonNullList<ItemStack> class2265) {
         throw new RuntimeException("Implement exception client-side.");
     }
     

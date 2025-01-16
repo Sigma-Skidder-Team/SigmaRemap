@@ -13,7 +13,7 @@ public class Class5052 extends RealmsScreen
     
     public void method15490(final Screen field21701) {
         this.field21701 = field21701;
-        Realms.setScreen(new Class5079(this));
+        Realms.setScreen(new RealmsMainScreen(this));
     }
     
     @Nullable

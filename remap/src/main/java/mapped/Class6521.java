@@ -33,7 +33,7 @@ public class Class6521
         this.field25952.addAll(class6521.field25952);
     }
     
-    public void method19693(final Class3662<?> class3662) {
+    public void method19693(final IRecipe<?> class3662) {
         if (!class3662.method11295()) {
             this.method19694(class3662.method11298());
         }
@@ -43,7 +43,7 @@ public class Class6521
         this.field25951.add(class1932);
     }
     
-    public boolean method19695(final Class3662<?> class3662) {
+    public boolean method19695(final IRecipe<?> class3662) {
         return class3662 != null && this.field25951.contains(class3662.method11298());
     }
     
@@ -51,7 +51,7 @@ public class Class6521
         return this.field25951.contains(class1932);
     }
     
-    public void method19697(final Class3662<?> class3662) {
+    public void method19697(final IRecipe<?> class3662) {
         this.method19698(class3662.method11298());
     }
     
@@ -60,15 +60,15 @@ public class Class6521
         this.field25952.remove(class1932);
     }
     
-    public boolean method19699(final Class3662<?> class3662) {
+    public boolean method19699(final IRecipe<?> class3662) {
         return this.field25952.contains(class3662.method11298());
     }
     
-    public void method19700(final Class3662<?> class3662) {
+    public void method19700(final IRecipe<?> class3662) {
         this.field25952.remove(class3662.method11298());
     }
     
-    public void method19701(final Class3662<?> class3662) {
+    public void method19701(final IRecipe<?> class3662) {
         this.method19702(class3662.method11298());
     }
     

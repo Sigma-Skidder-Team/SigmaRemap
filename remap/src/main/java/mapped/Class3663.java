@@ -4,7 +4,7 @@
 
 package mapped;
 
-public interface Class3663 extends Class3662<Class473>
+public interface Class3663 extends IRecipe<Class473>
 {
     default Class8976<?> method11300() {
         return Class8976.field37843;

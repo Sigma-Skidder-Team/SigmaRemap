@@ -12,6 +12,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -182,11 +183,11 @@ public class Item implements Class3832
     }
     
     @Nullable
-    public final Item method11720() {
+    public final Item getContainerItem() {
         return this.field17369;
     }
     
-    public boolean method11721() {
+    public boolean hasContainerItem() {
         return this.field17369 != null;
     }
     
@@ -261,7 +262,7 @@ public class Item implements Class3832
         return 0;
     }
     
-    public void method11735(final Class7207 class7207, final Class2265<ItemStack> class7208) {
+    public void method11735(final Class7207 class7207, final NonNullList<ItemStack> class7208) {
         if (this.method11736(class7207)) {
             class7208.add(new ItemStack(this));
         }

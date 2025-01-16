@@ -9,14 +9,15 @@ import java.util.Iterator;
 import java.util.List;
 import com.google.common.collect.ForwardingList;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class Class2262 extends ForwardingList<ItemStack>
 {
     private static String[] field13821;
-    private final Class2265<ItemStack> field13822;
+    private final NonNullList<ItemStack> field13822;
     
     public Class2262() {
-        this.field13822 = Class2265.method8507(Class464.method2346(), ItemStack.EMPTY);
+        this.field13822 = NonNullList.withSize(Class464.method2346(), ItemStack.EMPTY);
     }
     
     public List<ItemStack> delegate() {

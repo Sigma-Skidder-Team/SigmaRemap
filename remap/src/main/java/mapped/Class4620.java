@@ -20,7 +20,7 @@ public class Class4620 extends Class4611<Class4219>
         return new Class4219(new ResourceLocation(Class9583.method35895(jsonObject, "recipe")));
     }
     
-    public void method13761(final Class513 class513, final Class3662<?> class514) {
+    public void method13761(final Class513 class513, final IRecipe<?> class514) {
         this.method13726(class513.method2957(), class516 -> class516.method12702(class515));
     }
     

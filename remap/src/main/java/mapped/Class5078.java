@@ -21,10 +21,10 @@ public class Class5078 extends Class5075<Class7430>
     private int field21811;
     private final int field21812 = 0;
     private final int field21813 = 100;
-    private Class7445 field21814;
-    private Class7445 field21815;
-    private Class7445 field21816;
-    private Class7445 field21817;
+    private WorldTemplatePaginatedList field21814;
+    private WorldTemplatePaginatedList field21815;
+    private WorldTemplatePaginatedList field21816;
+    private WorldTemplatePaginatedList field21817;
     public int field21818;
     private Class236 field21819;
     private Class8999 field21820;
@@ -171,7 +171,7 @@ public class Class5078 extends Class5075<Class7430>
     }
     
     public void method15727(final RealmsScreen class5046) {
-        final Class5049 class5047 = new Class5049(this.field21803, new Class1344(this.field21804.id, this.field21818, class5046, 100));
+        final Class5049 class5047 = new Class5049(this.field21803, new RealmsTasks.SwitchSlotTask(this.field21804.id, this.field21818, class5046, 100));
         class5047.method15466();
         Realms.setScreen(class5047);
     }

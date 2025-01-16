@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 
-public class Class452 implements Class446
+public class Class452 implements IInventory
 {
     private static String[] field2699;
     public final /* synthetic */ Class435 field2700;
@@ -16,7 +16,7 @@ public class Class452 implements Class446
     }
     
     @Override
-    public int method2239() {
+    public int getSizeInventory() {
         return 1;
     }
     
@@ -26,7 +26,7 @@ public class Class452 implements Class446
     }
     
     @Override
-    public ItemStack method2157(final int n) {
+    public ItemStack getStackInSlot(final int n) {
         return (n != 0) ? ItemStack.EMPTY : Class435.method2181(this.field2700);
     }
     
