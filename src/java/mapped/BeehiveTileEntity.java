@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.passive.Thingy;
+import net.minecraft.entity.passive.BeeThingyIdk;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
@@ -21,7 +21,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity {
-   private final List<Thingy> field5392 = Lists.newArrayList();
+   private final List<BeeThingyIdk> field5392 = Lists.newArrayList();
    private BlockPos field5393 = null;
 
    public BeehiveTileEntity() {
