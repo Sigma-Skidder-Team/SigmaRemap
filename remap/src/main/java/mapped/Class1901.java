@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public final class Class1901 extends Class1890<Class7502, Class1899>
@@ -22,8 +22,8 @@ public final class Class1901 extends Class1890<Class7502, Class1899>
         final int method1126 = BlockPos.unpackX(n);
         final int method1127 = BlockPos.unpackY(n);
         final int method1128 = BlockPos.unpackZ(n);
-        final Class1855 method1129 = this.field10275.method7400(method1126 >> 4, method1128 >> 4);
-        return (method1129 == null) ? 0 : method1129.method6984(this.field10326.setPos(method1126, method1127, method1128));
+        final IBlockReader method1129 = this.field10275.method7400(method1126 >> 4, method1128 >> 4);
+        return (method1129 == null) ? 0 : method1129.getLightValue(this.field10326.setPos(method1126, method1127, method1128));
     }
     
     @Override

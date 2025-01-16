@@ -77,7 +77,7 @@ public class Explosion
                     for (float n8 = 0.0f; n8 <= 1.0f; n8 += (float)n) {
                         for (float n9 = 0.0f; n9 <= 1.0f; n9 += (float)n2) {
                             for (float n10 = 0.0f; n10 <= 1.0f; n10 += (float)n3) {
-                                if (p_222259_1_.world.rayTraceBlocks(new RayTraceContext(new Vec3d(MathHelper.method35701(n8, axisalignedbb.minX, axisalignedbb.maxX) + n4, MathHelper.method35701(n9, axisalignedbb.minY, axisalignedbb.maxY), MathHelper.method35701(n10, axisalignedbb.minZ, axisalignedbb.maxZ) + n5), p_222259_0_, Class2040.field11633, Class2191.field13325, p_222259_1_)).method21449() == Class2165.field12880) {
+                                if (p_222259_1_.world.rayTraceBlocks(new RayTraceContext(new Vec3d(MathHelper.method35701(n8, axisalignedbb.minX, axisalignedbb.maxX) + n4, MathHelper.method35701(n9, axisalignedbb.minY, axisalignedbb.maxY), MathHelper.method35701(n10, axisalignedbb.minZ, axisalignedbb.maxZ) + n5), p_222259_0_, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, p_222259_1_)).method21449() == Class2165.field12880) {
                                     ++n6;
                                 }
                                 ++n7;
@@ -123,9 +123,9 @@ public class Explosion
                     while (n7 > 0.0f) {
                         final BlockPos class354 = new BlockPos(field24898, field24899, field24900);
                         final BlockState method6701 = this.world.getBlockState(class354);
-                        final IFluidState method6702 = this.world.method6702(class354);
+                        final IFluidState method6702 = this.world.getFluidState(class354);
                         if (!method6701.method21706() || !method6702.isEmpty()) {
-                            float n8 = Math.max(method6701.getBlock().method11841(), method6702.method21794());
+                            float n8 = Math.max(method6701.getBlock().method11841(), method6702.getExplosionResistance());
                             if (this.exploder != null) {
                                 n8 = this.exploder.method1856(this, this.world, class354, method6701, method6702, n8);
                             }
@@ -208,7 +208,7 @@ public class Explosion
                 this.world.method6796().startSection("explosion_blocks");
                 if (method6702.method11872(this)) {
                     if (this.world instanceof Class1849) {
-                        final Class9098 method6703 = new Class9098((Class1849)this.world).method32873(this.world.rand).method32877(Class6683.field26367, class354).method32877(Class6683.field26370, ItemStack.field34174).method32878(Class6683.field26369, method6702.method11802() ? this.world.method6727(class354) : null).method32878(Class6683.field26362, this.exploder);
+                        final Class9098 method6703 = new Class9098((Class1849)this.world).method32873(this.world.rand).method32877(Class6683.field26367, class354).method32877(Class6683.field26370, ItemStack.field34174).method32878(Class6683.field26369, method6702.method11802() ? this.world.getTileEntity(class354) : null).method32878(Class6683.field26362, this.exploder);
                         if (this.mode == Mode.field13367) {
                             method6703.method32877(Class6683.field26371, this.size);
                         }

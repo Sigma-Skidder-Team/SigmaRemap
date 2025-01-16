@@ -57,7 +57,7 @@ public interface Class1851 extends Class1874, Class1852, Class1875
     
     void method6705(final PlayerEntity p0, final BlockPos p1, final Class7795 p2, final Class286 p3, final float p4, final float p5);
     
-    void method6709(final Class6909 p0, final double p1, final double p2, final double p3, final double p4, final double p5, final double p6);
+    void method6709(final IParticleData p0, final double p1, final double p2, final double p3, final double p4, final double p5, final double p6);
     
     void method6839(final PlayerEntity p0, final int p1, final BlockPos p2, final int p3);
     

@@ -12,7 +12,7 @@ import net.minecraft.nbt.INBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -1609,7 +1609,7 @@ public abstract class LivingEntity extends Entity
                                     return;
                                 }
                                 final BlockPos class403 = new BlockPos(n7, this.getPosY() - 1.0, n8);
-                                if (this.world.getBlockState(class403).method21731(this.world, class403, this) || this.world.method6702(class403).method21793(Class7324.field28319)) {
+                                if (this.world.getBlockState(class403).method21731(this.world, class403, this) || this.world.getFluidState(class403).isTagged(Class7324.field28319)) {
                                     method1938 = n7;
                                     method1939 = this.getPosY() + 1.0;
                                     method1940 = n8;
@@ -2329,7 +2329,7 @@ public abstract class LivingEntity extends Entity
     }
     
     public boolean method2747(final Entity class399) {
-        return this.world.rayTraceBlocks(new RayTraceContext(new Vec3d(this.getPosX(), this.method1944(), this.getPosZ()), new Vec3d(class399.getPosX(), class399.method1944(), class399.getPosZ()), Class2040.field11632, Class2191.field13325, this)).method21449() == Class2165.field12880;
+        return this.world.rayTraceBlocks(new RayTraceContext(new Vec3d(this.getPosX(), this.method1944(), this.getPosZ()), new Vec3d(class399.getPosX(), class399.method1944(), class399.getPosZ()), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this)).method21449() == Class2165.field12880;
     }
     
     @Override

@@ -41,10 +41,10 @@ public class Class4565 extends Class4535<Class5144>
                 if (class1854.field22135.isEmpty() || class1854.field22135.contains(method1167.getBlock())) {
                     if (!class1854.field22136.contains(method1167)) {
                         if (class1854.field22143) {
-                            if (!class1851.method6702(method1166.method1145()).method21793(Class7324.field28319)) {
-                                if (!class1851.method6702(method1166.method1147()).method21793(Class7324.field28319)) {
-                                    if (!class1851.method6702(method1166.method1141()).method21793(Class7324.field28319)) {
-                                        if (!class1851.method6702(method1166.method1143()).method21793(Class7324.field28319)) {
+                            if (!class1851.getFluidState(method1166.method1145()).isTagged(Class7324.field28319)) {
+                                if (!class1851.getFluidState(method1166.method1147()).isTagged(Class7324.field28319)) {
+                                    if (!class1851.getFluidState(method1166.method1141()).isTagged(Class7324.field28319)) {
+                                        if (!class1851.getFluidState(method1166.method1143()).isTagged(Class7324.field28319)) {
                                             continue;
                                         }
                                     }

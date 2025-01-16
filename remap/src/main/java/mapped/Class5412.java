@@ -90,8 +90,8 @@ public class Class5412<T extends TileEntity>
     }
     
     @Nullable
-    public T method16524(final Class1855 class1855, final BlockPos class1856) {
-        final TileEntity method6727 = class1855.method6727(class1856);
+    public T method16524(final IBlockReader class1855, final BlockPos class1856) {
+        final TileEntity method6727 = class1855.getTileEntity(class1856);
         return (T)((method6727 != null && method6727.getType() == this) ? method6727 : null);
     }
     

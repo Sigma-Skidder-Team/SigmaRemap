@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public final class Class4421 implements Class4410<Direction>
 {

@@ -44,7 +44,7 @@ public abstract class Class5823 extends Class5827
         return true;
     }
     
-    public static boolean method17517(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final int n, final int n2) {
+    public static boolean method17517(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final int n, final int n2) {
         final Block method21696 = class7096.getBlock();
         if (method21696 == class7097.getBlockState(class7098.add(n, 0, n2)).getBlock()) {
             if (method21696 == class7097.getBlockState(class7098.add(n + 1, 0, n2)).getBlock()) {

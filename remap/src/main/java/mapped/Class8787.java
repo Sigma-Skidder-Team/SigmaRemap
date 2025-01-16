@@ -34,14 +34,14 @@ public class Class8787
     
     public static void method30574(final BlockPos class354, final Class1849 class355) {
         class355.method6692(class354, Class7521.field29416.getDefaultState());
-        ((Class500)class355.method6727(class354)).method2539().method5211("test runthis");
+        ((Class500)class355.getTileEntity(class354)).method2539().method5211("test runthis");
         class355.method6692(class354.add(0, 0, -1), Class7521.field29328.getDefaultState());
     }
     
     public static void method30575(final String s, final BlockPos class354, final BlockPos class355, final int n, final Class1849 class356) {
         method30578(method30579(class354, class355, n), class354.getY(), class356);
         class356.method6692(class354, Class7521.field29820.getDefaultState());
-        final Class501 class357 = (Class501)class356.method6727(class354);
+        final Class501 class357 = (Class501)class356.getTileEntity(class354);
         class357.method2574(false);
         class357.method2558(new ResourceLocation(s));
         class357.method2563(class355);
@@ -122,7 +122,7 @@ public class Class8787
     
     private static Class501 method30584(final String str, final BlockPos class354, final Class1849 class355, final boolean b) {
         class355.method6692(class354, Class7521.field29820.getDefaultState());
-        final Class501 class356 = (Class501)class355.method6727(class354);
+        final Class501 class356 = (Class501)class355.getTileEntity(class354);
         class356.method2571(Class102.field306);
         class356.method2574(false);
         class356.method2558(new ResourceLocation(str));
@@ -180,7 +180,7 @@ public class Class8787
     }
     
     private static boolean method30587(final BlockPos class354, final BlockPos class355, final Class1849 class356) {
-        return method30573((Class501)class356.method6727(class354)).method18505(new Vec3d(class355));
+        return method30573((Class501)class356.getTileEntity(class354)).method18505(new Vec3d(class355));
     }
     
     static {

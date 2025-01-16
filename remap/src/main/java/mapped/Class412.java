@@ -47,8 +47,8 @@ public class Class412 extends Class409
             method2020.attackEntityFrom(DamageSource.method25699(this, method2019), 0.0f);
         }
         if (class7006.method21449() == Class2165.field12881) {
-            final BlockPos method2021 = ((Class7005)class7006).method21447();
-            final TileEntity method2022 = this.world.method6727(method2021);
+            final BlockPos method2021 = ((BlockRayTraceResult)class7006).method21447();
+            final TileEntity method2022 = this.world.getTileEntity(method2021);
             if (method2022 instanceof Class488) {
                 final Class488 class7007 = (Class488)method2022;
                 if (method2019 == null) {

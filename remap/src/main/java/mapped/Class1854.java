@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class Class1854 implements Class1855, Class1853
+public class Class1854 implements IBlockReader, Class1853
 {
     private static String[] field10104;
     public final int field10105;
@@ -68,14 +68,14 @@ public class Class1854 implements Class1855, Class1853
     }
     
     @Override
-    public Class1855 method6736(final int n, final int n2) {
+    public IBlockReader method6736(final int n, final int n2) {
         return this.method6983(n, n2);
     }
     
     @Nullable
     @Override
-    public TileEntity method6727(final BlockPos class354) {
-        return this.method6982(class354).method6727(class354);
+    public TileEntity getTileEntity(final BlockPos class354) {
+        return this.method6982(class354).getTileEntity(class354);
     }
     
     @Override
@@ -87,10 +87,10 @@ public class Class1854 implements Class1855, Class1853
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
+    public IFluidState getFluidState(final BlockPos class354) {
         if (!World.isOutsideBuildHeight(class354)) {
-            return this.method6982(class354).method6702(class354);
+            return this.method6982(class354).getFluidState(class354);
         }
-        return Class7558.field29974.method22148();
+        return Class7558.field29974.getDefaultState();
     }
 }

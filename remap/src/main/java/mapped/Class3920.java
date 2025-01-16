@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -34,7 +34,7 @@ public class Class3920 extends Block implements Class3856
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (class7099.hasItem(class7096.getBlock().method11704())) {
             return VoxelShapes.method24487();
         }
@@ -42,7 +42,7 @@ public class Class3920 extends Block implements Class3856
     }
     
     @Override
-    public VoxelShape method11811(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11811(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return VoxelShapes.method24487();
     }
     
@@ -56,7 +56,7 @@ public class Class3920 extends Block implements Class3856
         final BlockPos method21639 = class7074.method21639();
         final World method21640 = class7074.method21654();
         final int method21641 = method12036(method21640, method21639);
-        return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3920.field17774, method21640.method6702(method21639).method21779() == Class7558.field29976)).with((IProperty<Comparable>)Class3920.field17773, method21641)).with((IProperty<Comparable>)Class3920.field17775, this.method12035(method21640, method21639, method21641));
+        return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3920.field17774, method21640.getFluidState(method21639).getFluid() == Class7558.field29976)).with((IProperty<Comparable>)Class3920.field17773, method21641)).with((IProperty<Comparable>)Class3920.field17775, this.method12035(method21640, method21639, method21641));
     }
     
     @Override
@@ -100,7 +100,7 @@ public class Class3920 extends Block implements Class3856
     }
     
     @Override
-    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (class7099.func_216378_a(VoxelShapes.method24487(), class7098, true) && !class7099.func_225581_b_()) {
             return Class3920.field17769;
         }
@@ -111,7 +111,7 @@ public class Class3920 extends Block implements Class3856
                 }
             }
         }
-        return VoxelShapes.method24486();
+        return VoxelShapes.empty();
     }
     
     @Override
@@ -119,11 +119,11 @@ public class Class3920 extends Block implements Class3856
         return class7096.get((IProperty<Boolean>)Class3920.field17774) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
-    private boolean method12035(final Class1855 class1855, final BlockPos class1856, final int n) {
+    private boolean method12035(final IBlockReader class1855, final BlockPos class1856, final int n) {
         return n > 0 && class1855.getBlockState(class1856.method1139()).getBlock() != this;
     }
     
-    public static int method12036(final Class1855 class1855, final BlockPos class1856) {
+    public static int method12036(final IBlockReader class1855, final BlockPos class1856) {
         final Mutable method1290 = new Mutable(class1856).method1290(Direction.DOWN);
         final BlockState method1291 = class1855.getBlockState(method1290);
         int a = 7;
@@ -152,7 +152,7 @@ public class Class3920 extends Block implements Class3856
     
     static {
         field17771 = Block.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0);
-        field17772 = VoxelShapes.method24487().method24541(0.0, -1.0, 0.0);
+        field17772 = VoxelShapes.method24487().withOffset(0.0, -1.0, 0.0);
         field17773 = Class8970.field37792;
         field17774 = Class8970.field37747;
         field17775 = Class8970.field37720;

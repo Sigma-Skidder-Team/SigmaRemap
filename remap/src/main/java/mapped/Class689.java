@@ -21,7 +21,7 @@ import com.google.common.collect.Lists;
 import com.google.common.base.Strings;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
@@ -297,11 +297,11 @@ public class Class689 extends Class565
             arrayList.add("Shader: " + method5298.method7248());
         }
         if (this.field3794.method21449() == Class2165.field12881) {
-            final BlockPos method5299 = ((Class7005)this.field3794).method21447();
+            final BlockPos method5299 = ((BlockRayTraceResult)this.field3794).method21447();
             arrayList.add(String.format("Looking at block: %d %d %d", method5299.getX(), method5299.getY(), method5299.getZ()));
         }
         if (this.field3795.method21449() == Class2165.field12881) {
-            final BlockPos method5300 = ((Class7005)this.field3795).method21447();
+            final BlockPos method5300 = ((BlockRayTraceResult)this.field3795).method21447();
             arrayList.add(String.format("Looking at liquid: %d %d %d", method5300.getX(), method5300.getY(), method5300.getZ()));
         }
         arrayList.add(this.field3792.method5299().method6436());
@@ -366,7 +366,7 @@ public class Class689 extends Class565
         }
         if (!this.field3792.method5317()) {
             if (this.field3794.method21449() == Class2165.field12881) {
-                final BlockState method6701 = this.field3792.field4683.getBlockState(((Class7005)this.field3794).method21447());
+                final BlockState method6701 = this.field3792.field4683.getBlockState(((BlockRayTraceResult)this.field3794).method21447());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Block");
                 arrayList.add(String.valueOf(Registry.BLOCK.getKey(method6701.getBlock())));
@@ -387,20 +387,20 @@ public class Class689 extends Class565
                 }
             }
             if (this.field3795.method21449() == Class2165.field12881) {
-                final IFluidState method6703 = this.field3792.field4683.method6702(((Class7005)this.field3795).method21447());
+                final IFluidState method6703 = this.field3792.field4683.getFluidState(((BlockRayTraceResult)this.field3795).method21447());
                 arrayList.add("");
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Fluid");
-                arrayList.add(String.valueOf(Registry.field206.getKey(method6703.method21779())));
+                arrayList.add(String.valueOf(Registry.FLUID.getKey(method6703.getFluid())));
                 final UnmodifiableIterator iterator4 = method6703.getValues().entrySet().iterator();
                 while (((Iterator)iterator4).hasNext()) {
                     arrayList.add(this.method3838((Map.Entry<IProperty<?>, Comparable<?>>)((Iterator)iterator4).next()));
                 }
                 Collection<ResourceLocation> method6704;
                 if (!Class9570.field41272.method22605()) {
-                    method6704 = this.field3792.method5269().method17377().method6465().method18463(method6703.method21779());
+                    method6704 = this.field3792.method5269().method17377().method6465().method18463(method6703.getFluid());
                 }
                 else {
-                    method6704 = (Collection)Class9570.method35826(method6703.method21779(), Class9570.field41272, new Object[0]);
+                    method6704 = (Collection)Class9570.method35826(method6703.getFluid(), Class9570.field41272, new Object[0]);
                 }
                 final Iterator<ResourceLocation> iterator5 = method6704.iterator();
                 while (iterator5.hasNext()) {

@@ -10,7 +10,7 @@ import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -77,7 +77,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (class7096.get(Class3865.field17498) == Class180.field530) {
             return Class3865.field17504;
         }
@@ -106,7 +106,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     public BlockState method11846(final Class7074 class7074) {
         Class180 class7075 = Class180.field530;
         Direction method782 = class7074.method21644().getOpposite();
-        final IFluidState method783 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method783 = class7074.method21654().getFluidState(class7074.method21639());
         final boolean method784 = class7074.method21645();
         final Direction method785 = class7074.method21648();
         if (method785.getAxis().isHorizontal()) {
@@ -132,7 +132,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
                 }
             }
         }
-        return (BlockState)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3865.field17497, method782)).with(Class3865.field17498, class7075)).with((IProperty<Comparable>)Class3865.field17499, method783.method21779() == Class7558.field29976);
+        return (BlockState)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3865.field17497, method782)).with(Class3865.field17498, class7075)).with((IProperty<Comparable>)Class3865.field17499, method783.getFluid() == Class7558.field29976);
     }
     
     @Override
@@ -149,7 +149,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     @Override
     public void method11853(final World class1847, final BlockPos class1848, final BlockState class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
-            final TileEntity method6727 = class1847.method6727(class1848);
+            final TileEntity method6727 = class1847.getTileEntity(class1848);
             if (method6727 instanceof Class475) {
                 ((Class475)method6727).method2335(class1851.method27664());
             }
@@ -159,7 +159,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     @Override
     public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class446) {
                 Class9193.method33638(class7097, class7098, (Class446)method6727);
                 class7097.method6783(class7098, this);
@@ -169,7 +169,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7097.isRemote) {
             final Class434 method11827 = this.method11827(class7096, class7097, class7098);
             if (method11827 != null) {
@@ -213,7 +213,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class475();
     }
     
@@ -221,7 +221,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
         return method11939(class1851, class1852) || method11940(class1851, class1852);
     }
     
-    private static boolean method11939(final Class1855 class1855, final BlockPos class1856) {
+    private static boolean method11939(final IBlockReader class1855, final BlockPos class1856) {
         final BlockPos method1137 = class1856.method1137();
         return class1855.getBlockState(method1137).method21713(class1855, method1137);
     }
@@ -266,7 +266,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

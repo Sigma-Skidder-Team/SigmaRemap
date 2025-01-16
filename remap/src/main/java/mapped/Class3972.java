@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -42,7 +42,7 @@ public class Class3972 extends Block
     }
     
     @Override
-    public int getOpacity(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public int getOpacity(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return 1;
     }
     
@@ -91,12 +91,12 @@ public class Class3972 extends Block
     }
     
     @Override
-    public boolean method11794(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11794(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return false;
     }
     
     @Override
-    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean canEntitySpawn(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return class7099 == EntityType.field29008 || class7099 == EntityType.field29011;
     }
     

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -39,32 +39,32 @@ public class Class3913 extends Block implements Class3872
     }
     
     @Override
-    public boolean propagatesSkylightDown(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean propagatesSkylightDown(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return true;
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final VoxelShape class7100 = (class7096.get(Class3913.field17724) != Class184.field576) ? Class3913.field17720 : Class3913.field17721;
         final Vec3d method21732 = class7096.method21732(class7097, class7098);
-        return class7100.method24541(method21732.x, method21732.y, method21732.z);
+        return class7100.withOffset(method21732.x, method21732.y, method21732.z);
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     
     @Override
-    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Vec3d method21732 = class7096.method21732(class7097, class7098);
-        return Class3913.field17722.method24541(method21732.x, method21732.y, method21732.z);
+        return Class3913.field17722.withOffset(method21732.x, method21732.y, method21732.z);
     }
     
     @Nullable
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        if (!class7074.method21654().method6702(class7074.method21639()).isEmpty()) {
+        if (!class7074.method21654().getFluidState(class7074.method21639()).isEmpty()) {
             return null;
         }
         final BlockState method6701 = class7074.method21654().getBlockState(class7074.method21639().method1139());
@@ -123,7 +123,7 @@ public class Class3913 extends Block implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
         final int method12018 = this.method12018(class1855, class1856);
         return method12018 + this.method12019(class1855, class1856) + 1 < 16 && class1855.getBlockState(class1856.method1138(method12018)).get((IProperty<Integer>)Class3913.field17725) != 1;
     }
@@ -157,7 +157,7 @@ public class Class3913 extends Block implements Class3872
     }
     
     @Override
-    public float method11830(final BlockState class7096, final PlayerEntity class7097, final Class1855 class7098, final BlockPos class7099) {
+    public float method11830(final BlockState class7096, final PlayerEntity class7097, final IBlockReader class7098, final BlockPos class7099) {
         return (class7097.getHeldItemMainhand().getItem() instanceof Class4077) ? 1.0f : super.method11830(class7096, class7097, class7098, class7099);
     }
     
@@ -196,13 +196,13 @@ public class Class3913 extends Block implements Class3872
         class7097.setBlockState(class7098.method1137(), (BlockState)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3913.field17723, i)).with(Class3913.field17724, class7099)).with((IProperty<Comparable>)Class3913.field17725, j), 3);
     }
     
-    public int method12018(final Class1855 class1855, final BlockPos class1856) {
+    public int method12018(final IBlockReader class1855, final BlockPos class1856) {
         int n;
         for (n = 0; n < 16 && class1855.getBlockState(class1856.method1138(n + 1)).getBlock() == Class7521.field29761; ++n) {}
         return n;
     }
     
-    public int method12019(final Class1855 class1855, final BlockPos class1856) {
+    public int method12019(final IBlockReader class1855, final BlockPos class1856) {
         int n;
         for (n = 0; n < 16 && class1855.getBlockState(class1856.method1140(n + 1)).getBlock() == Class7521.field29761; ++n) {}
         return n;

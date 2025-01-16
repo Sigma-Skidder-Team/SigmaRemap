@@ -63,7 +63,7 @@ public class Class830 extends Class827 implements Class768
         Label_0078: {
             if (class7500.method6954() != Class2113.field12290) {
                 if (Class763.method4229(class7500, class7502, random)) {
-                    if (class7501 == Class2101.field12176 || class7500.method6702(class7502).method21793(Class7324.field28319)) {
+                    if (class7501 == Class2101.field12176 || class7500.getFluidState(class7502).isTagged(Class7324.field28319)) {
                         b = true;
                         break Label_0078;
                     }

@@ -128,7 +128,7 @@ public class Class406 extends Entity implements Class407, Class401
                 }
             }
             return b;
-        }, Class2040.field11632, true);
+        }, RayTraceContext.BlockMode.COLLIDER, true);
         if (!this.noClip) {
             this.method2000(method1794);
             this.isAirBorne = true;
@@ -184,7 +184,7 @@ public class Class406 extends Entity implements Class407, Class401
                 class7007 = new BlockPos(this);
             }
             else {
-                class7007 = new BlockPos(((Class7005)class7006).method21447());
+                class7007 = new BlockPos(((BlockRayTraceResult)class7006).method21447());
             }
             this.world.getBlockState(class7007).method21741(this.world, class7007, this);
             if (this.method2001()) {
@@ -224,7 +224,7 @@ public class Class406 extends Entity implements Class407, Class401
                 }
                 int n2 = 0;
                 for (int i = 0; i < 2; ++i) {
-                    if (this.world.rayTraceBlocks(new RayTraceContext(method1934, new Vec3d(class8324.getPosX(), class8324.method1942(0.5 * i), class8324.getPosZ()), Class2040.field11632, Class2191.field13325, this)).method21449() == Class2165.field12880) {
+                    if (this.world.rayTraceBlocks(new RayTraceContext(method1934, new Vec3d(class8324.getPosX(), class8324.method1942(0.5 * i), class8324.getPosZ()), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this)).method21449() == Class2165.field12880) {
                         n2 = 1;
                         break;
                     }

@@ -586,10 +586,10 @@ public class Class9218
         field39544 = new Class5112(new Class360(Class9218.field39480));
         field39545 = new Class5112(new Class358().method1165(Class9218.field39481, 19).method1165(Class9218.field39487, 1));
         field39546 = new Class5112(new Class358().method1165(Class9218.field39474, 1).method1165(Class9218.field39473, 5));
-        field39547 = new Class5131(Class7558.field29976.method22148(), true, 4, 1, (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153));
-        field39548 = new Class5131(Class7558.field29978.method22148(), true, 4, 1, (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153));
-        field39549 = new Class5131(Class7558.field29978.method22148(), false, 4, 1, (Set<Block>)ImmutableSet.of((Object)Class7521.field29338));
-        field39550 = new Class5131(Class7558.field29978.method22148(), false, 5, 0, (Set<Block>)ImmutableSet.of((Object)Class7521.field29338));
+        field39547 = new Class5131(Class7558.field29976.getDefaultState(), true, 4, 1, (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153));
+        field39548 = new Class5131(Class7558.field29978.getDefaultState(), true, 4, 1, (Set<Block>)ImmutableSet.of((Object)Class7521.field29148, (Object)Class7521.field29149, (Object)Class7521.field29151, (Object)Class7521.field29153));
+        field39549 = new Class5131(Class7558.field29978.getDefaultState(), false, 4, 1, (Set<Block>)ImmutableSet.of((Object)Class7521.field29338));
+        field39550 = new Class5131(Class7558.field29978.getDefaultState(), false, 5, 0, (Set<Block>)ImmutableSet.of((Object)Class7521.field29338));
         field39551 = new Class5137(new Class360(Class9218.field39491), new Class360(Class9218.field39493), 2);
         field39552 = new Class5137(new Class360(Class9218.field39492), new Class360(Class9218.field39493), 3);
     }

@@ -18,12 +18,12 @@ public class Class4278 implements IPacket<IClientPlayNetHandler>
     private float field19195;
     private int field19196;
     private boolean field19197;
-    private Class6909 field19198;
+    private IParticleData field19198;
     
     public Class4278() {
     }
     
-    public <T extends Class6909> Class4278(final T field19198, final boolean field19199, final double field19200, final double field19201, final double field19202, final float field19203, final float field19204, final float field19205, final float field19206, final int field19207) {
+    public <T extends IParticleData> Class4278(final T field19198, final boolean field19199, final double field19200, final double field19201, final double field19202, final float field19203, final float field19204, final float field19205, final float field19206, final int field19207) {
         this.field19198 = field19198;
         this.field19197 = field19199;
         this.field19189 = field19200;
@@ -51,16 +51,16 @@ public class Class4278 implements IPacket<IClientPlayNetHandler>
         this.field19194 = class8654.readFloat();
         this.field19195 = class8654.readFloat();
         this.field19196 = class8654.readInt();
-        this.field19198 = this.method12843(class8654, (Class6907<Class6909>)field34599);
+        this.field19198 = this.method12843(class8654, (Class6907<IParticleData>)field34599);
     }
     
-    private <T extends Class6909> T method12843(final PacketBuffer class8654, final Class6907<T> class8655) {
+    private <T extends IParticleData> T method12843(final PacketBuffer class8654, final Class6907<T> class8655) {
         return class8655.method21271().method19056(class8655, class8654);
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.writeInt(Registry.field222.getId((Class6907<? extends Class6909>)this.field19198.method21272()));
+        class8654.writeInt(Registry.field222.getId((Class6907<? extends IParticleData>)this.field19198.method21272()));
         class8654.writeBoolean(this.field19197);
         class8654.writeDouble(this.field19189);
         class8654.writeDouble(this.field19190);
@@ -109,7 +109,7 @@ public class Class4278 implements IPacket<IClientPlayNetHandler>
         return this.field19196;
     }
     
-    public Class6909 method12853() {
+    public IParticleData method12853() {
         return this.field19198;
     }
     

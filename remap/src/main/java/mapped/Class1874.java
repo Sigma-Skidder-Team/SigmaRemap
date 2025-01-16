@@ -37,7 +37,7 @@ public interface Class1874
     }
     
     default boolean method6957(final Entity class399, final VoxelShape class400) {
-        return class400.method24540() || this.method7127(class399, class400.method24537()).stream().filter(class402 -> {
+        return class400.isEmpty() || this.method7127(class399, class400.method24537()).stream().filter(class402 -> {
             final boolean b;
             if (!class402.removed) {
                 if (!(!class402.preventEntitySpawning)) {
@@ -47,7 +47,7 @@ public interface Class1874
                 }
             }
             return b;
-        }).noneMatch(class404 -> VoxelShapes.method24496(class403, VoxelShapes.method24489(class404.getBoundingBox()), Class9306.field39924));
+        }).noneMatch(class404 -> VoxelShapes.method24496(class403, VoxelShapes.method24489(class404.getBoundingBox()), IBooleanFunction.AND));
     }
     
     default <T extends Entity> List<T> method7128(final Class<? extends T> clazz, final AxisAlignedBB class6221) {

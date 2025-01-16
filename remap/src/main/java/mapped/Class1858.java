@@ -84,8 +84,8 @@ public class Class1858 implements Class1856
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
-        return this.field10134[(class354.getX() >> 4) - this.field10128][(class354.getZ() >> 4) - this.field10129].method6702(class354);
+    public IFluidState getFluidState(final BlockPos class354) {
+        return this.field10134[(class354.getX() >> 4) - this.field10128][(class354.getZ() >> 4) - this.field10129].getFluidState(class354);
     }
     
     @Override
@@ -95,7 +95,7 @@ public class Class1858 implements Class1856
     
     @Nullable
     @Override
-    public TileEntity method6727(final BlockPos class354) {
+    public TileEntity getTileEntity(final BlockPos class354) {
         return this.method7000(class354, Class2079.field12020);
     }
     

@@ -12,7 +12,7 @@ import com.google.common.collect.Sets;
 import java.util.Set;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3i;
 
 import java.util.function.Function;
@@ -163,21 +163,21 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
         return false;
     }
     
-    private Class8260 method13623(final Class1851 class1851, final MutableBoundingBox class1852, final Set<BlockPos> set, final Set<BlockPos> set2) {
+    private VoxelShapePart method13623(final Class1851 class1851, final MutableBoundingBox class1852, final Set<BlockPos> set, final Set<BlockPos> set2) {
         final ArrayList arrayList = Lists.newArrayList();
-        final Class8259 class1853 = new Class8259(class1852.getXSize(), class1852.getYSize(), class1852.getZSize());
+        final BitSetVoxelShapePart class1853 = new BitSetVoxelShapePart(class1852.getXSize(), class1852.getYSize(), class1852.getZSize());
         for (int i = 0; i < 6; ++i) {
             arrayList.add(Sets.newHashSet());
         }
         try (final Class386 method1296 = Class386.method1296()) {
             for (final BlockPos class1854 : Lists.newArrayList((Iterable)set2)) {
                 if (class1852.isVecInside(class1854)) {
-                    class1853.method27415(class1854.getX() - class1852.minX, class1854.getY() - class1852.minY, class1854.getZ() - class1852.minZ, true, true);
+                    class1853.setFilled(class1854.getX() - class1852.minX, class1854.getY() - class1852.minY, class1854.getZ() - class1852.minZ, true, true);
                 }
             }
             for (final BlockPos class1855 : Lists.newArrayList((Iterable)set)) {
                 if (class1852.isVecInside(class1855)) {
-                    class1853.method27415(class1855.getX() - class1852.minX, class1855.getY() - class1852.minY, class1855.getZ() - class1852.minZ, true, true);
+                    class1853.setFilled(class1855.getX() - class1852.minX, class1855.getY() - class1852.minY, class1855.getZ() - class1852.minZ, true, true);
                 }
                 final Direction[] values = Direction.values();
                 for (int length = values.length, j = 0; j < length; ++j) {
@@ -188,7 +188,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                             ((Set)arrayList.get(0)).add(method1296.toImmutable());
                             this.method13621(class1851, method1296, ((StateHolder<Object, BlockState>)method1297).with((IProperty<Comparable>)Class8970.field37778, 1));
                             if (class1852.isVecInside(method1296)) {
-                                class1853.method27415(method1296.getX() - class1852.minX, method1296.getY() - class1852.minY, method1296.getZ() - class1852.minZ, true, true);
+                                class1853.setFilled(method1296.getX() - class1852.minX, method1296.getY() - class1852.minY, method1296.getZ() - class1852.minZ, true, true);
                             }
                         }
                     }
@@ -199,7 +199,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                 final Set set4 = (Set)arrayList.get(k);
                 for (final BlockPos class1856 : set3) {
                     if (class1852.isVecInside(class1856)) {
-                        class1853.method27415(class1856.getX() - class1852.minX, class1856.getY() - class1852.minY, class1856.getZ() - class1852.minZ, true, true);
+                        class1853.setFilled(class1856.getX() - class1852.minX, class1856.getY() - class1852.minY, class1856.getZ() - class1852.minZ, true, true);
                     }
                     final Direction[] values2 = Direction.values();
                     for (int length2 = values2.length, l = 0; l < length2; ++l) {
@@ -209,7 +209,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                             if (((StateHolder<Object, Object>)method1298).method21771((IProperty<Comparable>)Class8970.field37778) && ((StateHolder<Object, BlockState>)method1298).get((IProperty<Integer>)Class8970.field37778) > k + 1) {
                                 this.method13621(class1851, method1296, ((StateHolder<Object, BlockState>)method1298).with((IProperty<Comparable>)Class8970.field37778, k + 1));
                                 if (class1852.isVecInside(method1296)) {
-                                    class1853.method27415(method1296.getX() - class1852.minX, method1296.getY() - class1852.minY, method1296.getZ() - class1852.minZ, true, true);
+                                    class1853.setFilled(method1296.getX() - class1852.minX, method1296.getY() - class1852.minY, method1296.getZ() - class1852.minZ, true, true);
                                 }
                                 set4.add(method1296.toImmutable());
                             }

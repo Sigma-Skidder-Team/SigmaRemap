@@ -73,7 +73,7 @@ public class Class7925 implements Class7924
         this.field32551 = Math.max(this.field32555.method34778() - this.field32549 / 2.0, -WorldBorder.method34812(this.field32555));
         this.field32552 = Math.min(this.field32555.method34777() + this.field32549 / 2.0, WorldBorder.method34812(this.field32555));
         this.field32553 = Math.min(this.field32555.method34778() + this.field32549 / 2.0, WorldBorder.method34812(this.field32555));
-        this.field32554 = VoxelShapes.method24494(VoxelShapes.field30599, VoxelShapes.method24488(Math.floor(this.method25675()), Double.NEGATIVE_INFINITY, Math.floor(this.method25676()), Math.ceil(this.method25677()), Double.POSITIVE_INFINITY, Math.ceil(this.method25678())), Class9306.field39920);
+        this.field32554 = VoxelShapes.method24494(VoxelShapes.field30599, VoxelShapes.method24488(Math.floor(this.method25675()), Double.NEGATIVE_INFINITY, Math.floor(this.method25676()), Math.ceil(this.method25677()), Double.POSITIVE_INFINITY, Math.ceil(this.method25678())), IBooleanFunction.ONLY_FIRST);
     }
     
     @Override

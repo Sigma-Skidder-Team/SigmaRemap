@@ -44,7 +44,7 @@ public class Class8232
             if (method23251 == null) {
                 continue;
             }
-            Class447.method2267(method23250.method6727(class7496));
+            Class447.method2267(method23250.getTileEntity(class7496));
             if (!method23251.method610(method23250, class7496, 2)) {
                 continue;
             }

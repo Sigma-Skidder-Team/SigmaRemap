@@ -9,7 +9,7 @@ import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.types.DynamicOps;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public class Class376 extends Class373
 {

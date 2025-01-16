@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -24,17 +24,17 @@ public class Class3855 extends Class3854
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return class7096.get((IProperty<Boolean>)Class3855.field17474) ? this.field17475[this.method11916(class7096)] : super.method11808(class7096, class7097, class7098, class7099);
     }
     
     @Override
-    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return class7096.get((IProperty<Boolean>)Class3855.field17474) ? this.field17476[this.method11916(class7096)] : super.method11809(class7096, class7097, class7098, class7099);
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     
@@ -48,7 +48,7 @@ public class Class3855 extends Class3854
     public BlockState method11846(final Class7074 class7074) {
         final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
-        final IFluidState method21656 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method21656 = class7074.method21654().getFluidState(class7074.method21639());
         final BlockPos method21657 = method21655.method1141();
         final BlockPos method21658 = method21655.method1147();
         final BlockPos method21659 = method21655.method1143();
@@ -81,10 +81,10 @@ public class Class3855 extends Class3854
                 }
             }
             final boolean b = true;
-            return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3855.field17474, b || !method21654.method6961(method21655.method1137()))).with((IProperty<Comparable>)Class3855.field17465, method21665)).with((IProperty<Comparable>)Class3855.field17466, method21666)).with((IProperty<Comparable>)Class3855.field17467, method21667)).with((IProperty<Comparable>)Class3855.field17468, method21668)).with((IProperty<Comparable>)Class3855.field17469, method21656.method21779() == Class7558.field29976);
+            return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3855.field17474, b || !method21654.method6961(method21655.method1137()))).with((IProperty<Comparable>)Class3855.field17465, method21665)).with((IProperty<Comparable>)Class3855.field17466, method21666)).with((IProperty<Comparable>)Class3855.field17467, method21667)).with((IProperty<Comparable>)Class3855.field17468, method21668)).with((IProperty<Comparable>)Class3855.field17469, method21656.getFluid() == Class7558.field29976);
         }
         final boolean b = false;
-        return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3855.field17474, b || !method21654.method6961(method21655.method1137()))).with((IProperty<Comparable>)Class3855.field17465, method21665)).with((IProperty<Comparable>)Class3855.field17466, method21666)).with((IProperty<Comparable>)Class3855.field17467, method21667)).with((IProperty<Comparable>)Class3855.field17468, method21668)).with((IProperty<Comparable>)Class3855.field17469, method21656.method21779() == Class7558.field29976);
+        return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3855.field17474, b || !method21654.method6961(method21655.method1137()))).with((IProperty<Comparable>)Class3855.field17465, method21665)).with((IProperty<Comparable>)Class3855.field17466, method21666)).with((IProperty<Comparable>)Class3855.field17467, method21667)).with((IProperty<Comparable>)Class3855.field17468, method21668)).with((IProperty<Comparable>)Class3855.field17469, method21656.getFluid() == Class7558.field29976);
     }
     
     @Override

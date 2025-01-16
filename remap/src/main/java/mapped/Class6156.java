@@ -25,7 +25,7 @@ public class Class6156 extends Class6159
     
     @Override
     public int method18419(final float n) {
-        return this.field24908.method22166(Class7324.field28320) ? 240 : super.method18419(n);
+        return this.field24908.isIn(Class7324.field28320) ? 240 : super.method18419(n);
     }
     
     @Override
@@ -43,9 +43,9 @@ public class Class6156 extends Class6159
                 this.field24940 *= 0.9800000190734863;
                 this.field24941 *= 0.9800000190734863;
                 final BlockPos class354 = new BlockPos(this.field24936, this.field24937, this.field24938);
-                final IFluidState method6702 = this.field24932.method6702(class354);
-                if (method6702.method21779() == this.field24908) {
-                    if (this.field24937 < class354.getY() + method6702.method21782(this.field24932, class354)) {
+                final IFluidState method6702 = this.field24932.getFluidState(class354);
+                if (method6702.getFluid() == this.field24908) {
+                    if (this.field24937 < class354.getY() + method6702.getActualHeight(this.field24932, class354)) {
                         this.method18439();
                     }
                 }

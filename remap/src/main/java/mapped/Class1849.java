@@ -89,7 +89,7 @@ public class Class1849 extends World
         this.field10087 = Queues.newArrayDeque();
         this.field10088 = Lists.newArrayList();
         this.field10096 = new Class6953<Block>(this, class8672 -> class8672 == null || class8672.getDefaultState().method21706(), Registry.BLOCK::getKey, Registry.BLOCK::getOrDefault, this::method6872);
-        this.field10097 = new Class6953<Fluid>(this, class8673 -> class8673 == null || class8673 == Class7558.field29974, Registry.field206::getKey, Registry.field206::getOrDefault, this::method6871);
+        this.field10097 = new Class6953<Fluid>(this, class8673 -> class8673 == null || class8673 == Class7558.field29974, Registry.FLUID::getKey, Registry.FLUID::getOrDefault, this::method6871);
         this.field10098 = Sets.newHashSet();
         this.field10100 = (ObjectLinkedOpenHashSet<Class9569>)new ObjectLinkedOpenHashSet();
         this.field10091 = field10091;
@@ -364,8 +364,8 @@ public class Class1849 extends World
                                 method7032.method21740(this, method7031, this.rand);
                             }
                             final IFluidState method7033 = method7032.getFluidState();
-                            if (method7033.method21788()) {
-                                method7033.method21789(this, method7031, this.rand);
+                            if (method7033.ticksRandomly()) {
+                                method7033.randomTick(this, method7031, this.rand);
                             }
                             method7023.endSection();
                         }
@@ -378,7 +378,7 @@ public class Class1849 extends World
     
     public BlockPos method6865(final BlockPos class354) {
         BlockPos class355 = this.method6958(Class2020.field11525, class354);
-        final List<Entity> method6739 = this.method6739((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(class355, new BlockPos(class355.getX(), this.method6986(), class355.getZ())).method18496(3.0), class356 -> {
+        final List<Entity> method6739 = this.method6739((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(class355, new BlockPos(class355.getX(), this.getHeight(), class355.getZ())).method18496(3.0), class356 -> {
             final boolean b;
             if (class356 != null) {
                 if (!(!class356.method1768())) {
@@ -458,9 +458,9 @@ public class Class1849 extends World
     }
     
     private void method6871(final Class7460<Fluid> class7460) {
-        final IFluidState method6702 = this.method6702(class7460.field28774);
-        if (method6702.method21779() == class7460.method22980()) {
-            method6702.method21786(this, class7460.field28774);
+        final IFluidState method6702 = this.getFluidState(class7460.field28774);
+        if (method6702.getFluid() == class7460.method22980()) {
+            method6702.tick(this, class7460.field28774);
         }
     }
     
@@ -936,7 +936,7 @@ public class Class1849 extends World
     @Override
     public void method6693(final BlockPos class354, final BlockState class355, final BlockState class356, final int n) {
         this.method6904().method7440(class354);
-        if (VoxelShapes.method24496(class355.getCollisionShape(this, class354), class356.getCollisionShape(this, class354), Class9306.field39922)) {
+        if (VoxelShapes.method24496(class355.getCollisionShape(this, class354), class356.getCollisionShape(this, class354), IBooleanFunction.NOT_SAME)) {
             for (final Class7746 class357 : this.field10098) {
                 if (class357.method24717()) {
                     continue;
@@ -1017,7 +1017,7 @@ public class Class1849 extends World
         return this.field10091.method29399();
     }
     
-    public <T extends Class6909> int method6911(final T t, final double n, final double n2, final double n3, final int n4, final double n5, final double n6, final double n7, final double n8) {
+    public <T extends IParticleData> int method6911(final T t, final double n, final double n2, final double n3, final int n4, final double n5, final double n6, final double n7, final double n8) {
         final Class4278 class4278 = new Class4278((T)t, false, n, n2, n3, (float)n5, (float)n6, (float)n7, (float)n8, n4);
         int n9 = 0;
         for (int i = 0; i < this.field10088.size(); ++i) {
@@ -1028,7 +1028,7 @@ public class Class1849 extends World
         return n9;
     }
     
-    public <T extends Class6909> boolean method6912(final Class513 class513, final T t, final boolean b, final double n, final double n2, final double n3, final int n4, final double n5, final double n6, final double n7, final double n8) {
+    public <T extends IParticleData> boolean method6912(final Class513 class513, final T t, final boolean b, final double n, final double n2, final double n3, final int n4, final double n5, final double n6, final double n7, final double n8) {
         return this.method6913(class513, b, n, n2, n3, new Class4278((T)t, b, n, n2, n3, (float)n5, (float)n6, (float)n7, (float)n8, n4));
     }
     

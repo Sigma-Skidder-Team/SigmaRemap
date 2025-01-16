@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.Random;
 import java.util.List;
@@ -72,7 +72,7 @@ public class Class4497 extends Class4484
             if (class1853.isVecInside(class1857)) {
                 this.field19893 = true;
                 class1851.setBlockState(class1857, Class7521.field29290.getDefaultState(), 2);
-                final TileEntity method6727 = class1851.method6727(class1857);
+                final TileEntity method6727 = class1851.getTileEntity(class1857);
                 if (method6727 instanceof Class494) {
                     ((Class494)method6727).method2509().method13884(EntityType.field28962);
                 }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -29,7 +29,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3863.field17493;
     }
     
@@ -40,13 +40,13 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3863.field17491, class7074.method21644().getOpposite())).with((IProperty<Comparable>)Class3863.field17492, class7074.method21654().method6702(class7074.method21639()).method21779() == Class7558.field29976);
+        return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3863.field17491, class7074.method21644().getOpposite())).with((IProperty<Comparable>)Class3863.field17492, class7074.method21654().getFluidState(class7074.method21639()).getFluid() == Class7558.field29976);
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         final Class485 method2884 = class7099.method2884();
-        final TileEntity method2885 = class7097.method6727(class7098);
+        final TileEntity method2885 = class7097.getTileEntity(class7098);
         if (method2884 == null || !(method2885 instanceof Class477)) {
             return Class2201.field13400;
         }
@@ -64,7 +64,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class477();
     }
     
@@ -106,7 +106,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

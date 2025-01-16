@@ -28,7 +28,7 @@ public class Class3847 extends Class3846
     }
     
     @Override
-    public void method11861(final Class1855 class1855, final Entity class1856) {
+    public void method11861(final IBlockReader class1855, final Entity class1856) {
         if (!class1856.method1811()) {
             this.method11901(class1856);
         }

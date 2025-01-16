@@ -28,7 +28,7 @@ public class Class8595
         }
         boolean b;
         if (class7495 != Class2193.field13352) {
-            Class447.method2267(method23250.method6727(class7493));
+            Class447.method2267(method23250.getTileEntity(class7493));
             b = true;
         }
         else {

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.text.ITextComponent;
@@ -28,12 +28,12 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class440(this.field17834);
     }
     
     @Override
-    public boolean method11794(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11794(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         return true;
     }
     
@@ -43,14 +43,14 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (class7097.isRemote) {
             return Class2201.field13400;
         }
         if (class7099.isSpectator()) {
             return Class2201.field13400;
         }
-        final TileEntity method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.getTileEntity(class7098);
         if (!(method6727 instanceof Class440)) {
             return Class2201.field13402;
         }
@@ -75,7 +75,7 @@ public class Class3942 extends Class3841
     
     @Override
     public void method11870(final World class1847, final BlockPos class1848, final Class7096 class1849, final PlayerEntity class1850) {
-        final TileEntity method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.getTileEntity(class1848);
         Label_0015: {
             if (method6727 instanceof Class440) {
                 final Class440 class1851 = (Class440)method6727;
@@ -119,7 +119,7 @@ public class Class3942 extends Class3841
     @Override
     public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
-            final TileEntity method6727 = class1847.method6727(class1848);
+            final TileEntity method6727 = class1847.getTileEntity(class1848);
             if (method6727 instanceof Class440) {
                 ((Class440)method6727).method2335(class1851.method27664());
             }
@@ -129,7 +129,7 @@ public class Class3942 extends Class3841
     @Override
     public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
-            if (class7097.method6727(class7098) instanceof Class440) {
+            if (class7097.getTileEntity(class7098) instanceof Class440) {
                 class7097.method6783(class7098, class7096.method21696());
             }
             super.method11829(class7096, class7097, class7098, class7099, b);
@@ -137,7 +137,7 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public void method11883(final ItemStack class8321, final Class1855 class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void method11883(final ItemStack class8321, final IBlockReader class8322, final List<ITextComponent> list, final Class1981 class8323) {
         super.method11883(class8321, class8322, list, class8323);
         final Class51 method27660 = class8321.method27660("BlockEntityTag");
         if (method27660 != null) {
@@ -175,8 +175,8 @@ public class Class3942 extends Class3841
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        final TileEntity method6727 = class7097.method6727(class7098);
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        final TileEntity method6727 = class7097.getTileEntity(class7098);
         return (method6727 instanceof Class440) ? VoxelShapes.method24489(((Class440)method6727).method2235(class7096)) : VoxelShapes.method24487();
     }
     
@@ -187,13 +187,13 @@ public class Class3942 extends Class3841
     
     @Override
     public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
-        return Class3418.method10898((Class446)class7097.method6727(class7098));
+        return Class3418.method10898((Class446)class7097.getTileEntity(class7098));
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         final ItemStack method11862 = super.method11862(class1855, class1856, class1857);
-        final Class51 method11863 = ((Class440)class1855.method6727(class1856)).method2245(new Class51());
+        final Class51 method11863 = ((Class440)class1855.getTileEntity(class1856)).method2245(new Class51());
         if (!method11863.method331()) {
             method11862.method27676("BlockEntityTag", method11863);
         }

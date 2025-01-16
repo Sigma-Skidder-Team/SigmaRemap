@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -32,7 +32,7 @@ public class Class3898 extends Class3892
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.get((IProperty<Boolean>)Class3898.field17587)) {
             return (class7096.get((IProperty<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17588 : Class3898.field17589;
         }
@@ -48,15 +48,15 @@ public class Class3898 extends Class3892
     }
     
     @Override
-    public VoxelShape method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.method21772((IProperty<Boolean>)Class3898.field17585)) {
             return (class7096.method21772((IProperty<Direction>)Class3898.field17564).getAxis() != Axis.Z) ? Class3898.field17593 : Class3898.field17592;
         }
-        return VoxelShapes.method24486();
+        return VoxelShapes.empty();
     }
     
     @Override
-    public VoxelShape method11810(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11810(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         if (!class7096.method21772((IProperty<Boolean>)Class3898.field17587)) {
             return (class7096.method21772((IProperty<Direction>)Class3898.field17564).getAxis() != Axis.X) ? Class3898.field17594 : Class3898.field17595;
         }
@@ -64,7 +64,7 @@ public class Class3898 extends Class3892
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         switch (Class9050.field38318[class7099.ordinal()]) {
             case 1: {
                 return class7096.method21772((IProperty<Boolean>)Class3898.field17585);
@@ -117,7 +117,7 @@ public class Class3898 extends Class3892
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7096.method21772((IProperty<Boolean>)Class3898.field17585)) {
             final Direction method1882 = class7099.method1882();
             if (class7096.method21772((IProperty<Comparable>)Class3898.field17564) == method1882.getOpposite()) {

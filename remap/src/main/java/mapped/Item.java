@@ -246,14 +246,14 @@ public class Item implements Class3832
         return this.method11708() == 1 && this.method11710();
     }
     
-    public static Class7006 method11733(final World class1847, final PlayerEntity class1848, final Class2191 class1849) {
+    public static Class7006 method11733(final World class1847, final PlayerEntity class1848, final RayTraceContext.FluidMode class1849) {
         final float field2400 = class1848.rotationPitch;
         final float field2401 = class1848.rotationYaw;
         final Vec3d method1747 = class1848.method1747(1.0f);
         final float method1748 = MathHelper.cos(-field2401 * 0.017453292f - 3.1415927f);
         final float method1749 = MathHelper.sin(-field2401 * 0.017453292f - 3.1415927f);
         final float n = -MathHelper.cos(-field2400 * 0.017453292f);
-        return class1847.rayTraceBlocks(new RayTraceContext(method1747, method1747.add(method1749 * n * 5.0, MathHelper.sin(-field2400 * 0.017453292f) * 5.0, method1748 * n * 5.0), Class2040.field11633, class1849, class1848));
+        return class1847.rayTraceBlocks(new RayTraceContext(method1747, method1747.add(method1749 * n * 5.0, MathHelper.sin(-field2400 * 0.017453292f) * 5.0, method1748 * n * 5.0), RayTraceContext.BlockMode.OUTLINE, class1849, class1848));
     }
     
     public int method11734() {

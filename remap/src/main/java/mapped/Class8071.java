@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Objects;
@@ -205,7 +205,7 @@ public class Class8071
         if (!this.field33248.getHeldItemMainhand().getItem().method11703(method6701, this.field33247, class354, this.field33248)) {
             return false;
         }
-        final TileEntity method6702 = this.field33247.method6727(class354);
+        final TileEntity method6702 = this.field33247.getTileEntity(class354);
         final Block method6703 = method6701.getBlock();
         Label_0072: {
             if (!(method6703 instanceof Class3953)) {
@@ -288,7 +288,7 @@ public class Class8071
         return Class2201.field13402;
     }
     
-    public Class2201 method26480(final PlayerEntity playerEntity, final World class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
+    public Class2201 method26480(final PlayerEntity playerEntity, final World class513, final ItemStack class514, final Class316 class515, final BlockRayTraceResult class516) {
         final BlockPos method21447 = class516.method21447();
         final BlockState method21448 = class513.getBlockState(method21447);
         if (this.field33249 != Class101.field301) {

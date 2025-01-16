@@ -176,7 +176,7 @@ public class Class798 extends Class789 implements Class797
         this.method4516();
     }
     
-    private void method4507(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final Class6909 class1848) {
+    private void method4507(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final IParticleData class1848) {
         class1847.method6709(class1848, MathHelper.method35701(class1847.rand.nextDouble(), n, n2), n5, MathHelper.method35701(class1847.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
     }
     
@@ -313,7 +313,7 @@ public class Class798 extends Class789 implements Class797
     
     private boolean method4518() {
         if (this.field4271 != null) {
-            final TileEntity method6727 = this.world.method6727(this.field4271);
+            final TileEntity method6727 = this.world.getTileEntity(this.field4271);
             return method6727 instanceof Class438 && ((Class438)method6727).method2215();
         }
         return false;
@@ -332,7 +332,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     private boolean method4522(final BlockPos class354) {
-        final TileEntity method6727 = this.world.method6727(class354);
+        final TileEntity method6727 = this.world.getTileEntity(class354);
         return method6727 instanceof Class438 && !((Class438)method6727).method2217();
     }
     
@@ -401,7 +401,7 @@ public class Class798 extends Class789 implements Class797
     
     private boolean method4528() {
         if (this.method4523()) {
-            final TileEntity method6727 = this.world.method6727(this.field4271);
+            final TileEntity method6727 = this.world.getTileEntity(this.field4271);
             return method6727 != null && method6727.getType() == Class5412.field22573;
         }
         return false;

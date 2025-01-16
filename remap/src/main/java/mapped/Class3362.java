@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -24,7 +24,7 @@ public class Class3362 extends Class3355
     public Class2089 field16009;
     public HashMap<Class858, Integer> field16010;
     public Class7014 field16011;
-    public Class7005 field16012;
+    public BlockRayTraceResult field16012;
     
     public Class3362() {
         super("AutoCrystal", "Automatically detonates crystals", Class8013.field32987);
@@ -215,7 +215,7 @@ public class Class3362 extends Class3355
         if (method10654 != null && !method10654.isEmpty()) {
             for (final Class7014 field16011 : method10654) {
                 final float[] method10655 = Class4609.method13672(field16011.field27346, Direction.UP);
-                final Class7005 method10656 = Class4609.method13697(method10655[0], method10655[1], 5.0f);
+                final BlockRayTraceResult method10656 = Class4609.method13697(method10655[0], method10655[1], 5.0f);
                 if (!field16011.field27346.equals(method10656.method21447())) {
                     continue;
                 }

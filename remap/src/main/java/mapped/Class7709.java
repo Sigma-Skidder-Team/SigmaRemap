@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Pose;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;
@@ -27,7 +27,7 @@ public class Class7709
     public static final Class4410<ItemStack> field30659;
     public static final Class4410<Optional<Class7096>> field30660;
     public static final Class4410<Boolean> field30661;
-    public static final Class4410<Class6909> field30662;
+    public static final Class4410<IParticleData> field30662;
     public static final Class4410<Class8396> field30663;
     public static final Class4410<BlockPos> field30664;
     public static final Class4410<Optional<BlockPos>> field30665;

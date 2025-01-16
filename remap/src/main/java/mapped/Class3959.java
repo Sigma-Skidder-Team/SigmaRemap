@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -38,7 +38,7 @@ public class Class3959 extends Class3841
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class8077.field33268[class7096.get((IProperty<Direction>)Class3959.field17881).ordinal()]) {
             case 1: {
                 return Class3959.field17887;
@@ -62,7 +62,7 @@ public class Class3959 extends Class3841
     }
     
     @Override
-    public VoxelShape method11811(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11811(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         switch (Class8077.field33268[class7096.get((IProperty<Direction>)Class3959.field17881).ordinal()]) {
             case 1: {
                 return Class3959.field17892;
@@ -92,14 +92,14 @@ public class Class3959 extends Class3841
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class455();
     }
     
     @Override
     public void method11853(final World class1847, final BlockPos class1848, final BlockState class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
-            final TileEntity method6727 = class1847.method6727(class1848);
+            final TileEntity method6727 = class1847.getTileEntity(class1848);
             if (method6727 instanceof Class455) {
                 ((Class455)method6727).method2335(class1851.method27664());
             }
@@ -114,9 +114,9 @@ public class Class3959 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7097.isRemote) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class455) {
                 class7099.method2833((Class434)method6727);
                 class7099.method2857(Class8276.field34032);
@@ -141,7 +141,7 @@ public class Class3959 extends Class3841
     @Override
     public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class455) {
                 Class9193.method33638(class7097, class7098, (Class446)method6727);
                 class7097.method6783(class7098, this);
@@ -162,7 +162,7 @@ public class Class3959 extends Class3841
     
     @Override
     public int method11874(final BlockState class7096, final World class7097, final BlockPos class7098) {
-        return Class3418.method10897(class7097.method6727(class7098));
+        return Class3418.method10897(class7097.getTileEntity(class7098));
     }
     
     @Override
@@ -182,14 +182,14 @@ public class Class3959 extends Class3841
     
     @Override
     public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
-        final TileEntity method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.getTileEntity(class7098);
         if (method6727 instanceof Class455) {
             ((Class455)method6727).method2316(class7099);
         }
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     
@@ -199,7 +199,7 @@ public class Class3959 extends Class3841
         field17883 = Block.method11778(0.0, 10.0, 0.0, 16.0, 16.0, 16.0);
         field17884 = Block.method11778(4.0, 4.0, 4.0, 12.0, 10.0, 12.0);
         field17885 = VoxelShapes.method24492(Class3959.field17884, Class3959.field17883);
-        field17886 = VoxelShapes.method24494(Class3959.field17885, Class453.field2701, Class9306.field39920);
+        field17886 = VoxelShapes.method24494(Class3959.field17885, Class453.field2701, IBooleanFunction.ONLY_FIRST);
         field17887 = VoxelShapes.method24492(Class3959.field17886, Block.method11778(6.0, 0.0, 6.0, 10.0, 4.0, 10.0));
         field17888 = VoxelShapes.method24492(Class3959.field17886, Block.method11778(12.0, 4.0, 6.0, 16.0, 8.0, 10.0));
         field17889 = VoxelShapes.method24492(Class3959.field17886, Block.method11778(6.0, 4.0, 0.0, 10.0, 8.0, 4.0));

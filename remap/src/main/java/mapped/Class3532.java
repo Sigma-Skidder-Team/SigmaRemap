@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
 
@@ -62,7 +62,7 @@ public class Class3532 extends Class3531
             if (this.field16564.world.getBlockState(method1141).method21761(this.field16564.world, method1141, Direction.UP)) {
                 if (!this.field16564.world.method6961(method1139)) {
                     final VoxelShape method1142 = this.field16564.world.getBlockState(method1139).method21727(this.field16564.world, method1139);
-                    if (!method1142.method24540()) {
+                    if (!method1142.isEmpty()) {
                         method1140 = method1142.method24536(Axis.Y);
                     }
                 }

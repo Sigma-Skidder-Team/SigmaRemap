@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -59,7 +59,7 @@ public class Class4021 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4021.field18106;
     }
     
@@ -106,7 +106,7 @@ public class Class4021 extends Block
         class7097.method6692(class7098, Block.method11777(class7096, Class7521.field29156.getDefaultState(), class7097, class7098));
     }
     
-    private static boolean method12213(final Class1855 class1855, final BlockPos class1856) {
+    private static boolean method12213(final IBlockReader class1855, final BlockPos class1856) {
         final Block method21696 = class1855.getBlockState(class1856.method1137()).getBlock();
         if (!(method21696 instanceof Class3878)) {
             if (!(method21696 instanceof Class3873)) {
@@ -121,7 +121,7 @@ public class Class4021 extends Block
     private static boolean method12214(final Class1852 class1852, final BlockPos class1853) {
         final Iterator<BlockPos> iterator = BlockPos.getAllInBoxMutable(class1853.add(-4, 0, -4), class1853.add(4, 1, 4)).iterator();
         while (iterator.hasNext()) {
-            if (!class1852.method6702(iterator.next()).method21793(Class7324.field28319)) {
+            if (!class1852.getFluidState(iterator.next()).isTagged(Class7324.field28319)) {
                 continue;
             }
             return true;
@@ -135,12 +135,12 @@ public class Class4021 extends Block
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     
     @Override
-    public boolean method11795(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11795(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return true;
     }
     

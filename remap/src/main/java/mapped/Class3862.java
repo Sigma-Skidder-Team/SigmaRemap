@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -31,7 +31,7 @@ public class Class3862 extends Class3860
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3862.field17490.get(class7096.method21772((IProperty<Object>)Class3862.field17489));
     }
     
@@ -44,14 +44,14 @@ public class Class3862 extends Class3860
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         Class7096 method11878 = this.getDefaultState();
-        final IFluidState method11879 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method11879 = class7074.method21654().getFluidState(class7074.method21639());
         final World method11880 = class7074.method21654();
         final BlockPos method11881 = class7074.method21639();
         for (final Direction class7075 : class7074.method21643()) {
             if (class7075.getAxis().isHorizontal()) {
                 method11878 = ((StateHolder<Object, Class7096>)method11878).with((IProperty<Comparable>)Class3862.field17489, class7075.getOpposite());
                 if (method11878.method21752(method11880, method11881)) {
-                    return ((StateHolder<Object, Class7096>)method11878).with((IProperty<Comparable>)Class3862.field17483, method11879.method21779() == Class7558.field29976);
+                    return ((StateHolder<Object, Class7096>)method11878).with((IProperty<Comparable>)Class3862.field17483, method11879.getFluid() == Class7558.field29976);
                 }
             }
         }

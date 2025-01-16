@@ -15,7 +15,7 @@ public class Class4029 extends Class4027
     }
     
     @Override
-    public MaterialColor method11783(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public MaterialColor method11783(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return (class7096.get(Class4029.field18120) != Axis.Y) ? this.field17402 : this.field18122;
     }
 }

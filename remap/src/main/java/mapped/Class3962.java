@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -34,10 +34,10 @@ public class Class3962 extends Block
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
-    public boolean method12091(final Class1855 class1855, final BlockPos class1856) {
+    public boolean method12091(final IBlockReader class1855, final BlockPos class1856) {
         final Direction[] values = Direction.values();
         for (int length = values.length, i = 0; i < length; ++i) {
-            if (class1855.method6702(class1856.method1149(values[i])).method21793(Class7324.field28319)) {
+            if (class1855.getFluidState(class1856.method1149(values[i])).isTagged(Class7324.field28319)) {
                 return true;
             }
         }

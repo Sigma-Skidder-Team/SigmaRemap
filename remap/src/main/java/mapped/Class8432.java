@@ -73,7 +73,7 @@ public class Class8432
         return Registry.method511(Registry.field222, s, new Class6908(b));
     }
     
-    private static <T extends Class6909> Class6907<T> method28155(final String s, final Class6382<T> class6382) {
+    private static <T extends IParticleData> Class6907<T> method28155(final String s, final Class6382<T> class6382) {
         return Registry.method511(Registry.field222, s, new Class6907<T>(false, class6382));
     }
     

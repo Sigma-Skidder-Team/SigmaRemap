@@ -36,7 +36,7 @@ public class Class7990
     public TileEntity method26066() {
         if (this.field32898 == null) {
             if (!this.field32899) {
-                this.field32898 = this.field32894.method6727(this.field32895);
+                this.field32898 = this.field32894.getTileEntity(this.field32895);
                 this.field32899 = true;
             }
         }

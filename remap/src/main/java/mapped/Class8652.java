@@ -9,7 +9,7 @@ import java.lang.reflect.Array;
 import java.util.EnumSet;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.IStringSerializable;
 
 import java.util.Iterator;

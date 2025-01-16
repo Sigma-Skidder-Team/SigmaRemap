@@ -97,6 +97,6 @@ public class Class7923 implements Class7924
     
     @Override
     public VoxelShape method25687() {
-        return VoxelShapes.method24494(VoxelShapes.field30599, VoxelShapes.method24488(Math.floor(this.method25675()), Double.NEGATIVE_INFINITY, Math.floor(this.method25676()), Math.ceil(this.method25677()), Double.POSITIVE_INFINITY, Math.ceil(this.method25678())), Class9306.field39920);
+        return VoxelShapes.method24494(VoxelShapes.field30599, VoxelShapes.method24488(Math.floor(this.method25675()), Double.NEGATIVE_INFINITY, Math.floor(this.method25676()), Math.ceil(this.method25677()), Double.POSITIVE_INFINITY, Math.ceil(this.method25678())), IBooleanFunction.ONLY_FIRST);
     }
 }

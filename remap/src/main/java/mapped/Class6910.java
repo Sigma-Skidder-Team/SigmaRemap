@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 
-public class Class6910 implements Class6909
+public class Class6910 implements IParticleData
 {
     public static final Class6382<Class6910> field27095;
     private final Class6907<Class6910> field27096;

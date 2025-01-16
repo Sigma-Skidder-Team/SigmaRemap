@@ -119,8 +119,8 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
-        return this.method6965(class354).method6702(class354);
+    public IFluidState getFluidState(final BlockPos class354) {
+        return this.method6965(class354).getFluidState(class354);
     }
     
     @Nullable
@@ -154,7 +154,7 @@ public class Class1878 implements Class1851
         final BlockState method6701 = this.getBlockState(class354);
         if (!method6701.method21706()) {
             if (b) {
-                Block.method11838(method6701, this.field10219, class354, method6701.getBlock().method11802() ? this.method6727(class354) : null, class355, ItemStack.field34174);
+                Block.method11838(method6701, this.field10219, class354, method6701.getBlock().method11802() ? this.getTileEntity(class354) : null, class355, ItemStack.field34174);
             }
             return this.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
         }
@@ -163,9 +163,9 @@ public class Class1878 implements Class1851
     
     @Nullable
     @Override
-    public TileEntity method6727(final BlockPos class354) {
+    public TileEntity getTileEntity(final BlockPos class354) {
         final IChunk method6965 = this.method6965(class354);
-        final TileEntity method6966 = method6965.method6727(class354);
+        final TileEntity method6966 = method6965.getTileEntity(class354);
         if (method6966 == null) {
             final Class51 method6967 = method6965.method7033(class354);
             if (method6967 != null) {
@@ -312,7 +312,7 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public void method6709(final Class6909 class6909, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void method6709(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
     @Override

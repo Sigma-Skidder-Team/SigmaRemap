@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
 import java.util.Random;
@@ -120,7 +120,7 @@ public class Class4541 extends Class4535<Class5122>
                 }
             }
             class1851.setBlockState(class1853, Class7521.field29290.getDefaultState(), 2);
-            final TileEntity method1137 = class1851.method6727(class1853);
+            final TileEntity method1137 = class1851.getTileEntity(class1853);
             if (!(method1137 instanceof Class494)) {
                 Class4541.field20026.error("Failed to fetch mob spawner entity at ({}, {}, {})", (Object)class1853.getX(), (Object)class1853.getY(), (Object)class1853.getZ());
             }

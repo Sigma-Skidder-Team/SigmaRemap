@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -28,9 +28,9 @@ public class Class3908 extends Block implements Class3872
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Vec3d method21732 = class7096.method21732(class7097, class7098);
-        return Class3908.field17714.method24541(method21732.x, method21732.y, method21732.z);
+        return Class3908.field17714.withOffset(method21732.x, method21732.y, method21732.z);
     }
     
     @Override
@@ -63,12 +63,12 @@ public class Class3908 extends Block implements Class3872
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         return new ItemStack(Items.field31368);
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return class1855.getBlockState(class1856.method1137()).method21706();
     }
     
@@ -83,7 +83,7 @@ public class Class3908 extends Block implements Class3872
     }
     
     @Override
-    public float method11830(final Class7096 class7096, final PlayerEntity class7097, final Class1855 class7098, final BlockPos class7099) {
+    public float method11830(final Class7096 class7096, final PlayerEntity class7097, final IBlockReader class7098, final BlockPos class7099) {
         return (class7097.getHeldItemMainhand().getItem() instanceof Class4077) ? 1.0f : super.method11830(class7096, class7097, class7098, class7099);
     }
     

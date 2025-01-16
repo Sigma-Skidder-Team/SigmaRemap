@@ -60,8 +60,8 @@ public class Class4605 extends Class4535<Class5131>
         }
         if (n2 == class1854.field22102) {
             if (n3 == class1854.field22103) {
-                class1851.setBlockState(class1853, class1854.field22100.method21791(), 2);
-                class1851.method6834().method21345(class1853, class1854.field22100.method21779(), 0);
+                class1851.setBlockState(class1853, class1854.field22100.getBlockState(), 2);
+                class1851.method6834().method21345(class1853, class1854.field22100.getFluid(), 0);
                 ++n;
             }
         }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.Random;
 
@@ -22,7 +22,7 @@ public abstract class Class3910 extends Class3911
     
     private static boolean method12016(final Class7096 class7096, final Class1852 class7097, final BlockPos class7098) {
         final BlockPos method1137 = class7098.method1137();
-        return method12015(class7096, class7097, class7098) && !class7097.method6702(method1137).method21793(Class7324.field28319);
+        return method12015(class7096, class7097, class7098) && !class7097.getFluidState(method1137).isTagged(Class7324.field28319);
     }
     
     @Override

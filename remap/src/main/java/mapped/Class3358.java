@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 
 public class Class3358 extends Class3355
@@ -148,7 +148,7 @@ public class Class3358 extends Class3355
                 if (this.method10637() == -1) {
                     return;
                 }
-                Class3358.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Vec3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(Class3358.field15514.field4684).add(0, -1, 0), false)));
+                Class3358.field15514.method5269().method17292(new Class4329(Class316.field1877, new BlockRayTraceResult(new Vec3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(Class3358.field15514.field4684).add(0, -1, 0), false)));
                 if (this.field15995 >= this.method9886("Boost")) {
                     Class7482.method23149(class5717, 0.0);
                     Class3358.field15514.field4684.method2725();

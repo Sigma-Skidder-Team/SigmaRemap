@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -81,7 +81,7 @@ public class Class8245
         }
         if (!method6701.method21706()) {
             method6702.method11870(field4683, class354, method6701, this.field33863.field4684);
-            final boolean method6703 = field4683.setBlockState(class354, field4683.method6702(class354).method21791(), 11);
+            final boolean method6703 = field4683.setBlockState(class354, field4683.getFluidState(class354).getBlockState(), 11);
             if (method6703) {
                 method6702.method11824(field4683, class354, method6701);
             }
@@ -228,7 +228,7 @@ public class Class8245
         }
     }
     
-    public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final Class7005 class759) {
+    public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final BlockRayTraceResult class759) {
         this.method27318();
         final BlockPos method21447 = class759.method21447();
         if (!this.field33863.field4683.getWorldBorder().contains(method21447)) {

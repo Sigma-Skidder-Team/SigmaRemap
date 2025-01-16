@@ -171,7 +171,7 @@ public abstract class Class3090
                 if (class1853.getY() < 256) {
                     if (class1852.method6992(Class237.field912, class1853) < 10) {
                         final Class7096 method6701 = class1852.getBlockState(class1853);
-                        if (class1852.method6702(class1853).method21779() == Class7558.field29976) {
+                        if (class1852.getFluidState(class1853).getFluid() == Class7558.field29976) {
                             if (method6701.method21696() instanceof Class3859) {
                                 if (!b) {
                                     return true;

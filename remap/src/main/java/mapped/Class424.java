@@ -13,7 +13,7 @@ import net.minecraft.nbt.INBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -104,13 +104,13 @@ public class Class424 extends Entity
                 if (!this.world.isRemote) {
                     BlockPos method21697 = new BlockPos(this);
                     final boolean b = this.field2573.getBlock() instanceof Class3988;
-                    boolean b2 = b && this.world.method6702(method21697).method21793(Class7324.field28319);
+                    boolean b2 = b && this.world.getFluidState(method21697).isTagged(Class7324.field28319);
                     final double method21698 = this.getMotion().lengthSquared();
                     if (b) {
                         if (method21698 > 1.0) {
-                            final Class7005 method21699 = this.world.rayTraceBlocks(new RayTraceContext(new Vec3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.method1934(), Class2040.field11632, Class2191.field13326, this));
+                            final BlockRayTraceResult method21699 = this.world.rayTraceBlocks(new RayTraceContext(new Vec3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.method1934(), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.SOURCE_ONLY, this));
                             if (method21699.method21449() != Class2165.field12880) {
-                                if (this.world.method6702(method21699.method21447()).method21793(Class7324.field28319)) {
+                                if (this.world.getFluidState(method21699.method21447()).isTagged(Class7324.field28319)) {
                                     method21697 = method21699.method21447();
                                     b2 = true;
                                 }
@@ -156,7 +156,7 @@ public class Class424 extends Entity
                                 final boolean b4 = this.field2573.method21752(this.world, method21697) && !b3;
                                 if (method21701 && b4) {
                                     if (this.field2573.method21771((IProperty<Comparable>)Class8970.field37747)) {
-                                        if (this.world.method6702(method21697).method21779() == Class7558.field29976) {
+                                        if (this.world.getFluidState(method21697).getFluid() == Class7558.field29976) {
                                             this.field2573 = ((StateHolder<O, BlockState>)this.field2573).with((IProperty<Comparable>)Class8970.field37747, true);
                                         }
                                     }
@@ -173,7 +173,7 @@ public class Class424 extends Entity
                                         }
                                         if (this.field2580 != null) {
                                             if (method21696 instanceof Class3840) {
-                                                final TileEntity method21702 = this.world.method6727(method21697);
+                                                final TileEntity method21702 = this.world.getTileEntity(method21697);
                                                 if (method21702 != null) {
                                                     final Class51 method21703 = method21702.method2180(new Class51());
                                                     for (final String anObject : this.field2580.method293()) {

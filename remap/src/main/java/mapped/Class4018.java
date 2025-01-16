@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
@@ -51,12 +51,12 @@ public class Class4018 extends Class4017
     }
     
     @Override
-    public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11848(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return class7096.method21772((IProperty<Boolean>)Class4018.field18098) ? 15 : 0;
     }
     
     @Override
-    public int method11851(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         if (class7096.method21772((IProperty<Boolean>)Class4018.field18098)) {
             return (class7099 != Direction.UP) ? 0 : 15;
         }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.List;
 import java.io.InputStream;
@@ -153,7 +153,7 @@ public class Class6110
         return class1774.method6359(new ResourceLocation(property));
     }
     
-    public static List method18260(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
+    public static List method18260(final IBlockReader class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
         if (class1858 == Direction.UP || class1858 == Direction.DOWN) {
             return list;
         }
@@ -176,7 +176,7 @@ public class Class6110
         return method18264(class1855, class1856, class1857, class1858, list);
     }
     
-    private static List method18261(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
+    private static List method18261(final IBlockReader class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
         final Block method21696 = class1855.getBlockState(class1857.method1137()).getBlock();
         final boolean b = method21696 == Class7521.field29331 || method21696 == Class7521.field29329;
         if (!Config.method28911()) {
@@ -204,7 +204,7 @@ public class Class6110
         return list;
     }
     
-    private static List method18262(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
+    private static List method18262(final IBlockReader class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
         if (!Class6110.field24786) {
             return list;
         }
@@ -214,7 +214,7 @@ public class Class6110
         return (method18266(class1857.method1139(), class1858, class1855) != Class7521.field29637) ? list : Class6110.field24802.method18691(class1856, class1858, Class6110.field24815);
     }
     
-    private static List method18263(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
+    private static List method18263(final IBlockReader class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
         final Block method18266 = method18266(class1857, Direction.UP, class1855);
         final boolean b = method18266 == Class7521.field29331 || method18266 == Class7521.field29329;
         if (!Config.method28911()) {
@@ -242,7 +242,7 @@ public class Class6110
         return list;
     }
     
-    private static List method18264(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
+    private static List method18264(final IBlockReader class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
         if (method18266(class1857, Direction.UP, class1855) == Class7521.field29637) {
             if (Class6110.field24786) {
                 if (method18266(class1857, class1858, class1855) == Class7521.field29637) {
@@ -253,7 +253,7 @@ public class Class6110
         return list;
     }
     
-    private static List method18265(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
+    private static List method18265(final IBlockReader class1855, final BlockState class1856, final BlockPos class1857, final Direction class1858, final List list) {
         final Block method21696 = class1855.getBlockState(class1857.method1137()).getBlock();
         final boolean b = method21696 == Class7521.field29331 || method21696 == Class7521.field29329;
         if (!Config.method28911()) {
@@ -281,7 +281,7 @@ public class Class6110
         return list;
     }
     
-    private static Block method18266(final BlockPos class354, final Direction class355, final Class1855 class356) {
+    private static Block method18266(final BlockPos class354, final Direction class355, final IBlockReader class356) {
         return class356.getBlockState(class354.method1149(class355)).getBlock();
     }
     

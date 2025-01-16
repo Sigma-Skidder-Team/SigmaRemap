@@ -299,7 +299,7 @@ public class Class501 extends TileEntity
             if (this.field2656.getBlockState(class356).method21696() != Class7521.field29820) {
                 continue;
             }
-            final TileEntity method6727 = this.field2656.method6727(class356);
+            final TileEntity method6727 = this.field2656.getTileEntity(class356);
             if (method6727 == null) {
                 continue;
             }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
@@ -33,7 +33,7 @@ public class Class6128 implements Class6113
             if (method6701.getBlock() == Class7521.field29147) {
                 continue;
             }
-            final Iterator<AxisAlignedBB> iterator2 = method6701.getShape(field2391, class7354).method24545().iterator();
+            final Iterator<AxisAlignedBB> iterator2 = method6701.getShape(field2391, class7354).toBoundingBoxList().iterator();
             while (iterator2.hasNext()) {
                 final AxisAlignedBB method6702 = iterator2.next().method18500(class7354).method18496(0.002).method18499(-n, -n2, -n3);
                 final double field2392 = method6702.minX;

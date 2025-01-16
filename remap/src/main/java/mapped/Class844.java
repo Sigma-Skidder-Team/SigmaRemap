@@ -165,7 +165,7 @@ public class Class844 extends Class763
     
     @Override
     public float method4228(final BlockPos class354, final Class1852 class355) {
-        return class355.method6702(class354).method21793(Class7324.field28319) ? (10.0f + class355.method6963(class354) - 0.5f) : super.method4228(class354, class355);
+        return class355.getFluidState(class354).isTagged(Class7324.field28319) ? (10.0f + class355.method6963(class354) - 0.5f) : super.method4228(class354, class355);
     }
     
     @Override
@@ -283,7 +283,7 @@ public class Class844 extends Class763
     public static boolean method5064(final EntityType<? extends Class844> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (random.nextInt(20) == 0 || !class7500.method6962(class7502)) {
             if (class7500.method6954() != Class2113.field12290) {
-                if (class7501 == Class2101.field12176 || class7500.method6702(class7502).method21793(Class7324.field28319)) {
+                if (class7501 == Class2101.field12176 || class7500.getFluidState(class7502).isTagged(Class7324.field28319)) {
                     return true;
                 }
             }

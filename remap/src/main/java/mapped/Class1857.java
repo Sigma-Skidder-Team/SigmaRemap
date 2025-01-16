@@ -136,7 +136,7 @@ public class Class1857 implements Class1856
     }
     
     @Override
-    public TileEntity method6727(final BlockPos class354) {
+    public TileEntity getTileEntity(final BlockPos class354) {
         return this.field10111.method7000(class354, Class2079.field12022);
     }
     
@@ -150,7 +150,7 @@ public class Class1857 implements Class1856
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
+    public IFluidState getFluidState(final BlockPos class354) {
         return this.getBlockState(class354).getFluidState();
     }
     

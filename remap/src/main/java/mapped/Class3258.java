@@ -19,7 +19,7 @@ public class Class3258 extends Class3247
     @Class6753
     public void method10272(final Class5739 class5739) {
         if (this.method9906() && (Class3258.field15514.field4684.method1809() || !this.method9883("Sneak"))) {
-            final Class7005 method13697 = Class4609.method13697(Class3258.field15514.field4684.rotationYaw, Class3258.field15514.field4684.rotationPitch, this.method9886("Maximum range"));
+            final BlockRayTraceResult method13697 = Class4609.method13697(Class3258.field15514.field4684.rotationYaw, Class3258.field15514.field4684.rotationPitch, this.method9886("Maximum range"));
             Vec3i method13698 = null;
             if (method13697 != null) {
                 method13698 = method13697.method21447();

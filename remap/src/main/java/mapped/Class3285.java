@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;
 import java.util.HashSet;

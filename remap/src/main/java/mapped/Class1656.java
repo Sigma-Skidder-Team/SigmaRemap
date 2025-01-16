@@ -12,7 +12,7 @@ import net.minecraft.client.renderer.Vector4f;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -377,21 +377,21 @@ public class Class1656 implements AutoCloseable, Class1657
                     final double nextDouble = random.nextDouble();
                     final double nextDouble2 = random.nextDouble();
                     final Class7096 method6772 = field4683.getBlockState(method6771);
-                    final IFluidState method6773 = field4683.method6702(method6769);
+                    final IFluidState method6773 = field4683.getFluidState(method6769);
                     final VoxelShape method6774 = method6772.method21727(field4683, method6771);
-                    final double method6775 = method6774.method24547(Axis.Y, nextDouble, nextDouble2);
+                    final double method6775 = method6774.max(Axis.Y, nextDouble, nextDouble2);
                     double n5;
                     double method6776;
-                    if (method6775 >= method6773.method21782(field4683, method6769)) {
+                    if (method6775 >= method6773.getActualHeight(field4683, method6769)) {
                         n5 = method6775;
-                        method6776 = method6774.method24546(Axis.Y, nextDouble, nextDouble2);
+                        method6776 = method6774.min(Axis.Y, nextDouble, nextDouble2);
                     }
                     else {
                         n5 = 0.0;
                         method6776 = 0.0;
                     }
                     if (n5 > -1.7976931348623157E308) {
-                        if (!method6773.method21793(Class7324.field28320) && method6772.method21696() != Class7521.field29642 && (method6772.method21696() != Class7521.field29818 || !method6772.method21772((IProperty<Boolean>)Class3918.field17760))) {
+                        if (!method6773.isTagged(Class7324.field28320) && method6772.method21696() != Class7521.field29642 && (method6772.method21696() != Class7521.field29818 || !method6772.method21772((IProperty<Boolean>)Class3918.field17760))) {
                             ++bound;
                             if (random.nextInt(bound) == 0) {
                                 n = method6771.getX() + nextDouble;
@@ -1181,7 +1181,7 @@ public class Class1656 implements AutoCloseable, Class1657
         final Class7006 field9335 = this.field9288.field4691;
         if (b && field9335 != null && field9335.method21449() == Class2165.field12881) {
             method6796.method15300("outline");
-            final BlockPos method6815 = ((Class7005)field9335).method21447();
+            final BlockPos method6815 = ((BlockRayTraceResult)field9335).method21447();
             final Class7096 method6816 = this.field9292.getBlockState(method6815);
             boolean b5;
             if (Class9570.field41247.method22605() && Class9570.field41298.method22605()) {
@@ -2052,7 +2052,7 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     public static void method5728(final Class7351 class7351, final Class4150 class7352, final VoxelShape class7353, final double n, final double n2, final double n3, final float n4, final float n5, final float n6, final float n7) {
-        final List<AxisAlignedBB> method24545 = class7353.method24545();
+        final List<AxisAlignedBB> method24545 = class7353.toBoundingBoxList();
         final int method24546 = MathHelper.ceil(method24545.size() / 3.0);
         for (int i = 0; i < method24545.size(); ++i) {
             final AxisAlignedBB class7354 = method24545.get(i);
@@ -2063,7 +2063,7 @@ public class Class1656 implements AutoCloseable, Class1657
     }
     
     private static void method5729(final Class7351 class7351, final Class4150 class7352, final VoxelShape class7353, final double n, final double n2, final double n3, final float n4, final float n5, final float n6, final float n7) {
-        class7353.method24543((n8, n9, n10, n11, n12, n13) -> {
+        class7353.forEachEdge((n8, n9, n10, n11, n12, n13) -> {
             class7352.method12444(class4151, (float)(n8 + n), (float)(n9 + n2), (float)(n10 + n3)).method12439(n4, n5, n6, n7).method12397();
             class7352.method12444(class4151, (float)(n11 + n), (float)(n12 + n2), (float)(n13 + n3)).method12439(n4, n5, n6, n7).method12397();
         });
@@ -2148,7 +2148,7 @@ public class Class1656 implements AutoCloseable, Class1657
         class4148.method12432(n4, n5, n6).method12439(n7, n8, n9, n10).method12397();
     }
     
-    public void method5735(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final Class7096 class1858, final int n) {
+    public void method5735(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857, final Class7096 class1858, final int n) {
         this.method5736(class1856, false);
     }
     
@@ -2221,94 +2221,94 @@ public class Class1656 implements AutoCloseable, Class1657
         }
     }
     
-    public void method5744(final Class6909 class6909, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this.method5745(class6909, b, false, n, n2, n3, n4, n5, n6);
+    public void method5744(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        this.method5745(IParticleData, b, false, n, n2, n3, n4, n5, n6);
     }
     
-    public void method5745(final Class6909 class6909, final boolean b, final boolean b2, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void method5745(final IParticleData IParticleData, final boolean b, final boolean b2, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         try {
-            this.method5748(class6909, b, b2, n, n2, n3, n4, n5, n6);
+            this.method5748(IParticleData, b, b2, n, n2, n3, n4, n5, n6);
         }
         catch (final Throwable t) {
             final Class7689 method24421 = Class7689.method24421(t, "Exception while adding particle");
             final Class5204 method24422 = method24421.method24418("Particle being added");
-            method24422.method16297("ID", Registry.field222.getKey((Class6907<? extends Class6909>)class6909.method21272()));
-            method24422.method16297("Parameters", class6909.method21274());
+            method24422.method16297("ID", Registry.field222.getKey((Class6907<? extends IParticleData>) IParticleData.method21272()));
+            method24422.method16297("Parameters", IParticleData.method21274());
             method24422.method16296("Position", () -> Class5204.method16293(n7, n8, n9));
             throw new Class2365(method24421);
         }
     }
     
-    private <T extends Class6909> void method5746(final T t, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    private <T extends IParticleData> void method5746(final T t, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         this.method5744(t, t.method21272().method21270(), n, n2, n3, n4, n5, n6);
     }
     
     @Nullable
-    private Class6173 method5747(final Class6909 class6909, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        return this.method5748(class6909, b, false, n, n2, n3, n4, n5, n6);
+    private Class6173 method5747(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        return this.method5748(IParticleData, b, false, n, n2, n3, n4, n5, n6);
     }
     
     @Nullable
-    private Class6173 method5748(final Class6909 class6909, final boolean b, final boolean b2, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    private Class6173 method5748(final IParticleData IParticleData, final boolean b, final boolean b2, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
         final Class6092 method5833 = this.field9288.field4644.method5833();
         if (this.field9288 == null || !method5833.method18167() || this.field9288.field4640 == null) {
             return null;
         }
         final Class2159 method5834 = this.method5749(b2);
-        if (class6909 == Class8432.field34618 && !Config.method28876()) {
+        if (IParticleData == Class8432.field34618 && !Config.method28876()) {
             return null;
         }
-        if (class6909 == Class8432.field34619 && !Config.method28876()) {
+        if (IParticleData == Class8432.field34619 && !Config.method28876()) {
             return null;
         }
-        if (class6909 == Class8432.field34636 && !Config.method28876()) {
+        if (IParticleData == Class8432.field34636 && !Config.method28876()) {
             return null;
         }
-        if (class6909 == Class8432.field34645 && !Config.method28880()) {
+        if (IParticleData == Class8432.field34645 && !Config.method28880()) {
             return null;
         }
-        if (class6909 == Class8432.field34639 && !Config.method28878()) {
+        if (IParticleData == Class8432.field34639 && !Config.method28878()) {
             return null;
         }
-        if (class6909 == Class8432.field34632 && !Config.method28878()) {
+        if (IParticleData == Class8432.field34632 && !Config.method28878()) {
             return null;
         }
-        if (class6909 == Class8432.field34617 && !Config.method28883()) {
+        if (IParticleData == Class8432.field34617 && !Config.method28883()) {
             return null;
         }
-        if (class6909 == Class8432.field34597 && !Config.method28883()) {
+        if (IParticleData == Class8432.field34597 && !Config.method28883()) {
             return null;
         }
-        if (class6909 == Class8432.field34612 && !Config.method28883()) {
+        if (IParticleData == Class8432.field34612 && !Config.method28883()) {
             return null;
         }
-        if (class6909 == Class8432.field34628 && !Config.method28883()) {
+        if (IParticleData == Class8432.field34628 && !Config.method28883()) {
             return null;
         }
-        if (class6909 == Class8432.field34647 && !Config.method28883()) {
+        if (IParticleData == Class8432.field34647 && !Config.method28883()) {
             return null;
         }
-        if (class6909 == Class8432.field34637 && !Config.method28882()) {
+        if (IParticleData == Class8432.field34637 && !Config.method28882()) {
             return null;
         }
-        if (class6909 == Class8432.field34623 && !Config.method28877()) {
+        if (IParticleData == Class8432.field34623 && !Config.method28877()) {
             return null;
         }
-        if (class6909 == Class8432.field34611 && !Config.method28875()) {
+        if (IParticleData == Class8432.field34611 && !Config.method28875()) {
             return null;
         }
-        if (class6909 == Class8432.field34609 && !Config.method28931()) {
+        if (IParticleData == Class8432.field34609 && !Config.method28931()) {
             return null;
         }
-        if (class6909 == Class8432.field34606 && !Config.method28931()) {
+        if (IParticleData == Class8432.field34606 && !Config.method28931()) {
             return null;
         }
-        if (class6909 == Class8432.field34621 && !Config.method28884()) {
+        if (IParticleData == Class8432.field34621 && !Config.method28884()) {
             return null;
         }
         if (!b) {
             double n7 = 1024.0;
-            if (class6909 == Class8432.field34603) {
+            if (IParticleData == Class8432.field34603) {
                 n7 = 38416.0;
             }
             if (method5833.method18161().squareDistanceTo(n, n2, n3) > n7) {
@@ -2318,23 +2318,23 @@ public class Class1656 implements AutoCloseable, Class1657
                 return null;
             }
         }
-        final Class6173 method5835 = this.field9288.field4640.method6478(class6909, n, n2, n3, n4, n5, n6);
-        if (class6909 == Class8432.field34601) {
+        final Class6173 method5835 = this.field9288.field4640.method6478(IParticleData, n, n2, n3, n4, n5, n6);
+        if (IParticleData == Class8432.field34601) {
             Class8763.method30350(method5835, this.field9292, n, n2, n3, this.field9361);
         }
-        if (class6909 == Class8432.field34646) {
+        if (IParticleData == Class8432.field34646) {
             Class8763.method30350(method5835, this.field9292, n, n2, n3, this.field9361);
         }
-        if (class6909 == Class8432.field34638) {
+        if (IParticleData == Class8432.field34638) {
             Class8763.method30350(method5835, this.field9292, n, n2, n3, this.field9361);
         }
-        if (class6909 == Class8432.field34634) {
+        if (IParticleData == Class8432.field34634) {
             Class8763.method30343(method5835);
         }
-        if (class6909 == Class8432.field34637) {
+        if (IParticleData == Class8432.field34637) {
             Class8763.method30342(method5835);
         }
-        if (class6909 == Class8432.field34611) {
+        if (IParticleData == Class8432.field34611) {
             Class8763.method30345(method5835, this.field9292, n, n2, n3);
         }
         return method5835;
@@ -2903,7 +2903,7 @@ public class Class1656 implements AutoCloseable, Class1657
             method6993 = method6994;
         }
         int method6995 = method6992 << 20 | method6993 << 4;
-        if (Config.method29002() && class1856 instanceof Class1855 && (!Class1656.field9368 || !class1857.method21722(class1856, class1858))) {
+        if (Config.method29002() && class1856 instanceof IBlockReader && (!Class1656.field9368 || !class1857.method21722(class1856, class1858))) {
             method6995 = Class8850.method30990(class1858, method6995);
         }
         return method6995;

@@ -9,13 +9,13 @@ import java.io.IOException;
 public class Class4329 implements IPacket<Class5813>
 {
     private static String[] field19384;
-    private Class7005 field19385;
+    private BlockRayTraceResult field19385;
     private Class316 field19386;
     
     public Class4329() {
     }
     
-    public Class4329(final Class316 field19386, final Class7005 field19387) {
+    public Class4329(final Class316 field19386, final BlockRayTraceResult field19387) {
         this.field19386 = field19386;
         this.field19385 = field19387;
     }
@@ -40,7 +40,7 @@ public class Class4329 implements IPacket<Class5813>
         return this.field19386;
     }
     
-    public Class7005 method13000() {
+    public BlockRayTraceResult method13000() {
         return this.field19385;
     }
 }

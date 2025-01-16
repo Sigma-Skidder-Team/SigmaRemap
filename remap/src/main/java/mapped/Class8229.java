@@ -12,7 +12,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public class Class8229 extends Class8228
 {

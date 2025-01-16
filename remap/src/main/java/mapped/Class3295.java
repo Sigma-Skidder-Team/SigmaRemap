@@ -100,7 +100,7 @@ public class Class3295 extends Class3167
                         final BlockState method6701 = Class3295.field15514.field4683.getBlockState(Class3295.field15514.field4684.method1894());
                         if (method6701 != null) {
                             if (!method6701.getFluidState().isEmpty()) {
-                                if (method6701.getFluidState().method21783() > 0.4) {
+                                if (method6701.getFluidState().getHeight() > 0.4) {
                                     if (this.method9883("Swim up")) {
                                         class5717.method16975(0.13);
                                     }

@@ -8,7 +8,7 @@ import java.util.EnumSet;
 import javax.annotation.Nullable;
 import java.util.HashSet;
 import com.google.common.collect.Sets;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -168,10 +168,10 @@ public class Class4651 extends Class4654
         return false;
     }
     
-    public static double method13906(final Class1855 class1855, final BlockPos class1856) {
+    public static double method13906(final IBlockReader class1855, final BlockPos class1856) {
         final BlockPos method1139 = class1856.method1139();
         final VoxelShape method1140 = class1855.getBlockState(method1139).getCollisionShape(class1855, method1139);
-        return method1139.getY() + (method1140.method24540() ? 0.0 : method1140.method24536(Axis.Y));
+        return method1139.getY() + (method1140.isEmpty() ? 0.0 : method1140.method24536(Axis.Y));
     }
     
     @Nullable
@@ -273,7 +273,7 @@ public class Class4651 extends Class4654
     }
     
     @Override
-    public Class257 method13908(final Class1855 class1855, final int n, final int n2, final int n3, final Class759 class1856, final int n4, final int n5, final int n6, final boolean b, final boolean b2) {
+    public Class257 method13908(final IBlockReader class1855, final int n, final int n2, final int n3, final Class759 class1856, final int n4, final int n5, final int n6, final boolean b, final boolean b2) {
         final EnumSet<Class257> none = EnumSet.noneOf(Class257.class);
         final Class257 field1205 = Class257.field1205;
         final double n7 = class1856.method1930() / 2.0;
@@ -294,7 +294,7 @@ public class Class4651 extends Class4654
         return Class257.field1209;
     }
     
-    public Class257 method13909(final Class1855 class1855, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final boolean b, final boolean b2, final EnumSet<Class257> set, Class257 class1856, final BlockPos class1857) {
+    public Class257 method13909(final IBlockReader class1855, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final boolean b, final boolean b2, final EnumSet<Class257> set, Class257 class1856, final BlockPos class1857) {
         for (int i = 0; i < n4; ++i) {
             for (int j = 0; j < n5; ++j) {
                 for (int k = 0; k < n6; ++k) {
@@ -313,7 +313,7 @@ public class Class4651 extends Class4654
         return class1856;
     }
     
-    public Class257 method13910(final Class1855 class1855, final boolean b, final boolean b2, final BlockPos class1856, Class257 class1857) {
+    public Class257 method13910(final IBlockReader class1855, final boolean b, final boolean b2, final BlockPos class1856, Class257 class1857) {
         if (class1857 == Class257.field1221) {
             if (b) {
                 if (b2) {
@@ -348,11 +348,11 @@ public class Class4651 extends Class4654
     }
     
     @Override
-    public Class257 method13913(final Class1855 class1855, final int n, final int n2, final int n3) {
+    public Class257 method13913(final IBlockReader class1855, final int n, final int n2, final int n3) {
         return method13914(class1855, n, n2, n3);
     }
     
-    public static Class257 method13914(final Class1855 class1855, final int n, final int n2, final int n3) {
+    public static Class257 method13914(final IBlockReader class1855, final int n, final int n2, final int n3) {
         Class257 class1856 = method13916(class1855, n, n2, n3);
         if (class1856 == Class257.field1206) {
             if (n2 >= 1) {
@@ -400,7 +400,7 @@ public class Class4651 extends Class4654
         return class1856;
     }
     
-    public static Class257 method13915(final Class1855 class1855, final int n, final int n2, final int n3, Class257 class1856) {
+    public static Class257 method13915(final IBlockReader class1855, final int n, final int n2, final int n3, Class257 class1856) {
         try (final Class386 method1296 = Class386.method1296()) {
             for (int i = -1; i <= 1; ++i) {
                 for (int j = -1; j <= 1; ++j) {
@@ -426,7 +426,7 @@ public class Class4651 extends Class4654
         return class1856;
     }
     
-    public static Class257 method13916(final Class1855 class1855, final int n, final int n2, final int n3) {
+    public static Class257 method13916(final IBlockReader class1855, final int n, final int n2, final int n3) {
         final BlockPos class1856 = new BlockPos(n, n2, n3);
         final BlockState method6701 = class1855.getBlockState(class1856);
         final Block method6702 = method6701.getBlock();
@@ -476,11 +476,11 @@ public class Class4651 extends Class4654
             if (!method6702.method11785(Class7188.field27911)) {
                 if (!method6702.method11785(Class7188.field27904)) {
                     if (!(method6702 instanceof Class3898) || method6701.get((IProperty<Boolean>)Class3898.field17585)) {
-                        final IFluidState method6704 = class1855.method6702(class1856);
-                        if (method6704.method21793(Class7324.field28319)) {
+                        final IFluidState method6704 = class1855.getFluidState(class1856);
+                        if (method6704.isTagged(Class7324.field28319)) {
                             return Class257.field1211;
                         }
-                        if (!method6704.method21793(Class7324.field28320)) {
+                        if (!method6704.isTagged(Class7324.field28320)) {
                             return method6701.method21749(class1855, class1856, Class2084.field12051) ? Class257.field1206 : Class257.field1205;
                         }
                         return Class257.field1210;

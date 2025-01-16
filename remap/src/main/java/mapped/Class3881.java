@@ -22,7 +22,7 @@ public class Class3881 extends Class3878
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3881.field17536[class7096.get((IProperty<Integer>)this.method11952())];
     }
     

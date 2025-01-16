@@ -27,8 +27,8 @@ public class Class8744
             return true;
         }
         if (class1849.method6731(class1850)) {
-            final IFluidState method6702 = class1849.method6702(class1850);
-            final Fluid method6703 = method6702.method21779();
+            final IFluidState method6702 = class1849.getFluidState(class1850);
+            final Fluid method6703 = method6702.getFluid();
             return (this.field36725 == null || this.field36725.method25618(method6703)) && (this.field36726 == null || method6703 == this.field36726) && this.field36727.method34690(method6702);
         }
         return false;
@@ -39,7 +39,7 @@ public class Class8744
             final JsonObject method35913 = Class9583.method35913(jsonElement, "fluid");
             Fluid class7255 = null;
             if (method35913.has("fluid")) {
-                class7255 = Registry.field206.getOrDefault(new ResourceLocation(Class9583.method35895(method35913, "fluid")));
+                class7255 = Registry.FLUID.getOrDefault(new ResourceLocation(Class9583.method35895(method35913, "fluid")));
             }
             Class7909<Fluid> method35914 = null;
             if (method35913.has("tag")) {
@@ -58,7 +58,7 @@ public class Class8744
         if (this != Class8744.field36724) {
             final JsonObject jsonObject = new JsonObject();
             if (this.field36726 != null) {
-                jsonObject.addProperty("fluid", Registry.field206.getKey(this.field36726).toString());
+                jsonObject.addProperty("fluid", Registry.FLUID.getKey(this.field36726).toString());
             }
             if (this.field36725 != null) {
                 jsonObject.addProperty("tag", this.field36725.method25621().toString());

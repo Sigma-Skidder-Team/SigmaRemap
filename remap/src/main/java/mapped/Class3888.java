@@ -21,7 +21,7 @@ public class Class3888 extends Class3874 implements Class3872
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3888.field17550;
     }
     
@@ -53,7 +53,7 @@ public class Class3888 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.isOpaqueCube(class7097, class7098);
     }
     
@@ -86,7 +86,7 @@ public class Class3888 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
         return true;
     }
     
@@ -101,7 +101,7 @@ public class Class3888 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11803(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11803(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return true;
     }
     

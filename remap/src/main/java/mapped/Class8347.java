@@ -7,7 +7,7 @@ package mapped;
 import java.util.Collections;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import javax.annotation.Nullable;
 import java.util.Random;

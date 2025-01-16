@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public abstract class Class3948 extends Class3841
@@ -25,7 +25,7 @@ public abstract class Class3948 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7097.isRemote) {
             this.method12066(class7097, class7098, class7099);
             return Class2201.field13400;
@@ -43,7 +43,7 @@ public abstract class Class3948 extends Class3841
     @Override
     public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
-            final TileEntity method6727 = class1847.method6727(class1848);
+            final TileEntity method6727 = class1847.getTileEntity(class1848);
             if (method6727 instanceof Class466) {
                 ((Class466)method6727).method2335(class1851.method27664());
             }
@@ -53,7 +53,7 @@ public abstract class Class3948 extends Class3841
     @Override
     public void method11829(final Class7096 class7096, final World class7097, final BlockPos class7098, final Class7096 class7099, final boolean b) {
         if (class7096.method21696() != class7099.method21696()) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class466) {
                 Class9193.method33638(class7097, class7098, (Class446)method6727);
                 class7097.method6783(class7098, this);
@@ -69,7 +69,7 @@ public abstract class Class3948 extends Class3841
     
     @Override
     public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
-        return Class3418.method10897(class7097.method6727(class7098));
+        return Class3418.method10897(class7097.getTileEntity(class7098));
     }
     
     @Override

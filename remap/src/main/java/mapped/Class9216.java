@@ -3050,10 +3050,10 @@ public class Class9216
                 Class9216.field39097 = Class9216.field39097 * n4 + (Class9216.field39096 & 0xFFFF) * (1.0f - n4);
                 Class9216.field39098 = Class9216.field39098 * n4 + (Class9216.field39096 >> 16) * (1.0f - n4);
                 final IFluidState method18167 = class6092.method18169();
-                if (method18167.method21793(Class7324.field28319)) {
+                if (method18167.isTagged(Class7324.field28319)) {
                     Class9216.field39095 = 1;
                 }
-                else if (method18167.method21793(Class7324.field28320)) {
+                else if (method18167.isTagged(Class7324.field28320)) {
                     Class9216.field39095 = 2;
                 }
                 else {

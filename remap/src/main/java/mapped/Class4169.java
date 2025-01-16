@@ -6,7 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2IntFunction;
 import net.minecraft.client.renderer.Vector3f;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class4169 extends Class4158<Class437>

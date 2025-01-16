@@ -71,7 +71,7 @@ public class Class3976 extends Block
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         final Item method2716 = method2715.getItem();
         if (method2716 != Items.field31277 && method2716 != Items.field31511) {
@@ -91,7 +91,7 @@ public class Class3976 extends Block
     }
     
     @Override
-    public void onProjectileCollision(final World class1847, final BlockState class1848, final Class7005 class1849, final Entity class1850) {
+    public void onProjectileCollision(final World class1847, final BlockState class1848, final BlockRayTraceResult class1849, final Entity class1850) {
         if (!class1847.isRemote) {
             if (class1850 instanceof Class402) {
                 final Class402 class1851 = (Class402)class1850;

@@ -23,12 +23,12 @@ public class Class3952 extends Class3841
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class489();
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3952.field17852;
     }
     
@@ -38,7 +38,7 @@ public class Class3952 extends Class3841
             if (!class7099.isPassenger()) {
                 if (!class7099.isBeingRidden()) {
                     if (class7099.method1855()) {
-                        if (VoxelShapes.method24496(VoxelShapes.method24489(class7099.getBoundingBox().method18499(-class7098.getX(), -class7098.getY(), -class7098.getZ())), class7096.getShape(class7097, class7098), Class9306.field39924)) {
+                        if (VoxelShapes.method24496(VoxelShapes.method24489(class7099.getBoundingBox().method18499(-class7098.getX(), -class7098.getY(), -class7098.getZ())), class7096.getShape(class7097, class7098), IBooleanFunction.AND)) {
                             class7099.method1854((class7097.dimension.getType() != DimensionType.field2225) ? DimensionType.field2225 : DimensionType.field2223);
                         }
                     }
@@ -53,7 +53,7 @@ public class Class3952 extends Class3841
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
         return ItemStack.field34174;
     }
     

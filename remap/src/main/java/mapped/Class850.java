@@ -8,7 +8,7 @@ import net.minecraft.entity.*;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -191,7 +191,7 @@ public class Class850 extends Class763
         }
         final BlockState method6701 = this.world.getBlockState(class385);
         final boolean method6702 = method6701.getMaterial().method26440();
-        final boolean method6703 = method6701.getFluidState().method21793(Class7324.field28319);
+        final boolean method6703 = method6701.getFluidState().isTagged(Class7324.field28319);
         if (method6702 && !method6703) {
             final boolean method6704 = this.method2775(n, n2, n3, true);
             if (method6704) {

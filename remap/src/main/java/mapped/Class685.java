@@ -363,7 +363,7 @@ public class Class685 extends Class565
         if (class7006.method21449() != Class2165.field12881) {
             return false;
         }
-        final BlockPos method21447 = ((Class7005)class7006).method21447();
+        final BlockPos method21447 = ((BlockRayTraceResult)class7006).method21447();
         final Class1848 field4683 = this.field3753.field4683;
         return field4683.getBlockState(method21447).method21754(field4683, method21447) != null;
     }

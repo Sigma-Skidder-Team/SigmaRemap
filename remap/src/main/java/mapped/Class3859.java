@@ -9,7 +9,7 @@ import java.util.Random;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -36,17 +36,17 @@ public class Class3859 extends Block implements Class3857
     
     @Override
     public void method11821(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
-        class7097.method6702(class7098).method21789(class7097, class7098, random);
+        class7097.getFluidState(class7098).randomTick(class7097, class7098, random);
     }
     
     @Override
-    public boolean propagatesSkylightDown(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean propagatesSkylightDown(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return false;
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
-        return !this.field17481.method22166(Class7324.field28320);
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
+        return !this.field17481.isIn(Class7324.field28320);
     }
     
     @Override
@@ -56,7 +56,7 @@ public class Class3859 extends Block implements Class3857
     
     @Override
     public boolean method11807(final BlockState class7096, final BlockState class7097, final Direction class7098) {
-        return class7097.getFluidState().method21779().method22165(this.field17481);
+        return class7097.getFluidState().getFluid().isEquivalentTo(this.field17481);
     }
     
     @Override
@@ -70,8 +70,8 @@ public class Class3859 extends Block implements Class3857
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return VoxelShapes.method24486();
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        return VoxelShapes.empty();
     }
     
     @Override
@@ -82,14 +82,14 @@ public class Class3859 extends Block implements Class3857
     @Override
     public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
-            class7097.method6834().method21345(class7098, class7096.getFluidState().method21779(), this.method11826(class7097));
+            class7097.method6834().method21345(class7098, class7096.getFluidState().getFluid(), this.method11826(class7097));
         }
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.getFluidState().method21780() || class7098.getFluidState().method21780()) {
-            class7099.method6834().method21345(class7100, class7096.getFluidState().method21779(), this.method11826(class7099));
+        if (class7096.getFluidState().isSource() || class7098.getFluidState().isSource()) {
+            class7099.method6834().method21345(class7100, class7096.getFluidState().getFluid(), this.method11826(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
@@ -97,27 +97,27 @@ public class Class3859 extends Block implements Class3857
     @Override
     public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (this.method11926(class7097, class7098, class7096)) {
-            class7097.method6834().method21345(class7098, class7096.getFluidState().method21779(), this.method11826(class7097));
+            class7097.method6834().method21345(class7098, class7096.getFluidState().getFluid(), this.method11826(class7097));
         }
     }
     
     public boolean method11926(final World class1847, final BlockPos class1848, final BlockState class1849) {
-        if (this.field17481.method22166(Class7324.field28320)) {
+        if (this.field17481.isIn(Class7324.field28320)) {
             int n = 0;
             for (final Direction class1850 : Direction.values()) {
-                if (class1850 != Direction.DOWN && class1847.method6702(class1848.method1149(class1850)).method21793(Class7324.field28319)) {
+                if (class1850 != Direction.DOWN && class1847.getFluidState(class1848.method1149(class1850)).isTagged(Class7324.field28319)) {
                     n = 1;
                     break;
                 }
             }
             if (n != 0) {
-                final IFluidState method6702 = class1847.method6702(class1848);
-                if (method6702.method21780()) {
+                final IFluidState method6702 = class1847.getFluidState(class1848);
+                if (method6702.isSource()) {
                     class1847.method6692(class1848, Class7521.field29286.getDefaultState());
                     this.method11927(class1847, class1848);
                     return false;
                 }
-                if (method6702.method21782(class1847, class1848) >= 0.44444445f) {
+                if (method6702.getActualHeight(class1847, class1848) >= 0.44444445f) {
                     class1847.method6692(class1848, Class7521.field29159.getDefaultState());
                     this.method11927(class1847, class1848);
                     return false;
@@ -147,7 +147,7 @@ public class Class3859 extends Block implements Class3857
     
     @Override
     public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
-        if (this.field17481.method22166(Class7324.field28320)) {
+        if (this.field17481.isIn(Class7324.field28320)) {
             class7099.method1722();
         }
     }

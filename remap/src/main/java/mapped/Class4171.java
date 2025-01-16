@@ -7,7 +7,7 @@ package mapped;
 import java.util.stream.Collector;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.renderer.Matrix4f;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.stream.IntStream;
 import java.util.List;

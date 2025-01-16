@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class4040 extends Class4036
@@ -24,10 +24,10 @@ public class Class4040 extends Class4036
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class7006 method2716 = Item.method11733(class1847, class1848, Class2191.field13326);
+        final Class7006 method2716 = Item.method11733(class1847, class1848, RayTraceContext.FluidMode.SOURCE_ONLY);
         if (method2716.method21449() != Class2165.field12880) {
             if (method2716.method21449() == Class2165.field12881) {
-                final Class7005 class1850 = (Class7005)method2716;
+                final BlockRayTraceResult class1850 = (BlockRayTraceResult)method2716;
                 final BlockPos method2717 = class1850.method21447();
                 final Direction method2718 = class1850.method21448();
                 if (!class1847.method6760(class1848, method2717) || !class1848.method2881(method2717.method1149(method2718), method2718, method2715)) {
@@ -35,7 +35,7 @@ public class Class4040 extends Class4036
                 }
                 final BlockPos method2719 = method2717.method1137();
                 final Material method2720 = class1847.getBlockState(method2717).method21697();
-                if (class1847.method6702(method2717).method21779() == Class7558.field29976 || method2720 == Material.ICE) {
+                if (class1847.getFluidState(method2717).getFluid() == Class7558.field29976 || method2720 == Material.ICE) {
                     if (class1847.method6961(method2719)) {
                         class1847.setBlockState(method2719, Class7521.field29393.getDefaultState(), 11);
                         if (class1848 instanceof Class513) {

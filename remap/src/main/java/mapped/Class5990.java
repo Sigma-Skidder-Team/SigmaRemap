@@ -11,7 +11,7 @@ import com.google.gson.JsonDeserializationContext;
 import java.lang.reflect.Type;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonDeserializer;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public class Class5990 implements JsonDeserializer<Class8111>
 {

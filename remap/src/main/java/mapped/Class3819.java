@@ -46,8 +46,8 @@ public class Class3819 extends Item
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class7006 method2716 = Item.method11733(class1847, class1848, Class2191.field13325);
-        if (method2716.method21449() == Class2165.field12881 && class1847.getBlockState(((Class7005)method2716).method21447()).method21696() == Class7521.field29402) {
+        final Class7006 method2716 = Item.method11733(class1847, class1848, RayTraceContext.FluidMode.NONE);
+        if (method2716.method21449() == Class2165.field12881 && class1847.getBlockState(((BlockRayTraceResult)method2716).method21447()).method21696() == Class7521.field29402) {
             return Class9355.method34676(method2715);
         }
         class1848.method2762(class1849);

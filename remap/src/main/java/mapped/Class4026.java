@@ -21,7 +21,7 @@ public class Class4026 extends Block
     }
     
     @Override
-    public VoxelShape method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4026.field18118;
     }
     
@@ -36,7 +36,7 @@ public class Class4026 extends Block
     }
     
     @Override
-    public boolean method11793(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11793(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         return true;
     }
     
@@ -51,17 +51,17 @@ public class Class4026 extends Block
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean method11779(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return true;
     }
     
     @Override
-    public boolean method11795(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11795(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         return true;
     }
     

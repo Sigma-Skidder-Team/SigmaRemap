@@ -48,9 +48,9 @@ public abstract class Class4654
     
     public abstract int method13904(final Class6772[] p0, final Class6772 p1);
     
-    public abstract Class257 method13908(final Class1855 p0, final int p1, final int p2, final int p3, final Class759 p4, final int p5, final int p6, final int p7, final boolean p8, final boolean p9);
+    public abstract Class257 method13908(final IBlockReader p0, final int p1, final int p2, final int p3, final Class759 p4, final int p5, final int p6, final int p7, final boolean p8, final boolean p9);
     
-    public abstract Class257 method13913(final Class1855 p0, final int p1, final int p2, final int p3);
+    public abstract Class257 method13913(final IBlockReader p0, final int p1, final int p2, final int p3);
     
     public void method13922(final boolean field20146) {
         this.field20146 = field20146;

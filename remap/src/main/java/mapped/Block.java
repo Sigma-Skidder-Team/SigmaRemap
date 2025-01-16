@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -73,7 +73,7 @@ public class Block implements Class3832
     }
     
     public static BlockState method11777(final BlockState class7096, final BlockState class7097, final World class7098, final BlockPos class7099) {
-        final VoxelShape method24541 = VoxelShapes.method24495(class7096.getCollisionShape(class7098, class7099), class7097.getCollisionShape(class7098, class7099), Class9306.field39918).method24541(class7099.getX(), class7099.getY(), class7099.getZ());
+        final VoxelShape method24541 = VoxelShapes.method24495(class7096.getCollisionShape(class7098, class7099), class7097.getCollisionShape(class7098, class7099), IBooleanFunction.ONLY_SECOND).withOffset(class7099.getX(), class7099.getY(), class7099.getZ());
         for (final Entity class7100 : class7098.method7127(null, method24541.method24537())) {
             class7100.method1878(class7100.getPosX(), class7100.getPosY() + 1.0 + VoxelShapes.method24498(Axis.Y, class7100.getBoundingBox().method18499(0.0, 1.0, 0.0), Stream.of(method24541), -1.0), class7100.getPosZ());
         }
@@ -85,7 +85,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean canEntitySpawn(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return class7096.isSolidSide(class7097, class7098, Direction.UP) && this.field17396 < 14;
     }
     
@@ -105,7 +105,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public MaterialColor method11783(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public MaterialColor method11783(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return this.field17402;
     }
     
@@ -205,7 +205,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public boolean method11793(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11793(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         if (class7096.getMaterial().method26443()) {
             if (class7096.isCollisionShapeOpaque(class7097, class7098)) {
                 if (!class7096.method21714()) {
@@ -217,23 +217,23 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public boolean method11794(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11794(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return this.field17401.method26440() && class7096.isCollisionShapeOpaque(class7097, class7098);
     }
     
     @Deprecated
-    public boolean method11795(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11795(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.method21746(class7097, class7098);
     }
     
     @Deprecated
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         switch (Class9511.field40924[class7099.ordinal()]) {
             case 1: {
                 return !class7096.isCollisionShapeOpaque(class7097, class7098);
             }
             case 2: {
-                return class7097.method6702(class7098).method21793(Class7324.field28319);
+                return class7097.getFluidState(class7098).isTagged(Class7324.field28319);
             }
             case 3: {
                 return !class7096.isCollisionShapeOpaque(class7097, class7098);
@@ -260,7 +260,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public float method11800(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public float method11800(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return this.field17397;
     }
     
@@ -273,7 +273,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public boolean method11803(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11803(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return false;
     }
     
@@ -282,7 +282,7 @@ public class Block implements Class3832
         return false;
     }
     
-    public static boolean method11805(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public static boolean method11805(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         final BlockPos method1149 = class7098.method1149(class7099);
         final BlockState method1150 = class7097.getBlockState(method1149);
         if (class7096.method21724(method1150, class7099)) {
@@ -295,7 +295,7 @@ public class Block implements Class3832
         final Object2ByteLinkedOpenHashMap object2ByteLinkedOpenHashMap = Block.field17414.get();
         final byte andMoveToFirst = object2ByteLinkedOpenHashMap.getAndMoveToFirst((Object)class7100);
         if (andMoveToFirst == 127) {
-            final boolean method1151 = VoxelShapes.method24496(class7096.getFaceOcclusionShape(class7097, class7098, class7099), method1150.getFaceOcclusionShape(class7097, method1149, class7099.getOpposite()), Class9306.field39920);
+            final boolean method1151 = VoxelShapes.method24496(class7096.getFaceOcclusionShape(class7097, class7098, class7099), method1150.getFaceOcclusionShape(class7097, method1149, class7099.getOpposite()), IBooleanFunction.ONLY_FIRST);
             if (object2ByteLinkedOpenHashMap.size() == 2048) {
                 object2ByteLinkedOpenHashMap.removeLastByte();
             }
@@ -316,36 +316,36 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return VoxelShapes.method24487();
     }
     
     @Deprecated
-    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return this.field17408 ? class7096.getShape(class7097, class7098) : VoxelShapes.method24486();
+    public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        return this.field17408 ? class7096.getShape(class7097, class7098) : VoxelShapes.empty();
     }
     
     @Deprecated
-    public VoxelShape method11810(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11810(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.getShape(class7097, class7098);
     }
     
     @Deprecated
-    public VoxelShape method11811(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return VoxelShapes.method24486();
+    public VoxelShape method11811(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
+        return VoxelShapes.empty();
     }
     
-    public static boolean method11812(final Class1855 class1855, final BlockPos class1856) {
+    public static boolean method11812(final IBlockReader class1855, final BlockPos class1856) {
         final BlockState method6701 = class1855.getBlockState(class1856);
-        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1855, class1856).method24551(Direction.UP), Block.field17394, Class9306.field39918);
+        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1855, class1856).method24551(Direction.UP), Block.field17394, IBooleanFunction.ONLY_SECOND);
     }
     
     public static boolean method11813(final Class1852 class1852, final BlockPos class1853, final Direction class1854) {
         final BlockState method6701 = class1852.getBlockState(class1853);
-        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1852, class1853).method24551(class1854), Block.field17395, Class9306.field39918);
+        return !method6701.method21755(Class7188.field27907) && !VoxelShapes.method24496(method6701.getCollisionShape(class1852, class1853).method24551(class1854), Block.field17395, IBooleanFunction.ONLY_SECOND);
     }
     
-    public static boolean hasSolidSide(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public static boolean hasSolidSide(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return !class7096.method21755(Class7188.field27907) && method11815(class7096.getCollisionShape(class7097, class7098), class7099);
     }
     
@@ -358,16 +358,16 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public final boolean method11817(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public final boolean method11817(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.isSolid() && isOpaque(class7096.getRenderShape(class7097, class7098));
     }
     
-    public boolean propagatesSkylightDown(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean propagatesSkylightDown(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return !isOpaque(class7096.getShape(class7097, class7098)) && class7096.getFluidState().isEmpty();
     }
     
     @Deprecated
-    public int getOpacity(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public int getOpacity(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         if (!class7096.isOpaqueCube(class7097, class7098)) {
             return class7096.propagatesSkylightDown(class7097, class7098) ? 0 : 1;
         }
@@ -423,7 +423,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public float method11830(final BlockState class7096, final PlayerEntity class7097, final Class1855 class7098, final BlockPos class7099) {
+    public float method11830(final BlockState class7096, final PlayerEntity class7097, final IBlockReader class7098, final BlockPos class7099) {
         final float method21718 = class7096.method21718(class7098, class7099);
         if (method21718 != -1.0f) {
             return class7097.method2824(class7096) / method21718 / (class7097.method2825(class7096) ? 30 : 100);
@@ -519,7 +519,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         return Class2201.field13402;
     }
     
@@ -536,7 +536,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public int method11848(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11848(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return 0;
     }
     
@@ -550,7 +550,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public int method11851(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return 0;
     }
     
@@ -589,7 +589,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public float method11859(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public float method11859(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.isCollisionShapeOpaque(class7097, class7098) ? 0.2f : 1.0f;
     }
     
@@ -597,11 +597,11 @@ public class Block implements Class3832
         class1849.method1705(n, 1.0f);
     }
     
-    public void method11861(final Class1855 class1855, final Entity class1856) {
+    public void method11861(final IBlockReader class1855, final Entity class1856) {
         class1856.method1936(class1856.getMotion().mul(1.0, 0.0, 1.0));
     }
     
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
         return new ItemStack(this);
     }
     
@@ -611,7 +611,7 @@ public class Block implements Class3832
     
     @Deprecated
     public IFluidState method11864(final BlockState class7096) {
-        return Class7558.field29974.method22148();
+        return Class7558.field29974.getDefaultState();
     }
     
     public float method11865() {
@@ -631,7 +631,7 @@ public class Block implements Class3832
         return MathHelper.method35688(class7097);
     }
     
-    public void onProjectileCollision(final World class1847, final BlockState class1848, final Class7005 class1849, final Entity class1850) {
+    public void onProjectileCollision(final World class1847, final BlockState class1848, final BlockRayTraceResult class1849, final Entity class1850) {
     }
     
     public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final PlayerEntity class1850) {
@@ -675,7 +675,7 @@ public class Block implements Class3832
     }
     
     @Deprecated
-    public Vec3d method11880(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public Vec3d method11880(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         final Class2180 method11879 = this.method11879();
         if (method11879 != Class2180.field12913) {
             final long method11880 = MathHelper.method35689(class7098.getX(), 0, class7098.getZ());
@@ -705,7 +705,7 @@ public class Block implements Class3832
         return "Block{" + Registry.BLOCK.getKey(this) + "}";
     }
     
-    public void method11883(final ItemStack class8321, final Class1855 class8322, final List<ITextComponent> list, final Class1981 class8323) {
+    public void method11883(final ItemStack class8321, final IBlockReader class8322, final List<ITextComponent> list, final Class1981 class8323) {
     }
     
     static {
@@ -713,7 +713,7 @@ public class Block implements Class3832
         field17391 = new Class94<BlockState>();
         field17392 = new Direction[] { Direction.WEST, Direction.EAST, Direction.NORTH, Direction.SOUTH, Direction.DOWN, Direction.UP};
         field17393 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build((CacheLoader)new Class6046());
-        field17394 = VoxelShapes.method24494(VoxelShapes.method24487(), method11778(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), Class9306.field39920);
+        field17394 = VoxelShapes.method24494(VoxelShapes.method24487(), method11778(2.0, 0.0, 2.0, 14.0, 16.0, 14.0), IBooleanFunction.ONLY_FIRST);
         field17395 = method11778(7.0, 0.0, 7.0, 9.0, 10.0, 9.0);
         field17414 = ThreadLocal.withInitial(() -> {
             final Class2270 class2270 = new Class2270(2048, 0.25f);

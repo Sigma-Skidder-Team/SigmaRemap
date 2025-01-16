@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class3984 extends Block
@@ -47,7 +47,7 @@ public class Class3984 extends Block
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7097.isRemote) {
             class7096 = ((StateHolder<O, Class7096>)class7096).method21768((IProperty<Comparable>)Class3984.field17993);
             class7097.setBlockState(class7098, class7096, 3);

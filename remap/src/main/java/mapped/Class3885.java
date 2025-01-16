@@ -22,12 +22,12 @@ public class Class3885 extends Class3874
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3885.field17546[class7096.get((IProperty<Integer>)Class3885.field17545)];
     }
     
     @Override
-    public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.getBlock() == Class7521.field29339;
     }
     
@@ -44,7 +44,7 @@ public class Class3885 extends Class3874
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
         return new ItemStack(Items.field31440);
     }
     

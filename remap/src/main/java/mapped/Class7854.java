@@ -41,7 +41,7 @@ public class Class7854
         }
         if (this.field32232.method34689(method6701)) {
             if (this.field32233 != Class7103.field27707) {
-                final TileEntity method6703 = class1849.method6727(class1850);
+                final TileEntity method6703 = class1849.getTileEntity(class1850);
                 if (method6703 == null || !this.field32233.method21805(method6703.method2180(new Class51()))) {
                     return false;
                 }

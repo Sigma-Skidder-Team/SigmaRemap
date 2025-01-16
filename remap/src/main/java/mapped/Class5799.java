@@ -9,7 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
@@ -580,7 +580,7 @@ public class Class5799 implements IClientPlayNetHandler
             this.field23809.method6838(method12909, i, method12910);
         }
         for (final Class51 class4299 : class4298.method12914()) {
-            final TileEntity method12912 = this.field23809.method6727(new BlockPos(class4299.method319("x"), class4299.method319("y"), class4299.method319("z")));
+            final TileEntity method12912 = this.field23809.getTileEntity(new BlockPos(class4299.method319("x"), class4299.method319("y"), class4299.method319("z")));
             if (method12912 == null) {
                 continue;
             }
@@ -975,7 +975,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17312(final Class4350 class4350) {
         Class8663.method29632((IPacket<Class5799>)class4350, this, this.field23808);
-        TileEntity method6727 = this.field23809.method6727(class4350.method13067());
+        TileEntity method6727 = this.field23809.getTileEntity(class4350.method13067());
         if (!(method6727 instanceof Class497)) {
             method6727 = new Class497();
             method6727.method2187(this.field23809, class4350.method13067());
@@ -987,7 +987,7 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17313(final Class4357 class4357) {
         Class8663.method29632((IPacket<Class5799>)class4357, this, this.field23808);
         if (this.field23808.field4683.method6971(class4357.method13084())) {
-            final TileEntity method6727 = this.field23808.field4683.method6727(class4357.method13084());
+            final TileEntity method6727 = this.field23808.field4683.getTileEntity(class4357.method13084());
             final int method6728 = class4357.method13085();
             final boolean b = method6728 == 2 && method6727 instanceof Class500;
             Label_0190: {

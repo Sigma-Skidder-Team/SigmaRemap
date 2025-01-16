@@ -23,7 +23,7 @@ public class Class3871 extends Class3870 implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
         return true;
     }
     

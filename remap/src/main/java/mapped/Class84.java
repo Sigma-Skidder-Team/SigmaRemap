@@ -7,7 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import com.google.common.math.IntMath;
 
-public final class Class84 implements Class83
+public final class Class84 implements IDoubleListMerger
 {
     private static String[] field187;
     private final Class81 field188;
@@ -23,11 +23,11 @@ public final class Class84 implements Class83
     }
     
     @Override
-    public boolean method445(final Class9015 class9015) {
+    public boolean forMergedIndexes(final IConsumer class9015) {
         final int n = this.field189 / this.field191;
         final int n2 = this.field190 / this.field191;
         for (int i = 0; i <= this.field188.size(); ++i) {
-            if (!class9015.method32279(i / n2, i / n, i)) {
+            if (!class9015.merge(i / n2, i / n, i)) {
                 return false;
             }
         }
@@ -35,7 +35,7 @@ public final class Class84 implements Class83
     }
     
     @Override
-    public DoubleList method447() {
+    public DoubleList func_212435_a() {
         return (DoubleList)this.field188;
     }
 }

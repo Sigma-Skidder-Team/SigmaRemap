@@ -5,7 +5,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -78,7 +78,7 @@ public abstract class Class4473
         return null;
     }
     
-    public boolean method13436(final Class1855 class1855, final MutableBoundingBox class1856) {
+    public boolean method13436(final IBlockReader class1855, final MutableBoundingBox class1856) {
         final int max = Math.max(this.field19849.minX - 1, class1856.minX);
         final int max2 = Math.max(this.field19849.minY - 1, class1856.minY);
         final int max3 = Math.max(this.field19849.minZ - 1, class1856.minZ);
@@ -177,9 +177,9 @@ public abstract class Class4473
                 class1852 = class1852.method21708(this.field19852);
             }
             class1851.setBlockState(class1854, class1852, 2);
-            final IFluidState method6702 = class1851.method6702(class1854);
+            final IFluidState method6702 = class1851.getFluidState(class1854);
             if (!method6702.isEmpty()) {
-                class1851.method6834().method21345(class1854, method6702.method21779(), 0);
+                class1851.method6834().method21345(class1854, method6702.getFluid(), 0);
             }
             if (Class4473.field19855.contains(class1852.getBlock())) {
                 class1851.method6965(class1854).method7029(class1854);
@@ -187,7 +187,7 @@ public abstract class Class4473
         }
     }
     
-    public BlockState method13441(final Class1855 class1855, final int n, final int n2, final int n3, final MutableBoundingBox class1856) {
+    public BlockState method13441(final IBlockReader class1855, final int n, final int n2, final int n3, final MutableBoundingBox class1856) {
         final BlockPos class1857 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
         return class1856.isVecInside(class1857) ? class1855.getBlockState(class1857) : Class7521.field29147.getDefaultState();
     }
@@ -346,7 +346,7 @@ public abstract class Class4473
         return this.method13452(class1851, class1852, random, new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3)), class1853, null);
     }
     
-    public static BlockState method13451(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
+    public static BlockState method13451(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
         Direction class1858 = null;
         for (final Direction class1859 : Plane.HORIZONTAL) {
             final BlockPos method1149 = class1856.method1149(class1859);
@@ -389,7 +389,7 @@ public abstract class Class4473
                 method13451 = method13451(class1851, class1853, Class7521.field29292.getDefaultState());
             }
             class1851.setBlockState(class1853, method13451, 2);
-            final TileEntity method13452 = class1851.method6727(class1853);
+            final TileEntity method13452 = class1851.getTileEntity(class1853);
             if (method13452 instanceof Class475) {
                 ((Class475)method13452).method2327(class1854, random.nextLong());
             }
@@ -402,7 +402,7 @@ public abstract class Class4473
         final BlockPos class1855 = new BlockPos(this.method13437(n, n3), this.method13438(n2), this.method13439(n, n3));
         if (class1852.isVecInside(class1855) && class1851.getBlockState(class1855).getBlock() != Class7521.field29216) {
             this.method13440(class1851, ((StateHolder<O, BlockState>)Class7521.field29216.getDefaultState()).with((IProperty<Comparable>)Class3955.field17859, class1853), n, n2, n3, class1852);
-            final TileEntity method6727 = class1851.method6727(class1855);
+            final TileEntity method6727 = class1851.getTileEntity(class1855);
             if (method6727 instanceof Class458) {
                 ((Class458)method6727).method2327(class1854, random.nextLong());
             }

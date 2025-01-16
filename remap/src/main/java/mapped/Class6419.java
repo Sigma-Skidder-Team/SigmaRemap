@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public final class Class6419 extends Class6404
 {

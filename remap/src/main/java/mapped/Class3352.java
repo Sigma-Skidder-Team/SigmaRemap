@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.ArrayList;
 import com.google.common.collect.ImmutableMap;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.List;
 

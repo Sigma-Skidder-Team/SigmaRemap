@@ -7,7 +7,7 @@ package mapped;
 import com.google.common.collect.Sets;
 import java.util.IdentityHashMap;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
@@ -78,7 +78,7 @@ public class Class8288
             final int n4 = method7067.method25427() + ((b && (contains || contains2)) ? 14 : (contains4 ? 0 : 15));
             final Direction[] values = Direction.values();
             final Mutable class1863 = new Mutable();
-            for (final BlockPos class1864 : BlockPos.getAllInBoxMutable(n, 0, n3, n2, method7065.method6986() - 1, n4)) {
+            for (final BlockPos class1864 : BlockPos.getAllInBoxMutable(n, 0, n3, n2, method7065.getHeight() - 1, n4)) {
                 BlockState class1866;
                 final BlockState class1865 = class1866 = method7065.getBlockState(class1864);
                 for (final Direction class1867 : values) {

@@ -100,7 +100,7 @@ public class Class3485 extends Class3479
     }
     
     @Nullable
-    private BlockPos method11055(final BlockPos class354, final Class1855 class355) {
+    private BlockPos method11055(final BlockPos class354, final IBlockReader class355) {
         if (class355.getBlockState(class354).getBlock() != this.field16414) {
             for (final BlockPos class356 : new BlockPos[] { class354.method1139(), class354.method1145(), class354.method1147(), class354.method1141(), class354.method1143(), class354.method1139().method1139() }) {
                 if (class355.getBlockState(class356).getBlock() == this.field16414) {

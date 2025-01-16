@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class6908 extends Class6907<Class6908> implements Class6909
+public class Class6908 extends Class6907<Class6908> implements IParticleData
 {
     private static String[] field27091;
     private static final Class6382<Class6908> field27094;

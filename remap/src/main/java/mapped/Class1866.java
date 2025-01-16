@@ -24,8 +24,8 @@ public class Class1866 extends Class1865
     
     @Nullable
     @Override
-    public TileEntity method6727(final BlockPos class354) {
-        return this.field10190.method6727(class354);
+    public TileEntity getTileEntity(final BlockPos class354) {
+        return this.field10190.getTileEntity(class354);
     }
     
     @Nullable
@@ -35,8 +35,8 @@ public class Class1866 extends Class1865
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
-        return this.field10190.method6702(class354);
+    public IFluidState getFluidState(final BlockPos class354) {
+        return this.field10190.getFluidState(class354);
     }
     
     @Override

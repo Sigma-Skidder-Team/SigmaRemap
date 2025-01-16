@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.dimension.DimensionType;
@@ -351,7 +351,7 @@ public class Class5814 implements Class5813
             Class865 method2539 = null;
             Class500 class4267 = null;
             final BlockPos method2540 = class4266.method12803();
-            final TileEntity method2541 = this.field23857.world.method6727(method2540);
+            final TileEntity method2541 = this.field23857.world.getTileEntity(method2540);
             if (method2541 instanceof Class500) {
                 class4267 = (Class500)method2541;
                 method2539 = class4267.method2539();
@@ -454,7 +454,7 @@ public class Class5814 implements Class5813
         if (this.field23857.method2908()) {
             final BlockPos method13101 = class4360.method13101();
             final BlockState method13102 = this.field23857.world.getBlockState(method13101);
-            final TileEntity method13103 = this.field23857.world.method6727(method13101);
+            final TileEntity method13103 = this.field23857.world.getTileEntity(method13101);
             if (method13103 instanceof Class501) {
                 final Class501 class4361 = (Class501)method13103;
                 class4361.method2571(class4360.method13103());
@@ -516,7 +516,7 @@ public class Class5814 implements Class5813
         if (this.field23857.method2908()) {
             final BlockPos method12813 = class4270.method12813();
             final BlockState method12814 = this.field23857.world.getBlockState(method12813);
-            final TileEntity method12815 = this.field23857.world.method6727(method12813);
+            final TileEntity method12815 = this.field23857.world.getTileEntity(method12813);
             if (method12815 instanceof Class498) {
                 final Class498 class4271 = (Class498)method12815;
                 class4271.method2534(class4270.method12815());
@@ -588,7 +588,7 @@ public class Class5814 implements Class5813
     public void method17456(final Class4275 class4275) {
         Class8663.method29631((IPacket<Class5814>)class4275, this, this.field23857.method2940());
         if (this.field23857.method1926(2)) {
-            final TileEntity method6727 = this.field23857.method2940().method6727(class4275.method12828());
+            final TileEntity method6727 = this.field23857.method2940().getTileEntity(class4275.method12828());
             this.field23857.field3039.method17469(new Class4296(class4275.method12827(), (method6727 == null) ? null : method6727.method2180(new Class51())));
         }
     }
@@ -806,7 +806,7 @@ public class Class5814 implements Class5813
         final Class1849 method1481 = this.field23856.method1481(this.field23857.dimension);
         final Class316 method1482 = class4329.method12999();
         final ItemStack method1483 = this.field23857.method2715(method1482);
-        final Class7005 method1484 = class4329.method13000();
+        final BlockRayTraceResult method1484 = class4329.method13000();
         final BlockPos method1485 = method1484.method21447();
         final Direction method1486 = method1484.method21448();
         this.field23857.method2946();
@@ -1180,7 +1180,7 @@ public class Class5814 implements Class5813
                     if (method12876.method315("x")) {
                         if (method12876.method315("y")) {
                             if (method12876.method315("z")) {
-                                final TileEntity method12877 = this.field23857.world.method6727(new BlockPos(method12876.method319("x"), method12876.method319("y"), method12876.method319("z")));
+                                final TileEntity method12877 = this.field23857.world.getTileEntity(new BlockPos(method12876.method319("x"), method12876.method319("y"), method12876.method319("z")));
                                 if (method12877 != null) {
                                     final Class51 method12878 = method12877.method2180(new Class51());
                                     method12878.method330("x");
@@ -1256,7 +1256,7 @@ public class Class5814 implements Class5813
         final BlockPos method1482 = class4344.method13046();
         if (method1481.method6971(method1482)) {
             final BlockState method1483 = method1481.getBlockState(method1482);
-            final TileEntity method1484 = method1481.method6727(method1482);
+            final TileEntity method1484 = method1481.getTileEntity(method1482);
             if (!(method1484 instanceof Class497)) {
                 return;
             }

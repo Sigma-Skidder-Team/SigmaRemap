@@ -38,8 +38,8 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
         if (!this.field30081) {
             this.field30081 = true;
             final VoxelShape method34783 = this.field30087.getWorldBorder().method34783();
-            final boolean method34784 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().method18511(1.0E-7)), Class9306.field39924);
-            final boolean method34785 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().method18496(1.0E-7)), Class9306.field39924);
+            final boolean method34784 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().method18511(1.0E-7)), IBooleanFunction.AND);
+            final boolean method34785 = VoxelShapes.method24496(method34783, VoxelShapes.method24489(this.field30082.getBoundingBox().method18496(1.0E-7)), IBooleanFunction.AND);
             if (!method34784) {
                 if (method34785) {
                     consumer.accept(method34783);
@@ -55,7 +55,7 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
             if (method34789 == 3) {
                 continue;
             }
-            final Class1855 method34790 = this.field30087.method6736(method34786 >> 4, method34788 >> 4);
+            final IBlockReader method34790 = this.field30087.method6736(method34786 >> 4, method34788 >> 4);
             if (method34790 == null) {
                 continue;
             }
@@ -76,8 +76,8 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
                     return false;
                 }
             }
-            final VoxelShape method34792 = class7702.method24541(method34786, method34787, method34788);
-            if (!VoxelShapes.method24496(this.field30086, method34792, Class9306.field39924)) {
+            final VoxelShape method34792 = class7702.withOffset(method34786, method34787, method34788);
+            if (!VoxelShapes.method24496(this.field30086, method34792, IBooleanFunction.AND)) {
                 continue;
             }
             consumer.accept(method34792);

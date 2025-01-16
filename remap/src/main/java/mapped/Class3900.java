@@ -9,7 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -43,18 +43,18 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public MaterialColor method11783(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public MaterialColor method11783(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return (class7096.get(Class3900.field17599) != Class105.field324) ? MaterialColor.WOOL : this.field17610.method816();
     }
     
     @Nullable
-    public static Direction method11985(final Class1855 class1855, final BlockPos class1856) {
+    public static Direction method11985(final IBlockReader class1855, final BlockPos class1856) {
         final BlockState method6701 = class1855.getBlockState(class1856);
         return (method6701.getBlock() instanceof Class3900) ? method6701.get((IProperty<Direction>)Class3900.field17564) : null;
     }
     
     @Override
-    public Class2201 method11844(BlockState method6701, final World class1847, BlockPos method6702, final PlayerEntity class1848, final Class316 class1849, final Class7005 class1850) {
+    public Class2201 method11844(BlockState method6701, final World class1847, BlockPos method6702, final PlayerEntity class1848, final Class316 class1849, final BlockRayTraceResult class1850) {
         if (class1847.isRemote) {
             return Class2201.field13401;
         }
@@ -104,7 +104,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public void method11861(final Class1855 class1855, final Entity class1856) {
+    public void method11861(final IBlockReader class1855, final Entity class1856) {
         if (!class1856.method1811()) {
             this.method11987(class1856);
         }
@@ -167,7 +167,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class9422.field40421[method11989(class7096).getOpposite().ordinal()]) {
             case 1: {
                 return Class3900.field17606;
@@ -227,13 +227,13 @@ public class Class3900 extends Class3892 implements Class3840
             if (class7501.getY() - class7502.getY() > 2) {
                 break;
             }
-            if (!class7500.getBlockState(class7502).getCollisionShape(class7500, class7502).method24540()) {
+            if (!class7500.getBlockState(class7502).getCollisionShape(class7500, class7502).isEmpty()) {
                 break;
             }
             class7502.method1290(Direction.DOWN);
         }
         final VoxelShape method21727 = class7500.getBlockState(class7502).getCollisionShape(class7500, class7502);
-        if (method21727.method24540()) {
+        if (method21727.isEmpty()) {
             return Optional.empty();
         }
         final double n = class7502.getY() + method21727.method24536(Axis.Y) + 2.0E-7;
@@ -261,7 +261,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class437(this.field17610);
     }
     
@@ -286,7 +286,7 @@ public class Class3900 extends Class3892 implements Class3840
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

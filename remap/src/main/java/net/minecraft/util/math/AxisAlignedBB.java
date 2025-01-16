@@ -7,8 +7,8 @@ package net.minecraft.util.math;
 import mapped.Axis;
 import mapped.BlockPos;
 import mapped.MutableBoundingBox;
-import mapped.Class7005;
-import net.minecraft.util.Direction;
+import mapped.BlockRayTraceResult;
+import net.minecraft.util2.Direction;
 
 import javax.annotation.Nullable;
 import java.util.Iterator;
@@ -263,7 +263,7 @@ public class AxisAlignedBB
     }
     
     @Nullable
-    public static Class7005 method18513(final Iterable<AxisAlignedBB> iterable, final Vec3d class5487, final Vec3d class5488, final BlockPos class5489) {
+    public static BlockRayTraceResult method18513(final Iterable<AxisAlignedBB> iterable, final Vec3d class5487, final Vec3d class5488, final BlockPos class5489) {
         final double[] array = { 1.0 };
         Direction method18514 = null;
         final double n = class5488.x - class5487.x;
@@ -275,7 +275,7 @@ public class AxisAlignedBB
         }
         if (method18514 != null) {
             final double n4 = array[0];
-            return new Class7005(class5487.add(n4 * n, n4 * n2, n4 * n3), method18514, class5489, false);
+            return new BlockRayTraceResult(class5487.add(n4 * n, n4 * n2, n4 * n3), method18514, class5489, false);
         }
         return null;
     }

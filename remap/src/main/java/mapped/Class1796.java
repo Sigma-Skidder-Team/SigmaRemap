@@ -7,7 +7,7 @@ package mapped;
 import com.google.common.collect.Sets;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 

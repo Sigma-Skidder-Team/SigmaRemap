@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -100,7 +100,7 @@ public class Class3236 extends Class3167
                 if (this.field15709 != 999.0f) {
                     this.field15715.method10282();
                     if (this.field15710 != null) {
-                        final Class7005 method13698 = Class4609.method13698(this.field15709, this.field15708, 5.0f, class5744);
+                        final BlockRayTraceResult method13698 = Class4609.method13698(this.field15709, this.field15708, 5.0f, class5744);
                         if (method13698.method21449() == Class2165.field12880) {
                             return;
                         }

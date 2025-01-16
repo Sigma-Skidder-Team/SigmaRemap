@@ -174,7 +174,7 @@ public class Class490 extends TileEntity implements Class434, Class439
                     }
                 }
                 final int n2 = (9 + this.field2811 * 2) * 20;
-                final List<Entity> method7128 = (List<Entity>)this.field2656.method7128((Class<? extends PlayerEntity>) PlayerEntity.class, new AxisAlignedBB(this.field2657).method18496(n).method18494(0.0, this.field2656.method6986(), 0.0));
+                final List<Entity> method7128 = (List<Entity>)this.field2656.method7128((Class<? extends PlayerEntity>) PlayerEntity.class, new AxisAlignedBB(this.field2657).method18496(n).method18494(0.0, this.field2656.getHeight(), 0.0));
                 final Iterator<Entity> iterator = (Iterator<Entity>)method7128.iterator();
                 while (iterator.hasNext()) {
                     iterator.next().method2655(new Class1948(this.field2813, n2, (int)(b ? 1 : 0), true, true));

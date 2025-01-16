@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public final class Class1902 extends Class1890<Class7500, Class1898>
@@ -52,14 +52,14 @@ public final class Class1902 extends Class1890<Class7500, Class1898>
             }
             final BlockState method7304 = this.method7297(n, null);
             if (class179 == null) {
-                if (VoxelShapes.method24505(this.method7298(method7304, n, Direction.DOWN), VoxelShapes.method24486())) {
+                if (VoxelShapes.method24505(this.method7298(method7304, n, Direction.DOWN), VoxelShapes.empty())) {
                     return 15;
                 }
                 final Direction method7305 = Direction.byLong(signum, b ? -1 : 0, signum3);
                 if (method7305 == null) {
                     return 15;
                 }
-                if (VoxelShapes.method24505(VoxelShapes.method24486(), this.method7298(method7297, n2, method7305.getOpposite()))) {
+                if (VoxelShapes.method24505(VoxelShapes.empty(), this.method7298(method7297, n2, method7305.getOpposite()))) {
                     return 15;
                 }
             }

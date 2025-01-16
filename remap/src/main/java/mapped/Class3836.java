@@ -13,7 +13,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -37,12 +37,12 @@ public class Class3836 extends Class3834
     }
     
     @Override
-    public boolean method11794(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11794(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return !class7096.get((IProperty<Boolean>)Class3836.field17438);
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.get((IProperty<Boolean>)Class3836.field17438)) {
             return VoxelShapes.method24487();
         }
@@ -69,7 +69,7 @@ public class Class3836 extends Class3834
     }
     
     @Override
-    public boolean method11793(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11793(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return false;
     }
     
@@ -91,7 +91,7 @@ public class Class3836 extends Class3834
     public void method11828(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7099.getBlock() != class7096.getBlock()) {
             if (!class7097.isRemote) {
-                if (class7097.method6727(class7098) == null) {
+                if (class7097.getTileEntity(class7098) == null) {
                     this.method11892(class7097, class7098, class7096);
                 }
             }
@@ -119,7 +119,7 @@ public class Class3836 extends Class3834
                 Label_0143: {
                     if (method11895.getBlock() == Class7521.field29264) {
                         if (((StateHolder<Object, Object>)method11895).get((IProperty<Comparable>)Class3836.field17415) == class1850) {
-                            final TileEntity method11896 = class1847.method6727(method11894);
+                            final TileEntity method11896 = class1847.getTileEntity(method11894);
                             if (method11896 instanceof Class491) {
                                 final Class491 class1851 = (Class491)method11896;
                                 if (class1851.method2462()) {
@@ -176,7 +176,7 @@ public class Class3836 extends Class3834
         }
         if (n != 0) {
             if (n == 1 || n == 2) {
-                final TileEntity method11894 = class7097.method6727(class7098.method1149(class7099));
+                final TileEntity method11894 = class7097.getTileEntity(class7098.method1149(class7099));
                 if (method11894 instanceof Class491) {
                     ((Class491)method11894).method2482();
                 }
@@ -191,7 +191,7 @@ public class Class3836 extends Class3834
                     final Block method11897 = method11896.getBlock();
                     int n3 = 0;
                     if (method11897 == Class7521.field29264) {
-                        final TileEntity method11898 = class7097.method6727(method11895);
+                        final TileEntity method11898 = class7097.getTileEntity(method11895);
                         if (method11898 instanceof Class491) {
                             final Class491 class7100 = (Class491)method11898;
                             if (class7100.method2463() == class7099) {
@@ -249,7 +249,7 @@ public class Class3836 extends Class3834
         if (class7098.getY() < 0 || (class7099 == Direction.DOWN && class7098.getY() == 0)) {
             return false;
         }
-        if (class7098.getY() <= class7097.method6986() - 1 && (class7099 != Direction.UP || class7098.getY() != class7097.method6986() - 1)) {
+        if (class7098.getY() <= class7097.getHeight() - 1 && (class7099 != Direction.UP || class7098.getY() != class7097.getHeight() - 1)) {
             if (method21696 != Class7521.field29246 && method21696 != Class7521.field29239) {
                 if (class7096.method21718(class7097, class7098) == -1.0f) {
                     return false;
@@ -299,7 +299,7 @@ public class Class3836 extends Class3834
             for (int j = method1152.size() - 1; j >= 0; --j) {
                 final BlockPos class1853 = method1152.get(j);
                 final BlockState method1153 = class1847.getBlockState(class1853);
-                Block.method11837(method1153, class1847, class1853, method1153.getBlock().method11802() ? class1847.method6727(class1853) : null);
+                Block.method11837(method1153, class1847, class1853, method1153.getBlock().method11802() ? class1847.getTileEntity(class1853) : null);
                 class1847.setBlockState(class1853, Class7521.field29147.getDefaultState(), 18);
                 --n;
                 array[n] = method1153;
@@ -370,7 +370,7 @@ public class Class3836 extends Class3834
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

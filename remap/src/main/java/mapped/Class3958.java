@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -48,7 +48,7 @@ public class Class3958 extends Class3841
     }
     
     @Override
-    public void onProjectileCollision(final World class1847, final BlockState class1848, final Class7005 class1849, final Entity class1850) {
+    public void onProjectileCollision(final World class1847, final BlockState class1848, final BlockRayTraceResult class1849, final Entity class1850) {
         if (class1850 instanceof Class402) {
             final Entity method1973 = ((Class402)class1850).method1973();
             this.method12074(class1847, class1848, class1849, (method1973 instanceof PlayerEntity) ? ((PlayerEntity)method1973) : null, true);
@@ -56,11 +56,11 @@ public class Class3958 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         return this.method12074(class7097, class7096, class7101, class7099, true) ? Class2201.field13400 : Class2201.field13402;
     }
     
-    public boolean method12074(final World class1847, final BlockState class1848, final Class7005 class1849, final PlayerEntity class1850, final boolean b) {
+    public boolean method12074(final World class1847, final BlockState class1848, final BlockRayTraceResult class1849, final PlayerEntity class1850, final boolean b) {
         final Direction method21448 = class1849.method21448();
         final BlockPos method21449 = class1849.method21447();
         if (b && !this.method12075(class1848, method21448, class1849.method21451().y - method21449.getY())) {
@@ -97,7 +97,7 @@ public class Class3958 extends Class3841
     }
     
     public boolean method12076(final World class1847, final BlockPos class1848, Direction class1849) {
-        final TileEntity method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.getTileEntity(class1848);
         if (!class1847.isRemote && method6727 instanceof Class495) {
             if (class1849 == null) {
                 class1849 = class1847.getBlockState(class1848).method21772((IProperty<Direction>)Class3958.field17865);
@@ -131,12 +131,12 @@ public class Class3958 extends Class3841
     }
     
     @Override
-    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return this.method12077(class7096);
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return this.method12077(class7096);
     }
     
@@ -250,12 +250,12 @@ public class Class3958 extends Class3841
     
     @Nullable
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class495();
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

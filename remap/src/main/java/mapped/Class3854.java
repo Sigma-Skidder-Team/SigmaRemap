@@ -7,7 +7,7 @@ package mapped;
 import java.util.stream.Collector;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
@@ -45,7 +45,7 @@ public class Class3854 extends Block implements Class3856
         final VoxelShape method11782 = Block.method11778(n8, n4, n8, 16.0, n5, n9);
         final VoxelShape method11783 = VoxelShapes.method24492(method11779, method11782);
         final VoxelShape method11784 = VoxelShapes.method24492(method11780, method11781);
-        final VoxelShape[] array = { VoxelShapes.method24486(), method11780, method11781, method11784, method11779, VoxelShapes.method24492(method11780, method11779), VoxelShapes.method24492(method11781, method11779), VoxelShapes.method24492(method11784, method11779), method11782, VoxelShapes.method24492(method11780, method11782), VoxelShapes.method24492(method11781, method11782), VoxelShapes.method24492(method11784, method11782), method11783, VoxelShapes.method24492(method11780, method11783), VoxelShapes.method24492(method11781, method11783), VoxelShapes.method24492(method11784, method11783) };
+        final VoxelShape[] array = { VoxelShapes.empty(), method11780, method11781, method11784, method11779, VoxelShapes.method24492(method11780, method11779), VoxelShapes.method24492(method11781, method11779), VoxelShapes.method24492(method11784, method11779), method11782, VoxelShapes.method24492(method11780, method11782), VoxelShapes.method24492(method11781, method11782), VoxelShapes.method24492(method11784, method11782), method11783, VoxelShapes.method24492(method11780, method11783), VoxelShapes.method24492(method11781, method11783), VoxelShapes.method24492(method11784, method11783) };
         for (int i = 0; i < 16; ++i) {
             array[i] = VoxelShapes.method24492(method11778, array[i]);
         }
@@ -53,17 +53,17 @@ public class Class3854 extends Block implements Class3856
     }
     
     @Override
-    public boolean propagatesSkylightDown(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean propagatesSkylightDown(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return !class7096.get((IProperty<Boolean>)Class3854.field17469);
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return this.field17472[this.method11916(class7096)];
     }
     
     @Override
-    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return this.field17471[this.method11916(class7096)];
     }
     
@@ -96,7 +96,7 @@ public class Class3854 extends Block implements Class3856
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

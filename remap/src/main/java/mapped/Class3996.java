@@ -21,8 +21,8 @@ public class Class3996 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return VoxelShapes.method24486();
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        return VoxelShapes.empty();
     }
     
     @Override

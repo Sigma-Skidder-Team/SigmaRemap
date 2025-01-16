@@ -89,7 +89,7 @@ public class Class7532
             if (!method7441) {
                 if (class1858.method7027().method34451(ChunkStatus.field39986)) {
                     for (final BlockPos class1860 : BlockPos.getAllInBoxMutable(a.method25426(), 0, a.method25427(), a.method25428(), 255, a.method25429())) {
-                        if (class1859.getBlockState(class1860).method21704() == 0) {
+                        if (class1859.getBlockState(class1860).getLightValue() == 0) {
                             continue;
                         }
                         class1858.method7092(class1860);
@@ -110,7 +110,7 @@ public class Class7532
                 method7450 = class1856;
             }
             else {
-                method7450 = Class6956.method21359(method7440.method328("LiquidTicks", 10), Registry.field206::getKey, Registry.field206::getOrDefault);
+                method7450 = Class6956.method21359(method7440.method328("LiquidTicks", 10), Registry.FLUID::getKey, Registry.FLUID::getOrDefault);
             }
             class1859 = new Class1862(class1849.method6744(), a, class1853, class1854, (Class6952<Block>)method7449, (Class6952<Fluid>)method7450, method7447, array, class1865 -> method23595(class1864, class1865));
         }

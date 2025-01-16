@@ -45,7 +45,7 @@ public abstract class Class4479 extends Class4473
         }
     }
     
-    public boolean method13464(final Class1855 class1855, final MutableBoundingBox class1856, final int n, final int n2, final int n3, final int n4) {
+    public boolean method13464(final IBlockReader class1855, final MutableBoundingBox class1856, final int n, final int n2, final int n3, final int n4) {
         for (int i = n; i <= n2; ++i) {
             if (this.method13441(class1855, i, n3 + 1, n4, class1856).method21706()) {
                 return false;

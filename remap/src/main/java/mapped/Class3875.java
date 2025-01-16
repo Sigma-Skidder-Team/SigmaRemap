@@ -7,7 +7,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
@@ -27,7 +27,7 @@ public class Class3875 extends Class3874
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3875.field17523.get(class7096.method21772((IProperty<Object>)Class3875.field17521));
     }
     
@@ -37,7 +37,7 @@ public class Class3875 extends Class3874
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11943(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.method21696() == Class7521.field29298;
     }
     
@@ -49,7 +49,7 @@ public class Class3875 extends Class3874
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         return new ItemStack(this.method11950());
     }
     

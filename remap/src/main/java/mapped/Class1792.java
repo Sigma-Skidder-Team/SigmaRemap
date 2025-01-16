@@ -24,7 +24,7 @@ public class Class1792 implements Class1662
     public Class1792() {
         this.field9918 = new Class6209<Block>(Registry.BLOCK, "tags/blocks", "block");
         this.field9919 = new Class6209<Item>(Registry.field211, "tags/items", "item");
-        this.field9920 = new Class6209<Fluid>(Registry.field206, "tags/fluids", "fluid");
+        this.field9920 = new Class6209<Fluid>(Registry.FLUID, "tags/fluids", "fluid");
         this.field9921 = new Class6209<EntityType<?>>(Registry.field210, "tags/entity_types", "entity_type");
     }
     

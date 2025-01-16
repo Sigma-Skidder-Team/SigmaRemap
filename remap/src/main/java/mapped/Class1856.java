@@ -4,7 +4,7 @@
 
 package mapped;
 
-public interface Class1856 extends Class1855
+public interface Class1856 extends IBlockReader
 {
     Class1886 method6700();
     

@@ -19,12 +19,12 @@ import java.util.Set;
 import java.util.Collections;
 import javax.annotation.Nullable;
 
-public interface Class1853 extends Class1855
+public interface Class1853 extends IBlockReader
 {
     WorldBorder getWorldBorder();
     
     @Nullable
-    Class1855 method6736(final int p0, final int p1);
+    IBlockReader method6736(final int p0, final int p1);
     
     default boolean method6957(final Entity class399, final VoxelShape class400) {
         return true;
@@ -32,7 +32,7 @@ public interface Class1853 extends Class1855
     
     default boolean method6974(final BlockState class7096, final BlockPos class7097, final ISelectionContext class7098) {
         final VoxelShape method21728 = class7096.getCollisionShape(this, class7097, class7098);
-        return method21728.method24540() || this.method6957(null, method21728.method24541(class7097.getX(), class7097.getY(), class7097.getZ()));
+        return method21728.isEmpty() || this.method6957(null, method21728.withOffset(class7097.getX(), class7097.getY(), class7097.getZ()));
     }
     
     default boolean method6975(final Entity class399) {
@@ -52,7 +52,7 @@ public interface Class1853 extends Class1855
     }
     
     default boolean method6979(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
-        return this.method6980(class399, class400, set).allMatch(VoxelShape::method24540);
+        return this.method6980(class399, class400, set).allMatch(VoxelShape::isEmpty);
     }
     
     default Stream<VoxelShape> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public class Class4163 extends Class4158<Class448>
 {

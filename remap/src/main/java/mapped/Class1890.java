@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.VoxelShape;
 import org.apache.commons.lang3.mutable.MutableInt;
 import java.util.Arrays;
@@ -19,13 +19,13 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     private boolean field10278;
     public final Mutable field10279;
     private final long[] field10280;
-    private final Class1855[] field10281;
+    private final IBlockReader[] field10281;
     
     public Class1890(final Class1908 field10275, final Class237 field10276, final S field10277) {
         super(16, 256, 8192);
         this.field10279 = new Mutable();
         this.field10280 = new long[2];
-        this.field10281 = new Class1855[2];
+        this.field10281 = new IBlockReader[2];
         this.field10275 = field10275;
         this.field10276 = field10276;
         this.field10277 = field10277;
@@ -41,14 +41,14 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     }
     
     @Nullable
-    private Class1855 method7295(final int n, final int n2) {
+    private IBlockReader method7295(final int n, final int n2) {
         final long method25423 = Class7859.method25423(n, n2);
         for (int i = 0; i < 2; ++i) {
             if (method25423 == this.field10280[i]) {
                 return this.field10281[i];
             }
         }
-        final Class1855 method25424 = this.field10275.method7400(n, n2);
+        final IBlockReader method25424 = this.field10275.method7400(n, n2);
         for (int j = 1; j > 0; --j) {
             this.field10280[j] = this.field10280[j - 1];
             this.field10281[j] = this.field10281[j - 1];
@@ -69,7 +69,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
             }
             return Class7521.field29147.getDefaultState();
         }
-        final Class1855 method7295 = this.method7295(Class353.method1095(BlockPos.unpackX(n)), Class353.method1095(BlockPos.unpackZ(n)));
+        final IBlockReader method7295 = this.method7295(Class353.method1095(BlockPos.unpackX(n)), Class353.method1095(BlockPos.unpackZ(n)));
         if (method7295 != null) {
             this.field10279.method1288(n);
             final BlockState method7296 = method7295.getBlockState(this.field10279);
@@ -86,16 +86,16 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     }
     
     public VoxelShape method7298(final BlockState class7096, final long n, final Direction class7097) {
-        return class7096.isSolid() ? class7096.getFaceOcclusionShape(this.field10275.method7414(), this.field10279.method1288(n), class7097) : VoxelShapes.method24486();
+        return class7096.isSolid() ? class7096.getFaceOcclusionShape(this.field10275.method7414(), this.field10279.method1288(n), class7097) : VoxelShapes.empty();
     }
     
-    public static int method7299(final Class1855 class1855, final BlockState class1856, final BlockPos class1857, final BlockState class1858, final BlockPos class1859, final Direction class1860, final int n) {
+    public static int method7299(final IBlockReader class1855, final BlockState class1856, final BlockPos class1857, final BlockState class1858, final BlockPos class1859, final Direction class1860, final int n) {
         final boolean b = class1856.isSolid() && class1856.method21703();
         final boolean b2 = class1858.isSolid() && class1858.method21703();
         if (!b && !b2) {
             return n;
         }
-        return VoxelShapes.method24504(b ? class1856.getRenderShape(class1855, class1857) : VoxelShapes.method24486(), b2 ? class1858.getRenderShape(class1855, class1859) : VoxelShapes.method24486(), class1860) ? 16 : n;
+        return VoxelShapes.method24504(b ? class1856.getRenderShape(class1855, class1857) : VoxelShapes.empty(), b2 ? class1858.getRenderShape(class1855, class1859) : VoxelShapes.empty(), class1860) ? 16 : n;
     }
     
     @Override

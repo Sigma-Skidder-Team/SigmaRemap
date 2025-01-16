@@ -9,7 +9,7 @@ import java.nio.file.Path;
 public class Class3697 extends Class3693<Fluid>
 {
     public Class3697(final Class7203 class7203) {
-        super(class7203, Registry.field206);
+        super(class7203, Registry.FLUID);
     }
     
     @Override

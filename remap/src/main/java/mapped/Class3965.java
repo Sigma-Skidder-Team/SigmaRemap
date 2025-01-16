@@ -112,17 +112,17 @@ public class Class3965 extends Block implements Class3966
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3965.field17918[class7096.method21772((IProperty<Integer>)Class3965.field17915)];
     }
     
     @Override
-    public VoxelShape method11811(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11811(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         return Class3965.field17917;
     }
     
     @Override
-    public VoxelShape method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3965.field17918[0];
     }
     
@@ -134,7 +134,7 @@ public class Class3965 extends Block implements Class3966
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         final int intValue = class7096.method21772((IProperty<Integer>)Class3965.field17915);
         final ItemStack method2715 = class7099.method2715(class7100);
         if (intValue < 8 && Class3965.field17916.containsKey((Object)method2715.getItem())) {
@@ -206,7 +206,7 @@ public class Class3965 extends Block implements Class3966
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     
@@ -226,7 +226,7 @@ public class Class3965 extends Block implements Class3966
         field17918 = Class8349.method27851(new VoxelShape[9], array -> {
             int i = 0;
             while (i < 8) {
-                array[i] = VoxelShapes.method24494(Class3965.field17917, Block.method11778(2.0, Math.max(2, 1 + i * 2), 2.0, 14.0, 16.0, 14.0), Class9306.field39920);
+                array[i] = VoxelShapes.method24494(Class3965.field17917, Block.method11778(2.0, Math.max(2, 1 + i * 2), 2.0, 14.0, 16.0, 14.0), IBooleanFunction.ONLY_FIRST);
                 ++i;
             }
             array[8] = array[7];

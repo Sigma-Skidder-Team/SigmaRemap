@@ -16,7 +16,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import java.util.Collection;
 import com.mojang.brigadier.arguments.ArgumentType;
 
-public class Class7384 implements ArgumentType<Class6909>
+public class Class7384 implements ArgumentType<IParticleData>
 {
     private static final Collection<String> field28442;
     public static final DynamicCommandExceptionType field28443;
@@ -25,11 +25,11 @@ public class Class7384 implements ArgumentType<Class6909>
         return new Class7384();
     }
     
-    public static Class6909 method22673(final CommandContext<Class7492> commandContext, final String s) {
-        return (Class6909)commandContext.getArgument(s, (Class)Class6909.class);
+    public static IParticleData method22673(final CommandContext<Class7492> commandContext, final String s) {
+        return (IParticleData)commandContext.getArgument(s, (Class) IParticleData.class);
     }
     
-    public Class6909 parse(final StringReader stringReader) throws CommandSyntaxException {
+    public IParticleData parse(final StringReader stringReader) throws CommandSyntaxException {
         return method22674(stringReader);
     }
     
@@ -37,11 +37,11 @@ public class Class7384 implements ArgumentType<Class6909>
         return Class7384.field28442;
     }
     
-    public static Class6909 method22674(final StringReader stringReader) throws CommandSyntaxException {
+    public static IParticleData method22674(final StringReader stringReader) throws CommandSyntaxException {
         return method22675(stringReader, Registry.field222.method506(ResourceLocation.method7799(stringReader)).orElseThrow(() -> Class7384.field28443.create((Object)class1932)));
     }
     
-    private static <T extends Class6909> T method22675(final StringReader stringReader, final Class6907<T> class6907) throws CommandSyntaxException {
+    private static <T extends IParticleData> T method22675(final StringReader stringReader, final Class6907<T> class6907) throws CommandSyntaxException {
         return class6907.method21271().method19057(class6907, stringReader);
     }
     

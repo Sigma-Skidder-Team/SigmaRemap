@@ -69,8 +69,8 @@ public class Class4518 extends Class4515
             }
         }
         else {
-            class355.setBlockState(class354, ((StateHolder<O, BlockState>)Class7521.field29292.getDefaultState()).with((IProperty<Comparable>)Class3865.field17499, class355.method6702(class354).method21793(Class7324.field28319)), 2);
-            final TileEntity method6727 = class355.method6727(class354);
+            class355.setBlockState(class354, ((StateHolder<O, BlockState>)Class7521.field29292.getDefaultState()).with((IProperty<Comparable>)Class3865.field17499, class355.getFluidState(class354).isTagged(Class7324.field28319)), 2);
+            final TileEntity method6727 = class355.getTileEntity(class354);
             if (method6727 instanceof Class475) {
                 ((Class475)method6727).method2327(this.field19929 ? Class9020.field38094 : Class9020.field38093, random.nextLong());
             }
@@ -85,7 +85,7 @@ public class Class4518 extends Class4515
         return super.method13421(class1851, class1852, random, class1853, class1854);
     }
     
-    private int method13515(final BlockPos class354, final Class1855 class355, final BlockPos class356) {
+    private int method13515(final BlockPos class354, final IBlockReader class355, final BlockPos class356) {
         int method1075 = class354.getY();
         int min = 512;
         final int n = method1075 - 1;
@@ -97,10 +97,10 @@ public class Class4518 extends Class4515
             int b = class354.getY() - 1;
             final Mutable class358 = new Mutable(method1076, b, method1077);
             BlockState class359 = class355.getBlockState(class358);
-            IFluidState class360 = class355.method6702(class358);
+            IFluidState class360 = class355.getFluidState(class358);
             while (true) {
                 if (!class359.method21706()) {
-                    if (!class360.method21793(Class7324.field28319)) {
+                    if (!class360.isTagged(Class7324.field28319)) {
                         if (!class359.getBlock().method11785(Class7188.field27917)) {
                             break;
                         }
@@ -112,7 +112,7 @@ public class Class4518 extends Class4515
                 --b;
                 class358.setPos(method1076, b, method1077);
                 class359 = class355.getBlockState(class358);
-                class360 = class355.method6702(class358);
+                class360 = class355.getFluidState(class358);
             }
             while (true) {
                 min = Math.min(min, b);

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 
 public class Class3861 extends Class3860
@@ -24,7 +24,7 @@ public class Class3861 extends Class3860
     
     @Override
     public Class7096 method11846(final Class7074 class7074) {
-        return ((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.getDefaultState()).with((IProperty<Comparable>)Class3861.field17487, MathHelper.floor((180.0f + class7074.method21646()) * 16.0f / 360.0f + 0.5) & 0xF)).with((IProperty<Comparable>)Class3861.field17483, class7074.method21654().method6702(class7074.method21639()).method21779() == Class7558.field29976);
+        return ((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.getDefaultState()).with((IProperty<Comparable>)Class3861.field17487, MathHelper.floor((180.0f + class7074.method21646()) * 16.0f / 360.0f + 0.5) & 0xF)).with((IProperty<Comparable>)Class3861.field17483, class7074.method21654().getFluidState(class7074.method21639()).getFluid() == Class7558.field29976);
     }
     
     @Override

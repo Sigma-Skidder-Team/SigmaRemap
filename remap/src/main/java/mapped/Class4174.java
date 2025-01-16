@@ -8,7 +8,7 @@ import com.google.common.collect.Maps;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture$Type;
 import com.mojang.authlib.GameProfile;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.Map;
 

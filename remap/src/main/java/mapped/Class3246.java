@@ -63,7 +63,7 @@ public class Class3246 extends Class3167
             if (this.field15741 != null) {
                 if (Class3246.field15514.field4700 == null) {
                     if (this.field15740.method23935() > 1000L) {
-                        final Class7005 class5745 = (Class7005)Class4609.method13700(this.field15741.getPos());
+                        final BlockRayTraceResult class5745 = (BlockRayTraceResult)Class4609.method13700(this.field15741.getPos());
                         if (class5745.method21447().getX() == this.field15741.getPos().getX()) {
                             if (class5745.method21447().getY() == this.field15741.getPos().getY()) {
                                 if (class5745.method21447().getZ() == this.field15741.getPos().getZ()) {
@@ -102,7 +102,7 @@ public class Class3246 extends Class3167
                 if (Class3246.field15514.field4700 != null) {
                     continue;
                 }
-                final Class7005 class5746 = (Class7005)Class4609.method13700(field15741.getPos());
+                final BlockRayTraceResult class5746 = (BlockRayTraceResult)Class4609.method13700(field15741.getPos());
                 if (class5746.method21447().getX() != field15741.getPos().getX()) {
                     continue;
                 }

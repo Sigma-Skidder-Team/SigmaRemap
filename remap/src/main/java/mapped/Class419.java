@@ -82,7 +82,7 @@ public abstract class Class419 extends Entity
             this.setFire(1);
         }
         ++this.field2529;
-        final Class7006 method23092 = Class7476.method23092(this, true, this.field2529 >= 25, this.field2527, Class2040.field11632);
+        final Class7006 method23092 = Class7476.method23092(this, true, this.field2529 >= 25, this.field2527, RayTraceContext.BlockMode.COLLIDER);
         if (method23092.method21449() != Class2165.field12880) {
             this.method2032(method23092);
         }
@@ -107,7 +107,7 @@ public abstract class Class419 extends Entity
         return true;
     }
     
-    public Class6909 method2034() {
+    public IParticleData method2034() {
         return Class8432.field34639;
     }
     
@@ -117,7 +117,7 @@ public abstract class Class419 extends Entity
     
     public void method2032(final Class7006 class7006) {
         if (class7006.method21449() == Class2165.field12881) {
-            final Class7005 class7007 = (Class7005)class7006;
+            final BlockRayTraceResult class7007 = (BlockRayTraceResult)class7006;
             final Class7096 method6701 = this.world.getBlockState(class7007.method21447());
             method6701.method21760(this.world, method6701, class7007, this);
         }

@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -16,7 +16,7 @@ public class Class6092
 {
     private static String[] field24704;
     private boolean field24705;
-    private Class1855 field24706;
+    private IBlockReader field24706;
     private Entity field24707;
     private Vec3d field24708;
     private final Mutable field24709;
@@ -40,7 +40,7 @@ public class Class6092
         this.field24715 = new Quaternion(0.0f, 0.0f, 0.0f, 1.0f);
     }
     
-    public void method18154(final Class1855 field24706, final Entity field24707, final boolean field24708, final boolean field24709, final float n) {
+    public void method18154(final IBlockReader field24706, final Entity field24707, final boolean field24708, final boolean field24709, final float n) {
         this.field24705 = true;
         this.field24706 = field24706;
         this.field24707 = field24707;
@@ -80,7 +80,7 @@ public class Class6092
             final float n5 = n2 * 0.1f;
             final float n6 = n3 * 0.1f;
             final float n7 = n4 * 0.1f;
-            final Class7005 method6987 = this.field24706.rayTraceBlocks(new RayTraceContext(this.field24708.add(n5, n6, n7), new Vec3d(this.field24708.x - this.field24710.getX() * n + n5 + n7, this.field24708.y - this.field24710.getY() * n + n6, this.field24708.z - this.field24710.getZ() * n + n7), Class2040.field11632, Class2191.field13325, this.field24707));
+            final BlockRayTraceResult method6987 = this.field24706.rayTraceBlocks(new RayTraceContext(this.field24708.add(n5, n6, n7), new Vec3d(this.field24708.x - this.field24710.getX() * n + n5 + n7, this.field24708.y - this.field24710.getY() * n + n6, this.field24708.z - this.field24710.getZ() * n + n7), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this.field24707));
             if (method6987.method21449() != Class2165.field12880) {
                 final double method6988 = method6987.method21451().distanceTo(this.field24708);
                 if (method6988 < n) {
@@ -154,10 +154,10 @@ public class Class6092
     
     public IFluidState method18169() {
         if (this.field24705) {
-            final IFluidState method6702 = this.field24706.method6702(this.field24709);
-            return (!method6702.isEmpty() && this.field24708.y >= this.field24709.getY() + method6702.method21782(this.field24706, this.field24709)) ? Class7558.field29974.method22148() : method6702;
+            final IFluidState method6702 = this.field24706.getFluidState(this.field24709);
+            return (!method6702.isEmpty() && this.field24708.y >= this.field24709.getY() + method6702.getActualHeight(this.field24706, this.field24709)) ? Class7558.field29974.getDefaultState() : method6702;
         }
-        return Class7558.field29974.method22148();
+        return Class7558.field29974.getDefaultState();
     }
     
     public BlockState method18170() {

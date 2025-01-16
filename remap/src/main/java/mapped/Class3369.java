@@ -21,7 +21,7 @@ public class Class3369 extends Class3167
     public void method10716(final Class5753 class5753) {
         if (this.method9906() && Class3369.field15514.field4683 != null) {
             if (class5753.method17064().getY() >= Class3369.field15514.field4684.posY) {
-                class5753.method17067(VoxelShapes.method24486());
+                class5753.method17067(VoxelShapes.empty());
             }
         }
     }

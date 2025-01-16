@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;
@@ -56,7 +56,7 @@ public class Class3219 extends Class3167
                 else if (!this.method9883("No Swing")) {
                     Class3219.field15514.field4684.method2707(Class316.field1877);
                 }
-                Class3219.field15514.method5269().method17292(new Class4329(Class316.field1877, new Class7005(new Vec3d(Class3219.field15674.getX() + 0.4 + Math.random() * 0.2, Class3219.field15674.getY() + 0.5, Class3219.field15674.getZ() + 0.4 + Math.random() * 0.2), Direction.UP, Class3219.field15674, false)));
+                Class3219.field15514.method5269().method17292(new Class4329(Class316.field1877, new BlockRayTraceResult(new Vec3d(Class3219.field15674.getX() + 0.4 + Math.random() * 0.2, Class3219.field15674.getY() + 0.5, Class3219.field15674.getZ() + 0.4 + Math.random() * 0.2), Direction.UP, Class3219.field15674, false)));
             }
         }
         else {

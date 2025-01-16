@@ -68,7 +68,7 @@ public class Class420 extends Class419
     }
     
     @Override
-    public Class6909 method2034() {
+    public IParticleData method2034() {
         return Class8432.field34605;
     }
     

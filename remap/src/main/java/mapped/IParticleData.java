@@ -4,7 +4,7 @@
 
 package mapped;
 
-public interface Class6909
+public interface IParticleData
 {
     Class6907<?> method21272();
     

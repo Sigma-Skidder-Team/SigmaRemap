@@ -8,7 +8,7 @@ import java.util.AbstractList;
 import java.util.Iterator;
 import com.google.common.collect.Lists;
 import net.minecraft.nbt.IntArrayNBT;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.Random;
 import java.util.List;

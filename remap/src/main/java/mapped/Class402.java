@@ -142,9 +142,9 @@ public abstract class Class402 extends Entity implements Class401
         if (!method1990.method21706()) {
             if (!method1987) {
                 final VoxelShape method1991 = method1990.method21727(this.world, class354);
-                if (!method1991.method24540()) {
+                if (!method1991.isEmpty()) {
                     final Vec3d method1992 = this.method1934();
-                    final Iterator<AxisAlignedBB> iterator = method1991.method24545().iterator();
+                    final Iterator<AxisAlignedBB> iterator = method1991.toBoundingBoxList().iterator();
                     while (iterator.hasNext()) {
                         if (!iterator.next().method18500(class354).method18505(method1992)) {
                             continue;
@@ -178,7 +178,7 @@ public abstract class Class402 extends Entity implements Class401
             ++this.field2478;
             final Vec3d method1993 = this.method1934();
             Vec3d class355 = method1993.add(method1988);
-            Class7006 method1994 = this.world.rayTraceBlocks(new RayTraceContext(method1993, class355, Class2040.field11632, Class2191.field13325, this));
+            Class7006 method1994 = this.world.rayTraceBlocks(new RayTraceContext(method1993, class355, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, this));
             if (method1994.method21449() != Class2165.field12880) {
                 class355 = method1994.method21451();
             }
@@ -279,7 +279,7 @@ public abstract class Class402 extends Entity implements Class401
         final Class2165 method21449 = class7006.method21449();
         if (method21449 != Class2165.field12882) {
             if (method21449 == Class2165.field12881) {
-                final Class7005 class7007 = (Class7005)class7006;
+                final BlockRayTraceResult class7007 = (BlockRayTraceResult)class7006;
                 final Class7096 method21450 = this.world.getBlockState(class7007.method21447());
                 this.field2471 = method21450;
                 final Vec3d method21451 = class7007.method21451().subtract(this.getPosX(), this.getPosY(), this.getPosZ());

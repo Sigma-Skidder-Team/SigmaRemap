@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public class Class372 extends Class367
 {
@@ -42,7 +42,7 @@ public class Class372 extends Class367
                 if (Class4592.method13609(class1851, method1149)) {
                     if (Class4592.method13609(class1851, method1149.method1149(Direction.SOUTH))) {
                         this.method1243(class1851, method1149, ((StateHolder<O, BlockState>)Class7521.field29823.getDefaultState()).with((IProperty<Comparable>)Class3961.field17901, Direction.SOUTH), set, class1852);
-                        final TileEntity method1150 = class1851.method6727(method1149);
+                        final TileEntity method1150 = class1851.getTileEntity(method1149);
                         if (method1150 instanceof Class438) {
                             final Class438 class1854 = (Class438)method1150;
                             for (int n = 2 + random2.nextInt(2), i = 0; i < n; ++i) {

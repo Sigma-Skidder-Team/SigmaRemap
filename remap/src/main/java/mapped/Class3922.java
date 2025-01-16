@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
@@ -27,11 +27,11 @@ public class Class3922 extends Block implements Class3856
         }
     }
     
-    public static boolean method12038(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public static boolean method12038(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         if (!class7096.get((IProperty<Boolean>)Class3922.field17782)) {
             final Direction[] values = Direction.values();
             for (int length = values.length, i = 0; i < length; ++i) {
-                if (class7097.method6702(class7098.method1149(values[i])).method21793(Class7324.field28319)) {
+                if (class7097.getFluidState(class7098.method1149(values[i])).isTagged(Class7324.field28319)) {
                     return true;
                 }
             }
@@ -43,12 +43,12 @@ public class Class3922 extends Block implements Class3856
     @Nullable
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        final IFluidState method6702 = class7074.method21654().method6702(class7074.method21639());
-        return (BlockState)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3922.field17782, method6702.method21793(Class7324.field28319) && method6702.method21784() == 8);
+        final IFluidState method6702 = class7074.method21654().getFluidState(class7074.method21639());
+        return (BlockState)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3922.field17782, method6702.isTagged(Class7324.field28319) && method6702.getLevel() == 8);
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3922.field17783;
     }
     

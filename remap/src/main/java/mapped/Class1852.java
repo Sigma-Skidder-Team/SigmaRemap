@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 
@@ -92,12 +92,12 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     }
     
     @Nullable
-    default Class1855 method6736(final int n, final int n2) {
+    default IBlockReader method6736(final int n, final int n2) {
         return this.getChunk(n, n2, ChunkStatus.field39977, false);
     }
     
     default boolean method6967(final BlockPos class354) {
-        return this.method6702(class354).method21793(Class7324.field28319);
+        return this.getFluidState(class354).isTagged(Class7324.field28319);
     }
     
     default boolean method6968(final AxisAlignedBB class6221) {

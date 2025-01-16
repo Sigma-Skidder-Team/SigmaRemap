@@ -34,8 +34,8 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
-        return Class7558.field29974.method22148();
+    public IFluidState getFluidState(final BlockPos class354) {
+        return Class7558.field29974.getDefaultState();
     }
     
     @Nullable
@@ -45,7 +45,7 @@ public class Class1864 extends Class1862
     }
     
     @Override
-    public int method6984(final BlockPos class354) {
+    public int getLightValue(final BlockPos class354) {
         return 0;
     }
     

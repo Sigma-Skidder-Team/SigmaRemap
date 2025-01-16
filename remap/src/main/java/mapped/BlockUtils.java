@@ -9,7 +9,7 @@ import java.util.List;
 
 import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public class BlockUtils
 {
@@ -17,7 +17,7 @@ public class BlockUtils
     private static final ThreadLocal<Class9554> field26583;
     private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Class9554>> field26584;
     
-    public static boolean method20647(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100) {
+    public static boolean method20647(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100) {
         final Class5719 class7101 = new Class5719(class7096);
         Class9463.method35173().method35188().method21097(class7101);
         if (class7101.method16987()) {
@@ -31,12 +31,12 @@ public class BlockUtils
         return false;
     }
     
-    public static boolean method20648(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100, final BlockState class7101, final BlockPos class7102) {
+    public static boolean method20648(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100, final BlockState class7101, final BlockPos class7102) {
         final long n = (long)class7096.getBlockStateId() << 36 | (long)class7101.getBlockStateId() << 4 | (long)class7099.ordinal();
         final Long2ByteLinkedOpenHashMap method33401 = class7100.method33401();
         final byte andMoveToFirst = method33401.getAndMoveToFirst(n);
         if (andMoveToFirst == 0) {
-            final boolean method33402 = VoxelShapes.method24496(class7096.getFaceOcclusionShape(class7097, class7098, class7099), class7101.getFaceOcclusionShape(class7097, class7102, class7099.getOpposite()), Class9306.field39920);
+            final boolean method33402 = VoxelShapes.method24496(class7096.getFaceOcclusionShape(class7097, class7098, class7099), class7101.getFaceOcclusionShape(class7097, class7102, class7099.getOpposite()), IBooleanFunction.ONLY_FIRST);
             if (method33401.size() > 400) {
                 method33401.removeLastByte();
             }
@@ -74,7 +74,7 @@ public class BlockUtils
         return (List<BlockState>)class3833.getStateContainer().method32902();
     }
     
-    public static boolean method20655(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public static boolean method20655(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return Block.isOpaque(class7096.getCollisionShape(class7097, class7098));
     }
     

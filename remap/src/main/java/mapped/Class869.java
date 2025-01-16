@@ -8,7 +8,7 @@ import java.util.AbstractList;
 import com.mojang.authlib.AuthenticationService;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 
@@ -891,10 +891,10 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
         }
         if (this.field4693 <= 0 && !this.field4684.method2756()) {
             if (b && this.field4691 != null && this.field4691.method21449() == Class2165.field12881) {
-                final Class7005 class7005 = (Class7005)this.field4691;
-                final BlockPos method21447 = class7005.method21447();
+                final BlockRayTraceResult blockRayTraceResult = (BlockRayTraceResult)this.field4691;
+                final BlockPos method21447 = blockRayTraceResult.method21447();
                 if (!this.field4683.getBlockState(method21447).method21706()) {
-                    final Direction method21448 = class7005.method21448();
+                    final Direction method21448 = blockRayTraceResult.method21448();
                     if (this.field4682.method27314(method21447, method21448)) {
                         this.field4640.method6487(method21447, method21448);
                         this.field4684.method2707(Class316.field1877);
@@ -944,7 +944,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                         break;
                     }
                     case 2: {
-                        final Class7005 class5750 = (Class7005)this.field4691;
+                        final BlockRayTraceResult class5750 = (BlockRayTraceResult)this.field4691;
                         final BlockPos method21447 = class5750.method21447();
                         if (!this.field4683.getBlockState(method21447).method21706()) {
                             this.field4682.method27312(method21447, class5750.method21448());
@@ -998,7 +998,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                                 break;
                             }
                             case 2: {
-                                final Class7005 class5752 = (Class7005)this.field4691;
+                                final BlockRayTraceResult class5752 = (BlockRayTraceResult)this.field4691;
                                 final int method2717 = method2715.method27690();
                                 final Class2201 method2718 = this.field4682.method27319(this.field4684, this.field4683, class5749, class5752);
                                 if (method2718.method8374()) {
@@ -1391,7 +1391,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             final Class2165 method6728 = this.field4691.method21449();
             ItemStack class5749;
             if (method6728 == Class2165.field12881) {
-                final BlockPos method6729 = ((Class7005)this.field4691).method21447();
+                final BlockPos method6729 = ((BlockRayTraceResult)this.field4691).method21447();
                 final BlockState method6730 = this.field4683.getBlockState(method6729);
                 final Block method6731 = method6730.getBlock();
                 if (method6730.method21706()) {
@@ -1402,7 +1402,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
                     return;
                 }
                 if (field27304 && Class527.method3046() && method6731.method11802()) {
-                    method6727 = this.field4683.method6727(method6729);
+                    method6727 = this.field4683.getTileEntity(method6729);
                 }
             }
             else {
@@ -1475,7 +1475,7 @@ public class Class869 extends Class871<Runnable> implements Class868, Class870
             if (class5749.method27620()) {
                 String s = "";
                 if (method6728 == Class2165.field12881) {
-                    s = Registry.BLOCK.getKey(this.field4683.getBlockState(((Class7005)this.field4691).method21447()).method21696()).toString();
+                    s = Registry.BLOCK.getKey(this.field4683.getBlockState(((BlockRayTraceResult)this.field4691).method21447()).method21696()).toString();
                 }
                 else if (method6728 == Class2165.field12882) {
                     s = Registry.field210.getKey(((Class7007)this.field4691).method21452().getType()).toString();

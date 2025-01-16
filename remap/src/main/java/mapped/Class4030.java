@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
@@ -23,7 +23,7 @@ public class Class4030 extends Block
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         switch (Class6795.field26729[class7099.ordinal()]) {
             case 1: {
                 return class7096.method21772((IProperty<Integer>)Class4030.field18124) < 5;
@@ -41,12 +41,12 @@ public class Class4030 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4030.field18125[class7096.method21772((IProperty<Integer>)Class4030.field18124)];
     }
     
     @Override
-    public VoxelShape method11809(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4030.field18125[class7096.method21772((IProperty<Integer>)Class4030.field18124) - 1];
     }
     
@@ -108,6 +108,6 @@ public class Class4030 extends Block
     
     static {
         field18124 = Class8970.field37781;
-        field18125 = new VoxelShape[] { VoxelShapes.method24486(), Block.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 10.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 12.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 14.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 16.0, 16.0) };
+        field18125 = new VoxelShape[] { VoxelShapes.empty(), Block.method11778(0.0, 0.0, 0.0, 16.0, 2.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 4.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 6.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 8.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 10.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 12.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 14.0, 16.0), Block.method11778(0.0, 0.0, 0.0, 16.0, 16.0, 16.0) };
     }
 }

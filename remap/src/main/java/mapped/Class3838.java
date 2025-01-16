@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -77,12 +77,12 @@ public class Class3838 extends Class3834
     }
     
     @Override
-    public int method11851(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return class7096.method21715(class7097, class7098, class7099);
     }
     
     @Override
-    public int method11848(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11848(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return (class7096.get((IProperty<Boolean>)Class3838.field17451) && class7096.get((IProperty<Comparable>)Class3838.field17415) == class7099) ? 15 : 0;
     }
     

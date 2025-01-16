@@ -29,12 +29,12 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
         return new ItemStack(Items.field31630);
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (class7096.get((IProperty<Integer>)Class3884.field17541) != 0) {
             return (class7096.get((IProperty<Integer>)Class3884.field17541) >= 3) ? super.method11808(class7096, class7097, class7098, class7099) : Class3884.field17543;
         }
@@ -77,7 +77,7 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         final int intValue = class7096.get((IProperty<Integer>)Class3884.field17541);
         final int n = (intValue == 3) ? 1 : 0;
         if (n == 0 && class7099.method2715(class7100).getItem() == Items.field31400) {
@@ -98,7 +98,7 @@ public class Class3884 extends Class3874 implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
         return class1857.get((IProperty<Integer>)Class3884.field17541) < 3;
     }
     

@@ -56,7 +56,7 @@ public class Class3849 extends Class3846
     }
     
     @Override
-    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean canEntitySpawn(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return class7099 == EntityType.field29015;
     }
 }

@@ -59,7 +59,7 @@ public class Class8942
                     final Class7990 class7501 = new Class7990(method1136, class7500, false);
                     final BlockState method1138 = class7501.method26065();
                     if (predicate.test(class7501)) {
-                        final TileEntity method1139 = method1136.method6727(class7500);
+                        final TileEntity method1139 = method1136.getTileEntity(class7500);
                         if (method1139 == null) {
                             if (!method1138.isOpaqueCube(method1136, class7500) && !method1138.isCollisionShapeOpaque(method1136, class7500)) {
                                 arrayList3.add(new Class8696(method1137, method1138, null));
@@ -80,7 +80,7 @@ public class Class8942
         }
         if (class7496 == Class2220.field13633) {
             for (final BlockPos class7502 : linkedList) {
-                Class447.method2267(method1136.method6727(class7502));
+                Class447.method2267(method1136.getTileEntity(class7502));
                 method1136.setBlockState(class7502, Class7521.field29517.getDefaultState(), 2);
             }
             final Iterator iterator2 = linkedList.iterator();
@@ -94,7 +94,7 @@ public class Class8942
         arrayList4.addAll(arrayList3);
         final List reverse = Lists.reverse((List)arrayList4);
         for (final Class8696 class7503 : reverse) {
-            Class447.method2267(method1136.method6727(class7503.field36541));
+            Class447.method2267(method1136.getTileEntity(class7503.field36541));
             method1136.setBlockState(class7503.field36541, Class7521.field29517.getDefaultState(), 2);
         }
         int m = 0;
@@ -105,7 +105,7 @@ public class Class8942
             ++m;
         }
         for (final Class8696 class7505 : arrayList2) {
-            final TileEntity method1140 = method1136.method6727(class7505.field36541);
+            final TileEntity method1140 = method1136.getTileEntity(class7505.field36541);
             if (class7505.field36543 != null) {
                 if (method1140 != null) {
                     class7505.field36543.method298("x", class7505.field36541.getX());

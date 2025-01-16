@@ -28,7 +28,7 @@ import io.netty.handler.codec.DecoderException;
 import java.util.Map;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 
@@ -333,20 +333,20 @@ public class PacketBuffer extends ByteBuf
         return this;
     }
     
-    public Class7005 method29520() {
+    public BlockRayTraceResult method29520() {
         final BlockPos method29494 = this.method29494();
-        return new Class7005(new Vec3d(method29494.getX() + this.readFloat(), method29494.getY() + this.readFloat(), method29494.getZ() + this.readFloat()), this.method29499(Direction.class), method29494, this.readBoolean());
+        return new BlockRayTraceResult(new Vec3d(method29494.getX() + this.readFloat(), method29494.getY() + this.readFloat(), method29494.getZ() + this.readFloat()), this.method29499(Direction.class), method29494, this.readBoolean());
     }
     
-    public void method29521(final Class7005 class7005) {
-        final BlockPos method21447 = class7005.method21447();
+    public void method29521(final BlockRayTraceResult blockRayTraceResult) {
+        final BlockPos method21447 = blockRayTraceResult.method21447();
         this.method29495(method21447);
-        this.method29500(class7005.method21448());
-        final Vec3d method21448 = class7005.method21451();
+        this.method29500(blockRayTraceResult.method21448());
+        final Vec3d method21448 = blockRayTraceResult.method21451();
         this.writeFloat((float)(method21448.x - method21447.getX()));
         this.writeFloat((float)(method21448.y - method21447.getY()));
         this.writeFloat((float)(method21448.z - method21447.getZ()));
-        this.writeBoolean(class7005.method21450());
+        this.writeBoolean(blockRayTraceResult.method21450());
     }
     
     public int capacity() {

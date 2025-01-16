@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -40,7 +40,7 @@ public class Class3930 extends Class3841
     }
     
     @Override
-    public VoxelShape method11810(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11810(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return Class3930.field17803;
     }
     
@@ -55,12 +55,12 @@ public class Class3930 extends Class3841
     }
     
     @Override
-    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3930.field17805;
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class8211.field33750[class7096.get((IProperty<Direction>)Class3930.field17798).ordinal()]) {
             case 1: {
                 return Class3930.field17807;
@@ -97,7 +97,7 @@ public class Class3930 extends Class3841
     
     @Nullable
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class435();
     }
     
@@ -112,7 +112,7 @@ public class Class3930 extends Class3841
     }
     
     private static void method12041(final World class1847, final BlockPos class1848, final BlockState class1849, final ItemStack class1850) {
-        final TileEntity method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.getTileEntity(class1848);
         if (method6727 instanceof Class435) {
             ((Class435)method6727).method2170(class1850.method27621(1));
             method12042(class1847, class1848, class1849, true);
@@ -159,7 +159,7 @@ public class Class3930 extends Class3841
     }
     
     private void method12046(final BlockState class7096, final World class7097, final BlockPos class7098) {
-        final TileEntity method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.getTileEntity(class7098);
         if (method6727 instanceof Class435) {
             final Class435 class7099 = (Class435)method6727;
             final Direction class7100 = class7096.get((IProperty<Direction>)Class3930.field17798);
@@ -176,12 +176,12 @@ public class Class3930 extends Class3841
     }
     
     @Override
-    public int method11848(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11848(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return class7096.get((IProperty<Boolean>)Class3930.field17799) ? 15 : 0;
     }
     
     @Override
-    public int method11851(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return (class7099 == Direction.UP && class7096.get((IProperty<Boolean>)Class3930.field17799)) ? 15 : 0;
     }
     
@@ -193,7 +193,7 @@ public class Class3930 extends Class3841
     @Override
     public int method11874(final BlockState class7096, final World class7097, final BlockPos class7098) {
         if (class7096.get((IProperty<Boolean>)Class3930.field17800)) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class435) {
                 return ((Class435)method6727).method2175();
             }
@@ -202,7 +202,7 @@ public class Class3930 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7096.get((IProperty<Boolean>)Class3930.field17800)) {
             final ItemStack method2715 = class7099.method2715(class7100);
             return (!method2715.method27620() && !method2715.getItem().method11742(Class7855.field32277)) ? Class2201.field13401 : Class2201.field13402;
@@ -220,7 +220,7 @@ public class Class3930 extends Class3841
     }
     
     private void method12047(final World class1847, final BlockPos class1848, final PlayerEntity class1849) {
-        final TileEntity method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.getTileEntity(class1848);
         if (method6727 instanceof Class435) {
             class1849.method2833((Class434)method6727);
             class1849.method2857(Class8276.field34049);
@@ -228,7 +228,7 @@ public class Class3930 extends Class3841
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

@@ -303,7 +303,7 @@ public class Class1909 extends AbstractChunkProvider
     }
     
     @Override
-    public Class1855 method7400(final int n, final int n2) {
+    public IBlockReader method7400(final int n, final int n2) {
         final Class9298 method7423 = this.method7423(Class7859.method25423(n, n2));
         if (method7423 == null) {
             return null;
@@ -313,7 +313,7 @@ public class Class1909 extends AbstractChunkProvider
             final ChunkStatus class9312 = Class1909.field10347.get(n3);
             final Optional left = method7423.method34340(class9312).getNow(Class9298.field39871).left();
             if (left.isPresent()) {
-                return (Class1855)left.get();
+                return (IBlockReader)left.get();
             }
             if (class9312 == ChunkStatus.field39986.method34444()) {
                 return null;

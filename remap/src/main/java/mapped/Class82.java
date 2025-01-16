@@ -7,7 +7,7 @@ package mapped;
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 import it.unimi.dsi.fastutil.doubles.AbstractDoubleList;
 
-public class Class82 extends AbstractDoubleList implements Class83
+public class Class82 extends AbstractDoubleList implements IDoubleListMerger
 {
     private static String[] field183;
     private final DoubleList field184;
@@ -24,20 +24,20 @@ public class Class82 extends AbstractDoubleList implements Class83
         return this.field184.size() + this.field185.size();
     }
     
-    public boolean method445(final Class9015 class9015) {
-        return this.field186 ? this.method446((n, n2, n3) -> class9015.method32279(n2, n, n3)) : this.method446(class9015);
+    public boolean forMergedIndexes(final IConsumer class9015) {
+        return this.field186 ? this.method446((n, n2, n3) -> class9015.merge(n2, n, n3)) : this.method446(class9015);
     }
     
-    private boolean method446(final Class9015 class9015) {
+    private boolean method446(final IConsumer class9015) {
         final int n = this.field184.size() - 1;
         for (int i = 0; i < n; ++i) {
-            if (!class9015.method32279(i, -1, i)) {
+            if (!class9015.merge(i, -1, i)) {
                 return false;
             }
         }
-        if (class9015.method32279(n, -1, n)) {
+        if (class9015.merge(n, -1, n)) {
             for (int j = 0; j < this.field185.size(); ++j) {
-                if (!class9015.method32279(n, j, n + 1 + j)) {
+                if (!class9015.merge(n, j, n + 1 + j)) {
                     return false;
                 }
             }
@@ -50,7 +50,7 @@ public class Class82 extends AbstractDoubleList implements Class83
         return (n >= this.field184.size()) ? this.field185.getDouble(n - this.field184.size()) : this.field184.getDouble(n);
     }
     
-    public DoubleList method447() {
+    public DoubleList func_212435_a() {
         return (DoubleList)this;
     }
 }

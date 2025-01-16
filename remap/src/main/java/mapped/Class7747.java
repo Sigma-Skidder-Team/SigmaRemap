@@ -49,14 +49,14 @@ public class Class7747 extends Class7746
             if (class355.getY() > 0) {
                 return super.method24721(class355.method1137(), n);
             }
-            while (class355.getY() < this.field31658.method6986() && this.field31658.getBlockState(class355).method21706()) {
+            while (class355.getY() < this.field31658.getHeight() && this.field31658.getBlockState(class355).method21706()) {
                 class355 = class355.method1137();
             }
             class354 = class355;
         }
         if (this.field31658.getBlockState(class354).method21697().method26439()) {
             BlockPos class356;
-            for (class356 = class354.method1137(); class356.getY() < this.field31658.method6986() && this.field31658.getBlockState(class356).method21697().method26439(); class356 = class356.method1137()) {}
+            for (class356 = class354.method1137(); class356.getY() < this.field31658.getHeight() && this.field31658.getBlockState(class356).method21697().method26439(); class356 = class356.method1137()) {}
             return super.method24721(class356, n);
         }
         return super.method24721(class354, n);

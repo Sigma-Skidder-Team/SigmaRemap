@@ -38,14 +38,14 @@ public class Class4064 extends Item
             class1847.method6706(null, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35042, Class286.field1584, 1.0f, 1.0f);
             return Class9355.method34674(this.method12270(method6740, class1848, new ItemStack(Items.field31578)));
         }
-        final Class7006 method6741 = Item.method11733(class1847, class1848, Class2191.field13326);
+        final Class7006 method6741 = Item.method11733(class1847, class1848, RayTraceContext.FluidMode.SOURCE_ONLY);
         if (method6741.method21449() != Class2165.field12880) {
             if (method6741.method21449() == Class2165.field12881) {
-                final BlockPos method6742 = ((Class7005)method6741).method21447();
+                final BlockPos method6742 = ((BlockRayTraceResult)method6741).method21447();
                 if (!class1847.method6760(class1848, method6742)) {
                     return Class9355.method34676(method6740);
                 }
-                if (class1847.method6702(method6742).method21793(Class7324.field28319)) {
+                if (class1847.getFluidState(method6742).isTagged(Class7324.field28319)) {
                     class1847.method6706(class1848, class1848.getPosX(), class1848.getPosY(), class1848.getPosZ(), Class8520.field35041, Class286.field1584, 1.0f, 1.0f);
                     return Class9355.method34674(this.method12270(method6740, class1848, Class5333.method16476(new ItemStack(Items.field31441), Class8644.field36251)));
                 }

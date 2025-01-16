@@ -9,12 +9,12 @@ public class Class7260 extends Class7258
     private static String[] field28137;
     
     @Override
-    public int method22164(final IFluidState IFluidState) {
+    public int getLevel(final IFluidState IFluidState) {
         return 8;
     }
     
     @Override
-    public boolean method22163(final IFluidState IFluidState) {
+    public boolean isSource(final IFluidState IFluidState) {
         return true;
     }
 }

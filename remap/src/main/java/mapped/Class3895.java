@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -23,7 +23,7 @@ public abstract class Class3895 extends Class3892
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3895.field17577;
     }
     
@@ -50,12 +50,12 @@ public abstract class Class3895 extends Class3892
     }
     
     @Override
-    public int method11851(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return class7096.method21715(class7097, class7098, class7099);
     }
     
     @Override
-    public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11848(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         if (class7096.method21772((IProperty<Boolean>)Class3895.field17578)) {
             return (class7096.method21772((IProperty<Comparable>)Class3895.field17564) != class7099) ? 0 : this.method11974(class7097, class7098, class7096);
         }
@@ -65,7 +65,7 @@ public abstract class Class3895 extends Class3892
     @Override
     public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (!class7096.method21752(class7097, class7098)) {
-            Block.method11837(class7096, class7097, class7098, this.method11802() ? class7097.method6727(class7098) : null);
+            Block.method11837(class7096, class7097, class7098, this.method11802() ? class7097.getTileEntity(class7098) : null);
             class7097.method6690(class7098, false);
             final Direction[] values = Direction.values();
             for (int length = values.length, i = 0; i < length; ++i) {
@@ -178,7 +178,7 @@ public abstract class Class3895 extends Class3892
         return class7096.method21714();
     }
     
-    public int method11974(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public int method11974(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         return 15;
     }
     
@@ -186,7 +186,7 @@ public abstract class Class3895 extends Class3892
         return class7096.method21696() instanceof Class3895;
     }
     
-    public boolean method11976(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public boolean method11976(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         final Direction method782 = class1857.method21772((IProperty<Direction>)Class3895.field17564).getOpposite();
         final Class7096 method783 = class1855.getBlockState(class1856.method1149(method782));
         return method11975(method783) && ((StateHolder<Object, Object>)method783).get((IProperty<Comparable>)Class3895.field17564) != method782;

@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Arrays;
@@ -199,7 +199,7 @@ public class Class461 extends Class460 implements Class441, Class439
     
     @Override
     public boolean method2162(final PlayerEntity playerEntity) {
-        return this.field2656.method6727(this.field2657) == this && playerEntity.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
+        return this.field2656.getTileEntity(this.field2657) == this && playerEntity.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
     }
     
     @Override

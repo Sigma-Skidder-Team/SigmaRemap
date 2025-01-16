@@ -21,7 +21,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.CubeCoordinateIterator;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -367,10 +367,10 @@ public class Class1848 extends World
         class385.setPos(n5, n6, n7);
         final Class7096 method6701 = this.getBlockState(class385);
         method6701.method21696().method11823(method6701, this, class385, random);
-        final IFluidState method6702 = this.method6702(class385);
+        final IFluidState method6702 = this.getFluidState(class385);
         if (!method6702.isEmpty()) {
-            method6702.method21787(this, class385, random);
-            final Class6909 method6703 = method6702.method21792();
+            method6702.animateTick(this, class385, random);
+            final IParticleData method6703 = method6702.getDripParticleData();
             if (method6703 != null) {
                 if (this.rand.nextInt(10) == 0) {
                     final boolean method6704 = method6701.method21761(this, class385, Direction.DOWN);
@@ -386,7 +386,7 @@ public class Class1848 extends World
         }
     }
     
-    private void method6827(final BlockPos class354, final Class7096 class355, final Class6909 class356, final boolean b) {
+    private void method6827(final BlockPos class354, final Class7096 class355, final IParticleData class356, final boolean b) {
         if (class355.method21756().method21781()) {
             final VoxelShape method21727 = class355.method21727(this, class354);
             if (method21727.method24536(Axis.Y) >= 1.0) {
@@ -412,12 +412,12 @@ public class Class1848 extends World
         }
     }
     
-    private void method6828(final BlockPos class354, final Class6909 class355, final VoxelShape class356, final double n) {
+    private void method6828(final BlockPos class354, final IParticleData class355, final VoxelShape class356, final double n) {
         this.method6829(class354.getX() + class356.method24535(Axis.X), class354.getX() + class356.method24536(Axis.X), class354.getZ() + class356.method24535(Axis.Z), class354.getZ() + class356.method24536(Axis.Z), n, class355);
     }
     
-    private void method6829(final double n, final double n2, final double n3, final double n4, final double n5, final Class6909 class6909) {
-        this.method6709(class6909, MathHelper.method35701(this.rand.nextDouble(), n, n2), n5, MathHelper.method35701(this.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
+    private void method6829(final double n, final double n2, final double n3, final double n4, final double n5, final IParticleData IParticleData) {
+        this.method6709(IParticleData, MathHelper.method35701(this.rand.nextDouble(), n, n2), n5, MathHelper.method35701(this.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
     }
     
     public void method6830() {
@@ -616,23 +616,23 @@ public class Class1848 extends World
     }
     
     @Override
-    public void method6709(final Class6909 class6909, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this.field10074.method5744(class6909, class6909.method21272().method21270(), n, n2, n3, n4, n5, n6);
+    public void method6709(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        this.field10074.method5744(IParticleData, IParticleData.method21272().method21270(), n, n2, n3, n4, n5, n6);
     }
     
     @Override
-    public void method6710(final Class6909 class6909, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this.field10074.method5744(class6909, class6909.method21272().method21270() || b, n, n2, n3, n4, n5, n6);
+    public void method6710(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        this.field10074.method5744(IParticleData, IParticleData.method21272().method21270() || b, n, n2, n3, n4, n5, n6);
     }
     
     @Override
-    public void method6711(final Class6909 class6909, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this.field10074.method5745(class6909, false, true, n, n2, n3, n4, n5, n6);
+    public void method6711(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        this.field10074.method5745(IParticleData, false, true, n, n2, n3, n4, n5, n6);
     }
     
     @Override
-    public void method6712(final Class6909 class6909, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this.field10074.method5745(class6909, class6909.method21272().method21270() || b, true, n, n2, n3, n4, n5, n6);
+    public void method6712(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        this.field10074.method5745(IParticleData, IParticleData.method21272().method21270() || b, true, n, n2, n3, n4, n5, n6);
     }
     
     @Override

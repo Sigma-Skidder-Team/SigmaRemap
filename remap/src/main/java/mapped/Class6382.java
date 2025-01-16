@@ -7,7 +7,7 @@ package mapped;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.StringReader;
 
-public interface Class6382<T extends Class6909>
+public interface Class6382<T extends IParticleData>
 {
     T method19057(final Class6907<T> p0, final StringReader p1) throws CommandSyntaxException;
     

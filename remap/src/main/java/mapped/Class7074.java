@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -19,7 +19,7 @@ public class Class7074 extends Class7075
         this(class7075.method21654(), class7075.method21652(), class7075.method21653(), class7075.method21651(), class7075.field27553);
     }
     
-    public Class7074(final World class1847, final PlayerEntity class1848, final Class316 class1849, final ItemStack class1850, final Class7005 class1851) {
+    public Class7074(final World class1847, final PlayerEntity class1848, final Class316 class1849, final ItemStack class1850, final BlockRayTraceResult class1851) {
         super(class1847, class1848, class1849, class1850, class1851);
         this.field27549 = true;
         this.field27548 = class1851.method21447().method1149(class1851.method21448());
@@ -27,7 +27,7 @@ public class Class7074 extends Class7075
     }
     
     public static Class7074 method21647(final Class7074 class7074, final BlockPos class7075, final Direction class7076) {
-        return new Class7074(class7074.method21654(), class7074.method21652(), class7074.method21653(), class7074.method21651(), new Class7005(new Vec3d(class7075.getX() + 0.5 + class7076.getXOffset() * 0.5, class7075.getY() + 0.5 + class7076.getYOffset() * 0.5, class7075.getZ() + 0.5 + class7076.getZOffset() * 0.5), class7076, class7075, false));
+        return new Class7074(class7074.method21654(), class7074.method21652(), class7074.method21653(), class7074.method21651(), new BlockRayTraceResult(new Vec3d(class7075.getX() + 0.5 + class7076.getXOffset() * 0.5, class7075.getY() + 0.5 + class7076.getYOffset() * 0.5, class7075.getZ() + 0.5 + class7076.getZOffset() * 0.5), class7076, class7075, false));
     }
     
     @Override

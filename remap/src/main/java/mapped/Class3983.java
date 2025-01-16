@@ -8,7 +8,7 @@ import java.util.Random;
 import com.google.common.base.MoreObjects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -32,7 +32,7 @@ public class Class3983 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class8528.field35802[class7096.get((IProperty<Direction>)Class3983.field17983).ordinal()]) {
             default: {
                 return Class3983.field17989;
@@ -205,12 +205,12 @@ public class Class3983 extends Block
     }
     
     @Override
-    public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11848(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return class7096.method21772((IProperty<Boolean>)Class3983.field17984) ? 15 : 0;
     }
     
     @Override
-    public int method11851(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         if (class7096.method21772((IProperty<Boolean>)Class3983.field17984)) {
             return (class7096.method21772((IProperty<Comparable>)Class3983.field17983) != class7099) ? 0 : 15;
         }

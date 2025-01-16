@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -185,7 +185,7 @@ public class Class4653 extends Class4651
         }
         final BlockPos method1139 = class354.method1139();
         final VoxelShape method1140 = this.field20140.getBlockState(method1139).getCollisionShape(this.field20140, method1139);
-        return method1139.getY() + (method1140.method24540() ? 0.0 : method1140.method24536(Axis.Y));
+        return method1139.getY() + (method1140.isEmpty() ? 0.0 : method1140.method24536(Axis.Y));
     }
     
     @Nullable
@@ -264,7 +264,7 @@ public class Class4653 extends Class4651
     }
     
     @Override
-    public Class257 method13910(final Class1855 class1855, final boolean b, final boolean b2, final BlockPos class1856, Class257 class1857) {
+    public Class257 method13910(final IBlockReader class1855, final boolean b, final boolean b2, final BlockPos class1856, Class257 class1857) {
         if (class1857 == Class257.field1213) {
             if (!(class1855.getBlockState(class1856).getBlock() instanceof Class4017)) {
                 if (!(class1855.getBlockState(class1856.method1139()).getBlock() instanceof Class4017)) {
@@ -289,7 +289,7 @@ public class Class4653 extends Class4651
     }
     
     @Override
-    public Class257 method13913(final Class1855 class1855, final int n, final int n2, final int n3) {
+    public Class257 method13913(final IBlockReader class1855, final int n, final int n2, final int n3) {
         Class257 class1856 = Class4651.method13916(class1855, n, n2, n3);
         if (class1856 != Class257.field1211) {
             if (class1856 == Class257.field1206) {

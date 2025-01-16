@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.Matrix3f;
 import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.Vector4f;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public class Class4155 extends Class4154
 {

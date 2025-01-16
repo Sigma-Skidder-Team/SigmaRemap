@@ -18,7 +18,7 @@ public class Class3909 extends Class3910 implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
         return class1855.getBlockState(class1856.method1137()).method21706();
     }
     

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.util.Iterator;
 import com.google.common.collect.Sets;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -42,7 +42,7 @@ public class Class3999 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3999.field18028[method12150(class7096)];
     }
     
@@ -159,7 +159,7 @@ public class Class3999 extends Block
         }
     }
     
-    private Class106 method12151(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    private Class106 method12151(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
         final BlockPos method1149 = class1856.method1149(class1857);
         final BlockState method1150 = class1855.getBlockState(method1149);
         final BlockPos method1151 = class1856.method1137();
@@ -326,12 +326,12 @@ public class Class3999 extends Block
     }
     
     @Override
-    public int method11851(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return this.field18029 ? class7096.method21715(class7097, class7098, class7099) : 0;
     }
     
     @Override
-    public int method11848(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction o) {
+    public int method11848(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction o) {
         if (!this.field18029) {
             return 0;
         }
@@ -362,7 +362,7 @@ public class Class3999 extends Block
         return 0;
     }
     
-    private boolean method12156(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    private boolean method12156(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
         final BlockPos method1149 = class1856.method1149(class1857);
         final BlockState method1150 = class1855.getBlockState(method1149);
         final boolean method1151 = method1150.method21713(class1855, method1149);
@@ -387,7 +387,7 @@ public class Class3999 extends Block
         return true;
     }
     
-    public static boolean method12157(final Class1855 class1855, final BlockPos class1856) {
+    public static boolean method12157(final IBlockReader class1855, final BlockPos class1856) {
         return method12158(class1855.getBlockState(class1856));
     }
     

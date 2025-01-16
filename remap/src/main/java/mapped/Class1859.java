@@ -6,13 +6,13 @@ package mapped;
 
 import javax.annotation.Nullable;
 
-public enum Class1859 implements Class1855
+public enum Class1859 implements IBlockReader
 {
     field10138;
     
     @Nullable
     @Override
-    public TileEntity method6727(final BlockPos class354) {
+    public TileEntity getTileEntity(final BlockPos class354) {
         return null;
     }
     
@@ -22,7 +22,7 @@ public enum Class1859 implements Class1855
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
-        return Class7558.field29974.method22148();
+    public IFluidState getFluidState(final BlockPos class354) {
+        return Class7558.field29974.getDefaultState();
     }
 }

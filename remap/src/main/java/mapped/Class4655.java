@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
@@ -43,14 +43,14 @@ public class Class4655 extends Class4654
     }
     
     @Override
-    public Class257 method13908(final Class1855 class1855, final int n, final int n2, final int n3, final Class759 class1856, final int n4, final int n5, final int n6, final boolean b, final boolean b2) {
+    public Class257 method13908(final IBlockReader class1855, final int n, final int n2, final int n3, final Class759 class1856, final int n4, final int n5, final int n6, final boolean b, final boolean b2) {
         return this.method13913(class1855, n, n2, n3);
     }
     
     @Override
-    public Class257 method13913(final Class1855 class1855, final int n, final int n2, final int n3) {
+    public Class257 method13913(final IBlockReader class1855, final int n, final int n2, final int n3) {
         final BlockPos class1856 = new BlockPos(n, n2, n3);
-        final IFluidState method6702 = class1855.method6702(class1856);
+        final IFluidState method6702 = class1855.getFluidState(class1856);
         final BlockState method6703 = class1855.getBlockState(class1856);
         if (method6702.isEmpty()) {
             if (method6703.method21749(class1855, class1856.method1139(), Class2084.field12052)) {
@@ -59,7 +59,7 @@ public class Class4655 extends Class4654
                 }
             }
         }
-        return (method6702.method21793(Class7324.field28319) && method6703.method21749(class1855, class1856, Class2084.field12052)) ? Class257.field1211 : Class257.field1205;
+        return (method6702.isTagged(Class7324.field28319) && method6703.method21749(class1855, class1856, Class2084.field12052)) ? Class257.field1211 : Class257.field1205;
     }
     
     @Nullable
@@ -83,7 +83,7 @@ public class Class4655 extends Class4654
             method13919 = super.method13919(n, n2, n3);
             method13919.field26601 = method13920;
             method13919.field26600 = Math.max(method13919.field26600, method13921);
-            if (this.field20140.method6702(new BlockPos(n, n2, n3)).isEmpty()) {
+            if (this.field20140.getFluidState(new BlockPos(n, n2, n3)).isEmpty()) {
                 final Class6772 class6772 = method13919;
                 class6772.field26600 += 8.0f;
             }
@@ -96,7 +96,7 @@ public class Class4655 extends Class4654
         for (int i = n; i < n + this.field20143; ++i) {
             for (int j = n2; j < n2 + this.field20144; ++j) {
                 for (int k = n3; k < n3 + this.field20145; ++k) {
-                    final IFluidState method6702 = this.field20140.method6702(class385.setPos(i, j, k));
+                    final IFluidState method6702 = this.field20140.getFluidState(class385.setPos(i, j, k));
                     final BlockState method6703 = this.field20140.getBlockState(class385.setPos(i, j, k));
                     if (method6702.isEmpty()) {
                         if (method6703.method21749(this.field20140, class385.method1139(), Class2084.field12052)) {
@@ -105,7 +105,7 @@ public class Class4655 extends Class4654
                             }
                         }
                     }
-                    if (!method6702.method21793(Class7324.field28319)) {
+                    if (!method6702.isTagged(Class7324.field28319)) {
                         return Class257.field1205;
                     }
                 }

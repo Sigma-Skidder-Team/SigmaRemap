@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
@@ -280,7 +280,7 @@ public class Class455 extends Class456 implements Class453, Class439
     }
     
     public static List<Class427> method2309(final Class453 class453) {
-        return class453.method2285().method24545().stream().flatMap(class455 -> class454.method2186().method6739((Class<? extends Entity>)Class427.class, class455.method18499(class454.method2286() - 0.5, class454.method2287() - 0.5, class454.method2288() - 0.5), (Predicate<? super Entity>)Class9170.field38845).stream()).collect((Collector<? super Object, ?, List<Class427>>)Collectors.toList());
+        return class453.method2285().toBoundingBoxList().stream().flatMap(class455 -> class454.method2186().method6739((Class<? extends Entity>)Class427.class, class455.method18499(class454.method2286() - 0.5, class454.method2287() - 0.5, class454.method2288() - 0.5), (Predicate<? super Entity>)Class9170.field38845).stream()).collect((Collector<? super Object, ?, List<Class427>>)Collectors.toList());
     }
     
     @Nullable
@@ -296,7 +296,7 @@ public class Class455 extends Class456 implements Class453, Class439
         final Block method6702 = method6701.getBlock();
         if (!(method6702 instanceof Class3966)) {
             if (method6702.method11802()) {
-                final TileEntity method6703 = class1847.method6727(class1849);
+                final TileEntity method6703 = class1847.getTileEntity(class1849);
                 if (method6703 instanceof Class446) {
                     class1848 = (Class446)method6703;
                     if (class1848 instanceof Class475) {
@@ -363,7 +363,7 @@ public class Class455 extends Class456 implements Class453, Class439
     public void method2316(final Entity class399) {
         if (class399 instanceof Class427) {
             final BlockPos method2193 = this.getPos();
-            if (VoxelShapes.method24496(VoxelShapes.method24489(class399.getBoundingBox().method18499(-method2193.getX(), -method2193.getY(), -method2193.getZ())), this.method2285(), Class9306.field39924)) {
+            if (VoxelShapes.method24496(VoxelShapes.method24489(class399.getBoundingBox().method18499(-method2193.getX(), -method2193.getY(), -method2193.getZ())), this.method2285(), IBooleanFunction.AND)) {
                 this.method2294(() -> method2302(this, (Class427)class400));
             }
         }

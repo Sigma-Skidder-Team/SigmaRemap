@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.WeakHashMap;
 import com.google.common.collect.Lists;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -17,7 +17,7 @@ public class Class4024 extends Class4022
 {
     private static String[] field18112;
     public static final Class7113 field18113;
-    private static final Map<Class1855, List<Class7387>> field18114;
+    private static final Map<IBlockReader, List<Class7387>> field18114;
     
     public Class4024(final Class9288 class9288) {
         super(class9288);
@@ -48,7 +48,7 @@ public class Class4024 extends Class4022
     }
     
     @Override
-    public int method11848(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11848(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return (class7096.get((IProperty<Boolean>)Class4024.field18113) && Direction.UP != class7099) ? 15 : 0;
     }
     
@@ -98,7 +98,7 @@ public class Class4024 extends Class4022
     }
     
     @Override
-    public int method11851(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return (class7099 != Direction.DOWN) ? 0 : class7096.method21715(class7097, class7098, class7099);
     }
     
@@ -140,6 +140,6 @@ public class Class4024 extends Class4022
     
     static {
         field18113 = Class8970.field37736;
-        field18114 = new WeakHashMap<Class1855, List<Class7387>>();
+        field18114 = new WeakHashMap<IBlockReader, List<Class7387>>();
     }
 }

@@ -122,7 +122,7 @@ public class Class9083
     
     @Nullable
     private Class501 method32757() {
-        return (Class501)this.field38458.method6727(this.field38457);
+        return (Class501)this.field38458.getTileEntity(this.field38457);
     }
     
     public Class1849 method32758() {

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -34,7 +34,7 @@ public class Class3969 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Direction class7100 = class7096.get((IProperty<Direction>)Class3969.field17931);
         final boolean b = !class7096.get((IProperty<Boolean>)Class3969.field17932);
         final boolean b2 = class7096.get(Class3969.field17933) == Class187.field604;
@@ -99,7 +99,7 @@ public class Class3969 extends Block
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         switch (Class8905.field37443[class7099.ordinal()]) {
             case 1: {
                 return class7096.get((IProperty<Boolean>)Class3969.field17932);
@@ -186,7 +186,7 @@ public class Class3969 extends Block
     }
     
     @Override
-    public Class2201 method11844(BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (this.field17401 != Material.IRON) {
             class7096 = ((StateHolder<O, BlockState>)class7096).method21768((IProperty<Comparable>)Class3969.field17932);
             class7097.setBlockState(class7098, class7096, 10);

@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -61,10 +61,10 @@ public class Class3858 extends Block implements Class3857
     }
     
     public static boolean method11924(final Class1851 class1851, final BlockPos class1852) {
-        final IFluidState method6702 = class1851.method6702(class1852);
+        final IFluidState method6702 = class1851.getFluidState(class1852);
         if (class1851.getBlockState(class1852).getBlock() == Class7521.field29173) {
-            if (method6702.method21784() >= 8) {
-                if (method6702.method21780()) {
+            if (method6702.getLevel() >= 8) {
+                if (method6702.isSource()) {
                     return true;
                 }
             }
@@ -72,7 +72,7 @@ public class Class3858 extends Block implements Class3857
         return false;
     }
     
-    private static boolean method11925(final Class1855 class1855, final BlockPos class1856) {
+    private static boolean method11925(final IBlockReader class1855, final BlockPos class1856) {
         final Class7096 method6701 = class1855.getBlockState(class1856);
         final Block method6702 = method6701.method21696();
         if (method6702 != Class7521.field29765) {
@@ -141,8 +141,8 @@ public class Class3858 extends Block implements Class3857
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return VoxelShapes.method24486();
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        return VoxelShapes.empty();
     }
     
     @Override

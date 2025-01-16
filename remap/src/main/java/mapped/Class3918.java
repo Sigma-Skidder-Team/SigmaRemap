@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -33,9 +33,9 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (class7096.get((IProperty<Boolean>)Class3918.field17760)) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class448) {
                 final Class448 class7102 = (Class448)method6727;
                 final ItemStack method6728 = class7099.method2715(class7100);
@@ -69,7 +69,7 @@ public class Class3918 extends Class3841 implements Class3856
     @Override
     public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class448) {
                 Class9193.method33641(class7097, class7098, ((Class448)method6727).method2270());
             }
@@ -82,7 +82,7 @@ public class Class3918 extends Class3841 implements Class3856
     public BlockState method11846(final Class7074 class7074) {
         final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
-        final boolean b = method21654.method6702(method21655).method21779() == Class7558.field29976;
+        final boolean b = method21654.getFluidState(method21655).getFluid() == Class7558.field29976;
         return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3918.field17762, b)).with((IProperty<Comparable>)Class3918.field17761, this.method12030(method21654.getBlockState(method21655.method1139())))).with((IProperty<Comparable>)Class3918.field17760, !b)).with((IProperty<Comparable>)Class3918.field17763, class7074.method21644());
     }
     
@@ -104,7 +104,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3918.field17759;
     }
     
@@ -129,7 +129,7 @@ public class Class3918 extends Class3841 implements Class3856
     
     @Override
     public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final IFluidState class1854) {
-        if (!class1853.get((IProperty<Boolean>)Class8970.field37747) && class1854.method21779() == Class7558.field29976) {
+        if (!class1853.get((IProperty<Boolean>)Class8970.field37747) && class1854.getFluid() == Class7558.field29976) {
             if (class1853.get((IProperty<Boolean>)Class3918.field17760)) {
                 if (!class1851.isRemote()) {
                     class1851.method6705(null, class1852, Class8520.field35219, Class286.field1582, 1.0f, 1.0f);
@@ -139,13 +139,13 @@ public class Class3918 extends Class3841 implements Class3856
                         method12032(class1851.method6744(), class1852, class1853.get((IProperty<Boolean>)Class3918.field17761), true);
                     }
                 }
-                final TileEntity method6727 = class1851.method6727(class1852);
+                final TileEntity method6727 = class1851.getTileEntity(class1852);
                 if (method6727 instanceof Class448) {
                     ((Class448)method6727).method2275();
                 }
             }
             class1851.setBlockState(class1852, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class1853).with((IProperty<Comparable>)Class3918.field17762, true)).with((IProperty<Comparable>)Class3918.field17760, false), 3);
-            class1851.method6834().method21345(class1852, class1854.method21779(), class1854.method21779().method22156(class1851));
+            class1851.method6834().method21345(class1852, class1854.getFluid(), class1854.getFluid().method22156(class1851));
             return true;
         }
         return false;
@@ -160,7 +160,7 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public void onProjectileCollision(final World class1847, final BlockState class1848, final Class7005 class1849, final Entity class1850) {
+    public void onProjectileCollision(final World class1847, final BlockState class1848, final BlockRayTraceResult class1849, final Entity class1850) {
         if (!class1847.isRemote) {
             if (class1850 instanceof Class416 || (class1850 instanceof Class402 && class1850.method1804())) {
                 final Entity method12031 = this.method12031(class1850);
@@ -202,7 +202,7 @@ public class Class3918 extends Class3841 implements Class3856
             if (method12034(method1141)) {
                 return true;
             }
-            if (VoxelShapes.method24496(Class3918.field17764, method1141.getCollisionShape(class1847, class1848, ISelectionContext.dummy()), Class9306.field39924)) {
+            if (VoxelShapes.method24496(Class3918.field17764, method1141.getCollisionShape(class1847, class1848, ISelectionContext.dummy()), IBooleanFunction.AND)) {
                 return method12034(class1847.getBlockState(method1140.method1139()));
             }
         }
@@ -234,12 +234,12 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class448();
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

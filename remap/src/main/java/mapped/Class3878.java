@@ -25,12 +25,12 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3878.field17530[class7096.get((IProperty<Integer>)this.method11952())];
     }
     
     @Override
-    public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.getBlock() == Class7521.field29298;
     }
     
@@ -80,7 +80,7 @@ public class Class3878 extends Class3874 implements Class3872
         return MathHelper.method35658(class1847.rand, 2, 5);
     }
     
-    public static float method11959(final Block class3833, final Class1855 class3834, final BlockPos class3835) {
+    public static float method11959(final Block class3833, final IBlockReader class3834, final BlockPos class3835) {
         float n = 1.0f;
         final BlockPos method1139 = class3835.method1139();
         for (int i = -1; i <= 1; ++i) {
@@ -155,12 +155,12 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
         return new ItemStack(this.method11960());
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
         return !this.method11956(class1857);
     }
     

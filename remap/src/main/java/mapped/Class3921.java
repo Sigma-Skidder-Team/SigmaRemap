@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
@@ -35,7 +35,7 @@ public class Class3921 extends Block implements Class3856
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class9296.field39868[class7096.get(Class3921.field17777).ordinal()]) {
             case 1: {
                 return VoxelShapes.method24487();
@@ -55,7 +55,7 @@ public class Class3921 extends Block implements Class3856
         final BlockPos method21639 = class7074.method21639();
         final BlockState method21640 = class7074.method21654().getBlockState(method21639);
         if (method21640.getBlock() != this) {
-            final BlockState class7075 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3921.field17777, Class186.field599)).with((IProperty<Comparable>)Class3921.field17778, class7074.method21654().method6702(method21639).method21779() == Class7558.field29976);
+            final BlockState class7075 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3921.field17777, Class186.field599)).with((IProperty<Comparable>)Class3921.field17778, class7074.method21654().getFluidState(method21639).getFluid() == Class7558.field29976);
             final Direction method21641 = class7074.method21648();
             return (method21641 != Direction.DOWN && (method21641 == Direction.UP || class7074.method21649().y - method21639.getY() <= 0.5)) ? class7075 : ((StateHolder<O, BlockState>)class7075).with(Class3921.field17777, Class186.field598);
         }
@@ -91,7 +91,7 @@ public class Class3921 extends Block implements Class3856
     }
     
     @Override
-    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
+    public boolean method11920(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
         return class1857.get(Class3921.field17777) != Class186.field600 && super.method11920(class1855, class1856, class1857, class1858);
     }
     
@@ -104,13 +104,13 @@ public class Class3921 extends Block implements Class3856
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         switch (Class9296.field39869[class7099.ordinal()]) {
             case 1: {
                 return false;
             }
             case 2: {
-                return class7097.method6702(class7098).method21793(Class7324.field28319);
+                return class7097.getFluidState(class7098).isTagged(Class7324.field28319);
             }
             case 3: {
                 return false;

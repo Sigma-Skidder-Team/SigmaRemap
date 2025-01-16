@@ -7,7 +7,7 @@ package mapped;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 import com.google.common.collect.Sets;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
@@ -276,7 +276,7 @@ public class Class8974
         return Class7520.field29141;
     }
     
-    private Class6332 method31889(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Class6332 class1858) {
+    private Class6332 method31889(final IBlockReader class1855, final Class7096 class1856, final BlockPos class1857, final Class6332 class1858) {
         if (Class8929.method31490()) {
             final Class6332 method31486 = Class8929.method31486(class1855, class1856, class1857);
             if (method31486 != null) {

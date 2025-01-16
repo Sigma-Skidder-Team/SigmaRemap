@@ -93,13 +93,13 @@ public class Class1865 implements IChunk
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
+    public IFluidState getFluidState(final BlockPos class354) {
         final int method1075 = class354.getY();
         if (!World.method6684(method1075)) {
             final Class8199 class355 = this.method7014()[method1075 >> 4];
-            return Class8199.method27155(class355) ? Class7558.field29974.method22148() : class355.method27149(class354.getX() & 0xF, method1075 & 0xF, class354.getZ() & 0xF);
+            return Class8199.method27155(class355) ? Class7558.field29974.getDefaultState() : class355.method27149(class354.getX() & 0xF, method1075 & 0xF, class354.getZ() & 0xF);
         }
-        return Class7558.field29974.method22148();
+        return Class7558.field29974.getDefaultState();
     }
     
     @Override
@@ -135,7 +135,7 @@ public class Class1865 implements IChunk
         if (this.field10177[method1075 >> 4] == Class1862.field10141 && class355.getBlock() == Class7521.field29147) {
             return class355;
         }
-        if (class355.method21704() > 0) {
+        if (class355.getLightValue() > 0) {
             this.field10179.add(new BlockPos((method1074 & 0xF) + this.method7019().method25426(), method1075, (method1076 & 0xF) + this.method7019().method25427()));
         }
         final BlockState method1077 = this.method7093(method1075 >> 4).method27152(method1074 & 0xF, method1075 & 0xF, method1076 & 0xF, class355);
@@ -143,7 +143,7 @@ public class Class1865 implements IChunk
             if (this.field10174.method34451(ChunkStatus.field39985)) {
                 if (class355 != method1077) {
                     if (class355.getOpacity(this, class354) == method1077.getOpacity(this, class354)) {
-                        if (class355.method21704() == method1077.method21704()) {
+                        if (class355.getLightValue() == method1077.getLightValue()) {
                             if (!class355.method21703()) {
                                 if (!method1077.method21703()) {
                                     break Label_0111;
@@ -198,7 +198,7 @@ public class Class1865 implements IChunk
     
     @Nullable
     @Override
-    public TileEntity method6727(final BlockPos class354) {
+    public TileEntity getTileEntity(final BlockPos class354) {
         return this.field10175.get(class354);
     }
     
@@ -407,7 +407,7 @@ public class Class1865 implements IChunk
     @Nullable
     @Override
     public Class51 method7034(final BlockPos class354) {
-        final TileEntity method6727 = this.method6727(class354);
+        final TileEntity method6727 = this.getTileEntity(class354);
         return (method6727 == null) ? this.field10176.get(class354) : method6727.method2180(new Class51());
     }
     

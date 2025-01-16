@@ -13,7 +13,7 @@ import net.minecraft.entity.Pose;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -978,7 +978,7 @@ public class Class756 extends Class754
                         final Vec3d method1951 = method1948.subtract(method1949);
                         final Vec3d method1952 = method1947.add(method1949);
                         final Vec3d method1953 = method1948.add(method1949);
-                        final Iterator<Object> iterator = this.world.method6980(this, method1946, Collections.emptySet()).flatMap(class5492 -> class5492.method24545().stream()).iterator();
+                        final Iterator<Object> iterator = this.world.method6980(this, method1946, Collections.emptySet()).flatMap(class5492 -> class5492.toBoundingBoxList().stream()).iterator();
                         float n7 = Float.MIN_VALUE;
                         while (iterator.hasNext()) {
                             final AxisAlignedBB class5490 = iterator.next();
@@ -990,7 +990,7 @@ public class Class756 extends Class754
                             for (int n8 = 1; n8 < n6; ++n8) {
                                 final BlockPos method1954 = class5491.method1138(n8);
                                 final VoxelShape method1955;
-                                if (!(method1955 = this.world.getBlockState(method1954).method21728(this.world, method1954, method1943)).method24540()) {
+                                if (!(method1955 = this.world.getBlockState(method1954).method21728(this.world, method1954, method1943)).isEmpty()) {
                                     n7 = (float)method1955.method24536(Axis.Y) + method1954.getY();
                                     if (n7 - this.getPosY() > n6) {
                                         return;

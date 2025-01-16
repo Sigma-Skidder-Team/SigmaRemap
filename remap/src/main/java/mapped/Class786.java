@@ -246,7 +246,7 @@ public class Class786 extends Class785
                     return false;
                 }
             }
-            return Class8532.method28620(class1852, class1853, class1852.getBlockState(class1853), Class7558.field29974.method22148()) && class1852.method6975(this);
+            return Class8532.method28620(class1852, class1853, class1852.getBlockState(class1853), Class7558.field29974.getDefaultState()) && class1852.method6975(this);
         }
         return false;
     }

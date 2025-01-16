@@ -12,7 +12,7 @@ import java.util.stream.IntStream;
 import java.util.List;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.function.Function;
 
@@ -34,7 +34,7 @@ public class Class4549 extends Class4535<Class5122>
             while (iterator2.hasNext()) {
                 class1856.setPos(n, 0, iterator2.next());
                 final BlockPos method6958 = class1851.method6958(Class2020.field11526, class1856);
-                if (!class1851.method6961(method6958) && !class1851.getBlockState(method6958).getCollisionShape(class1851, method6958).method24540()) {
+                if (!class1851.method6961(method6958) && !class1851.getBlockState(method6958).getCollisionShape(class1851, method6958).isEmpty()) {
                     continue;
                 }
                 class1851.setBlockState(method6958, Class7521.field29292.getDefaultState(), 2);

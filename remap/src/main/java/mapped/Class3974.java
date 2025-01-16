@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -27,7 +27,7 @@ public class Class3974 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3974.field17950;
     }
     
@@ -37,7 +37,7 @@ public class Class3974 extends Block
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         final Item method2716 = method2715.getItem();
         final Block class7102 = (method2716 instanceof Class4036) ? Class3974.field17949.getOrDefault(((Class4036)method2716).method12240(), Class7521.field29147) : Class7521.field29147;
@@ -69,7 +69,7 @@ public class Class3974 extends Block
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         return (this.field17951 != Class7521.field29147) ? new ItemStack(this.field17951) : super.method11862(class1855, class1856, class1857);
     }
     

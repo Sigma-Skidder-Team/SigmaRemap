@@ -15,7 +15,7 @@ public class Class3973 extends Block
     }
     
     @Override
-    public boolean propagatesSkylightDown(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean propagatesSkylightDown(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return true;
     }
     
@@ -25,12 +25,12 @@ public class Class3973 extends Block
     }
     
     @Override
-    public float method11859(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public float method11859(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return 1.0f;
     }
     
     @Override
-    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean canEntitySpawn(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return false;
     }
 }

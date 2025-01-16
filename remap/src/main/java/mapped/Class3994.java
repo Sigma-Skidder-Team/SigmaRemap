@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class3994 extends Class3993
@@ -17,7 +17,7 @@ public class Class3994 extends Class3993
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         if (method2715.getItem() != Items.field31426) {
             return super.method11844(class7096, class7097, class7098, class7099, class7100, class7101);

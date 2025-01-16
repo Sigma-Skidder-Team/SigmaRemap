@@ -56,7 +56,7 @@ public class Class7302 extends Class7303
             class1864 = Class7302.field28282;
         }
         else {
-            class1864 = Class7302.field28284.method21791();
+            class1864 = Class7302.field28284.getBlockState();
         }
         class1860.method7008(class1861, class1864, false);
         return true;

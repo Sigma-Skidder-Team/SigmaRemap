@@ -24,12 +24,12 @@ public class Class4012 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class4012.field18083;
     }
     
     @Override
-    public VoxelShape method11811(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11811(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return Class4012.field18082;
     }
     
@@ -50,7 +50,7 @@ public class Class4012 extends Block
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         if (method2715.method27620()) {
             return Class2201.field13402;
@@ -225,13 +225,13 @@ public class Class4012 extends Block
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     
     static {
         field18081 = Class8970.field37782;
         field18082 = Block.method11778(2.0, 4.0, 2.0, 14.0, 16.0, 14.0);
-        field18083 = VoxelShapes.method24494(VoxelShapes.method24487(), VoxelShapes.method24493(Block.method11778(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), Block.method11778(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), Block.method11778(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), Class4012.field18082), Class9306.field39920);
+        field18083 = VoxelShapes.method24494(VoxelShapes.method24487(), VoxelShapes.method24493(Block.method11778(0.0, 0.0, 4.0, 16.0, 3.0, 12.0), Block.method11778(4.0, 0.0, 0.0, 12.0, 3.0, 16.0), Block.method11778(2.0, 0.0, 2.0, 14.0, 3.0, 14.0), Class4012.field18082), IBooleanFunction.ONLY_FIRST);
     }
 }

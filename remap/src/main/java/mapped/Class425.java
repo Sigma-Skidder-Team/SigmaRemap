@@ -109,9 +109,9 @@ public class Class425 extends Entity
                 }
                 float method21782 = 0.0f;
                 final BlockPos class354 = new BlockPos(this);
-                final IFluidState method21783 = this.world.method6702(class354);
-                if (method21783.method21793(Class7324.field28319)) {
-                    method21782 = method21783.method21782(this.world, class354);
+                final IFluidState method21783 = this.world.getFluidState(class354);
+                if (method21783.isTagged(Class7324.field28319)) {
+                    method21782 = method21783.getActualHeight(this.world, class354);
                 }
                 Label_0094: {
                     if (this.field2593 != Class2064.field11816) {
@@ -167,7 +167,7 @@ public class Class425 extends Entity
                         this.method1936(Vec3d.ZERO);
                     }
                 }
-                if (!method21783.method21793(Class7324.field28319)) {
+                if (!method21783.isTagged(Class7324.field28319)) {
                     this.method1936(this.getMotion().add(0.0, -0.03, 0.0));
                 }
                 this.method1671(Class2160.field12826, this.getMotion());
@@ -231,7 +231,7 @@ public class Class425 extends Entity
                 }
             }
             return b;
-        }, Class2040.field11632, true);
+        }, RayTraceContext.BlockMode.COLLIDER, true);
         if (method23093.method21449() != Class2165.field12880) {
             if (method23093.method21449() != Class2165.field12882) {
                 this.field2584 = true;

@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.Set;
 

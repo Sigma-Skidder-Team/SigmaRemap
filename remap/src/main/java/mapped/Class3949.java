@@ -17,13 +17,13 @@ public class Class3949 extends Class3948
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class468();
     }
     
     @Override
     public void method12066(final World class1847, final BlockPos class1848, final PlayerEntity class1849) {
-        final TileEntity method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.getTileEntity(class1848);
         if (method6727 instanceof Class468) {
             class1849.method2833((Class434)method6727);
             class1849.method2857(Class8276.field34048);

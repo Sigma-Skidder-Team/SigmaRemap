@@ -1005,11 +1005,11 @@ public class Class9570
         Class9570.field41240 = new Class7363("net.minecraftforge.common.extensions.IForgeBlockState");
         Class9570.field41241 = new Class7361(Class9570.field41240, "addDestroyEffects");
         Class9570.field41242 = new Class7361(Class9570.field41240, "addHitEffects");
-        Class9570.field41243 = new Class7361(Class9570.field41240, "getLightValue", new Class[] { Class1855.class, BlockPos.class });
+        Class9570.field41243 = new Class7361(Class9570.field41240, "getLightValue", new Class[] { IBlockReader.class, BlockPos.class });
         Class9570.field41244 = new Class7361(Class9570.field41240, "getSoundType", new Class[] { Class1852.class, BlockPos.class, Entity.class });
         Class9570.field41245 = new Class7361(Class9570.field41240, "getStateAtViewpoint");
         Class9570.field41246 = new Class7361(Class9570.field41240, "hasTileEntity");
-        Class9570.field41247 = new Class7361(Class9570.field41240, "isAir", new Class[] { Class1855.class, BlockPos.class });
+        Class9570.field41247 = new Class7361(Class9570.field41240, "isAir", new Class[] { IBlockReader.class, BlockPos.class });
         Class9570.field41248 = new Class7361(Class9570.field41240, "shouldDisplayFluidOverlay");
         Class9570.field41249 = new Class7363("net.minecraftforge.common.extensions.IForgeFluid");
         Class9570.field41250 = new Class7361(Class9570.field41249, "getAttributes");

@@ -147,7 +147,7 @@ public class Class7816 extends Class7814
             final AxisAlignedBB class400 = new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - 0.5, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ);
             for (final BlockPos class401 : method25256(class399)) {
                 final VoxelShape method21725 = Class7816.field32015.field4683.getBlockState(class401).method21725(Class7816.field32015.field4683, class401);
-                if (!method21725.method24540() && class400.method18502(method21725.method24537().method18500(class401))) {
+                if (!method21725.isEmpty() && class400.method18502(method21725.method24537().method18500(class401))) {
                     return true;
                 }
             }

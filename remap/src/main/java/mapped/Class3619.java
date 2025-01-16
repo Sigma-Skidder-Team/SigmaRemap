@@ -19,7 +19,7 @@ public class Class3619 extends Class3617
         if (this.field16814.method4523()) {
             if (Class798.method4544(this.field16814)) {
                 if (Class798.method4545(this.field16814).method1082(this.field16814.method1934(), 2.0)) {
-                    final TileEntity method6727 = this.field16814.world.method6727(Class798.method4545(this.field16814));
+                    final TileEntity method6727 = this.field16814.world.getTileEntity(Class798.method4545(this.field16814));
                     if (method6727 instanceof Class438) {
                         if (!((Class438)method6727).method2217()) {
                             return true;
@@ -39,7 +39,7 @@ public class Class3619 extends Class3617
     
     @Override
     public void method11015() {
-        final TileEntity method6727 = this.field16814.world.method6727(Class798.method4545(this.field16814));
+        final TileEntity method6727 = this.field16814.world.getTileEntity(Class798.method4545(this.field16814));
         if (method6727 instanceof Class438) {
             ((Class438)method6727).method2220(this.field16814, this.field16814.method4529());
         }

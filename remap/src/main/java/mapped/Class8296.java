@@ -60,7 +60,7 @@ public class Class8296
         return b;
     }
     
-    public int method27570(final Class1855 class1855) {
+    public int method27570(final IBlockReader class1855) {
         BlockPos method1139 = new BlockPos(this.field34101, 256.0, this.field34102);
         while (method1139.getY() > 0) {
             method1139 = method1139.method1139();
@@ -72,7 +72,7 @@ public class Class8296
         return 257;
     }
     
-    public boolean method27571(final Class1855 class1855) {
+    public boolean method27571(final IBlockReader class1855) {
         BlockPos method1139 = new BlockPos(this.field34101, 256.0, this.field34102);
         while (method1139.getY() > 0) {
             method1139 = method1139.method1139();

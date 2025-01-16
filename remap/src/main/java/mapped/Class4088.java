@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class4088 extends Item
@@ -54,7 +54,7 @@ public class Class4088 extends Item
     }
     
     public static boolean method12323(final ItemStack class8321, final World class8322, final BlockPos class8323, final Direction class8324) {
-        if (class8322.getBlockState(class8323).method21696() != Class7521.field29173 || class8322.method6702(class8323).method21784() != 8) {
+        if (class8322.getBlockState(class8323).method21696() != Class7521.field29173 || class8322.getFluidState(class8323).getLevel() != 8) {
             return false;
         }
         if (class8322 instanceof Class1849) {
@@ -99,7 +99,7 @@ public class Class4088 extends Item
                         continue;
                     }
                     final Class7096 method1135 = class8322.getBlockState(method1134);
-                    if (method1135.method21696() == Class7521.field29173 && class8322.method6702(method1134).method21784() == 8) {
+                    if (method1135.method21696() == Class7521.field29173 && class8322.getFluidState(method1134).getLevel() == 8) {
                         class8322.setBlockState(method1134, class8326, 3);
                         continue;
                     }

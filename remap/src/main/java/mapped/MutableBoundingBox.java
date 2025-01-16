@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.base.MoreObjects;
 import net.minecraft.nbt.IntArrayNBT;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3i;
 
 public class MutableBoundingBox

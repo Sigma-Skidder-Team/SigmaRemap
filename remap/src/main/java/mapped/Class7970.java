@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.HashSet;
 import java.util.ArrayList;
@@ -69,7 +69,7 @@ public class Class7970
         return method25838(class1856, class1857, class1858, method25834.method30294(), method25834, class1859);
     }
     
-    private static boolean method25832(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, final Class8754 class1858, final Class9145 class1859) {
+    private static boolean method25832(final IBlockReader class1855, final Class7096 class1856, final BlockPos class1857, final Class8754 class1858, final Class9145 class1859) {
         final Block method21696 = class1856.method21696();
         if (method21696 instanceof Class3853) {
             final Direction method21697 = class1858.method30294();
@@ -466,7 +466,7 @@ public class Class7970
         }
     }
     
-    private static Class1912 method25845(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, BlockPos class6782, final int n) {
+    private static Class1912 method25845(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, BlockPos class6782, final int n) {
         if (class6779.field26635.length == 1) {
             return class6779.field26635[0];
         }
@@ -558,15 +558,15 @@ public class Class7970
         return class6779.field26635[n5 * class6779.field26625 + n4];
     }
     
-    private static Class1912 method25848(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3, final Class9145 class6784) {
+    private static Class1912 method25848(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3, final Class9145 class6784) {
         return class6779.field26635[method25858(class6779, class6780, class6781, class6782, n, n2, class6783, n3, class6784)];
     }
     
-    private static synchronized Class8754[] method25849(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class8754 class6783, final int n3, final Class9145 class6784) {
+    private static synchronized Class8754[] method25849(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class8754 class6783, final int n3, final Class9145 class6784) {
         return Class8424.method28127(method25858(class6779, class6780, class6781, class6782, n, n2, class6783.method30295(), n3, class6784), class6779, n2, class6783, class6784);
     }
     
-    private static Class8754[] method25850(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class8754 class6783, final int n3, final Class9145 class6784) {
+    private static Class8754[] method25850(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class8754 class6783, final int n3, final Class9145 class6784) {
         if (!class6783.method30310()) {
             return null;
         }
@@ -697,7 +697,7 @@ public class Class7970
         return array;
     }
     
-    private static Class8754[] method25852(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class8754 class6783, final Class9145 class6784) {
+    private static Class8754[] method25852(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class8754 class6783, final Class9145 class6784) {
         if (!class6783.method30310()) {
             return null;
         }
@@ -739,7 +739,7 @@ public class Class7970
         return array;
     }
     
-    private static Class8754[] method25854(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class8754 class6783, final int n3, final Class9145 class6784) {
+    private static Class8754[] method25854(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class8754 class6783, final int n3, final Class9145 class6784) {
         if (!class6783.method30310()) {
             return null;
         }
@@ -828,7 +828,7 @@ public class Class7970
         return Class7970.field32752;
     }
     
-    private static int method25858(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3, final Class9145 class6784) {
+    private static int method25858(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3, final Class9145 class6784) {
         final boolean[] method33384 = class6784.method33384();
         switch (n2) {
             case 0: {
@@ -1184,7 +1184,7 @@ public class Class7970
         array[n2] = b;
     }
     
-    private static boolean method25860(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
+    private static boolean method25860(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
         final Class7096 method6701 = class6780.getBlockState(class6782);
         if (!method25861(method6701, class6780, class6782)) {
             return false;
@@ -1200,7 +1200,7 @@ public class Class7970
         return !method6703.method21722(class6780, method6702) && (n != 1 || method6703.method21696() != Class7521.field29329) && !method25864(class6779, class6780, class6781, class6782, method6701, n, class6783, n2);
     }
     
-    private static boolean method25861(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    private static boolean method25861(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         if (BlockUtils.method20655(class7096, class7097, class7098)) {
             return true;
         }
@@ -1208,7 +1208,7 @@ public class Class7970
         return method21696 instanceof Class3851 || method21696 instanceof Class3844;
     }
     
-    private static boolean method25862(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
+    private static boolean method25862(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
         final Class7096 method6701 = class6780.getBlockState(class6782);
         if (method6701 == Class7970.field32766) {
             return false;
@@ -1224,11 +1224,11 @@ public class Class7970
         return !method6703.method21722(class6780, method6702) && (n != 1 || method6703.method21696() != Class7521.field29329);
     }
     
-    private static boolean method25863(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
+    private static boolean method25863(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final Class1912 class6783, final int n2) {
         return method25864(class6779, class6780, class6781, class6782, class6780.getBlockState(class6782), n, class6783, n2);
     }
     
-    private static boolean method25864(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final Class7096 class6783, final int n, final Class1912 class6784, final int n2) {
+    private static boolean method25864(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final Class7096 class6783, final int n, final Class1912 class6784, final int n2) {
         if (class6781 == class6783) {
             return true;
         }
@@ -1241,7 +1241,7 @@ public class Class7970
         return class6779.field26618 == 1 && class6783.method21696() == class6781.method21696();
     }
     
-    private static Class1912 method25865(final Class1855 class1855, final Class7096 class1856, final BlockPos class1857, Class7096 class1858, final int n) {
+    private static Class1912 method25865(final IBlockReader class1855, final Class7096 class1856, final BlockPos class1857, Class7096 class1858, final int n) {
         final Class6313 method35428 = Class869.method5277().method5305().method5787().method35428(class1858);
         if (method35428 == null) {
             return null;
@@ -1273,7 +1273,7 @@ public class Class7970
         return null;
     }
     
-    private static Class1912 method25866(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
+    private static Class1912 method25866(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
         boolean b = false;
         boolean b2 = false;
         Label_0859: {
@@ -1403,7 +1403,7 @@ public class Class7970
         return class6779.field26635[n4];
     }
     
-    private static Class1912 method25867(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
+    private static Class1912 method25867(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
         boolean b = false;
         boolean b2 = false;
         switch (n) {
@@ -1471,7 +1471,7 @@ public class Class7970
         return class6779.field26635[n4];
     }
     
-    private static Class1912 method25868(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
+    private static Class1912 method25868(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
         final Class1912[] field26635 = class6779.field26635;
         final Class1912 method25866 = method25866(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
         if (method25866 != null && method25866 != class6783 && method25866 != field26635[3]) {
@@ -1487,7 +1487,7 @@ public class Class7970
         return (method25867 == field26635[2]) ? field26635[6] : method25867;
     }
     
-    private static Class1912 method25869(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
+    private static Class1912 method25869(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
         final Class1912[] field26635 = class6779.field26635;
         final Class1912 method25867 = method25867(class6779, class6780, class6781, class6782, n, n2, class6783, n3);
         if (method25867 != null && method25867 != class6783 && method25867 != field26635[3]) {
@@ -1503,7 +1503,7 @@ public class Class7970
         return (method25868 == field26635[2]) ? field26635[6] : method25868;
     }
     
-    private static Class1912 method25870(final Class6779 class6779, final Class1855 class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
+    private static Class1912 method25870(final Class6779 class6779, final IBlockReader class6780, final Class7096 class6781, final BlockPos class6782, final int n, final int n2, final Class1912 class6783, final int n3) {
         boolean b = false;
         switch (n) {
             case 0: {

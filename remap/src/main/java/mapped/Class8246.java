@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class8246 extends Class8245
@@ -49,7 +49,7 @@ public class Class8246 extends Class8245
     }
     
     @Override
-    public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final Class7005 class759) {
+    public Class2201 method27319(final Class756 class756, final Class1848 class757, final Class316 class758, final BlockRayTraceResult class759) {
         this.field33875 = true;
         this.field33876 = class759.method21447();
         final Class2201 method27319 = super.method27319(class756, class757, class758, class759);

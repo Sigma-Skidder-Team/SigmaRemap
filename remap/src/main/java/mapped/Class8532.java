@@ -123,7 +123,7 @@ public final class Class8532
         return new BlockPos(n, class1847.rand.nextInt(class1848.method7018(Class2020.field11522, n, n2) + 1 + 1), n2);
     }
     
-    public static boolean method28620(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final IFluidState class1858) {
+    public static boolean method28620(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final IFluidState class1858) {
         return !class1857.isCollisionShapeOpaque(class1855, class1856) && !class1857.method21714() && class1858.isEmpty() && !class1857.method21755(Class7188.field27906);
     }
     
@@ -135,15 +135,15 @@ public final class Class8532
             return false;
         }
         final BlockState method6701 = class2195.getBlockState(class2196);
-        final IFluidState method6702 = class2195.method6702(class2196);
+        final IFluidState method6702 = class2195.getFluidState(class2196);
         final BlockPos method6703 = class2196.method1137();
         final BlockPos method6704 = class2196.method1139();
         switch (Class8621.field36186[class2194.ordinal()]) {
             case 1: {
-                return method6702.method21793(Class7324.field28319) && class2195.method6702(method6704).method21793(Class7324.field28319) && !class2195.getBlockState(method6703).method21713(class2195, method6703);
+                return method6702.isTagged(Class7324.field28319) && class2195.getFluidState(method6704).isTagged(Class7324.field28319) && !class2195.getBlockState(method6703).method21713(class2195, method6703);
             }
             default: {
-                return class2195.getBlockState(method6704).canEntitySpawn(class2195, method6704, class2197) && method28620(class2195, class2196, method6701, method6702) && method28620(class2195, method6703, class2195.getBlockState(method6703), class2195.method6702(method6703));
+                return class2195.getBlockState(method6704).canEntitySpawn(class2195, method6704, class2197) && method28620(class2195, class2196, method6701, method6702) && method28620(class2195, method6703, class2195.getBlockState(method6703), class2195.getFluidState(method6703));
             }
         }
     }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
@@ -22,7 +22,7 @@ public class Class3981 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3981.field17979;
     }
     
@@ -77,7 +77,7 @@ public class Class3981 extends Block
             final BlockPos method21697 = class7098.method1139();
             for (final Direction class7099 : Plane.HORIZONTAL) {
                 final Class7096 method21698 = class7097.getBlockState(method21697.method1149(class7099));
-                if (!class7097.method6702(method21697.method1149(class7099)).method21793(Class7324.field28319) && method21698.method21696() != Class7521.field29641) {
+                if (!class7097.getFluidState(method21697.method1149(class7099)).isTagged(Class7324.field28319) && method21698.method21696() != Class7521.field29641) {
                     continue;
                 }
                 return true;

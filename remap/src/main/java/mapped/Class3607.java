@@ -64,7 +64,7 @@ public class Class3607 extends Class3446
     }
     
     @Nullable
-    public BlockPos method11136(final Class1855 class1855, final Entity class1856, final int n, final int n2) {
+    public BlockPos method11136(final IBlockReader class1855, final Entity class1856, final int n, final int n2) {
         final BlockPos class1857 = new BlockPos(class1856);
         final int method1074 = class1857.getX();
         final int method1075 = class1857.getY();
@@ -76,7 +76,7 @@ public class Class3607 extends Class3446
             for (int j = method1075 - n2; j <= method1075 + n2; ++j) {
                 for (int k = method1076 - n; k <= method1076 + n; ++k) {
                     class1859.setPos(i, j, k);
-                    if (class1855.method6702(class1859).method21793(Class7324.field28319)) {
+                    if (class1855.getFluidState(class1859).isTagged(Class7324.field28319)) {
                         final float n4 = (float)((i - method1074) * (i - method1074) + (j - method1075) * (j - method1075) + (k - method1076) * (k - method1076));
                         if (n4 < n3) {
                             n3 = n4;

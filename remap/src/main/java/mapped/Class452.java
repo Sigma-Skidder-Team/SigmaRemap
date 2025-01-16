@@ -69,7 +69,7 @@ public class Class452 implements Class446
     
     @Override
     public boolean method2162(final PlayerEntity playerEntity) {
-        return this.field2700.field2656.method6727(this.field2700.field2657) == this.field2700 && playerEntity.method1733(this.field2700.field2657.getX() + 0.5, this.field2700.field2657.getY() + 0.5, this.field2700.field2657.getZ() + 0.5) <= 64.0 && this.field2700.method2169();
+        return this.field2700.field2656.getTileEntity(this.field2700.field2657) == this.field2700 && playerEntity.method1733(this.field2700.field2657.getX() + 0.5, this.field2700.field2657.getY() + 0.5, this.field2700.field2657.getZ() + 0.5) <= 64.0 && this.field2700.method2169();
     }
     
     @Override

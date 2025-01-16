@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public final class Class6402 extends Class6397
@@ -39,7 +39,7 @@ public final class Class6402 extends Class6397
             this.field25515 = true;
             return this.method19089(class5491, class5492, new ItemStack(Items.field31635));
         }
-        if (!method16763.method6702(method16764).method21793(Class7324.field28319)) {
+        if (!method16763.getFluidState(method16764).isTagged(Class7324.field28319)) {
             return super.method19087(class5491, class5492);
         }
         this.field25515 = true;

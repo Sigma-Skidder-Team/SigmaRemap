@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.dimension.DimensionType;
@@ -142,7 +142,7 @@ public abstract class World implements Class1851, AutoCloseable
             Label_0091: {
                 if (method6688 != method6687) {
                     if (method6688.getOpacity(this, class354) == method6687.getOpacity(this, class354)) {
-                        if (method6688.method21704() == method6687.method21704()) {
+                        if (method6688.getLightValue() == method6687.getLightValue()) {
                             if (!method6688.method21703()) {
                                 if (!method6687.method21703()) {
                                     break Label_0091;
@@ -200,19 +200,19 @@ public abstract class World implements Class1851, AutoCloseable
     
     @Override
     public boolean method6690(final BlockPos class354, final boolean b) {
-        return this.setBlockState(class354, this.method6702(class354).method21791(), 0x3 | (b ? 64 : 0));
+        return this.setBlockState(class354, this.getFluidState(class354).getBlockState(), 0x3 | (b ? 64 : 0));
     }
     
     @Override
     public boolean method6691(final BlockPos class354, final boolean b, final Entity class355) {
         final BlockState method6701 = this.getBlockState(class354);
         if (!method6701.method21706()) {
-            final IFluidState method6702 = this.method6702(class354);
+            final IFluidState method6702 = this.getFluidState(class354);
             this.method6955(2001, class354, Block.method11774(method6701));
             if (b) {
-                Block.method11838(method6701, this, class354, method6701.getBlock().method11802() ? this.method6727(class354) : null, class355, ItemStack.field34174);
+                Block.method11838(method6701, this, class354, method6701.getBlock().method11802() ? this.getTileEntity(class354) : null, class355, ItemStack.field34174);
             }
-            return this.setBlockState(class354, method6702.method21791(), 3);
+            return this.setBlockState(class354, method6702.getBlockState(), 3);
         }
         return false;
     }
@@ -317,11 +317,11 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
+    public IFluidState getFluidState(final BlockPos class354) {
         if (!isOutsideBuildHeight(class354)) {
-            return this.method6685(class354).method6702(class354);
+            return this.method6685(class354).getFluidState(class354);
         }
-        return Class7558.field29974.method22148();
+        return Class7558.field29974.getDefaultState();
     }
     
     public boolean method6703() {
@@ -345,16 +345,16 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public void method6709(final Class6909 class6909, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void method6709(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
-    public void method6710(final Class6909 class6909, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void method6710(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
-    public void method6711(final Class6909 class6909, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void method6711(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
-    public void method6712(final Class6909 class6909, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void method6712(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
     public float method6713(final float n) {
@@ -585,7 +585,7 @@ public abstract class World implements Class1851, AutoCloseable
     
     @Nullable
     @Override
-    public TileEntity method6727(final BlockPos class354) {
+    public TileEntity getTileEntity(final BlockPos class354) {
         if (isOutsideBuildHeight(class354)) {
             return null;
         }
@@ -643,7 +643,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     public void method6730(final BlockPos class354) {
-        final TileEntity method6727 = this.method6727(class354);
+        final TileEntity method6727 = this.getTileEntity(class354);
         if (method6727 != null && this.processingLoadedTiles) {
             method6727.method2198();
             this.addedTileEntityList.remove(method6727);
@@ -694,7 +694,7 @@ public abstract class World implements Class1851, AutoCloseable
     
     @Nullable
     @Override
-    public Class1855 method6736(final int n, final int n2) {
+    public IBlockReader method6736(final int n, final int n2) {
         return this.getChunk(n, n2, ChunkStatus.field39989, false);
     }
     

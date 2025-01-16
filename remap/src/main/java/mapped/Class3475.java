@@ -11,7 +11,7 @@ import java.util.EnumSet;
 public class Class3475 extends Class3446
 {
     private static String[] field16375;
-    private final Class1855 field16376;
+    private final IBlockReader field16376;
     private final Class759 field16377;
     private LivingEntity field16378;
     private int field16379;

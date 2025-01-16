@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -52,12 +52,12 @@ public class Class3977 extends Block
     }
     
     @Override
-    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3977.field17968;
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3977.field17969;
     }
     
@@ -72,7 +72,7 @@ public class Class3977 extends Block
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         for (final Direction class7099 : Plane.HORIZONTAL) {
-            if (!class7097.getBlockState(class7098.method1149(class7099)).getMaterial().method26439() && !class7097.method6702(class7098.method1149(class7099)).method21793(Class7324.field28320)) {
+            if (!class7097.getBlockState(class7098.method1149(class7099)).getMaterial().method26439() && !class7097.getFluidState(class7098.method1149(class7099)).isTagged(Class7324.field28320)) {
                 continue;
             }
             return false;
@@ -102,7 +102,7 @@ public class Class3977 extends Block
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

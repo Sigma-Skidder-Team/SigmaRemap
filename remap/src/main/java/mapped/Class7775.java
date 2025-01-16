@@ -97,13 +97,13 @@ public class Class7775
                 }
                 BlockPos method4157 = new BlockPos(method4153 + class787.getPosX(), method4154 + class787.getPosY(), method4155 + class787.getPosZ());
                 if (method4157.getY() >= 0) {
-                    if (method4157.getY() <= class787.world.method6986()) {
+                    if (method4157.getY() <= class787.world.getHeight()) {
                         if (!b4 || class787.method4197(method4157)) {
                             if (!b3 || method4150.method24739(method4157)) {
                                 if (b2) {
-                                    method4157 = method24912(method4157, method4151.nextInt(n5 + 1) + n6, class787.world.method6986(), class791 -> class790.field2391.method6701(class791).method21697().method26439());
+                                    method4157 = method24912(method4157, method4151.nextInt(n5 + 1) + n6, class787.world.getHeight(), class791 -> class790.field2391.method6701(class791).method21697().method26439());
                                 }
-                                if (b || !class787.world.method6702(method4157).method21793(Class7324.field28319)) {
+                                if (b || !class787.world.getFluidState(method4157).isTagged(Class7324.field28319)) {
                                     if (class787.method4144(Class4651.method13914(class787.world, method4157.getX(), method4157.getY(), method4157.getZ())) == 0.0f) {
                                         final double applyAsDouble = toDoubleFunction.applyAsDouble(method4157);
                                         if (applyAsDouble > n7) {

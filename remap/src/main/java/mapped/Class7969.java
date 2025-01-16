@@ -38,7 +38,7 @@ public class Class7969
     }
     
     public static Class6332 method25827(final IFluidState IFluidState) {
-        final Class6332 class7100 = Class7969.field32748.get(IFluidState.method21779());
+        final Class6332 class7100 = Class7969.field32748.get(IFluidState.getFluid());
         return (class7100 == null) ? Class6332.method18761() : class7100;
     }
     

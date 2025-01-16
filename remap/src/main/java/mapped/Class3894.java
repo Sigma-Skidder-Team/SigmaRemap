@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -30,7 +30,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         if (!class7096.method21772((IProperty<Boolean>)Class3894.field17567)) {
             return (class7096.method21772(Class3894.field17568) == Class109.field343) ? Class3894.field17576 : Class3894.field17575;
         }
@@ -51,7 +51,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         switch (Class8899.field37410[class7099.ordinal()]) {
             case 1: {
                 return class7096.method21772((IProperty<Boolean>)Class3894.field17567);
@@ -69,7 +69,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (this.field17401 != Material.IRON) {
             class7096 = ((StateHolder<O, Class7096>)class7096).method21768((IProperty<Comparable>)Class3894.field17567);
             class7097.setBlockState(class7098, class7096, 2);
@@ -111,7 +111,7 @@ public class Class3894 extends Class3892 implements Class3856
     @Override
     public Class7096 method11846(final Class7074 class7074) {
         final Class7096 method11878 = this.getDefaultState();
-        final IFluidState method11879 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method11879 = class7074.method21654().getFluidState(class7074.method21639());
         final Direction method11880 = class7074.method21648();
         Class7096 class7075;
         if (!class7074.method21641() && method11880.getAxis().isHorizontal()) {
@@ -123,7 +123,7 @@ public class Class3894 extends Class3892 implements Class3856
         if (class7074.method21654().method6749(class7074.method21639())) {
             class7075 = (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Class7096>)class7075).with((IProperty<Comparable>)Class3894.field17567, true)).with((IProperty<Comparable>)Class3894.field17569, true);
         }
-        return ((StateHolder<Object, Class7096>)class7075).with((IProperty<Comparable>)Class3894.field17570, method11879.method21779() == Class7558.field29976);
+        return ((StateHolder<Object, Class7096>)class7075).with((IProperty<Comparable>)Class3894.field17570, method11879.getFluid() == Class7558.field29976);
     }
     
     @Override
@@ -145,7 +145,7 @@ public class Class3894 extends Class3892 implements Class3856
     }
     
     @Override
-    public boolean method11779(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean method11779(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return false;
     }
     

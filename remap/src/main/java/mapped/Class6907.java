@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class6907<T extends Class6909>
+public class Class6907<T extends IParticleData>
 {
     private static String[] field27091;
     private final boolean field27092;

@@ -10,7 +10,7 @@ import com.google.common.collect.ImmutableSet;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -23,7 +23,7 @@ public final class Class7476
 {
     private static String[] field28874;
     
-    public static Class7006 method23092(final Entity class399, final boolean b, final boolean b2, final Entity class400, final Class2040 class401) {
+    public static Class7006 method23092(final Entity class399, final boolean b, final boolean b2, final Entity class400, final RayTraceContext.BlockMode class401) {
         return method23095(class399, b, b2, class400, class401, true, class403 -> {
             final boolean b4;
             if (!class403.isSpectator()) {
@@ -39,7 +39,7 @@ public final class Class7476
         }, class399.getBoundingBox().method18493(class399.getMotion()).method18496(1.0));
     }
     
-    public static Class7006 method23093(final Entity class399, final AxisAlignedBB class400, final Predicate<Entity> predicate, final Class2040 class401, final boolean b) {
+    public static Class7006 method23093(final Entity class399, final AxisAlignedBB class400, final Predicate<Entity> predicate, final RayTraceContext.BlockMode class401, final boolean b) {
         return method23095(class399, b, false, null, class401, false, predicate, class400);
     }
     
@@ -48,22 +48,22 @@ public final class Class7476
         return method23097(class1847, class1848, class1849, class1850, class1851, predicate, Double.MAX_VALUE);
     }
     
-    private static Class7006 method23095(final Entity class399, final boolean b, final boolean b2, final Entity class400, final Class2040 class401, final boolean b3, final Predicate<Entity> predicate, final AxisAlignedBB class402) {
+    private static Class7006 method23095(final Entity class399, final boolean b, final boolean b2, final Entity class400, final RayTraceContext.BlockMode class401, final boolean b3, final Predicate<Entity> predicate, final AxisAlignedBB class402) {
         final Vec3d method1935 = class399.getMotion();
         final World field2391 = class399.world;
         final Vec3d method1936 = class399.method1934();
         if (b3 && !field2391.method6979(class399, class399.getBoundingBox(), (Set<Entity>)((!b2 && class400 != null) ? method23098(class400) : ImmutableSet.of()))) {
-            return new Class7005(method1936, Direction.getFacingFromVector(method1935.x, method1935.y, method1935.z), new BlockPos(class399), false);
+            return new BlockRayTraceResult(method1936, Direction.getFacingFromVector(method1935.x, method1935.y, method1935.z), new BlockPos(class399), false);
         }
         Vec3d class403 = method1936.add(method1935);
-        Class7005 method1937 = field2391.rayTraceBlocks(new RayTraceContext(method1936, class403, class401, Class2191.field13325, class399));
+        BlockRayTraceResult method1937 = field2391.rayTraceBlocks(new RayTraceContext(method1936, class403, class401, RayTraceContext.FluidMode.NONE, class399));
         if (b) {
             if (method1937.method21449() != Class2165.field12880) {
                 class403 = method1937.method21451();
             }
             final Class7007 method1938 = method23094(field2391, class399, method1936, class403, class402, predicate);
             if (method1938 != null) {
-                method1937 = (Class7005)method1938;
+                method1937 = (BlockRayTraceResult)method1938;
             }
         }
         return method1937;

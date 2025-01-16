@@ -12,6 +12,6 @@ public final class Class6046 extends CacheLoader<VoxelShape, Boolean>
     private static String[] field24596;
     
     public Boolean load(final VoxelShape class7702) {
-        return !VoxelShapes.method24496(VoxelShapes.method24487(), class7702, Class9306.field39922);
+        return !VoxelShapes.method24496(VoxelShapes.method24487(), class7702, IBooleanFunction.NOT_SAME);
     }
 }

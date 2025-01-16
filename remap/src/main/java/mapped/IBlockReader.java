@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -13,54 +13,53 @@ import java.util.function.Function;
 import java.util.function.BiFunction;
 import javax.annotation.Nullable;
 
-public interface Class1855
+public interface IBlockReader
 {
     @Nullable
-    TileEntity method6727(final BlockPos p0);
+    TileEntity getTileEntity(final BlockPos p0);
     
     BlockState getBlockState(final BlockPos p0);
     
-    IFluidState method6702(final BlockPos p0);
+    IFluidState getFluidState(final BlockPos p0);
     
-    default int method6984(final BlockPos class354) {
-        return this.getBlockState(class354).method21704();
+    default int getLightValue(final BlockPos class354) {
+        return this.getBlockState(class354).getLightValue();
     }
     
     default int getMaxLightLevel() {
         return 15;
     }
     
-    default int method6986() {
+    default int getHeight() {
         return 256;
     }
-    
-    default Class7005 rayTraceBlocks(final RayTraceContext rayTraceContext) {
-        return method6989(rayTraceContext, (class8480, class8482) -> {
-            this.getBlockState(class8482);
-            this.method6702(class8482);
-            class8480.method28308();
-            class8480.method28307();
-            final Vec3d class8483;
-            final Vec3d class8484;
-            final BlockState class8485;
-            this.method6988(class8483, class8484, class8482, class8480.method28309(class8485, this, class8482), class8485);
-            final IFluidState class8486;
-            class8480.method28310(class8486, this, class8482).method24550(class8483, class8484, class8482);
-            final Class7005 class8487;
-            final Class7005 class8488;
-            return (((class8487 != null) ? class8480.method28308().squareDistanceTo(class8487.method21451()) : Double.MAX_VALUE) > ((class8488 != null) ? class8480.method28308().squareDistanceTo(class8488.method21451()) : Double.MAX_VALUE)) ? class8488 : class8487;
-        }, class8489 -> {
-            class8489.method28308().subtract(class8489.method28307());
-            final Vec3d class8491;
-            return Class7005.method21445(class8489.method28307(), Direction.getFacingFromVector(class8491.x, class8491.y, class8491.z), new BlockPos(class8489.method28307()));
+
+    default BlockRayTraceResult rayTraceBlocks(RayTraceContext context) {
+        return func_217300_a(context, (p_217297_1_, p_217297_2_) ->
+        {
+            BlockState blockstate = this.getBlockState(p_217297_2_);
+            IFluidState ifluidstate = this.getFluidState(p_217297_2_);
+            Vec3d vec3d = p_217297_1_.func_222253_b();
+            Vec3d vec3d1 = p_217297_1_.func_222250_a();
+            VoxelShape voxelshape = p_217297_1_.getBlockShape(blockstate, this, p_217297_2_);
+            BlockRayTraceResult blockraytraceresult = this.rayTraceBlocks(vec3d, vec3d1, p_217297_2_, voxelshape, blockstate);
+            VoxelShape voxelshape1 = p_217297_1_.getFluidShape(ifluidstate, this, p_217297_2_);
+            BlockRayTraceResult blockraytraceresult1 = voxelshape1.rayTrace(vec3d, vec3d1, p_217297_2_);
+            double d0 = blockraytraceresult == null ? Double.MAX_VALUE : p_217297_1_.func_222253_b().squareDistanceTo(blockraytraceresult.getHitVec());
+            double d1 = blockraytraceresult1 == null ? Double.MAX_VALUE : p_217297_1_.func_222253_b().squareDistanceTo(blockraytraceresult1.getHitVec());
+            return d0 <= d1 ? blockraytraceresult : blockraytraceresult1;
+        }, (p_217302_0_) ->
+        {
+            Vec3d vec3d = p_217302_0_.func_222253_b().subtract(p_217302_0_.func_222250_a());
+            return BlockRayTraceResult.createMiss(p_217302_0_.func_222250_a(), Direction.getFacingFromVector(vec3d.x, vec3d.y, vec3d.z), new BlockPos(p_217302_0_.func_222250_a()));
         });
     }
     
     @Nullable
-    default Class7005 method6988(final Vec3d class5487, final Vec3d class5488, final BlockPos class5489, final VoxelShape class5490, final BlockState class5491) {
-        final Class7005 method24550 = class5490.method24550(class5487, class5488, class5489);
+    default BlockRayTraceResult method6988(final Vec3d class5487, final Vec3d class5488, final BlockPos class5489, final VoxelShape class5490, final BlockState class5491) {
+        final BlockRayTraceResult method24550 = class5490.method24550(class5487, class5488, class5489);
         if (method24550 != null) {
-            final Class7005 method24551 = class5491.method21730(this, class5489).method24550(class5487, class5488, class5489);
+            final BlockRayTraceResult method24551 = class5491.method21730(this, class5489).method24550(class5487, class5488, class5489);
             if (method24551 != null) {
                 if (method24551.method21451().subtract(class5487).lengthSquared() < method24550.method21451().subtract(class5487).lengthSquared()) {
                     return method24550.method21446(method24551.method21448());
@@ -70,9 +69,9 @@ public interface Class1855
         return method24550;
     }
     
-    default <T> T method6989(final RayTraceContext rayTraceContext, final BiFunction<RayTraceContext, BlockPos, T> biFunction, final Function<RayTraceContext, T> function) {
-        final Vec3d method28308 = rayTraceContext.method28308();
-        final Vec3d method28309 = rayTraceContext.method28307();
+    default <T> T func_217300_a(final RayTraceContext rayTraceContext, final BiFunction<RayTraceContext, BlockPos, T> biFunction, final Function<RayTraceContext, T> function) {
+        final Vec3d method28308 = rayTraceContext.func_222253_b();
+        final Vec3d method28309 = rayTraceContext.func_222250_a();
         if (method28308.equals(method28309)) {
             return function.apply(rayTraceContext);
         }

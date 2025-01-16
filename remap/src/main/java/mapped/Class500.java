@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import javax.annotation.Nullable;
 
@@ -117,7 +117,7 @@ public class Class500 extends TileEntity
                 this.field2861 = false;
             }
             else {
-                final TileEntity method1150 = this.field2656.method6727(method1149);
+                final TileEntity method1150 = this.field2656.getTileEntity(method1149);
                 this.field2861 = (method1150 instanceof Class500 && ((Class500)method1150).method2539().method5206() > 0);
             }
         }

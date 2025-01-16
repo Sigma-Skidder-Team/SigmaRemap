@@ -248,7 +248,7 @@ public class Class793 extends Class789
     
     @Override
     public float method4228(final BlockPos class354, final Class1852 class355) {
-        if (!this.method4460() && class355.method6702(class354).method21793(Class7324.field28319)) {
+        if (!this.method4460() && class355.getFluidState(class354).isTagged(Class7324.field28319)) {
             return 10.0f;
         }
         return (class355.getBlockState(class354.method1139()).getBlock() != Class7521.field29175) ? (class355.method6963(class354) - 0.5f) : 10.0f;

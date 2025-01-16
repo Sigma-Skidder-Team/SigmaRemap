@@ -159,7 +159,7 @@ public class Class7335
         if (field4691 != null) {
             switch (Class8540.field35858[field4691.method21449().ordinal()]) {
                 case 1: {
-                    final BlockPos method21447 = ((Class7005)field4691).method21447();
+                    final BlockPos method21447 = ((BlockRayTraceResult)field4691).method21447();
                     final BlockState method21448 = this.field28331.field4684.world.getBlockState(method21447);
                     if (!b) {
                         this.method22501(method21448, method21447, null);
@@ -174,7 +174,7 @@ public class Class7335
                         });
                         break;
                     }
-                    final TileEntity method21449 = this.field28331.field4684.world.method6727(method21447);
+                    final TileEntity method21449 = this.field28331.field4684.world.getTileEntity(method21447);
                     this.method22501(method21448, method21447, (method21449 != null) ? method21449.method2180(new Class51()) : null);
                     this.method22497("debug.inspect.client.block", new Object[0]);
                     break;

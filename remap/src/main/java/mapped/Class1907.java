@@ -64,7 +64,7 @@ public class Class1907 extends AbstractChunkProvider
     }
     
     @Override
-    public Class1855 method7414() {
+    public IBlockReader method7414() {
         return this.field10345;
     }
     

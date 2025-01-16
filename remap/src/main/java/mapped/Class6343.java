@@ -336,7 +336,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                                     class1862 = this.field25371;
                                 }
                                 if (class1862 != Class6343.field25360) {
-                                    if (class1862.method21704() != 0) {
+                                    if (class1862.getLightValue() != 0) {
                                         class1858.setPos(n18, n13, n22);
                                         class1857.method7092(class1858);
                                     }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -37,8 +37,8 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     public Class7096 method11846(final Class7074 class7074) {
         final Class7096 method6701 = class7074.method21654().getBlockState(class7074.method21639());
         if (method6701.method21696() != this) {
-            final IFluidState method6702 = class7074.method21654().method6702(class7074.method21639());
-            return (Class7096)((StateHolder<Object, Object>)super.method11846(class7074)).with((IProperty<Comparable>)Class3889.field17552, method6702.method21793(Class7324.field28319) && method6702.method21784() == 8);
+            final IFluidState method6702 = class7074.method21654().getFluidState(class7074.method21639());
+            return (Class7096)((StateHolder<Object, Object>)super.method11846(class7074)).with((IProperty<Comparable>)Class3889.field17552, method6702.isTagged(Class7324.field28319) && method6702.getLevel() == 8);
         }
         return ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class3889.field17551, Math.min(4, ((StateHolder<Object, Class7096>)method6701).get((IProperty<Integer>)Class3889.field17551) + 1));
     }
@@ -48,7 +48,7 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11943(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         return !class7096.method21727(class7097, class7098).method24551(Direction.UP).method24540();
     }
     
@@ -75,7 +75,7 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (class7096.method21772((IProperty<Integer>)Class3889.field17551)) {
             default: {
                 return Class3889.field17553;
@@ -103,7 +103,7 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return true;
     }
     

@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -27,7 +27,7 @@ public class Class3960 extends Class3841
     
     @Nullable
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return null;
     }
     
@@ -38,7 +38,7 @@ public class Class3960 extends Class3841
     @Override
     public void method11829(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class491) {
                 ((Class491)method6727).method2482();
             }
@@ -57,18 +57,18 @@ public class Class3960 extends Class3841
     }
     
     @Override
-    public boolean method11793(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11793(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return false;
     }
     
     @Override
-    public boolean method11794(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11794(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return false;
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
-        if (!class7097.isRemote && class7097.method6727(class7098) == null) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
+        if (!class7097.isRemote && class7097.getTileEntity(class7098) == null) {
             class7097.method6690(class7098, false);
             return Class2201.field13401;
         }
@@ -82,24 +82,24 @@ public class Class3960 extends Class3841
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return VoxelShapes.method24486();
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        return VoxelShapes.empty();
     }
     
     @Override
-    public VoxelShape method11809(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final Class491 method12081 = this.method12081(class7097, class7098);
-        return (method12081 == null) ? VoxelShapes.method24486() : method12081.method2483(class7097, class7098);
+        return (method12081 == null) ? VoxelShapes.empty() : method12081.method2483(class7097, class7098);
     }
     
     @Nullable
-    private Class491 method12081(final Class1855 class1855, final BlockPos class1856) {
-        final TileEntity method6727 = class1855.method6727(class1856);
+    private Class491 method12081(final IBlockReader class1855, final BlockPos class1856) {
+        final TileEntity method6727 = class1855.getTileEntity(class1856);
         return (method6727 instanceof Class491) ? ((Class491)method6727) : null;
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
         return ItemStack.field34174;
     }
     
@@ -119,7 +119,7 @@ public class Class3960 extends Class3841
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

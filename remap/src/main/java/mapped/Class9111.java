@@ -23,8 +23,8 @@ public class Class9111
     
     public static void method32952(final Class6092 class6092, final float f, final Class1848 class6093, final int n, final float n2) {
         final IFluidState method18169 = class6092.method18169();
-        if (!method18169.method21793(Class7324.field28319)) {
-            if (!method18169.method21793(Class7324.field28320)) {
+        if (!method18169.isTagged(Class7324.field28319)) {
+            if (!method18169.isTagged(Class7324.field28320)) {
                 final float n3 = 1.0f - (float)Math.pow(0.25f + 0.75f * n / 32.0f, 0.25);
                 final Vec3d method18170 = Class8763.method30363(class6093.method6843(class6092.method18162(), f), class6093, class6092.method18166(), f);
                 final float n4 = (float)method18170.x;
@@ -129,7 +129,7 @@ public class Class9111
             Class9111.field38598 = Class9111.field38598 * (1.0f - n2) + Class9111.field38598 * 0.6f * n2;
             Class9111.field38599 = Class9111.field38599 * (1.0f - n2) + Class9111.field38599 * 0.6f * n2;
         }
-        if (!method18169.method21793(Class7324.field28319)) {
+        if (!method18169.isTagged(Class7324.field28319)) {
             if (class6092.method18166() instanceof LivingEntity) {
                 if (((LivingEntity)class6092.method18166()).method2653(Class9439.field40489)) {
                     final float method18183 = Class1660.method5816((LivingEntity)class6092.method18166(), f);
@@ -156,8 +156,8 @@ public class Class9111
             Class9111.field38598 = Class9111.field38598 * (1.0f - method18184) + Class9111.field38598 * n20 * method18184;
             Class9111.field38599 = Class9111.field38599 * (1.0f - method18184) + Class9111.field38599 * n20 * method18184;
         }
-        if (!method18169.method21793(Class7324.field28319)) {
-            if (method18169.method21793(Class7324.field28320)) {
+        if (!method18169.isTagged(Class7324.field28319)) {
+            if (method18169.isTagged(Class7324.field28320)) {
                 final Entity method18185 = class6092.method18166();
                 final Vec3d method18186 = Class8763.method30358(class6093, method18185.getPosX(), method18185.getPosY() + 1.0, method18185.getPosZ());
                 if (method18186 != null) {
@@ -200,7 +200,7 @@ public class Class9111
         Class9111.field38603 = false;
         final IFluidState method18169 = class6092.method18169();
         final Entity method18170 = class6092.method18166();
-        final boolean b2 = method18169.method21779() != Class7558.field29974;
+        final boolean b2 = method18169.getFluid() != Class7558.field29974;
         float method18171 = -1.0f;
         if (Class9570.field41293.method22605()) {
             method18171 = Class9570.method35815(Class9570.field41293, class6093, class6092, n, 0.1f);
@@ -247,8 +247,8 @@ public class Class9111
             }
             else {
                 float n3 = 1.0f;
-                if (!method18169.method21793(Class7324.field28319)) {
-                    if (method18169.method21793(Class7324.field28320)) {
+                if (!method18169.isTagged(Class7324.field28319)) {
+                    if (method18169.isTagged(Class7324.field28320)) {
                         n3 = 2.0f;
                     }
                 }

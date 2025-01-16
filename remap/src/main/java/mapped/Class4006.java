@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
@@ -35,8 +35,8 @@ public class Class4006 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        VoxelShape class7100 = VoxelShapes.method24486();
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        VoxelShape class7100 = VoxelShapes.empty();
         if (class7096.method21772((IProperty<Boolean>)Class4006.field18055)) {
             class7100 = VoxelShapes.method24492(class7100, Class4006.field18061);
         }
@@ -76,7 +76,7 @@ public class Class4006 extends Block
         return n;
     }
     
-    private boolean method12175(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    private boolean method12175(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
         if (class1857 == Direction.DOWN) {
             return false;
         }
@@ -91,11 +91,11 @@ public class Class4006 extends Block
         return false;
     }
     
-    public static boolean method12176(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    public static boolean method12176(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
         return Block.method11815(class1855.getBlockState(class1856).getCollisionShape(class1855, class1856), class1857.getOpposite());
     }
     
-    private Class7096 method12177(Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    private Class7096 method12177(Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         final BlockPos method1137 = class7098.method1137();
         if (class7096.method21772((IProperty<Boolean>)Class4006.field18055)) {
             class7096 = (Class7096)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class4006.field18055, method12176(class7097, method1137, Direction.DOWN));
@@ -258,7 +258,7 @@ public class Class4006 extends Block
         return true;
     }
     
-    private boolean method12180(final Class1855 class1855, final BlockPos class1856) {
+    private boolean method12180(final IBlockReader class1855, final BlockPos class1856) {
         final Iterable<BlockPos> method1158 = BlockPos.getAllInBoxMutable(class1856.getX() - 4, class1856.getY() - 1, class1856.getZ() - 4, class1856.getX() + 4, class1856.getY() + 1, class1856.getZ() + 4);
         int n = 5;
         final Iterator<BlockPos> iterator = method1158.iterator();

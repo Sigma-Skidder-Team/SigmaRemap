@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -28,24 +28,24 @@ public class Class9356
         this.field40140 = Class7637.field30241.method11332();
     }
     
-    private static boolean method34679(final Class1855 class1855, final BlockPos class1856, final Direction class1857, final IFluidState class1858) {
-        return class1855.method6702(class1856.method1149(class1857)).method21779().method22165(class1858.method21779());
+    private static boolean method34679(final IBlockReader class1855, final BlockPos class1856, final Direction class1857, final IFluidState class1858) {
+        return class1855.getFluidState(class1856.method1149(class1857)).getFluid().isEquivalentTo(class1858.getFluid());
     }
     
-    private static boolean method34680(final Class1855 class1855, final BlockPos class1856, final Direction class1857, final float n) {
+    private static boolean method34680(final IBlockReader class1855, final BlockPos class1856, final Direction class1857, final float n) {
         final BlockPos method1149 = class1856.method1149(class1857);
         final BlockState method1150 = class1855.getBlockState(method1149);
         return method1150.isSolid() && VoxelShapes.method24502(VoxelShapes.method24488(0.0, 0.0, 0.0, 1.0, n, 1.0), method1150.getRenderShape(class1855, method1149), class1857);
     }
     
     public boolean method34681(final Class1856 class1856, final BlockPos class1857, final Class4150 class1858, final IFluidState class1859) {
-        final BlockState method21791 = class1859.method21791();
+        final BlockState method21791 = class1859.getBlockState();
         boolean b7;
         try {
             if (Config.method28955()) {
                 Class8900.method31337(method21791, class1858);
             }
-            final boolean method21792 = class1859.method21793(Class7324.field28320);
+            final boolean method21792 = class1859.isTagged(Class7324.field28320);
             Class1912[] array = method21792 ? this.field40138 : this.field40139;
             if (Class9570.field41292.method22605()) {
                 final Class1912[] array2 = (Class1912[])Class9570.method35818(Class9570.field41292, class1856, class1857, class1859);
@@ -57,7 +57,7 @@ public class Class9356
             int n = -1;
             float n2 = 1.0f;
             if (Class9570.field41250.method22605()) {
-                final Object method21794 = Class9570.method35826(class1859.method21779(), Class9570.field41250, new Object[0]);
+                final Object method21794 = Class9570.method35826(class1859.getFluid(), Class9570.field41250, new Object[0]);
                 if (method21794 != null && Class9570.field41257.method22605()) {
                     n = Class9570.method35821(method21794, Class9570.field41257, class1856, class1857);
                     n2 = (n >> 24 & 0xFF) / 255.0f;
@@ -77,10 +77,10 @@ public class Class9356
             final boolean b6 = !method34679(class1856, class1857, Direction.EAST, class1859);
             if (b || b2 || b6 || b5 || b3 || b4) {
                 b7 = false;
-                float method21795 = this.method34685(class1856, class1857, class1859.method21779());
-                float method21796 = this.method34685(class1856, class1857.method1143(), class1859.method21779());
-                float method21797 = this.method34685(class1856, class1857.method1147().method1143(), class1859.method21779());
-                float method21798 = this.method34685(class1856, class1857.method1147(), class1859.method21779());
+                float method21795 = this.method34685(class1856, class1857, class1859.getFluid());
+                float method21796 = this.method34685(class1856, class1857.method1143(), class1859.getFluid());
+                float method21797 = this.method34685(class1856, class1857.method1147().method1143(), class1859.getFluid());
+                float method21798 = this.method34685(class1856, class1857.method1147(), class1859.getFluid());
                 final double n6 = class1857.getX() & 0xF;
                 final double n7 = class1857.getY() & 0xF;
                 final double n8 = class1857.getZ() & 0xF;
@@ -92,7 +92,7 @@ public class Class9356
                     method21796 -= 0.001f;
                     method21797 -= 0.001f;
                     method21798 -= 0.001f;
-                    final Vec3d method21799 = class1859.method21790(class1856, class1857);
+                    final Vec3d method21799 = class1859.getFlow(class1856, class1857);
                     float n11;
                     float n12;
                     float method21800;
@@ -147,7 +147,7 @@ public class Class9356
                     this.method34683(class1858, n6 + 0.0, n7 + method21796, n8 + 1.0, n21, n22, n23, n2, method21805, method21809, method21812);
                     this.method34683(class1858, n6 + 1.0, n7 + method21797, n8 + 1.0, n21, n22, n23, n2, method21806, method21810, method21812);
                     this.method34683(class1858, n6 + 1.0, n7 + method21798, n8 + 0.0, n21, n22, n23, n2, method21807, method21811, method21812);
-                    if (class1859.method21785(class1856, class1857.method1137())) {
+                    if (class1859.shouldRenderSides(class1856, class1857.method1137())) {
                         this.method34683(class1858, n6 + 0.0, n7 + method21795, n8 + 0.0, n21, n22, n23, n2, method21804, method21808, method21812);
                         this.method34683(class1858, n6 + 1.0, n7 + method21798, n8 + 0.0, n21, n22, n23, n2, method21807, method21811, method21812);
                         this.method34683(class1858, n6 + 1.0, n7 + method21797, n8 + 1.0, n21, n22, n23, n2, method21806, method21810, method21812);
@@ -318,22 +318,22 @@ public class Class9356
         return ((n <= n2) ? n2 : n) | ((n3 <= n4) ? n4 : n3) << 16;
     }
     
-    private float method34685(final Class1855 class1855, final BlockPos class1856, final Fluid class1857) {
+    private float method34685(final IBlockReader class1855, final BlockPos class1856, final Fluid class1857) {
         int n = 0;
         float n2 = 0.0f;
         for (int i = 0; i < 4; ++i) {
             final BlockPos method1134 = class1856.add(-(i & 0x1), 0, -(i >> 1 & 0x1));
-            if (class1855.method6702(method1134.method1137()).method21779().method22165(class1857)) {
+            if (class1855.getFluidState(method1134.method1137()).getFluid().isEquivalentTo(class1857)) {
                 return 1.0f;
             }
-            final IFluidState method1135 = class1855.method6702(method1134);
-            if (!method1135.method21779().method22165(class1857)) {
+            final IFluidState method1135 = class1855.getFluidState(method1134);
+            if (!method1135.getFluid().isEquivalentTo(class1857)) {
                 if (!class1855.getBlockState(method1134).getMaterial().method26439()) {
                     ++n;
                 }
             }
             else {
-                final float method1136 = method1135.method21782(class1855, method1134);
+                final float method1136 = method1135.getActualHeight(class1855, method1134);
                 if (method1136 < 0.8f) {
                     n2 += method1136;
                     ++n;

@@ -18,8 +18,8 @@ public abstract class Class456 extends Class460
         super(class5412);
     }
     
-    public static void method2323(final Class1855 class1855, final Random random, final BlockPos class1856, final ResourceLocation class1857) {
-        final TileEntity method6727 = class1855.method6727(class1856);
+    public static void method2323(final IBlockReader class1855, final Random random, final BlockPos class1856, final ResourceLocation class1857) {
+        final TileEntity method6727 = class1855.getTileEntity(class1856);
         if (method6727 instanceof Class456) {
             ((Class456)method6727).method2327(class1857, random.nextLong());
         }
@@ -104,7 +104,7 @@ public abstract class Class456 extends Class460
     
     @Override
     public boolean method2162(final PlayerEntity playerEntity) {
-        return this.field2656.method6727(this.field2657) == this && playerEntity.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
+        return this.field2656.getTileEntity(this.field2657) == this && playerEntity.method1733(this.field2657.getX() + 0.5, this.field2657.getY() + 0.5, this.field2657.getZ() + 0.5) <= 64.0;
     }
     
     @Override

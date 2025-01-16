@@ -125,15 +125,15 @@ public abstract class Class414 extends Entity implements Class401
                 }
             }
             return b;
-        }, Class2040.field11633, true);
+        }, RayTraceContext.BlockMode.OUTLINE, true);
         if (this.field2519 != null) {
             if (this.field2520-- <= 0) {
                 this.field2519 = null;
             }
         }
         if (method18497.method21449() != Class2165.field12880) {
-            if (method18497.method21449() == Class2165.field12881 && this.world.getBlockState(((Class7005)method18497).method21447()).method21696() == Class7521.field29341) {
-                this.method1794(((Class7005)method18497).method21447());
+            if (method18497.method21449() == Class2165.field12881 && this.world.getBlockState(((BlockRayTraceResult)method18497).method21447()).method21696() == Class7521.field29341) {
+                this.method1794(((BlockRayTraceResult)method18497).method21447());
             }
             else {
                 this.method2016(method18497);

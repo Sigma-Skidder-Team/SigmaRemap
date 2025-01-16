@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class3821 extends Item
@@ -21,14 +21,14 @@ public class Class3821 extends Item
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class7006 method2716 = Item.method11733(class1847, class1848, (this.field17373 != Class7558.field29974) ? Class2191.field13325 : Class2191.field13326);
+        final Class7006 method2716 = Item.method11733(class1847, class1848, (this.field17373 != Class7558.field29974) ? RayTraceContext.FluidMode.NONE : RayTraceContext.FluidMode.SOURCE_ONLY);
         if (method2716.method21449() == Class2165.field12880) {
             return Class9355.method34676(method2715);
         }
         if (method2716.method21449() != Class2165.field12881) {
             return Class9355.method34676(method2715);
         }
-        final Class7005 class1850 = (Class7005)method2716;
+        final BlockRayTraceResult class1850 = (BlockRayTraceResult)method2716;
         final BlockPos method2717 = class1850.method21447();
         final Direction method2718 = class1850.method21448();
         final BlockPos method2719 = method2717.method1149(method2718);
@@ -41,7 +41,7 @@ public class Class3821 extends Item
                 final Fluid method2721 = ((Class3857)method2720.getBlock()).method11922(class1847, method2717, method2720);
                 if (method2721 != Class7558.field29974) {
                     class1848.method2859(Class8276.field33981.method8449(this));
-                    class1848.method1695(method2721.method22166(Class7324.field28320) ? Class8520.field35054 : Class8520.field35052, 1.0f, 1.0f);
+                    class1848.method1695(method2721.isIn(Class7324.field28320) ? Class8520.field35054 : Class8520.field35052, 1.0f, 1.0f);
                     final ItemStack method2722 = this.method11754(method2715, class1848, method2721.method22149());
                     if (!class1847.isRemote) {
                         Class7770.field31784.method13862((Class513)class1848, new ItemStack(method2721.method22149()));
@@ -84,7 +84,7 @@ public class Class3821 extends Item
         return new ItemStack(class8323);
     }
     
-    public boolean method11755(final PlayerEntity playerEntity, final World class513, final BlockPos class514, final Class7005 class515) {
+    public boolean method11755(final PlayerEntity playerEntity, final World class513, final BlockPos class514, final BlockRayTraceResult class515) {
         if (this.field17373 instanceof Class7257) {
             final BlockState method6701 = class513.getBlockState(class514);
             final Material method6702 = method6701.getMaterial();
@@ -96,7 +96,7 @@ public class Class3821 extends Item
                     }
                 }
             }
-            if (class513.dimension.method20502() && this.field17373.method22166(Class7324.field28319)) {
+            if (class513.dimension.method20502() && this.field17373.isIn(Class7324.field28319)) {
                 final int method6704 = class514.getX();
                 final int method6705 = class514.getY();
                 final int method6706 = class514.getZ();
@@ -119,7 +119,7 @@ public class Class3821 extends Item
                     }
                 }
                 this.method11756(playerEntity, class513, class514);
-                class513.setBlockState(class514, this.field17373.method22148().method21791(), 11);
+                class513.setBlockState(class514, this.field17373.getDefaultState().getBlockState(), 11);
             }
             return true;
         }
@@ -127,6 +127,6 @@ public class Class3821 extends Item
     }
     
     public void method11756(final PlayerEntity playerEntity, final Class1851 class513, final BlockPos class514) {
-        class513.method6705(playerEntity, class514, this.field17373.method22166(Class7324.field28320) ? Class8520.field35051 : Class8520.field35049, Class286.field1582, 1.0f, 1.0f);
+        class513.method6705(playerEntity, class514, this.field17373.isIn(Class7324.field28320) ? Class8520.field35051 : Class8520.field35049, Class286.field1582, 1.0f, 1.0f);
     }
 }

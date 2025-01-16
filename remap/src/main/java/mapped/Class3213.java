@@ -96,7 +96,7 @@ public class Class3213 extends Class3167
                     final double n22 = method872.field890 - Class3213.field15514.field4644.method5833().method18161().getZ();
                     GL11.glPushMatrix();
                     GL11.glTranslated(n20, n21, n22);
-                    final BlockPos method874 = new BlockPos(0, 0, 0).method1149(((Class7005)method872.field894).method21448());
+                    final BlockPos method874 = new BlockPos(0, 0, 0).method1149(((BlockRayTraceResult)method872.field894).method21448());
                     GL11.glRotatef(45.0f, this.field15658.method28124((float)method874.getX()), this.field15658.method28125((float)(-method874.getY())), this.field15658.method28126((float)method874.getZ()));
                     GL11.glRotatef(90.0f, this.field15659.method28124((float)method874.getZ()), this.field15659.method28125((float)method874.getY()), this.field15659.method28126((float)(-method874.getX())));
                     GL11.glTranslatef(-0.5f, 0.0f, -0.5f);

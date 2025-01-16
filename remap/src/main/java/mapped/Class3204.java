@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -130,7 +130,7 @@ public class Class3204 extends Class3167
             if (!class5744.method17046()) {
                 this.field15628.method10282();
                 if (this.field15623 != null) {
-                    final Class7005 class5745 = new Class7005(method10053(this.field15623.field39906, this.field15623.field39907), this.field15623.field39907, this.field15623.field39906, false);
+                    final BlockRayTraceResult class5745 = new BlockRayTraceResult(method10053(this.field15623.field39906, this.field15623.field39907), this.field15623.field39907, this.field15623.field39906, false);
                     final int field2743 = Class3204.field15514.field4684.field3006.field2743;
                     if (!this.method9914().method9887("ItemSpoof").equals("None")) {
                         this.field15628.method10280();

@@ -47,7 +47,7 @@ public class Class3172 extends Class3167
             if (method1137.getY() >= 0) {
                 if (method1137.getY() < 256) {
                     if (!method1138.method7043()) {
-                        n -= method1138.method6984(method1137);
+                        n -= method1138.getLightValue(method1137);
                     }
                 }
             }

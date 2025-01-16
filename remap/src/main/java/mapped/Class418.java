@@ -39,7 +39,7 @@ public class Class418 extends Class416
                             }
                         }
                     }
-                    final Class7005 class7007 = (Class7005)class7006;
+                    final BlockRayTraceResult class7007 = (BlockRayTraceResult)class7006;
                     final BlockPos method1149 = class7007.method21447().method1149(class7007.method21448());
                     if (this.world.method6961(method1149)) {
                         this.world.method6692(method1149, Class7521.field29289.getDefaultState());

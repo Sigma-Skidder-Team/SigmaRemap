@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
@@ -23,15 +23,15 @@ public class Class3915 extends Block implements Class3867
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3915.field17730;
     }
     
     @Nullable
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        final IFluidState method6702 = class7074.method21654().method6702(class7074.method21639());
-        return (method6702.method21793(Class7324.field28319) && method6702.method21784() == 8) ? this.method12020(class7074.method21654()) : null;
+        final IFluidState method6702 = class7074.method21654().getFluidState(class7074.method21639());
+        return (method6702.isTagged(Class7324.field28319) && method6702.getLevel() == 8) ? this.method12020(class7074.method21654()) : null;
     }
     
     public BlockState method12020(final Class1851 class1851) {
@@ -99,7 +99,7 @@ public class Class3915 extends Block implements Class3867
     }
     
     @Override
-    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
+    public boolean method11920(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
         return false;
     }
     

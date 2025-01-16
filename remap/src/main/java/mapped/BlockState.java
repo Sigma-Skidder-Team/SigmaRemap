@@ -22,7 +22,7 @@ import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -92,19 +92,19 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().getMaterial(this);
     }
 
-    public boolean canEntitySpawn(final Class1855 class1855, final BlockPos class1856, final EntityType<?> class1857) {
+    public boolean canEntitySpawn(final IBlockReader class1855, final BlockPos class1856, final EntityType<?> class1857) {
         return this.getBlock().canEntitySpawn(this, class1855, class1856, class1857);
     }
 
-    public boolean propagatesSkylightDown(final Class1855 class1855, final BlockPos class1856) {
+    public boolean propagatesSkylightDown(final IBlockReader class1855, final BlockPos class1856) {
         return (this.cache == null) ? this.getBlock().propagatesSkylightDown(this, class1855, class1856) : cache.propagatesSkylightDown;
     }
 
-    public int getOpacity(final Class1855 class1855, final BlockPos class1856) {
+    public int getOpacity(final IBlockReader class1855, final BlockPos class1856) {
         return (this.cache == null) ? this.getBlock().getOpacity(this, class1855, class1856) : cache.opacity;
     }
 
-    public VoxelShape getFaceOcclusionShape(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    public VoxelShape getFaceOcclusionShape(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
         return (this.cache != null && cache.renderShapes != null) ? cache.renderShapes[class1857.ordinal()] : VoxelShapes.getFaceShape(this.getRenderShape(class1855, class1856), class1857);
     }
 
@@ -116,7 +116,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.transparent;
     }
 
-    public int method21704() {
+    public int getLightValue() {
         final Class5719 class5719 = new Class5719(this);
         Class9463.method35173().method35188().method21097(class5719);
         if (!class5719.method16987()) {
@@ -125,15 +125,15 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return 1;
     }
 
-    public int method21705(final Class1855 class1855, final BlockPos class1856) {
-        return this.method21704();
+    public int method21705(final IBlockReader class1855, final BlockPos class1856) {
+        return this.getLightValue();
     }
 
     public boolean method21706() {
         return this.getBlock().method11780(this);
     }
 
-    public MaterialColor method21707(final Class1855 class1855, final BlockPos class1856) {
+    public MaterialColor method21707(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11783(this, class1855, class1856);
     }
 
@@ -153,11 +153,11 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11804(this);
     }
 
-    public float method21712(final Class1855 class1855, final BlockPos class1856) {
+    public float method21712(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11859(this, class1855, class1856);
     }
 
-    public boolean method21713(final Class1855 class1855, final BlockPos class1856) {
+    public boolean method21713(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11793(this, class1855, class1856);
     }
 
@@ -165,7 +165,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11849(this);
     }
 
-    public int method21715(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    public int method21715(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
         return this.getBlock().method11848(this, class1855, class1856, class1857);
     }
 
@@ -177,15 +177,15 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11874(this, class1847, class1848);
     }
 
-    public float method21718(final Class1855 class1855, final BlockPos class1856) {
+    public float method21718(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11800(this, class1855, class1856);
     }
 
-    public float method21719(final PlayerEntity playerEntity, final Class1855 class513, final BlockPos class514) {
+    public float method21719(final PlayerEntity playerEntity, final IBlockReader class513, final BlockPos class514) {
         return this.getBlock().method11830(this, playerEntity, class513, class514);
     }
 
-    public int method21720(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    public int method21720(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
         return this.getBlock().method11851(this, class1855, class1856, class1857);
     }
 
@@ -193,7 +193,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11858(this);
     }
 
-    public boolean isOpaqueCube(final Class1855 class1855, final BlockPos class1856) {
+    public boolean isOpaqueCube(final IBlockReader class1855, final BlockPos class1856) {
         return (this.cache == null) ? this.getBlock().method11817(this, class1855, class1856) : cache.opaqueCube;
     }
 
@@ -205,35 +205,35 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11807(this, class7096, class7097);
     }
 
-    public VoxelShape getShape(final Class1855 class1855, final BlockPos class1856) {
-        return this.method21726(class1855, class1856, ISelectionContext.dummy());
+    public VoxelShape getShape(final IBlockReader class1855, final BlockPos class1856) {
+        return this.getShape(class1855, class1856, ISelectionContext.dummy());
     }
 
-    public VoxelShape method21726(final Class1855 class1855, final BlockPos class1856, final ISelectionContext class1857) {
+    public VoxelShape getShape(final IBlockReader class1855, final BlockPos class1856, final ISelectionContext class1857) {
         return this.getBlock().method11808(this, class1855, class1856, class1857);
     }
 
-    public VoxelShape getCollisionShape(final Class1855 class1855, final BlockPos class1856) {
+    public VoxelShape getCollisionShape(final IBlockReader class1855, final BlockPos class1856) {
         return (this.cache == null) ? this.getCollisionShape(class1855, class1856, ISelectionContext.dummy()) : cache.collisionShape;
     }
 
-    public VoxelShape getCollisionShape(final Class1855 class1855, final BlockPos class1856, final ISelectionContext class1857) {
+    public VoxelShape getCollisionShape(final IBlockReader class1855, final BlockPos class1856, final ISelectionContext class1857) {
         return this.getBlock().method11809(this, class1855, class1856, class1857);
     }
 
-    public VoxelShape getRenderShape(final Class1855 class1855, final BlockPos class1856) {
+    public VoxelShape getRenderShape(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11810(this, class1855, class1856);
     }
 
-    public VoxelShape method21730(final Class1855 class1855, final BlockPos class1856) {
+    public VoxelShape method21730(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11811(this, class1855, class1856);
     }
 
-    public final boolean method21731(final Class1855 class1855, final BlockPos class1856, final Entity class1857) {
+    public final boolean method21731(final IBlockReader class1855, final BlockPos class1856, final Entity class1857) {
         return Block.method11815(this.getCollisionShape(class1855, class1856, ISelectionContext.forEntity(class1857)), Direction.UP);
     }
 
-    public Vec3d method21732(final Class1855 class1855, final BlockPos class1856) {
+    public Vec3d method21732(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11880(this, class1855, class1856);
     }
 
@@ -281,7 +281,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11833(this, class9098);
     }
 
-    public Class2201 method21744(final World class1847, final PlayerEntity class1848, final Class316 class1849, final Class7005 class1850) {
+    public Class2201 method21744(final World class1847, final PlayerEntity class1848, final Class316 class1849, final BlockRayTraceResult class1850) {
         return this.getBlock().method11844(this, class1847, class1850.method21447(), class1848, class1849, class1850);
     }
 
@@ -289,11 +289,11 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         this.getBlock().method11847(this, class1847, class1848, class1849);
     }
 
-    public boolean method21746(final Class1855 class1855, final BlockPos class1856) {
+    public boolean method21746(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11794(this, class1855, class1856);
     }
 
-    public boolean method21747(final Class1855 class1855, final BlockPos class1856) {
+    public boolean method21747(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11795(this, class1855, class1856);
     }
 
@@ -301,7 +301,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11789(this, class179, class180, class181, class182, class183);
     }
 
-    public boolean method21749(final Class1855 class1855, final BlockPos class1856, final Class2084 class1857) {
+    public boolean method21749(final IBlockReader class1855, final BlockPos class1856, final Class2084 class1857) {
         return this.getBlock().method11796(this, class1855, class1856, class1857);
     }
 
@@ -317,7 +317,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().method11843(this, class1852, class1853);
     }
 
-    public boolean method21753(final Class1855 class1855, final BlockPos class1856) {
+    public boolean method21753(final IBlockReader class1855, final BlockPos class1856) {
         return this.getBlock().method11803(this, class1855, class1856);
     }
 
@@ -346,15 +346,15 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
         return this.getBlock().getSoundType(this);
     }
 
-    public void onProjectileCollision(final World class1847, final BlockState class1848, final Class7005 class1849, final Entity class1850) {
+    public void onProjectileCollision(final World class1847, final BlockState class1848, final BlockRayTraceResult class1849, final Entity class1850) {
         this.getBlock().onProjectileCollision(class1847, class1848, class1849, class1850);
     }
 
-    public boolean isSolidSide(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    public boolean isSolidSide(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
         return (this.cache == null) ? Block.hasSolidSide(this, class1855, class1856, class1857) : cache.solidSides[class1857.ordinal()];
     }
 
-    public boolean isCollisionShapeOpaque(final Class1855 class1855, final BlockPos class1856) {
+    public boolean isCollisionShapeOpaque(final IBlockReader class1855, final BlockPos class1856) {
         return (this.cache == null) ? Block.isOpaque(this.getCollisionShape(class1855, class1856)) : cache.opaqueCollisionShape;
     }
 

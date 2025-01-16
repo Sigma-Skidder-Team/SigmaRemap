@@ -6,7 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.IntPriorityQueue;
 import it.unimi.dsi.fastutil.ints.IntArrayFIFOQueue;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.EnumSet;
 import java.util.Set;

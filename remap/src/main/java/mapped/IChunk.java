@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.Set;
 import javax.annotation.Nullable;
 
-public interface IChunk extends Class1855, Class1861
+public interface IChunk extends IBlockReader, Class1861
 {
     @Nullable
     BlockState method7008(final BlockPos p0, final BlockState p1, final boolean p2);

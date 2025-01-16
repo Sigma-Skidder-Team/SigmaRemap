@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -22,20 +22,20 @@ public class Class3877 extends Class3874 implements Class3872, Class3867
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3877.field17528;
     }
     
     @Override
-    public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.isSolidSide(class7097, class7098, Direction.UP) && class7096.getBlock() != Class7521.field29642;
     }
     
     @Nullable
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        final IFluidState method6702 = class7074.method21654().method6702(class7074.method21639());
-        return (method6702.method21793(Class7324.field28319) && method6702.method21784() == 8) ? super.method11846(class7074) : null;
+        final IFluidState method6702 = class7074.method21654().getFluidState(class7074.method21639());
+        return (method6702.isTagged(Class7324.field28319) && method6702.getLevel() == 8) ? super.method11846(class7074) : null;
     }
     
     @Override
@@ -48,7 +48,7 @@ public class Class3877 extends Class3874 implements Class3872, Class3867
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
         return true;
     }
     
@@ -74,7 +74,7 @@ public class Class3877 extends Class3874 implements Class3872, Class3867
     }
     
     @Override
-    public boolean method11920(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
+    public boolean method11920(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
         return false;
     }
     

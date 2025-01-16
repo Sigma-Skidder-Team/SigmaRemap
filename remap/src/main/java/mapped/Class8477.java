@@ -9,8 +9,8 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class8477
 {
-    public static String method28301(final Class1855 class1855, final BlockPos class1856) {
-        return method28302(class1855.method6727(class1856));
+    public static String method28301(final IBlockReader class1855, final BlockPos class1856) {
+        return method28302(class1855.getTileEntity(class1856));
     }
     
     public static String method28302(final TileEntity tileEntity) {

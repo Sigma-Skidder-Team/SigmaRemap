@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.HashMap;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
 import java.util.Iterator;

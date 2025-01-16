@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -56,7 +56,7 @@ public class Class4010 extends Block
     @Override
     public void method11821(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         final BlockPos method1137 = class7098.method1137();
-        if (class7097.method6702(class7098).method21793(Class7324.field28319)) {
+        if (class7097.getFluidState(class7098).isTagged(Class7324.field28319)) {
             class7097.method6705(null, class7098, Class8520.field35199, Class286.field1582, 0.5f, 2.6f + (class7097.rand.nextFloat() - class7097.rand.nextFloat()) * 0.8f);
             class7097.method6911(Class8432.field34632, method1137.getX() + 0.5, method1137.getY() + 0.25, method1137.getZ() + 0.5, 8, 0.5, 0.25, 0.5, 0.0);
         }
@@ -73,12 +73,12 @@ public class Class4010 extends Block
     }
     
     @Override
-    public boolean canEntitySpawn(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final EntityType<?> class7099) {
+    public boolean canEntitySpawn(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final EntityType<?> class7099) {
         return class7099.method23363();
     }
     
     @Override
-    public boolean method11803(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11803(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return true;
     }
 }

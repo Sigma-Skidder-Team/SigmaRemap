@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -33,7 +33,7 @@ public class Class4037 extends Class4036
             while (i < 7) {
                 if (!method21640.isRemote && !World.method6682(method21641)) {
                     final PlayerEntity method21642 = class7074.method21652();
-                    final int method21643 = method21640.method6986();
+                    final int method21643 = method21640.getHeight();
                     if (!(method21642 instanceof Class513)) {
                         break;
                     }

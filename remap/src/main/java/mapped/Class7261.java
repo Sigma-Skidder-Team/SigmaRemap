@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -28,7 +28,7 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public void method22150(final World class1847, final BlockPos class1848, final IFluidState class1849, final Random random) {
+    public void animateTick(final World class1847, final BlockPos class1848, final IFluidState class1849, final Random random) {
         final BlockPos method1137 = class1848.method1137();
         if (class1847.getBlockState(method1137).method21706()) {
             if (!class1847.getBlockState(method1137).method21722(class1847, method1137)) {
@@ -47,7 +47,7 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public void method22152(final World class1847, final BlockPos class1848, final IFluidState class1849, final Random random) {
+    public void randomTick(final World class1847, final BlockPos class1848, final IFluidState class1849, final Random random) {
         if (class1847.method6765().method31216(Class8878.field37315)) {
             final int nextInt = random.nextInt(3);
             if (nextInt <= 0) {
@@ -108,7 +108,7 @@ public abstract class Class7261 extends Class7257
     
     @Nullable
     @Override
-    public Class6909 method22153() {
+    public IParticleData getDripParticleData() {
         return Class8432.field34606;
     }
     
@@ -123,12 +123,12 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public BlockState method22162(final IFluidState IFluidState) {
+    public BlockState getBlockState(final IFluidState IFluidState) {
         return ((StateHolder<O, BlockState>)Class7521.field29174.getDefaultState()).with((IProperty<Comparable>)Class3859.field17480, Class7257.method22193(IFluidState));
     }
     
     @Override
-    public boolean method22165(final Fluid class7255) {
+    public boolean isEquivalentTo(final Fluid class7255) {
         return class7255 == Class7558.field29978 || class7255 == Class7558.field29977;
     }
     
@@ -138,8 +138,8 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public boolean method22154(final IFluidState IFluidState, final Class1855 class7100, final BlockPos class7101, final Fluid class7102, final Direction class7103) {
-        return IFluidState.method21782(class7100, class7101) >= 0.44444445f && class7102.method22166(Class7324.field28319);
+    public boolean canDisplace(final IFluidState IFluidState, final IBlockReader class7100, final BlockPos class7101, final Fluid class7102, final Direction class7103) {
+        return IFluidState.getActualHeight(class7100, class7101) >= 0.44444445f && class7102.isIn(Class7324.field28319);
     }
     
     @Override
@@ -154,7 +154,7 @@ public abstract class Class7261 extends Class7257
             if (!class1850.isEmpty()) {
                 if (!class1849.get((IProperty<Boolean>)Class7261.field28132)) {
                     if (!class1850.get((IProperty<Boolean>)Class7261.field28132)) {
-                        if (class1850.method21782(class1847, class1848) > class1849.method21782(class1847, class1848)) {
+                        if (class1850.getActualHeight(class1847, class1848) > class1849.getActualHeight(class1847, class1848)) {
                             if (class1847.method6790().nextInt(4) != 0) {
                                 method22156 *= 4;
                             }
@@ -178,9 +178,9 @@ public abstract class Class7261 extends Class7257
     @Override
     public void method22179(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final Direction class1854, final IFluidState class1855) {
         if (class1854 == Direction.DOWN) {
-            final IFluidState method6702 = class1851.method6702(class1852);
-            if (this.method22166(Class7324.field28320)) {
-                if (method6702.method21793(Class7324.field28319)) {
+            final IFluidState method6702 = class1851.getFluidState(class1852);
+            if (this.isIn(Class7324.field28320)) {
+                if (method6702.isTagged(Class7324.field28319)) {
                     if (class1853.getBlock() instanceof Class3859) {
                         class1851.setBlockState(class1852, Class7521.field29148.getDefaultState(), 3);
                     }
@@ -193,12 +193,12 @@ public abstract class Class7261 extends Class7257
     }
     
     @Override
-    public boolean method22157() {
+    public boolean ticksRandomly() {
         return true;
     }
     
     @Override
-    public float method22159() {
+    public float getExplosionResistance() {
         return 100.0f;
     }
 }

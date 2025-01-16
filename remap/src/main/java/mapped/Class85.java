@@ -8,7 +8,7 @@ import it.unimi.dsi.fastutil.doubles.DoubleList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 
-public final class Class85 implements Class83
+public final class Class85 implements IDoubleListMerger
 {
     private static String[] field192;
     private final DoubleArrayList field193;
@@ -67,9 +67,9 @@ public final class Class85 implements Class83
     }
     
     @Override
-    public boolean method445(final Class9015 class9015) {
+    public boolean forMergedIndexes(final IConsumer class9015) {
         for (int i = 0; i < this.field193.size() - 1; ++i) {
-            if (!class9015.method32279(this.field194.getInt(i), this.field195.getInt(i), i)) {
+            if (!class9015.merge(this.field194.getInt(i), this.field195.getInt(i), i)) {
                 return false;
             }
         }
@@ -77,7 +77,7 @@ public final class Class85 implements Class83
     }
     
     @Override
-    public DoubleList method447() {
+    public DoubleList func_212435_a() {
         return (DoubleList)this.field193;
     }
 }

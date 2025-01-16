@@ -15,12 +15,12 @@ public class Class7262 extends Class7261
     }
     
     @Override
-    public int method22164(final IFluidState IFluidState) {
+    public int getLevel(final IFluidState IFluidState) {
         return IFluidState.get((IProperty<Integer>)Class7262.field28133);
     }
     
     @Override
-    public boolean method22163(final IFluidState IFluidState) {
+    public boolean isSource(final IFluidState IFluidState) {
         return false;
     }
 }

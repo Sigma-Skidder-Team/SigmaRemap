@@ -9,7 +9,7 @@ import com.google.common.cache.CacheBuilder;
 
 import javax.annotation.Nullable;
 import com.google.common.cache.LoadingCache;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3i;
 
 import java.util.function.Predicate;

@@ -9,7 +9,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -38,8 +38,8 @@ public class Class4011 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return VoxelShapes.method24486();
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
+        return VoxelShapes.empty();
     }
     
     @Override
@@ -53,7 +53,7 @@ public class Class4011 extends Block
         return this.method12184(class7074.method21654(), class7074.method21639());
     }
     
-    public BlockState method12184(final Class1855 class1855, final BlockPos class1856) {
+    public BlockState method12184(final IBlockReader class1855, final BlockPos class1856) {
         final BlockPos method1139 = class1856.method1139();
         final BlockState method1140 = class1855.getBlockState(method1139);
         if (!this.method12191(method1140) && !method1140.isSolidSide(class1855, method1139, Direction.UP)) {
@@ -218,7 +218,7 @@ public class Class4011 extends Block
         }
     }
     
-    private boolean method12189(final Class1855 class1855, final BlockPos class1856) {
+    private boolean method12189(final IBlockReader class1855, final BlockPos class1856) {
         final Direction[] values = Direction.values();
         for (int length = values.length, i = 0; i < length; ++i) {
             if (this.method12191(class1855.getBlockState(class1856.method1149(values[i])))) {

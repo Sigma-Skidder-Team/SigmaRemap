@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -42,7 +42,7 @@ public class Class3891 extends Class3892 implements Class3872
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         final int intValue = class7096.get((IProperty<Integer>)Class3891.field17559);
         switch (Class8486.field34829[class7096.get((IProperty<Direction>)Class3891.field17564).ordinal()]) {
             case 1: {
@@ -83,7 +83,7 @@ public class Class3891 extends Class3892 implements Class3872
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
         return class1857.get((IProperty<Integer>)Class3891.field17559) < 2;
     }
     

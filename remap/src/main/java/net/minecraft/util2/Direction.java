@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package net.minecraft.util;
+package net.minecraft.util2;
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import java.util.Comparator;
@@ -18,6 +18,7 @@ import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.Vector4f;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3i;
 

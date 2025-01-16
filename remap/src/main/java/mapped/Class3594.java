@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -41,7 +41,7 @@ public class Class3594 extends Class3592
     
     private boolean method11122(final BlockPos class354, final int n, final int n2, final int n3) {
         final BlockPos method1134 = class354.add(n * n3, 0, n2 * n3);
-        return this.field16741.world.method6702(method1134).method21793(Class7324.field28319) && !this.field16741.world.getBlockState(method1134).method21697().method26440();
+        return this.field16741.world.getFluidState(method1134).isTagged(Class7324.field28319) && !this.field16741.world.getBlockState(method1134).method21697().method26440();
     }
     
     private boolean method11123(final BlockPos class354, final int n, final int n2, final int n3) {
@@ -87,7 +87,7 @@ public class Class3594 extends Class3592
     public void method11016() {
         final boolean field16743 = this.field16743;
         if (!field16743) {
-            this.field16743 = this.field16741.world.method6702(new BlockPos(this.field16741)).method21793(Class7324.field28319);
+            this.field16743 = this.field16741.world.getFluidState(new BlockPos(this.field16741)).isTagged(Class7324.field28319);
         }
         if (this.field16743) {
             if (!field16743) {

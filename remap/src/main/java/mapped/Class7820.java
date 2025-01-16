@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.cache.LoadingCache;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 
 public class Class7820

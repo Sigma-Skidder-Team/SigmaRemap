@@ -55,7 +55,7 @@ public class Class7667
     }
     
     public static int method24306(final BlockState class7096, final Class1856 class7097, final BlockPos class7098) {
-        return Class9570.field41243.method22605() ? Class9570.method35821(class7096, Class9570.field41243, class7097, class7098) : class7096.method21704();
+        return Class9570.field41243.method22605() ? Class9570.method35821(class7096, Class9570.field41243, class7097, class7098) : class7096.getLightValue();
     }
     
     public static Class6356 method24307(final ItemStack class8321, final World class8322) {
@@ -88,7 +88,7 @@ public class Class7667
         return new String[0];
     }
     
-    public static boolean method24309(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public static boolean method24309(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return Class9570.field41247.method22605() ? Class9570.method35820(class7096, Class9570.field41247, class7097, class7098) : class7096.method21706();
     }
     

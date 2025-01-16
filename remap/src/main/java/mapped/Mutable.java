@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3i;
 
@@ -96,8 +96,8 @@ public class Mutable extends BlockPos
         return this.setPos(BlockPos.unpackX(n), BlockPos.unpackY(n), BlockPos.unpackZ(n));
     }
     
-    public Mutable method1289(final Class309 class309, final int n, final int n2, final int n3) {
-        return this.setPos(class309.method982(n, n2, n3, Axis.X), class309.method982(n, n2, n3, Axis.Y), class309.method982(n, n2, n3, Axis.Z));
+    public Mutable method1289(final AxisRotation axisRotation, final int n, final int n2, final int n3) {
+        return this.setPos(axisRotation.getCoordinate(n, n2, n3, Axis.X), axisRotation.getCoordinate(n, n2, n3, Axis.Y), axisRotation.getCoordinate(n, n2, n3, Axis.Z));
     }
     
     public Mutable method1290(final Direction class179) {

@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class6405 extends Class6404
@@ -28,8 +28,8 @@ public class Class6405 extends Class6404
         final double n3 = class5491.getZ() + class5493.getZOffset() * 1.125f;
         final BlockPos method16764 = class5491.method16764().method1149(class5493);
         double n4;
-        if (!method16763.method6702(method16764).method21793(Class7324.field28319)) {
-            if (!method16763.getBlockState(method16764).method21706() || !method16763.method6702(method16764.method1139()).method21793(Class7324.field28319)) {
+        if (!method16763.getFluidState(method16764).isTagged(Class7324.field28319)) {
+            if (!method16763.getBlockState(method16764).method21706() || !method16763.getFluidState(method16764.method1139()).isTagged(Class7324.field28319)) {
                 return this.field25524.method19090(class5491, class5492);
             }
             n4 = 0.0;

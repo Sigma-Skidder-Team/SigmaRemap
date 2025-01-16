@@ -118,7 +118,7 @@ public class Class427 extends Entity
                 b = true;
             }
             if (this.ticksExisted % (b ? 2 : 40) == 0) {
-                if (this.world.method6702(new BlockPos(this)).method21793(Class7324.field28320)) {
+                if (this.world.getFluidState(new BlockPos(this)).isTagged(Class7324.field28320)) {
                     this.setMotion((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f, 0.20000000298023224, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f);
                     this.method1695(Class8520.field35214, 0.4f, 2.0f + this.rand.nextFloat() * 0.4f);
                 }

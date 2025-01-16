@@ -30,7 +30,7 @@ public class Class3283 extends Class3167
     private void method10366(final Class5748 class5748) {
         if (this.method9906() && (Class3283.field15514.field4684.method1809() || !this.method9914().method9883("Sneak"))) {
             if (class5748.method17055() == Class1958.field10672) {
-                final Class7005 method13697 = Class4609.method13697(Class3283.field15514.field4684.rotationYaw, Class3283.field15514.field4684.rotationPitch, this.method9914().method9886("Maximum range"));
+                final BlockRayTraceResult method13697 = Class4609.method13697(Class3283.field15514.field4684.rotationYaw, Class3283.field15514.field4684.rotationPitch, this.method9914().method9886("Maximum range"));
                 BlockPos method13698 = null;
                 if (method13697 != null) {
                     method13698 = method13697.method21447();

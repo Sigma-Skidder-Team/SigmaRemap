@@ -10,7 +10,7 @@ public class Class6207 extends Class6206
 {
     private static String[] field25042;
     
-    private Class6207(final World class1847, final double n, final double n2, final double n3, final Fluid class1848, final Class6909 class1849) {
+    private Class6207(final World class1847, final double n, final double n2, final double n3, final Fluid class1848, final IParticleData class1849) {
         super(class1847, n, n2, n3, class1848, class1849, null);
     }
     

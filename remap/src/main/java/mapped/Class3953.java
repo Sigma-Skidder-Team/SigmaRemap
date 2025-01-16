@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Random;
@@ -24,7 +24,7 @@ public class Class3953 extends Class3841
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         final Class500 class1856 = new Class500();
         class1856.method2543(this == Class7521.field29640);
         return class1856;
@@ -33,7 +33,7 @@ public class Class3953 extends Class3841
     @Override
     public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.isRemote) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class500) {
                 final Class500 class7101 = (Class500)method6727;
                 final boolean method6728 = class7097.method6749(class7098);
@@ -55,7 +55,7 @@ public class Class3953 extends Class3841
     
     @Override
     public void method11822(final Class7096 class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
-        final TileEntity method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.getTileEntity(class7098);
         if (method6727 instanceof Class500) {
             final Class500 class7099 = (Class500)method6727;
             final Class865 method6728 = class7099.method2539();
@@ -108,8 +108,8 @@ public class Class3953 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
-        final TileEntity method6727 = class7097.method6727(class7098);
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
+        final TileEntity method6727 = class7097.getTileEntity(class7098);
         if (method6727 instanceof Class500 && class7099.method2908()) {
             class7099.method2829((Class500)method6727);
             return Class2201.field13400;
@@ -124,13 +124,13 @@ public class Class3953 extends Class3841
     
     @Override
     public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
-        final TileEntity method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.getTileEntity(class7098);
         return (method6727 instanceof Class500) ? ((Class500)method6727).method2539().method5206() : 0;
     }
     
     @Override
     public void method11853(final World class1847, final BlockPos class1848, final Class7096 class1849, final LivingEntity class1850, final ItemStack class1851) {
-        final TileEntity method6727 = class1847.method6727(class1848);
+        final TileEntity method6727 = class1847.getTileEntity(class1848);
         if (method6727 instanceof Class500) {
             final Class500 class1852 = (Class500)method6727;
             final Class865 method6728 = class1852.method2539();
@@ -185,7 +185,7 @@ public class Class3953 extends Class3841
             if (method6768 != Class7521.field29640) {
                 break;
             }
-            final TileEntity method6769 = class1847.method6727(class1850);
+            final TileEntity method6769 = class1847.getTileEntity(class1850);
             if (!(method6769 instanceof Class500)) {
                 break;
             }

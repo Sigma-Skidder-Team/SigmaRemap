@@ -197,7 +197,7 @@ public class Class4545 extends Class4535<Class5141>
         return true;
     }
     
-    private boolean method13555(final Class1855 class1855, final BlockPos class1856) {
+    private boolean method13555(final IBlockReader class1855, final BlockPos class1856) {
         return class1855.getBlockState(class1856.method1139()).getMaterial() == Material.AIR;
     }
     

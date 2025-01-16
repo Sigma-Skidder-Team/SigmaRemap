@@ -15,7 +15,7 @@ import java.util.BitSet;
 import java.util.Map;
 import java.util.function.Predicate;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import org.apache.commons.lang3.tuple.Pair;
 import java.util.List;
 

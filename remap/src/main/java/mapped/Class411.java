@@ -32,7 +32,7 @@ public class Class411 extends Class409
         return Items.field31355;
     }
     
-    private Class6909 method2017() {
+    private IParticleData method2017() {
         final ItemStack method2014 = this.method2014();
         return method2014.method27620() ? Class8432.field34631 : new Class6910(Class8432.field34629, method2014);
     }
@@ -40,7 +40,7 @@ public class Class411 extends Class409
     @Override
     public void method1798(final byte b) {
         if (b == 3) {
-            final Class6909 method2017 = this.method2017();
+            final IParticleData method2017 = this.method2017();
             for (int i = 0; i < 8; ++i) {
                 this.world.method6709(method2017, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
             }

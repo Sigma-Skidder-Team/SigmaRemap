@@ -266,7 +266,7 @@ public class Class6356 extends Class6354
     }
     
     @Nullable
-    public IPacket<?> method18919(final ItemStack class8321, final Class1855 class8322, final PlayerEntity class8323) {
+    public IPacket<?> method18919(final ItemStack class8321, final IBlockReader class8322, final PlayerEntity class8323) {
         final Class9244 class8324 = this.field25429.get(class8323);
         return (class8324 != null) ? class8324.method34084(class8321) : null;
     }
@@ -327,7 +327,7 @@ public class Class6356 extends Class6354
         }
     }
     
-    public void method18923(final Class1855 class1855, final int n, final int n2) {
+    public void method18923(final IBlockReader class1855, final int n, final int n2) {
         final Iterator<Class8843> iterator = this.field25430.values().iterator();
         while (iterator.hasNext()) {
             final Class8843 class1856 = iterator.next();

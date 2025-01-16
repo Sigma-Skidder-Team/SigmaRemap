@@ -235,8 +235,8 @@ public class Class8865
                             if (method1136 != class1849.getBlockState(method1135)) {
                                 return OptionalInt.empty();
                             }
-                            final TileEntity method1137 = class1849.method6727(class1856);
-                            final TileEntity method1138 = class1849.method6727(method1135);
+                            final TileEntity method1137 = class1849.getTileEntity(class1856);
+                            final TileEntity method1138 = class1849.getTileEntity(method1135);
                             if (method1137 != null) {
                                 if (method1138 == null) {
                                     return OptionalInt.empty();

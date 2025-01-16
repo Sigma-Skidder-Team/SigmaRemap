@@ -9,5 +9,5 @@ import javax.annotation.Nullable;
 public interface Class3840
 {
     @Nullable
-    TileEntity method11898(final Class1855 p0);
+    TileEntity method11898(final IBlockReader p0);
 }

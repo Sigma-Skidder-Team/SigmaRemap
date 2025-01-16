@@ -15,7 +15,7 @@ public class Class4271 implements IPacket<IClientPlayNetHandler>
     public Class4271() {
     }
     
-    public Class4271(final Class1855 class1855, final BlockPos field19157) {
+    public Class4271(final IBlockReader class1855, final BlockPos field19157) {
         this.field19157 = field19157;
         this.field19158 = class1855.getBlockState(field19157);
     }

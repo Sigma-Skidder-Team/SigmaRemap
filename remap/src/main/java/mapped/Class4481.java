@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.List;
 import java.util.Random;
@@ -218,7 +218,7 @@ public class Class4481 extends Class4479
                             if (this.method13442(class1851, 1, 0, n3, class1853)) {
                                 this.field19873 = true;
                                 class1851.setBlockState(class1855, Class7521.field29290.getDefaultState(), 2);
-                                final TileEntity method13464 = class1851.method6727(class1855);
+                                final TileEntity method13464 = class1851.getTileEntity(class1855);
                                 if (method13464 instanceof Class494) {
                                     ((Class494)method13464).method2509().method13884(EntityType.field28965);
                                 }

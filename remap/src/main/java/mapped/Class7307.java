@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.BitSet;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.function.Function;
 
@@ -69,8 +69,8 @@ public class Class7307 extends Class7303
                     }
                 }
             }
-            class7305.method7008(class7306, Class7307.field28283.method21791(), false);
-            class7305.method7037().method21345(class7306, Class7307.field28283.method21779(), 0);
+            class7305.method7008(class7306, Class7307.field28283.getBlockState(), false);
+            class7305.method7037().method21345(class7306, Class7307.field28283.getFluid(), 0);
             n10 = 1;
             break;
         }
@@ -78,7 +78,7 @@ public class Class7307 extends Class7303
         if (n10 != 0) {
             return true;
         }
-        class7305.method7008(class7306, Class7307.field28283.method21791(), false);
+        class7305.method7008(class7306, Class7307.field28283.getBlockState(), false);
         return true;
     }
 }

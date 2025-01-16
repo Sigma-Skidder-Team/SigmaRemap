@@ -25,7 +25,7 @@ import java.util.HashMap;
 import com.google.common.collect.Queues;
 import com.google.common.collect.Maps;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -63,75 +63,75 @@ public class Class1793 implements Class1662
     }
     
     private void method6471() {
-        this.method6473((Class6907<Class6909>)Class8432.field34597, Class5354::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34598, Class5400::new);
-        this.method6472((Class6907<Class6909>)Class8432.field34599, (Class5350<Class6909>)new Class5370());
+        this.method6473((Class6907<IParticleData>)Class8432.field34597, Class5354::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34598, Class5400::new);
+        this.method6472((Class6907<IParticleData>)Class8432.field34599, (Class5350<IParticleData>)new Class5370());
         this.method6472(Class8432.field34600, new Class5385());
-        this.method6473((Class6907<Class6909>)Class8432.field34601, Class5401::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34650, Class5362::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34648, Class5388::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34653, Class5351::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34654, Class5389::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34602, Class5408::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34626, Class5352::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34603, Class5369::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34649, Class5375::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34604, Class5374::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34605, Class5405::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34652, Class5387::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34606, Class5368::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34607, Class5376::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34608, Class5404::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34609, Class5356::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34610, Class5364::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34601, Class5401::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34650, Class5362::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34648, Class5388::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34653, Class5351::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34654, Class5389::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34602, Class5408::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34626, Class5352::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34603, Class5369::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34649, Class5375::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34604, Class5374::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34605, Class5405::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34652, Class5387::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34606, Class5368::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34607, Class5376::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34608, Class5404::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34609, Class5356::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34610, Class5364::new);
         this.method6473(Class8432.field34611, Class5410::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34612, Class5381::new);
-        this.method6472((Class6907<Class6909>)Class8432.field34613, (Class5350<Class6909>)new Class5379());
-        this.method6473((Class6907<Class6909>)Class8432.field34614, Class5394::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34615, Class5378::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34616, Class5411::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34617, Class5382::new);
-        this.method6472((Class6907<Class6909>)Class8432.field34618, (Class5350<Class6909>)new Class5380());
-        this.method6473((Class6907<Class6909>)Class8432.field34619, Class5396::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34612, Class5381::new);
+        this.method6472((Class6907<IParticleData>)Class8432.field34613, (Class5350<IParticleData>)new Class5379());
+        this.method6473((Class6907<IParticleData>)Class8432.field34614, Class5394::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34615, Class5378::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34616, Class5411::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34617, Class5382::new);
+        this.method6472((Class6907<IParticleData>)Class8432.field34618, (Class5350<IParticleData>)new Class5380());
+        this.method6473((Class6907<IParticleData>)Class8432.field34619, Class5396::new);
         this.method6473(Class8432.field34620, Class5393::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34621, Class5390::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34622, Class5371::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34623, Class5372::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34624, Class5355::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34625, Class5359::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34627, Class5406::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34628, Class5392::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34621, Class5390::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34622, Class5371::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34623, Class5372::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34624, Class5355::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34625, Class5359::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34627, Class5406::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34628, Class5392::new);
         this.method6472(Class8432.field34629, new Class5409());
-        this.method6472((Class6907<Class6909>)Class8432.field34630, (Class5350<Class6909>)new Class5365());
-        this.method6472((Class6907<Class6909>)Class8432.field34631, (Class5350<Class6909>)new Class5386());
-        this.method6473((Class6907<Class6909>)Class8432.field34632, Class5373::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34633, Class5398::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34634, Class5361::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34651, Class5353::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34635, Class5384::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34636, Class5377::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34637, Class5395::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34638, Class5403::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34639, Class5358::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34640, Class5391::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34641, Class5397::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34643, Class5383::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34644, Class5349::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34642, Class5366::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34645, Class5402::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34646, Class5407::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34647, Class5360::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34655, Class5363::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34656, Class5367::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34657, Class5399::new);
-        this.method6473((Class6907<Class6909>)Class8432.field34658, Class5357::new);
+        this.method6472((Class6907<IParticleData>)Class8432.field34630, (Class5350<IParticleData>)new Class5365());
+        this.method6472((Class6907<IParticleData>)Class8432.field34631, (Class5350<IParticleData>)new Class5386());
+        this.method6473((Class6907<IParticleData>)Class8432.field34632, Class5373::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34633, Class5398::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34634, Class5361::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34651, Class5353::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34635, Class5384::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34636, Class5377::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34637, Class5395::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34638, Class5403::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34639, Class5358::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34640, Class5391::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34641, Class5397::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34643, Class5383::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34644, Class5349::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34642, Class5366::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34645, Class5402::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34646, Class5407::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34647, Class5360::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34655, Class5363::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34656, Class5367::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34657, Class5399::new);
+        this.method6473((Class6907<IParticleData>)Class8432.field34658, Class5357::new);
     }
     
-    private <T extends Class6909> void method6472(final Class6907<T> class6907, final Class5350<T> class6908) {
+    private <T extends IParticleData> void method6472(final Class6907<T> class6907, final Class5350<T> class6908) {
         this.field9928.put(Registry.field222.getKey(class6907), class6908);
     }
     
-    private <T extends Class6909> void method6473(final Class6907<T> class6907, final Class7759<T> class6908) {
+    private <T extends IParticleData> void method6473(final Class6907<T> class6907, final Class7759<T> class6908) {
         final Class7806 class6909 = new Class7806(this, null);
         this.field9930.put(Registry.field222.getKey(class6907), class6909);
         this.field9928.put(Registry.field222.getKey(class6907), class6908.method24763(class6909));
@@ -193,17 +193,17 @@ public class Class1793 implements Class1662
         }
     }
     
-    public void method6476(final Entity class399, final Class6909 class400) {
+    public void method6476(final Entity class399, final IParticleData class400) {
         this.field9925.add(new Class6177(this.field9923, class399, class400));
     }
     
-    public void method6477(final Entity class399, final Class6909 class400, final int n) {
+    public void method6477(final Entity class399, final IParticleData class400, final int n) {
         this.field9925.add(new Class6177(this.field9923, class399, class400, n));
     }
     
     @Nullable
-    public Class6173 method6478(final Class6909 class6909, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        final Class6173 method6479 = this.method6479(class6909, n, n2, n3, n4, n5, n6);
+    public Class6173 method6478(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        final Class6173 method6479 = this.method6479(IParticleData, n, n2, n3, n4, n5, n6);
         if (method6479 == null) {
             return null;
         }
@@ -212,8 +212,8 @@ public class Class1793 implements Class1662
     }
     
     @Nullable
-    private <T extends Class6909> Class6173 method6479(final T t, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        final Class5350 class5350 = this.field9928.get(Registry.field222.getKey((Class6907<? extends Class6909>)t.method21272()));
+    private <T extends IParticleData> Class6173 method6479(final T t, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        final Class5350 class5350 = this.field9928.get(Registry.field222.getKey((Class6907<? extends IParticleData>)t.method21272()));
         return (class5350 != null) ? class5350.method16516(t, this.field9923, n, n2, n3, n4, n5, n6) : null;
     }
     
@@ -366,7 +366,7 @@ public class Class1793 implements Class1662
             b = !class355.method21706();
         }
         if (b) {
-            class355.getShape(this.field9923, class354).method24544((n, n2, n3, n4, n5, n6) -> {
+            class355.getShape(this.field9923, class354).forEachBox((n, n2, n3, n4, n5, n6) -> {
                 final double min = Math.min(1.0, n4 - n);
                 final double min2 = Math.min(1.0, n5 - n2);
                 final double min3 = Math.min(1.0, n6 - n3);
@@ -443,7 +443,7 @@ public class Class1793 implements Class1662
         return false;
     }
     
-    public void method6490(final BlockPos class354, final Class7005 class355) {
+    public void method6490(final BlockPos class354, final BlockRayTraceResult class355) {
         final BlockState method6701 = this.field9923.getBlockState(class354);
         if (method6701 != null) {
             if (!Class9570.method35820(method6701, Class9570.field41242, this.field9923, class355, this)) {

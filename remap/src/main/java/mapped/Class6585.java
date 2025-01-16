@@ -15,7 +15,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.IntNBT;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -65,7 +65,7 @@ public class Class6585
                         if (class1849 != null && class1849 == method1136.getBlock()) {
                             continue;
                         }
-                        final TileEntity method1137 = class1847.method6727(class1852);
+                        final TileEntity method1137 = class1847.getTileEntity(class1852);
                         if (method1137 == null) {
                             if (!method1136.isOpaqueCube(class1847, class1852) && !method1136.isCollisionShapeOpaque(class1847, class1852)) {
                                 arrayList3.add(new Class9038(method1135, method1136, null));
@@ -183,10 +183,10 @@ public class Class6585
                             if (method32866 != null && !method32866.isVecInside(field38248)) {
                                 continue;
                             }
-                            final IFluidState class1855 = class1853.method32864() ? class1851.method6702(field38248) : null;
+                            final IFluidState class1855 = class1853.method32864() ? class1851.getFluidState(field38248) : null;
                             final BlockState method32867 = class1854.field38249.method21709(class1853.method32855()).method21708(class1853.method32856());
                             if (class1854.field38250 != null) {
-                                Class447.method2267(class1851.method6727(field38248));
+                                Class447.method2267(class1851.getTileEntity(field38248));
                                 class1851.setBlockState(field38248, Class7521.field29517.getDefaultState(), 20);
                             }
                             if (!class1851.setBlockState(field38248, method32867, n)) {
@@ -200,7 +200,7 @@ public class Class6585
                             max3 = Math.max(max3, field38248.getZ());
                             arrayListWithCapacity2.add(Pair.of((Object)field38248, (Object)class1854.field38250));
                             if (class1854.field38250 != null) {
-                                final TileEntity method32868 = class1851.method6727(field38248);
+                                final TileEntity method32868 = class1851.getTileEntity(field38248);
                                 if (method32868 != null) {
                                     class1854.field38250.method298("x", field38248.getX());
                                     class1854.field38250.method298("y", field38248.getY());
@@ -217,7 +217,7 @@ public class Class6585
                                 continue;
                             }
                             ((Class3867)method32867.getBlock()).method11921(class1851, field38248, method32867, class1855);
-                            if (class1855.method21780()) {
+                            if (class1855.isSource()) {
                                 continue;
                             }
                             arrayListWithCapacity.add(field38248);
@@ -230,22 +230,22 @@ public class Class6585
                             while (iterator2.hasNext()) {
                                 BlockPos class1857;
                                 final BlockPos class1856 = class1857 = (BlockPos)iterator2.next();
-                                IFluidState method32869 = class1851.method6702(class1856);
-                                for (int n3 = 0; n3 < array.length && !method32869.method21780(); ++n3) {
+                                IFluidState method32869 = class1851.getFluidState(class1856);
+                                for (int n3 = 0; n3 < array.length && !method32869.isSource(); ++n3) {
                                     final BlockPos method32870 = class1857.method1149(array[n3]);
-                                    final IFluidState method32871 = class1851.method6702(method32870);
-                                    if (method32871.method21782(class1851, method32870) <= method32869.method21782(class1851, class1857)) {
-                                        if (!method32871.method21780()) {
+                                    final IFluidState method32871 = class1851.getFluidState(method32870);
+                                    if (method32871.getActualHeight(class1851, method32870) <= method32869.getActualHeight(class1851, class1857)) {
+                                        if (!method32871.isSource()) {
                                             continue;
                                         }
-                                        if (method32869.method21780()) {
+                                        if (method32869.isSource()) {
                                             continue;
                                         }
                                     }
                                     method32869 = method32871;
                                     class1857 = method32870;
                                 }
-                                if (!method32869.method21780()) {
+                                if (!method32869.isSource()) {
                                     continue;
                                 }
                                 final BlockState method32872 = class1851.getBlockState(class1856);
@@ -260,14 +260,14 @@ public class Class6585
                         }
                         if (min <= max) {
                             if (!class1853.method32861()) {
-                                final Class8259 class1858 = new Class8259(max - min + 1, max2 - min2 + 1, max3 - min3 + 1);
+                                final BitSetVoxelShapePart class1858 = new BitSetVoxelShapePart(max - min + 1, max2 - min2 + 1, max3 - min3 + 1);
                                 final int n4 = min;
                                 final int n5 = min2;
                                 final int n6 = min3;
                                 final Iterator iterator3 = arrayListWithCapacity2.iterator();
                                 while (iterator3.hasNext()) {
                                     final BlockPos class1859 = (BlockPos)((Pair)iterator3.next()).getFirst();
-                                    class1858.method27415(class1859.getX() - n4, class1859.getY() - n5, class1859.getZ() - n6, true, true);
+                                    class1858.setFilled(class1859.getX() - n4, class1859.getY() - n5, class1859.getZ() - n6, true, true);
                                 }
                                 method19957(class1851, n, class1858, n4, n5, n6);
                             }
@@ -284,7 +284,7 @@ public class Class6585
                                 if (pair.getSecond() == null) {
                                     continue;
                                 }
-                                final TileEntity method32876 = class1851.method6727(class1860);
+                                final TileEntity method32876 = class1851.getTileEntity(class1860);
                                 if (method32876 == null) {
                                     continue;
                                 }
@@ -303,7 +303,7 @@ public class Class6585
         return false;
     }
     
-    public static void method19957(final Class1851 class1851, final int n, final Class8260 class1852, final int n2, final int n3, final int n4) {
+    public static void method19957(final Class1851 class1851, final int n, final VoxelShapePart class1852, final int n2, final int n3, final int n4) {
         class1852.method27438((class1852, n5, n6, n7) -> {
             final BlockPos class1853 = new BlockPos(n2 + n5, n3 + n6, n4 + n7);
             final BlockPos method1149 = class1853.method1149(class1852);

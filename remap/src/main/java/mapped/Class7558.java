@@ -16,7 +16,7 @@ public class Class7558
     public static final Class7257 field29978;
     
     private static <T extends Fluid> T method23729(final String s, final T t) {
-        return Registry.method511(Registry.field206, s, t);
+        return Registry.method511(Registry.FLUID, s, t);
     }
     
     static {
@@ -25,7 +25,7 @@ public class Class7558
         field29976 = method23729("water", new Class7260());
         field29977 = method23729("flowing_lava", new Class7262());
         field29978 = method23729("lava", new Class7263());
-        final Iterator<Object> iterator = Registry.field206.iterator();
+        final Iterator<Object> iterator = Registry.FLUID.iterator();
         while (iterator.hasNext()) {
             final UnmodifiableIterator iterator2 = iterator.next().method22146().method32902().iterator();
             while (((Iterator)iterator2).hasNext()) {

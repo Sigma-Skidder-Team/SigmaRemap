@@ -54,7 +54,7 @@ public class Class8876
         }
         final IChunk method31207 = method31206.method6904().getChunk(class354.getX() >> 4, class354.getZ() >> 4, ChunkStatus.field39989, false);
         if (method31207 != null) {
-            return method31207.method6727(class354);
+            return method31207.getTileEntity(class354);
         }
         return null;
     }

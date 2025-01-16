@@ -8,7 +8,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Locale;
 
-public class Class6912 implements Class6909
+public class Class6912 implements IParticleData
 {
     public static final Class6912 field27101;
     public static final Class6382<Class6912> field27102;

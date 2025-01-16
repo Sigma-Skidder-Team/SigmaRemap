@@ -135,7 +135,7 @@ public class Class8199
             }
             if (!method21756.isEmpty()) {
                 this.field33721 += (short)n;
-                if (method21756.method21788()) {
+                if (method21756.ticksRandomly()) {
                     this.field33723 += (short)n;
                 }
             }

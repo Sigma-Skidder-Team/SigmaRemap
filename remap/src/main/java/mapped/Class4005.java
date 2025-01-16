@@ -92,7 +92,7 @@ public class Class4005 extends Block
         }
     }
     
-    private boolean method12170(final Class1855 class1855, final BlockPos class1856) {
+    private boolean method12170(final IBlockReader class1855, final BlockPos class1856) {
         return class1855.getBlockState(class1856.method1139()).getBlock() == Class7521.field29175;
     }
     
@@ -129,7 +129,7 @@ public class Class4005 extends Block
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return (class7096.get((IProperty<Integer>)Class4005.field18053) <= 1) ? Class4005.field18050 : Class4005.field18051;
     }
     

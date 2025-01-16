@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -16,15 +16,15 @@ public class Class7075
     private static String[] field27550;
     public final PlayerEntity field27551;
     public final Class316 field27552;
-    public final Class7005 field27553;
+    public final BlockRayTraceResult field27553;
     public final World field27554;
     public final ItemStack field27555;
     
-    public Class7075(final PlayerEntity playerEntity, final Class316 class513, final Class7005 class514) {
+    public Class7075(final PlayerEntity playerEntity, final Class316 class513, final BlockRayTraceResult class514) {
         this(playerEntity.world, playerEntity, class513, playerEntity.method2715(class513), class514);
     }
     
-    public Class7075(final World field27554, final PlayerEntity field27555, final Class316 field27556, final ItemStack field27557, final Class7005 field27558) {
+    public Class7075(final World field27554, final PlayerEntity field27555, final Class316 field27556, final ItemStack field27557, final BlockRayTraceResult field27558) {
         this.field27551 = field27555;
         this.field27552 = field27556;
         this.field27553 = field27558;

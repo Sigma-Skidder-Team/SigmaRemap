@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.List;
 
@@ -135,10 +135,10 @@ public class Class3212 extends Class3167
     }
     
     private boolean method10103() {
-        final Class7005 class7005 = (Class7005)Class4609.method13699(Class3212.field15514.field4684.field4077, Class3212.field15514.field4684.field4078, Class4609.method13690(), 0.0f);
+        final BlockRayTraceResult blockRayTraceResult = (BlockRayTraceResult)Class4609.method13699(Class3212.field15514.field4684.field4077, Class3212.field15514.field4684.field4078, Class4609.method13690(), 0.0f);
         boolean b = false;
-        if (class7005 != null) {
-            if (class7005.method21449() == Class2165.field12881) {
+        if (blockRayTraceResult != null) {
+            if (blockRayTraceResult.method21449() == Class2165.field12881) {
                 if (this.method9914().method9887("ItemSpoof").equals("None")) {
                     final Class3260 class7006 = (Class3260)this.method9914();
                     if (!Class3260.method10279(Class3212.field15514.field4684.method2715(Class316.field1877).getItem())) {
@@ -148,23 +148,23 @@ public class Class3212 extends Class3167
                 if (this.method9883("Haphe (AACAP)")) {
                     if (!Class3212.field15514.field4684.field2967) {
                         if (!Class3212.field15514.field4684.onGround) {
-                            if (class7005.method21448() == Direction.UP) {
+                            if (blockRayTraceResult.method21448() == Direction.UP) {
                                 return false;
                             }
-                            if (class7005.method21447().getY() != this.field15652 - 1) {
+                            if (blockRayTraceResult.method21447().getY() != this.field15652 - 1) {
                                 return false;
                             }
                         }
                     }
                 }
-                if (class7005.method21448() == Direction.UP) {
-                    if (class7005.method21447().getY() + 2 > Class3212.field15514.field4684.posY) {
-                        if (Class4609.method13708(class7005.method21447())) {
+                if (blockRayTraceResult.method21448() == Direction.UP) {
+                    if (blockRayTraceResult.method21447().getY() + 2 > Class3212.field15514.field4684.posY) {
+                        if (Class4609.method13708(blockRayTraceResult.method21447())) {
                             return false;
                         }
                     }
                 }
-                if (class7005.method21447().getY() == Class3212.field15514.field4684.posY) {
+                if (blockRayTraceResult.method21447().getY() == Class3212.field15514.field4684.posY) {
                     return false;
                 }
                 ((Class3260)this.method9914()).method10282();
@@ -172,7 +172,7 @@ public class Class3212 extends Class3167
                 if (!this.method9914().method9887("ItemSpoof").equals("None")) {
                     ((Class3260)this.method9914()).method10280();
                 }
-                final Class2201 method27319 = Class3212.field15514.field4682.method27319(Class3212.field15514.field4684, Class3212.field15514.field4683, Class316.field1877, class7005);
+                final Class2201 method27319 = Class3212.field15514.field4682.method27319(Class3212.field15514.field4684, Class3212.field15514.field4683, Class316.field1877, blockRayTraceResult);
                 if (this.method9914().method9887("ItemSpoof").equals("Spoof") || this.method9914().method9887("ItemSpoof").equals("LiteSpoof")) {
                     Class3212.field15514.field4684.field3006.field2743 = field2743;
                 }
@@ -183,8 +183,8 @@ public class Class3212 extends Class3167
                     else {
                         Class3212.field15514.method5269().method17292(new Class4380(Class316.field1877));
                     }
-                    if (class7005.method21448() == Direction.UP) {
-                        this.field15652 = class7005.method21447().getY() + 2;
+                    if (blockRayTraceResult.method21448() == Direction.UP) {
+                        this.field15652 = blockRayTraceResult.method21447().getY() + 2;
                     }
                     b = true;
                 }
@@ -244,7 +244,7 @@ public class Class3212 extends Class3167
                 final List<Class9052> method10104 = this.method10104(Class7521.field29148, new BlockPos(Class3212.field15514.field4684.posX, (double)Math.round(field2396 - 1.0), Class3212.field15514.field4684.posZ));
                 if (!method10104.isEmpty()) {
                     final Class9052 class5745 = method10104.get(method10104.size() - 1);
-                    final Class7005 method10105 = Class4609.method13697(this.field15650, this.field15651, 5.0f);
+                    final BlockRayTraceResult method10105 = Class4609.method13697(this.field15650, this.field15651, 5.0f);
                     if (!method10105.method21447().equals(class5745.field38320) || !method10105.method21448().equals(class5745.field38321)) {
                         Class4609.method13673(class5745.field38320, class5745.field38321);
                         this.field15650 = Class4609.method13673(class5745.field38320, class5745.field38321)[0];

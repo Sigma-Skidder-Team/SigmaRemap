@@ -45,7 +45,7 @@ public class Class400 extends Entity implements Class401
             this.method1960();
         }
         final Vec3d method1935 = this.getMotion();
-        final Class7006 method1936 = Class7476.method23093(this, this.getBoundingBox().method18493(method1935).method18496(1.0), class399 -> !class399.isSpectator() && class399 != this.field2466, Class2040.field11633, true);
+        final Class7006 method1936 = Class7476.method23093(this, this.getBoundingBox().method18493(method1935).method18496(1.0), class399 -> !class399.isSpectator() && class399 != this.field2466, RayTraceContext.BlockMode.OUTLINE, true);
         if (method1936 != null) {
             this.method1959(method1936);
         }

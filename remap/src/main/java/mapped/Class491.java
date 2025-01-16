@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -92,8 +92,8 @@ public class Class491 extends TileEntity implements Class439
         final Direction method2476 = this.method2476();
         final double b = n - this.field2823;
         final VoxelShape method2477 = this.method2470().getCollisionShape(this.field2656, this.getPos());
-        if (!method2477.method24540()) {
-            final List<AxisAlignedBB> method2478 = method2477.method24545();
+        if (!method2477.isEmpty()) {
+            final List<AxisAlignedBB> method2478 = method2477.toBoundingBoxList();
             final AxisAlignedBB method2479 = this.method2479(this.method2477(method2478));
             final List<Entity> method2480 = this.field2656.method7127(null, Class8159.method26948(method2479, method2476, b).method18498(method2479));
             if (!method2480.isEmpty()) {
@@ -336,13 +336,13 @@ public class Class491 extends TileEntity implements Class439
         return class51;
     }
     
-    public VoxelShape method2483(final Class1855 class1855, final BlockPos class1856) {
+    public VoxelShape method2483(final IBlockReader class1855, final BlockPos class1856) {
         VoxelShape class1857;
         if (!this.field2820 && this.field2821) {
             class1857 = ((StateHolder<O, BlockState>)this.field2818).with((IProperty<Comparable>)Class3836.field17438, true).getCollisionShape(class1855, class1856);
         }
         else {
-            class1857 = VoxelShapes.method24486();
+            class1857 = VoxelShapes.empty();
         }
         final Direction class1858 = Class491.field2822.get();
         if (this.field2823 < 1.0 && class1858 == this.method2476()) {
@@ -356,7 +356,7 @@ public class Class491 extends TileEntity implements Class439
             field2818 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class7521.field29247.getDefaultState()).with((IProperty<Comparable>)Class3835.field17415, this.field2819)).with((IProperty<Comparable>)Class3835.field17418, this.field2820 != 1.0f - this.field2823 < 4.0f);
         }
         final float method2469 = this.method2469(this.field2823);
-        return VoxelShapes.method24492(class1857, field2818.getCollisionShape(class1855, class1856).method24541(this.field2819.getXOffset() * method2469, this.field2819.getYOffset() * method2469, this.field2819.getZOffset() * method2469));
+        return VoxelShapes.method24492(class1857, field2818.getCollisionShape(class1855, class1856).withOffset(this.field2819.getXOffset() * method2469, this.field2819.getYOffset() * method2469, this.field2819.getZOffset() * method2469));
     }
     
     public long method2484() {

@@ -42,7 +42,7 @@ public class Class4516 extends Class4515
     public void method13511(final String anObject, final BlockPos class354, final Class1851 class355, final Random random, final MutableBoundingBox class356) {
         if ("chest".equals(anObject)) {
             class355.setBlockState(class354, Class7521.field29147.getDefaultState(), 3);
-            final TileEntity method6727 = class355.method6727(class354.method1139());
+            final TileEntity method6727 = class355.getTileEntity(class354.method1139());
             if (method6727 instanceof Class475) {
                 ((Class475)method6727).method2327(Class9020.field38091, random.nextLong());
             }

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public class Class3874 extends Block
 {
@@ -14,7 +14,7 @@ public class Class3874 extends Block
         super(class9288);
     }
     
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11943(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         final Block method21696 = class7096.method21696();
         if (method21696 != Class7521.field29155) {
             if (method21696 != Class7521.field29156) {
@@ -42,12 +42,12 @@ public class Class3874 extends Block
     }
     
     @Override
-    public boolean method11818(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11818(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         return true;
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return (class7099 == Class2084.field12053 && !this.field17408) || super.method11796(class7096, class7097, class7098, class7099);
     }
 }

@@ -25,7 +25,7 @@ public abstract class Registry<T> implements Class89<T>
     private static final Map<ResourceLocation, Supplier<?>> field203;
     public static final Class91<Class91<?>> field204;
     public static final Registry<Class7795> field205;
-    public static final Class93<Fluid> field206;
+    public static final Class93<Fluid> FLUID;
     public static final Registry<Class5328> field207;
     public static final Class93<Block> BLOCK;
     public static final Registry<Class6257> field209;
@@ -41,7 +41,7 @@ public abstract class Registry<T> implements Class89<T>
     public static final Registry<Class8372<?>> field219;
     public static final Registry<Class7944<?>> field220;
     public static final Registry<Class7742<?>> field221;
-    public static final Registry<Class6907<? extends Class6909>> field222;
+    public static final Registry<Class6907<? extends IParticleData>> field222;
     public static final Registry<Class7768<?, ?>> field223;
     public static final Registry<Class5412<?>> field224;
     public static final Registry<Class8705<?, ?>> field225;
@@ -118,7 +118,7 @@ public abstract class Registry<T> implements Class89<T>
         field203 = Maps.newLinkedHashMap();
         field204 = new Class92<Class91<?>>();
         field205 = method500("sound_event", () -> Class8520.field35327);
-        field206 = method501("fluid", "empty", () -> Class7558.field29974);
+        FLUID = method501("fluid", "empty", () -> Class7558.field29974);
         field207 = method500("mob_effect", () -> Class9439.field40499);
         BLOCK = method501("block", "air", () -> Class7521.field29147);
         field209 = method500("enchantment", () -> Class7882.field32368);

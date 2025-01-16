@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.Style;
@@ -255,7 +255,7 @@ public class Class1660 implements AutoCloseable, Class1657
                     final Vec3d method5309 = method5307.method21451();
                     final double method5310 = method5304.squareDistanceTo(method5309);
                     if (b && method5310 > 9.0) {
-                        this.field9380.field4691 = Class7005.method21445(method5309, Direction.getFacingFromVector(method5306.x, method5306.y, method5306.z), new BlockPos(method5309));
+                        this.field9380.field4691 = BlockRayTraceResult.method21445(method5309, Direction.getFacingFromVector(method5306.x, method5306.y, method5306.z), new BlockPos(method5309));
                     }
                     else if (method5310 < method5305 || this.field9380.field4691 == null) {
                         this.field9380.field4691 = method5307;
@@ -636,7 +636,7 @@ public class Class1660 implements AutoCloseable, Class1657
                     final Class7006 field4691 = this.field9380.field4691;
                     if (field4691 != null) {
                         if (field4691.method21449() == Class2165.field12881) {
-                            final BlockPos method5305 = ((Class7005)field4691).method21447();
+                            final BlockPos method5305 = ((BlockRayTraceResult)field4691).method21447();
                             final BlockState method5306 = this.field9380.field4683.getBlockState(method5305);
                             if (this.field9380.field4682.method27336() != Class101.field301) {
                                 final Class7990 class7990 = new Class7990(this.field9380.field4683, method5305, false);

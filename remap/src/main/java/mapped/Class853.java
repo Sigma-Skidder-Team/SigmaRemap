@@ -89,7 +89,7 @@ public class Class853 extends Class759 implements Class762
         return this.method5130() <= 1;
     }
     
-    public Class6909 method5132() {
+    public IParticleData method5132() {
         return Class8432.field34630;
     }
     

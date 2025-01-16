@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class6911 implements Class6909
+public class Class6911 implements IParticleData
 {
     public static final Class6382<Class6911> field27098;
     private final Class6907<Class6911> field27099;

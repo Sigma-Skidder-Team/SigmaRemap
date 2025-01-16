@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
 
@@ -20,12 +20,12 @@ public class Class3929 extends Class3854
     }
     
     @Override
-    public VoxelShape method11810(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
+    public VoxelShape method11810(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         return this.field17796[this.method11916(class7096)];
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     
@@ -44,7 +44,7 @@ public class Class3929 extends Class3854
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7097.isRemote) {
             return Class4079.method12284(class7099, class7097, class7098);
         }
@@ -55,7 +55,7 @@ public class Class3929 extends Class3854
     public BlockState method11846(final Class7074 class7074) {
         final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
-        final IFluidState method21656 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method21656 = class7074.method21654().getFluidState(class7074.method21639());
         final BlockPos method21657 = method21655.method1141();
         final BlockPos method21658 = method21655.method1147();
         final BlockPos method21659 = method21655.method1143();
@@ -64,7 +64,7 @@ public class Class3929 extends Class3854
         final BlockState method21662 = method21654.getBlockState(method21658);
         final BlockState method21663 = method21654.getBlockState(method21659);
         final BlockState method21664 = method21654.getBlockState(method21660);
-        return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)super.method11846(class7074)).with((IProperty<Comparable>)Class3929.field17465, this.method12039(method21661, method21661.isSolidSide(method21654, method21657, Direction.SOUTH), Direction.SOUTH))).with((IProperty<Comparable>)Class3929.field17466, this.method12039(method21662, method21662.isSolidSide(method21654, method21658, Direction.WEST), Direction.WEST))).with((IProperty<Comparable>)Class3929.field17467, this.method12039(method21663, method21663.isSolidSide(method21654, method21659, Direction.NORTH), Direction.NORTH))).with((IProperty<Comparable>)Class3929.field17468, this.method12039(method21664, method21664.isSolidSide(method21654, method21660, Direction.EAST), Direction.EAST))).with((IProperty<Comparable>)Class3929.field17469, method21656.method21779() == Class7558.field29976);
+        return (BlockState)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)super.method11846(class7074)).with((IProperty<Comparable>)Class3929.field17465, this.method12039(method21661, method21661.isSolidSide(method21654, method21657, Direction.SOUTH), Direction.SOUTH))).with((IProperty<Comparable>)Class3929.field17466, this.method12039(method21662, method21662.isSolidSide(method21654, method21658, Direction.WEST), Direction.WEST))).with((IProperty<Comparable>)Class3929.field17467, this.method12039(method21663, method21663.isSolidSide(method21654, method21659, Direction.NORTH), Direction.NORTH))).with((IProperty<Comparable>)Class3929.field17468, this.method12039(method21664, method21664.isSolidSide(method21654, method21660, Direction.EAST), Direction.EAST))).with((IProperty<Comparable>)Class3929.field17469, method21656.getFluid() == Class7558.field29976);
     }
     
     @Override

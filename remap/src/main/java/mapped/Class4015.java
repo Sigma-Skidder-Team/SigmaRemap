@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.LinkedList;
 import com.google.common.collect.Lists;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class4015 extends Block
@@ -49,9 +49,9 @@ public class Class4015 extends Block
             for (int length = values.length, i = 0; i < length; ++i) {
                 final BlockPos method1149 = class1850.method1149(values[i]);
                 final BlockState method1150 = class1847.getBlockState(method1149);
-                final IFluidState method1151 = class1847.method6702(method1149);
+                final IFluidState method1151 = class1847.getFluidState(method1149);
                 final Material method1152 = method1150.getMaterial();
-                if (method1151.method21793(Class7324.field28319)) {
+                if (method1151.isTagged(Class7324.field28319)) {
                     if (method1150.getBlock() instanceof Class3857 && ((Class3857)method1150.getBlock()).method11922(class1847, method1149, method1150) != Class7558.field29974) {
                         ++n;
                         if (intValue < 6) {
@@ -60,7 +60,7 @@ public class Class4015 extends Block
                     }
                     else if (!(method1150.getBlock() instanceof Class3859)) {
                         if (method1152 == Material.OCEAN_PLANT || method1152 == Material.SEA_GRASS) {
-                            Block.method11837(method1150, class1847, method1149, method1150.getBlock().method11802() ? class1847.method6727(method1149) : null);
+                            Block.method11837(method1150, class1847, method1149, method1150.getBlock().method11802() ? class1847.getTileEntity(method1149) : null);
                             class1847.setBlockState(method1149, Class7521.field29147.getDefaultState(), 3);
                             ++n;
                             if (intValue < 6) {

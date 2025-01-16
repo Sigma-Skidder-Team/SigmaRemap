@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.INameable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
@@ -998,8 +998,8 @@ public abstract class Entity implements INameable, ICommandSource {
         if (b && !this.world.method6814(class7910.getX() >> 4, class7910.getZ() >> 4)) {
             return false;
         }
-        final IFluidState method1945 = this.world.method6702(class7910);
-        return method1945.method21793(class7909) && method1944 < class7910.getY() + method1945.method21782(this.world, class7910) + 0.11111111f;
+        final IFluidState method1945 = this.world.getFluidState(class7910);
+        return method1945.isTagged(class7909) && method1944 < class7910.getY() + method1945.getActualHeight(this.world, class7910) + 0.11111111f;
     }
 
     public void method1722() {
@@ -1184,7 +1184,7 @@ public abstract class Entity implements INameable, ICommandSource {
     public Class7006 method1748(final double n, final float n2, final boolean b) {
         final Vec3d method1747 = this.method1747(n2);
         final Vec3d method1748 = this.method1741(n2);
-        return this.world.rayTraceBlocks(new RayTraceContext(method1747, method1747.add(method1748.x * n, method1748.y * n, method1748.z * n), Class2040.field11633, b ? Class2191.field13327 : Class2191.field13325, this));
+        return this.world.rayTraceBlocks(new RayTraceContext(method1747, method1747.add(method1748.x * n, method1748.y * n, method1748.z * n), RayTraceContext.BlockMode.OUTLINE, b ? RayTraceContext.FluidMode.ANY : RayTraceContext.FluidMode.NONE, this));
     }
 
     public boolean method1749() {
@@ -2027,11 +2027,11 @@ public abstract class Entity implements INameable, ICommandSource {
         return true;
     }
 
-    public float method1856(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final IFluidState class6158, final float n) {
+    public float method1856(final Explosion explosion, final IBlockReader class6155, final BlockPos class6156, final BlockState class6157, final IFluidState class6158, final float n) {
         return n;
     }
 
-    public boolean method1857(final Explosion explosion, final Class1855 class6155, final BlockPos class6156, final BlockState class6157, final float n) {
+    public boolean method1857(final Explosion explosion, final IBlockReader class6155, final BlockPos class6156, final BlockState class6157, final float n) {
         return true;
     }
 
@@ -2494,14 +2494,14 @@ public abstract class Entity implements INameable, ICommandSource {
                 for (int j = method18514; j < method18515; ++j) {
                     for (int k = method18516; k < method18517; ++k) {
                         method18519.method1300(i, j, k);
-                        final IFluidState method18520 = this.world.method6702(method18519);
-                        if (method18520.method21793(class7909)) {
-                            final double n2 = j + method18520.method21782(this.world, method18519);
+                        final IFluidState method18520 = this.world.getFluidState(method18519);
+                        if (method18520.isTagged(class7909)) {
+                            final double n2 = j + method18520.getActualHeight(this.world, method18519);
                             if (n2 >= method18511.minY) {
                                 b = true;
                                 max = Math.max(n2 - method18511.minY, max);
                                 if (method18518) {
-                                    Vec3d class7911 = method18520.method21790(this.world, method18519);
+                                    Vec3d class7911 = method18520.getFlow(this.world, method18519);
                                     if (max < 0.4) {
                                         class7911 = class7911.scale(max);
                                     }

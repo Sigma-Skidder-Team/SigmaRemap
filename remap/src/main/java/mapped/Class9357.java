@@ -57,7 +57,7 @@ public class Class9357
     }
     
     public boolean method34690(final IFluidState IFluidState) {
-        return this.method34688(IFluidState.method21779().method22146(), IFluidState);
+        return this.method34688(IFluidState.getFluid().getStateContainer(), IFluidState);
     }
     
     public void method34691(final StateContainer<?, ?> class9104, final Consumer<String> consumer) {

@@ -21,7 +21,7 @@ public class Class4045 extends Class4043
         if (!class355.isRemote) {
             if (!method12232) {
                 if (class356 != null) {
-                    class356.method2827((Class497)class355.method6727(class354));
+                    class356.method2827((Class497)class355.getTileEntity(class354));
                 }
             }
         }

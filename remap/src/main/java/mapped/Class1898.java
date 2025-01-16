@@ -9,7 +9,7 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.Long2IntOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongSet;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 public class Class1898 extends Class1897<Class7500>
 {

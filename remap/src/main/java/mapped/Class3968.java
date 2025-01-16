@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.Iterator;
 import java.util.Random;
@@ -23,7 +23,7 @@ public class Class3968 extends Class3967
         return this.method12106(class7074.method21654(), class7074.method21639());
     }
     
-    public Class7096 method12106(final Class1855 class1855, final BlockPos class1856) {
+    public Class7096 method12106(final IBlockReader class1855, final BlockPos class1856) {
         final Block method21696 = class1855.getBlockState(class1856.method1139()).getBlock();
         final Block method21697 = class1855.getBlockState(class1856.method1137()).getBlock();
         final Block method21698 = class1855.getBlockState(class1856.method1141()).getBlock();
@@ -99,7 +99,7 @@ public class Class3968 extends Class3967
     }
     
     @Override
-    public boolean method11796(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
 }

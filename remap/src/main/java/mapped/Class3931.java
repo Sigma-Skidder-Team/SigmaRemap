@@ -18,7 +18,7 @@ public class Class3931 extends Class3841
     }
     
     @Override
-    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7096.method21772((IProperty<Boolean>)Class3931.field17811)) {
             return Class2201.field13402;
         }
@@ -29,7 +29,7 @@ public class Class3931 extends Class3841
     }
     
     public void method12048(final Class1851 class1851, final BlockPos class1852, final Class7096 class1853, final ItemStack class1854) {
-        final TileEntity method6727 = class1851.method6727(class1852);
+        final TileEntity method6727 = class1851.getTileEntity(class1852);
         if (method6727 instanceof Class449) {
             ((Class449)method6727).method2278(class1854.method27641());
             class1851.setBlockState(class1852, ((StateHolder<O, Class7096>)class1853).with((IProperty<Comparable>)Class3931.field17811, true), 2);
@@ -38,7 +38,7 @@ public class Class3931 extends Class3841
     
     private void method12049(final World class1847, final BlockPos class1848) {
         if (!class1847.isRemote) {
-            final TileEntity method6727 = class1847.method6727(class1848);
+            final TileEntity method6727 = class1847.getTileEntity(class1848);
             if (method6727 instanceof Class449) {
                 final Class449 class1849 = (Class449)method6727;
                 final ItemStack method6728 = class1849.method2277();
@@ -62,7 +62,7 @@ public class Class3931 extends Class3841
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class449();
     }
     
@@ -73,7 +73,7 @@ public class Class3931 extends Class3841
     
     @Override
     public int method11874(final Class7096 class7096, final World class7097, final BlockPos class7098) {
-        final TileEntity method6727 = class7097.method6727(class7098);
+        final TileEntity method6727 = class7097.getTileEntity(class7098);
         if (method6727 instanceof Class449) {
             final Item method6728 = ((Class449)method6727).method2277().getItem();
             if (method6728 instanceof Class3828) {

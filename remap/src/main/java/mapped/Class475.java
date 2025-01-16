@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
@@ -198,9 +198,9 @@ public class Class475 extends Class456 implements Class476, Class439
         return MathHelper.method35700(n, this.field2775, this.field2774);
     }
     
-    public static int method2424(final Class1855 class1855, final BlockPos class1856) {
+    public static int method2424(final IBlockReader class1855, final BlockPos class1856) {
         if (class1855.getBlockState(class1856).getBlock().method11802()) {
-            final TileEntity method6727 = class1855.method6727(class1856);
+            final TileEntity method6727 = class1855.getTileEntity(class1856);
             if (method6727 instanceof Class475) {
                 return ((Class475)method6727).field2776;
             }

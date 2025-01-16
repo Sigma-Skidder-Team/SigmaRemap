@@ -29,13 +29,13 @@ public class Class3886 extends Class3874
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3886.field17548;
     }
     
     @Override
-    public boolean method11943(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return class7097.method6702(class7098).method21779() == Class7558.field29976 || class7096.getMaterial() == Material.ICE;
+    public boolean method11943(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
+        return class7097.getFluidState(class7098).getFluid() == Class7558.field29976 || class7096.getMaterial() == Material.ICE;
     }
     
     static {

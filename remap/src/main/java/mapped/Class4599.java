@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.Random;
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.function.Function;
 

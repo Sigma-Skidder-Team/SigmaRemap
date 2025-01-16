@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -15,7 +15,7 @@ public class Class7073 extends Class7074
     private final Direction field27546;
     
     public Class7073(final World class1847, final BlockPos class1848, final Direction field27546, final ItemStack class1849, final Direction class1850) {
-        super(class1847, null, Class316.field1877, class1849, new Class7005(new Vec3d(class1848.getX() + 0.5, class1848.getY(), class1848.getZ() + 0.5), class1850, class1848, false));
+        super(class1847, null, Class316.field1877, class1849, new BlockRayTraceResult(new Vec3d(class1848.getX() + 0.5, class1848.getY(), class1848.getZ() + 0.5), class1850, class1848, false));
         this.field27546 = field27546;
     }
     

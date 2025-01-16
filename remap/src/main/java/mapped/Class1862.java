@@ -175,7 +175,7 @@ public class Class1862 implements IChunk
     }
     
     @Override
-    public IFluidState method6702(final BlockPos class354) {
+    public IFluidState getFluidState(final BlockPos class354) {
         return this.method7051(class354.getX(), class354.getY(), class354.getZ());
     }
     
@@ -187,7 +187,7 @@ public class Class1862 implements IChunk
                     return class8199.method27149(n & 0xF, n2 & 0xF, n3 & 0xF);
                 }
             }
-            return Class7558.field29974.method22148();
+            return Class7558.field29974.getDefaultState();
         }
         catch (final Throwable t) {
             final Class7689 method24421 = Class7689.method24421(t, "Getting fluid state");
@@ -320,7 +320,7 @@ public class Class1862 implements IChunk
     
     @Nullable
     @Override
-    public TileEntity method6727(final BlockPos class354) {
+    public TileEntity getTileEntity(final BlockPos class354) {
         return this.method7000(class354, Class2079.field12022);
     }
     
@@ -378,7 +378,7 @@ public class Class1862 implements IChunk
     @Nullable
     @Override
     public Class51 method7034(final BlockPos class354) {
-        final TileEntity method6727 = this.method6727(class354);
+        final TileEntity method6727 = this.getTileEntity(class354);
         if (method6727 != null && !method6727.isRemoved()) {
             final Class51 method6728 = method6727.method2180(new Class51());
             method6728.method312("keepPacked", false);
@@ -558,7 +558,7 @@ public class Class1862 implements IChunk
     
     @Override
     public Stream<BlockPos> method7035() {
-        return StreamSupport.stream(BlockPos.getAllInBoxMutable(this.field10162.method25426(), 0, this.field10162.method25427(), this.field10162.method25428(), 255, this.field10162.method25429()).spliterator(), false).filter(class354 -> this.getBlockState(class354).method21704() != 0);
+        return StreamSupport.stream(BlockPos.getAllInBoxMutable(this.field10162.method25426(), 0, this.field10162.method25427(), this.field10162.method25428(), 255, this.field10162.method25429()).spliterator(), false).filter(class354 -> this.getBlockState(class354).getLightValue() != 0);
     }
     
     @Override
@@ -658,7 +658,7 @@ public class Class1862 implements IChunk
         this.method7071();
         final Iterator iterator2 = Sets.newHashSet((Iterable)this.field10144.keySet()).iterator();
         while (iterator2.hasNext()) {
-            this.method6727((BlockPos)iterator2.next());
+            this.getTileEntity((BlockPos)iterator2.next());
         }
         this.field10144.clear();
         this.field10148.method27546(this);
@@ -718,7 +718,7 @@ public class Class1862 implements IChunk
             }
         }
         else {
-            ((Class6951)this.field10155).method21339(this.field10146.method6834(), class355 -> this.method6702(class355).method21779());
+            ((Class6951)this.field10155).method21339(this.field10146.method6834(), class355 -> this.getFluidState(class355).getFluid());
             this.field10155 = (Class6952<Fluid>)Class6954.method21355();
         }
     }
@@ -729,7 +729,7 @@ public class Class1862 implements IChunk
             this.method7025(true);
         }
         if (this.field10155 == Class6954.method21355()) {
-            this.field10155 = new Class6956<Fluid>(Registry.field206::getKey, class1849.method6908().method21347(this.field10162, true, false));
+            this.field10155 = new Class6956<Fluid>(Registry.FLUID::getKey, class1849.method6908().method21347(this.field10162, true, false));
             this.method7025(true);
         }
     }

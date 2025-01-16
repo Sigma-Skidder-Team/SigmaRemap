@@ -8,7 +8,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Iterables;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -39,7 +39,7 @@ public class Class3831 extends Item
             final Direction method21657 = class7075.method21648();
             final Class7096 method21658 = method21654.getBlockState(method21656);
             if (method21658.method21696() == Class7521.field29290) {
-                final TileEntity method21659 = method21654.method6727(method21656);
+                final TileEntity method21659 = method21654.getTileEntity(method21656);
                 if (method21659 instanceof Class494) {
                     ((Class494)method21659).method2509().method13884(this.method11773(method21655.method27657()));
                     method21659.method2161();
@@ -66,14 +66,14 @@ public class Class3831 extends Item
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
         final ItemStack method2715 = class1848.method2715(class1849);
-        final Class7006 method2716 = Item.method11733(class1847, class1848, Class2191.field13326);
+        final Class7006 method2716 = Item.method11733(class1847, class1848, RayTraceContext.FluidMode.SOURCE_ONLY);
         if (method2716.method21449() != Class2165.field12881) {
             return Class9355.method34676(method2715);
         }
         if (class1847.isRemote) {
             return Class9355.method34674(method2715);
         }
-        final Class7005 class1850 = (Class7005)method2716;
+        final BlockRayTraceResult class1850 = (BlockRayTraceResult)method2716;
         final BlockPos method2717 = class1850.method21447();
         if (!(class1847.getBlockState(method2717).method21696() instanceof Class3859)) {
             return Class9355.method34676(method2715);

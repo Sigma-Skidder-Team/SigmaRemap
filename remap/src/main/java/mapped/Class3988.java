@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class3988 extends Class3986
@@ -31,11 +31,11 @@ public class Class3988 extends Class3986
         return method12136(method21654, method21655, method21654.getBlockState(method21655)) ? this.field17997 : super.method11846(class7074);
     }
     
-    private static boolean method12136(final Class1855 class1855, final BlockPos class1856, final BlockState class1857) {
+    private static boolean method12136(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857) {
         return method12138(class1857) || method12137(class1855, class1856);
     }
     
-    private static boolean method12137(final Class1855 class1855, final BlockPos class1856) {
+    private static boolean method12137(final IBlockReader class1855, final BlockPos class1856) {
         boolean b = false;
         final Mutable class1857 = new Mutable(class1856);
         for (final Direction class1858 : Direction.values()) {
@@ -55,7 +55,7 @@ public class Class3988 extends Class3986
     }
     
     private static boolean method12138(final BlockState class7096) {
-        return class7096.getFluidState().method21793(Class7324.field28319);
+        return class7096.getFluidState().isTagged(Class7324.field28319);
     }
     
     @Override

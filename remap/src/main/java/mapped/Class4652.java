@@ -295,7 +295,7 @@ public class Class4652 extends Class4651
     }
     
     @Override
-    public Class257 method13908(final Class1855 class1855, final int n, final int n2, final int n3, final Class759 class1856, final int n4, final int n5, final int n6, final boolean b, final boolean b2) {
+    public Class257 method13908(final IBlockReader class1855, final int n, final int n2, final int n3, final Class759 class1856, final int n4, final int n5, final int n6, final boolean b, final boolean b2) {
         final EnumSet<Class257> none = EnumSet.noneOf(Class257.class);
         final Class257 method13909 = this.method13909(class1855, n, n2, n3, n4, n5, n6, b, b2, none, Class257.field1205, new BlockPos(class1856));
         if (!none.contains(Class257.field1209)) {
@@ -315,7 +315,7 @@ public class Class4652 extends Class4651
     }
     
     @Override
-    public Class257 method13913(final Class1855 class1855, final int n, final int n2, final int n3) {
+    public Class257 method13913(final IBlockReader class1855, final int n, final int n2, final int n3) {
         Class257 class1856 = Class4651.method13916(class1855, n, n2, n3);
         Label_0018: {
             if (class1856 == Class257.field1206) {

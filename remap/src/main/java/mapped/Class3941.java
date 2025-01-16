@@ -18,13 +18,13 @@ public class Class3941 extends Class3841
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class501();
     }
     
     @Override
-    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
-        final TileEntity method6727 = class7097.method6727(class7098);
+    public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
+        final TileEntity method6727 = class7097.getTileEntity(class7098);
         if (!(method6727 instanceof Class501)) {
             return Class2201.field13402;
         }
@@ -35,7 +35,7 @@ public class Class3941 extends Class3841
     public void method11853(final World class1847, final BlockPos class1848, final BlockState class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (!class1847.isRemote) {
             if (class1850 != null) {
-                final TileEntity method6727 = class1847.method6727(class1848);
+                final TileEntity method6727 = class1847.getTileEntity(class1848);
                 if (method6727 instanceof Class501) {
                     ((Class501)method6727).method2559(class1850);
                 }
@@ -61,7 +61,7 @@ public class Class3941 extends Class3841
     @Override
     public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.isRemote) {
-            final TileEntity method6727 = class7097.method6727(class7098);
+            final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class501) {
                 final Class501 class7101 = (Class501)method6727;
                 final boolean method6728 = class7097.method6749(class7098);

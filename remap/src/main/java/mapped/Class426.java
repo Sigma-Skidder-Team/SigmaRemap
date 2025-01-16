@@ -31,7 +31,7 @@ public class Class426 extends Entity
     private static final DataParameter<Float> field2597;
     private static final DataParameter<Integer> field2598;
     private static final DataParameter<Boolean> field2599;
-    private static final DataParameter<Class6909> field2600;
+    private static final DataParameter<IParticleData> field2600;
     private Class8061 field2601;
     private final List<Class1948> field2602;
     private final Map<Entity, Integer> field2603;
@@ -121,12 +121,12 @@ public class Class426 extends Entity
         this.method1650().set(Class426.field2598, i);
     }
     
-    public Class6909 method2088() {
+    public IParticleData method2088() {
         return this.method1650().get(Class426.field2600);
     }
     
-    public void method2089(final Class6909 class6909) {
-        this.method1650().set(Class426.field2600, class6909);
+    public void method2089(final IParticleData IParticleData) {
+        this.method1650().set(Class426.field2600, IParticleData);
     }
     
     public void method2090(final boolean b) {
@@ -232,7 +232,7 @@ public class Class426 extends Entity
             }
         }
         else {
-            final Class6909 method2094 = this.method2088();
+            final IParticleData method2094 = this.method2088();
             if (!method2091) {
                 final float n3 = 3.1415927f * method2092 * method2092;
                 for (int n4 = 0; n4 < n3; ++n4) {

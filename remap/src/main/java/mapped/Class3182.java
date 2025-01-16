@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import org.lwjgl.opengl.GL11;
 
 public class Class3182 extends Class3167
@@ -190,14 +190,14 @@ public class Class3182 extends Class3167
                     class5744.method17041(n2);
                     final int field2743 = Class3182.field15514.field4684.field3006.field2743;
                     Class3182.field15514.field4684.field3006.field2743 = this.field15569;
-                    final Class2201 method27319 = Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.field4683, Class316.field1877, new Class7005(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
+                    final Class2201 method27319 = Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.field4683, Class316.field1877, new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568), Direction.UP, this.field15568, false));
                     Class3182.field15514.field4684.method2707(Class316.field1877);
                     if (method27319 == Class2201.field13400) {
                         ++this.field15571;
                         Class3182.field15514.method5269().method17292(new Class4336(Class3182.field15514.field4684, Class287.field1591));
                         Class3182.field15514.field4684.field4085.field24728 = true;
                         Class3182.field15514.field4684.field3006.field2743 = this.field15570;
-                        final Class7005 class5745 = new Class7005(Class4609.method13702(Direction.UP, this.field15568.method1137()), Direction.UP, this.field15568.method1137(), false);
+                        final BlockRayTraceResult class5745 = new BlockRayTraceResult(Class4609.method13702(Direction.UP, this.field15568.method1137()), Direction.UP, this.field15568.method1137(), false);
                         Class3182.field15514.field4682.method27319(Class3182.field15514.field4684, Class3182.field15514.field4683, Class316.field1877, class5745);
                         Class3182.field15514.field4684.method2707(Class316.field1877);
                         Class3182.field15514.field4684.field4085.field24728 = false;

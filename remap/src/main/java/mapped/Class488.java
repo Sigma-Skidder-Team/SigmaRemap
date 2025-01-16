@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -174,7 +174,7 @@ public class Class488 extends Class489 implements Class439
         this.method2161();
     }
     
-    private static BlockPos method2440(final Class1855 class1855, final BlockPos class1856, final int n, final boolean b) {
+    private static BlockPos method2440(final IBlockReader class1855, final BlockPos class1856, final int n, final boolean b) {
         BlockPos class1857 = null;
         for (int i = -n; i <= n; ++i) {
             for (int j = -n; j <= n; ++j) {

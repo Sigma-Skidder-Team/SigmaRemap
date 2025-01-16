@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class3853 extends Class3854
@@ -20,7 +20,7 @@ public class Class3853 extends Class3854
     public Class7096 method11846(final Class7074 class7074) {
         final World method21654 = class7074.method21654();
         final BlockPos method21655 = class7074.method21639();
-        final IFluidState method21656 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method21656 = class7074.method21654().getFluidState(class7074.method21639());
         final BlockPos method21657 = method21655.method1141();
         final BlockPos method21658 = method21655.method1143();
         final BlockPos method21659 = method21655.method1145();
@@ -29,7 +29,7 @@ public class Class3853 extends Class3854
         final Class7096 method21662 = method21654.getBlockState(method21658);
         final Class7096 method21663 = method21654.getBlockState(method21659);
         final Class7096 method21664 = method21654.getBlockState(method21660);
-        return (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.getDefaultState()).with((IProperty<Comparable>)Class3853.field17465, this.method11913(method21661, method21661.method21761(method21654, method21657, Direction.SOUTH)))).with((IProperty<Comparable>)Class3853.field17467, this.method11913(method21662, method21662.method21761(method21654, method21658, Direction.NORTH)))).with((IProperty<Comparable>)Class3853.field17468, this.method11913(method21663, method21663.method21761(method21654, method21659, Direction.EAST)))).with((IProperty<Comparable>)Class3853.field17466, this.method11913(method21664, method21664.method21761(method21654, method21660, Direction.WEST)))).with((IProperty<Comparable>)Class3853.field17469, method21656.method21779() == Class7558.field29976);
+        return (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Object>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)((StateHolder<O, Class7096>)this.getDefaultState()).with((IProperty<Comparable>)Class3853.field17465, this.method11913(method21661, method21661.method21761(method21654, method21657, Direction.SOUTH)))).with((IProperty<Comparable>)Class3853.field17467, this.method11913(method21662, method21662.method21761(method21654, method21658, Direction.NORTH)))).with((IProperty<Comparable>)Class3853.field17468, this.method11913(method21663, method21663.method21761(method21654, method21659, Direction.EAST)))).with((IProperty<Comparable>)Class3853.field17466, this.method11913(method21664, method21664.method21761(method21654, method21660, Direction.WEST)))).with((IProperty<Comparable>)Class3853.field17469, method21656.getFluid() == Class7558.field29976);
     }
     
     @Override

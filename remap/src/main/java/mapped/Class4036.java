@@ -130,7 +130,7 @@ public class Class4036 extends Item
         if (class1847.getServer() != null) {
             final Class51 method27660 = class1850.method27660("BlockEntityTag");
             if (method27660 != null) {
-                final TileEntity method27661 = class1847.method6727(class1849);
+                final TileEntity method27661 = class1847.getTileEntity(class1849);
                 if (method27661 != null) {
                     if (!class1847.isRemote) {
                         if (method27661.method2178()) {

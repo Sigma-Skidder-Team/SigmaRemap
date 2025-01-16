@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -30,7 +30,7 @@ public class Class3919 extends Class3841 implements Class3856
     }
     
     @Override
-    public TileEntity method11898(final Class1855 class1855) {
+    public TileEntity method11898(final IBlockReader class1855) {
         return new Class492();
     }
     
@@ -53,14 +53,14 @@ public class Class3919 extends Class3841 implements Class3856
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3919.field17767;
     }
     
     @Override
     public void method11853(final World class1847, final BlockPos class1848, final BlockState class1849, final LivingEntity class1850, final ItemStack class1851) {
         if (class1851.method27667()) {
-            final TileEntity method6727 = class1847.method6727(class1848);
+            final TileEntity method6727 = class1847.getTileEntity(class1848);
             if (method6727 instanceof Class490) {
                 ((Class490)method6727).method2453(class1851.method27664());
             }
@@ -70,12 +70,12 @@ public class Class3919 extends Class3841 implements Class3856
     @Nullable
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        final IFluidState method6702 = class7074.method21654().method6702(class7074.method21639());
-        return (BlockState)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3919.field17766, method6702.method21793(Class7324.field28319) && method6702.method21784() == 8);
+        final IFluidState method6702 = class7074.method21654().getFluidState(class7074.method21639());
+        return (BlockState)((StateHolder<Object, Object>)this.getDefaultState()).with((IProperty<Comparable>)Class3919.field17766, method6702.isTagged(Class7324.field28319) && method6702.getLevel() == 8);
     }
     
     @Override
-    public boolean method11796(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final Class2084 class7099) {
+    public boolean method11796(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Class2084 class7099) {
         return false;
     }
     

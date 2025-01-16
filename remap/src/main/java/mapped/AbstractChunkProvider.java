@@ -24,7 +24,7 @@ public abstract class AbstractChunkProvider implements Class1908, AutoCloseable
     
     @Nullable
     @Override
-    public Class1855 method7400(final int n, final int n2) {
+    public IBlockReader method7400(final int n, final int n2) {
         return this.getChunk(n, n2, ChunkStatus.field39977, false);
     }
     

@@ -55,14 +55,14 @@ public class Class7321
     }
     
     private static int method22441(final Class7492 class7492, final String str) throws CommandSyntaxException {
-        final BlockPos method21447 = ((Class7005)class7492.method23253().method1748(10.0, 1.0f, false)).method21447();
+        final BlockPos method21447 = ((BlockRayTraceResult)class7492.method23253().method1748(10.0, 1.0f, false)).method21447();
         final Class1849 method21448 = class7492.method23250();
         Optional<BlockPos> optional = Class8787.method30580(method21447, 15, method21448);
         if (!optional.isPresent()) {
             optional = Class8787.method30580(method21447, 200, method21448);
         }
         if (optional.isPresent()) {
-            final Class501 class7493 = (Class501)method21448.method6727(optional.get());
+            final Class501 class7493 = (Class501)method21448.getTileEntity(optional.get());
             final BlockPos method21449 = method21447.method1136(optional.get());
             final String string = method21449.getX() + ", " + method21449.getY() + ", " + method21449.getZ();
             class7492.method23257(new StringTextComponent("Position relative to " + class7493.method2555() + ": ").appendSibling(new StringTextComponent(string).setStyle(new Style().setBold(true).setColor(TextFormatting.GREEN).method30420(new Class9390(Class1961.field10697, new StringTextComponent("Click to copy to clipboard"))).method30419(new Class9485(Class2075.field11976, "final BlockPos " + str + " = new BlockPos(" + string + ");")))), false);
@@ -105,7 +105,7 @@ public class Class7321
     }
     
     private static void method22444(final Class1849 class1849, final BlockPos class1850, final Class7333 class1851) {
-        final Class6812 method31859 = Class8972.method31859(((Class501)class1849.method6727(class1850)).method2555());
+        final Class6812 method31859 = Class8972.method31859(((Class501)class1849.getTileEntity(class1850)).method2555());
         final Class9083 class1852 = new Class9083(method31859, class1850, class1849);
         if (class1851 != null) {
             class1851.method22485(class1852);

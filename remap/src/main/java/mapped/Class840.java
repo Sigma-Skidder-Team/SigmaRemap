@@ -238,9 +238,9 @@ public class Class840 extends Class832
         }
     }
     
-    private void method5008(final Class6909 class6909) {
+    private void method5008(final IParticleData IParticleData) {
         for (int i = 0; i < 7; ++i) {
-            this.world.method6709(class6909, this.method1940(1.0), this.method1943() + 0.2, this.method1947(1.0), this.rand.nextGaussian() * 0.01, this.rand.nextGaussian() * 0.01, this.rand.nextGaussian() * 0.01);
+            this.world.method6709(IParticleData, this.method1940(1.0), this.method1943() + 0.2, this.method1947(1.0), this.rand.nextGaussian() * 0.01, this.rand.nextGaussian() * 0.01, this.rand.nextGaussian() * 0.01);
         }
     }
     
@@ -264,7 +264,7 @@ public class Class840 extends Class832
         if (class7502.getY() > 45) {
             if (class7502.getY() < class7500.method6743()) {
                 if (class7500.method6959(class7502) != Class7102.field27631 || class7500.method6959(class7502) != Class7102.field27656) {
-                    if (class7500.method6702(class7502).method21793(Class7324.field28319)) {
+                    if (class7500.getFluidState(class7502).isTagged(Class7324.field28319)) {
                         return true;
                     }
                 }

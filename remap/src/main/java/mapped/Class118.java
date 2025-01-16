@@ -45,7 +45,7 @@ public class Class118 implements Predicate<Class7990>
     public boolean method610(final Class1849 class1849, final BlockPos class1850, final int n) {
         if (class1849.setBlockState(class1850, this.field366, n)) {
             if (this.field368 != null) {
-                final TileEntity method6727 = class1849.method6727(class1850);
+                final TileEntity method6727 = class1849.getTileEntity(class1850);
                 if (method6727 != null) {
                     final Class51 method6728 = this.field368.method333();
                     method6728.method298("x", class1850.getX());

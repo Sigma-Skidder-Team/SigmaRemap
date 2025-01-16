@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -30,7 +30,7 @@ public class Class3904 extends Class3902
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class8073.field33262[class7096.method21772(Class3904.field17618).ordinal()]) {
             case 1: {
                 switch (Class8073.field33260[class7096.method21772((IProperty<Direction>)Class3904.field17564).getAxis().ordinal()]) {
@@ -75,7 +75,7 @@ public class Class3904 extends Class3902
     }
     
     @Override
-    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final Class7005 class7101) {
+    public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (!class7097.isRemote) {
             class7097.method6705(null, class7098, Class8520.field35343, Class286.field1582, 0.3f, ((boolean)this.method12006(class7096, class7097, class7098).method21772((IProperty<Boolean>)Class3904.field17684)) ? 0.6f : 0.5f);
             return Class2201.field13400;
@@ -122,12 +122,12 @@ public class Class3904 extends Class3902
     }
     
     @Override
-    public int method11848(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11848(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return class7096.method21772((IProperty<Boolean>)Class3904.field17684) ? 15 : 0;
     }
     
     @Override
-    public int method11851(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Direction class7099) {
+    public int method11851(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         return (class7096.method21772((IProperty<Boolean>)Class3904.field17684) && Class3902.method12003(class7096) == class7099) ? 15 : 0;
     }
     

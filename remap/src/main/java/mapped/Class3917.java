@@ -4,7 +4,7 @@
 
 package mapped;
 
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
@@ -27,7 +27,7 @@ public class Class3917 extends Block implements Class3856
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         switch (Class9074.field38422[class7096.get((IProperty<Direction>)Class3917.field17752).ordinal()]) {
             case 1: {
                 return Class3917.field17757;
@@ -44,7 +44,7 @@ public class Class3917 extends Block implements Class3856
         }
     }
     
-    private boolean method12029(final Class1855 class1855, final BlockPos class1856, final Direction class1857) {
+    private boolean method12029(final IBlockReader class1855, final BlockPos class1856, final Direction class1857) {
         final BlockState method6701 = class1855.getBlockState(class1856);
         return !method6701.method21714() && method6701.isSolidSide(class1855, class1856, class1857);
     }
@@ -80,12 +80,12 @@ public class Class3917 extends Block implements Class3856
         BlockState method6702 = this.getDefaultState();
         final World method6703 = class7074.method21654();
         final BlockPos method6704 = class7074.method21639();
-        final IFluidState method6705 = class7074.method21654().method6702(class7074.method21639());
+        final IFluidState method6705 = class7074.method21654().getFluidState(class7074.method21639());
         for (final Direction class7075 : class7074.method21643()) {
             if (class7075.getAxis().isHorizontal()) {
                 method6702 = ((StateHolder<Object, BlockState>)method6702).with((IProperty<Comparable>)Class3917.field17752, class7075.getOpposite());
                 if (method6702.method21752(method6703, method6704)) {
-                    return ((StateHolder<Object, BlockState>)method6702).with((IProperty<Comparable>)Class3917.field17753, method6705.method21779() == Class7558.field29976);
+                    return ((StateHolder<Object, BlockState>)method6702).with((IProperty<Comparable>)Class3917.field17753, method6705.getFluid() == Class7558.field29976);
                 }
             }
         }

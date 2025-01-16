@@ -9,36 +9,76 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 
+import java.util.function.Predicate;
+
 public class RayTraceContext
 {
-    private static String[] field34788;
-    private final Vec3d field34789;
-    private final Vec3d field34790;
-    private final Class2040 field34791;
-    private final Class2191 field34792;
-    private final ISelectionContext field34793;
+    private final Vec3d startVec;
+    private final Vec3d endVec;
+    private final BlockMode blockMode;
+    private final FluidMode fluidMode;
+    private final ISelectionContext context;
     
-    public RayTraceContext(final Vec3d field34789, final Vec3d field34790, final Class2040 field34791, final Class2191 field34792, final Entity class399) {
-        this.field34789 = field34789;
-        this.field34790 = field34790;
-        this.field34791 = field34791;
-        this.field34792 = field34792;
-        this.field34793 = ISelectionContext.forEntity(class399);
+    public RayTraceContext(final Vec3d startVec, final Vec3d endVec, final BlockMode blockMode, final FluidMode fluidMode, final Entity p_i1860_5_) {
+        this.startVec = startVec;
+        this.endVec = endVec;
+        this.blockMode = blockMode;
+        this.fluidMode = fluidMode;
+        this.context = ISelectionContext.forEntity(p_i1860_5_);
     }
     
-    public Vec3d method28307() {
-        return this.field34790;
+    public Vec3d func_222250_a() {
+        return this.endVec;
     }
     
-    public Vec3d method28308() {
-        return this.field34789;
+    public Vec3d func_222253_b() {
+        return this.startVec;
     }
     
-    public VoxelShape method28309(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return this.field34791.method8120(class7096, class7097, class7098, this.field34793);
+    public VoxelShape getBlockShape(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
+        return this.blockMode.get(class7096, class7097, class7098, this.context);
     }
     
-    public VoxelShape method28310(final IFluidState IFluidState, final Class1855 class7100, final BlockPos class7101) {
-        return this.field34792.method8359(IFluidState) ? IFluidState.method21798(class7100, class7101) : VoxelShapes.method24486();
+    public VoxelShape getFluidShape(final IFluidState IFluidState, final IBlockReader class7100, final BlockPos class7101) {
+        return this.fluidMode.test(IFluidState) ? IFluidState.getShape(class7100, class7101) : VoxelShapes.empty();
+    }
+
+    public enum FluidMode
+    {
+        NONE(p_222247_0_ -> false),
+        SOURCE_ONLY(IFluidState::isSource),
+        ANY(p_222246_0_ -> !p_222246_0_.isEmpty());
+
+        private final Predicate<IFluidState> fluidTest;
+
+        private FluidMode(final Predicate<IFluidState> test) {
+            this.fluidTest = test;
+        }
+
+        public boolean test(final IFluidState state) {
+            return this.fluidTest.test(state);
+        }
+    }
+
+    public enum BlockMode implements IVoxelProvider
+    {
+        COLLIDER(BlockState::getCollisionShape),
+        OUTLINE(BlockState::getShape);
+
+        private final IVoxelProvider provider;
+
+        private BlockMode(final IVoxelProvider provider) {
+            this.provider = provider;
+        }
+
+        public VoxelShape get(BlockState p_get_1_, IBlockReader p_get_2_, BlockPos p_get_3_, ISelectionContext p_get_4_)
+        {
+            return this.provider.get(p_get_1_, p_get_2_, p_get_3_, p_get_4_);
+        }
+    }
+
+    public interface IVoxelProvider
+    {
+        VoxelShape get(BlockState p_get_1_, IBlockReader p_get_2_, BlockPos p_get_3_, ISelectionContext p_get_4_);
     }
 }

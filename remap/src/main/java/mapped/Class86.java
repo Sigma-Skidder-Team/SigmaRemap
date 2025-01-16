@@ -6,7 +6,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.doubles.DoubleList;
 
-public class Class86 implements Class83
+public class Class86 implements IDoubleListMerger
 {
     private static String[] field196;
     private final DoubleList field197;
@@ -16,9 +16,9 @@ public class Class86 implements Class83
     }
     
     @Override
-    public boolean method445(final Class9015 class9015) {
+    public boolean forMergedIndexes(final IConsumer class9015) {
         for (int i = 0; i <= this.field197.size(); ++i) {
-            if (!class9015.method32279(i, i, i)) {
+            if (!class9015.merge(i, i, i)) {
                 return false;
             }
         }
@@ -26,7 +26,7 @@ public class Class86 implements Class83
     }
     
     @Override
-    public DoubleList method447() {
+    public DoubleList func_212435_a() {
         return this.field197;
     }
 }

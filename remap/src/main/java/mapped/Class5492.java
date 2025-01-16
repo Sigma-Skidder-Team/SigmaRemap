@@ -49,6 +49,6 @@ public class Class5492 implements Class5491
     
     @Override
     public <T extends TileEntity> T method16766() {
-        return (T)this.field22774.method6727(this.field22775);
+        return (T)this.field22774.getTileEntity(this.field22775);
     }
 }

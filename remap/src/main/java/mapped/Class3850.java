@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
@@ -60,7 +60,7 @@ public class Class3850 extends Class3849
         super.method11825(class7096, class7097, class7098, class7099, class7100, b);
     }
     
-    private boolean method11912(final Class1855 class1855, final BlockPos class1856, final int n) {
+    private boolean method11912(final IBlockReader class1855, final BlockPos class1856, final int n) {
         int n2 = 0;
         try (final Class386 method1296 = Class386.method1296()) {
             final Direction[] values = Direction.values();
@@ -80,7 +80,7 @@ public class Class3850 extends Class3849
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         return ItemStack.field34174;
     }
     

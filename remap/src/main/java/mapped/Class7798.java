@@ -40,7 +40,7 @@ public class Class7798
     }
     
     private static Class446 method25158(final Class7492 class7492, final BlockPos class7493) throws CommandSyntaxException {
-        final TileEntity method6727 = class7492.method23250().method6727(class7493);
+        final TileEntity method6727 = class7492.method23250().getTileEntity(class7493);
         if (method6727 instanceof Class446) {
             return (Class446)method6727;
         }
@@ -202,7 +202,7 @@ public class Class7798
         final Class7492 class357 = (Class7492)commandContext.getSource();
         final Class1849 method23250 = class357.method23250();
         final Class7096 method23251 = method23250.getBlockState(class354);
-        return class356.method31443(commandContext, method23251.method21743(new Class9098(method23250).method32877(Class6683.field26367, class354).method32877(Class6683.field26368, method23251).method32878(Class6683.field26369, method23250.method6727(class354)).method32878(Class6683.field26362, class357.method23251()).method32877(Class6683.field26370, class355)), list -> method25168(class357, list, method23251.method21696().method11832()));
+        return class356.method31443(commandContext, method23251.method21743(new Class9098(method23250).method32877(Class6683.field26367, class354).method32877(Class6683.field26368, method23251).method32878(Class6683.field26369, method23250.getTileEntity(class354)).method32878(Class6683.field26362, class357.method23251()).method32877(Class6683.field26370, class355)), list -> method25168(class357, list, method23251.method21696().method11832()));
     }
     
     private static int method25171(final CommandContext<Class7492> commandContext, final Entity class399, final Class8917 class400) throws CommandSyntaxException {

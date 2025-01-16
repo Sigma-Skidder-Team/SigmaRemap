@@ -11,7 +11,7 @@ import com.google.common.collect.Multisets;
 import com.google.common.collect.LinkedHashMultiset;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
@@ -197,7 +197,7 @@ public class Class4094 extends Class4093
     
     private Class7096 method12333(final World class1847, final Class7096 class1848, final BlockPos class1849) {
         final IFluidState method21756 = class1848.method21756();
-        return (!method21756.isEmpty() && !class1848.method21761(class1847, class1849, Direction.UP)) ? method21756.method21791() : class1848;
+        return (!method21756.isEmpty() && !class1848.method21761(class1847, class1849, Direction.UP)) ? method21756.getBlockState() : class1848;
     }
     
     private static boolean method12334(final Class3090[] array, final int n, final int n2, final int n3) {

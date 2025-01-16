@@ -78,7 +78,7 @@ public class Class6564
                         if (n3 > this.field26066.stepHeight && n * n + n2 * n2 < Math.max(1.0f, this.field26066.method1930())) {
                             break Label_0593;
                         }
-                        if (!method6703.method24540()) {
+                        if (!method6703.isEmpty()) {
                             if (this.field26066.getPosY() < method6703.method24536(Axis.Y) + class354.getY()) {
                                 if (!method6702.method11785(Class7188.field27891)) {
                                     if (!method6702.method11785(Class7188.field27911)) {

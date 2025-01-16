@@ -370,7 +370,7 @@ public class Class8551
             if (class8998.method6969(class8999) > 3) {
                 if (method1140.isCollisionShapeOpaque(class8998, method1139)) {
                     final VoxelShape method1141 = method1140.getShape(class8998, class8999.method1139());
-                    if (!method1141.method24540()) {
+                    if (!method1141.isEmpty()) {
                         float n6 = (float)((n5 - (n2 - class8999.getY()) / 2.0) * 0.5 * class8998.method6963(class8999));
                         if (n6 >= 0.0f) {
                             if (n6 > 1.0f) {

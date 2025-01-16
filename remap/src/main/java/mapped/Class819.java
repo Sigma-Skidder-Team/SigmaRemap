@@ -187,9 +187,9 @@ public abstract class Class819 extends Class788 implements Class820, Class822
         this.method4835();
     }
     
-    public void method4836(final Class6909 class6909) {
+    public void method4836(final IParticleData IParticleData) {
         for (int i = 0; i < 5; ++i) {
-            this.world.method6709(class6909, this.method1940(1.0), this.method1943() + 1.0, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
+            this.world.method6709(IParticleData, this.method1940(1.0), this.method1943() + 1.0, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
         }
     }
     

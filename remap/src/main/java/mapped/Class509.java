@@ -10,7 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -243,7 +243,7 @@ public class Class509 extends Entity
                     this.method1936(this.getMotion().add(0.0, -0.04, 0.0));
                 }
             }
-            final Class7006 method1936 = Class7476.method23092(this, true, false, this.field2904, Class2040.field11632);
+            final Class7006 method1936 = Class7476.method23092(this, true, false, this.field2904, RayTraceContext.BlockMode.COLLIDER);
             if (method1936.method21449() != Class2165.field12880) {
                 this.method2612(method1936);
             }

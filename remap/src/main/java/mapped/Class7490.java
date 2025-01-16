@@ -89,7 +89,7 @@ public class Class7490 implements Class7491
     public Collection<Class8762> method23214() {
         final Class7006 field4691 = this.field28923.field4691;
         if (field4691 != null && field4691.method21449() == Class2165.field12881) {
-            final BlockPos method21447 = ((Class7005)field4691).method21447();
+            final BlockPos method21447 = ((BlockRayTraceResult)field4691).method21447();
             return Collections.singleton(new Class8762(method23213(method21447.getX()), method23213(method21447.getY()), method23213(method21447.getZ())));
         }
         return super.method23214();

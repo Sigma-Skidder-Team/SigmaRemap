@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class3563 extends Class3555<LivingEntity>

@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -28,12 +28,12 @@ public class Class3873 extends Class3874 implements Class3872
     }
     
     @Override
-    public VoxelShape method11808(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3873.field17517[class7096.method21772((IProperty<Integer>)Class3873.field17516)];
     }
     
     @Override
-    public boolean method11943(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098) {
+    public boolean method11943(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098) {
         return class7096.method21696() == Class7521.field29298;
     }
     
@@ -80,13 +80,13 @@ public class Class3873 extends Class3874 implements Class3872
     }
     
     @Override
-    public ItemStack method11862(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857) {
+    public ItemStack method11862(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857) {
         final Item method11948 = this.method11948();
         return (method11948 != null) ? new ItemStack(method11948) : ItemStack.field34174;
     }
     
     @Override
-    public boolean method11945(final Class1855 class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
+    public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final Class7096 class1857, final boolean b) {
         return class1857.method21772((IProperty<Integer>)Class3873.field17516) != 7;
     }
     

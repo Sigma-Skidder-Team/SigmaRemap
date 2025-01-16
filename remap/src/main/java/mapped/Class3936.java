@@ -20,13 +20,13 @@ public class Class3936 extends Class3932
     }
     
     @Override
-    public VoxelShape method11808(final BlockState class7096, final Class1855 class7097, final BlockPos class7098, final ISelectionContext class7099) {
+    public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
         return Class3936.field17820;
     }
     
     @Override
-    public VoxelShape method11810(final BlockState class7096, final Class1855 class7097, final BlockPos class7098) {
-        return VoxelShapes.method24486();
+    public VoxelShape method11810(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
+        return VoxelShapes.empty();
     }
     
     @Override

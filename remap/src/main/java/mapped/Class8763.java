@@ -805,7 +805,7 @@ public class Class8763
         return null;
     }
     
-    private static int method30360(final Class7096 class7096, final Class1855 class7097, final BlockPos class7098, final Class9145 class7099) {
+    private static int method30360(final Class7096 class7096, final IBlockReader class7097, final BlockPos class7098, final Class9145 class7099) {
         Class7718 class7100 = Class8763.field36814;
         final Block method21696 = class7096.method21696();
         if (method21696 == Class7521.field29386) {

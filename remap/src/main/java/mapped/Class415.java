@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import java.util.Iterator;
@@ -70,7 +70,7 @@ public class Class415 extends Class414 implements Class407
             final boolean b = method2006 == Class8644.field36251 && method2007.isEmpty();
             if (class7006.method21449() == Class2165.field12881) {
                 if (b) {
-                    final Class7005 class7007 = (Class7005)class7006;
+                    final BlockRayTraceResult class7007 = (BlockRayTraceResult)class7006;
                     final Direction method2008 = class7007.method21448();
                     final BlockPos method2009 = class7007.method21447().method1149(method2008);
                     this.method2027(method2009, method2008);

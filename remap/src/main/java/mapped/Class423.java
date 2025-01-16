@@ -10,7 +10,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -418,9 +418,9 @@ public class Class423 extends Entity
                     while (j < method1888) {
                         for (int k = method1891; k < method1892; ++k) {
                             method1893.method1300(j, i, k);
-                            final IFluidState method1894 = this.world.method6702(method1893);
-                            if (method1894.method21793(Class7324.field28319)) {
-                                max = Math.max(max, method1894.method21782(this.world, method1893));
+                            final IFluidState method1894 = this.world.getFluidState(method1893);
+                            if (method1894.isTagged(Class7324.field28319)) {
+                                max = Math.max(max, method1894.getActualHeight(this.world, method1893));
                             }
                             if (max >= 1.0f) {
                                 break Label_0252;
@@ -462,7 +462,7 @@ public class Class423 extends Entity
                             if (n9 <= 0 || (k != n3 && k != n4 - 1)) {
                                 method1888.method1300(i, k, j);
                                 final BlockState method1889 = this.world.getBlockState(method1888);
-                                if (!(method1889.getBlock() instanceof Class3886) && VoxelShapes.method24496(method1889.getCollisionShape(this.world, method1888).method24541(i, k, j), method1887, Class9306.field39924)) {
+                                if (!(method1889.getBlock() instanceof Class3886) && VoxelShapes.method24496(method1889.getCollisionShape(this.world, method1888).withOffset(i, k, j), method1887, IBooleanFunction.AND)) {
                                     n7 += method1889.getBlock().method11865();
                                     ++n8;
                                 }
@@ -490,9 +490,9 @@ public class Class423 extends Entity
                 for (int j = method1889; j < method1890; ++j) {
                     for (int k = method1891; k < method1892; ++k) {
                         method1893.method1300(i, j, k);
-                        final IFluidState method1894 = this.world.method6702(method1893);
-                        if (method1894.method21793(Class7324.field28319)) {
-                            final float n = j + method1894.method21782(this.world, method1893);
+                        final IFluidState method1894 = this.world.getFluidState(method1893);
+                        if (method1894.isTagged(Class7324.field28319)) {
+                            final float n = j + method1894.getActualHeight(this.world, method1893);
                             this.field2563 = Math.max(n, this.field2563);
                             b |= (method1886.minY < n);
                         }
@@ -519,9 +519,9 @@ public class Class423 extends Entity
                 for (int j = method1889; j < method1890; ++j) {
                     for (int k = method1891; k < method1892; ++k) {
                         method1893.method1300(i, j, k);
-                        final IFluidState method1894 = this.world.method6702(method1893);
-                        if (method1894.method21793(Class7324.field28319) && n < method1893.getY() + method1894.method21782(this.world, method1893)) {
-                            if (!method1894.method21780()) {
+                        final IFluidState method1894 = this.world.getFluidState(method1893);
+                        if (method1894.isTagged(Class7324.field28319) && n < method1893.getY() + method1894.getActualHeight(this.world, method1893)) {
+                            if (!method1894.isSource()) {
                                 return Class2087.field12067;
                             }
                             b = true;
@@ -681,7 +681,7 @@ public class Class423 extends Entity
         this.field2567 = this.getMotion().y;
         if (!this.isPassenger()) {
             if (!b) {
-                if (!this.world.method6702(new BlockPos(this).method1139()).method21793(Class7324.field28319)) {
+                if (!this.world.getFluidState(new BlockPos(this).method1139()).isTagged(Class7324.field28319)) {
                     if (n < 0.0) {
                         this.fallDistance -= (float)n;
                     }

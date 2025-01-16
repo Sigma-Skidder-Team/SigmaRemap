@@ -5,7 +5,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.world.World;
 
 public class Class8070 extends Class8071
@@ -93,7 +93,7 @@ public class Class8070 extends Class8071
     }
     
     @Override
-    public Class2201 method26480(final PlayerEntity playerEntity, final World class513, final ItemStack class514, final Class316 class515, final Class7005 class516) {
+    public Class2201 method26480(final PlayerEntity playerEntity, final World class513, final ItemStack class514, final Class316 class515, final BlockRayTraceResult class516) {
         if (!this.field33243) {
             return super.method26480(playerEntity, class513, class514, class515, class516);
         }

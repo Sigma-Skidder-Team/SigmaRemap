@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.BitSet;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.function.Function;
@@ -114,7 +114,7 @@ public abstract class Class7304<C extends Class5118>
                 }
             }
             else {
-                class1860.method7008(class1861, Class7304.field28284.method21791(), false);
+                class1860.method7008(class1861, Class7304.field28284.getBlockState(), false);
             }
             return true;
         }
@@ -133,7 +133,7 @@ public abstract class Class7304<C extends Class5118>
         final Block method21696 = class7096.getBlock();
         if (!this.method22407(class7096)) {
             if (method21696 == Class7521.field29175 || method21696 == Class7521.field29177) {
-                if (!class7097.getFluidState().method21793(Class7324.field28319)) {
+                if (!class7097.getFluidState().isTagged(Class7324.field28319)) {
                     return true;
                 }
             }
@@ -147,7 +147,7 @@ public abstract class Class7304<C extends Class5118>
         for (int i = n3; i < n4; ++i) {
             for (int j = n7; j < n8; ++j) {
                 for (int k = n5 - 1; k <= n6 + 1; ++k) {
-                    if (this.field28286.contains(class1860.method6702(class1861.setPos(i + n * 16, k, j + n2 * 16)).method21779())) {
+                    if (this.field28286.contains(class1860.getFluidState(class1861.setPos(i + n * 16, k, j + n2 * 16)).getFluid())) {
                         return true;
                     }
                     if (k != n6 + 1) {
@@ -194,7 +194,7 @@ public abstract class Class7304<C extends Class5118>
         field28280 = method22404("underwater_cave", new Class7307(Class5117::method16023));
         field28281 = Class7521.field29147.getDefaultState();
         field28282 = Class7521.field29764.getDefaultState();
-        field28283 = Class7558.field29976.method22148();
-        field28284 = Class7558.field29978.method22148();
+        field28283 = Class7558.field29976.getDefaultState();
+        field28284 = Class7558.field29978.getDefaultState();
     }
 }

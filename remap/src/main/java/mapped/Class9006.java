@@ -6,7 +6,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
-import net.minecraft.util.Direction;
+import net.minecraft.util2.Direction;
 
 import java.util.BitSet;
 import java.util.List;
